@@ -342,7 +342,7 @@ This makes the club slightly more powerful (+3 in all respects), is more shamani
 
 Makes the elemental resistances against fire and frost increase to 15%, 30% at +5. Additionally, the +4 version makes all arrows deal extra 1 cold and fire damage (2 at +5).
 
-**Component 1340:** Make Taralash +5 slightly more remarkable
+**Component 1340:** Make Taralash slightly more remarkable
 
 The +5 version literally just increases the THAC0 bonus by 1. That's a bit too boring for a +5 weapon. I'm not saying these changes are much better -- but slighty better? Absolutely!
 
