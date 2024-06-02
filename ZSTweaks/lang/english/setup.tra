@@ -1,0 +1,1681 @@
+// GROUPS
+
+@1 = ~Spell tweaks~
+@2 = ~Item tweaks~
+@3 = ~Class and Kit-related tweaks~
+
+// END GROUPS
+
+// COMPONENTS
+/// SPELLS
+
+@100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
+@110 = "Make Bless last longer"
+@120 = "Make conjured wielded magical weapons add 1 extra APR (Flame Blade, Phantom Blade...)"
+@130 = "Standardize Hold Person saving throw penalties"
+@140 = "Standardize Finger of Death magical damage on a successful save"
+@150 = "Make Disintegrate behave more like a modified Harm spell, similar to how it behaves in NWN2"
+@160 = "Make Black Blade of Disaster and the Iron Golem weapons unsuitable for backstabs"
+@170 = "Make Wail of the Banshee inflict some magical damage and deafness on a successful save"
+@180 = "Make Meteor Swarm more likely to do more damage"
+@190 = "Make Holy Power and Tenser's Transformation achieve a THAC0 of 0"
+@200 = "Make Sleep work for level >=5 enemies with a save bonus"
+@210 = "Make Horror an Enchantment spell"
+@220 = "Make Ice Storm do 1d8 more damage per round"
+@230 = "Make Cloak of Fear work as a temporary aura of fear"
+@240 = "Make Goodberries generate six berries, each healing 2d4 instead of 1 point of damage, and granting very slow regeneration for 8 hours"
+@250 = "Make Earthquake party friendly"
+@260 = "Make Negative Plane Protection's duration increase somewhat as you level up"
+@270 = "Make Entangle's saving throws improve slightly at higher levels so it remains relevant for druids"
+@280 = "Make Poison (cleric spell) do half damage on a failed save (without poisoning them)"
+@290 = "Make Holy Power and Tenser's Transformation gain extra APR like a Fighter at the appropriate levels"
+@300 = "Make Iron Skins cast as fast a Stoneskin"
+@310 = "Make Fire Seeds create more seeds that do slightly more damage, with an enchantment of 2"
+@320 = "Make Nature's Beauty a bit more likely to kill enemies outright"
+@330 = "Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)"
+@340 = "Make Symbol of Death work with Save bonus if above the 60 HP threshold"
+@350 = "Make Earthquake not shake the screen"
+@360 = "Make Etheral Retribution do more damage per round: 6d6 per round instead of 3d8"
+@370 = "Make Ray of Enfeeblement a Necromancy spell"
+@380 = "Make Contagion cause 4 points of Strength and Dexterity damage"
+@390 = "Make Death Fog inflict 4d4 acid damage per round instead of flat 8 damage"
+@400 = "Make Energy Drain drain 6 levels instead of 2"
+@410 = ~Make Horrid Wilting actually be more effective against plants and Water Elementals~
+@420 = ~Make Armor of Faith also add a +2 AC bonus to make it useful at low levels~
+@430 = ~Make Grease bypass Magic Resistance, as it is as conjured substance, and apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description~
+
+// ITEMS
+
+@1000 = "Make throwing poisoned daggers slightly more likely to poison enemies"
+@1010 = ~Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost~
+@1120 = "Make some weapon categories incur in backstab penalties for balance"
+@1125 = "Make Ninjato of the Scarlet Brothehood +3 available for other classes and alignments"
+@1130 = "Make Bone Blade dagger more special and not just a plain +4 dagger"
+@1140 = "Make Dagger of the Star slightly more powerful"
+@1150 = "Make spears do a baseline damage of 1d8, not 1d6"
+@1160 = "Make warhammers do a baseline damage 1d5+1, not 1d4+1 (except hammers outside that range)"
+@1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
+@1180 = "Make Ring of Danger sense protect against backstabs"
+@1190 = "Make Rod of Lordly Might usable by any class and more powerful"
+@1200 = "Make Ixil's Spike allow Haste and Improved Haste"
+@1210 = "Make The Equalizer slightly more powerful"
+@1220 = "Make Ras, the Dancing Blade last for 1 turn, instead of 4 rounds"
+@1230 = "Make Short Sword of Mask +5 slightly more powerful"
+@1240 = "Make Purifier's damage bonus affect all evil, not just Chaotic Evil"
+@1241 = "Make Purifier's Dispel Magic cast at level 30, like Staff of the Magi and Carsomyr"
+@1250 = "Make Yamato's passive abilities more substantial"
+@1260 = "Make Usuno's Blade slightly more electrically powerful"
+@1270 = "Make Spectral Brand last for 1 turn, instead of 4 rounds"
+@1280 = "Make Carsomyr affect any kind of evil and not just Chaotic Evil"
+@1290 = "Make Carsomyr's Dispel Magic force a saving throw"
+@1300 = "Make Silver Sword act as a +4 weapon to determine what it can hit to extend usability"
+@1310 = "Make Defender of Eastheaven damage reduction a little more moderate"
+@1311 = "Make Krotan's Skullcrusher +2 slightly less generic"
+@1312 = "Make Skullcrusher +3 slightly more crushy"
+@1313 = "Make Gnasher +2 slightly more painful"
+@1314 = "Make Jerrod's Mace +2 behave as a +3 weapon"
+@1315 = "Make Dak'kon's Zerth Blade behave as a +3 weapon"
+@1316 = "Make Mercykiller Ring more useful for rogues that like killing"
+@1317 = "Make the basic robes and Archmage robes slightly more remarkable"
+@1318 = "Make Flame of the North +2 affect all evil, not just chaotic evil"
+@1319 = "Make Holy Sword of Tyr +3 affect all evil, not just chaotic evil"
+@1320 = "Make Flail of Ages +5 allow Haste and Improved Haste"
+@1321 = "Make Bone Club +2, +3 against undead's effect reflect the description bette and improve it slightly"
+@1330 = "Make Darkfire Bow slightly more remarkable"
+@1340 = "Make Taralash +5 slightly more remarkable"
+@1341 = ~Make Hindo's Doom a +3 and +4 weapon~
+@1350 = "Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8"
+@1360 = "Make Light Crossbows get 1.5 APR"
+@1370 = "Make Katanas deal 2d5 instead of 1d10"
+@1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
+@1390 = "Make Staff of the Magi force a saving throw to dispel effects on hits"
+@1400 = "Make Bastard Swords deal 1d8+1 by default"
+@1410 = "Make Ir'revrykal Dispel Magic effect not depend on probabilities, but allow a saving throw"
+@1420 = "Make Ir'revrykal base damage equal to Carsomyr"
+@1430 = "Make Two-handed swords deal 1d9+1 by default, and 2d6 where it applies"
+@1440 = "Make daggers have general extra features to compensate the low damage"
+@1450 = "Make some rogue weapons have the chance of doing more damage if wielded by pure rogues (Finesse)"
+@1460 = ~Make Spear of Withering able to poison on contact if save is failed~
+@1470 = ~Make Adjatha the Drinker thirstier~
+@1480 = "Make Yoshimo's Katana slightly more unique and powerful"
+@1490 = ~Make Neb's Nasty Cutter have an unlimited amount of poison~
+@1500 = ~Make Mazzy's weapons slightly more powerful~
+@1510 = ~Make Delryn's family shield become a +2 shield~
+@1520 = ~Make Hallowed Redeemer able to hit enemies immune to +3 weapons~
+@1530 = ~Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time~
+
+// KITS AND CLASSES
+
+@2100 = "Make Sun Soul Ray from Sun Soul Monks scale further and do more damage to undead"
+@2110 = "Make Sun Soulbeam do more damage to undead: 12d6 instead of just 3 more damage than baseline"
+@2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty"
+@2130 = "Make Set Spike Trap do piercing damage instead of magic damage"
+@2140 = "Make Exploding Trap do slightly more damage: 12d6 as opposed to 10d6"
+@2150 = "Make selected kit HLAS unable to be breached"
+@2160 = ~Make Quivering Palm slightly more powerful at high levels~
+
+
+// NEW DESCRIPTIONS
+
+@5000 = ~Glyph of Warding
+(Abjuration, Evocation)
+
+Level: 3
+Sphere: Guardian
+Range: 60 ft.
+Duration: Permanent until discharged
+Casting Time: 9
+Area of Effect: 12-ft. radius
+Saving Throw: 1/2
+
+A Glyph of Warding is a powerful inscription magically drawn to prevent unauthorized or hostile creatures from passing, entering, or opening. It can be used to guard a small bridge, to ward an entry, or as a trap on a chest or box. Any creature violating the warded area is subject to the magic it stores, although a successful Saving Throw vs. Spell enables the creature to escape the effects of the glyph. When the spell is cast, the priest weaves a tracery of faintly glowing lines around the warding sigil. When the glyph is activated, it deals 1d4 points of electrical damage per level of the caster.~
+
+@5010 = ~Bless
+(Conjuration/Summoning)
+
+Level: 1
+Sphere: All
+Range: 40 ft.
+Duration: 6 rounds + 1 round/2 levels
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Upon uttering the Bless spell, the caster raises the morale of friendly creatures by +1. Furthermore, it raises their attack and damage rolls by +1. The caster determines at what range (up to 40 ft.) the spell will be cast. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not).~
+
+@5020 = ~Hold Person
+(Enchantment/Charm)
+
+Level: 2
+Sphere: Charm
+Range: 35 ft.
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 1 creature and any enemy within 4 ft.
+Saving Throw: Neg.
+
+This spell holds one or more humans, demihumans, or humanoid creatures rigidly immobile and in place for one turn. This includes: brownies, dryads, dwarves, elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins, humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes, and others. Thus, a 10th-level Fighter could be held, while an ogre could not. The effect is centered on the victim selected by the caster. Every enemy within 4 ft. of the target is also affected. Those who Save vs. Spell at -1 are totally unaffected by the spell. Undead creatures cannot be held.
+
+Held creatures cannot move or speak, but they remain aware of events around them even though they are helpless to change them. Time passes at a normal rate for the targets and hence being held does not stop any worsening of their condition due to wounds, disease, or poison.~
+
+@5030 = ~Finger of Death
+(Necromancy)
+
+Level: 7
+Range: Visual range of the caster
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+The Finger of Death spell snuffs out the victim's life force. The caster points <PRO_HISHER> finger at the victim after the incantation is complete, effectively ripping the life out of its body unless a Save vs. Spell is made with a -2 penalty. A creature successfully making the Saving Throw still receives 2d8 points of damage + 1 per level of the caster.~
+
+
+@5040 = ~Meteor Swarm
+(Evocation)
+
+Level: 9
+Range: 270 ft.
+Duration: 4 rounds
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces pull down meteors from above, hurling them randomly at anyone in the area of effect. Anyone caught in the destructive path of the meteors—whether friend or foe—will suffer 2d8 points of damage plus 1 per level of the caster (i.e. 2d8 + 1/level) with no Saving Throw. The caster is well advised to be careful in <PRO_HISHER> use of this spell.~
+
+@5050 = ~Horror
+(Enchantment)
+
+Level: 2
+Range: 40 ft.
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+All enemies within the area of effect when this spell is cast must save vs. Spell or flee in terror. Certain creatures are immune to the effects of fear, including all undead.~
+
+@5060 = ~Goodberry
+(Alteration, Evocation)
+
+Level: 2
+Sphere: Plant
+Range: Touch
+Duration: Permanent
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+Casting a Goodberry spell creates 6 magical berries that the caster can carry with <PRO_HIMHER>. Each berry restores 2d4 Hit Points when eaten and grant a slow regeneration of 1 HP per turn for 8 hours.~
+
+@5070 = ~Created by the Goodberry spell, these simple-looking blueberries will heal 2d4 points of damage for each handful of berries eaten and help the body heal faster for 8 hours.
+
+STATISTICS:
+
+Special: Heals 2d4 Hit Points and grants a regeneration of 1 HP per turn for 8 hours
+
+Weight: 0~
+
+@5080 = ~Negative Plane Protection
+(Abjuration)
+
+Level: 4
+Sphere: Protection, Necromantic
+Range: Touch
+Duration: 5 rounds + 1 round/2 levels
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell affords the caster or the touched creature partial protection from undead monsters with Negative Energy Plane connections (such as vampires), and certain weapons and spells that drain energy levels. The Negative Plane Protection spell opens a channel to the Positive Energy Plane, possibly offsetting the effects of the negative energy attack. A protected creature struck by a negative energy attack is protected against any form of level draining for the duration of the spell. The protected creature suffers only normal Hit Point damage from the attack and does not suffer any drain of experience. This spell cannot be cast on the Negative Energy Plane.~
+
+@5090 = ~Earthquake
+(Alteration)
+
+Level: 7
+Sphere: Elemental (Earth)
+Range: 360 ft.
+Duration: 3 tremors
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+When this spell is cast, a local tremor of fairly high strength rips the ground. The shock is over in several rounds. The earthquake affects all creatures in its area of effect except the caster and <HISHER> party. There are 3 tremors that are caused by the earthquake:
+
+ 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful Saving Throw vs. Spell with a -6 penalty halves the damage and negates the fall.
+ 2nd: All creatures affected take 3d6 points of damage. A successful Saving Throw vs. Spell with a -2 penalty halves the damage.
+ 3rd: All creatures affected take 2d6 points of damage. A successful Saving Throw vs. Spell halves the damage.
+
+Additionally, earth elementals dislike mere mortals toying with the land and there is a small chance that casting this spell will cause an earth elemental to appear and attack the party.~
+
+@5100 = ~Entangle
+(Alteration)
+
+Level: 1
+Sphere: Plant
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 4
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+By means of this spell, the caster is able to cause plants in the area of effect to entangle creatures within the area. The grasses, weeds, bushes, and even trees wrap, twist, and entwine about the creatures, holding them fast. Once per round, a creature can attempt to save vs. Spell with a +2 bonus to avoid entanglement. The difficulty of the saving throw improves by 1 at level 5 and every fifth level thereafter.  An entangled creature can still attack, but receives a -2 penalty to its Armor Class.~
+
+@5110 = ~Poison
+(Necromancy)
+
+Level: 4
+Range: 15 ft.
+Duration: 1 turn
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+Through this spell, the caster can poison victims who fail their Saving Throw vs. Poison. The damage inflicted depends on the level of the caster as detailed below:
+ 7–9th level: 2d8 + 2/round
+ 10–12th level: 3d8 + 3/round
+ 13–14th level: 4d8 + 4/round
+ 15–16th level: 6d8 + 5/round
+ 17+ level: 8d8 + 6/round
+Those who make their Saving Throws only take half of the initial damage, and are unaffected by the poison damage per round.~
+
+@5120 = ~Holy Power
+(Evocation)
+
+Level: 4
+Range: 0
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: None
+
+Through this spell, the caster imbues <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The priest's Strength score is set to 18/00—even if it is normally higher—<PRO_HISHER> THAC0 becomes that of a Fighter of the same level, gains 1/2 APR at level 7 and another one at level 13, and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.~
+
+@5130 = ~Tenser's Transformation
+(Alteration)
+
+Level: 6
+Range: 0
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: None
+
+Tenser's Transformation is a sight guaranteed to astound any creature not aware of its power, for when the wizard casts the spell, <PRO_HESHE> undergoes a startling transformation. The size and strength of the wizard increase to heroic proportions, and <PRO_HESHE> becomes a formidable fighting machine.
+
+The spell causes the caster to become a berserk Fighter: <PRO_HISHER> Hit Points double, and all damage <PRO_HESHE> sustains is first detracted from this magically-gained life; <PRO_HISHER> Armor Class gains a +4 bonus up to a maximum Armor Class of -10; and all <PRO_HISHER> attacks are made as though <PRO_HESHE> were a Fighter of the same level (i.e. the wizard uses the combat values normally reserved to Fighters, and extra attacks are granted). Each attack also receives a +2 bonus to hit and damage rolls. The effect lasts for the duration of the spell or until dispelled.~
+
+@5140 = ~Iron Skins
+(Alteration)
+
+Sphere: Elemental
+Level: 5
+Range: 0
+Duration: 12 hours
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None
+
+When a Druid casts this powerful spell upon <PRO_HIMHER>self, an outer skin of iron will move up from the ground, completely covering <PRO_HIMHER>. This skin is, of course, magical and will hinder the Druid in no way. The effect of this is to protect the Druid from physical attacks such as melee weapons and projectiles. For every 2 levels of the caster, an additional skin is gained upon casting. For example, a 10th-level Druid would receive 5 skins. For each skin the Druid possesses, the spell will stop one attack, so a 10th-level Druid would be protected from the first 5 attacks made against <PRO_HIMHER> but the 6th would affect <PRO_HIMHER> normally. The skins will remain on the Druid until <PRO_HESHE> is affected by a Dispel Magic, all of the skins are removed due to physical attacks, or the spell's duration expires. It is important to note that this will not protect the Druid from any area attacks such as Fireball; however, it will protect <PRO_HIMHER> from physical magical attacks such as Magic Missile.~
+
+@5150 = ~Fire Seeds
+(Conjuration/Summoning)
+
+Level: 6
+Sphere: Elemental
+Range: 0
+Duration: 3 turns
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: 1/2
+
+Casting the Fire Seed spell creates 10 fire seeds that will appear in the caster's inventory. The seeds will remain in existence for 3 turns after the spell is cast. If they are thrown at an enemy, a fireball will ensue, causing 3d8+5 points of damage to all within a 7-ft. radius unless they make a Saving Throw vs. Spell for half damage. These seeds are thrown with a THAC0 bonus of +2.~
+
+@5160 = ~Created by the Fire Seeds spell. When thrown at opponents, they explode into small fireballs that do 3d8+5 points of damage to everyone within a 7-ft. radius.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 3d8+5 (Save vs. Spell for half)
+
+Weight: 0~
+
+@5170 = ~Nature's Beauty
+(Illusion/Phantasm)
+
+Level: 7
+Sphere: Elemental
+Range: 0
+Duration: Instant
+Casting Time: 6
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+When this spell is cast, the caster appears to undergo a remarkable transformation. The caster becomes the very ideal of beauty: For a male, this is usually a nymph; for a female, it varies. As with a nymph, anyone viewing the disguised caster must make a Saving Throw vs. Spell with +1 bonus or die of longing for the denied illusion. Even if the Saving Throw is successful, hapless viewers of the transformed Druid are all instantly smitten with permanent blindness (until dispelled). The transformation is instantaneous, but lasts only seconds, affecting those near the caster (excluding fellow party members).~
+
+@5180 = ~Confusion
+(Enchantment/Charm)
+
+Level: 7
+Sphere: Chaos
+Range: Visual range of the caster
+Duration: 1 round/2 levels
+Casting Time: 7
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+This spell causes confusion in one or more enemy creatures within the area, creating indecision and the inability to take effective action. All enemy creatures within the area of effect are allowed Saving Throws vs. Spell with a -4 penalty. Those successfully saving are unaffected by the spell. Those who fail their Saving Throws will either go berserk, stand confused, or wander about for the duration of the spell.
+
+The spell lasts for 1 round for every two levels of the caster. Wandering creatures move as far from the caster as possible according to their most typical mode of movement (characters walk, fish swim, bats fly, etc.). Any confused creature that is attacked perceives the attacker as an enemy and acts according to its basic nature.~
+
+@5190 = ~Symbol, Death
+(Conjuration/Summoning)
+
+Level: 7
+Sphere: Guardian
+Range: 90 ft.
+Duration: Special
+Casting Time: 9
+Area of Effect: 12-ft. radius
+Saving Throw: Neg.
+
+Symbol, Death is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area of effect to make a Saving Throw vs. Death or die. Creatures with more than 60 current Hit Points are significantly less likely to be killed, gaining a +6 bonus to their Saving Throw.~
+
+@5200 = ~Symbol, Death
+(Conjuration/Summoning)
+
+Level: 8
+Range: 90 ft.
+Duration: Special
+Casting Time: 9
+Area of Effect: 12-ft. radius
+Saving Throw: Neg.
+
+Symbol, Death is a powerful enchantment that allows the wizard to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area to make a Save vs. Death or die. Creatures with more than 60 current Hit Points are significantly less likely to be killed, gaining a +6 bonus to their Saving Throw.~
+
+@5210 = ~Ethereal Retribution
+(Conjuration)
+
+Level: Quest
+Sphere: Summoning
+Range: 40 ft.
+Duration: 3 rounds
+Casting Time: 8
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+Ghostly figures called by the Shaman swirl around the battlefield, tormenting the Shaman's adversaries. All enemies within the area of effect take 6d6 points of magic damage per round for the next 3 rounds (no save). In addition, all living enemies (undead and constructs are unaffected) must save vs. Spell or lose 2 points of Strength every round for 5 rounds. The Strength loss is cumulative, but this spell cannot reduce the Strength of a creature below 1.~
+
+@5220 = ~Ray of Enfeeblement
+(Necromancy)
+
+Level: 2
+Range: Visual range of the caster
+Duration: 1 round/level
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+By means of a Ray of Enfeeblement, a wizard weakens an opponent, reducing its Strength and thereby the attacks that rely upon it. The victim is reduced to a Strength of 5 for the duration of the spell unless a Save vs. Spell is made. This spell does not affect combat bonuses due to magical items, and those conferring increased Strength function normally. However the target receives all of the penalties for a 5 Strength such as attack and damage penalties as well as lower weight allowance.~
+
+@5230 = ~Death Fog
+(Evocation)
+
+Level: 6
+Range: 30 ft.
+Duration: 1 turn
+Casting Time: 6
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+The casting of a Death Fog spell creates an area of solid fog that has the additional property of being highly acidic. All animal life not immune to acid suffers 4d4 points of damage for each round they are exposed to the vapors of the Death Fog. Death Fog will also instantly kill all summoned creatures, regardless of their Hit Dice and immunities.~
+
+@5240 = ~Contagion
+(Necromancy)
+
+Level: 4
+Range: 90 ft.
+Duration: Permanent
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell causes a major disease and weakness in a creature. The afflicted individual is immediately stricken with painful and distracting symptoms: boils, blotches, lesions, seeping abscesses, and so on. Strength and Dexterity scores are reduced by 4. The afflicted character is also Slowed. These effects persist until the character receives a Cure Disease spell.~
+
+@5250 = ~Energy Drain
+(Necromancy)
+
+Level: 9
+Range: Touch
+Duration: Permanent
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining <PRO_HIMHER> of 6 levels of experience. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell.~
+
+
+@6000 = ~This seemingly simple dagger, steel blade and bone handle, is an incredibly powerful weapon. Forged by an unfortunate duergar smith centuries earlier, the handle was carved from a tooth of a black dragon and the blade was tempered in the blood of its creator. How it has made its way to you is anyone's guess.
+
+
+Equipped abilities:
+– Acid resistance: +40%
+– Elves and denizens native to the Underdark take an extra +5 piercing damage per hit.
+
+STATISTICS:
+
+THAC0: +4
+Damage: 1d4+4 (piercing), +1d4 acid damage
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6010 = ~Rumored to have been dropped from the Heavens by a careless lesser deity, this dagger is a favorite among thieves and assassins, as it will sometimes magically hide its user from the victim's sight.
+
+STATISTICS:
+
+Combat abilities:
+– 10% chance of making the user go invisible for 1 turn after each successful attack
+
+THAC0: +5
+Damage: 1d4+5 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6011 = ~Dagger of the Star +5~
+@6012 = ~Dagger of the Star +6~
+
+@6013 = ~Rumored to have been dropped from the Heavens by a careless lesser deity, this dagger is a favorite among thieves and assassins, as it will sometimes magically hide its user from the victim's sight.
+
+With the star sapphires encrusting its hilt, this small blade is one of the most dangerous weapons in the realms.
+
+STATISTICS:
+
+Combat abilities:
+– 15% chance of making the user go invisible for 1 turn after each successful attack
+– Star Bolt: Each successful hit has a 15% chance of causing either 1d8 fire or electrical damage, or both.
+
+THAC0: +6
+Damage: 1d4+6 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6020 = ~This suit of armor is formed from interlocking shadow dragon scales. Elegant workmanship and practical considerations make this armor both beautiful and useful. The shadow dragon scales grant the wearer Nondetection, and protection against level drain and illusion spells.
+
+STATISTICS:
+
+Equipped abilities:
+– Negative Plane protection
+– Nondetection
+– Save vs. Illusion +4
+
+Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 10~
+
+@6030 = ~Nizzuf's Maze was a grand hedge maze created by the archmage Nizzuf for his amusement. The maze boasted hundreds of magical traps, most of them extremely lethal. Nizzuf posted a reward big enough to buy a kingdom to the man or woman brave enough to enter the maze and reach its core. Thousands tried and died. But one, Oteg Verm, completed the maze, thanks mainly to this ring which let him "see" where the traps were hidden.
+
+STATISTICS:
+
+Equipped abilities:
+– Detect Traps: +25%
+– Immunity to backstabs and sneak attacks
+
+Weight: 0~
+
+@6040 = ~Also called the Wrath of Three Kings, though not associated with any named king in particular, this rod was likely made in 1090 DR. It saw use during the Battle of the Bones, but for which side is uncertain, as it was found amongst the dead after a larger skirmish. Three buttons unlock the rod's magic: The first transforms it into a fearsome enchanted mace; the second, a hypnotic flaming blade; the third, a barbed spear.
+
+STATISTICS:
+
+Combat abilities:
+– This rod may transform into any of the following weapons when used. Each weapon may also change back into the rod at will.
+
+Mace of Lordly Might +3
+  Special: Target must save vs. Spell at +2 or panic for 3 rounds
+  THAC0: +3
+  Damage: 1d6+4 (crushing)
+
+Flaming Sword of Lordly Might +3
+  Special: Target must save vs. Spell at +2 or be held for 1 round
+  THAC0: +3
+  Damage: 1d8+3 (slashing) + 1d4 (fire)
+
+Spear of Lordly Might +3
+  Special: Target must save vs. Spell or take 2d4 points of magical damage
+  THAC0: +3
+  Damage: 1d6+3 (piercing)
+
+Weight: 5~
+
+@6041 = ~Mace of Lordly Might +3~
+@6042 = ~Flaming Sword of Lordly Might +3~
+@6043 = ~Spear of Lordly Might +3~
+@6044 = ~This mace has been created via the Rod of Lordly Might. Use this item's special use to change it back into the Rod to choose another weapon.
+
+STATISTICS:
+
+Combat abilities:
+– Target must save vs. Spell at +2 or panic for 2 rounds
+
+THAC0: +3
+Damage: 1d6+4 (crushing)
+Speed Factor: 4
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 7~
+
+@6045 = ~This sword has been created via the Rod of Lordly Might. Use this item's special use to change it back into the Rod to choose another weapon.
+
+STATISTICS:
+
+Combat abilities:
+– Target must save vs. Spell at +2 or be held for 1 round
+
+THAC0: +3
+Damage: 1d8+3 (slashing) +1d4 (fire)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+
+@6046 = ~This spear has been created via the Rod of Lordly Might. Use this item's special use to change it back into the Rod to choose another weapon.
+
+STATISTICS:
+
+Combat abilities:
+– Target must save vs. Spell or take 2d4 points of magical damage
+
+THAC0: +3
+Damage: 1d6+3 (piercing)
+Speed Factor: 3
+Proficiency Type: Spear
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 5~
+
+
+@6050 = ~This abyssal greensteel blade is one of Haer'Dalis's favorite weapons. This short sword is capable of inflicting an additional 6 points of poison damage if the target fails a Saving Throw. This blade may only be used by tieflings.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target must save vs. Poison at -1 or suffer 2 points of poison damage per second for 3 seconds
+– It's considered +3 for the purposes of what it can hit.
+– 1/2 extra attack per round
+
+THAC0: +2
+Damage: 1d6+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~
+
+
+@6051 = ~Chaos is a short sword usable only by tieflings. Every time it strikes an opponent, he or she loses 2 points of Dexterity for 5 rounds and becomes more sensitive to poisonous substances. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target loses 2 points of Dexterity per hit for 5 rounds and suffer a -1 penalty to their Save vs. Poison for 2 rounds
+– It's considered +3 for the purposes of what it can hit
+– 1/2 extra attack per round
+
+THAC0: +2
+Damage: 1d6+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~
+
+@6060 = ~Such is the age of this sword that its true origin has been lost to time, but markings hint that it was possibly forged in the service of Helm. Also called the "Sword of Neutrality," it seems designed to seek and terminate extremes, to shift the universe closer to harmonious equilibrium. The further the behavior of a target from true balance, the more potent the damage they suffer.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm and confusion
+
+Combat abilities:
+– Strikes as a +5 weapon
+
+THAC0 & Damage:
+  vs. True Neutral: +3 to hit, 1d8+3 damage
+  vs. Chaotic Neutral, Lawful Neutral: +4 to hit, 1d8+3 + 2 damage
+  vs. Neutral Good, Neutral Evil: +5 to hit, 1d8+3 + 4 damage
+  vs. Other Alignments: +6 to hit, 1d8+3 + 6 damage
+Damage type: Slashing
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~
+
+@6070 = ~Hindo was a samurai of great renown, a staunch defender of his people against the evil undead that often ravaged his homelands.
+
+STATISTICS:
+
+Charge abilities:
+– Lesser Restoration once per day
+  Special: Reverses any previous level drain
+  Range: Touch
+  Area of Effect: 1 creature
+
+THAC0: +4
+Damage: 1d10+4 (slashing)
+Speed Factor: 0
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~
+
+@6071 = ~Hindo was a samurai of great renown, a staunch defender of his people against the evil undead that often ravaged his homelands.
+
+Now reunited with the hand of its original owner, this is a katana worthy of the greatest of samurai.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +10%
+– Immunity to all forms of death magic
+
+Charge abilities:
+– Greater Restoration once per day
+  Special: Reverses any previous level drain; cures feeblemind, confusion, berserk, disease, and poison; and fully heals the target
+  Range: Touch
+  Area of Effect: 1 creature
+
+THAC0: +5
+Damage: 1d10+5 (slashing)
+Speed Factor: 0
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+@6072 = ~Hindo's Doom +4~
+@6073 = ~Hindo's Doom +5~
+
+@6080 = ~The Holy Avenger: Carsomyr
+Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerûn, though its origin and history is thought purposefully forgotten so that the sword itself shall never overshadow the importance of the struggles that must be fought today. It is infused with the very essence of virtue and requires as much from any Paladin who would hope to wield it. The evils of the realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease. Carsomyr also harbors a special distaste for the forces of evil, and such creatures must fear additional damage from its touch in battle.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: 50%
+
+Combat abilities:
+– Dispel Magic at level 30 on each hit
+
+Charge abilities:
+– Dispel Magic at level 15 three times per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+THAC0: +5
+Damage: 1d12+5, +5 extra vs. evil
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 7~
+
+@6081 = ~The Holy Avenger: Carsomyr
+Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerûn, though its origin and history is thought purposefully forgotten so that the sword itself shall never overshadow the importance of the struggles that must be fought today. It is infused with the very essence of virtue and requires as much from any Paladin who would hope to wield it. The evils of the realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease. Carsomyr also harbors a special distaste for the forces of evil, and such creatures must fear additional damage from its touch in battle.
+
+Now combined with the Eye of Tyr, even such powerful weapon was made even greater.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: 50%
+
+Combat abilities:
+– Dispel Magic at level 30 whenever the sword strikes an opponent
+
+Charge abilities:
+– Dispel Magic at level 15 three times per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+THAC0: +6
+Damage: 1d12+6, +6 extra vs. evil
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 6~
+
+// Only dispel magic component installed
+@6082 = ~The Holy Avenger: Carsomyr
+Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerûn, though its origin and history is thought purposefully forgotten so that the sword itself shall never overshadow the importance of the struggles that must be fought today. It is infused with the very essence of virtue and requires as much from any Paladin who would hope to wield it. The evils of the realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease. Carsomyr also harbors a special distaste for the forces of chaos and evil, and such creatures must fear additional damage from its touch in battle.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: 50%
+
+Combat abilities:
+– Dispel Magic at level 30 on each hit if a Save vs. Spell is failed
+
+Charge abilities:
+– Dispel Magic at level 15 three times per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+THAC0: +5
+Damage: 1d12+5, +5 extra vs. chaotic evil
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 7~
+
+// dispel magic component and chaotic evil component both installed
+@6083 = ~The Holy Avenger: Carsomyr
+Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerûn, though its origin and history is thought purposefully forgotten so that the sword itself shall never overshadow the importance of the struggles that must be fought today. It is infused with the very essence of virtue and requires as much from any Paladin who would hope to wield it. The evils of the realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease. Carsomyr also harbors a special distaste for the forces of evil, and such creatures must fear additional damage from its touch in battle.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: 50%
+
+Combat abilities:
+– Dispel Magic at level 30 on each hit if a Save vs. Spell is failed
+
+Charge abilities:
+– Dispel Magic at level 15 three times per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+THAC0: +5
+Damage: 1d12+5, +5 extra vs. evil
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 7~
+
+// only dispel magic component installed
+@6084 = ~The Holy Avenger: Carsomyr
+Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerûn, though its origin and history is thought purposefully forgotten so that the sword itself shall never overshadow the importance of the struggles that must be fought today. It is infused with the very essence of virtue and requires as much from any Paladin who would hope to wield it. The evils of the realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease. Carsomyr also harbors a special distaste for the forces of chaos and evil, and such creatures must fear additional damage from its touch in battle.
+
+Now combined with the Eye of Tyr, even such powerful weapon was made even greater.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: 50%
+
+Combat abilities:
+– Dispel Magic at level 30 whenever the sword strikes an opponent if a Save vs. Spell at -2 is failed
+
+Charge abilities:
+– Dispel Magic at level 15 three times per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+THAC0: +6
+Damage: 1d12+6, +6 extra vs. chaotic evil
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 6~
+
+// dispel magic component and chaotic evil component both installed
+@6085 = ~The Holy Avenger: Carsomyr
+Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerûn, though its origin and history is thought purposefully forgotten so that the sword itself shall never overshadow the importance of the struggles that must be fought today. It is infused with the very essence of virtue and requires as much from any Paladin who would hope to wield it. The evils of the realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease. Carsomyr also harbors a special distaste for the forces of evil, and such creatures must fear additional damage from its touch in battle.
+
+Now combined with the Eye of Tyr, even such powerful weapon was made even greater.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: 50%
+
+Combat abilities:
+– Dispel Magic at level 30 whenever the sword strikes an opponent if a Save vs. Spell at -2 is failed
+
+Charge abilities:
+– Dispel Magic at level 15 three times per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+THAC0: +6
+Damage: 1d12+6, +6 extra vs. evil
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 6~
+
+@6090 = ~This single-handed weapon is infused with the very essence of virtue, and is rumored to be the sanctified blade of the famous paladin Sir Wediyer. The weapon was lost when Sir Wediyer pursued a fleeing pit fiend through a planar rift. Neither the fiend nor Sir Wediyer ever returned.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +20%
+
+THAC0: +4
+Damage: 2d4+4, +4 extra vs. evil
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 6~
+
+@6091 = ~This single-handed weapon is infused with the very essence of virtue, and is rumored to be the sanctified blade of the famous paladin Sir Wediyer. The weapon was lost when Sir Wediyer pursued a fleeing pit fiend through a planar rift. Neither the fiend nor Sir Wediyer ever returned.
+
+With the Eye of Tyr set into its pommel, Purifier is perhaps the greatest single instrument of holy justice on the face of Faerûn.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +30%
+
+Charge abilities:
+– Dispel Magic at level 20 twice per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+– Mass Cure once per day
+  Special: Heals party members 1d8+20 Hit Points
+  Area of Effect: 15-ft. radius
+
+THAC0: +5
+Damage: 2d4+5, +5 extra vs. evil
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 5~
+
+@6100 = ~This blade is highly prized by those who serve the Shadowlord, as well as any who engage in shadowy business.
+
+Combined with the Heart of the Damned into a single lethal weapon, this deadly blade is the preferred tool of assassins and thieves.
+
+STATISTICS:
+
+Combat abilities:
+– 15% chance with every hit to drain 2 levels from opponent
+– 20% chance with every hit that opponent is entangled for 4 rounds
+
+THAC0: +5
+Damage: 1d6+5 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 2~
+
+@6101 = ~Two Levels Drained~
+
+@6110 = ~The name of the mighty Wu Jen who fashioned this "companion sword" is long forgotten. However, the name Yamato, loosely translated, means "Guardian" or "Defender."
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 plus +1 against Slashing, Piercing, and Missile
+– +5% resistance to magic and all sources of damage
+
+THAC0: +4
+Damage: 1d8+4 (piercing)
+Speed Factor: 0
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 1~
+
+@6120 = ~The daughter of a high ranking official within the bureaucratic society of Kara-Tur, Usuno rejected her family's station and carved a legend for herself among the yakuza of the underworld.
+
+The blade of this enchanted ninjatō crackles with electrical energy.
+
+STATISTICS:
+
+Equipped abilities:
+– 40% electrical resistance
+
+Combat abilities:
+– 15% chance of inflicting 5d4+1 electrical damage with each hit (Save vs. Spell at -2 for half)
+
+THAC0: +4
+Damage: 1d8+4, +1d3 electrical damage
+Damage type: Slashing
+Speed Factor: 0
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 1~
+
+@6130 = ~This flail was created a century ago to commemorate the defeat of the devil Belhifet. It was meant to always remain within the town of Easthaven to remind the people of the great evil that had been barely defeated.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– +10% resistance to slashing, piercing, and crushing damage
+
+THAC0: +3
+Damage: 1d6+4 (crushing)
+Speed Factor: 5
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 12~
+
+@6140 = ~A favorite among Mage/Thieves, the Knave's Robe has been enchanted to shield its wearer from the blades and poisons of any darkened alley and enhance thieving skills. As with others of its type, however, its use is restricted to students of the arcane.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. slashing and piercing attacks
+– +1 bonus against Death and Breath
+– +50% Poison damage resistance
+– +5% universal bonus for thieving skills
+
+Weight: 4~
+
+@6141 = ~This mage robe has been perfected for use by any rambling, itinerant mage that travels from town to town. Its enchantments augment movement speed, provide protection from the bandit's arrow and from the jealous mage/thief that lies in ambush with his Stinking Cloud. As with other robes of its kind, the Traveler's Robe can only be worn by wizards.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3 vs. missile attacks
+– +1 bonus against Wand and Spell
+– +15% Missile resistance
+– Increases movement speed by a factor of 4
+
+Weight: 4~
+
+@6142 = ~This robe has been specially enchanted to meet the eclectic needs of the adventuring mage. Aside from shielding the wearer from various forms of physical damage, it also provides protection from the basilisk's petrifying gaze and magical powers of rival mages. As with other such robes, the Adventurer's Robe can only be worn by those engaged in the wizardly profession.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1 vs. all attacks
+– +1 bonus against Petrification/Polymorph and Spell
+– +20% Magic damage resistance
+– +10% Elemental damage resistance
+
+Weight: 4~
+
+@6143 = ~While seen with less frequency than some other mage robes, those of Electrical Resistance can hardly be considered a rarity. Some are worn by paranoiacs seeking protection from a ragged mountain storm, but many more are worn by mages seeking to protect themselves from the intrigues of others of their kind. It also increases electric damage output slightly. As with all such robes, a Mage Robe of Electrical Resistance can only be worn by those of the wizardly profession.
+
+STATISTICS:
+
+Equipped abilities:
+– Electrical Resistance: +40%
+– Electrical damage dealt: +7%
+– Save vs. Evocation +1
+
+
+Weight: 3~
+
+@6144 = ~These are a common sight in the Sword Coast region, especially as one travels north toward Neverwinter and the Icewind Dales. Many young mages receive it as a gift from their instructors upon successfully completing their first five years of study. It also increases cold damage output slightly. As with other such robes, they can only be worn by those of the wizardly profession.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +40%
+– Cold damage dealt: +7%
+– Save vs. Evocation +1
+
+Weight: 3~
+
+@6145 = ~Due to the extremely volatile nature of most magics, Mage Robes of Fire Resistance are not uncommon among young acolytes and their wizardly tutors. It also increases fire damage output slightly. As with other such robes, they cannot be worn except by wizards.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +40%
+– Fire damage dealt: +7%
+– Save vs. Evocation +1
+
+Weight: 3~
+
+@6146 = ~This heavy crimson robe trimmed in gold signifies the importance of the wearer. Once the property of Edwin Odesseiron, Red Wizard of Thay, the robe was designed to further enhance his already significant magical prowess. Anyone who dons the Robe of Red Flames will deal additional damage whenever they use fire-based magic and will be less likely hurt by it.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +50%
+– Fire damage dealt: +10%
+– Save vs. Evocation +1
+
+Weight: 4~
+
+@6147 = ~This powerful mage robe offers protection from all forms of attack, both physical and magical, and improves casting speed slightly. Due to the nature of its enchantment, it can only be worn by wizards of good alignment.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: 5, plus +1 bonus
+– +2 bonus against Spell, +1 against the rest
+– Magic Resistance: +10%
+– Magic damage resistance: +25%
+– Casting speed improved by 1
+
+
+Weight: 6~
+
+@6148 = ~This powerful mage robe offers protection from all forms of attack, both physical and magical, and improves casting speed slightly. Due to the nature of its enchantment, it can only be worn by wizards of neutral alignment.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: 5, plus +1 bonus
+– +2 bonus against Spell, +1 against the rest
+– Magic Resistance: +10%
+– Magic damage resistance: +25%
+– Casting speed improved by 1
+
+
+Weight: 6~
+
+@6149 = ~This powerful mage robe offers protection from all forms of attack, both physical and magical, and improves casting speed slightly. Due to the nature of its enchantment, it can only be worn by wizards of evil alignment.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: 5, plus +1 bonus
+– +2 bonus against Spell, +1 against the rest
+– Magic Resistance: +10%
+– Magic damage resistance: +25%
+– Casting speed improved by 1
+
+
+Weight: 6~
+
+@6150 = ~Even the hordes have their heroes, and while they are vilified in civilized company, their deeds are sometimes impressive nonetheless. Krotan was an exceptionally intelligent orc, as far as orcs go, who commanded an ever-shifting legion of ogres, orcs, hobgoblins, and other assorted beasties during the Year of the Lost Lady, 1241 DR. It was in this year that a group of orc bandits allegedly kidnapped and killed a Tethyrian noblewoman, and the response from authorities was a genocidal slaughter of orcs throughout the south in her memory. Krotan mounted a defense that ensured his people were not entirely destroyed; though they were displaced. Krotan himself fell near the end of the conflict, and his head was mounted outside the graveyard where the young lady was buried. As a point of interest, orcs called this time the "Year of Pushing Too Far."
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d6+3, +2 extra vs. humanoids
+Damage type: Crushing
+Speed Factor: 5
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 7~
+
+@6160 = ~This mace is permanently bloodstained, a telltale trace of its many years spent bashing heads. The weapon would have been the bane of humanoids throughout its history, but those that wielded it seem to have been purposely left out of historic record.
+
+STATISTICS:
+
+THAC0: +3
+Damage: 1d6+4, +4 extra vs. humanoids
+Damage type: Crushing
+Speed Factor: 4
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 6~
+
+@6170 = ~The title does not refer to the blade itself, but rather to the woman who originally wielded it in the icy hinterlands of Faerûn. Her name was Carerra, and she was a veritable firestorm that swept across arctic trolls and the northern orcish tribes. She was a hated enemy of many a shaman whose magic often floundered against her fury. After a lifetime of raucous battle, it was old age that eventually claimed her. The sword was passed to her granddaughter, an adventurer, who presumably brought it to Amn.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +10%
+
+THAC0: +2
+Damage: 1d10+2, +4 extra vs. evil
+Damage type: Slashing
+Speed Factor: 8
+Proficiency Type: Two-handed sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+@6180 = ~Through arcane sorcery, the contradictory elements of fire and ice have been combined within this magnificent shortbow, and arrows shot by this shortbow are imbued by both elements when shot.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +15%
+– Fire Resistance: +15%
+
+Charge abilities:
+– Improved Haste once per day
+  Duration: 23 rounds
+  Area of Effect: The user
+
+THAC0: +4
+Damage: +1 fire and cold damage
+Speed Factor: 2
+Proficiency Type: Shortbow
+Type: Two-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6181 = ~Through arcane sorcery, the contradictory elements of fire and ice have been combined within this magnificent shortbow, and arrows shot by this shortbow are imbued by both elements when shot.
+
+The magical bowstring of Gond makes even this strongly enchanted shortbow more accurate and powerful.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +30%
+– Fire Resistance: +30%
+
+Charge abilities:
+– Improved Haste once per day
+  Duration: 23 rounds
+  Area of Effect: The user
+
+THAC0: +5
+Damage: +2 fire and cold damage
+Speed Factor: 1
+Proficiency Type: Shortbow
+Type: Two-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6182 = ~Makal of the Pine, a devious druid, carved this club and bonded it with the spirit of his wolverine companion. Like that tenacious creature, Gnasher is a dangerous weapon in the hands of a skilled user. When the club strikes, sharp splinters dig into the victim's flesh, causing extreme pain and even extra damage that continues for some time after the blow. Makal used the club successfully on several occasions, earning the anger of orc loggers threatening his forests.
+
+STATISTICS:
+
+Combat abilities:
+– Every hit inflicts pain, making living beings feel weakened for 1 round, suffering a penalty of 2 to THAC0 and AC, and a penalty of 2 to damage. This effect does not stack.
+
+THAC0: +2
+Damage: 1d6+2, slivers add 2 points piercing damage each round for 4 rounds
+Damage type: Crushing
+Speed Factor: 4
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@6190 = ~This blade bears the sigil of Tyr and is intended for his most fervent followers.
+
+STATISTICS:
+
+THAC0: +3
+Damage: 1d8+3, +6 extra vs. evil
+Damage type: Slashing
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+@6200 = ~Armor of Faith
+(Abjuration)
+
+Level: 1
+Sphere: Protection
+Range: 0
+Duration: 3 rounds + 1 round/level
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None
+
+The caster of the Armor of Faith receives significant protection against melee and magical attacks. This magical armor is a force of energy that absorbs or deflects a portion of the damage intended for the caster. At 1st level, the protection is 5%, and every 5 levels of the caster improves this by another 5%: For example, a 20th-level priest would have 25% of <PRO_HISHER> damage "absorbed" if protected by this spell. Finally, it applies an AC bonus of 2 for the duration.~
+
+@6210 = ~Abi-Dalzim's Horrid Wilting
+(Necromancy)
+
+Level: 8
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 8
+Area of Effect: 15-ft. radius
+Saving Throw: 1/2
+
+This spell evaporates moisture from the bodies of every living creature within the area of effect, inflicting 1d8 damage per level of the caster. Affected creatures are allowed a Saving Throw vs. Spell for half damage. This spell is especially devastating to water elementals and plant creatures (including fungal creatures such as Myconids), who receive a penalty of -2 to their Saving Throws and take always the maximum damage possible. This spell will not harm party members.~
+
+@6230 = ~This is a vicious weapon used by Neb, covered with old blood and coated in a poison that is both quick-acting and extremely deadly. Only the truly evil would dare to use this item on their own.
+
+STATISTICS:
+
+Combat abilities:
+– Target must save vs. Poison or suffer 2 points of damage per second for 10 seconds
+
+THAC0: +2
+Damage: 1d4+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6240 = ~Keldorn distinguished himself early in his career as a paladin and received this blade as a boon from Torm. It is exceptionally accurate, but also protects him in battle with a special Fireshield, and any that strike him while he wields it suffer Torm's wrath in the form of magical damage. None but Keldorn may use this sword.
+
+STATISTICS:
+
+Combat abilities:
+– It is considered a +3 weapon for the purposes of what it can hit
+
+Equipped abilities:
+– 5 points of magic damage to any who damage the wielder
+
+THAC0: +2
+Damage: 1d10+2 (slashing)
+Speed Factor: 8
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 5 Strength
+ 12 Intelligence
+
+Weight: 8~
+
+@6250 = ~This is Anomen's family shield, given to him by his father. In addition to magical protection, the shield radiates an aura that grants the wielder fire and cold resistance. To protect against ranged attacks, Anomen can use the shield to erect a field of energy. This protection from normal missiles can be used three times per day.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3
+– Fire Resistance: +30%
+– Cold Resistance: +30%
+
+Charge abilities:
+– Protection From Normal Missiles three times per day
+  Duration: 1 hour
+  Area of Effect: The wearer
+
+Weight: 7~
+
+@6260 = ~Sword of Arvoreen +3~
+@6261 = ~Another gift to Mazzy from Arvoreen, this short sword may only be used by halflings. The enchantments that exist within this sword give it the ability to slow any opponent struck by it.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to slow and stun
+
+Combat abilities:
+– Hit target's movement rate is slowed by 2 for 45 seconds (Save vs. Wand negates)
+
+THAC0: +3
+Damage: 1d6+3 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@6262 = ~Bow of Arvoreen +3~
+@6263 = ~This enchanted bow has been in Mazzy Fentan's possession for several years, given to her by her god, Arvoreen. It is usable only by halflings, granting a +3 bonus to hit rolls and a +1 to damage.
+
+Equipped abilities:
+– Increases attacks per round by 1/2 while holding it
+
+STATISTICS:
+
+Damage: +1
+THAC0: +3
+Speed Factor: 3
+Proficiency Type: Shortbow
+Type: Two-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+@6270 = ~This blade, although only lightly enchanted, has achieved a semblance of awareness, enough so that it allows only the thief known as Yoshimo to wield it. Any other than he cannot use this flawless katana in battle.
+
+Combat abilities:
+– Yoshimo wields it as if he is specialized in katanas, unless more highly specialized
+– +10% Critical Chance
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d10+1 (slashing)
+Speed Factor: 1
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 5~
+
+// only 1d12
+@6280 = ~The Unholy Reaver: Ir'revrykal
+This dark, two-handed sword radiates evil from a distance. The weapon is not just unholy, but unearthly as well. Long thought to be just a myth, the blade's infamy pervades the accounts of learned bards and ancient sages. According to these accounts, the githyanki wizard-smith Ir'mlar forged the blade many centuries ago in dark caverns deep beneath Tu'narath. This githyanki city floats in the Astral Plane upon the petrified corpse of a dead god known only as "the One in the Void." To craft the sword, Ir'mlar allegedly used the One's own bones, which consist of a metallic substance unknown on the Prime Material Plane. The smith then imbued the weapon with a fiendish entity whom some seers claim was a mighty prince of the lower plane of Carceri. Others claim the sword contains the One in the Void's own spirit, banished within the blade for crimes committed against other gods in past ages. In any case, Ir'revrykal possesses such an enmity against good that only blackguards committed to evil may wield it. Circular runes etched on the blade proclaim its name in ancient tir'su, the githyanki language. The runes translate roughly as "Pain-Servant."
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm
+
+Combat abilities:
+– 50% chance to Dispel Magic on each hit
+
+THAC0: +5
+Damage: 1d12+5, +5 extra vs. good creatures
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+// only dispel magic tweak
+@6281 = ~The Unholy Reaver: Ir'revrykal
+This dark, two-handed sword radiates evil from a distance. The weapon is not just unholy, but unearthly as well. Long thought to be just a myth, the blade's infamy pervades the accounts of learned bards and ancient sages. According to these accounts, the githyanki wizard-smith Ir'mlar forged the blade many centuries ago in dark caverns deep beneath Tu'narath. This githyanki city floats in the Astral Plane upon the petrified corpse of a dead god known only as "the One in the Void." To craft the sword, Ir'mlar allegedly used the One's own bones, which consist of a metallic substance unknown on the Prime Material Plane. The smith then imbued the weapon with a fiendish entity whom some seers claim was a mighty prince of the lower plane of Carceri. Others claim the sword contains the One in the Void's own spirit, banished within the blade for crimes committed against other gods in past ages. In any case, Ir'revrykal possesses such an enmity against good that only blackguards committed to evil may wield it. Circular runes etched on the blade proclaim its name in ancient tir'su, the githyanki language. The runes translate roughly as "Pain-Servant."
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm
+
+Combat abilities:
+– Dispel Magic at level 30 on each hit if a Save vs. Spell is failed
+
+THAC0: +5
+Damage: 1d10+5, +5 extra vs. good creatures
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+// both
+@6282 = ~The Unholy Reaver: Ir'revrykal
+This dark, two-handed sword radiates evil from a distance. The weapon is not just unholy, but unearthly as well. Long thought to be just a myth, the blade's infamy pervades the accounts of learned bards and ancient sages. According to these accounts, the githyanki wizard-smith Ir'mlar forged the blade many centuries ago in dark caverns deep beneath Tu'narath. This githyanki city floats in the Astral Plane upon the petrified corpse of a dead god known only as "the One in the Void." To craft the sword, Ir'mlar allegedly used the One's own bones, which consist of a metallic substance unknown on the Prime Material Plane. The smith then imbued the weapon with a fiendish entity whom some seers claim was a mighty prince of the lower plane of Carceri. Others claim the sword contains the One in the Void's own spirit, banished within the blade for crimes committed against other gods in past ages. In any case, Ir'revrykal possesses such an enmity against good that only blackguards committed to evil may wield it. Circular runes etched on the blade proclaim its name in ancient tir'su, the githyanki language. The runes translate roughly as "Pain-Servant."
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm
+
+Combat abilities:
+– Dispel Magic at level 30 on each hit if a Save vs. Spell is failed
+
+THAC0: +5
+Damage: 1d12+5, +5 extra vs. good creatures
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+@6290 = ~Grease
+(Conjuration/Summoning)
+
+Level: 1
+Range: 30 ft.
+Duration: 3 rounds + 1 round/level
+Casting Time: 1
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+A Grease spell covers a material surface with a slippery, highly flamable layer of a fatty, greasy nature. Any creature entering the area or caught in it when the spell is cast must save vs. Spell at +2 or slip and slide, unable to move effectively (80% slower). Those who successfully save can move, albeit slowly (25% slower), for the rest of the round (but will need to save vs. Spell again the following round). Regardless of whether they save against the effect or not, the oil will make them take 25% more fire damage for 1 round due to the volatile nature of the oils. Those who remain in the area are allowed a Saving Throw each round until they escape the area.
+
+Because this spell effectively simply conjures plain grease, it's not affected by Magic Resistance.~
+
+@6300 = ~Set Exploding Trap
+This ability allows the rogue to set a powerful trap that unleashes a fireball which causes 15d6 damage (Save vs. Spell for half damage) and will knock its victims off their feet.~
+
+@6310 = ~Quivering Palm
+The next successful attack forces the target to Save vs. Spell or die. At level 18 this Save gets a penalty of -1 and at level 26 it becomes -2. This special ability automatically modifies normal attacks; no targeting needs to be done.~
+
+@6320 = ~War Cry
+With a War Cry, the warrior emits a powerful and frightening yell that will panic all opponents in a 15-ft. radius if they don't make their Save vs. Spell at -2.~
+
+@6330 = ~Dak'kon's Zerth Blade +3~
+@6331 = ~This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the "Nameless One."
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Can memorize one extra 1st-, 2nd-, 3rd-, and 4th-level wizard spell
+
+THAC0: +3
+Damage: 1d10+3 (slashing)
+Speed Factor: 1
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+
+@6340 = ~The Mercykillers are a powerful faction based out of the planar city of Sigil. This ring is given out to Mercykiller assassins when they are sent out to punish those who have broken the laws of Sigil. Often these assassins will roam as far as the Prime Material Plane.
+
+STATISTICS:
+
+Equipped abilities:
+– Move Silently: +20%
+– Hide In Shadows: +20%
+– Set Traps: +20%
+– +5% critical hit, +1 THAC0 and Damage bonus (single-classed thieves only)
+
+Weight: 0~
+
+@6350 = ~Jerrod's Mace +3~
+@6351 = ~This was the favored weapon of the priest of Tempus named Jerrod. Jerrod sacrificed his life to save the town of Easthaven from the powerful devil known as Belhifet.
+
+STATISTICS:
+
+THAC0: +3, +6 vs. demons and devils
+Damage: 1d6+4, +6 vs. demons and devils
+Damage type: Crushing
+Speed Factor: 4
+Proficiency Type: Mace
+Type: One-handed
+
+Weight: 7~
+
+@6360 = ~Bone Club +3, +5 vs. undead~
+@6361 = ~This vicious club was created hundreds of years ago, reportedly by a shaman on a quest for revenge. His family had fallen to undead, and so personal was his rage that he amputated his own leg, using the femur for the body of the weapon. Magical runes empower it, though it is likely the sheer force of the shaman's hatred would have served on its own.
+
+STATISTICS:
+
+Combat abilities:
+– Acts as a +5 weapon against undead
+
+THAC0: +3, +5 vs. undead
+Damage: 1d6+3, +4 vs. undead, double vs. spectral undead
+Damage type: Crushing
+Speed Factor: 3
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@6370 = ~Taralash was a hunter renowned for his ability to track down even the fleetest of quarry by foot. Few animals ever escaped once he had them in the sights of his mighty longbow.
+
+STATISTICS:
+
+Combat abilities:
+– +2 damage against animals and other non-intelligent beasts, magical or otherwise.
+
+Equipped abilities:
+– Movement rate increased by 2 (base is 9)
+
+THAC0: +5
+Speed Factor: 3
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+@6371 = ~Taralash was a hunter renowned for his ability to track down even the fleetest of quarry by foot. Few animals ever escaped once he had them in the sights of his mighty longbow.
+
+The magical bowstring of Gond makes even the legendary longbow of Taralash more accurate and powerful.
+
+STATISTICS:
+
+Combat abilities:
+– +5 damage against animals and other non-intelligent beasts, magical or otherwise.
+
+Equipped abilities:
+– Movement rate increased by 5 (base is 9)
+
+THAC0: +6
+Damage: +1
+Speed Factor: 2
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 6 Strength
+
+Weight: 1~
+
+@6380 = ~The typical throwing dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. Unlike a dagger, this one has a smaller handle and is balanced perfectly. A thin coating of poison has been applied to each poisoned throwing dagger, making it a lethal tool in the hands of trained assassins.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target must save vs. Death at -2 or suffer 2 points of poison damage per second for 10 seconds
+
+Damage: 1d4 (missile)
+Speed Factor: 2
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
+
+@6390 = ~While working for the Shadow Thieves, Fargon Fol collected thousands of small poisonous snakes to create the Asp's Nest. Fargon took each snake and with her powerful magic she made a dart of each. She made the dart so that when it strikes its opponent, the snake returns to life, biting and inflicting poison damage on the target. The title Asp's Nest refers to the entire collection of darts, most of which have vanished, either destroyed in use or lost on a long forgotten battlefield.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target must save vs. Death at -4 or take 1 point of damage every 3 seconds until 40 Hit Points of damage has been inflicted
+
+THAC0: +1
+Damage: 1d3+1 (missile)
+Speed Factor: 1
+Proficiency Type: Dart
+Type: One-handed
+
+Weight: 0~
+
+@6400 = ~This type of staff is thoroughly linked to the image of the spellcasting profession, rare though it is. It is among the most powerful tools that a wizard can possess, the culmination of complex enchantments and endless study. This particular example is good in melee, grants invisibility, and offers protection from charms and evil. It can also cast Spell Trap and Dispel Magic and launch a Fireball-Lightning Bolt combination. The quintessential Mage item.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Invisibility
+– Immunity to charm
+– Protection From Evil
+
+Combat abilities:
+– Dispel Magic at level 30 on each hit if Save vs. Spell at -2 is failed
+
+Charge abilities:
+– Fireball-Lightning Bolt three times per day
+  Fireball: 10d6 fire damage to all in a 15-ft. radius (Save vs. Spell for half)
+  Lightning: 10d6 electrical damage to all in its path (Save vs. Spell for half)
+  Range: 150 ft.
+
+– Spell Trap once per day
+  Duration: 8 hours or until 30 spell levels have been trapped
+  Area of Effect: The user
+
+THAC0: +1 (strikes as a +5 weapon)
+Damage: 1d6+1 (crushing)
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 4~
