@@ -80,7 +80,7 @@
 @1318 = "Make Flame of the North +2 affect all evil, not just chaotic evil"
 @1319 = "Make Holy Sword of Tyr +3 affect all evil, not just chaotic evil"
 @1320 = "Make Flail of Ages +5 allow Haste and Improved Haste"
-@1321 = "Make Bone Club +2, +3 against undead's effect reflect the description bette and improve it slightly"
+@1321 = "Make Bone Club +2, +3 against undead's effect reflect the description better and improve it slightly"
 @1330 = "Make Darkfire Bow slightly more remarkable"
 @1340 = "Make Taralash +5 slightly more remarkable"
 @1341 = ~Make Hindo's Doom a +3 and +4 weapon~
@@ -465,7 +465,8 @@ Equipped abilities:
 STATISTICS:
 
 THAC0: +4
-Damage: 1d4+4 (piercing), +1d4 acid damage
+Damage: 1d4+4, +1d4 acid damage
+Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
 Type: One-handed
@@ -1679,3 +1680,23 @@ Requires:
  5 Strength
 
 Weight: 4~
+
+@6410 = ~This blade belonged to Dabbar, a long-dead servant of Bhaal that exercised control over his minions in the most brutal of ways. In addition to strengthening the mind against the guile of others, the sword absorbs life energy from an opponent with each successful hit, healing the user. Dabbar considered it a failure of his officers if he returned from battle in less than perfect health, and as the rest of the company watched, he would administer beatings until fully healed.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm and domination spells
+
+Combat abilities:
+– Each hit heals the wielder between to 1 to 5 points. It's more likely to heal less than more.
+
+THAC0: +2
+Damage: 1d8+2 (slashing)
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~

@@ -148,21 +148,6 @@ COPY_EXISTING ~SHAMMR.ITM~ ~override~
     END
 BUT_ONLY
 
-ACTION_IF !GAME_IS "bg2ee" BEGIN
-    COPY_EXISTING ~CDID213.ITM~ ~override~
-        LPF a7_auto_apply_spl_effect
-            INT_VAR
-                def_target = 1  // Self
-                def_timing = 2
-                def_parameter1 = 1
-                def_parameter2 = 0
-            STR_VAR
-                function_name = ~ADD_ITEM_EQEFFECT~
-                effect_codes  = ~op=1~
-        END
-    BUT_ONLY
-END
-
 COPY_EXISTING ~SHAMMR2.ITM~ ~override~
     LPF a7_auto_apply_spl_effect
         INT_VAR
@@ -270,18 +255,20 @@ COPY_EXISTING ~BLAKBLAD.ITM~ ~override~
     END
 BUT_ONLY
 
-COPY_EXISTING ~CDGOLIRO.ITM~ ~override~
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1  // Self
-            def_timing = 2
-            def_parameter1 = 0
-            def_parameter2 = 1
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes  = ~op=263~
-    END
-BUT_ONLY
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING ~CDGOLIRO.ITM~ ~override~
+        LPF a7_auto_apply_spl_effect
+            INT_VAR
+                def_target = 1  // Self
+                def_timing = 2
+                def_parameter1 = 0
+                def_parameter2 = 1
+            STR_VAR
+                function_name = ~ADD_ITEM_EQEFFECT~
+                effect_codes  = ~op=263~
+        END
+    BUT_ONLY
+END
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @170 DESIGNATED 170 GROUP @1
@@ -848,7 +835,7 @@ BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @410 DESIGNATED 410 GROUP @1
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE or EET"
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" "This mod was written for BG2EE or EET"
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
@@ -1456,17 +1443,17 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" "This mod was written for BGEE and BG
 
 COPY_EXISTING "DAGG16.itm" ~override~
     SAY UNIDENTIFIED_DESC @6380
-    LPF ALTER_ITEM_EFFECT
+    LPF ALTER_EFFECT
         INT_VAR
             check_headers = 1
             header_type = 2
             match_opcode = 25
             savebonus = "-2"
     END
-    LPF ALTER_ITEM_EFFECT
+    LPF ALTER_EFFECT
         INT_VAR
             check_headers = 1
-            header_type = 3
+            header_type = 2
             match_opcode = 142
             savebonus = "-2"
     END
@@ -1479,14 +1466,14 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" "This mod was written for BGEE and BG
 
 COPY_EXISTING "DART05.itm" ~override~
     SAY IDENTIFIED_DESC @6390
-    LPF ALTER_ITEM_EFFECT
+    LPF ALTER_EFFECT
         INT_VAR
             check_headers = 1
             header_type = 2
             match_opcode = 25
             savebonus = "-4"
     END
-    LPF ALTER_ITEM_EFFECT
+    LPF ALTER_EFFECT
         INT_VAR
             check_headers = 1
             header_type = 2
@@ -1842,6 +1829,7 @@ BUT_ONLY*/
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1210 DESIGNATED 1210 GROUP @2
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE/EET only"
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
@@ -1991,7 +1979,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE/EET only"
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING ~SW1H65.ITM~ ~override~
-    LPF ALTER_SPELL_EFFECT
+    LPF ALTER_EFFECT
         INT_VAR
             header_type = 3
             header = 2
@@ -3126,6 +3114,32 @@ INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY ~ZSTweaks/spl/daggers_default~ ~override~
 
+ADD_PROJECTILE ~ZSTweaks/pro/ZSTW_IND.PRO~
+
+COPY_EXISTING_REGEXP "ZSTWDP08.spl" ~override~ // spells to insert projectiles to (critical dagger effect)
+    LPF ALTER_HEADER
+        INT_VAR
+            match_type = 1
+            projectile = "%ZSTW_IND%"
+    END
+BUT_ONLY
+
+COPY_EXISTING_REGEXP "ZSTWDP1[02468]\.spl" ~override~ // spells to insert projectiles to (throwing daggers and darts)
+    LPF ALTER_HEADER
+        INT_VAR
+            match_type = 1
+            projectile = "%ZSTW_IND%"
+    END
+BUT_ONLY
+
+COPY_EXISTING_REGEXP "ZSTWDP20.spl" ~override~ // spells to insert projectiles to (critical dagger effect)
+    LPF ALTER_HEADER
+        INT_VAR
+            match_type = 1
+            projectile = "%ZSTW_IND%"
+    END
+BUT_ONLY
+
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
     READ_SHORT 0x31 wpn_prof
@@ -3204,6 +3218,52 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                     effect_codes = ~t=1,op=341,tgt=1,p2=1,tmg=2,res=ZSTWDP20~
             END
         END
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1500 DESIGNATED 1441 GROUP @2
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING "NPSW01.ITM" ~override~
+    SAY NAME2 @6260
+    SAY IDENTIFIED_DESC @6261
+    WRITE_LONG 0x60 4
+    LPF ALTER_HEADER
+        INT_VAR
+            type = 1
+            match_damage = 2
+            match_to_hit = 2
+            damage = 3
+            to_hit = 4
+            speed = 0
+    END
+    LPF a7_auto_apply_spl_effect
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=1,tgt=1,p1=6,tmg=2,rd=2~
+    END
+BUT_ONLY
+
+COPY_EXISTING "NPBOW.ITM" ~override~
+    SAY NAME2 @6262
+    SAY IDENTIFIED_DESC @6263
+    WRITE_LONG 0x60 3
+    LPF ALTER_HEADER
+        INT_VAR
+            type = 4
+            damage = 1
+            match_to_hit = 2
+            to_hit = 3
+    END
+    LPF a7_auto_apply_spl_effect
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=1,tgt=1,p1=6,tmg=2,rd=2~
     END
 BUT_ONLY
 
@@ -3363,7 +3423,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             END
             LPF weapon_damage_by_class
                 INT_VAR
-                    type = 1
+                    type = 2
                     probability1 = 60
                 STR_VAR
                     class = ~THIEF~
@@ -4205,6 +4265,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING "SW1H35.ITM" ~override~
+    SAY IDENTIFIED_DESC @6410
     LPF ALTER_ITEM_EFFECT
         INT_VAR
             check_headers = 1
@@ -4305,51 +4366,6 @@ COPY_EXISTING "NEBDAG.ITM" ~override~
     END
 BUT_ONLY
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1500 DESIGNATED 1500 GROUP @2
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
-COPY_EXISTING "NPSW01.ITM" ~override~
-    SAY NAME2 @6260
-    SAY IDENTIFIED_DESC @6261
-    WRITE_LONG 0x60 4
-    LPF ALTER_HEADER
-        INT_VAR
-            type = 1
-            match_damage = 2
-            match_to_hit = 2
-            damage = 3
-            to_hit = 4
-            speed = 0
-    END
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=1,tgt=1,p1=6,tmg=2,rd=2~
-    END
-BUT_ONLY
-
-COPY_EXISTING "NPBOW.ITM" ~override~
-    SAY NAME2 @6162
-    SAY IDENTIFIED_DESC @6163
-    WRITE_LONG 0x60 3
-    LPF ALTER_HEADER
-        INT_VAR
-            type = 4
-            damage = 1
-            match_to_hit = 2
-            to_hit = 3
-    END
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=1,tgt=1,p1=6,tmg=2,rd=2~
-    END
-BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1510 DESIGNATED 1510 GROUP @2
@@ -4474,7 +4490,7 @@ BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2120 DESIGNATED 2120 GROUP @3
-REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" "This mod was written for BGEE, BG2EE, and EET"
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BGEE, BG2EE, and EET"
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING "SPCL908.SPL" ~override~
@@ -4508,7 +4524,7 @@ BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2130 DESIGNATED 2130 GROUP @3
-REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" "This mod was written for BGEE, BG2EE, and EET"
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING "SPCL910B.SPL" ~override~
@@ -4524,7 +4540,7 @@ BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2140 DESIGNATED 2140 GROUP @3
-REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" "This mod was written for BGEE, BG2EE, and EET"
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING "SPCL911.SPL" ~override~
@@ -4543,7 +4559,7 @@ BUT_ONLY
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2150 DESIGNATED 2150 GROUP @3
-REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" "This mod was written for BGEE, BG2EE, and EET"
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING_REGEXP "SPCL90[47]\.SPL" ~override~
