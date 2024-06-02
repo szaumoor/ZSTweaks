@@ -233,7 +233,7 @@ Makes the chance-based Level drain take 2 levels instead of just one and the Ent
 
 Just as the title says. It's kinda funny considering the description of the weapon mentions Pit Fiends, which are Lawful Evil.
 
-**Component 1241:** Make Purifier's Dispel Magic be at level 30, like Staff of the Magi and Carsomyr
+**Component 1241:** Make Purifier's Dispel Magic level 30, like Staff of the Magi and Carsomyr
 
 This makes the dispel magic effect equal to those in the Staff of the Magi and Carsomyr.
 
@@ -478,7 +478,7 @@ The maximum damage will grow to 6d8 at level 12, and 6 damage to undead, which i
 
 **Component 2110:** Make Sun Soulbeam do more damage to undead: 12d6 instead of just 3 more damage than baseline.
 
-The difference between non-undead and undead in the original is 9d6 vs. 9d6+3. It's really not a meaningful. Therefore, the damage to undead will now 12d6, i.e. up to 72 damage instead of 57, which I think it's okay for a once-per-day ability anyway.
+The difference between non-undead and undead in the original is 9d6 vs. 9d6+3. It's really not a meaningful difference. Therefore, the damage to undead will now be 12d6, i.e. up to 72 damage instead of 57, which I think is okay for a once-per-day ability anyway.
 
 **Component 2120:** Make War Cry inflict fear with a -2 Saving Throw penalty
 
