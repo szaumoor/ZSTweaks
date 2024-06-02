@@ -73,7 +73,7 @@ Earthquake is generally very very inconvenient to be cast at any point because o
 
 **Component 260:** Make Negative Plane Protection's duration increase somewhat as you level up
 
-It only lasts 30 seconds, which might be insufficient for fights with vampires. Since it's a very powerful effect, the increases in duration are moderate, one round per 2 levels after level 7 up to 66 seconds at level.
+It only lasts 30 seconds, which might be insufficient for fights with vampires. Since it's a very powerful effect, the increases in duration are moderate, one round per 2 levels after level 7 up to 66 seconds at level 19.
 
 **Component 270:** Make Entangle's saving throws improve slightly at higher levels so it remains relevant for druids
 
@@ -235,7 +235,7 @@ Just as the title says. It's kinda funny considering the description of the weap
 
 **Component 1241:** Make Purifier's Dispel Magic be at level 30, like Staff of the Magi and Carsomyr
 
-Just as the title says. It's kinda funny considering the description of the weapon mentions Pit Fiends, which are Lawful Evil.
+This makes the dispel magic effect equal to those in the Staff of the Magi and Carsomyr.
 
 **Component 1250:** Make Yamato's passive abilities more substantial
 
@@ -383,7 +383,7 @@ I never liked that bastards swords were "between long swords and two-handed swor
 
 **Component 1410:** Make Ir'revrykal Dispel Magic effect not depend on probabilities, but allow a saving throw.
 
-This essentially is the same tweak to Carsomyr, except the chance of dispelling is also 100%. The saving throw is vs spell without a penalty.
+This essentially is the same tweak to Carsomyr, except the chance of dispelling is also 100%. The saving throw vs spell is without a penalty.
 
 **Component 1420:** Make Ir'revrykal base damage equal to Carsomyr
 
@@ -487,7 +487,7 @@ War Cry as an HLA is bad enough, but this makes it at least have a more reasonab
 
 Because it's rather strange that it does magic damage and makes you wonder why the thief would have the ability to do this. (To be fair, the same could be said for the Time Stop trap). Rogue Rebalancing also does this.
 
-**Component 2140:** Make Exploding Trap do slightly more damage: 12d6 as opposed to 10d6
+**Component 2140:** Make Exploding Trap do slightly more damage: 15d6 as opposed to 10d6
 
 I feel like 10d6, which is the same damage of the Fireball spell at max level, is very low for an HLA, so now it's 15d6.
 
