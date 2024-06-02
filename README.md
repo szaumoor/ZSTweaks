@@ -334,7 +334,7 @@ Self explanatory. I also removed the weird preamble that includes the first sent
 
 I think everyone agrees that this type of restriction makes the weapons immediately less appealing.
 
-**Component 1321:** Make Bone Club +2, +3 against undead's effect reflect the description bette and improve it slightly
+**Component 1321:** Make Bone Club +2, +3 against undead's effect reflect the description better and improve it slightly
 
 This makes the club slightly more powerful (+3 in all respects), is more shamanic, and more damaging to undead: acts as +5 against them, with THAC0 bonus of +5 against undead, undead take +4 damage, and spectral undead take +8
 
@@ -348,6 +348,7 @@ The +5 version literally just increases the THAC0 bonus by 1. That's a bit too b
 
 - Makes movement bonus increase to 5.
 - Adds a damage bonus of 1 like a regular composite bow
+- Animals and and other kind of unintelligent beasts, magical or not, take +2 and +5 damage (+4 and +5 version respectively)
 
 **Component 1341:** Make Hindo's Doom a +4 and +5 weapon
 
