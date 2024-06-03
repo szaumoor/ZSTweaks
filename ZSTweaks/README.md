@@ -3,8 +3,8 @@
 This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game, nothing more, nothing less.
 
 ---
-[To Item tweaks](#item-tweaks)
-[To Class/Kit tweaks](#class-and-kit-related-tweaks)
+[To Item tweaks](#item-tweaks) <br>
+[To Class/Kit tweaks](#class-and-kit-related-tweaks) <br>
 
 ---
 
@@ -157,8 +157,8 @@ As others have noted this spell is generally just less powerful than Dragon Brea
 
 ---
 
-[Back to Spell tweaks](#spell-tweaks)
-[To Class/Kit tweaks](#class-and-kit-related-tweaks)
+[Back to Spell tweaks](#spell-tweaks) <br>
+[To Class/Kit tweaks](#class-and-kit-related-tweaks) <br>
 
 ---
 
@@ -496,8 +496,8 @@ This will not update the descriptions, however. I don't have the skill to parse 
 
 ---
 
-[Back to Spell tweaks](#spell-tweaks)
-[Back to to Item Tweaks](#class-and-kit-related-tweaks)
+[Back to Spell tweaks](#spell-tweaks) <br>
+[Back to to Item Tweaks](#class-and-kit-related-tweaks) <br>
 
 ---
 
