@@ -1496,7 +1496,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_BYTE  0x31 wpn_prof
     READ_ASCII 0x22 wpn_appearance (2)
 
-	PATCH_IF wpn_cat == 20  AND (wpn_prof == 90 OR wpn_prof == 94 OR (wpn_prof == 95 AND wpn_appearance STRING_EQUAL_CASE "sc")) BEGIN // long swords, katanas or scimitars
+	PATCH_IF wpn_cat == 20  AND (wpn_prof == 90 OR wpn_prof == 94 OR (wpn_prof == 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "sc" = 0)) BEGIN // long swords, katanas or scimitars
         LPF a7_auto_apply_spl_effect
             STR_VAR
                 function_name = ~ADD_ITEM_EQEFFECT~
@@ -2843,7 +2843,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_BYTE  0x31 wpn_prof
     READ_ASCII 0x22 wpn_appearance (2)
 
-	PATCH_IF wpn_prof = 95 AND (wpn_appearance STRING_EQUAL_CASE "ss" OR wpn_appearance STRING_EQUAL_CASE "s1") BEGIN // wakizashis and ninjatos
+	PATCH_IF wpn_prof = 95 AND ("%wpn_appearance%" STRING_COMPARE_CASE "ss" = 0 OR "%wpn_appearance%" STRING_COMPARE_CASE "s1" = 0) BEGIN // wakizashis and ninjatos
         LPF ALTER_HEADER
             INT_VAR
                 silent = 1
@@ -3796,7 +3796,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
         END
     END // end staves
 
-    PATCH_IF wpn_cat = 20  AND (wpn_prof = 90 OR (wpn_prof = 95 AND wpn_appearance STRING_EQUAL_CASE "sc")) BEGIN // long swords and scimitars
+    PATCH_IF wpn_cat = 20  AND (wpn_prof = 90 OR (wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "sc" = 0)) BEGIN // long swords and scimitars
          PATCH_IF ench = 0 BEGIN
             LPF weapon_damage_by_class
                 INT_VAR
@@ -3869,7 +3869,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
         END
     END // end long swords and scimitars
 
-    PATCH_IF wpn_cat = 20  AND wpn_prof = 95 AND wpn_appearance STRING_EQUAL_CASE "s1" BEGIN // ninja-tos
+    PATCH_IF wpn_cat = 20  AND wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "s1" = 0 BEGIN // ninja-tos
          PATCH_IF ench = 0 BEGIN
             LPF weapon_damage_by_class
                 INT_VAR
@@ -4015,7 +4015,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
         END
     END // end katanas
 
-    PATCH_IF wpn_cat = 19  AND wpn_prof = 95 AND wpn_appearance STRING_EQUAL_CASE "ss" BEGIN // wakizashis
+    PATCH_IF wpn_cat = 19  AND wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "ss" = 0 BEGIN // wakizashis
          PATCH_IF ench = 0 BEGIN
             LPF weapon_damage_by_class
                 INT_VAR
