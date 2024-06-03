@@ -43,6 +43,7 @@
 @410 = ~Make Horrid Wilting actually be more effective against plants and Water Elementals~
 @420 = ~Make Armor of Faith also add a +2 AC bonus to make it useful at low levels~
 @430 = ~Make Grease bypass Magic Resistance, as it is as conjured substance, and apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description~
+@440 = ~Make comet bypass magic resistance and apply a mix of cold, fire and crushing damage~
 
 // ITEMS
 
@@ -85,6 +86,7 @@
 @1340 = "Make Taralash slightly more remarkable"
 @1341 = ~Make Hindo's Doom a +3 and +4 weapon~
 @1350 = "Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8"
+@1351 = "Make Wakizashis a piercing/slashing weapon"
 @1360 = "Make Light Crossbows get 1.5 APR"
 @1370 = "Make Katanas deal 2d5 instead of 1d10"
 @1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
@@ -970,7 +972,7 @@ Requires:
 
 Weight: 2~
 
-@6101 = ~Two Levels Drained~
+@6101 = ~Two Levels Drained~ // pointless... I should be checking for the STR existing in the game files already -- don't know how to yet!
 
 @6110 = ~The name of the mighty Wu Jen who fashioned this "companion sword" is long forgotten. However, the name Yamato, loosely translated, means "Guardian" or "Defender."
 
@@ -1700,3 +1702,38 @@ Requires:
  6 Strength
 
 Weight: 3~
+
+@6420 = ~Forged in antiquity by a cult devoted to the goddess Umberlee, this weapon of vengeance was designed to aid the cult's champion in retrieving a holy artifact from the fire giants of the Storm Horn Mountains. That was a lot of hope to place in one champion, and unfortunately the Wave had been lost ever since.
+
+STATISTICS:
+
+Combat abilities:
+– 15% chance of draining the victim of water (+15 cold damage)
+– Fire giants take +10 extra cold damage per hit
+– Slays fire elementals, efreet, and salamanders
+
+THAC0: +4
+Damage: 1d10+4, +2 cold damage, +10 against fire giants
+Damage type: Piercing or Slashing
+Speed Factor: 5
+Proficiency Type: Halberd
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 12~
+
+
+@6430 = ~Comet
+(Any School)
+
+Level: 10
+Range: 270 ft.
+Duration: Instant
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+This spell is a more powerful and specialized version of Meteor Swarm. A huge comet strikes the earth, damaging all enemies in its path and sending out a powerful shockwave that knocks away all foes in the area of effect. Those knocked down must save vs. Paralysis or be stunned for 3 rounds. The comet itself does 3d10 fire damage, 3d10 cold damage, and 4d10 crushing damage with no save or magic resistance allowed.
+
+This spell will not harm party members.~
