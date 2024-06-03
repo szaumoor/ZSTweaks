@@ -2,6 +2,12 @@
 
 This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game, nothing more, nothing less.
 
+---
+[1. To Item tweaks](#item-tweaks)
+[2. To Class/Kit tweaks](#class-and-kit-related-tweaks)
+
+---
+
 ## Spell tweaks
 
 **Component 100:** Make Glyph of Warding do damage on a failed save and extend damage up to level 20, and not 18
@@ -148,6 +154,13 @@ A very cool part other games using the Grease spell is that it actually primes t
 **Component 440:** Make Comet bypass magic resistance and apply a mix of cold, fire and crushing damage
 
 As others have noted this spell is generally just less powerful than Dragon Breath (the latter also is not affected by Magic Resistance). This is an attempt at making it more unique. As for the rationale, comets are cold and icy, hence the cold damage, but burn when in a collision path, hence the fire damage, and are big rocks, hence the crushing damage.
+
+---
+
+[Back to Spell tweaks](#spell-tweaks)
+[To Class/Kit tweaks](#class-and-kit-related-tweaks)
+
+---
 
 ## Item tweaks
 
@@ -368,7 +381,7 @@ This mostly exists to create a differentiating factor in terms of damage from lo
 
 Additionally this will make ninja-tos have a speed factor of 3 by default, like short swords and wakizashis, since they are technically short swords.
 
-**Component 1351:** Make Wakizashis be a piercing/slashing weapon
+**Component 1351:** Make Wakizashis a piercing/slashing weapon
 
 This makes wakizashis hit as a slashing weapon if the circumstances favor it. IRL it is really a slashing sword anyway, but I want to preserve the original damage type (which is better than slashing in most situations, especially against enemies that use wearable armor).
 
@@ -480,6 +493,13 @@ This extends the usability of the weapon, despite the lower damage, if the const
 This reduces the number of dice thrown of DAGG11 and DAGG12 to 1 so they are not the only good choice for daggers to maximize damage. And for consistency. Generally speaking I dislike a lot this sort of unbalanced design. DAGG11 specifically, already comformed to this rule in BGEE.
 
 This will not update the descriptions, however. I don't have the skill to parse strings like this with WeiDu.
+
+---
+
+[1. Back to Spell tweaks](#spell-tweaks)
+[2. Back to to Item Tweaks](#class-and-kit-related-tweaks)
+
+---
 
 ## Class and Kit-related tweaks
 
