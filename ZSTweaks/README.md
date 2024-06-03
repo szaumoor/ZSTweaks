@@ -3,8 +3,8 @@
 This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game, nothing more, nothing less.
 
 ---
-[1. To Item tweaks](#item-tweaks)
-[2. To Class/Kit tweaks](#class-and-kit-related-tweaks)
+[To Item tweaks](#item-tweaks)
+[To Class/Kit tweaks](#class-and-kit-related-tweaks)
 
 ---
 
@@ -496,8 +496,8 @@ This will not update the descriptions, however. I don't have the skill to parse 
 
 ---
 
-[1. Back to Spell tweaks](#spell-tweaks)
-[2. Back to to Item Tweaks](#class-and-kit-related-tweaks)
+[Back to Spell tweaks](#spell-tweaks)
+[Back to to Item Tweaks](#class-and-kit-related-tweaks)
 
 ---
 
