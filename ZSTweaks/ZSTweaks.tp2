@@ -1493,10 +1493,10 @@ INCLUDE ~ZSTweaks/libs/zs_correct_animations.tph~
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
 
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
     READ_ASCII 0x22 wpn_appearance (2)
 
-	PATCH_IF wpn_cat == 20  AND (wpn_prof == 90 OR wpn_prof == 94 OR (wpn_prof == 95 AND wpn_appearance STRING_EQUAL_CASE "sc")) BEGIN // long swords, katanas or scimitars
+	PATCH_IF wpn_cat == 20  AND (wpn_prof == 90 OR wpn_prof == 94 OR (wpn_prof == 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "sc" = 0)) BEGIN // long swords, katanas or scimitars
         LPF a7_auto_apply_spl_effect
             STR_VAR
                 function_name = ~ADD_ITEM_EQEFFECT~
@@ -1626,7 +1626,7 @@ INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
 
     PATCH_IF wpn_cat == 29  AND wpn_prof == 98 BEGIN // spears
         LPF ALTER_HEADER
@@ -1649,7 +1649,7 @@ INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
 
     PATCH_IF wpn_cat == 21  AND wpn_prof == 97 BEGIN // warhammers
         LPF ALTER_HEADER
@@ -2840,10 +2840,10 @@ INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 INCLUDE ~ZSTweaks/libs/zs_correct_animations.tph~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
     READ_ASCII 0x22 wpn_appearance (2)
 
-	PATCH_IF wpn_prof = 95 AND (wpn_appearance STRING_EQUAL_CASE "ss" OR wpn_appearance STRING_EQUAL_CASE "s1") BEGIN // wakizashis and ninjatos
+	PATCH_IF wpn_prof = 95 AND ("%wpn_appearance%" STRING_COMPARE_CASE "ss" = 0 OR "%wpn_appearance%" STRING_COMPARE_CASE "s1" = 0) BEGIN // wakizashis and ninjatos
         LPF ALTER_HEADER
             INT_VAR
                 silent = 1
@@ -2868,7 +2868,7 @@ BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
     READ_SHORT 0x26 min_str
     READ_LONG 0x08 name_strref
 
@@ -2891,7 +2891,7 @@ INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
     READ_SHORT 0x26 min_str
 
     PATCH_IF wpn_cat = 20  AND wpn_prof = 94 BEGIN // katanas
@@ -2978,7 +2978,7 @@ INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
 
 	PATCH_IF wpn_cat == 20  AND wpn_prof == 89 BEGIN // bastard swords
         LPF ALTER_HEADER
@@ -3076,7 +3076,7 @@ INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
 
     PATCH_IF wpn_cat = 20  AND wpn_prof = 93 BEGIN // two-handed swords
         LPF ALTER_HEADER
@@ -3141,7 +3141,7 @@ BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
     READ_SHORT 0x60 ench
 
 	PATCH_IF wpn_cat == 16  AND wpn_prof == 96 BEGIN // daggers
@@ -3221,7 +3221,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1500 DESIGNATED 1441 GROUP @2
+BEGIN @1500 DESIGNATED 1500 GROUP @2
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -3298,7 +3298,7 @@ BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
     READ_SHORT 0x60 ench
     READ_SHORT 0x22 wpn_appearance
 
@@ -3796,7 +3796,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
         END
     END // end staves
 
-    PATCH_IF wpn_cat = 20  AND (wpn_prof = 90 OR (wpn_prof = 95 AND wpn_appearance STRING_EQUAL_CASE "sc")) BEGIN // long swords and scimitars
+    PATCH_IF wpn_cat = 20  AND (wpn_prof = 90 OR (wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "sc" = 0)) BEGIN // long swords and scimitars
          PATCH_IF ench = 0 BEGIN
             LPF weapon_damage_by_class
                 INT_VAR
@@ -3869,7 +3869,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
         END
     END // end long swords and scimitars
 
-    PATCH_IF wpn_cat = 20  AND wpn_prof = 95 AND wpn_appearance STRING_EQUAL_CASE "s1" BEGIN // ninja-tos
+    PATCH_IF wpn_cat = 20  AND wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "s1" = 0 BEGIN // ninja-tos
          PATCH_IF ench = 0 BEGIN
             LPF weapon_damage_by_class
                 INT_VAR
@@ -4015,7 +4015,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
         END
     END // end katanas
 
-    PATCH_IF wpn_cat = 19  AND wpn_prof = 95 AND wpn_appearance STRING_EQUAL_CASE "ss" BEGIN // wakizashis
+    PATCH_IF wpn_cat = 19  AND wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "ss" = 0 BEGIN // wakizashis
          PATCH_IF ench = 0 BEGIN
             LPF weapon_damage_by_class
                 INT_VAR
