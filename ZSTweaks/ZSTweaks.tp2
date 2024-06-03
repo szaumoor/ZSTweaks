@@ -1493,7 +1493,7 @@ INCLUDE ~ZSTweaks/libs/zs_correct_animations.tph~
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
 
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
     READ_ASCII 0x22 wpn_appearance (2)
 
 	PATCH_IF wpn_cat == 20  AND (wpn_prof == 90 OR wpn_prof == 94 OR (wpn_prof == 95 AND wpn_appearance STRING_EQUAL_CASE "sc")) BEGIN // long swords, katanas or scimitars
@@ -1626,7 +1626,7 @@ INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
 
     PATCH_IF wpn_cat == 29  AND wpn_prof == 98 BEGIN // spears
         LPF ALTER_HEADER
@@ -1649,7 +1649,7 @@ INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
 
     PATCH_IF wpn_cat == 21  AND wpn_prof == 97 BEGIN // warhammers
         LPF ALTER_HEADER
@@ -2840,7 +2840,7 @@ INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 INCLUDE ~ZSTweaks/libs/zs_correct_animations.tph~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
     READ_ASCII 0x22 wpn_appearance (2)
 
 	PATCH_IF wpn_prof = 95 AND (wpn_appearance STRING_EQUAL_CASE "ss" OR wpn_appearance STRING_EQUAL_CASE "s1") BEGIN // wakizashis and ninjatos
@@ -2868,7 +2868,7 @@ BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
     READ_SHORT 0x26 min_str
     READ_LONG 0x08 name_strref
 
@@ -2891,7 +2891,7 @@ INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
     READ_SHORT 0x26 min_str
 
     PATCH_IF wpn_cat = 20  AND wpn_prof = 94 BEGIN // katanas
@@ -2978,7 +2978,7 @@ INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
 
 	PATCH_IF wpn_cat == 20  AND wpn_prof == 89 BEGIN // bastard swords
         LPF ALTER_HEADER
@@ -3076,7 +3076,7 @@ INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
 
     PATCH_IF wpn_cat = 20  AND wpn_prof = 93 BEGIN // two-handed swords
         LPF ALTER_HEADER
@@ -3141,7 +3141,7 @@ BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
     READ_SHORT 0x60 ench
 
 	PATCH_IF wpn_cat == 16  AND wpn_prof == 96 BEGIN // daggers
@@ -3298,7 +3298,7 @@ BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
-    READ_SHORT 0x31 wpn_prof
+    READ_BYTE  0x31 wpn_prof
     READ_SHORT 0x60 ench
     READ_SHORT 0x22 wpn_appearance
 
