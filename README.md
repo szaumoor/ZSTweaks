@@ -413,9 +413,9 @@ This is a small change to make daggers slightly more appealing on a general leve
 
 All these bonuses are additive. Note that this component will not update the descriptions of each dagger to reflect this change. Sorry, but I don't know how to code that in WeiDu.
 
-**Component 1450:** Make some rogue weapons have the chance of doing more damage if wielded by pure rogues (Finesse)
+**Component 1450:** Make some rogue weapons have the chance of doing more damage if wielded by pure thieves (Finesse)
 
-This component is an attempt at making pure Thieves and Bards more effective with a portion of thief-usable weapons without relying on stats, APR or proficiency points.
+This component is an attempt at making pure Thieves more effective with a portion of thief-usable weapons without relying on stats, APR or proficiency points.
 
 Essentially, when wielding a weapon they can use with what I call "finesse", which is a concept that I borrowed from NWN, they can deal extra damage per attack randomly (additively), based on the base attack damage of the weapon used (vanilla values). This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashis, ninja-tos, katanas, and short swords. It's hacky, as most things not quite supported by the game, but it works. To be more specific:
 
