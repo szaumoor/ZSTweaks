@@ -5,6 +5,7 @@ This mod is a compilation of tweaks that I think personally improve things as th
 ---
 [To Item tweaks](#item-tweaks) <br>
 [To Class/Kit tweaks](#class-and-kit-related-tweaks) <br>
+[To notes for users](#compatibility-and-installation-order) <br>
 
 ---
 
@@ -159,6 +160,7 @@ As others have noted this spell is generally just less powerful than Dragon Brea
 
 [Back to Spell tweaks](#spell-tweaks) <br>
 [To Class/Kit tweaks](#class-and-kit-related-tweaks) <br>
+[To notes for users](#compatibility-and-installation-order) <br>
 
 ---
 
@@ -502,6 +504,7 @@ This component improves Wave +4 by making it always deal 3 points of cold damage
 
 [Back to Spell tweaks](#spell-tweaks) <br>
 [Back to to Item Tweaks](#class-and-kit-related-tweaks) <br>
+[Notes for users](#compatibility-and-installation-order) <br>
 
 ---
 
@@ -557,6 +560,14 @@ Refer to component 2170 for reasons. Applies the same bonus to Bards, who also h
 
 This makes Poison Weapon more powerful and reliable at high levels. At level 17, the save penalty improves to -3, lasts for 27 seconds, and the immediate poison damage increases to 8. At level 21, the save penalty improves to -4, lasts for 30 seconds, and the immediate poison damage increases to 10.
 
+---
+
+[Back to Spell tweaks](#spell-tweaks) <br>
+[Back to Item tweaks](#item-tweaks) <br>
+[Back to Class/Kit tweaks](#class-and-kit-related-tweaks)
+****
+---
+
 ## Compatibility and Installation order
 
 This mod should generally be installed after mods that add items to the game. If installed after, the tweaks in this mod that affect them will not be able to affect those.
@@ -579,3 +590,9 @@ And feel free to offer feedback if there are any bugs, criticize the code and of
 - Thanks to the developers of WeiDu, including the documentation
 - And the IESDP, invaluable resource.
 - People on Discord generally for their help, and the great modders out there that allowed their WeiDu code to be available publicly, like jmerry, Camdawg, 11jo, Argent77, Ardanis, DavidW, SubtleDoctor, among others.
+
+---
+
+[Back to top](#zs-tweaks) <br>
+
+---
