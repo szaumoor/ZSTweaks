@@ -1,0 +1,33 @@
+DEFINE_ACTION_FUNCTION generate_rogue_thac0
+STR_VAR
+    class1 = ~~
+    class2 = ~~
+BEGIN
+    COPY_EXISTING ~thac0.2da~ ~override~
+        READ_2DA_ENTRIES_NOW thac0 1
+        FOR (row = 3; row < thac0; ++row) BEGIN
+            SET cthac0 = 20
+            SET reps = 0
+            READ_2DA_ENTRY_FORMER thac0 row 0 label
+            PATCH_IF ~%label%~ STR_EQ ~%class1%~ OR ~%label%~ STR_EQ ~%class2%~ BEGIN
+                SET_2DA_ENTRY_LATER thac0_out row 1 cthac0
+                SET iteration = 2
+                FOR (i = 1; i < cthac0 - 6; ++iteration) BEGIN
+                    SET num = cthac0 - i
+                    PATCH_IF (reps < 2) AND (num MODULO 2 != 0) THEN BEGIN
+                        reps += 1
+                    END ELSE BEGIN
+                        i += 1
+                        num = cthac0 - i
+                        reps = 1
+                    END
+                    SET_2DA_ENTRY_LATER thac0_out row iteration num
+                END
+                FOR (index = 23; index <= 40; ++index) BEGIN
+                    SET_2DA_ENTRY_LATER thac0_out row index 6
+                END
+            END
+        END
+        SET_2DA_ENTRIES_NOW thac0_out 1
+    BUT_ONLY
+END

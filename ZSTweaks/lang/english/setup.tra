@@ -105,6 +105,7 @@
 @1510 = ~Make Delryn's family shield become a +2 shield~
 @1520 = ~Make Hallowed Redeemer able to hit enemies immune to +3 weapons~
 @1530 = ~Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time~
+@1540 = ~Make Wave slightly more powerful~
 
 // KITS AND CLASSES
 
@@ -115,7 +116,9 @@
 @2140 = "Make Exploding Trap do slightly more damage: 12d6 as opposed to 10d6"
 @2150 = "Make selected kit HLAS unable to be breached"
 @2160 = ~Make Quivering Palm slightly more powerful at high levels~
-
+@2170 = ~Make the THAC0 progression of Thieves better and more streamlined, so they improve up to 6, like clerics~
+@2180 = ~Make the THAC0 progression of Bards better and more streamlined, so they improve up to 6, like clerics~
+@2190 = ~Make Poison Weapon improve couple of times more every 4 levels (level 17, and 21)~
 
 // NEW DESCRIPTIONS
 
@@ -1709,11 +1712,10 @@ STATISTICS:
 
 Combat abilities:
 – 15% chance of draining the victim of water (+15 cold damage)
-– Fire giants take +10 extra cold damage per hit
 – Slays fire elementals, efreet, and salamanders
 
 THAC0: +4
-Damage: 1d10+4, +2 cold damage, +10 against fire giants
+Damage: 1d10+4, +3 cold damage (tripled against giants)
 Damage type: Piercing or Slashing
 Speed Factor: 5
 Proficiency Type: Halberd
@@ -1737,3 +1739,13 @@ Saving Throw: Special
 This spell is a more powerful and specialized version of Meteor Swarm. A huge comet strikes the earth, damaging all enemies in its path and sending out a powerful shockwave that knocks away all foes in the area of effect. Those knocked down must save vs. Paralysis or be stunned for 3 rounds. The comet itself does 3d10 fire damage, 3d10 cold damage, and 4d10 crushing damage with no save or magic resistance allowed.
 
 This spell will not harm party members.~
+
+@6440 = ~Poison Weapon
+Each successful hit within the next 5 rounds will inject poison into the target. Each target can only be affected once per round. The amount of poison damage depends on the character's level:
+
+1st - Target suffers 1 poison damage per second for 6 seconds (Save vs. Death at +1 negates)
+5th - Target suffers 1 poison damage per second for 12 seconds (Save vs. Death negates), and also immediately suffers 2 poison damage (no save)
+9th - Target suffers 1 poison damage per second for 18 seconds (Save vs. Death at -1 negates), and also immediately suffers 4 poison damage (no save)
+13th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -2 negates), and also immediately suffers 6 poison damage (no save)
+17th - Target suffers 1 poison damage per second for 27 seconds (Save vs. Death at -3 negates), and also immediately suffers 8 poison damage (no save)
+21th - Target suffers 1 poison damage per second for 30 seconds (Save vs. Death at -4 negates), and also immediately suffers 10 poison damage (no save)~

@@ -494,6 +494,10 @@ This reduces the number of dice thrown of DAGG11 and DAGG12 to 1 so they are not
 
 This will not update the descriptions, however. I don't have the skill to parse strings like this with WeiDu.
 
+**Component 1540:** Make Wave +4 slightly more powerful
+
+This component improves Wave +4 by making it always deal 3 points of cold damage per hit. Giants take 9 cold damage instead, since it was made to fight fire giants. This may make it a fine choice for a weapon for a big portion of ToB.
+
 ---
 
 [Back to Spell tweaks](#spell-tweaks) <br>
@@ -540,6 +544,18 @@ Therefore, the following abilities are no longer breachable:
 **Component 2160:** Make Quivering Palm slightly more powerful at high levels
 
 I really dislike things that scale poorly or not at all. This makes Quivering Palm saving throw penalty improve to -1 at level 18 and to -2 at level 26.
+
+**Component 2170:** Make the THAC0 progression of Thieves better and more streamlined, so they improve up to 6, like clerics
+
+Among many of the manifestations of the Baldur's Gate's series undying hate for thieves is that their THAC0 sucks. A LOT. Barely better than wizards. This improves the progression such that it can reach 6, like clerics. The progression follows this type of sequence: 20-19-19-18-17-17-16-15-15-14....
+
+**Component 2180:** Make the THAC0 progression of Bards better and more streamlined, so they improve up to 6, like clerics
+
+Refer to component 2170 for reasons. Applies the same bonus to Bards, who also have had their power sucked away by the game.
+
+**Component 2190:** Make Poison Weapon improve couple of times more every 4 levels (level 17, and 21)
+
+This makes Poison Weapon more powerful and reliable at high levels. At level 17, the save penalty improves to -3, lasts for 27 seconds, and the immediate poison damage increases to 8. At level 21, the save penalty improves to -4, lasts for 30 seconds, and the immediate poison damage increases to 10.
 
 ## Compatibility and Installation order
 
