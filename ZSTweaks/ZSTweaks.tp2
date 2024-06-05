@@ -1451,7 +1451,8 @@ COPY_EXISTING ~SPWI925.SPL~ ~override~
         INT_VAR
             check_headers = 1
             match_opcode = 12
-            dicenumber = 3
+            parameter1 = 10
+            dicenumber = 2
     END
     SET cold = (2 << 16)
     LPF ADD_SPELL_EFFECT // crushing
@@ -1460,7 +1461,8 @@ COPY_EXISTING ~SPWI925.SPL~ ~override~
             target = 2
             opcode = 12
             dicesize = 10
-            dicenumber = 4
+            dicenumber = 3
+            parameter1 = 10
             timing = 1
             power = 9
             savingthrow = 16777216 // bypass mirror image (only EE)
@@ -1471,11 +1473,198 @@ COPY_EXISTING ~SPWI925.SPL~ ~override~
             target = 2
             opcode = 12
             dicesize = 10
-            dicenumber = 3
+            dicenumber = 2
+            parameter1 = 10
             parameter2 = cold
             timing = 1
             power = 9
             savingthrow = 16777216 // bypass mirror image (only EE)
+    END
+BUT_ONLY
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @450 DESIGNATED 450 GROUP @1
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" "This component is available for IWDEE, BGEE, BG2EE and EET"
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
+
+COPY_EXISTING ~SPPR103.SPL~ ~override~
+    PATCH_IF GAME_IS "iwdee" BEGIN
+        SAY UNIDENTIFIED_DESC @6471
+    END ELSE BEGIN
+        SAY UNIDENTIFIED_DESC @6470
+    END
+    SET base_heal = 9
+    FOR ( number = 1; number <= 4; ++number ) BEGIN
+        LPF ADD_SPELL_HEADER
+            INT_VAR
+                copy_header = 1
+                zs_min_level_for_copy = number + 1
+        END
+        LPF ALTER_SPELL_EFFECT
+            INT_VAR
+                header = number + 1
+                match_opcode = 17
+                parameter1 = base_heal
+        END
+        ++base_heal
+    END
+BUT_ONLY
+
+ACTION_IF FILE_EXISTS ~SPPR217.SPL~ BEGIN
+    COPY_EXISTING ~SPPR103.SPL~ ~override~
+        SAY UNIDENTIFIED_DESC @6473
+        SET base_heal = 13
+        LPF ALTER_SPELL_EFFECT
+        INT_VAR
+            header = 1
+            match_opcode = 17
+            parameter1 = base_heal
+        END
+        base_heal += 2
+        SET current_header = 2
+        FOR ( number = 4; number < 8; ++number ) BEGIN
+            SET heal_jump = 1
+            PATCH_IF number <= 5 BEGIN
+                SET heal_jump = 2
+            END
+            LPF ADD_SPELL_HEADER
+                INT_VAR
+                    copy_header = 1
+                    zs_min_level_for_copy = number + 1
+            END
+            LPF ALTER_SPELL_EFFECT
+                INT_VAR
+                    header = current_header
+                    match_opcode = 17
+                    parameter1 = base_heal
+            END
+            base_heal += jump
+            ++current_header
+        END
+    BUT_ONLY
+END
+
+COPY_EXISTING ~SPPR315.SPL~ ~override~
+    PATCH_IF GAME_IS "iwdee" BEGIN
+        SAY UNIDENTIFIED_DESC @6474
+    END ELSE BEGIN
+        SAY UNIDENTIFIED_DESC @6473
+    END
+    SET base_heal = 20
+    LPF ALTER_SPELL_EFFECT
+        INT_VAR
+            header = 1
+            match_opcode = 17
+            parameter1 = base_heal
+    END
+    base_heal += 2
+    SET current_header = 2
+    FOR ( number = 6; number < 10; ++number ) BEGIN
+        LPF ADD_SPELL_HEADER
+            INT_VAR
+                copy_header = 1
+                zs_min_level_for_copy = number
+        END
+        LPF ALTER_SPELL_EFFECT
+            INT_VAR
+                header = current_header
+                match_opcode = 17
+                parameter1 = base_heal
+        END
+        base_heal+=2
+        ++current_header
+    END
+BUT_ONLY
+
+COPY_EXISTING ~SPPR401.SPL~ ~override~
+    PATCH_IF GAME_IS "iwdee" BEGIN
+        SAY UNIDENTIFIED_DESC @6476
+    END ELSE BEGIN
+        SAY UNIDENTIFIED_DESC @6475
+    END
+    SET base_heal = 30
+    LPF ALTER_SPELL_EFFECT
+        INT_VAR
+            header = 1
+            match_opcode = 17
+            parameter1 = base_heal
+    END
+    base_heal += 3
+    SET current_header = 2
+    FOR ( number = 8; number < 12; ++number ) BEGIN
+        SET heal_jump = 2
+        PATCH_IF number <= 10 BEGIN
+            SET heal_jump = 3
+        END
+        LPF ADD_SPELL_HEADER
+            INT_VAR
+                copy_header = 1
+                zs_min_level_for_copy = number
+        END
+        LPF ALTER_SPELL_EFFECT
+            INT_VAR
+                header = current_header
+                match_opcode = 17
+                parameter1 = base_heal
+        END
+        base_heal+=heal_jump
+        ++current_header
+    END
+BUT_ONLY
+
+COPY_EXISTING ~SPPR502.SPL~ ~override~
+    PATCH_IF GAME_IS "iwdee" BEGIN
+        SAY UNIDENTIFIED_DESC @6478
+    END ELSE BEGIN
+        SAY UNIDENTIFIED_DESC @6477
+    END
+    SET base_heal = 42
+    LPF ALTER_SPELL_EFFECT
+        INT_VAR
+            header = 1
+            match_opcode = 17
+            parameter1 = base_heal
+    END
+    base_heal += 3
+    SET current_header = 2
+    FOR ( number = 10; number < 14; ++number ) BEGIN
+        LPF ADD_SPELL_HEADER
+            INT_VAR
+                copy_header = 1
+                zs_min_level_for_copy = number
+        END
+        LPF ALTER_SPELL_EFFECT
+            INT_VAR
+                header = current_header
+                match_opcode = 17
+                parameter1 = base_heal
+        END
+        base_heal+=3
+        ++current_header
+    END
+BUT_ONLY
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @460 DESIGNATED 460 GROUP @1
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" "This mod was written for BG2EE and EET"
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+
+COPY_EXISTING ~SPPR514.SPL~ ~override~
+    SAY UNIDENTIFIED_DESC @6480
+    LPF ALTER_SPELL_EFFECT
+        INT_VAR
+            match_opcode = 17
+            dicenumber = 4
+            dicesize = 3
+    END
+    LPF ALTER_HEADER
+        INT_VAR
+            type = 1
+            speed = 2
     END
 BUT_ONLY
 
@@ -1632,7 +1821,7 @@ COPY_EXISTING ~DAGG21.ITM~ ~override~
         INT_VAR
             check_headers = 1
             match_opcode = 20
-            probability1 = 10
+            probability1 = 9
     END
 BUT_ONLY
 
@@ -1646,7 +1835,12 @@ COPY_EXISTING ~DAGG22.ITM~ ~override~
             damage_bonus = 6
             thac0_bonus = 6
     END
-
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 20
+            probability1 = 14
+    END
     SET fire = (8 << 16)
     SET electricity = (4 << 16)
      LPF a7_auto_apply_spl_effect
@@ -1658,7 +1852,7 @@ COPY_EXISTING ~DAGG22.ITM~ ~override~
             def_type = 1
         STR_VAR
             function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~op=12,p2=%fire%,pro1=93,pro2=88;op=12,p2=%electricity%,pro1=87,pro2=83~
+            effect_codes = ~op=12,p2=%fire%,pro1=93,pro2=89;op=12,p2=%electricity%,pro1=88,pro2=84~
     END
 BUT_ONLY
 
@@ -1941,8 +2135,8 @@ COPY_EXISTING ~SW1H59.ITM~ ~override~
             check_headers = 1
             match_opcode = 216
             parameter1 = 2
-            probability1 = 21
-            probability2 = 35
+            probability1 = 20
+            probability2 = 34
     END
     /*SET tlk_index = RESOLVE_STR_REF (@6101)
     LPF ALTER_ITEM_EFFECT
@@ -1958,38 +2152,38 @@ COPY_EXISTING ~SW1H59.ITM~ ~override~
         INT_VAR
             check_headers = 1
             match_opcode = 141
-            probability1 = 21
-            probability2 = 35
+            probability1 = 20
+            probability2 = 34
     END
     LPF ALTER_ITEM_EFFECT
         INT_VAR
             check_headers = 1
             match_opcode = 0
-            probability1 = 20
+            probability1 = 19
     END
     LPF ALTER_ITEM_EFFECT
         INT_VAR
             check_headers = 1
             match_opcode = 126
-            probability1 = 20
+            probability1 = 19
     END
     LPF ALTER_ITEM_EFFECT
         INT_VAR
             check_headers = 1
             match_opcode = 154
-            probability1 = 20
+            probability1 = 19
     END
     LPF ALTER_ITEM_EFFECT
         INT_VAR
             check_headers = 1
             match_opcode = 142
-            probability1 = 20
+            probability1 = 19
     END
     LPF ALTER_ITEM_EFFECT
         INT_VAR
             check_headers = 1
             match_opcode = 174
-            probability1 = 20
+            probability1 = 19
     END
 BUT_ONLY
 
@@ -3355,7 +3549,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWD0~
@@ -3363,7 +3557,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWZ0~
@@ -3373,7 +3567,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWD1~
@@ -3381,7 +3575,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWZ1~
@@ -3391,7 +3585,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWD2~
@@ -3399,7 +3593,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWZ2~
@@ -3409,7 +3603,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWD3~
@@ -3417,7 +3611,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
              LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWZ3~
@@ -3427,7 +3621,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWD4~
@@ -3435,7 +3629,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWZ4~
@@ -3445,7 +3639,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWD5~
@@ -3453,7 +3647,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWZ5~
@@ -3463,7 +3657,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWD6~
@@ -3471,7 +3665,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWD6~
@@ -3484,7 +3678,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 45
+                    probability1 = 44
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWS0~
@@ -3494,7 +3688,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 45
+                    probability1 = 44
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWS1~
@@ -3504,7 +3698,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 45
+                    probability1 = 44
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWS2~
@@ -3514,7 +3708,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 45
+                    probability1 = 44
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWS3~
@@ -3524,7 +3718,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 45
+                    probability1 = 44
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWS4~
@@ -3534,7 +3728,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 45
+                    probability1 = 44
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWS5~
@@ -3544,7 +3738,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 45
+                    probability1 = 44
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWS6~
@@ -3557,7 +3751,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 45
+                    probability1 = 44
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWA0~
@@ -3569,7 +3763,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWB0~
@@ -3581,7 +3775,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWT0~
@@ -3591,7 +3785,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWT1~
@@ -3601,7 +3795,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWT2~
@@ -3611,7 +3805,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWT3~
@@ -3621,7 +3815,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWT4~
@@ -3631,7 +3825,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWT5~
@@ -3641,7 +3835,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
-                    probability1 = 60
+                    probability1 = 59
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWT6~
@@ -3654,7 +3848,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 10
+                    probability1 = 9
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWQ0~
@@ -3664,7 +3858,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 10
+                    probability1 = 9
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWQ1~
@@ -3674,7 +3868,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 10
+                    probability1 = 9
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWQ2~
@@ -3684,7 +3878,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 10
+                    probability1 = 9
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWQ3~
@@ -3694,7 +3888,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 10
+                    probability1 = 9
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWQ4~
@@ -3704,7 +3898,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 10
+                    probability1 = 9
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWQ5~
@@ -3714,7 +3908,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 10
+                    probability1 = 9
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWQ6~
@@ -3727,7 +3921,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 10
+                    probability1 = 9
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWL0~
@@ -3737,7 +3931,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 10
+                    probability1 = 9
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWL1~
@@ -3747,7 +3941,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 10
+                    probability1 = 9
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWL2~
@@ -3757,7 +3951,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 10
+                    probability1 = 9
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWL3~
@@ -3767,7 +3961,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 10
+                    probability1 = 9
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWL4~
@@ -3777,7 +3971,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 10
+                    probability1 = 9
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWL5~
@@ -3787,7 +3981,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 10
+                    probability1 = 9
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWL6~
@@ -3800,7 +3994,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 25
+                    probability1 = 24
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWL0~
@@ -3810,7 +4004,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 25
+                    probability1 = 24
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWL1~
@@ -3820,7 +4014,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 25
+                    probability1 = 24
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWL2~
@@ -3830,7 +4024,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 25
+                    probability1 = 24
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWL3~
@@ -3840,7 +4034,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 25
+                    probability1 = 24
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWL4~
@@ -3850,7 +4044,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 25
+                    probability1 = 24
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWL5~
@@ -3860,7 +4054,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 25
+                    probability1 = 24
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWL6~
@@ -3873,7 +4067,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 15
+                    probability1 = 14
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWK0~
@@ -3883,7 +4077,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 15
+                    probability1 = 14
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWK1~
@@ -3893,7 +4087,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 15
+                    probability1 = 14
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWK2~
@@ -3903,7 +4097,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 15
+                    probability1 = 14
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWK3~
@@ -3913,7 +4107,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 15
+                    probability1 = 14
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWK4~
@@ -3923,7 +4117,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 15
+                    probability1 = 14
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWK5~
@@ -3933,7 +4127,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 15
+                    probability1 = 14
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWK6~
@@ -3946,7 +4140,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 25
+                    probability1 = 24
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWW0~
@@ -3956,7 +4150,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 25
+                    probability1 = 24
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWW1~
@@ -3966,7 +4160,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 25
+                    probability1 = 24
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWW2~
@@ -3976,7 +4170,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 25
+                    probability1 = 24
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWW3~
@@ -3986,7 +4180,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 25
+                    probability1 = 24
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWW4~
@@ -3996,7 +4190,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 25
+                    probability1 = 24
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWW5~
@@ -4006,7 +4200,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 25
+                    probability1 = 24
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWW6~
@@ -4019,7 +4213,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 35
+                    probability1 = 34
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWY0~
@@ -4029,7 +4223,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 35
+                    probability1 = 34
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWY1~
@@ -4039,7 +4233,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 35
+                    probability1 = 34
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWY2~
@@ -4049,7 +4243,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 35
+                    probability1 = 34
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWY3~
@@ -4059,7 +4253,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 35
+                    probability1 = 34
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWY4~
@@ -4069,7 +4263,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 35
+                    probability1 = 34
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWY5~
@@ -4079,7 +4273,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 35
+                    probability1 = 34
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWY6~
@@ -4092,7 +4286,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 35
+                    probability1 = 34
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWQ0~
@@ -4102,7 +4296,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 35
+                    probability1 = 34
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWQ1~
@@ -4112,7 +4306,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 35
+                    probability1 = 34
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWQ2~
@@ -4122,7 +4316,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 35
+                    probability1 = 34
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWQ3~
@@ -4132,7 +4326,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 35
+                    probability1 = 34
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWQ4~
@@ -4142,7 +4336,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 35
+                    probability1 = 34
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWQ5~
@@ -4152,7 +4346,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 1
-                    probability1 = 35
+                    probability1 = 34
                 STR_VAR
                     class = ~THIEF~
                     spell = ~ZSTWQ6~
@@ -4194,7 +4388,7 @@ COPY_EXISTING "SW1H35.ITM" ~override~
         INT_VAR
             check_headers = 1
             match_opcode = 17
-            probability1 = 50
+            probability1 = 49
     END
     LPF ADD_ITEM_EFFECT
         INT_VAR
@@ -4203,8 +4397,8 @@ COPY_EXISTING "SW1H35.ITM" ~override~
             insert_point = 0
             type = 1
             opcode = 17
-            probability1 = 70
-            probability2 = 51
+            probability1 = 69
+            probability2 = 50
             power = 1
             parameter1 = 2
     END
@@ -4215,8 +4409,8 @@ COPY_EXISTING "SW1H35.ITM" ~override~
             insert_point = 0
             type = 1
             opcode = 17
-            probability1 = 85
-            probability2 = 71
+            probability1 = 84
+            probability2 = 70
             power = 1
             parameter1 = 3
     END
@@ -4227,8 +4421,8 @@ COPY_EXISTING "SW1H35.ITM" ~override~
             insert_point = 0
             type = 1
             opcode = 17
-            probability1 = 95
-            probability2 = 86
+            probability1 = 94
+            probability2 = 85
             power = 1
             parameter1 = 4
     END
@@ -4240,7 +4434,7 @@ COPY_EXISTING "SW1H35.ITM" ~override~
             type = 1
             opcode = 17
             probability1 = 100
-            probability2 = 96
+            probability2 = 95
             power = 1
             parameter1 = 5
     END
@@ -4407,6 +4601,157 @@ COPY_EXISTING "HALB09.ITM" ~override~
         STR_VAR
             function_name = ~ADD_ITEM_EFFECT~
             effect_codes = ~op=12,p1=3,p2=%cold%;op=177,p1=142,p2=4,res=ZSTWWAVE~
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1550 DESIGNATED 1550 GROUP @2
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+COPY ~ZSTweaks/spl/other/ZSTWDRZB.SPL~ ~override~
+
+COPY_EXISTING "SW1H15.ITM" ~override~
+    SAY IDENTIFIED_DESC @6490
+    SET cold = (2 << 16)
+    WRITE_LONG 0x60 5 // ench
+    WRITE_LONG 0x18 (LONG_AT 0x18) + 2**8 // silver
+    LPF ALTER_HEADER
+        INT_VAR
+            type = 1
+            to_hit = 5
+    END
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_type = 1
+            def_target = 2
+            def_timing = 9
+        STR_VAR
+            function_name = ~ADD_ITEM_EFFECT~
+            effect_codes = ~op=12,p2=%cold%,dnum=1,dsize=3;op=326,p2=3,res=ZSTWDRZB~
+    END
+BUT_ONLY
+
+COPY_EXISTING "SW1H16.ITM" ~override~
+    SAY IDENTIFIED_DESC @6500
+    WRITE_LONG 0x60 5 // already considered +5, adding it just in case
+    LPF ALTER_HEADER
+        INT_VAR
+            type = 1
+            to_hit = 5
+    END
+    SET ac_except_crushing = 2**1 + 2**2 + 2**3
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1
+            def_timing = 2
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=0,p1=2,p2=%ac_except_crushing%;op=37,p1=1;op=86,p1=8;op=87,p1=8;op=88,p1=8;op=89,p1=8~
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1560 DESIGNATED 1560 GROUP @2
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING "bdbelt02.ITM" ~override~
+    SAY IDENTIFIED_DESC @6510
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1
+            def_timing = 2
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=332,p1=10,p2=8~
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1570 DESIGNATED 1570 GROUP @2
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING "ohreyeb.ITM" ~override~
+    SAY IDENTIFIED_DESC @6520
+BUT_ONLY
+
+COPY_EXISTING "ohreyeb1.SPL" ~override~
+    LPF ALTER_EFFECT
+        INT_VAR
+            check_globals = 0
+            header_type = 1
+            match_savingthrow = 1
+            savebonus = "-2"
+    END
+BUT_ONLY
+
+COPY_EXISTING "ohreyeb2.SPL" ~override~
+    LPF ALTER_EFFECT
+        INT_VAR
+            check_globals = 0
+            header_type = 1
+            match_savingthrow = 1
+            savebonus = "-1"
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1600 DESIGNATED 1600 GROUP @2
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING "ohntank.ITM" ~override~
+    SAY UNIDENTIFIED_DESC @6450
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            header_type = 3
+            match_opcode = 17
+            dicesize = 0
+            dicenumber = 0
+            parameter1 = 27
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1610 DESIGNATED 1610 GROUP @2
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING "ohnrobe2.ITM" ~override~
+    SAY IDENTIFIED_DESC @6530
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1
+            def_timing = 2
+            def_parameter1 = 5
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=332,p2=1;op=332,p2=2;op=332,p2=3;op=332,p2=4;op=346,p1=2,spec=6~
+    END
+BUT_ONLY
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1620 DESIGNATED 1620 GROUP @2
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING "ohnhelm1.ITM" ~override~
+    SAY IDENTIFIED_DESC @6460
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 281
+            parameter1 = 25
     END
 BUT_ONLY
 

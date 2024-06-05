@@ -1,4 +1,4 @@
-# ZS Tweaks
+# ZSTweaks
 
 This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game, nothing more, nothing less.
 
@@ -154,7 +154,23 @@ A very cool part other games using the Grease spell is that it actually primes t
 
 **Component 440:** Make Comet bypass magic resistance and apply a mix of cold, fire and crushing damage
 
-As others have noted this spell is generally just less powerful than Dragon Breath (the latter also is not affected by Magic Resistance). This is an attempt at making it more unique. As for the rationale, comets are cold and icy, hence the cold damage, but burn when in a collision path, hence the fire damage, and are big rocks, hence the crushing damage.
+As others have noted this spell is generally just less powerful than Dragon Breath (the latter also is not affected by Magic Resistance). This is an attempt at making it more unique. As for the rationale, comets are cold and icy, hence the cold damage, but burn when in a collision path, hence the fire damage, and are big rocks, hence the crushing damage. The breakdown of damage is: 2d10+10 cold, 2d10+10 fire, 3d10+10 crushing,
+
+**Component 450:** Make single-target healing spells other than Heal worth using
+
+Healing spells are infamously bad in BG/BG2, they heal too little for such a slow cast, and they don't improve with level. With this tweak:
+
+- Cure Light Wounds: Heals 8 points plus 1 more point per level, up to 12.
+- Cure Moderate Wounds: Heals 13 points plus 2 points the first 2 levels, and 1 point on next 2, up to 19 (requires IWDEE's spell present)
+- Cure Medium Wounds: Heals 20 points plus 2 more point per level, up to 28.
+- Cure Serious Wounds: Heals 30 points plus 3 more point in the next two levels, 2 on the next two, up to 40.
+- Cure Critical Wounds: Heals 42 points plus 3 more point per level, up to 54.
+
+I also hate the name of the spells. Mostly because "light wounds" is completely relative to your HP level. "Light heal" might be better. Maybe I'll change that at some point. This Tweak is similar to one found in ToF and SCS.
+
+**Component 460:** Make Mass Heal faster to cast and heal a bit more
+
+This improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32).
 
 ---
 
@@ -500,6 +516,42 @@ This will not update the descriptions, however. I don't have the skill to parse 
 
 This component improves Wave +4 by making it always deal 3 points of cold damage per hit. Giants take 9 cold damage instead, since it was made to fight fire giants. This may make it a fine choice for a weapon for a big portion of ToB.
 
+**Component 1550** Make Drizzt's weapon slightly more worth stealing in BG2
+
+By the time you get this weapon in BG2, it's generally underwhelming and you have better weapons already. This improves his weapon in a few ways, trying to not to stray too much from the lore:
+
+- Both: act as a +5 weapon for the purposes of what they can hit and in terms of THAC0
+- Icingdeath: it's a "frost" weapon, and as such, it also inflicts 1d3 cold damage per hit, +5 against creatures immune to fire (fire elementals, fire salamanders, fire giants...). It's also considered a silver weapon.
+- Twinkle: it has a defensive theme, therefore: added +2 bonus against slashing, piercing and missile, +1 Save vs. Spell, +8% physical damage resistance
+
+**Component 1560:** Make Belt of Skillful Blade also increase piercing damage by 10%
+
+This makes the belt include piercing damage, such that it affect things like daggers, short swords and wakizashis.
+
+**Component 1570:** Make Eyes of the Beholder's skills mirror the power of the spells they're based on
+
+This improves the component slightly such that the Domination power is as powerful as the Domination spell, i.e. -2 penalty to Save vs. Spell, and the Paralyze spell is as powerful as Hold Person, i.e. -1 penalty to Save vs. Spell.
+
+**Component 1580:** Make Hawksight improve your senses, reflexes, and accuracy more keenly **(NOT IMPLEMENTED YET)**
+**Component 1590:** Make Blackmist more powerfully blinding **(NOT IMPLEMENTED YET)**
+
+**Component 1600:** Make CHARNAME's Tankard heal as much as a Potion of Extra Healing (Neera's quest)
+
+This makes this item significantly more valuable.
+
+**Component 1610:** Make Robe of Invocation also improve all elemental damage by 5% and add a +2 bonus against Invocation
+
+This makes this robe improve Invocation wizards in more ways, similarly to my tweaks to elemental robes, but with milder damage bonuses, since it's a more universal bonus:
+
+- 5% elemental damage bonus
+- +2 save vs. Invocation
+
+**Component 1620:** Make Vicross' Thayan Circlet apply Improved Shield of Chaos instead of just Shield of Chaos
+
+This makes the circlet a bit more valuable by making it more effective in controlling Wild Surges. It's a little underwhelming to just have the same bonus as the robe of Hayes.
+
+**Component 1630:** Make The Jade's Fang slightly more powerful and improve the lifesteal effect **(NOT IMPLEMENTED YET)**
+
 ---
 
 [Back to Spell tweaks](#spell-tweaks) <br>
@@ -593,6 +645,6 @@ And feel free to offer feedback if there are any bugs, criticize the code and of
 
 ---
 
-[Back to top](#zs-tweaks) <br>
+[Back to top](#zstweaks) <br>
 
 ---
