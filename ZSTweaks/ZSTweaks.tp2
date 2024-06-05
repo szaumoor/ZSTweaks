@@ -4755,6 +4755,20 @@ COPY_EXISTING "ohnhelm1.ITM" ~override~
     END
 BUT_ONLY
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1650 DESIGNATED 1650 GROUP @2
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    PATCH_IF (SHORT_AT 0x1c) = 2 BEGIN // armor
+        READ_ASCII 0x22 armor_appearance (2)
+        PATCH_IF "%armor_appearance%" STRING_COMPARE_CASE "2w" = 0 BEGIN // apperance of simple robes
+            WRITE_ASCII 0x22 "3W" #2
+        END
+    END
+BUT_ONLY
+
 ////////////////// CLASS AND KIT-RELATED TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
