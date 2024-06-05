@@ -552,6 +552,10 @@ This makes the circlet a bit more valuable by making it more effective in contro
 
 **Component 1630:** Make The Jade's Fang slightly more powerful and improve the lifesteal effect **(NOT IMPLEMENTED YET)**
 
+**Component 1650:** Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak
+
+Purely cosmetic tweak. I've never liked the look of robes without cloaks or cloaks & hoods.
+
 ---
 
 [Back to Spell tweaks](#spell-tweaks) <br>
