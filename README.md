@@ -232,6 +232,7 @@ I like daggers.
 It seems like a mistake to me that this armor, made from a creature from the plane of Shadow that doesn't even use acid as a breath weapon grant you acid resistance. Instead of acid resistance, it offers:
 
 - Negative Plane Protection
+- Nondetection
 - Save vs. Illusion spells +4 bonus
 - The usual AC bonuses.
 
@@ -243,7 +244,7 @@ Self explanatory and ever useful, for any class. Anti-chunking for mages.
 
 The rod is conceptually quite interesting, but generally underperforming.
 
-- **Mace +2** is renamed to Mace of Lordly Might +3, becomes a +3 weapon, and the save against panic is now at +2, not +5, and the panic lasts 3 rounds, not 4.
+- **Mace +2** is renamed to Mace of Lordly Might +3, becomes a +3 weapon, and the save against panic is now at +2, not +5, and the panic lasts 2 rounds, not 4.
 - **Flaming Long Sword +1** is renamed to Flaming Sword of Lordly Might +3, becomes a +3 weapon, causes 1d4 fire damage per hit, and the paralyze effect Save becomes +2 and not +5, but the Hold effect only lasts one round. Fixes the duplicated Paralyze effect it has. Additionally, it makes it look like an actual flaming sword when held.
 - **Spear +3** is renamed to Spear of Lordly Might +3, and it no longer has a Save vs. Spell bonus of +6 to cause 2d4 magic damage, now it has no bonus or penalty.
 
@@ -280,7 +281,7 @@ This makes the dispel magic effect equal to those in the Staff of the Magi and C
 
 The effect is pretty underwhelming for a +4 weapon. Since it's advertised about defense, the following is added:
 
-AC bonus improved to 3 (instead of 1) plus 1 against slashing, piercing, and missile weapons. 5% universal damage resistance.
+AC bonus improved to 3 (instead of 1) plus 1 against slashing, piercing, and missile weapons. 5% universal damage resistance & magic resistance.
 
 **Component 1260:** Make Usuno's Blade slightly more electrically powerful
 
@@ -339,14 +340,14 @@ This makes the ring also add a +1 damage bonus, +1 THAC0 bonus, and +5% critical
 I do not like that most robes, except the most powerful ones are largely unremarkable. This is the list of changes:
 
 - **Knave's Robe**
-  - +1 AC against Slashing (vanilla) and +1 against Piercing (new)
+  - +2 AC against Slashing and Piercing (was +1 against Piercing)
   - Save vs. Death +1 (vanilla) and Save vs. Breath +1 (new)
   - +50% Poison damage resistance
   - 5% universal Thief skill boost (you're a knave!)
 - **Traveler's Robe**
-  - +3 AC against missile (new, vanilla was 1)
+  - +3 AC against missile (was was +1)
   - +15% Missile resistance
-  - Save vs. Wand +1 (new) and Save vs. Spell +1 (new)
+  - Save vs. Wand +1 and Save vs. Spell +1 (was Save vs. Breath +1)
   - Movement speed increases by a factor of 4 (you're a traveler, moving from town to town!)
 - **Adventurer's Robe**
   - 1 universal AC bonus (the bonus to crushing seems a little weird)
@@ -485,7 +486,7 @@ This components keeps to the idea that it is only lightly enchanted, but it also
 - Speed factor reduced to 1 from 3
 - THAC0 bonus increased to 3.
 - Sets proficiencies to katanas to 2, unless it's higher.
-- +5% critical hit chance
+- +10% critical hit chance
 
 **Component 1490:** Make Neb's Nasty Cutter have an unlimited amount of poison
 
@@ -502,7 +503,7 @@ Come on, Arvoreen! Be more generous to your most faithful holy warrior.
 
 Just a simple buff to make the shield a good option for longer.
 
-**Component 1520:** Make Hallowed Redeemer able to hit enemies immune to +3 weapons
+**Component 1520:** Make Hallowed Redeemer able to hit enemies immune to +2 weapons
 
 This extends the usability of the weapon, despite the lower damage, if the constant shield the weapon grants is desired.
 
