@@ -6,6 +6,16 @@
 @4 = ~Miscellaneous tweaks~
 @5 = ~Creature tweaks~
 
+
+@10 = ~General Weapon Tweaks~
+@11 = ~Armor Tweaks~
+@12 = ~Dagger Tweaks~
+@13 = ~Wakizashi/Scimitar/Ninjato/Katana Tweaks~
+@14 = ~Wizard Spell Tweaks~
+@15 = ~Priest Spell Tweaks~
+@16 = ~NPC Armor/Weapon Tweaks~
+
+
 // END GROUPS
 
 // COMPONENTS
@@ -107,20 +117,24 @@
 @1490 = ~Make Neb's Nasty Cutter have an unlimited amount of poison~
 @1500 = ~Make Mazzy's weapons slightly more powerful~
 @1510 = ~Make Delryn's family shield become a +2 shield~
-@1520 = ~Make Hallowed Redeemer able to hit enemies immune to +3 weapons~
+@1520 = ~Make Hallowed Redeemer able to hit enemies immune to +2 weapons~
 @1530 = ~Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time~
 @1540 = ~Make Wave slightly more powerful~
 @1550 = ~Make Drizzt's weapon slightly more worth stealing in BG2~
 @1560 = ~Make Belt of Skillful Blade also increase piercing damage by 10%~
 @1570 = ~Make Eyes of the Beholder's skills mirror the power of the spells they're based on~
 @1580 = ~Make Hawksight improve your senses, reflexes, and accuracy more keenly~
-@1590 = ~Make Blackmist more powerfully blinding~
+@1581 = ~Make Hawksight's description unique and add a minor power to it~
+@1590 = ~Make Blackmist more powerfully blinding and make you immune to blinding~
 @1600 = ~Make CHARNAME's Tankard heal as much as a Potion of Extra Healing (Neera's quest)~
 @1610 = ~Make Robe of Invocation also improve all elemental damage by 5% and add a +2 bonus against Invocation~
-@1620 = ~Make Vicross' Thayan Circlet apply Improved Shield of Chaos instead of just Shield of Chaos~ // 25
-@1630 = ~Make The Jade's Fang slightly more powerful and improve the lifesteal effect~ // add a paralysis vs. save chance too
+@1620 = ~Make Vicross' Thayan Circlet apply Improved Shield of Chaos instead of just Shield of Chaos~
+@1630 = ~Make The Jade's Fang slightly more powerful and improve the lifesteal effect~
 @1640 = ~Make Abyssal Blades more powerful (Dorn's Quest)~ //todo
 @1650 = ~Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak~
+@1660 = ~Make Heart of the Golem +2 get a couple more magic-based features, inspired by the description~
+@1670 = ~Make Werebane +1 a bit more effective towards Lycanthropes~
+@1680 = ~Make Stiletto of Dermarchess +2 very slightly more powerful and bleed every hit~
 
 // KITS AND CLASSES
 
@@ -2014,3 +2028,142 @@ Equipped abilities:
 – Elemental spell damage: +5%
 
 Weight: 6~
+
+// Hawksight more interesting description
+@6540 = ~Long ago, the famous elven sentinel Arannis Alderlight had this sword forged to help him defend against the forces plotting against his kingdom. The arcane smiths imbued it with the essence of a hawk, and with this blade, Arannis became a force to be reckoned with, able to strike down foes before they could act.
+
+After Arannis faded into legend, Hawksight continued to pass through the hands of other warriors. Each bearer inherited a fragment of Arannis's vigilant spirit, transforming them into ever-vigilant sentinels, ensuring no threat went unseen and no strike landed untrue.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Saving Throws: +1
+– 1/2 extra attack per round
+
+Charge abilities:
+– Twice per day, invoke the spirit of Arannis Alderlight to detect invisiblity and evil.
+
+THAC0: +4
+Damage: 1d8+2 (slashing)
+Speed Factor: 3
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 3~
+
+@6541 = ~This scimitar has been magically enhanced to give it greater accuracy in combat. Any wielder who picks up the sword immediately feels their senses becoming keener, their reflexes sharper.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Saving Throws: +1
+– 1/2 extra attack per round
+
+THAC0: +4
+Damage: 1d8+2 (slashing)
+Speed Factor: 3
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 3~
+
+@6550 = ~This was the weapon of Dominique Harl, a sightless paladin who frequently traveled Faerûn. When attacked, Dominique would unleash the black mist that is this halberd's namesake, potentially blinding all within 5 feet. This often gave him the advantage, for he lived in darkness all his life, seeing only with the inner light of faith. Dominique eventually fell, his body found in a dark forest, slain by a creature of the night even more at home in the shadows than he.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to blindness
+
+Charge abilities:
+– Blindness three times per day (Save vs. Spell at -2 negates)
+  Duration: 2 hours
+  Area of Effect: 5-ft. radius
+
+THAC0: +4
+Damage: 1d10+4 (piercing)
+Speed Factor: 5
+Proficiency Type: Halberd
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 10~
+
+@6560 = ~This dagger is made entirely from a single cut of jade and has an edge suitable for splitting hairs. A complex ornamental design can be seen on either side, although their historical or cultural significance has long since been forgotten.
+
+The Jade Fang was the weapon of choice for famed Shou Lung thief Niu Weidan, who would use the dagger to immobilize his opponents before draining them of their life force to reinforce his own. Cornered countless times, Niu was always successful in using this dagger to escape. In the end, it wasn't an enemy or vengeful victim that felled Niu, but rather old age. The blade was passed down through his family as an heirloom and did not see use as a combat weapon from that point onward.
+
+STATISTICS:
+
+Combat abilities:
+– 15% chance of stunning for 10 seconds if Save vs. Spell is failed, 5% chance of triggering with no save.
+– Each hit heals the wielder between 1 to 5 Hit Points. It's more likely to heal less than more.
+
+THAC0: +3
+Damage: 1d4+3 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6570 = ~This +1 dagger acts as a +4 dagger vs. lycanthropes. Dynala Goldenhand, an elven Ranger who wished to rid her homeland of its werejackal problem, forged the dagger. She was killed by a tribe of orcs in the Graypeak Mountains as she tracked the werejackal leader.
+
+STATISTICS:
+
+THAC0: +1, +4 vs. lycanthropes
+Damage: 1d4+1, +6 extra vs. lycanthropes
+Damage type: Piercing
+Speed Factor: 1
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6580 = ~Most who take up the trade of murder for hire do so for reasons other than personal pleasure, but not so the Lady Demarche. She took special pleasure in the torture of her targets... which is why she made this dagger. With but one touch of its polished blade, an opponent was rendered immobile, incapable of so much as screaming, yet the victim could watch and feel all that happened to them. While her opponent was thus held, the Lady would slowly bleed them, sometimes taking several hours before allowing her subject to succumb to the final agony of death. The Lady finally fell victim to her own evil; disarmed by a rival and struck by her own stiletto, her fate was soon sealed.
+
+STATISTICS:
+
+Combat abilities:
+– 25% chance per hit that the target must save vs. Death or be held for 2 rounds
+– Hits with this weapon bleed the victims, inflicting 2 piercing damage per round for 3 rounds
+
+THAC0: +2
+Damage: 1d4+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6590 = ~There are no records of this weapon's creator. Nevertheless, its existence can be traced back among thieves and murderers to before Dalereckoning. Its blackened blade was apparently forged from the arcane metals of an iron golem, giving the weapon an appearance as dark as its history.
+
+Equipped abilities:
+– The magic metal allow the wielder to partially defend against magic: 10% Magic Resistance
+
+Combat abilities:
+– 50% chance per hit to inflict 1d4 Magic damage with no save
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d4+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~

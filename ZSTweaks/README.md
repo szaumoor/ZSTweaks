@@ -1,6 +1,6 @@
 # ZSTweaks
 
-This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game, nothing more, nothing less.
+This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game, nothing more, nothing less. The vast majority of the tweaks are designed to be simple improvements of underpowered items or abilities. Some of them overhaul the game more extensively.
 
 ---
 [To Item tweaks](#item-tweaks) <br>
@@ -441,7 +441,7 @@ This mostly exists for consistency with the bastard sword, such that the minimum
 **Component 1440:** Make daggers have general extra features to compensate the low damage
 
 There's generally very little reason to use a dagger, because:
-- All other weapons cause more damage
+- All other melee weapons cause more damage
 - Your other weapons will never be stolen
 - Using the dagger has no benefits of any sort for being a small weapon.
 - The only saving grace they might have is that a few of them have a semi-interesting special effect which likely gets deprecated later.
@@ -450,12 +450,17 @@ This is a small change to make daggers slightly more appealing on a general leve
 
 - +1 THAC0 bonus
 - Speed factor of 0
-- +5% Critical chance, and critical hits do moderately additional damage. Internally, the formula for damage added (additively) is:
-  - MaxWpnDmg - 1 (Maximum damage the weapon can do without modifiers) **PLUS**
-  - 2 dice thrown of Max_wpn_dmg.
-   For example, if we were using a +3 Dagger (max weapon damage of 7), and we struck a critical hit by 24 damage, another tick of damage would trigger which would range between 8 guaranteed damage to 20, and thus the total damage would be between 32 and 44. A +6 dagger would add instead between 11 to 31.
+- +5% Critical chance, and critical hits do moderately additional damage additively in a second tick of damage.
+  - The formula for critical damage added (additively) is: (**MaxWpnDmg** - 1) **+**  2 dice of **MaxWpnDmg**:
+  - Dagger **+0** -> 3 + 2d4, i.e. 5-11 dmg
+  - Dagger **+1** -> 4 + 2d5, i.e. 6-14 dmg
+  - Dagger **+2** -> 5 + 2d6, i.e. 7-17 dmg
+  - Dagger **+3** -> 6 + 2d7, i.e. 8-20 dmg
+  - Dagger **+4** -> 7 + 2d8, i.e. 9-23 dmg
+  - Dagger **+5** -> 8 + 2d9, i.e. 10-26 dmg
+  - Dagger **+6** -> 9 + 2d10, i.e. 11-29 dmg
 
-All these bonuses are additive. Note that this component will not update the descriptions of each dagger to reflect this change. Sorry, but I don't know how to code that in WeiDu.
+All these bonuses are additive. Note that this component will not update the descriptions of each dagger to reflect this change. Sorry, but I don't know how to code that in WeiDu just yet.
 
 **Component 1450:** Make some rogue weapons have the chance of doing more damage if wielded by pure thieves (Finesse)
 
@@ -533,8 +538,25 @@ This makes the belt include piercing damage, such that it affect things like dag
 
 This improves the component slightly such that the Domination power is as powerful as the Domination spell, i.e. -2 penalty to Save vs. Spell, and the Paralyze spell is as powerful as Hold Person, i.e. -1 penalty to Save vs. Spell.
 
-**Component 1580:** Make Hawksight improve your senses, reflexes, and accuracy more keenly **(NOT IMPLEMENTED YET)**
-**Component 1590:** Make Blackmist more powerfully blinding **(NOT IMPLEMENTED YET)**
+**Component 1580:** Make Hawksight +2 improve your senses, reflexes, and accuracy more keenly
+
+This component takes the description more seriously, and hence, other than giving +1 Dexterity it also:
+
+- +4 THAC0
+- Universal +1 Saving Throw bonus
+- +1/2 APR
+- Charge ability: Detect Invisibility and Evil twice per day
+
+**Component 1581:** Make Hawksight's description unique and add a minor power to it
+
+This component requires the previous one, and it adds a description worth-reading (YMMV). I really dislike items with unique names, but with no interesting description or brief backstory. It seems lazy and uninteresting to add a named item without any background. Additionally, it adds a minor power to it, based on this brief backstory. See ZSTweaks/unique_descriptions.md for details.
+
+"Charge abilities:
+– Twice per day, invoke the spirit of Arannis Alderlight to detect invisiblity and evil."
+
+**Component 1590:** Make Blackmist more powerfully blinding and make you immune to blinding
+
+This makes Blackmist's blindness power be more likely to be effective, by adding a -2 Save penalty. Additionally, you're immune to blindness.
 
 **Component 1600:** Make CHARNAME's Tankard heal as much as a Potion of Extra Healing (Neera's quest)
 
@@ -551,11 +573,28 @@ This makes this robe improve Invocation wizards in more ways, similarly to my tw
 
 This makes the circlet a bit more valuable by making it more effective in controlling Wild Surges. It's a little underwhelming to just have the same bonus as the robe of Hayes.
 
-**Component 1630:** Make The Jade's Fang slightly more powerful and improve the lifesteal effect **(NOT IMPLEMENTED YET)**
+**Component 1630:** Make The Jade's Fang slightly more powerful and improve the lifesteal effect
+
+This component improves the dagger such that the lifesteal component is potentially better, which is identical to component 1470. Additionally, there is a 15% chance the stun happens as well, but only if a Save vs. Spell is failed. All the effects now bypass Magic Resistance, like the Stupifier in BGEE and Adjatha the Drinker (which is probably an oversight in this case). Also fixes in passing incorrect probabilities for the stun effect.
 
 **Component 1650:** Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak
 
 Purely cosmetic tweak. I've never liked the look of robes without cloaks or cloaks & hoods.
+
+**Component 1660:** Make Heart of the Golem +2 get a couple more magic-based features, inspired by the description
+
+This makes the dagger, which is made from arcane metals from a golem, imbued with something more magically golem-like:
+
+- Improves Magic Resistance by 10% when held
+- 50% chance of inflicting 1d4 magic damage, no save
+
+**Component 1670:** Make Werebane +1 a bit more effective towards Lycanthropes
+
+Werebane's description is a little misleading. It doesn't cause +4 damage against Lycanthropes. The 1d4+1 base damage of the weapon doesn't become 1d4+5. This type of confusing description is common to all weapons that do extra damage to specific creatures. Instead, it causes 1d4+1 and if the target is a Lycanthrope, another tick of 3 piercing damage is inflicted. This improves this extra additive tick of damage so it inflicts 6 instead.
+
+**Component 1680:** Make Stiletto of Dermarchess +2 very slightly more powerful and bleed every hit
+
+This component makes the weapon try to stun the victim with a probability of 25% instead of 20%. Inspired by the sadistic story behind the weapon, it also causes bleeding every hit, similar to Gnasher, inflicting 2 extra piercing damage per round for 3 rounds.
 
 ---
 

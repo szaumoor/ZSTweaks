@@ -4702,6 +4702,93 @@ COPY_EXISTING "ohreyeb2.SPL" ~override~
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1580 DESIGNATED 1580 GROUP @2 // hawksight
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+
+COPY_EXISTING "ohrsw1h1.itm" ~override~
+    SAY IDENTIFIED_DESC @6541
+    LPF ALTER_HEADER
+        INT_VAR
+            match_type = 1
+            to_hit = 4
+    END
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1
+            def_timing = 2
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=325,p1=1;op=1,p1=6~
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1581 DESIGNATED 1581 GROUP @2 // hawksight even more love (for some reason)
+REQUIRE_COMPONENT "ZSTweaks.tp2" "1580" "This component requires the first Hawksight improvement"
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+
+COPY_EXISTING "ohrsw1h1.itm" ~override~
+    SAY IDENTIFIED_DESC @6540
+    LPF ADD_ITEM_HEADER
+        INT_VAR
+            type = 3
+            location = 3
+            target = 5
+            charges = 1
+            depletion = 3
+            flags = 2**11
+        STR_VAR
+            icon = ~SPWI208C~
+    END
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_type = 3
+            def_parameter1 = 10
+            def_parameter2 = 2
+            def_timing = 9
+            def_target = 1
+        STR_VAR
+            function_name = ~ADD_ITEM_EFFECT~
+            effect_codes = ~op=146,res=SPWI203;op=146,res=SPWI202~
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1590 DESIGNATED 1590 GROUP @2
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING "HALB06.ITM" ~override~
+    SAY IDENTIFIED_DESC @6550
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            header_type = 3
+            savebonus = "-2"
+    END
+    SET blinded_strref1 = 14674
+    SET blinded_strref2 = 1474
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1
+            def_timing = 2
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=101,p2=74;op=169,p2=8;op=267,p1=%blinded_strref1%;op=267,p1=%blinded_strref2%~
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1600 DESIGNATED 1600 GROUP @2
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4755,6 +4842,128 @@ COPY_EXISTING "ohnhelm1.ITM" ~override~
     END
 BUT_ONLY
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1630 DESIGNATED 1630 GROUP @2
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" "This mod was written for BG2EE and EET"
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+
+COPY_EXISTING "ohhdag01.ITM" ~override~
+    SAY IDENTIFIED_DESC @6560
+    LPF ALTER_ITEM_EFFECT
+            INT_VAR
+                check_headers = 1
+                resist_dispel = 0
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 17
+            probability1 = 49
+    END
+    LPF ADD_ITEM_EFFECT
+        INT_VAR
+            target = 1
+            timing = 1
+            insert_point = 0
+            type = 1
+            opcode = 17
+            probability1 = 69
+            probability2 = 50
+            power = 1
+            parameter1 = 2
+    END
+    LPF ADD_ITEM_EFFECT
+        INT_VAR
+            target = 1
+            timing = 1
+            insert_point = 0
+            type = 1
+            opcode = 17
+            probability1 = 84
+            probability2 = 70
+            power = 1
+            parameter1 = 3
+    END
+    LPF ADD_ITEM_EFFECT
+        INT_VAR
+            target = 1
+            timing = 1
+            insert_point = 0
+            type = 1
+            opcode = 17
+            probability1 = 94
+            probability2 = 85
+            power = 1
+            parameter1 = 4
+    END
+    LPF ADD_ITEM_EFFECT
+        INT_VAR
+            target = 1
+            timing = 1
+            insert_point = 0
+            type = 1
+            opcode = 17
+            probability1 = 100
+            probability2 = 95
+            power = 1
+            parameter1 = 5
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 141
+            probability1 = 4
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 139
+            probability1 = 4
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 45
+            probability1 = 4
+    END
+    LPF CLONE_EFFECT
+        INT_VAR
+            check_globals = 0
+            match_opcode = 45
+            probability1 = 19
+            probability2 = 5
+            savingthrow = 1
+    END
+    LPF CLONE_EFFECT
+        INT_VAR
+            check_globals = 0
+            match_opcode = 141
+            probability1 = 19
+            probability2 = 5
+            savingthrow = 1
+    END
+    LPF CLONE_EFFECT
+        INT_VAR
+            check_globals = 0
+            match_opcode = 139
+            probability1 = 19
+            probability2 = 5
+            savingthrow = 1
+    END
+    PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1440" BEGIN // dagger compensation component installed
+        LPF ALTER_HEADER
+            INT_VAR
+                type = 1
+                match_to_hit = 3
+                to_hit = 4
+        END
+    END
+BUT_ONLY
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1650 DESIGNATED 1650 GROUP @2
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" "This component was written for BGEE, BG2EE and EET"
@@ -4766,6 +4975,65 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
         PATCH_IF "%armor_appearance%" STRING_COMPARE_CASE "2w" = 0 BEGIN // apperance of simple robes
             WRITE_ASCII 0x22 "3W" #2
         END
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1660 DESIGNATED 1660 GROUP @2
+REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" "This mod was written for BG2EE and EET"
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+
+COPY_EXISTING "dagg03.ITM" ~override~
+    SAY IDENTIFIED_DESC @6590
+    PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1440" BEGIN // dagger compensation component installed
+        LPF ALTER_HEADER
+            INT_VAR
+                type = 1
+                match_to_hit = 2
+                to_hit = 3
+        END
+    END
+    LPF a7_auto_apply_spl_effect
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~tgt=1,tmg=2,op=166,p1=10~
+    END
+    SET magic_dmg = (64 << 16)
+    LPF a7_auto_apply_spl_effect
+        STR_VAR
+            function_name = ~ADD_ITEM_EFFECT~
+            effect_codes = ~t=1,tgt=2,tmg=1,op=12,dsize=4,dnum=1,pro1=49,p2=%magic_dmg%~
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1670 DESIGNATED 1670 GROUP @2
+REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" "This mod was written for BG2EE and EET"
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+COPY ~ZSTweaks/eff/ZSTWWED6.EFF~ ~override~
+
+COPY_EXISTING "dagg09.ITM" ~override~
+    SAY IDENTIFIED_DESC @6570
+    PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1440" BEGIN // dagger compensation component installed
+        LPF ALTER_HEADER
+            INT_VAR
+                type = 1
+                match_to_hit = 1
+                to_hit = 2
+        END
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            match_opcode = 177
+            check_headers = 1
+        STR_VAR
+            resource = ~ZSTWWED6~
     END
 BUT_ONLY
 
