@@ -20,7 +20,6 @@ COPY_EXISTING ~GBERRY.ITM~ ~override~
             dicesize = 4
             dicenumber = 2
     END
-    LPF
     LPF a7_auto_apply_spl_effect
         STR_VAR
             function_name = ~ADD_ITEM_EFFECT~
