@@ -13,12 +13,18 @@ COPY_EXISTING ~GBERRY.ITM~ ~override~
     WRITE_BYTE 0x38 12
     LPF ALTER_ITEM_EFFECT
         INT_VAR
-            match_headers = 1
+            check_headers = 1
             match_opcode = 17
             duration = 0
             parameter1 = 0
             dicesize = 4
             dicenumber = 2
+    END
+    LPF
+    LPF a7_auto_apply_spl_effect
+        STR_VAR
+            function_name = ~ADD_ITEM_EFFECT~
+            effect_codes  = ~op=321,tgt=1,res=GBERRY,ip=0~ // prevent stacking
     END
     LPF a7_auto_apply_spl_effect
         INT_VAR
@@ -31,6 +37,6 @@ COPY_EXISTING ~GBERRY.ITM~ ~override~
             def_resist_dispel = 2
         STR_VAR
             function_name = ~ADD_ITEM_EFFECT~
-            effect_codes  = ~op=98;op=142,p1=0,p2=87~ // regen and portrait icon for regen// SHOULD PROBABLY NOT STACK!!!
+            effect_codes  = ~op=98;op=142,p1=0,p2=87~ // regen and portrait icon for regen
     END
 BUT_ONLY

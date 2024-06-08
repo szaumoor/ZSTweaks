@@ -9,7 +9,7 @@
 @17 = ~NPC Gear Tweaks~
 @18 = ~Misc Items~
 @19 = ~Wizard Spell Tweaks~
-@20 = ~Priest Spell Tweaks~
+@20 = ~Cleric/Druid Spell Tweaks~
 @21 = ~Class and Kit-related tweaks~
 
 // END GROUPS
@@ -60,7 +60,7 @@
 @1630 = ~Make The Jade's Fang slightly more powerful and improve the lifesteal effect~
 @1660 = ~Make Heart of the Golem +2 get a couple more magic-based features, inspired by the description~
 @1670 = ~Make Werebane +1 a bit more effective towards Lycanthropes~
-@1680 = ~Make Stiletto of Dermarchess +2 very slightly more powerful and bleed every hit~ //todo
+@1680 = ~Make Stiletto of Demarchess +2 very slightly more powerful and bleed every hit~ //todo
 
 
 /// TWO-HANDED MELEE WEAPONS
@@ -74,7 +74,7 @@
 @1420 = "Make Ir'revrykal base damage equal to Carsomyr"
 @1460 = ~Make Spear of Withering able to poison on contact if save is failed~
 @1540 = ~Make Wave slightly more powerful~
-@1590 = ~Make Blackmist more powerfully blinding and make you immune to blinding~
+@1590 = ~Make Blackmist more powerfully blinding and make you immune to blindness~
 
 
 /// ONE-HANDED SWORDS
@@ -91,7 +91,7 @@
 @1319 = "Make Holy Sword of Tyr +3 affect all evil, not just chaotic evil"
 @1341 = ~Make Hindo's Doom a +3 and +4 weapon~
 @1470 = ~Make Adjatha the Drinker thirstier~
-@1550 = ~Make Drizzt's weapon slightly more worth stealing in BG2~
+@1550 = ~Make Drizzt's weapons slightly more worth stealing in BG2~
 @1580 = ~Make Hawksight improve your senses, reflexes, and accuracy more keenly~
 @1581 = ~Make Hawksight's description unique and add a minor power to it~
 
@@ -120,9 +120,9 @@
 @1640 = ~Make Abyssal Blades more powerful (Dorn's Quest)~ //todo
 
 // MISC ITEMS
-
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
 @1600 = ~Make CHARNAME's Tankard heal as much as a Potion of Extra Healing (Neera's quest)~
+@1601 = ~Make potions universally incapable of stacking with themselves~
 
 
 // WIZARD SPELLS
@@ -141,7 +141,7 @@
 @410 = ~Make Horrid Wilting actually be more effective against plants and Water Elementals~
 @430 = ~Make Grease bypass Magic Resistance, as it is as conjured substance, and apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description~
 @440 = ~Make Comet bypass magic resistance and apply a mix of cold, fire and crushing damage~
-@441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level" // todo
+@441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level"
 @442 = "Make Tenser's Transformation gain extra APR like a Fighter at the appropriate levels"
 @443 = ~Make Symbol of Death work with Save bonus if above the 60 HP threshold~
 
@@ -174,7 +174,7 @@
 @2110 = "Make Sun Soulbeam do more damage to undead: 12d6 instead of just 3 more damage than baseline"
 @2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty"
 @2130 = "Make Set Spike Trap do piercing damage instead of magic damage"
-@2140 = "Make Exploding Trap do slightly more damage: 12d6 as opposed to 10d6"
+@2140 = "Make Exploding Trap do slightly more damage: 15d6 as opposed to 10d6"
 @2150 = "Make selected kit HLAS unable to be breached"
 @2160 = ~Make Quivering Palm slightly more powerful at high levels~
 @2170 = ~Make the THAC0 progression of Thieves better and more streamlined, so they improve up to 6, like clerics~
@@ -190,8 +190,6 @@
 //MISC TWEAKS
 
 @3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane (Rasaad's Quest)~ // TODO, add Lava's areas too
-
-
 
 // NEW DESCRIPTIONS
 
@@ -2173,7 +2171,8 @@ Combat abilities:
 – Hits with this weapon bleed the victims, inflicting 2 piercing damage per round for 3 rounds
 
 THAC0: +2
-Damage: 1d4+2 (piercing)
+Damage: 1d4+2, +2 piercing (bleeding)
+Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
 Type: One-handed

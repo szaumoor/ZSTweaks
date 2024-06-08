@@ -104,12 +104,4 @@ COPY_EXISTING "ohhdag01.ITM" ~override~
             probability2 = 5
             savingthrow = 1
     END
-    PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1440" BEGIN // dagger compensation component installed
-        LPF ALTER_HEADER
-            INT_VAR
-                type = 1
-                match_to_hit = 3
-                to_hit = 4
-        END
-    END
 BUT_ONLY

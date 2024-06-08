@@ -1,0 +1,26 @@
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+
+COPY_EXISTING ~WA2DAK.ITM~ ~override~
+    WRITE_LONG 0x60 3
+    SAY NAME2 @6330
+    SAY IDENTIFIED_DESC @6331
+    LPF ALTER_HEADER
+        INT_VAR
+            match_damage = 2
+            match_to_hit = 2
+            match_speed = 2
+            to_hit = 3
+            speed = 1
+            damage = 3
+    END
+    PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" BEGIN // update bonus due to +3 enchantment
+        LPF ALTER_EFFECT
+        INT_VAR
+            check_globals = 0
+            match_opcode = 326
+        STR_VAR
+            match_resource = ~ZSTWK2~
+            resource = ~ZSTWK3~
+        END
+    END
+BUT_ONLY

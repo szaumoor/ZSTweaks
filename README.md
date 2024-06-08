@@ -3,13 +3,10 @@
 This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game, nothing more, nothing less. The vast majority of the tweaks are designed to be simple improvements of underpowered items or abilities. Some of them overhaul the game more extensively.
 
 ---
-[To Item tweaks](#item-tweaks) <br>
-[To Class/Kit tweaks](#class-and-kit-related-tweaks) <br>
-[To notes for users](#compatibility-and-installation-order) <br>
-
----
 
 ## General Weapon Tweaks
+
+This section includes non-specific improvements to groups of weapons. It does not update descriptions.
 
 **Component 120:** Make conjured magical weapons add extra attacks (Flame Blade, Ghost Blade, Black Blade of Disaster...)
 
@@ -98,10 +95,11 @@ Essentially, when wielding a weapon they can use with what I call "finesse", whi
 
 This reduces the number of dice thrown of DAGG11 and DAGG12 to 1 so they are not the only good choice for daggers to maximize damage. And for consistency. Generally speaking I dislike a lot this sort of unbalanced design. DAGG11 specifically, already comformed to this rule in BGEE.
 
-This will not update the descriptions, however. I don't have the skill to parse strings like this with WeiDu.
-
+---
 
 ## Armor/Gear Tweaks
+
+This section includes specific armor tweaks, and it updates descriptions accordingly in a destructive way.
 
 **Component 1170:** Make Shadow Dragon Scale behave less like a Black Dragon Scale
 
@@ -147,8 +145,6 @@ I do not like that most robes, except the most powerful ones are largely unremar
   - Casting speed improved by 1
   - Saving throws bonus against Spell at +2, +1 for the rest
 
-
-
 **Component 1560:** Make Belt of Skillful Blade also increase piercing damage by 10%
 
 This makes the belt include piercing damage, such that it affect things like daggers, short swords and wakizashis.
@@ -172,6 +168,7 @@ This makes the circlet a bit more valuable by making it more effective in contro
 
 Purely cosmetic tweak. I've never liked the look of robes without cloaks or cloaks & hoods.
 
+---
 
 ## Dagger Tweaks
 
@@ -215,9 +212,11 @@ This makes the dagger, which is made from arcane metals from a golem, imbued wit
 
 Werebane's description is a little misleading. It doesn't cause +4 damage against Lycanthropes. The 1d4+1 base damage of the weapon doesn't become 1d4+5. This type of confusing description is common to all weapons that do extra damage to specific creatures. Instead, it causes 1d4+1 and if the target is a Lycanthrope, another tick of 3 piercing damage is inflicted. This improves this extra additive tick of damage so it inflicts 6 instead.
 
-**Component 1680:** Make Stiletto of Dermarchess +2 very slightly more powerful and bleed every hit
+**Component 1680:** Make Stiletto of Demarchess +2 very slightly more powerful and bleed every hit
 
 This component makes the weapon try to stun the victim with a probability of 25% instead of 20%. Inspired by the sadistic story behind the weapon, it also causes bleeding every hit, similar to Gnasher, inflicting 2 extra piercing damage per round for 3 rounds.
+
+---
 
 ## Two-handed Melee Weapons Tweaks
 
@@ -261,9 +260,11 @@ I feel like this spear should be more withery, especially considering it's a +4 
 
 This component improves Wave +4 by making it always deal 3 points of cold damage per hit. Giants take 9 cold damage instead, since it was made to fight fire giants. This may make it a fine choice for a weapon for a big portion of ToB.
 
-**Component 1590:** Make Blackmist more powerfully blinding and make you immune to blinding
+**Component 1590:** Make Blackmist more powerfully blinding and make you immune to blindness
 
 This makes Blackmist's blindness power be more likely to be effective, by adding a -2 Save penalty. Additionally, you're immune to blindness.
+
+---
 
 ## One-handed Sword Tweaks
 
@@ -330,7 +331,7 @@ This simply allows the game to grant you a +4 and +5 katana, essentially.
 
 This component will make the healing per it based on probabilities, such that there is a 50% change it will heal by 1, 20% it will heal by 2, 15% it heals by 3, 10% it heals by 4, and 5% it heals by 5.
 
-**Component 1550** Make Drizzt's weapon slightly more worth stealing in BG2
+**Component 1550** Make Drizzt's weapons slightly more worth stealing in BG2
 
 By the time you get this weapon in BG2, it's generally underwhelming and you have better weapons already. This improves his weapon in a few ways, trying to not to stray too much from the lore:
 
@@ -354,6 +355,7 @@ This component requires the previous one, and it adds a description worth-readin
 "Charge abilities:
 – Twice per day, invoke the spirit of Arannis Alderlight to detect invisiblity and evil."
 
+---
 
 ## Maces/Clubs
 
@@ -385,6 +387,8 @@ I think everyone agrees that this type of restriction makes the weapons immediat
 
 This makes the club slightly more powerful (+3 in all respects), is more shamanic, and more damaging to undead: acts as +5 against them, with THAC0 bonus of +5 against undead, undead take +4 damage, and spectral undead take +8
 
+---
+
 ## Ranged Weapon Tweaks
 
 **Component 1010:** Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost
@@ -402,6 +406,8 @@ The +5 version literally just increases the THAC0 bonus by 1. That's a bit too b
 - Makes movement bonus increase to 5.
 - Adds a damage bonus of 1 like a regular composite bow
 - Animals and and other kind of unintelligent beasts, magical or not, take +2 and +5 damage (+4 and +5 version respectively)
+
+---
 
 ## NPC Gear Tweaks
 
@@ -436,6 +442,8 @@ Just a simple buff to make the shield a good option for longer.
 
 This extends the usability of the weapon, despite the lower damage, if the constant shield the weapon grants is desired.
 
+---
+
 ## Misc Item Tweaks
 
 **Component 1190:** Make Rod of Lordly Might usable by any class and more powerful
@@ -450,6 +458,11 @@ The rod is conceptually quite interesting, but generally underperforming.
 
 This makes this item significantly more valuable.
 
+**Component 1601:** Make potions universally incapable of stacking with themselves
+
+This prevents cheeesy stacking of things like Fire Resistance, Saving Throws (Potion of Invulnerability), etc.
+
+---
 
 ## Wizard spells
 
@@ -521,8 +534,9 @@ This components further tightens the gap between the wizard and the fighter they
 
 This spell is useless if the health of the enemy, which ordinarily you cannot know, is above that threshold, so it's fairly wasteful to use the spell unless the enemy is Near Death or the enemies are very weak anyway and easy to kill. As such, now the spell works for HP above 60, but with a bonus of +6 giving it at least some (small) chance of working at all times.
 
+---
 
-## Cleric Spell Tweaks
+## Cleric/Druid Spell Tweaks
 
 **Component 100:** Make Glyph of Warding do damage on a failed save and extend damage up to level 20, and not 18
 
@@ -531,7 +545,7 @@ Therefore, it will always cause half damage. Additionally, it extends the header
 
 **Component 110:** Make Bless last longer
 
-I don't think 36 seconds with a very long casting makes this spell desirable in most situations. Therefore, now the duration is 60 seconds plus 1 round per 2 levels up to level 19.
+I don't think 36 seconds with a very long casting makes this spell desirable in most situations. Therefore, now the duration is 36 seconds plus 1 round per 2 levels up to level 19.
 
 **Component 130:** Standardize Hold Person saving throw penalties
 
@@ -625,13 +639,13 @@ I also hate the name of the spells. Mostly because "light wounds" is completely 
 
 This improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32).
 
+---
 
 ## Class and Kit-related tweaks
 
 **Component 2100:** Make Sun Soul Ray from Sun Soul Monks damage improve slightly and do more damage to undead
 
 The maximum damage will grow to 6d8 at level 12, and 6 damage to undead, which is a very small bonus that doesn't scale, will increase by 2 points every time the power is upgraded.
-
 
 **Component 2110:** Make Sun Soulbeam do more damage to undead: 12d6 instead of just 3 more damage than baseline.
 
@@ -678,12 +692,6 @@ Refer to component 2170 for reasons. Applies the same bonus to Bards, who also h
 
 This makes Poison Weapon more powerful and reliable at high levels. At level 17, the save penalty improves to -3, lasts for 27 seconds, and the immediate poison damage increases to 8. At level 21, the save penalty improves to -4, lasts for 30 seconds, and the immediate poison damage increases to 10.
 
----
-
-[Back to Spell tweaks](#spell-tweaks) <br>
-[Back to Item tweaks](#item-tweaks) <br>
-[Back to Class/Kit tweaks](#class-and-kit-related-tweaks)
-****
 ---
 
 ## Compatibility and Installation order
