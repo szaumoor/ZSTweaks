@@ -1,0 +1,59 @@
+INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
+
+COPY_EXISTING ~SPCL423.SPL~ ~override~
+    SAY UNIDENTIFIED_DESC @6440
+BUT_ONLY
+
+COPY_EXISTING ~BDPWEAPN.SPL~ ~override~
+    READ_SHORT 0x68 ability_size
+    LPF ADD_SPELL_HEADER
+        INT_VAR
+            copy_header = ability_size
+            zs_min_level_for_copy = 17
+    END
+    LPF ALTER_SPELL_EFFECT
+        INT_VAR
+            header = ability_size + 1
+            match_opcode = 12
+            parameter1 = 8
+    END
+    LPF ALTER_SPELL_EFFECT
+        INT_VAR
+            header = ability_size + 1
+            match_opcode = 25
+            savebonus = "-3"
+            duration = 27
+    END
+    LPF ALTER_SPELL_EFFECT
+        INT_VAR
+            header = ability_size + 1
+            match_opcode = 142
+            savebonus = "-3"
+            duration = 27
+    END
+    LPF ADD_SPELL_HEADER
+        INT_VAR
+            copy_header = ability_size
+            zs_min_level_for_copy = 21
+    END
+    LPF ALTER_SPELL_EFFECT
+        INT_VAR
+            header = ability_size + 2
+            match_opcode = 12
+            parameter1 = 10
+    END
+    LPF ALTER_SPELL_EFFECT
+        INT_VAR
+            header = ability_size + 2
+            match_opcode = 25
+            savebonus = "-4"
+            duration = 30
+    END
+    LPF ALTER_SPELL_EFFECT
+        INT_VAR
+            header = ability_size + 2
+            match_opcode = 142
+            savebonus = "-4"
+            duration = 30
+    END
+BUT_ONLY

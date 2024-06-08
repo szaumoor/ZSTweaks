@@ -1,0 +1,44 @@
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING ~SPWI101.SPL~ ~override~
+    SAY UNIDENTIFIED_DESC @6190
+    LPF ALTER_SPELL_EFFECT
+        INT_VAR
+            header_type = 1
+            check_headers = 1
+            resist_dispel = 0
+    END
+    LPF ALTER_SPELL_EFFECT
+        INT_VAR
+            match_opcode = 126
+            header_type = 1
+            check_headers = 1
+            parameter1 = 27
+    END
+    READ_SHORT 0x68 num_abilities
+    SET start_dur = 24
+    FOR ( i = 0; i < num_abilities; ++i ) BEGIN
+        SET dur = start_dur + (i * 6)
+        LPF ADD_SPELL_EFFECT
+            INT_VAR
+                header = i + 1
+                target = 2
+                opcode = 30
+                parameter1 = "-25"
+                power = 1
+                duration = dur
+                resist_dispel = 0
+        END
+        LPF ADD_SPELL_EFFECT
+            INT_VAR
+                header = i + 1
+                target = 2
+                opcode = 126
+                parameter1 = 75
+                parameter2 = 5
+                power = 1
+                duration = dur
+                resist_dispel = 0
+        END
+    END
+BUT_ONLY

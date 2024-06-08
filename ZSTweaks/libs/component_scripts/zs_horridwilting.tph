@@ -1,0 +1,518 @@
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+COPY
+     ~ZSTweaks/eff/ZSTWHW16.EFF~ ~override~
+     ~ZSTweaks/eff/ZSTWHW17.EFF~ ~override~
+     ~ZSTweaks/eff/ZSTWHW18.EFF~ ~override~
+     ~ZSTweaks/eff/ZSTWHW19.EFF~ ~override~
+     ~ZSTweaks/eff/ZSTWHW20.EFF~ ~override~
+
+COPY_EXISTING ~ohbwat01.CRE~ ~override~ // make sure existing water elementals are considered water elementals as per the class
+    WRITE_BYTE 0x273 "-37" // ELEMENTAL_WATER
+BUT_ONLY
+
+COPY_EXISTING ~ELWATG01.CRE~ ~override~ // make sure existing water elementals are considered water elementals as per the class
+    WRITE_BYTE 0x273 "-37" // ELEMENTAL_WATER
+BUT_ONLY
+
+COPY_EXISTING ~SPWI812.SPL~ ~override~
+    SAY UNIDENTIFIED_DESC @6210
+    LPF ADD_SPELL_EFFECT // immunity for undead and golems
+        INT_VAR
+            insert_point = 0
+            header = 1
+            target = 2
+            opcode = 324
+            power = 8
+            parameter2 = 55
+            timing = 1
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 1
+            header = 1
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 219
+            parameter2 = 5
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW16.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 2
+            header = 1
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 164
+            parameter2 = 4
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW16.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 3
+            header = 1
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 7
+            parameter2 = 3
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW16.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for elemental water
+        INT_VAR
+            insert_point = 4
+            header = 1
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter1 = 219
+            parameter2 = 105
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for myconids
+        INT_VAR
+            insert_point = 5
+            header = 1
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter2 = 11
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for plants
+        INT_VAR
+            insert_point = 6
+            header = 1
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter1 = 7
+            parameter2 = 103
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+
+    LPF ADD_SPELL_EFFECT // immunity for undead and golems
+        INT_VAR
+            insert_point = 0
+            header = 2
+            target = 2
+            opcode = 324
+            power = 8
+            parameter2 = 55
+            timing = 1
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 1
+            header = 2
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 219
+            parameter2 = 5
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW17.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 2
+            header = 2
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 164
+            parameter2 = 4
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW17.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 3
+            header = 2
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 7
+            parameter2 = 3
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW17.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for elemental water
+        INT_VAR
+            insert_point = 4
+            header = 2
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter1 = 219
+            parameter2 = 105
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for myconids
+        INT_VAR
+            insert_point = 5
+            header = 2
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter2 = 11
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for plants
+        INT_VAR
+            insert_point = 6
+            header = 2
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter1 = 7
+            parameter2 = 103
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+
+    LPF ADD_SPELL_EFFECT // immunity for undead and golems
+        INT_VAR
+            insert_point = 0
+            header = 3
+            target = 2
+            opcode = 324
+            power = 8
+            parameter2 = 55
+            timing = 1
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 1
+            header = 3
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 219
+            parameter2 = 5
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW18.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 2
+            header = 3
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 164
+            parameter2 = 4
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW18.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 3
+            header = 3
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 7
+            parameter2 = 3
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW18.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for elemental water
+        INT_VAR
+            insert_point = 4
+            header = 3
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter1 = 219
+            parameter2 = 105
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for myconids
+        INT_VAR
+            insert_point = 5
+            header = 3
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter2 = 11
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for plants
+        INT_VAR
+            insert_point = 6
+            header = 3
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter1 = 7
+            parameter2 = 103
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+
+    LPF ADD_SPELL_EFFECT // immunity for undead and golems
+        INT_VAR
+            insert_point = 0
+            header = 4
+            target = 2
+            opcode = 324
+            power = 8
+            parameter2 = 55
+            timing = 1
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 1
+            header = 4
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 219
+            parameter2 = 5
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW19.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 2
+            header = 4
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 164
+            parameter2 = 4
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW19.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 3
+            header = 4
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 7
+            parameter2 = 3
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW19.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for elemental water
+        INT_VAR
+            insert_point = 4
+            header = 4
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter1 = 219
+            parameter2 = 105
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for myconids
+        INT_VAR
+            insert_point = 5
+            header = 4
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter2 = 11
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for plants
+        INT_VAR
+            insert_point = 6
+            header = 4
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter1 = 7
+            parameter2 = 103
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+
+    LPF ADD_SPELL_EFFECT // immunity for undead and golems
+        INT_VAR
+            insert_point = 0
+            header = 5
+            target = 2
+            opcode = 324
+            power = 8
+            parameter2 = 55
+            timing = 1
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 1
+            header = 5
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 219
+            parameter2 = 5
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW20.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 2
+            header = 5
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 164
+            parameter2 = 4
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW20.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // damage for water elementals
+        INT_VAR
+            insert_point = 3
+            header = 5
+            target = 2
+            opcode = 177
+            power = 8
+            parameter1 = 7
+            parameter2 = 3
+            timing = 1
+            resist_dispel = 1
+            save_bonus = 16777216 // bypass mirror image
+        STR_VAR
+            resource = ~ZSTWHW20.EFF~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for elemental water
+        INT_VAR
+            insert_point = 4
+            header = 5
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter1 = 219
+            parameter2 = 105
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for myconids
+        INT_VAR
+            insert_point = 5
+            header = 5
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter2 = 11
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+    LPF ADD_SPELL_EFFECT // immunity for plants
+        INT_VAR
+            insert_point = 6
+            header = 5
+            target = 2
+            opcode = 324
+            power = 8
+            timing = 1
+            parameter1 = 7
+            parameter2 = 103
+            resist_dispel = 1
+        STR_VAR
+            resource = ~SPWI812~
+    END
+BUT_ONLY

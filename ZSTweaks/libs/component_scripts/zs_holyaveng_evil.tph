@@ -1,0 +1,34 @@
+OUTER_SET both = 0
+
+ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1290~ BEGIN
+    OUTER_SET both = 1
+END
+
+INCLUDE ~ZSTweaks/libs/zs_offsets.tpa~
+
+COPY_EXISTING ~SW2H10.ITM~ ~override~
+    PATCH_IF both BEGIN
+        SAY IDENTIFIED_DESC @6083
+    END ELSE BEGIN
+        SAY IDENTIFIED_DESC @6080
+    END
+
+    LPF itm_first_offset_effect
+        RET offset_eff = offset
+    END
+    SET offset_dmg_eff = offset_eff + (0x30 * 2) // opcode eff
+    WRITE_LONG (offset_dmg_eff + 0x4) 3 // MASK_EVIL
+BUT_ONLY
+
+ COPY_EXISTING ~SW2H19.ITM~ ~override~
+   PATCH_IF both BEGIN
+        SAY IDENTIFIED_DESC @6085
+    END ELSE BEGIN
+        SAY IDENTIFIED_DESC @6081
+    END
+    LPF itm_first_offset_effect
+        RET offset_eff = offset
+    END
+    SET offset_dmg_eff = offset_eff + (0x30 * 2) // opcode eff
+    WRITE_LONG (offset_dmg_eff + 0x4) 3 // MASK_EVIL
+BUT_ONLY

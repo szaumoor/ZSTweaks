@@ -1,0 +1,81 @@
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING ~BOW20.ITM~ ~override~
+    SAY IDENTIFIED_DESC @6180
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 28
+            parameter1 = 15
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 30
+            parameter1 = 15
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 84
+            parameter1 = 15
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 85
+            parameter1 = 15
+    END
+    SET cold = (2 << 16)
+    SET fire = (8 << 16)
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_timing = 1
+            def_target = 2
+            def_parameter1 = 1
+            def_type = 4
+        STR_VAR
+            function_name = ~ADD_ITEM_EFFECT~
+            effect_codes = ~op=12,p2=%cold%;op=12,p2=%fire%~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~BOW21.ITM~ ~override~
+    SAY IDENTIFIED_DESC @6181
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 28
+            parameter1 = 30
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 30
+            parameter1 = 30
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 84
+            parameter1 = 30
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 85
+            parameter1 = 30
+    END
+    SET cold = (2 << 16)
+    SET fire = (8 << 16)
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_timing = 1
+            def_target = 2
+            def_parameter1 = 2
+            def_type = 4
+        STR_VAR
+            function_name = ~ADD_ITEM_EFFECT~
+            effect_codes = ~op=12,p2=%cold%;op=12,p2=%fire%~
+    END
+BUT_ONLY

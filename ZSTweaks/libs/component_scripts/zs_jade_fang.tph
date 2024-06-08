@@ -1,0 +1,115 @@
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+
+COPY_EXISTING "ohhdag01.ITM" ~override~
+    SAY IDENTIFIED_DESC @6560
+    LPF ALTER_ITEM_EFFECT
+            INT_VAR
+                check_headers = 1
+                resist_dispel = 0
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 17
+            probability1 = 49
+    END
+    LPF ADD_ITEM_EFFECT
+        INT_VAR
+            target = 1
+            timing = 1
+            insert_point = 0
+            type = 1
+            opcode = 17
+            probability1 = 69
+            probability2 = 50
+            power = 1
+            parameter1 = 2
+    END
+    LPF ADD_ITEM_EFFECT
+        INT_VAR
+            target = 1
+            timing = 1
+            insert_point = 0
+            type = 1
+            opcode = 17
+            probability1 = 84
+            probability2 = 70
+            power = 1
+            parameter1 = 3
+    END
+    LPF ADD_ITEM_EFFECT
+        INT_VAR
+            target = 1
+            timing = 1
+            insert_point = 0
+            type = 1
+            opcode = 17
+            probability1 = 94
+            probability2 = 85
+            power = 1
+            parameter1 = 4
+    END
+    LPF ADD_ITEM_EFFECT
+        INT_VAR
+            target = 1
+            timing = 1
+            insert_point = 0
+            type = 1
+            opcode = 17
+            probability1 = 100
+            probability2 = 95
+            power = 1
+            parameter1 = 5
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 141
+            probability1 = 4
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 139
+            probability1 = 4
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 45
+            probability1 = 4
+    END
+    LPF CLONE_EFFECT
+        INT_VAR
+            check_globals = 0
+            match_opcode = 45
+            probability1 = 19
+            probability2 = 5
+            savingthrow = 1
+    END
+    LPF CLONE_EFFECT
+        INT_VAR
+            check_globals = 0
+            match_opcode = 141
+            probability1 = 19
+            probability2 = 5
+            savingthrow = 1
+    END
+    LPF CLONE_EFFECT
+        INT_VAR
+            check_globals = 0
+            match_opcode = 139
+            probability1 = 19
+            probability2 = 5
+            savingthrow = 1
+    END
+    PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1440" BEGIN // dagger compensation component installed
+        LPF ALTER_HEADER
+            INT_VAR
+                type = 1
+                match_to_hit = 3
+                to_hit = 4
+        END
+    END
+BUT_ONLY

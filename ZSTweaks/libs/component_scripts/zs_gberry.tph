@@ -1,0 +1,36 @@
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING ~SPPR207.SPL~ ~override~
+    SAY UNIDENTIFIED_DESC @5060
+    LPF ALTER_EFFECT
+        INT_VAR
+            match_opcode = 122
+            parameter1 = 6
+    END
+BUT_ONLY
+COPY_EXISTING ~GBERRY.ITM~ ~override~
+    SAY DESC @5070
+    WRITE_BYTE 0x38 12
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            match_headers = 1
+            match_opcode = 17
+            duration = 0
+            parameter1 = 0
+            dicesize = 4
+            dicenumber = 2
+    END
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1  // self
+            def_power = 2
+            def_timing = 1 // instant limited
+            def_parameter1 = 60 // turn
+            def_parameter2 = 3 // 1HP per <param1>
+            def_duration = 2700
+            def_resist_dispel = 2
+        STR_VAR
+            function_name = ~ADD_ITEM_EFFECT~
+            effect_codes  = ~op=98;op=142,p1=0,p2=87~ // regen and portrait icon for regen// SHOULD PROBABLY NOT STACK!!!
+    END
+BUT_ONLY

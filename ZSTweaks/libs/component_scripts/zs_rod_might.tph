@@ -1,0 +1,98 @@
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING ~RODS02.ITM~ ~override~
+    WRITE_LONG 0x1e 0 // usable by anyone
+    SAY IDENTIFIED_DESC @6040
+BUT_ONLY
+
+COPY_EXISTING ~rods02a.ITM~ ~override~
+    WRITE_LONG 0x1e 0 // usable by anyone
+    SAY IDENTIFIED_DESC @6040
+BUT_ONLY
+
+COPY_EXISTING ~RODMACE.ITM~ ~override~
+    WRITE_LONG 0x60 3
+    SAY NAME1 @6041
+    SAY NAME2 @6041
+    SAY UNIDENTIFIED_DESC @6044
+    SAY IDENTIFIED_DESC @6044
+    LPF ALTER_HEADER
+        INT_VAR
+            match_type = 1
+            speed = 4
+            damage = 4
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            header_type = 1
+            check_headers = 1
+            match_opcode = 24
+            savebonus = 2
+            duration = 12
+    END
+BUT_ONLY
+
+COPY_EXISTING ~RODSWORD.ITM~ ~override~
+    WRITE_LONG 0x60 3
+    WRITE_SHORT 0x22 21318 // equipped appearance of flaming sword
+    SAY NAME1 @6042
+    SAY NAME2 @6042
+    SAY UNIDENTIFIED_DESC @6045
+    SAY IDENTIFIED_DESC @6045
+    LPF ALTER_HEADER
+        INT_VAR
+            match_type = 1
+            speed = 2
+            damage = 3
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            header_type = 1
+            check_headers = 1
+            savebonus = 2
+            duration = 6
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            match_opcode = 139
+            check_headers = 1
+            duration = 0
+    END
+    LPF DELETE_EFFECT
+        INT_VAR
+            check_headers = 1
+            header_type = 1
+            match_opcode = 109
+            multi_match = 1
+    END
+    SET fire = (8 << 16)
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 2
+            def_timing = 1
+            def_type = 1
+        STR_VAR
+            function_name = ~ADD_ITEM_EFFECT~
+            effect_codes =~op=12,dsize=1,dnum=4,p2=%fire%~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~RODSPEAR.ITM~ ~override~
+    SAY NAME1 @6043
+    SAY NAME2 @6043
+    SAY UNIDENTIFIED_DESC @6046
+    SAY IDENTIFIED_DESC @6046
+    LPF ALTER_HEADER
+        INT_VAR
+            match_type = 1
+            overhand = 25
+            thrust = 75
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 12
+            savebonus = 0
+    END
+BUT_ONLY

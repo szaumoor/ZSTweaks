@@ -1,0 +1,65 @@
+COPY_EXISTING ~SW1H68.ITM~ ~override~
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            header_type = 3
+            match_opcode = 67
+            duration = 60
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            header_type = 3
+            match_opcode = 122
+            duration = 60
+    END
+BUT_ONLY
+COPY_EXISTING ~SW1H68C.ITM~ ~override~
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            header_type = 3
+            match_opcode = 67
+            duration = 60
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            header_type = 3
+            match_opcode = 122
+            duration = 60
+    END
+
+BUT_ONLY
+COPY_EXISTING ~SW1H69.ITM~ ~override~
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            header_type = 3
+            match_opcode = 67
+            duration = 60
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            header_type = 3
+            match_opcode = 122
+            duration = 60
+    END
+BUT_ONLY
+COPY_EXISTING ~SW1H69C.ITM~ ~override~
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            header_type = 3
+            match_opcode = 67
+            duration = 60
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            header_type = 3
+            match_opcode = 122
+            duration = 60
+    END
+BUT_ONLY

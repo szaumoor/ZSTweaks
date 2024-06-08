@@ -1,0 +1,182 @@
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING ~CLCK12.ITM~ ~override~ // knave
+    SAY IDENTIFIED_DESC @6140
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 0
+            parameter2 = 12
+            parameter1 = 2
+    END
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_timing = 2
+            def_target = 1
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=36,p1=1;op=173,p1=50;~
+    END
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_timing = 2
+            def_target = 1
+            def_parameter1 = 5
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=275;op=276;op=277;op=59;op=90;op=91;op=92~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~CLCK13.ITM~ ~override~ // traveler
+    SAY IDENTIFIED_DESC @6141
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 0
+            parameter1 = 3
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 36
+            new_opcode = 37
+    END
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_timing = 2
+            def_target = 1
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=34,p1=1;op=89,p1=15;op=176,p1=4~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~CLCK14.ITM~ ~override~ // adventurer
+    SAY IDENTIFIED_DESC @6142
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 0
+            parameter2 = 0
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 35
+            new_opcode = 325
+    END
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_timing = 2
+            def_target = 1
+            def_parameter1 = 10
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=37,p1=1;op=31,p1=20;op=30;op=29;op=28;op=27~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~CLCK09.ITM~ ~override~ // cold resist clck
+    SAY IDENTIFIED_DESC @6144
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 28
+            parameter1 = 40
+    END
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_timing = 2
+            def_target = 1
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=346,p1=1,spec=6;op=332,p1=7,p2=2~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~CLCK10.ITM~ ~override~ // fire resist clck
+    SAY IDENTIFIED_DESC @6145
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 30
+            parameter1 = 40
+    END
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_timing = 2
+            def_target = 1
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=346,p1=1,spec=6;op=332,p1=7,p2=1~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~bdrobe05.ITM~ ~override~ // robe of flames
+    SAY IDENTIFIED_DESC @6146
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 30
+            parameter1 = 50
+    END
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_timing = 2
+            def_target = 1
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=346,p1=1,spec=6~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~CLCK11.ITM~ ~override~ // electric resist clck
+    SAY IDENTIFIED_DESC @6143
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 29
+            parameter1 = 40
+    END
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_timing = 2
+            def_target = 1
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=346,p1=1,spec=6;op=332,p1=7,p2=3~
+    END
+BUT_ONLY
+
+COPY_EXISTING_REGEXP ~CLCK1[567]\.ITM~ ~override~ // archmage robes
+    PATCH_IF "%SOURCE_RES%" STR_EQ ~CLCK15~ BEGIN
+        SAY IDENTIFIED_DESC @6147
+    END ELSE BEGIN
+        PATCH_IF "%SOURCE_RES%" STR_EQ ~CLCK16~ BEGIN
+            SAY IDENTIFIED_DESC @6148
+        END ELSE BEGIN
+            SAY IDENTIFIED_DESC @6149
+        END
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 166
+            parameter1 = 10
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_globals = 1
+            match_opcode = 37
+            parameter1 = 2
+    END
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_timing = 2
+            def_target = 1
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~op=31,p1=25;op=189,p1=1;op=0,p1=1,p2=0~
+    END
+BUT_ONLY

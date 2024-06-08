@@ -1,0 +1,57 @@
+COPY_EXISTING ~SW1H59.ITM~ ~override~
+    SAY IDENTIFIED_DESC @6100
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 216
+            parameter1 = 2
+            probability1 = 20
+            probability2 = 34
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 141
+            probability1 = 20
+            probability2 = 34
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 0
+            probability1 = 19
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 126
+            probability1 = 19
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 154
+            probability1 = 19
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 142
+            probability1 = 19
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 174
+            probability1 = 19
+            40968
+    END
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 139
+            probability1 = 20
+            probability2 = 34
+            parameter1 = 40968 // two levels drained strref
+    END
+BUT_ONLY

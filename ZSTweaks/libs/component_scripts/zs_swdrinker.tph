@@ -1,0 +1,57 @@
+COPY_EXISTING "SW1H35.ITM" ~override~
+    SAY IDENTIFIED_DESC @6410
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            match_opcode = 17
+            probability1 = 49
+    END
+    LPF ADD_ITEM_EFFECT
+        INT_VAR
+            target = 1
+            timing = 1
+            insert_point = 0
+            type = 1
+            opcode = 17
+            probability1 = 69
+            probability2 = 50
+            power = 1
+            parameter1 = 2
+    END
+    LPF ADD_ITEM_EFFECT
+        INT_VAR
+            target = 1
+            timing = 1
+            insert_point = 0
+            type = 1
+            opcode = 17
+            probability1 = 84
+            probability2 = 70
+            power = 1
+            parameter1 = 3
+    END
+    LPF ADD_ITEM_EFFECT
+        INT_VAR
+            target = 1
+            timing = 1
+            insert_point = 0
+            type = 1
+            opcode = 17
+            probability1 = 94
+            probability2 = 85
+            power = 1
+            parameter1 = 4
+    END
+    LPF ADD_ITEM_EFFECT
+        INT_VAR
+            target = 1
+            timing = 1
+            insert_point = 0
+            type = 1
+            opcode = 17
+            probability1 = 100
+            probability2 = 95
+            power = 1
+            parameter1 = 5
+    END
+BUT_ONLY

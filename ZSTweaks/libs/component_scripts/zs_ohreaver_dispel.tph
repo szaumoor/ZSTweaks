@@ -1,0 +1,33 @@
+INCLUDE ~ZSTweaks/libs/zs_offsets.tpa~
+
+OUTER_SET both = 0
+
+ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1420~ THEN BEGIN
+    OUTER_SET both = 1
+END
+
+COPY_EXISTING ~ohreaver.ITM~ ~override~
+    PATCH_IF both BEGIN
+        SAY IDENTIFIED_DESC @6282
+    END ELSE BEGIN
+        SAY IDENTIFIED_DESC @6281
+    END
+
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            probability1 = 100
+    END
+
+    LPF ALTER_ITEM_EFFECT
+        INT_VAR
+            check_headers = 1
+            savingthrow = 1
+    END
+
+    LPF itm_first_offset_effect
+        RET offset_eff = offset
+    END
+    SET offset_dmg_eff = offset_eff + (0x30 * 8) // opcode eff against good
+    WRITE_LONG (offset_dmg_eff + 0x24) 0 // no save
+BUT_ONLY

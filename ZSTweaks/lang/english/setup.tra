@@ -1,78 +1,84 @@
 // GROUPS
-
-@1 = ~Spell tweaks~
-@2 = ~Item tweaks~
-@3 = ~Class and Kit-related tweaks~
-@4 = ~Miscellaneous tweaks~
-@5 = ~Creature tweaks~
-
-
 @10 = ~General Weapon Tweaks~
-@11 = ~Armor Tweaks~
+@11 = ~Armor/Gear Tweaks~
 @12 = ~Dagger Tweaks~
-@13 = ~Wakizashi/Scimitar/Ninjato/Katana Tweaks~
-@14 = ~Wizard Spell Tweaks~
-@15 = ~Priest Spell Tweaks~
-@16 = ~NPC Armor/Weapon Tweaks~
-
+@13 = ~Two-handed Melee Weapon Tweaks~
+@14 = ~One-handed Swords Tweaks~
+@15 = ~Mace/Club Tweaks~
+@16 = ~Ranged Weapon Tweaks~
+@17 = ~NPC Gear Tweaks~
+@18 = ~Misc Items~
+@19 = ~Wizard Spell Tweaks~
+@20 = ~Priest Spell Tweaks~
+@21 = ~Class and Kit-related tweaks~
 
 // END GROUPS
 
+@50 = ~This component is only compatible with BGEE and EET~
+@52 = ~This component is only compatible with BG2EE and EET~
+@53 = ~This component is only compatible with BGEE, BG2EE and EET~
+@54 = ~This component is only compatible with IWDEE, BGEE, BG2EE and EET~
+@55 = ~Tweak already installed elsewhere~
+
+// end warning messages components
+
 // COMPONENTS
-/// SPELLS
 
-@100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
-@110 = "Make Bless last longer"
+/// GENERAL WEAPON TWEAKS
 @120 = "Make conjured wielded magical weapons add 1 extra APR (Flame Blade, Phantom Blade...)"
-@130 = "Standardize Hold Person saving throw penalties"
-@140 = "Standardize Finger of Death magical damage on a successful save"
-@150 = "Make Disintegrate behave more like a modified Harm spell, similar to how it behaves in NWN2"
-@160 = "Make Black Blade of Disaster and the Iron Golem weapons unsuitable for backstabs"
-@170 = "Make Wail of the Banshee inflict some magical damage and deafness on a successful save"
-@180 = "Make Meteor Swarm more likely to do more damage"
-@190 = "Make Holy Power and Tenser's Transformation achieve a THAC0 of 0"
-@200 = "Make Sleep work for level >=5 enemies with a save bonus"
-@210 = "Make Horror an Enchantment spell"
-@220 = "Make Ice Storm do 1d8 more damage per round"
-@230 = "Make Cloak of Fear work as a temporary aura of fear"
-@240 = "Make Goodberries generate six berries, each healing 2d4 instead of 1 point of damage, and granting very slow regeneration for 8 hours"
-@250 = "Make Earthquake party friendly"
-@260 = "Make Negative Plane Protection's duration increase somewhat as you level up"
-@270 = "Make Entangle's saving throws improve slightly at higher levels so it remains relevant for druids"
-@280 = "Make Poison (cleric spell) do half damage on a failed save (without poisoning them)"
-@290 = "Make Holy Power and Tenser's Transformation gain extra APR like a Fighter at the appropriate levels"
-@300 = "Make Iron Skins cast as fast a Stoneskin"
-@310 = "Make Fire Seeds create more seeds that do slightly more damage, with an enchantment of 2"
-@320 = "Make Nature's Beauty a bit more likely to kill enemies outright"
-@330 = "Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)"
-@340 = "Make Symbol of Death work with Save bonus if above the 60 HP threshold"
-@350 = "Make Earthquake not shake the screen"
-@360 = "Make Etheral Retribution do more damage per round: 6d6 per round instead of 3d8"
-@370 = "Make Ray of Enfeeblement a Necromancy spell"
-@380 = "Make Contagion cause 4 points of Strength and Dexterity damage"
-@390 = "Make Death Fog inflict 4d4 acid damage per round instead of flat 8 damage"
-@400 = "Make Energy Drain drain 6 levels instead of 2"
-@410 = ~Make Horrid Wilting actually be more effective against plants and Water Elementals~
-@420 = ~Make Armor of Faith also add a +2 AC bonus to make it useful at low levels~
-@430 = ~Make Grease bypass Magic Resistance, as it is as conjured substance, and apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description~
-@440 = ~Make Comet bypass magic resistance and apply a mix of cold, fire and crushing damage~
-@450 = ~Make single-target healing spells other than Heal worth using~
-@460 = ~Make Mass Cure faster to cast to improve it as a combat spell and heal a bit more~
-
-// ITEMS
-
-@1000 = "Make throwing poisoned daggers slightly more likely to poison enemies"
-@1010 = ~Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost~
 @1120 = "Make some weapon categories incur in backstab penalties for balance"
-@1125 = "Make Ninjato of the Scarlet Brothehood +3 available for other classes and alignments"
-@1130 = "Make Bone Blade dagger more special and not just a plain +4 dagger"
-@1140 = "Make Dagger of the Star slightly more powerful"
 @1150 = "Make spears do a baseline damage of 1d8, not 1d6"
 @1160 = "Make warhammers do a baseline damage 1d5+1, not 1d4+1 (except hammers outside that range)"
+@1350 = "Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8"
+@1351 = "Make Wakizashis a piercing/slashing weapon"
+@1360 = "Make Light Crossbows get 1.5 APR"
+@1370 = "Make Katanas deal 2d5 instead of 1d10"
+@1400 = "Make Bastard Swords deal 1d8+1 by default"
+@1430 = "Make Two-handed swords deal 1d9+1 by default, and 2d6 where it applies"
+@1440 = "Make daggers have general extra features to compensate the low damage"
+@1450 = "Make some rogue weapons have the chance of doing more damage if wielded by pure thieves (Finesse)"
+@1530 = ~Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time~
+
+
+/// ARMOR/GEAR TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
 @1180 = "Make Ring of Danger sense protect against backstabs"
-@1190 = "Make Rod of Lordly Might usable by any class and more powerful"
+@1316 = "Make Mercykiller Ring more useful for rogues that like killing"
+@1317 = "Make the basic robes and Archmage robes slightly more remarkable"
+@1560 = ~Make Belt of Skillful Blade also increase piercing damage by 10%~
+@1570 = ~Make Eyes of the Beholder's skills mirror the power of the spells they're based on~
+@1610 = ~Make Robe of Invocation also improve all elemental damage by 5% and add a +2 bonus against Invocation~
+@1620 = ~Make Vicross' Thayan Circlet apply Improved Shield of Chaos instead of just Shield of Chaos~
+@1650 = ~Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak~
+
+
+/// DAGGER TWEAKS
+@1000 = "Make throwing poisoned daggers slightly more likely to poison enemies"
+@1130 = "Make Bone Blade dagger more special and not just a plain +4 dagger"
+@1140 = "Make Dagger of the Star slightly more powerful"
+@1490 = ~Make Neb's Nasty Cutter have an unlimited amount of poison~
+@1630 = ~Make The Jade's Fang slightly more powerful and improve the lifesteal effect~
+@1660 = ~Make Heart of the Golem +2 get a couple more magic-based features, inspired by the description~
+@1670 = ~Make Werebane +1 a bit more effective towards Lycanthropes~
+@1680 = ~Make Stiletto of Dermarchess +2 very slightly more powerful and bleed every hit~ //todo
+
+
+/// TWO-HANDED MELEE WEAPONS
 @1200 = "Make Ixil's Spike allow Haste and Improved Haste"
+@1280 = "Make Carsomyr affect any kind of evil and not just Chaotic Evil"
+@1290 = "Make Carsomyr's Dispel Magic force a saving throw"
+@1300 = "Make Silver Sword act as a +4 weapon to determine what it can hit to extend usability"
+@1318 = "Make Flame of the North +2 affect all evil, not just chaotic evil"
+@1390 = "Make Staff of the Magi force a saving throw to dispel effects on hits"
+@1410 = "Make Ir'revrykal Dispel Magic effect not depend on probabilities, but allow a saving throw"
+@1420 = "Make Ir'revrykal base damage equal to Carsomyr"
+@1460 = ~Make Spear of Withering able to poison on contact if save is failed~
+@1540 = ~Make Wave slightly more powerful~
+@1590 = ~Make Blackmist more powerfully blinding and make you immune to blinding~
+
+
+/// ONE-HANDED SWORDS
+@1125 = "Make Ninjato of the Scarlet Brothehood +3 available for other classes and alignments"
 @1210 = "Make The Equalizer slightly more powerful"
 @1220 = "Make Ras, the Dancing Blade last for 1 turn, instead of 4 rounds"
 @1230 = "Make Short Sword of Mask +5 slightly more powerful"
@@ -81,60 +87,86 @@
 @1250 = "Make Yamato's passive abilities more substantial"
 @1260 = "Make Usuno's Blade slightly more electrically powerful"
 @1270 = "Make Spectral Brand last for 1 turn, instead of 4 rounds"
-@1280 = "Make Carsomyr affect any kind of evil and not just Chaotic Evil"
-@1290 = "Make Carsomyr's Dispel Magic force a saving throw"
-@1300 = "Make Silver Sword act as a +4 weapon to determine what it can hit to extend usability"
+@1315 = "Make Dak'kon's Zerth Blade behave as a +3 weapon"
+@1319 = "Make Holy Sword of Tyr +3 affect all evil, not just chaotic evil"
+@1341 = ~Make Hindo's Doom a +3 and +4 weapon~
+@1470 = ~Make Adjatha the Drinker thirstier~
+@1550 = ~Make Drizzt's weapon slightly more worth stealing in BG2~
+@1580 = ~Make Hawksight improve your senses, reflexes, and accuracy more keenly~
+@1581 = ~Make Hawksight's description unique and add a minor power to it~
+
+
+// MACES/CLUBS
 @1310 = "Make Defender of Eastheaven damage reduction a little more moderate"
 @1311 = "Make Krotan's Skullcrusher +2 slightly less generic"
 @1312 = "Make Skullcrusher +3 slightly more crushy"
 @1313 = "Make Gnasher +2 slightly more painful"
 @1314 = "Make Jerrod's Mace +2 behave as a +3 weapon"
-@1315 = "Make Dak'kon's Zerth Blade behave as a +3 weapon"
-@1316 = "Make Mercykiller Ring more useful for rogues that like killing"
-@1317 = "Make the basic robes and Archmage robes slightly more remarkable"
-@1318 = "Make Flame of the North +2 affect all evil, not just chaotic evil"
-@1319 = "Make Holy Sword of Tyr +3 affect all evil, not just chaotic evil"
 @1320 = "Make Flail of Ages +5 allow Haste and Improved Haste"
 @1321 = "Make Bone Club +2, +3 against undead's effect reflect the description better and improve it slightly"
+
+
+// RANGED WEAPONS
+@1010 = ~Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost~
 @1330 = "Make Darkfire Bow slightly more remarkable"
 @1340 = "Make Taralash slightly more remarkable"
-@1341 = ~Make Hindo's Doom a +3 and +4 weapon~
-@1350 = "Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8"
-@1351 = "Make Wakizashis a piercing/slashing weapon"
-@1360 = "Make Light Crossbows get 1.5 APR"
-@1370 = "Make Katanas deal 2d5 instead of 1d10"
+
+// NPC GEAR
 @1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
-@1390 = "Make Staff of the Magi force a saving throw to dispel effects on hits"
-@1400 = "Make Bastard Swords deal 1d8+1 by default"
-@1410 = "Make Ir'revrykal Dispel Magic effect not depend on probabilities, but allow a saving throw"
-@1420 = "Make Ir'revrykal base damage equal to Carsomyr"
-@1430 = "Make Two-handed swords deal 1d9+1 by default, and 2d6 where it applies"
-@1440 = "Make daggers have general extra features to compensate the low damage"
-@1450 = "Make some rogue weapons have the chance of doing more damage if wielded by pure thieves (Finesse)"
-@1460 = ~Make Spear of Withering able to poison on contact if save is failed~
-@1470 = ~Make Adjatha the Drinker thirstier~
 @1480 = "Make Yoshimo's Katana slightly more unique and powerful"
-@1490 = ~Make Neb's Nasty Cutter have an unlimited amount of poison~
 @1500 = ~Make Mazzy's weapons slightly more powerful~
 @1510 = ~Make Delryn's family shield become a +2 shield~
 @1520 = ~Make Hallowed Redeemer able to hit enemies immune to +2 weapons~
-@1530 = ~Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time~
-@1540 = ~Make Wave slightly more powerful~
-@1550 = ~Make Drizzt's weapon slightly more worth stealing in BG2~
-@1560 = ~Make Belt of Skillful Blade also increase piercing damage by 10%~
-@1570 = ~Make Eyes of the Beholder's skills mirror the power of the spells they're based on~
-@1580 = ~Make Hawksight improve your senses, reflexes, and accuracy more keenly~
-@1581 = ~Make Hawksight's description unique and add a minor power to it~
-@1590 = ~Make Blackmist more powerfully blinding and make you immune to blinding~
-@1600 = ~Make CHARNAME's Tankard heal as much as a Potion of Extra Healing (Neera's quest)~
-@1610 = ~Make Robe of Invocation also improve all elemental damage by 5% and add a +2 bonus against Invocation~
-@1620 = ~Make Vicross' Thayan Circlet apply Improved Shield of Chaos instead of just Shield of Chaos~
-@1630 = ~Make The Jade's Fang slightly more powerful and improve the lifesteal effect~
 @1640 = ~Make Abyssal Blades more powerful (Dorn's Quest)~ //todo
-@1650 = ~Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak~
-@1660 = ~Make Heart of the Golem +2 get a couple more magic-based features, inspired by the description~
-@1670 = ~Make Werebane +1 a bit more effective towards Lycanthropes~
-@1680 = ~Make Stiletto of Dermarchess +2 very slightly more powerful and bleed every hit~
+
+// MISC ITEMS
+
+@1190 = "Make Rod of Lordly Might usable by any class and more powerful"
+@1600 = ~Make CHARNAME's Tankard heal as much as a Potion of Extra Healing (Neera's quest)~
+
+
+// WIZARD SPELLS
+@140 = "Standardize Finger of Death magical damage on a successful save"
+@150 = "Make Disintegrate behave more like a modified Harm spell, similar to how it behaves in NWN2"
+@160 = "Make Black Blade of Disaster and the Iron Golem weapons unsuitable for backstabs"
+@170 = "Make Wail of the Banshee inflict some magical damage and deafness on a successful save"
+@180 = "Make Meteor Swarm more likely to do more damage"
+@200 = "Make Sleep work for level >=5 enemies with a save bonus"
+@210 = "Make Horror an Enchantment spell"
+@220 = "Make Ice Storm do 1d8 more damage per round"
+@370 = "Make Ray of Enfeeblement a Necromancy spell"
+@380 = "Make Contagion cause 4 points of Strength and Dexterity damage"
+@390 = "Make Death Fog inflict 4d4 acid damage per round instead of flat 8 damage"
+@400 = "Make Energy Drain drain 6 levels instead of 2"
+@410 = ~Make Horrid Wilting actually be more effective against plants and Water Elementals~
+@430 = ~Make Grease bypass Magic Resistance, as it is as conjured substance, and apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description~
+@440 = ~Make Comet bypass magic resistance and apply a mix of cold, fire and crushing damage~
+@441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level" // todo
+@442 = "Make Tenser's Transformation gain extra APR like a Fighter at the appropriate levels"
+@443 = ~Make Symbol of Death work with Save bonus if above the 60 HP threshold~
+
+// CLERIC SPELLS
+@100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
+@110 = "Make Bless last longer"
+@130 = "Standardize Hold Person saving throw penalties"
+@190 = "Make Holy Power grant a THAC0 of 0 at max level"
+@230 = "Make Cloak of Fear work as a temporary aura of fear"
+@240 = "Make Goodberries generate six berries, each healing 2d4 instead of 1 point of damage, and granting very slow regeneration for 8 hours"
+@250 = "Make Earthquake party friendly"
+@260 = "Make Negative Plane Protection's duration increase somewhat as you level up"
+@270 = "Make Entangle's saving throws improve slightly at higher levels so it remains relevant for druids"
+@280 = "Make Poison (cleric spell) do half damage on a failed save (without poisoning them)"
+@290 = "Make Holy Power grant extra APR like a Fighter at the appropriate levels"
+@300 = "Make Iron Skins cast as fast a Stoneskin"
+@310 = "Make Fire Seeds create more seeds that do slightly more damage, with an enchantment of 2"
+@320 = "Make Nature's Beauty a bit more likely to kill enemies outright"
+@330 = "Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)"
+@340 = "Make Symbol of Death work with Save bonus if above the 60 HP threshold"
+@350 = "Make Earthquake not shake the screen"
+@360 = "Make Etheral Retribution do more damage per round: 6d6 per round instead of 3d8"
+@420 = ~Make Armor of Faith also add a +2 AC bonus to make it useful at low levels~
+@450 = ~Make single-target healing spells other than Heal worth using~
+@460 = ~Make Mass Cure faster to cast to improve it as a combat spell and heal a bit more~
 
 // KITS AND CLASSES
 
@@ -158,6 +190,8 @@
 //MISC TWEAKS
 
 @3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane (Rasaad's Quest)~ // TODO, add Lava's areas too
+
+
 
 // NEW DESCRIPTIONS
 

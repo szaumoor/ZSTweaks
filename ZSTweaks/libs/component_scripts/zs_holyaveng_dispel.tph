@@ -1,0 +1,47 @@
+INCLUDE ~ZSTweaks/libs/zs_offsets.tpa~
+
+OUTER_SET both = 0
+ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1280~ THEN BEGIN
+    OUTER_SET both = 1
+END
+
+COPY_EXISTING ~SW2H10.ITM~ ~override~
+    PATCH_IF both BEGIN
+        SAY IDENTIFIED_DESC @6083
+    END ELSE BEGIN
+        SAY IDENTIFIED_DESC @6082
+    END
+
+    LPF itm_first_offset_effect
+        RET offset_eff = offset
+    END
+
+    SET eff_number = SHORT_AT((LONG_AT 0x64) + 0x1e)
+    FOR ( eff = 0; eff < eff_number; ++eff ) BEGIN
+        PATCH_IF eff != 2 BEGIN // except third header, where the damage to evil is located
+            WRITE_LONG (offset_eff + 0x24) 1 // save vs spell allowed
+        END
+        offset_eff += 0x30
+    END
+BUT_ONLY
+
+COPY_EXISTING ~SW2H19.ITM~ ~override~
+    PATCH_IF both BEGIN
+        SAY IDENTIFIED_DESC @6085
+    END ELSE BEGIN
+        SAY IDENTIFIED_DESC @6084
+    END
+
+    LPF itm_first_offset_effect
+        RET offset_eff = offset
+    END
+
+    SET eff_number = SHORT_AT((LONG_AT 0x64) + 0x1e)
+    FOR ( eff = 0; eff < eff_number; ++eff ) BEGIN
+        PATCH_IF eff != 2 BEGIN // except third header, where the damage to evil is located
+            WRITE_LONG (offset_eff + 0x24) 1 // save vs spell allowed
+            WRITE_LONG (offset_eff + 0x28) "-2" // "at -2 for +6"
+        END
+        offset_eff += 0x30
+    END
+BUT_ONLY
