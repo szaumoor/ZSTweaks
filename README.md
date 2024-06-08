@@ -478,9 +478,9 @@ This exists simply to destroy any temptation to use these as cheesy ways to get 
 
 This exists because I personally dislike using spells, especially high level spells, which are powerful but unpredictable, so that there is a benefit to using them regardless. Therefore, on a successful save, it will cause 3d6 magic damage and cause deafness for 2 rounds.
 
-**Component 180:** Make Meteor Swarm more likely to do more damage
+**Component 180:** Make Meteor Swarm more likely to do more damage, and bypass magic resistance like Fire Storm
 
-The problem with Meter Swarm is that the likelihood of doing very low damage is quite high, which is pretty bad for level 9 spell. It will instead do it like Fire Storm, causing 2d10 + 1 point/level (i.e  22-40 fire damage per round, instead of 4-40 damage per round).
+The problem with Meter Swarm is that the likelihood of doing very low damage is quite high, which is pretty bad for level 9 spell. To make it worse, it doesn't bypass Magic Resistance either. Now it will instead do it like Fire Storm, causing 2d10 + 1 point/level (i.e  22-40 fire damage per round, instead of 4-40 damage per round) and no Magic Resistance will apply.
 
 **Component 200:** Make Sleep work for level >=5 enemies with a save bonus **(NOT IMPLEMENTED YET)**
 
@@ -542,6 +542,10 @@ This spell is useless if the health of the enemy, which ordinarily you cannot kn
 
 Generally speaking I do not believe in damaging spells that can be avoided completely with Saving Throws, at least in this game, because for the most part, they constitute, sooner or later as a waste of a spell slot.
 Therefore, it will always cause half damage. Additionally, it extends the headers up to level 20, such that the damage grows up to 20d4 instead of 18d4.
+
+**Component 101:** Make Flame Blade do 4 more points of Fire Damage to undead and act as a +2 weapon against them
+
+This is essentially how it works in IWDEE, except the +2 enchantment bonus, which is an addition to make it an effective tool against undead.
 
 **Component 110:** Make Bless last longer
 

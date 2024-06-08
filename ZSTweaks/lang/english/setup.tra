@@ -130,7 +130,7 @@
 @150 = "Make Disintegrate behave more like a modified Harm spell, similar to how it behaves in NWN2"
 @160 = "Make Black Blade of Disaster and the Iron Golem weapons unsuitable for backstabs"
 @170 = "Make Wail of the Banshee inflict some magical damage and deafness on a successful save"
-@180 = "Make Meteor Swarm more likely to do more damage"
+@180 = "Make Meteor Swarm more likely to do more damage, and bypass magic resistance like Fire Storm"
 @200 = "Make Sleep work for level >=5 enemies with a save bonus"
 @210 = "Make Horror an Enchantment spell"
 @220 = "Make Ice Storm do 1d8 more damage per round"
@@ -147,6 +147,7 @@
 
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
+@101 = ~Make Flame Blade do 4 more points of Fire Damage to undead and act as a +2 weapon against them~
 @110 = "Make Bless last longer"
 @130 = "Standardize Hold Person saving throw penalties"
 @190 = "Make Holy Power grant a THAC0 of 0 at max level"

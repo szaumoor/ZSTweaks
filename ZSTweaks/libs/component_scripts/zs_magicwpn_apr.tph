@@ -26,7 +26,80 @@ COPY_EXISTING ~SHILLE.ITM~ ~override~
     END
 BUT_ONLY
 
+ACTION_IF FILE_EXISTS_IN_GAME ~SHILLEL.ITM~ BEGIN
+    COPY_EXISTING ~SHILLEL.ITM~ ~override~
+        LPF a7_auto_apply_spl_effect
+            INT_VAR
+                def_target = 1  // Self
+                def_timing = 2
+                def_parameter1 = 1
+                def_parameter2 = 0
+            STR_VAR
+                function_name = ~ADD_ITEM_EQEFFECT~
+                effect_codes  = ~op=1~
+        END
+    BUT_ONLY
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~MOONBLA.ITM~ BEGIN
+    COPY_EXISTING ~MOONBLA.ITM~ ~override~
+        LPF a7_auto_apply_spl_effect
+            INT_VAR
+                def_target = 1  // Self
+                def_timing = 2
+                def_parameter1 = 1
+                def_parameter2 = 0
+            STR_VAR
+                function_name = ~ADD_ITEM_EQEFFECT~
+                effect_codes  = ~op=1~
+        END
+    BUT_ONLY
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~SMCUDGE.ITM~ BEGIN
+    COPY_EXISTING ~SMCUDGE.ITM~ ~override~
+        LPF a7_auto_apply_spl_effect
+            INT_VAR
+                def_target = 1  // Self
+                def_timing = 2
+                def_parameter1 = 1
+                def_parameter2 = 0
+            STR_VAR
+                function_name = ~ADD_ITEM_EQEFFECT~
+                effect_codes  = ~op=1~
+        END
+    BUT_ONLY
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~DECASTA.ITM~ BEGIN
+    COPY_EXISTING ~DECASTA.ITM~ ~override~
+        LPF a7_auto_apply_spl_effect
+            INT_VAR
+                def_target = 1  // Self
+                def_timing = 2
+                def_parameter1 = 1
+                def_parameter2 = 0
+            STR_VAR
+                function_name = ~ADD_ITEM_EQEFFECT~
+                effect_codes  = ~op=1~
+        END
+    BUT_ONLY
+END
+
 COPY_EXISTING ~PHANBLAD.ITM~ ~override~
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1  // Self
+            def_timing = 2
+            def_parameter1 = 1
+            def_parameter2 = 0
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes  = ~op=1~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~FIRESEED.ITM~ ~override~
     LPF a7_auto_apply_spl_effect
         INT_VAR
             def_target = 1  // Self

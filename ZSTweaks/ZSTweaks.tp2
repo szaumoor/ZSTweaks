@@ -13,7 +13,7 @@ LANGUAGE
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @120 DESIGNATED 120 GROUP @10 // MAGIC WEAPONS APR
-REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_magicwpn_apr.tph~
@@ -1390,6 +1390,8 @@ BEGIN @1601 DESIGNATED 1601 GROUP @18 // POTION PREVENT STACKING
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
 COPY_EXISTING_REGEXP ~.*\.itm~ ~override~
     READ_SHORT 0x1c category_itm
     PATCH_IF category_itm = 9 BEGIN // if it's a potion
@@ -1443,39 +1445,7 @@ BEGIN @180 DESIGNATED 180 GROUP @19 // METEORM SWARM TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
-
-COPY_EXISTING ~SPWI911.SPL~ ~override~
-    SAY UNIDENTIFIED_DESC @5040
-    SAY DESC @5040
-    LPF ALTER_EFFECT
-        INT_VAR
-            header = 0
-            match_opcode = 12
-            parameter1 = 14
-            dicenumber = 2
-            dicesize = 10
-    END
-    SET headers = 0
-    FOR (i = 15; i <= 20; i+=1) BEGIN
-        LPF ADD_SPELL_HEADER
-            INT_VAR
-                copy_header = 1
-                zs_min_level_for_copy = i
-        END
-        headers += 1
-    END
-    SET damage = 15
-    FOR (i = 1; i <= headers; i+=1) BEGIN
-        LPF ALTER_EFFECT
-            INT_VAR
-                header = i
-                match_opcode = 12
-                parameter1 = damage
-        END
-        damage += 1
-    END
-BUT_ONLY
+INCLUDE ~ZSTweaks/libs/component_scripts/zs_meteorswarm.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //BEGIN @200 DESIGNATED 200 GROUP @19 SLEEP TWEAK
@@ -1698,6 +1668,33 @@ COPY_EXISTING ~SPPR304.SPL~ ~override~
                 dicenumber = level
         END
         ++new_header
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @101 DESIGNATED 101 GROUP @20 // FBLADE UNDEAD BONUS
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+COPY ~ZSTweaks/eff/ZSTWFL04.EFF~
+
+COPY_EXISTING ~FBLADE.ITM~ ~override~
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1  // Self
+            def_timing = 2
+            def_parameter1 = 4
+            def_parameter2 = 3
+            def_special = 2
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes  = ~op=344~
+    END
+    LPF a7_auto_apply_spl_effect
+        STR_VAR
+            function_name = ~ADD_ITEM_EFFECT~
+            effect_codes  = ~t=1,tgt=2,tmg=1,rd=2,op=177,res=ZSTWFL04~
     END
 BUT_ONLY
 
