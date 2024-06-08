@@ -1630,7 +1630,7 @@ COPY_EXISTING ~SPWI603.SPL~ ~override~
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @340 DESIGNATED 443 GROUP @20 // SYMBOL OF DEATH BOOST
+BEGIN @340 DESIGNATED 443 GROUP @19 // SYMBOL OF DEATH BOOST
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 FORBID_COMPONENT "ZSTweaks.tp2" "340" @55
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1677,7 +1677,7 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-COPY ~ZSTweaks/eff/ZSTWFL04.EFF~
+COPY ~ZSTweaks/eff/ZSTWFL04.EFF~ ~override~
 
 COPY_EXISTING ~FBLADE.ITM~ ~override~
     LPF a7_auto_apply_spl_effect
@@ -1694,7 +1694,7 @@ COPY_EXISTING ~FBLADE.ITM~ ~override~
     LPF a7_auto_apply_spl_effect
         STR_VAR
             function_name = ~ADD_ITEM_EFFECT~
-            effect_codes  = ~t=1,tgt=2,tmg=1,rd=2,op=177,res=ZSTWFL04~
+            effect_codes  = ~t=1,tgt=2,tmg=1,rd=2,op=177,res=ZSTWFL04,p1=3,p2=4~
     END
 BUT_ONLY
 
