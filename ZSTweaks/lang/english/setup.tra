@@ -26,6 +26,7 @@
 
 /// GENERAL WEAPON TWEAKS
 @120 = "Make conjured wielded magical weapons add 1 extra APR (Flame Blade, Phantom Blade...)"
+@160 = "Make Black Blade of Disaster and the Iron Golem weapons unsuitable for backstabs"
 @1120 = "Make some weapon categories incur in backstab penalties for balance"
 @1150 = "Make spears do a baseline damage of 1d8, not 1d6"
 @1160 = "Make warhammers do a baseline damage 1d5+1, not 1d4+1 (except hammers outside that range)"
@@ -128,7 +129,7 @@
 // WIZARD SPELLS
 @140 = "Standardize Finger of Death magical damage on a successful save"
 @150 = "Make Disintegrate behave more like a modified Harm spell, similar to how it behaves in NWN2"
-@160 = "Make Black Blade of Disaster and the Iron Golem weapons unsuitable for backstabs"
+@161 = ~Make Phantom Blade scale in duration up to level 20, instead of to level 18~
 @170 = "Make Wail of the Banshee inflict some magical damage and deafness on a successful save"
 @180 = "Make Meteor Swarm more likely to do more damage, and bypass magic resistance like Fire Storm"
 @200 = "Make Sleep work for level >=5 enemies with a save bonus"
@@ -148,6 +149,7 @@
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
 @101 = ~Make Flame Blade do 4 more points of Fire Damage to undead and act as a +2 weapon against them~
+@102 = ~Make BG's version of Flame Blade scale duration-wise like in IWDEE~
 @110 = "Make Bless last longer"
 @130 = "Standardize Hold Person saving throw penalties"
 @190 = "Make Holy Power grant a THAC0 of 0 at max level"
@@ -2201,3 +2203,59 @@ Requires:
  3 Strength
 
 Weight: 1~
+
+//flame blade boost iwdee
+@6600 = ~Flame Blade
+(Evocation)
+
+Level: 2
+Sphere: Elemental Fire
+Range: 0
+Duration: 4 rounds + 1 round/level
+Casting Time: 4
+Area of Effect: The caster
+Saving Throw: None
+
+With this spell, the caster causes a blazing ray of red-hot fire to spring forth from <PRO_HISHER> hand. This blade-like ray is wielded as if it were a scimitar (i.e. it uses the Scimitar proficiency). If the caster successfully hits with the flame blade in melee combat, the creature struck suffers 1d4 points of slashing damage plus 4 points of fire damage, with a further 4 fire damage if the creature is undead. It is not a magical weapon in the normal sense of the term, but the sword functions as a +2 weapon against undead.~
+
+//flame blade bg boost, no duration boost
+@6610 = ~Flame Blade
+(Evocation)
+
+Level: 2
+Sphere: Elemental (Fire)
+Range: 0
+Duration: 4 rounds + 1 round/2 levels
+Casting Time: 4
+Area of Effect: Special
+Saving Throw: None
+
+With this spell, the caster causes a blazing ray of red-hot fire to spring forth from <PRO_HISHER> hand. This blade-like ray is wielded as if it were a sword that the caster already knows how to use, hence there are no bonuses or penalties. If the caster successfully hits with the flame blade in melee combat, the creature struck suffers 1d4 points of slashing damage, plus an additional 1d2+4 points of fire damage. It is not a magical weapon in the normal sense of the term, but the sword functions as a +2 weapon against undead.~
+
+//flame blade bg duration boost
+@6620 = ~Flame Blade
+(Evocation)
+
+Level: 2
+Sphere: Elemental (Fire)
+Range: 0
+Duration: 4 rounds + 1 round/ level
+Casting Time: 4
+Area of Effect: Special
+Saving Throw: None
+
+With this spell, the caster causes a blazing ray of red-hot fire to spring forth from <PRO_HISHER> hand. This blade-like ray is wielded as if it were a sword that the caster already knows how to use, hence there are no bonuses or penalties. If the caster successfully hits with the flame blade in melee combat, the creature struck suffers 1d4 points of slashing damage, plus an additional 1d2+4 points of fire damage. However, it is not a magical weapon in the normal sense of the term, so creatures struck only by magical weapons are not harmed by it.~
+
+//flame blade bg, with duration boost
+@6630 = ~Flame Blade
+(Evocation)
+
+Level: 2
+Sphere: Elemental (Fire)
+Range: 0
+Duration: 4 rounds + 1 round/level
+Casting Time: 4
+Area of Effect: Special
+Saving Throw: None
+
+With this spell, the caster causes a blazing ray of red-hot fire to spring forth from <PRO_HISHER> hand. This blade-like ray is wielded as if it were a sword that the caster already knows how to use, hence there are no bonuses or penalties. If the caster successfully hits with the flame blade in melee combat, the creature struck suffers 1d4 points of slashing damage, plus an additional 1d2+4 points of fire damage. It is not a magical weapon in the normal sense of the term, but the sword functions as a +2 weapon against undead.~

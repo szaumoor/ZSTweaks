@@ -12,6 +12,10 @@ This section includes non-specific improvements to groups of weapons. It does no
 
 The problem with these spells is that they promise power, but your little sickly wizard is not a very good fighter at all. I think this promise should be more serious, and therefore, by default, all these weapons grant 2 APR by default.
 
+**Component 160:** Make Black Blade of Disaster and the Iron Golem weapons unsuitable for backstabs
+
+This exists simply to destroy any temptation to use these as cheesy ways to get insane numbers with backstabs that would instakill most things with HP and normal damage resistances in one hit. So now they should not be able to trigger backstabs.
+
 **Component 1120:** Make some weapon categories incur in backstab penalties for balance
 
 This reduces the backstab multiplier of some weapons who realistically would not be great for backstabs, which also includes pretty broken weapons when used for backstabs, such as the Staff of Ram.
@@ -470,9 +474,11 @@ This prevents cheeesy stacking of things like Fire Resistance, Saving Throws (Po
 
 This component makes disintegrate behave like it does in NWN2, which causes 150 points of magic damage if successful, to differentiate it from the Flesh to Stone spell.
 
-**Component 160:** Make Black Blade of Disaster and the Iron Golem weapons unsuitable for backstabs
+**Component 161:** Make Phantom Blade scale in duration up to level 20, instead of to level 18
 
-This exists simply to destroy any temptation to use these as cheesy ways to get insane numbers with backstabs that would instakill most things with HP and normal damage resistances in one hit. So now they should not be able to trigger backstabs.
+**Component 161:** Make Phantom Blade scale in duration up to level 20, instead of to level 18
+
+Might be a bug present in various spells. See Glyph of Warding component.
 
 **Component 170:** Make Wail of the Banshee inflict some magical damage and deafness on a successful save
 
@@ -545,7 +551,11 @@ Therefore, it will always cause half damage. Additionally, it extends the header
 
 **Component 101:** Make Flame Blade do 4 more points of Fire Damage to undead and act as a +2 weapon against them
 
-This is essentially how it works in IWDEE, except the +2 enchantment bonus, which is an addition to make it an effective tool against undead.
+This is essentially how it works in IWDEE, except the +2 enchantment bonus, which is an addition to make it an effective tool against undead. This also fixes the inaccurate description in IWDEE (it's +4 fire damage, not +2).
+
+**Component 102:** Make BG's version of Flame Blade scale duration-wise like in IWDEE
+
+There's no reason this weapon should be more limited duration-wise. Not it follows the usual convention.
 
 **Component 110:** Make Bless last longer
 

@@ -1418,6 +1418,34 @@ INCLUDE ~ZSTweaks/libs/component_scripts/zs_fdeath_std.tph~
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @161 DESIGNATED 161 GROUP @19 // PHANBLAD DUR STD
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
+
+COPY_EXISTING ~SPWI518.SPL~ ~override~
+    SET dur = 126
+    SET new_header = (SHORT_AT 0x68) + 1
+    FOR ( level = 19; level <= 20; ++level ) BEGIN
+        LPF ADD_SPELL_HEADER
+            INT_VAR
+                copy_header = new_header - 1
+                zs_min_level_for_copy = level
+        END
+        LPF ALTER_EFFECT
+            INT_VAR
+                header_type = 1
+                header = new_header - 1
+                match_duration = dur
+                duration = dur + 6
+        END
+        ++new_header
+        dur += 6
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @170 DESIGNATED 170 GROUP @19 // WAIL OF BANSHEE MAGIC DMG TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1679,6 +1707,14 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 COPY ~ZSTweaks/eff/ZSTWFL04.EFF~ ~override~
 
+COPY_EXISTING ~SPPR206.SPL~ ~override~
+    PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "102" BEGIN
+        SAY UNIDENTIFIED_DESC @6630
+    END ELSE BEGIN
+        SAY UNIDENTIFIED_DESC @6610
+    END
+BUT_ONLY
+
 COPY_EXISTING ~FBLADE.ITM~ ~override~
     LPF a7_auto_apply_spl_effect
         INT_VAR
@@ -1691,10 +1727,54 @@ COPY_EXISTING ~FBLADE.ITM~ ~override~
             function_name = ~ADD_ITEM_EQEFFECT~
             effect_codes  = ~op=344~
     END
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes  = ~t=1,tgt=2,tmg=1,rd=2,op=177,res=ZSTWFL04,p1=3,p2=4~
+    PATCH_IF NOT GAME_IS "iwdee" BEGIN
+        LPF a7_auto_apply_spl_effect
+            STR_VAR
+                function_name = ~ADD_ITEM_EFFECT~
+                effect_codes  = ~t=1,tgt=2,tmg=1,rd=2,op=177,res=ZSTWFL04,p1=3,p2=4~
+        END
+    END ELSE BEGIN
+        LPF ALTER_EFFECT
+            INT_VAR
+                check_globals = 0
+                match_opcode = 177
+            STR_VAR
+                match_resource = ~FBLADE~
+                resource = ~ZSTWFL04~
+        END
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @102 DESIGNATED 102 GROUP @20 // FBLADE DURATION BOOST
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
+
+COPY_EXISTING ~SPPR206.SPL~ ~override~
+    PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "101" BEGIN
+        SAY UNIDENTIFIED_DESC @6630
+    END ELSE BEGIN
+        SAY UNIDENTIFIED_DESC @6620
+    END
+    FOR ( level = 3; level <= 19; level += 2 ) BEGIN
+        LPF ADD_SPELL_HEADER
+            INT_VAR
+                copy_header = 1
+                zs_min_level_for_copy = level
+                insert_point = level - 1
+        END
+    END
+    READ_SHORT 0x68 num_abilities
+    SET dur = 24
+    FOR ( level = 0; level < 20; ++level ) BEGIN
+        LPF ALTER_EFFECT
+            INT_VAR
+                header = level
+                duration = dur
+        END
+        dur += 6
     END
 BUT_ONLY
 

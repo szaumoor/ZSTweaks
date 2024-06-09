@@ -23,11 +23,12 @@ COPY_EXISTING ~RODMACE.ITM~ ~override~
             speed = 4
             damage = 4
     END
-    LPF ALTER_ITEM_EFFECT
+    LPF ALTER_EFFECT
         INT_VAR
             header_type = 1
-            check_headers = 1
+            check_globals = 0
             match_opcode = 24
+            opcode = 40
             savebonus = 2
             duration = 12
     END
