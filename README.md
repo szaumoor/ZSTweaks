@@ -476,8 +476,6 @@ This component makes disintegrate behave like it does in NWN2, which causes 150 
 
 **Component 161:** Make Phantom Blade scale in duration up to level 20, instead of to level 18
 
-**Component 161:** Make Phantom Blade scale in duration up to level 20, instead of to level 18
-
 Might be a bug present in various spells. See Glyph of Warding component.
 
 **Component 170:** Make Wail of the Banshee inflict some magical damage and deafness on a successful save
