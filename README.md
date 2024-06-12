@@ -5,9 +5,9 @@ This mod is a compilation of tweaks that I think personally improve things as th
 ---
 <details>
 
-<summary> This section includes non-specific improvements to groups of weapons. It does not update descriptions.<summary>
+<summary><b>General Weapon Tweaks</b></summary>
 
-## General Weapon Tweaks
+This section includes non-specific improvements to groups of weapons. It does not update descriptions.
 
 **Component 120:** Make conjured magical weapons add extra attacks (Flame Blade, Ghost Blade, Black Blade of Disaster...)
 
@@ -100,7 +100,9 @@ This reduces the number of dice thrown of DAGG11 and DAGG12 to 1 so they are not
 
 ---
 
-## Armor/Gear Tweaks
+<details>
+
+<summary><b>Armor/Gear Tweaks</b></summary>
 
 This section includes specific armor tweaks, and it updates descriptions accordingly in a destructive way.
 
@@ -171,9 +173,13 @@ This makes the circlet a bit more valuable by making it more effective in contro
 
 Purely cosmetic tweak. I've never liked the look of robes without cloaks or cloaks & hoods.
 
+</details>
+
 ---
 
-## Dagger Tweaks
+<details>
+
+<summary><b>Dagger Tweaks</b></summary>
 
 **Component 1000:** Make throwing poisoned daggers slightly more likely to poison enemies
 
@@ -219,9 +225,13 @@ Werebane's description is a little misleading. It doesn't cause +4 damage agains
 
 This component makes the weapon try to stun the victim with a probability of 25% instead of 20%. Inspired by the sadistic story behind the weapon, it also causes bleeding every hit, similar to Gnasher, inflicting 2 extra piercing damage per round for 3 rounds.
 
+</details>
+
 ---
 
-## Two-handed Melee Weapons Tweaks
+<details>
+
+<summary><b>Two-handed Melee Weapons Tweaks</b></summary>
 
 **Component 1200:** Make Ixil's Spike allow Haste and Improved Haste **(NOT IMPLEMENTED YET)**
 
@@ -267,9 +277,13 @@ This component improves Wave +4 by making it always deal 3 points of cold damage
 
 This makes Blackmist's blindness power be more likely to be effective, by adding a -2 Save penalty. Additionally, you're immune to blindness.
 
+</details>
+
 ---
 
-## One-handed Sword Tweaks
+<details>
+
+<summary><b>One-handed Sword Tweaks</b></summary>
 
 **Component 1125:** Make Ninjato of the Scarlet Brothehood +3 available for other classes and alignments
 
@@ -358,9 +372,13 @@ This component requires the previous one, and it adds a description worth-readin
 "Charge abilities:
 – Twice per day, invoke the spirit of Arannis Alderlight to detect invisiblity and evil."
 
+</details>
+
 ---
 
-## Maces/Clubs
+<details>
+
+<summary><b>Mace/Clubs Tweaks</b></summary>
 
 **Component 1310:** Make Defender of Eastheaven damage reduction a little more moderate
 
@@ -410,9 +428,13 @@ The +5 version literally just increases the THAC0 bonus by 1. That's a bit too b
 - Adds a damage bonus of 1 like a regular composite bow
 - Animals and and other kind of unintelligent beasts, magical or not, take +2 and +5 damage (+4 and +5 version respectively)
 
+</details>
+
 ---
 
-## NPC Gear Tweaks
+<details>
+
+<summary><b>NPC Gear Tweaks</b></summary>
 
 **Component 1380:** Make Chaos and Entropy grant 1/2 APR each and improve them slightly.
 
@@ -445,9 +467,13 @@ Just a simple buff to make the shield a good option for longer.
 
 This extends the usability of the weapon, despite the lower damage, if the constant shield the weapon grants is desired.
 
+</details>
+
 ---
 
-## Misc Item Tweaks
+<details>
+
+<summary><b>Misc Items Tweaks</b></summary>
 
 **Component 1190:** Make Rod of Lordly Might usable by any class and more powerful
 
@@ -465,9 +491,13 @@ This makes this item significantly more valuable.
 
 This prevents cheeesy stacking of things like Fire Resistance, Saving Throws (Potion of Invulnerability), etc.
 
+</details>
+
 ---
 
-## Wizard spells
+<details>
+
+<summary><b>Wizard Spell Tweaks</b></summary>
 
 **Component 150:** Make Disintegrate behave more like a modified Harm spell, similar to how it behaves in NWN2 **(NOT IMPLEMENTED YET)**
 
@@ -545,9 +575,13 @@ This components further tightens the gap between the wizard and the fighter they
 
 This spell is useless if the health of the enemy, which ordinarily you cannot know, is above that threshold, so it's fairly wasteful to use the spell unless the enemy is Near Death or the enemies are very weak anyway and easy to kill. As such, now the spell works for HP above 60, but with a bonus of +6 giving it at least some (small) chance of working at all times.
 
+</details>
+
 ---
 
-## Cleric/Druid Spell Tweaks
+<details>
+
+<summary><b>Cleric/Druid Spell Tweaks</b></summary>
 
 **Component 100:** Make Glyph of Warding do damage on a failed save and extend damage up to level 20, and not 18
 
@@ -658,9 +692,13 @@ I also hate the name of the spells. Mostly because "light wounds" is completely 
 
 This improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32).
 
+</details>
+
 ---
 
-## Class and Kit-related tweaks
+<details>
+
+<summary><b>Class/Kit-related Tweaks</b></summary>
 
 **Component 2100:** Make Sun Soul Ray from Sun Soul Monks damage improve slightly and do more damage to undead
 
@@ -710,6 +748,7 @@ Refer to component 2170 for reasons. Applies the same bonus to Bards, who also h
 **Component 2190:** Make Poison Weapon improve couple of times more every 4 levels (level 17, and 21)
 
 This makes Poison Weapon more powerful and reliable at high levels. At level 17, the save penalty improves to -3, lasts for 27 seconds, and the immediate poison damage increases to 8. At level 21, the save penalty improves to -4, lasts for 30 seconds, and the immediate poison damage increases to 10.
+</details>
 
 ---
 
