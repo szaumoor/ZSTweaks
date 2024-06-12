@@ -3,10 +3,11 @@
 This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game, nothing more, nothing less. The vast majority of the tweaks are designed to be simple improvements of underpowered items or abilities. Some of them overhaul the game more extensively.
 
 ---
+<details>
+
+<summary> This section includes non-specific improvements to groups of weapons. It does not update descriptions.<summary>
 
 ## General Weapon Tweaks
-
-This section includes non-specific improvements to groups of weapons. It does not update descriptions.
 
 **Component 120:** Make conjured magical weapons add extra attacks (Flame Blade, Ghost Blade, Black Blade of Disaster...)
 
@@ -94,6 +95,8 @@ Essentially, when wielding a weapon they can use with what I call "finesse", whi
 **Component 1530:** Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time to maximize damage
 
 This reduces the number of dice thrown of DAGG11 and DAGG12 to 1 so they are not the only good choice for daggers to maximize damage. And for consistency. Generally speaking I dislike a lot this sort of unbalanced design. DAGG11 specifically, already comformed to this rule in BGEE.
+
+</details>
 
 ---
 
