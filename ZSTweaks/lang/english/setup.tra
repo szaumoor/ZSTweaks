@@ -26,7 +26,6 @@
 
 /// GENERAL WEAPON TWEAKS
 @120 = "Make conjured wielded magical weapons add 1 extra APR (Flame Blade, Phantom Blade...)"
-@160 = "Make Black Blade of Disaster and the Iron Golem weapons unsuitable for backstabs"
 @1120 = "Make some weapon categories incur in backstab penalties for balance"
 @1150 = "Make spears do a baseline damage of 1d8, not 1d6"
 @1160 = "Make warhammers do a baseline damage 1d5+1, not 1d4+1 (except hammers outside that range)"
@@ -129,6 +128,8 @@
 // WIZARD SPELLS
 @140 = "Standardize Finger of Death magical damage on a successful save"
 @150 = "Make Disintegrate behave more like a modified Harm spell, similar to how it behaves in NWN2"
+@160 = "Make Black Blade of Disaster unsuitable for backstabs"
+@163 = "Make Iron Golem weapon unsuitable for backstabs"
 @161 = ~Make Phantom Blade scale in duration up to level 20, instead of to level 18~
 @170 = "Make Wail of the Banshee inflict some magical damage and deafness on a successful save"
 @180 = "Make Meteor Swarm more likely to do more damage, and bypass magic resistance like Fire Storm"
@@ -153,7 +154,7 @@
 @110 = "Make Bless last longer"
 @130 = "Standardize Hold Person saving throw penalties"
 @190 = "Make Holy Power grant a THAC0 of 0 at max level"
-@230 = "Make Cloak of Fear work as a temporary aura of fear"
+@230 = "Make Cloak of Fear work as a temporary aura of fear, like in IWDEE"
 @240 = "Make Goodberries generate six berries, each healing 2d4 instead of 1 point of damage, and granting very slow regeneration for 8 hours"
 @250 = "Make Earthquake party friendly"
 @260 = "Make Negative Plane Protection's duration increase somewhat as you level up"
@@ -162,7 +163,7 @@
 @290 = "Make Holy Power grant extra APR like a Fighter at the appropriate levels"
 @300 = "Make Iron Skins cast as fast a Stoneskin"
 @310 = "Make Fire Seeds create more seeds that do slightly more damage, with an enchantment of 2"
-@320 = "Make Nature's Beauty a bit more likely to kill enemies outright"
+@320 = "Make Nature's Beauty a bit more likely to kill humanoid enemies outright"
 @330 = "Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)"
 @340 = "Make Symbol of Death work with Save bonus if above the 60 HP threshold"
 @350 = "Make Earthquake not shake the screen"
@@ -2259,3 +2260,17 @@ Area of Effect: Special
 Saving Throw: None
 
 With this spell, the caster causes a blazing ray of red-hot fire to spring forth from <PRO_HISHER> hand. This blade-like ray is wielded as if it were a sword that the caster already knows how to use, hence there are no bonuses or penalties. If the caster successfully hits with the flame blade in melee combat, the creature struck suffers 1d4 points of slashing damage, plus an additional 1d2+4 points of fire damage. It is not a magical weapon in the normal sense of the term, but the sword functions as a +2 weapon against undead.~
+
+// iwdee description
+@6640 = ~Cloak of Fear
+(Conjuration/Summoning)
+
+Level: 4
+Sphere: Charm
+Range: 0
+Duration: 3 rounds
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: Neg.
+
+Cloak of Fear bestows the caster with an aura of fear in a 5-ft. radius. All creatures that enter the cloak's area of effect must make a Save vs. Spell or flee in panic for 3 rounds. The aura does not affect undead creatures.~

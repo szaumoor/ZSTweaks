@@ -19,40 +19,6 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_magicwpn_apr.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @160 DESIGNATED 160 GROUP @10 // GOLIRO/BLAKBLAD NO BACKSTAB TWEAK
-REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
-COPY_EXISTING ~BLAKBLAD.ITM~ ~override~
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1  // Self
-            def_timing = 2
-            def_parameter1 = 0
-            def_parameter2 = 1
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes  = ~op=263~
-    END
-BUT_ONLY
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY_EXISTING ~CDGOLIRO.ITM~ ~override~
-        LPF a7_auto_apply_spl_effect
-            INT_VAR
-                def_target = 1  // Self
-                def_timing = 2
-                def_parameter1 = 0
-                def_parameter2 = 1
-            STR_VAR
-                function_name = ~ADD_ITEM_EQEFFECT~
-                effect_codes  = ~op=263~
-        END
-    BUT_ONLY
-END
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1120 DESIGNATED 1120 GROUP @10 // BACKSTAB PENALTIES
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1418,6 +1384,46 @@ INCLUDE ~ZSTweaks/libs/component_scripts/zs_fdeath_std.tph~
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @160 DESIGNATED 160 GROUP @19 // BLAKBLAD NO BACKSTAB TWEAK
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING ~BLAKBLAD.ITM~ ~override~
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1  // Self
+            def_timing = 2
+            def_parameter1 = 0
+            def_parameter2 = 1
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes  = ~op=263~
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @163 DESIGNATED 163 GROUP @19 // GOLIRO NO BACKSTAB TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING ~CDGOLIRO.ITM~ ~override~
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1  // Self
+            def_timing = 2
+            def_parameter1 = 0
+            def_parameter2 = 1
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes  = ~op=263~
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @161 DESIGNATED 161 GROUP @19 // PHANBLAD DUR STD
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1716,6 +1722,8 @@ COPY_EXISTING ~SPPR206.SPL~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~FBLADE.ITM~ ~override~
+    READ_LONG flags 0x18
+    WRITE_LONG 0x18 (flags + 2**6) // magical, destructive
     LPF a7_auto_apply_spl_effect
         INT_VAR
             def_target = 1  // Self
@@ -1847,10 +1855,26 @@ COPY_EXISTING ~SPPR412.SPL~ ~override~
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-//BEGIN @230 DESIGNATED 230 GROUP @20 CLOAK OF FEAR TWEAK
-//REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" "This mod was written for BGEE and BG2EE"
+BEGIN @230 DESIGNATED 230 GROUP @20 //CLOAK OF FEAR TWEAK
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+COPY_EXISTING ~SPPR416.SPL~ ~override~
+    READ_LONG 0x08 cloak_fear_strref
+BUT_ONLY
+
+COPY ~ZSTweaks/spl/iwd~ ~override~
+
+COPY_EXISTING ~SPPR416.SPL~ ~override~
+    WRITE_LONG 0x08 cloak_fear_strref
+    SAY UNIDENTIFIED_DESC @6640
+    LPF ALTER_EFFECT
+        INT_VAR
+            match_opcode = 215
+        STR_VAR
+            resource = ~ICCLKFR2~
+    END
+BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @240 DESIGNATED 240 GROUP @20 // GOODBERRY TWEAK
