@@ -1722,7 +1722,7 @@ COPY_EXISTING ~SPPR206.SPL~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~FBLADE.ITM~ ~override~
-    READ_LONG flags 0x18
+    READ_LONG 0x18 flags
     WRITE_LONG 0x18 (flags + 2**6) // magical, destructive
     LPF a7_auto_apply_spl_effect
         INT_VAR
