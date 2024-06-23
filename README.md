@@ -67,7 +67,8 @@ This is a small change to make daggers slightly more appealing on a general leve
 
 - +1 THAC0 bonus
 - Speed factor of 0
-- +5% Critical chance, and critical hits do moderately additional damage additively in a second tick of damage.
+- +5% Critical chance
+- Overwhelming criticals: critical hits do moderately additional damage additively in a second tick of damage.
   - The formula for critical damage added (additively) is: (**MaxWpnDmg** - 1) **+**  2 dice of **MaxWpnDmg**:
   - Dagger **+0** -> 3 + 2d4, i.e. 5-11 dmg
   - Dagger **+1** -> 4 + 2d5, i.e. 6-14 dmg
@@ -223,7 +224,7 @@ Werebane's description is a little misleading. It doesn't cause +4 damage agains
 
 **Component 1680:** Make Stiletto of Demarchess +2 very slightly more powerful and bleed every hit
 
-This component makes the weapon try to stun the victim with a probability of 25% instead of 20%. Inspired by the sadistic story behind the weapon, it also causes bleeding every hit, similar to Gnasher, inflicting 2 extra piercing damage per round for 3 rounds.
+This component makes the weapon try to stun the victim with a probability of 25% instead of 20%. Inspired by the sadistic story behind the weapon, it also causes bleeding every hit, similar to Gnasher, inflicting 2 extra piercing damage, as well as 2 more per round for 3 rounds.
 
 </details>
 
@@ -467,6 +468,12 @@ Just a simple buff to make the shield a good option for longer.
 
 This extends the usability of the weapon, despite the lower damage, if the constant shield the weapon grants is desired.
 
+**@1640** Make Abyssal Blades more powerful (Dorn's Quest)
+
+This improves the blades such that they have an enchantment of 5, and thus their usability is extended until the end of game, if so desired.
+
+Additionally, the versions that have one fiend in them deal +1 fire damage compared to baseline. The version that has two deals +2.
+
 </details>
 
 ---
@@ -485,11 +492,11 @@ The rod is conceptually quite interesting, but generally underperforming.
 
 **Component 1600:** Make CHARNAME's Tankard heal as much as a Potion of Extra Healing (Neera's quest)
 
-This makes this item significantly more valuable.
+This makes this item significantly more valuable. 3x potions of that sort per day.
 
-**Component 1601:** Make potions universally incapable of stacking with themselves
+**Component 1601:** Make potions and food universally incapable of stacking with themselves
 
-This prevents cheeesy stacking of things like Fire Resistance, Saving Throws (Potion of Invulnerability), etc.
+This prevents cheeesy stacking of things like Fire Resistance, Saving Throws (Potion of Invulnerability), etc. Applies to food items such as apples from Lunia, and goodberries.
 
 </details>
 
@@ -550,6 +557,14 @@ Improves the usability of Death Fog as a "general purpose" damage dealer, instea
 **Component 400:** Make Energy Drain drain 6 levels instead of 2
 
 2 levels of drain is unremarkable and a waste of a spell slot, particularly when the likely enemies to fight by the time you get this spell are fairly high level.
+
+**Component 405** Make Maze bypass Magic Resistance, like Imprisonment
+
+I think this makes this spell quite more useful, although perhaps it's too powerful like that if used against some enemies. I like this tweak, but I'll use the spell judiciously (perhaps not mazing dragons, for example).
+
+**Component 407** Make BGEE's Imp have 12 HP like the other familiars
+
+This allows you to be Lawful Evil and enjoy the same amount of HP bonus as other alignments. This is standardized in BG2EE. I see no reason there should be a bias against the familiar Imp in BGEE.
 
 **Component 410:** Make Horrid Wilting actually be more effective against plants and Water Elementals
 

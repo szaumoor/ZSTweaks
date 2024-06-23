@@ -274,6 +274,42 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     END
 BUT_ONLY
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+/*BEGIN @1435 DESIGNATED 1435 GROUP @10 // DAGGER DICE CHANGES
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54 // unconvinced this is worth doing
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+
+COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    READ_SHORT 0x1c wpn_cat
+    READ_BYTE  0x31 wpn_prof
+
+    PATCH_IF wpn_cat = 16  AND wpn_prof = 96 BEGIN // daggers
+        FOR ( current_dmg = 6; current_dmg >= 0; current_dmg -= 1 ) BEGIN
+            LPF ALTER_HEADER
+                INT_VAR
+                    silent = 1
+                    match_type = 1
+                    match_dicesize = 4
+                    match_dicenumber = 1
+                    match_damage = current_dmg
+                    dicesize = 3
+                    damage = current_dmg + 1
+            END
+            LPF ALTER_HEADER
+                INT_VAR
+                    silent = 1
+                    match_type = 2
+                    match_dicesize = 4
+                    match_dicenumber = 1
+                    match_damage = current_dmg
+                    dicesize = 3
+                    damage = current_dmg + 1
+            END
+        END
+    END
+BUT_ONLY*/
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1440 DESIGNATED 1440 GROUP @10 // DAGGER BONUSES
@@ -289,7 +325,6 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_rogue_wpns.tph~
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1530 DESIGNATED 1530 GROUP @10
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
@@ -301,6 +336,20 @@ COPY_EXISTING_REGEXP "DAGG1[12]\.ITM" ~override~
     LPF ALTER_HEADER
         INT_VAR
             dicenumber = 1
+    END
+    PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1435" BEGIN
+        FOR ( current_dmg = 6; current_dmg >= 0; current_dmg -= 1 ) BEGIN
+            LPF ALTER_HEADER
+                INT_VAR
+                    silent = 1
+                    match_type = 1
+                    match_dicesize = 4
+                    match_dicenumber = 1
+                    match_damage = current_dmg
+                    dicesize = 3
+                    damage = current_dmg + 1
+            END
+        END
     END
 BUT_ONLY
 
@@ -1319,10 +1368,41 @@ COPY_EXISTING "NPSW03.ITM" ~override~
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-//BEGIN @1640 DESIGNATED 1640 GROUP @17 // DORN BLADES, NOT IMPLEMENTED YET
-//REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+BEGIN @1640 DESIGNATED 1640 GROUP @17 // DORN BLADES, NOT IMPLEMENTED YET
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+COPY_EXISTING_REGEXP "ohdsw2h[a-d].ITM" ~override~
+    WRITE_LONG 0x60 5
+    PATCH_IF "%SOURCE_RES%" STRING_COMPARE "ohdsw2ha" = 1 BEGIN
+        SAY IDENTIFIED_DESC @6660
+    END
+    PATCH_IF "%SOURCE_RES%" STRING_COMPARE "ohdsw2hb" = 1 BEGIN
+        SAY IDENTIFIED_DESC @6670
+    END
+    PATCH_IF "%SOURCE_RES%" STRING_COMPARE "ohdsw2hc" = 1 BEGIN
+        SAY IDENTIFIED_DESC @6680
+    END
+    PATCH_IF "%SOURCE_RES%" STRING_COMPARE "ohdsw2hd" = 1 BEGIN
+        SAY IDENTIFIED_DESC @6690
+    END
+BUT_ONLY
+
+COPY_EXISTING_REGEXP "ohdsw2h[bc].ITM" ~override~
+    LPF ALTER_EFFECT
+        INT_VAR
+            match_opcode = 12
+            parameter1 = 1
+    END
+BUT_ONLY
+
+COPY_EXISTING "ohdsw2hd.ITM" ~override~
+    LPF ALTER_EFFECT
+        INT_VAR
+            match_opcode = 12
+            parameter1 = 2
+    END
+BUT_ONLY
 
 ////////////////// MISC ITEMS TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -1360,11 +1440,20 @@ INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY_EXISTING_REGEXP ~.*\.itm~ ~override~
     READ_SHORT 0x1c category_itm
-    PATCH_IF category_itm = 9 BEGIN // if it's a potion
-        LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes  = ~op=321,tgt=1,res=%SOURCE_RES%,ip=0~ // prevent stacking
+    PATCH_IF category_itm = 9 OR category_itm = 13 BEGIN// if it's a potion or food item
+        PATCH_IF "%SOURCE_RES%" STRING_COMPARE "GBERRY" = 0 BEGIN
+            LPF a7_auto_apply_spl_effect
+            STR_VAR
+                function_name = ~ADD_ITEM_EFFECT~
+                effect_codes  = ~op=321,tgt=1,res=%SOURCE_RES%,ip=0~ // prevent stacking
+            END
+        END
+        PATCH_IF (!MOD_IS_INSTALLED "ZSTweaks.tp2" "240") AND "%SOURCE_RES%" STRING_COMPARE "GBERRY" = 1 BEGIN
+            LPF a7_auto_apply_spl_effect
+            STR_VAR
+                function_name = ~ADD_ITEM_EFFECT~
+                effect_codes  = ~op=321,tgt=1,res=%SOURCE_RES%,ip=0~ // prevent stacking
+            END
         END
     END
 BUT_ONLY
@@ -1585,6 +1674,37 @@ COPY_EXISTING ~SPWI914.SPL~ ~override~
             match_opcode = 216
             parameter1 = 6
     END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @405 DESIGNATED 405 GROUP @19 // MAZE MR TWEAK
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~SPWI813.SPL~ ~override~
+    LPF ALTER_EFFECT
+        INT_VAR
+            check_globals = 0
+            match_resist_dispel = 1
+            resist_dispel = 3
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @407 DESIGNATED 407 GROUP @19 // FAMILIAR BGEE TWEAK
+REQUIRE_PREDICATE GAME_IS "bgee" @49 // familiars are handled differently in EET, thus only available for BGEE
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~FAMIMP.CRE~ ~override~
+    READ_SHORT 0x26 max_health
+    PATCH_IF max_health < 12 BEGIN
+        WRITE_SHORT 0x24 12
+        WRITE_SHORT 0x26 12
+    END
+BUT_ONLY
+
+COPY_EXISTING ~SPWI123.SPL~ ~override~
+    SAY UNIDENTIFIED_DESC @6650
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////

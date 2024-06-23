@@ -14,6 +14,7 @@
 
 // END GROUPS
 
+@49 = ~This component is only compatible with BGEE~
 @50 = ~This component is only compatible with BGEE and EET~
 @52 = ~This component is only compatible with BG2EE and EET~
 @53 = ~This component is only compatible with BGEE, BG2EE and EET~
@@ -27,21 +28,23 @@
 /// GENERAL WEAPON TWEAKS
 @120 = "Make conjured wielded magical weapons add 1 extra APR (Flame Blade, Phantom Blade...)"
 @1120 = "Make some weapon categories incur in backstab penalties for balance"
-@1150 = "Make spears do a baseline damage of 1d8, not 1d6"
-@1160 = "Make warhammers do a baseline damage 1d5+1, not 1d4+1 (except hammers outside that range)"
+@1150 = "Make Spears do a baseline damage of 1d8, not 1d6"
+@1160 = "Make Warhammers do a baseline damage 1d5+1, not 1d4+1 (except hammers outside that range)"
 @1350 = "Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8"
 @1351 = "Make Wakizashis a piercing/slashing weapon"
 @1360 = "Make Light Crossbows get 1.5 APR"
 @1370 = "Make Katanas deal 2d5 instead of 1d10"
 @1400 = "Make Bastard Swords deal 1d8+1 by default"
 @1430 = "Make Two-handed swords deal 1d9+1 by default, and 2d6 where it applies"
-@1440 = "Make daggers have general extra features to compensate the low damage"
+@1435 = "Make Daggers deal 1d3+1 damage by default instead of 1d4, to elevate minimum damage"
+@1440 = "Make Daggers have general extra features to compensate the low damage"
 @1450 = "Make some rogue weapons have the chance of doing more damage if wielded by pure thieves (Finesse)"
 @1530 = ~Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time~
 
 
 /// ARMOR/GEAR TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
+@1171 = ~Make Silver Dragon Scale also grant 40% cold resistance as you would expect~ //todo
 @1180 = "Make Ring of Danger sense protect against backstabs"
 @1316 = "Make Mercykiller Ring more useful for rogues that like killing"
 @1317 = "Make the basic robes and Archmage robes slightly more remarkable"
@@ -60,7 +63,7 @@
 @1630 = ~Make The Jade's Fang slightly more powerful and improve the lifesteal effect~
 @1660 = ~Make Heart of the Golem +2 get a couple more magic-based features, inspired by the description~
 @1670 = ~Make Werebane +1 a bit more effective towards Lycanthropes~
-@1680 = ~Make Stiletto of Demarchess +2 very slightly more powerful and bleed every hit~ //todo
+@1680 = ~Make Stiletto of Demarchess +2 very slightly more powerful and bleed every hit~
 
 
 /// TWO-HANDED MELEE WEAPONS
@@ -117,12 +120,12 @@
 @1500 = ~Make Mazzy's weapons slightly more powerful~
 @1510 = ~Make Delryn's family shield become a +2 shield~
 @1520 = ~Make Hallowed Redeemer able to hit enemies immune to +2 weapons~
-@1640 = ~Make Abyssal Blades more powerful (Dorn's Quest)~ //todo
+@1640 = ~Make Abyssal Blades more powerful (Dorn's Quest)~
 
 // MISC ITEMS
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
 @1600 = ~Make CHARNAME's Tankard heal as much as a Potion of Extra Healing (Neera's quest)~
-@1601 = ~Make potions universally incapable of stacking with themselves~
+@1601 = ~Make potions and food items universally incapable of stacking with themselves~
 
 
 // WIZARD SPELLS
@@ -140,6 +143,8 @@
 @380 = "Make Contagion cause 4 points of Strength and Dexterity damage"
 @390 = "Make Death Fog inflict 4d4 acid damage per round instead of flat 8 damage"
 @400 = "Make Energy Drain drain 6 levels instead of 2"
+@405 = ~Make Maze bypass Magic Resistance, like Imprisonment~
+@407 = ~Make BGEE's Imp have 12 HP like the other familiars~
 @410 = ~Make Horrid Wilting actually be more effective against plants and Water Elementals~
 @430 = ~Make Grease bypass Magic Resistance, as it is as conjured substance, and apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description~
 @440 = ~Make Comet bypass magic resistance and apply a mix of cold, fire and crushing damage~
@@ -638,7 +643,7 @@ Flaming Sword of Lordly Might +3
   Damage: 1d8+3 (slashing) + 1d4 (fire)
 
 Spear of Lordly Might +3
-  Special: Target must save vs. Spell or take 2d4 points of magical damage
+  Special: Target must save vs. Spell or take 3d4 points of magical damage
   THAC0: +3
   Damage: 1d6+3 (piercing)
 
@@ -652,7 +657,7 @@ Weight: 5~
 STATISTICS:
 
 Combat abilities:
-– Target must save vs. Spell at +2 or panic for 2 rounds
+– Target must save vs. Spell at +2 or become slowed for 2 rounds
 
 THAC0: +3
 Damage: 1d6+4 (crushing)
@@ -672,7 +677,8 @@ Combat abilities:
 – Target must save vs. Spell at +2 or be held for 1 round
 
 THAC0: +3
-Damage: 1d8+3 (slashing) +1d4 (fire)
+Damage: 1d8+3, +1d4 (fire)
+Damage type: Slashing
 Speed Factor: 2
 Proficiency Type: Long Sword
 Type: One-handed
@@ -686,7 +692,7 @@ Weight: 4~
 STATISTICS:
 
 Combat abilities:
-– Target must save vs. Spell or take 2d4 points of magical damage
+– Target must save vs. Spell or take 3d4 points of magical damage
 
 THAC0: +3
 Damage: 1d6+3 (piercing)
@@ -2274,3 +2280,199 @@ Area of Effect: The caster
 Saving Throw: Neg.
 
 Cloak of Fear bestows the caster with an aura of fear in a 5-ft. radius. All creatures that enter the cloak's area of effect must make a Save vs. Spell or flee in panic for 3 rounds. The aura does not affect undead creatures.~
+
+@6650 = ~Find Familiar
+(Conjuration/Summoning)
+
+Level: 1
+Range: n/a
+Duration: Special
+Casting Time: 9
+Area of Effect: 1 familiar
+Saving Throw: None
+
+This spell enables the caster to attempt to summon a familiar to act as <PRO_HISHER> aide and companion. Familiars are typically small creatures. A creature acting as a familiar can benefit a wizard, conveying its sensory powers to its master, conversing with <PRO_HIMHER>, and serving as a guard/scout/spy as well. A wizard can have only one familiar at a time, and <PRO_HESHE> has no control over what sort of creature answers the summoning, if any come at all.
+
+(Note: This spell may only be cast by the protagonist.)
+
+The creature is always more intelligent than others of its type (typically by 2 or 3 Intelligence points), and its bond with the wizard confers upon it an exceptionally long life. The wizard has an empathic link with the familiar and can issue it mental commands. The caster receives half the familiar's total Hit Points (rounded down) as bonus Hit Points. However, the caster must take care to treat <PRO_HISHER> familiar well, for if the familiar should die, the caster loses the bonus Hit Points and the familiar's Hit Points again as damage. Also when a familiar dies, the caster loses 1 point of Constitution PERMANENTLY.
+
+Example: A Mage has 12 Hit Points and casts Find Familiar. The imp summoned has 9 Hit Points, so the caster gets a bonus of 4 Hit Points. The caster now has 16 Hit Points. If the familiar dies, the caster loses those 4 Hit Points (putting <PRO_HIMHER> back at 12), loses 1 point of Constitution permanently (which may cause additional Hit Point loss), and takes 9 damage.
+
+Here is a list of the familiars that the player receives according to alignment:
+
+LAWFUL GOOD, NEUTRAL GOOD: Pseudo Dragon
+– Hit Points: 12
+– Armor Class: 0
+– Magic Resistance: 35%
+– Combat: 2 attacks per round at 15 THAC0 for 1d3 damage
+– Special Abilities: Can cast Blur once per day. Regenerates 1 HP/round. Immune to level drain, sleep, and petrification.
+
+LAWFUL NEUTRAL: Ferret
+– Hit Points: 12
+– Armor Class: 2
+– Magic Resistance: 35%
+– Combat: 2 attacks per round at 15 THAC0 for 1d3 damage
+– Special Abilities: Has 50% in Pick Pockets, 25% in Hide in Shadows/Move Silently, and 20% in Detect Traps. Can cast Blur once per day. Immune to level drain, sleep, and petrification.
+
+LAWFUL EVIL: Imp
+– Armor Class: 4
+– Hit Points: 12
+– Magic Resistance: 15%
+– Combat: 1 attack per round at 17 THAC0 for 1d6 damage
+– Special Abilities: Has 100% resistance to fire, cold, and electricity. Can cast Polymorph Self once per day. Regenerates 1 HP/round.
+
+NEUTRAL: Rabbit
+– Hit Points: 12
+– Armor Class: 3
+– Magic Resistance: 45%
+– Combat: 2 attacks per round at 15 THAC0 for 1d2 damage
+– Special Abilities: Has 20% in Move Silently/Hide In Shadows and 40% in Find Traps. Has 75% resistance to fire, cold, and electricity.
+
+NEUTRAL EVIL: Dust Mephit
+– Hit Points: 12
+– Armor Class: 8
+– Magic Resistance: 10%
+– Combat: 2 attacks per round at 15 THAC0 for 1d2 damage
+– Special Abilities: Has 100% resistance to fire and 35% resistance to slashing, piercing, and missile damage. Can cast Glass Dust twice per day. Regenerates 1 HP/round. Immune to level drain, sleep, and petrification.
+
+CHAOTIC GOOD: Fairy Dragon
+– Hit Points: 12
+– Armor Class: 6
+– Magic Resistance: 25%
+– Combat: 2 attacks per round at 15 THAC0 for 1d2 damage
+– Special Abilities: Can cast Mirror Image once per day. Immune to level drain, sleep, and petrification.
+
+CHAOTIC NEUTRAL: Cat
+– Hit Points: 12
+– Armor Class: 2
+– Magic Resistance: 35%
+– Combat: 2 attacks per round at 15 THAC0 for 1d3 damage
+– Special Abilities: Has 15% in Pick Pockets and 65% in Move Silently/Hide In Shadows. Immune to level drain, sleep, and petrification.
+
+CHAOTIC EVIL: Quasit
+– Hit Points: 12
+– Armor Class: 4
+– Magic Resistance: 15%
+– Combat: 2 attacks per round at 15 THAC0 for 1d6 damage
+– Special Abilities: Has 100% resistance to fire, cold, and electricity. Can cast Horror once per day. Regenerates 1 HP/round.~
+
+
+@6660 = ~Forged in the black heart of the Abyss by tanar'ri sorcerers for use in the eternal Blood War, this blade was once wielded by the infamous babau assassin Khazzrax the Gasping Death. Lore tells of a blade, black as the night, that Khazzrax would use to slash his victims open, causing fire to briefly flare out of the fresh wound.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Intelligence: -1
+
+Combat abilities:
+– +5 slashing damage vs. good-aligned opponents
+– Acts as a +5 weapon for the purposes of what it can hit
+
+THAC0: +3
+Damage: 1d10+3, +1d4 fire damage
+Damage type: Slashing
+Speed Factor: 7
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 9~
+
+@6670 = ~Forged in the black heart of the Abyss by tanar'ri sorcerers for use in the eternal Blood War, this blade was once wielded by the infamous babau assassin Khazzrax the Gasping Death. Lore tells of a blade, black as the night, that Khazzrax would use to slash his victims open, causing fire to briefly flare out of the fresh wound.
+
+In addition to the sword's regular properties, the demon Ur-Gothoz has been bound within its blade. As he rages with demonic fury at his captivity, the sword is thus empowered.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Intelligence: -1
+
+Combat abilities:
+– +5 slashing damage vs. good-aligned opponents
+– +5 slashing damage vs. devils
+– Acts as a +5 weapon for the purposes of what it can hit
+
+THAC0: +3
+Damage: 1d10+3, plus 1d4+1 fire damage
+Damage type: Slashing
+Speed Factor: 7
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 9~
+
+@6680 = ~Forged in the black heart of the Abyss by tanar'ri sorcerers for use in the eternal Blood War, this blade was once wielded by the infamous babau assassin Khazzrax the Gasping Death. Lore tells of a blade, black as the night, that Khazzrax would use to slash his victims open, causing fire to briefly flare out of the fresh wound.
+
+In addition to the sword's regular properties, the demon Azothet has been bound within its blade. As she rages with demonic fury at her captivity, the sword is thus empowered.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Intelligence: -1
+
+Combat abilities:
+– +5 slashing damage vs. good-aligned opponents
+– +5 slashing damage vs. demons
+– Acts as a +5 weapon for the purposes of what it can hit
+
+THAC0: +3
+Damage: 1d10+3, plus 1d4+1 fire damage
+Damage type: Slashing
+Speed Factor: 7
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 9~
+
+@6690 = ~Forged in the black heart of the Abyss by tanar'ri sorcerers for use in the eternal Blood War, this blade was once wielded by the infamous babau assassin Khazzrax the Gasping Death. Lore tells of a blade, black as the night, that Khazzrax would use to slash his victims open, causing fire to briefly flare out of the fresh wound.
+
+In addition to the sword's regular properties, two rival demons have been magically bound within its blade. As they rage with fury at both each other and against their captivity, they thus empower the blade.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Intelligence: -1
+
+Combat abilities:
+– +5 slashing damage vs. good-aligned opponents
+– +5 slashing damage vs. devils
+– +5 slashing damage vs. demons
+– Acts as a +5 weapon for the purposes of what it can hit
+
+THAC0: +3
+Damage: 1d10+3, plus 1d4+2 fire damage
+Damage type: Slashing
+Speed Factor: 7
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 9~
+
+@6700 = ~Beroalf was a barbarian who traveled from the cold north in search of adventure. He sought treasures and glory, but soon all he wanted were companions to share in the excitement of battle, much like those he had left behind in his faraway village. Unfortunately, his coarse remarks and rudimentary hygiene repelled most travelers he met, until he expressed his thoughts to a sympathetic mage. The mage, for a price, constructed Ras, the dancing blade. Though not quite what Beroalf had in mind, he was thrilled nonetheless and wielded the sword for many years. How they were ultimately separated is not known.
+
+STATISTICS:
+
+Combat abilities:
+– Dancing sword can attack on its own for 1 turn
+
+THAC0: +2
+Damage: 1d8+2 (slashing)
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~

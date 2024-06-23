@@ -15,7 +15,6 @@ COPY_EXISTING ~RODMACE.ITM~ ~override~
     WRITE_LONG 0x60 3
     SAY NAME1 @6041
     SAY NAME2 @6041
-    SAY UNIDENTIFIED_DESC @6044
     SAY IDENTIFIED_DESC @6044
     LPF ALTER_HEADER
         INT_VAR
@@ -39,7 +38,6 @@ COPY_EXISTING ~RODSWORD.ITM~ ~override~
     WRITE_SHORT 0x22 21318 // equipped appearance of flaming sword
     SAY NAME1 @6042
     SAY NAME2 @6042
-    SAY UNIDENTIFIED_DESC @6045
     SAY IDENTIFIED_DESC @6045
     LPF ALTER_HEADER
         INT_VAR
@@ -82,7 +80,6 @@ BUT_ONLY
 COPY_EXISTING ~RODSPEAR.ITM~ ~override~
     SAY NAME1 @6043
     SAY NAME2 @6043
-    SAY UNIDENTIFIED_DESC @6046
     SAY IDENTIFIED_DESC @6046
     LPF ALTER_HEADER
         INT_VAR
@@ -95,5 +92,6 @@ COPY_EXISTING ~RODSPEAR.ITM~ ~override~
             check_headers = 1
             match_opcode = 12
             savebonus = 0
+            dicenumber = 3
     END
 BUT_ONLY
