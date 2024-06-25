@@ -130,6 +130,8 @@
 
 // WIZARD SPELLS
 @140 = "Standardize Finger of Death magical damage on a successful save"
+@145 = ~Make Luck last for 1 turn to make it more usable~
+@147 = ~Make Luck also add 5% critical hit chances, +1 damage, 1 AC, 5% more to thieving~
 @150 = "Make Disintegrate behave more like a modified Harm spell, similar to how it behaves in NWN2"
 @160 = "Make Black Blade of Disaster unsuitable for backstabs"
 @163 = "Make Iron Golem weapon unsuitable for backstabs"
@@ -2476,3 +2478,42 @@ Requires:
  6 Strength
 
 Weight: 3~
+
+// luck duration boost only
+@6710 = ~Luck
+(Enchantment/Charm)
+
+Level: 2
+Range: 15 ft.
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+The recipient of this spell gains extraordinary luck for the next turn, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
+
+// luck boost only
+@6720 = ~Luck
+(Enchantment/Charm)
+
+Level: 2
+Range: 15 ft.
+Duration: 3 rounds
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+The recipient of this spell gains extraordinary luck for the next 3 rounds, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +10% to all thieving skills. Furthermore, AC receives a bonus of 2, critical hit chances improve by 5%, and damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
+
+// luck duration + boost
+@6730 = ~Luck
+(Enchantment/Charm)
+
+Level: 2
+Range: 15 ft.
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+The recipient of this spell gains extraordinary luck for the next turn, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +10% to all thieving skills. Furthermore, AC receives a bonus of 2, critical hit chances improve by 5%, and damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~

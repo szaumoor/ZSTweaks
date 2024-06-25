@@ -1468,6 +1468,34 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_fdeath_std.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @145 DESIGNATED 145 GROUP @19 // LUCK DURATION BOOST
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING ~SPWI209.SPL~ ~override~
+    PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "147") BEGIN
+        SAY UNIDENTIFIED_DESC @6710
+    END ELSE BEGIN
+        SAY UNIDENTIFIED_DESC @6730
+    END
+    LPF ALTER_EFFECT
+        INT_VAR
+            check_globals = 0
+            match_duration = 18
+            duration = 60
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @147 DESIGNATED 147 GROUP @19 // LUCK OVERALL BOOST
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/component_scripts/zs_luckboost.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 //BEGIN @150 DESIGNATED 150 GROUP @19 // DISINTEGRATE TWEAK
 //REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////

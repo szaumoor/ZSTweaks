@@ -623,6 +623,14 @@ This component equalizes the saving throw penalty in the cleric version of Hold 
 
 This component matches the magic damage inflicted by the wizard version of Finger of Death so it's as powerful as the priest version.
 
+**Component 145:** Make Luck last for 1 turn to make it more usable
+
+The bonus that Luck provides really doesn't justify such a short duration. Now it lasts 1 turn instead of 3 rounds (i.e. 18 seconds).
+
+**Component 147:** Make Luck also add 5% critical hit chances, 2 AC, 5% more to thieving
+
+This component makes Luck more generally useful by adding also a 5% critical hit chance boost, 10% total bonus thief skill bonus, as well as 2 AC. The rest is unchanged.
+
 **Component 190:** Make Holy Power and Tenser's Transformation achieve a THAC0 of 0
 
 Makes those spells achieve a THAC0 of 0 at max level, since the description clearly states "fighter of the same level".
