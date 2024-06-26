@@ -27,7 +27,7 @@ This reduces the backstab multiplier of some weapons who realistically would not
 
 **Component 1160:** Make warhammers do a baseline damage 1d5+1, not 1d4+1 (except hammers outside that range)
 
-1d4+1 always felt a little too small and narrow for hammers. This doesn't affect special hammers that have double the damage potential such as Crom Faeyr.
+1d4+1 always felt a little too small and narrow for hammers. This doesn't affect special hammers that have double the damage potential such as Crom Faeyr. It also includes Voidhammer +3, which only inflicts magic damage.
 
 **Component 1350:** Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8 and have a speed factor of 3
 
@@ -53,7 +53,7 @@ I never liked that bastards swords were "between long swords and two-handed swor
 
 **Component 1430:** Make Two-handed swords deal 1d9+1 by default, and 2d6 where it applies
 
-This mostly exists for consistency with the bastard sword, such that the minimum damage is equal to it. Two handed swords that have a 1d12 base damage will instead get 2d6.
+This mostly exists for consistency with the bastard sword, such that the minimum damage is equal to it. Two-handed swords that have a 1d12 base damage will instead get 2d6.
 
 **Component 1440:** Make daggers have general extra features to compensate the low damage
 
@@ -116,6 +116,22 @@ It seems like a mistake to me that this armor, made from a creature from the pla
 - Save vs. Illusion spells +4 bonus
 - The usual AC bonuses.
 
+**Component 1171:** Make Silver Dragon Scale also grant 40% cold resistance as you would expect
+
+Silver Dragons wield and are resistant to cold, same as White Dragons. It should grant cold resistance, much like the Fire Dragon Plate does fire.
+
+**Component 1172:** Make Rings of Elemental control more likely to charm the elementals and add missing resistances
+
+This improves the power of the charm by making the save against it -2, instead of +2.
+
+**Component 1173:** Make Ring of Gaxx's improved haste last 2 full rounds, and not 10 seconds
+
+It's pretty strange to limit it to 10 seconds. It's 2 full rounds now.
+
+**Component 1174:** Make Heartwood Ring add 1 spell slot per level, as well as 1 HP/round regen
+
+This makes this ring significantly more useful for an Archdruid, adding 1 extra spell slot of every level, and a slow regeneration effect as the nigh-timeless druidic legend you are.
+
 **Component 1180:** Make Ring of Danger sense protect against backstabs
 
 Self explanatory and ever useful, for any class. Anti-chunking for mages.
@@ -154,6 +170,10 @@ I do not like that most robes, except the most powerful ones are largely unremar
 **Component 1560:** Make Belt of Skillful Blade also increase piercing damage by 10%
 
 This makes the belt include piercing damage, such that it affect things like daggers, short swords and wakizashis.
+
+**Component 1561:** Make Cloak of the Stars create 30 darts, instead of six
+
+6 darts is really unremarkable for a once-per-day effect. 30 is far more interesting. Perhaps you don't need to sell it immediately anymore!
 
 **Component 1570:** Make Eyes of the Beholder's skills mirror the power of the spells they're based on
 
@@ -238,6 +258,10 @@ This component makes the weapon try to stun the victim with a probability of 25%
 
 I think everyone agrees that this type of restriction makes the weapons immediately less appealing.
 
+**Component 1201:** Make Lilarcor +3 have a chance of causing confusion on hit
+
+It seems appropriate that the talking sword containing the blood-lusting, raving, screaming, lunatic can cause confusion on hit. Now it has a 25% chance that the victim is confused for 1 rounds if Save vs. Spell is failed.
+
 **Component 1280:** Make Carsomyr affect any kind of evil and not just Chaotic Evil
 
 Self explanatory. Not that it needs to be more powerful, but it feels wrong to not be especially effective against non-chaotic evil (but yes, I understand it's because it's the opposite of a paladin's alignment).
@@ -253,6 +277,10 @@ The vorpal quality is very powerful, but it would be nice if the sword could wor
 **Component 1318:** Make Flame of the North +2 affect all evil, not just chaotic evil
 
 Self explanatory
+
+**Comoponent 1322:** Make Flame of the North inflict +2 fire damage against trolls
+
+The backstory of the sword heavily implies it was involved in the slaughter of many trolls. Therefore, the sword can completely destroy trolls on hit by causing +2 fire damage on hit to trolls only.
 
 **Component 1390:** Make Staff of the Magi force a saving throw to dispel effects on hits
 
@@ -278,6 +306,15 @@ This component improves Wave +4 by making it always deal 3 points of cold damage
 
 This makes Blackmist's blindness power be more likely to be effective, by adding a -2 Save penalty. Additionally, you're immune to blindness.
 
+**Component 1591:** Make Soul Reaver slightly more balanced
+
+Soul Reaver is fairly unbalanced, particularly because it reduces THAC0 for 2 full minutes and it's fairly easy to make any enemy to not be able to hit anything at all. This tweak reduces this duration to 5 rounds, and requires a Save vs. Spell at -4 to resist.
+
+**Component 1592:** Make Soul Reaver deal 1d12 damage
+
+The sword looks like it's fairly massive. You may disagree, but that's how it comes across to me. So this will match the dice size of other blades like Carsomyr and Warblade: 1d12 (or 2d6 if the two-handed general tweak was installed).
+
+
 </details>
 
 ---
@@ -289,6 +326,10 @@ This makes Blackmist's blindness power be more likely to be effective, by adding
 **Component 1125:** Make Ninjato of the Scarlet Brothehood +3 available for other classes and alignments
 
 This makes this sword usable by non-monks of any alignment. Monks are not really implemented to take too much advantage of weapons anyway (in vanilla game).
+
+**Component 1126:** Make Blackrazor able to hit targets immune to +3
+
+This allows this sword to be usable in more cases. Since it's extremely powerful, no other changes are added.
 
 **Component 1210:** Make The Equalizer slightly more powerful
 

@@ -44,11 +44,15 @@
 
 /// ARMOR/GEAR TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
-@1171 = ~Make Silver Dragon Scale also grant 40% cold resistance as you would expect~ //todo
+@1171 = ~Make Silver Dragon Scale also grant 40% cold resistance as you would expect~
+@1172 = ~Make Rings of Elemental control more likely to charm the elementals and add missing resistances~
+@1173 = ~Make Ring of Gaxx's improved haste last 2 full rounds, and not 10 seconds~
+@1174 = ~Make Heartwood Ring add 1 spell slot per level, as well as 1 HP/round regen~
 @1180 = "Make Ring of Danger sense protect against backstabs"
 @1316 = "Make Mercykiller Ring more useful for rogues that like killing"
 @1317 = "Make the basic robes and Archmage robes slightly more remarkable"
 @1560 = ~Make Belt of Skillful Blade also increase piercing damage by 10%~
+@1561 = ~Make Cloak of the Stars create 30 darts, instead of six~
 @1570 = ~Make Eyes of the Beholder's skills mirror the power of the spells they're based on~
 @1610 = ~Make Robe of Invocation also improve all elemental damage by 5% and add a +2 bonus against Invocation~
 @1620 = ~Make Vicross' Thayan Circlet apply Improved Shield of Chaos instead of just Shield of Chaos~
@@ -68,20 +72,25 @@
 
 /// TWO-HANDED MELEE WEAPONS
 @1200 = "Make Ixil's Spike allow Haste and Improved Haste"
+@1201 = "Make Lilarcor +3 have a chance of causing confusion on hit"
 @1280 = "Make Carsomyr affect any kind of evil and not just Chaotic Evil"
 @1290 = "Make Carsomyr's Dispel Magic force a saving throw"
 @1300 = "Make Silver Sword act as a +4 weapon to determine what it can hit to extend usability"
 @1318 = "Make Flame of the North +2 affect all evil, not just chaotic evil"
+@1322 = ~Make Flame of the North inflict +2 fire damage against trolls~
 @1390 = "Make Staff of the Magi force a saving throw to dispel effects on hits"
 @1410 = "Make Ir'revrykal Dispel Magic effect not depend on probabilities, but allow a saving throw"
 @1420 = "Make Ir'revrykal base damage equal to Carsomyr"
 @1460 = ~Make Spear of Withering able to poison on contact if save is failed~
 @1540 = ~Make Wave slightly more powerful~
 @1590 = ~Make Blackmist more powerfully blinding and make you immune to blindness~
+@1591 = ~Make Soul Reaver slightly more balanced~
+@1592 = ~Make Soul Reaver deal 1d12 damage~
 
 
 /// ONE-HANDED SWORDS
 @1125 = "Make Ninjato of the Scarlet Brothehood +3 available for other classes and alignments"
+@1126 = ~Make Blackrazor able to hit targets immune to +3~
 @1210 = "Make The Equalizer slightly more powerful"
 @1220 = "Make Ras, the Dancing Blade last for 1 turn, instead of 4 rounds"
 @1230 = "Make Short Sword of Mask +5 slightly more powerful"
@@ -126,7 +135,6 @@
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
 @1600 = ~Make CHARNAME's Tankard heal as much as a Potion of Extra Healing (Neera's quest)~
 @1601 = ~Make potions and food items universally incapable of stacking with themselves~
-
 
 // WIZARD SPELLS
 @140 = "Standardize Finger of Death magical damage on a successful save"
@@ -1272,6 +1280,7 @@ Requires:
 
 Weight: 6~
 
+//only evil tweak
 @6170 = ~The title does not refer to the blade itself, but rather to the woman who originally wielded it in the icy hinterlands of Faerûn. Her name was Carerra, and she was a veritable firestorm that swept across arctic trolls and the northern orcish tribes. She was a hated enemy of many a shaman whose magic often floundered against her fury. After a lifetime of raucous battle, it was old age that eventually claimed her. The sword was passed to her granddaughter, an adventurer, who presumably brought it to Amn.
 
 STATISTICS:
@@ -1281,6 +1290,52 @@ Equipped abilities:
 
 THAC0: +2
 Damage: 1d10+2, +4 extra vs. evil
+Damage type: Slashing
+Speed Factor: 8
+Proficiency Type: Two-handed sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+// only troll bonus tweak
+@6171 = ~The title does not refer to the blade itself, but rather to the woman who originally wielded it in the icy hinterlands of Faerûn. Her name was Carerra, and she was a veritable firestorm that swept across arctic trolls and the northern orcish tribes. She was a hated enemy of many a shaman whose magic often floundered against her fury. After a lifetime of raucous battle, it was old age that eventually claimed her. The sword was passed to her granddaughter, an adventurer, who presumably brought it to Amn.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +10%
+
+Equipped abilities:
+– Inflicts +2 fire damage against trolls
+– Inflicts +4 slashing damage against chaotic evil
+
+THAC0: +2
+Damage: 1d10+2
+Damage type: Slashing
+Speed Factor: 8
+Proficiency Type: Two-handed sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+//both bonuses active
+@6172 = ~The title does not refer to the blade itself, but rather to the woman who originally wielded it in the icy hinterlands of Faerûn. Her name was Carerra, and she was a veritable firestorm that swept across arctic trolls and the northern orcish tribes. She was a hated enemy of many a shaman whose magic often floundered against her fury. After a lifetime of raucous battle, it was old age that eventually claimed her. The sword was passed to her granddaughter, an adventurer, who presumably brought it to Amn.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +10%
+
+Equipped abilities:
+– Inflicts +2 fire damage against trolls
+– Inflicts +4 slashing damage against evil
+
+THAC0: +2
+Damage: 1d10+2
 Damage type: Slashing
 Speed Factor: 8
 Proficiency Type: Two-handed sword
@@ -2517,3 +2572,231 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 The recipient of this spell gains extraordinary luck for the next turn, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +10% to all thieving skills. Furthermore, AC receives a bonus of 2, critical hit chances improve by 5%, and damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
+
+@6740 = ~This burnished, red ring is engraved with depictions of flames and lava coils. Mages and other planar travelers use these rings to protect themselves while visiting the Elemental Plane of Fire and to command fire elementals to do their bidding.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +50%
+
+Charge abilities:
+– Charm Fire Elemental once per day (Save vs. Spell at -2 negates)
+  Range: Touch
+  Duration: 45 seconds
+  Area of Effect: 1 fire elemental
+
+– Burning Hands once per day
+  Damage: 1d3+2 fire
+  Range: 0
+  Area of Effect: 5-ft. cone with 120-deg. arc
+
+– Flamestrike once per day
+  Damage: 6d8 fire (Save vs. Spell for half)
+  Range: Visual range of the user
+  Area of Effect: 1 creature
+
+Weight: 0~
+
+@6750 = ~Air elementals make for powerful foes, but with this ring, they can become valuable allies. Dark tales tell of groups of Red Wizards, all with rings of elemental command, descending upon small villages with no warning and destroying every living thing in sight. Although the truth of these rumors is questionable, the fact remains that a ring of this power in the wrong hands is dangerous.
+
+STATISTICS:
+
+Equipped abilities:
+– Electricity Resistance: +50%
+
+Charge abilities:
+– Charm Air Elemental once per day (Save vs. Spell at +2 negates)
+  Range: Touch
+  Duration: 45 seconds
+  Area of Effect: 1 air elemental
+
+– Improved Invisibility once per day
+  Range: Touch
+  Duration: 1 turn
+  Area of Effect: 1 creature
+
+Weight: 0~
+
+@6760 = ~If the songs of bards are correct, all one must do is wear this ring and they will gain the ability to control earth elementals at will. Of course, earth elementals are not easily controlled and care must be taken when commanding one. An angry earth elemental can make short work of an inept adventurer.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Acid Resistance: +50%
+
+
+Charge abilities:
+– Charm Earth Elemental once per day (Save vs. Spell at +2 negates)
+  Range: Touch
+  Duration: 45 seconds
+  Area of Effect: 1 earth elemental
+
+– Stone to Flesh once per day
+  Range: Touch
+  Area of Effect: 1 creature
+
+Weight: 0~
+
+@6770 = ~This armor, forged from the scales of a silver dragon, is a dead giveaway of wrongdoing on the part of the wearer. While the protection it offers is impressive, one cannot ignore the fact that a creature of incredible grace and beauty had to be destroyed in order for this armor to be made.
+
+STATISTICS:
+
+Equipped Abilities:
+– Charisma: -2
+– Magic Resistance: +15%
+– Cold Resistance: +40%
+– Movement rate increased by 3
+
+Combat abilities:
+– Heals wearer 2 Hit Points each time damage is taken
+
+Armor Class: -2 (-5 vs. slashing, -3 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 15~
+
+@6780 = ~This ring is relatively unadorned, but the vile magic within radiates intense evil. Indeed, its creator, Kangaxx, was no less evil himself, even before millennia of undeath honed his power. It is said that a cadre of Netherese mages fought and imprisoned the demilich once, but being unable to truly destroy him, they became liches themselves to stand guard over his remains. The construction of the ring may have led to their enmity, as each of the gem's nine facets was supposedly empowered by sacrifice and death.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Regenerate 1 Hit Point every 3 seconds
+– Immunity to disease and poison
+
+Charge abilities:
+– Invisibility once per day
+  Duration: 12 hours
+  Area of Effect: The wearer
+
+– Improved Haste three times per day
+  Duration: 2 rounds
+  Area of Effect: The wearer
+
+Weight: 0~
+
+@6790 = ~This ring is fashioned not from gold or precious metal, but from simple oak. Combined with the nymph's tear, it allows a druid to draw upon the natural energies of the world around them.
+
+STATISTICS:
+
+Equipped abilities:
+– Can memorize one extra Druid spell from levels 1 to 7
+– Regenerate 1 HP per round
+
+Weight: 1~
+
+@6800 = ~Lawrence Lilarcor was well known, not for being brave, but for being an idiot. As the tale goes, the boastful Lilarcor left his village at the urging of his friends so that the "great hero" could do battle with a devious treant. He walked for days in the dead of winter until, feverish, he found his target and began an epic wrestling match. Unfortunately (or perhaps luckily), the "treant" was nothing more than a craggy old normal oak. His friends had been jesting, not actually expecting that Lilarcor would go fight the fictitiously dangerous tree. That might have been the end of it, but Lilarcor, not really knowing what a treant was in the first place, didn't realize the truth. He eventually uprooted the oak and, marching proudly home, he declared himself a hero. Thus was born a laughing stock of epic proportions, and over time the name of Lilarcor became the sacrificial fool in many tales of "less than brilliance."
+
+It is not known whether this enchanted weapon is Lilarcor himself, perhaps imprisoned by an evil mage or some other odd coincidence of fate, but it certainly acts in a manner consistent with his level of competence. If it is he, he has never bemoaned his captivity. He might not realize, or care, that he is no longer a human.
+
+As a weapon, Lilarcor has its uses, but many a warrior has eventually given it away. Banter such as "Ouch, that musta hurt," "Oh yeah! Got 'im good," and "Beware my bite for it might... might... might really hurt or something" is a constant barrage on a warrior's psyche.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm
+– Immunity to confusion
+
+Combat abilities:
+– 25% chance per hit it causes confusion on the target 1 round, unless a Save vs. Spell succeeds
+
+THAC0: +3
+Damage: 1d10+3 (slashing)
+Speed Factor: 8
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+@6810 = ~This sword radiates evil like a sour odor, and the owner never knows if <PRO_HESHE> wields the weapon or if it wields <PRO_HIMHER>. In addition to its combat abilities, Blackrazor slowly regenerates its owner with the drained strength of opponents.
+
+STATISTICS:
+
+Equipped abilities:
+– Regenerate 1 HP every 5 seconds
+– Immunity to charm and fear
+
+Combat abilities:
+– With every hit, it has a 15% chance of draining 4 levels from the target and healing the wielder by 20 Hit Points as well as hasting <PRO_HIMHER> for 20 seconds and increasing <PRO_HISHER> Strength by 3 points for 20 seconds
+– Acts as a +4 weapon for the purposes of what it can hit
+
+THAC0: +3
+Damage: 1d8+3 (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+
+@6820 = ~Thalanta the Fair created many types of cloaks, all known as Cloaks of the Stars. This particular version is simple, with three stars down each sleeve. Once per day, each star can be removed and thrown as a dart. The star disappears, only to return the next day.
+
+STATISTICS:
+
+Charge abilities:
+– Create thirty +5 darts once per day
+
+Weight: 3~
+
+// nerf only version
+@6830 = ~A social faux pas placed upstart Andor Licon in a duel with Baron Eeirk, heir to a warrior king. Though they seemed of even skill, Andor grew oddly weaker with each hit of the Baron's family blade. Panicking, he bade his bodyguards kill Eeirk. Despite his claims of morality, some noted that the young noble had positioned his men before the duel was even underway, and though he professed disdain for its dark magic, Andor made a tidy fortune off the sale of the evil blade.
+
+STATISTICS:
+
+Combat abilities:
+– Each hit makes the target receive a cumulative 2 point penalty to their THAC0 for 5 rounds unless they Save vs. Spell at -4
+
+THAC0: +4
+Damage: 1d10+4 (slashing)
+Speed Factor: 6
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+// dicesize change only
+@6840 = ~A social faux pas placed upstart Andor Licon in a duel with Baron Eeirk, heir to a warrior king. Though they seemed of even skill, Andor grew oddly weaker with each hit of the Baron's family blade. Panicking, he bade his bodyguards kill Eeirk. Despite his claims of morality, some noted that the young noble had positioned his men before the duel was even underway, and though he professed disdain for its dark magic, Andor made a tidy fortune off the sale of the evil blade.
+
+STATISTICS:
+
+Combat abilities:
+– Each hit makes the target receive a cumulative 2 point penalty to their THAC0 for 2 turns
+
+THAC0: +4
+Damage: 1d12+4 (slashing)
+Speed Factor: 6
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+// dicesize and nerf both
+@6850 = ~A social faux pas placed upstart Andor Licon in a duel with Baron Eeirk, heir to a warrior king. Though they seemed of even skill, Andor grew oddly weaker with each hit of the Baron's family blade. Panicking, he bade his bodyguards kill Eeirk. Despite his claims of morality, some noted that the young noble had positioned his men before the duel was even underway, and though he professed disdain for its dark magic, Andor made a tidy fortune off the sale of the evil blade.
+
+STATISTICS:
+
+Combat abilities:
+– Each hit makes the target receive a cumulative 2 point penalty to their THAC0 for 5 rounds unless they Save vs. Spell at -4
+
+THAC0: +4
+Damage: 1d12+4 (slashing)
+Speed Factor: 6
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+

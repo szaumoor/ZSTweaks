@@ -96,6 +96,15 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     END
 BUT_ONLY
 
+ACTION_IF FILE_EXISTS_IN_GAME "bdhamm02.itm" BEGIN
+    COPY_EXISTING "bdhamm02.itm" ~override~ // voidhammer +3
+        LPF ALTER_EFFECT
+            INT_VAR
+                match_opcode = 12
+                dicesize = 5
+        END
+    BUT_ONLY
+END
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1350 DESIGNATED 1350 GROUP @10 // WAKIZASHI/NINJATO DMG/SPEED
@@ -384,6 +393,116 @@ COPY_EXISTING ~LEAT19.ITM~ ~override~
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1171 DESIGNATED 1171 GROUP @11 // SILVER DRAGON ARMOR TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING ~ohdarmor.ITM~ ~override~
+    SAY IDENTIFIED_DESC @6770
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1
+            def_timing = 2
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes =~op=28,p1=40~
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1172 DESIGNATED 1172 GROUP @11 // RINGS OF ELEMENTAL CONTROL
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING_REGEXP ~RING2[7-9].ITM~ ~override~
+    LPF ALTER_EFFECT
+        INT_VAR
+            match_opcode = 177
+            match_savebonus = 2
+            savebonus = "-2"
+    END
+BUT_ONLY
+
+COPY_EXISTING ~RING27.ITM~ ~override~
+    SAY IDENTIFIED_DESC @6740
+BUT_ONLY
+
+COPY_EXISTING ~RING28.ITM~ ~override~
+    SAY IDENTIFIED_DESC @6750
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1
+            def_timing = 2
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes =~op=29,p1=50~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~RING29.ITM~ ~override~
+    SAY IDENTIFIED_DESC @6760
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1
+            def_timing = 2
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes =~op=27,p1=50~
+    END
+BUT_ONLY
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1173 DESIGNATED 1173 GROUP @11 // RING OF GAXX
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~RING39.ITM~ ~override~
+    SAY IDENTIFIED_DESC @6780
+    LPF ALTER_EFFECT
+        INT_VAR
+            match_duration = 10
+            duration = 12
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1174 DESIGNATED 1174 GROUP @11 // HEARTWOOD RING DRUID
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING ~RING44.ITM~ ~override~
+    SAY IDENTIFIED_DESC @6790
+    LPF ALTER_EFFECT
+        INT_VAR
+            check_headers = 0
+            match_opcode = 62
+            parameter1 = 127 // one per level
+    END
+    LPF DELETE_EFFECT
+        INT_VAR
+            check_headers = 0
+            match_opcode = 62
+            multi_match = 1
+    END
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1
+            def_timing = 2
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes =~op=98,p1=6,p2=3~
+    END
+BUT_ONLY
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1180 DESIGNATED 1180 GROUP @11 // RINGER OF DANGER SENSE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet bgee" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -455,6 +574,23 @@ COPY_EXISTING "bdbelt02.ITM" ~override~
         STR_VAR
             function_name = ~ADD_ITEM_EQEFFECT~
             effect_codes = ~op=332,p1=10,p2=8~
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1561 DESIGNATED 1561 GROUP @11 // cloak of the star more darts
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING "CLCK25.ITM" ~override~
+    SAY IDENTIFIED_DESC @6820
+    LPF ALTER_EFFECT
+        INT_VAR
+            check_globals = 0
+            match_opcode = 255
+            parameter1 = 30
     END
 BUT_ONLY
 
@@ -752,6 +888,36 @@ BUT_ONLY
 BUT_ONLY*/
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1201 DESIGNATED 1201 GROUP @13 // LILARCOR TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING ~SW2H14.ITM~ ~override~
+    SAY IDENTIFIED_DESC @6800
+    LPF ALTER_HEADER
+        INT_VAR
+            match_type = 1
+            match_speed = 8
+            speed = 7
+    END
+    LPF a7_auto_apply_spl_effect // 14782 confused str
+        INT_VAR
+            def_target = 2
+            def_type = 1
+            def_savetype = 1 // spell
+            def_resist_dispel = 3
+            def_probability1 = 24
+        STR_VAR
+            function_name = ~ADD_ITEM_EFFECT~
+            effect_codes = ~op=128,dur=6;op=139,p1=14782,tmg=3~
+    END
+BUT_ONLY
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1280 DESIGNATED 1280 GROUP @13 // CARSOMYR CHAOTIC EVIL TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -783,11 +949,36 @@ INCLUDE ~ZSTweaks/libs/zs_offsets.tpa~
 INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY_EXISTING ~SW2H12.ITM~ ~override~
-    SAY IDENTIFIED_DESC @6170
+    PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1322") BEGIN
+        SAY IDENTIFIED_DESC @6170
+    END ELSE BEGIN
+        SAY IDENTIFIED_DESC @6172
+    END
     LPF itm_first_offset_effect
         RET offset_eff = offset
     END // opcode eff
     WRITE_LONG (offset_eff + 0x4) 3 // MASK_EVIL
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1322 DESIGNATED 1322 GROUP @13 // FLAME OF THE NORTH TROLL BONUS
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY_EXISTING ~SW2H12.ITM~ ~override~
+   PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1318") BEGIN
+        SAY IDENTIFIED_DESC @6171
+    END ELSE BEGIN
+        SAY IDENTIFIED_DESC @6172
+    END
+    LPF a7_auto_apply_spl_effect
+        STR_VAR
+            function_name = ~ADD_ITEM_EFFECT~
+            effect_codes = ~t=1,tgt=2,tmg=1,op=177,p1=129,p2=4,res=ZSTWTRL0~
+    END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -896,6 +1087,57 @@ COPY_EXISTING "HALB06.ITM" ~override~
     END
 BUT_ONLY
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1591 DESIGNATED 1591 GROUP @13 // SOUL REAVER THAC0 TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING "SW2H08.ITM" ~override~
+    PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1592") BEGIN
+        SAY IDENTIFIED_DESC @6830
+    END ELSE BEGIN
+        SAY IDENTIFIED_DESC @6850
+    END
+    LPF ALTER_EFFECT
+        INT_VAR
+            match_opcode = 54
+            match_duration = 120
+            duration = 30
+            savingthrow = 1 // spell
+            savebonus = "-4"
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1592 DESIGNATED 1592 GROUP @13 // SOUL REAVER DICESIZE TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+
+COPY_EXISTING "SW2H08.ITM" ~override~
+    PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1591") BEGIN
+        SAY IDENTIFIED_DESC @6840
+    END ELSE BEGIN
+        SAY IDENTIFIED_DESC @6850
+    END
+    PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1430") BEGIN
+        LPF ALTER_HEADER
+            INT_VAR
+                match_dicesize = 10
+                dicesize = 12
+        END
+    END ELSE BEGIN
+        LPF ALTER_HEADER
+            INT_VAR
+                match_dicesize = 9
+                match_damage = 5
+                dicesize = 6
+                dicenumber = 2
+                damage = 4
+        END
+    END
+BUT_ONLY
 
 ////////////////// ONE-HANDED SWORD TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -906,6 +1148,16 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING "WANINJA.itm" ~override~
     WRITE_LONG 0x1e 1074057600 // usability opened
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1126 DESIGNATED 1126 GROUP @14 // BLACKRAZOR
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING "MISCBC.itm" ~override~
+    SAY IDENTIFIED_DESC @6810
+    WRITE_LONG 0x60 4
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
