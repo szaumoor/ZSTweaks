@@ -1,0 +1,57 @@
+  DEFINE_PATCH_FUNCTION remove_haste_immunity
+    BEGIN
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+            STR_VAR
+                match_resource = ~SPRA301~ // haste
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+            STR_VAR
+                match_resource = ~SPIN572~ // haste
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+            STR_VAR
+                match_resource = ~SPWI305~ // haste
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+            STR_VAR
+                match_resource = ~SPWI613~ // haste
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+            STR_VAR
+                match_resource = ~SPIN828~ // haste
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+                match_opcode = 169
+                match_parameter2 = 38 // haste icon
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+                match_opcode = 101
+                match_parameter2 = 16 // haste opcode
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+                match_opcode = 240
+                match_parameter2 = 38 // haste icon
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+                match_opcode = 267
+                match_parameter1 = 14023 // haste strref
+        END
+END

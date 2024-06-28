@@ -28,6 +28,7 @@
 /// GENERAL WEAPON TWEAKS
 @120 = "Make conjured wielded magical weapons add 1 extra APR (Flame Blade, Phantom Blade...)"
 @1120 = "Make some weapon categories incur in backstab penalties for balance"
+@1121 = ~Make Flails and Morningstars always inflict a small amount of piercing damage~
 @1150 = "Make Spears do a baseline damage of 1d8, not 1d6"
 @1160 = "Make Warhammers do a baseline damage 1d5+1, not 1d4+1 (except hammers outside that range)"
 @1350 = "Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8"
@@ -73,6 +74,7 @@
 /// TWO-HANDED MELEE WEAPONS
 @1200 = "Make Ixil's Spike allow Haste and Improved Haste"
 @1201 = "Make Lilarcor +3 have a chance of causing confusion on hit"
+@1202 = "Make Warblade +4 slightly more unique, and more potent when wielded by barbarians"
 @1280 = "Make Carsomyr affect any kind of evil and not just Chaotic Evil"
 @1290 = "Make Carsomyr's Dispel Magic force a saving throw"
 @1300 = "Make Silver Sword act as a +4 weapon to determine what it can hit to extend usability"
@@ -91,6 +93,7 @@
 /// ONE-HANDED SWORDS
 @1125 = "Make Ninjato of the Scarlet Brothehood +3 available for other classes and alignments"
 @1126 = ~Make Blackrazor able to hit targets immune to +3~
+@1127 = ~Make Peridan more powerful against dragons and less misleading in the description~
 @1210 = "Make The Equalizer slightly more powerful"
 @1220 = "Make Ras, the Dancing Blade last for 1 turn, instead of 4 rounds"
 @1230 = "Make Short Sword of Mask +5 slightly more powerful"
@@ -182,7 +185,6 @@
 @330 = "Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)"
 @340 = "Make Symbol of Death work with Save bonus if above the 60 HP threshold"
 @350 = "Make Earthquake not shake the screen"
-@360 = "Make Etheral Retribution do more damage per round: 6d6 per round instead of 3d8"
 @420 = ~Make Armor of Faith also add a +2 AC bonus to make it useful at low levels~
 @450 = ~Make single-target healing spells other than Heal worth using~
 @460 = ~Make Mass Cure faster to cast to improve it as a combat spell and heal a bit more~
@@ -191,6 +193,7 @@
 
 @2100 = "Make Sun Soul Ray from Sun Soul Monks scale further and do more damage to undead"
 @2110 = "Make Sun Soulbeam do more damage to undead: 12d6 instead of just 3 more damage than baseline"
+@360 = "Make Shaman's Etheral Retribution do more damage per round: 6d6 per round instead of 3d8"
 @2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty"
 @2130 = "Make Set Spike Trap do piercing damage instead of magic damage"
 @2140 = "Make Exploding Trap do slightly more damage: 15d6 as opposed to 10d6"
@@ -2799,4 +2802,49 @@ Requires:
  14 Strength
 
 Weight: 10~
+
+@6860 = "Barbarian Warblade +4"
+@6861 = ~This large sword is an enchanted version of the barbaric swords of the northern tribes. Forged during battle and dipped in the blood of the brave fallen, the enchantment granted to the blade by the barbarian gods is incredible.
+
+STATISTICS:
+
+Equipped abilities:
+– Acts as a +4 weapon in all respects except damage when wielded by non-barbarians
+– Barbarians wielding this sword will receive 5% physical damage resistance, and the sword's physical damage will become 1d12+5
+
+THAC0: +4
+Damage: 1d12+2, +1d4 cold damage
+Damage Type: Slashing
+Speed Factor: 6
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 11~
+
+@6870 = ~Dragonslayer: Peridan
+Few dare to create items such as this, for who does not fear the wrath of dragons, and what action would more tempt their reckoning? Yet, at a time lost in Faerûn's past, there was a need, and this sword was forged in answer. Tempered by a wizard's skill, this blade protects the wielder from the fear they should rightly feel while staring down a dragon's maw. It also bolsters with regeneration, dispels the trickery of illusions, and dares to inflict griveous wounds against the greatest creatures of the realms.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to fear
+– Regenerate 1 Hit Point every 3 rounds
+– 15% resistance against acid, electricity, fire, and cold
+– +2 AC and Saving Throws against dragons
+
+Charge abilities:
+– Detect Invisibility three times per day
+
+THAC0: +2, +6 against dragons
+Damage: 1d8+2, plus 2d8+2 against dragons
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~
 

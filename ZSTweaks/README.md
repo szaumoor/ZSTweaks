@@ -21,6 +21,15 @@ This reduces the backstab multiplier of some weapons who realistically would not
 - -1 penalty: Long swords, Scimitars, Katanas.
 - -2 penalty: Staves
 
+**Component 1121:** Make Flails and Morningstars always inflict a small amount of piercing damage
+
+Both types of weapon have piercing parts, that's why. The amount of piercing is very small and depends on enchantment level:
+
+- +0, +1 -> 1 point of piercing damage
+- 2+, +3 -> 2 points of piercing damage
+- +4, +5 -> 3 points of piercing damage
+- +6 -> 4 points of piercing damage
+
 **Component 1150:** Make spears do a baseline damage of 1d8, not 1d6
 
 1d6 is a little low for spears in my opinion and it fills the imaginary "gap" of two-handed weapons with damage between staves and two-handed swords and halberds.
@@ -260,7 +269,11 @@ I think everyone agrees that this type of restriction makes the weapons immediat
 
 **Component 1201:** Make Lilarcor +3 have a chance of causing confusion on hit
 
-It seems appropriate that the talking sword containing the blood-lusting, raving, screaming, lunatic can cause confusion on hit. Now it has a 25% chance that the victim is confused for 1 rounds if Save vs. Spell is failed.
+It seems appropriate that the talking sword containing the blood-lusting, raving, screaming, lunatic can cause confusion on hit. Now it has a 25% chance that the victim is confused for 1 round if Save vs. Spell is failed.
+
+**Component 1202:** Make Warblade +4 slightly more unique, and more potent when wielded by barbarians
+
+Since this was blessed by northern barbarian gods, the sword now causes 1d4 cold damage on contact. Additionally, barbarians wielding this sword will receive a 5% physical resistance and the sword's bonus damage is increased by 1 (1d12+5). Lastly, it will be renamed to "Barbarian Warblade +4", just because.
 
 **Component 1280:** Make Carsomyr affect any kind of evil and not just Chaotic Evil
 
