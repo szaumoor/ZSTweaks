@@ -273,7 +273,7 @@ It seems appropriate that the talking sword containing the blood-lusting, raving
 
 **Component 1202:** Make Warblade +4 slightly more unique, and more potent when wielded by barbarians
 
-Since this was blessed by northern barbarian gods, the sword now causes 1d4 cold damage on contact. Additionally, barbarians wielding this sword will receive a 5% physical resistance and the sword's bonus damage is increased by 1 (1d12+5). Lastly, it will be renamed to "Barbarian Warblade +4", just because.
+Since this was blessed by northern barbarian gods, the sword now causes 1d4 cold damage on contact, but makes the sword damage actually 1d12+2 (keep reading, don't worry). Additionally, barbarians wielding this sword will receive a 5% physical resistance and the sword's bonus damage is increased by 3 (1d12+5). Lastly, it will be renamed to "Barbarian Warblade +4", just because.
 
 **Component 1280:** Make Carsomyr affect any kind of evil and not just Chaotic Evil
 
