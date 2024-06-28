@@ -194,6 +194,9 @@
 @2100 = "Make Sun Soul Ray from Sun Soul Monks scale further and do more damage to undead"
 @2110 = "Make Sun Soulbeam do more damage to undead: 12d6 instead of just 3 more damage than baseline"
 @360 = "Make Shaman's Etheral Retribution do more damage per round: 6d6 per round instead of 3d8"
+@2111 = ~Make Shaman's Writhing Fog slightly more powerful~
+@2112 = ~Make Shaman's Spirit Fire slightly more powerful~
+@2113 = ~Make Shaman's Spiritual Clarity slightly more clarity-inducing~
 @2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty"
 @2130 = "Make Set Spike Trap do piercing damage instead of magic damage"
 @2140 = "Make Exploding Trap do slightly more damage: 15d6 as opposed to 10d6"
@@ -2847,4 +2850,17 @@ Requires:
  6 Strength
 
 Weight: 3~
+
+@6880 = ~Writhing Fog
+(Conjuration)
+
+Level: 2
+Sphere: Summoning
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+This spell conjures a cloud of writhing fog that chills and hinders anyone within its area other than the caster. Creatures in the fog take 1d3+1 points of cold damage per round. The dice size of this damage improves by 1 every level, up to 1d10. In addition, there is a 50% chance that they must save vs. Death or be slowed for 1 round. Creatures immune to cold damage do not suffer any adverse effects from this spell.~
 

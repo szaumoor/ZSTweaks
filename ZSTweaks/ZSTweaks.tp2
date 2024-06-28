@@ -996,7 +996,6 @@ COPY_EXISTING ~SW2H14.ITM~ ~override~
     END
 BUT_ONLY
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1280 DESIGNATED 1280 GROUP @13 // CARSOMYR CHAOTIC EVIL TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
@@ -1246,6 +1245,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
+INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY_EXISTING "SW1H32.itm" ~override~
     SAY IDENTIFIED_DESC @6870
@@ -2702,14 +2702,14 @@ BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2100 DESIGNATED 2100 GROUP @21 // SUN SOUL RAY TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" "This mod was written for BGEE, BG2EE, and EET"
+REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_sunsoulray.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2110 DESIGNATED 2110 GROUP @21 // SUN SOULDBEAM TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" "This mod was written for BGEE, BG2EE, and EET"
+REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING "SPCL239a.eff" ~override~
@@ -2720,7 +2720,7 @@ BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @360 DESIGNATED 360 GROUP @21 // ETHEREAL RETRIBUTION TWEAK
-REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" "This mod was written for BGEE and BG2EE"
+REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING ~SPPR751.SPL~ ~override~
@@ -2733,6 +2733,83 @@ COPY_EXISTING ~SPPR751.SPL~ ~override~
     END
 BUT_ONLY
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @2111 DESIGNATED 2111 GROUP @21 // WRITHING FOG TWEAK
+REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
+
+COPY_EXISTING ~SPPR250.SPL~ ~override~
+    SAY UNIDENTIFIED_DESC @6680
+    LPF ALTER_EFFECT
+        INT_VAR
+            check_globals = 0
+            match_opcode = 12
+            parameter1 = 1
+    END
+    LPF ALTER_EFFECT
+        INT_VAR
+            check_globals = 0
+            match_savingthrow = 4 // death
+            probability1 = 49
+    END
+    SET new_level = 4
+    SET new_dicesize = 4
+    FOR ( dice = 0; dice < 7; ++dice ) BEGIN
+        LPF ADD_SPELL_HEADER
+            INT_VAR
+                copy_header = 1
+                zs_min_level_for_copy = new_level
+        END
+        new_level += 2
+        LPF ALTER_EFFECT
+            INT_VAR
+                match_opcode = 12
+                dicesize = new_dicesize
+        END
+        ++new_dicesize
+    END
+BUT_ONLY
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @2112 DESIGNATED 2112 GROUP @21 // SPIRIT FIRE TWEAK
+REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~SPPR250.SPL~ ~override~
+    SAY UNIDENTIFIED_DESC @6680
+    LPF ALTER_EFFECT
+        INT_VAR
+            check_globals = 0
+            match_opcode = 12
+            parameter1 = 1
+    END
+    LPF ALTER_EFFECT
+        INT_VAR
+            check_globals = 0
+            match_savingthrow = 4 // death
+            probability1 = 49
+    END
+    SET new_level = 4
+    SET new_dicesize = 4
+    FOR ( dice = 1; dice <= 10; ++dice ) BEGIN
+        LPF ADD_SPELL_HEADER
+            INT_VAR
+                copy_header = 1
+                zs_min_level_for_copy = new_level
+        END
+        new_level += 2
+        LPF ALTER_EFFECT
+            INT_VAR
+                match_opcode = 12
+                dicesize = new_dicesize
+        END
+        ++new_dicesize
+    END
+BUT_ONLY
+
+*/
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2120 DESIGNATED 2120 GROUP @21 // WARCRY TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52

@@ -344,6 +344,19 @@ This makes this sword usable by non-monks of any alignment. Monks are not really
 
 This allows this sword to be usable in more cases. Since it's extremely powerful, no other changes are added.
 
+**Component 1127:** Make Peridan more powerful against dragons and less misleading in the description
+
+The description of Peridan is slightly misleading because it states that it does "double damage to dragons". You may think that every time you do damage to a dragon with it, you deal the same damage again, or perhaps you think the damage value of every attack is always double of what it would be against other enemies. Uhh, not quite.
+
+In reality, the sword deals 1d8+2 against enemies, and 1d8+2 again in a second tick of damage if the enemy is a dragon. So now the description is a bit more explicit about what it does and:
+
+- Regeneration improved to 1 HP per 3 rounds
+- Adds 15% resistance to all elements (i.e. the damage type of most dragons)
+- THAC0 against dragons is now +6, +2 for others
+- +2 AC and saving throws against Dragons (essentially like a "Protection from Dragons" spell)
+- Extra damage to dragons: every hit causes additionally 2d8+2 (bear in mind this is not affected by Strength or any other damage modifiers except any effect that increases slashing damage universally, which doesn't exist in vanilla game)
+- Detect Invisibility can be cast three times, not once per day
+
 **Component 1210:** Make The Equalizer slightly more powerful
 
 Honestly, it kinda feels like it's immediately not useful by the time you get it. The description is also slightly misleading because it looks like it will deal, for example, 1d8+6 against some alignments, in the same way that a Longsword +6 would, but it's not like that. It actually just inflicts 1d8 (like a normal non-magical sword) and then additively includes the damage which is generally much less powerful. Therefore:
