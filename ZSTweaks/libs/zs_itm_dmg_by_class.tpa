@@ -6,9 +6,10 @@ DEFINE_PATCH_FUNCTION weapon_damage_by_class
 			probability1=100 // the probabilities for the effect to be applied
 			probability2=0
             type = 99
+			insert_point = 0
 	STR_VAR class="" // the class which gets the effect (from class.ids)
 			spell="" // a spell which is cast on the target on a successful hit, but only if the wielder is the correct class
 BEGIN
 	LPF ADD_ITEM_EFFECT
-        INT_VAR type header probability1 probability2 insert_point=0 opcode=326 target=1 timing=1 parameter1=IDS_OF_SYMBOL (class "%class%") parameter2=105 STR_VAR resource="%spell%" END
+        INT_VAR type header probability1 probability2 insert_point opcode=326 target=1 timing=1 parameter1=IDS_OF_SYMBOL (class "%class%") parameter2=105 STR_VAR resource="%spell%" END
 END

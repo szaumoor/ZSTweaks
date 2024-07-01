@@ -1761,16 +1761,16 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING_REGEXP "ohdsw2h[a-d].ITM" ~override~
     WRITE_LONG 0x60 5
-    PATCH_IF "%SOURCE_RES%" STRING_COMPARE "ohdsw2ha" = 1 BEGIN
+    PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "ohdsw2ha" = 0 BEGIN
         SAY IDENTIFIED_DESC @6660
     END
-    PATCH_IF "%SOURCE_RES%" STRING_COMPARE "ohdsw2hb" = 1 BEGIN
+    PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "ohdsw2hb" = 0 BEGIN
         SAY IDENTIFIED_DESC @6670
     END
-    PATCH_IF "%SOURCE_RES%" STRING_COMPARE "ohdsw2hc" = 1 BEGIN
+    PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "ohdsw2hc" = 0 BEGIN
         SAY IDENTIFIED_DESC @6680
     END
-    PATCH_IF "%SOURCE_RES%" STRING_COMPARE "ohdsw2hd" = 1 BEGIN
+    PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "ohdsw2hd" = 0 BEGIN
         SAY IDENTIFIED_DESC @6690
     END
 BUT_ONLY
@@ -1828,14 +1828,14 @@ INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 COPY_EXISTING_REGEXP ~.*\.itm~ ~override~
     READ_SHORT 0x1c category_itm
     PATCH_IF category_itm = 9 OR category_itm = 13 BEGIN// if it's a potion or food item
-        PATCH_IF "%SOURCE_RES%" STRING_COMPARE "GBERRY" = 0 BEGIN
+        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "GBERRY" = 0 BEGIN
             LPF a7_auto_apply_spl_effect
             STR_VAR
                 function_name = ~ADD_ITEM_EFFECT~
                 effect_codes  = ~op=321,tgt=1,res=%SOURCE_RES%,ip=0~ // prevent stacking
             END
         END
-        PATCH_IF (!MOD_IS_INSTALLED "ZSTweaks.tp2" "240") AND "%SOURCE_RES%" STRING_COMPARE "GBERRY" = 1 BEGIN
+        PATCH_IF (!MOD_IS_INSTALLED "ZSTweaks.tp2" "240") AND "%SOURCE_RES%" STRING_COMPARE_CASE "GBERRY" = 0 BEGIN
             LPF a7_auto_apply_spl_effect
             STR_VAR
                 function_name = ~ADD_ITEM_EFFECT~
