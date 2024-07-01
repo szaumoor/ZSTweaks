@@ -102,6 +102,12 @@ Essentially, when wielding a weapon they can use with what I call "finesse", whi
 - **Bows, slings**: 45% chance per hit to inflict 1d6 and 1d4+bonus missile damage respectively.
 - **Darts, Daggers, Crossbows**: 60% chance per hit to inflict 1d3+bonus, 1d4+bonus and 1d8, respectively, of piercing/missible damage.
 
+Note that this component does not account (automatically) for special weaponry which may use a different kind of damage-dealing effect than normal. For example, Voidsword +3 in SoD causes only magic damage and is not part of the damage of the weapon as such, but exists as a separate effect. These have to be added manually (in that example, the extra damage would occur in the same way as the others, but only as magic damage, which is intended). Currently, the following thief-usable items are accounted for:
+
+- Voidsword, Void-arrows, Void-bullets (SoD)
+- 1d2 Arrows of Antimagic will be skipped (SoD)
+- Fierce Swirl +2 (Lava's Shades of the Sword Coast)
+
 **Component 1530:** Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time to maximize damage
 
 This reduces the number of dice thrown of DAGG11 and DAGG12 to 1 so they are not the only good choice for daggers to maximize damage. And for consistency. Generally speaking I dislike a lot this sort of unbalanced design. DAGG11 specifically, already comformed to this rule in BGEE.
