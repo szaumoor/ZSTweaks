@@ -209,6 +209,22 @@ This makes the circlet a bit more valuable by making it more effective in contro
 
 Purely cosmetic tweak. I've never liked the look of robes without cloaks or without hoods.
 
+**Component 1651:** Make Studded Leather of Thorns add some piercing damage too
+
+I mean, they're THORNS; the only difference is that they're FIERY. Instead of only inflicting 1d4 fire damage, they inflict also 1d4 piercing damage, making it an overall more useful defensive armor.
+
+**Component 1652:** Make Grandmaster's Armor's movement bonus not affected by Free Action
+
+This component makes the doubled movement of this armor not be affected by Free Action at all, which to me seems much more fitting, since it's the main (and only) feature of this armor. Ahhh, Free Action, the constant thorn in our sides.
+
+**Componen 1653:** Make Thieves' Hood slightly more advantageous for single-classed thieves: +1 THAC0 and Damage
+
+This improves this item in the following ways:
+
+- Both upgraded and non-upgraded version protect now against critical hits, essentially giving Thieves a vanilla item that protects them too against critical hits.
+- Single-classed thieves gain +1 THAC0 and Damage (for balance, and to promote specialization)
+
+
 </details>
 
 ---
@@ -258,6 +274,21 @@ Werebane's description is a little misleading. It doesn't cause +4 damage agains
 **Component 1680:** Make Stiletto of Demarchess +2 very slightly more powerful and bleed every hit
 
 This component makes the weapon try to stun the victim with a probability of 25% instead of 20%. Inspired by the sadistic story behind the weapon, it also causes bleeding every hit, similar to Gnasher, inflicting 2 extra piercing damage, as well as 2 more per round for 3 rounds.
+
+**Component 1681:** Make Elements' Fury +2 slightly more powerful
+
+This component makes this dagger a bit more powerful in the following ways:
+
+- Damage dice number against elementals improved by 1: 2d4
+- Elemental resistance improved by 10% while holding it.
+- Random elemental damage improved to 2
+
+**Component 1682:** Make Acid-Etched Dagger +2 generally more powerful and act as +3
+
+This component makes this weapon one of the few +3 weapons in the expansion, acting in every way as a +3 weapon, as well as:
+
+- Hits with dagger also deal 1d3 acid damage (improved from 1).
+- 20% chance of causing 1d3 acid damage per round for 3 rounds (improved from 1, 15% chance), as well as reducing AC for 3 rounds
 
 </details>
 
@@ -331,6 +362,9 @@ Soul Reaver is fairly unbalanced, particularly because it reduces THAC0 by 2 cum
 
 The sword looks like it's fairly massive. You may disagree, but that's how it comes across to me. So this will match the dice size of other blades like Carsomyr and Warblade: 1d12 (or 2d6 if the two-handed general tweak was installed).
 
+**Component 1593:** Make Sword of Ruin +2 slightly more powerful
+
+This makes the extra critical damage of the weapon a bit more substantial, 2d5+2 (from 2d4).
 
 </details>
 
@@ -533,11 +567,15 @@ Just a simple buff to make the shield a good option for longer.
 
 This extends the usability of the weapon, despite the lower damage, if the constant shield the weapon grants is desired.
 
-**@1640** Make Abyssal Blades more powerful (Dorn's Quest)
+**Component 1640:** Make Abyssal Blades more powerful (Dorn's Quest)
 
 This improves the blades such that they have an enchantment of 5, and thus their usability is extended until the end of game, if so desired.
 
 Additionally, the versions that have one fiend in them deal +1 fire damage compared to baseline. The version that has two deals +2.
+
+**Component 1641:** Make the item creation abilities of vanilla NPCs slightly better
+
+This makes these skills generate more items. Jan Jansen will create 10 Bruiser Mates. Eldoth will create 15 poisoned arrows. Additionally, his poisoned arrows will deal 20 poison damage over 40 seconds, instead of 13, and Jan's bolts will deal 1d3+1 damage, instead of 1d2+1.
 
 </details>
 

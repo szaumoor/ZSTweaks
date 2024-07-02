@@ -362,7 +362,9 @@ Soul Reaver is fairly unbalanced, particularly because it reduces THAC0 by 2 cum
 
 The sword looks like it's fairly massive. You may disagree, but that's how it comes across to me. So this will match the dice size of other blades like Carsomyr and Warblade: 1d12 (or 2d6 if the two-handed general tweak was installed).
 
-@1593 = ~Make Sword of Ruin +2 slightly more powerful~
+**Component 1593:** Make Sword of Ruin +2 slightly more powerful
+
+This makes the extra critical damage of the weapon a bit more substantial, 2d5+2 (from 2d4).
 
 </details>
 
