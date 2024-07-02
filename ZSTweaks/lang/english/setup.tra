@@ -6,7 +6,7 @@
 @14 = ~One-handed Swords Tweaks~
 @15 = ~Mace/Club Tweaks~
 @16 = ~Ranged Weapon Tweaks~
-@17 = ~NPC Gear Tweaks~
+@17 = ~NPC Tweaks~
 @18 = ~Misc Items~
 @19 = ~Wizard Spell Tweaks~
 @20 = ~Cleric/Druid Spell Tweaks~
@@ -58,6 +58,10 @@
 @1610 = ~Make Robe of Invocation also improve all elemental damage by 5% and add a +2 bonus against Invocation~
 @1620 = ~Make Vicross' Thayan Circlet apply Improved Shield of Chaos instead of just Shield of Chaos~
 @1650 = ~Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak~
+@1651 = ~Make Studded Leather of Thorns add some piercing damage too~
+@1652 = ~Make Grandmaster's Armor's movement bonus not affected by Free Action~
+@1653 = ~Make Thieves' Hood slightly more advantageous for single-classed thieves: +1 THAC0 and Damage~
+@1654 = ~Make Star-Strewn Boots slightly better and favor Inquisitors too (SoD)~
 
 
 /// DAGGER TWEAKS
@@ -69,6 +73,8 @@
 @1660 = ~Make Heart of the Golem +2 get a couple more magic-based features, inspired by the description~
 @1670 = ~Make Werebane +1 a bit more effective towards Lycanthropes~
 @1680 = ~Make Stiletto of Demarchess +2 very slightly more powerful and bleed every hit~
+@1681 = ~Make Elements' Fury +2 slightly more powerful~
+@1682 = ~Make Acid-Etched Dagger +2 generally more powerful and act as +3~
 
 
 /// TWO-HANDED MELEE WEAPONS
@@ -88,6 +94,7 @@
 @1590 = ~Make Blackmist more powerfully blinding and make you immune to blindness~
 @1591 = ~Make Soul Reaver slightly more balanced~
 @1592 = ~Make Soul Reaver deal 1d12 damage~
+@1593 = ~Make Sword of Ruin +2 slightly more powerful~
 
 
 /// ONE-HANDED SWORDS
@@ -126,13 +133,14 @@
 @1330 = "Make Darkfire Bow slightly more remarkable"
 @1340 = "Make Taralash slightly more remarkable"
 
-// NPC GEAR
+// NPC TWEAKS
 @1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
 @1480 = "Make Yoshimo's Katana slightly more unique and powerful"
 @1500 = ~Make Mazzy's weapons slightly more powerful~
 @1510 = ~Make Delryn's family shield become a +2 shield~
 @1520 = ~Make Hallowed Redeemer able to hit enemies immune to +2 weapons~
 @1640 = ~Make Abyssal Blades more powerful (Dorn's Quest)~
+@1641 = ~Make the item creation abilities of vanilla NPCs slightly better~
 
 // MISC ITEMS
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
@@ -2863,4 +2871,120 @@ Area of Effect: 15-ft. radius
 Saving Throw: Special
 
 This spell conjures a cloud of writhing fog that chills and hinders anyone within its area other than the caster. Creatures in the fog take 1d3+1 points of cold damage per round. The dice size of this damage improves by 1 every level, up to 1d10. In addition, there is a 50% chance that they must save vs. Death or be slowed for 1 round. Creatures immune to cold damage do not suffer any adverse effects from this spell.~
+
+@6890 = ~Fashioned by the Hierophant Wassalia before she chose to forever dwell on the Elemental Plane of Fire, this suit of armor is not covered by typical metal studs but by heavy red thorns.
+
+STATISTICS:
+
+Combat abilities:
+– Thorn Damage: Any opponent within 6 ft. that successfully hits the wearer suffers 1d4 points of piercing and fire damage.
+
+Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 5~
+
+@6900 = ~This wide, heavy blade gives way to jagged teeth near its tip, a serrated edge designed to rip and tear flesh. Little is known of the blade's origin, but the elaborate grip marked with worn runes hints that it may have been crafted in ancient Unther.
+
+STATISTICS:
+
+Equipped abilities:
+– Critical Hit Chance: +5%
+
+Combat abilities:
+– Deals an extra 2d5+2 points of slashing damage on a critical hit
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d10+2 (slashing)
+Speed Factor: 8
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+@6910 = ~There is no honor among thieves. Perhaps that is why the Thieves' Hood has been imbued with magical properties to protect the wearer from their own ilk.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to backstab and poison
+– Single-classed thieves are granted +1 to THAC0 and Damage
+– Protects against critical hits
+
+Charge abilities:
+– True Sight three times per day
+  Duration: 1 turn
+
+Weight: 2~
+
+@6911 = ~Although this hood does not confer any noticeable advantages on its wearer, it does have an aura of latent magic.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~
+
+@6920 = ~These boots belonged to Crommus the Minstrel many centuries ago. When Artipheon the mage slew Crommus and severed the bard's voice, some of Artipheon's power infused Crommus's boots. The once ordinary midnight-blue leather boots now glitter as if hundreds of twinkling stars were embedded in the material.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +10%, +18% (Wizard Slayers and Inquisitors)
+
+Weight: 4~
+
+@6930 = ~The mage who crafted this strange dagger was obsessed with the four elemental planes and sought to create a means to join them together. Opening portals to all of them at once, he managed to join their energies together to enchant this relic, giving it properties of each plane.
+
+Unfortunately, he happened to be standing between the portals, holding the dagger in his hand; when the energies converged, they converged on him. It was the mage’s apprentice who discovered the dagger, clutched in his master’s charred and frozen hands.
+
+STATISTICS:
+
+Equipped abilities:
+– 10% resistance to fire, cold, electrical, and acid damage
+
+Combat abilities:
+– Deals an extra 2d4 cold damage to fire elementals
+– Deals an extra 2d4 fire damage to water elementals
+– Deals an extra 2d4 acid damage to earth elementals
+– Deals an extra 2d4 electrical damage to air elementals
+
+THAC0: +2
+Damage: 1d4+2, +2 fire, cold, electrical, or acid damage (random)
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6940 = ~Acid-Etched Dagger +3~
+
+@6941 = ~This dagger, though old, was obviously crafted well and enchanted carefully. An ordinary dagger would have long ago dissolved in the juices of the albino wyrmling's stomach. Though the dagger is still intact and boasts a sharp edge, its time in the wyrmling's stomach has left swirling patterns of acid etching along the blade and hilt.
+
+STATISTICS:
+
+Combat abilities:
+– 20% chance per hit that the target suffers a -2 penalty to AC and 1d3 extra point of acid damage per round for 3 rounds
+
+THAC0: +3
+Damage: 1d4+3, +1d3 (acid)
+Damage Type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+
 

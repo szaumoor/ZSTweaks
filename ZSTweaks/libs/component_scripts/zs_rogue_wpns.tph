@@ -277,7 +277,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     END // end arrows
 
     PATCH_IF wpn_cat == 31 BEGIN // bolts
-      //  PATCH_IF ench = 0 BEGIN // will assume vanilla BG2 values for arrow dmg, probably more balanced anyway
+        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "BOLT07" != 0 BEGIN // BRUISER MATES SKIPPED
             LPF weapon_damage_by_class
                 INT_VAR
                     type = 2
@@ -286,6 +286,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                     class = ~THIEF~
                     spell = ~ZSTWB0~
             END
+        END
     END // end bolts
 
     PATCH_IF wpn_cat = 24  AND wpn_prof == 106 BEGIN // darts
