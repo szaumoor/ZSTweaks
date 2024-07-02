@@ -1,6 +1,6 @@
 # ZSTweaks
 
-This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game, nothing more, nothing less. The vast majority of the tweaks are designed to be simple improvements of underpowered items or abilities. Some of them overhaul the game more extensively.
+This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game. The vast majority of the tweaks are designed to be simple improvements of underpowered items or abilities. Some of them overhaul the game a bit more extensively, though not radically.
 
 ---
 <details>
@@ -17,7 +17,7 @@ The problem with these spells is that they promise power, but your little sickly
 
 This reduces the backstab multiplier of some weapons who realistically would not be great for backstabs, which also includes pretty broken weapons when used for backstabs, such as the Staff of Ram.
 
-- No penalty: All piercing swords, ninja-tos, clubs, and daggers.
+- No penalty: Piercing swords, Ninja-tos, Clubs, and Daggers.
 - -1 penalty: Long swords, Scimitars, Katanas.
 - -2 penalty: Staves
 
@@ -93,7 +93,7 @@ All these bonuses are additive. Note that this component will not update the des
 
 This component is an attempt at making pure Thieves more effective with a portion of thief-usable weapons without relying on stats, APR or proficiency points.
 
-Essentially, when wielding a weapon they can use with what I call "finesse", which is a concept that I borrowed from NWN, they can deal extra damage per attack randomly (additively), based on the base attack damage of the weapon used (vanilla values). This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashis, ninja-tos, katanas, and short swords. It's hacky, as most things not quite supported by the game, but it works. To be more specific:
+Essentially, when wielding a weapon they can use what I call "finesse", which is a concept that I borrowed from NWN, they can deal extra damage per attack randomly (additively), based on the base attack damage of the weapon used (vanilla values). This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashis, ninja-tos, katanas, and short swords. It's hacky, as most things not quite supported by the game, but it works. To be more specific:
 
 - **Scimitars, long swords, quarterstaves**: 10% chance per hit to inflict 1d8/6+bonus of slashing/crushing damage.
 - **Katanas**: 15% chance per hit to inflict 1d10+bonus of slashing damage.
@@ -174,7 +174,7 @@ I do not like that most robes, except the most powerful ones are largely unremar
   - Save vs. Petrification +1 (vanilla) and Save vs. Spell +1 (new)
   - +20% Magic damage resistance
   - +10% Elemental damage resistance
-- **Elemental resistance robes**: resistance increased to 40%, adds 7% damage bonus in the relevant element and +1 save vs. evocation spells. This also increases the damage resistance of Robe of Red Flames to 50%, and adds the evocation bonus, for consistency (it's a straight upgrade).
+- **Elemental resistance robes**: resistance increased to 40%, adds 7% damage bonus in the relevant element and +1 save vs. evocation spells. This also increases the damage resistance of Robe of Red Flames to 50%, and adds the evocation bonus, for consistency (it's a straight upgrade from the Robe of Fire Resistance).
 - **Archmage Robes**
   - AC set to 5 (vanilla), and it improves AC by 1 (new)
   - Magic resistance improved by 10%, not 5%
@@ -207,7 +207,7 @@ This makes the circlet a bit more valuable by making it more effective in contro
 
 **Component 1650:** Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak
 
-Purely cosmetic tweak. I've never liked the look of robes without cloaks or cloaks & hoods.
+Purely cosmetic tweak. I've never liked the look of robes without cloaks or without hoods.
 
 </details>
 
@@ -232,8 +232,6 @@ Instead of simply giving the usual +4 weapon bonuses:
 
 **Component 1140:** Make Dagger of the Star slightly more powerful.
 
-I like daggers.
-
 - Dagger of the Star +4 becomes +5, and the chance of invisibility increases to 10%.
 - Dagger of the Star +5 becomes one of the few privileged +6 weapons.
 - Star Bolt: Increased the chance to trigger elemental effects to 15%, the difference being, you have equal chances of triggering fire damage, electrical damage, or both.  (5% times 3)
@@ -244,7 +242,7 @@ The dagger will always cause 20 poison damage over 10 seconds if a Save vs. Deat
 
 **Component 1630:** Make The Jade's Fang slightly more powerful and improve the lifesteal effect
 
-This component improves the dagger such that the lifesteal component is potentially better, which is identical to component 1470. Additionally, there is a 15% chance the stun happens as well, but only if a Save vs. Spell is failed. All the effects now bypass Magic Resistance, like the Stupifier in BGEE and Adjatha the Drinker (which is probably an oversight in this case). Also fixes in passing incorrect probabilities for the stun effect.
+This component improves the dagger such that the lifesteal component is potentially better, which is identical to component 1470. Additionally, there is a 15% chance the stun happens as well, but only if a Save vs. Spell is failed. All the effects now bypass Magic Resistance, like the Stupifier in BGEE and Adjatha the Drinker (which is probably an oversight in this case).
 
 **Component 1660:** Make Heart of the Golem +2 get a couple more magic-based features, inspired by the description
 
@@ -269,7 +267,7 @@ This component makes the weapon try to stun the victim with a probability of 25%
 
 <summary><b>Two-handed Melee Weapons Tweaks</b></summary>
 
-**Component 1200:** Make Ixil's Spike allow Haste and Improved Haste **(NOT IMPLEMENTED YET)**
+**Component 1200:** Make Ixil's Spike allow Haste and Improved Haste
 
 I think everyone agrees that this type of restriction makes the weapons immediately less appealing.
 
@@ -307,7 +305,7 @@ The dispel on hit thing is pretty cheesy so, yeah. That. Save vs. Spell at -2
 
 **Component 1410:** Make Ir'revrykal Dispel Magic effect not depend on probabilities, but allow a saving throw.
 
-This essentially is the same tweak to Carsomyr, except the chance of dispelling is also 100%. The saving throw vs spell is without a penalty.
+This essentially is the same tweak to Carsomyr, except the chance of dispelling is also 100%. The saving throw vs spell has no penalty.
 
 **Component 1420:** Make Ir'revrykal base damage equal to Carsomyr
 
@@ -327,7 +325,7 @@ This makes Blackmist's blindness power be more likely to be effective, by adding
 
 **Component 1591:** Make Soul Reaver slightly more balanced
 
-Soul Reaver is fairly unbalanced, particularly because it reduces THAC0 for 2 full minutes and it's fairly easy to make any enemy to not be able to hit anything at all. This tweak reduces this duration to 5 rounds, and requires a Save vs. Spell at -4 to resist.
+Soul Reaver is fairly unbalanced, particularly because it reduces THAC0 by 2 cumulatively for 2 full minutes and it's fairly easy to make any enemy to not be able to hit anything at all. This tweak reduces this duration to 5 rounds, and requires a Save vs. Spell at -4 to resist.
 
 **Component 1592:** Make Soul Reaver deal 1d12 damage
 
@@ -360,7 +358,7 @@ In reality, the sword deals 1d8+2 against enemies, and 1d8+2 again in a second t
 - Adds 15% resistance to all elements (i.e. the damage type of most dragons)
 - THAC0 against dragons is now +6, +2 for others
 - +2 AC and saving throws against Dragons (essentially like a "Protection from Dragons" spell)
-- Extra damage to dragons: every hit causes additionally 2d8+2 (bear in mind this is not affected by Strength or any other damage modifiers except any effect that increases slashing damage universally, which doesn't exist in vanilla game)
+- Extra damage to dragons: every hit causes additionally 2d8+2 (bear in mind this is not affected by Strength or any other damage modifiers except any effect that increases slashing damage universally)
 - Detect Invisibility can be cast three times, not once per day
 
 **Component 1210:** Make The Equalizer slightly more powerful
@@ -390,7 +388,7 @@ This makes the dispel magic effect equal to those in the Staff of the Magi and C
 
 **Component 1250:** Make Yamato's passive abilities more substantial
 
-The effect is pretty underwhelming for a +4 weapon. Since it's advertised about defense, the following is added:
+The effect is pretty underwhelming for a +4 weapon. Since it's advertised as a defender weapon, the following is added:
 
 AC bonus improved to 3 (instead of 1) plus 1 against slashing, piercing, and missile weapons. 5% universal damage resistance & magic resistance.
 
@@ -398,7 +396,7 @@ AC bonus improved to 3 (instead of 1) plus 1 against slashing, piercing, and mis
 
 The effect is pretty underwhelming for a +4 weapon. Now:
 
-- Chance of doing 2d10 electrical damage increased to 15%, and is now 5d4+1, with a save vs. spell at -2 for half.
+- Chance of doing 2d10 electrical damage increased to 15%, and is now 5d4+1, with a Save vs. Spell at -2 for half.
 - Every hit does 1d3 electrical damage with no save.
 - Increases electrical damage resistance by 40%
 
@@ -416,7 +414,7 @@ Self explanatory. I also removed the weird preamble that includes the first sent
 
 **Component 1341:** Make Hindo's Doom a +4 and +5 weapon
 
-This simply allows the game to grant you a +4 and +5 katana, essentially.
+This simply allows the game to grant you a +4 and +5 katana, essentially. This is okay, because you get this in ToB, and that enchantment level is fine then.
 
 **Component 1470:** Make Adjatha the Drinker thirstier
 
@@ -428,23 +426,19 @@ By the time you get this weapon in BG2, it's generally underwhelming and you hav
 
 - Both: act as a +5 weapon for the purposes of what they can hit and in terms of THAC0
 - Icingdeath: it's a "frost" weapon, and as such, it also inflicts 1d3 cold damage per hit, +5 against creatures immune to fire (fire elementals, fire salamanders, fire giants...). It's also considered a silver weapon.
-- Twinkle: it has a defensive theme, therefore: added +2 bonus against slashing, piercing and missile, +1 Save vs. Spell, +8% physical damage resistance
+- Twinkle: it has a defensive theme, therefore: added +2 AC bonus against slashing, piercing and missile, +1 Save vs. Spell, +8% physical damage resistance
 
 **Component 1580:** Make Hawksight +2 improve your senses, reflexes, and accuracy more keenly
 
 This component takes the description more seriously, and hence, other than giving +1 Dexterity it also:
 
-- +4 THAC0
+- Has +4 THAC0 bonus instead of +2
 - Universal +1 Saving Throw bonus
 - +1/2 APR
-- Charge ability: Detect Invisibility and Evil twice per day
 
 **Component 1581:** Make Hawksight's description unique and add a minor power to it
 
 This component requires the previous one, and it adds a description worth-reading (YMMV). I really dislike items with unique names, but with no interesting description or brief backstory. It seems lazy and uninteresting to add a named item without any background. Additionally, it adds a minor power to it, based on this brief backstory. See ZSTweaks/unique_descriptions.md for details.
-
-"Charge abilities:
-– Twice per day, invoke the spirit of Arannis Alderlight to detect invisiblity and evil."
 
 </details>
 
@@ -474,7 +468,7 @@ This component makes the "pain" that the description talks about manifest as a n
 
 This makes the mace +3 for consistency with the power level of other WA-weapons. It also improves the damage and thac0 bonuses against fiends by 1.
 
-**Component 1320:** Make Flail of Ages + 5 allow Haste and Improved Haste **(NOT IMPLEMENTED YET)**
+**Component 1320:** Make Flail of Ages + 5 allow Haste and Improved Haste
 
 I think everyone agrees that this type of restriction makes the weapons immediately less appealing.
 
@@ -500,7 +494,7 @@ The +5 version literally just increases the THAC0 bonus by 1. That's a bit too b
 
 - Makes movement bonus increase to 5.
 - Adds a damage bonus of 1 like a regular composite bow
-- Animals and and other kind of unintelligent beasts, magical or not, take +2 and +5 damage (+4 and +5 version respectively)
+- Animals and other kind of unintelligent beasts, magical or not, take +2 and +5 damage (+4 and +5 version respectively)
 
 </details>
 
@@ -517,8 +511,6 @@ My first move whenever I used Haer'Dalis was to give him swords that granted him
 Additionally, it makes Entropy cause 6 poison damage, on a Save vs. Death at -1 instead of 3 with a save without penalties or bonuses, and it makes Chaos reduce the struck opponent's Save vs. Death by 1 for 2 rounds. They both gain a speed factor of 0 and can hit targets immune to +2 weapons, like balors.
 
 **Component 1480:** Make Yoshimo's Katana slightly more unique and powerful
-
-Remember what I said about enchanted unique weapons without no special properties? Well, it's even more egregious if it's an NPC unique weapon as far as I'm concerned.
 
 This components keeps to the idea that it is only lightly enchanted, but it also offers a few advantages to Yoshimo:
 - Speed factor reduced to 1 from 3
@@ -559,9 +551,9 @@ Additionally, the versions that have one fiend in them deal +1 fire damage compa
 
 The rod is conceptually quite interesting, but generally underperforming.
 
-- **Mace +2** is renamed to Mace of Lordly Might +3, becomes a +3 weapon, and the save against panic is now at +2, not +5, and the panic lasts 2 rounds, not 4.
-- **Flaming Long Sword +1** is renamed to Flaming Sword of Lordly Might +3, becomes a +3 weapon, causes 1d4 fire damage per hit, and the paralyze effect Save becomes +2 and not +5, but the Hold effect only lasts one round. Fixes the duplicated Paralyze effect it has. Additionally, it makes it look like an actual flaming sword when held.
-- **Spear +3** is renamed to Spear of Lordly Might +3, and it no longer has a Save vs. Spell bonus of +6 to cause 2d4 magic damage, now it has no bonus or penalty.
+- **Mace +2** is renamed to Mace of Lordly Might +3, becomes a +3 weapon, and the save against panic is now at +2, not +5, and the panic is now a 1-round Slow effect.
+- **Flaming Long Sword +1** is renamed to Flaming Sword of Lordly Might +3, becomes a +3 weapon, causes 1d4 fire damage per hit, and the paralyze effect Save becomes +2 and not +5, but the Hold effect only lasts one round. Additionally, it makes it look like an actual flaming sword when held.
+- **Spear +3** is renamed to Spear of Lordly Might +3, and it no longer has a Save vs. Spell bonus of +6 to cause 2d4 magic damage, now it has no bonus or penalty and causes 3d4 magic damage when save is failed.
 
 **Component 1600:** Make CHARNAME's Tankard heal as much as a Potion of Extra Healing (Neera's quest)
 
@@ -641,7 +633,7 @@ This allows you to be Lawful Evil and enjoy the same amount of HP bonus as other
 
 **Component 410:** Make Horrid Wilting actually be more effective against plants and Water Elementals
 
-This makes the spell mirror the behavior in 5E/BG3, where plant and water-based creatures take always maximum damage with a save vs. spell at -2 (this penalty is completely missing in vanilla), halved on a save. Additionally, enemies that are not damaged by draining moisture are unaffected (undead and golems). For example, at level 20, it inflicts 20d8 (i.e. 20-160 or half damage) to normal enemies and 160 to plant creatures, myconids and water elementals, unless they save, in which case they would take 80 damage.
+This makes the spell mirror the behavior in 5E/BG3, where plant and water-based creatures take always maximum damage with a Save vs. Spell at -2 (this penalty is completely missing in vanilla), halved on a save. Additionally, enemies that are not damaged by draining moisture are unaffected (undead and golems). For example, at level 20, it inflicts 20d8 (i.e. 20-160 or half damage) to normal enemies and 160 to plant creatures, myconids and water elementals, unless they save, in which case they would take 80 damage.
 
 **Component 430:** Make Grease bypass Magic Resistance and apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description
 
@@ -653,7 +645,7 @@ As others have noted this spell is generally just less powerful than Dragon Brea
 
 **Component 441:** Make Tenser's Transformation grant a THAC0 of 0 at max level
 
-Makes those spells achieve a THAC0 of 0 at max level, since the description clearly states "fighter of the same level".
+Makes this spell achieve a THAC0 of 0 at max level, since the description clearly states "fighter of the same level".
 
 **Component 442:** Make Tenser's Transformation give extra APR like a Fighter at the appropriate levels
 
@@ -688,7 +680,7 @@ There's no reason this weapon should be more limited duration-wise. Not it follo
 
 I don't think 36 seconds with a very long casting makes this spell desirable in most situations. Therefore, now the duration is 36 seconds plus 1 round per 2 levels up to level 19.
 
-**Component 130:** Standardize Hold Person saving throw penalties
+**Component 130:** Standardize Hold Person's saving throw penalties
 
 This component equalizes the saving throw penalty in the cleric version of Hold Person so it has the same as the wizard one, which is -1.
 
@@ -704,23 +696,27 @@ The bonus that Luck provides really doesn't justify such a short duration. Now i
 
 This component makes Luck more generally useful by adding also a 5% critical hit chance boost, 10% total bonus thief skill bonus, as well as 2 AC. The rest is unchanged.
 
-**Component 190:** Make Holy Power and Tenser's Transformation achieve a THAC0 of 0
+**Component 190:** Make Holy Power achieve a THAC0 of 0
 
-Makes those spells achieve a THAC0 of 0 at max level, since the description clearly states "fighter of the same level".
+Makes this spell achieve a THAC0 of 0 at max level, since the description clearly states "fighter of the same level".
 
 **Component 230:** Make Cloak of Fear work as a temporary aura of fear, like in IWDEE
 
-For the most part I don't think this spell is worth memorizing. Now instead of being a one-off horror effect, it creates an "aura" that triggers once per round for 3 rounds, with the same specifications as the original spell. (I didn't even realize that's exactly the way it's implemented in IWDEE).
+For the most part I don't think this spell is worth memorizing. Now instead of being a one-off horror effect, it creates an "aura" that triggers once per round for 3 rounds, with the same specifications as the original spell.
 
 **Component 240:** Make Goodberries generate six berries, each healing 2d4 instead of 1 point of damage, and granting very slow regeneration for 8 hours
 
-Conceptually I think it's a cool spell for druids and rangers, and it might be a teensy bit useful perhaps for the beginning of BGEE, but generally not useful after that. Now it will heal 2d4 immediately and add a regeneration of 1 HP per turn for 20 turns. Now it generates six because I like the idea of having one per party member by default.
+Conceptually I think it's a cool spell for druids and rangers, and it might be a teensy bit useful perhaps for the beginning of BGEE, but generally not useful after that. Now it will heal 2d4 immediately and add a regeneration of 1 HP per turn for 20 turns. Now it also generates six berries because I like the idea of having enough to give one to every party member.
 
-Additionally it allows stacks of 12 so two castings can get stacked together.
+Additionally it allows stacks of 12 berries.
 
 **Component 250:** Make Earthquake party friendly
 
-Earthquake is generally very very inconvenient to be cast at any point because of how it affects your whole party. This disables that behavior.
+Earthquake is generally very inconvenient to be cast at any point because of how it affects your whole party. This disables that behavior.
+
+**Component 350:** Make Earthquake not shake the screen
+
+In case you don't enjoy feeling like casting it might give you a tiny seizure.
 
 **Component 260:** Make Negative Plane Protection's duration increase somewhat as you level up
 
@@ -750,7 +746,7 @@ Too little seeds and too little damage. From 4 seeds that do 2d8 to 10 that do 3
 
 **Component 320:** Make Nature's Beauty a bit more likely to kill humanoid enemies outright
 
-Nature's beauty is the druidic Wail of the Banshee (only for humanoids anyway), but it is fairly unlikely to kill (especially considering druids cannot have a Necromancy bonus to spells -- without save editing or special kits that is). Save bonus is now +1 instead of +3, making it marginally less likely to be successful as vanilla Wail of the Banshee (for humanoids).
+Nature's beauty is the druidic Wail of the Banshee (only for humanoids anyway), but it is fairly unlikely to kill (especially considering druids cannot have a Necromancy bonus to spells -- without save editing or special kits that is). Save bonus is now +1 instead of +3.
 
 **Component 330:** Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)
 
@@ -759,14 +755,6 @@ It was always a fairly odd choice of level 7 spell. Some mods resolve this by mo
 **Component 340:** Make Symbol of Death work with Save bonus if above the 60 HP threshold
 
 This spell is useless if the health of the enemy, which ordinarily you cannot know, is above that threshold, so it's fairly wasteful to use the spell unless the enemy is Near Death or the enemies are very weak anyway and easy to kill. As such, now the spell works for HP above 60, but with a bonus of +6 giving it at least some (small) chance of working at all times.
-
-**Component 350:** Make Earthquake not shake the screen
-
-In case you don't enjoy feeling like casting it might give you a tiny seizure.
-
-**Component 360:** Make Etheral Retribution do more damage per round: 6d6 per round instead of 3d8
-
-Three rounds of 3d8 for a Quest/level 10 spell is hilariously bad, despite the possibility of sapping some Strength with a Save vs. Spell that doesn't even have a penalty. Now it does 6d6 magic damage per round at least.
 
 **Component 420** Make Armor of Faith also add a +2 AC bonus to make it useful at low levels
 
@@ -781,8 +769,6 @@ Healing spells are infamously bad in BG/BG2, they heal too little for such a slo
 - Cure Medium Wounds: Heals 20 points plus 2 more point per level, up to 28.
 - Cure Serious Wounds: Heals 30 points plus 3 more point in the next two levels, 2 on the next two, up to 40.
 - Cure Critical Wounds: Heals 42 points plus 3 more point per level, up to 54.
-
-I also hate the name of the spells. Mostly because "light wounds" is completely relative to your HP level. "Light heal" might be better. Maybe I'll change that at some point. This Tweak is similar to one found in ToF and SCS.
 
 **Component 460:** Make Mass Heal faster to cast and heal a bit more
 
@@ -804,6 +790,14 @@ The maximum damage will grow to 6d8 at level 12, and 6 damage to undead, which i
 
 The difference between non-undead and undead in the original is 9d6 vs. 9d6+3. It's really not a meaningful difference. Therefore, the damage to undead will now be 12d6, i.e. up to 72 damage instead of 57, which I think is okay for a once-per-day ability anyway.
 
+**Component 360:** Make Etheral Retribution do more damage per round: 6d6 per round instead of 3d8
+
+Three rounds of 3d8 for a Quest/level 10 spell is hilariously bad, despite the possibility of sapping some Strength with a Save vs. Spell that doesn't even have a penalty. Now it does 6d6 magic damage per round at least.
+
+**Component 2111:** Make Shaman's Writhing Fog slightly more powerful
+
+This improves this spell by making it cause 1d3+1 cold damage, whose dice size improves by 1 every level after level 3, until it becomes 1d10+1. The Slow effect, additionally, triggers with a 50% chance, not a 20% chance.
+
 **Component 2120:** Make War Cry inflict fear with a -2 Saving Throw penalty
 
 War Cry as an HLA is bad enough, but this makes it at least have a more reasonable chance of affecting creatures by the time you get this power.
@@ -818,7 +812,7 @@ I feel like 10d6, which is the same damage of the Fireball spell at max level, i
 
 **Component 2150:** Make selected kit HLAS unable to be breached.
 
-I know this is somehow "controversial", but generally speaking I do not find abilities that tap into "inner strength" or pure skill-based physical abilities a candidate for breach. What exactly is the spell supposedly dispelling? That's my take.
+I do not find abilities that tap into "inner strength" or pure skill-based physical abilities a candidate for breach. What exactly is the spell supposedly dispelling? That's my take.
 
 Therefore, the following abilities are no longer breachable:
 
@@ -844,6 +838,7 @@ Refer to component 2170 for reasons. Applies the same bonus to Bards, who also h
 **Component 2190:** Make Poison Weapon improve couple of times more every 4 levels (level 17, and 21)
 
 This makes Poison Weapon more powerful and reliable at high levels. At level 17, the save penalty improves to -3, lasts for 27 seconds, and the immediate poison damage increases to 8. At level 21, the save penalty improves to -4, lasts for 30 seconds, and the immediate poison damage increases to 10.
+
 </details>
 
 ---

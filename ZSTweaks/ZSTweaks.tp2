@@ -2431,6 +2431,32 @@ COPY_EXISTING ~SPPR720.SPL~ ~override~
     END
 BUT_ONLY
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @350 DESIGNATED 350 GROUP @20 // EARTHQUAKE NO SHAKE
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" "This mod was written for BGEE and BG2EE"
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~SPPR720.SPL~ ~override~
+    LPF DELETE_SPELL_EFFECT
+        INT_VAR opcode_to_delete = 269
+    END
+    LPF DELETE_EFFECT
+        STR_VAR match_resource = ~SHAKE1~
+    END
+BUT_ONLY
+
+ACTION_IF !GAME_IS "bgee" BEGIN
+    COPY_EXISTING ~SPOGRE01.SPL~ ~override~
+        LPF DELETE_SPELL_EFFECT
+            INT_VAR opcode_to_delete = 269
+        END
+        LPF DELETE_EFFECT
+            STR_VAR match_resource = ~SHAKE1~
+        END
+    BUT_ONLY
+END
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @260 DESIGNATED 260 GROUP @20 // NEGATIVE PLANE DUR BOOST
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
@@ -2621,30 +2647,7 @@ FORBID_COMPONENT "ZSTweaks.tp2" "443" @55
 
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_symbol_death.tph~
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @350 DESIGNATED 350 GROUP @20 // EARTHQUAKE NO SHAKE
-REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" "This mod was written for BGEE and BG2EE"
-/////////////////////////////////////////////////////////////////////////////////////////////////////
 
-COPY_EXISTING ~SPPR720.SPL~ ~override~
-    LPF DELETE_SPELL_EFFECT
-        INT_VAR opcode_to_delete = 269
-    END
-    LPF DELETE_EFFECT
-        STR_VAR match_resource = ~SHAKE1~
-    END
-BUT_ONLY
-
-ACTION_IF !GAME_IS "bgee" BEGIN
-    COPY_EXISTING ~SPOGRE01.SPL~ ~override~
-        LPF DELETE_SPELL_EFFECT
-            INT_VAR opcode_to_delete = 269
-        END
-        LPF DELETE_EFFECT
-            STR_VAR match_resource = ~SHAKE1~
-        END
-    BUT_ONLY
-END
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @420 DESIGNATED 420 GROUP @20 // ARMOR OF FAITH
