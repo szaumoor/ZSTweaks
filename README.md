@@ -217,7 +217,7 @@ I mean, they're THORNS; the only difference is that they're FIERY. Instead of on
 
 This component makes the doubled movement of this armor not be affected by Free Action at all, which to me seems much more fitting, since it's the main (and only) feature of this armor. Ahhh, Free Action, the constant thorn in our sides.
 
-**Componen 1653:** Make Thieves' Hood slightly more advantageous for single-classed thieves: +1 THAC0 and Damage
+**Componen 1653:** Make Thieves' Hood protect against critical hits and slightly more advantageous for single-classed thieves: +1 THAC0 and Damage
 
 This improves this item in the following ways:
 
