@@ -64,6 +64,9 @@
 @1654 = ~Make Star-Strewn Boots slightly better and favor Inquisitors too (SoD)~
 @1655 = ~Make Crown of Lies more consequential when used~
 @1656 = ~Make Helmet of Dumathoin very slightly more powerful~
+@1657 = ~Make The Visage add the capacity to cast Aura of Despair once per day and improve powers slightly~
+@1658 = ~Make Dragon Helm add protection against acid too, as well as +2 saves against Breath~
+@1659 = ~Make Helm of the Rock a bit more protective and commanding~
 
 
 /// DAGGER TWEAKS
@@ -3107,6 +3110,70 @@ Proficiency Type: Shortbow
 Type: Two-handed
 Requires:
  6 Strength
+
+Weight: 2~
+
+@7030 = ~Few would dare double-cross a fiend, and fewer still would attempt to triple-cross one. Dorn Il-Khan, half-orc blackguard from the city of Luskan, was one of the few. Approached by a rival of his demonic patron, he agreed to betray his master. Instead, at a critical juncture, he turned the situation on the rival, binding her into a powerful sword. As a reward, his patron granted him this terrifying mask. The silver mask has a grotesque face distorted into a grimace. When donned, the eyes pulse with a deep red when the wearer speaks, adding to its unsettling presence. It hums with a variety of magical enchantments, inspiring fear in all who gaze upon it.
+
+STATISTICS:
+
+Equipped abilities:
+– THAC0: +1
+– Saving Throws: +1
+– Immunity to feeblemind, confusion, fear, and charm
+– Protects against critical hits
+
+Charge abilities:
+– Domination once per day (Save vs. Spell at -2 negates)
+  Duration: 8 rounds
+
+– Breathe Acid once per day
+  Damage: 8d6 acid (Save vs. Breath for half)
+  Target must save vs. Death at -4 or fall unconscious for 2 rounds
+
+– Aura of Despair once per day as per the Blackguard spell
+  Duration: 1 turn
+
+Weight: 1~
+
+@7040 = ~The skillful hand of the warlock Wormsor carefully worked several dragon scales into this powerful helmet. Red, white, black, and blue scales overlap, protecting the wearer from normal blows as well as the breath of a dragon, whether it's in the form of fire, cold, acid, or electricity. It is hard to determine whether the benefits originate within the scales or the spells of the mage.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+– +25% resistance to acid, fire, cold, and electricity
+– Saves vs. Breath: +2
+
+Weight: 2~
+
+//not upgraded
+@7050 = ~This helm grants a warrior immunities far beyond mere physical protections. It is obvious there once used to be a set of horns protruding from the metal cap, though the horns and any magic associated with them have long since disappeared.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+– Non-physical damage resistance: +25%
+
+Weight: 2~
+
+@7051 = ~With the addition of the horns, the Helm of the Rock is even more powerful. Generals and military leaders can command both fear and respect simply by wearing this helm.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+– Non-physical damage resistance: +25%
+– Physical damage resistance: +7%
+– Charisma: +1
+
+Charge abilities:
+– Aura of Command three times per day (Save vs. Spell at -2 negates)
+  Special: Targets flee in terror
+  Range: 40 ft.
+  Duration: 5 rounds
+  Area of Effect: 1 creature, which then spread to enemies within 15 ft.
 
 Weight: 2~
 

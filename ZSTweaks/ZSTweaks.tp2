@@ -732,7 +732,7 @@ BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1654 DESIGNATED 1654 GROUP @11 // STAR STREWN TWEAKS
-REQUIRE_PREDICATE GAME_IS "bgee eet" @52
+REQUIRE_PREDICATE GAME_IS "bgee eet" @50
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ACTION_IF FILE_EXISTS_IN_GAME "bdboot03.itm" BEGIN
@@ -753,7 +753,7 @@ END
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1655 DESIGNATED 1655 GROUP @11 // CROWN OF LIES TWEAK
-REQUIRE_PREDICATE GAME_IS "bgee eet" @52
+REQUIRE_PREDICATE GAME_IS "bgee eet" @50
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
@@ -778,7 +778,7 @@ BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1656 DESIGNATED 1656 GROUP @11 // HELM OF DUMATHOIN TWEAK
-REQUIRE_PREDICATE GAME_IS "bgee eet" @52
+REQUIRE_PREDICATE GAME_IS "bgee eet" @50
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING "bdhelm09.itm" ~override~
@@ -789,6 +789,97 @@ COPY_EXISTING "bdhelm09.itm" ~override~
             match_parameter1 = 3
             match_parameter2 = 0
             parameter1 = 5
+    END
+BUT_ONLY
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1657 DESIGNATED 1657 GROUP @11 // THE VISAGE TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
+
+COPY_EXISTING "ohdmask.itm" ~override~
+    SAY IDENTIFIED_DESC @7030
+    LPF ADD_ITEM_HEADER
+        INT_VAR
+            copy_header = 2
+    END
+    LPF ALTER_EFFECT
+        INT_VAR
+            header_type = 3
+            header = 2
+            match_opcode = 146
+        STR_VAR
+            match_resource = ~SPWI506~
+            resource = ~SPCL103~
+    END
+BUT_ONLY
+
+COPY_EXISTING "ohdmask.spl" ~override~
+    LPF ALTER_EFFECT
+        INT_VAR
+            match_opcode = 12
+            dicenumber = 8
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1658 DESIGNATED 1658 GROUP @11 // DRAGON HELM TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~HELM21.itm~ ~override~
+    SAY IDENTIFIED_DESC @7040
+    LPF CLONE_EFFECT
+        INT_VAR
+            match_opcode = 29
+            opcode = 27
+    END
+    LPF CLONE_EFFECT
+        INT_VAR
+            match_opcode = 29
+            opcode = 36
+            parameter1 = 2
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1659 DESIGNATED 1659 GROUP @11 // HELM OF THE ROCK TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING_REGEXP ~HELM3[12]\.itm~ ~override~
+    LPF CLONE_EFFECT
+        INT_VAR
+            match_opcode = 29
+            opcode = 31
+    END
+    PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "HELM31" = 0 BEGIN
+        SAY IDENTIFIED_DESC @7050
+    END ELSE BEGIN
+        SAY IDENTIFIED_DESC @7051
+        FOR ( new_opcode = 86; new_opcode <= 89; ++new_opcode ) BEGIN
+            LPF CLONE_EFFECT
+                INT_VAR
+                    match_opcode = 29
+                    opcode = new_opcode
+                    parameter1 = 7
+            END
+        END
+        LPF CLONE_EFFECT
+            INT_VAR
+                match_opcode = 29
+                opcode = 6
+                parameter1 = 1
+        END
+        LPF ALTER_ITEM_HEADER
+            INT_VAR
+                header_type = 3
+                projectile = IDS_OF_SYMBOL(projectl SPKLARIC)
+
+        END
     END
 BUT_ONLY
 
@@ -1858,11 +1949,13 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_taralash.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1340 DESIGNATED 1340 GROUP @16 // PROTECTOR OF THE DRYADS TWEAKS
+BEGIN @1342 DESIGNATED 1342 GROUP @16 // PROTECTOR OF THE DRYADS TWEAKS
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+
+COPY ~ZSTweaks/eff/ZSTWMI01.EFF~ ~override~
 
 COPY_EXISTING ~BOW08.ITM~ ~override~
     PATCH_IF GAME_IS "bgee" BEGIN
@@ -1884,9 +1977,7 @@ COPY_EXISTING ~BOW08.ITM~ ~override~
     END
 BUT_ONLY
 
-
 ////////////////// NPC GEAR TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1380 DESIGNATED 1380 GROUP @17 // HAERDALIS BLADES WEAPONS
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
@@ -2668,8 +2759,34 @@ COPY_EXISTING ~SPPR416.SPL~ ~override~
     END
 BUT_ONLY
 
-// ADD IMMUNITY TO AURA EFFECTS TO VARIOUS REMOVE-FEAR TYPE EFFECTS
-COPY_EXISTING ~~
+COPY_EXISTING ~#COFEAR.SPL~ ~override~
+    PATCH_IF GAME_IS ~bgee~ BEGIN
+        LPF ALTER_EFFECT
+            INT_VAR
+                match_opcode = 139
+                parameter1 = 25818
+        END
+    END
+    PATCH_IF GAME_IS ~bg2ee eet~ BEGIN
+        LPF ALTER_EFFECT
+            INT_VAR
+                match_opcode = 139
+                parameter1 = 14007
+        END
+    END
+BUT_ONLY
+
+// ADD EFFECT REMOVAL TO AURA EFFECTS TO VARIOUS REMOVE-FEAR TYPE EFFECTS only affects spells for now
+COPY_EXISTING_REGEXP ~.*\.spl~ ~override~
+    LPF CLONE_EFFECT
+        INT_VAR
+            silent = 1
+            match_opcode = 321
+        STR_VAR
+            match_resource = ~SPPR416~
+            resource = ~#COFEAR~
+    END
+BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @240 DESIGNATED 240 GROUP @20 // GOODBERRY TWEAK

@@ -238,6 +238,28 @@ This improves the damage resistance it grants to 5%. The reason for this lies in
 
 5% would reduce the threshold before the reduction to 20 points of received damage. It's still mild and shouldn't unbalance anything. For Barbarians, Cleric, Paladins, and Dwarven defenders, it will provide a juicier bonus, since they all have ways to add physical damage reduction.
 
+**Component 1657:** Make The Visage add the capacity to cast Aura of Despair once per day and improve powers slightly
+
+This improves this mask's powers in the following ways:
+
+- Breathe Acid now causes 8d6 acid damage, not 6d6
+- May cast also Aura of Despair as a blackguard of the same level once per day, which is fitting considering the description itself talks about how looking into the mask causes feelings of dread.
+
+**Component 1658:** Make Dragon Helm add protection against acid too, as well as +2 saves against Breath
+
+Self explanatory. As for the reasoning, because it felt odd leaving acid breath out of it. Saves vs. Breath, because well, dragon breath.
+
+It also tweaks the description slightly, because oddly enough it talks about having red, white and green scales. I was expecting red, white, and **blue**, since blue dragons are the ones who produce electricy, green dragons exhale poisonous gas. Now it mentions having red, white, black, and blue scales.
+
+**Component 1659:** Make Helm of the Rock a bit more protective and commanding
+
+This makes both versions of the helm a truly universal non-physical damage protector by adding a 25% resistance to magic damage.
+Additionally, the upgraded version gets the following:
+
+- +7% physical damage reduction
+- +1 Charisma
+- Aura of Command is no longer single-target, it spreads upon impact, similarly to Hold Person, but in a bigger area.
+
 </details>
 
 ---
