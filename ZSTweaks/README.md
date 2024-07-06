@@ -515,7 +515,7 @@ This component requires the previous one, and it adds a description worth-readin
 
 I've always liked this sword conceptually and it's introduced into the game in a very cool way. This makes this short sword another +3 weapon, and additionally improved in the following ways:
 
-- Critical hits inflicts 2d4 extra piercing damage
+- Critical hits inflict 2d4 extra piercing damage
 - Bleeding per hit improved to 1d2 from 1
 
 Note that this will make the encounter relatively more difficult, obviously. Protect your mages, Neera will likely be targeted. And promptly chunked.
