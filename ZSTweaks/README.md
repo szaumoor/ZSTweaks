@@ -251,7 +251,7 @@ This improves this mask's powers in the following ways:
 
 Self explanatory. As for the reasoning, because it felt odd leaving acid breath out of it. Saves vs. Breath, because well, dragon breath.
 
-It also tweaks the description slightly, because oddly enough it talks about having red, white and green scales. I was expecting red, white, and **blue**, since blue dragons are the ones who produce electricy, green dragons exhale poisonous gas. Now it mentions having red, white, black, and blue scales.
+It also tweaks the description slightly, because oddly enough it talks about having red, white and green scales. I was expecting red, white, and **blue**, since blue dragons are the ones who produce electricity, and green dragons exhale poisonous gas. Now it mentions having red, white, black (dragons with acid breath), and blue scales.
 
 **Component 1659:** Make Helm of the Rock a bit more protective and commanding
 
@@ -325,7 +325,7 @@ This component makes this dagger a bit more powerful in the following ways:
 This component makes this weapon one of the few +3 weapons in the expansion, acting in every way as a +3 weapon, as well as:
 
 - Hits with dagger also deal 1d3 acid damage (improved from 1).
-- 20% chance of causing 1d3 acid damage per round for 3 rounds (improved from 1, 15% chance), as well as reducing AC for 3 rounds
+- 20% chance of causing 1d3 acid damage per round for 3 rounds (improved from 1, 15% chance), as well as adding an AC penalty of 2 for 3 rounds
 
 </details>
 

@@ -325,7 +325,7 @@ This component makes this dagger a bit more powerful in the following ways:
 This component makes this weapon one of the few +3 weapons in the expansion, acting in every way as a +3 weapon, as well as:
 
 - Hits with dagger also deal 1d3 acid damage (improved from 1).
-- 20% chance of causing 1d3 acid damage per round for 3 rounds (improved from 1, 15% chance), as well as reducing AC for 3 rounds
+- 20% chance of causing 1d3 acid damage per round for 3 rounds (improved from 1, 15% chance), as well as adding an AC penalty of 2 for 3 rounds
 
 </details>
 
