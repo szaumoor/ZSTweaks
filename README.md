@@ -351,7 +351,7 @@ Since this was blessed by northern barbarian gods, the sword now causes 1d4 cold
 
 Self explanatory. Not that it needs to be more powerful, but it feels wrong to not be especially effective against non-chaotic evil (but yes, I understand it's because it's the opposite of a paladin's alignment).
 
-**Component 1290:** Make Carsomyr's Dispel Magic force a saving throw
+**Component 1290:** Make Carsomyr's Dispel Magic force a Saving throw vs Spell
 
 The dispel on hit thing is pretty cheesy so, yeah. That. No penalty with +5, -2 with +6 version
 
@@ -389,7 +389,7 @@ This component improves Wave +4 by making it always deal 3 points of cold damage
 
 **Component 1590:** Make Blackmist more powerfully blinding and make you immune to blindness
 
-This makes Blackmist's blindness power be more likely to be effective, by adding a -2 Save penalty. Additionally, you're immune to blindness.
+This makes Blackmist's blindness power be more likely to be effective, by adding a -2 Save penalty. Additionally, you're immune to blindness while wielding it.
 
 **Component 1591:** Make Soul Reaver slightly more balanced
 
@@ -766,7 +766,7 @@ This is essentially how it works in IWDEE, except the +2 enchantment bonus, whic
 
 **Component 102:** Make BG's version of Flame Blade scale duration-wise like in IWDEE
 
-There's no reason this weapon should be more limited duration-wise. Not it follows the usual convention.
+There's no reason this weapon should be more limited duration-wise. Now it follows the usual convention.
 
 **Component 110:** Make Bless last longer
 
@@ -878,7 +878,7 @@ This improves the power of this spell as a combat spell by improving the casting
 
 **Component 2100:** Make Sun Soul Ray from Sun Soul Monks damage improve slightly and do more damage to undead
 
-The maximum damage will grow to 6d8 at level 12, and 6 damage to undead, which is a very small bonus that doesn't scale, will increase by 2 points every time the power is upgraded.
+The maximum damage will grow to 6d8 at level 12, and 6 damage to undead, which is a very small bonus that doesn't scale. Now this bonus increases by 2 points every time the power is upgraded.
 
 **Component 2110:** Make Sun Soulbeam do more damage to undead: 12d6 instead of just 3 more damage than baseline.
 
