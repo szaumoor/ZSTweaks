@@ -745,7 +745,7 @@ This spell is useless if the health of the enemy, which ordinarily you cannot kn
 
 **Component 444:** Make Flesh to Stone use Petrification saves
 
-This makes this spell force a save vs. petrification instead of spell. I think Flesh to Stone and Disintegrate are way too similar functionally, and it's almost always a better idea to use Flesh to Stone over Disintegrate (they're both even boosted equally if cast by a Transmuter).
+This makes this spell force a save vs. petrification instead of spell. I think Flesh to Stone and Disintegrate are way too similar functionally, and it's almost always a better idea to use Flesh to Stone over Disintegrate (they're both even boosted equally if cast by a Transmuter). This affects the version that beholders use.
 
 </details>
 
