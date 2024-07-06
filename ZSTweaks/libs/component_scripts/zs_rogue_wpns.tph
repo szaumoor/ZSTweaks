@@ -252,7 +252,10 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     END // end slings/bullets
 
     PATCH_IF wpn_cat == 5 BEGIN // arrows
-        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdarow01" != 0 BEGIN // skip special arrows (antimagic from SoD for now)
+        // EXCEPTIONS
+        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdarow01" != 0 AND // ANTIMAGIC ARROW SOD
+        "%SOURCE_RES%" STRING_COMPARE_CASE "cd51ari" != 0 BEGIN // BROKEN SPIRIT ARROW (The Calling Gnoll Stronghold component)
+
             PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdarow02" != 0 BEGIN // void-tipped arrows (SoD)
                 LPF weapon_damage_by_class
                     INT_VAR

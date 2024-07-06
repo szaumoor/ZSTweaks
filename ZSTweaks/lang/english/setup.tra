@@ -62,6 +62,8 @@
 @1652 = ~Make Grandmaster's Armor's movement bonus not affected by Free Action~
 @1653 = ~Make Thieves' Hood protect against critical hits and slightly more advantageous for single-classed thieves: +1 THAC0 and Damage~
 @1654 = ~Make Star-Strewn Boots slightly better and favor Inquisitors too (SoD)~
+@1655 = ~Make Crown of Lies more consequential when used~
+@1656 = ~Make Helmet of Dumathoin very slightly more powerful~
 
 
 /// DAGGER TWEAKS
@@ -116,6 +118,7 @@
 @1550 = ~Make Drizzt's weapons slightly more worth stealing in BG2~
 @1580 = ~Make Hawksight improve your senses, reflexes, and accuracy more keenly~
 @1581 = ~Make Hawksight's description unique and add a minor power to it~
+@1582 = ~Make Vexation +2 more powerful~
 
 
 // MACES/CLUBS
@@ -132,6 +135,7 @@
 @1010 = ~Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost~
 @1330 = "Make Darkfire Bow slightly more remarkable"
 @1340 = "Make Taralash slightly more remarkable"
+@1342 = ~Make Protector of the Dryads deal +2 damage to orcs, ogres, bugbears, gnolls, and goblinoids~
 
 // NPC TWEAKS
 @1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
@@ -172,6 +176,7 @@
 @441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level"
 @442 = "Make Tenser's Transformation gain extra APR like a Fighter at the appropriate levels"
 @443 = ~Make Symbol of Death work with Save bonus if above the 60 HP threshold~
+@444 = ~Make Flesh to Stone use Petrification saves~
 
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
@@ -204,7 +209,7 @@
 @360 = "Make Shaman's Etheral Retribution do more damage per round: 6d6 per round instead of 3d8"
 @2111 = ~Make Shaman's Writhing Fog slightly more powerful~
 @2112 = ~Make Shaman's Spirit Fire slightly more powerful~
-@2113 = ~Make Shaman's Spiritual Clarity slightly more clarity-inducing~
+@2113 = ~Make Shaman's Spiritual Clarity induce more clarity (removes berserk and intoxication too)~
 @2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty"
 @2130 = "Make Set Spike Trap do piercing damage instead of magic damage"
 @2140 = "Make Exploding Trap do slightly more damage: 15d6 as opposed to 10d6"
@@ -2922,7 +2927,7 @@ Charge abilities:
 
 Weight: 2~
 
-@6911 = ~Although this hood does not confer any noticeable advantages on its wearer, it does have an aura of latent magic.
+@6911 = ~Although this hood does not confer any magical advantages on its wearer, it does have an aura of latent magic.
 
 STATISTICS:
 
@@ -2985,6 +2990,125 @@ Requires:
  3 Strength
 
 Weight: 1~
+
+@6950 = ~Flesh to Stone
+(Alteration)
+
+Level: 6
+Range: Visual range of the caster
+Duration: Permanent
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell turns flesh of any sort to stone. All possessions on the person of the creature likewise turn to stone. The intended subject of the spell receives a Saving Throw vs. Petrification to avoid the effect. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The reverse of this spell may be cast upon the victim in order to restore life, but this is the only way.~
+
+@6960 = ~This glittering golden crown looks impressive, but its substance is base fool's gold and the "gems" set around it are bits of colored glass. Placing the crown on one's head allows the wearer to prepare extra spells but fills the head with false knowledge.
+
+STATISTICS:
+
+Equipped abilities:
+– Can memorize 2 extra 3rd-level, 1 extra 4th-level, and 1 extra 5th-level wizard spell
+– Lore: -15
+– Wisdom: -2
+
+Weight: 1~
+
+@6970 = ~A glittering green jewel adorns this battered metal helm infused with the power of the dwarven god Dumathoin.
+
+STATISTICS:
+
+Equipped abilities:
+– Physical Damage Resistance: +5%
+– Constitution: +2 (dwarves), +1 (others)
+– Protects against critical hits
+
+Weight: 1~
+
+@6980 = ~Vexation +3~
+
+@6981 = ~This blade appears smooth and whole at first glance, but on closer examination, its surface is made of thousands of tiny overlapping scales. When the sword is used to stab a target unawares, scales break off and lodge in the wound, irritating the victim and draining their strength.
+
+STATISTICS:
+
+Combat abilities:
+– Inflicts 1d2 points of bleeding damage on hit and one round later
+– Critical hits inflict 2d4 extra piercing damage
+– Drains 2 points of Strength from the target and transfers them to the wielder for 5 rounds when a successful backstab is performed (non-cumulative)
+
+STATISTICS:
+
+THAC0: +3
+Damage: 1d6+3 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~
+
+@6990 = ~Spiritual Clarity
+(Abjuration)
+
+Level: 3
+Sphere: Protection
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+With this spell, the shaman strengthens a creature's spiritual resolve and purges the creature's mind of negative influences. The spell removes the effects of fear, berserk, charm, confusion, intoxication, and feeblemind from a single creature.~
+
+@7000 = ~Spirit Fire
+(Conjuration)
+
+Level: 4
+Sphere: Summoning
+Range: 40 ft.
+Duration: Instant
+Casting Time: 4
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+As the Shaman casts this spell, energies gather together from the spirit world and form a pale blue sphere. The Shaman can throw the sphere so that it explodes into a burst of ghostly, azure flames, which deliver 1d4+1 points of magic damage per level of the Shaman (up to a maximum of 12d4+12). There is also a 33% chance that every enemy within the area of effect will be afflicted by the Doom spell (-2 penalty to Saving Throws and attack rolls for 1 turn). A successful Save vs. Spell halves the damage, but not the Doom effect. Spirits, fey creatures, elementals, and spectral undead take double damage.~
+
+//bgee version
+@7010 = ~Eagle Bow: Protector of the Dryads
+In order to protect their community from an encroaching orc logging encampment, the hero Hannable the White was given this magnificent bow by the dryads of Gulthmere Forest. A deadly confrontation followed when the loggers dared to try to cut down a great oak tree, nearly killing the dryad linked to it. With the help of powerful forest animals, Hannable slew entire bands of orcs before any more damage was inflicted upon the wood. The orcs were forced to abandon their plans, lest they suffer the continued wrath of Hannable and the forest. Needless to say, the hero who aided the grateful dryads lived happily... nay, VERY happily ever after!
+
+STATISTICS:
+
+Combat abilities:
+– Inflicts +2 extra missile damage against orcs, ogres, bugbears, gnolls, and goblinoids
+
+THAC0: +2
+Damage: +2
+Speed Factor: 4
+Proficiency Type: Shortbow
+Type: Two-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+@7020 = ~Eagle Bow: Protector of the Dryads
+In order to protect their community from an encroaching orc logging encampment, the hero Hannable the White was given this magnificent bow by the dryads of Gulthmere Forest. A deadly confrontation followed when the loggers dared to try and cut down a great oak tree, nearly killing the dryad linked to it. With the help of powerful forest animals, Hannable slew entire bands of orcs before any more damage was inflicted upon the wood. The orcs were forced to abandon their plans lest they suffer the continued wrath of Hannable and the forest. Needless to say, the hero who aided the grateful dryads lived happily... nay, VERY happily ever after!
+
+STATISTICS:
+
+Combat abilities:
+– Inflicts +2 extra missile damage against orcs, ogres, bugbears, gnolls, and goblinoids
+
+THAC0: +2
+Speed Factor: 4
+Proficiency Type: Shortbow
+Type: Two-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
 
 
 

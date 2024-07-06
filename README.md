@@ -224,6 +224,19 @@ This improves this item in the following ways:
 - Both upgraded and non-upgraded version protect now against critical hits, essentially giving Thieves a vanilla item that protects them too against critical hits.
 - Single-classed thieves gain +1 THAC0 and Damage (for balance, and to promote specialization)
 
+**Component 1654:** Make Star-Strewn Boots slightly better and favor Inquisitors too (SoD)
+
+This makes these boots improve Magic Resistance by 10% for everyone (from 7%) and Inquisitors and Wizard Slayers by 18%. Inquisitors are added because they fall fairly well in the anti-wizard theme.
+
+**Component 1655:** Make Crown of Lies more consequential when used
+
+-30 lore is generally not very important, since it's not used for any game interaction, just for identifying objects, which is ordinarily a mundane and inconsequential task. Therefore now it reduces lore by -15 BUT it also decreases Wisdom by 2, which would affect Cleric/Mages more, since they rely on Wisdom for spell slots in vanilla.
+
+**Component 1656:** Make Helmet of Dumathoin very slightly more powerful
+
+This improves the damage resistance it grants to 5%. The reason for this lies in the fact that the game only uses integers for most calculations, including damage. This means that the vanilla 3% damage reduction, for classes that have no other sources to reduce damage, would have to be hit with a physical attack of at least 34 damage to reduce the damage by 1, which is the minimum amount, which oftentimes means you're dealing with an enemy that is about to chunk/delete you anyway.
+
+5% would reduce the threshold before the reduction to 20 points of received damage. It's still mild and shouldn't unbalance anything. For Barbarians, Cleric, Paladins, and Dwarven defenders, it will provide a juicier bonus, since they all have ways to add physical damage reduction.
 
 </details>
 
@@ -474,6 +487,15 @@ This component takes the description more seriously, and hence, other than givin
 
 This component requires the previous one, and it adds a description worth-reading (YMMV). I really dislike items with unique names, but with no interesting description or brief backstory. It seems lazy and uninteresting to add a named item without any background. Additionally, it adds a minor power to it, based on this brief backstory. See ZSTweaks/unique_descriptions.md for details.
 
+**Component 1582:** Make Vexation +2 more powerful
+
+I've always liked this sword conceptually and it's introduced into the game in a very cool way. This makes this short sword another +3 weapon, and additionally improved in the following ways:
+
+- Critical hits inflicts 2d4 extra piercing damage
+- Bleeding per hit improved to 1d2 from 1
+
+Note that this will make the encounter relatively more difficult, obviously. Protect your mages, Neera will likely be targeted. And promptly chunked.
+
 </details>
 
 ---
@@ -530,13 +552,17 @@ The +5 version literally just increases the THAC0 bonus by 1. That's a bit too b
 - Adds a damage bonus of 1 like a regular composite bow
 - Animals and other kind of unintelligent beasts, magical or not, take +2 and +5 damage (+4 and +5 version respectively)
 
+**Component 1342:** Make Protector of the Dryads deal +2 damage to orcs, ogres, bugbears, gnolls, and goblinoids
+
+Inspired by the description, it deals +2 damage to orcs... as well as some groups of similar monsters that would band together to spread evil on the Sword Coast.
+
 </details>
 
 ---
 
 <details>
 
-<summary><b>NPC Gear Tweaks</b></summary>
+<summary><b>NPC Tweaks</b></summary>
 
 **Component 1380:** Make Chaos and Entropy grant 1/2 APR each and improve them slightly.
 
@@ -693,6 +719,10 @@ This components further tightens the gap between the wizard and the fighter they
 
 This spell is useless if the health of the enemy, which ordinarily you cannot know, is above that threshold, so it's fairly wasteful to use the spell unless the enemy is Near Death or the enemies are very weak anyway and easy to kill. As such, now the spell works for HP above 60, but with a bonus of +6 giving it at least some (small) chance of working at all times.
 
+**Component 444:** Make Flesh to Stone use Petrification saves
+
+This makes this spell force a save vs. petrification instead of spell. I think Flesh to Stone and Disintegrate are way too similar functionally, and it's almost always a better idea to use Flesh to Stone over Disintegrate (they're both even boosted equally if cast by a Transmuter).
+
 </details>
 
 ---
@@ -741,6 +771,8 @@ Makes this spell achieve a THAC0 of 0 at max level, since the description clearl
 **Component 230:** Make Cloak of Fear work as a temporary aura of fear, like in IWDEE
 
 For the most part I don't think this spell is worth memorizing. Now instead of being a one-off horror effect, it creates an "aura" that triggers once per round for 3 rounds, with the same specifications as the original spell.
+
+This uses the same filename and the same effect that in IWDEE, and attempts to patch known spells that remove fear effects. Might need to be updated if new ways to remove fear are introduced.
 
 **Component 240:** Make Goodberries generate six berries, each healing 2d4 instead of 1 point of damage, and granting very slow regeneration for 8 hours
 
@@ -835,6 +867,14 @@ Three rounds of 3d8 for a Quest/level 10 spell is hilariously bad, despite the p
 **Component 2111:** Make Shaman's Writhing Fog slightly more powerful
 
 This improves this spell by making it cause 1d3+1 cold damage, whose dice size improves by 1 every level after level 3, until it becomes 1d10+1. The Slow effect, additionally, triggers with a 50% chance, not a 20% chance.
+
+**Component 2112:** Make Shaman's Spirit Fire slightly more powerful
+
+This makes the damage of this spell scale better: it deals 1d4+1/level, up to 12d4+12 magic damage (24-60 damage). Additionally, the 33% Doom effect no longer requires a saving throw, it's based on probability only.
+
+**Component 2113:** Make Shaman's Spiritual Clarity induce more clarity (removes berserk and intoxication too)
+
+Self-explanatory. Additionally, it improves the speed of the spell from 9 to 6.
 
 **Component 2120:** Make War Cry inflict fear with a -2 Saving Throw penalty
 
