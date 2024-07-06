@@ -251,7 +251,7 @@ This improves this mask's powers in the following ways:
 
 Self explanatory. As for the reasoning, because it felt odd leaving acid breath out of it. Saves vs. Breath, because well, dragon breath.
 
-It also tweaks the description slightly, because oddly enough it talks about having red, white and green scales. I was expecting red, white, and **blue**, since blue dragons are the ones who produce electricy, green dragons exhale poisonous gas. Now it mentions having red, white, black, and blue scales.
+It also tweaks the description slightly, because oddly enough it talks about having red, white and green scales. I was expecting red, white, and **blue**, since blue dragons are the ones who produce electricity, and green dragons exhale poisonous gas. Now it mentions having red, white, black (dragons with acid breath), and blue scales.
 
 **Component 1659:** Make Helm of the Rock a bit more protective and commanding
 
