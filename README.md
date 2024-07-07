@@ -403,6 +403,15 @@ The sword looks like it's fairly massive. You may disagree, but that's how it co
 
 This makes the extra critical damage of the weapon a bit more substantial, 2d5+2 (from 2d4).
 
+**Component 1594:** Make Cleric's staff more unique and actually benefit clerics
+
+I don't like that it's "just" casually called "cleric's" staff. Therefore, it gains a few perks:
+
+- 1 AC
+- +1 spell slot of level 3, 4, and 5 (clerics only)
+- +1 turn undead and casting level (clerics only)
+- May cast Mass Cure (at minimum level, 1d8+9 healing) twice per day
+
 </details>
 
 ---
@@ -579,6 +588,14 @@ The +5 version literally just increases the THAC0 bonus by 1. That's a bit too b
 **Component 1342:** Make Protector of the Dryads deal +2 damage to orcs, ogres, bugbears, gnolls, and goblinoids
 
 Inspired by the description, it deals +2 damage to orcs... as well as some groups of similar monsters that would band together to spread evil on the Sword Coast.
+
+**Component 1343:** Make Mana bow more magical and more deadly against arcane casters
+
+This follows the theme of the description, which is an anti-wizard theme, and thus the following changes were added:
+
+- Magic damage resistance: 33% (from 20%)
+- Magic Resistance: 5%
+- Arrows force a Save vs. Spell at -2 or the target suffers 1d4+1 magic damage and get a 10% wizard casting failure for 4 rounds
 
 </details>
 
