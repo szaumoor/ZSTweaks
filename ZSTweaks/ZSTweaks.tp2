@@ -4,13 +4,16 @@ VERSION "v1.0"
 README ~ZSTweaks/README.md~
 AUTO_EVAL_STRINGS
 /////////////////////////////////////////////////////////////////////////////////////////////////////
+ALWAYS
+    INCLUDE ~ZSTweaks/libs/zs_tw_functions.tpa~
+END
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 LANGUAGE
 "English"
 "english"
 "ZSTweaks/lang/english/setup.tra"
 
 ////////////////// GENERAL WEAPON TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @120 DESIGNATED 120 GROUP @10 // MAGIC WEAPONS APR
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
@@ -23,28 +26,18 @@ BEGIN @1120 DESIGNATED 1120 GROUP @10 // BACKSTAB PENALTIES
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 INCLUDE ~ZSTweaks/libs/zs_correct_animations.tph~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
-
     READ_SHORT 0x1c wpn_cat
     READ_BYTE  0x31 wpn_prof
     READ_ASCII 0x22 wpn_appearance (2)
 
 	PATCH_IF wpn_cat == 20  AND (wpn_prof == 90 OR wpn_prof == 94 OR (wpn_prof == 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "sc" = 0)) BEGIN // long swords, katanas or scimitars
-        LPF a7_auto_apply_spl_effect
-            STR_VAR
-                function_name = ~ADD_ITEM_EQEFFECT~
-                effect_codes = ~op=263,tgt=1,p1=-1,tmg=2~
-        END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
     END
     PATCH_IF wpn_cat == 26  AND wpn_prof == 102 BEGIN // quarterstaves
-        LPF a7_auto_apply_spl_effect
-            STR_VAR
-                function_name = ~ADD_ITEM_EQEFFECT~
-                effect_codes = ~op=263,tgt=1,p1=-2,tmg=2~
-        END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-2~ END
     END
 BUT_ONLY
 
@@ -52,8 +45,6 @@ BUT_ONLY
 BEGIN @1121 DESIGNATED 1121 GROUP @10 // FLAILS/MORNINGSTARS TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
@@ -99,8 +90,6 @@ BEGIN @1150 DESIGNATED 1150 GROUP @10 // SPEARS BASE DMG IMPROVEMENT
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
     READ_BYTE  0x31 wpn_prof
@@ -121,8 +110,6 @@ BUT_ONLY
 BEGIN @1160 DESIGNATED 1160 GROUP @10 // WARHAMMERS BASE DMG IMPROVEMENT
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
@@ -155,7 +142,6 @@ BEGIN @1350 DESIGNATED 1350 GROUP @10 // WAKIZASHI/NINJATO DMG/SPEED
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 INCLUDE ~ZSTweaks/libs/zs_correct_animations.tph~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
@@ -190,7 +176,6 @@ BEGIN @1351 DESIGNATED 1352 GROUP @10 // WAKIZASHIS PIERCING/SLASHING
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 INCLUDE ~ZSTweaks/libs/zs_correct_animations.tph~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
@@ -211,7 +196,6 @@ BUT_ONLY
 BEGIN @1360 DESIGNATED 1360 GROUP @10 // LIGHT CROSSBOW +1/2 APR BONUS
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY_EXISTING ~xbow04.itm~ ~override~
 	READ_LONG 0x08 light_xbow_strref
@@ -224,11 +208,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_LONG 0x08 name_strref
 
     PATCH_IF wpn_cat = 27  AND wpn_prof = 103 AND (name_strref = %light_xbow_strref% OR min_str <= 8) BEGIN // light crossbows
-        LPF a7_auto_apply_spl_effect
-            STR_VAR
-                function_name = ~ADD_ITEM_EQEFFECT~
-                effect_codes = ~op=1,tgt=1,p1=6,p2=0,tmg=2~
-        END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6,p2=0~ END
     END
 BUT_ONLY
 
@@ -236,8 +216,6 @@ BUT_ONLY
 BEGIN @1370 DESIGNATED 1370 GROUP @10 // KATANAS DAMAGE
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
@@ -260,8 +238,6 @@ BUT_ONLY
 BEGIN @1400 DESIGNATED 1400 GROUP @10 // BASTARD SWORDS DMG
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
@@ -293,8 +269,6 @@ BUT_ONLY
 BEGIN @1430 DESIGNATED 1430 GROUP @10 // TWO HANDED SWORD DICE CHANGES
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
@@ -344,8 +318,6 @@ BEGIN @1530 DESIGNATED 1530 GROUP @10
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-
 COPY_EXISTING_REGEXP "DAGG1[12]\.ITM" ~override~
     LPF ALTER_HEADER
         INT_VAR
@@ -374,26 +346,10 @@ BEGIN @1170 DESIGNATED 1170 GROUP @11 // SHADOW DRAGON ARMOR TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~LEAT19.ITM~ ~override~
-    LPF DELETE_ITEM_EQEFFECT
-        INT_VAR
-            opcode_to_delete = 27 // not great
-    END
-
-    LPF DELETE_ITEM_EQEFFECT
-        INT_VAR
-            opcode_to_delete = 142 // not great
-    END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes =~op=69;op=169,p2=59;op=169,p2=53;op=142,p2=90;op=101,p2=216;op=282,p1=1,p2=2;op=267,p1=41495;op=267,p1=40968;op=267,p1=40969;op=267,p1=40979;op=267,p1=41616;op=346,p1=4~
-    END
+    LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 27 END
+    LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 142 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=69;op=169,p2=59;op=169,p2=53;op=142,p2=90;op=101,p2=216;op=282,p1=1,p2=2;op=267,p1=41495;op=267,p1=40968;op=267,p1=40969;op=267,p1=40979;op=267,p1=41616;op=346,p1=4~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -401,26 +357,15 @@ BEGIN @1171 DESIGNATED 1171 GROUP @11 // SILVER DRAGON ARMOR TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~ohdarmor.ITM~ ~override~
     SAY IDENTIFIED_DESC @6770
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes =~op=28,p1=40~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=28,p1=40~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1172 DESIGNATED 1172 GROUP @11 // RINGS OF ELEMENTAL CONTROL
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY_EXISTING_REGEXP ~RING2[7-9].ITM~ ~override~
     LPF ALTER_EFFECT
@@ -437,26 +382,12 @@ BUT_ONLY
 
 COPY_EXISTING ~RING28.ITM~ ~override~
     SAY IDENTIFIED_DESC @6750
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes =~op=29,p1=50~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=29,p1=50~ END
 BUT_ONLY
 
 COPY_EXISTING ~RING29.ITM~ ~override~
     SAY IDENTIFIED_DESC @6760
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes =~op=27,p1=50~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effect_codes =~op=27,p1=50~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -478,8 +409,6 @@ BEGIN @1174 DESIGNATED 1174 GROUP @11 // HEARTWOOD RING DRUID
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~RING44.ITM~ ~override~
     SAY IDENTIFIED_DESC @6790
     LPF ALTER_EFFECT
@@ -494,14 +423,7 @@ COPY_EXISTING ~RING44.ITM~ ~override~
             match_opcode = 62
             multi_match = 1
     END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes =~op=98,p1=6,p2=3~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=98,p1=6,p2=3~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -509,26 +431,15 @@ BEGIN @1180 DESIGNATED 1180 GROUP @11 // RINGER OF DANGER SENSE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet bgee" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~RING36.ITM~ ~override~
     SAY IDENTIFIED_DESC @6030
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes =~op=292,p2=1~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effect_codes =~op=292,p2=1~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1316 DESIGNATED 1316 GROUP @11 // MERCYKILLER RING TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY
     ~ZSTweaks/eff/ZSTWTHM1.EFF~ override
@@ -538,17 +449,7 @@ COPY
 COPY_EXISTING ~WA2RING.ITM~ ~override~
     WRITE_LONG 0x1e 1611987392 // allows rangers to use it
     SAY IDENTIFIED_DESC @6340
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_timing = 2
-            def_target = 1
-            def_parameter1 = 4
-            def_parameter2 = 5
-            def_resist_dispel = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=177,res=ZSTWTHM1;op=177,res=ZSTWTHM2;op=177,res=ZSTWTHM3~
-    END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 4 p2 = 5 STR_VAR effects = ~op=177,res=ZSTWTHM1;op=177,res=ZSTWTHM2;op=177,res=ZSTWTHM3~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -563,26 +464,15 @@ BEGIN @1560 DESIGNATED 1560 GROUP @11 // ADD PIERCING TO BELT OF THE BLADE
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING "bdbelt02.ITM" ~override~
     SAY IDENTIFIED_DESC @6510
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=332,p1=10,p2=8~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=332,p1=10,p2=8~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1561 DESIGNATED 1561 GROUP @11 // cloak of the star more darts
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY_EXISTING "CLCK25.ITM" ~override~
     SAY IDENTIFIED_DESC @6820
@@ -628,19 +518,9 @@ BEGIN @1610 DESIGNATED 1610 GROUP @11 // ROBE OF INVOCATION TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING "ohnrobe2.ITM" ~override~
     SAY IDENTIFIED_DESC @6530
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-            def_parameter1 = 5
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=332,p2=1;op=332,p2=2;op=332,p2=3;op=332,p2=4;op=346,p1=2,spec=6~
-    END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 5 STR_VAR effects = ~op=332,p2=1;op=332,p2=2;op=332,p2=3;op=332,p2=4;op=346,p1=2,spec=6~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -708,8 +588,6 @@ BEGIN @1653 DESIGNATED 1653 GROUP @11 // THIEVES HOOD TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING "HELM29.ITM" ~override~
     SAY UNIDENTIFIED_DESC @6911
     WRITE_LONG 0x18 (THIS - 2**25) // protects against critical hits now
@@ -718,16 +596,7 @@ BUT_ONLY
 COPY_EXISTING "HELM30.ITM" ~override~
     SAY IDENTIFIED_DESC @6910
     WRITE_LONG 0x18 (THIS - 2**25) // protects against critical hits now
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-            def_parameter1 = 4
-            def_parameter2 = 5
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=177,res=ZSTWTVH1;op=177,res=ZSTWTVH2~
-    END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 4 p2 = 5 STR_VAR effects = ~op=177,res=ZSTWTVH1;op=177,res=ZSTWTVH2~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -738,16 +607,8 @@ REQUIRE_PREDICATE GAME_IS "bgee eet" @50
 ACTION_IF FILE_EXISTS_IN_GAME "bdboot03.itm" BEGIN
     COPY_EXISTING "bdboot03.itm" ~override~
         SAY IDENTIFIED_DESC @6920
-        LPF ALTER_EFFECT
-            INT_VAR
-                match_opcode = 166
-                parameter1 = 10
-        END
-        LPF CLONE_EFFECT
-            INT_VAR
-                match_opcode = 177
-                parameter1 = IDS_OF_SYMBOL(kit INQUISITOR)
-        END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 166 parameter1 = 10 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 177 parameter1 = IDS_OF_SYMBOL(kit INQUISITOR) END
     BUT_ONLY
 END
 
@@ -756,25 +617,11 @@ BEGIN @1655 DESIGNATED 1655 GROUP @11 // CROWN OF LIES TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee eet" @50
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING "bdhelm01.itm" ~override~
     SAY IDENTIFIED_DESC @6960
-    LPF DELETE_EFFECT
-        INT_VAR
-            check_headers = 0
-            match_opcode = 21
-    END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=21,p1=-15;op=49,p1=-2~
-    END
+    LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 21 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effect_codes = ~op=21,p1=-15;op=49,p1=-2~ END
 BUT_ONLY
-
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1656 DESIGNATED 1656 GROUP @11 // HELM OF DUMATHOIN TWEAK
@@ -797,8 +644,6 @@ BUT_ONLY
 BEGIN @1657 DESIGNATED 1657 GROUP @11 // THE VISAGE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
 
 COPY_EXISTING "ohdmask.itm" ~override~
     SAY IDENTIFIED_DESC @7030
@@ -912,7 +757,6 @@ BEGIN @1130 DESIGNATED 1130 GROUP @12 // BONE BLADE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 COPY "%MOD_FOLDER%/eff/ZSTW_DG6.EFF" ~override~
 
 COPY_EXISTING ~DAGG14.ITM~ ~override~
@@ -932,11 +776,7 @@ COPY_EXISTING ~DAGG14.ITM~ ~override~
             match_opcode = 12
             parameter2 = (1 << 16)
     END
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=27,tgt=1,p1=40,tmg=2~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=40~ END
     LPF a7_auto_apply_spl_effect
         INT_VAR
             def_target = 2
@@ -961,9 +801,6 @@ BEGIN @1490 DESIGNATED 1490 GROUP @12 // NEB'S DAGGER
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING "NEBDAG.ITM" ~override~
     SAY IDENTIFIED_DESC @6230
     WRITE_ASCII 0x10 ~~ #8
@@ -986,16 +823,9 @@ BEGIN @1660 DESIGNATED 1660 GROUP @12 // DAGGER OF THE GOLEM
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-
 COPY_EXISTING "dagg03.ITM" ~override~
     SAY IDENTIFIED_DESC @6590
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~tgt=1,tmg=2,op=166,p1=10~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effect_codes = ~op=166,p1=10~ END
     SET magic_dmg = (64 << 16)
     LPF a7_auto_apply_spl_effect
         STR_VAR
@@ -1009,8 +839,6 @@ BEGIN @1670 DESIGNATED 1670 GROUP @12 // WEREBANE
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 COPY ~ZSTweaks/eff/ZSTWWED6.EFF~ ~override~
 
 COPY_EXISTING "dagg09.ITM" ~override~
@@ -1036,8 +864,6 @@ BEGIN @1681 DESIGNATED 1681 GROUP @12 // ELEMENTS' FURY TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~bddagg01.itm~ ~override~
     SAY IDENTIFIED_DESC @6930
     LPF ALTER_EFFECT
@@ -1045,15 +871,7 @@ COPY_EXISTING ~bddagg01.itm~ ~override~
             match_opcode = 12
             parameter1 = 2
     END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_timing = 2
-            def_target = 1
-            def_parameter1 = 10
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=27;op=28;op=29;op=30~
-    END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=27;op=28;op=29;op=30~ END
 BUT_ONLY
 
 COPY_EXISTING_REGEXP ~bddagg1[A-D]\.EFF~ ~override~
@@ -1064,8 +882,6 @@ BUT_ONLY
 BEGIN @1682 DESIGNATED 1682 GROUP @12 // ACID ETCHED DAGGER TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY_EXISTING ~bddagg05.itm~ ~override~
     SAY NAME2 @6940
@@ -1133,8 +949,6 @@ BEGIN @1200 DESIGNATED 1200 GROUP @13 // IXIL'S SPIKE TWEAK REMOVE HASTE IMMUNIT
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_rm_haste.tpa~
-
 COPY_EXISTING ~SPER12.ITM~ ~override~
     LPF remove_haste_immunity END
 BUT_ONLY
@@ -1143,9 +957,6 @@ BUT_ONLY
 BEGIN @1201 DESIGNATED 1201 GROUP @13 // LILARCOR TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY_EXISTING ~SW2H14.ITM~ ~override~
     SAY IDENTIFIED_DESC @6800
@@ -1173,9 +984,6 @@ BEGIN @1202 DESIGNATED 1202 GROUP @13 // WARBLADE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~SW2H14.ITM~ ~override~
     SAY NAME2 @6860
     SAY IDENTIFIED_DESC @6861
@@ -1193,16 +1001,7 @@ COPY_EXISTING ~SW2H14.ITM~ ~override~
             function_name = ~ADD_ITEM_EFFECT~
             effect_codes = ~op=12,dsize=4,dnum=1,p2=%cold%~
     END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_parameter1 = 1073741824
-            def_parameter2 = 9
-            def_timing = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=177,res=ZSTWWARA;op=177,res=ZSTWWARB;op=177,res=ZSTWWARC;op=177,res=ZSTWWARD;op=177,res=ZSTWWARE~
-    END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 1073741824 p2 = 9 STR_VAR effects = ~op=177,res=ZSTWWARA;op=177,res=ZSTWWARB;op=177,res=ZSTWWARC;op=177,res=ZSTWWARD;op=177,res=ZSTWWARE~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1233,9 +1032,6 @@ BEGIN @1318 DESIGNATED 1318 GROUP @13 // FLAME OF THE NORTH EVIL TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_offsets.tpa~
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~SW2H12.ITM~ ~override~
     PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1322") BEGIN
         SAY IDENTIFIED_DESC @6170
@@ -1252,9 +1048,6 @@ BUT_ONLY
 BEGIN @1322 DESIGNATED 1322 GROUP @13 // FLAME OF THE NORTH TROLL BONUS
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY_EXISTING ~SW2H12.ITM~ ~override~
    PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1318") BEGIN
@@ -1273,8 +1066,6 @@ BUT_ONLY
 BEGIN @1390 DESIGNATED 1390 GROUP @13 // STAFF OF THE MAGI DISPEL SAVE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_offsets.tpa~
 
 COPY_EXISTING ~STAF11.ITM~ ~override~
     SAY IDENTIFIED_DESC @6400
@@ -1309,8 +1100,6 @@ BEGIN @1460 DESIGNATED 1460 GROUP @13 // SPEAR OF WITHERING
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING "SPER10.ITM" ~override~
     LPF a7_auto_apply_spl_effect
         INT_VAR
@@ -1331,7 +1120,6 @@ BEGIN @1540 DESIGNATED 1540 GROUP @13 // WAVE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 COPY ~ZSTweaks/eff/ZSTWWAVE.EFF~ ~override~
 
 COPY_EXISTING "HALB09.ITM" ~override~
@@ -1353,8 +1141,6 @@ BEGIN @1590 DESIGNATED 1590 GROUP @13 // BLACKMIST TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING "HALB06.ITM" ~override~
     SAY IDENTIFIED_DESC @6550
     LPF ALTER_ITEM_EFFECT
@@ -1365,14 +1151,7 @@ COPY_EXISTING "HALB06.ITM" ~override~
     END
     SET blinded_strref1 = 14674
     SET blinded_strref2 = 1474
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=101,p2=74;op=169,p2=8;op=267,p1=%blinded_strref1%;op=267,p1=%blinded_strref2%~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=101,p2=74;op=169,p2=8;op=267,p1=%blinded_strref1%;op=267,p1=%blinded_strref2%~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1400,8 +1179,6 @@ BUT_ONLY
 BEGIN @1592 DESIGNATED 1592 GROUP @13 // SOUL REAVER DICESIZE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING "SW2H08.ITM" ~override~
     PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1591") BEGIN
@@ -1447,8 +1224,27 @@ COPY_EXISTING ~bdsw2h03.spl~ ~override~
     END
 BUT_ONLY
 
-////////////////// ONE-HANDED SWORD TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1594 DESIGNATED 1594 GROUP @13 // STAFF OF THE CLERIC +2 TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee" @50
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
+COPY
+    ~ZSTweaks/eff/ZSTWSF01.eff~ ~override~
+    ~ZSTweaks/eff/ZSTWSF02.eff~ ~override~
+    ~ZSTweaks/eff/ZSTWSF03.eff~ ~override~
+
+COPY_EXISTING ~STAF19.ITM~ ~override~
+    SAY IDENTIFIED_DESC @7060
+    LPF ADD_ITEM_HEADER INT_VAR target = 5 charges = 2 depletion = 3 flags = 2**9 + 2**11
+        STR_VAR
+            icon = ~SPPR514B~
+    END
+    LPF a7_auto_apply_spl_effect STR_VAR function_name = "ADD_ITEM_EFFECT" effect_codes = ~op=146,tgt=1,t=3,p1=1,tmg=1,res=SPPR514~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 204 p2 = 5 STR_VAR effects = ~op=0,p1=1,p2=0;op=177,res=ZSTWSF01;op=177,res=ZSTWSF02;op=177,res=ZSTWSF03~ END
+BUT_ONLY
+
+////////////////// ONE-HANDED SWORD TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1125 DESIGNATED 1125 GROUP @14 // NINJATO SCARLET BROTHERHOOD
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
@@ -1473,9 +1269,6 @@ BEGIN @1127 DESIGNATED 1127 GROUP @14 // PERIDAN TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING "SW1H32.itm" ~override~
     SAY IDENTIFIED_DESC @6870
     LPF ALTER_EFFECT
@@ -1484,32 +1277,9 @@ COPY_EXISTING "SW1H32.itm" ~override~
             match_opcode = 98
             parameter1 = 18
     END
-    LPF ALTER_HEADER
-            INT_VAR
-                match_type = 3
-                charges = 3
-    END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-            def_resist_dispel = 2
-            def_parameter1 = 146
-            def_parameter=4
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=178,spc=4;op=219~
-    END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-            def_resist_dispel = 2
-            def_parameter1 = 15
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=27;op=28;op=29;op=30~
-    END
+    LPF ALTER_HEADER INT_VAR match_type = 3 charges = 3 END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 146 p2=4 STR_VAR effects = ~op=178,spc=4;op=219~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 15 STR_VAR effects = ~op=27;op=28;op=29;op=30~ END
 BUT_ONLY
 
 COPY_EXISTING "SW1H32C.EFF" ~override~
@@ -1520,8 +1290,6 @@ BUT_ONLY
 BEGIN @1210 DESIGNATED 1210 GROUP @14 // EQUALIZER TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING ~SW1H54.ITM~ ~override~
     SAY IDENTIFIED_DESC @6060
@@ -1552,8 +1320,6 @@ INCLUDE ~ZSTweaks/libs/component_scripts/zs_swmask.tph~
 BEGIN @1240 DESIGNATED 1240 GROUP @14 // PURIFIER EVIL TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_offsets.tpa~
 
 COPY_EXISTING ~SW1H64.ITM~ ~override~
     SAY IDENTIFIED_DESC @6090
@@ -1593,8 +1359,6 @@ BEGIN @1250 DESIGNATED 1250 GROUP @14 // YAMATO TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~SW1H66.ITM~ ~override~
     SAY IDENTIFIED_DESC @6110
     LPF ALTER_ITEM_EFFECT
@@ -1603,24 +1367,13 @@ COPY_EXISTING ~SW1H66.ITM~ ~override~
             match_opcode = 0
             parameter1 = 2
     END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-            def_resist_dispel = 2
-            def_parameter1 = 5
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=0,p1=1,p2=14;op=27;op=28;op=29;op=30;op=31;op=86;op=87;op=88;op=89;op=166;op=173~
-    END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 5 STR_VAR effects = ~op=0,p1=1,p2=14;op=27;op=28;op=29;op=30;op=31;op=86;op=87;op=88;op=89;op=166;op=173~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1260 DESIGNATED 1260 GROUP @14 // USUNO BLADE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY_EXISTING ~SW1H67.ITM~ ~override~
     SAY IDENTIFIED_DESC @6120
@@ -1633,16 +1386,7 @@ COPY_EXISTING ~SW1H67.ITM~ ~override~
             parameter1 = 1
             savebonus = "-2"
     END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-            def_resist_dispel = 2
-            def_parameter1 = 40
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=29~
-    END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 40 STR_VAR effects = ~op=29~ END
     SET electricity = (4 << 16)
     LPF a7_auto_apply_spl_effect
         STR_VAR
@@ -1669,8 +1413,6 @@ INCLUDE ~ZSTweaks/libs/component_scripts/zs_dakkon.tph~
 BEGIN @1319 DESIGNATED 1319 GROUP @14 // HOLY SWORD OF TYR TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_offsets.tpa~
 
 COPY_EXISTING ~OHDHSWD.ITM~ ~override~
     SAY IDENTIFIED_DESC @6190
@@ -1706,9 +1448,6 @@ BEGIN @1580 DESIGNATED 1580 GROUP @14 // HAWKSIGHT TWEAK 1
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-
 COPY_EXISTING "ohrsw1h1.itm" ~override~
     SAY IDENTIFIED_DESC @6541
     LPF ALTER_HEADER
@@ -1716,23 +1455,13 @@ COPY_EXISTING "ohrsw1h1.itm" ~override~
             match_type = 1
             to_hit = 4
     END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=325,p1=1;op=1,p1=6~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=325,p1=1;op=1,p1=6~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1581 DESIGNATED 1581 GROUP @14 // HAWKSIGHT TWEAK 2
 REQUIRE_COMPONENT "ZSTweaks.tp2" "1580" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY_EXISTING "ohrsw1h1.itm" ~override~
     SAY IDENTIFIED_DESC @6540
@@ -1765,9 +1494,6 @@ BEGIN @1582 DESIGNATED 1582 GROUP @14 // VEXATION TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING "bdsw1h21.itm" ~override~
     SAY NAME2 @6980
     SAY IDENTIFIED_DESC @6981
@@ -1781,11 +1507,7 @@ COPY_EXISTING "bdsw1h21.itm" ~override~
             damage = 3
             to_hit = 3
     END
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=341,tgt=1,tmg=2,res=ZSTWVEX0~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,res=ZSTWVEX0~ END
 BUT_ONLY
 
 COPY_EXISTING "bdsw1h21.spl" ~override~
@@ -1821,7 +1543,6 @@ BEGIN @1311 DESIGNATED 1311 GROUP @15 // KROTAN MACE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 COPY ~ZSTweaks/eff/ZSTWBL01.EFF~ ~override~
 
 COPY_EXISTING ~BLUN11.ITM~ ~override~
@@ -1838,7 +1559,6 @@ BEGIN @1312 DESIGNATED 1312 GROUP @15 // SKULLCRUSHER TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 COPY ~ZSTweaks/eff/ZSTWBL02.EFF~ ~override~
 
 COPY_EXISTING ~BLUN18.ITM~ ~override~
@@ -1857,7 +1577,6 @@ BEGIN @1313 DESIGNATED 1313 GROUP @15 // GNASHER TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 COPY ~ZSTweaks/spl/other/ZSTWPAIN.SPL~ ~override~
 
 COPY_EXISTING ~BLUN24.ITM~ ~override~
@@ -1873,8 +1592,6 @@ BUT_ONLY
 BEGIN @1314 DESIGNATED 1314 GROUP @15 // MACE OF JERROD TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING ~WAMACE.ITM~ ~override~
     WRITE_LONG 0x60 3
@@ -1896,8 +1613,6 @@ BEGIN @1320 DESIGNATED 1320 GROUP @15 // FLAIL OF AGES TWEAK REMOVE HASTE IMMUNI
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_rm_haste.tpa~
-
 COPY_EXISTING ~BLUN30.ITM~ ~override~
     LPF remove_haste_immunity END
 BUT_ONLY
@@ -1909,9 +1624,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_boneclub.tph~
 
-
 ////////////////// RANGED WEAPON TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1010 DESIGNATED 1010 GROUP @16 // ASP NEST TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
@@ -1954,8 +1667,6 @@ BEGIN @1342 DESIGNATED 1342 GROUP @16 // PROTECTOR OF THE DRYADS TWEAKS
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY ~ZSTweaks/eff/ZSTWMI01.EFF~ ~override~
 
 COPY_EXISTING ~BOW08.ITM~ ~override~
@@ -1978,6 +1689,28 @@ COPY_EXISTING ~BOW08.ITM~ ~override~
     END
 BUT_ONLY
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1343 DESIGNATED 1343 GROUP @16 // MANA BOW TWEAKS
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~BOW13.ITM~ ~override~
+    SAY IDENTIFIED_DESC @7070
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=166,p1=5;op=142,p2=63~ END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 31 match_paremeter1 = 20 parameter1 = 33 END
+    SET magic = (64 << 16)
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_type = 4
+            def_target = 2
+            def_savetype = 1
+            def_savebonus = "-2"
+        STR_VAR
+            function_name = ~ADD_ITEM_EFFECT~
+            effect_codes = ~op=12,p1=1,tmg=1,p2=%magic%,dsize=4,dnum=1;op=60,p1=10,dur=24~
+    END
+BUT_ONLY
+
 ////////////////// NPC GEAR TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1380 DESIGNATED 1380 GROUP @17 // HAERDALIS BLADES WEAPONS
@@ -1991,9 +1724,6 @@ BEGIN @1480 DESIGNATED 1480 GROUP @17 // YOSHIMO KATANA TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING "NPSW02.ITM" ~override~
     SAY IDENTIFIED_DESC @6270
     LPF ALTER_HEADER
@@ -2002,14 +1732,7 @@ COPY_EXISTING "NPSW02.ITM" ~override~
             match_speed = 3
             speed = 1
     END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=301,p1=2,p2=1;op=233,p1=2,p2=94~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=2,p2=1;op=233,p1=2,p2=94~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2151,8 +1874,6 @@ BEGIN @1601 DESIGNATED 1601 GROUP @18 // POTION PREVENT STACKING
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING_REGEXP ~.*\.itm~ ~override~
     READ_SHORT 0x1c category_itm
     PATCH_IF category_itm = 9 OR category_itm = 13 BEGIN// if it's a potion or food item
@@ -2187,8 +1908,6 @@ BEGIN @145 DESIGNATED 145 GROUP @19 // LUCK DURATION BOOST
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~SPWI209.SPL~ ~override~
     PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "147") BEGIN
         SAY UNIDENTIFIED_DESC @6710
@@ -2220,19 +1939,8 @@ BEGIN @160 DESIGNATED 160 GROUP @19 // BLAKBLAD NO BACKSTAB TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~BLAKBLAD.ITM~ ~override~
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1  // Self
-            def_timing = 2
-            def_parameter1 = 0
-            def_parameter2 = 1
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes  = ~op=263~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=0,p2=1~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2240,27 +1948,14 @@ BEGIN @163 DESIGNATED 163 GROUP @19 // GOLIRO NO BACKSTAB TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~CDGOLIRO.ITM~ ~override~
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1  // Self
-            def_timing = 2
-            def_parameter1 = 0
-            def_parameter2 = 1
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes  = ~op=263~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=0,p2=1~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @161 DESIGNATED 161 GROUP @19 // PHANBLAD DUR STD
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
 
 COPY_EXISTING ~SPWI518.SPL~ ~override~
     SET dur = 126
@@ -2287,8 +1982,6 @@ BUT_ONLY
 BEGIN @170 DESIGNATED 170 GROUP @19 // WAIL OF BANSHEE MAGIC DMG TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 
 COPY_EXISTING ~SPWI913.SPL~ ~override~
     LPF a7_auto_apply_spl_effect
@@ -2563,8 +2256,6 @@ BEGIN @100 DESIGNATED 100 GROUP @20 // GLYPH OF WARDING HALF ON SAVE
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
-
 COPY_EXISTING ~SPPR304.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5000
     SAY DESC @5000
@@ -2595,7 +2286,6 @@ BEGIN @101 DESIGNATED 101 GROUP @20 // FBLADE UNDEAD BONUS
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 COPY ~ZSTweaks/eff/ZSTWFL04.EFF~ ~override~
 
 COPY_EXISTING ~SPPR206.SPL~ ~override~
@@ -2607,19 +2297,8 @@ COPY_EXISTING ~SPPR206.SPL~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~FBLADE.ITM~ ~override~
-    READ_LONG 0x18 flags
-    WRITE_LONG 0x18 (flags + 2**6) // magical, destructive
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1  // Self
-            def_timing = 2
-            def_parameter1 = 4
-            def_parameter2 = 3
-            def_special = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes  = ~op=344~
-    END
+    WRITE_LONG 0x18 (THIS + 2**6) // magical, destructive
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=344,p1=4,p2=3,spc=2~ END
     PATCH_IF NOT GAME_IS "iwdee" BEGIN
         LPF a7_auto_apply_spl_effect
             STR_VAR
@@ -2642,8 +2321,6 @@ BUT_ONLY
 BEGIN @102 DESIGNATED 102 GROUP @20 // FBLADE DURATION BOOST
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
 
 COPY_EXISTING ~SPPR206.SPL~ ~override~
     PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "101" BEGIN
@@ -2675,8 +2352,6 @@ BUT_ONLY
 BEGIN @110 DESIGNATED 110 GROUP @20 // BLESS SCALING DURATION BOOST
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
 
 COPY_EXISTING ~SPPR101.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5010
@@ -2721,8 +2396,6 @@ BUT_ONLY
 BEGIN @190 DESIGNATED 190 GROUP @20 // HOLY POWER THAC0 TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
 
 COPY_EXISTING ~SPPR412.SPL~ ~override~
     LPF ADD_SPELL_HEADER
@@ -2839,8 +2512,6 @@ BEGIN @260 DESIGNATED 260 GROUP @20 // NEGATIVE PLANE DUR BOOST
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
-
 COPY_EXISTING ~SPPR413.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5080
     SAY DESC @5080
@@ -2869,8 +2540,6 @@ BUT_ONLY
 BEGIN @270 DESIGNATED 270 GROUP @20 // ENTANGLE TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
 
 COPY_EXISTING ~SPPR105.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5100
@@ -3060,8 +2729,6 @@ BEGIN @460 DESIGNATED 460 GROUP @20 // MASS CURE
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-
 COPY_EXISTING ~SPPR514.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @6480
     LPF ALTER_SPELL_EFFECT
@@ -3117,8 +2784,6 @@ BEGIN @2111 DESIGNATED 2111 GROUP @21 // WRITHING FOG TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
-
 COPY_EXISTING ~SPPR250.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @6680
     LPF ALTER_EFFECT
@@ -3155,8 +2820,6 @@ BUT_ONLY
 BEGIN @2112 DESIGNATED 2112 GROUP @21 // SPIRIT FIRE TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
 
 COPY_EXISTING ~SPPR450.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @7000
@@ -3242,9 +2905,6 @@ BUT_ONLY
 BEGIN @2113 DESIGNATED 2113 GROUP @21 // SPIRITUAL CLARITY TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 
 COPY_EXISTING ~SPPR350.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @6990
@@ -3356,7 +3016,6 @@ BEGIN @2170 DESIGNATED 2170 GROUP @21 // THAC0 THIEF
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_rogue_thac0.tpa~
 LAF generate_rogue_thac0
     STR_VAR
         class1 = ~thief~
@@ -3368,7 +3027,6 @@ BEGIN @2180 DESIGNATED 2180 GROUP @21 // THAC0 BARD
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/zs_rogue_thac0.tpa~
 LAF generate_rogue_thac0
     STR_VAR
         class1 = ~bard~

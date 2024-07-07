@@ -100,6 +100,7 @@
 @1591 = ~Make Soul Reaver slightly more balanced~
 @1592 = ~Make Soul Reaver deal 1d12 damage~
 @1593 = ~Make Sword of Ruin +2 slightly more powerful~
+@1594 = ~Make Cleric's staff more unique and actually benefit clerics~
 
 
 /// ONE-HANDED SWORDS
@@ -139,6 +140,7 @@
 @1330 = "Make Darkfire Bow slightly more remarkable"
 @1340 = "Make Taralash slightly more remarkable"
 @1342 = ~Make Protector of the Dryads deal +2 damage to orcs, ogres, bugbears, gnolls, and goblinoids~
+@1343 = ~Make Mana bow more magical and more deadly against arcane casters~
 
 // NPC TWEAKS
 @1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
@@ -3156,6 +3158,9 @@ Equipped abilities:
 – Protects against critical hits
 – Non-physical damage resistance: +25%
 
+Combat abilities:
+– Inflicts +2 extra missile damage against orcs, ogres, bu
+
 Weight: 2~
 
 @7051 = ~The Helm of Rock grants a warrior immunities far beyond mere physical protections, and with the addition of the horns, it's even more powerful. Generals and military leaders can command both fear and respect simply by wearing this helm.
@@ -3173,9 +3178,50 @@ Charge abilities:
   Special: Targets flee in terror
   Range: 40 ft.
   Duration: 5 rounds
-  Area of Effect: 1 creature, which then spread to enemies within 15 ft.
+  Area of Effect: 1 creature, which then spreads to enemies within 15 ft.
 
 Weight: 2~
 
+@7060 = ~This simple staff radiates a powerful enchantment, though its plain design suggests a simple origin. It reflects the quiet strength that faith brings, and was likely the modest weapon of a priest or cleric.
 
+STATISTICS:
 
+Equipped abilities:
+– +1 AC
+– Clerics only: casting and turn undead level +1, gain 1 spell slot of level 3, 4 and 5
+
+Charge abilities:
+– Mass Light Cure twice per day
+  Special: Targets are healed by 1d8+9 hit points
+  Range: 0
+  Area of effect: 15 ft. around the caster
+
+THAC0: +3
+Damage: 1d6+3 (crushing)
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@7070 = ~Kestsa was given this longbow many years ago by the Cowled Wizards as reward for his exemplary service in the Athkatla city guard. He was tireless in bringing to justice those who unlawfully used magic. The bow served him well in his cause, granting him resistance to arcane energies, and imbuing his arrows with anti-wizard properties.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Damage Resistance: +33%
+– Magic Resistance: +5%
+
+Combat abilities:
+– Arrows inflict 1d4+1 extra magic damage and 10% spell failure to wizards if Save vs. Spell at -2 is failed
+
+THAC0: +5
+Speed Factor: 3
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
