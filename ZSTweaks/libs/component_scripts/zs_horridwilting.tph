@@ -1,4 +1,3 @@
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
 COPY
      ~ZSTweaks/eff/ZSTWHW16.EFF~ ~override~
      ~ZSTweaks/eff/ZSTWHW17.EFF~ ~override~
@@ -8,7 +7,6 @@ COPY
 
 
 ACTION_IF GAME_IS "eet bg2ee" BEGIN
-
     COPY_EXISTING ~ohbwat01.CRE~ ~override~ // make sure existing water elementals are considered water elementals as per the class
         WRITE_BYTE 0x273 "-37" // ELEMENTAL_WATER
     BUT_ONLY
@@ -16,11 +14,9 @@ ACTION_IF GAME_IS "eet bg2ee" BEGIN
     COPY_EXISTING ~ELWATG01.CRE~ ~override~ // make sure existing water elementals are considered water elementals as per the class
         WRITE_BYTE 0x273 "-37" // ELEMENTAL_WATER
     BUT_ONLY
-
 END
 
 ACTION_IF GAME_IS "eet bgee" AND FILE_EXISTS_IN_GAME "bdwe1str.CRE" AND FILE_EXISTS_IN_GAME "bdwe2str.CRE" BEGIN
-
     COPY_EXISTING ~bdwe1str.CRE~ ~override~ // make sure existing water elementals are considered water elementals as per the class
         WRITE_BYTE 0x273 "-37" // ELEMENTAL_WATER
     BUT_ONLY
@@ -28,7 +24,6 @@ ACTION_IF GAME_IS "eet bgee" AND FILE_EXISTS_IN_GAME "bdwe1str.CRE" AND FILE_EXI
     COPY_EXISTING ~bdwe2str.CRE~ ~override~ // make sure existing water elementals are considered water elementals as per the class
         WRITE_BYTE 0x273 "-37" // ELEMENTAL_WATER
     BUT_ONLY
-
 END
 
 COPY_EXISTING ~SPWI812.SPL~ ~override~

@@ -1,43 +1,18 @@
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
 COPY ~ZSTweaks/spl/other/ZSTWDRZB.SPL~ ~override~
 
 COPY_EXISTING "SW1H15.ITM" ~override~
     SAY IDENTIFIED_DESC @6490
-    SET cold = (2 << 16)
+    LPF GET_DMG_TYPE STR_VAR type = ~cold~ RET cold = dmg_param END
     WRITE_LONG 0x60 5 // ench
     WRITE_LONG 0x18 (LONG_AT 0x18) + 2**8 // silver
-    LPF ALTER_HEADER
-        INT_VAR
-            type = 1
-            to_hit = 5
-    END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_type = 1
-            def_target = 2
-            def_timing = 9
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~op=12,p2=%cold%,dnum=1,dsize=3;op=326,p2=3,res=ZSTWDRZB~
-    END
+    LPF ALTER_HEADER INT_VAR type = 1 to_hit = 5 END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p2=%cold%,dnum=1,dsize=3;op=326,p2=3,res=ZSTWDRZB~ END
 BUT_ONLY
 
 COPY_EXISTING "SW1H16.ITM" ~override~
     SAY IDENTIFIED_DESC @6500
     WRITE_LONG 0x60 5 // already considered +5, adding it just in case
-    LPF ALTER_HEADER
-        INT_VAR
-            type = 1
-            to_hit = 5
-    END
-    SET ac_except_crushing = 2**1 + 2**2 + 2**3
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1
-            def_timing = 2
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=0,p1=2,p2=%ac_except_crushing%;op=37,p1=1;op=86,p1=8;op=87,p1=8;op=88,p1=8;op=89,p1=8~
-    END
+    LPF ALTER_HEADER INT_VAR type = 1 to_hit = 5 END
+    SET ac_no_crush = 2**1 + 2**2 + 2**3
+    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=0,p1=2,p2=%ac_no_crush%;op=37,p1=1;op=86,p1=8;op=87,p1=8;op=88,p1=8;op=89,p1=8~ END
 BUT_ONLY

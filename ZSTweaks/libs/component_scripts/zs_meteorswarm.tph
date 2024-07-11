@@ -1,8 +1,5 @@
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
-
 COPY_EXISTING ~SPWI911.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5040
-    SAY DESC @5040
     LPF ALTER_EFFECT
         INT_VAR
             header = 0
@@ -13,22 +10,13 @@ COPY_EXISTING ~SPWI911.SPL~ ~override~
             resist_dispel = 0
     END
     SET headers = 0
-    FOR (i = 15; i <= 20; i+=1) BEGIN
-        LPF ADD_SPELL_HEADER
-            INT_VAR
-                copy_header = 1
-                zs_min_level_for_copy = i
-        END
-        headers += 1
+    FOR ( i = 15; i <= 20; ++i ) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = i END
+        ++headers
     END
     SET damage = 15
-    FOR (i = 1; i <= headers; i+=1) BEGIN
-        LPF ALTER_EFFECT
-            INT_VAR
-                header = i
-                match_opcode = 12
-                parameter1 = damage
-        END
-        damage += 1
+    FOR ( i = 1; i <= headers; ++i ) BEGIN
+        LPF ALTER_EFFECT INT_VAR header = i match_opcode = 12 parameter1 = damage END
+        ++damage
     END
 BUT_ONLY

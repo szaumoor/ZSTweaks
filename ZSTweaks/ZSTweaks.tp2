@@ -34,7 +34,13 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_ASCII 0x22 wpn_appearance (2)
 
 	PATCH_IF wpn_cat == 20  AND (wpn_prof == 90 OR wpn_prof == 94 OR (wpn_prof == 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "sc" = 0)) BEGIN // long swords, katanas or scimitars
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
+        PATCH_IF ("%SOURCE_RES%" STRING_COMPARE_CASE "NPSW04" != 0) BEGIN
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
+        END ELSE BEGIN
+            PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1643") BEGIN
+                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
+            END
+        END
     END
     PATCH_IF wpn_cat == 26  AND wpn_prof == 102 BEGIN // quarterstaves
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-2~ END
@@ -53,34 +59,18 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_LONG 0x60 ench
 
 	PATCH_IF (wpn_cat = 22 OR wpn_cat = 23) AND wpn_prof = 100 BEGIN
-        SET piercing = (16 << 16)
+        LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = dmg_param END
         PATCH_IF ench = 0 OR ench = 1 BEGIN
-            LPF a7_auto_apply_spl_effect
-                STR_VAR
-                    function_name = ~ADD_ITEM_EFFECT~
-                    effect_codes = ~t=1,op=12,tgt=2,tmg=1,p1=1,p2=%piercing%~
-            END
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=1,p2=%piercing%~ END
         END
         PATCH_IF ench = 2 OR ench = 3 BEGIN
-            LPF a7_auto_apply_spl_effect
-                STR_VAR
-                    function_name = ~ADD_ITEM_EFFECT~
-                    effect_codes = ~t=1,op=12,tgt=2,tmg=1,p1=2,p2=%piercing%~
-            END
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=2,p2=%piercing%~ END
         END
         PATCH_IF ench = 4 OR ench = 5 BEGIN
-            LPF a7_auto_apply_spl_effect
-                STR_VAR
-                    function_name = ~ADD_ITEM_EFFECT~
-                    effect_codes = ~t=1,op=12,tgt=2,tmg=1,p1=3,p2=%piercing%~
-            END
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=3,p2=%piercing%~ END
         END
         PATCH_IF ench = 6 BEGIN
-            LPF a7_auto_apply_spl_effect
-                STR_VAR
-                    function_name = ~ADD_ITEM_EFFECT~
-                    effect_codes = ~t=1,op=12,tgt=2,tmg=1,p1=4,p2=%piercing%~
-            END
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=4,p2=%piercing%~ END
         END
     END
 BUT_ONLY
@@ -129,11 +119,7 @@ BUT_ONLY
 
 ACTION_IF FILE_EXISTS_IN_GAME "bdhamm02.itm" BEGIN
     COPY_EXISTING "bdhamm02.itm" ~override~ // voidhammer +3
-        LPF ALTER_EFFECT
-            INT_VAR
-                match_opcode = 12
-                dicesize = 5
-        END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 5 END
     BUT_ONLY
 END
 
@@ -147,8 +133,7 @@ INCLUDE ~ZSTweaks/libs/zs_correct_animations.tph~
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_BYTE  0x31 wpn_prof
     READ_ASCII 0x22 wpn_appearance (2)
-
-	PATCH_IF wpn_prof = 95 AND ("%wpn_appearance%" STRING_COMPARE_CASE "ss" = 0 OR "%wpn_appearance%" STRING_COMPARE_CASE "s1" = 0) BEGIN // wakizashis and ninjatos
+	PATCH_IF wpn_prof=95 AND ("%wpn_appearance%" STRING_COMPARE_CASE "ss"=0 OR "%wpn_appearance%" STRING_COMPARE_CASE "s1"=0) BEGIN // wakizashis and ninjatos
         LPF ALTER_HEADER
             INT_VAR
                 silent = 1
@@ -158,15 +143,8 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                 dicenumber = 2
                 dicesize = 4
         END
-
         FOR ( current_sp = 4; current_sp > 0; --current_sp ) BEGIN // decrease ninja-tos speed by 1
-            LPF ALTER_HEADER
-                INT_VAR
-                    silent = 1
-                    match_type = 1
-                    match_speed = current_sp
-                    speed = current_sp - 1
-            END
+            LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 match_speed = current_sp speed = current_sp - 1 END
         END
     END
 BUT_ONLY
@@ -181,14 +159,8 @@ INCLUDE ~ZSTweaks/libs/zs_correct_animations.tph~
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_BYTE  0x31 wpn_prof
     READ_ASCII 0x22 wpn_appearance (2)
-
 	PATCH_IF wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "ss" = 0 BEGIN // wakizashis
-        LPF ALTER_HEADER
-            INT_VAR
-                silent = 1
-                match_type = 1
-                damage_type = 7 // piercing or slashing
-        END
+        LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 damage_type = 7 END
     END
 BUT_ONLY
 
@@ -206,7 +178,6 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_BYTE  0x31 wpn_prof
     READ_SHORT 0x26 min_str
     READ_LONG 0x08 name_strref
-
     PATCH_IF wpn_cat = 27  AND wpn_prof = 103 AND (name_strref = %light_xbow_strref% OR min_str <= 8) BEGIN // light crossbows
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6,p2=0~ END
     END
@@ -221,7 +192,6 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     READ_SHORT 0x1c wpn_cat
     READ_BYTE  0x31 wpn_prof
     READ_SHORT 0x26 min_str
-
     PATCH_IF wpn_cat = 20  AND wpn_prof = 94 BEGIN // katanas
         LPF ALTER_HEADER
             STR_VAR
@@ -253,14 +223,8 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                 dicenumber = 1
                 dicesize = 8
         END
-        FOR ( current_dmg = 6; current_dmg >= 0; current_dmg -= 1 ) BEGIN
-            LPF ALTER_HEADER
-                INT_VAR
-                    silent = 1
-                    match_type = 1
-                    match_damage = current_dmg
-                    damage = current_dmg + 1
-            END
+        FOR ( current_dmg = 6; current_dmg >= 0; --current_dmg ) BEGIN
+            LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 match_damage = current_dmg damage = current_dmg + 1 END
         END
     END
 BUT_ONLY
@@ -284,7 +248,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                 dicenumber = 2
                 dicesize = 6
         END
-        FOR ( current_dmg = 6; current_dmg >= 0; current_dmg -= 1 ) BEGIN
+        FOR ( current_dmg = 6; current_dmg >= 0; --current_dmg ) BEGIN
             LPF ALTER_HEADER
                 INT_VAR
                     silent = 1
@@ -307,24 +271,21 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_dagger_plus.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1450 DESIGNATED 1450 GROUP @10 // ROGUE WPN BONUSES
+BEGIN @1450 DESIGNATED 1450 GROUP @10 // ROGUE FINESSE BONUSES
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_rogue_wpns.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1530 DESIGNATED 1530 GROUP @10
+BEGIN @1530 DESIGNATED 1530 GROUP @10 // THROWING DAGGER DOUBLE DAMAGE NONSENSE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING_REGEXP "DAGG1[12]\.ITM" ~override~
-    LPF ALTER_HEADER
-        INT_VAR
-            dicenumber = 1
-    END
+    LPF ALTER_HEADER INT_VAR dicenumber = 1 END
     PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1435" BEGIN
-        FOR ( current_dmg = 6; current_dmg >= 0; current_dmg -= 1 ) BEGIN
+        FOR ( current_dmg = 6; current_dmg >= 0; --current_dmg ) BEGIN
             LPF ALTER_HEADER
                 INT_VAR
                     silent = 1
@@ -340,7 +301,6 @@ COPY_EXISTING_REGEXP "DAGG1[12]\.ITM" ~override~
 BUT_ONLY
 
 ////////////////// ARMOR/GEAR TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1170 DESIGNATED 1170 GROUP @11 // SHADOW DRAGON ARMOR TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
@@ -349,7 +309,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 COPY_EXISTING ~LEAT19.ITM~ ~override~
     LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 27 END
     LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 142 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=69;op=169,p2=59;op=169,p2=53;op=142,p2=90;op=101,p2=216;op=282,p1=1,p2=2;op=267,p1=41495;op=267,p1=40968;op=267,p1=40969;op=267,p1=40979;op=267,p1=41616;op=346,p1=4~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=69;op=169,p2=59;op=169,p2=53;op=142,p2=90;op=101,p2=216;op=282,p1=1,p2=2;op=267,p1=41495;op=267,p1=40968;op=267,p1=40969;op=267,p1=40979;op=267,p1=41616;op=346,p1=4,spec=5;op=346,p1=4,spec=7~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -368,12 +328,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING_REGEXP ~RING2[7-9].ITM~ ~override~
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 177
-            match_savebonus = 2
-            savebonus = "-2"
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 177 match_savebonus = 2 savebonus = "-2" END
 BUT_ONLY
 
 COPY_EXISTING ~RING27.ITM~ ~override~
@@ -387,7 +342,7 @@ BUT_ONLY
 
 COPY_EXISTING ~RING29.ITM~ ~override~
     SAY IDENTIFIED_DESC @6760
-    LPF ADD_EQUIPPED_EFF STR_VAR effect_codes =~op=27,p1=50~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=27,p1=50~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -397,11 +352,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING ~RING39.ITM~ ~override~
     SAY IDENTIFIED_DESC @6780
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_duration = 10
-            duration = 12
-    END
+    LPF ALTER_EFFECT INT_VAR match_duration = 10 duration = 12 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -411,18 +362,8 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING ~RING44.ITM~ ~override~
     SAY IDENTIFIED_DESC @6790
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_headers = 0
-            match_opcode = 62
-            parameter1 = 127 // one per level
-    END
-    LPF DELETE_EFFECT
-        INT_VAR
-            check_headers = 0
-            match_opcode = 62
-            multi_match = 1
-    END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 62 parameter1 = 127 END
+    LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 62 multi_match = 1 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=98,p1=6,p2=3~ END
 BUT_ONLY
 
@@ -433,7 +374,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet bgee" @53
 
 COPY_EXISTING ~RING36.ITM~ ~override~
     SAY IDENTIFIED_DESC @6030
-    LPF ADD_EQUIPPED_EFF STR_VAR effect_codes =~op=292,p2=1~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=292,p2=1~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -449,7 +390,7 @@ COPY
 COPY_EXISTING ~WA2RING.ITM~ ~override~
     WRITE_LONG 0x1e 1611987392 // allows rangers to use it
     SAY IDENTIFIED_DESC @6340
-    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 4 p2 = 5 STR_VAR effects = ~op=177,res=ZSTWTHM1;op=177,res=ZSTWTHM2;op=177,res=ZSTWTHM3~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1=4 p2=5 STR_VAR effects = ~op=177,res=ZSTWTHM1;op=177,res=ZSTWTHM2;op=177,res=ZSTWTHM3~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -476,12 +417,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING "CLCK25.ITM" ~override~
     SAY IDENTIFIED_DESC @6820
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            match_opcode = 255
-            parameter1 = 30
-    END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 255 parameter1 = 30 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -494,23 +430,11 @@ COPY_EXISTING "ohreyeb.ITM" ~override~
 BUT_ONLY
 
 COPY_EXISTING "ohreyeb1.SPL" ~override~
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            header_type = 1
-            match_savingthrow = 1
-            savebonus = "-2"
-    END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 1 match_savingthrow = 1 savebonus = "-2" END
 BUT_ONLY
 
 COPY_EXISTING "ohreyeb2.SPL" ~override~
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            header_type = 1
-            match_savingthrow = 1
-            savebonus = "-1"
-    END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 1  match_savingthrow = 1 savebonus = "-1" END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -520,7 +444,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING "ohnrobe2.ITM" ~override~
     SAY IDENTIFIED_DESC @6530
-    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 5 STR_VAR effects = ~op=332,p2=1;op=332,p2=2;op=332,p2=3;op=332,p2=4;op=346,p1=2,spec=6~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1=5 STR_VAR effects=~op=332,p2=1;op=332,p2=2;op=332,p2=3;op=332,p2=4;op=346,p1=2,spec=6~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -530,12 +454,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING "ohnhelm1.ITM" ~override~
     SAY IDENTIFIED_DESC @6460
-    LPF ALTER_ITEM_EFFECT
-        INT_VAR
-            check_globals = 1
-            match_opcode = 281
-            parameter1 = 25
-    END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 281 parameter1 = 25 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -562,12 +481,8 @@ COPY_EXISTING "LEAT23.ITM" ~override~
 BUT_ONLY
 
 COPY_EXISTING "LEAT23A.SPL" ~override~
-    SET piercing = (16 << 16)
-    LPF CLONE_EFFECT
-        INT_VAR
-            match_opcode = 12
-            parameter2 = piercing
-    END
+    LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = dmg_param END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 12 parameter2 = piercing END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -576,11 +491,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING "LEAT24.ITM" ~override~
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 126
-            opcode = 176
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 126 opcode = 176 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -590,10 +501,12 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING "HELM29.ITM" ~override~
     SAY UNIDENTIFIED_DESC @6911
+    SAY IDENTIFIED_DESC @6911
     WRITE_LONG 0x18 (THIS - 2**25) // protects against critical hits now
 BUT_ONLY
 
 COPY_EXISTING "HELM30.ITM" ~override~
+    SAY UNIDENTIFIED_DESC @6911
     SAY IDENTIFIED_DESC @6910
     WRITE_LONG 0x18 (THIS - 2**25) // protects against critical hits now
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 4 p2 = 5 STR_VAR effects = ~op=177,res=ZSTWTVH1;op=177,res=ZSTWTVH2~ END
@@ -620,7 +533,7 @@ REQUIRE_PREDICATE GAME_IS "bgee eet" @50
 COPY_EXISTING "bdhelm01.itm" ~override~
     SAY IDENTIFIED_DESC @6960
     LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 21 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effect_codes = ~op=21,p1=-15;op=49,p1=-2~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=21,p1=-15;op=49,p1=-2~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -630,15 +543,8 @@ REQUIRE_PREDICATE GAME_IS "bgee eet" @50
 
 COPY_EXISTING "bdhelm09.itm" ~override~
     SAY IDENTIFIED_DESC @6970
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_headers = 0
-            match_parameter1 = 3
-            match_parameter2 = 0
-            parameter1 = 5
-    END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_parameter1 = 3 match_parameter2 = 0 parameter1 = 5 END
 BUT_ONLY
-
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1657 DESIGNATED 1657 GROUP @11 // THE VISAGE TWEAK
@@ -647,27 +553,12 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING "ohdmask.itm" ~override~
     SAY IDENTIFIED_DESC @7030
-    LPF ADD_ITEM_HEADER
-        INT_VAR
-            copy_header = 2
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            header_type = 3
-            header = 2
-            match_opcode = 146
-        STR_VAR
-            match_resource = ~SPWI506~
-            resource = ~SPCL103~
-    END
+    LPF ADD_ITEM_HEADER INT_VAR copy_header = 2 END
+    LPF ALTER_EFFECT INT_VAR header_type=3 header=2 match_opcode=146 STR_VAR match_resource=~SPWI506~ resource=~SPCL103~ END
 BUT_ONLY
 
 COPY_EXISTING "ohdmask.spl" ~override~
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 12
-            dicenumber = 8
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 8 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -677,17 +568,8 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING ~HELM21.itm~ ~override~
     SAY IDENTIFIED_DESC @7040
-    LPF CLONE_EFFECT
-        INT_VAR
-            match_opcode = 29
-            opcode = 27
-    END
-    LPF CLONE_EFFECT
-        INT_VAR
-            match_opcode = 29
-            opcode = 36
-            parameter1 = 2
-    END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 27 END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 36 parameter1 = 2 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -696,35 +578,16 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING_REGEXP ~HELM3[12]\.itm~ ~override~
-    LPF CLONE_EFFECT
-        INT_VAR
-            match_opcode = 29
-            opcode = 31
-    END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 31 END
     PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "HELM31" = 0 BEGIN
         SAY IDENTIFIED_DESC @7050
     END ELSE BEGIN
         SAY IDENTIFIED_DESC @7051
         FOR ( new_opcode = 86; new_opcode <= 89; ++new_opcode ) BEGIN
-            LPF CLONE_EFFECT
-                INT_VAR
-                    match_opcode = 29
-                    opcode = new_opcode
-                    parameter1 = 7
-            END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = new_opcode parameter1 = 7 END
         END
-        LPF CLONE_EFFECT
-            INT_VAR
-                match_opcode = 29
-                opcode = 6
-                parameter1 = 1
-        END
-        LPF ALTER_ITEM_HEADER
-            INT_VAR
-                header_type = 3
-                projectile = IDS_OF_SYMBOL(projectl SPKLARIC)
-
-        END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 6 parameter1 = 1 END
+        LPF ALTER_HEADER INT_VAR match_type = 3 projectile = IDS_OF_SYMBOL(projectl SPKLARIC) END
     END
 BUT_ONLY
 
@@ -736,20 +599,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING "DAGG16.itm" ~override~
     SAY UNIDENTIFIED_DESC @6380
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_headers = 1
-            header_type = 2
-            match_opcode = 25
-            savebonus = "-2"
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_headers = 1
-            header_type = 2
-            match_opcode = 142
-            savebonus = "-2"
-    END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 2 match_savingthrow = 4 savebonus = "-2" END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -761,32 +611,9 @@ COPY "%MOD_FOLDER%/eff/ZSTW_DG6.EFF" ~override~
 
 COPY_EXISTING ~DAGG14.ITM~ ~override~
     SAY IDENTIFIED_DESC @6000
-    LPF ADD_ITEM_EFFECT
-        INT_VAR
-            type = 1
-            timing = 1
-            opcode = 12
-            target = 2
-            dicesize  = 4
-            dicenumber = 1
-    END
-    LPF ALTER_ITEM_EFFECT
-        INT_VAR
-            check_headers = 1
-            match_opcode = 12
-            parameter2 = (1 << 16)
-    END
+    LPF GET_DMG_TYPE STR_VAR type = ~acid~ RET acid = dmg_param END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=40~ END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 2
-            def_parameter2 = 4
-            def_timing = 1
-        STR_VAR
-            def_resource = ~ZSTW_DG6~
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~t=1,op=177,p1=2;t=1,op=177,p1=123;t=1,op=177,p1=172;t=1,op=177,p1=138;t=1,op=177,p1=167;t=1,op=177,p1=135;t=1,op=177,p1=124~
-    END
+    LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 STR_VAR res=~ZSTW_DG6~ effects=~op=12,dsize=4,dnum=1,p2=%acid%;op=177,p1=2;op=177,p1=123;op=177,p1=172;op=177,p1=138;op=177,p1=167;op=177,p1=135;op=177,p1=124~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -804,11 +631,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 COPY_EXISTING "NEBDAG.ITM" ~override~
     SAY IDENTIFIED_DESC @6230
     WRITE_ASCII 0x10 ~~ #8
-    LPF ALTER_HEADER
-        INT_VAR
-            type = 1
-            charges = 0
-    END
+    LPF ALTER_HEADER INT_VAR match_type = 1 charges = 0 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -825,13 +648,9 @@ REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 
 COPY_EXISTING "dagg03.ITM" ~override~
     SAY IDENTIFIED_DESC @6590
-    LPF ADD_EQUIPPED_EFF STR_VAR effect_codes = ~op=166,p1=10~ END
-    SET magic_dmg = (64 << 16)
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~t=1,tgt=2,tmg=1,op=12,dsize=4,dnum=1,pro1=49,p2=%magic_dmg%~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=166,p1=10~ END
+    LPF GET_DMG_TYPE STR_VAR type = ~magic~ RET magic_dmg = dmg_param END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,dsize=4,dnum=1,pro1=49,p2=%magic_dmg%~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -843,13 +662,7 @@ COPY ~ZSTweaks/eff/ZSTWWED6.EFF~ ~override~
 
 COPY_EXISTING "dagg09.ITM" ~override~
     SAY IDENTIFIED_DESC @6570
-    LPF ALTER_ITEM_EFFECT
-        INT_VAR
-            match_opcode = 177
-            check_headers = 1
-        STR_VAR
-            resource = ~ZSTWWED6~
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 177 check_globals = 0 STR_VAR resource = ~ZSTWWED6~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -866,11 +679,7 @@ REQUIRE_PREDICATE GAME_IS "bgee eet" @53
 
 COPY_EXISTING ~bddagg01.itm~ ~override~
     SAY IDENTIFIED_DESC @6930
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 12
-            parameter1 = 2
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 2 END
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=27;op=28;op=29;op=30~ END
 BUT_ONLY
 
@@ -888,62 +697,24 @@ COPY_EXISTING ~bddagg05.itm~ ~override~
     SAY IDENTIFIED_DESC @6941
     WRITE_LONG 0x60 3 // ench
     PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ BEGIN
-        LPF ALTER_ITEM_HEADER
-            INT_VAR
-                header_type = 1
-                damage_bonus = 3
-                thac0_bonus = 4
-        END
+        LPF ALTER_HEADER INT_VAR match_type = 1 damage = 3 to_hit = 4  END
+        LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWDP12~ resource = ~ZSTWDP14~ END
     END ELSE BEGIN
-        LPF ALTER_ITEM_HEADER
-            INT_VAR
-                header_type = 1
-                damage_bonus = 3
-                thac0_bonus = 3
-        END
+        LPF ALTER_HEADER INT_VAR match_type = 1 damage = 3 to_hit = 3  END
     END
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 12
-            parameter1 = 0
-            dicenumber = 1
-            dicesize = 3
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 146
-            probability1 = 19
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 0 dicenumber = 1 dicesize = 3 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 146 probability1 = 19 END
     PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN
-        LPF ALTER_EFFECT
-            STR_VAR
-                match_resource = ~ZSTWD2~
-                resource = ~ZSTWD3~
-        END
+        LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWD2~ resource = ~ZSTWD3~ END
     END
 BUT_ONLY
 
 COPY_EXISTING ~bddagg05.spl~ ~override~
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 12
-            parameter1 = 0
-            dicenumber = 1
-            dicesize = 3
-    END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 2
-            def_duration = 18
-            def_type = 1
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~op=0,p1=-2,ip=3~
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 0 dicenumber = 1 dicesize = 3 END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=0,dur=18,p1=-2,ip=3~ END
 BUT_ONLY
 
 ////////////////// TWO-HANDED WEAPON TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1200 DESIGNATED 1200 GROUP @13 // IXIL'S SPIKE TWEAK REMOVE HASTE IMMUNITY
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
@@ -960,23 +731,8 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING ~SW2H14.ITM~ ~override~
     SAY IDENTIFIED_DESC @6800
-    LPF ALTER_HEADER
-        INT_VAR
-            match_type = 1
-            match_speed = 8
-            speed = 7
-    END
-    LPF a7_auto_apply_spl_effect // 14782 confused str
-        INT_VAR
-            def_target = 2
-            def_type = 1
-            def_savetype = 1 // spell
-            def_resist_dispel = 3
-            def_probability1 = 24
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~op=128,dur=6;op=139,p1=14782,tmg=3~
-    END
+    LPF ALTER_HEADER INT_VAR match_type = 1 match_speed = 8 speed = 7 END
+    LPF ADD_ON_HIT_EFF INT_VAR stype=1 rd=3 pro1=24 STR_VAR effects = ~op=128,dur=6;op=139,p1=14782,tmg=3~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -984,24 +740,22 @@ BEGIN @1202 DESIGNATED 1202 GROUP @13 // WARBLADE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-COPY_EXISTING ~SW2H14.ITM~ ~override~
+COPY
+    ~ZSTweaks/eff/ZSTWWARA.EFF~ ~override~
+    ~ZSTweaks/eff/ZSTWWARB.EFF~ ~override~
+    ~ZSTweaks/eff/ZSTWWARC.EFF~ ~override~
+    ~ZSTweaks/eff/ZSTWWARD.EFF~ ~override~
+    ~ZSTweaks/eff/ZSTWWARE.EFF~ ~override~
+
+
+COPY_EXISTING ~SW2H09.ITM~ ~override~
     SAY NAME2 @6860
     SAY IDENTIFIED_DESC @6861
-    LPF ALTER_HEADER
-        INT_VAR
-            match_damage = 4
-            damage = 2
-    END
-    SET cold = (2 << 16)
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 2
-            def_type = 1
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~op=12,dsize=4,dnum=1,p2=%cold%~
-    END
-    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 1073741824 p2 = 9 STR_VAR effects = ~op=177,res=ZSTWWARA;op=177,res=ZSTWWARB;op=177,res=ZSTWWARC;op=177,res=ZSTWWARD;op=177,res=ZSTWWARE~ END
+    LPF ALTER_HEADER INT_VAR match_damage = 4 damage = 2 END
+    LPF GET_DMG_TYPE STR_VAR type = ~cold~ RET cold = dmg_param END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,tmg=0,dsize=4,dnum=1,p2=%cold%~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 1073741824 p2 = 9
+    STR_VAR effects = ~op=177,res=ZSTWWARA;op=177,res=ZSTWWARB;op=177,res=ZSTWWARC;op=177,res=ZSTWWARD;op=177,res=ZSTWWARE~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1038,9 +792,7 @@ COPY_EXISTING ~SW2H12.ITM~ ~override~
     END ELSE BEGIN
         SAY IDENTIFIED_DESC @6172
     END
-    LPF itm_first_offset_effect
-        RET offset_eff = offset
-    END // opcode eff
+    LPF itm_first_offset_effect RET offset_eff = offset END // opcode eff
     WRITE_LONG (offset_eff + 0x4) 3 // MASK_EVIL
 BUT_ONLY
 
@@ -1049,17 +801,15 @@ BEGIN @1322 DESIGNATED 1322 GROUP @13 // FLAME OF THE NORTH TROLL BONUS
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+COPY ~ZSTweaks/eff/ZSTWTRL0.EFF~ ~override~
+
 COPY_EXISTING ~SW2H12.ITM~ ~override~
    PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1318") BEGIN
         SAY IDENTIFIED_DESC @6171
     END ELSE BEGIN
         SAY IDENTIFIED_DESC @6172
     END
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~t=1,tgt=2,tmg=1,op=177,p1=129,p2=4,res=ZSTWTRL0~
-    END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,tmg=1,p1=129,p2=4,res=ZSTWTRL0~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1069,9 +819,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING ~STAF11.ITM~ ~override~
     SAY IDENTIFIED_DESC @6400
-    LPF itm_first_offset_effect
-        RET offset_eff = offset
-    END
+    LPF itm_first_offset_effect RET offset_eff = offset END
 
     SET eff_number = SHORT_AT((LONG_AT 0x64) + 0x1e)
     FOR ( eff = 0; eff < eff_number; ++eff ) BEGIN
@@ -1101,18 +849,8 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING "SPER10.ITM" ~override~
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_type = 1
-            def_target = 2
-            def_resist_dispel = 2
-            def_duration = 6
-            def_savebonus = "-2"
-            def_savetype = 4
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~op=25,p1=2,p2=2;op=142,p2=6~
-    END
+    SAY IDENTIFIED_DESC @7130
+    LPF ADD_ON_HIT_EFF INT_VAR rd=2 dur=6 sbonus="-2" stype=4 STR_VAR effects = ~op=25,p1=2,p2=2;op=142,p2=6~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1124,16 +862,8 @@ COPY ~ZSTweaks/eff/ZSTWWAVE.EFF~ ~override~
 
 COPY_EXISTING "HALB09.ITM" ~override~
     SAY IDENTIFIED_DESC @6420
-    SET cold = (2 << 16)
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_type = 1
-            def_target = 2
-            def_timing = 9
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~op=12,p1=3,p2=%cold%;op=177,p1=142,p2=4,res=ZSTWWAVE~
-    END
+    LPF GET_DMG_TYPE STR_VAR type = ~cold~ RET cold = dmg_param END
+    LPF ADD_ON_HIT_EFF INT_VAR tmg=1 STR_VAR effects = ~op=12,p1=3,p2=%cold%;op=177,p1=142,p2=4,res=ZSTWWAVE~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1143,15 +873,10 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING "HALB06.ITM" ~override~
     SAY IDENTIFIED_DESC @6550
-    LPF ALTER_ITEM_EFFECT
-        INT_VAR
-            check_headers = 1
-            header_type = 3
-            savebonus = "-2"
-    END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 3 savebonus = "-2" END
     SET blinded_strref1 = 14674
     SET blinded_strref2 = 1474
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=101,p2=74;op=169,p2=8;op=267,p1=%blinded_strref1%;op=267,p1=%blinded_strref2%~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=101,p2=74;op=169,p2=8;op=267,p1=%blinded_strref1%;op=267,p1=%blinded_strref2%~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1187,11 +912,7 @@ COPY_EXISTING "SW2H08.ITM" ~override~
         SAY IDENTIFIED_DESC @6850
     END
     PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1430") BEGIN
-        LPF ALTER_HEADER
-            INT_VAR
-                match_dicesize = 10
-                dicesize = 12
-        END
+        LPF ALTER_HEADER INT_VAR match_dicesize = 10 dicesize = 12 END
     END ELSE BEGIN
         LPF ALTER_HEADER
             INT_VAR
@@ -1229,19 +950,16 @@ BEGIN @1594 DESIGNATED 1594 GROUP @13 // STAFF OF THE CLERIC +2 TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee" @50
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-COPY
-    ~ZSTweaks/eff/ZSTWSF01.eff~ ~override~
-    ~ZSTweaks/eff/ZSTWSF02.eff~ ~override~
-    ~ZSTweaks/eff/ZSTWSF03.eff~ ~override~
+COPY ~ZSTweaks/eff/ZSTWSF01.eff~ ~override~
+     ~ZSTweaks/eff/ZSTWSF02.eff~ ~override~
+     ~ZSTweaks/eff/ZSTWSF03.eff~ ~override~
 
 COPY_EXISTING ~STAF19.ITM~ ~override~
     SAY IDENTIFIED_DESC @7060
-    LPF ADD_ITEM_HEADER INT_VAR target = 5 charges = 2 depletion = 3 flags = 2**9 + 2**11
-        STR_VAR
-            icon = ~SPPR514B~
-    END
-    LPF a7_auto_apply_spl_effect STR_VAR function_name = "ADD_ITEM_EFFECT" effect_codes = ~op=146,tgt=1,t=3,p1=1,tmg=1,res=SPPR514~ END
-    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 204 p2 = 5 STR_VAR effects = ~op=0,p1=1,p2=0;op=177,res=ZSTWSF01;op=177,res=ZSTWSF02;op=177,res=ZSTWSF03~ END
+    LPF ADD_ITEM_HEADER INT_VAR target = 5 charges = 2 depletion = 3 flags = 2**9 + 2**11 STR_VAR icon = ~SPPR514B~ END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=146,tgt=1,t=3,p1=1,tmg=1,res=SPPR514~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 204 p2 = 5
+    STR_VAR effects = ~op=0,p1=1,p2=0;op=177,res=ZSTWSF01;op=177,res=ZSTWSF02;op=177,res=ZSTWSF03~ END
 BUT_ONLY
 
 ////////////////// ONE-HANDED SWORD TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1271,14 +989,9 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING "SW1H32.itm" ~override~
     SAY IDENTIFIED_DESC @6870
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_headers = 0
-            match_opcode = 98
-            parameter1 = 18
-    END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 98 parameter1 = 18 END
     LPF ALTER_HEADER INT_VAR match_type = 3 charges = 3 END
-    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 146 p2=4 STR_VAR effects = ~op=178,spc=4;op=219~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 146 p2=4 STR_VAR effects = ~op=178,spec=4;op=219~ END
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 15 STR_VAR effects = ~op=27;op=28;op=29;op=30~ END
 BUT_ONLY
 
@@ -1294,12 +1007,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 COPY_EXISTING ~SW1H54.ITM~ ~override~
     SAY IDENTIFIED_DESC @6060
     WRITE_LONG 0x60 5
-    LPF ALTER_HEADER
-        INT_VAR
-            damage = 3
-            speed = 2
-            to_hit = 3
-    END
+    LPF ALTER_HEADER INT_VAR damage = 3 speed = 2 to_hit = 3 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1323,19 +1031,13 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING ~SW1H64.ITM~ ~override~
     SAY IDENTIFIED_DESC @6090
-
-    LPF itm_first_offset_effect
-        RET offset_eff = offset
-    END
+    LPF itm_first_offset_effect RET offset_eff = offset END
     WRITE_LONG (offset_eff + 0x4) 3 // MASK_EVIL
 BUT_ONLY
 
  COPY_EXISTING ~SW1H65.ITM~ ~override~
    SAY IDENTIFIED_DESC @6091
-
-    LPF itm_first_offset_effect
-        RET offset_eff = offset
-    END
+    LPF itm_first_offset_effect RET offset_eff = offset END
     WRITE_LONG (offset_eff + 0x4) 3 // MASK_EVIL
 BUT_ONLY
 
@@ -1345,13 +1047,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING ~SW1H65.ITM~ ~override~
-    LPF ALTER_EFFECT
-        INT_VAR
-            header_type = 3
-            header = 2
-            match_opcode = 146
-            parameter1 = 30
-    END
+    LPF ALTER_EFFECT INT_VAR header_type = 3 header = 2 match_opcode = 146 parameter1 = 30 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1361,12 +1057,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING ~SW1H66.ITM~ ~override~
     SAY IDENTIFIED_DESC @6110
-    LPF ALTER_ITEM_EFFECT
-        INT_VAR
-            check_globals = 1
-            match_opcode = 0
-            parameter1 = 2
-    END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 2 END
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 5 STR_VAR effects = ~op=0,p1=1,p2=14;op=27;op=28;op=29;op=30;op=31;op=86;op=87;op=88;op=89;op=166;op=173~ END
 BUT_ONLY
 
@@ -1377,22 +1068,19 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING ~SW1H67.ITM~ ~override~
     SAY IDENTIFIED_DESC @6120
-    LPF ALTER_ITEM_EFFECT
+    LPF ALTER_EFFECT
         INT_VAR
-            check_headers = 1
+            check_globals = 0
             match_opcode = 12
             dicesize = 4
             dicenumber = 5
             parameter1 = 1
             savebonus = "-2"
+            probability1 = 14
     END
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 40 STR_VAR effects = ~op=29~ END
-    SET electricity = (4 << 16)
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~t=1,op=12,tgt=2,tmg=9,p2=%electricity%,dsize=3,dnum=1~
-    END
+    LPF GET_DMG_TYPE STR_VAR type = ~electricity~ RET electricity = dmg_param END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,tmg=9,p2=%electricity%,dsize=3,dnum=1~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1416,9 +1104,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING ~OHDHSWD.ITM~ ~override~
     SAY IDENTIFIED_DESC @6190
-    LPF itm_first_offset_effect
-        RET offset_eff = offset
-    END // opcode eff
+    LPF itm_first_offset_effect RET offset_eff = offset END // opcode eff
     WRITE_LONG (offset_eff + 0x4) 3 // MASK_EVIL
 BUT_ONLY
 
@@ -1450,11 +1136,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING "ohrsw1h1.itm" ~override~
     SAY IDENTIFIED_DESC @6541
-    LPF ALTER_HEADER
-        INT_VAR
-            match_type = 1
-            to_hit = 4
-    END
+    LPF ALTER_HEADER INT_VAR match_type = 1 to_hit = 4 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=325,p1=1;op=1,p1=6~ END
 BUT_ONLY
 
@@ -1476,17 +1158,7 @@ COPY_EXISTING "ohrsw1h1.itm" ~override~
         STR_VAR
             icon = ~SPWI208C~
     END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_type = 3
-            def_parameter1 = 10
-            def_parameter2 = 2
-            def_timing = 9
-            def_target = 1
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~op=146,res=SPWI203;op=146,res=SPWI202~
-    END
+    LPF ADD_ON_HIT_EFF INT_VAR t=3 p1=10 p2=2 tmg=9 tgt=1 STR_VAR effects = ~op=146,res=SPWI203;op=146,res=SPWI202~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1511,16 +1183,10 @@ COPY_EXISTING "bdsw1h21.itm" ~override~
 BUT_ONLY
 
 COPY_EXISTING "bdsw1h21.spl" ~override~
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_parameter1 = 1
-            dicesize = 2
-            dicenumber = 1
-    END
+    LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 dicesize = 2 dicenumber = 1 END
 BUT_ONLY
 
-////////////////// MACES/CLUBS \\\\\\\\\\\\\\\\\\\\\\\\\\
-
+////////////////// AXES AND BLUNT WEAPONS \\\\\\\\\\\\\\\\\\\\\\\\\\
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1310 DESIGNATED 1310 GROUP @15 // FLAIL EASTHAVEN TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
@@ -1529,12 +1195,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 COPY_EXISTING ~WAFLAIL.ITM~ ~override~
     SAY IDENTIFIED_DESC @6130
     FOR ( opcode = 86; opcode <= 88; ++opcode ) BEGIN
-        LPF ALTER_ITEM_EFFECT
-            INT_VAR
-                check_globals = 1
-                match_opcode = opcode
-                parameter1 = 10
-        END
+        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = opcode parameter1 = 10 END
     END
 BUT_ONLY
 
@@ -1547,11 +1208,7 @@ COPY ~ZSTweaks/eff/ZSTWBL01.EFF~ ~override~
 
 COPY_EXISTING ~BLUN11.ITM~ ~override~
     SAY IDENTIFIED_DESC @6150
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~t=1,op=177,tgt=2,p1=1,p2=3,tmg=1,rd=2,res=ZSTWBL01~
-    END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,p1=1,p2=3,tmg=1,rd=2,res=ZSTWBL01~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1563,13 +1220,7 @@ COPY ~ZSTweaks/eff/ZSTWBL02.EFF~ ~override~
 
 COPY_EXISTING ~BLUN18.ITM~ ~override~
     SAY IDENTIFIED_DESC @6160
-    LPF ALTER_ITEM_EFFECT
-        INT_VAR
-            check_headers = 1
-            match_opcode = 177
-        STR_VAR
-            resource = ~ZSTWBL02~
-    END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR resource = ~ZSTWBL02~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1581,11 +1232,7 @@ COPY ~ZSTweaks/spl/other/ZSTWPAIN.SPL~ ~override~
 
 COPY_EXISTING ~BLUN24.ITM~ ~override~
     SAY IDENTIFIED_DESC @6182
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~t=1,tgt=2,op=146,res=ZSTWPAIN,p2=1,tmg=1,rd=2~
-    END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=146,res=ZSTWPAIN,p2=1,tmg=1,rd=2~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1624,6 +1271,24 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_boneclub.tph~
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1323 DESIGNATED 1323 GROUP @15 // AZUREDGE TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~AX1H10.ITM~ ~override~
+    SAY IDENTIFIED_DESC @7080
+    FOR ( the_type = 1; the_type <= 2; ++the_type ) BEGIN
+        LPF ALTER_HEADER INT_VAR type = the_type to_hit = 3 damage = 3
+        END
+    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=344,p1=4,p2=3,spec=4~ END
+BUT_ONLY
+
+COPY_EXISTING ~AX1H10A.EFF~ ~override~
+    WRITE_LONG 0x1c 6
+BUT_ONLY
+
 ////////////////// RANGED WEAPON TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1010 DESIGNATED 1010 GROUP @16 // ASP NEST TWEAK
@@ -1632,20 +1297,8 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING "DART05.itm" ~override~
     SAY IDENTIFIED_DESC @6390
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_headers = 1
-            header_type = 2
-            match_opcode = 25
-            savebonus = "-4"
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_headers = 1
-            header_type = 2
-            match_opcode = 142
-            savebonus = "-4"
-    END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 2 match_opcode = 25 savebonus = "-4" END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 2 match_opcode = 142 savebonus = "-4" END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1676,17 +1329,8 @@ COPY_EXISTING ~BOW08.ITM~ ~override~
     PATCH_IF GAME_IS "bg2ee" BEGIN
         SAY IDENTIFIED_DESC @7020
     END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_timing = 1
-            def_target = 2
-            def_parameter2 = 4
-            def_type = 4
-        STR_VAR
-            def_resource = ~ZSTWMI01~
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~op=177,p1=113;op=177,p1=143;op=177,p1=165;op=177,p1=110;op=177,p1=161;op=177,p1=111~
-    END
+    LPF ADD_ON_HIT_EFF INT_VAR tmg=1 p2=4 t=4 STR_VAR res=~ZSTWMI01~
+    effects = ~op=177,p1=113;op=177,p1=143;op=177,p1=165;op=177,p1=110;op=177,p1=161;op=177,p1=111~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1698,17 +1342,9 @@ COPY_EXISTING ~BOW13.ITM~ ~override~
     SAY IDENTIFIED_DESC @7070
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=166,p1=5;op=142,p2=63~ END
     LPF ALTER_EFFECT INT_VAR match_opcode = 31 match_paremeter1 = 20 parameter1 = 33 END
-    SET magic = (64 << 16)
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_type = 4
-            def_target = 2
-            def_savetype = 1
-            def_savebonus = "-2"
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~op=12,p1=1,tmg=1,p2=%magic%,dsize=4,dnum=1;op=60,p1=10,dur=24~
-    END
+    LPF GET_DMG_TYPE STR_VAR type = ~magic~ RET magic = dmg_param END
+    LPF ADD_ON_HIT_EFF INT_VAR sbonus="-2" stype=1 t=4
+    STR_VAR effects = ~op=12,p1=1,tmg=1,p2=%magic%,dsize=4,dnum=1;op=60,p1=10,dur=24~ END
 BUT_ONLY
 
 ////////////////// NPC GEAR TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1726,12 +1362,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING "NPSW02.ITM" ~override~
     SAY IDENTIFIED_DESC @6270
-    LPF ALTER_HEADER
-        INT_VAR
-            type = 1
-            match_speed = 3
-            speed = 1
-    END
+    LPF ALTER_HEADER INT_VAR match_type = 1 match_speed = 3 speed = 1 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=2,p2=1;op=233,p1=2,p2=94~ END
 BUT_ONLY
 
@@ -1749,12 +1380,8 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING "NPSHLD.ITM" ~override~
     SAY IDENTIFIED_DESC @6250
-    LPF ALTER_ITEM_EFFECT
-        INT_VAR
-            check_globals = 1
-            match_opcode = 0
-            parameter1 = 3
-    END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 3 END
+    LPF change_stat_requirements INT_VAR str=SHORT_AT(0x26) END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1765,6 +1392,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 COPY_EXISTING "NPSW03.ITM" ~override~
     SAY IDENTIFIED_DESC @6230
     WRITE_LONG 0x60 3
+    LPF change_stat_requirements END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1789,19 +1417,11 @@ COPY_EXISTING_REGEXP "ohdsw2h[a-d].ITM" ~override~
 BUT_ONLY
 
 COPY_EXISTING_REGEXP "ohdsw2h[bc].ITM" ~override~
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 12
-            parameter1 = 1
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 1 END
 BUT_ONLY
 
 COPY_EXISTING "ohdsw2hd.ITM" ~override~
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 12
-            parameter1 = 2
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 2 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1811,39 +1431,74 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @52
 
 ACTION_IF FILE_EXISTS_IN_GAME ~SPIN829.SPL~ BEGIN
     COPY_EXISTING ~SPIN829.SPL~ ~override~
-        LPF ALTER_EFFECT
-            INT_VAR
-                match_opcode = 122
-                match_parameter1 = 5
-                parameter1 = 10
-        END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 122 match_parameter1 = 5 parameter1 = 10 END
     BUT_ONLY
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~SPIN116.SPL~ BEGIN
     COPY_EXISTING ~SPIN116.SPL~ ~override~
-        LPF ALTER_EFFECT
-            INT_VAR
-                match_opcode = 122
-                match_parameter1 = 5
-                parameter1 = 15
-        END
+        LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 122 match_parameter1 = 5 parameter1 = 15 END
     BUT_ONLY
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~AROW14.ITM~ BEGIN
     COPY_EXISTING ~AROW14.ITM~ ~override~
-        LPF ALTER_EFFECT
-            INT_VAR
-                match_opcode = 25
-                match_parameter1 = 3
-                parameter1 = 2
-        END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 25 match_parameter1 = 3 parameter1 = 2 END
     BUT_ONLY
 END
 
-////////////////// MISC ITEMS TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1642 DESIGNATED 1642 GROUP @17 // NALIA'S RING TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
+COPY_EXISTING ~NPRING01.ITM~ ~override~
+    SAY IDENTIFIED_DESC @7090
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 20 STR_VAR effects = ~op=90;op=91;op=20,p1=1,p2=31~ END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1643 DESIGNATED 1643 GROUP @17 // CORTHALA'S BLADE TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~NPSW04.ITM~ ~override~
+    SAY IDENTIFIED_DESC @7100
+    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1120" BEGIN
+        LPF ALTER_EFFECT INT_VAR match_opcode = 263 parameter1 = 1 END
+    END ELSE BEGIN
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=178,p1=202,p2=5,spec=4;op=178,p1=19,p2=5,spec=4;op=263,p1=1~ END
+    END
+    LPF change_stat_requirements END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1644 DESIGNATED 1644 GROUP @17 // NPC GEAR STAT RESTRICTION TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~NPSW04.ITM~ ~override~
+              ~NPCHAN.ITM~ ~override~
+              ~NPSTAF.ITM~ ~override~
+              ~NPSW03.ITM~ ~override~
+
+    PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "NPSW04" = 0 AND !(MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1643") BEGIN
+        SAY IDENTIFIED_DESC @7110
+    END
+    PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "NPCHAN" = 0 BEGIN
+        SAY IDENTIFIED_DESC @7120
+    END
+    PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "NPSW03" = 0 AND !(MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1520") BEGIN
+        SAY IDENTIFIED_DESC @6241
+    END
+    LPF change_stat_requirements END
+BUT_ONLY
+
+COPY_EXISTING ~NPSHLD.ITM~ ~override~
+    LPF change_stat_requirements INT_VAR str = SHORT_AT(0x26) END
+BUT_ONLY
+
+////////////////// MISC ITEMS TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1190 DESIGNATED 1190 GROUP @18 // ROD OF MIGHT TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
@@ -1858,9 +1513,9 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING "ohntank.ITM" ~override~
     SAY UNIDENTIFIED_DESC @6450
-    LPF ALTER_ITEM_EFFECT
+    LPF ALTER_EFFECT
         INT_VAR
-            check_headers = 1
+            check_globals = 0
             header_type = 3
             match_opcode = 17
             dicesize = 0
@@ -1877,25 +1532,16 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 COPY_EXISTING_REGEXP ~.*\.itm~ ~override~
     READ_SHORT 0x1c category_itm
     PATCH_IF category_itm = 9 OR category_itm = 13 BEGIN// if it's a potion or food item
-        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "GBERRY" = 0 BEGIN
-            LPF a7_auto_apply_spl_effect
-            STR_VAR
-                function_name = ~ADD_ITEM_EFFECT~
-                effect_codes  = ~op=321,tgt=1,res=%SOURCE_RES%,ip=0~ // prevent stacking
-            END
+        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "GBERRY" != 0 BEGIN
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
         END
-        PATCH_IF (!MOD_IS_INSTALLED "ZSTweaks.tp2" "240") AND "%SOURCE_RES%" STRING_COMPARE_CASE "GBERRY" = 0 BEGIN
-            LPF a7_auto_apply_spl_effect
-            STR_VAR
-                function_name = ~ADD_ITEM_EFFECT~
-                effect_codes  = ~op=321,tgt=1,res=%SOURCE_RES%,ip=0~ // prevent stacking
-            END
+        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "GBERRY" = 0 AND (!MOD_IS_INSTALLED "ZSTweaks.tp2" "240") BEGIN
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
         END
     END
 BUT_ONLY
 
 ////////////////// WIZARD SPELL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
  BEGIN @140 DESIGNATED 140 GROUP @19
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
@@ -1914,12 +1560,7 @@ COPY_EXISTING ~SPWI209.SPL~ ~override~
     END ELSE BEGIN
         SAY UNIDENTIFIED_DESC @6730
     END
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            match_duration = 18
-            duration = 60
-    END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_duration = 18 duration = 60 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1961,18 +1602,8 @@ COPY_EXISTING ~SPWI518.SPL~ ~override~
     SET dur = 126
     SET new_header = (SHORT_AT 0x68) + 1
     FOR ( level = 19; level <= 20; ++level ) BEGIN
-        LPF ADD_SPELL_HEADER
-            INT_VAR
-                copy_header = new_header - 1
-                zs_min_level_for_copy = level
-        END
-        LPF ALTER_EFFECT
-            INT_VAR
-                header_type = 1
-                header = new_header - 1
-                match_duration = dur
-                duration = dur + 6
-        END
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = new_header - 1 zs_min_level_for_copy = level END
+        LPF ALTER_EFFECT INT_VAR header_type = 1 header = new_header - 1 match_duration = dur duration = dur + 6 END
         ++new_header
         dur += 6
     END
@@ -1990,13 +1621,10 @@ COPY_EXISTING ~SPWI913.SPL~ ~override~
             def_power = 9
         STR_VAR
             function_name = ~ADD_SPELL_EFFECT~
-            effect_codes  = ~op=12,p1=3,tmg=1,dr=1,dnum=3,dsize=6,p2=0;op=80,tmg=0,rd=2,dur=12~
+            effect_codes  = ~op=12,p1=3,tmg=1,rd=1,dnum=3,dsize=6,p2=0;op=80,tmg=0,rd=2,dur=12~
     END
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 12
-            parameter2 = (64 << 16)
-    END
+    LPF GET_DMG_TYPE STR_VAR type = ~magic~ RET magic_dmg = dmg_param END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter2 = magic_dmg END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2029,11 +1657,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING ~SPWI404.SPL~ ~override~
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 12
-            dicenumber = 3
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 3 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2048,11 +1672,8 @@ COPY_EXISTING ~SPWI221.SPL~ ~override~
     WRITE_BYTE 0x25 7
     WRITE_SHORT 0x1e (2**10) // this wipes out the whole bitfield and sets it to illusion
     READ_SHORT 0x68 num_abilities
-    FOR (i = 1; i <= num_abilities; i += 1) BEGIN
-        LPF ALTER_SPELL_HEADER
-            INT_VAR
-                projectile = 50 // necromancy projectile
-        END
+    FOR ( i = 1; i <= num_abilities; ++i ) BEGIN
+        LPF ALTER_SPELL_HEADER INT_VAR projectile = 50 END
     END
 BUT_ONLY
 
@@ -2063,23 +1684,9 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPWI409.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5240
-    LPF DELETE_EFFECT
-        INT_VAR
-            match_opcode = 78
-            match_parameter2 = 9
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 78
-            match_parameter2 = 4
-            parameter1 = 4
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 78
-            match_parameter2 = 5
-            parameter1 = 4
-    END
+    LPF DELETE_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 9 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 4 parameter1 = 4 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 5 parameter1 = 4 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2089,13 +1696,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPWI614.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5230
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            match_opcode = 12
-            dicesize = 4
-            dicenumber = 4
-            parameter1 = 0
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 4 dicenumber = 4 parameter1 = 0 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2105,11 +1706,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPWI914.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5250
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            match_opcode = 216
-            parameter1 = 6
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 216 match_parameter1 = 2 parameter1 = 6 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2118,12 +1715,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING ~SPWI813.SPL~ ~override~
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            match_resist_dispel = 1
-            resist_dispel = 3
-    END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_resist_dispel = 1 resist_dispel = 3 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2170,18 +1762,8 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING ~SPWI603.SPL~ ~override~
-    LPF ADD_SPELL_HEADER
-        INT_VAR
-            copy_header = 8
-            zs_min_level_for_copy = 21
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            header = 9
-            multi_match = 1
-            match_opcode = 54
-            parameter1 = 0
-    END
+    LPF ADD_SPELL_HEADER INT_VAR copy_header = 8 zs_min_level_for_copy = 21 END
+    LPF ALTER_EFFECT INT_VAR header = 9 multi_match = 1 match_opcode = 54 parameter1 = 0 END
 BUT_ONLY
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2204,7 +1786,7 @@ COPY_EXISTING ~SPWI603.SPL~ ~override~
     END
     dur = 78
     READ_SHORT 0x68 num_abilities
-    FOR (i = 2; i <= num_abilities; i += 1) BEGIN
+    FOR ( i = 2; i <= num_abilities; ++i ) BEGIN
         LPF ADD_SPELL_EFFECT
             INT_VAR
                 opcode = 1
@@ -2234,23 +1816,14 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 
 COPY_EXISTING ~SPWI604.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @6950
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_savingthrow = 1
-            savingthrow = 16
-    END
+    LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 16 END
 BUT_ONLY
 
 COPY_EXISTING ~SPIN984.SPL~ ~override~ // beholder version
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_savingthrow = 1
-            savingthrow = 16
-    END
+    LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 16 END
 BUT_ONLY
 
 ////////////////// CLERIC/DRUID SPELL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @100 DESIGNATED 100 GROUP @20 // GLYPH OF WARDING HALF ON SAVE
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
@@ -2259,24 +1832,11 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 COPY_EXISTING ~SPPR304.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5000
     SAY DESC @5000
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_savingthrow = 2**0 + 2**24
-            special = 256
-    END
+    LPF ALTER_EFFECT INT_VAR match_savingthrow = 2**0 + 2**24 special = 256 END
     SET new_header = (SHORT_AT 0x68) + 1
     FOR ( level = 19; level <= 20; ++level ) BEGIN
-        LPF ADD_SPELL_HEADER
-            INT_VAR
-                copy_header = new_header - 1
-                zs_min_level_for_copy = level
-        END
-        LPF ALTER_SPELL_EFFECT
-            INT_VAR
-                header = new_header
-                match_opcode = 12
-                dicenumber = level
-        END
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = new_header - 1 zs_min_level_for_copy = level END
+        LPF ALTER_EFFECT INT_VAR header = new_header - 1 match_opcode = 12 dicenumber = level END
         ++new_header
     END
 BUT_ONLY
@@ -2298,22 +1858,11 @@ BUT_ONLY
 
 COPY_EXISTING ~FBLADE.ITM~ ~override~
     WRITE_LONG 0x18 (THIS + 2**6) // magical, destructive
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=344,p1=4,p2=3,spc=2~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=344,p1=4,p2=3,spec=2~ END
     PATCH_IF NOT GAME_IS "iwdee" BEGIN
-        LPF a7_auto_apply_spl_effect
-            STR_VAR
-                function_name = ~ADD_ITEM_EFFECT~
-                effect_codes  = ~t=1,tgt=2,tmg=1,rd=2,op=177,res=ZSTWFL04,p1=3,p2=4~
-        END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,rd=2,res=ZSTWFL04,p1=3,p2=4~ END
     END ELSE BEGIN
-        LPF ALTER_EFFECT
-            INT_VAR
-                check_globals = 0
-                match_opcode = 177
-            STR_VAR
-                match_resource = ~FBLADE~
-                resource = ~ZSTWFL04~
-        END
+        LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=177 STR_VAR match_resource=~FBLADE~ resource=~ZSTWFL04~ END
     END
 BUT_ONLY
 
@@ -2329,21 +1878,12 @@ COPY_EXISTING ~SPPR206.SPL~ ~override~
         SAY UNIDENTIFIED_DESC @6620
     END
     FOR ( level = 3; level <= 19; level += 2 ) BEGIN
-        LPF ADD_SPELL_HEADER
-            INT_VAR
-                copy_header = 1
-                zs_min_level_for_copy = level
-                insert_point = level - 1
-        END
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = level insert_point = level - 1 END
     END
     READ_SHORT 0x68 num_abilities
     SET dur = 24
     FOR ( level = 0; level < 20; ++level ) BEGIN
-        LPF ALTER_EFFECT
-            INT_VAR
-                header = level
-                duration = dur
-        END
+        LPF ALTER_EFFECT INT_VAR header = level duration = dur END
         dur += 6
     END
 BUT_ONLY
@@ -2357,22 +1897,13 @@ COPY_EXISTING ~SPPR101.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5010
     SAY DESC @5010
     SET headers = 0
-    FOR (i = 3; i <= 19; i += 2) BEGIN
-        LPF ADD_SPELL_HEADER
-            INT_VAR
-                copy_header = 1
-                zs_min_level_for_copy = i
-        END
-        headers += 1
+    FOR ( i = 3; i <= 19; i += 2 ) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = i END
+        ++headers
     END
     SET dur = 42
-    FOR (i = 1; i <= headers; i+=1) BEGIN
-        LPF ALTER_EFFECT
-            INT_VAR
-                header = i
-                match_duration = 36
-                duration = dur
-        END
+    FOR ( i = 1; i <= headers; ++i ) BEGIN
+        LPF ALTER_EFFECT INT_VAR header = i match_duration = 36 duration = dur END
         dur += 6
     END
 BUT_ONLY
@@ -2385,11 +1916,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 COPY_EXISTING ~SPPR208.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5020
     SAY DESC @5020
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_savingthrow = 1
-            savebonus = "-1"
-    END
+    LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savebonus = "-1" END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2398,17 +1925,8 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING ~SPPR412.SPL~ ~override~
-    LPF ADD_SPELL_HEADER
-        INT_VAR
-            copy_header = 13
-            zs_min_level_for_copy = 21
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            header = 14
-            match_opcode = 54
-            parameter1 = 0
-    END
+    LPF ADD_SPELL_HEADER INT_VAR copy_header = 13 zs_min_level_for_copy = 21 END
+    LPF ALTER_EFFECT INT_VAR header = 14 match_opcode = 54 parameter1 = 0 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2425,41 +1943,21 @@ COPY ~ZSTweaks/spl/iwd~ ~override~
 COPY_EXISTING ~SPPR416.SPL~ ~override~
     WRITE_LONG 0x08 cloak_fear_strref
     SAY UNIDENTIFIED_DESC @6640
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 215
-        STR_VAR
-            resource = ~ICCLKFR2~
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 215 STR_VAR resource = ~ICCLKFR2~ END
 BUT_ONLY
 
 COPY_EXISTING ~#COFEAR.SPL~ ~override~
     PATCH_IF GAME_IS ~bgee~ BEGIN
-        LPF ALTER_EFFECT
-            INT_VAR
-                match_opcode = 139
-                parameter1 = 25818
-        END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = 25818 END
     END
     PATCH_IF GAME_IS ~bg2ee eet~ BEGIN
-        LPF ALTER_EFFECT
-            INT_VAR
-                match_opcode = 139
-                parameter1 = 14007
-        END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = 14007 END
     END
 BUT_ONLY
 
 // ADD EFFECT REMOVAL TO AURA EFFECTS TO VARIOUS REMOVE-FEAR TYPE EFFECTS only affects spells for now
 COPY_EXISTING_REGEXP ~.*\.spl~ ~override~
-    LPF CLONE_EFFECT
-        INT_VAR
-            silent = 1
-            match_opcode = 321
-        STR_VAR
-            match_resource = ~SPPR416~
-            resource = ~#COFEAR~
-    END
+    LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode = 321 STR_VAR match_resource = ~SPPR416~ resource = ~#COFEAR~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2476,10 +1974,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPPR720.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5090
-    LPF ALTER_SPELL_HEADER
-        INT_VAR
-            projectile = 159
-    END
+    LPF ALTER_SPELL_HEADER INT_VAR projectile = 159 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2488,22 +1983,14 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" "This mod was written for BGEE and BG
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING ~SPPR720.SPL~ ~override~
-    LPF DELETE_SPELL_EFFECT
-        INT_VAR opcode_to_delete = 269
-    END
-    LPF DELETE_EFFECT
-        STR_VAR match_resource = ~SHAKE1~
-    END
+    LPF DELETE_EFFECT INT_VAR match_opcode = 269 END
+    LPF DELETE_EFFECT STR_VAR match_resource = ~SHAKE1~ END
 BUT_ONLY
 
 ACTION_IF !GAME_IS "bgee" BEGIN
     COPY_EXISTING ~SPOGRE01.SPL~ ~override~
-        LPF DELETE_SPELL_EFFECT
-            INT_VAR opcode_to_delete = 269
-        END
-        LPF DELETE_EFFECT
-            STR_VAR match_resource = ~SHAKE1~
-        END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 269 END
+        LPF DELETE_EFFECT STR_VAR match_resource = ~SHAKE1~ END
     BUT_ONLY
 END
 
@@ -2514,24 +2001,14 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPPR413.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5080
-    SAY DESC @5080
     SET headers = 0
-    FOR (i = 9; i <= 19; i += 2) BEGIN
-        LPF ADD_SPELL_HEADER
-            INT_VAR
-                copy_header = 1
-                zs_min_level_for_copy = i
-        END
-        headers += 1
+    FOR ( i = 9; i <= 19; i += 2 ) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = i END
+        ++headers
     END
     SET dur = 36
-    FOR (i = 1; i <= headers; i += 1) BEGIN
-        LPF ALTER_EFFECT
-            INT_VAR
-                header = i
-                match_duration = 30
-                duration = dur
-        END
+    FOR ( i = 1; i <= headers; ++i ) BEGIN
+        LPF ALTER_EFFECT INT_VAR header = i match_duration = 30 duration = dur END
         dur += 6
     END
 BUT_ONLY
@@ -2543,27 +2020,16 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPPR105.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5100
-    LPF ALTER_EFFECT
-        INT_VAR
-            savebonus = 2
-    END
+    LPF ALTER_EFFECT INT_VAR savebonus = 2 END
     SET headers = 0
-    FOR (i = 5; i <= 20; i += 5) BEGIN
-        LPF ADD_SPELL_HEADER
-            INT_VAR
-                copy_header = 1
-                zs_min_level_for_copy = i
-        END
-        headers += 1
+    FOR ( i = 5; i <= 20; i += 5 ) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = i END
+        ++headers
     END
     SET bonus = 1
-    FOR (i = 1; i <= headers; i += 1) BEGIN
-        LPF ALTER_EFFECT
-            INT_VAR
-                header = i
-                savebonus = bonus
-        END
-        bonus -= 1
+    FOR ( i = 1; i <= headers; ++i ) BEGIN
+        LPF ALTER_EFFECT INT_VAR header = i savebonus = bonus END
+        --bonus
     END
 BUT_ONLY
 
@@ -2574,11 +2040,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPPR411.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5110
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 12
-            special = 256
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 256 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2589,7 +2051,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 COPY_EXISTING ~SPPR412.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5120
     SET dur = 42
-    FOR (i = 1; i <= 6; i += 1) BEGIN
+    FOR ( i = 1; i <= 6; ++i ) BEGIN
         LPF ADD_SPELL_EFFECT
             INT_VAR
                 opcode = 1
@@ -2603,7 +2065,7 @@ COPY_EXISTING ~SPPR412.SPL~ ~override~
         dur += 6
     END
     READ_SHORT 0x68 num_abilities
-    FOR (i = 7; i <= num_abilities; i += 1) BEGIN
+    FOR ( i = 7; i <= num_abilities; ++i ) BEGIN
         LPF ADD_SPELL_EFFECT
             INT_VAR
                 opcode = 1
@@ -2625,10 +2087,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPPR506.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5140
-    LPF ALTER_SPELL_HEADER
-        INT_VAR
-            speed = 1
-    END
+    LPF ALTER_HEADER INT_VAR speed = 1 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2638,18 +2097,14 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPPR606.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5150
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 122
-            parameter1 = 12
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 122 parameter1 = 12 END
 BUT_ONLY
 COPY_EXISTING ~FIRESEED.ITM~ ~override~
     SAY UNIDENTIFIED_DESC @5160
     WRITE_BYTE 0x60 2
-    LPF ALTER_ITEM_EFFECT
+    LPF ALTER_EFFECT
         INT_VAR
-            check_headers = 1
+            check_globals = 0
             match_opcode = 12
             parameter1 = 5
             dicesize = 8
@@ -2664,11 +2119,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPPR704.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5170
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 55
-            savebonus = 1
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 55 savebonus = 1 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2678,11 +2129,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPPR709.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5180
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_savebonus = "-2"
-            savebonus = "-4"
-    END
+    LPF ALTER_EFFECT INT_VAR match_savebonus = "-2" savebonus = "-4" END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2731,21 +2178,11 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPPR514.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @6480
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            match_opcode = 17
-            dicenumber = 4
-            dicesize = 3
-    END
-    LPF ALTER_HEADER
-        INT_VAR
-            type = 1
-            speed = 2
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 17 dicenumber = 4 dicesize = 3 END
+    LPF ALTER_HEADER INT_VAR match_type = 1 speed = 2 END
 BUT_ONLY
 
 ////////////////// CLASS AND KIT-RELATED TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2100 DESIGNATED 2100 GROUP @21 // SUN SOUL RAY TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
@@ -2771,12 +2208,7 @@ REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 
 COPY_EXISTING ~SPPR751.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5210
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            match_opcode = 12
-            dicesize = 6
-            dicenumber = 6
-    END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 6 dicenumber = 6 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2786,32 +2218,14 @@ REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 
 COPY_EXISTING ~SPPR250.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @6680
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            match_opcode = 12
-            parameter1 = 1
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            match_savingthrow = 4 // death
-            probability1 = 49
-    END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 12 parameter1 = 1 END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_savingthrow = 4 probability1 = 49 END
     SET new_level = 4
     SET new_dicesize = 4
     FOR ( dice = 0; dice < 7; ++dice ) BEGIN
-        LPF ADD_SPELL_HEADER
-            INT_VAR
-                copy_header = 1
-                zs_min_level_for_copy = new_level
-        END
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = new_level END
         new_level += 2
-        LPF ALTER_EFFECT
-            INT_VAR
-                match_opcode = 12
-                dicesize = new_dicesize
-        END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = new_dicesize END
         ++new_dicesize
     END
 BUT_ONLY
@@ -2821,85 +2235,7 @@ BEGIN @2112 DESIGNATED 2112 GROUP @21 // SPIRIT FIRE TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-COPY_EXISTING ~SPPR450.SPL~ ~override~
-    SAY UNIDENTIFIED_DESC @7000
-    READ_SHORT 0x68 abilities
-    SET start_dmg = 7
-    FOR ( curr_header = 0; curr_header < abilities; ++curr_header ) BEGIN
-        LPF ALTER_EFFECT
-            INT_VAR
-                check_globals = 0
-                header_type = 1
-                header = curr_header
-                match_opcode = 12
-                parameter1 = start_dmg
-        END
-        LPF ALTER_EFFECT
-            INT_VAR
-                check_globals = 0
-                header_type = 1
-                header = curr_header
-                match_opcode = 146
-                savingthrow = 0
-                probability1 = 32
-        END
-        ++start_dmg
-    END
-    SET next_level = 11
-    FOR ( extra_headers = 0; extra_headers < 2; ++extra_headers ) BEGIN
-        LPF ADD_SPELL_HEADER
-            INT_VAR
-                copy_header = 1
-                zs_min_level_for_copy = next_level
-        END
-        LPF ALTER_EFFECT
-            INT_VAR
-                check_globals = 0
-                header_type = 1
-                header = abilities
-                dicenumber = next_level
-                match_opcode = 12
-                parameter1 = next_level
-        END
-        ++abilities
-        ++next_level
-    END
-BUT_ONLY
-
-COPY_EXISTING ~SPPR450B.SPL~ ~override~
-    READ_SHORT 0x68 abilities
-    SET start_dmg = 7
-    FOR ( curr_header = 0; curr_header < abilities; ++curr_header ) BEGIN
-        LPF ALTER_EFFECT
-            INT_VAR
-                check_globals = 0
-                header_type = 1
-                header = curr_header
-                match_opcode = 12
-                parameter1 = start_dmg
-        END
-        ++start_dmg
-    END
-    SET next_level = 11
-    FOR ( extra_headers = 0; extra_headers < 2; ++extra_headers ) BEGIN
-        LPF ADD_SPELL_HEADER
-            INT_VAR
-                copy_header = 1
-                zs_min_level_for_copy = next_level
-        END
-        LPF ALTER_EFFECT
-            INT_VAR
-                check_globals = 0
-                header_type = 1
-                header = abilities
-                match_opcode = 12
-                parameter1 = next_level
-        END
-        ++abilities
-        ++next_level
-    END
-BUT_ONLY
-
+INCLUDE ~ZSTweaks/libs/component_scripts/zs_spirit_fire.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2113 DESIGNATED 2113 GROUP @21 // SPIRITUAL CLARITY TWEAK
@@ -2908,20 +2244,8 @@ REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 
 COPY_EXISTING ~SPPR350.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @6990
-    LPF ALTER_HEADER
-        INT_VAR
-            match_speed = 9
-            speed = 6
-    END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_type = 1
-            def_target = 2
-            def_power = 3
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~op=164;op=4;op=240,p2=5;op=240,p2=4~
-    END
+    LPF ALTER_HEADER INT_VAR match_speed = 9 speed = 6 END
+    LPF ADD_ON_HIT_EFF INT_VAR pw=3 STR_VAR effects = ~op=164;op=4;op=240,p2=5;op=240,p2=4~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2931,30 +2255,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY_EXISTING "SPCL908.SPL" ~override~
     SAY UNIDENTIFIED_DESC @6320
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            check_headers = 1
-            savebonus = "-2"
-            match_opcode = 142
-    END
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            check_headers = 1
-            savebonus = "-2"
-            match_opcode = 24
-    END
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            check_headers = 1
-            savebonus = "-2"
-            match_opcode = 141
-    END
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            check_headers = 1
-            savebonus = "-2"
-            match_opcode = 174
-    END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_savebonus = 0 savebonus = "-2" END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2963,14 +2264,8 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING "SPCL910B.SPL" ~override~
-    SET piercing = (16 << 16)
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            header_type = 1
-            check_headers = 1
-            match_opcode = 12
-            parameter2 = piercing
-    END
+    LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = dmg_param END
+    LPF ALTER_EFFECT INT_VAR header_type = 1 check_globals = 0 match_opcode = 12 parameter2 = piercing END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2982,13 +2277,7 @@ COPY_EXISTING "SPCL911.SPL" ~override~
     SAY UNIDENTIFIED_DESC @6300
 BUT_ONLY
 COPY_EXISTING "SPCL911B.SPL" ~override~
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            header_type = 1
-            check_headers = 1
-            match_opcode = 12
-            dicenumber = 15
-    END
+    LPF ALTER_EFFECT INT_VAR header_type = 1 check_globals = 0 match_opcode = 12 dicenumber = 15 END
 BUT_ONLY
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3016,21 +2305,14 @@ BEGIN @2170 DESIGNATED 2170 GROUP @21 // THAC0 THIEF
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-LAF generate_rogue_thac0
-    STR_VAR
-        class1 = ~thief~
-        class2 = ~mage_thief~
-END
+LAF generate_rogue_thac0 STR_VAR class1 = ~thief~ class2 = ~mage_thief~ END
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2180 DESIGNATED 2180 GROUP @21 // THAC0 BARD
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-LAF generate_rogue_thac0
-    STR_VAR
-        class1 = ~bard~
-END
+LAF generate_rogue_thac0 STR_VAR class1 = ~bard~ END
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2190 DESIGNATED 2190 GROUP @21

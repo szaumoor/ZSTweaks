@@ -1,63 +1,16 @@
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
-COPY
-    ~ZSTweaks/eff/ZSTWF06.EFF~ ~override~
-    ~ZSTweaks/eff/ZSTWF08.EFF~ ~override~
-    ~ZSTweaks/eff/ZSTWF10.EFF~ ~override~
-    ~ZSTweaks/eff/ZSTWF12.EFF~ ~override~
-    ~ZSTweaks/eff/ZSTWF14.EFF~ ~override~
+COPY ~ZSTweaks/eff/ZSTWF06.EFF~ ~override~
+     ~ZSTweaks/eff/ZSTWF08.EFF~ ~override~
+     ~ZSTweaks/eff/ZSTWF10.EFF~ ~override~
+     ~ZSTweaks/eff/ZSTWF12.EFF~ ~override~
+     ~ZSTweaks/eff/ZSTWF14.EFF~ ~override~
 
 COPY_EXISTING "SPCL236.SPL" ~override~
-    LPF ADD_SPELL_HEADER
-        INT_VAR
-            copy_header = 1
-            zs_min_level_for_copy = 12
-    END
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            header = 6
-            match_opcode = 12
-            dicenumber = 6
-    END
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            header = 1
-            match_opcode = 177
-        STR_VAR
-            resource = ~ZSTWF06~
-    END
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            header = 2
-            match_opcode = 177
-        STR_VAR
-            resource = ~ZSTWF08~
-    END
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            header = 3
-            match_opcode = 177
-        STR_VAR
-            resource = ~ZSTWF10~
-    END
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            header = 4
-            match_opcode = 177
-        STR_VAR
-            resource = ~ZSTWF12~
-    END
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            header = 5
-            match_opcode = 177
-        STR_VAR
-            resource = ~ZSTWF14~
-    END
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            header = 6
-            match_opcode = 177
-        STR_VAR
-            resource = ~ZSTWF16~
-    END
+    LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = 12 END
+    LPF ALTER_EFFECT INT_VAR header = 5 match_opcode = 12 dicenumber = 6 END
+    LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 177 STR_VAR resource = ~ZSTWF06~ END
+    LPF ALTER_EFFECT INT_VAR header = 1 match_opcode = 177 STR_VAR resource = ~ZSTWF08~ END
+    LPF ALTER_EFFECT INT_VAR header = 2 match_opcode = 177 STR_VAR resource = ~ZSTWF10~ END
+    LPF ALTER_EFFECT INT_VAR header = 3 match_opcode = 177 STR_VAR resource = ~ZSTWF12~ END
+    LPF ALTER_EFFECT INT_VAR header = 4 match_opcode = 177 STR_VAR resource = ~ZSTWF14~ END
+    LPF ALTER_EFFECT INT_VAR header = 5 match_opcode = 177 STR_VAR resource = ~ZSTWF16~ END
 BUT_ONLY

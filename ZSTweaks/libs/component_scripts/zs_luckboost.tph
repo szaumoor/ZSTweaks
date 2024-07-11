@@ -1,50 +1,20 @@
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~SPWI209.SPL~ ~override~
-    SET dur = 18
+    SET the_dur = 18
     PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "145") BEGIN
         SAY UNIDENTIFIED_DESC @6720
     END ELSE BEGIN
         SAY UNIDENTIFIED_DESC @6730
-        dur = 60
+        the_dur = 60
     END
 
     FOR ( opcode = 275; opcode <= 277; ++opcode ) BEGIN
-        LPF ALTER_EFFECT
-            INT_VAR
-                check_globals = 0
-                match_opcode = opcode
-                match_parameter1 = 5
-                parameter1 = 10
-        END
+        LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = opcode match_parameter1 = 5 parameter1 = 10 END
     END
 
     FOR ( opcode = 90; opcode <= 92; ++opcode ) BEGIN
-        LPF ALTER_EFFECT
-            INT_VAR
-                check_globals = 0
-                match_opcode = opcode
-                match_parameter1 = 5
-                parameter1 = 10
-        END
+        LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = opcode match_parameter1 = 5 parameter1 = 10 END
     END
 
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            match_opcode = 59
-            match_parameter1 = 5
-            parameter1 = 10
-    END
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_type = 1
-            def_target = 2
-            def_power = 2
-            def_resist_dispel = 3
-            def_duration = dur
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes  = ~op=0,p1=2;op=301,p1=1~
-    END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 59 match_parameter1 = 5 parameter1 = 10 END
+    LPF ADD_ON_HIT_EFF INT_VAR pw=2 rd=3 dur=the_dur STR_VAR effects = ~op=0,p1=2;op=301,p1=1~ END
 BUT_ONLY

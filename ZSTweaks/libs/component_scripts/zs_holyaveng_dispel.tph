@@ -1,5 +1,3 @@
-INCLUDE ~ZSTweaks/libs/zs_offsets.tpa~
-
 OUTER_SET both = 0
 ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1280~ THEN BEGIN
     OUTER_SET both = 1
@@ -12,9 +10,7 @@ COPY_EXISTING ~SW2H10.ITM~ ~override~
         SAY IDENTIFIED_DESC @6082
     END
 
-    LPF itm_first_offset_effect
-        RET offset_eff = offset
-    END
+    LPF itm_first_offset_effect RET offset_eff = offset END
 
     SET eff_number = SHORT_AT((LONG_AT 0x64) + 0x1e)
     FOR ( eff = 0; eff < eff_number; ++eff ) BEGIN
@@ -32,9 +28,7 @@ COPY_EXISTING ~SW2H19.ITM~ ~override~
         SAY IDENTIFIED_DESC @6084
     END
 
-    LPF itm_first_offset_effect
-        RET offset_eff = offset
-    END
+    LPF itm_first_offset_effect RET offset_eff = offset END
 
     SET eff_number = SHORT_AT((LONG_AT 0x64) + 0x1e)
     FOR ( eff = 0; eff < eff_number; ++eff ) BEGIN

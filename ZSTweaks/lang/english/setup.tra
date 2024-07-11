@@ -4,7 +4,7 @@
 @12 = ~Dagger Tweaks~
 @13 = ~Two-handed Melee Weapon Tweaks~
 @14 = ~One-handed Swords Tweaks~
-@15 = ~Mace/Club Tweaks~
+@15 = ~Axes and Blunt Weapons~
 @16 = ~Ranged Weapon Tweaks~
 @17 = ~NPC Tweaks~
 @18 = ~Misc Items~
@@ -77,7 +77,7 @@
 @1630 = ~Make The Jade's Fang slightly more powerful and improve the lifesteal effect~
 @1660 = ~Make Heart of the Golem +2 get a couple more magic-based features, inspired by the description~
 @1670 = ~Make Werebane +1 a bit more effective towards Lycanthropes~
-@1680 = ~Make Stiletto of Demarchess +2 very slightly more powerful and bleed every hit~
+@1680 = ~Make Stiletto of Demarchess +2 a bit more powerful and bleed every hit~
 @1681 = ~Make Elements' Fury +2 slightly more powerful~
 @1682 = ~Make Acid-Etched Dagger +2 generally more powerful and act as +3~
 
@@ -125,7 +125,7 @@
 @1582 = ~Make Vexation +2 more powerful~
 
 
-// MACES/CLUBS
+// AXES AND BLUNT WEAPONS
 @1310 = "Make Defender of Eastheaven damage reduction a little more moderate"
 @1311 = "Make Krotan's Skullcrusher +2 slightly less generic"
 @1312 = "Make Skullcrusher +3 slightly more crushy"
@@ -133,6 +133,7 @@
 @1314 = "Make Jerrod's Mace +2 behave as a +3 weapon"
 @1320 = "Make Flail of Ages +5 allow Haste and Improved Haste"
 @1321 = "Make Bone Club +2, +3 against undead's effect reflect the description better and improve it slightly"
+@1323 = ~Make Azuredge act properly as a +3 weapon~
 
 
 // RANGED WEAPONS
@@ -150,6 +151,9 @@
 @1520 = ~Make Hallowed Redeemer able to hit enemies immune to +2 weapons~
 @1640 = ~Make Abyssal Blades more powerful (Dorn's Quest)~
 @1641 = ~Make the item creation abilities of vanilla NPCs slightly better~
+@1642 = ~Make Nalia's ring slightly more powerful~
+@1643 = ~Make Corthala family blade more powerful and more effective against wizards~
+@1644 = ~Remove unnecessary stat restrictions in NPC gear~
 
 // MISC ITEMS
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
@@ -625,7 +629,8 @@ Combat abilities:
 – Star Bolt: Each successful hit has a 15% chance of causing either 1d8 fire, 1d8 of electrical damage, or both.
 
 THAC0: +6
-Damage: 1d4+6 (piercing)
+Damage: 1d4+6, +1 fire and electricity damage
+Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
 Type: One-handed
@@ -641,7 +646,7 @@ STATISTICS:
 Equipped abilities:
 – Negative Plane protection
 – Nondetection
-– Save vs. Illusion +4
+– Save vs. Illusion and Necromancy: +4
 
 Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
 Requires:
@@ -744,8 +749,8 @@ Weight: 5~
 STATISTICS:
 
 Combat abilities:
-– Hit target must save vs. Poison at -1 or suffer 2 points of poison damage per second for 3 seconds
-– It's considered +3 for the purposes of what it can hit.
+– Hit target must save vs. Poison at -1 or suffer 6 points of poison damage over 3 seconds
+– Considered +3 for the purposes of what it can hit
 – 1/2 extra attack per round
 
 THAC0: +2
@@ -764,8 +769,8 @@ Weight: 2~
 STATISTICS:
 
 Combat abilities:
-– Hit target loses 2 points of Dexterity per hit for 5 rounds and suffer a -1 penalty to their Save vs. Poison for 2 rounds
-– It's considered +3 for the purposes of what it can hit
+– Hit target suffers a -2 Dexterity penalty for 5 rounds and a -1 penalty to Save vs. Poison for 2 rounds
+– Considered +3 for the purposes of what it can hit
 – 1/2 extra attack per round
 
 THAC0: +2
@@ -1228,7 +1233,7 @@ STATISTICS:
 Equipped abilities:
 – Fire Resistance: +50%
 – Fire damage dealt: +10%
-– Save vs. Evocation +1
+– Saves vs. Evocation +1
 
 Weight: 4~
 
@@ -1492,6 +1497,7 @@ Requires:
 
 Weight: 1~
 
+// enchantment tweak
 @6240 = ~Keldorn distinguished himself early in his career as a paladin and received this blade as a boon from Torm. It is exceptionally accurate, but also protects him in battle with a special Fireshield, and any that strike him while he wields it suffer Torm's wrath in the form of magical damage. None but Keldorn may use this sword.
 
 STATISTICS:
@@ -1507,9 +1513,22 @@ Damage: 1d10+2 (slashing)
 Speed Factor: 8
 Proficiency Type: Two-handed Sword
 Type: Two-handed
-Requires:
- 5 Strength
- 12 Intelligence
+
+Weight: 8~
+
+// requirements tweak only
+@6241 = ~Keldorn distinguished himself early in his career as a paladin and received this blade as a boon from Torm. It is exceptionally accurate, but also protects him in battle with a special Fireshield, and any that strike him while he wields it suffer Torm's wrath in the form of magical damage. None but Keldorn may use this sword.
+
+STATISTICS:
+
+Equipped abilities:
+– 5 points of magic damage to any who damage the wielder
+
+THAC0: +2
+Damage: 1d10+2 (slashing)
+Speed Factor: 8
+Proficiency Type: Two-handed Sword
+Type: Two-handed
 
 Weight: 8~
 
@@ -2260,6 +2279,7 @@ STATISTICS:
 Combat abilities:
 – 25% chance per hit that the target must save vs. Death or be held for 2 rounds
 – Hits with this weapon bleed the victims, inflicting 2 piercing damage per round for 3 rounds
+– +5% critical chances (this weapon only)
 
 THAC0: +2
 Damage: 1d4+2, +2 piercing (bleeding)
@@ -3158,9 +3178,6 @@ Equipped abilities:
 – Protects against critical hits
 – Non-physical damage resistance: +25%
 
-Combat abilities:
-– Inflicts +2 extra missile damage against orcs, ogres, bu
-
 Weight: 2~
 
 @7051 = ~The Helm of Rock grants a warrior immunities far beyond mere physical protections, and with the addition of the horns, it's even more powerful. Generals and military leaders can command both fear and respect simply by wearing this helm.
@@ -3223,5 +3240,159 @@ Proficiency Type: Longbow
 Type: Two-handed
 Requires:
  6 Strength
+
+Weight: 2~
+
+@7080 = ~Gulen Rockfire, Slayer of Undead, crafted this powerful throwing axe expressly for reinforcing his claim to his namesake. Blessed by a cross-section of gods, this weapon does phenomenal damage against creatures unwisely rebelling against their deceased status and can potentially destroy them in a single blow. Obviously Gulen no longer carries Azuredge, and it is rumored that he died fighting a powerful vampire years ago, only to rise as one himself. This may have softened his stance regarding the undead, at the very least prompting a change of name.
+
+STATISTICS:
+
+Equipped abilities:
+– Acts as a +4 weapon against undead
+
+Combat abilities:
+– Returns to the wielder's hand when thrown
+– Undead must save vs. Death at -4 or be utterly destroyed
+
+THAC0: +3
+Damage: 1d6+3, +1d6+6 vs. undead
+Damage type (melee): Slashing
+Damage type (thrown): Missile
+Speed Factor: 1
+Proficiency Type: Axe
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~
+
+@7090 = ~This ring was given to Nalia by her father upon her ascension to adulthood. Bonded to her blood as it is, its powers may not be used by anyone else.
+
+STATISTICS:
+
+Equipped abilities:
+– AC and Saving Throws: +2
+– Fire Resistance: +50%
+– Open Locks and Find Traps: +20%
+– May memorize one extra spell of levels 1 to 5
+
+
+Weight: 0~
+
+// weapon tweak on
+@7100 = ~This fine katana radiates magical energy when wielded by Valygar. The blade was designed to respond only to those with the blood of the family Corthala flowing through their veins. This +2 blade causes additional bleeding damage when it strikes an opponent.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. slashing attacks
+– +1 backstab multiplier
+
+Combat abilities:
+– Hit target suffers 3 points of additional bleeding damage per round for 2 rounds
+
+THAC0: +2, +6 against wizards and sorcerers
+Damage: 1d10+2 (slashing)
+Speed Factor: 2
+Proficiency Type: Katana
+Type: One-handed
+
+Weight: 4~
+
+// only stat restriction tweak on
+@7110 = ~This fine katana radiates magical energy when wielded by Valygar. The blade was designed to respond only to those with the blood of the family Corthala flowing through their veins. This +2 blade causes additional bleeding damage when it strikes an opponent.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. slashing attacks
+
+Combat abilities:
+– Hit target suffers 3 points of additional bleeding damage per round for 2 rounds
+
+THAC0: +2
+Damage: 1d10+2 (slashing)
+Speed Factor: 2
+Proficiency Type: Katana
+Type: One-handed
+
+Weight: 4~
+
+@7120 = ~This armor, long in the Corthala bloodline, protects the user against all forms of attacks. The armor is enchanted so that it grants a +3 bonus to Valygar's Armor Class. It also adds a bonus to resisting acid, fire, and magical damage. The armor also makes Valygar immune to charm while he wears it. As it is specially fitted for Valygar, only he may wear it.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm
+– Fire Resistance: +25%
+– Acid Resistance: +25%
+– Magic Damage Resistance: +25%
+
+Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
+
+Weight: 9~
+
+@7130 = ~Carved from the heart of a rotten treant, this spear smells of death. When held in your hands, it groans a little, as if reluctant to allow a living thing to touch it. In battle, the Spear of Withering spits a foul poison into its target upon each successful hit.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target is poisoned for 1 round, suffering 12 poison damage in total, unless a Save vs. Death at -2 succeeds
+
+THAC0: +4
+Damage: 1d6+4, +4 poison damage
+Damage type: Piercing
+Speed Factor: 2
+Proficiency Type: Spear
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 5~
+
+@7140 = ~Legend has it that the souls of those who fall beneath this dark blade are forever enslaved, and can be summoned to fight invisibly at the side of the very one who defeated them.
+
+STATISTICS:
+
+Charge abilities:
+– Summon Spectral Blade once per day
+  This dancing sword fights on behalf of the one who wields Spectral Brand for 1 turn, attacking once per round and doing 1d8+3 slashing damage with each hit.
+
+THAC0: +4
+Damage: 1d8+4, +1d4 cold damage
+Damage type: Slashing
+Speed Factor: 1
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 8 Strength
+
+Weight: 2~
+
+@7141 = ~Legend has it that the souls of those who fall beneath this dark blade are forever enslaved, and can be summoned to fight invisibly at the side of the very one who defeated them.
+
+Drawing on the necromancy of the Skull of the Lich, Spectral Brand is now an instrument of unholy death that should never have been unleashed upon the realms.
+
+STATISTICS:
+
+Equipped abilities:
+– Negative Plane Protection
+
+Charge abilities:
+– Armor Piercing Strike once per day
+  Special: +10 THAC0 bonus
+  Duration: 3 rounds
+
+– Summon Spectral Blade once per day
+  This dancing sword fights on behalf of the one who wields Spectral Brand for 1 turn, attacking once per round and doing 1d8+3 slashing damage with each hit.
+
+THAC0: +5
+Damage: 1d8+5, +1d6 cold damage
+Damage type: Slashing
+Speed Factor: 0
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 8 Strength
 
 Weight: 2~

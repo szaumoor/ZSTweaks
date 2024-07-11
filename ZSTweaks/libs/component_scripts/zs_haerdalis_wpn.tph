@@ -1,34 +1,15 @@
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING "NPSW05.ITM" ~override~
     WRITE_LONG 0x60 3
     SAY IDENTIFIED_DESC @6050
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=1,tgt=1,p1=6,p2=0,tmg=2~
-    END
-    LPF ALTER_ITEM_EFFECT
-        INT_VAR
-            check_headers = 1
-            header_type = 1
-            match_opcode = 25
-            parameter1 = 2
-            savebonus = "-1"
-    END
+    LPF ALTER_HEADER INT_VAR match_type = 1 speed = 0 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6,p2=0~ END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 1 match_opcode = 25 parameter1 = 2 savebonus = "-1" END
 BUT_ONLY
 
 COPY_EXISTING "NPSW06.ITM" ~override~
     WRITE_LONG 0x60 3
     SAY IDENTIFIED_DESC @6051
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=1,tgt=1,p1=6,p2=0,tmg=2~
-    END
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~t=1,op=33,tgt=2,p1=-1,dur=12,rd=2~
-    END
+    LPF ALTER_HEADER INT_VAR match_type = 1 speed = 0 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6,p2=0;op=319,p1=153,p2=4,spec=8332~ END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=33,p1=-1,dur=12,rd=2~ END
 BUT_ONLY

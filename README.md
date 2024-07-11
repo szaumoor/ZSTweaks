@@ -130,7 +130,7 @@ It seems like a mistake to me that this armor, made from a creature from the pla
 
 - Negative Plane Protection
 - Nondetection
-- Save vs. Illusion spells +4 bonus
+- Saves vs. Illusion and Necromancy spells: +4 bonus
 - The usual AC bonuses.
 
 **Component 1171:** Make Silver Dragon Scale also grant 40% cold resistance as you would expect
@@ -255,8 +255,7 @@ It also tweaks the description slightly, because oddly enough it talks about hav
 
 **Component 1659:** Make Helm of the Rock a bit more protective and commanding
 
-This makes both versions of the helm a truly universal non-physical damage protector by adding a 25% resistance to magic damage.
-Additionally, the upgraded version gets the following:
+This makes both versions of the helm a truly universal non-physical damage protector by adding a 25% resistance to magic damage. Additionally, the upgraded version gets the following:
 
 - +7% physical damage reduction
 - +1 Charisma
@@ -286,7 +285,7 @@ Instead of simply giving the usual +4 weapon bonuses:
 **Component 1140:** Make Dagger of the Star slightly more powerful.
 
 - Dagger of the Star +4 becomes +5, and the chance of invisibility increases to 10%.
-- Dagger of the Star +5 becomes one of the few privileged +6 weapons.
+- Dagger of the Star +5 becomes one of the few privileged +6 weapons and inflicts +1 electric and fire damage per hit
 - Star Bolt: Increased the chance to trigger elemental effects to 15%, the difference being, you have equal chances of triggering fire damage, electrical damage, or both.  (5% times 3)
 
 **Component 1490:** Make Neb's Nasty Cutter have an unlimited amount of poison
@@ -308,9 +307,9 @@ This makes the dagger, which is made from arcane metals from a golem, imbued wit
 
 Werebane's description is a little misleading. It doesn't cause +4 damage against Lycanthropes. The 1d4+1 base damage of the weapon doesn't become 1d4+5. This type of confusing description is common to all weapons that do extra damage to specific creatures. Instead, it causes 1d4+1 and if the target is a Lycanthrope, another tick of 3 piercing damage is inflicted. This improves this extra additive tick of damage so it inflicts 6 instead.
 
-**Component 1680:** Make Stiletto of Demarchess +2 very slightly more powerful and bleed every hit
+**Component 1680:** Make Stiletto of Demarchess +2 a bit more powerful and bleed every hit
 
-This component makes the weapon try to stun the victim with a probability of 25% instead of 20%. Inspired by the sadistic story behind the weapon, it also causes bleeding every hit, similar to Gnasher, inflicting 2 extra piercing damage, as well as 2 more per round for 3 rounds.
+This component makes the weapon try to stun the victim with a probability of 25% instead of 20%. Inspired by the sadistic story behind the weapon, it has a +5% critical chances, and it also causes bleeding every hit, similar to Gnasher, inflicting 2 extra piercing damage, as well as 2 more per round for 3 rounds.
 
 **Component 1681:** Make Elements' Fury +2 slightly more powerful
 
@@ -535,7 +534,7 @@ Note that this will make the encounter relatively more difficult, obviously. Pro
 
 <details>
 
-<summary><b>Mace/Clubs Tweaks</b></summary>
+<summary><b>Axes and Blunt Weapon Tweaks</b></summary>
 
 **Component 1310:** Make Defender of Eastheaven damage reduction a little more moderate
 
@@ -564,6 +563,10 @@ I think everyone agrees that this type of restriction makes the weapons immediat
 **Component 1321:** Make Bone Club +2, +3 against undead's effect reflect the description better and improve it slightly
 
 This makes the club slightly more powerful (+3 in all respects), is more shamanic, and more damaging to undead: acts as +5 against them, with THAC0 bonus of +5 against undead, undead take +4 damage, and spectral undead take +8
+
+**Component 1323:** Make Azuredge act properly as a +3 weapon
+
+The original hits in terms of extra damage and thac0 like an unenchanted weapon. This component makes the weapon matche the basic stats of a +3 weapon. Additionally, it fixes the usual misleding bits in the description for extra damage, and it improves slightly the extra damage to undead from 1d6+4 to 1d6+6.
 
 ---
 
@@ -607,9 +610,11 @@ This follows the theme of the description, which is an anti-wizard theme, and th
 
 **Component 1380:** Make Chaos and Entropy grant 1/2 APR each and improve them slightly.
 
-My first move whenever I used Haer'Dalis was to give him swords that granted him extra attacks. These are his personal swords, so it feels wrong to not use them. This makes it more appealing to use, now he will have 3 APR when dual wielding by default.
+My first move whenever I used Haer'Dalis was to give him swords that granted him extra attacks. These are his personal swords, so it feels wrong to not use them. This makes it more appealing to use, now he will have 3 APR when dual wielding by default, and both have a speed factor of 0.
 
 Additionally, it makes Entropy cause 6 poison damage, on a Save vs. Death at -1 instead of 3 with a save without penalties or bonuses, and it makes Chaos reduce the struck opponent's Save vs. Death by 1 for 2 rounds. They both gain a speed factor of 0 and can hit targets immune to +2 weapons, like balors.
+
+Chaos is also now similarly restricted to Tieflings, much like Entropy, and according to the description.
 
 **Component 1480:** Make Yoshimo's Katana slightly more unique and powerful
 
@@ -629,10 +634,12 @@ Come on, Arvoreen! Be more generous to your most faithful holy warrior.
 **Component 1510:** Make Delryn's family shield become a +2 shield
 
 Just a simple buff to make the shield a good option for longer.
+This component also applies automatically the changes to this item in **Component 1644**
 
 **Component 1520:** Make Hallowed Redeemer able to hit enemies immune to +2 weapons
 
 This extends the usability of the weapon, despite the lower damage, if the constant shield the weapon grants is desired.
+This component also applies automatically the changes to this item in **Component 1644**
 
 **Component 1640:** Make Abyssal Blades more powerful (Dorn's Quest)
 
@@ -643,6 +650,33 @@ Additionally, the versions that have one fiend in them deal +1 fire damage compa
 **Component 1641:** Make the item creation abilities of vanilla NPCs slightly better
 
 This makes these skills generate more items. Jan Jansen will create 10 Bruiser Mates. Eldoth will create 15 poisoned arrows. Additionally, his poisoned arrows will deal 20 poison damage over 40 seconds, instead of 13, and Jan's bolts will deal 1d3+1 damage, instead of 1d2+1.
+
+**Component 1642:** Make Nalia's ring slightly more powerful
+
+Equipped items that you cannot remove in any way are quite, quite inconvenient, since they prevent your character from being upgraded in the ways you desire. This component changes this ring so it seems less inconvenient to have it on at all times for Nalia. Specifically, other than improving AC and saving throws by 2, and granting 50% fire resistance, it also:
+
+- 20% to Pick Locks and Find Traps (this makes her more competent at these tasks, similar to Imoen)
+- 1 extra spell slot from level 1 to 5
+
+**Component 1643:** Make Corthala family blade more powerful and more effective against wizards
+
+This makes the blade grant Valygar the following perks:
+
+- +1 backstab multiplier (this will ignore the backstab multiplier tweak, and behave as you would expect)
+- Total bonus of +6 THAC0 against wizards and sorcerers
+
+This component also applies automatically the changes to this item in **Component 1644**
+
+**Component 1644:** Remove the unnecessary stat restrictions in NPC's gear
+
+The stat restrictions are a remnant of an older, inferior way of making the gear usable only by THEM... Unless of course you happened to have the exact same stats as they. This removes these restrictions, though only in the items that seem too arbitrary:
+
+- Cernd's gear
+- Valygar's gear
+- Keldorn's gear
+- Anomen's shield (requires 13 Charisma, removes this requirement only)
+
+The rest seem less arbitrary: Jan Jansen's special gear requires 17 dexterity (i.e. ability to handle it), Mazzy's (no special restrictions), Haer'Dalis' (no special restrictions), Yoshimo's (no special restrictions).
 
 </details>
 

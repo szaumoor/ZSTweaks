@@ -1,47 +1,14 @@
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-
 COPY_EXISTING "dagg17.ITM" ~override~
     SAY IDENTIFIED_DESC @6570
-    LPF ALTER_ITEM_EFFECT
-        INT_VAR
-            match_opcode = 109
-            check_headers = 1
-            probability1 = 24
-    END
-    LPF ALTER_ITEM_EFFECT
-        INT_VAR
-            match_opcode = 142
-            check_headers = 1
-            probability1 = 24
-    END
-    LPF ALTER_ITEM_EFFECT
-        INT_VAR
-            match_opcode = 139
-            check_headers = 1
-            probability1 = 24
-    END
-    SET piercing = (16 << 16)
-    LPF a7_auto_apply_spl_effect
-            INT_VAR
-                def_type = 1
-                def_target = 2
-                def_timing = 3
-            STR_VAR
-                function_name = ~ADD_ITEM_EFFECT~
-                effect_codes = ~t=1,tgt=2,tmg=0,op=12,p1=2,p2=%piercing%,ip=0~
-        END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 109 check_globals = 0 probability1 = 24 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 142 check_globals = 0 probability1 = 24 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 check_globals = 0 probability1 = 24 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1~ END
+    LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = dmg_param END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=2,p2=%piercing%,ip=0~ END
     SET dur = 6
     FOR ( round = 0; round < 3; ++round ) BEGIN
-        LPF a7_auto_apply_spl_effect
-            INT_VAR
-                def_type = 1
-                def_target = 2
-                def_timing = 3
-            STR_VAR
-                function_name = ~ADD_ITEM_EFFECT~
-                effect_codes = ~t=1,tgt=2,tmg=3,op=12,p1=2,p2=%piercing%,dur=%dur%~
-        END
+        LPF ADD_ON_HIT_EFF INT_VAR tmg=3 STR_VAR effects = ~op=12,p1=2,p2=%piercing%,dur=%dur%~ END
         dur += 6
     END
 BUT_ONLY

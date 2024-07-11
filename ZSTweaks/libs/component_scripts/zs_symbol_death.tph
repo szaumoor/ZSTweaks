@@ -1,5 +1,3 @@
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~SPPR719.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5190
     LPF a7_auto_apply_spl_effect

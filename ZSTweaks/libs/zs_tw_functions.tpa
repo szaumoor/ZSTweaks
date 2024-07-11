@@ -1,8 +1,10 @@
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
+INCLUDE ~ZSTweaks/libs/zs_auto_apply_effs.tpa~
 INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-INCLUDE ~ZSTweaks/libs/zs_add_spell_header.tpa~
-INCLUDE ~ZSTweaks/libs/zs_add_equipped_eff.tpa~
+INCLUDE ~ZSTweaks/libs/zs_add_headers_ardanis.tpa~
+INCLUDE ~ZSTweaks/libs/zs_add_item_eff.tpa~
 INCLUDE ~ZSTweaks/libs/zs_itm_dmg_by_class.tpa~
 INCLUDE ~ZSTweaks/libs/zs_offsets.tpa~
 INCLUDE ~ZSTweaks/libs/zs_rm_haste.tpa~
 INCLUDE ~ZSTweaks/libs/zs_rogue_thac0.tpa~
+INCLUDE ~ZSTweaks/libs/zs_change_stat_requirements.tpa~
+INCLUDE ~ZSTweaks/libs/zs_dmg_type.tpa~

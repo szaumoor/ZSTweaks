@@ -1,165 +1,34 @@
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~FBLADE.ITM~ ~override~
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1  // Self
-            def_timing = 2
-            def_parameter1 = 1
-            def_parameter2 = 0
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes  = ~op=1~
-    END
-BUT_ONLY
-
-COPY_EXISTING ~SHILLE.ITM~ ~override~
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1  // Self
-            def_timing = 2
-            def_parameter1 = 1
-            def_parameter2 = 0
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes  = ~op=1~
-    END
+              ~SHILLE.ITM~ ~override~
+              ~PHANBLAD.ITM~ ~override~
+              ~FIRESEED.ITM~ ~override~
+              ~BLAKBLAD.ITM~ ~override~
+              ~SHAMMR.ITM~ ~override~
+              ~SHAMMR2.ITM~ ~override~
+              ~SHAMMR3.ITM~ ~override~
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=1~ END
 BUT_ONLY
 
 ACTION_IF FILE_EXISTS_IN_GAME ~SHILLEL.ITM~ BEGIN
     COPY_EXISTING ~SHILLEL.ITM~ ~override~
-        LPF a7_auto_apply_spl_effect
-            INT_VAR
-                def_target = 1  // Self
-                def_timing = 2
-                def_parameter1 = 1
-                def_parameter2 = 0
-            STR_VAR
-                function_name = ~ADD_ITEM_EQEFFECT~
-                effect_codes  = ~op=1~
-        END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=1~ END
     BUT_ONLY
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~MOONBLA.ITM~ BEGIN
     COPY_EXISTING ~MOONBLA.ITM~ ~override~
-        LPF a7_auto_apply_spl_effect
-            INT_VAR
-                def_target = 1  // Self
-                def_timing = 2
-                def_parameter1 = 1
-                def_parameter2 = 0
-            STR_VAR
-                function_name = ~ADD_ITEM_EQEFFECT~
-                effect_codes  = ~op=1~
-        END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=1~ END
     BUT_ONLY
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~SMCUDGE.ITM~ BEGIN
     COPY_EXISTING ~SMCUDGE.ITM~ ~override~
-        LPF a7_auto_apply_spl_effect
-            INT_VAR
-                def_target = 1  // Self
-                def_timing = 2
-                def_parameter1 = 1
-                def_parameter2 = 0
-            STR_VAR
-                function_name = ~ADD_ITEM_EQEFFECT~
-                effect_codes  = ~op=1~
-        END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=1~ END
     BUT_ONLY
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~DECASTA.ITM~ BEGIN
     COPY_EXISTING ~DECASTA.ITM~ ~override~
-        LPF a7_auto_apply_spl_effect
-            INT_VAR
-                def_target = 1  // Self
-                def_timing = 2
-                def_parameter1 = 1
-                def_parameter2 = 0
-            STR_VAR
-                function_name = ~ADD_ITEM_EQEFFECT~
-                effect_codes  = ~op=1~
-        END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=1~ END
     BUT_ONLY
 END
-
-COPY_EXISTING ~PHANBLAD.ITM~ ~override~
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1  // Self
-            def_timing = 2
-            def_parameter1 = 1
-            def_parameter2 = 0
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes  = ~op=1~
-    END
-BUT_ONLY
-
-COPY_EXISTING ~FIRESEED.ITM~ ~override~
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1  // Self
-            def_timing = 2
-            def_parameter1 = 1
-            def_parameter2 = 0
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes  = ~op=1~
-    END
-BUT_ONLY
-
-COPY_EXISTING ~BLAKBLAD.ITM~ ~override~
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1  // Self
-            def_timing = 2
-            def_parameter1 = 1
-            def_parameter2 = 0
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes  = ~op=1~
-    END
-BUT_ONLY
-
-COPY_EXISTING ~SHAMMR.ITM~ ~override~
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1  // Self
-            def_timing = 2
-            def_parameter1 = 1
-            def_parameter2 = 0
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes  = ~op=1~
-    END
-BUT_ONLY
-
-COPY_EXISTING ~SHAMMR2.ITM~ ~override~
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1  // Self
-            def_timing = 2
-            def_parameter1 = 1
-            def_parameter2 = 0
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes  = ~op=1~
-    END
-BUT_ONLY
-
-COPY_EXISTING ~SHAMMR3.ITM~ ~override~
-    LPF a7_auto_apply_spl_effect
-        INT_VAR
-            def_target = 1  // Self
-            def_timing = 2
-            def_parameter1 = 1
-            def_parameter2 = 0
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes  = ~op=1~
-    END
-BUT_ONLY

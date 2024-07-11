@@ -1,11 +1,6 @@
 COPY_EXISTING "SW1H35.ITM" ~override~
     SAY IDENTIFIED_DESC @6410
-    LPF ALTER_ITEM_EFFECT
-        INT_VAR
-            check_headers = 1
-            match_opcode = 17
-            probability1 = 49
-    END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 17 probability1 = 49 END
     LPF ADD_ITEM_EFFECT
         INT_VAR
             target = 1

@@ -1,0 +1,62 @@
+INCLUDE ~ZSTweaks/libs/zs_auto_apply_effs.tpa~
+
+DEFINE_PATCH_FUNCTION ADD_EQUIPPED_EFF
+    INT_VAR
+        p1 = 0
+        p2 = 0
+    STR_VAR
+        effects = ~~
+BEGIN
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1
+            def_timing = 2
+            def_parameter1 = p1
+            def_parameter2 = p2
+        STR_VAR
+            function_name = ~ADD_ITEM_EQEFFECT~
+            effect_codes = ~%effects%~
+    END
+END
+
+DEFINE_PATCH_FUNCTION ADD_ON_HIT_EFF
+    INT_VAR
+        p1 = 0
+        p2 = 0
+        tmg = 0
+        dur = 0
+        rd = 0
+        pw = 0
+        t = 1
+        stype = 0
+        sbonus = 0
+        pro1 = 100
+        pro2 = 0
+        dsize = 0
+        dnum = 0
+    STR_VAR
+        res = ~~
+        effects = ~~
+BEGIN
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 2
+            def_type = t
+            def_timing = tmg
+            def_parameter1 = p1
+            def_parameter2 = p2
+            def_duration = dur
+            def_resist_dispel = rd
+            def_power = pw
+            def_probability = pro1
+            def_probability2 = pro2
+            def_savetype = stype
+            def_savebonus = sbonus
+            def_dicesize = dsize
+            def_dicenumber = dnum
+        STR_VAR
+            def_resource = ~%res%~
+            function_name = ~ADD_ITEM_EFFECT~
+            effect_codes = ~%effects%~
+    END
+END

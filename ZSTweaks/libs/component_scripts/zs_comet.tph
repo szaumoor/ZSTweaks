@@ -1,20 +1,8 @@
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING ~SPWI925.SPL~ ~override~
     SAY IDENTIFIED_DESC @6430
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            check_headers = 1
-            resist_dispel = 0 // natural / non magical
-    END
-    LPF ALTER_SPELL_EFFECT
-        INT_VAR
-            check_headers = 1
-            match_opcode = 12
-            parameter1 = 10
-            dicenumber = 2
-    END
-    SET cold = (2 << 16)
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 12 parameter1 = 10 dicenumber = 2 END
+    LPF GET_DMG_TYPE STR_VAR type = ~cold~ RET cold = dmg_param END
     LPF ADD_SPELL_EFFECT // crushing
         INT_VAR
             insert_point = 0

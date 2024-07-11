@@ -1,19 +1,9 @@
-INCLUDE ~ZSTweaks/libs/zs_alter_header.tpa~
-INCLUDE ~ZSTweaks/libs/zs_patch_spells.tpa~
-
 COPY_EXISTING "NPSW01.ITM" ~override~
     SAY NAME2 @6260
     SAY IDENTIFIED_DESC @6261
     WRITE_LONG 0x60 4
     PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~  BEGIN
-        LPF ALTER_EFFECT
-            INT_VAR
-                check_globals = 0
-                header_type = 1
-            STR_VAR
-                match_resource = ~ZSTWY2~
-                resource = ~ZSTWY3~
-        END
+        LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 1 STR_VAR match_resource = ~ZSTWY2~ resource = ~ZSTWY3~ END
     END
     LPF ALTER_HEADER
         INT_VAR
@@ -24,27 +14,13 @@ COPY_EXISTING "NPSW01.ITM" ~override~
             to_hit = 4
             speed = 0
     END
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=1,tgt=1,p1=6,tmg=2,rd=2~
-    END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6,rd=2~ END
 BUT_ONLY
 
 COPY_EXISTING "NPBOW.ITM" ~override~
     SAY NAME2 @6262
     SAY IDENTIFIED_DESC @6263
     WRITE_LONG 0x60 3
-    LPF ALTER_HEADER
-        INT_VAR
-            type = 4
-            damage = 1
-            match_to_hit = 2
-            to_hit = 3
-    END
-    LPF a7_auto_apply_spl_effect
-        STR_VAR
-            function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~op=1,tgt=1,p1=6,tmg=2,rd=2~
-    END
+    LPF ALTER_HEADER INT_VAR type = 4 damage = 1 match_to_hit = 2 to_hit = 3 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,tgt=1,p1=6,tmg=2,rd=2~ END
 BUT_ONLY
