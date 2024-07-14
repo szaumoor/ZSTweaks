@@ -1,28 +1,24 @@
 INCLUDE ~ZSTweaks/libs/zs_correct_animations.tph~
 
 COPY ~ZSTweaks/spl/finesse~ ~override~
-
 ADD_PROJECTILE ~ZSTweaks/pro/ZSTW_INP.PRO~
 ADD_PROJECTILE ~ZSTweaks/pro/ZSTW_IND.PRO~
 
 COPY_EXISTING_REGEXP "ZSTW[ABS][0-6]\.spl" ~override~ // spells to insert projectiles to (for arrows, bolts and sling bullets)
     LPF ALTER_HEADER INT_VAR match_type = 2 projectile = "%ZSTW_INP%" END
 BUT_ONLY
-
 COPY_EXISTING_REGEXP "ZSTW[AZ]M[30]\.SPL" ~override~ // magic damage, for void weapons in SoD
     LPF ALTER_HEADER INT_VAR match_type = 2 projectile = "%ZSTW_INP%" END
 BUT_ONLY
-
 COPY_EXISTING_REGEXP "ZSTW[TZ][0-6]\.spl" ~override~ // spells to insert projectiles to (throwing daggers and darts)
     LPF ALTER_HEADER INT_VAR match_type = 2 projectile = "%ZSTW_IND%" END
 BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
-    READ_SHORT 0x1c wpn_cat
-    READ_BYTE  0x31 wpn_prof
-    READ_SHORT 0x60 ench
-    READ_SHORT 0x22 wpn_appearance
-
+    LPF GET_CATEGORY RET wpn_cat = result END
+    LPF GET_PROFICIENCY RET wpn_prof = result END
+    LPF GET_APPEARANCE RET wpn_appearance = result END
+    LPF GET_ENCH RET ench = result END
 	PATCH_IF wpn_cat == 16  AND wpn_prof == 96 BEGIN // daggers
         PATCH_IF ench = 0 BEGIN
             LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 59 STR_VAR class = ~THIEF~ spell = ~ZSTWD0~ END
@@ -53,7 +49,6 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 59 STR_VAR class = ~THIEF~ spell = ~ZSTWZ6~ END
         END
     END // end daggers
-
     PATCH_IF wpn_cat == 14 BEGIN // slings/bullets
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdbull02" != 0 BEGIN // not bullets of darkness (SoD)
             PATCH_IF ench = 0 BEGIN
@@ -82,7 +77,6 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             STR_VAR class = ~THIEF~ spell = ~ZSTWSM3~ END
         END
     END // end slings/bullets
-
     PATCH_IF wpn_cat == 5 BEGIN // arrows
         // EXCEPTIONS
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdarow01" != 0 AND // ANTIMAGIC ARROW SOD
@@ -96,13 +90,11 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             END
         END
     END // end arrows
-
     PATCH_IF wpn_cat == 31 BEGIN // bolts
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "BOLT07" != 0 BEGIN // BRUISER MATES SKIPPED
             LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 59 STR_VAR class = ~THIEF~ spell = ~ZSTWB0~ END
         END
     END // end bolts
-
     PATCH_IF wpn_cat = 24  AND wpn_prof == 106 BEGIN // darts
         PATCH_IF ench = 0 BEGIN
             LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 59 STR_VAR class = ~THIEF~ spell = ~ZSTWT0~ END
@@ -126,7 +118,6 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 59 STR_VAR class = ~THIEF~ spell = ~ZSTWT6~ END
         END
     END // end darts
-
     PATCH_IF wpn_cat = 26  AND wpn_prof == 102 BEGIN // staves
         PATCH_IF ench = 0 BEGIN
             LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ0~ END
@@ -150,7 +141,6 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ6~ END
         END
     END // end staves
-
     PATCH_IF wpn_cat = 20  AND (wpn_prof = 90 OR (wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "sc" = 0)) BEGIN // long swords and scimitars
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdsw1h06" != 0 BEGIN // voidsword (SoD)
             PATCH_IF ench = 0 BEGIN
@@ -179,7 +169,6 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             STR_VAR class = ~THIEF~ spell = ~ZSTWLM3~ END
         END
     END // end long swords and scimitars
-
     PATCH_IF wpn_cat = 20  AND wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "s1" = 0 BEGIN // ninja-tos
          PATCH_IF ench = 0 BEGIN
             LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWL0~ END
@@ -203,7 +192,6 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWL6~ END
         END
     END // end ninja-tos
-
     PATCH_IF wpn_cat = 20  AND wpn_prof = 94 BEGIN // katanas
          PATCH_IF ench = 0 BEGIN
             LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK0~ END
@@ -227,7 +215,6 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK6~ END
         END
     END // end katanas
-
     PATCH_IF wpn_cat = 19  AND wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "ss" = 0 BEGIN // wakizashis
          PATCH_IF ench = 0 BEGIN
             LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW0~ END
@@ -251,7 +238,6 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW6~ END
         END
     END // end wakizashis
-
     PATCH_IF wpn_cat = 19  AND wpn_prof = 91 BEGIN // short swords
          PATCH_IF ench = 0 BEGIN
             LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY0~ END
@@ -275,7 +261,6 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY6~ END
         END
     END // end short swords
-
     PATCH_IF wpn_cat = 17  AND wpn_prof = 115 BEGIN // clubs
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "l#BASR7" != 0 BEGIN
             PATCH_IF ench = 0 BEGIN

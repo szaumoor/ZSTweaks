@@ -60,3 +60,21 @@ BEGIN
             effect_codes = ~%effects%~
     END
 END
+
+/*DEFINE_PATCH_FUNCTION ADD_MAGIC_EFFECT
+INT_VAR
+    
+STR_VAR
+BEGIN
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 1
+            def_timing = 2
+            def_parameter1 = p1
+            def_parameter2 = p2
+        STR_VAR
+            function_name = ~ADD_SPELL_EFFECT~
+            effect_codes = ~%effects%~
+    END
+
+END*/

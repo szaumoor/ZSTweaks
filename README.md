@@ -21,6 +21,8 @@ This reduces the backstab multiplier of some weapons who realistically would not
 - -1 penalty: Long swords, Scimitars, Katanas.
 - -2 penalty: Staves
 
+Note that a side of this is that holding two weapons with penalties will increase the penalties additively, which is an unavoidable side effect of the fact that the backstab reduction cannot be applied per weapon, only universally.
+
 **Component 1121:** Make Flails and Morningstars always inflict a small amount of piercing damage
 
 Both types of weapon have piercing parts, that's why. The amount of piercing is very small and depends on enchantment level:
@@ -527,6 +529,15 @@ I've always liked this sword conceptually and it's introduced into the game in a
 - Bleeding per hit improved to 1d2 from 1
 
 Note that this will make the encounter relatively more difficult, obviously. Protect your mages, Neera will likely be targeted. And promptly chunked.
+
+**Component 1583:** Make Kachiko's Wakizashi substantially more unique in description and improve it
+
+I really hate unique items with nothing in the description worth reading, so I tried to add something a bit more worth reading and hopefully not too cringy (see ZSTweaks/unique_descriptions.md for details). Nothing is going to contradict the lore anyway. The following additions are added:
+
+- Wisdom penalty (which can kill, technically, and I guess remove spell slots from priests) lasts for 6 rounds now as opposed to 2 rounds.
+- Shadowdancers receive: +10% Hiding skills and +1 THAC0
+- Can cast Shadow Jump three times per day: teleport instantly to a place in sight, becoming invisible for 2 rounds, and becoming unable to critically miss for the duration.
+
 
 </details>
 

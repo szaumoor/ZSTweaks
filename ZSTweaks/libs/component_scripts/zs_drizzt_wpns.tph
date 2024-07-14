@@ -1,17 +1,14 @@
 COPY ~ZSTweaks/spl/other/ZSTWDRZB.SPL~ ~override~
 
 COPY_EXISTING "SW1H15.ITM" ~override~
-    SAY IDENTIFIED_DESC @6490
+    LPF ALTER_ITEM INT_VAR this_plus=1 id_ref_desc=RESOLVE_STR_REF(@6490) ench=5 flags=2**8 END
     LPF GET_DMG_TYPE STR_VAR type = ~cold~ RET cold = dmg_param END
-    WRITE_LONG 0x60 5 // ench
-    WRITE_LONG 0x18 (LONG_AT 0x18) + 2**8 // silver
     LPF ALTER_HEADER INT_VAR type = 1 to_hit = 5 END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p2=%cold%,dnum=1,dsize=3;op=326,p2=3,res=ZSTWDRZB~ END
 BUT_ONLY
 
 COPY_EXISTING "SW1H16.ITM" ~override~
-    SAY IDENTIFIED_DESC @6500
-    WRITE_LONG 0x60 5 // already considered +5, adding it just in case
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6500) ench=5 END
     LPF ALTER_HEADER INT_VAR type = 1 to_hit = 5 END
     SET ac_no_crush = 2**1 + 2**2 + 2**3
     LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=0,p1=2,p2=%ac_no_crush%;op=37,p1=1;op=86,p1=8;op=87,p1=8;op=88,p1=8;op=89,p1=8~ END

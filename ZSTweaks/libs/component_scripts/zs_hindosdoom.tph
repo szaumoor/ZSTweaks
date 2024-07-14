@@ -1,8 +1,5 @@
 COPY_EXISTING ~SW1H70.ITM~ ~override~
-    SAY IDENTIFIED_DESC @6070
-    SAY NAME1 @6072
-    SAY NAME2 @6072
-    WRITE_LONG 0x60 4
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6070) id_ref_name=RESOLVE_STR_REF(@6072) ench=4 END
     LPF ALTER_HEADER INT_VAR match_damage = 3 damage = 4 match_to_hit = 3 to_hit = 4 END
     PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" BEGIN // update bonus due to +4 enchantment
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 326 STR_VAR match_resource = ~ZSTWK3~ resource = ~ZSTWK4~ END
@@ -10,10 +7,7 @@ COPY_EXISTING ~SW1H70.ITM~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~SW1H71.ITM~ ~override~
-    SAY IDENTIFIED_DESC @6071
-    SAY NAME1 @6073
-    SAY NAME2 @6073
-    WRITE_LONG 0x60 5
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6071) id_ref_name=RESOLVE_STR_REF(@6073) ench=5 END
     LPF ALTER_HEADER INT_VAR match_damage = 4 damage = 5 match_to_hit = 4 to_hit = 5 END
     PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" BEGIN // update bonus due to +5 enchantment
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 326 STR_VAR match_resource = ~ZSTWK4~ resource = ~ZSTWK5~ END

@@ -1,7 +1,7 @@
 COPY_EXISTING "SW1H35.ITM" ~override~
-    SAY IDENTIFIED_DESC @6410
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6410) END
     LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 17 probability1 = 49 END
-    LPF ADD_ITEM_EFFECT
+    LPF ADD_ITEM_EFFECT // improve with better function
         INT_VAR
             target = 1
             timing = 1

@@ -1,6 +1,5 @@
-COPY
-    ~ZSTweaks/eff/ZSTWM01.EFF~ ~override~
-    ~ZSTweaks/eff/ZSTWM02.EFF~ ~override~
+COPY ~ZSTweaks/eff/ZSTWM01.EFF~ ~override~
+     ~ZSTweaks/eff/ZSTWM02.EFF~ ~override~
 
 COPY_EXISTING "SPCL820.SPL" ~override~
     SAY UNIDENTIFIED_DESC @6310

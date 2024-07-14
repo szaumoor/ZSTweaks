@@ -1,0 +1,24 @@
+COPY ~ZSTweaks/eff/ZSTWMON1.EFF~ ~override~
+     ~ZSTweaks/eff/ZSTWKCH1.EFF~ ~override~
+     ~ZSTweaks/eff/ZSTWKCH2.EFF~ ~override~
+     ~ZSTweaks/spl/other/ZSTWKCH3.SPL~ ~override~
+
+COPY_EXISTING ~ZSTWKCH3.SPL~ ~override~
+    SAY NAME1 @7162 //todo function for spell alteration
+BUT_ONLY
+
+COPY_EXISTING "WAWAK.ITM" ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@7160) id_ref_desc=RESOLVE_STR_REF(@7161) price=30000 END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 duration = 36 END
+    SET sd_id = IDS_OF_SYMBOL(kit SHADOWDANCER)
+    LPF ADD_EQUIPPED_EFF INT_VAR p1="%sd_id%" p2=9 STR_VAR effects=~op=177,res=ZSTWMON1;op=177,res=ZSTWKCH1;op=177,res=ZSTWKCH2~ END
+
+    PATCH_IF MOD_IS_INSTALLED "ZS_ShadowdancerOverhaul.tp2" "100" BEGIN
+        PATCH_PRINT "ZS_ShadowdancerOverhaul mod found, adding relevant edit..."
+        SET sd_id = IDS_OF_SYMBOL(kit ZS_SHADOWDANCER)
+        LPF ADD_EQUIPPED_EFF INT_VAR p1="%sd_id%" p2=9 STR_VAR effects=~op=177,res=ZSTWMON1;op=177,res=ZSTWKCH1;op=177,res=ZSTWKCH2~ END
+    END
+    LPF ADD_ITEM_HEADER INT_VAR type=3 location=3 range=1000 target=4 target_count=1 charges=3 depletion=3 flags=2**11
+    STR_VAR icon = ~SPWI402B~ END
+    LPF ADD_ON_HIT_EFF INT_VAR t=3 p1=0 p2=1 tmg=9 tgt=1 STR_VAR effects = ~op=146,res=ZSTWKCH3~ END
+BUT_ONLY

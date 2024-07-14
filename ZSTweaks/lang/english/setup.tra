@@ -67,6 +67,9 @@
 @1657 = ~Make The Visage add the capacity to cast Aura of Despair once per day and improve powers slightly~
 @1658 = ~Make Dragon Helm add protection against acid too, as well as +2 saves against Breath~
 @1659 = ~Make Helm of the Rock a bit more protective and commanding~
+@1661 = ~Make Cloak of the Sewers also protect against poison~
+@1662 = ~Make Montolio's Cloak grant a damage and thac0 bonus to rangers~
+@1663 = ~Make Sandthief ring in BGEE work as in BG2EE (one use per day)~
 
 
 /// DAGGER TWEAKS
@@ -123,6 +126,7 @@
 @1580 = ~Make Hawksight improve your senses, reflexes, and accuracy more keenly~
 @1581 = ~Make Hawksight's description unique and add a minor power to it~
 @1582 = ~Make Vexation +2 more powerful~
+@1583 = ~Make Kachiko's Wakizashi substantially more unique in description and improve it~
 
 
 // AXES AND BLUNT WEAPONS
@@ -2215,6 +2219,8 @@ Requires:
 
 Weight: 3~
 
+@6542 = ~This component is only available if the previous tweak was installed~
+
 @6550 = ~This was the weapon of Dominique Harl, a sightless paladin who frequently traveled Faerûn. When attacked, Dominique would unleash the black mist that is this halberd's namesake, potentially blinding all within 5 feet. This often gave him the advantage, for he lived in darkness all his life, seeing only with the inner light of faith. Dominique eventually fell, his body found in a dark forest, slain by a creature of the night even more at home in the shadows than he.
 
 STATISTICS:
@@ -3396,3 +3402,73 @@ Requires:
  8 Strength
 
 Weight: 2~
+
+@7150 = ~For a sewer-dweller like Ivan, survival meant going where others refused. Hiding from thugs, Ivan went so deep into the sewers beneath Baldur's Gate that he found natural caves, some of which opened to the ocean. Within one cave, Ivan discovered what he thought was a ruined cloak, all torn and stained. He tossed it into the fire he started, but it would not burn. Curious, he donned it, and with some prying, he discovered its hidden abilities. With the right command, he could shift into a rat, a troll, or a mustard jelly.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Save vs. Poison: +1
+– Poison Resistance: +50%
+
+Charge abilities:
+– Polymorph Self once per day
+  Special: The wearer can change into a rat, a troll, or a mustard jelly
+
+Weight: 3~
+
+@7160 = ~Kachiko's Whisper +3~
+@7161 = ~Kachiko's Whisper
+This wakizashi was the favored weapon of a female warrior named Kachiko. She hailed from the far eastern lands in Kara-Tur, and while her early life is largely unknown, it is believed she was trained as a shadowdancer, where she was able to shine as one of the most skilled of her order.
+
+Old tales say that during one of her missions, in the innermost sanctum of a long-forgotten temple found deep within the mountains, she discovered this blade, enshrined upon an ornate pedestal. As she reached out to touch it, the sword resonated with a soft whisper, as if acknowledging her presence.
+
+Allegedly, this event was what awakened the blade's true powers, and it was this haunting whisper what earned the weapon its name, symbolizing the deep bond between the warrior and her blade. Many of her exploits were conducted using this blade.
+
+STATISTICS:
+Combat abilities:
+– Drains 2 points of target's Wisdom for 6 rounds on each hit (Save vs. Death to negate)
+
+Equipped abilities:
+– +10% in Hiding in the Shadows and Move Silently (Shadowdancers only)
+– +1 THAC0 (Shadowdancers only)
+
+Charge abilities:
+– Shadow Jump three times per day
+  Special: teleport to any place within sight, reappearing invisible for 2 rounds. During this time, critical misses are not possible.
+
+THAC0: +3
+Damage: 1d8+3 (piercing)
+Speed Factor: 0
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+  5 Strength
+
+Weight: 2~
+
+@7162 = ~Shadow Jump~
+
+@7170 = ~This is the fabled cloak of Montolio DeBrouchee—the aged, blind mentor of the dark elf ranger Drizzt Do'Urden. Like his famous pupil, Montolio was a master at wielding two blades simultaneously.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Saving Throws: +1
+– THAC0: +2 bonus with off hand
+– THAC0 and Damage: +1 (rangers only)
+
+Weight: 3~
+
+//bgee
+@7180 = ~Ring of Invisibility: Sandthief's Ring
+Held by a master Thief for the better part of a generation, this ring was put to bold use in the markets of Waterdeep. Working a crowd in broad daylight, the rogue would steal countless numbers of purses from nobles, replacing them with bags of sand so the theft would go unnoticed. His identity was never known, but the name "Sandthief" was cursed loudly in its stead. It is rumored he retired, and now lives among the nobles he used to rob.
+
+STATISTICS:
+
+Charge abilities:
+– Invisibility once per day
+
+Weight: 0~
