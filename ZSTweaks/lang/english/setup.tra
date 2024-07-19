@@ -70,6 +70,20 @@
 @1661 = ~Make Cloak of the Sewers also protect against poison~
 @1662 = ~Make Montolio's Cloak grant a damage and thac0 bonus to rangers~
 @1663 = ~Make Sandthief ring in BGEE work as in BG2EE (one use per day)~
+@1664 = ~Make all ioun stones and circlets protect against critical hits~
+@1665 = ~Make several basic ioun stones and circlets a bit more interesting or powerful~
+@1666 = ~Make Bracers of Blinding's Improved Haste effect last 1 turn~
+@1667 = ~Make Xarrnous's Second Sword Arm (and SoD's version) also add +1 damage (lesser Legacy of the Masters)~
+@1668 = ~Make The Dale's Protector slightly more powerful and open to all classes~
+@1669 = ~Make Gauntlets of Extraordinary Specialization improve THAC0 by 2 and open to all classes~
+@1671 = ~Make The Eyes of Truth add a bonus to detect illusions and traps~
+@1672 = ~Make Stalker Gauntlets also benefit Bounty Hunters~
+
+// subcomponent str of component @1664
+@16640 = ~Affect all~
+@16641 = ~Only affect selected items~
+@16642 = ~Only affect ioun stones~
+@16643 = ~Only affect circlets~
 
 
 /// DAGGER TWEAKS
@@ -3034,14 +3048,16 @@ Saving Throw: Neg.
 
 This spell turns flesh of any sort to stone. All possessions on the person of the creature likewise turn to stone. The intended subject of the spell receives a Saving Throw vs. Petrification to avoid the effect. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The reverse of this spell may be cast upon the victim in order to restore life, but this is the only way.~
 
-@6960 = ~This glittering golden crown looks impressive, but its substance is base fool's gold and the "gems" set around it are bits of colored glass. Placing the crown on one's head allows the wearer to prepare extra spells but fills the head with false knowledge.
+@6960 = ~This glittering golden crown looks impressive, but its substance is base fool's gold and the "gems" set around it are bits of colored glass. Placing the crown on one's head allows the wearer to prepare extra spells but fills the head with false knowledge, making it hard to distinguish between truth and falsity.
 
 STATISTICS:
 
 Equipped abilities:
-– Can memorize 2 extra 3rd-level, 1 extra 4th-level, and 1 extra 5th-level wizard spell
+– Can memorize 2 extra 3rd-level, 2 extra 4th-level, and 1 extra 5th-level wizard spell
 – Lore: -15
 – Wisdom: -2
+– Saves. vs Illusion: -2
+– Detect Illusion: -20%
 
 Weight: 1~
 
@@ -3409,7 +3425,7 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: +1
-– Save vs. Poison: +1
+– Saves vs. Poison: +1
 – Poison Resistance: +50%
 
 Charge abilities:
@@ -3472,3 +3488,158 @@ Charge abilities:
 – Invisibility once per day
 
 Weight: 0~
+
+@7190 = ~Legend tells us that this particular type of ioun stone is crafted with the enslaved soul of a troll. This pearly white ioun stone will grant the wearer the ability to regenerate at a rate of 1 Hit Point every round.
+
+STATISTICS:
+
+Equipped abilities:
+– Regenerate 1 Hit Point every round
+
+Weight: 0~
+
+@7200 = ~This ioun stone glows with a dusty rose hue, hinting at calming images and sensations. These images are not just pleasing, but they also protect the wearer from suffering maddening anger and fear.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Protects the wearer against berserk and fear
+
+Weight: 0~
+
+@7210 = ~Highly sought out by wizards, this ioun stone raises the intelligence and the resistance to various magics of those who possess it.
+
+STATISTICS:
+
+Equipped abilities:
+– Intelligence: +1
+– Save vs. Spell: +1
+– Magic Resistance: +10%
+
+Weight: 0~
+
+@7220 = ~The tough obsidian ioun stone imbues its owner with a similar hardiness.
+
+STATISTICS:
+
+Equipped abilities:
+– Constitution: +1
+– AC: +2 (except crushing)
+– Physical resistance: +5% (except crushing)
+
+Weight: 0~
+
+@7230 = ~Perhaps the silver and gray in this stone hints at the knowledge that only comes with age and experience.
+
+STATISTICS:
+
+Equipped abilities:
+– Wisdom: +1
+– Lore: +15
+– Divine spell casters get 1 extra spell slot from level 1 to 5
+
+Weight: 0~
+
+@7240 = ~Combined with the bronze ioun stone, the Circlet of Netheril is a great boon to any practitioner of the arcane arts. Of course, something so valuable is likely to attract unwanted attention from rival mages...
+
+STATISTICS:
+
+Equipped abilities:
+– Hit Points: +10
+– Can memorize one extra 7th, 8th and 9th level wizard spell
+– +7% magic damage inflicted
+
+Weight: 1~
+
+@7250 = ~This circlet is made of the purest silver and embedded with a green and shimmering jewel that seems to emit a faint glow when caught by moonlight. It was blessed by the Drow goddess Eilistraee, granting the wearer increased protection against harmful magic.
+
+STATISTICS:
+
+Equipped abilities:
+– Saving Throws: +1
+– Magic Resistance: +10%
+– +1 Dexterity and AC (non-evil elves only)
+
+Weight: 1~
+
+@7260 = ~Knight Wesic of the Most Noble Order of the Radiant Heart often said, "Attack swiftly and your enemy will be so overwhelmed that the battle will be yours." He lived this principle through these bracers. Before engaging in righteous battle, he would unlock the magic of the Blinding Strike and quickly rush at his enemy. More often than not, his opponent would fall within the first few seconds of battle.
+
+STATISTICS:
+
+Equipped abilities:
+– Movement rate improves by a factor of 3 (default is 10)
+– Weapon speed factor: +2
+– Attacks per round: +1/2
+
+Charge abilities:
+– Improved Haste once per day
+  Duration: 1 turn
+  Area of Effect: The user
+
+Weight: 2~
+
+@7270 = ~Gauntlets of Weapon Skill: Xarrnous's Second Sword Arm
+Perhaps the most well-known owner of these gauntlets was a mercenary named Xarrnous. He specialized in smuggling and frequently loaned these gauntlets to clients if they were to travel with him. In his eyes, an extra sword arm was always handy.
+
+STATISTICS:
+
+Equipped abilities:
+– THAC0 and Damage: +1
+
+Weight: 2~
+
+@7280 = ~Bracers of Archery: The Dale's Protector
+During a dangerous meeting with a rival ruler, the king of the Great Dale requested the protection of his best Archers in addition to his usual guard. The Archers, each equipped with an enchanted bow and bracers, hid within range of the gathering. As predicted, enemy troops attempted to seize the king and force their will over his rule, but none had anticipated the amazing accuracy and lethality of the hidden Archers. The king was able to escape unharmed; in fact, none of the ambush members even lived to approach him.
+
+STATISTICS:
+
+Equipped abilities:
+– THAC0: +3 with missile weapons
+– Damage: +1 with missile weapons (+2 for Archers and rogues)
+
+Weight: 2~
+
+@7290 = ~These rarest of gauntlets are highly sought after by duelists, warriors, and fighters of all kinds.
+
+STATISTICS:
+
+Combat abilities:
+– Extra 1/2 attack per round
+
+THAC0: +2
+Damage: +2
+
+Weight: 1~
+
+@7300 = ~Helm of Infravision: The Eyes of Truth
+Being a scavenger of a sort, Babette Maelestrom had this helm created to aid her in her dungeon excursions. She would later attribute her gathered wealth solely to its power, though likely it was as much her keen eyes as anything.
+
+STATISTICS:
+
+Equipped abilities:
+– Infravision up to 120 ft.
+– Detect Illusions and Traps: +10%
+– Protects against critical hits
+
+Weight: 3~
+
+@7310 = ~These magical gauntlets aid the wearer in the use of weapons. Even an unfamiliar weapon may be used with some skill.
+
+STATISTICS:
+
+Equipped abilities:
+– THAC0 and Damage: +1
+
+Weight: 2~
+
+@7320 = ~These gauntlets assist in the stalking and killing of prey. Favored by hunters and rogues of all kinds, they display their full power when donned by Stalkers and Bounty Hunters. Made of supple leather with brass-buckled straps along the side, these gauntlets are often decorated with embroidered figures of stags, foxes, or, as is the case with this pair, wolves.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Hide in Shadows: +15% (+30% for Stalkers and Bounty Hunters only)
+– Backstab Multiplier: +1 (Stalkers and Bounty Hunters only)
+
+Weight: 2~

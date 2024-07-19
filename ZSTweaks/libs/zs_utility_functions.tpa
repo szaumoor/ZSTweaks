@@ -357,6 +357,20 @@ BEGIN
     READ_SHORT 0x26 result
 END
 
+DEFINE_PATCH_FUNCTION IS_FLAG_SET
+INT_VAR
+    flag = "-1"
+RET
+    result // 1 if flag is set, 0 if it's unset. -1 if invalid flag is asked for
+BEGIN
+    PATCH_IF flag >= 0 AND flag <= 31 BEGIN
+        SET bitmask = (1 << flag)
+        SET result = (flags & bitmask) != 0
+    END ELSE BEGIN
+        SET result = "-1"
+    END
+END
+
 
 DEFINE_PATCH_FUNCTION ALTER_EFF_FILE
 INT_VAR
@@ -392,3 +406,119 @@ BEGIN
         WRITE_LONG 0x38 dicenumber
     END
 END
+
+DEFINE_PATCH_FUNCTION ALTER_SPELL
+INT_VAR
+    spell_name_ref = "-2"
+    spell_desc_ref = "-2"
+    flags = "-1"
+    spell_type = "-1"
+    exclusion_flags = "-1"
+    casting_animation = "-1"
+    primary_type = "-1"
+    secondary_type = "-1"
+    spell_level = "-1"
+    this_plus = 0
+STR_VAR
+    casting_sound = ~none~
+    icon = ~none~
+BEGIN
+    PATCH_IF spell_name_ref > "-2" BEGIN
+        WRITE_LONG 0x08 spell_name_ref
+    END ELSE BEGIN
+        PATCH_IF spell_name_ref < "-2" BEGIN
+            PATCH_WARN "Passed a wrong value to spell_name_ref: %spell_name_ref%"
+        END
+    END
+
+    PATCH_IF spell_desc_ref > "-2" BEGIN
+        WRITE_LONG 0x50 spell_desc_ref
+    END ELSE BEGIN
+        PATCH_IF spell_desc_ref < "-2" BEGIN
+            PATCH_WARN "Passed a wrong value to spell_desc_ref: %spell_desc_ref%"
+        END
+    END
+
+    PATCH_IF flags > "-1" BEGIN
+        PATCH_IF this_plus = 0 BEGIN
+            WRITE_LONG 0x18 flags
+        END ELSE BEGIN
+            PATCH_IF this_plus = 1 BEGIN
+                WRITE_LONG 0x18 (THIS + flags)
+            END
+            PATCH_IF this_plus = "-1" BEGIN
+                WRITE_LONG 0x18 (THIS - flags)
+            END
+        END
+    END ELSE BEGIN
+        PATCH_IF flags < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to flags: %flags%"
+        END
+    END
+
+    PATCH_IF spell_type > "-1" BEGIN
+        WRITE_LONG 0x1c spell_type
+    END ELSE BEGIN
+        PATCH_IF spell_type < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to spell_type: %spell_type%"
+        END
+    END
+
+    PATCH_IF exclusion_flags > "-1" BEGIN
+        PATCH_IF this_plus = 0 BEGIN
+            WRITE_LONG 0x1e exclusion_flags
+        END ELSE BEGIN
+            PATCH_IF this_plus = 1 BEGIN
+                WRITE_LONG 0x1e (THIS + exclusion_flags)
+            END
+            PATCH_IF this_plus = "-1" BEGIN
+                WRITE_LONG 0x1e (THIS - exclusion_flags)
+            END
+        END
+    END ELSE BEGIN
+        PATCH_IF flags < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to exclusion_flags: %exclusion_flags%"
+        END
+    END
+
+    PATCH_IF casting_animation > "-1" BEGIN
+        WRITE_LONG 0x22 casting_animation
+    END ELSE BEGIN
+        PATCH_IF spell_type < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to casting_animation: %casting_animation%"
+        END
+    END
+
+    PATCH_IF primary_type > "-1" BEGIN
+        WRITE_LONG 0x25 primary_type
+    END ELSE BEGIN
+        PATCH_IF primary_type < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to primary_type: %primary_type%"
+        END
+    END
+
+    PATCH_IF secondary_type > "-1" BEGIN
+        WRITE_LONG 0x27 secondary_type
+    END ELSE BEGIN
+        PATCH_IF secondary_type < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to secondary_type: %secondary_type%"
+        END
+    END
+
+    PATCH_IF spell_level > "-1" BEGIN
+        WRITE_LONG 0x34 spell_level
+    END ELSE BEGIN
+        PATCH_IF spell_level < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to spell_level: %spell_level%"
+        END
+    END
+
+    PATCH_IF "%icon%" STRING_COMPARE_CASE "none" != 0 BEGIN
+        WRITE_ASCII 0x3a "%icon%" #8
+    END
+
+    PATCH_IF "%casting_sound%" STRING_COMPARE_CASE "none" != 0 BEGIN
+        WRITE_ASCII 0x10 "%casting_sound%" #8
+    END
+END
+

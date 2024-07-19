@@ -234,7 +234,7 @@ This makes these boots improve Magic Resistance by 10% for everyone (from 7%) an
 
 **Component 1655:** Make Crown of Lies more consequential when used
 
--30 lore is generally not very important, since it's not used for any game interaction, just for identifying objects, which is ordinarily a mundane and inconsequential task. Therefore now it reduces lore by -15 BUT it also decreases Wisdom by 2, which would affect Cleric/Mages more, since they rely on Wisdom for spell slots in vanilla.
+-30 lore is generally not very important, since it's not used for any game interaction, just for identifying objects, which is ordinarily a mundane and inconsequential task. Therefore now it reduces lore by -20 BUT it also decreases Wisdom by 2 (which would affect Cleric/Mages more), Detect Illusions by 10, and inflicts -2 vulnerability to Illusion magic, since they rely on Wisdom for spell slots in vanilla. This is compensated slightly such that it provides 2 spell slots for level 4 too (3 and 4).
 
 **Component 1656:** Make Helmet of Dumathoin very slightly more powerful
 
@@ -262,6 +262,58 @@ This makes both versions of the helm a truly universal non-physical damage prote
 - +7% physical damage reduction
 - +1 Charisma
 - Aura of Command is no longer single-target, it spreads upon impact, similarly to Hold Person, but in a bigger area.
+
+**Component 1661:** Make Cloak of the Sewers also protect against poison
+
+This makes the cloak grant additionally grant a Save vs. Poison bonus of +1, as well as 50% poison damage reduction.
+
+**Component 1662:** Make Montolio's Cloak grant a damage and thac0 bonus to rangers
+
+This makes this cloak more meaningful for rangers, without having to focus only on dual wielding benefits. Rangers get a +1 THAC0 and Damage while wearing it.
+
+**Component 1663:** Make Sandthief ring in BGEE work as in BG2EE (one use per day)
+
+This makes this ring reusable instead of having limited charges.
+
+**Component 1664:** Make all ioun stones and circlets protect against critical hits
+
+Self-explanatory. This component is in a way incompatible with the spirit of other components, because it makes protection against critical hits more pervasive, such is the case with the tweak that makes Thieves' Hood protect against critical hits.
+
+**Component 1665:** Make several basic ioun stones and circlets a bit more interesting or powerful
+
+This modifies a selection of vanilla ioun stones and circlets:
+
+- Dusty Rose Ioun Stone: inspired by the description, it also protects against berserk and fear. The AC bonus is also now 2. Additionally, it changes the BAM so it has a pinkish hue.
+- Pearly White Ioun Stone: this improved the trollish regeneration from 1 HP every 5 rounds, to every round.
+- Golden Ioun Stone: makes it more interesting for general use by improving not just intelligence, but Saves vs. Spells by 1 and magic resistance by 10%.
+- Obsidian Ioun Stone: obsidian is a brittle but hard. Other than increasing CON by 1, now it also improves AC against all except crushing by 2, and improves physical damage resistance to everything except crushing by 5%.
+- Silver Gray Ioun Stone: Now it now also improves WIS by 1, but it also improves lore by 15. Divine casters get one extra spell slot from level 1 to 5. Finally, druids and clerics get a +1 to casting speed.
+- Circlet of Netheril: this makes it more useful and final for sorcerous classes by adding one extra spell slot for level 9 as well, as well as a +7% magic damage dealt bonus.
+- Eilistraee's Boon +1: this makes the item give a bonus to non-evil elves: +1 DEX
+
+**Component 1666:** Make Bracers of Blinding's Improved Haste effect last 1 turn
+
+The original lasts 20 seconds. Additionally, it improves weapon speed factor by 2 and movement rate by 2 (not affected by Free Action).
+
+**Component 1667:** Make Xarrnous's Second Sword Arm (and SoD's version) also add +1 damage (lesser Legacy of the Masters)
+
+This improves the gauntlets such that it also improves damage, not just thac0, making it a lesser version of Legacy of the Masters.
+
+**Component 1668:** Make The Dale's Protector slightly more powerful and open to all classes
+
+This improves the item such that it's more attractive for ranged weapon users: the thac0 bonus is now +3, and it improves ranged damage as well by +1 (which becomes +2 for Archers, and any rogue, both thief or bard).
+
+**Component 1669:** Make Gauntlets of Extraordinary Specialization improve THAC0 by 2 and open to all classes
+
+Self explanatory.
+
+**Component 1671:** Make The Eyes of Truth add a bonus to detect illusions and traps
+
+I decided to take the name of item more seriously. And let's face it, this items it always an automatic selling. In this state at least it has some use for Fighter/Thieves or Cleric/Thieves.
+
+**Component 1672:** Make Stalker Gauntlets also benefit Bounty Hunters
+
+Because it seems obvious that both classes ("professions") align with each other. Both Stalker-only benefits apply, including the enhanced backstab.
 
 </details>
 
@@ -567,7 +619,7 @@ This component makes the "pain" that the description talks about manifest as a n
 
 This makes the mace +3 for consistency with the power level of other WA-weapons. It also improves the damage and thac0 bonuses against fiends by 1.
 
-**Component 1320:** Make Flail of Ages + 5 allow Haste and Improved Haste
+**Component 1320:** Make Flail of Ages +5 allow Haste and Improved Haste
 
 I think everyone agrees that this type of restriction makes the weapons immediately less appealing.
 
@@ -577,7 +629,7 @@ This makes the club slightly more powerful (+3 in all respects), is more shamani
 
 **Component 1323:** Make Azuredge act properly as a +3 weapon
 
-The original hits in terms of extra damage and thac0 like an unenchanted weapon. This component makes the weapon matche the basic stats of a +3 weapon. Additionally, it fixes the usual misleding bits in the description for extra damage, and it improves slightly the extra damage to undead from 1d6+4 to 1d6+6.
+The original hits in terms of extra damage and thac0 like an unenchanted weapon. This component makes the weapon match the basic stats of a +3 weapon. Additionally, it fixes the usual misleding bits in the description for extra damage, and it improves slightly the extra damage to undead from 1d6+4 to 1d6+6.
 
 ---
 

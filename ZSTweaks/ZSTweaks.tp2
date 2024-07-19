@@ -346,7 +346,7 @@ INCLUDE ~ZSTweaks/libs/component_scripts/zs_basic_robes.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1560 DESIGNATED 1560 GROUP @11 // ADD PIERCING TO BELT OF THE BLADE
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING "bdbelt02.ITM" ~override~
@@ -453,7 +453,7 @@ BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1654 DESIGNATED 1654 GROUP @11 // STAR STREWN TWEAKS
-REQUIRE_PREDICATE GAME_IS "bgee eet" @50
+REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ACTION_IF FILE_EXISTS_IN_GAME "bdboot03.itm" BEGIN
@@ -466,19 +466,23 @@ END
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1655 DESIGNATED 1655 GROUP @11 // CROWN OF LIES TWEAK
-REQUIRE_PREDICATE GAME_IS "bgee eet" @50
+REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-COPY_EXISTING "bdhelm01.itm" ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6960) END
-    LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 21 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=21,p1=-15;op=49,p1=-2~ END
-BUT_ONLY
+ACTION_IF FILE_EXISTS_IN_GAME ~bdhelm01.itm~ BEGIN
+    COPY_EXISTING "bdhelm01.itm" ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6960) END
+        LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 21 END
+        LPF ALTER_EFFECT INT_VAR match_opcode=42 match_parameter2=2**3 parameter1=2 END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=21,p1=-20;op=49,p1=-2;op=346,p1=-2,spec=5;op=276,p1=-20~ END
+    BUT_ONLY
+END
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1656 DESIGNATED 1656 GROUP @11 // HELM OF DUMATHOIN TWEAK
-REQUIRE_PREDICATE GAME_IS "bgee eet" @50
+REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 COPY_EXISTING "bdhelm09.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6970) END
@@ -495,7 +499,6 @@ COPY_EXISTING "ohdmask.itm" ~override~
     LPF ADD_ITEM_HEADER INT_VAR copy_header = 2 END
     LPF ALTER_EFFECT INT_VAR header_type=3 header=2 match_opcode=146 STR_VAR match_resource=~SPWI506~ resource=~SPCL103~ END
 BUT_ONLY
-
 COPY_EXISTING "ohdmask.spl" ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 8 END
 BUT_ONLY
@@ -548,7 +551,6 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 COPY ~ZSTweaks/eff/ZSTWMON1.EFF~ ~override~
      ~ZSTweaks/eff/ZSTWMON2.EFF~ ~override~
-
 COPY_EXISTING ~CLCK32.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7170) END
     LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=0 opcode=177 parameter1=209 parameter2=5
@@ -567,7 +569,230 @@ COPY_EXISTING "RING05.ITM" ~override~
     LPF ALTER_HEADER INT_VAR match_type=3 charges=1 drained=3 END
 BUT_ONLY
 
-////////////////// DAGGER TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @16640 DESIGNATED 16640 SUBCOMPONENT @1664 // IOUN STONE / CIRCLETS CRIT HITS: select all
+REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @50
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~HELM18.itm~ ~override~
+    LPF GET_UNID_REF_NAME RET ioun_strref = result END
+BUT_ONLY
+COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    LPF GET_CATEGORY RET cat = result END
+    LPF GET_UNID_REF_NAME RET strref = result END
+    LPF GET_APPEARANCE RET appearance = result END
+    PATCH_IF cat=7 AND (strref = %ioun_strref% OR ("%appearance%" STRING_COMPARE_CASE "JB" = 0) ) BEGIN
+        LPF GET_FLAGS RET flags = result END
+        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+        PATCH_IF crit_flag = 1 BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+        END
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @16641 DESIGNATED 16641 SUBCOMPONENT @1664 // IOUN STONE / CIRCLETS CRIT HITS: only selected items
+REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @50
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~HELM20.ITM~ ~override~ // pale green ioun
+    LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+BUT_ONLY
+ACTION_IF FILE_EXISTS_IN_GAME ~HELM24.ITM~ BEGIN // obsidian ioun
+    COPY_EXISTING ~HELM24.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+    BUT_ONLY
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~AMSOUL01.ITM~ BEGIN // malla's stone
+    COPY_EXISTING ~AMSOUL01.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+    BUT_ONLY
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~HELM34.ITM~ BEGIN // wong fei ioun
+    COPY_EXISTING ~HELM34.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+    BUT_ONLY
+END
+COPY_EXISTING ~bdhelm16.ITM~ ~override~ // circlet of lost souls
+    LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+BUT_ONLY
+ACTION_IF FILE_EXISTS_IN_GAME ~ohrhelm1.ITM~ BEGIN // headband of the devout
+    COPY_EXISTING ~ohrhelm1.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+    BUT_ONLY
+END
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @16642 DESIGNATED 16642 SUBCOMPONENT @1664 // IOUN STONE / CIRCLETS CRIT HITS: only ioun stones
+REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @50
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~HELM18.itm~ ~override~
+    LPF GET_UNID_REF_NAME RET ioun_strref = result END
+BUT_ONLY
+COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    LPF GET_CATEGORY RET cat = result END
+    LPF GET_UNID_REF_NAME RET strref = result END
+    LPF GET_APPEARANCE RET appearance = result END
+    PATCH_IF cat=7 AND strref = %ioun_strref% BEGIN
+        LPF GET_FLAGS RET flags = result END
+        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+        PATCH_IF crit_flag = 1 BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+        END
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @16643 DESIGNATED 16643 SUBCOMPONENT @1664 // IOUN STONE / CIRCLETS CRIT HITS: only circlets
+REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @50
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~HELM18.itm~ ~override~ // CHECK THAT THIS WORKS FOR BGEE TOO
+    LPF GET_UNID_REF_NAME RET ioun_strref = result END
+BUT_ONLY
+COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    LPF GET_CATEGORY RET cat = result END
+    LPF GET_UNID_REF_NAME RET strref = result END
+    LPF GET_APPEARANCE RET appearance = result END
+    PATCH_IF cat=7 AND "%appearance%" STRING_COMPARE_CASE "JB" = 0 BEGIN
+        LPF GET_FLAGS RET flags = result END
+        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+        PATCH_IF crit_flag = 1 BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+        END
+    END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1665 DESIGNATED 1665 GROUP @11 // specific iouns tweak
+REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ACTION_IF FILE_EXISTS_IN_GAME ~HELM18.itm~ BEGIN // Pearly white ioun stone
+    COPY_EXISTING "HELM18.itm" ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7190) END
+        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 98 parameter1 = 6 END
+    BUT_ONLY
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~HELM19.itm~ BEGIN // Dusty Rose Ioun stone
+    COPY ~ZSTweaks/bam/IHELM19.BAM~ ~override~
+    COPY_EXISTING "HELM19.itm" ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7200) END
+        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 2 END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=296,res=CDHORROR;op=142,p2=37;op=240,p2=36;op=169,p2=26;op=267,p1=17427;op=267,p1=14007;op=106,p1=1,p2=1;op=23;op=101,p2=24;op=161;op=101,p2=23;op=101,p2=106;op=4;op=142,p1=52;op=169,p2=4;op=101,p2=3;op=296~ END
+    BUT_ONLY
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~HELM23.ITM~ BEGIN // golden ioun stone
+    COPY_EXISTING ~HELM23.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7210) END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=37,p1=1;op=166,p1=10~ END
+    BUT_ONLY
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~HELM24.ITM~ BEGIN // obsidian ioun stone
+    COPY_EXISTING ~HELM24.ITM~ ~override~
+        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~16642~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~16641~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~16640~ BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" id_ref_desc=RESOLVE_STR_REF(@7220) flags=2**25 END
+        END ELSE BEGIN
+            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7220) END
+        END
+        LPF ADD_EQUIPPED_EFF INT_VAR p1=5 STR_VAR effects=~op=86;op=88;op=89;op=0,p1=2,p2=14~ END
+    BUT_ONLY
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~HELM25.ITM~ BEGIN // silver ioun stone
+    COPY_EXISTING ~HELM25.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7230) END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=21,p1=15;op=62,p1=1,p2=31~ END
+    BUT_ONLY
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~HELM28.ITM~ BEGIN // circle of netheril
+    COPY_EXISTING ~HELM28.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7240) END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=42,p1=1,p2=256;op=332,p1=7,p2=5~ END
+    BUT_ONLY
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~BAND03.ITM~ BEGIN // EILISTRAEE'S BOON
+    COPY ~ZSTweaks/eff/ZSTWEIL1.EFF~ ~override~
+         ~ZSTweaks/eff/ZSTWEIL2.EFF~ ~override~
+         ~ZSTweaks/eff/ZSTWEIL3.EFF~ ~override~
+    COPY_EXISTING ~BAND03.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7250) END
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=8 STR_VAR effects=~op=177,p1=1,res=ZSTWEIL1;op=177,p1=1,res=ZSTWEIL2;op=177,p1=2,res=ZSTWEIL1;op=177,p1=2,res=ZSTWEIL2~ END
+    BUT_ONLY
+END
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1666 DESIGNATED 1666 GROUP @11 // blinding bracers tweak
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~BRAC16.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7260) END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 match_type=3 match_duration=20 duration=60 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=176,p1=3;op=1,p1=6;op=190,p1=2~ END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1667 DESIGNATED 1667 GROUP @11 // Xarrnous's Second Sword Arm tweak
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~BRAC09.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7270) END
+    LPF CLONE_EFFECT INT_VAR match_headers=0 match_opcode=54 opcode=73 END
+BUT_ONLY
+ACTION_IF FILE_EXISTS_IN_GAME ~bdbrac09.itm~ BEGIN
+    COPY_EXISTING ~bdbrac09.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7310) END
+        LPF CLONE_EFFECT INT_VAR match_headers=0 match_opcode=54 opcode=73 END
+    BUT_ONLY
+END
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1668 DESIGNATED 1668 GROUP @11 // Dale's Protector tweak
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~BRAC04.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7280) unusable0=0 END
+    LPF ALTER_EFFECT INT_VAR match_opcode=167 parameter1=3 END
+    LPF CLONE_EFFECT INT_VAR match_headers=0 match_opcode=167 opcode=286 parameter1=1 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=177,p2=9,p1=16391;op=177,p2=5,p1=205;op=177,p2=5,p1=206~ END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1669 DESIGNATED 1669 GROUP @11 // Gauntlets of extraordinary specialization tweak
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~BRAC21.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7290) unusable0=0 unusable2=0 END
+    LPF ALTER_EFFECT INT_VAR match_opcode=54 parameter1=2 END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1671 DESIGNATED 1671 GROUP @11 // HELM OF TRUTH tweak
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~HELM05.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7300) END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1=10 STR_VAR effects = ~op=276;op=150~ END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1672 DESIGNATED 1672 GROUP @11 // Stalker gauntlets tweak
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdbrac05.itm~ BEGIN
+    COPY_EXISTING ~bdbrac05.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7320) END
+        LPF CLONE_EFFECT INT_VAR match_headers=0 match_opcode=177 parameter1=16395 END
+    BUT_ONLY
+END
+
+////////////////////////////////////// DAGGER TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1000 DESIGNATED 1000 GROUP @12 // POISONED THROWING DAGGERS
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
@@ -634,7 +859,6 @@ REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY ~ZSTweaks/eff/ZSTWWED6.EFF~ ~override~
-
 COPY_EXISTING "dagg09.ITM" ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6590) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 177 check_globals = 0 STR_VAR resource = ~ZSTWWED6~ END
@@ -717,8 +941,6 @@ COPY ~ZSTweaks/eff/ZSTWWARA.EFF~ ~override~
      ~ZSTweaks/eff/ZSTWWARC.EFF~ ~override~
      ~ZSTweaks/eff/ZSTWWARD.EFF~ ~override~
      ~ZSTweaks/eff/ZSTWWARE.EFF~ ~override~
-
-
 COPY_EXISTING ~SW2H09.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6860) id_ref_name=RESOLVE_STR_REF(@6861) END
     LPF ALTER_HEADER INT_VAR match_damage = 4 damage = 2 END
@@ -790,7 +1012,6 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 COPY_EXISTING ~STAF11.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6400) END
     LPF itm_first_offset_effect RET offset_eff = offset END
-
     SET eff_number = SHORT_AT((LONG_AT 0x64) + 0x1e)
     FOR ( eff = 0; eff < eff_number; ++eff ) BEGIN
         WRITE_LONG (offset_eff + 0x24) 1 // save vs spell allowed
@@ -829,7 +1050,6 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY ~ZSTweaks/eff/ZSTWWAVE.EFF~ ~override~
-
 COPY_EXISTING "HALB09.ITM" ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6420) END
     LPF GET_DMG_TYPE STR_VAR type = ~cold~ RET cold = dmg_param END
@@ -901,7 +1121,6 @@ REQUIRE_PREDICATE GAME_IS "bg2ee" @50
 COPY ~ZSTweaks/eff/ZSTWSF01.eff~ ~override~
      ~ZSTweaks/eff/ZSTWSF02.eff~ ~override~
      ~ZSTweaks/eff/ZSTWSF03.eff~ ~override~
-
 COPY_EXISTING ~STAF19.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7060) END
     LPF ADD_ITEM_HEADER INT_VAR target = 5 charges = 2 depletion = 3 flags = 2**9 + 2**11 STR_VAR icon = ~SPPR514B~ END
@@ -941,7 +1160,6 @@ COPY_EXISTING "SW1H32.itm" ~override~
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 146 p2=4 STR_VAR effects = ~op=178,spec=4;op=219~ END
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 15 STR_VAR effects = ~op=27;op=28;op=29;op=30~ END
 BUT_ONLY
-
 COPY_EXISTING "SW1H32C.EFF" ~override~
     LPF ALTER_EFF_FILE INT_VAR dicenumber=2 END
 BUT_ONLY
@@ -1127,7 +1345,6 @@ REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY ~ZSTweaks/eff/ZSTWBL01.EFF~ ~override~
-
 COPY_EXISTING ~BLUN11.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6150) END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,p1=1,p2=3,tmg=1,rd=2,res=ZSTWBL01~ END
@@ -1139,7 +1356,6 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY ~ZSTweaks/eff/ZSTWBL02.EFF~ ~override~
-
 COPY_EXISTING ~BLUN18.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6160) END
     LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR resource = ~ZSTWBL02~ END
@@ -1151,7 +1367,6 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY ~ZSTweaks/spl/other/ZSTWPAIN.SPL~ ~override~
-
 COPY_EXISTING ~BLUN24.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6182) END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=146,res=ZSTWPAIN,p2=1,tmg=1,rd=2~ END
@@ -1231,7 +1446,6 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY ~ZSTweaks/eff/ZSTWMI01.EFF~ ~override~
-
 COPY_EXISTING ~BOW08.ITM~ ~override~
     PATCH_IF GAME_IS "bgee" BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7010) END
@@ -1624,7 +1838,6 @@ COPY_EXISTING ~FAMIMP.CRE~ ~override~
         WRITE_SHORT 0x26 12
     END
 BUT_ONLY
-
 COPY_EXISTING ~SPWI123.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @6650
 BUT_ONLY
@@ -1712,7 +1925,6 @@ COPY_EXISTING ~SPWI604.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @6950
     LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 16 END
 BUT_ONLY
-
 COPY_EXISTING ~SPIN984.SPL~ ~override~ // beholder version
     LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 16 END
 BUT_ONLY
@@ -1741,7 +1953,6 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY ~ZSTweaks/eff/ZSTWFL04.EFF~ ~override~
-
 COPY_EXISTING ~SPPR206.SPL~ ~override~
     PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "102" BEGIN
         SAY UNIDENTIFIED_DESC @6630
@@ -1749,7 +1960,6 @@ COPY_EXISTING ~SPPR206.SPL~ ~override~
         SAY UNIDENTIFIED_DESC @6610
     END
 BUT_ONLY
-
 COPY_EXISTING ~FBLADE.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR this_plus=1 flags=2**6 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=344,p1=4,p2=3,spec=2~ END
