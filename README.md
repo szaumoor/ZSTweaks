@@ -291,7 +291,7 @@ This modifies a selection of vanilla ioun stones and circlets:
 - Circlet of Netheril: this makes it more useful and final for sorcerous classes by adding one extra spell slot for level 9 as well, as well as a +7% magic damage dealt bonus.
 - Eilistraee's Boon +1: this makes the item give a bonus to non-evil elves: +1 DEX
 
-**Component 1666:** Make Bracers of Blinding's Improved Haste effect last 1 turn
+**Component 1666:** Make Bracers of Blinding's Improved Haste effect last 1 turn and improve speed passively
 
 The original lasts 20 seconds. Additionally, it improves weapon speed factor by 2 and movement rate by 2 (not affected by Free Action).
 
