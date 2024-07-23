@@ -78,6 +78,7 @@
 @1669 = ~Make Gauntlets of Extraordinary Specialization improve THAC0 by 2 and open to all classes~
 @1671 = ~Make The Eyes of Truth add a bonus to detect illusions and traps~
 @1672 = ~Make Stalker Gauntlets also benefit Bounty Hunters~
+@1673 = ~Make Blessed Bracers more powerful~
 
 // subcomponent str of component @1664
 @16640 = ~Affect all~
@@ -97,6 +98,8 @@
 @1680 = ~Make Stiletto of Demarchess +2 a bit more powerful and bleed every hit~
 @1681 = ~Make Elements' Fury +2 slightly more powerful~
 @1682 = ~Make Acid-Etched Dagger +2 generally more powerful and act as +3~
+@1683 = ~Make Gemblade +2 more powerful and more worth hanging onto for wizards~
+@1684 = ~Make basic throwing daggers usable as melee weapons~
 
 
 /// TWO-HANDED MELEE WEAPONS
@@ -3643,3 +3646,101 @@ Equipped abilities:
 – Backstab Multiplier: +1 (Stalkers and Bounty Hunters only)
 
 Weight: 2~
+
+@7330 = ~The willing sacrifice of a vast fortune in gold, combined with the holy venerations of the sanctifying ceremony, have convinced the blessed powers to transform these already formidable gauntlets into gloves of awesome righteous power.
+
+STATISTICS:
+
+Equipped abilities:
+– Hit Points: +15
+– One extra spell slot from level 1 to 4 (paladins only)
+– Casting speed: +1 (paladins only)
+– Permanently Blessed and under the effects of Protection from Evil
+
+Charge abilities:
+– Heal once per day
+  Special: Completely heals target, instantly cast
+  Area of Effect: 1 creature
+
+– Resurrection once per day
+  Special: Raised target is fully healed, instantly cast
+  Range: Unlimited
+  Area of Effect: 1 creature
+
+Weight: 1~
+
+@7340 = ~The original Gemblade produced brilliant jewels when it struck. Now the weapon has used up its ability to create these valuable stones. Instead it has developed a new ability which unleashes harmful magical energy on hit and empowers casters of the wizardly sort.
+
+STATISTICS:
+
+Equipped abilities:
+– Intelligence: +1
+– 2 additional wizard spell slots for level 1 and 2
+– Acts as a +3 weapon for the purposes of what it can hit
+
+Combat abilities:
+– 33% chance of inflicting an extra 1d4+2 magic damage
+
+THAC0: +2
+Damage: 1d4+2, +1 magic damage
+Damage Type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@7350 = ~The typical throwing dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. Unlike a dagger, this one has a smaller handle and is balanced differently.
+
+STATISTICS:
+
+Damage (ranged): 1d4 (missile)
+Damage (melee): 1d3 (piercing)
+Speed Factor (ranged): 2
+Speed Factor (melee): 3
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
+
+//vanilla
+@7351 = ~The typical throwing dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. Unlike a dagger, this one has a smaller handle and is balanced perfectly. A thin coating of poison has been applied to each poisoned throwing dagger, making it a lethal tool in the hands of trained assassins.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target takes 2 points of poison damage per second for 10 seconds (Save vs. Death negates)
+
+Damage (ranged): 1d4 (missile)
+Damage (melee): 1d3 (piercing)
+Speed Factor (ranged): 2
+Speed Factor (melee): 3
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
+
+// tweaked
+@7352 = ~The typical throwing dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. Unlike a dagger, this one has a smaller handle and is balanced perfectly. A thin coating of poison has been applied to each poisoned throwing dagger, making it a lethal tool in the hands of trained assassins.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target must save vs. Death at -2 or suffer 2 points of poison damage per second for 10 seconds
+
+Damage (ranged): 1d4 (missile)
+Damage (melee): 1d3 (piercing)
+Speed Factor (ranged): 2
+Speed Factor (melee): 3
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~

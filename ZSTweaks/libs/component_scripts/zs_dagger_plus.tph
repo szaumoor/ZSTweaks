@@ -21,7 +21,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
 	PATCH_IF wpn_cat == 16  AND wpn_prof == 96 BEGIN // daggers
         LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = 0 END
         FOR ( current_th = 6; current_th >= 0; --current_th ) BEGIN
-            LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 match_to_hit = current_th to_hit = current_th + 1 END
+            LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_to_hit=current_th to_hit=current_th+1 END
         END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1~ END
         PATCH_IF ench = 0 BEGIN
