@@ -114,10 +114,10 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 INCLUDE ~ZSTweaks/libs/zs_correct_animations.tph~
 
 ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN // modify spells for finesse
-    COPY_EXISTING_REGEXP ~ZSTWW[0-6]\.spl~
+    COPY_EXISTING_REGEXP ~ZSTWW[0-6]\.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=12 match_dicesize=8 match_dicenumber=1 dicesize=4 dicenumber=2 END
     BUT_ONLY
-    COPY_EXISTING_REGEXP ~ZSTWL[0-6]\.spl~
+    COPY_EXISTING_REGEXP ~ZSTWL[0-6]\.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=12 match_dicesize=8 match_dicenumber=1 dicesize=4 dicenumber=2 END
     BUT_ONLY
 END
@@ -173,7 +173,7 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN // modify spells for finesse
-    COPY_EXISTING_REGEXP ~ZSTWK[0-6]\.spl~
+    COPY_EXISTING_REGEXP ~ZSTWK[0-6]\.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=12 match_dicesize=8 match_dicenumber=1 dicesize=5 dicenumber=2 END
     BUT_ONLY
 END
@@ -584,7 +584,7 @@ COPY_EXISTING "RING05.ITM" ~override~
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @16640 DESIGNATED 16640 SUBCOMPONENT @1664 // IOUN STONE / CIRCLETS CRIT HITS: select all
+BEGIN @16640 DESIGNATED 16640 SUBCOMPONENT @1664 GROUP @11 // IOUN STONE / CIRCLETS CRIT HITS: select all
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @50
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -605,7 +605,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @16641 DESIGNATED 16641 SUBCOMPONENT @1664 // IOUN STONE / CIRCLETS CRIT HITS: only selected items
+BEGIN @16641 DESIGNATED 16641 SUBCOMPONENT @1664 GROUP @11// IOUN STONE / CIRCLETS CRIT HITS: only selected items
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @50
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -637,7 +637,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~ohrhelm1.ITM~ BEGIN // headband of the devout
 END
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @16642 DESIGNATED 16642 SUBCOMPONENT @1664 // IOUN STONE / CIRCLETS CRIT HITS: only ioun stones
+BEGIN @16642 DESIGNATED 16642 SUBCOMPONENT @1664 GROUP @11// IOUN STONE / CIRCLETS CRIT HITS: only ioun stones
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @50
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -658,7 +658,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @16643 DESIGNATED 16643 SUBCOMPONENT @1664 // IOUN STONE / CIRCLETS CRIT HITS: only circlets
+BEGIN @16643 DESIGNATED 16643 SUBCOMPONENT @1664 GROUP @11// IOUN STONE / CIRCLETS CRIT HITS: only circlets
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @50
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -679,7 +679,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1665 DESIGNATED 1665 GROUP @11 // specific iouns tweak
+BEGIN @1665 DESIGNATED 1665 GROUP @11 GROUP @11// specific iouns tweak
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -938,35 +938,45 @@ ACTION_IF FILE_EXISTS_IN_GAME ~bddagg3a.itm~ BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7340) ench=3 END
         LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=42,p1=2,p2=3~ END
         LPF GET_DMG_TYPE STR_VAR type=~magic~ RET dmg = dmg_param END
-        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=1,p2=%dmg%;op=12,p1=2,p2=%dmg%,dsize=4,dnum=1,pro1=32~ END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,dsize=2,dnum=1,p2=%dmg%;op=12,p1=2,p2=%dmg%,dsize=4,dnum=1,pro1=32~ END
     BUT_ONLY
 END ELSE BEGIN
     PRINT "Gemblade not found in game files, skipping..."
 END
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1683 DESIGNATED 1683 GROUP @12 // throwing daggers tweak
+BEGIN @1684 DESIGNATED 1684 GROUP @12 // throwing daggers tweak
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY ~ZSTweaks/spl/finesse/ZSTWTHD0.spl~ ~override~
 
 COPY_EXISTING ~dagg05.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7350) END
     LPF GET_DMG_TYPE STR_VAR type=~piercing~ RET dmg = dmg_param END
     LPF ADD_ITEM_HEADER INT_VAR copy_header=1 END
-    LPF ALTER_HEADER INT_VAR match_type=3 header=1 type=1 range=0 speed=3 dicesize=3 backhand=20 thrust=80 damage_type=1 projectile=1 flags=0 END
-    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~~ BEGIN // finesse part installed
-        // ZSTWTHD0 dmg res
+    LPF ALTER_HEADER INT_VAR flags=0 check_globals=0 header=1 type=1 range=0 speed=3 dicesize=3 backhand=20 thrust=80 damage_type=1 projectile=1 flags=0 END
+    LPF DELETE_EFFECT INT_VAR check_globals=0 match_type=3 match_opcode=346 STR_VAR match_resource=~ZSTWZ0~ END
+    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN // finesse part installed
+        LPF weapon_damage_by_class STR_VAR class=~thief~ spell=~ZSTWTHD0~ probability1=59 END
     END
 BUT_ONLY
 
 COPY_EXISTING ~dagg16.itm~ ~override~
     PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1000~ BEGIN
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7352) END
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7352) unid_ref_desc=RESOLVE_STR_REF(@7352) END
     END ELSE BEGIN
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7351) END
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7351) unid_ref_desc=RESOLVE_STR_REF(@7351) END
     END
-    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~~ BEGIN // finesse part installed
-       // ZSTWTHD0 dmg res
+    LPF ADD_ITEM_HEADER INT_VAR copy_header=1 END
+    LPF ALTER_HEADER INT_VAR flags=0 check_globals=0 header=1 type=1 range=0 speed=3 dicesize=3 backhand=20 thrust=80 damage_type=1 projectile=1 flags=0 END
+    LPF DELETE_EFFECT INT_VAR check_globals=0 match_type=3 match_opcode=142 END
+    LPF DELETE_EFFECT INT_VAR check_globals=0 match_type=3 match_opcode=346 STR_VAR match_resource=~ZSTWZ0~ END
+    LPF GET_DMG_TYPE STR_VAR type=~poison~ RET dmg=dmg_param END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 match_type=3 match_opcode=25 opcode=12 parameter1=1 parameter2=0 duration=0 END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 match_type=3 match_opcode=12 parameter2=dmg savingthrow=0 savebonus=0 END
+    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN // finesse part installed
+       LPF weapon_damage_by_class STR_VAR class=~thief~ spell=~ZSTWTHD0~ probability1=59 END
     END
 BUT_ONLY
 

@@ -3682,7 +3682,7 @@ Combat abilities:
 – 33% chance of inflicting an extra 1d4+2 magic damage
 
 THAC0: +2
-Damage: 1d4+2, +1 magic damage
+Damage: 1d4+2, +1d2 magic damage
 Damage Type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
@@ -3713,10 +3713,10 @@ Weight: 0~
 STATISTICS:
 
 Combat abilities:
-– Hit target takes 2 points of poison damage per second for 10 seconds (Save vs. Death negates)
+– Hit target takes 2 points of poison damage per second for 10 seconds unless they save vs. Death (ranged only)
 
 Damage (ranged): 1d4 (missile)
-Damage (melee): 1d3 (piercing)
+Damage (melee): 1d3 (piercing), +1d2 (poison, no save)
 Speed Factor (ranged): 2
 Speed Factor (melee): 3
 Proficiency Type: Dagger
@@ -3732,10 +3732,10 @@ Weight: 0~
 STATISTICS:
 
 Combat abilities:
-– Hit target must save vs. Death at -2 or suffer 2 points of poison damage per second for 10 seconds
+– Hit target must save vs. Death at -2 or suffer 2 points of poison damage per second for 10 seconds (ranged only)
 
 Damage (ranged): 1d4 (missile)
-Damage (melee): 1d3 (piercing)
+Damage (melee): 1d3 (piercing), +1d2 (poison)
 Speed Factor (ranged): 2
 Speed Factor (melee): 3
 Proficiency Type: Dagger
