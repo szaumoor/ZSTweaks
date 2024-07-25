@@ -380,6 +380,23 @@ This component makes this weapon one of the few +3 weapons in the expansion, act
 - Hits with dagger also deal 1d3 acid damage (improved from 1).
 - 20% chance of causing 1d3 acid damage per round for 3 rounds (improved from 1, 15% chance), as well as adding an AC penalty of 2 for 3 rounds
 
+**Component 1683:** Make Gemblade +2 more powerful and more worth hanging onto for wizards
+
+This makes Gemblade +2 more worth using. Gemblade is one of those "cool items" design-wise, but functionally, has nothing that interesting, particularly considering INT bonuses are generally useless in vanilla game. So now, other than increasing INT by 1:
+
+- Every hit causes an additional 1d2 magic damage
+- 33% chances of causing additional 1d4+2 magic damage
+- Wizards/Sorcerers/Mages can cast 2 more spells of level 1 and 2 while holding it.
+- Acts as a +3 weapon for the purposes of what it can hit
+
+**Component 1684:** Make basic throwing daggers usable as melee weapons
+
+This copies SoD's special throwing dagger such that you can vanilla throwing daggers as melee weapons if desired. The items modified are:
+
+- Throwing dagger (dagg05.itm): Has a melee option which deals 1d3 piercing damage, with a speed factor of 3
+- Poisoned throwing dagger (dagg16.itm): Has a melee option which deals 1d3 piercing damage, plus +1 poison damage (no save). The usual poisoning ability does not work in this mod, only in ranged mode. This was done because otherwise using it as a melee weapon is too obvious as a better choice.
+
+
 </details>
 
 ---
