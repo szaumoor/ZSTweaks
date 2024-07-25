@@ -1995,9 +1995,11 @@ COPY_EXISTING ~SPWI604.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @6950
     LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 16 END
 BUT_ONLY
-COPY_EXISTING ~SPIN984.SPL~ ~override~ // beholder version
-    LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 16 END
-BUT_ONLY
+ACTION_IF FILE_EXISTS_IN_GAME ~SPIN984.SPL~ BEGIN
+    COPY_EXISTING ~SPIN984.SPL~ ~override~ // beholder version
+        LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 16 END
+    BUT_ONLY
+END
 
 ////////////////// CLERIC/DRUID SPELL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
