@@ -1559,13 +1559,13 @@ COPY_EXISTING ~AX1H10A.EFF~ ~override~
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1323 DESIGNATED 1323 GROUP @15 // WYVERN TAIL +2 TWEAK
+BEGIN @1324 DESIGNATED 1324 GROUP @15 // WYVERN TAIL +2 TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING ~BLUN17.ITM~ ~override~
     LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=12 parameter1=2 savingthrow=0 savebonus=0 END
-    LPF CLONE_EFFECT INT_VAR check_globals=0 match_opcode=12 opcode=25 parameter1=1 parameter2=2 timing=0 probability2=4 duration=5 END
+    LPF CLONE_EFFECT INT_VAR check_globals=0 match_opcode=12 opcode=25 parameter1=1 parameter2=2 timing=0 probability2=4 duration=5 savingthrow=4 END
     LPF CLONE_EFFECT INT_VAR check_globals=0 match_opcode=25 parameter1=5 probability2=0 probability1=3 END
     LPF ADD_ON_HIT_EFF INT_VAR parameter1=6 END
 BUT_ONLY
