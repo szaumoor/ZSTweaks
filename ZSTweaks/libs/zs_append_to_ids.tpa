@@ -1,0 +1,52 @@
+//Action function for appending into IDS file at the first free index slot within given index range.
+//The action can return numerical reference of the appended entry or existing index if symbolic name already exists within the file.
+
+//Example usage:
+//LAF APPEND_TO_IDS INT_VAR min = 400 max = 65535 STR_VAR file = ~STATS.IDS~ name = ~SYMBOLIC_NAME~ RET index END
+
+DEFINE_ACTION_FUNCTION APPEND_TO_IDS
+	INT_VAR
+	min = 1 //append to ids at this index or higher
+	max = 254 //append to ids at this index or lower
+	fail = 0 //set to 1 to fail installation if there are not enough ids slots
+	warn = 1 //set to 0 to not print warning if there are not enough ids slots
+	STR_VAR
+	file = ~~ //ids filename that we append to
+	name = ~~ //symbolic name to append
+	RET
+	index //returns numerical reference of the appended entry (or existing index if symbolic name already exists within the file), -1 if there were no free slots
+BEGIN
+	COPY_EXISTING - ~%file%~ ~override~
+		COUNT_2DA_ROWS 2 "cntrow"
+		FOR (i = 0; i < cntrow; ++i) BEGIN
+			READ_2DA_ENTRY i 0 2 "idsNum"
+			READ_2DA_ENTRY i 1 2 "idsName"
+			PATCH_IF (IS_AN_INT ~%idsNum%~) BEGIN
+				DEFINE_ASSOCIATIVE_ARRAY local_idsNum BEGIN ~%idsNum%~ => ~%idsName%~ END
+				DEFINE_ASSOCIATIVE_ARRAY local_idsName BEGIN ~%idsName%~ => ~%idsNum%~ END
+			END
+		END
+	ACTION_IF (VARIABLE_IS_SET $local_idsName("%name%")) BEGIN
+		OUTER_SET index = $local_idsName("%name%")
+		PRINT ~APPEND_TO_IDS: %name% already exists in %file% under %index% index~
+	END ELSE BEGIN
+		OUTER_SET index = ~-1~
+		OUTER_FOR (i = min; i <= max; ++i) BEGIN
+			ACTION_IF (NOT VARIABLE_IS_SET $local_idsNum("%i%")) BEGIN
+				APPEND ~%file%~ ~%i% %name%~
+				OUTER_SET index = i
+				PRINT ~APPEND_TO_IDS: %index% %name% appended to %file%~
+				OUTER_SET i = max
+			END
+		END
+		ACTION_IF index = ~-1~ BEGIN
+			ACTION_IF fail = 1 BEGIN
+				FAIL ~APPEND_TO_IDS: couldn't add %name% to %file% as no slots remain~
+			END ELSE ACTION_IF warn = 1 BEGIN
+				WARN ~WARNING APPEND_TO_IDS: couldn't add %name% to %file% as no slots remain~
+			END ELSE BEGIN
+				PRINT ~APPEND_TO_IDS: couldn't add %name% to %file% as no slots remain~
+			END
+		END
+	END
+END

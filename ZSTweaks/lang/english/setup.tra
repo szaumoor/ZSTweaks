@@ -1,5 +1,5 @@
 // GROUPS
-@10 = ~General Weapon Tweaks~
+@10 = ~General Weapon & Spell Tweaks~
 @11 = ~Armor/Gear Tweaks~
 @12 = ~Dagger Tweaks~
 @13 = ~Two-handed Melee Weapon Tweaks~
@@ -11,21 +11,20 @@
 @19 = ~Wizard Spell Tweaks~
 @20 = ~Cleric/Druid Spell Tweaks~
 @21 = ~Class and Kit-related tweaks~
-
 // END GROUPS
 
+// warning messages
 @49 = ~This component is only compatible with BGEE~
 @50 = ~This component is only compatible with BGEE and EET~
 @52 = ~This component is only compatible with BG2EE and EET~
 @53 = ~This component is only compatible with BGEE, BG2EE and EET~
 @54 = ~This component is only compatible with IWDEE, BGEE, BG2EE and EET~
 @55 = ~Tweak already installed elsewhere~
-
+@56 = ~This component is only compatible with IWDEE, BG2EE and EET~
 // end warning messages components
 
 // COMPONENTS
-
-/// GENERAL WEAPON TWEAKS
+/// GENERAL WEAPON AND SPELL TWEAKS
 @120 = "Make conjured wielded magical weapons add 1 extra APR (Flame Blade, Phantom Blade...)"
 @1120 = "Make some weapon categories incur in backstab penalties for balance"
 @1121 = ~Make Flails and Morningstars always inflict a small amount of piercing damage~
@@ -41,7 +40,7 @@
 @1440 = "Make Daggers have general extra features to compensate the low damage"
 @1450 = "Make some rogue weapons have the chance of doing more damage if wielded by pure thieves (Finesse)"
 @1530 = ~Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time~
-
+@1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense~
 
 /// ARMOR/GEAR TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -53,7 +52,7 @@
 @1316 = "Make Mercykiller Ring more useful for rogues that like killing"
 @1317 = "Make the basic robes and Archmage robes slightly more remarkable"
 @1560 = ~Make Belt of Skillful Blade also increase piercing damage by 10%~
-@1561 = ~Make Cloak of the Stars create 30 darts, instead of six~
+@1561 = ~Make Cloak of the Stars create 30 darts, instead of six, and add passive effects~
 @1570 = ~Make Eyes of the Beholder's skills mirror the power of the spells they're based on~
 @1610 = ~Make Robe of Invocation also improve all elemental damage by 5% and add a +2 bonus against Invocation~
 @1620 = ~Make Vicross' Thayan Circlet apply Improved Shield of Chaos instead of just Shield of Chaos~
@@ -86,7 +85,6 @@
 @16642 = ~Only affect ioun stones~
 @16643 = ~Only affect circlets~
 
-
 /// DAGGER TWEAKS
 @1000 = "Make throwing poisoned daggers slightly more likely to poison enemies"
 @1130 = "Make Bone Blade dagger more special and not just a plain +4 dagger"
@@ -100,7 +98,6 @@
 @1682 = ~Make Acid-Etched Dagger +2 generally more powerful and act as +3~
 @1683 = ~Make Gemblade +2 more powerful and more worth hanging onto for wizards~
 @1684 = ~Make basic throwing daggers usable as melee weapons~
-
 
 /// TWO-HANDED MELEE WEAPONS
 @1200 = "Make Ixil's Spike allow Haste and Improved Haste"
@@ -121,7 +118,6 @@
 @1592 = ~Make Soul Reaver deal 1d12 damage~
 @1593 = ~Make Sword of Ruin +2 slightly more powerful~
 @1594 = ~Make Cleric's staff more unique and actually benefit clerics~
-
 
 /// ONE-HANDED SWORDS
 @1125 = "Make Ninjato of the Scarlet Brothehood +3 available for other classes and alignments"
@@ -145,7 +141,6 @@
 @1582 = ~Make Vexation +2 more powerful~
 @1583 = ~Make Kachiko's Wakizashi substantially more unique in description and improve it~
 
-
 // AXES AND BLUNT WEAPONS
 @1310 = "Make Defender of Eastheaven damage reduction a little more moderate"
 @1311 = "Make Krotan's Skullcrusher +2 slightly less generic"
@@ -155,7 +150,7 @@
 @1320 = "Make Flail of Ages +5 allow Haste and Improved Haste"
 @1321 = "Make Bone Club +2, +3 against undead's effect reflect the description better and improve it slightly"
 @1323 = ~Make Azuredge act properly as a +3 weapon~
-
+@1324 = ~Make Wyvern's Tail +2 cause poison damage on hit and have a chance of poisoning~
 
 // RANGED WEAPONS
 @1010 = ~Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost~
@@ -193,12 +188,12 @@
 @180 = "Make Meteor Swarm more likely to do more damage, and bypass magic resistance like Fire Storm"
 @200 = "Make Sleep work for level >=5 enemies with a save bonus"
 @210 = "Make Horror an Enchantment spell"
-@220 = "Make Ice Storm do 1d8 more damage per round"
+@220 = "Make Ice Storm do more damage, including piercing damage"
 @370 = "Make Ray of Enfeeblement a Necromancy spell"
 @380 = "Make Contagion cause 4 points of Strength and Dexterity damage"
 @390 = "Make Death Fog inflict 4d4 acid damage per round instead of flat 8 damage"
 @400 = "Make Energy Drain drain 6 levels instead of 2"
-@405 = ~Make Maze bypass Magic Resistance, like Imprisonment~
+@405 = ~Make Maze bypass Magic Resistance, like Imprisonment, and make Minotaurs immune to it~
 @407 = ~Make BGEE's Imp have 12 HP like the other familiars~
 @410 = ~Make Horrid Wilting actually be more effective against plants and Water Elementals~
 @430 = ~Make Grease bypass Magic Resistance, as it is as conjured substance, and apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description~
@@ -207,6 +202,7 @@
 @442 = "Make Tenser's Transformation gain extra APR like a Fighter at the appropriate levels"
 @443 = ~Make Symbol of Death work with Save bonus if above the 60 HP threshold~
 @444 = ~Make Flesh to Stone use Petrification saves~
+@445 = ~Make Bigby's spells more powerful~
 
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
@@ -224,16 +220,21 @@
 @290 = "Make Holy Power grant extra APR like a Fighter at the appropriate levels"
 @300 = "Make Iron Skins cast as fast a Stoneskin"
 @310 = "Make Fire Seeds create more seeds that do slightly more damage, with an enchantment of 2"
-@320 = "Make Nature's Beauty a bit more likely to kill humanoid enemies outright"
+@320 = "Make Nature's Beauty a bit more likely to kill humanoid enemies, and make blinded enemies immune"
 @330 = "Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)"
 @340 = "Make Symbol of Death work with Save bonus if above the 60 HP threshold"
 @350 = "Make Earthquake not shake the screen"
 @420 = ~Make Armor of Faith also add a +2 AC bonus to make it useful at low levels~
 @450 = ~Make single-target healing spells other than Heal worth using~
 @460 = ~Make Mass Cure faster to cast to improve it as a combat spell and heal a bit more~
+@461 = ~Make Bolt of Glory slightly better~
+@462 = ~Make Magical Stone bypass Magic Resistance and deal both magic and missile damage~
+@463 = ~Make Dolorous Decay more powerful~
+@464 = ~Make Wondrous Recall also recall wizard spells, and a higher number of them~
+@465 = ~Make Nature's Beauty blocked by True Sight~
+@466 = ~Make Shield of Archons absorb more spell levels (equivalent to cleric level)~
 
 // KITS AND CLASSES
-
 @2100 = "Make Sun Soul Ray from Sun Soul Monks scale further and do more damage to undead"
 @2110 = "Make Sun Soulbeam do more damage to undead: 12d6 instead of just 3 more damage than baseline"
 @360 = "Make Shaman's Etheral Retribution do more damage per round: 6d6 per round instead of 3d8"
@@ -256,11 +257,9 @@
 @3000 = ~Make Planetars grant immunity to Level 1 to 3 spells in an aura, as per the Minor Globe of Invulnerability spell~
 
 //MISC TWEAKS
-
 @3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane (Rasaad's Quest)~ // TODO, add Lava's areas too
 
 // NEW DESCRIPTIONS
-
 @5000 = ~Glyph of Warding
 (Abjuration, Evocation)
 
@@ -325,7 +324,7 @@ Casting Time: 9
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces pull down meteors from above, hurling them randomly at anyone in the area of effect. Anyone caught in the destructive path of the meteors—whether friend or foe—will suffer 2d8 points of damage plus 1 per level of the caster (i.e. 2d10 + 1/level) with no Saving Throw. The caster is well advised to be careful in <PRO_HISHER> use of this spell.~
+When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces pull down meteors from above, hurling them randomly at anyone in the area of effect. Anyone caught in the destructive path of the meteors—whether friend or foe—will suffer 2d8 points of damage plus 1 per level of the caster (i.e. 2d10 + 1/level) with no Saving Throw or Magic Resistance check allowed to resist it. The caster is well advised to be careful in <PRO_HISHER> use of this spell.~
 
 @5050 = ~Horror
 (Enchantment)
@@ -2172,6 +2171,7 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: +1
+– Immunity to Beholder Rays that cause Domination, Charm, Paralysis or Fear effects
 – Protects against critical hits
 
 Charge abilities (May be used 3 times per day each):
@@ -2804,9 +2804,13 @@ Requires:
 
 Weight: 4~
 
-@6820 = ~Thalanta the Fair created many types of cloaks, all known as Cloaks of the Stars. This particular version is simple, with three stars down each sleeve. Once per day, each star can be removed and thrown as a dart. The star disappears, only to return the next day.
+@6820 = ~Thalanta the Fair created many types of cloaks, all known as Cloaks of the Stars. This particular version is simple, with fifteen stars down each sleeve. Once per day, each star can be removed and thrown as a dart. The star disappears, only to return the next day.
 
 STATISTICS:
+
+Equipped abilities:
+– Wearer becomes proficient in darts automatically
+– Save vs. Spell: +1
 
 Charge abilities:
 – Create thirty +5 darts once per day
@@ -3744,3 +3748,152 @@ Requires:
  3 Strength
 
 Weight: 0~
+
+@7360 = ~Wail of the Banshee
+(Necromancy)
+
+Level: 9
+Range: 0
+Duration: Instant
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+At the culmination of this dreadful spell, the wizard screams like a banshee (groaning spirit). Everyone in the area of effect hears the awful cry. Those who fail a Saving Throw vs. Death die instantly; those who do, still suffer 3d6+3 magic damage and deafness for 2 rounds without any save allowed. The caster and companions are immune to the effects of the wail.~
+
+@7370 = ~Ice Storm
+(Evocation)
+
+Level: 4
+Range: Visual range of the caster
+Duration: 4 rounds
+Casting Time: 4
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+When this spell is cast, great hail stones pound down for four rounds in a 30-ft. diameter area and inflict 2d8+2 points of cold damage plus 1d6+2 piercing damage to any creatures within the area of effect every round. Also, anyone that remains within the area of effect takes 2d8 cold damage each round for 4 rounds.~
+
+@7380 = ~Maze
+(Conjuration/Summoning)
+
+Level: 8
+Range: Touch
+Duration: Special
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+An extradimensional space is brought into being upon utterance of a maze spell. The subject vanishes into the shifting labyrinth of force planes for a period of time that is totally dependent upon its Intelligence:
+
+– Less than 3: 2d4 turns
+– 3 to 5: 1d4 turns
+– 6 to 8: 5d4 rounds
+– 9 to 11: 4d4 rounds
+– 12 to 14: 3d4 rounds
+– 15 to 17: 2d4 rounds
+– 18 and up: 1d4 rounds
+
+Note that if the 9th-level spell Freedom is cast in the area where a creature is mazed, it will effectively bring <PRO_HIMHER> back to this plane, ending the spell prematurely, but it cannot be ended with any other magic-dispelling spells. This spell is not subject to Magic Resistance, and minotaurs are immune to this effect.~
+
+@7381 = ~Bigby's Clenched Fist
+(Evocation)
+
+Level: 8
+Range: 35 ft.
+Duration: 4 rounds
+Casting Time: 8
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell causes a giant disembodied hand to squeeze and constrict the target once per round for up to 4 rounds. It initially smashes the target for 4d6+6 crushing damage with no save, and the target is held. In the second round, the target can save vs. Paralysis at -4 to escape. If they fail to save, the hand does 6d6+4 crushing damage. The following round, the target can save vs. Paralysis at -2. If they make the save, they are free to move, if they fail, the spell does 8d6+2 crushing damage and holds them for 2 rounds. After the 4th round, the spell is finished. Magic Resistance will not stop the spell.~
+
+@7382 = ~Bigby's Crushing Hand
+(Evocation)
+
+Level: 9
+Range: 35 ft.
+Duration: 3 rounds
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell creates a huge disembodied fist that crushes the target and pins them to the ground. In the first round, the spell does 6d6+6 crushing damage. The victim can save at -6 vs. Paralysis to avoid being pinned. If they fail, the hand does 8d6+8 crushing damage the next round. The victim can again save vs. Paralysis at -4. If they fail to save, the hand does a final 10d6+10 crushing damage and disappears. This spell will not be stopped by Magic Resistance.~
+
+
+@7390 = ~Bolt of Glory
+(Invocation/Evocation)
+
+Level: 6
+Sphere: Combat, Summoning
+Range: 60 ft.
+Duration: Instant
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+By casting this spell, the priest channels a bolt of Positive Energy against the target. No attack roll is needed. Creatures struck suffer varying damage, depending on their plane of origin:
+
+Creature Type                         Damage
+ Prime Material Plane                  4d4+6
+ Non-fiendish outsiders                6d6+6
+ Undead                                8d6+6
+ Fiendish outsiders                    8d8+6
+
+ This spell cannot be blocked by Magic Resistance, and outsiders of celestial origin (or related to the Positive Energy Plane) are unaffected, including Aasimars.~
+
+ @7400 = ~Magical Stone
+(Enchantment)
+
+Level: 1
+Sphere: Combat
+Range: 50 ft.
+Duration: Instant
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+By using this spell, the priest can charms a pebble, which becomes magical and flies out and hits a target opponent. The stone deals 1d4 points of magic and missile damage to whomever it hits.~
+
+@7410 = ~Dolorous Decay
+(Alteration, Necromancy)
+
+Sphere: Combat, Necromantic
+Level: 6
+Range: 30 ft.
+Duration: Special
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell affects a single living creature. Dolorous Decay is a rotting and withering of the body that spreads throughout the afflicted creature quickly. The target creature will automatically be slowed for 2 rounds and suffer 2d10 poison damage immediately with no save. Furthermore, if the target fails a Saving Throw vs. Poison with a -3 penalty, <PRO_HESHE> will suffer 1 point of damage per second for 1 turn, and suffer a -2 penalty to THAC0, Damage, and AC, and will suffer 8% extra physical damage for that duration.~
+
+@7420 = ~Wondrous Recall
+(Alteration)
+
+Level: 6
+Sphere: Charm, Creation
+Range: 0
+Duration: Instant
+Casting Time: 2 rounds
+Area of Effect: The caster
+Saving Throw: None
+
+This spell enables the caster to bring back to memory 2 spells that have been previously cast of level 1, and 4 more spells of up to level 5. If no spells have been cast yet, nothing happens. Wondrous Recall will additionally recall wizard spells to the same degree, if the user has the capacity to memorize arcane magic.~
+
+@7430 = ~The large spike at the head of this morning star is actually the lethal stinger of a wyvern. The fighter/mage Sedej created this weapon, using his magical abilities to keep the stinger capable of producing poison. The magic he used has actually made the Wyvern's Tail a living weapon that pulses with life in the hands of its wielder.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target must save vs. Poison or take 5 Hit Points of poison damage over 5 seconds. There's a 4% chance the poison will be as potent as that of an adult Wyvern, causing 25 Hit Points of poison damage in total instead.
+
+THAC0: +2
+Damage: 2d4+2, +2 poison damage (no save)
+Damage Type: Crushing
+Speed Factor: 5
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 9~

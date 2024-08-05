@@ -398,23 +398,35 @@ INT_VAR
 BEGIN
     PATCH_IF parameter1 > "-1" BEGIN
         WRITE_LONG 0x1c parameter1
+    END ELSE BEGIN
+        PATCH_IF parameter1 < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to parameter1: %parameter1%"
+        END
     END
     PATCH_IF dicesize > "-1" BEGIN
-        WRITE_LONG 0x3c parameter1
+        WRITE_LONG 0x3c dicesize
+    END ELSE BEGIN
+        PATCH_IF dicesize < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to dicesize: %dicesize%"
+        END
     END
     PATCH_IF dicenumber > "-1" BEGIN
         WRITE_LONG 0x38 dicenumber
+    END ELSE BEGIN
+        PATCH_IF dicenumber < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to dicenumber: %dicenumber%"
+        END
     END
 END
 
 DEFINE_PATCH_FUNCTION ALTER_SPELL
 INT_VAR
-    spell_name_ref = "-2"
-    spell_desc_ref = "-2"
+    ref_name = "-2"
+    ref_desc = "-2"
     flags = "-1"
     spell_type = "-1"
-    exclusion_flags = "-1"
-    casting_animation = "-1"
+    excl_flags = "-1"
+    animation = "-1"
     primary_type = "-1"
     secondary_type = "-1"
     spell_level = "-1"
@@ -423,19 +435,19 @@ STR_VAR
     casting_sound = ~none~
     icon = ~none~
 BEGIN
-    PATCH_IF spell_name_ref > "-2" BEGIN
-        WRITE_LONG 0x08 spell_name_ref
+    PATCH_IF ref_name > "-2" BEGIN
+        WRITE_LONG 0x08 ref_name
     END ELSE BEGIN
-        PATCH_IF spell_name_ref < "-2" BEGIN
-            PATCH_WARN "Passed a wrong value to spell_name_ref: %spell_name_ref%"
+        PATCH_IF ref_name < "-2" BEGIN
+            PATCH_WARN "Passed a wrong value to ref_name: %ref_name%"
         END
     END
 
-    PATCH_IF spell_desc_ref > "-2" BEGIN
-        WRITE_LONG 0x50 spell_desc_ref
+    PATCH_IF ref_desc > "-2" BEGIN
+        WRITE_LONG 0x50 ref_desc
     END ELSE BEGIN
-        PATCH_IF spell_desc_ref < "-2" BEGIN
-            PATCH_WARN "Passed a wrong value to spell_desc_ref: %spell_desc_ref%"
+        PATCH_IF ref_desc < "-2" BEGIN
+            PATCH_WARN "Passed a wrong value to ref_desc: %ref_desc%"
         END
     END
 
@@ -464,28 +476,28 @@ BEGIN
         END
     END
 
-    PATCH_IF exclusion_flags > "-1" BEGIN
+    PATCH_IF excl_flags > "-1" BEGIN
         PATCH_IF this_plus = 0 BEGIN
-            WRITE_LONG 0x1e exclusion_flags
+            WRITE_LONG 0x1e excl_flags
         END ELSE BEGIN
             PATCH_IF this_plus = 1 BEGIN
-                WRITE_LONG 0x1e (THIS + exclusion_flags)
+                WRITE_LONG 0x1e (THIS + excl_flags)
             END
             PATCH_IF this_plus = "-1" BEGIN
-                WRITE_LONG 0x1e (THIS - exclusion_flags)
+                WRITE_LONG 0x1e (THIS - excl_flags)
             END
         END
     END ELSE BEGIN
         PATCH_IF flags < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to exclusion_flags: %exclusion_flags%"
+            PATCH_WARN "Passed a wrong value to excl_flags: %excl_flags%"
         END
     END
 
-    PATCH_IF casting_animation > "-1" BEGIN
-        WRITE_LONG 0x22 casting_animation
+    PATCH_IF animation > "-1" BEGIN
+        WRITE_LONG 0x22 animation
     END ELSE BEGIN
         PATCH_IF spell_type < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to casting_animation: %casting_animation%"
+            PATCH_WARN "Passed a wrong value to animation: %animation%"
         END
     END
 
@@ -520,5 +532,12 @@ BEGIN
     PATCH_IF "%casting_sound%" STRING_COMPARE_CASE "none" != 0 BEGIN
         WRITE_ASCII 0x10 "%casting_sound%" #8
     END
+END
+
+DEFINE_PATCH_FUNCTION SPL_ABILITIES_NUM
+RET
+    result
+BEGIN
+    READ_SHORT 0x68 result
 END
 

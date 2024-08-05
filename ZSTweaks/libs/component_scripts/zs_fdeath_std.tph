@@ -1,5 +1,5 @@
 COPY_EXISTING ~SPWI713.SPL~ ~override~
-    SAY UNIDENTIFIED_DESC @5030
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5030) END
     LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = 14 END
     SET headers = 0
     FOR ( i = 15; i <= 20; ++i ) BEGIN

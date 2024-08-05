@@ -61,20 +61,62 @@ BEGIN
     END
 END
 
-/*DEFINE_PATCH_FUNCTION ADD_MAGIC_EFFECT
+DEFINE_PATCH_FUNCTION ADD_SPL_SELFEFF
 INT_VAR
-    
+    p1=0
+    p2=0
+    t=1
+    dur=0
+    rd=1
+    pw=1
+    ip="-1"
 STR_VAR
+    effects=""
 BEGIN
     LPF a7_auto_apply_spl_effect
         INT_VAR
             def_target = 1
-            def_timing = 2
+            def_timing = 0
             def_parameter1 = p1
             def_parameter2 = p2
+            def_duration=0
+            def_resist_dispel = rd
+            def_power=pw
+            def_type=t
+            def_insertpoint=ip
         STR_VAR
             function_name = ~ADD_SPELL_EFFECT~
             effect_codes = ~%effects%~
     END
+END
 
-END*/
+DEFINE_PATCH_FUNCTION ADD_SPL_TGTEFF
+INT_VAR
+    p1=0
+    p2=0
+    t=1
+    dur=0
+    rd=1
+    pw=1
+    ip="-1"
+    stype="-1"
+    sbonus="-1"
+STR_VAR
+    effects=""
+BEGIN
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target = 2
+            def_timing = 0
+            def_parameter1 = p1
+            def_parameter2 = p2
+            def_duration=0
+            def_resist_dispel = rd
+            def_power=pw
+            def_type=t
+            def_insertpoint=ip
+        STR_VAR
+            function_name = ~ADD_SPELL_EFFECT~
+            effect_codes = ~%effects%~
+    END
+END

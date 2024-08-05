@@ -1,14 +1,6 @@
 COPY_EXISTING ~SPWI911.SPL~ ~override~
-    SAY UNIDENTIFIED_DESC @5040
-    LPF ALTER_EFFECT
-        INT_VAR
-            header = 0
-            match_opcode = 12
-            parameter1 = 14
-            dicenumber = 2
-            dicesize = 10
-            resist_dispel = 0
-    END
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5040) END
+    LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = 14 dicenumber = 2 dicesize = 10 resist_dispel = 0 END
     SET headers = 0
     FOR ( i = 15; i <= 20; ++i ) BEGIN
         LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = i END

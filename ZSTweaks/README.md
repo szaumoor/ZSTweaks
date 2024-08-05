@@ -116,6 +116,25 @@ Note that this component does not account (automatically) for special weaponry w
 
 This reduces the number of dice thrown of DAGG11 and DAGG12 to 1 so they are not the only good choice for daggers to maximize damage. And for consistency. Generally speaking I dislike a lot this sort of unbalanced design. DAGG11 specifically, already comformed to this rule in BGEE.
 
+**Component 1531:** Make all divination spells and a few spells ignore magic resistance, where it makes sense
+
+This component makes divination spells that are affected by Magic Resistance (which seems odd) lose that restriction, and also cannot be dispelled by Dispel Magic, unless noted. Affected spells include: Detect Evil, Know Alignment.
+
+Additionally, a few spells also bypass magic resistance, because it makes sense in my judgment. My rationale:
+- Stinking Cloud: It's a fart cloud that smells so awful, it can make you lose consciousness. Puh-lease.
+- Entangle, Grease & Web (and other web spells used by creatures): It's physical webs, grease, and animated vegetation, so I think it makes sense.
+- Summon Cow: Because it's a cow falling on you, duh.
+- Glitterdust: It's just a ton of conjured sparkly dust that blinds and makes enemies visible. Can be dispelled.
+- Magical Stone: because you're just hurling a stone magically
+- Call Lightning: because the druid is beckoning the skies to shoot lightning onto your foes, which means it's not exactly the same as Lightning Bolt, which is generated directly from the wizard.
+- Summon Insects/Insect Plague/Creeping Doom: well, because it's insects doing damage, that's it. Can be dispelled though.
+- Nature's Beauty: You're blinding or killing others by the shock, which is something that is the result of plain perception, so I don't think it makes much sense to be affected by magic resistance.
+- Storm of Vengeance: Because it's a spell that causes the skies and the earth to go crazy. It might make it more useful in some instances, and not just as a way to kill <=8 HD or to interrupt spellcasters.
+
+Overall this should make all these spells more usable throughout the trilogy of games, especially against enemies such as drow, who have a very high chance of resisting magic.
+
+Please bear in mind that this component should be installed after tweaks that affect these spells, especially if they add new effects to them; otherwise, this tweak will only work partially, and inconsistent results could ensue.
+
 </details>
 
 ---
@@ -190,9 +209,9 @@ I do not like that most robes, except the most powerful ones are largely unremar
 
 This makes the belt include piercing damage, such that it affect things like daggers, short swords and wakizashis.
 
-**Component 1561:** Make Cloak of the Stars create 30 darts, instead of six
+**Component 1561:** Make Cloak of the Stars create 30 darts, instead of six, and add passive effects
 
-6 darts is really unremarkable for a once-per-day effect. 30 is far more interesting. Perhaps you don't need to sell it immediately anymore!
+6 darts is really unremarkable for a once-per-day effect. 30 is far more interesting. Additionally, if you wear it, you become proficient in darts immediately (unless proficiency is higher) and gain Save vs. Spell bonus of +1. Perhaps you don't need to sell it immediately anymore!
 
 **Component 1570:** Make Eyes of the Beholder's skills mirror the power of the spells they're based on
 
@@ -648,6 +667,12 @@ This makes the club slightly more powerful (+3 in all respects), is more shamani
 
 The original hits in terms of extra damage and thac0 like an unenchanted weapon. This component makes the weapon match the basic stats of a +3 weapon. Additionally, it fixes the usual misleding bits in the description for extra damage, and it improves slightly the extra damage to undead from 1d6+4 to 1d6+6.
 
+**Component 1324:** Make Wyvern's Tail +2 cause poison damage on hit and have a chance of poisoning
+
+This improves this item in the following ways:
+- Causes 2 poison damage per hit with no save allowed
+- If Save vs. Poison is failed, deals 5 poison damage over 5 seconds. There's a 4% chance that this poison will be as lethal as adult wyvern poison, becoming instead 25 poison damage over 5 seconds.
+
 ---
 
 ## Ranged Weapon Tweaks
@@ -822,9 +847,9 @@ This tackles another one of my pet peeve, which is spell deprecation. Now sleep 
 
 This mod simply changes the school to Enchantment, which is probably more accurate for a mind-altering spell.
 
-**Component 220:** Make Ice Storm do 1d8 more damage per round
+**Component 220:** Make Ice Storm do more damage, including piercing damage
 
-I think the damage is a little low for a 4 round static effect (2-16 damage per round). Now the damage will be 3d8 (3-24 per round).
+I think the damage is a little low for a 4 round static effect (2-16 cold damage per round). Now the damage will be 2d8+2 cold damage plus 1d6+2 piercing damage. Piercing was added because the animation indicates pointy ice is what falls down upon your foes.
 
 **Component 370:** Make Ray of Enfeeblement a Necromancy spell
 
@@ -842,9 +867,9 @@ Improves the usability of Death Fog as a "general purpose" damage dealer, instea
 
 2 levels of drain is unremarkable and a waste of a spell slot, particularly when the likely enemies to fight by the time you get this spell are fairly high level.
 
-**Component 405** Make Maze bypass Magic Resistance, like Imprisonment
+**Component 405** Make Maze bypass Magic Resistance, like Imprisonment, and make Minotaurs immune to it
 
-I think this makes this spell quite more useful, although perhaps it's too powerful like that if used against some enemies. I like this tweak, but I'll use the spell judiciously (perhaps not mazing dragons, for example).
+I think this makes this spell quite more useful, although perhaps it's too powerful like that if used against some enemies. I like this tweak, but I'll use the spell judiciously (perhaps not mazing dragons, for example). Additionally, Minotaurs are immune to it, same as IWDEE.
 
 **Component 407** Make BGEE's Imp have 12 HP like the other familiars
 
@@ -877,6 +902,19 @@ This spell is useless if the health of the enemy, which ordinarily you cannot kn
 **Component 444:** Make Flesh to Stone use Petrification saves
 
 This makes this spell force a save vs. petrification instead of spell. I think Flesh to Stone and Disintegrate are way too similar functionally, and it's almost always a better idea to use Flesh to Stone over Disintegrate (they're both even boosted equally if cast by a Transmuter). This affects the version that beholders use.
+
+**Component 445:** Make Bigby's spells more powerful
+
+Bigby's spells are generally a pretty poor choice for a level 8 and 9. Low damage, high chance of doing nothing. This tweak improves those two spells such that they do more damage and are more likely to be effective, bypassing magic resistance, as well (but can still be dispelled):
+
+- Clenched fist:
+  - 1st round: 4d6+6 crushing damage (originally 3d6, no save)
+  - 2nd round: 6d6+4 crushing damage if save vs. Paralysis at -4 is failed (originally 4d6, save vs. Paralysis at -2 )
+  - 3rd round: 8d6+4 crushing damage if save vs. Paralysis at -2 is failed (originally 6d6, save vs. Paralysis, no penalty)
+- Crushing hand:
+  - 1st round: 6d6+6 crushing damage (originally 2d10, no save)
+  - 2nd round: 8d6+8 crushing damage if save vs. Paralysis at -6 is failed (originally 3d10, save vs. Paralysis at -4)
+  - 3rd round: 10d6+10 crushing damage if save vs. Paralysis at -4 is failed (originally 4d10, save vs. Paralysis at -2)
 
 </details>
 
@@ -969,9 +1007,11 @@ Just as it sounds, it allows druids to do that, like wizards, so they're protect
 
 Too little seeds and too little damage. From 4 seeds that do 2d8 to 10 that do 3d8+5. The original is way too unremarkable for a level 6 spell. Additionally, the description will mention the fact that they are thrown with a +2 THAC0 bonus. Additionally, the seeds no longer bypass most physical protections due to an enchantment level of +6, so now it will be considered +2.
 
-**Component 320:** Make Nature's Beauty a bit more likely to kill humanoid enemies outright
+**Component 320:** Make Nature's Beauty a bit more likely to kill humanoid enemies, and make blinded enemies immune
 
 Nature's beauty is the druidic Wail of the Banshee (only for humanoids anyway), but it is fairly unlikely to kill (especially considering druids cannot have a Necromancy bonus to spells -- without save editing or special kits that is). Save bonus is now +1 instead of +3.
+
+Additionally, much like IWDEE, blinded enemies are not affected, which is to be expected given the nature of the spell.
 
 **Component 330:** Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)
 
@@ -998,6 +1038,44 @@ Healing spells are infamously bad in BG/BG2, they heal too little for such a slo
 **Component 460:** Make Mass Heal faster to cast and heal a bit more
 
 This improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32).
+
+**Component 461:** Make Bolt of Glory slightly better
+
+This makes the Bolt of Glory generally more effective and rearranges the damage such that outsiders and undead are always ahead in potential damage compared to Prime Material creatures. Additionally, the description, accurately notes other less-known characteristics of this spell, such as how it has no effect on celestial beings (planetars, devas, solars, aasimar), and how it bypasses Magic Resistance. Here's the damage distribution now:
+
+- Prime Material Plane creatures: 4d4+6 magic damage
+- Outsiders (except fiendish and celestials; elementals, genies, gith...): 6d6+6 magic damage
+- Undead: 8d6+6 magic damage
+- Fiendish outsiders (demons, devils, evil planetars and solars): 8d8+6
+
+**Component 462:** Make Magical Stone bypass Magic Resistance and deal both magic and missile damage
+
+Generally speaking this spell is pretty worthless and barely even thinking about. This improves its usability by making it bypass Magic Resistance, since it is essentially a pebble enchanted to be thrown at an enemy. Now it deals 1d4 missile damage and 1d4 magic damage.
+
+**Component 463:** Make Dolorous Decay more powerful
+
+This component improves the spell in the following ways:
+- It causes 2d10 poison damage immediately on contact, as well as the usual 2-round slow effect.
+- Saving Throw against the poison effect is now -3
+- The poison duration is now 1 full turn. The description will be more accurate.
+- During the poison's duration, target received 8% more physical damage, and gets a -2 penalty to THAC0, Damage, and AC.
+
+**Component 464:** Make Wondrous Recall also recall wizard spells, and a higher number of them
+
+This components allows cleric/mages to benefit more, by allowing wizard spell recalling. The spell now functions as follows:
+
+- Guarantees the recall of 2 level-1 wizard **and** cleric spells.
+- Up to 4 spells will be recalled additionally of up to level 5
+
+However, the casting time is very high now (2 full rounds), which makes it less convenient to cast in the middle of combat, and serves more as a recovery after combat spell, unless triggered by contingencies or sequencers. Bear in mind that if this spell is cast through scripts, the caster might have lapse in judgement and stop the casting after only one round of casting to do something else, because it seems the engine doesn't ever expect casting times over just below 1 full round (i.e. casting speed of 9).
+
+**Component 465:** Make Nature's Beauty blocked by True Sight
+
+This component allows creatures that have True Sight or True Seeing active to automatically resist the effects of Nature's Beauty, since the spell is effectively an illusion that kills and blinds.
+
+**Component 466:** Make Shield of Archons absorb more spell levels (equivalent to cleric level)
+
+This component improves this spell such that it has equal level of spell absorbtion as that of the cleric level (20 for BG, 30 for IWDEE).
 
 </details>
 
