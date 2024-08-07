@@ -34,13 +34,15 @@ DEFINE_PATCH_FUNCTION ADD_ON_HIT_EFF
         pro2 = 0
         dsize = 0
         dnum = 0
+        ip="-1"
+        tgt = 2
     STR_VAR
         res = ~~
         effects = ~~
 BEGIN
     LPF a7_auto_apply_spl_effect
         INT_VAR
-            def_target = 2
+            def_target = tgt
             def_type = t
             def_timing = tmg
             def_parameter1 = p1
@@ -48,12 +50,13 @@ BEGIN
             def_duration = dur
             def_resist_dispel = rd
             def_power = pw
-            def_probability = pro1
+            def_probability1 = pro1
             def_probability2 = pro2
             def_savetype = stype
             def_savebonus = sbonus
             def_dicesize = dsize
             def_dicenumber = dnum
+            def_insertpoint = ip
         STR_VAR
             def_resource = ~%res%~
             function_name = ~ADD_ITEM_EFFECT~

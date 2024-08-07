@@ -6,7 +6,6 @@ COPY_EXISTING "SW1H15.ITM" ~override~
     LPF ALTER_HEADER INT_VAR type = 1 to_hit = 5 END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p2=%cold%,dnum=1,dsize=3;op=326,p2=3,res=ZSTWDRZB~ END
 BUT_ONLY
-
 COPY_EXISTING "SW1H16.ITM" ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6500) ench=5 END
     LPF ALTER_HEADER INT_VAR type = 1 to_hit = 5 END

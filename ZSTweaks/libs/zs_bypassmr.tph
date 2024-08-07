@@ -1,0 +1,74 @@
+COPY_EXISTING ~SPWI224.SPL~ ~override~  // GLITTERDUST, ALL GAMES
+              ~SPPR319.SPL~ ~override~  // SUMMON INSECTS
+              ~SPPR517.SPL~ ~override~  // INSECT PLAGUE
+              ~SPPR717.SPL~ ~override~  // CREEPING DOOM
+              ~SPPR704.SPL~ ~override~  // NATURE'S BEAUTY
+              ~flpr717a.SPL~ ~override~ // CREEPING DOOM SUBSPELL
+              ~SPPR209.SPL~ ~override~  // KNOW ALIGNMENT, ALL GAMES
+              ~SPWI208.SPL~ ~override~  // KNOW ALIGNMENT ALL GAMES
+    LPF ALTER_EFFECT INT_VAR resist_dispel=3 END // DISPEL PERMITTED
+BUT_ONLY
+
+COPY_EXISTING ~SPWI101.SPL~ ~override~ // GREASE, ALL GAMES
+              ~SPPR105.SPL~ ~override~ // ENTANGLE ALL GAMES
+              ~SPWM111.SPL~ ~override~ // ENTANGLE ALL GAMES
+              ~SPWI215.SPL~ ~override~ // WEB ALL GAMES
+              ~SPDR201.SPL~ ~override~ // WEB ALL GAMES
+              ~SPWI004.SPL~ ~override~ // STINKING CLOUD, ALL GAMES
+              ~SPWI213.SPL~ ~override~ // STINKING CLOUD, ALL GAMES
+              ~SPWM187.SPL~ ~override~ // STINKING CLOUD, ALL GAMES
+              ~SPWI299.SPL~ ~override~ // SUMMON COW, ALL GAMES
+              ~SPWM188.SPL~ ~override~ // SUMMON COW, ALL GAMES
+              ~SPPR106.SPL~ ~override~ // magical stone
+              ~SPPR302.SPL~ ~override~ // call lightning
+              ~SPPR722.SPL~ ~override~ // storm of vengeance
+    LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+BUT_ONLY
+
+ACTION_IF !(GAME_IS ~iwdee~) BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~ohdwand1.ITM~ BEGIN // wand of glitterdust
+        COPY_EXISTING ~ohdwand1.ITM~ ~override~
+            LPF ALTER_EFFECT INT_VAR match_resist_dispel=1 resist_dispel=3 END
+        BUT_ONLY
+    END
+
+    ACTION_IF FILE_EXISTS_IN_GAME ~SPIN566.SPL~ BEGIN // CRE WEB BG2EE
+        COPY_EXISTING ~SPIN566.SPL~ ~override~
+            LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+        BUT_ONLY
+    END
+
+    COPY_EXISTING ~SPIN940.SPL~ ~override~ // STINKING CLOUD
+                  ~SPWI004.SPL~ ~override~
+                  ~SPWI213.SPL~ ~override~
+                  ~SPWM187.SPL~ ~override~
+                  ~SPIN575.SPL~ ~override~ // CRE WEB BGEE/BG2EE
+                  ~SPIN683.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+    BUT_ONLY
+
+    COPY_EXISTING ~SPWI202.SPL~ ~override~ // DETECT EVIL
+                  ~SPCL212.SPL~ ~override~
+                  ~SPIN120.SPL~ ~override~
+                  ~SPPR104.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR resist_dispel=2 END // not dispel/bypass resistance
+    BUT_ONLY
+
+    ACTION_IF FILE_EXISTS_IN_GAME ~CDDETEVL.SPL~ BEGIN // DETECT EVIL BG2EE
+        COPY_EXISTING ~CDDETEVL.SPL~ ~override~
+            LPF ALTER_EFFECT INT_VAR resist_dispel=2 END
+        BUT_ONLY
+    END
+
+    ACTION_IF FILE_EXISTS_IN_GAME ~OHDETEVL.SPL~ BEGIN // DETECT EVIL BGEE
+        COPY_EXISTING ~OHDETEVL.SPL~ ~override~
+            LPF ALTER_EFFECT INT_VAR resist_dispel=2 END
+        BUT_ONLY
+    END
+
+    ACTION_IF FILE_EXISTS_IN_GAME ~OHDETEVL.SPL~ BEGIN // DETECT EVIL BGEE
+        COPY_EXISTING ~OHDETEVL.SPL~ ~override~
+            LPF ALTER_EFFECT INT_VAR resist_dispel=2 END
+        BUT_ONLY
+    END
+END

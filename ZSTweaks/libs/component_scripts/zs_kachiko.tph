@@ -4,7 +4,7 @@ COPY ~ZSTweaks/eff/ZSTWMON1.EFF~ ~override~
      ~ZSTweaks/spl/other/ZSTWKCH3.SPL~ ~override~
 
 COPY_EXISTING ~ZSTWKCH3.SPL~ ~override~
-    SAY NAME1 @7162 //todo function for spell alteration
+    LPF ALTER_SPELL INT_VAR ref_name=RESOLVE_STR_REF(@7162) END
 BUT_ONLY
 
 COPY_EXISTING "WAWAK.ITM" ~override~

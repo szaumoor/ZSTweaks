@@ -5,11 +5,9 @@ ADD_PROJECTILE ~ZSTweaks/pro/ZSTW_IND.PRO~
 COPY_EXISTING_REGEXP "ZSTWDP08.spl" ~override~ // spells to insert projectiles to (critical dagger effect)
     LPF ALTER_HEADER INT_VAR match_type = 1 projectile = "%ZSTW_IND%" END
 BUT_ONLY
-
 COPY_EXISTING_REGEXP "ZSTWDP1[02468]\.spl" ~override~ // spells to insert projectiles to (throwing daggers and darts)
     LPF ALTER_HEADER INT_VAR match_type = 1 projectile = "%ZSTW_IND%" END
 BUT_ONLY
-
 COPY_EXISTING_REGEXP "ZSTWDP20.spl" ~override~ // spells to insert projectiles to (critical dagger effect)
     LPF ALTER_HEADER INT_VAR match_type = 1 projectile = "%ZSTW_IND%" END
 BUT_ONLY

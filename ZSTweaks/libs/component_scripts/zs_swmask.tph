@@ -1,56 +1,11 @@
 COPY_EXISTING ~SW1H59.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6100) END
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            match_opcode = 216
-            parameter1 = 2
-            probability1 = 20
-            probability2 = 34
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            match_opcode = 141
-            probability1 = 20
-            probability2 = 34
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            match_opcode = 0
-            probability1 = 19
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            match_opcode = 126
-            probability1 = 19
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            match_opcode = 154
-            probability1 = 19
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            match_opcode = 142
-            probability1 = 19
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            match_opcode = 174
-            probability1 = 19
-    END
-    LPF ALTER_EFFECT
-        INT_VAR
-            check_globals = 0
-            match_opcode = 139
-            probability1 = 20
-            probability2 = 34
-            parameter1 = 40968 // two levels drained strref
-    END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 216 parameter1 = 2 probability1 = 20 probability2 = 34 END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 141 probability1 = 20 probability2 = 34 END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 0 probability1 = 19 END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 126 probability1 = 19 END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 154 probability1 = 19 END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 142 probability1 = 19 END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 174 probability1 = 19 END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 139 probability1 = 20 probability2 = 34 parameter1 = 40968 END
 BUT_ONLY

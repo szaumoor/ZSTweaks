@@ -1,5 +1,5 @@
 COPY_EXISTING ~SPWI925.SPL~ ~override~
-    SAY IDENTIFIED_DESC @6430
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6430) END
     LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
     LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 12 parameter1 = 10 dicenumber = 2 END
     LPF GET_DMG_TYPE STR_VAR type = ~cold~ RET cold = dmg_param END

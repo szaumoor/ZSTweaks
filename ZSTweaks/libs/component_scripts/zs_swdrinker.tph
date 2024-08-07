@@ -1,52 +1,5 @@
 COPY_EXISTING "SW1H35.ITM" ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6410) END
     LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 17 probability1 = 49 END
-    LPF ADD_ITEM_EFFECT // improve with better function
-        INT_VAR
-            target = 1
-            timing = 1
-            insert_point = 0
-            type = 1
-            opcode = 17
-            probability1 = 69
-            probability2 = 50
-            power = 1
-            parameter1 = 2
-    END
-    LPF ADD_ITEM_EFFECT
-        INT_VAR
-            target = 1
-            timing = 1
-            insert_point = 0
-            type = 1
-            opcode = 17
-            probability1 = 84
-            probability2 = 70
-            power = 1
-            parameter1 = 3
-    END
-    LPF ADD_ITEM_EFFECT
-        INT_VAR
-            target = 1
-            timing = 1
-            insert_point = 0
-            type = 1
-            opcode = 17
-            probability1 = 94
-            probability2 = 85
-            power = 1
-            parameter1 = 4
-    END
-    LPF ADD_ITEM_EFFECT
-        INT_VAR
-            target = 1
-            timing = 1
-            insert_point = 0
-            type = 1
-            opcode = 17
-            probability1 = 100
-            probability2 = 95
-            power = 1
-            parameter1 = 5
-    END
+    LPF ADD_ON_HIT_EFF INT_VAR ip=0 tmg=1 tgt=1 STR_VAR effects=~op=17,pro1=69,pro2=50,p1=2;op=17,pro1=84,pro2=70,p1=3;op=17,pro1=94,pro2=85,p1=4;op=17,pro1=100,pro2=95,p1=5~ END
 BUT_ONLY

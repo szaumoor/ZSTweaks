@@ -6,7 +6,6 @@ COPY_EXISTING ~SPWI713.SPL~ ~override~
         LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = i END
         ++headers
     END
-
     SET damage = 15
     FOR ( i = 1; i <= headers; ++i ) BEGIN
         LPF ALTER_EFFECT INT_VAR header = i match_opcode = 12 parameter1 = damage END

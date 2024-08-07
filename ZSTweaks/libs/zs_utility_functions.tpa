@@ -541,3 +541,38 @@ BEGIN
     READ_SHORT 0x68 result
 END
 
+DEFINE_PATCH_FUNCTION CRE_MAX_HEALTH
+RET
+    result
+BEGIN
+    READ_SHORT 0x26 result
+END
+
+DEFINE_PATCH_FUNCTION ALTER_CRE
+INT_VAR
+    current_health = "-1"
+    max_health = "-1"
+    class = "-1"
+BEGIN
+    PATCH_IF current_health > "-1" BEGIN
+        WRITE_SHORT 0x24 current_health
+    END ELSE BEGIN
+        PATCH_IF current_health < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to current_health: %current_health%"
+        END
+    END
+    PATCH_IF max_health > "-1" BEGIN
+        WRITE_SHORT 0x26 max_health
+    END ELSE BEGIN
+        PATCH_IF max_health < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to max_health: %max_health%"
+        END
+    END
+    PATCH_IF class > "-1" BEGIN
+        WRITE_BYTE 0x273 class
+    END ELSE BEGIN
+        PATCH_IF class < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to class: %class%"
+        END
+    END
+END

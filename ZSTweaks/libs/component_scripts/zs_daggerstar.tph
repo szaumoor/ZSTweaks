@@ -9,7 +9,6 @@ COPY_EXISTING ~DAGG21.ITM~ ~override~
         LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDP16~ resource = ~ZSTWDP18~ END
     END
 BUT_ONLY
-
 COPY_EXISTING ~DAGG22.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6013) id_ref_name=RESOLVE_STR_REF(@6012) ench=6 END
     LPF ALTER_HEADER INT_VAR match_type = 1 damage = 6 to_hit = 6 END

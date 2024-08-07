@@ -5,7 +5,6 @@ COPY_EXISTING ~SW1H70.ITM~ ~override~
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 326 STR_VAR match_resource = ~ZSTWK3~ resource = ~ZSTWK4~ END
     END
 BUT_ONLY
-
 COPY_EXISTING ~SW1H71.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6071) id_ref_name=RESOLVE_STR_REF(@6073) ench=5 END
     LPF ALTER_HEADER INT_VAR match_damage = 4 damage = 5 match_to_hit = 4 to_hit = 5 END
