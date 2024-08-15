@@ -2581,6 +2581,12 @@ BEGIN @467 DESIGNATED 467 GROUP @20 // SUNRAY TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
+COPY_EXISTING ~SPPR707.SPL~ ~override~
+    LPF ALTER_EFFECT INT_VAR resist_dispel=3 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 177 resist_dispel = 0 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 resist_dispel = 0 END
+BUT_ONLY
+
 COPY_EXISTING ~UNDDEATH.EFF~ ~override~
     LPF ALTER_EFF_FILE INT_VAR parameter1=100 parameter2=3 END
 BUT_ONLY
