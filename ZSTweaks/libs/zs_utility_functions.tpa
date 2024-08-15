@@ -396,11 +396,18 @@ INT_VAR
     parameter4 = "-1"
     secondary_type = "-1"
 BEGIN
-    PATCH_IF parameter1 > "-1" BEGIN
+    PATCH_IF parameter1 > "-999" BEGIN
         WRITE_LONG 0x1c parameter1
     END ELSE BEGIN
-        PATCH_IF parameter1 < "-1" BEGIN
+        PATCH_IF parameter1 < "-999" BEGIN
             PATCH_WARN "Passed a wrong value to parameter1: %parameter1%"
+        END
+    END
+    PATCH_IF parameter2 > "-1" BEGIN
+        WRITE_SHORT 0x20 parameter2
+    END ELSE BEGIN
+        PATCH_IF parameter2 < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to parameter2: %parameter2%"
         END
     END
     PATCH_IF dicesize > "-1" BEGIN

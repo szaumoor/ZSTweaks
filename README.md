@@ -159,7 +159,7 @@ Only one wand is changed so fast, the rest are potions:
 - Potion of Power: this makes the potion prevent morale failure like the potion of heroism, +1 backstab, it improves all thieving abilities (not just some), and it now also grants +10% higher damage output (physical and magical), which makes it useful for any class.
 - All Strength potions: usable by any class
 
-**Component 1535:** ~Make all potions usable by all classes
+**Component 1535:** Make all potions usable by all classes
 
 Self-explanatory.
 
@@ -1122,6 +1122,10 @@ This component allows creatures that have True Sight or True Seeing active to au
 **Component 466:** Make Shield of Archons absorb more spell levels (equivalent to cleric level)
 
 This component improves this spell such that it has equal level of spell absorbtion as that of the cleric level (20 for BG, 30 for IWDEE).
+
+**Component 467:** Make Sunray be able to kill undead regadless of their magic damage resistance
+
+This component makes the spell usable against undead, even if they're immune to magic damage resistance (or very resistance). It should inflict now 100% of the health in damage, and as such, killing them always.
 
 </details>
 
