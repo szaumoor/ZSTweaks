@@ -139,7 +139,29 @@ Please bear in mind that this component should be installed after tweaks that af
 
 I do not like gear that you can wear without any effect whatsoever. I can live with rings that don't do that, because there's no reasonable benefit to just wearing a ring. Therefore, wearing unenchanted belts, boots, and bracers will grant the wearer +1 HP which I think is reasonable enough, and it doesn't change balance much.
 
-For consistency, all of the enchanted belts, boots and bracers will also grant this. The unenchanted items will be still a bottom-of-the-barrel choice, but at least, they don't exist just as unglorified decoration, and will provide some use at the beginning of BGEE (and IWDEE?).
+For consistency, all of the enchanted belts, boots and bracers will also grant this. The unenchanted items will be still a bottom-of-the-barrel choice, but at least, they don't exist just as unglorified decoration, and will provide some use, especially at the beginning of BGEE (and IWDEE?), and encourages filling all the gear slots.
+
+
+**Component 1533:** Rebalance wands (currently only the Wand of Missiles is affected)
+
+- Wand of Magic Missiles: it casts 3 missiles, not 1, which makes it generally useful for the majority of both games, same as casting from a scroll.
+- We'll see in the future
+
+**Component 1534:** Rebalance some potions
+
+Only one wand is changed so fast, the rest are potions:
+
+- Potion of Icedust: instead of providing a set immunity to fire for 1 round, it adds +75% resistance to fire for 3 rounds. I was considering making this effect undispellable, but decided against it.
+- Potion of Heroism: it also prevents morale failure as it increases the confidence of the drinker. It can also be drunk by any class.
+- Potion of Invulnerability: it also increases magic resistance by +10%, and it can be used by any class
+- Elixir of Health: the HP recovered is now 17 (from 10) and protects against being poisoned (but not to direct poison damage; not dispellable) for 10 seconds. This is added such that when taking heavy damage, if you're poisoned, it's more desirable than just gulping down a better HP potion to ensure survivability.
+- Potion of Perception: now the proper "detection" thief skills are improved further (find traps and detect illusions): 40%. Additionally, the enhanced perception improves THAC0, AC, and Saving Throws by 2.
+- Potion of Power: this makes the potion prevent morale failure like the potion of heroism, +1 backstab, it improves all thieving abilities (not just some), and it now also grants +10% higher damage output (physical and magical), which makes it useful for any class.
+- All Strength potions: usable by any class
+
+**Component 1535:** ~Make all potions usable by all classes
+
+Self-explanatory.
 
 </details>
 
@@ -352,7 +374,11 @@ This makes the bracers far more worth the trouble for paladins. Instead of just 
 
 **Component 1674:** Make Whispers of Silence protect against detection spells except for True Sight, and improve Move Silently
 
-This makes the Nondetection effect more useful, since it's unremarkable as an effect anyway, and so the wearer is also immune other invisibility-detecting spells, except True Sight.
+This makes the Nondetection effect more useful, since it's unremarkable as an effect anyway, and so the wearer is also immune other invisibility-detecting spells, except True Sight. Additionally, it adds a 10% bonus to Move Silently.
+
+**Component 1675:** Make Cloak of Displacement add +5% damage resistance
+
+Makes the cloak add "displacement" in the same way as "displacement" is faked with things like Shadow Form and Spirit Form, i.e. damage resistance. In this case, just +5% damage resistance (universal).
 
 </details>
 
@@ -1029,7 +1055,7 @@ Too little seeds and too little damage. From 4 seeds that do 2d8 to 10 that do 3
 
 **Component 320:** Make Nature's Beauty a bit more likely to kill humanoid enemies, and make blinded enemies immune
 
-Nature's beauty is the druidic Wail of the Banshee (only for humanoids anyway), but it is fairly unlikely to kill (especially considering druids cannot have a Necromancy bonus to spells -- without save editing or special kits that is). Save bonus is now +1 instead of +3.
+Nature's beauty is the druidic Wail of the Banshee (only for humanoids anyway), but it is fairly unlikely to kill (especially considering druids cannot have a Necromancy bonus to spells -- without save editing or special kits that is). Save bonus is now +2 instead of +3.
 
 Additionally, much like IWDEE, blinded enemies are not affected, which is to be expected given the nature of the spell.
 

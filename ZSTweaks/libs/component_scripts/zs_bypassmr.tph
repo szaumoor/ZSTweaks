@@ -9,6 +9,12 @@ COPY_EXISTING ~SPWI224.SPL~ ~override~  // GLITTERDUST, ALL GAMES
     LPF ALTER_EFFECT INT_VAR resist_dispel=3 END // DISPEL PERMITTED
 BUT_ONLY
 
+COPY_EXISTING ~SPPR707.SPL~ ~override~ // SUNRAY, bypasses magic resistance
+    LPF ALTER_EFFECT INT_VAR resist_dispel=3 END //
+    LPF ALTER_EFFECT INT_VAR match_opcode = 177 resist_dispel = 0 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 resist_dispel = 0 END
+BUT_ONLY
+
 COPY_EXISTING ~SPWI101.SPL~ ~override~ // GREASE, ALL GAMES
               ~SPPR105.SPL~ ~override~ // ENTANGLE ALL GAMES
               ~SPWM111.SPL~ ~override~ // ENTANGLE ALL GAMES

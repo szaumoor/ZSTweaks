@@ -42,8 +42,11 @@
 @1530 = ~Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time~
 @1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense~
 @1532 = ~Make unenchanted bracers, belts and boots grant +1 HP, so they're not just garbage used only for RP purposes~
-@1533 = ~Rebalance scrolls such that the spellcasting level is always at least double its (wizard) spell level~
-@1534 = ~Rebalance various wands and special potions~
+@1533 = ~Rebalance wands (currently only the Wand of Missiles is affected)~
+@1534 = ~Rebalance some potions~
+@1535 = ~Make all potions usable by all classes~
+//@1535 = ~Rebalance scrolls such that the spellcasting level is always at least double its (wizard) spell level~
+
 
 /// ARMOR/GEAR TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -82,6 +85,7 @@
 @1672 = ~Make Stalker Gauntlets also benefit Bounty Hunters~
 @1673 = ~Make Blessed Bracers more powerful~
 @1674 = ~Make Whispers of Silence protect against detection spells except for True Sight, and improve Move Silently~
+@1675 = ~Make Cloak of Displacement add +5% damage resistance~
 
 // subcomponent str of component @1664
 @16640 = ~Affect all~
@@ -237,6 +241,7 @@
 @464 = ~Make Wondrous Recall also recall wizard spells, and a higher number of them~
 @465 = ~Make Nature's Beauty blocked by True Sight~
 @466 = ~Make Shield of Archons absorb more spell levels (equivalent to cleric level)~
+@467 = ~Make Sunray be able to kill undead regadless of their magic damage resistance~
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray from Sun Soul Monks scale further and do more damage to undead"
@@ -498,7 +503,7 @@ Casting Time: 6
 Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
-When this spell is cast, the caster appears to undergo a remarkable transformation. The caster becomes the very ideal of beauty: For a male, this is usually a nymph; for a female, it varies. As with a nymph, anyone viewing the disguised caster must make a Saving Throw vs. Spell with +1 bonus or die of longing for the denied illusion. Even if the Saving Throw is successful, hapless viewers of the transformed Druid are all instantly smitten with permanent blindness (until dispelled). The transformation is instantaneous, but lasts only seconds, affecting those near the caster (excluding fellow party members).~
+When this spell is cast, the caster appears to undergo a remarkable transformation. The caster becomes the very ideal of beauty: For a male, this is usually a nymph; for a female, it varies. As with a nymph, anyone viewing the disguised caster must make a Saving Throw vs. Spell with +2 bonus or die of longing for the denied illusion. Even if the Saving Throw is successful, hapless viewers of the transformed Druid are all instantly smitten with permanent blindness (until dispelled). The transformation is instantaneous, but lasts only seconds, affecting those near the caster (excluding fellow party members).~
 
 @5180 = ~Confusion
 (Enchantment/Charm)
@@ -3984,17 +3989,17 @@ Weight: 1~
 
 STATISTICS:
 
-Special: Cures poison and disease and heals 17 Hit Points
+Special: Cures poison and disease, protects against these effects for 10 seconds, and heals 17 Hit Points
 
 Weight: 1~
 
-@7465 = ~This potion heightens the sensory perception of the drinker, which allows them to perform delicate tasks and anticipate attacks better.
+@7465 = ~This potion heightens the sensory perception of the drinker, which allows them to perform delicate tasks with more skill. The heightened senses also manifest in combat as higher accuracy and better evasive maneuvers.
 
 STATISTICS:
 
 Detect Illusion and Traps: +40%
 Other thieving skills: +20%
-AC and Saving Throws: +2
+AC, THAC0, and Saving Throws: +2
 Duration: 6 hours
 
 Weight: 1~
@@ -4005,11 +4010,9 @@ STATISTICS:
 
 THAC0: Set to 80% of current base
 Hit Points: +20% temporary (base only)
-Hide In Shadows: +20% (base only)
-Pick Pockets: +20% (base only)
-Open Locks: +20% (base only)
-Find Traps: +20% (base only)
+All Thieving skills: +20% (base only)
 Immunity to morale failure
+All damage output: +10%
 Backstab multiplier: +1
 Duration: 4 turns
 

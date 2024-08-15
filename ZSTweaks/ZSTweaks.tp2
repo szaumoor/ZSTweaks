@@ -259,29 +259,20 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     END
 BUT_ONLY
 
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1533 DESIGNATED 1533 GROUP @10 // SCROLL REBALANCE TWEAK
-REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1533 DESIGNATED 1533 GROUP @10 // WAND REBALANCE TWEAK
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-COPY_EXISTING_REGEXP ".*\.itm" ~override~
-    LPF GET_CATEGORY RET cat = result END
-    PATCH_IF cat = 11 BEGIN // SCROLLS
-        READ_LONG 0x64 ability_offset
-
-        LPF ALTER_EFFECT INT_VAR match_opcode=146 header_type=3 END
-    END
-BUT_ONLY*/
+COPY_EXISTING ~WAND03.ITM~ ~override~
+    LPF ALTER_HEADER INT_VAR match_type = 3 match_projectile=IDS_OF_SYMBOL(projectl Magic_Missile) projectile = 70 END
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7460) END
+BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1534 DESIGNATED 1534 GROUP @10 // WAND REBALANCE TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// MAGIC MISSILE WANDS
-COPY_EXISTING ~WAND03.ITM~ ~override~
-    LPF ALTER_HEADER INT_VAR match_type = 3 match_projectile=IDS_OF_SYMBOL(projectl Magic_Missile) projectile = 70 END
-BUT_ONLY
 
 //icedust potion
 COPY_EXISTING ~WAND16.ITM~ ~override~
@@ -296,19 +287,20 @@ BUT_ONLY
 // potion of heroism
 COPY_EXISTING ~POTN09.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7462) unusable0=0 END
-    LPF ADD_ON_HIT_EFF INT_VAR dur=600 STR_VAR effects=~t=3,tgt=1,op=23,spec=1~ END
+    LPF ADD_ON_HIT_EFF INT_VAR dur=600 rd=1 STR_VAR effects=~t=3,tgt=1,op=23,spec=1~ END
 BUT_ONLY
 
 // potion of invunerability
 COPY_EXISTING ~POTN11.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7463) unusable0=0 END
-    LPF ADD_ON_HIT_EFF INT_VAR dur=300 STR_VAR effects=~t=3,tgt=1,op=166,p1=10~ END
+    LPF ADD_ON_HIT_EFF INT_VAR dur=300 rd=1 STR_VAR effects=~t=3,tgt=1,op=166,p1=10~ END
 BUT_ONLY
 
-// potion of health
+// elixir of health
 COPY_EXISTING ~POTN17.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7464) END
     LPF ALTER_EFFECT INT_VAR match_opcode=17 parameter1=17 END
+    LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 dur=10 rd=0 STR_VAR effects=~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=169,p2=146;op=101,p2=78;op=101,p2=25~ END
 BUT_ONLY
 
 // potion of perception
@@ -316,15 +308,38 @@ COPY_EXISTING ~POTN39.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7465) END
     LPF ALTER_EFFECT INT_VAR match_opcode=91 parameter1=40 END
     LPF CLONE_EFFECT INT_VAR match_opcode=91 opcode=276 parameter=40 END
-    LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 p1=2 dur=1800 STR_VAR effects=~op=0;op=325~ END
+    LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 p1=2 dur=1800 rd=1 STR_VAR effects=~op=0;op=325;op=278~ END
 BUT_ONLY
 
 //potion of power
 COPY_EXISTING ~POTN41.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7466) END
-    LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 p1=2 dur=240 STR_VAR effects=~op=23,spec=1;op=263,p1=1~ END
+    LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 277 END
+    LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 276 END
+    LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 59 END
+    LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 332 parameter1=10 parameter2=0 END
+    LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 dur=240 STR_VAR effects=~op=23,spec=1;op=263,p1=1;op=332,p1=10~ END
 BUT_ONLY
 
+COPY_EXISTING_REGEXP "POTN0[3-7]\.ITM" ~override~
+    LPF ALTER_ITEM INT_VAR unusable0=0 END
+BUT_ONLY
+
+COPY_EXISTING "POTN12.ITM" ~override~
+    LPF ALTER_ITEM INT_VAR unusable0=0 END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1535 DESIGNATED 1535 GROUP @10 // WAND REBALANCE TWEAK
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING_REGEXP ".*\.ITM" ~override~
+    LPF GET_CATEGORY RET cat = result END
+    PATCH_IF cat = 9 BEGIN
+        LPF ALTER_ITEM INT_VAR unusable0=0 END
+    END
+BUT_ONLY
 
 ///////////////////////////////////// ARMOR/GEAR TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -906,6 +921,17 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 COPY_EXISTING ~CLCK06.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7440) END
     LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=59,p1=15;op=206,res=SPWI322;op=206,res=SPWI515~ END
+BUT_ONLY
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1675 DESIGNATED 1675 GROUP @11 // CLOAK OF DISPLACEMENT tweak
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~CLCK03.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7450) END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1=5 STR_VAR effects=~op=86;op=87;op=88;op=89~ END
 BUT_ONLY
 
 ////////////////////////////////////// DAGGER TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -2368,8 +2394,9 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPPR704.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5170) END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 55 savebonus = 1 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 55 savebonus = 2 END
     LPF ADD_SPL_TGTEFF STR_VAR effects=~ip=0,op=324,p2=23,rd=2,res=SPPR704~ END
+
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2485,7 +2512,6 @@ COPY_EXISTING ~SPPR611.SPL~ ~override~
     LPF CLONE_EFFECT INT_VAR match_opcode=261 parameter1=0 END
     LPF CLONE_EFFECT INT_VAR match_opcode=261 parameter1=5 END
 BUT_ONLY
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @465 DESIGNATED 465 GROUP @20 // NATURE'S BEAUTY TRUE SIGHT TWEAK
