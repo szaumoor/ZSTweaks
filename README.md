@@ -5,13 +5,13 @@ This mod is a compilation of tweaks that I think personally improve things as th
 ---
 <details>
 
-<summary><b>General Weapon Tweaks</b></summary>
+<summary><b>General Item & Spell Tweaks</b></summary>
 
-This section includes non-specific improvements to groups of weapons. It does not update descriptions.
+This section includes non-specific improvements to groups of items and spells. Components that affect many items based on pattern matchings do no affect their item descriptions.
 
 **Component 120:** Make conjured magical weapons add extra attacks (Flame Blade, Ghost Blade, Black Blade of Disaster...)
 
-The problem with these spells is that they promise power, but your little sickly wizard is not a very good fighter at all. I think this promise should be more serious, and therefore, by default, all these weapons grant 2 APR by default.
+The problem with these spells is that they promise power, but your little sickly wizard is not a very good fighter at all. I think this promise should be more serious, and therefore, by default, all these weapons grant +1 APR by default.
 
 **Component 1120:** Make some weapon categories incur in backstab penalties for balance
 
@@ -134,6 +134,12 @@ Additionally, a few spells also bypass magic resistance, because it makes sense 
 Overall this should make all these spells more usable throughout the trilogy of games, especially against enemies such as drow, who have a very high chance of resisting magic.
 
 Please bear in mind that this component should be installed after tweaks that affect these spells, especially if they add new effects to them; otherwise, this tweak will only work partially, and inconsistent results could ensue.
+
+**Component 1532:** Make unenchanted bracers, belts and boots grant +1 HP, so they're not just garbage used only for RP purposes
+
+I do not like gear that you can wear without any effect whatsoever. I can live with rings that don't do that, because there's no reasonable benefit to just wearing a ring. Therefore, wearing unenchanted belts, boots, and bracers will grant the wearer +1 HP which I think is reasonable enough, and it doesn't change balance much.
+
+For consistency, all of the enchanted belts, boots and bracers will also grant this. The unenchanted items will be still a bottom-of-the-barrel choice, but at least, they don't exist just as unglorified decoration, and will provide some use at the beginning of BGEE (and IWDEE?).
 
 </details>
 
@@ -333,6 +339,20 @@ I decided to take the name of item more seriously. And let's face it, this items
 **Component 1672:** Make Stalker Gauntlets also benefit Bounty Hunters
 
 Because it seems obvious that both classes ("professions") align with each other. Both Stalker-only benefits apply, including the enhanced backstab.
+
+**Component 1673** Make Blessed Bracers more powerful
+
+This makes the bracers far more worth the trouble for paladins. Instead of just letting you cast Resurrection and Heal Critical Wounds, and +10 HP:
+
+- You can cast Resurrection once per day
+- You can cast Heal once per day (instantly cast)
+- You can cast Mass Heal three times per day
+- All wearers get a "blessing": +1 THAC0 and Damage (Use Any Item users or good-aligned paladins)
+- Paladin-only bonuses: +1 Casting Speed, +1 spell slots (1-4), +1/2 APR, +15 HP
+
+**Component 1674:** Make Whispers of Silence protect against detection spells except for True Sight, and improve Move Silently
+
+This makes the Nondetection effect more useful, since it's unremarkable as an effect anyway, and so the wearer is also immune other invisibility-detecting spells, except True Sight.
 
 </details>
 

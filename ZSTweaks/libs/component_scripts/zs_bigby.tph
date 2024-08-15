@@ -6,13 +6,13 @@ COPY_EXISTING ~SPWI818.SPL~ ~override~ // bigby's clenched fist
 BUT_ONLY
 
 COPY_EXISTING ~SPWI818A.SPL~ ~override~ // bigby's fist subspell
-    LPF ALTER_EFFECT INT_VAR check_globals=0 resist_dispel=3 END // bypasses magic resistance but still applies dispel
-    LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=12 match_dicesize=4 parameter1=4 dicesize=6 dicenumber=6 END
-    LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=12 match_dicesize=6 parameter1=2 dicesize=8 dicenumber=6 END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 header=0 resist_dispel=3 END // bypasses magic resistance but still applies dispel
+    LPF ALTER_EFFECT INT_VAR check_globals=0 header=0 match_opcode=12 match_dicesize=4 parameter1=4 dicesize=6 dicenumber=6 END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 header=0 match_opcode=12 match_dicesize=6 parameter1=2 dicesize=8 dicenumber=6 END
 BUT_ONLY
 
 COPY_EXISTING ~SPWI818B.SPL~ ~override~ // bigby's second subspell
-    LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=216 savebonus="-2" END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 header=0 match_opcode=216 savebonus="-2" END
 BUT_ONLY
 
 COPY_EXISTING ~SPWI918.SPL~ ~override~ // bigby's crushing hand
@@ -23,11 +23,11 @@ COPY_EXISTING ~SPWI918.SPL~ ~override~ // bigby's crushing hand
 BUT_ONLY
 
 COPY_EXISTING ~SPWI918A.SPL~ ~override~ // bigby's fist subspell
-    LPF ALTER_EFFECT INT_VAR check_globals=0 resist_dispel=3 END // bypasses magic resistance but still applies dispel
-    LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=12 match_dicesize=3 parameter1=8 dicesize=6 dicenumber=8 END
-    LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=12 match_dicesize=4 parameter1=10 dicesize=10 dicenumber=6 END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 header=0 resist_dispel=3 END // bypasses magic resistance but still applies dispel
+    LPF ALTER_EFFECT INT_VAR check_globals=0 header=0 match_opcode=12 match_dicesize=3 parameter1=8 dicesize=6 dicenumber=8 END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 header=0 match_opcode=12 match_dicesize=4 parameter1=10 dicesize=10 dicenumber=6 END
 BUT_ONLY
 
 COPY_EXISTING ~SPWI918B.SPL~ ~override~ // bigby's second subspell
-    LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=216 savebonus="-4" END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 header=0 match_opcode=216 savebonus="-4" END
 BUT_ONLY

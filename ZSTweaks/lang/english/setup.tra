@@ -1,5 +1,5 @@
 // GROUPS
-@10 = ~General Weapon & Spell Tweaks~
+@10 = ~General Item & Spell Tweaks~
 @11 = ~Armor/Gear Tweaks~
 @12 = ~Dagger Tweaks~
 @13 = ~Two-handed Melee Weapon Tweaks~
@@ -24,7 +24,7 @@
 // end warning messages components
 
 // COMPONENTS
-/// GENERAL WEAPON AND SPELL TWEAKS
+/// General Item & Spell Tweaks
 @120 = "Make conjured wielded magical weapons add 1 extra APR (Flame Blade, Phantom Blade...)"
 @1120 = "Make some weapon categories incur in backstab penalties for balance"
 @1121 = ~Make Flails and Morningstars always inflict a small amount of piercing damage~
@@ -41,6 +41,9 @@
 @1450 = "Make some rogue weapons have the chance of doing more damage if wielded by pure thieves (Finesse)"
 @1530 = ~Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time~
 @1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense~
+@1532 = ~Make unenchanted bracers, belts and boots grant +1 HP, so they're not just garbage used only for RP purposes~
+@1533 = ~Rebalance scrolls such that the spellcasting level is always at least double its (wizard) spell level~
+@1534 = ~Rebalance various wands and special potions~
 
 /// ARMOR/GEAR TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -59,7 +62,7 @@
 @1650 = ~Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak~
 @1651 = ~Make Studded Leather of Thorns add some piercing damage too~
 @1652 = ~Make Grandmaster's Armor's movement bonus not affected by Free Action~
-@1653 = ~Make Thieves' Hood protect against critical hits and slightly more advantageous for single-classed thieves: +1 THAC0 and Damage~
+@1653 = ~Make Thieves' Hood protect against critical hits and slightly more advantageous for single-classed thieves~
 @1654 = ~Make Star-Strewn Boots slightly better and favor Inquisitors too (SoD)~
 @1655 = ~Make Crown of Lies more consequential when used~
 @1656 = ~Make Helmet of Dumathoin very slightly more powerful~
@@ -78,6 +81,7 @@
 @1671 = ~Make The Eyes of Truth add a bonus to detect illusions and traps~
 @1672 = ~Make Stalker Gauntlets also benefit Bounty Hunters~
 @1673 = ~Make Blessed Bracers more powerful~
+@1674 = ~Make Whispers of Silence protect against detection spells except for True Sight, and improve Move Silently~
 
 // subcomponent str of component @1664
 @16640 = ~Affect all~
@@ -3656,15 +3660,20 @@ Weight: 2~
 STATISTICS:
 
 Equipped abilities:
-– Hit Points: +15
+– Hit Points: +15 (paladins only)
 – One extra spell slot from level 1 to 4 (paladins only)
 – Casting speed: +1 (paladins only)
-– Permanently Blessed and under the effects of Protection from Evil
+– +1/2 APR (paladins only)
+– Permanently blessed (stacks with Bless spells)
 
 Charge abilities:
 – Heal once per day
   Special: Completely heals target, instantly cast
   Area of Effect: 1 creature
+
+– Mass Cure three times per day
+  Special: Heals self and allies as per the namesake cleric spell.
+  Area of Effect: Caster and allies within 5 ft
 
 – Resurrection once per day
   Special: Raised target is fully healed, instantly cast
@@ -3852,7 +3861,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-By using this spell, the priest can charms a pebble, which becomes magical and flies out and hits a target opponent. The stone deals 1d4 points of magic and missile damage to whomever it hits.~
+By using this spell, the priest can charm a pebble, which becomes magical and flies out and hits a target opponent. The stone deals 1d4 points of magic and missile damage to whomever it hits.~
 
 @7410 = ~Dolorous Decay
 (Alteration, Necromancy)
@@ -3897,3 +3906,111 @@ Requires:
  11 Strength
 
 Weight: 9~
+
+
+@7440 = ~Cloak of Non-Detection: Whispers of Silence
+Reportedly created for a lineage of the greatest burglars ever to walk the night, this cloak was apparently a success. No record exists of previous owners.
+
+STATISTICS:
+
+Equipped abilities:
+– +15% Move Silently.
+– While hidden or invisible, the wearer is non-detectable by magical means such as Detect Invisibility, Detect Illusion, and scrying, although True Sight will still allow the caster to detect the wearer.
+
+Weight: 3~
+
+@7450 = ~The Cloak of Displacement is a magical item that causes subtle shifts in the image of its wearer. It has the power to actually shift an individual's image by as much as six inches in any direction from their actual location. Aside from being an effective defense in combat situations, it has also been the cause of serious eyestrain amongst fellow party members.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +4 vs. missile attacks
+– Damage resistance: +5%
+– Save vs. Death: +2
+– Save vs. Breath: +2
+– Save vs. Wand: +2
+
+Weight: 3~
+
+@7460 = ~When activated, the wand will eject three missiles of magical energy that dart forth and unerringly strike their target. This includes enemy creatures in a melee. The target creature must be seen or otherwise detected to be hit, however, so near-total concealment, such as that offered by arrow slits, can render the spell ineffective. The missiles will inflict 1d4+1 points of damage each.
+
+STATISTICS:
+
+Charge abilities:
+– 3 magic missiles will strike the target
+  Damage: 1d4+1 per missile
+  Range: 100 ft.
+  Area of Effect: 1 creature
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+@7461 = ~A shower of fine chunks of ice fly forth from the drinker of this potion, creating a light dusting of cold flakes that protects all within the area of effect from fire damage. This potion was created to counter Fireball and similar spells.
+
+STATISTICS:
+
+Charge abilities:
+– Protects all within area from +75% of fire damage for 3 rounds
+  Range: 0
+  Area of Effect: 15-ft. radius
+
+Weight: 1~
+
+@7462 = ~This potion is imbued with a powerful enchantment that will simulate a temporary increase in level and will imbue the drinker from nigh-unbreakable confidence. The effect lasts for 2 hours, which makes this potion a powerful ally in a deadly combat.
+
+STATISTICS:
+
+Hit Points: +10% (base only)
+THAC0: Set to 90% of current base
+Immunity to morale failure
+Duration: 2 hours
+
+Weight: 1~
+
+@7463 = ~This potion confers very high resistance to all attacks while giving bonuses to all Saving Throws. The effects of the elixir last for 1 hour but can only be used by warriors.
+
+STATISTICS:
+
+Armor Class: 0
+Saving Throws: +5
+Magic Resistance: +10%
+Duration: 1 hour
+
+Weight: 1~
+
+@7464 = ~The elixir of health is a powerful healing mixture designed to cleanse the body of all impurities. First, it cures all poisons and diseases; then, once the system has been purged, the imbibed is cured by 17 Hit Points to speed the recovery process.
+
+STATISTICS:
+
+Special: Cures poison and disease and heals 17 Hit Points
+
+Weight: 1~
+
+@7465 = ~This potion heightens the sensory perception of the drinker, which allows them to perform delicate tasks and anticipate attacks better.
+
+STATISTICS:
+
+Detect Illusion and Traps: +40%
+Other thieving skills: +20%
+AC and Saving Throws: +2
+Duration: 6 hours
+
+Weight: 1~
+
+@7466 = ~This powerful elixir is similar to the potion of heroism in that it effectively raises the imbiber's level and imbues the drinker with confidence. This affects Hit Points, THAC0, and thieving abilities, and the backstab multiplier. This effect is applied to the base, before any attribute modifiers are added.
+
+STATISTICS:
+
+THAC0: Set to 80% of current base
+Hit Points: +20% temporary (base only)
+Hide In Shadows: +20% (base only)
+Pick Pockets: +20% (base only)
+Open Locks: +20% (base only)
+Find Traps: +20% (base only)
+Immunity to morale failure
+Backstab multiplier: +1
+Duration: 4 turns
+
+Weight: 1~
