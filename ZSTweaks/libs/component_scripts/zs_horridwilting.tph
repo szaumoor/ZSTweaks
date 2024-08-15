@@ -6,19 +6,19 @@ COPY ~ZSTweaks/eff/ZSTWHW16.EFF~ ~override~
 
 ACTION_IF GAME_IS "eet bg2ee" BEGIN
     COPY_EXISTING ~ohbwat01.CRE~ ~override~ // make sure existing water elementals are considered water elementals
-        LPF ALTER_CRE INT_VAR class="-37" END
+        LPF ALTER_CRE INT_VAR class=219 END
     BUT_ONLY
     COPY_EXISTING ~ELWATG01.CRE~ ~override~ // make sure existing water elementals are considered water elementals
-        LPF ALTER_CRE INT_VAR class="-37" END
+        LPF ALTER_CRE INT_VAR class=219 END
     BUT_ONLY
 END
 
 ACTION_IF GAME_IS "eet bgee" AND FILE_EXISTS_IN_GAME "bdwe1str.CRE" AND FILE_EXISTS_IN_GAME "bdwe2str.CRE" BEGIN
     COPY_EXISTING ~bdwe1str.CRE~ ~override~ // make sure existing water elementals are considered water elementals
-        LPF ALTER_CRE INT_VAR class="-37" END
+        LPF ALTER_CRE INT_VAR class=219 END
     BUT_ONLY
     COPY_EXISTING ~bdwe2str.CRE~ ~override~ // make sure existing water elementals are considered water elementals
-        LPF ALTER_CRE INT_VAR class="-37" END
+        LPF ALTER_CRE INT_VAR class=219 END
     BUT_ONLY
 END
 
