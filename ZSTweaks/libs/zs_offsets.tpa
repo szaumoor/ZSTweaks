@@ -70,17 +70,19 @@ BEGIN
 
     PATCH_IF num_abilities > 1 BEGIN // if looping is needed
         READ_SHORT (ability_offset + 0x28 + 0x10) first_casting_level // minimum level at first scaling header (i.e. second one)
-      //  PATCH_PRINT "First casting level is %first_casting_level%"
         PATCH_IF num_abilities > 2 BEGIN
+            SET found = 0
             FOR ( h = 2; h < num_abilities; ++h ) BEGIN
                 READ_SHORT (ability_offset + (0x28 * h) + 0x10) curr_casting_level
-                //PATCH_PRINT "Current casting level is %curr_casting_level%"
                 PATCH_IF curr_casting_level - first_casting_level > 1 BEGIN
                     SET result = h - 1
                     h = num_abilities + 1 // i.e. break
-                  //  PATCH_PRINT "Looks like the the last valid header is %result%"
+                    found = 1
                 END
                 SET first_casting_level = curr_casting_level
+            END
+            PATCH_IF found = 0 BEGIN
+                SET result = num_abilities - 1
             END
         END ELSE BEGIN
             SET result = 1
