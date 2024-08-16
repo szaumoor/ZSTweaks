@@ -1125,7 +1125,7 @@ This component improves this spell such that it has equal level of spell absorbt
 
 **Component 467:** Make Sunray be able to kill undead regadless of their magic damage resistance
 
-This component makes the spell usable against undead, even if they're immune to magic damage resistance (or very resistance). It should inflict now 100% of the health in damage, and as such, killing them always.
+This component makes the spell usable against undead, even if they're immune to magic damage resistance (or very resistance). It should inflict now 100% of the health in damage, and as such, killing them always. Additionally, magic resistance does not affect the spell.
 
 </details>
 
