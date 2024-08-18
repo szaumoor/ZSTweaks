@@ -2447,6 +2447,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPPR514.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6480) END
+    LPF ALTER_EFFECT INT_VAR power = 0 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 17 dicenumber = 4 dicesize = 3 END
     LPF ALTER_HEADER INT_VAR match_type = 1 speed = 2 END
 BUT_ONLY
@@ -2617,6 +2618,7 @@ REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 COPY_EXISTING ~SPPR751.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5210) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 6 dicenumber = 6 END
+    LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savebonus = "-2" END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2631,9 +2633,9 @@ COPY_EXISTING ~SPPR250.SPL~ ~override~
     SET new_level = 4
     SET new_dicesize = 4
     FOR ( dice = 0; dice < 7; ++dice ) BEGIN
-        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = new_level END
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = new_level insert_point = dice+1 END
         new_level += 2
-        LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = new_dicesize END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 header=dice+1 dicesize = new_dicesize END
         ++new_dicesize
     END
 BUT_ONLY
@@ -2653,7 +2655,7 @@ REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 COPY_EXISTING ~SPPR350.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6990) END
     LPF ALTER_HEADER INT_VAR match_speed = 9 speed = 6 END
-    LPF ADD_ON_HIT_EFF INT_VAR pw=3 STR_VAR effects = ~op=164;op=4;op=240,p2=5;op=240,p2=4~ END
+    LPF ADD_SPL_TGTEFF INT_VAR pw=3 STR_VAR effects = ~op=164;op=4;op=240,p2=5;op=240,p2=4~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////

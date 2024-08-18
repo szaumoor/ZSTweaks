@@ -1081,9 +1081,11 @@ Healing spells are infamously bad in BG/BG2, they heal too little for such a slo
 - Cure Serious Wounds: Heals 30 points plus 3 more point in the next two levels, 2 on the next two, up to 40.
 - Cure Critical Wounds: Heals 42 points plus 3 more point per level, up to 54.
 
+Also they will no longer be stopped by spell deflection.
+
 **Component 460:** Make Mass Heal faster to cast and heal a bit more
 
-This improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32).
+This improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32). Also it will no longer be stopped by spell deflection.
 
 **Component 461:** Make Bolt of Glory slightly better
 
@@ -1092,7 +1094,7 @@ This makes the Bolt of Glory generally more effective and rearranges the damage 
 - Prime Material Plane creatures: 4d4+6 magic damage
 - Outsiders (except fiendish and celestials; elementals, genies, gith...): 6d6+6 magic damage
 - Undead: 8d6+6 magic damage
-- Fiendish outsiders (demons, devils, evil planetars and solars): 8d8+6
+- Fiendish outsiders (demons, devils, evil planetars and fallen solars): 8d8+6
 
 **Component 462:** Make Magical Stone bypass Magic Resistance and deal both magic and missile damage
 
@@ -1104,7 +1106,7 @@ This component improves the spell in the following ways:
 - It causes 2d10 poison damage immediately on contact, as well as the usual 2-round slow effect.
 - Saving Throw against the poison effect is now -3
 - The poison duration is now 1 full turn. The description will be more accurate.
-- During the poison's duration, target received 8% more physical damage, and gets a -2 penalty to THAC0, Damage, and AC.
+- During the poison's duration, target receives 8% more physical damage, and gets a -2 penalty to THAC0, Damage, and AC.
 
 **Component 464:** Make Wondrous Recall also recall wizard spells, and a higher number of them
 
@@ -1125,7 +1127,7 @@ This component improves this spell such that it has equal level of spell absorbt
 
 **Component 467:** Make Sunray be able to kill undead regadless of their magic damage resistance
 
-This component makes the spell usable against undead, even if they're immune to magic damage resistance (or very resistance). It should inflict now 100% of the health in damage, and as such, killing them always. Additionally, magic resistance does not affect the spell.
+This component makes the spell usable against undead, even if they're immune to magic damage resistance (or very resistant). It should inflict now 100% of the health in damage, and as such, killing them always. Additionally, magic resistance does not affect the spell.
 
 </details>
 
@@ -1137,11 +1139,11 @@ This component makes the spell usable against undead, even if they're immune to 
 
 **Component 2100:** Make Sun Soul Ray from Sun Soul Monks damage improve slightly and do more damage to undead
 
-The maximum damage will grow to 6d8 at level 12, and 6 damage to undead, which is a very small bonus that doesn't scale. Now this bonus increases by 2 points every time the power is upgraded.
+The maximum damage normally grows up to 6d8 at level 12, adding 6 damage to undead, which is a very small bonus that doesn't scale. Now this bonus against undead increases by 2 points every time the power is upgraded.
 
 **Component 2110:** Make Sun Soulbeam do more damage to undead: 12d6 instead of just 3 more damage than baseline.
 
-The difference between non-undead and undead in the original is 9d6 vs. 9d6+3. It's really not a meaningful difference. Therefore, the damage to undead will now be 12d6, i.e. up to 72 damage instead of 57, which I think is okay for a once-per-day ability anyway.
+The difference in damage between non-undead and undead in vanilla is 9d6 vs. 9d6+3. It's really not a meaningful difference. Therefore, the damage to undead will now be 12d6, i.e. up to 72 damage instead of 57, which I think is okay for a once-per-day ability anyway.
 
 **Component 360:** Make Etheral Retribution do more damage per round: 6d6 per round instead of 3d8
 

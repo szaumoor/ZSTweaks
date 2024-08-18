@@ -10,11 +10,13 @@ COPY_EXISTING ~SPPR103.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR header = number match_opcode = 17 parameter1 = base_heal END
         ++base_heal
     END
+    LPF ALTER_EFFECT INT_VAR power = 0 END
 BUT_ONLY
 
 ACTION_IF FILE_EXISTS ~SPPR217.SPL~ BEGIN
     COPY_EXISTING ~SPPR217.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6473) END
+        LPF ALTER_EFFECT INT_VAR power = 0 END
         SET base_heal = 13
         LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 17 parameter1 = base_heal END
         base_heal += 2
@@ -39,6 +41,7 @@ COPY_EXISTING ~SPPR315.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6473) END
     END
     SET base_heal = 20
+    LPF ALTER_EFFECT INT_VAR power = 0 END
     LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 17 parameter1 = base_heal END
     base_heal += 2
     SET current_header = 2
@@ -57,6 +60,7 @@ COPY_EXISTING ~SPPR401.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6475) END
     END
     SET base_heal = 30
+    LPF ALTER_EFFECT INT_VAR power = 0 END
     LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 17 parameter1 = base_heal END
     base_heal += 3
     SET current_header = 2
@@ -79,6 +83,7 @@ COPY_EXISTING ~SPPR502.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6477) END
     END
     SET base_heal = 42
+    LPF ALTER_EFFECT INT_VAR power = 0 END
     LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 17 parameter1 = base_heal END
     base_heal += 3
     SET current_header = 2

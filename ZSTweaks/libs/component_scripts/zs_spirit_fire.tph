@@ -1,33 +1,22 @@
 COPY_EXISTING ~SPPR450.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7000) END
-    LPF SPL_ABILITIES_NUM RET abilities = result END
+              ~SPPR450B.SPL~ ~override~
+    PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "SPPR450.SPL" = 0 BEGIN
+        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7000) END
+    END
+    LPF last_consecutive_header RET h = result END
     SET start_dmg = 7
-    FOR ( curr_header = 0; curr_header < abilities; ++curr_header ) BEGIN
+    FOR ( curr_header = 0; curr_header <= h; ++curr_header ) BEGIN
         LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=curr_header match_opcode=12 parameter1=start_dmg END
-        LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=curr_header match_opcode=146 savingthrow=0 probability1=32 END
+        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "SPPR450.SPL" = 0 BEGIN
+            LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=curr_header match_opcode=146 savingthrow=0 probability1=32 END
+        END
         ++start_dmg
     END
     SET next_level = 11
     FOR ( extra_headers = 0; extra_headers < 2; ++extra_headers ) BEGIN
-        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = next_level END
-        LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=abilities dicenumber=next_level match_opcode=12 parameter1=next_level END
-        ++abilities
-        ++next_level
-    END
-BUT_ONLY
-
-COPY_EXISTING ~SPPR450B.SPL~ ~override~
-    LPF SPL_ABILITIES_NUM RET abilities = result END
-    SET start_dmg = 7
-    FOR ( curr_header = 0; curr_header < abilities; ++curr_header ) BEGIN
-        LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=curr_header match_opcode=12 parameter1=start_dmg END
-        ++start_dmg
-    END
-    SET next_level = 11
-    FOR ( extra_headers = 0; extra_headers < 2; ++extra_headers ) BEGIN
-        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = next_level END
-        LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=abilities match_opcode=12 parameter1=next_level END
-        ++abilities
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = next_level insert_point= h+1 END
+        LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=h+1 dicenumber=next_level match_opcode=12 parameter1=next_level END
+        ++h
         ++next_level
     END
 BUT_ONLY
