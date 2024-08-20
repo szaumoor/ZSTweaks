@@ -39,6 +39,7 @@ Old tales say that during one of her missions, in the innermost sanctum of a lon
 Allegedly, this event was what awakened the blade's true powers, and it was this haunting whisper what earned the weapon its name, symbolizing the deep bond between the warrior and her blade. Many of her exploits were conducted using this blade.
 
 STATISTICS:
+
 Combat abilities:
 – Drains 2 points of target's Wisdom for 6 rounds on each hit (Save vs. Death to negate)
 

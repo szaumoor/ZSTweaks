@@ -1,12 +1,29 @@
 COPY_EXISTING "NPSW05.ITM" ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6050) ench=3 END
     LPF ALTER_HEADER INT_VAR match_type = 1 speed = 0 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6,p2=0~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6~ END
     LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 1 match_opcode = 25 parameter1 = 2 savebonus = "-1" END
 BUT_ONLY
+
+
+COPY_EXISTING "news05.ITM" ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6052) ench=5 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=1~ END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode = 25 parameter1 = 3 savebonus = "-2" END
+    LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=319 parameter1=9182 parameter2=10 special=9182 END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=142,p2=6,dur=3,rd=2,stype=4,sbonus=-1~ END
+BUT_ONLY
+
 COPY_EXISTING "NPSW06.ITM" ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6051) ench=3 END
     LPF ALTER_HEADER INT_VAR match_type = 1 speed = 0 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6,p2=0;op=319,p1=153,p2=4,spec=8332~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6;op=319,pwr=1,p1=153,p2=4,spec=8332~ END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=33,p1=-1,dur=12,rd=2~ END
+BUT_ONLY
+
+COPY_EXISTING "news06.ITM" ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6053) ench=5 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=1~ END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=33,p1=-2,dur=18,rd=2~ END
+    LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=319 parameter1=9182 parameter2=10 special=9182 END
 BUT_ONLY

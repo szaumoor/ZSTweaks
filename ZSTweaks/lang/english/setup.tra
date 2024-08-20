@@ -32,7 +32,7 @@
 @1160 = "Make Warhammers do a baseline damage 1d5+1, not 1d4+1 (except hammers outside that range)"
 @1350 = "Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8"
 @1351 = "Make Wakizashis a piercing/slashing weapon"
-@1360 = "Make Light Crossbows get 1.5 APR"
+@1360 = "Make Light Crossbows get +1/2 more APR"
 @1370 = "Make Katanas deal 2d5 instead of 1d10"
 @1400 = "Make Bastard Swords deal 1d8+1 by default"
 @1430 = "Make Two-handed swords deal 1d9+1 by default, and 2d6 where it applies"
@@ -81,7 +81,7 @@
 @1667 = ~Make Xarrnous's Second Sword Arm (and SoD's version) also add +1 damage (lesser Legacy of the Masters)~
 @1668 = ~Make The Dale's Protector slightly more powerful and open to all classes~
 @1669 = ~Make Gauntlets of Extraordinary Specialization improve THAC0 by 2 and open to all classes~
-@1671 = ~Make The Eyes of Truth add a bonus to detect illusions and traps~
+@1671 = ~Make The Eyes of Truth add a bonus to Detect Illusions and Find Traps~
 @1672 = ~Make Stalker Gauntlets also benefit Bounty Hunters~
 @1673 = ~Make Blessed Bracers more powerful~
 @1674 = ~Make Whispers of Silence protect against detection spells except for True Sight, and improve Move Silently~
@@ -122,7 +122,7 @@
 @1420 = "Make Ir'revrykal base damage equal to Carsomyr"
 @1460 = ~Make Spear of Withering able to poison on contact if save is failed~
 @1540 = ~Make Wave slightly more powerful~
-@1590 = ~Make Blackmist more powerfully blinding and make you immune to blindness~
+@1590 = ~Make Blackmist more powerfully blinding and grant immunity to blindness~
 @1591 = ~Make Soul Reaver slightly more balanced~
 @1592 = ~Make Soul Reaver deal 1d12 damage~
 @1593 = ~Make Sword of Ruin +2 slightly more powerful~
@@ -806,6 +806,44 @@ Combat abilities:
 
 THAC0: +2
 Damage: 1d6+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~
+
+@6052 = ~This abyssal greensteel blade is one of Haer'Dalis's favorite weapons. This short sword is capable of inflicting an additional 9 points of poison damage if the target fails a Saving Throw. This blade may only be used by Haer'Dalis.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target must save vs. Poison at -2 or suffer 9 points of poison damage over 3 seconds
+– Considered +5 for the purposes of what it can hit
+– 1 extra attack per round
+
+THAC0: +4
+Damage: 1d6+4 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~
+
+@6053 = ~Chaos is a short sword usable only by Haer'Dalis. Every time it strikes an opponent, he or she loses 2 points of Dexterity for 5 rounds and becomes more sensitive to poisonous substances. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target suffers a -2 Dexterity penalty for 5 rounds and a -1 penalty to Save vs. Poison for 2 rounds
+– Considered +5 for the purposes of what it can hit
+– 1 extra attack per round
+
+THAC0: +4
+Damage: 1d6+4 (piercing)
 Speed Factor: 0
 Proficiency Type: Short Sword
 Type: One-handed
@@ -3461,6 +3499,7 @@ Old tales say that during one of her missions, in the innermost sanctum of a lon
 Allegedly, this event was what awakened the blade's true powers, and it was this haunting whisper what earned the weapon its name, symbolizing the deep bond between the warrior and her blade. Many of her exploits were conducted using this blade.
 
 STATISTICS:
+
 Combat abilities:
 – Drains 2 points of target's Wisdom for 6 rounds on each hit (Save vs. Death to negate)
 
@@ -3991,7 +4030,7 @@ Weight: 1~
 
 STATISTICS:
 
-Special: Cures poison and disease, protects against these effects for 10 seconds, and heals 17 Hit Points
+Special: Cures poison and disease, protects against these effects for 10 seconds, and heals 20 Hit Points
 
 Weight: 1~
 
@@ -4006,16 +4045,16 @@ Duration: 6 hours
 
 Weight: 1~
 
-@7466 = ~This powerful elixir is similar to the potion of heroism in that it effectively raises the imbiber's level and imbues the drinker with confidence. This affects Hit Points, THAC0, and thieving abilities, and the backstab multiplier. This effect is applied to the base, before any attribute modifiers are added.
+@7466 = ~This powerful elixir is similar to the potion of heroism in that it effectively raises the imbiber's level and imbues the drinker with confidence. This affects Hit Points, THAC0, casting speed, damage dealt, thieving abilities, and the backstab multiplier.
 
 STATISTICS:
 
 THAC0: Set to 80% of current base
-Hit Points: +20% temporary (base only)
-All Thieving skills: +20% (base only)
-Immunity to morale failure
+Hit Points & Thieving skills: +20% (base only)
 All damage output: +10%
-Backstab multiplier: +1
+Casting speed & Backstab multiplier: +1
+Immunity to morale failure
+
 Duration: 4 turns
 
 Weight: 1~

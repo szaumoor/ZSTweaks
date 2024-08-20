@@ -26,7 +26,7 @@ DEFINE_PATCH_FUNCTION ADD_ON_HIT_EFF
         tmg = 0
         dur = 0
         rd = 0
-        pw = 0
+        pwr = 0
         t = 1
         stype = 0
         sbonus = 0
@@ -49,7 +49,7 @@ BEGIN
             def_parameter2 = p2
             def_duration = dur
             def_resist_dispel = rd
-            def_power = pw
+            def_power = pwr
             def_probability1 = pro1
             def_probability2 = pro2
             def_savetype = stype
@@ -71,7 +71,7 @@ INT_VAR
     t=1
     dur=0
     rd=1
-    pw=1
+    pwr=1
     ip="-1"
 STR_VAR
     effects=""
@@ -84,7 +84,7 @@ BEGIN
             def_parameter2 = p2
             def_duration=0
             def_resist_dispel = rd
-            def_power=pw
+            def_power=pwr
             def_type=t
             def_insertpoint=ip
         STR_VAR
@@ -100,7 +100,7 @@ INT_VAR
     t=1
     dur=0
     rd=1
-    pw=1
+    pwr=1
     ip="-1"
     stype="-1"
     sbonus="-1"
@@ -115,7 +115,7 @@ BEGIN
             def_parameter2 = p2
             def_duration=0
             def_resist_dispel = rd
-            def_power=pw
+            def_power=pwr
             def_type=t
             def_insertpoint=ip
         STR_VAR
