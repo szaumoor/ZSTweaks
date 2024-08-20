@@ -86,6 +86,7 @@
 @1673 = ~Make Blessed Bracers more powerful~
 @1674 = ~Make Whispers of Silence protect against detection spells except for True Sight, and improve Move Silently~
 @1675 = ~Make Cloak of Displacement add +5% damage resistance~
+@1676 = ~Make Skull of Death allows casting Finger of Death, and protect against Necromantic instant-death effects~
 
 // subcomponent str of component @1664
 @16640 = ~Affect all~
@@ -242,6 +243,7 @@
 @465 = ~Make Nature's Beauty blocked by True Sight~
 @466 = ~Make Shield of Archons absorb more spell levels (equivalent to cleric level)~
 @467 = ~Make Sunray be able to kill undead regadless of their magic damage resistance~
+@468 = ~Rebalance Call Lightning's damage and scaling~
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray from Sun Soul Monks scale further and do more damage to undead"
@@ -4017,3 +4019,40 @@ Backstab multiplier: +1
 Duration: 4 turns
 
 Weight: 1~
+
+@7470 = ~Call Lightning
+(Alteration)
+
+Level: 3
+Sphere: Weather
+Range: 80 ft.
+Duration: 1 round/4 levels
+Casting Time: 9
+Area of Effect: 360-ft. radius
+Saving Throw: 1/2
+
+Call Lightning must be cast outside; otherwise, it will not work, and the spell is wasted. The caster is able to beckon the skies to throw one bolt of lightning per round. The spell has a duration of 1 round every 4 levels of the caster. Each bolt causes 2d6+1 points of electrical damage, plus an additional 1d6+1 points per level of the caster, up to level 18 (20d6+20). At level 19 and 20, the damage improves additively by 2 and 3, respectively, ending with a maximum damage of 20d6+25. Thus, an 8th-level caster will call down two bolts, each dealing 10d6+10 points of electrical damage. The bolt of lightning flashes down in a vertical stroke at any of the priest's enemies. The first enemy struck by the lightning will be the enemy targeted. After that, any enemy (but no allies) may be struck by the ensuing lightning storm.
+
+Since the electrical damage comes from the skies in a natural way, Magic Resistance does not affect this spell.~
+
+@7480 = ~The mad necromancer-lich N'Ashtar Nikadeemus forged this helmet from the bones of his own parents. His highest ranked general would wear it when he rode into battle, using it to instantly slay the commanders of the opposing army. After that, the skeletal armies of N'Ashtar would overrun their demoralized enemies. When N'Ashtar finally fell, the Skull of Death was supposedly destroyed.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+– Saves vs. Necromancy: +4
+– Immunity to necromantic instant-death magic, and vorpal effects
+
+Charge abilities:
+– Death Spell once per day
+  Slays creatures with fewer than 9 Hit Dice
+  Range: 50 ft.
+  Area of Effect: 15-ft. radius
+
+– Finger of Death once per day
+  Slays target if Save vs. Spell at -2 is failed
+  Range: 30 ft.
+  Area of effect: One target
+
+Weight: 2~

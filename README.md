@@ -380,6 +380,14 @@ This makes the Nondetection effect more useful, since it's unremarkable as an ef
 
 Makes the cloak add "displacement" in the same way as "displacement" is faked with things like Shadow Form and Spirit Form, i.e. damage resistance. In this case, just +5% damage resistance (universal).
 
+**Component 1676:** Make Skull of Death allows casting Finger of Death, and protect against Necromantic instant-death effects
+
+I don't like items that **only** add an ability without any passive benefit. Therefore:
+
+- May cast Finger of Death once per day too
+- Saves vs. Necromancy spells: +4 saves
+- Immunity to necromantic death effects and vorpal hits. This on a technical level means immunity to the Slay and Kill Target opcodes, but not to the Power Word Kill, Petrification, or Disintegration opcodes.
+
 </details>
 
 ---
@@ -1128,6 +1136,21 @@ This component improves this spell such that it has equal level of spell absorbt
 **Component 467:** Make Sunray be able to kill undead regadless of their magic damage resistance
 
 This component makes the spell usable against undead, even if they're immune to magic damage resistance (or very resistant). It should inflict now 100% of the health in damage, and as such, killing them always. Additionally, magic resistance does not affect the spell.
+
+**Component 468:** Rebalance Call Lightning's damage and scaling
+
+This spell is quite powerful, up to 4 bolts dealing 20-160 (or half when saved) damage each. I am bothered it doesn't scale up to level 20, it stops at level 18 (dealing 20d8 for bolt), which is understandable for balance reasons (unlike other spells where it makes little sense like Glyph or Warding or Phantom Blade).
+
+Therefore, I rebalanced it so it starts out dealing a bit less damage, and it builds up until 20 until it deals a similar amount of damage as vanilla at level 18. It will also bypass Magic Resistance, because this spell is simply a druid beckoning the skies to throw lightning bolts at something, not magical energy coming out from the druid. Specifics:
+
+- It starts out dealing 7d6+7 electric damage (from 7d8)
+- Every level thereafter up to level 18, the dice number thrown increases by 1 and the extra damage increases by 1. For example, next level, you would deal 8d6+8 electric damage (from 8d8).
+- When reaching level 18, the maximum damage would be 20d6+20 electric damage (from 20d8), i.e. 40-140 vs. 18-144.
+- After level 18, only the extra damage will increase, improving by 2 at level 19, and by 3 at level 20, ending with a maximum damage of 20d6+25 electric damage.
+- Final comparison of maximum possible damage (with save failed and no resistances) at level 20: 45-145 vs. 20-160
+
+In summary: higher minimum damage, more moderate scaling, bit lower maximum damage, and magic resistance has no effect.
+
 
 </details>
 

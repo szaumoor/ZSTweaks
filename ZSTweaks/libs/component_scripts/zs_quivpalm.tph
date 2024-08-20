@@ -2,11 +2,7 @@ COPY ~ZSTweaks/eff/ZSTWM01.EFF~ ~override~
      ~ZSTweaks/eff/ZSTWM02.EFF~ ~override~
 
 COPY_EXISTING "SPCL820.SPL" ~override~
-    LPF IS_FLAG_SET INT_VAR flag=2**15 RET flag_set = result END
     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6310) END
-    PATCH_IF flag_set = 0 BEGIN
-        LPF ALTER_SPELL INT_VAR this_plus=1 flags=2**15 END
-    END
     LPF ALTER_EFFECT INT_VAR match_duration=5 duration=7 END
     SET abilities_per_header = SHORT_AT( (LONG_AT 0x64) + 0x1e)
     LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = 18 END

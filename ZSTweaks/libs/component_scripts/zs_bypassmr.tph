@@ -3,11 +3,16 @@ COPY_EXISTING ~SPWI224.SPL~ ~override~  // GLITTERDUST, ALL GAMES
               ~SPPR517.SPL~ ~override~  // INSECT PLAGUE
               ~SPPR717.SPL~ ~override~  // CREEPING DOOM
               ~SPPR704.SPL~ ~override~  // NATURE'S BEAUTY
-              ~flpr717a.SPL~ ~override~ // CREEPING DOOM SUBSPELL
               ~SPPR209.SPL~ ~override~  // KNOW ALIGNMENT, ALL GAMES
               ~SPWI208.SPL~ ~override~  // KNOW ALIGNMENT ALL GAMES
     LPF ALTER_EFFECT INT_VAR resist_dispel=3 END // DISPEL PERMITTED
 BUT_ONLY
+
+ACTION_IF FILE_EXISTS_IN_GAME ~flpr717a.SPL~ BEGIN // CREEPING DOOM SUBSPELL~
+   COPY_EXISTING ~flpr717a.SPL~ ~override~ // CREEPING DOOM SUBSPELL
+        LPF ALTER_EFFECT INT_VAR resist_dispel=3 END
+   BUT_ONLY
+END
 
 COPY_EXISTING ~SPPR707.SPL~ ~override~ // SUNRAY, bypasses magic resistance
     LPF ALTER_EFFECT INT_VAR resist_dispel=3 END //
@@ -27,9 +32,14 @@ COPY_EXISTING ~SPWI101.SPL~ ~override~ // GREASE, ALL GAMES
               ~SPWM188.SPL~ ~override~ // SUMMON COW, ALL GAMES
               ~SPPR106.SPL~ ~override~ // magical stone
               ~SPPR302.SPL~ ~override~ // call lightning
-              ~SPPR722.SPL~ ~override~ // storm of vengeance
     LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 BUT_ONLY
+
+ACTION_IF FILE_EXISTS_IN_GAME ~SPPR722.SPL~ BEGIN // storm of vengeance
+   COPY_EXISTING ~SPPR722.SPL~ ~override~ // storm of vengeance
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+   BUT_ONLY
+END
 
 ACTION_IF !(GAME_IS ~iwdee~) BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~ohdwand1.ITM~ BEGIN // wand of glitterdust
