@@ -200,7 +200,7 @@
 @220 = "Make Ice Storm do more damage, including piercing damage"
 @370 = "Make Ray of Enfeeblement a Necromancy spell"
 @380 = "Make Contagion cause 4 points of Strength and Dexterity damage"
-@390 = "Make Death Fog inflict 4d4 acid damage per round instead of flat 8 damage"
+@390 = "Make Death Fog inflict 1d8+8 acid damage per round instead of flat 8 damage"
 @400 = "Make Energy Drain drain 6 levels instead of 2"
 @405 = ~Make Maze bypass Magic Resistance, like Imprisonment, and make Minotaurs immune to it~
 @407 = ~Make BGEE's Imp have 12 HP like the other familiars~
@@ -582,7 +582,7 @@ Casting Time: 6
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-The casting of a Death Fog spell creates an area of solid fog that has the additional property of being highly acidic. All animal life not immune to acid suffers 4d4 points of damage for each round they are exposed to the vapors of the Death Fog. Death Fog will also instantly kill all summoned creatures, regardless of their Hit Dice and immunities.~
+The casting of a Death Fog spell creates an area of solid fog that has the additional property of being highly acidic. All animal life not immune to acid suffers 1d8+8 points of damage for each round they are exposed to the vapors of the Death Fog. Death Fog will also instantly kill all summoned creatures, regardless of their Hit Dice and immunities.~
 
 @5240 = ~Contagion
 (Necromancy)

@@ -918,9 +918,9 @@ It probably makes more sense to make this spell a Necromancy spell like in NWN a
 
 2 points of damage for STR, DEX and CHA is underwhelming, and CHA reduction is irrelevant unless using particular mods. Now it reduces 4 STR and DEX, which should be a little more meaningful and more worth the level 4 slot.
 
-**Component 390:** Make Death Fog inflict 4d4 acid damage per round instead of flat 8 damage
+**Component 390:** Make Death Fog inflict 1d8+8 acid damage per round instead of flat 8 damage
 
-Improves the usability of Death Fog as a "general purpose" damage dealer, instead of just a stationary lingering anti-summon spell. The options for acid spells are very lacking in the game anyway. So instead of 8 acid damage per round now it will be between 4 to 16 per round with no save.
+Improves the usability of Death Fog as a "general purpose" damage dealer, instead of just a stationary lingering anti-summon spell. The options for acid spells are very lacking in the game anyway. So instead of 8 acid damage per round now it will be between 8 to 16 per round with no save.
 
 **Component 400:** Make Energy Drain drain 6 levels instead of 2
 
@@ -1060,7 +1060,7 @@ This components further tightens the gap between the cleric and the fighter they
 
 **Component 300:** Make Iron Skins cast as fast a Stoneskin
 
-Just as it sounds, it allows druids to do that, like wizards, so they're protected as quickly as wizards do, and reduces the need to use them only in pre-fight buffing rituals.
+Just as it sounds, it allows druids to do that, like wizards, so they're protected as quickly as mages do with Stoneskin, and reduces the need to use them only in pre-fight buffing rituals.
 
 **Component 310:** Make Fire Seeds create more seeds that do slightly more damage, with an enchantment of 2
 
@@ -1156,7 +1156,6 @@ Therefore, I rebalanced it so it starts out dealing a bit less damage, and it bu
 
 In summary: higher minimum damage, more moderate scaling, bit lower maximum damage, and magic resistance has no effect.
 
-
 </details>
 
 ---
@@ -1216,7 +1215,7 @@ Therefore, the following abilities are no longer breachable:
 
 **Component 2160:** Make Quivering Palm slightly more powerful at high levels
 
-I really dislike things that scale poorly or not at all. This makes Quivering Palm saving throw penalty improve to -1 at level 18 and to -2 at level 26.
+I really dislike things that scale poorly or not at all. This makes Quivering Palm saving throw penalty improve to -1 at level 18 and to -2 at level 26. Additionally, the effect lasts 7 seconds, up from 5 seconds, to give more leeway.
 
 **Component 2170:** Make the THAC0 progression of Thieves better and more streamlined, so they improve up to 6, like clerics
 

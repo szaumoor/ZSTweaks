@@ -1,6 +1,6 @@
 BACKUP "weidu_external/backup/ZSTweaks"
 AUTHOR "RoyalProtector at Gibberlings's forum https://www.gibberlings3.net/profile/12720-royalprotector/"
-VERSION "1.2.4"
+VERSION "1.2.6"
 README ~ZSTweaks/README.md~
 AUTO_EVAL_STRINGS
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2022,7 +2022,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPWI614.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5230) END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 4 dicenumber = 4 parameter1 = 0 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 8 dicenumber = 1 parameter1 = 8 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
