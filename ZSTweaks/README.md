@@ -552,6 +552,18 @@ I don't like that it's "just" casually called "cleric's" staff. Therefore, it ga
 - +1 turn undead and casting level (clerics only)
 - May cast Mass Cure (at minimum level, 1d8+9 healing) twice per day
 
+**Component 1595:** Make Halcyon +1 a bit more powerful
+
+There aren't many spears in the game. It would be tragic if most were boring. This makes the electrical damage of the weapon random, between 1 and 5 (inclusive):
+
+- 50% chance of causing 1 electrical damage
+- 30% chance of causing 2 electrical damage
+- 20% chance of causing 3 electrical damage
+
+Every hit has a chance of electrifying target: 2 electricity damage per round for 2 rounds if Save vs. Spell at +2 is failed.
+
+Hopefully this is slightly less boring!
+
 </details>
 
 ---
@@ -676,6 +688,14 @@ I really hate unique items with nothing in the description worth reading, so I t
 - Wisdom penalty (which can kill, technically, and I guess remove spell slots from priests) lasts for 6 rounds now as opposed to 2 rounds.
 - Shadowdancers receive: +10% Hiding skills and +1 THAC0
 - Can cast Shadow Jump three times per day: teleport instantly to a place in sight, becoming invisible for 2 rounds, and becoming unable to critically miss for the duration.
+
+**Component 1584:** Make The Brass Blade +5 cast a more powerful Fireball not tied to caster level
+
+The Brass Blade allows you to throw a Fireball as per the 3rd level wizard spell, and it's tied to caster level which means only Fighter/Mages would be able to take advantage of the full power of this -- other classes would throw a much weaker Fireball. This changes the power so it casts instead a Delayed Fireball cast at max level (15d6 fire damage with vanilla values) at a particular target, regardless of presence or absence of caster level, and adds the power to cast Sunfire too.
+
+Technical side note: since Type 2 is bugged for op146, as it makes spells cast bypass magic resistance as if the caster targetted themselves, it uses now Type 0, which unfortunately means the spell casting will have the casting speed of the spells in question.
+
+Finally, it fixes two likely bugs: spells cast being set as conjurer spells instead of evocation, and the fire damage of the sword bypassing mirror images.
 
 
 </details>
@@ -842,6 +862,19 @@ The stat restrictions are a remnant of an older, inferior way of making the gear
 
 The rest seem less arbitrary: Jan Jansen's special gear requires 17 dexterity (i.e. ability to handle it), Mazzy's (no special restrictions), Haer'Dalis' (no special restrictions), Yoshimo's (no special restrictions).
 
+**Component 1645:** Make Cernd's cloak more powerful
+
+This component makes Cernd's cloak more worth hanging onto. As it stands, it is like a +1 cloak of protection, with the bonus that it can be worn with other magically protective items. Now it's more unique and seems more significative for our druidic lupine sensei. Additions (saving throws stay as they were):
+
+- +2 AC (from +1)
+- Physical damage resistance: +10%
+- Elemental damage resistance: +15%
+- Regeneration: 1 HP / 2 rounds
+
+Overall, this will complement his werewolf shapes and druidic traits. Obviously this was made with the assumption he's a shapeshifter and not any other kind of druid.
+
+It will also remove the needless stat restrictions from the item.
+
 </details>
 
 ---
@@ -934,9 +967,11 @@ I think this makes this spell quite more useful, although perhaps it's too power
 
 This allows you to be Lawful Evil and enjoy the same amount of HP bonus as other alignments. This is standardized in BG2EE. I see no reason there should be a bias against the familiar Imp in BGEE.
 
-**Component 410:** Make Horrid Wilting actually be more effective against plants and Water Elementals
+**Component 410:** Make Horrid Wilting actually be more effective against plants and Water Elementals and increase minimum damage
 
-This makes the spell mirror the behavior in 5E/BG3, where plant and water-based creatures take always maximum damage with a Save vs. Spell at -2 (this penalty is completely missing in vanilla), halved on a save. Additionally, enemies that are not damaged by draining moisture are unaffected (undead and golems). For example, at level 20, it inflicts 20d8 (i.e. 20-160 or half damage) to normal enemies and 160 to plant creatures, myconids and water elementals, unless they save, in which case they would take 80 damage.
+This makes the spell mirror the behavior in 5E/BG3, where plant and water-based creatures take always maximum damage with a Save vs. Spell at -2 (this penalty is missing in vanilla), halved on a save. Additionally, enemies that are not damaged by draining moisture are unaffected (undead and golems).
+
+Finally, it modifies the dice size and damage bonus, such that instead of dealing (Level * 1d8), it deals (Level * 1d7 + 1). Ultimately, it deals the same maximum damage. The difference is that the minimum damage dealt will be higher, such that the damage range will be 40-160 at max level (vanilla is 20-160).
 
 **Component 430:** Make Grease bypass Magic Resistance and apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description
 
@@ -974,6 +1009,32 @@ Bigby's spells are generally a pretty poor choice for a level 8 and 9. Low damag
   - 1st round: 6d6+6 crushing damage (originally 2d10, no save)
   - 2nd round: 8d6+8 crushing damage if save vs. Paralysis at -6 is failed (originally 3d10, save vs. Paralysis at -4)
   - 3rd round: 10d6+10 crushing damage if save vs. Paralysis at -4 is failed (originally 4d10, save vs. Paralysis at -2)
+
+**Component 446:** Make Fireball, Sunfire, and Delayed Blast Fireball slightly more up to level 20
+
+Fireball is such a ubiquitous spell in D&D and generally considered like a great spell to clear out groups of enemies. I felt that it could use some extra help at higher levels.
+
+- Fireball: After level 10, when damage is 10d6, an extra point of fire damage will be gained, up to 10d6+10.
+- Sunfire: After level 10, when damage is 10d6, an extra point of damage will be gained, up to 15d6+5. After level 15, 2 points of fire will be gained per level, up to 15d6+15.
+- Delayed Blast Fireball: now it will start off at 13d6 (level 7 spells are gained at that level), and then grow by 1d6+2 per level, up to 18d6+10, which then increases by +5 each level until level 20, becoming 18d6+20.
+
+If you think this is OP, consider these damage range values:
+
+- Skull Trap deals 20d6 at level 20 (14d6 with SCS), which is significantly more than the bonus in this component. Comparison:
+  - Skull Trap (no SCS): 20-120 damage
+  - Skull Trap (SCS): 14-84 damage
+  - Fireball (with component): 20-70 damage
+  - Fireball (without component): 10-60 damage
+- Cone of Cold, another damaging spell of level 5, deals up to 20d4+20 damage too. Comparison:
+  -  Cone of cold: 40-100 cold damage
+  -  Sunfire (with component): 30-105 fire damage
+  -  Sunfire (without component): 15-90 fire damage
+- Horrid Wilting deals 20d8 and it's an ubiquitous spell for players because of the huge damage potential and Delayed Blast Fireball is an unimpressive contender comparatively (despite the spell level difference). Comparison:
+  - Horrid Wilting deals 20-160 damage (40-160 with my HW tweak)
+  - Delayed Blast Fireball (with component): 38-128 damage
+  - Delayed Blast Fireball (without component): 15-90 damage
+
+Lastly, Delayed Blast Fireball no longer has a markedly smaller explosion radius compared to Sunfire and Fireball, but the exact same as those.
 
 </details>
 
@@ -1228,6 +1289,21 @@ Refer to component 2170 for reasons. Applies the same bonus to Bards, who also h
 **Component 2190:** Make Poison Weapon improve couple of times more every 4 levels (level 17, and 21)
 
 This makes Poison Weapon more powerful and reliable at high levels. At level 17, the save penalty improves to -3, lasts for 27 seconds, and the immediate poison damage increases to 8. At level 21, the save penalty improves to -4, lasts for 30 seconds, and the immediate poison damage increases to 10.
+
+**Component 2200:** Allow Blackguards to perform backstabs as if they had a 2x backstab multiplier
+
+Self explanatory. It depends on the spell granting negative plane protection.
+
+Additionally, it allows a certain Blackguard in SoD to perform backstabs if the conditions are met, even if a component in this mod is reducing the backstab damage to their weapon.
+
+**Component 2210:** Light proficiency overhaul
+
+This tiny overhaul simply addresses something that has bothered me forever about proficiency progression: no benefit other than lack of penalty with one proficiency point, and a weird jump in THAC0 from 2 proficiency points to 3. Therefore:
+
+- 1 proficiency point: +1 THAC0 and Damage
+- 2 proficiency points: +2 THAC0 and Damage
+- The rest is the same as in vanilla.
+
 
 </details>
 

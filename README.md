@@ -1292,7 +1292,9 @@ This makes Poison Weapon more powerful and reliable at high levels. At level 17,
 
 **Component 2200:** Allow Blackguards to perform backstabs as if they had a 2x backstab multiplier
 
-Self explanatory. Additionally, it allows a certain Blackguard in SoD to perform backstabs if the conditions are met, even if a component in this mod is reducing the backstab damage to their weapon.
+Self explanatory. It depends on the spell granting negative plane protection.
+
+Additionally, it allows a certain Blackguard in SoD to perform backstabs if the conditions are met, even if a component in this mod is reducing the backstab damage to their weapon.
 
 **Component 2210:** Light proficiency overhaul
 
