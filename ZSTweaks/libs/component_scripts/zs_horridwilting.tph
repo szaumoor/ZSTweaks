@@ -24,6 +24,10 @@ END
 
 COPY_EXISTING ~SPWI812.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6210) END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize=7 END
+    FOR ( dicenumber = 16; dicenumber <= 20; ++dicenumber ) BEGIN
+        LPF ALTER_EFFECT INT_VAR match_dicenumber = dicenumber parameter1 = dicenumber END
+    END
     LPF ADD_SPELL_EFFECT // immunity for undead and golems
         INT_VAR
             insert_point = 0

@@ -127,6 +127,7 @@
 @1592 = ~Make Soul Reaver deal 1d12 damage~
 @1593 = ~Make Sword of Ruin +2 slightly more powerful~
 @1594 = ~Make Cleric's staff more unique and actually benefit clerics~
+@1595 = ~Make Halcyon +1 a bit more powerful~
 
 /// ONE-HANDED SWORDS
 @1125 = "Make Ninjato of the Scarlet Brothehood +3 available for other classes and alignments"
@@ -149,6 +150,7 @@
 @1581 = ~Make Hawksight's description unique and add a minor power to it~
 @1582 = ~Make Vexation +2 more powerful~
 @1583 = ~Make Kachiko's Wakizashi substantially more unique in description and improve it~
+@1584 = ~Make The Brass Blade +5 cast better fireball spells~
 
 // AXES AND BLUNT WEAPONS
 @1310 = "Make Defender of Eastheaven damage reduction a little more moderate"
@@ -170,15 +172,16 @@
 
 // NPC TWEAKS
 @1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
-@1480 = "Make Yoshimo's Katana slightly more unique and powerful"
-@1500 = ~Make Mazzy's weapons slightly more powerful~
+@1480 = "Make Yoshimo's Katana more unique and powerful"
+@1500 = ~Make Mazzy's weapons more powerful~
 @1510 = ~Make Delryn's family shield become a +2 shield~
 @1520 = ~Make Hallowed Redeemer able to hit enemies immune to +2 weapons~
 @1640 = ~Make Abyssal Blades more powerful (Dorn's Quest)~
 @1641 = ~Make the item creation abilities of vanilla NPCs slightly better~
-@1642 = ~Make Nalia's ring slightly more powerful~
+@1642 = ~Make Nalia's ring more powerful~
 @1643 = ~Make Corthala family blade more powerful and more effective against wizards~
 @1644 = ~Remove unnecessary stat restrictions in NPC gear~
+@1645 = ~Make Cernd's cloak more powerful~
 
 // MISC ITEMS
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
@@ -204,7 +207,7 @@
 @400 = "Make Energy Drain drain 6 levels instead of 2"
 @405 = ~Make Maze bypass Magic Resistance, like Imprisonment, and make Minotaurs immune to it~
 @407 = ~Make BGEE's Imp have 12 HP like the other familiars~
-@410 = ~Make Horrid Wilting actually be more effective against plants and Water Elementals~
+@410 = ~Make Horrid Wilting actually be more effective against plants and Water Elementals and increase minimum damage~
 @430 = ~Make Grease bypass Magic Resistance, as it is as conjured substance, and apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description~
 @440 = ~Make Comet bypass magic resistance and apply a mix of cold, fire and crushing damage~
 @441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level"
@@ -212,6 +215,7 @@
 @443 = ~Make Symbol of Death work with Save bonus if above the 60 HP threshold~
 @444 = ~Make Flesh to Stone use Petrification saves~
 @445 = ~Make Bigby's spells more powerful~
+@446 = ~Make Fireball, Sunfire, and Delayed Blast Fireball slightly scale more up to level 20~
 
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
@@ -260,9 +264,11 @@
 @2170 = ~Make the THAC0 progression of Thieves better and more streamlined, so they improve up to 6, like clerics~
 @2180 = ~Make the THAC0 progression of Bards better and more streamlined, so they improve up to 6, like clerics~
 @2190 = ~Make Poison Weapon improve couple of times more every 4 levels (level 17, and 21)~
-@2200 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and reenable the unconscious status if successful~ // TODO
-@2210 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
-@2220 = ~Make Blades and Skalds get APR with proficiency points like warrior classes~ //todo
+@2200 = ~Allow Blackguards to perform backstabs as if they had a 2x backstab multiplier~
+@2210 = ~Light proficienciy overhaul: +1 THAC0 & Damage at proficiency level 1~
+@2240 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and reenable the unconscious status if successful~ // TODO
+@2250 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
+@2260 = ~Make Blades and Skalds get APR with proficiency points like warrior classes~ //todo
 
 // CRE TWEAKS
 @3000 = ~Make Planetars grant immunity to Level 1 to 3 spells in an aura, as per the Minor Globe of Invulnerability spell~
@@ -1547,7 +1553,7 @@ Casting Time: 8
 Area of Effect: 15-ft. radius
 Saving Throw: 1/2
 
-This spell evaporates moisture from the bodies of every living creature within the area of effect, inflicting 1d8 damage per level of the caster. Affected creatures are allowed a Saving Throw vs. Spell for half damage. This spell is especially devastating to water elementals and plant creatures (including fungal creatures such as Myconids), who receive a penalty of -2 to their Saving Throws and take always the maximum damage possible. This spell will not harm party members.~
+This spell evaporates moisture from the bodies of every living creature within the area of effect, inflicting 1d7+1 damage per level of the caster. Affected creatures are allowed a Saving Throw vs. Spell for half damage. This spell is especially devastating to water elementals and plant creatures (including fungal creatures such as Myconids), who receive a penalty of -2 to their Saving Throws and take always the maximum damage possible. This spell will not harm party members.~
 
 @6230 = ~This is a vicious weapon used by Neb, covered with old blood and coated in a poison that is both quick-acting and extremely deadly. Only the truly evil would dare to use this item on their own.
 
@@ -4095,3 +4101,101 @@ Charge abilities:
   Area of effect: One target
 
 Weight: 2~
+
+@7490 = ~When younger, Cernd spent a cycle of seasons meditating on his role within nature. He made no shelter, wanting to feel the land unhindered. Nature may have appreciated the intent, for she also knows that for all their dedication, at times her children can be foolish. Cernd found this cloak before the cold season set in, seemingly woven to fit him from the very undergrowth. The message was clear: He can appreciate the rain while still seeking shelter from it. Only Cernd may use this cloak.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +1
+– Elemental damage resistance: +15%
+– Physical damage resistance: +10%
+– Regeneration: +1 HP per 2 rounds
+
+Weight: 3~
+
+@7500 = ~The electrum-plated shaft of this weapon hums with magical power. Occasionally, blue bolts of energy run down the length of the spear, charging it. In battle when it hits an opponent, it strikes for additional electricity damage, and the damage of this depends entirely of how much energy it seems.
+
+STATISTICS:
+
+Combat abilities:
+– Electrical damage depends on the random electric charge of the spear (1-3). Higher values are less likely to happen
+– May electrify the target during the next 2 rounds, dealing 2 points of electric damage each round (Save vs. Spell at +2)
+
+THAC0: +1
+Damage: 1d6+1, plus 1 to 3 electrical damage
+Damage type: Piercing
+Speed Factor: 5
+Proficiency Type: Spear
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@7501 = ~Electrified for 2 rounds~
+
+@7510 = ~This flaming, magical bastard sword was forged in the Elemental Plane of Fire's City of Brass. It was stolen from the city many centuries ago, leaving a long trail of dead behind it as the sultan who oversaw its construction attempted to hunt it down. Over time, his anger cooled and his memory faded, and the sword was left to continually change hands between mortals.
+
+STATISTICS:
+
+Equipped Abilities:
+– Fire Resistance: +50%
+
+Charge Abilities:
+– Cast Delayed Blast Fireball once per day
+  Damage: 15d6 fire (Save vs. Spell for half)
+  Area of Effect: 15-ft. radius
+
+– Cast Sunfire once per day
+  Damage: 15d6 fire (Save vs. Spell for half)
+  Area of Effect: 15-ft. radius
+
+
+THAC0: +5
+Damage: 2d4+5, +10 fire damage
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 5~
+
+@7520 = ~Fireball
+(Evocation)
+
+Level: 3
+Range: 40 ft.
+Duration: Instant
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: 1/2
+
+A Fireball is an explosive burst of flame, which detonates with a low roar and delivers damage proportional to the level of the wizard who cast it—1d6 points of damage for each level of experience of the caster, up to a maximum of 10d6. After level 10, an extra point of fire damage is added per level until level 20 (maximum of 10d6+10). The wizard points <PRO_HISHER> finger and speaks the range (distance and height) at which the Fireball is to burst. A streak flashes from the pointing digit and, unless it impacts upon a material body or solid barrier prior to attaining the prescribed range, blossoms into the fireball (an early impact results in an early detonation). Creatures failing their Saving Throws each suffer full damage from the blast. Those who roll successful Saving Throws manage to dodge, fall flat, or roll aside, each receiving half.~
+
+@7521 = ~Sunfire
+(Evocation)
+
+Level: 5
+Range: 0
+Duration: Instant
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: 1/2
+
+A Sunfire is like a Fireball—an explosive burst of flame, which detonates with a low roar and delivers damage proportional to the level of the caster: 1d6 points of damage per level of the caster, which reaches 10d6 at level 10, and then increases by 1d6+1 up to level 15 (15d6+5), and then increases again by +2 until level 20 (maximum of 15d6+15). The wizard gestures with <PRO_HISHER> hand, and the entire area around <PRO_HIMHER> erupts in flames, striking everyone except the caster <PRO_HIMHER>self. Creatures failing their Saving Throws take full damage from the blast; those who roll successful Saving Throws manage to dodge, fall flat, or roll aside, each taking half damage.~
+
+@7522 = ~Delayed Blast Fireball
+(Invocation/Evocation)
+
+Level: 7
+Range: 40 ft.
+Duration: Special
+Casting Time: 7
+Area of Effect: 15-ft. radius
+Saving Throw: 1/2
+
+This spell creates a Fireball that hovers at a point determined by the caster. The Fireball will stay in position until someone walks too close to it; at that point, it will explode, dealing 13d6 points of fire damage, which increases by 1d6+2 up to level 18 (18d6+10), and then increases again by +5 at levels 19 and 20 (maximum of 18d6+20). Victims are allowed a Saving Throw vs. Spell for half damage.~

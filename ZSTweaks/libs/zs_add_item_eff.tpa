@@ -4,6 +4,7 @@ DEFINE_PATCH_FUNCTION ADD_EQUIPPED_EFF
     INT_VAR
         p1 = 0
         p2 = 0
+        ip = "-1"
     STR_VAR
         effects = ~~
 BEGIN
@@ -13,6 +14,7 @@ BEGIN
             def_timing = 2
             def_parameter1 = p1
             def_parameter2 = p2
+            def_insertpoint = ip
         STR_VAR
             function_name = ~ADD_ITEM_EQEFFECT~
             effect_codes = ~%effects%~

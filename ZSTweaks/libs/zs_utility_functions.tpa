@@ -548,6 +548,20 @@ BEGIN
     READ_SHORT 0x68 result
 END
 
+DEFINE_PATCH_FUNCTION SPL_GLOBALS_NUM
+RET
+    result
+BEGIN
+    READ_SHORT 0x70 result
+END
+
+DEFINE_PATCH_FUNCTION ITM_GLOBALS_NUM
+RET
+    result
+BEGIN
+    READ_SHORT 0x70 result
+END
+
 DEFINE_PATCH_FUNCTION CRE_MAX_HEALTH
 RET
     result
@@ -580,6 +594,30 @@ BEGIN
     END ELSE BEGIN
         PATCH_IF class < "-1" BEGIN
             PATCH_WARN "Passed a wrong value to class: %class%"
+        END
+    END
+END
+
+DEFINE_PATCH_FUNCTION ALTER_PROJECTILE
+INT_VAR
+    trap_size = "-1"
+    explosion_size = "-1"
+BEGIN
+    READ_SHORT 0x8 projectile_type
+
+    PATCH_IF trap_size > "-1" BEGIN
+        PATCH_IF projectile_type = 3 BEGIN
+            WRITE_SHORT 0x204 trap_size
+        END ELSE BEGIN
+            PATCH_FAIL "Trap size can only be modified if the projectile is an Area of Effect"
+        END
+    END
+
+    PATCH_IF explosion_size > "-1" BEGIN
+        PATCH_IF projectile_type = 3 BEGIN
+            WRITE_SHORT 0x206 explosion_size
+        END ELSE BEGIN
+            PATCH_FAIL "Explosion size can only be modified if the projectile is an Area of Effect"
         END
     END
 END

@@ -33,11 +33,13 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF GET_PROFICIENCY RET wpn_prof = result END
     LPF GET_APPEARANCE RET wpn_appearance = result END
 	PATCH_IF wpn_cat == 20  AND (wpn_prof == 90 OR wpn_prof == 94 OR (wpn_prof == 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "sc" = 0)) BEGIN // long swords, katanas or scimitars
-        PATCH_IF ("%SOURCE_RES%" STRING_COMPARE_CASE "NPSW04" != 0) BEGIN
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
-        END ELSE BEGIN
-            PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1643") BEGIN
+        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdsw1hca" != 0 BEGIN // ignored weapons
+            PATCH_IF ("%SOURCE_RES%" STRING_COMPARE_CASE "NPSW04" != 0) BEGIN
                 LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
+            END ELSE BEGIN
+                PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1643") BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
+                END
             END
         END
     END
@@ -1326,7 +1328,7 @@ BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1594 DESIGNATED 1594 GROUP @13 // STAFF OF THE CLERIC +2 TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee" @50
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY ~ZSTweaks/eff/ZSTWSF01.eff~ ~override~
@@ -1339,6 +1341,21 @@ COPY_EXISTING ~STAF19.ITM~ ~override~
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=146,tgt=1,t=3,p1=1,tmg=1,res=SPPR514~ END
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 204 p2 = 5
     STR_VAR effects = ~op=0,p1=1,p2=0;op=177,res=ZSTWSF01;op=177,res=ZSTWSF02;op=177,res=ZSTWSF03~ END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1595 DESIGNATED 1595 GROUP @13 // HALCYON TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~SPER09.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7500) END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 probability1 = 49 END
+    LPF CLONE_EFFECT INT_VAR match_probability1 = 49 parameter1 = 2 probability2 = 50 probability1 = 79 END
+    LPF CLONE_EFFECT INT_VAR match_probability1 = 79 parameter1 = 3 probability2 = 80 probability1 = 100 END
+    LPF GET_DMG_TYPE STR_VAR type=~electricity~ RET electricity = dmg_param END
+    LPF ADD_ON_HIT_EFF INT_VAR stype=1 sbonus=2 p1=RESOLVE_STR_REF(@7501) STR_VAR effects = ~op=139,tgt=1~ END
+    LPF ADD_ON_HIT_EFF INT_VAR p1=2 p2=electricity tmg=3 stype=1 sbonus=2 STR_VAR effects = ~op=12,dur=6;op=12,dur=12~ END
 BUT_ONLY
 
 ////////////////// ONE-HANDED SWORD TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1533,10 +1550,26 @@ BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1583 DESIGNATED 1583 GROUP @14 // KACHIKO'S WAKIZASHI TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @50
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_kachiko.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1584 DESIGNATED 1584 GROUP @14 // THE BRASS BLADE TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING "ohdsw03.itm" ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7510) END
+    LPF ALTER_EFFECT INT_VAR header_type=1 match_opcode=12 savingthrow = 0 END // remove mirror image bypass, likely bug
+    LPF get_first_header_type INT_VAR type=3 RET header = type_header END
+    LPF ADD_ITEM_HEADER INT_VAR copy_header = header - 1 END
+    LPF ALTER_HEADER INT_VAR match_type=3 header=2 primary=6 STR_VAR icon=~SPWI523B~ END
+    LPF ALTER_EFFECT INT_VAR header_type=3 header=2 match_opcode=146 parameter1=20 parameter2=0 duration=0 timing=0 power=5 STR_VAR resource=~SPWI523~ END
+    LPF ALTER_HEADER INT_VAR primary=6 range=1000 target=1 STR_VAR match_icon="SPWI304B" icon="SPWI712B" END
+    LPF ALTER_EFFECT INT_VAR header_type=3 header=1 match_opcode=146 parameter1=20 parameter2=0 duration=0 timing=0 power=7 STR_VAR resource=~SPWI712~ END
+BUT_ONLY
 
 ////////////////// AXES AND BLUNT WEAPONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1826,6 +1859,9 @@ COPY_EXISTING ~NPSW04.ITM~ ~override~
               ~NPCHAN.ITM~ ~override~
               ~NPSTAF.ITM~ ~override~
               ~NPSW03.ITM~ ~override~
+              ~NPCLCK.ITM~ ~override~
+              ~NPPLAT.ITM~ ~override~
+              ~NPARM.ITM~ ~override~
     PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "NPSW04" = 0 AND !(MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1643") BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7110) END
     END
@@ -1839,6 +1875,19 @@ COPY_EXISTING ~NPSW04.ITM~ ~override~
 BUT_ONLY
 COPY_EXISTING ~NPSHLD.ITM~ ~override~
     LPF change_stat_requirements INT_VAR str=SHORT_AT(0x26) END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1645 DESIGNATED 1645 GROUP @17 // CERND CLOAK TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~NPCLCK.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7490) END
+    LPF SPL_GLOBALS_NUM RET globals = result END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 0 parameter1 = 2 END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1=10 ip=(globals - 2) STR_VAR effects = ~op=86;op=87;op=88;op=89;op=27,p1=15;op=28,p1=15;op=29,p1=15;op=30,p1=15;op=98,p1=12,p2=3~ END
+    LPF change_stat_requirements END
 BUT_ONLY
 
 ///////////////////////////////////// MISC ITEMS TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1951,7 +2000,7 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 COPY_EXISTING ~SPWI913.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7360) END
-    LPF ADD_SPL_SELFEFF INT_VAR pwr=9 STR_VAR effects=~op=12,p1=3,tmg=1,rd=1,dnum=3,dsize=6,p2=0;op=80,tmg=0,rd=2,dur=12~ END
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=9 STR_VAR effects=~op=12,p1=3,tmg=1,dnum=3,dsize=6,p2=0;op=80,rd=2,dur=12;op=142,p2=112, dur=12,rd=2~ END
     LPF GET_DMG_TYPE STR_VAR type = ~magic~ RET magic_dmg = dmg_param END
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter2 = magic_dmg END
 BUT_ONLY
@@ -2141,6 +2190,73 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_bigby.tph~
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @446 DESIGNATED 446 GROUP @19 // FIREBALL SCALING TWEAK
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~SPWI304.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7520) END
+    LPF last_consecutive_header RET new_header = result END
+    SET next_level = 11
+    SET dmg = 1
+    FOR ( header = new_header; header < new_header + 10; ++header ) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = header + 1 zs_min_level_for_copy=next_level insert_point=header+1 END
+        LPF ALTER_EFFECT INT_VAR header = header + 1 match_opcode=12 parameter1= dmg END
+        ++next_level
+        ++dmg
+    END
+BUT_ONLY
+
+COPY_EXISTING ~SPWI523.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7521) END
+BUT_ONLY
+
+COPY_EXISTING ~SPWI523D.SPL~ ~override~
+    LPF last_consecutive_header RET last_header = result END
+    SET dmg = 1
+    FOR ( header = 2; header <= last_header; ++header ) BEGIN
+        LPF ALTER_EFFECT INT_VAR header = header match_opcode=12 parameter1= dmg END
+        ++dmg
+    END
+    dmg = 7
+    SET next_level = 16
+    FOR ( header = last_header; header < last_header + 5; ++header ) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = header + 1 zs_min_level_for_copy= next_level insert_point=header+1 END
+        LPF ALTER_EFFECT INT_VAR header = header+1 match_opcode=12 parameter1= dmg END
+        ++next_level
+        dmg += 2
+    END
+BUT_ONLY
+
+COPY_EXISTING ~DFIREBL.PRO~ ~override~
+    LPF ALTER_PROJECTILE INT_VAR explosion_size = 256 END
+BUT_ONLY
+
+COPY_EXISTING ~SPWI712.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7522) END
+    LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 dicenumber = 13 END
+    LPF last_consecutive_header RET last_header = result END
+    SET dmg = 2
+    SET next_level = 14
+    FOR ( header = last_header; header < last_header + 5; ++header ) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = header + 1 zs_min_level_for_copy= next_level insert_point=header+1 END
+        LPF ALTER_EFFECT INT_VAR header = header+1 match_opcode=12 dicenumber=next_level parameter1= dmg END
+        dmg += 2
+        ++next_level
+    END
+    LPF last_consecutive_header RET last_header = result END
+    dmg = 15
+    FOR ( header = last_header; header < last_header + 2; ++header ) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = header + 1 zs_min_level_for_copy= next_level insert_point=header+1 END
+        LPF ALTER_EFFECT INT_VAR header = header+1 match_opcode=12 parameter1= dmg END
+        dmg += 5
+        ++next_level
+    END
+BUT_ONLY
+
 
 ////////////////// CLERIC/DRUID SPELL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2764,5 +2880,29 @@ REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_poisonwpn.tph~
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @2200 DESIGNATED 2200 GROUP @21 // BLACKGUARD BACKSTAB TWEAK
+REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING "SPCL105.SPL" ~override~
+    LPF ADD_SPL_SELFEFF INT_VAR t=3 STR_VAR effects = ~op=263,p1=2,p2=1~ END
+BUT_ONLY
+
+ACTION_IF FILE_EXISTS_IN_GAME "bdsw1hca.itm" BEGIN
+    ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" BEGIN
+        COPY_EXISTING "bdsw1hca.itm" ~override~
+            LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 263 END
+        BUT_ONLY
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @2210 DESIGNATED 2210 GROUP @21 // PROFICIENCY TWEAK
+REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY ~ZSTweaks/2da/WSPECIAL.2DA~ ~override~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
