@@ -14,6 +14,8 @@
 // END GROUPS
 
 // warning messages
+@47 = ~This component is only compatible with IWDEE, BGEE, and BG2EE~
+@48 = ~This component is only compatible with BGEE and BG2EE~
 @49 = ~This component is only compatible with BGEE~
 @50 = ~This component is only compatible with BGEE and EET~
 @52 = ~This component is only compatible with BG2EE and EET~
@@ -45,6 +47,7 @@
 @1533 = ~Rebalance wands (currently only the Wand of Missiles is affected)~
 @1534 = ~Rebalance some potions~
 @1535 = ~Make all potions usable by all classes~
+@1536 = ~Make vanilla familiars more resilient and useful and diminish penalties~
 //@1535 = ~Rebalance scrolls such that the spellcasting level is always at least double its (wizard) spell level~
 
 

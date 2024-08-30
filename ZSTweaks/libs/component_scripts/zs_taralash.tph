@@ -1,17 +1,3 @@
-// RACES
-// ankheg 101
-// carrion crawler 104
-// chimera 177
-// ettercap 107
-// gibberling 109
-// hook horror 167
-// otyugh 127
-// spider 116
-// troll 129
-// umberhulk 130
-// wyvern 118
-// basilisk 102
-
 COPY ~ZSTweaks/eff/ZSTWMI01.EFF~ ~override~
      ~ZSTweaks/eff/ZSTWMI02.EFF~ ~override~
 

@@ -1,12 +1,9 @@
-ACTION_IF FILE_EXISTS_IN_GAME ~misc9q.itm~ THEN BEGIN // ToB
-  // animation corrections
+ACTION_IF FILE_EXISTS_IN_GAME ~misc9q.itm~ BEGIN // ToB
   COPY_EXISTING ~misc9q.itm~ ~override~
     WRITE_ASCII 0x22 "SC" #2
-
 END
 
-ACTION_IF GAME_IS "bg2ee eet" THEN BEGIN // ToB
-
+ACTION_IF GAME_IS "bg2ee eet" BEGIN // ToB
   COPY_EXISTING ~sw1h66.itm~ ~override~
     WRITE_ASCII 0x22 "SS" #2
 
@@ -15,5 +12,4 @@ ACTION_IF GAME_IS "bg2ee eet" THEN BEGIN // ToB
 
   COPY_EXISTING ~sw1h68a.itm~ ~override~
     WRITE_ASCII 0x22 "SC" #2
-
 END

@@ -1,6 +1,4 @@
-// This function was written me (omg!) to get the first offset of the desired type.
-// Small utility to make my life easier modifying effects inside item headers
-DEFINE_PATCH_FUNCTION get_first_offset_type
+DEFINE_PATCH_FUNCTION TYPE_FIRST_OFFSET
 INT_VAR
     type = 1
 RET
@@ -26,23 +24,11 @@ BEGIN
     END
 END
 
-
-DEFINE_PATCH_FUNCTION get_first_header_type
-INT_VAR
-    type = 1
-RET
-    type_header
-BEGIN
-    PATCH_IF type < 0 OR type > 4 BEGIN
-        PATCH_FAIL "Type %type% is invalid. Valid range: [0-4]"
-    END
-    LPF get_first_offset_type INT_VAR type = type RET offset = type_offset END
-    SET type_header = offset / 0x38
-END
-
-DEFINE_PATCH_FUNCTION get_first_offset_type_containing_op
+DEFINE_PATCH_FUNCTION FIRST_OFFSET_WITH_OPCODE
 INT_VAR
     opcode = "-1"
+RET
+    type_offset
 BEGIN
     PATCH_IF opcode < 0 OR opcode > 367 BEGIN
         PATCH_FAIL "Opcode %opcode% is invalid. Valid range: [0-367]"
@@ -51,8 +37,7 @@ BEGIN
         READ_LONG 0x64 curr_offset
         FOR ( ability = 0; ability < abilities_num; ++ability ) BEGIN
             PATCH_IF (BYTE_AT curr_offset) = type BEGIN
-                SET type_offset = curr_offset
-               // READ_
+                type_offset = curr_offset
                 ability = abilities_num // i.e. break
             END
             SET curr_offset += 0x38
@@ -60,9 +45,8 @@ BEGIN
     END
 END
 
-// get the offset in the first item effect
-DEFINE_PATCH_FUNCTION itm_first_offset_effect
-    RET
+DEFINE_PATCH_FUNCTION ITM_FIRST_EFF_OFFSET
+RET
         offset
 BEGIN
     READ_SHORT 0x68 abilities_num
@@ -71,10 +55,9 @@ BEGIN
     SET offset = curr_offset + (abilities_num * 0x38) + (global_eff_num * 0x30)
 END
 
-// get the offset in the first spell effect
-DEFINE_PATCH_FUNCTION spl_first_offset_effect
-    RET
-        offset
+DEFINE_PATCH_FUNCTION SPL_FIRST_EFF_OFFSET
+RET
+    offset
 BEGIN
     READ_SHORT 0x68 abilities_num
     READ_SHORT 0x70 global_eff_num
@@ -82,7 +65,7 @@ BEGIN
     SET offset = curr_offset + (abilities_num * 0x28) + (global_eff_num * 0x30)
 END
 
-DEFINE_PATCH_FUNCTION last_consecutive_header
+DEFINE_PATCH_FUNCTION LAST_VALID_HEADER
 INT_VAR
     type = "-1"
     level_to_avoid = 100
@@ -101,10 +84,8 @@ BEGIN
                 FOR ( h = 2; h < num_abilities; ++h ) BEGIN
                     SET new_offset = ability_offset + (0x28 * h) + 0x10
                     READ_SHORT new_offset curr_casting_level
-                  //  PATCH_PRINT "Checking header at %h% with casting level %curr_casting_level%"
                     SET diff = curr_casting_level - next_casting_level
                     PATCH_IF diff > 1 BEGIN // #4 if the diff is more than one, we found it
-                       // PATCH_PRINT "Found non-consecutive header at %h% because %curr_casting_level% - %next_casting_level% = %diff%"
                         result = h - 1
                         h = num_abilities + 1 // i.e. break
                         found = 1
@@ -113,30 +94,14 @@ BEGIN
                 END
                 PATCH_IF found = 0 BEGIN
                     result = num_abilities - 1
-                   // PATCH_PRINT "Found last header at %h%, LINE: 93"
                 END
-            //END ELSE BEGIN // #3 otherwise, the last valid header in question is the previous one: the second header
-             //   SET result = 1
-            //END
         END ELSE BEGIN // #2 otherwise, the last valid header in question is the previous one: the first header
             result = 0
-          //  PATCH_PRINT "Found first header at %h%: LINE: 100"
         END
     END ELSE BEGIN // #1 otherwise, the last valid header will be the first one, or none if none are present
-        result = num_abilities - 1 // -1 if no headers are present, 0 if only one header is present
-       // PATCH_PRINT "Found first header at %h%: LINE: 104"
+        result = num_abilities - 1
     END
 END
-
-
-DEFINE_PATCH_FUNCTION headers_until_20
-RET
-    result
-BEGIN
-
-
-END
-
 
 
 

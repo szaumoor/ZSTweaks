@@ -15,7 +15,7 @@ COPY_EXISTING ~RODSWORD.ITM~ ~override~
     LPF ALTER_EFFECT INT_VAR header_type = 1 check_globals = 0 savebonus = 2 duration = 6 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 check_globals = 0 duration = 0 END
     LPF DELETE_EFFECT INT_VAR check_globals = 0 header_type = 1 match_opcode = 109 multi_match = 1 END
-    LPF GET_DMG_TYPE STR_VAR type = ~fire~ RET fire = dmg_param END
+    LPF GET_DMG_TYPE STR_VAR type = ~fire~ RET fire = result END
     LPF ADD_ON_HIT_EFF STR_VAR effects =~op=12,dsize=4,dnum=1,p2=%fire%~ END
 BUT_ONLY
 COPY_EXISTING ~RODSPEAR.ITM~ ~override~

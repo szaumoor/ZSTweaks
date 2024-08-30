@@ -308,69 +308,6 @@ BEGIN
     END
 END
 
-DEFINE_PATCH_FUNCTION GET_APPEARANCE
-RET
-    result
-BEGIN
-    READ_ASCII 0x22 result (2)
-END
-
-DEFINE_PATCH_FUNCTION GET_UNID_REF_NAME
-RET
-    result
-BEGIN
-    READ_LONG 0x08 result
-END
-
-DEFINE_PATCH_FUNCTION GET_FLAGS
-RET
-    result
-BEGIN
-    READ_LONG 0x18 result
-END
-
-DEFINE_PATCH_FUNCTION GET_CATEGORY
-RET
-    result
-BEGIN
-    READ_SHORT 0x1c result
-END
-
-DEFINE_PATCH_FUNCTION GET_PROFICIENCY
-RET
-    result
-BEGIN
-    READ_BYTE 0x31 result
-END
-
-DEFINE_PATCH_FUNCTION GET_ENCH
-RET
-    result
-BEGIN
-    READ_LONG 0x60 result
-END
-
-DEFINE_PATCH_FUNCTION GET_MIN_STR
-RET
-    result
-BEGIN
-    READ_SHORT 0x26 result
-END
-
-DEFINE_PATCH_FUNCTION IS_FLAG_SET
-INT_VAR
-    flag = "-1"
-RET
-    result // 1 if flag is set, 0 if it's unset. -1 if invalid flag is asked for
-BEGIN
-    PATCH_IF flag >= 0 AND flag <= 31 BEGIN
-        SET bitmask = (1 << flag)
-        SET result = (flags & bitmask) != 0
-    END ELSE BEGIN
-        SET result = "-1"
-    END
-END
-
 
 DEFINE_PATCH_FUNCTION ALTER_EFF_FILE
 INT_VAR
@@ -425,6 +362,7 @@ BEGIN
         END
     END
 END
+
 
 DEFINE_PATCH_FUNCTION ALTER_SPELL
 INT_VAR
@@ -541,33 +479,6 @@ BEGIN
     END
 END
 
-DEFINE_PATCH_FUNCTION SPL_ABILITIES_NUM
-RET
-    result
-BEGIN
-    READ_SHORT 0x68 result
-END
-
-DEFINE_PATCH_FUNCTION SPL_GLOBALS_NUM
-RET
-    result
-BEGIN
-    READ_SHORT 0x70 result
-END
-
-DEFINE_PATCH_FUNCTION ITM_GLOBALS_NUM
-RET
-    result
-BEGIN
-    READ_SHORT 0x70 result
-END
-
-DEFINE_PATCH_FUNCTION CRE_MAX_HEALTH
-RET
-    result
-BEGIN
-    READ_SHORT 0x26 result
-END
 
 DEFINE_PATCH_FUNCTION ALTER_CRE
 INT_VAR
@@ -619,5 +530,30 @@ BEGIN
         END ELSE BEGIN
             PATCH_FAIL "Explosion size can only be modified if the projectile is an Area of Effect"
         END
+    END
+END
+
+DEFINE_PATCH_FUNCTION FOREACH_CRE_EFF
+INT_VAR
+    match_opcode = "-1"
+    match_timing = "-1"
+    timing = "-1"
+BEGIN
+    READ_LONG 0x2c4 effects_offset
+    READ_LONG 0x2c8 effects_num
+    SET effect_bytes = 0
+    FOR (index = 0 ; index < effects_num ; ++index) BEGIN
+        READ_LONG 0x08 opcode
+        PATCH_IF match_opcode = "-1" OR (match_opcode >= 0 AND opcode = match_opcode) BEGIN
+            PATCH_IF timing > "-1" AND (timing <= 10 OR timing = 4096) BEGIN
+                READ_LONG (effects_offset + effect_bytes + 0x1c) current_timing
+                PATCH_IF match_timing = "-1" OR (match_timing >= 0 AND current_timing = match_timing) BEGIN
+                    WRITE_LONG (effects_offset + effect_bytes + 0x1c) timing
+                END
+            END ELSE BEGIN
+                PATCH_FAIL "Invalid effect timing: %timing%"
+            END
+        END
+        effect_bytes += 0x108
     END
 END

@@ -1,4 +1,4 @@
-INCLUDE ~ZSTweaks/libs/zs_correct_animations.tph~
+INCLUDE ~ZSTweaks/libs/zs_correct_exot_anims.tph~
 
 COPY ~ZSTweaks/spl/finesse~ ~override~
 ADD_PROJECTILE ~ZSTweaks/pro/ZSTW_INP.PRO~
@@ -15,9 +15,9 @@ COPY_EXISTING_REGEXP "ZSTW[TZ][0-6]\.spl" ~override~ // spells to insert project
 BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
-    LPF GET_CATEGORY RET wpn_cat = result END
+    LPF ITM_CAT RET wpn_cat = result END
     LPF GET_PROFICIENCY RET wpn_prof = result END
-    LPF GET_APPEARANCE RET wpn_appearance = result END
+    LPF ITM_APPEARANCE RET wpn_appearance = result END
     LPF GET_ENCH RET ench = result END
 	PATCH_IF wpn_cat == 16  AND wpn_prof == 96 BEGIN // daggers
         PATCH_IF ench = 0 BEGIN

@@ -13,8 +13,8 @@ COPY_EXISTING_REGEXP "ZSTWDP20.spl" ~override~ // spells to insert projectiles t
 BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
-    LPF GET_CATEGORY RET wpn_cat = result END
-    LPF GET_PROFICIENCY RET wpn_prof = result END
+    LPF ITM_CAT RET wpn_cat = result END
+    LPF ITM_PROF RET wpn_prof = result END
     LPF GET_ENCH RET ench = result END
 	PATCH_IF wpn_cat == 16  AND wpn_prof == 96 BEGIN // daggers
         LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = 0 END

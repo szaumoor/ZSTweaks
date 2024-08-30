@@ -1,0 +1,13 @@
+DEFINE_PATCH_FUNCTION IS_FLAG_SET
+INT_VAR
+    flag = "-1"
+RET
+    result // 1 if flag is set, 0 if it's unset. -1 if invalid flag is asked for
+BEGIN
+    PATCH_IF flag >= 0 AND flag <= 31 BEGIN
+        SET bitmask = (1 << flag)
+        SET result = (flags & bitmask) != 0
+    END ELSE BEGIN
+        SET result = "-1"
+    END
+END

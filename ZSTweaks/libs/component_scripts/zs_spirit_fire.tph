@@ -3,7 +3,7 @@ COPY_EXISTING ~SPPR450.SPL~ ~override~
     PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "SPPR450.SPL" = 0 BEGIN
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7000) END
     END
-    LPF last_consecutive_header RET h = result END
+    LPF LAST_VALID_HEADER RET h = result END
     SET start_dmg = 7
     FOR ( curr_header = 0; curr_header <= h; ++curr_header ) BEGIN
         LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=curr_header match_opcode=12 parameter1=start_dmg END

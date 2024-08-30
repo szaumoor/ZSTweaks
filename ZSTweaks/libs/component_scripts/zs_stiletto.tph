@@ -4,7 +4,7 @@ COPY_EXISTING "dagg17.ITM" ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 142 check_globals = 0 probability1 = 24 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 check_globals = 0 probability1 = 24 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1~ END
-    LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = dmg_param END
+    LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = result END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=2,p2=%piercing%,ip=0~ END
     SET dur = 6
     FOR ( round = 0; round < 3; ++round ) BEGIN

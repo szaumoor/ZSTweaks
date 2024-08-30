@@ -6,7 +6,7 @@ COPY_EXISTING ~ohreaver.ITM~ ~override~
     END
     LPF ALTER_EFFECT INT_VAR check_globals = 0 probability1 = 100 END
     LPF ALTER_EFFECT INT_VAR check_globals = 0 savingthrow = 1 END
-    LPF itm_first_offset_effect RET offset_eff = offset END
+    LPF ITM_FIRST_EFF_OFFSET RET offset_eff = offset END
     SET offset_dmg_eff = offset_eff + (0x30 * 8) // opcode eff against good
     WRITE_LONG (offset_dmg_eff + 0x24) 0 // no save
 BUT_ONLY

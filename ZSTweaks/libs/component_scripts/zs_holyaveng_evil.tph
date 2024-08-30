@@ -9,7 +9,7 @@ COPY_EXISTING ~SW2H10.ITM~ ~override~
     END ELSE BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6080) END
     END
-    LPF itm_first_offset_effect RET offset_eff = offset END
+    LPF ITM_FIRST_EFF_OFFSET RET offset_eff = offset END
     SET offset_dmg_eff = offset_eff + (0x30 * 2) // opcode eff
     WRITE_LONG (offset_dmg_eff + 0x4) 3 // MASK_EVIL
 BUT_ONLY
@@ -20,7 +20,7 @@ BUT_ONLY
     END ELSE BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6081) END
     END
-    LPF itm_first_offset_effect RET offset_eff = offset END
+    LPF ITM_FIRST_EFF_OFFSET RET offset_eff = offset END
     SET offset_dmg_eff = offset_eff + (0x30 * 2) // opcode eff
     WRITE_LONG (offset_dmg_eff + 0x4) 3 // MASK_EVIL
 BUT_ONLY

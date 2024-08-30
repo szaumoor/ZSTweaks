@@ -1,0 +1,136 @@
+  DEFINE_PATCH_FUNCTION remove_haste_immunity
+    BEGIN
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+            STR_VAR
+                match_resource = ~SPRA301~ // haste
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+            STR_VAR
+                match_resource = ~SPIN572~ // haste
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+            STR_VAR
+                match_resource = ~SPWI305~ // haste
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+            STR_VAR
+                match_resource = ~SPWI613~ // haste
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+            STR_VAR
+                match_resource = ~SPIN828~ // haste
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+                match_opcode = 169
+                match_parameter2 = 38 // haste icon
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+                match_opcode = 101
+                match_parameter2 = 16 // haste opcode
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+                match_opcode = 240
+                match_parameter2 = 38 // haste icon
+        END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+                match_opcode = 267
+                match_parameter1 = 14023 // haste strref
+        END
+END
+
+
+DEFINE_ACTION_FUNCTION generate_rogue_thac0
+STR_VAR
+    class1 = ~~
+    class2 = ~~
+BEGIN
+    COPY_EXISTING ~thac0.2da~ ~override~
+        READ_2DA_ENTRIES_NOW thac0 1
+        FOR (row = 3; row < thac0; ++row) BEGIN
+            SET cthac0 = 20
+            SET reps = 0
+            READ_2DA_ENTRY_FORMER thac0 row 0 label
+            PATCH_IF ~%label%~ STR_EQ ~%class1%~ OR ~%label%~ STR_EQ ~%class2%~ BEGIN
+                SET_2DA_ENTRY_LATER thac0_out row 1 cthac0
+                SET iteration = 2
+                FOR ( i = 1; i < cthac0 - 6; ++iteration ) BEGIN
+                    SET num = cthac0 - i
+                    PATCH_IF (reps < 2) AND (num MODULO 2 != 0) BEGIN
+                        reps += 1
+                    END ELSE BEGIN
+                        i += 1
+                        num = cthac0 - i
+                        reps = 1
+                    END
+                    SET_2DA_ENTRY_LATER thac0_out row iteration num
+                END
+                FOR ( index = 23; index <= 40; ++index ) BEGIN
+                    SET_2DA_ENTRY_LATER thac0_out row index 6
+                END
+            END
+        END
+        SET_2DA_ENTRIES_NOW thac0_out 1
+    BUT_ONLY
+END
+
+DEFINE_PATCH_FUNCTION weapon_damage_by_class
+	INT_VAR header=0 // the weapon header to which the effect is applied
+			probability1=100 // the probabilities for the effect to be applied
+			probability2=0
+            type = 99
+			insert_point = 0
+	STR_VAR class="" // the class which gets the effect (from class.ids)
+			spell="" // a spell which is cast on the target on a successful hit, but only if the wielder is the correct class
+BEGIN
+	LPF ADD_ITEM_EFFECT
+        INT_VAR type header probability1 probability2 insert_point opcode=326 target=1 timing=1 parameter1=IDS_OF_SYMBOL (class "%class%") parameter2=105 STR_VAR resource="%spell%" END
+END
+
+
+DEFINE_PATCH_FUNCTION weapon_damage_by_kit
+	INT_VAR header=0 // the weapon header to which the effect is applied
+			probability1=100 // the probabilities for the effect to be applied
+			probability2=0
+            type = 99
+			insert_point = 0
+	STR_VAR kit="" // the kit which gets the effect (from kit.ids)
+			spell="" // a spell which is cast on the target on a successful hit, but only if the wielder is the correct class
+BEGIN
+	LPF ADD_ITEM_EFFECT
+        INT_VAR type header probability1 probability2 insert_point opcode=326 target=1 timing=1 parameter1=IDS_OF_SYMBOL (kit "%class%") parameter2=105 STR_VAR resource="%spell%" END
+END
+
+DEFINE_PATCH_FUNCTION RM_STAT_REQS
+    INT_VAR // exceptions
+        str = "-1"
+    BEGIN
+        PATCH_IF str < "-1" BEGIN
+            WRITE_SHORT 0x26 0 // STR
+        END ELSE BEGIN
+            WRITE_SHORT 0x26 str // STR
+        END
+        WRITE_BYTE 0x2c 0 // DEX
+        WRITE_BYTE 0x2e 0 // WIS
+        WRITE_BYTE 0x2a 0 // INT
+        WRITE_BYTE 0x30 0 // CON
+        WRITE_BYTE 0x32 0 // CHA
+END
+
