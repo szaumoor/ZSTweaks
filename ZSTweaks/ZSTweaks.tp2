@@ -5,7 +5,7 @@ README ~ZSTweaks/README.md~
 AUTO_EVAL_STRINGS
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 ALWAYS
-    INCLUDE ~ZSTweaks/libs/zs_tw_functions.tpa~
+    INCLUDE ~ZSTweaks/libs/zs_tw_functions.tph~
 END
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 LANGUAGE
@@ -922,8 +922,15 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdbrac05.itm~ BEGIN
     COPY_EXISTING ~bdbrac05.itm~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7320) END
-        LPF CLONE_EFFECT INT_VAR match_headers=0 match_opcode=177 parameter1=16395 END
+        LPF ALTER_ITEM INT_VAR id_ref_name = RESOLVE_STR_REF(@7321) id_ref_desc=RESOLVE_STR_REF(@7320) END
+        SET bounty_hunter_id = IDS_OF_SYMBOL(kit BOUNTYHUNTER)
+        LPF CLONE_EFFECT INT_VAR match_headers=0 match_opcode=177 parameter1=bounty_hunter_id END
+        LPF CLONE_EFFECT INT_VAR match_headers=0 match_opcode=177
+        match_parameter1=bounty_hunter_id parameter1=IDS_OF_SYMBOL(kit SHADOWDANCER) END
+        PATCH_IF MOD_IS_INSTALLED "ZS_ShadowdancerOverhaul.tp2" "100" BEGIN
+            LPF CLONE_EFFECT INT_VAR match_headers=0 match_opcode=177
+            match_parameter1=bounty_hunter_id parameter1=IDS_OF_SYMBOL(kit ZS_SHADOWDANCER) END
+        END
     BUT_ONLY
 END
 
@@ -1603,6 +1610,17 @@ COPY_EXISTING "ohdsw03.itm" ~override~
     LPF ALTER_EFFECT INT_VAR header_type=3 header=2 match_opcode=146 parameter1=20 parameter2=0 duration=0 timing=0 power=5 STR_VAR resource=~SPWI523~ END
     LPF ALTER_HEADER INT_VAR primary=6 range=1000 target=1 STR_VAR match_icon="SPWI304B" icon="SPWI712B" END
     LPF ALTER_EFFECT INT_VAR header_type=3 header=1 match_opcode=146 parameter1=20 parameter2=0 duration=0 timing=0 power=7 STR_VAR resource=~SPWI712~ END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1585 DESIGNATED 1585 GROUP @14 // ARBANE SWORD TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING "SW1H27.itm" ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7540) END
+    LPF ALTER_HEADER INT_VAR match_type = 1 speed = 0 END
+    LPF ALTER_EFFECT INT_VAR header_type = 3 match_duration = 12 duration = 60 END
 BUT_ONLY
 
 ////////////////// AXES AND BLUNT WEAPONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -2845,6 +2863,16 @@ COPY_EXISTING ~SPPR350.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6990) END
     LPF ALTER_HEADER INT_VAR match_speed = 9 speed = 6 END
     LPF ADD_SPL_TGTEFF INT_VAR pwr=3 STR_VAR effects = ~op=164;op=4;op=240,p2=5;op=240,p2=4~ END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @2114 DESIGNATED 2114 GROUP @21 // FAVORED OF THE SPIRITS TWEAK
+REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~SPCL941.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7530) END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_duration = 300 duration = 7200 END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////

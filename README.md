@@ -356,9 +356,9 @@ Self explanatory.
 
 I decided to take the name of item more seriously. And let's face it, this items it always an automatic selling. In this state at least it has some use for Fighter/Thieves or Cleric/Thieves.
 
-**Component 1672:** Make Stalker Gauntlets also benefit Bounty Hunters
+**Component 1672:** Make Stalker Gauntlets also benefit Bounty Hunters and Shadowdancers
 
-Because it seems obvious that both classes ("professions") align with each other. Both Stalker-only benefits apply, including the enhanced backstab.
+It seems obvious that both Stalker and Bounty Hunter ("professions") align with each other, stalking prey and hunting for a bounty. Shadowdancers are masters as stealth via innate shadow magic, so I don't think it's far-fetched either. Both Stalker-only benefits apply, including the enhanced backstab.
 
 **Component 1673** Make Blessed Bracers more powerful
 
@@ -419,7 +419,7 @@ The dagger will always cause 20 poison damage over 10 seconds if a Save vs. Deat
 
 **Component 1630:** Make The Jade's Fang slightly more powerful and improve the lifesteal effect
 
-This component will make the healing per it based on probabilities, such that there is a 50% change it will heal by 1, 20% it will heal by 2, 15% it heals by 3, 10% it heals by 4, and 5% it heals by 5. Additionally, there is a 15% chance the stun happens as well, but only if a Save vs. Spell is failed. All the effects now bypass Magic Resistance, like the Stupifier in BGEE and Adjatha the Drinker (which is probably an oversight in this case).
+This component will make the healing per it based on probabilities, such that there is a 50% chance it will heal by 1, 20% chance it will heal by 2, 15% chance it heals by 3, 10% chance it heals by 4, and 5% chance it heals by 5. Additionally, there is a 15% chance the stun happens as well, but only if a Save vs. Spell is failed. All the effects now bypass Magic Resistance, like the Stupifier in BGEE and Adjatha the Drinker (which is probably an oversight in this case).
 
 **Component 1660:** Make Heart of the Golem +2 get a couple more magic-based features, inspired by the description
 
@@ -545,7 +545,7 @@ This makes the extra critical damage of the weapon a bit more substantial, 2d5+2
 
 **Component 1594:** Make Cleric's staff more unique and actually benefit clerics
 
-I don't like that it's "just" casually called "cleric's" staff. Therefore, it gains a few perks:
+I don't like that it's just casually called "cleric's" staff. Therefore, it gains a few perks:
 
 - 1 AC
 - +1 spell slot of level 3, 4, and 5 (clerics only)
@@ -554,7 +554,7 @@ I don't like that it's "just" casually called "cleric's" staff. Therefore, it ga
 
 **Component 1595:** Make Halcyon +1 a bit more powerful
 
-There aren't many spears in the game. It would be tragic if most were boring. This makes the electrical damage of the weapon random, between 1 and 5 (inclusive):
+There aren't many spears in the game. It would be tragic if most were boring. This makes the electrical damage of the weapon random, between 1 and 3 (inclusive):
 
 - 50% chance of causing 1 electrical damage
 - 30% chance of causing 2 electrical damage
@@ -602,9 +602,14 @@ Honestly, it kinda feels like it's immediately not useful by the time you get it
 
 The rest functions exactly the same: no bonus against True Neutral, +1 THAC0 +2 damage against LN/CN, +2 THAC0 +4 damage against NG/NE, and +3 THAC0 +6 damage against LG/CG/LE/CE.
 
-**Component 1220:** Make Ras, the Dancing Blade last for 1 turn, instead of 4 rounds
+**Component 1220:** Make Ras slightly better and the Dancing Blade last for 1 turn, instead of 4 rounds
 
-This makes it useful for far longer, and more like Sword of Mordenkainen.
+This makes it useful for far longer, and more like Sword of Mordenkainen. Additionally, drawing inspiration of this "dancing" thing, it has extra features given by the fact that the sword can "dance" on its own while being wielded as if with sentience:
+
+- +1 AC, +2 against piercing and slashing
+- Speed Factor: 1
+- THAC0: +4
+- It's a flashy sword, and kits that are used to flashy fighting get bonus +1/2 APR: Blades, Shadowdancers, and Swashbucklers
 
 **Component 1230:** Make Short Sword of Mask +5 slightly more powerful
 
@@ -696,6 +701,10 @@ The Brass Blade allows you to throw a Fireball as per the 3rd level wizard spell
 Technical side note: since Type 2 is bugged for op146, as it makes spells cast bypass magic resistance as if the caster targetted themselves, it uses now Type 0, which unfortunately means the spell casting will have the casting speed of the spells in question.
 
 Finally, it fixes two likely bugs: spells cast being set as conjurer spells instead of evocation, and the fire damage of the sword bypassing mirror images.
+
+**Component 1585:** Make Arbane's Sword of Agility's Haste last 1 turn, not 2 rounds
+
+Self explanatory. Additionally, the speed factor of the weapon is now 0.
 
 
 </details>

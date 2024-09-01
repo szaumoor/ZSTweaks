@@ -6,55 +6,55 @@ DEFINE_PATCH_FUNCTION GET_DMG_TYPE
 BEGIN
     SET matches = 0
     PATCH_IF "%type%" STRING_COMPARE_CASE ~crushing~ = 0 BEGIN
-        SET dmg_param = (0 << 16)
+        result = (0 << 16)
         ++matches
     END
     PATCH_IF "%type%" STRING_COMPARE_CASE ~acid~ = 0 BEGIN
-        SET dmg_param = (1 << 16)
+        result = (1 << 16)
         ++matches
     END
     PATCH_IF "%type%" STRING_COMPARE_CASE ~cold~ = 0 BEGIN
-        SET dmg_param = (2 << 16)
+        result = (2 << 16)
         ++matches
     END
     PATCH_IF "%type%" STRING_COMPARE_CASE ~electricity~ = 0 BEGIN
-        SET dmg_param = (4 << 16)
+        result = (4 << 16)
         ++matches
     END
     PATCH_IF "%type%" STRING_COMPARE_CASE ~fire~ = 0 BEGIN
-        SET dmg_param = (8 << 16)
+        result = (8 << 16)
         ++matches
     END
     PATCH_IF "%type%" STRING_COMPARE_CASE ~piercing~ = 0 BEGIN
-        SET dmg_param = (16 << 16)
+        result = (16 << 16)
         ++matches
     END
     PATCH_IF "%type%" STRING_COMPARE_CASE ~poison~ = 0 BEGIN
-        SET dmg_param = (32 << 16)
+        result = (32 << 16)
         ++matches
     END
     PATCH_IF "%type%" STRING_COMPARE_CASE ~magic~ = 0 BEGIN
-        SET dmg_param = (64 << 16)
+        result = (64 << 16)
         ++matches
     END
     PATCH_IF "%type%" STRING_COMPARE_CASE ~missile~ = 0 BEGIN
-        SET dmg_param = (128 << 16)
+        result = (128 << 16)
         ++matches
     END
     PATCH_IF "%type%" STRING_COMPARE_CASE ~slashing~ = 0 BEGIN
-        SET dmg_param = (256 << 16)
+        result = (256 << 16)
         ++matches
     END
     PATCH_IF "%type%" STRING_COMPARE_CASE ~magic fire~ = 0 BEGIN
-        SET dmg_param = (512 << 16)
+        result = (512 << 16)
         ++matches
     END
     PATCH_IF "%type%" STRING_COMPARE_CASE ~magic cold~ = 0 BEGIN
-        SET dmg_param = (1024 << 16)
+        result = (1024 << 16)
         ++matches
     END
     PATCH_IF "%type%" STRING_COMPARE_CASE ~stunning~ = 0 BEGIN
-        SET dmg_param = (2048 << 16)
+        result = (2048 << 16)
         ++matches
     END
     PATCH_IF matches = 0 BEGIN

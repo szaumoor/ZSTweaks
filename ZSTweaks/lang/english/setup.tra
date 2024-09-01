@@ -85,7 +85,7 @@
 @1668 = ~Make The Dale's Protector slightly more powerful and open to all classes~
 @1669 = ~Make Gauntlets of Extraordinary Specialization improve THAC0 by 2 and open to all classes~
 @1671 = ~Make The Eyes of Truth add a bonus to Detect Illusions and Find Traps~
-@1672 = ~Make Stalker Gauntlets also benefit Bounty Hunters~
+@1672 = ~Make Stalker Gauntlets also benefit Bounty Hunters and Shadowdancers~
 @1673 = ~Make Blessed Bracers more powerful~
 @1674 = ~Make Whispers of Silence protect against detection spells except for True Sight, and improve Move Silently~
 @1675 = ~Make Cloak of Displacement add +5% damage resistance~
@@ -137,7 +137,7 @@
 @1126 = ~Make Blackrazor able to hit targets immune to +3~
 @1127 = ~Make Peridan more powerful against dragons and less misleading in the description~
 @1210 = "Make The Equalizer slightly more powerful"
-@1220 = "Make Ras, the Dancing Blade last for 1 turn, instead of 4 rounds"
+@1220 = "Make Ras slightly better and the Dancing Blade last for 1 turn, instead of 4 rounds"
 @1230 = "Make Short Sword of Mask +5 slightly more powerful"
 @1240 = "Make Purifier's damage bonus affect all evil, not just Chaotic Evil"
 @1241 = "Make Purifier's Dispel Magic level 30, like Staff of the Magi and Carsomyr"
@@ -154,6 +154,7 @@
 @1582 = ~Make Vexation +2 more powerful~
 @1583 = ~Make Kachiko's Wakizashi substantially more unique in description and improve it~
 @1584 = ~Make The Brass Blade +5 cast better fireball spells~
+@1585 = ~Make Arbane's Sword of Agility's Haste last 1 turn, not 2 rounds~
 
 // AXES AND BLUNT WEAPONS
 @1310 = "Make Defender of Eastheaven damage reduction a little more moderate"
@@ -259,6 +260,7 @@
 @2111 = ~Make Shaman's Writhing Fog slightly more powerful~
 @2112 = ~Make Shaman's Spirit Fire slightly more powerful~
 @2113 = ~Make Shaman's Spiritual Clarity induce more clarity (removes berserk and intoxication too)~
+@2114 = ~Make Shaman's Favored of the Spirits lasts for 24 hours (2 in-game hours), not 1 (5 in-game minutes)~
 @2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty"
 @2130 = "Make Set Spike Trap do piercing damage instead of magic damage"
 @2140 = "Make Exploding Trap do slightly more damage: 15d6 as opposed to 10d6"
@@ -2644,14 +2646,18 @@ Weight: 9~
 
 @6700 = ~Beroalf was a barbarian who traveled from the cold north in search of adventure. He sought treasures and glory, but soon all he wanted were companions to share in the excitement of battle, much like those he had left behind in his faraway village. Unfortunately, his coarse remarks and rudimentary hygiene repelled most travelers he met, until he expressed his thoughts to a sympathetic mage. The mage, for a price, constructed Ras, the dancing blade. Though not quite what Beroalf had in mind, he was thrilled nonetheless and wielded the sword for many years. How they were ultimately separated is not known.
 
+Apart from the sword's regular properties, it seemingly reacts of its own volition when it's wielded in combat by subtly moving on its own in ways that promote accuracy and deflection in combat.
+
 STATISTICS:
 
 Combat abilities:
 – Dancing sword can attack on its own for 1 turn
+– +1 AC, +2 vs. slashing and piercing
+– The flashy design of the blade is wielded more gracefully by Shadowdancers, Blades, and Swashbucklers: +1/2 APR
 
-THAC0: +2
+THAC0: +4
 Damage: 1d8+2 (slashing)
-Speed Factor: 3
+Speed Factor: 1
 Proficiency Type: Long Sword
 Type: One-handed
 Requires:
@@ -3699,16 +3705,18 @@ Equipped abilities:
 
 Weight: 2~
 
-@7320 = ~These gauntlets assist in the stalking and killing of prey. Favored by hunters and rogues of all kinds, they display their full power when donned by Stalkers and Bounty Hunters. Made of supple leather with brass-buckled straps along the side, these gauntlets are often decorated with embroidered figures of stags, foxes, or, as is the case with this pair, wolves.
+@7320 = ~These gauntlets assist in the stalking and killing of prey. Favored by hunters and rogues of all kinds, they display their full power when donned by Stalkers, Shadowdancers, and Bounty Hunters. Made of supple leather with brass-buckled straps along the side, these gauntlets are often decorated with embroidered figures of stags, foxes, or, as is the case with this pair, wolves.
 
 STATISTICS:
 
 Equipped abilities:
 – Dexterity: +1
-– Hide in Shadows: +15% (+30% for Stalkers and Bounty Hunters only)
-– Backstab Multiplier: +1 (Stalkers and Bounty Hunters only)
+– Hide in Shadows: +15% (+30% for Stalkers, Shadowdancers, and Bounty Hunters only)
+– Backstab Multiplier: +1 (Stalkers, Shadowdancers, and Bounty Hunters only)
 
 Weight: 2~
+
+@7321 = ~Prowler Gauntlets~
 
 @7330 = ~The willing sacrifice of a vast fortune in gold, combined with the holy venerations of the sanctifying ceremony, have convinced the blessed powers to transform these already formidable gauntlets into gloves of awesome righteous power.
 
@@ -4202,3 +4210,36 @@ Area of Effect: 15-ft. radius
 Saving Throw: 1/2
 
 This spell creates a Fireball that hovers at a point determined by the caster. The Fireball will stay in position until someone walks too close to it; at that point, it will explode, dealing 13d6 points of fire damage, which increases by 1d6+2 up to level 18 (18d6+10), and then increases again by +5 at levels 19 and 20 (maximum of 18d6+20). Victims are allowed a Saving Throw vs. Spell for half damage.~
+
+@7530 = ~Favored of the Spirits
+
+Range: 0
+Duration: 24 hours
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: None
+
+This powerful rite shields the Shaman from death for 24 hours or until discharged. While under the protection of this rite, the Shaman is immune to all forms of death magic and vorpal hits. In addition, if the Shaman is reduced below 10% Hit Points and the rite is active, the Shaman instantly receives the benefit of a Heal spell. The rite's protection (including the immunity to death) is completely discharged once the Heal spell is triggered. Further applications of the rite will not stack in any way but replace the previous one.
+
+Requires: Spirit Form~
+
+@7540 = ~One of many created in the name of the mage who first discovered how to enchant a blade in this manner, this was the weapon of the outlaw Garno, and many a cleric died at its edge. Garno became disillusioned with the gods when his family was put to the torch by clerics of Loviatar and spent his life seeking revenge. Despite his focused hatred of the devout, it is thought that one of the gods of chaos had a hand in Garno's acquisition of this sword, delighting in the havoc that followed the young man.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to hold and paralysis
+
+Charge abilities:
+– Haste once per day
+  Duration: 1 turn
+
+THAC0: +2
+Damage: 1d6+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 2~
