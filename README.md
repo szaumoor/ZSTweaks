@@ -159,6 +159,10 @@ For consistency, all of the enchanted belts, boots and bracers will also grant t
 
 Self-explanatory.
 
+**Component 1537:** Make Poison-curing spells an instant cast so attempting to cure poison is less likely to be interrupted
+
+Self-explanatory. It's quite a pain when it's something that is supposed to cut a poison's effect short, but it's almost guaranteed to be interrupted unless you're extremely precise or like with timing.
+
 </details>
 
 ---
