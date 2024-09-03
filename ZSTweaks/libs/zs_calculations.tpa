@@ -61,3 +61,14 @@ BEGIN
         PATCH_FAIL "Wrong type called for GET_DMG_TYPE function: %type%"
     END
 END
+
+DEFINE_PATCH_FUNCTION RGB
+INT_VAR
+    red = 0
+    green = 0
+    blue = 0
+RET
+    result
+BEGIN
+    result = (red << 8) + (green << 16) + (blue << 24) // this works, idk why
+END

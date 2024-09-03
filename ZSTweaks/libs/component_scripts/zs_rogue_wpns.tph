@@ -16,9 +16,9 @@ BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_CAT RET wpn_cat = result END
-    LPF GET_PROFICIENCY RET wpn_prof = result END
+    LPF ITM_PROF RET wpn_prof = result END
     LPF ITM_APPEARANCE RET wpn_appearance = result END
-    LPF GET_ENCH RET ench = result END
+    LPF ITM_ENCH RET ench = result END
 	PATCH_IF wpn_cat == 16  AND wpn_prof == 96 BEGIN // daggers
         PATCH_IF ench = 0 BEGIN
             LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 59 STR_VAR class = ~THIEF~ spell = ~ZSTWD0~ END

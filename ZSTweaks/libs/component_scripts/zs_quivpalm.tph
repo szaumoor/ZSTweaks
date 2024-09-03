@@ -7,7 +7,7 @@ COPY_EXISTING "SPCL820.SPL" ~override~
     SET abilities_per_header = SHORT_AT( (LONG_AT 0x64) + 0x1e)
     LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = 18 END
     LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = 26 END
-    LPF spl_first_offset_effect RET spl_eff_offset = offset END
+    LPF SPL_FIRST_EFF_OFFSET RET spl_eff_offset = offset END
     SET offset_eff = spl_eff_offset + (0x30 * 7)
     WRITE_ASCII (offset_eff + 0x14) ~ZSTWM01~ #8
     SET offset_eff = spl_eff_offset + (0x30 * 14)

@@ -15,7 +15,7 @@ BUT_ONLY
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_CAT RET wpn_cat = result END
     LPF ITM_PROF RET wpn_prof = result END
-    LPF GET_ENCH RET ench = result END
+    LPF ITM_ENCH RET ench = result END
 	PATCH_IF wpn_cat == 16  AND wpn_prof == 96 BEGIN // daggers
         LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = 0 END
         FOR ( current_th = 6; current_th >= 0; --current_th ) BEGIN

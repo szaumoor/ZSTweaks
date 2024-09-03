@@ -1,6 +1,6 @@
 BACKUP "weidu_external/backup/ZSTweaks"
 AUTHOR "RoyalProtector at Gibberlings's forum https://www.gibberlings3.net/profile/12720-royalprotector/"
-VERSION "1.2.7"
+VERSION "1.2.9"
 README ~ZSTweaks/README.md~
 AUTO_EVAL_STRINGS
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -20,7 +20,7 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/component_scripts/zs_magicwpn_apr.tph~
-a
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1120 DESIGNATED 1120 GROUP @10 // BACKSTAB PENALTIES
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
@@ -272,7 +272,7 @@ COPY_EXISTING ~WAND03.ITM~ ~override~
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1534 DESIGNATED 1534 GROUP @10 // WAND REBALANCE TWEAK
+BEGIN @1534 DESIGNATED 1534 GROUP @10 // POTION REBALANCE TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -282,7 +282,13 @@ ACTION_IF FILE_EXISTS_IN_GAME ~WAND16.ITM~ BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7461) END
     BUT_ONLY
     COPY_EXISTING ~SPIN713.SPL~ ~override~
+        LPF ALTER_HEADER INT_VAR match_type = 2 projectile = 160 END
         LPF ALTER_EFFECT INT_VAR match_opcode = 30 duration = 18 parameter1=75 parameter2=0 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 141 parameter2 = 29 END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 61 END
+        LPF RGB INT_VAR red = 50 green = 181 blue = 199 RET color = result END
+        SET fade_speed = ( 25 << 16 )
+        LPF ADD_SPL_TGTEFF INT_VAR pwr=4 STR_VAR effects=~op=142,p2=16,t=2,dur=18;op=61,p1=%color%,p2=%fade_speed%,tmg=1,rd=1~ END
     BUT_ONLY
 END
 
@@ -343,6 +349,7 @@ COPY_EXISTING_REGEXP ".*\.ITM" ~override~
     END
 BUT_ONLY
 
+/*
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1536 DESIGNATED 1536 GROUP @10 // FAMILIAR REBALANCE TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee" @47
@@ -364,7 +371,7 @@ COPY_EXISTING "FAMIMP.CRE" ~override~
     ADD_CRE_ITEM "HELMNOAN" #0 #0 #0 ~identified&unstealable&undroppable~ ~helmet~
 BUT_ONLY
 
-/*ACTION_IF GAME_IS "bg2ee" BEGIN
+ACTION_IF GAME_IS "bg2ee" BEGIN
     COPY_EXISTING "FAMIMP25.CRE" ~override~
                   "FAMFER25.CRE" ~override~
                   "FAMPSD25.CRE" ~override~
@@ -375,7 +382,38 @@ BUT_ONLY
                   "FAMCAT25.CRE" ~override~
         ADD_CRE_ITEM "HELMNOAN" #0 #0 #0 ~identified&unstealable&undroppable~ ~helmet~
     BUT_ONLY
-END*/
+END
+*/
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1537 DESIGNATED 1537 GROUP @10 // CURE POISON TWEAK
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @47
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ACTION_IF FILE_EXISTS_IN_GAME ~SPIN102.SPL~ BEGIN // bg2/iwdee, not bgee
+    COPY_EXISTING ~SPIN102.SPL~ ~override~
+        LPF ALTER_HEADER INT_VAR speed = 0 END
+    BUT_ONLY
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~SPPR404.SPL~ BEGIN // bg2/iwdee, not bgee
+    COPY_EXISTING ~SPPR404.SPL~ ~override~
+        LPF ALTER_HEADER INT_VAR speed = 0 END
+    BUT_ONLY
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~SPPR212.SPL~ BEGIN // bg2/iwdee, not bgee
+    COPY_EXISTING ~SPPR212.SPL~ ~override~
+        LPF ALTER_HEADER INT_VAR speed = 0 END
+    BUT_ONLY
+END
+
+
+ACTION_IF FILE_EXISTS_IN_GAME ~SPIN201.SPL~ BEGIN // bg2/iwdee, not bgee
+    COPY_EXISTING ~SPIN201.SPL~ ~override~
+        LPF ALTER_HEADER INT_VAR speed = 0 END
+    BUT_ONLY
+END
 
 ///////////////////////////////////// ARMOR/GEAR TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -892,7 +930,8 @@ COPY_EXISTING ~BRAC04.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7280) unusable0=0 END
     LPF ALTER_EFFECT INT_VAR match_opcode=167 parameter1=3 END
     LPF CLONE_EFFECT INT_VAR match_headers=0 match_opcode=167 opcode=286 parameter1=1 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=177,p2=9,p1=16391;op=177,p2=5,p1=205;op=177,p2=5,p1=206~ END
+    SET archer = IDS_OF_SYMBOL(kit FERALAN)
+    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=177,p2=9,p1=%archer%;op=177,p2=5,p1=205;op=177,p2=5,p1=206~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -932,6 +971,8 @@ ACTION_IF FILE_EXISTS_IN_GAME ~bdbrac05.itm~ BEGIN
             match_parameter1=bounty_hunter_id parameter1=IDS_OF_SYMBOL(kit ZS_SHADOWDANCER) END
         END
     BUT_ONLY
+END ELSE BEGIN
+    PRINT "bbrac05.itm not found, skipping"
 END
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1092,24 +1133,28 @@ BEGIN @1682 DESIGNATED 1682 GROUP @12 // ACID ETCHED DAGGER TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-COPY_EXISTING ~bddagg05.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6941) id_ref_name=RESOLVE_STR_REF(@6940) ench=3 END
-    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ BEGIN
-        LPF ALTER_HEADER INT_VAR match_type = 1 damage = 3 to_hit = 4  END
-        LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWDP12~ resource = ~ZSTWDP14~ END
-    END ELSE BEGIN
-        LPF ALTER_HEADER INT_VAR match_type = 1 damage = 3 to_hit = 3  END
-    END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 0 dicenumber = 1 dicesize = 3 END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 146 probability1 = 19 END
-    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN
-        LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWD2~ resource = ~ZSTWD3~ END
-    END
-BUT_ONLY
-COPY_EXISTING ~bddagg05.spl~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 0 dicenumber = 1 dicesize = 3 END
-    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=0,dur=18,p1=-2,ip=3~ END
-BUT_ONLY
+ACTION_IF FILE_EXISTS_IN_GAME ~bddagg05.itm~ BEGIN
+    COPY_EXISTING ~bddagg05.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6941) id_ref_name=RESOLVE_STR_REF(@6940) ench=3 END
+        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ BEGIN
+            LPF ALTER_HEADER INT_VAR match_type = 1 damage = 3 to_hit = 4  END
+            LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWDP12~ resource = ~ZSTWDP14~ END
+        END ELSE BEGIN
+            LPF ALTER_HEADER INT_VAR match_type = 1 damage = 3 to_hit = 3  END
+        END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 0 dicenumber = 1 dicesize = 3 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 146 probability1 = 19 END
+        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN
+            LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWD2~ resource = ~ZSTWD3~ END
+        END
+    BUT_ONLY
+    COPY_EXISTING ~bddagg05.spl~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 0 dicenumber = 1 dicesize = 3 END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=0,dur=18,p1=-2,ip=3~ END
+    BUT_ONLY
+END ELSE BEGIN
+    PRINT "Acid etched dagger not found in game files, skipping..."
+END
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1683 DESIGNATED 1683 GROUP @12 // GEMBLADE tweak
@@ -1199,7 +1244,8 @@ COPY_EXISTING ~SW2H09.ITM~ ~override~
     LPF ALTER_HEADER INT_VAR match_damage = 4 damage = 2 END
     LPF GET_DMG_TYPE STR_VAR type = ~cold~ RET cold = result END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,tmg=0,dsize=4,dnum=1,p2=%cold%~ END
-    LPF ADD_EQUIPPED_EFF INT_VAR p1=1073741824 p2=9
+    SET barbarian = IDS_OF_SYMBOL(kit BARBARIAN)
+    LPF ADD_EQUIPPED_EFF INT_VAR p1=barbarian p2=9
     STR_VAR effects=~op=177,res=ZSTWWARA;op=177,res=ZSTWWARB;op=177,res=ZSTWWARC;op=177,res=ZSTWWARD;op=177,res=ZSTWWARE~ END
 BUT_ONLY
 
@@ -1577,9 +1623,10 @@ BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1582 DESIGNATED 1582 GROUP @14 // VEXATION TWEAK
-REQUIRE_PREDICATE GAME_IS "bgee eet" @50
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+ACTION_IF FILE_EXISTS_IN_GAME "bdsw1h21.itm" BEGIN
 COPY_EXISTING "bdsw1h21.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6981) id_ref_name=RESOLVE_STR_REF(@6980) ench=3 END
     LPF ALTER_HEADER INT_VAR match_speed = 1 match_damage = 2 match_to_hit = 2 speed = 0 damage = 3 to_hit = 3 END
@@ -1588,6 +1635,7 @@ BUT_ONLY
 COPY_EXISTING "bdsw1h21.spl" ~override~
     LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 dicesize = 2 dicenumber = 1 END
 BUT_ONLY
+END
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1583 DESIGNATED 1583 GROUP @14 // KACHIKO'S WAKIZASHI TWEAK
@@ -1604,7 +1652,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 COPY_EXISTING "ohdsw03.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7510) END
     LPF ALTER_EFFECT INT_VAR header_type=1 match_opcode=12 savingthrow = 0 END // remove mirror image bypass, likely bug
-    LPF get_first_header_type INT_VAR type=3 RET header = type_header END
+    LPF LAST_VALID_HEADER INT_VAR type=3 RET header = result END
     LPF ADD_ITEM_HEADER INT_VAR copy_header = header - 1 END
     LPF ALTER_HEADER INT_VAR match_type=3 header=2 primary=6 STR_VAR icon=~SPWI523B~ END
     LPF ALTER_EFFECT INT_VAR header_type=3 header=2 match_opcode=146 parameter1=20 parameter2=0 duration=0 timing=0 power=5 STR_VAR resource=~SPWI523~ END
