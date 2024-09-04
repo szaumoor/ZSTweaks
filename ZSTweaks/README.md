@@ -90,6 +90,8 @@ This is a small change to make daggers slightly more appealing on a general leve
 
 All these bonuses are additive, which means are not affected by most effects, or strengh, although it also means that they're good weapons for characters with low strength.
 
+Exceptions: Grave Binder is not affected by these bonuses because it's an oversized dagger.
+
 **Component 1450:** Make some rogue weapons have the chance of doing more damage if wielded by pure thieves (Finesse)
 
 This component is an attempt at making single-classed Thieves more effective with a portion of thief-usable weapons without relying on stats, APR or proficiency points.
@@ -98,18 +100,18 @@ Essentially, when wielding a weapon they can use what I call "finesse", which is
 
 - **Scimitars, long swords, quarterstaves**: 10% chance per hit to inflict 1d8/6+bonus of slashing/crushing damage.
 - **Katanas**: 15% chance per hit to inflict 1d10+bonus of slashing damage.
-- **Ninja-tos and wakizashis**: 25% chance per hit to inflict 1d8+bonus of slashing/piercing damage.
-- **Short Sword and clubs**: 35% chance per hit to inflict 1d6+bonus of piercing/crushing damage.
-- **Bows, slings**: 45% chance per hit to inflict 1d6 and 1d4+bonus missile damage respectively.
-- **Darts, Daggers, Crossbows**: 60% chance per hit to inflict 1d3+bonus, 1d4+bonus and 1d8, respectively, of piercing/missible damage.
+- **Ninja-tos and Wakizashis**: 25% chance per hit to inflict 1d8+bonus of slashing/piercing damage.
+- **Short Sword and Clubs**: 35% chance per hit to inflict 1d6+bonus of piercing/crushing damage.
+- **Bows, Slings**: 45% chance per hit to inflict 1d6 and 1d4+bonus missile damage respectively.
+- **Darts, Daggers, Crossbows**: 60% chance per hit to inflict 1d3+bonus, 1d4+bonus and 1d8, respectively, of piercing/missile damage.
 
 Note that this component does not account (automatically) for special weaponry which may use a different kind of damage-dealing effect than normal. For example, Voidsword +3 in SoD causes only magic damage and is not part of the damage of the weapon as such, but exists as a separate effect. These have to be added manually (in that example, the extra damage would occur in the same way as the others, but only as magic damage, which is intended). Currently, the following thief-usable items are accounted for:
 
 - Voidsword, Void-arrows, Void-bullets (SoD, magic damage)
 - Fierce Swirl +2 (Lava's Shades of the Sword Coast, magic damage)
 - 1d2 Arrows of Antimagic will be skipped (SoD, it's meant to deal almost no damage)
+- Arrows of Detonation are also skipped, since they're not designed to pierce
 - Broken Spirit Arrow +1 will be skipped (The Calling, it's designed to deal almost no damage)
-
 
 **Component 1530:** Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time to maximize damage
 
@@ -188,7 +190,7 @@ Silver Dragons wield and are resistant to cold, same as White Dragons. It should
 
 **Component 1172:** Make Rings of Elemental control more likely to charm the elementals and add missing resistances
 
-This improves the power of the charm by making the save against it -2, instead of +2.
+This improves the power of the charm by making the save against it -2, instead of +2. Additionally, the rings grant a 50% to the related element consistently.
 
 **Component 1173:** Make Ring of Gaxx's improved haste last 2 full rounds, and not 10 seconds
 
@@ -239,7 +241,7 @@ This makes the belt include piercing damage, such that it affect things like dag
 
 **Component 1561:** Make Cloak of the Stars create 30 darts, instead of six, and add passive effects
 
-6 darts is really unremarkable for a once-per-day effect. 30 is far more interesting. Additionally, if you wear it, you become proficient in darts immediately (unless proficiency is higher) and gain Save vs. Spell bonus of +1. Perhaps you don't need to sell it immediately anymore!
+6 darts is really unremarkable for a once-per-day effect. 30 is far more interesting. Additionally, if you wear it, you become proficient in darts immediately (unless proficiency is higher) and gain Save vs. Spell bonus of +2. Perhaps you don't need to sell it immediately anymore!
 
 **Component 1570:** Make Eyes of the Beholder's skills mirror the power of the spells they're based on
 
@@ -252,9 +254,13 @@ This makes this robe improve Invocation wizards in more ways, similarly to my tw
 - 5% elemental damage bonus
 - +2 save vs. Invocation
 
-**Component 1620:** Make Vicross' Thayan Circlet apply Improved Shield of Chaos instead of just Shield of Chaos
+**Component 1620:** Make Vicross' Thayan Circlet more interesting for Wild Mages
 
 This makes the circlet a bit more valuable by making it more effective in controlling Wild Surges. It's a little underwhelming to just have the same bonus as the robe of Hayes.
+
+Additionally, in the same theme of chaos related to wild magic, while wearing the circlet, they get a 15% bonus to a random non-physical type of damage, except poison. So, for example, if you happen to be in a Magic Damage bonus round, a Horrid Wilting that deals 100 damage, would deal 115 damage. If not, too bad!
+
+To promote specialization, this also restricts the circlet to Wild Mages.
 
 **Component 1650:** Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak
 
@@ -358,7 +364,7 @@ Self explanatory.
 
 **Component 1671:** Make The Eyes of Truth add a bonus to Detect illusions and Find Traps
 
-I decided to take the name of item more seriously. And let's face it, this items it always an automatic selling. In this state at least it has some use for Fighter/Thieves or Cleric/Thieves.
+I decided to take the name of item more seriously. And let's face it, this item is always an automatic sell. In this state at least it has some use for Fighter/Thieves or Cleric/Thieves.
 
 **Component 1672:** Make Stalker Gauntlets also benefit Bounty Hunters and Shadowdancers
 
@@ -608,7 +614,7 @@ The rest functions exactly the same: no bonus against True Neutral, +1 THAC0 +2 
 
 **Component 1220:** Make Ras slightly better and the Dancing Blade last for 1 turn, instead of 4 rounds
 
-This makes it useful for far longer, and more like Sword of Mordenkainen. Additionally, drawing inspiration of this "dancing" thing, it has extra features given by the fact that the sword can "dance" on its own while being wielded as if with sentience:
+This makes it useful for far longer, and more like Sword of Mordenkainen. Additionally, drawing inspiration on this "dancing" thing, it has extra features given by the fact that the sword can "dance" on its own while being wielded as if with sentience:
 
 - +1 AC, +2 against piercing and slashing
 - Speed Factor: 1
@@ -741,11 +747,11 @@ This makes the mace +3 for consistency with the power level of other WA-weapons.
 
 **Component 1320:** Make Flail of Ages +5 allow Haste and Improved Haste
 
-I think everyone agrees that this type of restriction (Free ACtion) makes the weapons immediately less appealing.
+I think everyone agrees that this type of restriction (Free Action) makes the weapons immediately less appealing.
 
 **Component 1321:** Make Bone Club +2, +3 against undead's effect reflect the description better and improve it slightly
 
-This makes the club slightly more powerful (+3 in all respects), is more shamanic, and more damaging to undead: acts as +5 against them, with THAC0 bonus of +5 against undead, undead take +4 damage, and spectral undead take +8
+This makes the club slightly more powerful (+3 in all respects), more shamanic, and more damaging to undead: acts as +5 against them, with THAC0 bonus of +5 against undead, undead take +4 damage, and spectral undead take +8
 
 **Component 1323:** Make Azuredge act properly as a +3 weapon
 
@@ -850,9 +856,9 @@ This makes these skills generate more items. Jan Jansen will create 10 Bruiser M
 
 **Component 1642:** Make Nalia's ring slightly more powerful
 
-Equipped items that you cannot remove in any way are quite, quite inconvenient, since they prevent your character from being upgraded in the ways you desire. This component changes this ring so it seems less inconvenient to have it on at all times for Nalia. Specifically, other than improving AC and saving throws by 2, and granting 50% fire resistance, it also:
+Equipped items that you cannot removed in any way are quite, quite inconvenient, since they prevent your character from being upgraded in the ways you desire. This component changes this ring so it seems less inconvenient to have it on at all times for Nalia. Specifically, other than improving AC and saving throws by 2, and granting 50% fire resistance, it also adds:
 
-- 20% to Pick Locks and Find Traps (this makes her more competent at these tasks, similar to Imoen)
+- +20% to Pick Locks and Find Traps (this makes her more competent at these tasks, similar to Imoen)
 - 1 extra spell slot from level 1 to 5
 
 **Component 1643:** Make Corthala family blade more powerful and more effective against wizards
@@ -900,7 +906,7 @@ It will also remove the needless stat restrictions from the item.
 
 The rod is conceptually quite interesting, but generally underperforming.
 
-- **Mace +2** is renamed to Mace of Lordly Might +3, becomes a +3 weapon, and the save against panic is now at +2, not +5, and the panic is now a 1-round Slow effect.
+- **Mace +2** is renamed to Mace of Lordly Might +3, becomes a +3 weapon, and the save against panic is now at +2, not +5, and the panic is now a 2-round Slow effect.
 - **Flaming Long Sword +1** is renamed to Flaming Sword of Lordly Might +3, becomes a +3 weapon, causes 1d4 fire damage per hit, and the paralyze effect Save becomes +2 and not +5, but the Hold effect only lasts one round. Additionally, it makes it look like an actual flaming sword when held.
 - **Spear +3** is renamed to Spear of Lordly Might +3, and it no longer has a Save vs. Spell bonus of +6 to cause 2d4 magic damage, now it has no bonus or penalty and causes 3d4 magic damage when save is failed.
 
@@ -976,9 +982,9 @@ Improves the usability of Death Fog as a "general purpose" damage dealer, instea
 
 I think this makes this spell quite more useful, although perhaps it's too powerful like that if used against some enemies. I like this tweak, but I'll use the spell judiciously (perhaps not mazing dragons, for example). Additionally, Minotaurs are immune to it, same as IWDEE.
 
-**Component 407** Make BGEE's Imp have 12 HP like the other familiars
+**Component 407** Make base Imp Familiars have 12/24 HP like the other familiars
 
-This allows you to be Lawful Evil and enjoy the same amount of HP bonus as other alignments. This is standardized in BG2EE. I see no reason there should be a bias against the familiar Imp in BGEE.
+This allows you to be Lawful Evil and enjoy the same amount of HP bonus as other alignments. I see no reason there should be a bias against the Imp familiar.
 
 **Component 410:** Make Horrid Wilting actually be more effective against plants and Water Elementals and increase minimum damage
 
@@ -1023,7 +1029,7 @@ Bigby's spells are generally a pretty poor choice for a level 8 and 9. Low damag
   - 2nd round: 8d6+8 crushing damage if save vs. Paralysis at -6 is failed (originally 3d10, save vs. Paralysis at -4)
   - 3rd round: 10d6+10 crushing damage if save vs. Paralysis at -4 is failed (originally 4d10, save vs. Paralysis at -2)
 
-**Component 446:** Make Fireball, Sunfire, and Delayed Blast Fireball slightly more up to level 20
+**Component 446:** Make Fireball, Sunfire, and Delayed Blast Fireball scale slightly more up to level 20
 
 Fireball is such a ubiquitous spell in D&D and generally considered like a great spell to clear out groups of enemies. I felt that it could use some extra help at higher levels.
 
@@ -1248,7 +1254,7 @@ The difference in damage between non-undead and undead in vanilla is 9d6 vs. 9d6
 
 **Component 360:** Make Etheral Retribution do more damage per round: 6d6 per round instead of 3d8
 
-Three rounds of 3d8 for a Quest/level 10 spell is hilariously bad, despite the possibility of sapping some Strength with a Save vs. Spell that doesn't even have a penalty. Now it does 6d6 magic damage per round at least.
+Three rounds of 3d8 for a Quest/level 10 spell is hilariously bad, despite the possibility of sapping some Strength with a Save vs. Spell that doesn't even have a penalty. Now it does 6d6 magic damage per round at least, and the Strength-sapping effect has a -2 penalty now.
 
 **Component 2111:** Make Shaman's Writhing Fog slightly more powerful
 
@@ -1268,7 +1274,7 @@ War Cry as an HLA is bad enough, but this makes it at least have a more reasonab
 
 **Component 2130:** Make Set Spike Trap do piercing damage instead of magic damage
 
-Because it's rather strange that it does magic damage and makes you wonder why the thief would have the ability to do this. (To be fair, the same could be said for the Time Stop trap). Rogue Rebalancing also does this.
+Because it's rather strange that it does magic damage and makes you wonder why the thief would have the ability to do this. (To be fair, the same could be said for the Time Stop trap). Rogue Rebalancing, SCS, and ToF also do this.
 
 **Component 2140:** Make Exploding Trap do slightly more damage: 15d6 as opposed to 10d6
 
@@ -1293,7 +1299,7 @@ I really dislike things that scale poorly or not at all. This makes Quivering Pa
 
 **Component 2170:** Make the THAC0 progression of Thieves better and more streamlined, so they improve up to 6, like clerics
 
-Among many of the manifestations of the Baldur's Gate's series undying hate for thieves is that their THAC0 sucks. A LOT. Barely better than wizards. This improves the progression such that it can reach 6, like clerics. The progression follows this type of sequence: 20-19-19-18-17-17-16-15-15-14....
+Among many of the manifestations of the Baldur's Gate series' undying hate for thieves is that their THAC0 sucks. A LOT. Barely better than wizards. This improves the progression such that it can reach 6, like clerics. The progression follows this type of sequence: 20-19-19-18-17-17-16-15-15-14....
 
 **Component 2180:** Make the THAC0 progression of Bards better and more streamlined, so they improve up to 6, like clerics
 
@@ -1316,6 +1322,8 @@ This tiny overhaul simply addresses something that has bothered me forever about
 - 1 proficiency point: +1 THAC0 and Damage
 - 2 proficiency points: +2 THAC0 and Damage
 - The rest is the same as in vanilla.
+
+This has the side effect that your character's fists always have a bonus, since you wield them as if you were proficient in them by default.
 
 
 </details>
