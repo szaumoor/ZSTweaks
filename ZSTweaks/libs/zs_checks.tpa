@@ -6,7 +6,7 @@ RET
 BEGIN
     PATCH_IF flag >= 0 AND flag <= 31 BEGIN
         SET bitmask = (1 << flag)
-        SET result = (flags & bitmask) != 0
+        SET result = (flag & bitmask) != 0
     END ELSE BEGIN
         SET result = "-1"
     END

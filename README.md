@@ -90,6 +90,8 @@ This is a small change to make daggers slightly more appealing on a general leve
 
 All these bonuses are additive, which means are not affected by most effects, or strengh, although it also means that they're good weapons for characters with low strength.
 
+Exceptions: Grave Binder is not affected by these bonuses because it's an oversized dagger.
+
 **Component 1450:** Make some rogue weapons have the chance of doing more damage if wielded by pure thieves (Finesse)
 
 This component is an attempt at making single-classed Thieves more effective with a portion of thief-usable weapons without relying on stats, APR or proficiency points.
@@ -108,8 +110,8 @@ Note that this component does not account (automatically) for special weaponry w
 - Voidsword, Void-arrows, Void-bullets (SoD, magic damage)
 - Fierce Swirl +2 (Lava's Shades of the Sword Coast, magic damage)
 - 1d2 Arrows of Antimagic will be skipped (SoD, it's meant to deal almost no damage)
+- Arrows of Detonation are also skipped, since they're not designed to pierce
 - Broken Spirit Arrow +1 will be skipped (The Calling, it's designed to deal almost no damage)
-
 
 **Component 1530:** Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time to maximize damage
 
@@ -239,7 +241,7 @@ This makes the belt include piercing damage, such that it affect things like dag
 
 **Component 1561:** Make Cloak of the Stars create 30 darts, instead of six, and add passive effects
 
-6 darts is really unremarkable for a once-per-day effect. 30 is far more interesting. Additionally, if you wear it, you become proficient in darts immediately (unless proficiency is higher) and gain Save vs. Spell bonus of +1. Perhaps you don't need to sell it immediately anymore!
+6 darts is really unremarkable for a once-per-day effect. 30 is far more interesting. Additionally, if you wear it, you become proficient in darts immediately (unless proficiency is higher) and gain Save vs. Spell bonus of +2. Perhaps you don't need to sell it immediately anymore!
 
 **Component 1570:** Make Eyes of the Beholder's skills mirror the power of the spells they're based on
 
@@ -252,9 +254,13 @@ This makes this robe improve Invocation wizards in more ways, similarly to my tw
 - 5% elemental damage bonus
 - +2 save vs. Invocation
 
-**Component 1620:** Make Vicross' Thayan Circlet apply Improved Shield of Chaos instead of just Shield of Chaos
+**Component 1620:** Make Vicross' Thayan Circlet more interesting for Wild Mages
 
 This makes the circlet a bit more valuable by making it more effective in controlling Wild Surges. It's a little underwhelming to just have the same bonus as the robe of Hayes.
+
+Additionally, in the same theme of chaos related to wild magic, while wearing the circlet, they get a 15% bonus to a random non-physical type of damage, except poison. So, for example, if you happen to be in a Magic Damage bonus round, a Horrid Wilting that deals 100 damage, would deal 115 damage. If not, too bad!
+
+To promote specialization, this also restricts the circlet to Wild Mages.
 
 **Component 1650:** Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak
 
@@ -900,7 +906,7 @@ It will also remove the needless stat restrictions from the item.
 
 The rod is conceptually quite interesting, but generally underperforming.
 
-- **Mace +2** is renamed to Mace of Lordly Might +3, becomes a +3 weapon, and the save against panic is now at +2, not +5, and the panic is now a 1-round Slow effect.
+- **Mace +2** is renamed to Mace of Lordly Might +3, becomes a +3 weapon, and the save against panic is now at +2, not +5, and the panic is now a 2-round Slow effect.
 - **Flaming Long Sword +1** is renamed to Flaming Sword of Lordly Might +3, becomes a +3 weapon, causes 1d4 fire damage per hit, and the paralyze effect Save becomes +2 and not +5, but the Hold effect only lasts one round. Additionally, it makes it look like an actual flaming sword when held.
 - **Spear +3** is renamed to Spear of Lordly Might +3, and it no longer has a Save vs. Spell bonus of +6 to cause 2d4 magic damage, now it has no bonus or penalty and causes 3d4 magic damage when save is failed.
 
@@ -976,9 +982,9 @@ Improves the usability of Death Fog as a "general purpose" damage dealer, instea
 
 I think this makes this spell quite more useful, although perhaps it's too powerful like that if used against some enemies. I like this tweak, but I'll use the spell judiciously (perhaps not mazing dragons, for example). Additionally, Minotaurs are immune to it, same as IWDEE.
 
-**Component 407** Make BGEE's Imp have 12 HP like the other familiars
+**Component 407** Make base Imp Familiars have 12/24 HP like the other familiars
 
-This allows you to be Lawful Evil and enjoy the same amount of HP bonus as other alignments. This is standardized in BG2EE. I see no reason there should be a bias against the familiar Imp in BGEE.
+This allows you to be Lawful Evil and enjoy the same amount of HP bonus as other alignments. I see no reason there should be a bias against the Imp familiar.
 
 **Component 410:** Make Horrid Wilting actually be more effective against plants and Water Elementals and increase minimum damage
 
@@ -1316,6 +1322,8 @@ This tiny overhaul simply addresses something that has bothered me forever about
 - 1 proficiency point: +1 THAC0 and Damage
 - 2 proficiency points: +2 THAC0 and Damage
 - The rest is the same as in vanilla.
+
+This has the side effect that your character's fists always have a bonus, since you wield them as if you were proficient in them by default.
 
 
 </details>

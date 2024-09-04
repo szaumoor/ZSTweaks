@@ -1,10 +1,10 @@
 DEFINE_PATCH_FUNCTION ADD_EQUIPPED_EFF
-    INT_VAR
-        p1 = 0
-        p2 = 0
-        ip = "-1"
-    STR_VAR
-        effects = ~~
+INT_VAR
+    p1 = 0
+    p2 = 0
+    ip = "-1"
+STR_VAR
+    effects = ~~
 BEGIN
     LPF a7_auto_apply_spl_effect
         INT_VAR
@@ -20,25 +20,25 @@ BEGIN
 END
 
 DEFINE_PATCH_FUNCTION ADD_ON_HIT_EFF
-    INT_VAR
-        p1 = 0
-        p2 = 0
-        tmg = 0
-        dur = 0
-        rd = 0
-        pwr = 0
-        t = 1
-        stype = 0
-        sbonus = 0
-        pro1 = 100
-        pro2 = 0
-        dsize = 0
-        dnum = 0
-        ip="-1"
-        tgt = 2
-    STR_VAR
-        res = ~~
-        effects = ~~
+INT_VAR
+    p1 = 0
+    p2 = 0
+    tmg = 0
+    dur = 0
+    rd = 0
+    pwr = 0
+    t = 1
+    stype = 0
+    sbonus = 0
+    pro1 = 100
+    pro2 = 0
+    dsize = 0
+    dnum = 0
+    ip="-1"
+    tgt = 2
+STR_VAR
+    res = ~~
+    effects = ~~
 BEGIN
     LPF a7_auto_apply_spl_effect
         INT_VAR

@@ -181,6 +181,7 @@
 @1500 = ~Make Mazzy's weapons more powerful~
 @1510 = ~Make Delryn's family shield become a +2 shield~
 @1520 = ~Make Hallowed Redeemer able to hit enemies immune to +2 weapons~
+@1521 = ~Make Keldorn's armor allow Haste and Improved Haste~
 @1640 = ~Make Abyssal Blades more powerful (Dorn's Quest)~
 @1641 = ~Make the item creation abilities of vanilla NPCs slightly better~
 @1642 = ~Make Nalia's ring more powerful~
@@ -211,7 +212,7 @@
 @390 = "Make Death Fog inflict 1d8+8 acid damage per round instead of flat 8 damage"
 @400 = "Make Energy Drain drain 6 levels instead of 2"
 @405 = ~Make Maze bypass Magic Resistance, like Imprisonment, and make Minotaurs immune to it~
-@407 = ~Make BGEE's Imp have 12 HP like the other familiars~
+@407 = ~Make base Imp Familiars have 12/24 HP like the other familiars~
 @410 = ~Make Horrid Wilting actually be more effective against plants and Water Elementals and increase minimum damage~
 @430 = ~Make Grease bypass Magic Resistance, as it is as conjured substance, and apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description~
 @440 = ~Make Comet bypass magic resistance and apply a mix of cold, fire and crushing damage~
@@ -271,7 +272,7 @@
 @2180 = ~Make the THAC0 progression of Bards better and more streamlined, so they improve up to 6, like clerics~
 @2190 = ~Make Poison Weapon improve couple of times more every 4 levels (level 17, and 21)~
 @2200 = ~Allow Blackguards to perform backstabs as if they had a 2x backstab multiplier~
-@2210 = ~Light proficienciy overhaul: +1 THAC0 & Damage at proficiency level 1~
+@2210 = ~Light proficienciy overhaul~
 @2240 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and reenable the unconscious status if successful~ // TODO
 @2250 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
 @2260 = ~Make Blades and Skalds get APR with proficiency points like warrior classes~ //todo
@@ -715,7 +716,7 @@ Combat abilities:
 – This rod may transform into any of the following weapons when used. Each weapon may also change back into the rod at will.
 
 Mace of Lordly Might +3
-  Special: Target must save vs. Spell at +2 or panic for 3 rounds
+  Special: Target must save vs. Spell at +2 or be slowed for 2 rounds
   THAC0: +3
   Damage: 1d6+4 (crushing)
 
@@ -2027,12 +2028,16 @@ An ambitious young wild mage named Vicross's fear of discovery and desire to mas
 
 Eventually Vicross concocted techniques capable of partially controlling wild surges. She was able to enchant this circlet to reduce wild surge probability—and to minimize negative results. Fearful of her ever suspicious fellow Red Wizards, she wore it at all times, to keep her wild magic from betraying her.
 
+
 STATISTICS:
 
 Equipped abilities:
 – +25% probability that a wild surge will have positive effect
+– Every round, the damage of elemental or magical attacks improves randomly by +15%
 
 Weight: 1~
+
+@6461 = ~Wild mages~
 
 @6470 = ~Cure Light Wounds
 (Necromancy)
@@ -2204,7 +2209,6 @@ Equipped abilities:
 – Armor Class: +2 plus extra +2 against slashing, piercing and missile weapons.
 – Save vs. Spell: +1
 – +8% physical damage resistance
-
 
 THAC0: +5
 Damage: 1d8+3 (slashing)
@@ -2630,8 +2634,7 @@ Equipped abilities:
 
 Combat abilities:
 – +5 slashing damage vs. good-aligned opponents
-– +5 slashing damage vs. devils
-– +5 slashing damage vs. demons
+– +5 slashing damage vs. devils and demons
 – Acts as a +5 weapon for the purposes of what it can hit
 
 THAC0: +3
@@ -2738,7 +2741,7 @@ Equipped abilities:
 – Electricity Resistance: +50%
 
 Charge abilities:
-– Charm Air Elemental once per day (Save vs. Spell at +2 negates)
+– Charm Air Elemental once per day (Save vs. Spell at -2 negates)
   Range: Touch
   Duration: 45 seconds
   Area of Effect: 1 air elemental
@@ -2760,7 +2763,7 @@ Equipped abilities:
 
 
 Charge abilities:
-– Charm Earth Elemental once per day (Save vs. Spell at +2 negates)
+– Charm Earth Elemental once per day (Save vs. Spell at -2 negates)
   Range: Touch
   Duration: 45 seconds
   Area of Effect: 1 earth elemental
@@ -3299,10 +3302,11 @@ STATISTICS:
 
 Equipped abilities:
 – +1 AC
-– Clerics only: casting and turn undead level +1, gain 1 spell slot of level 3, 4 and 5
+– Casting and turning level: +1 (clerics only)
+– +1 spell slot for levels 3, 4 and 5 (clerics only)
 
 Charge abilities:
-– Mass Light Cure twice per day
+– Mass Cure twice per day
   Special: Targets are healed by 1d8+9 hit points
   Range: 0
   Area of effect: 15 ft. around the caster
@@ -4244,3 +4248,16 @@ Requires:
  5 Strength
 
 Weight: 2~
+
+@7550 = ~Shield of the Archons
+(Abjuration)
+
+Level: 7
+Sphere: Protection
+Range: Touch
+Duration: 3 rounds/level
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: None
+
+This powerful abjuration spell causes the spells cast against the priest to be absorbed and consumed. This affects a total of spell levels equal to the level of the caster. This includes spells cast from scrolls and innate spell-like abilities, but excludes the following: area effects that are not centered directly upon the priest, as well as area effects that are stationary, such as Cloudkill and Stinking Cloud. As long as the spell is cast directly at the priest, it will be absorbed provided that there are spell levels remaining. For example, if there is only 1 level left and a 3rd-level spell is cast at the priest, the spell will be absorbed while canceling the shield.~

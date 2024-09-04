@@ -104,4 +104,34 @@ BEGIN
 END
 
 
+DEFINE_PATCH_FUNCTION ITM_LAST_HEADER_TYPE
+INT_VAR
+    type = 1
+RET
+    result
+BEGIN
+    READ_LONG 0x64 ability_offset
+    READ_SHORT 0x68 num_abilities
+
+    PATCH_IF num_abilities > 1 BEGIN
+        SET bytes = 0x38
+        SET header = 0
+        FOR ( h = 0; h < num_abilities; ++h ) BEGIN
+            ability_offset += bytes * h
+            SET t = BYTE_AT (ability_offset)
+            PATCH_IF t = type BEGIN
+                ++header
+            END
+        END
+        result = header
+    END ELSE BEGIN
+        SET t = BYTE_AT (ability_offset)
+        PATCH_IF t = type BEGIN
+            result = 0
+        END ELSE BEGIN
+            result = "-1"
+        END
+    END
+END
+
 

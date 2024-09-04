@@ -80,11 +80,11 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     PATCH_IF wpn_cat == 5 BEGIN // arrows
         // EXCEPTIONS
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdarow01" != 0 AND // ANTIMAGIC ARROW SOD
-        "%SOURCE_RES%" STRING_COMPARE_CASE "cd51ari" != 0 BEGIN // BROKEN SPIRIT ARROW (The Calling Gnoll Stronghold component)
-
+        "%SOURCE_RES%" STRING_COMPARE_CASE "cd51ari" != 0 AND  // BROKEN SPIRIT ARROW (The Calling Gnoll Stronghold component)
+        "%SOURCE_RES%" STRING_COMPARE_CASE "AROW06" != 0 BEGIN
             PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdarow02" != 0 BEGIN // void-tipped arrows (SoD)
                 LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWA0~ END
-            END ELSE BEGIN
+            END ELSE BEGIN // void-tipped arrows
                 LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 insert_point = "-1"
                 STR_VAR class = ~THIEF~ spell = ~ZSTWAM0~ END
             END
@@ -165,8 +165,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                 LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL6~ END
             END
         END ELSE BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 insert_point = "-1"
-            STR_VAR class = ~THIEF~ spell = ~ZSTWLM3~ END
+            LPF weapon_damage_by_class INT_VAR type=1 probability1=9 insert_point="-1" STR_VAR class=~THIEF~ spell=~ZSTWLM3~ END
         END
     END // end long swords and scimitars
     PATCH_IF wpn_cat = 20  AND wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "s1" = 0 BEGIN // ninja-tos
@@ -262,7 +261,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
         END
     END // end short swords
     PATCH_IF wpn_cat = 17  AND wpn_prof = 115 BEGIN // clubs
-        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "l#BASR7" != 0 BEGIN
+        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "l#BASR7" != 0 BEGIN // lava's
             PATCH_IF ench = 0 BEGIN
                 LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ0~ END
             END

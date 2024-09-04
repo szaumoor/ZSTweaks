@@ -17,31 +17,33 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_PROF RET wpn_prof = result END
     LPF ITM_ENCH RET ench = result END
 	PATCH_IF wpn_cat == 16  AND wpn_prof == 96 BEGIN // daggers
-        LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = 0 END
-        FOR ( current_th = 6; current_th >= 0; --current_th ) BEGIN
-            LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_to_hit=current_th to_hit=current_th+1 END
-        END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1~ END
-        PATCH_IF ench = 0 BEGIN
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP08~ END
-        END
-        PATCH_IF ench = 1 BEGIN
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP10~ END
-        END
-        PATCH_IF ench = 2 BEGIN
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP12~ END
-        END
-        PATCH_IF ench = 3 BEGIN
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP14~ END
-        END
-        PATCH_IF ench = 4 BEGIN
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP16~ END
-        END
-        PATCH_IF ench = 5 BEGIN
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP18~ END
-        END
-        PATCH_IF ench = 6 BEGIN
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP20~ END
+        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "dagg04" != 0 BEGIN // not grave binder (fake dagger)
+            LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = 0 END
+            FOR ( current_th = 6; current_th >= 0; --current_th ) BEGIN
+                LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_to_hit=current_th to_hit=current_th+1 END
+            END
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1~ END
+            PATCH_IF ench = 0 BEGIN
+                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP08~ END
+            END
+            PATCH_IF ench = 1 BEGIN
+                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP10~ END
+            END
+            PATCH_IF ench = 2 BEGIN
+                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP12~ END
+            END
+            PATCH_IF ench = 3 BEGIN
+                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP14~ END
+            END
+            PATCH_IF ench = 4 BEGIN
+                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP16~ END
+            END
+            PATCH_IF ench = 5 BEGIN
+                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP18~ END
+            END
+            PATCH_IF ench = 6 BEGIN
+                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP20~ END
+            END
         END
     END
 BUT_ONLY
