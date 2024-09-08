@@ -3,6 +3,7 @@ INT_VAR
     p1 = 0
     p2 = 0
     ip = "-1"
+    spec = 0
 STR_VAR
     effects = ~~
 BEGIN
@@ -13,6 +14,7 @@ BEGIN
             def_parameter1 = p1
             def_parameter2 = p2
             def_insertpoint = ip
+            def_special = spec
         STR_VAR
             function_name = ~ADD_ITEM_EQEFFECT~
             effect_codes = ~%effects%~
@@ -126,3 +128,40 @@ BEGIN
             effect_codes = ~%effects%~
     END
 END
+
+/*LPF ADD_MAGICAL_EFF_AT
+INT_VAR
+    h = 0
+    ip = "-1"
+    t=3
+    tgt=2
+    tmg=0
+    dur=0
+    rd=1
+    pwr=0
+    p1=0
+    p2=0
+    stype=0
+    sbonus=0
+    dsize=0
+    dnum=0
+BEGIN
+    LPF ADD_ITEM_EFFECT
+        INT_VAR
+            header_type = t
+            header = h
+            target = tgt
+            timing = tmg
+            parameter1 = p1
+            parameter2 = p2
+            duration = dur
+            resist_dispel = rd
+            power = pwr
+            insertpoint = ip
+            savetype = stype
+            savebonus = sbonus
+            dicesize = dsize
+            dicenumber = dnum
+
+    END
+END*/

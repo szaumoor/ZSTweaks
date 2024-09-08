@@ -91,6 +91,8 @@
 @1674 = ~Make Whispers of Silence protect against detection spells except for True Sight, and improve Move Silently~
 @1675 = ~Make Cloak of Displacement add +5% damage resistance~
 @1676 = ~Make Skull of Death allows casting Finger of Death, and protect against Necromantic instant-death effects~
+@1677 = ~Make Wondrous Gloves Wondrous~
+@1678 = ~Make Senses of the Cat imbue the user of more cat-like features~
 
 // subcomponent str of component @1664
 @16640 = ~Affect all~
@@ -117,8 +119,8 @@
 @1201 = "Make Lilarcor +3 have a chance of causing confusion on hit"
 @1202 = "Make Warblade +4 slightly more unique, and more potent when wielded by barbarians"
 @1280 = "Make Carsomyr affect any kind of evil and not just Chaotic Evil"
-@1290 = "Make Carsomyr's Dispel Magic force a saving throw"
-@1300 = "Make Silver Sword act as a +4 weapon to determine what it can hit to extend usability"
+@1290 = "Make Carsomyr's Dispel Magic abilities more balanced"
+@1300 = "Make Silver Sword significantly more unique and add a more interesting (imo) description"
 @1318 = "Make Flame of the North +2 affect all evil, not just chaotic evil"
 @1322 = ~Make Flame of the North inflict +2 fire damage against trolls~
 @1390 = "Make Staff of the Magi force a saving throw to dispel effects on hits"
@@ -126,12 +128,15 @@
 @1420 = "Make Ir'revrykal base damage equal to Carsomyr"
 @1460 = ~Make Spear of Withering able to poison on contact if save is failed~
 @1540 = ~Make Wave slightly more powerful~
+@1587 = ~Make Rod of Terror inspire less Terror by how awful it is and more by how effective it is~
 @1590 = ~Make Blackmist more powerfully blinding and grant immunity to blindness~
 @1591 = ~Make Soul Reaver slightly more balanced~
 @1592 = ~Make Soul Reaver deal 1d12 damage~
 @1593 = ~Make Sword of Ruin +2 slightly more powerful~
 @1594 = ~Make Cleric's staff more unique and actually benefit clerics~
 @1595 = ~Make Halcyon +1 a bit more powerful~
+@1597 = ~Make Staff of Rhynn not just unique in name and description, but in function~
+@1599 = ~Make Psion's Blade more offensively powerful against Illithids~
 
 /// ONE-HANDED SWORDS
 @1125 = "Make Ninjato of the Scarlet Brothehood +3 available for other classes and alignments"
@@ -144,10 +149,10 @@
 @1241 = "Make Purifier's Dispel Magic level 30, like Staff of the Magi and Carsomyr"
 @1250 = "Make Yamato's passive abilities more substantial"
 @1260 = "Make Usuno's Blade slightly more electrically powerful"
-@1270 = "Make Spectral Brand last for 1 turn, instead of 4 rounds"
+@1270 = "Make Spectral Brand slightly better and make the dancing blade last for 1 turn, instead of 4 rounds"
 @1315 = "Make Dak'kon's Zerth Blade behave as a +3 weapon"
 @1319 = "Make Holy Sword of Tyr +3 affect all evil, not just chaotic evil"
-@1341 = ~Make Hindo's Doom a +3 and +4 weapon~
+@1341 = ~Make Hindo's Doom a +4 and +5 weapon~
 @1470 = ~Make Adjatha the Drinker thirstier~
 @1550 = ~Make Drizzt's weapons slightly more worth stealing in BG2~
 @1580 = ~Make Hawksight improve your senses, reflexes, and accuracy more keenly~
@@ -156,6 +161,11 @@
 @1583 = ~Make Kachiko's Wakizashi substantially more unique in description and improve it~
 @1584 = ~Make The Brass Blade +5 cast better fireball spells~
 @1585 = ~Make Arbane's Sword of Agility's Haste last 1 turn, not 2 rounds~
+@1586 = ~Make Blade of Searing more Searing~
+@1588 = ~Make Water's Edge not just unique in name and description, but in function~
+@1589 = ~Make Rashad's Talon not just unique in name and description, but in function~
+@1596 = ~Make The Shadow Blade +3 not just unique in name and description, but in function~
+@1598 = ~Make Cutthroat +4 not just unique in name and description, but in function~
 
 // AXES AND BLUNT WEAPONS
 @1310 = "Make Defender of Eastheaven damage reduction a little more moderate"
@@ -174,6 +184,9 @@
 @1340 = "Make Taralash slightly more remarkable"
 @1342 = ~Make Protector of the Dryads deal +2 damage to orcs, ogres, bugbears, gnolls, and goblinoids~
 @1343 = ~Make Mana bow more magical and more deadly against arcane casters~
+@1344 = ~Make Arrows of Biting apply poison faster and improve the misleading description~
+@1345 = ~Make Arrows of Fire cause fire damage always, same as Arrows of Ice~
+@1346 = ~Make Arrows of Piercing always cause at least half of the extra piercing damage~
 
 // NPC TWEAKS
 @1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
@@ -1007,7 +1020,7 @@ Combat abilities:
 – Dispel Magic at level 30 on each hit if a Save vs. Spell is failed
 
 Charge abilities:
-– Dispel Magic at level 15 three times per day
+– Dispel Magic at level 20 three times per day
   Range: 40 ft.
   Area of Effect: 15-ft. radius
 
@@ -1035,7 +1048,7 @@ Combat abilities:
 – Dispel Magic at level 30 on each hit if a Save vs. Spell is failed
 
 Charge abilities:
-– Dispel Magic at level 15 three times per day
+– Dispel Magic at level 20 three times per day
   Range: 40 ft.
   Area of Effect: 15-ft. radius
 
@@ -1065,7 +1078,7 @@ Combat abilities:
 – Dispel Magic at level 30 whenever the sword strikes an opponent if a Save vs. Spell at -2 is failed
 
 Charge abilities:
-– Dispel Magic at level 15 three times per day
+– Dispel Magic at level 30 three times per day
   Range: 40 ft.
   Area of Effect: 15-ft. radius
 
@@ -1095,7 +1108,7 @@ Combat abilities:
 – Dispel Magic at level 30 whenever the sword strikes an opponent if a Save vs. Spell at -2 is failed
 
 Charge abilities:
-– Dispel Magic at level 15 three times per day
+– Dispel Magic at level 30 three times per day
   Range: 40 ft.
   Area of Effect: 15-ft. radius
 
@@ -1128,6 +1141,7 @@ Requires:
 
 Weight: 6~
 
+// only evil component +6
 @6091 = ~This single-handed weapon is infused with the very essence of virtue, and is rumored to be the sanctified blade of the famous paladin Sir Wediyer. The weapon was lost when Sir Wediyer pursued a fleeing pit fiend through a planar rift. Neither the fiend nor Sir Wediyer ever returned.
 
 With the Eye of Tyr set into its pommel, Purifier is perhaps the greatest single instrument of holy justice on the face of Faerûn.
@@ -1139,6 +1153,66 @@ Equipped abilities:
 
 Charge abilities:
 – Dispel Magic at level 20 twice per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+– Mass Cure once per day
+  Special: Heals party members 1d8+20 Hit Points
+  Area of Effect: 15-ft. radius
+
+THAC0: +5
+Damage: 2d4+5, +5 extra vs. evil
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 5~
+
+// only dispel component +6
+@6092 = ~This single-handed weapon is infused with the very essence of virtue, and is rumored to be the sanctified blade of the famous paladin Sir Wediyer. The weapon was lost when Sir Wediyer pursued a fleeing pit fiend through a planar rift. Neither the fiend nor Sir Wediyer ever returned.
+
+With the Eye of Tyr set into its pommel, Purifier is perhaps the greatest single instrument of holy justice on the face of Faerûn.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +30%
+
+Charge abilities:
+– Dispel Magic at level 30 twice per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+– Mass Cure once per day
+  Special: Heals party members 1d8+20 Hit Points
+  Area of Effect: 15-ft. radius
+
+THAC0: +5
+Damage: 2d4+5, +5 extra vs. chaotic evil
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 5~
+
+// both dispel and evil components +6
+@6093 = ~This single-handed weapon is infused with the very essence of virtue, and is rumored to be the sanctified blade of the famous paladin Sir Wediyer. The weapon was lost when Sir Wediyer pursued a fleeing pit fiend through a planar rift. Neither the fiend nor Sir Wediyer ever returned.
+
+With the Eye of Tyr set into its pommel, Purifier is perhaps the greatest single instrument of holy justice on the face of Faerûn.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +30%
+
+Charge abilities:
+– Dispel Magic at level 30 twice per day
   Range: 40 ft.
   Area of Effect: 15-ft. radius
 
@@ -3478,7 +3552,7 @@ Equipped abilities:
 
 Charge abilities:
 – Armor Piercing Strike once per day
-  Special: +10 THAC0 bonus
+  Special: +10 THAC0, +4 damage, and +10% critical hit chances bonus. Can't critically miss.
   Duration: 3 rounds
 
 – Summon Spectral Blade once per day
@@ -4081,6 +4155,14 @@ Duration: 4 turns
 
 Weight: 1~
 
+@7467 = ~When wholly consumed, this potion restores 10 Hit Points to the person. The effect is instantaneous and the potion is destroyed in the process.
+
+STATISTICS:
+
+Special: Restores 10 Hit Points.
+
+Weight: 1~
+
 @7470 = ~Call Lightning
 (Alteration)
 
@@ -4261,3 +4343,281 @@ Area of Effect: The caster
 Saving Throw: None
 
 This powerful abjuration spell causes the spells cast against the priest to be absorbed and consumed. This affects a total of spell levels equal to the level of the caster. This includes spells cast from scrolls and innate spell-like abilities, but excludes the following: area effects that are not centered directly upon the priest, as well as area effects that are stationary, such as Cloudkill and Stinking Cloud. As long as the spell is cast directly at the priest, it will be absorbed provided that there are spell levels remaining. For example, if there is only 1 level left and a 3rd-level spell is cast at the priest, the spell will be absorbed while canceling the shield.~
+
+@7560 = ~The benefits inherent in this sword are plain to see: It is exceptionally accurate, and a lick of flame follows every blow, searing the target in addition to the normal damage received, which may linger on the target, causing them to burn even more. It is an efficient troll-killer, though it has not yet been heralded as such in song or legend.
+
+STATISTICS:
+
+Combat abilities:
+– Lingering flame: if a Save vs. Spell is failed, targets continues to burn, suffering 1d3 points of fire damage per round for 3 rounds
+
+THAC0: +3
+Damage: 2d4+3, plus 1d3+1 fire damage
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 5~
+
+@7561 = ~Searing~
+
+@7570 = ~The blade of this weapon seems to shimmer, revealing a fluid, razor edge. Truly there was great skill involved in its construction, as well as a blessing or two from some well-meaning eye above, even though the hilt is comparatively almost clumsily adorned.
+
+STATISTICS:
+
+Equipped abilities:
+– +20% cold resistance
+
+THAC0: +3
+Damage: 1d8+3, +1d2 cold damage
+Damage type: Slashing
+Speed Factor: 2
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 8 Strength
+
+Weight: 3~
+
+@7580 = ~Named for Prince Rashad, former ruler of a minor principality to the east, this blade and many of the prince's possessions were taken by disgruntled palace guards after his death. The role of the guards in the unfortunate affair was never determined, but rumor has it that all died within a year, slain by this very weapon.
+
+STATISTICS:
+
+Combat abilities:
+– Cursed Wound: critical hits prevent healing for 2 rounds
+– +5% critical hit chances with this weapon
+
+THAC0: +2
+Damage: 1d8+2 (slashing)
+Speed Factor: 3
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 4~
+
+@7581 = ~Cursed Wound: cannot heal~
+
+@7590 = ~There was a time when magic was distrusted even more so than now, and the burning of "heretics" was woefully common. Delmarey, a witch from the swamplands near Myth Rhynn, faced just such a fate when she was blamed for an unseasonable drought. Taken by surprise and sentenced by a mob, she was put to the torch in the village square. With her dying breath she uttered a foul curse, fueling the fire to an unstoppable magnitude. By dawn, the entire village was reduced to black coal, save the burnt remnant of the pole Delmarey had been bound to. This staff has been imbued with some a part of Delmarey's power, making it highly dangerous weapon.
+
+STATISTICS:
+
+Equipped abilities:
+– +25% Fire resistance
+
+Combat abilities:
+– Hits with this weapon reduce the Fire resistance of the target by -25% for 2 rounds. This effect does not stack.
+
+Charge abilities:
+– Cast Witch's Wrath once per day
+  Area of Effect: All enemies around the caster in 15 ft. Does not affect allies.
+  Damage: 8d6+10 fire damage. Targets affected by Panic take 4d6+10 more damage. No save is allowed.
+  Special: Targets will be affected by Panic and Slow for 3 rounds unless a Save vs. Spell at -2 is made.
+
+THAC0: +4
+Damage: 1d6+4, +4 fire damage
+Damage type: Crushing
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@7591 = ~Witch's Wrath~
+
+@7600 = ~The Arrow of Biting was designed as a deadly compliment to the archer. Poison smeared on the barbed arrowhead infiltrates the bloodstream of its victims, causing agony and often death.
+
+STATISTICS:
+
+Combat abilities:
+– Target must save vs. Death or suffer 30 points of poison of damage over 5 rounds
+
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~
+
+
+@7610 = ~These gem-studded leather gloves are enchanted so as to augment the skills of any Bard, no matter the kind.
+
+STATISTICS:
+
+Equipped abilities:
+– Different bards get different bonuses:
+  All bards: +2 AC, THAC0, Damage, and casting speed. +1 memorizable spells from level 1 to 6.
+  Skalds: +1 bonus to Strength and +1/2 APR
+  Blades: +1 bonus to Dexterity and +1/2 APR
+  Jesters: Immune to confusion, slow, and unconsciousness. +6 bonus Saves vs. Enchantment spells.
+
+Weight: 1~
+
+@7611 = ~Bards~
+
+//bg2ee
+@7620 = ~This is a magical arrow that will burst into flames as it is fired at an enemy. The effect is similar to an arrow doused in oil and set to flame.
+
+STATISTICS:
+
+Damage: 1d6, +1d2 fire damage
+Damage type: Missile
+Launcher: Bow
+
+Weight: 0~
+
+// bgee
+@7621 = ~This is a magical arrow that will burst into flames as it is fired at an enemy. The effect is similar to an arrow doused in oil and set to flame.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d6+2, +1d6 fire damage (Save vs. Spell for none)
+Damage type: Missile
+Launcher: Bow
+
+Weight: 0~
+
+// iwdee
+@7622 = ~The arrow of fire is a magical arrow that will burst into flames as it is fired at an enemy. The effect is similar to an arrow doused in oil and set to flame.
+
+STATISTICS:
+
+Combat abilities:
+– 1d6 fire damage (Save vs. Spell negates)
+
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~
+
+@7630 = ~This arrow is long and thin, imbued with magical properties that allow it to "push" itself through armor, striking out towards the heart of the victim.
+
+STATISTICS:
+
+THAC0: +4
+Damage: 1d6, +7 piercing damage (Save vs. Death for half)
+Damage type: Missile
+Launcher: Bow
+
+Weight: 0~
+
+@7640 = ~When activated, this rod may be used as a powerful magical staff. Any creature hit by the rod must make a Saving Throw vs. Spell or become paralyzed in terror, fearing the wielder as if he or she were a flesh-eating demon from the Abyss, which may kill them if the fear goes out of control. There is a drawback to using this rod, however: Each time the rod is used, there is a chance that the wielder loses one point of Constitution for one 24 hours.
+
+STATISTICS:
+
+Combat abilities:
+– Target must save vs. Spell or become flee in terror for 2 rounds. After one round, if the the target is still panicking, there's a 20% chance the target dies from the shock if they fail a save vs. Death; if they survive, they become rooted in place in fear for the remaining of the round.
+– Every time the rod hits an opponent, there's a 10% chance the wielder will lose 1 point of Constitution for 24 hours
+
+THAC0: +3
+Damage: 1d6+3 (crushing)
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: Two-handed
+
+Weight: 3~
+
+@7641 = ~Killed by panic~
+
+@7650 = ~Boots of Avoidance: Senses of the Cat
+The magic of these boots was specifically designed to detect incoming attacks and aid the wearer in avoiding them. They were originally commissioned by the instructor of an archery academy who had tired of suffering "accidents" at the hands of his inexperienced students.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1 Armor Class, +4 extra vs. missile attacks
+– Saves vs. Breath: +1
+– Movement rate increased by a factor of 3
+
+Weight: 4~
+
+@7660 = ~This weapon has a bloody history, having been used to exercise its namesake many times. Popular among the assassin trade for its size and enchantment, it has been in the possession of many of the realms' more dangerous citizens, though seldom remaining in one place for any length of time.
+
+STATISTICS:
+
+Combat abilities:
+– +10% critical chance (this weapon only)
+– Critical hits cause bleeding: 1d6 piercing damage per round for 3 rounds
+
+THAC0: +4
+Damage: 1d6+4 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 2~
+
+@7670 = ~Short Sword of Backstabbing: The Shadow's Blade
+The Shadow's Blade was created to be the perfect assassin's tool. It is highly sought after by any who settle differences with a blade, and many that possess it do not do so for long.
+
+STATISTICS:
+
+Combat abilities:
+– Backstab multiplier: +1
+
+THAC0: +3, +5 (single-classed Thieves-only; main hand only)
+Damage: 1d6+3 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@7680 = ~Githyanki Silver Sword~
+
+@7681 = ~Each githyanki knight in service to the Lich Queen Vlaakith is granted a silver sword upon reaching a level of power sufficient to conjure these blades into existence. This particular sword is exceptionally sharp, capable of severing a head with a single stroke.
+
+The githyanki's unwavering devotion to their queen inspires both awe and unease. Their fierce loyalty, while admired by some, raises questions for others—what might happen if they were ever forced to confront the imperfections of the very figure they revere?
+
+STATISTICS:
+
+Equipped abilities:
+– Unaffected by mind blasts and domination attempts by Mind Flayers
+
+Combat abilities:
+– Acts as a +6 weapon against Mind Flayers
+– 25% chance per hit that target must save vs. Death at -2 or die from decapitation. Targets killed this way cannot be resurrected without a True Resurrection spell or divine intervention.
+– Psionic attack: inflicts 2d8 magical damage on a critical hit, which also causes confusion for 10 seconds if a Save vs. Spell at -2 is failed.
+
+THAC0: +3, +6 against Mind Flayers
+Damage: 1d10+3, +6 vs. Mind Flayers (slashing)
+Speed Factor: 6
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 15~
+
+@7690 = ~Some believe this massive blade to be of drow origin, though others dispute this claim. However, all agree this great sword was fashioned with a single purpose... to rid the world of the illithid. The attacks from the Psion's Blade inflict griveous wounds on illithids, and those who wield it are immune to the mind flayer's psionic attacks. The bewildering gaze of umber hulks, often found serving the illithid, are similarly rendered harmless.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to confusion and all psionic attacks
+
+Combat abilities:
+– Struck illithids must save vs. Death at -3 or die instantly. This effect can only affect a particular illithid once per round.
+
+THAC0: +5, +8 against Mind Flayers
+Damage: 1d10+5, +8 vs. Mind Flayers (slashing)
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 9~
+
+@7691 = ~Illithid destroyed~
+
+

@@ -17,6 +17,7 @@ COPY_EXISTING ~SW2H10.ITM~ ~override~
         END
         offset_eff += 0x30
     END
+    LPF ALTER_EFFECT INT_VAR match_opcode=148 header_type=3 parameter1=20 END
 BUT_ONLY
 
 COPY_EXISTING ~SW2H19.ITM~ ~override~
@@ -34,4 +35,5 @@ COPY_EXISTING ~SW2H19.ITM~ ~override~
         END
         offset_eff += 0x30
     END
+    LPF ALTER_EFFECT INT_VAR match_opcode=148 header_type=3 parameter1=30 END
 BUT_ONLY

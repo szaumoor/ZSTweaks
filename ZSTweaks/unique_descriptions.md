@@ -62,3 +62,29 @@ Requires:
 Weight: 2
 
 ---
+
+### Githyanki Silver Sword~
+
+Each githyanki knight in service to the Lich Queen Vlaakith is granted a silver sword upon reaching a level of power sufficient to conjure these blades into existence. This particular sword is exceptionally sharp, capable of severing a head with a single stroke.
+
+The githyanki's unwavering devotion to their queen inspires both awe and unease. Their fierce loyalty, while admired by some, raises questions for others—what might happen if they were ever forced to confront the imperfections of the very figure they revere?
+
+STATISTICS:
+
+Equipped abilities:
+– Unaffected by mind blasts and domination attempts by Mind Flayers
+
+Combat abilities:
+– Acts as a +6 weapon against Mind Flayers
+– 25% chance per hit that target must save vs. Death at -2 or die from decapitation. Targets killed this way cannot be resurrected without a True Resurrection spell or divine intervention.
+– Psionic attack: inflicts 2d8 magical damage on a critical hit, which also causes confusion for 10 seconds if a Save vs. Spell at -2 is failed.
+
+THAC0: +3, +6 against Mind Flayers
+Damage: 1d10+3, +6 vs. Mind Flayers (slashing)
+Speed Factor: 7
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 15

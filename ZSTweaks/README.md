@@ -150,6 +150,7 @@ For consistency, all of the enchanted belts, boots and bracers will also grant t
 **Component 1534:** Rebalance some potions
 
 - Potion of Icedust: instead of providing a set immunity to fire for 1 round, it adds +75% resistance to fire for 3 rounds. I was considering making this effect undispellable, but decided against it.
+- Potion of healing (basic): these options are generally speaking never used after a while. Therefore, now they heal 12 HP instead of 9 HP, which makes them marginally more useful without breaking balance.
 - Potion of Heroism: it also prevents morale failure as it increases the confidence of the drinker. It can also be drunk by any class.
 - Potion of Invulnerability: it also increases magic resistance by +10%, and it can be used by any class
 - Elixir of Health: the HP recovered is now 20 (from 10) and protects against being poisoned (but not to direct poison damage; not dispellable) for 10 seconds. This is added such that when taking heavy damage, if you're poisoned, it's more desirable than just gulping down a better HP potion to ensure survivability.
@@ -159,11 +160,11 @@ For consistency, all of the enchanted belts, boots and bracers will also grant t
 
 **Component 1535:** Make all potions usable by all classes
 
-Self-explanatory.
+Self-explanatory. There's no earthly reason your character can't put that potion to their mouth and drink it.
 
 **Component 1537:** Make Poison-curing spells an instant cast so attempting to cure poison is less likely to be interrupted
 
-Self-explanatory. It's quite a pain when it's something that is supposed to cut a poison's effect short, but it's almost guaranteed to be interrupted unless you're extremely precise or like with timing.
+Self-explanatory. It's quite a pain when it's something that is supposed to cut a poison's effect short, but it's almost guaranteed to be interrupted for the caster unless you're extremely precise with casting timing (and you're lucky). This does not fully prevent interruption, but it makes timing the cast far easier.
 
 </details>
 
@@ -396,6 +397,25 @@ I don't like items that **only** add an ability without any passive benefit. The
 - Saves vs. Necromancy spells: +4 saves
 - Immunity to necromantic death effects and vorpal hits. This on a technical level means immunity to the Slay and Kill Target opcodes, but not to the Power Word Kill, Petrification, or Disintegration opcodes.
 
+**Component 1677:** Make Wondrous Gloves Wondrous
+
+In my opinion, these gloves are very very mundane, and not wondrous. Therefore, the effects of wearing these gloves are now useful for all bards, with specific benefits according to vanilla kits and for bards in general.
+
+- Bards in general get: +2 AC, THAC0,+2 Damage, Casting Speed, +1 spell slot from level 1 to 6
+- Skalds get +1 Strength and +1/2 APR
+- Blades get +1 Dexterity and +1/2 APR
+- Jesters get immunity to confusion, slow, and unconsciousness, as well as +6 bonus Saves vs. Enchantment spells
+- Only bards can wear these.
+
+**Component 1678:** Make Senses of the Cat imbue the user of more cat-like features
+
+Cats forever!
+
+- It improves AC by 1 and adds +4 bonus against missiles (net vanilla benefit for missiles)
+- +1 Saves vs. Breath
+- Movement rate increased by a factor of 3
+
+
 </details>
 
 ---
@@ -501,13 +521,20 @@ Since this was blessed by northern barbarian gods, the sword now causes 1d4 cold
 
 Self explanatory. Not that it needs to be more powerful, but it feels wrong to not be especially effective against non-chaotic evil (but yes, I understand it's because it's the opposite of a paladin's alignment).
 
-**Component 1290:** Make Carsomyr's Dispel Magic force a Saving throw vs Spell
+**Component 1290:** Make Carsomyr's Dispel Magic abilities more balanced
 
-The dispel on hit thing is pretty cheesy so, yeah. That. No penalty with +5, -2 with +6 version
+The dispel on hit thing is pretty cheesy so, yeah. That. No penalty with +5, -2 with +6 version. As for the ability to cast Dispel Magic, since level 15 dispel is quite weak, especially for the +6 version, it's now level 20-30 for each version.
 
-**Component 1300:** Make Silver Sword act as a +4 weapon to determine what it can hit to extend usability
+**Component 1300:** Make Silver Sword significantly more unique and add a more interesting (imo) description
 
-The vorpal quality is very powerful, but it would be nice if the sword could work for more powerful enemies.
+This component improves the description to something a bit more interesting than "hey, this sword is evil and can cut heads off". See the file unique_descriptions.md for details. Additionally:
+
+- The faulty probabilities for vorpal hit are fixed (true 25%, not 26%)
+- The sword acts in **every way** as a +6 two-handed sword **against mind flayers only**, that is, +6 THAC0, +6 enchantment, 1d10+6 damage.
+- Against other targets, it's still a +3 weapon in terms of damage, thac0 and enchantment level
+- Wielding it makes the wielder immune to mind blasts and domination attempts by mind flayers
+- Critical hits causes a psionic blast which causes 2d8 magic damage and causes Confusion for 10 seconds if a Save vs. Spell at -2 is failed. Mind flayers save with a -4 penalty.
+- Speed factor of 6
 
 **Component 1318:** Make Flame of the North +2 affect all evil, not just chaotic evil
 
@@ -536,6 +563,13 @@ I feel like this spear should be more withery, especially considering it's a +4 
 **Component 1540:** Make Wave +4 slightly more powerful
 
 This component improves Wave +4 by making it always deal 3 points of cold damage per hit. Giants take 9 cold damage instead, since it was made to fight fire giants. This may make it a fine choice for a weapon for a big portion of ToB.
+
+**Component 1587:** Make Rod of Terror inspire less Terror by how awful it is and more by how effective it is
+
+Panic is very unlikely to happen, and panic is generally not very convenient because it makes it difficult to hit the enemies. Plus, the permanent-until-death penalty discourages pretty much any idea of using this item. Therefore:
+
+- Save vs. Spell for Panic has no penalty now, and it only lasts 2 rounds. On the second round, if the target is still suffering from panic, there's a 20% chance that the affected creature must save vs. Death, or be killed by the shock. Even if they survive, they become rooted in place for the remaining of the round in panic.
+- The penalty to Charisma is now a penalty to Constitution which is more meaningful, and is no longer permanent but lasts 24 hours (2 in-game hours, or 3 full normal 8-hour rests). The chance of this happening is 10% instead of 20%.
 
 **Component 1590:** Make Blackmist more powerfully blinding and grant immunity to blindness
 
@@ -573,6 +607,15 @@ There aren't many spears in the game. It would be tragic if most were boring. Th
 Every hit has a chance of electrifying target: 2 electricity damage per round for 2 rounds if Save vs. Spell at +2 is failed.
 
 Hopefully this is slightly less boring!
+
+**Component 1597:** Make Staff of Rhynn not just unique in name and description, but in function
+
+Another example of a highly enchanted weapon without any special property. I based this tweak on the description, which is frankly horrific, but inspiring. Therefore:
+
+- Causes additional +4 fire damage per hit
+- +25% fire resistance while holding the staff
+- Hits with this weapon reduce Fire Resistance by 25% (doesn't stack) for 2 rounds.
+- Special ability: **Witch's Wrath** once per day. It works as a Sunfire that causes 8d6+10 fire damage to all enemies around the caster, without affecting party members. The damage will be increased by 4d6+10 if the target is affected by Panic. The explosion itself will cause Horror and Slow for 3 rounds unless a Save vs. Spell at -2 is made.
 
 </details>
 
@@ -647,9 +690,9 @@ The effect is pretty underwhelming for a +4 weapon. Now:
 - Every hit deals 1d3 electrical damage with no save allowed.
 - Increases electrical damage resistance by 40%.
 
-**Component 1270:** Make Spectral Brand last for 1 turn, instead of 4 rounds
+**Component 1270:** Make Spectral Brand slightly better and make the dancing blade last for 1 turn, instead of 4 rounds
 
-This makes it useful for far longer, and more like Sword of Mordenkainen.
+This makes it useful for far longer, and more like Sword of Mordenkainen. Additionally, the Armor Piercing special ability also improves damage by +4, critical hit chances by +10%, and cannot critically miss.
 
 **Component 1315:** Make Dak'kon's Zerth Blade behave as a +3 weapon
 
@@ -716,6 +759,43 @@ Finally, it fixes two likely bugs: spells cast being set as conjurer spells inst
 
 Self explanatory. Additionally, the speed factor of the weapon is now 0.
 
+**Component 1586:** Make Blade of Searing more Searing
+
+This makes this weapon more interesting, by replacing the simple +1 fire damage by:
+
+- 1d3+1 fire damage on hit
+- Can make the target catch on fire, causing it to receive 1d3 fire damage per round for 3 rounds if a save vs. Spell is failed.
+
+**Component 1588** Make Water's Edge not just unique in name and description, but in function
+
+The unique description with no unique functionality bothers me, therefore:
+
+- +20% cold resistance on equipping it
+- Causes 1d2 cold damage on hit
+
+**Component 1589** Make Rashad's Talon not just unique in name and description, but in function
+
+The unique description with no unique functionality bothers me, therefore:
+
+- Cursed wound: critical hits with this weapon prevent any healing for 2 rounds
+- +5% critical hit chances with this weapon
+
+**Component 1596:** Make The Shadow Blade +3 not just unique in name and description, but in function
+
+The sword has the following benefits now:
+
+- +1 Backtab bonus (single-classed thieves only)
+- +2 THAC0 (single-classed thieves only, only while wielding on main hand)
+
+They're relegated to single classed thieves because they need it more, I want to promote specialization, and for balance, since multiclassed Thieves have other alternate means of increasing their THAC0 and general damage.
+
+**Component 1598:** Make Cutthroat +4 not just unique in name and description, but in function
+
+This weapon is not even a normal +4 weapon, since the speed factor is not 0 as it should. Therefore:
+
+- Speed Factor: 0
+- Critical hit chances: +10%
+- Critical hits causes bleeding: 1d6 piercing damage immediately, and again in the next 2 rounds
 
 </details>
 
@@ -794,6 +874,18 @@ This follows the theme of the description, which is an anti-wizard theme, and th
 - Magic damage resistance: 33% (from 20%)
 - Magic Resistance: 5%
 - Arrows force a Save vs. Spell at -2 or the target suffers 1d4+1 magic damage and get a 10% wizard casting failure for 4 rounds
+
+**Component 1344** Make Arrows of Biting apply poison faster and improve the misleading description
+
+The description states that 30% of the health of the target will be lost by the time the poison is done, but that's not actually true. Therefore, now it deals 30 points of poison damage over 30 seconds, similar to Bolts of Biting, but slower.
+
+**Component 1345:** Make Arrows of Fire cause fire damage always, same as Arrows of Ice
+
+This removes the save from the damage effect, therefore 1dx of fire damage will always be inflicted.
+
+**Component 1346:** Make Arrows of Piercing always cause at least half of the extra piercing damage
+
+This makes the arrows cause at least 3 extra piercing damage, when save succeeds. When the save is failed, they take 7 extra piercing damage.
 
 </details>
 
