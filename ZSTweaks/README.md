@@ -617,6 +617,14 @@ Another example of a highly enchanted weapon without any special property. I bas
 - Hits with this weapon reduce Fire Resistance by 25% (doesn't stack) for 2 rounds.
 - Special ability: **Witch's Wrath** once per day. It works as a Sunfire that causes 8d6+10 fire damage to all enemies around the caster, without affecting party members. The damage will be increased by 4d6+10 if the target is affected by Panic. The explosion itself will cause Horror and Slow for 3 rounds unless a Save vs. Spell at -2 is made.
 
+**Component 1599:** Make Psion's Blade more offensively powerful against Illithids
+
+I like the idea of the sword and it's a little too boring beyond the affect of the great +5 enchantment. Now:
+
+- Deals 1d10+5 damage, but against mind flayers, it deals 1d10+8 (as if it was a +8 weapon without being one)
+- THAC0 bonus: +5, but against mind flayers, it's +8
+- Mind flayers struck with this weapon must Save vs. Death at -3 or die instantly. You'll see a "Illithid destroyed" message in the log when it happens. However, this effect can only be attempted on the same mind flayer once per round.
+
 </details>
 
 ---
@@ -1004,9 +1012,9 @@ The rod is conceptually quite interesting, but generally underperforming.
 - **Flaming Long Sword +1** is renamed to Flaming Sword of Lordly Might +3, becomes a +3 weapon, causes 1d4 fire damage per hit, and the paralyze effect Save becomes +2 and not +5, but the Hold effect only lasts one round. Additionally, it makes it look like an actual flaming sword when held.
 - **Spear +3** is renamed to Spear of Lordly Might +3, and it no longer has a Save vs. Spell bonus of +6 to cause 2d4 magic damage, now it has no bonus or penalty and causes 3d4 magic damage when save is failed.
 
-**Component 1600:** Make CHARNAME's Tankard heal as much as a Potion of Extra Healing (Neera's quest)
+**Component 1600:** Make CHARNAME's Tankard a bit more useful (Neera's quest)
 
-This makes this item significantly more valuable. 3x potions of that sort per day.
+This makes this item significantly more valuable. 3x 27 HP healing per day, plus +1 Strength and Constitution for 1 turn, since it mentions feeling stronger when holding it.
 
 **Component 1601:** Make potions and food universally incapable of stacking with themselves
 

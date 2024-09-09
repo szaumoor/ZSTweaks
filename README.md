@@ -617,6 +617,14 @@ Another example of a highly enchanted weapon without any special property. I bas
 - Hits with this weapon reduce Fire Resistance by 25% (doesn't stack) for 2 rounds.
 - Special ability: **Witch's Wrath** once per day. It works as a Sunfire that causes 8d6+10 fire damage to all enemies around the caster, without affecting party members. The damage will be increased by 4d6+10 if the target is affected by Panic. The explosion itself will cause Horror and Slow for 3 rounds unless a Save vs. Spell at -2 is made.
 
+**Component 1599:** Make Psion's Blade more offensively powerful against Illithids
+
+I like the idea of the sword and it's a little too boring beyond the affect of the great +5 enchantment. Now:
+
+- Deals 1d10+5 damage, but against mind flayers, it deals 1d10+8 (as if it was a +8 weapon without being one)
+- THAC0 bonus: +5, but against mind flayers, it's +8
+- Mind flayers struck with this weapon must Save vs. Death at -3 or die instantly. You'll see a "Illithid destroyed" message in the log when it happens. However, this effect can only be attempted on the same mind flayer once per round.
+
 </details>
 
 ---
