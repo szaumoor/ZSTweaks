@@ -1072,7 +1072,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @53
 COPY ~ZSTWeaks/eff/wondrous_gloves~ ~override~
 
 COPY_EXISTING ~BRAC25.itm~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7610) END
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7610) END
     LPF ALTER_EFFECT INT_VAR match_opcode=54 parameter1=2 END
     LPF ALTER_EFFECT INT_VAR match_opcode=0 parameter1=2 END
     LPF DELETE_EFFECT INT_VAR match_opcode=42 multi_match=2 END
@@ -1083,6 +1083,17 @@ COPY_EXISTING ~BRAC25.itm~ ~override~
     SET skald = IDS_OF_SYMBOL(kit SKALD)
     SET usability_str = RESOLVE_STR_REF(@7621)
     LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%skald%,res=ZSTWWNDA;op=177,p1=%skald%,res=ZSTWWNDC;op=177,p1=%blade%,res=ZSTWWNDB;op=177,p1=%blade%,res=ZSTWWNDC;op=177,p1=%jester%,res=ZSTWWNDD;op=177,p1=%jester%,res=ZSTWWNDE;op=177,p1=%jester%,res=ZSTWWNDF;op=177,p1=%jester%,res=ZSTWWNDG;op=177,p1=%jester%,res=ZSTWWNDH;op=177,p1=%jester%,res=ZSTWWNDI;op=177,p1=%jester%,res=ZSTWWNDJ;op=177,p1=%jester%,res=ZSTWWNDK;op=319,p1=5,p2=5,pwr=1,spec=%usability_str%~ END
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1678 DESIGNATED 1678 GROUP @11 // Senses of the cat tweak
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~BOOT04.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7650) END
+    LPF ALTER_EFFECT INT_VAR match_opcode=0 parameter1 = 4 END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1=1 STR_VAR effects = ~op=0;op=36;op=176,p1=3~ END
 BUT_ONLY
 
 ////////////////////////////////////// DAGGER TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -2040,7 +2051,7 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @52
 
 COPY_EXISTING ~AROW05.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7600) END
-    LPF ALTER_EFFECT INT_VAR header_type = 2 match_opcode = 25 parameter1=0 parameter2=0 duration = 30 END
+    LPF ALTER_EFFECT INT_VAR header_type = 2 match_opcode = 25 parameter1=1 parameter2=0 duration = 30 END
     LPF ALTER_EFFECT INT_VAR match_opcode=142 duration=30 END
 BUT_ONLY
 

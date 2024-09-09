@@ -411,7 +411,7 @@ In my opinion, these gloves are very very mundane, and not wondrous. Therefore, 
 
 Cats forever!
 
-- It improves AC by 1 and adds +4 bonus against missiles (net vanilla benefit for missiles)
+- It improves AC by 1 and adds +4 bonus against missiles
 - +1 Saves vs. Breath
 - Movement rate increased by a factor of 3
 
@@ -878,6 +878,8 @@ This follows the theme of the description, which is an anti-wizard theme, and th
 **Component 1344** Make Arrows of Biting apply poison faster and improve the misleading description
 
 The description states that 30% of the health of the target will be lost by the time the poison is done, but that's not actually true. Therefore, now it deals 30 points of poison damage over 30 seconds, similar to Bolts of Biting, but slower.
+
+This will in turn make Hobgoblins and Sirenes in BGEE significantly more dangerous if they get the poison off on you, since -30 HP is a big deal. Keep the antidotes and healing ready. (My potion and healing spell overhaul helps wink wink)
 
 **Component 1345:** Make Arrows of Fire cause fire damage always, same as Arrows of Ice
 

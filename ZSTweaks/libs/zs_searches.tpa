@@ -116,11 +116,11 @@ BEGIN
     PATCH_IF num_abilities > 1 BEGIN
         SET bytes = 0x38
         SET header = 0
-        FOR ( h = 0; h < num_abilities; ++h ) BEGIN
+        FOR ( h = 1; h <= num_abilities; ++h ) BEGIN
             ability_offset += bytes * h
             SET t = BYTE_AT (ability_offset)
             PATCH_IF t = type BEGIN
-                ++header
+                header = h
             END
         END
         result = header
