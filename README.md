@@ -1004,9 +1004,9 @@ The rod is conceptually quite interesting, but generally underperforming.
 - **Flaming Long Sword +1** is renamed to Flaming Sword of Lordly Might +3, becomes a +3 weapon, causes 1d4 fire damage per hit, and the paralyze effect Save becomes +2 and not +5, but the Hold effect only lasts one round. Additionally, it makes it look like an actual flaming sword when held.
 - **Spear +3** is renamed to Spear of Lordly Might +3, and it no longer has a Save vs. Spell bonus of +6 to cause 2d4 magic damage, now it has no bonus or penalty and causes 3d4 magic damage when save is failed.
 
-**Component 1600:** Make CHARNAME's Tankard heal as much as a Potion of Extra Healing (Neera's quest)
+**Component 1600:** Make CHARNAME's Tankard a bit more useful (Neera's quest)
 
-This makes this item significantly more valuable. 3x potions of that sort per day.
+This makes this item significantly more valuable. 3x 27 HP healing per day, plus +1 Strength and Constitution for 1 turn, since it mentions feeling stronger when holding it.
 
 **Component 1601:** Make potions and food universally incapable of stacking with themselves
 

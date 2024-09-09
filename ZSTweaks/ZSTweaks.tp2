@@ -293,7 +293,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~WAND16.ITM~ BEGIN
 END
 
 // potion of healing (basic)
-COPY_EXISTING ~POTN01.ITM~ ~override~
+COPY_EXISTING ~POTN08.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7467) END
     LPF ALTER_EFFECT INT_VAR match_opcode=17 parameter1=12 END
 BUT_ONLY
@@ -1843,7 +1843,7 @@ BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1589 DESIGNATED 1589 GROUP @14 // RASHAD'S TALON TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY ~ZSTweaks/spl/other/ZSTWRASH.SPL~ ~override~
@@ -2268,6 +2268,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 COPY_EXISTING "ohntank.ITM" ~override~
     LPF ALTER_ITEM INT_VAR unid_ref_desc=RESOLVE_STR_REF(@6450) END
     LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=3 match_opcode=17 dicesize=0 dicenumber=0 parameter1=27 END
+    LPF ADD_ON_HIT_EFF INT_VAR t=3 p1=1 tgt=1 dur=60 tmg=0 STR_VAR effects=~op=10;op=44~ END
 BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
