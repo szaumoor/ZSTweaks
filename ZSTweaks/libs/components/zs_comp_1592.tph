@@ -1,0 +1,12 @@
+COPY_EXISTING "SW2H08.ITM" ~override~
+    PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1591") BEGIN
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6840) END
+    END ELSE BEGIN
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6850) END
+    END
+    PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1430") BEGIN
+        LPF ALTER_HEADER INT_VAR match_dicesize = 10 dicesize = 12 END
+    END ELSE BEGIN
+        LPF ALTER_HEADER INT_VAR match_dicesize = 9 match_damage = 5 dicesize = 6 dicenumber = 2 damage = 4 END
+    END
+BUT_ONLY

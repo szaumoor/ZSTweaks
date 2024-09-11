@@ -1,0 +1,8 @@
+INCLUDE ~ZSTweaks/libs/zs_correct_exot_anims.tph~
+COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    LPF ITM_PROF RET wpn_prof = result END
+    LPF ITM_APPEARANCE RET wpn_appearance = result END
+	PATCH_IF wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "ss" = 0 BEGIN // wakizashis
+        LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 damage_type = 7 END
+    END
+BUT_ONLY

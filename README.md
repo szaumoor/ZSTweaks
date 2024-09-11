@@ -166,6 +166,10 @@ Self-explanatory. There's no earthly reason your character can't put that potion
 
 Self-explanatory. It's quite a pain when it's something that is supposed to cut a poison's effect short, but it's almost guaranteed to be interrupted for the caster unless you're extremely precise with casting timing (and you're lucky). This does not fully prevent interruption, but it makes timing the cast far easier.
 
+**Component 1538:** Make jewelry and other items meant to be sold more valuable
+
+This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component allows increases of 25%, 50%, 75%, 100%, 125%, 150%, 175%, and 200% to these items.
+
 </details>
 
 ---
@@ -415,6 +419,18 @@ Cats forever!
 - +1 Saves vs. Breath
 - Movement rate increased by a factor of 3
 
+**Component 1679:** Make the Horn of Kazgaroth more useful and the self-damage more unique
+
+To me the duration of the effects is too short. Plus the "unknown" damage to user becomes "known" too easily. I slightly tweaked the description, by describing what Kazgaroth is, plus:
+
+- Now it lasts for 5 rounds
+- It can be used three times per day, instead of 30 times in total before it disappears
+- +2 AC, +4 more against Missiles
+- Immunity to level 1, 2, and 3 spells
+- +2 Saving throws (vanilla)
+- Physical resistance: +8% resistance
+- The Horn now has a 50% chance of causing a deleterious effect on the user: -10 Max Hit Points, -3 THAC0, -2 Damage, -2 Strength, -2 Constitution, -2 Dexterity, -1 Saving Throws, -4 Saves vs. Death, or -50% movement speed. This effect continues for 2 turns.
+
 
 </details>
 
@@ -619,11 +635,28 @@ Another example of a highly enchanted weapon without any special property. I bas
 
 **Component 1599:** Make Psion's Blade more offensively powerful against Illithids
 
-I like the idea of the sword and it's a little too boring beyond the affect of the great +5 enchantment. Now:
+I like the idea of the sword but it's a little too boring beyond the affect of the great +5 enchantment. Now:
 
 - Deals 1d10+5 damage, but against mind flayers, it deals 1d10+8 (as if it was a +8 weapon without being one)
 - THAC0 bonus: +5, but against mind flayers, it's +8
 - Mind flayers struck with this weapon must Save vs. Death at -3 or die instantly. You'll see a "Illithid destroyed" message in the log when it happens. However, this effect can only be attempted on the same mind flayer once per round.
+
+**Component 1602:** Make Dragon's Bane +3 better and act as a +6 weapon in every sense against dragons and wyverns
+
+This makes the weapon act in every way against dragons and wyverns as a +6 weapon (thac0, enchantment, and damage). Otherwise, it acts as a +3 normal halberd.
+
+**Component 1603:** Make Dragon's Breath +4 act damage-wise as a +4 weapon
+
+This weapon, similarly to The Equalizer, deals unenchanted level damage by default, and adds additive damage separately. For the purposes of multipliers, it's a fairly less powerful halberd compared to any other +4 halberd, despite the added multi-elemental +5 damage per hit. This makes the weapon damage truly 1d10+4, with the extra damage intact. If it's okay for the Flail of Ages +5, it is okay for this too.
+
+
+**Component 1604:** Make Duskblade +2 more imbued with the essence of necromancy
+
+This component enhances the weapon a bit, inspired by the description about how it got their powers because of the persistent presence of undeath:
+
+- Other than +2 cold damage, it has a chance to unleash extra 1d6 cold damage if hit target fails a Save vs. Death
+- Every hit has a 25% chance of decreasing Strength by 2 for 5 rounds. This can't kill the target. If Strength is less than 3, it drains -2 Constitution instead, which can kill the target (though it would be fairly difficult to pull it off considering the duration of 5 rounds).
+
 
 </details>
 
@@ -641,7 +674,7 @@ This makes this sword usable by non-monks of any alignment. Monks are not really
 
 This allows this sword to be usable in more cases. Since it's extremely powerful, no other changes are added.
 
-**Component 1127:** Make Peridan more powerful against dragons and less misleading in the description
+**Component 1127:** Make Peridan more powerful against dragons and wyverns and less misleading in the description
 
 The description of Peridan is slightly misleading because it states that it does "double damage to dragons". You may think that every time you do damage to a dragon with it, you deal the same damage again, or perhaps you think the damage value of every attack is always double of what it would be against other enemies (like a critical hit). Uhh, not quite.
 
@@ -653,6 +686,8 @@ In reality, the sword deals 1d8+2 against enemies, and 1d8+2 again in a second t
 - +2 AC and saving throws against Dragons (essentially like a "Protection from Dragons" spell)
 - Extra damage to dragons: every hit causes additionally 2d8+2 (bear in mind this is not affected by Strength or any other damage modifiers except any effect that increases slashing damage universally)
 - Detect Invisibility can be cast three times, not once per day
+
+Additionally, Peridan's extra THAC0 extra damage to dragons affects wyverns as well.
 
 **Component 1210:** Make The Equalizer slightly more powerful
 
@@ -850,6 +885,10 @@ The original hits in terms of extra damage and thac0 like an unenchanted weapon.
 This improves this item in the following ways:
 - Causes 2 poison damage per hit with no save allowed
 - If Save vs. Poison is failed, deals 5 poison damage over 5 seconds. There's a 4% chance that this poison will be as lethal as adult wyvern poison, becoming instead 25 poison damage over 5 seconds.
+
+**Component 1325:** Make Borok's Fist +2 different from Ashideena +2
+
+This exists simply because I hate that it's identical to Ashideena. So, inspired the description, it has a neat bonus against giant humanoids: on hit, they get Stunned for 1 round if they fail a Save vs. Spell at +2
 
 ---
 

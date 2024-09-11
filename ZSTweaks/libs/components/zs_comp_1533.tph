@@ -1,0 +1,4 @@
+COPY_EXISTING ~WAND03.ITM~ ~override~
+    LPF ALTER_HEADER INT_VAR match_type = 3 match_projectile=IDS_OF_SYMBOL(projectl Magic_Missile) projectile = 70 END
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7460) END
+BUT_ONLY

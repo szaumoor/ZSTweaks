@@ -1,0 +1,9 @@
+COPY_EXISTING ~SPWI604.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6950) END
+    LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 16 END
+BUT_ONLY
+ACTION_IF FILE_EXISTS_IN_GAME ~SPIN984.SPL~ BEGIN
+    COPY_EXISTING ~SPIN984.SPL~ ~override~ // beholder version
+        LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 16 END
+    BUT_ONLY
+END

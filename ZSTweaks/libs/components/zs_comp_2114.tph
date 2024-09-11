@@ -1,0 +1,4 @@
+COPY_EXISTING ~SPCL941.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7530) END
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_duration = 300 duration = 7200 END
+BUT_ONLY

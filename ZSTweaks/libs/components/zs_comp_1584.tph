@@ -1,0 +1,10 @@
+COPY_EXISTING "ohdsw03.itm" ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7510) END
+    LPF ALTER_EFFECT INT_VAR header_type=1 match_opcode=12 savingthrow = 0 END // remove mirror image bypass, likely bug
+    LPF ITM_LAST_HEADER_TYPE INT_VAR type=3 RET header = result END
+    LPF ADD_ITEM_HEADER INT_VAR copy_header = header + 1 END
+    LPF ALTER_HEADER INT_VAR match_type=3 header=2 primary=6 STR_VAR icon=~SPWI523B~ END
+    LPF ALTER_EFFECT INT_VAR header_type=3 header=2 match_opcode=146 parameter1=20 parameter2=0 duration=0 timing=0 power=5 STR_VAR resource=~SPWI523~ END
+    LPF ALTER_HEADER INT_VAR primary=6 range=1000 target=1 STR_VAR match_icon="SPWI304B" icon="SPWI712B" END
+    LPF ALTER_EFFECT INT_VAR header_type=3 header=1 match_opcode=146 parameter1=20 parameter2=0 duration=0 timing=0 power=7 STR_VAR resource=~SPWI712~ END
+BUT_ONLY

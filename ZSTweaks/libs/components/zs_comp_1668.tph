@@ -1,0 +1,7 @@
+COPY_EXISTING ~BRAC04.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7280) unusable0=0 END
+    LPF ALTER_EFFECT INT_VAR match_opcode=167 parameter1=3 END
+    LPF CLONE_EFFECT INT_VAR match_headers=0 match_opcode=167 opcode=286 parameter1=1 END
+    SET archer = IDS_OF_SYMBOL(kit FERALAN)
+    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=177,p2=9,p1=%archer%;op=177,p2=5,p1=205;op=177,p2=5,p1=206~ END
+BUT_ONLY

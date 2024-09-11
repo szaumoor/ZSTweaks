@@ -1,0 +1,8 @@
+COPY_EXISTING ~SPWI221.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5220) animation=9 primary_type=7 excl_flags=2**10
+    STR_VAR casting_sound=~CAS_M07~ END
+    LPF SPL_ABILITIES_NUM RET num_abilities=result END
+    FOR ( i = 1; i <= num_abilities; ++i ) BEGIN
+        LPF ALTER_SPELL_HEADER INT_VAR projectile = 50 END
+    END
+BUT_ONLY

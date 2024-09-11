@@ -1,0 +1,4 @@
+COPY_EXISTING "ohnrobe2.ITM" ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6530) END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1=5 STR_VAR effects=~op=332,p2=1;op=332,p2=2;op=332,p2=3;op=332,p2=4;op=346,p1=2,spec=6~ END
+BUT_ONLY

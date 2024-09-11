@@ -1,0 +1,10 @@
+COPY_EXISTING ~STAF11.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6400) END
+    LPF ITM_FIRST_EFF_OFFSET RET offset_eff = offset END
+    SET eff_number = SHORT_AT((LONG_AT 0x64) + 0x1e)
+    FOR ( eff = 0; eff < eff_number; ++eff ) BEGIN
+        WRITE_LONG (offset_eff + 0x24) 1 // save vs spell allowed
+        WRITE_LONG (offset_eff + 0x28) "-2" // at
+        offset_eff += 0x30
+    END
+BUT_ONLY

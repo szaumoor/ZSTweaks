@@ -1,0 +1,6 @@
+COPY_EXISTING ~WAFLAIL.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6130) END
+    FOR ( opcode = 86; opcode <= 88; ++opcode ) BEGIN
+        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = opcode parameter1 = 10 END
+    END
+BUT_ONLY

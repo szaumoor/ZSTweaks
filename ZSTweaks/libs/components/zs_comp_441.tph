@@ -1,0 +1,5 @@
+COPY_EXISTING ~SPWI603.SPL~ ~override~
+    LPF LAST_VALID_HEADER RET h = result END
+    LPF ADD_SPELL_HEADER INT_VAR copy_header = h -1 zs_min_level_for_copy = 21 insert_point=h+1 END
+    LPF ALTER_EFFECT INT_VAR header=h+1 match_opcode=54 parameter2=1 parameter1 = 0 END
+BUT_ONLY

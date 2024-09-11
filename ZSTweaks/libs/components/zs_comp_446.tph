@@ -1,0 +1,59 @@
+COPY_EXISTING ~SPWI304.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7520) END
+    LPF LAST_VALID_HEADER RET new_header = result END
+    SET next_level = 11
+    SET dmg = 1
+    FOR ( header = new_header; header < new_header + 10; ++header ) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = header + 1 zs_min_level_for_copy=next_level insert_point=header+1 END
+        LPF ALTER_EFFECT INT_VAR header = header + 1 match_opcode=12 parameter1= dmg END
+        ++next_level
+        ++dmg
+    END
+BUT_ONLY
+
+COPY_EXISTING ~SPWI523.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7521) END
+BUT_ONLY
+
+COPY_EXISTING ~SPWI523D.SPL~ ~override~
+    LPF LAST_VALID_HEADER RET last_header = result END
+    SET dmg = 1
+    FOR ( header = 2; header <= last_header; ++header ) BEGIN
+        LPF ALTER_EFFECT INT_VAR header = header match_opcode=12 parameter1= dmg END
+        ++dmg
+    END
+    dmg = 7
+    SET next_level = 16
+    FOR ( header = last_header; header < last_header + 5; ++header ) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = header + 1 zs_min_level_for_copy= next_level insert_point=header+1 END
+        LPF ALTER_EFFECT INT_VAR header = header+1 match_opcode=12 parameter1= dmg END
+        ++next_level
+        dmg += 2
+    END
+BUT_ONLY
+
+COPY_EXISTING ~DFIREBL.PRO~ ~override~
+    LPF ALTER_PROJECTILE INT_VAR explosion_size = 256 END
+BUT_ONLY
+
+COPY_EXISTING ~SPWI712.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7522) END
+    LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 dicenumber = 13 END
+    LPF LAST_VALID_HEADER RET last_header = result END
+    SET dmg = 2
+    SET next_level = 14
+    FOR ( header = last_header; header < last_header + 5; ++header ) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = header + 1 zs_min_level_for_copy= next_level insert_point=header+1 END
+        LPF ALTER_EFFECT INT_VAR header = header+1 match_opcode=12 dicenumber=next_level parameter1= dmg END
+        dmg += 2
+        ++next_level
+    END
+    LPF LAST_VALID_HEADER RET last_header = result END
+    dmg = 15
+    FOR ( header = last_header; header < last_header + 2; ++header ) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = header + 1 zs_min_level_for_copy= next_level insert_point=header+1 END
+        LPF ALTER_EFFECT INT_VAR header = header+1 match_opcode=12 parameter1= dmg END
+        dmg += 5
+        ++next_level
+    END
+BUT_ONLY

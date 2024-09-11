@@ -1,0 +1,13 @@
+COPY_EXISTING ~SPPR413.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5080) END
+    SET headers = 0
+    FOR ( i = 9; i <= 19; i += 2 ) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = i insert_point=headers+1 END
+        ++headers
+    END
+    SET dur = 36
+    FOR ( i = 1; i <= headers; ++i ) BEGIN
+        LPF ALTER_EFFECT INT_VAR header = i match_duration = 30 duration = dur END
+        dur += 6
+    END
+BUT_ONLY

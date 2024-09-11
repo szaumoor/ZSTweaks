@@ -1,0 +1,44 @@
+COPY_EXISTING ~HELM20.ITM~ ~override~ // pale green ioun
+    LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+    PATCH_IF crit_flag = 1 BEGIN
+        LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+    END
+BUT_ONLY
+ACTION_IF FILE_EXISTS_IN_GAME ~HELM24.ITM~ BEGIN // obsidian ioun
+    COPY_EXISTING ~HELM24.ITM~ ~override~
+        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+        PATCH_IF crit_flag = 1 BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+        END
+    BUT_ONLY
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~AMSOUL01.ITM~ BEGIN // malla's stone
+    COPY_EXISTING ~AMSOUL01.ITM~ ~override~
+        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+        PATCH_IF crit_flag = 1 BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+        END
+    BUT_ONLY
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~HELM34.ITM~ BEGIN // wong fei ioun
+    COPY_EXISTING ~HELM34.ITM~ ~override~
+        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+        PATCH_IF crit_flag = 1 BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+        END
+    BUT_ONLY
+END
+COPY_EXISTING ~bdhelm16.ITM~ ~override~ // circlet of lost souls
+    LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+    PATCH_IF crit_flag = 1 BEGIN
+        LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+    END
+BUT_ONLY
+ACTION_IF FILE_EXISTS_IN_GAME ~ohrhelm1.ITM~ BEGIN // headband of the devout
+    COPY_EXISTING ~ohrhelm1.ITM~ ~override~
+        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+        PATCH_IF crit_flag = 1 BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+        END
+    BUT_ONLY
+END

@@ -1,0 +1,5 @@
+COPY_EXISTING ~SPPR350.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6990) END
+    LPF ALTER_HEADER INT_VAR match_speed = 9 speed = 6 END
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=3 STR_VAR effects = ~op=164;op=4;op=240,p2=5;op=240,p2=4~ END
+BUT_ONLY

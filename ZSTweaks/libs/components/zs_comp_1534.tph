@@ -1,0 +1,66 @@
+//icedust potion
+ACTION_IF FILE_EXISTS_IN_GAME ~WAND16.ITM~ BEGIN
+    COPY_EXISTING ~WAND16.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7461) END
+    BUT_ONLY
+    COPY_EXISTING ~SPIN713.SPL~ ~override~
+        LPF ALTER_HEADER INT_VAR match_type = 2 projectile = 160 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 30 duration = 18 parameter1=75 parameter2=0 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 141 parameter2 = 29 END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 61 END
+        LPF RGB INT_VAR red = 50 green = 181 blue = 199 RET color = result END
+        SET fade_speed = ( 25 << 16 )
+        LPF ADD_SPL_TGTEFF INT_VAR pwr=4 STR_VAR effects=~op=142,p2=16,t=2,dur=18;op=61,p1=%color%,p2=%fade_speed%,tmg=1,rd=1~ END
+    BUT_ONLY
+END
+
+// potion of healing (basic)
+COPY_EXISTING ~POTN08.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7467) END
+    LPF ALTER_EFFECT INT_VAR match_opcode=17 parameter1=12 END
+BUT_ONLY
+
+// potion of heroism
+COPY_EXISTING ~POTN09.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7462) unusable0=0 END
+    LPF ADD_ON_HIT_EFF INT_VAR dur=600 rd=1 pwr=4 STR_VAR effects=~t=3,tgt=1,op=23,spec=1~ END
+BUT_ONLY
+
+// potion of invunerability
+COPY_EXISTING ~POTN11.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7463) unusable0=0 END
+    LPF ADD_ON_HIT_EFF INT_VAR dur=300 rd=1 pwr=4 STR_VAR effects=~t=3,tgt=1,op=166,p1=10~ END
+BUT_ONLY
+
+// elixir of health
+COPY_EXISTING ~POTN17.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7464) END
+    LPF ALTER_EFFECT INT_VAR match_opcode=17 parameter1=20 END
+    LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 dur=10 rd=0 pwr=4 STR_VAR effects=~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=169,p2=146;op=101,p2=78;op=101,p2=25~ END
+BUT_ONLY
+
+// potion of perception
+COPY_EXISTING ~POTN39.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7465) END
+    LPF ALTER_EFFECT INT_VAR match_opcode=91 parameter1=40 END
+    LPF CLONE_EFFECT INT_VAR match_opcode=91 opcode=276 parameter=40 END
+    LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 p1=2 dur=1800 rd=1 pwr=4 STR_VAR effects=~op=0;op=325;op=278~ END
+BUT_ONLY
+
+//potion of power
+COPY_EXISTING ~POTN41.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7466) END
+    LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 277 END
+    LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 276 END
+    LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 59 END
+    LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 332 parameter1=10 parameter2=0 END
+    LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 dur=240 pwr=4 STR_VAR effects=~op=23,spec=1;op=263,p1=1;op=332,p1=10;op=189,p1=1~ END
+BUT_ONLY
+
+COPY_EXISTING_REGEXP "POTN0[3-7]\.ITM" ~override~
+    LPF ALTER_ITEM INT_VAR unusable0=0 END
+BUT_ONLY
+
+COPY_EXISTING "POTN12.ITM" ~override~
+    LPF ALTER_ITEM INT_VAR unusable0=0 END
+BUT_ONLY

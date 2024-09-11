@@ -1,0 +1,6 @@
+COPY_EXISTING ~SPWI409.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5240) END
+    LPF DELETE_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 9 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 4 parameter1 = 4 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 5 parameter1 = 4 END
+BUT_ONLY

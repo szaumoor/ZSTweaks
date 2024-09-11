@@ -1,0 +1,21 @@
+COPY_EXISTING_REGEXP ~.*\.itm~ ~override~
+    LPF ITM_CAT RET itm_cat = result END
+    LPF IS_FLAG_SET INT_VAR flag=0 RET flag_set = result END // critical item
+    PATCH_IF itm_cat = 34 AND flag_set = 0 BEGIN
+        LPF ITM_PRICE RET p = result END
+        PATCH_IF p > 0 BEGIN
+            LPF ALTER_ITEM INT_VAR price = p * 2 + (p / 2) END
+        END
+    END ELSE BEGIN
+        PATCH_IF (itm_cat = 1 OR itm_cat = 10) AND flag_set = 0 BEGIN
+            LPF SPL_GLOBALS_NUM RET globals = result END
+            LPF SPL_ABILITIES_NUM RET abilities = result END
+            PATCH_IF globals = 0 AND abilities = 0 BEGIN // sellable rings and necklaces without effects
+                LPF ITM_PRICE RET p = result END
+                PATCH_IF p > 0 BEGIN
+                    LPF ALTER_ITEM INT_VAR price = p * 2 + (p / 2) END
+                END
+            END
+        END
+    END
+BUT_ONLY

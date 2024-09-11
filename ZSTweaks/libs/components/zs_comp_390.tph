@@ -1,0 +1,4 @@
+COPY_EXISTING ~SPWI614.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5230) END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 8 dicenumber = 1 parameter1 = 8 END
+BUT_ONLY

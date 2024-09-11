@@ -1,0 +1,10 @@
+COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    LPF ITM_CAT RET wpn_cat = result END
+    LPF ITM_PROF RET wpn_prof = result END
+	PATCH_IF wpn_cat == 20 AND wpn_prof == 89 BEGIN // bastard swords
+        LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=4 match_dicenumber=2 dicenumber=1 dicesize=8 END
+        FOR ( current_dmg = 6; current_dmg >= 0; --current_dmg ) BEGIN
+            LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 match_damage = current_dmg damage = current_dmg + 1 END
+        END
+    END
+BUT_ONLY

@@ -1,0 +1,3 @@
+COPY_EXISTING "LEAT24.ITM" ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 126 opcode = 176 END
+BUT_ONLY

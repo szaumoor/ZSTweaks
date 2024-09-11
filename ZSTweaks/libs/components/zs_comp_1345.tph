@@ -1,0 +1,13 @@
+ACTION_IF GAME_IS "iwdee" BEGIN
+    OUTER_SET string = RESOLVE_STR_REF(@7622)
+END ELSE BEGIN
+    ACTION_IF GAME_IS "bgee" BEGIN
+        OUTER_SET string = RESOLVE_STR_REF(@7621)
+    END ELSE BEGIN
+        OUTER_SET string = RESOLVE_STR_REF(@7620)
+    END
+END
+COPY_EXISTING ~AROW08.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=string END
+    LPF ALTER_EFFECT INT_VAR header_type = 2 match_opcode = 12 savingthrow = 0 END
+BUT_ONLY

@@ -1,0 +1,10 @@
+ACTION_IF FILE_EXISTS_IN_GAME ~bddagg01.itm~ BEGIN
+    COPY_EXISTING ~bddagg01.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6930) END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 2 END
+        LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=27;op=28;op=29;op=30~ END
+    BUT_ONLY
+    COPY_EXISTING_REGEXP ~bddagg1[A-D]\.EFF~ ~override~
+        LPF ALTER_EFF_FILE INT_VAR dicenumber = 2 END
+    BUT_ONLY
+END

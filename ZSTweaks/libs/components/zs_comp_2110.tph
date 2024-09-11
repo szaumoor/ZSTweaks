@@ -1,0 +1,3 @@
+COPY_EXISTING "SPCL239a.eff" ~override~
+    LPF ALTER_ITEM INT_VAR parameter1=0 dicesize=6 dicenumber=3 END
+BUT_ONLY

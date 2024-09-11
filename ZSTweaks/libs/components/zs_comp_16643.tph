@@ -1,0 +1,15 @@
+COPY_EXISTING ~HELM18.itm~ ~override~ // CHECK THAT THIS WORKS FOR BGEE TOO
+    LPF ITM_REF_UNAME RET ioun_strref = result END
+BUT_ONLY
+COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    LPF ITM_CAT RET cat = result END
+    LPF ITM_REF_UNAME RET strref = result END
+    LPF ITM_APPEARANCE RET appearance = result END
+    PATCH_IF cat=7 AND "%appearance%" STRING_COMPARE_CASE "JB" = 0 BEGIN
+        LPF ITM_FLAGS RET flags = result END
+        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+        PATCH_IF crit_flag = 1 BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+        END
+    END
+BUT_ONLY

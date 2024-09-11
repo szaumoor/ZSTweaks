@@ -33,7 +33,7 @@
 @1150 = "Make Spears do a baseline damage of 1d8, not 1d6"
 @1160 = "Make Warhammers do a baseline damage 1d5+1, not 1d4+1 (except hammers outside that range)"
 @1350 = "Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8"
-@1351 = "Make Wakizashis a piercing/slashing weapon"
+@1352 = "Make Wakizashis a piercing/slashing weapon"
 @1360 = "Make Light Crossbows get +1/2 more APR"
 @1370 = "Make Katanas deal 2d5 instead of 1d10"
 @1400 = "Make Bastard Swords deal 1d8+1 by default"
@@ -49,6 +49,15 @@
 @1535 = ~Make all potions usable by all classes~
 @1536 = ~Make vanilla familiars more resilient and useful and diminish penalties~
 @1537 = ~Make Poison-curing spells an instant cast so attempting to cure poison is less likely to be interrupted~
+@1538 = ~Make jewelry and other items meant to be sold more valuable~
+@15380 = ~1.25x~
+@15381 = ~1.5x~
+@15382 = ~1.75x~
+@15383 = ~2x~
+@15384 = ~2.25x~
+@15385 = ~2.5x~
+@15386 = ~2.75x~
+@15387 = ~3x~
 //@1535 = ~Rebalance scrolls such that the spellcasting level is always at least double its (wizard) spell level~
 
 
@@ -93,6 +102,7 @@
 @1676 = ~Make Skull of Death allows casting Finger of Death, and protect against Necromantic instant-death effects~
 @1677 = ~Make Wondrous Gloves Wondrous~
 @1678 = ~Make Senses of the Cat imbue the user of more cat-like features~
+@1679 = ~Make the Horn of Kazgaroth more useful and the self-damage more unique~
 
 // subcomponent str of component @1664
 @16640 = ~Affect all~
@@ -137,11 +147,14 @@
 @1595 = ~Make Halcyon +1 a bit more powerful~
 @1597 = ~Make Staff of Rhynn not just unique in name and description, but in function~
 @1599 = ~Make Psion's Blade more offensively powerful against Illithids~
+@1602 = ~Make Dragon's Bane +3 better and act as a +6 weapon in every sense against dragons and wyverns~
+@1603 = ~Make Dragon's Breath +4 act damage-wise as a +4 weapon~
+@1604 = ~Make Duskblade +2 more imbued with the essence of necromancy~
 
 /// ONE-HANDED SWORDS
 @1125 = "Make Ninjato of the Scarlet Brothehood +3 available for other classes and alignments"
 @1126 = ~Make Blackrazor able to hit targets immune to +3~
-@1127 = ~Make Peridan more powerful against dragons and less misleading in the description~
+@1127 = ~Make Peridan more powerful against dragons and wyverns and less misleading in the description~
 @1210 = "Make The Equalizer slightly more powerful"
 @1220 = "Make Ras slightly better and the Dancing Blade last for 1 turn, instead of 4 rounds"
 @1230 = "Make Short Sword of Mask +5 slightly more powerful"
@@ -167,7 +180,7 @@
 @1596 = ~Make The Shadow Blade +3 not just unique in name and description, but in function~
 @1598 = ~Make Cutthroat +4 not just unique in name and description, but in function~
 
-// AXES AND BLUNT WEAPONS
+// AXES AND ONE-HANDED BLUNT WEAPONS
 @1310 = "Make Defender of Eastheaven damage reduction a little more moderate"
 @1311 = "Make Krotan's Skullcrusher +2 slightly less generic"
 @1312 = "Make Skullcrusher +3 slightly more crushy"
@@ -177,6 +190,7 @@
 @1321 = "Make Bone Club +2, +3 against undead's effect reflect the description better and improve it slightly"
 @1323 = ~Make Azuredge act properly as a +3 weapon~
 @1324 = ~Make Wyvern's Tail +2 cause poison damage on hit and have a chance of poisoning~
+@1325 = ~Make Borok's Fist +2 different from Ashideena +2~
 
 // RANGED WEAPONS
 @1010 = ~Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost~
@@ -2390,7 +2404,7 @@ Charge abilities:
   Area of Effect: 5-ft. radius
 
 THAC0: +4
-Damage: 1d10+4 (piercing)
+Damage: 1d10+4 (piercing or slashing)
 Speed Factor: 5
 Proficiency Type: Halberd
 Type: Two-handed
@@ -3047,8 +3061,8 @@ Equipped abilities:
 Charge abilities:
 – Detect Invisibility three times per day
 
-THAC0: +2, +6 against dragons
-Damage: 1d8+2, plus 2d8+2 against dragons
+THAC0: +2, +6 against dragons and wyverns
+Damage: 1d8+2, plus 2d8+2 against dragons and wyverns
 Damage type: Slashing
 Speed Factor: 3
 Proficiency Type: Long Sword
@@ -4620,4 +4634,102 @@ Weight: 9~
 
 @7691 = ~Illithid destroyed~
 
+@7700 = ~This was the weapon of Thorvin Dukal, one of seven self-proclaimed Dragonslayers who spent years railing against what they called "an insidious dragon infestation that threatened Faerûn." Thorvin had this weapon enchanted at great expense and used it on many occasions, though of dragons only a single white has fallen to it. The Dragonslayers met their match in a cantankerous ancient red who slew the entire group in an epic battle. This weapon did not end up in the beast's hoard, however, as the creature returned to its lair to recuperate and when it emerged, the field of combat was well scavenged.
 
+STATISTICS:
+
+Combat abilities:
+– Acts as a +6 weapon against dragons and wyverns
+
+THAC0: +3, +6 vs. dragons and wyverns
+Damage: 1d10+3, +6 vs. dragons and wyverns
+Damage type: Piercing/Slashing
+Speed Factor: 6
+Proficiency Type: Halberd
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 12~
+
+@7710 = ~Trying to profit from the strength of greater beings, many years ago the mage Ullion founded a dragon-worshipping cult under the moniker "Son of Drago." Attracting followers with promises of conquest, he sought to secure his authority by enchanting this symbolic weapon for his bodyguard, Jaramor Bold. When the Dragon's Breath strikes an opponent, it releases the harsh flames of a red dragon, the poisonous vapor of the green dragon, the blue dragon's lightning bolt, a spray of a black dragon's acid, and the white dragon's penetrating cold. Unfortunately, Ullion was the first to feel its effects, slain by the ambitious Jaramor, who sought to rule. There was no real power to be had without the mage, so the entire organization soon collapsed on itself.
+
+STATISTICS:
+
+THAC0: +4
+Damage: 1d10+4, +1 cold, fire, electrical, acid damage, and poison damage
+Damage type: Piercing
+Speed Factor: 5
+Proficiency Type: Halberd
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 12~
+
+@7720 = ~Though once a simple halberd, this weapon spent many hundreds of years in a tomb next to the soul phylactery of a powerful lich. The creature was eventually erased from existence, purportedly by another of its kind, but such close proximity to that concentrated evil has imbued this blade with the very essence of night and the chill of darkness, energy that becomes deadly in combat. It is a foul weapon, and a warrior should use it with caution.
+
+STATISTICS:
+
+Combat abilities:
+– Like the deathly touch of shadows, every hit has a 25% chance of reducing the target's Strength by 2 for 5 rounds. If the target is already at a Strength of 2, the attack drains Constitution instead. The target may not die from this effect.
+– If the target fails to save vs. Death, the essence of undeath in this weapon unleashes extra +1d6 cold damage.
+
+THAC0: +2
+Damage: 1d10+2, +2 cold damage
+Damage type: Piercing
+Speed Factor: 7
+Proficiency Type: Halberd
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 12~
+
+@7721 = ~Strength drained by Duskblade~
+@7722 = ~Constitution drained by Duskblade~
+
+@7730 = ~Borok Thundercracker was a dwarven hero that led several campaigns against giants and other "tall vermin" that had plagued his people in a number of their communities. This hammer was his blessed weapon, which his elven allies called his "little iron fist," though not to his face.
+
+STATISTICS:
+
+Combat abilities:
+– Giant humanoids must save vs. Spell at +2 or become stunned for 1 round
+
+THAC0: +2
+Damage: 1d4+3, +1d2 electrical damage
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: War Hammer
+Type: One-handed
+Requires:
+ 9 Strength
+
+Weight: 5~
+
+@7740 = ~Kazgaroth was an aspect of Bhaal who was a powerful, intelligent, shapeshifting evil beast opposed to the balance and the influence of the Earthmother on the Moonshae Isles. This horn is thought to be made from one its tusks. When blown upon, no sound issues from the horn. Instead, the user of the horn is encased in a globe of power for a short duration. The bubble greatly increases the user's magical defenses and saving throws, as well as partially deflecting incoming physical attacks. The horn draws from the life force of the user every time it is used.
+
+STATISTICS:
+
+Charge abilities:
+Three times per day, blow the horn to activate the powers:
+  – Immunity to 1st, 2nd, and 3rd-level spells
+  – Armor Class: +2 AC, +6 vs. missile attacks
+  – Saving Throws: +2
+  – Magic Resistance: +10%
+  – Physical Resistance: +8%
+  – Duration: 5 rounds
+  – Kazgaroth's Offering: the user has a 50% chance of suffering a random penalty for 2 turns after use.
+
+Weight: 1~
+
+@7741 = ~Kazgaroth's Offering: -10 Max Hit Points~
+@7742 = ~Kazgaroth's Offering: -3 THAC0~
+@7743 = ~Kazgaroth's Offering: -2 Damage~
+@7744 = ~Kazgaroth's Offering: -2 Strength~
+@7745 = ~Kazgaroth's Offering: -2 Constitution~
+@7746 = ~Kazgaroth's Offering: -2 Dexterity~
+@7747 = ~Kazgaroth's Offering: -1 Saving Throws~
+@7748 = ~Kazgaroth's Offering: +2 Casting Speed~
+@7749 = ~Kazgaroth's Offering: -4 Saves vs. Death~
+@7750 = ~Kazgaroth's Offering: -50% movement speed~

@@ -1,0 +1,6 @@
+COPY_EXISTING_REGEXP ".*\.ITM" ~override~
+    LPF ITM_CAT RET cat = result END
+    PATCH_IF cat = 9 BEGIN
+        LPF ALTER_ITEM INT_VAR unusable0=0 END
+    END
+BUT_ONLY

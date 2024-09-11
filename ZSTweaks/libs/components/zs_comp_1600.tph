@@ -1,0 +1,5 @@
+COPY_EXISTING "ohntank.ITM" ~override~
+    LPF ALTER_ITEM INT_VAR unid_ref_desc=RESOLVE_STR_REF(@6450) END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=3 match_opcode=17 dicesize=0 dicenumber=0 parameter1=27 END
+    LPF ADD_ON_HIT_EFF INT_VAR t=3 p1=1 tgt=1 dur=60 tmg=0 STR_VAR effects=~op=10;op=44~ END
+BUT_ONLY

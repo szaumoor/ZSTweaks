@@ -1,0 +1,4 @@
+COPY_EXISTING "SPER10.ITM" ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7130) END
+    LPF ADD_ON_HIT_EFF INT_VAR rd=2 dur=6 sbonus="-2" stype=4 STR_VAR effects = ~op=25,p1=2,p2=2;op=142,p2=6~ END
+BUT_ONLY
