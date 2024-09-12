@@ -5,4 +5,6 @@ ACTION_IF FILE_EXISTS_IN_GAME ~bdsw2h03.itm~ BEGIN
     COPY_EXISTING ~bdsw2h03.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 match_dicesize = 4 match_parameter1 = 0 dicesize = 5 parameter1 = 2 END
     BUT_ONLY
+END ELSE BEGIN
+    WARN "bdsw2h03.itm not found in game"
 END
