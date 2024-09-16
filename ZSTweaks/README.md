@@ -2,6 +2,8 @@
 
 This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game. The vast majority of the tweaks are designed to be simple improvements of underpowered items or abilities. Some of them overhaul the game a bit more extensively, though not radically.
 
+Every group of components, except those that have only a few items, have as the first component the option to install all components in the group, except those that require user input.
+
 ---
 <details>
 
@@ -170,6 +172,14 @@ Self-explanatory. It's quite a pain when it's something that is supposed to cut 
 
 This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component allows increases of 25%, 50%, 75%, 100%, 125%, 150%, 175%, and 200% to these items.
 
+**Component 1601:** Make potions and food universally incapable of stacking with themselves
+
+This prevents cheeesy stacking of things like Fire Resistance, Saving Throws (Potion of Invulnerability), etc. Applies to food items such as apples from Lunia, and goodberries.
+
+**Component 1650:** Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak
+
+Purely cosmetic tweak. I've never liked the look of robes without cloaks or without hoods.
+
 </details>
 
 ---
@@ -236,7 +246,7 @@ I do not like that most robes, except the most powerful ones are largely unremar
 - **Archmage Robes**
   - AC set to 5 (vanilla), and it improves AC by 1 (new)
   - Magic resistance improved by 10%, not 5%
-  - Magic damage resistance improved by 25%
+  - Magic damage resistance: +25%
   - Casting speed improved by 1
   - Saving throws bonus against Spell at +2, +1 for the rest
 
@@ -267,9 +277,6 @@ Additionally, in the same theme of chaos related to wild magic, while wearing th
 
 To promote specialization, this also restricts the circlet to Wild Mages.
 
-**Component 1650:** Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak
-
-Purely cosmetic tweak. I've never liked the look of robes without cloaks or without hoods.
 
 **Component 1651:** Make Studded Leather of Thorns add some piercing damage too
 
@@ -521,9 +528,11 @@ This copies the design of SoD's special throwing dagger such that you can use va
 
 <summary><b>Two-handed Melee Weapons Tweaks</b></summary>
 
-**Component 1200:** Make Ixil's Spike allow Haste and Improved Haste
+**Component 1200:** Make Ixil's Spike allow Haste and Improved Haste and improve it slightly
 
-I think everyone agrees that this type of restriction (Free Action) makes the weapon in question immediately less appealing.
+I think everyone agrees that this type of restriction (Free Action) makes the weapon in question immediately less appealing. It will not reset your character's movement speed either. A side effect of this component is that the Free Action spell no longer sets movement speed to the baseline. The description was adjusted to reflect that.
+
+Additionally, the damage when pinned is now 1d8+6 rather than 1d6+5.
 
 **Component 1201:** Make Lilarcor +3 have a chance of causing confusion on hit
 
@@ -723,7 +732,7 @@ This makes the dispel magic effect equal to those in the Staff of the Magi and C
 
 The effect is pretty underwhelming for a +4 weapon. Since it's advertised as a defender weapon, the following is added:
 
-AC bonus improved to 3 (instead of 1) plus 1 against slashing, piercing, and missile weapons. 5% universal damage resistance & magic resistance.
+AC bonus improved to 2 (instead of 1) plus 1 against slashing, piercing, and missile weapons. 5% universal damage resistance & magic resistance.
 
 **Component 1260:** Make Usuno's Blade slightly more electrically powerful
 
@@ -868,9 +877,9 @@ This component makes the "pain" that the description talks about manifest as a n
 
 This makes the mace +3 for consistency with the power level of other WA-weapons. It also improves the damage and thac0 bonuses against fiends by 1.
 
-**Component 1320:** Make Flail of Ages +5 allow Haste and Improved Haste
+**Component 1320:** Make Flail of Ages +5 allow Haste and Improved Haste and improve it slightly
 
-I think everyone agrees that this type of restriction (Free Action) makes the weapons immediately less appealing.
+I think everyone agrees that this type of restriction (Free Action) makes the weapons immediately less appealing. It will not reset your character's movement speed either. A side effect of this component is that the Free Action spell no longer sets movement speed to the baseline. The description was adjusted to reflect that.
 
 **Component 1321:** Make Bone Club +2, +3 against undead's effect reflect the description better and improve it slightly
 
@@ -884,7 +893,7 @@ The original hits in terms of extra damage and thac0 like an unenchanted weapon.
 
 This improves this item in the following ways:
 - Causes 2 poison damage per hit with no save allowed
-- If Save vs. Poison is failed, deals 5 poison damage over 5 seconds. There's a 4% chance that this poison will be as lethal as adult wyvern poison, becoming instead 25 poison damage over 5 seconds.
+- If Save vs. Poison is failed, deals 5 poison damage over 5 seconds. There's a 4% chance that this poison will be as lethal as that of an adult wyvern, becoming instead 25 poison damage over 5 seconds.
 
 **Component 1325:** Make Borok's Fist +2 different from Ashideena +2
 
@@ -930,11 +939,11 @@ This will in turn make Hobgoblins and Sirenes in BGEE significantly more dangero
 
 **Component 1345:** Make Arrows of Fire cause fire damage always, same as Arrows of Ice
 
-This removes the save from the damage effect, therefore 1dx of fire damage will always be inflicted.
+This removes the save from the damage effect, therefore 1dx fire damage will always be inflicted.
 
 **Component 1346:** Make Arrows of Piercing always cause at least half of the extra piercing damage
 
-This makes the arrows cause at least 3 extra piercing damage, when save succeeds. When the save is failed, they take 7 extra piercing damage.
+This makes the arrows cause at least 3 extra piercing damage, when save succeeds. When the save is failed, the extra piercing damage is instead 7. This should make these expensive arrows feel like less of a waste when used, especially against targets with good saves.
 
 </details>
 
@@ -982,8 +991,7 @@ This component also applies automatically the changes to this item in **Componen
 
 **Component 1520:** Make Hallowed Redeemer able to hit enemies immune to +2 weapons
 
-This extends the usability of the weapon, despite the lower damage, if the constant shield the weapon grants is desired.
-This component also applies automatically the changes to this item in **Component 1644**
+This extends the usability of the weapon, despite the lower damage, if the constant shield the weapon grants is desired. This component also applies automatically the changes to this item in **Component 1644**
 
 **Component 1640:** Make Abyssal Blades more powerful (Dorn's Quest)
 
@@ -997,7 +1005,7 @@ This makes these skills generate more items. Jan Jansen will create 10 Bruiser M
 
 **Component 1642:** Make Nalia's ring slightly more powerful
 
-Equipped items that you cannot removed in any way are quite, quite inconvenient, since they prevent your character from being upgraded in the ways you desire. This component changes this ring so it seems less inconvenient to have it on at all times for Nalia. Specifically, other than improving AC and saving throws by 2, and granting 50% fire resistance, it also adds:
+Equipped items that you cannot remove from NPCs are quite inconvenient, since they prevent your character from being upgraded in the ways you desire. This component changes this ring so it seems less inconvenient to have it on at all times for Nalia. Specifically, other than improving AC and saving throws by 2, and granting 50% fire resistance, it also adds:
 
 - +20% to Pick Locks and Find Traps (this makes her more competent at these tasks, similar to Imoen)
 - 1 extra spell slot from level 1 to 5
@@ -1054,10 +1062,6 @@ The rod is conceptually quite interesting, but generally underperforming.
 **Component 1600:** Make CHARNAME's Tankard a bit more useful (Neera's quest)
 
 This makes this item significantly more valuable. 3x 27 HP healing per day, plus +1 Strength and Constitution for 1 turn, since it mentions feeling stronger when holding it.
-
-**Component 1601:** Make potions and food universally incapable of stacking with themselves
-
-This prevents cheeesy stacking of things like Fire Resistance, Saving Throws (Potion of Invulnerability), etc. Applies to food items such as apples from Lunia, and goodberries.
 
 </details>
 
@@ -1458,13 +1462,13 @@ Additionally, it allows a certain Blackguard in SoD to perform backstabs if the 
 
 **Component 2210:** Light proficiency overhaul
 
-This tiny overhaul simply addresses something that has bothered me forever about proficiency progression: no benefit other than lack of penalty with one proficiency point, and a weird jump in THAC0 from 2 proficiency points to 3. Therefore:
+This tiny overhaul addresses primarily something that has bothered me forever about proficiency progression, which is the weird jump in THAC0 from 2 proficiency points to 3. Therefore:
 
-- 1 proficiency point: +1 THAC0 and Damage
-- 2 proficiency points: +2 THAC0 and Damage
-- The rest is the same as in vanilla.
-
-This has the side effect that your character's fists always have a bonus, since you wield them as if you were proficient in them by default.
+- 1 proficiency point: No penalty (vanilla)
+- 2 proficiency points: +1 THAC0 and +2 Damage (vanilla)
+- 3 proficiency points: +2 THAC0 and +3 Damage
+- 4 proficiency points: +3 THAC0 and +4 Damage
+- 5 proficiency points: +4 THAC0 and +5 Damage
 
 
 </details>
