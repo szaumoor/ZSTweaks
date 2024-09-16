@@ -54,6 +54,11 @@
                 match_opcode = 267
                 match_parameter1 = 14023 // haste strref
         END
+        LPF DELETE_EFFECT
+            INT_VAR
+                check_headers = 0
+                match_opcode = 126 // movement rate setting
+        END
 END
 
 

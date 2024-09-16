@@ -1,6 +1,0 @@
-COPY_EXISTING ~SPPR514.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6480) END
-    LPF ALTER_EFFECT INT_VAR power = 0 END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 17 dicenumber = 4 dicesize = 3 END
-    LPF ALTER_HEADER INT_VAR match_type = 1 speed = 2 END
-BUT_ONLY

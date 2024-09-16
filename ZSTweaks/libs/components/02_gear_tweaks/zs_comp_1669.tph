@@ -1,0 +1,6 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING ~BRAC21.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7290) unusable0=0 unusable2=0 END
+        LPF ALTER_EFFECT INT_VAR match_opcode=54 parameter1=2 END
+    BUT_ONLY
+END

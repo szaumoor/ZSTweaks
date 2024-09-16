@@ -1,8 +1,0 @@
-COPY_EXISTING_REGEXP "DAGG1[12]\.ITM" ~override~
-    LPF ALTER_HEADER INT_VAR dicenumber = 1 END
-    PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1435" BEGIN
-        FOR ( dmg = 6; dmg >= 0; --dmg ) BEGIN
-            LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=4 match_dicenumber=1 match_damage=dmg dicesize=3 damage=dmg+1 END
-        END
-    END
-BUT_ONLY

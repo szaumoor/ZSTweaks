@@ -1,0 +1,31 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING ~DAGG21.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6010) id_ref_name=RESOLVE_STR_REF(@6011) ench=5 END
+        LPF ALTER_HEADER INT_VAR match_type = 1 damage = 5 to_hit = 5 END
+        LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 20 probability1 = 9 END
+        LPF GET_DMG_TYPE STR_VAR type = ~fire~ RET f = result END
+        LPF GET_DMG_TYPE STR_VAR type = ~electricity~ RET el = result END
+        LPF ADD_ON_HIT_EFF INT_VAR p1=1 STR_VAR effects = ~op=12,p2=%f%;op=12,p2=%el%~ END
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN // update bonus due to +5 enchantment
+            LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 STR_VAR match_resource = ~ZSTWD4~ resource = ~ZSTWD5~ END
+        END
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1440" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN // update bonus due to +5 enchantment (daggers)
+            LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDP16~ resource = ~ZSTWDP18~ END
+        END
+    BUT_ONLY
+    COPY_EXISTING ~DAGG22.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6013) id_ref_name=RESOLVE_STR_REF(@6012) ench=6 END
+        LPF ALTER_HEADER INT_VAR match_type = 1 damage = 6 to_hit = 6 END
+        LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 20 probability1 = 14 END
+        LPF GET_DMG_TYPE STR_VAR type = ~fire~ RET f = result END
+        LPF GET_DMG_TYPE STR_VAR type = ~electricity~ RET el = result END
+        LPF ADD_ON_HIT_EFF INT_VAR dsize=8 dnum=1 STR_VAR effects=~op=12,p2=%f%,pro1=93,pro2=89;op=12,p2=%el%,pro1=88,pro2=84~ END
+        LPF ADD_ON_HIT_EFF INT_VAR p1=2 STR_VAR effects = ~op=12,p2=%f%;op=12,p2=%el%~ END
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN // update bonus due to +6 enchantment
+            LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 STR_VAR match_resource = ~ZSTWD5~ resource = ~ZSTWD6~ END
+        END
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1440" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN // update bonus due to +6 enchantment (daggers)
+            LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDP18~ resource = ~ZSTWDP20~ END
+        END
+    BUT_ONLY
+END

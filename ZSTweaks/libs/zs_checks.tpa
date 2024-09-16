@@ -5,8 +5,9 @@ RET
     result // 1 if flag is set, 0 if it's unset. -1 if invalid flag is asked for
 BEGIN
     PATCH_IF flag >= 0 AND flag <= 31 BEGIN
+        LPF ITM_FLAGS RET itm_flags = result END
         SET bitmask = (1 << flag)
-        SET result = (flag & bitmask) != 0
+        SET result = (itm_flags & bitmask) != 0
     END ELSE BEGIN
         SET result = "-1"
     END

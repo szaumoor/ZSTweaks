@@ -1,0 +1,6 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING "SPCL910B.SPL" ~override~
+        LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = result END
+        LPF ALTER_EFFECT INT_VAR header_type = 1 check_globals = 0 match_opcode = 12 parameter2 = piercing END
+    BUT_ONLY
+END

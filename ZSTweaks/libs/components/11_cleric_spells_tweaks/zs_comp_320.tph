@@ -1,0 +1,7 @@
+ACTION_IF !(GAME_IS "iwdee") BEGIN
+    COPY_EXISTING ~SPPR704.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5170) END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 55 savebonus = 2 END
+        LPF ADD_SPL_TGTEFF STR_VAR effects=~ip=0,op=324,p2=23,rd=2,res=SPPR704~ END
+    BUT_ONLY
+END

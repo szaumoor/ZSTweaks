@@ -1,0 +1,12 @@
+ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN // modify spells for finesse
+    COPY_EXISTING_REGEXP ~ZSTWK[0-6]\.spl~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode=12 match_dicesize=10 match_dicenumber=1 dicesize=5 dicenumber=2 END
+    BUT_ONLY
+END
+COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    LPF ITM_CAT RET wpn_cat = result END
+    LPF ITM_PROF RET wpn_prof = result END
+    PATCH_IF wpn_cat = 20 AND wpn_prof = 94 BEGIN // katanas
+        LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 10 match_dicenumber = 1 dicesize = 5 dicenumber = 2 END
+    END
+BUT_ONLY

@@ -1,5 +1,0 @@
-COPY_EXISTING ~SW2H14.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6800) END
-    LPF ALTER_HEADER INT_VAR match_type = 1 match_speed = 8 speed = 7 END
-    LPF ADD_ON_HIT_EFF INT_VAR stype=1 rd=3 pro1=24 STR_VAR effects = ~op=128,dur=6;op=139,p1=14782~ END
-BUT_ONLY

@@ -1,0 +1,5 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING "WANINJA.itm" ~override~
+        LPF ALTER_ITEM INT_VAR unusable0=1074057600 END
+    BUT_ONLY
+END

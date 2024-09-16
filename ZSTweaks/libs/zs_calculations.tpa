@@ -1,8 +1,9 @@
+
 DEFINE_PATCH_FUNCTION GET_DMG_TYPE
-    STR_VAR
-        type = ~crushing~
-    RET
-        result
+STR_VAR
+    type = ~crushing~
+RET
+    result
 BEGIN
     SET matches = 0
     PATCH_IF "%type%" STRING_COMPARE_CASE ~crushing~ = 0 BEGIN

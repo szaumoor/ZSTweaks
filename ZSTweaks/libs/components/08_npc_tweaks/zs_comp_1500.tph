@@ -1,0 +1,15 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING "NPSW01.ITM" ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6261) id_ref_name=RESOLVE_STR_REF(@6260) ench=4 END
+        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~  BEGIN
+            LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 1 STR_VAR match_resource = ~ZSTWY2~ resource = ~ZSTWY3~ END
+        END
+        LPF ALTER_HEADER INT_VAR type=1 match_damage=2 match_to_hit=2 damage=3 to_hit=4 speed=0 END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6,rd=2~ END
+    BUT_ONLY
+    COPY_EXISTING "NPBOW.ITM" ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6263) id_ref_name=RESOLVE_STR_REF(@6262) ench=3 END
+        LPF ALTER_HEADER INT_VAR type = 4 damage = 1 match_to_hit = 2 to_hit = 3 END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,tgt=1,p1=6,tmg=2,rd=2~ END
+    BUT_ONLY
+END

@@ -1,0 +1,7 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING "NPSW02.ITM" ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6270) END
+        LPF ALTER_HEADER INT_VAR match_type = 1 match_speed = 3 speed = 1 END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=2,p2=1;op=233,p1=2,p2=94~ END
+    BUT_ONLY
+END

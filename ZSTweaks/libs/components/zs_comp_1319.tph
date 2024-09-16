@@ -1,4 +1,0 @@
-COPY_EXISTING ~OHDHSWD.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6190) END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 177 parameter1= 3 END
-BUT_ONLY

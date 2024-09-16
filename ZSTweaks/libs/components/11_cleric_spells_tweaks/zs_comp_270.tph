@@ -1,0 +1,16 @@
+ACTION_IF !(GAME_IS "iwdee") BEGIN
+    COPY_EXISTING ~SPPR105.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5100) END
+        LPF ALTER_EFFECT INT_VAR savebonus = 2 END
+        SET headers = 0
+        FOR ( i = 5; i <= 20; i += 5 ) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = i END
+            ++headers
+        END
+        SET bonus = 1
+        FOR ( i = 1; i <= headers; ++i ) BEGIN
+            LPF ALTER_EFFECT INT_VAR header = i savebonus = bonus END
+            --bonus
+        END
+    BUT_ONLY
+END

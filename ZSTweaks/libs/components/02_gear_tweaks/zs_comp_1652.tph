@@ -1,0 +1,8 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING "LEAT24.ITM" ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 126 opcode = 176 END
+    BUT_ONLY
+    COPY_EXISTING ~SPPR403.SPL~ ~override~
+        LPF DELETE_EFFECT INT_VAR match_opcode=126 END
+    BUT_ONLY
+END

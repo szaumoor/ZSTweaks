@@ -1,5 +1,0 @@
-COPY_EXISTING "ohrsw1h1.itm" ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6541) END
-    LPF ALTER_HEADER INT_VAR match_type = 1 to_hit = 4 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=325,p1=1;op=1,p1=6~ END
-BUT_ONLY

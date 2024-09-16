@@ -1,6 +1,0 @@
-COPY_EXISTING ~SPWI404.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7370) END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1=2 END
-    LPF GET_DMG_TYPE STR_VAR type=~piercing~ RET piercing = result END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 12 parameter2=piercing dicesize=6 dicenumber=1 STR_VAR insert=~below~ END
-BUT_ONLY

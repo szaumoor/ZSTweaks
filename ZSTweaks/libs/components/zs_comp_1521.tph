@@ -1,3 +1,0 @@
-COPY_EXISTING ~NPPLAT.ITM~ ~override~
-    LPF remove_haste_immunity END
-BUT_ONLY

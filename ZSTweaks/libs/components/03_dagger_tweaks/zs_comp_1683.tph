@@ -1,0 +1,14 @@
+ACTION_IF !(GAME_IS "iwdee") BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~bddagg3a.itm~ BEGIN
+        COPY_EXISTING ~bddagg3a.itm~ ~override~
+            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7340) ench=3 END
+            LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=42,p1=2,p2=3~ END
+            LPF GET_DMG_TYPE STR_VAR type=~magic~ RET dmg = result END
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,dsize=2,dnum=1,p2=%dmg%;op=12,p1=2,p2=%dmg%,dsize=4,dnum=1,pro1=32~ END
+        BUT_ONLY
+    END ELSE BEGIN
+        ACTION_IF group_component = 0 BEGIN
+            WARN "Gemblade not found in game files, skipping..."
+        END
+    END
+END

@@ -1,0 +1,11 @@
+ACTION_IF !(GAME_IS "iwdee") BEGIN
+    COPY_EXISTING ~SPPR610.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7410) END
+        LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=2 header=0 match_duration=56 duration=60 END
+        LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=2 header=0 match_savebonus="-2" savebonus="-3" END
+        LPF GET_DMG_TYPE STR_VAR type=~poison~ RET poison = result END
+        LPF ADD_SPL_TGTEFF STR_VAR effects=~t=2,pwr=6,op=12,dnum=2,dsize=10,p2=%poison%~ END
+        LPF ADD_SPL_TGTEFF INT_VAR ip="-1" dur=60 p1="-2" rd=1 stype=4 sbonus="-3" pwr=6 STR_VAR effects = ~op=54;op=0;op=73~ END
+        LPF ADD_SPL_TGTEFF INT_VAR ip="-1" dur=60 p1="-8" rd=1 stype=4 sbonus="-3" pwr=6 STR_VAR effects=~op=86;op=87;op=88;op=89~ END
+    BUT_ONLY
+END

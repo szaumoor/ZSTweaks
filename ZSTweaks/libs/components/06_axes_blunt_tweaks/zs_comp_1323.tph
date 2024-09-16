@@ -1,0 +1,13 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING ~AX1H10.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7080) END
+        FOR ( the_type = 1; the_type <= 2; ++the_type ) BEGIN
+            LPF ALTER_HEADER INT_VAR match_type = the_type to_hit = 3 damage = 3 END
+        END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=344,p1=4,p2=3,spec=4~ END
+    BUT_ONLY
+
+    COPY_EXISTING ~AX1H10A.EFF~ ~override~
+        LPF ALTER_EFF_FILE INT_VAR parameter1=6 END
+    BUT_ONLY
+END

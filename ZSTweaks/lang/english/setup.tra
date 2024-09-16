@@ -23,7 +23,21 @@
 @54 = ~This component is only compatible with IWDEE, BGEE, BG2EE and EET~
 @55 = ~Tweak already installed elsewhere~
 @56 = ~This component is only compatible with IWDEE, BG2EE and EET~
+@57 = ~Can't install groups of components if individual components (without subcomponents) are installed already~
+@58 = ~Can't install components included in components that install groups of other components~
 // end warning messages components
+
+@10000 = ~Install all tweaks in the general tweaks group (except the ones that require a choice)~
+@10001 = ~Install all tweaks in the gear tweaks group (except the ones that require a choice)~
+@10002 = ~Install all tweaks in the dagger tweaks group~
+@10003 = ~Install all tweaks in the two-handed weapons tweaks group~
+@10004 = ~Install all tweaks in the one-handed swords tweaks group~
+@10005 = ~Install all tweaks in the axes/blunt tweaks group~
+@10006 = ~Install all tweaks in the ranged tweaks group~
+@10007 = ~Install all tweaks in the NPC tweaks group~
+@10008 = ~Install all tweaks in the wizard spells tweaks group~
+@10009 = ~Install all tweaks in the cleric/druid spells tweaks group~
+@10010 = ~Install all tweaks in the class/kit tweaks group~
 
 // COMPONENTS
 /// General Item & Spell Tweaks
@@ -125,13 +139,13 @@
 @1684 = ~Make basic throwing daggers usable as melee weapons~
 
 /// TWO-HANDED MELEE WEAPONS
-@1200 = "Make Ixil's Spike allow Haste and Improved Haste"
+@1200 = "Make Ixil's Spike allow Haste and Improved Haste and improve it slightly"
 @1201 = "Make Lilarcor +3 have a chance of causing confusion on hit"
 @1202 = "Make Warblade +4 slightly more unique, and more potent when wielded by barbarians"
 @1280 = "Make Carsomyr affect any kind of evil and not just Chaotic Evil"
 @1290 = "Make Carsomyr's Dispel Magic abilities more balanced"
 @1300 = "Make Silver Sword significantly more unique and add a more interesting (imo) description"
-@1318 = "Make Flame of the North +2 affect all evil, not just chaotic evil"
+@1318 = "Make Flame of the North +2 affect all evil, not just Chaotic Evil"
 @1322 = ~Make Flame of the North inflict +2 fire damage against trolls~
 @1390 = "Make Staff of the Magi force a saving throw to dispel effects on hits"
 @1410 = "Make Ir'revrykal Dispel Magic effect not depend on probabilities, but allow a saving throw"
@@ -164,7 +178,7 @@
 @1260 = "Make Usuno's Blade slightly more electrically powerful"
 @1270 = "Make Spectral Brand slightly better and make the dancing blade last for 1 turn, instead of 4 rounds"
 @1315 = "Make Dak'kon's Zerth Blade behave as a +3 weapon"
-@1319 = "Make Holy Sword of Tyr +3 affect all evil, not just chaotic evil"
+@1319 = "Make Holy Sword of Tyr +3 affect all evil, not just Chaotic Evil"
 @1341 = ~Make Hindo's Doom a +4 and +5 weapon~
 @1470 = ~Make Adjatha the Drinker thirstier~
 @1550 = ~Make Drizzt's weapons slightly more worth stealing in BG2~
@@ -186,7 +200,7 @@
 @1312 = "Make Skullcrusher +3 slightly more crushy"
 @1313 = "Make Gnasher +2 slightly more painful"
 @1314 = "Make Jerrod's Mace +2 behave as a +3 weapon"
-@1320 = "Make Flail of Ages +5 allow Haste and Improved Haste"
+@1320 = "Make Flail of Ages +5 allow Haste and Improved Haste and improve it slightly"
 @1321 = "Make Bone Club +2, +3 against undead's effect reflect the description better and improve it slightly"
 @1323 = ~Make Azuredge act properly as a +3 weapon~
 @1324 = ~Make Wyvern's Tail +2 cause poison damage on hit and have a chance of poisoning~
@@ -677,7 +691,8 @@ Combat abilities:
 – 10% chance of making the user go invisible for 1 turn after each successful attack
 
 THAC0: +5
-Damage: 1d4+5 (piercing)
+Damage: 1d4+5, +1 fire and electricity damage
+Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
 Type: One-handed
@@ -700,7 +715,7 @@ Combat abilities:
 – Star Bolt: Each successful hit has a 15% chance of causing either 1d8 fire, 1d8 of electrical damage, or both.
 
 THAC0: +6
-Damage: 1d4+6, +1 fire and electricity damage
+Damage: 1d4+6, +2 fire and electricity damage
 Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
@@ -2454,11 +2469,11 @@ STATISTICS:
 
 Combat abilities:
 – 25% chance per hit that the target must save vs. Death or be held for 2 rounds
-– Hits with this weapon bleed the victims, inflicting 2 piercing damage per round for 3 rounds
+– Hits with this weapon inflict persistent wounds, causing 2 piercing damage per round for 3 rounds
 – +5% critical chances (this weapon only)
 
 THAC0: +2
-Damage: 1d4+2, +2 piercing (bleeding)
+Damage: 1d4+2, +2 (persistent wound)
 Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
@@ -2468,13 +2483,13 @@ Requires:
 
 Weight: 1~
 
-@6590 = ~There are no records of this weapon's creator. Nevertheless, its existence can be traced back among thieves and murderers to before Dalereckoning. Its blackened blade was apparently forged from the arcane metals of an iron golem, giving the weapon an appearance as dark as its history.
+@6590 = ~There are no records of this weapon's creator. Nevertheless, its existence can be traced back among thieves and murderers to before Dalereckoning. Its blackened blade was apparently forged from the arcane metals of an iron golem, giving the weapon an appearance as dark as its history. The remnants of the power of the golem in the blade provide the wielder with the ability to sometimes deflect magical attacks, and this energy is sometimes unleashed when hitting an opponent.
 
 Equipped abilities:
-– The magic metal allow the wielder to partially defend against magic: 10% Magic Resistance
+– 10% Magic Resistance
 
 Combat abilities:
-– 50% chance per hit to inflict 1d4 Magic damage with no save
+– 50% chance per hit to inflict 1d4 points of Magic damage
 
 STATISTICS:
 
@@ -3390,7 +3405,7 @@ STATISTICS:
 
 Equipped abilities:
 – +1 AC
-– Casting and turning level: +1 (clerics only)
+– Casting and turning undead level: +1 (clerics only)
 – +1 spell slot for levels 3, 4 and 5 (clerics only)
 
 Charge abilities:
@@ -4053,7 +4068,7 @@ Combat abilities:
 – Hit target must save vs. Poison or take 5 Hit Points of poison damage over 5 seconds. There's a 4% chance the poison will be as potent as that of an adult Wyvern, causing 25 Hit Points of poison damage in total instead.
 
 THAC0: +2
-Damage: 2d4+2, +2 poison damage (no save)
+Damage: 2d4+2, +2 poison damage
 Damage Type: Crushing
 Speed Factor: 5
 Proficiency Type: Flail/Morning Star
@@ -4173,7 +4188,7 @@ Weight: 1~
 
 STATISTICS:
 
-Special: Restores 10 Hit Points.
+Special: Restores 12 Hit Points.
 
 Weight: 1~
 
@@ -4657,7 +4672,7 @@ Weight: 12~
 STATISTICS:
 
 THAC0: +4
-Damage: 1d10+4, +1 cold, fire, electrical, acid damage, and poison damage
+Damage: 1d10+4, +1 cold, fire, electrical, acid, and poison damage
 Damage type: Piercing
 Speed Factor: 5
 Proficiency Type: Halberd
@@ -4672,7 +4687,7 @@ Weight: 12~
 STATISTICS:
 
 Combat abilities:
-– Like the deathly touch of shadows, every hit has a 25% chance of reducing the target's Strength by 2 for 5 rounds. If the target is already at a Strength of 2, the attack drains Constitution instead. The target may not die from this effect.
+– Like the deathly touch of shadows, every hit has a 25% chance of reducing the target's Strength by 2 for 5 rounds. If the target is already at a Strength of 2, the attack drains Constitution instead.
 – If the target fails to save vs. Death, the essence of undeath in this weapon unleashes extra +1d6 cold damage.
 
 THAC0: +2
@@ -4733,3 +4748,48 @@ Weight: 1~
 @7748 = ~Kazgaroth's Offering: +2 Casting Speed~
 @7749 = ~Kazgaroth's Offering: -4 Saves vs. Death~
 @7750 = ~Kazgaroth's Offering: -50% movement speed~
+
+// +5 flail of the ages
+@7760 = ~This flail has been in the care of Lord de'Arnise for some time, a relic of his adventuring youth. It has been kept disassembled, the individual pieces stored in separate locations, and only used in the direst of emergencies. Lord de'Arnise was likely concerned about the powerful magic that the weapon radiated when compiled, and rightfully so. A trail of destruction has followed it through history, leading straight back to the original owners. The flail was the creation of the warlike rakshasa, a race of vengeful spirits that crave human meat, and used as an adaptable weapon that could suit any battle. During a particularly violent hunt, the flail was lost, only to be returned when they used their affinity for magic to locate its powerful aura. They discovered that the weapon had found its way into the hands of a great human warrior, and the battle that followed was truly splendid. They have since used the item as bait countless times, "losing" it again and again. Powerful items gravitate toward powerful people, and powerful people yield the most glorious battles.
+
+With the addition of the fifth and final head to this weapon created by the evil rakshasa race, the true potential of the Flail of Ages is finally realized.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +15%
+– Unaffected by spells that restrict movement
+
+Combat abilities:
+– 33% chance each hit that target will be slowed for 20 seconds
+
+THAC0: +5
+Damage: 1d6+6, +2 acid damage, +2 cold damage, +2 fire damage, +2 poison damage, +2 electrical damage
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 8~
+
+@7770 = ~With shaft and tip reunited, Ixil's Spike is a fearsome weapon. During the battle, the head can detach to pin opponents to the ground even as a new head magically reforms on the end of the spear.
+
+STATISTICS:
+
+Equipped abilities:
+– Unaffected by spells that restrict movement
+
+Combat abilities:
+– Hit target is pinned for 3 rounds and takes an additional 1d8+6 piercing damage each round (Save vs. Paralysis negates)
+
+THAC0: +6
+Damage: 1d6+6 (piercing)
+Speed Factor: 1
+Proficiency Type: Spear
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 5~

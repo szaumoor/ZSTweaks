@@ -1,0 +1,15 @@
+ACTION_IF !(GAME_IS "iwdee") BEGIN
+    COPY_EXISTING ~SPPR412.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5120) END
+        SET dur = 42
+        FOR ( i = 1; i <= 6; ++i ) BEGIN
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=1 header=i duration=dur power=4 target=1 resist_dispel=3 parameter1=6 END
+            dur += 6
+        END
+        LPF SPL_ABILITIES_NUM RET num_abilities = result END
+        FOR ( i = 7; i <= num_abilities; ++i ) BEGIN
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=1 header=i duration=dur power=4 target=1 resist_dispel=3 parameter1=1 END
+            dur += 6
+        END
+    BUT_ONLY
+END

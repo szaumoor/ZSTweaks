@@ -1,0 +1,11 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING ~SPER09.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7500) END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 probability1 = 49 END
+        LPF CLONE_EFFECT INT_VAR match_probability1 = 49 parameter1 = 2 probability2 = 50 probability1 = 79 END
+        LPF CLONE_EFFECT INT_VAR match_probability1 = 79 parameter1 = 3 probability2 = 80 probability1 = 100 END
+        LPF GET_DMG_TYPE STR_VAR type=~electricity~ RET electricity = result END
+        LPF ADD_ON_HIT_EFF INT_VAR stype=1 sbonus=2 p1=RESOLVE_STR_REF(@7501) STR_VAR effects = ~op=139,tgt=1~ END
+        LPF ADD_ON_HIT_EFF INT_VAR p1=2 p2=electricity tmg=3 stype=1 sbonus=2 STR_VAR effects = ~op=12,dur=6;op=12,dur=12~ END
+    BUT_ONLY
+END

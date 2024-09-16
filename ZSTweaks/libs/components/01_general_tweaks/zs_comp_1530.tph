@@ -1,0 +1,5 @@
+ACTION_IF !(GAME_IS "iwdee bgee") BEGIN
+    COPY_EXISTING_REGEXP "DAGG1[12]\.ITM" ~override~
+        LPF ALTER_HEADER INT_VAR dicenumber = 1 END
+    BUT_ONLY
+END

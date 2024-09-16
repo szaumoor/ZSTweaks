@@ -1,0 +1,11 @@
+ACTION_IF !(GAME_IS "iwdee") BEGIN // todo
+    COPY_EXISTING ~SPPR719.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5190) END
+        LPF ADD_SPL_TGTEFF INT_VAR pwr=8 ip=0 STR_VAR effects=~op=55,p2=2,tmg=1,stype=4,sbonus=6~ END
+    BUT_ONLY
+
+    COPY_EXISTING ~SPWI817.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5200) END
+        LPF ADD_SPL_TGTEFF INT_VAR pwr=8 ip=0 STR_VAR effects=~op=55,p2=2,tmg=1,stype=4,sbonus=6~ END
+    BUT_ONLY
+END

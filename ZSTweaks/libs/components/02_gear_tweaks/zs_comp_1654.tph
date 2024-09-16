@@ -1,0 +1,13 @@
+ACTION_IF !(GAME_IS "iwdee") BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME "bdboot03.itm" BEGIN
+        COPY_EXISTING "bdboot03.itm" ~override~
+            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6920) END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 166 parameter1 = 10 END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 177 parameter1 = IDS_OF_SYMBOL(kit INQUISITOR) END
+        BUT_ONLY
+    END ELSE BEGIN
+        ACTION_IF group_component = 0 BEGIN
+            WARN "bdboot03.itm not found"
+        END
+    END
+END

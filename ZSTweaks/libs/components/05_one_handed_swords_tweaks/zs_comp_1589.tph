@@ -1,0 +1,10 @@
+ACTION_IF !(GAME_IS "iwdee") BEGIN
+    COPY ~ZSTweaks/spl/other/ZSTWRASH.SPL~ ~override~
+    COPY_EXISTING "ZSTWRASH.SPL" ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1=RESOLVE_STR_REF(@7581) END
+    BUT_ONLY
+    COPY_EXISTING "SW1H23.itm" ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7580) END
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=1 spec=1 STR_VAR effects=~op=341,res=ZSTWRASH;op=301,p1=1~ END
+    BUT_ONLY
+END

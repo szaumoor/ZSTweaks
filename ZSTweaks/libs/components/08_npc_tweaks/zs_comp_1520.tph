@@ -1,0 +1,6 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING "NPSW03.ITM" ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6240) ench=3 END
+        LPF RM_STAT_REQS END
+    BUT_ONLY
+END

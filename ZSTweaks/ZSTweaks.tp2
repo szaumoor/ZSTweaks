@@ -1,6 +1,6 @@
 BACKUP "weidu_external/backup/ZSTweaks"
 AUTHOR "RoyalProtector at Gibberlings's forum https://www.gibberlings3.net/profile/12720-royalprotector/"
-VERSION "1.3.2"
+VERSION "1.3.3"
 README ~ZSTweaks/README.md~
 AUTO_EVAL_STRINGS
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -13,195 +13,249 @@ LANGUAGE
 "english"
 "ZSTweaks/lang/english/setup.tra"
 
-////////////////////////////////// GENERAL WEAPON TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+////////////////////////////////// GENERAL ITEM AND SPELL TWEAK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @10000 DESIGNATED 103 GROUP @10 // INSTALL ALL IN THIS GROUP
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "120"  @57 FORBID_COMPONENT "ZSTweaks.tp2" "1120" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1121" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1150" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1160" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1350" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1352" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1360" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1370" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1400" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1430" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1440" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1450" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1530" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1531" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1532" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1533" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1534" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1535" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1537" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1601" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1650" @57
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_103.tph~
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @120 DESIGNATED 120 GROUP @10 // MAGIC WEAPONS APR
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_120.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_120.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1120 DESIGNATED 1120 GROUP @10 // BACKSTAB PENALTIES
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1120.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1120.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1121 DESIGNATED 1121 GROUP @10 // FLAILS/MORNINGSTARS TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1121.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1121.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1150 DESIGNATED 1150 GROUP @10 // SPEARS BASE DMG IMPROVEMENT
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1150.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1150.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1160 DESIGNATED 1160 GROUP @10 // WARHAMMERS BASE DMG IMPROVEMENT
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1160.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1160.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1350 DESIGNATED 1350 GROUP @10 // WAKIZASHI/NINJATO DMG/SPEED
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1350.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1350.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1352 DESIGNATED 1352 GROUP @10 // WAKIZASHIS PIERCING/SLASHING
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1352.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1352.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1360 DESIGNATED 1360 GROUP @10 // LIGHT CROSSBOW +1/2 APR BONUS
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1360.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1360.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1370 DESIGNATED 1370 GROUP @10 // KATANAS DAMAGE
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1370.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1370.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1400 DESIGNATED 1400 GROUP @10 // BASTARD SWORDS DMG
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1400.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1400.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1430 DESIGNATED 1430 GROUP @10 // TWO HANDED SWORD DICE CHANGES
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1430.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1430.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1440 DESIGNATED 1440 GROUP @10 // DAGGER BONUSES
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1440.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1440.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1450 DESIGNATED 1450 GROUP @10 // ROGUE FINESSE BONUSES
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1450.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1450.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1530 DESIGNATED 1530 GROUP @10 // THROWING DAGGER DOUBLE DAMAGE NONSENSE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1530.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1530.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1531 DESIGNATED 1531 GROUP @10 // DIVINATION/OTHER SPELLS BYPASS MR
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1531.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1531.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1532 DESIGNATED 1532 GROUP @10 // UNENCHANTED ITEMS TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1532.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1532.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1533 DESIGNATED 1533 GROUP @10 // WAND REBALANCE TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1533.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1533.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1534 DESIGNATED 1534 GROUP @10 // POTION REBALANCE TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1534.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1534.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1537 DESIGNATED 1537 GROUP @10 // CURE POISON TWEAK
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1537.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1601 DESIGNATED 1601 GROUP @10 // POTION PREVENT STACKING
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1601.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1650 DESIGNATED 1650 GROUP @10 // ROBE APPEARANCE TWEAK
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1650.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @15380 DESIGNATED 15380 SUBCOMPONENT @1538 GROUP @10 // jewelry TWEAK 25%
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_15380.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_15380.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @15381 DESIGNATED 15381 SUBCOMPONENT @1538 GROUP @10 // jewelry TWEAK 50%
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_15381.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_15381.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @15382 DESIGNATED 15382 SUBCOMPONENT @1538 GROUP @10 // jewelry TWEAK 75%
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_15382.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_15382.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @15383 DESIGNATED 15383 SUBCOMPONENT @1538 GROUP @10 // jewelry TWEAK 100%
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_15383.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_15383.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @15384 DESIGNATED 15384 SUBCOMPONENT @1538 GROUP @10 // jewelry TWEAK 125%
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_15384.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_15384.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @15385 DESIGNATED 15385 SUBCOMPONENT @1538 GROUP @10 // jewelry TWEAK 150%
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_15385.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_15385.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @15386 DESIGNATED 15386 SUBCOMPONENT @1538 GROUP @10 // jewelry TWEAK 175%
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_15386.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_15386.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @15387 DESIGNATED 15387 SUBCOMPONENT @1538 GROUP @10 // jewelry TWEAK 200%
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_15387.tph~
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1537 DESIGNATED 1537 GROUP @10 // CURE POISON TWEAK
-REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @47
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1537.tph~
+INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_15387.tph~
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1536 DESIGNATED 1536 GROUP @10 // FAMILIAR REBALANCE TWEAK
@@ -239,976 +293,1233 @@ END
 */
 ///////////////////////////////////// ARMOR/GEAR TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1170 DESIGNATED 1170 GROUP @11 // SHADOW DRAGON ARMOR TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+BEGIN @10001 DESIGNATED 1001 GROUP @11 // INSTALL ALL COMPONENTS IN GROUP
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "1170" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1171" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1172" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1173" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1174" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1180" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1316" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1317" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1560" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1561" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1570" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1610" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1620" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1651" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1652" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1653" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1654" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1655" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1656" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1657" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1658" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1659" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1661" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1662" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1663" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1665" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1666" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1667" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1668" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1669" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1671" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1672" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1673" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1674" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1675" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1676" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1677" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1678" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1679" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1170.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1001.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1170 DESIGNATED 1170 GROUP @11 // SHADOW DRAGON ARMOR TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1170.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1171 DESIGNATED 1171 GROUP @11 // SILVER DRAGON ARMOR TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1171.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1171.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1172 DESIGNATED 1172 GROUP @11 // RINGS OF ELEMENTAL CONTROL
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1172.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1172.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1173 DESIGNATED 1173 GROUP @11 // RING OF GAXX
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1173.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1173.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1174 DESIGNATED 1174 GROUP @11 // HEARTWOOD RING DRUID
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1174.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1174.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1180 DESIGNATED 1180 GROUP @11 // RINGER OF DANGER SENSE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet bgee" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1180.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1180.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1316 DESIGNATED 1316 GROUP @11 // MERCYKILLER RING TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1316.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1316.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1317 DESIGNATED 1317 GROUP @11 // BASIC ROBES BUFF
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1317.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1317.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1560 DESIGNATED 1560 GROUP @11 // ADD PIERCING TO BELT OF THE BLADE
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1560.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1560.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1561 DESIGNATED 1561 GROUP @11 // cloak of the star more darts
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1561.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1561.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1570 DESIGNATED 1570 GROUP @11 // EYES OF THE BEHOLDER TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1570.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1570.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1610 DESIGNATED 1610 GROUP @11 // ROBE OF INVOCATION TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1610.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1610.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1620 DESIGNATED 1620 GROUP @11 // THAYAN CIRCLET TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1210.tph~
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1650 DESIGNATED 1650 GROUP @11 // ROBE APPEARANCE TWEAK
-REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1650.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1620.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1651 DESIGNATED 1651 GROUP @11 // STUDDED LEATHER OF THORNS PIERCING EXTRA
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1651.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1651.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1652 DESIGNATED 1652 GROUP @11 // GRANDMASTER ARMOR
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1652.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1652.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1653 DESIGNATED 1653 GROUP @11 // THIEVES HOOD TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1653.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1653.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1654 DESIGNATED 1654 GROUP @11 // STAR STREWN TWEAKS
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1654.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1654.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1655 DESIGNATED 1655 GROUP @11 // CROWN OF LIES TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1655.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1655.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1656 DESIGNATED 1656 GROUP @11 // HELM OF DUMATHOIN TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1656.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1656.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1657 DESIGNATED 1657 GROUP @11 // THE VISAGE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1657.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1657.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1658 DESIGNATED 1658 GROUP @11 // DRAGON HELM TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1658.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1658.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1659 DESIGNATED 1659 GROUP @11 // HELM OF THE ROCK TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1659.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1659.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1661 DESIGNATED 1661 GROUP @11 // CLOAK OF THE SEWERS TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1661.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1661.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1662 DESIGNATED 1662 GROUP @11 // MONTOLIO CLOAK TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1662.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1662.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1663 DESIGNATED 1663 GROUP @11 // SANDTHIEF BGEE
 REQUIRE_PREDICATE GAME_IS "bgee eet" @50
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1663.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1663.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @16640 DESIGNATED 16640 SUBCOMPONENT @1664 GROUP @11 // IOUN STONE / CIRCLETS CRIT HITS: select all
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @50
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_16640.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_16640.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @16641 DESIGNATED 16641 SUBCOMPONENT @1664 GROUP @11// IOUN STONE / CIRCLETS CRIT HITS: only selected items
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @50
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_16641.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_16641.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @16642 DESIGNATED 16642 SUBCOMPONENT @1664 GROUP @11// IOUN STONE / CIRCLETS CRIT HITS: only ioun stones
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @50
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_16642.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_16642.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @16643 DESIGNATED 16643 SUBCOMPONENT @1664 GROUP @11// IOUN STONE / CIRCLETS CRIT HITS: only circlets
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @50
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_16643.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_16643.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1665 DESIGNATED 1665 GROUP @11 GROUP @11// specific iouns tweak
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1665.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1665.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1666 DESIGNATED 1666 GROUP @11 // blinding bracers tweak
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1666.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1666.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1667 DESIGNATED 1667 GROUP @11 // Xarrnous's Second Sword Arm tweak
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1667.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1667.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1668 DESIGNATED 1668 GROUP @11 // Dale's Protector tweak
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1668.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1668.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1669 DESIGNATED 1669 GROUP @11 // Gauntlets of extraordinary specialization tweak
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1669.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1669.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1671 DESIGNATED 1671 GROUP @11 // HELM OF TRUTH tweak
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1671.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1671.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1672 DESIGNATED 1672 GROUP @11 // Stalker gauntlets tweak
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1672.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1672.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1673 DESIGNATED 1673 GROUP @11 // Blessed bracers tweak
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1673.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1673.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1674 DESIGNATED 1674 GROUP @11 // Whispers of silence tweak
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1674.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1674.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1675 DESIGNATED 1675 GROUP @11 // CLOAK OF DISPLACEMENT tweak
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE "ZSTweaks/libs/components/zs_comp_1675.tph"
+INCLUDE "ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1675.tph"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1676 DESIGNATED 1676 GROUP @11 // SKULL OF DEATH tweak
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1676.tph~
+INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1676.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1677 DESIGNATED 1677 GROUP @11 // Wondrous Gloves tweak
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE "ZSTweaks/libs/components/zs_comp_1677.tph"
+INCLUDE "ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1677.tph"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1678 DESIGNATED 1678 GROUP @11 // Senses of the cat tweak
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE "ZSTweaks/libs/components/zs_comp_1678.tph"
+INCLUDE "ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1678.tph"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1679 DESIGNATED 1679 GROUP @11 // CLAW OF KAZGAROTH tweak
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE "ZSTweaks/libs/components/zs_comp_1679.tph"
+INCLUDE "ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1679.tph"
 
 ////////////////////////////////////// DAGGER TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1000 DESIGNATED 1000 GROUP @12 // POISONED THROWING DAGGERS
-REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+BEGIN @10002 DESIGNATED 999 GROUP @12 // INSTALL ALL COMPONENTS
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "1000" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1130" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1140" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1490" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1630" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1660" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1670" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1680" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1681" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1682" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1683" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1684" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1000.tph~
+INCLUDE ~ZSTweaks/libs/components/03_dagger_tweaks/zs_comp_999.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1000 DESIGNATED 1000 GROUP @12 // POISONED THROWING DAGGERS
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/03_dagger_tweaks/zs_comp_1000.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1130 DESIGNATED 1130 GROUP @12 // BONE BLADE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE "ZSTweaks/libs/components/zs_comp_1130.tph"
+INCLUDE "ZSTweaks/libs/components/03_dagger_tweaks/zs_comp_1130.tph"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1140 DESIGNATED 1140 GROUP @12 // DAGGER OF THE STAR TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1140.tph~
+INCLUDE ~ZSTweaks/libs/components/03_dagger_tweaks/zs_comp_1140.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1490 DESIGNATED 1490 GROUP @12 // NEB'S DAGGER
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1490.tph~
+INCLUDE ~ZSTweaks/libs/components/03_dagger_tweaks/zs_comp_1490.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1630 DESIGNATED 1630 GROUP @12 // JADE FANG BOOST
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1630.tph~
+INCLUDE ~ZSTweaks/libs/components/03_dagger_tweaks/zs_comp_1630.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1660 DESIGNATED 1660 GROUP @12 // DAGGER OF THE GOLEM
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1660.tph~
+INCLUDE ~ZSTweaks/libs/components/03_dagger_tweaks/zs_comp_1660.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1670 DESIGNATED 1670 GROUP @12 // WEREBANE
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1670.tph~
+INCLUDE ~ZSTweaks/libs/components/03_dagger_tweaks/zs_comp_1670.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1680 DESIGNATED 1680 GROUP @12 // STILETTO TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1680.tph~
+INCLUDE ~ZSTweaks/libs/components/03_dagger_tweaks/zs_comp_1680.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1681 DESIGNATED 1681 GROUP @12 // ELEMENTS' FURY TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1681.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/03_dagger_tweaks/zs_comp_1681.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1682 DESIGNATED 1682 GROUP @12 // ACID ETCHED DAGGER TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1682.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/03_dagger_tweaks/zs_comp_1682.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1683 DESIGNATED 1683 GROUP @12 // GEMBLADE tweak
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1683.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/03_dagger_tweaks/zs_comp_1683.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1684 DESIGNATED 1684 GROUP @12 // throwing daggers tweak
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1684.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/03_dagger_tweaks/zs_comp_1684.tph~
 
-////////////////// TWO-HANDED WEAPON TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////// TWO-HANDED WEAPON TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @10003 DESIGNATED 1199 GROUP @13 // INSTALL GROUP OF COMPONENTS
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "1200" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1201" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1202" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1280" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1290" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1300" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1318" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1322" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1390" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1410" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1420" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1460" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1540" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1587" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1590" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1591" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1592" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1593" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1594" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1595" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1597" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1599" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1602" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1603" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1604" @57
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1199.tph~
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1200 DESIGNATED 1200 GROUP @13 // IXIL'S SPIKE TWEAK REMOVE HASTE IMMUNITY
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1200.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1200.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1201 DESIGNATED 1201 GROUP @13 // LILARCOR TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1201.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1201.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1202 DESIGNATED 1202 GROUP @13 // WARBLADE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1202.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1202.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1280 DESIGNATED 1280 GROUP @13 // CARSOMYR CHAOTIC EVIL TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1280.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1280.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1290 DESIGNATED 1290 GROUP @13 // CARSOMYR DISPEL SAVE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1290.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1290.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1300 DESIGNATED 1300 GROUP @13 // SILVER SWORD TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1300.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1300.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1318 DESIGNATED 1318 GROUP @13 // FLAME OF THE NORTH EVIL TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1318.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1318.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1322 DESIGNATED 1322 GROUP @13 // FLAME OF THE NORTH TROLL BONUS
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1322.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1322.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1390 DESIGNATED 1390 GROUP @13 // STAFF OF THE MAGI DISPEL SAVE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1390.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1390.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1410 DESIGNATED 1410 GROUP @13 // UNHOLY REAVER DISPEL TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1410.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1410.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1420 DESIGNATED 1420 GROUP @13 // UNHOLY REAVER DMG TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1420.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1420.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1460 DESIGNATED 1460 GROUP @13 // SPEAR OF WITHERING
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1460.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1460.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1540 DESIGNATED 1540 GROUP @13 // WAVE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1540.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1540.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1587 DESIGNATED 1587 GROUP @13 // rod of terror TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1587.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1587.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1590 DESIGNATED 1590 GROUP @13 // BLACKMIST TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1590.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1590.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1591 DESIGNATED 1591 GROUP @13 // SOUL REAVER THAC0 TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1591.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1591.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1592 DESIGNATED 1592 GROUP @13 // SOUL REAVER DICESIZE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1592.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1592.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1593 DESIGNATED 1593 GROUP @13 // SWORD OF RUIN +2 TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1593.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1593.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1594 DESIGNATED 1594 GROUP @13 // STAFF OF THE CLERIC +2 TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1594.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1594.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1595 DESIGNATED 1595 GROUP @13 // HALCYON TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1595.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1595.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1597 DESIGNATED 1597 GROUP @13 // STAFF OF RHYNN TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1597.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1597.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1599 DESIGNATED 1599 GROUP @13 // PSION'S BLADE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1599.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1599.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1602 DESIGNATED 1602 GROUP @13 // DRAGON'S BANE HALBERD TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1602.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1602.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1603 DESIGNATED 1603 GROUP @13 // DRAGON'S BREATH HALBERD TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1603.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1603.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1604 DESIGNATED 1604 GROUP @13 // DUSKBLADE HALBERD TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1199" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1604.tph~
+INCLUDE ~ZSTweaks/libs/components/04_two_handed_tweaks/zs_comp_1604.tph~
 
 ////////////////// ONE-HANDED SWORD TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1125 DESIGNATED 1125 GROUP @14 // NINJATO SCARLET BROTHERHOOD TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+BEGIN @10004 DESIGNATED 1124 GROUP @14 // INSTALL ALL COMPONENTS IN THE GROUP
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "1125" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1126" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1127" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1210" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1220" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1230" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1240" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1241" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1250" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1260" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1270" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1315" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1319" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1341" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1470" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1550" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1580" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1581" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1582" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1583" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1584" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1585" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1586" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1588" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1589" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1596" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1598" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1125.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1124.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1125 DESIGNATED 1125 GROUP @14 // NINJATO SCARLET BROTHERHOOD TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1125.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1126 DESIGNATED 1126 GROUP @14 // BLACKRAZOR TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1126.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1126.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1127 DESIGNATED 1127 GROUP @14 // PERIDAN TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1127.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1127.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1210 DESIGNATED 1210 GROUP @14 // EQUALIZER TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1210.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1210.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1220 DESIGNATED 1220 GROUP @14 // RAS TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1220.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1220.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1230 DESIGNATED 1230 GROUP @14 // SWORD OF MASK TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1230.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1230.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1240 DESIGNATED 1240 GROUP @14 // PURIFIER EVIL TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1240.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1240.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1241 DESIGNATED 1241 GROUP @14 // PURIFIER DISPEL MAGIC TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1241.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1241.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1250 DESIGNATED 1250 GROUP @14 // YAMATO TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1250.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1250.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1260 DESIGNATED 1260 GROUP @14 // USUNO BLADE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1260.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1260.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1270 DESIGNATED 1270 GROUP @14 // SPECTRAL BRAND TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1270.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1270.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1315 DESIGNATED 1315 GROUP @14 // DAKKON KATANA TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1315.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1315.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1319 DESIGNATED 1319 GROUP @14 // HOLY SWORD OF TYR TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1319.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1319.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1341 DESIGNATED 1341 GROUP @14 // HINDOS DOOM TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1341.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1341.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1470 DESIGNATED 1470 GROUP @14 // ADJATHA THE DRINKER TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1470.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1470.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1550 DESIGNATED 1550 GROUP @14 // DRIZZTS WEAPONS TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1550.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1550.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1580 DESIGNATED 1580 GROUP @14 // HAWKSIGHT TWEAK 1
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1580.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1580.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1581 DESIGNATED 1581 GROUP @14 // HAWKSIGHT TWEAK 2
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 REQUIRE_COMPONENT "ZSTweaks.tp2" "1580" @6542
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1581.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1581.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1582 DESIGNATED 1582 GROUP @14 // VEXATION TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1582.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1582.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1583 DESIGNATED 1583 GROUP @14 // KACHIKO'S WAKIZASHI TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1583.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1583.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1584 DESIGNATED 1584 GROUP @14 // THE BRASS BLADE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1584.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1584.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1585 DESIGNATED 1585 GROUP @14 // ARBANE SWORD TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1585.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1585.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1586 DESIGNATED 1586 GROUP @14 // BLADE OF SEARING TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1586.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1586.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1588 DESIGNATED 1588 GROUP @14 // WATER'S EDGE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1588.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1588.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1589 DESIGNATED 1589 GROUP @14 // RASHAD'S TALON TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1589.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1589.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1596 DESIGNATED 1596 GROUP @14 // SHADOW BLADE TWEAK
-REQUIRE_PREDICATE GAME_IS "BGEE bg2ee eet" @52
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1596.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1596.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1598 DESIGNATED 1598 GROUP @14 // CUTTHROAT TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1598.tph~
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1598.tph~
 
 ////////////////// AXES AND BLUNT WEAPONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1310 DESIGNATED 1310 GROUP @15 // FLAIL EASTHAVEN TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+BEGIN @10005 DESIGNATED 1301 GROUP @15 // INSTAL ALL COMPONENTS IN GROUP
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "1310" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1311" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1312" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1313" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1314" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1320" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1321" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1323" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1324" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1325" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1310.tph~
+INCLUDE ~ZSTweaks/libs/components/06_axes_blunt_tweaks/zs_comp_1301.tph~
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1310 DESIGNATED 1310 GROUP @15 // FLAIL EASTHAVEN TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1301" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/06_axes_blunt_tweaks/zs_comp_1310.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1311 DESIGNATED 1311 GROUP @15 // KROTAN MACE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1301" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1311.tph~
+INCLUDE ~ZSTweaks/libs/components/06_axes_blunt_tweaks/zs_comp_1311.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1312 DESIGNATED 1312 GROUP @15 // SKULLCRUSHER TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1301" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1312.tph~
+INCLUDE ~ZSTweaks/libs/components/06_axes_blunt_tweaks/zs_comp_1312.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1313 DESIGNATED 1313 GROUP @15 // GNASHER TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1301" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1313.tph~
+INCLUDE ~ZSTweaks/libs/components/06_axes_blunt_tweaks/zs_comp_1313.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1314 DESIGNATED 1314 GROUP @15 // MACE OF JERROD TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1301" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1314.tph~
+INCLUDE ~ZSTweaks/libs/components/06_axes_blunt_tweaks/zs_comp_1314.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1320 DESIGNATED 1320 GROUP @15 // FLAIL OF AGES TWEAK REMOVE HASTE IMMUNITY
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1301" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1320.tph~
+INCLUDE ~ZSTweaks/libs/components/06_axes_blunt_tweaks/zs_comp_1320.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1321 DESIGNATED 1321 GROUP @15 // BONE CLUB UNDEAD TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1301" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1321.tph~
+INCLUDE ~ZSTweaks/libs/components/06_axes_blunt_tweaks/zs_comp_1321.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1323 DESIGNATED 1323 GROUP @15 // AZUREDGE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1301" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1323.tph~
+INCLUDE ~ZSTweaks/libs/components/06_axes_blunt_tweaks/zs_comp_1323.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1324 DESIGNATED 1324 GROUP @15 // WYVERN TAIL +2 TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1301" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1324.tph~
+INCLUDE ~ZSTweaks/libs/components/06_axes_blunt_tweaks/zs_comp_1324.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1325 DESIGNATED 1325 GROUP @15 // BOROK'S FIST +2 TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1301" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1325.tph~
+INCLUDE ~ZSTweaks/libs/components/06_axes_blunt_tweaks/zs_comp_1325.tph~
 
 ////////////////////////////////////// RANGED WEAPON TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1010 DESIGNATED 1010 GROUP @16 // ASP NEST TWEAK
-REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+BEGIN @10006 DESIGNATED 1009 GROUP @16 // INSTALL ALL COMPONENTS IN THE GROUP
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "1009" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1330" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1340" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1342" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1343" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1344" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1345" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1346" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1010.tph~
+INCLUDE ~ZSTweaks/libs/components/07_ranged_tweaks/zs_comp_1009.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1010 DESIGNATED 1010 GROUP @16 // ASP NEST TWEAK
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1009" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/07_ranged_tweaks/zs_comp_1010.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1330 DESIGNATED 1330 GROUP @16 // DARKFIRE BOW TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1009" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1330.tph~
+INCLUDE ~ZSTweaks/libs/components/07_ranged_tweaks/zs_comp_1330.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1340 DESIGNATED 1340 GROUP @16 // TARALASH TWEAKS
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1009" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1340.tph~
+INCLUDE ~ZSTweaks/libs/components/07_ranged_tweaks/zs_comp_1340.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1342 DESIGNATED 1342 GROUP @16 // PROTECTOR OF THE DRYADS TWEAKS
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1009" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1342.tph~
+INCLUDE ~ZSTweaks/libs/components/07_ranged_tweaks/zs_comp_1342.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1343 DESIGNATED 1343 GROUP @16 // MANA BOW TWEAKS
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1009" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1343.tph~
+INCLUDE ~ZSTweaks/libs/components/07_ranged_tweaks/zs_comp_1343.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1344 DESIGNATED 1344 GROUP @16 // Arrow of biting TWEAKS
-REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @52
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "1009" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1344.tph~
+INCLUDE ~ZSTweaks/libs/components/07_ranged_tweaks/zs_comp_1344.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1345 DESIGNATED 1345 GROUP @16 // Arrow of FIRE TWEAKS
-REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @52
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "1009" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1345.tph~
+INCLUDE ~ZSTweaks/libs/components/07_ranged_tweaks/zs_comp_1345.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1346 DESIGNATED 1346 GROUP @16 // Arrow of piercing TWEAKS
-REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @52
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "1009" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1346.tph~
+INCLUDE ~ZSTweaks/libs/components/07_ranged_tweaks/zs_comp_1346.tph~
 
 ///////////////////////////////////// NPC GEAR TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1380 DESIGNATED 1380 GROUP @17 // HAERDALIS BLADES WEAPONS
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+BEGIN @10007 DESIGNATED 1379 GROUP @17 // HAERDALIS BLADES WEAPONS
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "1380" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1480" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1500" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1510" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1520" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1521" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1640" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1641" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1642" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1643" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1644" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1645" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1380.tph~
+INCLUDE ~ZSTweaks/libs/components/08_npc_tweaks/zs_comp_1379.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1380 DESIGNATED 1380 GROUP @17 // HAERDALIS BLADES WEAPONS
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/08_npc_tweaks/zs_comp_1380.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1480 DESIGNATED 1480 GROUP @17 // YOSHIMO KATANA TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1480.tph~
+INCLUDE ~ZSTweaks/libs/components/08_npc_tweaks/zs_comp_1480.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1500 DESIGNATED 1500 GROUP @17 // MAZZY WEAPON TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1500.tph~
+INCLUDE ~ZSTweaks/libs/components/08_npc_tweaks/zs_comp_1500.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1510 DESIGNATED 1510 GROUP @17 // ANOMEN SHIELD
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1510.tph~
+INCLUDE ~ZSTweaks/libs/components/08_npc_tweaks/zs_comp_1510.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1520 DESIGNATED 1520 GROUP @17 // KELDORN SWORD TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1520.tph~
+INCLUDE ~ZSTweaks/libs/components/08_npc_tweaks/zs_comp_1520.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1521 DESIGNATED 1521 GROUP @17 // KELDORN ARMOR TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1521.tph~
+INCLUDE ~ZSTweaks/libs/components/08_npc_tweaks/zs_comp_1521.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1640 DESIGNATED 1640 GROUP @17 // DORN BLADES
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1640.tph~
+INCLUDE ~ZSTweaks/libs/components/08_npc_tweaks/zs_comp_1640.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1641 DESIGNATED 1641 GROUP @17 // ITEM CREATION BY VANILLA NPC
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1641.tph~
+INCLUDE ~ZSTweaks/libs/components/08_npc_tweaks/zs_comp_1641.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1642 DESIGNATED 1642 GROUP @17 // NALIA'S RING TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1642.tph~
+INCLUDE ~ZSTweaks/libs/components/08_npc_tweaks/zs_comp_1642.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1643 DESIGNATED 1643 GROUP @17 // CORTHALA'S BLADE TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1643.tph~
+INCLUDE ~ZSTweaks/libs/components/08_npc_tweaks/zs_comp_1643.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1644 DESIGNATED 1644 GROUP @17 // NPC GEAR STAT RESTRICTION TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1644.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/08_npc_tweaks/zs_comp_1644.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1645 DESIGNATED 1645 GROUP @17 // CERND CLOAK TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1645.tph~
+INCLUDE ~ZSTweaks/libs/components/08_npc_tweaks/zs_comp_1645.tph~
 
 ///////////////////////////////////// MISC ITEMS TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1216,43 +1527,60 @@ BEGIN @1190 DESIGNATED 1190 GROUP @18 // ROD OF MIGHT TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1190.tph~
+INCLUDE ~ZSTweaks/libs/components/09_misc_items_tweaks/zs_comp_1190.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1600 DESIGNATED 1600 GROUP @18 // CHARNAME TANKARD TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1600.tph~
+INCLUDE ~ZSTweaks/libs/components/09_misc_items_tweaks/zs_comp_1600.tph~
 
+//////////////////////////////////// WIZARD SPELL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1601 DESIGNATED 1601 GROUP @18 // POTION PREVENT STACKING
+BEGIN @10008 DESIGNATED 139 GROUP @19 // INSTALL ALL COMPONENTS IN THE GROUP
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "140" @57 FORBID_COMPONENT "ZSTweaks.tp2" "145" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "147" @57 FORBID_COMPONENT "ZSTweaks.tp2" "160" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "161" @57 FORBID_COMPONENT "ZSTweaks.tp2" "163" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "170" @57 FORBID_COMPONENT "ZSTweaks.tp2" "180" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "210" @57 FORBID_COMPONENT "ZSTweaks.tp2" "220" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "370" @57 FORBID_COMPONENT "ZSTweaks.tp2" "380" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "390" @57 FORBID_COMPONENT "ZSTweaks.tp2" "400" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "405" @57 FORBID_COMPONENT "ZSTweaks.tp2" "407" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "410" @57 FORBID_COMPONENT "ZSTweaks.tp2" "430" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "440" @57 FORBID_COMPONENT "ZSTweaks.tp2" "441" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "442" @57 FORBID_COMPONENT "ZSTweaks.tp2" "443" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "444" @57 FORBID_COMPONENT "ZSTweaks.tp2" "445" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "446" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_1601.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_139.tph~
 
-////////////////// WIZARD SPELL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @140 DESIGNATED 140 GROUP @19
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_140.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_140.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @145 DESIGNATED 145 GROUP @19 // LUCK DURATION BOOST
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_145.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_145.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @147 DESIGNATED 147 GROUP @19 // LUCK OVERALL BOOST
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_147.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_147.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //BEGIN @150 DESIGNATED 150 GROUP @19 // DISINTEGRATE TWEAK
@@ -1262,37 +1590,42 @@ INCLUDE ~ZSTweaks/libs/components/zs_comp_147.tph~
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @160 DESIGNATED 160 GROUP @19 // BLAKBLAD NO BACKSTAB TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_160.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_160.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @163 DESIGNATED 163 GROUP @19 // GOLIRO NO BACKSTAB TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_163.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_163.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @161 DESIGNATED 161 GROUP @19 // PHANTOM BLADE DUR STD
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_161.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_161.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @170 DESIGNATED 170 GROUP @19 // WAIL OF BANSHEE MAGIC DMG TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_170.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_170.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @180 DESIGNATED 180 GROUP @19 // METEORM SWARM TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_180.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_180.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //BEGIN @200 DESIGNATED 200 GROUP @19 SLEEP TWEAK
@@ -1301,453 +1634,556 @@ INCLUDE ~ZSTweaks/libs/components/zs_comp_180.tph~
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @210 DESIGNATED 210 GROUP @19 // HORROR ENCHANTMENT TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_210.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_210.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @220 DESIGNATED 220 GROUP @19 // ICE STORM TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_220.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_220.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @370 DESIGNATED 370 GROUP @19 // RAY OF ENFEEBLEMENT NECROMANCY
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_370.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_370.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @380 DESIGNATED 380 GROUP @19 // CONTAGION TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_380.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_380.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @390 DESIGNATED 390 GROUP @19 // DEATH FOG TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_390.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_390.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @400 DESIGNATED 400 GROUP @19 // ENERGY DRAIN TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_400.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_400.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @405 DESIGNATED 405 GROUP @19 // MAZE MR TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_405.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_405.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @407 DESIGNATED 407 GROUP @19 // FAMILIAR IMP TWEAK
-REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee" @47 // familiars are handled differently in EET, thus not compatible yet
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee" @47
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_407.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_407.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @410 DESIGNATED 410 GROUP @19 // HORRID WILTING TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_410.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_410.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @430 DESIGNATED 430 GROUP @19 // GREASE TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_430.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_430.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @440 DESIGNATED 440 GROUP @19 // COMET TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_440.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_440.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @441 DESIGNATED 441 GROUP @19 // TENSER THAC0 tweak
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_441.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_441.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @442 DESIGNATED 442 GROUP @19 // TENSER APR tweak
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_442.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_442.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @443 DESIGNATED 443 GROUP @19 // SYMBOL OF DEATH BOOST
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee eet" @56
 FORBID_COMPONENT "ZSTweaks.tp2" "340" @55
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_443.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_443.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @444 DESIGNATED 444 GROUP @19 // FLESH TO STONE PETRIFICATION SAVES
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_444.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_444.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @445 DESIGNATED 445 GROUP @19 // BIGBY'S SPELLS BUFF
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_445.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_445.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @446 DESIGNATED 446 GROUP @19 // FIREBALL SCALING TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_446.tph~
+INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_446.tph~
 
-////////////////// CLERIC/DRUID SPELL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
+/////////////////////////////////// CLERIC/DRUID SPELL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @10009 DESIGNATED 99 GROUP @20 // INSTALL ALL COMPONENTS IN THE GROUP
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "100" @57 FORBID_COMPONENT "ZSTweaks.tp2" "101" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "102" @57 FORBID_COMPONENT "ZSTweaks.tp2" "110" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "130" @57 FORBID_COMPONENT "ZSTweaks.tp2" "190" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "230" @57 FORBID_COMPONENT "ZSTweaks.tp2" "240" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "250" @57 FORBID_COMPONENT "ZSTweaks.tp2" "260" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "270" @57 FORBID_COMPONENT "ZSTweaks.tp2" "280" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "290" @57 FORBID_COMPONENT "ZSTweaks.tp2" "300" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "310" @57 FORBID_COMPONENT "ZSTweaks.tp2" "320" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "330" @57 FORBID_COMPONENT "ZSTweaks.tp2" "340" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "350" @57 FORBID_COMPONENT "ZSTweaks.tp2" "420" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "450" @57 FORBID_COMPONENT "ZSTweaks.tp2" "460" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "461" @57 FORBID_COMPONENT "ZSTweaks.tp2" "462" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "463" @57 FORBID_COMPONENT "ZSTweaks.tp2" "464" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "465" @57 FORBID_COMPONENT "ZSTweaks.tp2" "466" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "467" @57 FORBID_COMPONENT "ZSTweaks.tp2" "468" @57
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_99.tph~
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @100 DESIGNATED 100 GROUP @20 // GLYPH OF WARDING HALF ON SAVE
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_100.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_100.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @101 DESIGNATED 101 GROUP @20 // FBLADE UNDEAD BONUS
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_101.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_101.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @102 DESIGNATED 102 GROUP @20 // FBLADE DURATION BOOST
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_102.tph~
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_102.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @110 DESIGNATED 110 GROUP @20 // BLESS SCALING DURATION BOOST
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_110.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_110.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @130 DESIGNATED 130 GROUP @20 // HOLD PERSON STANDARDIZATION
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_130.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_130.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @190 DESIGNATED 190 GROUP @20 // HOLY POWER THAC0 TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_190.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_190.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @230 DESIGNATED 230 GROUP @20 //CLOAK OF FEAR TWEAK
-REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_230.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_230.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @240 DESIGNATED 240 GROUP @20 // GOODBERRY TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_240.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_240.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @250 DESIGNATED 250 GROUP @20 // EARTHQUAKE PARTY FRIENDLY
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_250.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_250.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @350 DESIGNATED 350 GROUP @20 // EARTHQUAKE NO SHAKE
-REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" "This mod was written for BGEE and BG2EE"
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_350.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_350.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @260 DESIGNATED 260 GROUP @20 // NEGATIVE PLANE DUR BOOST
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_260.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_260.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @270 DESIGNATED 270 GROUP @20 // ENTANGLE TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_270.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_270.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @280 DESIGNATED 280 GROUP @20 // CLERIC POISON TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_280.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_280.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @290 DESIGNATED 290 GROUP @20 // HOLY POWER APR TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_290.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_290.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @300 DESIGNATED 300 GROUP @20 // IRON SKINS SPEED BOOST
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_300.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_300.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @310 DESIGNATED 310 GROUP @20 // FIRESEEDS BOOST
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_310.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_310.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @320 DESIGNATED 320 GROUP @20 // NATURE'S BEAUTY
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_320.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_320.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @330 DESIGNATED 330 GROUP @20 // CLERIC CONFUSION TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_330.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_330.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @340 DESIGNATED 340 GROUP @20 // SYMBOL OF DEATH TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 FORBID_COMPONENT "ZSTweaks.tp2" "443" @55
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_340.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_340.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @420 DESIGNATED 420 GROUP @20 // ARMOR OF FAITH
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_420.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_420.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @450 DESIGNATED 450 GROUP @20 // BASIC HEALS TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_450.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_450.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @460 DESIGNATED 460 GROUP @20 // MASS CURE
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_460.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_460.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @461 DESIGNATED 461 GROUP @20 // BOLT OF GLORY TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_461.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_461.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @462 DESIGNATED 462 GROUP @20 // MAGICAL STONE TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_462.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_462.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @463 DESIGNATED 463 GROUP @20 // DOLOROUS DECAY TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_463.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_463.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @464 DESIGNATED 464 GROUP @20 // WONDROUS RECALL TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_464.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_464.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @465 DESIGNATED 465 GROUP @20 // NATURE'S BEAUTY TRUE SIGHT TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_465.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_465.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @466 DESIGNATED 466 GROUP @20 // SHIELD OF ARCHONS TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_466.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_466.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @467 DESIGNATED 467 GROUP @20 // SUNRAY TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_467.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_467.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @468 DESIGNATED 468 GROUP @20 // CALL LIGHTNING TWEAK
-REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @54
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_468.tph~
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_468.tph~
 
 ////////////////// CLASS AND KIT-RELATED TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @2100 DESIGNATED 2100 GROUP @21 // SUN SOUL RAY TWEAK
+BEGIN @10010 DESIGNATED 359 GROUP @21 // SUN SOUL RAY TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "2100" @57 FORBID_COMPONENT "ZSTweaks.tp2" "360" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "2110" @57  FORBID_COMPONENT "ZSTweaks.tp2" "2111" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "2112" @57  FORBID_COMPONENT "ZSTweaks.tp2" "2113" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "2114" @57  FORBID_COMPONENT "ZSTweaks.tp2" "2120" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "2130" @57  FORBID_COMPONENT "ZSTweaks.tp2" "2140" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "2150" @57  FORBID_COMPONENT "ZSTweaks.tp2" "2160" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "2170" @57  FORBID_COMPONENT "ZSTweaks.tp2" "2180" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "2190" @57  FORBID_COMPONENT "ZSTweaks.tp2" "2200" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "2210" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2100.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_359.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @2100 DESIGNATED 2100 GROUP @21 // SUN SOUL RAY TWEAK
+REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2100.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2110 DESIGNATED 2110 GROUP @21 // SUN SOULDBEAM TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2110.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2110.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @360 DESIGNATED 360 GROUP @21 // ETHEREAL RETRIBUTION TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_360.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_360.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2111 DESIGNATED 2111 GROUP @21 // WRITHING FOG TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2111.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2111.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2112 DESIGNATED 2112 GROUP @21 // SPIRIT FIRE TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2112.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2112.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2113 DESIGNATED 2113 GROUP @21 // SPIRITUAL CLARITY TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2113.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2113.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2114 DESIGNATED 2114 GROUP @21 // FAVORED OF THE SPIRITS TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2114.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2114.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2120 DESIGNATED 2120 GROUP @21 // WARCRY TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2120.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2120.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2130 DESIGNATED 2130 GROUP @21 // SPIKE TRAP TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2130.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2130.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2140 DESIGNATED 2140 GROUP @21 // EXPLODING TRAP TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2140.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2140.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2150 DESIGNATED 2150 GROUP @21 // NON BREACHABLE HLA TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2150.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2150.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2160 DESIGNATED 2160 GROUP @21 // QUIVERING PALM TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2160.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2160.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2170 DESIGNATED 2170 GROUP @21 // THAC0 THIEF
-REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2170.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2170.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2180 DESIGNATED 2180 GROUP @21 // THAC0 BARD
-REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2180.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2180.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2190 DESIGNATED 2190 GROUP @21 // POISON WEAPON TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2190.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2190.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2200 DESIGNATED 2200 GROUP @21 // BLACKGUARD BACKSTAB TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2200.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2200.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2210 DESIGNATED 2210 GROUP @21 // PROFICIENCY TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~ZSTweaks/libs/components/zs_comp_2210.tph~
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2210.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////

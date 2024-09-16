@@ -1,8 +1,0 @@
-COPY_EXISTING ~SPPR606.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5150) END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 122 parameter1 = 12 END
-BUT_ONLY
-COPY_EXISTING ~FIRESEED.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR unid_ref_desc=RESOLVE_STR_REF(@5160) ench=2 END
-    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 12 parameter1 = 5 dicesize = 8 dicenumber = 3 END
-BUT_ONLY

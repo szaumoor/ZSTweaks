@@ -1,9 +1,0 @@
-COPY ~ZSTweaks/spl/other/ZSTWSWSA.spl~ ~override~
-
-COPY_EXISTING ~SW2H15.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7680) id_ref_desc=RESOLVE_STR_REF(@7681) price=10000 speed=6 END
-    LPF ALTER_EFFECT INT_VAR match_probability1 = 25 probability1=24 END
-    SET mind_flayer = IDS_OF_SYMBOL(race MIND_FLAYER)
-    LPF ADD_EQUIPPED_EFF INT_VAR p1=mind_flayer p2=4 spec=3 STR_VAR effects= ~op=178;op=179;op=344,spec=6~ END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=341,p2=1,spec=1,res=ZSTWSWSA;op=206,res=SPIN975;op=206,res=SPIN974;op=206,res=SPIN910;op=206,res=SPIN959;op=206,res=SPIN834;op=206,res=SPIN775~ END
-BUT_ONLY

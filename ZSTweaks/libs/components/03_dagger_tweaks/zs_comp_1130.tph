@@ -1,0 +1,9 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY "%MOD_FOLDER%/eff/ZSTW_DG6.EFF" ~override~
+    COPY_EXISTING ~DAGG14.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6000) END
+        LPF GET_DMG_TYPE STR_VAR type = ~acid~ RET acid = result END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=40~ END
+        LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 STR_VAR res=~ZSTW_DG6~ effects=~op=12,dsize=4,dnum=1,p2=%acid%;op=177,p1=2;op=177,p1=123;op=177,p1=172;op=177,p1=138;op=177,p1=167;op=177,p1=135;op=177,p1=124~ END
+    BUT_ONLY
+END

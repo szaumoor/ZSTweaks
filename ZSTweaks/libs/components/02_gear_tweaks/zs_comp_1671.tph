@@ -1,0 +1,6 @@
+ACTION_IF !(GAME_IS "iwdee") BEGIN
+    COPY_EXISTING ~HELM05.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7300) END
+        LPF ADD_EQUIPPED_EFF INT_VAR p1=10 STR_VAR effects = ~op=276;op=150~ END
+    BUT_ONLY
+END

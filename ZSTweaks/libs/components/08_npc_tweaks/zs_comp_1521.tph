@@ -1,0 +1,5 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING ~NPPLAT.ITM~ ~override~
+        LPF remove_haste_immunity END
+    BUT_ONLY
+END
