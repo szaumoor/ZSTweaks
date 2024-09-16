@@ -4793,3 +4793,21 @@ Requires:
  5 Strength
 
 Weight: 5~
+
+@7780 = ~This dagger weighs heavily in your hand and is warm to the touch. Merely having it on your person makes you feel uneasy for some reason. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illumination and still be so deathly black at its core, you do not know.
+
+STATISTICS:
+
+Combat abilities:
+– 15% chance per hit of draining 1 level from the target
+– Critical hits heal you by 15% of your health plus 10 more Hit Points
+
+THAC0: +4
+Damage: 1d4+4 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
