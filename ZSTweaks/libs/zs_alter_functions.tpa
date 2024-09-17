@@ -485,6 +485,7 @@ INT_VAR
     current_health = "-1"
     max_health = "-1"
     class = "-1"
+    alignment = "-1"
 BEGIN
     PATCH_IF current_health > "-1" BEGIN
         WRITE_SHORT 0x24 current_health
@@ -505,6 +506,13 @@ BEGIN
     END ELSE BEGIN
         PATCH_IF class < "-1" BEGIN
             PATCH_WARN "Passed a wrong value to class: %class%"
+        END
+    END
+    PATCH_IF alignment > "-1" BEGIN
+        WRITE_BYTE 0x27b alignment
+    END ELSE BEGIN
+        PATCH_IF alignment < "-1" OR alignment > 255 BEGIN
+            PATCH_WARN "Passed a wrong value to class: %alignment%"
         END
     END
 END

@@ -1,6 +1,7 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
+    OUTER_SET new_description = RESOLVE_STR_REF(@5030)
     COPY_EXISTING ~SPWI713.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5030) END
+        LPF ALTER_SPELL INT_VAR ref_desc=new_description END
         LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = 14 END
         SET headers = 0
         FOR ( i = 15; i <= 20; ++i ) BEGIN
@@ -12,5 +13,8 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             LPF ALTER_EFFECT INT_VAR header = i match_opcode = 12 parameter1 = damage END
             ++damage
         END
+    BUT_ONLY
+    COPY_EXISTING ~SCRL8O.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR ref_desc=new_description END
     BUT_ONLY
 END

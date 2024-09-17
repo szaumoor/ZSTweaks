@@ -4,13 +4,14 @@
 @12 = ~Dagger Tweaks~
 @13 = ~Two-handed Melee Weapon Tweaks~
 @14 = ~One-handed Swords Tweaks~
-@15 = ~Axes and Blunt Weapons~
+@15 = ~Axes and Blunt Weapons Tweaks~
 @16 = ~Ranged Weapon Tweaks~
 @17 = ~NPC Tweaks~
-@18 = ~Misc Items~
+@18 = ~Misc Item Tweaks~
 @19 = ~Wizard Spell Tweaks~
 @20 = ~Cleric/Druid Spell Tweaks~
-@21 = ~Class and Kit-related tweaks~
+@21 = ~Class and Kit-related Tweaks~
+@22 = ~Creature Tweaks~
 // END GROUPS
 
 // warning messages
@@ -316,10 +317,10 @@
 @2210 = ~Light proficiency overhaul~
 @2240 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and reenable the unconscious status if successful~ // TODO
 @2250 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
-@2260 = ~Make Blades and Skalds get APR with proficiency points like warrior classes~ //todo
 
 // CRE TWEAKS
 @3000 = ~Make Planetars grant immunity to Level 1 to 3 spells in an aura, as per the Minor Globe of Invulnerability spell~
+@3010 = ~Make inappropriately aligned creatures in BG2 more correct~
 
 //MISC TWEAKS
 @3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane (Rasaad's Quest)~ // TODO, add Lava's areas too

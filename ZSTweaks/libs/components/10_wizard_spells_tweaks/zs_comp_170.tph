@@ -1,8 +1,13 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
+    OUTER_SET new_description =RESOLVE_STR_REF(@7360)
     COPY_EXISTING ~SPWI913.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7360) END
-        LPF ADD_SPL_TGTEFF INT_VAR pwr=9 STR_VAR effects=~op=12,p1=3,tmg=1,dnum=3,dsize=6,p2=0;op=80,rd=2,dur=12;op=142,p2=112, dur=12,rd=2~ END
+        LPF ALTER_SPELL INT_VAR ref_desc=new_description END
+        LPF ADD_SPL_TGTEFF INT_VAR pwr=9 STR_VAR effects=~op=12,p1=3,tmg=1,rd=2,dnum=3,dsize=6,p2=0;op=80,rd=3,dur=12;op=142,p2=112, dur=12,rd=3~ END
         LPF GET_DMG_TYPE STR_VAR type = ~magic~ RET magic_dmg = result END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter2 = magic_dmg END
+    BUT_ONLY
+
+    COPY_EXISTING ~SCRL93.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR ref_desc=new_description END
     BUT_ONLY
 END

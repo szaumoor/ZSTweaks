@@ -1,10 +1,6 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
-    COPY ~ZSTweaks/eff/ZSTWHW16.EFF~ ~override~
-        ~ZSTweaks/eff/ZSTWHW17.EFF~ ~override~
-        ~ZSTweaks/eff/ZSTWHW18.EFF~ ~override~
-        ~ZSTweaks/eff/ZSTWHW19.EFF~ ~override~
-        ~ZSTweaks/eff/ZSTWHW20.EFF~ ~override~
-
+    COPY ~ZSTweaks/eff/horrid_wilting~ ~override~
+    OUTER_SET new_description = RESOLVE_STR_REF(@6210)
     ACTION_IF GAME_IS "eet bg2ee" BEGIN
         COPY_EXISTING ~ohbwat01.CRE~ ~override~ // make sure existing water elementals are considered water elementals
             LPF ALTER_CRE INT_VAR class=219 END
@@ -23,8 +19,12 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         BUT_ONLY
     END
 
+    COPY_EXISTING ~SCRL9G.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR ref_desc=new_description END
+    BUT_ONLY
+
     COPY_EXISTING ~SPWI812.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6210) END
+        LPF ALTER_SPELL INT_VAR ref_desc=new_description END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize=7 END
         FOR ( dicenumber = 16; dicenumber <= 20; ++dicenumber ) BEGIN
             LPF ALTER_EFFECT INT_VAR match_dicenumber = dicenumber parameter1 = dicenumber END

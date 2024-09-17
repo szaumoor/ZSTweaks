@@ -1,6 +1,7 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
+    OUTER_SET new_description = RESOLVE_STR_REF(@5130)
     COPY_EXISTING ~SPWI603.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5130) END
+        LPF ALTER_SPELL INT_VAR ref_desc=new_description END
         SET dur = 72
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 1 header = 1 duration = dur power = 6 target = 1 resist_dispel = 3 parameter1 = 6 END
         dur = 78
@@ -9,5 +10,8 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             LPF ADD_SPELL_EFFECT INT_VAR opcode=1 header=i duration=dur power=6 target=1 resist_dispel=3 parameter1=1 END
             dur += 6
         END
+    BUT_ONLY
+    COPY_EXISTING ~SCRL7G.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR ref_desc=new_description END
     BUT_ONLY
 END

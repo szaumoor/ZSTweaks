@@ -17,7 +17,9 @@ INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_300.tph~
 INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_310.tph~
 INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_320.tph~
 INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_330.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_340.tph~
+ACTION_IF !(MOD_IS_INSTALLED "ZSTweaks" "443") AND !(MOD_IS_INSTALLED "ZSTweaks" "139") BEGIN // symbol not installed
+    INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_340.tph~
+END
 INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_350.tph~
 INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_420.tph~
 INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_450.tph~

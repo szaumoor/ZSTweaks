@@ -1,11 +1,17 @@
-ACTION_IF !(GAME_IS "iwdee") BEGIN // todo
+ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY_EXISTING ~SPPR719.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5190) END
         LPF ADD_SPL_TGTEFF INT_VAR pwr=8 ip=0 STR_VAR effects=~op=55,p2=2,tmg=1,stype=4,sbonus=6~ END
     BUT_ONLY
-
+    OUTER_SET new_description = RESOLVE_STR_REF(@5200)
     COPY_EXISTING ~SPWI817.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5200) END
+        LPF ALTER_SPELL INT_VAR ref_desc=new_description END
         LPF ADD_SPL_TGTEFF INT_VAR pwr=8 ip=0 STR_VAR effects=~op=55,p2=2,tmg=1,stype=4,sbonus=6~ END
+    BUT_ONLY
+    COPY_EXISTING ~SCRLAO.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR ref_desc=new_description END
+    BUT_ONLY
+    COPY_EXISTING ~SCRLAM.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR ref_desc=new_description END
     BUT_ONLY
 END

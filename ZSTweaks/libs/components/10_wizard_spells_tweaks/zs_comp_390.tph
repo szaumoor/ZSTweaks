@@ -1,6 +1,13 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
+    OUTER_SET new_description = RESOLVE_STR_REF(@5230)
     COPY_EXISTING ~SPWI614.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5230) END
+        LPF ALTER_SPELL INT_VAR ref_desc=new_description END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 8 dicenumber = 1 parameter1 = 8 END
     BUT_ONLY
+
+    COPY_EXISTING ~SCRL7R.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR ref_desc=new_description END
+    BUT_ONLY
 END
+
+

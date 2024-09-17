@@ -1,4 +1,5 @@
 ACTION_IF !(GAME_IS "eet") BEGIN
+    OUTER_SET new_description = RESOLVE_STR_REF(@6650)
     COPY_EXISTING ~FAMIMP.CRE~ ~override~
         LPF CRE_MAX_HEALTH RET max_health = result END
         PATCH_IF max_health < 12 BEGIN
@@ -10,6 +11,9 @@ ACTION_IF !(GAME_IS "eet") BEGIN
         END
     BUT_ONLY
     COPY_EXISTING ~SPWI123.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6650) END
+        LPF ALTER_SPELL INT_VAR ref_desc=new_description END
+    BUT_ONLY
+    COPY_EXISTING ~SCRL6D.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR ref_desc=new_description END
     BUT_ONLY
 END

@@ -21,7 +21,9 @@ INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_430.tph~
 INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_440.tph~
 INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_441.tph~
 INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_442.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_443.tph~
+ACTION_IF !(MOD_IS_INSTALLED "ZSTweaks" "340") AND !(MOD_IS_INSTALLED "ZSTweaks" "99") BEGIN // symbol not installed
+    INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_443.tph~
+END
 INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_444.tph~
 INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_445.tph~
 INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_446.tph~

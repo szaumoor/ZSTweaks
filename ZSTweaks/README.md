@@ -1089,7 +1089,7 @@ Might be a bug present in various spells. See Glyph of Warding component.
 
 **Component 170:** Make Wail of the Banshee inflict some magical damage and deafness on a successful save
 
-This exists because I personally dislike using spells, especially high level spells, which are powerful but unpredictable, so that there is a benefit to using them regardless. Therefore, on a successful save, it will cause 3d6 magic damage and cause deafness for 2 rounds.
+This exists because I personally dislike using spells, especially high level spells, which are powerful but unpredictable, so that there is a benefit to using them regardless. Therefore, on a successful save, it will cause 3d6+3 magic damage and cause deafness for 2 rounds.
 
 **Component 180:** Make Meteor Swarm more likely to do more damage, and bypass magic resistance like Fire Storm
 
@@ -1469,6 +1469,28 @@ This tiny overhaul addresses primarily something that has bothered me forever ab
 - 3 proficiency points: +2 THAC0 and +3 Damage
 - 4 proficiency points: +3 THAC0 and +4 Damage
 - 5 proficiency points: +4 THAC0 and +5 Damage
+
+
+</details>
+
+---
+
+<details>
+
+<summary><b>Creature Tweaks</b></summary>
+
+**Component 3010:** Make inappropriately aligned creatures in BG2 more correct
+
+This is a more correct alignment revision compared to Oversight's component, specifically aimed at the state of this problem in the latest version of BG2EE. A huge chunk of the alignment corrections in that component no longer apply, and some of them differ from BeamDog's correction. I left BD's corrections as long as they made sense, and I did not include edits that made no sense to me. For example:
+
+- Making Cowled Enforcers evil
+- Making some Amnian Guards evil
+- Making the Spectator beholder evil. They're supposed to be Lawful Neutral. BD's corrections show that.
+- I didn't make Melissan evil before the plot reveals her nature. It defeats the purpose of the deception and the twist.
+
+I also added other creatures that I spotted that seem to be problematic too. For example, the skin dancer version of Rejiek is... Neutral Good. Ooookay.
+
+It preserves the most egregious fixes for errors that still exist. Like Tolgerias being Chaotic Good. Yeah, right.
 
 
 </details>
