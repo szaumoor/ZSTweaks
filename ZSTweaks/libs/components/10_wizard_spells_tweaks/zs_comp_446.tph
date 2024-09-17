@@ -12,9 +12,11 @@ COPY_EXISTING ~SPWI304.SPL~ ~override~
     END
 BUT_ONLY
 
-COPY_EXISTING ~SCRL5Z.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR ref_desc=new_description_fireball END
-BUT_ONLY
+ACTION_IF FILE_EXISTS_IN_GAME ~SCRL5Z.ITM~ BEGIN
+    COPY_EXISTING ~SCRL5Z.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR ref_desc=new_description_fireball END
+    BUT_ONLY
+END
 
 COPY_EXISTING ~SCRL1G.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR ref_desc=new_description_fireball END
@@ -25,13 +27,17 @@ COPY_EXISTING ~SPWI523.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=new_description_sunfire END
 BUT_ONLY
 
-COPY_EXISTING ~SCRLAL.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR ref_desc=new_description_sunfire END
-BUT_ONLY
+ACTION_IF FILE_EXISTS_IN_GAME ~SCRLAL.ITM~ BEGIN
+    COPY_EXISTING ~SCRLAL.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR ref_desc=new_description_sunfire END
+    BUT_ONLY
+END
 
-COPY_EXISTING ~SCRLAR.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR ref_desc=new_description_sunfire END
-BUT_ONLY
+ACTION_IF FILE_EXISTS_IN_GAME ~SCRLAR.ITM~ BEGIN
+    COPY_EXISTING ~SCRLAR.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR ref_desc=new_description_sunfire END
+    BUT_ONLY
+END
 
 COPY_EXISTING ~SPWI523D.SPL~ ~override~
     LPF LAST_VALID_HEADER RET last_header = result END
@@ -77,6 +83,8 @@ COPY_EXISTING ~SPWI712.SPL~ ~override~
     END
 BUT_ONLY
 
-COPY_EXISTING ~SCRL8N.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR ref_desc=new_description_fireball_delayed END
-BUT_ONLY
+ACTION_IF FILE_EXISTS_IN_GAME ~SCRL8N.ITM~ BEGIN
+    COPY_EXISTING ~SCRL8N.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR ref_desc=new_description_fireball_delayed END
+    BUT_ONLY
+END
