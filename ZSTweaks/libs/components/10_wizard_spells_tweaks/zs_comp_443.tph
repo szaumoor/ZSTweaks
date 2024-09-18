@@ -8,12 +8,12 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         LPF ALTER_SPELL INT_VAR ref_desc=new_description END
         LPF ADD_SPL_TGTEFF INT_VAR pwr=8 ip=0 STR_VAR effects=~op=55,p2=2,tmg=1,stype=4,sbonus=6~ END
     BUT_ONLY
-    ACTION_IF FILE_EXISTS ~SCRLAO.ITM~ BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~SCRLAO.ITM~ BEGIN
         COPY_EXISTING ~SCRLAO.ITM~ ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
         BUT_ONLY
     END
-    ACTION_IF FILE_EXISTS ~SCRLAM.ITM~ BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~SCRLAM.ITM~ BEGIN
         COPY_EXISTING ~SCRLAM.ITM~ ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
         BUT_ONLY
