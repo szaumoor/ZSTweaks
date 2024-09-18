@@ -8,7 +8,7 @@ COPY_EXISTING ~SPWI818.SPL~ ~override~ // bigby's clenched fist
 BUT_ONLY
 
 COPY_EXISTING ~SCRLB1.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR ID_ref_desc=new_description_clenched END
+    LPF ALTER_ITEM INT_VAR id_ref_desc=new_description_clenched END
 BUT_ONLY
 
 COPY_EXISTING ~SPWI818A.SPL~ ~override~ // bigby's fist subspell

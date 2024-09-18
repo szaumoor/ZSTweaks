@@ -14,7 +14,7 @@ BUT_ONLY
 
 ACTION_IF FILE_EXISTS_IN_GAME ~SCRL5Z.ITM~ BEGIN
     COPY_EXISTING ~SCRL5Z.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ef_desc=new_description_fireball END
+        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description_fireball END
     BUT_ONLY
 END
 

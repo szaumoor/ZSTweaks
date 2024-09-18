@@ -7,7 +7,9 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter2 = magic_dmg END
     BUT_ONLY
 
-    COPY_EXISTING ~SCRL93.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
-    BUT_ONLY
+    ACTION_IF FILE_EXISTS_IN_GAME ~SCRL9V.ITM~ BEGIN
+        COPY_EXISTING ~SCRL9V.ITM~ ~override~
+            LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
+        BUT_ONLY
+    END
 END
