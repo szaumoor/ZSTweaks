@@ -8,7 +8,7 @@ COPY_EXISTING ~SPWI818.SPL~ ~override~ // bigby's clenched fist
 BUT_ONLY
 
 COPY_EXISTING ~SCRLB1.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR ref_desc=new_description_clenched END
+    LPF ALTER_ITEM INT_VAR ID_ref_desc=new_description_clenched END
 BUT_ONLY
 
 COPY_EXISTING ~SPWI818A.SPL~ ~override~ // bigby's fist subspell
@@ -23,7 +23,7 @@ COPY_EXISTING ~SPWI818B.SPL~ ~override~ // bigby's second subspell
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h match_opcode=206 savebonus="-2" END
 BUT_ONLY
 
-OUTER_SET new_description_crushing = RESOLVE_STR_REF(@7381)
+OUTER_SET new_description_crushing = RESOLVE_STR_REF(@7382)
 COPY_EXISTING ~SPWI918.SPL~ ~override~ // bigby's crushing hand
     LPF ALTER_SPELL INT_VAR ref_desc=new_description_crushing END
     LPF LAST_VALID_HEADER RET h = result END
@@ -33,7 +33,7 @@ COPY_EXISTING ~SPWI918.SPL~ ~override~ // bigby's crushing hand
 BUT_ONLY
 
 COPY_EXISTING ~SCRLB2.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR ref_desc=new_description_crushing END
+    LPF ALTER_ITEM INT_VAR id_ref_desc=new_description_crushing END
 BUT_ONLY
 
 COPY_EXISTING ~SPWI918A.SPL~ ~override~ // bigby's fist subspell

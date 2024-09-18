@@ -4812,3 +4812,9 @@ Requires:
  3 Strength
 
 Weight: 1~
+
+@7790 = ~Sun Soulbeam
+The character emits a dazzling burst of light that strikes at all other creatures within a 15-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 9d6 points of fire damage (12d6+3 if undead), unless they Save vs. Spell for half. In addition, all creatures except the character must Save vs. Spell or be blinded for 2 hours.~
+
+@7800 = ~Sun Soulray
+The character projects a blast of light from <PRO_HISHER> open palm, dealing 1d8 fire damage for every 2 caster levels (up to a maximum of 5d8 damage) to a single target. Undead creatures take an additional 6 points of damage (which increases by 2 every 2 caster levels). There is no Saving Throw against this ability.~

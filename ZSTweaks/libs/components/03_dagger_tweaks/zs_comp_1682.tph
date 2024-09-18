@@ -16,7 +16,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         BUT_ONLY
         COPY_EXISTING ~bddagg05.spl~ ~override~
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 0 dicenumber = 1 dicesize = 3 END
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=0,dur=18,p1=-2,ip=3~ END
+            LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 STR_VAR effects = ~op=0,dur=18,p1=-2,ip=3~ END
         BUT_ONLY
     END ELSE BEGIN
         ACTION_IF group_component = 0 BEGIN

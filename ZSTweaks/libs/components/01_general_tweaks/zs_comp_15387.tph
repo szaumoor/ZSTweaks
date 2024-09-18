@@ -8,8 +8,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ ~override~
         END
     END ELSE BEGIN
         PATCH_IF (itm_cat = 1 OR itm_cat = 10) AND flag_set = 0 BEGIN
-            LPF SPL_GLOBALS_NUM RET globals = result END
-            LPF SPL_ABILITIES_NUM RET abilities = result END
+            LPF ITM_GLOBALS_NUM RET globals = result END
+            LPF ITM_ABILITIES_NUM RET abilities = result END
             PATCH_IF globals = 0 AND abilities = 0 BEGIN // sellable rings and necklaces without effects
                 LPF ITM_PRICE RET p = result END
                 PATCH_IF p > 0 BEGIN

@@ -14,6 +14,6 @@ ACTION_IF !(GAME_IS "eet") BEGIN
         LPF ALTER_SPELL INT_VAR ref_desc=new_description END
     BUT_ONLY
     COPY_EXISTING ~SCRL6D.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR ref_desc=new_description END
+        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
     BUT_ONLY
 END

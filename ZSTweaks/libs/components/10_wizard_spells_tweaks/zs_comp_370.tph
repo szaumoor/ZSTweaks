@@ -9,5 +9,5 @@ COPY_EXISTING ~SPWI221.SPL~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~SCRL89.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR ref_desc=new_description END
+    LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
 BUT_ONLY

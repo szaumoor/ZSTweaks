@@ -48,7 +48,7 @@ STR_VAR
     ground_icon = ~none~
     desc_img = ~none~
 BEGIN
-
+    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     PATCH_IF unid_ref_name > "-2" BEGIN
         WRITE_LONG 0x08 unid_ref_name
     END ELSE BEGIN
@@ -333,6 +333,7 @@ INT_VAR
     parameter4 = "-1"
     secondary_type = "-1"
 BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "EFF" END
     PATCH_IF parameter1 > "-999" BEGIN
         WRITE_LONG 0x1c parameter1
     END ELSE BEGIN
@@ -380,6 +381,7 @@ STR_VAR
     casting_sound = ~none~
     icon = ~none~
 BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
     PATCH_IF ref_name > "-2" BEGIN
         WRITE_LONG 0x08 ref_name
     END ELSE BEGIN
@@ -487,6 +489,7 @@ INT_VAR
     class = "-1"
     alignment = "-1"
 BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
     PATCH_IF current_health > "-1" BEGIN
         WRITE_SHORT 0x24 current_health
     END ELSE BEGIN
@@ -522,8 +525,8 @@ INT_VAR
     trap_size = "-1"
     explosion_size = "-1"
 BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "PRO" END
     READ_SHORT 0x8 projectile_type
-
     PATCH_IF trap_size > "-1" BEGIN
         PATCH_IF projectile_type = 3 BEGIN
             WRITE_SHORT 0x204 trap_size
@@ -547,6 +550,7 @@ INT_VAR
     match_timing = "-1"
     timing = "-1"
 BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
     READ_LONG 0x2c4 effects_offset
     READ_LONG 0x2c8 effects_num
     SET effect_bytes = 0

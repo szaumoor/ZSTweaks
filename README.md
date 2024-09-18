@@ -1395,7 +1395,7 @@ The maximum damage normally grows up to 6d8 at level 12, adding 6 damage to unde
 
 **Component 2110:** Make Sun Soulbeam do more damage to undead: 12d6 instead of just 3 more damage than baseline.
 
-The difference in damage between non-undead and undead in vanilla is 9d6 vs. 9d6+3. It's really not a meaningful difference. Therefore, the damage to undead will now be 12d6, i.e. up to 72 damage instead of 57, which I think is okay for a once-per-day ability anyway.
+The difference in damage between non-undead and undead in vanilla is 9d6 vs. 9d6+3. It's really not a meaningful difference. Therefore, the damage to undead will now be 12d6+3, i.e. up to 75 damage instead of 57, which I think is okay for a once-per-day ability anyway.
 
 **Component 360:** Make Etheral Retribution do more damage per round: 6d6 per round instead of 3d8
 

@@ -1,6 +1,6 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY_EXISTING ~SPPR207.SPL~ ~override~
-        LPF ALTER_ITEM INT_VAR unid_ref_desc=RESOLVE_STR_REF(@5060) END
+        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5060) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 122 parameter1 = 6 END
     BUT_ONLY
     COPY_EXISTING ~GBERRY.ITM~ ~override~

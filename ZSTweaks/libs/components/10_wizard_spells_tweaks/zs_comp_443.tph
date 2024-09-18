@@ -10,12 +10,12 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
     BUT_ONLY
     ACTION_IF FILE_EXISTS ~SCRLAO.ITM~ BEGIN
         COPY_EXISTING ~SCRLAO.ITM~ ~override~
-            LPF ALTER_ITEM INT_VAR ref_desc=new_description END
+            LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
         BUT_ONLY
     END
     ACTION_IF FILE_EXISTS ~SCRLAM.ITM~ BEGIN
         COPY_EXISTING ~SCRLAM.ITM~ ~override~
-            LPF ALTER_ITEM INT_VAR ref_desc=new_description END
+            LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
         BUT_ONLY
     END
 END

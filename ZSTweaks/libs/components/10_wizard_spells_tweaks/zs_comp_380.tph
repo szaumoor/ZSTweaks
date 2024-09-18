@@ -8,6 +8,6 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
     BUT_ONLY
 
     COPY_EXISTING ~SCRLA8.ITM~ ~override~
-            LPF ALTER_ITEM INT_VAR ref_desc=new_description END
+        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
     BUT_ONLY
 END

@@ -1,3 +1,7 @@
+COPY_EXISTING "SPCL239.SPL" ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7790) END
+BUT_ONLY
+
 COPY_EXISTING "SPCL239a.eff" ~override~
-    LPF ALTER_ITEM INT_VAR parameter1=0 dicesize=6 dicenumber=3 END
+    LPF ALTER_EFF_FILE INT_VAR parameter1=0 dicesize=6 dicenumber=3 END
 BUT_ONLY

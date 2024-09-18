@@ -7,6 +7,7 @@ INT_VAR
 STR_VAR
     effects = ~~
 BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     LPF a7_auto_apply_spl_effect
         INT_VAR
             def_target = 1
@@ -42,6 +43,7 @@ STR_VAR
     res = ~~
     effects = ~~
 BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     LPF a7_auto_apply_spl_effect
         INT_VAR
             def_target = tgt
@@ -78,6 +80,7 @@ INT_VAR
 STR_VAR
     effects=""
 BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
     LPF a7_auto_apply_spl_effect
         INT_VAR
             def_target = 1
@@ -107,12 +110,14 @@ INT_VAR
     ip="-1"
     stype = 0
     sbonus = 0
+    tgt=2
 STR_VAR
     effects=""
 BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
     LPF a7_auto_apply_spl_effect
         INT_VAR
-            def_target = 2
+            def_target = tgt
             def_timing = tmg
             def_parameter1 = p1
             def_parameter2 = p2
@@ -128,40 +133,3 @@ BEGIN
             effect_codes = ~%effects%~
     END
 END
-
-/*LPF ADD_MAGICAL_EFF_AT
-INT_VAR
-    h = 0
-    ip = "-1"
-    t=3
-    tgt=2
-    tmg=0
-    dur=0
-    rd=1
-    pwr=0
-    p1=0
-    p2=0
-    stype=0
-    sbonus=0
-    dsize=0
-    dnum=0
-BEGIN
-    LPF ADD_ITEM_EFFECT
-        INT_VAR
-            header_type = t
-            header = h
-            target = tgt
-            timing = tmg
-            parameter1 = p1
-            parameter2 = p2
-            duration = dur
-            resist_dispel = rd
-            power = pwr
-            insertpoint = ip
-            savetype = stype
-            savebonus = sbonus
-            dicesize = dsize
-            dicenumber = dnum
-
-    END
-END*/
