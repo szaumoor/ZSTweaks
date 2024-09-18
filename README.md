@@ -172,7 +172,7 @@ Self-explanatory. It's quite a pain when it's something that is supposed to cut 
 
 This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component allows increases of 25%, 50%, 75%, 100%, 125%, 150%, 175%, and 200% to these items.
 
-**Component 1601:** Make potions and food universally incapable of stacking with themselves
+**Component 1601:** Make potions and food items's effects universally incapable of stacking with themselves
 
 This prevents cheeesy stacking of things like Fire Resistance, Saving Throws (Potion of Invulnerability), etc. Applies to food items such as apples from Lunia, and goodberries.
 
