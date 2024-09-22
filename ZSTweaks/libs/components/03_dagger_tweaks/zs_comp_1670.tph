@@ -5,3 +5,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode = 177 check_globals = 0 STR_VAR resource = ~ZSTWWED6~ END
     BUT_ONLY
 END
+
+COPY_EXISTING "LYCNHIT3.EFF" ~override~
+    LPF ALTER_EFF_FILE INT_VAR parameter3 = 5 END
+BUT_ONLY

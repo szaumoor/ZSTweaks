@@ -82,7 +82,7 @@
 @1172 = ~Make Rings of Elemental control more likely to charm the elementals and add missing resistances~
 @1173 = ~Make Ring of Gaxx's improved haste last 2 full rounds, and not 10 seconds~
 @1174 = ~Make Heartwood Ring add 1 spell slot per level, as well as 1 HP/round regen~
-@1180 = "Make Ring of Danger sense protect against backstabs"
+@1180 = "Make Ring of Danger sense defensively better and protect against backstabs"
 @1316 = "Make Mercykiller Ring more useful for rogues that like killing"
 @1317 = "Make the basic robes and Archmage robes slightly more remarkable"
 @1560 = ~Make Belt of Skillful Blade also increase piercing damage by 10%~
@@ -294,7 +294,7 @@
 @464 = ~Make Wondrous Recall also recall wizard spells, and a higher number of them~
 @465 = ~Make Nature's Beauty blocked by True Sight~
 @466 = ~Make Shield of Archons absorb more spell levels (equivalent to cleric level)~
-@467 = ~Make Sunray be able to kill undead regadless of their magic damage resistance~
+@467 = ~Make Sunray be able to kill undead regadless of their magic resistance and magic damage resistance~
 @468 = ~Rebalance Call Lightning's damage and scaling~
 
 // KITS AND CLASSES
@@ -321,6 +321,7 @@
 // CRE TWEAKS
 @3000 = ~Make Planetars grant immunity to Level 1 to 3 spells in an aura, as per the Minor Globe of Invulnerability spell~
 @3010 = ~Make inappropriately aligned creatures in BG2 more correct~
+@3020 = ~Make summoned demons grant XP to the party when they kill something~
 
 //MISC TWEAKS
 @3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane (Rasaad's Quest)~ // TODO, add Lava's areas too
@@ -666,12 +667,11 @@ The casting of this spell opens a channel between the caster's plane and the Neg
 
 @6000 = ~This seemingly simple dagger, steel blade and bone handle, is an incredibly powerful weapon. Forged by an unfortunate duergar smith centuries earlier, the handle was carved from a tooth of a black dragon and the blade was tempered in the blood of its creator. How it has made its way to you is anyone's guess.
 
+STATISTICS:
 
 Equipped abilities:
 – Acid resistance: +40%
 – Elves and denizens native to the Underdark take an extra +5 piercing damage per hit.
-
-STATISTICS:
 
 THAC0: +4
 Damage: 1d4+4, +1d4 acid damage
@@ -748,6 +748,7 @@ STATISTICS:
 Equipped abilities:
 – Detect Traps: +25%
 – Immunity to backstabs and sneak attacks
+– +1 AC and Save vs. Breath
 
 Weight: 0~
 
@@ -2453,10 +2454,13 @@ Weight: 1~
 
 STATISTICS:
 
-THAC0: +1, +4 vs. lycanthropes
-Damage: 1d4+1, +6 extra vs. lycanthropes
+Combat abilities:
+– Acts as a +4 weapon against lycanthropes for the purposes of overcoming physical protections and immunities
+
+THAC0: +1, +6 vs. lycanthropes
+Damage: 1d4+1, plus 6 extra damage vs. lycanthropes
 Damage type: Piercing
-Speed Factor: 1
+Speed Factor: 0
 Proficiency Type: Dagger
 Type: One-handed
 Requires:
@@ -3070,9 +3074,12 @@ STATISTICS:
 
 Equipped abilities:
 – Immunity to fear
-– Regenerate 1 Hit Point every 3 rounds
+– Regenerate 1 Hit Point every 5/2 rounds
 – 15% resistance against acid, electricity, fire, and cold
-– +2 AC and Saving Throws against dragons
+– +2 AC and saving throws against dragons
+
+Equipped abilities:
+– Acts as a +4 weapon against dragons and wyverns for the purposes of overcoming physical protections
 
 Charge abilities:
 – Detect Invisibility three times per day
@@ -4818,3 +4825,186 @@ The character emits a dazzling burst of light that strikes at all other creature
 
 @7800 = ~Sun Soulray
 The character projects a blast of light from <PRO_HISHER> open palm, dealing 1d8 fire damage for every 2 caster levels (up to a maximum of 5d8 damage) to a single target. Undead creatures take an additional 6 points of damage (which increases by 2 every 2 caster levels). There is no Saving Throw against this ability.~
+
+
+@7810 = ~The provenance of this dark purple robe has been lost in the mists of history, but a faint odor of stale magic lingers in the air around the threadbare garment. The one who wore it was clearly no stranger to the Weave. Closely examining the robe, you are able to pick out a stylized flame design woven into the fabric. It seems likely the intricate pattern was always subtle, but even were that not true, countless years of wear have rendered the flames all but invisible.
+
+STATISTICS:
+
+Equipped abilities:
+– Intelligence: +1
+– Lore: +10
+– Casting level: +2
+– Armor Class: 5
+
+Charge abilities:
+– Spell Sequencer once per day
+
+Weight: 3~
+
+@7820 = ~This ring, designed for the hero Zachiira, is engraved with holy symbols. When Zachiira requested aid from King Strohm III, it was the king’s royal advisor, the great and powerful Theurgist Karlash Arnostognas, who made this item, in the hope that it would aid the hero in her battle against a demon vampire. Zachiira survived the encounter, but sadly her triumphal return was met with rather less celebration and rather more grief, as the good king was already dead when she arrived. Zachiira laid the holy artifact at the entrance to the king’s tomb, and it was there the relic was discovered by wandering thrill-seekers.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class and Saving throws: +2 vs. evil creatures
+– Attack damage and THAC0 against evil creatures: +1
+– Hit Points: +10
+– Chant
+– One extra spell slot for level 1 and 2 (good-aligned paladins only)
+
+Weight: 0~
+
+@7830 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1, +3 vs. demons and devils (2+ and +4 for Cavaliers)
+– Saving Throws: +1, +3 vs. demons and devils (2+ and +4 for Cavaliers)
+– Attack damage and THAC0 against demons and devils: +2 (+3 for Cavaliers)
+
+
+Weight: 0~
+
+@7840 = ~Constructed from a rhino beetle's sturdy shell, this armor offers its wearer excellent protection without impeding their motion to the same extent as traditional metal plate mail. The unusual material makes this suit of armor particularly effective against missile and slashing weapons.
+
+STATISTICS:
+
+Equipped abilities:
+– Missile Damage Resistance: +25%
+– Slashing Damage Resistance: +13%
+
+Armor Class: 1 (-2 vs. slashing and missie, and 0 vs. piercing) // todo the change
+Requires:
+ 8 Strength
+
+Weight: 25~
+
+@7850 = ~The rhino beetle's carapace makes a most effective shield provided one can survive long enough to pry a piece off the creature. Lightweight but sturdy, this item makes a powerful argument for the premise that the best shields are found in nature, not the forge. The unusual material makes the shield particularly effective against missile weapons.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3, an extra +1 vs. slashing attacks, +2 vs. missile attacks
+– Missile Damage Resistance: +15%
+– Slashing Damage resistance: +8%
+
+Requires:
+ 10 Strength
+
+Weight: 6~
+
+@7860 = ~This shield was carried by a mercenary working with the Order of the Steel Fang. The warriors of the order were impressed with the mercenary's tenacity and courage. She charged into battle without hesitation and seemed to fight all the harder when she was wounded. When their quest was completed, the Order of the Steel Fang gifted a battleaxe to the mercenary as thanks for her service. In turn she gave the order her shield as a sign of respect. The shield stayed in the order for years until it was lost on a battlefield.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3, an extra +1 vs. missile attacks
+– Fire Resistance: +25%
+
+Combat abilities:
+– When the wielder's Hit Points drop below 50%, <PRO_HESHE> gains +2 Strength and 15% physical damage resistance for 5 rounds
+
+Requires:
+ 10 Strength
+
+Weight: 4~
+
+@7870 = ~Legend has it that this elegant curving blade was forged deep beneath the sea by merfolk and its hilt bound in enchanted eelskin. The truth of the matter is more mundane. The blade was crafted in Iriaebor and given to a mercenary commander who protected cargo barges moving up and down the river Chionthar. Still, it is a finely made and serviceable weapon.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. elementals and mephits
+
+Combat abilities:
+– A critical hit against an elemental or mephit will instantly banish the creature to its home plane
+
+THAC0: +2, +4 vs. elementals and mephits
+Damage: 1d8+2, plus 4 vs. elementals and mephits
+Damage Type: Slashing
+Speed Factor: 4
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 3~
+
+@7880 = ~This wakizashi is finely made, but gaudy false gems have been glued on to its hilt. The weapon was procured by Bartleby, a local thug whose obsession with the continent of Kara-Tur has made him one of the most obnoxious mercenaries in the local taverns. He rambles for hours on how different the foreign culture is to that of the Sword Coast and prides himself on being a "city samurai," a title that is as offensive as it is undeserved.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1, +3 vs. slashing attacks (Kensai)
+
+THAC0: +1, +3 (Kensai)
+Damage: 1d8+1 (piercing)
+Speed Factor: 2
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 2~
+
+@7890 = ~This thin, nasty-looking blade was wielded by the gnomish Gardnersonson family in two Dragonspear Wars. Though delicate in appearance and obviously designed for a smaller than human hand, the weapon is extraordinarily effective when turned against ogres, giants, ettins, and other similarly sized creatures.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class and Saving Throws: +2 vs. giant humanoids
+
+THAC0: +2, +4 vs. giant humanoids
+Damage: 1d4+2 (piercing), plus 4 vs. giant humanoids // todo fix fire damage
+Damage Type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@7900 = ~This much-used but still razor-sharp blade was found in the chest of Ophyllis, a treasurer of the Ducal Palace in Baldur's Gate. While his position ensured that Ophyllis possessed many chests, he only used one to house his lungs, and it was in this particular chest the sword was placed. Ophyllis died an agonized, painful death, but not before he gave the sword to a <PRO_MANWOMAN> to whom he owed a deep personal debt. His mournful voice can still be heard by those who wield the blade.
+
+Equipped abilities:
+– Immunity to Command, Greater Command, and Power Word (any)
+
+Combat abilities:
+– 20% chance per hit of casting Deafness on the target
+
+STATISTICS:
+
+THAC0: +3
+Damage: 1d6+3 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~
+
+@8000 = ~Power can corrupt even the noblest of mages, and the long-lived elves of Faerûn have seen what devastating consequences can occur when a mage loses control. This elegant longsword, its silver hilt decorated with clear blue gems, was crafted to deal with arcane spellcasters who have abused their gift. The sword assists any hunter who tracks down out-of-control mages, and has particular potency in the hands of wizard slayers or inquisitors.
+
+STATISTICS:
+
+Equipped abilities:
+– Save vs. Spell: +4 (Wizard Slayers and Inquisitors), +2 (others)
+– Magic Resistance: +5%
+– Magic Damage Resistance: +10%, +25% for Wizard Slayers and Inquisitors
+
+Combat abilities:
+– On a critical hit, the target is will be affected by Dispel Magic, which always succeeds
+
+THAC0: +2, +3 (Wizard Slayers and Inquisitors)
+Damage: 1d8+2 (slashing)
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~

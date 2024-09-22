@@ -348,6 +348,13 @@ BEGIN
             PATCH_WARN "Passed a wrong value to parameter2: %parameter2%"
         END
     END
+    PATCH_IF parameter3 > "-1" BEGIN
+        WRITE_SHORT 0x60 parameter3
+    END ELSE BEGIN
+        PATCH_IF parameter3 < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to parameter3: %parameter3%"
+        END
+    END
     PATCH_IF dicesize > "-1" BEGIN
         WRITE_LONG 0x3c dicesize
     END ELSE BEGIN

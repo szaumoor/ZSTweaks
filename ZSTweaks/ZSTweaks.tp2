@@ -24,10 +24,10 @@ FORBID_COMPONENT "ZSTweaks.tp2" "1352" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1360
 FORBID_COMPONENT "ZSTweaks.tp2" "1370" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1400" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1430" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1440" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1450" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1530" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "1531" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1532" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "1533" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1534" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "1535" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1537" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "1601" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1650" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1532" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1533" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1534" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1535" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1537" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1601" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1650" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_103.tph~
@@ -148,7 +148,6 @@ INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1530.tph~
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1531 DESIGNATED 1531 GROUP @10 // DIVINATION/OTHER SPELLS BYPASS MR
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @53
-FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/components/01_general_tweaks/zs_comp_1531.tph~
@@ -725,7 +724,7 @@ FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 INCLUDE ~ZSTweaks/libs/components/03_dagger_tweaks/zs_comp_1660.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1670 DESIGNATED 1670 GROUP @12 // WEREBANE
+BEGIN @1670 DESIGNATED 1670 GROUP @12 // SILVER DAGGER WEREBANE
 REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
 FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2197,3 +2196,11 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 INCLUDE ~ZSTweaks/libs/components/13_creature_tweaks/zs_comp_3010.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @3020 DESIGNATED 3020 GROUP @22 // summoned demons give XP to party
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/13_creature_tweaks/zs_comp_3020.tph~
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+

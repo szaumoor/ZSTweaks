@@ -172,7 +172,7 @@ Self-explanatory. It's quite a pain when it's something that is supposed to cut 
 
 This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component allows increases of 25%, 50%, 75%, 100%, 125%, 150%, 175%, and 200% to these items.
 
-**Component 1601:** Make potions and food universally incapable of stacking with themselves
+**Component 1601:** Make potions and food items's effects universally incapable of stacking with themselves
 
 This prevents cheeesy stacking of things like Fire Resistance, Saving Throws (Potion of Invulnerability), etc. Applies to food items such as apples from Lunia, and goodberries.
 
@@ -215,7 +215,7 @@ It's pretty strange to limit it to 10 seconds. It's 2 full rounds now.
 
 This makes this ring significantly more useful for an Archdruid, adding 1 extra spell slot of every level, and a slow regeneration effect as the nigh-timeless druidic legend you are.
 
-**Component 1180:** Make Ring of Danger sense protect against backstabs
+**Component 1180:** Make Ring of Danger sense defensively better and protect against backstabs
 
 Self explanatory and ever useful, for any class. Anti-chunking for mages.
 
@@ -360,11 +360,11 @@ This modifies a selection of vanilla ioun stones and circlets:
 
 **Component 1666:** Make Bracers of Blinding's Improved Haste effect last 1 turn and improve speed passively
 
-The original lasts 20 seconds. Additionally, it improves weapon speed factor by 2 and movement rate by 2 (not affected by Free Action).
+The original lasts 20 seconds. Additionally, it improves weapon speed factor by 2, and movement rate by 2, and APR by 1/2.
 
 **Component 1667:** Make Xarrnous's Second Sword Arm (and SoD's version) also add +1 damage (lesser Legacy of the Masters)
 
-This improves the gauntlets such that it also improves damage, not just thac0, making it a lesser version of Legacy of the Masters.
+This improves the gauntlets such that it also improves damage, not just THAC0, making it a lesser version of Legacy of the Masters.
 
 **Component 1668:** Make The Dale's Protector slightly more powerful and open to all classes
 
@@ -462,8 +462,8 @@ Instead of simply giving the usual +4 weapon bonuses:
 
 **Component 1140:** Make Dagger of the Star slightly more powerful.
 
-- Dagger of the Star +4 becomes +5, and the chance of invisibility increases to 10%.
-- Dagger of the Star +5 becomes one of the few privileged +6 weapons and inflicts +1 electric and fire damage per hit
+- Dagger of the Star +4 becomes +5, the chance of invisibility increases to 10%, and inflicts +1 electric and fire damage.
+- Dagger of the Star +5 becomes one of the few privileged +6 weapons and inflicts +2 electric and fire damage per hit
 - Star Bolt: Increased the chance to trigger elemental effects to 15%, the difference being, you have equal chances of triggering fire damage, electrical damage, or both (5% chance each).
 
 **Component 1490:** Make Neb's Nasty Cutter have an unlimited amount of poison
@@ -472,7 +472,7 @@ The dagger will always cause 20 poison damage over 10 seconds if a Save vs. Deat
 
 **Component 1630:** Make The Jade's Fang slightly more powerful and improve the lifesteal effect
 
-This component will make the healing per it based on probabilities, such that there is a 50% chance it will heal by 1, 20% chance it will heal by 2, 15% chance it heals by 3, 10% chance it heals by 4, and 5% chance it heals by 5. Additionally, there is a 15% chance the stun happens as well, but only if a Save vs. Spell is failed. All the effects now bypass Magic Resistance, like the Stupifier in BGEE and Adjatha the Drinker (which is probably an oversight in this case).
+This component will make the healing per it based on probabilities, such that there is a 50% chance it will heal by 1, 20% chance it will heal by 2, 15% chance it heals by 3, 10% chance it heals by 4, and 5% chance it heals by 5. Additionally, there is a 15% chance the stun effect happens too, but only if a Save vs. Spell is failed. All the effects now bypass Magic Resistance, like the Stupifier in BGEE and Adjatha the Drinker (which is probably an oversight in this case).
 
 **Component 1660:** Make Heart of the Golem +2 get a couple more magic-based features, inspired by the description
 
@@ -483,7 +483,9 @@ This makes the dagger, which is made from arcane metals from a golem, imbued wit
 
 **Component 1670:** Make Werebane +1 a bit more effective towards Lycanthropes
 
-Werebane's description is a little misleading. It doesn't cause +4 damage against Lycanthropes. The 1d4+1 base damage of the weapon doesn't become 1d4+5. This type of confusing description is common to all weapons that do extra damage to specific creatures. Instead, it causes 1d4+1 and if the target is a Lycanthrope, another tick of 3 piercing damage is inflicted. This improves this extra additive tick of damage so it inflicts 6 instead.
+Werebane's description is a little misleading. It doesn't cause +4 damage against Lycanthropes. The 1d4+1 base damage of the weapon doesn't become 1d4+5. This type of confusing description is common to all weapons that do extra damage to specific creatures. Instead, it causes 1d4+1 and if the target is a Lycanthrope, another tick of 3 piercing damage is inflicted.
+
+This dramatically improves the power of the dagger against lycanthropes by making it explicitly act as a +4 weapon against them (as the description originally suggests): 1d4+4 damage, +4 thac0, and +4 enchantment level. Additionally, it puts the speed factor at 0.
 
 **Component 1680:** Make Stiletto of Demarchess +2 a bit more powerful and bleed every hit
 
@@ -689,14 +691,12 @@ The description of Peridan is slightly misleading because it states that it does
 
 In reality, the sword deals 1d8+2 against enemies, and 1d8+2 again in a second tick of damage if the enemy is a dragon. So now the description is a bit more explicit about what it does and:
 
-- Regeneration improved to 1 HP per 3 rounds
+- Regeneration improved to 1 HP per 15 seconds (5/2 rounds)
 - Adds 15% resistance to all elements (i.e. the damage type of most dragons)
-- THAC0 against dragons is now +6, +2 for others
-- +2 AC and saving throws against Dragons (essentially like a "Protection from Dragons" spell)
-- Extra damage to dragons: every hit causes additionally 2d8+2 (bear in mind this is not affected by Strength or any other damage modifiers except any effect that increases slashing damage universally)
+- THAC0 against dragons and wyverns has a +4 bonus (side effect: affects other weapons while dual wielding)
+- +2 AC vs. Dragons and Wyverns (essentially like a "Protection from Dragons and Wyverns" spell)
 - Detect Invisibility can be cast three times, not once per day
-
-Additionally, Peridan's extra THAC0 extra damage to dragons affects wyverns as well.
+- Deals an additional tick of 2d6+6 damage if the target is a dragon or wyvern
 
 **Component 1210:** Make The Equalizer slightly more powerful
 
@@ -1363,7 +1363,7 @@ This component allows creatures that have True Sight or True Seeing active to au
 
 This component improves this spell such that it has equal level of spell absorbtion as that of the cleric level (20 for BG, 30 for IWDEE).
 
-**Component 467:** Make Sunray be able to kill undead regadless of their magic damage resistance
+**Component 467:** Make Sunray be able to kill undead regadless of their magic resistance and magic damage resistance
 
 This component makes the spell usable against undead, even if they're immune to magic damage resistance (or very resistant). It should inflict now 100% of the health in damage, and as such, killing them always. Additionally, magic resistance does not affect the spell.
 
@@ -1395,7 +1395,7 @@ The maximum damage normally grows up to 6d8 at level 12, adding 6 damage to unde
 
 **Component 2110:** Make Sun Soulbeam do more damage to undead: 12d6 instead of just 3 more damage than baseline.
 
-The difference in damage between non-undead and undead in vanilla is 9d6 vs. 9d6+3. It's really not a meaningful difference. Therefore, the damage to undead will now be 12d6, i.e. up to 72 damage instead of 57, which I think is okay for a once-per-day ability anyway.
+The difference in damage between non-undead and undead in vanilla is 9d6 vs. 9d6+3. It's really not a meaningful difference. Therefore, the damage to undead will now be 12d6+3, i.e. up to 75 damage instead of 57, which I think is okay for a once-per-day ability anyway.
 
 **Component 360:** Make Etheral Retribution do more damage per round: 6d6 per round instead of 3d8
 
@@ -1492,6 +1492,12 @@ I also added other creatures that I spotted that seem to be problematic too. For
 
 It preserves the most egregious fixes for errors that still exist. Like Tolgerias being Chaotic Good. Yeah, right.
 
+**Component 3020:** Make summoned demons grant XP to the party when they kill something
+
+This makes summoned demons grant party XP. It may not catch all instances of deaths (when killed in groups with fireballs, and things like that) because their combat script might not be able to cope with it. Obviously, don't install with fiend overhauls that add this.
+
+Also, pay attention to any mods that modify the behavior of summoned demons, especially if they replace the script. Might or might not work. Please test and report.
+
 
 </details>
 
@@ -1509,7 +1515,7 @@ Also I would suggest making this the first tweak mod to install, since other old
 
 This mod doesn't modify descriptions of items and spells automatically, every change is a total substitution of the text, and it **only** applies to tweaks that affect specific spells or items. I have preserved the original structure of information in such descriptions so that more mature mods that handle text content more precisely, can hopefully handle non-vanilla descriptions just fine. This is another reason why this mod should be the first tweak mod to be applied, at least in the current state. An overall change to descriptions is that if a component modifies an upgradable item, the upgraded version no longer loses the original, much more interesting description, they are both combined (for example, compare the description between Carsomyr +5 and Carsomyr +6).
 
-And feel free to offer feedback if there are any bugs, criticize the code and offer better alternatives, if you want. I'm aware though that there are ineficiencies, like redundant checks and needless loop iterations, because I mostly wanted to get things working first, and I only just learned the scripting language. So yeah, those things may improve later, though as an user the difference will be of just a bunch of milliseconds.
+And feel free to offer feedback if there are any bugs, criticize the code and offer better alternatives, if you want. I'm aware though that there are inefficiencies, like redundant checks and needless loop iterations, because I mostly wanted to get things working first, and I only just learned the scripting language. So yeah, those things may improve later, though as an user the difference will be of just a bunch of milliseconds.
 
 ## Credits
 
