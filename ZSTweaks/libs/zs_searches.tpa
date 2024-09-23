@@ -1,10 +1,11 @@
 // unused
-DEFINE_PATCH_FUNCTION TYPE_FIRST_OFFSET
+DEFINE_PATCH_FUNCTION ITM_TYPE_FIRST_OFFSET
 INT_VAR
     type = 1
 RET
     type_offset
 BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     PATCH_IF type < 0 OR type > 4 BEGIN
         PATCH_FAIL "Type %type% is invalid. Valid range: [0-4]"
     END
@@ -25,32 +26,12 @@ BEGIN
     END
 END
 
-// unfinished
-DEFINE_PATCH_FUNCTION FIRST_OFFSET_WITH_OPCODE
-INT_VAR
-    opcode = "-1"
-RET
-    type_offset
-BEGIN
-    PATCH_IF opcode < 0 OR opcode > 367 BEGIN
-        PATCH_FAIL "Opcode %opcode% is invalid. Valid range: [0-367]"
-    END ELSE BEGIN
-        READ_SHORT 0x68 abilities_num
-        READ_LONG 0x64 curr_offset
-        FOR ( ability = 0; ability < abilities_num; ++ability ) BEGIN
-            PATCH_IF (BYTE_AT curr_offset) = type BEGIN
-                type_offset = curr_offset
-                ability = abilities_num // i.e. break
-            END
-            SET curr_offset += 0x38
-        END
-    END
-END
 
 DEFINE_PATCH_FUNCTION ITM_FIRST_EFF_OFFSET
 RET
     offset
 BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     READ_SHORT 0x68 abilities_num
     READ_SHORT 0x70 global_eff_num
     READ_LONG 0x64 curr_offset
@@ -61,6 +42,7 @@ DEFINE_PATCH_FUNCTION SPL_FIRST_EFF_OFFSET
 RET
     offset
 BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
     READ_SHORT 0x68 abilities_num
     READ_SHORT 0x70 global_eff_num
     READ_LONG 0x64 curr_offset

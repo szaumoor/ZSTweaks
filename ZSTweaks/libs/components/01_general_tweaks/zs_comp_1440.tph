@@ -17,7 +17,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_PROF RET wpn_prof = result END
     LPF ITM_ENCH RET ench = result END
 	PATCH_IF wpn_cat = 16  AND wpn_prof = 96 BEGIN // daggers
-        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "dagg04" != 0 BEGIN // not grave binder (fake dagger)
+        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "dagg04" != 0 BEGIN // not grave binder (fake dagger) exceptions
             LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = 0 END
             FOR ( current_th = 6; current_th >= 0; --current_th ) BEGIN
                 LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_to_hit=current_th to_hit=current_th+1 END
