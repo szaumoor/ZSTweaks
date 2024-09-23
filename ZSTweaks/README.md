@@ -481,11 +481,9 @@ This makes the dagger, which is made from arcane metals from a golem, imbued wit
 - Improves Magic Resistance by 10% when held
 - 50% chance of inflicting 1d4 magic damage, no save
 
-**Component 1670:** Make Werebane +1 a bit more effective towards Lycanthropes
+**Component 1670:** Make Werebane +1 (Silver Dagger) a bit more effective against Lycanthropes
 
-Werebane's description is a little misleading. It doesn't cause +4 damage against Lycanthropes. The 1d4+1 base damage of the weapon doesn't become 1d4+5. This type of confusing description is common to all weapons that do extra damage to specific creatures. Instead, it causes 1d4+1 and if the target is a Lycanthrope, another tick of 3 piercing damage is inflicted.
-
-This dramatically improves the power of the dagger against lycanthropes by making it explicitly act as a +4 weapon against them (as the description originally suggests): 1d4+4 damage, +4 thac0, and +4 enchantment level. Additionally, it puts the speed factor at 0.
+Werebane's description is a little misleading. It doesn't cause +4 damage against Lycanthropes. The 1d4+1 base damage of the weapon doesn't become 1d4+5. This type of confusing description is common to all weapons that do extra damage to specific creatures. Instead, it causes 1d4+1 and if the target is a Lycanthrope, another tick of 3 piercing damage is inflicted. This improves this extra additive tick of damage so it inflicts 6 instead, and the additional THAC0 is also +6.
 
 **Component 1680:** Make Stiletto of Demarchess +2 a bit more powerful and bleed every hit
 
