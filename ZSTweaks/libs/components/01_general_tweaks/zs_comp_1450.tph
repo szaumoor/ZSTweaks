@@ -18,7 +18,7 @@ ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1350~ OR group_component = 1 BEGIN //
     COPY_EXISTING_REGEXP ~ZSTWW[0-6]\.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=12 match_dicesize=8 match_dicenumber=1 dicesize=4 dicenumber=2 END
     BUT_ONLY
-    COPY_EXISTING_REGEXP ~ZSTWL[0-6]\.spl~ ~override~
+    COPY_EXISTING_REGEXP ~ZSTWNJ[0-6]\.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=12 match_dicesize=8 match_dicenumber=1 dicesize=4 dicenumber=2 END
     BUT_ONLY
 END
@@ -185,25 +185,25 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     END // end long swords and scimitars
     PATCH_IF wpn_cat = 20 AND wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "s1" = 0 BEGIN // ninja-tos
          PATCH_IF ench = 0 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWL0~ END
+            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ0~ END
         END
         PATCH_IF ench = 1 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWL1~ END
+            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ1~ END
         END
         PATCH_IF ench = 2 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWL2~ END
+            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ2~ END
         END
         PATCH_IF ench = 3 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWL3~ END
+            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ3~ END
         END
         PATCH_IF ench = 4 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWL4~ END
+            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ4~ END
         END
         PATCH_IF ench = 5 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWL5~ END
+            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ5~ END
         END
         PATCH_IF ench = 6 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWL6~ END
+            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ6~ END
         END
     END // end ninja-tos
     PATCH_IF wpn_cat = 20 AND wpn_prof = 94 BEGIN // katanas
