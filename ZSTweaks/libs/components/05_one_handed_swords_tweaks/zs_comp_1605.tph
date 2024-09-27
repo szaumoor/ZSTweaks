@@ -1,0 +1,28 @@
+ACTION_IF GAME_IS "bgee bg2ee eet" BEGIN
+    COPY_EXISTING "SW1H24.ITM" ~override~
+        LPF ALTER_ITEM INT_VAR this_plus = 1 id_ref_desc=RESOLVE_STR_REF(@8010) ench=2 flags=2**9 END
+        LPF ALTER_HEADER INT_VAR speed = 2 to_hit=2 damage=2 END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 177 END
+        // regenerating creatures
+        SET solar = IDS_OF_SYMBOL(race SOLAR)
+        SET antisolar = IDS_OF_SYMBOL(race ANTISOLAR)
+        SET planatar = IDS_OF_SYMBOL(race PLANATAR)
+        SET darkplanatar = IDS_OF_SYMBOL(race DARKPLANATAR)
+        LPF ALTER_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 special = 3 END
+        LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 parameter1 = solar END
+        LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 parameter1 = antisolar END
+        LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 parameter1 = planatar END
+        LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 parameter1 = darkplanatar END
+        // cold-using creatures
+        SET silver_dragon = IDS_OF_SYMBOL(class SILVER_DRAGON)
+        LPF ALTER_EFFECT INT_VAR match_opcode=344 match_parameter2=5 match_parameter1=146 special = 4 END
+    BUT_ONLY
+END
+
+COPY_EXISTING ~TROLLD1.EFF~ ~override~
+               ~FT3DAM.EFF~ ~override~
+               ~FT2DAM.EFF~ ~override~
+               ~FT2DAM.EFF~ ~override~
+    LPF GET_DMG_TYPE STR_VAR type = ~fire~ RET fire = result END
+    LPF ALTER_EFF_FILE INT_VAR parameter2 = fire END
+BUT_ONLY

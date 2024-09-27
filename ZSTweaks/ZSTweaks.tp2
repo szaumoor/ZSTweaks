@@ -1240,6 +1240,14 @@ FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
 
 INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1598.tph~
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1605 DESIGNATED 1605 GROUP @14 // THE BURNING EARTH TWEAK
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1124" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1605.tph~
+
 ////////////////// AXES AND BLUNT WEAPONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @10005 DESIGNATED 1301 GROUP @15 // INSTAL ALL COMPONENTS IN GROUP
