@@ -195,7 +195,7 @@
 @1589 = ~Make Rashad's Talon not just unique in name and description, but in function~
 @1596 = ~Make The Shadow Blade +3 not just unique in name and description, but in function~
 @1598 = ~Make Cutthroat +4 not just unique in name and description, but in function~
-@1605 = ~Make The Burning Earth a +2 weapon and the horrendously misleading description no longer so~
+@1605 = ~Make The Burning Earth better and the horrendously misleading description no longer so~
 
 // AXES AND ONE-HANDED BLUNT WEAPONS
 @1310 = "Make Defender of Eastheaven damage reduction a little more moderate"
@@ -313,6 +313,7 @@
 @2150 = "Make selected kit HLAS unable to be breached"
 @2160 = ~Make Quivering Palm slightly more powerful at high levels~
 @2170 = ~Make the THAC0 progression of Thieves better and more streamlined, so they improve up to 6, like clerics~
+@2171 = ~Fix Swashbuckler incorrect THAC0 when Thief THAC0 improvement is installed (only use if no Swashbuckler overhaul is installed!)~
 @2180 = ~Make the THAC0 progression of Bards better and more streamlined, so they improve up to 6, like clerics~
 @2190 = ~Make Poison Weapon improve couple of times more every 4 levels (level 17, and 21)~
 @2200 = ~Allow Blackguards to perform backstabs as if they had a 2x backstab multiplier~
@@ -5011,16 +5012,22 @@ Requires:
 
 Weight: 3~
 
-@8010 = ~Flame Tongue +1: The Burning Earth
+@8010 = ~The Burning Earth +2~
+@8011 = ~Flame Tongue +2: The Burning Earth
 There was a time before Neverwinter was warm and before the great Anauroch was dry... or so it is said. Few relics remain to prove such an age existed, and fewer still have an identifiable purpose. "The Burning Earth" seems straightforward enough—it burns a victim with magical fire, and a cryptic rune seems to suggest that the power comes from the ground itself—but whomever constructed it remains a mystery. It looks a perfectly serviceable weapon, but something in the balance or grip is... wrong. It strains the forearm a touch, and does not fit the hand just right. It doesn't seem to hurt a warrior's performance, aside from the nagging doubt that the blade was not made for <PRO_HIMHER>... or any other humanoid.
 
 STATISTICS:
 
 Combat abilities:
-– Acts as a +2 weapon in all respects. However, against creatures that naturally regenerate, it acts as a +3 weapon for the purposes of what it can hit. For cold-using creatures, it acts as a +4 weapon. And finally, for the undead, it acts as a +5 weapon.
+Acts as a +2 weapon in all respects. However, it's more powerful against regenerating, cold-using, and undead creatures:
+ – Werewolves, trolls: it acts as a +3 weapon, and deal 1 extra fire damage
+ – Planetars, and devas: it acts as a +3 weapon, and deal 1 extra fire damage
+ – Solars: acts as a +4 weapon, and deal 1 extra fire damage
+ – Winter wolves and silver dragons: acts as a +4 weapon, and deal 2 extra fire damage
+ – Undead: acts as a +5 weapon, and deal 3 extra fire damage.
 
-THAC0: +2, +3 vs. regenerating creatures, +4 vs. cold-using creatures, +5 vs. undead
-Damage: 1d8+2, +2 fire damage, +3 vs. regenerating creatures, +4 vs. cold-using creatures, +5 vs. undead
+THAC0: +2
+Damage: 1d8+2, +2 fire damage
 Damage type: Slashing
 Speed Factor: 2
 Proficiency Type: Long Sword
@@ -5029,3 +5036,4 @@ Requires:
  6 Strength
 
 Weight: 4~
+

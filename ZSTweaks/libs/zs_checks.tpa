@@ -14,6 +14,22 @@ BEGIN
     END
 END
 
+DEFINE_PATCH_FUNCTION CRE_IS_FLAG_SET
+INT_VAR
+    flag = "-1"
+RET
+    result // 1 if flag is set, 0 if it's unset. -1 if invalid flag is asked for
+BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    PATCH_IF flag >= 0 AND flag <= 31 BEGIN
+        LPF CRE_FLAGS RET cre_flags = result END
+        SET bitmask = (1 << flag)
+        SET result = (cre_flags & bitmask) != 0
+    END ELSE BEGIN
+        SET result = "-1"
+    END
+END
+
 DEFINE_PATCH_FUNCTION CHECK_EXTENSION
 STR_VAR
     extension = ""

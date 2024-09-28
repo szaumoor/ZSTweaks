@@ -1,6 +1,6 @@
 BACKUP "weidu_external/backup/ZSTweaks"
 AUTHOR "RoyalProtector at Gibberlings's forum https://www.gibberlings3.net/profile/12720-royalprotector/"
-VERSION "1.3.6"
+VERSION "1.3.7"
 README ~ZSTweaks/README.md~
 AUTO_EVAL_STRINGS
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1017,7 +1017,7 @@ FORBID_COMPONENT "ZSTweaks.tp2" "1582" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1583
 FORBID_COMPONENT "ZSTweaks.tp2" "1584" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1585" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1586" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1588" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1589" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1596" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "1598" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1598" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1605" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/components/05_one_handed_swords_tweaks/zs_comp_1124.tph~
@@ -2044,7 +2044,7 @@ INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_468.tph~
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @10010 DESIGNATED 359 GROUP @21 // INSTALL ALL COMPONENTS IN GROUP
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
-FORBID_COMPONENT "ZSTweaks.tp2" "2100" @57 FORBID_COMPONENT "ZSTweaks.tp2" "360" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "2100" @57  FORBID_COMPONENT "ZSTweaks.tp2" "360" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "2110" @57  FORBID_COMPONENT "ZSTweaks.tp2" "2111" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "2112" @57  FORBID_COMPONENT "ZSTweaks.tp2" "2113" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "2114" @57  FORBID_COMPONENT "ZSTweaks.tp2" "2120" @57
@@ -2160,6 +2160,13 @@ FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2170.tph~
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @2171 DESIGNATED 2171 GROUP @21 // FIX SWASHBUCKLER THIEF
+REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/12_class_tweaks/zs_comp_2171.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2180 DESIGNATED 2180 GROUP @21 // THAC0 BARD

@@ -5,5 +5,6 @@ COPY_EXISTING ~SPPR707.SPL~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~UNDDEATH.EFF~ ~override~
-    LPF ALTER_EFF_FILE INT_VAR parameter1=100 parameter2=3 END
+    LPF GET_DMG_TYPE STR_VAR type = "magic" RET magic = result END
+    LPF ALTER_EFF_FILE INT_VAR parameter1=100 parameter2=3 + magic END
 BUT_ONLY

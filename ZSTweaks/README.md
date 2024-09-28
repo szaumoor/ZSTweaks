@@ -847,6 +847,17 @@ This weapon is not even a normal +4 weapon, since the speed factor is not 0 as i
 - Critical hit chances: +10%
 - Critical hits causes bleeding: 1d6 piercing damage immediately, and again in the next 2 rounds
 
+**Component 1605:** Make The Burning Earth better and the horrendously misleading description no longer so
+
+So. You get this weapon fairly late in BGEE, and it sucks. Also, "cold-using creatures" only includes WINTER WOLVES. The description is overly generous in the description because there's not much point of calling it "cold-using creatures" if it's only winter wolves. Here's the changes:
+
+- Behaves exactly as a +2 weapon
+- Deals by default +2 fire damage on hit
+- The following creatures are considered now "regenerating": planetars, dark planetars, solars, and fallen solars. The sword will act as if it was +3 and +4 respectively for the purposes of being able to hit these creatures. There may be others that would qualify as "regenerating", but I'm not sure.
+- Silver Dragons are included as "cold-using creatures"
+- The extra damage will be fire damage, not slashing
+
+
 </details>
 
 ---
@@ -1442,11 +1453,21 @@ I really dislike things that scale poorly or not at all. This makes Quivering Pa
 
 **Component 2170:** Make the THAC0 progression of Thieves better and more streamlined, so they improve up to 6, like clerics
 
-Among many of the manifestations of the Baldur's Gate series' undying hate for thieves is that their THAC0 sucks. A LOT. Barely better than wizards. This improves the progression such that it can reach 6, like clerics. The progression follows this type of sequence: 20-19-19-18-17-17-16-15-15-14....
+Among many of the manifestations of the Baldur's Gate series' undying hate for thieves is that their THAC0 sucks. A LOT. Barely better than wizards. This improves the progression such that it can reach 6, like clerics. The progression per level follows this sequence: 20-19-19-18-17-17-16-15-15-14-13-13-12-11-11-10-9-9-8-7-7-6.
+
+This component will update the thac0 of Thieves and Mage/Thieves in the game depending on their level, but only if it's not better already. This will ignore the few dual-classed NPCs in the game. Regardless, if they're joinable, their thac0 will update appropriate upon leveling up.
+
+**Component 2171** Fix Swashbuckler's incorrect THAC0 when Thief THAC0 improvement is installed (only use if no Swashbuckler overhaul is installed!)
+
+Normally, vanilla Swashbuckler gets to a THAC0 level of 2, because every 5 levels, it gets a +1 bonus to both thac0 and damage inflicted. This hinges on the assumption that the maximum thac0 attainable is 10. Changing the maximum THAC0 improvement to 6 means they would get inappropriately to -2 THAC0. This component addresses this inconsistency.
+
+Therefore, at levels 35 and 40, the swashbuckler will not get thac0 bonuses, only the damage bonus, which should allow them to reach a THAC0 of 0 while still retaining the remaining damage bonuses (+8 in total). This allows them to still be more distinguishable from regular thieves despite the THAC0 improvement, and generally more useful.
 
 **Component 2180:** Make the THAC0 progression of Bards better and more streamlined, so they improve up to 6, like clerics
 
 Refer to component 2170 for reasons. Applies the same bonus to Bards, who also have had their power sucked away by the game.
+
+This component will update the thac0 of Bards in the game depending on their level, but only if it's not better already.
 
 **Component 2190:** Make Poison Weapon improve couple of times more every 4 levels (level 17, and 21)
 

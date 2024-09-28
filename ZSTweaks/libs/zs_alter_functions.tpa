@@ -342,7 +342,7 @@ BEGIN
         END
     END
     PATCH_IF parameter2 > "-1" BEGIN
-        WRITE_SHORT 0x20 parameter2
+        WRITE_LONG 0x20 parameter2
     END ELSE BEGIN
         PATCH_IF parameter2 < "-1" BEGIN
             PATCH_WARN "Passed a wrong value to parameter2: %parameter2%"
@@ -492,6 +492,7 @@ END
 DEFINE_PATCH_FUNCTION ALTER_CRE
 INT_VAR
     current_health = "-1"
+    thac0 = "-129"
     max_health = "-1"
     class = "-1"
     alignment = "-1"
@@ -516,6 +517,13 @@ BEGIN
     END ELSE BEGIN
         PATCH_IF class < "-1" BEGIN
             PATCH_WARN "Passed a wrong value to class: %class%"
+        END
+    END
+    PATCH_IF thac0 >= "-128" AND thac0 <= 127 BEGIN
+        WRITE_BYTE 0x52 thac0
+    END ELSE BEGIN
+        PATCH_IF thac0 < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to thac0: %thac0%"
         END
     END
     PATCH_IF alignment > "-1" BEGIN
