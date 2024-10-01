@@ -282,9 +282,21 @@ To promote specialization, this also restricts the circlet to Wild Mages.
 
 I mean, they're THORNS; the only difference is that they're FIERY. Instead of only inflicting 1d4 fire damage, they inflict also 1d4 piercing damage, making it an overall more useful defensive armor.
 
-**Component 1652:** Make Grandmaster's Armor's movement bonus not affected by Free Action
+**Component 1652:** Make Grandmaster's Armor's movement bonus not affected by Free Action and grant perks to rogues
 
 This component makes the doubled movement of this armor not be affected by Free Action at all, which to me seems much more fitting, since it's the main (and only) feature of this armor. Ahhh, Free Action, the constant thorn in our sides.
+
+Additionally, the following traits are gained:
+
+- Critical misses are no longer possible (Thieves only)
+- Different kinds of benefits for backstabs are unlocked depending on the rogue wearing this suit:
+  - Crippling Attack: Slow for 1 round, and reduce Strength, Dexterity, and casting speed by 4 for 4 rounds if a Save vs. Death is failed (kitless Thief)
+  - Subduing Attack: Render the victim unconscious for 4 rounds if a Save vs. Death is failed. Additionally, 10 extra non-lethal damage will be inflicted. However, further damage will wake the victim up (Bounty Hunter and Stalker)
+  - Shadow Attack: Empowers self with shadow magic, increasing damage resistance by 5% for 2 rounds, with a 20% chance of making themselves invisible for 2 rounds, increasing –without stacking– damage by 2, and critical chances by 5% (Shadowdancer)
+  - Death Attack: Stun the victim for 1 round if a Save vs. Death is failed. After one round, the victim dies if they're 60 HP or under and a Save vs. Death is failed again. If the victim is survives this, they take instead 2d6 poison damage and become more susceptible to the next Death attack, reducing their Saves vs. Death by 4 for 5 rounds (Assassin)
+- New charge ability: Expose Weakness (doesn't interrupt invisibility)
+  - Special: once per day, target loses immunity to backstabs, if they had it, take 10% more damage from piercing and slashing attacks, suffering additionally a -4 penalty to AC against that type of attacks.
+  - Duration: 4 rounds
 
 **Componen 1653:** Make Thieves' Hood protect against critical hits and slightly more advantageous for single-classed thieves: +1 THAC0 and Damage
 
@@ -1300,6 +1312,16 @@ Earthquake is generally very inconvenient to be cast at any point because of how
 **Component 350:** Make Earthquake not shake the screen
 
 In case you don't enjoy feeling like casting it might give you a tiny seizure.
+
+**Component 351:** Make Earthquake's more effective as a spell
+
+This component makes the saves and damage against the effects decay less harshly:
+
+1st round: vanilla, 6d6 damage, -6 save to avoid unconsciousness
+2nd round: 5d6 damage, -4 save
+3rd round = 4d6 damage, -2 save
+
+Additionally it fixes the likely incorrect probability of 3% to summon a hostile elemental, so it is 2% instead.
 
 **Component 260:** Make Negative Plane Protection's duration increase somewhat as you level up
 

@@ -1313,6 +1313,16 @@ Earthquake is generally very inconvenient to be cast at any point because of how
 
 In case you don't enjoy feeling like casting it might give you a tiny seizure.
 
+**Component 351:** Make Earthquake's more effective as a spell
+
+This component makes the saves and damage against the effects decay less harshly:
+
+1st round: vanilla, 6d6 damage, -6 save to avoid unconsciousness
+2nd round: 5d6 damage, -4 save
+3rd round = 4d6 damage, -2 save
+
+Additionally it fixes the likely incorrect probability of 3% to summon a hostile elemental, so it is 2% instead.
+
 **Component 260:** Make Negative Plane Protection's duration increase somewhat as you level up
 
 It only lasts 30 seconds, which might be insufficient for fights with vampires. Since it's a very powerful effect, the increases in duration are moderate, one round per 2 levels after level 7 up to 66 seconds at level 19.
