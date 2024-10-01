@@ -524,7 +524,7 @@ BEGIN
     PATCH_IF thac0 >= "-128" AND thac0 <= 127 BEGIN
         WRITE_BYTE 0x52 thac0
     END ELSE BEGIN
-        PATCH_IF thac0 < "-1" BEGIN
+        PATCH_IF thac0 < "-128" BEGIN
             PATCH_WARN "Passed a wrong value to thac0: %thac0%"
         END
     END
