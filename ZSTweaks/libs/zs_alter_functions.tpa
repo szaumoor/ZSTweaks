@@ -491,6 +491,8 @@ END
 
 DEFINE_PATCH_FUNCTION ALTER_CRE
 INT_VAR
+    name = "-2"
+    tooltip = "-2"
     current_health = "-1"
     thac0 = "-129"
     max_health = "-1"
@@ -500,6 +502,20 @@ STR_VAR
     dialog = ~none~
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    PATCH_IF name > "-2" BEGIN
+        WRITE_LONG 0x08 name
+    END ELSE BEGIN
+        PATCH_IF name < "-2" BEGIN
+            PATCH_WARN "Passed a wrong value to name: %name%"
+        END
+    END
+    PATCH_IF tooltip > "-2" BEGIN
+        WRITE_LONG 0x0c tooltip
+    END ELSE BEGIN
+        PATCH_IF tooltip < "-2" BEGIN
+            PATCH_WARN "Passed a wrong value to tooltip: %tooltip%"
+        END
+    END
     PATCH_IF current_health > "-1" BEGIN
         WRITE_SHORT 0x24 current_health
     END ELSE BEGIN
