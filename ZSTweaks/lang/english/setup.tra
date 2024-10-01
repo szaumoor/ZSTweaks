@@ -93,7 +93,7 @@
 @1620 = ~Make Vicross' Thayan Circlet apply Improved Shield of Chaos instead of just Shield of Chaos~
 @1650 = ~Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak~
 @1651 = ~Make Studded Leather of Thorns add some piercing damage too~
-@1652 = ~Make Grandmaster's Armor's movement bonus not affected by Free Action~
+@1652 = ~Make Grandmaster's Armor's movement bonus not affected by Free Action and grant perks to rogues~
 @1653 = ~Make Thieves' Hood protect against critical hits and slightly more advantageous for single-classed thieves~
 @1654 = ~Make Star-Strewn Boots slightly better and favor Inquisitors too (SoD)~
 @1655 = ~Make Crown of Lies more consequential when used~
@@ -5141,6 +5141,8 @@ Weight: 5~
 @8032 = "Subduing Attack Applied"
 @8033 = "Shadow Attack Applied"
 @8034 = "Death Attack Applied"
+@8035 = ~Expose Weakness Applied~
+@8036 = ~Expose Weakness Lost~
 
 // martial staff
 @8040 = ~This humble staff radiates powerful magic, and was likely the simple-seeming weapon of a traveling mage or cleric. It would certainly prove more than ample for dealing with most threats encountered on the road.
