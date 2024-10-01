@@ -105,7 +105,7 @@ Essentially, when wielding a weapon they can use what I call "finesse", which is
 - **Ninja-tos and Wakizashis**: 25% chance per hit to inflict 1d8+bonus of slashing/piercing damage.
 - **Short Sword and Clubs**: 35% chance per hit to inflict 1d6+bonus of piercing/crushing damage.
 - **Bows, Slings**: 45% chance per hit to inflict 1d6 and 1d4+bonus missile damage respectively.
-- **Darts, Daggers, Crossbows**: 60% chance per hit to inflict 1d3+bonus, 1d4+bonus and 1d8, respectively, of piercing/missile damage.
+- **Darts, Daggers, Crossbows**: 55% chance per hit to inflict 1d3+bonus, 1d4+bonus and 1d8, respectively, of piercing/missile damage.
 
 Note that this component does not account (automatically) for special weaponry which may use a different kind of damage-dealing effect than normal. For example, Voidsword +3 in SoD causes only magic damage and is not part of the damage of the weapon as such, but exists as a separate effect. These have to be added manually (in that example, the extra damage would occur in the same way as the others, but only as magic damage, which is intended). Currently, the following thief-usable items are accounted for:
 
@@ -675,9 +675,17 @@ This component enhances the weapon a bit, inspired by the description about how 
 
 <summary><b>One-handed Sword Tweaks</b></summary>
 
-**Component 1125:** Make Ninjato of the Scarlet Brothehood +3 available for other classes and alignments
+**Component 1125:** Make Ninjato of the Scarlet available for non-monks and improve it slightly, especially for monks
 
-This makes this sword usable by non-monks of any alignment. Monks are not really implemented to take too much advantage of weapons anyway (in vanilla game).
+This makes this sword usable by non-monks of any alignment. Additionally, the sword gets the following two traits for every user:
+
+- Inflicts +1 poison damage per hit
+- Speed Factor of 0
+
+And for Monks only, additionally:
+
+- +5% critical hit chances while holding this weapon
+- +2 THAC0 bonus, +2 extra for off-hand weapons
 
 **Component 1126:** Make Blackrazor able to hit targets immune to +3
 
@@ -894,9 +902,20 @@ I think everyone agrees that this type of restriction (Free Action) makes the we
 
 This makes the club slightly more powerful (+3 in all respects), more shamanic, and more damaging to undead: acts as +5 against them, with THAC0 bonus of +5 against undead, undead take +4 damage, and spectral undead take +8
 
-**Component 1323:** Make Azuredge act properly as a +3 weapon
+**Component 1323:** Make Azuredge act properly as a +3 weapon and make the disruption effect more balanced
 
-The original hits in terms of extra damage and thac0 like an unenchanted weapon. This component makes the weapon match the basic stats of a +3 weapon. Additionally, it fixes the usual misleding bits in the description for extra damage, and it improves slightly the extra damage to undead from 1d6+4 to 1d6+6.
+The original hits in terms of extra damage and thac0 like an unenchanted weapon. This component makes the weapon match the basic stats of a +3 weapon. Additionally, it fixes the usual misleding bits in the description for extra damage, and the extra damage to undead was adjusted from 1d6+4 to 1d6+3.
+
+Finally, and more importantly, it makes the axe balanced, since anyone can Whirlwind a lich to death with this way too easily. Following a close-ish PnP version, the weapon has different degrees of effectiveness depending on the target (which now also includes fiends, as per PnP). Any creature that applies for the axe's disruption effect must save vs. Death at -2, except:
+
+- Fiends: have 95% chance of resisting it without having to save against it.
+- Liches and demiliches: 80% chance
+- Vampires and vampyres: 50% chance
+- Spectres, ghosts, and other spectral creatures: 35% chance
+- Mummies and revenants: 20% chance
+- Wraiths: 5% chance
+- Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time.
+
 
 **Component 1324:** Make Wyvern's Tail +2 cause poison damage on hit and have a chance of poisoning
 
@@ -907,6 +926,14 @@ This improves this item in the following ways:
 **Component 1325:** Make Borok's Fist +2 different from Ashideena +2
 
 This exists simply because I hate that it's identical to Ashideena. So, inspired the description, it has a neat bonus against giant humanoids: on hit, they get Stunned for 1 round if they fail a Save vs. Spell at +2
+
+**Component 1326:** Make Maces of Disruption more balanced when fighting the undead and improve misleading description
+
+Refer to component 1324. The upgraded Mace of Disruption +2's only difference as far disruption goes is that the save vs. Death improves from -2 to -4.
+
+Additionally, the extra damage applied to the undead is always the base damage of the weapon, instead of 1d6+2 for the first, and 1d6+1 for the second.
+
+Finally, this also modifies the Deva's Mace of Disruption such that it follows the same rules.
 
 ---
 
@@ -1517,6 +1544,10 @@ This makes summoned demons grant party XP. It may not catch all instances of dea
 
 Also, pay attention to any mods that modify the behavior of summoned demons, especially if they replace the script. Might or might not work. Please test and report.
 
+**Component 3030:** Make Devas hasted, same as Planetars
+
+I was always annoyed at how immmensely more powerful Planetars are compared to Devas. Haste is just too good not to use. Devas will be permanently hasted now, same as planetars.
+
 
 </details>
 
@@ -1544,6 +1575,7 @@ And feel free to offer feedback if there are any bugs, criticize the code and of
 - Thanks to the developers of WeiDu, including the documentation
 - And the IESDP, invaluable resource.
 - People on Discord generally for their help, and the great modders out there that allowed their WeiDu code to be available publicly, like jmerry, Camdawg, 11jo, Argent77, Ardanis, DavidW, SubtleDoctor, among others.
+- zenblack for feedback and icon-making.
 
 ---
 

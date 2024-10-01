@@ -431,7 +431,7 @@ FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 INCLUDE ~ZSTweaks/libs/components/02_gear_tweaks/zs_comp_1651.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1652 DESIGNATED 1652 GROUP @11 // GRANDMASTER ARMOR
+BEGIN @1652 DESIGNATED 1652 GROUP @11 // GRANDMASTER ARMOR TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1257,6 +1257,7 @@ FORBID_COMPONENT "ZSTweaks.tp2" "1312" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1313
 FORBID_COMPONENT "ZSTweaks.tp2" "1314" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1320" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1321" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1323" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1324" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1325" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1326" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/components/06_axes_blunt_tweaks/zs_comp_1301.tph~
@@ -1340,6 +1341,14 @@ FORBID_COMPONENT "ZSTweaks.tp2" "1301" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/components/06_axes_blunt_tweaks/zs_comp_1325.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1326 DESIGNATED 1326 GROUP @15 // MACE OF DISRUPTION TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1301" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/06_axes_blunt_tweaks/zs_comp_1326.tph~
 
 ////////////////////////////////////// RANGED WEAPON TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1788,12 +1797,13 @@ FORBID_COMPONENT "ZSTweaks.tp2" "270" @57 FORBID_COMPONENT "ZSTweaks.tp2" "280" 
 FORBID_COMPONENT "ZSTweaks.tp2" "290" @57 FORBID_COMPONENT "ZSTweaks.tp2" "300" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "310" @57 FORBID_COMPONENT "ZSTweaks.tp2" "320" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "330" @57 FORBID_COMPONENT "ZSTweaks.tp2" "340" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "350" @57 FORBID_COMPONENT "ZSTweaks.tp2" "420" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "450" @57 FORBID_COMPONENT "ZSTweaks.tp2" "460" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "461" @57 FORBID_COMPONENT "ZSTweaks.tp2" "462" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "463" @57 FORBID_COMPONENT "ZSTweaks.tp2" "464" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "465" @57 FORBID_COMPONENT "ZSTweaks.tp2" "466" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "467" @57 FORBID_COMPONENT "ZSTweaks.tp2" "468" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "350" @57 FORBID_COMPONENT "ZSTweaks.tp2" "350" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "420" @57 FORBID_COMPONENT "ZSTweaks.tp2" "450" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "460" @57 FORBID_COMPONENT "ZSTweaks.tp2" "461" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "462" @57 FORBID_COMPONENT "ZSTweaks.tp2" "463" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "464" @57 FORBID_COMPONENT "ZSTweaks.tp2" "465" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "466" @57 FORBID_COMPONENT "ZSTweaks.tp2" "467" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "468" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_99.tph~
@@ -1878,6 +1888,15 @@ FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_350.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @351 DESIGNATED 351 GROUP @20 // EARTHQUAKE EFFECTIVENESS TWEAK
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+OUTER_SET group_component = 0
+INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_351.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @260 DESIGNATED 260 GROUP @20 // NEGATIVE PLANE DUR BOOST
@@ -2216,6 +2235,13 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~ZSTweaks/libs/components/13_creature_tweaks/zs_comp_3020.tph~
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @3030 DESIGNATED 3030 GROUP @22 // haste devas tweak
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~ZSTweaks/libs/components/13_creature_tweaks/zs_comp_3030.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 

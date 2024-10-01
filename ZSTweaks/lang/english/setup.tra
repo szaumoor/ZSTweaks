@@ -168,7 +168,7 @@
 @1604 = ~Make Duskblade +2 more imbued with the essence of necromancy~
 
 /// ONE-HANDED SWORDS
-@1125 = "Make Ninjato of the Scarlet Brothehood +3 available for other classes and alignments"
+@1125 = "Make Ninjato of the Scarlet available for non-monks and improve it slightly, especially for monks"
 @1126 = ~Make Blackrazor able to hit targets immune to +3~
 @1127 = ~Make Peridan more powerful against dragons and wyverns and less misleading in the description~
 @1210 = "Make The Equalizer slightly more powerful"
@@ -205,9 +205,10 @@
 @1314 = "Make Jerrod's Mace +2 behave as a +3 weapon"
 @1320 = "Make Flail of Ages +5 allow Haste and Improved Haste and improve it slightly"
 @1321 = "Make Bone Club +2, +3 against undead's effect reflect the description better and improve it slightly"
-@1323 = ~Make Azuredge act properly as a +3 weapon~
+@1323 = ~Make Azuredge act properly as a +3 weapon and make the disruption effect more balanced~
 @1324 = ~Make Wyvern's Tail +2 cause poison damage on hit and have a chance of poisoning~
 @1325 = ~Make Borok's Fist +2 different from Ashideena +2~
+@1326 = ~Make Maces of Disruption more balanced when fighting the undead and improve misleading description~
 
 // RANGED WEAPONS
 @1010 = ~Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost~
@@ -287,6 +288,7 @@
 @330 = "Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)"
 @340 = "Make Symbol of Death work with Save bonus if above the 60 HP threshold"
 @350 = "Make Earthquake not shake the screen"
+@351 = "Make Earthquake's more effective as a spell"
 @420 = ~Make Armor of Faith also add a +2 AC bonus to make it useful at low levels~
 @450 = ~Make single-target healing spells other than Heal worth using~
 @460 = ~Make Mass Cure faster to cast to improve it as a combat spell and heal a bit more~
@@ -325,6 +327,7 @@
 @3000 = ~Make Planetars grant immunity to Level 1 to 3 spells in an aura, as per the Minor Globe of Invulnerability spell~
 @3010 = ~Make inappropriately aligned creatures in BG2 more correct~
 @3020 = ~Make summoned demons grant XP to the party when they kill something~
+@3030 = ~Make Devas hasted, same as Planetars~
 
 //MISC TWEAKS
 @3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane (Rasaad's Quest)~ // TODO, add Lava's areas too
@@ -459,7 +462,47 @@ When this spell is cast, a local tremor of fairly high strength rips the ground.
  2nd: All creatures affected take 3d6 points of damage. A successful Saving Throw vs. Spell with a -2 penalty halves the damage.
  3rd: All creatures affected take 2d6 points of damage. A successful Saving Throw vs. Spell halves the damage.
 
-Additionally, earth elementals dislike mere mortals toying with the land and there is a small chance that casting this spell will cause an earth elemental to appear and attack the party.~
+Additionally, earth elementals dislike mere mortals toying with the land and there is a 3% chance that casting this spell will cause an earth elemental to appear and attack the party.~
+
+// party friendly version earthquake more effective
+@5091 = ~Earthquake
+(Alteration)
+
+Level: 7
+Sphere: Elemental (Earth)
+Range: 360 ft.
+Duration: 3 tremors
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+When this spell is cast, a local tremor of fairly high strength rips the ground. The shock is over in several rounds. The earthquake affects all creatures in its area of effect except the caster and <HISHER> party. There are 3 tremors that are caused by the earthquake:
+
+ 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful Saving Throw vs. Spell with a -6 penalty halves the damage and negates the fall.
+ 2nd: All creatures affected take 5d6 points of damage. A successful Saving Throw vs. Spell with a -4 penalty halves the damage.
+ 3rd: All creatures affected take 4d6 points of damage. A successful Saving Throw vs. Spell with a -2 penalty halves the damage.
+
+Additionally, earth elementals dislike mere mortals toying with the land and there is a 2% chance that casting this spell will cause an earth elemental to appear and attack the party.~
+
+// non-party friendly version earthquake more effective
+@5092 = ~Earthquake
+(Alteration)
+
+Level: 7
+Sphere: Elemental (Earth)
+Range: 360 ft.
+Duration: 3 tremors
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+When this spell is cast, a local tremor of fairly high strength rips the ground. The shock is over in several rounds. The earthquake affects all creatures in its area of effect. There are 3 tremors that are caused by the earthquake:
+
+ 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful Saving Throw vs. Spell with a -6 penalty halves the damage and negates the fall.
+ 2nd: All creatures affected take 5d6 points of damage. A successful Saving Throw vs. Spell with a -4 penalty halves the damage.
+ 3rd: All creatures affected take 4d6 points of damage. A successful Saving Throw vs. Spell with a -2 penalty halves the damage.
+
+Additionally, earth elementals dislike mere mortals toying with the land and there is a 2% chance that casting this spell will cause an earth elemental to appear and attack the party.~
 
 @5100 = ~Entangle
 (Alteration)
@@ -3455,7 +3498,7 @@ Requires:
 
 Weight: 2~
 
-@7080 = ~Gulen Rockfire, Slayer of Undead, crafted this powerful throwing axe expressly for reinforcing his claim to his namesake. Blessed by a cross-section of gods, this weapon does phenomenal damage against creatures unwisely rebelling against their deceased status and can potentially destroy them in a single blow. Obviously Gulen no longer carries Azuredge, and it is rumored that he died fighting a powerful vampire years ago, only to rise as one himself. This may have softened his stance regarding the undead, at the very least prompting a change of name.
+@7080 = ~Gulen Rockfire, Slayer of Undead, crafted this powerful throwing axe expressly for reinforcing his claim to his namesake. Blessed by a cross-section of gods, this weapon does phenomenal damage against creatures unwisely rebelling against their deceased status (including to a lesser degree, fiends) and can potentially destroy them in a single blow. Obviously Gulen no longer carries Azuredge, and it is rumored that he died fighting a powerful vampire years ago, only to rise as one himself. This may have softened his stance regarding the undead, at the very least prompting a change of name.
 
 STATISTICS:
 
@@ -3464,10 +3507,17 @@ Equipped abilities:
 
 Combat abilities:
 – Returns to the wielder's hand when thrown
-– Undead must save vs. Death at -4 or be utterly destroyed
+Undead and fiends must save vs. Death at -2 or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
+  – Fiends: 95%
+  – Liches and demiliches: 80%
+  – Vampires and vampyres: 50%
+  – Spectres, ghosts, and other spectral creatures: 35%
+  – Mummies and revenants: 20%
+  – Wraiths: 5%
+  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time.
 
 THAC0: +3
-Damage: 1d6+3, +1d6+6 vs. undead
+Damage: 1d6+3, plus 1d6+6 vs. undead
 Damage type (melee): Slashing
 Damage type (thrown): Missile
 Speed Factor: 1
@@ -5036,4 +5086,133 @@ Requires:
  6 Strength
 
 Weight: 4~
+
+@8020 = ~When a member of the Scarlet Brotherhood kills one of that organization's "great enemies", they are often rewarded with this sword. How this sword made its way from the world of Greyhawk (where the Brotherhood is based) to Faerûn is a mystery. When unsheathed, the ninjatō will glow blood red.
+
+STATISTICS:
+
+Equipped abilities:
+– Off-hand THAC0: +2 (monks only)
+
+Combat abilities:
+– +1 APR
+– Hit target takes 12 points of poison over 2 rounds (Save vs. Death negates)
+– +5% critical chances (monks only; applies to all weapons)
+
+THAC0: +3, +5 (Monks only)
+Damage: 1d8+3, +1 Poison damage
+Damage Type: Slashing
+Speed Factor: 0
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+@8030 = ~Created for the Grandmaster Assassin Vita Muerte, this suit not only provided protection but also enabled Vita to better pursue and kill her fleeing victims... as the unfortunate wizard who fashioned this item for the ruthless killer soon learned.
+
+Depending on the type of stalker wearing this armor, different powers are unlocked.
+
+STATISTICS:
+
+Equipped abilities:
+– Doubles movement rate
+– Critical misses are no longer possible (Thieves only)
+
+Different kinds of benefits for backstabs are unlocked depending on the rogue wearing this suit:
+  – Crippling Attack: Slow for 1 round, and reduce Strength, Dexterity, and casting speed by 4 for 4 rounds if a Save vs. Death is failed (kitless Thief)
+  – Subduing Attack: Render the victim unconscious for 4 rounds if a Save vs. Death is failed. Additionally, 10 extra non-lethal damage will be inflicted. However, further damage will wake the victim up (Bounty Hunter and Stalker)
+  – Shadow Attack: Empowers self with shadow magic, increasing damage resistance by 5% for 2 rounds, with a 20% chance of making themselves invisible for 2 rounds, increasing –without stacking– damage by 2, and critical chances by 5% (Shadowdancer)
+  – Death Attack: Stun the victim for 1 round if a Save vs. Death is failed. After one round, the victim dies if they're 60 HP or under and a Save vs. Death is failed again. If the victim is survives this, they take instead 2d6 poison damage and become more susceptible to the next Death attack, reducing their Saves vs. Death by 4 for 5 rounds (Assassin)
+
+Charge abilities:
+– Expose Weakness once per day
+  Special: Target loses immunity to backstabs, if they had it, take 10% more damage from piercing and slashing attacks, suffering additionally a -4 penalty to AC against that type of attacks.
+  Duration: 4 rounds
+
+Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 5~
+
+@8031 = "Crippling Attack Applied"
+@8032 = "Subduing Attack Applied"
+@8033 = "Shadow Attack Applied"
+@8034 = "Death Attack Applied"
+
+// martial staff
+@8040 = ~This humble staff radiates powerful magic, and was likely the simple-seeming weapon of a traveling mage or cleric. It would certainly prove more than ample for dealing with most threats encountered on the road.
+
+STATISTICS:
+
+THAC0: +3
+Damage: 1d6+3 (crushing)
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 4~
+
+@8050 = ~This heavy mace was created for a very specific purpose: to slay undead. Any such creature hit by it not only feels the sting of the weapon, but also has a chance of being simply blasted from existence. There are legends that speak of a priest so holy a single glancing touch could send a vampire to oblivion, but whether the weapon empowered her or she empowered it is a topic for theologians.
+
+Fiends of the lower planes may be affected as well, but they're very likely to resist it.
+
+STATISTICS:
+
+Combat abilities:
+– Undead and fiends must save vs. Death at -2 or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
+  – Fiends: 95%
+  – Liches and demiliches: 80%
+  – Vampires and vampyres: 50%
+  – Spectres, ghosts, and other spectral creatures: 35%
+  – Mummies and revenants: 20%
+  – Wraiths: 5%
+  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time.
+
+THAC0: +1 (strikes as a +3 weapon)
+Damage: 1d6+2, plus 1d6+2 vs. undead
+Damage type: Crushing
+Speed Factor: 6
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 8~
+
+@8051 = ~This heavy mace was created for a very specific purpose: to slay undead. Any such creature hit by it not only feels the sting of the weapon, but also has a chance of being simply blasted from existence. There are legends that speak of a priest so holy a single glancing touch could send a vampire to oblivion, but whether the weapon empowered her or she empowered it is a topic for theologians.
+
+Fiends of the lower planes may be affected as well, but they're very likely to resist it.
+
+Now that the mace has been coated with illithium, it is even more potent, conferring to its user immunity to the life-draining powers of the more powerful undead.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to level drain
+
+Combat abilities:
+– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
+  – Fiends: 95%
+  – Liches and demiliches: 80%
+  – Vampires and vampyres: 50%
+  – Spectres, ghosts, and other spectral creatures: 35%
+  – Mummies and revenants: 20%
+  – Wraiths: 5%
+  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time.
+
+THAC0: +2 (strikes as a +5 weapon)
+Damage: 1d6+3, plus 1d6+3 vs. undead
+Damage type: Crushing
+Speed Factor: 6
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 8~
 

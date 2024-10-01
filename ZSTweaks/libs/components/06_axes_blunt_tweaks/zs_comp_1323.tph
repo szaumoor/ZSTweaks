@@ -1,13 +1,32 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY ~ZSTweaks/eff/ZSTWDH01.EFF~ ~override~
+         ~ZSTweaks/eff/ZSTWDH02.EFF~ ~override~
     COPY_EXISTING ~AX1H10.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7080) END
         FOR ( the_type = 1; the_type <= 2; ++the_type ) BEGIN
             LPF ALTER_HEADER INT_VAR match_type = the_type to_hit = 3 damage = 3 END
         END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=344,p1=4,p2=3,spec=4~ END
+        LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR match_resource = ~DIE~ END
+        LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR match_resource = ~MESDIE~ END
+        SET demonic = IDS_OF_SYMBOL(race DEMONIC)
+        SET spectre = IDS_OF_SYMBOL(race SPECTRE) // also identifies ghosts
+        SET wraith = IDS_OF_SYMBOL(race WRAITH)
+        SET spectral_undead = IDS_OF_SYMBOL(race SPECTRAL_UNDEAD)
+        SET spectral_troll = IDS_OF_SYMBOL(class SPECTRAL_TROLL)
+        SET lich = IDS_OF_SYMBOL(race LICH)
+        SET demilich = IDS_OF_SYMBOL(race DEMILICH)
+        SET mummy = IDS_OF_SYMBOL(class GHOUL_REVEANT) // also identifies revenants
+        SET vampire = IDS_OF_SYMBOL(race VAMPIRE)
+        SET vampyre = IDS_OF_SYMBOL(race VAMPYRE)
+        SET undead = IDS_OF_SYMBOL(general UNDEAD)
+        LPF ADD_ON_HIT_EFF INT_VAR t=99 p2 = 4 STR_VAR res=~ZSTWDH01~ effects = ~op=318,p2=2,res=%SOURCE_RES%,ip=0;op=177,p1=%demonic%,pro1=4,res=ZSTWDH02;op=177,p1=%demonic%,pro1=4;op=177,p1=%lich%,pro1=19,res=ZSTWDH02;op=177,p1=%lich%,pro1=19;op=177,p1=%demilich%,pro1=19,res=ZSTWDH02;op=177,p1=%demilich%,pro1=19;op=177,p1=%vampire%,pro1=49,res=ZSTWDH02;op=177,p1=%vampire%,pro1=49;op=177,p1=%vampyre%,pro1=49,res=ZSTWDH02;op=177,p1=%vampyre%,pro1=49;op=177,p1=%mummy%,p2=5,pro1=79,res=ZSTWDH02;op=177,p1=%mummy%,p2=5,pro1=79;op=177,p1=%spectral_undead%,pro1=64,res=ZSTWDH02;op=177,p1=%spectral_undead%,pro1=64;op=177,p1=%spectre%,pro1=64,res=ZSTWDH02;op=177,p1=%spectre%,pro1=64;op=177,p1=%wraith%,pro1=94,res=ZSTWDH02;op=177,p1=%wraith%,pro1=94;op=177,p1=%spectral_troll%,p2=5,pro1=64,res=ZSTWDH02;op=177,p1=%spectral_troll%,p2=5,pro1=64~ END
+        LPF ADD_ON_HIT_EFF INT_VAR t = 99 p2 = 104 STR_VAR res=~%SOURCE_RES%~ effects = ~op=318,p1=%demonic%;op=318,p1=%lich%;op=318,p1=%demilich%;op=318,p1=%vampire%;op=318,p1=%vampyre%;op=318,p1=%mummy%;op=318,p1=%spectral_undead%;op=318,p1=%spectre%;op=318,p1=%wraith%;op=318,p1=%spectral_troll%,p2=105~ END
+        LPF ADD_ON_HIT_EFF INT_VAR t=99 p2=3 p1=undead STR_VAR res=~ZSTWDH01~ effects=~op=177,res=ZSTWDH02;op=177~ END
     BUT_ONLY
 
     COPY_EXISTING ~AX1H10A.EFF~ ~override~
-        LPF ALTER_EFF_FILE INT_VAR parameter1=6 END
+                  ~AX1H10B.EFF~ ~override~
+        LPF ALTER_EFF_FILE INT_VAR parameter1=3 END
     BUT_ONLY
 END

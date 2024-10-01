@@ -1,7 +1,39 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY ~ZSTweaks/items/grandmaster_armor~ ~override~
+
+    COPY_EXISTING ~ZSTWGM06.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@8031) END
+    BUT_ONLY
+
+    COPY_EXISTING ~ZSTWGM07.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@8032) END
+    BUT_ONLY
+
+    COPY_EXISTING ~ZSTWGM09.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@8033) END
+    BUT_ONLY
+
+    COPY_EXISTING ~ZSTWGM10.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@8034) END
+    BUT_ONLY
+
     COPY_EXISTING "LEAT24.ITM" ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 126 opcode = 176 END
+        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8030) END
+        SET thief = IDS_OF_SYMBOL(class THIEF)
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=177,p1=%thief%,res=ZSTWGM01;op=177,p1=%thief%,res=ZSTWGM00~ END
+        SET bounty_hunter = IDS_OF_SYMBOL(kit BOUNTYHUNTER)
+        SET stalker = IDS_OF_SYMBOL(kit STALKER)
+        SET shadowdancer = IDS_OF_SYMBOL(kit SHADOWDANCER)
+        SET assassin = IDS_OF_SYMBOL(kit ASSASSIN)
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=177,p1=%bounty_hunter%,res=ZSTWGM03;op=177,p1=%stalker%,res=ZSTWGM03;op=177,p1=%shadowdancer%,res=ZSTWGM04;op=177,p1=%assassin%,res=ZSTWGM05~ END
+
+        PATCH_IF MOD_IS_INSTALLED "ZS_ShadowdancerOverhaul.tp2" "100" BEGIN
+            SET shadowdancer = IDS_OF_SYMBOL(kit ZS_SHADOWDANCER)
+            LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=177,p1=%shadowdancer%,res=ZSTWGM04~ END
+        END
     BUT_ONLY
+
     COPY_EXISTING ~SPPR403.SPL~ ~override~
         LPF DELETE_EFFECT INT_VAR match_opcode=126 END
     BUT_ONLY
