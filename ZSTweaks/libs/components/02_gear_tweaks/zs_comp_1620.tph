@@ -1,6 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/spl/other/ZSTWTHY1.spl~ ~override~
-        ~ZSTweaks/eff/ZSTWTHY0.eff~ ~override~
+    COPY ~ZSTweaks/items/thayan_circlet~ ~override~
     COPY_EXISTING "ohnhelm1.ITM" ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6460) END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 281 parameter1 = 25 END

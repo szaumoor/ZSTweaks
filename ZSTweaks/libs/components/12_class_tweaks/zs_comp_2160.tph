@@ -1,7 +1,5 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
-    COPY ~ZSTweaks/eff/ZSTWM01.EFF~ ~override~
-        ~ZSTweaks/eff/ZSTWM02.EFF~ ~override~
-
+    COPY ~ZSTweaks/class_kits/quivering_palm~ ~override~
     COPY_EXISTING "SPCL820.SPL" ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6310) END
         LPF ALTER_EFFECT INT_VAR match_duration=5 duration=7 END

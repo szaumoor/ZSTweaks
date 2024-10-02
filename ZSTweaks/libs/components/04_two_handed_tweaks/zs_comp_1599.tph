@@ -1,10 +1,8 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/spl/other/ZSTWPSIA.SPL~ ~override~
-    COPY ~ZSTweaks/eff/ZSTWPSIB.EFF~ ~override~
+    COPY ~ZSTweaks/items/psion_blade~ ~override~
     COPY_EXISTING ~ZSTWPSIA.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1=RESOLVE_STR_REF(@7691) END
     BUT_ONLY
-
     COPY_EXISTING ~SW2H21.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7690) END
         SET mind_flayer = IDS_OF_SYMBOL(race MIND_FLAYER)

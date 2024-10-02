@@ -1,5 +1,5 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
-    COPY ~ZSTweaks/eff/ZSTWBL01.EFF~ ~override~
+    COPY ~ZSTweaks/items/krotan~ ~override~
     COPY_EXISTING ~BLUN11.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6150) END
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,p1=1,p2=3,tmg=1,rd=2,res=ZSTWBL01~ END

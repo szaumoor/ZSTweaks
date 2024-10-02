@@ -1,9 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/eff/ZSTWBB01.eff~ ~override~
-        ~ZSTweaks/eff/ZSTWBB02.eff~ ~override~
-        ~ZSTweaks/eff/ZSTWBB03.eff~ ~override~
-        ~ZSTweaks/eff/ZSTWBB04.eff~ ~override~
-
+    COPY ~ZSTweaks/items/blessed_bracers~ ~override~
     COPY_EXISTING ~BRAC23.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7330) END
         LPF ALTER_EFFECT INT_VAR header_type=3 match_opcode=146 STR_VAR match_resource=~SPPR502~ resource=~SPPR607~ END

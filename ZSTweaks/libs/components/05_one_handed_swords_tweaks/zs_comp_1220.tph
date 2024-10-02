@@ -1,5 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/eff/ras~ ~override~
+    COPY ~ZSTweaks/items/ras~ ~override~
 
     COPY_EXISTING_REGEXP ~SW1H33[AC]?.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6700) END

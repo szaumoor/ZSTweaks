@@ -1,5 +1,5 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
-    COPY ~ZSTweaks/spl/other/ZSTWRASH.SPL~ ~override~
+    COPY ~ZSTweaks/items/rashad~ ~override~
     COPY_EXISTING "ZSTWRASH.SPL" ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1=RESOLVE_STR_REF(@7581) END
     BUT_ONLY

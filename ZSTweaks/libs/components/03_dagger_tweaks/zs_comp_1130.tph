@@ -1,5 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY "%MOD_FOLDER%/eff/ZSTW_DG6.EFF" ~override~
+    COPY "%MOD_FOLDER%/items/boneblade" ~override~
     COPY_EXISTING ~DAGG14.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6000) END
         LPF GET_DMG_TYPE STR_VAR type = ~acid~ RET acid = result END

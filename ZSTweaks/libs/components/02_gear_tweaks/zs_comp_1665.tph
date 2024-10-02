@@ -43,10 +43,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         BUT_ONLY
     END
     ACTION_IF FILE_EXISTS_IN_GAME ~BAND03.ITM~ BEGIN // EILISTRAEE'S BOON
-        COPY ~ZSTweaks/eff/ZSTWEIL1.EFF~ ~override~
-            ~ZSTweaks/eff/ZSTWEIL2.EFF~ ~override~
-            ~ZSTweaks/eff/ZSTWEIL3.EFF~ ~override~
-
+        COPY ~ZSTweaks/items/eil_boon~ ~override~
         COPY_EXISTING ~BAND03.ITM~ ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7250) END
             LPF ADD_EQUIPPED_EFF INT_VAR p2=8 STR_VAR effects=~op=177,p1=1,res=ZSTWEIL1;op=177,p1=1,res=ZSTWEIL2;op=177,p1=2,res=ZSTWEIL1;op=177,p1=2,res=ZSTWEIL2~ END

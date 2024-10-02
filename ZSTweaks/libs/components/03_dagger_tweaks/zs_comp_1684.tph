@@ -1,6 +1,4 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
-    COPY ~ZSTweaks/spl/finesse/ZSTWTHD0.spl~ ~override~
-
     COPY_EXISTING ~dagg05.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7350) END
         LPF GET_DMG_TYPE STR_VAR type=~piercing~ RET dmg = result END

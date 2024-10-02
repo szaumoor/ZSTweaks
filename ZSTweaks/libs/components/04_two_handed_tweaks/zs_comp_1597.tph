@@ -1,8 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/spl/other/ZSTWRHYA.SPL~ ~override~
-        ~ZSTweaks/spl/other/ZSTWRHYB.SPL~ ~override~
-        ~ZSTweaks/spl/other/ZSTWRHYC.SPL~ ~override~
-
+    COPY ~ZSTweaks/items/rhynn~ ~override~
     COPY_EXISTING ~ZSTWRHYA.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@7591) END
     BUT_ONLY

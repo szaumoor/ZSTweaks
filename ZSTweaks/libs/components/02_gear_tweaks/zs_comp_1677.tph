@@ -1,5 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTWeaks/eff/wondrous_gloves~ ~override~
+    COPY ~ZSTWeaks/items/wondrous_gloves~ ~override~
 
     COPY_EXISTING ~BRAC25.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7610) END

@@ -1,7 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/eff/ZSTWMI01.EFF~ ~override~
-         ~ZSTweaks/eff/ZSTWMI02.EFF~ ~override~
-
+    COPY ~ZSTweaks/items/taralash~ ~override~
     COPY_EXISTING ~BOW22.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6370) END
         LPF ADD_ON_HIT_EFF INT_VAR p2=4 t=4

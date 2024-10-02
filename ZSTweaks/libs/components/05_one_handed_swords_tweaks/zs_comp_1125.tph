@@ -1,5 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/eff/waninja~ ~override~
+    COPY ~ZSTweaks/items/waninja~ ~override~
     COPY_EXISTING "WANINJA.itm" ~override~
         LPF ALTER_ITEM INT_VAR unusable0=1074057600 id_ref_desc=RESOLVE_STR_REF(@8020) END
         LPF ALTER_HEADER INT_VAR speed = 0 END

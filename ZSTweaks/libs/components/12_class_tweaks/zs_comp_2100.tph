@@ -1,8 +1,4 @@
-COPY ~ZSTweaks/eff/ZSTWF06.EFF~ ~override~
-     ~ZSTweaks/eff/ZSTWF08.EFF~ ~override~
-     ~ZSTweaks/eff/ZSTWF10.EFF~ ~override~
-     ~ZSTweaks/eff/ZSTWF12.EFF~ ~override~
-     ~ZSTweaks/eff/ZSTWF14.EFF~ ~override~
+COPY ~ZSTweaks/class_kits/sunsoul_ray~ ~override~
 
 COPY_EXISTING "SPCL236.SPL" ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7800) END

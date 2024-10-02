@@ -1,6 +1,6 @@
 INCLUDE ~ZSTweaks/libs/zs_correct_exot_anims.tph~
 
-COPY ~ZSTweaks/spl/finesse~ ~override~
+COPY ~ZSTweaks/items/finesse_weapons~ ~override~
 ADD_PROJECTILE ~ZSTweaks/pro/ZSTW_INP.PRO~
 ADD_PROJECTILE ~ZSTweaks/pro/ZSTW_IND.PRO~
 

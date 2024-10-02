@@ -1,5 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/eff/ZSTWBRKA.EFF~ ~override~
+    COPY ~ZSTweaks/items/borok_fist~ ~override~
     COPY_EXISTING ~HAMM05.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7730) END
         LPF ALTER_EFFECT INT_VAR match_opcode=12 dicesize=2 dicenumber=1 parameter1=0 END

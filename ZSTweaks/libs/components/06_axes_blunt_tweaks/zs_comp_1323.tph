@@ -1,6 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/eff/ZSTWDH01.EFF~ ~override~
-         ~ZSTweaks/eff/ZSTWDH02.EFF~ ~override~
+    COPY ~ZSTweaks/items/azuredge~ ~override~
     COPY_EXISTING ~AX1H10.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7080) END
         FOR ( the_type = 1; the_type <= 2; ++the_type ) BEGIN

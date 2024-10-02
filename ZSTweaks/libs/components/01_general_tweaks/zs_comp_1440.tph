@@ -1,5 +1,4 @@
-COPY ~ZSTweaks/spl/daggers_default~ ~override~
-
+COPY ~ZSTweaks/items/dagger_boost~ ~override~
 ADD_PROJECTILE ~ZSTweaks/pro/ZSTW_IND.PRO~
 
 COPY_EXISTING_REGEXP "ZSTWDP08.spl" ~override~ // spells to insert projectiles to (critical dagger effect)

@@ -1,8 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/eff/ZSTWSF01.eff~ ~override~
-        ~ZSTweaks/eff/ZSTWSF02.eff~ ~override~
-        ~ZSTweaks/eff/ZSTWSF03.eff~ ~override~
-
+    COPY ~ZSTweaks/items/cleric_staff~ ~override~
     COPY_EXISTING ~STAF19.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7060) END
         LPF ADD_ITEM_HEADER INT_VAR target = 5 charges = 2 depletion = 3 flags = 2**9 + 2**11 STR_VAR icon = ~SPPR514B~ END

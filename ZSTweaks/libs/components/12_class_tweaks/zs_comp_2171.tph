@@ -1,4 +1,4 @@
 ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~2170~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~359~ BEGIN
-    COPY ~ZSTweaks/spl/other/ZSTWSWBK.SPL~ ~override~
+    COPY ~ZSTweaks/class_kits/swash_fix~ ~override~
     COPY ~ZSTweaks/2da/CLABTH04.2DA~ ~override~
 END

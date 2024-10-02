@@ -1,9 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/eff/ZSTWDH01.EFF~ ~override~
-         ~ZSTweaks/eff/ZSTWDH02.EFF~ ~override~
-         ~ZSTweaks/eff/ZSTWDH03.EFF~ ~override~
-         ~ZSTweaks/eff/ZSTWDH04.EFF~ ~override~
-
+    COPY ~ZSTweaks/items/maces_of_disruption~ ~override~
     COPY_EXISTING ~BLUN12.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8050) END
         LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR match_resource = ~DIE~ END

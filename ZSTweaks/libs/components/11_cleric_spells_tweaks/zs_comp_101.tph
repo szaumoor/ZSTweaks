@@ -1,5 +1,4 @@
-COPY ~ZSTweaks/eff/ZSTWFL04.EFF~ ~override~
-
+COPY ~ZSTweaks/cleric_spells/flame_blade~ ~override~
 COPY_EXISTING ~SPPR206.SPL~ ~override~
     PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "102" BEGIN
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6630) END

@@ -1,5 +1,5 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
-    COPY ~ZSTweaks/eff/ZSTWMI01.EFF~ ~override~
+    COPY ~ZSTweaks/items/protector_dryads~ ~override~
     COPY_EXISTING ~BOW08.ITM~ ~override~
         PATCH_IF GAME_IS "bgee" BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7010) END

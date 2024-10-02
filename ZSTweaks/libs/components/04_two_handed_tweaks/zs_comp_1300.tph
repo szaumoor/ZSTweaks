@@ -1,6 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/spl/other/ZSTWSWSA.spl~ ~override~
-
+    COPY ~ZSTweaks/items/silver_sword~ ~override~
     COPY_EXISTING ~SW2H15.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7680) id_ref_desc=RESOLVE_STR_REF(@7681) price=10000 speed=6 END
         LPF ALTER_EFFECT INT_VAR match_probability1 = 25 probability1=24 END

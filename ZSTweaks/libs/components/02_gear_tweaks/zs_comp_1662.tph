@@ -1,6 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/eff/ZSTWMON1.EFF~ ~override~
-        ~ZSTweaks/eff/ZSTWMON2.EFF~ ~override~
+    COPY ~ZSTweaks/items/montolio~ ~override~
     COPY_EXISTING ~CLCK32.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7170) END
         LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=0 opcode=177 parameter1=209 parameter2=5
