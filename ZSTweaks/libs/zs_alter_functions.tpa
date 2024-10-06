@@ -51,211 +51,158 @@ BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     PATCH_IF unid_ref_name > "-2" BEGIN
         WRITE_LONG 0x08 unid_ref_name
-    END ELSE BEGIN
-        PATCH_IF unid_ref_name < "-2" BEGIN
-            PATCH_WARN "Passed a wrong value to unid_ref_name: %unid_ref_name%"
-        END
+    END ELSE PATCH_IF unid_ref_name < "-2" BEGIN
+        PATCH_WARN "Passed a wrong value to unid_ref_name: %unid_ref_name%"
     END
 
     PATCH_IF unid_ref_desc > "-2" BEGIN
         WRITE_LONG 0x50 unid_ref_desc
-    END ELSE BEGIN
-        PATCH_IF unid_ref_desc < "-2" BEGIN
-            PATCH_WARN "Passed a wrong value to unid_ref_desc: %unid_ref_desc%"
-        END
+    END ELSE PATCH_IF unid_ref_desc < "-2" BEGIN
+        PATCH_WARN "Passed a wrong value to unid_ref_desc: %unid_ref_desc%"
     END
 
     PATCH_IF id_ref_name > "-2" BEGIN
         WRITE_LONG 0x0c id_ref_name
-    END ELSE BEGIN
-        PATCH_IF id_ref_name < "-2" BEGIN
-            PATCH_WARN "Passed a wrong value to id_ref_name: %id_ref_name%"
-        END
+    END ELSE PATCH_IF id_ref_name < "-2" BEGIN
+        PATCH_WARN "Passed a wrong value to id_ref_name: %id_ref_name%"
     END
 
     PATCH_IF id_ref_desc > "-2" BEGIN
         WRITE_LONG 0x54 id_ref_desc
-    END ELSE BEGIN
-        PATCH_IF id_ref_desc < "-2" BEGIN
-            PATCH_WARN "Passed a wrong value to id_ref_desc: %id_ref_desc%"
-        END
+    END ELSE PATCH_IF id_ref_desc < "-2" BEGIN
+        PATCH_WARN "Passed a wrong value to id_ref_desc: %id_ref_desc%"
     END
 
     PATCH_IF flags > "-1" BEGIN
         PATCH_IF this_plus = 0 BEGIN
             WRITE_LONG 0x18 flags
-        END ELSE BEGIN
-            PATCH_IF this_plus = 1 BEGIN
-                WRITE_LONG 0x18 (THIS + flags)
-            END
-            PATCH_IF this_plus = "-1" BEGIN
-                WRITE_LONG 0x18 (THIS - flags)
-            END
+        END ELSE PATCH_IF this_plus = 1 BEGIN
+            WRITE_LONG 0x18 (THIS + flags)
+        END ELSE PATCH_IF this_plus = "-1" BEGIN
+            WRITE_LONG 0x18 (THIS - flags)
         END
-    END ELSE BEGIN
-        PATCH_IF flags < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to flags: %flags%"
-        END
+    END ELSE PATCH_IF flags < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to flags: %flags%"
     END
 
     PATCH_IF category > "-1" BEGIN
         WRITE_BYTE 0x1c category
-    END ELSE BEGIN
-        PATCH_IF category < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to category: %category%"
-        END
+    END ELSE PATCH_IF category < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to category: %category%"
     END
 
     PATCH_IF wpn_prof > "-1" BEGIN
         WRITE_LONG 0x31 wpn_prof
-    END ELSE BEGIN
-        PATCH_IF wpn_prof < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to wpn_prof: %wpn_prof%"
-        END
+    END ELSE PATCH_IF wpn_prof < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to wpn_prof: %wpn_prof%"
     END
 
     PATCH_IF min_level > "-1" BEGIN
         WRITE_SHORT 0x24 min_level
-    END ELSE BEGIN
-        PATCH_IF min_level < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to min_level: %min_level%"
-        END
+    END ELSE PATCH_IF min_level < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to min_level: %min_level%"
     END
 
     PATCH_IF min_str > "-1" BEGIN
         WRITE_SHORT 0x26 min_str
-    END ELSE BEGIN
-        PATCH_IF min_str < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to min_str: %min_str%"
-        END
+    END ELSE PATCH_IF min_str < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to min_str: %min_str%"
     END
 
     PATCH_IF min_str_bonus > "-1" BEGIN
         WRITE_BYTE 0x28 min_str_bonus
-    END ELSE BEGIN
-        PATCH_IF min_str_bonus < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to min_str_bonus: %min_str_bonus%"
-        END
+    END ELSE PATCH_IF min_str_bonus < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to min_str_bonus: %min_str_bonus%"
     END
 
     PATCH_IF min_int > "-1" BEGIN
         WRITE_BYTE 0x2a min_int
-    END ELSE BEGIN
-        PATCH_IF min_int < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to min_int: %min_int%"
-        END
+    END ELSE PATCH_IF min_int < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to min_int: %min_int%"
     END
 
     PATCH_IF min_dex > "-1" BEGIN
         WRITE_BYTE 0x2c min_dex
-    END ELSE BEGIN
-        PATCH_IF min_dex < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to min_dex: %min_dex%"
-        END
+    END ELSE PATCH_IF min_dex < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to min_dex: %min_dex%"
     END
 
     PATCH_IF min_wis > "-1" BEGIN
         WRITE_BYTE 0x2e min_wis
-    END ELSE BEGIN
-        PATCH_IF min_wis < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to min_wis: %min_wis%"
-        END
+    END ELSE PATCH_IF min_wis < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to min_wis: %min_wis%"
     END
 
     PATCH_IF min_con > "-1" BEGIN
         WRITE_BYTE 0x30 min_con
-    END ELSE BEGIN
-        PATCH_IF min_con < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to min_con: %min_con%"
-        END
+    END ELSE PATCH_IF min_con < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to min_con: %min_con%"
     END
 
     PATCH_IF min_cha > "-1" BEGIN
         WRITE_SHORT 0x30 min_cha
-    END ELSE BEGIN
-        PATCH_IF min_cha < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to min_cha: %min_cha%"
-        END
+    END ELSE PATCH_IF min_cha < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to min_cha: %min_cha%"
     END
 
     PATCH_IF max_stack > "-1" BEGIN
         WRITE_SHORT 0x38 max_stack
-    END ELSE BEGIN
-        PATCH_IF max_stack < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to max_stack: %max_stack%"
-        END
+    END ELSE PATCH_IF max_stack < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to max_stack: %max_stack%"
     END
 
     PATCH_IF lore_id > "-1" BEGIN
         WRITE_SHORT 0x42 lore_id
-    END ELSE BEGIN
-        PATCH_IF lore_id < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to lore_id: %lore_id%"
-        END
+    END ELSE PATCH_IF lore_id < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to lore_id: %lore_id%"
     END
 
     PATCH_IF weight > "-1" BEGIN
         WRITE_LONG 0x4c weight
-    END ELSE BEGIN
-        PATCH_IF weight < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to weight: %weight%"
-        END
+    END ELSE PATCH_IF weight < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to weight: %weight%"
     END
 
     PATCH_IF ench > "-1" BEGIN
         WRITE_LONG 0x60 ench
-    END ELSE BEGIN
-        PATCH_IF ench < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to ench: %ench%"
-        END
+    END ELSE PATCH_IF ench < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to ench: %ench%"
     END
 
     PATCH_IF unusable0 > "-1" BEGIN
         WRITE_LONG 0x1e unusable0
-    END ELSE BEGIN
-        PATCH_IF unusable0 < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to unusable0: %unusable0%"
-        END
+    END ELSE PATCH_IF unusable0 < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to unusable0: %unusable0%"
     END
 
     PATCH_IF unusable1 > "-1" BEGIN
         WRITE_BYTE 0x29 unusable1
-    END ELSE BEGIN
-        PATCH_IF unusable1 < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to unusable1: %unusable1%"
-        END
+    END ELSE PATCH_IF unusable1 < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to unusable1: %unusable1%"
     END
 
     PATCH_IF unusable2 > "-1" BEGIN
         WRITE_BYTE 0x2b unusable2
-    END ELSE BEGIN
-        PATCH_IF unusable2 < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to unusable2: %unusable2%"
-        END
+    END ELSE PATCH_IF unusable2 < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to unusable2: %unusable2%"
     END
 
     PATCH_IF unusable3 > "-1" BEGIN
         WRITE_BYTE 0x2d unusable3
-    END ELSE BEGIN
-        PATCH_IF unusable3 < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to unusable3: %unusable3%"
-        END
+    END ELSE PATCH_IF unusable3 < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to unusable3: %unusable3%"
     END
 
     PATCH_IF unusable4 > "-1" BEGIN
         WRITE_BYTE 0x2f unusable4
-    END ELSE BEGIN
-        PATCH_IF unusable4 < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to unusable4: %unusable4%"
-        END
+    END ELSE PATCH_IF unusable4 < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to unusable4: %unusable4%"
     END
 
     PATCH_IF price > "-1" BEGIN
         WRITE_LONG 0x34 price
-    END ELSE BEGIN
-        PATCH_IF price < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to price: %price%"
-        END
+    END ELSE PATCH_IF price < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to price: %price%"
     END
 
     PATCH_IF STRING_LENGTH "%general_name%" > 0 BEGIN
@@ -271,7 +218,6 @@ BEGIN
         END
         SAY NAME2 "%id_name%"
     END
-
 
     PATCH_IF STRING_LENGTH "%general_desc%" > 0 BEGIN
         PATCH_IF unid_ref_desc > "-2" BEGIN
@@ -336,38 +282,31 @@ BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "EFF" END
     PATCH_IF parameter1 > "-999" BEGIN
         WRITE_LONG 0x1c parameter1
-    END ELSE BEGIN
-        PATCH_IF parameter1 < "-999" BEGIN
-            PATCH_WARN "Passed a wrong value to parameter1: %parameter1%"
-        END
+    END ELSE PATCH_IF parameter1 < "-999" BEGIN
+        PATCH_WARN "Passed a wrong value to parameter1: %parameter1%"
     END
+
     PATCH_IF parameter2 > "-1" BEGIN
         WRITE_LONG 0x20 parameter2
-    END ELSE BEGIN
-        PATCH_IF parameter2 < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to parameter2: %parameter2%"
-        END
+    END ELSE PATCH_IF parameter2 < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to parameter2: %parameter2%"
     END
+
     PATCH_IF parameter3 > "-1" BEGIN
         WRITE_SHORT 0x60 parameter3
-    END ELSE BEGIN
-        PATCH_IF parameter3 < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to parameter3: %parameter3%"
-        END
+    END ELSE PATCH_IF parameter3 < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to parameter3: %parameter3%"
     END
+
     PATCH_IF dicesize > "-1" BEGIN
         WRITE_LONG 0x3c dicesize
-    END ELSE BEGIN
-        PATCH_IF dicesize < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to dicesize: %dicesize%"
-        END
+    END ELSE PATCH_IF dicesize < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to dicesize: %dicesize%"
     END
     PATCH_IF dicenumber > "-1" BEGIN
         WRITE_LONG 0x38 dicenumber
-    END ELSE BEGIN
-        PATCH_IF dicenumber < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to dicenumber: %dicenumber%"
-        END
+    END ELSE PATCH_IF dicenumber < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to dicenumber: %dicenumber%"
     END
 END
 
@@ -391,92 +330,68 @@ BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
     PATCH_IF ref_name > "-2" BEGIN
         WRITE_LONG 0x08 ref_name
-    END ELSE BEGIN
-        PATCH_IF ref_name < "-2" BEGIN
-            PATCH_WARN "Passed a wrong value to ref_name: %ref_name%"
-        END
+    END ELSE PATCH_IF ref_name < "-2" BEGIN
+        PATCH_WARN "Passed a wrong value to ref_name: %ref_name%"
     END
 
     PATCH_IF ref_desc > "-2" BEGIN
         WRITE_LONG 0x50 ref_desc
-    END ELSE BEGIN
-        PATCH_IF ref_desc < "-2" BEGIN
-            PATCH_WARN "Passed a wrong value to ref_desc: %ref_desc%"
-        END
+    END ELSE PATCH_IF ref_desc < "-2" BEGIN
+        PATCH_WARN "Passed a wrong value to ref_desc: %ref_desc%"
     END
 
     PATCH_IF flags > "-1" BEGIN
         PATCH_IF this_plus = 0 BEGIN
             WRITE_LONG 0x18 flags
-        END ELSE BEGIN
-            PATCH_IF this_plus = 1 BEGIN
-                WRITE_LONG 0x18 (THIS + flags)
-            END
-            PATCH_IF this_plus = "-1" BEGIN
-                WRITE_LONG 0x18 (THIS - flags)
-            END
+        END ELSE PATCH_IF this_plus = 1 BEGIN
+            WRITE_LONG 0x18 (THIS + flags)
+        END ELSE PATCH_IF this_plus = "-1" BEGIN
+            WRITE_LONG 0x18 (THIS - flags)
         END
-    END ELSE BEGIN
-        PATCH_IF flags < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to flags: %flags%"
-        END
+    END ELSE PATCH_IF flags < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to flags: %flags%"
     END
 
     PATCH_IF spell_type > "-1" BEGIN
         WRITE_LONG 0x1c spell_type
-    END ELSE BEGIN
-        PATCH_IF spell_type < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to spell_type: %spell_type%"
-        END
+    END ELSE PATCH_IF spell_type < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to spell_type: %spell_type%"
     END
 
     PATCH_IF excl_flags > "-1" BEGIN
         PATCH_IF this_plus = 0 BEGIN
             WRITE_LONG 0x1e excl_flags
-        END ELSE BEGIN
-            PATCH_IF this_plus = 1 BEGIN
-                WRITE_LONG 0x1e (THIS + excl_flags)
-            END
-            PATCH_IF this_plus = "-1" BEGIN
-                WRITE_LONG 0x1e (THIS - excl_flags)
-            END
+        END ELSE PATCH_IF this_plus = 1 BEGIN
+            WRITE_LONG 0x1e (THIS + excl_flags)
+        END ELSE PATCH_IF this_plus = "-1" BEGIN
+            WRITE_LONG 0x1e (THIS - excl_flags)
         END
-    END ELSE BEGIN
-        PATCH_IF flags < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to excl_flags: %excl_flags%"
-        END
+    END ELSE PATCH_IF flags < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to excl_flags: %excl_flags%"
     END
 
     PATCH_IF animation > "-1" BEGIN
         WRITE_LONG 0x22 animation
-    END ELSE BEGIN
-        PATCH_IF spell_type < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to animation: %animation%"
-        END
+    END ELSE PATCH_IF spell_type < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to animation: %animation%"
     END
 
     PATCH_IF primary_type > "-1" BEGIN
         WRITE_LONG 0x25 primary_type
-    END ELSE BEGIN
-        PATCH_IF primary_type < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to primary_type: %primary_type%"
-        END
+    END ELSE PATCH_IF primary_type < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to primary_type: %primary_type%"
     END
 
     PATCH_IF secondary_type > "-1" BEGIN
         WRITE_LONG 0x27 secondary_type
-    END ELSE BEGIN
-        PATCH_IF secondary_type < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to secondary_type: %secondary_type%"
-        END
+    END ELSE PATCH_IF secondary_type < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to secondary_type: %secondary_type%"
     END
 
     PATCH_IF spell_level > "-1" BEGIN
         WRITE_LONG 0x34 spell_level
-    END ELSE BEGIN
-        PATCH_IF spell_level < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to spell_level: %spell_level%"
-        END
+    END ELSE PATCH_IF spell_level < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to spell_level: %spell_level%"
     END
 
     PATCH_IF "%icon%" STRING_COMPARE_CASE "none" != 0 BEGIN
@@ -504,53 +419,46 @@ BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
     PATCH_IF name > "-2" BEGIN
         WRITE_LONG 0x08 name
-    END ELSE BEGIN
-        PATCH_IF name < "-2" BEGIN
-            PATCH_WARN "Passed a wrong value to name: %name%"
-        END
+    END ELSE PATCH_IF name < "-2" BEGIN
+        PATCH_WARN "Passed a wrong value to name: %name%"
     END
+
     PATCH_IF tooltip > "-2" BEGIN
         WRITE_LONG 0x0c tooltip
-    END ELSE BEGIN
-        PATCH_IF tooltip < "-2" BEGIN
-            PATCH_WARN "Passed a wrong value to tooltip: %tooltip%"
-        END
+    END ELSE PATCH_IF tooltip < "-2" BEGIN
+        PATCH_WARN "Passed a wrong value to tooltip: %tooltip%"
     END
+
     PATCH_IF current_health > "-1" BEGIN
         WRITE_SHORT 0x24 current_health
-    END ELSE BEGIN
-        PATCH_IF current_health < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to current_health: %current_health%"
-        END
+    END ELSE PATCH_IF current_health < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to current_health: %current_health%"
     END
+
     PATCH_IF max_health > "-1" BEGIN
         WRITE_SHORT 0x26 max_health
-    END ELSE BEGIN
-        PATCH_IF max_health < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to max_health: %max_health%"
-        END
+    END ELSE PATCH_IF max_health < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to max_health: %max_health%"
     END
+
     PATCH_IF class > "-1" BEGIN
         WRITE_BYTE 0x273 class
-    END ELSE BEGIN
-        PATCH_IF class < "-1" BEGIN
-            PATCH_WARN "Passed a wrong value to class: %class%"
-        END
+    END ELSE PATCH_IF class < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to class: %class%"
     END
+
     PATCH_IF thac0 >= "-128" AND thac0 <= 127 BEGIN
         WRITE_BYTE 0x52 thac0
-    END ELSE BEGIN
-        PATCH_IF thac0 < "-129" BEGIN
-            PATCH_WARN "Passed a wrong value to thac0: %thac0%"
-        END
+    END ELSE PATCH_IF thac0 < "-129" BEGIN
+        PATCH_WARN "Passed a wrong value to thac0: %thac0%"
     END
+
     PATCH_IF alignment > "-1" BEGIN
         WRITE_BYTE 0x27b alignment
-    END ELSE BEGIN
-        PATCH_IF alignment < "-1" OR alignment > 255 BEGIN
-            PATCH_WARN "Passed a wrong value to class: %alignment%"
-        END
+    END ELSE PATCH_IF alignment < "-1" OR alignment > 255 BEGIN
+        PATCH_WARN "Passed a wrong value to class: %alignment%"
     END
+
     PATCH_IF "%dialog%" STRING_COMPARE_CASE "none" != 0 BEGIN
         WRITE_ASCII 0x2cc dialog #8
     END
@@ -563,6 +471,7 @@ INT_VAR
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "PRO" END
     READ_SHORT 0x8 projectile_type
+
     PATCH_IF trap_size > "-1" BEGIN
         PATCH_IF projectile_type = 3 BEGIN
             WRITE_SHORT 0x204 trap_size

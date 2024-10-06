@@ -1,29 +1,29 @@
 OUTER_SET group_component = 1
 
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_140.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_145.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_147.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_160.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_161.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_163.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_170.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_180.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_210.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_220.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_370.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_380.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_390.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_400.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_405.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_407.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_410.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_430.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_440.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_441.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_442.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_140.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_145.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_147.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_160.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_161.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_163.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_170.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_180.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_210.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_220.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_370.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_380.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_390.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_400.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_405.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_407.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_410.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_430.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_440.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_441.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_442.tph~
 ACTION_IF !(MOD_IS_INSTALLED "ZSTweaks" "340") AND !(MOD_IS_INSTALLED "ZSTweaks" "99") BEGIN // symbol not installed
-    INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_443.tph~
+    INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_443.tph~
 END
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_444.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_445.tph~
-INCLUDE ~ZSTweaks/libs/components/10_wizard_spells_tweaks/zs_comp_446.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_444.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_445.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_446.tph~

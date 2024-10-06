@@ -7,13 +7,73 @@ ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN // modify spells for fine
         LPF ALTER_EFFECT INT_VAR match_opcode=12 match_dicesize=8 match_dicenumber=1 dicesize=4 dicenumber=2 END
     BUT_ONLY
 END
+
+
+COPY_EXISTING "SW1H48.ITM" ~override~
+    SPRINT str @99999
+    SPRINT str_sf @99998
+    READ_STRREF 0x50 desc
+    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
+        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)4~ ~\13~ // speed modification
+    END
+    SAY_EVALUATED 0x50 ~%desc%~
+    LPF ITM_REF_UDESC_INDEX RET changed_description_index_ninjato = result END
+BUT_ONLY
+
+COPY_EXISTING "SW1H46.ITM" ~override~
+    SPRINT str @99999
+    READ_STRREF 0x50 desc
+    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
+    END
+    SAY_EVALUATED 0x50 ~%desc%~
+    LPF ITM_REF_UDESC_INDEX RET changed_description_index_waki = result END
+BUT_ONLY
+
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_PROF RET wpn_prof = result END
     LPF ITM_APPEARANCE RET wpn_appearance = result END
-	PATCH_IF wpn_prof=95 AND ("%wpn_appearance%" STRING_COMPARE_CASE "ss"=0 OR "%wpn_appearance%" STRING_COMPARE_CASE "s1"=0) BEGIN // wakizashis and ninjatos
+	PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STRING_COMPARE_CASE "s1"=0 BEGIN // ninjatos
         LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
-        FOR ( current_sp = 4; current_sp > 0; --current_sp ) BEGIN // decrease ninja-tos speed by 1
-            LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 match_speed = current_sp speed = current_sp - 1 END
+        LPF WPN_SPEED RET s = result END
+        PATCH_IF s > 0 BEGIN
+            --s
+            LPF ALTER_HEADER INT_VAR match_type = 1 speed = s END
+        END
+
+        PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "SW1H48") BEGIN
+            LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index_ninjato END
+            LPF ITM_REF_DESC RET description_index = result END
+            PATCH_IF description_index > "-1" BEGIN
+                READ_STRREF 0x54 desc
+                SPRINT str @99999
+                LPF WPN_DMG RET dmg = result END
+                LPF WPN_SPEED RET speed = result END
+                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\1%speed%~
+                END
+                SAY_EVALUATED 0x54 ~%desc%~
+            END
+        END
+
+    END ELSE PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STRING_COMPARE_CASE "ss"=0 BEGIN // wakis
+        LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
+
+        PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "SW1H48") BEGIN
+            LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index_waki END
+            LPF ITM_REF_DESC RET description_index = result END
+            PATCH_IF description_index > "-1" BEGIN
+                READ_STRREF 0x54 desc
+                SPRINT str @99999
+                LPF WPN_DMG RET dmg = result END
+                LPF WPN_SPEED RET speed = result END
+                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
+                END
+                SAY_EVALUATED 0x54 ~%desc%~
+            END
         END
     END
 BUT_ONLY

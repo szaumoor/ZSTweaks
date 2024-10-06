@@ -4,13 +4,13 @@ COPY ~ZSTweaks/items/finesse_weapons~ ~override~
 ADD_PROJECTILE ~ZSTweaks/pro/ZSTW_INP.PRO~
 ADD_PROJECTILE ~ZSTweaks/pro/ZSTW_IND.PRO~
 
-COPY_EXISTING_REGEXP "ZSTW[ABS][0-6]\.spl" ~override~ // spells to insert projectiles to (for arrows, bolts and sling bullets)
+COPY_EXISTING_REGEXP "ZSTW[ABS][0-6]\.spl" ~override~ // for arrows, bolts and sling bullets
     LPF ALTER_HEADER INT_VAR match_type = 2 projectile = "%ZSTW_INP%" END
 BUT_ONLY
 COPY_EXISTING_REGEXP "ZSTW[AZ]M[30]\.SPL" ~override~ // magic damage, for void weapons in SoD
     LPF ALTER_HEADER INT_VAR match_type = 2 projectile = "%ZSTW_INP%" END
 BUT_ONLY
-COPY_EXISTING_REGEXP "ZSTW[TZ][0-6]\.spl" ~override~ // spells to insert projectiles to (throwing daggers and darts)
+COPY_EXISTING_REGEXP "ZSTW[TZ][0-6]\.spl" ~override~ // throwing daggers and darts
     LPF ALTER_HEADER INT_VAR match_type = 2 projectile = "%ZSTW_IND%" END
 BUT_ONLY
 
@@ -35,57 +35,53 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_APPEARANCE RET wpn_appearance = result END
     LPF ITM_ENCH RET ench = result END
 	PATCH_IF wpn_cat = 16 AND wpn_prof = 96 BEGIN // daggers
-        PATCH_IF ench = 0 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWD0~ END
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWZ0~ END
-        END
-        PATCH_IF ench = 1 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWD1~ END
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWZ1~ END
-        END
-        PATCH_IF ench = 2 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWD2~ END
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWZ2~ END
-        END
-        PATCH_IF ench = 3 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWD3~ END
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWZ3~ END
-        END
-        PATCH_IF ench = 4 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWD4~ END
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWZ4~ END
-        END
-        PATCH_IF ench = 5 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWD5~ END
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWZ5~ END
-        END
-        PATCH_IF ench = 6 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWD6~ END
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWZ6~ END
+        PATCH_MATCH ench
+            WITH 0 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWD0~ END
+                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWZ0~ END
+            END 1 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWD1~ END
+                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWZ1~ END
+            END 2 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWD2~ END
+                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWZ2~ END
+            END 3 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWD3~ END
+                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWZ3~ END
+            END 4 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWD4~ END
+                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWZ4~ END
+            END 5 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWD5~ END
+                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWZ5~ END
+            END 6 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWD6~ END
+                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWZ6~ END
+            END DEFAULT
+                    LPF ITM_STR_NAME RET name = result END
+                    PATCH_WARN "[Finesse: Daggers] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
         END
     END // end daggers
     PATCH_IF wpn_cat = 14 BEGIN // slings/bullets
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdbull02" != 0 BEGIN // not bullets of darkness (SoD)
-            PATCH_IF ench = 0 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWS0~ END
-            END
-            PATCH_IF ench = 1 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWS1~ END
-            END
-            PATCH_IF ench = 2 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWS2~ END
-            END
-            PATCH_IF ench = 3 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWS3~ END
-            END
-            PATCH_IF ench = 4 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWS4~ END
-            END
-            PATCH_IF ench = 5 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWS5~ END
-            END
-            PATCH_IF ench = 6 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWS6~ END
+            PATCH_MATCH ench
+                WITH 0 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWS0~ END
+                END 1 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWS1~ END
+                END 2 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWS2~ END
+                END 3 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWS3~ END
+                END 4 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWS4~ END
+                END 5 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWS5~ END
+                END 6 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWS6~ END
+                END DEFAULT
+                    LPF ITM_STR_NAME RET name = result END
+                    PATCH_WARN "[Finesse: Slings] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
             END
         END ELSE BEGIN
             LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 insert_point = "-1"
@@ -111,192 +107,180 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
         END
     END // end bolts
     PATCH_IF wpn_cat = 24 AND wpn_prof = 106 BEGIN // darts
-        PATCH_IF ench = 0 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWT0~ END
-        END
-        PATCH_IF ench = 1 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWT1~ END
-        END
-        PATCH_IF ench = 2 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWT2~ END
-        END
-        PATCH_IF ench = 3 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWT3~ END
-        END
-        PATCH_IF ench = 4 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWT4~ END
-        END
-        PATCH_IF ench = 5 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWT5~ END
-        END
-        PATCH_IF ench = 6 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWT6~ END
+        PATCH_MATCH ench
+            WITH 0 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWT0~ END
+            END 1 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWT1~ END
+            END 2 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWT2~ END
+            END 3 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWT3~ END
+            END 4 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWT4~ END
+            END 5 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWT5~ END
+            END 6 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWT6~ END
+            END DEFAULT
+                LPF ITM_STR_NAME RET name = result END
+                PATCH_WARN "[Finesse: Darts] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
         END
     END // end darts
     PATCH_IF wpn_cat = 26 AND wpn_prof = 102 BEGIN // staves
-        PATCH_IF ench = 0 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ0~ END
-        END
-        PATCH_IF ench = 1 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ1~ END
-        END
-        PATCH_IF ench = 2 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ2~ END
-        END
-        PATCH_IF ench = 3 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ3~ END
-        END
-        PATCH_IF ench = 4 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ4~ END
-        END
-        PATCH_IF ench = 5 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ5~ END
-        END
-        PATCH_IF ench = 6 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ6~ END
+        PATCH_MATCH ench
+            WITH 0 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ0~ END
+            END 1 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ1~ END
+            END 2 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ2~ END
+            END 3 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ3~ END
+            END 4 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ4~ END
+            END 5 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ5~ END
+            END 6 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWQ6~ END
+            END DEFAULT
+                LPF ITM_STR_NAME RET name = result END
+                PATCH_WARN "[Finesse: Staves] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
         END
     END // end staves
     PATCH_IF wpn_cat=20 AND (wpn_prof=90 OR (wpn_prof=95 AND "%wpn_appearance%" STRING_COMPARE_CASE "sc"=0)) BEGIN //long swords and scimitars
-        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdsw1h06" != 0 BEGIN // voidsword (SoD)
-            PATCH_IF ench = 0 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL0~ END
-            END
-            PATCH_IF ench = 1 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL1~ END
-            END
-            PATCH_IF ench = 2 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL2~ END
-            END
-            PATCH_IF ench = 3 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL3~ END
-            END
-            PATCH_IF ench = 4 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL4~ END
-            END
-            PATCH_IF ench = 5 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL5~ END
-            END
-            PATCH_IF ench = 6 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL6~ END
+        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdsw1h06" != 0 // voidsword (SoD)
+        AND "%SOURCE_RES%" STRING_COMPARE_CASE "KILLSW01" != 0 // cheat sword
+        BEGIN
+            PATCH_MATCH ench
+                WITH 0 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL0~ END
+                END 1 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL1~ END
+                END 2 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL2~ END
+                END 3 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL3~ END
+                END 4 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL4~ END
+                END 5 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL5~ END
+                END 6 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 9 STR_VAR class = ~THIEF~ spell = ~ZSTWL6~ END
+                END DEFAULT
+                    LPF ITM_STR_NAME RET name = result END
+                    PATCH_WARN "[Finesse: Long swords/Scimitars] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
             END
         END ELSE BEGIN
-            LPF weapon_damage_by_class INT_VAR type=1 probability1=9 insert_point="-1" STR_VAR class=~THIEF~ spell=~ZSTWLM3~ END
+            PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdsw1h06" = 0 BEGIN // voidsword (SoD)
+                LPF weapon_damage_by_class INT_VAR type=1 probability1=9 insert_point="-1" STR_VAR class=~THIEF~ spell=~ZSTWLM3~ END
+            END
         END
     END // end long swords and scimitars
     PATCH_IF wpn_cat = 20 AND wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "s1" = 0 BEGIN // ninja-tos
-         PATCH_IF ench = 0 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ0~ END
-        END
-        PATCH_IF ench = 1 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ1~ END
-        END
-        PATCH_IF ench = 2 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ2~ END
-        END
-        PATCH_IF ench = 3 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ3~ END
-        END
-        PATCH_IF ench = 4 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ4~ END
-        END
-        PATCH_IF ench = 5 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ5~ END
-        END
-        PATCH_IF ench = 6 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ6~ END
+        PATCH_MATCH ench
+            WITH 0 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ0~ END
+            END 1 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ1~ END
+            END 2 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ2~ END
+            END 3 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ3~ END
+            END 4 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ4~ END
+            END 5 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ5~ END
+            END 6 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWNJ6~ END
+            END DEFAULT
+                    LPF ITM_STR_NAME RET name = result END
+                    PATCH_WARN "[Finesse: Ninja-tos] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
         END
     END // end ninja-tos
     PATCH_IF wpn_cat = 20 AND wpn_prof = 94 BEGIN // katanas
-         PATCH_IF ench = 0 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK0~ END
-        END
-        PATCH_IF ench = 1 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK1~ END
-        END
-        PATCH_IF ench = 2 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK2~ END
-        END
-        PATCH_IF ench = 3 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK3~ END
-        END
-        PATCH_IF ench = 4 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK4~ END
-        END
-        PATCH_IF ench = 5 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK5~ END
-        END
-        PATCH_IF ench = 6 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK6~ END
+        PATCH_MATCH ench
+            WITH 0 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK0~ END
+            END 1 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK1~ END
+            END 2 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK2~ END
+            END 3 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK3~ END
+            END 4 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK4~ END
+            END 5 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK5~ END
+            END 6 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 14 STR_VAR class = ~THIEF~ spell = ~ZSTWK6~ END
+            END DEFAULT
+                LPF ITM_STR_NAME RET name = result END
+                PATCH_WARN "[Finesse: Katanas] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
         END
     END // end katanas
     PATCH_IF wpn_cat = 19 AND wpn_prof = 95 AND "%wpn_appearance%" STRING_COMPARE_CASE "ss" = 0 BEGIN // wakizashis
-         PATCH_IF ench = 0 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW0~ END
-        END
-        PATCH_IF ench = 1 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW1~ END
-        END
-        PATCH_IF ench = 2 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW2~ END
-        END
-        PATCH_IF ench = 3 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW3~ END
-        END
-        PATCH_IF ench = 4 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW4~ END
-        END
-        PATCH_IF ench = 5 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW5~ END
-        END
-        PATCH_IF ench = 6 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW6~ END
+        PATCH_MATCH ench
+            WITH 0 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW0~ END
+            END 1 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW1~ END
+            END 2 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW2~ END
+            END 3 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW3~ END
+            END 4 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW4~ END
+            END 5 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW5~ END
+            END 6 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 24 STR_VAR class = ~THIEF~ spell = ~ZSTWW6~ END
+            END DEFAULT
+                LPF ITM_STR_NAME RET name = result END
+                PATCH_WARN "[Finesse: Wakizashis] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
         END
     END // end wakizashis
     PATCH_IF wpn_cat = 19 AND wpn_prof = 91 BEGIN // short swords
-         PATCH_IF ench = 0 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY0~ END
-        END
-        PATCH_IF ench = 1 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY1~ END
-        END
-        PATCH_IF ench = 2 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY2~ END
-        END
-        PATCH_IF ench = 3 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY3~ END
-        END
-        PATCH_IF ench = 4 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY4~ END
-        END
-        PATCH_IF ench = 5 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY5~ END
-        END
-        PATCH_IF ench = 6 BEGIN
-            LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY6~ END
+        PATCH_MATCH ench
+            WITH 0 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY0~ END
+            END 1 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY1~ END
+            END 2 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY2~ END
+            END 3 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY3~ END
+            END 4 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY4~ END
+            END 5 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY5~ END
+            END 6 BEGIN
+                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWY6~ END
+            END DEFAULT
+                LPF ITM_STR_NAME RET name = result END
+                PATCH_WARN "[Finesse: Short Swords] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
         END
     END // end short swords
     PATCH_IF wpn_cat = 17 AND wpn_prof = 115 BEGIN // clubs
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "l#BASR7" != 0 BEGIN // lava's
-            PATCH_IF ench = 0 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ0~ END
-            END
-            PATCH_IF ench = 1 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ1~ END
-            END
-            PATCH_IF ench = 2 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ2~ END
-            END
-            PATCH_IF ench = 3 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ3~ END
-            END
-            PATCH_IF ench = 4 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ4~ END
-            END
-            PATCH_IF ench = 5 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ5~ END
-            END
-            PATCH_IF ench = 6 BEGIN
-                LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ6~ END
+            PATCH_MATCH ench
+                WITH 0 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ0~ END
+                END 1 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ1~ END
+                END 2 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ2~ END
+                END 3 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ3~ END
+                END 4 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ4~ END
+                END 5 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ5~ END
+                END 6 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQ6~ END
+                END DEFAULT
+                    LPF ITM_STR_NAME RET name = result END
+                    PATCH_WARN "[Finesse: Clubs] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
             END
         END ELSE BEGIN
             LPF weapon_damage_by_class INT_VAR type = 1 probability1 = 34 STR_VAR class = ~THIEF~ spell = ~ZSTWQM2~ END

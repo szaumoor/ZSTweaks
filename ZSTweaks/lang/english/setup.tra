@@ -272,7 +272,7 @@
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
 @101 = ~Make Flame Blade do 4 more points of Fire Damage to undead and act as a +2 weapon against them~
 @102 = ~Make BG's version of Flame Blade scale duration-wise like in IWDEE~
-@110 = "Make Bless last longer"
+@110 = "Make Bless and Curse last longer"
 @130 = "Standardize Hold Person saving throw penalties"
 @190 = "Make Holy Power grant a THAC0 of 0 at max level"
 @230 = "Make Cloak of Fear work as a temporary aura of fear, like in IWDEE"
@@ -1824,7 +1824,7 @@ Weight: 2~
 
 Combat abilities:
 – Yoshimo wields it as if he is specialized in katanas, unless more highly specialized
-– +10% Critical Chance
+– +10% critical chances
 
 STATISTICS:
 
@@ -3100,11 +3100,11 @@ STATISTICS:
 
 Equipped abilities:
 – Acts as a +4 weapon in all respects except damage when wielded by non-barbarians
-– Barbarians wielding this sword will receive 5% physical damage resistance, and the sword's physical damage will become 1d12+5
+– Barbarians wielding this sword will receive 5% physical damage resistance, and will deal damage as if it was a +5 weapon
 
 THAC0: +4
 Damage: 1d12+2, +1d4 cold damage
-Damage Type: Slashing
+Damage type: Slashing
 Speed Factor: 6
 Proficiency Type: Two-handed Sword
 Type: Two-handed
@@ -3259,7 +3259,7 @@ Combat abilities:
 
 THAC0: +3
 Damage: 1d4+3, +1d3 (acid)
-Damage Type: Piercing
+Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
 Type: One-handed
@@ -3928,7 +3928,7 @@ Combat abilities:
 
 THAC0: +2
 Damage: 1d4+2, +1d2 magic damage
-Damage Type: Piercing
+Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
 Type: One-handed
@@ -4130,7 +4130,7 @@ Combat abilities:
 
 THAC0: +2
 Damage: 2d4+2, +2 poison damage
-Damage Type: Crushing
+Damage type: Crushing
 Speed Factor: 5
 Proficiency Type: Flail/Morning Star
 Type: One-handed
@@ -4439,7 +4439,7 @@ This powerful abjuration spell causes the spells cast against the priest to be a
 STATISTICS:
 
 Combat abilities:
-– Lingering flame: if a Save vs. Spell is failed, targets continues to burn, suffering 1d3 points of fire damage per round for 3 rounds
+– Lingering flame: if a Save vs. Spell is failed, targets continue to burn, suffering 1d3 points of fire damage per round for 3 rounds
 
 THAC0: +3
 Damage: 2d4+3, plus 1d3+1 fire damage
@@ -4976,7 +4976,7 @@ Combat abilities:
 
 THAC0: +2, +4 vs. elementals and mephits
 Damage: 1d8+2, plus 4 vs. elementals and mephits
-Damage Type: Slashing
+Damage type: Slashing
 Speed Factor: 4
 Proficiency Type: Scimitar/Wakizashi/Ninjatō
 Type: One-handed
@@ -5011,7 +5011,7 @@ Equipped abilities:
 
 THAC0: +2, +4 vs. giant humanoids
 Damage: 1d4+2 (piercing), plus 4 vs. giant humanoids // todo fix fire damage
-Damage Type: Piercing
+Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
 Type: One-handed
@@ -5101,7 +5101,7 @@ Combat abilities:
 
 THAC0: +3, +5 (Monks only)
 Damage: 1d8+3, +1 Poison damage
-Damage Type: Slashing
+Damage type: Slashing
 Speed Factor: 0
 Proficiency Type: Scimitar/Wakizashi/Ninjatō
 Type: One-handed
@@ -5218,3 +5218,23 @@ Requires:
 
 Weight: 8~
 
+@8060 = ~Curse
+(Conjuration/Summoning)
+
+Level: 1
+Sphere: All
+Range: Visual range of the caster
+Duration: 6 rounds + 1 round/2 levels
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+When uttering the Curse spell, the caster lowers the morale of enemy creatures and any Saving Throws and attack rolls they make by 1. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster. Affected creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not.~
+
+@99999 = ~Damage~ // for text patching
+@99998 = ~Speed Factor~ // for text patching
+@99997 = ~(piercing)~ // for text patching
+@99996 = ~Piercing~
+@99995 = ~Damage type~
+@99994 = ~(piercing or slashing, whichever is better)~
+@99993 = ~Piercing or slashing, whichever is better~

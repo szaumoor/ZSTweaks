@@ -1,15 +1,15 @@
 // function libraries of others (using my prefix is no implication I take any credit for them)
-INCLUDE ~ZSTweaks/libs/zs_a7functions.tpa~ // Argent77
-INCLUDE ~ZSTweaks/libs/zs_ardanis_functions.tpa~ // Ardanis
-INCLUDE ~ZSTweaks/libs/zs_cdfunctions.tpa~ // CamDawg
+INCLUDE ~%MOD_FOLDER%/libs/zs_a7functions.tpa~ // Argent77
+INCLUDE ~%MOD_FOLDER%/libs/zs_ardanis_functions.tpa~ // Ardanis
+INCLUDE ~%MOD_FOLDER%/libs/zs_cdfunctions.tpa~ // CamDawg
 
 // my function libraries
-INCLUDE ~ZSTweaks/libs/zs_add_effects.tpa~
-INCLUDE ~ZSTweaks/libs/zs_alter_functions.tpa~
-INCLUDE ~ZSTweaks/libs/zs_calculations.tpa~
-INCLUDE ~ZSTweaks/libs/zs_checks.tpa~
-INCLUDE ~ZSTweaks/libs/zs_getters.tpa~
-INCLUDE ~ZSTweaks/libs/zs_searches.tpa~
-INCLUDE ~ZSTweaks/libs/zs_specifics.tpa~
+INCLUDE ~%MOD_FOLDER%/libs/zs_add_effects.tpa~
+INCLUDE ~%MOD_FOLDER%/libs/zs_alter_functions.tpa~
+INCLUDE ~%MOD_FOLDER%/libs/zs_calculations.tpa~
+INCLUDE ~%MOD_FOLDER%/libs/zs_checks.tpa~
+INCLUDE ~%MOD_FOLDER%/libs/zs_getters.tpa~
+INCLUDE ~%MOD_FOLDER%/libs/zs_searches.tpa~
+INCLUDE ~%MOD_FOLDER%/libs/zs_specifics.tpa~
 
 

@@ -1,5 +1,15 @@
 ACTION_IF !(GAME_IS "iwdee bgee") BEGIN
     COPY_EXISTING_REGEXP "DAGG1[12]\.ITM" ~override~
         LPF ALTER_HEADER INT_VAR dicenumber = 1 END
+        LPF ITM_REF_DESC RET description_index = result END
+        PATCH_IF description_index > "-1" BEGIN
+            READ_STRREF 0x54 desc
+            SPRINT str @99999
+            LPF WPN_DMG RET dmg = result END
+            INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)2[Dd]4~ ~\11d4~
+            END
+            SAY_EVALUATED 0x54 ~%desc%~
+        END
     BUT_ONLY
 END

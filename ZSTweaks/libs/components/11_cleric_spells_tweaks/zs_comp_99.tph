@@ -1,35 +1,35 @@
 OUTER_SET group_component = 1
 
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_100.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_101.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_102.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_110.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_130.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_190.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_230.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_240.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_250.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_260.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_270.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_280.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_290.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_300.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_310.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_320.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_330.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_100.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_101.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_102.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_110.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_130.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_190.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_230.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_240.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_250.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_260.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_270.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_280.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_290.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_300.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_310.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_320.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_330.tph~
 ACTION_IF !(MOD_IS_INSTALLED "ZSTweaks" "443") AND !(MOD_IS_INSTALLED "ZSTweaks" "139") BEGIN // symbol not installed
-    INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_340.tph~
+    INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_340.tph~
 END
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_350.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_351.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_420.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_450.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_460.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_461.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_462.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_463.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_464.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_465.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_466.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_467.tph~
-INCLUDE ~ZSTweaks/libs/components/11_cleric_spells_tweaks/zs_comp_468.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_350.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_351.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_420.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_450.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_460.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_461.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_462.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_463.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_464.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_465.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_466.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_467.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_468.tph~

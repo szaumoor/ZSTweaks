@@ -1,4 +1,4 @@
-<<<<<<<<.../summoned_demons_givexp.baf
+<<<<<<<<.../zstweaks/summoned_demons_givexp.baf
 IF
   Killed([ANYONE])
 THEN
@@ -8,6 +8,6 @@ THEN
 END
 >>>>>>>>
 
-EXTEND_TOP "DEMNABSU.BCS" ".../summoned_demons_givexp.baf"
-EXTEND_TOP "DEMGLASU.BCS" ".../summoned_demons_givexp.baf"
-EXTEND_TOP "DEMPITSU.BCS" ".../summoned_demons_givexp.baf"
+EXTEND_TOP "DEMNABSU.BCS" ".../zstweaks/summoned_demons_givexp.baf"
+EXTEND_TOP "DEMGLASU.BCS" ".../zstweaks/summoned_demons_givexp.baf"
+EXTEND_TOP "DEMPITSU.BCS" ".../zstweaks/summoned_demons_givexp.baf"

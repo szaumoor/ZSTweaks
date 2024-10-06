@@ -1269,9 +1269,9 @@ This is essentially how it works in IWDEE, except the +2 enchantment bonus, whic
 
 There's no reason this weapon should be more limited duration-wise. Now it follows the usual convention.
 
-**Component 110:** Make Bless last longer
+**Component 110:** Make Bless and Curse last longer
 
-I don't think 36 seconds with a very long casting makes this spell desirable in most situations. Therefore, now the duration is 36 seconds plus 1 round per 2 levels up to level 19.
+I don't think 36 seconds with a very long casting makes this spell desirable in most situations. Therefore, now the duration is 36 seconds plus 1 round per 2 levels up to level 19. Curse will also be affected if installed in IWD, or if it's installed in any way on BG, such as with SCS, and IWDification.
 
 **Component 130:** Standardize Hold Person's saving throw penalties
 

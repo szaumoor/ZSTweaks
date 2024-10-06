@@ -1,7 +1,7 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY ~ZSTweaks/items/kachiko~ ~override~
     COPY_EXISTING "WAWAK.ITM" ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@7160) id_ref_desc=RESOLVE_STR_REF(@7161) price=30000 END
+        LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@7160) price=30000 END
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_duration=12 duration = 36 END
         SET sd_id = IDS_OF_SYMBOL(kit SHADOWDANCER)
         LPF ADD_EQUIPPED_EFF INT_VAR p1="%sd_id%" p2=9 STR_VAR effects=~op=177,res=ZSTWKCH0;op=177,res=ZSTWKCH1;op=177,res=ZSTWKCH2~ END
@@ -13,5 +13,18 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         END
         LPF ADD_ITEM_HEADER INT_VAR type=3 required_id=1 location=3 range=1000 target=4 target_count=1 charges=3 depletion=3 flags=2**11 STR_VAR icon = ~SPWI402B~ END
         LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 pwr=1 rd=1 STR_VAR effects = ~op=124,rd=0;op=20,dur=12;op=362,p1=-1,dur=12;op=174,res=EFF_M04,tmg=1;op=215,tmg=1,res=SPDHRMNY~ END
+
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1350" BEGIN
+            SPRINT strref @7161
+            SPRINT str @99999
+            LPF WPN_DMG RET dmg = result END
+            INNER_PATCH_SAVE strref ~%strref%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
+            END
+            SAY_EVALUATED 0x54 ~%strref%~
+        END ELSE BEGIN
+            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(strref) END
+        END
+
     BUT_ONLY
 END

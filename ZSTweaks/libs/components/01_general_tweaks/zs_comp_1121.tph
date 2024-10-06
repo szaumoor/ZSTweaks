@@ -5,17 +5,18 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_ENCH RET ench = result END
 	PATCH_IF (wpn_cat = 22 OR wpn_cat = 23) AND wpn_prof = 100 BEGIN
         LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = result END
-        PATCH_IF ench = 0 OR ench = 1 BEGIN
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=1,p2=%piercing%,ip=0~ END
-        END
-        PATCH_IF ench = 2 OR ench = 3 BEGIN
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=2,p2=%piercing%,ip=0~ END
-        END
-        PATCH_IF ench = 4 OR ench = 5 BEGIN
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=3,p2=%piercing%,ip=0~ END
-        END
-        PATCH_IF ench = 6 BEGIN
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=4,p2=%piercing%,ip=0~ END
+        PATCH_MATCH ench
+            WITH 0 1 BEGIN
+                LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=1,p2=%piercing%,ip=0~ END
+            END 2 3 BEGIN
+                LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=2,p2=%piercing%,ip=0~ END
+            END 4 5 BEGIN
+                LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=3,p2=%piercing%,ip=0~ END
+            END 6 BEGIN
+                LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=4,p2=%piercing%,ip=0~ END
+            END DEFAULT
+                LPF ITM_STR_NAME RET name = result END
+                PATCH_WARN "[Flails Tweak] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
         END
     END
 BUT_ONLY

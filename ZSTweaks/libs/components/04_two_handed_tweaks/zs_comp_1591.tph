@@ -1,10 +1,21 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING "SW2H08.ITM" ~override~
         PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1592") BEGIN
-            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6830) END
+            SPRINT strref @6830
         END ELSE BEGIN
-            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6850) END
+            SPRINT strref @6850
         END
         LPF ALTER_EFFECT INT_VAR match_opcode = 54 match_duration = 120 duration = 30 savingthrow = 1 savebonus = "-4" END
+
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            SPRINT str @99999
+            LPF WPN_DMG RET dmg = result END
+            INNER_PATCH_SAVE strref ~%strref%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d9+%dmg%~
+            END
+            SAY_EVALUATED 0x54 ~%strref%~
+        END ELSE BEGIN
+            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(strref) END
+        END
     BUT_ONLY
 END

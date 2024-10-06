@@ -1,6 +1,19 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING "NPSW03.ITM" ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6240) ench=3 END
+        LPF ALTER_ITEM INT_VAR ench=3 END
         LPF RM_STAT_REQS END
+
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            SPRINT new_description @6240
+            SPRINT str @99999
+            LPF WPN_DMG RET dmg = result END
+            INNER_PATCH_SAVE new_description ~%new_description%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d9+%dmg%~
+            END
+            SAY_EVALUATED 0x54 ~%new_description%~
+        END ELSE BEGIN
+            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6240) END
+        END
+
     BUT_ONLY
 END

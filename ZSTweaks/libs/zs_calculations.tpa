@@ -1,65 +1,38 @@
-
 DEFINE_PATCH_FUNCTION GET_DMG_TYPE
 STR_VAR
     type = ~crushing~
 RET
     result
 BEGIN
-    SET matches = 0
-    PATCH_IF "%type%" STRING_COMPARE_CASE ~crushing~ = 0 BEGIN
-        result = (0 << 16)
-        ++matches
-    END
-    PATCH_IF "%type%" STRING_COMPARE_CASE ~acid~ = 0 BEGIN
-        result = (1 << 16)
-        ++matches
-    END
-    PATCH_IF "%type%" STRING_COMPARE_CASE ~cold~ = 0 BEGIN
-        result = (2 << 16)
-        ++matches
-    END
-    PATCH_IF "%type%" STRING_COMPARE_CASE ~electricity~ = 0 BEGIN
-        result = (4 << 16)
-        ++matches
-    END
-    PATCH_IF "%type%" STRING_COMPARE_CASE ~fire~ = 0 BEGIN
-        result = (8 << 16)
-        ++matches
-    END
-    PATCH_IF "%type%" STRING_COMPARE_CASE ~piercing~ = 0 BEGIN
-        result = (16 << 16)
-        ++matches
-    END
-    PATCH_IF "%type%" STRING_COMPARE_CASE ~poison~ = 0 BEGIN
-        result = (32 << 16)
-        ++matches
-    END
-    PATCH_IF "%type%" STRING_COMPARE_CASE ~magic~ = 0 BEGIN
-        result = (64 << 16)
-        ++matches
-    END
-    PATCH_IF "%type%" STRING_COMPARE_CASE ~missile~ = 0 BEGIN
-        result = (128 << 16)
-        ++matches
-    END
-    PATCH_IF "%type%" STRING_COMPARE_CASE ~slashing~ = 0 BEGIN
-        result = (256 << 16)
-        ++matches
-    END
-    PATCH_IF "%type%" STRING_COMPARE_CASE ~magic fire~ = 0 BEGIN
-        result = (512 << 16)
-        ++matches
-    END
-    PATCH_IF "%type%" STRING_COMPARE_CASE ~magic cold~ = 0 BEGIN
-        result = (1024 << 16)
-        ++matches
-    END
-    PATCH_IF "%type%" STRING_COMPARE_CASE ~stunning~ = 0 BEGIN
-        result = (2048 << 16)
-        ++matches
-    END
-    PATCH_IF matches = 0 BEGIN
-        PATCH_FAIL "Wrong type called for GET_DMG_TYPE function: %type%"
+    PATCH_MATCH "%type%" WITH
+        crushing BEGIN
+            result = (0 << 16)
+        END acid BEGIN
+            result = (1 << 16)
+        END cold BEGIN
+            result = (2 << 16)
+        END electricity BEGIN
+            result = (4 << 16)
+        END fire BEGIN
+            result = (8 << 16)
+        END piercing BEGIN
+            result = (16 << 16)
+        END poison BEGIN
+            result = (32 << 16)
+        END magic BEGIN
+            result = (64 << 16)
+        END missile BEGIN
+            result = (128 << 16)
+        END slashing BEGIN
+            result = (256 << 16)
+        END ~magic fire~ BEGIN
+            result = (512 << 16)
+        END ~magic cold~ BEGIN
+            result = (1024 << 16)
+        END stunning BEGIN
+            result = (2048 << 16)
+        END DEFAULT
+            PATCH_FAIL "Wrong type called for GET_DMG_TYPE function: %type%"
     END
 END
 

@@ -1,8 +1,19 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING ~SPER12.ITM~ ~override~
         LPF remove_haste_immunity END
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7770) END
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" BEGIN
+            SPRINT new_description @7770
+            SPRINT str @99999
+            INNER_PATCH_SAVE new_description ~%new_description%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d8~
+            END
+            SAY_EVALUATED 0x54 ~%new_description%~
+        END ELSE BEGIN
+            LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7770) END
+        END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize=8 parameter1=6 dicenumber=1 END
     BUT_ONLY
+
     COPY_EXISTING ~SPPR403.SPL~ ~override~
         LPF DELETE_EFFECT INT_VAR match_opcode=126 END
     BUT_ONLY
