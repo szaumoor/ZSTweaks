@@ -9,11 +9,9 @@ Every group of components, except those that have only a few items, have as the 
 
 <summary><b>General Item & Spell Tweaks</b></summary>
 
-This section includes non-specific improvements to groups of items and spells. Components that affect many items based on pattern matchings do no affect their item descriptions.
+**Component 120:** Make conjured magical weapons grant 2 APR by default (Flame Blade, Phantom Blade Blade, Black Blade of Disaster...)
 
-**Component 120:** Make conjured magical weapons add extra attacks (Flame Blade, Ghost Blade, Black Blade of Disaster...)
-
-The problem with these spells is that they promise power, but your little sickly wizard is not a very good fighter at all. I think this promise should be more serious, and therefore, by default, all these weapons grant +1 APR by default.
+The problem with these spells is that they promise power, but your little sickly wizard is not a very good fighter at all. I think this promise should be more serious, and therefore, by default, all these weapons grant 2 APR by default.
 
 **Component 1120:** Make some weapon categories incur in backstab penalties for balance
 
@@ -1269,9 +1267,9 @@ This is essentially how it works in IWDEE, except the +2 enchantment bonus, whic
 
 There's no reason this weapon should be more limited duration-wise. Now it follows the usual convention.
 
-**Component 110:** Make Bless last longer
+**Component 110:** Make Bless and Curse last longer
 
-I don't think 36 seconds with a very long casting makes this spell desirable in most situations. Therefore, now the duration is 36 seconds plus 1 round per 2 levels up to level 19.
+I don't think 36 seconds with a very long casting makes this spell desirable in most situations. Therefore, now the duration is 36 seconds plus 1 round per 2 levels up to level 19. Curse will also be affected if installed in IWD, or if it's installed in any way on BG, such as with SCS, and IWDification.
 
 **Component 130:** Standardize Hold Person's saving throw penalties
 
@@ -1585,9 +1583,7 @@ Also I would suggest making this the first tweak mod to install, since other old
 
 ## Notes for users & modders
 
-This mod doesn't modify descriptions of items and spells automatically, every change is a total substitution of the text, and it **only** applies to tweaks that affect specific spells or items. I have preserved the original structure of information in such descriptions so that more mature mods that handle text content more precisely, can hopefully handle non-vanilla descriptions just fine. This is another reason why this mod should be the first tweak mod to be applied, at least in the current state. An overall change to descriptions is that if a component modifies an upgradable item, the upgraded version no longer loses the original, much more interesting description, they are both combined (for example, compare the description between Carsomyr +5 and Carsomyr +6).
-
-And feel free to offer feedback if there are any bugs, criticize the code and offer better alternatives, if you want. I'm aware though that there are inefficiencies, like redundant checks and needless loop iterations, because I mostly wanted to get things working first, and I only just learned the scripting language. So yeah, those things may improve later, though as an user the difference will be of just a bunch of milliseconds.
+I highly advise to make this mod the first tweak mod in your mod tweaks, at least in the current state. While the code has been improved vastly since it was first released, it's still quite likely that other older mods will have a better time anticipating changes, and because it's young, I probably haven't added enough support in my tweaks to work universally after other older tweaks that modify the same items.
 
 ## Credits
 

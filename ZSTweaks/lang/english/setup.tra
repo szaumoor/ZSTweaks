@@ -42,7 +42,7 @@
 
 // COMPONENTS
 /// General Item & Spell Tweaks
-@120 = "Make conjured wielded magical weapons add 1 extra APR (Flame Blade, Phantom Blade...)"
+@120 = "Make conjured magical weapons grant 2 APR by default (Flame Blade, Phantom Blade Blade, Black Blade of Disaster...)"
 @1120 = "Make some weapon categories incur in backstab penalties for balance"
 @1121 = ~Make Flails and Morningstars always inflict a small amount of piercing damage~
 @1150 = "Make Spears do a baseline damage of 1d8, not 1d6"
