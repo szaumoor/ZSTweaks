@@ -732,7 +732,7 @@ FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 INCLUDE ~%MOD_FOLDER%/libs/components/03_dagger_tweaks/zs_comp_1670.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1680 DESIGNATED 1680 GROUP @12 // STILETTO TWEAK
+BEGIN @1680 DESIGNATED 1680 GROUP @12 // STILETTO OF THE DEMARCHESS TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @53
 FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////

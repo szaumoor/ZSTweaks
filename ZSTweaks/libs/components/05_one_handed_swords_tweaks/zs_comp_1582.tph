@@ -8,6 +8,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         BUT_ONLY
         COPY_EXISTING "bdsw1h21.spl" ~override~
             LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 dicesize = 2 dicenumber = 1 END
+            LPF ADD_SPL_TGTEFF STR_VAR effects = ~op=142,p2=137,dur=12~ END // bleeding icon
         BUT_ONLY
     END ELSE BEGIN
         ACTION_IF group_component = 0 BEGIN
