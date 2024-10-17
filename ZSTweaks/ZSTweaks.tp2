@@ -313,7 +313,7 @@ FORBID_COMPONENT "ZSTweaks.tp2" "1671" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1672
 FORBID_COMPONENT "ZSTweaks.tp2" "1673" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1674" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1675" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1676" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1677" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1678" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "1679" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1679" @57 //FORBID_COMPONENT "ZSTweaks.tp2" "1685" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/02_gear_tweaks/zs_comp_1001.tph~
@@ -661,6 +661,14 @@ FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
 
 INCLUDE "%MOD_FOLDER%/libs/components/02_gear_tweaks/zs_comp_1679.tph"
 
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1685 DESIGNATED 1685 GROUP @11 // BELT OF FORTITUDE tweak
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "1001" @58
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE "%MOD_FOLDER%/libs/components/02_gear_tweaks/zs_comp_1685.tph"*/
+
 ////////////////////////////////////// DAGGER TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @10002 DESIGNATED 999 GROUP @12 // INSTALL ALL COMPONENTS
@@ -671,6 +679,7 @@ FORBID_COMPONENT "ZSTweaks.tp2" "1630" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1660
 FORBID_COMPONENT "ZSTweaks.tp2" "1670" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1680" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1681" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1682" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1683" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1684" @57
+//FORBID_COMPONENT "ZSTweaks.tp2" "1686" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/03_dagger_tweaks/zs_comp_999.tph~
@@ -774,6 +783,15 @@ FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 
 OUTER_SET group_component = 0
 INCLUDE ~%MOD_FOLDER%/libs/components/03_dagger_tweaks/zs_comp_1684.tph~
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1686 DESIGNATED 1686 GROUP @12 // LIFE STEALER TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee bgee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+OUTER_SET group_component = 0
+INCLUDE ~%MOD_FOLDER%/libs/components/03_dagger_tweaks/zs_comp_1686.tph~*/
 
 //////////////////////////////////////// TWO-HANDED WEAPON TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////

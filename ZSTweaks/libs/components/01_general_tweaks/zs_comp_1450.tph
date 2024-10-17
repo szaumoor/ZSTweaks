@@ -7,6 +7,9 @@ ADD_PROJECTILE ~ZSTweaks/pro/ZSTW_IND.PRO~
 COPY_EXISTING_REGEXP "ZSTW[ABS][0-6]\.spl" ~override~ // for arrows, bolts and sling bullets
     LPF ALTER_HEADER INT_VAR match_type = 2 projectile = "%ZSTW_INP%" END
 BUT_ONLY
+COPY_EXISTING ~ZSTWSM3.SPL~ ~override~
+    LPF ALTER_HEADER INT_VAR match_type = 2 projectile = "%ZSTW_INP%" END
+BUT_ONLY
 COPY_EXISTING_REGEXP "ZSTW[AZ]M[30]\.SPL" ~override~ // magic damage, for void weapons in SoD
     LPF ALTER_HEADER INT_VAR match_type = 2 projectile = "%ZSTW_INP%" END
 BUT_ONLY
@@ -94,6 +97,25 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
         "%SOURCE_RES%" STRING_COMPARE_CASE "cd51ari" != 0 AND  // BROKEN SPIRIT ARROW (The Calling Gnoll Stronghold component)
         "%SOURCE_RES%" STRING_COMPARE_CASE "AROW06" != 0 BEGIN
             PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdarow02" != 0 BEGIN // void-tipped arrows (SoD)
+                PATCH_MATCH ench
+                    WITH 0 BEGIN
+                        LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWA0~ END
+                    END 1 BEGIN
+                        LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWA1~ END
+                    END 2 BEGIN
+                        LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWA2~ END
+                    END 3 BEGIN
+                        LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWA3~ END
+                    END 4 BEGIN
+                        LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWA4~ END
+                    END 5 BEGIN
+                        LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWA5~ END
+                    END 6 BEGIN
+                        LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWA6~ END
+                    END DEFAULT
+                        LPF ITM_STR_NAME RET name = result END
+                        PATCH_WARN "[Finesse: Arrows] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
+                END
                 LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 STR_VAR class = ~THIEF~ spell = ~ZSTWA0~ END
             END ELSE BEGIN // void-tipped arrows
                 LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 44 insert_point = "-1"
@@ -103,6 +125,25 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     END // end arrows
     PATCH_IF wpn_cat = 31 BEGIN // bolts
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "BOLT07" != 0 BEGIN // BRUISER MATES SKIPPED
+            PATCH_MATCH ench
+                WITH 0 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWB0~ END
+                END 1 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWB1~ END
+                END 2 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWB2~ END
+                END 3 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWB3~ END
+                END 4 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWB4~ END
+                END 5 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWB5~ END
+                END 6 BEGIN
+                    LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWB6~ END
+                END DEFAULT
+                    LPF ITM_STR_NAME RET name = result END
+                    PATCH_WARN "[Finesse: Bolts] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
+            END
             LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 54 STR_VAR class = ~THIEF~ spell = ~ZSTWB0~ END
         END
     END // end bolts

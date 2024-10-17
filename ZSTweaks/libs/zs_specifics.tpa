@@ -122,8 +122,63 @@ STR_VAR kit="" // the kit which gets the effect (from kit.ids)
         spell="" // a spell which is cast on the target on a successful hit, but only if the wielder is the correct class
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-	LPF ADD_ITEM_EFFECT
-        INT_VAR type header probability1 probability2 insert_point opcode=326 target=1 timing=1 parameter1=IDS_OF_SYMBOL (kit "%class%") parameter2=105 STR_VAR resource="%spell%" END
+	LPF ADD_ITEM_EFFECT INT_VAR type header probability1 probability2 insert_point opcode=326 target=1 timing=1 parameter1=IDS_OF_SYMBOL (kit "%class%") parameter2=105 STR_VAR resource="%spell%" END
+END
+
+
+DEFINE_PATCH_FUNCTION weapon_damage_by_race
+INT_VAR header=0 // the weapon header to which the effect is applied
+        probability1=100 // the probabilities for the effect to be applied
+        probability2=0
+        type = 99
+        insert_point = 0
+STR_VAR race="" // the race which gets the effect (from race.ids)
+        spell="" // a spell which is cast on the target on a successful hit, but only if the wielder is the correct race
+BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+	LPF ADD_ITEM_EFFECT INT_VAR type header probability1 probability2 insert_point opcode=326 target=1 timing=1 parameter1=IDS_OF_SYMBOL (race "%race%") parameter2=104 STR_VAR resource="%spell%" END
+END
+
+
+DEFINE_PATCH_FUNCTION weapon_damage_by_gender
+INT_VAR header=0 // the weapon header to which the effect is applied
+        probability1=100 // the probabilities for the effect to be applied
+        probability2=0
+        type = 99
+        insert_point = 0
+STR_VAR gender="" // the gender which gets the effect (from race.ids)
+        spell="" // a spell which is cast on the target on a successful hit, but only if the wielder is the correct race
+BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+	LPF ADD_ITEM_EFFECT INT_VAR type header probability1 probability2 insert_point opcode=326 target=1 timing=1 parameter1=IDS_OF_SYMBOL (gender "%gender%") parameter2=107 STR_VAR resource="%spell%" END
+END
+
+
+DEFINE_PATCH_FUNCTION weapon_damage_by_alignment
+INT_VAR header=0 // the weapon header to which the effect is applied
+        probability1=100 // the probabilities for the effect to be applied
+        probability2=0
+        type = 99
+        insert_point = 0
+STR_VAR alignment="" // the alignment which gets the effect (from race.ids)
+        spell="" // a spell which is cast on the target on a successful hit, but only if the wielder is the correct alignment
+BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+	LPF ADD_ITEM_EFFECT INT_VAR type header probability1 probability2 insert_point opcode=326 target=1 timing=1 parameter1=IDS_OF_SYMBOL (alignmen "%alignment%") parameter2=108 STR_VAR resource="%spell%" END
+END
+
+DEFINE_PATCH_FUNCTION weapon_damage_by_creature_type
+INT_VAR header=0 // the weapon header to which the effect is applied
+        probability1=100 // the probabilities for the effect to be applied
+        probability2=0
+        type = 99
+        insert_point = 0
+        parameter2 = 0
+STR_VAR parameter1="" // the alignment which gets the effect (from race.ids)
+        spell="" // a spell which is cast on the target on a successful hit, but only if the wielder is the correct alignment
+BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+	LPF ADD_ITEM_EFFECT INT_VAR type header parameter1 parameter2 probability1 probability2 insert_point opcode=326 target=1 timing=1 STR_VAR resource="%spell%" END
 END
 
 DEFINE_PATCH_FUNCTION RM_STAT_REQS

@@ -1,0 +1,10 @@
+ACTION_IF !(GAME_IS "iwdee") BEGIN
+    COPY_EXISTING ~DAGG20.ITM~ ~override~
+        SET chaotic_evil = IDS_OF_SYMBOL(alignmen CHAOTIC_EVIL)
+        LPF ALTER_ITEM INT_VAR this_plus=1 id_ref_desc=RESOLVE_STR_REF(@7780) id_ref_name=RESOLVE_STR_REF(@7781) flags=2**4 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 216 parameter1 = 2 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = 40968 END
+        LPF ALTER_EFFECT INT_VAR match_probability1 = 15 probability1 = 19 END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=57,p2=%chaotic_evil%;op=63;op=142,p2=35;op=30,p1=-40~ END
+    BUT_ONLY
+END

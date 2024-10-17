@@ -73,7 +73,7 @@
 @15385 = ~2.5x~
 @15386 = ~2.75x~
 @15387 = ~3x~
-@1539 = ~Make Void-weapons not sap the strength of the undead when held~
+// @1539 = ~Make Void-weapons not sap the strength of the undead when held~
 //@1535 = ~Rebalance scrolls such that the spellcasting level is always at least double its (wizard) spell level~
 
 
@@ -119,6 +119,7 @@
 @1677 = ~Make Wondrous Gloves Wondrous~
 @1678 = ~Make Senses of the Cat imbue the user of more cat-like features~
 @1679 = ~Make the Horn of Kazgaroth more useful and the self-damage more unique~
+@1685 = ~Make the Belt of Fortitude grant Constitution passively and replace the charge ability with regeneration~
 
 // subcomponent str of component @1664
 @16640 = ~Affect all~
@@ -139,6 +140,7 @@
 @1682 = ~Make Acid-Etched Dagger +2 generally more powerful and act as +3~
 @1683 = ~Make Gemblade +2 more powerful and more worth hanging onto for wizards~
 @1684 = ~Make basic throwing daggers usable as melee weapons~
+@1686 = ~Make Life-Stealer +4 more powerful (requires mod to make it available)~
 
 /// TWO-HANDED MELEE WEAPONS
 @1200 = "Make Ixil's Spike allow Haste and Improved Haste and improve it slightly"
@@ -4650,9 +4652,10 @@ The Shadow's Blade was created to be the perfect assassin's tool. It is highly s
 STATISTICS:
 
 Combat abilities:
-– Backstab multiplier: +1
+– Backstab multiplier: +1 (single-classed Thieves-only)
+– +2 THAC0 on main hand while holding the blade (single-classed Thieves only)
 
-THAC0: +3, +5 (single-classed Thieves-only; main hand only)
+THAC0: +3
 Damage: 1d6+3 (piercing)
 Speed Factor: 0
 Proficiency Type: Short Sword
@@ -4678,7 +4681,7 @@ Combat abilities:
 – 25% chance per hit that target must save vs. Death at -2 or die from decapitation. Targets killed this way cannot be resurrected without a True Resurrection spell or divine intervention.
 – Psionic attack: inflicts 2d8 magical damage on a critical hit, which also causes confusion for 10 seconds if a Save vs. Spell at -2 is failed.
 
-THAC0: +3, +6 against Mind Flayers
+THAC0: +3, +6 vs. Mind Flayers
 Damage: 1d10+3, +6 vs. Mind Flayers (slashing)
 Speed Factor: 6
 Proficiency Type: Two-handed Sword
@@ -4748,8 +4751,8 @@ Weight: 12~
 STATISTICS:
 
 Combat abilities:
-– Like the deathly touch of shadows, every hit has a 25% chance of reducing the target's Strength by 2 for 5 rounds. If the target is already at a Strength of 2, the attack drains Constitution instead.
-– If the target fails to save vs. Death, the essence of undeath in this weapon unleashes extra +1d6 cold damage.
+– Like the deathly touch of shadows, every hit has a 25% chance of reducing the target's Strength by 2 for 5 rounds. If the target is already at a Strength of 2, the attack drains Constitution instead
+– If the target fails to save vs. Death, the essence of undeath in this weapon unleashes extra +1d6 cold damage
 
 THAC0: +2
 Damage: 1d10+2, +2 cold damage
@@ -4855,13 +4858,26 @@ Requires:
 
 Weight: 5~
 
-@7780 = ~This dagger weighs heavily in your hand and is warm to the touch. Merely having it on your person makes you feel uneasy for some reason. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illumination and still be so deathly black at its core, you do not know.
+// todo
+@7780 = ~This accursed dagger, with a blade gleaming red like blood and a hilt studded with emeralds, is a relic of ancient Thayan necromancy. When it strikes, the victim's life force is siphoned away, healing and empowering the wielder, which allows to sustain its owner in battle, even from the brink of death. More terrifying still is the blade's ultimate curse: any soul claimed by the dagger is utterly destroyed, preventing resurrection by any means.
+
+The dagger's true nature is a manifestation of raw evil, designed to claim not just the lives but the souls of its victim: those struck down by this weapon are forever lost, their essence obliterated beyond the reach of even the most powerful magic, barring divine intervention. It's more than just a weapon—it is a covenant with death that binds its user, similarly to vampirism, to an eternal cycle of killing and consumption, a reminder that those who wield it may eventually find themselves as its next victim.
 
 STATISTICS:
 
+Equipped abilities:
+Wielder's alignment becomes Chaotic Evil and gains several vampiric traits and weaknesses:
+  – Immunity to Death magic
+  – Infravision
+  – Regenerate 1 HP per 2 rounds
+  – -40% weakness to Fire damage
+  – +20% resistance to Cold and Electricity
+– May only be removed with a Remove Curse spell
+
 Combat abilities:
-– 15% chance per hit of draining 1 level from the target
-– Critical hits heal you by 15% of your health plus 10 more Hit Points
+– 20% chance per hit of draining 2 levels from the target, healing you by 10 HP plus 15% of your total HP
+– Targets killed by this weapon can no longer be resurrected, and each kill gives the wielder +1 Strength and Dexterity for 1 turn, and heals 5 HP plus 10% of your total HP
+– Vampires wielding this weapon can siphon 3 HP with every strike
 
 THAC0: +4
 Damage: 1d4+4 (piercing)
@@ -4872,6 +4888,8 @@ Requires:
  3 Strength
 
 Weight: 1~
+
+@7781 = ~Vampiric Dagger +4~
 
 @7790 = ~Sun Soulbeam
 The character emits a dazzling burst of light that strikes at all other creatures within a 15-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 9d6 points of fire damage (12d6+3 if undead), unless they Save vs. Spell for half. In addition, all creatures except the character must Save vs. Spell or be blinded for 2 hours.~
@@ -5231,6 +5249,24 @@ Saving Throw: None
 
 When uttering the Curse spell, the caster lowers the morale of enemy creatures and any Saving Throws and attack rolls they make by 1. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster. Affected creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not.~
 
+
+@8070 = ~This girdle greatly increases the wearer's Constitution. King Violos used it when leading an expedition against marsh trolls. He'd been severely sickened the past winter and was no longer the healthy man he once was. The belt gave extra years to his life and inspired his men to renew their confidence in their king once more.
+
+STATISTICS:
+
+Equipped abilities:
+– Users with less than 14 Constitution have their Constitution increased to 16
+– Users with 14 or more Constitution have their Constitution increased by 2
+
+Charge abilities:
+– Youthful Vigor once per day
+  Special: User regenerates 1 HP per 3 rounds
+  Duration: 5 hours
+
+Weight: 2~
+
+
+
 @99999 = ~Damage~ // for text patching
 @99998 = ~Speed Factor~ // for text patching
 @99997 = ~(piercing)~ // for text patching
@@ -5238,3 +5274,6 @@ When uttering the Curse spell, the caster lowers the morale of enemy creatures a
 @99995 = ~Damage type~
 @99994 = ~(piercing or slashing, whichever is better)~
 @99993 = ~Piercing or slashing, whichever is better~
+
+
+

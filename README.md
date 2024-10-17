@@ -1577,9 +1577,11 @@ I was always annoyed at how immmensely more powerful Planetars are compared to D
 
 This mod should generally be installed after mods that add items to the game. If installed after, the tweaks in this mod that affect them will not be able to affect those.
 
-As far as other mods that may affect spells or abilities, it should be okay because the modifications are made through code and not file replacements, but if there is a philosophical or conceptual difference in the design of the spell or ability it might make no sense to install both tweaks, so use your best judgement. For obvious reasons don't attempt to mix two tweaks that try to do the exact same thing, the results will be likely not what you expected.
+As far as other mods that may affect spells or abilities, it might or might not be compatible, it depends on the nature of the tweak. For example, if a tweak changes who can use a type of weapon, and my tweak just adds a damage bonus to it, it would be compatible, but that may not be the case for every tweak. If there's a philosophical or conceptual difference in the design of the spell or ability it might make no sense to install both tweaks, or it might fail to install, so use your best judgement. For obvious reasons don't attempt to mix two tweaks that try to do the exact same thing, the results will be likely not what you expected. I'm open to provide compatibility personally as long as I'm interested in the other mod as well. One example is SCS, ToF, and Tweaks Anthology, since I like them a lot.
 
 Also I would suggest making this the first tweak mod to install, since other older more mature mods will likely handle the changes from vanilla game states better, since the code of this mod is less flexible than in those, such as Tweaks, SCS, and the like.
+
+One **soft incompatibility** that has been noted is that **ToF's multiclass kits** don't seem to play well on a technical level with tweaks to items that add a bonus to single-classed characters, since it seems that those multiclassed varieties are, under the hood, actually just a single-class kit, and that fact is concealed through UI edits. For example, if an item is supposed to benefit single-classed Thieves, ToF's Fighter/Assassin might benefit too, even if it wasn't intended. I'm not 100% sure of this, but according to some reports, that seems to be the case.
 
 ## Notes for users & modders
 
