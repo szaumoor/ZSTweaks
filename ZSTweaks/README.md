@@ -96,7 +96,7 @@ Exceptions: Grave Binder is not affected by these bonuses because it's an oversi
 
 This component is an attempt at making single-classed Thieves more effective with a portion of thief-usable weapons without relying on stats, APR or proficiency points.
 
-Essentially, when wielding a weapon they can use what I call "finesse", which is a concept that I borrowed from NWN, they can deal extra damage per attack randomly (additively), based on the base attack damage of the weapon used. You could think of this as a part of the sneakiness, or dirty-fighting, or fast, acrobatic combat skills of rogues. This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashis, ninja-tos, katanas, and short swords. It's a little "gamey" since you have no control over it, it relies on luck, as most things not quite supported by the game, but it works. To be more specific:
+Essentially, when wielding a weapon they can use what I call "finesse", which is a concept that I borrowed from NWN, they can deal extra damage per attack randomly (additively), based on the base attack damage of the weapon used. You could think of this as a part of the sneakiness, or dirty-fighting, or fast, acrobatic combat skills of rogues. This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashis, ninja-tos, katanas, and short swords. To be more specific:
 
 - **Scimitars, long swords, quarterstaves**: 10% chance per hit to inflict 1d8/6+bonus of slashing/crushing damage.
 - **Katanas**: 15% chance per hit to inflict 1d10+bonus of slashing damage.
@@ -104,6 +104,8 @@ Essentially, when wielding a weapon they can use what I call "finesse", which is
 - **Short Sword and Clubs**: 35% chance per hit to inflict 1d6+bonus of piercing/crushing damage.
 - **Bows, Slings**: 45% chance per hit to inflict 1d6 and 1d4+bonus missile damage respectively.
 - **Darts, Daggers, Crossbows**: 55% chance per hit to inflict 1d3+bonus, 1d4+bonus and 1d8, respectively, of piercing/missile damage.
+
+All these effects have additionally a -4 Save vs. Breath penalty that the target must save to take only half of the damage. This penalty increases up to -10 with +6 weapons. You can expect to more often than not inflict full damage, but it's still added as a small counterbalance.
 
 Note that this component does not account (automatically) for special weaponry which may use a different kind of damage-dealing effect than normal. For example, Voidsword +3 in SoD causes only magic damage and is not part of the damage of the weapon as such, but exists as a separate effect. These have to be added manually (in that example, the extra damage would occur in the same way as the others, but only as magic damage, which is intended). Currently, the following thief-usable items are accounted for:
 
@@ -1577,9 +1579,11 @@ I was always annoyed at how immmensely more powerful Planetars are compared to D
 
 This mod should generally be installed after mods that add items to the game. If installed after, the tweaks in this mod that affect them will not be able to affect those.
 
-As far as other mods that may affect spells or abilities, it should be okay because the modifications are made through code and not file replacements, but if there is a philosophical or conceptual difference in the design of the spell or ability it might make no sense to install both tweaks, so use your best judgement. For obvious reasons don't attempt to mix two tweaks that try to do the exact same thing, the results will be likely not what you expected.
+As far as other mods that may affect spells or abilities, it might or might not be compatible, it depends on the nature of the tweak. For example, if a tweak changes who can use a type of weapon, and my tweak just adds a damage bonus to it, it would be compatible, but that may not be the case for every tweak. If there's a philosophical or conceptual difference in the design of the spell or ability it might make no sense to install both tweaks, or it might fail to install, so use your best judgement. For obvious reasons don't attempt to mix two tweaks that try to do the exact same thing, the results will be likely not what you expected. I'm open to provide compatibility personally as long as I'm interested in the other mod as well. One example is SCS, ToF, and Tweaks Anthology, since I like them a lot.
 
 Also I would suggest making this the first tweak mod to install, since other older more mature mods will likely handle the changes from vanilla game states better, since the code of this mod is less flexible than in those, such as Tweaks, SCS, and the like.
+
+One **soft incompatibility** that has been noted is that **ToF's multiclass kits** don't seem to play well on a technical level with tweaks to items that add a bonus to single-classed characters, since it seems that those multiclassed varieties are, under the hood, actually just a single-class kit, and that fact is concealed through UI edits. For example, if an item is supposed to benefit single-classed Thieves, ToF's Fighter/Assassin might benefit too, even if it wasn't intended. I'm not 100% sure of this, but according to some reports, that seems to be the case.
 
 ## Notes for users & modders
 

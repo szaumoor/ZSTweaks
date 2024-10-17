@@ -96,7 +96,7 @@ Exceptions: Grave Binder is not affected by these bonuses because it's an oversi
 
 This component is an attempt at making single-classed Thieves more effective with a portion of thief-usable weapons without relying on stats, APR or proficiency points.
 
-Essentially, when wielding a weapon they can use what I call "finesse", which is a concept that I borrowed from NWN, they can deal extra damage per attack randomly (additively), based on the base attack damage of the weapon used. You could think of this as a part of the sneakiness, or dirty-fighting, or fast, acrobatic combat skills of rogues. This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashis, ninja-tos, katanas, and short swords. It's a little "gamey" since you have no control over it, it relies on luck, as most things not quite supported by the game, but it works. To be more specific:
+Essentially, when wielding a weapon they can use what I call "finesse", which is a concept that I borrowed from NWN, they can deal extra damage per attack randomly (additively), based on the base attack damage of the weapon used. You could think of this as a part of the sneakiness, or dirty-fighting, or fast, acrobatic combat skills of rogues. This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashis, ninja-tos, katanas, and short swords. To be more specific:
 
 - **Scimitars, long swords, quarterstaves**: 10% chance per hit to inflict 1d8/6+bonus of slashing/crushing damage.
 - **Katanas**: 15% chance per hit to inflict 1d10+bonus of slashing damage.
@@ -104,6 +104,8 @@ Essentially, when wielding a weapon they can use what I call "finesse", which is
 - **Short Sword and Clubs**: 35% chance per hit to inflict 1d6+bonus of piercing/crushing damage.
 - **Bows, Slings**: 45% chance per hit to inflict 1d6 and 1d4+bonus missile damage respectively.
 - **Darts, Daggers, Crossbows**: 55% chance per hit to inflict 1d3+bonus, 1d4+bonus and 1d8, respectively, of piercing/missile damage.
+
+All these effects have additionally a -4 Save vs. Breath penalty that the target must save to take only half of the damage. This penalty increases up to -10 with +6 weapons. You can expect to more often than not inflict full damage, but it's still added as a small counterbalance.
 
 Note that this component does not account (automatically) for special weaponry which may use a different kind of damage-dealing effect than normal. For example, Voidsword +3 in SoD causes only magic damage and is not part of the damage of the weapon as such, but exists as a separate effect. These have to be added manually (in that example, the extra damage would occur in the same way as the others, but only as magic damage, which is intended). Currently, the following thief-usable items are accounted for:
 
