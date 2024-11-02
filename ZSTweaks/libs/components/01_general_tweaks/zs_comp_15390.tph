@@ -1,0 +1,9 @@
+COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
+    LPF ITM_CAT RET cat = result END
+    PATCH_IF cat = 11 BEGIN
+        LPF ITM_USABILITY0 RET flags = result END
+        PATCH_IF flags > 0 BEGIN
+            LPF ALTER_ITEM INT_VAR unusable0 = 0 END
+        END
+    END
+BUT_ONLY

@@ -6,25 +6,25 @@ COPY_EXISTING ~FBLADE.ITM~ ~override~
               ~SHAMMR.ITM~ ~override~
               ~SHAMMR2.ITM~ ~override~
               ~SHAMMR3.ITM~ ~override~
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=1,p2=1~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=2,p2=1~ END
 BUT_ONLY
 ACTION_IF FILE_EXISTS_IN_GAME ~SHILLEL.ITM~ BEGIN
     COPY_EXISTING ~SHILLEL.ITM~ ~override~
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=1,p2=1~ END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=2,p2=1~ END
     BUT_ONLY
 END
 ACTION_IF FILE_EXISTS_IN_GAME ~MOONBLA.ITM~ BEGIN
     COPY_EXISTING ~MOONBLA.ITM~ ~override~
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=1,p2=1~ END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=2,p2=1~ END
     BUT_ONLY
 END
 ACTION_IF FILE_EXISTS_IN_GAME ~SMCUDGE.ITM~ BEGIN
     COPY_EXISTING ~SMCUDGE.ITM~ ~override~
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=1,p2=1~ END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=2,p2=1~ END
     BUT_ONLY
 END
 ACTION_IF FILE_EXISTS_IN_GAME ~DECASTA.ITM~ BEGIN
     COPY_EXISTING ~DECASTA.ITM~ ~override~
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=1,p2=1~ END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=2,p2=1~ END
     BUT_ONLY
 END

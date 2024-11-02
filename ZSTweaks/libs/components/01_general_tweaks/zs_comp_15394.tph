@@ -1,0 +1,40 @@
+COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
+    LPF ITM_CAT RET cat = result END
+    PATCH_IF cat = 11 BEGIN
+        LPF IS_USABILITY_FLAG_SET INT_VAR flag=9 RET cleric_thief_flag = result END
+        LPF IS_USABILITY_FLAG_SET INT_VAR flag=6 RET bard_flag = result END
+        LPF IS_USABILITY_FLAG_SET INT_VAR flag=17 RET fighter_thief = result END
+        LPF IS_USABILITY_FLAG_SET INT_VAR flag=22 RET thief = result END
+
+        PATCH_IF cleric_thief_flag BEGIN
+            WRITE_LONG 0x1e (THIS - 2**9)
+        END
+
+        PATCH_IF bard_flag BEGIN
+            WRITE_LONG 0x1e (THIS - 2**6)
+        END
+
+        PATCH_IF fighter_thief BEGIN
+            WRITE_LONG 0x1e (THIS - 2**17)
+        END
+
+        PATCH_IF thief BEGIN
+            WRITE_LONG 0x1e (THIS - 2**22)
+        END
+
+        LPF ITM_MIN_INT RET min_int = result END
+        LPF ITM_MIN_WIS RET min_wis = result END
+        LPF IS_USABILITY_FLAG_SET INT_VAR flag = 7 RET cleric_usable = result END
+
+        PATCH_IF cleric_unusable = 1 BEGIN
+            PATCH_IF min_int = 9 BEGIN
+                LPF ALTER_ITEM INT_VAR min_int = 12 END
+            END
+        END ELSE BEGIN
+            PATCH_IF min_wis = 0 BEGIN
+                LPF ALTER_ITEM INT_VAR min_wis = 12 END
+            END
+        END
+
+    END
+BUT_ONLY

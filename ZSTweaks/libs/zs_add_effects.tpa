@@ -68,6 +68,18 @@ BEGIN
     END
 END
 
+
+DEFINE_PATCH_FUNCTION ADD_SLEEP_SAFE_DMG
+INT_VAR
+    p1 = 0
+STR_VAR
+    dmg_type = ~*~
+    type = 1
+BEGIN
+    LPF GET_DMG_TYPE STR_VAR type = ~%dmg_type%~ END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=%p1%,spec=1024~ END
+END
+
 DEFINE_PATCH_FUNCTION ADD_SPL_SELFEFF
 INT_VAR
     p1=0

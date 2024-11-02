@@ -1,24 +1,25 @@
 COPY ~ZSTweaks/items/dagger_boost~ ~override~
-ADD_PROJECTILE ~ZSTweaks/pro/ZSTW_IND.PRO~
+// ADD_PROJECTILE ~ZSTweaks/pro/ZSTW_IND.PRO~
 
 COPY_EXISTING_REGEXP "ZSTWDP08.spl" ~override~ // spells to insert projectiles to (critical dagger effect)
-    LPF ALTER_HEADER INT_VAR match_type = 1 projectile = "%ZSTW_IND%" END
+    LPF ALTER_HEADER INT_VAR match_type = 1 projectile =1 END
 BUT_ONLY
 COPY_EXISTING_REGEXP "ZSTWDP1[02468]\.spl" ~override~ // spells to insert projectiles to (throwing daggers and darts)
-    LPF ALTER_HEADER INT_VAR match_type = 1 projectile = "%ZSTW_IND%" END
+    LPF ALTER_HEADER INT_VAR match_type = 1 projectile = 1 END
 BUT_ONLY
-COPY_EXISTING_REGEXP "ZSTWDP20.spl" ~override~ // spells to insert projectiles to (critical dagger effect)
-    LPF ALTER_HEADER INT_VAR match_type = 1 projectile = "%ZSTW_IND%" END
+COPY_EXISTING "ZSTWDP20.spl" ~override~ // spells to insert projectiles to (critical dagger effect)
+    LPF ALTER_HEADER INT_VAR match_type = 1 projectile = 1 END
 BUT_ONLY
 
 COPY_EXISTING "DAGG01.ITM" ~override~
     SPRINT str_sf @99998
     READ_STRREF 0x50 desc
+    LPF ITM_REF_UDESC RET basic_dagg_udesc = result END
     INNER_PATCH_SAVE desc ~%desc%~ BEGIN
         REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)2~ ~\10~ // speed modification
     END
     SAY_EVALUATED 0x50 ~%desc%~
-    LPF ITM_REF_UDESC_INDEX RET changed_description_index = result END
+    LPF ITM_REF_UDESC RET changed_description_index = result END
 BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
@@ -26,10 +27,13 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_PROF RET wpn_prof = result END
     LPF ITM_ENCH RET ench = result END
 	PATCH_IF wpn_cat = 16 AND wpn_prof = 96 BEGIN // daggers
+        LPF ITM_REF_UDESC RET id_udesc = result END
+        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "DAGG01" != 0 AND id_udesc = basic_dagg_udesc BEGIN
+            LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
+        END
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "dagg04" != 0 BEGIN // not grave binder (fake dagger) exceptions
             LPF WPN_THAC0 RET thac0 = result END
             LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = 0 to_hit = thac0+1 END
-            LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1~ END
             PATCH_MATCH ench
                WITH 0 BEGIN
@@ -50,14 +54,24 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                     LPF ITM_STR_NAME RET name = result END
                     PATCH_WARN "[Dagger boost] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
             END
-            LPF ITM_REF_DESC RET description_index = result END
-            PATCH_IF description_index > "-1" BEGIN
+
+            LPF ITM_REF_DESC RET desc_index = result END
+            LPF ITM_REF_UDESC RET udesc_index = result END
+
+            PATCH_IF desc_index > "-1" BEGIN
                 READ_STRREF 0x54 desc
                 SPRINT str_sf @99998
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                     REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\10~ // speed
                 END
                 SAY_EVALUATED 0x54 ~%desc%~
+            END ELSE PATCH_IF desc_index = "-1" AND udesc_index != basic_dagg_udesc BEGIN
+                READ_STRREF 0x50 desc
+                SPRINT str_sf @99998
+                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\10~ // speed
+                END
+                SAY_EVALUATED 0x50 ~%desc%~
             END
         END
     END

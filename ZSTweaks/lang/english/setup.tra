@@ -42,24 +42,24 @@
 
 // COMPONENTS
 /// General Item & Spell Tweaks
-@120 = "Make conjured magical weapons grant 2 APR by default (Flame Blade, Phantom Blade Blade, Black Blade of Disaster...)"
-@1120 = "Make some weapon categories incur in backstab penalties for balance"
+@120 = "Make conjured magical weapons grant 2 APR by default"
+@1120 = "Make some weapon categories incur backstab penalties for balance"
 @1121 = ~Make Flails and Morningstars always inflict a small amount of piercing damage~
-@1150 = "Make Spears do a baseline damage of 1d8, not 1d6"
-@1160 = "Make Warhammers do a baseline damage 1d5+1, not 1d4+1 (except hammers outside that range)"
+@1150 = "Make Spears do baseline damage of 1d8, not 1d6"
+@1160 = "Make Warhammers do baseline damage of 1d5+1, not 1d4+1 (except hammers outside that range)"
 @1350 = "Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8"
 @1352 = "Make Wakizashis a piercing/slashing weapon"
 @1360 = "Make Light Crossbows get +1/2 more APR"
 @1370 = "Make Katanas deal 2d5 instead of 1d10"
 @1400 = "Make Bastard Swords deal 1d8+1 by default"
 @1430 = "Make Two-handed swords deal 1d9+1 by default, and 2d6 where it applies"
-@1435 = "Make Daggers deal 1d3+1 damage by default instead of 1d4, to elevate minimum damage"
-@1440 = "Make Daggers have general extra features to compensate the low damage"
-@1450 = "Make some rogue weapons have the chance of doing more damage if wielded by pure thieves (Finesse)"
+@1435 = "Make Darts use a speed factor of 0"
+@1440 = "Make Daggers have general extra features to compensate for the low damage"
+@1450 = "Make some rogue weapons able to do more damage if wielded by pure thieves (Finesse)"
 @1530 = ~Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time~
 @1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense~
 @1532 = ~Make unenchanted bracers, belts and boots grant +1 HP, so they're not just garbage used only for RP purposes~
-@1533 = ~Rebalance wands (currently only the Wand of Missiles is affected)~
+@1533 = ~Rebalance some wands~
 @1534 = ~Rebalance some potions~
 @1535 = ~Make all potions usable by all classes~
 @1536 = ~Make vanilla familiars more resilient and useful and diminish penalties~
@@ -73,6 +73,11 @@
 @15385 = ~2.5x~
 @15386 = ~2.75x~
 @15387 = ~3x~
+@1539 = ~Make classes other than arcane and divine spellcasters able to use scrolls freely~
+@15390 = ~Everyone can~
+@15391 = ~Everyone can as long as they have 12 Intelligence/Wisdom depending on scroll type~
+@15392 = ~All bards and Thieves can~
+@15393 = ~All bards and Thieves can as long as they have 12 Intelligence/Wisdom depending on scroll type~
 // @1539 = ~Make Void-weapons not sap the strength of the undead when held~
 //@1535 = ~Rebalance scrolls such that the spellcasting level is always at least double its (wizard) spell level~
 
@@ -81,29 +86,29 @@
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
 @1171 = ~Make Silver Dragon Scale also grant 40% cold resistance as you would expect~
 @1172 = ~Make Rings of Elemental control more likely to charm the elementals and add missing resistances~
-@1173 = ~Make Ring of Gaxx's improved haste last 2 full rounds, and not 10 seconds~
+@1173 = ~Make Ring of Gaxx's improved haste last 2 full rounds and not 10 seconds~
 @1174 = ~Make Heartwood Ring add 1 spell slot per level, as well as 1 HP/round regen~
 @1180 = "Make Ring of Danger sense defensively better and protect against backstabs"
-@1316 = "Make Mercykiller Ring more useful for rogues that like killing"
+@1316 = "Make the Mercykiller Ring more useful for rogues that like killing"
 @1317 = "Make the basic robes and Archmage robes slightly more remarkable"
 @1560 = ~Make Belt of Skillful Blade also increase piercing damage by 10%~
-@1561 = ~Make Cloak of the Stars create 30 darts, instead of six, and add passive effects~
+@1561 = ~Make Cloak of the Stars create 30 darts instead of six, and add passive effects~
 @1570 = ~Make Eyes of the Beholder's skills mirror the power of the spells they're based on~
 @1610 = ~Make Robe of Invocation also improve all elemental damage by 5% and add a +2 bonus against Invocation~
 @1620 = ~Make Vicross' Thayan Circlet apply Improved Shield of Chaos instead of just Shield of Chaos~
 @1650 = ~Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak~
-@1651 = ~Make Studded Leather of Thorns add some piercing damage too~
+@1651 = ~Make Studded Leather of Thorns cause some piercing damage too when being hit~
 @1652 = ~Make Grandmaster's Armor's movement bonus not affected by Free Action and grant perks to rogues~
 @1653 = ~Make Thieves' Hood protect against critical hits and slightly more advantageous for single-classed thieves~
 @1654 = ~Make Star-Strewn Boots slightly better and favor Inquisitors too (SoD)~
 @1655 = ~Make Crown of Lies more consequential when used~
-@1656 = ~Make Helmet of Dumathoin very slightly more powerful~
+@1656 = ~Make the Helmet of Dumathoin very slightly more powerful~
 @1657 = ~Make The Visage add the capacity to cast Aura of Despair once per day and improve powers slightly~
 @1658 = ~Make Dragon Helm add protection against acid too, as well as +2 saves against Breath~
 @1659 = ~Make Helm of the Rock a bit more protective and commanding~
 @1661 = ~Make Cloak of the Sewers also protect against poison~
 @1662 = ~Make Montolio's Cloak grant a damage and thac0 bonus to rangers~
-@1663 = ~Make Sandthief ring in BGEE work as in BG2EE (one use per day)~
+@1663 = ~Make the Sandthief ring in BGEE work as in BG2EE (one use per day)~
 @1664 = ~Make all ioun stones and circlets protect against critical hits~
 @1665 = ~Make several basic ioun stones and circlets a bit more interesting or powerful~
 @1666 = ~Make Bracers of Blinding's Improved Haste effect last 1 turn and improve speed passively~
@@ -140,19 +145,19 @@
 @1682 = ~Make Acid-Etched Dagger +2 generally more powerful and act as +3~
 @1683 = ~Make Gemblade +2 more powerful and more worth hanging onto for wizards~
 @1684 = ~Make basic throwing daggers usable as melee weapons~
-@1686 = ~Make Life-Stealer +4 more powerful (requires mod to make it available)~
+@1686 = ~Make Life-Stealer +4 a more powerful cursed weapon (requires mod to make it available, such as UB)~
 
 /// TWO-HANDED MELEE WEAPONS
 @1200 = "Make Ixil's Spike allow Haste and Improved Haste and improve it slightly"
 @1201 = "Make Lilarcor +3 have a chance of causing confusion on hit"
-@1202 = "Make Warblade +4 slightly more unique, and more potent when wielded by barbarians"
+@1202 = "Make Warblade +4 slightly more unique and more potent when wielded by barbarians"
 @1280 = "Make Carsomyr affect any kind of evil and not just Chaotic Evil"
 @1290 = "Make Carsomyr's Dispel Magic abilities more balanced"
-@1300 = "Make Silver Sword significantly more unique and add a more interesting (imo) description"
+@1300 = "Make Silver Sword significantly more unique and add a more interesting (IMO) description"
 @1318 = "Make Flame of the North +2 affect all evil, not just Chaotic Evil"
 @1322 = ~Make Flame of the North inflict +2 fire damage against trolls~
 @1390 = "Make Staff of the Magi force a saving throw to dispel effects on hits"
-@1410 = "Make Ir'revrykal Dispel Magic effect not depend on probabilities, but allow a saving throw"
+@1410 = "Make Ir'revrykal Dispel Magic effect not depend on probabilities but allow a saving throw"
 @1420 = "Make Ir'revrykal base damage equal to Carsomyr"
 @1460 = ~Make Spear of Withering able to poison on contact if save is failed~
 @1540 = ~Make Wave slightly more powerful~
@@ -163,7 +168,7 @@
 @1593 = ~Make Sword of Ruin +2 slightly more powerful~
 @1594 = ~Make Cleric's staff more unique and actually benefit clerics~
 @1595 = ~Make Halcyon +1 a bit more powerful~
-@1597 = ~Make Staff of Rhynn not just unique in name and description, but in function~
+@1597 = ~Make the Staff of Rhynn not just unique in name and description, but in function~
 @1599 = ~Make Psion's Blade more offensively powerful against Illithids~
 @1602 = ~Make Dragon's Bane +3 better and act as a +6 weapon in every sense against dragons and wyverns~
 @1603 = ~Make Dragon's Breath +4 act damage-wise as a +4 weapon~
@@ -174,13 +179,13 @@
 @1126 = ~Make Blackrazor able to hit targets immune to +3~
 @1127 = ~Make Peridan more powerful against dragons and wyverns and less misleading in the description~
 @1210 = "Make The Equalizer slightly more powerful"
-@1220 = "Make Ras slightly better and the Dancing Blade last for 1 turn, instead of 4 rounds"
+@1220 = "Make Ras slightly better and the Dancing Blade last for 1 turnthe dancing blade last for 1 turn instead of 4 rounds"
 @1230 = "Make Short Sword of Mask +5 slightly more powerful"
 @1240 = "Make Purifier's damage bonus affect all evil, not just Chaotic Evil"
 @1241 = "Make Purifier's Dispel Magic level 30, like Staff of the Magi and Carsomyr"
 @1250 = "Make Yamato's passive abilities more substantial"
 @1260 = "Make Usuno's Blade slightly more electrically powerful"
-@1270 = "Make Spectral Brand slightly better and make the dancing blade last for 1 turn, instead of 4 rounds"
+@1270 = "Make Spectral Brand slightly better and make the dancing blade last for 1 turn instead of 4 rounds"
 @1315 = "Make Dak'kon's Zerth Blade behave as a +3 weapon"
 @1319 = "Make Holy Sword of Tyr +3 affect all evil, not just Chaotic Evil"
 @1341 = ~Make Hindo's Doom a +4 and +5 weapon~
@@ -260,12 +265,12 @@
 @400 = "Make Energy Drain drain 6 levels instead of 2"
 @405 = ~Make Maze bypass Magic Resistance, like Imprisonment, and make Minotaurs immune to it~
 @407 = ~Make base Imp Familiars have 12/24 HP like the other familiars~
-@410 = ~Make Horrid Wilting actually be more effective against plants and Water Elementals and increase minimum damage~
-@430 = ~Make Grease bypass Magic Resistance, as it is as conjured substance, and apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description~
-@440 = ~Make Comet bypass magic resistance and apply a mix of cold, fire and crushing damage~
+@410 = ~Make Horrid Wilting actually more effective against plants and Water Elementals and increase minimum damage~
+@430 = ~Make Grease bypass Magic Resistance, apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description~
+@440 = ~Make Comet bypass magic resistance and apply a mix of cold, fire, and crushing damage~
 @441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level"
 @442 = "Make Tenser's Transformation gain extra APR like a Fighter at the appropriate levels"
-@443 = ~Make Symbol of Death work with Save bonus if above the 60 HP threshold~
+@443 = ~Make Symbol of Death work with +6 saving throw bonus if above the 60 HP threshold~
 @444 = ~Make Flesh to Stone use Petrification saves~
 @445 = ~Make Bigby's spells more powerful~
 @446 = ~Make Fireball, Sunfire, and Delayed Blast Fireball slightly scale more up to level 20~
@@ -274,11 +279,11 @@
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
 @101 = ~Make Flame Blade do 4 more points of Fire Damage to undead and act as a +2 weapon against them~
 @102 = ~Make BG's version of Flame Blade scale duration-wise like in IWDEE~
-@110 = "Make Bless and Curse last longer"
+@110 = "Make Bless and Curse last longer and increase the casting speed from 6 to 3"
 @130 = "Standardize Hold Person saving throw penalties"
 @190 = "Make Holy Power grant a THAC0 of 0 at max level"
 @230 = "Make Cloak of Fear work as a temporary aura of fear, like in IWDEE"
-@240 = "Make Goodberries generate six berries, each healing 2d4 instead of 1 point of damage, and granting very slow regeneration for 8 hours"
+@240 = "Make Goodberries generate six berries, each healing 2d4 instead of 1 point of damage and granting very slow regeneration for 8 hours"
 @250 = "Make Earthquake party friendly"
 @260 = "Make Negative Plane Protection's duration increase somewhat as you level up"
 @270 = "Make Entangle's saving throws improve slightly at higher levels so it remains relevant for druids"
@@ -286,7 +291,7 @@
 @290 = "Make Holy Power grant extra APR like a Fighter at the appropriate levels"
 @300 = "Make Iron Skins cast as fast a Stoneskin"
 @310 = "Make Fire Seeds create more seeds that do slightly more damage, with an enchantment of 2"
-@320 = "Make Nature's Beauty a bit more likely to kill humanoid enemies, and make blinded enemies immune"
+@320 = "Make Nature's Beauty a bit more likely to kill humanoid enemies and make blinded enemies immune to it"
 @330 = "Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)"
 @340 = "Make Symbol of Death work with Save bonus if above the 60 HP threshold"
 @350 = "Make Earthquake not shake the screen"
@@ -300,7 +305,7 @@
 @464 = ~Make Wondrous Recall also recall wizard spells, and a higher number of them~
 @465 = ~Make Nature's Beauty blocked by True Sight~
 @466 = ~Make Shield of Archons absorb more spell levels (equivalent to cleric level)~
-@467 = ~Make Sunray be able to kill undead regadless of their magic resistance and magic damage resistance~
+@467 = ~Make Sunray be able to kill undead regardless of their magic resistance and magic damage resistance~
 @468 = ~Rebalance Call Lightning's damage and scaling~
 
 // KITS AND CLASSES
@@ -314,12 +319,13 @@
 @2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty"
 @2130 = "Make Set Spike Trap do piercing damage instead of magic damage"
 @2140 = "Make Exploding Trap do slightly more damage: 15d6 as opposed to 10d6"
-@2150 = "Make selected kit HLAS unable to be breached"
+@2141 = ~Make Assassination more generally useful, especially for single-classed Thieves~
+@2150 = "Make selected HLAS unable to be breached"
 @2160 = ~Make Quivering Palm slightly more powerful at high levels~
 @2170 = ~Make the THAC0 progression of Thieves better and more streamlined, so they improve up to 6, like clerics~
 @2171 = ~Fix Swashbuckler incorrect THAC0 when Thief THAC0 improvement is installed (only use if no Swashbuckler overhaul is installed!)~
 @2180 = ~Make the THAC0 progression of Bards better and more streamlined, so they improve up to 6, like clerics~
-@2190 = ~Make Poison Weapon improve couple of times more every 4 levels (level 17, and 21)~
+@2190 = ~Make Poison Weapon improve a couple of times more every 4 levels (level 17, and 21)~
 @2200 = ~Allow Blackguards to perform backstabs as if they had a 2x backstab multiplier~
 @2210 = ~Light proficiency overhaul~
 @2240 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and reenable the unconscious status if successful~ // TODO
@@ -587,7 +593,7 @@ Casting Time: 9
 Area of Effect: The caster
 Saving Throw: 1/2
 
-Casting the Fire Seed spell creates 10 fire seeds that will appear in the caster's inventory. The seeds will remain in existence for 3 turns after the spell is cast. If they are thrown at an enemy, a fireball will ensue, causing 3d8+5 points of damage to all within a 7-ft. radius unless they make a Saving Throw vs. Spell for half damage. These seeds are thrown with a THAC0 bonus of +2 and are considered +2 weapons for the purposes of what they can hit.~
+Casting the Fire Seed spell creates 12 fire seeds that will appear in the caster's inventory. The seeds will remain in existence for 3 turns after the spell is cast. If they are thrown at an enemy, a fireball will ensue, causing 3d8+5 points of damage to all within a 7-ft. radius unless they make a Saving Throw vs. Spell for half damage. These seeds are thrown with a THAC0 bonus of +2 and are considered +2 weapons for the purposes of what they can hit.~
 
 @5160 = ~Created by the Fire Seeds spell. When thrown at opponents, they explode into small fireballs that do 3d8+5 points of damage to everyone within a 7-ft. radius.
 
@@ -4679,7 +4685,7 @@ Equipped abilities:
 Combat abilities:
 – Acts as a +6 weapon against Mind Flayers
 – 25% chance per hit that target must save vs. Death at -2 or die from decapitation. Targets killed this way cannot be resurrected without a True Resurrection spell or divine intervention.
-– Psionic attack: inflicts 2d8 magical damage on a critical hit, which also causes confusion for 10 seconds if a Save vs. Spell at -2 is failed.
+– Psionic attack: inflicts 2d8 psychic damage on a critical hit, which also causes confusion for 10 seconds if a Save vs. Spell at -2 is failed. This damage cannot be resisted, but mindless or brainless creatures won't be affected.
 
 THAC0: +3, +6 vs. Mind Flayers
 Damage: 1d10+3, +6 vs. Mind Flayers (slashing)
@@ -4690,6 +4696,8 @@ Requires:
  14 Strength
 
 Weight: 15~
+
+@7682 = ~Psychic damage: 2d8~
 
 @7690 = ~Some believe this massive blade to be of drow origin, though others dispute this claim. However, all agree this great sword was fashioned with a single purpose... to rid the world of the illithid. The attacks from the Psion's Blade inflict griveous wounds on illithids, and those who wield it are immune to the mind flayer's psionic attacks. The bewildering gaze of umber hulks, often found serving the illithid, are similarly rendered harmless.
 
@@ -4858,26 +4866,24 @@ Requires:
 
 Weight: 5~
 
-// todo
-@7780 = ~This accursed dagger, with a blade gleaming red like blood and a hilt studded with emeralds, is a relic of ancient Thayan necromancy. When it strikes, the victim's life force is siphoned away, healing and empowering the wielder, which allows to sustain its owner in battle, even from the brink of death. More terrifying still is the blade's ultimate curse: any soul claimed by the dagger is utterly destroyed, preventing resurrection by any means.
-
-The dagger's true nature is a manifestation of raw evil, designed to claim not just the lives but the souls of its victim: those struck down by this weapon are forever lost, their essence obliterated beyond the reach of even the most powerful magic, barring divine intervention. It's more than just a weapon—it is a covenant with death that binds its user, similarly to vampirism, to an eternal cycle of killing and consumption, a reminder that those who wield it may eventually find themselves as its next victim.
+@7780 = ~This cursed dagger, with a blade gleaming red like blood and a hilt studded with a green emerald, is a relic of ancient Thayan necromancy. When it strikes, the victim's life force is siphoned away, healing and empowering the wielder, which allows to sustain its owner in battle, even from the brink of death. However, in order the power of the dagger to be unleashed, the wielder must be willing to pay the price for its power.
 
 STATISTICS:
 
 Equipped abilities:
-Wielder's alignment becomes Chaotic Evil and gains several vampiric traits and weaknesses:
-  – Immunity to Death magic
-  – Infravision
-  – Regenerate 1 HP per 2 rounds
-  – -40% weakness to Fire damage
-  – +20% resistance to Cold and Electricity
+– Wielder's alignment becomes Chaotic Evil
+– Immunity to death magic and level drain
+– Infravision
+– Regenerate 1 HP per 2 rounds
+– -50% weakness to Fire damage
+– +50% resistance to Cold and Electricity
+– Cannot be healed by positive energy spells and most healing potions
 – May only be removed with a Remove Curse spell
 
 Combat abilities:
-– 20% chance per hit of draining 2 levels from the target, healing you by 10 HP plus 15% of your total HP
-– Targets killed by this weapon can no longer be resurrected, and each kill gives the wielder +1 Strength and Dexterity for 1 turn, and heals 5 HP plus 10% of your total HP
-– Vampires wielding this weapon can siphon 3 HP with every strike
+– 18% chance per hit of draining 2 levels from the target
+– Wielder increases Strength and Dexterity by 1 point for 7 rounds and regenerates 6 HP over 1 round each time a target is killed. During half a round, your HP cannot be reduced below 1.
+– Every strike siphons 1 HP, which is transferred to the wielder; vampires absorb 3 HP instead
 
 THAC0: +4
 Damage: 1d4+4 (piercing)
@@ -4889,7 +4895,6 @@ Requires:
 
 Weight: 1~
 
-@7781 = ~Vampiric Dagger +4~
 
 @7790 = ~Sun Soulbeam
 The character emits a dazzling burst of light that strikes at all other creatures within a 15-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 9d6 points of fire damage (12d6+3 if undead), unless they Save vs. Spell for half. In addition, all creatures except the character must Save vs. Spell or be blinded for 2 hours.~
@@ -4897,7 +4902,7 @@ The character emits a dazzling burst of light that strikes at all other creature
 @7800 = ~Sun Soulray
 The character projects a blast of light from <PRO_HISHER> open palm, dealing 1d8 fire damage for every 2 caster levels (up to a maximum of 5d8 damage) to a single target. Undead creatures take an additional 6 points of damage (which increases by 2 every 2 caster levels). There is no Saving Throw against this ability.~
 
-
+// todo
 @7810 = ~The provenance of this dark purple robe has been lost in the mists of history, but a faint odor of stale magic lingers in the air around the threadbare garment. The one who wore it was clearly no stranger to the Weave. Closely examining the robe, you are able to pick out a stylized flame design woven into the fabric. It seems likely the intricate pattern was always subtle, but even were that not true, countless years of wear have rendered the flames all but invisible.
 
 STATISTICS:
@@ -4913,6 +4918,8 @@ Charge abilities:
 
 Weight: 3~
 
+
+//todo
 @7820 = ~This ring, designed for the hero Zachiira, is engraved with holy symbols. When Zachiira requested aid from King Strohm III, it was the king’s royal advisor, the great and powerful Theurgist Karlash Arnostognas, who made this item, in the hope that it would aid the hero in her battle against a demon vampire. Zachiira survived the encounter, but sadly her triumphal return was met with rather less celebration and rather more grief, as the good king was already dead when she arrived. Zachiira laid the holy artifact at the entrance to the king’s tomb, and it was there the relic was discovered by wandering thrill-seekers.
 
 STATISTICS:
@@ -4926,6 +4933,8 @@ Equipped abilities:
 
 Weight: 0~
 
+
+// todo
 @7830 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
 
 STATISTICS:
@@ -4938,6 +4947,7 @@ Equipped abilities:
 
 Weight: 0~
 
+// todo
 @7840 = ~Constructed from a rhino beetle's sturdy shell, this armor offers its wearer excellent protection without impeding their motion to the same extent as traditional metal plate mail. The unusual material makes this suit of armor particularly effective against missile and slashing weapons.
 
 STATISTICS:
@@ -4952,6 +4962,7 @@ Requires:
 
 Weight: 25~
 
+// todo
 @7850 = ~The rhino beetle's carapace makes a most effective shield provided one can survive long enough to pry a piece off the creature. Lightweight but sturdy, this item makes a powerful argument for the premise that the best shields are found in nature, not the forge. The unusual material makes the shield particularly effective against missile weapons.
 
 STATISTICS:
@@ -4966,6 +4977,7 @@ Requires:
 
 Weight: 6~
 
+// todo
 @7860 = ~This shield was carried by a mercenary working with the Order of the Steel Fang. The warriors of the order were impressed with the mercenary's tenacity and courage. She charged into battle without hesitation and seemed to fight all the harder when she was wounded. When their quest was completed, the Order of the Steel Fang gifted a battleaxe to the mercenary as thanks for her service. In turn she gave the order her shield as a sign of respect. The shield stayed in the order for years until it was lost on a battlefield.
 
 STATISTICS:
@@ -4982,6 +4994,7 @@ Requires:
 
 Weight: 4~
 
+// todo
 @7870 = ~Legend has it that this elegant curving blade was forged deep beneath the sea by merfolk and its hilt bound in enchanted eelskin. The truth of the matter is more mundane. The blade was crafted in Iriaebor and given to a mercenary commander who protected cargo barges moving up and down the river Chionthar. Still, it is a finely made and serviceable weapon.
 
 STATISTICS:
@@ -5003,6 +5016,7 @@ Requires:
 
 Weight: 3~
 
+// todo
 @7880 = ~This wakizashi is finely made, but gaudy false gems have been glued on to its hilt. The weapon was procured by Bartleby, a local thug whose obsession with the continent of Kara-Tur has made him one of the most obnoxious mercenaries in the local taverns. He rambles for hours on how different the foreign culture is to that of the Sword Coast and prides himself on being a "city samurai," a title that is as offensive as it is undeserved.
 
 STATISTICS:
@@ -5020,6 +5034,7 @@ Requires:
 
 Weight: 2~
 
+// todo
 @7890 = ~This thin, nasty-looking blade was wielded by the gnomish Gardnersonson family in two Dragonspear Wars. Though delicate in appearance and obviously designed for a smaller than human hand, the weapon is extraordinarily effective when turned against ogres, giants, ettins, and other similarly sized creatures.
 
 STATISTICS:
@@ -5038,6 +5053,7 @@ Requires:
 
 Weight: 1~
 
+// todo
 @7900 = ~This much-used but still razor-sharp blade was found in the chest of Ophyllis, a treasurer of the Ducal Palace in Baldur's Gate. While his position ensured that Ophyllis possessed many chests, he only used one to house his lungs, and it was in this particular chest the sword was placed. Ophyllis died an agonized, painful death, but not before he gave the sword to a <PRO_MANWOMAN> to whom he owed a deep personal debt. His mournful voice can still be heard by those who wield the blade.
 
 Equipped abilities:
@@ -5058,7 +5074,7 @@ Requires:
 
 Weight: 2~
 
-@8000 = ~Power can corrupt even the noblest of mages, and the long-lived elves of Faerûn have seen what devastating consequences can occur when a mage loses control. This elegant longsword, its silver hilt decorated with clear blue gems, was crafted to deal with arcane spellcasters who have abused their gift. The sword assists any hunter who tracks down out-of-control mages, and has particular potency in the hands of wizard slayers or inquisitors.
+@8000 = ~Power can corrupt even the noblest of mages, and the long-lived elves of Faerûn have seen what devastating consequences can occur when a mage loses control. This elegant longsword, its silver hilt decorated with clear blue gems, was crafted to deal with arcane spellcasters who have abused their gift. The sword assists any hunter who tracks down out-of-control mages, and has particular potency in the hands of wizard slayers and inquisitors.
 
 STATISTICS:
 
@@ -5162,7 +5178,7 @@ Weight: 5~
 @8035 = ~Expose Weakness Applied~
 @8036 = ~Expose Weakness Lost~
 
-// martial staff
+// martial staff todo
 @8040 = ~This humble staff radiates powerful magic, and was likely the simple-seeming weapon of a traveling mage or cleric. It would certainly prove more than ample for dealing with most threats encountered on the road.
 
 STATISTICS:
@@ -5250,6 +5266,7 @@ Saving Throw: None
 When uttering the Curse spell, the caster lowers the morale of enemy creatures and any Saving Throws and attack rolls they make by 1. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster. Affected creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not.~
 
 
+// todo
 @8070 = ~This girdle greatly increases the wearer's Constitution. King Violos used it when leading an expedition against marsh trolls. He'd been severely sickened the past winter and was no longer the healthy man he once was. The belt gave extra years to his life and inspired his men to renew their confidence in their king once more.
 
 STATISTICS:
@@ -5265,6 +5282,60 @@ Charge abilities:
 
 Weight: 2~
 
+@8080 = ~Assassination
+Using every clever trick an experienced Thief has learned in countless battles, this ability allows every strike in the next 7 seconds to act as a backstab, using the Thief's existing backstab modifier to determine damage. Additionally, during this time and for 1 round longer, critical misses are not possible, and critical hit chances increase by 10%.
+
+Especialized thieves (single-classed) benefit more from this:
+
+– Critical hit chances are +20%
+– +2 Damage
+– +3 THAC0~
+
+
+@8090 = ~A Wand of Fear strikes terror into the heart of any creature within its target area. This panic is not universal, however, as the stout of heart have been known to resist its magic. Like all wands, the Wand of Fear can only be used a limited number of times before it is destroyed.
+
+STATISTICS:
+
+Charge abilities:
+– Causes enemies to run in fear unless they save vs. Spell
+  Range: 100 ft.
+  Area of Effect: 15-ft. radius
+  Duration: 1 turn
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+@8100 = ~When used, this wand shoots forth a thin ray of bluish color to a maximum range of 100 ft. When a creature is touched by the ray, it must save vs. Wand at -4 in order to avoid being stunned for 7 rounds.
+
+STATISTICS:
+
+Charge abilities:
+– Stun target (Save vs. Wand at -4 penalty negates)
+  Range: 100 ft.
+  Area of Effect: 1 creature
+  Duration: 7 rounds
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+@8110 = ~This wand will emit a gold beam of energy at its targets up to a maximum range of 80 ft., affecting a 15-ft. radius. If the target creatures fail their Save vs. Wand, they will fall into a deep, comatose sleep for 2 turns. Only creatures up to 4 Hit Dice are affected by this wand.
+
+STATISTICS:
+
+Charge abilities:
+– Sleep (Save vs. Wand negates)
+  Range: 80 ft.
+  Area of Effect: 15-ft. radius
+  Duration: 2 turns
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
 
 
 @99999 = ~Damage~ // for text patching

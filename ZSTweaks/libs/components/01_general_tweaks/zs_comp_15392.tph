@@ -1,0 +1,39 @@
+COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
+    LPF ITM_CAT RET cat = result END
+    PATCH_IF cat = 11 BEGIN
+        LPF ITM_USABILITY0 RET usability_flags = result END
+        PATCH_IF usability_flags > 0 BEGIN
+            LPF IS_USABILITY_FLAG_SET INT_VAR flag=9 RET cleric_thief_flag = result END
+            LPF IS_USABILITY_FLAG_SET INT_VAR flag=6 RET bard_flag = result END
+            LPF IS_USABILITY_FLAG_SET INT_VAR flag=16 RET fighter_mage_thief = result END
+            LPF IS_USABILITY_FLAG_SET INT_VAR flag=17 RET fighter_thief = result END
+            LPF IS_USABILITY_FLAG_SET INT_VAR flag=19 RET mage_thief = result END
+            LPF IS_USABILITY_FLAG_SET INT_VAR flag=22 RET thief = result END
+
+            PATCH_IF cleric_thief_flag BEGIN
+                WRITE_LONG 0x1e (THIS - 2**9)
+            END
+
+            PATCH_IF bard_flag BEGIN
+                WRITE_LONG 0x1e (THIS - 2**6)
+            END
+
+            PATCH_IF fighter_mage_thief BEGIN
+                WRITE_LONG 0x1e (THIS - 2**16)
+            END
+
+            PATCH_IF fighter_thief BEGIN
+                WRITE_LONG 0x1e (THIS - 2**17)
+            END
+
+            PATCH_IF mage_thief BEGIN
+                WRITE_LONG 0x1e (THIS - 2**19)
+            END
+
+            PATCH_IF thief BEGIN
+                WRITE_LONG 0x1e (THIS - 2**22)
+            END
+
+        END
+    END
+BUT_ONLY

@@ -5,7 +5,7 @@ COPY_EXISTING "SPER01.ITM" ~override~
         REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d8~
     END
     SAY_EVALUATED 0x50 ~%desc%~
-    LPF ITM_REF_UDESC_INDEX RET changed_description_index = result END
+    LPF ITM_REF_UDESC RET changed_description_index = result END
 BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~

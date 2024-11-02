@@ -18,7 +18,7 @@ COPY_EXISTING "SW1H48.ITM" ~override~
         REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)4~ ~\13~ // speed modification
     END
     SAY_EVALUATED 0x50 ~%desc%~
-    LPF ITM_REF_UDESC_INDEX RET changed_description_index_ninjato = result END
+    LPF ITM_REF_UDESC RET changed_description_index_ninjato = result END
 BUT_ONLY
 
 COPY_EXISTING "SW1H46.ITM" ~override~
@@ -28,7 +28,7 @@ COPY_EXISTING "SW1H46.ITM" ~override~
         REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
     END
     SAY_EVALUATED 0x50 ~%desc%~
-    LPF ITM_REF_UDESC_INDEX RET changed_description_index_waki = result END
+    LPF ITM_REF_UDESC RET changed_description_index_waki = result END
 BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~

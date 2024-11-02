@@ -88,3 +88,35 @@ Requires:
  14 Strength
 
 Weight: 15
+
+
+### Life-Stealer +4
+
+This cursed dagger, with a blade gleaming red like blood and a hilt studded with a green emerald, is a relic of ancient Thayan necromancy. When it strikes, the victim's life force is siphoned away, healing and empowering the wielder, which allows to sustain its owner in battle, even from the brink of death. However, in order the power of the dagger to be unleashed, the wielder must be willing to pay the price for its power.
+
+STATISTICS:
+
+Equipped abilities:
+– Wielder's alignment becomes Chaotic Evil
+– Immunity to death magic and level drain
+– Infravision
+– Regenerate 1 HP per 2 rounds
+– -50% weakness to Fire damage
+– +50% resistance to Cold and Electricity
+– Cannot be healed by positive energy spells and most healing potions
+– May only be removed with a Remove Curse spell
+
+Combat abilities:
+– 18% chance per hit of draining 2 levels from the target
+– Wielder increases Strength and Dexterity by 1 point for 7 rounds and regenerates 6 HP over 1 round each time a target is killed. During half a round, your HP cannot be reduced below 1.
+– Every strike siphons 1 HP, which is transferred to the wielder; vampires absorb 3 HP instead
+
+THAC0: +4
+Damage: 1d4+4 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1
