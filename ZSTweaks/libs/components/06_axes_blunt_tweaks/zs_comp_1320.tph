@@ -1,4 +1,18 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
+
+    COPY_EXISTING ~BLUN30.ITM~  ~override~ // all the damn variations of flail of ages
+                  ~BLUN30C.ITM~ ~override~
+                  ~BLUN30D.ITM~ ~override~
+                  ~BLUN14.ITM~  ~override~
+                  ~BLUN14D.ITM~ ~override~
+                  ~BLUN14E.ITM~ ~override~
+                  ~BLUN14F.ITM~ ~override~
+                  ~BLUN14G.ITM~ ~override~
+                  ~BLUN14H.ITM~ ~override~
+                  ~BLUN14I.ITM~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
+    BUT_ONLY
+
     COPY_EXISTING ~BLUN30.ITM~ ~override~
         LPF remove_haste_immunity END
         LPF ALTER_EFFECT INT_VAR match_opcode = 166 parameter1 = 15 END

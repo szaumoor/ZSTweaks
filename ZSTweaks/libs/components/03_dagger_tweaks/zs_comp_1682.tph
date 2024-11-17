@@ -8,14 +8,14 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             END ELSE BEGIN
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 3 to_hit = 3  END
             END
-            LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 0 dicenumber = 1 dicesize = 3 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 0 dicenumber = 1 dicesize = 3 special=1024 END
             LPF ALTER_EFFECT INT_VAR match_opcode = 146 probability1 = 19 END
             PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
                 LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWD2~ resource = ~ZSTWD3~ END
             END
         BUT_ONLY
         COPY_EXISTING ~bddagg05.spl~ ~override~
-            LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 0 dicenumber = 1 dicesize = 3 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 0 dicenumber = 1 dicesize = 3 special=1024 END
             LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 STR_VAR effects = ~op=0,dur=18,p1=-2,ip=3~ END
         BUT_ONLY
     END ELSE BEGIN

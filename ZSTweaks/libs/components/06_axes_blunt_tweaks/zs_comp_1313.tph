@@ -2,6 +2,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY ~ZSTweaks/items/gnasher~ ~override~
     COPY_EXISTING ~BLUN24.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6182) END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=146,res=ZSTWPAIN,p2=1,tmg=1,rd=2~ END
     BUT_ONLY
 END

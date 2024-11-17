@@ -124,6 +124,7 @@ INT_VAR
     sbonus = 0
     tgt=2
 STR_VAR
+    res=""
     effects=""
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
@@ -141,6 +142,7 @@ BEGIN
             def_savetype = stype
             def_savebonus = sbonus
         STR_VAR
+            def_resource = ~%res%~
             function_name = ~ADD_SPELL_EFFECT~
             effect_codes = ~%effects%~
     END

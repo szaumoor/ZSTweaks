@@ -1,4 +1,4 @@
-ACTION_IF !(GAME_IS "iwdee") BEGIN
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
     COPY_EXISTING ~SPWI518.SPL~ ~override~
         SET dur = 126
         LPF LAST_VALID_HEADER RET new_header = result END
@@ -10,3 +10,9 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         END
     BUT_ONLY
 END
+
+COPY_EXISTING ~PHANBLAD.EFF~ ~override~
+    LPF ALTER_EFF_FILE INT_VAR special = 1024 END
+BUT_ONLY
+
+

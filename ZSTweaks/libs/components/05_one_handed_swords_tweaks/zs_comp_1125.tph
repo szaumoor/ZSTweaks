@@ -4,7 +4,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_ITEM INT_VAR unusable0=1074057600 END
         LPF ALTER_HEADER INT_VAR speed = 0 END
         LPF GET_DMG_TYPE STR_VAR type = ~poison~ RET poison = result END
-        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=1,p2=%poison%~ END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=1,p2=%poison%,spec=1024~ END
         SET monk = IDS_OF_SYMBOL(class MONK)
         LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=177,p1=%monk%,res=ZSTWNIJA;op=177,p1=%monk%,res=ZSTWNIJB;op=177,p1=%monk%,res=ZSTWNIJC~ END
 

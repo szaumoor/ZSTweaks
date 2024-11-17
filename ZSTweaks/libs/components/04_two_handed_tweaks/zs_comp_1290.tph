@@ -26,6 +26,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         END
     BUT_ONLY
 
+
     COPY_EXISTING ~SW2H19.ITM~ ~override~
         PATCH_IF both BEGIN
             SPRINT strref @6085
@@ -48,4 +49,8 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(strref) END
         END
     BUT_ONLY
+
+    COPY_EXISTING ~HOLYAVEN.EFF~ ~override~
+                  ~SW2H19A.EFF~ ~override~
+        LPF ALTER_EFF_FILE INT_VAR special=1024 END
 END

@@ -1,6 +1,6 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING "ohdsw03.itm" ~override~
-        LPF ALTER_EFFECT INT_VAR header_type=1 match_opcode=12 savingthrow = 0 END // remove mirror image bypass, likely bug
+        LPF ALTER_EFFECT INT_VAR header_type=1 match_opcode=12 savingthrow = 0 special=1024 END // no mirror image bypass, likely bug
         LPF ITM_LAST_HEADER_TYPE INT_VAR type=3 RET header = result END
         LPF ADD_ITEM_HEADER INT_VAR copy_header = header + 1 END
         LPF ALTER_HEADER INT_VAR match_type=3 header=2 primary=6 STR_VAR icon=~SPWI523B~ END

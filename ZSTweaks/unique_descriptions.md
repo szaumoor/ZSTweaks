@@ -107,8 +107,8 @@ Equipped abilities:
 – May only be removed with a Remove Curse spell
 
 Combat abilities:
-– 18% chance per hit of draining 2 levels from the target
-– Wielder increases Strength and Dexterity by 1 point for 7 rounds and regenerates 6 HP over 1 round each time a target is killed. During half a round, your HP cannot be reduced below 1.
+– 18% chance per hit of draining 2 levels from the target, which heals the user 1d6 HP plus 10% of the user's maximum HP
+– Wielder increases Strength and Dexterity by 1 point for 7 rounds and regenerates 6 HP over 1 round each time a target is killed by them. During half a round, your HP cannot be reduced below 1
 – Every strike siphons 1 HP, which is transferred to the wielder; vampires absorb 3 HP instead
 
 THAC0: +4

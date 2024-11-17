@@ -53,12 +53,17 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
                 LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6690) END
             END
         END
-
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
     BUT_ONLY
+
     COPY_EXISTING_REGEXP "ohdsw2h[bc].ITM" ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 1 END
     BUT_ONLY
     COPY_EXISTING "ohdsw2hd.ITM" ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 2 END
+    BUT_ONLY
+
+    COPY_EXISTING "HOLYAVEN.EFF" ~override~
+        LPF ALTER_EFF_FILE INT_VAR special = 1024 END
     BUT_ONLY
 END

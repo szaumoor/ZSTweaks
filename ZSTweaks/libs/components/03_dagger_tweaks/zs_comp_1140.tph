@@ -4,7 +4,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 20 probability1 = 9 END
         LPF GET_DMG_TYPE STR_VAR type = ~fire~ RET f = result END
         LPF GET_DMG_TYPE STR_VAR type = ~electricity~ RET el = result END
-        LPF ADD_ON_HIT_EFF INT_VAR p1=1 STR_VAR effects = ~op=12,p2=%f%;op=12,p2=%el%~ END
+        LPF ADD_ON_HIT_EFF INT_VAR p1=1 spec=1024 STR_VAR effects = ~op=12,p2=%f%;op=12,p2=%el%~ END
         PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN // update bonus due to +5 enchantment
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 STR_VAR match_resource = ~ZSTWD4~ resource = ~ZSTWD5~ END
         END
@@ -20,8 +20,9 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 20 probability1 = 14 END
         LPF GET_DMG_TYPE STR_VAR type = ~fire~ RET f = result END
         LPF GET_DMG_TYPE STR_VAR type = ~electricity~ RET el = result END
-        LPF ADD_ON_HIT_EFF INT_VAR dsize=8 dnum=1 STR_VAR effects=~op=12,p2=%f%,pro1=93,pro2=89;op=12,p2=%el%,pro1=88,pro2=84~ END
-        LPF ADD_ON_HIT_EFF INT_VAR p1=2 STR_VAR effects = ~op=12,p2=%f%;op=12,p2=%el%~ END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 special=1024 END
+        LPF ADD_ON_HIT_EFF INT_VAR dsize=8 dnum=1 spec=1024 STR_VAR effects=~op=12,p2=%f%,pro1=93,pro2=89;op=12,p2=%el%,pro1=88,pro2=84~ END
+        LPF ADD_ON_HIT_EFF INT_VAR p1=2 spec=1024 STR_VAR effects = ~op=12,p2=%f%;op=12,p2=%el%~ END
         PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN // update bonus due to +6 enchantment
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 STR_VAR match_resource = ~ZSTWD5~ resource = ~ZSTWD6~ END
         END

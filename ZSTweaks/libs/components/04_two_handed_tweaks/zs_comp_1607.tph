@@ -1,0 +1,52 @@
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+    COPY_EXISTING ~SW2H17.ITM~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 12 dicesize = 2 dicenumber = 6 END
+        LPF ALTER_EFFECT INT_VAR match_probability1 = 10 probability1 = 9 END
+
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            SPRINT new_description @8150
+            SPRINT str @99999
+            SPRINT str_sf @99998
+            LPF WPN_DMG RET dmg = result END
+            LPF WPN_SPEED RET speed = result END
+            INNER_PATCH_SAVE new_description ~%new_description%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d9+%dmg%~
+            END
+            SAY_EVALUATED 0x54 ~%new_description%~
+        END ELSE BEGIN
+            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8150) END
+        END
+
+    COPY_EXISTING ~SW2H18.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR ench=6 id_ref_name = RESOLVE_STR_REF(@8151) END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 166 parameter1 = 10 END
+        LPF ALTER_EFFECT INT_VAR match_probability1 = 10 probability1 = 14 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 12 dicesize = 2 dicenumber = 6 END
+
+        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1430~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
+            LPF ALTER_HEADER INT_VAR match_type = 1 to_hit = 6 damage = 7 speed = 4 END
+        END ELSE BEGIN
+            LPF ALTER_HEADER INT_VAR match_type = 1 to_hit = 6 damage = 6 speed = 4 END
+        END
+
+        LPF DELETE_EFFECT INT_VAR match_opcode = 216 END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
+        LPF ADD_ON_HIT_EFF INT_VAR ip = 0 stype=4 sbonus="-5" STR_VAR effects = ~op=332,p1=-10;op=321,res=%SOURCE_RES%~ END
+
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            SPRINT new_description @8152
+            SPRINT str @99999
+            SPRINT str_sf @99998
+            LPF WPN_DMG RET dmg = result END
+            LPF WPN_SPEED RET speed = result END
+            INNER_PATCH_SAVE new_description ~%new_description%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d9+%dmg%~
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)5~ ~\1%speed%~
+            END
+            SAY_EVALUATED 0x54 ~%new_description%~
+        END ELSE BEGIN
+            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8152) END
+        END
+END
+
+

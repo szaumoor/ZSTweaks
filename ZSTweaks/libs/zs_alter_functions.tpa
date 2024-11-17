@@ -308,6 +308,11 @@ BEGIN
     END ELSE PATCH_IF dicenumber < "-1" BEGIN
         PATCH_WARN "Passed a wrong value to dicenumber: %dicenumber%"
     END
+    PATCH_IF special > "-1" BEGIN
+        WRITE_LONG 0x48 special
+    END ELSE PATCH_IF special < "-1" BEGIN
+        PATCH_WARN "Passed a wrong value to special: %special%"
+    END
 END
 
 

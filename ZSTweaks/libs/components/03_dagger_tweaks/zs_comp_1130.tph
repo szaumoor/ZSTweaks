@@ -4,6 +4,14 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6000) END
         LPF GET_DMG_TYPE STR_VAR type = ~acid~ RET acid = result END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=40~ END
-        LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 STR_VAR res=~ZSTW_DG6~ effects=~op=12,dsize=4,dnum=1,p2=%acid%;op=177,p1=2;op=177,p1=123;op=177,p1=172;op=177,p1=138;op=177,p1=167;op=177,p1=135;op=177,p1=124~ END
+        SET elf = IDS_OF_SYMBOL(race ELF)
+        SET beholder = IDS_OF_SYMBOL(race BEHOLDER)
+        SET drider = IDS_OF_SYMBOL(race DRIDER)
+        SET hook_horror = IDS_OF_SYMBOL(race HOOK_HORROR)
+        SET kuo_toa = IDS_OF_SYMBOL(race "KUO-TOA")
+        SET mind_flayer = IDS_OF_SYMBOL(race MIND_FLAYER)
+        SET spider = IDS_OF_SYMBOL(race SPIDER)
+        SET umberhulk = IDS_OF_SYMBOL(race UMBERHULK)
+        LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 STR_VAR res=~ZSTW_DG6~ effects=~op=12,dsize=4,dnum=1,p2=%acid%,spec=1024;op=177,p1=%elf%;op=177,p1=%beholder%;op=177,p1=%drider%;op=177,p1=%hook_horror%;op=177,p1=%kuo_toa%;op=177,p1=%mind_flayer%;op=177,p1=%spider%;op=177,p1=%umberhulk%~ END
     BUT_ONLY
 END

@@ -4,6 +4,12 @@ This mod is a compilation of tweaks that I think personally improve things as th
 
 Every group of components, except those that have only a few items, has as the first component the option to install all components in the group, except those that require user input.
 
+Finally, any component that adds damage to items on hit, or alters items with damage on hit, will mark the damage effects as not capable of waking up sleepers.
+
+This is done because there is no advantage that I can see to making that damage capable of waking sleepers, but it does prevent an annoying corner case, which is that if you have a melee/ranged weapon effect that causes interruptible sleep, and other on-hit damage the weapons have trigger after it, it will wake them up, even if it was the hit of this weapon what caused the sleep, which is all pretty silly.
+
+In vanilla, this is not contemplated, likely because there isn't any means of introducing sleep on hit to arbitrary weapons and as such that circumstance would have never occurred. My mod ZS_WeaponOils does introduce this situation if using the Drow Soporific Oil.
+
 ---
 <details>
 
@@ -148,7 +154,7 @@ Overall this should make all these spells more usable throughout the trilogy of 
 
 Please bear in mind that this component should be installed after tweaks that affect these spells, especially if they add new effects to them; otherwise, this tweak will only work partially, and inconsistent results could ensue. For this reason, this component is not included as part of the component that installs the whole group of components.
 
-**Component 1532:** Make unenchanted bracers, belts, and boots grant +1 HP, so they're not just garbage used only for RP purposes
+**Component 1532:** Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage
 
 I do not like gear that you can wear without any effect whatsoever. I can live with rings that don't do that, because there's no reasonable benefit to just wearing a ring. Therefore, wearing unenchanted belts, boots, and bracers will grant the wearer +1 HP which I think is reasonable enough, and it doesn't change balance much.
 
@@ -157,7 +163,7 @@ For consistency, all of the enchanted belts, boots and bracers will also grant t
 **Component 1533:** Rebalance some wands
 
 - Wand of Magic Missiles: it casts 3 missiles, not 1, which makes it generally useful for the majority of both games, same as casting from a scroll. A single missile is quite often a missed opportunity for an action during your round
-- Wand of Fear: Fear effect duration reduced from 15 rounds to 1 turn, undocumented +2 save bonus is eliminated, and as such it will be as effective as the Horror spell or the Warcry HLA (sad, sad, \[vanilla\] HLA)
+- Wand of Fear: Fear effect duration reduced from 15 rounds to 1 turn, undocumented +2 save bonus is eliminated, and as such it will be as effective as the Horror spell or the Warcry HLA (sad, sad, vanilla HLA)
 - Wand of Paralysis effect reduced from 1 turn to 7 rounds
 - Wand of Sleep: description now notes that it only works for up to 4 HD monsters
 - To be continued
@@ -166,11 +172,11 @@ For consistency, all of the enchanted belts, boots and bracers will also grant t
 
 - Potion of Icedust: instead of providing a set immunity to fire for 1 round, it adds +75% resistance to fire for 3 rounds. I was considering making this effect undispellable but decided against it.
 - Potion of healing (basic): these options are generally never used after a while. Therefore, now they heal 12 HP instead of 9 HP, which makes them marginally more useful without breaking balance
-- Potion of Heroism: it also prevents morale failure as it increases the confidence of the drinker. It can also be drunk by any class
+- Potion of Heroism: it also prevents morale failure as it increases the confidence of the drinker, and improves damage by 1. The THAC0 bonus it provides is no longer set to 90% of current, but instead improves immediately by 2, which is strictly a better outcome, since there will be no longer diminishing returns. It can also be drunk by any class
 - Potion of Invulnerability: it also increases magic resistance by +10%, and it can be used by any class
 - Elixir of Health: the HP recovered is now 20 (from 10) and protects against being poisoned (but not to direct poison damage; not dispellable) for 10 seconds. This is added such that when taking heavy damage, if you're poisoned, it's more desirable than just gulping down a better HP potion to ensure survivability
 - Potion of Perception: now the proper "detection" thief skills are improved further (find traps and detect illusions): 40%. Additionally, the enhanced perception improves THAC0, AC, and Saving Throws by 2
-- Potion of Power: this makes the potion prevent morale failure like the potion of heroism, +1 backstab, it improves all thieving abilities (not just some), it improves casting speed by 1, and it now also grants +10% higher damage output (physical and magical), which makes it useful for any class. Its rarity and price should be rewarded handsomely
+- Potion of Power: this makes the potion prevent morale failure like the potion of heroism, it improves all thieving abilities (not just some), it improves casting speed by 1, and it now also grants +10% higher damage output (physical and magical), which makes it useful for any class. Finally, the THAC0 bonus it provides is no longer to 80% of current, but instead improves immediately by 4, which is strictly a better outcome, since there will be no longer diminishing returns. Its rarity and price should be rewarded handsomely
 - All Strength potions: usable by any class
 
 **Component 1535:** Make all potions usable by all classes
@@ -195,6 +201,21 @@ This component opens up scrolls to others, similar to other game editions. You c
 - **All bards and Thieves can as long as they have 12 Intelligence/Wisdom depending on scroll type**: Same as before but with the new restrictions.
 
 Note that this component differentiates between "wizard scroll" and "priest scroll" by usability flags. If a spell scroll allows priests to use them, they are considered priest spell scrolls.
+
+**Component 1541:** Make vorpal hits not work if target is under Stoneskin or Ironskins
+
+This component patches all weapons that deal vorpal hits in the vanilla game such that they don't work as long as the target is under the Stoneskin or Ironskins spells, as per the 2nd edition.
+
+This patching is manual, and I'm not too sure I can make a script that does this automatically for any and all  sources of vorpal hits installed through other mods, and as such it patches the following vanilla sources of vorpal hits:
+
+- Axe of the unyielding +5
+- Ravager +6
+- Balor's weapon
+- Solar's Bow/Sword
+- Planetar's Sword (unless my component for planetars is installed)
+- Silver sword
+
+If you want this component working for other mod-added weapons that cause vorpal hits (including creature attacks), let me know and I'll make sure this component patches those too.
 
 **Component 1601:** Make potions and food items's effects universally incapable of stacking with themselves
 
@@ -482,7 +503,17 @@ To me, the duration of the effects is too short. Plus, the "unknown" damage to t
 
 **Component 1000:** Make throwing poisoned daggers slightly more likely to poison enemies
 
-This component makes these items get a -2 penalty to save vs. Death which makes them more useful and compensates for their rarity.
+This component makes these items force a save vs. Death at -2, which makes them more useful and compensates for their rarity.
+
+**Component 1002:** Make throwing poisoned daggers slightly less rare
+
+This component increases the stock of these throwing daggers. In BG2, they're only increased in the same stores where they're found. There are now exactly 256 poisoned throwing daggers to be bought in the stores, which is slightly above double the amount available in stores by default. They're also spread more evenly among stores.
+
+In BGEE there are none, even though in SoD there are 800 in Waizahb's stock (halfling thieves' guild merchant in Coalition Camp). A bunch will also be spread to a few other relevant merchants in the main game:
+- Silence: 40
+- Black Lily: 40
+- Ulgoth's Beard innkeeper: 20
+- Thalantyr & Halbazzer (not SoD): 20
 
 **Component 1130:** Make Bone Blade dagger more special and not just a plain +4 dagger
 
@@ -491,7 +522,7 @@ Plain enchanted weapons are boring, and the higher the enchantment level, the mo
 Instead of simply giving the usual +4 weapon bonuses:
 
 - Being made partially from the tooth of a black dragon, it causes extra 1d4 acid damage on hit and increases Acid Resistance by 40%
-- Being tempered in the blood of the duergar smith, every hit causes +5 extra damage against all elves, including drow, and the inhabitants native to the Underdark: beholders, mind flayers, kuo-toa, hook horrors, duergar, driders and umber hulks
+- Being tempered in the blood of the duergar smith, every hit causes +5 extra damage against all elves, including drow, and other inhabitants native to (or frequent inhabitants of) the Underdark: beholders, mind flayers, kuo-toa, hook horrors, driders, spiders, and umber hulks
 
 **Component 1140:** Make Dagger of the Star slightly more powerful.
 
@@ -560,7 +591,7 @@ This component doesn't make the weapon available. Mods such as Unfinished Busine
 - BAM changed so its gem on the hilt looks green, like Artemis Entreri's dagger.
 - Description changed to something different than Soultaker dagger. Check "unique_descriptions.md"
 - Gleams red
-- Changes of draining levels is now 18%, and it drains 2 levels
+- Changes of draining levels is now 18%, and it drains 2 levels. Recover 1d6 HP plus 10% of your max health upon draining levels.
 - 1 HP drained per hit; 3 HP when wielded by vampires
 - Targets killed while wielding this weapon grant +1 Strength, +1 Dexterity, 6 HP regenerated over 1 round, and 3 seconds where your HP cannot go below 1.
 - Grants 50% resistance to cold and electricity
@@ -610,7 +641,7 @@ This component improves the description to something a bit more interesting than
 - The sword acts in **every way** as a +6 two-handed sword **against mind flayers only**, that is, +6 THAC0, +6 enchantment, 1d10+6 damage
 - Against other targets, it's still a +3 weapon in terms of damage, thac0 and enchantment level
 - Wielding it makes the wielder immune to mind blasts and domination attempts by mind flayers
-- Critical hits cause a psionic blast which causes 2d8 magic damage and causes Confusion for 10 seconds if a Save vs. Spell at -2 is failed. Mind flayers save with a -4 penalty
+- Critical hits cause  which causes 2d8 psychic (irresistible) damage and causes Confusion for 10 seconds if a Save vs. Spell at -2 is failed. Creatures without minds or brains are unaffected.
 - Speed factor of 6
 
 **Component 1318:** Make Flame of the North +2 affect all evil, not just chaotic evil
@@ -718,6 +749,24 @@ This component enhances the weapon a bit, inspired by the description about how 
 - Other than +2 cold damage, it has a chance to unleash extra 1d6 cold damage if hit target fails a Save vs. Death
 - Every hit has a 25% chance of decreasing Strength by 2 for 5 rounds. This can't kill the target. If Strength is less than 3, it drains -2 Constitution instead, which can kill the target (though it would be fairly difficult to pull it off considering the duration of 5 rounds)
 
+**Component 1606:** Make the Ravager's vorpal hit bound by saving throws with harsh penalties and rebalance effects
+
+I hate with passion this 10% chance of killing period-no-questions-asked thing, so:
+
+- The chance of killing (vorpal hit) is now bound to a Save vs. Death at -4 to trigger, similar to Axe of the Unyielding
+- Additionally, Cloak of Fear can be instantly cast.
+- And the poison damage is set up differently, and brings elements from the Serpent Shaft. Instead of causing 3d6 poison damage instantly, the damage is now reestructured such that it causes 2d6 poison damage instantly AND poisons the target for 1 round (12 poison damage in total). This ensures a minimum dealt damage of 14 within a round and you deal a 1-round annoyance for casters as well.
+
+
+**Component 1607:** Make Gram, the Sword of Grief able to become +6 and rebalance effects
+
+- Poison is underrepresented and as such, its minimum damage has been risen:
+  - Base version: instead of 2d12, it's 2d6+12, with a 10% chance of triggering (vanilla)
+  - Upgraded version: same damage, but with a 15% chance of triggering instead of 10%
+- Upgraded version now becomes +6, matching therefore the maximum damage of Warblade +4 and becoming the most powerful damaging two-handed sword per hit in the 1d10 range
+- Passive +5% MR is now +10% (it has to compete with Carsomyr so 5% for a two-handed weapon is nonsense)
+- The 1-level drain per hit with -5 penalty on the upgraded version is fairly inconsequential by the time you get it (from Abazigal's corpse). Instead, it causes affected creatures to deal -10% damage for 2 rounds, aka it's a weakening effect, with a save vs. Death -5 to save against it. This also affects magical and elemental damage. Does not stack.
+
 
 </details>
 
@@ -754,7 +803,7 @@ In reality, the sword deals 1d8+2 against all enemies and 1d8+2 again in a secon
 - THAC0 against dragons and wyverns has a +4 bonus (side effect: affects other weapons while dual wielding)
 - +2 AC vs. Dragons and Wyverns (essentially like a "Protection from Dragons and Wyverns" spell)
 - Detect Invisibility can be cast three times, not once per day
-- Deals an additional tick of 2d6+6 damage if the target is a dragon or wyvern
+- Deals an additional tick of 2d8+2 damage if the target is a dragon or wyvern
 
 **Component 1210:** Make The Equalizer slightly more powerful
 
@@ -790,7 +839,7 @@ This makes the dispel magic effect equal to those in the Staff of the Magi and C
 
 The effect is pretty underwhelming for a +4 weapon. Since it's advertised as a defender weapon, the following is added:
 
-AC bonus improved to 2 (instead of 1) plus 1 against slashing, piercing, and missile weapons. 5% universal damage  and magic resistance.
+AC bonus improved to 2 (instead of 1) plus 1 against slashing, piercing, and missile weapons. 5% universal damage and magic resistance.
 
 **Component 1260:** Make Usuno's Blade slightly more electrically powerful
 
@@ -976,7 +1025,7 @@ This improves this item in the following ways:
 
 **Component 1325:** Make Borok's Fist +2 different from Ashideena +2
 
-This exists simply because I hate that it's identical to Ashideena. So, inspired by the description, it has a neat bonus against giant humanoids: on hit, they get Stunned for 1 round if they fail a save vs. Spell at +2
+This exists simply because I hate that it's identical to Ashideena. So, inspired by the description, it has a neat bonus against giant humanoids: on hit, they get Stunned for 1 round if they fail a save vs. Spell at +2. Additionally, the electrical damage on hit is 1d2 and not 1.
 
 **Component 1326:** Make Maces of Disruption more balanced when fighting the undead and improve misleading description
 
@@ -992,7 +1041,7 @@ Finally, this also modifies the deva's Mace of Disruption such that it follows t
 
 **Component 1010:** Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost
 
-This makes those very expensive darts much more likely to affect characters, which is a fair compensation for their rarity and huge monetary cost. Save vs. Death is now at -4.
+This makes those very expensive darts much more likely to affect characters, which is a fair compensation for their rarity and huge monetary cost. Save vs. Death is now at -4. Additionally, 1d2 poison damage is caused on contact.
 
 **Component 1330:** Make Darkfire Bow slightly more remarkable
 
@@ -1088,7 +1137,7 @@ Additionally, the versions that have one fiend in them deal +1 fire damage compa
 
 **Component 1641:** Make the item creation abilities of vanilla NPCs slightly better
 
-This makes these skills generate more items. Jan Jansen will create 10 Bruiser Mates. Eldoth will create 15 poisoned arrows. Additionally, his poisoned arrows will deal 20 poison damage over 40 seconds instead of 13, and Jan's bolts will deal 1d3+1 damage instead of 1d2+1.
+This makes these skills generate more items. Jan Jansen will create 10 Bruiser Mates. Eldoth will create 15 poisoned arrows. Additionally, his poisoned arrows will deal 20 poison damage over 40 seconds instead of 13.
 
 **Component 1642:** Make Nalia's ring slightly more powerful
 
@@ -1168,7 +1217,7 @@ Same as the previous component.
 
 **Component 161:** Make Phantom Blade scale in duration up to level 20, instead of to level 18
 
-Might be a bug present in various spells. See Glyph of Warding component.
+Only fixes damage waking sleepers issue in IWDEE, as the duration scales fine in IWDEE.
 
 **Component 170:** Make Wail of the Banshee inflict some magical damage and deafness on a successful save
 
@@ -1453,9 +1502,34 @@ This component allows creatures that have True Sight or True Seeing active to au
 
 This component improves this spell such that it has equal level of spell absorption as that of the cleric level (20 for BG, 30 for IWDEE).
 
-**Component 467:** Make Sunray be able to kill undead regardless of their magic resistance and magic damage resistance
+**Component 467:** Make Sunray and False Dawn less OP and/or more balanced
 
-This component makes the spell usable against undead even if they're immune to magic damage resistance. Additionally, magic resistance does not affect the spell.
+Sun-based spells in the game are a bit unbalanced in my opinion. Let's start with the main problems I see with False Dawn:
+
+- Casting speed of 9, compared to 4 in Sunray (very strange)
+- 6d6 damage to undead for a level 6 spell (you might as well use Sunfire if available, it causes more damage, even if it doesn't cause Confusion for 6 seconds)
+- This damage can be resisted with magic damage resistance, which is silly.
+
+The solution I propose:
+
+- Casting speed is now 4, equal to Sunray
+- The damage is no longer defeated by magic damage resistance, it reduces current Health by 20% and causes 15 points of damage that can't be resisted
+- The Confusion effect now lasts 2 rounds
+
+And now with the problems of Sunray, which are similar to the problems I see with Disruption weapons (see components for mace of disruption):
+
+- You can cheese the hell out of incredibly powerful creatures like liches easily. It's stupidly powerful, even if liches are cadaverous undead that are not actually sensitive to sunlight and cannot be destroyed by it.
+- Exposure do sun can be stopped by magic damage resistance, which is stupid.
+
+Solution:
+
+- The damage inflicted is half fire, half radiant (cannot be resisted)
+- The damage to non-undead is 4d6, blindness is still 1 turn as usual
+- Undead take 20d6 fire and radiant damage, and:
+  - Spectral undead: weakens them, causing Slow for 2 rounds, 30% weakness to physical damage for 3 rounds, reduced damage output by -2 for physical attacks and -30% for elemental attacks for 4 rounds, and -2 AC penalty for 5 rounds
+  - Vampires: must save vs. Spell or be utterly destroyed no matter their resistances
+
+This solution follows the 2nd edition more closely, where only undead who are specifically sensitive to light may be destroyed by it. Spectral undead are generally weakened, but not destroyed, vampires and vampire spawn can be utterly destroyed, and other cadaverous undead aren't weakened or destroyed (including liches and demiliches).
 
 **Component 468:** Rebalance Call Lightning's damage and scaling
 
@@ -1616,6 +1690,26 @@ Also, pay attention to any mods that modify the behavior of summoned demons, esp
 
 I was always annoyed at how immensely more powerful Planetars are compared to Devas. Haste is just too good not to use. Devas will be permanently hasted now, same as planetars.
 
+**Component 3040:** Make the planetar more balanced and allow it to grant allies passive partial spell invulnerability
+
+Planetars have a 25% of dealing a vorpal hit with a -4 save penalty, which is even more powerful than the silver sword. It's a common source of cheese. The following changes are in:
+
+- Weapon are considered +5 for the purposes of what they can hit, and THAC0 bonus (weapon damage unchanged)
+- Weapon no longer vorpal, and the chances of dispel lowered to 20%
+- Dispel on hit level is now 25 instead of 10. Level 10 is unlikely to ever be useful by the time you get to summon planetars, and it matches their levels.
+- Deals on hit +2 cold and fire damage
+- Fiends and celestials take 4 divine (irresistible) damage on a successful hit
+- Inspired by NWN2, it also grants the planetar partial invulnerability to magic as per the Minor Globe of Invulnerability spell. This effect is granted to all allies near the planetar. That is, while the planetar is around, your party is immune to spell levels from 1 to 3.
+
+**Component 3050:** Make the Balor's vorpal attack not guaranteed to succeed but be affected by a saving throw too
+
+I don't like being killed without any reasonable chance to defend against the killing blow other than luck or Death Ward. Especially with demons, who are very capricious about who to target. The Balor's vorpal attack has a 16% chance of killing anything forever (no resurrection allowed), and only by equipping something that grants immunity against death effects, or using Death Ward, can you avoid it. Therefore:
+
+- Probability of triggering adequately brought down to 15% chance, as intended
+- It still forces a Save vs. Death at -2 to trigger.
+
+In short, their vorpal weapon will be identical to the silver sword's, but will trigger 15% of the time instead of 25%.
+
 
 </details>
 
@@ -1634,12 +1728,12 @@ I highly advise to make this mod the first tweak mod in your mod tweaks, at leas
 ## Credits
 
 - To BeamDog and Bioware for the game, obviously.
-- CamDawg for spending significant time to explain details about how WeiDu works, sharing insights, helpful code, and other matters for modding
+- CamDawg for spending significant time to explain details about how WeiDu works, sharing insights, helpful code, and other matters for modding. Many thanks for your tutorials too
 - DavidW for his great WeiDu tutorial
 - Thanks to the developers of WeiDu, including the documentation
 - And the IESDP, an invaluable resource.
 - People on Discord generally for their help, and the great modders out there that allowed their WeiDu code to be available publicly, like jmerry, Camdawg, 11jo, Argent77, Ardanis, DavidW, SubtleDoctor, among others.
-- zenblack for feedback and icon-making.
+- zenblack for feedback, brainstorming, and icon-making.
 
 ---
 

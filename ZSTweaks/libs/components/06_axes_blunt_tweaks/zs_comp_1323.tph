@@ -26,6 +26,6 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
 
     COPY_EXISTING ~AX1H10A.EFF~ ~override~
                   ~AX1H10B.EFF~ ~override~
-        LPF ALTER_EFF_FILE INT_VAR parameter1=3 END
+        LPF ALTER_EFF_FILE INT_VAR parameter1=3 special=1024 END
     BUT_ONLY
 END

@@ -2,5 +2,6 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING ~HALB05.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7710) END
         LPF ALTER_HEADER INT_VAR match_type=1 damage=4 END
+        LPF ALTER_EFFECT INT_VAR match_opcode=12 special=1024 END
     BUT_ONLY
 END

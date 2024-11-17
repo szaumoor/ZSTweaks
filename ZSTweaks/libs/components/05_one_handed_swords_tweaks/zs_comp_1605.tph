@@ -2,7 +2,7 @@ ACTION_IF GAME_IS "bgee bg2ee eet" BEGIN
     COPY_EXISTING "SW1H24.ITM" ~override~
         LPF ALTER_ITEM INT_VAR this_plus = 1 id_ref_desc=RESOLVE_STR_REF(@8011) id_ref_name=RESOLVE_STR_REF(@8010) ench=2 flags=2**9 END
         LPF ALTER_HEADER INT_VAR speed = 2 to_hit=2 damage=2 END
-        LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 2 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 2 special = 1024 END
         LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 177 END
         LPF ALTER_EFFECT INT_VAR match_opcode=344 match_parameter2=3 match_parameter1=4 special=5 END
         // regenerating creatures
@@ -42,8 +42,8 @@ ACTION_IF GAME_IS "bgee bg2ee eet" BEGIN
     COPY_EXISTING ~TROLLD1.EFF~ ~override~
                   ~FT3DAM.EFF~ ~override~
                   ~FT2DAM.EFF~ ~override~
-                  ~FT2DAM.EFF~ ~override~
+                  ~FT1DAM.EFF~ ~override~
         LPF GET_DMG_TYPE STR_VAR type = ~fire~ RET fire = result END
-        LPF ALTER_EFF_FILE INT_VAR parameter2 = fire END
+        LPF ALTER_EFF_FILE INT_VAR parameter2 = fire special = 1024 END
     BUT_ONLY
 END

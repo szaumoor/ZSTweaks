@@ -6,7 +6,15 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         LPF GET_DMG_TYPE STR_VAR type=~piercing~ RET piercing = result END
         LPF CLONE_EFFECT INT_VAR match_opcode = 12 parameter2=piercing dicesize=6 dicenumber=1 STR_VAR insert=~below~ END
     BUT_ONLY
+
     COPY_EXISTING ~SCRL1X.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
     BUT_ONLY
+
+    COPY_EXISTING ~SPIN723.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1=2 END
+        LPF GET_DMG_TYPE STR_VAR type=~piercing~ RET piercing = result END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 12 parameter2=piercing dicesize=6 dicenumber=1 STR_VAR insert=~below~ END
+    BUT_ONLY
+
 END

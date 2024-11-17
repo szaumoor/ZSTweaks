@@ -20,4 +20,9 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         END
 
     BUT_ONLY
+
+    COPY_EXISTING "SW1H64A.EFF" ~override~
+                  "SW1H65A.EFF" ~override~
+        LPF ALTER_EFF_FILE INT_VAR special=1024 END
+    BUT_ONLY
 END

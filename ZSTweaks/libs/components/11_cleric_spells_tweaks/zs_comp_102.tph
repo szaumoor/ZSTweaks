@@ -15,4 +15,10 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             dur += 6
         END
     BUT_ONLY
+
+    ACTION_IF FILE_EXISTS_IN_GAME ~FBLADE.EFF~ BEGIN
+        COPY_EXISTING ~FBLADE.EFF~ ~override~
+            LPF ALTER_EFF_FILE INT_VAR special = 1024 END
+        BUT_ONLY
+    END
 END

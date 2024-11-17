@@ -41,11 +41,10 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
     BUT_ONLY
 
     COPY_EXISTING ~MACEDISU.EFF~ ~override~
-        LPF ALTER_EFF_FILE INT_VAR parameter1=3 END
-    BUT_ONLY
+        LPF ALTER_EFF_FILE INT_VAR parameter1=3 special=1024 END
 
-    COPY_EXISTING ~DEVA.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8051) END
+    COPY_EXISTING ~DEVA.ITM~    ~override~
+                  ~OHBDEVA.ITM~ ~override~
         LPF DELETE_EFFECT INT_VAR check_globals=0 match_opcode=177 STR_VAR match_resource=~DIE~ END
         LPF DELETE_EFFECT INT_VAR check_globals=0 match_opcode=177 STR_VAR match_resource=~MESDIE~ END
         SET demonic = IDS_OF_SYMBOL(race DEMONIC)
@@ -64,4 +63,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ADD_ON_HIT_EFF INT_VAR t=99 p2=3 p1=undead STR_VAR res=~ZSTWDH03~ effects=~op=177,res=ZSTWDH04;op=177~ END
     BUT_ONLY
 
+     COPY_EXISTING ~MACEDISU.EFF~ ~override~
+                   ~cddisr.EFF~   ~override~
+        LPF ALTER_EFF_FILE INT_VAR special=1024 END
 END
