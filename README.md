@@ -1507,25 +1507,23 @@ This component improves this spell such that it has equal level of spell absorpt
 Sun-based spells in the game are a bit unbalanced in my opinion. Let's start with the main problems I see with False Dawn:
 
 - Casting speed of 9, compared to 4 in Sunray (very strange)
-- 6d6 damage to undead for a level 6 spell (you might as well use Sunfire if available, it causes more damage, even if it doesn't cause Confusion for 6 seconds)
-- This damage can be resisted with magic damage resistance, which is silly.
+- 6d6 damage to undead for a level 6 spell (you might as well use Sunfire if available, it causes more damage, even if it doesn't cause Confusion for 12 seconds)
 
 The solution I propose:
 
 - Casting speed is now 4, equal to Sunray
-- The damage is no longer defeated by magic damage resistance, it reduces current Health by 20% and causes 15 points of damage that can't be resisted
-- The Confusion effect now lasts 2 rounds
+- The damage is no longer defeated by magic damage resistance, and deals 5d6 fire damage and 5d6 magic damage (originally it was 6d6 fire damage)
 
 And now with the problems of Sunray, which are similar to the problems I see with Disruption weapons (see components for mace of disruption):
 
 - You can cheese the hell out of incredibly powerful creatures like liches easily. It's stupidly powerful, even if liches are cadaverous undead that are not actually sensitive to sunlight and cannot be destroyed by it.
-- Exposure do sun can be stopped by magic damage resistance, which is stupid.
+- Exposure to sun can be stopped by magic damage resistance, which is stupid.
 
 Solution:
 
 - The damage inflicted is half fire, half radiant (cannot be resisted)
 - The damage to non-undead is 4d6, blindness is still 1 turn as usual
-- Undead take 20d6 fire and radiant damage, and:
+- Undead take 1d6 fire and radiant damage per level up to 20d6, and:
   - Spectral undead: weakens them, causing Slow for 2 rounds, 30% weakness to physical damage for 3 rounds, reduced damage output by -2 for physical attacks and -30% for elemental attacks for 4 rounds, and -2 AC penalty for 5 rounds
   - Vampires: must save vs. Spell or be utterly destroyed no matter their resistances
 
