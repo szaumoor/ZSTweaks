@@ -33,7 +33,6 @@ COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
             PATCH_IF thief BEGIN
                 WRITE_LONG 0x1e (THIS - 2**22)
             END
-
         END
     END
 BUT_ONLY

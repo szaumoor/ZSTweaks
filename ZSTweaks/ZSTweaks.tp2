@@ -21,6 +21,7 @@ FORBID_COMPONENT "ZSTweaks.tp2" "120"  @57 FORBID_COMPONENT "ZSTweaks.tp2" "1120
 FORBID_COMPONENT "ZSTweaks.tp2" "1121" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1150" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1160" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1350" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1352" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1360" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1361" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1362" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1370" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1400" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1430" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1435" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1440" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1450" @57
@@ -96,6 +97,22 @@ FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/01_general_tweaks/zs_comp_1360.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1361 DESIGNATED 1361 GROUP @10 // axes critical damage tweak
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~%MOD_FOLDER%/libs/components/01_general_tweaks/zs_comp_1361.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1362 DESIGNATED 1362 GROUP @10 // blunt weapons ac debuff tweak
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~%MOD_FOLDER%/libs/components/01_general_tweaks/zs_comp_1362.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1370 DESIGNATED 1370 GROUP @10 // KATANAS DAMAGE
@@ -284,6 +301,7 @@ INCLUDE ~%MOD_FOLDER%/libs/components/01_general_tweaks/zs_comp_15390.tph~
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @15391 DESIGNATED 15391 SUBCOMPONENT @1539 GROUP @10 // scroll use tweak (all, stat requirement)
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "1544" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/01_general_tweaks/zs_comp_15391.tph~
@@ -298,9 +316,17 @@ INCLUDE ~%MOD_FOLDER%/libs/components/01_general_tweaks/zs_comp_15392.tph~
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @15393 DESIGNATED 15393 SUBCOMPONENT @1539 GROUP @10 // scroll use tweak (rogues only, stat requirement)
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "1544" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/01_general_tweaks/zs_comp_15393.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1544 DESIGNATED 1544 GROUP @10 // scrolls cast at character level tweak
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~%MOD_FOLDER%/libs/components/01_general_tweaks/zs_comp_1544.tph~
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1536 DESIGNATED 1536 GROUP @10 // FAMILIAR REBALANCE TWEAK
@@ -1525,6 +1551,7 @@ FORBID_COMPONENT "ZSTweaks.tp2" "1520" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1521
 FORBID_COMPONENT "ZSTweaks.tp2" "1640" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1641" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1642" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1643" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1644" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1645" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1646" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1379.tph~
@@ -1626,20 +1653,28 @@ FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
 
 INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1645.tph~
 
-///////////////////////////////////// MISC ITEMS TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1646 DESIGNATED 1646 GROUP @17 // SAREVOK TWEAK
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1646.tph~
+
+///////////////////////////////////// MISC TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1190 DESIGNATED 1190 GROUP @18 // ROD OF MIGHT TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~%MOD_FOLDER%/libs/components/09_misc_items_tweaks/zs_comp_1190.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/09_misc_tweaks/zs_comp_1190.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1600 DESIGNATED 1600 GROUP @18 // CHARNAME TANKARD TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+BEGIN @3500 DESIGNATED 3500 GROUP @18 // SHADOW JUMP TWEAK
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @52
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-INCLUDE ~%MOD_FOLDER%/libs/components/09_misc_items_tweaks/zs_comp_1600.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/09_misc_tweaks/zs_comp_3500.tph~
 
 //////////////////////////////////// WIZARD SPELL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////////////////////////

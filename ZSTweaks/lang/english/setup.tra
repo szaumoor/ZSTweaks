@@ -7,7 +7,7 @@
 @15 = ~Axes and Blunt Weapons Tweaks~
 @16 = ~Ranged Weapon Tweaks~
 @17 = ~NPC Tweaks~
-@18 = ~Misc Item Tweaks~
+@18 = ~Miscellaneous Tweaks (aka pending for a better category)~
 @19 = ~Wizard Spell Tweaks~
 @20 = ~Cleric/Druid Spell Tweaks~
 @21 = ~Class and Kit-related Tweaks~
@@ -26,6 +26,7 @@
 @56 = ~This component is only compatible with IWDEE, BG2EE and EET~
 @57 = ~Can't install groups of components if individual components (without subcomponents) are installed already~
 @58 = ~Can't install components included in components that install groups of other components~
+@59 = ~This component must be installed before the next scroll tweak~
 // end warning messages components
 
 @10000 = ~Install all tweaks in the general tweaks group (except the ones that require a choice)~
@@ -45,27 +46,30 @@
 @120 = "Make conjured magical weapons grant 2 APR by default"
 @1120 = "Make some weapon categories incur backstab penalties for balance"
 @1121 = ~Make Flails and Morningstars always inflict a small amount of piercing damage~
-@1150 = "Make Spears do baseline damage of 1d8, not 1d6"
-@1160 = "Make Warhammers do baseline damage of 1d5+1, not 1d4+1 (except hammers outside that range)"
+@1150 = "Make Spears do a baseline damage of 1d8, not 1d6"
+@1160 = "Make Warhammers do a baseline damage of 1d5+1, not 1d4+1 (except hammers outside that range)"
 @1350 = "Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8"
 @1352 = "Make Wakizashis a piercing/slashing weapon"
 @1360 = "Make Light Crossbows get +1/2 more APR"
-@1370 = "Make Katanas deal 2d5 instead of 1d10"
-@1400 = "Make Bastard Swords deal 1d8+1 by default"
-@1430 = "Make Two-handed swords deal 1d9+1 by default, and 2d6 where it applies"
-@1435 = "Make Darts use a speed factor of 0"
+@1361 = ~Make one-handed axes deal extra damage equal to its base damage on critical hits~
+@1362 = ~Make maces, clubs, and hammers damage the target's AC temporarily based on enchantment level~
+@1370 = "Make Katanas deal 2d5 damage instead of 1d10"
+@1400 = "Make Bastard Swords deal 1d8+1 damage by default"
+@1430 = "Make Two-handed swords deal 1d9+1 damage by default, and 2d6 for 1d12 swords"
+@1435 = "Make Darts have a speed factor of 0"
 @1440 = "Make Daggers have general extra features to compensate for the low damage"
 @1450 = "Make some rogue weapons able to do more damage if wielded by pure thieves (Finesse)"
-@1530 = ~Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time~
+@1530 = ~Make the inexplicably double damage magical throwing daggers deal normal, to not make them the obvious choice~
 @1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense~
 @1532 = ~Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage~
 @1533 = ~Rebalance some wands~
 @1534 = ~Rebalance some potions~
 @1535 = ~Make all potions usable by all classes~
-@1536 = ~Make vanilla familiars more resilient and useful and diminish penalties~
+//@1536 = ~Make vanilla familiars more resilient and useful and diminish penalties~
 @1537 = ~Make Poison-curing spells an instant cast so attempting to cure poison is less likely to be interrupted~
 @1650 = ~Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak~
 @1601 = ~Make potions and food items's effects universally incapable of stacking with themselves~
+@1541 = ~Make vorpal hits not work if target is under Stoneskin or Ironskins~
 @1538 = ~Make jewelry and other items meant to be sold more valuable~
 @15380 = ~1.25x~
 @15381 = ~1.5x~
@@ -77,13 +81,11 @@
 @15387 = ~3x~
 @1539 = ~Make classes other than arcane and divine spellcasters able to use scrolls freely~
 @15390 = ~Everyone can~
-@15391 = ~Everyone can as long as they have 12 Intelligence/Wisdom depending on scroll type~
+@15391 = ~Everyone can as long as they have the right stats depending on scroll type~
 @15392 = ~All bards and Thieves can~
-@15393 = ~All bards and Thieves can as long as they have 12 Intelligence/Wisdom depending on scroll type~
-@1541 = ~Make vorpal hits not work if target is under Stoneskin or Ironskins~
+@15393 = ~All bards and Thieves can as long as they have the right stats depending on scroll type~
+@1544 = ~Make scrolls always cast at the character level regardless of class~
 // @1539 = ~Make Void-weapons not sap the strength of the undead when held~
-//@1535 = ~Rebalance scrolls such that the spellcasting level is always at least double its (wizard) spell level~
-
 
 /// ARMOR/GEAR TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -130,7 +132,7 @@
 
 // subcomponent str of component @1664
 @16640 = ~Affect all~
-@16641 = ~Only affect selected items~
+@16641 = ~Only affect a selection of items~
 @16642 = ~Only affect ioun stones~
 @16643 = ~Only affect circlets~
 
@@ -245,10 +247,11 @@
 @1643 = ~Make Corthala family blade more powerful and more effective against wizards~
 @1644 = ~Remove unnecessary stat restrictions in NPC gear~
 @1645 = ~Make Cernd's cloak more powerful~
+@1646 = ~Make Sarevok's Deathbringer assault a bit more balanced~
 
-// MISC ITEMS
+// MISCELLANEOUS
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
-@1600 = ~Make CHARNAME's Tankard heal as much as a Potion of Extra Healing (Neera's quest)~
+@3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane~
 
 
 // WIZARD SPELLS
@@ -325,7 +328,7 @@
 @2130 = "Make Set Spike Trap do piercing damage instead of magic damage"
 @2140 = "Make Exploding Trap do slightly more damage: 15d6 as opposed to 10d6"
 @2141 = ~Make Assassination more generally useful, especially for single-classed Thieves~
-@2150 = "Make selected HLAS unable to be breached"
+@2150 = "Make a selection HLAS unable to be breached"
 @2160 = ~Make Quivering Palm slightly more powerful at high levels~
 @2170 = ~Make the THAC0 progression of Thieves better and more streamlined, so they improve up to 6, like clerics~
 @2171 = ~Fix Swashbuckler incorrect THAC0 when Thief THAC0 improvement is installed (only use if no Swashbuckler overhaul is installed!)~
@@ -344,8 +347,6 @@
 @3040 = ~Make the planetar more balanced and allow it to grant allies passive partial spell invulnerability~
 @3050 = ~Make the Balor's vorpal attack not guaranteed to succeed but be affected by a saving throw too~
 
-//MISC TWEAKS
-@3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane (Rasaad's Quest)~ // TODO, add Lava's areas too
 
 // NEW DESCRIPTIONS
 @5000 = ~Glyph of Warding
@@ -5449,6 +5450,8 @@ Weight: 9~
 
 @8160 = ~Toggle spell invulnerability~
 @8161 = ~The planetar emanates an aura of protection that protects all allies against spells of levels 1, 2, and 3, as per the Minor Globe of Invulnerability spell~
+
+@8170 = ~Paralyzed with fear~
 
 
 @99999 = ~Damage~ // for text patching

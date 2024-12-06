@@ -1,0 +1,19 @@
+COPY ~%MOD_FOLDER%/items/hamaclub_ac~ ~override~
+COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
+    LPF ITM_CAT RET cat = result END
+    PATCH_IF cat = 21 OR cat = 17 BEGIN // hammers, maces, clubs
+        LPF ITM_ENCH RET ench = result END
+        PATCH_MATCH ench
+            WITH 0 1 BEGIN
+                 LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM1~ END
+            END  2 3 BEGIN
+                 LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM2~ END
+            END  4 5 BEGIN
+                 LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM3~ END
+            END  6 BEGIN
+                 LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM4~ END
+            END  DEFAULT
+                 PATCH_PRINT ""
+        END
+    END
+BUT_ONLY

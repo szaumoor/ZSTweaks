@@ -15,7 +15,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             END
             SAY_EVALUATED 0x54 ~%strref%~
         END ELSE BEGIN
-            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(strref) END
+            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6070) END
         END
     BUT_ONLY
 
@@ -35,7 +35,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             END
             SAY_EVALUATED 0x54 ~%strref%~
         END ELSE BEGIN
-            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(strref) END
+            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6071) END
         END
 
     BUT_ONLY

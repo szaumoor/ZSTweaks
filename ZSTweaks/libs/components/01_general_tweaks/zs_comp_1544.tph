@@ -1,0 +1,67 @@
+WITH_SCOPE BEGIN
+    OUTER_SET scroll_counter = 0
+    COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
+        LPF ITM_CAT RET cat = result END
+        LPF ITM_MIN_INT RET min_int = result END
+        PATCH_IF cat = 11 AND min_int != 0 BEGIN
+            SPRINT filename_base "RPSC"
+            READ_LONG 0x0c scroll_name
+            PATCH_IF scroll_counter > 9999 BEGIN
+                PATCH_FAIL "Too many scrolls to process!"
+            END ELSE PATCH_IF scroll_counter < 10 BEGIN
+                SPRINT number "000%scroll_counter%"
+            END ELSE PATCH_IF scroll_counter < 100 BEGIN
+                SPRINT number "00%scroll_counter%"
+            END ELSE PATCH_IF scroll_counter < 1000 BEGIN
+                SPRINT number "0%scroll_counter%"
+            END ELSE PATCH_IF scroll_counter < 10000 BEGIN
+                SPRINT number "%scroll_counter%"
+            END
+
+            SET found = 0
+            GET_OFFSET_ARRAY ab_array 0x64 4 0x68 2 0 0 0x38
+            PHP_EACH ab_array AS int => ab_off BEGIN
+                GET_OFFSET_ARRAY2 fx_array ab_off ITM_V10_HEAD_EFFECTS
+                PHP_EACH fx_array AS int => fx_off BEGIN
+                    SET opcode = SHORT_AT ( fx_off )
+                    SET opcode_target = BYTE_AT ( fx_off + 0x2 )
+                    PATCH_IF opcode = 146 OR opcode = 148 BEGIN
+                        ++found
+                        PATCH_IF found = 1 BEGIN
+                            READ_ASCII ( fx_off + 0x14 ) resource
+                            TO_UPPER resource
+                            INNER_PATCH_FILE ~%resource%.SPL~ BEGIN
+                                READ_LONG 0x64 offset
+                                SET header_type = BYTE_AT ( offset )
+                                SET target = BYTE_AT ( offset + 0xc )
+                            END
+
+                            INNER_ACTION BEGIN
+                                LAF CREATE_SPELL INT_VAR flags=33604096 STR_VAR spell = ~RPSC%number%~ END
+                                COPY_EXISTING ~RPSC%number%.SPL~ ~override~
+                                    // LPF ALTER_SPELL INT_VAR ref_name = scroll_name END // causes duplicated log entries
+                                    FOR ( index = 0; index < 50; ++index ) BEGIN
+                                        LPF ADD_SPELL_HEADER INT_VAR type=header_type target=target range=5000
+                                        required_level=(index+1) END
+                                        LPF ADD_SPELL_EFFECT
+                                            INT_VAR
+                                                parameter1 = (index+1)
+                                                header = (index+1)
+                                                opcode = opcode
+                                                target = opcode_target
+                                            STR_VAR
+                                                resource = ~%resource%~
+                                        END
+                                    END
+                                BUT_ONLY
+                            END
+                            ++scroll_counter
+                            LPF ALTER_EFFECT INT_VAR match_opcode=opcode parameter1=1 resist_dispel=0 STR_VAR resource = ~RPSC%number%~ power=0 END
+                        END
+                    END
+                END
+            END
+        END
+    BUT_ONLY
+
+END

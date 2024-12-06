@@ -30,6 +30,25 @@ BEGIN
     END
 END
 
+DEFINE_PATCH_FUNCTION IS_BIT_SET
+INT_VAR
+    bit = "-1"
+    bit_field = "-1"
+    bit_limit = 32
+RET
+    result // 1 if flag is set, 0 if it's unset. -1 if invalid flag is asked for
+BEGIN
+    PATCH_IF bit_field = "-1" BEGIN
+        PATCH_FAIL "Bit field not set"
+    END
+    PATCH_IF bit >= 0 AND bit < bit_limit BEGIN
+        SET bitmask = (1 << bit)
+        SET result = (bit_field & bitmask) != 0
+    END ELSE BEGIN
+        SET result = "-1"
+    END
+END
+
 DEFINE_PATCH_FUNCTION CRE_IS_FLAG_SET
 INT_VAR
     flag = "-1"
