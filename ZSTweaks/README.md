@@ -60,6 +60,30 @@ This makes wakizashis hit as a slashing weapon if the circumstances favor it. IR
 
 Just a small bonus to make it more interesting and different compared to heavy crossbows. It's not too far-fetched anyway to think smaller crossbows can be reloaded faster. This will affect crossbows that have an APR bonus already, i.e., 1/2 APR will be added.
 
+**Component 1361:** Make one-handed axes deal extra damage equal to its base damage on critical hits
+
+The only difference between axes and swords functionally is the speed factor. Axes are 2 points slower than long swords. Speed factor determines how early or late you hit during your turn to attack each round. Its significance is debatable, and in my experience it's much more important for backstabbing, to ensure that the first movement of your character when attacking is an actual attack and not something cosmetic. To widen the difference between both, axes have the following difference:
+
+- Melee critical hits deal extra damage equal to 1d8 + Enchantment
+- Ranged critical hits deal extra damage equal to 1d6 + Enchantment
+
+For example, a critical hit with a +3 sword could deal 20 slashing damage, but if it was an axe, it would deal instead between 24-31 slashing damage (i.e. 20 plus 1d8+3)
+
+This is conceptually how it works in NWN. Axes deal triple critical damage. That would be absurd in the context of BG's health pools, but it provides regardless a bonus. Skull breaker!
+
+**Component 1362:** Make maces, clubs, and hammers damage the target's AC temporarily based on enchantment level
+
+This component adds a concept present in various games to maces and hammers, which is that armor is (or becomes) less effective when hit by them. This is true in BG in the sense that non-clothing armors are generally set, with a few exceptions, to be easier to hit with blunt weapons, but it doesn't apply to the numerous and vast majority of creatures that don't use an actual armor item.
+
+The AC debuff is mild and the power of it depends on the enchantment level of the weapon. It applies only to maces, clubs, and hammers, and lasts 12 seconds, which is refreshed each hit with no save allowed. Lower-level debuffs cannot override higher level debuffs. For example, if you have a character applying a -3 debuff with a +4 club, another character with a +1 mace will not remove the previous one. That is, the more powerful takes precedence.
+
+- +0,+1: -1 AC debuff for 2 rounds
+- +2,+3: -2 AC debuff for 2 rounds
+- +4,+5: -3 AC debuff for 2 rounds
+- +6: -4 AC debuff for 2 rounds
+
+Overall this should provide a mild tactical advantage when having at least one of your party members wielding these blunt weapons. This applies to enemies wielding these weapons too, so be warned.
+
 **Component 1370:** Make Katanas deal 2d5 instead of 1d10
 
 This mostly exists to create a differentiating factor in terms of damage from long swords. I think the inclination is clearly towards "Kara-Turan/eastern blades are higher quality." In practical terms, it means that katanas will deal more minimum damage, and luck bonuses would allow maximum damage dealt with less effort.
@@ -177,6 +201,7 @@ For consistency, all of the enchanted belts, boots and bracers will also grant t
 - Elixir of Health: the HP recovered is now 20 (from 10) and protects against being poisoned (but not to direct poison damage; not dispellable) for 10 seconds. This is added such that when taking heavy damage, if you're poisoned, it's more desirable than just gulping down a better HP potion to ensure survivability
 - Potion of Perception: now the proper "detection" thief skills are improved further (find traps and detect illusions): 40%. Additionally, the enhanced perception improves THAC0, AC, and Saving Throws by 2
 - Potion of Power: this makes the potion prevent morale failure like the potion of heroism, it improves all thieving abilities (not just some), it improves casting speed by 1, and it now also grants +10% higher damage output (physical and magical), which makes it useful for any class. Finally, the THAC0 bonus it provides is no longer to 80% of current, but instead improves immediately by 4, which is strictly a better outcome, since there will be no longer diminishing returns. Its rarity and price should be rewarded handsomely
+- CHARNAME'S Tankard: now it heals 27 HP three times per day, and it adds +1 Strength and Constitution for 1 turn, since it mentions feeling stronger when holding it.
 - All Strength potions: usable by any class
 
 **Component 1535:** Make all potions usable by all classes
@@ -196,11 +221,13 @@ This improves the value of all necklaces, rings, and gems that are not magical i
 This component opens up scrolls to others, similar to other game editions. You can think of scrolls as set of instructions to cast a spell, which anyone could use if they have the ability. The options are:
 
 - **Everyone can**: scrolls are usable by anyone at any point, with the vanilla restriction of having 9 intelligence at least
-- **Everyone can as long as they have 12 Intelligence/Wisdom depending on scroll type**: same as above, but to require more investment to increase your skillset, you need 12 intelligence to cast a wizard spell scroll, and 12 wisdom to cast a priest spell scroll.
+- **Everyone can as long as they have the right stats depending on scroll type**: same as above, but to require more investment to increase your skillset, you need to have an Intelligence of 8 + Spell Level to cast a wizard spell scroll, and a Wisdom of 8 + Spell Level to cast a priest spell scroll. For example, a level 5 priest scroll would require 13 Wisdom, and a level 8 wizard scroll would require 16 intelligence. Note that this restriction applies also to classes that could use scrolls originally.
 - **All bards and Thieves can**: this allows only rogues to do this, with the vanilla rules of 9 intelligence. This was added because rogues are the handy jack-of-all-trades types that can "fake" other classes and be generally skillful.
-- **All bards and Thieves can as long as they have 12 Intelligence/Wisdom depending on scroll type**: Same as before but with the new restrictions.
+- **All bards and Thieves can as long as they have the right stats depending on scroll type**: Same as the previous option, with the restrictions of the second option. Note that this restriction applies also to classes that could use scrolls originally.
 
 Note that this component differentiates between "wizard scroll" and "priest scroll" by usability flags. If a spell scroll allows priests to use them, they are considered priest spell scrolls.
+
+It's also worth mentioning that ToF's feat to use scrolls will also be rendered useless, where it applies.
 
 **Component 1541:** Make vorpal hits not work if target is under Stoneskin or Ironskins
 
@@ -1179,13 +1206,25 @@ Overall, this will complement his werewolf shapes and druidic traits. Obviously 
 
 It will also remove the needless stat restrictions from the item.
 
+**Component 1646:** Make Sarevok's Deathbringer assault a bit more balanced
+
+Deathbringer assault is a bit stupid. Yes, it's very cool. Yes, big ToB bosses are not affected. Yes, it triggers only 3% of the time. But it's still 200 slashing damage, without even a save to take only half. Sarevok also causes stun (even though it's supposed to be a fear-induced state) 11% of the time when he hits, which is almost always a death sentence when it happens, and cannot be dispelled, as it is a natural effect. The following changes are applied:
+
+- The damage part of the assault is now 150, and allows a save vs. Death at -5 to take half. 75 damage is still a BIG FAT hit, which is added on top of a regular hit, so... You'll be fine
+- Golems, other constructs, slimes, spiritual beings, spectral undead, and dragons are all immune to the damage no matter what
+- The stun is meant to be an effect of fear, not a "stun" per se, and as such, it's no longer a stunning effect, but a fear effect that roots the enemy in place and lowers their AC by 10. As such, only creatures that are not immune to fear will be affected by this.
+- The probability of stun (now a special type of fear) is a proper 10% chance
+- For flavor, Sarevok will also use his "Die!" line when a Deathbringer Assault happens
+
+This component contains the same fixes as klatu's deathbringer assault component. No need to use both.
+
 </details>
 
 ---
 
 <details>
 
-<summary><b>Misc Items Tweaks</b></summary>
+<summary><b>Misc Tweaks</b></summary>
 
 **Component 1190:** Make Rod of Lordly Might usable by any class and more powerful
 
@@ -1195,9 +1234,12 @@ The rod is conceptually quite interesting but generally underperforming.
 - **Flaming Long Sword +1** is renamed to Flaming Sword of Lordly Might +3, becomes a +3 weapon, causes 1d4 fire damage per hit, and the paralyze effect Save becomes +2 and not +5, but the Hold effect only lasts one round. Additionally, it makes it look like an actual flaming sword when held.
 - **Spear +3** is renamed to Spear of Lordly Might +3, and it no longer has a Save vs. Spell bonus of +6 to cause 2d4 magic damage, now it has no bonus or penalty and causes 3d4 magic damage when save is failed.
 
-**Component 1600:** Make CHARNAME's Tankard a bit more useful (Neera's quest)
+**Component 3500:** Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane
 
-This makes this item significantly more valuable. 3x 27 HP healing per day, plus +1 Strength and Constitution for 1 turn, since it mentions feeling stronger when holding it.
+This seems more a bugfix than a tweak, but it bothers me and it's not tackled anywhere else so here it is. No one can cast Shadowstep (Shadow Jump too if my Shadowdancer overhaul is installed) during those sequences, since those abilities rely on a brief plane shift to the Prime's parallel plane: the Plane of Shadow. This needs to be patched manually, and only the following areas are targetted:
+
+- Rasaad's ToB quest areas in the SP
+- Lava's Shade of the Sword Coast SP in Gnoll Stronghold
 
 </details>
 
