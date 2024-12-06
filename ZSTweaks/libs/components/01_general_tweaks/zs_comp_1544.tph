@@ -56,7 +56,7 @@ WITH_SCOPE BEGIN
                                 BUT_ONLY
                             END
                             ++scroll_counter
-                            LPF ALTER_EFFECT INT_VAR match_opcode=opcode parameter1=1 resist_dispel=0 STR_VAR resource = ~RPSC%number%~ power=0 END
+                            LPF ALTER_EFFECT INT_VAR match_opcode=opcode parameter2=1 resist_dispel=0 STR_VAR resource = ~RPSC%number%~ power=0 END
                         END
                     END
                 END
