@@ -229,6 +229,20 @@ Note that this component differentiates between "wizard scroll" and "priest scro
 
 It's also worth mentioning that ToF's feat to use scrolls will also be rendered useless, where it applies.
 
+**Component 1544:** Make scrolls always cast at the character level regardless of class
+
+This component will process all existing scrolls in the game, vanilla or modded, and make sure they're cast at the character level, no matter what your class is. So if you have a level 16 Thief that can use scrolls by whatever means (like using my previous component), they will be able to cast it as if they had a spellcasting level of 14.
+
+This pairs well with the previous component and greatly increases the usability of scrolls as a general resource for the whole party. I would recommend adding the options to enforce stat requirements so it's a bit more fair, but that's just me.
+
+**Component 1601:** Make potions and food items's effects universally incapable of stacking with themselves
+
+This prevents cheesy stacking of things like Fire Resistance, Saving Throws (Potion of Invulnerability), etc. Applies to food items such as apples from Lunia and goodberries.
+
+**Component 1650:** Make mage robes without cloaks (like Robe of Vecna) take on the appearance of robes with cloaks
+
+Purely cosmetic tweak. I've never liked the look of robes without cloaks or without hoods.
+
 **Component 1541:** Make vorpal hits not work if target is under Stoneskin or Ironskins
 
 This component patches all weapons that deal vorpal hits in the vanilla game such that they don't work as long as the target is under the Stoneskin or Ironskins spells, as per the 2nd edition.
@@ -243,14 +257,6 @@ This patching is manual, and I'm not too sure I can make a script that does this
 - Silver sword
 
 If you want this component working for other mod-added weapons that cause vorpal hits (including creature attacks), let me know and I'll make sure this component patches those too.
-
-**Component 1601:** Make potions and food items's effects universally incapable of stacking with themselves
-
-This prevents cheesy stacking of things like Fire Resistance, Saving Throws (Potion of Invulnerability), etc. Applies to food items such as apples from Lunia and goodberries.
-
-**Component 1650:** Make mage robes without cloaks (like Robe of Vecna) take on the appearance of robes with cloaks
-
-Purely cosmetic tweak. I've never liked the look of robes without cloaks or without hoods.
 
 </details>
 
@@ -1208,7 +1214,7 @@ It will also remove the needless stat restrictions from the item.
 
 **Component 1646:** Make Sarevok's Deathbringer assault a bit more balanced
 
-Deathbringer assault is a bit stupid. Yes, it's very cool. Yes, big ToB bosses are not affected. Yes, it triggers only 3% of the time. But it's still 200 slashing damage, without even a save to take only half. Sarevok also causes stun (even though it's supposed to be a fear-induced state) 11% of the time when he hits, which is almost always a death sentence when it happens, and cannot be dispelled, as it is a natural effect. The following changes are applied:
+Deathbringer assault is a bit stupid. Yes, it's very cool. Yes, big ToB bosses are not affected. Yes, it triggers only 3% of the time. But it's still 200 slashing damage, without even a save to take only half. Sarevok also causes stun (even though it's supposed to be a fear-induced state) 11% of the time when he hits for 2 rounds, which is almost always a death sentence when it happens, and cannot be dispelled, as it is a natural effect. The following changes are applied:
 
 - The damage part of the assault is now 150, and allows a save vs. Death at -5 to take half. 75 damage is still a BIG FAT hit, which is added on top of a regular hit, so... You'll be fine
 - Golems, other constructs, slimes, spiritual beings, spectral undead, and dragons are all immune to the damage no matter what
@@ -1216,7 +1222,7 @@ Deathbringer assault is a bit stupid. Yes, it's very cool. Yes, big ToB bosses a
 - The probability of stun (now a special type of fear) is a proper 10% chance
 - For flavor, Sarevok will also use his "Die!" line when a Deathbringer Assault happens
 
-This component contains the same fixes as klatu's deathbringer assault component. No need to use both.
+This component contains the same fixes as Tresset's deathbringer assault component. No need to use both.
 
 </details>
 
