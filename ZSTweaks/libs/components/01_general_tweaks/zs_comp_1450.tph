@@ -116,7 +116,6 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                         LPF ITM_STR_NAME RET name = result END
                         PATCH_WARN "[Finesse: Arrows] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
                 END
-                LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 32 STR_VAR class = ~THIEF~ spell = ~ZSTWA0~ END
             END ELSE BEGIN // void-tipped arrows
                 LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 32 insert_point = "-1"
                 STR_VAR class = ~THIEF~ spell = ~ZSTWAM0~ END
