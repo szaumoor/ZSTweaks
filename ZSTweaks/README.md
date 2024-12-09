@@ -1068,9 +1068,13 @@ Additionally, the extra damage applied to the undead is always the base damage o
 
 Finally, this also modifies the deva's Mace of Disruption such that it follows the same rules.
 
+</details>
+
 ---
 
-## Ranged Weapon Tweaks
+<details>
+
+<summary><b>Ranged Weapon Tweaks</b></summary>
 
 **Component 1010:** Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost
 
