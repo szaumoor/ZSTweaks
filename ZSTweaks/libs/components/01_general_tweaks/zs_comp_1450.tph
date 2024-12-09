@@ -143,7 +143,6 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                     LPF ITM_STR_NAME RET name = result END
                     PATCH_WARN "[Finesse: Bolts] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%"
             END
-            LPF weapon_damage_by_class INT_VAR type = 2 probability1 = 41 STR_VAR class = ~THIEF~ spell = ~ZSTWB0~ END
         END
     END // end bolts
     PATCH_IF wpn_cat = 24 AND wpn_prof = 106 BEGIN // darts
