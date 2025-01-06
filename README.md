@@ -184,6 +184,8 @@ I do not like gear that you can wear without any effect whatsoever. I can live w
 
 For consistency, all of the enchanted belts, boots and bracers will also grant this. The unenchanted items will still be a bottom-of-the-barrel choice, but at least they don't exist just as unglorified decoration and will provide some use, especially at the beginning of BGEE (and IWDEE?), which should encourage filling all the gear slots.
 
+WARNING: Install after any other tweak (including those in this mod) that may modify any of these items. If in doubt, just make it the last tweak in your install order. This is to prevent unintended behavior that may nullify changed made by other mods.
+
 **Component 1533:** Rebalance some wands
 
 - Wand of Magic Missiles: it casts 3 missiles, not 1, which makes it generally useful for the majority of both games, same as casting from a scroll. A single missile is quite often a missed opportunity for an action during your round

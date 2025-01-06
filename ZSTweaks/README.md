@@ -184,6 +184,8 @@ I do not like gear that you can wear without any effect whatsoever. I can live w
 
 For consistency, all of the enchanted belts, boots and bracers will also grant this. The unenchanted items will still be a bottom-of-the-barrel choice, but at least they don't exist just as unglorified decoration and will provide some use, especially at the beginning of BGEE (and IWDEE?), which should encourage filling all the gear slots.
 
+WARNING: Install after any other tweak (including those in this mod) that may modify any of these items. If in doubt, just make it the last tweak in your install order. This is to prevent unintended behavior that may nullify changed made by other mods.
+
 **Component 1533:** Rebalance some wands
 
 - Wand of Magic Missiles: it casts 3 missiles, not 1, which makes it generally useful for the majority of both games, same as casting from a scroll. A single missile is quite often a missed opportunity for an action during your round
@@ -1759,6 +1761,32 @@ I don't like being killed without any reasonable chance to defend against the ki
 - It still forces a Save vs. Death at -2 to trigger.
 
 In short, their vorpal weapon will be identical to the silver sword's, but will trigger 15% of the time instead of 25%.
+
+**Component 3080:** Overhaul backstab immunities across creatures
+
+Backstab immunity sucks because it makes the already-underpowered thieves even worse, and in many cases, it makes no logical sense. This is an attempt at making it fair and also not too arbitrary.
+
+The immunity will stay or be granted in these cases:
+
+- Backstab immunities granted by items, classes, or kits
+- Spectral or spiritual creatures cannot be backstabbed
+- Slimes and oozes remain immune. I imagine it like trying to stab soup or a bag of dog poop
+- Demiliches are immune. They're pretty much beyond the physical world.
+- Amelyssan (I can't be sure about how unfair or fair this would be, I've never done that fight)
+- Dragons can be made optionally susceptible, or non-susceptible to backstab. I'm on the fence about dragons so I leave it optional.
+- Floating weapons, magically animated armor
+
+The immunity will be removed if it exists in these cases:
+
+- All fiends and celestials, including solars, mariliths, and Demogorgon
+- Cadaverous undead. If they have a body, then you can study what part will inflict the most damage and identify what constitutes a weak point or structural flaw.
+- Golems and other constructs except floating weapons. They can have have structural weaknesses
+- Minotaurs. They have a body, you have blade. So... stab?
+- Beholders. You know what's a weak point? THAT BIG F***ING EYEBALL.
+- Giants, including Yaga Shura. Picture Legolas climbing on top of the giant Olliphaunts and shooting three arrows right into their necks. You're a damn rogue for crying out loud, you don't have to be literally backstabbing their toes.
+- All humanoid enemies unless their class, hit, or item grants them that, so enemies like Kiser will have to suck it up and take that dagger to the back.
+- Aesgareth and his party will be all susceptible to backstab, no reason at all for them to be so special
+- Avatars of Bhaal are susceptible
 
 
 </details>
