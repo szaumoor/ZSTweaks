@@ -1,0 +1,20 @@
+OUTER_SET base_dagg_dart = 42
+OUTER_SET base_sling_wk_nj = 15
+OUTER_SET base_arrow_bolt = 30
+OUTER_SET base_ls_staff = 5
+OUTER_SET base_sci_ka = 8
+OUTER_SET base_ss_club = 25
+
+DEFINE_PATCH_FUNCTION PROBABILITY_BONUS
+INT_VAR
+    ench = "-1"
+RET
+    result = 0
+BEGIN
+    PATCH_IF ench = 1 BEGIN SET result = 2 END ELSE
+    PATCH_IF ench = 2 BEGIN SET result = 3 END ELSE
+    PATCH_IF ench = 3 BEGIN SET result = 5 END ELSE
+    PATCH_IF ench = 4 BEGIN SET result = 6 END ELSE
+    PATCH_IF ench = 5 BEGIN SET result = 8 END ELSE
+    PATCH_IF ench = 6 BEGIN SET result = 9 END
+END

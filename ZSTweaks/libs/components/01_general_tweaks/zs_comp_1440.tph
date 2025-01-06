@@ -33,7 +33,12 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
         END
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "dagg04" != 0 BEGIN // not grave binder (fake dagger) exceptions
             LPF WPN_THAC0 RET thac0 = result END
-            LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = 0 to_hit = thac0+1 END
+            LPF WPN_SPEED RET speed = result END
+            SET actual_speed = (speed - 2)
+            PATCH_IF actual_speed < 0 BEGIN
+                actual_speed = 0
+            END
+            LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = actual_speed to_hit = thac0+1 END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1~ END
             PATCH_MATCH ench
                WITH 0 BEGIN
@@ -62,14 +67,14 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                 READ_STRREF 0x54 desc
                 SPRINT str_sf @99998
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\10~ // speed
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\1%actual_speed%~ // speed
                 END
                 SAY_EVALUATED 0x54 ~%desc%~
             END ELSE PATCH_IF desc_index = "-1" AND udesc_index != basic_dagg_udesc BEGIN
                 READ_STRREF 0x50 desc
                 SPRINT str_sf @99998
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\10~ // speed
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\1%actual_speed%~ // speed
                 END
                 SAY_EVALUATED 0x50 ~%desc%~
             END

@@ -7,8 +7,11 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 177 STR_VAR resource = ~ZSTWBL03~ END
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR resource = ~ZSTWBL04~ END
         LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 rd=2 STR_VAR res=~ZSTWBL04~ effects = ~op=177,p1=175;op=177,p1=133;op=177,p1=134;op=177,p1=132;op=177,p1=222~ END
+
         PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN //update due to +3
-            LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 STR_VAR match_resource=~ZSTWQ2~ resource=~ZSTWQ3~ END
+            LPF PROBABILITY_BONUS INT_VAR ench=3 RET bonus=result END
+            LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 STR_VAR match_resource=~ZSTWQ2~ resource=~ZSTWQ3~ probability1=(bonus+base_ss_club) END
         END
+
     BUT_ONLY
 END

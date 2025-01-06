@@ -20,6 +20,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN // iwdee not currently deliberately supported
             LPF ALTER_ITEM INT_VAR unid_ref_desc=RESOLVE_STR_REF(@6450) END
             LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=3 match_opcode=17 dicesize=0 dicenumber=0 parameter1=27 END
             LPF ADD_ON_HIT_EFF INT_VAR t=3 p1=1 tgt=1 dur=60 tmg=0 STR_VAR effects=~op=10;op=44~ END
+            LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 tmg=0 STR_VAR effects=~op=321,res=%SOURCE_RES%,ip=0~ END
         BUT_ONLY
     END
 
@@ -54,7 +55,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN // iwdee not currently deliberately supported
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7465) END
         LPF ALTER_EFFECT INT_VAR match_opcode=91 parameter1=40 END
         LPF CLONE_EFFECT INT_VAR match_opcode=91 opcode=276 parameter=40 END
-        LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 p1=2 dur=1800 rd=1 pwr=4 STR_VAR effects=~op=0;op=325;op=278~ END
+        LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 p1=2 dur=1800 rd=1 pwr=4 STR_VAR effects=~op=0,p1=1;op=325;op=278~ END
     BUT_ONLY
 
     //potion of power

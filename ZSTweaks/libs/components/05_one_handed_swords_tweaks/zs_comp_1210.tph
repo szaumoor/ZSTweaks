@@ -1,7 +1,7 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING ~SW1H54.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6060) ench=5 END
-        LPF ALTER_HEADER INT_VAR damage = 3 speed = 2 to_hit = 3 END
+        LPF ALTER_HEADER INT_VAR damage = 3 speed = 0 to_hit = 3 END
     BUT_ONLY
 
     COPY_EXISTING_REGEXP ~EQUAL0[0-8]\.EFF~ ~override~

@@ -1,13 +1,13 @@
 COPY_EXISTING ~RODS02.ITM~ ~override~
               ~rods02a.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6040) unusable0=0 END
-BUT_ONLY
+
 COPY_EXISTING ~RODMACE.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6044) unid_ref_name=RESOLVE_STR_REF(@6041)
     id_ref_name=RESOLVE_STR_REF(@6041) ench=3 END
     LPF ALTER_HEADER INT_VAR match_type = 1 speed = 4 damage = 4 END
-    LPF ALTER_EFFECT INT_VAR header_type = 1 check_globals = 0 match_opcode = 24 opcode = 40 savebonus = 2 duration = 12 END
-BUT_ONLY
+    LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=24 opcode=40 savebonus=2 duration=12 END
+
 COPY_EXISTING ~RODSWORD.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6045) unid_ref_name=RESOLVE_STR_REF(@6042)
     id_ref_name=RESOLVE_STR_REF(@6042) ench=3 STR_VAR appearance="FS" END
@@ -17,11 +17,11 @@ COPY_EXISTING ~RODSWORD.ITM~ ~override~
     LPF DELETE_EFFECT INT_VAR check_globals = 0 header_type = 1 match_opcode = 109 multi_match = 1 END
     LPF GET_DMG_TYPE STR_VAR type = ~fire~ RET fire = result END
     LPF ADD_ON_HIT_EFF STR_VAR effects =~op=12,dsize=4,dnum=1,p2=%fire%,spec=1024~ END
-BUT_ONLY
+
 COPY_EXISTING ~RODSPEAR.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR unid_ref_name=RESOLVE_STR_REF(@6043) id_ref_name=RESOLVE_STR_REF(@6043) END
     LPF ALTER_HEADER INT_VAR match_type = 1 overhand = 25 thrust = 75 END
-    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 12 savebonus = 0 dicenumber = 3 special=1024 END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=12 savebonus=0 dicenumber=3 special=1024 END
 
     PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" BEGIN
         SPRINT desc @6046
@@ -33,4 +33,3 @@ COPY_EXISTING ~RODSPEAR.ITM~ ~override~
     END ELSE BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6046) END
     END
-BUT_ONLY

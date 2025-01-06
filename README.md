@@ -130,22 +130,26 @@ Exceptions: Grave Binder is not affected by these bonuses because it's an oversi
 
 This component is an attempt at making single-classed Thieves more effective with a portion of thief-usable weapons without relying on stats, APR, or proficiency points.
 
-Essentially, when wielding a Thief weapon, they can use what I call "finesse," which is a concept that I borrowed from NWN, they can deal extra damage per attack randomly (additively), based on the base attack damage of the weapon used. You could think of this as a part of the sneakiness, dirty-fighting, or fast, acrobatic combat skills of rogues. This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashis, ninja-tos, katanas, and short swords. To be more specific:
+Essentially, when wielding a Thief weapon, they can use what I call "finesse," which is a concept that I borrowed from NWN, they can deal extra damage per attack randomly (additively), based on the base attack damage of the weapon used. You could think of this as a part dirty-fighting combat skills of rogues, or like a minor sneak attack that triggers rarely. This gives pure thieves a slight edge and makes the combat prowess gap between them and multiclassed thieves tigther. The chances of triggering depend on the weapon type and the enchantment level (2% per odd enchantment level, 1% for even).
 
-- **Scimitars, long swords, staves**: 11% chance per hit to inflict 1d8/6+bonus of slashing/crushing damage.
-- **Katanas**: 17% chance per hit to inflict 1d10+bonus of slashing damage.
-- **Ninja-tos and Wakizashis**: 25% chance per hit to inflict 1d8+bonus of slashing/piercing damage.
-- **Bows, Short Swords, and Clubs**: 33% chance per hit to inflict 1d6 missile damage, or 1d6+bonus of piercing/crushing damage, respectively.
-- **Slings, Crossbows**: 42% chance per hit to inflict 1d4+bonus or 1d8 missile damage, respectively.
-- **Darts, Daggers**: 53% chance per hit to inflict 1d3+bonus, 1d4+bonus, respectively, of missile or piercing damage, respectively.
+This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashis, ninja-tos, katanas, and short swords. The general rule for damage is Dice Number * (Dice size - 1) + Bonus (with exceptions). To be more specific:
 
-A small counterbalance is also added such that all these effects additionally force a Save vs. Breath that the target must save against to take only half of the damage. This saving throw varies with weapon type and enchantment level:
+- **Long swords, Staves**: 6-15% chance to inflict 1d7/5+bonus of slashing/crushing damage
+- **Katanas, Scimitars**: 9-18% chance to inflict 1d9+bonus/1d7+bonus of slashing damage
+- **Ninja-tos, Wakizashis, Slings**: 16-25% chance inflict 1d7+bonus/1d3+bonus of slashing/piercing/missile damage
+- **Short Swords, Clubs**: 26-35% chance to inflict 1d5+bonus of piercing/crushing damage
+- **Bows, Crossbows**: 31-40% chance to inflict 1d5 or 1d7 of missile damage
+- **Darts, Daggers**: 43-52% chance to inflict 2 + bonus / 2 (rounded down), 1d3+bonus of missile or piercing damage
 
-- **Katanas**: +0 Katanas start with a save vs. Breath with no bonus or penalty. Every level the penalty widens, until -6 with +6 katanas (good luck finding one)
-- **Long swords, staves, scimitars**: start off at -1 and increase up to -7 with +6 weapons
-- **Ninja-tos and Wakizashis**: start off at -2 and increase up to -8 with +6 weapons
-- **Short Swords, Slings, and Clubs**: start off at -3 and increase up to -9 with +6 weapons
-- **Darts and Daggers**: start off at -4 and increase up to -10 with +6 weapons
+The extra damage dealt, assuming a failed saving throw and before resistances, is *never* lower than 2.
+
+A counterbalance is also added such that this damage forces a Save vs. Breath that the target must save against to take only half of the damage. This saving throw bonus or penalty depends on the wielder's current dexterity, which improves up to DEX 24, and this save's penalty increases by the enchantment level as well. For example, if you have a Long Sword +0 that gets a +2 bonus at a particular level of dexterity, using a Long Sword +3 would make it a penalty of -1 instead. More details:
+
+- **Katanas**: +0 katanas at DEX <12 force a save at +7 bonus; progresses up to 0 at DEX >=24
+- **Long swords, staves, scimitars**: +0 weapons at DEX <12 force a save vs. +6; progresses up to -1 at DEX >=24
+- **Ninja-tôs and Wakizashis**: +0 weapons at DEX <12 force a save vs. +5; progresses up to -2 at DEX >=24
+- **Short Swords, Slings, Clubs**: +0 weapons at DEX <12 force a save vs. +4; progresses up to -3 at DEX >=24
+- **Darts, Bows, Crossbows, Daggers**: +0 weapons at DEX <12 force a save at +3 bonus; progresses up to -4 at DEX >=24
 
 Note that this component does not account (automatically) for special weaponry which may use a different kind of damage-dealing effect than normal or otherwise vary in normal parameters. For example, Voidsword +3 in SoD causes only magic damage and is not part of the damage of the weapon as such, but exists as a separate effect. These have to be added manually (in that example, the extra damage would occur in the same way as the others, but only as magic damage, which is intended). Currently, the following thief-usable items are accounted for:
 
@@ -183,6 +187,10 @@ Please bear in mind that this component should be installed after tweaks that af
 I do not like gear that you can wear without any effect whatsoever. I can live with rings that don't do that, because there's no reasonable benefit to just wearing a ring. Therefore, wearing unenchanted belts, boots, and bracers will grant the wearer +1 HP which I think is reasonable enough, and it doesn't change balance much.
 
 For consistency, all of the enchanted belts, boots and bracers will also grant this. The unenchanted items will still be a bottom-of-the-barrel choice, but at least they don't exist just as unglorified decoration and will provide some use, especially at the beginning of BGEE (and IWDEE?), which should encourage filling all the gear slots.
+
+Side effect to take note: if a joinable character joins while having any such item equipped, you must re-equip it in order to benefit from this effect, as the newly available effect will not be re-evaluated otherwise.
+
+WARNING: Install this component DEAD LAST after ANY mod that modifies items, including any other component in this mod that modifies such items. When in doubt, just make it your last.
 
 **Component 1533:** Rebalance some wands
 
@@ -481,7 +489,7 @@ This makes the bracers far more worth the trouble for paladins. Instead of just 
 
 **Component 1674:** Make Whispers of Silence protect against detection spells except for True Sight, and improve Move Silently
 
-This makes the boots more useful for the purposes of avoiding detection, since Nondetection is an unremarkable protection. As such, the wearer is also immune to other invisibility-detecting spells, except True Sight. Additionally, it adds a 10% bonus to Move Silently.
+This makes the cloak more useful for the purposes of avoiding detection, since Nondetection is an unremarkable protection. As such, the wearer is also immune to other invisibility-detecting spells, except True Sight. Additionally, it adds a 10% bonus to Move Silently, and a +5% critical hit chance while the user is invisible.
 
 **Component 1675:** Make Cloak of Displacement add +5% damage resistance
 
@@ -1759,33 +1767,6 @@ I don't like being killed without any reasonable chance to defend against the ki
 - It still forces a Save vs. Death at -2 to trigger.
 
 In short, their vorpal weapon will be identical to the silver sword's, but will trigger 15% of the time instead of 25%.
-
-**Component 3080:** Overhaul backstab immunities across creatures
-
-Backstab immunity sucks because it makes the already-underpowered thieves even worse, and in many cases, it makes no logical sense. This is an attempt at making it fair and also not too arbitrary.
-
-The immunity will stay or be granted in these cases:
-
-- Backstab immunities granted by items, classes, or kits
-- Spectral or spiritual creatures cannot be backstabbed
-- Slimes and oozes remain immune. I imagine it like trying to stab soup or a bag of dog poop
-- Demiliches are immune. They're pretty much beyond the physical world.
-- Amelyssan (I can't be sure about how unfair or fair this would be, I've never done that fight)
-- Dragons can be made optionally susceptible, or non-susceptible to backstab. I'm on the fence about dragons so I leave it optional.
-- Floating weapons, magically animated armor
-
-The immunity will be removed if it exists in these cases:
-
-- All fiends and celestials, including solars, mariliths, and Demogorgon
-- Cadaverous undead. If they have a body, then you can study what part will inflict the most damage and identify what constitutes a weak point or structural flaw.
-- Golems and other constructs except floating weapons. They can have have structural weaknesses
-- Minotaurs. They have a body, you have blade. So... stab?
-- Beholders. You know what's a weak point? THAT BIG F***ING EYEBALL.
-- Giants, including Yaga Shura. Picture Legolas climbing on top of the giant Olliphaunts and shooting three arrows right into their necks. You're a damn rogue for crying out loud, you don't have to be literally backstabbing their toes.
-- All humanoid enemies unless their class, hit, or item grants them that, so enemies like Kiser will have to suck it up and take that dagger to the back.
-- Aesgareth and his party will be all susceptible to backstab, no reason at all for them to be so special
-- Avatars of Bhaal are susceptible
-
 
 </details>
 
