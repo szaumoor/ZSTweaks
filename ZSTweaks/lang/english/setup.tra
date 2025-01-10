@@ -336,7 +336,9 @@
 @2180 = ~Make the THAC0 progression of Bards better and more streamlined, so they improve up to 6, like clerics~
 @2190 = ~Make Poison Weapon improve a couple of times more every 4 levels (level 17, and 21)~
 @2200 = ~Allow Blackguards to perform backstabs as if they had a 2x backstab multiplier~
-@2210 = ~Light proficiency overhaul~
+@2210 = ~Make the proficiency point benefits streamlined~
+@2220 = ~Make Avoid Death HLA slightly more effective~
+@2230 = ~Make RR's Crippling strike not able to increase Strength; instead it reduces STR to half its current value~
 @2240 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and reenable the unconscious status if successful~ // TODO
 @2250 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
 
@@ -826,20 +828,11 @@ STATISTICS:
 Combat abilities:
 – This rod may transform into any of the following weapons when used. Each weapon may also change back into the rod at will:
 
-Mace of Royal Might +3
-  Special: Target must save vs. Spell at +2 or be slowed for 2 rounds
-  THAC0: +3
-  Damage: 1d6+4 (crushing)
+Mace of Royal Might +3: Target must save vs. Spell at +2 or be slowed for 2 rounds
 
-Flaming Sword of Royal Might +3
-  Special: Target must save vs. Spell at +2 or be held for 1 round
-  THAC0: +3
-  Damage: 1d8+3 (slashing), +1d4 (fire)
+Flaming Sword of Royal Might +3: Targets take +1d4 extra fire damage and must save vs. Spell at +2 or be stunned or put to sleep for 1 round
 
-Spear of Royal Might +3
-  Special: Target must save vs. Spell or take 3d4 points of magical damage
-  THAC0: +3
-  Damage: 1d6+3 (piercing)
+Spear of Royal Might +3: Targets take +1 piercing damage and must save vs. Death to avoid bleeding for 10 piercing damage for a round, and there's a 10% chance of releasing an arcane blast that deals 2d4+2 magic damage
 
 Weight: 5~
 
@@ -851,7 +844,7 @@ Weight: 5~
 STATISTICS:
 
 Combat abilities:
-– Target must save vs. Spell at +2 or become panicked and rooted in place for 2 rounds and suffering a -4 penalty to AC
+– Target must save vs. Spell at +2 or become slowed for 2 rounds
 
 THAC0: +3
 Damage: 1d6+4 (crushing)
@@ -886,7 +879,7 @@ Weight: 4~
 STATISTICS:
 
 Combat abilities:
-– Target must save vs. Death or start bleeding for 12 points of damage over 2 rounds
+– Target must save vs. Death or start bleeding for 10 points of piercing damage over 1 round
 – Arcane Blast: 10% chance per hit to cause 2d4+2 magical damage
 
 THAC0: +3
@@ -4179,11 +4172,12 @@ Reportedly created for a lineage of the greatest burglars ever to walk the night
 STATISTICS:
 
 Equipped abilities:
-– +15% Move Silently
-– +5% critical hit chances while the user is invisible or hidden
-– While hidden or invisible, the wearer is non-detectable by magical means such as Detect Invisibility, Detect Illusion, and scrying, although True Sight will still allow the caster to detect the wearer
+– +15% bonus to Move Silently
+– Critical hit chances increase by 5% for 2 rounds when the user becomes invisible. This may only happen once per turn
 
 Weight: 3~
+
+@7441 = ~Critical hit chances increased by Whispers of Silence~
 
 @7450 = ~The Cloak of Displacement is a magical item that causes subtle shifts in the image of its wearer. It has the power to actually shift an individual's image by as much as six inches in any direction from their actual location. Aside from being an effective defense in combat situations, it has also been the cause of serious eyestrain amongst fellow party members.
 
@@ -5470,6 +5464,9 @@ Weight: 9~
 @8161 = ~The planetar emanates an aura of protection that protects all allies against spells of levels 1, 2, and 3, as per the Minor Globe of Invulnerability spell~
 
 @8170 = ~Paralyzed with fear~
+
+@8180 = ~Avoid Death
+With extraordinary effort, a high-level rogue can avoid almost certain death. The effect lasts for 5 rounds, and during this time, the rogue's Save vs. Death receives a bonus of 5, Hit Points are increased by 20, and the rogue becomes immune to death magic and level drain. Additionally, during the first round, the rogue will succeed in all saving throws, and their hit points may not go under 1 for the first half of that round.~
 
 
 @99999 = ~Damage~ // for text patching

@@ -1,7 +1,8 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
+    COPY ~%MOD_FOLDER%/items/whispers_silence~ ~override~
     COPY_EXISTING ~CLCK06.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7440) END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=59,p1=15;op=206,res=SPWI322;op=206,res=SPWI515~ END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=59,p1=15;op=206,res=SPWI322;op=206,res=SPWI515;op=272,p1=1,p2=3,res=ZSTWSIL0~ END
     BUT_ONLY
 END
 a
