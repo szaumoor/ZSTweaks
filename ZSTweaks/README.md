@@ -188,6 +188,7 @@ I do not like gear that you can wear without any effect whatsoever. I can live w
 
 For consistency, all of the enchanted belts, boots and bracers will also grant this. The unenchanted items will still be a bottom-of-the-barrel choice, but at least they don't exist just as unglorified decoration and will provide some use, especially at the beginning of BGEE (and IWDEE?), which should encourage filling all the gear slots.
 
+
 Side effect to take note: if a joinable character joins while having any such item equipped, you must re-equip it in order to benefit from this effect, as the newly available effect will not be re-evaluated otherwise.
 
 WARNING: Install this component DEAD LAST after ANY mod that modifies items, including any other component in this mod that modifies such items. When in doubt, just make it your last.
