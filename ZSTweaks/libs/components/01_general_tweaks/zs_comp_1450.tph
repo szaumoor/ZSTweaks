@@ -5,9 +5,11 @@ ADD_PROJECTILE ~%MOD_FOLDER%/pro/ZSTW_IND.PRO~
 COPY ~%MOD_FOLDER%/items/finesse_weapons~ ~override~
 COPY_EXISTING_REGEXP "ZSTW[ABSM#][0-6]\.spl" ~override~ // for arrows, bolts and sling bullets
     LPF ALTER_HEADER INT_VAR match_type=2 projectile="%ZSTW_INP%" END
+BUT_ONLY
 
 COPY_EXISTING_REGEXP "ZSTW[TZ][0-6]\.spl" ~override~ // throwing daggers and darts
     LPF ALTER_HEADER INT_VAR match_type=2 projectile="%ZSTW_IND%" END
+BUT_ONLY
 
 // ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1350~ OR group_component=1 BEGIN // modify spells for finesse
 //     COPY_EXISTING_REGEXP ~ZSTW[JW][0-6]\.spl~ ~override~
@@ -81,3 +83,4 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             END
         END
     END
+BUT_ONLY

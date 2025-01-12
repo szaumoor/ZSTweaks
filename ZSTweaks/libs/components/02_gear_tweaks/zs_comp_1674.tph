@@ -5,4 +5,3 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=59,p1=15;op=206,res=SPWI322;op=206,res=SPWI515;op=272,p1=1,p2=3,res=ZSTWSIL0~ END
     BUT_ONLY
 END
-a

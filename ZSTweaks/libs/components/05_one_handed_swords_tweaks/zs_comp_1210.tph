@@ -3,7 +3,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING ~SW1H54.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6060) ench=5 END
         LPF ALTER_HEADER INT_VAR damage = 3 speed = 0 to_hit = 3 END
-        LPF DELETE_EFFECT INT_VAR match_globals = 0 END
+        LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 177 END
         SET lawful_evil = IDS_OF_SYMBOL(alignmen LAWFUL_EVIL)
         SET chaotic_evil = IDS_OF_SYMBOL(alignmen CHAOTIC_EVIL)
         SET lawful_good = IDS_OF_SYMBOL(alignmen LAWFUL_GOOD)
@@ -13,11 +13,13 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         SET lawful_neutral = IDS_OF_SYMBOL(alignmen LAWFUL_NEUTRAL)
         SET chaotic_neutral = IDS_OF_SYMBOL(alignmen CHAOTIC_NEUTRAL)
         SET neutral = IDS_OF_SYMBOL(alignmen NEUTRAL)
-        LPF ADD_ON_HIT_EFF INT_VAR p2=108 STR_VAR res=~ZSTWEQ01~ effects=~op=326,p1=%lawful_evil%;op=326,p1=%lawful_good%;op=326,p1=%chaotic_evil%;op=326,p1=%chaotic_good%~ END
-        LPF ADD_ON_HIT_EFF INT_VAR p2=108 STR_VAR res=~ZSTWEQ02~ effects = ~op=326,p1=%neutral_good%;op=326,p1=%neutral_evil%~ END
-        LPF ADD_ON_HIT_EFF INT_VAR p2=108 STR_VAR res=~ZSTWEQ03~ effects=~op=326,p1=%lawful_neutral%;op=326,p1=%chaotic_neutral%~ END
+        SET mask_neutral = IDS_OF_SYMBOL(alignmen MASK_GENEUTRAL)
+        LPF ADD_ON_HIT_EFF INT_VAR p2=8 STR_VAR res=~ZSTWEQ10~ effects=~op=177,p1=%lawful_evil%;op=177,p1=%lawful_good%;op=177,p1=%chaotic_evil%;op=177,p1=%chaotic_good%~ END
+        LPF ADD_ON_HIT_EFF INT_VAR p2=8 STR_VAR res=~ZSTWEQ11~ effects = ~op=177,p1=%neutral_good%;op=177,p1=%neutral_evil%~ END
+        LPF ADD_ON_HIT_EFF INT_VAR p2=8 STR_VAR res=~ZSTWEQ12~ effects=~op=177,p1=%lawful_neutral%;op=177,p1=%chaotic_neutral%~ END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=0,p1=1;op=166,p1=5~ END
         LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=neutral STR_VAR effects=~op=177,res=ZSTWEQ04;op=177,res=ZSTWEQ05;op=177,res=ZSTWEQ07;op=177,res=ZSTWEQ09~ END
         LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=lawful_neutral STR_VAR effects=~op=177,res=ZSTWEQ06;op=177,res=ZSTWEQ08~ END
         LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=chaotic_neutral STR_VAR effects=~op=177,res=ZSTWEQ06;op=177,res=ZSTWEQ08~ END
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=mask_neutral STR_VAR effects=~op=177,res=ZSTWEQ13~ END
 END

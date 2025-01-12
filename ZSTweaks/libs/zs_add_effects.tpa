@@ -1,82 +1,85 @@
+/**
+ * Adds an effect on-equipped to an item. Uses Argent77's a7_auto_apply_spl_effect function.
+ */
 DEFINE_PATCH_FUNCTION ADD_EQUIPPED_EFF
 INT_VAR
-    p1 = 0
-    p2 = 0
-    ip = "-1"
-    spec = 0
+    p1   = 0 // parameter 1
+    p2   = 0 // parameter 2
+    ip   = "-1" // insert point
+    spec = 0 // special
 STR_VAR
-    effects = ~~
+    effects = ~~ // effect codes
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     LPF a7_auto_apply_spl_effect
         INT_VAR
-            def_target = 1
-            def_timing = 2
-            def_parameter1 = p1
-            def_parameter2 = p2
+            def_target      = 1
+            def_timing      = 2
+            def_parameter1  = p1
+            def_parameter2  = p2
             def_insertpoint = ip
-            def_special = spec
+            def_special     = spec
         STR_VAR
             function_name = ~ADD_ITEM_EQEFFECT~
-            effect_codes = ~%effects%~
+            effect_codes  = ~%effects%~
     END
 END
 
 DEFINE_PATCH_FUNCTION ADD_ON_HIT_EFF
 INT_VAR
-    p1 = 0
-    p2 = 0
-    tmg = 0
-    dur = 0
-    rd = 0
-    pwr = 0
-    t = 1
-    stype = 0
+    tgt    = 2
+    tmg    = 0
+    pwr    = 0
+    p1     = 0
+    p2     = 0
+    rd     = 0
+    dur    = 0
+    pro1   = 100
+    pro2   = 0
+    dnum   = 0
+    dsize  = 0
+    stype  = 0
     sbonus = 0
-    pro1 = 100
-    pro2 = 0
-    dsize = 0
-    dnum = 0
-    ip="-1"
-    tgt = 2
-    spec = 0
+    spec   = 0
+    ip     = "-1"
+    t      = 1
 STR_VAR
-    res = ~~
+    res     = ~~
     effects = ~~
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     LPF a7_auto_apply_spl_effect
         INT_VAR
-            def_target = tgt
-            def_type = t
-            def_timing = tmg
-            def_parameter1 = p1
-            def_parameter2 = p2
-            def_duration = dur
+            def_target        = tgt
+            def_timing        = tmg
+            def_power         = pwr
+            def_parameter1    = p1
+            def_parameter2    = p2
             def_resist_dispel = rd
-            def_power = pwr
-            def_probability1 = pro1
-            def_probability2 = pro2
-            def_savetype = stype
-            def_savebonus = sbonus
-            def_dicesize = dsize
-            def_dicenumber = dnum
-            def_insertpoint = ip
-            def_special = spec
+            def_duration      = dur
+            def_probability1  = pro1
+            def_probability2  = pro2
+            def_dicenumber    = dnum
+            def_dicesize      = dsize
+            def_savetype      = stype
+            def_savebonus     = sbonus
+            def_special       = spec
+            def_insertpoint   = ip
+            def_type          = t
         STR_VAR
-            def_resource = ~%res%~
+            def_resource  = ~%res%~
             function_name = ~ADD_ITEM_EFFECT~
-            effect_codes = ~%effects%~
+            effect_codes  = ~%effects%~
     END
 END
 
 
-DEFINE_PATCH_FUNCTION ADD_SLEEP_SAFE_DMG
+DEFINE_PATCH_FUNCTION ADD_SLEEP_SAFE_DMG // untested
 INT_VAR
     p1 = 0
 STR_VAR
     dmg_type = ~*~
-    type = 1
+    type     = 1
 BEGIN
     LPF GET_DMG_TYPE STR_VAR type = ~%dmg_type%~ END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=%p1%,spec=1024~ END
@@ -84,68 +87,68 @@ END
 
 DEFINE_PATCH_FUNCTION ADD_SPL_SELFEFF
 INT_VAR
-    p1=0
-    p2=0
-    t=1
-    dur=0
-    rd=1
-    pwr=1
-    ip="-1"
+    p1  = 0
+    p2  = 0
+    t   = 1
+    dur = 0
+    rd  = 1
+    pwr = 1
+    ip  = "-1"
 STR_VAR
-    effects=""
+    effects = ""
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
     LPF a7_auto_apply_spl_effect
         INT_VAR
-            def_target = 1
-            def_timing = 0
-            def_parameter1 = p1
-            def_parameter2 = p2
-            def_duration=dur
+            def_target        = 1
+            def_timing        = 0
+            def_parameter1    = p1
+            def_parameter2    = p2
+            def_duration      = dur
             def_resist_dispel = rd
-            def_power=pwr
-            def_type=t
-            def_insertpoint=ip
+            def_power         = pwr
+            def_type          = t
+            def_insertpoint   = ip
         STR_VAR
             function_name = ~ADD_SPELL_EFFECT~
-            effect_codes = ~%effects%~
+            effect_codes  = ~%effects%~
     END
 END
 
 DEFINE_PATCH_FUNCTION ADD_SPL_TGTEFF
 INT_VAR
-    p1=0
-    p2=0
-    t=1
-    tmg = 0
-    dur=0
-    rd=1
-    pwr=1
-    ip="-1"
-    stype = 0
+    p1     = 0
+    p2     = 0
+    t      = 1
+    tmg    = 0
+    dur    = 0
+    rd     = 1
+    pwr    = 1
+    ip     = "-1"
+    stype  = 0
     sbonus = 0
-    tgt=2
+    tgt    = 2
 STR_VAR
-    res=""
-    effects=""
+    res     = ""
+    effects = ""
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
     LPF a7_auto_apply_spl_effect
         INT_VAR
-            def_target = tgt
-            def_timing = tmg
-            def_parameter1 = p1
-            def_parameter2 = p2
-            def_duration=dur
+            def_target        = tgt
+            def_timing        = tmg
+            def_parameter1    = p1
+            def_parameter2    = p2
+            def_duration      = dur
             def_resist_dispel = rd
-            def_power=pwr
-            def_type=t
-            def_insertpoint=ip
-            def_savetype = stype
-            def_savebonus = sbonus
+            def_power         = pwr
+            def_type          = t
+            def_insertpoint   = ip
+            def_savetype      = stype
+            def_savebonus     = sbonus
         STR_VAR
-            def_resource = ~%res%~
+            def_resource  = ~%res%~
             function_name = ~ADD_SPELL_EFFECT~
-            effect_codes = ~%effects%~
+            effect_codes  = ~%effects%~
     END
 END

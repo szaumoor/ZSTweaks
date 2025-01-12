@@ -4,7 +4,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_HEADER INT_VAR match_damage=2 match_to_hit=2 match_speed=2 to_hit=3 speed=1 damage=3 END
         PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN // update +3 enchantment
             LPF PROBABILITY_BONUS INT_VAR ench = 3 RET bonus = result END
-            LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 326 STR_VAR match_resource = ~ZSTWK2~ resource = ~ZSTWK3~ probability1=(bonus+base_sci_ka) END
+            LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 326 probability1=(bonus+base_sci_ka) STR_VAR match_resource = ~ZSTWK2~ resource = ~ZSTWK3~  END
         END
 
         PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1370" BEGIN

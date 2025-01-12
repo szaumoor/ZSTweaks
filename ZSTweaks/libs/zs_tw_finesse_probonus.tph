@@ -9,7 +9,7 @@ DEFINE_PATCH_FUNCTION PROBABILITY_BONUS
 INT_VAR
     ench = "-1"
 RET
-    result = 0
+    result
 BEGIN
     PATCH_IF ench = 1 BEGIN SET result = 2 END ELSE
     PATCH_IF ench = 2 BEGIN SET result = 3 END ELSE
@@ -17,4 +17,5 @@ BEGIN
     PATCH_IF ench = 4 BEGIN SET result = 6 END ELSE
     PATCH_IF ench = 5 BEGIN SET result = 8 END ELSE
     PATCH_IF ench = 6 BEGIN SET result = 9 END
+    ELSE SET result = 0
 END

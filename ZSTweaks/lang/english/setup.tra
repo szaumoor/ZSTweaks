@@ -100,7 +100,7 @@
 @1561 = ~Make Cloak of the Stars create 30 darts instead of six, and add passive effects~
 @1570 = ~Make Eyes of the Beholder's skills mirror the power of the spells they're based on~
 @1610 = ~Make Robe of Invocation also improve all elemental damage by 5% and add a +2 bonus against Invocation~
-@1620 = ~Make Vicross' Thayan Circlet apply Improved Shield of Chaos instead of just Shield of Chaos~
+@1620 = ~Make Vicross' Thayan Circlet more interesting for Wild Mages~
 @1651 = ~Make Studded Leather of Thorns cause some piercing damage too when being hit~
 @1652 = ~Make Grandmaster's Armor's movement bonus not affected by Free Action and grant perks to rogues~
 @1653 = ~Make Thieves' Hood protect against critical hits and slightly more advantageous for single-classed thieves~
@@ -122,13 +122,13 @@
 @1671 = ~Make The Eyes of Truth add a bonus to Detect Illusions and Find Traps~
 @1672 = ~Make Stalker Gauntlets also benefit Bounty Hunters and Shadowdancers~
 @1673 = ~Make Blessed Bracers more powerful~
-@1674 = ~Make Whispers of Silence protect against detection spells except for True Sight, and improve Move Silently~
+@1674 = ~Make Whispers of Silence improve Move Silently, and protect vs. detection spells except True Sight and grant a bonus sometimes when going invisible~
 @1675 = ~Make Cloak of Displacement add +5% damage resistance~
 @1676 = ~Make Skull of Death allows casting Finger of Death, and protect against Necromantic instant-death effects~
 @1677 = ~Make Wondrous Gloves Wondrous~
 @1678 = ~Make Senses of the Cat imbue the user of more cat-like features~
 @1679 = ~Make the Horn of Kazgaroth more useful and the self-damage more unique~
-@1685 = ~Make the Belt of Fortitude grant Constitution passively and replace the charge ability with regeneration~
+@1685 = ~Make the Belt of Fortitude grant Constitution passively and replace the charge ability with regeneration~ // todo
 
 // subcomponent str of component @1664
 @16640 = ~Affect all~
@@ -195,7 +195,7 @@
 @1270 = "Make Spectral Brand slightly better and make the dancing blade last for 1 turn instead of 4 rounds"
 @1315 = "Make Dak'kon's Zerth Blade behave as a +3 weapon"
 @1319 = "Make Holy Sword of Tyr +3 affect all evil, not just Chaotic Evil"
-@1341 = ~Make Hindo's Doom a +4 and +5 weapon~
+@1341 = ~Make Hindo's Doom a +4 and +5 weapon and inflict extra damage to undead~
 @1470 = ~Make Adjatha the Drinker thirstier~
 @1550 = ~Make Drizzt's weapons slightly more worth stealing in BG2~
 @1580 = ~Make Hawksight improve your senses, reflexes, and accuracy more keenly~
@@ -228,7 +228,7 @@
 @1010 = ~Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost~
 @1330 = "Make Darkfire Bow slightly more remarkable"
 @1340 = "Make Taralash slightly more remarkable"
-@1342 = ~Make Protector of the Dryads deal +2 damage to orcs, ogres, bugbears, gnolls, and goblinoids~
+@1342 = ~Make Protector of the Dryads deal +2 damage to orcs, ogres, gnolls, and goblinoids~
 @1343 = ~Make Mana bow more magical and more deadly against arcane casters~
 @1344 = ~Make Arrows of Biting apply poison faster and improve the misleading description~
 @1345 = ~Make Arrows of Fire cause fire damage always, same as Arrows of Ice~
@@ -253,7 +253,6 @@
 // MISCELLANEOUS
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
 @3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane~
-
 
 // WIZARD SPELLS
 @140 = "Standardize Finger of Death magical damage on a successful save"
@@ -338,7 +337,7 @@
 @2200 = ~Allow Blackguards to perform backstabs as if they had a 2x backstab multiplier~
 @2210 = ~Make the proficiency point benefits streamlined~
 @2220 = ~Make Avoid Death HLA slightly more effective~
-@2230 = ~Make RR's Crippling strike not able to increase Strength; instead it reduces STR to half its current value~
+@2230 = ~Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value~
 @2240 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and reenable the unconscious status if successful~ // TODO
 @2250 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
 
@@ -893,7 +892,7 @@ Requires:
 
 Weight: 5~
 @6047 = "Arcane Blast"
-
+@6048 = ~Rod of Royal Might~
 
 @6050 = ~This abyssal greensteel blade is one of Haer'Dalis's favorite weapons. This short sword is capable of inflicting an additional 6 points of poison damage if the target fails a Saving Throw. This blade may only be used by tieflings.
 
@@ -978,14 +977,14 @@ STATISTICS:
 
 Equipped abilities:
 – Immunity to charm and confusion
-– Bonuses that depends on the alignment of the wielder:
-  True Neutral: +2 Armor Class and Saving throws, +15% Magic Resistance, +5% critical hit chances with all weapons
-  Lawful Neutral and Chaotic Neutral: +1 Armor Class, +1 Saving Throws, +10% Magic Resistance
-  Other alignments: +1 AC, +5% Magic Resistance
+– Stacking bonuses that depends on the alignment of the wielder:
+  All alignments: +1 AC, +5% Magic Resistance
+  All neutral alignments: +1 Damage, +1 Saving Throws, +5% Magic Resistance
+  True Neutral: +1 Armor Class, +1 Saving throws, +5% Magic Resistance, +5% critical hit chances with all weapons
 
 Combat abilities:
 – Strikes as a +5 weapon
-– Has a damage and THAC0 bonus depending on how far the target's alignment is from True Neutral:
+– Has a damage and THAC0 bonus depending on how far the target's alignment strays from True Neutral:
   vs. Lawful Neutral and Chaotic Neutral: +1 THAC0, +1 slashing and magic damage
   vs. Neutral Good, Neutral Evil: +2 THAC0, +2 slashing and magic damage
   vs. Other Alignments: +3 THAC0, +3 slashing and magic damage
@@ -2208,7 +2207,6 @@ Weight: 3~
 An ambitious young wild mage named Vicross's fear of discovery and desire to master her capricious magic were so great that she managed to conceal her status and rise through the Red Wizard hierarchy. She became an autharch for Aznar Thrul, the tharchion of Priador. In this position, she created the Order of Eight Staves, designed to study wild magic. For years, Vicross and her underlings hunted and captured wild mages across Faerûn, performing a variety of tests on their prisoners, collecting and analyzing results.
 
 Eventually Vicross concocted techniques capable of partially controlling wild surges. She was able to enchant this circlet to reduce wild surge probability—and to minimize negative results. Fearful of her ever suspicious fellow Red Wizards, she wore it at all times, to keep her wild magic from betraying her.
-
 
 STATISTICS:
 

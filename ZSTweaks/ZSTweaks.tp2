@@ -2229,7 +2229,7 @@ FORBID_COMPONENT "ZSTweaks.tp2" "2141" @57  FORBID_COMPONENT "ZSTweaks.tp2" "215
 FORBID_COMPONENT "ZSTweaks.tp2" "2160" @57  FORBID_COMPONENT "ZSTweaks.tp2" "2170" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "2180" @57  FORBID_COMPONENT "ZSTweaks.tp2" "2190" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "2200" @57  FORBID_COMPONENT "ZSTweaks.tp2" "2210" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "2220" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "2220" @57  FORBID_COMPONENT "ZSTweaks.tp2" "2230" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/12_class_tweaks/zs_comp_359.tph~
@@ -2394,11 +2394,12 @@ FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 INCLUDE ~%MOD_FOLDER%/libs/components/12_class_tweaks/zs_comp_2220.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @2230 DESIGNATED 2230 GROUP @21 // RR CRIPPLING STRIKE TWEAK
+BEGIN @2230 DESIGNATED 2230 GROUP @21 // RR ROGUE REBALANCING CRIPPLING STRIKE TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @52
 FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+OUTER_SET group_component = 0
 INCLUDE ~%MOD_FOLDER%/libs/components/12_class_tweaks/zs_comp_2230.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
