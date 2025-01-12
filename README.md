@@ -130,22 +130,26 @@ Exceptions: Grave Binder is not affected by these bonuses because it's an oversi
 
 This component is an attempt at making single-classed Thieves more effective with a portion of thief-usable weapons without relying on stats, APR, or proficiency points.
 
-Essentially, when wielding a Thief weapon, they can use what I call "finesse," which is a concept that I borrowed from NWN, they can deal extra damage per attack randomly (additively), based on the base attack damage of the weapon used. You could think of this as a part of the sneakiness, dirty-fighting, or fast, acrobatic combat skills of rogues. This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashis, ninja-tos, katanas, and short swords. To be more specific:
+Essentially, when wielding a Thief weapon, they can use what I call "finesse," which is a concept that I borrowed from NWN, they can deal extra damage per attack randomly (additively), based on the base attack damage of the weapon used. You could think of this as a part dirty-fighting combat skills of rogues, or like a minor sneak attack that triggers rarely. This gives pure thieves a slight edge and makes the combat prowess gap between them and multiclassed thieves tigther. The chances of triggering depend on the weapon type and the enchantment level (2% per odd enchantment level, 1% for even).
 
-- **Scimitars, long swords, staves**: 11% chance per hit to inflict 1d8/6+bonus of slashing/crushing damage.
-- **Katanas**: 17% chance per hit to inflict 1d10+bonus of slashing damage.
-- **Ninja-tos and Wakizashis**: 25% chance per hit to inflict 1d8+bonus of slashing/piercing damage.
-- **Bows, Short Swords, and Clubs**: 33% chance per hit to inflict 1d6 missile damage, or 1d6+bonus of piercing/crushing damage, respectively.
-- **Slings, Crossbows**: 42% chance per hit to inflict 1d4+bonus or 1d8 missile damage, respectively.
-- **Darts, Daggers**: 53% chance per hit to inflict 1d3+bonus, 1d4+bonus, respectively, of missile or piercing damage, respectively.
+This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashis, ninja-tos, katanas, and short swords. The general rule for damage is Dice Number * (Dice size - 1) + Bonus (with exceptions). To be more specific:
 
-A small counterbalance is also added such that all these effects additionally force a Save vs. Breath that the target must save against to take only half of the damage. This saving throw varies with weapon type and enchantment level:
+- **Long swords, Staves**: 6-15% chance to inflict 1d7/5+bonus of slashing/crushing damage
+- **Katanas, Scimitars**: 9-18% chance to inflict 1d9+bonus/1d7+bonus of slashing damage
+- **Ninja-tos, Wakizashis, Slings**: 16-25% chance inflict 1d7+bonus/1d3+bonus of slashing/piercing/missile damage
+- **Short Swords, Clubs**: 26-35% chance to inflict 1d5+bonus of piercing/crushing damage
+- **Bows, Crossbows**: 31-40% chance to inflict 1d5 or 1d7 of missile damage
+- **Darts, Daggers**: 43-52% chance to inflict 2 + bonus / 2 (rounded down), 1d3+bonus of missile or piercing damage
 
-- **Katanas**: +0 Katanas start with a save vs. Breath with no bonus or penalty. Every level the penalty widens, until -6 with +6 katanas (good luck finding one)
-- **Long swords, staves, scimitars**: start off at -1 and increase up to -7 with +6 weapons
-- **Ninja-tos and Wakizashis**: start off at -2 and increase up to -8 with +6 weapons
-- **Short Swords, Slings, and Clubs**: start off at -3 and increase up to -9 with +6 weapons
-- **Darts and Daggers**: start off at -4 and increase up to -10 with +6 weapons
+The extra damage dealt, assuming a failed saving throw and before resistances, is *never* lower than 2.
+
+A counterbalance is also added such that this damage forces a Save vs. Breath that the target must save against to take only half of the damage. This saving throw bonus or penalty depends on the wielder's current dexterity, which improves up to DEX 24, and this save's penalty increases by the enchantment level as well. For example, if you have a Long Sword +0 that gets a +2 bonus at a particular level of dexterity, using a Long Sword +3 would make it a penalty of -1 instead. More details:
+
+- **Katanas**: +0 katanas at DEX <12 force a save at +7 bonus; progresses up to 0 at DEX >=24
+- **Long swords, Scimitars**: +0 weapons at DEX <12 force a save vs. +6; progresses up to -1 at DEX >=24
+- **Ninja-tôs and Wakizashis**: +0 weapons at DEX <12 force a save vs. +5; progresses up to -2 at DEX >=24
+- **Short Swords, Slings, Clubs, Staves**: +0 weapons at DEX <12 force a save vs. +4; progresses up to -3 at DEX >=24
+- **Darts, Bows, Crossbows, Daggers**: +0 weapons at DEX <12 force a save at +3 bonus; progresses up to -4 at DEX >=24
 
 Note that this component does not account (automatically) for special weaponry which may use a different kind of damage-dealing effect than normal or otherwise vary in normal parameters. For example, Voidsword +3 in SoD causes only magic damage and is not part of the damage of the weapon as such, but exists as a separate effect. These have to be added manually (in that example, the extra damage would occur in the same way as the others, but only as magic damage, which is intended). Currently, the following thief-usable items are accounted for:
 
@@ -184,7 +188,9 @@ I do not like gear that you can wear without any effect whatsoever. I can live w
 
 For consistency, all of the enchanted belts, boots and bracers will also grant this. The unenchanted items will still be a bottom-of-the-barrel choice, but at least they don't exist just as unglorified decoration and will provide some use, especially at the beginning of BGEE (and IWDEE?), which should encourage filling all the gear slots.
 
-WARNING: Install after any other tweak (including those in this mod) that may modify any of these items. If in doubt, just make it the last tweak in your install order. This is to prevent unintended behavior that may nullify changed made by other mods.
+Side effect to take note: if a joinable character joins while having any such item equipped, you must re-equip it in order to benefit from this effect, as the newly available effect will not be re-evaluated otherwise.
+
+WARNING: Install this component DEAD LAST after ANY mod that modifies items, including any other component in this mod that modifies such items. When in doubt, just make it your last.
 
 **Component 1533:** Rebalance some wands
 
@@ -481,9 +487,9 @@ This makes the bracers far more worth the trouble for paladins. Instead of just 
 - All wearers get a "blessing": +1 THAC0 and Damage (Use Any Item users or good-aligned paladins)
 - Paladin-only bonuses: +1 Casting Speed, +1 spell slots (1-4), +1/2 APR, +15 HP
 
-**Component 1674:** Make Whispers of Silence protect against detection spells except for True Sight, and improve Move Silently
+**Component 1674:** Make Whispers of Silence improve Move Silently, and protect vs. detection spells except True Sight and grant a bonus sometimes when going invisible
 
-This makes the boots more useful for the purposes of avoiding detection, since Nondetection is an unremarkable protection. As such, the wearer is also immune to other invisibility-detecting spells, except True Sight. Additionally, it adds a 10% bonus to Move Silently.
+This makes the cloak more useful for the purposes of avoiding detection, since Nondetection is an unremarkable protection. As such, the wearer is also immune to other invisibility-detecting spells, except True Sight. Additionally, it adds a 10% bonus to Move Silently, and a +5% critical hit chance while the user is invisible.
 
 **Component 1675:** Make Cloak of Displacement add +5% damage resistance
 
@@ -673,7 +679,7 @@ The dispel on hit thing is pretty cheesy, so, yeah. That. No penalty with +5, -2
 This component improves the description to something a bit more interesting than "hey, this sword is evil and can cut heads off." See the file "unique_descriptions.md" for details. Additionally:
 
 - The faulty probabilities for vorpal hit are fixed (true 25%, not 26%)
-- The sword acts in **every way** as a +6 two-handed sword **against mind flayers only**, that is, +6 THAC0, +6 enchantment, 1d10+6 damage
+- The sword acts in **every way** as a +5 two-handed sword **against mind flayers only**, that is, +5 THAC0, +5 enchantment, 1d10+5 damage
 - Against other targets, it's still a +3 weapon in terms of damage, thac0 and enchantment level
 - Wielding it makes the wielder immune to mind blasts and domination attempts by mind flayers
 - Critical hits cause  which causes 2d8 psychic (irresistible) damage and causes Confusion for 10 seconds if a Save vs. Spell at -2 is failed. Creatures without minds or brains are unaffected.
@@ -764,8 +770,8 @@ Another example of a highly enchanted weapon without any special property. I bas
 
 I like the idea of the sword, but it's a little too boring beyond the effect of the great +5 enchantment. Now:
 
-- Deals 1d10+5 damage, but against mind flayers, it deals 1d10+8 (as if it were a +8 weapon without being one)
-- THAC0 bonus: +5, but against mind flayers, it's +8
+- Deals 1d10+5 damage, but against mind flayers, it deals 1d10+7 (as if it were a +7 weapon without being one)
+- THAC0 bonus: +5, but against mind flayers, it's +7
 - Mind flayers struck with this weapon must save vs. Death at -3 or die instantly. You'll see an "Illithid destroyed" message in the log when it happens. However, this effect can only be attempted on the same mind flayer once per round
 
 **Component 1602:** Make Dragon's Bane +3 better and act as a +6 weapon in every sense against dragons and wyverns
@@ -842,12 +848,21 @@ In reality, the sword deals 1d8+2 against all enemies and 1d8+2 again in a secon
 
 **Component 1210:** Make The Equalizer slightly more powerful
 
-Honestly, it kind of feels like it's immediately not useful by the time you get it. The description is also slightly misleading because it looks like it will deal, for example, 1d8+6 against some alignments in the same way that a Longsword +6 would, but it's not like that. It actually just inflicts 1d8 (like a normal non-magical sword) and then additively includes the damage, which is generally much less powerful. Therefore:
+Honestly, it kind of feels like it's immediately not useful by the time you get it. The description is also slightly misleading because it looks like it will deal, for example, 1d8+6 against some alignments in the same way that a Longsword +6 would, but it's not like that. It actually just inflicts 1d8 (like a normal non-magical sword) and then additively includes the damage, which is generally much less powerful. Therefore the following improvements now exist:
 
-- The sword now has an enchantment of 5 for the purposes of what it can hit.
+- The sword now has an enchantment of 5 for the purposes of what it can hit and in terms of speed factor.
 - The sword acts as a 1d8+3 in all other respects as a baseline.
+- The extra damage it deals based on alignment follows the same rules, but is now divided in half slashing, half magical, instead of all slashing. For example, against chaotic evil, you'd deal +3 slashing damage AND +3 magical damage on top of normal damage.
+- The sword now also grants passive improvements depending on alignment, benefitting the most those that are neutral:
+  - True Neutral: +15% magic resistance, +2 to all saves, +2 to AC, +1 damage, +5% critical chances while holding it. The last two bonuses apply to a second weapon if dual wielding too.
+  - All neutral alignments (non-good and non-evil): +10% magic resistance, +1 to all saves, +1 to AC, +1 damage
+  - Other alignments: +5% magic resistance, +1 to AC
 
-The rest functions exactly the same: no bonus against True Neutral, +1 THAC0 +2 damage against LN/CN, +2 THAC0 +4 damage against NG/NE, and +3 THAC0 +6 damage against LG/CG/LE/CE.
+The rest stays the same. Side note, because maybe some people don't know this, but the THAC0 bonuses that it grants towards alignments (and this is vanilla behavior) are universal, does not apply only to the equalizer, so if you put the weapon off-hand, and then put something else on your main hand, it shall be affected either way. This can be a way of optimizing THAC0 against, for instance, Chaotic Evil targets, such as Demogorgon, when using a character that can duel wield effectively.
+
+This behavior is present in other weapons that have a thac0 bonus vs. types of enemies, such as the silver dagger. Only two-handed weapons can isolate the thac0 bonus (since you can't use another weapon at the same time).
+
+Hopefully this will make the sword feel more legendary and worth the investment.
 
 **Component 1220:** Make Ras slightly better and the Dancing Blade last for 1 turn instead of 4 rounds
 
@@ -896,9 +911,9 @@ This makes the katana +3, for consistency with the power level of other WA-weapo
 
 Self explanatory. I also removed the weird preamble that includes the first sentence of the general description of long swords. Seems lazy, and perhaps a mistake.
 
-**Component 1341:** Make Hindo's Doom a +4 and +5 weapon
+**Component 1341:** Make Hindo's Doom a +4 and +5 weapon and inflict extra damage to undead
 
-This simply allows the game to grant you a +4 and +5 katana, essentially.
+This allows the game to grant you a +4 and +5 katana, and following the theme of the katana, each strike inflicts +4 and +5 extra magical damage to undead only.
 
 **Component 1470:** Make Adjatha the Drinker thirstier
 
@@ -964,7 +979,7 @@ This makes this weapon more interesting by replacing the simple +1 fire damage b
 
 The unique description with no unique functionality bothers me, therefore:
 
-- +20% cold resistance on equipping it
+- +20% cold resistance on equipping
 - Causes 1d2 cold damage on hit
 
 **Component 1589** Make Rashad's Talon not just unique in name and description, but in function
@@ -979,13 +994,13 @@ The unique description with no unique functionality bothers me, therefore:
 The sword has the following benefits now:
 
 - +1 Backstab bonus (single-classed thieves only)
-- +2 THAC0 (single-classed thieves only, only while wielding on the main hand)
+- +2 THAC0 (single-classed thieves only, only on the main hand)
 
 They're relegated to single classed thieves because they need it more, I want to promote specialization, and for balance, since multiclassed Thieves have other alternate means of increasing their THAC0 and general damage.
 
 **Component 1598:** Make Cutthroat +4 not just unique in name and description, but in function
 
-This weapon is not even a normal +4 weapon, since the speed factor is not 0 as it should. Therefore:
+This weapon is not even a normal +4 weapon, since the speed factor is not 0 as it normally would. Therefore:
 
 - Speed Factor: 0
 - Critical hit chances: +10%
@@ -997,7 +1012,7 @@ So. You get this weapon fairly late in BGEE, and it sucks. Also, "cold-using cre
 
 - Behaves exactly as a +2 weapon
 - Deals by default +2 fire damage on hit
-- The following creatures are considered now "regenerating": planetars, dark planetars, solars, and fallen solars. The sword will act as if it were +3 and +4, respectively, for the purposes of being able to hit these creatures. There may be others that would qualify as "regenerating", but I'm not sure.
+- The following creatures are considered now also "regenerating": planetars, dark planetars, solars, and fallen solars. The sword will act as if it were +3 and +4, respectively, for the purposes of being able to hit these creatures. There may be others that would qualify as "regenerating", but I'm not sure.
 - Silver Dragons are included as "cold-using creatures"
 - The extra damage will be fire damage, not slashing
 
@@ -1094,9 +1109,9 @@ The +5 version literally just increases the THAC0 bonus by 1. That's a bit too b
 - Adds a damage bonus of 1 like a regular composite bow
 - Animals and other kinds of unintelligent beasts, magical or not, take +2 and +5 damage (+4 and +5 version respectively)
 
-**Component 1342:** Make Protector of the Dryads deal +2 damage to orcs, ogres, bugbears, gnolls, and goblinoids
+**Component 1342:** Make Protector of the Dryads deal +2 damage to orcs, ogres, gnolls, and goblinoids
 
-Inspired by the description, it deals +2 damage to orcs... as well as some groups of similar monsters that would band together to spread evil on the Sword Coast.
+Inspired by the description, it deals +2 damage to orcs... as well as some groups of similar monsters that would band together to spread evil on the Sword Coast: ogres, gnolls, goblinoids.
 
 **Component 1343:** Make Mana bow more magical and more deadly against arcane casters
 
@@ -1149,7 +1164,7 @@ This component is compatible with Improved Haer'Dalis Swords mod, which makes th
 This component keeps to the idea that it is only lightly enchanted, but it also offers a few advantages to Yoshimo:
 - Speed factor reduced to 1 from 3
 - THAC0 bonus increased to 3.
-- Sets proficiencies to katanas to 2, unless it's higher.
+- Sets proficiency with katanas to 2, unless it's higher.
 - +10% critical hit chance
 
 **Component 1500:** Make Mazzy's weapons slightly more powerful
@@ -1170,7 +1185,7 @@ This extends the usability of the weapon, despite the lower damage, if the const
 
 **Component 1640:** Make Abyssal Blades more powerful (Dorn's Quest)
 
-This improves the blades such that they have an enchantment of 5, and thus their usability is extended until the end of the game, if so desired.
+This improves the blades such that they have an enchantment of 5 (only for the purposes of what they can hit!), and thus their usability is extended until the end of the game, if so desired.
 
 Additionally, the versions that have one fiend in them deal +1 fire damage compared to baseline. The version that has two deals +2.
 
@@ -1214,7 +1229,7 @@ This component makes Cernd's cloak more worth hanging onto. As it stands, it is 
 - Elemental damage resistance: +15%
 - Regeneration: 1 HP / 2 rounds
 
-Overall, this will complement his werewolf shapes and druidic traits. Obviously this was made with the assumption he's a shapeshifter and not any other kind of druid.
+Overall, this will complement his werewolf shapes and druidic traits. Obviously this was made with the assumption he's a shapeshifter and not any other kind of druid (though it's unlikely it will break anything -- unless he's a fighter/druid perhaps, due to the stacking of physical resistances).
 
 It will also remove the needless stat restrictions from the item.
 
@@ -1240,11 +1255,11 @@ This component contains the same fixes as Tresset's deathbringer assault compone
 
 **Component 1190:** Make Rod of Lordly Might usable by any class and more powerful
 
-The rod is conceptually quite interesting but generally underperforming.
+The rod is conceptually quite interesting but generally underperforming. This component changes the name to "Rod of Royal Might" (even the descriptions mentions royalty):
 
-- **Mace +2** is renamed to Mace of Lordly Might +3, becomes a +3 weapon, and the save against panic is now at +2, not +5, and the panic is now a 2-round Slow effect.
-- **Flaming Long Sword +1** is renamed to Flaming Sword of Lordly Might +3, becomes a +3 weapon, causes 1d4 fire damage per hit, and the paralyze effect Save becomes +2 and not +5, but the Hold effect only lasts one round. Additionally, it makes it look like an actual flaming sword when held.
-- **Spear +3** is renamed to Spear of Lordly Might +3, and it no longer has a Save vs. Spell bonus of +6 to cause 2d4 magic damage, now it has no bonus or penalty and causes 3d4 magic damage when save is failed.
+- **Mace +2** is renamed to Mace of Royal Might +3, becomes a +3 weapon, and the save against panic is now at +2, not +5, and the panic is now a 2-round Slow effect.
+- **Flaming Long Sword +1** is renamed to Flaming Sword of Royal Might +3, becomes a +3 weapon, causes 1d4 fire damage per hit, and since it's "hypnotic" it has a 50% chance of causing Stun, and 50% change of causing asleep for 1 round. The save against it is now +2 instead of +5. Additionally, it makes it look like an actual flaming sword when held.
+- **Spear +3** is renamed to Spear of Royal Might +3, and it no longer has a Save vs. Spell bonus of +6 to cause 2d4 magic damage, now it has no bonus or penalty and causes 3d4 magic damage when save is failed.
 
 **Component 3500:** Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane
 
@@ -1646,9 +1661,9 @@ I feel like 10d6, which is the same damage of the Fireball spell at max level, i
 This improves this power in the following ways:
 
 - Lasts 7 seconds, so it can forgive an extra second of delay to take advantage of the backstab-every-hit effect
-- It disables critical misses
-- It improves critical hit chances by +10%
-- For single-classed thieves, there are more benefits: +2 Damage, +3 THAC0, +1 APR, net +20% critical hit chance improvement
+- It disables critical misses for the duration, and one round after
+- It improves critical hit chances by +10% for the duration, and one round after
+- For single-classed thieves, there are more benefits: +2 Damage, +2 THAC0, +1 APR, net +15% critical hit chance improvement
 - Benefits other than backstabbing every hit will last one round longer (that is, 7 seconds + 1 round, aka 13 seconds). This won't stack if there's more than one casting of Assassination available.
 
 Overall, this will make the power less likely to be a waste by removing critical misses, increasing the chances of critical hits, which benefits the character even when facing a foe immune to backstabs, and rewarding specialization of Thieves to make them more combat ready.
@@ -1700,7 +1715,7 @@ Self explanatory. It depends on the spell granting negative plane protection. As
 
 Additionally, it allows a certain enemy blackguard in SoD to perform backstabs on you if the conditions are met, even if a component in this mod is reducing the backstab damage to their weapon.
 
-**Component 2210:** Light proficiency overhaul
+**Component 2210:** Make the proficiency point benefits streamlined
 
 This tiny overhaul addresses primarily something that has bothered me forever about proficiency progression, which is the weird jump in THAC0 from 2 proficiency points to 3. Therefore:
 
@@ -1710,6 +1725,13 @@ This tiny overhaul addresses primarily something that has bothered me forever ab
 - 4 proficiency points: +3 THAC0 and +4 Damage
 - 5 proficiency points: +4 THAC0 and +5 Damage
 
+**Component 2220:** Make Avoid Death HLA slightly more effective
+
+This improves this ability such that it prevents rogues from dying from Health damage for 3 seconds, and all saving throws succeed as well. This essentially makes the ability an "emergency" ability that you can select to survive anything during those two seconds that can be saved against, including physical damage. It's just 3 seconds, which is a small timeframe, but I think it's long enough to be useful, and short enough to not be overpowered. During the rest of the time, the ability functions as normal.
+
+**Component 2230:** Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value
+
+RR's implementation of Crippling Strike can actually increase Strength if dealing with something that has 9 strength or less, and the lower the strength the less benefit you get. I changed this by making it instead reduce the strength by half its current value, which allows it to generally stay relevant no matter what you face.
 
 </details>
 
@@ -1761,33 +1783,6 @@ I don't like being killed without any reasonable chance to defend against the ki
 - It still forces a Save vs. Death at -2 to trigger.
 
 In short, their vorpal weapon will be identical to the silver sword's, but will trigger 15% of the time instead of 25%.
-
-**Component 3080:** Overhaul backstab immunities across creatures
-
-Backstab immunity sucks because it makes the already-underpowered thieves even worse, and in many cases, it makes no logical sense. This is an attempt at making it fair and also not too arbitrary.
-
-The immunity will stay or be granted in these cases:
-
-- Backstab immunities granted by items, classes, or kits
-- Spectral or spiritual creatures cannot be backstabbed
-- Slimes and oozes remain immune. I imagine it like trying to stab soup or a bag of dog poop
-- Demiliches are immune. They're pretty much beyond the physical world.
-- Amelyssan (I can't be sure about how unfair or fair this would be, I've never done that fight)
-- Dragons can be made optionally susceptible, or non-susceptible to backstab. I'm on the fence about dragons so I leave it optional.
-- Floating weapons, magically animated armor
-
-The immunity will be removed if it exists in these cases:
-
-- All fiends and celestials, including solars, mariliths, and Demogorgon
-- Cadaverous undead. If they have a body, then you can study what part will inflict the most damage and identify what constitutes a weak point or structural flaw.
-- Golems and other constructs except floating weapons. They can have have structural weaknesses
-- Minotaurs. They have a body, you have blade. So... stab?
-- Beholders. You know what's a weak point? THAT BIG F***ING EYEBALL.
-- Giants, including Yaga Shura. Picture Legolas climbing on top of the giant Olliphaunts and shooting three arrows right into their necks. You're a damn rogue for crying out loud, you don't have to be literally backstabbing their toes.
-- All humanoid enemies unless their class, hit, or item grants them that, so enemies like Kiser will have to suck it up and take that dagger to the back.
-- Aesgareth and his party will be all susceptible to backstab, no reason at all for them to be so special
-- Avatars of Bhaal are susceptible
-
 
 </details>
 

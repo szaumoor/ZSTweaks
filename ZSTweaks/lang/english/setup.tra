@@ -61,7 +61,7 @@
 @1450 = "Make some rogue weapons able to do more damage if wielded by pure thieves (Finesse)"
 @1530 = ~Make the inexplicably double damage magical throwing daggers deal normal, to not make them the obvious choice~
 @1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense~
-@1532 = ~Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage~
+@1532 = ~Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage. WARNING: Install this component DEAD LAST after other components that modify these items, including components from other mods~
 @1533 = ~Rebalance some wands~
 @1534 = ~Rebalance some potions~
 @1535 = ~Make all potions usable by all classes~
@@ -100,7 +100,7 @@
 @1561 = ~Make Cloak of the Stars create 30 darts instead of six, and add passive effects~
 @1570 = ~Make Eyes of the Beholder's skills mirror the power of the spells they're based on~
 @1610 = ~Make Robe of Invocation also improve all elemental damage by 5% and add a +2 bonus against Invocation~
-@1620 = ~Make Vicross' Thayan Circlet apply Improved Shield of Chaos instead of just Shield of Chaos~
+@1620 = ~Make Vicross' Thayan Circlet more interesting for Wild Mages~
 @1651 = ~Make Studded Leather of Thorns cause some piercing damage too when being hit~
 @1652 = ~Make Grandmaster's Armor's movement bonus not affected by Free Action and grant perks to rogues~
 @1653 = ~Make Thieves' Hood protect against critical hits and slightly more advantageous for single-classed thieves~
@@ -122,13 +122,13 @@
 @1671 = ~Make The Eyes of Truth add a bonus to Detect Illusions and Find Traps~
 @1672 = ~Make Stalker Gauntlets also benefit Bounty Hunters and Shadowdancers~
 @1673 = ~Make Blessed Bracers more powerful~
-@1674 = ~Make Whispers of Silence protect against detection spells except for True Sight, and improve Move Silently~
+@1674 = ~Make Whispers of Silence improve Move Silently, and protect vs. detection spells except True Sight and grant a bonus sometimes when going invisible~
 @1675 = ~Make Cloak of Displacement add +5% damage resistance~
 @1676 = ~Make Skull of Death allows casting Finger of Death, and protect against Necromantic instant-death effects~
 @1677 = ~Make Wondrous Gloves Wondrous~
 @1678 = ~Make Senses of the Cat imbue the user of more cat-like features~
 @1679 = ~Make the Horn of Kazgaroth more useful and the self-damage more unique~
-@1685 = ~Make the Belt of Fortitude grant Constitution passively and replace the charge ability with regeneration~
+@1685 = ~Make the Belt of Fortitude grant Constitution passively and replace the charge ability with regeneration~ // todo
 
 // subcomponent str of component @1664
 @16640 = ~Affect all~
@@ -195,7 +195,7 @@
 @1270 = "Make Spectral Brand slightly better and make the dancing blade last for 1 turn instead of 4 rounds"
 @1315 = "Make Dak'kon's Zerth Blade behave as a +3 weapon"
 @1319 = "Make Holy Sword of Tyr +3 affect all evil, not just Chaotic Evil"
-@1341 = ~Make Hindo's Doom a +4 and +5 weapon~
+@1341 = ~Make Hindo's Doom a +4 and +5 weapon and inflict extra damage to undead~
 @1470 = ~Make Adjatha the Drinker thirstier~
 @1550 = ~Make Drizzt's weapons slightly more worth stealing in BG2~
 @1580 = ~Make Hawksight improve your senses, reflexes, and accuracy more keenly~
@@ -212,7 +212,7 @@
 @1605 = ~Make The Burning Earth better and the horrendously misleading description no longer so~
 
 // AXES AND ONE-HANDED BLUNT WEAPONS
-@1310 = "Make Defender of Eastheaven damage reduction a little more moderate"
+@1310 = "Make Defender of Easthaven damage reduction a little more moderate"
 @1311 = "Make Krotan's Skullcrusher +2 slightly less generic"
 @1312 = "Make Skullcrusher +3 slightly more crushy"
 @1313 = "Make Gnasher +2 slightly more painful"
@@ -228,7 +228,7 @@
 @1010 = ~Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost~
 @1330 = "Make Darkfire Bow slightly more remarkable"
 @1340 = "Make Taralash slightly more remarkable"
-@1342 = ~Make Protector of the Dryads deal +2 damage to orcs, ogres, bugbears, gnolls, and goblinoids~
+@1342 = ~Make Protector of the Dryads deal +2 damage to orcs, ogres, gnolls, and goblinoids~
 @1343 = ~Make Mana bow more magical and more deadly against arcane casters~
 @1344 = ~Make Arrows of Biting apply poison faster and improve the misleading description~
 @1345 = ~Make Arrows of Fire cause fire damage always, same as Arrows of Ice~
@@ -253,7 +253,6 @@
 // MISCELLANEOUS
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
 @3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane~
-
 
 // WIZARD SPELLS
 @140 = "Standardize Finger of Death magical damage on a successful save"
@@ -336,7 +335,9 @@
 @2180 = ~Make the THAC0 progression of Bards better and more streamlined, so they improve up to 6, like clerics~
 @2190 = ~Make Poison Weapon improve a couple of times more every 4 levels (level 17, and 21)~
 @2200 = ~Allow Blackguards to perform backstabs as if they had a 2x backstab multiplier~
-@2210 = ~Light proficiency overhaul~
+@2210 = ~Make the proficiency point benefits streamlined~
+@2220 = ~Make Avoid Death HLA slightly more effective~
+@2230 = ~Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value~
 @2240 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and reenable the unconscious status if successful~ // TODO
 @2250 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
 
@@ -736,8 +737,8 @@ The casting of this spell opens a channel between the caster's plane and the Neg
 STATISTICS:
 
 Equipped abilities:
-– Acid resistance: +40%
-– Elves and denizens native to the Underdark take an extra +5 piercing damage per hit.
+– Acid Resistance: +40%
+– Elves and denizens native to the Underdark take an extra +5 piercing damage per hit
 
 THAC0: +4
 Damage: 1d4+4, +1d4 acid damage
@@ -779,7 +780,7 @@ STATISTICS:
 
 Combat abilities:
 – 15% chance of making the user go invisible for 1 turn after each successful attack
-– Star Bolt: Each successful hit has a 15% chance of causing either 1d8 fire, 1d8 of electrical damage, or both.
+– Star Bolt: Each successful hit has a 15% chance of causing either 1d8 fire, 1d8 of electrical damage, or both
 
 THAC0: +6
 Damage: 1d4+6, +2 fire and electricity damage
@@ -799,7 +800,7 @@ STATISTICS:
 Equipped abilities:
 – Negative Plane protection
 – Nondetection
-– Save vs. Illusion and Necromancy: +4
+– Save vs. Illusion and Necromancy effects: +4
 
 Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
 Requires:
@@ -812,9 +813,10 @@ Weight: 10~
 STATISTICS:
 
 Equipped abilities:
-– Detect Traps: +25%
+– +1 AC
+– Save vs. Breath: +1
 – Immunity to backstabs and sneak attacks
-– +1 AC and Save vs. Breath
+– Detect Traps: +25%
 
 Weight: 0~
 
@@ -823,29 +825,20 @@ Weight: 0~
 STATISTICS:
 
 Combat abilities:
-– This rod may transform into any of the following weapons when used. Each weapon may also change back into the rod at will.
+– This rod may transform into any of the following weapons when used. Each weapon may also change back into the rod at will:
 
-Mace of Lordly Might +3
-  Special: Target must save vs. Spell at +2 or be slowed for 2 rounds
-  THAC0: +3
-  Damage: 1d6+4 (crushing)
+Mace of Royal Might +3: Target must save vs. Spell at +2 or be slowed for 2 rounds
 
-Flaming Sword of Lordly Might +3
-  Special: Target must save vs. Spell at +2 or be held for 1 round
-  THAC0: +3
-  Damage: 1d8+3 (slashing) + 1d4 (fire)
+Flaming Sword of Royal Might +3: Targets take +1d4 extra fire damage and must save vs. Spell at +2 or be stunned or put to sleep for 1 round
 
-Spear of Lordly Might +3
-  Special: Target must save vs. Spell or take 3d4 points of magical damage
-  THAC0: +3
-  Damage: 1d6+3 (piercing)
+Spear of Royal Might +3: Targets take +1 piercing damage and must save vs. Death to avoid bleeding for 10 piercing damage for a round, and there's a 10% chance of releasing an arcane blast that deals 2d4+2 magic damage
 
 Weight: 5~
 
-@6041 = ~Mace of Lordly Might +3~
-@6042 = ~Flaming Sword of Lordly Might +3~
-@6043 = ~Spear of Lordly Might +3~
-@6044 = ~This mace has been created via the Rod of Lordly Might. Use this item's special use to change it back into the Rod to choose another weapon.
+@6041 = ~Mace of Royal Might +3~
+@6042 = ~Flaming Sword of Royal Might +3~
+@6043 = ~Spear of Royal Might +3~
+@6044 = ~This mace has been created via the Rod of Royal Might. Use this item's special use to change it back into the Rod to choose another weapon.
 
 STATISTICS:
 
@@ -862,12 +855,12 @@ Requires:
 
 Weight: 7~
 
-@6045 = ~This sword has been created via the Rod of Lordly Might. Use this item's special use to change it back into the Rod to choose another weapon.
+@6045 = ~This flaming sword has been created via the Rod of Lordly Might. Use this item's special use to change it back into the Rod to choose another weapon.
 
 STATISTICS:
 
 Combat abilities:
-– Target must save vs. Spell at +2 or be held for 1 round
+– Target must save vs. Spell at +2 or be held or forced to fall into a comatose slumber for 1 round
 
 THAC0: +3
 Damage: 1d8+3, +1d4 (fire)
@@ -880,15 +873,17 @@ Requires:
 
 Weight: 4~
 
-@6046 = ~This spear has been created via the Rod of Lordly Might. Use this item's special use to change it back into the Rod to choose another weapon.
+@6046 = ~This barbed spear has been created via the Rod of Lordly Might. Use this item's special use to change it back into the Rod to choose another weapon.
 
 STATISTICS:
 
 Combat abilities:
-– Target must save vs. Spell or take 3d4 points of magical damage
+– Target must save vs. Death or start bleeding for 10 points of piercing damage over 1 round
+– Arcane Blast: 10% chance per hit to cause 2d4+2 magical damage
 
 THAC0: +3
-Damage: 1d6+3 (piercing)
+Damage: 1d6+3, +1 piercing damage
+Damage type: Piercing
 Speed Factor: 3
 Proficiency Type: Spear
 Type: Two-handed
@@ -896,7 +891,8 @@ Requires:
  5 Strength
 
 Weight: 5~
-
+@6047 = "Arcane Blast"
+@6048 = ~Rod of Royal Might~
 
 @6050 = ~This abyssal greensteel blade is one of Haer'Dalis's favorite weapons. This short sword is capable of inflicting an additional 6 points of poison damage if the target fails a Saving Throw. This blade may only be used by tieflings.
 
@@ -981,17 +977,22 @@ STATISTICS:
 
 Equipped abilities:
 – Immunity to charm and confusion
+– Stacking bonuses that depends on the alignment of the wielder:
+  All alignments: +1 AC, +5% Magic Resistance
+  All neutral alignments: +1 Damage, +1 Saving Throws, +5% Magic Resistance
+  True Neutral: +1 Armor Class, +1 Saving throws, +5% Magic Resistance, +5% critical hit chances with all weapons
 
 Combat abilities:
 – Strikes as a +5 weapon
+– Has a damage and THAC0 bonus depending on how far the target's alignment strays from True Neutral:
+  vs. Lawful Neutral and Chaotic Neutral: +1 THAC0, +1 slashing and magic damage
+  vs. Neutral Good, Neutral Evil: +2 THAC0, +2 slashing and magic damage
+  vs. Other Alignments: +3 THAC0, +3 slashing and magic damage
 
-THAC0 & Damage:
-  vs. True Neutral: +3 to hit, 1d8+3 damage
-  vs. Chaotic Neutral, Lawful Neutral: +4 to hit, 1d8+3, +2 damage
-  vs. Neutral Good, Neutral Evil: +5 to hit, 1d8+3, +4 damage
-  vs. Other Alignments: +6 to hit, 1d8+3, +6 damage
+THAC0: +3
+Damage: 1d8+3
 Damage type: Slashing
-Speed Factor: 2
+Speed Factor: 0
 Proficiency Type: Long Sword
 Type: One-handed
 Requires:
@@ -1003,14 +1004,18 @@ Weight: 3~
 
 STATISTICS:
 
+Equipped abilities:
+– Magic Resistance: +5%
+
 Charge abilities:
 – Lesser Restoration once per day
   Special: Reverses any previous level drain
   Range: Touch
   Area of Effect: 1 creature
 
-THAC0: +4
-Damage: 1d10+4 (slashing)
+THAC0: +4, +6 vs. undead
+Damage: 1d10+4, +4 extra magic damage vs. undead
+Damage type: Slashing
 Speed Factor: 0
 Proficiency Type: Katana
 Type: One-handed
@@ -1035,8 +1040,9 @@ Charge abilities:
   Range: Touch
   Area of Effect: 1 creature
 
-THAC0: +5
-Damage: 1d10+5 (slashing)
+THAC0: +5, +7 vs. undead
+Damage: 1d10+5, +5 extra magic damage vs. undead
+Damage type: Slashing
 Speed Factor: 0
 Proficiency Type: Katana
 Type: One-handed
@@ -1348,8 +1354,6 @@ Requires:
 
 Weight: 2~
 
-@6101 = ~Two Levels Drained~ // pointless... I should be checking for the STR existing in the game files already -- don't know how to yet!
-
 @6110 = ~The name of the mighty Wu Jen who fashioned this "companion sword" is long forgotten. However, the name Yamato, loosely translated, means "Guardian" or "Defender."
 
 STATISTICS:
@@ -1396,7 +1400,7 @@ Weight: 1~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +1
+– Armor Class: +2
 – +10% resistance to slashing, piercing, and crushing damage
 
 THAC0: +3
@@ -1415,9 +1419,9 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: +2 vs. slashing and piercing attacks
-– +1 bonus against Death and Breath
+– +1 bonus to saving throws vs. Death and Breath
 – +50% Poison damage resistance
-– +5% universal bonus for thieving skills
+– +5% bonus to all Thieving skills
 
 Weight: 4~
 
@@ -1427,8 +1431,8 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: +3 vs. missile attacks
-– +1 bonus against Wand and Spell
 – +15% Missile resistance
+– +1 bonus to saving throws vs. Wand/Rod/Staff and Spell
 – Increases movement speed by a factor of 4
 
 Weight: 4~
@@ -1439,7 +1443,7 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: +1 vs. all attacks
-– +1 bonus against Petrification/Polymorph and Spell
+– +1 bonus to saving throws vs. Petrification/Polymorph and Spell
 – +20% Magic damage resistance
 – +10% Elemental damage resistance
 
@@ -1450,9 +1454,9 @@ Weight: 4~
 STATISTICS:
 
 Equipped abilities:
-– Electrical Resistance: +40%
+– Electricity Resistance: +40%
 – Electrical damage dealt: +7%
-– Save vs. Evocation +1
+– Saves vs. Evocation: +1
 
 
 Weight: 3~
@@ -1464,7 +1468,7 @@ STATISTICS:
 Equipped abilities:
 – Cold Resistance: +40%
 – Cold damage dealt: +7%
-– Save vs. Evocation +1
+– Saves vs. Evocation: +1
 
 Weight: 3~
 
@@ -1475,7 +1479,7 @@ STATISTICS:
 Equipped abilities:
 – Fire Resistance: +40%
 – Fire damage dealt: +7%
-– Save vs. Evocation +1
+– Saves vs. Evocation: +1
 
 Weight: 3~
 
@@ -1495,8 +1499,8 @@ Weight: 4~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: 5, plus 1
-– +2 bonus against Spell, +1 against the rest
+– Armor Class: set to 5, plus 1
+– +2 bonus to saving throws vs Spell, +1 vs. the rest
 – Magic Resistance: +10%
 – Magic damage resistance: +25%
 – Casting speed improved by 1
@@ -1509,8 +1513,8 @@ Weight: 6~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: 5, plus 1
-– +2 bonus against Spell, +1 against the rest
+– Armor Class: set to 5, plus 1
+– +2 bonus to saving throws vs Spell, +1 vs. the rest
 – Magic Resistance: +10%
 – Magic damage resistance: +25%
 – Casting speed improved by 1
@@ -1523,8 +1527,8 @@ Weight: 6~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: 5, plus 1
-– +2 bonus against Spell, +1 against the rest
+– Armor Class: set to 5, plus 1
+– +2 bonus to saving throws vs Spell, +1 vs. the rest
 – Magic Resistance: +10%
 – Magic damage resistance: +25%
 – Casting speed improved by 1
@@ -1680,7 +1684,7 @@ Weight: 1~
 STATISTICS:
 
 Combat abilities:
-– Every hit inflicts pain, making living beings feel weakened for 1 round, suffering a penalty of 2 to THAC0, AC, and to damage. This effect does not stack.
+– Every hit inflicts pain, making living beings feel weakened for 1 round, suffering a penalty of 2 to THAC0, AC, and damage. This effect does not stack
 
 THAC0: +2
 Damage: 1d6+2, slivers add 2 points piercing damage each round for 4 rounds
@@ -1693,7 +1697,7 @@ Requires:
 
 Weight: 3~
 
-@6190 = ~This blade bears the sigil of Tyr and is intended for his most fervent followers.
+@6190 = ~This long sword bears the sigil of Tyr and is intended for his most fervent followers.
 
 STATISTICS:
 
@@ -1826,7 +1830,7 @@ Weight: 3~
 @6263 = ~This enchanted bow has been in Mazzy Fentan's possession for several years, given to her by her god, Arvoreen. It is usable only by halflings, granting a +3 bonus to hit rolls and a +1 to damage.
 
 Equipped abilities:
-– Increases attacks per round by 1/2 while holding it
+– Attacks per round: +1/2
 
 STATISTICS:
 
@@ -1844,7 +1848,7 @@ Weight: 2~
 
 Combat abilities:
 – Yoshimo wields it as if he is specialized in katanas, unless more highly specialized
-– +10% critical chances
+– This katana has +10% critical chances to critically hit
 
 STATISTICS:
 
@@ -1939,16 +1943,20 @@ Saving Throw: Special
 
 A Grease spell covers a material surface with a slippery, highly flamable layer of a fatty, greasy nature. Any creature entering the area or caught in it when the spell is cast must save vs. Spell at +2 or slip and slide, unable to move effectively (80% slower). Those who successfully save can move, albeit slowly (25% slower), for the rest of the round (but will need to save vs. Spell again the following round). Regardless of whether they save against the effect or not, the oil will make them take 25% more fire damage for 1 round due to the volatile nature of the oils. Those who remain in the area are allowed a Saving Throw each round until they escape the area.
 
-Because this spell effectively simply conjures plain grease, it's not affected by Magic Resistance.~
+Because this spell simply conjures plain grease, it's not affected by Magic Resistance.~
 
 @6300 = ~Set Exploding Trap
-This ability allows the rogue to set a powerful trap that unleashes a fireball which causes 15d6 damage (Save vs. Spell for half damage) and will knock its victims off their feet.~
+This ability allows the rogue to set a powerful trap that unleashes a fireball which causes 15d6 damage (Save vs. Spell for half damage) and will knock its victims off their feet for 1 round with no save allowed.~
 
 @6310 = ~Quivering Palm
-The next successful attack forces the target to Save vs. Spell or die. At level 18 this Save gets a penalty of -1 and at level 26 it becomes -2. This special ability automatically modifies normal attacks; no targeting needs to be done.~
+The next successful attack forces the target to save vs. Spell or die. At level 18, the save vs. Spell must succeed at -1 to avoid its effects, and at level 26 it improves again, requiring a save vs. Spell at -2.
+
+This special ability automatically modifies normal attacks; no targeting needs to be done.~
 
 @6320 = ~War Cry
-With a War Cry, the warrior emits a powerful and frightening yell that will panic all opponents in a 15-ft. radius if they don't make their Save vs. Spell at -2.~
+With a War Cry, the warrior emits a powerful and frightening yell that will panic all opponents in a 15-ft. radius if they don't make their Save vs. Spell at -2.
+
+Additionally, the warrior and allies have their morale restored to its maximum, are healed by 12 HP, and get a +2 bonus to THAC0 and weapon damage for 3 rounds. During this time, the warrior is also able to land critical hits 5% more often.~
 
 @6330 = ~Dak'kon's Zerth Blade +3~
 @6331 = ~This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the "Nameless One."
@@ -1977,7 +1985,7 @@ Equipped abilities:
 – Move Silently: +20%
 – Hide In Shadows: +20%
 – Set Traps: +20%
-– +5% critical hit, +1 THAC0 and Damage bonus (single-classed Thieves only)
+– +5% chances to critically hit, +1 THAC0, +1 weapon damage (single-classed Thieves only)
 
 Weight: 0~
 
@@ -2190,7 +2198,7 @@ Each successful hit within the next 5 rounds will inject poison into the target.
 STATISTICS:
 
 Charge abilities:
-– Restore 27 Hit Points three times per day
+– Restore 27 Hit Points three times per day. For 1 turn, the user gets a +1 bonus to Strength and Constitution (does not stack)
 
 Weight: 3~
 
@@ -2199,7 +2207,6 @@ Weight: 3~
 An ambitious young wild mage named Vicross's fear of discovery and desire to master her capricious magic were so great that she managed to conceal her status and rise through the Red Wizard hierarchy. She became an autharch for Aznar Thrul, the tharchion of Priador. In this position, she created the Order of Eight Staves, designed to study wild magic. For years, Vicross and her underlings hunted and captured wild mages across Faerûn, performing a variety of tests on their prisoners, collecting and analyzing results.
 
 Eventually Vicross concocted techniques capable of partially controlling wild surges. She was able to enchant this circlet to reduce wild surge probability—and to minimize negative results. Fearful of her ever suspicious fellow Red Wizards, she wore it at all times, to keep her wild magic from betraying her.
-
 
 STATISTICS:
 
@@ -2226,7 +2233,7 @@ By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest c
 
 Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
 
-//iwee
+//iwdee
 @6471 = ~Cure Light Wounds
 (Necromancy)
 
@@ -2240,7 +2247,7 @@ Saving Throw: None
 
 By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 8 Hit Points plus 1/level (up to 12) to the creature's body and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures.~
 
-// iwee
+// iwdee
 @6472 = ~Cure Moderate Wounds
 (Necromancy)
 
@@ -2267,7 +2274,7 @@ Saving Throw: None
 
 By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 20 points plus 2/level (up to 28) of wound or other injury damage from the creature's body. This healing cannot affect creatures without corporeal bodies, nor can it cure wounds of creatures not living or of extraplanar origin. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
 
-// iwee
+// iwdee
 @6474 = ~Cure Medium Wounds
 (Necromancy)
 
@@ -2294,7 +2301,7 @@ Saving Throw: None
 
 This spell is a more potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hand upon a creature and heals 30 Hit Points, which increases up to 40 over the next 3 levels, of wound or other injury damage to the creature's body. This healing cannot affect noncorporeal, nonliving, or extraplanar creatures.~
 
-// iwee
+// iwdee
 @6476 = ~Cure Serious Wounds
 (Necromancy)
 
@@ -2321,7 +2328,7 @@ Saving Throw: None
 
 The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hands upon a creature and heals 42 points plus 3/level (up to 54) of damage from wounds or other injuries. The spell does not affect creatures without corporeal bodies, those of extraplanar origin, or those not living.~
 
-// iwee
+// iwdee
 @6478 = ~Cure Critical Wounds
 (Necromancy)
 
@@ -2354,7 +2361,7 @@ STATISTICS:
 
 Combat abilities:
 – Acts as a silver +5 weapon for the purposes of what it can hit
-– Creatures immune to fire take +5 cold damage.
+– Creatures immune to fire take +5 cold damage
 
 Equipped abilities:
 – Fire Resistance: +50%
@@ -2378,7 +2385,7 @@ Combat abilities:
 – Acts as a +5 weapon for the purposes of what it can hit
 
 Equipped abilities:
-– Armor Class: +2 plus extra +2 against slashing, piercing and missile weapons.
+– Armor Class: +2 plus extra +2 against slashing, piercing and missile weapons
 – Save vs. Spell: +1
 – +8% physical damage resistance
 
@@ -2408,10 +2415,10 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: +1
-– Immunity to Beholder Rays that cause Domination, Charm, Paralysis or Fear effects
+– Immunity to beholder rays that dominate, charm, paralyze, or cause fear effects
 – Protects against critical hits
 
-Charge abilities (May be used 3 times per day each):
+Charge abilities (may be used 3 times per day each):
 – Control: Target is dominated for 1 turn (Save vs. Spell at -2 negates)
 – Paralyze: Target is held for 1 turn (Save vs. Spell at -1 negates)
 – Fear: Target flees in terror for 1 turn (Save vs. Spell negates)
@@ -2423,9 +2430,9 @@ Weight: 2~
 STATISTICS:
 
 Equipped abilities:
-– Fire, Cold, Acid, and Electrical Resistance: +20%
-– Save vs. Invocation spells: +2
+– Fire, Cold, Acid, and Electricity Resistance: +20%
 – Elemental spell damage: +5%
+– Save vs. Invocation spells: +2
 
 Weight: 6~
 
@@ -2504,7 +2511,7 @@ The Jade Fang was the weapon of choice for famed Shou Lung thief Niu Weidan, who
 STATISTICS:
 
 Combat abilities:
-– 15% chance of stunning for 10 seconds if Save vs. Spell is failed, 5% chance of triggering with no save.
+– 15% chance of stunning for 10 seconds if a Save vs. Spell is failed; 5% chance of triggering with no save allowed.
 – Each hit heals the wielder between 1 to 5 Hit Points. It's more likely to heal less than more.
 
 THAC0: +3
@@ -2557,13 +2564,14 @@ Weight: 1~
 
 @6590 = ~There are no records of this weapon's creator. Nevertheless, its existence can be traced back among thieves and murderers to before Dalereckoning. Its blackened blade was apparently forged from the arcane metals of an iron golem, giving the weapon an appearance as dark as its history. The remnants of the power of the golem in the blade provide the wielder with the ability to sometimes deflect magical attacks, and this energy is sometimes unleashed when hitting an opponent.
 
+STATISTICS:
+
 Equipped abilities:
 – 10% Magic Resistance
 
 Combat abilities:
 – 50% chance per hit to inflict 1d4 points of Magic damage
 
-STATISTICS:
 
 THAC0: +2
 Damage: 1d4+2 (piercing)
@@ -2936,7 +2944,6 @@ Equipped abilities:
 – Armor Class: +1
 – Acid Resistance: +50%
 
-
 Charge abilities:
 – Charm Earth Elemental once per day (Save vs. Spell at -2 negates)
   Range: Touch
@@ -2995,7 +3002,7 @@ Weight: 0~
 STATISTICS:
 
 Equipped abilities:
-– Can memorize one extra Druid spell from levels 1 to 7
+– Can memorize one extra Druid spell of each level
 – Regenerate 1 HP per round
 
 Weight: 1~
@@ -3009,15 +3016,14 @@ As a weapon, Lilarcor has its uses, but many a warrior has eventually given it a
 STATISTICS:
 
 Equipped abilities:
-– Immunity to charm
-– Immunity to confusion
+– Immunity to charm and confusion
 
 Combat abilities:
 – 25% chance per hit it causes confusion on the target 1 round, unless a Save vs. Spell succeeds
 
 THAC0: +3
 Damage: 1d10+3 (slashing)
-Speed Factor: 8
+Speed Factor: 7
 Proficiency Type: Two-handed Sword
 Type: Two-handed
 Requires:
@@ -3066,7 +3072,7 @@ Weight: 3~
 STATISTICS:
 
 Combat abilities:
-– Each hit makes the target receive a cumulative 2 point penalty to their THAC0 for 5 rounds unless they Save vs. Spell at -4
+– Each hit makes the target receive a cumulative 2 point penalty to their THAC0 for 5 rounds unless they save vs. Spell at -4
 
 THAC0: +4
 Damage: 1d10+4 (slashing)
@@ -3102,7 +3108,7 @@ Weight: 10~
 STATISTICS:
 
 Combat abilities:
-– Each hit makes the target receive a cumulative 2 point penalty to their THAC0 for 5 rounds unless they Save vs. Spell at -4
+– Each hit makes the target receive a cumulative 2 point penalty to their THAC0 for 5 rounds unless they save vs. Spell at -4
 
 THAC0: +4
 Damage: 1d12+4 (slashing)
@@ -3142,8 +3148,8 @@ STATISTICS:
 Equipped abilities:
 – Immunity to fear
 – Regenerate 1 Hit Point every 5/2 rounds
-– 15% resistance against acid, electricity, fire, and cold
-– +2 AC and saving throws against dragons
+– +15% resistance against acid, electricity, fire, and cold
+– +2 AC and saving throws vs. dragons
 
 Equipped abilities:
 – Acts as a +4 weapon against dragons and wyverns for the purposes of overcoming physical protections
@@ -3180,7 +3186,7 @@ This spell conjures a cloud of writhing fog that chills and hinders anyone withi
 STATISTICS:
 
 Combat abilities:
-– Thorn Damage: Any opponent within 6 ft. that successfully hits the wearer suffers 1d4 points of piercing and fire damage.
+– Thorn Damage: Any opponent within 6 ft. that successfully hits the wearer suffers 1d4 points of piercing and fire damage
 
 Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
 Requires:
@@ -3193,7 +3199,7 @@ Weight: 5~
 STATISTICS:
 
 Equipped abilities:
-– Critical Hit Chance: +5%
+– Critical hit chances: +5%
 
 Combat abilities:
 – Deals an extra 2d5+2 points of slashing damage on a critical hit
@@ -3216,7 +3222,7 @@ STATISTICS:
 
 Equipped abilities:
 – Immunity to backstab and poison
-– Single-classed thieves are granted +1 to THAC0 and Damage
+– Single-classed thieves are granted a +1 bonus to THAC0 and damage
 – Protects against critical hits
 
 Charge abilities:
@@ -3250,7 +3256,7 @@ Unfortunately, he happened to be standing between the portals, holding the dagge
 STATISTICS:
 
 Equipped abilities:
-– 10% resistance to fire, cold, electrical, and acid damage
+– +10% resistance to fire, cold, electrical, and acid damage
 
 Combat abilities:
 – Deals an extra 2d4 cold damage to fire elementals
@@ -3309,7 +3315,7 @@ Equipped abilities:
 – Can memorize 2 extra 3rd-level, 2 extra 4th-level, and 1 extra 5th-level wizard spell
 – Lore: -15
 – Wisdom: -2
-– Saves. vs Illusion: -2
+– Saves vs. Illusion: -2
 – Detect Illusion: -20%
 
 Weight: 1~
@@ -3335,8 +3341,6 @@ Combat abilities:
 – Inflicts 1d2 points of bleeding damage on hit and one round later
 – Critical hits inflict 2d4 extra piercing damage
 – Drains 2 points of Strength from the target and transfers them to the wielder for 5 rounds when a successful backstab is performed (non-cumulative)
-
-STATISTICS:
 
 THAC0: +3
 Damage: 1d6+3 (piercing)
@@ -3381,7 +3385,7 @@ In order to protect their community from an encroaching orc logging encampment, 
 STATISTICS:
 
 Combat abilities:
-– Inflicts +2 extra missile damage against orcs, ogres, bugbears, gnolls, and goblinoids
+– Inflicts +2 extra missile damage against orcs, ogres, gnolls, and goblinoids
 
 THAC0: +2
 Damage: +2
@@ -3399,7 +3403,7 @@ In order to protect their community from an encroaching orc logging encampment, 
 STATISTICS:
 
 Combat abilities:
-– Inflicts +2 extra missile damage against orcs, ogres, bugbears, gnolls, and goblinoids
+– Inflicts +2 extra missile damage against orcs, ogres, gnolls, and goblinoids
 
 THAC0: +2
 Speed Factor: 4
@@ -3461,8 +3465,8 @@ STATISTICS:
 
 Equipped abilities:
 – Protects against critical hits
-– Non-physical damage resistance: +25%
 – Physical damage resistance: +7%
+– Magic, Elemental, and Poison damage resistance: +25%
 – Charisma: +1
 
 Charge abilities:
@@ -3607,9 +3611,7 @@ STATISTICS:
 
 Equipped abilities:
 – Immunity to charm
-– Fire Resistance: +25%
-– Acid Resistance: +25%
-– Magic Damage Resistance: +25%
+– Fire, Acid, and Magic damage resistance: +25%
 
 Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
 
@@ -3663,7 +3665,7 @@ Equipped abilities:
 
 Charge abilities:
 – Armor Piercing Strike once per day
-  Special: +10 THAC0, +4 damage, and +10% critical hit chances bonus. Can't critically miss.
+  Special: +10 THAC0, +4 damage, and +10% critical hit chances. Can't critically miss.
   Duration: 3 rounds
 
 – Summon Spectral Blade once per day
@@ -3699,18 +3701,18 @@ Weight: 3~
 @7161 = ~Kachiko's Whisper
 This wakizashi was the favored weapon of a female warrior named Kachiko. She hailed from the far eastern lands in Kara-Tur, and while her early life is largely unknown, it is believed she was trained as a shadowdancer, where she was able to shine as one of the most skilled of her order.
 
-Old tales say that during one of her missions, in the innermost sanctum of a long-forgotten temple found deep within the mountains, she discovered this blade, enshrined upon an ornate pedestal. As she reached out to touch it, the sword resonated with a soft whisper, as if acknowledging her presence.
+Old tales say that during one of her missions, in the innermost sanctum of a forgotten temple found deep within the mountains, she discovered this blade, enshrined upon an ornate pedestal. As she reached out to touch it, the sword resonated with a soft whisper, as if acknowledging her presence.
 
 Allegedly, this event was what awakened the blade's true powers, and it was this haunting whisper what earned the weapon its name, symbolizing the deep bond between the warrior and her blade. Many of her exploits were conducted using this blade.
 
 STATISTICS:
 
-Combat abilities:
-– Drains 2 points of target's Wisdom for 6 rounds on each hit (Save vs. Death to negate)
-
 Equipped abilities:
-– +10% in Hiding in the Shadows and Move Silently (Shadowdancers only)
-– +1 THAC0 (Shadowdancers only)
+– +10% bonus in Hiding in the Shadows and Move Silently (shadowdancers only)
+– +1 THAC0 (shadowdancers only)
+
+Combat abilities:
+– Drains 2 points of target's Wisdom for 6 rounds on each hit (save vs. Death to negate)
 
 Charge abilities:
 – Shadow Jump three times per day
@@ -3858,7 +3860,7 @@ STATISTICS:
 
 Equipped abilities:
 – THAC0: +3 with missile weapons
-– Damage: +1 with missile weapons (+2 for Archers and rogues)
+– Damage: +1 with missile weapons (+2 for Archers, Thieves, and Bards)
 
 Weight: 2~
 
@@ -3869,8 +3871,7 @@ STATISTICS:
 Combat abilities:
 – Extra 1/2 attack per round
 
-THAC0: +2
-Damage: +2
+THAC0 and Damage: +2
 
 Weight: 1~
 
@@ -3908,16 +3909,18 @@ Weight: 2~
 
 @7321 = ~Prowler Gauntlets~
 
-@7330 = ~The willing sacrifice of a vast fortune in gold, combined with the holy venerations of the sanctifying ceremony, have convinced the blessed powers to transform these already formidable gauntlets into gloves of awesome righteous power.
+@7330 = ~Defenders of justice are ever eager to acquire another tool which may be used to thwart the machinations of evil. However, these particular gauntlets can only be worn by a warrior of the purest heart.
+
+The willing sacrifice of a vast fortune in gold, combined with the holy venerations of the sanctifying ceremony, have convinced the blessed powers to transform these already formidable gauntlets into gloves of awesome righteous power.
 
 STATISTICS:
 
 Equipped abilities:
+– Permanently blessed
 – Hit Points: +15 (paladins only)
 – One extra spell slot from level 1 to 4 (paladins only)
 – Casting speed: +1 (paladins only)
 – +1/2 APR (paladins only)
-– Permanently blessed (stacks with Bless spells)
 
 Charge abilities:
 – Heal once per day
@@ -4021,7 +4024,7 @@ Casting Time: 9
 Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
-At the culmination of this dreadful spell, the wizard screams like a banshee (groaning spirit). Everyone in the area of effect hears the awful cry. Those who fail a Saving Throw vs. Death die instantly; those who do, still suffer 3d6+3 magic damage and deafness for 2 rounds without any save allowed. The caster and companions are immune to the effects of the wail.~
+At the culmination of this dreadful spell, the wizard screams like a banshee (groaning spirit). Everyone in the area of effect hears the awful cry. Those who fail a Saving Throw vs. Death die instantly; those who succeed still suffer 3d6+3 magic damage and deafness for 2 rounds without any save allowed. The caster and companions are immune to the effects of the wail.~
 
 @7370 = ~Ice Storm
 (Evocation)
@@ -4033,7 +4036,7 @@ Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-When this spell is cast, great hail stones pound down for four rounds in a 30-ft. diameter area and inflict 2d8+2 points of cold damage plus 1d6+2 piercing damage to any creatures within the area of effect every round. Also, anyone that remains within the area of effect takes 2d8 cold damage each round for 4 rounds.~
+When this spell is cast, great hail stones pound down for four rounds in a 30-ft. diameter area and inflict 2d8+2 points of cold damage plus 1d6+2 piercing damage to any creatures within the area of effect every round.~
 
 @7380 = ~Maze
 (Conjuration/Summoning)
@@ -4101,7 +4104,7 @@ Creature Type                         Damage
  Undead                                8d6+6
  Fiendish outsiders                    8d8+6
 
- This spell cannot be blocked by Magic Resistance, and outsiders of celestial origin (or related to the Positive Energy Plane) are unaffected, including Aasimars.~
+This spell cannot be blocked by Magic Resistance, and outsiders of celestial origin (or related to the Positive Energy Plane) are unaffected, including Aasimars.~
 
  @7400 = ~Magical Stone
 (Enchantment)
@@ -4167,10 +4170,12 @@ Reportedly created for a lineage of the greatest burglars ever to walk the night
 STATISTICS:
 
 Equipped abilities:
-– +15% Move Silently.
-– While hidden or invisible, the wearer is non-detectable by magical means such as Detect Invisibility, Detect Illusion, and scrying, although True Sight will still allow the caster to detect the wearer.
+– +15% bonus to Move Silently
+– Critical hit chances increase by 5% for 2 rounds when the user becomes invisible. This may only happen once per turn
 
 Weight: 3~
+
+@7441 = ~Critical hit chances increased by Whispers of Silence~
 
 @7450 = ~The Cloak of Displacement is a magical item that causes subtle shifts in the image of its wearer. It has the power to actually shift an individual's image by as much as six inches in any direction from their actual location. Aside from being an effective defense in combat situations, it has also been the cause of serious eyestrain amongst fellow party members.
 
@@ -4216,13 +4221,13 @@ Weight: 1~
 STATISTICS:
 
 Hit Points: +10% (base only)
-THAC0: Set to 90% of current base
+THAC0: +2 bonus
 Immunity to morale failure
 Duration: 2 hours
 
 Weight: 1~
 
-@7463 = ~This potion confers very high resistance to all attacks while giving bonuses to all Saving Throws. The effects of the elixir last for 1 hour but can only be used by warriors.
+@7463 = ~This potion confers very high resistance to all attacks while giving bonuses to all Saving Throws and Magic Resistance. The effects of the elixir last for 1 hour.
 
 STATISTICS:
 
@@ -4247,7 +4252,8 @@ STATISTICS:
 
 Detect Illusion and Traps: +40%
 Other thieving skills: +20%
-AC, THAC0, and Saving Throws: +2
+AC and Saving Throws: +2
+THAC0: +1
 Duration: 6 hours
 
 Weight: 1~
@@ -4256,10 +4262,10 @@ Weight: 1~
 
 STATISTICS:
 
-THAC0: Set to 80% of current base
+THAC0: +4 bonus
 Hit Points & Thieving skills: +20% (base only)
 All damage output: +10%
-Casting speed & Backstab multiplier: +1
+Casting speed: +1
 Immunity to morale failure
 
 Duration: 4 turns
@@ -4270,7 +4276,7 @@ Weight: 1~
 
 STATISTICS:
 
-Special: Restores 12 Hit Points.
+Special: Restores 12 Hit Points
 
 Weight: 1~
 
@@ -4324,7 +4330,7 @@ Equipped abilities:
 
 Weight: 3~
 
-@7500 = ~The electrum-plated shaft of this weapon hums with magical power. Occasionally, blue bolts of energy run down the length of the spear, charging it. In battle when it hits an opponent, it strikes for additional electricity damage, and the damage of this depends entirely of how much energy it seems.
+@7500 = ~The electrum-plated shaft of this weapon hums with magical power. Occasionally, blue bolts of energy run down the length of the spear, charging it. In battle when it hits an opponent, it strikes for additional electricity damage, and the damage of this depends entirely of how much energy it contains.
 
 STATISTICS:
 
@@ -4360,7 +4366,6 @@ Charge Abilities:
 – Cast Sunfire once per day
   Damage: 15d6 fire (Save vs. Spell for half)
   Area of Effect: 15-ft. radius
-
 
 THAC0: +5
 Damage: 2d4+5, +10 fire damage
@@ -4561,10 +4566,10 @@ STATISTICS:
 
 Equipped abilities:
 – Different bards get different bonuses:
-  All bards: +2 AC, THAC0, Damage, and casting speed. +1 memorizable spells from level 1 to 6.
+  All bards: +2 AC, THAC0, Damage, and casting speed. +1 memorizable spells from level 1 to 6
   Skalds: +1 bonus to Strength and +1/2 APR
   Blades: +1 bonus to Dexterity and +1/2 APR
-  Jesters: Immune to confusion, slow, and unconsciousness. +6 bonus Saves vs. Enchantment spells.
+  Jesters: Immune to confusion, slow, and unconsciousness. +6 bonus to saves vs. Enchantment effects
 
 Weight: 1~
 
@@ -4622,7 +4627,7 @@ Weight: 0~
 STATISTICS:
 
 Combat abilities:
-– Target must save vs. Spell or become flee in terror for 2 rounds. After one round, if the the target is still panicking, there's a 20% chance the target dies from the shock if they fail a save vs. Death; if they survive, they become rooted in place in fear for the remaining of the round.
+– Target must save vs. Spell or flee in terror for 2 rounds. After one round, if the the target is still panicking, there's a 20% chance the target dies from the shock if they fail a save vs. Death; if they survive, they become rooted in place for the remaining of the round.
 – Every time the rod hits an opponent, there's a 10% chance the wielder will lose 1 point of Constitution for 24 hours
 
 THAC0: +3
@@ -4696,12 +4701,12 @@ Equipped abilities:
 – Unaffected by mind blasts and domination attempts by Mind Flayers
 
 Combat abilities:
-– Acts as a +6 weapon against Mind Flayers
-– 25% chance per hit that target must save vs. Death at -2 or die from decapitation. Targets killed this way cannot be resurrected without a True Resurrection spell or divine intervention.
+– Acts as a +5 weapon against Mind Flayers
+– 25% chance per hit that target must save vs. Death at -2 or die from decapitation. Targets killed this way cannot be resurrected without a True Resurrection spell or divine intervention
 – Psionic attack: inflicts 2d8 irresistible psychic damage on a critical hit, which also causes confusion for 10 seconds if a Save vs. Spell at -2 is failed. This damage cannot be resisted, but mindless or brainless creatures won't be affected.
 
-THAC0: +3, +6 vs. Mind Flayers
-Damage: 1d10+3, +6 vs. Mind Flayers (slashing)
+THAC0: +3, +5 vs. Mind Flayers
+Damage: 1d10+3, +5 vs. Mind Flayers (slashing)
 Speed Factor: 6
 Proficiency Type: Two-handed Sword
 Type: Two-handed
@@ -4722,8 +4727,8 @@ Equipped abilities:
 Combat abilities:
 – Struck illithids must save vs. Death at -3 or die instantly. This effect can only affect a particular illithid once per round.
 
-THAC0: +5, +8 against Mind Flayers
-Damage: 1d10+5, +8 vs. Mind Flayers (slashing)
+THAC0: +5, +7 against Mind Flayers
+Damage: 1d10+5, +7 vs. Mind Flayers (slashing)
 Speed Factor: 5
 Proficiency Type: Two-handed Sword
 Type: Two-handed
@@ -4739,7 +4744,7 @@ Weight: 9~
 STATISTICS:
 
 Combat abilities:
-– Acts as a +6 weapon against dragons and wyverns
+– Acts as a +6 weapon vs. dragons and wyverns
 
 THAC0: +3, +6 vs. dragons and wyverns
 Damage: 1d10+3, +6 vs. dragons and wyverns
@@ -4772,8 +4777,8 @@ Weight: 12~
 STATISTICS:
 
 Combat abilities:
-– Like the deathly touch of shadows, every hit has a 25% chance of reducing the target's Strength by 2 for 5 rounds. If the target is already at a Strength of 2, the attack drains Constitution instead
-– If the target fails to save vs. Death, the essence of undeath in this weapon unleashes extra +1d6 cold damage
+– Like the touch of shadows, every hit has a 25% chance of reducing the target's Strength by 2 for 5 rounds. If the target is already at a Strength of 2, the attack drains Constitution instead
+– If the target fails to save vs. Death, the essence of undeath in this weapon unleashes extra 1d6 cold damage
 
 THAC0: +2
 Damage: 1d10+2, +2 cold damage
@@ -5097,7 +5102,7 @@ Equipped abilities:
 – Magic Damage Resistance: +10%, +25% for Wizard Slayers and Inquisitors
 
 Combat abilities:
-– On a critical hit, the target is will be affected by Dispel Magic, which always succeeds
+– On a critical hit, the target will be affected by Dispel Magic, which always succeeds
 
 THAC0: +2, +3 (Wizard Slayers and Inquisitors)
 Damage: 1d8+2 (slashing)
@@ -5144,7 +5149,7 @@ Equipped abilities:
 Combat abilities:
 – +1 APR
 – Hit target takes 12 points of poison over 2 rounds (Save vs. Death negates)
-– +5% critical chances (monks only; applies to all weapons)
+– +5% critical chances while holding this weapon (monks only)
 
 THAC0: +3, +5 (Monks only)
 Damage: 1d8+3, +1 Poison damage
@@ -5300,9 +5305,10 @@ Using every clever trick an experienced Thief has learned in countless battles, 
 
 Especialized thieves (single-classed) benefit more from this:
 
-– Critical hit chances are +20%
-– +2 Damage
-– +3 THAC0~
+– Bonus to critical hit chances is +15%
+– +2 Damage and THAC0
+– +1 APR~
+
 
 
 @8090 = ~A Wand of Fear strikes terror into the heart of any creature within its target area. This panic is not universal, however, as the stout of heart have been known to resist its magic. Like all wands, the Wand of Fear can only be used a limited number of times before it is destroyed.
@@ -5457,6 +5463,9 @@ Weight: 9~
 
 @8170 = ~Paralyzed with fear~
 
+@8180 = ~Avoid Death
+With extraordinary effort, a high-level rogue can avoid almost certain death. The effect lasts for 5 rounds, and during this time, the rogue's Save vs. Death receives a bonus of 5, Hit Points are increased by 20, and the rogue becomes immune to death magic and level drain. Additionally, during the first round, the rogue will succeed in all saving throws, and their hit points may not go under 1 for the first half of that round.~
+
 
 @99999 = ~Damage~ // for text patching
 @99998 = ~Speed Factor~ // for text patching
@@ -5465,6 +5474,3 @@ Weight: 9~
 @99995 = ~Damage type~
 @99994 = ~(piercing or slashing, whichever is better)~
 @99993 = ~Piercing or slashing, whichever is better~
-
-
-

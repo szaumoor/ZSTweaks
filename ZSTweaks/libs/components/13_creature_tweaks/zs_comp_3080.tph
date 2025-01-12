@@ -24,7 +24,7 @@ COPY_EXISTING_REGEXP ~.*\.CRE~ ~override~
          DELETE_EFFECT INT_VAR match_opcode = 292 END
     END
 
-    PATCH_IF race = spectre OR race = spectra_undead OR race = wraith
+    PATCH_IF race = spectre OR race = spectral_undead OR race = wraith
             OR class = spectral_troll OR race = slime OR race = demilich BEGIN
             READ_LONG 0x2c4 eff_offset
             READ_LONG 0x2c8 eff_length
