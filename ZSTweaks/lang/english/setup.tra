@@ -324,7 +324,7 @@
 @2112 = ~Make Shaman's Spirit Fire slightly more powerful~
 @2113 = ~Make Shaman's Spiritual Clarity induce more clarity (removes berserk and intoxication too)~
 @2114 = ~Make Shaman's Favored of the Spirits lasts for 24 hours (2 in-game hours), not 1 (5 in-game minutes)~
-@2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty"
+@2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty and rally the allies"
 @2130 = "Make Set Spike Trap do piercing damage instead of magic damage"
 @2140 = "Make Exploding Trap do slightly more damage: 15d6 as opposed to 10d6"
 @2141 = ~Make Assassination more generally useful, especially for single-classed Thieves~
@@ -1954,7 +1954,7 @@ The next successful attack forces the target to save vs. Spell or die. At level 
 This special ability automatically modifies normal attacks; no targeting needs to be done.~
 
 @6320 = ~War Cry
-With a War Cry, the warrior emits a powerful and frightening yell that will panic all opponents in a 15-ft. radius if they don't make their Save vs. Spell at -2.
+With a War Cry, the warrior emits a powerful and frightening yell that will panic all opponents in a 15-ft. radius for 1 turn if they don't make their Save vs. Spell at -2, which additionally halves their movement speed for the duration.
 
 Additionally, the warrior and allies have their morale restored to its maximum, are healed by 12 HP, and get a +2 bonus to THAC0 and weapon damage for 3 rounds. During this time, the warrior is also able to land critical hits 5% more often.~
 
@@ -5307,7 +5307,7 @@ Especialized thieves (single-classed) benefit more from this:
 
 – Bonus to critical hit chances is +15%
 – +2 Damage and THAC0
-– +1 APR~
+– +1 Attack per round~
 
 
 

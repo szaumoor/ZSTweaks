@@ -111,7 +111,7 @@ There's generally very little reason to use a dagger because:
 This is a small change to make daggers slightly more appealing on a general level. They will all have an implied:
 
 - THAC0 is always 1 higher (e.g. a Dagger +2 will have a +3 THAC0 bonus)
-- Speed factor of 0
+- Speed factor is 2 points lower (normally always 0, in the case of custom daggers, this may be different if their speed factor is unusually high)
 - +5% Critical chance, which may stack with a similar bonus in any particular daggers
 - Deadly critical hits: critical hits do moderately additional piercing damage in a second tick. The formula for critical damage added is (**Max weapon damage**) **+** 2 dice of **Max Weapon Damage**. Specifically:
   - Dagger **+0** -> 2d4+4, i.e., 6-12 dmg
@@ -207,7 +207,7 @@ WARNING: Install this component DEAD LAST after ANY mod that modifies items, inc
 - Potion of Heroism: it also prevents morale failure as it increases the confidence of the drinker, and improves damage by 1. The THAC0 bonus it provides is no longer set to 90% of current, but instead improves immediately by 2, which is strictly a better outcome, since there will be no longer diminishing returns. It can also be drunk by any class
 - Potion of Invulnerability: it also increases magic resistance by +10%, and it can be used by any class
 - Elixir of Health: the HP recovered is now 20 (from 10) and protects against being poisoned (but not to direct poison damage; not dispellable) for 10 seconds. This is added such that when taking heavy damage, if you're poisoned, it's more desirable than just gulping down a better HP potion to ensure survivability
-- Potion of Perception: now the proper "detection" thief skills are improved further (find traps and detect illusions): 40%. Additionally, the enhanced perception improves THAC0, AC, and Saving Throws by 2
+- Potion of Perception: now the proper "detection" thief skills are improved further (find traps and detect illusions): 40%. Additionally, the enhanced perception improves THAC0 by 1, and AC, and Saving Throws by 2
 - Potion of Power: this makes the potion prevent morale failure like the potion of heroism, it improves all thieving abilities (not just some), it improves casting speed by 1, and it now also grants +10% higher damage output (physical and magical), which makes it useful for any class. Finally, the THAC0 bonus it provides is no longer to 80% of current, but instead improves immediately by 4, which is strictly a better outcome, since there will be no longer diminishing returns. Its rarity and price should be rewarded handsomely
 - CHARNAME'S Tankard: now it heals 27 HP three times per day, and it adds +1 Strength and Constitution for 1 turn, since it mentions feeling stronger when holding it.
 - All Strength potions: usable by any class
@@ -772,7 +772,7 @@ I like the idea of the sword, but it's a little too boring beyond the effect of 
 
 - Deals 1d10+5 damage, but against mind flayers, it deals 1d10+7 (as if it were a +7 weapon without being one)
 - THAC0 bonus: +5, but against mind flayers, it's +7
-- Mind flayers struck with this weapon must save vs. Death at -3 or die instantly. You'll see an "Illithid destroyed" message in the log when it happens. However, this effect can only be attempted on the same mind flayer once per round
+- Mind flayers struck with this weapon must save vs. Death at -3 or die instantly. You'll see an "Illithid destroyed" message in the log when it happens. However, this effect can only be attempted on the same mind flayer once per round, and stoneskin / ironskins will stop it
 
 **Component 1602:** Make Dragon's Bane +3 better and act as a +6 weapon in every sense against dragons and wyverns
 
@@ -1644,9 +1644,16 @@ This makes the damage of this spell scale better: it deals 1d4+1/level, up to 12
 
 Self-explanatory. Additionally, it improves the speed of the spell from 9 to 6.
 
-**Component 2120:** Make War Cry inflict fear with a -2 Saving Throw penalty
+**Component 2120:** Make War Cry inflict fear with a -2 Saving Throw penalty and rally the allies
 
-War Cry as an HLA is bad enough, but this makes it at least have a more reasonable chance of affecting creatures by the time you get this power.
+This increases the chances of causing panic on enemies. Additionally, since panic is usually not liked because it's difficult and tedious to attack running targets, it also halves their movement speed by 50%, which makes it far less inconvenient.
+
+The war cry also rallies the allies now, causing the following effects:
+- The warrior and their allies are healed by 12 HP, their morale is restored to their maximum, preventing and removing morale-based panic, and for 3 rounds, they get a +2 bonus to THAC0 and Damage.
+- The warrior also gets for the same duration a +5% bonus chance to critically hit.
+- None of these effects stack with themselves
+
+This should make this HLA more generally useful no matter the situation and perhaps next time it won't be an automatic skip.
 
 **Component 2130:** Make Set Spike Trap do piercing damage instead of magic damage
 
