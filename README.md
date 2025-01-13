@@ -1677,16 +1677,19 @@ Overall, this will make the power less likely to be a waste by removing critical
 
 **Component 2150:** Make selected HLAS unable to be breached
 
-I do not find abilities that tap into "inner strength" or pure skill-based physical abilities a candidate for breach. What exactly is the spell supposedly dispelling? That's my take.
+I do not find abilities that tap into "inner strength" or pure skill-based physical abilities a candidate for breach. If they're not dispellable, then they're not breachable either. What exactly is the spell supposedly dispelling?
 
-Therefore, the following abilities are no longer breachable:
+One concern could be that for balance purposes, some of these should be breachable, but I do not believe this is warranted in this case.
 
-- **Evasion**
-- **Improved Evasion**
-- **Assassination**
-- **Avoid Death**
-- **Hardiness**
-- **Resist Magic**
+The following abilities are no longer breachable:
+
+- **Evasion and Improved Evasion:** You're concentrating on your epic dodging skills as a rogue, using your training and experience. Can you "breach" reflexes and experience? NO!
+- **Assassination:** You're using your training in hitting on weak points unexpectedly in a superior manner, exerting such an amazing ability, you always succeed, even if the target is not hit unexpectedly. Can you breach assassination skills? NO!
+- **Avoid Death:** You're using your training and nigh-preternatural roguish luck to escape terrible odds and stubbornly survive. Can you breach luck and survival skills? NO!
+- **Hardiness:** The warrior is concentrating on defending, bearing blows and the pain, to survive the punishment inflicted upon them, using their training and experience. Same as before.
+- **Resist Magic:** Same as Hardiness. This one I find harder to rationalize in an earthly way, but regardless, it's a warrior-borne ability, so I see no need to effectively consider it magical (aka breachable).
+
+Side note. Things like Critical Strike and Power Attack are already not breachable. It's a nonsensical inconsistency. If it's not mentioned here but seems like my argument would apply, it means it's already not breachable.
 
 **Component 2160:** Make Quivering Palm slightly more powerful at high levels
 
@@ -1734,7 +1737,9 @@ This tiny overhaul addresses primarily something that has bothered me forever ab
 
 **Component 2220:** Make Avoid Death HLA slightly more effective
 
-This improves this ability such that it prevents rogues from dying from Health damage for 3 seconds, and all saving throws succeed as well. This essentially makes the ability an "emergency" ability that you can select to survive anything during those two seconds that can be saved against, including physical damage. It's just 3 seconds, which is a small timeframe, but I think it's long enough to be useful, and short enough to not be overpowered. During the rest of the time, the ability functions as normal.
+This improves this ability such that it prevents rogues from dying from Health damage for 3 seconds, and all saving throws succeed as well. This essentially makes the ability an "panic button" that you can select to survive most things during those three seconds that can be saved against, including physical damage. It's a small timeframe, but I think it's long enough to be useful, and short enough to not be overpowered. Other than those 3 seconds, the ability functions as normal.
+
+This additionally documents in the description the fact that it also protects against level drain, which is missing in the original description.
 
 **Component 2230:** Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value
 
