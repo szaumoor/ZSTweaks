@@ -1,4 +1,4 @@
-ACTION_IF NOT GAME_IS ~iwdee~ BEGIN
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
     COPY ~%MOD_FOLDER%/items/vorpal_weapons~ ~override~
     COPY_EXISTING ~BALOR.ITM~ ~override~
         LPF DELETE_EFFECT INT_VAR check_globals = 0 END

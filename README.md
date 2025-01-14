@@ -1377,9 +1377,9 @@ Fireball is such a ubiquitous spell in D&D and generally considered like a great
 
 - Fireball: After level 10, when damage is 10d6, an extra point of fire damage will be gained, up to 10d6+10.
 - Sunfire: After level 10, when damage is 10d6, an extra point of damage will be gained, up to 15d6+5. After level 15, 2 points of fire will be gained per level, up to 15d6+15.
-- Delayed Blast Fireball: now it will start off at 13d6 (level 7 spells are gained at that level) and then grow by 1d6+2 per level, up to 18d6+10, which then increases by +5 each level until level 20, becoming 18d6+20.
+- Delayed Blast Fireball: now it will start off at 13d6 (level 7 spells are gained at level 13) and then grow by 1d6+2 per level, up to 18d6+10, which then increases by +5 each level until level 20, becoming 18d6+20.
 
-If you think this is OP, consider these damage range values:
+If you think this is overpowered, consider these damage range values:
 
 - Skull Trap deals 20d6 at level 20 (14d6 with SCS), which is significantly more than the bonus in this component. Comparison:
   - Skull Trap (no SCS): 20-120 damage
@@ -1421,7 +1421,7 @@ There's no reason this weapon should be more limited duration-wise. Now it follo
 
 **Component 110:** Make Bless and Curse last longer and increase the casting speed from 6 to 3
 
-I don't think 36 seconds with a very long casting makes this spell desirable in most situations. Therefore, now the duration is 36 seconds plus 1 round per 2 levels up to level 19, and the casting speed is increased. Curse will also be affected if installed in IWD or if it's installed in any way on BG, such as with SCS and IWDification. For obvious reasons, if you're planning to use IWD spells, install after any mod that inserts them, such as IWDification or SCS.
+I don't think 36 seconds with a very long casting makes this spell desirable in most situations. Therefore, now the duration is 36 seconds plus 1 round per 2 levels up to level 19, and the casting speed is increased. Curse will also be affected if the spell is present in the game, such as with SCS and IWDification. For obvious reasons, if you're planning to use IWD spells, install after any mod that inserts them.
 
 **Component 130:** Standardize Hold Person's saving throw penalties
 
@@ -1469,13 +1469,13 @@ This component makes the saves and damage against the effects decay less harshly
 
 1st round: vanilla, 6d6 damage, -6 save to avoid unconsciousness
 2nd round: 5d6 damage, -4 save
-3rd round = 4d6 damage, -2 save
+3rd round: 4d6 damage, -2 save
 
 Additionally, it fixes the likely incorrect probability of 3% to summon a hostile elemental, so it is 2% instead.
 
 **Component 260:** Make Negative Plane Protection's duration increase somewhat as you level up
 
-It only lasts 30 seconds, which might be insufficient for fights with vampires. Since it's a very powerful effect, the increases in duration are moderate, one round per 2 levels after level 7 up to 66 seconds at level 19.
+It only lasts 30 seconds, which might be insufficient for fights with vampires. Since it's a very powerful effect, the increases in duration are moderate, one round per 2 levels after level 7, up to 11 rounds at level 19.
 
 **Component 270:** Make Entangle's saving throws improve slightly at higher levels so it remains relevant for druids
 
@@ -1497,7 +1497,7 @@ This component reduces the need to use them only in pre-fight buffing rituals, d
 
 **Component 310:** Make Fire Seeds create more persistent seeds that do slightly more damage, with an enchantment of 2
 
-Not enough seeds and too little damage. From 4 seeds that do 2d8 to 12 that do 3d8+5. The original is way too unremarkable for a level 6 spell. Additionally, the description will mention the fact that they are thrown with a +2 THAC0 bonus. Additionally, the seeds no longer bypass most physical protections due to an enchantment level of +6, so now it will be considered +2. Finally, they will persist for 5 turns instead of 3 (1 in-game hour).
+Not enough seeds and too little damage. From 4 seeds that do 2d8 to 12 that do 3d8+5. The original is way too unremarkable for a level 6 spell. Additionally, the description will mention the fact that they are thrown with a +2 THAC0 bonus, and the seeds no longer bypass most physical protections due to an enchantment level of +6, so now they will be considered +2. Finally, they will persist for 5 turns instead of 3 (1 in-game hour).
 
 **Component 320:** Make Nature's Beauty a bit more likely to kill humanoid enemies and make blinded enemies immune to it
 
@@ -1529,7 +1529,7 @@ Healing spells are infamously bad in BG/BG2, they heal too little for such a slo
 
 Also they will no longer be stopped by spell deflection.
 
-**Component 460:** Make Mass Heal faster to cast and heal a bit more
+**Component 460:** Make Mass Cure faster to cast and heal a bit more
 
 This improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32). Also, it will no longer be stopped by spell deflection.
 
@@ -1593,7 +1593,7 @@ Solution:
 - The damage inflicted is half fire, half radiant (cannot be resisted)
 - The damage to non-undead is 4d6, blindness is still 1 turn as usual
 - Undead take 1d6 fire and radiant damage per level up to 20d6, and:
-  - Spectral undead: weakens them, causing Slow for 2 rounds, 30% weakness to physical damage for 3 rounds, reduced damage output by -2 for physical attacks and -30% for elemental attacks for 4 rounds, and -2 AC penalty for 5 rounds
+  - Spectral undead: weakens them, causing Slow for 2 rounds, 30% weakness to physical damage for 3 rounds, reduced damage by -2 for physical attacks, -30% for elemental attacks for 4 rounds, and -2 AC penalty for 5 rounds
   - Vampires: must save vs. Spell or be utterly destroyed no matter their resistances
 
 This solution follows the 2nd edition more closely, where only undead who are specifically sensitive to light may be destroyed by it. Spectral undead are generally weakened, but not destroyed, vampires and vampire spawn can be utterly destroyed, and other cadaverous undead aren't weakened or destroyed (including liches and demiliches).
