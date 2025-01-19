@@ -87,7 +87,7 @@
 @1544 = ~Make scrolls always cast at the character level regardless of class~
 // @1539 = ~Make Void-weapons not sap the strength of the undead when held~
 
-/// ARMOR/GEAR TWEAKS
+/// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
 @1171 = ~Make Silver Dragon Scale also grant 40% cold resistance as you would expect~
 @1172 = ~Make Rings of Elemental control more likely to charm the elementals and add missing resistances~
@@ -128,6 +128,7 @@
 @1677 = ~Make Wondrous Gloves Wondrous~
 @1678 = ~Make Senses of the Cat imbue the user of more cat-like features~
 @1679 = ~Make the Horn of Kazgaroth more useful and the self-damage more unique~
+@1190 = "Make Rod of Lordly Might usable by any class and more powerful"
 @1685 = ~Make the Belt of Fortitude grant Constitution passively and replace the charge ability with regeneration~ // todo
 
 // subcomponent str of component @1664
@@ -251,7 +252,6 @@
 @1647 = ~Make Shar-Teel especially effective when fighting men~
 
 // MISCELLANEOUS
-@1190 = "Make Rod of Lordly Might usable by any class and more powerful"
 @3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane~
 
 // WIZARD SPELLS

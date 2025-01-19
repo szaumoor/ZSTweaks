@@ -274,9 +274,9 @@ If you want this component working for other mod-added weapons that cause vorpal
 
 <details>
 
-<summary><b>Armor/Gear Tweaks</b></summary>
+<summary><b>Armor/Gear/Misc Items Tweaks</b></summary>
 
-This section includes specific armor tweaks, and it updates descriptions accordingly in a destructive way.
+This section includes specific armor and gear tweaks (as well as items that don't fall squarely on any category, like the Rod of Might), and it updates descriptions accordingly in a destructive way (i.e. if previous mods updated the description, it will be overwritten without text surgery).
 
 **Component 1170:** Make Shadow Dragon Scale behave less like a Black Dragon Scale
 
@@ -1407,7 +1407,9 @@ If you think this is overpowered, consider these damage range values:
   - Delayed Blast Fireball (with component): 38-128 damage
   - Delayed Blast Fireball (without component): 15-90 damage
 
-Lastly, Delayed Blast Fireball no longer has a markedly smaller explosion radius compared to Sunfire and Fireball, but the exact same as those.
+Also, Delayed Blast Fireball no longer has a markedly smaller explosion radius compared to Sunfire and Fireball, but the exact same as those.
+
+Lastly, this patches the Fireball explosions such that the god-awful EE explosion is substituted by something much more epic looking in my view. This behavior can be disabled in the configuration file.
 
 </details>
 
