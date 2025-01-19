@@ -10,6 +10,8 @@ This is done because there is no advantage that I can see to making that damage 
 
 In vanilla, this is not contemplated, likely because there isn't any means of introducing sleep on hit to arbitrary weapons and as such that circumstance would have never occurred. My mod ZS_WeaponOils does introduce this situation if using the Drow Soporific Oil.
 
+As of version 1.4.5 a configuration file is now provided, where the user may change some variables to further customize components. This file is **ZSTweaks/INSTALL_OPTIONS.txt**.
+
 ---
 <details>
 
@@ -111,7 +113,7 @@ There's generally very little reason to use a dagger because:
 This is a small change to make daggers slightly more appealing on a general level. They will all have an implied:
 
 - THAC0 is always 1 higher (e.g. a Dagger +2 will have a +3 THAC0 bonus)
-- Speed factor of 0
+- Speed factor is 2 points lower (normally always 0, in the case of custom daggers, this may be different if their speed factor is unusually high)
 - +5% Critical chance, which may stack with a similar bonus in any particular daggers
 - Deadly critical hits: critical hits do moderately additional piercing damage in a second tick. The formula for critical damage added is (**Max weapon damage**) **+** 2 dice of **Max Weapon Damage**. Specifically:
   - Dagger **+0** -> 2d4+4, i.e., 6-12 dmg
@@ -188,7 +190,6 @@ I do not like gear that you can wear without any effect whatsoever. I can live w
 
 For consistency, all of the enchanted belts, boots and bracers will also grant this. The unenchanted items will still be a bottom-of-the-barrel choice, but at least they don't exist just as unglorified decoration and will provide some use, especially at the beginning of BGEE (and IWDEE?), which should encourage filling all the gear slots.
 
-
 Side effect to take note: if a joinable character joins while having any such item equipped, you must re-equip it in order to benefit from this effect, as the newly available effect will not be re-evaluated otherwise.
 
 WARNING: Install this component DEAD LAST after ANY mod that modifies items, including any other component in this mod that modifies such items. When in doubt, just make it your last.
@@ -208,7 +209,7 @@ WARNING: Install this component DEAD LAST after ANY mod that modifies items, inc
 - Potion of Heroism: it also prevents morale failure as it increases the confidence of the drinker, and improves damage by 1. The THAC0 bonus it provides is no longer set to 90% of current, but instead improves immediately by 2, which is strictly a better outcome, since there will be no longer diminishing returns. It can also be drunk by any class
 - Potion of Invulnerability: it also increases magic resistance by +10%, and it can be used by any class
 - Elixir of Health: the HP recovered is now 20 (from 10) and protects against being poisoned (but not to direct poison damage; not dispellable) for 10 seconds. This is added such that when taking heavy damage, if you're poisoned, it's more desirable than just gulping down a better HP potion to ensure survivability
-- Potion of Perception: now the proper "detection" thief skills are improved further (find traps and detect illusions): 40%. Additionally, the enhanced perception improves THAC0, AC, and Saving Throws by 2
+- Potion of Perception: now the proper "detection" thief skills are improved further (find traps and detect illusions): 40%. Additionally, the enhanced perception improves THAC0 by 1, and AC, and Saving Throws by 2
 - Potion of Power: this makes the potion prevent morale failure like the potion of heroism, it improves all thieving abilities (not just some), it improves casting speed by 1, and it now also grants +10% higher damage output (physical and magical), which makes it useful for any class. Finally, the THAC0 bonus it provides is no longer to 80% of current, but instead improves immediately by 4, which is strictly a better outcome, since there will be no longer diminishing returns. Its rarity and price should be rewarded handsomely
 - CHARNAME'S Tankard: now it heals 27 HP three times per day, and it adds +1 Strength and Constitution for 1 turn, since it mentions feeling stronger when holding it.
 - All Strength potions: usable by any class
@@ -223,7 +224,7 @@ Self-explanatory. It's quite a pain when it's something that is supposed to cut 
 
 **Component 1538:** Make jewelry and other items meant to be sold more valuable
 
-This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component allows increases of 25%, 50%, 75%, 100%, 125%, 150%, 175%, and 200% to these items.
+This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component increases the value of those by 50% by default. However, this is fully customizable. Check the ZSTweaks/**INSTALL_OPTIONS.txt** file if you want to customize this.
 
 **Component 1539:** Make classes other than arcane and divine spellcasters able to use scrolls freely
 
@@ -273,9 +274,9 @@ If you want this component working for other mod-added weapons that cause vorpal
 
 <details>
 
-<summary><b>Armor/Gear Tweaks</b></summary>
+<summary><b>Armor/Gear/Misc Items Tweaks</b></summary>
 
-This section includes specific armor tweaks, and it updates descriptions accordingly in a destructive way.
+This section includes specific armor and gear tweaks (as well as items that don't fall squarely on any category, like the Rod of Might), and it updates descriptions accordingly in a destructive way (i.e. if previous mods updated the description, it will be overwritten without text surgery).
 
 **Component 1170:** Make Shadow Dragon Scale behave less like a Black Dragon Scale
 
@@ -545,17 +546,19 @@ To me, the duration of the effects is too short. Plus, the "unknown" damage to t
 
 **Component 1000:** Make throwing poisoned daggers slightly more likely to poison enemies
 
-This component makes these items force a save vs. Death at -2, which makes them more useful and compensates for their rarity.
+This component makes these items force a save vs. Death at -2, which makes them more useful and compensates for their rarity. This save penalty can be overridden in the configuration file.
 
 **Component 1002:** Make throwing poisoned daggers slightly less rare
 
-This component increases the stock of these throwing daggers. In BG2, they're only increased in the same stores where they're found. There are now exactly 256 poisoned throwing daggers to be bought in the stores, which is slightly above double the amount available in stores by default. They're also spread more evenly among stores.
+This component increases the stock of these throwing daggers. In BG2, they're only increased in the same stores where they're found. There are now exactly 356 poisoned throwing daggers to be bought in the stores, which is more than double the amount available in stores by default. They're also spread more evenly among stores.
 
 In BGEE there are none, even though in SoD there are 800 in Waizahb's stock (halfling thieves' guild merchant in Coalition Camp). A bunch will also be spread to a few other relevant merchants in the main game:
-- Silence: 40
-- Black Lily: 40
-- Ulgoth's Beard innkeeper: 20
-- Thalantyr & Halbazzer (not SoD): 20
+- Silence: 48
+- Black Lily: 48
+- Ulgoth's Beard innkeeper: 30
+- Thalantyr & Halbazzer (not SoD): 30
+
+The quantity can be increased or decreased using the configuration file.
 
 **Component 1130:** Make Bone Blade dagger more special and not just a plain +4 dagger
 
@@ -773,7 +776,7 @@ I like the idea of the sword, but it's a little too boring beyond the effect of 
 
 - Deals 1d10+5 damage, but against mind flayers, it deals 1d10+7 (as if it were a +7 weapon without being one)
 - THAC0 bonus: +5, but against mind flayers, it's +7
-- Mind flayers struck with this weapon must save vs. Death at -3 or die instantly. You'll see an "Illithid destroyed" message in the log when it happens. However, this effect can only be attempted on the same mind flayer once per round
+- Mind flayers struck with this weapon must save vs. Death at -3 or die instantly. You'll see an "Illithid destroyed" message in the log when it happens. However, this effect can only be attempted on the same mind flayer once per round, and stoneskin / ironskins will stop it
 
 **Component 1602:** Make Dragon's Bane +3 better and act as a +6 weapon in every sense against dragons and wyverns
 
@@ -1096,7 +1099,7 @@ Finally, this also modifies the deva's Mace of Disruption such that it follows t
 
 **Component 1010:** Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost
 
-This makes those very expensive darts much more likely to affect characters, which is a fair compensation for their rarity and huge monetary cost. Save vs. Death is now at -4. Additionally, 1d2 poison damage is caused on contact.
+This makes those very expensive darts much more likely to affect characters, which is a fair compensation for their rarity and huge monetary cost. Save vs. Death is now at -4 (unless overriden in the configuration file). Additionally, 1d2 poison damage is caused on contact.
 
 **Component 1330:** Make Darkfire Bow slightly more remarkable
 
@@ -1246,6 +1249,14 @@ Deathbringer assault is a bit stupid. Yes, it's very cool. Yes, big ToB bosses a
 
 This component contains the same fixes as Tresset's deathbringer assault component. No need to use both.
 
+**Component 1647:** Make Shar-Teel especially effective when fighting males
+
+This component makes Shar-Teel's effectiveness vs. males fit her hate and boasting. A bit gimmicky, but it's very amusing to me:
+
+- +1 to THAC0 and Damage vs. males
+- +2 AC vs. males (essentially as if she had a Protection from Men spell on her)
+
+
 </details>
 
 ---
@@ -1378,9 +1389,9 @@ Fireball is such a ubiquitous spell in D&D and generally considered like a great
 
 - Fireball: After level 10, when damage is 10d6, an extra point of fire damage will be gained, up to 10d6+10.
 - Sunfire: After level 10, when damage is 10d6, an extra point of damage will be gained, up to 15d6+5. After level 15, 2 points of fire will be gained per level, up to 15d6+15.
-- Delayed Blast Fireball: now it will start off at 13d6 (level 7 spells are gained at that level) and then grow by 1d6+2 per level, up to 18d6+10, which then increases by +5 each level until level 20, becoming 18d6+20.
+- Delayed Blast Fireball: now it will start off at 13d6 (level 7 spells are gained at level 13) and then grow by 1d6+2 per level, up to 18d6+10, which then increases by +5 each level until level 20, becoming 18d6+20.
 
-If you think this is OP, consider these damage range values:
+If you think this is overpowered, consider these damage range values:
 
 - Skull Trap deals 20d6 at level 20 (14d6 with SCS), which is significantly more than the bonus in this component. Comparison:
   - Skull Trap (no SCS): 20-120 damage
@@ -1396,7 +1407,9 @@ If you think this is OP, consider these damage range values:
   - Delayed Blast Fireball (with component): 38-128 damage
   - Delayed Blast Fireball (without component): 15-90 damage
 
-Lastly, Delayed Blast Fireball no longer has a markedly smaller explosion radius compared to Sunfire and Fireball, but the exact same as those.
+Also, Delayed Blast Fireball no longer has a markedly smaller explosion radius compared to Sunfire and Fireball, but the exact same as those.
+
+Lastly, this patches the Fireball explosions such that the god-awful EE explosion is substituted by something much more epic looking in my view. This behavior can be disabled in the configuration file.
 
 </details>
 
@@ -1422,7 +1435,7 @@ There's no reason this weapon should be more limited duration-wise. Now it follo
 
 **Component 110:** Make Bless and Curse last longer and increase the casting speed from 6 to 3
 
-I don't think 36 seconds with a very long casting makes this spell desirable in most situations. Therefore, now the duration is 36 seconds plus 1 round per 2 levels up to level 19, and the casting speed is increased. Curse will also be affected if installed in IWD or if it's installed in any way on BG, such as with SCS and IWDification. For obvious reasons, if you're planning to use IWD spells, install after any mod that inserts them, such as IWDification or SCS.
+I don't think 36 seconds with a very long casting makes this spell desirable in most situations. Therefore, now the duration is 36 seconds plus 1 round per 2 levels up to level 19, and the casting speed is increased. Curse will also be affected if the spell is present in the game, such as with SCS and IWDification. For obvious reasons, if you're planning to use IWD spells, install after any mod that inserts them.
 
 **Component 130:** Standardize Hold Person's saving throw penalties
 
@@ -1470,13 +1483,13 @@ This component makes the saves and damage against the effects decay less harshly
 
 1st round: vanilla, 6d6 damage, -6 save to avoid unconsciousness
 2nd round: 5d6 damage, -4 save
-3rd round = 4d6 damage, -2 save
+3rd round: 4d6 damage, -2 save
 
 Additionally, it fixes the likely incorrect probability of 3% to summon a hostile elemental, so it is 2% instead.
 
 **Component 260:** Make Negative Plane Protection's duration increase somewhat as you level up
 
-It only lasts 30 seconds, which might be insufficient for fights with vampires. Since it's a very powerful effect, the increases in duration are moderate, one round per 2 levels after level 7 up to 66 seconds at level 19.
+It only lasts 30 seconds, which might be insufficient for fights with vampires. Since it's a very powerful effect, the increases in duration are moderate, one round per 2 levels after level 7, up to 11 rounds at level 19.
 
 **Component 270:** Make Entangle's saving throws improve slightly at higher levels so it remains relevant for druids
 
@@ -1498,7 +1511,7 @@ This component reduces the need to use them only in pre-fight buffing rituals, d
 
 **Component 310:** Make Fire Seeds create more persistent seeds that do slightly more damage, with an enchantment of 2
 
-Not enough seeds and too little damage. From 4 seeds that do 2d8 to 12 that do 3d8+5. The original is way too unremarkable for a level 6 spell. Additionally, the description will mention the fact that they are thrown with a +2 THAC0 bonus. Additionally, the seeds no longer bypass most physical protections due to an enchantment level of +6, so now it will be considered +2. Finally, they will persist for 5 turns instead of 3 (1 in-game hour).
+Not enough seeds and too little damage. From 4 seeds that do 2d8 to 12 that do 3d8+5. The original is way too unremarkable for a level 6 spell. Additionally, the description will mention the fact that they are thrown with a +2 THAC0 bonus, and the seeds no longer bypass most physical protections due to an enchantment level of +6, so now they will be considered +2. Finally, they will persist for 5 turns instead of 3 (1 in-game hour).
 
 **Component 320:** Make Nature's Beauty a bit more likely to kill humanoid enemies and make blinded enemies immune to it
 
@@ -1530,7 +1543,7 @@ Healing spells are infamously bad in BG/BG2, they heal too little for such a slo
 
 Also they will no longer be stopped by spell deflection.
 
-**Component 460:** Make Mass Heal faster to cast and heal a bit more
+**Component 460:** Make Mass Cure faster to cast and heal a bit more
 
 This improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32). Also, it will no longer be stopped by spell deflection.
 
@@ -1594,7 +1607,7 @@ Solution:
 - The damage inflicted is half fire, half radiant (cannot be resisted)
 - The damage to non-undead is 4d6, blindness is still 1 turn as usual
 - Undead take 1d6 fire and radiant damage per level up to 20d6, and:
-  - Spectral undead: weakens them, causing Slow for 2 rounds, 30% weakness to physical damage for 3 rounds, reduced damage output by -2 for physical attacks and -30% for elemental attacks for 4 rounds, and -2 AC penalty for 5 rounds
+  - Spectral undead: weakens them, causing Slow for 2 rounds, 30% weakness to physical damage for 3 rounds, reduced damage by -2 for physical attacks, -30% for elemental attacks for 4 rounds, and -2 AC penalty for 5 rounds
   - Vampires: must save vs. Spell or be utterly destroyed no matter their resistances
 
 This solution follows the 2nd edition more closely, where only undead who are specifically sensitive to light may be destroyed by it. Spectral undead are generally weakened, but not destroyed, vampires and vampire spawn can be utterly destroyed, and other cadaverous undead aren't weakened or destroyed (including liches and demiliches).
@@ -1645,9 +1658,16 @@ This makes the damage of this spell scale better: it deals 1d4+1/level, up to 12
 
 Self-explanatory. Additionally, it improves the speed of the spell from 9 to 6.
 
-**Component 2120:** Make War Cry inflict fear with a -2 Saving Throw penalty
+**Component 2120:** Make War Cry inflict fear with a -2 Saving Throw penalty and rally the allies
 
-War Cry as an HLA is bad enough, but this makes it at least have a more reasonable chance of affecting creatures by the time you get this power.
+This increases the chances of causing panic on enemies. Additionally, since panic is usually not liked because it's difficult and tedious to attack running targets, it also halves their movement speed by 50%, which makes it far less inconvenient.
+
+The war cry also rallies the allies now, causing the following effects:
+- The warrior and their allies are healed by 12 HP, their morale is restored to their maximum, preventing and removing morale-based panic, and for 3 rounds, they get a +2 bonus to THAC0 and Damage.
+- The warrior also gets for the same duration a +5% bonus chance to critically hit.
+- None of these effects stack with themselves
+
+This should make this HLA more generally useful no matter the situation and perhaps next time it won't be an automatic skip.
 
 **Component 2130:** Make Set Spike Trap do piercing damage instead of magic damage
 
@@ -1671,16 +1691,19 @@ Overall, this will make the power less likely to be a waste by removing critical
 
 **Component 2150:** Make selected HLAS unable to be breached
 
-I do not find abilities that tap into "inner strength" or pure skill-based physical abilities a candidate for breach. What exactly is the spell supposedly dispelling? That's my take.
+I do not find abilities that tap into "inner strength" or pure skill-based physical abilities a candidate for breach. If they're not dispellable, then they're not breachable either. What exactly is the spell supposedly dispelling?
 
-Therefore, the following abilities are no longer breachable:
+One concern could be that for balance purposes, some of these should be breachable, but I do not believe this is warranted in this case.
 
-- **Evasion**
-- **Improved Evasion**
-- **Assassination**
-- **Avoid Death**
-- **Hardiness**
-- **Resist Magic**
+The following abilities are no longer breachable:
+
+- **Evasion and Improved Evasion:** You're concentrating on your epic dodging skills as a rogue, using your training and experience. Can you "breach" reflexes and experience? NO!
+- **Assassination:** You're using your training in hitting on weak points unexpectedly in a superior manner, exerting such an amazing ability, you always succeed, even if the target is not hit unexpectedly. Can you breach assassination skills? NO!
+- **Avoid Death:** You're using your training and nigh-preternatural roguish luck to escape terrible odds and stubbornly survive. Can you breach luck and survival skills? NO!
+- **Hardiness:** The warrior is concentrating on defending, bearing blows and the pain, to survive the punishment inflicted upon them, using their training and experience. Same as before.
+- **Resist Magic:** Same as Hardiness. This one I find harder to rationalize in an earthly way, but regardless, it's a warrior-borne ability, so I see no need to effectively consider it magical (aka breachable).
+
+Side note. Things like Critical Strike and Power Attack are already not breachable. It's a nonsensical inconsistency. If it's not mentioned here but seems like my argument would apply, it means it's already not breachable.
 
 **Component 2160:** Make Quivering Palm slightly more powerful at high levels
 
@@ -1728,7 +1751,9 @@ This tiny overhaul addresses primarily something that has bothered me forever ab
 
 **Component 2220:** Make Avoid Death HLA slightly more effective
 
-This improves this ability such that it prevents rogues from dying from Health damage for 3 seconds, and all saving throws succeed as well. This essentially makes the ability an "emergency" ability that you can select to survive anything during those two seconds that can be saved against, including physical damage. It's just 3 seconds, which is a small timeframe, but I think it's long enough to be useful, and short enough to not be overpowered. During the rest of the time, the ability functions as normal.
+This improves this ability such that it prevents rogues from dying from Health damage for 3 seconds, and all saving throws succeed as well. This essentially makes the ability an "panic button" that you can select to survive most things during those three seconds that can be saved against, including physical damage. It's a small timeframe, but I think it's long enough to be useful, and short enough to not be overpowered. Other than those 3 seconds, the ability functions as normal.
+
+This additionally documents in the description the fact that it also protects against level drain, which is missing in the original description.
 
 **Component 2230:** Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value
 

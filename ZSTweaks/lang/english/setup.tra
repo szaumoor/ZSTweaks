@@ -60,7 +60,7 @@
 @1440 = "Make Daggers have general extra features to compensate for the low damage"
 @1450 = "Make some rogue weapons able to do more damage if wielded by pure thieves (Finesse)"
 @1530 = ~Make the inexplicably double damage magical throwing daggers deal normal, to not make them the obvious choice~
-@1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense~
+@1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense. WARNING: Install after other tweaks and mods that change the same spells, to be safer~
 @1532 = ~Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage. WARNING: Install this component DEAD LAST after other components that modify these items, including components from other mods~
 @1533 = ~Rebalance some wands~
 @1534 = ~Rebalance some potions~
@@ -87,7 +87,7 @@
 @1544 = ~Make scrolls always cast at the character level regardless of class~
 // @1539 = ~Make Void-weapons not sap the strength of the undead when held~
 
-/// ARMOR/GEAR TWEAKS
+/// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
 @1171 = ~Make Silver Dragon Scale also grant 40% cold resistance as you would expect~
 @1172 = ~Make Rings of Elemental control more likely to charm the elementals and add missing resistances~
@@ -128,6 +128,7 @@
 @1677 = ~Make Wondrous Gloves Wondrous~
 @1678 = ~Make Senses of the Cat imbue the user of more cat-like features~
 @1679 = ~Make the Horn of Kazgaroth more useful and the self-damage more unique~
+@1190 = "Make Rod of Lordly Might usable by any class and more powerful"
 @1685 = ~Make the Belt of Fortitude grant Constitution passively and replace the charge ability with regeneration~ // todo
 
 // subcomponent str of component @1664
@@ -248,10 +249,9 @@
 @1644 = ~Remove unnecessary stat restrictions in NPC gear~
 @1645 = ~Make Cernd's cloak more powerful~
 @1646 = ~Make Sarevok's Deathbringer assault a bit more balanced~
-@1647 = ~Make Shar-Teel especially effective when fighting men~
+@1647 = ~Make Shar-Teel especially effective when fighting men~
 
 // MISCELLANEOUS
-@1190 = "Make Rod of Lordly Might usable by any class and more powerful"
 @3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane~
 
 // WIZARD SPELLS
@@ -324,7 +324,7 @@
 @2112 = ~Make Shaman's Spirit Fire slightly more powerful~
 @2113 = ~Make Shaman's Spiritual Clarity induce more clarity (removes berserk and intoxication too)~
 @2114 = ~Make Shaman's Favored of the Spirits lasts for 24 hours (2 in-game hours), not 1 (5 in-game minutes)~
-@2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty"
+@2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty and rally the allies"
 @2130 = "Make Set Spike Trap do piercing damage instead of magic damage"
 @2140 = "Make Exploding Trap do slightly more damage: 15d6 as opposed to 10d6"
 @2141 = ~Make Assassination more generally useful, especially for single-classed Thieves~
@@ -1954,7 +1954,7 @@ The next successful attack forces the target to save vs. Spell or die. At level 
 This special ability automatically modifies normal attacks; no targeting needs to be done.~
 
 @6320 = ~War Cry
-With a War Cry, the warrior emits a powerful and frightening yell that will panic all opponents in a 15-ft. radius if they don't make their Save vs. Spell at -2.
+With a War Cry, the warrior emits a powerful and frightening yell that will panic all opponents in a 15-ft. radius for 1 turn if they don't make their Save vs. Spell at -2, which additionally halves their movement speed for the duration.
 
 Additionally, the warrior and allies have their morale restored to its maximum, are healed by 12 HP, and get a +2 bonus to THAC0 and weapon damage for 3 rounds. During this time, the warrior is also able to land critical hits 5% more often.~
 
@@ -5307,7 +5307,7 @@ Especialized thieves (single-classed) benefit more from this:
 
 – Bonus to critical hit chances is +15%
 – +2 Damage and THAC0
-– +1 APR~
+– +1 Attack per round~
 
 
 

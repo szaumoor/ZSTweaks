@@ -16,8 +16,14 @@ END
 
 COPY_EXISTING ~SPPR707.SPL~ ~override~ // SUNRAY, bypasses magic resistance
     LPF ALTER_EFFECT INT_VAR resist_dispel=3 END //
-    LPF ALTER_EFFECT INT_VAR match_opcode = 177 resist_dispel = 0 END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 12 resist_dispel = 0 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 resist_dispel = 0 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 146 resist_dispel = 0 END
+    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ "467" BEGIN
+        LPF ALTER_EFFECT INT_VAR match_opcode = 326 resist_dispel = 0 END
+    END ELSE BEGIN
+        LPF ALTER_EFFECT INT_VAR match_opcode = 177 resist_dispel = 0 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 resist_dispel = 0 END
+    END
 BUT_ONLY
 
 COPY_EXISTING ~SPWI101.SPL~ ~override~ // GREASE, ALL GAMES

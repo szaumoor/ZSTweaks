@@ -87,7 +87,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
 		>>>>>>>>
 		EXTEND_TOP "L#GNO6.BCS" ".../zstweaks/disable_shadowstep_sostc6.baf"
 	END
-	ACTION_IF copied = 0 BEGIN
+	ACTION_IF copied = 0 AND group_component = 0 BEGIN
 		WARN "Shadow Plane not found in game files, skipping..."
 	END
 END

@@ -57,7 +57,7 @@ COPY_EXISTING ~SPWI523D.SPL~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~DFIREBL.PRO~ ~override~
-    LPF ALTER_PROJECTILE INT_VAR explosion_size = 256 END
+    WRITE_SHORT 0x206 256
 BUT_ONLY
 
 OUTER_SET new_description_fireball_delayed = RESOLVE_STR_REF(@7522)
@@ -87,4 +87,25 @@ ACTION_IF FILE_EXISTS_IN_GAME ~SCRL8N.ITM~ BEGIN
     COPY_EXISTING ~SCRL8N.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=new_description_fireball_delayed END
     BUT_ONLY
+END
+
+
+ACTION_IF _446_fball_new_animation = 1 BEGIN
+    COPY_EXISTING ~PFIRE2.PRO~  ~override~
+        WRITE_BYTE  0x216 0
+        WRITE_ASCII 0x21C "SPFIREPI" #8
+        WRITE_ASCII 0x228 "SPFIRIMP" #8
+        WRITE_ASCII 0x230 "SPFIRIMP" #8
+
+    COPY_EXISTING ~DFIREBL.PRO~ ~override~
+        WRITE_BYTE  0x210 1
+        WRITE_ASCII 0x21C "SPFIREPI" #8
+        WRITE_ASCII 0x228 "SPFIRIMP" #8
+        WRITE_ASCII 0x230 "SPFIRIMP" #8
+
+    COPY_EXISTING ~SPWI304.SPL~ ~override~
+        LPF ALTER_HEADER INT_VAR projectile = 234 END
+
+    COPY_EXISTING ~SPWI712.SPL~ ~override~
+        LPF ALTER_HEADER INT_VAR projectile = 244 END
 END

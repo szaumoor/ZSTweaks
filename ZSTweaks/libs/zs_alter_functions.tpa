@@ -469,7 +469,7 @@ BEGIN
     END
 END
 
-DEFINE_PATCH_FUNCTION ALTER_PROJECTILE
+DEFINE_PATCH_FUNCTION ALTER_PROJECTILE // not working correctly
 INT_VAR
     trap_size = "-1"
     explosion_size = "-1"

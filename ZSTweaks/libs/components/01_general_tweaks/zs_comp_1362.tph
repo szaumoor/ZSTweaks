@@ -1,36 +1,8 @@
 COPY ~%MOD_FOLDER%/items/hamaclub_ac~ ~override~
 ACTION_IF GAME_IS "bg2ee eet" BEGIN // misaligned index fix
      PRINT "Applying misaligned index fix to hamm06.itm (Dwarven Thrower +2)"
-     COPY_EXISTING ~hamm06.itm~ ~override~
-          READ_LONG  0x64 abil_off
-          READ_SHORT 0x68 abil_num
-          READ_LONG  0x6a fx_off
-          FOR (index = "-1" ; index < abil_num ; ++index) BEGIN
-               PATCH_IF index < 0 BEGIN
-                    READ_SHORT 0x6e abil_fx_idx
-                    READ_SHORT 0x70 abil_fx_num
-               END ELSE BEGIN
-                    READ_SHORT (abil_off + 0x1e + (index * 0x38)) abil_fx_num
-                    READ_SHORT (abil_off + 0x20 + (index * 0x38)) abil_fx_idx
-               END
-               READ_ASCII   (fx_off +        (abil_fx_idx * 0x30)) effects (48 * abil_fx_num) // read entire block of associated effects
-               DEFINE_ASSOCIATIVE_ARRAY cd_fx_reorder BEGIN ~%index%~ => ~%effects%~ END
-          END
-          SET idx = 0
-          PATCH_PHP_EACH cd_fx_reorder AS index => effects BEGIN
-               PATCH_IF index < 0 BEGIN
-                    WRITE_SHORT 0x6e idx
-                    READ_SHORT 0x70 abil_fx_num
-               END ELSE BEGIN
-                    READ_SHORT  (abil_off + 0x1e + (index * 0x38)) abil_fx_num
-                    WRITE_SHORT (abil_off + 0x20 + (index * 0x38)) idx
-               END
-               PATCH_IF abil_fx_num BEGIN
-                    WRITE_ASCIIE (fx_off + (idx * 0x30)) ~%effects%~
-                    SET idx += abil_fx_num
-               END
-          END
-     BUT_ONLY
+     COPY_EXISTING ~hamm06.itm~ ~override~ // Dwarven Thrower +3
+          LPF FJ_SPL_ITM_REINDEX END
 END
 
 COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
