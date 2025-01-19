@@ -1,6 +1,6 @@
 BACKUP "weidu_external/backup/ZSTweaks"
 SUPPORT "RoyalProtector at Gibberlings's forum https://www.gibberlings3.net/profile/12720-royalprotector/"
-VERSION "1.4.4"
+VERSION "1.4.5"
 README ~ZSTweaks/README.md~
 AUTO_EVAL_STRINGS
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -231,8 +231,8 @@ FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 INCLUDE ~%MOD_FOLDER%/libs/components/01_general_tweaks/zs_comp_1650.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1541 DESIGNATED 1541 GROUP @10 // STONSKIN IRONSKIN VORPAL IMMUNITY TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @53
+BEGIN @1541 DESIGNATED 1541 GROUP @10 // STONESKIN IRONSKIN VORPAL IMMUNITY TWEAK
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 

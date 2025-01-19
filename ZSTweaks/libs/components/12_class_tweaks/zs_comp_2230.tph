@@ -4,6 +4,6 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RR#THL1A.SPL~ BEGIN
     BUT_ONLY
 END ELSE BEGIN
     ACTION_IF group_component = 0 BEGIN
-        PATCH_WARN "RR's Crippling Strike file not found. This component will not be installed."
+        WARN "RR's Crippling Strike file not found. This component will not be installed."
     END
 END
