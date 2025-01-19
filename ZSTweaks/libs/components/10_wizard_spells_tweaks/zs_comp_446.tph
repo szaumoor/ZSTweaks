@@ -88,3 +88,19 @@ ACTION_IF FILE_EXISTS_IN_GAME ~SCRL8N.ITM~ BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc=new_description_fireball_delayed END
     BUT_ONLY
 END
+
+
+ACTION_IF _446_fball_new_animation = 1 BEGIN
+    COPY_EXISTING ~PFIRE2.PRO~  ~override~
+                  ~DFIREBL.PRO~ ~override~
+        WRITE_BYTE  0x216 0
+        WRITE_ASCII 0x21C "SPFIREPI" #8
+        WRITE_ASCII 0x228 "SPFIRIMP" #8
+        WRITE_ASCII 0x230 "SPFIRIMP" #8
+
+    COPY_EXISTING ~SPWI304.SPL~ ~override~
+        LPF ALTER_HEADER INT_VAR projectile = 234 END
+
+    COPY_EXISTING ~SPWI712.SPL~ ~override~
+        LPF ALTER_HEADER INT_VAR projectile = 244 END
+END

@@ -10,6 +10,8 @@ This is done because there is no advantage that I can see to making that damage 
 
 In vanilla, this is not contemplated, likely because there isn't any means of introducing sleep on hit to arbitrary weapons and as such that circumstance would have never occurred. My mod ZS_WeaponOils does introduce this situation if using the Drow Soporific Oil.
 
+As of version 1.4.5 a configuration file is now provided, where the user may change some variables to further customize components. This file is **ZSTweaks/INSTALL_OPTIONS.txt**.
+
 ---
 <details>
 
@@ -222,7 +224,7 @@ Self-explanatory. It's quite a pain when it's something that is supposed to cut 
 
 **Component 1538:** Make jewelry and other items meant to be sold more valuable
 
-This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component allows increases of 25%, 50%, 75%, 100%, 125%, 150%, 175%, and 200% to these items.
+This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component increases the value of those by 50% by default. However, this is fully customizable. Check the ZSTweaks/**INSTALL_OPTIONS.txt** file if you want to customize this.
 
 **Component 1539:** Make classes other than arcane and divine spellcasters able to use scrolls freely
 
@@ -544,17 +546,19 @@ To me, the duration of the effects is too short. Plus, the "unknown" damage to t
 
 **Component 1000:** Make throwing poisoned daggers slightly more likely to poison enemies
 
-This component makes these items force a save vs. Death at -2, which makes them more useful and compensates for their rarity.
+This component makes these items force a save vs. Death at -2, which makes them more useful and compensates for their rarity. This save penalty can be overridden in the configuration file.
 
 **Component 1002:** Make throwing poisoned daggers slightly less rare
 
-This component increases the stock of these throwing daggers. In BG2, they're only increased in the same stores where they're found. There are now exactly 256 poisoned throwing daggers to be bought in the stores, which is slightly above double the amount available in stores by default. They're also spread more evenly among stores.
+This component increases the stock of these throwing daggers. In BG2, they're only increased in the same stores where they're found. There are now exactly 356 poisoned throwing daggers to be bought in the stores, which is more than double the amount available in stores by default. They're also spread more evenly among stores.
 
 In BGEE there are none, even though in SoD there are 800 in Waizahb's stock (halfling thieves' guild merchant in Coalition Camp). A bunch will also be spread to a few other relevant merchants in the main game:
-- Silence: 40
-- Black Lily: 40
-- Ulgoth's Beard innkeeper: 20
-- Thalantyr & Halbazzer (not SoD): 20
+- Silence: 48
+- Black Lily: 48
+- Ulgoth's Beard innkeeper: 30
+- Thalantyr & Halbazzer (not SoD): 30
+
+The quantity can be increased or decreased using the configuration file.
 
 **Component 1130:** Make Bone Blade dagger more special and not just a plain +4 dagger
 
@@ -1095,7 +1099,7 @@ Finally, this also modifies the deva's Mace of Disruption such that it follows t
 
 **Component 1010:** Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost
 
-This makes those very expensive darts much more likely to affect characters, which is a fair compensation for their rarity and huge monetary cost. Save vs. Death is now at -4. Additionally, 1d2 poison damage is caused on contact.
+This makes those very expensive darts much more likely to affect characters, which is a fair compensation for their rarity and huge monetary cost. Save vs. Death is now at -4 (unless overriden in the configuration file). Additionally, 1d2 poison damage is caused on contact.
 
 **Component 1330:** Make Darkfire Bow slightly more remarkable
 
@@ -1244,6 +1248,14 @@ Deathbringer assault is a bit stupid. Yes, it's very cool. Yes, big ToB bosses a
 - For flavor, Sarevok will also use his "Die!" line when a Deathbringer Assault happens
 
 This component contains the same fixes as Tresset's deathbringer assault component. No need to use both.
+
+**Component 1647:** Make Shar-Teel especially effective when fighting males
+
+This component makes Shar-Teel's effectiveness vs. males fit her hate and boasting. A bit gimmicky, but it's very amusing to me:
+
+- +1 to THAC0 and Damage vs. males
+- +2 AC vs. males (essentially as if she had a Protection from Men spell on her)
+
 
 </details>
 

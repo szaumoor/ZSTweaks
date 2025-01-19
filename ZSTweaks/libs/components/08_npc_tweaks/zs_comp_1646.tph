@@ -7,5 +7,6 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
 
     COPY_EXISTING ~ZSTWSRKB.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1=RESOLVE_STR_REF(@8170) END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 match_parameter1 = 150 silent = 0 parameter1 = _1646_sare_dmg END // config
     BUT_ONLY
 END

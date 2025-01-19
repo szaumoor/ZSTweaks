@@ -1,0 +1,27 @@
+// Here you can adjust values to apply different changes to components without having to deal with set installation options in the Weidu installer. Do not remove quotation marks when changing values.
+//
+//
+////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET _1538_jewelry_price = "150" // this tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted half, you would type 50.
+
+////////////////////////////// Dagger tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET _1001_sbonus = "-2" // You can change this to override the save penalty given in component 1001 to poisoned throwing daggers. Vanilla is 0, default in component is -2.
+
+
+OUTER_SET _1002_stack_mult = "100" // This sets a percentage multiplier for the number of stacks of poisoned throwing daggers inserted in Component 1002. So, for example if you only want half, you'd set this to 50, if you want 20% more, you'd set it to 120. Values of zero and below are ignored.
+
+
+/////////////////////////////// NPC tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET _1646_sare_dmg = "150" // This sets the new damage that Sarevok inflicts when his special ability triggers, with the same rules that the component applies
+
+
+/////////////////////////////// Ranged Weapon Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET _1010_sbonus = "-4" // You can change this to override the save penalty given in component 1001 to Asp's Nest darts. Vanilla is 0, default in component is -4.
+
+/////////////////////////////// Wizard Spell Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET _446_fball_new_animation = "1" // This sets the new Fireball explosion animation. Set to 0 if you wish to deactivate this feature

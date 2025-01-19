@@ -1,4 +1,4 @@
-ACTION_IF !(GAME_IS "iwdee") BEGIN
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY ~%MOD_FOLDER%/items/life_stealer~ ~override~
     COPY_EXISTING ~DAGG20.ITM~ ~override~
         SET chaotic_evil = IDS_OF_SYMBOL(alignmen CHAOTIC_EVIL)

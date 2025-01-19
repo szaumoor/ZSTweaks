@@ -60,7 +60,7 @@
 @1440 = "Make Daggers have general extra features to compensate for the low damage"
 @1450 = "Make some rogue weapons able to do more damage if wielded by pure thieves (Finesse)"
 @1530 = ~Make the inexplicably double damage magical throwing daggers deal normal, to not make them the obvious choice~
-@1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense~
+@1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense. WARNING: Install after other tweaks and mods that change the same spells, to be safer~
 @1532 = ~Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage. WARNING: Install this component DEAD LAST after other components that modify these items, including components from other mods~
 @1533 = ~Rebalance some wands~
 @1534 = ~Rebalance some potions~
@@ -248,7 +248,7 @@
 @1644 = ~Remove unnecessary stat restrictions in NPC gear~
 @1645 = ~Make Cernd's cloak more powerful~
 @1646 = ~Make Sarevok's Deathbringer assault a bit more balanced~
-@1647 = ~Make Shar-Teel especially effective when fighting men~
+@1647 = ~Make Shar-Teel especially effective when fighting men~
 
 // MISCELLANEOUS
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
