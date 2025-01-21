@@ -3,15 +3,30 @@
 //
 ////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-OUTER_SET _1538_jewelry_price = "150" // this tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted half, you would type 50.
+OUTER_SET _1538_jewelry_price = "150" // this tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted  half, you would type 50.
+
+// variables below allow or disallow weapon categories to be modified by the Finesse component (Component 1450)
+// A value of 1 allows it, a value of 0 disallows it
+OUTER_SET _1450_allow_daggers   = "1"
+OUTER_SET _1450_allow_staves    = "1"
+OUTER_SET _1450_allow_sswords   = "1"
+OUTER_SET _1450_allow_lswords   = "1"
+OUTER_SET _1450_allow_scimitars = "1"
+OUTER_SET _1450_allow_katanas   = "1"
+OUTER_SET _1450_allow_clubs     = "1"
+OUTER_SET _1450_allow_wakis     = "1"
+OUTER_SET _1450_allow_ninjatos  = "1"
+OUTER_SET _1450_allow_slings    = "1"
+OUTER_SET _1450_allow_bows      = "1"
+OUTER_SET _1450_allow_xbows     = "1"
+OUTER_SET _1450_allow_darts     = "1"
+// end of finesse variables
 
 ////////////////////////////// Dagger tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 OUTER_SET _1001_sbonus = "-2" // You can change this to override the save penalty given in component 1001 to poisoned throwing daggers. Vanilla is 0, default in component is -2.
 
-
 OUTER_SET _1002_stack_mult = "100" // This sets a percentage multiplier for the number of stacks of poisoned throwing daggers inserted in Component 1002. So, for example if you only want half, you'd set this to 50, if you want 20% more, you'd set it to 120. Values of zero and below are ignored.
-
 
 /////////////////////////////// NPC tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

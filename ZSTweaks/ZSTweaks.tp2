@@ -1876,7 +1876,8 @@ FORBID_COMPONENT "ZSTweaks.tp2" "460" @57 FORBID_COMPONENT "ZSTweaks.tp2" "461" 
 FORBID_COMPONENT "ZSTweaks.tp2" "462" @57 FORBID_COMPONENT "ZSTweaks.tp2" "463" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "464" @57 FORBID_COMPONENT "ZSTweaks.tp2" "465" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "466" @57 FORBID_COMPONENT "ZSTweaks.tp2" "467" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "468" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "468" @57 FORBID_COMPONENT "ZSTweaks.tp2" "501" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "505" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_99.tph~
@@ -2131,6 +2132,22 @@ FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_468.tph~
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @501 DESIGNATED 501 GROUP @20 // CHAOTIC COMMANDS DURATION TWEAK
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_501.tph~
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @505 DESIGNATED 505 GROUP @20 // REPULSE UNDEAD TWEAK
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "ZSTweaks.tp2" "99" @58
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~%MOD_FOLDER%/libs/components/11_cleric_spells_tweaks/zs_comp_505.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////// CLASS AND KIT-RELATED TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

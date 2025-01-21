@@ -1,10 +1,19 @@
 COPY ~%MOD_FOLDER%/items/axes_crit~ ~override~
 COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
     LPF ITM_CAT RET cat = result END
+    LPF ITM_FLAGS RET flags = result END
+    LPF IS_FLAG_SET INT_VAR flag = 1 RET is_two_handed = result END
     PATCH_IF cat = 25 BEGIN // axes
         LPF ITM_ENCH RET ench = result END
-        PATCH_IF ench < 7 BEGIN
-            LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=341,p2=1,res=ZSTWAXM%ench%,spec=1;op=341,p2=1,res=ZSTWAXR%ench%,spec=2~ END
+        PATCH_IF is_two_handed BEGIN
+            PATCH_IF ench < 7 BEGIN
+                LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=341,p2=1,res=ZSTWAX2%ench%,spec=1~ END
+            END
+        END ELSE BEGIN
+            PATCH_IF ench < 7 BEGIN
+                LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=341,p2=1,res=ZSTWAXM%ench%,spec=1;op=341,p2=1,res=ZSTWAXR%ench%,spec=2~ END
+            END
         END
     END
 BUT_ONLY
+

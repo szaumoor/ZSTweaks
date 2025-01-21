@@ -161,6 +161,8 @@ Note that this component does not account (automatically) for special weaponry w
 - Arrows of Detonation are also skipped, since they're not designed to pierce
 - Broken Spirit Arrow +1 will be skipped (The Calling, it's designed to deal almost no damage)
 
+Finally, the weapon categories affected are optional and can be turned off in the configuration file.
+
 **Component 1530:** Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time to maximize damage
 
 This reduces the number of dice thrown of DAGG11 and DAGG12 to 1, so they are not the only good choice for daggers to maximize damage. And for consistency. Generally speaking, I dislike this sort of unbalanced design. DAGG11 specifically, already conforms to this rule in BGEE.
@@ -1625,6 +1627,20 @@ Therefore, I rebalanced it so it starts out dealing a bit less damage, and it bu
 - Final comparison of maximum possible damage (with save failed and no resistances) at level 20: 45-145 vs. 20-160
 
 In summary, higher minimum damage, more moderate scaling, bit lower maximum damage, and magic resistance has no effect.
+
+**Component 501:** Make Chaotic Commands' duration extend up to level 20 instead of only 18
+
+Simply fixes the weird inconsistency of some spells where they only scale up to 18, even if the only change is duration, which is this case.
+
+**Component 505:** Make Repulse Undead more useful by causing damage and Slow when they're repulsed
+
+This improves the spell in the following ways:
+
+- Each round the effect triggers, it pushes creatures away in the same way
+- Each time they're repulsed, they take 4 points of magic damage, and 4 points of "radiant" damage that is irresistible, even if they're immune to magic damage
+- After being pushed, they suffer the effects of Slow for half a round.
+
+None of these effects are subject to magic resistance though it's a level 5 effect, and thus liches are unaffected.
 
 </details>
 

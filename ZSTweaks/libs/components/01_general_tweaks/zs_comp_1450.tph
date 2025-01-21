@@ -11,16 +11,6 @@ COPY_EXISTING_REGEXP "ZSTW[TZ][0-6]\.spl" ~override~ // throwing daggers and dar
     LPF ALTER_HEADER INT_VAR match_type=2 projectile="%ZSTW_IND%" END
 BUT_ONLY
 
-// ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1350~ OR group_component=1 BEGIN // modify spells for finesse
-//     COPY_EXISTING_REGEXP ~ZSTW[JW][0-6]\.spl~ ~override~
-//         LPF ALTER_EFFECT INT_VAR match_opcode=12 match_dicesize=8 match_dicenumber=1 dicesize=4 dicenumber=2 END
-// END
-
-// ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1370~ OR group_component=1 BEGIN // modify spells for finesse
-//     COPY_EXISTING_REGEXP ~ZSTWK[0-6]\.spl~ ~override~
-//         LPF ALTER_EFFECT INT_VAR match_opcode=12 match_dicesize=10 match_dicenumber=1 dicesize=5 dicenumber=2 END
-// END
-
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_CAT RET cat = result END
     LPF ITM_PROF RET prof = result END
@@ -28,16 +18,19 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_ENCH RET ench = result END
     PATCH_IF ench >= 0 AND ench < 7 BEGIN
         LPF PROBABILITY_BONUS INT_VAR ench = ench RET bonus = result END
-        PATCH_IF cat=16 AND prof=96 BEGIN // daggers
+
+        PATCH_IF _1450_allow_daggers AND cat=16 AND prof=96 BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWD%ench%~ END
             LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWZ%ench%~ END
-        END ELSE PATCH_IF cat=14 BEGIN // slings/bullets
+
+        END ELSE PATCH_IF _1450_allow_darts AND cat=14 BEGIN
             PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdbull02" != 0 BEGIN // bullets of darkness (SoD)
                 LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_sling_wk_nj+bonus) STR_VAR class=~THIEF~ spell=~ZSTWS%ench%~ END
             END ELSE BEGIN
                 LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_sling_wk_nj+bonus) insert_point="-1" STR_VAR class=~THIEF~ spell=~ZSTW#3~ END
             END
-        END ELSE PATCH_IF cat=5 BEGIN  // arrows
+
+        END ELSE PATCH_IF _1450_allow_bows AND cat=5 BEGIN
             PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdarow01" != 0 AND // ANTIMAGIC ARROW SOD
             "%SOURCE_RES%" STRING_COMPARE_CASE "cd51ari" != 0 AND  // BROKEN SPIRIT ARROW (the calling)
             "%SOURCE_RES%" STRING_COMPARE_CASE "AROW06" != 0 BEGIN
@@ -47,15 +40,19 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                     LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_arrow_bolt+bonus) insert_point="-1" STR_VAR class=~THIEF~ spell=~ZSTWM3~ END
                 END
             END
-        END ELSE PATCH_IF cat=31 BEGIN // bolts
+
+        END ELSE PATCH_IF _1450_allow_xbows AND cat=31 BEGIN
             PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "BOLT07" != 0 BEGIN // BRUISER MATES SKIPPED
                 LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_arrow_bolt+bonus) STR_VAR class=~THIEF~ spell=~ZSTWB%ench%~ END
             END
-        END ELSE PATCH_IF cat=24 AND prof=106 BEGIN // darts
+
+        END ELSE PATCH_IF _1450_allow_darts AND cat=24 AND prof=106 BEGIN
             LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWT%ench%~ END
-        END ELSE PATCH_IF cat=26 AND prof=102 BEGIN // staves
+
+        END ELSE PATCH_IF _1450_allow_staves AND cat=26 AND prof=102 BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ls_staff+bonus) STR_VAR class=~THIEF~ spell=~ZSTWQ%ench%~ END
-        END ELSE PATCH_IF cat=20 AND prof=90 BEGIN //ls
+
+        END ELSE PATCH_IF _1450_allow_lswords AND cat=20 AND prof=90 BEGIN //ls
             PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdsw1h06" != 0 // voidsword (SoD)
             AND "%SOURCE_RES%" STRING_COMPARE_CASE "KILLSW01" != 0 // cheat sword
             BEGIN
@@ -65,22 +62,29 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                     LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ls_staff+bonus) insert_point="-1" STR_VAR class=~THIEF~ spell=~ZSTW$3~ END
                 END
             END
-        END ELSE PATCH_IF cat=20 AND prof=95 AND "%appearance%" STRING_COMPARE_CASE "sc"=0 BEGIN //scim
+
+        END ELSE PATCH_IF _1450_allow_scimitars AND cat=20 AND prof=95 AND "%appearance%" STRING_COMPARE_CASE "sc"=0 BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sci_ka+bonus) STR_VAR class=~THIEF~ spell=~ZSTWL%ench%~ END
-        END ELSE PATCH_IF cat=20 AND prof=95 AND "%appearance%" STRING_COMPARE_CASE "s1"=0 BEGIN // ninja-tos
+
+        END ELSE PATCH_IF _1450_allow_ninjatos AND cat=20 AND prof=95 AND "%appearance%" STRING_COMPARE_CASE "s1"=0 BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sling_wk_nj+bonus)STR_VAR class=~THIEF~ spell=~ZSTWJ%ench%~ END
-        END ELSE PATCH_IF cat=20 AND prof=94 BEGIN // katanas
+
+        END ELSE PATCH_IF _1450_allow_katanas AND cat=20 AND prof=94 BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sci_ka+bonus) STR_VAR class=~THIEF~ spell=~ZSTWK%ench%~ END
-        END ELSE PATCH_IF cat=19 AND prof=95 AND "%appearance%" STRING_COMPARE_CASE "ss"=0 BEGIN // wakizashis
+
+        END ELSE PATCH_IF _1450_allow_wakis AND cat=19 AND prof=95 AND "%appearance%" STRING_COMPARE_CASE "ss"=0 BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) STR_VAR class=~THIEF~ spell=~ZSTWW%ench%~ END
-        END ELSE PATCH_IF cat=19 AND prof=91 BEGIN // short swords
+
+        END ELSE PATCH_IF _1450_allow_sswords AND cat=19 AND prof=91 BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ss_club+bonus) STR_VAR class=~THIEF~ spell=~ZSTWY%ench%~ END
-        END ELSE PATCH_IF cat=17 AND prof=115 BEGIN // clubs
+
+        END ELSE PATCH_IF _1450_allow_clubs AND cat=17 AND prof=115 BEGIN
             PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "l#BASR7" != 0 BEGIN // lava's
                 LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ss_club+bonus) STR_VAR class=~THIEF~ spell=~ZSTWQ%ench%~ END
             END ELSE BEGIN
                 LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ss_club+bonus) STR_VAR class=~THIEF~ spell=~ZSTW_2~ END
             END
         END
+
     END
 BUT_ONLY

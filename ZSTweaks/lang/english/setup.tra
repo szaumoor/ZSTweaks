@@ -51,7 +51,7 @@
 @1350 = "Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8"
 @1352 = "Make Wakizashis a piercing/slashing weapon"
 @1360 = "Make Light Crossbows get +1/2 more APR"
-@1361 = ~Make one-handed axes deal extra damage equal to its base damage on critical hits~
+@1361 = ~Make axes deal extra damage equal to its base damage on critical hits~
 @1362 = ~Make maces, clubs, and hammers damage the target's AC temporarily based on enchantment level~
 @1370 = "Make Katanas deal 2d5 damage instead of 1d10"
 @1400 = "Make Bastard Swords deal 1d8+1 damage by default"
@@ -315,6 +315,8 @@
 @466 = ~Make Shield of Archons absorb more spell levels (equivalent to cleric level)~
 @467 = ~Make Sunray and False Dawn less OP and/or more balanced~
 @468 = ~Rebalance Call Lightning's damage and scaling~
+@501 = ~Make Chaotic Commands' duration extend up to level 20 instead of only 18~
+@505 = ~Make Repulse Undead more useful by causing damage and Slow when they're repulsed~
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray from Sun Soul Monks scale further and do more damage to undead"
@@ -5465,6 +5467,18 @@ Weight: 9~
 
 @8180 = ~Avoid Death
 With extraordinary effort, a high-level rogue can avoid almost certain death. The effect lasts for 5 rounds, and during this time, the rogue's Save vs. Death receives a bonus of 5, Hit Points are increased by 20, and the rogue becomes immune to death magic and level drain. Additionally, during the first round, the rogue will succeed in all saving throws, and their hit points may not go under 1 for the first half of that round.~
+
+@8190 = ~Repulse Undead
+(Abjuration)
+
+Level: 5
+Range: 0
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: The caster
+Saving Throw: None
+
+This powerful spell creates waves of anti-negative energy that sweep outward from the caster. These waves disrupt any undead that attempt to attack the caster, pushing them away from the caster for several seconds, causing Slow for half a round and 8 points of damage (half magical, half radiant which cannot be resisted). There is one wave per round for the duration of the spell. All undead are affected with no Saving Throw.~
 
 
 @99999 = ~Damage~ // for text patching

@@ -1,14 +1,4 @@
 INCLUDE ~ZSTweaks/libs/zs_correct_exot_anims.tph~
-ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN // modify spells for finesse
-    COPY_EXISTING_REGEXP ~ZSTWNJ[0-6]\.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR match_opcode=12 match_dicesize=8 match_dicenumber=1 dicesize=4 dicenumber=2 END
-    BUT_ONLY
-    COPY_EXISTING_REGEXP ~ZSTWNJ[0-6]\.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR match_opcode=12 match_dicesize=8 match_dicenumber=1 dicesize=4 dicenumber=2 END
-    BUT_ONLY
-END
-
-
 COPY_EXISTING "SW1H48.ITM" ~override~
     SPRINT str @99999
     SPRINT str_sf @99998
