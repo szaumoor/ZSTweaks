@@ -1081,7 +1081,7 @@ This improves this item in the following ways:
 
 **Component 1325:** Make Borok's Fist +2 different from Ashideena +2
 
-This exists simply because I hate that it's identical to Ashideena. So, inspired by the description, it has a neat bonus against giant humanoids: on hit, they get Stunned for 1 round if they fail a save vs. Spell at +2. Additionally, the electrical damage on hit is 1d2 and not 1.
+This exists simply because I hate that it's identical to Ashideena. So, inspired by the description, it has a neat bonus against giant humanoids: on hit, they get Stunned for 1 round if they fail a save vs. Spell at +2. Additionally, the electrical damage on hit is 1d2 and not 1, so it is very slightly more effective as a general use weapon compared to Ashideena.
 
 **Component 1326:** Make Maces of Disruption more balanced when fighting the undead and improve misleading description
 
@@ -1129,7 +1129,7 @@ This follows the theme of the description, which is an anti-wizard theme, and th
 
 **Component 1344** Make Arrows of Biting apply poison faster and improve the misleading description
 
-The description states that 30% of the health of the target will be lost by the time the poison is done, but that's not actually true. Therefore, now it deals 30 points of poison damage over 30 seconds, similar to Bolts of Biting, but slower.
+The description states that 30% of the health of the target will be lost by the time the poison is done, but that's not actually true. Therefore, now it deals 30 points of poison damage over 30 seconds, similar to Bolts of Biting, but slower. Additionally, these arrows will have a 5% higher chance of critically hitting.
 
 This will in turn make Hobgoblins and Sirenes in BGEE significantly more dangerous if they get the poison off on you, since -30 HP is a big deal. Keep the antidotes and healing ready (my potion and healing spell overhaul helps wink wink).
 
@@ -1139,7 +1139,7 @@ This removes the save from the damage effect, therefore 1dx fire damage will alw
 
 **Component 1346:** Make Arrows of Piercing always cause at least half of the extra piercing damage
 
-This makes the arrows cause at least 3 extra piercing damage when save succeeds. When the save is failed, the extra piercing damage is instead 7. This should make these expensive arrows feel like less of a waste when used, especially against targets with good saves.
+This makes the arrows cause at least 3 extra piercing damage when save succeeds. This should make these expensive arrows feel like less of a waste when used, especially against targets with good saves. Additionally, these arrows will have a 10% higher chance of critically hitting.
 
 </details>
 
@@ -1471,23 +1471,19 @@ Conceptually, I think it's a cool spell for druids and rangers, and it might be 
 
 Additionally it allows stacks of 12 berries.
 
-**Component 250:** Make Earthquake party friendly
+**Component 250:** Make Earthquake more effective and disable annoyances
 
-Earthquake is generally very inconvenient to be cast at any point because of how it affects your whole party. This disables that behavior.
+Earthquake is generally very inconvenient to be cast at any point because of how it affects your whole party. This disables that behavior, and in case you don't enjoy feeling like casting it might give you a tiny seizure, it also disables the screen shake.
 
-**Component 350:** Make Earthquake not shake the screen
-
-In case you don't enjoy feeling like casting it might give you a tiny seizure.
-
-**Component 351:** Make Earthquake's more effective as a spell
-
-This component makes the saves and damage against the effects decay less harshly:
+It also makes it more effective, by making the saves and damage decay less harshly:
 
 1st round: vanilla, 6d6 damage, -6 save to avoid unconsciousness
 2nd round: 5d6 damage, -4 save
 3rd round: 4d6 damage, -2 save
 
 Additionally, it fixes the likely incorrect probability of 3% to summon a hostile elemental, so it is 2% instead.
+
+These three tweaks (party-friendly, no shake, effectiveness) are all optional, to honor the previous design that divided them in three components and can be disabled in the configuration file (all enabled by default).
 
 **Component 260:** Make Negative Plane Protection's duration increase somewhat as you level up
 

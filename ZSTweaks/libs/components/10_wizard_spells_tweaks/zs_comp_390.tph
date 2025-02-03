@@ -3,6 +3,9 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY_EXISTING ~SPWI614.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=new_description END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 8 dicenumber = 1 parameter1 = 8 END
+        PATCH_IF _390_deathfog_no_mr BEGIN
+            LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
+        END
     BUT_ONLY
 
     COPY_EXISTING ~SCRL7R.ITM~ ~override~

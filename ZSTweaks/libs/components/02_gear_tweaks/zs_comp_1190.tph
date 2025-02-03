@@ -1,38 +1,38 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY ~%MOD_FOLDER%/items/rod_might~ ~override~
     COPY_EXISTING ~RODS02.ITM~ ~override~
                 ~rods02a.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6040) id_ref_name = RESOLVE_STR_REF(@6048) unusable0=0 END
 
     COPY_EXISTING ~RODMACE.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6044) unid_ref_desc=RESOLVE_STR_REF(@6044) unid_ref_name=RESOLVE_STR_REF(@6041) id_ref_name=RESOLVE_STR_REF(@6041) ench=3 END
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6044) unid_ref_desc=RESOLVE_STR_REF(@6044) unid_ref_name=RESOLVE_STR_REF(@6041) id_ref_name=RESOLVE_STR_REF(@6041) ench=3 STR_VAR icon=~ZSTWRRM0~ desc_img=~ZSTWRRM1~ END
         LPF ALTER_HEADER INT_VAR match_type = 1 speed = 4 damage = 4 END
         LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=24 opcode=40 savebonus=2 duration=12 END
 
     COPY_EXISTING ~RODSWORD.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6045) unid_ref_desc=RESOLVE_STR_REF(@6045) unid_ref_name=RESOLVE_STR_REF(@6042) id_ref_name=RESOLVE_STR_REF(@6042) ench=3 STR_VAR appearance="FS" END
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6045) unid_ref_desc=RESOLVE_STR_REF(@6045) unid_ref_name=RESOLVE_STR_REF(@6042) id_ref_name=RESOLVE_STR_REF(@6042) ench=3 STR_VAR appearance="FS" icon=~ZSTWRRM2~ desc_img=~ZSTWRRM3~ END
         LPF ALTER_HEADER INT_VAR match_type = 1 speed = 2 damage = 3 END
         LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_savingthrow=1 savebonus=2 duration=6 resist_dispel=3 END
         LPF ALTER_EFFECT INT_VAR match_opcode = 139 check_globals = 0 duration = 0 parameter1 = 1280 probability1 = 49 END
-        //LPF CLONE_EFFECT INT_VAR match_opcode = 139 probability1 = 100 probability2 = 50 parameter1 = 20438 END
         LPF DELETE_EFFECT INT_VAR check_globals = 0 header_type = 1 match_opcode = 109 multi_match = 1 END
         LPF ALTER_EFFECT INT_VAR match_opcode = 109 opcode = 45 probability1 = 49 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 45 opcode = 39 parameter2 = 1 probability1 = 100 probability2 = 50 END
         LPF GET_DMG_TYPE STR_VAR type = ~fire~ RET fire = result END
         LPF ADD_ON_HIT_EFF STR_VAR effects =~op=12,dsize=4,dnum=1,p2=%fire%,spec=1024~ END
 
-        PATCH_IF _1450_allow_lswords AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1450") BEGIN
+        PATCH_IF _1450_allow_lswords AND (MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1450") BEGIN
             LPF PROBABILITY_BONUS INT_VAR ench = 3 RET bonus = result END
             LPF ALTER_EFFECT INT_VAR match_opcode=326 probability1=(bonus+base_ls_staff) STR_VAR match_resource="ZSTWL1" resource="ZSTWL3" END
         END
 
     COPY_EXISTING ~RODSPEAR.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR unid_ref_name=RESOLVE_STR_REF(@6043) id_ref_name=RESOLVE_STR_REF(@6043) unid_ref_desc=RESOLVE_STR_REF(@6046) id_ref_desc=RESOLVE_STR_REF(@6046) END
+        LPF ALTER_ITEM INT_VAR unid_ref_name=RESOLVE_STR_REF(@6043) id_ref_name=RESOLVE_STR_REF(@6043) unid_ref_desc=RESOLVE_STR_REF(@6046) id_ref_desc=RESOLVE_STR_REF(@6046) STR_VAR icon=~ZSTWRRM4~ desc_img=~ZSTWRRM5~ END
         LPF ALTER_HEADER INT_VAR match_type = 1 overhand = 25 thrust = 75 END
         LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=12 savebonus=0 savingthrow=0 parameter1=2 special=1024 probability1=9 END
         LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = result END
         LPF ADD_ON_HIT_EFF INT_VAR p1=2 p2=piercing tmg=3 stype=2 spec=1024 STR_VAR effects = ~op=12,tmg=0,p1=1,stype=0;op=12,p1=1,dur=1;op=12,dur=2;op=12,dur=3;op=12,dur=4;op=12,dur=5;op=12,p1=1,dur=6~ END
 
-        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" BEGIN
+        PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1150" BEGIN
             SPRINT desc @6046
             SPRINT str @99999
             INNER_PATCH_SAVE desc ~%desc%~ BEGIN

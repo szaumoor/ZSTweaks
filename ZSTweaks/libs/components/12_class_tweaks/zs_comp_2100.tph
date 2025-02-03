@@ -1,4 +1,4 @@
-COPY ~ZSTweaks/class_kits/sunsoul_ray~ ~override~
+COPY ~%MOD_FOLDER%/class_kits/sunsoul_ray~ ~override~
 
 COPY_EXISTING "SPCL236.SPL" ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7800) END

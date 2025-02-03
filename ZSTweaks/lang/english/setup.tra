@@ -1,5 +1,5 @@
 // GROUPS
-@10 = ~General Item & Spell Tweaks~
+@10 = ~General Item/Spell/Misc Tweaks~
 @11 = ~Armor/Gear Tweaks~
 @12 = ~Dagger Tweaks~
 @13 = ~Two-handed Melee Weapon Tweaks~
@@ -7,11 +7,11 @@
 @15 = ~Axes and Blunt Weapons Tweaks~
 @16 = ~Ranged Weapon Tweaks~
 @17 = ~NPC Tweaks~
-@18 = ~Miscellaneous Tweaks (aka pending for a better category)~
 @19 = ~Wizard Spell Tweaks~
 @20 = ~Cleric/Druid Spell Tweaks~
 @21 = ~Class and Kit-related Tweaks~
 @22 = ~Creature Tweaks~
+@32 = ~End-of-install-order Tweaks~
 // END GROUPS
 
 // warning messages
@@ -60,31 +60,21 @@
 @1440 = "Make Daggers have general extra features to compensate for the low damage"
 @1450 = "Make some rogue weapons able to do more damage if wielded by pure thieves (Finesse)"
 @1530 = ~Make the inexplicably double damage magical throwing daggers deal normal, to not make them the obvious choice~
-@1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense. WARNING: Install after other tweaks and mods that change the same spells, to be safer~
-@1532 = ~Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage. WARNING: Install this component DEAD LAST after other components that modify these items, including components from other mods~
 @1533 = ~Rebalance some wands~
 @1534 = ~Rebalance some potions~
 @1535 = ~Make all potions usable by all classes~
-//@1536 = ~Make vanilla familiars more resilient and useful and diminish penalties~
 @1537 = ~Make Poison-curing spells an instant cast so attempting to cure poison is less likely to be interrupted~
 @1650 = ~Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak~
 @1601 = ~Make potions and food items's effects universally incapable of stacking with themselves~
 @1541 = ~Make vorpal hits not work if target is under Stoneskin or Ironskins~
 @1538 = ~Make jewelry and other items meant to be sold more valuable~
-@15380 = ~1.25x~
-@15381 = ~1.5x~
-@15382 = ~1.75x~
-@15383 = ~2x~
-@15384 = ~2.25x~
-@15385 = ~2.5x~
-@15386 = ~2.75x~
-@15387 = ~3x~
 @1539 = ~Make classes other than arcane and divine spellcasters able to use scrolls freely~
 @15390 = ~Everyone can~
 @15391 = ~Everyone can as long as they have the right stats depending on scroll type~
 @15392 = ~All bards and Thieves can~
 @15393 = ~All bards and Thieves can as long as they have the right stats depending on scroll type~
 @1544 = ~Make scrolls always cast at the character level regardless of class~
+@3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane~
 // @1539 = ~Make Void-weapons not sap the strength of the undead when held~
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
@@ -114,6 +104,10 @@
 @1662 = ~Make Montolio's Cloak grant a damage and thac0 bonus to rangers~
 @1663 = ~Make the Sandthief ring in BGEE work as in BG2EE (one use per day)~
 @1664 = ~Make all ioun stones and circlets protect against critical hits~
+@16640 = ~Affect all~
+@16641 = ~Only affect a selection of items~
+@16642 = ~Only affect ioun stones~
+@16643 = ~Only affect circlets~
 @1665 = ~Make several basic ioun stones and circlets a bit more interesting or powerful~
 @1666 = ~Make Bracers of Blinding's Improved Haste effect last 1 turn and improve speed passively~
 @1667 = ~Make Xarrnous's Second Sword Arm (and SoD's version) also add +1 damage (lesser Legacy of the Masters)~
@@ -129,17 +123,10 @@
 @1678 = ~Make Senses of the Cat imbue the user of more cat-like features~
 @1679 = ~Make the Horn of Kazgaroth more useful and the self-damage more unique~
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
-@1685 = ~Make the Belt of Fortitude grant Constitution passively and replace the charge ability with regeneration~ // todo
-
-// subcomponent str of component @1664
-@16640 = ~Affect all~
-@16641 = ~Only affect a selection of items~
-@16642 = ~Only affect ioun stones~
-@16643 = ~Only affect circlets~
+//@1685 = ~Make the Belt of Fortitude grant Constitution passively and replace the charge ability with regeneration~ // todo
 
 /// DAGGER TWEAKS
-@1000 = "Make throwing poisoned daggers slightly more likely to poison enemies"
-@1002 = ~Make throwing poisoned daggers slightly less rare~
+@1000 = "Make throwing poisoned daggers less rare and more likely to poison enemies"
 @1130 = "Make Bone Blade dagger more special and not just a plain +4 dagger"
 @1140 = "Make Dagger of the Star slightly more powerful"
 @1490 = ~Make Neb's Nasty Cutter have an unlimited amount of poison~
@@ -157,26 +144,22 @@
 @1200 = "Make Ixil's Spike allow Haste and Improved Haste and improve it slightly"
 @1201 = "Make Lilarcor +3 have a chance of causing confusion on hit"
 @1202 = "Make Warblade +4 slightly more unique and more potent when wielded by barbarians"
-@1280 = "Make Carsomyr affect any kind of evil and not just Chaotic Evil"
-@1290 = "Make Carsomyr's Dispel Magic abilities more balanced"
+@1280 = "Make Carsomyr more balanced and affect any kind of evil and not just Chaotic Evil"
 @1300 = "Make Silver Sword significantly more unique and add a more interesting (IMO) description"
-@1318 = "Make Flame of the North +2 affect all evil, not just Chaotic Evil"
-@1322 = ~Make Flame of the North inflict +2 fire damage against trolls~
+@1318 = "Make Flame of the North able to kill trolls, and the extra damage affect all evil, not just Chaotic Evil"
 @1390 = "Make Staff of the Magi force a saving throw to dispel effects on hits"
-@1410 = "Make Ir'revrykal Dispel Magic effect not depend on probabilities but allow a saving throw"
-@1420 = "Make Ir'revrykal base damage equal to Carsomyr"
+@1410 = "Make Ir'revrykal dispel magic not depend on probabilities and increase base damage"
 @1460 = ~Make Spear of Withering able to poison on contact if save is failed~
 @1540 = ~Make Wave slightly more powerful~
 @1587 = ~Make Rod of Terror inspire less Terror by how awful it is and more by how effective it is~
 @1590 = ~Make Blackmist more powerfully blinding and grant immunity to blindness~
-@1591 = ~Make Soul Reaver slightly more balanced~
-@1592 = ~Make Soul Reaver deal 1d12 damage~
+@1591 = ~Make Soul Reaver slightly more balanced and deal 1d12 damage~
 @1593 = ~Make Sword of Ruin +2 slightly more powerful~
 @1594 = ~Make Cleric's staff more unique and actually benefit clerics~
 @1595 = ~Make Halcyon +1 a bit more powerful~
 @1597 = ~Make the Staff of Rhynn not just unique in name and description, but in function~
 @1599 = ~Make Psion's Blade more offensively powerful against Illithids~
-@1602 = ~Make Dragon's Bane +3 better and act as a +6 weapon in every sense against dragons and wyverns~
+@1602 = ~Make Dragon's Bane +3 better and act as a +6 weapon in every sense vs. dragons and wyverns~
 @1603 = ~Make Dragon's Breath +4 act damage-wise as a +4 weapon~
 @1604 = ~Make Duskblade +2 more imbued with the essence of necromancy~
 @1606 = ~Make the Ravager's vorpal hit bound by saving throws with harsh penalties and rebalance effects~
@@ -187,10 +170,9 @@
 @1126 = ~Make Blackrazor able to hit targets immune to +3~
 @1127 = ~Make Peridan more powerful against dragons and wyverns and less misleading in the description~
 @1210 = "Make The Equalizer slightly more powerful"
-@1220 = "Make Ras slightly better and the Dancing Blade last for 1 turnthe dancing blade last for 1 turn instead of 4 rounds"
+@1220 = "Make Ras slightly better and the Dancing Blade last for 1 turn instead of 4 rounds"
 @1230 = "Make Short Sword of Mask +5 slightly more powerful"
-@1240 = "Make Purifier's damage bonus affect all evil, not just Chaotic Evil"
-@1241 = "Make Purifier's Dispel Magic level 30, like Staff of the Magi and Carsomyr"
+@1240 = "Make Purifier's dispel magic much better and damage bonus affect all evil, not just Chaotic Evil"
 @1250 = "Make Yamato's passive abilities more substantial"
 @1260 = "Make Usuno's Blade slightly more electrically powerful"
 @1270 = "Make Spectral Brand slightly better and make the dancing blade last for 1 turn instead of 4 rounds"
@@ -199,8 +181,7 @@
 @1341 = ~Make Hindo's Doom a +4 and +5 weapon and inflict extra damage to undead~
 @1470 = ~Make Adjatha the Drinker thirstier~
 @1550 = ~Make Drizzt's weapons slightly more worth stealing in BG2~
-@1580 = ~Make Hawksight improve your senses, reflexes, and accuracy more keenly~
-@1581 = ~Make Hawksight's description unique and add a minor power to it~
+@1580 = ~Make Hawksight improve your senses, reflexes, and accuracy more keenly, and give it a more unique description~
 @1582 = ~Make Vexation +2 more powerful~
 @1583 = ~Make Kachiko's Wakizashi substantially more unique in description and improve it~
 @1584 = ~Make The Brass Blade +5 cast better fireball spells~
@@ -211,6 +192,7 @@
 @1596 = ~Make The Shadow Blade +3 not just unique in name and description, but in function~
 @1598 = ~Make Cutthroat +4 not just unique in name and description, but in function~
 @1605 = ~Make The Burning Earth better and the horrendously misleading description no longer so~
+@1608 = ~Make Water's Talon +4 more balanced (Item Upgrade)~
 
 // AXES AND ONE-HANDED BLUNT WEAPONS
 @1310 = "Make Defender of Easthaven damage reduction a little more moderate"
@@ -234,6 +216,7 @@
 @1344 = ~Make Arrows of Biting apply poison faster and improve the misleading description~
 @1345 = ~Make Arrows of Fire cause fire damage always, same as Arrows of Ice~
 @1346 = ~Make Arrows of Piercing always cause at least half of the extra piercing damage~
+@1347 = ~Make Bolts of Biting have an inherent +5% extra critical hit chance~
 
 // NPC TWEAKS
 @1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
@@ -246,102 +229,87 @@
 @1641 = ~Make the item creation abilities of vanilla NPCs slightly better~
 @1642 = ~Make Nalia's ring more powerful~
 @1643 = ~Make Corthala family blade more powerful and more effective against wizards~
-@1644 = ~Remove unnecessary stat restrictions in NPC gear~
+@1644 = ~Make NPC gear no longer bound to unnecessary stat restrictions~
 @1645 = ~Make Cernd's cloak more powerful~
 @1646 = ~Make Sarevok's Deathbringer assault a bit more balanced~
 @1647 = ~Make Shar-Teel especially effective when fighting men~
 
-// MISCELLANEOUS
-@3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane~
 
 // WIZARD SPELLS
-@140 = "Standardize Finger of Death magical damage on a successful save"
-@145 = ~Make Luck last for 1 turn to make it more usable~
-@147 = ~Make Luck also add 5% critical hit chances, 2 AC, 5% more to thieving~
-@150 = "Make Disintegrate behave more like a modified Harm spell, similar to how it behaves in NWN2"
+@140 = "Make Finger of Death's magical damage on a successful save standardized"
+@145 = ~Make Luck last for 1 turn and add 5% critical hit chances, 2 AC, 5% more to thieving~
 @160 = "Make Black Blade of Disaster unsuitable for backstabs"
 @163 = "Make Iron Golem weapon unsuitable for backstabs"
 @161 = ~Make Phantom Blade scale in duration up to level 20, instead of to level 18~
 @170 = "Make Wail of the Banshee inflict some magical damage and deafness on a successful save"
 @180 = "Make Meteor Swarm more likely to do more damage, and bypass magic resistance like Fire Storm"
-@200 = "Make Sleep work for level >=5 enemies with a save bonus"
 @210 = "Make Horror an Enchantment spell"
 @220 = "Make Ice Storm do more damage, including piercing damage"
 @370 = "Make Ray of Enfeeblement a Necromancy spell"
 @380 = "Make Contagion cause 4 points of Strength and Dexterity damage"
-@390 = "Make Death Fog inflict 1d8+8 acid damage per round instead of flat 8 damage"
+@390 = "Make Death Fog inflict 1d8+8 acid damage and optionally bypass Magic Resistance"
 @400 = "Make Energy Drain drain 6 levels instead of 2"
 @405 = ~Make Maze bypass Magic Resistance, like Imprisonment, and make Minotaurs immune to it~
 @407 = ~Make base Imp Familiars have 12/24 HP like the other familiars~
 @410 = ~Make Horrid Wilting actually more effective against plants and Water Elementals and increase minimum damage~
-@430 = ~Make Grease bypass Magic Resistance, apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description~
+@430 = ~Make Grease bypass Magic Resistance, apply a Fire Resistance debuff, and reduce some movement speed regardless~
 @440 = ~Make Comet bypass magic resistance and apply a mix of cold, fire, and crushing damage~
-@441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level"
-@442 = "Make Tenser's Transformation gain extra APR like a Fighter at the appropriate levels"
+@441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level and APR at the appropriate levels"
 @443 = ~Make Symbol of Death work with +6 saving throw bonus if above the 60 HP threshold~
 @444 = ~Make Flesh to Stone use Petrification saves~
 @445 = ~Make Bigby's spells more powerful~
-@446 = ~Make Fireball, Sunfire, and Delayed Blast Fireball slightly scale more up to level 20~
+@446 = ~Make Fireball spells slightly scale more up to level 20 with an optional better explosion animation~
+@447 = ~Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance~
 
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
-@101 = ~Make Flame Blade do 4 more points of Fire Damage to undead and act as a +2 weapon against them~
-@102 = ~Make BG's version of Flame Blade scale duration-wise like in IWDEE~
+@101 = ~Make Flame Blade be more effective vs. undead, and last for as long as it does in IWDEE~
 @110 = "Make Bless and Curse last longer and increase the casting speed from 6 to 3"
-@130 = "Standardize Hold Person saving throw penalties"
-@190 = "Make Holy Power grant a THAC0 of 0 at max level"
+@130 = "Make Hold Person saving throw penalties standardized at -1"
+@190 = "Make Holy Power grant a THAC0 of 0 at max level and APR at the appropriate levels"
 @230 = "Make Cloak of Fear work as a temporary aura of fear, like in IWDEE"
-@240 = "Make Goodberries generate six berries, each healing 2d4 instead of 1 point of damage and granting very slow regeneration for 8 hours"
-@250 = "Make Earthquake party friendly"
+@240 = "Make Goodberries create six berries that heal 2d4 and grant very slow regeneration for 8 hours"
+@250 = "Make Earthquake more effective and disable annoyances"
 @260 = "Make Negative Plane Protection's duration increase somewhat as you level up"
 @270 = "Make Entangle's saving throws improve slightly at higher levels so it remains relevant for druids"
 @280 = "Make Poison (cleric spell) do half damage on a failed save (without poisoning them)"
-@290 = "Make Holy Power grant extra APR like a Fighter at the appropriate levels"
 @300 = "Make Iron Skins cast as fast a Stoneskin"
 @310 = "Make Fire Seeds create more seeds that do slightly more damage, with an enchantment of 2"
-@320 = "Make Nature's Beauty a bit more likely to kill humanoid enemies and make blinded enemies immune to it"
+@320 = "Make Nature's Beauty more dangerous and targets that are under True Sight of blinded immune to it"
 @330 = "Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)"
 @340 = "Make Symbol of Death work with Save bonus if above the 60 HP threshold"
-@350 = "Make Earthquake not shake the screen"
-@351 = "Make Earthquake's more effective as a spell"
 @420 = ~Make Armor of Faith also add a +2 AC bonus to make it useful at low levels~
-@450 = ~Make single-target healing spells other than Heal worth using~
-@460 = ~Make Mass Cure faster to cast to improve it as a combat spell and heal a bit more~
-@461 = ~Make Bolt of Glory slightly better~
+@450 = ~Make healing spells other than Heal more worth using~
+@461 = ~Make Bolt of Glory slightly more effective and reorganize the damage distribution per type of enemy~
 @462 = ~Make Magical Stone bypass Magic Resistance and deal both magic and missile damage~
 @463 = ~Make Dolorous Decay more powerful~
 @464 = ~Make Wondrous Recall also recall wizard spells, and a higher number of them~
-@465 = ~Make Nature's Beauty blocked by True Sight~
 @466 = ~Make Shield of Archons absorb more spell levels (equivalent to cleric level)~
 @467 = ~Make Sunray and False Dawn less OP and/or more balanced~
-@468 = ~Rebalance Call Lightning's damage and scaling~
+@468 = ~Make Call Lightning's damage and scaling more balanced~
 @501 = ~Make Chaotic Commands' duration extend up to level 20 instead of only 18~
 @505 = ~Make Repulse Undead more useful by causing damage and Slow when they're repulsed~
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray from Sun Soul Monks scale further and do more damage to undead"
 @2110 = "Make Sun Soulbeam do more damage to undead: 12d6 instead of just 3 more damage than baseline"
-@360 = "Make Shaman's Etheral Retribution do more damage per round: 6d6 per round instead of 3d8"
-@2111 = ~Make Shaman's Writhing Fog slightly more powerful~
-@2112 = ~Make Shaman's Spirit Fire slightly more powerful~
-@2113 = ~Make Shaman's Spiritual Clarity induce more clarity (removes berserk and intoxication too)~
-@2114 = ~Make Shaman's Favored of the Spirits lasts for 24 hours (2 in-game hours), not 1 (5 in-game minutes)~
+@360 = "Make Shaman's unique spells more powerful"
 @2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty and rally the allies"
 @2130 = "Make Set Spike Trap do piercing damage instead of magic damage"
 @2140 = "Make Exploding Trap do slightly more damage: 15d6 as opposed to 10d6"
 @2141 = ~Make Assassination more generally useful, especially for single-classed Thieves~
 @2150 = "Make a selection HLAS unable to be breached"
-@2160 = ~Make Quivering Palm slightly more powerful at high levels~
-@2170 = ~Make the THAC0 progression of Thieves better and more streamlined, so they improve up to 6, like clerics~
-@2171 = ~Fix Swashbuckler incorrect THAC0 when Thief THAC0 improvement is installed (only use if no Swashbuckler overhaul is installed!)~
-@2180 = ~Make the THAC0 progression of Bards better and more streamlined, so they improve up to 6, like clerics~
-@2190 = ~Make Poison Weapon improve a couple of times more every 4 levels (level 17, and 21)~
-@2200 = ~Allow Blackguards to perform backstabs as if they had a 2x backstab multiplier~
+@2160 = ~Make Quivering Palm's saving throw improve twice at later levels~
+@2170 = ~Make the THAC0 progression of Thieves better and more streamlined~
+@2171 = ~Fix Swashbuckler THAC0 when Thief THAC0 improvement is installed (use ONLY if no Swashbuckler overhaul is installed!)~
+@2180 = ~Make the THAC0 progression of Bards better and more streamlined~
+@2190 = ~Make Poison Weapon improve twice more every 4 levels (level 17, and 21)~
+@2200 = ~Make Blackguards able to backstab as if they had a 2x multiplier~
 @2210 = ~Make the proficiency point benefits streamlined~
 @2220 = ~Make Avoid Death HLA slightly more effective~
 @2230 = ~Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value~
-@2240 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and reenable the unconscious status if successful~ // TODO
-@2250 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
+//@2240 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and reenable the unconscious status if successful~ // TODO
+//@2250 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
 
 // CRE TWEAKS
 @3000 = ~Make Planetars grant immunity to Level 1 to 3 spells in an aura, as per the Minor Globe of Invulnerability spell~
@@ -350,9 +318,13 @@
 @3030 = ~Make Devas hasted, same as Planetars~
 @3040 = ~Make the planetar more balanced and allow it to grant allies passive partial spell invulnerability~
 @3050 = ~Make the Balor's vorpal attack not guaranteed to succeed but be affected by a saving throw too~
-@3060 = ~Make that dumbass Mencar Pebblecrusher a hobo without clothes on that can get randomly confused during battle or stumble when he walks~
-@3070 = ~Make lions and other cat creatures not slow as goddamned molasses~
-@3080 = ~Overhaul backstab immunities across creatures~
+@3060 = ~Make Mencar Pebblecrusher a naked crazy guy that can get randomly confused during battle or stumble when he walks~
+@3070 = ~Make lions and other cat creatures not slow as molasses~
+
+
+// END-OF-INSTALL ORDER TWEAKS
+@1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense. WARNING: Install after other tweaks and mods that change the same spells, to be safer~
+@1532 = ~Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage. WARNING: Install this component DEAD LAST after other components that modify these items, including components from other mods~
 
 
 // NEW DESCRIPTIONS
@@ -740,7 +712,9 @@ STATISTICS:
 
 Equipped abilities:
 – Acid Resistance: +40%
-– Elves and denizens native to the Underdark take an extra +5 piercing damage per hit
+
+Combat abilities:
+– Elves, spiders, and denizens native to the Underdark take an extra +5 piercing damage per hit
 
 THAC0: +4
 Damage: 1d4+4, +1d4 acid damage
@@ -1757,12 +1731,12 @@ Requires:
 Weight: 1~
 
 // enchantment tweak
-@6240 = ~Keldorn distinguished himself early in his career as a paladin and received this blade as a boon from Torm. It is exceptionally accurate, but also protects him in battle with a special Fireshield, and any that strike him while he wields it suffer Torm's wrath in the form of magical damage. None but Keldorn may use this sword.
+@6240 = ~Keldorn distinguished himself early in his career as a paladin and received this blade as a boon from Torm. It is exceptionally accurate, but also protects him in battle with a special magical shield, and any that strike him while he wields it suffer Torm's wrath in the form of magical damage. None but Keldorn may use this sword.
 
 STATISTICS:
 
 Combat abilities:
-– It is considered a +3 weapon for the purposes of what it can hit
+– Considered a +3 weapon for the purposes of what it can hit
 
 Equipped abilities:
 – 5 points of magic damage to any who damage the wielder
@@ -1791,6 +1765,19 @@ Type: Two-handed
 
 Weight: 8~
 
+
+@6242 = ~Full plate armor is the best armor a warrior can buy, both in appearance and protection. This armor increases the wearer's Armor Class by one above that of normal full plate. While equipped, the suit provides the wearer with a +1 bonus to all Saving Throws and grants the wearer immunity to movement-limiting effects such as Web and Grease. This suit was designed for Keldorn, and only he may wear it.
+
+STATISTICS:
+
+Equipped abilities:
+– Saving Throws: +1
+– Immune to movement-limiting effects
+
+Armor Class: 0 (-4 vs. slashing, -3 vs. piercing and missile)
+
+Weight: 70~
+
 @6250 = ~This is Anomen's family shield, given to him by his father. In addition to magical protection, the shield radiates an aura that grants the wielder fire and cold resistance. To protect against ranged attacks, Anomen can use the shield to erect a field of energy. This protection from normal missiles can be used three times per day.
 
 STATISTICS:
@@ -1808,17 +1795,19 @@ Charge abilities:
 Weight: 7~
 
 @6260 = ~Sword of Arvoreen +3~
-@6261 = ~Another gift to Mazzy from Arvoreen, this short sword may only be used by halflings. The enchantments that exist within this sword give it the ability to slow any opponent struck by it.
+@6261 = ~Another gift to Mazzy from Arvoreen, this short sword may only be used by her. The enchantments that exist within this sword give it the ability to slow any opponent struck by it.
 
 STATISTICS:
 
 Equipped abilities:
 – Immunity to slow and stun
+– Attacks per round: +1/2
 
 Combat abilities:
-– Hit target's movement rate is slowed by 2 for 45 seconds (Save vs. Wand negates)
+– Acts as a +4 weapon for the purposes of what it can hit
+– Hit target's movement rate is slowed by 2 for 45 seconds and has a 50% chance of dispelling Haste (Save vs. Wand negates both effects)
 
-THAC0: +3
+THAC0: +4
 Damage: 1d6+3 (piercing)
 Speed Factor: 0
 Proficiency Type: Short Sword
@@ -1829,7 +1818,7 @@ Requires:
 Weight: 3~
 
 @6262 = ~Bow of Arvoreen +3~
-@6263 = ~This enchanted bow has been in Mazzy Fentan's possession for several years, given to her by her god, Arvoreen. It is usable only by halflings, granting a +3 bonus to hit rolls and a +1 to damage.
+@6263 = ~This enchanted bow has been in Mazzy Fentan's possession for several years, given to her by her god, Arvoreen. It is usable only by her, granting a +3 bonus to hit rolls and a +1 to damage.
 
 Equipped abilities:
 – Attacks per round: +1/2
@@ -3541,10 +3530,10 @@ Undead and fiends must save vs. Death at -2 or be utterly destroyed. Stronger cr
   – Spectres, ghosts, and other spectral creatures: 35%
   – Mummies and revenants: 20%
   – Wraiths: 5%
-  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time.
+  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time
 
 THAC0: +3
-Damage: 1d6+3, plus 1d6+6 vs. undead
+Damage: 1d6+3, double vs. undead
 Damage type (melee): Slashing
 Damage type (thrown): Missile
 Speed Factor: 1
@@ -4505,7 +4494,7 @@ Weight: 3~
 STATISTICS:
 
 Combat abilities:
-– Cursed Wound: critical hits prevent healing for 2 rounds
+– Cursed Wound: critical hits prevent most sources of healing for 2 rounds
 – +5% critical hit chances with this weapon
 
 THAC0: +2
@@ -4552,6 +4541,9 @@ Weight: 3~
 @7600 = ~The Arrow of Biting was designed as a deadly compliment to the archer. Poison smeared on the barbed arrowhead infiltrates the bloodstream of its victims, causing agony and often death.
 
 STATISTICS:
+
+Equipped abilities:
+– Chance to score a critical hit: +5%
 
 Combat abilities:
 – Target must save vs. Death or suffer 30 points of poison of damage over 5 rounds
@@ -4617,8 +4609,11 @@ Weight: 0~
 
 STATISTICS:
 
+Equipped abilities:
+– Chance to score a critical hit: +10%
+
 THAC0: +4
-Damage: 1d6, +7 piercing damage (Save vs. Death for half)
+Damage: 1d6, +6 piercing damage (Save vs. Death for half)
 Damage type: Missile
 Launcher: Bow
 
@@ -5480,6 +5475,375 @@ Saving Throw: None
 
 This powerful spell creates waves of anti-negative energy that sweep outward from the caster. These waves disrupt any undead that attempt to attack the caster, pushing them away from the caster for several seconds, causing Slow for half a round and 8 points of damage (half magical, half radiant which cannot be resisted). There is one wave per round for the duration of the spell. All undead are affected with no Saving Throw.~
 
+@8200 = ~This bolt was designed as a deadly complement to the crossbow. Poison smeared on its barbed tip infiltrates the bloodstream of its victims, causing agony and often death.
+
+STATISTICS:
+
+Equipped abilities:
+– Chance to score a critical hit: +5%
+
+Combat abilities:
+– Target must save vs. Death or take 30 points of poison damage in 15 seconds
+
+Damage: 1d8 (missile)
+Launcher: Crossbow
+
+Weight: 0~
+
+@8210 = ~Mist of Eldath
+(Invocation)
+
+Level: 7
+Sphere: Elemental
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 6
+Area of Effect: 7-ft. radius
+Saving Throw: None
+
+This spell blankets the area of effect with a silver-blue mist—any creature within the mist will be cured of disease and poison and healed 40 Hit Points. During 2 rounds after the casting, affected creatures remain immune to poison and disease and regenerate 1 HP per second for 2 rounds.~
+
+// patching other mods
+// item upgrade
+@50000 = ~Ring of Elemental Mastery
+This ring combines the might of elements of Earth, Air and Fire and grants the user dominion over the creatures that hail from those planes. This ring was created for <CHARNAME> and its fame will no doubt grow with <PRO_HIMHER>.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Saving Throws: +1
+– Fire Resistance: +50%
+– Electrical Resistance: +50%
+– Acid Resistance: +50%
+
+Charge abilities:
+– Summon 24-HD Greater Air, Earth, and Fire Elemental once per day
+  Range: 20 ft.
+  Duration: 1 hour
+
+– Charm Air, Earth, or Fire Elemental three times per day (no save)
+  Range: Touch
+  Duration: 60 seconds
+  Area of Effect: 1 elemental
+
+– Improved Invisibility once per day
+  Range: Touch
+  Duration: 1 turn
+  Area of Effect: 1 creature
+
+Weight: 0~
+
+@50010 = ~Boots of the Hornet
+The Boots of the Hornet are unsurpassed at increased the speed of their wearer. Combining all of the powers of the Boots of Avoidance and the Boots of Speed, these boots make it very difficult to strike the bearer indeed.
+
+STATISTICS:
+
+Equipped abilities:
+– Doubles movement rate
+– Armor Class: +1 Armor Class, +4 extra vs. missile attacks
+– Saves vs. Breath: +1
+
+Weight: 4~
+
+@50020 = ~Club +5: Pitchwife
+Forged for <CHARNAME> by amalgamating the oaken, acidic club Blackblood and the splintered club Gnasher, Pitchwife pulses with destructive power. Covered in a tar-like pitchy substance that burns flesh on contact, Pitchwife also drives aggravating spines and splinters into the wound, causing immense pain.
+
+STATISTICS:
+
+Equipped abilities:
+– Acid Resistance: +25%
+– Every hit inflicts pain, making living beings feel weakened for 1 round, suffering a penalty of 2 to THAC0, AC, and damage. This effect does not stack
+
+THAC0: +5
+Damage: 1d6+5, +3 acid damage, slivers add 3 points piercing damage each round for 4 rounds
+Damage type: Crushing
+Speed Factor: 1
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@50030 = ~Corthala Family Armor
+This armor, long in the Corthala bloodline, protects the user against all forms of attacks. The armor has been combined with the Shadow Dragon Armor and is now even better at protecting Valygar. The armor is enchanted so that it grants a +5 bonus to Valygar's Armor Class. It also adds a bonus to resisting acid, fire, and magical damage. The armor also makes Valygar immune to charm while he wears it. Finally, the armor grants Valygar non-detection while equipped. As it is specially fitted for Valygar, only he may wear it.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm
+– Non-Detection
+– Fire Resistance: +50%
+– Acid Resistance: +50%
+– Magic Damage Resistance: +50%
+
+Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
+
+Weight: 9~
+
+@50031 = ~Corthala Family Armor
+This armor, long in the Corthala bloodline, protects the user against all forms of attacks. The armor has been combined with the Shadow Dragon Armor and is now even better at protecting Valygar. The armor is enchanted so that it grants a +5 bonus to Valygar's Armor Class. It also adds a bonus to Negative Energy Plane energies, Illusion and Necromancy effects, fire, and magical damage. The armor also makes Valygar immune to charm while he wears it. Finally, the armor grants Valygar non-detection while equipped. As it is specially fitted for Valygar, only he may wear it.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm
+– Negative Plane protection
+– Non-Detection
+– Fire Resistance: +50%
+– Magic Damage Resistance: +50%
+– Save vs. Illusion and Necromancy effects: +4
+
+Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
+
+Weight: 9~
+
+@50040 = ~Enhanced Robe of the Good Archmagi
+This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's Magic Resistance and Saving Throws. Due to the nature of its enchantment, it can only be worn by wizards of good alignment. This particular robe has been further enchanted by <CHARNAME>.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: set to 3, plus 1
+– Saving Throws: +2 bonus
+– Magic Resistance: +10%
+– Magic damage resistance: +25%
+– Casting speed improved by 1
+– Can memorize one extra 1st-level spell, one extra 2nd-level spell, one extra 3rd-level spell, and one extra 4th-level spell
+
+Weight: 6~
+
+@50041 = ~Enhanced Robe of the Neutral Archmagi
+This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's Magic Resistance and Saving Throws. Due to the nature of its enchantment, it can only be worn by wizards of neutral alignment. This particular robe has been further enchanted by <CHARNAME>.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: set to 3, plus 1
+– Saving Throws: +2 bonus
+– Magic Resistance: +10%
+– Magic damage resistance: +25%
+– Casting speed improved by 1
+– Can memorize one extra 1st-level spell, one extra 2nd-level spell, one extra 3rd-level spell, and one extra 4th-level spell
+
+Weight: 6~
+
+@50042 = ~Enhanced Robe of the Evil Archmagi
+This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's Magic Resistance and Saving Throws. Due to the nature of its enchantment, it can only be worn by wizards of evil alignment. This particular robe has been further enchanted by <CHARNAME>.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: set to 3, plus 1
+– Saving Throws: +2 bonus
+– Magic Resistance: +10%
+– Magic damage resistance: +25%
+– Casting speed improved by 1
+– Can memorize one extra 1st-level spell, one extra 2nd-level spell, one extra 3rd-level spell, and one extra 4th-level spell
+
+Weight: 6~
+
+@50050 = ~Improved Firecam Full-Plate Armor
+This suit of armor was originally designed for Keldorn and few others may wear it. The suit was later enchanted again at <CHARNAME>'s request and it now provides Keldorn with even more protection. While equipped the suit provides the wearer with a +2 bonus to all saving throws and grants the wearer with immunity to movement-limiting effects such as Web and Grease, and immunity to fear. Despite being incredibly strong, the armor is almost weightless.
+
+STATISTICS:
+
+Equipped abilities:
+– Saving Throws: +2
+– Immunity to movement-limiting effects
+– Immunity to Fear
+
+Armor Class: -2 (-6 vs. slashing, -5 vs. piercing and missile)
+
+Weight: 10~
+
+@50060 = ~The already potent undead-bane Azuredge was further enhanced by <CHARNAME> when <PRO_HESHE> had it coated with a veneer of pure illithium. The axe first forged by Gulen Rockfire still returns to its wielder's hand when thrown and still smites undead with a holy fervor, but now it also protects the wielder from the level-draining assaults of the more powerful graveborn. On a more decorative note, the illithium seems to have shifted the color of the weapon slightly away from its namesake.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to level drain
+– Acts as a +5 weapon against undead
+
+Combat abilities:
+– Returns to the wielder's hand when thrown
+– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
+  – Fiends: 95%
+  – Liches and demiliches: 80%
+  – Vampires and vampyres: 50%
+  – Spectres, ghosts, and other spectral creatures: 35%
+  – Mummies and revenants: 20%
+  – Wraiths: 5%
+  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time
+
+THAC0: +4
+Damage: 1d6+4, double vs. undead
+Damage type (melee): Slashing
+Damage type (thrown): Missile
+Speed Factor: 0
+Proficiency Type: Axe
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~
+
+@50070 = ~Sword of Arvoreen +5
+Another gift to Mazzy from Arvoreen, this short sword may only be used by her. The enchantments that exist within this sword give it the ability to slow any opponent struck by it.
+
+With <CHARNAME>'s help and the blessing of Arvoreen, the sword was recently re-enchanted to become even more powerful.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to movement-limiting effects and stun
+– Attacks per round: +1/2
+
+Combat abilities:
+– Hit target's movement rate is slowed by 4 for 45 seconds and Haste is dispelled (Save vs. Wand at -2 negates)
+
+THAC0: +5
+Damage: 1d6+5, +4 piercing damage vs. evil
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@50080 = ~This weapon was commissioned by <CHARNAME>, and combines the power of three powerful weapons, Rashad's Talon, Water's Edge, and Adjatha the Drinker, making it a formidable weapon. Each hit sucks some of the life out of the target and confers it to the wielder. In addition, the water-like edge of the blade is forever envenomed. Much like one of its predecessors, Water's Talon provides immunity to charm. In addition, however, its mastery over water protects the user from the harmful effects of Abi-Dalzim's Horrid Wilting. Most uniquely, the liquid nature of the blade allows it to extend and splash during combat, improving the strike range granted by the weapon to a range beyond that of most two-handed swords.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm and domination
+– Immunity to Abi-Dalzim's Horrid Wilting
+
+Combat abilities:
+– Double striking range
+– +5% critical hit chances with this weapon
+– Cursed Wound: critical hits prevent most sources of healing for 2 rounds
+– Each hit heals the wielder between 3 to 7 Hit Points. It's more likely to heal less than more.
+
+THAC0: +4
+Damage: 1d8+4, plus 1d5+1 cold damage
+Damage type: Slashing
+Speed Factor: 1
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 8 Strength
+
+Weight: 3~
+
+@50090 = ~Keldorn distinguished himself early in his career as a paladin and received this blade as a boon from Torm. It is exceptionally accurate, but also protects him in battle with a special magical shield, and any that strike him while he wields it suffer Torm's wrath in the form of magical damage. None but Keldorn may use this sword.
+
+With <CHARNAME>'s help and the blessing of Torm, the sword was recently re-enchanted to become even more powerful.
+
+STATISTICS:
+
+Equipped abilities:
+– 5 points of magic damage to any who damage the wielder
+
+Combat abilities:
+– Dispel Magic on each hit if a Save vs. Spell is failed
+– 30% chance a hit target is silenced for two rounds
+
+THAC0: +5
+Damage: 1d10+5 (slashing)
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+
+Weight: 8~
+
+@50100 = ~Lawrence Lilarcor was well known, not for being brave, but for being an idiot. As the tale goes, the boastful Lilarcor left his village at the urging of his friends so that the "great hero" could do battle with a devious treant. He walked for days in the dead of winter until, feverish, he found his target and began an epic wrestling match. Unfortunately (or perhaps luckily), the "treant" was nothing more than a craggy old normal oak. His friends had been jesting, not actually expecting that Lilarcor would go fight the fictitiously dangerous tree. That might have been the end of it, but Lilarcor, not really knowing what a treant was in the first place, didn't realize the truth. He eventually uprooted the oak and, marching proudly home, he declared himself a hero. Thus was born a laughing stock of epic proportions, and over time the name of Lilarcor became the sacrificial fool in many tales of "less than brilliance."
+
+Lilarcor is not quite as lovable (or annoying, depending on your viewpoint) as it was before <CHARNAME> had it upgraded. When the Mind Flayer Control Circlet was embedded in its hilt, Lilarcor seemed to lose the ability to consciously converse with those nearby and was reduced to making occasional quips. However, Lilarcor's peculiar intelligence (or lack thereof) now serves as a boon (or a blight) to the wielder: the one holding Lilarcor cannot have its intelligence adjusted for any reason. This protects against the intelligence drain associated with the illithids' brain-devouring attack, and the beneficial effects of a potion of Genius.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm and confusion
+– Immunity to intelligence changes
+
+Combat abilities:
+– 30% chance per hit it causes confusion on the target 1 round, unless a Save vs. Spell at -2 succeeds
+
+THAC0: +5
+Damage: 1d10+5 (slashing)
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+@50110 = ~<CHARNAME> arranged to have this dagger constructed out of the soporiferous Pixie Prick and the deadly Boneblade. The result is a weapon worthy of any assassin.
+
+STATISTICS:
+
+Equipped abilities:
+– Acid Resistance: +50%
+
+Combat abilities:
+– +5% critical hit chances
+– Elves, spiders, and denizens native to the Underdark take an extra +6 piercing damage per hit
+– Hit target must save vs. Poison at -2 or fall asleep. When this triggers, the wielder gains a +5% bonus to critical hit chances (doesn't stack) and +1 to damage and THAC0 (stacks) for 2 rounds
+– Critical hits with this weapon increase the backstab multiplier by 1 of the next backstab for the next round (doesn't stack)
+
+THAC0: +5
+Damage: 1d4+5, +1d6 acid damage
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 3~
+
+@50111 = ~Quietus +5~
+
+@50120 = ~Gloves of the Master Thief: Twelve Fingers
+<CHARNAME> had these gloves formed from a number of more mundane items that benefit the rogue. When these gloves are worn by a thief, each glove appears to have an extra magical finger that aids the fortune-hunter in performing their unique skills. In addition, the gloves are stylish. They look almost... gnomish in design.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: 3
+– Saving Throws: +1
+– Pick Pockets: +20%
+– Open Locks and Find Traps: +25%
+– Immunity to backstabs and sneak attacks
+
+Weight: 2~
+
+@50130 = ~Soul Reaver +6: Unholy Avenger
+The powerful Soul Reaver blade has been reforged under the dark guidance of <CHARNAME>. The holy essence of Carsomyr was perverted to help create this abhorrent monstrosity. Soul Reaver is a tool of incredible power and incredible evil. Those who pick it up rarely put it down while still living.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +50%
+
+Combat abilities:
+– Dispel Magic on each hit, unless a save vs. Spell at -2 is made
+– Each hit makes the target receive a cumulative 2 point penalty to their THAC0 for 2 turns
+
+THAC0: +6
+Damage: 1d12+6, +1d3 magic damage
+Speed Factor: 4
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
 
 @99999 = ~Damage~ // for text patching
 @99998 = ~Speed Factor~ // for text patching

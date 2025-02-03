@@ -1,6 +1,0 @@
-ACTION_IF !(GAME_IS "iwdee") BEGIN
-    COPY_EXISTING ~BELT09.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8070) END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=29,p1=50~ END
-    BUT_ONLY
-END

@@ -1,5 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/items/cutthroat~ ~override~
+    COPY ~%MOD_FOLDER%/items/cutthroat~ ~override~
     COPY_EXISTING "ZSTWCUTA.SPL" ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1=54335 END // "Bleeding"
     BUT_ONLY
@@ -8,5 +8,4 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7660) END
         LPF ALTER_HEADER INT_VAR speed = 0 END
         LPF ADD_EQUIPPED_EFF INT_VAR p2=1 spec=1 STR_VAR effects=~op=301,p1=2;op=341,res=ZSTWCUTA~ END
-    BUT_ONLY
 END

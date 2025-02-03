@@ -9,7 +9,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             PATCH_IF ("%SOURCE_RES%" STRING_COMPARE_CASE "NPSW04" != 0) BEGIN
                 LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
             END ELSE BEGIN
-                PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1643") AND !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1379")  BEGIN
+                PATCH_IF !(MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1643") AND !(MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1379")  BEGIN
                     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
                 END
             END

@@ -1,9 +1,8 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/items/borok_fist~ ~override~
+    COPY ~%MOD_FOLDER%/items/borok_fist~ ~override~
     COPY_EXISTING ~HAMM05.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7730) END
         LPF ALTER_EFFECT INT_VAR match_opcode=12 dicesize=2 dicenumber=1 parameter1=0 special=1024 END
         SET gianthumanoid = IDS_OF_SYMBOL(general GIANTHUMANOID)
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,stype=1,sbonus=2,res=ZSTWBRKA~ END
-    BUT_ONLY
 END

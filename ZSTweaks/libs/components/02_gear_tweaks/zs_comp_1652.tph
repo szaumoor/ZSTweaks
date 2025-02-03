@@ -1,6 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/items/grandmaster_armor~ ~override~
-
+    COPY ~%MOD_FOLDER%/items/grandmaster_armor~ ~override~
     COPY_EXISTING ~ZSTWGM06.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@8031) END
     BUT_ONLY
@@ -39,9 +38,6 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ADD_ITEM_HEADER INT_VAR type=3 required_id=1 location=3 range=1000 target=1 target_count=1 charges=1 depletion=3 flags=2**11 projectile=54 STR_VAR icon = ~ZSTWGMBM~ END
         LPF ADD_ON_HIT_EFF INT_VAR t=3 dur=24 STR_VAR effects=~op=88,p1=-10;op=86,p1=-10;op=0,p2=4,p1=-4;op=0,p2=8,p1=-4;op=292;op=139,p1=%apply_expose%,dur=0;op=139,p1=%lose_expose%,dur=24,tmg=3;op=50,p1=%color%,p2=%parameter2%;op=174,dur=0,res=EFF_M05~ END
 
-    BUT_ONLY
-
     COPY_EXISTING ~SPPR403.SPL~ ~override~
         LPF DELETE_EFFECT INT_VAR match_opcode=126 END
-    BUT_ONLY
 END

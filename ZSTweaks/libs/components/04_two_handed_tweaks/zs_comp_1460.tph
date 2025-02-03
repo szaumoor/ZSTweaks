@@ -2,7 +2,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING "SPER10.ITM" ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
         LPF ADD_ON_HIT_EFF INT_VAR rd=2 dur=6 sbonus="-2" stype=4 STR_VAR effects = ~op=25,p1=2,p2=2;op=142,p2=6~ END
-        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" BEGIN
+        PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1150" BEGIN
             SPRINT desc @7130
             SPRINT str @99999
             INNER_PATCH_SAVE desc ~%desc%~ BEGIN

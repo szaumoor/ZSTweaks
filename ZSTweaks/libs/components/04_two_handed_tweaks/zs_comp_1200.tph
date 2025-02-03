@@ -1,7 +1,7 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING ~SPER12.ITM~ ~override~
         LPF remove_haste_immunity END
-        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" BEGIN
+        PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1150" BEGIN
             SPRINT new_description @7770
             SPRINT str @99999
             INNER_PATCH_SAVE new_description ~%new_description%~ BEGIN

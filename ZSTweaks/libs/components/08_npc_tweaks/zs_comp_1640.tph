@@ -2,7 +2,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING_REGEXP "ohdsw2h[a-d].ITM" ~override~
         LPF ALTER_ITEM INT_VAR ench=5 END
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "ohdsw2ha" = 0 BEGIN
-            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1430" BEGIN
                 SPRINT new_description @6660
                 SPRINT str @99999
                 LPF WPN_DMG RET dmg = result END
@@ -15,7 +15,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             END
         END
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "ohdsw2hb" = 0 BEGIN
-            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1430" BEGIN
                 SPRINT new_description @6670
                 SPRINT str @99999
                 LPF WPN_DMG RET dmg = result END
@@ -28,7 +28,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             END
         END
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "ohdsw2hc" = 0 BEGIN
-            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1430" BEGIN
                 SPRINT new_description @6680
                 SPRINT str @99999
                 LPF WPN_DMG RET dmg = result END
@@ -41,7 +41,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             END
         END
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "ohdsw2hd" = 0 BEGIN
-            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1430" BEGIN
                 SPRINT new_description @6690
                 SPRINT str @99999
                 LPF WPN_DMG RET dmg = result END

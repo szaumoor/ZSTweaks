@@ -3,12 +3,12 @@ ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
     COPY_EXISTING ~BALOR.ITM~ ~override~
         LPF DELETE_EFFECT INT_VAR check_globals = 0 END
         SPRINT effect_str ~op=326,pro1=14,res=ZSTWVRPA~
-        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~3050~ BEGIN
+        PATCH_IF MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~3050~ BEGIN
             effect_str = "%effect_str%" + "stype=4,sbonus=-2"
         END
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~%effect_str%~ END
 
-    ACTION_IF NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~3060~ BEGIN
+    ACTION_IF NOT MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~3060~ BEGIN
         COPY_EXISTING ~PLANETAR.ITM~ ~override~
             LPF DELETE_EFFECT INT_VAR match_opcode = 13 END
             LPF DELETE_EFFECT INT_VAR match_opcode = 141 match_parameter2 = 39 END
@@ -23,7 +23,7 @@ ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=ZSTWVRPA,stype=4~ END
 
     COPY_EXISTING ~SW2H15.ITM~ ~override~
-        PATCH_IF NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1300~ AND NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1199~ BEGIN // SILVER SWORD TWEAK
+        PATCH_IF NOT MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1300~ AND NOT MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1199~ BEGIN // SILVER SWORD TWEAK
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=ZSTWVRPA,stype=4,sbonus=-2~ END
         END ELSE BEGIN
@@ -36,7 +36,7 @@ ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=9,res=ZSTWVRPA,stype=4,sbonus=-4~ END
 
     COPY_EXISTING ~HALB11.ITM~ ~override~
-        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1606~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1199~ BEGIN
+        PATCH_IF MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1606~ OR MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1199~ BEGIN
             LPF DELETE_EFFECT INT_VAR match_probability1 = 9 END
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=9,res=ZSTWVRPA,stype=4,sbonus=-4,ip=0~ END
         END ELSE BEGIN

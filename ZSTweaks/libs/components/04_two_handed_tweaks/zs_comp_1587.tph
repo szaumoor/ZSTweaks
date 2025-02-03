@@ -1,5 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/items/rod_terror~ ~override~
+    COPY ~%MOD_FOLDER%/items/rod_terror~ ~override~
     COPY_EXISTING "ZSTWTRRA.SPL" ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1=RESOLVE_STR_REF(@7641) END
     BUT_ONLY

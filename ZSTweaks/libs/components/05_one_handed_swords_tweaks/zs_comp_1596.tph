@@ -1,8 +1,7 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
-    COPY ~ZSTweaks/items/shadow_blade~ ~override~
+    COPY ~%MOD_FOLDER%/items/shadow_blade~ ~override~
     COPY_EXISTING "SW1H10.itm" ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7670) END
         SET thief = IDS_OF_SYMBOL(class THIEF)
         LPF ADD_EQUIPPED_EFF INT_VAR p1=thief p2=5 STR_VAR effects=~op=177,res=ZSTWSHB0;op=177,res=ZSTWSHB1~ END
-    BUT_ONLY
 END

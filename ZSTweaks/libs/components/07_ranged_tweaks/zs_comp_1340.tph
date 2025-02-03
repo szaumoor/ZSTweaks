@@ -1,15 +1,14 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/items/taralash~ ~override~
+    COPY ~%MOD_FOLDER%/items/taralash~ ~override~
     COPY_EXISTING ~BOW22.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6370) END
         LPF ADD_ON_HIT_EFF INT_VAR p2=4 t=4
         STR_VAR res=~ZSTWMI01~ effects = ~op=177,p1=2,p2=3;op=177,p1=101;op=177,p1=104;op=177,p1=177;op=177,p1=107;op=177,p1=109;op=177,p1=167;op=177,p1=127;op=177,p1=116;op=177,p1=129;op=177,p1=130;op=177,p1=118;op=177,p1=102~ END
-    BUT_ONLY
+
     COPY_EXISTING ~BOW23.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6371) END
         LPF ALTER_HEADER INT_VAR type = 4 damage = 1 END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 126 parameter1 = 5 END
         LPF ADD_ON_HIT_EFF INT_VAR p2=4 t=4
         STR_VAR res=~ZSTWMI02~ effects = ~op=177,p1=2,p2=3;op=177,p1=101;op=177,p1=104;op=177,p1=177;op=177,p1=107;op=177,p1=109;op=177,p1=167;op=177,p1=127;op=177,p1=116;op=177,p1=129;op=177,p1=130;op=177,p1=118;op=177,p1=102~ END
-    BUT_ONLY
 END

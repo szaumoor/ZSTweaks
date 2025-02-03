@@ -13,6 +13,28 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_PROF RET wpn_prof = result END
     PATCH_IF wpn_cat = 29 AND wpn_prof = 98 BEGIN
         LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 6 match_dicenumber = 1 dicesize = 8 silent = 1 END
+
+    // check if change happened
+
+        // GET_OFFSET_ARRAY ab_array 0x64 4 0x68 2 0 0 0x38
+        //     PHP_EACH ab_array AS int => ab_off BEGIN
+        //         GET_OFFSET_ARRAY2 fx_array ab_off ITM_V10_HEAD_EFFECTS
+        //         PHP_EACH fx_array AS int => fx_off BEGIN
+        //             SET opcode = SHORT_AT (fx_off)
+        //             PATCH_IF opcode = 146 OR opcode = 148 BEGIN
+        //                 ++found
+        //                 PATCH_IF found = 1 BEGIN
+        //                     READ_ASCII ( fx_off + 0x14 ) resource
+        //                     TO_UPPER resource
+        //                     INNER_PATCH_FILE ~%resource%.SPL~ BEGIN
+        //                         READ_LONG 0x34 spell_level
+        //                         READ_SHORT 0x1c spell_type
+        //                     END
+        //                 END
+        //             END
+        //         END
+        //     END
+
         PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "SPER01") BEGIN
             LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
             LPF ITM_REF_DESC RET description_index = result END

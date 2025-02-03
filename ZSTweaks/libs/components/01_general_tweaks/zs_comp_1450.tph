@@ -19,7 +19,12 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     PATCH_IF ench >= 0 AND ench < 7 BEGIN
         LPF PROBABILITY_BONUS INT_VAR ench = ench RET bonus = result END
 
-        PATCH_IF _1450_allow_daggers AND cat=16 AND prof=96 BEGIN
+        PATCH_IF _1450_allow_daggers AND cat=16 AND prof=96
+        // exceptions
+        AND "%SOURCE_RES%" STRING_COMPARE_CASE "a7-dg15" != 0 // Last Resort (wares of the planes)
+        AND "%SOURCE_RES%" STRING_COMPARE_CASE "a7-dg05" != 0 // Entropic Blade (wares of the planes)
+        AND "%SOURCE_RES%" STRING_COMPARE_CASE "a7-dg09" != 0 // Entropic Blade (wares of the planes)
+        BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWD%ench%~ END
             LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWZ%ench%~ END
 
@@ -42,7 +47,11 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             END
 
         END ELSE PATCH_IF _1450_allow_xbows AND cat=31 BEGIN
-            PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "BOLT07" != 0 BEGIN // BRUISER MATES SKIPPED
+            PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "BOLT07" != 0
+            AND "%SOURCE_RES%" STRING_COMPARE_CASE "a7-bo01" != 0 // boltr of acheron (wares of the planes)
+            AND "%SOURCE_RES%" STRING_COMPARE_CASE "a7-bo01" != 0 // acidic sponge bolts (wares of the planes)
+            AND "%SOURCE_RES%" STRING_COMPARE_CASE "a7-bo01" != 0 // bolts of whistling doom (wares of the planes)
+            BEGIN // BRUISER MATES SKIPPED
                 LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_arrow_bolt+bonus) STR_VAR class=~THIEF~ spell=~ZSTWB%ench%~ END
             END
 
@@ -55,6 +64,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
         END ELSE PATCH_IF _1450_allow_lswords AND cat=20 AND prof=90 BEGIN //ls
             PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdsw1h06" != 0 // voidsword (SoD)
             AND "%SOURCE_RES%" STRING_COMPARE_CASE "KILLSW01" != 0 // cheat sword
+            AND "%SOURCE_RES%" STRING_COMPARE_CASE "a7-sw01" != 0 // celestial fire (wares of the planes)
             BEGIN
                 LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ls_staff+bonus) STR_VAR class=~THIEF~ spell=~ZSTWL%ench%~ END
             END ELSE BEGIN

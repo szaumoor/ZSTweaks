@@ -1,5 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/items/blessed_bracers~ ~override~
+    COPY ~%MOD_FOLDER%/items/blessed_bracers~ ~override~
     COPY_EXISTING ~BRAC23.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7330) END
         LPF ALTER_EFFECT INT_VAR header_type=3 match_opcode=146 STR_VAR match_resource=~SPPR502~ resource=~SPPR607~ END
@@ -10,5 +10,4 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF DELETE_EFFECT INT_VAR match_opcode=18 END
         LPF ADD_EQUIPPED_EFF INT_VAR p1=207 p2=5 STR_VAR effects = ~op=177,res=ZSTWBB01;op=177,res=ZSTWBB02;op=177,res=ZSTWBB03;op=177,res=ZSTWBB04;~ END
         LPF ADD_EQUIPPED_EFF INT_VAR p1=1 STR_VAR effects=~op=278;op=73~ END
-    BUT_ONLY
 END

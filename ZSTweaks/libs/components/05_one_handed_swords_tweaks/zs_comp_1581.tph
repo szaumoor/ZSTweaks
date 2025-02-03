@@ -1,7 +1,0 @@
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY_EXISTING "ohrsw1h1.itm" ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6540) END
-        LPF ADD_ITEM_HEADER INT_VAR type=3 location=3 target=5 charges=1 depletion=3 flags=2**11 STR_VAR icon = ~SPWI208C~ END
-        LPF ADD_ON_HIT_EFF INT_VAR t=3 p1=10 p2=2 tmg=9 tgt=1 STR_VAR effects = ~op=146,res=SPWI203;op=146,res=SPWI202~ END
-    BUT_ONLY
-END

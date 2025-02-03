@@ -1,4 +1,4 @@
-ACTION_IF !(GAME_IS "iwdee") BEGIN // iwdee not currently deliberately supported
+ACTION_IF !(GAME_IS "iwdee") BEGIN // iwdee deliberately unsupported for now
     //icedust potion
     ACTION_IF FILE_EXISTS_IN_GAME ~WAND16.ITM~ BEGIN
         COPY_EXISTING ~WAND16.ITM~ ~override~
@@ -11,7 +11,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN // iwdee not currently deliberately supported
             LPF DELETE_EFFECT INT_VAR match_opcode = 61 END
             LPF RGB INT_VAR red = 50 green = 181 blue = 199 RET color = result END
             SET fade_speed = ( 25 << 16 )
-            LPF ADD_SPL_TGTEFF INT_VAR pwr=4 STR_VAR effects=~op=142,p2=16,t=2,dur=18;op=61,p1=%color%,p2=%fade_speed%,tmg=1,rd=1~ END
+            LPF ADD_SPL_EFF_TGT INT_VAR pwr=4 STR_VAR effects=~op=142,p2=16,t=2,dur=18;op=61,p1=%color%,p2=%fade_speed%,tmg=1,rd=1~ END
         BUT_ONLY
     END
 

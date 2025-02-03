@@ -3,7 +3,7 @@ ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 12 dicesize = 2 dicenumber = 6 END
         LPF ALTER_EFFECT INT_VAR match_probability1 = 10 probability1 = 9 END
 
-        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+        PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1430" BEGIN
             SPRINT new_description @8150
             SPRINT str @99999
             SPRINT str_sf @99998
@@ -23,7 +23,7 @@ ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
         LPF ALTER_EFFECT INT_VAR match_probability1 = 10 probability1 = 14 END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 12 dicesize = 2 dicenumber = 6 END
 
-        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1430~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
+        PATCH_IF MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1430~ OR MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~103~ BEGIN
             LPF ALTER_HEADER INT_VAR match_type = 1 to_hit = 6 damage = 7 speed = 4 END
         END ELSE BEGIN
             LPF ALTER_HEADER INT_VAR match_type = 1 to_hit = 6 damage = 6 speed = 4 END
@@ -33,7 +33,7 @@ ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
         LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
         LPF ADD_ON_HIT_EFF INT_VAR ip = 0 stype=4 sbonus="-5" STR_VAR effects = ~op=332,p1=-10;op=321,res=%SOURCE_RES%~ END
 
-        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+        PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1430" BEGIN
             SPRINT new_description @8152
             SPRINT str @99999
             SPRINT str_sf @99998

@@ -1,6 +1,4 @@
-COPY ~ZSTweaks/items/dagger_boost~ ~override~
-// ADD_PROJECTILE ~ZSTweaks/pro/ZSTW_IND.PRO~
-
+COPY ~%MOD_FOLDER%/items/dagger_boost~ ~override~
 COPY_EXISTING_REGEXP "ZSTWDP08.spl" ~override~ // spells to insert projectiles to (critical dagger effect)
     LPF ALTER_HEADER INT_VAR match_type = 1 projectile =1 END
 BUT_ONLY
@@ -20,7 +18,6 @@ COPY_EXISTING "DAGG01.ITM" ~override~
     END
     SAY_EVALUATED 0x50 ~%desc%~
     LPF ITM_REF_UDESC RET changed_description_index = result END
-BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_CAT RET wpn_cat = result END
@@ -31,7 +28,10 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
         PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "DAGG01" != 0 AND id_udesc = basic_dagg_udesc BEGIN
             LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
         END
-        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "dagg04" != 0 BEGIN // not grave binder (fake dagger) exceptions
+        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "dagg04" != 0 // not grave binder (fake dagger) exceptions
+        AND "%SOURCE_RES%" STRING_COMPARE_CASE "a7-dg05" != 0 // Entropic Blade (wares of the planes)
+        AND "%SOURCE_RES%" STRING_COMPARE_CASE "a7-dg06" != 0 // Enlightenment (wares of the planes)
+        BEGIN
             LPF WPN_THAC0 RET thac0 = result END
             LPF WPN_SPEED RET speed = result END
             SET actual_speed = (speed - 2)
