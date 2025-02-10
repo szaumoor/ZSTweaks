@@ -1,7 +1,7 @@
-BACKUP "weidu_external/backup/ZSTweaks"
+BACKUP "weidu_external/backup/%MOD_FOLDER%"
 SUPPORT "RoyalProtector at Gibberlings's forum https://www.gibberlings3.net/profile/12720-royalprotector/"
 VERSION "1.4.7"
-README ~ZSTweaks/README.md~
+README ~%MOD_FOLDER%/README.md~
 AUTO_EVAL_STRINGS
 MODDER
 	setup_tra none
@@ -12,6 +12,7 @@ MODDER
 	missing_eval warn
 	overwriting_file none
 	fun_args warn
+//*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 ALWAYS
     INCLUDE ~%MOD_FOLDER%/libs/zs_tw_functions.tph~
@@ -2047,6 +2048,14 @@ FORBID_COMPONENT "%MOD_FOLDER%.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/12_class_tweaks/zs_comp_2120.tph~
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @2130 DESIGNATED 2130 GROUP @21 // THIEF HLA TWEAKS
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "359" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~%MOD_FOLDER%/libs/components/12_class_tweaks/zs_comp_2130.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2150 DESIGNATED 2150 GROUP @21 // NON BREACHABLE HLA TWEAK
