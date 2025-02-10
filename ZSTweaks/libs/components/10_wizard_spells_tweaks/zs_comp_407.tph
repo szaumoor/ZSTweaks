@@ -9,11 +9,10 @@ ACTION_IF !(GAME_IS "eet") BEGIN
                 LPF ALTER_CRE INT_VAR current_health = 24 max_health = 24 END
             END
         END
-    BUT_ONLY
+
     COPY_EXISTING ~SPWI123.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=new_description END
-    BUT_ONLY
+
     COPY_EXISTING ~SCRL6D.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
-    BUT_ONLY
 END

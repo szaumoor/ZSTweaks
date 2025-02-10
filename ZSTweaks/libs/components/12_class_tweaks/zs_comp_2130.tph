@@ -1,6 +1,42 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY_EXISTING "SPCL910B.SPL" ~override~
-        LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = result END
-        LPF ALTER_EFFECT INT_VAR header_type = 1 check_globals = 0 match_opcode = 12 parameter2 = piercing END
-    BUT_ONLY
+
+    ACTION_IF _2130_spike_trap BEGIN
+
+        COPY_EXISTING "SPCL910B.SPL" ~override~
+            LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = result END
+            LPF ALTER_EFFECT INT_VAR header_type = 1 check_globals = 0 match_opcode = 12 parameter2 = piercing END
+        
+    END
+
+    ACTION_IF _2130_exploding_trap BEGIN
+
+        COPY_EXISTING "SPCL911.SPL" ~override~
+            LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6300) END
+        COPY_EXISTING "SPCL911B.SPL" ~override~
+            LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=12 dicenumber=15 END
+            LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=39 duration=6 savingthrow=0 savebonus=0 END
+
+    END
+
+    ACTION_IF _2130_assassination BEGIN
+
+        COPY ~%MOD_FOLDER%/class_kits/assass~ ~override~
+        COPY_EXISTING "SPCL916.SPL" ~override~
+            LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8080) END
+            LPF ALTER_EFFECT INT_VAR match_duration = 6 duration = 7 END
+            LPF ADD_SPL_EFF_SELF INT_VAR dur=13 STR_VAR effects = ~op=301,p1=2;op=362,p1=-1~ END
+            SET thief = IDS_OF_SYMBOL(class THIEF)
+            LPF ADD_SPL_EFF_SELF INT_VAR p1=thief p2=5 STR_VAR effects=~op=177,res=ZSTWASSA;op=177,res=ZSTWASSB;op=177,res=ZSTWASSC;op=177,res=ZSTWASSB;op=177,res=ZSTWASSD~ END
+            LPF ADD_SPL_EFF_SELF STR_VAR effects=~op=321,ip=0,res=%SOURCE_RES%~ END // ensures refreshing the effect instead of stacking, only relevant with mods that add more uses of the ability
+
+    END
+
+    ACTION_IF _2130_avoid_death BEGIN
+
+        COPY_EXISTING ~SPCL917.SPL~ ~override~
+            LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8180) END
+            LPF ADD_SPL_EFF_SELF INT_VAR dur=3 rd=2 STR_VAR effects = ~op=208,p1=1;op=325,p1=100~ END
+
+    END
+
 END

@@ -37,7 +37,6 @@ ACTION_IF GAME_IS "bgee bg2ee eet" BEGIN
         LPF CLONE_EFFECT INT_VAR match_opcode=177 match_parameter2=4 match_parameter1=129 parameter1=planatar END
         LPF CLONE_EFFECT INT_VAR match_opcode=177 match_parameter2=4 match_parameter1=129 parameter1=darkplanatar END
         LPF CLONE_EFFECT INT_VAR match_opcode=177 match_parameter2=5 match_parameter1=146 parameter1=silver_dragon END
-    BUT_ONLY
 
     COPY_EXISTING ~TROLLD1.EFF~ ~override~
                   ~FT3DAM.EFF~ ~override~
@@ -45,5 +44,4 @@ ACTION_IF GAME_IS "bgee bg2ee eet" BEGIN
                   ~FT1DAM.EFF~ ~override~
         LPF GET_DMG_TYPE STR_VAR type = ~fire~ RET fire = result END
         LPF ALTER_EFF_FILE INT_VAR parameter2 = fire special = 1024 END
-    BUT_ONLY
 END

@@ -4,5 +4,4 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=28,p1=20~ END
         LPF GET_DMG_TYPE STR_VAR type="cold" RET cold = result END
         LPF ADD_ON_HIT_EFF STR_VAR effects=~op=12,dsize=2,dnum=1,p2=%cold%,spec=1024~ END
-    BUT_ONLY
 END

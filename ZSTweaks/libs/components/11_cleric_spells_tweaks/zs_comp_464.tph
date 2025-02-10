@@ -5,5 +5,5 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode=261 parameter1=1 END
         LPF CLONE_EFFECT INT_VAR match_opcode=261 parameter1=0 END
         LPF CLONE_EFFECT INT_VAR match_opcode=261 parameter1=5 END
-    BUT_ONLY
+    
 END

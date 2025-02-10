@@ -1,5 +1,4 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING ~DEVA.ITM~ ~override~
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=16~ END
-    BUT_ONLY
 END

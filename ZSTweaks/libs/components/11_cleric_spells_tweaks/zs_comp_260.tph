@@ -11,5 +11,5 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             LPF ALTER_EFFECT INT_VAR header = i match_duration = 30 duration = dur END
             dur += 6
         END
-    BUT_ONLY
+    
 END

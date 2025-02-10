@@ -2,5 +2,5 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY_EXISTING ~SPPR709.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5180) END
         LPF ALTER_EFFECT INT_VAR match_savebonus = "-2" savebonus = "-4" END
-    BUT_ONLY
+    
 END

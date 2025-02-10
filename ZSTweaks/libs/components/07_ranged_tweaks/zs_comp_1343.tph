@@ -6,5 +6,4 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF GET_DMG_TYPE STR_VAR type = ~magic~ RET magic = result END
         LPF ADD_ON_HIT_EFF INT_VAR sbonus="-2" stype=1 t=4
         STR_VAR effects = ~op=12,p1=1,tmg=1,p2=%magic%,dsize=4,dnum=1,spec=1024;op=60,p1=10,dur=24~ END
-    BUT_ONLY
 END

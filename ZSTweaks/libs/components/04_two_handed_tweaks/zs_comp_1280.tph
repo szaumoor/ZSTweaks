@@ -61,7 +61,6 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
                     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6082) END
                 END
             END
-        BUT_ONLY
 
 
         COPY_EXISTING ~SW2H19.ITM~ ~override~

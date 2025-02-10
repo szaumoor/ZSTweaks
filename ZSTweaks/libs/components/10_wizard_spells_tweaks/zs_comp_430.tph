@@ -11,8 +11,8 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             SET dur = start_dur + (i * 6)
             LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=i duration=dur END
         END
-    BUT_ONLY
+
     COPY_EXISTING ~SCRL66.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
-    BUT_ONLY
+
 END

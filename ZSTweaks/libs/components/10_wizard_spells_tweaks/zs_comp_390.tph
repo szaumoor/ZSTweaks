@@ -6,11 +6,11 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         PATCH_IF _390_deathfog_no_mr BEGIN
             LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
         END
-    BUT_ONLY
+    
 
     COPY_EXISTING ~SCRL7R.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
-    BUT_ONLY
+
 END
 
 

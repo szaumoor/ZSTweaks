@@ -7,5 +7,5 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         LPF ADD_SPL_EFF_TGT STR_VAR effects=~t=2,pwr=6,op=12,dnum=2,dsize=10,p2=%poison%~ END
         LPF ADD_SPL_EFF_TGT INT_VAR ip="-1" dur=60 p1="-2" rd=1 stype=4 sbonus="-3" pwr=6 STR_VAR effects = ~op=54;op=0;op=73~ END
         LPF ADD_SPL_EFF_TGT INT_VAR ip="-1" dur=60 p1="-8" rd=1 stype=4 sbonus="-3" pwr=6 STR_VAR effects=~op=86;op=87;op=88;op=89~ END
-    BUT_ONLY
+    
 END

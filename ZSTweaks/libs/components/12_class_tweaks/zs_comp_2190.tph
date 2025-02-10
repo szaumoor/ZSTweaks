@@ -1,7 +1,7 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING ~SPCL423.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6440) END
-    BUT_ONLY
+    
 
     COPY_EXISTING ~BDPWEAPN.SPL~ ~override~
         LPF SPL_ABILITIES_NUM RET ability_size = result END
@@ -13,5 +13,5 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_EFFECT INT_VAR header = ability_size + 1 match_opcode = 12 parameter1 = 10 END
         LPF ALTER_EFFECT INT_VAR header = ability_size + 1 match_opcode = 25 savebonus = "-4" duration = 30 END
         LPF ALTER_EFFECT INT_VAR header = ability_size + 1 match_opcode = 142 savebonus = "-4" duration = 30 END
-    BUT_ONLY
+
 END

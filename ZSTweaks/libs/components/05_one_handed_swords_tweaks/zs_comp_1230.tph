@@ -5,5 +5,5 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 141 probability1 = 20 probability2 = 34 END
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_probability1=15 probability1 = 19 END
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 139 probability1 = 20 probability2 = 34 parameter1 = 40968 END
-    BUT_ONLY
+
 END

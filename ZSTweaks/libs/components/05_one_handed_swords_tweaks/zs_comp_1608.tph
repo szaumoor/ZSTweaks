@@ -1,7 +1,29 @@
 ACTION_IF FILE_EXISTS_IN_GAME ~c2sw1h03.itm~ BEGIN
-    COPY_EXISTING ~c2sw1h03.itm~ ~override~
-        LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-        LPF GET_DMG_TYPE STR_VAR type = ~cold~ END
-        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p2=%cold%,dsize=5,dnum=1,p1=1~ END
-    BUT_ONLY
+
+    ACTION_IF
+        (MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1470~ AND
+        MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1588~ AND
+        MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1589~) OR
+        group_component = 1 BEGIN
+
+            COPY_EXISTING ~c2sw1h03.itm~ ~override~
+                LPF DELETE_EFFECT INT_VAR check_globals = 0 END
+                LPF ALTER_HEADER INT_VAR range = 2 END
+                LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 dnum=1 dsize=5 STR_VAR dmg_type = ~cold~ END
+                LPF ADD_ON_HIT_EFF INT_VAR ip=0 tmg=1 tgt=1 STR_VAR effects=~op=17,pro1=49,p1=2;op=17,pro1=69,pro2=50,p1=3;op=17,pro1=84,pro2=70,p1=4;op=17,pro1=94,pro2=85,p1=5;op=17,pro1=100,pro2=95,p1=6~ END
+
+                PATCH_IF NOT FILE_EXISTS_IN_GAME ~ZSTWRASH.SPL~ BEGIN
+                    COPY ~%MOD_FOLDER%/patches/item_upgrade/water_talon~ ~override~
+                    COPY_EXISTING "ZSTWRASH.SPL" ~override~
+                        LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1=RESOLVE_STR_REF(@7581) END
+                    BUT_ONLY
+                END
+                LPF ADD_EQUIPPED_EFF INT_VAR p2=1 spec=1 STR_VAR effects=~op=341,res=ZSTWRASH;op=301,p1=1~ END
+
+    END ELSE BEGIN
+        WARN ~Mod components 1470, 1588 and 1589 are required for this component~
+    END
+
+END ELSE BEGIN
+    WARN ~One-handed sword "c2sw1h03.itm" not found.~
 END

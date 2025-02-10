@@ -3,7 +3,7 @@ ACTION_IF _360_etheral_retribution BEGIN
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5210) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 6 dicenumber = 6 END
         LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savebonus = "-2" END
-    BUT_ONLY
+    
 END
 
 ACTION_IF _360_writhing_fog BEGIN
@@ -26,7 +26,7 @@ ACTION_IF _360_spirit_fire BEGIN
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6990) END
         LPF ALTER_HEADER INT_VAR match_speed = 9 speed = 6 END
         LPF ADD_SPL_EFF_TGT INT_VAR pwr=3 STR_VAR effects = ~op=164;op=4;op=240,p2=5;op=240,p2=4~ END
-    BUT_ONLY
+
 END
 
 ACTION_IF _360_spiritual_clarity BEGIN

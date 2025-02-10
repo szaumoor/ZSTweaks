@@ -15,7 +15,6 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = 14007 END
         END
         LPF DELETE_EFFECT INT_VAR match_opcode = 206 END
-    BUT_ONLY
 
     // ADD EFFECT REMOVAL TO AURA EFFECTS TO VARIOUS REMOVE-FEAR TYPE EFFECTS only affects spells for now
     COPY_EXISTING_REGEXP ~.*\.spl~ ~override~

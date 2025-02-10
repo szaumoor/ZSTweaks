@@ -1,0 +1,10 @@
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
+    COPY_EXISTING ~SPWI211.SPL~ ~override~
+        COPY ~%MOD_FOLDER%/spells/wizard_spells~ ~override~
+        PATCH_IF _447_melf_no_mr BEGIN
+            LPF ALTER_EFFECT INT_VAR resist_dispel = 3 END
+        END
+        LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8220) END
+        LPF ADD_SPL_EFF_TGT STR_VAR effects = ~op=146,p2=1,res=ZSTWMELF~ END
+END
+

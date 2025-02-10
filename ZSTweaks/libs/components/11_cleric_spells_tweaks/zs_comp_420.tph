@@ -7,5 +7,5 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             SET dur = start_dur + (i * 6)
             LPF ADD_SPELL_EFFECT INT_VAR header=i+1 target=1 opcode=0 parameter1=2 power=1 duration=dur resist_dispel=3 END
         END
-    BUT_ONLY
+
 END

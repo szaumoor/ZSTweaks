@@ -2,6 +2,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
 
     ACTION_IF _190_hpower_thac0 BEGIN
         COPY_EXISTING ~SPPR412.SPL~ ~override~
+                      ~ohtmps1.SPL~ ~override~
             LPF LAST_VALID_HEADER RET h = result END
             LPF ADD_SPELL_HEADER INT_VAR copy_header = h-1 zs_min_level_for_copy = 21 insert_point=h+1 END
             LPF ALTER_EFFECT INT_VAR header = h+1 match_opcode = 54 parameter1 = 0 END
@@ -11,6 +12,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
     ACTION_IF _190_hpower_apr BEGIN
         COPY ~%MOD_FOLDER/spells/cleric_spells/holy_power~ ~override~
         COPY_EXISTING ~SPPR412.SPL~ ~override~
+                      ~ohtmps1.SPL~ ~override~
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5120) END
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 parameter2 = 1 power = 4 STR_VAR resource = ~ZSTWAPR1~ END
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 insert_point = 0 STR_VAR resource = ~ZSTWAPR1~ END

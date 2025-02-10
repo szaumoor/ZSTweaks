@@ -12,5 +12,5 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             LPF ALTER_EFFECT INT_VAR header = i savebonus = bonus END
             --bonus
         END
-    BUT_ONLY
+    
 END

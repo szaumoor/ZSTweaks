@@ -1,17 +1,15 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
-    ACTION_IF FILE_EXISTS_IN_GAME ~SPIN829.SPL~ BEGIN
-        COPY_EXISTING ~SPIN829.SPL~ ~override~
-            LPF ALTER_EFFECT INT_VAR match_opcode = 122 parameter1 = 10 END
-        BUT_ONLY
-    END
-    ACTION_IF FILE_EXISTS_IN_GAME ~SPIN116.SPL~ BEGIN
-        COPY_EXISTING ~SPIN116.SPL~ ~override~
-            LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 122 parameter1 = 15 END
-        BUT_ONLY
-    END
-    ACTION_IF FILE_EXISTS_IN_GAME ~AROW14.ITM~ BEGIN
-        COPY_EXISTING ~AROW14.ITM~ ~override~
-            LPF ALTER_EFFECT INT_VAR match_opcode = 25 parameter1 = 2 END
-        BUT_ONLY
-    END
+    
+    COPY_EXISTING ~SPIN829.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 122 parameter1 = 10 END
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~SPIN116.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 122 parameter1 = 15 END
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~AROW14.ITM~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 25 parameter1 = 2 END
+    BUT_ONLY IF_EXISTS
+
 END

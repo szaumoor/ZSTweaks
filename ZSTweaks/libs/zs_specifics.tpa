@@ -44,7 +44,6 @@ BEGIN
             END
         END
         SET_2DA_ENTRIES_NOW thac0_out 1
-    BUT_ONLY
 END
 
 DEFINE_PATCH_FUNCTION weapon_damage_by_class

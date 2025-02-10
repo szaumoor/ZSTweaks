@@ -6,13 +6,13 @@ COPY_EXISTING "HAMM01.ITM" ~override~
     END
     SAY_EVALUATED 0x54 ~%desc%~
     LPF ITM_REF_DESC RET changed_description_index = result END
-BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_CAT RET wpn_cat = result END
     LPF ITM_PROF RET wpn_prof = result END
     PATCH_IF wpn_cat = 21 AND wpn_prof = 97 BEGIN // warhammers
         LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 4 match_dicenumber = 1 dicesize = 5 silent = 1 END
+        LPF ALTER_HEADER INT_VAR match_type = 2 match_dicesize = 4 match_dicenumber = 1 dicesize = 5 silent = 1 END
         PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "HAMM01") BEGIN
             LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
             LPF ITM_REF_DESC RET description_index = result END
@@ -28,8 +28,6 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     END
 BUT_ONLY
 
-ACTION_IF FILE_EXISTS_IN_GAME "bdhamm02.itm" BEGIN
-    COPY_EXISTING "bdhamm02.itm" ~override~ // voidhammer +3
-        LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 5 END
-    BUT_ONLY
-END
+COPY_EXISTING "bdhamm02.itm" ~override~ // voidhammer +3
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 5 END
+BUT_ONLY IF_EXISTS

@@ -8,11 +8,11 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
             ++new_header
             dur += 6
         END
-    BUT_ONLY
+
 END
 
 COPY_EXISTING ~PHANBLAD.EFF~ ~override~
     LPF ALTER_EFF_FILE INT_VAR special = 1024 END
-BUT_ONLY
+
 
 

@@ -16,7 +16,6 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         END ELSE BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6800) END
         END
-    BUT_ONLY
 
     COPY_EXISTING ~c2sw2h01.itm~ ~override~
         LPF ALTER_HEADER INT_VAR match_type = 1 speed = 5 END

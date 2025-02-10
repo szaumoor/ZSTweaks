@@ -10,7 +10,6 @@ COPY_EXISTING "SW1H46.ITM" ~override~
     END
     SAY_EVALUATED 0x50 ~%desc%~
     LPF ITM_REF_UDESC RET changed_description_index_waki = result END
-BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_PROF RET wpn_prof = result END

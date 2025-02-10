@@ -8,5 +8,5 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             d+=60
             ++new_header
         END
-    BUT_ONLY
+    
 END

@@ -5,5 +5,5 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         LPF ALTER_EFFECT INT_VAR check_globals=0 header=0 resist_dispel=0 END
         LPF GET_DMG_TYPE STR_VAR type=~missile~ RET missile = result END
         LPF CLONE_EFFECT INT_VAR match_opcode=12 parameter2="%missile%" END
-    BUT_ONLY
+    
 END

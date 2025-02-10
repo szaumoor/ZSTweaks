@@ -5,11 +5,9 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         LPF ADD_SPL_EFF_TGT INT_VAR pwr=9 STR_VAR effects=~op=12,p1=3,tmg=1,rd=2,dnum=3,dsize=6,p2=0;op=80,rd=3,dur=12;op=142,p2=112, dur=12,rd=3~ END
         LPF GET_DMG_TYPE STR_VAR type = ~magic~ RET magic_dmg = result END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter2 = magic_dmg END
-    BUT_ONLY
 
-    ACTION_IF FILE_EXISTS_IN_GAME ~SCRL9V.ITM~ BEGIN
-        COPY_EXISTING ~SCRL9V.ITM~ ~override~
-            LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
-        BUT_ONLY
-    END
+    COPY_EXISTING ~SCRL9V.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
+    BUT_ONLY IF_EXISTS
+
 END

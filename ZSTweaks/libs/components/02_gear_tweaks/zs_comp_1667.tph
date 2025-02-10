@@ -2,11 +2,9 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY_EXISTING ~BRAC09.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7270) END
         LPF CLONE_EFFECT INT_VAR match_headers=0 match_opcode=54 opcode=73 END
-    BUT_ONLY
-    ACTION_IF FILE_EXISTS_IN_GAME ~bdbrac09.itm~ BEGIN
-        COPY_EXISTING ~bdbrac09.itm~ ~override~
-            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7310) END
-            LPF CLONE_EFFECT INT_VAR match_headers=0 match_opcode=54 opcode=73 END
-        BUT_ONLY
-    END
+    COPY_EXISTING ~bdbrac09.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7310) END
+        LPF CLONE_EFFECT INT_VAR match_headers=0 match_opcode=54 opcode=73 END
+    BUT_ONLY IF_EXISTS
+
 END

@@ -9,7 +9,6 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7352) END
         END
         LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 2 match_savingthrow = 4 savebonus = _1001_sbonus END
-    BUT_ONLY
 
     ACTION_IF _1001_store_additions BEGIN
         ACTION_IF GAME_IS ~bg2ee eet~ BEGIN

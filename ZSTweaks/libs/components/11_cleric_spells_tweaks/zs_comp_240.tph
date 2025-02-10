@@ -2,7 +2,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY_EXISTING ~SPPR207.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5060) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 122 parameter1 = 6 END
-    BUT_ONLY
+    
     COPY_EXISTING ~GBERRY.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR this_plus=1 unid_ref_desc=RESOLVE_STR_REF(@5070) ench=5 flags=2**8 max_stack=12 END
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 17 duration = 0 parameter1 = 0 dicesize = 4 dicenumber = 2 END
@@ -10,5 +10,5 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~t=3,op=321,tgt=1,res=GBERRY,ip=0~ END // prevent stacking
         END
         LPF ADD_ON_HIT_EFF INT_VAR t=3 pwr=2 tgt=1 p1=60 p2=3 dur=2700 rd=2 STR_VAR effects = ~op=98;op=142,p1=0,p2=87~ END
-    BUT_ONLY
+
 END

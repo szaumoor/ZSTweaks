@@ -40,8 +40,9 @@ FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1430" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1440" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1450" @57
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1530" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1533" @57
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1534" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1535" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1537" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1601" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1650" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1541" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1537" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1548" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1601" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1650" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1541" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/01_general_tweaks/zs_comp_103.tph~
@@ -274,6 +275,14 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/01_general_tweaks/zs_comp_1544.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @1548 DESIGNATED 1548 GROUP @10 // void-weapons tweak
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1544" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~%MOD_FOLDER%/libs/components/01_general_tweaks/zs_comp_1548.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// ARMOR/GEAR/MISC TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1231,6 +1240,7 @@ REQUIRE_PREDICATE MOD_IS_INSTALLED ~itemupgrade.tp2~ ~4~ OR MOD_IS_INSTALLED ~it
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1124" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+OUTER_SET group_component = 0
 INCLUDE ~%MOD_FOLDER%/libs/components/05_one_handed_swords_tweaks/zs_comp_1608.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1418,7 +1428,7 @@ FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1009" @58
 INCLUDE ~%MOD_FOLDER%/libs/components/07_ranged_tweaks/zs_comp_1346.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1346 DESIGNATED 1346 GROUP @16 // Arrow of piercing TWEAKS
+BEGIN @1346 DESIGNATED 1346 GROUP @16 // bolts of biting TWEAKS
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1009" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1434,11 +1444,11 @@ BEGIN @10007 DESIGNATED 1379 GROUP @17 // All NPC tweaks
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1380" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1480" @57
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1500" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1510" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1520" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1521" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1640" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1641" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1642" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1643" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1644" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1645" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1646" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1647" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1520" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1640" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1641" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1642" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1643" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1644" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1645" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1646" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1647" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1379.tph~
@@ -1476,20 +1486,12 @@ FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1379" @58
 INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1510.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1520 DESIGNATED 1520 GROUP @17 // KELDORN SWORD TWEAK
+BEGIN @1520 DESIGNATED 1520 GROUP @17 // KELDORN GEAR TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1379" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1520.tph~
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @1521 DESIGNATED 1521 GROUP @17 // KELDORN ARMOR TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "1379" @58
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1521.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @1640 DESIGNATED 1640 GROUP @17 // DORN BLADES
@@ -1565,16 +1567,15 @@ BEGIN @10008 DESIGNATED 139 GROUP @19 // INSTALL ALL COMPONENTS IN THE GROUP
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "140" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "145" @57
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "160" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "161" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "163" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "170" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "180" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "210" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "220" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "370" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "380" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "390" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "400" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "405" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "407" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "410" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "430" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "440" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "441" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "443" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "444" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "445" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "446" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "170" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "180" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "210" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "220" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "370" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "380" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "390" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "400" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "405" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "407" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "410" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "430" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "440" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "441" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "443" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "444" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "445" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "446" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_139.tph~
@@ -1596,20 +1597,12 @@ FORBID_COMPONENT "%MOD_FOLDER%.tp2" "139" @58
 INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_145.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @160 DESIGNATED 160 GROUP @19 // BLAKBLAD NO BACKSTAB TWEAK
+BEGIN @160 DESIGNATED 160 GROUP @19 // NO BACKSTAB TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_160.tph~
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @163 DESIGNATED 163 GROUP @19 // GOLIRO NO BACKSTAB TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "139" @58
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_163.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @161 DESIGNATED 161 GROUP @19 // PHANTOM BLADE DUR STD
@@ -1763,6 +1756,14 @@ FORBID_COMPONENT "%MOD_FOLDER%.tp2" "139" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_446.tph~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @447 DESIGNATED 447 GROUP @19 // MELF TWEAK
+REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "139" @58
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INCLUDE ~%MOD_FOLDER%/libs/components/10_wizard_spells_tweaks/zs_comp_447.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// CLERIC/DRUID SPELL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -2015,18 +2016,16 @@ BEGIN @10010 DESIGNATED 359 GROUP @21 // INSTALL ALL COMPONENTS IN GROUP
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2100" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "360"  @57
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2120" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2130" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2140" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2141" @57
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2150" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2160" @57
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2170" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2180" @57
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2190" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2200" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2210" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2220" @57
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2230" @57
+FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2210" @57 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "2230" @57
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/12_class_tweaks/zs_comp_359.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @2100 DESIGNATED 2100 GROUP @21 // SUN SOUL RAY TWEAK
+BEGIN @2100 DESIGNATED 2100 GROUP @21 // SUN SOUL MONK TWEAKS
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2034,15 +2033,7 @@ FORBID_COMPONENT "%MOD_FOLDER%.tp2" "359" @58
 INCLUDE ~%MOD_FOLDER%/libs/components/12_class_tweaks/zs_comp_2100.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @2110 DESIGNATED 2110 GROUP @21 // SUN SOULBEAM TWEAK
-REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "359" @58
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~%MOD_FOLDER%/libs/components/12_class_tweaks/zs_comp_2110.tph~
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @360 DESIGNATED 360 GROUP @21 // ETHEREAL RETRIBUTION TWEAK
+BEGIN @360 DESIGNATED 360 GROUP @21 // SHAMAN ABILITIES TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 FORBID_COMPONENT "%MOD_FOLDER%.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2056,30 +2047,6 @@ FORBID_COMPONENT "%MOD_FOLDER%.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/12_class_tweaks/zs_comp_2120.tph~
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @2130 DESIGNATED 2130 GROUP @21 // SPIKE TRAP TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "359" @58
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~%MOD_FOLDER%/libs/components/12_class_tweaks/zs_comp_2130.tph~
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @2140 DESIGNATED 2140 GROUP @21 // EXPLODING TRAP TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "359" @58
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~%MOD_FOLDER%/libs/components/12_class_tweaks/zs_comp_2140.tph~
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @2141 DESIGNATED 2141 GROUP @21 // ASSASSINATION Tweak
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "359" @58
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~%MOD_FOLDER%/libs/components/12_class_tweaks/zs_comp_2141.tph~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @2150 DESIGNATED 2150 GROUP @21 // NON BREACHABLE HLA TWEAK
@@ -2143,14 +2110,6 @@ FORBID_COMPONENT "%MOD_FOLDER%.tp2" "359" @58
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/12_class_tweaks/zs_comp_2210.tph~
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @2220 DESIGNATED 2220 GROUP @21 // AVOID DEATH TWEAK
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
-FORBID_COMPONENT "%MOD_FOLDER%.tp2" "359" @58
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INCLUDE ~%MOD_FOLDER%/libs/components/12_class_tweaks/zs_comp_2220.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @3500 DESIGNATED 3500 GROUP @21 // SHADOW JUMP AREA TWEAK
@@ -2244,3 +2203,5 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~%MOD_FOLDER%/libs/components/01_general_tweaks/zs_comp_1532.tph~
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////

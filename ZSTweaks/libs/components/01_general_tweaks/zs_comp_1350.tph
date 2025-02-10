@@ -9,7 +9,6 @@ COPY_EXISTING "SW1H48.ITM" ~override~
     END
     SAY_EVALUATED 0x50 ~%desc%~
     LPF ITM_REF_UDESC RET changed_description_index_ninjato = result END
-BUT_ONLY
 
 COPY_EXISTING "SW1H46.ITM" ~override~
     SPRINT str @99999
@@ -19,13 +18,13 @@ COPY_EXISTING "SW1H46.ITM" ~override~
     END
     SAY_EVALUATED 0x50 ~%desc%~
     LPF ITM_REF_UDESC RET changed_description_index_waki = result END
-BUT_ONLY
 
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_PROF RET wpn_prof = result END
     LPF ITM_APPEARANCE RET wpn_appearance = result END
 	PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STRING_COMPARE_CASE "s1"=0 BEGIN // ninjatos
         LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
+        LPF ALTER_HEADER INT_VAR silent=1 match_type=2 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
         LPF WPN_SPEED RET s = result END
         PATCH_IF s > 0 BEGIN
             --s

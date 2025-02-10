@@ -13,7 +13,6 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         SET spider = IDS_OF_SYMBOL(race SPIDER)
         SET umberhulk = IDS_OF_SYMBOL(race UMBERHULK)
         LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 STR_VAR res=~ZSTW_DG6~ effects=~op=12,dsize=4,dnum=1,p2=%acid%,spec=1024;op=177,p1=%elf%;op=177,p1=%beholder%;op=177,p1=%drider%;op=177,p1=%hook_horror%;op=177,p1=%kuo_toa%;op=177,p1=%mind_flayer%;op=177,p1=%spider%;op=177,p1=%umberhulk%~ END
-    BUT_ONLY
 
     // item upgrade patch for quietus
     ACTION_IF FILE_EXISTS_IN_GAME ~c2dagg01.itm~ BEGIN

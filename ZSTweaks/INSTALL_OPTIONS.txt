@@ -61,6 +61,9 @@ OUTER_SET _1010_sbonus = "-4" // You can change this to override the save penalt
 
 /////////////////////////////// Wizard Spell Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+OUTER_SET _160_bbod   = "1"
+OUTER_SET _160_goliro = "1"
+
 OUTER_SET _145_luck_boost     = "1" // allows the boost to Luck's effects to come through
 OUTER_SET _145_luck_dur_boost = "1" // allows the boost to Luck's duration to come through
 
@@ -68,6 +71,7 @@ OUTER_SET _441_tenser_thac0 = "1" // allows the tweak to Tenser's Transformation
 OUTER_SET _441_tenser_apr   = "1" // allows the tweak to Tenser's Transformation APR tweak to happen
 OUTER_SET _441_tenser_apr_nonfighters_only = "1" // this will make the APR bonuses only affect casters without fighter levels, for balance, since it would be too easy to increase APR excessively for them (0 to disable)
 
+OUTER_SET _446_fball_buff          = "1"
 OUTER_SET _446_fball_new_animation = "1" // This sets the new Fireball and Delayed Blast Fireball new explosion animation. Set to 0 if you wish to deactivate this feature
 
 OUTER_SET _390_deathfog_no_mr = "1" // this makes Death Fog bypass MR, since it's conjured acid, "0" to disable
@@ -98,6 +102,11 @@ OUTER_SET _250_quake_boost     = "1"
 OUTER_SET _320_natbeauty_boost      = "1"
 OUTER_SET _320_natbeauty_true_sight = "1"
 
+/////////////////////////////// NPC Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET _1520_keldsword = "1"
+OUTER_SET _1520_keldarmor = "1"
+
 /////////////////////////////// Class/Kit Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 OUTER_SET _360_etheral_retribution = "1"
@@ -105,3 +114,12 @@ OUTER_SET _360_writhing_fog =        "1"
 OUTER_SET _360_spirit_fire =         "1"
 OUTER_SET _360_spiritual_clarity =   "1"
 OUTER_SET _360_favored_spirits =     "1"
+
+OUTER_SET _2130_spike_trap     = "1"
+OUTER_SET _2130_exploding_trap = "1"
+OUTER_SET _2130_assassination  = "1"
+OUTER_SET _2130_avoid_death    = "1"
+
+/////////////////////////////// Creature Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET _3060_silly_version = "0" // switch to 1 to make Mencar a joke

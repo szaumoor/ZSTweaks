@@ -107,7 +107,6 @@ ACTION_IF _450_critical BEGIN
             base_heal+=3
             ++current_header
         END
-    BUT_ONLY
 
     COPY_EXISTING ~SCRL61.ITM~ ~override~
         PATCH_IF GAME_IS "iwdee" BEGIN

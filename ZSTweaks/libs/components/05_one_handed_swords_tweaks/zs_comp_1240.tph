@@ -17,7 +17,6 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             END ELSE BEGIN
                 LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6090) END
             END
-        BUT_ONLY
 
         ACTION_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1241" BEGIN
             OUTER_SPRINT strref @6093
@@ -43,7 +42,6 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
                     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6091) END
                 END
             END
-        BUT_ONLY
 
     END
 
@@ -78,6 +76,5 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         COPY_EXISTING "SW1H64A.EFF" ~override~
                       "SW1H65A.EFF" ~override~
             LPF ALTER_EFF_FILE INT_VAR special=1024 END
-        BUT_ONLY
     END
 END

@@ -6,4 +6,4 @@ COPY_EXISTING ~SPPR701.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=201 header=h parameter1=absorb_levels END
         ++absorb_levels
     END
-BUT_ONLY
+

@@ -1,0 +1,15 @@
+ACTION_IF _3060_silly_version BEGIN
+    COPY ~%MOD_FOLDER%/items/doodoohead~ ~override~
+    COPY_EXISTING ~sevpat01.cre~ ~override~
+        PATCH_FOR_EACH slot IN ~RRING~ ~LRING~ ~WEAPON1~ ~WEAPON2~ ~WEAPON3~ ~WEAPON4~ ~QITEM1~ ~QITEM2~ ~QITEM3~ ~QUIVER1~ ~QUIVER2~ ~QUIVER3~ ~SHIELD~ ~HELMET~ ~AMULET~ ~BOOTS~ ~CLOAK~ ~GLOVES~ ~ARMOR~ ~BELT~ BEGIN
+            ADD_CRE_ITEM ~ZSTWMNCR~ #0 #0 #0 ~NONE~ ~%slot%~
+        END
+        REMOVE_CRE_ITEM ~ZSTWMNCR~
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 272 target = 2 parameter1 = 6 parameter2 = 3 timing = 1 probability1 = 100 STR_VAR resource = youresource END
+
+END ELSE BEGIN
+    COPY_EXISTING ~sevpat01.cre~ ~override~
+        WRITE_SHORT 0x24 105
+        WRITE_SHORT 0x26 105
+        WRITE_BYTE 0x53 1
+END

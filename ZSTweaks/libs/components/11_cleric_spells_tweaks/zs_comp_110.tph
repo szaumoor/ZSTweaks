@@ -13,20 +13,19 @@ COPY_EXISTING ~SPPR101.SPL~ ~override~
     LPF ALTER_HEADER INT_VAR speed = 3 END
 BUT_ONLY
 
-ACTION_IF FILE_EXISTS_IN_GAME ~SPPR112.SPL~ BEGIN
-    COPY_EXISTING ~SPPR112.SPL~ ~override~
-        LPF ALTER_HEADER INT_VAR speed = 3 END
-        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8060) END
-        SET headers = 0
-        FOR ( i = 3; i <= 19; i += 2 ) BEGIN
-            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = i insert_point = headers+1 END
-            ++headers
-        END
-        SET dur = 42
-        FOR ( i = 1; i <= headers; ++i ) BEGIN
-            LPF ALTER_EFFECT INT_VAR header = i match_duration = 36 duration = dur END
-            dur += 6
-        END
-    BUT_ONLY
-END
+
+COPY_EXISTING ~SPPR112.SPL~ ~override~
+    LPF ALTER_HEADER INT_VAR speed = 3 END
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8060) END
+    SET headers = 0
+    FOR ( i = 3; i <= 19; i += 2 ) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = i insert_point = headers+1 END
+        ++headers
+    END
+    SET dur = 42
+    FOR ( i = 1; i <= headers; ++i ) BEGIN
+        LPF ALTER_EFFECT INT_VAR header = i match_duration = 36 duration = dur END
+        dur += 6
+    END
+BUT_ONLY IF_EXISTS
 

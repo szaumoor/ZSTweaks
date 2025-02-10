@@ -29,5 +29,4 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
                 power = 9
                 savingthrow = 16777216 // bypass mirror image (only EE)
         END
-    BUT_ONLY
 END

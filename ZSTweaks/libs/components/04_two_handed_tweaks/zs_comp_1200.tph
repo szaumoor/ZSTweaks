@@ -12,9 +12,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7770) END
         END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize=8 parameter1=6 dicenumber=1 END
-    BUT_ONLY
 
     COPY_EXISTING ~SPPR403.SPL~ ~override~
         LPF DELETE_EFFECT INT_VAR match_opcode=126 END
-    BUT_ONLY
 END

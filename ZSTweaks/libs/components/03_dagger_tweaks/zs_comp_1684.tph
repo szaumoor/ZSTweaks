@@ -7,7 +7,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         PATCH_IF _1450_allow_daggers AND (MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1450~ OR MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~103~) BEGIN // finesse part installed
             LPF ALTER_EFFECT INT_VAR header_type = 1 match_opcode = 326 STR_VAR resource = ~ZSTWTHD0~ END
         END
-    BUT_ONLY
+
     COPY_EXISTING ~dagg16.itm~ ~override~
         PATCH_IF MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1000~ OR group_component = 1 BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7352) unid_ref_desc=RESOLVE_STR_REF(@7352) END
@@ -23,5 +23,4 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         PATCH_IF _1450_allow_daggers AND (MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1450~ OR MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~103~) BEGIN // finesse part installed
             LPF ALTER_EFFECT INT_VAR header_type = 1 match_opcode = 326 STR_VAR resource = ~ZSTWTHD0~ END
         END
-    BUT_ONLY
 END

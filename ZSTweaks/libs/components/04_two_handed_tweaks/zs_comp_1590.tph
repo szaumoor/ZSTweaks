@@ -5,5 +5,5 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         SET blinded_strref1 = 14674
         SET blinded_strref2 = 1474
         LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=101,p2=74;op=169,p2=8;op=267,p1=%blinded_strref1%;op=267,p1=%blinded_strref2%~ END
-    BUT_ONLY
+
 END

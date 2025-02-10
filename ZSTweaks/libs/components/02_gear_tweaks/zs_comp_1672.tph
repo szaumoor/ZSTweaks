@@ -9,7 +9,6 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             PATCH_IF MOD_IS_INSTALLED "ZS_ShadowdancerOverhaul.tp2" "100" BEGIN
                 LPF CLONE_EFFECT INT_VAR match_headers=0 match_opcode=177 match_parameter1=bounty_hunter_id parameter1=IDS_OF_SYMBOL(kit ZS_SHADOWDANCER) END
             END
-        BUT_ONLY
     END ELSE BEGIN
         ACTION_IF group_component = 0 BEGIN
             WARN "bbrac05.itm not found, skipping"

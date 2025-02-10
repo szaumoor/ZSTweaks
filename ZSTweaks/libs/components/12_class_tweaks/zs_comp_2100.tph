@@ -1,13 +1,24 @@
-COPY ~%MOD_FOLDER%/class_kits/sunsoul_ray~ ~override~
+ACTION_IF _2100_sunsoul_ray BEGIN
+    COPY ~%MOD_FOLDER%/class_kits/sunsoul_ray~ ~override~
+    COPY_EXISTING "SPCL236.SPL" ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7800) END
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = 12 END
+        LPF ALTER_EFFECT INT_VAR header = 5 match_opcode = 12 dicenumber = 6 END
+        LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 177 STR_VAR resource = ~ZSTWF06~ END
+        LPF ALTER_EFFECT INT_VAR header = 1 match_opcode = 177 STR_VAR resource = ~ZSTWF08~ END
+        LPF ALTER_EFFECT INT_VAR header = 2 match_opcode = 177 STR_VAR resource = ~ZSTWF10~ END
+        LPF ALTER_EFFECT INT_VAR header = 3 match_opcode = 177 STR_VAR resource = ~ZSTWF12~ END
+        LPF ALTER_EFFECT INT_VAR header = 4 match_opcode = 177 STR_VAR resource = ~ZSTWF14~ END
+        LPF ALTER_EFFECT INT_VAR header = 5 match_opcode = 177 STR_VAR resource = ~ZSTWF16~ END
+END
 
-COPY_EXISTING "SPCL236.SPL" ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7800) END
-    LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = 12 END
-    LPF ALTER_EFFECT INT_VAR header = 5 match_opcode = 12 dicenumber = 6 END
-    LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 177 STR_VAR resource = ~ZSTWF06~ END
-    LPF ALTER_EFFECT INT_VAR header = 1 match_opcode = 177 STR_VAR resource = ~ZSTWF08~ END
-    LPF ALTER_EFFECT INT_VAR header = 2 match_opcode = 177 STR_VAR resource = ~ZSTWF10~ END
-    LPF ALTER_EFFECT INT_VAR header = 3 match_opcode = 177 STR_VAR resource = ~ZSTWF12~ END
-    LPF ALTER_EFFECT INT_VAR header = 4 match_opcode = 177 STR_VAR resource = ~ZSTWF14~ END
-    LPF ALTER_EFFECT INT_VAR header = 5 match_opcode = 177 STR_VAR resource = ~ZSTWF16~ END
-BUT_ONLY
+ACTION_IF _2100_sunsoul_beam BEGIN
+
+    COPY_EXISTING "SPCL239.SPL" ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7790) END
+
+
+    COPY_EXISTING "SPCL239a.eff" ~override~
+        LPF ALTER_EFF_FILE INT_VAR parameter1=0 dicesize=6 dicenumber=3 END
+END
+

@@ -74,8 +74,7 @@
 @15392 = ~All bards and Thieves can~
 @15393 = ~All bards and Thieves can as long as they have the right stats depending on scroll type~
 @1544 = ~Make scrolls always cast at the character level regardless of class~
-@3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane~
-// @1539 = ~Make Void-weapons not sap the strength of the undead when held~
+@1548 = ~Make Void-weapons strength-sapping not affect undead, and able to critically hit to deal double damage~
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -213,18 +212,17 @@
 @1340 = "Make Taralash slightly more remarkable"
 @1342 = ~Make Protector of the Dryads deal +2 damage to orcs, ogres, gnolls, and goblinoids~
 @1343 = ~Make Mana bow more magical and more deadly against arcane casters~
-@1344 = ~Make Arrows of Biting apply poison faster and improve the misleading description~
+@1344 = ~Make Arrows of Biting apply poison more effectively with a +5% inherent critical hit chance~
 @1345 = ~Make Arrows of Fire cause fire damage always, same as Arrows of Ice~
 @1346 = ~Make Arrows of Piercing always cause at least half of the extra piercing damage~
-@1347 = ~Make Bolts of Biting have an inherent +5% extra critical hit chance~
+@1347 = ~Make Bolts of Biting have an inherent +5% extra critical hit chance, and deal +1 poison damage on hit~
 
 // NPC TWEAKS
 @1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
 @1480 = "Make Yoshimo's Katana more unique and powerful"
 @1500 = ~Make Mazzy's weapons more powerful~
 @1510 = ~Make Delryn's family shield become a +2 shield~
-@1520 = ~Make Hallowed Redeemer able to hit enemies immune to +2 weapons~
-@1521 = ~Make Keldorn's armor allow Haste and Improved Haste~
+@1520 = ~Make Keldorn's unique gear a bit more effective and convenient~
 @1640 = ~Make Abyssal Blades more powerful (Dorn's Quest)~
 @1641 = ~Make the item creation abilities of vanilla NPCs slightly better~
 @1642 = ~Make Nalia's ring more powerful~
@@ -234,12 +232,10 @@
 @1646 = ~Make Sarevok's Deathbringer assault a bit more balanced~
 @1647 = ~Make Shar-Teel especially effective when fighting men~
 
-
 // WIZARD SPELLS
 @140 = "Make Finger of Death's magical damage on a successful save standardized"
 @145 = ~Make Luck last for 1 turn and add 5% critical hit chances, 2 AC, 5% more to thieving~
-@160 = "Make Black Blade of Disaster unsuitable for backstabs"
-@163 = "Make Iron Golem weapon unsuitable for backstabs"
+@160 = "Make Black Blade of Disaster and golem iron fist unsuitable for backstabs (optional, see config)"
 @161 = ~Make Phantom Blade scale in duration up to level 20, instead of to level 18~
 @170 = "Make Wail of the Banshee inflict some magical damage and deafness on a successful save"
 @180 = "Make Meteor Swarm more likely to do more damage, and bypass magic resistance like Fire Storm"
@@ -258,7 +254,7 @@
 @443 = ~Make Symbol of Death work with +6 saving throw bonus if above the 60 HP threshold~
 @444 = ~Make Flesh to Stone use Petrification saves~
 @445 = ~Make Bigby's spells more powerful~
-@446 = ~Make Fireball spells slightly scale more up to level 20 with an optional better explosion animation~
+@446 = ~Make Fireball spells slightly scale more up to level 20 andan optional better explosion animation~
 @447 = ~Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance~
 
 // CLERIC SPELLS
@@ -291,8 +287,7 @@
 @505 = ~Make Repulse Undead more useful by causing damage and Slow when they're repulsed~
 
 // KITS AND CLASSES
-@2100 = "Make Sun Soul Ray from Sun Soul Monks scale further and do more damage to undead"
-@2110 = "Make Sun Soulbeam do more damage to undead: 12d6 instead of just 3 more damage than baseline"
+@2100 = "Make Sun Soul Ray and Sun Soulbeam Sun Soul Monks scale further and/or do more damage to undead"
 @360 = "Make Shaman's unique spells more powerful"
 @2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty and rally the allies"
 @2130 = "Make Set Spike Trap do piercing damage instead of magic damage"
@@ -307,6 +302,7 @@
 @2200 = ~Make Blackguards able to backstab as if they had a 2x multiplier~
 @2210 = ~Make the proficiency point benefits streamlined~
 @2220 = ~Make Avoid Death HLA slightly more effective~
+@3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane~
 @2230 = ~Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value~
 //@2240 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and reenable the unconscious status if successful~ // TODO
 //@2250 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
@@ -318,7 +314,7 @@
 @3030 = ~Make Devas hasted, same as Planetars~
 @3040 = ~Make the planetar more balanced and allow it to grant allies passive partial spell invulnerability~
 @3050 = ~Make the Balor's vorpal attack not guaranteed to succeed but be affected by a saving throw too~
-@3060 = ~Make Mencar Pebblecrusher a naked crazy guy that can get randomly confused during battle or stumble when he walks~
+@3060 = ~Make Mencar Pebblecrusher a fair fighter for his level or make him a joke (optional)~
 @3070 = ~Make lions and other cat creatures not slow as molasses~
 
 
@@ -5503,6 +5499,18 @@ Saving Throw: None
 
 This spell blankets the area of effect with a silver-blue mist—any creature within the mist will be cured of disease and poison and healed 40 Hit Points. During 2 rounds after the casting, affected creatures remain immune to poison and disease and regenerate 1 HP per second for 2 rounds.~
 
+@8220 = ~Melf's Acid Arrow
+(Conjuration/Summoning)
+
+Level: 2
+Range: 60 ft.
+Duration: 1 round/3 levels
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: Special
+
+By means of this spell, the wizard creates a magical arrow that speeds to its target unerringly. The arrow has no attack or damage bonus, but inflicts 2d4 points of acid damage (no save allowed), which may splash to adjacent enemies, causing the same amount of damage, unless they save vs. Breath. For every 3 levels of the caster, the acid lasts for another round, unless somehow dispelled, inflicting another 2d4 points of damage each round. So at 3rd-5th level, the acid lasts 2 rounds, at 6th-8th level, the acid lasts for 3 rounds, and so on. Splashed enemies do not receive more damage over time.~
+
 // patching other mods
 // item upgrade
 @50000 = ~Ring of Elemental Mastery
@@ -5714,19 +5722,19 @@ Requires:
 
 Weight: 3~
 
-@50080 = ~This weapon was commissioned by <CHARNAME>, and combines the power of three powerful weapons, Rashad's Talon, Water's Edge, and Adjatha the Drinker, making it a formidable weapon. Each hit sucks some of the life out of the target and confers it to the wielder. In addition, the water-like edge of the blade is forever envenomed. Much like one of its predecessors, Water's Talon provides immunity to charm. In addition, however, its mastery over water protects the user from the harmful effects of Abi-Dalzim's Horrid Wilting. Most uniquely, the liquid nature of the blade allows it to extend and splash during combat, improving the strike range granted by the weapon to a range beyond that of most two-handed swords.
+@50080 = ~This weapon was commissioned by <CHARNAME>, and combines the power of three powerful weapons, Rashad's Talon, Water's Edge, and Adjatha the Drinker, making it a formidable weapons that combines and improves the powers of all three. In addition, however, its mastery over water protects the user from the harmful effects of Horrid Wilting. Most uniquely, the liquid nature of the blade allows it to extend and splash during combat, improving the strike range granted by the weapon to a range of that of two-handed swords.
 
 STATISTICS:
 
 Equipped abilities:
 – Immunity to charm and domination
-– Immunity to Abi-Dalzim's Horrid Wilting
+– Immunity to Horrid Wilting
 
 Combat abilities:
 – Double striking range
 – +5% critical hit chances with this weapon
 – Cursed Wound: critical hits prevent most sources of healing for 2 rounds
-– Each hit heals the wielder between 3 to 7 Hit Points. It's more likely to heal less than more.
+– Each hit heals the wielder between 2 to 6 Hit Points. It's more likely to heal less than more.
 
 THAC0: +4
 Damage: 1d8+4, plus 1d5+1 cold damage

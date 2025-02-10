@@ -1,6 +1,6 @@
 COPY_EXISTING ~HELM18.itm~ ~override~ // CHECK THAT THIS WORKS FOR BGEE TOO
     LPF ITM_REF_UNAME RET ioun_strref = result END
-BUT_ONLY
+
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_CAT RET cat = result END
     LPF ITM_REF_UNAME RET strref = result END
