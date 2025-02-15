@@ -50,7 +50,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 5
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW16.EFF~
         END
@@ -65,7 +65,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 4
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW16.EFF~
         END
@@ -80,7 +80,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 3
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW16.EFF~
         END
@@ -149,7 +149,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 5
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW17.EFF~
         END
@@ -164,7 +164,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 4
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW17.EFF~
         END
@@ -179,7 +179,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 3
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW17.EFF~
         END
@@ -248,7 +248,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 5
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW18.EFF~
         END
@@ -263,7 +263,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 4
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW18.EFF~
         END
@@ -278,7 +278,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 3
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW18.EFF~
         END
@@ -347,7 +347,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 5
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW19.EFF~
         END
@@ -362,7 +362,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 4
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW19.EFF~
         END
@@ -377,7 +377,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 3
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW19.EFF~
         END
@@ -447,7 +447,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 5
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW20.EFF~
         END
@@ -462,7 +462,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 4
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW20.EFF~
         END
@@ -477,7 +477,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 3
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW20.EFF~
         END
@@ -547,7 +547,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 5
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+                
             STR_VAR
                 resource = ~ZSTWHW20.EFF~
         END
@@ -561,7 +561,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 4
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW20.EFF~
         END
@@ -575,7 +575,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 3
                 timing = 1
                 resist_dispel = 1
-                save_bonus = 16777216 // bypass mirror image
+
             STR_VAR
                 resource = ~ZSTWHW20.EFF~
         END

@@ -36,5 +36,5 @@ END
 ACTION_IF _101_fblade_dur_boost OR _101_fblade_undead BEGIN
     COPY_EXISTING ~FBLADE.EFF~ ~override~
         LPF ALTER_EFF_FILE INT_VAR special = 1024 END
-    BUT_ONLY
+    BUT_ONLY IF_EXISTS
 END

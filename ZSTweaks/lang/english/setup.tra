@@ -284,6 +284,7 @@
 @468 = ~Make Call Lightning's damage and scaling more balanced~
 @501 = ~Make Chaotic Commands' duration extend up to level 20 instead of only 18~
 @505 = ~Make Repulse Undead more useful by causing damage and Slow when they're repulsed~
+@506 = ~Make Wall of Moonlight more effective~
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray and Sun Soulbeam Sun Soul Monks scale further and/or do more damage to undead"
@@ -5510,6 +5511,23 @@ Area of Effect: 1 creature
 Saving Throw: Special
 
 By means of this spell, the wizard creates a magical arrow that speeds to its target unerringly. The arrow has no attack or damage bonus, but inflicts 2d4 points of acid damage (no save allowed), which may splash to adjacent enemies, causing the same amount of damage, unless they save vs. Breath. For every 3 levels of the caster, the acid lasts for another round, unless somehow dispelled, inflicting another 2d4 points of damage each round. So at 3rd-5th level, the acid lasts 2 rounds, at 6th-8th level, the acid lasts for 3 rounds, and so on. Splashed enemies do not receive more damage over time.~
+
+
+@8230 = ~Wall of Moonlight
+(Invocation)
+
+Level: 4
+Sphere: Protection, Sun
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 7
+Area of Effect: 8 ft. long, 2 ft. wide wall
+Saving Throw: None
+
+This spell invokes a shimmering tapestry of blue-white force. This wall is intangible, requiring no physical anchor, and can easily be passed through. Evil creatures passing through the wall take 2d9+2 magic damage; undead creatures take 3d9+3 (evil undead would take 5d9+5). Additionally, affected creatures must save vs. Spell or be blinded by 1 round and repulsed backwards with a 25% chance of being knocked to the ground for half a round. A creature that has passed through the wall can only be affected by it once per round. These effects cannot be stopped by Magic Resistance.~
+
+
+
 
 // patching other mods
 // item upgrade

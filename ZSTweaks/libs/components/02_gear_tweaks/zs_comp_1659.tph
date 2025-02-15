@@ -2,7 +2,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING ~HELM31.itm~ ~override~
                   ~HELM32.itm~ ~override~
         LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 31 END
-        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "HELM31" = 0 BEGIN
+        PATCH_IF "%SOURCE_RES%" STR_EQ "HELM31" BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7050) END
         END ELSE BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7051) END

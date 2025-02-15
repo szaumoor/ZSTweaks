@@ -45,7 +45,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN // iwdee deliberately unsupported for now
     COPY_EXISTING ~POTN39.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7465) END
         LPF ALTER_EFFECT INT_VAR match_opcode=91 parameter1=40 END
-        LPF CLONE_EFFECT INT_VAR match_opcode=91 opcode=276 parameter=40 END
+        LPF CLONE_EFFECT INT_VAR match_opcode=91 opcode=276 parameter1=40 END
         LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 p1=2 dur=1800 rd=1 pwr=4 STR_VAR effects=~op=0,p1=1;op=325;op=278~ END
 
     //potion of power

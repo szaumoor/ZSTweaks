@@ -14,7 +14,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_ENCH RET ench = result END
 	PATCH_IF wpn_cat = 24 AND wpn_prof = 106 BEGIN // darts
         LPF ITM_REF_UDESC RET id_udesc = result END
-        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "DART01" != 0 AND id_udesc = basic_dart_udesc BEGIN
+        PATCH_IF (NOT "%SOURCE_RES%" STR_EQ "DART01") AND id_udesc = basic_dart_udesc BEGIN
             LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
         END
 

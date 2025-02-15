@@ -7,7 +7,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 85 parameter1 = 15 END
         LPF GET_DMG_TYPE STR_VAR type = ~cold~ RET cold = result END
         LPF GET_DMG_TYPE STR_VAR type = ~fire~ RET fire = result END
-        LPF ADD_ON_HIT_EFF INT_VAR t=4 p1=1 special=1024 STR_VAR effects = ~op=12,p2=%cold%;op=12,p2=%fire%~ END
+        LPF ADD_ON_HIT_EFF INT_VAR t=4 p1=1 spec=1024 STR_VAR effects = ~op=12,p2=%cold%;op=12,p2=%fire%~ END
 
     COPY_EXISTING ~BOW21.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6181) END
@@ -17,6 +17,6 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 85 parameter1 = 30 END
         LPF GET_DMG_TYPE STR_VAR type = ~cold~ RET cold = result END
         LPF GET_DMG_TYPE STR_VAR type = ~fire~ RET fire = result END
-        LPF ADD_ON_HIT_EFF INT_VAR t=4 p1=2 special=1024 STR_VAR effects = ~op=12,p2=%cold%;op=12,p2=%fire%~ END
-    
+        LPF ADD_ON_HIT_EFF INT_VAR t=4 p1=2 spec=1024 STR_VAR effects = ~op=12,p2=%cold%;op=12,p2=%fire%~ END
+
 END

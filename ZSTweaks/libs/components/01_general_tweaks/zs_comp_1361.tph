@@ -3,9 +3,9 @@ COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
     LPF ITM_CAT RET cat = result END
     LPF ITM_FLAGS RET flags = result END
     LPF IS_FLAG_SET INT_VAR flag = 1 RET is_two_handed = result END
-    PATCH_IF cat = 25 BEGIN // axes
+    PATCH_IF cat = 25  // axes
     // exceptions
-    AND "%SOURCE_RES%" STRING_COMPARE_CASE "a7-ax08" != 0 // AXE OF THE JESTER (wares of the planes)
+    AND NOT "%SOURCE_RES%" STR_EQ "a7-ax08" BEGIN // AXE OF THE JESTER (wares of the planes)
         LPF ITM_ENCH RET ench = result END
         PATCH_IF is_two_handed BEGIN
             PATCH_IF ench < 7 BEGIN
@@ -18,4 +18,3 @@ COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
         END
     END
 BUT_ONLY
-

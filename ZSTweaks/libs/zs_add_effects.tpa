@@ -96,7 +96,7 @@ BEGIN
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~ip=%ip%,t=%t%,op=12,p1=%p1%,p2=%p2%,dnum=%dnum%,dsize=%dsize%,spec=1024~ END
 END
 
-DEFINE_PATCH_FUNCTION ADD_SPL_EFF_TGT
+DEFINE_PATCH_FUNCTION ADD_SPL_EFF_SELF
 INT_VAR
     p1  = 0
     p2  = 0

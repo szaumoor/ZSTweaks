@@ -15,7 +15,6 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         END
 
     COPY_EXISTING ~SCRL8O.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR ref_desc=new_description END
+        LPF ALTER_SPELL INT_VAR ref_desc=new_description END
     BUT_ONLY IF_EXISTS
-
 END

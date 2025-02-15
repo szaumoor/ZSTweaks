@@ -80,7 +80,7 @@ ACTION_IF _446_fball_buff BEGIN
     BUT_ONLY IF_EXISTS
 END
 
-ACTION_IF _446_fball_new_animation = 1 BEGIN
+ACTION_IF _446_fball_new_animation BEGIN
     COPY_EXISTING ~PFIRE2.PRO~  ~override~
         WRITE_BYTE  0x216 0
         WRITE_ASCII 0x21C "SPFIREPI" #8
@@ -101,6 +101,6 @@ ACTION_IF _446_fball_new_animation = 1 BEGIN
 
     ACTION_IF NOT GAME_IS "iwdee" BEGIN // iwdee has a different projectile, skipping for now
         COPY_EXISTING ~SPWI523D.SPL~ ~override~
-            LPF ALTER_HEADER INT_VAR projectile = 234
+            LPF ALTER_HEADER INT_VAR projectile = 234 END
     END
 END

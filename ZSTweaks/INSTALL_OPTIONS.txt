@@ -24,11 +24,11 @@ OUTER_SET _1450_allow_darts     = "1"
 
 ////////////////////////////// Dagger tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-OUTER_SET _1001_sbonus = "-2" // You can change this to override the save penalty given in component 1001 to poisoned throwing daggers. Vanilla is 0, default in component is -2.
+OUTER_SET _1000_sbonus = "-2" // You can change this to override the save penalty given in component 1001 to poisoned throwing daggers. Vanilla is 0, default in component is -2.
 
-OUTER_SET _1001_store_additions = "1" // this will allow the tweak to increase the stock of poisoned daggers (0 to disable)
+OUTER_SET _1000_store_additions = "1" // this will allow the tweak to increase the stock of poisoned daggers (0 to disable)
 
-OUTER_SET _1001_stack_mult = "100" // This sets a percentage multiplier for the number of stacks of poisoned throwing daggers inserted in Component 1001. So, for example if you only want half, you'd set this to 50, if you want 20% more, you'd set it to 120. Values of zero and below are ignored. No effect if the previous variable is set to 1
+OUTER_SET _1000_stack_mult = "100" // This sets a percentage multiplier for the number of stacks of poisoned throwing daggers inserted in Component 1001. So, for example if you only want half, you'd set this to 50, if you want 20% more, you'd set it to 120. Values of zero and below are ignored. No effect if the previous variable is set to 1
 
 ////////////////////////////// Two-handed weapons tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -108,6 +108,9 @@ OUTER_SET _1520_keldsword = "1"
 OUTER_SET _1520_keldarmor = "1"
 
 /////////////////////////////// Class/Kit Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET _2100_sunsoul_ray =  "1"
+OUTER_SET _2100_sunsoul_beam = "1"
 
 OUTER_SET _360_etheral_retribution = "1"
 OUTER_SET _360_writhing_fog =        "1"

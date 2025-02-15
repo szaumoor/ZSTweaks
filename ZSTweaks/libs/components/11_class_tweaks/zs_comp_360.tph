@@ -3,7 +3,6 @@ ACTION_IF _360_etheral_retribution BEGIN
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5210) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 6 dicenumber = 6 END
         LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savebonus = "-2" END
-    
 END
 
 ACTION_IF _360_writhing_fog BEGIN
@@ -32,21 +31,21 @@ END
 ACTION_IF _360_spiritual_clarity BEGIN
     COPY_EXISTING ~SPPR450.SPL~ ~override~
                 ~SPPR450B.SPL~ ~override~
-        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "SPPR450.SPL" = 0 BEGIN
+        PATCH_IF "%SOURCE_RES%" STR_EQ "SPPR450.SPL" BEGIN
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7000) END
         END
         LPF LAST_VALID_HEADER RET h = result END
         SET start_dmg = 7
         FOR ( curr_header = 0; curr_header <= h; ++curr_header ) BEGIN
             LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=curr_header match_opcode=12 parameter1=start_dmg END
-            PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "SPPR450.SPL" = 0 BEGIN
+            PATCH_IF "%SOURCE_RES%" STR_EQ "SPPR450.SPL" BEGIN
                 LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=curr_header match_opcode=146 savingthrow=0 probability1=32 END
             END
             ++start_dmg
         END
         SET next_level = 11
         FOR ( extra_headers = 0; extra_headers < 2; ++extra_headers ) BEGIN
-            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = next_level insert_point= h+1 END
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy=next_level insert_point=h+1 END
             LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=h+1 dicenumber=next_level match_opcode=12 parameter1=next_level END
             ++h
             ++next_level
@@ -58,4 +57,3 @@ ACTION_IF _360_favored_spirits BEGIN
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7530) END
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_duration = 300 duration = 7200 END
 END
-

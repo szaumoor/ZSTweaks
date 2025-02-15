@@ -22,7 +22,7 @@ COPY_EXISTING "SW1H46.ITM" ~override~
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
     LPF ITM_PROF RET wpn_prof = result END
     LPF ITM_APPEARANCE RET wpn_appearance = result END
-	PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STRING_COMPARE_CASE "s1"=0 BEGIN // ninjatos
+	PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STR_EQ "s1" BEGIN // ninjatos
         LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
         LPF ALTER_HEADER INT_VAR silent=1 match_type=2 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
         LPF WPN_SPEED RET s = result END
@@ -31,7 +31,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF ALTER_HEADER INT_VAR match_type = 1 speed = s END
         END
 
-        PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "SW1H48") BEGIN
+        PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
             LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index_ninjato END
             LPF ITM_REF_DESC RET description_index = result END
             PATCH_IF description_index > "-1" BEGIN
@@ -47,10 +47,10 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             END
         END
 
-    END ELSE PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STRING_COMPARE_CASE "ss"=0 BEGIN // wakis
+    END ELSE PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STR_EQ "ss" BEGIN // wakis
         LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
 
-        PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "SW1H48") BEGIN
+        PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
             LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index_waki END
             LPF ITM_REF_DESC RET description_index = result END
             PATCH_IF description_index > "-1" BEGIN

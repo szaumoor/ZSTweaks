@@ -1,22 +1,22 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
-
-    ACTION_IF _190_hpower_thac0 BEGIN
-        COPY_EXISTING ~SPPR412.SPL~ ~override~
-                      ~ohtmps1.SPL~ ~override~
+    ACTION_IF _441_tenser_thac0 BEGIN
+        COPY_EXISTING ~SPWI603.SPL~ ~override~
             LPF LAST_VALID_HEADER RET h = result END
-            LPF ADD_SPELL_HEADER INT_VAR copy_header = h-1 zs_min_level_for_copy = 21 insert_point=h+1 END
-            LPF ALTER_EFFECT INT_VAR header = h+1 match_opcode = 54 parameter1 = 0 END
-            LPF ALTER_EFFECT INT_VAR header = h+1 match_duration = 114 duration = 120 END
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = (h-1) zs_min_level_for_copy = 21 insert_point=(h+1) END
+            LPF ALTER_EFFECT INT_VAR header=(h+1) match_opcode=54 match_parameter2=1 parameter1 = 0 END
+            LPF ALTER_EFFECT INT_VAR header = (h+1) match_duration = 114 duration = 120 END
     END
 
-    ACTION_IF _190_hpower_apr BEGIN
-        COPY ~%MOD_FOLDER/spells/cleric_spells/holy_power~ ~override~
-        COPY_EXISTING ~SPPR412.SPL~ ~override~
-                      ~ohtmps1.SPL~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5120) END
-            LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 parameter2 = 1 power = 4 STR_VAR resource = ~ZSTWAPR1~ END
+    ACTION_IF _441_tenser_apr BEGIN
+        OUTER_SET new_description = RESOLVE_STR_REF(@5130)
+        COPY_EXISTING ~SPWI603.SPL~ ~override~
+            LPF ALTER_SPELL INT_VAR ref_desc=new_description END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 parameter2 = 1 power = 4 STR_VAR resource = ~ZSTWAPR0~ END
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 insert_point = 0 STR_VAR resource = ~ZSTWAPR1~ END
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 insert_point = 0 STR_VAR resource = ~ZSTWAPR0~ END
+
+        COPY_EXISTING ~SCRL7G.ITM~ ~override~
+            LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
 
         ACTION_IF _441_tenser_apr_nonfighters_only BEGIN
             OUTER_SET fighter_all = IDS_OF_SYMBOL(class FIGHTER_ALL)
@@ -27,11 +27,10 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             OUTER_SET fighter_mage_cleric = IDS_OF_SYMBOL(class FIGHTER_MAGE_CLERIC)
             OUTER_SET fighter_mage_thief = IDS_OF_SYMBOL(class FIGHTER_MAGE_THIEF)
 
-            COPY_EXISTING ~ZSTWAPR1.SPL~ ~override~
+            COPY_EXISTING ~ZSTWAPR0.SPL~ ~override~
                 PATCH_FOR_EACH class IN fighter_all fighter_cleric fighter_druid fighter_mage fighter_thief fighter_mage_cleric fighter_mage_thief BEGIN
                     LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 parameter1 = class parameter2=115 insert_point = 0 power = 4 STR_VAR resource = ~%SOURCE_RES%~ END
                 END
         END
     END
-
 END

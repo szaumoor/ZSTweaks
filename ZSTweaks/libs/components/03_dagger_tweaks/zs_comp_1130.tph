@@ -16,7 +16,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
 
     // item upgrade patch for quietus
     ACTION_IF FILE_EXISTS_IN_GAME ~c2dagg01.itm~ BEGIN
-        COPY "%MOD_FOLDER%/patches/quietus" ~override~
+        COPY "%MOD_FOLDER%/patches/item_upgrade/quietus" ~override~
         COPY_EXISTING ~c2dagg01.ITM~ ~override~
             LPF DELETE_EFFECT INT_VAR match_opcode = 263 END
             LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 74 END

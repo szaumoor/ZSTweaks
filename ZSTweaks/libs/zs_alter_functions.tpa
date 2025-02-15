@@ -233,23 +233,23 @@ BEGIN
         SAY IDENTIFIED_DESC "%id_desc%"
     END
 
-    PATCH_IF "%used_up_itm%" STRING_COMPARE_CASE "none" != 0 BEGIN
+    PATCH_IF NOT "%used_up_itm%" STR_EQ "none" BEGIN
         WRITE_ASCII 0x10 "%used_up_itm%" #8
     END
 
-    PATCH_IF "%icon%" STRING_COMPARE_CASE "none" != 0 BEGIN
+    PATCH_IF NOT "%icon%" STR_EQ "none" BEGIN
         WRITE_ASCII 0x3a "%icon%" #8
     END
 
-    PATCH_IF "%ground_icon%" STRING_COMPARE_CASE "none" != 0 BEGIN
+    PATCH_IF NOT "%ground_icon%" STR_EQ "none" BEGIN
         WRITE_ASCII 0x3a "%ground_icon%" #8
     END
 
-    PATCH_IF "%desc_img%" STRING_COMPARE_CASE "none" != 0 BEGIN
+    PATCH_IF NOT "%desc_img%" STR_EQ "none" BEGIN
         WRITE_ASCII 0x58 "%desc_img%" #8
     END
 
-    PATCH_IF "%appearance%" STRING_COMPARE_CASE "none" != 0 BEGIN
+    PATCH_IF NOT "%appearance%" STR_EQ "none" BEGIN
         WRITE_ASCII 0x22 "%appearance%" #2
     END
 END
@@ -399,11 +399,11 @@ BEGIN
         PATCH_FAIL "Passed a wrong value to spell_level: %spell_level%"
     END
 
-    PATCH_IF "%icon%" STRING_COMPARE_CASE "none" != 0 BEGIN
+    PATCH_IF NOT "%icon%" STR_EQ "none" BEGIN
         WRITE_ASCII 0x3a "%icon%" #8
     END
 
-    PATCH_IF "%casting_sound%" STRING_COMPARE_CASE "none" != 0 BEGIN
+    PATCH_IF NOT "%casting_sound%" STR_EQ "none" BEGIN
         WRITE_ASCII 0x10 "%casting_sound%" #8
     END
 END
@@ -464,7 +464,7 @@ BEGIN
         PATCH_FAIL "Passed a wrong value to class: %alignment%"
     END
 
-    PATCH_IF "%dialog%" STRING_COMPARE_CASE "none" != 0 BEGIN
+    PATCH_IF NOT "%dialog%" STR_EQ "none" BEGIN
         WRITE_ASCII 0x2cc dialog #8
     END
 END
