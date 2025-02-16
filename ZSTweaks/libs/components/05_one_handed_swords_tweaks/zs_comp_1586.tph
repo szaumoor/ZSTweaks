@@ -6,7 +6,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         SET burning = RESOLVE_STR_REF(@7561)
         LPF ADD_ON_HIT_EFF INT_VAR p2=fire tmg=4 dnum=1 dsize=3 stype=1 STR_VAR effects=~op=12,tmg=0,spec=1024;op=12,dur=6,spec=1024;op=12,dur=12,spec=1024;op=139,tmg=0,dnum=0,dsize=0,p2=0,p1=%burning%~ END
 
-        PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1400" BEGIN
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1400" BEGIN
             SPRINT strref @7560
             SPRINT str @99999
             LPF WPN_DMG RET dmg = result END

@@ -7,12 +7,12 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF GET_DMG_TYPE STR_VAR type = ~magic~ RET magic = result END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=178,p1=%undead%,p2=3,spec=2~ END
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p2=2;op=12,p1=4,p2=%magic%~ END
-        PATCH_IF _1450_allow_katanas AND (MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1450" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103") BEGIN // update +4 enchantment
+        PATCH_IF _1450_allow_katanas AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN // update +4 enchantment
             LPF PROBABILITY_BONUS INT_VAR ench = 4 RET bonus = result END
             LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 326 probability1=(bonus+base_sci_ka) STR_VAR match_resource = ~ZSTWK3~ resource = ~ZSTWK4~  END
         END
 
-        PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1370" BEGIN
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1370" BEGIN
             SPRINT strref @6070
             SPRINT str @99999
             LPF WPN_DMG RET dmg = result END
@@ -30,12 +30,12 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF GET_DMG_TYPE STR_VAR type = ~magic~ RET magic = result END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=178,p1=%undead%,p2=3,spec=2~ END
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p2=2;op=12,p1=6,p2=%magic%~ END
-        PATCH_IF _1450_allow_katanas AND (MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1450" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103") BEGIN // update +5 enchantment
+        PATCH_IF _1450_allow_katanas AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN // update +5 enchantment
             LPF PROBABILITY_BONUS INT_VAR ench = 5 RET bonus = result END
             LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 326 probability1=(bonus+base_sci_ka) STR_VAR match_resource = ~ZSTWK4~ resource = ~ZSTWK5~ END
         END
 
-        PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1370" BEGIN
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1370" BEGIN
             SPRINT strref @6071
             SPRINT str @99999
             LPF WPN_DMG RET dmg = result END

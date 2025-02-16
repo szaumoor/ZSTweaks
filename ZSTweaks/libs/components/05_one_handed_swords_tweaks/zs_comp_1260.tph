@@ -5,7 +5,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF GET_DMG_TYPE STR_VAR type = ~electricity~ RET electricity = result END
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,tmg=9,p2=%electricity%,dsize=3,dnum=1,spec=1024~ END
 
-        PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1350" BEGIN
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1350" BEGIN
             SPRINT strref @6120
             SPRINT str @99999
             LPF WPN_DMG RET dmg = result END

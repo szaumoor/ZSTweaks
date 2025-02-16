@@ -20,7 +20,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF GET_DMG_TYPE STR_VAR type = ~fire~ RET fire = result END
         LPF ADD_ON_HIT_EFF STR_VAR effects =~op=12,dsize=4,dnum=1,p2=%fire%,spec=1024~ END
 
-        PATCH_IF _1450_allow_lswords AND (MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1450") BEGIN
+        PATCH_IF _1450_allow_lswords AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1450") BEGIN
             LPF PROBABILITY_BONUS INT_VAR ench = 3 RET bonus = result END
             LPF ALTER_EFFECT INT_VAR match_opcode=326 probability1=(bonus+base_ls_staff) STR_VAR match_resource="ZSTWL1" resource="ZSTWL3" END
         END
@@ -32,7 +32,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = result END
         LPF ADD_ON_HIT_EFF INT_VAR p1=2 p2=piercing tmg=3 stype=2 spec=1024 STR_VAR effects = ~op=12,tmg=0,p1=1,stype=0;op=12,p1=1,dur=1;op=12,dur=2;op=12,dur=3;op=12,dur=4;op=12,dur=5;op=12,p1=1,dur=6~ END
 
-        PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1150" BEGIN
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" BEGIN
             SPRINT desc @6046
             SPRINT str @99999
             INNER_PATCH_SAVE desc ~%desc%~ BEGIN

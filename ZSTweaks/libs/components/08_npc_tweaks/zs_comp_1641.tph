@@ -1,5 +1,4 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
-    
     COPY_EXISTING ~SPIN829.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 122 parameter1 = 10 END
     BUT_ONLY IF_EXISTS

@@ -1,8 +1,8 @@
 ACTION_IF FILE_EXISTS_IN_GAME ~c2sw1h03.itm~ BEGIN
     ACTION_IF
-        (MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1470~ AND
-        MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1588~ AND
-        MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1589~) OR
+        (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1470~ AND
+        MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1588~ AND
+        MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1589~) OR
         group_component = 1 BEGIN
 
             COPY_EXISTING ~c2sw1h03.itm~ ~override~

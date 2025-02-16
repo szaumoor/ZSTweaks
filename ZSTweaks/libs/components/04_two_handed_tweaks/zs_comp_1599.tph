@@ -8,7 +8,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ADD_EQUIPPED_EFF INT_VAR p1=mind_flayer p2=4 spec=2 STR_VAR effects= ~op=178;op=179~ END
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,p1=%mind_flayer%,p2=4,res=ZSTWPSIB~ END
 
-        PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1430" BEGIN
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
             SPRINT strref @7690
             SPRINT str @99999
             LPF WPN_DMG RET dmg = result END

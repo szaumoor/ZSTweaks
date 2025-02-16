@@ -8,7 +8,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         SET barbarian = IDS_OF_SYMBOL(kit BARBARIAN)
         LPF ADD_EQUIPPED_EFF INT_VAR p1=barbarian p2=9 STR_VAR effects=~op=177,res=ZSTWWARA;op=177,res=ZSTWWARB;op=177,res=ZSTWWARC;op=177,res=ZSTWWARD;op=177,res=ZSTWWARE~ END
 
-        PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1430" BEGIN
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
             SPRINT new_description @6861
             SPRINT str @99999
             LPF WPN_DMG RET dmg = result END

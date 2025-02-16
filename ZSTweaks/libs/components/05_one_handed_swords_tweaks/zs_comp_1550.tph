@@ -2,7 +2,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY ~%MOD_FOLDER%/items/drizzt_weapons~ ~override~
     COPY_EXISTING "SW1H15.ITM" ~override~
         LPF ALTER_ITEM INT_VAR this_plus=1 id_ref_desc=RESOLVE_STR_REF(@6490) ench=5 flags=2**8 END
-        PATCH_IF _1450_allow_scimitars AND (MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1450" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103") BEGIN // finesse
+        PATCH_IF _1450_allow_scimitars AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN // finesse
             LPF ALTER_EFFECT INT_VAR match_opcode=326 STR_VAR match_resource="ZSTWL3" resource="ZSTWL5" END
         END
         LPF GET_DMG_TYPE STR_VAR type = ~cold~ RET cold = result END

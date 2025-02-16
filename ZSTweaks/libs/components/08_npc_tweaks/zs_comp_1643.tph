@@ -1,13 +1,13 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING ~NPSW04.ITM~ ~override~
-        PATCH_IF MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ "1120" OR MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ "103" BEGIN
+        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1120" OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ "103" BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 263 parameter1 = 1 END
         END ELSE BEGIN
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=178,p1=202,p2=5,spec=4;op=178,p1=19,p2=5,spec=4;op=263,p1=1~ END
         END
         LPF RM_STAT_REQS END
 
-        PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1370" BEGIN
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1370" BEGIN
             SPRINT strref @7100
             SPRINT str @99999
             LPF WPN_DMG RET dmg = result END

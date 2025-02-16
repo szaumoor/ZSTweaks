@@ -7,7 +7,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             SET mask_evil = IDS_OF_SYMBOL(alignmen MASK_EVIL)
             LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=177 match_parameter2=8 match_parameter1=51 parameter1=mask_evil  END
 
-            PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1430" BEGIN
+            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
                 SPRINT str @99999
                 LPF WPN_DMG RET dmg = result END
                 INNER_PATCH_SAVE strref ~%strref%~ BEGIN
@@ -23,7 +23,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             SET mask_evil = IDS_OF_SYMBOL(alignmen MASK_EVIL)
             LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 1 match_opcode = 177 match_parameter2 = 8 match_parameter1 = 51 parameter1 = mask_evil  END
 
-            PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1430" BEGIN
+            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
                 SPRINT str @99999
                 LPF WPN_DMG RET dmg = result END
                 INNER_PATCH_SAVE strref ~%strref%~ BEGIN
@@ -47,7 +47,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=177 match_parameter2=8 savingthrow=0 END
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=148 header_type=3 parameter1=20 END
 
-            PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1430" BEGIN
+            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
                 SPRINT str @99999
                 LPF WPN_DMG RET dmg = result END
                 INNER_PATCH_SAVE strref ~%strref%~ BEGIN
@@ -74,7 +74,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=177 match_parameter2=8 savingthrow=0 savebonus=0 END
             LPF ALTER_EFFECT INT_VAR match_opcode=148 header_type=3 parameter1=30 END
 
-            PATCH_IF MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "103" OR MOD_IS_INSTALLED "%MOD_FOLDER%.tp2" "1430" BEGIN
+            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
                 SPRINT str @99999
                 LPF WPN_DMG RET dmg = result END
                 INNER_PATCH_SAVE strref ~%strref%~ BEGIN

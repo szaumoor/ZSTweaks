@@ -93,7 +93,7 @@ OUTER_SET _101_fblade_dur_boost = "1" // allows the duration part of the tweak t
 
 OUTER_SET _190_hpower_thac0 = "1" // allows the tweak to holy power THAC0 tweak to happen
 OUTER_SET _190_hpower_apr   = "1" // allows the tweak to holy power APR tweak to happen
-OUTER_SET _441_tenser_apr_nonfighters_only = "1" // this will make the APR bonuses only affect casters without fighter levels, for balance, since it would be too easy to increase APR excessively for them (0 to disable)
+OUTER_SET _441_hpower_apr_nonfighters_only = "1" // this will make the APR bonuses only affect casters without fighter levels, for balance, since it would be too easy to increase APR excessively for them (0 to disable)
 
 OUTER_SET _250_quake_pfriendly = "1"
 OUTER_SET _250_quake_no_shake  = "1"

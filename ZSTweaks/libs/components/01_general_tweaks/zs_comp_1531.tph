@@ -12,10 +12,10 @@ COPY_EXISTING ~flpr717a.SPL~ ~override~ // CREEPING DOOM SUBSPELL
 BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~SPPR707.SPL~ ~override~ // SUNRAY, bypasses magic resistance
-    LPF ALTER_EFFECT INT_VAR resist_dispel=3 END //
-    LPF ALTER_EFFECT INT_VAR match_opcode = 139 resist_dispel = 0 END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 146 resist_dispel = 0 END
-    PATCH_IF MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ "467" BEGIN
+    LPF ALTER_EFFECT INT_VAR silent = 1 resist_dispel=3 END //
+    LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 139 resist_dispel = 0 END
+    LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 146 resist_dispel = 0 END
+    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ "467" OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ "99" BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode = 326 resist_dispel = 0 END
     END ELSE BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode = 177 resist_dispel = 0 END

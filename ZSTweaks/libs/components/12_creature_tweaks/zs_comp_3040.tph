@@ -1,7 +1,7 @@
 COPY ~%MOD_FOLDER%/creatures/planetar~ ~override~
 COPY_EXISTING ~PLANETAR.ITM~ ~override~
 
-  PATCH_IF MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1541~ OR MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~103~ BEGIN // stoneskin vorpal prot
+  PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN // stoneskin vorpal prot
     LPF DELETE_EFFECT STR_VAR match_resource = ~ZSTWVRPA~ END
     LPF ALTER_EFFECT INT_VAR match_probability1 = 24 probability1 = 19 END
   END ELSE BEGIN

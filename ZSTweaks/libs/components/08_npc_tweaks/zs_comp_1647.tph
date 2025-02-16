@@ -1,5 +1,4 @@
 ACTION_IF GAME_IS "bgee eet" BEGIN
-
     COPY_EXISTING ~SHARTD.CRE~ ~override~
                 ~SHARTE.CRE~ ~override~
                 ~SHARTE4.CRE~ ~override~

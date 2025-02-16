@@ -26,7 +26,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 324 match_parameter2 = 19 probability1 = 29 probability2 = 0 END
             LPF ALTER_EFFECT INT_VAR match_probability2 = 50 probability1 = 100 probability2 = 0 END
             LPF ALTER_HEADER INT_VAR match_type = 1 dicesize = 4 dicenumber = 1 END
-            PATCH_IF MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~1440~ OR MOD_IS_INSTALLED ~%MOD_FOLDER%.tp2~ ~103~ BEGIN
+            PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 5 to_hit = 6 END
             END ELSE BEGIN
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 5 to_hit = 5 END
