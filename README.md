@@ -62,11 +62,11 @@ This makes wakizashis hit as a slashing weapon if the circumstances favor it. IR
 
 Just a small bonus to make it more interesting and different compared to heavy crossbows. It's not too far-fetched anyway to think smaller crossbows can be reloaded faster. This will affect crossbows that have an APR bonus already, i.e., 1/2 APR will be added.
 
-**Component 1361:** Make one-handed axes deal extra damage equal to its base damage on critical hits
+**Component 1361:** Make axes deal extra damage equal to its base damage on critical hits
 
 The only difference between axes and swords functionally is the speed factor. Axes are 2 points slower than long swords. Speed factor determines how early or late you hit during your turn to attack each round. Its significance is debatable, and in my experience it's much more important for backstabbing, to ensure that the first movement of your character when attacking is an actual attack and not something cosmetic. To widen the difference between both, axes have the following difference:
 
-- Melee critical hits deal extra damage equal to 1d8 + Enchantment
+- Melee critical hits for one-handed axes deal extra damage equal to 1d8 + Enchantment (1d12 in the case of two-handed axes)
 - Ranged critical hits deal extra damage equal to 1d6 + Enchantment
 
 For example, a critical hit with a +3 sword could deal 20 slashing damage, but if it was an axe, it would deal instead between 24-31 slashing damage (i.e. 20 plus 1d8+3)
@@ -1637,6 +1637,15 @@ This improves the spell in the following ways:
 - After being pushed, they suffer the effects of Slow for half a round.
 
 None of these effects are subject to magic resistance though it's a level 5 effect, and thus liches are unaffected.
+
+**Component 506:** Make Wall of Moonlight more effective
+
+
+**Component 507:** Make Aid a party buff and optionally disable the character glow
+
+This makes the spell generally more useful by making it a party buff. To avoid issues with combat scripts, the targetting is vanilla, that is, Aid is cast on a target, and then it spreads to nearby targets. Also, for convenience, the range of the spell is no longer melee, but equivalent to the range of the spell Poison.
+
+Optionally, the character glow can be disabled in the configuration file.
 
 </details>
 
