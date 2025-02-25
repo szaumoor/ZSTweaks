@@ -167,35 +167,6 @@ Finally, the weapon categories affected are optional and can be turned off in th
 
 This reduces the number of dice thrown of DAGG11 and DAGG12 to 1, so they are not the only good choice for daggers to maximize damage. And for consistency. Generally speaking, I dislike this sort of unbalanced design. DAGG11 specifically, already conforms to this rule in BGEE.
 
-**Component 1531:** Make all divination spells and a few spells ignore magic resistance, where it makes sense
-
-This component makes divination spells that are affected by Magic Resistance (which seems odd) lose that restriction and also cannot be dispelled by Dispel Magic, unless noted. Affected spells include: Detect Evil, Know Alignment.
-
-Additionally, a few spells also bypass magic resistance, because it makes sense in my judgment. My rationale:
-- Stinking Cloud: It's a fart cloud that smells so awful, it can make you lose consciousness. Puh-lease
-- Entangle, Grease & Web (and other web spells used by creatures): It's physical webs, grease, and animated vegetation, so I think it makes sense
-- Summon Cow: Because it's a cow falling on you, duh
-- Glitterdust: It's just a ton of conjured sparkly dust that blinds and makes enemies visible. Can be dispelled
-- Magical Stone: because you're just hurling a stone magically
-- Call Lightning: because the druid is beckoning the skies to shoot lightning onto your foes, which means it's not exactly the same as Lightning Bolt, which is generated directly from the wizard
-- Summon Insects/Insect Plague/Creeping Doom: It's conjured insects doing damage. Can be dispelled though.
-- Nature's Beauty: You're blinding or killing others by the shock, which is something that is the result of plain perception, so I don't think it makes much sense to be affected by magic resistance
-- Storm of Vengeance: Because it's a spell that causes the skies and the earth to go crazy. It might make it more useful in some instances, and not just as a way to kill <=8 HD or to interrupt spellcasters
-
-Overall this should make all these spells more usable throughout the trilogy of games, especially against enemies such as drow, who have a very high chance of resisting magic.
-
-Please bear in mind that this component should be installed after tweaks that affect these spells, especially if they add new effects to them; otherwise, this tweak will only work partially, and inconsistent results could ensue. For this reason, this component is not included as part of the component that installs the whole group of components.
-
-**Component 1532:** Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage
-
-I do not like gear that you can wear without any effect whatsoever. I can live with rings that don't do that, because there's no reasonable benefit to just wearing a ring. Therefore, wearing unenchanted belts, boots, and bracers will grant the wearer +1 HP which I think is reasonable enough, and it doesn't change balance much.
-
-For consistency, all of the enchanted belts, boots and bracers will also grant this. The unenchanted items will still be a bottom-of-the-barrel choice, but at least they don't exist just as unglorified decoration and will provide some use, especially at the beginning of BGEE (and IWDEE?), which should encourage filling all the gear slots.
-
-Side effect to take note: if a joinable character joins while having any such item equipped, you must re-equip it in order to benefit from this effect, as the newly available effect will not be re-evaluated otherwise.
-
-WARNING: Install this component DEAD LAST after ANY mod that modifies items, including any other component in this mod that modifies such items. When in doubt, just make it your last.
-
 **Component 1533:** Rebalance some wands
 
 - Wand of Magic Missiles: it casts 3 missiles, not 1, which makes it generally useful for the majority of both games, same as casting from a scroll. A single missile is quite often a missed opportunity for an action during your round
@@ -1022,6 +993,8 @@ So. You get this weapon fairly late in BGEE, and it sucks. Also, "cold-using cre
 - Silver Dragons are included as "cold-using creatures"
 - The extra damage will be fire damage, not slashing
 
+**Component 1608** Make Water's Talon +4 more balanced (Item Upgrade)
+
 
 </details>
 
@@ -1140,6 +1113,10 @@ This removes the save from the damage effect, therefore 1dx fire damage will alw
 **Component 1346:** Make Arrows of Piercing always cause at least half of the extra piercing damage
 
 This makes the arrows cause at least 3 extra piercing damage when save succeeds. This should make these expensive arrows feel like less of a waste when used, especially against targets with good saves. Additionally, these arrows will have a 10% higher chance of critically hitting.
+
+**Component 1347:** Make Bolts of Biting have an inherent +5% extra critical hit chance, and deal +1 poison damage on hit
+
+This improves the bolts slightly by causing direct poison damage, which may be useful for caster interruption, and it helps compensates the lack of enchantment or thac0 bonus. Additionally, these bolts will have a 5% higher chance of critically hitting, since I envision these as assassin's tools.
 
 </details>
 
@@ -1412,6 +1389,12 @@ If you think this is overpowered, consider these damage range values:
 Also, Delayed Blast Fireball no longer has a markedly smaller explosion radius compared to Sunfire and Fireball, but the exact same as those.
 
 Lastly, this patches the Fireball explosions such that the god-awful EE explosion is substituted by something much more epic looking in my view. This behavior can be disabled in the configuration file.
+
+**Component 447:** Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance
+
+This makes this spell more similar to the 5E behavior, where the acid creates a splash zone. The splash zone will affect immediately adjacent enemies if they fail a save vs. Breath, without affecting the primary target, or allies, for convenience and to avoid modifying the normal strategy in the game when using this spell or meddling with enemy AI. The splash damage is equal to the base immediate damage of the spell, and it does not persist over time, only the primary target gets damage over time.
+
+Additionally, the spell will bypass magic resistance, as it is conceived as conjured acid, not a magical effect. This behavior can be disabled in the configuration file.
 
 </details>
 
@@ -1780,6 +1763,14 @@ This additionally documents in the description the fact that it also protects ag
 
 RR's implementation of Crippling Strike can actually increase Strength if dealing with something that has 9 strength or less, and the lower the strength the less benefit you get. I changed this by making it instead reduce the strength by half its current value, which allows it to generally stay relevant no matter what you face.
 
+**Component 2231:** Give Dragon Disciples (Red) automatic access to all fire-based wizard spells and optionally increase fire damage by 5%
+
+This component gives Red Dragon Disciples access to all fire-based wizard spells by default. Additionally, it increases the damage of all fire-based spells by 5% for the Red Dragon Disciple. The latter is optional and can be disabled in the configuration file.
+
+Fair warning: the spell selection when creating the dragon disciple WILL NOT tell you that the spells are available already or otherwise offer any feedback. Just make sure if you use this component that you know that the spells are available already.
+
+Lastly, this will patch any dragon disciples that may exist in the game, adding these spells to their repertoire. Currently it only supports the dragon disciples that exist in vanilla (even if they were overhauled). Support for specific colors and metals of dragon disciple, such as the ones offered by ToF, might be added in the future. Most likely I only need to know the kit id of those kits to offer compatibility.
+
 </details>
 
 ---
@@ -1827,9 +1818,84 @@ Planetars have a 25% of dealing a vorpal hit with a -4 save penalty, which is ev
 I don't like being killed without any reasonable chance to defend against the killing blow other than luck or Death Ward. Especially with demons, who are very capricious about who to target. The Balor's vorpal attack has a 16% chance of killing anything forever (no resurrection allowed), and only by equipping something that grants immunity against death effects, or using Death Ward, can you avoid it. Therefore:
 
 - Probability of triggering adequately brought down to 15% chance, as intended
-- It still forces a Save vs. Death at -2 to trigger.
+- It still forces a Save vs. Death at -2 to trigger (this penalty can be overridden in the config file).
 
 In short, their vorpal weapon will be identical to the silver sword's, but will trigger 15% of the time instead of 25%.
+
+**Component 3060:** Make Mencar Pebblecrusher a fair fighter for his level or make him a joke (optional)
+
+I hate his guts. He's a level 14 fighter with 200 health and 4.5 Attacks per round. This makes him fair by simply:
+
+- Removing artificial health for a fighter of his level. Health will now be 105 plus the constitution bonus, which unless a mod changes it, it will be 105 + 45 = 150
+- Removes the extra APR, so he will have 2.5 APR, as expected for a level 14 fighter according to his proficiency and fighter levels. This of course may vary if mods change the fighter classes
+
+Alternatively (disabled by default; check config file to change this), he can be made a joke by removing all of his clothes and weapons (which will be moved to his inventory), and making him have a 50% chance every 2 rounds to fall prone or become confused for 1 round. This makes him sound like he's insane, and his friends are just pretending he has clothes on.
+
+**Component 3070:** Make lions and other cat creatures not slow as molasses
+
+Lion and other feline animations are stupidly slow. I don't know why they didn't patch this along with bears. You could outrun them with a snail. This component makes them move at a more reasonable speed. Essentially, it will search for creatures with a cat-like animation and if they don't have a moment rate modifier already, it adds a movement rate 2 opcode modifier of 6, which makes them move at a reasonably fast pace.
+
+**Component 3080:** Make creature on-hit effects that should be natural not behave as magical attacks that can be dispelled or magically resisted
+
+There are several creatures whose effects when they hit don't seem to make much sense to treat as magical effects that can be resisted by magic resistance or dispelled with Dispel Magic. This component makes the following changes:
+
+- Ghouls, Ghasts, Liches, Shadow Fiends, and Vampiric Wolves: Their paralysis can no longer be dispelled or resisted by magic resistance. It's a natural effect and thus may only be resisted with saving throws and removed with spells such as Remove Paralysis or Free Action.
+- Spirit Trolls: their strength sapping is not considered magical anymore, same as other shadow creatures and wraith spiders. It doesn't seem to make sense that it would be magical compared to other shadows. Therefore it may only he cured with Restoration spells or by resting / waiting.
+- Carrion Crawlers: The paralysis is no longer considered magical. In fact, in the lore, it's not magical at all, it's a paralytic toxin spread with their tentacles. There's even a paralytic poison made from their brain juices.
+
+**Component 3090:** Make Shadow creatures slightly harder to damage, and make strength sapping last much longer so it's an actual inconvenience
+
+This component makes the following changes:
+
+- All creatures of the shadow race will have at least a 30% physical damage resistance
+- And a +2 bonus to their AC, whatever that is
+- Strength sapping from shadows, spirit trolls, spider wraiths and the like always lasts for 8 hours, making it more than an inconvenience. It's a real problem now if you get hit too often.
+
+
+</details>
+
+---
+
+<details>
+
+<summary><b>End-of-install-order components </b></summary>
+
+**Component 1531:** Make all divination spells and a few spells ignore magic resistance, where it makes sense
+
+This component makes divination spells that are affected by Magic Resistance (which seems odd) lose that restriction and also cannot be dispelled by Dispel Magic, unless noted. Affected spells include: Detect Evil, Know Alignment.
+
+Additionally, a few spells also bypass magic resistance, because it makes sense in my judgment. My rationale:
+- Stinking Cloud: It's a fart cloud that smells so awful, it can make you lose consciousness. Puh-lease
+- Entangle, Grease & Web (and other web spells used by creatures): It's physical webs, grease, and animated vegetation, so I think it makes sense
+- Summon Cow: Because it's a cow falling on you, duh
+- Glitterdust: It's just a ton of conjured sparkly dust that blinds and makes enemies visible. Can be dispelled
+- Magical Stone: because you're just hurling a stone magically
+- Call Lightning: because the druid is beckoning the skies to shoot lightning onto your foes, which means it's not exactly the same as Lightning Bolt, which is generated directly from the wizard
+- Summon Insects/Insect Plague/Creeping Doom: It's conjured insects doing damage. Can be dispelled though.
+- Nature's Beauty: You're blinding or killing others by the shock, which is something that is the result of plain perception, so I don't think it makes much sense to be affected by magic resistance
+- Storm of Vengeance: Because it's a spell that causes the skies and the earth to go crazy. It might make it more useful in some instances, and not just as a way to kill <=8 HD or to interrupt spellcasters
+
+Overall this should make all these spells more usable throughout the trilogy of games, especially against enemies such as drow, who have a very high chance of resisting magic.
+
+Please bear in mind that this component should be installed after tweaks that affect these spells, especially if they add new effects to them; otherwise, this tweak will only work partially, and inconsistent results could ensue. For this reason, this component is not included as part of the component that installs the whole group of components.
+
+**Component 1532:** Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage
+
+I do not like gear that you can wear without any effect whatsoever. I can live with rings that don't do that, because there's no reasonable benefit to just wearing a ring. Therefore, wearing unenchanted belts, boots, and bracers will grant the wearer +1 HP which I think is reasonable enough, and it doesn't change balance much.
+
+For consistency, all of the enchanted belts, boots and bracers will also grant this. The unenchanted items will still be a bottom-of-the-barrel choice, but at least they don't exist just as unglorified decoration and will provide some use, especially at the beginning of BGEE (and IWDEE?), which should encourage filling all the gear slots.
+
+Side effect to take note: if a joinable character joins while having any such item equipped, you must re-equip it in order to benefit from this effect, as the newly available effect will not be re-evaluated otherwise.
+
+WARNING: Install this component DEAD LAST after ANY mod that modifies items, including any other component in this mod that modifies such items. When in doubt, just make it your last.
+
+**Component 1548:** Make Void-weapons strength-sapping not affect undead, and able to critically hit to deal double damage
+
+Void-weapons are supposed to be the bane of the living, not the dead. Therefore, the on-equip strength-sapping effect will no longer affect undead (such as with Hexxat).
+
+Additionally, the weapons will be able to critically hit, dealing double damage, which is a feature that was missing from the original implementation. That is, on a critical hit they will deal double their magic damage, similar to other weapons, instead of doing nothing.
+
+This component should be installed after any other tweak that may change void weapons, or their weapon groups in general. Note that my backstab multiplier tweak will not affect the voidsword, so you can install it before or after this component, it doesn't matter, as backstab multipliers don't apply to those weapons (for now wink wink).
 
 </details>
 

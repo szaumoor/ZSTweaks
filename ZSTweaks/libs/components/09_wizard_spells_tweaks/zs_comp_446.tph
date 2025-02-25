@@ -1,4 +1,4 @@
-ACTION_IF _446_fball_buff BEGIN
+ACTION_IF zst_446_fball_buff BEGIN
     OUTER_SET new_description_fireball = RESOLVE_STR_REF(@7520)
     COPY_EXISTING ~SPWI304.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=new_description_fireball END
@@ -80,7 +80,7 @@ ACTION_IF _446_fball_buff BEGIN
     BUT_ONLY IF_EXISTS
 END
 
-ACTION_IF _446_fball_new_animation BEGIN
+ACTION_IF zst_446_fball_new_animation BEGIN
     COPY_EXISTING ~PFIRE2.PRO~  ~override~
         WRITE_BYTE  0x216 0
         WRITE_ASCII 0x21C "SPFIREPI" #8

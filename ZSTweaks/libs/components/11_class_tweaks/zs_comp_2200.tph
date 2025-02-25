@@ -7,3 +7,10 @@ ACTION_IF FILE_EXISTS_IN_GAME "bdsw1hca.itm" BEGIN
             LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 263 END
     END
 END
+
+COPY_EXISTING_REGEXP ~.*\.CRE~ ~override~
+    READ_LONG 0x244 kit
+    PATCH_IF kit = IDS_OF_SYMBOL(kit BLACKGUARD) BEGIN
+        LPF ADD_CRE_EFFECT INT_VAR opcode=263 target=2 parameter1=2 parameter2=1 timing=1 END
+    END
+BUT_ONLY

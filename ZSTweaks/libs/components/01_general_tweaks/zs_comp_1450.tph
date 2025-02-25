@@ -19,7 +19,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
     PATCH_IF ench >= 0 AND ench < 7 BEGIN
         LPF PROBABILITY_BONUS INT_VAR ench = ench RET bonus = result END
 
-        PATCH_IF _1450_allow_daggers AND cat=16 AND prof=96
+        PATCH_IF zst_1450_allow_daggers AND cat=16 AND prof=96
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg15" // Last Resort (wares of the planes)
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg05" // Entropic Blade (wares of the planes)
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg09" // Entropic Blade (wares of the planes)
@@ -27,14 +27,14 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWD%ench%~ END
             LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWZ%ench%~ END
 
-        END ELSE PATCH_IF _1450_allow_darts AND cat=14 BEGIN
+        END ELSE PATCH_IF zst_1450_allow_darts AND cat=14 BEGIN
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "bdbull02" BEGIN // bullets of darkness (SoD)
                 LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_sling_wk_nj+bonus) STR_VAR class=~THIEF~ spell=~ZSTWS%ench%~ END
             END ELSE BEGIN
                 LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_sling_wk_nj+bonus) insert_point="-1" STR_VAR class=~THIEF~ spell=~ZSTW#3~ END
             END
 
-        END ELSE PATCH_IF _1450_allow_bows AND cat=5 BEGIN
+        END ELSE PATCH_IF zst_1450_allow_bows AND cat=5 BEGIN
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "bdarow01" AND // ANTIMAGIC ARROW SOD
                      NOT "%SOURCE_RES%" STR_EQ "cd51ari"  AND  // BROKEN SPIRIT ARROW (the calling)
                      NOT "%SOURCE_RES%" STR_EQ "AROW06"
@@ -46,7 +46,7 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                 END
             END
 
-        END ELSE PATCH_IF _1450_allow_xbows AND cat=31 BEGIN
+        END ELSE PATCH_IF zst_1450_allow_xbows AND cat=31 BEGIN
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "BOLT07"
                  AND NOT "%SOURCE_RES%" STR_EQ "a7-bo01" // boltr of acheron (wares of the planes)
                  AND NOT "%SOURCE_RES%" STR_EQ "a7-bo01" // acidic sponge bolts (wares of the planes)
@@ -55,13 +55,13 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                 LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_arrow_bolt+bonus) STR_VAR class=~THIEF~ spell=~ZSTWB%ench%~ END
             END
 
-        END ELSE PATCH_IF _1450_allow_darts AND cat=24 AND prof=106 BEGIN
+        END ELSE PATCH_IF zst_1450_allow_darts AND cat=24 AND prof=106 BEGIN
             LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWT%ench%~ END
 
-        END ELSE PATCH_IF _1450_allow_staves AND cat=26 AND prof=102 BEGIN
+        END ELSE PATCH_IF zst_1450_allow_staves AND cat=26 AND prof=102 BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ls_staff+bonus) STR_VAR class=~THIEF~ spell=~ZSTWQ%ench%~ END
 
-        END ELSE PATCH_IF _1450_allow_lswords AND cat=20 AND prof=90 BEGIN //ls
+        END ELSE PATCH_IF zst_1450_allow_lswords AND cat=20 AND prof=90 BEGIN //ls
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "bdsw1h06" // voidsword (SoD)
                  AND NOT "%SOURCE_RES%" STR_EQ "KILLSW01" // cheat sword
                  AND NOT "%SOURCE_RES%" STR_EQ "a7-sw01" // celestial fire (wares of the planes)
@@ -73,22 +73,22 @@ COPY_EXISTING_REGEXP ".*\.itm" ~override~
                 END
             END
 
-        END ELSE PATCH_IF _1450_allow_scimitars AND cat=20 AND prof=95 AND "%appearance%" STR_EQ "sc" BEGIN
+        END ELSE PATCH_IF zst_1450_allow_scimitars AND cat=20 AND prof=95 AND "%appearance%" STR_EQ "sc" BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sci_ka+bonus) STR_VAR class=~THIEF~ spell=~ZSTWL%ench%~ END
 
-        END ELSE PATCH_IF _1450_allow_ninjatos AND cat=20 AND prof=95 AND "%appearance%" STR_EQ "s1" BEGIN
+        END ELSE PATCH_IF zst_1450_allow_ninjatos AND cat=20 AND prof=95 AND "%appearance%" STR_EQ "s1" BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sling_wk_nj+bonus)STR_VAR class=~THIEF~ spell=~ZSTWJ%ench%~ END
 
-        END ELSE PATCH_IF _1450_allow_katanas AND cat=20 AND prof=94 BEGIN
+        END ELSE PATCH_IF zst_1450_allow_katanas AND cat=20 AND prof=94 BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sci_ka+bonus) STR_VAR class=~THIEF~ spell=~ZSTWK%ench%~ END
 
-        END ELSE PATCH_IF _1450_allow_wakis AND cat=19 AND prof=95 AND "%appearance%" STR_EQ "ss" BEGIN
+        END ELSE PATCH_IF zst_1450_allow_wakis AND cat=19 AND prof=95 AND "%appearance%" STR_EQ "ss" BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) STR_VAR class=~THIEF~ spell=~ZSTWW%ench%~ END
 
-        END ELSE PATCH_IF _1450_allow_sswords AND cat=19 AND prof=91 BEGIN
+        END ELSE PATCH_IF zst_1450_allow_sswords AND cat=19 AND prof=91 BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ss_club+bonus) STR_VAR class=~THIEF~ spell=~ZSTWY%ench%~ END
 
-        END ELSE PATCH_IF _1450_allow_clubs AND cat=17 AND prof=115 BEGIN
+        END ELSE PATCH_IF zst_1450_allow_clubs AND cat=17 AND prof=115 BEGIN
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "l#BASR7" BEGIN // lava's
                 LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ss_club+bonus) STR_VAR class=~THIEF~ spell=~ZSTWQ%ench%~ END
             END ELSE BEGIN

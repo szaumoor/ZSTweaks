@@ -10,8 +10,10 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         END
         ++start_dmg
         LPF ADD_SPELL_HEADER INT_VAR copy_header=1 zs_min_level_for_copy=19 insert_point=last_valid_header+1 END
+        LPF ALTER_HEADER INT_VAR header = last_valid_header+1 projectile = 84 END
         LPF ALTER_EFFECT INT_VAR check_globals=0 header=last_valid_header+1 match_opcode=12 dicenumber=20 parameter1=start_dmg END
         start_dmg += 3
         LPF ADD_SPELL_HEADER INT_VAR copy_header=1 zs_min_level_for_copy=20 insert_point=last_valid_header+2 END
+        LPF ALTER_HEADER INT_VAR header = last_valid_header+2 projectile = 84 END
         LPF ALTER_EFFECT INT_VAR check_globals=0 header=last_valid_header+2 match_opcode=12 dicenumber=20 parameter1=start_dmg END
 END

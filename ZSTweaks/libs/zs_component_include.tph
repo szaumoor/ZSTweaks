@@ -38,6 +38,10 @@ ACTION_IF !VARIABLE_IS_SET comp_moved BEGIN
     OUTER_SET comp_moved = 1
 END
 
+ACTION_IF !VARIABLE_IS_SET zst_config_file_copied BEGIN
+    COPY ~%MOD_FOLDER%/zstweaks_prefs.txt~ ~override~
+    OUTER_SET zst_config_file_copied = 1
+END
 
 OUTER_SET group_component = 0
 INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_%COMPONENT_NUMBER%.tph~

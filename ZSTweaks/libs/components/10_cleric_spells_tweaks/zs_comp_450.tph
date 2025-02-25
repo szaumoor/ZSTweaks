@@ -1,4 +1,4 @@
-ACTION_IF _450_light BEGIN
+ACTION_IF zst_450_light BEGIN
     COPY_EXISTING ~SPPR103.SPL~ ~override~
         PATCH_IF GAME_IS "iwdee" BEGIN
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6471) END
@@ -14,7 +14,7 @@ ACTION_IF _450_light BEGIN
         LPF ALTER_EFFECT INT_VAR power = 0 END
 END
 
-ACTION_IF _450_moderate BEGIN
+ACTION_IF zst_450_moderate BEGIN
     COPY_EXISTING ~SPPR217.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6473) END
         LPF ALTER_EFFECT INT_VAR power = 0 END
@@ -35,7 +35,7 @@ ACTION_IF _450_moderate BEGIN
     BUT_ONLY IF_EXISTS
 END
 
-ACTION_IF _450_medium BEGIN
+ACTION_IF zst_450_medium BEGIN
     COPY_EXISTING ~SPPR315.SPL~ ~override~
         PATCH_IF GAME_IS "iwdee" BEGIN
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6474) END
@@ -55,7 +55,7 @@ ACTION_IF _450_medium BEGIN
         END
 END
 
-ACTION_IF _450_serious BEGIN
+ACTION_IF zst_450_serious BEGIN
     COPY_EXISTING ~SPPR401.SPL~ ~override~
         PATCH_IF GAME_IS "iwdee" BEGIN
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6476) END
@@ -89,7 +89,7 @@ ACTION_IF _450_serious BEGIN
 
 END
 
-ACTION_IF _450_critical BEGIN
+ACTION_IF zst_450_critical BEGIN
     COPY_EXISTING ~SPPR502.SPL~ ~override~
         PATCH_IF GAME_IS "iwdee" BEGIN
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6478) END
@@ -117,7 +117,7 @@ ACTION_IF _450_critical BEGIN
     BUT_ONLY IF_EXISTS
 END
 
-ACTION_IF _450_eldath BEGIN
+ACTION_IF zst_450_eldath BEGIN
     COPY_EXISTING ~SPPR736.SPL~ ~override~
         LPF ALTER_HEADER INT_VAR speed = 6 END
         LPF ALTER_EFFECT INT_VAR match_opcode = 17 parameter1 = 40 END
@@ -126,7 +126,7 @@ ACTION_IF _450_eldath BEGIN
     BUT_ONLY IF_EXISTS
 END
 
-ACTION_IF _450_mass_cure BEGIN
+ACTION_IF zst_450_mass_cure BEGIN
     COPY_EXISTING ~SPPR514.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6480) END
         LPF ALTER_EFFECT INT_VAR power = 0 END

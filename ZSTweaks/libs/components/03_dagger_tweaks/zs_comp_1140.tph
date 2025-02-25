@@ -6,7 +6,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF GET_DMG_TYPE STR_VAR type = ~electricity~ RET el = result END
         LPF ADD_ON_HIT_EFF INT_VAR p1=1 spec=1024 STR_VAR effects = ~op=12,p2=%f%;op=12,p2=%el%~ END
 
-        PATCH_IF _1450_allow_daggers AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN // update +5 enchantment
+        PATCH_IF zst_1450_allow_daggers AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN // update +5 enchantment
             LPF PROBABILITY_BONUS INT_VAR ench = 5 RET bonus = result END
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 probability1 = (base_dagg_dart+bonus) STR_VAR match_resource=~ZSTWD4~ resource=~ZSTWD5~ END
         END
@@ -18,6 +18,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             LPF ALTER_HEADER INT_VAR match_type = 1 damage = 5 to_hit = 5 END
         END
 
+    COPY ~%MOD_FOLDER%/items/dagger_star~
     COPY_EXISTING ~DAGG22.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6013) id_ref_name=RESOLVE_STR_REF(@6012) ench=6 END
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 20 probability1 = 14 END
@@ -26,7 +27,9 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 special=1024 END
         LPF ADD_ON_HIT_EFF INT_VAR dsize=8 dnum=1 spec=1024 STR_VAR effects=~op=12,p2=%f%,pro1=93,pro2=89;op=12,p2=%el%,pro1=88,pro2=84~ END
         LPF ADD_ON_HIT_EFF INT_VAR p1=2 spec=1024 STR_VAR effects = ~op=12,p2=%f%;op=12,p2=%el%~ END
-        PATCH_IF _1450_allow_daggers AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN // update +6 enchantment
+        LPF ADD_ITEM_HEADER INT_VAR range=50 END
+        LPF ADD_ON_HIT_EFF INT_VAR t=3 p2=1 STR_VAR effects = ~op=146,res=ZSTWDST0;op=146,res=ZSTWDST1~
+        PATCH_IF zst_1450_allow_daggers AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN // update +6 enchantment
             LPF PROBABILITY_BONUS INT_VAR ench = 6 RET bonus = result END
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 probability1=(bonus+base_dagg_dart) STR_VAR match_resource=~ZSTWD5~ resource=~ZSTWD6~ END
         END

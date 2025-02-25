@@ -1,5 +1,5 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
-    ACTION_IF _441_tenser_thac0 BEGIN
+    ACTION_IF zst_441_tenser_thac0 BEGIN
         COPY_EXISTING ~SPWI603.SPL~ ~override~
             LPF LAST_VALID_HEADER RET h = result END
             LPF ADD_SPELL_HEADER INT_VAR copy_header = h zs_min_level_for_copy = 21 insert_point=(h+1) END
@@ -7,7 +7,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             LPF ALTER_EFFECT INT_VAR header = (h+1) match_duration = 114 duration = 120 END
     END
 
-    ACTION_IF _441_tenser_apr BEGIN
+    ACTION_IF zst_441_tenser_apr BEGIN
         OUTER_SET new_description = RESOLVE_STR_REF(@5130)
         COPY_EXISTING ~SPWI603.SPL~ ~override~
             LPF ALTER_SPELL INT_VAR ref_desc=new_description END
@@ -18,7 +18,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         COPY_EXISTING ~SCRL7G.ITM~ ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
 
-        ACTION_IF _441_tenser_apr_nonfighters_only BEGIN
+        ACTION_IF zs_441_tenser_apr_nonfighters_only BEGIN
             COPY ~%MOD_FOLDER%/spells/wizard_spells/tenser_transformation~ ~override~
             OUTER_SET fighter_all = IDS_OF_SYMBOL(class FIGHTER_ALL)
             OUTER_SET fighter_cleric = IDS_OF_SYMBOL(class FIGHTER_CLERIC)

@@ -122,6 +122,7 @@
 @1678 = ~Make Senses of the Cat imbue the user of more cat-like features~
 @1679 = ~Make the Horn of Kazgaroth more useful and the self-damage more unique~
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
+@3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane~
 
 /// DAGGER TWEAKS
 @1000 = "Make throwing poisoned daggers less rare and more likely to poison enemies"
@@ -286,14 +287,13 @@
 @505 = ~Make Repulse Undead more useful by causing damage and Slow when they're repulsed~
 @506 = ~Make Wall of Moonlight more effective~
 @507 = ~Make Aid a party buff~
+@508 = ~Make Restoration-type spells restore stat draining by mind flayers and shadow-creatures~
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray and Sun Soulbeam Sun Soul Monks scale further and/or do more damage to undead"
 @360 = "Make Shaman's unique spells more powerful"
 @2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty and rally the allies"
-@2130 = "Make Set Spike Trap do piercing damage instead of magic damage"
-@2140 = "Make Exploding Trap do slightly more damage: 15d6 as opposed to 10d6"
-@2141 = ~Make Assassination more generally useful, especially for single-classed Thieves~
+@2130 = "Make some Thief HLAs more effective"
 @2150 = "Make a selection HLAS unable to be breached"
 @2160 = ~Make Quivering Palm's saving throw improve twice at later levels~
 @2170 = ~Make the THAC0 progression of Thieves better and more streamlined~
@@ -302,10 +302,8 @@
 @2190 = ~Make Poison Weapon improve twice more every 4 levels (level 17, and 21)~
 @2200 = ~Make Blackguards able to backstab as if they had a 2x multiplier~
 @2210 = ~Make the proficiency point benefits streamlined~
-@2220 = ~Make Avoid Death HLA slightly more effective~
-@3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane~
 @2230 = ~Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value~
-@2231 = ~Give Dragon Disciples (Red) automatic access to all fire-based wizard spells~
+@2231 = ~Give Dragon Disciples (Red) automatic access to all fire-based wizard spells and optionally increase fire damage by 5%~
 //@2240 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and reenable the unconscious status if successful~ // TODO
 //@2250 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
 
@@ -318,6 +316,8 @@
 @3050 = ~Make the Balor's vorpal attack not guaranteed to succeed but be affected by a saving throw too~
 @3060 = ~Make Mencar Pebblecrusher a fair fighter for his level or make him a joke (optional)~
 @3070 = ~Make lions and other cat creatures not slow as molasses~
+@3080 = ~Make creature on-hit effects that should be natural not behave as magical attacks that can be dispelled or magically resisted~
+@3090 = ~Make Shadow creatures slightly harder to damage, and make strength sapping last much longer so it's an actual inconvenience~
 
 
 // END-OF-INSTALL ORDER TWEAKS
@@ -755,6 +755,11 @@ STATISTICS:
 Combat abilities:
 – 15% chance of making the user go invisible for 1 turn after each successful attack
 – Star Bolt: Each successful hit has a 15% chance of causing either 1d8 fire, 1d8 of electrical damage, or both
+
+Charge abilities:
+– Heavenly Strike once per day
+  Special: Raise the dagger to the sky, summoning a bolt of lightning and a column of fire to strike the target, dealing 10d6 electrical and fire damage (save vs. Breath at -2 for half). This action empowers the wielder, adding +2 fire and electrical damage to all melee and ranged attacks for the next 2 turns.
+  Area of Effect: 1 creature and adjacent creatures
 
 THAC0: +6
 Damage: 1d4+6, +2 fire and electricity damage
@@ -5527,8 +5532,32 @@ Saving Throw: None
 
 This spell invokes a shimmering tapestry of blue-white force. This wall is intangible, requiring no physical anchor, and can easily be passed through. Evil creatures passing through the wall take 2d9+2 magic damage; undead creatures take 3d9+3 (evil undead would take 5d9+5). Additionally, affected creatures must save vs. Spell or be blinded by 1 round and repulsed backwards with a 25% chance of being knocked to the ground for half a round. A creature that has passed through the wall can only be affected by it once per round. These effects cannot be stopped by Magic Resistance.~
 
+@8240 = ~Lesser Restoration
+(Necromancy)
+
+Level: 4
+Sphere: Necromantic
+Range: Touch
+Duration: Permanent
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast, the life energy level of the recipient is raised. This reverses any previous life energy level drain of the creature by a force or monster, as well as the attribute draining caused by creatures such as shadows and mind flayers. The casting of this spell is very draining on the priest and <PRO_HESHE> will likely require rest immediately after the casting, as it will cause days' worth of fatigue almost instantaneously.~
 
 
+@8241 = ~Greater Restoration
+(Necromancy)
+
+Level: 7
+Sphere: Necromantic
+Range: Touch
+Duration: Permanent
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast, the life energy level of the recipient is raised. This reverses any previous life energy level drain of the creature by a force or monster, as well as the attribute draining caused by creatures such as shadows and mind flayers. A Greater Restoration spell will also restore the Intelligence score of a creature affected by the Feeblemind spell and negate any form of insanity, such as confusion or berserk. It fully heals the target and cures any diseases or poisons. The casting of this spell is very draining on the priest, and <PRO_HESHE> will likely require rest immediately afterward.~
 
 // patching other mods
 // item upgrade

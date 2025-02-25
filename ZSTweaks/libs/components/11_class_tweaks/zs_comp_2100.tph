@@ -1,4 +1,4 @@
-ACTION_IF _2100_sunsoul_ray BEGIN
+ACTION_IF zst_2100_sunsoul_ray BEGIN
     COPY ~%MOD_FOLDER%/class_kits/sunsoul_ray~ ~override~
     COPY_EXISTING "SPCL236.SPL" ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7800) END
@@ -12,7 +12,7 @@ ACTION_IF _2100_sunsoul_ray BEGIN
         LPF ALTER_EFFECT INT_VAR header = 5 match_opcode = 177 STR_VAR resource = ~ZSTWF16~ END
 END
 
-ACTION_IF _2100_sunsoul_beam BEGIN
+ACTION_IF zst_2100_sunsoul_beam BEGIN
     COPY_EXISTING "SPCL239.SPL" ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7790) END
 

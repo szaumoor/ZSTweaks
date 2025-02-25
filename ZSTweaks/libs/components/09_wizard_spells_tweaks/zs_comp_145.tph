@@ -9,7 +9,7 @@ ACTION_IF _145_luck_dur_boost BEGIN
 
 END
 
-ACTION_IF _145_luck_boost BEGIN
+ACTION_IF zst_145_luck_boost BEGIN
 
     COPY_EXISTING ~SPWI209.SPL~ ~override~
         SET the_dur = 18

@@ -1,5 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    ACTION_IF _1520_keldsword BEGIN
+    ACTION_IF zst_1520_keldsword BEGIN
         COPY_EXISTING "NPSW03.ITM" ~override~
             LPF ALTER_ITEM INT_VAR ench=3 END
             LPF RM_STAT_REQS END
@@ -42,7 +42,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
 
     END
 
-    ACTION_IF _1520_keldarmor BEGIN
+    ACTION_IF zst_1520_keldarmor BEGIN
         COPY_EXISTING ~NPPLAT.ITM~ ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@6242) END
             LPF remove_haste_immunity END

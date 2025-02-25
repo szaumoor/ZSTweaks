@@ -6,30 +6,30 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         END ELSE BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7352) END
         END
-        LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 2 match_savingthrow = 4 savebonus = _1000_sbonus END
+        LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 2 match_savingthrow = 4 savebonus = zst_1000_sbonus END
 
-    ACTION_IF _1000_store_additions BEGIN
+    ACTION_IF zst_1000_store_additions BEGIN
         ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
             COPY_EXISTING ~ARLED.STO~ ~override~
-                LPF REPLACE_STORE_ITEM INT_VAR number_in_stock=((30 * _1000_stack_mult) / 100) charges1=2 STR_VAR old_item=~DAGG16~ new_item=~DAGG16~ END
+                LPF REPLACE_STORE_ITEM INT_VAR number_in_stock=((30 * zst_1000_stack_mult) / 100) charges1=2 STR_VAR old_item=~DAGG16~ new_item=~DAGG16~ END
             COPY_EXISTING ~SLSHOP02.STO~ ~override~
-                LPF REPLACE_STORE_ITEM INT_VAR number_in_stock=((30 * _1000_stack_mult) / 100) charges1=4 STR_VAR old_item=~DAGG16~ new_item=~DAGG16~ END
+                LPF REPLACE_STORE_ITEM INT_VAR number_in_stock=((30 * zst_1000_stack_mult) / 100) charges1=4 STR_VAR old_item=~DAGG16~ new_item=~DAGG16~ END
             COPY_EXISTING ~SHTHSTOR.STO~ ~override~
-                LPF REPLACE_STORE_ITEM INT_VAR number_in_stock=((30 * _1000_stack_mult) / 100) charges1=3 STR_VAR old_item=~DAGG16~ new_item=~DAGG16~ END
+                LPF REPLACE_STORE_ITEM INT_VAR number_in_stock=((30 * zst_1000_stack_mult) / 100) charges1=3 STR_VAR old_item=~DAGG16~ new_item=~DAGG16~ END
             COPY_EXISTING ~SHOP03.STO~ ~override~
-                LPF REPLACE_STORE_ITEM INT_VAR number_in_stock=((10 * _1000_stack_mult) / 100) charges1=5 STR_VAR old_item=~DAGG16~ new_item=~DAGG16~ END
+                LPF REPLACE_STORE_ITEM INT_VAR number_in_stock=((10 * zst_1000_stack_mult) / 100) charges1=5 STR_VAR old_item=~DAGG16~ new_item=~DAGG16~ END
             COPY_EXISTING ~BMTHIEF.STO~ ~override~
-                LPF REPLACE_STORE_ITEM INT_VAR number_in_stock=((6 * _1000_stack_mult) / 100) charges1=6 STR_VAR old_item=~DAGG16~ new_item=~DAGG16~ END
+                LPF REPLACE_STORE_ITEM INT_VAR number_in_stock=((6 * zst_1000_stack_mult) / 100) charges1=6 STR_VAR old_item=~DAGG16~ new_item=~DAGG16~ END
         END
 
         ACTION_IF GAME_IS ~bgee eet~ BEGIN
             COPY_EXISTING ~STO0703.STO~  ~override~
                             ~ULGOTH.STO~   ~override~
                             ~HIGHHEDG.STO~ ~override~
-                LPF ADD_STORE_ITEM_EX INT_VAR stack = ((6 * _1000_stack_mult) / 100) charge1 = 5 STR_VAR item_name = ~DAGG16~ END
+                LPF ADD_STORE_ITEM_EX INT_VAR stack = ((6 * zst_1000_stack_mult) / 100) charge1 = 5 STR_VAR item_name = ~DAGG16~ END
             COPY_EXISTING ~STOBLACK.STO~ ~override~
                             ~STOSILEN.STO~ ~override~
-                LPF ADD_STORE_ITEM_EX INT_VAR stack = ((8 * _1000_stack_mult) / 100) charge1 = 6 STR_VAR item_name = ~DAGG16~ END
+                LPF ADD_STORE_ITEM_EX INT_VAR stack = ((8 * zst_1000_stack_mult) / 100) charge1 = 6 STR_VAR item_name = ~DAGG16~ END
 
         END
 
