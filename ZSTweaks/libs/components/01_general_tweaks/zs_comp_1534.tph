@@ -24,6 +24,10 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN // iwdee deliberately unsupported for now
     COPY_EXISTING ~POTN08.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7467) END
         LPF ALTER_EFFECT INT_VAR match_opcode=17 parameter1=12 END
+
+    COPY_EXISTING ~POTN25.ITM~ ~override~ // oddly murky potion consistency description change
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7468) END
+
     // potion of heroism
     COPY_EXISTING ~POTN09.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7462) unusable0=0 END

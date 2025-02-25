@@ -1392,6 +1392,10 @@ Requires:
 
 Weight: 12~
 
+@6137 = ~Mage Robe of Cold Affinity~
+@6138 = ~Mage Robe of Fire Affinity~
+@6139 = ~Mage Robe of Electrical Affinity~
+
 @6140 = ~A favorite among Mage/Thieves, the Knave's Robe has been enchanted to shield its wearer from the blades and poisons of any darkened alley and enhance thieving skills. As with others of its type, however, its use is restricted to students of the arcane.
 
 STATISTICS:
@@ -4232,7 +4236,7 @@ Duration: 1 hour
 
 Weight: 1~
 
-@7464 = ~The elixir of health is a powerful healing mixture designed to cleanse the body of all impurities. First, it cures all poisons and diseases; then, once the system has been purged, the imbibed is cured by 17 Hit Points to speed the recovery process.
+@7464 = ~The elixir of health is a powerful healing mixture designed to cleanse the body of all impurities. First, it cures all poisons and diseases; then, once the system has been purged, the imbibed is cured by 20 Hit Points to speed the recovery process.
 
 STATISTICS:
 
@@ -4266,11 +4270,17 @@ Duration: 4 turns
 
 Weight: 1~
 
-@7467 = ~When wholly consumed, this potion restores 10 Hit Points to the person. The effect is instantaneous and the potion is destroyed in the process.
+@7467 = ~When wholly consumed, this potion restores 12 Hit Points to the person. The effect is instantaneous and the potion is destroyed in the process.
 
 STATISTICS:
 
 Special: Restores 12 Hit Points
+
+Weight: 1~
+
+@7468 = ~When wholly consumed, this oddly murky potion appears to restore 12 Hit Points to the person. The effect is instantaneous and the potion is destroyed in the process.
+
+STATISTICS:
 
 Weight: 1~
 
