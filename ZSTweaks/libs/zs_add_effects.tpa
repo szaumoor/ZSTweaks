@@ -8,6 +8,7 @@ INT_VAR
     ip   = "-1" // insert point
     spec = 0 // special
 STR_VAR
+    res = ~~
     effects = ~~ // effect codes
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
@@ -20,6 +21,7 @@ BEGIN
             def_insertpoint = ip
             def_special     = spec
         STR_VAR
+            def_resource  = ~%res%~
             function_name = ~ADD_ITEM_EQEFFECT~
             effect_codes  = ~%effects%~
     END

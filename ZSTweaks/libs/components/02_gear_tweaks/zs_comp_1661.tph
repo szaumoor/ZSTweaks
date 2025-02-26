@@ -1,6 +1,7 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING ~CLCK27.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7150) END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 0 resist_dispel = 0 END
         LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=0 opcode=33 END
         LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=0 opcode=173 parameter1=50 END
 END

@@ -1,4 +1,5 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
+    COPY ~%MOD_FOLDER%/items/dale_protector~ ~override~
     COPY_EXISTING ~BRAC04.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7280) unusable0=0 END
         LPF ALTER_EFFECT INT_VAR match_opcode=167 parameter1=3 END
@@ -6,5 +7,5 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         SET archer = IDS_OF_SYMBOL(kit FERALAN)
         SET thief_all = IDS_OF_SYMBOL(class THIEF_ALL)
         SET bard_all = IDS_OF_SYMBOL(class BARD_ALL)
-        LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=177,p2=9,p1=%archer%;op=177,p2=5,p1=%thief_all%;op=177,p2=5,p1=%bard_all%~ END
+        LPF ADD_EQUIPPED_EFF STR_VAR res=~ZSTWDLP0~ effects=~op=177,p2=9,p1=%archer%;op=177,p2=5,p1=%thief_all%;op=177,p2=5,p1=%bard_all%~ END
 END

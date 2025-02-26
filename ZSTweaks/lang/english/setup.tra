@@ -758,8 +758,8 @@ Combat abilities:
 
 Charge abilities:
 – Heavenly Strike once per day
-  Special: Raise the dagger to the sky, summoning a bolt of lightning and a column of fire to strike the target, dealing 10d6 electrical and fire damage (save vs. Breath at -2 for half). This action empowers the wielder, adding +2 fire and electrical damage to all melee and ranged attacks for the next 2 turns.
-  Area of Effect: 1 creature and adjacent creatures
+  Special: Raise the dagger to the sky, summoning a bolt of lightning and a column of fire to strike the target, dealing 10d6 electrical and fire damage (save vs. Breath at -4 for half). Adjacent targets take the fire part of the damage as well. This action empowers the wielder, adding +2 fire and electrical damage to all melee and ranged attacks for the next turn.
+  Area of Effect: 1 creature and adjacent allies
 
 THAC0: +6
 Damage: 1d4+6, +2 fire and electricity damage
@@ -772,14 +772,14 @@ Requires:
 
 Weight: 1~
 
-@6020 = ~This suit of armor is formed from interlocking shadow dragon scales. Elegant workmanship and practical considerations make this armor both beautiful and useful. The shadow dragon scales grant the wearer Nondetection, protection against level drain, and resistance against Illusion spells.
+@6020 = ~This suit of armor is formed from interlocking shadow dragon scales. Elegant workmanship and practical considerations make this armor both beautiful and useful. The shadow dragon scales grant the wearer Nondetection, protection against level drain, and resistance against Illusion and Necromancy spells.
 
 STATISTICS:
 
 Equipped abilities:
 – Negative Plane protection
 – Nondetection
-– Save vs. Illusion and Necromancy effects: +4
+– Saves vs. Illusion and Necromancy effects: +4
 
 Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
 Requires:
@@ -792,8 +792,8 @@ Weight: 10~
 STATISTICS:
 
 Equipped abilities:
-– +1 AC
-– Save vs. Breath: +1
+– Armor Class: +1
+– Saves vs. Breath: +1
 – Immunity to backstabs and sneak attacks
 – Detect Traps: +25%
 
@@ -1432,7 +1432,7 @@ Equipped abilities:
 
 Weight: 4~
 
-@6143 = ~While seen with less frequency than some other mage robes, those of Electrical Resistance can hardly be considered a rarity. Some are worn by paranoiacs seeking protection from a ragged mountain storm, but many more are worn by mages seeking to protect themselves from the intrigues of others of their kind. It also increases electric damage output slightly. As with all such robes, a Mage Robe of Electrical Resistance can only be worn by those of the wizardly profession.
+@6143 = ~While seen with less frequency than some other mage robes, those of Electrical Affinity can hardly be considered a rarity. Some are worn by paranoiacs seeking protection from a ragged mountain storm, but many more are worn by mages seeking to protect themselves from the intrigues of others of their kind. As with all such robes, a Mage Robe of Electrical Resistance can only be worn by those of the wizardly profession.
 
 STATISTICS:
 
@@ -1444,7 +1444,7 @@ Equipped abilities:
 
 Weight: 3~
 
-@6144 = ~These are a common sight in the Sword Coast region, especially as one travels north toward Neverwinter and the Icewind Dales. Many young mages receive it as a gift from their instructors upon successfully completing their first five years of study. It also increases cold damage output slightly. As with other such robes, they can only be worn by those of the wizardly profession.
+@6144 = ~These are a common sight in the Sword Coast region, especially as one travels north toward Neverwinter and the Icewind Dales. Many young mages receive it as a gift from their instructors upon successfully completing their first five years of study. As with other such robes, they can only be worn by those of the wizardly profession.
 
 STATISTICS:
 
@@ -1455,7 +1455,7 @@ Equipped abilities:
 
 Weight: 3~
 
-@6145 = ~Due to the extremely volatile nature of most magics, Mage Robes of Fire Resistance are not uncommon among young acolytes and their wizardly tutors. It also increases fire damage output slightly. As with other such robes, they cannot be worn except by wizards.
+@6145 = ~Due to the extremely volatile nature of most magics, Mage Robes of Fire Affinity are not uncommon among young acolytes and their wizardly tutors. As with other such robes, they cannot be worn except by wizards.
 
 STATISTICS:
 
@@ -1487,7 +1487,6 @@ Equipped abilities:
 – Magic Resistance: +10%
 – Magic damage resistance: +25%
 – Casting speed improved by 1
-
 
 Weight: 6~
 
@@ -1576,7 +1575,7 @@ STATISTICS:
 Equipped abilities:
 – Magic Resistance: +10%
 
-Equipped abilities:
+Combat abilities:
 – Inflicts +2 fire damage against trolls
 – Inflicts +4 slashing damage against chaotic evil
 
@@ -1599,7 +1598,7 @@ STATISTICS:
 Equipped abilities:
 – Magic Resistance: +10%
 
-Equipped abilities:
+Combat abilities:
 – Inflicts +2 fire damage against trolls
 – Inflicts +4 slashing damage against evil
 
@@ -2384,7 +2383,7 @@ Combat abilities:
 
 Equipped abilities:
 – Armor Class: +2 plus extra +2 against slashing, piercing and missile weapons
-– Save vs. Spell: +1
+– Saves vs. Spell: +1
 – +8% physical damage resistance
 
 THAC0: +5
@@ -2428,9 +2427,9 @@ Weight: 2~
 STATISTICS:
 
 Equipped abilities:
-– Fire, Cold, Acid, and Electricity Resistance: +20%
+– Elemental resistance: +20%
 – Elemental spell damage: +5%
-– Save vs. Invocation spells: +2
+– Saves vs. Invocation spells: +2
 
 Weight: 6~
 
@@ -2509,8 +2508,8 @@ The Jade Fang was the weapon of choice for famed Shou Lung thief Niu Weidan, who
 STATISTICS:
 
 Combat abilities:
-– 15% chance of stunning for 10 seconds if a Save vs. Spell is failed; 5% chance of triggering with no save allowed.
-– Each hit heals the wielder between 1 to 5 Hit Points. It's more likely to heal less than more.
+– 15% chance of stunning for 10 seconds if a Save vs. Spell is failed; 5% chance of triggering with no save allowed
+– Each hit heals the wielder between 1 to 5 Hit Points. It's more likely to heal less than more
 
 THAC0: +3
 Damage: 1d4+3 (piercing)
@@ -3057,7 +3056,7 @@ STATISTICS:
 
 Equipped abilities:
 – Wearer becomes proficient in darts automatically
-– Save vs. Spell: +1
+– Saves vs. Spell: +1
 
 Charge abilities:
 – Create thirty +5 darts once per day
@@ -3481,7 +3480,7 @@ Weight: 2~
 STATISTICS:
 
 Equipped abilities:
-– +1 AC
+– Armor Class: +1
 – Casting and turning undead level: +1 (clerics only)
 – +1 spell slot for levels 3, 4 and 5 (clerics only)
 
@@ -3776,7 +3775,7 @@ STATISTICS:
 
 Equipped abilities:
 – Intelligence: +1
-– Save vs. Spell: +1
+– Saves vs. Spell: +1
 – Magic Resistance: +10%
 
 Weight: 0~
@@ -4168,6 +4167,7 @@ Reportedly created for a lineage of the greatest burglars ever to walk the night
 STATISTICS:
 
 Equipped abilities:
+– While hidden or invisible, the wearer is non-detectable by magical or mundane means except by True Sight
 – +15% bonus to Move Silently
 – Critical hit chances increase by 5% for 2 rounds when the user becomes invisible. This may only happen once per turn
 
@@ -4182,9 +4182,7 @@ STATISTICS:
 Equipped abilities:
 – Armor Class: +4 vs. missile attacks
 – Damage resistance: +5%
-– Save vs. Death: +2
-– Save vs. Breath: +2
-– Save vs. Wand: +2
+– Saves vs. Death, Breath, and Wand: +2
 
 Weight: 3~
 
@@ -5107,7 +5105,7 @@ Weight: 2~
 STATISTICS:
 
 Equipped abilities:
-– Save vs. Spell: +4 (Wizard Slayers and Inquisitors), +2 (others)
+– Saves vs. Spell: +4 (Wizard Slayers and Inquisitors), +2 (others)
 – Magic Resistance: +5%
 – Magic Damage Resistance: +10%, +25% for Wizard Slayers and Inquisitors
 
@@ -5447,7 +5445,7 @@ Weight: 9~
 @8151 = ~Gram the Sword of Grief +6~
 @8152 = ~This is one of the many weapons of the great hero Siegfried. The blade is particularly sharp and well-balanced, and in a certain light one can see the faint image of a serpent within the hilt.
 
-Siegfried's fearsome blade is even more powerful with the Heart of the Damned set into its pommel.
+His fearsome blade is even more powerful with the Heart of the Damned set into its pommel.
 
 STATISTICS:
 
@@ -5659,7 +5657,7 @@ Equipped abilities:
 – Non-Detection
 – Fire Resistance: +50%
 – Magic Damage Resistance: +50%
-– Save vs. Illusion and Necromancy effects: +4
+– Saves vs. Illusion and Necromancy effects: +4
 
 Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
 
