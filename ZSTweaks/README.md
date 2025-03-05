@@ -58,9 +58,6 @@ Additionally, this will make ninja-tos have a speed factor of 3 by default, like
 
 This makes wakizashis hit as a slashing weapon if the circumstances favor it. IRL it is really a slashing sword anyway, but I want to preserve the original damage type (which is better than slashing in most situations, especially against enemies that use wearable armor).
 
-**Component 1360:** Make Light Crossbows get +1/2 more APR
-
-Just a small bonus to make it more interesting and different compared to heavy crossbows. It's not too far-fetched anyway to think smaller crossbows can be reloaded faster. This will affect crossbows that have an APR bonus already, i.e., 1/2 APR will be added.
 
 **Component 1361:** Make axes deal extra damage equal to its base damage on critical hits
 
@@ -100,22 +97,22 @@ This mostly exists for consistency with the bastard sword, such that the minimum
 
 **Component 1435:** Make Darts use a speed factor of 0
 
-Self-explanatory.
+Self-explanatory. It's the lightest weapon, realistically.
 
 **Component 1440:** Make daggers have general extra features to compensate for the low damage
 
 There's generally very little reason to use a dagger because:
 - All other melee weapons cause more damage
-- Your other weapons will never be stolen (read the proficiency description for daggers)
+- Your other weapons will never be stolen (read the proficiency description for daggers in BG)
 - Using the dagger has no benefits of any sort for being a small weapon
 - A saving grace they might have is that some might have a semi-interesting effect which likely gets overshadowed later
 
-This is a small change to make daggers slightly more appealing on a general level. They will all have an implied:
+This is a small change to make daggers slightly more appealing on a general level. They will all have the following traits:
 
-- THAC0 is always 1 higher (e.g. a Dagger +2 will have a +3 THAC0 bonus)
-- Speed factor is 2 points lower (normally always 0, in the case of custom daggers, this may be different if their speed factor is unusually high)
-- +5% Critical chance, which may stack with a similar bonus in any particular daggers
-- Deadly critical hits: critical hits do moderately additional piercing damage in a second tick. The formula for critical damage added is (**Max weapon damage**) **+** 2 dice of **Max Weapon Damage**. Specifically:
+- THAC0 is always 1 higher (e.g. a Dagger +2 will have a +3 THAC0 bonus, and the description will reflect it)
+- Speed factor is 2 points lower (normally always 0, in the case of custom daggers, this may be different if their speed factor is unusually high). Description will reflect this
+- +5% Critical chance, which may stack with a similar bonus in any particular daggers. Description will not reflect this.
+- Deadly critical hits: critical hits do moderately additional piercing damage in a second tick. The formula for critical damage added is 2 dice of **Max Weapon Damage** **+** (**Max weapon damage**). Specifically:
   - Dagger **+0** -> 2d4+4, i.e., 6-12 dmg
   - Dagger **+1** -> 2d5+5, i.e., 7-15 dmg
   - Dagger **+2** -> 2d6+6, i.e., 8-18 dmg
@@ -124,15 +121,17 @@ This is a small change to make daggers slightly more appealing on a general leve
   - Dagger **+5** -> 2d9+9, i.e., 11-27 dmg
   - Dagger **+6** -> 2d10+10, i.e., 12-30 dmg
 
-All these bonuses are additive, which means they are not affected by most effects, or strength, although it also means that they're good weapons for characters with low strength.
+All these bonuses are additive, which means they are not affected by most effects, or strength, although it also means that they're good weapons for characters with low strength, as when they critically hit, they will have a fairly substantial bonus, regardless of it.
 
-Exceptions: Grave Binder is not affected by these bonuses because it's an oversized dagger.
+Exceptions: Grave Binder is not affected by these bonuses because it's an oversized dagger. Other unusual daggers will be treated on a case-by-case basis.
 
 **Component 1450:** Make some rogue weapons able to do more damage if wielded by pure thieves (Finesse)
 
 This component is an attempt at making single-classed Thieves more effective with a portion of thief-usable weapons without relying on stats, APR, or proficiency points.
 
-Essentially, when wielding a Thief weapon, they can use what I call "finesse," which is a concept that I borrowed from NWN, they can deal extra damage per attack randomly (additively), based on the base attack damage of the weapon used. You could think of this as a part dirty-fighting combat skills of rogues, or like a minor sneak attack that triggers rarely. This gives pure thieves a slight edge and makes the combat prowess gap between them and multiclassed thieves tigther. The chances of triggering depend on the weapon type and the enchantment level (2% per odd enchantment level, 1% for even).
+Essentially, when wielding a Thief weapon, they can use what I call "finesse," which is a concept that I borrowed from NW. In short, they have a chance per attack to deal extra damage, which stacks additively after the direct damage of the weapon is calculated, and it is based on the base attack damage of the weapon used.
+
+You could think of this as a part dirty-fighting combat skills of rogues, or like a minor sneak attack that triggers rarely. This gives pure thieves a slight edge and makes the combat prowess gap between them and multiclassed thieves tighter. The chances of triggering are modified by weapon type and the enchantment level (2% per odd enchantment level, 1% for even).
 
 This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashis, ninja-tos, katanas, and short swords. The general rule for damage is Dice Number * (Dice size - 1) + Bonus (with exceptions). To be more specific:
 
@@ -140,12 +139,12 @@ This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashi
 - **Katanas, Scimitars**: 9-18% chance to inflict 1d9+bonus/1d7+bonus of slashing damage
 - **Ninja-tos, Wakizashis, Slings**: 16-25% chance inflict 1d7+bonus/1d3+bonus of slashing/piercing/missile damage
 - **Short Swords, Clubs**: 26-35% chance to inflict 1d5+bonus of piercing/crushing damage
-- **Bows, Crossbows**: 31-40% chance to inflict 1d5 or 1d7 of missile damage
-- **Darts, Daggers**: 43-52% chance to inflict 2 + bonus / 2 (rounded down), 1d3+bonus of missile or piercing damage
+- **Bows, Crossbows**: 31-40% chance to inflict 1d5 or 1d7 of missile damage, respectively
+- **Darts, Daggers**: 43-52% chance to inflict 2 + bonus / 2 (rounded down), 1d3+bonus of missile or piercing damage, respectively
 
 The extra damage dealt, assuming a failed saving throw and before resistances, is *never* lower than 2.
 
-A counterbalance is also added such that this damage forces a Save vs. Breath that the target must save against to take only half of the damage. This saving throw bonus or penalty depends on the wielder's current dexterity, which improves up to DEX 24, and this save's penalty increases by the enchantment level as well. For example, if you have a Long Sword +0 that gets a +2 bonus at a particular level of dexterity, using a Long Sword +3 would make it a penalty of -1 instead. More details:
+A counterbalance is also added such that this damage forces a save vs. Breath that the target must save against to take only half of the damage. This saving throw bonus or penalty depends on the wielder's current dexterity, which improves up to DEX 24, and this save's penalty increases by the enchantment level as well. For example, if you have a Long Sword +0 that gets a +2 bonus at a particular level of dexterity, using a Long Sword +3 would make it a penalty of -1 instead. More details:
 
 - **Katanas**: +0 katanas at DEX <12 force a save at +7 bonus; progresses up to 0 at DEX >=24
 - **Long swords, Scimitars**: +0 weapons at DEX <12 force a save vs. +6; progresses up to -1 at DEX >=24
@@ -163,10 +162,6 @@ Note that this component does not account (automatically) for special weaponry w
 
 Finally, the weapon categories affected are optional and can be turned off in the configuration file.
 
-**Component 1530:** Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time to maximize damage
-
-This reduces the number of dice thrown of DAGG11 and DAGG12 to 1, so they are not the only good choice for daggers to maximize damage. And for consistency. Generally speaking, I dislike this sort of unbalanced design. DAGG11 specifically, already conforms to this rule in BGEE.
-
 **Component 1533:** Rebalance some wands
 
 - Wand of Magic Missiles: it casts 3 missiles, not 1, which makes it generally useful for the majority of both games, same as casting from a scroll. A single missile is quite often a missed opportunity for an action during your round
@@ -182,7 +177,7 @@ This reduces the number of dice thrown of DAGG11 and DAGG12 to 1, so they are no
 - Potion of Heroism: it also prevents morale failure as it increases the confidence of the drinker, and improves damage by 1. The THAC0 bonus it provides is no longer set to 90% of current, but instead improves immediately by 2, which is strictly a better outcome, since there will be no longer diminishing returns. It can also be drunk by any class
 - Potion of Invulnerability: it also increases magic resistance by +10%, and it can be used by any class
 - Elixir of Health: the HP recovered is now 20 (from 10) and protects against being poisoned (but not to direct poison damage; not dispellable) for 10 seconds. This is added such that when taking heavy damage, if you're poisoned, it's more desirable than just gulping down a better HP potion to ensure survivability
-- Potion of Perception: now the proper "detection" thief skills are improved further (find traps and detect illusions): 40%. Additionally, the enhanced perception improves THAC0 by 1, and AC, and Saving Throws by 2
+- Potion of Perception: now the proper "detection" thief skills are improved further (find traps and detect illusions): 40%. Additionally, the enhanced perception improves AC and Saving Throws by 2
 - Potion of Power: this makes the potion prevent morale failure like the potion of heroism, it improves all thieving abilities (not just some), it improves casting speed by 1, and it now also grants +10% higher damage output (physical and magical), which makes it useful for any class. Finally, the THAC0 bonus it provides is no longer to 80% of current, but instead improves immediately by 4, which is strictly a better outcome, since there will be no longer diminishing returns. Its rarity and price should be rewarded handsomely
 - CHARNAME'S Tankard: now it heals 27 HP three times per day, and it adds +1 Strength and Constitution for 1 turn, since it mentions feeling stronger when holding it.
 - All Strength potions: usable by any class
@@ -197,7 +192,7 @@ Self-explanatory. It's quite a pain when it's something that is supposed to cut 
 
 **Component 1538:** Make jewelry and other items meant to be sold more valuable
 
-This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component increases the value of those by 50% by default. However, this is fully customizable. Check the ZSTweaks/**INSTALL_OPTIONS.txt** file if you want to customize this.
+This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component increases the value of those by 50% by default. However, this is fully customizable. Check the ZSTweaks/**zstweaks.prefs.txt** file if you want to customize this.
 
 **Component 1539:** Make classes other than arcane and divine spellcasters able to use scrolls freely
 
@@ -205,7 +200,7 @@ This component opens up scrolls to others, similar to other game editions. You c
 
 - **Everyone can**: scrolls are usable by anyone at any point, with the vanilla restriction of having 9 intelligence at least
 - **Everyone can as long as they have the right stats depending on scroll type**: same as above, but to require more investment to increase your skillset, you need to have an Intelligence of 8 + Spell Level to cast a wizard spell scroll, and a Wisdom of 8 + Spell Level to cast a priest spell scroll. For example, a level 5 priest scroll would require 13 Wisdom, and a level 8 wizard scroll would require 16 intelligence. Note that this restriction applies also to classes that could use scrolls originally.
-- **All bards and Thieves can**: this allows only rogues to do this, with the vanilla rules of 9 intelligence. This was added because rogues are the handy jack-of-all-trades types that can "fake" other classes and be generally skillful.
+- **All bards and Thieves can**: this allows only rogues to do this, with the vanilla rules of 9 intelligence. This was added because rogues are the handy jack-of-all-trades types that can "fake" other classes and are generally skillful and always have an ace up their sleeve.
 - **All bards and Thieves can as long as they have the right stats depending on scroll type**: Same as the previous option, with the restrictions of the second option. Note that this restriction applies also to classes that could use scrolls originally.
 
 Note that this component differentiates between "wizard scroll" and "priest scroll" by usability flags. If a spell scroll allows priests to use them, they are considered priest spell scrolls.
@@ -214,29 +209,29 @@ It's also worth mentioning that ToF's feat to use scrolls will also be rendered 
 
 **Component 1544:** Make scrolls always cast at the character level regardless of class
 
-This component will process all existing scrolls in the game, vanilla or modded, and make sure they're cast at the character level, no matter what your class is. So if you have a level 16 Thief that can use scrolls by whatever means (like using my previous component), they will be able to cast it as if they had a spellcasting level of 14.
+This component will process all existing scrolls in the game, vanilla or modded, and make sure they're cast at the character level, no matter what your class is. So if you have a level 16 Thief that can use scrolls by whatever means (like using my previous component), they will be able to cast it as if they had a spellcasting level of 16.
 
 This pairs well with the previous component and greatly increases the usability of scrolls as a general resource for the whole party. I would recommend adding the options to enforce stat requirements so it's a bit more fair, but that's just me.
 
 **Component 1601:** Make potions and food items's effects universally incapable of stacking with themselves
 
-This prevents cheesy stacking of things like Fire Resistance, Saving Throws (Potion of Invulnerability), etc. Applies to food items such as apples from Lunia and goodberries.
+This prevents cheesy stacking of things like Potions of Fire Resistance, Potions of Invulnerability, etc. Applies to food items too, such as apples from Lunia and goodberries.
 
 **Component 1650:** Make mage robes without cloaks (like Robe of Vecna) take on the appearance of robes with cloaks
 
-Purely cosmetic tweak. I've never liked the look of robes without cloaks or without hoods.
+Purely cosmetic tweak. I've never liked the look of robes without cloaks or without hoods (there's really nothing to look at). Since the hooded version is more involved and many may prefer to see the character's head, the cloaked look is the default one.
 
 **Component 1541:** Make vorpal hits not work if target is under Stoneskin or Ironskins
 
 This component patches all weapons that deal vorpal hits in the vanilla game such that they don't work as long as the target is under the Stoneskin or Ironskins spells, as per the 2nd edition.
 
-This patching is manual, and I'm not too sure I can make a script that does this automatically for any and all  sources of vorpal hits installed through other mods, and as such it patches the following vanilla sources of vorpal hits:
+This patching is manual, and I'm not too sure I can make a script that does this automatically for any and all sources of vorpal hits installed through other mods, and as such it patches the following vanilla sources of vorpal hits:
 
 - Axe of the unyielding +5
 - Ravager +6
 - Balor's weapon
 - Solar's Bow/Sword
-- Planetar's Sword (unless my component for planetars is installed)
+- Planetar's Sword (unless my component for planetars is installed, which already removes the vorpal component)
 - Silver sword
 
 If you want this component working for other mod-added weapons that cause vorpal hits (including creature attacks), let me know and I'll make sure this component patches those too.
@@ -258,11 +253,10 @@ It seems like a mistake to me that this armor, made from a creature from the pla
 - Negative Plane Protection
 - Nondetection
 - Saves vs. Illusion and Necromancy spells: +4 bonus
-- The usual AC bonuses.
 
 **Component 1171:** Make Silver Dragon Scale also grant 40% cold resistance as you would expect
 
-Silver Dragons wield and are resistant to cold, the same as White Dragons. It should grant cold resistance, much like the Fire Dragon Plate does fire.
+Silver Dragons wield and are resistant to cold, the same as White Dragons. It should grant cold resistance, much like the Fire Dragon Plate does for fire.
 
 **Component 1172:** Make Rings of Elemental Control more likely to charm the elementals and add missing resistances
 
@@ -277,6 +271,12 @@ It's pretty strange to limit it to 10 seconds. It's 2 full rounds now.
 This makes this ring significantly more useful for an Archdruid, adding 1 extra spell slot of every level and a slow regeneration effect as the nigh-timeless druidic legend you are.
 
 **Component 1180:** Make Ring of Danger sense defensively better and protect against backstabs
+
+This component grants the ring:
+
+- +1 bonus to Armor Class
+- +1 bonus to saves vs. Breath
+- Immunity to backstabs and sneak attacks
 
 Self explanatory and ever useful, for any class. Anti-chunking for mages.
 
@@ -317,7 +317,7 @@ This makes the belt include piercing damage, such that it affects things like da
 
 **Component 1561:** Make Cloak of the Stars create 30 darts instead of six, and add passive effects
 
-6 darts is really unremarkable for a once-per-day effect. 30 is far more interesting. Additionally, if you wear it, you become proficient in darts immediately (unless proficiency is higher) and gain a Save vs. Spell bonus of +2. Perhaps you don't need to sell it immediately anymore!
+6 darts is really unremarkable for a once-per-day effect. 30 is far more interesting. Additionally, if you wear it, you become specialized in darts immediately (unless proficiency is higher) and gain a Save vs. Spell bonus of +2. Perhaps you don't need to sell it immediately anymore!
 
 **Component 1570:** Make Eyes of the Beholder's skills mirror the power of the spells they're based on
 
@@ -334,7 +334,7 @@ This makes this robe improve Invocation wizards in more ways, similarly to my tw
 
 This makes the circlet a bit more valuable by making it more effective in controlling Wild Surges. It's a little underwhelming to just have the same bonus as the robe of Hayes.
 
-Additionally, in the same theme of chaos related to wild magic, while wearing the circlet, they get a 15% bonus to a random non-physical type of damage, except poison. So, for example, if you happen to be in a Magic Damage bonus round, a Horrid Wilting that deals 100 damage would deal 115 damage. If not, too bad!
+Additionally, in the same theme of chaos related to wild magic, while wearing the circlet, they get a 15% bonus to a random non-physical type of damage, except poison. So, for example, if you happen to be in a Magic Damage bonus round, a Horrid Wilting that deals 100 damage would deal 115 damage. If not, too bad, try again.
 
 To promote specialization, this also restricts the circlet to Wild Mages.
 
@@ -353,15 +353,15 @@ This component makes the doubled movement of this armor not be affected by Free 
   - Shadow Attack: Empowers self with shadow magic, increasing damage resistance by 5% for 2 rounds, with a 20% chance of making themselves invisible for 2 rounds, increasing –without stacking– damage by 2, and critical chances by 5% (Shadowdancer)
   - Death Attack: Stun the victim for 1 round if a Save vs. Death is failed. After one round, the victim dies if they're 60 HP or under and a Save vs. Death is failed again. If the victim survives this, they take instead 2d6 poison damage and become more susceptible to the next Death attack, reducing their Saves vs. Death by 4 for 5 rounds (Assassin)
 - New charge ability: Expose Weakness (doesn't interrupt invisibility)
-  - Special: once per day, target loses immunity to backstabs, if they had it, take 10% more damage from piercing and slashing attacks, suffering additionally a -4 penalty to AC against that type of attack
+  - Special: once per day, target loses immunity to backstabs, if they had it, take 10% more damage from piercing and slashing attacks, suffering additionally a -4 penalty to AC against piercing and slashing
   - Duration: 4 rounds
 
 **Componen 1653:** Make Thieves' Hood protect against critical hits and slightly more advantageous for single-classed thieves: +1 THAC0 and Damage
 
 This improves this item in the following ways:
 
-- Both upgraded and non-upgraded versions now protect against critical hits, essentially giving Thieves access to critical hit protection.
-- Single-classed thieves gain +1 THAC0 and Damage (for balance and to promote specialization)
+- Both upgraded and non-upgraded versions now protect against critical hits, essentially giving a Thief access to critical hit protection without requiring fighter levels.
+- Single-classed thieves gain +1 THAC0 and Damage (for balance and to promote specialization) in the upgraded version
 
 **Component 1654:** Make Star-Strewn Boots slightly better and favor Inquisitors too (SoD)
 
@@ -375,7 +375,7 @@ This makes these boots improve Magic Resistance by 10% for everyone (from 7%) an
 
 This improves the damage resistance it grants to 5%. The reason for this lies in the fact that the game only uses integers for most calculations, including damage. This means that the vanilla 3% damage reduction, for classes that have no other sources to reduce damage, would have to be hit with a physical attack of at least 34 damage to reduce the damage by 1, which is the minimum amount, which oftentimes means you're dealing with an enemy that is about to chunk or delete you anyway.
 
-5% would reduce the threshold before the reduction to 20 points of received damage. It's still mild and shouldn't unbalance anything. For Barbarians, Cleric, Paladins, and Dwarven defenders, it will provide a juicier bonus since they all have ways to add physical damage reduction.
+5% would reduce the threshold before the reduction to 20 points of received damage. It's still mild and shouldn't unbalance anything. For Barbarians, Cleric, Paladins, Shadowdancers (in restricted contexts), and Dwarven defenders, it will provide a juicier bonus since they all have ways to add physical damage reduction.
 
 **Component 1657:** Make The Visage add the capacity to cast Aura of Despair once per day and improve powers slightly
 
@@ -446,15 +446,15 @@ Self explanatory.
 
 **Component 1671:** Make The Eyes of Truth add a bonus to Detect illusions and Find Traps
 
-I decided to take the name of the item more seriously. And let's face it, this item is always an automatic sell. In this state, at least it has some use for Fighter/Thieves or Cleric/Thieves.
+I decided to take the name of the item more seriously. And let's face it, this item is always an automatic sell. In this state, at least it has some use for Fighter/Thieves or Cleric/Thieves. +10% bonus to both skills
 
 **Component 1672:** Make Stalker Gauntlets also benefit Bounty Hunters and Shadowdancers
 
-It seems obvious that both the Stalker and Bounty Hunter "professions" align with each other, stalking prey and hunting for a bounty. Shadowdancers are masters of stealth via innate shadow magic, so I don't think it's far-fetched either. Both Stalker-only benefits apply, including the enhanced backstab.
+It seems obvious that both the Stalker and Bounty Hunter "professions" align with each other, stalking prey and hunting for a bounty. Shadowdancers are masters of stealth via innate shadow magic, so I don't think it's far-fetched either. Both Stalker-only benefits apply, including the enhanced backstab multiplier.
 
 **Component 1673** Make Blessed Bracers more powerful
 
-This makes the bracers far more worth the trouble for paladins. Instead of just letting you cast Resurrection and Heal Critical Wounds, and +10 HP:
+This makes the bracers far more worth the trouble for paladins. Instead of just letting you cast Resurrection and Heal Critical Wounds, and give you +10 HP:
 
 - You can cast Resurrection once per day
 - You can cast Heal once per day (instantly cast)
@@ -464,7 +464,7 @@ This makes the bracers far more worth the trouble for paladins. Instead of just 
 
 **Component 1674:** Make Whispers of Silence improve Move Silently, and protect vs. detection spells except True Sight and grant a bonus sometimes when going invisible
 
-This makes the cloak more useful for the purposes of avoiding detection, since Nondetection is an unremarkable protection. As such, the wearer is also immune to other invisibility-detecting spells, except True Sight. Additionally, it adds a 10% bonus to Move Silently, and a +5% critical hit chance while the user is invisible.
+This makes the cloak more useful for the purposes of avoiding detection, since Nondetection is an unremarkable protection. As such, the wearer is also immune to other invisibility-detecting spells, except True Sight. Additionally, it adds a 10% bonus to Move Silently, and a +5% critical hit chance while the user is invisible for 2 rounds, which is an effect that may trigger once per turn (watch out for the red glow on character).
 
 **Component 1675:** Make Cloak of Displacement add +5% damage resistance
 
@@ -482,7 +482,7 @@ I don't like items that **only** add an ability without any passive benefit. The
 
 In my opinion, these gloves are very, very mundane, and not wondrous. Therefore, the effects of wearing these gloves are now useful for all bards, with specific benefits according to vanilla kits and for bards in general.
 
-- Bards in general get: +2 AC, THAC0,+2 Damage, Casting Speed, +1 spell slot from level 1 to 6
+- Bards in general get: +2 AC, THAC0, Damage, and Casting Speed, +1 spell slot from level 1 to 6
 - Skalds get +1 Strength and +1/2 APR
 - Blades get +1 Dexterity and +1/2 APR
 - Jesters get immunity to confusion, slow, and unconsciousness, as well as +6 bonus saves vs. Enchantment spells
@@ -506,7 +506,15 @@ To me, the duration of the effects is too short. Plus, the "unknown" damage to t
 - Immunity to level 1, 2, and 3 spells
 - +2 Saving throws (vanilla)
 - Physical resistance: +8% resistance
-- The Horn now has a 50% chance of causing a deleterious effect on the user: -10 Max Hit Points, -3 THAC0, -2 Damage, -2 Strength, -2 Constitution, -2 Dexterity, -1 Saving Throws, -4 Saves vs. Death, or -50% movement speed. This effect continues for 2 turns.
+- The Horn now has a 50% chance of causing **ONE** deleterious effect on the user: -10 Max Hit Points, -3 THAC0, -2 Damage, -2 Strength, -2 Constitution, -2 Dexterity, -1 Saving Throws, -4 Saves vs. Death, or -50% movement speed. This penalty persists for 2 turns.
+
+**Component 1190:** Make Rod of Lordly Might usable by any class and more powerful
+
+The rod is conceptually quite interesting but generally underperforming. This component changes the name to "Rod of Royal Might" (even the descriptions mentions royalty):
+
+- **Mace +2** is renamed to Mace of Royal Might +3, becomes a +3 weapon, and the save against panic is now at +2, not +5, and the panic is now a 2-round Slow effect.
+- **Flaming Long Sword +1** is renamed to Flaming Sword of Royal Might +3, becomes a +3 weapon, causes 1d4 fire damage per hit, and since it's "hypnotic" it has a 50% chance of causing Stun, and 50% change of causing asleep for 1 round. The save against it is now +2 instead of +5. Additionally, it makes it look like an actual flaming sword when held.
+- **Spear +3** is renamed to Spear of Royal Might +3, and it no longer has a Save vs. Spell bonus of +6 to cause 2d4 magic damage, now it has no bonus or penalty and causes 3d4 magic damage when save is failed.
 
 
 </details>
@@ -517,13 +525,9 @@ To me, the duration of the effects is too short. Plus, the "unknown" damage to t
 
 <summary><b>Dagger Tweaks</b></summary>
 
-**Component 1000:** Make throwing poisoned daggers slightly more likely to poison enemies
+**Component 1000:** Make throwing poisoned daggers less rare and more likely to poison enemies
 
-This component makes these items force a save vs. Death at -2, which makes them more useful and compensates for their rarity. This save penalty can be overridden in the configuration file.
-
-**Component 1002:** Make throwing poisoned daggers slightly less rare
-
-This component increases the stock of these throwing daggers. In BG2, they're only increased in the same stores where they're found. There are now exactly 356 poisoned throwing daggers to be bought in the stores, which is more than double the amount available in stores by default. They're also spread more evenly among stores.
+First, this component increases the stock of these throwing daggers. In BG2, they're only increased in the same stores where they're found. There are now exactly 356 poisoned throwing daggers to be bought in the stores, which is more than double the amount available in stores by default. They're also spread more evenly among stores.
 
 In BGEE there are none, even though in SoD there are 800 in Waizahb's stock (halfling thieves' guild merchant in Coalition Camp). A bunch will also be spread to a few other relevant merchants in the main game:
 - Silence: 48
@@ -533,9 +537,11 @@ In BGEE there are none, even though in SoD there are 800 in Waizahb's stock (hal
 
 The quantity can be increased or decreased using the configuration file.
 
+Secondly, this component makes these items force a save vs. Death at -2 to avoid poisoning, which makes them more useful and compensates for their rarity. This save penalty can be overridden in the configuration file too.
+
 **Component 1130:** Make Bone Blade dagger more special and not just a plain +4 dagger
 
-Plain enchanted weapons are boring, and the higher the enchantment level, the more egregious that is, as far as I'm concerned.
+Plain enchanted weapons are boring, and the higher the enchantment level, the more egregious that is, as far as I'm concerned (I'm looking at you too, Cutthroat +4).
 
 Instead of simply giving the usual +4 weapon bonuses:
 
@@ -623,6 +629,10 @@ This component doesn't make the weapon available. Mods such as Unfinished Busine
 - Cannot be healed by any of the spells in the Cure Wounds family, Heal, and similar, as well as vanilla healing potions.
 - Cursed, can only be removed with a Remove Curse spell
 
+**Component 1530:** Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time to maximize damage
+
+This reduces the number of dice thrown of DAGG11 and DAGG12 to 1, so they are not the only good choice for daggers to maximize damage. And for consistency. Generally speaking, I dislike this sort of unbalanced design. DAGG11 specifically, already conforms to this rule in BGEE.
+
 </details>
 
 ---
@@ -645,13 +655,11 @@ It seems appropriate that the talking sword containing the blood-lusting, raving
 
 Since this was blessed by northern barbarian gods, the sword now causes 1d4 cold damage on contact, but makes the sword damage actually 1d12+2 (keep reading, don't worry). Barbarians wielding this sword will receive +5% physical resistance, and the sword's bonus damage is increased by 3 (1d12+5). Lastly, it will be renamed to "Barbarian Warblade +4", just because.
 
-**Component 1280:** Make Carsomyr affect any kind of evil and not just Chaotic Evil
+**Component 1280:** Make Carsomyr more balanced and affect any kind of evil and not just Chaotic Evil
 
-Self explanatory. Not that it needs to be more powerful, but it feels wrong to not be especially effective against non-chaotic evil (but yes, I understand it's because it's the opposite of a paladin's alignment).
+Not that it needs to be more powerful, but it feels wrong to not be especially effective against non-chaotic evil (but yes, I understand it's because it's the opposite of a paladin's alignment).
 
-**Component 1290:** Make Carsomyr's Dispel Magic abilities more balanced
-
-The dispel on hit thing is pretty cheesy, so, yeah. That. No penalty with +5, -2 with +6 version. As for the ability to cast Dispel Magic, since level 15 dispel is quite weak, especially for the +6 version, it's now level 20-30 for each version.
+Additionally, since the dispel on hit thing is pretty cheesy, a saving throw vs. Spell is added as counterbalance. No penalty with +5, -2 with +6 version. As for the ability to cast Dispel Magic, since level 15 dispel is quite weak, especially for the +6 version, it's now level 20-30 for each version.
 
 **Component 1300:** Make Silver Sword significantly more unique and add a more interesting (IMO) description
 
@@ -661,28 +669,20 @@ This component improves the description to something a bit more interesting than
 - The sword acts in **every way** as a +5 two-handed sword **against mind flayers only**, that is, +5 THAC0, +5 enchantment, 1d10+5 damage
 - Against other targets, it's still a +3 weapon in terms of damage, thac0 and enchantment level
 - Wielding it makes the wielder immune to mind blasts and domination attempts by mind flayers
-- Critical hits cause  which causes 2d8 psychic (irresistible) damage and causes Confusion for 10 seconds if a Save vs. Spell at -2 is failed. Creatures without minds or brains are unaffected.
+- Critical hits causes 2d8 psychic (irresistible) damage and causes Confusion for 10 seconds if a Save vs. Spell at -2 is failed. Creatures without minds or brains are unaffected.
 - Speed factor of 6
 
-**Component 1318:** Make Flame of the North +2 affect all evil, not just chaotic evil
+**Component 1318:** Make Flame of the North able to kill trolls, and the extra damage affect all evil, not just Chaotic Evil
 
-Self explanatory
-
-**Component 1322:** Make Flame of the North inflict +2 fire damage against trolls
-
-The backstory of the sword heavily implies it was involved in the slaughter of many trolls. Therefore, the sword can completely destroy trolls on hit by causing +2 fire damage on hit to trolls only.
+Self explanatory. Also, The backstory of the sword heavily implies it was involved in the slaughter of many trolls. Therefore, the sword can completely destroy trolls on hit by causing +2 fire damage on hit to trolls only.
 
 **Component 1390:** Make Staff of the Magi force a saving throw to dispel effects on hits
 
 The dispel on hit thing is pretty cheesy so, yeah. That. Save vs. Spell at -2
 
-**Component 1410:** Make Ir'revrykal Dispel Magic effect not depend on probabilities but allow a saving throw.
+**Component 1410:** Make Ir'revrykal dispel magic not depend on probabilities and increase base damage
 
-This essentially is the same tweak to Carsomyr, except the chance of dispelling is also 100%. The saving throw vs. spell has no penalty.
-
-**Component 1420:** Make Ir'revrykal base damage equal to Carsomyr
-
-This makes the weapon have 1d12 base damage much like Carsomyr, tightening the resemblance between both swords.
+This essentially is the same tweak to Carsomyr, except the chance of dispelling is also 100%. The saving throw vs. spell has no penalty. It also makes the weapon have 1d12 base damage much like Carsomyr, tightening the resemblance between both swords. Both features are optional.
 
 **Component 1460:** Make Spear of Withering able to poison on contact if save is failed
 
@@ -703,13 +703,13 @@ Panic is very unlikely to happen, and panic is generally not very convenient bec
 
 This makes Blackmist's blindness power more likely to be effective by adding a -2 save penalty. Additionally, you're immune to blindness while wielding it.
 
-**Component 1591:** Make Soul Reaver slightly more balanced
+**Component 1591:** Make Soul Reaver slightly more balanced and deal 1d12 damage
 
 Soul Reaver is fairly unbalanced, particularly because it reduces THAC0 by 2 cumulatively for 2 full minutes, and it's fairly easy to make any enemy to not be able to hit anything at all. This tweak reduces this duration to 5 rounds, and requires a Save vs. Spell at -4 to resist.
 
-**Component 1592:** Make Soul Reaver deal 1d12 damage
+Also, the sword looks like it's fairly massive. You may disagree, but that's how it comes across to me. So this will also match the dice size of other blades like Carsomyr and Warblade: 1d12 (or 2d6 if the two-handed general tweak was installed).
 
-The sword looks like it's fairly massive. You may disagree, but that's how it comes across to me. So this will match the dice size of other blades like Carsomyr and Warblade: 1d12 (or 2d6 if the two-handed general tweak was installed).
+Both changes are optional.
 
 **Component 1593:** Make Sword of Ruin +2 slightly more powerful
 
@@ -719,7 +719,7 @@ This makes the extra critical damage of the weapon a bit more substantial, 2d5+2
 
 I don't like that it's just casually called "cleric's" staff. Therefore, it gains a few perks:
 
-- 1 AC
+- +1 Armor Class
 - +1 spell slot of level 3, 4, and 5 (clerics only)
 - +1 turn undead and casting level (clerics only)
 - May cast Mass Cure (at minimum level, 1d8+9 healing) twice per day
@@ -761,7 +761,6 @@ This makes the weapon act in every way against dragons and wyverns as a +6 weapo
 
 This weapon, similarly to The Equalizer, deals unenchanted level damage by default and adds additive damage separately. For the purposes of multipliers, it's a fairly less powerful halberd compared to any other +4 halberd, despite the added multi-elemental +5 damage per hit. This makes the weapon damage truly 1d10+4, with the extra damage intact. If it's okay for the Flail of Ages +5, it is okay for this too.
 
-
 **Component 1604:** Make Duskblade +2 more imbued with the essence of necromancy
 
 This component enhances the weapon a bit, inspired by the description about how it got its powers because of the persistent presence of undeath:
@@ -776,7 +775,6 @@ I hate with passion this 10% chance of killing period-no-questions-asked thing, 
 - The chance of killing (vorpal hit) is now bound to a Save vs. Death at -4 to trigger, similar to Axe of the Unyielding
 - Additionally, Cloak of Fear can be instantly cast.
 - And the poison damage is set up differently, and brings elements from the Serpent Shaft. Instead of causing 3d6 poison damage instantly, the damage is now reestructured such that it causes 2d6 poison damage instantly AND poisons the target for 1 round (12 poison damage in total). This ensures a minimum dealt damage of 14 within a round and you deal a 1-round annoyance for casters as well.
-
 
 **Component 1607:** Make Gram, the Sword of Grief able to become +6 and rebalance effects
 
@@ -818,9 +816,9 @@ The description of Peridan is slightly misleading because it states that it does
 
 In reality, the sword deals 1d8+2 against all enemies and 1d8+2 again in a second tick of damage if the enemy is a dragon. So now the description is a bit more explicit about what it does and:
 
-- Regeneration improved to 1 HP per 15 seconds (5/2 rounds)
+- Regeneration improved to 1 HP per 5/2 rounds
 - Adds 15% resistance to all elements (i.e., the damage type of most dragons)
-- THAC0 against dragons and wyverns has a +4 bonus (side effect: affects other weapons while dual wielding)
+- THAC0 against dragons and wyverns has a +4 bonus
 - +2 AC vs. Dragons and Wyverns (essentially like a "Protection from Dragons and Wyverns" spell)
 - Detect Invisibility can be cast three times, not once per day
 - Deals an additional tick of 2d8+2 damage if the target is a dragon or wyvern
@@ -856,13 +854,13 @@ This makes it useful for far longer, and more like the Sword of Mordenkainen. Ad
 
 Makes the chance-based Level drain take 2 levels instead of just one and the Entangle effect 5% more likely to trigger (20%).
 
-**Component 1240:** Make Purifier's damage bonus affect all evil, not just Chaotic Evil
+**Component 1240:** Make Purifier's dispel magic much better and damage bonus affect all evil, not just Chaotic Evil
 
 Just as the title says. It's kind of funny considering the description of the weapon mentions Pit Fiends, which are Lawful Evil.
 
-**Component 1241:** Make Purifier's Dispel Magic level 30, like Staff of the Magi and Carsomyr
+It also makes the dispel magic effect equal to those in the Staff of the Magi and Carsomyr.
 
-This makes the dispel magic effect equal to those in the Staff of the Magi and Carsomyr.
+Both changes are optional.
 
 **Component 1250:** Make Yamato's passive abilities more substantial
 
@@ -880,7 +878,7 @@ The effect is pretty underwhelming for a +4 weapon. Now:
 
 **Component 1270:** Make Spectral Brand slightly better and make the dancing blade last for 1 turn instead of 4 rounds
 
-This makes it useful for far longer, and more like the Sword of Mordenkainen. Additionally, the Armor Piercing special ability also improves damage by +4, critical hit chances by +10%, and cannot critically miss.
+This makes it useful for far longer, and more like the Sword of Mordenkainen. Additionally, the Armor Piercing charge ability also improves damage by +4, critical hit chances by +10%, and critically misses become impossible to trigger (effectively impossible unless something is increasing the chances of having critical misses).
 
 **Component 1315:** Make Dak'kon's Zerth Blade behave as a +3 weapon
 
@@ -906,17 +904,15 @@ By the time you get this weapon in BG2, it's generally underwhelming, and you ha
 - Icingdeath: It's a "frost" weapon, and as such, it also inflicts 1d3 cold damage per hit, +5 against creatures immune to fire (fire elementals, fire salamanders, fire giants, etc). It's also considered a silver weapon
 - Twinkle: It has a defensive theme, therefore: added +2 AC bonus against slashing, piercing and missile, +1 save vs. Spell, +8% physical damage resistance
 
-**Component 1580:** Make Hawksight +2 improve your senses, reflexes, and accuracy more keenly
+**Component 1580:** Make Hawksight improve your senses, reflexes, and accuracy more keenly, and give it a more unique description
 
-This component takes the description more seriously, and hence, other than giving +1 Dexterity it also:
+This component takes the theme of speed and accuracy more seriously, and hence, other than giving +1 Dexterity it also:
 
 - Has +4 THAC0 bonus instead of +2
 - Universal +1 saving throw bonus
 - +1/2 APR
 
-**Component 1581:** Make Hawksight's description unique and add a minor power to it
-
-This component requires the previous one, and it adds a description worth-reading (YMMV). I really dislike items with unique names, but with no interesting description or brief backstory. It seems lazy and uninteresting to add a named item without any background. Additionally, it adds a minor power to it, based on this brief backstory. See ZSTweaks/unique_descriptions.md for details.
+Optionally, it also adds a description worth-reading (YMMV). I really dislike items with unique names, but with no interesting description or brief backstory. It seems lazy and uninteresting to add a named item without any background. Additionally, it adds a minor power to it, based on this brief backstory. See ZSTweaks/unique_descriptions.md for details.
 
 **Component 1582:** Make Vexation +2 more powerful
 
@@ -925,7 +921,7 @@ I've always liked this sword conceptually, and it's introduced into the game in 
 - Critical hits inflict 2d4 extra piercing damage
 - Bleeding per hit improved to 1d2 from 1
 
-Note that this will make the encounter relatively more difficult, obviously. Protect your mages; Neera will likely be targeted. And promptly chunked.
+Note that this will make the encounter relatively more difficult, obviously. Protect your mages: they will likely be targeted... And promptly chunked.
 
 **Component 1583:** Make Kachiko's Wakizashi substantially more unique in description and improve it
 
@@ -965,7 +961,7 @@ The unique description with no unique functionality bothers me, therefore:
 
 The unique description with no unique functionality bothers me, therefore:
 
-- Cursed wound: critical hits with this weapon prevent any healing for 2 rounds
+- Cursed wound: critical hits with this weapon prevent most sources of healing for 2 rounds
 - +5% critical hit chances with this weapon
 
 **Component 1596:** Make The Shadow Blade +3 not just unique in name and description, but in function
@@ -1006,7 +1002,7 @@ So. You get this weapon fairly late in BGEE, and it sucks. Also, "cold-using cre
 
 **Component 1310:** Make Defender of Easthaven damage reduction a little more moderate
 
-The bonuses of this weapon are very significant, and it is an infamous toolset for powergaming and no-reload runs. I reduced the resistances to 10%. It's still significant, while still reducing the chances of breaking the game.
+The bonuses of this weapon are very significant, and it is an infamous tool for powergaming and no-reload runs. I reduced the resistances to 10%. It's still significant, while still reducing the chances of breaking the game.
 
 **Component 1311:** Make Krotan's Skullcrusher +2 slightly less generic
 
@@ -1050,7 +1046,7 @@ Finally, and more importantly, it makes the axe balanced, since anyone can Whirl
 
 This improves this item in the following ways:
 - Causes 2 poison damage per hit with no save allowed
-- If save vs. Poison is failed, it deals 5 poison damage over 5 seconds. There's a 4% chance that this poison will be as lethal as that of an adult wyvern, becoming instead 25 poison damage over 5 seconds.
+- If save vs. Poison is failed, it deals 5 poison damage over 5 seconds. There's a 4% chance that this poison will be as lethal as that of an adult wyvern, becoming instead 25 poison damage over 5 seconds. The save vs. Death is at -2 in this case.
 
 **Component 1325:** Make Borok's Fist +2 different from Ashideena +2
 
@@ -1122,7 +1118,7 @@ This follows the theme of the description, which is an anti-wizard theme, and th
 
 The description states that 30% of the health of the target will be lost by the time the poison is done, but that's not actually true. Therefore, now it deals 30 points of poison damage over 30 seconds, similar to Bolts of Biting, but slower. Additionally, these arrows will have a 5% higher chance of critically hitting.
 
-This will in turn make Hobgoblins and Sirenes in BGEE significantly more dangerous if they get the poison off on you, since -30 HP is a big deal. Keep the antidotes and healing ready (my potion and healing spell overhaul helps wink wink).
+This will in turn make Hobgoblins and Sirenes in BGEE significantly more dangerous if they get the poison off on you, since -30 HP is a big deal in BGEE. Keep the antidotes and healing ready (my potion and healing spell overhaul helps wink wink).
 
 **Component 1345:** Make Arrows of Fire cause fire damage always, same as Arrows of Ice
 
@@ -1174,6 +1170,7 @@ Come on, Arvoreen! Be more generous to your most faithful holy warrior.
 
 - Bow of Arvoreen grants extra 1/2 APR to Mazzy, +3 THAC0, and +1 damage
 - Sword of Arvoreen grants extra 1/2 APR to Mazzy, +4 THAC0, and becomes in most respects a +3 weapon, except it can hurt enemies immune to +3 weapons.
+- Only Mazzy can wield these
 
 **Component 1510:** Make Delryn's family shield become a +2 shield
 
@@ -1238,7 +1235,7 @@ It will also remove the needless stat restrictions from the item.
 
 Deathbringer assault is a bit stupid. Yes, it's very cool. Yes, big ToB bosses are not affected. Yes, it triggers only 3% of the time. But it's still 200 slashing damage, without even a save to take only half. Sarevok also causes stun (even though it's supposed to be a fear-induced state) 11% of the time when he hits for 2 rounds, which is almost always a death sentence when it happens, and cannot be dispelled, as it is a natural effect. The following changes are applied:
 
-- The damage part of the assault is now 150, and allows a save vs. Death at -5 to take half. 75 damage is still a BIG FAT hit, which is added on top of a regular hit, so... You'll be fine
+- The damage part of the assault is now 150 (overridable in the config file), and allows a save vs. Death at -5 to take half. 75 damage is still a BIG FAT hit, which is added on top of a regular hit, so... You'll be fine
 - Golems, other constructs, slimes, spiritual beings, spectral undead, and dragons are all immune to the damage no matter what
 - The stun is meant to be an effect of fear, not a "stun" per se, and as such, it's no longer a stunning effect, but a fear effect that roots the enemy in place and lowers their AC by 10. As such, only creatures that are not immune to fear will be affected by this.
 - The probability of stun (now a special type of fear) is a proper 10% chance
@@ -1253,29 +1250,8 @@ This component makes Shar-Teel's effectiveness vs. males fit her hate and boasti
 - +1 to THAC0 and Damage vs. males
 - +2 AC vs. males (essentially as if she had a Protection from Men spell on her)
 
+Note that this means she has a bonus against things that make no sense they're set as "male", like battle horrors. I want to try to make it so it's just humanoids, but currently it doesn't discriminate, as I'm not sure how to implement that.
 
-</details>
-
----
-
-<details>
-
-<summary><b>Misc Tweaks</b></summary>
-
-**Component 1190:** Make Rod of Lordly Might usable by any class and more powerful
-
-The rod is conceptually quite interesting but generally underperforming. This component changes the name to "Rod of Royal Might" (even the descriptions mentions royalty):
-
-- **Mace +2** is renamed to Mace of Royal Might +3, becomes a +3 weapon, and the save against panic is now at +2, not +5, and the panic is now a 2-round Slow effect.
-- **Flaming Long Sword +1** is renamed to Flaming Sword of Royal Might +3, becomes a +3 weapon, causes 1d4 fire damage per hit, and since it's "hypnotic" it has a 50% chance of causing Stun, and 50% change of causing asleep for 1 round. The save against it is now +2 instead of +5. Additionally, it makes it look like an actual flaming sword when held.
-- **Spear +3** is renamed to Spear of Royal Might +3, and it no longer has a Save vs. Spell bonus of +6 to cause 2d4 magic damage, now it has no bonus or penalty and causes 3d4 magic damage when save is failed.
-
-**Component 3500:** Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane
-
-This seems more a bugfix than a tweak, but it bothers me and it's not tackled anywhere else so here it is. No one can cast Shadowstep (Shadow Jump too if my Shadowdancer overhaul is installed) during those sequences, since those abilities rely on a brief plane shift to the Prime's parallel plane: the Plane of Shadow. This needs to be patched manually, and only the following areas are targetted:
-
-- Rasaad's ToB quest areas in the SP
-- Lava's Shade of the Sword Coast SP in Gnoll Stronghold
 
 </details>
 
@@ -1285,13 +1261,17 @@ This seems more a bugfix than a tweak, but it bothers me and it's not tackled an
 
 <summary><b>Wizard Spell Tweaks</b></summary>
 
-**Component 160:** Make Black Blade of Disaster unsuitable for backstabs
+**Component 140:** Standardize Finger of Death magical damage on a successful save
 
-This exists simply to destroy any temptation to use these as cheesy ways to get insane numbers with backstabs that would instakill most things with HP and normal damage resistances in one hit. So now they should not be able to trigger backstabs.
+This component matches the magic damage inflicted by the wizard version of Finger of Death so it's as powerful as the priest version.
 
-**Component 163:** Make Iron Golem weapon unsuitable for backstabs
+**Component 145:** Make Luck last for 1 turn and add 5% critical hit chances, 2 Armor Class, 5% more to thieving
 
-Same as the previous component.
+The bonus that Luck provides really doesn't justify such a short duration. Now it lasts 1 turn instead of 3 rounds (i.e., 18 seconds) and makes it generally more useful by adding also a 5% critical hit chance boost, 10% total bonus thief skill bonus, as well as 2 AC. The rest is unchanged. You can choose which parts of the component you want to install in the configuration file.
+
+**Component 160:** Make Black Blade of Disaster and golem iron fist unsuitable for backstabs (optional, see config)
+
+This exists simply to destroy any temptation to use these as cheesy ways to get insane numbers with backstabs that would instakill most things with HP and normal damage resistances in one hit. So now they should not be able to trigger backstabs. You can disable either case in the configuration file.
 
 **Component 161:** Make Phantom Blade scale in duration up to level 20, instead of to level 18
 
@@ -1321,9 +1301,9 @@ It probably makes more sense to make this spell a Necromancy spell like in NWN a
 
 2 points of damage for STR, DEX and CHA is underwhelming, and CHA reduction is irrelevant unless using particular mods. Now it reduces 4 STR and DEX, which should be a little more meaningful and more worth the level 4 slot.
 
-**Component 390:** Make Death Fog inflict 1d8+8 acid damage per round instead of flat 8 damage
+**Component 390:** Make Death Fog inflict 1d8+8 acid damage and optionally bypass Magic Resistance
 
-Improves the usability of Death Fog as a "general purpose" damage dealer instead of just a stationary lingering anti-summon spell. The options for acid spells are very lacking in the game anyway. So instead of 8 acid damage per round now it will be between 8 and 16 per round with no save.
+Improves the usability of Death Fog as a "general purpose" damage dealer instead of just a stationary lingering anti-summon spell. The options for acid spells are very lacking in the game anyway. So instead of 8 acid damage per round now it will be between 8 and 16 per round with no save. Optionally, magic resistance will be bypassed. You can undo this in the configuration file.
 
 **Component 400:** Make Energy Drain drain 6 levels instead of 2
 
@@ -1351,13 +1331,11 @@ A very cool part of other games using the Grease spell is that it actually prime
 
 As others have noted, this spell is generally just less powerful than Dragon Breath (the latter also is not affected by Magic Resistance). This is an attempt at making it more unique. As for the rationale, comets are cold and icy, hence the cold damage, but burn when in a collision path, hence the fire damage, and are big rocks, hence the crushing damage. The breakdown of damage is: 2d10+10 cold, 2d10+10 fire, 3d10+10 crushing.
 
-**Component 441:** Make Tenser's Transformation grant a THAC0 of 0 at max level
+**Component 441:** Make Tenser's Transformation grant a THAC0 of 0 at max level and APR at the appropriate levels
 
-Makes this spell achieve a THAC0 of 0 at max level, since the description clearly states "fighter of the same level."
+Makes this spell achieve a THAC0 of 0 at max level, since the description clearly states "fighter of the same level." They also get 1/2 APR at levels 7 and 13.
 
-**Component 442:** Make Tenser's Transformation give extra APR like a Fighter at the appropriate levels
-
-This component further tightens the gap between the wizard and the fighter they want to emulate, getting 1/2 APR at levels 7 and 13.
+Finally, by default, it will only grant APR to non-fighter casters, as fighters already have the APR they need. This can be disabled in the configuration file.
 
 **Component 443:** Make Symbol of Death work with +6 saving throw bonus if above the 60 HP threshold
 
@@ -1430,13 +1408,11 @@ Generally, I do not believe in damaging spells that can be avoided completely wi
 
 Therefore, it will always cause half damage. Additionally, it extends the headers up to level 20, such that the damage grows up to 20d4 instead of 18d4.
 
-**Component 101:** Make Flame Blade do 4 more points of Fire Damage to undead and act as a +2 weapon against them
+**Component 101:** Make Flame Blade be more effective vs. undead, and last for as long as it does in IWDEE
 
 This is essentially how it works in IWDEE, except the +2 enchantment bonus, which is an addition to make it an effective tool against undead. This also fixes the inaccurate description in IWDEE (it's +4 fire damage, not +2). Note that this will mark the weapon as magical due to technical reasons, which will make the weapon not effective against something that is protected against magical weapons but not normal ones.
 
-**Component 102:** Make BG's version of Flame Blade scale duration-wise like in IWDEE
-
-There's no reason this weapon should be more limited duration-wise. Now it follows the usual convention.
+Finally, it also makes the spell scale duration-wise like in IWDEE. Now it follows the usual convention.
 
 **Component 110:** Make Bless and Curse last longer and increase the casting speed from 6 to 3
 
@@ -1446,21 +1422,11 @@ I don't think 36 seconds with a very long casting makes this spell desirable in 
 
 This component equalizes the saving throw penalty in the cleric version of Hold Person so it has the same as the wizard one, which is -1.
 
-**Component 140:** Standardize Finger of Death magical damage on a successful save
-
-This component matches the magic damage inflicted by the wizard version of Finger of Death so it's as powerful as the priest version.
-
-**Component 145:** Make Luck last for 1 turn to make it more usable
-
-The bonus that Luck provides really doesn't justify such a short duration. Now it lasts 1 turn instead of 3 rounds (i.e., 18 seconds).
-
-**Component 147:** Make Luck also add 5% critical hit chances, 2 AC, 5% more to thieving
-
-This component makes Luck more generally useful by adding also a 5% critical hit chance boost, 10% total bonus thief skill bonus, as well as 2 AC. The rest is unchanged.
-
-**Component 190:** Make Holy Power achieve a THAC0 of 0
+**Component 190:** Make Holy Power grant a THAC0 of 0 at max level and APR at the appropriate levels
 
 Makes this spell achieve a THAC0 of 0 at max level, since the description clearly states "fighter of the same level."
+
+And it further tightens the gap between the cleric and the fighter they want to emulate, getting 1/2 APR at levels 7 and 13. By default, non-fighter classes are the only ones getting the extra APR. This can be disabled in the configuration file.
 
 **Component 230:** Make Cloak of Fear work as a temporary aura of fear, like in IWDEE
 
@@ -1502,10 +1468,6 @@ Therefore, it starts with a +2 bonus (from +3), which improves to +1 at level 5,
 
 See component 100 for reasoning.
 
-**Component 290:** Make Holy Power give extra APR like a Fighter at the appropriate levels
-
-This component further tightens the gap between the cleric and the fighter they want to emulate, getting 1/2 APR at levels 7 and 13.
-
 **Component 300:** Make Iron Skins cast as fast a Stoneskin
 
 This component reduces the need to use them only in pre-fight buffing rituals, due to the extremely long casting time.
@@ -1532,7 +1494,7 @@ This spell is useless if the health of the enemy, which ordinarily you cannot kn
 
 At the beginning of BGEE this spell is largely unremarkable and provides no protection of note to the cleric. Now it will at least provide a minor AC bonus by default, which makes this spell the only one in vanilla BG that improves the AC of the cleric other than Defensive Harmony (IIRC).
 
-**Component 450:** Make single-target healing spells other than Heal worth using
+**Component 450:** Make healing spells other than Heal more worth using
 
 Healing spells are infamously bad in BG/BG2, they heal too little for such a slow cast, and they don't improve with level. With this tweak:
 
@@ -1541,12 +1503,12 @@ Healing spells are infamously bad in BG/BG2, they heal too little for such a slo
 - Cure Medium Wounds: Heals 20 points plus 2 more points per level, up to 28
 - Cure Serious Wounds: Heals 30 points plus 3 more points in the next two levels, 2 on the next two, up to 40
 - Cure Critical Wounds: Heals 42 points plus 3 more points per level, up to 54
+- Mass Cure: improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32)
+- Mists of Eldath: Heals 40 points, regenerates 1 HP/s for 2 rounds and prevents poisoning for that ime
 
 Also they will no longer be stopped by spell deflection.
 
-**Component 460:** Make Mass Cure faster to cast and heal a bit more
-
-This improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32). Also, it will no longer be stopped by spell deflection.
+All of these specific tweaks to these spells may be disabled or enabled in the config file.
 
 **Component 461:** Make Bolt of Glory slightly better
 
@@ -1668,29 +1630,21 @@ Self-explanatory, plus it makes sense that these spells should be able to restor
 
 <summary><b>Class/Kit-related Tweaks</b></summary>
 
-**Component 2100:** Make Sun Soul Ray from Sun Soul Monks damage improve slightly and do more damage to undead
+**Component 2100:** Make Sun Soul Ray and Sun Soulbeam Sun Soul Monks scale further and/or do more damage to undead
 
-The maximum damage normally grows up to 6d8 at level 12, adding 6 damage to undead, which is a very small bonus that doesn't scale. Now this bonus against undead increases by 2 points every time the power is upgraded.
+- Sun Soul Ray: The maximum damage normally grows up to 6d8 at level 12, adding 6 damage to undead, which is a very small bonus that doesn't scale. Now this bonus against undead increases by 2 points every time the power is upgraded.
+- Sun Soulbeam: The difference in damage between non-undead and undead in vanilla is 9d6 vs. 9d6+3. It's really not a meaningful difference. Therefore, the damage to undead will now be 12d6+3, i.e., up to 75 damage instead of 57, which I think is okay for a once-per-day ability anyway.
 
-**Component 2110:** Make Sun Soulbeam do more damage to undead: 12d6 instead of just 3 more damage than baseline.
+Both tweaks can be enabled or disabled in the configuration file.
 
-The difference in damage between non-undead and undead in vanilla is 9d6 vs. 9d6+3. It's really not a meaningful difference. Therefore, the damage to undead will now be 12d6+3, i.e., up to 75 damage instead of 57, which I think is okay for a once-per-day ability anyway.
+**Component 360:** Make Shaman's unique spells more powerful
 
-**Component 360:** Make Ethereal Retribution do more damage per round: 6d6 per round instead of 3d8
+- Ethereal Retribution: Three rounds of 3d8 for a Quest/level 10 spell is hilariously bad, despite the possibility of sapping some Strength with a save vs. Spell that doesn't even have a penalty. Now it does 6d6 magic damage per round at least, and the Strength-sapping effect has a -2 penalty now.
+- Writhing Fog: This improves this spell by making it cause 1d3+1 cold damage, whose dice size improves by 1 every level after level 3, until it becomes 1d10+1. The Slow effect, additionally, triggers with a 50% chance, not a 20% chance.
+- Spirit Fire: This makes the damage of this spell scale better: it deals 1d4+1/level, up to 12d4+12 magic damage (24-60 damage). Additionally, the 33% Doom effect no longer requires a saving throw, it's based on probability only.
+- Spiritual Clarity: Self-explanatory. Additionally, it improves the speed of the spell from 9 to 6.
 
-Three rounds of 3d8 for a Quest/level 10 spell is hilariously bad, despite the possibility of sapping some Strength with a save vs. Spell that doesn't even have a penalty. Now it does 6d6 magic damage per round at least, and the Strength-sapping effect has a -2 penalty now.
-
-**Component 2111:** Make Shaman's Writhing Fog slightly more powerful
-
-This improves this spell by making it cause 1d3+1 cold damage, whose dice size improves by 1 every level after level 3, until it becomes 1d10+1. The Slow effect, additionally, triggers with a 50% chance, not a 20% chance.
-
-**Component 2112:** Make Shaman's Spirit Fire slightly more powerful
-
-This makes the damage of this spell scale better: it deals 1d4+1/level, up to 12d4+12 magic damage (24-60 damage). Additionally, the 33% Doom effect no longer requires a saving throw, it's based on probability only.
-
-**Component 2113:** Make Shaman's Spiritual Clarity induce more clarity (removes berserk and intoxication too)
-
-Self-explanatory. Additionally, it improves the speed of the spell from 9 to 6.
+All these tweaks can be enabled or disabled in the configuration file.
 
 **Component 2120:** Make War Cry inflict fear with a -2 Saving Throw penalty and rally the allies
 
@@ -1703,25 +1657,18 @@ The war cry also rallies the allies now, causing the following effects:
 
 This should make this HLA more generally useful no matter the situation and perhaps next time it won't be an automatic skip.
 
-**Component 2130:** Make Set Spike Trap do piercing damage instead of magic damage
+**Component 2130:** Make some Thief HLAs more effective
 
-Because it's rather strange that it does magic damage and makes you wonder why the thief would have the ability to do this. (To be fair, the same could be said for the Time Stop trap). Rogue Rebalancing, SCS, and ToF also do this.
-
-**Component 2140:** Make Exploding Trap do slightly more damage: 15d6 as opposed to 10d6
-
-I feel like 10d6, which is the same damage of the Fireball spell at max level, is very low for an HLA, so now it's 15d6.
-
-**Component 2141:** Make Assassination more generally useful, especially for single-classed Thieves
-
-This improves this power in the following ways:
-
-- Lasts 7 seconds, so it can forgive an extra second of delay to take advantage of the backstab-every-hit effect
-- It disables critical misses for the duration, and one round after
-- It improves critical hit chances by +10% for the duration, and one round after
-- For single-classed thieves, there are more benefits: +2 Damage, +2 THAC0, +1 APR, net +15% critical hit chance improvement
-- Benefits other than backstabbing every hit will last one round longer (that is, 7 seconds + 1 round, aka 13 seconds). This won't stack if there's more than one casting of Assassination available.
-
-Overall, this will make the power less likely to be a waste by removing critical misses, increasing the chances of critical hits, which benefits the character even when facing a foe immune to backstabs, and rewarding specialization of Thieves to make them more combat ready.
+- Spike trap: Because it's rather strange that it does magic damage and makes you wonder why the thief would have the ability to do this. (To be fair, the same could be said for the Time Stop trap). Rogue Rebalancing, SCS, and ToF also do this.
+- Exploding trap: I feel like 10d6, which is the same damage of the Fireball spell at max level, is very low for an HLA, so now it's 15d6. Also, the knockdown effect doesn't admit a saving throw anymore (undocumented in vanilla somehow!).
+- Assassination: This improves this power in the following ways:
+  - Lasts 7 seconds, so it can forgive an extra second of delay to take advantage of the backstab-every-hit effect
+  - It disables critical misses for the duration, and one round after
+  - It improves critical hit chances by +10% for the duration, and one round after
+  - For single-classed thieves, there are more benefits: +2 Damage, +2 THAC0, +1 APR, net +15% critical hit chance improvement
+  - Benefits other than backstabbing every hit will last one round longer (that is, 7 seconds + 1 round, aka 13 seconds). This won't stack if there's more than one casting of Assassination available.
+  - Overall, this will make the power less likely to be a waste by removing critical misses, increasing the chances of critical hits, which benefits the character even when facing a foe immune to backstabs, and rewarding specialization of Thieves to make them more combat ready.
+- Avoid Death: This improves this ability such that it prevents rogues from dying from Health damage for 3 seconds, and all saving throws succeed as well. This essentially makes the ability an "panic button" that you can select to survive most things during those three seconds that can be saved against, including physical damage. It's a small timeframe, but I think it's long enough to be useful, and short enough to not be overpowered. Other than those 3 seconds, the ability functions as normal.
 
 **Component 2150:** Make selected HLAS unable to be breached
 
@@ -1741,7 +1688,7 @@ Side note. Things like Critical Strike and Power Attack are already not breachab
 
 **Component 2160:** Make Quivering Palm slightly more powerful at high levels
 
-I really dislike things that scale poorly or not at all. This makes Quivering Palm saving throw penalty improve to -1 at level 18 and to -2 at level 26. Additionally, the effect lasts 7 seconds, up from 5 seconds, to give more leeway.
+I really dislike things that scale poorly or not at all. This makes Quivering Palm saving throw penalty improve to -1 at level 16 and to -2 at level 24. Additionally, the effect lasts 7 seconds, up from 5 seconds, to give more leeway.
 
 **Component 2170:** Make the THAC0 progression of Thieves better and more streamlined, so they improve up to 6, like clerics
 
@@ -1783,9 +1730,12 @@ This tiny overhaul addresses primarily something that has bothered me forever ab
 - 4 proficiency points: +3 THAC0 and +4 Damage
 - 5 proficiency points: +4 THAC0 and +5 Damage
 
-**Component 2220:** Make Avoid Death HLA slightly more effective
+**Component 3500:** Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane
 
-This improves this ability such that it prevents rogues from dying from Health damage for 3 seconds, and all saving throws succeed as well. This essentially makes the ability an "panic button" that you can select to survive most things during those three seconds that can be saved against, including physical damage. It's a small timeframe, but I think it's long enough to be useful, and short enough to not be overpowered. Other than those 3 seconds, the ability functions as normal.
+This seems more a bugfix than a tweak, but it bothers me and it's not tackled anywhere else so here it is. No one can cast Shadowstep (Shadow Jump too if my Shadowdancer overhaul is installed) during those sequences, since those abilities rely on a brief plane shift to the Prime's parallel plane: the Plane of Shadow. This needs to be patched manually, and only the following areas are targetted:
+
+- Rasaad's ToB quest areas in the SP
+- Lava's Shade of the Sword Coast SP in Gnoll Stronghold
 
 This additionally documents in the description the fact that it also protects against level drain, which is missing in the original description.
 
@@ -1923,6 +1873,10 @@ Additionally, the weapons will be able to critically hit, dealing double damage,
 
 This component should be installed after any other tweak that may change void weapons, or their weapon groups in general. Note that my backstab multiplier tweak will not affect the voidsword, so you can install it before or after this component, it doesn't matter, as backstab multipliers don't apply to those weapons (for now wink wink).
 
+**Component 1360:** Make Light Crossbows get +1/2 more APR
+
+Just a small bonus to make it more interesting and different compared to heavy crossbows. It's not too far-fetched anyway to think smaller crossbows can be reloaded faster. This will affect crossbows that have an APR bonus already, i.e., 1/2 APR will be added.
+
 </details>
 
 ---
@@ -1932,6 +1886,14 @@ This component should be installed after any other tweak that may change void we
 This mod should generally be installed after mods that add items to the game. If installed after, the tweaks in this mod that affect them will not be able to affect those.
 
 As far as other mods that may affect spells or abilities, it might or might not be compatible; it depends on the nature of the tweak. For example, if a tweak changes who can use a type of weapon, and my tweak just adds a damage bonus to it, it would be compatible, but that may not be the case for every tweak. If there's a philosophical or conceptual difference in the design of the spell or ability, it might make no sense to install both tweaks, or it might fail to install, so use your best judgment. For obvious reasons, don't attempt to mix two tweaks that try to do the exact same thing, as the results will likely not be what you expected. I'm open to providing compatibility personally as long as I'm interested in the other mod as well. One example is SCS, ToF, and Tweaks Anthology, since I like them a lot.
+
+Currently, relevant compatibility has been added deliberately to:
+
+- Item Upgrade (upgrades are in line with my upgrades to vanilla items, if selected)
+- Wares of the Planes (generally just exceptions to certain bonuses, due to the unusual nature of the items)
+- Rogue Rebalancing
+- ZS_ShadowdancerOverhaul (my own mod, duh, of course I did)
+- Shades of the Sword Coast
 
 ## Notes for users and modders
 
