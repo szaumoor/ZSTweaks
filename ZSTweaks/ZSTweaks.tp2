@@ -3,7 +3,7 @@ SUPPORT "RoyalProtector at Gibberlings's forum https://www.gibberlings3.net/prof
 VERSION "1.4.7"
 README ~%MOD_FOLDER%/README.md~
 AUTO_EVAL_STRINGS
-MODDER
+/*MODDER
 	setup_tra none
 	area_variables warn
 	missing_extern warn
