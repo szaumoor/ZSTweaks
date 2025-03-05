@@ -13,6 +13,7 @@ In vanilla, this is not contemplated, likely because there isn't any means of in
 As of version 1.4.5 a configuration file is now provided, where the user may change some variables to further customize components. This file is **ZSTweaks/INSTALL_OPTIONS.txt**.
 
 ---
+
 <details>
 
 <summary><b>General Item & Spell Tweaks</b></summary>
