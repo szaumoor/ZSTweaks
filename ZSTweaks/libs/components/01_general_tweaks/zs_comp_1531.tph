@@ -6,25 +6,21 @@ COPY_EXISTING ~SPWI224.SPL~ ~override~  // GLITTERDUST, ALL GAMES
               ~SPPR209.SPL~ ~override~  // KNOW ALIGNMENT, ALL GAMES
               ~SPWI208.SPL~ ~override~  // KNOW ALIGNMENT ALL GAMES
     LPF ALTER_EFFECT INT_VAR resist_dispel=3 END // DISPEL PERMITTED
-BUT_ONLY
 
-ACTION_IF FILE_EXISTS_IN_GAME ~flpr717a.SPL~ BEGIN // CREEPING DOOM SUBSPELL~
-   COPY_EXISTING ~flpr717a.SPL~ ~override~ // CREEPING DOOM SUBSPELL
-        LPF ALTER_EFFECT INT_VAR resist_dispel=3 END
-   BUT_ONLY
-END
+COPY_EXISTING ~flpr717a.SPL~ ~override~ // CREEPING DOOM SUBSPELL
+    LPF ALTER_EFFECT INT_VAR resist_dispel=3 END
+BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~SPPR707.SPL~ ~override~ // SUNRAY, bypasses magic resistance
-    LPF ALTER_EFFECT INT_VAR resist_dispel=3 END //
-    LPF ALTER_EFFECT INT_VAR match_opcode = 139 resist_dispel = 0 END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 146 resist_dispel = 0 END
-    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ "467" BEGIN
-        LPF ALTER_EFFECT INT_VAR match_opcode = 326 resist_dispel = 0 END
+    LPF ALTER_EFFECT INT_VAR silent = 1 resist_dispel=3 END //
+    LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 139 resist_dispel = 0 END
+    LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 146 resist_dispel = 0 END
+    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ "467" OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ "99" BEGIN
+        LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 326 resist_dispel = 0 END
     END ELSE BEGIN
-        LPF ALTER_EFFECT INT_VAR match_opcode = 177 resist_dispel = 0 END
-        LPF ALTER_EFFECT INT_VAR match_opcode = 12 resist_dispel = 0 END
+        LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 177 resist_dispel = 0 END
+        LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 12 resist_dispel = 0 END
     END
-BUT_ONLY
 
 COPY_EXISTING ~SPWI101.SPL~ ~override~ // GREASE, ALL GAMES
               ~SPPR105.SPL~ ~override~ // ENTANGLE ALL GAMES
@@ -39,26 +35,19 @@ COPY_EXISTING ~SPWI101.SPL~ ~override~ // GREASE, ALL GAMES
               ~SPPR106.SPL~ ~override~ // magical stone
               ~SPPR302.SPL~ ~override~ // call lightning
     LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-BUT_ONLY
 
-ACTION_IF FILE_EXISTS_IN_GAME ~SPPR722.SPL~ BEGIN // storm of vengeance
-   COPY_EXISTING ~SPPR722.SPL~ ~override~ // storm of vengeance
-        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-   BUT_ONLY
-END
+COPY_EXISTING ~SPPR722.SPL~ ~override~ // storm of vengeance
+    LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+BUT_ONLY IF_EXISTS
 
 ACTION_IF !(GAME_IS ~iwdee~) BEGIN
-    ACTION_IF FILE_EXISTS_IN_GAME ~ohdwand1.ITM~ BEGIN // wand of glitterdust
-        COPY_EXISTING ~ohdwand1.ITM~ ~override~
-            LPF ALTER_EFFECT INT_VAR match_resist_dispel=1 resist_dispel=3 END
-        BUT_ONLY
-    END
+    COPY_EXISTING ~ohdwand1.ITM~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_resist_dispel=1 resist_dispel=3 END
+    BUT_ONLY IF_EXISTS
 
-    ACTION_IF FILE_EXISTS_IN_GAME ~SPIN566.SPL~ BEGIN // CRE WEB BG2EE
-        COPY_EXISTING ~SPIN566.SPL~ ~override~
-            LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-        BUT_ONLY
-    END
+    COPY_EXISTING ~SPIN566.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+    BUT_ONLY IF_EXISTS
 
     COPY_EXISTING ~SPIN940.SPL~ ~override~ // STINKING CLOUD
                   ~SPWI004.SPL~ ~override~
@@ -67,30 +56,22 @@ ACTION_IF !(GAME_IS ~iwdee~) BEGIN
                   ~SPIN575.SPL~ ~override~ // CRE WEB BGEE/BG2EE
                   ~SPIN683.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-    BUT_ONLY
 
     COPY_EXISTING ~SPWI202.SPL~ ~override~ // DETECT EVIL
                   ~SPCL212.SPL~ ~override~
                   ~SPIN120.SPL~ ~override~
                   ~SPPR104.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=2 END // not dispel/bypass resistance
-    BUT_ONLY
 
-    ACTION_IF FILE_EXISTS_IN_GAME ~CDDETEVL.SPL~ BEGIN // DETECT EVIL BG2EE
-        COPY_EXISTING ~CDDETEVL.SPL~ ~override~
-            LPF ALTER_EFFECT INT_VAR resist_dispel=2 END
-        BUT_ONLY
-    END
+    COPY_EXISTING ~CDDETEVL.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR resist_dispel=2 END
+    BUT_ONLY IF_EXISTS
 
-    ACTION_IF FILE_EXISTS_IN_GAME ~OHDETEVL.SPL~ BEGIN // DETECT EVIL BGEE
-        COPY_EXISTING ~OHDETEVL.SPL~ ~override~
-            LPF ALTER_EFFECT INT_VAR resist_dispel=2 END
-        BUT_ONLY
-    END
+    COPY_EXISTING ~OHDETEVL.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR resist_dispel=2 END
+    BUT_ONLY IF_EXISTS
 
-    ACTION_IF FILE_EXISTS_IN_GAME ~OHDETEVL.SPL~ BEGIN // DETECT EVIL BGEE
-        COPY_EXISTING ~OHDETEVL.SPL~ ~override~
-            LPF ALTER_EFFECT INT_VAR resist_dispel=2 END
-        BUT_ONLY
-    END
+    COPY_EXISTING ~OHDETEVL.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR resist_dispel=2 END
+    BUT_ONLY IF_EXISTS
 END

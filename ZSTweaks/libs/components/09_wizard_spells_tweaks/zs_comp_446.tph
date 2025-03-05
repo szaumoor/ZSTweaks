@@ -1,0 +1,106 @@
+ACTION_IF zst_446_fball_buff BEGIN
+    OUTER_SET new_description_fireball = RESOLVE_STR_REF(@7520)
+    COPY_EXISTING ~SPWI304.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc=new_description_fireball END
+        LPF LAST_VALID_HEADER RET new_header = result END
+        SET next_level = 11
+        SET dmg = 1
+        FOR ( header = new_header; header < new_header + 10; ++header ) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = header + 1 zs_min_level_for_copy=next_level insert_point=header+1 END
+            LPF ALTER_EFFECT INT_VAR header = header + 1 match_opcode=12 parameter1= dmg END
+            ++next_level
+            ++dmg
+        END
+
+    COPY_EXISTING ~SCRL5Z.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description_fireball END
+    BUT_ONLY IF_EXISTS
+
+
+    COPY_EXISTING ~SCRL1G.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description_fireball END
+
+    OUTER_SET new_description_sunfire = RESOLVE_STR_REF(@7521)
+    COPY_EXISTING ~SPWI523.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc=new_description_sunfire END
+
+    COPY_EXISTING ~SCRLAL.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description_sunfire END
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~SCRLAR.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description_sunfire END
+    BUT_ONLY IF_EXISTS
+
+
+    COPY_EXISTING ~SPWI523D.SPL~ ~override~
+        LPF LAST_VALID_HEADER RET last_header = result END
+        SET dmg = 1
+        FOR ( header = 2; header <= last_header; ++header ) BEGIN
+            LPF ALTER_EFFECT INT_VAR header = header match_opcode=12 parameter1= dmg END
+            ++dmg
+        END
+        dmg = 7
+        SET next_level = 16
+        FOR ( header = last_header; header < last_header + 5; ++header ) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = header + 1 zs_min_level_for_copy= next_level insert_point=header+1 END
+            LPF ALTER_EFFECT INT_VAR header = header+1 match_opcode=12 parameter1= dmg END
+            ++next_level
+            dmg += 2
+        END
+
+    COPY_EXISTING ~DFIREBL.PRO~ ~override~
+        WRITE_SHORT 0x206 256
+
+    OUTER_SET new_description_fireball_delayed = RESOLVE_STR_REF(@7522)
+    COPY_EXISTING ~SPWI712.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc=new_description_fireball_delayed END
+        LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 dicenumber = 13 END
+        LPF LAST_VALID_HEADER RET last_header = result END
+        SET dmg = 2
+        SET next_level = 14
+        FOR ( header = last_header; header < last_header + 5; ++header ) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = header + 1 zs_min_level_for_copy= next_level insert_point=header+1 END
+            LPF ALTER_EFFECT INT_VAR header = header+1 match_opcode=12 dicenumber=next_level parameter1= dmg END
+            dmg += 2
+            ++next_level
+        END
+        LPF LAST_VALID_HEADER RET last_header = result END
+        dmg = 15
+        FOR ( header = last_header; header < last_header + 2; ++header ) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = header + 1 zs_min_level_for_copy= next_level insert_point=header+1 END
+            LPF ALTER_EFFECT INT_VAR header = header+1 match_opcode=12 parameter1= dmg END
+            dmg += 5
+            ++next_level
+        END
+
+
+    COPY_EXISTING ~SCRL8N.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description_fireball_delayed END
+    BUT_ONLY IF_EXISTS
+END
+
+ACTION_IF zst_446_fball_new_animation BEGIN
+    COPY_EXISTING ~PFIRE2.PRO~  ~override~
+        WRITE_BYTE  0x216 0
+        WRITE_ASCII 0x21C "SPFIREPI" #8
+        WRITE_ASCII 0x228 "SPFIRIMP" #8
+        WRITE_ASCII 0x230 "SPFIRIMP" #8
+
+    COPY_EXISTING ~DFIREBL.PRO~ ~override~
+        WRITE_BYTE  0x210 1
+        WRITE_ASCII 0x21C "SPFIREPI" #8
+        WRITE_ASCII 0x228 "SPFIRIMP" #8
+        WRITE_ASCII 0x230 "SPFIRIMP" #8
+
+    COPY_EXISTING ~SPWI304.SPL~ ~override~
+        LPF ALTER_HEADER INT_VAR projectile = 234 END
+
+    COPY_EXISTING ~SPWI712.SPL~ ~override~
+        LPF ALTER_HEADER INT_VAR projectile = 244 END
+
+    ACTION_IF NOT GAME_IS "iwdee" BEGIN // iwdee has a different projectile, skipping for now
+        COPY_EXISTING ~SPWI523D.SPL~ ~override~
+            LPF ALTER_HEADER INT_VAR projectile = 234 END
+    END
+END

@@ -1,0 +1,141 @@
+// Here you can adjust values to apply different changes to components without having to deal with set installation options in the Weidu installer. Do not remove quotation marks when changing values.
+//
+//
+////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET _1538_jewelry_price = "150" // this tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted  half, you would type 50.
+
+// variables below allow or disallow weapon categories to be modified by the Finesse component (Component 1450)
+// A value of 1 allows it, a value of 0 disallows it
+OUTER_SET zst_1450_allow_daggers   = "1"
+OUTER_SET zst_1450_allow_staves    = "1"
+OUTER_SET zst_1450_allow_sswords   = "1"
+OUTER_SET zst_1450_allow_lswords   = "1"
+OUTER_SET zst_1450_allow_scimitars = "1"
+OUTER_SET zst_1450_allow_katanas   = "1"
+OUTER_SET zst_1450_allow_clubs     = "1"
+OUTER_SET zst_1450_allow_wakis     = "1"
+OUTER_SET zst_1450_allow_ninjatos  = "1"
+OUTER_SET zst_1450_allow_slings    = "1"
+OUTER_SET zst_1450_allow_bows      = "1"
+OUTER_SET zst_1450_allow_xbows     = "1"
+OUTER_SET zst_1450_allow_darts     = "1"
+// end of finesse variables
+
+////////////////////////////// Dagger tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET zst_1000_sbonus = "-2" // You can change this to override the save penalty given in component 1001 to poisoned throwing daggers. Vanilla is 0, default in component is -2.
+
+OUTER_SET zst_1000_store_additions = "1" // this will allow the tweak to increase the stock of poisoned daggers (0 to disable)
+
+OUTER_SET zst_1000_stack_mult = "100" // This sets a percentage multiplier for the number of stacks of poisoned throwing daggers inserted in Component 1001. So, for example if you only want half, you'd set this to 50, if you want 20% more, you'd set it to 120. Values of zero and below are ignored. No effect if the previous variable is set to 1
+
+////////////////////////////// Two-handed weapons tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET zst_1280_carsomyr_dispel = "1" // this will allow the carsomyr nerf to the power of dispel magic to happen (0 to disable)
+OUTER_SET zst_1280_carsomyr_evil   = "1" // this will allow the carsomyr tweak that allows damage vs all evil to happen (0 to disable)
+
+OUTER_SET zst_1318_fnorth_evil   = "1" // this will allow the flame of north tweak that allows damage vs all evil to happen (0 to disable)
+OUTER_SET zst_1318_fnorth_trolls = "1" // this will allow the flame of north tweak that causes damage to trolls to happen (0 to disable)
+
+OUTER_SET zst_1410_ureaver_dispel   = "1" // this will allow the unholy reaver tweak that tweaks the dispel magic to happen (0 to disable)
+OUTER_SET zst_1410_ureaver_dicesize = "1" // this will allow the unholy reaver tweak that increases dicesize to happen (0 to disable)
+
+OUTER_SET zst_1591_soul_reaver_nerf     = "1" // this will allow the soul reaver nerf to the overpowered thac0 reduction effect to happen
+OUTER_SET zst_1591_soul_reaver_dicesize = "1" // this will allow the soul reaver dice size change tweak to happen (1d12)
+
+////////////////////////////// One-handed swords tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET zst_1240_purifier_evil   = "1" // this will allow the purifier tweak that allows damage vs all evil to happen (0 to disable)
+OUTER_SET zst_1240_purifier_dispel = "1" // this will allow the purifier boost to the power of dispel magic to happen (0 to disable)
+
+OUTER_SET zst_1580_hawksight_extra = "1" // this will add the new backstory to Hawksight, including the new charge ability
+
+/////////////////////////////// NPC tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET zst_1646_sare_dmg = "150" // This sets the new damage that Sarevok inflicts when his special ability triggers, with the same rules that the component applies
+
+/////////////////////////////// Ranged Weapon Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET zst_1010_sbonus = "-4" // You can change this to override the save penalty given in component 1001 to Asp's Nest darts. Vanilla is 0, default in component is -4.
+
+/////////////////////////////// Wizard Spell Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET zst_160_bbod   = "1" // this allows the tweak to disable backstabs for Black Blade of Disaster
+OUTER_SET zst_160_goliro = "1" // this allows the tweak to disable backstabs for Iron Golem's fist
+
+OUTER_SET zst_145_luck_boost     = "1" // allows the boost to Luck's effects to come through
+OUTER_SET _145_luck_dur_boost = "1" // allows the boost to Luck's duration to come through
+
+OUTER_SET zst_441_tenser_thac0 = "1" // allows the tweak to Tenser's Transformation THAC0 tweak to happen
+OUTER_SET zst_441_tenser_apr   = "1" // allows the tweak to Tenser's Transformation APR tweak to happen
+OUTER_SET zst_441_tenser_apr_nonfighters_only = "1" // this will make the APR bonuses only affect casters without fighter levels, for balance, since it would be too easy to increase APR excessively for them (0 to disable)
+
+OUTER_SET zst_446_fball_buff          = "1" // This adds the damage buff to fireballs
+OUTER_SET zst_446_fball_new_animation = "1" // This sets the new Fireball and Delayed Blast Fireball new explosion animation. Set to 0 if you wish to deactivate this feature
+
+OUTER_SET zst_390_deathfog_no_mr = "1" // this makes Death Fog bypass MR, since it's conjured acid, "0" to disable
+
+OUTER_SET zst_447_melf_no_mr = "1" // this makes Melf's Acid Arrow bypass MR, since it's conjured acid, "0" to disable
+
+OUTER_SET zst_444_flesh_stone_iwd = "1" // this adds some creatures immunities to the spell as per IWD
+
+/////////////////////////////// Cleric Spell Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// These variables allow and disallow tweaks to particular healing spells (1 to allow, 0 to disallow)
+OUTER_SET zst_450_light =       "1"
+OUTER_SET zst_450_moderate =    "1"
+OUTER_SET zst_450_medium =      "1"
+OUTER_SET zst_450_serious=      "1"
+OUTER_SET zst_450_critical =    "1"
+OUTER_SET zst_450_eldath =      "1"
+OUTER_SET zst_450_mass_cure =   "1"
+
+OUTER_SET zst_101_fblade_undead    = "1" // allows the damage to undead part of the tweak to come through
+OUTER_SET zst_101_fblade_dur_boost = "1" // allows the duration part of the tweak to come through
+
+OUTER_SET zst_190_hpower_thac0 = "1" // allows the tweak to holy power THAC0 tweak to happen
+OUTER_SET zst_190_hpower_apr   = "1" // allows the tweak to holy power APR tweak to happen
+OUTER_SET zst_190_hpower_apr_nonfighters_only = "1" // this will make the APR bonuses only affect casters without fighter levels, for balance, since it would be too easy to increase APR excessively for them (0 to disable)
+
+// this allows certain parts of the tweaks to earthquake in the relevant component
+OUTER_SET zst_250_quake_pfriendly = "1"
+OUTER_SET zst_250_quake_no_shake  = "1"
+OUTER_SET zst_250_quake_boost     = "1"
+
+// this allows certain parts of the tweaks to nature's beauty in the relevant component
+OUTER_SET zst_320_natbeauty_boost      = "1"
+OUTER_SET zst_320_natbeauty_true_sight = "1" // True sight provides immunity to it
+
+OUTER_SET zst_507_disable_aidglow = "0" // this disables the character color pulse with Aid. Mostly there to avoid excessive color pollution since it's an area spell now
+
+/////////////////////////////// NPC Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET zst_1520_keldsword = "1"
+OUTER_SET zst_1520_keldarmor = "1"
+
+/////////////////////////////// Class/Kit Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET zst_2100_sunsoul_ray =  "1"
+OUTER_SET zst_2100_sunsoul_beam = "1"
+
+// allows or disallows tweaks to particular shaman spells and abilities
+OUTER_SET zst_360_etheral_retribution = "1"
+OUTER_SET zst_360_writhing_fog =        "1"
+OUTER_SET zst_360_spirit_fire =         "1"
+OUTER_SET zst_360_spiritual_clarity =   "1"
+OUTER_SET zst_360_favored_spirits =     "1"
+
+// allows or disallows tweaks to particular thief HLAs
+OUTER_SET zst_2130_spike_trap     = "1"
+OUTER_SET zst_2130_exploding_trap = "1"
+OUTER_SET zst_2130_assassination  = "1"
+OUTER_SET zst_2130_avoid_death    = "1"
+
+OUTER_SET zst_2231_fire_boost = "1" // this will include the boost to fire damage in the Dragon Disciple tweak
+OUTER_SET zst_2231_fire_boost_pctg = "5" // This is the percentage bonus if the previous is allowed
+
+/////////////////////////////// Creature Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET zst_3050_balor_vorpal_penalty = "-4"
+OUTER_SET zst_3060_silly_version = "0" // switch to 1 to make Mencar a joke

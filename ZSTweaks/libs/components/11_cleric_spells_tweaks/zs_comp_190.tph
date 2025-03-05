@@ -1,6 +1,0 @@
-ACTION_IF !(GAME_IS "iwdee") BEGIN
-    COPY_EXISTING ~SPPR412.SPL~ ~override~
-        LPF ADD_SPELL_HEADER INT_VAR copy_header = 13 zs_min_level_for_copy = 21 insert_point=14 END
-        LPF ALTER_EFFECT INT_VAR header = 14 match_opcode = 54 parameter1 = 0 END
-    BUT_ONLY
-END

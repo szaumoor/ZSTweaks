@@ -1,0 +1,38 @@
+COPY_EXISTING_REGEXP ~.*\.CRE~ ~override~
+    READ_BYTE 0x272 race
+    PATCH_IF race = IDS_OF_SYMBOL(race SHADOW) BEGIN
+        PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP "ZS#SD.*" != 0 BEGIN // ignore shadowdancer kit creatures
+            WRITE_SHORT 0x46 (THIS - 2)
+            WRITE_SHORT 0x48 (THIS - 2)
+
+            PATCH_IF BYTE_AT(0x60) < 30 BEGIN
+                WRITE_BYTE 0x60 30
+            END
+
+            PATCH_IF BYTE_AT(0x61) < 30 BEGIN
+                WRITE_BYTE 0x61 30
+            END
+
+            PATCH_IF BYTE_AT(0x62) < 30 BEGIN
+                WRITE_BYTE 0x62 30
+            END
+
+            PATCH_IF BYTE_AT(0x63) < 30 BEGIN
+                WRITE_BYTE 0x63 30
+            END
+        END
+    END
+BUT_ONLY
+
+COPY_EXISTING ~SHADOWWP.ITM~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 2400 END
+BUT_ONLY IF_EXISTS
+
+COPY_EXISTING ~SPIDWR1.ITM~   ~override~
+              ~TROLLSPI.ITM~  ~override~
+    LPF ALTER_EFFECT INT_VAR match_duration = 300 duration = 2400 END
+BUT_ONLY IF_EXISTS
+
+COPY_EXISTING ~bdshadgr.ITM~  ~override~
+    LPF ALTER_EFFECT INT_VAR match_duration = 180 duration = 2400 END
+BUT_ONLY IF_EXISTS

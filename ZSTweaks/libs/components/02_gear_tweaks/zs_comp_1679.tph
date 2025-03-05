@@ -19,5 +19,4 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         SET movement_speed_diminished = RESOLVE_STR_REF(@7750)
         LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 pwr=4 p1="-2" dur=120 STR_VAR effects=~op=18,p1=-10,pro1=4;op=139,p1=%max_hp_diminished%,pro1=4;op=54,p1=-3,pro2=5,pro1=9;op=139,p1=%base_thac0_diminished%,pro2=5,pro1=9;op=73,pro2=10,pro1=14;op=139,p1=%attack_damage_diminished%,pro2=10,pro1=14;op=44,pro2=15,pro1=19;op=139,p1=%str_diminished%,pro2=15,pro1=19;op=10,pro2=20,pro1=24;op=139,p1=%con_diminished%,pro2=20,pro1=24;op=15,pro2=25,pro1=29;op=139,p1=%dex_diminished%,pro2=25,pro1=29;op=325,p1=-1,pro2=30,pro1=34;op=139,p1=%saves_diminished%,pro2=30,pro1=34;op=189,pro2=35,pro1=39;op=139,p1=%casting_speed_increased%,pro2=35,pro1=39;op=33,p1=-4,pro2=40,pro1=44;op=139,p1=%save_death_diminished%,pro2=40,pro1=44;op=176,p1=50,p2=5,pro2=45,pro1=49;op=139,p1=%movement_speed_diminished%,pro2=45,pro1=49~ END
         LPF ALTER_EFFECT INT_VAR match_opcode=139 duration = 0 END
-    BUT_ONLY
 END

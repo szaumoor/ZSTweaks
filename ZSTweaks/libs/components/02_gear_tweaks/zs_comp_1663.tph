@@ -2,5 +2,5 @@ ACTION_IF GAME_IS "bgee eet" BEGIN
     COPY_EXISTING "RING05.ITM" ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7180) END
         LPF ALTER_HEADER INT_VAR match_type=3 charges=1 drained=3 END
-    BUT_ONLY
+
 END

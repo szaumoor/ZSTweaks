@@ -1,16 +1,15 @@
 OUTER_SET group_component = 1
 
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1380.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1480.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1500.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1510.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1520.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1521.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1640.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1641.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1642.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1643.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1644.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1645.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1646.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/08_npc_tweaks/zs_comp_1647.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1380.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1480.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1500.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1510.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1520.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1640.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1641.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1642.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1643.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1644.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1645.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1646.tph~
+INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1647.tph~

@@ -5,7 +5,6 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 21 END
             LPF ALTER_EFFECT INT_VAR match_opcode=42 match_parameter2=2**3 parameter1=2 END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=21,p1=-20;op=49,p1=-2;op=346,p1=-2,spec=5;op=276,p1=-20~ END
-        BUT_ONLY
     END ELSE BEGIN
         ACTION_IF group_component = 0 BEGIN
             WARN "bdhelm01.itm not found"

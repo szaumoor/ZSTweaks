@@ -1,0 +1,8 @@
+COPY_EXISTING ~SPPR701.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7550) END
+    SET absorb_levels = 14
+    LPF LAST_VALID_HEADER RET header = result END
+    FOR ( h=0; h < header+1; ++h ) BEGIN
+        LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=201 header=h parameter1=absorb_levels END
+        ++absorb_levels
+    END

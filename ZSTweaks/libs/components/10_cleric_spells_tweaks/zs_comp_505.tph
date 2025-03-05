@@ -1,0 +1,9 @@
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
+    COPY ~%MOD_FOLDER%/spells/cleric/repulse_undead~ ~override~
+    COPY_EXISTING ~SPPR515.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8190) END
+    COPY_EXISTING ~SPPR515D.SPL~ ~override~
+        LPF DELETE_EFFECT INT_VAR match_opcode = 177 END
+        LPF GET_DMG_TYPE STR_VAR type = "magic" RET magic = result END
+        LPF ADD_SPL_EFF_TGT INT_VAR rd=0 pwr=5 STR_VAR effects = ~op=318,p2=2,res=%SOURCE_RES%;op=146,p2=1,res=ZSTWREP0;op=146,dur=3,tmg=3,res=ZSTWREP1;op=141,p2=25;op=12,p2=%magic%,p1=4;op=17,p1=-4;op=326,p2=145,p1=1,res=ZSTWDIE;op=326,p2=145,p1=1,res=ZSTWDIE,dur=1,tmg=3~ END
+END

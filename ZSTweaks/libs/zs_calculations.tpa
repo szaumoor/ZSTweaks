@@ -1,6 +1,6 @@
 DEFINE_PATCH_FUNCTION GET_DMG_TYPE
 STR_VAR
-    type = ~crushing~
+    type = ~*~
 RET
     result
 BEGIN
@@ -32,7 +32,7 @@ BEGIN
         END stunning BEGIN
             result = (2048 << 16)
         END DEFAULT
-            PATCH_FAIL "Wrong type called for GET_DMG_TYPE function: %type%"
+            PATCH_FAIL "Wrong type called for GET_DMG_TYPE function: %type%. Permitted types: crushing, acid, cold, electricity, fire, piercing, poison, magic, missile, slashing, magic fire, magic cold, stunning"
     END
 END
 

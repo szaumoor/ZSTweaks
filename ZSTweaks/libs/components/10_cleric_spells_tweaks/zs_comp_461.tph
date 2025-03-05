@@ -1,0 +1,16 @@
+COPY_EXISTING ~SPPR612.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7390) END
+    //LPF ALTER_HEADER INT_VAR speed=7 END
+
+COPY_EXISTING ~BOLTPRIM.EFF~ ~override~
+    LPF ALTER_EFF_FILE INT_VAR parameter1=6 dicesize=4 dicenumber=4 END
+
+COPY_EXISTING ~BOLTELEM.EFF~ ~override~
+    LPF ALTER_EFF_FILE INT_VAR parameter1=6 dicesize=6 dicenumber=6 END
+
+COPY_EXISTING ~BOLTUND.EFF~ ~override~
+    LPF ALTER_EFF_FILE INT_VAR parameter1=6 dicesize=6 dicenumber=8 END
+
+COPY_EXISTING ~BOLTDEM.EFF~ ~override~
+    LPF ALTER_EFF_FILE INT_VAR parameter1=6 dicesize=8 dicenumber=8 END
+

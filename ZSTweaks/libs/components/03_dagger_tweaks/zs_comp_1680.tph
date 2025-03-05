@@ -12,5 +12,5 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             LPF ADD_ON_HIT_EFF INT_VAR tmg=3 spec=1024 STR_VAR effects = ~op=12,p1=2,p2=%piercing%,dur=%dur%~ END
             dur += 6
         END
-    BUT_ONLY
+
 END

@@ -1,0 +1,51 @@
+DEFINE_PATCH_MACRO ~reindex_clab~ BEGIN
+  SET "ability" = 0
+  REPLACE_EVALUATE ~^\(newline\)\|\(ABILITY[0-9A-Z]+\)[ %TAB%]~ BEGIN
+    SET "ability" = ("%ability%" + 1)
+  END
+  ~ABILITY%ability% ~
+END
+
+ACTION_FOR_EACH ability IN
+    ~GA_SPWI103~ ~GA_SPWI217~ ~GA_SPWI304~ ~GA_SPWI418~
+    ~GA_SPWI523~ ~GA_SPWI712~ ~GA_SPWI812~ ~GA_SPW911~
+BEGIN
+    OUTER_TEXT_SPRINT line "ABILITYX   %ability%   ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****      ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****"
+    APPEND ~CLABSO01.2DA~ ~%line%~
+END
+
+COPY_EXISTING ~CLABSO01.2DA~ ~override~
+    LPM reindex_clab
+    PRETTY_PRINT_2DA
+
+<<<<<<<<./zstweaks/macro.tph
+DEFINE_PATCH_MACRO stuff BEGIN
+//replaceme
+END
+>>>>>>>>
+
+ACTION_FOR_EACH ability IN
+          ~SPWI103~ ~SPWI217~ ~SPWI304~ ~SPWI418~
+          ~SPWI523~ ~SPWI712~ ~SPWI812~ ~SPWI911~
+BEGIN
+  COPY_EXISTING ~%ability%.SPL~ ~override~
+    SET spl_level = LONG_AT(0x36) - 1
+    DEFINE_ASSOCIATIVE_ARRAY stuff BEGIN  ~%ability%~ => ~%spl_level%~ END
+END
+
+COPY ~./zstweaks/macro.tph~ ~./zstweaks/macro.tph~
+  PATCH_PHP_EACH dragon_disciple_fire AS ability => spl_level BEGIN
+    REPLACE_TEXTUALLY ~\(//replaceme\)~ ~ADD_MEMORIZED_SPELL "%ability%" "#%spl_level%" "wizard" (1)%WNL%\1~
+  END
+
+REINCLUDE ~./zstweaks/macro.tph~
+
+COPY_EXISTING_REGEXP ~.*\.CRE~ ~override~
+    READ_LONG 0x244 kit
+    PATCH_IF kit = IDS_OF_SYMBOL(kit DRAGON_DISCIPLE) BEGIN
+      LPM stuff
+      PATCH_IF zst_2231_fire_boost BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 332 timing = 9 parameter2 = 1 parameter1 = zst_2231_fire_boost_pctg END
+      END
+    END
+BUT_ONLY

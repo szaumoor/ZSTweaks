@@ -11,14 +11,12 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
                   ~BLUN14H.ITM~ ~override~
                   ~BLUN14I.ITM~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
-    BUT_ONLY
 
     COPY_EXISTING ~BLUN30.ITM~ ~override~
         LPF remove_haste_immunity END
         LPF ALTER_EFFECT INT_VAR match_opcode = 166 parameter1 = 15 END
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7760) END
-    BUT_ONLY
+    
     COPY_EXISTING ~SPPR403.SPL~ ~override~
         LPF DELETE_EFFECT INT_VAR match_opcode=126 END
-    BUT_ONLY
 END

@@ -1,0 +1,14 @@
+<<<<<<<<.../zstweaks/summoned_demons_givexp.baf
+IF
+  Killed([ANYONE])
+THEN
+    RESPONSE #100
+    AddXPWorth(LastKilled)
+    Continue()
+END
+>>>>>>>>
+APPEND ~object.ids~ ~94 LastKilled~ UNLESS ~^94[ %TAB%]+LastKilled$~
+
+EXTEND_TOP "DEMNABSU.BCS" ".../zstweaks/summoned_demons_givexp.baf"
+EXTEND_TOP "DEMGLASU.BCS" ".../zstweaks/summoned_demons_givexp.baf"
+EXTEND_TOP "DEMPITSU.BCS" ".../zstweaks/summoned_demons_givexp.baf"

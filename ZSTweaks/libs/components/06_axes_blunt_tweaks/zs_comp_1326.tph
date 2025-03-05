@@ -1,5 +1,5 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/items/maces_of_disruption~ ~override~
+    COPY ~%MOD_FOLDER%/items/maces_of_disruption~ ~override~
     COPY_EXISTING ~BLUN12.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8050) END
         LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR match_resource = ~DIE~ END
@@ -16,9 +16,8 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         SET vampyre = IDS_OF_SYMBOL(race VAMPYRE)
         SET undead = IDS_OF_SYMBOL(general UNDEAD)
         LPF ADD_ON_HIT_EFF INT_VAR t=1 p2 = 4 STR_VAR res=~ZSTWDH01~ effects = ~op=318,p2=2,res=%SOURCE_RES%,ip=0;op=177,p1=%demonic%,pro1=4,res=ZSTWDH02;op=177,p1=%demonic%,pro1=4;op=177,p1=%lich%,pro1=19,res=ZSTWDH02;op=177,p1=%lich%,pro1=19;op=177,p1=%demilich%,pro1=19,res=ZSTWDH02;op=177,p1=%demilich%,pro1=19;op=177,p1=%vampire%,pro1=49,res=ZSTWDH02;op=177,p1=%vampire%,pro1=49;op=177,p1=%vampyre%,pro1=49,res=ZSTWDH02;op=177,p1=%vampyre%,pro1=49;op=177,p1=%mummy%,p2=5,pro1=79,res=ZSTWDH02;op=177,p1=%mummy%,p2=5,pro1=79;op=177,p1=%spectral_undead%,pro1=64,res=ZSTWDH02;op=177,p1=%spectral_undead%,pro1=64;op=177,p1=%spectre%,pro1=64,res=ZSTWDH02;op=177,p1=%spectre%,pro1=64;op=177,p1=%wraith%,pro1=94,res=ZSTWDH02;op=177,p1=%wraith%,pro1=94;op=177,p1=%spectral_troll%,p2=5,pro1=64,res=ZSTWDH02;op=177,p1=%spectral_troll%,p2=5,pro1=64~ END
-        LPF ADD_ON_HIT_EFF INT_VAR t=1 p2 = 104 STR_VAR res=~%SOURCE_RES%~ effects = ~op=318,p1=%demonic%;op=318,p1=%lich%;op=318,p1=%demilich%;op=318,p1=%vampire%;op=318,p1=%vampyre%;op=318,p1=%mummy%;op=318,p1=%spectral_undead%;op=318,p1=%spectre%;op=318,p1=%wraith%;op=318,p1=%spectral_troll%,p2=105~ END
+        LPF ADD_ON_HIT_EFF INT_VAR t=1 p2=104 STR_VAR res=~%SOURCE_RES%~ effects = ~op=318,p1=%demonic%;op=318,p1=%lich%;op=318,p1=%demilich%;op=318,p1=%vampire%;op=318,p1=%vampyre%;op=318,p2=105,p1=%mummy%;op=318,p1=%spectral_undead%;op=318,p1=%spectre%;op=318,p1=%wraith%;op=318,p1=%spectral_troll%,p2=105~ END
         LPF ADD_ON_HIT_EFF INT_VAR t=99 p2=3 p1=undead STR_VAR res=~ZSTWDH01~ effects=~op=177,res=ZSTWDH02;op=177~ END
-    BUT_ONLY
 
     COPY_EXISTING ~BLUN25.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8051) END
@@ -38,7 +37,6 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ADD_ON_HIT_EFF INT_VAR t=99 p2=4 STR_VAR res=~ZSTWDH03~ effects=~op=318,p2=2,res=%SOURCE_RES%,ip=0;op=177,p1=%demonic%,pro1=4,res=ZSTWDH04;op=177,p1=%demonic%,pro1=4;op=177,p1=%lich%,pro1=19,res=ZSTWDH04;op=177,p1=%lich%,pro1=19;op=177,p1=%demilich%,pro1=19,res=ZSTWDH04;op=177,p1=%demilich%,pro1=19;op=177,p1=%vampire%,pro1=49,res=ZSTWDH04;op=177,p1=%vampire%,pro1=49;op=177,p1=%vampyre%,pro1=49,res=ZSTWDH04;op=177,p1=%vampyre%,pro1=49;op=177,p1=%mummy%,p2=5,pro1=79,res=ZSTWDH04;op=177,p1=%mummy%,p2=5,pro1=79;op=177,p1=%spectral_undead%,pro1=64,res=ZSTWDH04;op=177,p1=%spectral_undead%,pro1=64;op=177,p1=%spectre%,pro1=64,res=ZSTWDH04;op=177,p1=%spectre%,pro1=64;op=177,p1=%wraith%,pro1=94,res=ZSTWDH04;op=177,p1=%wraith%,pro1=94;op=177,p1=%spectral_troll%,p2=5,pro1=64,res=ZSTWDH04;op=177,p1=%spectral_troll%,p2=5,pro1=64~ END
         LPF ADD_ON_HIT_EFF INT_VAR t=99 p2=104 STR_VAR res=~%SOURCE_RES%~ effects=~op=318,p1=%demonic%;op=318,p1=%lich%;op=318,p1=%demilich%;op=318,p1=%vampire%;op=318,p1=%vampyre%;op=318,p1=%mummy%;op=318,p1=%spectral_undead%;op=318,p1=%spectre%;op=318,p1=%wraith%;op=318,p1=%spectral_troll%,p2=105~ END
         LPF ADD_ON_HIT_EFF INT_VAR t=99 p2=3 p1=undead STR_VAR res=~ZSTWDH03~ effects=~op=177,res=ZSTWDH04;op=177~ END
-    BUT_ONLY
 
     COPY_EXISTING ~MACEDISU.EFF~ ~override~
         LPF ALTER_EFF_FILE INT_VAR parameter1=3 special=1024 END
@@ -61,7 +59,6 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ADD_ON_HIT_EFF INT_VAR t=99 p2=4 STR_VAR res=~ZSTWDH03~ effects=~op=318,p2=2,res=%SOURCE_RES%,ip=0;op=177,p1=%demonic%,pro1=4,res=ZSTWDH04;op=177,p1=%demonic%,pro1=4;op=177,p1=%lich%,pro1=19,res=ZSTWDH04;op=177,p1=%lich%,pro1=19;op=177,p1=%demilich%,pro1=19,res=ZSTWDH04;op=177,p1=%demilich%,pro1=19;op=177,p1=%vampire%,pro1=49,res=ZSTWDH04;op=177,p1=%vampire%,pro1=49;op=177,p1=%vampyre%,pro1=49,res=ZSTWDH04;op=177,p1=%vampyre%,pro1=49;op=177,p1=%mummy%,p2=5,pro1=79,res=ZSTWDH04;op=177,p1=%mummy%,p2=5,pro1=79;op=177,p1=%spectral_undead%,pro1=64,res=ZSTWDH04;op=177,p1=%spectral_undead%,pro1=64;op=177,p1=%spectre%,pro1=64,res=ZSTWDH04;op=177,p1=%spectre%,pro1=64;op=177,p1=%wraith%,pro1=94,res=ZSTWDH04;op=177,p1=%wraith%,pro1=94;op=177,p1=%spectral_troll%,p2=5,pro1=64,res=ZSTWDH04;op=177,p1=%spectral_troll%,p2=5,pro1=64~ END
         LPF ADD_ON_HIT_EFF INT_VAR t=99 p2=104 STR_VAR res=~%SOURCE_RES%~ effects=~op=318,p1=%demonic%;op=318,p1=%lich%;op=318,p1=%demilich%;op=318,p1=%vampire%;op=318,p1=%vampyre%;op=318,p1=%mummy%;op=318,p1=%spectral_undead%;op=318,p1=%spectre%;op=318,p1=%wraith%;op=318,p1=%spectral_troll%,p2=105~ END
         LPF ADD_ON_HIT_EFF INT_VAR t=99 p2=3 p1=undead STR_VAR res=~ZSTWDH03~ effects=~op=177,res=ZSTWDH04;op=177~ END
-    BUT_ONLY
 
      COPY_EXISTING ~MACEDISU.EFF~ ~override~
                    ~cddisr.EFF~   ~override~

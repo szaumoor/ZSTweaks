@@ -1,53 +1,5 @@
-// unused
-DEFINE_PATCH_FUNCTION ITM_TYPE_FIRST_OFFSET
-INT_VAR
-    type = 1
-RET
-    type_offset
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    PATCH_IF type < 0 OR type > 4 BEGIN
-        PATCH_FAIL "Type %type% is invalid. Valid range: [0-4]"
-    END
-    READ_SHORT 0x68 abilities_num
-    READ_LONG 0x64 curr_offset
-    SET found = 0
-    FOR ( ability = 0; ability < abilities_num; ++ability ) BEGIN
-        PATCH_IF (BYTE_AT curr_offset) = type BEGIN
-            SET type_offset = curr_offset
-            found = 1
-            ability = abilities_num // i.e. break
-        END
-        SET curr_offset += 0x38
-    END
-    PATCH_IF found = 0 BEGIN
-        SET type_offset = "-1"
-        PATCH_FAIL "Could not find an ability of type %type%"
-    END
-END
-
-
-DEFINE_PATCH_FUNCTION ITM_FIRST_EFF_OFFSET
-RET
-    offset
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_SHORT 0x68 abilities_num
-    READ_SHORT 0x70 global_eff_num
-    READ_LONG 0x64 curr_offset
-    SET offset = curr_offset + (abilities_num * 0x38) + (global_eff_num * 0x30)
-END
-
-DEFINE_PATCH_FUNCTION SPL_FIRST_EFF_OFFSET
-RET
-    offset
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
-    READ_SHORT 0x68 abilities_num
-    READ_SHORT 0x70 global_eff_num
-    READ_LONG 0x64 curr_offset
-    SET offset = curr_offset + (abilities_num * 0x28) + (global_eff_num * 0x30)
-END
+// This function tries to find the last valid header of a spell or item ability in a given file. A "valid" header is defined
+// as either the last header in a sequence of headers or a header that represents a "gap" in the sequence.
 
 DEFINE_PATCH_FUNCTION LAST_VALID_HEADER
 INT_VAR
@@ -102,8 +54,8 @@ BEGIN
     PATCH_IF num_abilities > 1 BEGIN
         SET bytes = 0x38
         SET header = 0
-        FOR ( h = 1; h <= num_abilities; ++h ) BEGIN
-            ability_offset += bytes * h
+        FOR ( h = 1; h < num_abilities; ++h ) BEGIN
+            ability_offset += bytes
             SET t = BYTE_AT (ability_offset)
             PATCH_IF t = type BEGIN
                 header = h
@@ -118,6 +70,39 @@ BEGIN
             result = "-1"
         END
     END
+END
+
+// This function tries to see if an opcode (effect) is present in a given creature file.
+DEFINE_PATCH_FUNCTION CRE_OP_PRESENT
+INT_VAR
+    opcode1 = "-1"
+    opcode2 = "-1"
+RET
+    result
+BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    READ_LONG 0x2c4 eff_offset
+    READ_LONG 0x2c8 eff_length
+    READ_BYTE 0x33 eff_type
+    PATCH_IF eff_type = 0 BEGIN
+        SET effect_size = 0x30
+    END ELSE BEGIN
+        SET effect_size = 0x108
+    END
+    SET found = 0
+    FOR ( index = 0; index < eff_length; ++index ) BEGIN
+        PATCH_IF eff_type = 0 BEGIN
+            READ_SHORT eff_offset op
+        END ELSE BEGIN
+            READ_LONG (eff_offset + 0x08) op
+        END
+        PATCH_IF op = opcode1 OR op = opcode2 BEGIN
+            found = 1
+            index = eff_length // break
+        END
+        eff_offset += effect_size
+    END
+    result = found
 END
 
 

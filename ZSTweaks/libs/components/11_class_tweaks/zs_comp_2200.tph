@@ -1,0 +1,16 @@
+COPY_EXISTING "SPCL105.SPL" ~override~
+    LPF ADD_SPL_EFF_SELF INT_VAR t=3 STR_VAR effects = ~op=263,p1=2,p2=1~ END
+
+ACTION_IF FILE_EXISTS_IN_GAME "bdsw1hca.itm" BEGIN
+    ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN
+        COPY_EXISTING "bdsw1hca.itm" ~override~
+            LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 263 END
+    END
+END
+
+COPY_EXISTING_REGEXP ~.*\.CRE~ ~override~
+    READ_LONG 0x244 kit
+    PATCH_IF kit = IDS_OF_SYMBOL(kit BLACKGUARD) BEGIN
+        LPF ADD_CRE_EFFECT INT_VAR opcode=263 target=2 parameter1=2 parameter2=1 timing=1 END
+    END
+BUT_ONLY

@@ -18,5 +18,4 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7560) END
         END
 
-    BUT_ONLY
 END

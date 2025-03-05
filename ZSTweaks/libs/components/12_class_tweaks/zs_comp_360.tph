@@ -1,5 +1,0 @@
-COPY_EXISTING ~SPPR751.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5210) END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 6 dicenumber = 6 END
-    LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savebonus = "-2" END
-BUT_ONLY

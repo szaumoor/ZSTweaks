@@ -3,5 +3,4 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7540) END
         LPF ALTER_HEADER INT_VAR match_type = 1 speed = 0 END
         LPF ALTER_EFFECT INT_VAR header_type = 3 match_duration = 12 duration = 60 END
-    BUT_ONLY
 END

@@ -1,17 +1,20 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY ~ZSTweaks/items/bone_club~ ~override~
+    COPY ~%MOD_FOLDER%/items/bone_club~ ~override~
     COPY_EXISTING ~BLUN23.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6361) id_ref_name=RESOLVE_STR_REF(@6360) ench=3 END
-        LPF ALTER_HEADER INT_VAR check_globals = 0 match_damage = 2 match_to_hit = 2 damage = 3 to_hit = 3 END
+        LPF ALTER_HEADER INT_VAR match_damage = 2 match_to_hit = 2 damage = 3 to_hit = 3 speed=1 END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 344 special = 5 END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 177 STR_VAR resource = ~ZSTWBL03~ END
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR resource = ~ZSTWBL04~ END
-        LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 rd=2 STR_VAR res=~ZSTWBL04~ effects = ~op=177,p1=175;op=177,p1=133;op=177,p1=134;op=177,p1=132;op=177,p1=222~ END
+        SET spectral_undead = IDS_OF_SYMBOL(race SPECTRAL_UNDEAD)
+        SET spectre = IDS_OF_SYMBOL(race SPECTRE)
+        SET wraith = IDS_OF_SYMBOL(race WRAITH)
+        SET shadow = IDS_OF_SYMBOL(race SHADOW)
+        SET spectral_troll = IDS_OF_SYMBOL(class SPECTRAL_TROLL)
+        LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 rd=2 STR_VAR res=~ZSTWBL04~ effects = ~op=177,p1=%spectral_undead%;op=177,p1=%spectre%;op=177,p1=%wraith%;op=177,p1=%shadow%;op=177,p1=5,p1=%spectral_troll%~ END
 
-        PATCH_IF _1450_allow_clubs AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN //update due to +3
+        PATCH_IF zst_1450_allow_clubs AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN //update due to +3
             LPF PROBABILITY_BONUS INT_VAR ench=3 RET bonus=result END
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 probability1=(bonus+base_ss_club) STR_VAR match_resource=~ZSTWQ2~ resource=~ZSTWQ3~ END
         END
-
-    BUT_ONLY
 END

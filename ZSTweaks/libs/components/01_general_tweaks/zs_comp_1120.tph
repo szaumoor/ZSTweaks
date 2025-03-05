@@ -1,21 +1,23 @@
 INCLUDE ~ZSTweaks/libs/zs_correct_exot_anims.tph~
-
 COPY_EXISTING_REGEXP ".*\.itm" ~override~
-    LPF ITM_CAT RET wpn_cat = result END
-    LPF ITM_PROF RET wpn_prof = result END
-    LPF ITM_APPEARANCE RET wpn_appearance = result END
-	PATCH_IF wpn_cat=20 AND (wpn_prof=90 OR wpn_prof=94 OR (wpn_prof=95 AND "%wpn_appearance%" STRING_COMPARE_CASE "sc"=0)) BEGIN // long swords, katanas or scimitars
-        PATCH_IF "%SOURCE_RES%" STRING_COMPARE_CASE "bdsw1hca" != 0 BEGIN // ignored weapons
-            PATCH_IF ("%SOURCE_RES%" STRING_COMPARE_CASE "NPSW04" != 0) BEGIN
+    PATCH_IF NOT "%SOURCE_RES%" STR_EQ "l#GNOSW" BEGIN
+        LPF ITM_CAT RET wpn_cat = result END
+        LPF ITM_PROF RET wpn_prof = result END
+        LPF ITM_APPEARANCE RET wpn_appearance = result END
+        PATCH_IF wpn_cat=20 AND (wpn_prof=90 OR wpn_prof=94 OR (wpn_prof=95 AND "%wpn_appearance%" STR_EQ "sc")) BEGIN // long swords, katanas or scimitars
+            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "bdsw1h06"
+                 AND NOT "%SOURCE_RES%" STR_EQ "NPSW04"
+            BEGIN
                 LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
             END ELSE BEGIN
-                PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1643") AND !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1379")  BEGIN
+                PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1643") AND !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1379") BEGIN
                     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
                 END
             END
         END
-    END
-    PATCH_IF wpn_cat = 26  AND wpn_prof = 102 BEGIN // quarterstaves
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-2~ END
+
+        PATCH_IF wpn_cat = 26 AND wpn_prof = 102 BEGIN // quarterstaves
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-2~ END
+        END
     END
 BUT_ONLY

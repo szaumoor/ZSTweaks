@@ -1,5 +1,0 @@
-ACTION_IF !(GAME_IS "iwdee") BEGIN
-    COPY_EXISTING ~BLAKBLAD.ITM~ ~override~
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=0,p2=1~ END
-    BUT_ONLY
-END
