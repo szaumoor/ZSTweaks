@@ -52,7 +52,7 @@
 @1352 = "Make Wakizashis a piercing/slashing weapon"
 @1360 = "Make Light Crossbows get +1/2 more APR"
 @1361 = ~Make axes deal extra damage equal to its base damage on critical hits~
-@1362 = ~Make maces, clubs, and hammers damage the target's AC temporarily based on enchantment level~
+@1362 = ~Make maces, clubs, and hammers damage the target's Armor Class temporarily based on enchantment level~
 @1370 = "Make Katanas deal 2d5 damage instead of 1d10"
 @1400 = "Make Bastard Swords deal 1d8+1 damage by default"
 @1430 = "Make Two-handed swords deal 1d9+1 damage by default, and 2d6 for 1d12 swords"
@@ -191,7 +191,6 @@
 @1596 = ~Make The Shadow Blade +3 not just unique in name and description, but in function~
 @1598 = ~Make Cutthroat +4 not just unique in name and description, but in function~
 @1605 = ~Make The Burning Earth better and the horrendously misleading description no longer so~
-@1608 = ~Make Water's Talon +4 more balanced (Item Upgrade)~
 
 // AXES AND ONE-HANDED BLUNT WEAPONS
 @1310 = "Make Defender of Easthaven damage reduction a little more moderate"
@@ -205,6 +204,8 @@
 @1324 = ~Make Wyvern's Tail +2 cause poison damage on hit and have a chance of poisoning~
 @1325 = ~Make Borok's Fist +2 different from Ashideena +2~
 @1326 = ~Make Maces of Disruption more balanced when fighting the undead and improve misleading description~
+@1327 = ~Make Club of Detonation's Fireball not tied to wizard level and improve it slightly~
+@1328 = ~Make Storm Star slightly more electrifying and improve the chances of the chain lightning part~
 
 // RANGED WEAPONS
 @1010 = ~Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost~
@@ -234,7 +235,7 @@
 
 // WIZARD SPELLS
 @140 = "Make Finger of Death's magical damage on a successful save standardized"
-@145 = ~Make Luck last for 1 turn and add 5% critical hit chances, 2 AC, 5% more to thieving~
+@145 = ~Make Luck last for 1 turn and add 5% critical hit chances, 2 Armor Class, 5% more to thieving~
 @160 = "Make Black Blade of Disaster and golem iron fist unsuitable for backstabs (optional, see config)"
 @161 = ~Make Phantom Blade scale in duration up to level 20, instead of to level 18~
 @170 = "Make Wail of the Banshee inflict some magical damage and deafness on a successful save"
@@ -252,7 +253,7 @@
 @440 = ~Make Comet bypass magic resistance and apply a mix of cold, fire, and crushing damage~
 @441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level and APR at the appropriate levels"
 @443 = ~Make Symbol of Death work with +6 saving throw bonus if above the 60 HP threshold~
-@444 = ~Make Flesh to Stone use Petrification saves~
+@444 = ~Make Flesh to Stone use Petrification saves and optionally make some creatures immune to it like in IWD~
 @445 = ~Make Bigby's spells more powerful~
 @446 = ~Make Fireball spells slightly scale more up to level 20 andan optional better explosion animation~
 @447 = ~Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance~
@@ -274,7 +275,7 @@
 @320 = "Make Nature's Beauty more dangerous and targets that are under True Sight of blinded immune to it"
 @330 = "Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)"
 @340 = "Make Symbol of Death work with Save bonus if above the 60 HP threshold"
-@420 = ~Make Armor of Faith also add a +2 AC bonus to make it useful at low levels~
+@420 = ~Make Armor of Faith also add a +2 Armor Class bonus to make it useful at low levels~
 @450 = ~Make healing spells other than Heal more worth using~
 @461 = ~Make Bolt of Glory slightly more effective and reorganize the damage distribution per type of enemy~
 @462 = ~Make Magical Stone bypass Magic Resistance and deal both magic and missile damage~
@@ -538,7 +539,7 @@ Casting Time: 6
 Area of Effect: The caster
 Saving Throw: None
 
-Through this spell, the caster imbues <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The priest's Strength score is set to 18/00—even if it is normally higher—<PRO_HISHER> THAC0 becomes that of a Fighter of the same level, gains 1/2 APR at level 7 and another one at level 13, and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.~
+Through this spell, the caster imbues <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The priest's Strength score is set to 18/00—even if it is normally higher—<PRO_HISHER> THAC0 becomes that of a Fighter of the same level, gains 1/2 attacks per round at level 7 and another one at level 13, and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.~
 
 @5130 = ~Tenser's Transformation
 (Alteration)
@@ -757,8 +758,8 @@ Combat abilities:
 – Star Bolt: Each successful hit has a 15% chance of causing either 1d8 fire, 1d8 of electrical damage, or both
 
 Charge abilities:
-– Heavenly Strike once per day
-  Special: Raise the dagger to the sky, summoning a bolt of lightning and a column of fire to strike the target, dealing 10d6 electrical and fire damage (save vs. Breath at -4 for half). Adjacent targets take the fire part of the damage as well. This action empowers the wielder, adding +2 fire and electrical damage to all melee and ranged attacks for the next turn.
+– Heavenly Strike three times per day
+  Special: Raise the dagger to the sky, summoning a bolt of lightning and a column of fire to strike the target, dealing 6d6+24 electrical and fire damage (save vs. Breath at -5 to take a quarter less damage). Adjacent targets take 60% of the fire part of the damage. This action also empowers the wielder, adding +2 fire and electrical damage to all melee and ranged attacks for the next turn.
   Area of Effect: 1 creature and adjacent allies
 
 THAC0: +6
@@ -880,7 +881,7 @@ STATISTICS:
 Combat abilities:
 – Hit target must save vs. Poison at -1 or suffer 6 points of poison damage over 3 seconds
 – Considered +3 for the purposes of what it can hit
-– 1/2 extra attack per round
+– Attacks per round: +1/2
 
 THAC0: +2
 Damage: 1d6+2 (piercing)
@@ -898,9 +899,9 @@ Weight: 2~
 STATISTICS:
 
 Combat abilities:
-– Hit target suffers a -2 Dexterity penalty for 5 rounds and a -1 penalty to Save vs. Poison for 2 rounds
+– Hit target suffers a -2 Dexterity penalty for 5 rounds and a -1 penalty to saving throws vs. Poison for 2 rounds
 – Considered +3 for the purposes of what it can hit
-– 1/2 extra attack per round
+– Attacks per round: +1/2
 
 THAC0: +2
 Damage: 1d6+2 (piercing)
@@ -957,7 +958,7 @@ STATISTICS:
 Equipped abilities:
 – Immunity to charm and confusion
 – Stacking bonuses that depends on the alignment of the wielder:
-  All alignments: +1 AC, +5% Magic Resistance
+  All alignments: +1 Armor Class, +5% Magic Resistance
   All neutral alignments: +1 Damage, +1 Saving Throws, +5% Magic Resistance
   True Neutral: +1 Armor Class, +1 Saving throws, +5% Magic Resistance, +5% critical hit chances with all weapons
 
@@ -1666,12 +1667,12 @@ Weight: 1~
 STATISTICS:
 
 Combat abilities:
-– Every hit inflicts pain, making living beings feel weakened for 1 round, suffering a penalty of 2 to THAC0, AC, and damage. This effect does not stack
+– Every hit inflicts pain, making living beings feel weakened for 1 round, suffering a penalty of 2 to THAC0, Armor Class, and damage. This effect does not stack
 
 THAC0: +2
 Damage: 1d6+2, slivers add 2 points piercing damage each round for 4 rounds
 Damage type: Crushing
-Speed Factor: 4
+Speed Factor: 2
 Proficiency Type: Club
 Type: One-handed
 Requires:
@@ -1705,7 +1706,7 @@ Casting Time: 1
 Area of Effect: The caster
 Saving Throw: None
 
-The caster of the Armor of Faith receives significant protection against melee and magical attacks. This magical armor is a force of energy that absorbs or deflects a portion of the damage intended for the caster. At 1st level, the protection is 5%, and every 5 levels of the caster improves this by another 5%: For example, a 20th-level priest would have 25% of <PRO_HISHER> damage "absorbed" if protected by this spell. Finally, it applies an AC bonus of 2 for the duration.~
+The caster of the Armor of Faith receives significant protection against melee and magical attacks. This magical armor is a force of energy that absorbs or deflects a portion of the damage intended for the caster. At 1st level, the protection is 5%, and every 5 levels of the caster improves this by another 5%: For example, a 20th-level priest would have 25% of <PRO_HISHER> damage "absorbed" if protected by this spell. Finally, it applies an Armor Class bonus of 2 for the duration.~
 
 @6210 = ~Abi-Dalzim's Horrid Wilting
 (Necromancy)
@@ -1991,8 +1992,11 @@ Weight: 0~
 
 STATISTICS:
 
+Combat abilities:
+– Acts as a +5 weapon against demonic and devilish creatures
+
 THAC0: +3, +6 vs. demons and devils
-Damage: 1d6+4, +6 vs. demons and devils
+Damage: 1d6+4, +6 extra crushing damage vs. demons and devils
 Damage type: Crushing
 Speed Factor: 4
 Proficiency Type: Mace
@@ -2356,12 +2360,12 @@ When casting this spell, the priest must picture the faces of <PRO_HISHER> fello
 
 STATISTICS:
 
+Equipped abilities:
+– Fire Resistance: +50%
+
 Combat abilities:
 – Acts as a silver +5 weapon for the purposes of what it can hit
 – Creatures immune to fire take +5 cold damage
-
-Equipped abilities:
-– Fire Resistance: +50%
 
 THAC0: +5
 Damage: 1d8+3, +1d3 cold
@@ -2378,13 +2382,13 @@ Weight: 4~
 
 STATISTICS:
 
-Combat abilities:
-– Acts as a +5 weapon for the purposes of what it can hit
-
 Equipped abilities:
 – Armor Class: +2 plus extra +2 against slashing, piercing and missile weapons
 – Saves vs. Spell: +1
 – +8% physical damage resistance
+
+Combat abilities:
+– Acts as a +5 weapon for the purposes of what it can hit
 
 THAC0: +5
 Damage: 1d8+3 (slashing)
@@ -2836,8 +2840,8 @@ STATISTICS:
 
 Combat abilities:
 – Dancing sword can attack on its own for 1 turn
-– +1 AC, +2 vs. slashing and piercing
-– The flashy design of the blade is wielded more gracefully by Shadowdancers, Blades, and Swashbucklers: +1/2 APR
+– Armor Class: +1, +2 vs. slashing and piercing
+– The flashy design of the blade is wielded more gracefully by Shadowdancers, Blades, and Swashbucklers: +1/2 attacks per round
 
 THAC0: +4
 Damage: 1d8+2 (slashing)
@@ -2873,7 +2877,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-The recipient of this spell gains extraordinary luck for the next 3 rounds, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +10% to all thieving skills. Furthermore, AC receives a bonus of 2, critical hit chances improve by 5%, and damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
+The recipient of this spell gains extraordinary luck for the next 3 rounds, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +10% to all thieving skills. Furthermore, Armor Class receives a bonus of 2, critical hit chances improve by 5%, and damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
 
 // luck duration + boost
 @6730 = ~Luck
@@ -2886,7 +2890,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-The recipient of this spell gains extraordinary luck for the next turn, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +10% to all thieving skills. Furthermore, AC receives a bonus of 2, critical hit chances improve by 5%, and damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
+The recipient of this spell gains extraordinary luck for the next turn, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +10% to all thieving skills. Furthermore, Armor Class receives a bonus of 2, critical hit chances improve by 5%, and damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
 
 @6740 = ~This burnished, red ring is engraved with depictions of flames and lava coils. Mages and other planar travelers use these rings to protect themselves while visiting the Elemental Plane of Fire and to command fire elementals to do their bidding.
 
@@ -3146,7 +3150,7 @@ Equipped abilities:
 – Immunity to fear
 – Regenerate 1 Hit Point every 5/2 rounds
 – +15% resistance against acid, electricity, fire, and cold
-– +2 AC and saving throws vs. dragons
+– +2 Armor Class and saving throws vs. dragons
 
 Equipped abilities:
 – Acts as a +4 weapon against dragons and wyverns for the purposes of overcoming physical protections
@@ -3279,7 +3283,7 @@ Weight: 1~
 STATISTICS:
 
 Combat abilities:
-– 20% chance per hit that the target suffers a -2 penalty to AC and 1d3 extra point of acid damage per round for 3 rounds
+– 20% chance per hit that the target suffers a -2 penalty to Armor Class and 1d3 extra point of acid damage per round for 3 rounds
 
 THAC0: +3
 Damage: 1d4+3, +1d3 (acid)
@@ -3509,7 +3513,7 @@ Equipped abilities:
 – Magic Resistance: +5%
 
 Combat abilities:
-– Arrows inflict 1d4+1 extra magic damage and 10% spell failure to wizards if Save vs. Spell at -2 is failed
+– Arrows inflict 1d4+1 extra magic damage and 15% wizard spell failure for 4 rounds if a save vs. Spell at -2 is failed
 
 THAC0: +5
 Speed Factor: 3
@@ -3555,7 +3559,7 @@ Weight: 2~
 STATISTICS:
 
 Equipped abilities:
-– AC and Saving Throws: +2
+– Armor Class and Saving Throws: +2
 – Fire Resistance: +50%
 – Open Locks and Find Traps: +20%
 – May memorize one extra spell of levels 1 to 5
@@ -3564,7 +3568,7 @@ Equipped abilities:
 Weight: 0~
 
 // weapon tweak on
-@7100 = ~This fine katana radiates magical energy when wielded by Valygar. The blade was designed to respond only to those with the blood of the family Corthala flowing through their veins. This +2 blade causes additional bleeding damage when it strikes an opponent.
+@7100 = ~This fine katana radiates magical energy when wielded by Valygar. The blade was designed to respond only to those with the blood of the family Corthala flowing through their veins. This +2 blade causes additional poison damage when it strikes an opponent.
 
 STATISTICS:
 
@@ -3573,7 +3577,7 @@ Equipped abilities:
 – +1 backstab multiplier
 
 Combat abilities:
-– Hit target suffers 3 points of additional bleeding damage per round for 2 rounds
+– Hit target suffers 3 points of additional poison damage per round for 2 rounds
 
 THAC0: +2, +6 against wizards and sorcerers
 Damage: 1d10+2 (slashing)
@@ -3584,7 +3588,7 @@ Type: One-handed
 Weight: 4~
 
 // only stat restriction tweak on
-@7110 = ~This fine katana radiates magical energy when wielded by Valygar. The blade was designed to respond only to those with the blood of the family Corthala flowing through their veins. This +2 blade causes additional bleeding damage when it strikes an opponent.
+@7110 = ~This fine katana radiates magical energy when wielded by Valygar. The blade was designed to respond only to those with the blood of the family Corthala flowing through their veins. This +2 blade causes additional poison damage when it strikes an opponent.
 
 STATISTICS:
 
@@ -3592,7 +3596,7 @@ Equipped abilities:
 – Armor Class: +2 vs. slashing attacks
 
 Combat abilities:
-– Hit target suffers 3 points of additional bleeding damage per round for 2 rounds
+– Hit target suffers 3 points of additional poison damage per round for 2 rounds
 
 THAC0: +2
 Damage: 1d10+2 (slashing)
@@ -3786,7 +3790,7 @@ STATISTICS:
 
 Equipped abilities:
 – Constitution: +1
-– AC: +2 (except crushing)
+– Armor Class: +2 (except crushing)
 – Physical resistance: +5% (except crushing)
 
 Weight: 0~
@@ -3820,7 +3824,7 @@ STATISTICS:
 Equipped abilities:
 – Saving Throws: +1
 – Magic Resistance: +10%
-– +1 Dexterity and AC (non-evil elves only)
+– +1 Dexterity and Armor Class (non-evil elves only)
 
 Weight: 1~
 
@@ -3917,7 +3921,7 @@ Equipped abilities:
 – Hit Points: +15 (paladins only)
 – One extra spell slot from level 1 to 4 (paladins only)
 – Casting speed: +1 (paladins only)
-– +1/2 APR (paladins only)
+– Attacks per round: +1/2 (paladins only)
 
 Charge abilities:
 – Heal once per day
@@ -4127,7 +4131,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: Special
 
-This spell affects a single living creature. Dolorous Decay is a rotting and withering of the body that spreads throughout the afflicted creature quickly. The target creature will automatically be slowed for 2 rounds and suffer 2d10 poison damage immediately with no save. Furthermore, if the target fails a Saving Throw vs. Poison with a -3 penalty, <PRO_HESHE> will suffer 1 point of damage per second for 1 turn, and suffer a -2 penalty to THAC0, Damage, and AC, and will suffer 8% extra physical damage for that duration.~
+This spell affects a single living creature. Dolorous Decay is a rotting and withering of the body that spreads throughout the afflicted creature quickly. The target creature will automatically be slowed for 2 rounds and suffer 2d10 poison damage immediately with no save. Furthermore, if the target fails a Saving Throw vs. Poison with a -3 penalty, <PRO_HESHE> will suffer 1 point of damage per second for 1 turn, and suffer a -2 penalty to THAC0, Damage, and Armor Class, and will suffer 8% extra physical damage for that duration.~
 
 @7420 = ~Wondrous Recall
 (Alteration)
@@ -4248,7 +4252,7 @@ STATISTICS:
 
 Detect Illusion and Traps: +40%
 Other thieving skills: +20%
-AC and Saving Throws: +2
+Armor Class and Saving Throws: +2
 THAC0: +1
 Duration: 6 hours
 
@@ -4505,7 +4509,7 @@ Weight: 3~
 STATISTICS:
 
 Combat abilities:
-– Cursed Wound: critical hits prevent most sources of healing for 2 rounds
+– Cursed Wound: critical hits prevent most sources of healing for 5/2 rounds
 – +5% critical hit chances with this weapon
 
 THAC0: +2
@@ -4571,9 +4575,9 @@ STATISTICS:
 
 Equipped abilities:
 – Different bards get different bonuses:
-  All bards: +2 AC, THAC0, Damage, and casting speed. +1 memorizable spells from level 1 to 6
-  Skalds: +1 bonus to Strength and +1/2 APR
-  Blades: +1 bonus to Dexterity and +1/2 APR
+  All bards: +2 Armor Class, THAC0, Damage, and casting speed. +1 memorizable spells from level 1 to 6
+  Skalds: +1 bonus to Strength and +1/2 attacks per round
+  Blades: +1 bonus to Dexterity and +1/2 attacks per round
   Jesters: Immune to confusion, slow, and unconsciousness. +6 bonus to saves vs. Enchantment effects
 
 Weight: 1~
@@ -4827,7 +4831,7 @@ STATISTICS:
 Charge abilities:
 Three times per day, blow the horn to activate the powers:
   – Immunity to 1st, 2nd, and 3rd-level spells
-  – Armor Class: +2 AC, +6 vs. missile attacks
+  – Armor Class: +2, +6 vs. missile attacks
   – Saving Throws: +2
   – Magic Resistance: +10%
   – Physical Resistance: +8%
@@ -5155,7 +5159,7 @@ Equipped abilities:
 – Off-hand THAC0: +2 (monks only)
 
 Combat abilities:
-– +1 APR
+– Attacks per round: +1
 – Hit target takes 12 points of poison over 2 rounds (Save vs. Death negates)
 – +5% critical chances while holding this weapon (monks only)
 
@@ -5188,7 +5192,7 @@ Different kinds of benefits for backstabs are unlocked depending on the rogue we
 
 Charge abilities:
 – Expose Weakness once per day
-  Special: Target loses immunity to backstabs, if they had it, take 10% more damage from piercing and slashing attacks, suffering additionally a -4 penalty to AC against that type of attacks.
+  Special: Target loses immunity to backstabs, if they had it, take 10% more damage from piercing and slashing attacks, suffering additionally a -4 penalty to Armor Class against that type of attacks.
   Duration: 4 rounds
 
 Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
@@ -5233,7 +5237,7 @@ Combat abilities:
   – Spectres, ghosts, and other spectral creatures: 35%
   – Mummies and revenants: 20%
   – Wraiths: 5%
-  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time.
+  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time
 
 THAC0: +1 (strikes as a +3 weapon)
 Damage: 1d6+2, plus 1d6+2 vs. undead
@@ -5265,7 +5269,7 @@ Combat abilities:
   – Spectres, ghosts, and other spectral creatures: 35%
   – Mummies and revenants: 20%
   – Wraiths: 5%
-  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time.
+  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time
 
 THAC0: +2 (strikes as a +5 weapon)
 Damage: 1d6+3, plus 1d6+3 vs. undead
@@ -5524,7 +5528,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: Special
 
-By means of this spell, the wizard creates a magical arrow that speeds to its target unerringly. The arrow has no attack or damage bonus, but inflicts 2d4 points of acid damage (no save allowed), which may splash to adjacent enemies, causing the same amount of damage, unless they save vs. Breath. For every 3 levels of the caster, the acid lasts for another round, unless somehow dispelled, inflicting another 2d4 points of damage each round. So at 3rd-5th level, the acid lasts 2 rounds, at 6th-8th level, the acid lasts for 3 rounds, and so on. Splashed enemies do not receive more damage over time.~
+By means of this spell, the wizard creates a magical arrow that speeds to its target unerringly. The arrow has no attack or damage bonus, but inflicts 2d4 points of acid damage (no save allowed), which may splash to adjacent enemies, causing the same amount of damage, unless they save vs. Breath at -2. For every 3 levels of the caster, the acid lasts for another round, unless somehow dispelled, inflicting another 2d4 points of damage each round. So at 3rd-5th level, the acid lasts 2 rounds, at 6th-8th level, the acid lasts for 3 rounds, and so on. Splashed enemies do not receive more damage over time.~
 
 
 @8230 = ~Wall of Moonlight
@@ -5538,7 +5542,7 @@ Casting Time: 7
 Area of Effect: 8 ft. long, 2 ft. wide wall
 Saving Throw: None
 
-This spell invokes a shimmering tapestry of blue-white force. This wall is intangible, requiring no physical anchor, and can easily be passed through. Evil creatures passing through the wall take 2d9+2 magic damage; undead creatures take 3d9+3 (evil undead would take 5d9+5). Additionally, affected creatures must save vs. Spell or be blinded by 1 round and repulsed backwards with a 25% chance of being knocked to the ground for half a round. A creature that has passed through the wall can only be affected by it once per round. These effects cannot be stopped by Magic Resistance.~
+This spell invokes a shimmering tapestry of blue-white force. This wall is intangible, requiring no physical anchor, and can easily be passed through. Evil creatures passing through the wall take 2d8+4 magic damage; undead creatures take 3d8+6 (evil undead would take 5d8+10). Additionally, affected creatures must save vs. Spell or be blinded by 1 round and repulsed backwards with a 40% chance of being knocked to the ground for half a round. A creature that has passed through the wall can only be affected by it once per round. These effects cannot be stopped by Magic Resistance.~
 
 @8240 = ~Lesser Restoration
 (Necromancy)
@@ -5566,6 +5570,90 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 When this spell is cast, the life energy level of the recipient is raised. This reverses any previous life energy level drain of the creature by a force or monster, as well as the attribute draining caused by creatures such as shadows and mind flayers. A Greater Restoration spell will also restore the Intelligence score of a creature affected by the Feeblemind spell and negate any form of insanity, such as confusion or berserk. It fully heals the target and cures any diseases or poisons. The casting of this spell is very draining on the priest, and <PRO_HESHE> will likely require rest immediately afterward.~
+
+@8250 = ~This crude wooden club burns with the raging spirit of the demon forever trapped within by the powerful enchantments placed on the weapon. Occasionally, the demon's wrath escapes in a fiery blast, though the power of the club prevents the inferno from affecting the user.
+
+STATISTICS:
+
+Combat abilities:
+– 20% chance per hit target will take an additional 10 points of fire damage
+– 7% chance per hit a 15-ft. radius fireball will automatically detonate (8d6+12 fire damage; Save vs. Spell for half)
+
+THAC0: +3
+Damage: 1d6+3, +3 fire damage
+Damage type: Crushing
+Speed Factor: 1
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@8251 = ~This crude wooden club burns with the raging spirit of the demon forever trapped within by the powerful enchantments placed on the weapon. Occasionally, the demon's wrath escapes in a fiery blast, though the power of the club prevents the inferno from affecting the user and their allies.
+
+Now that the club is upgraded with the ring of fire resistance, the demon spirit trapped within this weapon is easier to control, focusing its wrath more effectively whenever it releases its blazing power without warning.
+
+STATISTICS:
+
+Combat abilities:
+– 30% chance per hit target will take an additional 15 points of fire damage
+– 10% chance per hit a 15-ft. radius fireball will automatically detonate (8d6+12 fire damage; Save vs. Spell for half)
+
+THAC0: +5
+Damage: 1d6+5, +5 fire damage
+Damage type: Crushing
+Speed Factor: 0
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 1~
+
+@8260 = ~This magical weapon is of ancient design, thought to have been devised in Netheril. It crackles with spectacular arcs of lightning when wielded.
+
+STATISTICS:
+
+Equipped abilities:
+– Electrical Resistance: +20%
+– Electrical damage: +5%
+
+THAC0: +3
+Damage: 1d6+4, +1d6 electrical damage
+Damage type: Crushing
+Speed Factor: 4
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 6~
+
+@8261 = ~This magical weapon is of ancient design, thought to have been devised in Netheril. It crackles with spectacular arcs of lightning when wielded.
+
+Infused with the otherworldly starfall ore, the powers of this already formidable weapon are greatly enhanced.
+
+STATISTICS:
+
+Equipped abilities:
+– Electrical Resistance: +40%
+– Electrical damage: +7%
+
+Combat abilities:
+– 12% chance of casting Chain Lightning on target with each successful attack (10d6 electrical damage to all in path; Save vs. Spell for half)
+– Any creature that hits the wielder takes 1d2 electrical damage and has a 15% chance of being stunned for 1 round, unless a save vs. Spell at -4 is made
+
+THAC0: +5
+Damage: 1d6+6, plus 1d6+1 electrical damage
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 4~
 
 // patching other mods
 // item upgrade
@@ -5617,12 +5705,12 @@ STATISTICS:
 
 Equipped abilities:
 – Acid Resistance: +25%
-– Every hit inflicts pain, making living beings feel weakened for 1 round, suffering a penalty of 2 to THAC0, AC, and damage. This effect does not stack
+– Every hit inflicts pain, making living beings feel weakened for 1 round, suffering a penalty of 2 to THAC0, Armor Class, and damage. This effect does not stack
 
 THAC0: +5
 Damage: 1d6+5, +3 acid damage, slivers add 3 points piercing damage each round for 4 rounds
 Damage type: Crushing
-Speed Factor: 1
+Speed Factor: 0
 Proficiency Type: Club
 Type: One-handed
 Requires:
@@ -5858,7 +5946,6 @@ Combat abilities:
 – +5% critical hit chances
 – Elves, spiders, and denizens native to the Underdark take an extra +6 piercing damage per hit
 – Hit target must save vs. Poison at -2 or fall asleep. When this triggers, the wielder gains a +5% bonus to critical hit chances (doesn't stack) and +1 to damage and THAC0 (stacks) for 2 rounds
-– Critical hits with this weapon increase the backstab multiplier by 1 of the next backstab for the next round (doesn't stack)
 
 THAC0: +5
 Damage: 1d4+5, +1d6 acid damage
@@ -5897,7 +5984,7 @@ Equipped abilities:
 
 Combat abilities:
 – Dispel Magic on each hit, unless a save vs. Spell at -2 is made
-– Each hit makes the target receive a cumulative 2 point penalty to their THAC0 for 2 turns
+– Each hit makes the target receive a cumulative 2 point penalty to their THAC0 for 5 rounds unless a save vs. Spell at -5 succeeds
 
 THAC0: +6
 Damage: 1d12+6, +1d3 magic damage

@@ -3,9 +3,11 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1120" OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ "103" BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 263 parameter1 = 1 END
         END ELSE BEGIN
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=178,p1=202,p2=5,spec=4;op=178,p1=19,p2=5,spec=4;op=263,p1=1~ END
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=1~ END
         END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=178,p1=202,p2=5,spec=4;op=178,p1=19,p2=5,spec=4~ END
         LPF RM_STAT_REQS END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 25 special = 6 END
 
         PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1370" BEGIN
             SPRINT strref @7100

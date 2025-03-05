@@ -2,7 +2,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY_EXISTING ~SPPR416.SPL~ ~override~
         LPF SPL_REF_NAME RET cloak_fear_strref = result END
 
-    COPY ~%MOD_FOLDER%/iwd_assets/cloak_fear~ ~override~
+    COPY ~%MOD_FOLDER%/spells/cleric/cloak_fear~ ~override~
     COPY_EXISTING ~SPPR416.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_name=cloak_fear_strref ref_desc=RESOLVE_STR_REF(@6640) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 215 STR_VAR resource = ~ICCLKFR2~ END

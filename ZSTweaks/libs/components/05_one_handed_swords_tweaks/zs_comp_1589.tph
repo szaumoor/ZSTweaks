@@ -2,12 +2,13 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY ~%MOD_FOLDER%/items/rashad~ ~override~
     COPY_EXISTING "ZSTWRASH.SPL" ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1=RESOLVE_STR_REF(@7581) END
+        LPF ALTER_EFFECT INT_VAR match_duration = 12 duration = 15 END
     BUT_ONLY
 
     COPY_EXISTING ~SPPR307.SPL~ ~override~
                   ~SPWI410.SPL~ ~override~
-        READ_LONG 0x36 spell_level
-        LPF ADD_SPELL_EFFECT INT_VAR target=1 opcode=321 power=spell_level STR_VAR resource = ~ZSTWRASH~ END
+        READ_BYTE 0x34 spell_level
+        LPF ADD_SPELL_EFFECT INT_VAR target=2 opcode=321 power=spell_level STR_VAR resource = ~ZSTWRASH~ END
 
     COPY_EXISTING "SW1H23.itm" ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7580) END

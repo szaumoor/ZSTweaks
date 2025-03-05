@@ -7,6 +7,7 @@ THEN
     Continue()
 END
 >>>>>>>>
+APPEND ~object.ids~ ~94 LastKilled~ UNLESS ~^94[ %TAB%]+LastKilled$~
 
 EXTEND_TOP "DEMNABSU.BCS" ".../zstweaks/summoned_demons_givexp.baf"
 EXTEND_TOP "DEMGLASU.BCS" ".../zstweaks/summoned_demons_givexp.baf"

@@ -3,10 +3,12 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
     ACTION_IF zst_160_bbod BEGIN
         COPY_EXISTING ~BLAKBLAD.ITM~ ~override~
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=0,p2=1~ END
+        BUT_ONLY IF_EXISTS
     END
 
     ACTION_IF zst_160_goliro BEGIN
         COPY_EXISTING ~CDGOLIRO.ITM~ ~override~
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=0,p2=1~ END
+        BUT_ONLY IF_EXISTS
     END
 END

@@ -1,5 +1,5 @@
 ACTION_IF !(GAME_IS "iwdee") BEGIN
-    COPY ~%MOD_FOLDER%/spells/wizard_spells/horrid_wilting~ ~override~
+    COPY ~%MOD_FOLDER%/spells/wizard/horrid_wilting~ ~override~
     OUTER_SET new_description = RESOLVE_STR_REF(@6210)
     COPY_EXISTING ~ohbwat01.CRE~ ~override~ // make sure existing water elementals are considered water elementals
         LPF ALTER_CRE INT_VAR class=219 END
@@ -547,7 +547,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                 parameter2 = 5
                 timing = 1
                 resist_dispel = 1
-                
+
             STR_VAR
                 resource = ~ZSTWHW20.EFF~
         END

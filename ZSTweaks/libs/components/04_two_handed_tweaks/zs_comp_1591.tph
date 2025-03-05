@@ -19,7 +19,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         COPY_EXISTING "c2sw2h02.itm" ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@50130) END
             LPF ALTER_EFFECT INT_VAR match_opcode=54 match_duration=120 duration=30 savingthrow=1 savebonus="-5" END
-            LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 3 special = 1024 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 3 special = 1024 END
             PATCH_FOR_EACH value IN 240 77 81 215 177 58 141 139 174 BEGIN
                 LPF ALTER_EFFECT INT_VAR match_opcode = value savingthrow = 1 savebonus = "-2" END
             END

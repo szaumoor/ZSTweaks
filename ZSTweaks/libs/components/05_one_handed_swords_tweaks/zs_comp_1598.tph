@@ -1,3 +1,4 @@
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY ~%MOD_FOLDER%/items/cutthroat~ ~override~
     COPY_EXISTING "ZSTWCUTA.SPL" ~override~

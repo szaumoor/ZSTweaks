@@ -11,7 +11,7 @@ COPY_EXISTING ~bdhamm02.itm~ ~override~
 
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdarow02.itm~ BEGIN
-    ~%MOD_FOLDER%/items/voidweapons/ZSTWVD03.SPL~ ~override~
+    COPY ~%MOD_FOLDER%/items/voidweapons/ZSTWVD03.SPL~ ~override~
     COPY_EXISTING ~bdarow02.itm~ ~override~
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWVD03~ END
 END

@@ -9,6 +9,6 @@ COPY_EXISTING ~SPPR713.SPL~ ~override~
         spl_level = 7
     END
     PATCH_FOR_EACH res IN ~SHADOWWP~ ~TROLLSPI~ ~SPIDWR1~ ~bdshadgr~ ~MINDFLAY~ BEGIN
-        LPF ADD_SPELL_EFFECT INT_VAR power=spl_level target=1 opcode=321 STR_VAR resource=~%res%~ END
+        LPF ADD_SPELL_EFFECT INT_VAR power=spl_level target=2 opcode=321 STR_VAR resource=~%res%~ END
     END
 BUT_ONLY IF_EXISTS

@@ -1,7 +1,7 @@
-COPY ~%MOD_FOLDER%/spells/cleric_spells/sunray~ ~override~
+COPY ~%MOD_FOLDER%/spells/cleric/sunray~ ~override~
 COPY_EXISTING ~SPPR707.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8120) END
-    LPF DELETE_SPELL_HEADER INT_VAR header_type = 1 min_level = 15 END
+    LPF ~CD_TRIM-O-MATIC~ INT_VAR level_cap = 1 END
     LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
     LPF DELETE_EFFECT INT_VAR match_opcode = 177 STR_VAR match_resource = "SP707L14" END
     LPF DELETE_EFFECT INT_VAR match_opcode = 12 END
@@ -18,6 +18,8 @@ COPY_EXISTING ~SPPR707.SPL~ ~override~
 COPY_EXISTING ~UNDDEATH.EFF~ ~override~
     LPF GET_DMG_TYPE STR_VAR type = "magic" RET magic = result END
     LPF ALTER_EFF_FILE INT_VAR parameter1=100 parameter2=3 + magic END
+    WRITE_LONG 0x38 0
+    WRITE_LONG 0x3c 0
 
 WITH_SCOPE BEGIN
     OUTER_SET dmg2d6 = RESOLVE_STR_REF(@8125)

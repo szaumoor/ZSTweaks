@@ -548,6 +548,8 @@ Instead of simply giving the usual +4 weapon bonuses:
 - Dagger of the Star +5 becomes one of the few privileged +6 weapons and inflicts +2 electric and fire damage per hit
 - Star Bolt: Increased the chance to trigger elemental effects to 15%, the difference being, you have equal chances of triggering fire damage, electrical damage, or both (5% chance each).
 
+Finally, it has a charge ability usable twice per day called Heavenly Strike, that causes a lightning bolt to fall from the sky dealing 6d6+24 electrical damage (save vs. Breath at -5 to take three quarters of the damage) followed shortly by a column of fire that deals 6d6+24 fire damage (save vs. Breath at -5 to take three quarters of the damage). The fire damage spreads to enemies that stand too close to the fire, which deals 60% of the potential fire damage. Doing this, also empowers the wielder's attacks for 1 turn, dealing +2 fire and electrical damage per hit.
+
 **Component 1490:** Make Neb's Nasty Cutter have an unlimited amount of poison
 
 The dagger will always cause 20 poison damage over 10 seconds if a save vs. Death is failed and never deplete.
@@ -993,8 +995,6 @@ So. You get this weapon fairly late in BGEE, and it sucks. Also, "cold-using cre
 - Silver Dragons are included as "cold-using creatures"
 - The extra damage will be fire damage, not slashing
 
-**Component 1608** Make Water's Talon +4 more balanced (Item Upgrade)
-
 
 </details>
 
@@ -1063,6 +1063,14 @@ Refer to component 1323. The upgraded Mace of Disruption +2's only difference as
 Additionally, the extra damage applied to the undead is always the base damage of the weapon, instead of 1d6+2 for the first, and 1d6+1 for the second.
 
 Finally, this also modifies the deva's Mace of Disruption such that it follows the same rules.
+
+**Component 1327** Make Club of Detonation's Fireball not tied to wizard level and improve it slightly
+
+The club of detonation is a fairly inconvenient weapon to use, as the fireball is presented as a detriment, and the upgrade to it reduces its chances to trigger. It was reworked as follows:
+
+- The fireball is no longer the wizard spell, tied to wizard spell levels, but a custom fireball that will deal no damage to the user and allies, and deal always 8d6+12 fire damage (Save vs. Spell for half). The fireball will also bypass magic resistance as it is no longer considered a wizard spell, but fire, so to speak, coming from the demon.
+- Speed factor was also modified to take into account enchantment levels, as generic enchanted weapons do
+- The chances of triggering on the +5 version were increased from 5% to 10%, as the club is no longer conceived as something that may inconvenience the user randomly with a fireball. It's just good news now for your party and bad news for your enemies.
 
 </details>
 
@@ -1345,9 +1353,11 @@ This component further tightens the gap between the wizard and the fighter they 
 
 This spell is useless if the health of the enemy, which ordinarily you cannot know, is above that threshold, so it's fairly wasteful to use the spell unless the enemy is Near Death or the enemies are very weak anyway and easy to kill. As such, now the spell works for HP above 60, but with a bonus of +6, giving it at least some (small) chance of working at all times.
 
-**Component 444:** Make Flesh to Stone use Petrification saves
+**Component 444:** Make Flesh to Stone use Petrification saves and optionally make some creatures immune to it like in IWD
 
 This makes this spell force a save vs. petrification instead of a save vs. spell. I think Flesh to Stone and Disintegrate are way too similar functionally, and it's almost always a better idea to use Flesh to Stone over Disintegrate (they're both even boosted equally if cast by a Transmuter). This affects the version that beholders use.
+
+This will also make the wizard spell not affect golems, spectres, and other creatures that are immune to petrification according to IWDEE.
 
 **Component 445:** Make Bigby's spells more powerful
 
@@ -1388,11 +1398,11 @@ If you think this is overpowered, consider these damage range values:
 
 Also, Delayed Blast Fireball no longer has a markedly smaller explosion radius compared to Sunfire and Fireball, but the exact same as those.
 
-Lastly, this patches the Fireball explosions such that the god-awful EE explosion is substituted by something much more epic looking in my view. This behavior can be disabled in the configuration file.
+Lastly, this patches the Fireball explosions such that the god-awful EE explosion is substituted by something much more epic looking in my view. This behavior can be disabled in the configuration file. It's also possible to install **only** the animation change if you like.
 
 **Component 447:** Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance
 
-This makes this spell more similar to the 5E behavior, where the acid creates a splash zone. The splash zone will affect immediately adjacent enemies if they fail a save vs. Breath, without affecting the primary target, or allies, for convenience and to avoid modifying the normal strategy in the game when using this spell or meddling with enemy AI. The splash damage is equal to the base immediate damage of the spell, and it does not persist over time, only the primary target gets damage over time.
+This makes this spell more similar to the 5E behavior, where the acid creates a splash zone. The splash zone will affect immediately adjacent enemies if they fail a save vs. Breath, without affecting the primary target, or allies, for convenience and to avoid modifying the normal strategy in the game when using this spell or meddling with enemy AI. The splash damage is equal to the base immediate damage of the spell, and it does not persist over time, only the primary target gets damage over time. This splash can be avoided with an Evasion check if this feature exists in the game.
 
 Additionally, the spell will bypass magic resistance, as it is conceived as conjured acid, not a magical effect. This behavior can be disabled in the configuration file.
 
@@ -1623,6 +1633,12 @@ None of these effects are subject to magic resistance though it's a level 5 effe
 
 **Component 506:** Make Wall of Moonlight more effective
 
+This spell is thematically beautiful but very underperforming, especially due to how it only works once per turn. This improves the spell in the following ways:
+
+- The damage from the spell can now affect a target once per round instead of per turn. It's up to you how much you want to exploit the enemy's AI with this.
+- The damage is the same, but the minimum damage has been increased: evil targets take 2d8+4 (from 2d10) magic damage, and undead take additionally 3d8+6. This damage is no longer resistable by magic resistance
+- The spell also causes enemies blindness for 1 round, with a 40% chance of pushing them back away **from the original caster** and knocking them prone for half a round, unless they save vs. Spell. This effect is not resistable by magic resistance either.
+
 
 **Component 507:** Make Aid a party buff and optionally disable the character glow
 
@@ -1818,9 +1834,7 @@ Planetars have a 25% of dealing a vorpal hit with a -4 save penalty, which is ev
 I don't like being killed without any reasonable chance to defend against the killing blow other than luck or Death Ward. Especially with demons, who are very capricious about who to target. The Balor's vorpal attack has a 16% chance of killing anything forever (no resurrection allowed), and only by equipping something that grants immunity against death effects, or using Death Ward, can you avoid it. Therefore:
 
 - Probability of triggering adequately brought down to 15% chance, as intended
-- It still forces a Save vs. Death at -2 to trigger (this penalty can be overridden in the config file).
-
-In short, their vorpal weapon will be identical to the silver sword's, but will trigger 15% of the time instead of 25%.
+- It still forces a Save vs. Death at -4 to trigger (this penalty can be overridden in the config file).
 
 **Component 3060:** Make Mencar Pebblecrusher a fair fighter for his level or make him a joke (optional)
 

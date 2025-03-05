@@ -29,7 +29,7 @@ ACTION_IF zst_450_moderate BEGIN
             END
             LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = number + 1 END
             LPF ALTER_EFFECT INT_VAR header = current_header - 1 match_opcode = 17 parameter1 = base_heal END
-            base_heal += jump
+            base_heal += heal_jump
             ++current_header
         END
     BUT_ONLY IF_EXISTS

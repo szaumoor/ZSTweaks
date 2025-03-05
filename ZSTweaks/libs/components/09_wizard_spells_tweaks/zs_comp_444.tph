@@ -2,6 +2,21 @@ OUTER_SET new_description = RESOLVE_STR_REF(@6950)
 COPY_EXISTING ~SPWI604.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=new_description END
     LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 16 END
+    PATCH_IF NOT GAME_IS "iwdee" AND zst_444_flesh_stone_iwd BEGIN
+        SET skeleton = IDS_OF_SYMBOL(race SKELETON)
+        SET demilich = IDS_OF_SYMBOL(race DEMILICH)
+        SET shadow = IDS_OF_SYMBOL(race SHADOW)
+        SET wraith = IDS_OF_SYMBOL(race WRAITH)
+        SET slime = IDS_OF_SYMBOL(race SLIME)
+        SET mist = IDS_OF_SYMBOL(race MIST)
+        SET golem = IDS_OF_SYMBOL(race GOLEM)
+        SET elemental = IDS_OF_SYMBOL(race ELEMENTAL)
+        SET statue = IDS_OF_SYMBOL(race STATUE)
+        SET spectral_undead = IDS_OF_SYMBOL(race SPECTRAL_UNDEAD)
+        SET shambling_mound = IDS_OF_SYMBOL(race SHAMBLING_MOUND)
+
+        LPF ADD_SPL_EFF_TGT INT_VAR rd=0 pwr=6 ip=0 p2=104 STR_VAR effects = ~op=324,p2=138,p1=128;op=324,p1=%skeleton%;op=324,p1=%demilich%;op=324,p1=%shadow%;op=324,p1=%wraith%;op=324,p1=%slime%;op=324,p1=%mist%;op=324,p1=%golem%;op=324,p1=%elemental%;op=324,p1=%statue%;op=324,p1=%spectral_undead%;op=324,p1=%shambling_mound%~ END
+    END
 
 COPY_EXISTING ~SCRL7H.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
@@ -13,5 +28,20 @@ BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~SPIN984.SPL~ ~override~ // beholder version
     LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 16 END
+    PATCH_IF NOT GAME_IS "iwdee" AND zst_444_flesh_stone_iwd BEGIN
+        SET skeleton = IDS_OF_SYMBOL(race SKELETON)
+        SET demilich = IDS_OF_SYMBOL(race DEMILICH)
+        SET shadow = IDS_OF_SYMBOL(race SHADOW)
+        SET wraith = IDS_OF_SYMBOL(race WRAITH)
+        SET slime = IDS_OF_SYMBOL(race SLIME)
+        SET mist = IDS_OF_SYMBOL(race MIST)
+        SET golem = IDS_OF_SYMBOL(race GOLEM)
+        SET elemental = IDS_OF_SYMBOL(race ELEMENTAL)
+        SET statue = IDS_OF_SYMBOL(race STATUE)
+        SET spectral_undead = IDS_OF_SYMBOL(race SPECTRAL_UNDEAD)
+        SET shambling_mound = IDS_OF_SYMBOL(race SHAMBLING_MOUND)
+
+        LPF ADD_SPL_EFF_TGT INT_VAR rd=0 pwr=6 ip=0 p2=104 STR_VAR effects = ~op=324,p2=138,p1=128;op=324,p1=%skeleton%;op=324,p1=%demilich%;op=324,p1=%shadow%;op=324,p1=%wraith%;op=324,p1=%slime%;op=324,p1=%mist%;op=324,p1=%golem%;op=324,p1=%elemental%;op=324,p1=%statue%;op=324,p1=%spectral_undead%;op=324,p1=%shambling_mound%~ END
+    END
 BUT_ONLY IF_EXISTS
 

@@ -2,4 +2,3 @@ COPY_EXISTING ~AROW10.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7630) END
     LPF ALTER_EFFECT INT_VAR header_type = 2 match_opcode = 12 parameter1=7 special = (2**8 + 2**10) END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=2,p2=1,spec=2~ END
-    LPF ADD_SLEEP_SAFE_DMG INT_VAR t=2 p1=1 STR_VAR dmg_type = "poison" END

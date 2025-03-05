@@ -1,10 +1,20 @@
 ACTION_IF NOT GAME_IS "iwdee" BEGIN
+    COPY ~%MOD_FOLDER%/spells/wizard/melf~ ~override~
     COPY_EXISTING ~SPWI211.SPL~ ~override~
-        COPY ~%MOD_FOLDER%/spells/wizard_spells~ ~override~
-        PATCH_IF _447_melf_no_mr BEGIN
-            LPF ALTER_EFFECT INT_VAR resist_dispel = 3 END
-        END
         LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8220) END
-        LPF ADD_SPL_EFF_TGT STR_VAR effects = ~op=146,p2=1,res=ZSTWMELF~ END
+        SET pulse_speed = (20 << 16)
+        PATCH_IF zst_447_melf_no_mr BEGIN
+            LPF ALTER_EFFECT INT_VAR resist_dispel = 3 END
+            LPF ADD_SPL_EFF_TGT INT_VAR pwr=2 rd=3 STR_VAR effects = ~op=50,p1=418709504,p2=%pulse_speed%;op=215,res=TRGOOYAA;op=146,p2=1,res=ZSTWMELF~ END
+        END ELSE BEGIN
+            LPF ADD_SPL_EFF_TGT INT_VAR pwr=2 STR_VAR effects = ~op=50,p1=418709504,p2=%pulse_speed%;op=215,res=TRGOOYAA;op=146,p2=1,res=ZSTWMELF~ END
+        END
+
+    ACTION_IF zst_447_melf_no_mr BEGIN
+        COPY_EXISTING ~ZSTWMELF.SPL~ ~override~
+            LPF ALTER_EFFECT INT_VAR resist_dispel = 3 END
+        BUT_ONLY
+    END
+
 END
 
