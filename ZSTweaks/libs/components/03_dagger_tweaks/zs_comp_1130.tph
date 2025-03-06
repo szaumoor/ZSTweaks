@@ -28,7 +28,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
             LPF ALTER_HEADER INT_VAR match_type = 1 dicesize = 4 dicenumber = 1 END
             PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 5 to_hit = 6 END
-                LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWDP12~ resource = ~ZSTWDP18~ END
+                LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWDP16~ resource = ~ZSTWDP18~ END
             END ELSE BEGIN
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 5 to_hit = 5 END
             END

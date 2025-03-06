@@ -3,7 +3,8 @@ SUPPORT "RoyalProtector at Gibberlings's forum https://www.gibberlings3.net/prof
 VERSION "1.4.7"
 README ~%MOD_FOLDER%/README.md~
 AUTO_EVAL_STRINGS
-/*MODDER
+/*
+MODDER
 	setup_tra none
 	area_variables warn
 	missing_extern warn
@@ -12,7 +13,7 @@ AUTO_EVAL_STRINGS
 	missing_eval none
 	overwriting_file none
 	fun_args warn
-//*/
+*/
 ALWAYS
     INCLUDE ~%MOD_FOLDER%/libs/zs_tw_functions.tph~
     INCLUDE ~%MOD_FOLDER%/zstweaks_prefs.txt~
