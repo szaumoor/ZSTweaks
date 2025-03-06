@@ -933,13 +933,13 @@ I really hate unique items with nothing in the description worth reading, so I t
 
 **Component 1584:** Make The Brass Blade +5 cast a more powerful Fireball not tied to caster level
 
-The Brass Blade allows you to throw a Fireball as per the 3rd level wizard spell, and it's tied to caster level, which means only Fighter/Mages would be able to take advantage of the full power of this -- other classes would throw a much weaker Fireball. This changes the power so it casts instead a Delayed Fireball cast at max level (15d6 fire damage with vanilla values) at a particular target, regardless of the presence or absence of caster level, and adds the power to cast Sunfire too.
+The Brass Blade is an unused weapon that allows you to throw a Fireball as per the 3rd level wizard spell, and it's tied to caster level, which means only Fighter/Mages would be able to take advantage of the full power of this -- other classes would throw a much weaker Fireball. This changes the power so it casts instead a Delayed Fireball cast at max level (15d6 fire damage with vanilla values) at a particular target, regardless of the presence or absence of caster level, and adds the power to cast Sunfire too. Next, it also reduced the fire damage per hit from 10 to 5, since that was a little on the overpowered side.
 
 Technical side note: since Type 2 is bugged for op146, as it makes spells cast bypass magic resistance as if the caster targeted themselves, it uses now Type 0, which unfortunately means the spell casting will have the casting speed of the spells in question.
 
 Finally, it fixes two likely bugs: spells cast being set as conjurer spells instead of evocation, and the fire damage of the sword bypassing mirror images.
 
-Note: this weapon is actually unused in the game unless you have a mod installed that restores it. An example of this is Convenient Enhanced Edition NPCs by Argent77.
+Note: you need to have a mod installed that restores this weapon in order to get it organically. An example of this is Convenient Enhanced Edition NPCs by Argent77.
 
 **Component 1585:** Make Arbane's Sword of Agility's Haste last 1 turn, not 2 rounds
 
