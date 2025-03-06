@@ -2,6 +2,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING "ohdmask.itm" ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7030) END
         LPF ADD_ITEM_HEADER INT_VAR copy_header = 2 END
+        LPF ALTER_HEADER INT_VAR match_type=3 header=2 target=5 STR_VAR icon=~SPPR314B~ END
         LPF ALTER_EFFECT INT_VAR header_type=3 header=2 match_opcode=146 STR_VAR match_resource=~SPWI506~ resource=~SPCL103~ END
     COPY_EXISTING "ohdmask.spl" ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 8 END

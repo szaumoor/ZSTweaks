@@ -940,6 +940,8 @@ Technical side note: since Type 2 is bugged for op146, as it makes spells cast b
 
 Finally, it fixes two likely bugs: spells cast being set as conjurer spells instead of evocation, and the fire damage of the sword bypassing mirror images.
 
+Note: this weapon is actually unused in the game unless you have a mod installed that restores it.
+
 **Component 1585:** Make Arbane's Sword of Agility's Haste last 1 turn, not 2 rounds
 
 Self explanatory. Additionally, the speed factor of the weapon is now 0.
