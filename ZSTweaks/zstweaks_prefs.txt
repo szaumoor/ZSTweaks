@@ -139,3 +139,34 @@ OUTER_SET zst_2231_fire_boost_pctg = "5" // This is the percentage bonus if the 
 
 OUTER_SET zst_3050_balor_vorpal_penalty = "-4"
 OUTER_SET zst_3060_silly_version = "0" // switch to 1 to make Mencar a joke
+
+
+/////////////////////////////// Component allowing \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// this holds variables to decide whether a component should be allowed in group components
+// this will help users define specific components they want in group-wide installs
+// unused for now
+
+// GENERAL TWEAKS
+OUTER_SET zst_allow_103 = "1"
+OUTER_SET zst_allow_120 = "1"
+OUTER_SET zst_allow_1120 = "1"
+OUTER_SET zst_allow_1121 = "1"
+OUTER_SET zst_allow_1150 = "1"
+OUTER_SET zst_allow_1160 = "1"
+OUTER_SET zst_allow_1350 = "1"
+OUTER_SET zst_allow_1352 = "1"
+OUTER_SET zst_allow_1361 = "1"
+OUTER_SET zst_allow_1362 = "1"
+OUTER_SET zst_allow_1370 = "1"
+OUTER_SET zst_allow_1400 = "1"
+OUTER_SET zst_allow_1430 = "1"
+OUTER_SET zst_allow_1435 = "1"
+OUTER_SET zst_allow_1440 = "1"
+OUTER_SET zst_allow_1450 = "1"
+OUTER_SET zst_allow_1533 = "1"
+OUTER_SET zst_allow_1534 = "1"
+OUTER_SET zst_allow_1535 = "1"
+OUTER_SET zst_allow_1537 = "1"
+OUTER_SET zst_allow_1541 = "1"
+OUTER_SET zst_allow_1601 = "1"
+OUTER_SET zst_allow_1650 = "1"
