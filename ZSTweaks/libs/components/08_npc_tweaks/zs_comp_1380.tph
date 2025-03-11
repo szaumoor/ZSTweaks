@@ -25,4 +25,9 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=33,p1=-2,dur=18,rd=2~ END
         LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=319 parameter1=9182 parameter2=10 special=9182 END
     BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~item_use.2DA~ ~override~
+        REPLACE_TEXTUALLY ~^\(NPSW0[56]\|c2hd[12]\)[ %TAB%]+HAERDALIS.*~ ~~
+        PRETTY_PRINT_2DA
+
 END

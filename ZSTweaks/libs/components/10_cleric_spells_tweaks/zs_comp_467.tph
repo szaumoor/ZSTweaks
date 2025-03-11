@@ -13,13 +13,16 @@ COPY_EXISTING ~SPPR707.SPL~ ~override~
     SET spectral_troll = IDS_OF_SYMBOL(class SPECTRAL_TROLL)
     LPF ADD_SPL_EFF_TGT INT_VAR rd=0 pwr=7 p2=104 STR_VAR effects=~op=326,p1=%shadow%,res=ZSTWSNRC;op=326,p1=%spectre%,res=ZSTWSNRC;op=326,p1=%wraith%,res=ZSTWSNRC;op=326,p1=%spectral_undead%,res=ZSTWSNRC;op=326,p1=%spectral_troll%,p2=105,res=ZSTWSNRC~ END
     SET vampire = IDS_OF_SYMBOL(race VAMPIRE)
+    SET vampyre = IDS_OF_SYMBOL(race VAMPYRE)
     LPF ALTER_EFFECT INT_VAR match_opcode = 177 parameter1=vampire parameter2=4 STR_VAR match_resource = "UNDDEATH" END
+    LPF CLONE_EFFECT INT_VAR parameter1=vampyre STR_VAR match_resource = "UNDDEATH" END
 
 COPY_EXISTING ~UNDDEATH.EFF~ ~override~
     LPF GET_DMG_TYPE STR_VAR type = "magic" RET magic = result END
     LPF ALTER_EFF_FILE INT_VAR parameter1=100 parameter2=3 + magic END
     WRITE_LONG 0x38 0
     WRITE_LONG 0x3c 0
+    WRITE_LONG 0x24 0
 
 WITH_SCOPE BEGIN
     OUTER_SET dmg2d6 = RESOLVE_STR_REF(@8125)
