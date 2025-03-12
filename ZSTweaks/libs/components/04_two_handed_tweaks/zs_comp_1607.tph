@@ -31,7 +31,7 @@ ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
 
         LPF DELETE_EFFECT INT_VAR match_opcode = 216 END
         LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
-        LPF ADD_ON_HIT_EFF INT_VAR ip = 0 stype=4 sbonus="-5" STR_VAR effects = ~op=332,p1=-10;op=321,res=%SOURCE_RES%~ END
+        LPF ADD_ON_HIT_EFF INT_VAR ip = 0 stype=4 sbonus="-5" STR_VAR effects = ~op=332,p1=-10,dur=12;op=321,res=%SOURCE_RES%~ END
 
         PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
             SPRINT new_description @8152

@@ -5380,13 +5380,13 @@ Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: Special
 
-When this spell is cast, it causes a ray of sunlight to beam down upon the caster and everyone within a 15-ft. radius. All creatures within the area of effect must save vs. Spell or be blinded for 1 turn. Different types of creatures that are hit by the sunray take damage differently depending on their nature:
+When this spell is cast, it causes a ray of sunlight to beam down upon the caster and everyone within a 15-ft. radius. All creatures within the area of effect must save vs. Spell or be blinded for 1 turn. The damage grows by 1d6 every caster level, and different types of creatures that are hit by the sunray take damage differently depending on their nature:
 
-Vampires, vampyres, and vampire spawn: 1d6 damage per level of the caster (half fire, half radiant). Must save vs. Spell or be destroyed instantly
-Spectral undead: 1d6 damage per level of the caster, up to 15d6 (half fire, half radiant). Must save vs. Spell or be Slowed or Confused for 5 rounds
-Other cadaverous undead: 1d6 damage per level of the caster, up to 10d6 (half fire, half radiant).
-Fungal creatures: 1d6 damage per level of the caster, up to 10d6. Must save vs. Spell or be Slowed or Confused for 5 rounds
-Other creatures: 4d6 points of damage (half fire and half magical).
+Vampires, vampyres, and vampire spawn: Up to 20d6 damage (half fire, half radiant). Must save vs. Spell or be destroyed
+Spectral undead: Up to 15d6 damage (half fire, half radiant). Must save vs. Spell or be Slowed or Confused for 2 rounds
+Other cadaverous undead: 10d6 damage (half fire, half radiant).
+Fungal creatures: 8d6 damage (half fire and half magical). Must save vs. Spell or be Slowed or Confused for 2 rounds
+Other creatures: 4d6 damage (half fire and half magical).
 
 This spell is not affected by Magic Resistance and creatures affected by radiant damage cannot reduce it in any way through their resistances.~
 
