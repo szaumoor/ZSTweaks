@@ -16,4 +16,10 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         LPF ADD_SPELL_HEADER INT_VAR copy_header=1 zs_min_level_for_copy=20 insert_point=last_valid_header+2 END
         LPF ALTER_HEADER INT_VAR header = last_valid_header+2 projectile = 84 END
         LPF ALTER_EFFECT INT_VAR check_globals=0 header=last_valid_header+2 match_opcode=12 dicenumber=20 parameter1=start_dmg END
+
+    ACTION_IF zst_468_iwd_call_lightning BEGIN
+        COPY ~%MOD_FOLDER%/spells/cleric/call_lightning~ ~override~
+        COPY_EXISTING ~SKYBOLT.PRO~ ~override~
+            WRITE_ASCII 0x10 "#EFF_P19" #8
+    END
 END
