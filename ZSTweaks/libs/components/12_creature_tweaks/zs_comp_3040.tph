@@ -1,6 +1,6 @@
 COPY ~%MOD_FOLDER%/creatures/planetar~ ~override~
-COPY_EXISTING ~PLANETAR.ITM~ ~override~
 
+COPY_EXISTING ~PLANETAR.ITM~ ~override~
   PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN // stoneskin vorpal prot
     LPF DELETE_EFFECT STR_VAR match_resource = ~ZSTWVRPA~ END
     LPF ALTER_EFFECT INT_VAR match_probability1 = 24 probability1 = 19 END
@@ -28,12 +28,9 @@ COPY_EXISTING ~PLANETAR.ITM~ ~override~
 
   LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=206,res=SPPR326;op=206,res=SPPR324;op=206,res=SPPR302;op=206,res=SPCL722;op=206,res=SPWI308;op=206,res=SPWI304;op=206,res=SPWI204;op=206,res=SPWI101;op=206,res=SPPR302;op=206,res=SPPR304;op=206,res=SPWI313;op=206,res=SPPR313;op=206,res=SPPR314;op=206,res=SPPR105;op=206,res=SPWI215;op=206,res=SPWI213;op=206,res=SPPR211;op=102,p1=1;op=102,p1=2;op=102,p1=3~ END // invulnerability to level 1-3 spells
 
-
 COPY_EXISTING ~PLANGOOD.CRE~ ~override~
               ~PLANEVIL.CRE~ ~override~
   ADD_MEMORIZED_SPELL ~ZSTWPLTE~ #0 ~innate~ (1)
 
 COPY_EXISTING ~ZSTWPLTE.SPL~ ~override~
   LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8160) ref_desc = RESOLVE_STR_REF(@8161) END
-
-
