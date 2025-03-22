@@ -1591,6 +1591,8 @@ Therefore, I rebalanced it so it starts out dealing a bit less damage, and it bu
 
 In summary, higher minimum damage, more moderate scaling, bit lower maximum damage, and magic resistance has no effect.
 
+Additionally, it is possible to make the lightning bolts look like they do in IWDEE, which is a bit more impressive than the vanilla version. Both the boost and the animation can be disabled in the configuration file, thus allowing you to install only the animation part, if you prefer.
+
 **Component 501:** Make Chaotic Commands' duration extend up to level 20 instead of only 18
 
 Simply fixes the weird inconsistency of some spells where they only scale up to 18, even if the only change is duration, which is this case.

@@ -109,7 +109,8 @@ OUTER_SET zst_320_natbeauty_true_sight = "1" // True sight provides immunity to 
 
 OUTER_SET zst_507_disable_aidglow = "0" // this disables the character color pulse with Aid. Mostly there to avoid excessive color pollution since it's an area spell now
 
-OUTER_SET zst_468_iwd_call_lightning = "1" // this makes call lightning in BG use (partially) the animation from IWD for call lightning
+OUTER_SET zst_468_call_lightning_boost = "1"
+OUTER_SET zst_468_iwd_call_lightning =   "1" // this makes call lightning in BG use (partially) the animation from IWD for call lightning
 
 /////////////////////////////// NPC Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
