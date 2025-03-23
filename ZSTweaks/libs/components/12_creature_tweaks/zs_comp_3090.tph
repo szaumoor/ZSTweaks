@@ -56,14 +56,22 @@ COPY_EXISTING ~SHADOWSU.CRE~ ~override~
 BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~SHADOWWP.ITM~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 2400 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 44 duration = 2400 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2=91 duration = 2400 END
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~SPIDWR1.ITM~   ~override~
-              ~TROLLSPI.ITM~  ~override~
-    LPF ALTER_EFFECT INT_VAR match_duration = 300 duration = 2400 END
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
+    COPY_EXISTING ~SPIDWR1.ITM~   ~override~
+        LPF ALTER_EFFECT INT_VAR match_duration = 300 duration = 2400 END
+    BUT_ONLY IF_EXISTS
+END
+
+COPY_EXISTING ~TROLLSPI.ITM~  ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 44 duration = 2400 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2=91 duration = 2400 END
 BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~bdshadgr.ITM~  ~override~
-    LPF ALTER_EFFECT INT_VAR match_duration = 180 duration = 2400 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 44 duration = 2400 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2=91 duration = 2400 END
 BUT_ONLY IF_EXISTS
