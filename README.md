@@ -40,23 +40,15 @@ Both types of weapons have piercing parts; that's why. The amount of piercing is
 - +4, +5 -> 1d2+1 points of piercing damage
 - +6 -> 1d3+1 points of piercing damage
 
-**Component 1150:** Make spears do baseline damage of 1d8, not 1d6
+**Component 1150:** Make some weapon categories adjust their baseline damage
 
-1d6 is a little low for spears in my opinion, and it fills the imaginary "gap" of two-handed weapons with damage between staves and two-handed swords and halberds.
+This component makes changes to some weapon categories where I feel a tweak would be valuable or more interesting. All of these options are optional and can be turned on and off in the configuration file (all are on by default). Here are the changes:
 
-**Component 1160:** Make warhammers do baseline damage of 1d5+1, not 1d4+1 (except hammers outside that range)
-
-1d4+1 always felt a little too small and narrow for hammers. This doesn't affect special hammers that have double the damage potential, such as Crom Faeyr. It also includes Voidhammer +3, which only inflicts magic damage.
-
-**Component 1350:** Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8 and have a speed factor of 3
-
-This mostly exists to create a differentiating factor in terms of damage from long swords. I think the inclination is clearly towards "Kara-Turan/eastern blades are higher quality." In practical terms, it means that these swords will deal more minimum damage compared to long swords and scimitars, and luck bonuses would allow maximum damage dealt with less effort.
-
-Additionally, this will make ninja-tos have a speed factor of 3 by default, like short swords and wakizashis, since they are technically short swords. This will also make them equally valuable as backstabbing weapons by reducing the delay until a successful attack is made.
-
-**Component 1351:** Make Wakizashis a piercing/slashing weapon
-
-This makes wakizashis hit as a slashing weapon if the circumstances favor it. IRL it is really a slashing sword anyway, but I want to preserve the original damage type (which is better than slashing in most situations, especially against enemies that use wearable armor).
+- Spears: 1d6 is a little low for spears in my opinion, and it fills the imaginary "gap" of two-handed weapons with damage between staves and two-handed swords and halberds.
+- Warhammers: 1d4+1 always felt a little too small and narrow for hammers. This doesn't affect special hammers that have double the damage potential, such as Crom Faeyr. It also includes Voidhammer +3, which only inflicts magic damage.
+- Ninja-tos, Wakizashis, and Katanas: This will make these inflict now 2d4 for ninja-tos and wakizashis and 2d5 for katanas. I think the inclination is clearly towards "Kara-Turan/eastern blades are higher quality." In practical terms, it just means that these swords will deal more minimum damage compared to long swords and scimitars, and luck bonuses would allow maximum damage dealt with less effort. Additionally, it also makes wakizashis a piercing/slashing weapon, since in the real world, they're really more of a slashing weapon anyway though in practical terms it will still keep hitting as piercing most of the time (this change can be disabled or enabled independently).
+- Bastard swords: I never liked that bastard swords were "between long swords and two-handed swords," but there was no max damage difference between long swords and bastard swords. So now they're damage-wise actually between both.
+- Two-handed swords: This increases the minimum damage, similar to bastard swords, and will deal 1d9+1 as base. Two-handed swords that deal 1d12 base damage will instead deal 2d6.
 
 
 **Component 1361:** Make axes deal extra damage equal to its base damage on critical hits
@@ -82,18 +74,6 @@ The AC debuff is mild and the power of it depends on the enchantment level of th
 - +6: -4 AC debuff for 2 rounds
 
 Overall this should provide a mild tactical advantage when having at least one of your party members wielding these blunt weapons. This applies to enemies wielding these weapons too, so be warned.
-
-**Component 1370:** Make Katanas deal 2d5 instead of 1d10
-
-This mostly exists to create a differentiating factor in terms of damage from long swords. I think the inclination is clearly towards "Kara-Turan/eastern blades are higher quality." In practical terms, it means that katanas will deal more minimum damage, and luck bonuses would allow maximum damage dealt with less effort.
-
-**Component 1400:** Make Bastard Swords deal 1d8+1 by default
-
-I never liked that bastard swords were "between long swords and two-handed swords," but there was no max damage difference between long swords and bastard swords. So now they're damage-wise actually between both.
-
-**Component 1430:** Make Two-handed swords deal 1d9+1 by default, and 2d6 where it applies
-
-This mostly exists for consistency with the bastard sword, such that the minimum damage is equal to it. Two-handed swords that deal 1d12 base damage will instead deal 2d6.
 
 **Component 1435:** Make Darts use a speed factor of 0
 

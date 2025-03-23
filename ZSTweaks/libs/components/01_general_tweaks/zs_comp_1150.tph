@@ -1,28 +1,296 @@
-COPY_EXISTING "SPER01.ITM" ~override~
-    SPRINT str @99999
-    READ_STRREF 0x50 desc
-    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d8~
-    END
-    SAY_EVALUATED 0x50 ~%desc%~
-    LPF ITM_REF_UDESC RET changed_description_index = result END
+ACTION_IF zst_1150_dice_spears BEGIN
 
-COPY_EXISTING_REGEXP ".*\.itm" ~override~
-    LPF ITM_CAT RET wpn_cat = result END
-    LPF ITM_PROF RET wpn_prof = result END
-    PATCH_IF wpn_cat = 29 AND wpn_prof = 98 BEGIN
-        LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 6 match_dicenumber = 1 dicesize = 8 silent = 1 END
-        PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "SPER01") BEGIN
-            LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
-            LPF ITM_REF_DESC RET description_index = result END
-            PATCH_IF description_index > "-1" BEGIN
-                READ_STRREF 0x54 desc
-                SPRINT str @99999
-                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d8~
+    COPY_EXISTING "SPER01.ITM" ~override~
+        SPRINT str @99999
+        READ_STRREF 0x50 desc
+        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d8~
+        END
+        SAY_EVALUATED 0x50 ~%desc%~
+        LPF ITM_REF_UDESC RET changed_description_index = result END
+
+    COPY_EXISTING_REGEXP ".*\.itm" ~override~
+        LPF ITM_CAT RET wpn_cat = result END
+        LPF ITM_PROF RET wpn_prof = result END
+        PATCH_IF wpn_cat = 29 AND wpn_prof = 98 BEGIN
+            LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 6 match_dicenumber = 1 dicesize = 8 silent = 1 END
+            PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "SPER01") BEGIN
+                LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
+                LPF ITM_REF_DESC RET description_index = result END
+                PATCH_IF description_index > "-1" BEGIN
+                    READ_STRREF 0x54 desc
+                    SPRINT str @99999
+                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d8~
+                    END
+                    SAY_EVALUATED 0x54 ~%desc%~
                 END
-                SAY_EVALUATED 0x54 ~%desc%~
             END
         END
+    BUT_ONLY
+
+END
+
+ACTION_IF zst_1150_dice_warhammers BEGIN
+
+    COPY_EXISTING "HAMM01.ITM" ~override~
+    SPRINT str @99999
+    READ_STRREF 0x54 desc
+    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]4~ ~\11d5~
     END
-BUT_ONLY
+    SAY_EVALUATED 0x54 ~%desc%~
+    LPF ITM_REF_DESC RET changed_description_index = result END
+
+    COPY_EXISTING_REGEXP ".*\.itm" ~override~
+        LPF ITM_CAT RET wpn_cat = result END
+        LPF ITM_PROF RET wpn_prof = result END
+        PATCH_IF wpn_cat = 21 AND wpn_prof = 97 BEGIN // warhammers
+            LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 4 match_dicenumber = 1 dicesize = 5 silent = 1 END
+            LPF ALTER_HEADER INT_VAR match_type = 2 match_dicesize = 4 match_dicenumber = 1 dicesize = 5 silent = 1 END
+            PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "HAMM01") BEGIN
+                LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
+                LPF ITM_REF_DESC RET description_index = result END
+                PATCH_IF description_index > "-1" BEGIN
+                    READ_STRREF 0x54 desc
+                    SPRINT str @99999
+                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]4~ ~\11d5~
+                    END
+                    SAY_EVALUATED 0x54 ~%desc%~
+                END
+            END
+        END
+        COPY_EXISTING "bdhamm02.itm" ~override~ // voidhammer +3
+            LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 5 END
+        BUT_ONLY IF_EXISTS
+    BUT_ONLY
+END
+
+ACTION_IF zst_1150_dice_wakininja OR zst_1150_dice_wakislashing BEGIN
+    INCLUDE ~ZSTweaks/libs/zs_correct_exot_anims.tph~
+END
+
+ACTION_IF zst_1150_dice_wakininja BEGIN
+    COPY_EXISTING "SW1H48.ITM" ~override~
+        SPRINT str @99999
+        SPRINT str_sf @99998
+        READ_STRREF 0x50 desc
+        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)4~ ~\13~ // speed modification
+        END
+        SAY_EVALUATED 0x50 ~%desc%~
+        LPF ITM_REF_UDESC RET changed_description_index_ninjato = result END
+
+    COPY_EXISTING "SW1H46.ITM" ~override~
+        SPRINT str @99999
+        READ_STRREF 0x50 desc
+        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
+        END
+        SAY_EVALUATED 0x50 ~%desc%~
+        LPF ITM_REF_UDESC RET changed_description_index_waki = result END
+
+    COPY_EXISTING_REGEXP ".*\.itm" ~override~
+        LPF ITM_PROF RET wpn_prof = result END
+        LPF ITM_APPEARANCE RET wpn_appearance = result END
+        PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STR_EQ "s1" BEGIN // ninjatos
+            LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
+            LPF ALTER_HEADER INT_VAR silent=1 match_type=2 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
+            LPF WPN_SPEED RET s = result END
+            PATCH_IF s > 0 BEGIN
+                --s
+                LPF ALTER_HEADER INT_VAR match_type = 1 speed = s END
+            END
+
+            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
+                LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index_ninjato END
+                LPF ITM_REF_DESC RET description_index = result END
+                PATCH_IF description_index > "-1" BEGIN
+                    READ_STRREF 0x54 desc
+                    SPRINT str @99999
+                    LPF WPN_DMG RET dmg = result END
+                    LPF WPN_SPEED RET speed = result END
+                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\1%speed%~
+                    END
+                    SAY_EVALUATED 0x54 ~%desc%~
+                END
+            END
+
+        END ELSE PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STR_EQ "ss" BEGIN // wakis
+            LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
+
+            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
+                LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index_waki END
+                LPF ITM_REF_DESC RET description_index = result END
+                PATCH_IF description_index > "-1" BEGIN
+                    READ_STRREF 0x54 desc
+                    SPRINT str @99999
+                    LPF WPN_DMG RET dmg = result END
+                    LPF WPN_SPEED RET speed = result END
+                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
+                    END
+                    SAY_EVALUATED 0x54 ~%desc%~
+                END
+            END
+        END
+    BUT_ONLY
+END
+
+ACTION_IF zst_1150_dice_wakislashing BEGIN
+    COPY_EXISTING "SW1H46.ITM" ~override~
+        SPRINT str @99999 // damage
+        SPRINT str_type @99997
+        SPRINT str_new_type @99994
+        READ_STRREF 0x50 desc
+        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*.*[ %TAB%]*\)%str_type%~ ~\1%str_new_type%~
+        END
+        SAY_EVALUATED 0x50 ~%desc%~
+        LPF ITM_REF_UDESC RET changed_description_index_waki = result END
+
+    COPY_EXISTING_REGEXP ".*\.itm" ~override~
+        LPF ITM_PROF RET wpn_prof = result END
+        LPF ITM_APPEARANCE RET wpn_appearance = result END
+        PATCH_IF wpn_prof = 95 AND "%wpn_appearance%" STR_EQ "ss" BEGIN // wakizashis
+            LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 damage_type = 7 END
+
+            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
+                LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index_waki END
+                LPF ITM_REF_DESC RET description_index = result END
+                PATCH_IF description_index > "-1" BEGIN
+                    READ_STRREF 0x54 desc
+                    SPRINT str @99999 // damage
+                    SPRINT str_type @99997
+                    SPRINT str_new_type @99994
+                    SPRINT str_type1 @99995
+                    SPRINT str_type2 @99996 // damage type
+                    SPRINT str_type3 @99993 // new damage type
+                    LPF WPN_DMG RET dmg = result END
+                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*.*[ %TAB%]*\)%str_type%~ ~\1%str_new_type%~
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_type1%[ %TAB%]*:?[ %TAB%]*\)%str_type2%~ ~\1%str_type3%~
+                    END
+                    SAY_EVALUATED 0x54 ~%desc%~
+                END
+            END
+        END
+    BUT_ONLY
+END
+
+ACTION_IF zst_1150_dice_katanas BEGIN
+    COPY_EXISTING "SW1H43.ITM" ~override~
+        SPRINT str @99999
+        READ_STRREF 0x50 desc
+        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10~ ~\12d5~
+        END
+        SAY_EVALUATED 0x50 ~%desc%~
+        LPF ITM_REF_UDESC RET changed_description_index = result END
+
+    COPY_EXISTING_REGEXP ".*\.itm" ~override~
+        LPF ITM_CAT RET wpn_cat = result END
+        LPF ITM_PROF RET wpn_prof = result END
+        PATCH_IF wpn_cat = 20 AND wpn_prof = 94 BEGIN // katanas
+            LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=10 match_dicenumber=1 dicesize=5 dicenumber=2 END
+            PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "SW1H43") BEGIN
+                LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
+                LPF ITM_REF_DESC RET description_index = result END
+                PATCH_IF description_index > "-1" BEGIN
+                    READ_STRREF 0x54 desc
+                    SPRINT str @99999
+                    LPF WPN_DMG RET dmg = result END
+                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\12d5+%dmg%~
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10,~ ~\11d9+%dmg%,~
+                    END
+                    SAY_EVALUATED 0x54 ~%desc%~
+                END
+            END
+        END
+    BUT_ONLY
+END
+
+ACTION_IF zst_1150_dice_bastard_swords BEGIN
+    COPY_EXISTING "SW1H01.ITM" ~override~
+        SPRINT str @99999
+        READ_STRREF 0x50 desc
+        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)2[Dd]4~ ~\11d8+1~
+        END
+        SAY_EVALUATED 0x50 ~%desc%~
+        LPF ITM_REF_UDESC RET changed_description_index = result END
+
+    COPY_EXISTING_REGEXP ".*\.itm" ~override~
+        LPF ITM_CAT RET wpn_cat = result END
+        LPF ITM_PROF RET wpn_prof = result END
+        PATCH_IF wpn_cat = 20 AND wpn_prof = 89 BEGIN // bastard swords
+            LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=4 match_dicenumber=2 dicenumber=1 dicesize=8 END
+            LPF WPN_DMG RET dmg = result END
+            LPF ALTER_HEADER INT_VAR silent=1 match_type=1 damage=dmg+1 END
+
+            PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "SW1H01") BEGIN
+                LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
+                LPF ITM_REF_DESC RET description_index = result END
+                PATCH_IF description_index > "-1" BEGIN
+                    READ_STRREF 0x54 desc
+                    SPRINT str @99999
+                    LPF WPN_DMG RET dmg = result END
+                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)2[Dd]4[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d8+%dmg%~
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)2[Dd]4,~ ~\11d8+%dmg%,~
+                    END
+                    SAY_EVALUATED 0x54 ~%desc%~
+                END
+            END
+        END
+    BUT_ONLY
+END
+
+ACTION_IF zst_1150_dice_twohanded_swords BEGIN
+
+    COPY_EXISTING "SW2H01.ITM" ~override~
+        SPRINT str @99999
+        READ_STRREF 0x50 desc
+        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10~ ~\11d9+1~
+        END
+        SAY_EVALUATED 0x50 ~%desc%~
+        LPF ITM_REF_UDESC RET changed_description_index = result END
+
+    COPY_EXISTING_REGEXP ".*\.itm" ~override~
+        LPF ITM_CAT RET wpn_cat = result END
+        LPF ITM_PROF RET wpn_prof = result END
+        PATCH_IF wpn_cat = 20 AND wpn_prof = 93 BEGIN // two-handed swords
+            LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=12 match_dicenumber=1 dicenumber=2 dicesize=6 END
+            LPF WPN_DMG RET dmg = result END
+            LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=10 match_dicenumber=1 dicesize=9 damage=dmg+1 END
+
+            PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "SW2H01") BEGIN
+                LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
+                LPF ITM_REF_DESC RET description_index = result END
+                PATCH_IF description_index > "-1" BEGIN
+                    READ_STRREF 0x54 desc
+                    SPRINT str @99999
+                    LPF WPN_DMG RET dmg = result END
+                    LPF WPN_DICESIZE RET dicesize = result END
+                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                        PATCH_IF dicesize = 9 BEGIN
+                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d9+%dmg%~
+                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10,~ ~\11d9+%dmg%,~
+                        END ELSE PATCH_IF dicesize = 6 BEGIN
+                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]12[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\12d6+%dmg%~
+                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]12,~ ~\12d6,~
+                        END
+                    END
+                    SAY_EVALUATED 0x54 ~%desc%~
+                END
+            END
+        END
+    BUT_ONLY
+
+END

@@ -22,6 +22,16 @@ OUTER_SET zst_1450_allow_xbows     = "1"
 OUTER_SET zst_1450_allow_darts     = "1"
 // end of finesse variables
 
+// these variables control which category of weapons are affected by the dice changes component
+// A value of 1 allows it, a value of 0 disallows it
+OUTER_SET zst_1150_dice_spears           = "1"
+OUTER_SET zst_1150_dice_bastard_swords   = "1"
+OUTER_SET zst_1150_dice_katanas          = "1"
+OUTER_SET zst_1150_dice_wakininja        = "1"
+OUTER_SET zst_1150_dice_wakislashing     = "1"
+OUTER_SET zst_1150_dice_warhammer        = "1"
+OUTER_SET zst_1150_dice_twohanded_swords = "1"
+
 ////////////////////////////// Dagger tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 OUTER_SET zst_1000_sbonus = "-2" // You can change this to override the save penalty given in component 1001 to poisoned throwing daggers. Vanilla is 0, default in component is -2.
