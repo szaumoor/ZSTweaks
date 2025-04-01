@@ -43,7 +43,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN // iwdee deliberately unsupported for now
     COPY_EXISTING ~POTN17.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7464) END
         LPF ALTER_EFFECT INT_VAR match_opcode=17 parameter1=20 END
-        LPF ALTER_EFFECT INT_VAR match_opcode = 94 parameter2=0 opcode = 164 END
+        LPF ALTER_EFFECT INT_VAR silent=1 match_opcode = 94 parameter2=0 opcode = 164 END
         LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 dur=10 rd=0 pwr=4 STR_VAR effects=~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25~ END
 
     // potion of perception

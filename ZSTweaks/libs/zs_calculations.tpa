@@ -1,42 +1,42 @@
-DEFINE_DIMORPHIC_FUNCTION GET_DMG_TYPE
+DEFINE_DIMORPHIC_FUNCTION ~GET_DMG_TYPE~
 STR_VAR
     type = ~*~
 RET
     result
 BEGIN
-    PATCH_MATCH "%type%" WITH
+    ACTION_MATCH "%type%" WITH
         crushing BEGIN
-            result = (0 << 16)
+            OUTER_SET result = (0 << 16)
         END acid BEGIN
-            result = (1 << 16)
+            OUTER_SET result = (1 << 16)
         END cold BEGIN
-            result = (2 << 16)
+            OUTER_SET result = (2 << 16)
         END electricity BEGIN
-            result = (4 << 16)
+            OUTER_SET result = (4 << 16)
         END fire BEGIN
-            result = (8 << 16)
+            OUTER_SET result = (8 << 16)
         END piercing BEGIN
-            result = (16 << 16)
+            OUTER_SET result = (16 << 16)
         END poison BEGIN
-            result = (32 << 16)
+            OUTER_SET result = (32 << 16)
         END magic BEGIN
-            result = (64 << 16)
+            OUTER_SET result = (64 << 16)
         END missile BEGIN
-            result = (128 << 16)
+            OUTER_SET result = (128 << 16)
         END slashing BEGIN
-            result = (256 << 16)
+            OUTER_SET result = (256 << 16)
         END ~magic fire~ BEGIN
-            result = (512 << 16)
+            OUTER_SET result = (512 << 16)
         END ~magic cold~ BEGIN
-            result = (1024 << 16)
+            OUTER_SET result = (1024 << 16)
         END stunning BEGIN
-            result = (2048 << 16)
+            OUTER_SET result = (2048 << 16)
         END DEFAULT
-            PATCH_FAIL "Wrong type called for GET_DMG_TYPE function: %type%. Permitted types: crushing, acid, cold, electricity, fire, piercing, poison, magic, missile, slashing, magic fire, magic cold, stunning"
+            FAIL "Wrong type called for GET_DMG_TYPE function: %type%. Permitted types: crushing, acid, cold, electricity, fire, piercing, poison, magic, missile, slashing, magic fire, magic cold, stunning"
     END
 END
 
-DEFINE_DIMORPHIC_FUNCTION RGB
+DEFINE_DIMORPHIC_FUNCTION ~RGB~
 INT_VAR
     red = 0
     green = 0
@@ -44,5 +44,5 @@ INT_VAR
 RET
     result
 BEGIN
-    result = (red << 8) + (green << 16) + (blue << 24) // this works, idk why
+    OUTER_SET result = (red << 8) + (green << 16) + (blue << 24) // this works, idk why
 END

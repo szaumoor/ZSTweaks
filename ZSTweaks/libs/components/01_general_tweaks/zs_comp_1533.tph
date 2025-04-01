@@ -6,7 +6,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN // support for iwdee not currently determined
     COPY_EXISTING ~WAND02.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8090) END
         LPF ALTER_EFFECT INT_VAR duration = 60 END
-        LPF ALTER_EFFECT INT_VAR match_savebonus = 2 savebonus = 0 END
+        LPF ALTER_EFFECT INT_VAR silent=1 match_savebonus = 2 savebonus = 0 END
 
     COPY_EXISTING ~WAND04.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8100) END
