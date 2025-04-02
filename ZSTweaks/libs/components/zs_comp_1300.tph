@@ -1,0 +1,31 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY ~%MOD_FOLDER%/items/silver_sword~ ~override~
+    COPY_EXISTING ~ZSTWSWSA.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode=139 match_savebonus=0 match_savingthrow=0 parameter1=RESOLVE_STR_REF(@7682) END
+    BUT_ONLY
+
+    COPY_EXISTING ~SW2H15.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@7680) price=10000 END
+        PATCH_IF NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ AND NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~  BEGIN
+            LPF ALTER_EFFECT INT_VAR match_probability1 = 25 probability1=24 END
+        END
+        LPF ALTER_HEADER INT_VAR type = 1 speed = 6 END
+        SET mind_flayer = IDS_OF_SYMBOL(race MIND_FLAYER)
+        LPF ADD_EQUIPPED_EFF INT_VAR p1=mind_flayer p2=4 spec=2 STR_VAR effects= ~op=178;op=179;op=344,spec=5~ END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=341,p2=1,spec=1,res=ZSTWSWSA;op=206,res=SPIN975;op=206,res=SPIN974;op=206,res=SPIN910;op=206,res=SPIN959;op=206,res=SPIN834;op=206,res=SPIN775~ END
+
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            SPRINT new_description @7681
+            SPRINT str @99999
+            SPRINT str_sf @99998
+            LPF WPN_DMG RET dmg = result END
+            LPF WPN_SPEED RET speed = result END
+            INNER_PATCH_SAVE new_description ~%new_description%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?,[ %TAB%]\+5 vs. Mind Flayers~ ~\11d9+%dmg%, +6 vs. Mind Flayers~
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)8~ ~\1%speed%~
+            END
+            SAY_EVALUATED 0x54 ~%new_description%~
+        END ELSE BEGIN
+            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7681) END
+        END
+END

@@ -1,0 +1,39 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING ~SW2H14.ITM~ ~override~
+        LPF ALTER_HEADER INT_VAR match_type = 1 match_speed = 8 speed = 7 END
+        LPF ADD_ON_HIT_EFF INT_VAR stype=1 rd=3 pro1=24 STR_VAR effects = ~op=128,dur=6;op=139,p1=14782~ END
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            SPRINT new_description @6800
+            SPRINT str @99999
+            SPRINT str_sf @99998
+            LPF WPN_DMG RET dmg = result END
+            LPF WPN_SPEED RET speed = result END
+            INNER_PATCH_SAVE new_description ~%new_description%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d9+%dmg%~
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)8~ ~\1%speed%~
+            END
+            SAY_EVALUATED 0x54 ~%new_description%~
+        END ELSE BEGIN
+            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6800) END
+        END
+
+    COPY_EXISTING ~c2sw2h01.itm~ ~override~
+        LPF ALTER_HEADER INT_VAR match_type = 1 speed = 5 END
+        LPF ADD_ON_HIT_EFF INT_VAR sbonus="-2" stype=1 rd=3 pro1=29 STR_VAR effects = ~op=128,dur=6;op=139,p1=14782~ END
+        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            LPF ALTER_HEADER INT_VAR match_type = 1 dicesize = 9 dicenumber = 1 damage = 6 END
+            SPRINT new_description @50100
+            SPRINT str @99999
+            SPRINT str_sf @99998
+            LPF WPN_DMG RET dmg = result END
+            LPF WPN_SPEED RET speed = result END
+            INNER_PATCH_SAVE new_description ~%new_description%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]12[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d9+%dmg%~
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)8~ ~\1%speed%~
+            END
+            SAY_EVALUATED 0x54 ~%new_description%~
+        END ELSE BEGIN
+            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@50100) END
+        END
+    BUT_ONLY IF_EXISTS
+END

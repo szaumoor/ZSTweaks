@@ -1,0 +1,20 @@
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+    COPY_EXISTING ~HALB10.ITM~ ~override~
+                ~HALB11.ITM~ ~override~
+        LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 3 match_opcode = 146 parameter2 = 1 END
+
+
+    COPY_EXISTING ~HALB11.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8140) END
+
+        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
+            LPF ALTER_EFFECT INT_VAR match_opcode = 326 savingthrow = 4 savebonus = "-4" END
+        END ELSE BEGIN
+            LPF ALTER_EFFECT INT_VAR match_opcode = 13 savingthrow = 4 savebonus = "-4" probability1 = 9 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 139 savingthrow = 4 savebonus = "-4" probability1 = 9 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 141 savingthrow = 4 savebonus = "-4" probability1 = 9 END
+        END
+
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 2 special = 1024 END
+        LPF CLONE_EFFECT INT_VAR match_opcode=12 opcode=25 parameter1=2 parameter2=2 duration=6 dicesize=0 dicenumber=0 special=6 END
+END

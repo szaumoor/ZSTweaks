@@ -1,0 +1,8 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING ~HALB04.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7700) END
+        SET dragon = IDS_OF_SYMBOL(race DRAGON)
+        SET wyvern = IDS_OF_SYMBOL(race WYVERN)
+        LPF ADD_EQUIPPED_EFF INT_VAR p1=dragon p2=4 spec=3 STR_VAR effects= ~op=178;op=179;op=344,spec=6;op=178,p1=%wyvern%;op=179,p1=%wyvern%;op=344,p1=%wyvern%,spec=6~ END
+
+END
