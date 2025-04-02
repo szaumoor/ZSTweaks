@@ -22,7 +22,7 @@ WITH_SCOPE BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 177 parameter1=vampire parameter2=4 STR_VAR match_resource = "UNDDEATH" END
             LPF CLONE_EFFECT INT_VAR parameter1=vampyre STR_VAR match_resource = "UNDDEATH" END
         END ELSE BEGIN
-            LPF DELETE_EFFECT INT_VAR match_opcode = 326 END
+            LPF DELETE_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~SPPR707A~ END
         END
 
         LPF ADD_SPL_EFF_TGT INT_VAR pwr=7 STR_VAR effects = ~op=326,p2=2,res=ZSTWSNRA;op=326,p2=1,res=ZSTWSNRC~ END
