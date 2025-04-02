@@ -33,12 +33,10 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
                     LPF ALTER_EFFECT INT_VAR check_globals=0 header=i match_opcode=12 parameter1=start_dmg END
                     ++start_dmg
                     PATCH_IF i = (last_valid_header - 2) BEGIN
-                        PATCH_PRINT "Header to 19 dice thrown"
                         ++start_dmg
                     END
 
                     PATCH_IF i = (last_valid_header - 1) BEGIN
-                        PATCH_PRINT "Header to 20 dice thrown"
                         start_dmg += 2
                     END
                 END
