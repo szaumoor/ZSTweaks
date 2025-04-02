@@ -1549,13 +1549,15 @@ And now with the problems of Sunray, which are similar to the problems I see wit
 
 Solution:
 
-- The damage inflicted is half fire, half radiant (cannot be resisted)
-- The damage to non-undead is 4d6, blindness is still 1 turn as usual
-- Undead take 1d6 fire and radiant damage per level up to 20d6, and:
-  - Spectral undead: weakens them, causing Slow for 2 rounds, 30% weakness to physical damage for 3 rounds, reduced damage by -2 for physical attacks, -30% for elemental attacks for 4 rounds, and -2 AC penalty for 5 rounds
-  - Vampires: must save vs. Spell or be utterly destroyed no matter their resistances
+- Blindness works as usual
+- The damage to non-undead is 4d6 (half fire, half magic), blindness is still 1 turn as usual
+- The damage inflicted is half fire, half radiant for undead (radiant cannot be resisted)
+- Undead take 1d6 fire and radiant damage per level up to:
+  - Vampires and Vampyres: 20d6 and must save vs. Spell or be utterly destroyed
+  - Spectral undead: 15d6, and weakens them, causing Slow or Confusion for 2 rounds
+  - Other cadaverous undead: 10d6, no other side effects
 
-This solution follows the 2nd edition more closely, where only undead who are specifically sensitive to light may be destroyed by it. Spectral undead are generally weakened, but not destroyed, vampires and vampire spawn can be utterly destroyed, and other cadaverous undead aren't weakened or destroyed (including liches and demiliches).
+This solution follows the 2nd edition more closely, where only undead who are specifically sensitive to light may be destroyed by it. Spectral undead are generally weakened, but not destroyed, vampires, vampyres, and vampire spawn can be utterly destroyed, and other cadaverous undead aren't weakened or destroyed (including liches and demiliches).
 
 **Component 468:** Rebalance Call Lightning's damage and scaling
 
