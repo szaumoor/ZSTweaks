@@ -1,0 +1,17 @@
+ACTION_IF !(GAME_IS "iwdee") BEGIN // support for iwdee not currently determined
+    COPY_EXISTING ~WAND03.ITM~ ~override~
+        LPF ALTER_HEADER INT_VAR match_type = 3 match_projectile=IDS_OF_SYMBOL(projectl Magic_Missile) projectile = 70 END
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7460) END
+
+    COPY_EXISTING ~WAND02.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8090) END
+        LPF ALTER_EFFECT INT_VAR duration = 60 END
+        LPF ALTER_EFFECT INT_VAR silent=1 match_savebonus = 2 savebonus = 0 END
+
+    COPY_EXISTING ~WAND04.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8100) END
+        LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 42 END
+
+    COPY_EXISTING ~WAND08.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8110) END
+END

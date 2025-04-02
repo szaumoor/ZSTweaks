@@ -1,0 +1,52 @@
+ACTION_IF !(GAME_IS "iwdee") BEGIN
+    ACTION_IF zst_468_call_lightning_boost BEGIN
+        COPY_EXISTING ~SPPR302.SPL~ ~override~
+            LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7470) END
+            LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=12 dicesize=6 resist_dispel=0 END
+
+            LPF LAST_VALID_HEADER RET last_valid_header = result END
+            SET start_dmg = 7
+
+            PATCH_IF NOT MOD_IS_INSTALLED ~eefixpack.tp2~ ~0~ BEGIN
+
+                FOR ( i = 0; i <= last_valid_header; ++i ) BEGIN
+                    LPF ALTER_EFFECT INT_VAR check_globals=0 header=i match_opcode=12 parameter1=start_dmg END
+                    ++start_dmg
+                END
+                ++start_dmg
+
+                LPF ADD_SPELL_HEADER INT_VAR copy_header=1 zs_min_level_for_copy=19 insert_point=last_valid_header+1 END
+                LPF ALTER_HEADER INT_VAR header = last_valid_header+1 projectile = 84 END
+                LPF ALTER_EFFECT INT_VAR check_globals=0 header=last_valid_header+1 match_opcode=12 dicenumber=20 parameter1=start_dmg END
+                start_dmg += 3
+                LPF ADD_SPELL_HEADER INT_VAR copy_header=1 zs_min_level_for_copy=20 insert_point=last_valid_header+2 END
+                LPF ALTER_HEADER INT_VAR header = last_valid_header+2 projectile = 84 END
+                LPF ALTER_EFFECT INT_VAR check_globals=0 header=last_valid_header+2 match_opcode=12 dicenumber=20 parameter1=start_dmg END
+
+            END ELSE BEGIN
+
+                LPF ALTER_EFFECT INT_VAR match_opcode = 12 match_dicenumber = 21 dicenumber = 20 END
+                LPF ALTER_EFFECT INT_VAR match_opcode = 12 match_dicenumber = 22 dicenumber = 20 END
+
+                FOR ( i = 0; i <= last_valid_header; ++i ) BEGIN
+                    PATCH_PRINT "Applying damage of %start_dmg%"
+                    LPF ALTER_EFFECT INT_VAR check_globals=0 header=i match_opcode=12 parameter1=start_dmg END
+                    ++start_dmg
+                    PATCH_IF i = (last_valid_header - 2) BEGIN
+                        ++start_dmg
+                    END
+
+                    PATCH_IF i = (last_valid_header - 1) BEGIN
+                        start_dmg += 2
+                    END
+                END
+
+            END
+    END
+
+    ACTION_IF zst_468_iwd_call_lightning BEGIN
+        COPY ~%MOD_FOLDER%/spells/cleric/call_lightning~ ~override~
+        COPY_EXISTING ~SKYBOLT.PRO~ ~override~
+            WRITE_ASCII 0x10 "#EFF_P19" #8
+    END
+END

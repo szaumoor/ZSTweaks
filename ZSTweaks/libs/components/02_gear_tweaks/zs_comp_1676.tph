@@ -1,8 +1,0 @@
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY_EXISTING ~HELM17.itm~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7480) END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=346,p1=4,spec=7;op=101,p2=13;op=101,p2=55~ END
-        LPF ADD_ITEM_HEADER INT_VAR copy_header = 1 END
-        LPF ALTER_EFFECT INT_VAR header_type=3 header=1 match_opcode=146 STR_VAR match_resource=~SPWI605~ resource=~SPWI713~ END
-        LPF ALTER_HEADER INT_VAR match_type=3 header=1 STR_VAR icon = ~SPWI713B~ END
-END

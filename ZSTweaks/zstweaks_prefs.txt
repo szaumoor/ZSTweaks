@@ -22,6 +22,16 @@ OUTER_SET zst_1450_allow_xbows     = "1"
 OUTER_SET zst_1450_allow_darts     = "1"
 // end of finesse variables
 
+// these variables control which category of weapons are affected by the dice changes component
+// A value of 1 allows it, a value of 0 disallows it
+OUTER_SET zst_1150_dice_spears           = "1"
+OUTER_SET zst_1150_dice_bastard_swords   = "1"
+OUTER_SET zst_1150_dice_katanas          = "1"
+OUTER_SET zst_1150_dice_wakininja        = "1"
+OUTER_SET zst_1150_dice_wakislashing     = "1"
+OUTER_SET zst_1150_dice_warhammers       = "1"
+OUTER_SET zst_1150_dice_twohanded_swords = "1"
+
 ////////////////////////////// Dagger tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 OUTER_SET zst_1000_sbonus = "-2" // You can change this to override the save penalty given in component 1001 to poisoned throwing daggers. Vanilla is 0, default in component is -2.
@@ -108,6 +118,9 @@ OUTER_SET zst_320_natbeauty_boost      = "1"
 OUTER_SET zst_320_natbeauty_true_sight = "1" // True sight provides immunity to it
 
 OUTER_SET zst_507_disable_aidglow = "0" // this disables the character color pulse with Aid. Mostly there to avoid excessive color pollution since it's an area spell now
+
+OUTER_SET zst_468_call_lightning_boost = "1"
+OUTER_SET zst_468_iwd_call_lightning =   "1" // this makes call lightning in BG use (partially) the animation from IWD for call lightning
 
 /////////////////////////////// NPC Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

@@ -1,19 +1,3 @@
-# ZSTweaks
-
-This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game. The vast majority of the tweaks are designed to be simple improvements of underpowered items or abilities. Some of them overhaul the game a bit more extensively, though not radically.
-
-Every group of components, except those that have only a few items, has as the first component the option to install all components in the group, except those that require user input.
-
-Finally, any component that adds damage to items on hit, or alters items with damage on hit, will mark the damage effects as not capable of waking up sleepers.
-
-This is done because there is no advantage that I can see to making that damage capable of waking sleepers, but it does prevent an annoying corner case, which is that if you have a melee/ranged weapon effect that causes interruptible sleep, and other on-hit damage the weapons have trigger after it, it will wake them up, even if it was the hit of this weapon what caused the sleep, which is all pretty silly.
-
-In vanilla, this is not contemplated, likely because there isn't any means of introducing sleep on hit to arbitrary weapons and as such that circumstance would have never occurred. My mod ZS_WeaponOils does introduce this situation if using the Drow Soporific Oil.
-
-As of version 1.4.5 a configuration file is now provided, where the user may change some variables to further customize components. This file is **ZSTweaks/zstweaks_prefs.txt**.
-
----
-
 <details>
 
 <summary><b>General Item & Spell Tweaks</b></summary>
@@ -41,23 +25,15 @@ Both types of weapons have piercing parts; that's why. The amount of piercing is
 - +4, +5 -> 1d2+1 points of piercing damage
 - +6 -> 1d3+1 points of piercing damage
 
-**Component 1150:** Make spears do baseline damage of 1d8, not 1d6
+**Component 1150:** Make some weapon categories adjust their baseline damage
 
-1d6 is a little low for spears in my opinion, and it fills the imaginary "gap" of two-handed weapons with damage between staves and two-handed swords and halberds.
+This component makes changes to some weapon categories where I feel a tweak would be valuable or more interesting. All of these options are optional and can be turned on and off in the configuration file (all are on by default). Here are the changes:
 
-**Component 1160:** Make warhammers do baseline damage of 1d5+1, not 1d4+1 (except hammers outside that range)
-
-1d4+1 always felt a little too small and narrow for hammers. This doesn't affect special hammers that have double the damage potential, such as Crom Faeyr. It also includes Voidhammer +3, which only inflicts magic damage.
-
-**Component 1350:** Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8 and have a speed factor of 3
-
-This mostly exists to create a differentiating factor in terms of damage from long swords. I think the inclination is clearly towards "Kara-Turan/eastern blades are higher quality." In practical terms, it means that these swords will deal more minimum damage compared to long swords and scimitars, and luck bonuses would allow maximum damage dealt with less effort.
-
-Additionally, this will make ninja-tos have a speed factor of 3 by default, like short swords and wakizashis, since they are technically short swords. This will also make them equally valuable as backstabbing weapons by reducing the delay until a successful attack is made.
-
-**Component 1351:** Make Wakizashis a piercing/slashing weapon
-
-This makes wakizashis hit as a slashing weapon if the circumstances favor it. IRL it is really a slashing sword anyway, but I want to preserve the original damage type (which is better than slashing in most situations, especially against enemies that use wearable armor).
+- Spears: 1d6 is a little low for spears in my opinion, and it fills the imaginary "gap" of two-handed weapons with damage between staves and two-handed swords and halberds.
+- Warhammers: 1d4+1 always felt a little too small and narrow for hammers. This doesn't affect special hammers that have double the damage potential, such as Crom Faeyr. It also includes Voidhammer +3, which only inflicts magic damage.
+- Ninja-tos, Wakizashis, and Katanas: This will make these inflict now 2d4 for ninja-tos and wakizashis and 2d5 for katanas. I think the inclination is clearly towards "Kara-Turan/eastern blades are higher quality." In practical terms, it just means that these swords will deal more minimum damage compared to long swords and scimitars, and luck bonuses would allow maximum damage dealt with less effort. Additionally, it also makes wakizashis a piercing/slashing weapon, since in the real world, they're really more of a slashing weapon anyway though in practical terms it will still keep hitting as piercing most of the time (this change can be disabled or enabled independently).
+- Bastard swords: I never liked that bastard swords were "between long swords and two-handed swords," but there was no max damage difference between long swords and bastard swords. So now they're damage-wise actually between both.
+- Two-handed swords: This increases the minimum damage, similar to bastard swords, and will deal 1d9+1 as base. Two-handed swords that deal 1d12 base damage will instead deal 2d6.
 
 
 **Component 1361:** Make axes deal extra damage equal to its base damage on critical hits
@@ -83,18 +59,6 @@ The AC debuff is mild and the power of it depends on the enchantment level of th
 - +6: -4 AC debuff for 2 rounds
 
 Overall this should provide a mild tactical advantage when having at least one of your party members wielding these blunt weapons. This applies to enemies wielding these weapons too, so be warned.
-
-**Component 1370:** Make Katanas deal 2d5 instead of 1d10
-
-This mostly exists to create a differentiating factor in terms of damage from long swords. I think the inclination is clearly towards "Kara-Turan/eastern blades are higher quality." In practical terms, it means that katanas will deal more minimum damage, and luck bonuses would allow maximum damage dealt with less effort.
-
-**Component 1400:** Make Bastard Swords deal 1d8+1 by default
-
-I never liked that bastard swords were "between long swords and two-handed swords," but there was no max damage difference between long swords and bastard swords. So now they're damage-wise actually between both.
-
-**Component 1430:** Make Two-handed swords deal 1d9+1 by default, and 2d6 where it applies
-
-This mostly exists for consistency with the bastard sword, such that the minimum damage is equal to it. Two-handed swords that deal 1d12 base damage will instead deal 2d6.
 
 **Component 1435:** Make Darts use a speed factor of 0
 
@@ -784,7 +748,7 @@ I hate with passion this 10% chance of killing period-no-questions-asked thing, 
   - Upgraded version: same damage, but with a 15% chance of triggering instead of 10%
 - Upgraded version now becomes +6, matching therefore the maximum damage of Warblade +4 and becoming the most powerful damaging two-handed sword per hit in the 1d10 range
 - Passive +5% MR is now +10% (it has to compete with Carsomyr so 5% for a two-handed weapon is nonsense)
-- The 1-level drain per hit with -5 penalty on the upgraded version is fairly inconsequential by the time you get it (from Abazigal's corpse). Instead, it causes affected creatures to deal -10% damage for 2 rounds, aka it's a weakening effect, with a save vs. Death -5 to save against it. This also affects magical and elemental damage. Does not stack.
+- The 1-level drain per hit with -5 penalty on the upgraded version is fairly inconsequential by the time you get it (from Abazigal's corpse). Instead, it causes affected creatures to deal -20% damage for 2 rounds, aka it's a weakening effect, with a save vs. Death -5 to save against it. This also affects magical and elemental damage. Does not stack.
 
 
 </details>
@@ -1570,13 +1534,15 @@ And now with the problems of Sunray, which are similar to the problems I see wit
 
 Solution:
 
-- The damage inflicted is half fire, half radiant (cannot be resisted)
-- The damage to non-undead is 4d6, blindness is still 1 turn as usual
-- Undead take 1d6 fire and radiant damage per level up to 20d6, and:
-  - Spectral undead: weakens them, causing Slow for 2 rounds, 30% weakness to physical damage for 3 rounds, reduced damage by -2 for physical attacks, -30% for elemental attacks for 4 rounds, and -2 AC penalty for 5 rounds
-  - Vampires: must save vs. Spell or be utterly destroyed no matter their resistances
+- Blindness works as usual
+- The damage to non-undead is 4d6 (half fire, half magic), blindness is still 1 turn as usual
+- The damage inflicted is half fire, half radiant for undead (radiant cannot be resisted)
+- Undead take 1d6 fire and radiant damage per level up to:
+  - Vampires and Vampyres: 20d6 and must save vs. Spell or be utterly destroyed
+  - Spectral undead: 15d6, and weakens them, causing Slow or Confusion for 2 rounds
+  - Other cadaverous undead: 10d6, no other side effects
 
-This solution follows the 2nd edition more closely, where only undead who are specifically sensitive to light may be destroyed by it. Spectral undead are generally weakened, but not destroyed, vampires and vampire spawn can be utterly destroyed, and other cadaverous undead aren't weakened or destroyed (including liches and demiliches).
+This solution follows the 2nd edition more closely, where only undead who are specifically sensitive to light may be destroyed by it. Spectral undead are generally weakened, but not destroyed, vampires, vampyres, and vampire spawn can be utterly destroyed, and other cadaverous undead aren't weakened or destroyed (including liches and demiliches).
 
 **Component 468:** Rebalance Call Lightning's damage and scaling
 
@@ -1591,6 +1557,8 @@ Therefore, I rebalanced it so it starts out dealing a bit less damage, and it bu
 - Final comparison of maximum possible damage (with save failed and no resistances) at level 20: 45-145 vs. 20-160
 
 In summary, higher minimum damage, more moderate scaling, bit lower maximum damage, and magic resistance has no effect.
+
+Additionally, it is possible to make the lightning bolts look like they do in IWDEE, which is a bit more impressive than the vanilla version. Both the boost and the animation can be disabled in the configuration file, thus allowing you to install only the animation part, if you prefer.
 
 **Component 501:** Make Chaotic Commands' duration extend up to level 20 instead of only 18
 
@@ -1881,36 +1849,6 @@ This component should be installed after any other tweak that may change void we
 Just a small bonus to make it more interesting and different compared to heavy crossbows. It's not too far-fetched anyway to think smaller crossbows can be reloaded faster. This will affect crossbows that have an APR bonus already, i.e., 1/2 APR will be added.
 
 </details>
-
----
-
-## Compatibility and installation order
-
-This mod should generally be installed after mods that add items to the game. If installed after, the tweaks in this mod that affect them will not be able to affect those.
-
-As far as other mods that may affect spells or abilities, it might or might not be compatible; it depends on the nature of the tweak. For example, if a tweak changes who can use a type of weapon, and my tweak just adds a damage bonus to it, it would be compatible, but that may not be the case for every tweak. If there's a philosophical or conceptual difference in the design of the spell or ability, it might make no sense to install both tweaks, or it might fail to install, so use your best judgment. For obvious reasons, don't attempt to mix two tweaks that try to do the exact same thing, as the results will likely not be what you expected. I'm open to providing compatibility personally as long as I'm interested in the other mod as well. One example is SCS, ToF, and Tweaks Anthology, since I like them a lot.
-
-Currently, relevant compatibility has been added deliberately to:
-
-- Item Upgrade (upgrades are in line with my upgrades to vanilla items, if selected)
-- Wares of the Planes (generally just exceptions to certain bonuses, due to the unusual nature of the items)
-- Rogue Rebalancing
-- ZS_ShadowdancerOverhaul (my own mod, duh, of course I did)
-- Shades of the Sword Coast
-
-## Notes for users and modders
-
-I highly advise to make this mod the first tweak mod in your mod tweaks, at least in the current state. While the code has been vastly improved since it was first released, it's still quite likely that other older mods will have a better time anticipating changes, and because it's young, I probably haven't added enough support in my tweaks to work universally after other older tweaks that modify the same items.
-
-## Credits
-
-- To BeamDog and Bioware for the game, obviously.
-- CamDawg for spending significant time to explain details about how WeiDu works, sharing insights, helpful code, and other matters for modding. Many thanks for your tutorials too
-- DavidW for his great WeiDu tutorial
-- Thanks to the developers of WeiDu, including the documentation
-- And the IESDP, an invaluable resource.
-- People on Discord generally for their help, and the great modders out there that allowed their WeiDu code to be available publicly, like jmerry, Camdawg, 11jo, Argent77, Ardanis, DavidW, SubtleDoctor, among others.
-- zenblack for feedback, brainstorming, and icon-making.
 
 ---
 
