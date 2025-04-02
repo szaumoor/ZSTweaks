@@ -1,7 +1,10 @@
 ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
     COPY_EXISTING ~SW2H17.ITM~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 12 dicesize = 2 dicenumber = 6 END
-        LPF ALTER_EFFECT INT_VAR match_probability1 = 10 probability1 = 9 END
+        
+        PATCH_IF NOT MOD_IS_INSTALLED ~eefixpack.tp2~ ~0~ BEGIN
+            LPF ALTER_EFFECT INT_VAR match_probability1 = 10 probability1 = 9 END
+        END
 
         PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
             SPRINT new_description @8150

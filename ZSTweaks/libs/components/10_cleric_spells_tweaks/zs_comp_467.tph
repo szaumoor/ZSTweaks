@@ -1,25 +1,32 @@
 WITH_SCOPE BEGIN
     COPY ~%MOD_FOLDER%/spells/cleric/sunray~ ~override~
-    
+
+    OUTER_SET vampire = IDS_OF_SYMBOL(race VAMPIRE)
+    OUTER_SET vampyre = IDS_OF_SYMBOL(race VAMPYRE)
+    OUTER_SET shadow = IDS_OF_SYMBOL(race SHADOW)
+    OUTER_SET spectre = IDS_OF_SYMBOL(race SPECTRE)
+    OUTER_SET wraith = IDS_OF_SYMBOL(race WRAITH)
+    OUTER_SET spectral_undead = IDS_OF_SYMBOL(race SPECTRAL_UNDEAD)
+    OUTER_SET spectral_troll = IDS_OF_SYMBOL(class SPECTRAL_TROLL)
+    OUTER_SET myconid = IDS_OF_SYMBOL(race MYCONID)
     LAF GET_DMG_TYPE STR_VAR type = "magic" RET magic = result END
+
     COPY_EXISTING ~SPPR707.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8120) END
         LPF ~CD_TRIM-O-MATIC~ INT_VAR level_cap = 1 END
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-        LPF DELETE_EFFECT INT_VAR match_opcode = 177 STR_VAR match_resource = "SP707L14" END
-        LPF DELETE_EFFECT INT_VAR match_opcode = 12 END
+
+        PATCH_IF NOT MOD_IS_INSTALLED ~eefixpack.tp2~ ~0~ BEGIN
+            LPF DELETE_EFFECT INT_VAR match_opcode = 177 STR_VAR match_resource = "SP707L14" END
+            LPF DELETE_EFFECT INT_VAR match_opcode = 12 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 177 parameter1=vampire parameter2=4 STR_VAR match_resource = "UNDDEATH" END
+            LPF CLONE_EFFECT INT_VAR parameter1=vampyre STR_VAR match_resource = "UNDDEATH" END
+        END ELSE BEGIN
+            LPF DELETE_EFFECT INT_VAR match_opcode = 326 END
+        END
+
         LPF ADD_SPL_EFF_TGT INT_VAR pwr=7 STR_VAR effects = ~op=326,p2=2,res=ZSTWSNRA;op=326,p2=1,res=ZSTWSNRC~ END
-        SET vampire = IDS_OF_SYMBOL(race VAMPIRE)
-        SET vampyre = IDS_OF_SYMBOL(race VAMPYRE)
-        SET shadow = IDS_OF_SYMBOL(race SHADOW)
-        SET spectre = IDS_OF_SYMBOL(race SPECTRE)
-        SET wraith = IDS_OF_SYMBOL(race WRAITH)
-        SET spectral_undead = IDS_OF_SYMBOL(race SPECTRAL_UNDEAD)
-        SET spectral_troll = IDS_OF_SYMBOL(class SPECTRAL_TROLL)
-        SET myconid = IDS_OF_SYMBOL(race MYCONID)
         LPF ADD_SPL_EFF_TGT INT_VAR rd=0 pwr=7 p2=104 STR_VAR effects=~op=326,p1=%vampire%,res=ZSTWSNRB;op=326,p1=%vampyre%,res=ZSTWSNRB;op=326,p1=%shadow%,res=ZSTWSNRF;op=326,p1=%spectre%,res=ZSTWSNRF;op=326,p1=%wraith%,res=ZSTWSNRF;op=326,p1=%spectral_undead%,res=ZSTWSNRF;op=326,p1=%spectral_troll%,p2=105,res=ZSTWSNRF;op=326,p1=%myconid%,res=ZSTWSNRD~ END
-        LPF ALTER_EFFECT INT_VAR match_opcode = 177 parameter1=vampire parameter2=4 STR_VAR match_resource = "UNDDEATH" END
-        LPF CLONE_EFFECT INT_VAR parameter1=vampyre STR_VAR match_resource = "UNDDEATH" END
 
     COPY_EXISTING ~UNDDEATH.EFF~ ~override~
         LPF ALTER_EFF_FILE INT_VAR parameter1=100 parameter2=3 + magic END

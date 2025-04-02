@@ -47,11 +47,10 @@
 @120 = "Make conjured magical weapons grant 2 APR by default"
 @1120 = "Make some weapon categories incur backstab penalties for balance"
 @1121 = ~Make Flails and Morningstars always inflict a small amount of piercing damage~
-@1150 = "Make some weapon categories adjust their baseline damage"
+@1150 = "Make some weapon categories adjust their damage configuration"
 // @1160 = "Make Warhammers do a baseline damage of 1d5+1, not 1d4+1 (except hammers outside that range)"
 // @1350 = "Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8"
 // @1352 = "Make Wakizashis a piercing/slashing weapon"
-@1360 = "Make Light Crossbows get +1/2 more APR"
 @1361 = ~Make axes deal extra damage equal to its base damage on critical hits~
 @1362 = ~Make maces, clubs, and hammers damage the target's Armor Class temporarily based on enchantment level~
 // @1370 = "Make Katanas deal 2d5 damage instead of 1d10"
@@ -75,7 +74,6 @@
 @15392 = ~All bards and Thieves can~
 @15393 = ~All bards and Thieves can as long as they have the right stats depending on scroll type~
 @1544 = ~Make scrolls always cast at the character level regardless of class~
-@1548 = ~Make Void-weapons strength-sapping not affect undead, and able to critically hit to deal double damage~
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -323,8 +321,10 @@
 
 
 // END-OF-INSTALL ORDER TWEAKS
+@1360 = "Make Light Crossbows get +1/2 more APR"
 @1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense. WARNING: Install after other tweaks and mods that change the same spells, to be safer~
 @1532 = ~Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage. WARNING: Install this component DEAD LAST after other components that modify these items, including components from other mods~
+@1548 = ~Make Void-weapons strength-sapping not affect undead, and able to critically hit to deal double damage~
 
 
 // NEW DESCRIPTIONS

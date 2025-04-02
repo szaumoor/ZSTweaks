@@ -41,9 +41,11 @@ COPY_EXISTING ~SPPR722.SPL~ ~override~ // storm of vengeance
 BUT_ONLY IF_EXISTS
 
 ACTION_IF !(GAME_IS ~iwdee~) BEGIN
-    COPY_EXISTING ~ohdwand1.ITM~ ~override~
-        LPF ALTER_EFFECT INT_VAR match_resist_dispel=1 resist_dispel=3 END
-    BUT_ONLY IF_EXISTS
+    ACTION_IF NOT MOD_IS_INSTALLED ~eefixpack.tp2~ ~0~ BEGIN
+        COPY_EXISTING ~ohdwand1.ITM~ ~override~
+            LPF ALTER_EFFECT INT_VAR match_resist_dispel=1 resist_dispel=3 END
+        BUT_ONLY IF_EXISTS
+    END
 
     COPY_EXISTING ~SPIN566.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
