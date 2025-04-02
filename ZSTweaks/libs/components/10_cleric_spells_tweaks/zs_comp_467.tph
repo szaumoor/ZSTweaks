@@ -1,5 +1,6 @@
 WITH_SCOPE BEGIN
     COPY ~%MOD_FOLDER%/spells/cleric/sunray~ ~override~
+    
     LAF GET_DMG_TYPE STR_VAR type = "magic" RET magic = result END
     COPY_EXISTING ~SPPR707.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8120) END

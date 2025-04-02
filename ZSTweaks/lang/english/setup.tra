@@ -27,6 +27,7 @@
 @57 = ~Can't install groups of components if individual components (without subcomponents) are installed already~
 @58 = ~Can't install components included in components that install groups of other components~
 @59 = ~This component must be installed before the next scroll tweak~
+@60 = ~This component is already effectively installed through the EE Fixpack~
 // end warning messages components
 
 @10000 = ~Install all tweaks in the general tweaks group (except the ones that require a choice)~

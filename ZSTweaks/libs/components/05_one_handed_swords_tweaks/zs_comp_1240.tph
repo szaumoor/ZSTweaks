@@ -1,7 +1,7 @@
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
 
     ACTION_IF zst_1240_purifier_evil BEGIN
-
+        PRINT ~Applying Purifier's damage vs. all evil tweak~
         COPY_EXISTING ~SW1H64.ITM~ ~override~
             SET mask_evil = IDS_OF_SYMBOL(alignmen MASK_EVIL)
             LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=177 match_parameter2=8 parameter1=mask_evil END
@@ -46,7 +46,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
     END
 
     ACTION_IF zst_1240_purifier_dispel BEGIN
-
+        PRINT ~Applying Purifier's dispel magic boost~
         ACTION_IF zst_1240_purifier_evil BEGIN
             OUTER_SPRINT strref @6093
         END ELSE BEGIN
@@ -76,5 +76,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         COPY_EXISTING "SW1H64A.EFF" ~override~
                       "SW1H65A.EFF" ~override~
             LPF ALTER_EFF_FILE INT_VAR special=1024 END
+    END ELSE BEGIN
+        PRINT ~Skipping Purifier's tweaks~
     END
 END

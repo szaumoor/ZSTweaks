@@ -38,7 +38,7 @@ COPY_EXISTING ~bdshadgr.ITM~  ~override~
     LPF ALTER_EFFECT INT_VAR match_duration = 180 duration = 2400 END
 BUT_ONLY IF_EXISTS
 
-ACTION_IF game_is_bgee BEGIN
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
 
   COPY_EXISTING ~bdwrai01.cre~ ~override~ // wraith
                 ~bdwrait1.cre~ ~override~ // wraith
@@ -54,7 +54,7 @@ ACTION_IF game_is_bgee BEGIN
     REMOVE_KNOWN_SPELL     ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
     BUT_ONLY IF_EXISTS
 
-END ELSE BEGIN // bg2ee
+END ELSE ACTION_IF GAME_IS "bg2ee eet" BEGIN // bg2ee
 
   COPY_EXISTING ~chwraith.cre~ ~override~ // child spirit
                 ~firwra01.cre~ ~override~ // greater wraith
@@ -104,5 +104,5 @@ END ELSE BEGIN // bg2ee
                 ~wraith01.cre~ ~override~ // wraith
                 ~wrashi01.cre~ ~override~ // shimmering wraith
     REMOVE_MEMORIZED_SPELL ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
-    REMOVE_KNOWN_SPELL     ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
+    REMOVE_KNOWN_SPELL ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
 BUT_ONLY IF_EXISTS

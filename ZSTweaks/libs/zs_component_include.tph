@@ -35,6 +35,8 @@ ACTION_IF !VARIABLE_IS_SET comp_moved BEGIN
     MOVE "%MOD_FOLDER%/libs/components/12_creature_tweaks" ~%MOD_FOLDER%/libs/components~
     //DELETE ~%MOD_FOLDER%/libs/components/12_creature_tweaks~
 
+    MOVE "%MOD_FOLDER%/libs/components/13_end_components" ~%MOD_FOLDER%/libs/components~
+
     OUTER_SET comp_moved = 1
 END
 

@@ -3,13 +3,22 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING ~BLUN26.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8250) END
         LPF ALTER_HEADER INT_VAR speed = 1 END
-        LPF ALTER_EFFECT INT_VAR match_opcode=146 parameter1=0 probability1=6 probability2=0 STR_VAR match_resource=~SPWI304~ resource=~ZSTWCBDT~ END
+
+        PATCH_IF NOT MOD_IS_INSTALLED ~eefixpack.tp2~ ~0~ BEGIN
+            LPF ALTER_EFFECT INT_VAR match_opcode=146 parameter1=0 probability1=6 probability2=0 STR_VAR match_resource=~SPWI304~ resource=~ZSTWCBDT~ END
+        END ELSE BEGIN
+            LPF ALTER_EFFECT INT_VAR match_opcode=146 parameter1=0 probability1=6 probability2=0 STR_VAR match_resource=~BLUN26FB~ resource=~ZSTWCBDT~ END
+        END
+
         LPF ALTER_EFFECT INT_VAR match_opcode = 215 STR_VAR resource = ~ICFIRSDI~ END
 
     COPY_EXISTING ~BLUN27.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8251) END
         LPF ALTER_HEADER INT_VAR speed = 0 END
-        LPF ALTER_EFFECT INT_VAR match_opcode=146 parameter1=0 probability1=9 probability2=0 STR_VAR match_resource=~SPWI304~ resource=~ZSTWCBDT~ END
+        PATCH_IF NOT MOD_IS_INSTALLED ~eefixpack.tp2~ ~0~ BEGIN
+            LPF ALTER_EFFECT INT_VAR match_opcode=146 parameter1=0 probability1=9 probability2=0 STR_VAR match_resource=~SPWI304~ resource=~ZSTWCBDT~ END
+        END ELSE BEGIN
+            LPF ALTER_EFFECT INT_VAR match_opcode=146 parameter1=0 probability1=9 probability2=0 STR_VAR match_resource=~BLUN26FB~ resource=~ZSTWCBDT~ END
+        END
         LPF ALTER_EFFECT INT_VAR match_opcode = 215 STR_VAR resource = ~ICFIRSDI~ END
-
 END
