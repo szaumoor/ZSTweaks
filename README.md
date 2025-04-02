@@ -12,7 +12,7 @@ In vanilla, this is not contemplated, likely because there isn't any means of in
 
 As of version 1.4.5 a configuration file is now provided, where the user may change some variables to further customize components. This file is **ZSTweaks/zstweaks_prefs.txt**.
 
-__[SEE FULL README HERE](ZSTweaks/README.md)__
+__[SEE ALL COMPONENT DETAILS HERE](ZSTweaks/README.md)__
 
 ## Compatibility and installation order
 
