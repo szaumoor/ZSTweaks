@@ -1,18 +1,3 @@
-# ZSTweaks
-
-This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game. The vast majority of the tweaks are designed to be simple improvements of underpowered items or abilities. Some of them overhaul the game a bit more extensively, though not radically.
-
-Every group of components, except those that have only a few items, has as the first component the option to install all components in the group, except those that require user input.
-
-Finally, any component that adds damage to items on hit, or alters items with damage on hit, will mark the damage effects as not capable of waking up sleepers.
-
-This is done because there is no advantage that I can see to making that damage capable of waking sleepers, but it does prevent an annoying corner case, which is that if you have a melee/ranged weapon effect that causes interruptible sleep, and other on-hit damage the weapons have trigger after it, it will wake them up, even if it was the hit of this weapon what caused the sleep, which is all pretty silly.
-
-In vanilla, this is not contemplated, likely because there isn't any means of introducing sleep on hit to arbitrary weapons and as such that circumstance would have never occurred. My mod ZS_WeaponOils does introduce this situation if using the Drow Soporific Oil.
-
-As of version 1.4.5 a configuration file is now provided, where the user may change some variables to further customize components. This file is **ZSTweaks/zstweaks_prefs.txt**.
-
----
 <details>
 
 <summary><b>General Item & Spell Tweaks</b></summary>
