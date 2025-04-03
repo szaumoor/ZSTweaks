@@ -8,6 +8,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_HEADER INT_VAR match_type=3 header=2 target=5 charges=3 END
         LPF ALTER_EFFECT INT_VAR header_type=3 header=2 match_opcode=146 STR_VAR resource=~SPPR514~ END
         LPF ALTER_EFFECT INT_VAR header_type=3 match_opcode=146 parameter2=1 STR_VAR match_resource=~SPPR607~ END
+        LPF ALTER_HEADER INT_VAR match_type=3 header=2 STR_VAR match_icon=~SPPR607B~ icon = ~SPPR514B~ END
         LPF DELETE_EFFECT INT_VAR match_opcode=18 END
         LPF ADD_EQUIPPED_EFF INT_VAR p1=207 p2=5 STR_VAR effects = ~op=177,res=ZSTWBB01;op=177,res=ZSTWBB02;op=177,res=ZSTWBB03;op=177,res=ZSTWBB04~ END
         LPF ADD_EQUIPPED_EFF INT_VAR p1=1 STR_VAR effects=~op=278;op=73~ END
