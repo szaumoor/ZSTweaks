@@ -20,16 +20,19 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY_EXISTING ~CLCK09.ITM~ ~override~ // cold resist clck
         LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@6137) id_ref_desc=RESOLVE_STR_REF(@6144) END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 28 parameter1 = 40 END
+        LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 28 opcode = 85 END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=2~ END
 
     COPY_EXISTING ~CLCK10.ITM~ ~override~ // fire resist clck
         LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@6138) id_ref_desc=RESOLVE_STR_REF(@6145) END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 30 parameter1 = 40 END
+        LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 30 opcode = 84 END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=1~ END
 
     COPY_EXISTING ~bdrobe05.ITM~ ~override~ // robe of flames
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6146) END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 30 parameter1 = 50 END
+        LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 30 opcode = 84 END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6~ END
 
     COPY_EXISTING ~CLCK11.ITM~ ~override~ // electric resist clck
