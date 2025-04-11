@@ -9,68 +9,68 @@ DEFINE_PATCH_FUNCTION ALTER_ITEM
 INT_VAR
     //// Use these for known string references, or pass a new string using RESOLVE_STR_REF(<string>)
     unid_ref_name = "-2"
-    id_ref_name = "-2"
+    id_ref_name   = "-2"
     unid_ref_desc = "-2"
-    id_ref_desc = "-2"
+    id_ref_desc   = "-2"
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    flags = "-1"
-    category = "-1"
-    wpn_prof = "-1"
-    min_level = "-1"
-    min_str = "-1"
+    flags         = "-1"
+    category      = "-1"
+    wpn_prof      = "-1"
+    min_level     = "-1"
+    min_str       = "-1"
     min_str_bonus = "-1"
-    min_dex = "-1"
-    min_con = "-1"
-    min_int = "-1"
-    min_wis = "-1"
-    min_cha = "-1"
-    unusable0 = "-1"
-    unusable1 = "-1"
-    unusable2 = "-1"
-    unusable3 = "-1"
-    unusable4 = "-1"
-    price = "-1"
-    max_stack = "-1"
-    lore_id = "-1"
-    weight = "-1"
-    ench = "-1"
-    this_plus = 0 // to enable addition to values, a value of 1 will add, -1 will subtract, to the current value instead of setting on some fields
+    min_dex       = "-1"
+    min_con       = "-1"
+    min_int       = "-1"
+    min_wis       = "-1"
+    min_cha       = "-1"
+    unusable0     = "-1"
+    unusable1     = "-1"
+    unusable2     = "-1"
+    unusable3     = "-1"
+    unusable4     = "-1"
+    price         = "-1"
+    max_stack     = "-1"
+    lore_id       = "-1"
+    weight        = "-1"
+    ench          = "-1"
+    this_plus     = 0 // to enable addition to values, a value of 1 will add, -1 will subtract, to the current value instead of setting on some fields
 STR_VAR
     //// Use these for passing strings directly -- will be added to the TLK, tra refs will need to be set as variables first
     general_name = ~~
-    id_name = ~~
+    id_name      = ~~
     general_desc = ~~
-    id_desc = ~~
+    id_desc      = ~~
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     used_up_itm = ~none~
-    appearance = ~none~
-    icon = ~none~
+    appearance  = ~none~
+    icon        = ~none~
     ground_icon = ~none~
-    desc_img = ~none~
+    desc_img    = ~none~
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     PATCH_IF unid_ref_name > "-2" BEGIN
         WRITE_LONG 0x08 unid_ref_name
     END ELSE PATCH_IF unid_ref_name < "-2" BEGIN
-        PATCH_FAIL "Passed a wrong value to unid_ref_name: %unid_ref_name%"
+        PATCH_FAIL "Passed a negative value under the default (-2) to unid_ref_name"
     END
 
     PATCH_IF unid_ref_desc > "-2" BEGIN
         WRITE_LONG 0x50 unid_ref_desc
     END ELSE PATCH_IF unid_ref_desc < "-2" BEGIN
-        PATCH_FAIL "Passed a wrong value to unid_ref_desc: %unid_ref_desc%"
+        PATCH_FAIL "Passed a negative value under the default (-2) to unid_ref_desc"
     END
 
     PATCH_IF id_ref_name > "-2" BEGIN
         WRITE_LONG 0x0c id_ref_name
     END ELSE PATCH_IF id_ref_name < "-2" BEGIN
-        PATCH_FAIL "Passed a wrong value to id_ref_name: %id_ref_name%"
+        PATCH_FAIL "Passed a negative value under the default (-2) to id_ref_name"
     END
 
     PATCH_IF id_ref_desc > "-2" BEGIN
         WRITE_LONG 0x54 id_ref_desc
     END ELSE PATCH_IF id_ref_desc < "-2" BEGIN
-        PATCH_FAIL "Passed a wrong value to id_ref_desc: %id_ref_desc%"
+        PATCH_FAIL "Passed a negative value under the default (-2) to id_ref_desc"
     END
 
     PATCH_IF flags > "-1" BEGIN
@@ -82,127 +82,127 @@ BEGIN
             WRITE_LONG 0x18 (THIS - flags)
         END
     END ELSE PATCH_IF flags < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to flags: %flags%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to flags"
     END
 
     PATCH_IF category > "-1" BEGIN
         WRITE_BYTE 0x1c category
     END ELSE PATCH_IF category < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to category: %category%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to category"
     END
 
     PATCH_IF wpn_prof > "-1" BEGIN
         WRITE_LONG 0x31 wpn_prof
     END ELSE PATCH_IF wpn_prof < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to wpn_prof: %wpn_prof%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to wpn_prof"
     END
 
     PATCH_IF min_level > "-1" BEGIN
         WRITE_SHORT 0x24 min_level
     END ELSE PATCH_IF min_level < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to min_level: %min_level%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to min_level"
     END
 
     PATCH_IF min_str > "-1" BEGIN
         WRITE_SHORT 0x26 min_str
     END ELSE PATCH_IF min_str < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to min_str: %min_str%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to min_level"
     END
 
     PATCH_IF min_str_bonus > "-1" BEGIN
         WRITE_BYTE 0x28 min_str_bonus
     END ELSE PATCH_IF min_str_bonus < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to min_str_bonus: %min_str_bonus%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to min_str_bonus"
     END
 
     PATCH_IF min_int > "-1" BEGIN
         WRITE_BYTE 0x2a min_int
     END ELSE PATCH_IF min_int < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to min_int: %min_int%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to min_int"
     END
 
     PATCH_IF min_dex > "-1" BEGIN
         WRITE_BYTE 0x2c min_dex
     END ELSE PATCH_IF min_dex < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to min_dex: %min_dex%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to min_dex"
     END
 
     PATCH_IF min_wis > "-1" BEGIN
         WRITE_BYTE 0x2e min_wis
     END ELSE PATCH_IF min_wis < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to min_wis: %min_wis%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to min_wis"
     END
 
     PATCH_IF min_con > "-1" BEGIN
         WRITE_BYTE 0x30 min_con
     END ELSE PATCH_IF min_con < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to min_con: %min_con%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to min_con"
     END
 
     PATCH_IF min_cha > "-1" BEGIN
         WRITE_SHORT 0x30 min_cha
     END ELSE PATCH_IF min_cha < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to min_cha: %min_cha%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to min_cha"
     END
 
     PATCH_IF max_stack > "-1" BEGIN
         WRITE_SHORT 0x38 max_stack
     END ELSE PATCH_IF max_stack < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to max_stack: %max_stack%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to max_stack"
     END
 
     PATCH_IF lore_id > "-1" BEGIN
         WRITE_SHORT 0x42 lore_id
     END ELSE PATCH_IF lore_id < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to lore_id: %lore_id%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to lore_id"
     END
 
     PATCH_IF weight > "-1" BEGIN
         WRITE_LONG 0x4c weight
     END ELSE PATCH_IF weight < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to weight: %weight%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to weight"
     END
 
     PATCH_IF ench > "-1" BEGIN
         WRITE_LONG 0x60 ench
     END ELSE PATCH_IF ench < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to ench: %ench%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to ench"
     END
 
     PATCH_IF unusable0 > "-1" BEGIN
         WRITE_LONG 0x1e unusable0
     END ELSE PATCH_IF unusable0 < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to unusable0: %unusable0%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to unusable0"
     END
 
     PATCH_IF unusable1 > "-1" BEGIN
         WRITE_BYTE 0x29 unusable1
     END ELSE PATCH_IF unusable1 < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to unusable1: %unusable1%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to unusable1"
     END
 
     PATCH_IF unusable2 > "-1" BEGIN
         WRITE_BYTE 0x2b unusable2
     END ELSE PATCH_IF unusable2 < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to unusable2: %unusable2%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to unusable2"
     END
 
     PATCH_IF unusable3 > "-1" BEGIN
         WRITE_BYTE 0x2d unusable3
     END ELSE PATCH_IF unusable3 < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to unusable3: %unusable3%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to unusable3"
     END
 
     PATCH_IF unusable4 > "-1" BEGIN
         WRITE_BYTE 0x2f unusable4
     END ELSE PATCH_IF unusable4 < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to unusable4: %unusable4%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to unusable4"
     END
 
     PATCH_IF price > "-1" BEGIN
         WRITE_LONG 0x34 price
     END ELSE PATCH_IF price < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to price: %price%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to price"
     END
 
     PATCH_IF STRING_LENGTH "%general_name%" > 0 BEGIN
@@ -257,61 +257,57 @@ END
 
 DEFINE_PATCH_FUNCTION ALTER_EFF_FILE
 INT_VAR
-    opcode = "-1"
-    target = "-1"
-    power = "-1"
-    parameter1 = "-999"
-    parameter2 = "-1"
-    timing = "-1"
-    duration = "-1"
-    probability1 = "-1"
-    probability2 = "-1"
-    dicenumber = "-1"
-    dicesize = "-1"
-    save_type = "-1"
-    savingthrow = "-999"
-    special = "-1"
-    primary_type = "-1"
-    min_level = "-1"
-    max_level = "-1"
-    dispel_resist = "-1"
-    parameter3 = "-1"
-    parameter4 = "-1"
+    opcode         = "-1"
+    target         = "-1"
+    power          = "-1"
+    parameter1     = "-999"
+    parameter2     = "-1"
+    timing         = "-1"
+    duration       = "-1"
+    probability1   = "-1"
+    probability2   = "-1"
+    dicenumber     = "-1"
+    dicesize       = "-1"
+    save_type      = "-1"
+    savingthrow    = "-999"
+    special        = "-1"
+    primary_type   = "-1"
+    min_level      = "-1"
+    max_level      = "-1"
+    dispel_resist  = "-1"
+    parameter3     = "-1"
+    parameter4     = "-1"
     secondary_type = "-1"
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "EFF" END
     PATCH_IF parameter1 > "-999" BEGIN
         WRITE_LONG 0x1c parameter1
-    END ELSE PATCH_IF parameter1 < "-999" BEGIN
-        PATCH_FAIL "Passed a wrong value to parameter1: %parameter1%"
     END
 
     PATCH_IF parameter2 > "-1" BEGIN
         WRITE_LONG 0x20 parameter2
-    END ELSE PATCH_IF parameter2 < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to parameter2: %parameter2%"
     END
 
     PATCH_IF parameter3 > "-1" BEGIN
-        WRITE_SHORT 0x60 parameter3
-    END ELSE PATCH_IF parameter3 < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to parameter3: %parameter3%"
+        WRITE_LONG 0x60 parameter3
     END
 
     PATCH_IF dicesize > "-1" BEGIN
         WRITE_LONG 0x3c dicesize
     END ELSE PATCH_IF dicesize < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to dicesize: %dicesize%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to dicesize"
     END
+
     PATCH_IF dicenumber > "-1" BEGIN
         WRITE_LONG 0x38 dicenumber
     END ELSE PATCH_IF dicenumber < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to dicenumber: %dicenumber%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to dicenumber"
     END
+
     PATCH_IF special > "-1" BEGIN
         WRITE_LONG 0x48 special
     END ELSE PATCH_IF special < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to special: %special%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to special"
     END
 END
 
@@ -336,13 +332,13 @@ BEGIN
     PATCH_IF ref_name > "-2" BEGIN
         WRITE_LONG 0x08 ref_name
     END ELSE PATCH_IF ref_name < "-2" BEGIN
-        PATCH_FAIL "Passed a wrong value to ref_name: %ref_name%"
+        PATCH_FAIL "Passed a negative value under the default (-2) to ref_name"
     END
 
     PATCH_IF ref_desc > "-2" BEGIN
         WRITE_LONG 0x50 ref_desc
     END ELSE PATCH_IF ref_desc < "-2" BEGIN
-        PATCH_FAIL "Passed a wrong value to ref_desc: %ref_desc%"
+        PATCH_FAIL "Passed a negative value under the default (-2) to ref_desc"
     END
 
     PATCH_IF flags > "-1" BEGIN
@@ -354,13 +350,13 @@ BEGIN
             WRITE_LONG 0x18 (THIS - flags)
         END
     END ELSE PATCH_IF flags < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to flags: %flags%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to flags"
     END
 
     PATCH_IF spell_type > "-1" BEGIN
         WRITE_LONG 0x1c spell_type
     END ELSE PATCH_IF spell_type < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to spell_type: %spell_type%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to spell_type"
     END
 
     PATCH_IF excl_flags > "-1" BEGIN
@@ -372,31 +368,31 @@ BEGIN
             WRITE_LONG 0x1e (THIS - excl_flags)
         END
     END ELSE PATCH_IF flags < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to excl_flags: %excl_flags%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to excl_flags"
     END
 
     PATCH_IF animation > "-1" BEGIN
         WRITE_LONG 0x22 animation
     END ELSE PATCH_IF spell_type < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to animation: %animation%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to animation"
     END
 
     PATCH_IF primary_type > "-1" BEGIN
         WRITE_LONG 0x25 primary_type
     END ELSE PATCH_IF primary_type < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to primary_type: %primary_type%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to primary_type"
     END
 
     PATCH_IF secondary_type > "-1" BEGIN
         WRITE_LONG 0x27 secondary_type
     END ELSE PATCH_IF secondary_type < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to secondary_type: %secondary_type%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to secondary_type"
     END
 
     PATCH_IF spell_level > "-1" BEGIN
         WRITE_LONG 0x34 spell_level
     END ELSE PATCH_IF spell_level < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to spell_level: %spell_level%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to spell_level"
     END
 
     PATCH_IF NOT "%icon%" STR_EQ "none" BEGIN
@@ -411,13 +407,13 @@ END
 
 DEFINE_PATCH_FUNCTION ALTER_CRE
 INT_VAR
-    name = "-2"
-    tooltip = "-2"
+    name           = "-2"
+    tooltip        = "-2"
     current_health = "-1"
-    thac0 = "-129"
-    max_health = "-1"
-    class = "-1"
-    alignment = "-1"
+    thac0          = "-129"
+    max_health     = "-1"
+    class          = "-1"
+    alignment      = "-1"
 STR_VAR
     dialog = ~none~
 BEGIN
@@ -425,53 +421,57 @@ BEGIN
     PATCH_IF name > "-2" BEGIN
         WRITE_LONG 0x08 name
     END ELSE PATCH_IF name < "-2" BEGIN
-        PATCH_FAIL "Passed a wrong value to name: %name%"
+        PATCH_FAIL "Passed a negative value under the default (-2) to name"
     END
 
     PATCH_IF tooltip > "-2" BEGIN
         WRITE_LONG 0x0c tooltip
     END ELSE PATCH_IF tooltip < "-2" BEGIN
-        PATCH_FAIL "Passed a wrong value to tooltip: %tooltip%"
+        PATCH_FAIL "Passed a negative value under the default (-2) to tooltip"
     END
 
     PATCH_IF current_health > "-1" BEGIN
         WRITE_SHORT 0x24 current_health
     END ELSE PATCH_IF current_health < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to current_health: %current_health%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to current_health"
     END
 
     PATCH_IF max_health > "-1" BEGIN
         WRITE_SHORT 0x26 max_health
     END ELSE PATCH_IF max_health < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to max_health: %max_health%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to max_health"
     END
 
     PATCH_IF class > "-1" BEGIN
         WRITE_BYTE 0x273 class
     END ELSE PATCH_IF class < "-1" BEGIN
-        PATCH_FAIL "Passed a wrong value to class: %class%"
+        PATCH_FAIL "Passed a non-default (-1) negative value to class"
     END
 
     PATCH_IF thac0 >= "-128" AND thac0 <= 127 BEGIN
         WRITE_BYTE 0x52 thac0
-    END ELSE PATCH_IF thac0 < "-129" BEGIN
-        PATCH_FAIL "Passed a wrong value to thac0: %thac0%"
+    END ELSE BEGIN
+        PATCH_FAIL "Passed an out-of-bounds value to thac0 (valid values are between -128 to 127)"
     END
 
-    PATCH_IF alignment > "-1" BEGIN
+    PATCH_IF alignment > "-1" AND alignment <= 255 BEGIN
         WRITE_BYTE 0x27b alignment
-    END ELSE PATCH_IF alignment < "-1" OR alignment > 255 BEGIN
-        PATCH_FAIL "Passed a wrong value to class: %alignment%"
+    END ELSE PATCH_IF alignment < "-1" BEGIN
+        PATCH_FAIL "Passed an out-of-bounds value to thac0 (valid values are between 0 to 255)"
     END
 
     PATCH_IF NOT "%dialog%" STR_EQ "none" BEGIN
         WRITE_ASCII 0x2cc dialog #8
     END
+
+    PATCH_IF NOT "%override_script%" STR_EQ "none" BEGIN
+        WRITE_ASCII 0x248 "%override_script%" #8
+    END
 END
 
-DEFINE_PATCH_FUNCTION ALTER_PROJECTILE // not working correctly
+DEFINE_PATCH_FUNCTION ALTER_PROJECTILE
 INT_VAR
-    trap_size = "-1"
+    trap_size      = "-1"
     explosion_size = "-1"
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "PRO" END

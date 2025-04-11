@@ -1,0 +1,14 @@
+// less than 107
+APPEND ~splprot.2da~ ~ZS_FIRERESIST_<127%TAB%14%TAB%127%TAB%2~ UNLESS ~ZS_FIRERESIST_<127~
+
+OUTER_SET ~zs_fireresist_<127~ = "-1"
+COPY_EXISTING ~splprot.2da~ ~override~
+    COUNT_2DA_COLS cols
+    READ_2DA_ENTRIES_NOW rows cols
+    FOR (row = 1; row < rows; ++row) BEGIN
+        READ_2DA_ENTRY_FORMER rows row 0 ~stat~
+        PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~ZS_FIRERESIST_<127~ BEGIN
+            ~zs_fireresist_<127~ = row
+        END
+    END
+BUT_ONLY

@@ -3,12 +3,12 @@
  */
 DEFINE_PATCH_FUNCTION ADD_EQUIPPED_EFF
 INT_VAR
-    p1   = 0 // parameter 1
-    p2   = 0 // parameter 2
+    p1   =   0 // parameter 1
+    p2   =   0 // parameter 2
     ip   = "-1" // insert point
-    spec = 0 // special
+    spec =   0 // special
 STR_VAR
-    res = ~~
+    res     = ~~
     effects = ~~ // effect codes
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
@@ -75,7 +75,6 @@ BEGIN
     END
 END
 
-
 DEFINE_PATCH_FUNCTION ADD_SLEEP_SAFE_DMG // untested; always preset target for now
 INT_VAR
     p1 = 0
@@ -89,13 +88,11 @@ STR_VAR
     dmg_type = ~*~
     type     = 1
 BEGIN
-    PATCH_IF prechecks = 1 BEGIN
-        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    END
+    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     PATCH_IF p2 = "-1" BEGIN
         LPF GET_DMG_TYPE STR_VAR type = ~%dmg_type%~ RET p2 = result END
     END
-    LPF ADD_ON_HIT_EFF STR_VAR effects = ~ip=%ip%,t=%t%,op=12,p1=%p1%,p2=%p2%,dnum=%dnum%,dsize=%dsize%,spec=1024~ END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = EVAL ~ip=%ip%,t=%t%,op=12,p1=%p1%,p2=%p2%,dnum=%dnum%,dsize=%dsize%,spec=1024~ END
 END
 
 DEFINE_PATCH_FUNCTION ADD_SPL_EFF_SELF
