@@ -451,7 +451,9 @@ BEGIN
     PATCH_IF thac0 >= "-128" AND thac0 <= 127 BEGIN
         WRITE_BYTE 0x52 thac0
     END ELSE BEGIN
-        PATCH_FAIL "Passed an out-of-bounds value to thac0 (valid values are between -128 to 127)"
+        PATCH_IF thac0 != "-129" BEGIN
+            PATCH_FAIL "Passed an out-of-bounds value to thac0 (valid values are between -128 to 127)"
+        END
     END
 
     PATCH_IF alignment > "-1" AND alignment <= 255 BEGIN
