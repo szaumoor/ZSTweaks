@@ -34,13 +34,13 @@ END
 ACTION_IF zst_1150_dice_warhammers BEGIN
 
     COPY_EXISTING "HAMM01.ITM" ~override~
-    SPRINT str @99999
-    READ_STRREF 0x54 desc
-    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]4~ ~\11d5~
-    END
-    SAY_EVALUATED 0x54 ~%desc%~
-    LPF ITM_REF_DESC RET changed_description_index = result END
+        SPRINT str @99999
+        READ_STRREF 0x54 desc
+        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]4~ ~\11d5~
+        END
+        SAY_EVALUATED 0x54 ~%desc%~
+        LPF ITM_REF_DESC RET changed_description_index = result END
 
     COPY_EXISTING_REGEXP ".*\.itm" ~override~
         LPF ITM_CAT RET wpn_cat = result END
@@ -61,10 +61,11 @@ ACTION_IF zst_1150_dice_warhammers BEGIN
                 END
             END
         END
-        COPY_EXISTING "bdhamm02.itm" ~override~ // voidhammer +3
-            LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 5 END
-        BUT_ONLY IF_EXISTS
     BUT_ONLY
+
+    COPY_EXISTING "bdhamm02.itm" ~override~ // voidhammer +3
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 5 END
+    BUT_ONLY IF_EXISTS
 END
 
 ACTION_IF zst_1150_dice_wakininja OR zst_1150_dice_wakislashing BEGIN
@@ -72,6 +73,7 @@ ACTION_IF zst_1150_dice_wakininja OR zst_1150_dice_wakislashing BEGIN
 END
 
 ACTION_IF zst_1150_dice_wakininja BEGIN
+
     COPY_EXISTING "SW1H48.ITM" ~override~
         SPRINT str @99999
         SPRINT str_sf @99998
