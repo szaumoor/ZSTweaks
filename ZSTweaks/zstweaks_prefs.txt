@@ -32,6 +32,15 @@ OUTER_SET zst_1150_dice_wakislashing     = "1"
 OUTER_SET zst_1150_dice_warhammers       = "1"
 OUTER_SET zst_1150_dice_twohanded_swords = "1"
 
+// these variables allow or disallow tweaks for component 1545
+OUTER_SET zst_1545_constitution_bonuses = "1"
+OUTER_SET zst_1545_dexterity_bonuses    = "1"
+OUTER_SET zst_1545_lore_class_bonuses   = "1" // lore bonuses per class
+OUTER_SET zst_1545_lore_stat_bonuses    = "1" // lore bonuses with intelligence and wisdom
+OUTER_SET zst_1545_racethac0_bonuses    = "1" // thac0 bonuses for race
+OUTER_SET zst_1545_strength_bonuses     = "1"
+OUTER_SET zst_1545_weapon_style_bonuses = "1"
+
 ////////////////////////////// Dagger tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 OUTER_SET zst_1000_sbonus = "-2" // You can change this to override the save penalty given in component 1001 to poisoned throwing daggers. Vanilla is 0, default in component is -2.

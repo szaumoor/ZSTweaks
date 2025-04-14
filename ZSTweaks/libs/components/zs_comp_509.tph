@@ -1,0 +1,4 @@
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
+    COPY_EXISTING ~SPPR211.SPL~ ~override~
+        LPF ALTER_HEADER INT_VAR projectile = 169 END
+END

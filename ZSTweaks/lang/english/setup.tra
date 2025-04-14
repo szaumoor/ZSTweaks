@@ -74,6 +74,8 @@
 @15392 = ~All bards and Thieves can~
 @15393 = ~All bards and Thieves can as long as they have the right stats depending on scroll type~
 @1544 = ~Make scrolls always cast at the character level regardless of class~
+@1545 = ~Make the basic benefits and progression of various character stats more streamlined or interesting~
+
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -216,6 +218,7 @@
 @1345 = ~Make Arrows of Fire cause fire damage always, same as Arrows of Ice~
 @1346 = ~Make Arrows of Piercing always cause at least half of the extra piercing damage~
 @1347 = ~Make Bolts of Biting have an inherent +5% extra critical hit chance, and deal +1 poison damage on hit~
+@1348 = ~Make projectiles from Shortbow of Gesen as fast as regular arrows~
 
 // NPC TWEAKS
 @1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
@@ -288,6 +291,7 @@
 @506 = ~Make Wall of Moonlight more effective~
 @507 = ~Make Aid a party buff~
 @508 = ~Make Restoration-type spells restore stat draining by mind flayers and shadow-creatures~
+@509 = ~Make Silence 15ft Radius party-friendly~
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray and Sun Soulbeam Sun Soul Monks scale further and/or do more damage to undead"
@@ -303,7 +307,8 @@
 @2200 = ~Make Blackguards able to backstab as if they had a 2x multiplier~
 @2210 = ~Make the proficiency point benefits streamlined~
 @2230 = ~Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value~
-@2231 = ~Give Dragon Disciples (Red) automatic access to all fire-based wizard spells and optionally increase fire damage by 5%~
+@2231 = ~Make Dragon Disciples (Red) have automatic access to all fire-based spells and optionally increase fire damage by 5%~
+@2232 = ~Make Called Shot directly increase ranged weapon damage, instead of adding 2 damage after the initial hit~
 //@2240 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and reenable the unconscious status if successful~ // TODO
 //@2250 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
 

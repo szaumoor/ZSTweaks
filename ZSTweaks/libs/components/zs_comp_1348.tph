@@ -1,0 +1,4 @@
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING ~PSPEART.PRO~ ~override~
+        WRITE_SHORT 0xa 60
+END
