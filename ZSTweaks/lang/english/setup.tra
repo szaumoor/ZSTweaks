@@ -278,7 +278,7 @@
 @330 = "Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)"
 @340 = "Make Symbol of Death work with Save bonus if above the 60 HP threshold"
 @420 = ~Make Armor of Faith also add a +2 Armor Class bonus to make it useful at low levels~
-@450 = ~Make healing spells other than Heal more worth using~
+@450 = ~Make cure and cause wound spells other than Heal/Harm more worth using~
 @461 = ~Make Bolt of Glory slightly more effective and reorganize the damage distribution per type of enemy~
 @462 = ~Make Magical Stone bypass Magic Resistance and deal both magic and missile damage~
 @463 = ~Make Dolorous Decay more powerful~
@@ -5668,6 +5668,84 @@ Requires:
  10 Strength
 
 Weight: 4~
+
+@8270 = ~Cause Light Wounds
+(Necromancy)
+
+Level: 1
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+By casting this spell and touching a creature, the priest deals 8 points of damage plus 1/level (up to 12) to the creature's body (save vs. Spell for half). This spell has no effect on undead, constructs, or extraplanar creatures.~
+
+@8271 = ~Cause Moderate Wounds
+(Necromancy)
+
+Level: 2
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+By casting this spell and touching a creature, the priest deals 13 points of damage, which increases to 19 over the next 4 levels to the creature's body (save vs. Spell for half). This spell has no effect on undead, constructs, or extraplanar creatures.~
+
+@8272 = ~Cause Medium Wounds
+(Necromancy)
+
+Level: 3
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+By casting this spell and touching a creature, the priest deals 20 points of damage plus 2/level (up to 28) (save vs. Spell for half) to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures.~
+
+@8273 = ~Cause Serious Wounds
+(Necromancy)
+
+Level: 4
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+By casting this spell and touching a creature, the priest deals 30 points of damage, which increases up to 40 over the next 3 levels, to the creature's body (save vs. Spell for half). This spell has no effect on undead, constructs, or extraplanar creatures.~
+
+@8274 = ~Cause Critical Wounds
+(Necromancy)
+
+Level: 5
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 8
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+By casting this spell and touching a creature, the priest deals 42 points of damage, plus 3/level (up to 54)  to the creature's body (save vs. Spell for half). This spell has no effect on undead, constructs, or extraplanar creatures.~
+
+@8275 = ~Mass Cause Light Wounds
+(Necromancy)
+
+Level: 5
+Sphere: Healing
+Range: 0
+Duration: Instant
+Casting Time: 4
+Area of Effect: 15-ft. radius
+Saving Throw: 1/2
+
+By casting this spell, the priest deals 4d3 + 1/level points of damage to nearby enemies. A successful Save vs. Spell halves the damage. This spell has no effect on undead, constructs, or extraplanar creatures.~
 
 // patching other mods
 // item upgrade
