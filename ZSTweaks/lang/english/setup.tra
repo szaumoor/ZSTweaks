@@ -724,6 +724,21 @@ Saving Throw: None
 The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining <PRO_HIMHER> of 6 levels of experience. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell.~
 
 
+@5260 = ~Aid
+(Necromancy, Conjuration)
+
+Level: 2
+Sphere: Necromantic
+Range: Touch
+Duration: 1 round + 1 round/level
+Casting Time: 5
+Area of Effect: 1 creature, and everyone around them
+Saving Throw: None
+
+The recipient of this spell gains the benefits of a Bless spell (+1 to attack rolls and Saving Throws) and a special bonus of 1d8 additional Hit Points, plus a separate 1 HP bonus per level after level 3, for the duration of the spell. The Aid spell enables the recipient to actually have more Hit Points than <PRO_HISHER> current maximum. The  first 1d8 bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic, but the rest will be kept.
+
+For example, if a character has 100 HP, and Aid grants them 5 HP from the first bonus, and 15 HP from the second one, their HP will become 120. If they take a hit that reduces their current HP by 25, their HP will become 95, and their maximum HP will go down to 115 HP, since the first 5 HP bonus to maximum health was consumed and therefore lost.~
+
 @6000 = ~This seemingly simple dagger, steel blade and bone handle, is an incredibly powerful weapon. Forged by an unfortunate duergar smith centuries earlier, the handle was carved from a tooth of a black dragon and the blade was tempered in the blood of its creator. How it has made its way to you is anyone's guess.
 
 STATISTICS:
