@@ -111,6 +111,7 @@ OUTER_SET zst_450_serious  = "1"
 OUTER_SET zst_450_critical = "1"
 OUTER_SET zst_450_eldath   = "1"
 OUTER_SET zst_450_mass     = "1"
+OUTER_SET zst_450_harm     = "1"
 
 OUTER_SET zst_101_fblade_undead    = "1" // allows the damage to undead part of the tweak to come through
 OUTER_SET zst_101_fblade_dur_boost = "1" // allows the duration part of the tweak to come through
@@ -162,8 +163,6 @@ OUTER_SET zst_2231_fire_boost_pctg = "5" // This is the percentage bonus if the 
 /////////////////////////////// Creature Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 OUTER_SET zst_3050_balor_vorpal_penalty = "-4"
-OUTER_SET zst_3060_silly_version        = "0" // switch to 1 to make Mencar a joke
-
 
 /////////////////////////////// Component allowing \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 // this holds variables to decide whether a component should be allowed in group components

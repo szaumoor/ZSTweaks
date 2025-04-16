@@ -16,7 +16,13 @@ ACTION_IF zst_450_light BEGIN
     END
 
     ACTION_IF zst_450_cause_tweaks BEGIN
-        COPY_EXISTING ~SPPR114.spl~ ~override~
+        ACTION_IF GAME_IS "iwdee" BEGIN
+            OUTER_TEXT_SPRINT light ~SPPR114~
+        END ELSE BEGIN
+            OUTER_TEXT_SPRINT light ~SPPR117~
+        END
+
+        COPY_EXISTING ~%light%.spl~ ~override~
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8270) END
             SET base_dmg = 9
             FOR ( number = 1; number <= 4; ++number ) BEGIN
@@ -51,10 +57,16 @@ ACTION_IF zst_450_moderate BEGIN
     END
 
     ACTION_IF zst_450_cause_tweaks BEGIN
-        COPY_EXISTING ~SPPR220.spl~ ~override~
+        ACTION_IF GAME_IS "iwdee" BEGIN
+            OUTER_TEXT_SPRINT moderate ~SPPR220~
+        END ELSE BEGIN
+            OUTER_TEXT_SPRINT moderate ~SPPR219~
+        END
+
+        COPY_EXISTING ~%moderate%.spl~ ~override~
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8271) END
             SET base_dmg = 13
-            LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 17 parameter1 = base_dmg END
+            LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = base_dmg END
             base_dmg += 2
             SET current_header = 2
             FOR ( number = 4; number < 8; ++number ) BEGIN
@@ -94,7 +106,13 @@ ACTION_IF zst_450_medium BEGIN
     END
 
     ACTION_IF zst_450_cause_tweaks BEGIN
-        COPY_EXISTING ~SPPR330.spl~ ~override~
+        ACTION_IF GAME_IS "iwdee" BEGIN
+            OUTER_TEXT_SPRINT medium ~SPPR330~
+        END ELSE BEGIN
+            OUTER_TEXT_SPRINT medium ~SPPR329~
+        END
+
+        COPY_EXISTING ~%medium%.spl~ ~override~
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8272) END
             SET base_dmg = 20
             LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = base_dmg END
@@ -149,7 +167,14 @@ ACTION_IF zst_450_serious BEGIN
                   MOD_IS_INSTALLED "setup-stratagems.tp2" "1510" OR
                   GAME_IS "iwdee"
         BEGIN
-            COPY_EXISTING ~SPPR414.spl~ ~override~
+
+            ACTION_IF GAME_IS "iwdee" BEGIN
+                OUTER_TEXT_SPRINT serious ~SPPR414~
+            END ELSE BEGIN
+                OUTER_TEXT_SPRINT serious ~SPPR428~
+            END
+
+            COPY_EXISTING ~%serious%.spl~ ~override~
                 LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8273) END
                 SET base_dmg = 30
                 LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = base_dmg END
@@ -166,7 +191,30 @@ ACTION_IF zst_450_serious BEGIN
                     ++current_header
                 END
         END ELSE BEGIN
-            //patch touch weapon in bg
+            LAF CREATE_SPELL INT_VAR flags=33604096 STR_VAR spell = ~ZSTWSERS~ END
+            COPY_EXISTING ~ZSTWSERS.SPL~ ~override~
+                LPF GET_DMG_TYPE STR_VAR type=~magic~ RET magic_dmg = result END
+                SET fade_speed = (25 << 16)
+                LPF ADD_SPELL_HEADER END
+                LPF ADD_SPL_EFF_TGT INT_VAR pwr=0 stype=1 STR_VAR effects=~op=12,p1=30,p2=%magic_dmg%,spec=256;op=215,res=SPCAUSEW;op=61,p1=1996800,p2=%fade_speed%~ END
+                SET base_dmg = 30
+                base_dmg += 3
+                SET current_header = 2
+                FOR ( number = 8; number < 12; ++number ) BEGIN
+                    SET dmg_jump = 2
+                    PATCH_IF number <= 10 BEGIN
+                        SET dmg_jump = 3
+                    END
+                    LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = number END
+                    LPF ALTER_EFFECT INT_VAR header = current_header - 1 match_opcode = 12 parameter1 = base_dmg END
+                    base_dmg+=dmg_jump
+                    ++current_header
+                END
+            COPY_EXISTING ~SERIOUS.itm~ ~override~
+                LPF ALTER_ITEM INT_VAR min_str = 0 END
+                LPF ALTER_HEADER INT_VAR to_hit = 3 END
+                LPF DELETE_EFFECT INT_VAR check_globals = 0 END
+                LPF ADD_ITEM_EFFECT INT_VAR type=99 opcode=146 parameter2=1 target=2 resist_dispel=1 power=4 STR_VAR resource=~ZSTWSERS~ END
         END
 
     END
@@ -205,7 +253,14 @@ ACTION_IF zst_450_critical BEGIN
                   MOD_IS_INSTALLED "setup-stratagems.tp2" "1510"     OR
                   GAME_IS "iwdee"
             BEGIN
-                COPY_EXISTING ~SPPR510.spl~ ~override~
+
+                ACTION_IF GAME_IS "iwdee" BEGIN
+                    OUTER_TEXT_SPRINT critical ~SPPR510~
+                END ELSE BEGIN
+                    OUTER_TEXT_SPRINT critical ~SPPR524~
+                END
+
+                COPY_EXISTING ~%critical%.spl~ ~override~
                     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8274) END
                     SET base_dmg = 42
                     LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = base_dmg END
@@ -218,14 +273,38 @@ ACTION_IF zst_450_critical BEGIN
                         ++current_header
                     END
             END ELSE BEGIN
-                //patch touch weapon in bg
-            END
+                LAF CREATE_SPELL INT_VAR flags=33604096 STR_VAR spell = ~ZSTWCRIT~ END
+                COPY_EXISTING ~ZSTWCRIT.SPL~ ~override~
+                    LPF GET_DMG_TYPE STR_VAR type=~magic~ RET magic_dmg = result END
+                    SET fade_speed = (25 << 16)
+                    LPF ADD_SPELL_HEADER END
+                    LPF ADD_SPL_EFF_TGT INT_VAR pwr=0 stype=1 STR_VAR effects=~op=12,p1=42,p2=%magic_dmg%,spec=256;op=215,res=SPCAUSEW;op=61,p1=1996800,p2=%fade_speed%~ END
+                    SET base_dmg = 42
+                    base_dmg += 3
+                    SET current_header = 2
+                    FOR ( number = 10; number < 14; ++number ) BEGIN
+                        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = number END
+                        LPF ALTER_EFFECT INT_VAR header = current_header - 1 match_opcode = 12 parameter1 = base_dmg END
+                        base_dmg+=3
+                        ++current_header
+                    END
+                COPY_EXISTING ~CRITICAL.itm~ ~override~
+                    LPF ALTER_ITEM INT_VAR min_str = 0 END
+                    LPF ALTER_HEADER INT_VAR to_hit = 4 END
+                    LPF DELETE_EFFECT INT_VAR check_globals = 0 END
+                    LPF ADD_ITEM_EFFECT INT_VAR type=99 opcode=146 parameter2=1 target=2 resist_dispel=1 power=5 STR_VAR resource=~ZSTWCRIT~ END
+                END
         END
     END
 END
 
 ACTION_IF zst_450_cure_tweaks AND zst_450_eldath BEGIN
-    COPY_EXISTING ~SPPR736.SPL~ ~override~
+    ACTION_IF GAME_IS "iwdee" BEGIN
+        OUTER_TEXT_SPRINT eldath ~SPPR736~
+    END ELSE BEGIN
+        OUTER_TEXT_SPRINT eldath ~SPPR738~
+    END
+    COPY_EXISTING ~%eldath%.SPL~ ~override~
         LPF ALTER_HEADER INT_VAR speed = 6 END
         LPF ALTER_EFFECT INT_VAR match_opcode = 17 parameter1 = 40 END
         LPF ALTER_EFFECT INT_VAR power = 0 resist_dispel = 0 END
@@ -246,8 +325,16 @@ ACTION_IF zst_450_mass BEGIN
     ACTION_IF zst_450_cause_tweaks BEGIN
         COPY_EXISTING ~SPPR523.spl~ ~override~
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8275) END
-            LPF ALTER_EFFECT INT_VAR match_opcode = 17 dicenumber = 4 dicesize = 3 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 4 dicesize = 3 END
             LPF ALTER_HEADER INT_VAR match_type = 1 speed = 2 END
+        BUT_ONLY IF_EXISTS
     END
+END
+
+ACTION_IF zst_450_cause_tweaks AND NOT GAME_IS "iwdee" AND zst_450_harm BEGIN
+    COPY_EXISTING ~HARM.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR min_str = 0 END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=362,p1=-1,p2=1~ END
+        LPF ALTER_HEADER INT_VAR to_hit = 1000 END
 END
 
