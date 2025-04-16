@@ -6,25 +6,30 @@ STR_VAR
 RET
     result
 BEGIN
-    SET total = 0
-    SET overgrowth = 0
+    SET total           = 0
+    SET overgrowth      = 0
     SET max_dice_thrown = 0
+
     PATCH_IF "%class%" STR_EQ "fighter" BEGIN
-        total = 10
-        overgrowth = 3
+        total           = 10
+        overgrowth      = 3
         max_dice_thrown = 9
+
     END ELSE PATCH_IF "%class%" STR_EQ "rogue" BEGIN
-        total = 6
-        overgrowth = 2
+        total           = 6
+        overgrowth      = 2
         max_dice_thrown = 10
+
     END ELSE PATCH_IF "%class%" STR_EQ "cleric" BEGIN
-        total = 8
-        overgrowth = 2
+        total           = 8
+        overgrowth      = 2
         max_dice_thrown = 9
+
     END ELSE PATCH_IF "%class%" STR_EQ "wizard" BEGIN
-        total = 4
-        overgrowth = 1
+        total           = 4
+        overgrowth       = 1
         max_dice_thrown = 10
+        
     END
 
     PATCH_IF level <= max_dice_thrown BEGIN
@@ -35,19 +40,8 @@ BEGIN
     result = total
 END
 
-ACTION_IF zst_3060_silly_version BEGIN
-    COPY ~%MOD_FOLDER%/items/doodoohead~ ~override~
-    COPY_EXISTING ~sevpat01.cre~ ~override~
-        PATCH_FOR_EACH slot IN ~RRING~ ~LRING~ ~WEAPON1~ ~WEAPON2~ ~WEAPON3~ ~WEAPON4~ ~QITEM1~ ~QITEM2~ ~QITEM3~ ~QUIVER1~ ~QUIVER2~ ~QUIVER3~ ~SHIELD~ ~HELMET~ ~AMULET~ ~BOOTS~ ~CLOAK~ ~GLOVES~ ~ARMOR~ ~BELT~ BEGIN
-            ADD_CRE_ITEM ~ZSTWMNCR~ #0 #0 #0 ~NONE~ ~%slot%~
-        END
-        REMOVE_CRE_ITEM ~ZSTWMNCR~
-        //LPF ADD_CRE_EFFECT INT_VAR opcode=272 target=2 parameter1=6 parameter2=3 timing=1 STR_VAR resource = "" END
-
-END ELSE BEGIN
-    COPY_EXISTING ~sevpat01.cre~ ~override~
-        LPF CALCULATE_HP_VANILLA INT_VAR level = BYTE_AT(0x234) STR_VAR class = "fighter" RET result END
-        WRITE_SHORT 0x24 result
-        WRITE_SHORT 0x26 result
-        WRITE_BYTE  0x53 1
-END
+COPY_EXISTING ~sevpat01.cre~ ~override~
+    LPF CALCULATE_HP_VANILLA INT_VAR level = BYTE_AT(0x234) STR_VAR class = "fighter" RET result END
+    WRITE_SHORT 0x24 result
+    WRITE_SHORT 0x26 result
+    WRITE_BYTE  0x53 1
