@@ -6,29 +6,43 @@ END
 
 ACTION_IF zst_1545_constitution_bonuses BEGIN
     COPY ~%MOD_FOLDER%/2da/tweaks/HPCONBON.2da~ ~override~
+        PRETTY_PRINT_2DA
 END
 
 ACTION_IF zst_1545_dexterity_bonuses BEGIN
     COPY ~%MOD_FOLDER%/2da/tweaks/DEXMOD.2da~ ~override~
+        PRETTY_PRINT_2DA
 END
 
 ACTION_IF zst_1545_lore_class_bonuses BEGIN
     COPY ~%MOD_FOLDER%/2da/tweaks/LORE.2da~ ~override~
+        PRETTY_PRINT_2DA
 END
 
 ACTION_IF zst_1545_lore_stat_bonuses BEGIN
     COPY ~%MOD_FOLDER%/2da/tweaks/LOREBON.2da~ ~override~
+        PRETTY_PRINT_2DA
 END
 
 ACTION_IF zst_1545_racethac0_bonuses BEGIN
     COPY ~%MOD_FOLDER%/2da/tweaks/RACETHAC.2da~ ~override~
+        PRETTY_PRINT_2DA
 END
 
 ACTION_IF zst_1545_strength_bonuses BEGIN
     COPY ~%MOD_FOLDER%/2da/tweaks/STRMOD.2da~ ~override~
+        PRETTY_PRINT_2DA
     COPY ~%MOD_FOLDER%/2da/tweaks/STRMODEX.2da~ ~override~
+        PRETTY_PRINT_2DA
 END
 
 ACTION_IF zst_1545_weapon_style_bonuses BEGIN
     COPY ~%MOD_FOLDER%/2da/tweaks/STYLBONU.2da~ ~override~
+        PRETTY_PRINT_2DA
 END
+
+ACTION_IF zst_1545_proficiency_bonuses BEGIN
+    COPY ~%MOD_FOLDER%/2da/tweaks/WSPECIAL.2DA~ ~override~
+        PRETTY_PRINT_2DA
+END
+

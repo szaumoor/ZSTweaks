@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1311~ = 1
 END
 
-ACTION_IF !(GAME_IS "iwdee") BEGIN
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
     COPY ~%MOD_FOLDER%/items/krotan~ ~override~
     COPY_EXISTING ~BLUN11.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6150) END

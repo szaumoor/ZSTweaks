@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_2170~) BEGIN
+  FAIL ~Script already included: zs_comp_2170~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_2170~ = 1
+END
+
 ACTION_IF !(MOD_IS_INSTALLED "ZS_ShadowdanverOverhaul.tp2" "300") BEGIN
     LAF generate_rogue_thac0 STR_VAR class1 = ~thief~ class2 = ~mage_thief~ END
 

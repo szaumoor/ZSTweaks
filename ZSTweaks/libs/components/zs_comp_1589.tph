@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1589~ = 1
 END
 
-ACTION_IF !(GAME_IS "iwdee") BEGIN
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
     COPY ~%MOD_FOLDER%/items/rashad~ ~override~
     COPY_EXISTING "ZSTWRASH.SPL" ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1=RESOLVE_STR_REF(@7581) END

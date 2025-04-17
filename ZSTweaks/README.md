@@ -14,7 +14,6 @@ These are the available changes, all enabled by default, but can each be disable
 - Symbol, Pain: The save will now be made at -4, not 0, similar to other Symbol spells
 - Symbol, Hopelessness: Other than the save, which is made at -2, instead of -4, it overlaps heavily with Symbol, Stun. The stun lasts much longer, and it only affects enemies, it also dispels Emotion, Hope, so what's the point or ever using the other one, as long as you can help it? This spell will now dispel Emotion, Hope, Bless, Chant, Prayer, Recitation, and other vanilla spells that grant any kind of morale, luck, or combat bonuses. It will no longer inflict Stun, but Sleep, and will do so at the usual -4 save penalty.
 - Nerf enemy symbol spells: These spells exist so the enemies don't kill, stun, or scare themselves with them. But funnily enough they also have effects that last more than double compared to the player-usable ones. I hate that sort of artificial disparity / difficulty, so now the durations will match.
--
 
 **Component 1120:** Make some weapon categories incur backstab penalties for balance
 
@@ -215,30 +214,30 @@ If you want this component working for other mod-added weapons that cause vorpal
 
 This component has a series of optional components that tweak the following (consult the config file to allow or disallow -- all allowed by default):
 
-- Constitution bonuses
+- **Constitution** bonuses
   - It makes the HP bonus progression more streamlined, similar to NWN and 3.5e. The HP bonus is now 1 HP per 2 levels, starting at 12. It grows up to +7 HP at constitution 24 and 25.
   - Non-fighter classes also get a HP bonus from 12 Constitution, however, it grows less, and less quickly, up to +4 at 20 Constitution. This still improves vanilla, where they can only get +2 at most at Constitution 16. +1 HP is granted at constitution 12-14, +2 at 15-16, +3 at 17-19, and +4 at 20+.
   - Regeneration by constitution starts at 18 constitution but it will be very slow. It starts at 1 HP every 300 seconds at 18, then 240, 180, 160, 140, 120, 90, and finally 60 seconds at 25 constitution.
   - Fatigue bonuses start at constitution 12 but and it only grows above vanilla values at 25 Constitution.
   - HP Penalties for constitution also start at 8 Constitution and increase every 2 Constitution below, except 1 Constitution, where it jumps from -4 to -5 directly.
-- Dexterity bonuses
+- **Dexterity** bonuses
   - Progression of AC and missile thac0 follows NWN style as well, with the exception that the +7 bonus is always received at 25 Dexterity. This encourages maxing out dexterity if the maximum bonus is desired.
   - Penalties also start early, at 9 Dexterity. This means for example that Keldorn will have a -1 penalty to ranged thac0 and his AC, since his Dexterity is a terrible 9.
-- Lore bonuses
+- **Lore** bonuses
   - Per class: Mages now get 5 lore points per level (from 3); Thieves get 4 lore points per level; Clerics, shamans, and druids get 3 lore points per level; paladins and rangers get 2 lore points per level. Fighters and bards are unchanged.
   - Per stats: The benefits and penalties are more streamlined, and the bonuses start at Wisdom or Intelligence 12. The maximum lore bonuses are unchanged, and the penalties increase less harshly, instead of jumping to -10 at 9 Wisdom or Intelligence, it decreases in a more gradual sequence.
 - THAC0 bonuses by race: The only change is that dwarves will get a +1 THAC0 bonus with axes.
-- Strength
+- **Strength** bonuses
   - THAC0 bonuses and penalties streamlined similar to NWN. Penalties start at 9 Strength, bonuses at 12. From Strength 23, bonuses increase by 1 per increase, up to +7.
   - Extraordinary strength does not add thac0 bonuses anymore.
   - Damage are also streamlined similar to NWN up to 18 strength, with +4 bonus. At 19 Strength, it jumps to +7, similar to vanilla. Extraordinary strength at 18 Strength adds up to +2 damage: 0-24 gives no bonus, 25-75 gives a +1 bonus, and anything above it gives a +2 bonus (overall bonus of +6).
   - Weight allowance was also streamlined and creatures with Strength <10 will be able to carry a bit more. For example, Imoen will now be able to carry 90 lb instead of 50. At much higher strength, the maximum you can carry has been generally decreased, as in vanilla it makes crazy jumps after 18 Strength (jumps from 200 to 500 -- with this tweak, it jumps to 400). Extraordinary strength grants +5 at 0, then +10, and gradually increases in jumps of 10, up to +100 at 18/100.
   - No changes to forcing locks open.
-- Weapon styles
+- **Weapon styles**
   - Two-handed
     - +0: -1 to Armor Class (no training means you deflect attacks worse)
     - +1: No Armor class penalty, +1 to damage, +1 to Speed Factor
-    - +2: +2 to damage, +4 to Speed Factor, critical rolls are 1 higher (i.e. 19-20)
+    - +2: +2 to damage, +4 to Speed Factor, critical rolls are require one point less to happen (i.e. default 19-20)
   - Single weapon
     - +0: -1 to speed factor (no training means you wield with less grace)
     - +1: +1 to damage, Armor Class, and Speed Factor, critical rolls are 1 higher (i.e. 19-20)
@@ -248,10 +247,16 @@ This component has a series of optional components that tweak the following (con
     - +1: All penalties removed, +1 to Armor Class vs. Missiles
     - +2: +1 to Armor Class, +3 to Armor Class vs. Missiles
   - Two-weapon style
-    - +0: -2 penalty to Armor Class (you don't have any training deflecting with 2 weapons), -1 to damage with right hand, -2 to damage with left hand, THAC0 for right and left have penalties of -4 and -6, respectively.
+    - +0: -2 penalty to Armor Class, -1 to damage with right hand, -2 to damage with left hand, THAC0 for right and left have penalties of -4 and -6, respectively (you don't have any training or using 2 weapons, the left hand suffering the biggest drawback).
     - +1: Damage penalty on left hand reduced to -1, thac0 penalties for right and left hand reduced to -2 and -4, respectively. Armor class penalty decreased to -1.
     - +2: Armor class, and Thac0 and Damage penalty for right hand removed
     - +3: Damage penalty for left hand removed, THAC0 penalty for left hand reduced to -2, Armor Class gets a +1 bonus
+  - **Weapon proficiencies**: This tiny overhaul addresses primarily something that has bothered me forever about proficiency progression, which is the weird jump in THAC0 from 2 proficiency points to 3. Therefore:
+    - 1 proficiency point: No penalty or bonus (vanilla)
+    - 2 proficiency points: +1 THAC0 and +2 Damage (vanilla)
+    - 3 proficiency points: +2 THAC0 and +3 Damage
+    - 4 proficiency points: +3 THAC0 and +4 Damage
+    - 5 proficiency points: +4 THAC0 and +5 Damage
 
 Overall, these changes may increase difficulty slightly, as creatures with player-usable classes may have a slight HP boost, and the same goes for strength bonuses, though this is compensated by the fact you get the same bonuses. Ditto for some of the proficiency changes.
 
@@ -1744,16 +1749,6 @@ Don't use this if you're using another overhaul for this ability, or an Assassin
 Self explanatory. It depends on the spell granting negative plane protection. As such, if different blackguard variants exist, as long as they use the same spell that grants them this passive feature, they will be affected by this.
 
 Additionally, it allows a certain enemy blackguard in SoD to perform backstabs on you if the conditions are met, even if a component in this mod is reducing the backstab damage to their weapon.
-
-**Component 2210:** Make the proficiency point benefits streamlined
-
-This tiny overhaul addresses primarily something that has bothered me forever about proficiency progression, which is the weird jump in THAC0 from 2 proficiency points to 3. Therefore:
-
-- 1 proficiency point: No penalty or bonus (vanilla)
-- 2 proficiency points: +1 THAC0 and +2 Damage (vanilla)
-- 3 proficiency points: +2 THAC0 and +3 Damage
-- 4 proficiency points: +3 THAC0 and +4 Damage
-- 5 proficiency points: +4 THAC0 and +5 Damage
 
 **Component 3500:** Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane
 

@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_100~ = 1
 END
 
-ACTION_IF !(GAME_IS "iwdee") BEGIN
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
     COPY_EXISTING ~SPPR304.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5000) END
         LPF ALTER_EFFECT INT_VAR match_savingthrow=2**0+2**24 special=2**8 END

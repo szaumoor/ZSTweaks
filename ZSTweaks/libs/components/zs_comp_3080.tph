@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_3080~) BEGIN
+  FAIL ~Script already included: zs_comp_3080~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_3080~ = 1
+END
+
 COPY_EXISTING ~CARRIO1.ITM~  ~override~
               ~GHOUL1.ITM~   ~override~
               ~GHAST1.ITM~   ~override~

@@ -20,7 +20,7 @@ ACTION_IF zst_101_fblade_undead BEGIN
 END
 
 ACTION_IF zst_101_fblade_dur_boost BEGIN
-    ACTION_IF !(GAME_IS "iwdee") BEGIN
+    ACTION_IF NOT GAME_IS "iwdee" BEGIN
         COPY_EXISTING ~SPPR206.SPL~ ~override~
             PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "101" OR group_component = 1 BEGIN
                 LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6630) END

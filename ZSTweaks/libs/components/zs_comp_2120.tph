@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_2120~) BEGIN
+  FAIL ~Script already included: zs_comp_2120~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_2120~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY ~%MOD_FOLDER%/class_kits/warcry~ ~override~
     COPY_EXISTING "SPCL908.SPL" ~override~
@@ -5,7 +11,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_HEADER INT_VAR projectile = 94 END
         LPF DELETE_EFFECT INT_VAR check_globals = 0 END
         LPF ADD_SPL_EFF_TGT INT_VAR pwr=0 rd=0 STR_VAR effects = ~op=326,p2=51,res=ZSTWWRC0;op=326,p2=49,res=ZSTWWRC1;op=215,res=SPWHIRL,tgt=1;op=174,res=WARCRY,tgt=1;op=321,res=%SOURCE_RES%,tgt=1;op=301,p1=1,tmg=0,dur=18,rd=0,tgt=1~ END
-    
+
 
     // patch fear removal effects to remove side effects from fear (movement speed reduction, etc)
     COPY_EXISTING ~SPPR108.SPL~ ~override~

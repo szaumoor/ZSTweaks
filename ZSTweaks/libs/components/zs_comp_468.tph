@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_468~ = 1
 END
 
-ACTION_IF !(GAME_IS "iwdee") BEGIN
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
     ACTION_IF zst_468_call_lightning_boost BEGIN
         COPY_EXISTING ~SPPR302.SPL~ ~override~
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7470) END

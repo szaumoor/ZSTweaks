@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1548~) BEGIN
+  FAIL ~Script already included: zs_comp_1548~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1548~ = 1
+END
+
 COPY ~%MOD_FOLDER%/items/voidweapons/ZSTWVD00.SPL~ ~override~
      ~%MOD_FOLDER%/items/voidweapons/ZSTWVD01.SPL~ ~override~
 

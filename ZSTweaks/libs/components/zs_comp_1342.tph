@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1342~ = 1
 END
 
-ACTION_IF !(GAME_IS "iwdee") BEGIN
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
     COPY ~%MOD_FOLDER%/items/protector_dryads~ ~override~
     COPY_EXISTING ~BOW08.ITM~ ~override~
         PATCH_IF GAME_IS "bgee" BEGIN

@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_230~ = 1
 END
 
-ACTION_IF !(GAME_IS "iwdee") BEGIN
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
     COPY_EXISTING ~SPPR416.SPL~ ~override~
         LPF SPL_REF_NAME RET cloak_fear_strref = result END
 

@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_360~) BEGIN
+  FAIL ~Script already included: zs_comp_360~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_360~ = 1
+END
+
 ACTION_IF zst_360_etheral_retribution BEGIN
     COPY_EXISTING ~SPPR751.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5210) END

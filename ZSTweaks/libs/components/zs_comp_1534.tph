@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1534~ = 1
 END
 
-ACTION_IF !(GAME_IS "iwdee") BEGIN // iwdee deliberately unsupported for now
+ACTION_IF NOT GAME_IS "iwdee" BEGIN // iwdee deliberately unsupported for now
     //icedust potion
     ACTION_IF FILE_EXISTS_IN_GAME ~WAND16.ITM~ BEGIN
         COPY_EXISTING ~WAND16.ITM~ ~override~

@@ -1,4 +1,10 @@
-ACTION_IF !(MOD_IS_INSTALLED "ZS_ShadowdanverOverhaul.tp2" "400") BEGIN
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_2180~) BEGIN
+  FAIL ~Script already included: zs_comp_2180~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_2180~ = 1
+END
+
+ACTION_IF NOT MOD_IS_INSTALLED "ZS_ShadowdanverOverhaul.tp2" "400" BEGIN
     LAF generate_rogue_thac0 STR_VAR class1 = ~bard~ END
 
     COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
