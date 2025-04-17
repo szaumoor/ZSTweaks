@@ -287,6 +287,7 @@
 @507 = ~Make Aid a party buff~
 @508 = ~Make Restoration-type spells restore stat draining by mind flayers and shadow-creatures~
 @509 = ~Make Silence 15ft Radius party-friendly~
+@510 = ~Make Righteous Wrath of the Faithful only cause some fatigue, instead of guaranteeing it, similar to Haste and restore the attack damage bonus~
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray and Sun Soulbeam Sun Soul Monks scale further and/or do more damage to undead"
@@ -5769,6 +5770,31 @@ Area of Effect: 15-ft. radius
 Saving Throw: 1/2
 
 By casting this spell, the priest deals 4d3 + 1/level points of damage to nearby enemies. A successful Save vs. Spell halves the damage. This spell has no effect on undead, constructs, or extraplanar creatures.~
+
+@8280 = ~Symbol, Pain
+(Conjuration/Summoning)
+Level: 7
+Sphere: Guardian
+Range: Visual range of the caster
+Duration: 11 rounds
+Casting Time: 3
+Area of Effect: 12-ft. radius
+Saving Throw: Neg.
+
+Symbol, Pain is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area of effect to make a Saving Throw vs. Spell at -4. Those who fail their Saving Throws are overwhelmed by pain, suffering a -4 penalty to their attack rolls, a -10% penalty to all damage inflicted, a -2 penalty to their Dexterity scores, and a -2 penalty to their Armor Class.~
+
+@8290 = ~Righteous Wrath of the Faithful
+(Enchantment/Charm)
+
+Level: 5
+Sphere: Combat
+Range: 0
+Duration: 1 round/level
+Casting Time: 8
+Area of Effect: 17-ft. radius
+Saving Throw: None
+
+This spell bestows a form of divine madness upon the priest's allies, improving their combat skills. All the priest's allies in the area of effect gain a +1 to attack rolls and Saving Throws, plus 8 bonus Hit Points for the duration of the spell (these Hit Points can take a target beyond <PRO_HISHER> Hit Point maximum). Allies of the same alignment, however, gain an extra attack every round (canceling haste), a +2 bonus to their attack rolls, damage rolls, and Saving Throws, and immunity to charm and hold spells. Similar to the Haste spell, anyone affected by Righteous Wrath of the Faithful will suffer extra fatigue at the end.~
 
 // patching other mods
 // item upgrade

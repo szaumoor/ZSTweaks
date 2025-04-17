@@ -28,6 +28,20 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
         BUT_ONLY IF_EXISTS
     END
 
+    ACTION_IF zst_443_pain BEGIN
+        ACTION_IF GAME_IS ~iwdee~ BEGIN
+            OUTER_TEXT_SPRINT symbol_pain ~SPPR714~
+        END ELSE BEGIN
+            OUTER_TEXT_SPRINT symbol_pain ~SPPR733~
+        END
+        COPY_EXISTING ~%symbol_pain%.SPL~ ~override~
+            LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8280) END
+            LPF ADD_SPL_EFF_TGT STR_VAR effects=~t=99,op=332,pwr=7,p1=-10,dur=66,stype=1~ END
+            LPF ALTER_EFFECT INT_VAR match_duration = 660 duration = 66 END
+            LPF ALTER_EFFECT INT_VAR check_globals = 0 match_savingthrow = 1 savebonus = "-4" END
+        BUT_ONLY IF_EXISTS
+    END
+
     ACTION_IF zst_433_nerf_npc_symbols BEGIN
         COPY_EXISTING ~SPWI898.SPL~ ~override~
                       ~SPWI899.SPL~ ~override~

@@ -10,9 +10,8 @@ The problem with these spells is that they promise power, but your little sickly
 
 These are the available changes, all enabled by default, but can each be disabled in the configuration file:
 
-- Symbol of Death: This spell is useless if the health of the enemy, which ordinarily you cannot know, is above that threshold, so it's fairly wasteful to use the spell unless the enemy is Near Death or the enemies are very weak anyway and easy to kill. As such, now the spell works for HP above 60, but with a bonus of +6, giving it at least some (small) chance of working at all times.
-- Symbol, Pain: The save will now be made at -4, not 0, similar to other Symbol spells
-- Symbol, Hopelessness: Other than the save, which is made at -2, instead of -4, it overlaps heavily with Symbol, Stun. The stun lasts much longer, and it only affects enemies, it also dispels Emotion, Hope, so what's the point or ever using the other one, as long as you can help it? This spell will now dispel Emotion, Hope, Bless, Chant, Prayer, Recitation, and other vanilla spells that grant any kind of morale, luck, or combat bonuses. It will no longer inflict Stun, but Sleep, and will do so at the usual -4 save penalty.
+- Symbol, Death: This spell is useless if the health of the enemy, which ordinarily you cannot know, is above that threshold, so it's fairly wasteful to use the spell unless the enemy is Near Death or the enemies are very weak anyway and easy to kill. As such, now the spell works for HP above 60, but with a bonus of +6, giving it at least some (small) chance of working at all times.
+- Symbol, Pain: The save will now be made at -4, not 0, similar to other Symbol spells. It will also reduce damage output by 10% for its duration. The duration seems rather silly, so it'll be reduced to 11 rounds instead of 11 turns.
 - Nerf enemy symbol spells: These spells exist so the enemies don't kill, stun, or scare themselves with them. But funnily enough they also have effects that last more than double compared to the player-usable ones. I hate that sort of artificial disparity / difficulty, so now the durations will match.
 
 **Component 1120:** Make some weapon categories incur backstab penalties for balance
@@ -1650,6 +1649,10 @@ Self-explanatory, plus it makes sense that these spells should be able to restor
 **Component 509:** Make Silence 15ft Radius party-friendly
 
 Self-explanatory. This will make it easier to manage.
+
+**Component 510:** Make Righteous Wrath of the Faithful only cause some fatigue, instead of guaranteeing it, similar to Haste and restore the attack damage bonus
+
+The attack damage bonus is missing for same-alignment allies, unlike what the description says. This fixes that. Additionally, it only causes 4 points of fatigue, similar to Haste, so it's a bit less inconvenient to use.
 
 
 </details>
