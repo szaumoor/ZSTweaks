@@ -1,18 +1,41 @@
-ACTION_IF !(GAME_IS "iwdee") BEGIN
-    COPY_EXISTING ~SPPR719.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5190) END
-        LPF ADD_SPL_EFF_TGT INT_VAR pwr=8 ip=0 STR_VAR effects=~op=55,p2=2,tmg=1,stype=4,sbonus=6~ END
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_443~) BEGIN
+  FAIL ~Script already included: zs_comp_443~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_443~ = 1
+END
 
-    OUTER_SET new_description = RESOLVE_STR_REF(@5200)
-    COPY_EXISTING ~SPWI817.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=new_description END
-        LPF ADD_SPL_EFF_TGT INT_VAR pwr=8 ip=0 STR_VAR effects=~op=55,p2=2,tmg=1,stype=4,sbonus=6~ END
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
 
-    COPY_EXISTING ~SCRLAO.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
-    BUT_ONLY IF_EXISTS
+    ACTION_IF zst_443_death BEGIN
+        COPY_EXISTING ~SPPR719.SPL~ ~override~
+            LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5190) END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 324 opcode = 318 END
+            LPF ADD_SPL_EFF_TGT INT_VAR pwr=8 ip=0 STR_VAR effects=~op=55,p2=2,tmg=1,stype=4,sbonus=6~ END
 
-    COPY_EXISTING ~SCRLAM.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
-    BUT_ONLY IF_EXISTS
+        OUTER_SET new_description = RESOLVE_STR_REF(@5200)
+        COPY_EXISTING ~SPWI817.SPL~ ~override~
+            LPF ALTER_SPELL INT_VAR ref_desc=new_description END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 324 opcode = 318 END
+            LPF ADD_SPL_EFF_TGT INT_VAR pwr=8 ip=0 STR_VAR effects=~op=55,p2=2,tmg=1,stype=4,sbonus=6~ END
+
+        COPY_EXISTING ~SCRLAO.ITM~ ~override~
+            LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
+        BUT_ONLY IF_EXISTS
+
+        COPY_EXISTING ~SCRLAM.ITM~ ~override~
+            LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
+        BUT_ONLY IF_EXISTS
+    END
+
+    ACTION_IF zst_433_nerf_npc_symbols BEGIN
+        COPY_EXISTING ~SPWI898.SPL~ ~override~
+                      ~SPWI899.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 96  duration = 42 END
+        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 102 duration = 42 END
+        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 108 duration = 48 END
+        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 112 duration = 48 END
+        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 120 duration = 54 END
+    END
+
+
 END

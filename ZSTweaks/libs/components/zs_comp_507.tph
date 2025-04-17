@@ -1,7 +1,7 @@
 COPY_EXISTING ~SPPR201.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@5260) END
     LPF ALTER_HEADER INT_VAR range=10 projectile = 160 END
-    
+
     PATCH_IF zst_507_disable_aidglow BEGIN
         LPF DELETE_EFFECT INT_VAR opcode=8 END
     END

@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1591~) BEGIN
+  FAIL ~Script already included: zs_comp_1591~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1591~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     ACTION_IF zst_1591_soul_reaver_nerf BEGIN
 

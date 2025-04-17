@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1342~) BEGIN
+  FAIL ~Script already included: zs_comp_1342~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1342~ = 1
+END
+
 ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY ~%MOD_FOLDER%/items/protector_dryads~ ~override~
     COPY_EXISTING ~BOW08.ITM~ ~override~

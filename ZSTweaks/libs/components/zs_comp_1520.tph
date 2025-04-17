@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1520~) BEGIN
+  FAIL ~Script already included: zs_comp_1520~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1520~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     ACTION_IF zst_1520_keldsword BEGIN
         COPY_EXISTING "NPSW03.ITM" ~override~

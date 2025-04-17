@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1200~) BEGIN
+  FAIL ~Script already included: zs_comp_1200~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1200~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING ~SPER12.ITM~ ~override~
         LPF remove_haste_immunity END

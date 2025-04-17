@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1312~) BEGIN
+  FAIL ~Script already included: zs_comp_1312~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1312~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY ~%MOD_FOLDER%/items/skullcrusher~ ~override~
     COPY_EXISTING ~BLUN18.ITM~ ~override~

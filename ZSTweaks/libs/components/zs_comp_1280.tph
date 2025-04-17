@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1280~) BEGIN
+  FAIL ~Script already included: zs_comp_1280~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1280~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
 
     ACTION_IF zst_1280_carsomyr_evil BEGIN

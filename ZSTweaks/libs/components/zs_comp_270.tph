@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_270~) BEGIN
+  FAIL ~Script already included: zs_comp_270~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_270~ = 1
+END
+
 ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY_EXISTING ~SPPR105.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5100) END
@@ -12,5 +18,5 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             LPF ALTER_EFFECT INT_VAR header = i savebonus = bonus END
             --bonus
         END
-    
+
 END

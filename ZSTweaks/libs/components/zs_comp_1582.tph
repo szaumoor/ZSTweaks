@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1582~) BEGIN
+  FAIL ~Script already included: zs_comp_1582~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1582~ = 1
+END
+
 ACTION_IF !(GAME_IS "iwdee") BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME "bdsw1h21.itm" BEGIN
         COPY ~%MOD_FOLDER%/items/vexation~ ~override~

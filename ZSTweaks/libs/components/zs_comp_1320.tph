@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1320~) BEGIN
+  FAIL ~Script already included: zs_comp_1320~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1320~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
 
     COPY_EXISTING ~BLUN30.ITM~  ~override~ // all the damn variations of flail of ages
@@ -16,7 +22,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF remove_haste_immunity END
         LPF ALTER_EFFECT INT_VAR match_opcode = 166 parameter1 = 15 END
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7760) END
-    
+
     COPY_EXISTING ~SPPR403.SPL~ ~override~
         LPF DELETE_EFFECT INT_VAR match_opcode=126 END
 END

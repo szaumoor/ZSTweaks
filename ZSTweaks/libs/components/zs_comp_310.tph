@@ -1,8 +1,14 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_310~) BEGIN
+  FAIL ~Script already included: zs_comp_310~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_310~ = 1
+END
+
 ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY_EXISTING ~SPPR606.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5150) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 122 parameter1 = 12 duration=300 END
-    
+
     COPY_EXISTING ~FIRESEED.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR unid_ref_desc=RESOLVE_STR_REF(@5160) ench=2 END
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 12 parameter1 = 5 dicesize = 8 dicenumber = 3 END

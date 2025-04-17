@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1340~) BEGIN
+  FAIL ~Script already included: zs_comp_1340~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1340~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY ~%MOD_FOLDER%/items/taralash~ ~override~
     COPY_EXISTING ~BOW22.ITM~ ~override~

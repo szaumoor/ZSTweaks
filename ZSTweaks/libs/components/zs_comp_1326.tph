@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1326~) BEGIN
+  FAIL ~Script already included: zs_comp_1326~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1326~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY ~%MOD_FOLDER%/items/maces_of_disruption~ ~override~
     COPY_EXISTING ~BLUN12.ITM~ ~override~

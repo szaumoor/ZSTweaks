@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1654~) BEGIN
+  FAIL ~Script already included: zs_comp_1654~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1654~ = 1
+END
+
 ACTION_IF !(GAME_IS "iwdee") BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME "bdboot03.itm" BEGIN
         COPY_EXISTING "bdboot03.itm" ~override~

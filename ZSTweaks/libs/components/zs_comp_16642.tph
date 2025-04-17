@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_16442~) BEGIN
+  FAIL ~Script already included: zs_comp_16442~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_16442~ = 1
+END
+
 COPY_EXISTING ~HELM18.itm~ ~override~
     LPF ITM_REF_UNAME RET ioun_strref = result END
 

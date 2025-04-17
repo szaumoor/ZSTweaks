@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_370~) BEGIN
+  FAIL ~Script already included: zs_comp_370~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_370~ = 1
+END
+
 OUTER_SET new_description = RESOLVE_STR_REF(@5220)
 COPY_EXISTING ~SPWI221.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=new_description animation=9 primary_type=7 excl_flags=2**10

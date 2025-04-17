@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1327~) BEGIN
+  FAIL ~Script already included: zs_comp_1327~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1327~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY "%MOD_FOLDER%/items/club_detonation" ~override~
     COPY_EXISTING ~BLUN26.ITM~ ~override~

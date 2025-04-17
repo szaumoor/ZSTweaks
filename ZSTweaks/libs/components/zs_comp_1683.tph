@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1683~) BEGIN
+  FAIL ~Script already included: zs_comp_1683~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1683~ = 1
+END
+
 ACTION_IF !(GAME_IS "iwdee") BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~bddagg3a.itm~ BEGIN
         COPY_EXISTING ~bddagg3a.itm~ ~override~
@@ -5,7 +11,7 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
             LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=42,p1=2,p2=3~ END
             LPF GET_DMG_TYPE STR_VAR type=~magic~ RET dmg = result END
             LPF ADD_ON_HIT_EFF INT_VAR spec=1024 STR_VAR effects=~op=12,dsize=2,dnum=1,p2=%dmg%;op=12,p1=2,p2=%dmg%,dsize=4,dnum=1,pro1=32~ END
-        
+
     END ELSE BEGIN
         ACTION_IF group_component = 0 BEGIN
             WARN "Gemblade not found in game files, skipping..."

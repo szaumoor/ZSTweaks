@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1361~) BEGIN
+  FAIL ~Script already included: zs_comp_1361~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1361~ = 1
+END
+
 COPY ~%MOD_FOLDER%/items/axes_crit~ ~override~
 COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
     LPF ITM_CAT RET cat = result END

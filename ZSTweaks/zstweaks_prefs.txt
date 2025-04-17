@@ -3,7 +3,10 @@
 //
 ////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-OUTER_SET _1538_jewelry_price = "150" // this tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted  half, you would type 50.
+OUTER_SET zst_433_death            = "1"
+OUTER_SET zst_433_nerf_npc_symbols = "1"
+
+OUTER_SET zst_1538_jewelry_price = "150" // this tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted  half, you would type 50.
 
 // variables below allow or disallow weapon categories to be modified by the Finesse component (Component 1450)
 // A value of 1 allows it, a value of 0 disallows it
@@ -82,7 +85,7 @@ OUTER_SET zst_160_bbod   = "1" // this allows the tweak to disable backstabs for
 OUTER_SET zst_160_goliro = "1" // this allows the tweak to disable backstabs for Iron Golem's fist
 
 OUTER_SET zst_145_luck_boost  = "1" // allows the boost to Luck's effects to come through
-OUTER_SET _145_luck_dur_boost = "1" // allows the boost to Luck's duration to come through
+OUTER_SET zst_145_luck_dur_boost = "1" // allows the boost to Luck's duration to come through
 
 OUTER_SET zst_441_tenser_thac0                = "1" // allows the tweak to Tenser's Transformation THAC0 tweak to happen
 OUTER_SET zst_441_tenser_apr                  = "1" // allows the tweak to Tenser's Transformation APR tweak to happen

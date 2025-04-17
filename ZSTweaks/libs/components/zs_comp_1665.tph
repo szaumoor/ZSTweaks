@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1665~) BEGIN
+  FAIL ~Script already included: zs_comp_1665~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1665~ = 1
+END
+
 ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY_EXISTING "HELM18.itm" ~override~ // Pearly white ioun stone
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7190) END

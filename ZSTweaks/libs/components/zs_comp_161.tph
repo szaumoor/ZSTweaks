@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_161~) BEGIN
+  FAIL ~Script already included: zs_comp_161~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_161~ = 1
+END
+
 ACTION_IF NOT MOD_IS_INSTALLED ~eefixpack.tp2~ "0" BEGIN
     ACTION_IF NOT GAME_IS "iwdee" BEGIN
         COPY_EXISTING ~SPWI518.SPL~ ~override~

@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1346~) BEGIN
+  FAIL ~Script already included: zs_comp_1346~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1346~ = 1
+END
+
 COPY_EXISTING ~AROW10.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7630) END
     LPF ALTER_EFFECT INT_VAR header_type = 2 match_opcode = 12 parameter1=7 special = (2**8 + 2**10) END

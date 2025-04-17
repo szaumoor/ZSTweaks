@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_170~) BEGIN
+  FAIL ~Script already included: zs_comp_170~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_170~ = 1
+END
+
 ACTION_IF !(GAME_IS "iwdee") BEGIN
     OUTER_SET new_description =RESOLVE_STR_REF(@7360)
     COPY_EXISTING ~SPWI913.SPL~ ~override~

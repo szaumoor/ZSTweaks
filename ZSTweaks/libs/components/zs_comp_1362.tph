@@ -1,3 +1,10 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1362~) BEGIN
+  FAIL ~Script already included: zs_comp_1362~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1362~ = 1
+END
+
+
 COPY ~%MOD_FOLDER%/items/hamaclub_ac~ ~override~
 ACTION_IF GAME_IS "bg2ee eet" BEGIN // misaligned index fix
      PRINT "Applying misaligned index fix to hamm06.itm (Dwarven Thrower +2)"

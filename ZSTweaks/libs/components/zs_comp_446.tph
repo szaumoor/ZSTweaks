@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_446~) BEGIN
+  FAIL ~Script already included: zs_comp_446~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_446~ = 1
+END
+
 ACTION_IF zst_446_fball_buff BEGIN
     OUTER_SET new_description_fireball = RESOLVE_STR_REF(@7520)
     COPY_EXISTING ~SPWI304.SPL~ ~override~

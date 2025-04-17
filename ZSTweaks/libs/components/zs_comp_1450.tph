@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1450~) BEGIN
+  FAIL ~Script already included: zs_comp_1450~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1450~ = 1
+END
+
 INCLUDE ~%MOD_FOLDER%/libs/zs_correct_exot_anims.tph~
 ADD_PROJECTILE ~%MOD_FOLDER%/pro/ZSTW_INP.PRO~
 ADD_PROJECTILE ~%MOD_FOLDER%/pro/ZSTW_IND.PRO~

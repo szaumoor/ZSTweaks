@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1300~) BEGIN
+  FAIL ~Script already included: zs_comp_1300~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1300~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY ~%MOD_FOLDER%/items/silver_sword~ ~override~
     COPY_EXISTING ~ZSTWSWSA.SPL~ ~override~

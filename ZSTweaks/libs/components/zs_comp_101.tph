@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_101~) BEGIN
+  FAIL ~Script already included: zs_comp_101~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_101~ = 1
+END
+
 ACTION_IF zst_101_fblade_undead BEGIN
     COPY ~%MOD_FOLDER%/spells/cleric/flame_blade~ ~override~
     COPY_EXISTING ~SPPR206.SPL~ ~override~

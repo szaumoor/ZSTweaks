@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1686~) BEGIN
+  FAIL ~Script already included: zs_comp_1686~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1686~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY ~%MOD_FOLDER%/items/life_stealer~ ~override~
     COPY_EXISTING ~DAGG20.ITM~ ~override~

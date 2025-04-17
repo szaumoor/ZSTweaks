@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_99~) BEGIN
+  FAIL ~Script already included: zs_comp_99~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_99~ = 1
+END
+
 OUTER_SET group_component = 1
 
 INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_100.tph~
@@ -15,7 +21,7 @@ INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_300.tph~
 INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_310.tph~
 INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_320.tph~
 INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_330.tph~
-ACTION_IF !(MOD_IS_INSTALLED "ZSTweaks" "443") AND !(MOD_IS_INSTALLED "ZSTweaks" "139") BEGIN // symbol not installed
+ACTION_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "443") AND !(MOD_IS_INSTALLED "ZSTweaks.tp2" "139") BEGIN // symbol not installed
     INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_340.tph~
 END
 INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_420.tph~

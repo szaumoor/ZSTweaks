@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1130~) BEGIN
+  FAIL ~Script already included: zs_comp_1130~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1130~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     WITH_SCOPE BEGIN
         COPY "%MOD_FOLDER%/items/boneblade" ~override~

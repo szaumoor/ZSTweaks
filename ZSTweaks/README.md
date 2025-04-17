@@ -6,6 +6,16 @@
 
 The problem with these spells is that they promise power, but your little sickly wizard is not a very good fighter at all. I think this promise should be more serious, and therefore, by default, all these weapons grant 2 APR by default.
 
+**Component 443:** Make "Symbol, X" spells slightly more powerful and rebalance the enemy versions
+
+These are the available changes, all enabled by default, but can each be disabled in the configuration file:
+
+- Symbol of Death: This spell is useless if the health of the enemy, which ordinarily you cannot know, is above that threshold, so it's fairly wasteful to use the spell unless the enemy is Near Death or the enemies are very weak anyway and easy to kill. As such, now the spell works for HP above 60, but with a bonus of +6, giving it at least some (small) chance of working at all times.
+- Symbol, Pain: The save will now be made at -4, not 0, similar to other Symbol spells
+- Symbol, Hopelessness: Other than the save, which is made at -2, instead of -4, it overlaps heavily with Symbol, Stun. The stun lasts much longer, and it only affects enemies, it also dispels Emotion, Hope, so what's the point or ever using the other one, as long as you can help it? This spell will now dispel Emotion, Hope, Bless, Chant, Prayer, Recitation, and other vanilla spells that grant any kind of morale, luck, or combat bonuses. It will no longer inflict Stun, but Sleep, and will do so at the usual -4 save penalty.
+- Nerf enemy symbol spells: These spells exist so the enemies don't kill, stun, or scare themselves with them. But funnily enough they also have effects that last more than double compared to the player-usable ones. I hate that sort of artificial disparity / difficulty, so now the durations will match.
+-
+
 **Component 1120:** Make some weapon categories incur backstab penalties for balance
 
 This reduces the backstab multiplier of some weapons that realistically would not be great for backstabs, which also includes pretty broken weapons when used for backstabs, such as the Staff of Ram.
@@ -1352,10 +1362,6 @@ Makes this spell achieve a THAC0 of 0 at max level, since the description clearl
 
 Finally, by default, it will only grant APR to non-fighter casters, as fighters already have the APR they need. This can be disabled in the configuration file.
 
-**Component 443:** Make Symbol of Death work with +6 saving throw bonus if above the 60 HP threshold
-
-This spell is useless if the health of the enemy, which ordinarily you cannot know, is above that threshold, so it's fairly wasteful to use the spell unless the enemy is Near Death or the enemies are very weak anyway and easy to kill. As such, now the spell works for HP above 60, but with a bonus of +6, giving it at least some (small) chance of working at all times.
-
 **Component 444:** Make Flesh to Stone use Petrification saves and optionally make some creatures immune to it like in IWD
 
 This makes this spell force a save vs. petrification instead of a save vs. spell. I think Flesh to Stone and Disintegrate are way too similar functionally, and it's almost always a better idea to use Flesh to Stone over Disintegrate (they're both even boosted equally if cast by a Transmuter). This affects the version that beholders use.
@@ -1500,10 +1506,6 @@ Additionally, much like IWDEE, blinded enemies are not affected, which is to be 
 **Component 330:** Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)
 
 It was always a fairly odd choice of level 7 spell. Some mods resolve this by moving it to lower levels. This is another way of resolving it. It will behave like Chaos, having a save penalty of -4 instead of -2.
-
-**Component 340:** Make Symbol of Death work with +6 saving throw bonus if above the 60 HP threshold
-
-This spell is useless if the health of the enemy, which ordinarily you cannot know, is above that threshold, so it's fairly wasteful to use the spell unless the enemy is Near Death or the enemies are very weak anyway and easy to kill. As such, now the spell works for HP above 60, but with a bonus of +6, giving it at least some (small) chance of working at all times.
 
 **Component 420** Make Armor of Faith also add a +2 AC bonus to make it useful at low levels
 

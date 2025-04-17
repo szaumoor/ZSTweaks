@@ -45,17 +45,12 @@
 // COMPONENTS
 /// General Item & Spell Tweaks
 @120 = "Make conjured magical weapons grant 2 APR by default"
+@443 = ~Make "Symbol, X" spells slightly more powerful and rebalance the enemy versions~
 @1120 = "Make some weapon categories incur backstab penalties for balance"
 @1121 = ~Make Flails and Morningstars always inflict a small amount of piercing damage~
 @1150 = "Make some weapon categories adjust their damage configuration"
-// @1160 = "Make Warhammers do a baseline damage of 1d5+1, not 1d4+1 (except hammers outside that range)"
-// @1350 = "Make Wakizashis and Ninja-Tos deal 2d4 instead of 1d8"
-// @1352 = "Make Wakizashis a piercing/slashing weapon"
 @1361 = ~Make axes deal extra damage equal to its base damage on critical hits~
 @1362 = ~Make maces, clubs, and hammers damage the target's Armor Class temporarily based on enchantment level~
-// @1370 = "Make Katanas deal 2d5 damage instead of 1d10"
-// @1400 = "Make Bastard Swords deal 1d8+1 damage by default"
-// @1430 = "Make Two-handed swords deal 1d9+1 damage by default, and 2d6 for 1d12 swords"
 @1435 = "Make Darts have a speed factor of 0"
 @1440 = "Make Daggers have general extra features to compensate for the low damage"
 @1450 = "Make some rogue weapons able to do more damage if wielded by pure thieves (Finesse)"

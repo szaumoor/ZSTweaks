@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1460~) BEGIN
+  FAIL ~Script already included: zs_comp_1460~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1460~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING "SPER10.ITM" ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END

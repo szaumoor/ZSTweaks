@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1319~) BEGIN
+  FAIL ~Script already included: zs_comp_1319~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1319~ = 1
+END
+
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
     COPY_EXISTING ~OHDHSWD.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6190) END
