@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_450~) BEGIN
+  FAIL ~Script already included: zs_comp_450~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_450~ = 1
+END
+
 ACTION_IF zst_450_light BEGIN
     ACTION_IF zst_450_cure_tweaks BEGIN
         COPY_EXISTING ~SPPR103.SPL~ ~override~

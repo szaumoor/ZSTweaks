@@ -21,9 +21,6 @@ INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_300.tph~
 INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_310.tph~
 INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_320.tph~
 INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_330.tph~
-ACTION_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "443") AND !(MOD_IS_INSTALLED "ZSTweaks.tp2" "139") BEGIN // symbol not installed
-    INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_340.tph~
-END
 INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_420.tph~
 INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_450.tph~
 INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_461.tph~

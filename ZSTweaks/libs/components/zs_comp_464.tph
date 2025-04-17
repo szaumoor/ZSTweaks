@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_464~) BEGIN
+  FAIL ~Script already included: zs_comp_464~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_464~ = 1
+END
+
 ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY_EXISTING ~SPPR611.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7420) END
@@ -5,5 +11,5 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode=261 parameter1=1 END
         LPF CLONE_EFFECT INT_VAR match_opcode=261 parameter1=0 END
         LPF CLONE_EFFECT INT_VAR match_opcode=261 parameter1=5 END
-    
+
 END

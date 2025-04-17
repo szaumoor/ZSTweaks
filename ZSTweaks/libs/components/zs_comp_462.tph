@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_462~) BEGIN
+  FAIL ~Script already included: zs_comp_462~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_462~ = 1
+END
+
 ACTION_IF !(GAME_IS "iwdee") BEGIN
     COPY_EXISTING ~SPPR106.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7400) END
@@ -5,5 +11,5 @@ ACTION_IF !(GAME_IS "iwdee") BEGIN
         LPF ALTER_EFFECT INT_VAR check_globals=0 header=0 resist_dispel=0 END
         LPF GET_DMG_TYPE STR_VAR type=~missile~ RET missile = result END
         LPF CLONE_EFFECT INT_VAR match_opcode=12 parameter2="%missile%" END
-    
+
 END
