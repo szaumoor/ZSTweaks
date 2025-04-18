@@ -468,13 +468,13 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
 
     COPY_EXISTING ~SPWISH32.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize=7 parameter1 = 20 END
-        LPF ADD_SPL_EFF_TGT INT_VAR t=99 ip=0 pwr=8 p2=105 STR_VAR effects=~op=324,p2=55;op=324,p1=%elemental_air%;op=324,p1=%elemental_earth%;op=324,p1=%elemental_fire%~ END
+        LPF ADD_SPL_EFF_TGT INT_VAR t=99 ip=0 pwr=9 p2=105 STR_VAR effects=~op=324,p2=55;op=324,p1=%elemental_air%;op=324,p1=%elemental_earth%;op=324,p1=%elemental_fire%~ END
         LPF ADD_SPELL_EFFECT // damage for water elementals
             INT_VAR
                 insert_point = 1
                 target = 4
                 opcode = 177
-                power = 8
+                power = 9
                 parameter1 = 219
                 parameter2 = 5
                 timing = 1
@@ -488,7 +488,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
                 insert_point = 2
                 target = 4
                 opcode = 177
-                power = 8
+                power = 9
                 parameter1 = 164
                 parameter2 = 4
                 timing = 1
@@ -502,7 +502,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
                 insert_point = 3
                 target = 4
                 opcode = 177
-                power = 8
+                power = 9
                 parameter1 = 7
                 parameter2 = 3
                 timing = 1
@@ -516,7 +516,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
                 insert_point = 4
                 target = 4
                 opcode = 318
-                power = 8
+                power = 9
                 timing = 1
                 parameter1 = 219
                 parameter2 = 105
@@ -529,7 +529,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
                 insert_point = 5
                 target = 4
                 opcode = 318
-                power = 8
+                power = 9
                 timing = 1
                 parameter2 = 11
                 resist_dispel = 1
@@ -541,7 +541,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
                 insert_point = 6
                 target = 4
                 opcode = 318
-                power = 8
+                power = 9
                 timing = 1
                 parameter1 = 7
                 parameter2 = 103
