@@ -42,7 +42,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
         BUT_ONLY IF_EXISTS
     END
 
-    ACTION_IF zst_433_nerf_npc_symbols BEGIN
+    ACTION_IF zst_443_nerf_npc_symbols BEGIN
         COPY_EXISTING ~SPWI898.SPL~ ~override~
                       ~SPWI899.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 96  duration = 42 END

@@ -3,9 +3,9 @@
 //
 ////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-OUTER_SET zst_433_death            = "1"
-OUTER_SET zst_433_pain             = "1"
-OUTER_SET zst_433_nerf_npc_symbols = "1"
+OUTER_SET zst_443_death            = "1"
+OUTER_SET zst_443_pain             = "1"
+OUTER_SET zst_443_nerf_npc_symbols = "1"
 
 OUTER_SET zst_1538_jewelry_price = "150" // this tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted  half, you would type 50.
 
