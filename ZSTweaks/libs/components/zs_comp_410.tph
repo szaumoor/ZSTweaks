@@ -7,20 +7,16 @@ END
 ACTION_IF NOT GAME_IS "iwdee" BEGIN
     COPY ~%MOD_FOLDER%/spells/wizard/horrid_wilting~ ~override~
     OUTER_SET new_description = RESOLVE_STR_REF(@6210)
-    COPY_EXISTING ~ohbwat01.CRE~ ~override~ // make sure existing water elementals are considered water elementals
+    OUTER_SET elemental_air = IDS_OF_SYMBOL(class ELEMENTAL_AIR)
+    OUTER_SET elemental_earth = IDS_OF_SYMBOL(class ELEMENTAL_EARTH)
+    OUTER_SET elemental_fire = IDS_OF_SYMBOL(class ELEMENTAL_FIRE)
+
+    COPY_EXISTING ~ohbwat01.CRE~ ~override~
+                  ~bdwe1str.CRE~ ~override~
+                  ~bdwe2str.CRE~ ~override~
+                  ~ELWATG01.CRE~ ~override~
         LPF ALTER_CRE INT_VAR class=219 END
     BUT_ONLY IF_EXISTS
-    COPY_EXISTING ~ELWATG01.CRE~ ~override~ // make sure existing water elementals are considered water elementals
-        LPF ALTER_CRE INT_VAR class=219 END
-    BUT_ONLY IF_EXISTS
-
-
-    ACTION_IF GAME_IS "eet bgee" AND FILE_EXISTS_IN_GAME "bdwe1str.CRE" AND FILE_EXISTS_IN_GAME "bdwe2str.CRE" BEGIN
-        COPY_EXISTING ~bdwe1str.CRE~ ~override~ // make sure existing water elementals are considered water elementals
-            LPF ALTER_CRE INT_VAR class=219 END
-        COPY_EXISTING ~bdwe2str.CRE~ ~override~ // make sure existing water elementals are considered water elementals
-            LPF ALTER_CRE INT_VAR class=219 END
-    END
 
     COPY_EXISTING ~SCRL9G.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
@@ -29,22 +25,12 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
     COPY_EXISTING ~SPWI812.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=new_description END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize=7 END
+
         FOR ( dicenumber = 16; dicenumber <= 20; ++dicenumber ) BEGIN
             LPF ALTER_EFFECT INT_VAR match_dicenumber = dicenumber parameter1 = dicenumber END
         END
-        LPF ADD_SPELL_EFFECT // immunity for undead and golems
-            INT_VAR
-                insert_point = 0
-                header = 1
-                target = 2
-                opcode = 324
-                power = 8
-                parameter2 = 55
-                timing = 1
-                resist_dispel = 1
-            STR_VAR
-                resource = ~SPWI812~
-        END
+
+        LPF ADD_SPL_EFF_TGT INT_VAR t=99 ip=0 pwr=8 p2=105 STR_VAR effects=~op=324,p2=55;op=324,p1=%elemental_air%;op=324,p1=%elemental_earth%;op=324,p1=%elemental_fire%~ END
         LPF ADD_SPELL_EFFECT // damage for water elementals
             INT_VAR
                 insert_point = 1
@@ -131,19 +117,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
             STR_VAR
                 resource = ~SPWI812~
         END
-        LPF ADD_SPELL_EFFECT // immunity for undead and golems
-            INT_VAR
-                insert_point = 0
-                header = 2
-                target = 2
-                opcode = 324
-                power = 8
-                parameter2 = 55
-                timing = 1
-                resist_dispel = 1
-            STR_VAR
-                resource = ~SPWI812~
-        END
+
         LPF ADD_SPELL_EFFECT // damage for water elementals
             INT_VAR
                 insert_point = 1
@@ -230,19 +204,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
             STR_VAR
                 resource = ~SPWI812~
         END
-        LPF ADD_SPELL_EFFECT // immunity for undead and golems
-            INT_VAR
-                insert_point = 0
-                header = 3
-                target = 2
-                opcode = 324
-                power = 8
-                parameter2 = 55
-                timing = 1
-                resist_dispel = 1
-            STR_VAR
-                resource = ~SPWI812~
-        END
+
         LPF ADD_SPELL_EFFECT // damage for water elementals
             INT_VAR
                 insert_point = 1
@@ -329,19 +291,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
             STR_VAR
                 resource = ~SPWI812~
         END
-        LPF ADD_SPELL_EFFECT // immunity for undead and golems
-            INT_VAR
-                insert_point = 0
-                header = 4
-                target = 2
-                opcode = 324
-                power = 8
-                parameter2 = 55
-                timing = 1
-                resist_dispel = 1
-            STR_VAR
-                resource = ~SPWI812~
-        END
+
         LPF ADD_SPELL_EFFECT // damage for water elementals
             INT_VAR
                 insert_point = 1
@@ -429,19 +379,6 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
                 resource = ~SPWI812~
         END
 
-        LPF ADD_SPELL_EFFECT // immunity for undead and golems
-            INT_VAR
-                insert_point = 0
-                header = 5
-                target = 2
-                opcode = 324
-                power = 8
-                parameter2 = 55
-                timing = 1
-                resist_dispel = 1
-            STR_VAR
-                resource = ~SPWI812~
-        END
         LPF ADD_SPELL_EFFECT // damage for water elementals
             INT_VAR
                 insert_point = 1
@@ -531,18 +468,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
 
     COPY_EXISTING ~SPWISH32.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize=7 parameter1 = 20 END
-        LPF ADD_SPELL_EFFECT // immunity for undead and golems
-            INT_VAR
-                insert_point = 0
-                target = 4
-                opcode = 324
-                power = 8
-                parameter2 = 55
-                timing = 1
-                resist_dispel = 1
-            STR_VAR
-                resource = ~SPWI812~
-        END
+        LPF ADD_SPL_EFF_TGT INT_VAR t=99 ip=0 pwr=8 p2=105 STR_VAR effects=~op=324,p2=55;op=324,p1=%elemental_air%;op=324,p1=%elemental_earth%;op=324,p1=%elemental_fire%~ END
         LPF ADD_SPELL_EFFECT // damage for water elementals
             INT_VAR
                 insert_point = 1

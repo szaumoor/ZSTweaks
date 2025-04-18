@@ -1348,7 +1348,7 @@ This allows you to be Lawful Evil and enjoy the same amount of HP bonus as other
 
 **Component 410:** Make Horrid Wilting actually more effective against plants and Water Elementals and increase minimum damage
 
-This makes the spell mirror the behavior in 5E/BG3, where plant and water-based creatures always take maximum damage with a Save vs. Spell at -2 (this penalty is missing in vanilla), halved on a save. Additionally, enemies that are not damaged by draining moisture are unaffected (undead and golems).
+This makes the spell mirror the behavior in 5E/BG3, where plant and water-based creatures always take maximum damage with a Save vs. Spell at -2 (this penalty is missing in vanilla), halved on a save. Additionally, enemies that are not damaged by draining moisture are unaffected (undead, golems, and non-water elementals).
 
 Finally, it modifies the dice size and damage bonus, such that instead of dealing (Level * 1d8), it deals (Level * 1d7 + 1). Ultimately, it deals the same maximum damage. The difference is that the minimum damage dealt will be higher, such that the damage range will be 40-160 at max level (vanilla is 20-160).
 
@@ -1652,7 +1652,7 @@ Self-explanatory. This will make it easier to manage.
 
 **Component 510:** Make Righteous Wrath of the Faithful only cause some fatigue, instead of guaranteeing it, similar to Haste and restore the attack damage bonus
 
-The attack damage bonus is missing for same-alignment allies, unlike what the description says. This fixes that. Additionally, it only causes 4 points of fatigue, similar to Haste, so it's a bit less inconvenient to use.
+The attack damage bonus is missing for same-alignment allies, unlike what the description says. This fixes that. Additionally, it only causes 4 points of fatigue, similar to Haste, so it's a bit less inconvenient to use. Finally, this fatigue can no longer be dispelled, same as Haste, which is a likely bug not yet addressed by the devs or the fixpack.
 
 
 </details>
