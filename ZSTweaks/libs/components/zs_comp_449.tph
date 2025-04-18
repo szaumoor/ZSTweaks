@@ -1,0 +1,16 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_449~) BEGIN
+  FAIL ~Script already included: zs_comp_449~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_449~ = 1
+END
+
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
+    OUTER_TEXT_SPRINT freezing_sphere ~SPWI628~
+END ELSE BEGIN
+    OUTER_TEXT_SPRINT freezing_sphere ~SPWI626~
+END
+
+COPY_EXISTING ~%freezing_sphere%.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8227) END
+    LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 special = (2**8) END
+BUT_ONLY_IF_IT_CHANGES

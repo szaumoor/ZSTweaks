@@ -1,0 +1,13 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1195~) BEGIN
+  FAIL ~Script already included: zs_comp_1195~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1195~ = 1
+END
+
+ACTION_IF GAME_IS "bg2ee eet" BEGIN
+    COPY_EXISTING ~BRAC20.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8300) END
+        LPF DELETE_EFFECT END
+        LPF ADD_SPL_EFF_TGT INT_VAR pwr=0 p2=2 STR_VAR effects=~op=146,p1=10,res=SPCL211;op=146,p1=10,res=SPIN102~ END
+        LPF ADD_EQUIPPED_EFFECT STR_VAR effects = ~op=272,p1=30,p2=3,res=ZSTWGHEA~ END
+END

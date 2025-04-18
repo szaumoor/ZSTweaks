@@ -539,6 +539,13 @@ The rod is conceptually quite interesting but generally underperforming. This co
 - **Flaming Long Sword +1** is renamed to Flaming Sword of Royal Might +3, becomes a +3 weapon, causes 1d4 fire damage per hit, and since it's "hypnotic" it has a 50% chance of causing Stun, and 50% change of causing asleep for 1 round. The save against it is now +2 instead of +5. Additionally, it makes it look like an actual flaming sword when held.
 - **Spear +3** is renamed to Spear of Royal Might +3, and it no longer has a Save vs. Spell bonus of +6 to cause 2d4 magic damage, now it has no bonus or penalty and causes 3d4 magic damage when save is failed.
 
+**Component 1195:** Make Gloves of Healing worth more than what you get by selling them
+
+This improves the gloves by adding the following:
+
+- +1 Casting level for paladins and clerics
+- 1 HP regeneration to the whole party every 5 rounds
+- The charge ability is now changed to a combination of Lay On Hands cast at level 10, and Slow Poison
 
 </details>
 
@@ -1418,6 +1425,14 @@ Lastly, this patches the Fireball explosions such that the god-awful EE explosio
 This makes this spell more similar to the 5E behavior, where the acid creates a splash zone. The splash zone will affect immediately adjacent enemies if they fail a save vs. Breath, without affecting the primary target, or allies, for convenience and to avoid modifying the normal strategy in the game when using this spell or meddling with enemy AI. The splash damage is equal to the base immediate damage of the spell, and it does not persist over time, only the primary target gets damage over time. This splash can be avoided with an Evasion check if this feature exists in the game.
 
 Additionally, the spell will bypass magic resistance, as it is conceived as conjured acid, not a magical effect. This behavior can be disabled in the configuration file.
+
+**Component 448:** Make Decastave at least grant proficiency with staff while it's held
+
+Self-explanatory. Small quality of life change.
+
+**Component 449:** Make Otiluke's Freezing Sphere deal half damage on save
+
+Self-explanatory. Most spells that deal damage only on a failed save are not very attractive. This will make it a better choice.
 
 </details>
 

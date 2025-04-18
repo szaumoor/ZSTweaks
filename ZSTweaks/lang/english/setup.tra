@@ -118,7 +118,7 @@
 @1678 = ~Make Senses of the Cat imbue the user of more cat-like features~
 @1679 = ~Make the Horn of Kazgaroth more useful and the self-damage more unique~
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
-@3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane~
+@1195 = ~Make Gloves of Healing worth more than what you get by selling them~
 
 /// DAGGER TWEAKS
 @1000 = "Make throwing poisoned daggers less rare and more likely to poison enemies"
@@ -254,6 +254,8 @@
 @445 = ~Make Bigby's spells more powerful~
 @446 = ~Make Fireball spells slightly scale more up to level 20 andan optional better explosion animation~
 @447 = ~Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance~
+@448 = ~Make Decastave at least grant proficiency with staff while it's held~
+@449 = ~Make Otiluke's Freezing Sphere deal half damage on save~
 
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
@@ -288,6 +290,7 @@
 @508 = ~Make Restoration-type spells restore stat draining by mind flayers and shadow-creatures~
 @509 = ~Make Silence 15ft Radius party-friendly~
 @510 = ~Make Righteous Wrath of the Faithful only cause some fatigue, instead of guaranteeing it, similar to Haste and restore the attack damage bonus~
+@511 = ~Make Unfailing Endurance an area spell that cures the fatigue of the whole party~
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray and Sun Soulbeam Sun Soul Monks scale further and/or do more damage to undead"
@@ -301,6 +304,7 @@
 @2180 = ~Make the THAC0 progression of Bards better and more streamlined~
 @2190 = ~Make Poison Weapon improve twice more every 4 levels (level 17, and 21)~
 @2200 = ~Make Blackguards able to backstab as if they had a 2x multiplier~
+@3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane~
 @2210 = ~Make the proficiency point benefits streamlined~
 @2230 = ~Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value~
 @2231 = ~Make Dragon Disciples (Red) have automatic access to all fire-based spells and optionally increase fire damage by 5%~
@@ -319,7 +323,6 @@
 @3070 = ~Make lions and other cat creatures not slow as molasses~
 @3080 = ~Make creature on-hit effects that should be natural not behave as magical attacks that can be dispelled or magically resisted~
 @3090 = ~Make Shadow creatures slightly harder to damage, and make strength sapping last much longer so it's an actual inconvenience~
-
 
 // END-OF-INSTALL ORDER TWEAKS
 @1360 = "Make Light Crossbows get +1/2 more APR"
@@ -5568,6 +5571,31 @@ Saving Throw: Special
 
 By means of this spell, the wizard creates a magical arrow that speeds to its target unerringly. The arrow has no attack or damage bonus, but inflicts 2d4 points of acid damage (no save allowed), which may splash to adjacent enemies, causing the same amount of damage, unless they save vs. Breath at -2. For every 3 levels of the caster, the acid lasts for another round, unless somehow dispelled, inflicting another 2d4 points of damage each round. So at 3rd-5th level, the acid lasts 2 rounds, at 6th-8th level, the acid lasts for 3 rounds, and so on. Splashed enemies do not receive more damage over time.~
 
+@8225 = ~Decastave
+(Evocation)
+
+Level: 2
+Range: 0
+Duration: 3 rounds + 1 round/level
+Casting Time: 2
+Area of Effect: The caster
+Saving Throw: None
+
+This spell creates a staff of force in the caster's hand. It is treated as a magical weapon, doing 1d6 Hit Points of damage per hit, and it can hit creatures that require +1 weapons to hit. The staff also has the power to drain a target of 1d2 Hit Points on every strike. These Hit Points are added to the caster's, but they can only heal damage the caster has taken; they will not raise <PRO_HISHER> Hit Points beyond <PRO_HISHER> normal maximum.~
+
+
+@8227 = ~Otiluke's Freezing Sphere
+(Alteration, Evocation)
+
+Level: 6
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+This spell fires an orb of cold at a creature that inflicts 1d4+2 points of cold damage per level of the caster or half if they succeed when saving vs. Spell.~
+
 
 @8230 = ~Wall of Moonlight
 (Invocation)
@@ -5581,6 +5609,19 @@ Area of Effect: 8 ft. long, 2 ft. wide wall
 Saving Throw: None
 
 This spell invokes a shimmering tapestry of blue-white force. This wall is intangible, requiring no physical anchor, and can easily be passed through. Evil creatures passing through the wall take 2d8+4 magic damage; undead creatures take 3d8+6 (evil undead would take 5d8+10). Additionally, affected creatures must save vs. Spell or be blinded by 1 round and repulsed backwards with a 40% chance of being knocked to the ground for half a round. A creature that has passed through the wall can only be affected by it once per round. These effects cannot be stopped by Magic Resistance.~
+
+@8235 = ~Unfailing Endurance
+(Necromancy)
+
+Level: 4
+Sphere: Necromantic
+Range: Touch
+Duration: Instant
+Casting Time: 2 rounds
+Area of Effect: 1 creature and allies around them
+Saving Throw: None
+
+This spell restores the stamina of the creature and all allies around them, eliminating any fatigue.~
 
 @8240 = ~Lesser Restoration
 (Necromancy)
@@ -5795,6 +5836,21 @@ Area of Effect: 17-ft. radius
 Saving Throw: None
 
 This spell bestows a form of divine madness upon the priest's allies, improving their combat skills. All the priest's allies in the area of effect gain a +1 to attack rolls and Saving Throws, plus 8 bonus Hit Points for the duration of the spell (these Hit Points can take a target beyond <PRO_HISHER> Hit Point maximum). Allies of the same alignment, however, gain an extra attack every round (canceling haste), a +2 bonus to their attack rolls, damage rolls, and Saving Throws, and immunity to charm and hold spells. Similar to the Haste spell, anyone affected by Righteous Wrath of the Faithful will suffer extra fatigue at the end.~
+
+@8300 = ~These gloves are usually given to novices of the Most Noble Order of the Radiant Heart. For anyone outside of the Order to wear these gloves is a rare honor.
+
+STATISTICS:
+
+Equipped abilities:
+– Casting level: +1 (paladins and priests only)
+– Passively heal 1 HP per 5 rounds everyone in the party
+
+Charge abilities:
+– May cast a combination of Lay on Hands and Slow Poison once per day at level 10
+  Special: Heals 20 Hit Points and cures poison as per the Slow Poison spell
+  Range: Touch
+
+Weight: 2~
 
 // patching other mods
 // item upgrade
