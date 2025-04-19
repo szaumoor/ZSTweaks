@@ -5853,6 +5853,73 @@ Charge abilities:
 
 Weight: 2~
 
+@8310 = ~This darksteel hammer has a rune of power inscribed upon its head and has many of the powers of a Mace of Disruption.
+
+STATISTICS:
+
+Equipped abilities:
+– Negative Plane Protection
+
+Combat abilities:
+– Undead take an extra 2d4+4 crushing damage
+– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
+  – Fiends: 95%
+  – Liches and demiliches: 80%
+  – Vampires and vampyres: 50%
+  – Spectres, ghosts, and other spectral creatures: 35%
+  – Mummies and revenants: 20%
+  – Wraiths: 5%
+  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time
+
+THAC0: +4
+Damage: 2d4+4 (crushing)
+Speed Factor: 0
+Proficiency Type: War Hammer
+Type: One-handed
+Requires:
+ 16 Strength
+
+Weight: 3~
+
+@8320 = ~The rune of Clangeddin is now inscribed on the head of this hammer, granting even greater powers to any who wield the weapon.
+
+STATISTICS:
+
+Equipped abilities
+– Negative Plane Protection
+– Immunity to fear
+
+Charge abilities:
+– Fire Giant Strength once per day
+  Strength: 22
+  Duration: 1 turn
+  Area of Effect: The user
+
+– Mass Cure once per day
+  Special: Heals party members 1d8+20 Hit Points
+  Area of Effect: 15-ft. radius
+
+Combat abilities:
+– Undead take an extra 2d4+5 crushing damage
+– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
+  – Fiends: 95%
+  – Liches and demiliches: 80%
+  – Vampires and vampyres: 50%
+  – Spectres, ghosts, and other spectral creatures: 35%
+  – Mummies and revenants: 20%
+  – Wraiths: 5%
+  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time
+
+THAC0: +5
+Damage: 2d4+5 (crushing)
+Speed Factor: 0
+Proficiency Type: War Hammer
+Type: One-handed
+Requires:
+ 16 Strength
+
+Weight: 2~
+
 // patching other mods
 // item upgrade
 @50000 = ~Ring of Elemental Mastery
