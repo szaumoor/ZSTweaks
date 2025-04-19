@@ -1,0 +1,24 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_451~) BEGIN
+  FAIL ~Script already included: zs_comp_451~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_451~ = 1
+END
+
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
+    COPY_EXISTING ~SPWI615.SPL~ ~override~
+                  ~SPDR601.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR id_ref_desc=RESOLVE_STR_REF(@8330) END
+        PATCH_FOR_EACH dicenum IN 6 7 8 9 10 BEGIN
+            LPF ALTER_EFFECT INT_VAR match_dicenumber = dicenum dicenumber = (dicenum + 2) END
+        END
+
+    COPY_EXISTING ~LIGHTCHA.PRO~ ~override~
+        WRITE_SHORT 0xa 35
+        WRITE_SHORT 0x14e 2
+        WRITE_SHORT 0x150 2
+        WRITE_SHORT 0x152 2
+        WRITE_LONG 0xc 1
+
+    COPY_EXISTING ~LIGHTCHA.PRO~ ~override~
+        WRITE_SHORT 0xa 25
+END

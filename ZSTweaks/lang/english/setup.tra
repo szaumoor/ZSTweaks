@@ -257,6 +257,7 @@
 @447 = ~Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance~
 @448 = ~Make Decastave at least grant proficiency with staff while it's held~
 @449 = ~Make Otiluke's Freezing Sphere deal half damage on save~
+@451 = ~Make Chain Lightning scale more strongly and spread faster to enemies~
 
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
@@ -5919,6 +5920,18 @@ Requires:
  16 Strength
 
 Weight: 2~
+
+@8330 = ~Chain Lightning
+(Invocation/Evocation)
+
+Level: 6
+Range: 40 ft.
+Duration: Instant
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: 1/2
+
+When the wizard casts Chain Lightning, arcs of electrical energy burst from <PRO_HISHER> fingertips. These brilliant arcs of lightning leap at all enemies near the caster, burning them with electrical damage. The lightning causes 2d6 plus 1d6 points of damage for every 2 levels of the caster. If the target of the lightning saves vs. Spell, only half damage is inflicted. Thus, a 12th-level wizard will cause 8d6 damage to a victim (4d6 if the victim makes <PRO_HISHER> Saving Throw vs. Spell).~
 
 // patching other mods
 // item upgrade
