@@ -1434,6 +1434,10 @@ Self-explanatory. Small quality of life change.
 
 Self-explanatory. Most spells that deal damage only on a failed save are not very attractive. This will make it a better choice.
 
+**Component 451:** Make Chain Lightning scale more strongly and spread faster to enemies
+
+This modifies the projectile so it spreads faster, making it less annoying. Additionally, the starting damage is now 8d6, increasing to 12d6 with with the same scaling as vanilla. Both things can be freely allowed or disallowed through the configuration file. Not available for IWDEE.
+
 </details>
 
 ---
