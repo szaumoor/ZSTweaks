@@ -1,0 +1,16 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_452~) BEGIN
+  FAIL ~Script already included: zs_comp_452~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_452~ = 1
+END
+
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
+    OUTER_TEXT_SPRINT icelance ~SPPR323~
+END ELSE BEGIN
+    OUTER_TEXT_SPRINT icelance ~SPPR327~
+END
+
+COPY_EXISTING ~%icelance%.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8350) END
+    LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=0 step_size=2 level_cap=15 damage_rolls = 1 min_level_alt = 5 END
+BUT_ONLY_IF_IT_CHANGES

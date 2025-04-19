@@ -1,0 +1,38 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_513~) BEGIN
+  FAIL ~Script already included: zs_comp_513~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_513~ = 1
+END
+
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
+    OUTER_TEXT_SPRINT tornado ~SPPR617~
+END ELSE BEGIN
+    OUTER_TEXT_SPRINT tornado ~SPPR616~
+END
+
+ACTION_IF MOD_IS_INSTALLED ~eefixpack.tp2~ ~0~ BEGIN
+    
+    COPY_EXISTING ~%tornado%.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8360) END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber=4 END
+        LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~%SOURCE_RES%~ END
+    BUT_ONLY IF_EXISTS
+
+END ELSE BEGIN
+
+    COPY_EXISTING ~%tornado%.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8360) END
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~%tornado%A.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber=4 END
+    BUT_ONLY IF_EXISTS
+
+END
+
+COPY_EXISTING ~whirlw.PRO~ ~override~
+    WRITE_SHORT 0x200 (THIS - 2**15)
+    WRITE_SHORT 0x244 0
+    WRITE_SHORT 0x246 0
+BUT_ONLY IF_EXISTS

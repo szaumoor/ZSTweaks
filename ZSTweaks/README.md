@@ -547,6 +547,17 @@ This improves the gloves by adding the following:
 - 1 HP regeneration to the whole party every 5 rounds
 - The charge ability is now changed to a combination of Lay On Hands cast at level 10, and Slow Poison
 
+**Component 1997:** Make a number of items without functional use become useful (all are optional)
+
+- Kuo-Toa's Blood: can be consumed to permanently improve THAC0, Armor Class vs. missile, saves vs. Breath by 1
+- Eyestalk of an Elder Orb: can be consumed to permanently increase Armor Class and saves vs. Petrification and Death by 1
+- Elden Brain's Blood: can be consumed to permanently improve the casting level (arcane and divine) and saves vs. Spell and Rod by 1
+
+**FAIR FAT FABULOUS WARNING ABOUT THE FIRST THREE:** Don't eat all three at once. One of them at least is needed for plot reason. Otherwise you'll have to fix it with save editing or console commands.
+
+- Mask of King Strohm III: now it protects vs. critical hits, increases Detect Illusion and Find Traps by 10. It has a charge ability to cast Oracle once per day.
+- Shadow Dragon Wardstone: It is now an ioun stone which grants immunity to Blindness. Shadow dragons and other shadow creatures incur in a -2 combat roll penalty towards the wearer. 5% hiding skill and shadowdancers are dark soul monks get a +3% damage resistance.
+
 </details>
 
 ---
