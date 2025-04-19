@@ -1,0 +1,21 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_512~) BEGIN
+  FAIL ~Script already included: zs_comp_512~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_512~ = 1
+END
+
+ACTION_IF GAME_IS "iwdee" BEGIN
+
+    COPY_EXISTING ~SPPR218.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8340) END
+        LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=0 step_size=2 level_cap=13 damage_rolls = 1 END
+    BUT_ONLY
+
+END ELSE BEGIN
+
+    COPY_EXISTING ~SPPR217.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8340) END
+        LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=0 step_size=2 level_cap=13 damage_rolls = 1 END
+    BUT_ONLY IF_EXISTS
+
+END

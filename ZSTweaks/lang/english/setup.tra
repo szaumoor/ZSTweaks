@@ -293,6 +293,7 @@
 @509 = ~Make Silence 15ft Radius party-friendly~
 @510 = ~Make Righteous Wrath of the Faithful only cause some fatigue, instead of guaranteeing it, similar to Haste and restore the attack damage bonus~
 @511 = ~Make Unfailing Endurance an area spell that cures the fatigue of the whole party~
+@512 = ~Make Alicorn Lance more effective by increasing damage by 1 dice every 2 levels, up to 8d6~
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray and Sun Soulbeam Sun Soul Monks scale further and/or do more damage to undead"
@@ -5932,6 +5933,19 @@ Area of Effect: Special
 Saving Throw: 1/2
 
 When the wizard casts Chain Lightning, arcs of electrical energy burst from <PRO_HISHER> fingertips. These brilliant arcs of lightning leap at all enemies near the caster, burning them with electrical damage. The lightning causes 2d6 plus 1d6 points of damage for every 2 levels of the caster. If the target of the lightning saves vs. Spell, only half damage is inflicted. Thus, a 12th-level wizard will cause 8d6 damage to a victim (4d6 if the victim makes <PRO_HISHER> Saving Throw vs. Spell).~
+
+@8340 = ~Alicorn Lance
+(Invocation)
+
+Level: 2
+Sphere: Combat
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell creates a silver-hued, partially ethereal lance shaped in the form of an alicorn (a unicorn horn). The caster chooses a target, and the alicorn lance instantaneously fires at it, inflicting 3d6 points of piercing damage plus 1d6 every 2 levels, up to 8d6, with a Save vs. Spell for half. Although the alicorn lance dissipates after it strikes, it always leaves a silvery radiance around the target that makes it easier to see and hit, giving it a -2 penalty to its Armor Class for 3 rounds.~
 
 // patching other mods
 // item upgrade
