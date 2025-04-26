@@ -256,8 +256,9 @@ ACTION_IF zst_450_critical BEGIN
 
         ACTION_IF zst_450_cause_tweaks BEGIN
             ACTION_IF MOD_IS_INSTALLED "setup-iwdification.tp2" "40" OR
-                  MOD_IS_INSTALLED "setup-stratagems.tp2" "1510"     OR
-                  GAME_IS "iwdee"
+                      MOD_IS_INSTALLED "setup-stratagems.tp2" "1510" OR
+                      MOD_IS_INSTALLED "dw_talents.tp2" "1510"       OR
+                      GAME_IS "iwdee"
             BEGIN
 
                 ACTION_IF GAME_IS "iwdee" BEGIN

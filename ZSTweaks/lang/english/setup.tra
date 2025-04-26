@@ -69,16 +69,19 @@
 @15392 = ~All bards and Thieves can~
 @15393 = ~All bards and Thieves can as long as they have the right stats depending on scroll type~
 @1544 = ~Make scrolls always cast at the character level regardless of class~
+@1547 = ~Make Protection from Undead scrolls less overpowered but still invaluable vs. undead~
 @1545 = ~Make the basic benefits and progression of various character stats more streamlined or interesting~
+@1546 = ~Make the different shield types more distinct and optionally change shield usability~
+@1547 = ~Make Protection from Undead scrolls less overpowered but still invaluable vs. undead~
 
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
 @1171 = ~Make Silver Dragon Scale also grant 40% cold resistance as you would expect~
-@1172 = ~Make Rings of Elemental control more likely to charm the elementals and add missing resistances~
+@1172 = ~Make Rings of Elemental Control more likely to charm the elementals and add missing resistances~
 @1173 = ~Make Ring of Gaxx's improved haste last 2 full rounds and not 10 seconds~
 @1174 = ~Make Heartwood Ring add 1 spell slot per level, as well as 1 HP/round regen~
-@1180 = "Make Ring of Danger sense defensively better and protect against backstabs"
+@1180 = "Make Ring of Danger Sense defensively better and protect against backstabs"
 @1316 = "Make the Mercykiller Ring more useful for rogues that like killing"
 @1317 = "Make the basic robes and Archmage robes slightly more remarkable"
 @1560 = ~Make Belt of Skillful Blade also increase piercing damage by 10%~
@@ -97,7 +100,7 @@
 @1659 = ~Make Helm of the Rock a bit more protective and commanding~
 @1661 = ~Make Cloak of the Sewers also protect against poison~
 @1662 = ~Make Montolio's Cloak grant a damage and thac0 bonus to rangers~
-@1663 = ~Make the Sandthief ring in BGEE work as in BG2EE (one use per day)~
+@1663 = ~Make the Sandthief Ring in BGEE work as in BG2EE (one use per day)~
 @1664 = ~Make all ioun stones and circlets protect against critical hits~
 @16640 = ~Affect all~
 @16641 = ~Only affect a selection of items~
@@ -119,7 +122,12 @@
 @1679 = ~Make the Horn of Kazgaroth more useful and the self-damage more unique~
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
 @1195 = ~Make Gloves of Healing worth more than what you get by selling them~
-@1997 = ~Make a number of items without functional use become useful (all are optional)~
+@1197 = ~Make a number of items without functional use become useful (all are optional)~
+@1198 = ~Make Ring of the Crusade (SoD) also grant a combat/damage roll bonus vs. demons and devils~
+@1203 = ~Make Girdle of Fortitude set Constitution to 18 on equip, instead of with a charge ability~
+@1204 = "Make Rhino Beetle Gear (SoD) provide more protection to non-crushing, and rebalance damage resistances"
+@1206 = ~Make Ring of Purity (SoD) also grant a combat bonuses vs. evil and grant a spell slot bonus to the good aligned~
+@1207 = ~Make Protector of the Second a special leather armor that is more powerful when used by rangers~
 
 /// DAGGER TWEAKS
 @1000 = "Make throwing poisoned daggers less rare and more likely to poison enemies"
@@ -160,6 +168,7 @@
 @1604 = ~Make Duskblade +2 more imbued with the essence of necromancy~
 @1606 = ~Make the Ravager's vorpal hit bound by saving throws with harsh penalties and rebalance effects~
 @1607 = ~Make Gram, the Sword of Grief able to become +6 and rebalance effects~
+@1608 = ~Make Aule's Staff +3 grant an extra attack per round to non-fighter wizards and sorcerers, inspired by the description~
 
 /// ONE-HANDED SWORDS
 @1125 = "Make Ninjato of the Scarlet available for non-monks and improve it slightly, especially for monks"
@@ -330,6 +339,7 @@
 @3070 = ~Make lions and other cat creatures not slow as molasses~
 @3080 = ~Make creature on-hit effects that should be natural not behave as magical attacks that can be dispelled or magically resisted~
 @3090 = ~Make Shadow creatures slightly harder to damage, and make strength sapping last much longer so it's an actual inconvenience~
+@3100 = ~Make Beetles more resistant to non-crushing weapons~
 
 // END-OF-INSTALL ORDER TWEAKS
 @1360 = "Make Light Crossbows get +1/2 more APR"
@@ -4972,82 +4982,62 @@ The character emits a dazzling burst of light that strikes at all other creature
 @7800 = ~Sun Soulray
 The character projects a blast of light from <PRO_HISHER> open palm, dealing 1d8 fire damage for every 2 caster levels (up to a maximum of 5d8 damage) to a single target. Undead creatures take an additional 6 points of damage (which increases by 2 every 2 caster levels). There is no Saving Throw against this ability.~
 
-// todo
-@7810 = ~The provenance of this dark purple robe has been lost in the mists of history, but a faint odor of stale magic lingers in the air around the threadbare garment. The one who wore it was clearly no stranger to the Weave. Closely examining the robe, you are able to pick out a stylized flame design woven into the fabric. It seems likely the intricate pattern was always subtle, but even were that not true, countless years of wear have rendered the flames all but invisible.
-
-STATISTICS:
-
-Equipped abilities:
-– Intelligence: +1
-– Lore: +10
-– Casting level: +2
-– Armor Class: 5
-
-Charge abilities:
-– Spell Sequencer once per day
-
-Weight: 3~
-
-
-//todo
 @7820 = ~This ring, designed for the hero Zachiira, is engraved with holy symbols. When Zachiira requested aid from King Strohm III, it was the king’s royal advisor, the great and powerful Theurgist Karlash Arnostognas, who made this item, in the hope that it would aid the hero in her battle against a demon vampire. Zachiira survived the encounter, but sadly her triumphal return was met with rather less celebration and rather more grief, as the good king was already dead when she arrived. Zachiira laid the holy artifact at the entrance to the king’s tomb, and it was there the relic was discovered by wandering thrill-seekers.
 
 STATISTICS:
 
 Equipped abilities:
-– Armor Class and Saving throws: +2 vs. evil creatures
-– Attack damage and THAC0 against evil creatures: +1
+– Armor Class: +2 vs. evil creatures
+– Attack damage and THAC0: +1 vs. evil creatures
 – Hit Points: +10
 – Chant
-– One extra spell slot for level 1 and 2 (good-aligned paladins only)
+– One extra divine spell slot for level 1 and 2 (good-aligned only)
 
 Weight: 0~
 
-
-// todo
 @7830 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
 
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +1, +3 vs. demons and devils (2+ and +4 for Cavaliers)
-– Saving Throws: +1, +3 vs. demons and devils (2+ and +4 for Cavaliers)
-– Attack damage and THAC0 against demons and devils: +2 (+3 for Cavaliers)
+– Armor Class: +1, +3 vs. demons and devils
+– Saving Throws: +1, +3 vs. demons and devils
+– Attack damage and THAC0: +2 vs. demons and devils
 
 
 Weight: 0~
 
-// todo
-@7840 = ~Constructed from a rhino beetle's sturdy shell, this armor offers its wearer excellent protection without impeding their motion to the same extent as traditional metal plate mail. The unusual material makes this suit of armor particularly effective against missile and slashing weapons.
+//TODO
+@7840 = ~Constructed from a rhino beetle's sturdy shell, this armor offers its wearer excellent protection without impeding their motion to the same extent as traditional metal plate mail. The unusual material makes this suit of armor particularly effective against all but crushing weapons.
 
 STATISTICS:
 
 Equipped abilities:
-– Missile Damage Resistance: +25%
-– Slashing Damage Resistance: +13%
+– Missile Damage Resistance: +18%
+– Slashing Damage Resistance: +12%
+– Piercing Damage Resistance: +8%
 
-Armor Class: 1 (-2 vs. slashing and missie, and 0 vs. piercing) // todo the change
+Armor Class: 1 (-2 vs. missile, -1 vs. slashing, 0 vs. piercing)
 Requires:
  8 Strength
 
 Weight: 25~
 
-// todo
-@7850 = ~The rhino beetle's carapace makes a most effective shield provided one can survive long enough to pry a piece off the creature. Lightweight but sturdy, this item makes a powerful argument for the premise that the best shields are found in nature, not the forge. The unusual material makes the shield particularly effective against missile weapons.
+@7850 = ~The rhino beetle's carapace makes a most effective shield provided one can survive long enough to pry a piece off the creature. Lightweight but sturdy, this item makes a powerful argument for the premise that the best shields are found in nature, not the forge. The unusual material makes the shield particularly effective against all but crushing weapons.
 
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +3, an extra +1 vs. slashing attacks, +2 vs. missile attacks
-– Missile Damage Resistance: +15%
+– Armor Class: +3, an extra +2 vs. missile attacks, and +1 vs. slashing attacks
+– Missile Damage Resistance: +12%
 – Slashing Damage resistance: +8%
+– Piercing Damage Resistance: +5%
 
 Requires:
  10 Strength
 
 Weight: 6~
 
-// todo
 @7860 = ~This shield was carried by a mercenary working with the Order of the Steel Fang. The warriors of the order were impressed with the mercenary's tenacity and courage. She charged into battle without hesitation and seemed to fight all the harder when she was wounded. When their quest was completed, the Order of the Steel Fang gifted a battleaxe to the mercenary as thanks for her service. In turn she gave the order her shield as a sign of respect. The shield stayed in the order for years until it was lost on a battlefield.
 
 STATISTICS:
@@ -5057,36 +5047,14 @@ Equipped abilities:
 – Fire Resistance: +25%
 
 Combat abilities:
-– When the wielder's Hit Points drop below 50%, <PRO_HESHE> gains +2 Strength and 15% physical damage resistance for 5 rounds
+– When the wielder's Hit Points drop below 50%, <PRO_HESHE> gains +2 Strength for 5 rounds and may not die from any physical injury for 1 round. The Strength benefit does not stack and the latter effect can only trigger once every turn.
 
 Requires:
  10 Strength
 
 Weight: 4~
 
-// todo
-@7870 = ~Legend has it that this elegant curving blade was forged deep beneath the sea by merfolk and its hilt bound in enchanted eelskin. The truth of the matter is more mundane. The blade was crafted in Iriaebor and given to a mercenary commander who protected cargo barges moving up and down the river Chionthar. Still, it is a finely made and serviceable weapon.
-
-STATISTICS:
-
-Equipped abilities:
-– Armor Class: +2 vs. elementals and mephits
-
-Combat abilities:
-– A critical hit against an elemental or mephit will instantly banish the creature to its home plane
-
-THAC0: +2, +4 vs. elementals and mephits
-Damage: 1d8+2, plus 4 vs. elementals and mephits
-Damage type: Slashing
-Speed Factor: 4
-Proficiency Type: Scimitar/Wakizashi/Ninjatō
-Type: One-handed
-Requires:
- 10 Strength
-
-Weight: 3~
-
-// todo
+// TODO
 @7880 = ~This wakizashi is finely made, but gaudy false gems have been glued on to its hilt. The weapon was procured by Bartleby, a local thug whose obsession with the continent of Kara-Tur has made him one of the most obnoxious mercenaries in the local taverns. He rambles for hours on how different the foreign culture is to that of the Sword Coast and prides himself on being a "city samurai," a title that is as offensive as it is undeserved.
 
 STATISTICS:
@@ -5094,7 +5062,7 @@ STATISTICS:
 Equipped abilities:
 – Armor Class: +1, +3 vs. slashing attacks (Kensai)
 
-THAC0: +1, +3 (Kensai)
+THAC0: +1, +2 (Kensai)
 Damage: 1d8+1 (piercing)
 Speed Factor: 2
 Proficiency Type: Scimitar/Wakizashi/Ninjatō
@@ -5104,54 +5072,15 @@ Requires:
 
 Weight: 2~
 
-// todo
-@7890 = ~This thin, nasty-looking blade was wielded by the gnomish Gardnersonson family in two Dragonspear Wars. Though delicate in appearance and obviously designed for a smaller than human hand, the weapon is extraordinarily effective when turned against ogres, giants, ettins, and other similarly sized creatures.
-
-STATISTICS:
-
-Equipped abilities:
-– Armor Class and Saving Throws: +2 vs. giant humanoids
-
-THAC0: +2, +4 vs. giant humanoids
-Damage: 1d4+2 (piercing), plus 4 vs. giant humanoids // todo fix fire damage
-Damage type: Piercing
-Speed Factor: 0
-Proficiency Type: Dagger
-Type: One-handed
-Requires:
- 3 Strength
-
-Weight: 1~
-
-// todo
-@7900 = ~This much-used but still razor-sharp blade was found in the chest of Ophyllis, a treasurer of the Ducal Palace in Baldur's Gate. While his position ensured that Ophyllis possessed many chests, he only used one to house his lungs, and it was in this particular chest the sword was placed. Ophyllis died an agonized, painful death, but not before he gave the sword to a <PRO_MANWOMAN> to whom he owed a deep personal debt. His mournful voice can still be heard by those who wield the blade.
-
-Equipped abilities:
-– Immunity to Command, Greater Command, and Power Word (any)
-
-Combat abilities:
-– 20% chance per hit of casting Deafness on the target
-
-STATISTICS:
-
-THAC0: +3
-Damage: 1d6+3 (piercing)
-Speed Factor: 0
-Proficiency Type: Short Sword
-Type: One-handed
-Requires:
- 4 Strength
-
-Weight: 2~
-
+// TODO
 @8000 = ~Power can corrupt even the noblest of mages, and the long-lived elves of Faerûn have seen what devastating consequences can occur when a mage loses control. This elegant longsword, its silver hilt decorated with clear blue gems, was crafted to deal with arcane spellcasters who have abused their gift. The sword assists any hunter who tracks down out-of-control mages, and has particular potency in the hands of wizard slayers and inquisitors.
 
 STATISTICS:
 
 Equipped abilities:
-– Saves vs. Spell: +4 (Wizard Slayers and Inquisitors), +2 (others)
 – Magic Resistance: +5%
 – Magic Damage Resistance: +10%, +25% for Wizard Slayers and Inquisitors
+– Saves vs. Spell: +4 (Wizard Slayers and Inquisitors), +2 (others)
 
 Combat abilities:
 – On a critical hit, the target will be affected by Dispel Magic, which always succeeds
@@ -5174,11 +5103,11 @@ STATISTICS:
 
 Combat abilities:
 Acts as a +2 weapon in all respects. However, it's more powerful against regenerating, cold-using, and undead creatures:
- – Werewolves, trolls: it acts as a +3 weapon, and deal 1 extra fire damage
- – Planetars, and devas: it acts as a +3 weapon, and deal 1 extra fire damage
- – Solars: acts as a +4 weapon, and deal 1 extra fire damage
- – Winter wolves and silver dragons: acts as a +4 weapon, and deal 2 extra fire damage
- – Undead: acts as a +5 weapon, and deal 3 extra fire damage.
+ – Werewolves, trolls: it acts as a +3 weapon, and deals 1 extra fire damage
+ – Planetars, and devas: it acts as a +3 weapon, and deals 1 extra fire damage
+ – Solars: acts as a +4 weapon, and deals 1 extra fire damage
+ – Winter wolves and silver dragons: acts as a +4 weapon, and deals 2 extra fire damage
+ – Undead: acts as a +5 weapon, and deals 3 extra fire damage.
 
 THAC0: +2
 Damage: 1d8+2, +2 fire damage
@@ -5197,11 +5126,11 @@ STATISTICS:
 
 Equipped abilities:
 – Off-hand THAC0: +2 (monks only)
+– +5% critical chances while holding this weapon (monks only)
 
 Combat abilities:
 – Attacks per round: +1
 – Hit target takes 12 points of poison over 2 rounds (Save vs. Death negates)
-– +5% critical chances while holding this weapon (monks only)
 
 THAC0: +3, +5 (Monks only)
 Damage: 1d8+3, +1 Poison damage
@@ -5225,14 +5154,14 @@ Equipped abilities:
 – Critical misses are no longer possible (Thieves only)
 
 Different kinds of benefits for backstabs are unlocked depending on the rogue wearing this suit:
-  – Crippling Attack: Slow for 1 round, and reduce Strength, Dexterity, and casting speed by 4 for 4 rounds if a Save vs. Death is failed (kitless Thief)
-  – Subduing Attack: Render the victim unconscious for 4 rounds if a Save vs. Death is failed. Additionally, 10 extra non-lethal damage will be inflicted. However, further damage will wake the victim up (Bounty Hunter and Stalker)
-  – Shadow Attack: Empowers self with shadow magic, increasing damage resistance by 5% for 2 rounds, with a 20% chance of making themselves invisible for 2 rounds, increasing –without stacking– damage by 2, and critical chances by 5% (Shadowdancer)
-  – Death Attack: Stun the victim for 1 round if a Save vs. Death is failed. After one round, the victim dies if they're 60 HP or under and a Save vs. Death is failed again. If the victim survives this, they take instead 2d6 poison damage and become more susceptible to the next Death attack, reducing their Saves vs. Death by 4 for 5 rounds (Assassin)
+  – Cripple: Slows the target for 1 round and reduces Strength, Dexterity, and casting speed by 4 for 4 rounds if the target fails a Save vs. Death (kitless thieves).
+  – Subdue: Knocks the target unconscious for 4 rounds if they fail a Save vs. Death. Additionally, inflicts 10 points of non-lethal damage. However, any further damage will wake the target (Bounty Hunter and Stalker).
+  – Beshadow: Harnesses shadow magic to enhance self-defense and offense. Grants 5% damage resistance for 2 rounds, with a 20% chance to become invisible for 2 rounds. During this time, damage increases by 2 and critical hit chances improve by 5% (Shadowdancer). These effects do not stack.
+  – Death Attack: Strikes the target with a lethal precision. If the target fails a Save vs. Death, they are stunned for 1 round. After the stun wears off, if the target has 60 Hit Points or less, they must make another Save vs. Death or die instantly. If the second save is successful, the target instead suffers 2d6 poison damage and becomes more vulnerable to subsequent Death Attacks, receiving a -4 penalty to Saves vs. Death for 5 rounds (Assassin).
 
 Charge abilities:
 – Expose Weakness once per day
-  Special: Target loses immunity to backstabs, if they had it, take 10% more damage from piercing and slashing attacks, suffering additionally a -4 penalty to Armor Class against that type of attacks.
+  Special: Removes the target's immunity to backstabs (if applicable), increases damage taken from piercing and slashing attacks by 10%, and imposes a -4 penalty to Armor Class specifically against those attack types.
   Duration: 4 rounds
 
 Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
@@ -5241,17 +5170,21 @@ Requires:
 
 Weight: 5~
 
-@8031 = "Crippling Attack Applied"
-@8032 = "Subduing Attack Applied"
-@8033 = "Shadow Attack Applied"
-@8034 = "Death Attack Applied"
+@8031 = "Cripple"
+@8032 = "Subdue"
+@8033 = "Beshadow"
+@8034 = "Death Attack"
 @8035 = ~Expose Weakness Applied~
 @8036 = ~Expose Weakness Lost~
 
-// martial staff todo
-@8040 = ~This humble staff radiates powerful magic, and was likely the simple-seeming weapon of a traveling mage or cleric. It would certainly prove more than ample for dealing with most threats encountered on the road.
+// todo
+@8040 = ~Aule's Staff +3~
+@8041 = ~This finely crafted staff was among the spoils taken from the invaders of Durlag's Tower. It is very deadly in combat, and was apparently the property of a spellcaster that enjoyed standing on the front lines. It appears to have a core of iron, yet it is comparable in weight to a normal weapon of its type. Part of the enchantment seems to come from the hide that strengthens the grip: Leather no doubt made from a battle-ready creature of some sort. With the tastes and inclinations of the attackers of the tower well documented, the hide could be almost anything... or anyone.
 
 STATISTICS:
+
+Equipped abilities:
+– Attacks per round: +1 (single-classed wizards and sorcerers only)
 
 THAC0: +3
 Damage: 1d6+3 (crushing)
@@ -5261,7 +5194,7 @@ Type: Two-handed
 Requires:
  5 Strength
 
-Weight: 4~
+Weight: 3~
 
 @8050 = ~This heavy mace was created for a very specific purpose: to slay undead. Any such creature hit by it not only feels the sting of the weapon, but also has a chance of being simply blasted from existence. There are legends that speak of a priest so holy a single glancing touch could send a vampire to oblivion, but whether the weapon empowered her or she empowered it is a topic for theologians.
 
@@ -5335,20 +5268,12 @@ Saving Throw: None
 
 When uttering the Curse spell, the caster lowers the morale of enemy creatures and any Saving Throws and attack rolls they make by 1. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster. Affected creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not.~
 
-
-// todo
 @8070 = ~This girdle greatly increases the wearer's Constitution. King Violos used it when leading an expedition against marsh trolls. He'd been severely sickened the past winter and was no longer the healthy man he once was. The belt gave extra years to his life and inspired his men to renew their confidence in their king once more.
 
 STATISTICS:
 
 Equipped abilities:
-– Users with less than 14 Constitution have their Constitution increased to 16
-– Users with 14 or more Constitution have their Constitution increased by 2
-
-Charge abilities:
-– Youthful Vigor once per day
-  Special: User regenerates 1 HP per 3 rounds
-  Duration: 5 hours
+– Constitution is set to 18
 
 Weight: 2~
 
@@ -5360,8 +5285,6 @@ Especialized thieves (single-classed) benefit more from this:
 – Bonus to critical hit chances is +15%
 – +2 Damage and THAC0
 – +1 Attack per round~
-
-
 
 @8090 = ~A Wand of Fear strikes terror into the heart of any creature within its target area. This panic is not universal, however, as the stout of heart have been known to resist its magic. Like all wands, the Wand of Fear can only be used a limited number of times before it is destroyed.
 
@@ -6026,6 +5949,300 @@ Equipped abilities:
 
 Weight: 1~
 
+@8390 = ~The Mist of Shadows were an elite group of elven Rangers that roamed the Cormanthor wood and were the bane of bandits and monsters alike. This particular armor was worn by Indeera Lakhan, one of the group's most highly decorated officers and second in command. The suit is named for her, though how it came to part her company is unknown.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1 bonus for rangers, elves, and half-elves
+– Hiding ability: +15% (rangers only)
+
+Armor Class: 6 (8 vs. piercing and missile)
+Requires:
+ 4 Strength
+
+Weight: 5~
+
+@8400 = ~Karajah was Calimshan's champion of pit fighting for a full decade, and seemingly unbeatable. His success, or so he claimed, was due to the mobility that his light armor afforded him. He may well have been unaware of the suit's other qualities, but his peers ignored his claims of ignorance when enchantments were discovered. The armor survived the subsequent beating, whereas Karajah did not.
+
+STATISTICS:
+
+Equipped abilities:
+– Movement rate increases by a factor of 2
+
+Armor Class: 5 (7 vs. piercing and missile)
+Requires:
+ 3 Strength
+
+Weight: 4~
+
+@8410 = ~Originally blessed by Shar, this armor has a long and interesting history. Only the greatest of thieves have ever owned this heavily enchanted armor. The essence of night has been woven into the dark set of armor so that it feels like normal armor but encloses the wearer in a mass of twisting shadows.
+
+STATISTICS:
+
+Equipped abilities:
+– Hide In Shadows: +20%
+– When the wearer is invisible, they move faster by a factor of 4
+
+Charge abilities:
+– Shadow Door cast at level 20 once per day
+  Special: Caster is under the effects of Improved Invisibility for 2 turns
+
+Armor Class: 3 (5 vs. piercing and missile)
+Requires:
+ 3 Strength
+
+Weight: 5~
+
+@8420 = ~This ghastly armor was taken from an orc camp destroyed by barbarians. Instead of standard metal rivets, like normal studded leather, this orc leather is instead laced with hundreds of fire-hardened bones. Finger bones, ribs, and skulls cover the armor, acting much like the traditional metal rivets. Powerful orcish enchantments give the armor special resistance to missile attacks, but its grotesque appearance tends to unsettle and alienate others.
+
+STATISTICS:
+
+Equipped abilities:
+– Charisma: -1
+– +10% resistance to missile damage (double if wearer is half-orc)
+
+Armor Class: 4 (2 vs. slashing, 3 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 7~
+
+@8430 = ~Enchanted ebony rivets adorn the black leather of this armor. Umberlee the Sea Queen granted this armor to Dami Darn, a rogue who slew the conjurer Looxil. The assassination pleased Umberlee, for Looxil had betrayed her in years past. Dami Darn died years later, a knife to the back from her successor in the thieves' guild.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +30%
+– Electric Resistance: +30%
+
+Armor Class: 3 (1 vs. slashing, 2 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 7~
+
+@8440 = ~This armor's namesake is a serpent only in manner, referring to the drow assassin Raroh. Poison was his trademark, and when he discovered this suit's susceptibility to venom, he gifted it to Avlorm, a promising novice assassin within his own guild. When Avlorm's power eventually threatened his own, Raroh easily dispatched him, thanks to the weakness of the armor he still wore.
+
+STATISTICS:
+
+Equipped abilities:
+– Save vs. Death: -2
+– All other saves: +1
+– Poison damage: +50%
+
+Charge abilities:
+– Poison Weapon once per day
+  Special: Poison your weapon as per the Assassin's ability for 5 rounds
+
+Armor Class: 2 (0 vs. slashing, 1 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 6~
+
+@8450 = ~This heavy and thick bear hide is all that remains of the fabled Aeger. Several hundred years ago, the Aeger, a giant bear, terrorized hundreds of small villages up and down the Sword Coast. The bear was invulnerable to fire, cold, or acid. Finally the young men and women of several villages banded together, forming a militia almost two hundred people strong. The Aeger was surrounded and finally slain. Less than a dozen villagers survived, and they carved the Aeger's hide amongst themselves. Out of one of the pieces this armor was created.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to confusion
+– Cold, Fire, and Acid Resistance: +15% (30% for barbarians)
+– Physical damage resistance: +3% (barbarians only)
+
+Armor Class: 3 (5 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 35~
+
+@8460 = ~Dark Lord Hertious, undead Warlord of Bane, wore this piece of armor for over five hundred years. During this time he was rumored to dwell in a castle somewhere within the Earthfast Mountains. How his armor moved to other lands without him is not certain, though the separation of the two was surely unpleasant.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to fear
+– Wearer may inflict Bane on hitting a target 15% of the time: -1 penalty to combat rolls, and damage rolls, and morale for 5 rounds. This effect stacks.
+
+Charge abilities:
+– Cast Horror once per day
+  Special: All enemies within the area of effect when this spell is cast must save vs. Spell or flee in terror
+  Duration: 1 turn
+
+Armor Class: 0 (-4 vs. slashing, -3 vs. piercing and missile)
+Requires:
+ 15 Strength
+
+Weight: 35~
+
+@8470 = ~This plate mail has been expertly crafted. Sheathed in the chitinous scales of the ankheg, it provides a greater degree of protection than traditional plate mail and is not susceptible to rust. As any world-weary adventurer will tell you, however, the best appreciated aspect of ankheg mail is its light weight and low encumbrance. Monsters come and go, but fatigue is a constant enemy.
+
+STATISTICS:
+
+Equipped abilities:
+– Acid Resistance: +20%
+
+Armor Class: 1 (-2 vs. slashing, 0 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 25~
+
+@8480 = ~Named by Adarius Shin, the Doomplate is deserving of its foreboding title. He had hoped to strike fear in his enemies, but Adarius set a grim precedent when he mysteriously died soon after donning the suit, just as every adventurer who has worn it since has done. It might be said, however, that most adventurers die in their armor and are not known for their longevity.
+
+STATISTICS:
+
+Equipped abilities:
+– Upon first equipping the armor, the wearer must make a saving throw vs. Death. Failing the save results in a permanent reduction of 1 point to both Constitution and saving throws vs. Death. If the save is successful, the armor instead grants a permanent bonus of 1 point to both Constitution and saving throws vs. Death. This effect becomes permanently bound to the wearer and will not transfer to anyone else, regardless of the outcome.
+
+Armor Class: 0 (-3 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 27~
+
+@8490 = ~Few suits of armor in all the realms are the equal of this full plate. All that remains of the origin of the Hart are folktales and legends. The most popular of these is that an impossible battle was once fought against an army of orcs surging through the Three Trees Pass. Arngor of the Oak led the armies of men and elves, and it is said that he dueled with the orc commander till the sun set and the land was bathed in a bloody mist. Finally the orc fell, but Arngor had sustained wounds too vast for any to save him. His blood soaked through the armor he wore, infusing it with his courage and nobility. Thus the Armor of the Hart became known to men.
+
+STATISTICS:
+
+Equipped abilities:
+– Every time the wearer is hit, there's a 5% chance it will be granted Armor of Faith (as per the spell) cast at level 10.
+– All attack damage vs. evil is increased by 1
+
+Charged abilities:
+– Cast Bless, as per the priest spell, three times per day
+  Duration: 6 rounds
+
+– Cast Chant, as per the priest spell, once per day
+  Duration: 1 turn
+
+– Cast Aid at level 10 once per day
+  Duration: 1 turn
+
+Armor Class: -2 (-6 vs. slashing, -5 vs. piercing and missile)
+Requires:
+ 15 Strength
+
+Weight: 45~
+
+@8500 = ~This robe was fashioned for Hayes, the traitorous husband of Telana, soon after he discovered his talents as a wild mage. Very wealthy at the time, Hayes commissioned Halruaan wizards to craft it with silk, expensive dyes, and enchantments that would complement his unique talents.
+
+Unfortunately, he wore it only twice: Its richness and clearly magical nature attracted the attention of the Red Wizards who soon pursued him. He gave up using magic unless it was absolutely necessary, hid the robe away, and started wearing a simple tunic. His wife salvaged the robe and passed it on to <CHARNAME>.
+
+STATISTICS:
+
+Equipped abilities:
+– Permanent Chaos Shield on wearer
+– Casting Speed: +1 bonus (wild mages only)
+
+Weight: 3~
+
+@8510 = ~Whether by design or through exposure to intense heat in battle, the chain links of this armor are coal black throughout. While legends usually speak of knights in shining armor facing great beasts, the fire resistant enchantment on this suit suggests equally great, if unheralded, battles with fire-breathing creatures.
+
+STATISTICS:
+
+Equipped abilities:
+– Saves vs. Breath: +2
+– Fire Resistance: +30%
+
+Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
+Requires:
+ 8 Strength
+
+Weight: 9~
+
+@8520 = ~Friends of Dekirh Fasthands, a bard who insisted on playing the rowdiest towns on the Sword Coast, gave him this suit of magical chain as a gift. The chain mail was given to protect Dekirh from the drunken spectators who often threw rotting produce, chairs, and even knives at Dekirh. The bard appreciated the gift but painted it with wild colors to better fit into his show.
+
+STATISTICS:
+
+Equipped abilities:
+– Does not prevent spellcasting or thieving abilities
+– Casting level: +1 (bards; +2 for Jesters)
+
+Armor Class: 1 (-1 vs. slashing, 3 vs. crushing)
+Requires:
+ 8 Strength
+
+Weight: 8~
+
+@8530 = ~The dark red metal used to make this chain is said to come from a hidden mine in the Cloudpeaks. At one time the Bloodway, a band of evil adventurers, all wore armor of this kind, but the other suits have long been lost.
+
+STATISTICS:
+
+Equipped abilities:
+– Piercing Resistance: +10%
+– Every kill while wielding this armor grants the wielder a +1 bonus to THAC0 and attack damage for 1 round
+
+Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
+Requires:
+ 8 Strength
+
+Weight: 7~
+
+@8540 = ~Instead of metal strips, this armor uses wyvern scales bound to a chain backing by means of a magical fire. The resulting armor is ash-gray in color and more flexible than standard splint mail. A ranger, Usher Skacan, made this armor after slaying several wyverns that were killing all the deer and elk in his forest.
+
+STATISTICS:
+
+Armor Class: 2 (0 vs. crushing, 1 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 18~
+
+@8550 = ~This was the armor of Seffer Ekr, and a sign of the goddess Mielikki's favor. She had rewarded the ranger's loyalty with the promise that he would never die in battle, and he defied death for many years, holding orcish hordes back from his home forest. A heart attack claimed him when his time was done, not an enemy's blade.
+
+STATISTICS:
+
+Equipped abilities:
+– Saving Throws: +1 (+2 for rangers)
+– +10 Hit Points (rangers only)
+
+Armor Class: 1 (-1 vs. crushing, 0 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 15~
+
+@8560 = ~Foik Morur demonstrated the effectiveness of these gloves at a community fair near Beregost several years back. He paid a local Archer to fire arrows at him. As the arrows approached, Foik's hands would move of their own accord, either knocking the arrow away or catching it. He earned more than a few pieces of gold for his troubles, and these earnings attracted some shadowy figures to Foik's tent that evening. The next morning, Foik was found dead and the gloves missing.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. missile attacks
+
+Weight: 2~ // todo
+
+@8570 = ~This dagger is a potent blade favored by assassins all across the realms. This particular dagger of venom was created for use by the Shadow Thieves of Amn. Every time it hits an opponent, it secretes a venom into the bloodstream of the creature. The venom works quickly and efficiently.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target suffers 1 point of poison damage per second for 15 seconds (Save vs. Poison negates)
+
+THAC0: +2
+Damage: 1d4+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 2~ // todo
+
+@8580 = ~A Protection From Undead scroll invokes a 3-ft. radius circle of protection around the target. It protects the person within from physical attacks as well as from effects often caused by undead such as paralysis, domination, and level drain. It will protect the user for 12 hours.
+
+STATISTICS:
+
+A single target receives the following bonuses for 12 hours:
+– +2 Armor Class vs. undead
+– Saves vs. Death/Poison/Paralysis: +2
+– Immunity to level drain and the paralytic touch of ghouls, ghasts, liches, and other undead
+– Immunity to domination attempts by vampires
+– Undead hitting the target will be rebuked, taking 1d4+1 magic damage (save vs. Spell to take half) and being forced to flee for 2 rounds if they fail their saving throw vs. Spell. Once affected, they may not be affected again for 1 turn but the damage always apply.
+
+Requires:
+ 9 Intelligence~
+
 // patching other mods
 // item upgrade
 @50000 = ~Ring of Elemental Mastery
@@ -6367,10 +6584,11 @@ Requires:
 
 Weight: 10~
 
-@99999 = ~Damage~ // for text patching
-@99998 = ~Speed Factor~ // for text patching
-@99997 = ~(piercing)~ // for text patching
-@99996 = ~Piercing~
-@99995 = ~Damage type~
-@99994 = ~(piercing or slashing, whichever is better)~
+@99992 = ~Armor Class: +~
 @99993 = ~Piercing or slashing, whichever is better~
+@99994 = ~(piercing or slashing, whichever is better)~
+@99995 = ~Damage type~
+@99996 = ~Piercing~
+@99997 = ~(piercing)~ // for text patching
+@99998 = ~Speed Factor~ // for text patching
+@99999 = ~Damage~ // for text patching

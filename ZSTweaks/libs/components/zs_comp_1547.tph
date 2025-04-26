@@ -1,0 +1,36 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1547~) BEGIN
+  FAIL ~Script already included: zs_comp_1547~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1547~ = 1
+END
+
+COPY "%MOD_FOLDER%/items/protection_undead" ~override~
+COPY_EXISTING ~SCRL09.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8580) END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 100 opcode = 219 END
+
+    PATCH_IF NOT GAME_IS ~iwdee~ BEGIN
+        LPF ALTER_EFFECT INT_VAR match_duration = 600 duration = 3600 END
+    END
+
+    PATCH_IF GAME_IS "iwdee" BEGIN
+        SET one_level_drained = 35498
+        SET two_levels_drained = 35497
+        SET three_levels_drained = 35496
+        SET four_levels_drained = 35472
+        SET five_levels_drained = 35495
+    END ELSE PATCH_IF GAME_IS "bgee" BEGIN
+        SET one_level_drained = 25802
+        SET two_levels_drained = 25803
+        SET three_levels_drained = 25804
+        SET four_levels_drained = 25805
+        SET five_levels_drained = 25806
+    END ELSE PATCH_IF GAME_IS "bg2ee eet" BEGIN
+        SET one_level_drained = 41495
+        SET two_levels_drained = 40968
+        SET three_levels_drained = 40969
+        SET four_levels_drained = 40979
+        SET five_levels_drained = 41616
+    END
+
+    LPF ADD_SPL_EFF_TGT INT_VAR t=99 dur=3600 STR_VAR effects = ~op=33,p1=2;op=139,p1=%one_level_Drained%;op=139,p1=%two_levels_drained%;op=139,p1=%three_levels_drained%;op=139,p1=%four_levels_drained%;op=139,p1=%five_levels_drained%;op=101,p2=216;op=206,res=SPIN883;op=318,res=GHOUL1;op=318,res=GHOULLOR;op=318,res=GHOULT;op=318,res=LICH02;op=232,p1=1,res=ZSTWPUN0~ END

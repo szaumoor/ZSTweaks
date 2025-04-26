@@ -259,6 +259,35 @@ This component has a series of optional components that tweak the following (con
 
 Overall, these changes may increase difficulty slightly, as creatures with player-usable classes may have a slight HP boost, and the same goes for strength bonuses, though this is compensated by the fact you get the same bonuses. Ditto for some of the proficiency changes.
 
+**Component 1546:** Make the different shield types more distinct and optionally change shield usability
+
+(Yet) Another thing that annoys me in the game is that there's not much difference to speak of between the different types of shields. Normally, medium shields provides AC bonus across the board, while Tower Shields add a bonus to missile, small shields lack missile bonus, and bucklers lack missile and piercing. It lacks more nuance that I would prefer and as such it's reworked in the following manner:
+
+- **Tower** Shields: The base armor class is always 1 point above other shields of their class. However, they're big and clunky, which means it also cause a -1 penalty to THAC0 and Saves vs. Breath. It also inflicts a penalty of -2 to Speed Factor and reduces movement speed by 20%.
+- Medium Shields: Inflict a -1 penalty to Speed Factor and Saves vs. Breath, and reduce movement speed by 10%.
+- Small Shields: At even enchantment level above 0, they compensate their lack of AC bonus vs. missile by 1. For example, a hypothetical +6 small shield would grant +6 Armor class, but only +3 vs. missile.
+- Bucklers: At even enchantment level above 0, they compensate their lack of AC bonus vs. piercing by 1. For example, a hypothetical +6 buckler would grant +6 Armor class, but only +3 vs. piercing. Additionally, the shields can be used to parry opponents 10% of the time when hit, inflicting if a save vs Breath is failed (enchantment level adds penalties) 1d2+bonus crushing damage, which levels non-massive opponents with a -15% damage susceptibility (if they aren't immune) and -2 armor class penalty for half a round. If my finesse component is installed with the buckler component included, thieves can do this 20% of the time instead.
+
+Optionally, there are also options in the configuration file to achieve the following:
+- Make all shields usable by all classes (off by default)
+- Only single-classed fighter classes can use Tower Shields (on by default)
+- Only fighter classes (single classed, multiclasses, or dual classed) can use Tower Shields (off by default)
+- Thieves and bards can use Small Shields (on by default)
+- Thieves and Bards can use Small and Medium Shields (off by default)
+- Wizards can use bucklers (on by default)
+
+**Component 1547:** Make Protection from Undead scrolls less overpowered but still invaluable vs. undead
+
+This scroll makes undead completely ignore you, which is frankly quite silly and not very interesting. It's like asking for cheesy gameplay. Instead, it does the following:
+
+- Undead will acknowledge you, but...
+- You're immune to vampiric domination attempts
+- You're immune to paralytic touches of ghouls, ghasts, and liches
+- You're immune to level drain
+- +2 bonus to saves vs. Death/Paralysis/Poison
+- Undead hitting the user will be rebuked, taking 1d4+1 magic damage (half if saved vs. Spell), and be scared away for 2 rounds if they fail their save. The latter effect can only affect them once per turn.
+- Lasts for 12 hours, similar to IWDEE
+
 </details>
 
 ---
@@ -293,7 +322,7 @@ It's pretty strange to limit it to 10 seconds. It's 2 full rounds now.
 
 This makes this ring significantly more useful for an Archdruid, adding 1 extra spell slot of every level and a slow regeneration effect as the nigh-timeless druidic legend you are.
 
-**Component 1180:** Make Ring of Danger sense defensively better and protect against backstabs
+**Component 1180:** Make Ring of Danger Sense defensively better and protect against backstabs
 
 This component grants the ring:
 
@@ -429,7 +458,7 @@ This makes the cloak grant additionally grant a Save vs. Poison bonus of +1, as 
 
 This makes this cloak more meaningful for rangers, even if they don't focus on dual-wielding combat style. Rangers get a +1 THAC0 and Damage while wearing it.
 
-**Component 1663:** Make the Sandthief ring in BGEE work as in BG2EE (one use per day)
+**Component 1663:** Make the Sandthief Ring in BGEE work as in BG2EE (one use per day)
 
 This makes this ring reusable instead of having limited charges.
 
@@ -447,8 +476,8 @@ This modifies a selection of vanilla ioun stones and circlets:
 - Pearly White Ioun Stone: This improves the trollish regeneration from 1 HP per 5 rounds to 1 HP per round
 - Golden Ioun Stone: Makes it more interesting for general use by improving not just intelligence but also saves vs. Spells by 1 and magic resistance by 10%
 - Obsidian Ioun Stone: Obsidian is brittle but hard. Other than increasing CON by 1, now it also improves AC against all except crushing by 2, and improves physical damage resistance to everything except crushing by 5%
-- Silver Gray Ioun Stone: Now it also improves WIS by 1, but it also improves lore by 15. Divine casters get one extra spell slot from level 1 to 5. Finally, druids and clerics get a +1 to casting speed
-- Circlet of Netheril: This makes it more useful and final for sorcerous classes by adding one extra spell slot for level 9 as well, as well as a +7% magic damage dealt bonus
+- Silver Gray Ioun Stone: Now it also improves WIS by 1 and lore by 15. Divine casters get one extra spell slot from level 1 to 5. Finally, druids and clerics get a +1 bonus to casting speed
+- Circlet of Netheril: This makes it more useful and final for sorcerous classes by adding one extra spell slot for level 9 as well, as well as a +7%  bonus to magic damage dealt
 - Eilistraee's Boon +1: Non-evil elves get +1 DEX
 
 **Component 1666:** Make Bracers of Blinding's Improved Haste effect last 1 turn and improve speed passively
@@ -553,10 +582,35 @@ This improves the gloves by adding the following:
 - Eyestalk of an Elder Orb: can be consumed to permanently increase Armor Class and saves vs. Petrification and Death by 1
 - Elden Brain's Blood: can be consumed to permanently improve the casting level (arcane and divine) and saves vs. Spell and Rod by 1
 
-**FAIR FAT FABULOUS WARNING ABOUT THE FIRST THREE:** Don't eat all three at once. One of them at least is needed for plot reason. Otherwise you'll have to fix it with save editing or console commands.
+**FAIR FAT FABULOUS WARNING ABOUT THE FIRST THREE:** Don't eat all three. One of them at least is needed for plot reason. Otherwise you'll have to fix it with save editing or console commands.
 
 - Mask of King Strohm III: now it protects vs. critical hits, increases Detect Illusion and Find Traps by 10. It has a charge ability to cast Oracle once per day.
 - Shadow Dragon Wardstone: It is now an ioun stone which grants immunity to Blindness. Shadow dragons and other shadow creatures incur in a -2 combat roll penalty towards the wearer. 5% hiding skill and shadowdancers are dark soul monks get a +3% damage resistance.
+
+**Component 1198:** Make Ring of the Crusade (SoD) also grant a combat/damage roll bonus vs. demons and devils
+
+Self-explanatory, the wearer will get a +2 bonus to combat and damage rolls vs. demons and devils.
+
+**Component 1206:** Make Ring of Purity (SoD) also grant a combat bonuses vs. evil and grant a spell slot bonus to the good aligned
+
+The ring now adds a +1 bonus to THAC0 and Damage vs. evil creatures, as well as 1 extra spell slot for levels 1 and 2 for the good aligned.
+
+**Component 1203:** Make Girdle of Fortitude set Constitution to 18 on equip, instead of with a charge ability
+
+This makes the belt generally more useful and frankly makes more sense if you consider the description.
+
+**Component 1204:** Make Rhino Beetle Gear (SoD) provide more protection to non-crushing, and rebalance damage resistances
+
+This follows the same philosophy as the tweak to beetle creatures. The armor now provides a 18% resistance to missile, 12% resistance to slashing, and the AC was slightly tweaked to reflect this theme.
+
+The shield does the same, providing a 12% resistance to missile, 8% resistance to slashing, and 5% resistance to piercing. It also provides a +1 AC bonus to piercing.
+
+**Component 1207:** Make Protector of the Second a special leather armor that is more powerful when used by rangers
+
+Following the theme of the description, it provides a bonus to rangers and elves:
+
+- +1 Armor Class if the wearer is a ranger, and also if they are an elf or half-elf. This stacks. This means effectively that an elven ranger would wear the armor as it it was a +4 leather armor.
+- +15% to hiding for rangers.
 
 </details>
 
@@ -1354,7 +1408,7 @@ Improves the usability of Death Fog as a "general purpose" damage dealer instead
 
 **Component 400:** Make Energy Drain drain 6 levels instead of 2
 
-2 levels of drain is unremarkable and a waste of a spell slot, particularly when the likely enemies to fight by the time you get this spell are fairly high level.
+2 levels of drain is unremarkable and a waste of a spell slot, particularly when the likely enemies to fight by the time you get this spell are fairly high level. Additionally, this makes the spell behave similarly to IWD, where outsiders, undead, and constructs are immune to it.
 
 **Component 405** Make Maze bypass Magic Resistance, like Imprisonment, and make Minotaurs immune to it
 
@@ -1884,6 +1938,15 @@ This component makes the following changes:
 - And a +2 bonus to their AC, whatever that is
 - Strength sapping from shadows, spirit trolls, spider wraiths and the like always lasts for 8 hours, making it more than an inconvenience. It's a real problem now if you get hit too often.
 
+**Component 3100:** Make Beetles more resistant to non-crushing weapons
+
+This component makes the beetles generally more resistant to anything that doesn't crush them. Arrows and bolts bounce off more often, and attempts to slash or pierce their caparaces are not very effective. Their resistances follow this pattern:
+
+- 60% resistance to missile damage, +3 Armor class bonus modifier
+- 45% resistance to slashing damage, +2 Armor class bonus modifier
+- 30% resistance to piercing damage, +1 Armor class bonus modifier
+- No resistance to crushing damage
+- Armor class vs. missile damage gets a -2 modifier
 
 </details>
 

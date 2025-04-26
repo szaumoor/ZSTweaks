@@ -1,0 +1,18 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1198~) BEGIN
+  FAIL ~Script already included: zs_comp_1198~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1198~ = 1
+END
+
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~bdring10.itm~ BEGIN
+        COPY_EXISTING ~bdring03.ITM~ ~override~
+            LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7830) END
+            LPF CLONE_EFFECT INT_VAR match_opcode=219 opcode = 178 special=2 END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 178 opcode = 179 END
+    END ELSE BEGIN
+        ACTION_IF group_component = 0 BEGIN
+            WARN "No bdring03.itm (Ring of the Crusade) found in the game"
+        END
+    END
+END

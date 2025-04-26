@@ -1,0 +1,35 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1204~) BEGIN
+  FAIL ~Script already included: zs_comp_1204~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1204~ = 1
+END
+
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~bdshld04.itm~ BEGIN
+        COPY_EXISTING ~bdshld04.ITM~ ~override~
+            LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7850) END
+            LPF ALTER_EFFECT INT_VAR match_opcode=89 parameter1=18 END
+            LPF CLONE_EFFECT INT_VAR match_opcode=89 opcode=86 parameter1=12 END
+            LPF CLONE_EFFECT INT_VAR match_opcode=89 opcode=88 parameter1=8 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 0 match_parameter2=8 parameter1=2 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 0 match_parameter2=4 parameter1=1 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 0 match_parameter2=2 parameter1=3 END
+    END ELSE BEGIN
+        ACTION_IF group_component = 0 BEGIN
+            WARN "No bdshld04.itm (Rhino Beetle Shield) found in the game"
+        END
+    END
+
+    ACTION_IF FILE_EXISTS_IN_GAME ~bdplat04.itm~ BEGIN
+        COPY_EXISTING ~bdplat04.ITM~ ~override~
+            LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7860) END
+            LPF ALTER_EFFECT INT_VAR match_opcode=89 parameter1=12 END
+            LPF CLONE_EFFECT INT_VAR match_opcode=89 opcode=86 parameter1=8 END
+            LPF CLONE_EFFECT INT_VAR match_opcode=89 opcode=88 parameter1=5 END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 0 match_parameter2 = 2 parameter2 = 8 parameter1 = 1 END
+    END ELSE BEGIN
+        ACTION_IF group_component = 0 BEGIN
+            WARN "No bdplat04.itm (Rhino Beetle Plate) found in the game"
+        END
+    END
+END

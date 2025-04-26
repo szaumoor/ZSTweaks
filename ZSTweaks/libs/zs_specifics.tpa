@@ -146,3 +146,55 @@ DEFINE_PATCH_FUNCTION RM_STAT_REQS
         WRITE_BYTE 0x30 0 // CON
         WRITE_BYTE 0x32 0 // CHA
 END
+
+DEFINE_PATCH_FUNCTION GET_SHIELD_LEVEL
+RET
+   result
+BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    SET original_ac = "-1"
+    SET result = "-1"
+    GET_OFFSET_ARRAY eff_arr 0x6a 4 0x70 2 0 0 0x30
+    PHP_EACH eff_arr AS int => ab_off BEGIN
+        PATCH_IF SHORT_AT(ab_off) = 0 AND LONG_AT(ab_off + 0x8) = 0 BEGIN
+            result = (LONG_AT(ab_off + 0x4)) - 1
+            PATCH_IF result = "-1" BEGIN
+                PATCH_FAIL "Something went wrong, the shield %SOURCE_RES% had no base AC value!"
+            END
+        END
+END
+
+
+DEFINE_PATCH_FUNCTION PATCH_SHIELD
+INT_VAR
+    type = "-1"
+BEGIN
+    PATCH_IF type < 0 BEGIN
+        PATCH_FAIL "Must specify a type of Armor Class to patch on shield"
+    END
+    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    SET original_ac = "-1"
+    SET base_ac = "-1"
+    SET found = 0
+    LPF GET_SHIELD_LEVEL RET normal_ac = result END
+    GET_OFFSET_ARRAY eff_arr 0x6a 4 0x70 2 0 0 0x30
+    PHP_EACH eff_arr AS int => ab_off BEGIN
+        PATCH_IF SHORT_AT(ab_off) = 0 AND LONG_AT(ab_off + 0x8) = type BEGIN
+            ++found
+            base_ac = LONG_AT(ab_off + 0x4)
+
+            PATCH_IF base_ac = "-1" BEGIN
+                PATCH_WARN "Something went wrong, the shield %SOURCE_RES% had no type %type% AC value!"
+            END ELSE BEGIN
+                PATCH_IF found = 2 BEGIN
+                    PATCH_WARN "Found more than 2 type %type% AC values in shield %SOURCE_RES%."
+                END
+            END
+
+            PATCH_IF found = 0 AND normal_ac > 0 AND normal_ac MODULO 2 = 0 BEGIN
+                SET bonus = result / 2
+                WRITE_LONG (ab_off + 0x4) (THIS + bonus)
+            END
+
+        END
+END

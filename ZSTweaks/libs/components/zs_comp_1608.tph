@@ -1,0 +1,10 @@
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
+    COPY ~%MOD_FOLDER%/items/aule_staff~ ~override~
+    COPY_EXISTING ~STAF08.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8041) id_ref_name = RESOLVE_STR_REF(@8040) END
+        SET mage = IDS_OF_SYMBOL(class MAGE)
+        SET mage_thief = IDS_OF_SYMBOL(class MAGE_THIEF)
+        SET cleric_mage = IDS_OF_SYMBOL(class CLERIC_MAGE)
+        SET sorcerer = IDS_OF_SYMBOL(class SORCERER)
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR res=~ZSTWAUSF~ effects = "op=177,p1=%mage%;op=177,p1=%mage_thief%;op=177,p1=%cleric_mage%;op=177,p1=%sorcerer%" END
+END

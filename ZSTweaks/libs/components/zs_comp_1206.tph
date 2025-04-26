@@ -1,0 +1,20 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1206~) BEGIN
+  FAIL ~Script already included: zs_comp_1206~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1206~ = 1
+END
+
+ACTION_IF NOT GAME_IS "iwdee" BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~bdring10.itm~ BEGIN
+        COPY_EXISTING ~bdring10.ITM~ ~override~
+            LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7820) END
+            LPF CLONE_EFFECT INT_VAR match_opcode=219 opcode = 178 special = 1 END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 178 opcode = 179 END
+            SET mask_good = IDS_OF_SYMBOL(alignmen MASK_GOOD)
+            LPF ADD_EQUIPPED_EFF INT_VAR p1=mask_good p2=8 STR_VAR effects = ~op=177,res=ZSTWPUR0;op=177,res=ZSTWPUR1~ END
+    END ELSE BEGIN
+        ACTION_IF group_component = 0 BEGIN
+            WARN "No bdring10.itm (Ring of Purity) found in the game"
+        END
+    END
+END
