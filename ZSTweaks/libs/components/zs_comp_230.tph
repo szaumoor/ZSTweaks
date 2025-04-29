@@ -23,7 +23,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
         LPF DELETE_EFFECT INT_VAR match_opcode = 206 END
 
     // ADD EFFECT REMOVAL TO AURA EFFECTS TO VARIOUS REMOVE-FEAR TYPE EFFECTS only affects spells for now
-    COPY_EXISTING_REGEXP ~.*\.spl~ ~override~
+    COPY_EXISTING_REGEXP ~^.+\.spl$~ ~override~
         LPF CLONE_EFFECT INT_VAR silent=1 match_opcode=321 STR_VAR match_resource=~SPPR416~ resource=~#COFEAR~ END
     BUT_ONLY
 

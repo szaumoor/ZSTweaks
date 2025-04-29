@@ -1,0 +1,40 @@
+ACTION_IF NOT GAME_IS "iwdee" AND !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
+    COPY_EXISTING ~SHLD03.itm~ ~override~
+        READ_LONG 0x8 medium_shield_strref
+
+    COPY_EXISTING ~SHLD01.itm~ ~override~
+        READ_LONG 0x8 small_shield_strref
+
+    COPY_EXISTING ~SHLD05.itm~ ~override~
+        READ_LONG 0x8 large_shield_strref
+
+    COPY_EXISTING ~SHLD08.itm~ ~override~
+        READ_LONG 0x8 buckler_shield_strref
+
+    ACTION_IF zst_debug BEGIN
+        PRINT "Finding incorrect shield strrefs for debugging..."
+        COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
+            LPF ITM_CAT RET cat = result END
+            PATCH_IF cat = 12 BEGIN
+                READ_LONG 0x8 strref
+                PATCH_IF strref != small_shield_strref  AND
+                         strref != medium_shield_strref AND
+                         strref != large_shield_strref  AND
+                         strref != buckler_shield_strref
+                BEGIN
+                    PATCH_WARN "[[WARNING FOR SHIELD COMPONENTS]] Incorrect shield strref found at shield category: %SOURCE_RES%"
+                END
+            END
+        BUT_ONLY
+    END
+
+    COPY_EXISTING ~NPSHLD.itm~ ~override~ // Delryn's Shield
+        WRITE_LONG 0x8 medium_shield_strref
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~BDSHLD07.itm~ ~override~ // Mkhiin Shield
+        WRITE_LONG 0x8 buckler_shield_strref
+    BUT_ONLY IF_EXISTS
+
+    OUTER_SET "zst_shields_fixed" = 1
+END

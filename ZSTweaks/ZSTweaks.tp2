@@ -15,9 +15,10 @@ MODDER
 	fun_args warn
 */
 ALWAYS
-	INCLUDE ~%MOD_FOLDER%/libs/zs_splprot_include.tph~
-    INCLUDE ~%MOD_FOLDER%/libs/zs_tw_functions.tph~
     INCLUDE ~%MOD_FOLDER%/zstweaks_prefs.txt~
+    INCLUDE ~%MOD_FOLDER%/libs/zs_tw_functions.tph~
+	INCLUDE ~%MOD_FOLDER%/libs/zs_splprot_include.tph~
+	INCLUDE ~%MOD_FOLDER%/libs/zs_standardize_shields.tph~
 	INCLUDE ~%MOD_FOLDER%/libs/zs_component_include.tph~
 END
 
@@ -1130,9 +1131,8 @@ FORBID_COMPONENT "ZSTweaks.tp2" "2120" @57 FORBID_COMPONENT "ZSTweaks.tp2" "2130
 FORBID_COMPONENT "ZSTweaks.tp2" "2150" @57 FORBID_COMPONENT "ZSTweaks.tp2" "2160" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "2170" @57 FORBID_COMPONENT "ZSTweaks.tp2" "2180" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "2190" @57 FORBID_COMPONENT "ZSTweaks.tp2" "2200" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "2210" @57 FORBID_COMPONENT "ZSTweaks.tp2" "3500" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "2230" @57 FORBID_COMPONENT "ZSTweaks.tp2" "2231" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "2232" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "3500" @57 FORBID_COMPONENT "ZSTweaks.tp2" "2230" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "2231" @57 FORBID_COMPONENT "ZSTweaks.tp2" "2232" @57
 
 BEGIN @2100 DESIGNATED 2100 GROUP @21 // SUN SOUL MONK TWEAKS
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54

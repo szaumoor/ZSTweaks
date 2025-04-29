@@ -3,24 +3,38 @@ ACTION_IF (VARIABLE_IS_SET ~zs_comp_1546~) BEGIN
 END ELSE BEGIN
   OUTER_SET ~zs_comp_1546~ = 1
 END
-// needs new entries in splprot.2da
-// modify the entries for buckler
 
 ACTION_IF zst_1546_buckler_tweak BEGIN
-    ACTION_IF NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ AND NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN
+
+    OUTER_SET projectile = 345
+    ACTION_IF GAME_IS ~bgee~ BEGIN
+        OUTER_SET projectile = 364
+    END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
+        OUTER_SET projectile = 481
+    END
+
+    COPY_EXISTING_REGEXP ~^ZSTWBK#[0-6]\.SPL$~ ~override~
+        LPF ALTER_HEADER INT_VAR projectile = %projectile% END
+    BUT_ONLY
+
+    ACTION_IF group_component = 0 AND NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN
 
         COPY "%MOD_FOLDER%/items/bucklers" "override"
-        COPY_EXISTING_REGEXP ~ZSTWBK#[0-6]\.SPL~ ~override~
+        COPY_EXISTING_REGEXP ~^ZSTWBK#[0-6]\.SPL$~ ~override~
             LPF ALTER_EFFECT INT_VAR match_probability1=19 probability1=9 END
         BUT_ONLY
 
     END ELSE BEGIN
 
         ACTION_IF zst_1450_allow_bucklers BEGIN
-            COPY_EXISTING_REGEXP ~ZSTWBK#[0-6]\.SPL~ ~override~
-                LPF ALTER_EFFECT INT_VAR match_opcode=326 match_parameter2=115 STR_VAR resource = "%SOURCE_RES%" END
-            BUT_ONLY
 
+            ACTION_FOR_EACH level IN 0 1 2 3 4 5 6 BEGIN
+                COPY_EXISTING ~ZSTWBK#%level%.spl~ ~override~
+                    LPF ALTER_EFFECT INT_VAR match_opcode=326 match_parameter2=115 STR_VAR resource = "ZSTWBK0%level%" END
+
+                    LPF ALTER_HEADER INT_VAR projectile END
+                BUT_ONLY
+            END
         END
     END
 
@@ -32,38 +46,52 @@ ACTION_IF zst_1546_buckler_tweak BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = zs_piercing_immunity END
     COPY_EXISTING ~ZSTWBK1D.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = zs_missile_immunity END
-
 END
 
 COPY_EXISTING ~SHLD08.ITM~ ~override~
     READ_LONG 0x8 buckler_strref
 
-COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
+COPY_EXISTING "SHLD05.ITM" ~override~
+    SPRINT hyphen @99991
+    SPRINT ac_string @99992
+    READ_STRREF UNIDENTIFIED_DESC desc
+    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%hyphen%[ %TAB%]*%ac_string%[ %TAB%]*:?[ %TAB%]*\)\+1~ ~\1+2~
+    END
+    SAY_EVALUATED UNIDENTIFIED_DESC ~%desc%~
+    LPF ITM_REF_UDESC RET changed_description_index = result END
+
+COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF ITM_CAT RET cat = result END
     PATCH_IF cat = 12 BEGIN // shields
         PATCH_IF zst_1546_everyone_can_use_all_shields BEGIN
             WRITE_LONG 0x1e 0
         END
 
-        LPF ITM_APPEARANCE RET appearance = result END
+        READ_LONG 0x8 shield_strref
 
-        PATCH_IF  "%appearance%" STR_EQ "c2" OR // TOWER SHIELDS
-                  "%appearance%" STR_EQ "c5" OR
-                  "%appearance%" STR_EQ "c6" OR
-                  "%appearance%" STR_EQ "d4"
-        BEGIN
+        PATCH_IF shield_strref = large_shield_strref BEGIN
+
             PATCH_IF zst_1546_tower_tweak BEGIN
                 LPF GET_SHIELD_LEVEL RET result END
-                SET new_ac = result + 1
-                LPF ALTER_EFFECT INT_VAR match_opcode=0 match_parameter2=0 match_parameter1=result parameter1=(result + 1) END
+                SET base_ac = result + 1
+                SET new_ac = result + 2
+                LPF ALTER_EFFECT INT_VAR match_opcode=0 match_parameter2=0 match_parameter1=base_ac parameter1=new_ac END
                 LPF ADD_EQUIPPED_EFF INT_VAR p1="-1" STR_VAR effects = ~op=278;op=36;op=190,p1=-2;op=176,p1=80,p2=5~ END
 
-                SPRINT str @99992
-                READ_STRREF 0x50 desc
-                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)%result%~ ~\1%new_ac%~
+                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SHLD05" BEGIN
+                    LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
+                    SPRINT hyphens @99991
+                    SPRINT ac_string @99992
+                    LPF ITM_REF_DESC RET description_index = result END
+                    PATCH_IF description_index > "-1" BEGIN
+                        READ_STRREF 0x54 desc
+                        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%hyphen%[ %TAB%]*%ac_string%[ %TAB%]*:?[ %TAB%]*\)\+%base_ac%~ ~\1\+%new_ac%~
+                        END
+                        SAY_EVALUATED 0x54 ~%desc%~
+                    END
                 END
-                SAY_EVALUATED 0x50 ~%desc%~
             END
 
             PATCH_IF zst_1546_everyone_can_use_all_shields = 0 BEGIN
@@ -75,28 +103,19 @@ COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
             END
         END
 
-        PATCH_IF  "%appearance%" STR_EQ "c1" OR // MEDIUM SHIELDS
-                  "%appearance%" STR_EQ "c3" OR
-                  "%appearance%" STR_EQ "c7" OR
-                  "%appearance%" STR_EQ "d3"
-        BEGIN
+        PATCH_IF shield_strref = medium_shield_strref BEGIN
             PATCH_IF zst_1546_medium_tweak BEGIN
                 LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=36,p1=-1;op=190,p1=-1;op=176,p1=90,p2=5~ END
             END
 
             PATCH_IF zst_1546_everyone_can_use_all_shields = 0 BEGIN
                 PATCH_IF zst_1546_small_medium_thieves_bards BEGIN
-                    WRITE_LONG 0x1e 1611399168
+                    WRITE_LONG 0x1e 1610874880
                 END
             END
-
         END
 
-        PATCH_IF LONG_AT(0x8) != buckler_strref AND // ensure not a buckler
-                 ("%appearance%" STR_EQ "c0" OR    //  small SHIELDS;
-                  "%appearance%" STR_EQ "c4" OR
-                  "%appearance%" STR_EQ "d2")
-        BEGIN
+        PATCH_IF shield_strref = small_shield_strref BEGIN
 
             PATCH_IF zst_1546_small_tweak BEGIN
                 LPF PATCH_SHIELD INT_VAR type=2 END
@@ -104,64 +123,73 @@ COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
 
             PATCH_IF zst_1546_everyone_can_use_all_shields = 0  BEGIN
                 PATCH_IF zst_1546_small_thieves_bards BEGIN
-                    WRITE_LONG 0x1e 1611399168
+                    WRITE_LONG 0x1e 1610874880
                 END
             END
         END
 
-        PATCH_IF zst_1546_buckler_tweak         AND // bucklers
-                 (LONG_AT(0x8) = buckler_strref OR // buckler for sure
-                 "%appearance%" STR_EQ "c4"     OR
-                 "%appearance%" STR_EQ "d1")
-        BEGIN
+        PATCH_IF zst_1546_buckler_tweak AND shield_strref = buckler_shield_strref BEGIN
             LPF PATCH_SHIELD INT_VAR type=4 END
             LPF GET_SHIELD_LEVEL RET result END
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=272,p1=1,res=ZSTWBK#%result%~ END
+
+            PATCH_IF group_component = 0 AND NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN
+                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=232,p1=1,p2=7,res=ZSTWBK#%result%~ END
+            END
+
             PATCH_IF zst_1546_everyone_can_use_all_shields = 0 BEGIN
                 PATCH_IF zst_1546_buckler_wizards BEGIN
                     WRITE_LONG 0x1e 536870912
                 END
             END
         END
-
     END
 BUT_ONLY
 
 // patch weapon enchantment protections with protection vs buckler parry
-COPY_EXISTING_REGEXP ~.*\.CRE~ ~override~
-    READ_LONG 0x2c4 eff_offset
-    READ_LONG 0x2c8 eff_length
-    READ_BYTE 0x33 eff_type
-    PATCH_IF eff_type = 0 BEGIN
-        SET effect_size = 0x30
-    END ELSE BEGIN
-        SET effect_size = 0x108
-    END
-    SET found = 0
-    FOR ( index = 0; index < eff_length; ++index ) BEGIN
+ACTION_IF zst_1546_buckler_tweak BEGIN
+    PRINT "Patching creatures with weapon immunities with appropriate buckler parry immunity..."
+    COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
+        READ_LONG 0x2c4 eff_offset
+        READ_LONG 0x2c8 eff_length
+        READ_BYTE 0x33 eff_type
         PATCH_IF eff_type = 0 BEGIN
-            READ_SHORT eff_offset op
-            READ_LONG (eff_offset + 0x04) p1
-            READ_LONG (eff_offset + 0x08) p2
+            SET effect_size = 0x30
         END ELSE BEGIN
-            READ_LONG (eff_offset + 0x08) op
-            READ_LONG (eff_offset + 0x14) p1
-            READ_LONG (eff_offset + 0x18) p2
+            SET effect_size = 0x108
         END
-        PATCH_IF op = 120
-            PATCH_IF p2 = 2 OR BEGIN
-                LPF ADD_CRE_EFFECT INT_VAR opcode = 206 timing=9 target=1 STR_VAR resource = ~ZSTWBK00~ END
-            END ELSE PATCH_IF p2=1 BEGIN
-                LPF ADD_CRE_EFFECT INT_VAR opcode = 206 timing=9 target=1 STR_VAR resource = ~ZSTWBK0%P1%~ END
+        SET found = 0
+        FOR ( index = 0; index < eff_length; ++index ) BEGIN
+            PATCH_IF eff_type = 0 BEGIN
+                READ_SHORT eff_offset op
+                READ_LONG (eff_offset + 0x04) p1
+                READ_LONG (eff_offset + 0x08) p2
+            END ELSE BEGIN
+                READ_LONG (eff_offset + 0x08) op
+                READ_LONG (eff_offset + 0x14) p1
+                READ_LONG (eff_offset + 0x18) p2
             END
+            PATCH_IF op = 120 BEGIN
+                PATCH_IF p2 = 2 BEGIN
+                    LPF ADD_CRE_EFFECT INT_VAR opcode = 206 timing=9 target=1 STR_VAR resource = ~ZSTWBK00~ END
+                END ELSE PATCH_IF p2=1 BEGIN
+                    LPF ADD_CRE_EFFECT INT_VAR opcode = 206 timing=9 target=1 STR_VAR resource = ~ZSTWBK0%P1%~ END
+                END
+            END
+            eff_offset += effect_size
         END
-        eff_offset += effect_size
-    END
-BUT_ONLY
+    BUT_ONLY
 
-COPY_EXISTING_REGEXP ~.^*\.(itm)|(spl)$~ ~override~
-    LPF CLONE_EFFECT INT_VAR silent=1 match_opcode=120 match_parameter2=2 match_parameter1=0 opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~ZSTWBK00~ END
-    PATCH_MATCH ench IN 1 2 3 4 5 6 BEGIN
-        LPF CLONE_EFFECT INT_VAR silent=1 match_opcode=120 match_parameter2=1 match_parameter1=ench opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~ZSTWBK0%ench%~ END
-    END
-BUT_ONLY
+    PRINT "Patching spells and items with weapon immunities with appropriate buckler parry immunity... Hold on, it's slow as hell."
+    COPY_EXISTING_REGEXP ~^.+\.\(itm\|spl\)$~ ~override~
+        LPF CLONE_EFFECT INT_VAR silent=1 match_opcode=120 match_parameter2=2 match_parameter1=0 opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~ZSTWBK00~ END
+
+        PATCH_FOR_EACH ench IN 1 2 3 4 5 6 BEGIN
+            LPF CLONE_EFFECT INT_VAR silent=1 match_opcode=120 match_parameter2=1 match_parameter1=0 opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~ZSTWBK0%ench%~ END
+        END
+
+        PATCH_FOR_EACH ench IN 1 2 3 4 5 6 BEGIN
+            LPF CLONE_EFFECT INT_VAR silent=1 match_opcode=120 match_parameter2=0 match_parameter1=ench opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~ZSTWBK0%ench%~ END
+        END
+    BUT_ONLY
+
+END

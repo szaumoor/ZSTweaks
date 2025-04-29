@@ -12,7 +12,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN // misaligned index fix
           LPF FJ_SPL_ITM_REINDEX END
 END
 
-COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
+COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF ITM_CAT  RET cat  = result  END
     LPF ITM_PROF RET prof = result END
     PATCH_IF ( cat = 21 AND prof = 97  ) OR // warhammers

@@ -69,7 +69,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN // iwdee deliberately unsupported for now
         LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 332 parameter1=10 parameter2=0 END
         LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 dur=240 pwr=4 STR_VAR effects=~op=23,spec=1;op=189,p1=1~ END
 
-    COPY_EXISTING_REGEXP "POTN0[3-7]\.ITM" ~override~
+    COPY_EXISTING_REGEXP "^POTN0[3-7]\.ITM$" ~override~
         LPF ALTER_ITEM INT_VAR unusable0=0 END
     BUT_ONLY
 

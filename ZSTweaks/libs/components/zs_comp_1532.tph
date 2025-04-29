@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1532~ = 1
 END
 
-COPY_EXISTING_REGEXP ".*\.itm" ~override~
+COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_CAT RET cat = result END
     PATCH_MATCH cat WITH 6 4 3 BEGIN // belts, boots and bracers
         LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=318,p1=2,p2=112;op=18,p1=1,p2=3~ END

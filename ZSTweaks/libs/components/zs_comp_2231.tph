@@ -46,7 +46,7 @@ COPY ~./zstweaks/macro.tph~ ~./zstweaks/macro.tph~
 
 REINCLUDE ~./zstweaks/macro.tph~
 
-COPY_EXISTING_REGEXP ~.*\.CRE~ ~override~
+COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~
     LPF CRE_KIT RET kit = result END
     PATCH_IF kit = IDS_OF_SYMBOL(kit DRAGON_DISCIPLE) BEGIN
       LPM stuff

@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1121~ = 1
 END
 
-COPY_EXISTING_REGEXP ".*\.itm" ~override~
+COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_CAT RET wpn_cat = result END
     LPF ITM_PROF RET wpn_prof = result END
     LPF ITM_APPEARANCE RET wpn_appearance = result END

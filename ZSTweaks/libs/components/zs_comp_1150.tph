@@ -7,20 +7,20 @@ END
 ACTION_IF zst_1150_dice_spears BEGIN
 
     COPY_EXISTING "SPER01.ITM" ~override~
-        SPRINT armor_class @99992
+        SPRINT str @99999
         READ_STRREF 0x50 desc
         INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%armor_class%)[0-9]~ ~\11d8~
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d8~
         END
         SAY_EVALUATED 0x50 ~%desc%~
         LPF ITM_REF_UDESC RET changed_description_index = result END
 
-    COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_CAT RET wpn_cat = result END
         LPF ITM_PROF RET wpn_prof = result END
         PATCH_IF wpn_cat = 29 AND wpn_prof = 98 BEGIN
             LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 6 match_dicenumber = 1 dicesize = 8 silent = 1 END
-            PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "SPER01") BEGIN
+            PATCH_IF NOT ("%SOURCE_RES%" STR_EQ "SPER01") BEGIN
                 LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
                 LPF ITM_REF_DESC RET description_index = result END
                 PATCH_IF description_index > "-1" BEGIN
@@ -48,13 +48,13 @@ ACTION_IF zst_1150_dice_warhammers BEGIN
         SAY_EVALUATED 0x54 ~%desc%~
         LPF ITM_REF_DESC RET changed_description_index = result END
 
-    COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_CAT RET wpn_cat = result END
         LPF ITM_PROF RET wpn_prof = result END
         PATCH_IF wpn_cat = 21 AND wpn_prof = 97 BEGIN // warhammers
             LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 4 match_dicenumber = 1 dicesize = 5 silent = 1 END
             LPF ALTER_HEADER INT_VAR match_type = 2 match_dicesize = 4 match_dicenumber = 1 dicesize = 5 silent = 1 END
-            PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "HAMM01") BEGIN
+            PATCH_IF NOT ("%SOURCE_RES%" STR_EQ "HAMM01") BEGIN
                 LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
                 LPF ITM_REF_DESC RET description_index = result END
                 PATCH_IF description_index > "-1" BEGIN
@@ -100,7 +100,7 @@ ACTION_IF zst_1150_dice_wakininja BEGIN
         SAY_EVALUATED 0x50 ~%desc%~
         LPF ITM_REF_UDESC RET changed_description_index_waki = result END
 
-    COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_PROF RET wpn_prof = result END
         LPF ITM_APPEARANCE RET wpn_appearance = result END
         PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STR_EQ "s1" BEGIN // ninjatos
@@ -161,7 +161,7 @@ ACTION_IF zst_1150_dice_wakislashing BEGIN
         SAY_EVALUATED 0x50 ~%desc%~
         LPF ITM_REF_UDESC RET changed_description_index_waki = result END
 
-    COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_PROF RET wpn_prof = result END
         LPF ITM_APPEARANCE RET wpn_appearance = result END
         PATCH_IF wpn_prof = 95 AND "%wpn_appearance%" STR_EQ "ss" BEGIN // wakizashis
@@ -200,12 +200,12 @@ ACTION_IF zst_1150_dice_katanas BEGIN
         SAY_EVALUATED 0x50 ~%desc%~
         LPF ITM_REF_UDESC RET changed_description_index = result END
 
-    COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_CAT RET wpn_cat = result END
         LPF ITM_PROF RET wpn_prof = result END
         PATCH_IF wpn_cat = 20 AND wpn_prof = 94 BEGIN // katanas
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=10 match_dicenumber=1 dicesize=5 dicenumber=2 END
-            PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "SW1H43") BEGIN
+            PATCH_IF NOT ("%SOURCE_RES%" STR_EQ "SW1H43") BEGIN
                 LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
                 LPF ITM_REF_DESC RET description_index = result END
                 PATCH_IF description_index > "-1" BEGIN
@@ -233,7 +233,7 @@ ACTION_IF zst_1150_dice_bastard_swords BEGIN
         SAY_EVALUATED 0x50 ~%desc%~
         LPF ITM_REF_UDESC RET changed_description_index = result END
 
-    COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_CAT RET wpn_cat = result END
         LPF ITM_PROF RET wpn_prof = result END
         PATCH_IF wpn_cat = 20 AND wpn_prof = 89 BEGIN // bastard swords
@@ -241,7 +241,7 @@ ACTION_IF zst_1150_dice_bastard_swords BEGIN
             LPF WPN_DMG RET dmg = result END
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 damage=dmg+1 END
 
-            PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "SW1H01") BEGIN
+            PATCH_IF NOT ("%SOURCE_RES%" STR_EQ "SW1H01") BEGIN
                 LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
                 LPF ITM_REF_DESC RET description_index = result END
                 PATCH_IF description_index > "-1" BEGIN
@@ -270,7 +270,7 @@ ACTION_IF zst_1150_dice_twohanded_swords BEGIN
         SAY_EVALUATED 0x50 ~%desc%~
         LPF ITM_REF_UDESC RET changed_description_index = result END
 
-    COPY_EXISTING_REGEXP ".*\.itm" ~override~
+    COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_CAT RET wpn_cat = result END
         LPF ITM_PROF RET wpn_prof = result END
         PATCH_IF wpn_cat = 20 AND wpn_prof = 93 BEGIN // two-handed swords
@@ -278,7 +278,7 @@ ACTION_IF zst_1150_dice_twohanded_swords BEGIN
             LPF WPN_DMG RET dmg = result END
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=10 match_dicenumber=1 dicesize=9 damage=dmg+1 END
 
-            PATCH_IF NOT ("%SOURCE_RES%" STRING_EQUAL_CASE "SW2H01") BEGIN
+            PATCH_IF NOT ("%SOURCE_RES%" STR_EQ "SW2H01") BEGIN
                 LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
                 LPF ITM_REF_DESC RET description_index = result END
                 PATCH_IF description_index > "-1" BEGIN

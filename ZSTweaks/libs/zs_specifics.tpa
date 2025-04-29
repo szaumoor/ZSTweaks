@@ -159,9 +159,10 @@ BEGIN
         PATCH_IF SHORT_AT(ab_off) = 0 AND LONG_AT(ab_off + 0x8) = 0 BEGIN
             result = (LONG_AT(ab_off + 0x4)) - 1
             PATCH_IF result = "-1" BEGIN
-                PATCH_FAIL "Something went wrong, the shield %SOURCE_RES% had no base AC value!"
+                PATCH_WARN "Something went wrong, the shield %SOURCE_RES% had no base AC value: %result%"
             END
         END
+    END
 END
 
 
@@ -173,17 +174,15 @@ BEGIN
         PATCH_FAIL "Must specify a type of Armor Class to patch on shield"
     END
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    SET original_ac = "-1"
-    SET base_ac = "-1"
     SET found = 0
-    LPF GET_SHIELD_LEVEL RET normal_ac = result END
+    LPF GET_SHIELD_LEVEL RET enchantment_level = result END
     GET_OFFSET_ARRAY eff_arr 0x6a 4 0x70 2 0 0 0x30
     PHP_EACH eff_arr AS int => ab_off BEGIN
         PATCH_IF SHORT_AT(ab_off) = 0 AND LONG_AT(ab_off + 0x8) = type BEGIN
             ++found
-            base_ac = LONG_AT(ab_off + 0x4)
+            READ_LONG (ab_off + 0x4) base_ac ELSE "-999"
 
-            PATCH_IF base_ac = "-1" BEGIN
+            PATCH_IF base_ac = "-999" BEGIN
                 PATCH_WARN "Something went wrong, the shield %SOURCE_RES% had no type %type% AC value!"
             END ELSE BEGIN
                 PATCH_IF found = 2 BEGIN
@@ -191,10 +190,11 @@ BEGIN
                 END
             END
 
-            PATCH_IF found = 0 AND normal_ac > 0 AND normal_ac MODULO 2 = 0 BEGIN
-                SET bonus = result / 2
+            PATCH_IF found = 1 AND enchantment_level > 1 BEGIN
+                SET bonus = enchantment_level / 2
                 WRITE_LONG (ab_off + 0x4) (THIS + bonus)
             END
 
         END
+    END
 END

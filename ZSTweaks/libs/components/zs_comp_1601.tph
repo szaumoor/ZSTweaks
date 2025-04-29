@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1601~ = 1
 END
 
-COPY_EXISTING_REGEXP ~.*\.itm~ ~override~
+COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF ITM_CAT RET category_itm=result END
     PATCH_IF category_itm = 9 OR category_itm = 13 BEGIN// if it's a potion or food item
         PATCH_IF NOT "%SOURCE_RES%" STR_EQ "GBERRY" BEGIN

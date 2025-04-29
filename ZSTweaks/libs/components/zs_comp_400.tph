@@ -16,7 +16,7 @@ ACTION_IF GAME_IS "iwdee" BEGIN
 
 END ELSE ACTION_IF MOD_IS_INSTALLED "setup-iwdification.tp2" "40" OR
                    MOD_IS_INSTALLED "setup-stratagems.tp2" "1510" OR
-                   MOD_IS_INSTALLED "dw_talents.tp2"       "1510" OR
+                   MOD_IS_INSTALLED "dw_talents.tp2"       "1510" 
     BEGIN
         COPY_EXISTING ~SPPR714.SPL~ ~override~
             LPF ALTER_SPELL INT_VAR ref_desc=new_description_priest END

@@ -30,7 +30,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         SET undead = IDS_OF_SYMBOL(general UNDEAD)
         LPF ADD_ON_HIT_EFF INT_VAR t=1 p2 = 4 STR_VAR res=~ZSTWRNH0~ effects = ~op=318,p2=2,res=%SOURCE_RES%,ip=0;op=177,p1=%demonic%,pro1=4,res=ZSTWRNH1;op=177,p1=%demonic%,pro1=4;op=177,p1=%lich%,pro1=19,res=ZSTWRNH1;op=177,p1=%lich%,pro1=19;op=177,p1=%demilich%,pro1=19,res=ZSTWRNH1;op=177,p1=%demilich%,pro1=19;op=177,p1=%vampire%,pro1=49,res=ZSTWRNH1;op=177,p1=%vampire%,pro1=49;op=177,p1=%vampyre%,pro1=49,res=ZSTWRNH1;op=177,p1=%vampyre%,pro1=49;op=177,p1=%mummy%,p2=5,pro1=79,res=ZSTWRNH1;op=177,p1=%mummy%,p2=5,pro1=79;op=177,p1=%spectral_undead%,pro1=64,res=ZSTWRNH1;op=177,p1=%spectral_undead%,pro1=64;op=177,p1=%spectre%,pro1=64,res=ZSTWRNH1;op=177,p1=%spectre%,pro1=64;op=177,p1=%wraith%,pro1=94,res=ZSTWRNH1;op=177,p1=%wraith%,pro1=94;op=177,p1=%spectral_troll%,p2=5,pro1=64,res=ZSTWRNH1;op=177,p1=%spectral_troll%,p2=5,pro1=64~ END
         LPF ADD_ON_HIT_EFF INT_VAR t=1 p2=104 STR_VAR res=~%SOURCE_RES%~ effects = ~op=318,p1=%demonic%;op=318,p1=%lich%;op=318,p1=%demilich%;op=318,p1=%vampire%;op=318,p1=%vampyre%;op=318,p2=105,p1=%mummy%;op=318,p1=%spectral_undead%;op=318,p1=%spectre%;op=318,p1=%wraith%;op=318,p1=%spectral_troll%,p2=105~ END
-        LPF ADD_ON_HIT_EFF INT_VAR t=99 p2=3 p1=undead STR_VAR res=~ZSTWRNH0~ effects=~op=177,res=ZSTWRNH1;op=177~ END
+        LPF ADD_ON_HIT_EFF INT_VAR p2=3 p1=undead STR_VAR res=~ZSTWRNH0~ effects=~op=177,res=ZSTWRNH1;op=177~ END
 
     COPY_EXISTING ~HAMM10.EFF~ ~override~
                   ~HAMM11.EFF~ ~override~

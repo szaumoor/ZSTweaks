@@ -143,46 +143,46 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
               ~zs_hideinshadows_>n~     = "-1"
     BEGIN
         WARN "Error: Not all splprot entries could be inserted!"
-        PATCH_IF ~zs_slashingresist_<128~  = "-1" BEGIN
+        ACTION_IF ~zs_slashingresist_<128~  = "-1" BEGIN
             PRINT "zs_slashingresist_<128 not set!"
         END
-        PATCH_IF ~zs_slashingresist_>=100~ = "-1" BEGIN
+        ACTION_IF ~zs_slashingresist_>=100~ = "-1" BEGIN
             PRINT "zs_slashingresist_>=100 not set!"
         END
-        PATCH_IF ~zs_slashing_immunity~    = "-1" BEGIN
+        ACTION_IF ~zs_slashing_immunity~    = "-1" BEGIN
             PRINT "zs_slashing_immunity not set!"
         END
-        PATCH_IF ~zs_crushingresist_<128~  = "-1" BEGIN
+        ACTION_IF ~zs_crushingresist_<128~  = "-1" BEGIN
             PRINT "zs_crushingresist_<128 not set!"
         END
-        PATCH_IF ~zs_crushingresist_>=100~ = "-1" BEGIN
+        ACTION_IF ~zs_crushingresist_>=100~ = "-1" BEGIN
             PRINT "zs_crushingresist_>=100 not set!"
         END
-        PATCH_IF ~zs_crushing_immunity~    = "-1" BEGIN
+        ACTION_IF ~zs_crushing_immunity~    = "-1" BEGIN
             PRINT "zs_crushing_immunity not set!"
         END
-        PATCH_IF ~zs_piercingresist_<128~  = "-1" BEGIN
+        ACTION_IF ~zs_piercingresist_<128~  = "-1" BEGIN
             PRINT "zs_piercingresist_<128 not set!"
         END
-        PATCH_IF ~zs_piercingresist_>=100~ = "-1" BEGIN
+        ACTION_IF ~zs_piercingresist_>=100~ = "-1" BEGIN
             PRINT "zs_piercingresist_>=100 not set!"
         END
-        PATCH_IF ~zs_piercing_immunity~    = "-1" BEGIN
+        ACTION_IF ~zs_piercing_immunity~    = "-1" BEGIN
             PRINT "zs_piercing_immunity not set!"
         END
-        PATCH_IF ~zs_missileresist_<128~   = "-1" BEGIN
+        ACTION_IF ~zs_missileresist_<128~   = "-1" BEGIN
             PRINT "zs_missileresist_<128 not set!"
         END
-        PATCH_IF ~zs_missileresist_>=100~  = "-1" BEGIN
+        ACTION_IF ~zs_missileresist_>=100~  = "-1" BEGIN
             PRINT "zs_missileresist_>=100 not set!"
         END
-        PATCH_IF ~zs_missile_immunity~     = "-1" BEGIN
+        ACTION_IF ~zs_missile_immunity~     = "-1" BEGIN
             PRINT "zs_missile_immunity not set!"
         END
-        PATCH_IF ~zs_hideinshadows_<n~     = "-1" BEGIN
+        ACTION_IF ~zs_hideinshadows_<n~     = "-1" BEGIN
             PRINT "zs_hideinshadows_<n not set!"
         END
-        PATCH_IF ~zs_hideinshadows_>n~     = "-1" BEGIN
+        ACTION_IF ~zs_hideinshadows_>n~     = "-1" BEGIN
             PRINT "zs_hideinshadows_>n not set!"
         END
 

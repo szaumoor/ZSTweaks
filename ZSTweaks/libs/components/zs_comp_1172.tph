@@ -5,7 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY_EXISTING_REGEXP ~RING2[7-9].ITM~ ~override~
+    COPY_EXISTING_REGEXP ~^RING2[7-9]\.ITM$~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 177 match_savebonus = 2 savebonus = "-2" END
     BUT_ONLY
     COPY_EXISTING ~RING27.ITM~ ~override~

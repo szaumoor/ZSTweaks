@@ -7,42 +7,43 @@ END
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
 
     ACTION_IF zst_1997_kuotoa BEGIN
-        COPY_EXISTING ~MISCA7~ ~override~ //kuo
+        COPY_EXISTING ~MISCA7.itm~ ~override~ //kuo
             LPF ALTER_ITEM INT_VAR unid_ref_desc = RESOLVE_STR_REF(@8370) END
             LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=1 projectile=0 STR_VAR icon = ~IMISC8H~ END
-            LPF ADD_ON_HIT_EFF INT_VAR tgt=1 tmg=9 rd=0 p1=1 STR_VAR effects = ~op=0,p2=2;op=54;op=36~ END
+            LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 tmg=9 rd=0 p1=1 STR_VAR effects = ~op=0,p2=2;op=54;op=36~ END
    END
 
     ACTION_IF zst_1997_orb BEGIN
-        COPY_EXISTING ~MISCA8~ ~override~ //eye
+        COPY_EXISTING ~MISCA8.itm~ ~override~ //eye
             LPF ALTER_ITEM INT_VAR unid_ref_desc = RESOLVE_STR_REF(@8371) END
             LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=1 projectile=0 STR_VAR icon = ~IMISCA8~ END
-            LPF ADD_ON_HIT_EFF INT_VAR tgt=1 tmg=9 rd=0 p1=1 STR_VAR effects = ~op=0;op=33;op=35~ END
+            LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 tmg=9 rd=0 p1=1 STR_VAR effects = ~op=0;op=33;op=35~ END
     END
 
     ACTION_IF zst_1997_brain BEGIN
-        COPY_EXISTING ~MISCBV~ ~override~ // brain
+        COPY_EXISTING ~MISCBV.itm~ ~override~ // brain
             LPF ALTER_ITEM INT_VAR unid_ref_desc = RESOLVE_STR_REF(@8372) END
             LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=1 projectile=0 STR_VAR icon = ~IMISC8H~ END
-            LPF ADD_ON_HIT_EFF INT_VAR tgt=1 tmg=9 rd=0 p1=1 STR_VAR effects = ~op=191;op=191,p2=1;op=34;op=37~ END
+            LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 tmg=9 rd=0 p1=1 STR_VAR effects = ~op=191;op=191,p2=1;op=34;op=37~ END
     END
 
     ACTION_IF zst_1997_strohm BEGIN
-        COPY_EXISTING ~KEY20~ ~override~ // STROHM
-            LPF ALTER_ITEM INT_VAR this_plus=1 unid_ref_desc = RESOLVE_STR_REF(@8373) flags = 25 END
-            LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=1 projectile=0 STR_VAR icon = ~IKEY20~ END
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=146,tgt=1,res=SPWI515~ END
+        COPY_EXISTING ~KEY20.itm~ ~override~ // STROHM
+            LPF ALTER_ITEM INT_VAR unid_ref_desc=RESOLVE_STR_REF(@8373) id_ref_desc=RESOLVE_STR_REF(@8373) appearance="H0" END
+            LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=3 projectile=0 flags=2048 STR_VAR icon = ~IKEY20~ END
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~t=3,op=146,tgt=1,res=SPWI515~ END
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=91,p1=10;op=276,p1=10~ END
     END
 
     ACTION_IF zst_1997_shadow BEGIN
         COPY ~%MOD_FOLDER%/items/shadow_wardstone~ ~override~
-        COPY_EXISTING ~MISC6P~ ~override~ // wardstone
-            LPF ALTER_ITEM INT_VAR unid_ref_desc = RESOLVE_STR_REF(@8374) category = 7 END
+        COPY_EXISTING ~MISC6P.itm~ ~override~ // wardstone
+            LPF ALTER_ITEM INT_VAR unid_ref_desc = RESOLVE_STR_REF(@8374) id_ref_desc = RESOLVE_STR_REF(@8374) category = 7 flags=33554508 END
             SET shadowdancer = IDS_OF_SYMBOL(kit SHADOWDANCER)
             SET dark_moon = IDS_OF_SYMBOL(kit DARK_MOON)
 
             SET shadow_dragon = IDS_OF_SYMBOL(class SHADOW_DRAGON)
-            SET spirit_troll = IDS_OF_SYMBOL(class SPIRIT_TROLL)
+            SET spectral_troll = IDS_OF_SYMBOL(class SPECTRAL_TROLL)
 
             SET shadow = IDS_OF_SYMBOL(race SHADOW)
             SET spectral_undead = IDS_OF_SYMBOL(race SPECTRAL_UNDEAD)
@@ -51,14 +52,14 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
 
             SET blinded_strref1 = 14674
             SET blinded_strref2 = 1474
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=275,p1=5;op=91,p1=10;op=276,p1=10;op=101,p2=74;op=169,p2=8;op=267,p1=%blinded_strref1%;op=267,p1=%blinded_strref2%;op=177,res=,op=177~ END
-            LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%shadowdancer%,res=ZSTWWDS0;op=177,p1=%shadowdancer%,res=ZSTWWDS1;op=177,p1=%shadowdancer%,res=ZSTWWDS2;op=177,p1=%shadowdancer%,res=ZSTWWDS3;op=177,p1=%dark_moon%,res=ZSTWWDS0;op=177,p1=%dark_moon%,res=ZSTWWDS1;op=177,p1=%dark_moon%,res=ZSTWWDS2;op=177,p1=%dark_moon%,res=ZSTWWDS3;~ END
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=275,p1=5;op=101,p2=74;op=169,p2=8;op=267,p1=%blinded_strref1%;op=267,p1=%blinded_strref2%~ END
+            LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%shadowdancer%,res=ZSTWWDS0;op=177,p1=%shadowdancer%,res=ZSTWWDS1;op=177,p1=%shadowdancer%,res=ZSTWWDS2;op=177,p1=%shadowdancer%,res=ZSTWWDS3;op=177,p1=%dark_moon%,res=ZSTWWDS0;op=177,p1=%dark_moon%,res=ZSTWWDS1;op=177,p1=%dark_moon%,res=ZSTWWDS2;op=177,p1=%dark_moon%,res=ZSTWWDS3~ END
             LPF ADD_EQUIPPED_EFF INT_VAR p2=4 STR_VAR effects = ~op=219,p1=%shadow%;op=219,p1=%spectral_undead%;op=219,p1=%spectre%;op=219,p1=%wraith%~ END
-            LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=219,p1=%shadow_dragon%;op=219,p1=%spirit_troll%~ END
+            LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=219,p1=%shadow_dragon%;op=219,p1=%spectral_troll%~ END
 
             PATCH_IF MOD_IS_INSTALLED "ZS_ShadowdancerOverhaul.tp2" "100" BEGIN
                 SET zs_shadowdancer = IDS_OF_SYMBOL(kit ZS_SHADOWDANCER)
-                LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%zs_shadowdancer%,res=ZSTWWDS0;op=177,p1=%zs_shadowdancer%,res=ZSTWWDS1;op=177,p1=%zs_shadowdancer%,res=ZSTWWDS2;op=177,p1=%zs_shadowdancer%,res=ZSTWWDS3~
+                LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%zs_shadowdancer%,res=ZSTWWDS0;op=177,p1=%zs_shadowdancer%,res=ZSTWWDS1;op=177,p1=%zs_shadowdancer%,res=ZSTWWDS2;op=177,p1=%zs_shadowdancer%,res=ZSTWWDS3~ END
             END
     END
 END

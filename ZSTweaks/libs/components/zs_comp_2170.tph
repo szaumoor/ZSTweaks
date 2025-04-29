@@ -7,7 +7,7 @@ END
 ACTION_IF !(MOD_IS_INSTALLED "ZS_ShadowdanverOverhaul.tp2" "300") BEGIN
     LAF generate_rogue_thac0 STR_VAR class1 = ~thief~ class2 = ~mage_thief~ END
 
-    COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
+    COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
         LPF CRE_CLASS RET cre_class = result END
         SET thief = IDS_OF_SYMBOL(class THIEF)
         SET mage_thief = IDS_OF_SYMBOL(class MAGE_THIEF)

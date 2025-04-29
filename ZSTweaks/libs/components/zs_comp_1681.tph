@@ -11,7 +11,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 2 special = 1024 END
             LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=27;op=28;op=29;op=30~ END
 
-        COPY_EXISTING_REGEXP ~bddagg1[A-D]\.EFF~ ~override~
+        COPY_EXISTING_REGEXP ~^bddagg1[A-D]\.EFF$~ ~override~
             LPF ALTER_EFF_FILE INT_VAR dicenumber = 2 special=1024 END
         BUT_ONLY
     END ELSE BEGIN

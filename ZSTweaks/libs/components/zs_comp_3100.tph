@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_3100~ = 1
 END
 
-COPY_EXISTING_REGEXP ~.*\.CRE~ ~override~
+COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~
     LPF CRE_RACE RET race = result END
     PATCH_IF race = IDS_OF_SYMBOL(race BEETLE) BEGIN
         WRITE_SHORT 0x4e "-1" // piercing modifier

@@ -5,12 +5,14 @@ END ELSE BEGIN
 END
 
 COPY ~%MOD_FOLDER%/items/dagger_boost~ ~override~
-COPY_EXISTING_REGEXP "ZSTWDP08.spl" ~override~ // spells to insert projectiles to (critical dagger effect)
+COPY_EXISTING "ZSTWDP08.spl" ~override~ // spells to insert projectiles to (critical dagger effect)
     LPF ALTER_HEADER INT_VAR match_type = 1 projectile =1 END
 BUT_ONLY
-COPY_EXISTING_REGEXP "ZSTWDP1[02468]\.spl" ~override~ // spells to insert projectiles to (throwing daggers and darts)
+
+COPY_EXISTING_REGEXP "^ZSTWDP1[02468]\.spl$" ~override~ // spells to insert projectiles to (throwing daggers and darts)
     LPF ALTER_HEADER INT_VAR match_type = 1 projectile = 1 END
 BUT_ONLY
+
 COPY_EXISTING "ZSTWDP20.spl" ~override~ // spells to insert projectiles to (critical dagger effect)
     LPF ALTER_HEADER INT_VAR match_type = 1 projectile = 1 END
 BUT_ONLY
@@ -25,7 +27,7 @@ COPY_EXISTING "DAGG01.ITM" ~override~
     SAY_EVALUATED 0x50 ~%desc%~
     LPF ITM_REF_UDESC RET changed_description_index = result END
 
-COPY_EXISTING_REGEXP ".*\.itm" ~override~
+COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_CAT RET wpn_cat = result END
     LPF ITM_PROF RET wpn_prof = result END
     LPF ITM_ENCH RET ench = result END

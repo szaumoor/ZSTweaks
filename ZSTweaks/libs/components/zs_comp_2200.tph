@@ -14,7 +14,7 @@ ACTION_IF FILE_EXISTS_IN_GAME "bdsw1hca.itm" BEGIN
     END
 END
 
-COPY_EXISTING_REGEXP ~.*\.CRE~ ~override~
+COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~
     LPF CRE_KIT RET kit = result END
     PATCH_IF kit = IDS_OF_SYMBOL(kit BLACKGUARD) BEGIN
         LPF ADD_CRE_EFFECT INT_VAR opcode=263 target=2 parameter1=2 parameter2=1 timing=1 END

@@ -321,7 +321,6 @@
 @2190 = ~Make Poison Weapon improve twice more every 4 levels (level 17, and 21)~
 @2200 = ~Make Blackguards able to backstab as if they had a 2x multiplier~
 @3500 = ~Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane~
-@2210 = ~Make the proficiency point benefits streamlined~
 @2230 = ~Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value~
 @2231 = ~Make Dragon Disciples (Red) have automatic access to all fire-based spells and optionally increase fire damage by 5%~
 @2232 = ~Make Called Shot directly increase ranged weapon damage, instead of adding 2 damage after the initial hit~
@@ -5810,7 +5809,9 @@ Requires:
 
 Weight: 3~
 
-@8320 = ~The rune of Clangeddin is now inscribed on the head of this hammer, granting even greater powers to any who wield the weapon.
+@8311 = ~This darksteel hammer has a rune of power inscribed upon its head and has many of the powers of a Mace of Disruption.
+
+Now that the rune of Clangeddin is inscribed on the head of this hammer, it grants even greater powers to any who wield the weapon.
 
 STATISTICS:
 
@@ -6584,7 +6585,8 @@ Requires:
 
 Weight: 10~
 
-@99992 = ~Armor Class: +~
+@99991 = ~\(-\|–\)~
+@99992 = ~Armor Class~
 @99993 = ~Piercing or slashing, whichever is better~
 @99994 = ~(piercing or slashing, whichever is better)~
 @99995 = ~Damage type~

@@ -264,9 +264,9 @@ Overall, these changes may increase difficulty slightly, as creatures with playe
 (Yet) Another thing that annoys me in the game is that there's not much difference to speak of between the different types of shields. Normally, medium shields provides AC bonus across the board, while Tower Shields add a bonus to missile, small shields lack missile bonus, and bucklers lack missile and piercing. It lacks more nuance that I would prefer and as such it's reworked in the following manner:
 
 - **Tower** Shields: The base armor class is always 1 point above other shields of their class. However, they're big and clunky, which means it also cause a -1 penalty to THAC0 and Saves vs. Breath. It also inflicts a penalty of -2 to Speed Factor and reduces movement speed by 20%.
-- Medium Shields: Inflict a -1 penalty to Speed Factor and Saves vs. Breath, and reduce movement speed by 10%.
-- Small Shields: At even enchantment level above 0, they compensate their lack of AC bonus vs. missile by 1. For example, a hypothetical +6 small shield would grant +6 Armor class, but only +3 vs. missile.
-- Bucklers: At even enchantment level above 0, they compensate their lack of AC bonus vs. piercing by 1. For example, a hypothetical +6 buckler would grant +6 Armor class, but only +3 vs. piercing. Additionally, the shields can be used to parry opponents 10% of the time when hit, inflicting if a save vs Breath is failed (enchantment level adds penalties) 1d2+bonus crushing damage, which levels non-massive opponents with a -15% damage susceptibility (if they aren't immune) and -2 armor class penalty for half a round. If my finesse component is installed with the buckler component included, thieves can do this 20% of the time instead.
+- **Medium** Shields: Inflict a -1 penalty to Speed Factor and Saves vs. Breath, and reduce movement speed by 10%.
+- **Small** Shields: At even enchantment level above 0, they compensate their lack of AC bonus vs. missile by 1. For example, a hypothetical +6 small shield would grant +6 Armor class, but only +3 vs. missile.
+- **Bucklers**: At even enchantment level above 0, they compensate their lack of AC bonus vs. piercing by 1. For example, a hypothetical +6 buckler would grant +6 Armor class, but only +3 vs. piercing. Additionally, the shields can be used to **parry** opponents 10% of the time when attacked in close range (even if the attack fails), inflicting if a save vs Breath is failed (enchantment level adds penalties) 1d2+bonus crushing damage, which opponents a -15% damage susceptibility (if they aren't immune to the damage type) and -2 armor class penalty for half a round. This effect will not work if the user is helpless (stunned, held, unconscious...) and will also not apply to foes that are massive or incorporeal. If my finesse component is installed with the buckler component included, single-classed thieves can do this 20% of the time instead. **Warning:** This should be installed after ANYTHING that adds items that add or modify weapon protection effects, including the component in SCS that increases the power from Mantle and Improved Mantle. The reason for this is that the component needs to patch those resources such that they appropriately block the buckler parry effect according to the shield enchantment level.
 
 Optionally, there are also options in the configuration file to achieve the following:
 - Make all shields usable by all classes (off by default)
@@ -275,6 +275,8 @@ Optionally, there are also options in the configuration file to achieve the foll
 - Thieves and bards can use Small Shields (on by default)
 - Thieves and Bards can use Small and Medium Shields (off by default)
 - Wizards can use bucklers (on by default)
+
+**BIG FAT WARNING:** This component uses the following convention to distinguish between different shields: it must have as an unidentified name either "Buckler", "Small Shield", "Medium Shield", or "Tower Shield". My mod will patch the instances in vanilla where it isn't the case, but it will not be able to detect modded shields that don't follow this convention. If you have a mod that adds shields that don't follow this convention, please let me know and I will add support for it. You could also patch it yourself with NearInfinity before running my mod, and it will work fine.
 
 **Component 1547:** Make Protection from Undead scrolls less overpowered but still invaluable vs. undead
 
@@ -609,8 +611,10 @@ The shield does the same, providing a 12% resistance to missile, 8% resistance t
 
 Following the theme of the description, it provides a bonus to rangers and elves:
 
-- +1 Armor Class if the wearer is a ranger, and also if they are an elf or half-elf. This stacks. This means effectively that an elven ranger would wear the armor as it it was a +4 leather armor.
+- +1 Armor Class if the wearer is a ranger, and also if they are an elf or half-elf. This stacks. This means effectively that an elven ranger would wear the armor as if it was a +4 leather armor.
 - +15% to hiding for rangers.
+
+Good choice for early to mid game elven rangers, perhaps even better for stalkers.
 
 </details>
 

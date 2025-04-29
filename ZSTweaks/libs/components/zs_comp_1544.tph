@@ -6,7 +6,7 @@ END
 
 WITH_SCOPE BEGIN
     OUTER_SET scroll_counter = 0
-    COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
+    COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         LPF ITM_CAT RET cat = result END
         LPF ITM_MIN_INT RET min_int = result END
         PATCH_IF cat = 11 AND min_int != 0 BEGIN

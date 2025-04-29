@@ -13,4 +13,4 @@ END
 COPY_EXISTING ~%freezing_sphere%.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8227) END
     LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 special = (2**8) END
-BUT_ONLY_IF_IT_CHANGES
+BUT_ONLY IF_EXISTS

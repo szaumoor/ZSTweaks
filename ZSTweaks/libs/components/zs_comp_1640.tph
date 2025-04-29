@@ -5,7 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-    COPY_EXISTING_REGEXP "ohdsw2h[a-d].ITM" ~override~
+    COPY_EXISTING_REGEXP "^ohdsw2h[a-d]\.ITM$" ~override~
         LPF ALTER_ITEM INT_VAR ench=5 END
         PATCH_IF "%SOURCE_RES%" STR_EQ "ohdsw2ha" BEGIN
             PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
@@ -62,7 +62,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
     BUT_ONLY
 
-    COPY_EXISTING_REGEXP "ohdsw2h[bc].ITM" ~override~
+    COPY_EXISTING_REGEXP "^ohdsw2h[bc]\.ITM$" ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 1 END
     BUT_ONLY
 

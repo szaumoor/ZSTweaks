@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_15390~ = 1
 END
 
-COPY_EXISTING_REGEXP ~.*\.ITM~ ~override~
+COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF ITM_CAT RET cat = result END
     PATCH_IF cat = 11 BEGIN
         LPF ITM_USABILITY0 RET flags = result END
