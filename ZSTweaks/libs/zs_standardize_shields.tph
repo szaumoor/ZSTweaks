@@ -16,14 +16,17 @@ ACTION_IF NOT GAME_IS "iwdee" AND !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
         COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
             LPF ITM_CAT RET cat = result END
             PATCH_IF cat = 12 BEGIN
-                READ_LONG 0x8 strref
-                PATCH_IF strref != small_shield_strref  AND
-                         strref != medium_shield_strref AND
-                         strref != large_shield_strref  AND
-                         strref != buckler_shield_strref
+                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "BDMISC10" AND
+
                 BEGIN
-                    PATCH_WARN "[[WARNING FOR SHIELD COMPONENTS]] Incorrect shield strref found at shield category: %SOURCE_RES%"
-                END
+                    READ_LONG 0x8 strref
+                    PATCH_IF strref != small_shield_strref  AND
+                             strref != medium_shield_strref AND
+                             strref != large_shield_strref  AND
+                             strref != buckler_shield_strref
+                    BEGIN
+                        PATCH_WARN "[[WARNING FOR SHIELD COMPONENTS]] Incorrect shield strref found at shield category: %SOURCE_RES%"
+                    END
             END
         BUT_ONLY
     END
@@ -33,7 +36,16 @@ ACTION_IF NOT GAME_IS "iwdee" AND !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
     BUT_ONLY IF_EXISTS
 
     COPY_EXISTING ~BDSHLD07.itm~ ~override~ // Mkhiin Shield
+                  ~BDSHLD01.itm~ ~override~ // buckler of the fist (using a duplicated 'buckler' string reference)
+                  ~SHLD17.ITM~   ~override~ 
+                  ~SHLD33.ITM~   ~override~
+                  ~SKELSHLD~     ~override~
         WRITE_LONG 0x8 buckler_shield_strref
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~BDSHLD02.itm~ ~override~ // suncatcher (using a duplicated 'small shield' string reference)
+                  ~SHLD28.itm~ ~override~
+        WRITE_LONG 0x8 small_shield_strref
     BUT_ONLY IF_EXISTS
 
     OUTER_SET "zst_shields_fixed" = 1
