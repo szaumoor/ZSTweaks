@@ -37,7 +37,7 @@ jobs:
       - name: Create filtered zip
         run: |
           mkdir package
-          rsync -av --exclude='changelog.md' --exclude='README.md' --exclude='LICENSE' --exclude='.github/' --exclude='.git/' --exclude='package/' ./ package/
+          rsync -av --exclude='changelog.md' --exclude='README.md' --exclude='LICENSE' --exclude='.github/' --exclude='.git/' --exclude='package/' --exclude='.gitignore/' ./ package/
           cd package
           zip -r ../ZSTweaks_${TAG_NAME}.zip .
 
