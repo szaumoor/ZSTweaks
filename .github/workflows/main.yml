@@ -1,0 +1,59 @@
+name: New release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag name for the release"
+        required: true
+        type: string
+
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    env:
+      TAG_NAME: ${{ github.event.inputs.tag || github.ref_name }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create Git tag (only if manual)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git tag $TAG_NAME
+          git push origin $TAG_NAME
+
+      - name: Create filtered zip
+        run: |
+          mkdir package
+          rsync -av --exclude='changelog.md' --exclude='README.md' --exclude='LICENSE' --exclude='.github/' --exclude='.git/' --exclude='package/' ./ package/
+          cd package
+          zip -r ../ZSTweaks_${TAG_NAME}.zip .
+
+      - name: Read changelog from file
+        id: changelog
+        run: |
+            echo "body<<EOF" >> $GITHUB_OUTPUT
+            cat changelog.md >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+          name: "ZSTweaks ${{ env.TAG_NAME }}"
+          body: ${{ steps.changelog.outputs.body }}
+          files: ZSTweaks_${{ env.TAG_NAME }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
