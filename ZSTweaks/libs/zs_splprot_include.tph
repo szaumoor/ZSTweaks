@@ -1,5 +1,5 @@
 ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
-    PRINT "Adding all splprot entries required for RoyalProtector's mods..."
+    PRINT "Adding and/or finding all splprot entries required for RoyalProtector's mods..."
 
     // ----------------------------------------------------------------
 
@@ -19,6 +19,10 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
     OUTER_SET ~zs_missileresist_>=100~  = "-1"
     OUTER_SET ~zs_missile_immunity~     = "-1"
 
+    OUTER_SET ~zs_electricresist_<128~  = "-1"
+    OUTER_SET ~zs_electricresist_>=100~ = "-1"
+    OUTER_SET ~zs_electric_immunity~    = "-1"
+
     OUTER_SET ~zs_hideinshadows_<n~     = "-1"
     OUTER_SET ~zs_hideinshadows_>n~     = "-1"
 
@@ -35,6 +39,9 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
 
     APPEND ~splprot.2da~ ~ZS_MISSILERESIST_>=100%TAB%24%TAB%100%TAB%4~  UNLESS ~ZS_MISSILERESIST_>=100~
     APPEND ~splprot.2da~ ~ZS_MISSILERESIST_<128%TAB%24%TAB%128%TAB%2~   UNLESS ~ZS_MISSILERESIST_<128~
+
+    APPEND ~splprot.2da~ ~ZS_ELECTRICRESIST_>=100%TAB%16%TAB%100%TAB%4~ UNLESS ~ZS_ELECTRICRESIST_>=100~
+    APPEND ~splprot.2da~ ~ZS_ELECTRICRESIST_<128%TAB%16%TAB%128%TAB%2~  UNLESS ~ZS_ELECTRICRESIST_<128~
 
     APPEND ~splprot.2da~ ~ZS_HIDEINSHADOWS_<n%TAB%135%TAB%-1%TAB%2~     UNLESS ~ZS_HIDEINSHADOWS_<n~
     APPEND ~splprot.2da~ ~ZS_HIDEINSHADOWS_>n%TAB%135%TAB%-1%TAB%3~     UNLESS ~ZS_HIDEINSHADOWS_>n~
@@ -78,6 +85,14 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
                 ~zs_missileresist_<128~  = row
             END
 
+            ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_ELECTRICRESIST_>=100~ BEGIN
+                ~zs_electricresist_>=100~ = row
+            END
+
+            ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_ELECTRICRESIST_<128~ BEGIN
+                ~zs_electricresist_<128~ = row
+            END
+
             ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_HIDEINSHADOWS_<n~    BEGIN
                 ~zs_hideinshadows_<n~ = row
             END
@@ -101,6 +116,9 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
     APPEND ~splprot.2da~ ~ZS_MISSILEIMMUNITY%TAB%0x104%TAB%%zs_missileresist_>=100%%TAB%%zs_missileresist_<128%~
     UNLESS ~ZS_MISSILEIMMUNITY~
 
+    APPEND ~splprot.2da~ ~ZS_ELECTRICIMMUNITY%TAB%0x104%TAB%%zs_electricresist_>=100%%TAB%%zs_electricresist_<128%~
+    UNLESS ~ZS_ELECTRICIMMUNITY~
+
     //----------------------------------------------------------------
         COPY_EXISTING ~splprot.2da~ ~override~
             COUNT_2DA_COLS cols
@@ -123,6 +141,10 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
                 ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_MISSILEIMMUNITY~ BEGIN
                     ~zs_missile_immunity~ = row
                 END
+
+                ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_ELECTRICIMMUNITY~ BEGIN
+                    ~zs_electric_immunity~ = row
+                END
             END
 
     //----------------------------------------------------------------
@@ -139,6 +161,9 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
               ~zs_missileresist_<128~   = "-1" OR
               ~zs_missileresist_>=100~  = "-1" OR
               ~zs_missile_immunity~     = "-1" OR
+              ~zs_electricresist_<128~  = "-1" OR
+              ~zs_electricresist_>=100~ = "-1" OR
+              ~zs_electric_immunity~    = "-1" OR
               ~zs_hideinshadows_<n~     = "-1" OR
               ~zs_hideinshadows_>n~     = "-1"
     BEGIN

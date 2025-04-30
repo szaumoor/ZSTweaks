@@ -28,10 +28,6 @@ ACTION_IF zst_1450_allow_bucklers BEGIN
         OUTER_SET projectile = 481
     END
 
-    COPY_EXISTING_REGEXP ~^ZSTWBK#[0-6]\.SPL$~ ~override~
-        LPF ALTER_HEADER INT_VAR projectile = %projectile% END
-    BUT_ONLY
-
     ACTION_IF NOT shield_tweak_installed BEGIN
 
         COPY "%MOD_FOLDER%/items/bucklers" "override"
@@ -46,6 +42,10 @@ ACTION_IF zst_1450_allow_bucklers BEGIN
         BUT_ONLY
 
     END
+
+    COPY_EXISTING_REGEXP ~^ZSTWBK#[0-6]\.SPL$~ ~override~
+        LPF ALTER_HEADER INT_VAR projectile = %projectile% END
+    BUT_ONLY
 
     COPY_EXISTING ~SHLD08.ITM~ ~override~
         READ_LONG 0x8 buckler_strref

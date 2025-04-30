@@ -13,10 +13,6 @@ ACTION_IF zst_1546_buckler_tweak BEGIN
         OUTER_SET projectile = 481
     END
 
-    COPY_EXISTING_REGEXP ~^ZSTWBK#[0-6]\.SPL$~ ~override~
-        LPF ALTER_HEADER INT_VAR projectile = %projectile% END
-    BUT_ONLY
-
     ACTION_IF group_component = 0 AND NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN
 
         COPY "%MOD_FOLDER%/items/bucklers" "override"
@@ -37,6 +33,10 @@ ACTION_IF zst_1546_buckler_tweak BEGIN
             END
         END
     END
+
+    COPY_EXISTING_REGEXP ~^ZSTWBK#[0-6]\.SPL$~ ~override~
+        LPF ALTER_HEADER INT_VAR projectile = %projectile% END
+    BUT_ONLY
 
     COPY_EXISTING ~ZSTWBK1A.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = zs_slashing_immunity END

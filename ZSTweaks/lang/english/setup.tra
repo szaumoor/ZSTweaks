@@ -268,7 +268,7 @@
 @448 = ~Make Decastave at least grant proficiency with staff while it's held~
 @449 = ~Make Otiluke's Freezing Sphere deal half damage on save~
 @451 = ~Make Chain Lightning scale more strongly and spread faster to enemies~
-@452 = ~Make Icelance upgrade damage three times, up to 8d6~
+@452 = ~Make Icelance upgrade damage every 2 levels up to 10d6~
 
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
@@ -2309,7 +2309,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: None
 
-A stronger version of the 1st-level priest spell Cure Light Wounds, Cure Moderate Wounds heals 13 Hit Points, which increases to 19 over the next 4 levels, and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures.~
+A stronger version of the 1st-level priest spell Cure Light Wounds, Cure Moderate Wounds heals 13 Hit Points, which increases to 19 over the next 4 levels, and cures intoxication.~
 
 @6473 = ~Cure Medium Wounds
 (Necromancy)
@@ -5176,14 +5176,13 @@ Weight: 5~
 @8035 = ~Expose Weakness Applied~
 @8036 = ~Expose Weakness Lost~
 
-// todo
 @8040 = ~Aule's Staff +3~
 @8041 = ~This finely crafted staff was among the spoils taken from the invaders of Durlag's Tower. It is very deadly in combat, and was apparently the property of a spellcaster that enjoyed standing on the front lines. It appears to have a core of iron, yet it is comparable in weight to a normal weapon of its type. Part of the enchantment seems to come from the hide that strengthens the grip: Leather no doubt made from a battle-ready creature of some sort. With the tastes and inclinations of the attackers of the tower well documented, the hide could be almost anything... or anyone.
 
 STATISTICS:
 
 Equipped abilities:
-– Attacks per round: +1 (single-classed wizards and sorcerers only)
+– Attacks per round: +1 (mages, mage/thieves, cleric/mages, and sorcerers only)
 
 THAC0: +3
 Damage: 1d6+3 (crushing)

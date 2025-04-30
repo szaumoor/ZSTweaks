@@ -5,9 +5,9 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT GAME_IS "iwdee" BEGIN
-    OUTER_TEXT_SPRINT freezing_sphere ~SPWI628~
-END ELSE BEGIN
     OUTER_TEXT_SPRINT freezing_sphere ~SPWI626~
+END ELSE BEGIN
+    OUTER_TEXT_SPRINT freezing_sphere ~SPWI628~
 END
 
 COPY_EXISTING ~%freezing_sphere%.SPL~ ~override~

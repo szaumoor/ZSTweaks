@@ -29,7 +29,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
 
     ACTION_IF zst_1997_strohm BEGIN
         COPY_EXISTING ~KEY20.itm~ ~override~ // STROHM
-            LPF ALTER_ITEM INT_VAR unid_ref_desc=RESOLVE_STR_REF(@8373) id_ref_desc=RESOLVE_STR_REF(@8373) appearance="H0" END
+            LPF ALTER_ITEM INT_VAR unid_ref_desc=RESOLVE_STR_REF(@8373) id_ref_desc=RESOLVE_STR_REF(@8373) STR_VAR appearance="H0" END
             LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=3 projectile=0 flags=2048 STR_VAR icon = ~IKEY20~ END
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~t=3,op=146,tgt=1,res=SPWI515~ END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=91,p1=10;op=276,p1=10~ END

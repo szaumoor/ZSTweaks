@@ -1507,6 +1507,10 @@ Self-explanatory. Most spells that deal damage only on a failed save are not ver
 
 This modifies the projectile so it spreads faster, making it less annoying. Additionally, the starting damage is now 8d6, increasing to 12d6 with with the same scaling as vanilla. Both things can be freely allowed or disallowed through the configuration file. Not available for IWDEE.
 
+**Component 452:** Make Icelance upgrade damage every 2 levels up to 10d6
+
+Self explanatory.
+
 </details>
 
 ---

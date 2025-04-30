@@ -4,7 +4,8 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_110~ = 1
 END
 
-COPY_EXISTING ~SPPR101.SPL~ ~override~
+COPY_EXISTING ~SPPR101.SPL~  ~override~
+              ~BDCAELA5.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5010) END
     SET headers = 0
     FOR ( i = 3; i <= 19; i += 2 ) BEGIN
@@ -17,7 +18,7 @@ COPY_EXISTING ~SPPR101.SPL~ ~override~
         dur += 6
     END
     LPF ALTER_HEADER INT_VAR speed = 3 END
-BUT_ONLY
+BUT_ONLY IF_EXISTS
 
 
 COPY_EXISTING ~SPPR112.SPL~ ~override~
