@@ -1,0 +1,4 @@
+ACTION_IF GAME_IS ~iwdee~ AND NOT MOD_IS_INSTALLED "eefixpack.tp2" "0" BEGIN
+    COPY_EXISTING ~#BONECIR.spl~ ~override~
+        WRITE_ASCII 0x0 "SPL " (4)
+END

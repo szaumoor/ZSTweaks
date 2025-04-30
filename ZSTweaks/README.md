@@ -1,6 +1,6 @@
 <details>
 
-<summary><b>General Item & Spell Tweaks</b></summary>
+<summary><b>General Tweaks</b></summary>
 
 **Component 120:** Make conjured magical weapons grant 2 APR by default
 
@@ -584,7 +584,7 @@ This improves the gloves by adding the following:
 - Eyestalk of an Elder Orb: can be consumed to permanently increase Armor Class and saves vs. Petrification and Death by 1
 - Elden Brain's Blood: can be consumed to permanently improve the casting level (arcane and divine) and saves vs. Spell and Rod by 1
 
-**FAIR FAT FABULOUS WARNING ABOUT THE FIRST THREE:** Don't eat all three. One of them at least is needed for plot reason. Otherwise you'll have to fix it with save editing or console commands.
+**FAIR FAT FABULOUS FULL FIERCE WARNING ABOUT THE FIRST THREE:** Don't eat all three. One of them at least is needed for plot reason. Otherwise you'll have to fix it with save editing or console commands.
 
 - Mask of King Strohm III: now it protects vs. critical hits, increases Detect Illusion and Find Traps by 10. It has a charge ability to cast Oracle once per day.
 - Shadow Dragon Wardstone: It is now an ioun stone which grants immunity to Blindness. Shadow dragons and other shadow creatures incur in a -2 combat roll penalty towards the wearer. 5% hiding skill and shadowdancers are dark soul monks get a +3% damage resistance.
@@ -1178,6 +1178,10 @@ This makes the weapons more interesting in this way:
 - +5 version will deal +1 more electric damage on hit
 - +5 version chain lightning effect will have a 12% chance of triggering instead of 5%
 - Whosoever wields this weapon will be surrounded by electricity, causing 1d2 electric damage to any who hits, with a 15% chance of stunning for 1 round the attacker if they fail a save vs. Spell at -4
+
+**Component 1329:** Make Runic Hammer's undead disruption more balanced
+
+This applies the same rules as the Mace of Disruption tweak (component 1326), and also merges bits of the description in the non upgraded version with the upgraded one.
 
 </details>
 
