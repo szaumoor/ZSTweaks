@@ -137,6 +137,7 @@
 @1215 = ~Make Aeger's Hide more powerful when used by Barbarians~
 @1216 = ~Make Ankheg's Plate grant 20% acid resistance~
 @1217 = ~Make Hayes' Robe actually grant +1 to Armor Class, and +1 casting speed for wild mages only~
+@1218 = ~Make the Plate of the Dark not just a generic +1 full plate but something more unique based on the description~
 
 /// DAGGER TWEAKS
 @1000 = "Make throwing poisoned daggers less rare and more likely to poison enemies"
@@ -6094,14 +6095,15 @@ Requires:
 
 Weight: 35~
 
-// TODO
 @8460 = ~Dark Lord Hertious, undead Warlord of Bane, wore this piece of armor for over five hundred years. During this time he was rumored to dwell in a castle somewhere within the Earthfast Mountains. How his armor moved to other lands without him is not certain, though the separation of the two was surely unpleasant.
 
 STATISTICS:
 
 Equipped abilities:
-– Immunity to fear
-– Wearer may inflict Bane on hitting a target 15% of the time: -1 penalty to combat rolls, and damage rolls, and morale for 5 rounds. This effect stacks.
+– Immunity to fear and panic
+
+Combat abilities:
+– Bane: 15% chance on hit to inflict a -1 penalty to all rolls and morale for 3 rounds. This effect can stack.
 
 Charge abilities:
 – Cast Horror once per day

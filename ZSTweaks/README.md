@@ -1589,6 +1589,8 @@ Finally, it also makes the spell scale duration-wise like in IWDEE. Now it follo
 
 I don't think 36 seconds with a very long casting makes this spell desirable in most situations. Therefore, now the duration is 36 seconds plus 1 round per 2 levels up to level 19, and the casting speed is increased. Curse will also be affected if the spell is present in the game, such as with SCS and IWDification. For obvious reasons, if you're planning to use IWD spells, install after any mod that inserts them.
 
+Finally, it fixes in passing a bug in Curse, which is that instead of decreasing the morale of enemies by 1, it increases it by 10 (the curse of overconfidence?). This will be addressed eventually by the fixpack, if installed.
+
 **Component 130:** Standardize Hold Person's saving throw penalties
 
 This component equalizes the saving throw penalty in the cleric version of Hold Person so it has the same as the wizard one, which is -1.
