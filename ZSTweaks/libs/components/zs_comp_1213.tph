@@ -1,0 +1,12 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1213~) BEGIN
+  FAIL ~Script already included: zs_comp_1213~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1213~ = 1
+END
+
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+    COPY ~%MOD_FOLDER%/items/deep_night~ ~override~
+    COPY_EXISTING ~LEAT17.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8430) END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=28,p1=30;op=29,p1=30;op=248,res=ZSTWDPN0;op=249,res=ZSTWDPN0~ END
+END

@@ -129,6 +129,14 @@
 @1206 = ~Make Ring of Purity (SoD) also grant a combat bonuses vs. evil and grant a spell slot bonus to the good aligned~
 @1207 = ~Make Protector of the Second a special leather armor that is more powerful when used by rangers~
 @1208 = ~Make Karajah's Life and Death not a generic armor and add extra traits inspired by the description~
+@1209 = ~Make The Night's Gift +5 a bit more interesting as an armor~
+@1211 = ~Make Orc Leathers grant special bonuses to half-orc wearers~
+@1212 = ~Make Skin of the Ghoul +4 protect against all kinds of paralysis~
+@1213 = ~Make Armor of Deep Night +4 slighty better inspired by the Umberlee's related backstory~
+@1214 = ~Make Armor of the Viper more interesting by offering a few advantages to offset the penalties~
+@1215 = ~Make Aeger's Hide more powerful when used by Barbarians~
+@1216 = ~Make Ankheg's Plate grant 20% acid resistance~
+@1217 = ~Make Hayes' Robe actually grant +1 to Armor Class, and +1 casting speed for wild mages only~
 
 /// DAGGER TWEAKS
 @1000 = "Make throwing poisoned daggers less rare and more likely to poison enemies"
@@ -5985,12 +5993,17 @@ Weight: 4~
 STATISTICS:
 
 Equipped abilities:
-– Hide In Shadows: +20%
-– When the wearer is invisible, they move faster by a factor of 4
+– Hide In Shadows: +25%
+– Nondetection and immunity to divinations except for True Sight
+– At night: become shrouded in shadows, regenerating 1 HP per round. Additionally, each time the wearer is hit, they have a 12% chance of fading as per the Improved Invisibility spell for 4 rounds. This may only trigger once per turn.
+– +5% universal damage resistance (thieves only)
 
 Charge abilities:
 – Shadow Door cast at level 20 once per day
   Special: Caster is under the effects of Improved Invisibility for 2 turns
+
+– Shadowstep three times per day
+  Special: Caster briefly steps into the Shadow Plane and returns to the Material Plane at the desired location as per the Shadowdancer ability
 
 Armor Class: 3 (5 vs. piercing and missile)
 Requires:
@@ -5998,19 +6011,37 @@ Requires:
 
 Weight: 5~
 
+@8411 = ~Embraced by shadows~
+
 @8420 = ~This ghastly armor was taken from an orc camp destroyed by barbarians. Instead of standard metal rivets, like normal studded leather, this orc leather is instead laced with hundreds of fire-hardened bones. Finger bones, ribs, and skulls cover the armor, acting much like the traditional metal rivets. Powerful orcish enchantments give the armor special resistance to missile attacks, but its grotesque appearance tends to unsettle and alienate others.
 
 STATISTICS:
 
 Equipped abilities:
-– Charisma: -1
+– Charisma: -2
 – +10% resistance to missile damage (double if wearer is half-orc)
+– +10 Hit Points (half-orc only)
+– +1 melee damage (half-orc only)
 
 Armor Class: 4 (2 vs. slashing, 3 vs. piercing and missile)
 Requires:
  6 Strength
 
 Weight: 7~
+
+@8425 = ~A clever thief, Damien Oneknife always tried to gain from the assets of his enemies, no matter the circumstances. After an intense battle with several ghouls in which two of his companions perished, Damien decided to even the odds in future encounters. He skinned one of the undead creatures and brought the hide to a halfling armorer talented in enchanting leather. When the suit was finished, it was magically protective against physical attacks and paralysis. Not very epic perhaps, but practical.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to paralysis, hold, and stun effects
+– Save vs. Death: +3
+
+Armor Class: 4 (6 vs. piercing and missile)
+Requires:
+ 3 Strength
+
+Weight: 4~
 
 @8430 = ~Enchanted ebony rivets adorn the black leather of this armor. Umberlee the Sea Queen granted this armor to Dami Darn, a rogue who slew the conjurer Looxil. The assassination pleased Umberlee, for Looxil had betrayed her in years past. Dami Darn died years later, a knife to the back from her successor in the thieves' guild.
 
@@ -6019,6 +6050,7 @@ STATISTICS:
 Equipped abilities:
 – Cold Resistance: +30%
 – Electric Resistance: +30%
+– Umberlee's boon gives the user a 18% chance per ranged or melee hit to deal 1d4 cold damage, electric damage, or both
 
 Armor Class: 3 (1 vs. slashing, 2 vs. piercing and missile)
 Requires:
@@ -6026,14 +6058,15 @@ Requires:
 
 Weight: 7~
 
-@8440 = ~This armor's namesake is a serpent only in manner, referring to the drow assassin Raroh. Poison was his trademark, and when he discovered this suit's susceptibility to venom, he gifted it to Avlorm, a promising novice assassin within his own guild. When Avlorm's power eventually threatened his own, Raroh easily dispatched him, thanks to the weakness of the armor he still wore.
+@8440 = ~This armor is infamous not for its advantages, but for the betrayal it enabled. Raroh, a master assassin, gifted it to Avlorm, a rising member of his guild. The armor's unique properties—granting resilience and the power to poison weapons—were overshadowed by a fatal flaw: it made the wearer dangerously vulnerable to poison. When Avlorm’s ambition became a threat, Raroh exploited this weakness, using the very armor he had given as a tool to eliminate his rival.
 
 STATISTICS:
 
 Equipped abilities:
-– Save vs. Death: -2
+– Save vs. Death: -3
 – All other saves: +1
-– Poison damage: +50%
+– Weakness to poison: -50%
+– Poison damage: +100%
 
 Charge abilities:
 – Poison Weapon once per day
@@ -6053,6 +6086,7 @@ Equipped abilities:
 – Immunity to confusion
 – Cold, Fire, and Acid Resistance: +15% (30% for barbarians)
 – Physical damage resistance: +3% (barbarians only)
+– Two-handed weapon damage: +2 (barbarians only)
 
 Armor Class: 3 (5 vs. piercing and missile)
 Requires:
@@ -6060,6 +6094,7 @@ Requires:
 
 Weight: 35~
 
+// TODO
 @8460 = ~Dark Lord Hertious, undead Warlord of Bane, wore this piece of armor for over five hundred years. During this time he was rumored to dwell in a castle somewhere within the Earthfast Mountains. How his armor moved to other lands without him is not certain, though the separation of the two was surely unpleasant.
 
 STATISTICS:
@@ -6137,6 +6172,7 @@ STATISTICS:
 
 Equipped abilities:
 – Permanent Chaos Shield on wearer
+– Armor Class: +1 bonus
 – Casting Speed: +1 bonus (wild mages only)
 
 Weight: 3~

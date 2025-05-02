@@ -616,6 +616,56 @@ Following the theme of the description, it provides a bonus to rangers and elves
 
 Good choice for early to mid game elven rangers, perhaps even better for stalkers.
 
+**Component 1209:** Make The Night's Gift +5 a bit more interesting as an armor
+
+Heavily leaning on the lore of the item (blessed by Shar):
+
+- Hide in Shadows: +25% (from 20%)
+- Immunity to all invisibility-detecting spells, excluding True Sight
+- 5% physical damage resistance for all thieves wearing it (single class or not)
+- At night, regenerate 1 HP per round, and when you're hit, there's a 12% chance of becoming invisible as per the Improved invisibility spell for 4 rounds. This effect can only trigger once per turn.
+
+**Component 1211:** Make Orc Leathers grant special bonuses to half-orc wearers
+
+The armor now leans more heavily into the orcish theme:
+
+- -2 Charisma (from -1), so it's potentially more meaningful
+- Half-orcs only: +1 to inflicted damage, +10 maximum HP, missile resistance is double the normal 10%
+
+**Component 1212:** Make Skin of the Ghoul +4 protect against all kinds of paralysis
+
+This includes paralysis from ghouls and magical commands. It's of course inspired by the fact that the skin is made from a ghoul.
+
+**Component 1213:** Make Armor of Deep Night +4 slighty better inspired by the Umberlee's related backstory
+
+Following the Umberlee theme, this armor now provides a 20% resistance to cold and electricity. Additinally, it provides a 18% cahnce of inflicting 1d4 cold damage, electric damage, or both on hit.
+
+**Component 1214:** Make Armor of the Viper more interesting by offering a few advantages to offset the penalties
+
+Despite the +5 enchantment, I find the armor generally not worth using, especially since it's pretty much always a better idea to use a non-unique armor with an item of protection instead. Therefore:
+
+- Save vs. Death: -3 (from -2)
+- Other saves: +1
+- -50% poison resistance. Bear in mind this weakness will likely not work without the fixpack installed.
+- +100% poison damage inflicted. So if you're a vanilla assassin, for example, each poison tick would inflict 2 damage. Same for any kind of poison spell that might be accessible to the wearer.
+- Charge ability: Poison Weapon, as per the vanilla assassin ability, once per day.
+
+**Component 1215:** Make Aeger's Hide more powerful when used by Barbarians
+
+Now, since this armor is Hide Armor, and hide armor is usually thematically associated with barbarians, the following is added:
+
+- Two-handed weapon damage +2 for barbarians only. Note that this follows the vanilla convention of what is a two-handed weapon: halberd, staff, and two-handed sword. This means that the damage bonus will not apply to a two-handed axe, for example.
+- Elemental resistances doubled for barbarians
+- Barbarians also get a +3% physical damage resistance
+
+**Component 1216:** Make Ankheg's Plate grant 20% acid resistance
+
+Since Ankhegs actually spit acid, it makes sense that this armor would grant acid resistance. A small buff, especially since the sources of acid damage are limited (at least in BG) but it makes sense thematically.
+
+**Component 1217:** Make Hayes' Robe actually grant +1 to Armor Class, and +1 casting speed for wild mages only
+
+Generally this robe was never very convenient to use, especially considering the alternatives. Even without Chaos Shield. So now it undoes the -1 AC penalty, becoming an actual AC bonus, which could be combined with a good AC bracer, and adds +1 casting speed for wild mages only.
+
 </details>
 
 ---

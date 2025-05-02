@@ -24,7 +24,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
         END
 
-        LPF ALTER_HEADER INT_VAR match_type = 2 speed = 0 END
+        LPF ALTER_HEADER INT_VAR match_type = 2 speed = 0 range=30 END
         LPF ITM_REF_DESC RET desc_index = result END
         LPF ITM_REF_UDESC RET udesc_index = result END
 

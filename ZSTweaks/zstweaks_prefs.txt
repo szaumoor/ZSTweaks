@@ -2,7 +2,7 @@
 //
 // All options that are about "allowing" a tweak or not follow the binary format of "1" to allow the tweak during installation time, and "0" to not allow. Change it to your preferences according to that. If the values have a different meaning, it will be noted.
 
-OUTER_SET zst_debug = "1" // normally at 0 for users
+OUTER_SET zst_debug = "0" // normally at 0 for users
 
 ////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
