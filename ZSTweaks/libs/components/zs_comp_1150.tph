@@ -74,10 +74,6 @@ ACTION_IF zst_1150_dice_warhammers BEGIN
     BUT_ONLY IF_EXISTS
 END
 
-ACTION_IF zst_1150_dice_wakininja OR zst_1150_dice_wakislashing BEGIN
-    INCLUDE ~ZSTweaks/libs/zs_correct_exot_anims.tph~
-END
-
 ACTION_IF zst_1150_dice_wakininja BEGIN
 
     COPY_EXISTING "SW1H48.ITM" ~override~

@@ -1,5 +1,27 @@
-ACTION_IF NOT game_is_iwdee AND NOT has_eefixpack BEGIN
-    PRINT ~IWDEE detected without EET Fixpack. Fixing broken BONECIR.spl~
-    COPY_EXISTING ~#BONECIR.spl~ ~override~
-        WRITE_ASCII 0x0 "SPL " (4)
+ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
+
+    ACTION_IF game_is_iwdee AND NOT has_eefixpack BEGIN
+
+        PRINT ~IWDEE detected without EET Fixpack. Fixing broken BONECIR.spl~
+        COPY_EXISTING ~#BONECIR.spl~ ~override~
+            WRITE_ASCII 0x0 "SPL " (4)
+
+    END ELSE ACTION_IF is_bg2ee_or_eet BEGIN
+
+        PRINT ~BG2EE or EET detected. Fixing non-standard scimitar/wakizashi/ninjato animations~
+        COPY_EXISTING ~misc9q.itm~ ~override~
+            WRITE_ASCII 0x22 "SC" #2
+
+        COPY_EXISTING ~sw1h66.itm~ ~override~
+            WRITE_ASCII 0x22 "SS" #2
+
+        COPY_EXISTING ~sw1h67.itm~ ~override~
+            WRITE_ASCII 0x22 "S1" #2
+
+        COPY_EXISTING ~sw1h68a.itm~ ~override~
+            WRITE_ASCII 0x22 "SC" #2
+
+    END
+
+    OUTER_SET ~zs_prefixes~ = 1
 END

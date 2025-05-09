@@ -4,7 +4,6 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1120~ = 1
 END
 
-INCLUDE ~ZSTweaks/libs/zs_correct_exot_anims.tph~
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     PATCH_IF NOT "%SOURCE_RES%" STR_EQ "l#GNOSW" BEGIN // tongue of thaxx, SotSC
         LPF ITM_CAT RET wpn_cat = result END
