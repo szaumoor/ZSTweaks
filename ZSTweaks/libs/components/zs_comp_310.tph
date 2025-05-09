@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_310~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING ~SPPR606.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5150) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 122 parameter1 = 12 duration=300 END

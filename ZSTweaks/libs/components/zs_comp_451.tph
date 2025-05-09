@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_451~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     ACTION_IF zst_451_chain_lightning_boost BEGIN
         COPY_EXISTING ~SPWI615.SPL~ ~override~
                       ~SPDR601.SPL~ ~override~

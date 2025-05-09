@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1125~ = 1
 END
 
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
     COPY ~%MOD_FOLDER%/items/waninja~ ~override~
     COPY_EXISTING "WANINJA.itm" ~override~
         LPF ALTER_ITEM INT_VAR unusable0=1074057600 END

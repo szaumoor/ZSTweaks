@@ -9,23 +9,23 @@ COPY_EXISTING ~SCRL09.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8580) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 100 opcode = 219 END
 
-    PATCH_IF NOT GAME_IS ~iwdee~ BEGIN
+    PATCH_IF NOT is_iwdee BEGIN
         LPF ALTER_EFFECT INT_VAR match_duration = 600 duration = 3600 END
     END
 
-    PATCH_IF GAME_IS "iwdee" BEGIN
+    PATCH_IF is_iwdee BEGIN
         SET one_level_drained = 35498
         SET two_levels_drained = 35497
         SET three_levels_drained = 35496
         SET four_levels_drained = 35472
         SET five_levels_drained = 35495
-    END ELSE PATCH_IF GAME_IS "bgee" BEGIN
+    END ELSE PATCH_IF is_bgee BEGIN
         SET one_level_drained = 25802
         SET two_levels_drained = 25803
         SET three_levels_drained = 25804
         SET four_levels_drained = 25805
         SET five_levels_drained = 25806
-    END ELSE PATCH_IF GAME_IS "bg2ee eet" BEGIN
+    END ELSE PATCH_IF is_bg2ee_or_eet BEGIN
         SET one_level_drained = 41495
         SET two_levels_drained = 40968
         SET three_levels_drained = 40969

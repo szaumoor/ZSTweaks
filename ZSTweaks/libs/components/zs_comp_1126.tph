@@ -4,11 +4,11 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1126~ = 1
 END
 
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING "MISCBC.itm" ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6810) ench=4 END
 
-        PATCH_IF NOT MOD_IS_INSTALLED ~eefixpack.tp2~ ~0~ BEGIN
+        PATCH_IF NOT has_eefixpack BEGIN
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_probability1=15 probability1=14 END
         END
 END

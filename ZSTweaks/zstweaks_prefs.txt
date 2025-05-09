@@ -63,6 +63,9 @@ OUTER_SET zst_1546_small_thieves_bards                  = "1" // allows bards an
 OUTER_SET zst_1546_small_medium_thieves_bards           = "0" // allows bards and thieves to use small and medium shields
 OUTER_SET zst_1546_buckler_wizards                      = "1" // allows wizard classes to use bucklers
 
+// tweaks to armor usability
+OUTER_SET zst_1549_full_plate_single_fighters_only = "1"
+
 ////////////////////////////// Gear tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // allows tweaks to give usability to items in the game as defined in component 1997

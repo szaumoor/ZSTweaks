@@ -16,7 +16,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             BEGIN
                 LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
             END ELSE BEGIN
-                PATCH_IF !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1643") AND !(MOD_IS_INSTALLED "ZSTweaks.tp2" "1379") BEGIN
+                PATCH_IF NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1643" AND NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1379" BEGIN
                     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
                 END
             END

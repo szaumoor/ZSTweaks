@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1315~ = 1
 END
 
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING ~WA2DAK.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@6330) ench=3 END
         LPF ALTER_HEADER INT_VAR match_damage=2 match_to_hit=2 match_speed=2 to_hit=3 speed=1 damage=3 END

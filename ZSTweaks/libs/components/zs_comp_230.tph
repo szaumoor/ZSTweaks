@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_230~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING ~SPPR416.SPL~ ~override~
         LPF SPL_REF_NAME RET cloak_fear_strref = result END
 
@@ -14,10 +14,10 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode = 215 STR_VAR resource = ~ICCLKFR2~ END
 
     COPY_EXISTING ~#COFEAR.SPL~ ~override~
-        PATCH_IF GAME_IS ~bgee~ BEGIN
+        PATCH_IF is_bgee BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = 25818 END
         END
-        PATCH_IF GAME_IS ~bg2ee eet~ BEGIN
+        PATCH_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = 14007 END
         END
         LPF DELETE_EFFECT INT_VAR match_opcode = 206 END

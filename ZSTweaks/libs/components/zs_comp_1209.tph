@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1209~ = 1
 END
 
-ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
     COPY ~%MOD_FOLDER%/items/night_gift~ ~override~
     COPY_EXISTING ~LEAT14.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8410) END
@@ -17,7 +17,7 @@ ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
         LPF ADD_ITEM_EFFECT INT_VAR type=3 header=1 target=1 opcode=146 parameter1=20 STR_VAR resource= ~SPWI505~ END
         LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=3 flags=2048 projectile=0 STR_VAR icon = ~spsd02b~ END
 
-        PATCH_IF MOD_IS_INSTALLED ~ZS_ShadowdancerOverhaul.tp2~ ~100~ BEGIN
+        PATCH_IF has_zs_shadowdancer_overhaul BEGIN
             SET zs_shadowdancer = IDS_OF_SYMBOL(kit ZS_SHADOWDANCER)
             LPF ADD_ITEM_EFFECT INT_VAR type=3 header=2 target=1 opcode=146 parameter2=1 STR_VAR resource= ~ZS#SDL1J~ END
         END ELSE BEGIN

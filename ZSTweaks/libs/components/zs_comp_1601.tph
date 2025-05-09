@@ -10,7 +10,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         PATCH_IF NOT "%SOURCE_RES%" STR_EQ "GBERRY" BEGIN
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
         END
-        PATCH_IF "%SOURCE_RES%" STR_EQ "GBERRY" AND (!MOD_IS_INSTALLED "ZSTweaks.tp2" "240") AND (!MOD_IS_INSTALLED "ZSTweaks.tp2" "99") BEGIN
+        PATCH_IF "%SOURCE_RES%" STR_EQ "GBERRY" AND NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "240") AND NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "99") BEGIN
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
         END
     END

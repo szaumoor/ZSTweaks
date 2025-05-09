@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_250~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
 
     ACTION_IF zst_250_quake_pfriendly BEGIN
 
@@ -19,7 +19,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
             LPF DELETE_EFFECT INT_VAR match_opcode = 269 END
             LPF DELETE_EFFECT STR_VAR match_resource = ~SHAKE1~ END
 
-        ACTION_IF !GAME_IS "bgee" BEGIN
+        ACTION_IF NOT is_bgee BEGIN
             COPY_EXISTING ~SPOGRE01.SPL~ ~override~
                 LPF DELETE_EFFECT INT_VAR match_opcode = 269 END
                 LPF DELETE_EFFECT STR_VAR match_resource = ~SHAKE1~ END
@@ -40,7 +40,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 match_dicenumber = 2 dicenumber = 4 savebonus="-2" END
             LPF ALTER_EFFECT INT_VAR match_opcode = 67 probability1 = 1 END
 
-        ACTION_IF !GAME_IS "bgee" BEGIN
+        ACTION_IF NOT is_bgee BEGIN
             COPY_EXISTING ~SPOGRE01.SPL~ ~override~
                 LPF DELETE_EFFECT INT_VAR match_opcode = 269 END
                 LPF DELETE_EFFECT STR_VAR match_resource = ~SHAKE1~ END

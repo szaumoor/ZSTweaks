@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_2130~ = 1
 END
 
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
     ACTION_IF zst_2130_spike_trap BEGIN
         COPY_EXISTING "SPCL910B.SPL" ~override~
             LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = result END

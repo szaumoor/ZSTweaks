@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1240~ = 1
 END
 
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1240_purifier_evil BEGIN
         PRINT ~Applying Purifier's damage vs. all evil tweak~
@@ -60,7 +60,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         END
 
         COPY_EXISTING ~SW1H65.ITM~ ~override~
-            PATCH_IF NOT MOD_IS_INSTALLED ~eefixpack.tp2~ ~0~ BEGIN
+            PATCH_IF NOT has_eefixpack BEGIN
                 LPF ALTER_EFFECT INT_VAR header_type=3 match_opcode = 146 parameter1 = 30 STR_VAR match_resource="SPPR303" END
             END ELSE BEGIN
                 LPF ALTER_EFFECT INT_VAR header_type=3 match_opcode = 148 parameter1 = 30 STR_VAR match_resource="SPPR303" END

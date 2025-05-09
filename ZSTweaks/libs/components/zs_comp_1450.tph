@@ -22,9 +22,9 @@ OUTER_SET shield_tweak_installed = group_component = 0 AND MOD_IS_INSTALLED ~ZST
 ACTION_IF zst_1450_allow_bucklers BEGIN
 
     OUTER_SET projectile = 345
-    ACTION_IF GAME_IS ~bgee~ BEGIN
+    ACTION_IF is_bgee BEGIN
         OUTER_SET projectile = 364
-    END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
+    END ELSE ACTION_IF is_iwdee BEGIN
         OUTER_SET projectile = 481
     END
 
@@ -88,7 +88,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                      NOT "%SOURCE_RES%" STR_EQ "cd51ari"  AND  // BROKEN SPIRIT ARROW (the calling)
                      NOT "%SOURCE_RES%" STR_EQ "AROW06"
             BEGIN
-                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "bdarow02" != 0 BEGIN // void-tipped arrows (SoD)
+                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "bdarow02" BEGIN // void-tipped arrows (SoD)
                     LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_arrow_bolt+bonus) STR_VAR class=~THIEF~ spell=~ZSTWA%ench%~ END
                 END ELSE BEGIN
                     LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_arrow_bolt+bonus) insert_point="-1" STR_VAR class=~THIEF~ spell=~ZSTWM3~ END

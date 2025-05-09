@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1541~ = 1
 END
 
-ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
     COPY ~%MOD_FOLDER%/items/vorpal_weapons~ ~override~
     COPY_EXISTING ~BALOR.ITM~ ~override~
         LPF DELETE_EFFECT INT_VAR check_globals = 0 END
@@ -20,7 +20,7 @@ ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
             LPF DELETE_EFFECT INT_VAR match_opcode = 141 match_parameter2 = 39 END
             LPF DELETE_EFFECT INT_VAR match_opcode = 61 END
             LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
-            PATCH_IF NOT MOD_IS_INSTALLED ~eefixpack.tp2~ ~0~ BEGIN
+            PATCH_IF NOT has_eefixpack BEGIN
                 LPF ALTER_EFFECT INT_VAR match_probability1 = 25 probability1 = 24 END
             END
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=ZSTWVRPA,stype=4,sbonus=-2~ END

@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1530~ = 1
 END
 
-ACTION_IF !(GAME_IS "iwdee bgee") BEGIN
+ACTION_IF NOT is_bgee_or_iwdee BEGIN
     COPY_EXISTING "DAGG11.ITM" ~override~
                   "DAGG12.ITM" ~override~
         LPF ALTER_HEADER INT_VAR dicenumber = 1 END

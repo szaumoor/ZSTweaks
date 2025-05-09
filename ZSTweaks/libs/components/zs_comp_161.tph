@@ -4,8 +4,8 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_161~ = 1
 END
 
-ACTION_IF NOT MOD_IS_INSTALLED ~eefixpack.tp2~ "0" BEGIN
-    ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT has_eefixpack BEGIN
+    ACTION_IF NOT is_iwdee BEGIN
         COPY_EXISTING ~SPWI518.SPL~ ~override~
             SET dur = 126
             LPF LAST_VALID_HEADER RET new_header = result END

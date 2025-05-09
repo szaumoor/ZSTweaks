@@ -1,0 +1,75 @@
+ACTION_IF !VARIABLE_IS_SET "zst_armors_fixed" BEGIN
+    COPY_EXISTING ~plat01.itm~ ~override~
+        READ_LONG 0x8 plat_mail_strref
+
+    COPY_EXISTING ~plat04.itm~ ~override~
+        READ_LONG 0x8 full_plat_mail_strref
+
+    COPY_EXISTING ~CHAN01.itm~ ~override~
+        READ_LONG 0x8 chain_mail_strref
+
+    COPY_EXISTING ~chan04.itm~ ~override~
+        READ_LONG 0x8 splint_mail_strref
+
+    COPY_EXISTING ~leat01.itm~ ~override~
+        READ_LONG 0x8 leather_strref
+
+    COPY_EXISTING ~leat04.itm~ ~override~
+        READ_LONG 0x8 leather_studded_strref
+
+    COPY_EXISTING ~leat10.itm~ ~override~
+        READ_LONG 0x8 hide_strref
+
+    ACTION_IF zst_debug BEGIN
+        PRINT "Finding incorrect armor strrefs for debugging..."
+        COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
+            LPF ITM_CAT RET cat = result END
+            PATCH_IF cat = 2 BEGIN
+                READ_LONG 0x8 strref
+                PATCH_IF strref != small_shield_strref   AND
+                         strref != medium_shield_strref  AND
+                         strref != large_shield_strref   AND
+                         strref != buckler_shield_strref
+                BEGIN
+                    PATCH_WARN "[[WARNING FOR SHIELD COMPONENTS]] Incorrect shield strref found at shield category: %SOURCE_RES%"
+                END
+            END
+        BUT_ONLY
+    END
+
+    COPY_EXISTING ~NPSHLD.itm~ ~override~ // Delryn's Shield
+                  ~x#ajshld.itm~ ~override~ // Ajantis' Shield
+                  ~x#fai3.itm~ ~override~ // dented shield
+                  ~BEETSHLD.itm~ ~override~
+                  ~DNTSHD1.itm~ ~override~
+                  ~DNTSHD2.itm~ ~override~
+                  ~NYMSHLD.itm~ ~override~
+        WRITE_LONG 0x8 medium_shield_strref
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~BDSHLD07.itm~ ~override~ // Mkhiin Shield
+                  ~BDSHLD01.itm~ ~override~ // buckler of the fist (using a duplicated 'buckler' string reference)
+                  ~SHLD17.ITM~   ~override~
+                  ~SHLD33.ITM~   ~override~
+                  ~SKELSHLD.ITM~ ~override~
+                  ~L#FAIBU.ITM~  ~override~
+                  ~l#FWMSHI.itm~ ~override~
+                  ~l#ORMBUC.itm~ ~override~
+                  ~l#ORMBUS.itm~ ~override~
+        WRITE_LONG 0x8 buckler_shield_strref
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~BDSHLD02.itm~ ~override~ // suncatcher (using a duplicated 'small shield' string reference)
+                  ~SHLD28.itm~ ~override~
+        WRITE_LONG 0x8 small_shield_strref
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~L#ZSOD3.itm~  ~override~
+                  ~X#FASH01.itm~ ~override~
+                  ~ORRSHLD.itm~ ~override~
+        WRITE_LONG 0x8 large_shield_strref
+    BUT_ONLY IF_EXISTS
+
+
+    OUTER_SET "zst_armors_fixed" = 1
+END

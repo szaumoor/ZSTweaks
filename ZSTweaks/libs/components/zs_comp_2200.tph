@@ -7,11 +7,9 @@ END
 COPY_EXISTING "SPCL105.SPL" ~override~
     LPF ADD_SPL_EFF_SELF INT_VAR t=3 STR_VAR effects = ~op=263,p1=2,p2=1~ END
 
-ACTION_IF FILE_EXISTS_IN_GAME "bdsw1hca.itm" BEGIN
-    ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN
-        COPY_EXISTING "bdsw1hca.itm" ~override~
-            LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 263 END
-    END
+ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN
+    COPY_EXISTING "bdsw1hca.itm" ~override~
+        LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 263 END
 END
 
 COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~

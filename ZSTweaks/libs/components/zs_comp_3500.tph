@@ -4,9 +4,9 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_3500~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
 	OUTER_SET copied = 0
-	ACTION_IF GAME_IS "bg2ee eet" BEGIN
+	ACTION_IF is_bg2ee_or_eet BEGIN
 		COPY ~%MOD_FOLDER%/misc/shadow_plane~ ~override~
 		copied = 1
 		<<<<<<<<.../zstweaks/disable_shadowstep_rasaad.baf

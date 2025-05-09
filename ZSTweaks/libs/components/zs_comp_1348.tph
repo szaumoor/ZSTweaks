@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1348~ = 1
 END
 
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING ~PSPEART.PRO~ ~override~
         WRITE_SHORT 0xa 60
 END

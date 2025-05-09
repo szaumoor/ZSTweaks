@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1180~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING ~RING36.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6030) END
         LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=292,p2=1;op=0,p1=1;op=36,p1=1~ END

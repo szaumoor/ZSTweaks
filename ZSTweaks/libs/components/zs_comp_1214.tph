@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1214~ = 1
 END
 
-ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING ~LEAT18.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8440) END
         LPF DELETE_EFFECT INT_VAR match_opcode = 33 END

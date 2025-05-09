@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_430~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     OUTER_SET new_description = RESOLVE_STR_REF(@6290)
     COPY_EXISTING ~SPWI101.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=new_description END

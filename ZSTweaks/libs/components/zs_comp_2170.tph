@@ -4,7 +4,9 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_2170~ = 1
 END
 
-ACTION_IF !(MOD_IS_INSTALLED "ZS_ShadowdanverOverhaul.tp2" "300") BEGIN
+OUTER_SET has_shadowdancer_overhaul_thac0_comp = MOD_IS_INSTALLED "ZS_ShadowdanverOverhaul.tp2" "300"
+
+ACTION_IF NOT has_shadowdancer_overhaul_thac0_comp BEGIN
     LAF generate_rogue_thac0 STR_VAR class1 = ~thief~ class2 = ~mage_thief~ END
 
     COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~

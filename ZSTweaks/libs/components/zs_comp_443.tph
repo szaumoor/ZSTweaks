@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_443~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     ACTION_IF zst_443_death BEGIN
         COPY ~%MOD_FOLDER%/spells/symbol_death~ ~override~
         COPY_EXISTING ~SPPR719.SPL~ ~override~
@@ -29,7 +29,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
     END
 
     ACTION_IF zst_443_pain BEGIN
-        ACTION_IF GAME_IS ~iwdee~ BEGIN
+        ACTION_IF is_iwdee BEGIN
             OUTER_TEXT_SPRINT symbol_pain ~SPPR714~
         END ELSE BEGIN
             OUTER_TEXT_SPRINT symbol_pain ~SPPR733~

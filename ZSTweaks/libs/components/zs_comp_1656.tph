@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1656~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING "bdhelm09.itm" ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6970) END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_parameter1 = 3 match_parameter2 = 0 parameter1 = 5 END

@@ -4,14 +4,13 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_513~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     OUTER_TEXT_SPRINT tornado ~SPPR617~
 END ELSE BEGIN
     OUTER_TEXT_SPRINT tornado ~SPPR616~
 END
 
-ACTION_IF MOD_IS_INSTALLED ~eefixpack.tp2~ ~0~ BEGIN
-    
+ACTION_IF has_eefixpack BEGIN
     COPY_EXISTING ~%tornado%.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8360) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber=4 END

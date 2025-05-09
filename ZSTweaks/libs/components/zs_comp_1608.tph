@@ -1,4 +1,4 @@
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     COPY ~%MOD_FOLDER%/items/aule_staff~ ~override~
     COPY_EXISTING ~STAF08.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8041) id_ref_name = RESOLVE_STR_REF(@8040) END

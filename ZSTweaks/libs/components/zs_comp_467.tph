@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_467~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     WITH_SCOPE BEGIN
         COPY ~%MOD_FOLDER%/spells/cleric/sunray~ ~override~
 
@@ -23,7 +23,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
             LPF ~CD_TRIM-O-MATIC~ INT_VAR level_cap = 1 END
             LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 
-            PATCH_IF NOT MOD_IS_INSTALLED ~eefixpack.tp2~ ~0~ BEGIN
+            PATCH_IF NOT has_eefixpack BEGIN
                 LPF DELETE_EFFECT INT_VAR match_opcode = 177 STR_VAR match_resource = "SP707L14" END
                 LPF DELETE_EFFECT INT_VAR match_opcode = 12 END
                 LPF ALTER_EFFECT INT_VAR match_opcode = 177 parameter1=vampire parameter2=4 STR_VAR match_resource = "UNDDEATH" END

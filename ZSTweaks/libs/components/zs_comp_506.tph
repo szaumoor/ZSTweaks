@@ -6,7 +6,7 @@ END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~SPPR428.SPL~ OR FILE_EXISTS_IN_GAME ~SPPR427.SPL~ BEGIN
 
-    ACTION_IF GAME_IS "iwdee" BEGIN
+    ACTION_IF is_iwdee BEGIN
         OUTER_TEXT_SPRINT wall ~SPPR428~
     END ELSE BEGIN
         OUTER_TEXT_SPRINT wall ~SPPR427~
@@ -15,7 +15,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~SPPR428.SPL~ OR FILE_EXISTS_IN_GAME ~SPPR427.SPL~
     COPY_EXISTING ~%wall%.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8230) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 206 duration = 6 END
-        PATCH_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+        PATCH_IF is_bgee_bg2ee_or_eet BEGIN
             SET blindness_strref = 14674
         END ELSE BEGIN
             SET blindness_strref = 37800
@@ -36,7 +36,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~SPPR428.SPL~ OR FILE_EXISTS_IN_GAME ~SPPR427.SPL~
                   ~SPPR428b.SPL~ ~override~
         LPF ADD_SPL_EFF_TGT INT_VAR pwr=4 stype=1 rd=0 STR_VAR effects = ~op=74,dur=6;op=139,p1=%blindness_strref%;op=39,pro1=39,dur=3,p2=1,spec=130;op=235,pro1=39,p1=12,p2=2,dur=2~ END
     BUT_ONLY IF_EXISTS
-    
+
 END ELSE ACTION_IF group_component = 0 BEGIN
     PRINT "WARNING: Wall of Moonlight (SPPR428) not found in game. This component will not be installed."
 END

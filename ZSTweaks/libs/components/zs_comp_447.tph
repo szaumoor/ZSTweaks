@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_447~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     COPY ~%MOD_FOLDER%/spells/wizard/melf~ ~override~
     COPY_EXISTING ~SPWI211.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8220) END

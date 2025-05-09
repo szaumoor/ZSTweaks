@@ -68,9 +68,9 @@ The AC debuff is mild and the power of it depends on the enchantment level of th
 
 Overall this should provide a mild tactical advantage when having at least one of your party members wielding these blunt weapons. This applies to enemies wielding these weapons too, so be warned.
 
-**Component 1435:** Make Darts use a speed factor of 0
+**Component 1435:** Make Darts have a speed factor of 0 and extend the range to 30 ft
 
-Self-explanatory. It's the lightest weapon, realistically.
+Self-explanatory. It's the lightest weapon, realistically. It also makes them slightly less inconvenient by making them have a range equivalent to those of arrows and bolts.
 
 **Component 1440:** Make daggers have general extra features to compensate for the low damage
 
@@ -1801,6 +1801,16 @@ Self-explanatory. This will make it easier to manage.
 **Component 510:** Make Righteous Wrath of the Faithful only cause some fatigue, instead of guaranteeing it, similar to Haste and restore the attack damage bonus
 
 The attack damage bonus is missing for same-alignment allies, unlike what the description says. This fixes that. Additionally, it only causes 4 points of fatigue, similar to Haste, so it's a bit less inconvenient to use. Finally, this fatigue can no longer be dispelled, same as Haste, which is a likely bug not yet addressed by the devs or the fixpack.
+
+**Component 511:** Make Unfailing Endurance an area spell that cures the fatigue of the whole party
+
+This simply makes the spell more useful and worth the memorization slot.
+
+**Component 512:** Make Alicorn Lance more effective by increasing damage by 1 dice every 2 levels, up to 8d6
+
+Alicorn Lance is not powerful and doesn't scale well. This will make it feasible at higher levels.
+
+**Component 513:** Make Whirlwind more effective and able to damage more creatures before dissipating
 
 
 </details>

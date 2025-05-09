@@ -1,4 +1,5 @@
-ACTION_IF GAME_IS ~iwdee~ AND NOT MOD_IS_INSTALLED "eefixpack.tp2" "0" BEGIN
+ACTION_IF NOT game_is_iwdee AND NOT has_eefixpack BEGIN
+    PRINT ~IWDEE detected without EET Fixpack. Fixing broken BONECIR.spl~
     COPY_EXISTING ~#BONECIR.spl~ ~override~
         WRITE_ASCII 0x0 "SPL " (4)
 END

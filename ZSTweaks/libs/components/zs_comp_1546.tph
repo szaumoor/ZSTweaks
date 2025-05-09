@@ -7,9 +7,9 @@ END
 ACTION_IF zst_1546_buckler_tweak BEGIN
 
     OUTER_SET projectile = 345
-    ACTION_IF GAME_IS ~bgee~ BEGIN
+    ACTION_IF is_bgee BEGIN
         OUTER_SET projectile = 364
-    END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
+    END ELSE ACTION_IF is_iwdee BEGIN
         OUTER_SET projectile = 481
     END
 

@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1672~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~bdbrac05.itm~ BEGIN
         COPY_EXISTING ~bdbrac05.itm~ ~override~
             LPF ALTER_ITEM INT_VAR id_ref_name = RESOLVE_STR_REF(@7321) id_ref_desc=RESOLVE_STR_REF(@7320) END
@@ -12,7 +12,7 @@ ACTION_IF NOT GAME_IS "iwdee" BEGIN
             LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=177 parameter1=bounty_hunter_id END
             LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=177
             match_parameter1=bounty_hunter_id parameter1=IDS_OF_SYMBOL(kit SHADOWDANCER) END
-            PATCH_IF MOD_IS_INSTALLED "ZS_ShadowdancerOverhaul.tp2" "100" BEGIN
+            PATCH_IF has_zs_shadowdancer_overhaul BEGIN
                 LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=177 match_parameter1=bounty_hunter_id parameter1=IDS_OF_SYMBOL(kit ZS_SHADOWDANCER) END
             END
     END ELSE BEGIN

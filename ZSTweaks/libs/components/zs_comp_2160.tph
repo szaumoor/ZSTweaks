@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_2160~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     COPY ~%MOD_FOLDER%/class_kits/quivering_palm~ ~override~
     COPY_EXISTING "SPCL820.SPL" ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6310) END

@@ -51,7 +51,7 @@
 @1150 = "Make some weapon categories adjust their damage configuration"
 @1361 = ~Make axes deal extra damage equal to its base damage on critical hits~
 @1362 = ~Make maces, clubs, and hammers damage the target's Armor Class temporarily based on enchantment level~
-@1435 = "Make Darts have a speed factor of 0"
+@1435 = "Make Darts have a speed factor of 0 and extend the range to 30 ft"
 @1440 = "Make Daggers have general extra features to compensate for the low damage"
 @1450 = "Make some rogue weapons able to do more damage if wielded by pure thieves (Finesse)"
 @1530 = ~Make the inexplicably double damage magical throwing daggers deal normal, to not make them the obvious choice~
@@ -73,6 +73,7 @@
 @1545 = ~Make the basic benefits and progression of various character stats more streamlined or interesting~
 @1546 = ~Make the different shield types more distinct and optionally change shield usability~
 @1547 = ~Make Protection from Undead scrolls less overpowered but still invaluable vs. undead~
+@1549 = ~Tweak the usability of different armor types~
 
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
@@ -5154,13 +5155,11 @@ Weight: 2~
 
 @8030 = ~Created for the Grandmaster Assassin Vita Muerte, this suit not only provided protection but also enabled Vita to better pursue and kill her fleeing victims... as the unfortunate wizard who fashioned this item for the ruthless killer soon learned.
 
-Depending on the type of stalker wearing this armor, different powers are unlocked.
-
 STATISTICS:
 
 Equipped abilities:
 – Doubles movement rate
-– Critical misses are no longer possible (Thieves only)
+– Critical misses are no longer possible (thieves only)
 
 Different kinds of benefits for backstabs are unlocked depending on the rogue wearing this suit:
   – Cripple: Slows the target for 1 round and reduces Strength, Dexterity, and casting speed by 4 for 4 rounds if the target fails a Save vs. Death (kitless thieves).
@@ -5211,14 +5210,14 @@ Fiends of the lower planes may be affected as well, but they're very likely to r
 STATISTICS:
 
 Combat abilities:
-– Undead and fiends must save vs. Death at -2 or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
-  – Fiends: 95%
-  – Liches and demiliches: 80%
-  – Vampires and vampyres: 50%
-  – Spectres, ghosts, and other spectral creatures: 35%
-  – Mummies and revenants: 20%
-  – Wraiths: 5%
-  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time
+– Undead and fiends must save vs. Death at -2 or be utterly destroyed. Stronger creatures have a chance to resist this effect when struck:
+  – Fiends: 95% chance to resist
+  – Liches and demiliches: 80% chance to resist
+  – Vampires and vampyres: 50% chance to resist
+  – Spectres, ghosts, and other spectral creatures: 35% chance to resist
+  – Mummies and revenants: 20% chance to resist
+  – Wraiths: 5% chance to resist
+  – Lesser undead such as Skeletons, Shadows, and Ghouls cannot resist and must save every time they are hit
 
 THAC0: +1 (strikes as a +3 weapon)
 Damage: 1d6+2, plus 1d6+2 vs. undead
@@ -5243,14 +5242,14 @@ Equipped abilities:
 – Immunity to level drain
 
 Combat abilities:
-– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
-  – Fiends: 95%
-  – Liches and demiliches: 80%
-  – Vampires and vampyres: 50%
-  – Spectres, ghosts, and other spectral creatures: 35%
-  – Mummies and revenants: 20%
-  – Wraiths: 5%
-  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time
+– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance to resist this effect when struck:
+  – Fiends: 95% chance to resist
+  – Liches and demiliches: 80% chance to resist
+  – Vampires and vampyres: 50% chance to resist
+  – Spectres, ghosts, and other spectral creatures: 35% chance to resist
+  – Mummies and revenants: 20% chance to resist
+  – Wraiths: 5% chance to resist
+  – Lesser undead such as Skeletons, Shadows, and Ghouls cannot resist and must save every time they are hit
 
 THAC0: +2 (strikes as a +5 weapon)
 Damage: 1d6+3, plus 1d6+3 vs. undead
@@ -5799,14 +5798,14 @@ Equipped abilities:
 
 Combat abilities:
 – Undead take an extra 2d4+4 crushing damage
-– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
-  – Fiends: 95%
-  – Liches and demiliches: 80%
-  – Vampires and vampyres: 50%
-  – Spectres, ghosts, and other spectral creatures: 35%
-  – Mummies and revenants: 20%
-  – Wraiths: 5%
-  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time
+– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance to resist this effect when struck:
+  – Fiends: 95% chance to resist
+  – Liches and demiliches: 80% chance to resist
+  – Vampires and vampyres: 50% chance to resist
+  – Spectres, ghosts, and other spectral creatures: 35% chance to resist
+  – Mummies and revenants: 20% chance to resist
+  – Wraiths: 5% chance to resist
+  – Lesser undead such as Skeletons, Shadows, and Ghouls cannot resist and must save every time they are hit
 
 THAC0: +4
 Damage: 2d4+4 (crushing)
@@ -5840,14 +5839,14 @@ Charge abilities:
 
 Combat abilities:
 – Undead take an extra 2d4+5 crushing damage
-– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
-  – Fiends: 95%
-  – Liches and demiliches: 80%
-  – Vampires and vampyres: 50%
-  – Spectres, ghosts, and other spectral creatures: 35%
-  – Mummies and revenants: 20%
-  – Wraiths: 5%
-  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time
+– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance to resist this effect when struck:
+  – Fiends: 95% chance to resist
+  – Liches and demiliches: 80% chance to resist
+  – Vampires and vampyres: 50% chance to resist
+  – Spectres, ghosts, and other spectral creatures: 35% chance to resist
+  – Mummies and revenants: 20% chance to resist
+  – Wraiths: 5% chance to resist
+  – Lesser undead such as Skeletons, Shadows, and Ghouls cannot resist and must save every time they are hit
 
 THAC0: +5
 Damage: 2d4+5 (crushing)
@@ -6103,10 +6102,10 @@ Equipped abilities:
 – Immunity to fear and panic
 
 Combat abilities:
-– Bane: 15% chance on hit to inflict a -1 penalty to all rolls and morale for 3 rounds. This effect can stack.
+– Curse: Each hit has a 15% chance to curse living targets for 6 rounds, imposing a -1 penalty to all rolls, luck, Armor Class, and morale, and increasing their chances of critical misses by 5%. This effect does not stack.
 
 Charge abilities:
-– Cast Horror once per day
+– Cast Horror twice per day
   Special: All enemies within the area of effect when this spell is cast must save vs. Spell or flee in terror
   Duration: 1 turn
 
@@ -6432,9 +6431,9 @@ This suit of armor was originally designed for Keldorn and few others may wear i
 STATISTICS:
 
 Equipped abilities:
-– Saving Throws: +2
 – Immunity to movement-limiting effects
-– Immunity to Fear
+– Immunity to fear and panic
+– Saving Throws: +2
 
 Armor Class: -2 (-6 vs. slashing, -5 vs. piercing and missile)
 
@@ -6450,14 +6449,14 @@ Equipped abilities:
 
 Combat abilities:
 – Returns to the wielder's hand when thrown
-– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
-  – Fiends: 95%
-  – Liches and demiliches: 80%
-  – Vampires and vampyres: 50%
-  – Spectres, ghosts, and other spectral creatures: 35%
-  – Mummies and revenants: 20%
-  – Wraiths: 5%
-  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time
+– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance to resist this effect when struck:
+  – Fiends: 95% chance to resist
+  – Liches and demiliches: 80% chance to resist
+  – Vampires and vampyres: 50% chance to resist
+  – Spectres, ghosts, and other spectral creatures: 35% chance to resist
+  – Mummies and revenants: 20% chance to resist
+  – Wraiths: 5% chance to resist
+  – Lesser undead such as Skeletons, Shadows, and Ghouls cannot resist and must save every time they are hit
 
 THAC0: +4
 Damage: 1d6+4, double vs. undead

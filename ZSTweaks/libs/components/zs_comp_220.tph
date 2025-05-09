@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_220~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     WITH_SCOPE BEGIN
         OUTER_SET new_description =RESOLVE_STR_REF(@7370)
         LAF GET_DMG_TYPE STR_VAR type=~piercing~ RET piercing = result END

@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1583~ = 1
 END
 
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
     COPY ~%MOD_FOLDER%/items/kachiko~ ~override~
     COPY_EXISTING "WAWAK.ITM" ~override~
         LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@7160) price=30000 END
@@ -12,7 +12,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         SET sd_id = IDS_OF_SYMBOL(kit SHADOWDANCER)
         LPF ADD_EQUIPPED_EFF INT_VAR p1="%sd_id%" p2=9 STR_VAR effects=~op=177,res=ZSTWKCH0;op=177,res=ZSTWKCH1;op=177,res=ZSTWKCH2~ END
 
-        PATCH_IF MOD_IS_INSTALLED "ZS_ShadowdancerOverhaul.tp2" "100" BEGIN
+        PATCH_IF has_zs_shadowdancer_overhaul BEGIN
             PATCH_PRINT "ZS_ShadowdancerOverhaul mod found, adding relevant edit..."
             SET sd_id = IDS_OF_SYMBOL(kit ZS_SHADOWDANCER)
             LPF ADD_EQUIPPED_EFF INT_VAR p1="%sd_id%" p2=9 STR_VAR effects=~op=177,res=ZSTWKCH0;op=177,res=ZSTWKCH1;op=177,res=ZSTWKCH2~ END

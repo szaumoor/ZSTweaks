@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1130~ = 1
 END
 
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
     WITH_SCOPE BEGIN
         COPY "%MOD_FOLDER%/items/boneblade" ~override~
         LAF GET_DMG_TYPE STR_VAR type = ~acid~ RET acid = result END

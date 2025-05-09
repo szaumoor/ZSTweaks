@@ -105,7 +105,7 @@ ACTION_IF zst_446_fball_new_animation BEGIN
     COPY_EXISTING ~SPWI712.SPL~ ~override~
         LPF ALTER_HEADER INT_VAR projectile = 244 END
 
-    ACTION_IF NOT GAME_IS "iwdee" BEGIN // iwdee has a different projectile, skipping for now
+    ACTION_IF NOT is_iwdee BEGIN // iwdee has a different projectile, skipping for now
         COPY_EXISTING ~SPWI523D.SPL~ ~override~
             LPF ALTER_HEADER INT_VAR projectile = 234 END
     END

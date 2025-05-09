@@ -4,25 +4,21 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_400~ = 1
 END
 
-OUTER_SET new_description     = RESOLVE_STR_REF(@5250)
+OUTER_SET new_description        = RESOLVE_STR_REF(@5250)
 OUTER_SET new_description_priest = RESOLVE_STR_REF(@5251)
 
-ACTION_IF GAME_IS "iwdee" BEGIN
-
+ACTION_IF is_iwdee BEGIN
     COPY_EXISTING ~SPPR739.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=new_description_priest END
         LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=216 parameter1=6 header=0 END
         LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
 
-END ELSE ACTION_IF MOD_IS_INSTALLED "setup-iwdification.tp2" "40" OR
-                   MOD_IS_INSTALLED "setup-stratagems.tp2" "1510" OR
-                   MOD_IS_INSTALLED "dw_talents.tp2"       "1510" 
-    BEGIN
-        COPY_EXISTING ~SPPR714.SPL~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_desc=new_description_priest END
-            LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=216 parameter1=6 header=0 END
-            LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
-        BUT_ONLY
+END ELSE ACTION_IF has_iwd_spells_divine BEGIN
+    COPY_EXISTING ~SPPR714.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc=new_description_priest END
+        LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=216 parameter1=6 header=0 END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
+    BUT_ONLY
 END
 
 COPY_EXISTING ~SPWI914.SPL~ ~override~

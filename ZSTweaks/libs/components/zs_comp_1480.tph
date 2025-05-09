@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1480~ = 1
 END
 
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING "NPSW02.ITM" ~override~
         LPF ALTER_HEADER INT_VAR match_type = 1 match_speed = 3 speed = 1 END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=2,p2=1;op=233,p1=2,p2=94~ END

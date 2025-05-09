@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1341~ = 1
 END
 
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
     WITH_SCOPE BEGIN
         LAF GET_DMG_TYPE STR_VAR type = ~magic~ RET magic = result END
         OUTER_SET undead = IDS_OF_SYMBOL(general UNDEAD)

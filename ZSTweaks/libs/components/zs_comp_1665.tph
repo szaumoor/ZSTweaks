@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1665~ = 1
 END
 
-ACTION_IF NOT GAME_IS "iwdee" BEGIN
+ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING "HELM18.itm" ~override~ // Pearly white ioun stone
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7190) END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 98 parameter1 = 6 END

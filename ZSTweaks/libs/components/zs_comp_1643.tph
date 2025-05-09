@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1643~ = 1
 END
 
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING ~NPSW04.ITM~ ~override~
         PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1120" OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ "103" BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 263 parameter1 = 1 END

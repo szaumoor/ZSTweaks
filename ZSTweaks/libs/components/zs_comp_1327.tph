@@ -4,13 +4,13 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1327~ = 1
 END
 
-ACTION_IF GAME_IS "bg2ee eet" BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
     COPY "%MOD_FOLDER%/items/club_detonation" ~override~
     COPY_EXISTING ~BLUN26.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8250) END
         LPF ALTER_HEADER INT_VAR speed = 1 END
 
-        PATCH_IF NOT MOD_IS_INSTALLED ~eefixpack.tp2~ ~0~ BEGIN
+        PATCH_IF NOT has_eefixpack BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode=146 parameter1=0 probability1=6 probability2=0 STR_VAR match_resource=~SPWI304~ resource=~ZSTWCBDT~ END
         END ELSE BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode=146 parameter1=0 probability1=6 probability2=0 STR_VAR match_resource=~BLUN26FB~ resource=~ZSTWCBDT~ END
@@ -22,7 +22,7 @@ ACTION_IF GAME_IS "bg2ee eet" BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8251) END
         LPF ALTER_HEADER INT_VAR speed = 0 END
 
-        PATCH_IF NOT MOD_IS_INSTALLED ~eefixpack.tp2~ ~0~ BEGIN
+        PATCH_IF NOT has_eefixpack BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode=146 parameter1=0 probability1=9 probability2=0 STR_VAR match_resource=~SPWI304~ resource=~ZSTWCBDT~ END
         END ELSE BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode=146 parameter1=0 probability1=9 probability2=0 STR_VAR match_resource=~BLUN27FB~ resource=~ZSTWCBDT~ END
