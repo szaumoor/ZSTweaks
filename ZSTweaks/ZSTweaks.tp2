@@ -3,7 +3,7 @@ SUPPORT "RoyalProtector at Gibberlings's forum https://www.gibberlings3.net/prof
 VERSION "1.5.2"
 README ~%MOD_FOLDER%/README.md~
 AUTO_EVAL_STRINGS
-
+/*
 MODDER
 	setup_tra none
 	area_variables warn
@@ -13,7 +13,7 @@ MODDER
 	missing_eval none
 	overwriting_file none
 	fun_args warn
-
+*/
 ALWAYS
 	INCLUDE ~%MOD_FOLDER%/libs/zs_always.tph~
 END
