@@ -11,4 +11,5 @@ ACTION_IF NOT is_iwdee BEGIN
         LPF GET_DMG_TYPE STR_VAR type = ~poison~ RET poison = result END
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,dsize=2,dnum=1,p2=%poison%,t=2~ END
         LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
+      BUT_ONLY IF_EXISTS
 END

@@ -16,9 +16,11 @@ __[SEE ALL COMPONENT DETAILS HERE](ZSTweaks/README.md)__
 
 ## Compatibility and installation order
 
-This mod should generally be installed after mods that add items to the game. If installed after, the tweaks in this mod that affect them will not be able to affect those.
+This mod was tested on the 2.6.6 version of the game, and every tweak will be under the assumption that this is the version of the game being played. I do not know if it'll work correctly with previous versions nor will I test it or provide support for it. If it works, great, if it doesn't, too bad.
 
-As far as other mods that may affect spells or abilities, it might or might not be compatible; it depends on the nature of the tweak. For example, if a tweak changes who can use a type of weapon, and my tweak just adds a damage bonus to it, it would be compatible, but that may not be the case for every tweak. If there's a philosophical or conceptual difference in the design of the spell or ability, it might make no sense to install both tweaks, or it might fail to install, so use your best judgment. For obvious reasons, don't attempt to mix two tweaks that try to do the exact same thing, as the results will likely not be what you expected. I'm open to providing compatibility personally as long as I'm interested in the other mod as well. One example is SCS, ToF, and Tweaks Anthology, since I like them a lot.
+The mod should generally be installed after mods that add items to the game. If installed after, the tweaks in this mod that affect them will not be able to affect those.
+
+As far as other mods that may affect spells or abilities, it might or might not be compatible; it depends on the nature of the tweak. For example, if a tweak changes who can use a type of weapon, and my tweak just adds a damage bonus to it, it would be compatible, but that may not be the case for every tweak. If there's a philosophical or conceptual difference in the design of the spell or ability, it might make no sense to install both tweaks, or it might fail to install, so use your best judgment. For obvious reasons, don't attempt to mix two tweaks that try to do the exact same thing, as the results will likely not be what you expected. I'm open to providing compatibility as long as I'm interested in the other mod (or if it's easy to provide). One example is SCS, ToF, and Tweaks Anthology, since I like them a lot and I've been using them for years.
 
 Currently, relevant compatibility has been added deliberately to:
 
@@ -27,6 +29,7 @@ Currently, relevant compatibility has been added deliberately to:
 - Rogue Rebalancing
 - ZS_ShadowdancerOverhaul (my own mod, duh, of course I did)
 - Shades of the Sword Coast
+- EEFixpack
 
 ## Notes for users and modders
 
