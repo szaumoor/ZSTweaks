@@ -1,3 +1,5 @@
+**Re-released to undom MODDER flags**
+
 **Fixes**
 - Fixed the code for Curse which could fail to target the right spell in BG depending on what spell packs are installed
 - My Bless/Curse component will fix in passing the vanilla bug with Curse causing enemies to get +10 morale bonus, instead of a -1 morale decrement. This is likely to be fixed by the third beta of the EE Fixpack. Regardless of the presence or absence thereof, my component will fix it.
