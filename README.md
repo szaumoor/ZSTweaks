@@ -24,12 +24,15 @@ As far as other mods that may affect spells or abilities, it might or might not 
 
 Currently, relevant compatibility has been added deliberately to:
 
-- Item Upgrade (upgrades are in line with my upgrades to vanilla items, if selected)
-- Wares of the Planes (generally just exceptions to certain bonuses, due to the unusual nature of the items)
-- Rogue Rebalancing
-- ZS_ShadowdancerOverhaul (my own mod, duh, of course I did)
-- Shades of the Sword Coast
+- ToF
+- SCS
 - EEFixpack
+- IWDification
+- Item Upgrade
+- Rogue Rebalancing
+- Wares of the Planes
+- ZS_ShadowdancerOverhaul
+- Shades of the Sword Coast
 
 ## Notes for users and modders
 
