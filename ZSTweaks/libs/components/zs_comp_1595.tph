@@ -13,7 +13,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ADD_ON_HIT_EFF INT_VAR stype=1 sbonus=2 p1=RESOLVE_STR_REF(@7501) STR_VAR effects = ~op=139,tgt=1~ END
         LPF ADD_ON_HIT_EFF INT_VAR p1=2 p2=elec tmg=3 stype=1 sbonus=2 spec=1024 STR_VAR effects=~op=12,dur=6;op=12,dur=12~ END
 
-        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" BEGIN
+        PATCH_IF zst_1150_dice_spears AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150") BEGIN
             SPRINT strref @7500
             SPRINT str @99999
             LPF WPN_DMG RET dmg = result END

@@ -4,25 +4,28 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1120~ = 1
 END
 
-COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
-    PATCH_IF NOT "%SOURCE_RES%" STR_EQ "l#GNOSW" BEGIN // tongue of thaxx, SotSC
-        LPF ITM_CAT RET wpn_cat = result END
-        LPF ITM_PROF RET wpn_prof = result END
-        LPF ITM_APPEARANCE RET wpn_appearance = result END
-        PATCH_IF wpn_cat=20 AND (wpn_prof=90 OR wpn_prof=94 OR (wpn_prof=95 AND "%wpn_appearance%" STR_EQ "sc")) BEGIN // long swords, katanas or scimitars
-            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "bdsw1h06"
-                 AND NOT "%SOURCE_RES%" STR_EQ "NPSW04"
-            BEGIN
-                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
-            END ELSE BEGIN
-                PATCH_IF NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1643" AND NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1379" BEGIN
-                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
+WITH_SCOPE BEGIN
+    OUTER_SET no_valygar_gear_comp = NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1643" AND NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1379"
+    COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
+        PATCH_IF NOT "%SOURCE_RES%" STR_EQ "l#GNOSW" BEGIN // tongue of thaxx, SotSC
+            LPF ITM_CAT RET wpn_cat = result END
+            LPF ITM_PROF RET wpn_prof = result END
+            LPF ITM_APPEARANCE RET wpn_appearance = result END
+            PATCH_IF wpn_cat=20 AND (wpn_prof=90 OR wpn_prof=94 OR (wpn_prof=95 AND "%wpn_appearance%" STR_EQ "sc")) BEGIN // long swords, katanas or scimitars
+                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "bdsw1h06" BEGIN // skip voidsword entirely
+                    PATCH_IF NOT "%SOURCE_RES%" STR_EQ "NPSW04" BEGIN
+                        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
+                    END ELSE BEGIN
+                        PATCH_IF no_valygar_gear_comp BEGIN
+                            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
+                        END
+                    END
                 END
             END
-        END
 
-        PATCH_IF wpn_cat = 26 AND wpn_prof = 102 BEGIN // quarterstaves
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-2~ END
+            PATCH_IF wpn_cat = 26 AND wpn_prof = 102 BEGIN // quarterstaves
+                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-2~ END
+            END
         END
-    END
 BUT_ONLY
+END

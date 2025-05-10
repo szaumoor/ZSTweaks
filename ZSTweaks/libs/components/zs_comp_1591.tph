@@ -4,6 +4,12 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1591~ = 1
 END
 
+ACTION_IF zst_1591_soul_reaver_nerf OR zst_1591_soul_reaver_dicesize BEGIN
+    OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103")
+END ELSE BEGIN
+    WARN ~No tweaks were selected for Soul Reaver~
+END
+
 ACTION_IF is_bg2ee_or_eet BEGIN
     ACTION_IF zst_1591_soul_reaver_nerf BEGIN
 
@@ -11,7 +17,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             SPRINT strref @6830
             LPF ALTER_EFFECT INT_VAR match_opcode=54 match_duration=120 duration=30 savingthrow=1 savebonus="-4" END
 
-            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            PATCH_IF two_handed_comp_installed BEGIN
                 SPRINT str @99999
                 LPF WPN_DMG RET dmg = result END
                 INNER_PATCH_SAVE strref ~%strref%~ BEGIN
@@ -41,13 +47,13 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 SPRINT strref @6840
             END
 
-            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN
+            PATCH_IF two_handed_comp_installed BEGIN
                 LPF ALTER_HEADER INT_VAR match_dicesize = 9 match_damage = 5 dicesize = 6 dicenumber = 2 damage = 4 END
             END ELSE BEGIN
                 LPF ALTER_HEADER INT_VAR match_dicesize = 10 dicesize = 12 END
             END
 
-            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            PATCH_IF two_handed_comp_installed BEGIN
                 SPRINT str @99999
                 LPF WPN_DMG RET dmg = result END
                 INNER_PATCH_SAVE strref ~%strref%~ BEGIN

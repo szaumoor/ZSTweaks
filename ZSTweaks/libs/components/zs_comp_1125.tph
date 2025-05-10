@@ -5,24 +5,26 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
-    COPY ~%MOD_FOLDER%/items/waninja~ ~override~
-    COPY_EXISTING "WANINJA.itm" ~override~
-        LPF ALTER_ITEM INT_VAR unusable0=1074057600 END
-        LPF ALTER_HEADER INT_VAR speed = 0 END
-        LPF GET_DMG_TYPE STR_VAR type = ~poison~ RET poison = result END
-        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=1,p2=%poison%,spec=1024~ END
-        SET monk = IDS_OF_SYMBOL(class MONK)
-        LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=177,p1=%monk%,res=ZSTWNIJA;op=177,p1=%monk%,res=ZSTWNIJB;op=177,p1=%monk%,res=ZSTWNIJC~ END
+    WITH_SCOPE BEGIN
+      COPY ~%MOD_FOLDER%/items/waninja~ ~override~
+      COPY_EXISTING "WANINJA.itm" ~override~
+          LPF ALTER_ITEM INT_VAR unusable0=1074057600 END
+          LPF ALTER_HEADER INT_VAR speed = 0 END
+          LPF GET_DMG_TYPE STR_VAR type = ~poison~ RET poison = result END
+          LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=1,p2=%poison%,spec=1024~ END
+          SET monk = IDS_OF_SYMBOL(class MONK)
+          LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=177,p1=%monk%,res=ZSTWNIJA;op=177,p1=%monk%,res=ZSTWNIJB;op=177,p1=%monk%,res=ZSTWNIJC~ END
 
-        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1350" BEGIN
-            SPRINT strref @8020
-            SPRINT str @99999
-            LPF WPN_DMG RET dmg = result END
-            INNER_PATCH_SAVE strref ~%strref%~ BEGIN
-                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
-            END
-            SAY_EVALUATED 0x54 ~%strref%~
-        END ELSE BEGIN
-            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8020) END
-        END
+          PATCH_IF zst_1150_dice_wakininja AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150") BEGIN
+              SPRINT strref @8020
+              SPRINT str @99999
+              LPF WPN_DMG RET dmg = result END
+              INNER_PATCH_SAVE strref ~%strref%~ BEGIN
+                  REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
+              END
+              SAY_EVALUATED 0x54 ~%strref%~
+          END ELSE BEGIN
+              LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8020) END
+          END
+    END
 END

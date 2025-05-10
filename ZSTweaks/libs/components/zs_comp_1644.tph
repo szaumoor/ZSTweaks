@@ -6,12 +6,12 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING ~NPSW04.ITM~ ~override~
-                ~NPCHAN.ITM~ ~override~
-                ~NPSTAF.ITM~ ~override~
-                ~NPSW03.ITM~ ~override~
-                ~NPCLCK.ITM~ ~override~
-                ~NPPLAT.ITM~ ~override~
-                ~NPARM.ITM~ ~override~
+                  ~NPCHAN.ITM~ ~override~
+                  ~NPSTAF.ITM~ ~override~
+                  ~NPSW03.ITM~ ~override~
+                  ~NPCLCK.ITM~ ~override~
+                  ~NPPLAT.ITM~ ~override~
+                  ~NPARM.ITM~  ~override~
         PATCH_IF "%SOURCE_RES%" STR_EQ "NPSW04" AND NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1643" AND group_component = 0 BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7110) END
         END

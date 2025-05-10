@@ -7,7 +7,7 @@ END
 ACTION_IF NOT is_iwdee BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~bdsw2h03.itm~ BEGIN
         COPY_EXISTING ~bdsw2h03.ITM~ ~override~
-            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            PATCH_IF zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN
                 SPRINT strref @6900
                 SPRINT str @99999
                 LPF WPN_DMG RET dmg = result END
