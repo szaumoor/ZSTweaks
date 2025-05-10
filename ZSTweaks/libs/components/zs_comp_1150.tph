@@ -69,7 +69,12 @@ ACTION_IF zst_1150_dice_warhammers BEGIN
         END
     BUT_ONLY
 
+    //VOIDHAMMER STUFF
     COPY_EXISTING "bdhamm02.itm" ~override~ // voidhammer +3
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 5 END
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~ZSTWVD01.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 5 END
     BUT_ONLY IF_EXISTS
 END

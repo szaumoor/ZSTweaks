@@ -6,6 +6,15 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
+    ACTION_IF zst_1318_fnorth_evil OR zst_1318_fnorth_trolls BEGIN
+        COPY_EXISTING ~FLAMENOR.EFF~ ~override~
+            LPF ALTER_EFF_FILE INT_VAR special=1024 END
+
+        OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103")
+    END ELSE BEGIN
+        WARN "No Flame of the North tweaks were selected"
+    END
+
     ACTION_IF zst_1318_fnorth_evil BEGIN
 
         COPY_EXISTING ~SW2H12.ITM~ ~override~
@@ -13,7 +22,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             SET mask_evil = IDS_OF_SYMBOL(alignmen MASK_EVIL)
             LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=177 match_parameter2=8 parameter1=mask_evil END
 
-            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            PATCH_IF two_handed_comp_installed BEGIN
                 SPRINT str @99999
                 SPRINT str_sf @99998
                 LPF WPN_DMG RET dmg = result END
@@ -40,7 +49,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             END
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,tmg=1,p1=129,p2=4,res=ZSTWTRL0~ END
 
-            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1430" BEGIN
+            PATCH_IF two_handed_comp_installed BEGIN
                 SPRINT str @99999
                 SPRINT str_sf @99998
                 LPF WPN_DMG RET dmg = result END
@@ -58,10 +67,4 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 END
             END
     END
-
-    ACTION_IF zst_1318_fnorth_evil OR zst_1318_fnorth_trolls BEGIN
-        COPY_EXISTING ~FLAMENOR.EFF~ ~override~
-            LPF ALTER_EFF_FILE INT_VAR special=1024 END
-    END
-
 END

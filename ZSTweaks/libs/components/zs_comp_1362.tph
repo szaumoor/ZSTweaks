@@ -6,11 +6,7 @@ END
 
 
 COPY ~%MOD_FOLDER%/items/hamaclub_ac~ ~override~
-ACTION_IF is_bg2ee_or_eet BEGIN // misaligned index fix
-     PRINT "Applying misaligned index fix to hamm06.itm (Dwarven Thrower +2)"
-     COPY_EXISTING ~hamm06.itm~ ~override~ // Dwarven Thrower +3
-          LPF FJ_SPL_ITM_REINDEX END
-END
+
 
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF ITM_CAT  RET cat  = result  END

@@ -7,6 +7,11 @@ END
 COPY ~%MOD_FOLDER%/items/voidweapons/ZSTWVD00.SPL~ ~override~
      ~%MOD_FOLDER%/items/voidweapons/ZSTWVD01.SPL~ ~override~
 
+ACTION_IF zst_1150_dice_warhammers AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~) BEGIN
+    COPY_EXISTING ~ZSTWVD01.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 5 END
+END
+
 COPY_EXISTING ~bdsw1h06.itm~ ~override~
     LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 44 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWVD00;op=318,p2=1,res=%SOURCE_RES%;op=44,p1=-1~ END

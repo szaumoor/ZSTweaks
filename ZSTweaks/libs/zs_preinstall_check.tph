@@ -14,15 +14,15 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
             PRINT "Baldur's Gate: Enhanced Edition without Siege of Dragonspear detected."
         END
 
-    END ELSE IF is_bg2ee BEGIN
+    END ELSE ACTION_IF is_bg2ee BEGIN
 
         PRINT "Baldur's Gate II: Enhanced Edition detected."
 
-    END ELSE IF is_iwdee BEGIN
+    END ELSE ACTION_IF is_iwdee BEGIN
 
         PRINT "Icewind Dale: Enhanced Edition detected."
 
-    END ELSE IF is_eet BEGIN
+    END ELSE ACTION_IF is_eet BEGIN
 
         PRINT "Enhanced Edition Trilogy detected."
 
@@ -38,7 +38,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
     OUTER_SET has_iwdification_divine   = MOD_IS_INSTALLED "setup-iwdification.tp2" "40"
     OUTER_SET has_scs_iwd_spells_divine = MOD_IS_INSTALLED "setup-stratagems.tp2"   "1510"
     OUTER_SET has_tof_iwd_spells_divine = MOD_IS_INSTALLED "dw_talents.tp2"         "1510"
-    OUTER_SET has_iwd_spells_divine     = has_iwdification_divine OR has_scs_spells_divine OR has_tof_iwd_spells_divine
+    OUTER_SET has_iwd_spells_divine     = has_iwdification_divine OR has_scs_iwd_spells_divine OR has_tof_iwd_spells_divine
 
     OUTER_SET has_iwdification_arcane   = MOD_IS_INSTALLED "setup-iwdification.tp2" "30"
     OUTER_SET has_scs_iwd_spells_arcane = MOD_IS_INSTALLED "setup-stratagems.tp2"   "1500"

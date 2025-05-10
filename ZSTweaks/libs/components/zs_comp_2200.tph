@@ -10,6 +10,7 @@ COPY_EXISTING "SPCL105.SPL" ~override~
 ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN
     COPY_EXISTING "bdsw1hca.itm" ~override~
         LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 263 END
+    BUT_ONLY IF_EXISTS
 END
 
 COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~

@@ -1810,9 +1810,6 @@ This simply makes the spell more useful and worth the memorization slot.
 
 Alicorn Lance is not powerful and doesn't scale well. This will make it feasible at higher levels.
 
-**Component 513:** Make Whirlwind more effective and able to damage more creatures before dissipating
-
-
 </details>
 
 ---
