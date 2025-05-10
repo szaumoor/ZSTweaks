@@ -38,9 +38,11 @@ I highly advise to make this mod the first tweak mod in your mod tweaks, at leas
 ## Credits
 
 - To BeamDog and Bioware for the game, obviously.
-- CamDawg for spending significant time to explain details about how WeiDu works, sharing insights, helpful code, and other matters for modding. Many thanks for your tutorials too
-- DavidW for his great WeiDu tutorial
-- Thanks to the developers of WeiDu, including the documentation
+- CamDawg for spending significant time to explain details about how WeiDu works, sharing insights, helpful code, and other matters for modding. Many thanks for your video tutorials too
+- DavidW for his very helpful WeiDu tutorial
+- The developers of WeiDu, including the documentation
 - And the IESDP, an invaluable resource.
-- People on Discord generally for their help, and the great modders out there that allowed their WeiDu code to be available publicly, like jmerry, Camdawg, 11jo, Argent77, Ardanis, DavidW, SubtleDoctor, among others.
+- People on Discord generally for their help, and the great modders out there that allowed their WeiDu code to be available publicly, like The Artisan, jmerry, CamDawg, 11jo, Argent77, Ardanis, DavidW, SubtleDoctor, among others.
+- dark0dave for giving me the idea of adding a configuration file, now an integral part of the mod that I'll never part with and will continue to implement in other mods.
+- For the people in G3 and Discord for reporting bugs
 - zenblack for feedback, brainstorming, and icon-making.
