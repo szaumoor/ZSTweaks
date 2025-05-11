@@ -5903,6 +5903,20 @@ Saving Throw: Special
 
 This spell creates a small whirlwind within the caster's sight. The whirlwind will fly around randomly, harming friend and foe alike. The caster is immune to <PRO_HISHER> own spell, and elementals and other huge creatures are also unaffected. If a creature is caught in the path of the whirlwind, it takes 4d8 crushing damage, 4d8 slashing damage, and must make a Save vs. Breath Weapon or be stunned for 2 rounds. Creatures with 2 or fewer Hit Dice are automatically killed by this spell. A maximum of 10 targets can be affected, after which the whirlwind will dissipate. This spell is not affected by Magic Resistance.~
 
+@8365 = ~The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter. Despite their small size, daggers have a 5% higher chance to score a critical hit and deal increased damage on critical hits compared to other weapons.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d4 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
 @8370 = ~This is the blood of the kuo-toan prince.
 
 STATISTICS:
