@@ -3,6 +3,7 @@
 // All options that are about "allowing" a tweak or not follow the binary format of "1" to allow the tweak during installation time, and "0" to not allow. Change it to your preferences according to that. If the values have a different meaning, it will be noted.
 
 OUTER_SET zst_debug = "0" // normally at 0 for users
+OUTER_SET zst_gender_fix = "1" // set to 0 if you don't like my fix for the genders of sexless/genderless creatures. In vanilla game, many of these are inappropriately set to 'male' (never female, I wonder why?) even though they should be completely independent of it, such as golems, statues, mists, fungus, slimes, mind flayers... This interferes with opcodes that target based on gender since the results will be far less consistent and/or logic than they should be
 
 ////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
