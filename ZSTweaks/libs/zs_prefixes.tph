@@ -1,4 +1,15 @@
 ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
+    WITH_SCOPE BEGIN
+        PRINT "[[FIX]]: Setting invisible stalker enemies as elementals of the Elemental Plane of Air instead of spectres"
+        OUTER_SET elemental = IDS_OF_SYMBOL(race ELEMENTAL)
+        OUTER_SET elemental_air_class = IDS_OF_SYMBOL(class ELEMENTAL_AIR)
+        COPY_EXISTING ~STALKE.CRE~ ~override~
+                        ~SENSTALK.CRE~ ~override~
+            WRITE_BYTE 0x272 elemental
+            WRITE_BYTE 0x273 elemental_air_class
+        BUT_ONLY IF_EXISTS
+    END
+
     ACTION_IF zst_gender_fix BEGIN
         WITH_SCOPE BEGIN
             PRINT "[[FIX]]: Setting all golem, statue, treant, angelic, doppleganger, fungal, beholder, elemental, genie, shambling mound, slime, mist, floating weapon, demonic, mimic, most spectral undead, and mind flayer enemies as niether-gendered if they're set to male or female so it doesn't intrude with opcodes that target male/female"
@@ -98,14 +109,23 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
         COPY_EXISTING ~hamm06.itm~ ~override~ // Dwarven Thrower +3
             LPF FJ_SPL_ITM_REINDEX END
 
-        PRINT "[[FIX]]: Aesgareth enemies he fights during the card game being considered 'weapon' instead of 'humanoid'"
+        PRINT "[[FIX]]: Aesgareth enemies he fights during the card game being considered 'weapon' instead of 'humanoid', and a couple of others"
         COPY_EXISTING ~gordeck1.cre~ ~override~
                       ~gordeck2.cre~ ~override~
                       ~gordeck3.cre~ ~override~
                       ~gordeck4.cre~ ~override~
+                      ~ohnavrum.cre~ ~override~
             PATCH_IF BYTE_AT(0x271) = 101 BEGIN
                 WRITE_BYTE 0x271 1
             END
+        BUT_ONLY
+
+        OUTER_SET elemental = IDS_OF_SYMBOL(race ELEMENTAL)
+        OUTER_SET elemental_air_class = IDS_OF_SYMBOL(class ELEMENTAL_AIR)
+        PRINT "[[FIX]]: Guardian of Air (ToB) should be set as an invisible stalker, not a human"
+        COPY_EXISTING ~GORSTALK.cre~ ~override~
+            WRITE_BYTE 0x272 elemental
+            WRITE_BYTE 0x273 elemental_air_class
     END
 
     ACTION_IF is_bgee_bg2ee_or_eet BEGIN
