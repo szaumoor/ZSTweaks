@@ -14,46 +14,60 @@ ACTION_IF NOT MOD_IS_INSTALLED "ZS_ShadowdanverOverhaul.tp2" "400" BEGIN
         PATCH_IF cre_class = bard BEGIN
             LPF CRE_THAC0 RET thac0 = result END
             LPF CRE_FIRST_LEVEL RET first_level = result END
+
             PATCH_IF (first_level = 2 OR first_level = 3) AND thac0 = 20 BEGIN
                 LPF ALTER_CRE INT_VAR thac0 = 19 END
             END
-            PATCH_IF first_level = 4 AND thac0 > 18 BEGIN
+
+            ELSE PATCH_IF first_level = 4 AND thac0 > 18 BEGIN
                 LPF ALTER_CRE INT_VAR thac0 = 18 END
             END
-            PATCH_IF (first_level = 5 OR first_level = 6) AND thac0 > 17 BEGIN
+
+            ELSE PATCH_IF (first_level = 5 OR first_level = 6) AND thac0 > 17 BEGIN
                 LPF ALTER_CRE INT_VAR thac0 = 17 END
             END
-            PATCH_IF first_level = 7 AND thac0 > 16 BEGIN
+
+            ELSE PATCH_IF first_level = 7 AND thac0 > 16 BEGIN
                 LPF ALTER_CRE INT_VAR thac0 = 16 END
             END
-            PATCH_IF (first_level = 8 OR first_level = 9) AND thac0 > 15 BEGIN
+
+            ELSE PATCH_IF (first_level = 8 OR first_level = 9) AND thac0 > 15 BEGIN
                 LPF ALTER_CRE INT_VAR thac0 = 15 END
             END
-            PATCH_IF first_level = 10 AND thac0 > 14 BEGIN
+
+            ELSE PATCH_IF first_level = 10 AND thac0 > 14 BEGIN
                 LPF ALTER_CRE INT_VAR thac0 = 14 END
             END
-            PATCH_IF (first_level = 11 OR first_level = 12) AND thac0 > 13 BEGIN
+
+            ELSE PATCH_IF (first_level = 11 OR first_level = 12) AND thac0 > 13 BEGIN
                 LPF ALTER_CRE INT_VAR thac0 = 13 END
             END
-            PATCH_IF first_level = 13 AND thac0 > 12 BEGIN
+
+            ELSE PATCH_IF first_level = 13 AND thac0 > 12 BEGIN
                 LPF ALTER_CRE INT_VAR thac0 = 12 END
             END
-            PATCH_IF (first_level = 14 OR first_level = 15) AND thac0 > 11 BEGIN
+
+            ELSE PATCH_IF (first_level = 14 OR first_level = 15) AND thac0 > 11 BEGIN
                 LPF ALTER_CRE INT_VAR thac0 = 11 END
             END
-            PATCH_IF first_level = 16 AND thac0 > 10 BEGIN
+
+            ELSE PATCH_IF first_level = 16 AND thac0 > 10 BEGIN
                 LPF ALTER_CRE INT_VAR thac0 = 10 END
             END
-            PATCH_IF (first_level = 17 OR first_level = 18) AND thac0 > 9 BEGIN
+
+            ELSE PATCH_IF (first_level = 17 OR first_level = 18) AND thac0 > 9 BEGIN
                 LPF ALTER_CRE INT_VAR thac0 = 9 END
             END
-            PATCH_IF first_level = 19 AND thac0 > 8 BEGIN
+
+            ELSE PATCH_IF first_level = 19 AND thac0 > 8 BEGIN
                 LPF ALTER_CRE INT_VAR thac0 = 8 END
             END
-            PATCH_IF (first_level = 20 OR first_level = 21) AND thac0 > 7 BEGIN
+
+            ELSE PATCH_IF (first_level = 20 OR first_level = 21) AND thac0 > 7 BEGIN
                 LPF ALTER_CRE INT_VAR thac0 = 7 END
             END
-            PATCH_IF first_level >= 22 AND thac0 > 6 BEGIN
+
+            ELSE PATCH_IF first_level >= 22 AND thac0 > 6 BEGIN
                 LPF ALTER_CRE INT_VAR thac0 = 6 END
             END
         END
