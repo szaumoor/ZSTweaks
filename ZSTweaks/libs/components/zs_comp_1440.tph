@@ -29,6 +29,7 @@ COPY_EXISTING "DAGG01.ITM" ~override~
     // END
     // SAY_EVALUATED 0x50 ~%desc%~
 
+
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_CAT RET wpn_cat = result END
     LPF ITM_PROF RET wpn_prof = result END
@@ -41,6 +42,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         PATCH_IF NOT "%SOURCE_RES%" STR_EQ "dagg04" // not grave binder (fake dagger) exceptions
              AND NOT "%SOURCE_RES%" STR_EQ "a7-dg05" // Entropic Blade (wares of the planes)
              AND NOT "%SOURCE_RES%" STR_EQ "a7-dg06" // Enlightenment (wares of the planes)
+             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg06"
         BEGIN
             LPF WPN_THAC0 RET thac0 = result END
             LPF WPN_SPEED RET speed = result END
@@ -48,7 +50,8 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             PATCH_IF actual_speed < 0 BEGIN
                 actual_speed = 0
             END
-            LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = actual_speed to_hit = thac0+1 END
+            SET thac0_bonus = thac0 + 1
+            LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = actual_speed to_hit = thac0_bonus END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1~ END
             PATCH_MATCH ench
                WITH 0 BEGIN
@@ -78,9 +81,10 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                 SPRINT str_sf @99998
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                     REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\1%actual_speed%~ // speed
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*THAC0[ %TAB%]*:?[ %TAB%]*\)\+[0-9]~ ~\1+%thac0_bonus%~ //thac0
                 END
                 SAY_EVALUATED 0x54 ~%desc%~
-            END ELSE PATCH_IF desc_index = "-1" AND udesc_index != basic_dagg_udesc BEGIN
+            END ELSE PATCH_IF desc_index = "-1" AND udesc_index != dagg_original_desc_index BEGIN
                 READ_STRREF 0x50 desc
                 SPRINT str_sf @99998
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
@@ -91,3 +95,13 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         END
     END
 BUT_ONLY
+
+ACTION_IF is_bg2ee_or_eet BEGIN
+    COPY_EXISTING ~DAGG18.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR unid_ref_desc = RESOLVE_STR_REF(@8366) END
+
+    COPY_EXISTING ~DAGG19.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR unid_ref_desc = RESOLVE_STR_REF(@8367) END
+END
+
+

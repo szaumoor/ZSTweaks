@@ -290,7 +290,7 @@
 @280 = "Make Poison (cleric spell) do half damage on a failed save (without poisoning them)"
 @300 = "Make Iron Skins cast as fast a Stoneskin"
 @310 = "Make Fire Seeds create more seeds that do slightly more damage, with an enchantment of 2"
-@320 = "Make Nature's Beauty more dangerous and targets that are under True Sight of blinded immune to it"
+@320 = "Make Nature's Beauty more dangerous and targets that are under True Sight or blinded immune to it"
 @330 = "Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)"
 @340 = "Make Symbol of Death work with Save bonus if above the 60 HP threshold"
 @420 = ~Make Armor of Faith also add a +2 Armor Class bonus to make it useful at low levels~
@@ -5917,6 +5917,48 @@ Requires:
 
 Weight: 1~
 
+@8366 = ~This dagger is used by Shadow Thieves.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d4 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@8367 = ~This dagger was created for <CHARNAME> by <PRO_HISHER> apprentices.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d4+1 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@8368 = ~The typical throwing dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. Unlike a dagger, this one has a smaller handle and is balanced differently.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d4 (missile)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
+
 @8370 = ~This is the blood of the kuo-toan prince.
 
 STATISTICS:
@@ -6632,6 +6674,11 @@ Requires:
  14 Strength
 
 Weight: 10~
+
+
+@99980 = ~Proficiency Type~
+@99981 = ~Long Sword~
+@99982 = ~Bastard Sword~
 
 @99991 = ~\(-\|–\)~
 @99992 = ~Armor Class~
