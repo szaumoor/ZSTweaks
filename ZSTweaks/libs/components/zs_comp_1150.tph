@@ -18,7 +18,8 @@ ACTION_IF zst_1150_dice_spears BEGIN
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_CAT RET wpn_cat = result END
         LPF ITM_PROF RET wpn_prof = result END
-        PATCH_IF wpn_cat = 29 AND wpn_prof = 98 BEGIN
+        LPF ITM_ABILITIES_NUM RET num_abilities = result END
+        PATCH_IF wpn_cat = 29 AND wpn_prof = 98 AND num_abilities > 0 BEGIN
             LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 6 match_dicenumber = 1 dicesize = 8 silent = 1 END
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SPER01" BEGIN
                 LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
@@ -51,7 +52,8 @@ ACTION_IF zst_1150_dice_warhammers BEGIN
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_CAT RET wpn_cat = result END
         LPF ITM_PROF RET wpn_prof = result END
-        PATCH_IF wpn_cat = 21 AND wpn_prof = 97 BEGIN // warhammers
+        LPF ITM_ABILITIES_NUM RET num_abilities = result END
+        PATCH_IF wpn_cat = 21 AND wpn_prof = 97 AND num_abilities > 0 BEGIN  // warhammers
             LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 4 match_dicenumber = 1 dicesize = 5 silent = 1 END
             LPF ALTER_HEADER INT_VAR match_type = 2 match_dicesize = 4 match_dicenumber = 1 dicesize = 5 silent = 1 END
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "HAMM01" BEGIN
@@ -104,46 +106,49 @@ ACTION_IF zst_1150_dice_wakininja BEGIN
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_PROF RET wpn_prof = result END
         LPF ITM_APPEARANCE RET wpn_appearance = result END
-        PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STR_EQ "s1" BEGIN // ninjatos
-            LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
-            LPF ALTER_HEADER INT_VAR silent=1 match_type=2 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
-            LPF WPN_SPEED RET s = result END
-            PATCH_IF s > 0 BEGIN
-                --s
-                LPF ALTER_HEADER INT_VAR match_type = 1 speed = s END
-            END
-
-            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
-                LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index_ninjato END
-                LPF ITM_REF_DESC RET description_index = result END
-                PATCH_IF description_index > "-1" BEGIN
-                    READ_STRREF 0x54 desc
-                    SPRINT str @99999
-                    LPF WPN_DMG RET dmg = result END
-                    LPF WPN_SPEED RET speed = result END
-                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
-                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\1%speed%~
-                    END
-                    SAY_EVALUATED 0x54 ~%desc%~
+        LPF ITM_ABILITIES_NUM RET num_abilities = result END
+        PATCH_IF num_abilities > 0 BEGIN
+            PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STR_EQ "s1" BEGIN // ninjatos
+                LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
+                LPF ALTER_HEADER INT_VAR silent=1 match_type=2 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
+                LPF WPN_SPEED RET s = result END
+                PATCH_IF s > 0 BEGIN
+                    --s
+                    LPF ALTER_HEADER INT_VAR match_type = 1 speed = s END
                 END
-            END
 
-        END ELSE PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STR_EQ "ss" BEGIN // wakis
-            LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
-
-            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
-                LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index_waki END
-                LPF ITM_REF_DESC RET description_index = result END
-                PATCH_IF description_index > "-1" BEGIN
-                    READ_STRREF 0x54 desc
-                    SPRINT str @99999
-                    LPF WPN_DMG RET dmg = result END
-                    LPF WPN_SPEED RET speed = result END
-                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
+                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
+                    LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index_ninjato END
+                    LPF ITM_REF_DESC RET description_index = result END
+                    PATCH_IF description_index > "-1" BEGIN
+                        READ_STRREF 0x54 desc
+                        SPRINT str @99999
+                        LPF WPN_DMG RET dmg = result END
+                        LPF WPN_SPEED RET speed = result END
+                        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
+                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\1%speed%~
+                        END
+                        SAY_EVALUATED 0x54 ~%desc%~
                     END
-                    SAY_EVALUATED 0x54 ~%desc%~
+                END
+
+            END ELSE PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STR_EQ "ss" BEGIN // wakis
+                LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
+
+                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
+                    LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index_waki END
+                    LPF ITM_REF_DESC RET description_index = result END
+                    PATCH_IF description_index > "-1" BEGIN
+                        READ_STRREF 0x54 desc
+                        SPRINT str @99999
+                        LPF WPN_DMG RET dmg = result END
+                        LPF WPN_SPEED RET speed = result END
+                        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
+                        END
+                        SAY_EVALUATED 0x54 ~%desc%~
+                    END
                 END
             END
         END
@@ -165,7 +170,8 @@ ACTION_IF zst_1150_dice_wakislashing BEGIN
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_PROF RET wpn_prof = result END
         LPF ITM_APPEARANCE RET wpn_appearance = result END
-        PATCH_IF wpn_prof = 95 AND "%wpn_appearance%" STR_EQ "ss" BEGIN // wakizashis
+        LPF ITM_ABILITIES_NUM RET num_abilities = result END
+        PATCH_IF wpn_prof = 95 AND "%wpn_appearance%" STR_EQ "ss" AND num_abilities > 0 BEGIN // wakizashis
             LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 damage_type = 7 END
 
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
@@ -204,7 +210,8 @@ ACTION_IF zst_1150_dice_katanas BEGIN
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_CAT RET wpn_cat = result END
         LPF ITM_PROF RET wpn_prof = result END
-        PATCH_IF wpn_cat = 20 AND wpn_prof = 94 BEGIN // katanas
+        LPF ITM_ABILITIES_NUM RET num_abilities = result END
+        PATCH_IF wpn_cat = 20 AND wpn_prof = 94 AND num_abilities > 0 BEGIN // katanas
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=10 match_dicenumber=1 dicesize=5 dicenumber=2 END
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H43" BEGIN
                 LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
@@ -237,7 +244,8 @@ ACTION_IF zst_1150_dice_bastard_swords BEGIN
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_CAT RET wpn_cat = result END
         LPF ITM_PROF RET wpn_prof = result END
-        PATCH_IF wpn_cat = 20 AND wpn_prof = 89 BEGIN // bastard swords
+        LPF ITM_ABILITIES_NUM RET num_abilities = result END
+        PATCH_IF wpn_cat = 20 AND wpn_prof = 89 AND num_abilities > 0  BEGIN // bastard swords
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=4 match_dicenumber=2 dicenumber=1 dicesize=8 END
             LPF WPN_DMG RET dmg = result END
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 damage=dmg+1 END
@@ -274,7 +282,8 @@ ACTION_IF zst_1150_dice_twohanded_swords BEGIN
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_CAT RET wpn_cat = result END
         LPF ITM_PROF RET wpn_prof = result END
-        PATCH_IF wpn_cat = 20 AND wpn_prof = 93 BEGIN // two-handed swords
+        LPF ITM_ABILITIES_NUM RET num_abilities = result END
+        PATCH_IF wpn_cat = 20 AND wpn_prof = 93 AND num_abilities > 0 BEGIN // two-handed swords
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=12 match_dicenumber=1 dicenumber=2 dicesize=6 END
             LPF WPN_DMG RET dmg = result END
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=10 match_dicenumber=1 dicesize=9 damage=dmg+1 END

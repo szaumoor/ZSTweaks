@@ -94,8 +94,13 @@ RET
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
-    SET offset = 0x72 + (header * 0x38)
-    READ_BYTE (offset + 0x12) result
+
+    PATCH_IF header != "-1" BEGIN
+        SET offset = 0x72 + (header * 0x38)
+        READ_BYTE (offset + 0x12) result
+    END ELSE BEGIN
+        SET result = "-1"
+    END
 END
 
 DEFINE_PATCH_FUNCTION WPN_DICESIZE
@@ -106,8 +111,13 @@ RET
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
-    SET offset = 0x72 + (header * 0x38)
-    READ_BYTE (offset + 0x16) result
+
+    PATCH_IF header != "-1" BEGIN
+        SET offset = 0x72 + (header * 0x38)
+        READ_BYTE (offset + 0x16) result
+    END ELSE BEGIN
+        SET result = "-1"
+    END
 END
 
 DEFINE_PATCH_FUNCTION WPN_THAC0
@@ -118,8 +128,13 @@ RET
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
-    SET offset = 0x72 + (header * 0x38)
-    READ_BYTE (offset + 0x14) result
+
+    PATCH_IF header != "-1" BEGIN
+        SET offset = 0x72 + (header * 0x38)
+        READ_BYTE (offset + 0x14) result
+    END ELSE BEGIN
+        SET result = "-999"
+    END
 END
 
 DEFINE_PATCH_FUNCTION ITM_REF_UDESC

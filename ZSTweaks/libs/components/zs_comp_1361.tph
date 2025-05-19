@@ -7,12 +7,12 @@ END
 COPY ~%MOD_FOLDER%/items/axes_crit~ ~override~
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF ITM_CAT RET cat = result END
-    LPF ITM_FLAGS RET flags = result END
-    LPF IS_FLAG_SET INT_VAR flag = 1 RET is_two_handed = result END
-    PATCH_IF cat = 25  // axes
+    LPF ITM_ABILITIES_NUM RET num_abilities = result END
+    PATCH_IF cat = 25 AND num_abilities > 0 // axes
     // exceptions
     AND NOT "%SOURCE_RES%" STR_EQ "a7-ax08" BEGIN // AXE OF THE JESTER (wares of the planes)
         LPF ITM_ENCH RET ench = result END
+        LPF IS_FLAG_SET INT_VAR flag = 1 RET is_two_handed = result END
         PATCH_IF is_two_handed BEGIN
             PATCH_IF ench < 7 BEGIN
                 LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=341,p2=1,res=ZSTWAX2%ench%,spec=1~ END
