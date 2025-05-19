@@ -71,7 +71,8 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         PATCH_IF zst_1450_allow_daggers AND cat=16 AND prof=96
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg15" // Last Resort (wares of the planes)
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg05" // Entropic Blade (wares of the planes)
-            AND NOT "%SOURCE_RES%" STR_EQ "a7-dg09" // Entropic Blade (wares of the planes)
+            AND NOT "%SOURCE_RES%" STR_EQ "a7-dg09" //
+            AND NOT "%SOURCE_RES%" STR_EQ "ysgldag.itm" // fishing for trouble non-usable dagger
         BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWD%ench%~ END
             LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWZ%ench%~ END
