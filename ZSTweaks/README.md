@@ -1409,7 +1409,7 @@ This component makes Shar-Teel's effectiveness vs. males fit her hate and boasti
 - +1 to THAC0 and Damage vs. males
 - +2 AC vs. males (essentially as if she had a Protection from Men spell on her)
 
-Note that this means she has a bonus against things that make no sense they're set as "male", like battle horrors. I want to try to make it so it's just humanoids, but currently it doesn't discriminate, as I'm not sure how to implement that.
+Note that this means she has a bonus against things that _may_ make no sense they're set as "male", like battle horrors. My mod, however, fixes this whenever a component is installed, ensuring sexless and genderless creatures are set as such. Creatures of that nature includes angels, demons, elementals, mind flayers, golems, and others. All those instances will be fixed so this component and any other that targets gender directly works more consistently.
 
 
 </details>
@@ -1744,7 +1744,7 @@ Solution:
   - Spectral undead: 15d6, and weakens them, causing Slow or Confusion for 2 rounds
   - Other cadaverous undead: 10d6, no other side effects
 
-This solution follows the 2nd edition more closely, where only undead who are specifically sensitive to light may be destroyed by it. Spectral undead are generally weakened, but not destroyed, vampires, vampyres, and vampire spawn can be utterly destroyed, and other cadaverous undead aren't weakened or destroyed (including liches and demiliches).
+This solution follows the 2nd edition more closely, where only undead who are specifically sensitive to light may be destroyed by it. Spectral undead are generally weakened, but not destroyed, vampires, vampyres, and vampire spawn can be utterly destroyed, and other cadaverous undead aren't weakened or destroyed (including liches and demiliches -- the latter is immune to essentially all spells though, including Sunray).
 
 **Component 468:** Rebalance Call Lightning's damage and scaling
 
@@ -1856,7 +1856,7 @@ This should make this HLA more generally useful no matter the situation and perh
   - For single-classed thieves, there are more benefits: +2 Damage, +2 THAC0, +1 APR, net +15% critical hit chance improvement
   - Benefits other than backstabbing every hit will last one round longer (that is, 7 seconds + 1 round, aka 13 seconds). This won't stack if there's more than one casting of Assassination available.
   - Overall, this will make the power less likely to be a waste by removing critical misses, increasing the chances of critical hits, which benefits the character even when facing a foe immune to backstabs, and rewarding specialization of Thieves to make them more combat ready.
-- Avoid Death: This improves this ability such that it prevents rogues from dying from Health damage for 3 seconds, and all saving throws succeed as well. This essentially makes the ability an "panic button" that you can select to survive most things during those three seconds that can be saved against, including physical damage. It's a small timeframe, but I think it's long enough to be useful, and short enough to not be overpowered. Other than those 3 seconds, the ability functions as normal.
+- Avoid Death: This improves this ability such that it prevents rogues from dying from Health damage for 3 seconds, and all saving throws succeed as well. This essentially makes the ability an "panic button" that you can select to survive most things during those three seconds that can be saved against, including physical damage. It's a small timeframe, but I think it's long enough to be useful, and short enough to not be overpowered. Other than those 3 seconds, the ability functions as normal. This additionally documents in the description the fact that it also protects against level drain, which is missing in the original description.
 
 **Component 2150:** Make selected HLAS unable to be breached
 
@@ -1910,12 +1910,10 @@ Additionally, it allows a certain enemy blackguard in SoD to perform backstabs o
 
 **Component 3500:** Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane
 
-This seems more a bugfix than a tweak, but it bothers me and it's not tackled anywhere else so here it is. No one can cast Shadowstep (Shadow Jump too if my Shadowdancer overhaul is installed) during those sequences, since those abilities rely on a brief plane shift to the Prime's parallel plane: the Plane of Shadow. This needs to be patched manually, and only the following areas are targetted:
+This seems more a bugfix than a tweak, but it bothers me and it's not tackled anywhere else so here it is. No one can cast Shadowstep during those sequences, since those abilities rely on a brief plane shift to the Prime's parallel plane: the Plane of Shadow. This needs to be patched manually, and only the following areas are targetted:
 
 - Rasaad's ToB quest areas in the SP
 - Lava's Shade of the Sword Coast SP in Gnoll Stronghold
-
-This additionally documents in the description the fact that it also protects against level drain, which is missing in the original description.
 
 **Component 2230:** Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value
 

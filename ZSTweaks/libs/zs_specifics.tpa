@@ -198,3 +198,145 @@ BEGIN
         END
     END
 END
+
+DEFINE_PATCH_FUNCTION PATCH_FOR_BUCKLER_IMMUNITIES
+// might have to record instances and then patch them in separately
+BEGIN
+    LPF CHECK_EXTENSION INT_VAR suppress = 1 STR_VAR extension = "ITM" RET itm_file = result END
+    LPF CHECK_EXTENSION INT_VAR suppress = 1 STR_VAR extension = "SPL" RET spl_file = result END
+    LPF CHECK_EXTENSION INT_VAR suppress = 1 STR_VAR extension = "CRE" RET cre_file = result END
+
+    PATCH_IF NOT itm_file AND NOT spl_file AND NOT cre_file BEGIN
+        PATCH_FAIL "This function only works for .ITM,.SPL, and .CRE files"
+    END
+
+    SET nonmagical = 0
+    SET magical = 0
+    SET enchantment = 0
+
+    PATCH_IF spl_file BEGIN
+        // SET found = 0
+        // READ_ASCII 0x8 res_name (32) NULL
+        GET_OFFSET_ARRAY eff_arr 0x64 4 0x68 2 0 0 0x28
+        PHP_EACH eff_arr AS int => ab_off BEGIN
+
+            GET_OFFSET_ARRAY2 fx_array ab_off SPL_V10_HEAD_EFFECTS
+            PHP_EACH fx_array AS int => fx_off BEGIN
+
+                SET opcode = SHORT_AT(fx_off)
+                PATCH_IF opcode = 120 BEGIN
+
+                    // PATCH_IF found = 0 BEGIN
+                    //     PATCH_PRINT "Patching spell %res_name% (%SOURCE_RES%) for buckler immunity"
+                    //     ++found
+                    // END
+
+                    SET parameter1 = LONG_AT(fx_off + 0x4)
+                    SET parameter2 = LONG_AT(fx_off + 0x8)
+
+                    PATCH_IF nonmagical = 0 AND parameter2 = 2 AND parameter1 = 0 BEGIN
+                        ++nonmagical
+                    END
+
+                    ELSE PATCH_IF magical = 0 AND parameter2 = 1 AND parameter1 = 0 BEGIN
+                        ++magical
+                    END
+
+                    ELSE PATCH_IF parameter2 = 0 AND parameter1 > 0 BEGIN
+                        ++enchantment
+                    END
+
+                END
+
+            END
+
+        END
+
+    END
+
+    ELSE PATCH_IF itm_file BEGIN
+        GET_OFFSET_ARRAY eff_arr 0x6a 4 0x70 2 0 0 0x30
+        PHP_EACH eff_arr AS int => ab_off BEGIN
+            SET opcode = SHORT_AT(ab_off)
+            PATCH_IF opcode = 120 BEGIN
+
+                SET parameter1 = LONG_AT(ab_off + 0x4)
+                SET parameter2 = LONG_AT(ab_off + 0x8)
+
+                PATCH_IF nonmagical = 0 AND parameter2 = 2 AND parameter1 = 0 BEGIN
+                    ++nonmagical
+                END
+
+                ELSE PATCH_IF magical = 0 AND parameter2 = 1 AND parameter1 = 0 BEGIN
+                    ++magical
+                END
+
+                ELSE PATCH_IF parameter2 = 0 AND parameter1 > 0 BEGIN
+                    ++enchantment
+                END
+
+            END
+        END
+
+    END
+
+    ELSE PATCH_IF cre_file BEGIN
+        READ_BYTE 0x33 eff_type
+
+        PATCH_IF eff_type = 0 BEGIN
+            SET effect_size = 0x30
+        END ELSE BEGIN
+            SET effect_size = 0x108
+        END
+
+        GET_OFFSET_ARRAY eff_arr 0x2c4 4 0x2c8 4 0 0 effect_size
+        PHP_EACH eff_arr AS int => ab_off BEGIN
+
+            PATCH_IF eff_type = 0 BEGIN
+                READ_SHORT ab_off opcode
+            END ELSE BEGIN
+                READ_LONG (ab_off + 0x8) opcode
+            END
+
+            PATCH_IF opcode = 120 BEGIN
+
+                PATCH_IF eff_type = 0 BEGIN
+                    READ_LONG (ab_off + 0x4) parameter1
+                    READ_LONG (ab_off + 0x8) parameter2
+                END ELSE BEGIN
+                    READ_LONG (ab_off + 0x14) parameter1
+                    READ_LONG (ab_off + 0x18) parameter2
+                END
+
+                PATCH_IF nonmagical = 0 AND parameter2 = 2 AND parameter1 = 0 BEGIN
+                    ++nonmagical
+                END
+
+                ELSE PATCH_IF magical = 0 AND parameter2 = 1 AND parameter1 = 0 BEGIN
+                    ++magical
+                END
+
+                ELSE PATCH_IF parameter2 = 0 AND parameter1 > 0 BEGIN
+                    ++enchantment
+                END
+            END
+        END
+    END
+
+    PATCH_IF nonmagical BEGIN
+        LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=120 match_parameter2=2 match_parameter1=0 opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~ZSTWBK00~ END
+    END
+
+    PATCH_IF magical BEGIN
+        PATCH_FOR_EACH ench IN 1 2 3 4 5 6 BEGIN
+            LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=120 match_parameter2=1 match_parameter1=0 opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~ZSTWBK0%ench%~ END
+        END
+    END
+
+    PATCH_IF enchantment > 0 BEGIN
+        FOR ( index = 1; index <= enchantment; ++index ) BEGIN
+            LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=120 match_parameter2=0 match_parameter1=index opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~ZSTWBK0%index%~ END
+        END
+    END
+
+END
