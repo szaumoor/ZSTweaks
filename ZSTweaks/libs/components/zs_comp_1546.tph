@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF zst_1546_buckler_tweak BEGIN
+    COPY "%MOD_FOLDER%/items/bucklers" "override"
 
     OUTER_SET projectile = 345
     ACTION_IF is_bgee BEGIN
@@ -13,30 +14,11 @@ ACTION_IF zst_1546_buckler_tweak BEGIN
         OUTER_SET projectile = 481
     END
 
-    ACTION_IF group_component = 0 AND NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN
-
-        COPY "%MOD_FOLDER%/items/bucklers" "override"
-        COPY_EXISTING_REGEXP ~^ZSTWBK#[0-6]\.SPL$~ ~override~
-            LPF ALTER_EFFECT INT_VAR match_probability1=19 probability1=9 END
-        BUT_ONLY
-
-    END ELSE BEGIN
-
-        ACTION_IF zst_1450_allow_bucklers BEGIN
-
-            ACTION_FOR_EACH level IN 0 1 2 3 4 5 6 BEGIN
-                COPY_EXISTING ~ZSTWBK#%level%.spl~ ~override~
-                    LPF ALTER_EFFECT INT_VAR match_opcode=326 match_parameter2=115 STR_VAR resource = "ZSTWBK0%level%" END
-
-                    LPF ALTER_HEADER INT_VAR projectile END
-                BUT_ONLY
-            END
-        END
+    ACTION_FOR_EACH level IN 0 1 2 3 4 5 6 BEGIN
+        COPY_EXISTING ~ZSTWBK#%level%.spl~ ~override~
+            LPF ALTER_HEADER INT_VAR projectile = %projectile% END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@8590) END
     END
-
-    COPY_EXISTING_REGEXP ~^ZSTWBK#[0-6]\.SPL$~ ~override~
-        LPF ALTER_HEADER INT_VAR projectile = %projectile% END
-    BUT_ONLY
 
     COPY_EXISTING ~ZSTWBK1A.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = zs_slashing_immunity END
@@ -45,7 +27,7 @@ ACTION_IF zst_1546_buckler_tweak BEGIN
     COPY_EXISTING ~ZSTWBK1C.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = zs_piercing_immunity END
     COPY_EXISTING ~ZSTWBK1D.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = zs_missile_immunity END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = zs_missile_immunity  END
 END
 
 COPY_EXISTING ~SHLD08.ITM~ ~override~
@@ -69,7 +51,6 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         END
 
         READ_LONG 0x8 shield_strref
-
         PATCH_IF shield_strref = large_shield_strref BEGIN
 
             PATCH_IF zst_1546_tower_tweak BEGIN
@@ -131,11 +112,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         PATCH_IF zst_1546_buckler_tweak AND shield_strref = buckler_shield_strref BEGIN
             LPF PATCH_SHIELD INT_VAR type=4 END
             LPF GET_SHIELD_LEVEL RET result END
-
-            PATCH_IF group_component = 0 AND NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ BEGIN
-                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=232,p1=1,p2=7,res=ZSTWBK#%result%~ END
-            END
-
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=232,p1=1,p2=7,res=ZSTWBK#%result%~ END
             PATCH_IF zst_1546_everyone_can_use_all_shields = 0 BEGIN
                 PATCH_IF zst_1546_buckler_wizards BEGIN
                     WRITE_LONG 0x1e 536870912
@@ -151,5 +128,4 @@ ACTION_IF zst_1546_buckler_tweak BEGIN
     COPY_EXISTING_REGEXP ~^.+\.\(cre\|itm\|spl\)$~ ~override~
         LPF PATCH_FOR_BUCKLER_IMMUNITIES END
     BUT_ONLY
-
 END

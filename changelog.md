@@ -1,15 +1,35 @@
-**Re-released to undom MODDER flags**
-
 **Fixes**
-- Fixed the code for Curse which could fail to target the right spell in BG depending on what spell packs are installed
-- My Bless/Curse component will fix in passing the vanilla bug with Curse causing enemies to get +10 morale bonus, instead of a -1 morale decrement. This is likely to be fixed by the third beta of the EE Fixpack. Regardless of the presence or absence thereof, my component will fix it.
-- Improved the overall efficiency of the mod installation by removing many runtime checks during each component installation, and performing as many as feasible only once right at the beginning of the mod's installation, as well as moving computationally expensive checks in blocks that parse through an arbitrary number of items outside of the block whenever possible.
-- Other misc performance improvements
-- Added some README entries for new components in previous version that I forgot to add.
-- Added credits for dark0dave and a mention of The Artisan
-- Fixed a code error caused by a past refactoring
-- Other code quality changes
-- Added a check for existence of Asp's Nest in BGEE, since it may be the case that SoD introduced it.
-- Fixed some checks for ZSTweaks component existence that weren't taking into account the component merging in recent versions (sorry)
-- Merged all the major, non-controversial fixes this mod does so it executes only once, and by default, even if the relevant component is not executed
-- Fixed warhmammer dice size tweak not affecting the damage for critical hits that the voidweapon component adds
+- Fixed small issue where ninjato speed factors might not be updated in the description, in a certain circumstances when some general weapon tweaks are installed
+- Dagger boost component will now patch the descriptions to display the extra THAC0, as it was intended from the beginning, regardless of what component is installed first
+- The mod will now fix a few issues in the game that other components included by default. All the fixes will only apply if it's not fixed already.
+- Added another fix when this mod gets executed: sexless and genderless creatures that are set to male or female will be set to 'niehter'. My tweak to Shar-Teel that protects her from attacks of "males" and makes her more effective towards 'males' will benefit from this. Unfortunately, because many creatures are inappropriately considered 'male', even when it doesn't make sense, then some creatures can be targetted by such effects. This will fix these inconsistencies. It's lore friendly and might be of benefit in some cases. The list of creatures that are taken into account are: planetars/devas, solars, golems, otyughs, treants, statues, fiends, mind flayers, mists, beholders, genies, elementals, slimes, mimics, dopplegangers, myconids, shadows, wraiths, specters, spectral undead, shambling mounds, shriekers, will 'o wisps, and floating weapons. In my BG2EE there were 602 matches where one of those creatures was set to male or female inappropriately. 298 were found in BGEE with SoD.
+- Added fix: Invisible Stalkers are set to Elementals, specifically Air elementals, which is essentially what they are. In the game they're considered "spectres". This will make items that affect elementals or air elementals affect them too. I also fix the invisible stalker (Guardian of Air) in ToB which is weirdly considered a "human".
+- Added fix: Enemies that Aesgareth fights during the card game not considered humanoid but "weapons" for some reason.
+- Added fix: Embarl's Dagger will be patched to use a 1d4 dice configuration, like other daggers, instead of 1d6
+- Added fix: Ogre's Sword (Aerie's introductory quest) is a long sword with bastard sword stats, changed proficiency to bastard sword
+- Added fix: Cutthroat +4 speed factor set to 0 as expected, not 1 (vanilla). EEFixpack fixes it too.
+- README fix
+- Fixed shield component not adding buckler parry immunity to creature files correctly as well as spamming the same protection effect a number of times
+- Hugely improved the efficiency of the shield component. No longer slow as hell
+- Fixed Beetle component copying creatures over needlessly thus making them marked as modified even if they weren't
+- Fixed issues installing the buckler part of the shield overhaul
+- Fixed incorrect range of buckler spells making it fail
+- Fixed duplicated .tra entry for Symbol, X component
+- Fixed finesse effects effectively only working once. This worked several versions ago so I haven't a clue how it got f***ed up without my notice
+
+**Modifications**
+- Dagger boost component will now modify the description of the unenchanted dagger so the critical hit chance boost daggers have will be noted. Only this description will mention the critical hit chance bonus.
+- Wand rebalance will also modify the Wand of Missiles that Imoen carries at the beginning of BGEE.
+- Removed the buckler component from Finesse to avoid annoyances managing installations. If you want it, use the shield component with the buckler component turned on in the configuration file. As the original design, pure thieves will proc the shield parry more often than other classes
+- Buckler parry now decreases physical damage resistances by 20% instead of 15%.
+- Buckler parry now decreases Armor Class by 3 instead of 2
+- Buckler parry damage resistances debuff now lasts 4 seconds instead of 3, Armor Class debuff lasts 1 round
+- Buckler parry now has a default -2 save penalty if a Thief (single class) uses it, -1 for Bards, 0 for others.
+- Increased the chances of parry to 28% for thieves, 14% for others
+- Bards now have a 19% chance of parry
+- Normalized all "saving throws" and "magic resistance" strings with lower case in descriptions (not in statistics)
+- Restoration Spell tweaks now overhaul (optional) the Greater version of the spell in the following way to make it more attractive:
+	- It spreads on impact, granting the effects to every party member except the priest
+	- The priest is only healed by half their total health.
+	- Still causes deep fatigue on the caster, and worsens the casting speed, Thac0, damage, and armor class of the priest by 2 for 2 turns. Their movement speed is also reduced by 35%. Both these effects can be removed by Unfailing Endurance.
+	- The casting duration is tripled (9 from 3)

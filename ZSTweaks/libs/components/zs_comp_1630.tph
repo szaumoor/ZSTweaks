@@ -20,4 +20,12 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF CLONE_EFFECT INT_VAR check_globals = 0 match_opcode = 141 probability1 = 19 probability2 = 5 savingthrow = 1 END
         LPF CLONE_EFFECT INT_VAR check_globals = 0 match_opcode = 139 probability1 = 19 probability2 = 5 savingthrow = 1 END
 
+        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
+            READ_STRREF 0x54 desc
+            INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*THAC0[ %TAB%]*:?[ %TAB%]*\)\+[0-9]~ ~\1+4~ //thac0
+            END
+            SAY_EVALUATED 0x54 ~%desc%~
+        END
+
 END

@@ -188,6 +188,9 @@ OUTER_SET zst_468_iwd_call_lightning   = "1" // makes call lightning in BG use (
 
 OUTER_SET zst_507_disable_aidglow = "0" // disables the character color pulse with Aid to avoid excessive color pollution
 
+OUTER_SET zst_508_restoration_stat_drain = "1"
+OUTER_SET zst_508_restoration_overhaul = "1"
+
 /////////////////////////////// NPC Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // allows tweaks for keldorn's gear

@@ -13,6 +13,13 @@ ACTION_IF NOT is_iwdee BEGIN
             PATCH_IF general_tweaks_installed OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ BEGIN
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 3 to_hit = 4  END
                 LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWDP12~ resource = ~ZSTWDP14~ END
+
+                READ_STRREF 0x54 desc
+                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*THAC0[ %TAB%]*:?[ %TAB%]*\)\+[0-9]~ ~\1+4~ //thac0
+                END
+                SAY_EVALUATED 0x54 ~%desc%~
+
             END ELSE BEGIN
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 3 to_hit = 3  END
             END
