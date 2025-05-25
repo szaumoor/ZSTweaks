@@ -15,3 +15,4 @@ COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~
         WRITE_SHORT 0x60 45 // slashing resistance
         WRITE_SHORT 0x62 30 // piercing resistance
     END
+BUT_ONLY

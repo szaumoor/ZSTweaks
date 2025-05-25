@@ -22,51 +22,66 @@ ACTION_IF NOT has_shadowdancer_overhaul_thac0_comp BEGIN
             LPF CRE_IS_FLAG_SET INT_VAR flag = 4 RET dual_classed_to_thief = result END
             LPF CRE_IS_FLAG_SET INT_VAR flag = 6 RET dual_classed_to_mage = result END
             PATCH_IF dual_classed_to_thief != 1 AND dual_classed_to_mage != 1 BEGIN
+
                 PATCH_IF cre_class = thief BEGIN
                     SET the_level = first_level
                 END ELSE BEGIN
                     SET the_level = second_level
                 END
+
                 PATCH_IF (the_level = 2 OR the_level = 3) AND thac0 = 20 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 19 END
                 END
-                PATCH_IF the_level = 4 AND thac0 > 18 BEGIN
+
+                ELSE PATCH_IF the_level = 4 AND thac0 > 18 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 18 END
                 END
-                PATCH_IF (the_level = 5 OR the_level = 6) AND thac0 > 17 BEGIN
+
+                ELSE PATCH_IF (the_level = 5 OR the_level = 6) AND thac0 > 17 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 17 END
                 END
-                PATCH_IF the_level = 7 AND thac0 > 16 BEGIN
+
+                ELSE PATCH_IF the_level = 7 AND thac0 > 16 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 16 END
                 END
-                PATCH_IF (the_level = 8 OR the_level = 9) AND thac0 > 15 BEGIN
+
+                ELSE PATCH_IF (the_level = 8 OR the_level = 9) AND thac0 > 15 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 15 END
                 END
-                PATCH_IF the_level = 10 AND thac0 > 14 BEGIN
+
+                ELSE PATCH_IF the_level = 10 AND thac0 > 14 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 14 END
                 END
-                PATCH_IF (the_level = 11 OR the_level = 12) AND thac0 > 13 BEGIN
+
+                ELSE PATCH_IF (the_level = 11 OR the_level = 12) AND thac0 > 13 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 13 END
                 END
-                PATCH_IF the_level = 13 AND thac0 > 12 BEGIN
+
+                ELSE PATCH_IF the_level = 13 AND thac0 > 12 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 12 END
                 END
-                PATCH_IF (the_level = 14 OR the_level = 15) AND thac0 > 11 BEGIN
+
+                ELSE PATCH_IF (the_level = 14 OR the_level = 15) AND thac0 > 11 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 11 END
                 END
-                PATCH_IF the_level = 16 AND thac0 > 10 BEGIN
+
+                ELSE PATCH_IF the_level = 16 AND thac0 > 10 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 10 END
                 END
-                PATCH_IF (the_level = 17 OR the_level = 18) AND thac0 > 9 BEGIN
+
+                ELSE PATCH_IF (the_level = 17 OR the_level = 18) AND thac0 > 9 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 9 END
                 END
-                PATCH_IF the_level = 19 AND thac0 > 8 BEGIN
+
+                ELSE PATCH_IF the_level = 19 AND thac0 > 8 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 8 END
                 END
-                PATCH_IF (the_level = 20 OR the_level = 21) AND thac0 > 7 BEGIN
+
+                ELSE PATCH_IF (the_level = 20 OR the_level = 21) AND thac0 > 7 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 7 END
                 END
-                PATCH_IF the_level >= 22 AND thac0 > 6 BEGIN
+
+                ELSE PATCH_IF the_level >= 22 AND thac0 > 6 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 6 END
                 END
             END

@@ -19,4 +19,12 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             dur += 6
         END
 
+        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
+            READ_STRREF 0x54 desc
+            INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*THAC0[ %TAB%]*:?[ %TAB%]*\)\+[0-9]~ ~\1+3~ //thac0
+            END
+            SAY_EVALUATED 0x54 ~%desc%~
+        END
+
 END

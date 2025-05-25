@@ -20,7 +20,14 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
             PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1440" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN // update +5 enchantment
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 5 to_hit = 6 END
-                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDP16~ resource = ~ZSTWDP18~ END
+                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDP16~ resource=~ZSTWDP18~ END
+
+                READ_STRREF 0x54 desc
+                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*THAC0[ %TAB%]*:?[ %TAB%]*\)\+[0-9]~ ~\1+6~ //thac0
+                END
+                SAY_EVALUATED 0x54 ~%desc%~
+
             END ELSE BEGIN
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 5 to_hit = 5 END
             END
@@ -52,6 +59,13 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1440" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN // update +6 enchantment
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 6 to_hit = 7 END
                 LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDP18~ resource=~ZSTWDP20~ END
+
+                READ_STRREF 0x54 desc
+                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*THAC0[ %TAB%]*:?[ %TAB%]*\)\+[0-9]~ ~\1+7~ //thac0
+                END
+                SAY_EVALUATED 0x54 ~%desc%~
+
             END ELSE BEGIN
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 6 to_hit = 6 END
             END

@@ -258,18 +258,17 @@
 @220 = "Make Ice Storm do more damage, including piercing damage"
 @370 = "Make Ray of Enfeeblement a Necromancy spell"
 @380 = "Make Contagion cause 4 points of Strength and Dexterity damage"
-@390 = "Make Death Fog inflict 1d8+8 acid damage and optionally bypass Magic Resistance"
+@390 = "Make Death Fog inflict 1d8+8 acid damage and optionally bypass magic resistance"
 @400 = "Make Energy Drain drain 6 levels instead of 2"
-@405 = ~Make Maze bypass Magic Resistance, like Imprisonment, and make Minotaurs immune to it~
-@407 = ~Make base Imp Familiars have 12/24 HP like the other familiars~
-@410 = ~Make Horrid Wilting actually more effective against plants and Water Elementals and increase minimum damage~
-@430 = ~Make Grease bypass Magic Resistance, apply a Fire Resistance debuff, and reduce some movement speed regardless~
+@405 = ~Make Maze bypass magic resistance, like Imprisonment, and make minotaurs immune to it~
+@407 = ~Make base imp familiars have 12/24 HP like the other familiars~
+@410 = ~Make Horrid Wilting actually more effective against plants and water elementals and increase minimum damage~
+@430 = ~Make Grease bypass magic resistance, apply a fire resistance debuff, and reduce some movement speed regardless~
 @440 = ~Make Comet bypass magic resistance and apply a mix of cold, fire, and crushing damage~
-@441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level and APR at the appropriate levels"
-@443 = ~Make Symbol of Death work with +6 saving throw bonus if above the 60 HP threshold~
-@444 = ~Make Flesh to Stone use Petrification saves and optionally make some creatures immune to it like in IWD~
+@441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level and Attacks per Round at the appropriate levels"
+w@444 = ~Make Flesh to Stone use Petrification saves and optionally make some creatures immune to it like in IWD~
 @445 = ~Make Bigby's spells more powerful~
-@446 = ~Make Fireball spells slightly scale more up to level 20 andan optional better explosion animation~
+@446 = ~Make Fireball spells slightly scale more up to level 20 and optionally give them a better explosion animation~
 @447 = ~Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance~
 @448 = ~Make Decastave at least grant proficiency with staff while it's held~
 @449 = ~Make Otiluke's Freezing Sphere deal half damage on save~
@@ -290,13 +289,13 @@
 @280 = "Make Poison (cleric spell) do half damage on a failed save (without poisoning them)"
 @300 = "Make Iron Skins cast as fast a Stoneskin"
 @310 = "Make Fire Seeds create more seeds that do slightly more damage, with an enchantment of 2"
-@320 = "Make Nature's Beauty more dangerous and targets that are under True Sight of blinded immune to it"
+@320 = "Make Nature's Beauty more dangerous and targets that are under True Sight or blinded immune to it"
 @330 = "Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)"
 @340 = "Make Symbol of Death work with Save bonus if above the 60 HP threshold"
 @420 = ~Make Armor of Faith also add a +2 Armor Class bonus to make it useful at low levels~
 @450 = ~Make cure and cause wound spells other than Heal/Harm more worth using~
 @461 = ~Make Bolt of Glory slightly more effective and reorganize the damage distribution per type of enemy~
-@462 = ~Make Magical Stone bypass Magic Resistance and deal both magic and missile damage~
+@462 = ~Make Magical Stone bypass magic resistance and deal both magic and missile damage~
 @463 = ~Make Dolorous Decay more powerful~
 @464 = ~Make Wondrous Recall also recall wizard spells, and a higher number of them~
 @466 = ~Make Shield of Archons absorb more spell levels (equivalent to cleric level)~
@@ -316,7 +315,7 @@
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray and Sun Soulbeam Sun Soul Monks scale further and/or do more damage to undead"
 @360 = "Make Shaman's unique spells more powerful"
-@2120 = "Make War Cry inflict fear with a -2 Saving Throw penalty and rally the allies"
+@2120 = "Make War Cry inflict fear with a -2 saving throw penalty and rally the allies"
 @2130 = "Make some Thief HLAs more effective"
 @2150 = "Make a selection HLAS unable to be breached"
 @2160 = ~Make Quivering Palm's saving throw improve twice at later levels~
@@ -364,7 +363,7 @@ Casting Time: 9
 Area of Effect: 12-ft. radius
 Saving Throw: 1/2
 
-A Glyph of Warding is a powerful inscription magically drawn to prevent unauthorized or hostile creatures from passing, entering, or opening. It can be used to guard a small bridge, to ward an entry, or as a trap on a chest or box. Any creature violating the warded area is subject to the magic it stores, although a successful Saving Throw vs. Spell enables the creature to take only half of the damage. When the spell is cast, the priest weaves a tracery of faintly glowing lines around the warding sigil. When the glyph is activated, it deals 1d4 points of electrical damage per level of the caster, up to 20d4.~
+A Glyph of Warding is a powerful inscription magically drawn to prevent unauthorized or hostile creatures from passing, entering, or opening. It can be used to guard a small bridge, to ward an entry, or as a trap on a chest or box. Any creature violating the warded area is subject to the magic it stores, although a successful saving throw vs. Spell enables the creature to take only half of the damage. When the spell is cast, the priest weaves a tracery of faintly glowing lines around the warding sigil. When the glyph is activated, it deals 1d4 points of electrical damage per level of the caster, up to 20d4.~
 
 @5010 = ~Bless
 (Conjuration/Summoning)
@@ -404,7 +403,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-The Finger of Death spell snuffs out the victim's life force. The caster points <PRO_HISHER> finger at the victim after the incantation is complete, effectively ripping the life out of its body unless a Save vs. Spell is made with a -2 penalty. A creature successfully making the Saving Throw still receives 2d8 points of damage + 1 per level of the caster.~
+The Finger of Death spell snuffs out the victim's life force. The caster points <PRO_HISHER> finger at the victim after the incantation is complete, effectively ripping the life out of its body unless a Save vs. Spell is made with a -2 penalty. A creature successfully making the saving throw still receives 2d8 points of damage + 1 per level of the caster.~
 
 
 @5040 = ~Meteor Swarm
@@ -417,7 +416,7 @@ Casting Time: 9
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces pull down meteors from above, hurling them randomly at anyone in the area of effect. Anyone caught in the destructive path of the meteors—whether friend or foe—will suffer 2d8 points of damage plus 1 per level of the caster (i.e. 2d10 + 1/level) with no Saving Throw or Magic Resistance check allowed to resist it. The caster is well advised to be careful in <PRO_HISHER> use of this spell.~
+When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces pull down meteors from above, hurling them randomly at anyone in the area of effect. Anyone caught in the destructive path of the meteors—whether friend or foe—will suffer 2d8 points of damage plus 1 per level of the caster (i.e. 2d10 + 1/level) with no saving throw or magic resistance check allowed to resist it. The caster is well advised to be careful in <PRO_HISHER> use of this spell.~
 
 @5050 = ~Horror
 (Enchantment)
@@ -478,9 +477,9 @@ Saving Throw: Special
 
 When this spell is cast, a local tremor of fairly high strength rips the ground. The shock is over in several rounds. The earthquake affects all creatures in its area of effect except the caster and <HISHER> party. There are 3 tremors that are caused by the earthquake:
 
- 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful Saving Throw vs. Spell with a -6 penalty halves the damage and negates the fall.
- 2nd: All creatures affected take 3d6 points of damage. A successful Saving Throw vs. Spell with a -2 penalty halves the damage.
- 3rd: All creatures affected take 2d6 points of damage. A successful Saving Throw vs. Spell halves the damage.
+ 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful saving throw vs. Spell with a -6 penalty halves the damage and negates the fall.
+ 2nd: All creatures affected take 3d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
+ 3rd: All creatures affected take 2d6 points of damage. A successful saving throw vs. Spell halves the damage.
 
 Additionally, earth elementals dislike mere mortals toying with the land and there is a 3% chance that casting this spell will cause an earth elemental to appear and attack the party.~
 
@@ -498,9 +497,9 @@ Saving Throw: Special
 
 When this spell is cast, a local tremor of fairly high strength rips the ground. The shock is over in several rounds. The earthquake affects all creatures in its area of effect except the caster and <HISHER> party. There are 3 tremors that are caused by the earthquake:
 
- 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful Saving Throw vs. Spell with a -6 penalty halves the damage and negates the fall.
- 2nd: All creatures affected take 5d6 points of damage. A successful Saving Throw vs. Spell with a -4 penalty halves the damage.
- 3rd: All creatures affected take 4d6 points of damage. A successful Saving Throw vs. Spell with a -2 penalty halves the damage.
+ 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful saving throw vs. Spell with a -6 penalty halves the damage and negates the fall.
+ 2nd: All creatures affected take 5d6 points of damage. A successful saving throw vs. Spell with a -4 penalty halves the damage.
+ 3rd: All creatures affected take 4d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
 
 Additionally, earth elementals dislike mere mortals toying with the land and there is a 2% chance that casting this spell will cause an earth elemental to appear and attack the party.~
 
@@ -518,9 +517,9 @@ Saving Throw: Special
 
 When this spell is cast, a local tremor of fairly high strength rips the ground. The shock is over in several rounds. The earthquake affects all creatures in its area of effect. There are 3 tremors that are caused by the earthquake:
 
- 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful Saving Throw vs. Spell with a -6 penalty halves the damage and negates the fall.
- 2nd: All creatures affected take 5d6 points of damage. A successful Saving Throw vs. Spell with a -4 penalty halves the damage.
- 3rd: All creatures affected take 4d6 points of damage. A successful Saving Throw vs. Spell with a -2 penalty halves the damage.
+ 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful saving throw vs. Spell with a -6 penalty halves the damage and negates the fall.
+ 2nd: All creatures affected take 5d6 points of damage. A successful saving throw vs. Spell with a -4 penalty halves the damage.
+ 3rd: All creatures affected take 4d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
 
 Additionally, earth elementals dislike mere mortals toying with the land and there is a 2% chance that casting this spell will cause an earth elemental to appear and attack the party.~
 
@@ -547,13 +546,14 @@ Casting Time: 4
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-Through this spell, the caster can poison victims who fail their Saving Throw vs. Poison. The damage inflicted depends on the level of the caster as detailed below:
+Through this spell, the caster can poison victims who fail their saving throw vs. Poison. The damage inflicted depends on the level of the caster as detailed below:
  7–9th level: 2d8 + 2/round
  10–12th level: 3d8 + 3/round
  13–14th level: 4d8 + 4/round
  15–16th level: 6d8 + 5/round
  17+ level: 8d8 + 6/round
-Those who make their Saving Throws only take half of the initial damage, and are unaffected by the poison damage per round.~
+
+Those who make their saving throws only take half of the initial damage, and are unaffected by the poison damage per round.~
 
 @5120 = ~Holy Power
 (Evocation)
@@ -605,7 +605,7 @@ Casting Time: 9
 Area of Effect: The caster
 Saving Throw: 1/2
 
-Casting the Fire Seed spell creates 12 fire seeds that will appear in the caster's inventory. The seeds will remain in existence for 3 turns after the spell is cast. If they are thrown at an enemy, a fireball will ensue, causing 3d8+5 points of damage to all within a 7-ft. radius unless they make a Saving Throw vs. Spell for half damage. These seeds are thrown with a THAC0 bonus of +2 and are considered +2 weapons for the purposes of what they can hit.~
+Casting the Fire Seed spell creates 12 fire seeds that will appear in the caster's inventory. The seeds will remain in existence for 3 turns after the spell is cast. If they are thrown at an enemy, a fireball will ensue, causing 3d8+5 points of damage to all within a 7-ft. radius unless they make a saving throw vs. Spell for half damage. These seeds are thrown with a THAC0 bonus of +2 and are considered +2 weapons for the purposes of what they can hit.~
 
 @5160 = ~Created by the Fire Seeds spell. When thrown at opponents, they explode into small fireballs that do 3d8+5 points of damage to everyone within a 7-ft. radius.
 
@@ -627,7 +627,7 @@ Casting Time: 6
 Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
-When this spell is cast, the caster appears to undergo a remarkable transformation. The caster becomes the very ideal of beauty: For a male, this is usually a nymph; for a female, it varies. As with a nymph, anyone viewing the disguised caster must make a Saving Throw vs. Spell with +2 bonus or die of longing for the denied illusion. Even if the Saving Throw is successful, hapless viewers of the transformed Druid are all instantly smitten with permanent blindness (until dispelled). The transformation is instantaneous, but lasts only seconds, affecting those near the caster (excluding fellow party members).~
+When this spell is cast, the caster appears to undergo a remarkable transformation. The caster becomes the very ideal of beauty: For a male, this is usually a nymph; for a female, it varies. As with a nymph, anyone viewing the disguised caster must make a saving throw vs. Spell with +2 bonus or die of longing for the denied illusion. Even if the saving throw is successful, hapless viewers of the transformed Druid are all instantly smitten with permanent blindness (until dispelled). The transformation is instantaneous, but lasts only seconds, affecting those near the caster (excluding fellow party members).~
 
 @5180 = ~Confusion
 (Enchantment/Charm)
@@ -640,7 +640,7 @@ Casting Time: 7
 Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
-This spell causes confusion in one or more enemy creatures within the area, creating indecision and the inability to take effective action. All enemy creatures within the area of effect are allowed Saving Throws vs. Spell with a -4 penalty. Those successfully saving are unaffected by the spell. Those who fail their Saving Throws will either go berserk, stand confused, or wander about for the duration of the spell.
+This spell causes confusion in one or more enemy creatures within the area, creating indecision and the inability to take effective action. All enemy creatures within the area of effect are allowed saving throws vs. Spell with a -4 penalty. Those successfully saving are unaffected by the spell. Those who fail their saving throws will either go berserk, stand confused, or wander about for the duration of the spell.
 
 The spell lasts for 1 round for every two levels of the caster. Wandering creatures move as far from the caster as possible according to their most typical mode of movement (characters walk, fish swim, bats fly, etc.). Any confused creature that is attacked perceives the attacker as an enemy and acts according to its basic nature.~
 
@@ -655,7 +655,7 @@ Casting Time: 9
 Area of Effect: 12-ft. radius
 Saving Throw: Neg.
 
-Symbol, Death is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area of effect to make a Saving Throw vs. Death or die. Creatures with more than 60 current Hit Points are significantly less likely to be killed, gaining a +6 bonus to their Saving Throw.~
+Symbol, Death is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area of effect to make a saving throw vs. Death or die. Creatures with more than 60 current Hit Points are significantly less likely to be killed, gaining a +6 bonus to their saving throw.~
 
 @5200 = ~Symbol, Death
 (Conjuration/Summoning)
@@ -667,7 +667,7 @@ Casting Time: 9
 Area of Effect: 12-ft. radius
 Saving Throw: Neg.
 
-Symbol, Death is a powerful enchantment that allows the wizard to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area to make a Save vs. Death or die. Creatures with more than 60 current Hit Points are significantly less likely to be killed, gaining a +6 bonus to their Saving Throw.~
+Symbol, Death is a powerful enchantment that allows the wizard to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area to make a Save vs. Death or die. Creatures with more than 60 current Hit Points are significantly less likely to be killed, gaining a +6 bonus to their saving throw.~
 
 @5210 = ~Ethereal Retribution
 (Conjuration)
@@ -755,7 +755,7 @@ Casting Time: 5
 Area of Effect: 1 creature, and everyone around them
 Saving Throw: None
 
-The recipient of this spell gains the benefits of a Bless spell (+1 to attack rolls and Saving Throws) and a special bonus of 1d8 additional Hit Points, plus a separate 1 HP bonus per level after level 3, for the duration of the spell. The Aid spell enables the recipient to actually have more Hit Points than <PRO_HISHER> current maximum. The  first 1d8 bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic, but the rest will be kept.
+The recipient of this spell gains the benefits of a Bless spell (+1 to attack rolls and saving throws) and a special bonus of 1d8 additional Hit Points, plus a separate 1 HP bonus per level after level 3, for the duration of the spell. The Aid spell enables the recipient to actually have more Hit Points than <PRO_HISHER> current maximum. The  first 1d8 bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic, but the rest will be kept.
 
 For example, if a character has 100 HP, and Aid grants them 5 HP from the first bonus, and 15 HP from the second one, their HP will become 120. If they take a hit that reduces their current HP by 25, their HP will become 95, and their maximum HP will go down to 115 HP, since the first 5 HP bonus to maximum health was consumed and therefore lost.~
 
@@ -928,7 +928,7 @@ Weight: 5~
 @6047 = "Arcane Blast"
 @6048 = ~Rod of Royal Might~
 
-@6050 = ~This abyssal greensteel blade is one of Haer'Dalis's favorite weapons. This short sword is capable of inflicting an additional 6 points of poison damage if the target fails a Saving Throw. This blade may only be used by tieflings.
+@6050 = ~This abyssal greensteel blade is one of Haer'Dalis's favorite weapons. This short sword is capable of inflicting an additional 6 points of poison damage if the target fails a saving throw. This blade may only be used by tieflings.
 
 STATISTICS:
 
@@ -967,7 +967,7 @@ Requires:
 
 Weight: 2~
 
-@6052 = ~This abyssal greensteel blade is one of Haer'Dalis's favorite weapons. This short sword is capable of inflicting an additional 9 points of poison damage if the target fails a Saving Throw. This blade may only be used by Haer'Dalis.
+@6052 = ~This abyssal greensteel blade is one of Haer'Dalis's favorite weapons. This short sword is capable of inflicting an additional 9 points of poison damage if the target fails a saving throw. This blade may only be used by Haer'Dalis.
 
 STATISTICS:
 
@@ -1772,7 +1772,7 @@ Casting Time: 8
 Area of Effect: 15-ft. radius
 Saving Throw: 1/2
 
-This spell evaporates moisture from the bodies of every living creature within the area of effect, inflicting 1d7+1 damage per level of the caster. Affected creatures are allowed a Saving Throw vs. Spell for half damage. This spell is especially devastating to water elementals and plant creatures (including fungal creatures such as Myconids), who receive a penalty of -2 to their Saving Throws and take always the maximum damage possible. This spell will not harm party members.~
+This spell evaporates moisture from the bodies of every living creature within the area of effect, inflicting 1d7+1 damage per level of the caster. Affected creatures are allowed a saving throw vs. Spell for half damage. This spell is especially devastating to water elementals and plant creatures (including fungal creatures such as Myconids), who receive a penalty of -2 to their saving throws and take always the maximum damage possible. This spell will not harm party members.~
 
 @6230 = ~This is a vicious weapon used by Neb, covered with old blood and coated in a poison that is both quick-acting and extremely deadly. Only the truly evil would dare to use this item on their own.
 
@@ -1827,7 +1827,7 @@ Type: Two-handed
 Weight: 8~
 
 
-@6242 = ~Full plate armor is the best armor a warrior can buy, both in appearance and protection. This armor increases the wearer's Armor Class by one above that of normal full plate. While equipped, the suit provides the wearer with a +1 bonus to all Saving Throws and grants the wearer immunity to movement-limiting effects such as Web and Grease. This suit was designed for Keldorn, and only he may wear it.
+@6242 = ~Full plate armor is the best armor a warrior can buy, both in appearance and protection. This armor increases the wearer's Armor Class by one above that of normal full plate. While equipped, the suit provides the wearer with a +1 bonus to all saving throws and grants the wearer immunity to movement-limiting effects such as Web and Grease. This suit was designed for Keldorn, and only he may wear it.
 
 STATISTICS:
 
@@ -1993,9 +1993,9 @@ Casting Time: 1
 Area of Effect: 15-ft. radius
 Saving Throw: Special
 
-A Grease spell covers a material surface with a slippery, highly flamable layer of a fatty, greasy nature. Any creature entering the area or caught in it when the spell is cast must save vs. Spell at +2 or slip and slide, unable to move effectively (80% slower). Those who successfully save can move, albeit slowly (25% slower), for the rest of the round (but will need to save vs. Spell again the following round). Regardless of whether they save against the effect or not, the oil will make them take 25% more fire damage for 1 round due to the volatile nature of the oils. Those who remain in the area are allowed a Saving Throw each round until they escape the area.
+A Grease spell covers a material surface with a slippery, highly flamable layer of a fatty, greasy nature. Any creature entering the area or caught in it when the spell is cast must save vs. Spell at +2 or slip and slide, unable to move effectively (80% slower). Those who successfully save can move, albeit slowly (25% slower), for the rest of the round (but will need to save vs. Spell again the following round). Regardless of whether they save against the effect or not, the oil will make them take 25% more fire damage for 1 round due to the volatile nature of the oils. Those who remain in the area are allowed a saving throw each round until they escape the area.
 
-Because this spell simply conjures plain grease, it's not affected by Magic Resistance.~
+Because this spell simply conjures plain grease, it's not affected by magic resistance.~
 
 @6300 = ~Set Exploding Trap
 This ability allows the rogue to set a powerful trap that unleashes a fireball which causes 15d6 damage (Save vs. Spell for half damage) and will knock its victims off their feet for 1 round with no save allowed.~
@@ -2627,7 +2627,6 @@ Equipped abilities:
 Combat abilities:
 – 50% chance per hit to inflict 1d4 points of Magic damage
 
-
 THAC0: +2
 Damage: 1d4+2 (piercing)
 Speed Factor: 0
@@ -2918,7 +2917,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-The recipient of this spell gains extraordinary luck for the next turn, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
+The recipient of this spell gains extraordinary luck for the next turn, receiving a +1 bonus to <PRO_HISHER> saving throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
 
 // luck boost only
 @6720 = ~Luck
@@ -2931,7 +2930,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-The recipient of this spell gains extraordinary luck for the next 3 rounds, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +10% to all thieving skills. Furthermore, Armor Class receives a bonus of 2, critical hit chances improve by 5%, and damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
+The recipient of this spell gains extraordinary luck for the next 3 rounds, receiving a +1 bonus to <PRO_HISHER> saving throws, attack rolls, and minimum damage/healing rolls as well as +10% to all thieving skills. Furthermore, Armor Class receives a bonus of 2, critical hit chances improve by 5%, and damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
 
 // luck duration + boost
 @6730 = ~Luck
@@ -2944,7 +2943,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-The recipient of this spell gains extraordinary luck for the next turn, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +10% to all thieving skills. Furthermore, Armor Class receives a bonus of 2, critical hit chances improve by 5%, and damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
+The recipient of this spell gains extraordinary luck for the next turn, receiving a +1 bonus to <PRO_HISHER> saving throws, attack rolls, and minimum damage/healing rolls as well as +10% to all thieving skills. Furthermore, Armor Class receives a bonus of 2, critical hit chances improve by 5%, and damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
 
 @6740 = ~This burnished, red ring is engraved with depictions of flames and lava coils. Mages and other planar travelers use these rings to protect themselves while visiting the Elemental Plane of Fire and to command fire elementals to do their bidding.
 
@@ -3311,7 +3310,7 @@ Unfortunately, he happened to be standing between the portals, holding the dagge
 STATISTICS:
 
 Equipped abilities:
-– +10% resistance to fire, cold, electrical, and acid damage
+– +10% elemental resistance
 
 Combat abilities:
 – Deals an extra 2d4 cold damage to fire elementals
@@ -3360,7 +3359,7 @@ Casting Time: 6
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-This spell turns flesh of any sort to stone. All possessions on the person of the creature likewise turn to stone. The intended subject of the spell receives a Saving Throw vs. Petrification to avoid the effect. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The reverse of this spell may be cast upon the victim in order to restore life, but this is the only way.~
+This spell turns flesh of any sort to stone. All possessions on the person of the creature likewise turn to stone. The intended subject of the spell receives a saving throw vs. Petrification to avoid the effect. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The reverse of this spell may be cast upon the victim in order to restore life, but this is the only way.~
 
 @6960 = ~This glittering golden crown looks impressive, but its substance is base fool's gold and the "gems" set around it are bits of colored glass. Placing the crown on one's head allows the wearer to prepare extra spells but fills the head with false knowledge, making it hard to distinguish between truth and falsity.
 
@@ -3431,7 +3430,7 @@ Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: Special
 
-As the Shaman casts this spell, energies gather together from the spirit world and form a pale blue sphere. The Shaman can throw the sphere so that it explodes into a burst of ghostly, azure flames, which deliver 1d4+1 points of magic damage per level of the Shaman (up to a maximum of 12d4+12). There is also a 33% chance that every enemy within the area of effect will be afflicted by the Doom spell (-2 penalty to Saving Throws and attack rolls for 1 turn). A successful Save vs. Spell halves the damage, but not the Doom effect. Spirits, fey creatures, elementals, and spectral undead take double damage.~
+As the Shaman casts this spell, energies gather together from the spirit world and form a pale blue sphere. The Shaman can throw the sphere so that it explodes into a burst of ghostly, azure flames, which deliver 1d4+1 points of magic damage per level of the Shaman (up to a maximum of 12d4+12). There is also a 33% chance that every enemy within the area of effect will be afflicted by the Doom spell (-2 penalty to saving throws and attack rolls for 1 turn). A successful Save vs. Spell halves the damage, but not the Doom effect. Spirits, fey creatures, elementals, and spectral undead take double damage.~
 
 //bgee version
 @7010 = ~Eagle Bow: Protector of the Dryads
@@ -4079,7 +4078,7 @@ Casting Time: 9
 Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
-At the culmination of this dreadful spell, the wizard screams like a banshee (groaning spirit). Everyone in the area of effect hears the awful cry. Those who fail a Saving Throw vs. Death die instantly; those who succeed still suffer 3d6+3 magic damage and deafness for 2 rounds without any save allowed. The caster and companions are immune to the effects of the wail.~
+At the culmination of this dreadful spell, the wizard screams like a banshee (groaning spirit). Everyone in the area of effect hears the awful cry. Those who fail a saving throw vs. Death die instantly; those who succeed still suffer 3d6+3 magic damage and deafness for 2 rounds without any save allowed. The caster and companions are immune to the effects of the wail.~
 
 @7370 = ~Ice Storm
 (Evocation)
@@ -4113,7 +4112,7 @@ An extradimensional space is brought into being upon utterance of a maze spell. 
 – 15 to 17: 2d4 rounds
 – 18 and up: 1d4 rounds
 
-Note that if the 9th-level spell Freedom is cast in the area where a creature is mazed, it will effectively bring <PRO_HIMHER> back to this plane, ending the spell prematurely, but it cannot be ended with any other magic-dispelling spells. This spell is not subject to Magic Resistance, and minotaurs are immune to this effect.~
+Note that if the 9th-level spell Freedom is cast in the area where a creature is mazed, it will effectively bring <PRO_HIMHER> back to this plane, ending the spell prematurely, but it cannot be ended with any other magic-dispelling spells. This spell is not subject to magic resistance, and minotaurs are immune to this effect.~
 
 @7381 = ~Bigby's Clenched Fist
 (Evocation)
@@ -4125,7 +4124,7 @@ Casting Time: 8
 Area of Effect: 1 creature
 Saving Throw: Special
 
-This spell causes a giant disembodied hand to squeeze and constrict the target once per round for up to 4 rounds. It initially smashes the target for 4d6+6 crushing damage with no save, and the target is held. In the second round, the target can save vs. Paralysis at -4 to escape. If they fail to save, the hand does 6d6+4 crushing damage. The following round, the target can save vs. Paralysis at -2. If they make the save, they are free to move, if they fail, the spell does 8d6+2 crushing damage and holds them for 2 rounds. After the 4th round, the spell is finished. Magic Resistance will not stop the spell.~
+This spell causes a giant disembodied hand to squeeze and constrict the target once per round for up to 4 rounds. It initially smashes the target for 4d6+6 crushing damage with no save, and the target is held. In the second round, the target can save vs. Paralysis at -4 to escape. If they fail to save, the hand does 6d6+4 crushing damage. The following round, the target can save vs. Paralysis at -2. If they make the save, they are free to move, if they fail, the spell does 8d6+2 crushing damage and holds them for 2 rounds. After the 4th round, the spell is finished. Magic resistance will not stop the spell.~
 
 @7382 = ~Bigby's Crushing Hand
 (Evocation)
@@ -4137,7 +4136,7 @@ Casting Time: 9
 Area of Effect: 1 creature
 Saving Throw: Special
 
-This spell creates a huge disembodied fist that crushes the target and pins them to the ground. In the first round, the spell does 6d6+6 crushing damage. The victim can save at -6 vs. Paralysis to avoid being pinned. If they fail, the hand does 8d6+8 crushing damage the next round. The victim can again save vs. Paralysis at -4. If they fail to save, the hand does a final 10d6+10 crushing damage and disappears. This spell will not be stopped by Magic Resistance.~
+This spell creates a huge disembodied fist that crushes the target and pins them to the ground. In the first round, the spell does 6d6+6 crushing damage. The victim can save at -6 vs. Paralysis to avoid being pinned. If they fail, the hand does 8d6+8 crushing damage the next round. The victim can again save vs. Paralysis at -4. If they fail to save, the hand does a final 10d6+10 crushing damage and disappears. This spell will not be stopped by magic resistance.~
 
 
 @7390 = ~Bolt of Glory
@@ -4159,7 +4158,7 @@ Creature Type                         Damage
  Undead                                8d6+6
  Fiendish outsiders                    8d8+6
 
-This spell cannot be blocked by Magic Resistance, and outsiders of celestial origin (or related to the Positive Energy Plane) are unaffected, including Aasimars.~
+This spell cannot be blocked by magic resistance, and outsiders of celestial origin (or related to the Positive Energy Plane) are unaffected, including Aasimars.~
 
  @7400 = ~Magical Stone
 (Enchantment)
@@ -4185,7 +4184,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: Special
 
-This spell affects a single living creature. Dolorous Decay is a rotting and withering of the body that spreads throughout the afflicted creature quickly. The target creature will automatically be slowed for 2 rounds and suffer 2d10 poison damage immediately with no save. Furthermore, if the target fails a Saving Throw vs. Poison with a -3 penalty, <PRO_HESHE> will suffer 1 point of damage per second for 1 turn, and suffer a -2 penalty to THAC0, Damage, and Armor Class, and will suffer 8% extra physical damage for that duration.~
+This spell affects a single living creature. Dolorous Decay is a rotting and withering of the body that spreads throughout the afflicted creature quickly. The target creature will automatically be slowed for 2 rounds and suffer 2d10 poison damage immediately with no save. Furthermore, if the target fails a saving throw vs. Poison with a -3 penalty, <PRO_HESHE> will suffer 1 point of damage per second for 1 turn, and suffer a -2 penalty to THAC0, Damage, and Armor Class, and will suffer 8% extra physical damage for that duration.~
 
 @7420 = ~Wondrous Recall
 (Alteration)
@@ -4281,7 +4280,7 @@ Duration: 2 hours
 
 Weight: 1~
 
-@7463 = ~This potion confers very high resistance to all attacks while giving bonuses to all Saving Throws and Magic Resistance. The effects of the elixir last for 1 hour.
+@7463 = ~This potion confers very high resistance to all attacks while giving bonuses to all saving throws and magic resistance. The effects of the elixir last for 1 hour.
 
 STATISTICS:
 
@@ -4448,7 +4447,7 @@ Casting Time: 3
 Area of Effect: 15-ft. radius
 Saving Throw: 1/2
 
-A Fireball is an explosive burst of flame, which detonates with a low roar and delivers damage proportional to the level of the wizard who cast it—1d6 points of damage for each level of experience of the caster, up to a maximum of 10d6. After level 10, an extra point of fire damage is added per level until level 20 (maximum of 10d6+10). The wizard points <PRO_HISHER> finger and speaks the range (distance and height) at which the Fireball is to burst. A streak flashes from the pointing digit and, unless it impacts upon a material body or solid barrier prior to attaining the prescribed range, blossoms into the fireball (an early impact results in an early detonation). Creatures failing their Saving Throws each suffer full damage from the blast. Those who roll successful Saving Throws manage to dodge, fall flat, or roll aside, each receiving half.~
+A Fireball is an explosive burst of flame, which detonates with a low roar and delivers damage proportional to the level of the wizard who cast it—1d6 points of damage for each level of experience of the caster, up to a maximum of 10d6. After level 10, an extra point of fire damage is added per level until level 20 (maximum of 10d6+10). The wizard points <PRO_HISHER> finger and speaks the range (distance and height) at which the Fireball is to burst. A streak flashes from the pointing digit and, unless it impacts upon a material body or solid barrier prior to attaining the prescribed range, blossoms into the fireball (an early impact results in an early detonation). Creatures failing their saving throws each suffer full damage from the blast. Those who roll successful saving throws manage to dodge, fall flat, or roll aside, each receiving half.~
 
 @7521 = ~Sunfire
 (Evocation)
@@ -4460,7 +4459,7 @@ Casting Time: 3
 Area of Effect: 15-ft. radius
 Saving Throw: 1/2
 
-A Sunfire is like a Fireball—an explosive burst of flame, which detonates with a low roar and delivers damage proportional to the level of the caster: 1d6 points of damage per level of the caster, which reaches 10d6 at level 10, and then increases by 1d6+1 up to level 15 (15d6+5), and then increases again by +2 until level 20 (maximum of 15d6+15). The wizard gestures with <PRO_HISHER> hand, and the entire area around <PRO_HIMHER> erupts in flames, striking everyone except the caster <PRO_HIMHER>self. Creatures failing their Saving Throws take full damage from the blast; those who roll successful Saving Throws manage to dodge, fall flat, or roll aside, each taking half damage.~
+A Sunfire is like a Fireball—an explosive burst of flame, which detonates with a low roar and delivers damage proportional to the level of the caster: 1d6 points of damage per level of the caster, which reaches 10d6 at level 10, and then increases by 1d6+1 up to level 15 (15d6+5), and then increases again by +2 until level 20 (maximum of 15d6+15). The wizard gestures with <PRO_HISHER> hand, and the entire area around <PRO_HIMHER> erupts in flames, striking everyone except the caster <PRO_HIMHER>self. Creatures failing their saving throws take full damage from the blast; those who roll successful saving throws manage to dodge, fall flat, or roll aside, each taking half damage.~
 
 @7522 = ~Delayed Blast Fireball
 (Invocation/Evocation)
@@ -4472,7 +4471,7 @@ Casting Time: 7
 Area of Effect: 15-ft. radius
 Saving Throw: 1/2
 
-This spell creates a Fireball that hovers at a point determined by the caster. The Fireball will stay in position until someone walks too close to it; at that point, it will explode, dealing 13d6 points of fire damage, which increases by 1d6+2 up to level 18 (18d6+10), and then increases again by +5 at levels 19 and 20 (maximum of 18d6+20). Victims are allowed a Saving Throw vs. Spell for half damage.~
+This spell creates a Fireball that hovers at a point determined by the caster. The Fireball will stay in position until someone walks too close to it; at that point, it will explode, dealing 13d6 points of fire damage, which increases by 1d6+2 up to level 18 (18d6+10), and then increases again by +5 at levels 19 and 20 (maximum of 18d6+20). Victims are allowed a saving throw vs. Spell for half damage.~
 
 @7530 = ~Favored of the Spirits
 
@@ -4688,7 +4687,7 @@ Launcher: Bow
 
 Weight: 0~
 
-@7640 = ~When activated, this rod may be used as a powerful magical staff. Any creature hit by the rod must make a Saving Throw vs. Spell or become paralyzed in terror, fearing the wielder as if he or she were a flesh-eating demon from the Abyss, which may kill them if the fear goes out of control. There is a drawback to using this rod, however: Each time the rod is used, there is a chance that the wielder loses one point of Constitution for one 24 hours.
+@7640 = ~When activated, this rod may be used as a powerful magical staff. Any creature hit by the rod must make a saving throw vs. Spell or become paralyzed in terror, fearing the wielder as if he or she were a flesh-eating demon from the Abyss, which may kill them if the fear goes out of control. There is a drawback to using this rod, however: Each time the rod is used, there is a chance that the wielder loses one point of Constitution for one 24 hours.
 
 STATISTICS:
 
@@ -4920,7 +4919,7 @@ Combat abilities:
 – 33% chance each hit that target will be slowed for 20 seconds
 
 THAC0: +5
-Damage: 1d6+6, +2 acid damage, +2 cold damage, +2 fire damage, +2 poison damage, +2 electrical damage
+Damage: 1d6+6, +2 acid, cold, fire, poison, and electrical damage
 Damage type: Crushing
 Speed Factor: 2
 Proficiency Type: Flail/Morning Star
@@ -4984,7 +4983,7 @@ Weight: 1~
 The character emits a dazzling burst of light that strikes at all other creatures within a 15-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 9d6 points of fire damage (12d6+3 if undead), unless they Save vs. Spell for half. In addition, all creatures except the character must Save vs. Spell or be blinded for 2 hours.~
 
 @7800 = ~Sun Soulray
-The character projects a blast of light from <PRO_HISHER> open palm, dealing 1d8 fire damage for every 2 caster levels (up to a maximum of 5d8 damage) to a single target. Undead creatures take an additional 6 points of damage (which increases by 2 every 2 caster levels). There is no Saving Throw against this ability.~
+The character projects a blast of light from <PRO_HISHER> open palm, dealing 1d8 fire damage for every 2 caster levels (up to a maximum of 5d8 damage) to a single target. Undead creatures take an additional 6 points of damage (which increases by 2 every 2 caster levels). There is no saving throw against this ability.~
 
 @7820 = ~This ring, designed for the hero Zachiira, is engraved with holy symbols. When Zachiira requested aid from King Strohm III, it was the king’s royal advisor, the great and powerful Theurgist Karlash Arnostognas, who made this item, in the hope that it would aid the hero in her battle against a demon vampire. Zachiira survived the encounter, but sadly her triumphal return was met with rather less celebration and rather more grief, as the good king was already dead when she arrived. Zachiira laid the holy artifact at the entrance to the king’s tomb, and it was there the relic was discovered by wandering thrill-seekers.
 
@@ -5011,7 +5010,6 @@ Equipped abilities:
 
 Weight: 0~
 
-//TODO
 @7840 = ~Constructed from a rhino beetle's sturdy shell, this armor offers its wearer excellent protection without impeding their motion to the same extent as traditional metal plate mail. The unusual material makes this suit of armor particularly effective against all but crushing weapons.
 
 STATISTICS:
@@ -5267,7 +5265,7 @@ Casting Time: 9
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-When uttering the Curse spell, the caster lowers the morale of enemy creatures and any Saving Throws and attack rolls they make by 1. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster. Affected creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not.~
+When uttering the Curse spell, the caster lowers the morale of enemy creatures and any saving throws and attack rolls they make by 1. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster. Affected creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not.~
 
 @8070 = ~This girdle greatly increases the wearer's Constitution. King Violos used it when leading an expedition against marsh trolls. He'd been severely sickened the past winter and was no longer the healthy man he once was. The belt gave extra years to his life and inspired his men to renew their confidence in their king once more.
 
@@ -5352,7 +5350,7 @@ Other cadaverous undead: 10d6 damage (half fire, half radiant).
 Fungal creatures: 8d6 damage (half fire and half magical). Must save vs. Spell or be Slowed or Confused for 2 rounds
 Other creatures: 4d6 damage (half fire and half magical).
 
-This spell is not affected by Magic Resistance and creatures affected by radiant damage cannot reduce it in any way through their resistances.~
+This spell is not affected by magic resistance and creatures affected by radiant damage cannot reduce it in any way through their resistances.~
 
 @8121 = ~Inflicted 7d6 radiant damage~
 @8122 = ~Inflicted 8d6 radiant damage~
@@ -5372,7 +5370,7 @@ Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-False Dawn calls into existence a bright reddish light, as if a sunrise were occurring, within the area of effect. All undead creatures within a False Dawn suffer 10d6 points of fire and magic damage. There is no Saving Throw. Affected undead also act confused for two rounds after the False Dawn appears.~
+False Dawn calls into existence a bright reddish light, as if a sunrise were occurring, within the area of effect. All undead creatures within a False Dawn suffer 10d6 points of fire and magic damage. There is no saving throw. Affected undead also act confused for two rounds after the False Dawn appears.~
 
 @8140 = ~Taking the blood-soaked shaft of this weapon in hand brings a sudden chill along your spine. The origins of this gruesome halberd are unknown, though the very sight of it has been know to strike terror into the heart of an opponent.
 
@@ -5460,7 +5458,7 @@ Casting Time: 5
 Area of Effect: The caster
 Saving Throw: None
 
-This powerful spell creates waves of anti-negative energy that sweep outward from the caster. These waves disrupt any undead that attempt to attack the caster, pushing them away from the caster for several seconds, causing Slow for half a round and 8 points of damage (half magical, half radiant which cannot be resisted). There is one wave per round for the duration of the spell. All undead are affected with no Saving Throw.~
+This powerful spell creates waves of anti-negative energy that sweep outward from the caster. These waves disrupt any undead that attempt to attack the caster, pushing them away from the caster for several seconds, causing Slow for half a round and 8 points of damage (half magical, half radiant which cannot be resisted). There is one wave per round for the duration of the spell. All undead are affected with no saving throw.~
 
 @8200 = ~This bolt was designed as a deadly complement to the crossbow. Poison smeared on its barbed tip infiltrates the bloodstream of its victims, causing agony and often death.
 
@@ -5539,7 +5537,7 @@ Casting Time: 7
 Area of Effect: 8 ft. long, 2 ft. wide wall
 Saving Throw: None
 
-This spell invokes a shimmering tapestry of blue-white force. This wall is intangible, requiring no physical anchor, and can easily be passed through. Evil creatures passing through the wall take 2d8+4 magic damage; undead creatures take 3d8+6 (evil undead would take 5d8+10). Additionally, affected creatures must save vs. Spell or be blinded by 1 round and repulsed backwards with a 40% chance of being knocked to the ground for half a round. A creature that has passed through the wall can only be affected by it once per round. These effects cannot be stopped by Magic Resistance.~
+This spell invokes a shimmering tapestry of blue-white force. This wall is intangible, requiring no physical anchor, and can easily be passed through. Evil creatures passing through the wall take 2d8+4 magic damage; undead creatures take 3d8+6 (evil undead would take 5d8+10). Additionally, affected creatures must save vs. Spell or be blinded by 1 round and repulsed backwards with a 40% chance of being knocked to the ground for half a round. A creature that has passed through the wall can only be affected by it once per round. These effects cannot be stopped by magic resistance.~
 
 @8235 = ~Unfailing Endurance
 (Necromancy)
@@ -5753,7 +5751,7 @@ Casting Time: 3
 Area of Effect: 12-ft. radius
 Saving Throw: Neg.
 
-Symbol, Pain is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area of effect to make a Saving Throw vs. Spell at -4. Those who fail their Saving Throws are overwhelmed by pain, suffering a -4 penalty to their attack rolls, a -10% penalty to all damage inflicted, a -2 penalty to their Dexterity scores, and a -2 penalty to their Armor Class.~
+Symbol, Pain is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area of effect to make a saving throw vs. Spell at -4. Those who fail their saving throws are overwhelmed by pain, suffering a -4 penalty to their attack rolls, a -10% penalty to all damage inflicted, a -2 penalty to their Dexterity scores, and a -2 penalty to their Armor Class.~
 
 @8290 = ~Righteous Wrath of the Faithful
 (Enchantment/Charm)
@@ -5766,7 +5764,7 @@ Casting Time: 8
 Area of Effect: 17-ft. radius
 Saving Throw: None
 
-This spell bestows a form of divine madness upon the priest's allies, improving their combat skills. All the priest's allies in the area of effect gain a +1 to attack rolls and Saving Throws, plus 8 bonus Hit Points for the duration of the spell (these Hit Points can take a target beyond <PRO_HISHER> Hit Point maximum). Allies of the same alignment, however, gain an extra attack every round (canceling haste), a +2 bonus to their attack rolls, damage rolls, and Saving Throws, and immunity to charm and hold spells. Similar to the Haste spell, anyone affected by Righteous Wrath of the Faithful will suffer extra fatigue at the end.~
+This spell bestows a form of divine madness upon the priest's allies, improving their combat skills. All the priest's allies in the area of effect gain a +1 to attack rolls and saving throws, plus 8 bonus Hit Points for the duration of the spell (these Hit Points can take a target beyond <PRO_HISHER> Hit Point maximum). Allies of the same alignment, however, gain an extra attack every round (canceling haste), a +2 bonus to their attack rolls, damage rolls, and saving throws, and immunity to charm and hold spells. Similar to the Haste spell, anyone affected by Righteous Wrath of the Faithful will suffer extra fatigue at the end.~
 
 @8300 = ~These gloves are usually given to novices of the Most Noble Order of the Radiant Heart. For anyone outside of the Order to wear these gloves is a rare honor.
 
@@ -5862,7 +5860,7 @@ Casting Time: 5
 Area of Effect: Special
 Saving Throw: 1/2
 
-When the wizard casts Chain Lightning, arcs of electrical energy burst from <PRO_HISHER> fingertips. These brilliant arcs of lightning leap at all enemies near the caster, burning them with electrical damage. The lightning causes 2d6 plus 1d6 points of damage for every 2 levels of the caster. If the target of the lightning saves vs. Spell, only half damage is inflicted. Thus, a 12th-level wizard will cause 8d6 damage to a victim (4d6 if the victim makes <PRO_HISHER> Saving Throw vs. Spell).~
+When the wizard casts Chain Lightning, arcs of electrical energy burst from <PRO_HISHER> fingertips. These brilliant arcs of lightning leap at all enemies near the caster, burning them with electrical damage. The lightning causes 2d6 plus 1d6 points of damage for every 2 levels of the caster. If the target of the lightning saves vs. Spell, only half damage is inflicted. Thus, a 12th-level wizard will cause 8d6 damage to a victim (4d6 if the victim makes <PRO_HISHER> saving throw vs. Spell).~
 
 @8340 = ~Alicorn Lance
 (Invocation)
@@ -5901,7 +5899,63 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: Special
 
-This spell creates a small whirlwind within the caster's sight. The whirlwind will fly around randomly, harming friend and foe alike. The caster is immune to <PRO_HISHER> own spell, and elementals and other huge creatures are also unaffected. If a creature is caught in the path of the whirlwind, it takes 4d8 crushing damage, 4d8 slashing damage, and must make a Save vs. Breath Weapon or be stunned for 2 rounds. Creatures with 2 or fewer Hit Dice are automatically killed by this spell. A maximum of 10 targets can be affected, after which the whirlwind will dissipate. This spell is not affected by Magic Resistance.~
+This spell creates a small whirlwind within the caster's sight. The whirlwind will fly around randomly, harming friend and foe alike. The caster is immune to <PRO_HISHER> own spell, and elementals and other huge creatures are also unaffected. If a creature is caught in the path of the whirlwind, it takes 4d8 crushing damage, 4d8 slashing damage, and must make a Save vs. Breath Weapon or be stunned for 2 rounds. Creatures with 2 or fewer Hit Dice are automatically killed by this spell. A maximum of 10 targets can be affected, after which the whirlwind will dissipate. This spell is not affected by magic resistance.~
+
+@8365 = ~The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter. Despite their small size, daggers have a 5% higher chance to score a critical hit and deal increased damage on critical hits compared to other weapons.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d4 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@8366 = ~This dagger is used by Shadow Thieves.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d4 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@8367 = ~This dagger was created for <CHARNAME> by <PRO_HISHER> apprentices.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d4+1 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@8368 = ~The typical throwing dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. Unlike a dagger, this one has a smaller handle and is balanced differently.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d4 (missile)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
 
 @8370 = ~This is the blood of the kuo-toan prince.
 
@@ -6278,6 +6332,21 @@ A single target receives the following bonuses for 12 hours:
 Requires:
  9 Intelligence~
 
+ @8590 = ~Attempts parry~
+
+ @8600 = ~Greater Restoration
+(Necromancy)
+
+Level: 7
+Sphere: Necromantic
+Range: Touch
+Duration: Permanent
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+When this spell is cast, the life energy level of the recipient is raised. This reverses any previous life energy level drain of the creature by a force or monster. A Greater Restoration spell will also restore the Intelligence score of a creature affected by the Feeblemind spell and negate any form of insanity, such as confusion or berserk. It fully heals the target, cures any diseases or poisons. This restoration spreads to the rest of party members, including the priest, who is healed by half its total health only. The casting of this spell is very draining on the priest, and <PRO_HESHE> will likely require rest immediately afterward. This fatigue is profound, additionally causing a -2 penalty to casting speed, damage, THAC0, and Armor Class, as well as a 35% movement speed penalty for 2 turns.~
+
 // patching other mods
 // item upgrade
 @50000 = ~Ring of Elemental Mastery
@@ -6375,7 +6444,7 @@ Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
 Weight: 9~
 
 @50040 = ~Enhanced Robe of the Good Archmagi
-This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's Magic Resistance and Saving Throws. Due to the nature of its enchantment, it can only be worn by wizards of good alignment. This particular robe has been further enchanted by <CHARNAME>.
+This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's magic resistance and saving throws. Due to the nature of its enchantment, it can only be worn by wizards of good alignment. This particular robe has been further enchanted by <CHARNAME>.
 
 STATISTICS:
 
@@ -6390,7 +6459,7 @@ Equipped abilities:
 Weight: 6~
 
 @50041 = ~Enhanced Robe of the Neutral Archmagi
-This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's Magic Resistance and Saving Throws. Due to the nature of its enchantment, it can only be worn by wizards of neutral alignment. This particular robe has been further enchanted by <CHARNAME>.
+This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's magic resistance and saving throws. Due to the nature of its enchantment, it can only be worn by wizards of neutral alignment. This particular robe has been further enchanted by <CHARNAME>.
 
 STATISTICS:
 
@@ -6405,7 +6474,7 @@ Equipped abilities:
 Weight: 6~
 
 @50042 = ~Enhanced Robe of the Evil Archmagi
-This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's Magic Resistance and Saving Throws. Due to the nature of its enchantment, it can only be worn by wizards of evil alignment. This particular robe has been further enchanted by <CHARNAME>.
+This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's magic resistance and saving throws. Due to the nature of its enchantment, it can only be worn by wizards of evil alignment. This particular robe has been further enchanted by <CHARNAME>.
 
 STATISTICS:
 
@@ -6618,6 +6687,11 @@ Requires:
  14 Strength
 
 Weight: 10~
+
+
+@99980 = ~Proficiency Type~
+@99981 = ~Long Sword~
+@99982 = ~Bastard Sword~
 
 @99991 = ~\(-\|–\)~
 @99992 = ~Armor Class~

@@ -1,6 +1,6 @@
 BACKUP "weidu_external/backup/%MOD_FOLDER%"
 SUPPORT "RoyalProtector at Gibberlings's forum https://www.gibberlings3.net/profile/12720-royalprotector/ or G3's Discord Server"
-VERSION "1.5.3"
+VERSION "1.5.4"
 README ~%MOD_FOLDER%/README.md~
 AUTO_EVAL_STRINGS
 /*
@@ -901,7 +901,7 @@ FORBID_COMPONENT "ZSTweaks.tp2" "390" @57 FORBID_COMPONENT "ZSTweaks.tp2" "400" 
 FORBID_COMPONENT "ZSTweaks.tp2" "405" @57 FORBID_COMPONENT "ZSTweaks.tp2" "407" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "410" @57 FORBID_COMPONENT "ZSTweaks.tp2" "430" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "440" @57 FORBID_COMPONENT "ZSTweaks.tp2" "441" @57
-FORBID_COMPONENT "ZSTweaks.tp2" "443" @57 FORBID_COMPONENT "ZSTweaks.tp2" "444" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "444" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "445" @57 FORBID_COMPONENT "ZSTweaks.tp2" "446" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "447" @57 FORBID_COMPONENT "ZSTweaks.tp2" "448" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "449" @57 FORBID_COMPONENT "ZSTweaks.tp2" "451" @57

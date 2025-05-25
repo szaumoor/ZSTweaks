@@ -122,6 +122,7 @@ ACTION_IF zst_1150_dice_wakininja BEGIN
                     LPF ITM_REF_DESC RET description_index = result END
                     PATCH_IF description_index > "-1" BEGIN
                         READ_STRREF 0x54 desc
+                        SPRINT str_sf @99998
                         SPRINT str @99999
                         LPF WPN_DMG RET dmg = result END
                         LPF WPN_SPEED RET speed = result END

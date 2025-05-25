@@ -16,49 +16,6 @@ COPY_EXISTING_REGEXP "^ZSTW[TZ][0-6]\.spl$" ~override~ // throwing daggers and d
     LPF ALTER_HEADER INT_VAR match_type=2 projectile="%ZSTW_IND%" END
 BUT_ONLY
 
-OUTER_SET shield_tweak_installed = group_component = 0 AND MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1546~
-
-ACTION_IF zst_1450_allow_bucklers BEGIN
-
-    OUTER_SET projectile = 345
-    ACTION_IF is_bgee BEGIN
-        OUTER_SET projectile = 364
-    END ELSE ACTION_IF is_iwdee BEGIN
-        OUTER_SET projectile = 481
-    END
-
-    ACTION_IF NOT shield_tweak_installed BEGIN
-
-        COPY "%MOD_FOLDER%/items/bucklers" "override"
-        COPY_EXISTING_REGEXP ~^ZSTWBK#[0-6]\.spl$~ ~override~
-            LPF ALTER_EFFECT INT_VAR match_probability1=9 STR_VAR resource = "" END
-        BUT_ONLY
-
-    END ELSE BEGIN
-
-        COPY_EXISTING_REGEXP ~^ZSTWBK#[0-6]\.spl$~ ~override~
-            LPF ALTER_EFFECT INT_VAR match_parameter2 = 105 probability1 = 19 END
-        BUT_ONLY
-
-    END
-
-    COPY_EXISTING_REGEXP ~^ZSTWBK#[0-6]\.SPL$~ ~override~
-        LPF ALTER_HEADER INT_VAR projectile = %projectile% END
-    BUT_ONLY
-
-    COPY_EXISTING ~SHLD08.ITM~ ~override~
-        READ_LONG 0x8 buckler_strref
-
-    COPY_EXISTING ~ZSTWBK1A.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = zs_slashing_immunity END
-    COPY_EXISTING ~ZSTWBK1B.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = zs_crushing_immunity END
-    COPY_EXISTING ~ZSTWBK1C.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = zs_piercing_immunity END
-    COPY_EXISTING ~ZSTWBK1D.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = zs_missile_immunity END
-END
-
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_ENCH RET ench = result END
     LPF ITM_ABILITIES_NUM RET num_abilities = result END
@@ -71,7 +28,8 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         PATCH_IF zst_1450_allow_daggers AND cat=16 AND prof=96
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg15" // Last Resort (wares of the planes)
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg05" // Entropic Blade (wares of the planes)
-            AND NOT "%SOURCE_RES%" STR_EQ "a7-dg09" // Entropic Blade (wares of the planes)
+            AND NOT "%SOURCE_RES%" STR_EQ "a7-dg09" //
+            AND NOT "%SOURCE_RES%" STR_EQ "ysgldag.itm" // fishing for trouble non-usable dagger
         BEGIN
             LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWD%ench%~ END
             LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWZ%ench%~ END
@@ -144,15 +102,6 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                 LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ss_club+bonus) STR_VAR class=~THIEF~ spell=~ZSTW_2~ END
             END
 
-        END ELSE PATCH_IF zst_1450_allow_bucklers              AND
-                          NOT shield_tweak_installed           AND
-                          cat = 12                             AND
-                          LONG_AT(0x8) = buckler_shield_strref
-        BEGIN
-            LPF GET_SHIELD_LEVEL RET result END
-            PATCH_IF group_component = 1 OR group_component = 0 AND NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1546~ BEGIN
-                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=232,p1=1,p2=7,res=ZSTWBK#%result%~ END
-            END
         END
     END
 BUT_ONLY

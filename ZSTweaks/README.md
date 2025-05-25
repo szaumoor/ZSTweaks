@@ -100,9 +100,9 @@ Exceptions: Grave Binder is not affected by these bonuses because it's an oversi
 
 **Component 1450:** Make some rogue weapons able to do more damage if wielded by pure thieves (Finesse)
 
-This component is an attempt at making single-classed Thieves more effective with a portion of thief-usable weapons without relying on stats, APR, or proficiency points.
+This component is an attempt at making single-classed Thieves more effective with a portion of thief-usable weapons without relying on stats, attacks per round, or proficiency points.
 
-Essentially, when wielding a Thief weapon, they can use what I call "finesse," which is a concept that I borrowed from NW. In short, they have a chance per attack to deal extra damage, which stacks additively after the direct damage of the weapon is calculated, and it is based on the base attack damage of the weapon used.
+Essentially, when wielding a Thief weapon, they can use what I call "finesse," which is a concept that I borrowed from NWN. In short, they have a chance per attack to deal extra damage, which stacks additively after the direct damage of the weapon is calculated, and it is based on the base attack damage of the weapon used.
 
 You could think of this as a part dirty-fighting combat skills of rogues, or like a minor sneak attack that triggers rarely. This gives pure thieves a slight edge and makes the combat prowess gap between them and multiclassed thieves tighter. The chances of triggering are modified by weapon type and the enchantment level (2% per odd enchantment level, 1% for even).
 
@@ -115,9 +115,7 @@ This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashi
 - **Bows, Crossbows**: 31-40% chance to inflict 1d5 or 1d7 of missile damage, respectively
 - **Darts, Daggers**: 43-52% chance to inflict 2 + bonus / 2 (rounded down), 1d3+bonus of missile or piercing damage, respectively
 
-The extra damage dealt, assuming a failed saving throw and before resistances, is *never* lower than 2.
-
-A counterbalance is also added such that this damage forces a save vs. Breath that the target must save against to take only half of the damage. This saving throw bonus or penalty depends on the wielder's current dexterity, which improves up to DEX 24, and this save's penalty increases by the enchantment level as well. For example, if you have a Long Sword +0 that gets a +2 bonus at a particular level of dexterity, using a Long Sword +3 would make it a penalty of -1 instead. More details:
+A counterbalance is also added such that this damage forces a save vs. Breath to take only half of the damage (extra damage dealt, assuming a failed saving throw and before resistances, is *never* lower than 2). This saving throw bonus or penalty depends on the wielder's current dexterity, which improves up to 24 dexterity. This save's penalty increases by the enchantment level as well. For example, if you have a Long Sword +0 that gets a +2 bonus at a particular level of dexterity, using a Long Sword +3 would make it a penalty of -1 instead. More details:
 
 - **Katanas**: +0 katanas at DEX <12 force a save at +7 bonus; progresses up to 0 at DEX >=24
 - **Long swords, Scimitars**: +0 weapons at DEX <12 force a save vs. +6; progresses up to -1 at DEX >=24
@@ -127,13 +125,13 @@ A counterbalance is also added such that this damage forces a save vs. Breath th
 
 Note that this component does not account (automatically) for special weaponry which may use a different kind of damage-dealing effect than normal or otherwise vary in normal parameters. For example, Voidsword +3 in SoD causes only magic damage and is not part of the damage of the weapon as such, but exists as a separate effect. These have to be added manually (in that example, the extra damage would occur in the same way as the others, but only as magic damage, which is intended). Currently, the following thief-usable items are accounted for:
 
-- Voidsword, Void-arrows, Void-bullets (SoD, magic damage)
-- Fierce Swirl +2 (Lava's Shades of the Sword Coast, magic damage)
+- Voidsword, Void-arrows, Void-bullets (SoD/BG2, magic damage)
+- Fierce Swirl +2 (Lava's Shades of the Sword Coast -- BGEE, magic damage)
 - 1d2 Arrows of Antimagic will be skipped (SoD, it's meant to deal almost no damage)
 - Arrows of Detonation are also skipped, since they're not designed to pierce
-- Broken Spirit Arrow +1 will be skipped (The Calling, it's designed to deal almost no damage)
+- Broken Spirit Arrow +1 will be skipped (The Calling -- BGEE, it's designed to deal only 1 point of damage)
 
-Finally, the weapon categories affected are optional and can be turned off in the configuration file.
+Finally, the weapon categories affected are optional and can be turned off in the configuration file. As such, you can disable categories if you don't want them affected by the "finesse" effect.
 
 **Component 1533:** Rebalance some wands
 
@@ -1409,7 +1407,7 @@ This component makes Shar-Teel's effectiveness vs. males fit her hate and boasti
 - +1 to THAC0 and Damage vs. males
 - +2 AC vs. males (essentially as if she had a Protection from Men spell on her)
 
-Note that this means she has a bonus against things that make no sense they're set as "male", like battle horrors. I want to try to make it so it's just humanoids, but currently it doesn't discriminate, as I'm not sure how to implement that.
+Note that this means she has a bonus against things that _may_ make no sense they're set as "male", like battle horrors. My mod, however, fixes this whenever a component is installed, ensuring sexless and genderless creatures are set as such. Creatures of that nature includes angels, demons, elementals, mind flayers, golems, and others. All those instances will be fixed so this component and any other that targets gender directly works more consistently.
 
 
 </details>
@@ -1744,7 +1742,7 @@ Solution:
   - Spectral undead: 15d6, and weakens them, causing Slow or Confusion for 2 rounds
   - Other cadaverous undead: 10d6, no other side effects
 
-This solution follows the 2nd edition more closely, where only undead who are specifically sensitive to light may be destroyed by it. Spectral undead are generally weakened, but not destroyed, vampires, vampyres, and vampire spawn can be utterly destroyed, and other cadaverous undead aren't weakened or destroyed (including liches and demiliches).
+This solution follows the 2nd edition more closely, where only undead who are specifically sensitive to light may be destroyed by it. Spectral undead are generally weakened, but not destroyed, vampires, vampyres, and vampire spawn can be utterly destroyed, and other cadaverous undead aren't weakened or destroyed (including liches and demiliches -- the latter is immune to essentially all spells though, including Sunray).
 
 **Component 468:** Rebalance Call Lightning's damage and scaling
 
@@ -1790,9 +1788,15 @@ This makes the spell generally more useful by making it a party buff. To avoid i
 
 Optionally, the character glow can be disabled in the configuration file.
 
-**Component 508:** Make Restoration-type spells restore stat draining by mind flayers and shadow-creatures
+**Component 508:** Make Restoration-type spells restore stat draining and make Greater version an area of effect spell
 
 Self-explanatory, plus it makes sense that these spells should be able to restore the damage done by these creatures. Currently there is no way to cure this other than by waiting.
+
+Optionally, it can overhaul the greater restoration spell so it's more worth the slot (with some disadvantages, for balance):
+  - It spreads on impact, granting the effects to every party member except the priest
+	- The priest is only healed by half their total health.
+	- Still causes deep fatigue on the caster, and worsens the casting speed, Thac0, damage, and armor class of the priest by 2 for 2 turns. Their movement speed is also reduced by 35%. Both these effects can be removed by Unfailing Endurance.
+	- The casting duration is tripled (9 from 3)
 
 **Component 509:** Make Silence 15ft Radius party-friendly
 
@@ -1856,7 +1860,7 @@ This should make this HLA more generally useful no matter the situation and perh
   - For single-classed thieves, there are more benefits: +2 Damage, +2 THAC0, +1 APR, net +15% critical hit chance improvement
   - Benefits other than backstabbing every hit will last one round longer (that is, 7 seconds + 1 round, aka 13 seconds). This won't stack if there's more than one casting of Assassination available.
   - Overall, this will make the power less likely to be a waste by removing critical misses, increasing the chances of critical hits, which benefits the character even when facing a foe immune to backstabs, and rewarding specialization of Thieves to make them more combat ready.
-- Avoid Death: This improves this ability such that it prevents rogues from dying from Health damage for 3 seconds, and all saving throws succeed as well. This essentially makes the ability an "panic button" that you can select to survive most things during those three seconds that can be saved against, including physical damage. It's a small timeframe, but I think it's long enough to be useful, and short enough to not be overpowered. Other than those 3 seconds, the ability functions as normal.
+- Avoid Death: This improves this ability such that it prevents rogues from dying from Health damage for 3 seconds, and all saving throws succeed as well. This essentially makes the ability an "panic button" that you can select to survive most things during those three seconds that can be saved against, including physical damage. It's a small timeframe, but I think it's long enough to be useful, and short enough to not be overpowered. Other than those 3 seconds, the ability functions as normal. This additionally documents in the description the fact that it also protects against level drain, which is missing in the original description.
 
 **Component 2150:** Make selected HLAS unable to be breached
 
@@ -1910,12 +1914,10 @@ Additionally, it allows a certain enemy blackguard in SoD to perform backstabs o
 
 **Component 3500:** Make Shadowstep/Shadow Jump impossible to use while in the Shadow Plane
 
-This seems more a bugfix than a tweak, but it bothers me and it's not tackled anywhere else so here it is. No one can cast Shadowstep (Shadow Jump too if my Shadowdancer overhaul is installed) during those sequences, since those abilities rely on a brief plane shift to the Prime's parallel plane: the Plane of Shadow. This needs to be patched manually, and only the following areas are targetted:
+This seems more a bugfix than a tweak, but it bothers me and it's not tackled anywhere else so here it is. No one can cast Shadowstep during those sequences, since those abilities rely on a brief plane shift to the Prime's parallel plane: the Plane of Shadow. This needs to be patched manually, and only the following areas are targetted:
 
 - Rasaad's ToB quest areas in the SP
 - Lava's Shade of the Sword Coast SP in Gnoll Stronghold
-
-This additionally documents in the description the fact that it also protects against level drain, which is missing in the original description.
 
 **Component 2230:** Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value
 

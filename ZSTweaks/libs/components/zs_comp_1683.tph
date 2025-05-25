@@ -12,6 +12,14 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF GET_DMG_TYPE STR_VAR type=~magic~ RET dmg = result END
             LPF ADD_ON_HIT_EFF INT_VAR spec=1024 STR_VAR effects=~op=12,dsize=2,dnum=1,p2=%dmg%;op=12,p1=2,p2=%dmg%,dsize=4,dnum=1,pro1=32~ END
 
+            PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
+                READ_STRREF 0x54 desc
+                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*THAC0[ %TAB%]*:?[ %TAB%]*\)\+[0-9]~ ~\1+5~ //thac0
+                END
+                SAY_EVALUATED 0x54 ~%desc%~
+            END
+
     END ELSE BEGIN
         ACTION_IF group_component = 0 BEGIN
             WARN "Gemblade not found in game files, skipping..."

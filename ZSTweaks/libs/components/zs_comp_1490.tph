@@ -8,4 +8,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING "NEBDAG.ITM" ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6230) STR_VAR used_up_itm=~~ END
         LPF ALTER_HEADER INT_VAR match_type = 1 charges = 0 END
+
+        READ_STRREF 0x54 desc
+        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*THAC0[ %TAB%]*:?[ %TAB%]*\)\+[0-9]~ ~\1+3~ //thac0
+        END
+        SAY_EVALUATED 0x54 ~%desc%~
 END
