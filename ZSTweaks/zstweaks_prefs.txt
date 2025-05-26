@@ -1,9 +1,14 @@
 // Here you can adjust values to apply different changes to components without having to deal with set installation options in the Weidu installer. Do not remove quotation marks when changing values.
-//
-// All options that are about "allowing" a tweak or not follow the binary format of "1" to allow the tweak during installation time, and "0" to not allow. Change it to your preferences according to that. If the values have a different meaning, it will be noted.
+
+// All options that are about "allowing" a tweak or not follow the binary format of "1" (true) to allow the tweak during installation time, and "0" (false) to not allow. Change it to your preferences according to that. If the values have a different meaning, it will be noted.
+
+////////////////////////////// Misc \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 OUTER_SET zst_debug = "0" // normally at 0 for users
-OUTER_SET zst_gender_fix = "1" // set to 0 if you don't like my fix for the genders of sexless/genderless creatures. In vanilla game, many of these are inappropriately set to 'male' (never female, I wonder why?) even though they should be completely independent of it, such as golems, statues, mists, fungus, slimes, mind flayers... This interferes with opcodes that target based on gender since the results will be far less consistent and/or logic than they should be
+
+////////////////////////////// Pre-fixes \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET zst_gender_fix = "1" // In vanilla game, many creatures are inappropriately set to 'male' (never female, I wonder why?) even though they should be completely independent of it, such as golems, statues, mists, fungus, slimes, mind flayers... This interferes with opcodes that target based on gender since the results will be far less consistent and/or logical than they should be
 
 ////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -50,11 +55,12 @@ OUTER_SET zst_1545_racethac0_bonuses    = "1" // thac0 bonuses for race
 OUTER_SET zst_1545_proficiency_bonuses  = "1"
 OUTER_SET zst_1545_weapon_style_bonuses = "1"
 
-// allow tweak to different shield type; small shield not included since it is untouched
+// allow tweaks to different shield types
 OUTER_SET zst_1546_buckler_tweak = "1"
 OUTER_SET zst_1546_small_tweak   = "1"
 OUTER_SET zst_1546_medium_tweak  = "1"
 OUTER_SET zst_1546_tower_tweak   = "1"
+
 // tweaks to shield usability
 OUTER_SET zst_1546_everyone_can_use_all_shields         = "0"
 OUTER_SET zst_1546_tower_single_classed_fighter_classes = "1" // restricts tower shields to single-classed warrior classes
@@ -111,8 +117,8 @@ OUTER_SET zst_1580_hawksight_extra = "1"
 
 /////////////////////////////// NPC tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-// determines the net damage of Sarevok's Deathbringer Assault in component 1646. Default is 150 (50 less than normal)
-OUTER_SET zst_1646_sare_dmg = "150"
+// determines the net slashing damage of Sarevok's Deathbringer Assault in component 1646. Default is 150 (50 less than normal). Note that now it allows a saving throw to take half as well
+OUTER_SET zst_1646_sare_dmg = "120"
 
 /////////////////////////////// Ranged Weapon Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -189,7 +195,7 @@ OUTER_SET zst_468_iwd_call_lightning   = "1" // makes call lightning in BG use (
 OUTER_SET zst_507_disable_aidglow = "0" // disables the character color pulse with Aid to avoid excessive color pollution
 
 OUTER_SET zst_508_restoration_stat_drain = "1"
-OUTER_SET zst_508_restoration_overhaul = "1"
+OUTER_SET zst_508_restoration_overhaul   = "1"
 
 /////////////////////////////// NPC Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -224,19 +230,4 @@ OUTER_SET zst_2231_fire_boost_pctg = "5" // percentage bonus if the previous is 
 
 // vorpal saving throw penalty or bonus for balor's vorpal attacks
 OUTER_SET zst_3050_balor_vorpal_penalty = "-4"
-
-/////////////////////////////// Component allowing \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-// this holds variables to decide whether a component should be allowed in group components
-// this will help users define specific components they want in group-wide installs
-// unused for now so ignore
-
-// GENERAL TWEAKS
-
-// GEAR TWEAKS
-
-// DAGGER TWEAKS
-
-// TWO HANDED TWEAKS
-
-// ONE HANDED TWEAKS
 
