@@ -78,9 +78,9 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
                          race    = otyugh             OR
                          general = weapon
                 BEGIN
-                    ++matches
                     SET gender = BYTE_AT(0x275)
                     PATCH_IF gender = male OR gender = female BEGIN
+                        ++matches
                         WRITE_BYTE 0x275 niether
                     END
                 END
