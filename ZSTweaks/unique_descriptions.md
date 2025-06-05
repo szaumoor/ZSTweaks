@@ -75,13 +75,13 @@ Equipped abilities:
 – Unaffected by mind blasts and domination attempts by Mind Flayers
 
 Combat abilities:
-– Acts as a +6 weapon against Mind Flayers
-– 25% chance per hit that target must save vs. Death at -2 or die from decapitation. Targets killed this way cannot be resurrected without a True Resurrection spell or divine intervention.
-– Psionic attack: inflicts 2d8 magical damage on a critical hit, which also causes confusion for 10 seconds if a Save vs. Spell at -2 is failed.
+– Acts as a +5 weapon against Mind Flayers
+– 25% chance per hit that target must save vs. Death at -2 or die from decapitation. Targets killed this way cannot be resurrected without a True Resurrection spell or divine intervention
+– Psionic attack: inflicts 2d8 irresistible psychic damage on a critical hit, which also causes confusion for 10 seconds if a Save vs. Spell at -2 is failed. This damage cannot be resisted, but mindless or brainless creatures won't be affected.
 
-THAC0: +3, +6 against Mind Flayers
-Damage: 1d10+3, +6 vs. Mind Flayers (slashing)
-Speed Factor: 7
+THAC0: +3, +5 vs. Mind Flayers
+Damage: 1d10+3, +5 vs. Mind Flayers (slashing)
+Speed Factor: 6
 Proficiency Type: Two-handed Sword
 Type: Two-handed
 Requires:
