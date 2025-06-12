@@ -23,8 +23,20 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
     OUTER_SET ~zs_electricresist_>=100~ = "-1"
     OUTER_SET ~zs_electric_immunity~    = "-1"
 
+    OUTER_SET ~zs_coldresist_<128~  = "-1"
+    OUTER_SET ~zs_coldresist_>=100~ = "-1"
+    OUTER_SET ~zs_cold_immunity~    = "-1"
+
+    OUTER_SET ~zs_fireresist_<128~  = "-1"
+    OUTER_SET ~zs_fireresist_>=100~ = "-1"
+    OUTER_SET ~zs_fire_immunity~    = "-1"
+
     OUTER_SET ~zs_hideinshadows_<n~     = "-1"
     OUTER_SET ~zs_hideinshadows_>n~     = "-1"
+
+    OUTER_SET ~zs_class_thief~          = "-1"
+    OUTER_SET ~zs_class_bard_all~       = "-1"
+    OUTER_SET ~zs_thief_or_bard_all~    = "-1"
 
     //----------------------------------------------------------------
 
@@ -43,8 +55,17 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
     APPEND ~splprot.2da~ ~ZS_ELECTRICRESIST_>=100%TAB%16%TAB%100%TAB%4~ UNLESS ~ZS_ELECTRICRESIST_>=100~
     APPEND ~splprot.2da~ ~ZS_ELECTRICRESIST_<128%TAB%16%TAB%128%TAB%2~  UNLESS ~ZS_ELECTRICRESIST_<128~
 
+    APPEND ~splprot.2da~ ~ZS_COLDRESIST_>=100%TAB%15%TAB%100%TAB%4~     UNLESS ~ZS_COLDRESIST_>=100~
+    APPEND ~splprot.2da~ ~ZS_COLDRESIST_<128%TAB%15%TAB%128%TAB%2~      UNLESS ~ZS_COLDRESIST_<128~
+
+    APPEND ~splprot.2da~ ~ZS_FIRERESIST_>=100%TAB%14%TAB%100%TAB%4~     UNLESS ~ZS_FIRERESIST_>=100~
+    APPEND ~splprot.2da~ ~ZS_FIRERESIST_<128%TAB%14%TAB%128%TAB%2~      UNLESS ~ZS_FIRERESIST_<128~
+
     APPEND ~splprot.2da~ ~ZS_HIDEINSHADOWS_<n%TAB%135%TAB%-1%TAB%2~     UNLESS ~ZS_HIDEINSHADOWS_<n~
     APPEND ~splprot.2da~ ~ZS_HIDEINSHADOWS_>n%TAB%135%TAB%-1%TAB%3~     UNLESS ~ZS_HIDEINSHADOWS_>n~
+
+    APPEND ~splprot.2da~ ~ZS_CLASS=THIEF%TAB%0x10d%TAB%4%TAB%1~         UNLESS ~ZS_CLASS=THIEF~
+    APPEND ~splprot.2da~ ~ZS_CLASS=BARD_ALL%TAB%0x10%TAB%206%TAB%1~     UNLESS ~ZS_CLASS=BARD_ALL~
 
     //----------------------------------------------------------------
     COPY_EXISTING ~splprot.2da~ ~override~
@@ -93,12 +114,36 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
                 ~zs_electricresist_<128~ = row
             END
 
+            ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_COLDRESIST_>=100~ BEGIN
+                ~zs_coldresist_>=100~ = row
+            END
+
+            ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_COLDRESIST_<128~ BEGIN
+                ~zs_coldresist_<128~ = row
+            END
+
+            ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_FIRERESIST_>=100~ BEGIN
+                ~zs_fireresist_>=100~ = row
+            END
+
+            ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_FIRERESIST_<128~ BEGIN
+                ~zs_fireresist_<128~ = row
+            END
+
             ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_HIDEINSHADOWS_<n~    BEGIN
                 ~zs_hideinshadows_<n~ = row
             END
 
             ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_HIDEINSHADOWS_>n~    BEGIN
                 ~zs_hideinshadows_>n~ = row
+            END
+
+            ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_CLASS=THIEF~    BEGIN
+                ~zs_class_thief~ = row
+            END
+
+            ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_CLASS=BARD_ALL~ BEGIN
+                ~zs_class_bard_all~ = row
             END
         END
 
@@ -118,6 +163,15 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
 
     APPEND ~splprot.2da~ ~ZS_ELECTRICIMMUNITY%TAB%0x104%TAB%%zs_electricresist_>=100%%TAB%%zs_electricresist_<128%~
     UNLESS ~ZS_ELECTRICIMMUNITY~
+
+    APPEND ~splprot.2da~ ~ZS_COLDIMMUNITY%TAB%0x104%TAB%%zs_coldresist_>=100%%TAB%%zs_coldresist_<128%~
+    UNLESS ~ZS_COLDIMMUNITY~
+
+    APPEND ~splprot.2da~ ~ZS_FIREIMMUNITY%TAB%0x104%TAB%%zs_fireresist_>=100%%TAB%%zs_fireresist_<128%~
+    UNLESS ~ZS_FIREIMMUNITY~
+
+    APPEND ~splprot.2da~ ~ZS_CLASS_THIEF_OR_BARD_ALL%TAB%0x103%TAB%%zs_class_thief%%TAB%%zs_class_bard_all%~
+    UNLESS ~ZS_CLASS_THIEF_OR_BARD_ALL~
 
     //----------------------------------------------------------------
         COPY_EXISTING ~splprot.2da~ ~override~
@@ -145,6 +199,18 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
                 ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_ELECTRICIMMUNITY~ BEGIN
                     ~zs_electric_immunity~ = row
                 END
+
+                ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_COLDIMMUNITY~ BEGIN
+                    ~zs_cold_immunity~ = row
+                END
+
+                ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_FIREIMMUNITY~ BEGIN
+                    ~zs_fire_immunity~ = row
+                END
+
+                ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_CLASS_THIEF_OR_BARD_ALL~ BEGIN
+                    ~zs_thief_or_bard_all~ = row
+                END
             END
 
     //----------------------------------------------------------------
@@ -164,8 +230,17 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
               ~zs_electricresist_<128~  = "-1" OR
               ~zs_electricresist_>=100~ = "-1" OR
               ~zs_electric_immunity~    = "-1" OR
+              ~zs_coldresist_<128~      = "-1" OR
+              ~zs_coldresist_>=100~     = "-1" OR
+              ~zs_cold_immunity~        = "-1" OR
+              ~zs_fireresist_<128~      = "-1" OR
+              ~zs_fireresist_>=100~     = "-1" OR
+              ~zs_fire_immunity~        = "-1" OR
               ~zs_hideinshadows_<n~     = "-1" OR
-              ~zs_hideinshadows_>n~     = "-1"
+              ~zs_hideinshadows_>n~     = "-1" OR
+              ~zs_class_thief~          = "-1" OR
+              ~zs_class_bard_all~       = "-1" OR
+              ~zs_thief_or_bard_all~    = "-1"
     BEGIN
         WARN "Error: Not all splprot entries could be inserted!"
         ACTION_IF ~zs_slashingresist_<128~  = "-1" BEGIN
@@ -204,11 +279,47 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
         ACTION_IF ~zs_missile_immunity~     = "-1" BEGIN
             PRINT "zs_missile_immunity not set!"
         END
+        ACTION_IF ~zs_electricresist_<128~  = "-1" BEGIN
+            PRINT "zs_electricresist_<128 not set!"
+        END
+        ACTION_IF ~zs_electricresist_>=100~ = "-1" BEGIN
+            PRINT "zs_electricresist_>=100 not set!"
+        END
+        ACTION_IF ~zs_electric_immunity~    = "-1" BEGIN
+            PRINT "zs_electric_immunity not set!"
+        END
+        ACTION_IF ~zs_coldresist_<128~      = "-1" BEGIN
+            PRINT "zs_coldresist_<128 not set!"
+        END
+        ACTION_IF ~zs_coldresist_>=100~     = "-1" BEGIN
+            PRINT "zs_coldresist_>=100 not set!"
+        END
+        ACTION_IF ~zs_cold_immunity~        = "-1" BEGIN
+            PRINT "zs_cold_immunity not set!"
+        END
+        ACTION_IF ~zs_fireresist_<128~      = "-1" BEGIN
+            PRINT "zs_fireresist_<128 not set!"
+        END
+        ACTION_IF ~zs_fireresist_>=100~     = "-1" BEGIN
+            PRINT "zs_fireresist_>=100 not set!"
+        END
+        ACTION_IF ~zs_fire_immunity~        = "-1" BEGIN
+            PRINT "zs_fire_immunity not set!"
+        END
         ACTION_IF ~zs_hideinshadows_<n~     = "-1" BEGIN
             PRINT "zs_hideinshadows_<n not set!"
         END
         ACTION_IF ~zs_hideinshadows_>n~     = "-1" BEGIN
             PRINT "zs_hideinshadows_>n not set!"
+        END
+        ACTION_IF ~zs_class_thief~          = "-1" BEGIN
+            PRINT "zs_class_thief not set!"
+        END
+        ACTION_IF ~zs_class_bard_all~       = "-1" BEGIN
+            PRINT "zs_class_bard_all not set!"
+        END
+        ACTION_IF ~zs_thief_or_bard_all~    = "-1" BEGIN
+            PRINT "zs_thief_or_bard_all not set!"
         END
 
         FAIL "Exiting installation."

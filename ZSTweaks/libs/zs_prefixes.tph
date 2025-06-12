@@ -133,6 +133,56 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
         COPY_EXISTING ~GORSTALK.cre~ ~override~
             WRITE_BYTE 0x272 elemental
             WRITE_BYTE 0x273 elemental_air_class
+
+        PRINT "[[FIX]]: Thieves using bastard swords in BG2EE without being able to use them properly or illegaly as per the rules of thieves. Replaced with short swords."
+        COPY_EXISTING ~ARNTRA06.CRE~ ~override~
+                      ~BMUGG1.CRE~   ~override~
+                      ~GENTHF01.CRE~ ~override~
+                      ~PIRPIR05.CRE~ ~override~
+            LPF REPLACE_CRE_ITEM_MATCH STR_VAR match_item = ~sw1h01~ new_item = ~sw1h07~ END
+
+        PRINT "[[FIX]]: Cambions that are set as 'thieves' wielding bastard swords without proficiency for it. Adding large sword proficiency 1 to them"
+        COPY_EXISTING ~CAMBION1.CRE~ ~override~
+                      ~TELCAM1.CRE~   ~override~
+            WRITE_BYTE 0x6e 1
+
+        PRINT "[[FIX]]: Thieves using daggers without being proficient in them. Adding one pip to proficiency in daggers for them"
+        COPY_EXISTING ~AR18THIF.CRE~ ~override~
+                      ~ARNMAN09.CRE~ ~override~
+                      ~BEELOO.CRE~   ~override~
+                      ~BSHOP01.CRE~  ~override~
+                      ~DRIM01.CRE~   ~override~
+                      ~GENTH02.CRE~  ~override~
+                      ~GENTMG01.CRE~ ~override~
+                      ~SHTH05.CRE~   ~override~
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 96 timing=9 target=1 END
+
+        PRINT "[[FIX]]: Thieves using short swords without being proficient in them. Adding one pip to proficiency in short swords for them"
+        COPY_EXISTING ~DSHOP01.CRE~ ~override~
+                      ~GENTH01.CRE~ ~override~
+                      ~GPTHIEF1.CRE~   ~override~
+                      ~IRETHF03.CRE~  ~override~
+                      ~ISHCLO01.CRE~   ~override~
+                      ~ISHTHF01.CRE~  ~override~
+                      ~PARTHF.CRE~ ~override~
+                      ~UDDOOR08.CRE~   ~override~
+                      ~UDDOOR09.CRE~   ~override~
+                      ~WAYLANE.CRE~   ~override~
+                      ~SARTHF01.CRE~   ~override~
+                      ~IRETHF04.CRE~   ~override~
+                      ~ISHTHF03.CRE~   ~override~
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing=9 target=1 END
+
+        PRINT "[[FIX]]: Thief ('Trainee') using a long sword without being proficient in them. Adding one pip to proficiency in long swords for them"
+        COPY_EXISTING ~ARNTRA01.CRE~ ~override~
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing=9 target=1 END
+
+    END
+
+    ACTION_IF is_bgee_or_eet BEGIN
+        PRINT "[[FIX]]: Fixing Riggilo having 4 pips in big swords but none in small swords while being forced to use small swords. Setting him to have 1 pip in small swords too."
+        COPY_EXISTING ~RIGGILO.CRE~ ~override~
+            WRITE_BYTE 0x6f 1
     END
 
     ACTION_IF has_eefixpack = 0 BEGIN
