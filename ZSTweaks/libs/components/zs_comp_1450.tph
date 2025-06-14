@@ -17,12 +17,9 @@ COPY_EXISTING_REGEXP "^ZSTW[TZ][0-6]\.spl$" ~override~ // throwing daggers and d
 BUT_ONLY
 
 ACTION_IF zst_1450_allow_bards BEGIN
-
     COPY_EXISTING_REGEXP "^ZSTW[D][0-6]\.spl$" ~override~ // bard allowing
-        SET bard_all = IDS_OF_SYMBOL(class BARD_ALL)
-        LPF CLONE_EFFECT INT_VAR match_opcode=326 opcode=318 parameter1=bard_all probability1=zst_1450_bards_probability_penalty parameter2=105 STR_VAR resource="%SOURCE_RES%" END
+        LPF CLONE_EFFECT INT_VAR match_opcode=326 opcode=318 parameter1=class_bard_all probability1=zst_1450_bards_probability_penalty parameter2=105 STR_VAR resource="%SOURCE_RES%" END
     BUT_ONLY
-    
 END
 
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~

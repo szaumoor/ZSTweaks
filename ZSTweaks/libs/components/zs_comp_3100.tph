@@ -6,7 +6,7 @@ END
 
 COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~
     LPF CRE_RACE RET race = result END
-    PATCH_IF race = IDS_OF_SYMBOL(race BEETLE) BEGIN
+    PATCH_IF race = race_beetle BEGIN
         WRITE_SHORT 0x4e "-1" // piercing modifier
         WRITE_SHORT 0x50 "-2" // slashing modifier
         WRITE_SHORT 0x4c "-3" // missile modifier

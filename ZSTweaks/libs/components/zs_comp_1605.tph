@@ -12,37 +12,28 @@ ACTION_IF is_bgee_bg2ee_or_eet BEGIN
         LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 177 END
         LPF ALTER_EFFECT INT_VAR match_opcode=344 match_parameter2=3 match_parameter1=4 special=5 END
         // regenerating creatures
-        SET solar = IDS_OF_SYMBOL(race SOLAR)
-        SET antisolar = IDS_OF_SYMBOL(race ANTISOLAR)
-        SET planatar = IDS_OF_SYMBOL(race PLANATAR)
-        SET darkplanatar = IDS_OF_SYMBOL(race DARKPLANATAR)
         LPF ALTER_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 special=3 END
         LPF ALTER_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=122 special=3 END
-        LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 parameter1=solar special=4 END
-        LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 parameter1=antisolar special=4 END
-        LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 parameter1=planatar END
-        LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 parameter1=darkplanatar END
+        LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 parameter1=race_solar special=4 END
+        LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 parameter1=race_antisolar special=4 END
+        LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 parameter1=race_planetar END
+        LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 parameter1=race_darkplanetar END
 
-        SET troll = IDS_OF_SYMBOL(race TROLL)
-        SET werewolf = IDS_OF_SYMBOL(race LYCANTHROPE)
-        LPF ADD_EQUIPPED_EFF INT_VAR p2=4 spec=1 STR_VAR effects = ~op=178,p1=%solar%;op=178,p1=%antisolar%;op=178,p1=%planatar%;op=178,p1=%darkplanatar%;op=178,p1=%troll%;op=178,p1=%werewolf%~ END
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=4 spec=1 STR_VAR effects = ~op=178,p1=%race_solar%;op=178,p1=%race_antisolar%;op=178,p1=%race_planetar%;op=178,p1=%race_darkplanetar%;op=178,p1=%race_troll%;op=178,p1=%race_werewolf%~ END
 
         // cold-using creatures
-        SET silver_dragon = IDS_OF_SYMBOL(class SILVER_DRAGON)
-        SET wolf_winter = IDS_OF_SYMBOL(class WOLF_WINTER)
         LPF ALTER_EFFECT INT_VAR match_opcode=344 match_parameter2=5 match_parameter1=146 special = 4 END
-        LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=5 match_parameter1=146 parameter1=silver_dragon END
-        LPF ADD_EQUIPPED_EFF INT_VAR p2=5 spec=2 STR_VAR effects = ~op=178,p1=%silver_dragon%;op=178,p1=%wolf_winter%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=5 match_parameter1=146 parameter1=class_silver_dragon END
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=5 spec=2 STR_VAR effects = ~op=178,p1=%class_silver_dragon%;op=178,p1=%class_wolf_winter%~ END
 
-        SET undead = IDS_OF_SYMBOL(general UNDEAD)
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=178,p1=%undead%,p2=3,spec=3~ END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=178,p1=%general_undead%,p2=3,spec=3~ END
 
         // on hit effects
-        LPF CLONE_EFFECT INT_VAR match_opcode=177 match_parameter2=4 match_parameter1=129 parameter1=solar END
-        LPF CLONE_EFFECT INT_VAR match_opcode=177 match_parameter2=4 match_parameter1=129 parameter1=antisolar END
-        LPF CLONE_EFFECT INT_VAR match_opcode=177 match_parameter2=4 match_parameter1=129 parameter1=planatar END
-        LPF CLONE_EFFECT INT_VAR match_opcode=177 match_parameter2=4 match_parameter1=129 parameter1=darkplanatar END
-        LPF CLONE_EFFECT INT_VAR match_opcode=177 match_parameter2=5 match_parameter1=146 parameter1=silver_dragon END
+        LPF CLONE_EFFECT INT_VAR match_opcode=177 match_parameter2=4 match_parameter1=129 parameter1=race_solar END
+        LPF CLONE_EFFECT INT_VAR match_opcode=177 match_parameter2=4 match_parameter1=129 parameter1=race_antisolar END
+        LPF CLONE_EFFECT INT_VAR match_opcode=177 match_parameter2=4 match_parameter1=129 parameter1=race_planetar END
+        LPF CLONE_EFFECT INT_VAR match_opcode=177 match_parameter2=4 match_parameter1=129 parameter1=race_darkplanetar END
+        LPF CLONE_EFFECT INT_VAR match_opcode=177 match_parameter2=5 match_parameter1=146 parameter1=class_silver_dragon END
 
     COPY_EXISTING ~TROLLD1.EFF~ ~override~
                   ~FT3DAM.EFF~ ~override~

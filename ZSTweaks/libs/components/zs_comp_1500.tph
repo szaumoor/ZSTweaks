@@ -24,8 +24,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF remove_haste_immunity END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6,rd=2;op=319,pwr=1,p2=11,res=Mazzy,spec=9104~ END
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-            SET mask_evil = IDS_OF_SYMBOL(alignmen MASK_EVIL)
-            LPF ADD_ON_HIT_EFF INT_VAR stype=8 sbonus="-2" STR_VAR effects = ~ip=0,op=177,p2=8,p1=%mask_evil%,res=ZSTWMAZZ;op=126,p1=-4,dur=45;op=337,p1=-1,p2=16;op=337,p1=38,p2=240~ END
+            LPF ADD_ON_HIT_EFF INT_VAR stype=8 sbonus="-2" STR_VAR effects = ~ip=0,op=177,p2=8,p1=%alignmen_mask_evil%,res=ZSTWMAZZ;op=126,p1=-4,dur=45;op=337,p1=-1,p2=16;op=337,p1=38,p2=240~ END
     END
 
     COPY_EXISTING "NPBOW.ITM" ~override~

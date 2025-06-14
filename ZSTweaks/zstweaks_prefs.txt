@@ -119,6 +119,9 @@ OUTER_SET zst_1240_purifier_dispel = "1"
 // adds the new backstory to Hawksight, including the new charge ability
 OUTER_SET zst_1580_hawksight_extra = "1"
 
+// allows kachiko's wakizashi (whisper) to be upgraded by cespenar
+OUTER_SET zst_1583_kachiko_upgrade = "1"
+
 /////////////////////////////// NPC tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // determines the net slashing damage of Sarevok's Deathbringer Assault in component 1646. Default is 150 (50 less than normal). Note that now it allows a saving throw to take half as well

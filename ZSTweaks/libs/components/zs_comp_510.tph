@@ -4,8 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_510~ = 1
 END
 
-OUTER_SET rwf = IDS_OF_SYMBOL (spell CLERIC_RIGHTEOUS_WRATH_OF_THE_FAITHFUL)
-ACTION_IF rwf > 0 BEGIN
+ACTION_IF spell_righteous_wrath_faithful > 0 BEGIN
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_RIGHTEOUS_WRATH_OF_THE_FAITHFUL" RET spell_res END
 
     COPY_EXISTING ~%spell_res%.spl~ ~override~
@@ -21,8 +20,7 @@ ACTION_IF rwf > 0 BEGIN
     BUT_ONLY IF_EXISTS
 
 END ELSE BEGIN
-
     ACTION_IF group_component = 0 BEGIN
-        WARN "Righteous Wrath of the Faithful: No changes made, as the spell is not present in the game."
+        WARN "[Righteous Wrath of the Faithful]: No changes made, as the spell is not present in the game."
     END
 END

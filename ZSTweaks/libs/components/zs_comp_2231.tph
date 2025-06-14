@@ -48,7 +48,7 @@ REINCLUDE ~./zstweaks/macro.tph~
 
 COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~
     LPF CRE_KIT RET kit = result END
-    PATCH_IF kit = IDS_OF_SYMBOL(kit DRAGON_DISCIPLE) BEGIN
+    PATCH_IF kit = kit_dragon_disciple BEGIN
       LPM stuff
       PATCH_IF zst_2231_fire_boost BEGIN
           LPF ADD_CRE_EFFECT INT_VAR opcode = 332 timing = 9 parameter2 = 1 parameter1 = zst_2231_fire_boost_pctg END

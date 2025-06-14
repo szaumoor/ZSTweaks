@@ -3753,26 +3753,24 @@ Weight: 3~
 
 @7160 = ~Kachiko's Whisper +3~
 @7161 = ~Kachiko's Whisper
-This wakizashi was the favored weapon of a female warrior named Kachiko. She hailed from the far eastern lands in Kara-Tur, and while her early life is largely unknown, it is believed she was trained as a shadowdancer, where she was able to rise to the top as one of the most skilled of her order.
+This wakizashi was the favored weapon of a renowned warrior named Kachiko, whose origins trace back to the eastern lands of Kara-Tur. Though much of her early life is largely unknown, it is said she was trained as a shadowdancer, quickly ascending to become one of the most accomplished members of her order.
 
-Old tales say that during one of her missions, in the innermost sanctum of a forgotten temple found deep within the mountains, she discovered this blade, enshrined upon an ornate pedestal. As she reached out to touch it, the sword resonated with a soft whisper, as if acknowledging her presence.
+Old tales recount that, during a mission deep in the heart of a forgotten mountain temple, Kachiko came upon this blade resting atop an ornate pedestal. As her hand closed around the hilt, the sword resonated with a soft whisper, as if acknowledging her presence.
 
-Allegedly, this event was what awakened the blade's true powers, and it was this haunting whisper what earned the weapon its name, symbolizing the deep bond between the warrior and her blade. Many of her exploits were conducted using this blade.
+From that moment, the blade's latent powers awakened, and the soft whisper that greeted Kachiko became its namesake. The bond between warrior and weapon grew inseparable, and many of Kachiko's greatest feats were accomplished with this blade at her side.
 
 STATISTICS:
 
 Equipped abilities:
 – +10% bonus in Hiding in the Shadows and Move Silently (shadowdancers only)
-– +1 THAC0 (shadowdancers only)
 
 Combat abilities:
-– Drains 2 points of target's Wisdom for 6 rounds on each hit (save vs. Death to negate)
+– Drains 2 points of target's Wisdom for 5 rounds on each hit (save vs. Death to negate)
 
 Charge abilities:
-– Shadow Jump three times per day
-  Special: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. If the wielder is a Shadowdancer, Stalker, or Dark Moon Monk, they gain a +1 backstab multiplier during this time.
+– Shadow Jump three times per day: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, Stalkers, and monks also gain +1 backstab multiplier during this time.
 
-THAC0: +3
+THAC0: +3, +4 (shadowdancers)
 Damage: 1d8+3 (piercing)
 Speed Factor: 0
 Proficiency Type: Scimitar/Wakizashi/Ninjatō
@@ -3783,6 +3781,39 @@ Requires:
 Weight: 2~
 
 @7162 = ~Shadow Jump~
+@7163 = ~Kachiko's Whisper +5~
+@7164 = ~Kachiko's Whisper
+This wakizashi was the favored weapon of a renowned warrior named Kachiko, whose origins trace back to the eastern lands of Kara-Tur. Though much of her early life is largely unknown, it is said she was trained as a shadowdancer, quickly ascending to become one of the most accomplished members of her order.
+
+Old tales recount that, during a mission deep in the heart of a forgotten mountain temple, Kachiko came upon this blade resting atop an ornate pedestal. As her hand closed around the hilt, the sword resonated with a soft whisper, as if acknowledging her presence.
+
+From that moment, the blade's latent powers awakened, and the soft whisper that greeted Kachiko became its namesake. The bond between warrior and weapon grew inseparable, and many of Kachiko's greatest feats were accomplished with this blade at her side.
+
+Now upgraded by Cespenar, this sword has reached the pinnacle of its power—its true potential, first awakened by the warrior Kachiko, is now fully unleashed.
+
+STATISTICS:
+
+Equipped abilities:
+– Immune to deafness and all sound-based magic, including howls from wailing spirits and demiliches
+– +15% Hide in Shadows and Move Silently (shadowdancer only)
+– 10% chance when hit to enter Shadow Form once per hour, reducing damage taken by 50% (shadowdancer only)
+
+Combat abilities:
+– Each hit drains 2 Wisdom for 5 rounds (save vs. Death at -2 negates); if drained, target must also save vs. Spell at -2 or be confused for 3 rounds
+– 5% chance per hit to unleash a banshee wail, killing all enemies in a 15-ft. radius unless they save vs. Death (once per turn per enemy)
+
+Charge abilities:
+– Shadow Jump three times per day: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, Stalkers, and monks also gain +1 backstab multiplier during this time.
+
+THAC0: +5
+Damage: 1d8+5 (piercing)
+Speed Factor: 0
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+  5 Strength
+
+Weight: 2~
 
 @7170 = ~This is the fabled cloak of Montolio DeBrouchee—the aged, blind mentor of the dark elf ranger Drizzt Do'Urden. Like his famous pupil, Montolio was a master at wielding two blades simultaneously.
 

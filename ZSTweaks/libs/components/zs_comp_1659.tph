@@ -16,6 +16,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = new_opcode parameter1 = 7 END
             END
             LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 6 parameter1 = 1 END
-            LPF ALTER_HEADER INT_VAR match_type = 3 projectile = IDS_OF_SYMBOL(projectl SPKLARIC) END
+            LPF ALTER_HEADER INT_VAR match_type = 3 projectile = projectl_spklaric END
         END
 END

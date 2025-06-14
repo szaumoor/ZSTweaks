@@ -1,0 +1,9 @@
+IF
+    Global("ZS_KachikoForge", "GLOBAL", 1)
+    Global("ImpForgeStuff", "GLOBAL", 1)
+THEN
+    RESPONSE #100
+        SetGlobal("ImpForgeStuff", "GLOBAL", 0)
+        GiveItemCreate("ZS_WAWAK.itm", Player1, 0, 0, 0)
+        StartDialogNoSet(Player1)
+END

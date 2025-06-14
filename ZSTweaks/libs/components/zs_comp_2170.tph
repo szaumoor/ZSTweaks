@@ -11,10 +11,7 @@ ACTION_IF NOT has_shadowdancer_overhaul_thac0_comp BEGIN
 
     COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
         LPF CRE_CLASS RET cre_class = result END
-        SET thief = IDS_OF_SYMBOL(class THIEF)
-        SET mage_thief = IDS_OF_SYMBOL(class MAGE_THIEF)
-
-        PATCH_IF cre_class = thief OR cre_class = mage_thief BEGIN
+        PATCH_IF cre_class = class_thief OR cre_class = class_mage_thief BEGIN
             LPF CRE_THAC0 RET thac0 = result END
             LPF CRE_FIRST_LEVEL RET first_level = result END
             LPF CRE_SECOND_LEVEL RET second_level = result END

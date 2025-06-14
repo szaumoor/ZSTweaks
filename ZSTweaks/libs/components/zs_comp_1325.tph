@@ -9,6 +9,5 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING ~HAMM05.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7730) END
         LPF ALTER_EFFECT INT_VAR match_opcode=12 dicesize=2 dicenumber=1 parameter1=0 special=1024 END
-        SET gianthumanoid = IDS_OF_SYMBOL(general GIANTHUMANOID)
-        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,stype=1,sbonus=2,res=ZSTWBRKA,p2=3,p1=%gianthumanoid%~ END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,stype=1,sbonus=2,res=ZSTWBRKA,p2=3,p1=%general_gianthumanoid%~ END
 END

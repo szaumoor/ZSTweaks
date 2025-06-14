@@ -8,12 +8,11 @@ ACTION_IF NOT is_iwdee BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~bdbrac05.itm~ BEGIN
         COPY_EXISTING ~bdbrac05.itm~ ~override~
             LPF ALTER_ITEM INT_VAR id_ref_name = RESOLVE_STR_REF(@7321) id_ref_desc=RESOLVE_STR_REF(@7320) END
-            SET bounty_hunter_id = IDS_OF_SYMBOL(kit BOUNTYHUNTER)
-            LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=177 parameter1=bounty_hunter_id END
+            LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=177 parameter1=kit_bounty_hunter END
             LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=177
-            match_parameter1=bounty_hunter_id parameter1=IDS_OF_SYMBOL(kit SHADOWDANCER) END
+            match_parameter1=kit_bounty_hunter parameter1=kit_shadowdancer END
             PATCH_IF has_zs_shadowdancer_overhaul BEGIN
-                LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=177 match_parameter1=bounty_hunter_id parameter1=IDS_OF_SYMBOL(kit ZS_SHADOWDANCER) END
+                LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=177 match_parameter1=kit_bounty_hunter parameter1=zs_shadowdancer END
             END
     END ELSE BEGIN
         ACTION_IF group_component = 0 BEGIN

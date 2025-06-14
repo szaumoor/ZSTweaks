@@ -32,26 +32,24 @@ Weight: 3
 
 ---
 Kachiko's Whisper
-This wakizashi was the favored weapon of a female warrior named Kachiko. She hailed from the far eastern lands in Kara-Tur, and while her early life is largely unknown, it is believed she was trained as a shadowdancer, where she was able to shine as one of the most skilled of her order.
+his wakizashi was the favored weapon of a renowned warrior named Kachiko, whose origins trace back to the eastern lands of Kara-Tur. Though much of her early life is largely unknown, it is said she was trained as a shadowdancer, quickly ascending to become one of the most accomplished members of her order.
 
-Old tales say that during one of her missions, in the innermost sanctum of a long-forgotten temple found deep within the mountains, she discovered this blade, enshrined upon an ornate pedestal. As she reached out to touch it, the sword resonated with a soft whisper, as if acknowledging her presence.
+Old tales recount that, during a mission deep in the heart of a forgotten mountain temple, Kachiko came upon this blade resting atop an ornate pedestal. As her hand closed around the hilt, the sword resonated with a soft whisper, as if acknowledging her presence.
 
-Allegedly, this event was what awakened the blade's true powers, and it was this haunting whisper what earned the weapon its name, symbolizing the deep bond between the warrior and her blade. Many of her exploits were conducted using this blade.
+From that moment, the blade's latent powers awakened, and the soft whisper that greeted Kachiko became its namesake. The bond between warrior and weapon grew inseparable, and many of Kachiko's greatest feats were accomplished with this blade at her side.
 
 STATISTICS:
 
-Combat abilities:
-– Drains 2 points of target's Wisdom for 6 rounds on each hit (Save vs. Death to negate)
-
 Equipped abilities:
-– +10% in Hiding in the Shadows and Move Silently (Shadowdancers only)
-– +1 THAC0 (Shadowdancers only)
+– +10% bonus in Hiding in the Shadows and Move Silently (shadowdancers only)
+
+Combat abilities:
+– Drains 2 points of target's Wisdom for 6 rounds on each hit (save vs. Death to negate)
 
 Charge abilities:
-– Shadow Jump three times per day
-  Special: teleport to any place within sight, reappearing invisible for 2 rounds. During this time, critical misses are not possible
+– Shadow Jump three times per day: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, Stalkers, and monks gain +1 backstab multiplier during this time.
 
-THAC0: +3
+THAC0: +3, +4 (shadowdancers)
 Damage: 1d8+3 (piercing)
 Speed Factor: 0
 Proficiency Type: Scimitar/Wakizashi/Ninjatō

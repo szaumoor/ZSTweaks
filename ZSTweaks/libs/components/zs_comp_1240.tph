@@ -18,8 +18,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     ACTION_IF zst_1240_purifier_evil BEGIN
         PRINT ~Applying Purifier's damage vs. all evil tweak~
         COPY_EXISTING ~SW1H64.ITM~ ~override~
-            SET mask_evil = IDS_OF_SYMBOL(alignmen MASK_EVIL)
-            LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=177 match_parameter2=8 parameter1=mask_evil END
+            LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=177 match_parameter2=8 parameter1=alignmen_mask_evil END
 
             PATCH_IF bastard_comp_installed BEGIN
                 SPRINT strref @6090
@@ -40,8 +39,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         END
 
         COPY_EXISTING ~SW1H65.ITM~ ~override~
-            SET mask_evil = IDS_OF_SYMBOL(alignmen MASK_EVIL)
-            LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=177 match_parameter2=8 parameter1=mask_evil END
+            LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=177 match_parameter2=8 parameter1=alignmen_mask_evil END
 
             PATCH_IF bastard_comp_installed BEGIN
                 SPRINT str @99999

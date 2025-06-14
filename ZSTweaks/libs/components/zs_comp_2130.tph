@@ -25,8 +25,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_EFFECT INT_VAR match_duration = 6 duration = 7 END
             LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
             LPF ADD_SPL_EFF_SELF INT_VAR dur=13 rd=0 pwr=0 STR_VAR effects = ~op=301,p1=2;op=362,p1=-1~ END
-            SET thief = IDS_OF_SYMBOL(class THIEF)
-            LPF ADD_SPL_EFF_SELF INT_VAR pwr=0 rd=0 STR_VAR effects=~op=318,p2=115,p1=%thief%~ END
+            LPF ADD_SPL_EFF_SELF INT_VAR pwr=0 rd=0 STR_VAR effects=~op=318,p2=115,p1=%class_thief%~ END
             LPF ADD_SPL_EFF_SELF INT_VAR pwr=0 rd=0 dur=13 STR_VAR effects=~op=1,p1=1;op=278,p1=2;op=73,p1=2;op=301,p1=1~ END
             LPF ADD_SPL_EFF_SELF STR_VAR effects=~op=321,ip=0,rd=0,pwr=0,res=%SOURCE_RES%~ END // ensures refreshing the effect instead of stacking, only relevant with mods that add more uses of the ability
     END

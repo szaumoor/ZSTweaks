@@ -22,20 +22,10 @@ END ELSE ACTION_IF has_iwd_spells_divine BEGIN
 END
 
 COPY_EXISTING ~SPWI914.SPL~ ~override~
-    SET salamander = IDS_OF_SYMBOL(race SALAMANDER)
-    SET darkplanatar = IDS_OF_SYMBOL(race DARKPLANATAR)
-    SET planatar = IDS_OF_SYMBOL(race PLANATAR)
-    SET antisolar = IDS_OF_SYMBOL(race ANTISOLAR)
-    SET solar = IDS_OF_SYMBOL(race SOLAR)
-    SET rakshasa = IDS_OF_SYMBOL(race RAKSHASA)
-    SET genie = IDS_OF_SYMBOL(race GENIE)
-    SET elemental = IDS_OF_SYMBOL(race ELEMENTAL)
-    SET mephit = IDS_OF_SYMBOL(race MEPHIT)
-    SET demonic = IDS_OF_SYMBOL(race DEMONIC)
     SET undead_or_golem = 55
     LPF ALTER_SPELL INT_VAR ref_desc=new_description END
     LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=216 parameter1=6 header=0 END
-    LPF ADD_SPL_EFF_TGT INT_VAR tmg=0 rd=0 pwr=9 ip=0 p2=104 STR_VAR effects = ~op=324,p1=%salamander%;op=324,p1=%darkplanatar%;op=324,p1=%planatar%;op=324,p1=%antisolar%;op=324,p1=%solar%;op=324,p1=%rakshasa%;op=324,p1=%genie%;op=324,p1=%elemental%;op=324,p1=%mephit%;op=324,p1=%demonic%;op=324,p2=%undead_or_golem%~ END
+    LPF ADD_SPL_EFF_TGT INT_VAR tmg=0 rd=0 pwr=9 ip=0 p2=104 STR_VAR effects = ~op=324,p1=%race_salamander%;op=324,p1=%race_darkplanetar%;op=324,p1=%race_planetar%;op=324,p1=%race_antisolar%;op=324,p1=%race_solar%;op=324,p1=%race_rakshasa%;op=324,p1=%race_genie%;op=324,p1=%race_elemental%;op=324,p1=%race_mephit%;op=324,p1=%race_demonic%;op=324,p2=%undead_or_golem%~ END
 
 COPY_EXISTING ~SCRL9W.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END

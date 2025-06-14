@@ -39,26 +39,15 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         COPY ~%MOD_FOLDER%/items/shadow_wardstone~ ~override~
         COPY_EXISTING ~MISC6P.itm~ ~override~ // wardstone
             LPF ALTER_ITEM INT_VAR unid_ref_desc = RESOLVE_STR_REF(@8374) id_ref_desc = RESOLVE_STR_REF(@8374) category = 7 flags=33554508 END
-            SET shadowdancer = IDS_OF_SYMBOL(kit SHADOWDANCER)
-            SET dark_moon = IDS_OF_SYMBOL(kit DARK_MOON)
-
-            SET shadow_dragon = IDS_OF_SYMBOL(class SHADOW_DRAGON)
-            SET spectral_troll = IDS_OF_SYMBOL(class SPECTRAL_TROLL)
-
-            SET shadow = IDS_OF_SYMBOL(race SHADOW)
-            SET spectral_undead = IDS_OF_SYMBOL(race SPECTRAL_UNDEAD)
-            SET spectre = IDS_OF_SYMBOL(race SPECTRE)
-            SET wraith = IDS_OF_SYMBOL(race WRAITH)
 
             SET blinded_strref1 = 14674
             SET blinded_strref2 = 1474
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=275,p1=5;op=101,p2=74;op=169,p2=8;op=267,p1=%blinded_strref1%;op=267,p1=%blinded_strref2%~ END
-            LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%shadowdancer%,res=ZSTWWDS0;op=177,p1=%shadowdancer%,res=ZSTWWDS1;op=177,p1=%shadowdancer%,res=ZSTWWDS2;op=177,p1=%shadowdancer%,res=ZSTWWDS3;op=177,p1=%dark_moon%,res=ZSTWWDS0;op=177,p1=%dark_moon%,res=ZSTWWDS1;op=177,p1=%dark_moon%,res=ZSTWWDS2;op=177,p1=%dark_moon%,res=ZSTWWDS3~ END
-            LPF ADD_EQUIPPED_EFF INT_VAR p2=4 STR_VAR effects = ~op=219,p1=%shadow%;op=219,p1=%spectral_undead%;op=219,p1=%spectre%;op=219,p1=%wraith%~ END
-            LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=219,p1=%shadow_dragon%;op=219,p1=%spectral_troll%~ END
+            LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_shadowdancer%,res=ZSTWWDS0;op=177,p1=%kit_shadowdancer%,res=ZSTWWDS1;op=177,p1=%kit_shadowdancer%,res=ZSTWWDS2;op=177,p1=%kit_shadowdancer%,res=ZSTWWDS3;op=177,p1=%kit_dark_moon%,res=ZSTWWDS0;op=177,p1=%kit_dark_moon%,res=ZSTWWDS1;op=177,p1=%kit_dark_moon%,res=ZSTWWDS2;op=177,p1=%kit_dark_moon%,res=ZSTWWDS3~ END
+            LPF ADD_EQUIPPED_EFF INT_VAR p2=4 STR_VAR effects = ~op=219,p1=%race_shadow%;op=219,p1=%race_spectral_undead%;op=219,p1=%race_spectre%;op=219,p1=%race_wraith%~ END
+            LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=219,p1=%class_shadow_dragon%;op=219,p1=%class_spectral_troll%~ END
 
             PATCH_IF has_zs_shadowdancer_overhaul BEGIN
-                SET zs_shadowdancer = IDS_OF_SYMBOL(kit ZS_SHADOWDANCER)
                 LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%zs_shadowdancer%,res=ZSTWWDS0;op=177,p1=%zs_shadowdancer%,res=ZSTWWDS1;op=177,p1=%zs_shadowdancer%,res=ZSTWWDS2;op=177,p1=%zs_shadowdancer%,res=ZSTWWDS3~ END
             END
     END

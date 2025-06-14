@@ -7,13 +7,13 @@ END
 ACTION_IF NOT is_iwdee BEGIN // support for iwdee not currently determined
     COPY_EXISTING ~WAND03.ITM~ ~override~
                   ~WAND12_.ITM~ ~override~ //
-        LPF ALTER_HEADER INT_VAR match_type = 3 match_projectile=IDS_OF_SYMBOL(projectl Magic_Missile) projectile = 70 END
+        LPF ALTER_HEADER INT_VAR match_type = 3 match_projectile=projectl_magic_missile projectile = 70 END
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7460) END
     BUT_ONLY IF_EXISTS
 
     ACTION_IF is_bgee BEGIN
       COPY_EXISTING ~WAND12.ITM~ ~override~
-          LPF ALTER_HEADER INT_VAR match_type = 3 match_projectile=IDS_OF_SYMBOL(projectl Magic_Missile) projectile = 70 END
+          LPF ALTER_HEADER INT_VAR match_type = 3 match_projectile=projectl_magic_missile projectile = 70 END
           LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7460) END
     END
 

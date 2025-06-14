@@ -19,8 +19,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         COPY_EXISTING ~SW2H10.ITM~ ~override~
             SPRINT strref @6080
-            SET mask_evil = IDS_OF_SYMBOL(alignmen MASK_EVIL)
-            LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=177 match_parameter2=8 match_parameter1=51 parameter1=mask_evil  END
+            LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=177 match_parameter2=8 match_parameter1=51 parameter1=alignmen_mask_evil  END
 
             PATCH_IF two_handed_comp_installed BEGIN
                 SPRINT str @99999
@@ -35,8 +34,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         COPY_EXISTING ~SW2H19.ITM~ ~override~
             SPRINT strref @6081
-            SET mask_evil = IDS_OF_SYMBOL(alignmen MASK_EVIL)
-            LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 1 match_opcode = 177 match_parameter2 = 8 match_parameter1 = 51 parameter1 = mask_evil  END
+            LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 1 match_opcode = 177 match_parameter2 = 8 match_parameter1 = 51 parameter1 = alignmen_mask_evil END
 
             PATCH_IF two_handed_comp_installed BEGIN
                 SPRINT str @99999

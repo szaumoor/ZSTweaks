@@ -11,8 +11,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ALTER_HEADER INT_VAR match_damage = 4 damage = 2 END
         LPF GET_DMG_TYPE STR_VAR type = ~cold~ RET cold = result END
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,tmg=0,dsize=4,dnum=1,p2=%cold%,spec=1024~ END
-        SET barbarian = IDS_OF_SYMBOL(kit BARBARIAN)
-        LPF ADD_EQUIPPED_EFF INT_VAR p1=barbarian p2=9 STR_VAR effects=~op=177,res=ZSTWWARA;op=177,res=ZSTWWARB;op=177,res=ZSTWWARC;op=177,res=ZSTWWARD;op=177,res=ZSTWWARE~ END
+        LPF ADD_EQUIPPED_EFF INT_VAR p1=kit_barbarian p2=9 STR_VAR effects=~op=177,res=ZSTWWARA;op=177,res=ZSTWWARB;op=177,res=ZSTWWARC;op=177,res=ZSTWWARD;op=177,res=ZSTWWARE~ END
 
         PATCH_IF zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN
             SPRINT new_description @6861

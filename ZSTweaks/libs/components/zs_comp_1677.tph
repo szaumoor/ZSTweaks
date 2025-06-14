@@ -13,9 +13,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF DELETE_EFFECT INT_VAR match_opcode=42 multi_match=2 END
         LPF ALTER_EFFECT INT_VAR match_opcode=42 parameter2=63 END
         LPF ADD_EQUIPPED_EFF INT_VAR p1=2 STR_VAR effects=~op=73;op=189~ END
-        SET jester = IDS_OF_SYMBOL(kit JESTER)
-        SET blade = IDS_OF_SYMBOL(kit BLADE)
-        SET skald = IDS_OF_SYMBOL(kit SKALD)
+
         SET usability_str = RESOLVE_STR_REF(@7621)
-        LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%skald%,res=ZSTWWNDA;op=177,p1=%skald%,res=ZSTWWNDC;op=177,p1=%blade%,res=ZSTWWNDB;op=177,p1=%blade%,res=ZSTWWNDC;op=177,p1=%jester%,res=ZSTWWNDD;op=177,p1=%jester%,res=ZSTWWNDE;op=177,p1=%jester%,res=ZSTWWNDF;op=177,p1=%jester%,res=ZSTWWNDG;op=177,p1=%jester%,res=ZSTWWNDH;op=177,p1=%jester%,res=ZSTWWNDI;op=177,p1=%jester%,res=ZSTWWNDJ;op=177,p1=%jester%,res=ZSTWWNDK;op=319,p1=5,p2=5,pwr=1,spec=%usability_str%~ END
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_skald%,res=ZSTWWNDA;op=177,p1=%kit_skald%,res=ZSTWWNDC;op=177,p1=%kit_blade%,res=ZSTWWNDB;op=177,p1=%kit_blade%,res=ZSTWWNDC;op=177,p1=%kit_jester%,res=ZSTWWNDD;op=177,p1=%kit_jester%,res=ZSTWWNDE;op=177,p1=%kit_jester%,res=ZSTWWNDF;op=177,p1=%kit_jester%,res=ZSTWWNDG;op=177,p1=%kit_jester%,res=ZSTWWNDH;op=177,p1=%kit_jester%,res=ZSTWWNDI;op=177,p1=%kit_jester%,res=ZSTWWNDJ;op=177,p1=%kit_jester%,res=ZSTWWNDK;op=319,p1=5,p2=5,pwr=1,spec=%usability_str%~ END
 END

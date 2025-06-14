@@ -1,0 +1,83 @@
+DEFINE_PATCH_FUNCTION IS_WEAPON_EQUIPPED
+INT_VAR
+    at_slot = 0
+    anywhere = 0
+STR_VAR
+    weapon = ~*~
+RET
+    found
+BEGIN
+    // precondition checks
+    PATCH_IF NOT FILE_EXISTS_IN_GAME ~%weapon%.ITM~ BEGIN
+        PATCH_FAIL ~Weapon %weapon% does not exist in game~
+    END
+
+    PATCH_IF at_slot < 0 OR at_slot > 4 BEGIN
+        PATCH_FAIL ~at_slot must be set between 1 and 4 (inclusive)~
+    END
+
+    PATCH_IF anywhere != 0 AND anywhere != 1 BEGIN
+        PATCH_FAIL ~anywhere must be set to 0 (false) or 1 (true)~
+    END
+
+    PATCH_IF at_slot > 0 AND anywhere = 1 BEGIN
+        PATCH_FAIL ~at_slot must not be set when anywhere is on (1)~
+    END
+
+    PATCH_IF at_slot > 0 AND anywhere = 1 BEGIN
+        PATCH_FAIL ~Cannot mix indiscriminate searching with searching at particular slot~
+    END
+
+
+    SET found = 0
+    READ_LONG 0x2bc item_offset
+    READ_LONG 0x2b8 item_slots_offset
+
+    PATCH_IF anywhere BEGIN
+        READ_SHORT (item_slots_offset + (9 * 2)) weapon1
+        READ_SHORT (item_slots_offset + (10 * 2)) weapon2
+        READ_SHORT (item_slots_offset + (11 * 2)) weapon3
+        READ_SHORT (item_slots_offset + (12 * 2)) weapon4
+
+        PATCH_FOR_EACH value IN weapon1 weapon2 weapon3 weapon4 BEGIN
+            PATCH_IF value != "-1" BEGIN
+                READ_ASCII (item_offset + (0x14 * value)) equipped_weapon
+                PATCH_IF "%equipped_weapon%" STR_EQ ~%weapon%~ BEGIN
+                    found = 1
+                END
+            END
+        END
+
+    END ELSE BEGIN
+        PATCH_IF at_slot = 1 BEGIN
+            READ_SHORT (item_slots_offset + (9 * 2)) weapon1
+            READ_ASCII (item_offset + (0x14 * weapon1)) equipped_weapon
+            PATCH_IF "%equipped_weapon%" STR_EQ ~%weapon%~ BEGIN
+                found = 1
+            END
+        END ELSE PATCH_IF at_slot = 2 BEGIN
+            READ_SHORT (item_slots_offset + (10 * 2)) weapon2
+            READ_ASCII (item_offset + (0x14 * weapon2)) equipped_weapon
+            PATCH_IF "%equipped_weapon%" STR_EQ ~%weapon%~ BEGIN
+                found = 1
+            END
+        END ELSE PATCH_IF at_slot = 3 BEGIN
+            READ_SHORT (item_slots_offset + (11 * 2)) weapon3
+            READ_ASCII (item_offset + (0x14 * weapon3)) equipped_weapon
+            PATCH_IF "%equipped_weapon%" STR_EQ ~%weapon%~ BEGIN
+                found = 1
+            END
+        END ELSE PATCH_IF at_slot = 4 BEGIN
+            READ_SHORT (item_slots_offset + (12 * 2)) weapon4
+            READ_ASCII (item_offset + (0x14 * weapon4)) equipped_weapon
+            PATCH_IF "%equipped_weapon%" STR_EQ ~%weapon%~ BEGIN
+                found = 1
+            END
+        END
+    END
+
+    // postcondition check
+    PATCH_IF found != 0 AND found != 1 BEGIN
+        PATCH_FAIL ~Found value is not 0 or 1~
+    END
+END

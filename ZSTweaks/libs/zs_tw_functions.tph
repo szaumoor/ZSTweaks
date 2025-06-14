@@ -4,6 +4,7 @@ INCLUDE ~%MOD_FOLDER%/libs/zs_ardanis_functions.tpa~ // Ardanis
 INCLUDE ~%MOD_FOLDER%/libs/zs_cdfunctions.tpa~ // CamDawg
 
 // my function libraries
+INCLUDE ~%MOD_FOLDER%/libs/zs_find_weapon.tpa~
 INCLUDE ~%MOD_FOLDER%/libs/zs_add_effects.tpa~
 INCLUDE ~%MOD_FOLDER%/libs/zs_alter_functions.tpa~
 INCLUDE ~%MOD_FOLDER%/libs/zs_calculations.tpa~

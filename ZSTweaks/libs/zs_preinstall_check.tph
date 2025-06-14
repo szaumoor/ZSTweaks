@@ -35,18 +35,34 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
 
     OUTER_SET has_eefixpack = MOD_IS_INSTALLED "eefixpack.tp2" "0"
 
+    ACTION_IF has_eefixpack BEGIN
+        PRINT "EEFixpack detected."
+    END
+
     OUTER_SET has_iwdification_divine   = MOD_IS_INSTALLED "setup-iwdification.tp2" "40"
     OUTER_SET has_scs_iwd_spells_divine = MOD_IS_INSTALLED "setup-stratagems.tp2"   "1510"
     OUTER_SET has_tof_iwd_spells_divine = MOD_IS_INSTALLED "dw_talents.tp2"         "1510"
     OUTER_SET has_iwd_spells_divine     = has_iwdification_divine OR has_scs_iwd_spells_divine OR has_tof_iwd_spells_divine
+
+    ACTION_IF has_iwd_spells_divine BEGIN
+        PRINT "IWD spells for divine classes detected."
+    END
 
     OUTER_SET has_iwdification_arcane   = MOD_IS_INSTALLED "setup-iwdification.tp2" "30"
     OUTER_SET has_scs_iwd_spells_arcane = MOD_IS_INSTALLED "setup-stratagems.tp2"   "1500"
     OUTER_SET has_tof_iwd_spells_arcane = MOD_IS_INSTALLED "dw_talents.tp2"         "1500"
     OUTER_SET has_iwd_spells_arcane     = has_iwdification_arcane OR has_scs_iwd_spells_arcane OR has_tof_iwd_spells_arcane
 
-    OUTER_SET has_zs_shadowdancer_overhaul         = MOD_IS_INSTALLED "ZS_ShadowdancerOverhaul.tp2" "100"
-    OUTER_SET has_shadowdancer_overhaul_thac0_comp = MOD_IS_INSTALLED "ZS_ShadowdanverOverhaul.tp2" "300"
+    ACTION_IF has_iwd_spells_arcane BEGIN
+        PRINT "IWD spells for arcane classes detected."
+    END
+
+    OUTER_SET has_zs_shadowdancer_overhaul = MOD_IS_INSTALLED "ZS_ShadowdancerOverhaul.tp2" "100"
+
+    ACTION_IF has_zs_shadowdancer_overhaul BEGIN
+        PRINT "ZS_ShadowdancerOverhaul detected."
+        OUTER_SET kit_zs_shadowdancer = IDS_OF_SYMBOL(kit ZS_SHADOWDANCER)
+    END
 
     OUTER_SET zs_preinstall_check = 1
 END

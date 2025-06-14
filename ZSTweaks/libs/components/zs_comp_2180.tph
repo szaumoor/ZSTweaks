@@ -9,9 +9,7 @@ ACTION_IF NOT MOD_IS_INSTALLED "ZS_ShadowdanverOverhaul.tp2" "400" BEGIN
 
     COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
         LPF CRE_CLASS RET cre_class = result END
-        SET bard = IDS_OF_SYMBOL(class BARD)
-
-        PATCH_IF cre_class = bard BEGIN
+        PATCH_IF cre_class = class_bard BEGIN
             LPF CRE_THAC0 RET thac0 = result END
             LPF CRE_FIRST_LEVEL RET first_level = result END
 

@@ -6,7 +6,7 @@ END
 
 COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~
     READ_BYTE 0x272 race
-    PATCH_IF race = IDS_OF_SYMBOL(race SHADOW) BEGIN
+    PATCH_IF race = race_shadow BEGIN
         PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP "ZS#SD.*" != 0 BEGIN // ignore shadowdancer kit creatures
             WRITE_SHORT 0x46 (THIS - 2)
             WRITE_SHORT 0x48 (THIS - 2)

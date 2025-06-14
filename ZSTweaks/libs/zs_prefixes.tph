@@ -1,12 +1,9 @@
 ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
     WITH_SCOPE BEGIN
-        PRINT "[[FIX]]: Setting invisible stalker enemies as elementals of the Elemental Plane of Air instead of spectres"
-        OUTER_SET elemental = IDS_OF_SYMBOL(race ELEMENTAL)
-        OUTER_SET elemental_air_class = IDS_OF_SYMBOL(class ELEMENTAL_AIR)
-        COPY_EXISTING ~STALKE.CRE~   ~override~
+        PRINT "[[FIX]]: Setting invisible stalker enemies as elementals of the Elemental Plane of Air instead of spectres"        COPY_EXISTING ~STALKE.CRE~   ~override~
                       ~SENSTALK.CRE~ ~override~
-            WRITE_BYTE 0x272 elemental
-            WRITE_BYTE 0x273 elemental_air_class
+            WRITE_BYTE 0x272 race_elemental
+            WRITE_BYTE 0x273 class_elemental_air
         BUT_ONLY IF_EXISTS
     END
 
@@ -14,74 +11,41 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
         WITH_SCOPE BEGIN
             PRINT "[[FIX]]: Setting many types of sexless creatures as niether-gendered if they're set to male or female so it doesn't intrude with opcodes that target male/female"
 
-            OUTER_SET antisolar         = IDS_OF_SYMBOL(race ANTISOLAR)
-            OUTER_SET beholder          = IDS_OF_SYMBOL(race BEHOLDER)
-            OUTER_SET darkplanatar      = IDS_OF_SYMBOL(race DARKPLANATAR)
-            OUTER_SET demon             = IDS_OF_SYMBOL(race DEMONIC)
-            OUTER_SET doppleganger      = IDS_OF_SYMBOL(race DOPPLEGANGER)
-            OUTER_SET elemental         = IDS_OF_SYMBOL(race ELEMENTAL)
-            OUTER_SET genie             = IDS_OF_SYMBOL(race GENIE)
-            OUTER_SET golem             = IDS_OF_SYMBOL(race GOLEM)
-            OUTER_SET mimic             = IDS_OF_SYMBOL(race MIMIC)
-            OUTER_SET mind_flayer       = IDS_OF_SYMBOL(race MIND_FLAYER)
-            OUTER_SET mist              = IDS_OF_SYMBOL(race MIST)
-            OUTER_SET myconid           = IDS_OF_SYMBOL(race MYCONID)
-            OUTER_SET otyugh            = IDS_OF_SYMBOL(race OTYUGH)
-            OUTER_SET planatar          = IDS_OF_SYMBOL(race PLANATAR)
-            OUTER_SET shadow            = IDS_OF_SYMBOL(race SHADOW)
-            OUTER_SET shambling_mound   = IDS_OF_SYMBOL(race SHAMBLING_MOUND)
-            OUTER_SET shrieker          = IDS_OF_SYMBOL(race SHRIEKER)
-            OUTER_SET slime             = IDS_OF_SYMBOL(race SLIME)
-            OUTER_SET solar             = IDS_OF_SYMBOL(race SOLAR)
-            OUTER_SET specter           = IDS_OF_SYMBOL(race SPECTER)
-            OUTER_SET spectral_undead   = IDS_OF_SYMBOL(race SPECTRAL_UNDEAD)
-            OUTER_SET statue            = IDS_OF_SYMBOL(race STATUE)
-            OUTER_SET treant            = IDS_OF_SYMBOL(race TREANT)
-            OUTER_SET ~will-o-wisp~     = IDS_OF_SYMBOL(race "WILL-O-WISP")
-            OUTER_SET wraith            = IDS_OF_SYMBOL(race WRAITH)
-
-            OUTER_SET female            = IDS_OF_SYMBOL(gender FEMALE)
-            OUTER_SET male              = IDS_OF_SYMBOL(gender MALE)
-            OUTER_SET niether           = IDS_OF_SYMBOL(gender NIETHER)
-
-            OUTER_SET weapon            = IDS_OF_SYMBOL(general WEAPON)
-
             OUTER_SET matches           = 0
-
             COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
-                SET race = BYTE_AT(0x272)
                 SET general = BYTE_AT(0x271)
-                PATCH_IF race    = golem              OR
-                         race    = treant             OR
-                         race    = statue             OR
-                         race    = demon              OR
-                         race    = mind_flayer        OR
-                         race    = mist               OR
-                         race    = planatar           OR
-                         race    = darkplanatar       OR
-                         race    = solar              OR
-                         race    = antisolar          OR
-                         race    = beholder           OR
-                         race    = genie              OR
-                         race    = slime              OR
-                         race    = mimic              OR
-                         race    = doppleganger       OR
-                         race    = myconid            OR
-                         race    = shadow             OR
-                         race    = wraith             OR
-                         race    = specter            OR
-                         race    = spectral_undead    OR
-                         race    = elemental          OR
-                         race    = shambling_mound    OR
-                         race    = shrieker           OR
-                         race    = ~%will-o-wisp%~    OR
-                         race    = otyugh             OR
-                         general = weapon
+                SET race    = BYTE_AT(0x272)
+                PATCH_IF race    = race_golem              OR
+                         race    = race_treant             OR
+                         race    = race_statue             OR
+                         race    = race_demon              OR
+                         race    = race_mind_flayer        OR
+                         race    = race_mist               OR
+                         race    = race_planatar           OR
+                         race    = race_darkplanatar       OR
+                         race    = race_solar              OR
+                         race    = race_antisolar          OR
+                         race    = race_beholder           OR
+                         race    = race_genie              OR
+                         race    = race_slime              OR
+                         race    = race_mimic              OR
+                         race    = race_doppleganger       OR
+                         race    = race_myconid            OR
+                         race    = race_shadow             OR
+                         race    = race_wraith             OR
+                         race    = race_specter            OR
+                         race    = race_spectral_undead    OR
+                         race    = race_elemental          OR
+                         race    = race_shambling_mound    OR
+                         race    = race_shrieker           OR
+                         race    = ~%race_will-o-wisp%~    OR
+                         race    = race_otyugh             OR
+                         general = general_weapon
                 BEGIN
                     SET gender = BYTE_AT(0x275)
-                    PATCH_IF gender = male OR gender = female BEGIN
+                    PATCH_IF gender = gender_male OR gender = gender_female BEGIN
                         ++matches
-                        WRITE_BYTE 0x275 niether
+                        WRITE_BYTE 0x275 gender_niether
                     END
                 END
             BUT_ONLY
@@ -122,28 +86,29 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
                       ~gordeck3.cre~ ~override~
                       ~gordeck4.cre~ ~override~
                       ~ohnavrum.cre~ ~override~
-            PATCH_IF BYTE_AT(0x271) = 101 BEGIN
-                WRITE_BYTE 0x271 1
+            PATCH_IF BYTE_AT(0x271) = general_weapon BEGIN
+                WRITE_BYTE 0x271 general_humanoid
             END
         BUT_ONLY
 
-        OUTER_SET elemental = IDS_OF_SYMBOL(race ELEMENTAL)
-        OUTER_SET elemental_air_class = IDS_OF_SYMBOL(class ELEMENTAL_AIR)
         PRINT "[[FIX]]: Guardian of Air (ToB) should be set as an invisible stalker, not a human"
         COPY_EXISTING ~GORSTALK.cre~ ~override~
-            WRITE_BYTE 0x272 elemental
-            WRITE_BYTE 0x273 elemental_air_class
+            WRITE_BYTE 0x272 race_elemental
+            WRITE_BYTE 0x273 class_elemental_air
 
         PRINT "[[FIX]]: Thieves using bastard swords in BG2EE without being able to use them properly or illegaly as per the rules of thieves. Replaced with short swords."
         COPY_EXISTING ~ARNTRA06.CRE~ ~override~
                       ~BMUGG1.CRE~   ~override~
                       ~GENTHF01.CRE~ ~override~
                       ~PIRPIR05.CRE~ ~override~
-            LPF REPLACE_CRE_ITEM_MATCH STR_VAR match_item = ~sw1h01~ new_item = ~sw1h07~ END
+            LPF IS_WEAPON_EQUIPPED INT_VAR at_slot = 1 STR_VAR weapon = ~sw1h01~ RET found END
+            PATCH_IF found BEGIN
+                REPLACE_CRE_ITEM ~SW1H07~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+            END
 
         PRINT "[[FIX]]: Cambions that are set as 'thieves' wielding bastard swords without proficiency for it. Adding large sword proficiency 1 to them"
         COPY_EXISTING ~CAMBION1.CRE~ ~override~
-                      ~TELCAM1.CRE~   ~override~
+                      ~TELCAM1.CRE~  ~override~
             WRITE_BYTE 0x6e 1
 
         PRINT "[[FIX]]: Thieves using daggers without being proficient in them. Adding one pip to proficiency in daggers for them"
@@ -159,22 +124,22 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
 
         PRINT "[[FIX]]: Thieves using short swords without being proficient in them. Adding one pip to proficiency in short swords for them"
         COPY_EXISTING ~DSHOP01.CRE~ ~override~
-                      ~GENTH01.CRE~ ~override~
-                      ~GPTHIEF1.CRE~   ~override~
-                      ~IRETHF03.CRE~  ~override~
-                      ~ISHCLO01.CRE~   ~override~
-                      ~ISHTHF01.CRE~  ~override~
-                      ~PARTHF.CRE~ ~override~
-                      ~UDDOOR08.CRE~   ~override~
-                      ~UDDOOR09.CRE~   ~override~
-                      ~WAYLANE.CRE~   ~override~
-                      ~SARTHF01.CRE~   ~override~
-                      ~IRETHF04.CRE~   ~override~
-                      ~ISHTHF03.CRE~   ~override~
+                      ~GENTH01.CRE~  ~override~
+                      ~GPTHIEF1.CRE~ ~override~
+                      ~IRETHF03.CRE~ ~override~
+                      ~ISHCLO01.CRE~ ~override~
+                      ~ISHTHF01.CRE~ ~override~
+                      ~PARTHF.CRE~   ~override~
+                      ~UDDOOR08.CRE~ ~override~
+                      ~UDDOOR09.CRE~ ~override~
+                      ~WAYLANE.CRE~  ~override~
+                      ~SARTHF01.CRE~ ~override~
+                      ~IRETHF04.CRE~ ~override~
+                      ~ISHTHF03.CRE~ ~override~
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing=9 target=1 END
 
         PRINT "[[FIX]]: Thief ('Trainee') using a long sword without being proficient in them. Adding one pip to proficiency in long swords for them"
-        COPY_EXISTING ~ARNTRA01.CRE~ ~override~
+        COPY_EXISTING ~ARNTRA01.CRE~ ~override~ // needs to avoid duplication of this effect
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing=9 target=1 END
 
     END
