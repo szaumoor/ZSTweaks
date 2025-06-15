@@ -18,11 +18,11 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
                 PATCH_IF race    = race_golem              OR
                          race    = race_treant             OR
                          race    = race_statue             OR
-                         race    = race_demon              OR
+                         race    = race_demonic            OR
                          race    = race_mind_flayer        OR
                          race    = race_mist               OR
-                         race    = race_planatar           OR
-                         race    = race_darkplanatar       OR
+                         race    = race_planetar           OR
+                         race    = race_darkplanetar       OR
                          race    = race_solar              OR
                          race    = race_antisolar          OR
                          race    = race_beholder           OR

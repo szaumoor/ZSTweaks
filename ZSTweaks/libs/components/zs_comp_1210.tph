@@ -14,8 +14,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ADD_ON_HIT_EFF INT_VAR p2=8 STR_VAR res=~ZSTWEQ11~ effects = ~op=177,p1=%alignmen_neutral_good%;op=177,p1=%alignmen_neutral_evil%~ END
         LPF ADD_ON_HIT_EFF INT_VAR p2=8 STR_VAR res=~ZSTWEQ12~ effects=~op=177,p1=%alignmen_lawful_neutral%;op=177,p1=%alignmen_chaotic_neutral%~ END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=0,p1=1;op=166,p1=5~ END
-        LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=neutral STR_VAR effects=~op=177,res=ZSTWEQ04;op=177,res=ZSTWEQ05;op=177,res=ZSTWEQ07;op=177,res=ZSTWEQ09~ END
-        LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=lawful_neutral STR_VAR effects=~op=177,res=ZSTWEQ06;op=177,res=ZSTWEQ08~ END
-        LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=chaotic_neutral STR_VAR effects=~op=177,res=ZSTWEQ06;op=177,res=ZSTWEQ08~ END
-        LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=mask_neutral STR_VAR effects=~op=177,res=ZSTWEQ13~ END
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=alignmen_neutral STR_VAR effects=~op=177,res=ZSTWEQ04;op=177,res=ZSTWEQ05;op=177,res=ZSTWEQ07;op=177,res=ZSTWEQ09~ END
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=alignmen_lawful_neutral STR_VAR effects=~op=177,res=ZSTWEQ06;op=177,res=ZSTWEQ08~ END
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=alignmen_chaotic_neutral STR_VAR effects=~op=177,res=ZSTWEQ06;op=177,res=ZSTWEQ08~ END
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=alignmen_mask_neutral STR_VAR effects=~op=177,res=ZSTWEQ13~ END
 END

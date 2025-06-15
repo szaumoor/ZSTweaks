@@ -8,7 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING "NPSW02.ITM" ~override~
         LPF ALTER_HEADER INT_VAR match_type = 1 match_speed = 3 speed = 1 END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=2,p2=1;op=233,p1=2,p2=94~ END
-
+        SET general_tweaks_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~
         PATCH_IF zst_1150_dice_katanas AND (general_tweaks_installed OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150") BEGIN
             SPRINT strref @6270
             SPRINT str @99999

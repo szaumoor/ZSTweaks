@@ -80,13 +80,13 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                     LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 pwr=1 rd=1 STR_VAR effects = ~op=326,p2=109,p1=%kit_zs_shadowdancer%,res=ZSTWKCH3~ END
                 END
 
-                ACTION_IF spell_shout > 0 BEGIN
-                    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHOUT" RET spell_res END
+                PATCH_IF spell_shout > 0 BEGIN
+                    LPF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHOUT" RET spell_res END
                     LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPWI913" resource = "%spell_res%" END
                 END
 
-                ACTION_IF spell_great_shout > 0 BEGIN
-                    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_GREAT_SHOUT" RET spell_res END
+                PATCH_IF spell_great_shout > 0 BEGIN
+                    LPF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_GREAT_SHOUT" RET spell_res END
                     LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPWI913" resource = "%spell_res%" END
                 END
 

@@ -64,8 +64,8 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
     APPEND ~splprot.2da~ ~ZS_HIDEINSHADOWS_<n%TAB%135%TAB%-1%TAB%2~     UNLESS ~ZS_HIDEINSHADOWS_<n~
     APPEND ~splprot.2da~ ~ZS_HIDEINSHADOWS_>n%TAB%135%TAB%-1%TAB%3~     UNLESS ~ZS_HIDEINSHADOWS_>n~
 
-    APPEND ~splprot.2da~ ~ZS_CLASS=THIEF%TAB%0x10d%TAB%4%TAB%1~         UNLESS ~ZS_CLASS=THIEF~
-    APPEND ~splprot.2da~ ~ZS_CLASS=BARD_ALL%TAB%0x10%TAB%206%TAB%1~     UNLESS ~ZS_CLASS=BARD_ALL~
+    APPEND ~splprot.2da~ ~ZS_CLASS=THIEF%TAB%0x10d%TAB%4%TAB%1~          UNLESS ~ZS_CLASS=THIEF~
+    APPEND ~splprot.2da~ ~ZS_CLASS=BARD_ALL%TAB%0x10d%TAB%206%TAB%1~     UNLESS ~ZS_CLASS=BARD_ALL~
 
     //----------------------------------------------------------------
     COPY_EXISTING ~splprot.2da~ ~override~

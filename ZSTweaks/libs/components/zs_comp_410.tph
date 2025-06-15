@@ -464,7 +464,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
     COPY_EXISTING ~SPWISH32.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize=7 parameter1 = 20 END
-        LPF ADD_SPL_EFF_TGT INT_VAR t=99 ip=0 pwr=9 p2=105 STR_VAR effects=~op=324,p2=55;op=324,p1=%elemental_air%;op=324,p1=%elemental_earth%;op=324,p1=%elemental_fire%~ END
+        LPF ADD_SPL_EFF_TGT INT_VAR t=99 ip=0 pwr=9 p2=105 STR_VAR effects=~op=324,p2=55;op=324,p1=%class_elemental_air%;op=324,p1=%class_elemental_earth%;op=324,p1=%class_elemental_fire%~ END
         LPF ADD_SPELL_EFFECT // damage for water elementals
             INT_VAR
                 insert_point = 1
