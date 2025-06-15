@@ -1309,7 +1309,6 @@ Chaos is also now similarly restricted to Tieflings, much like Entropy and accor
 
 This component is compatible with Improved Haer'Dalis Swords mod, which makes the weapons +4 after upgrading. The benefits in the upgraded version will mirror the baseline, except:
 
-- +1 APR granted each
 - Save vs. Poison penalty for Entropy is -2, 9 poison damage
 - Save vs. Poison debuff in Chaos is -2 and lasts for 3 rounds
 - Act as +5 weapons

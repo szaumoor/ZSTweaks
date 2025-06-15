@@ -11,7 +11,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
         WITH_SCOPE BEGIN
             PRINT "[[FIX]]: Setting many types of sexless creatures as niether-gendered if they're set to male or female so it doesn't intrude with opcodes that target male/female"
 
-            OUTER_SET matches           = 0
+            OUTER_SET matches = 0
             COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
                 SET general = BYTE_AT(0x271)
                 SET race    = BYTE_AT(0x272)
@@ -109,7 +109,9 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
         PRINT "[[FIX]]: Cambions that are set as 'thieves' wielding bastard swords without proficiency for it. Adding large sword proficiency 1 to them"
         COPY_EXISTING ~CAMBION1.CRE~ ~override~
                       ~TELCAM1.CRE~  ~override~
-            WRITE_BYTE 0x6e 1
+            PATCH_IF BYTE_AT(0x6e) = 0 BEGIN // if they have no proficiency in large swords
+                WRITE_BYTE 0x6f 1 // add one pip to large sword proficiency
+            END
 
         PRINT "[[FIX]]: Thieves using daggers without being proficient in them. Adding one pip to proficiency in daggers for them"
         COPY_EXISTING ~AR18THIF.CRE~ ~override~
@@ -120,6 +122,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
                       ~GENTH02.CRE~  ~override~
                       ~GENTMG01.CRE~ ~override~
                       ~SHTH05.CRE~   ~override~
+            LPF DELETE_EFFECT INT_VAR silent = 1 match_pcode = 233 match_parameter1 = 1 match_parameter2 = 96 END
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 96 timing=9 target=1 END
 
         PRINT "[[FIX]]: Thieves using short swords without being proficient in them. Adding one pip to proficiency in short swords for them"
@@ -136,10 +139,12 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
                       ~SARTHF01.CRE~ ~override~
                       ~IRETHF04.CRE~ ~override~
                       ~ISHTHF03.CRE~ ~override~
+            LPF DELETE_EFFECT INT_VAR silent = 1 match_pcode = 233 match_parameter1 = 1 match_parameter2 = 91 END
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing=9 target=1 END
 
         PRINT "[[FIX]]: Thief ('Trainee') using a long sword without being proficient in them. Adding one pip to proficiency in long swords for them"
         COPY_EXISTING ~ARNTRA01.CRE~ ~override~ // needs to avoid duplication of this effect
+            LPF DELETE_EFFECT INT_VAR silent = 1 match_pcode = 233 match_parameter1 = 1 match_parameter2 = 90 END
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing=9 target=1 END
 
     END
@@ -147,7 +152,9 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
     ACTION_IF is_bgee_or_eet BEGIN
         PRINT "[[FIX]]: Fixing Riggilo having 4 pips in big swords but none in small swords while being forced to use small swords. Setting him to have 1 pip in small swords too."
         COPY_EXISTING ~RIGGILO.CRE~ ~override~
-            WRITE_BYTE 0x6f 1
+            PATCH_IF BYTE_AT(0x6e) = 0 BEGIN
+                WRITE_BYTE 0x6f 1
+            END
     END
 
     ACTION_IF has_eefixpack = 0 BEGIN
