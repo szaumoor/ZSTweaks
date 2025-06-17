@@ -48,7 +48,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=219,p1=%class_shadow_dragon%;op=219,p1=%class_spectral_troll%~ END
 
             PATCH_IF has_zs_shadowdancer_overhaul BEGIN
-                LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%zs_shadowdancer%,res=ZSTWWDS0;op=177,p1=%zs_shadowdancer%,res=ZSTWWDS1;op=177,p1=%zs_shadowdancer%,res=ZSTWWDS2;op=177,p1=%zs_shadowdancer%,res=ZSTWWDS3~ END
+                LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS0;op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS1;op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS2;op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS3~ END
             END
     END
 END

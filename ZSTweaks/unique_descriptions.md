@@ -32,7 +32,8 @@ Weight: 3
 
 ---
 Kachiko's Whisper
-his wakizashi was the favored weapon of a renowned warrior named Kachiko, whose origins trace back to the eastern lands of Kara-Tur. Though much of her early life is largely unknown, it is said she was trained as a shadowdancer, quickly ascending to become one of the most accomplished members of her order.
+Kachiko's Whisper
+This wakizashi was the favored weapon of a renowned warrior named Kachiko, whose origins trace back to the eastern lands of Kara-Tur. Though much of her early life is largely unknown, it is said she was trained as a shadowdancer, quickly ascending to become one of the most accomplished members of her order.
 
 Old tales recount that, during a mission deep in the heart of a forgotten mountain temple, Kachiko came upon this blade resting atop an ornate pedestal. As her hand closed around the hilt, the sword resonated with a soft whisper, as if acknowledging her presence.
 
@@ -44,10 +45,10 @@ Equipped abilities:
 – +10% bonus in Hiding in the Shadows and Move Silently (shadowdancers only)
 
 Combat abilities:
-– Drains 2 points of target's Wisdom for 6 rounds on each hit (save vs. Death to negate)
+– Confounding Whisper: each hit drains 2 points of Wisdom from the target for 5 rounds (save vs. Death negates) and causes Confusion for 1 round.
 
 Charge abilities:
-– Shadow Jump three times per day: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, Stalkers, and monks gain +1 backstab multiplier during this time.
+– Shadow Blink three times per day: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, Stalkers, and monks also gain +1 backstab multiplier during this time (doesn't stack).
 
 THAC0: +3, +4 (shadowdancers)
 Damage: 1d8+3 (piercing)

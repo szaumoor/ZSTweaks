@@ -3765,10 +3765,10 @@ Equipped abilities:
 – +10% bonus in Hiding in the Shadows and Move Silently (shadowdancers only)
 
 Combat abilities:
-– Drains 2 points of target's Wisdom for 5 rounds on each hit (save vs. Death to negate)
+– Confounding Whisper: each hit drains 2 points of Wisdom from the target for 5 rounds (save vs. Death negates) and causes Confusion for 1 round.
 
 Charge abilities:
-– Shadow Jump three times per day: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, Stalkers, and monks also gain +1 backstab multiplier during this time.
+– Shadow Blink three times per day: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, Stalkers, and monks also gain +1 backstab multiplier during this time (doesn't stack).
 
 THAC0: +3, +4 (shadowdancers)
 Damage: 1d8+3 (piercing)
@@ -3780,7 +3780,7 @@ Requires:
 
 Weight: 2~
 
-@7162 = ~Shadow Jump~
+@7162 = ~Shadow Blink~
 @7163 = ~Kachiko's Whisper +5~
 @7164 = ~Kachiko's Whisper
 This wakizashi was the favored weapon of a renowned warrior named Kachiko, whose origins trace back to the eastern lands of Kara-Tur. Though much of her early life is largely unknown, it is said she was trained as a shadowdancer, quickly ascending to become one of the most accomplished members of her order.
@@ -3794,16 +3794,15 @@ Now upgraded by Cespenar, this sword has reached the pinnacle of its power—its
 STATISTICS:
 
 Equipped abilities:
-– Immune to deafness and all sound-based magic, including howls from wailing spirits and demiliches
-– +15% Hide in Shadows and Move Silently (shadowdancer only)
-– 10% chance when hit to enter Shadow Form once per hour, reducing damage taken by 50% (shadowdancer only)
+– Immune to deafness and all sound-based magic, including banshee and demilich howls
+– +15% Hide in Shadows and Move Silently (shadowdancer)
+– 10% chance per hour when hit to be affected by Shadow Form (shadowdancer)
 
 Combat abilities:
-– Each hit drains 2 Wisdom for 5 rounds (save vs. Death at -2 negates); if drained, target must also save vs. Spell at -2 or be confused for 3 rounds
-– 5% chance per hit to unleash a banshee wail, killing all enemies in a 15-ft. radius unless they save vs. Death (once per turn per enemy)
+– Deadly Whisper: each hit drains 2 points of Wisdom from the target for 5 rounds (save vs. Death at -2 negates) and causes Confusion for 1 round. After one round, there is a 15% chance the sword successfully commands the target to die unless another save vs. Death at -2 succeeds (this can only trigger on the same enemy once every 3 rounds).
 
 Charge abilities:
-– Shadow Jump three times per day: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, Stalkers, and monks also gain +1 backstab multiplier during this time.
+– Shadow Blink five times per day: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, stalkers, and monks also gain +1 backstab multiplier during this time (doesn't stack).
 
 THAC0: +5
 Damage: 1d8+5 (piercing)
@@ -3814,6 +3813,10 @@ Requires:
   5 Strength
 
 Weight: 2~
+
+@7165 = ~Wisdom Drained~
+@7166 = ~Kachiko's Shadow Form available~
+@7167 = ~Commanded to die~
 
 @7170 = ~This is the fabled cloak of Montolio DeBrouchee—the aged, blind mentor of the dark elf ranger Drizzt Do'Urden. Like his famous pupil, Montolio was a master at wielding two blades simultaneously.
 

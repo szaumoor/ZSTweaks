@@ -7,6 +7,6 @@ END
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_CAT RET cat = result END
     PATCH_MATCH cat WITH 6 4 3 BEGIN // belts, boots and bracers
-        LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=318,p1=2,p2=112;op=18,p1=1,p2=3~ END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=318,p1=2,p2=112,res=%SOURCE_RES%;op=18,p1=1,p2=3~ END
     END DEFAULT END
 BUT_ONLY

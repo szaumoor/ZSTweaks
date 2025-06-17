@@ -1394,7 +1394,7 @@ It will also remove the needless stat restrictions from the item.
 
 Deathbringer assault is a bit stupid. Yes, it's very cool. Yes, big ToB bosses are not affected. Yes, it triggers only 3% of the time. But it's still 200 slashing damage, without even a save to take only half. Sarevok also causes stun (even though it's supposed to be a fear-induced state) 11% of the time when he hits for 2 rounds, which is almost always a death sentence when it happens, and cannot be dispelled, as it is a natural effect. The following changes are applied:
 
-- The damage part of the assault is now 150 (overridable in the config file), and allows a save vs. Death at -5 to take half. 75 damage is still a BIG FAT hit, which is added on top of a regular hit, so... You'll be fine
+- The damage part of the assault is now 120 (overridable in the config file), and allows a save vs. Death at -5 to take half. 60 damage is still a BIG FAT hit, which is added on top of a regular hit, so... You'll be fine
 - Golems, other constructs, slimes, spiritual beings, spectral undead, and dragons are all immune to the damage no matter what
 - The stun is meant to be an effect of fear, not a "stun" per se, and as such, it's no longer a stunning effect, but a fear effect that roots the enemy in place and lowers their Armor Class by 10. As such, only creatures that are not immune to fear will be affected by this.
 - The probability of stun (now a special type of fear) is a proper 10% chance
@@ -1409,7 +1409,7 @@ This component makes Shar-Teel's effectiveness vs. males fit her hate and boasti
 - +1 to THAC0 and Damage vs. males (of any race)
 - +2 Armor Class vs. males (essentially as if she had a Protection from Men spell on her)
 
-Note that this means she has a bonus against things that _may_ make no sense they're set as "male", like battle horrors. My mod, however, fixes this whenever a component is installed, ensuring sexless and genderless creatures are set as such. Creatures of that nature includes angels, demons, elementals, mind flayers, golems, and others. All those instances will be fixed so this component and any other that targets gender directly works more consistently. This fix can be disabled in the configuration file, but it's not recommended to install this component without it.
+Note that this means she has a bonus against things that _may_ make no sense they're set as "male", like battle horrors. My mod, however, fixes this whenever a component is installed, ensuring sexless and genderless creatures are set as such. Creatures of that nature includes angels, demons, elementals, mind flayers, golems, and others. All those instances will be fixed so this component and any other that targets gender directly works more consistently. This fix can be disabled in the configuration file, but it's not recommended to install this component without it. Final note: summoned creatures have a special "gender" set to them, so they will not be affected by this component, even if their normal version would routinely be considered "male".
 
 </details>
 
@@ -1491,7 +1491,7 @@ As others have noted, this spell is generally just less powerful than Dragon Bre
 
 **Component 441:** Make Tenser's Transformation grant a THAC0 of 0 at max level and APR at the appropriate levels
 
-Makes this spell achieve a THAC0 of 0 at max level, since the description clearly states "fighter of the same level." They also get 1/2 APR at levels 7 and 13.
+Makes this spell achieve a THAC0 of 0 at max level, since the description clearly states "fighter of the same level." They also get 1/2 APR at levels 7 and 13. This APR does not stack with the one provided by Holy Power (component 190).
 
 Finally, by default, it will only grant APR to non-fighter casters, as fighters already have the APR they need. This can be disabled in the configuration file.
 
@@ -1598,7 +1598,7 @@ This component equalizes the saving throw penalty in the cleric version of Hold 
 
 Makes this spell achieve a THAC0 of 0 at max level, since the description clearly states "fighter of the same level."
 
-And it further tightens the gap between the cleric and the fighter they want to emulate, getting 1/2 APR at levels 7 and 13. By default, non-fighter classes are the only ones getting the extra APR. This can be disabled in the configuration file.
+And it further tightens the gap between the cleric and the fighter they want to emulate, getting 1/2 APR at levels 7 and 13. This APR does not stack with the one provided by Tenser's transformation (component 441). By default, non-fighter classes are the only ones getting the extra APR. This can be disabled in the configuration file.
 
 **Component 230:** Make Cloak of Fear work as a temporary aura of fear, like in IWDEE
 

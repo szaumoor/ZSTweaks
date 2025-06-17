@@ -125,6 +125,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_ids_setup~ BEGIN
     OUTER_SET spell_cause_serious_wounds     = IDS_OF_SYMBOL (spell CLERIC_CAUSE_SERIOUS_WOUNDS_IWD)
     OUTER_SET spell_cure_moderate_wounds     = IDS_OF_SYMBOL (spell CLERIC_CURE_MODERATE_WOUNDS)
     OUTER_SET spell_curse                    = IDS_OF_SYMBOL(spell CLERIC_CURSE)
+    OUTER_SET spell_cleric_energy_drain      = IDS_OF_SYMBOL (spell CLERIC_ENERGY_DRAIN)
     OUTER_SET spell_eldath                   = IDS_OF_SYMBOL (spell CLERIC_MIST_OF_ELDATH)
     OUTER_SET spell_great_shout              = IDS_OF_SYMBOL (spell WIZARD_GREAT_SHOUT)
     OUTER_SET spell_icelance                 = IDS_OF_SYMBOL (spell WIZARD_ICELANCE)

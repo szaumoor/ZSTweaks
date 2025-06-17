@@ -5,17 +5,22 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
-    OUTER_SET wpn_dice_comp_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150"
+    OUTER_SET wisdom_drained = RESOLVE_STR_REF(@7165)
+    OUTER_SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
+    OUTER_SET wakizashi_comp_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "1150"
+    OUTER_SET wpn_dice_comp_installed = general_tweaks_installed OR wakizashi_comp_installed
+    
     COPY ~%MOD_FOLDER%/items/kachiko~ ~override~
     COPY_EXISTING "WAWAK.ITM" ~override~
         LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@7160) END
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_duration=12 duration = 30 END
         LPF ADD_EQUIPPED_EFF INT_VAR p1="%kit_shadowdancer%" p2=9 STR_VAR effects=~op=177,res=ZSTWKCH0;op=177,res=ZSTWKCH1;op=177,res=ZSTWKCH2~ END
         LPF ADD_ITEM_HEADER INT_VAR type=3 required_id=1 location=3 range=1000 target=4 target_count=1 charges=3 depletion=3 flags=2**11 STR_VAR icon = ~SPWI402B~ END
+        LPF ADD_ON_HIT_EFF INT_VAR t=1 stype=4 STR_VAR effects = ~op=139,p1=%wisdom_drained%;op=128,dur=6~ END
         LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 pwr=1 rd=1 STR_VAR effects = ~op=124,rd=0;op=20,dur=12;op=362,p1=-1,dur=12;op=174,res=EFF_M04,tmg=1;op=215,tmg=1,res=SPDHRMNY;op=326,p2=109,p1=%kit_shadowdancer%,res=ZSTWKCH3;op=326,p2=105,p1=%class_monk%,res=ZSTWKCH3;op=326,p2=109,p1=%kit_stalker%,res=ZSTWKCH3~ END
 
         PATCH_IF has_zs_shadowdancer_overhaul BEGIN
-            LPF ADD_EQUIPPED_EFF INT_VAR p1="%sd_id%" p2=9 STR_VAR effects=~op=177,res=ZSTWKCH0;op=177,res=ZSTWKCH1;op=177,res=ZSTWKCH2~ END
+            LPF ADD_EQUIPPED_EFF INT_VAR p1=kit_zs_shadowdancer p2=9 STR_VAR effects=~op=177,res=ZSTWKCH0;op=177,res=ZSTWKCH1;op=177,res=ZSTWKCH2~ END
             LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 pwr=1 rd=1 STR_VAR effects = ~op=326,p2=109,p1=%kit_zs_shadowdancer%,res=ZSTWKCH3~ END
         END
 
@@ -47,10 +52,21 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         ACTION_IF zst_1583_kachiko_upgrade BEGIN
             COPY ~%MOD_FOLDER%/items/_upgrades/kachiko~ ~override~
-            COPY_EXISTING ~ZS_WAWAK.ITM~ ~override~
+            COPY_EXISTING ~ZSTWAWAK.ITM~ ~override~
                 LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@7163) id_ref_desc=RESOLVE_STR_REF(@7164) END
+                LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = wisdom_drained END
+                LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_probability1=14 parameter1=RESOLVE_STR_REF(@7167) END
+                PATCH_IF general_tweaks_installed OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" BEGIN
+                    LPF PROBABILITY_BONUS INT_VAR ench = 5 RET bonus = result END
+                    PATCH_IF NOT zst_1450_allow_bards BEGIN
+                        LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) STR_VAR class=~THIEF~ spell=~ZSTWW5~ END
+                    END ELSE BEGIN
+                        LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWW5~ END
+                    END
+                END
 
                 PATCH_IF wpn_dice_comp_installed BEGIN
+                    LPF ALTER_HEADER INT_VAR match_type = 1 dicesize = 4 dicenumber = 2 END
                     PATCH_IF zst_1150_dice_wakininja BEGIN
                         SPRINT strref @7161
                         SPRINT str @99999
@@ -64,6 +80,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                     END
 
                     PATCH_IF zst_1150_dice_wakislashing BEGIN
+                        LPF ALTER_HEADER INT_VAR damage_type = 7 END
                         SPRINT str @99999 // damage
                         SPRINT str_type @99997
                         SPRINT str_new_type @99994
@@ -76,7 +93,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 END
 
                 PATCH_IF has_zs_shadowdancer_overhaul BEGIN
-                    LPF ADD_EQUIPPED_EFF INT_VAR p1="%sd_id%" p2=9 STR_VAR effects=~op=177,res=ZSTWKCH0;op=177,res=ZSTWKCH1;op=177,res=ZSTWKCH2~ END
+                    LPF ADD_EQUIPPED_EFF INT_VAR p1=kit_zs_shadowdancer p2=9 STR_VAR effects=~op=177,res=ZSTWKCH4;op=177,res=ZSTWKCH5;op=177,res=ZSTWKCH6~ END
                     LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 pwr=1 rd=1 STR_VAR effects = ~op=326,p2=109,p1=%kit_zs_shadowdancer%,res=ZSTWKCH3~ END
                 END
 
