@@ -1081,6 +1081,8 @@ I really hate unique items with nothing in the description worth reading, so I t
 - Shadowdancers receive: +10% Hiding skills and +1 THAC0
 - Can cast Shadow Jump three times per day: teleport instantly to a place in sight, becoming invisible for 2 rounds, and becoming unable to critically miss for the duration.
 
+This component also adds a path to be improved by Cespenar, requiring a scroll of Shadow Door and Wail of the Banshee, and 10,000 gold pieces, becoming a +5 weapon. This can be disabled in the configuration files.
+
 **Component 1584:** Make The Brass Blade +5 cast a more powerful Fireball not tied to caster level
 
 The Brass Blade is an unused weapon that allows you to throw a Fireball as per the 3rd level wizard spell, and it's tied to caster level, which means only Fighter/Mages would be able to take advantage of the full power of this -- other classes would throw a much weaker Fireball. This changes the power so it casts instead a Delayed Fireball cast at max level (15d6 fire damage with vanilla values) at a particular target, regardless of the presence or absence of caster level, and adds the power to cast Sunfire too. Next, it also reduces the fire damage per hit from 10 to 5, since that was a little on the overpowered side.
