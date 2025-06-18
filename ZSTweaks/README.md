@@ -1073,7 +1073,7 @@ I've always liked this sword conceptually, and it's introduced into the game in 
 
 Note that this will make the encounter relatively more difficult, obviously. Protect your mages: they will likely be targeted and promptly chunked.
 
-**Component 1583:** Make Kachiko's Wakizashi substantially more unique in description and improve it
+**Component 1583:** Make Kachiko's Wakizashi more unique and add an optional upgrade path for Cespenar
 
 I really hate unique items with nothing in the description worth reading, so I tried to add something a bit more worth reading and hopefully not too cringy (see unique_descriptions.md for details). For reasons described in the description, it is now called Kachiko's Whisper. The following additions are included:
 
@@ -1135,7 +1135,7 @@ This weapon is not even a normal +4 weapon, since the speed factor is not 0 as i
 - Critical hit chances: +10%
 - Critical hits cause bleeding: 1d6 piercing damage immediately, and again each round for 2 rounds
 
-**Component 1605:** Make The Burning Earth better and the horrendously misleading description no longer so
+**Component 1605:** Make The Burning Earth better improve the horrendously misleading description
 
 You get this weapon fairly late in BGEE, and it sucks. Also, "cold-using creatures" only includes WINTER WOLVES. The description is overly generous because there's not much point in calling it "cold-using creatures" if it's only winter wolves. Here are the changes:
 
@@ -1404,14 +1404,14 @@ Deathbringer assault is a bit stupid. Yes, it's very cool. Yes, big ToB bosses a
 
 This component contains the same fixes as Tresset's deathbringer assault component. No need to use both.
 
-**Component 1647:** Make Shar-Teel especially effective when fighting males
+**Component 1647:** Make Shar-Teel especially effective when fighting male-gendered opponents
 
 This component makes Shar-Teel's effectiveness vs. males fit her hate and boasting. A bit gimmicky, but it's very amusing to me:
 
 - +1 to THAC0 and Damage vs. males (of any race)
 - +2 Armor Class vs. males (essentially as if she had a Protection from Men spell on her)
 
-Note that this means she has a bonus against things that _may_ make no sense they're set as "male", like battle horrors. My mod, however, fixes this whenever a component is installed, ensuring sexless and genderless creatures are set as such. Creatures of that nature includes angels, demons, elementals, mind flayers, golems, and others. All those instances will be fixed so this component and any other that targets gender directly works more consistently. This fix can be disabled in the configuration file, but it's not recommended to install this component without it. Final note: summoned creatures have a special "gender" set to them, so they will not be affected by this component, even if their normal version would routinely be considered "male".
+Note that this means she has a bonus against things that _may_ make no sense they're set as "male", like battle horrors. My mod, however, fixes this whenever a component is installed, ensuring sexless and genderless creatures are set as such. Creatures of that nature includes angels, demons, elementals, mind flayers, golems, battle horrors, beholders, and others. All those instances will be fixed so this component and any other that targets gender directly works more consistently. This fix can be disabled in the configuration file, but it's not recommended to install this component without it. Final note: summoned creatures have a special "gender" set to them which marks them as summoned creatures, so they will not be affected by this component, even if their normal version would routinely be considered "male". Not my fault they used "gender" as a weird mark for various purposes, blame Bioware!
 
 </details>
 
