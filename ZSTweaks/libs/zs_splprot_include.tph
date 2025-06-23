@@ -23,13 +23,13 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
     OUTER_SET ~zs_electricresist_>=100~ = "-1"
     OUTER_SET ~zs_electric_immunity~    = "-1"
 
-    OUTER_SET ~zs_coldresist_<128~  = "-1"
-    OUTER_SET ~zs_coldresist_>=100~ = "-1"
-    OUTER_SET ~zs_cold_immunity~    = "-1"
+    OUTER_SET ~zs_coldresist_<128~      = "-1"
+    OUTER_SET ~zs_coldresist_>=100~     = "-1"
+    OUTER_SET ~zs_cold_immunity~        = "-1"
 
-    OUTER_SET ~zs_fireresist_<128~  = "-1"
-    OUTER_SET ~zs_fireresist_>=100~ = "-1"
-    OUTER_SET ~zs_fire_immunity~    = "-1"
+    OUTER_SET ~zs_fireresist_<128~      = "-1"
+    OUTER_SET ~zs_fireresist_>=100~     = "-1"
+    OUTER_SET ~zs_fire_immunity~        = "-1"
 
     OUTER_SET ~zs_hideinshadows_<n~     = "-1"
     OUTER_SET ~zs_hideinshadows_>n~     = "-1"
@@ -37,6 +37,9 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
     OUTER_SET ~zs_class_thief~          = "-1"
     OUTER_SET ~zs_class_bard_all~       = "-1"
     OUTER_SET ~zs_thief_or_bard_all~    = "-1"
+
+    OUTER_SET ~zs_xp_>=n~               = "-1"
+    OUTER_SET ~zs_xp_<n~                = "-1"
 
     //----------------------------------------------------------------
 
@@ -64,8 +67,10 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
     APPEND ~splprot.2da~ ~ZS_HIDEINSHADOWS_<n%TAB%135%TAB%-1%TAB%2~     UNLESS ~ZS_HIDEINSHADOWS_<n~
     APPEND ~splprot.2da~ ~ZS_HIDEINSHADOWS_>n%TAB%135%TAB%-1%TAB%3~     UNLESS ~ZS_HIDEINSHADOWS_>n~
 
-    APPEND ~splprot.2da~ ~ZS_CLASS=THIEF%TAB%0x10d%TAB%4%TAB%1~          UNLESS ~ZS_CLASS=THIEF~
-    APPEND ~splprot.2da~ ~ZS_CLASS=BARD_ALL%TAB%0x10d%TAB%206%TAB%1~     UNLESS ~ZS_CLASS=BARD_ALL~
+    APPEND ~splprot.2da~ ~ZS_CLASS=THIEF%TAB%0x10d%TAB%4%TAB%1~         UNLESS ~ZS_CLASS=THIEF~
+    APPEND ~splprot.2da~ ~ZS_CLASS=BARD_ALL%TAB%0x10d%TAB%206%TAB%1~    UNLESS ~ZS_CLASS=BARD_ALL~
+
+    APPEND ~splprot.2da~ ~ZS_XP_>=n%TAB%44%TAB%-1%TAB%2~               UNLESS ~ZS_XP_>=n~
 
     //----------------------------------------------------------------
     COPY_EXISTING ~splprot.2da~ ~override~

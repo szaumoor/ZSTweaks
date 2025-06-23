@@ -24,6 +24,10 @@ ACTION_IF zst_508_restoration_stat_drain BEGIN
 
   BUT_ONLY IF_EXISTS
 
+  COPY_EXISTING ~SPWISH07.SPL~ ~override~
+                ~SPWISH46.SPL~ ~override~
+    LPF DELETE_EFFECT INT_VAR match_opcode = 93 END
+
 END
 
 ACTION_IF zst_508_restoration_overhaul BEGIN

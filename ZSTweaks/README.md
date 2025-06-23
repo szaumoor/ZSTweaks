@@ -1793,7 +1793,7 @@ Optionally, the character glow can be disabled in the configuration file.
 
 **Component 508:** Make Restoration-type spells restore stat draining and make Greater version an area of effect spell
 
-Self-explanatory, plus it makes sense that these spells should be able to restore the damage done by these creatures. Currently there is no way to cure this other than by waiting.
+Self-explanatory, plus it makes sense that these spells should be able to restore the damage done by these creatures. Currently there is no way to cure this other than by waiting. The Greater version of the spell, in its Wish form, will no longer cause fatigue as well.
 
 Optionally, it can overhaul the greater restoration spell so it's more worth the slot (with some disadvantages, for balance):
   - It spreads on impact, granting the effects to every party member except the priest
