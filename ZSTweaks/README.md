@@ -2,7 +2,7 @@
 
 <details>
 
-<summary><b>General Tweaks</b></summary>
+<summary> <b> General Tweaks </b> </summary>
 
 **Component 120:** Make conjured magical weapons grant 2 APR by default
 
@@ -989,7 +989,7 @@ Honestly, it kind of feels like it's immediately not useful by the time you get 
   - All morally neutral alignments: +1 Damage, +1 Saving Throws, +5% Magic Resistance
   - True Neutral: +1 Armor Class, +1 Saving throws, +5% Magic Resistance, +5% critical hit chances with all weapons
 
-The rest stays the same. Side not: the THAC0 bonuses that it grants towards alignments (this is vanilla behavior) are universal, does not apply only to the equalizer, so if you put the weapon off-hand, and then put something else on your main hand, it shall be affected either way. This can be a way of optimizing THAC0 against, for instance, Chaotic Evil targets, such as Demogorgon, when using a character that can duel wield effectively.
+The rest stays the same. Side note: the THAC0 bonuses that it grants towards alignments (this is vanilla behavior) are universal, does not apply only to the equalizer, so if you put the weapon off-hand, and then put something else on your main hand, it shall be affected either way. This can be a way of optimizing THAC0 against, for instance, Chaotic Evil targets, such as Demogorgon, when using a character that can duel wield effectively.
 
 This behavior is present in other weapons that have a thac0 bonus vs. types of enemies, such as the silver dagger. Only two-handed weapons can isolate the thac0 bonus (since you can't use another weapon at the same time).
 
@@ -1888,7 +1888,7 @@ The following abilities are no longer breachable:
 - **Hardiness:** The warrior is concentrating on defending, bearing blows and the pain, to survive the punishment inflicted upon them, using their training and experience. Same as before.
 - **Resist Magic:** Same as Hardiness. This one I find harder to rationalize in an earthly way, but regardless, it's a warrior-borne ability, so I see no need to effectively consider it magical (aka breachable).
 
-Side note. Things like Critical Strike and Power Attack are already not breachable. It's a nonsensical inconsistency. If it's not mentioned here but seems like my argument would apply, it means it's already not breachable.
+Side note: things like Critical Strike and Power Attack are already not breachable. It's a nonsensical inconsistency. If it's not mentioned here but seems like my argument would apply, it means it's already not breachable.
 
 **Component 2160:** Make Quivering Palm slightly more powerful at high levels
 
