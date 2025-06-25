@@ -659,7 +659,7 @@ Despite the +5 enchantment, I find the armor generally not worth using, especial
 
 Now, since this armor is Hide Armor, and hide armor is usually thematically associated with barbarians, the following is added:
 
-- Two-handed weapon damage +2 for barbarians only. Note that this follows the vanilla convention of what is a two-handed weapon: halberd, staff, and two-handed sword. This means that the damage bonus will not apply to a two-handed axe, for example.
+- +2 weapon damage for barbarians when using halberds, staves, and two-handed swords.
 - Elemental resistances doubled for barbarians
 - Barbarians also get a +3% physical damage resistance
 
