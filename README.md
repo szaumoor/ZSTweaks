@@ -1,5 +1,7 @@
 # ZSTweaks
 
+## Description
+
 This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game. The vast majority of the tweaks are designed to be simple improvements of underpowered items or abilities. Some of them overhaul the game a bit more extensively, though not radically.
 
 Every group of components, except those that have only a few items, has as the first component the option to install all components in the group, except those that require user input.
@@ -12,7 +14,7 @@ In vanilla, this is not contemplated, likely because there isn't any means of in
 
 As of version 1.4.5 a configuration file is now provided, where the user may change some variables to further customize components. This file is **ZSTweaks/zstweaks_prefs.txt**.
 
-__[SEE ALL COMPONENT DETAILS HERE](ZSTweaks/README.md)__
+### [See all component details here](ZSTweaks/README.md)
 
 ## Compatibility and installation order
 

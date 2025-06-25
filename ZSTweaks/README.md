@@ -1,3 +1,5 @@
+# Components
+
 <details>
 
 <summary><b>General Tweaks</b></summary>
@@ -74,6 +76,7 @@ Self-explanatory. It's the lightest weapon, realistically. It also makes them sl
 **Component 1440:** Make daggers have general extra features to compensate for the low damage
 
 There's generally very little reason to use a dagger because:
+
 - All other melee weapons cause more damage
 - Your other weapons will never be stolen (read the proficiency description for daggers in BG)
 - Using the dagger has no benefits of any sort for being a small weapon
@@ -268,6 +271,7 @@ Overall, these changes may change difficulty slightly, since it will affect crea
 - **Bucklers**: At even enchantment level above 0, they compensate their lack of Armor Class bonus vs. piercing by 1. For example, a hypothetical +6 buckler would grant +6 Armor class, but only +3 vs. piercing. Additionally, the shields can be used to **parry** opponents 10% of the time when attacked in close range (even if the attack fails), inflicting if a save vs Breath is failed (enchantment level adds penalties) 1d2+bonus crushing damage, which opponents a -15% damage susceptibility (if they aren't immune to the damage type) and -2 armor class penalty for half a round. This effect will not work if the user is helpless (stunned, held, unconscious...) and will also not apply to foes that are massive or incorporeal. If my finesse component is installed with the buckler component included, single-classed thieves can do this 20% of the time instead. **Warning:** This should be installed after ANYTHING that adds items that add or modify weapon protection effects, including the component in SCS that increases the power from Mantle and Improved Mantle. The reason for this is that the component needs to patch those resources such that they appropriately block the buckler parry effect according to the shield enchantment level.
 
 Optionally, there are also options in the configuration file to achieve the following:
+
 - Make all shields usable by all classes (**off** by default)
 - Only single-classed warrior classes can use Tower Shields (**on** by default)
 - Only fighter classes (single classed, multiclasses, or dual classed) can use Tower Shields (**off** by default)
@@ -680,6 +684,7 @@ Generally this robe was never very convenient to use, especially considering the
 First, this component increases the stock of these throwing daggers. In BG2, they're only increased in the same stores where they're found. There are now exactly 356 poisoned throwing daggers to be bought in the stores, which is more than double the amount available in stores by default. They're also spread more evenly among stores.
 
 In BGEE there are none, even though in SoD there are 800 in Waizahb's stock (halfling thieves' guild merchant in Coalition Camp). A bunch will also be spread to a few other relevant merchants in the main game:
+
 - Silence: 48
 - Black Lily: 48
 - Ulgoth's Beard innkeeper: 30
@@ -934,7 +939,6 @@ I hate with passion this 10% chance of killing period-no-questions-asked thing, 
 - Upgraded version now becomes +6, matching therefore the maximum damage of Warblade +4 and becoming the most powerful damaging two-handed sword per hit in the 1d10 range
 - Passive +5% MR is now +10% (it has to compete with Carsomyr so 5% for a two-handed weapon is nonsense)
 - The 1-level drain per hit with -5 penalty on the upgraded version is fairly inconsequential by the time you get it (from Abazigal's corpse). Instead, it causes affected creatures to deal -20% damage for 2 rounds, aka it's a weakening effect, with a save vs. Death -5 to save against it. This also affects magical and elemental damage. Does not stack.
-
 
 </details>
 
@@ -1198,6 +1202,7 @@ Finally, and more importantly, it makes the axe balanced, since anyone can Whirl
 **Component 1324:** Make Wyvern's Tail +2 cause poison damage on hit and have a chance of poisoning
 
 This improves this item in the following ways:
+
 - Causes 2 poison damage per hit with no save allowed
 - If save vs. Poison is failed, it deals 5 poison damage over 5 seconds. There's a 4% chance that this poison will be as lethal as that of an adult wyvern, becoming instead 25 poison damage over 5 seconds. The save vs. Death is at -2 in this case.
 
@@ -1319,6 +1324,7 @@ This component is compatible with Improved Haer'Dalis Swords mod, which makes th
 **Component 1480:** Make Yoshimo's Katana slightly more unique and powerful
 
 This component keeps to the idea that it is only lightly enchanted, but it also offers a few advantages to Yoshimo only:
+
 - Speed factor reduced to 1 from 3
 - THAC0 bonus increased to 3.
 - Sets proficiency with katanas to 2, unless it's higher.
@@ -1532,9 +1538,9 @@ If you think this is overpowered, consider these damage range values:
   - Fireball (with component): 20-70 damage
   - Fireball (without component): 10-60 damage
 - Cone of Cold, another damaging spell of level 5, deals up to 20d4+20 damage too. Comparison:
-  -  Cone of cold: 40-100 cold damage
-  -  Sunfire (with component): 30-105 fire damage
-  -  Sunfire (without component): 15-90 fire damage
+  - Cone of cold: 40-100 cold damage
+  - Sunfire (with component): 30-105 fire damage
+  - Sunfire (without component): 15-90 fire damage
 - Horrid Wilting deals 20d8 and it's an ubiquitous spell for players because of the huge damage potential, and Delayed Blast Fireball is an unimpressive contender comparatively (despite the spell level difference). Comparison:
   - Horrid Wilting deals 20-160 damage (40-160 with my HW tweak)
   - Delayed Blast Fireball (with component): 38-128 damage
@@ -1696,6 +1702,7 @@ Generally, this spell is pretty worthless and barely even worth thinking about. 
 **Component 463:** Make Dolorous Decay more powerful
 
 This component improves the spell in the following ways:
+
 - It causes 2d10 poison damage immediately on contact, as well as the usual 2-round slow effect
 - Saving Throw against the poison effect is now -3
 - The poison duration is now 1 full turn. The description will be more accurate
@@ -1796,10 +1803,11 @@ Optionally, the character glow can be disabled in the configuration file.
 Self-explanatory, plus it makes sense that these spells should be able to restore the damage done by these creatures. Currently there is no way to cure this other than by waiting. The Greater version of the spell, in its Wish form, will no longer cause fatigue as well.
 
 Optionally, it can overhaul the greater restoration spell so it's more worth the slot (with some disadvantages, for balance):
-  - It spreads on impact, granting the effects to every party member except the priest
-	- The priest is only healed by half their total health.
-	- Still causes deep fatigue on the caster, and worsens the casting speed, Thac0, damage, and armor class of the priest by 2 for 2 turns. Their movement speed is also reduced by 35%. Both these effects can be removed by Unfailing Endurance.
-	- The casting duration is tripled (9 from 3)
+
+- It spreads on impact, granting the effects to every party member except the priest
+- The priest is only healed by half their total health.
+- Still causes deep fatigue on the caster, and worsens the casting speed, Thac0, damage, and armor class of the priest by 2 for 2 turns. Their movement speed is also reduced by 35%. Both these effects can be removed by Unfailing Endurance.
+- The casting duration is tripled (9 from 3)
 
 **Component 509:** Make Silence 15ft Radius party-friendly
 
@@ -1846,6 +1854,7 @@ All these tweaks can be enabled or disabled in the configuration file.
 This increases the chances of causing panic on enemies. Additionally, since panic is usually not liked because it's difficult and tedious to attack running targets, it also halves their movement speed by 50%, which makes it far less inconvenient.
 
 The war cry also rallies the allies now, causing the following effects:
+
 - The warrior and their allies are healed by 12 HP, their morale is restored to their maximum, preventing and removing morale-based panic, and for 3 rounds, they get a +2 bonus to THAC0 and Damage.
 - The warrior also gets for the same duration a +5% bonus chance to critically hit.
 - None of these effects stack with themselves
@@ -2041,6 +2050,7 @@ This component makes the beetles generally more resistant to anything that doesn
 This component makes divination spells that are affected by Magic Resistance (which seems odd) lose that restriction and also cannot be dispelled by Dispel Magic, unless noted. Affected spells include: Detect Evil, Know Alignment.
 
 Additionally, a few spells also bypass magic resistance, because it makes sense in my judgment. My rationale:
+
 - Stinking Cloud: It's a fart cloud that smells so awful, it can make you lose consciousness. Puh-lease
 - Entangle, Grease & Web (and other web spells used by creatures): It's physical webs, grease, and animated vegetation, so I think it makes sense
 - Summon Cow: Because it's a cow falling on you, duh
@@ -2081,6 +2091,8 @@ Just a small bonus to make it more interesting and different compared to heavy c
 
 ---
 
-[Back to top](#zstweaks) <br>
+<div align="center">
 
----
+## [Back to top](#components)
+
+</div>
