@@ -9,7 +9,7 @@ ACTION_IF NOT is_iwdee BEGIN
 END ELSE BEGIN
     OUTER_TEXT_SPRINT decastave ~SPWI226~
 END
-
+// TODO decastave better implementation
 COPY_EXISTING ~%decastave%.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc =RESOLVE_STR_REF(@8225) END
 BUT_ONLY IF_EXISTS

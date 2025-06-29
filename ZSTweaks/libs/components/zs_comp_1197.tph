@@ -29,7 +29,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1997_strohm BEGIN
         COPY_EXISTING ~KEY20.itm~ ~override~ // STROHM
-            LPF ALTER_ITEM INT_VAR unid_ref_desc=RESOLVE_STR_REF(@8373) id_ref_desc=RESOLVE_STR_REF(@8373) STR_VAR appearance="H0" END
+            SET desc = RESOLVE_STR_REF(@8373)
+            LPF ALTER_ITEM INT_VAR unid_ref_desc=desc id_ref_desc=desc STR_VAR appearance="H0" END
             LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=3 projectile=0 flags=2048 STR_VAR icon = ~IKEY20~ END
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~t=3,op=146,tgt=1,res=SPWI515~ END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=91,p1=10;op=276,p1=10~ END
@@ -38,7 +39,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     ACTION_IF zst_1997_shadow BEGIN
         COPY ~%MOD_FOLDER%/items/shadow_wardstone~ ~override~
         COPY_EXISTING ~MISC6P.itm~ ~override~ // wardstone
-            LPF ALTER_ITEM INT_VAR unid_ref_desc = RESOLVE_STR_REF(@8374) id_ref_desc = RESOLVE_STR_REF(@8374) category = 7 flags=33554508 END
+            SET desc = RESOLVE_STR_REF(@8374)
+            LPF ALTER_ITEM INT_VAR unid_ref_desc = desc id_ref_desc = desc category = 7 flags=33554508 END
 
             SET blinded_strref1 = 14674
             SET blinded_strref2 = 1474

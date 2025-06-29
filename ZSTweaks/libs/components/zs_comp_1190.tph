@@ -13,13 +13,17 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6040) id_ref_name = RESOLVE_STR_REF(@6048) unusable0=0 END
 
     COPY_EXISTING ~RODMACE.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6044) unid_ref_desc=RESOLVE_STR_REF(@6044) unid_ref_name=RESOLVE_STR_REF(@6041) id_ref_name=RESOLVE_STR_REF(@6041) ench=3 STR_VAR icon=~ZSTWRRM0~ desc_img=~ZSTWRRM1~ END
+        SET name = RESOLVE_STR_REF(@6041)
+        SET desc = RESOLVE_STR_REF(@6044)
+        LPF ALTER_ITEM INT_VAR id_ref_desc=desc unid_ref_desc=desc unid_ref_name=name id_ref_name=name ench=3 STR_VAR icon=~ZSTWRRM0~ desc_img=~ZSTWRRM1~ END
         LPF ALTER_HEADER INT_VAR match_type = 1 speed = 4 damage = 4 STR_VAR icon = ~ZSTWRRM1~ END
         LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=24 opcode=40 savebonus=2 duration=12 END
         LPF ALTER_EFFECT INT_VAR match_opcode = 7 parameter1=44 END
 
     COPY_EXISTING ~RODSWORD.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6045) unid_ref_desc=RESOLVE_STR_REF(@6045) unid_ref_name=RESOLVE_STR_REF(@6042) id_ref_name=RESOLVE_STR_REF(@6042) ench=3 STR_VAR appearance="FS" icon=~ZSTWRRM2~ desc_img=~ZSTWRRM3~ END
+        SET name = RESOLVE_STR_REF(@6042)
+        SET desc = RESOLVE_STR_REF(@6045)
+        LPF ALTER_ITEM INT_VAR id_ref_desc=desc unid_ref_desc=desc unid_ref_name=name id_ref_name=name ench=3 STR_VAR appearance="FS" icon=~ZSTWRRM2~ desc_img=~ZSTWRRM3~ END
         LPF ALTER_HEADER INT_VAR match_type = 1 speed = 2 damage = 3 STR_VAR icon = ~ZSTWRRM2~ END
         LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_savingthrow=1 savebonus=2 duration=6 resist_dispel=3 END
         LPF ALTER_EFFECT INT_VAR match_opcode = 139 check_globals = 0 duration = 0 parameter1 = 1280 probability1 = 49 END
@@ -40,7 +44,9 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         END
 
     COPY_EXISTING ~RODSPEAR.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR unid_ref_name=RESOLVE_STR_REF(@6043) id_ref_name=RESOLVE_STR_REF(@6043) unid_ref_desc=RESOLVE_STR_REF(@6046) id_ref_desc=RESOLVE_STR_REF(@6046) STR_VAR icon=~ZSTWRRM4~ desc_img=~ZSTWRRM5~ END
+        SET name = RESOLVE_STR_REF(@6043)
+        SET desc = RESOLVE_STR_REF(@6046)
+        LPF ALTER_ITEM INT_VAR unid_ref_name=name id_ref_name=name unid_ref_desc=desc id_ref_desc=desc STR_VAR icon=~ZSTWRRM4~ desc_img=~ZSTWRRM5~ END
         LPF ALTER_HEADER INT_VAR match_type = 1 overhand = 25 thrust = 75 STR_VAR icon = ~ZSTWRRM4~ END
         LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=12 savebonus=0 savingthrow=0 parameter1=2 special=1024 probability1=9 END
         LPF ALTER_EFFECT INT_VAR match_opcode = 7 parameter1=44 END
@@ -56,6 +62,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             SAY_EVALUATED 0x54 ~%desc%~
             SAY_EVALUATED 0x50 ~%desc%~
         END ELSE BEGIN
-            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6046) END
+            LPF ALTER_ITEM INT_VAR id_ref_desc=desc END
         END
 END

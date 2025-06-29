@@ -4,9 +4,10 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_110~ = 1
 END
 
+OUTER_SET bless_desc = RESOLVE_STR_REF(@5010)
 COPY_EXISTING ~SPPR101.SPL~  ~override~
               ~BDCAELA5.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5010) END
+    LPF ALTER_SPELL INT_VAR ref_desc=bless_desc END
     SET headers = 0
     FOR ( i = 3; i <= 19; i += 2 ) BEGIN
         LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = i insert_point = headers+1 END
