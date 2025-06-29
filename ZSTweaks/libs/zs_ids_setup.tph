@@ -126,13 +126,16 @@ ACTION_IF !VARIABLE_IS_SET ~zs_ids_setup~ BEGIN
     OUTER_SET spell_cure_moderate_wounds     = IDS_OF_SYMBOL (spell CLERIC_CURE_MODERATE_WOUNDS)
     OUTER_SET spell_curse                    = IDS_OF_SYMBOL(spell CLERIC_CURSE)
     OUTER_SET spell_cleric_energy_drain      = IDS_OF_SYMBOL (spell CLERIC_ENERGY_DRAIN)
+    OUTER_SET spell_decastave                = IDS_OF_SYMBOL (spell WIZARD_DECASTAVE)
     OUTER_SET spell_eldath                   = IDS_OF_SYMBOL (spell CLERIC_MIST_OF_ELDATH)
     OUTER_SET spell_great_shout              = IDS_OF_SYMBOL (spell WIZARD_GREAT_SHOUT)
     OUTER_SET spell_icelance                 = IDS_OF_SYMBOL (spell WIZARD_ICELANCE)
     OUTER_SET spell_mass_cause_light_wounds  = IDS_OF_SYMBOL (spell CLERIC_MASS_CAUSE_LIGHT_WOUNDS)
+    OUTER_SET spell_otilukes_freezing_sphere = IDS_OF_SYMBOL (WIZARD_OTILUKES_FREEZING_SPHERE)
     OUTER_SET spell_righteous_wrath_faithful = IDS_OF_SYMBOL (spell CLERIC_RIGHTEOUS_WRATH_OF_THE_FAITHFUL)
     OUTER_SET spell_shout                    = IDS_OF_SYMBOL (spell WIZARD_SHOUT)
     OUTER_SET spell_unfailing_endurance      = IDS_OF_SYMBOL (spell CLERIC_UNFAILING_ENDURANCE)
+    OUTER_SET spell_wall_of_moonlight        = IDS_OF_SYMBOL (spell CLERIC_WALL_OF_MOONLIGHT)
 
     OUTER_SET projectl_magic_missile = IDS_OF_SYMBOL(projectl Magic_Missile)
     OUTER_SET projectl_sparblpa      = IDS_OF_SYMBOL(projectl SPARBLPA) + 1

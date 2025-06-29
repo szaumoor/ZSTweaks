@@ -4,16 +4,11 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_448~ = 1
 END
 
-ACTION_IF NOT is_iwdee BEGIN
-    OUTER_TEXT_SPRINT decastave ~SPWI216~
-END ELSE BEGIN
-    OUTER_TEXT_SPRINT decastave ~SPWI226~
-END
-// TODO decastave better implementation
-COPY_EXISTING ~%decastave%.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc =RESOLVE_STR_REF(@8225) END
-BUT_ONLY IF_EXISTS
+ACTION_IF spell_decastave > 0 BEGIN
+  LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_DECASTAVE" RET spell_res END
+  COPY_EXISTING ~%spell_res%.SPL~ ~override~
+      LPF ALTER_SPELL INT_VAR ref_desc =RESOLVE_STR_REF(@8225) END
 
-COPY_EXISTING ~DECASTA.ITM~ ~override~
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=233,p1=1,p2=102,rd=1~ END
-BUT_ONLY IF_EXISTS
+  COPY_EXISTING ~DECASTA.ITM~ ~override~
+      LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=233,p1=1,p2=102,rd=1~ END
+END
