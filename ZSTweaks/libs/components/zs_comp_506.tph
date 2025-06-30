@@ -5,8 +5,8 @@ END ELSE BEGIN
 END
 
 ACTION_IF spell_wall_of_moonlight > 0 BEGIN
-    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_WALL_OF_MOONLIGHT" RET wall END
-    COPY_EXISTING ~%wall%.SPL~ ~override~
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_WALL_OF_MOONLIGHT" RET spell_res END
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8230) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 206 duration = 6 END
         PATCH_IF is_bgee_bg2ee_or_eet BEGIN

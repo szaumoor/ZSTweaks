@@ -20,7 +20,8 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_EFFECT INT_VAR header = i match_opcode = 12 parameter1 = damage END
             ++damage
         END
-
+    BUT_ONLY IF_EXISTS
+    
     COPY_EXISTING ~SCRL9T.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
     BUT_ONLY IF_EXISTS

@@ -12,12 +12,12 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode = 7 parameter1 = 237 END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=69;op=206,res=SPWI203;op=206,res=SPPR309;op=206,res=SPWI322;op=206,res=SPWI515;op=232,p2=13,res=ZSTWNGG#,spec=2~ END
         LPF ADD_EQUIPPED_EFF INT_VAR p1=class_thief_all p2=5 STR_VAR effects = ~op=177,res=ZSTWNGG0;op=177,res=ZSTWNGG1;op=177,res=ZSTWNGG2;op=177,res=ZSTWNGG3;op=177,res=ZSTWNGG4;op=177,res=ZSTWNGG5;op=177,res=ZSTWNGG6;op=177,res=ZSTWNGG7;op=177,res=ZSTWNGG8;op=177,res=ZSTWNGG9~ END
-        LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=3 flags=2048 projectile=0 STR_VAR icon = ~SPWI505B~ END
+        LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=3 flags=2048 STR_VAR icon = ~SPWI505B~ END
         LPF ADD_ITEM_EFFECT INT_VAR type=3 header=1 target=1 opcode=146 parameter1=20 STR_VAR resource= ~SPWI505~ END
-        LPF ADD_ITEM_HEADER INT_VAR target=5 charges=3 depletion=3 flags=2048 projectile=0 STR_VAR icon = ~spsd02b~ END
+        LPF ADD_ITEM_HEADER INT_VAR target=7 charges=3 depletion=3 flags=2048 STR_VAR icon = ~spsd02b~ END
 
         PATCH_IF has_zs_shadowdancer_overhaul BEGIN
-            LPF ADD_ITEM_EFFECT INT_VAR type=3 header=2 target=7 opcode=146 parameter2=1 STR_VAR resource= ~ZS#SDL1J~ END
+            LPF ADD_ITEM_EFFECT INT_VAR type=3 header=2 target=1 opcode=146 parameter2=1 STR_VAR resource= ~ZS#SDL1J~ END
         END ELSE BEGIN
             LPF ADD_ITEM_EFFECT INT_VAR type=3 header=2 target=1 opcode=146 STR_VAR resource= ~spsd02~ END
         END

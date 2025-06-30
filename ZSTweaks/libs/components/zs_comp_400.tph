@@ -31,6 +31,7 @@ COPY_EXISTING ~SPWI914.SPL~ ~override~
     PATCH_IF has_iwdification_divine BEGIN
         LPF ADD_SPL_EFF_TGT INT_VAR tmg=0 rd=0 pwr=9 ip=0 p2=104 STR_VAR effects = ~op=324,p1=%race_salamander%;op=324,p1=%race_darkplanetar%;op=324,p1=%race_planetar%;op=324,p1=%race_antisolar%;op=324,p1=%race_solar%;op=324,p1=%race_rakshasa%;op=324,p1=%race_genie%;op=324,p1=%race_elemental%;op=324,p1=%race_mephit%;op=324,p1=%race_demonic%;op=324,p2=%undead_or_golem%~ END
     END
+BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~SCRL9W.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
