@@ -29,8 +29,9 @@ Currently, relevant compatibility has been added deliberately to:
 - ToF
 - SCS
 - EEFixpack
-- IWDification
 - Item Upgrade
+- IWDification
+- Project Javelin
 - Rogue Rebalancing
 - Wares of the Planes
 - ZS_ShadowdancerOverhaul

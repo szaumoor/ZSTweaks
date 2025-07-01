@@ -15,22 +15,64 @@ ACTION_IF zst_1150_dice_spears BEGIN
         SAY_EVALUATED 0x50 ~%desc%~
         LPF ITM_REF_UDESC RET changed_description_index = result END
 
+    ACTION_IF has_project_javelin BEGIN
+        COPY_EXISTING ~cdjav0.itm~ ~override~
+            READ_STRREF 0x50 desc
+            SPRINT str @99999
+            INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d8~
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]4~ ~\11d6~
+            END
+            SAY_EVALUATED 0x50 ~%desc%~
+            READ_LONG 0x50 basic_javelin_description_index
+
+        COPY_EXISTING_REGEXP ~cdjav[0-4][bepq]?.itm~ ~override~
+            LPF ALTER_HEADER INT_VAR match_type = 2 match_dicesize = 6 match_dicenumber = 1 dicesize = 8 END
+            LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 4 match_dicenumber = 1 dicesize = 6 END
+
+            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "cdjav0" AND NOT "%SOURCE_RES%" STR_EQ "cdjav0q" BEGIN
+                LPF ALTER_ITEM INT_VAR unid_ref_desc = basic_javelin_description_index END
+            END
+
+            PATCH_IF LONG_AT(0x54) != "-1" BEGIN
+                READ_STRREF 0x54 desc
+                SPRINT str @99999
+                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d8~
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]4~ ~\11d6~
+                END
+                SAY_EVALUATED 0x54 ~%desc%~
+            END ELSE PATCH_IF NOT "%SOURCE_RES%" STR_EQ "cdjav0" AND NOT "%SOURCE_RES%" STR_EQ "cdjav0q" BEGIN
+                READ_STRREF 0x50 desc
+                SPRINT str @99999
+                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d8~
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]4~ ~\11d6~
+                END
+                SAY_EVALUATED 0x50 ~%desc%~
+            END
+
+        BUT_ONLY
+    END
+
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_CAT RET wpn_cat = result END
         LPF ITM_PROF RET wpn_prof = result END
         LPF ITM_ABILITIES_NUM RET num_abilities = result END
         PATCH_IF wpn_cat = 29 AND wpn_prof = 98 AND num_abilities > 0 BEGIN
-            LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 6 match_dicenumber = 1 dicesize = 8 silent = 1 END
-            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SPER01" BEGIN
-                LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
-                LPF ITM_REF_DESC RET description_index = result END
-                PATCH_IF description_index > "-1" BEGIN
-                    READ_STRREF 0x54 desc
-                    SPRINT str @99999
-                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d8~
+            PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP "cdjav[0-4][bepq]?" != 0 BEGIN
+                LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 6 match_dicenumber = 1 dicesize = 8 silent = 1 END
+                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SPER01" BEGIN
+                    LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
+                    LPF ITM_REF_DESC RET description_index = result END
+                    PATCH_IF description_index > "-1" BEGIN
+                        READ_STRREF 0x54 desc
+                        SPRINT str @99999
+                        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d8~
+                        END
+                        SAY_EVALUATED 0x54 ~%desc%~
                     END
-                    SAY_EVALUATED 0x54 ~%desc%~
                 END
             END
         END
