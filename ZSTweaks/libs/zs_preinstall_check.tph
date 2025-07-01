@@ -64,5 +64,11 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
         OUTER_SET kit_zs_shadowdancer = IDS_OF_SYMBOL(kit ZS_SHADOWDANCER)
     END
 
+    OUTER_SET has_project_javelin = MOD_IS_INSTALLED "cd_project_javelin.tp2" "1"
+
+    ACTION_IF has_project_javelin BEGIN
+        PRINT "Project Javelin detected."
+    END
+
     OUTER_SET zs_preinstall_check = 1
 END
