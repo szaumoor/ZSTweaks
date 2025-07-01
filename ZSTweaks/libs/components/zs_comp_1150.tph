@@ -42,7 +42,7 @@ ACTION_IF zst_1150_dice_spears BEGIN
                     REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]4~ ~\11d6~
                 END
                 SAY_EVALUATED 0x54 ~%desc%~
-            END ELSE PATCH_IF NOT "%SOURCE_RES%" STR_EQ "cdjav0" AND NOT "%SOURCE_RES%" STR_EQ "cdjav0q" BEGIN
+            END ELSE PATCH_IF NOT "%SOURCE_RES%" STR_EQ "cdjav0" BEGIN
                 READ_STRREF 0x50 desc
                 SPRINT str @99999
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
