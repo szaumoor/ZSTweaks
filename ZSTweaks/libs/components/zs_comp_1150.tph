@@ -16,6 +16,17 @@ ACTION_IF zst_1150_dice_spears BEGIN
         LPF ITM_REF_UDESC RET changed_description_index = result END
 
     ACTION_IF has_project_javelin BEGIN
+        COPY_EXISTING ~cdjav4e3.eff~ ~override~
+                      ~cdjav4e2.eff~ ~override~
+                      ~cdjav4e1.eff~ ~override~
+                      ~cdjav4e0.eff~ ~override~
+                      ~cdjav3e3.eff~ ~override~
+                      ~cdjav3e2.eff~ ~override~
+                      ~cdjav3e1.eff~ ~override~
+                      ~cdjav3e0.eff~ ~override~
+            WRITE_LONG 0x3c (THIS + 2) // +2 to dicesize
+            WRITE_LONG 0x48 (THIS + 1024) // does not awake sleepers
+
         COPY_EXISTING ~cdjav0.itm~ ~override~
             READ_STRREF 0x50 desc
             SPRINT str @99999
