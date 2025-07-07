@@ -824,7 +824,7 @@ This component improves the description to something a bit more interesting than
 - The sword acts in **every way** as a +5 two-handed sword **against mind flayers only**, that is, +5 THAC0, +5 enchantment, 1d10+5 damage
 - Against other targets, it's still a +3 weapon in terms of damage, thac0 and enchantment level
 - Wielding it makes the wielder immune to mind blasts and domination attempts by mind flayers
-- Critical hits causes 2d8 psychic (irresistible) damage and causes Confusion for 10 seconds if a Save vs. Spell at -2 is failed. Creatures without minds or brains are unaffected.
+- Critical hits cause 2d8 psychic (irresistible) damage and causes Confusion for 10 seconds if a Save vs. Spell at -2 is failed. Creatures without minds or brains are unaffected.
 - Speed factor of 6
 
 **Component 1318:** Make Flame of the North able to kill trolls, and the extra damage affect all evil, not just Chaotic Evil

@@ -42,7 +42,7 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
     OUTER_SET ~zs_xp_<n~                = "-1"
 
     //----------------------------------------------------------------
-
+    
     APPEND ~splprot.2da~ ~ZS_SLASHINGRESIST_>=100%TAB%21%TAB%100%TAB%4~ UNLESS ~ZS_SLASHINGRESIST_>=100~
     APPEND ~splprot.2da~ ~ZS_SLASHINGRESIST_<128%TAB%21%TAB%128%TAB%2~  UNLESS ~ZS_SLASHINGRESIST_<128~
 

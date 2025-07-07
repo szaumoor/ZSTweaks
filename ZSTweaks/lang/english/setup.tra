@@ -2068,7 +2068,7 @@ Combat abilities:
 THAC0: +3, +5 vs. undead
 Damage: 1d6+3, +4 vs. undead, double vs. spectral undead
 Damage type: Crushing
-Speed Factor: 3
+Speed Factor: 1
 Proficiency Type: Club
 Type: One-handed
 Requires:
@@ -4875,7 +4875,7 @@ Weight: 12~
 STATISTICS:
 
 Combat abilities:
-– Like the touch of shadows, every hit has a 25% chance of reducing the target's Strength by 2 for 5 rounds. If the target is already at a Strength of 2, the attack drains Constitution instead
+– Like the touch of shadows, every hit has a 25% chance of reducing the target's Strength by 2 for 5 rounds. If the target has already less than 3 Strength, the attack drains Constitution instead
 – If the target fails to save vs. Death, the essence of undeath in this weapon unleashes extra 1d6 cold damage
 
 THAC0: +2
@@ -5138,8 +5138,7 @@ STATISTICS:
 
 Combat abilities:
 Acts as a +2 weapon in all respects. However, it's more powerful against regenerating, cold-using, and undead creatures:
- – Werewolves, trolls: it acts as a +3 weapon, and deals 1 extra fire damage
- – Planetars, and devas: it acts as a +3 weapon, and deals 1 extra fire damage
+ – Werewolves, trolls, planetars, and devas: it acts as a +3 weapon, and deals 1 extra fire damage
  – Solars: acts as a +4 weapon, and deals 1 extra fire damage
  – Winter wolves and silver dragons: acts as a +4 weapon, and deals 2 extra fire damage
  – Undead: acts as a +5 weapon, and deals 3 extra fire damage.
@@ -5479,7 +5478,7 @@ Weight: 9~
 @8170 = ~Paralyzed with fear~
 
 @8180 = ~Avoid Death
-With extraordinary effort, a high-level rogue can avoid almost certain death. The effect lasts for 5 rounds, and during this time, the rogue's Save vs. Death receives a bonus of 5, Hit Points are increased by 20, and the rogue becomes immune to death magic and level drain. Additionally, during the first round, the rogue will succeed in all saving throws, and their hit points may not go under 1 for the first half of that round.~
+With extraordinary effort, a high-level rogue can avoid almost certain death. The effect lasts for 5 rounds, and during this time, the rogue's Save vs. Death receives a bonus of 5, Hit Points are increased by 20, and the rogue becomes immune to death magic and level drain. Additionally, during the first round, the rogue will succeed in all saving throws, and their hit points may not go below 1 for the first half of that round.~
 
 @8190 = ~Repulse Undead
 (Abjuration)
