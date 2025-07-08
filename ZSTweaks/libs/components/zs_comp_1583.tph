@@ -12,7 +12,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY ~%MOD_FOLDER%/items/kachiko~ ~override~
     COPY_EXISTING "WAWAK.ITM" ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@7160) END
+        LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@7160) id_ref_desc=RESOLVE_STR_REF(@7161) END
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_duration=12 duration = 30 END
         LPF ADD_EQUIPPED_EFF INT_VAR p1=kit_shadowdancer p2=9 STR_VAR effects=~op=177,res=ZSTWKCH0;op=177,res=ZSTWKCH1;op=177,res=ZSTWKCH2~ END
         LPF ADD_ITEM_HEADER INT_VAR type=3 required_id=1 location=3 range=1000 target=4 target_count=1 charges=3 depletion=3 flags=2**11 STR_VAR icon = ~SPWI402B~ END
@@ -24,16 +24,14 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 pwr=1 rd=1 STR_VAR effects = ~op=326,p2=109,p1=%kit_zs_shadowdancer%,res=ZSTWKCH3~ END
         END
 
-
         PATCH_IF wpn_dice_comp_installed BEGIN
             PATCH_IF zst_1150_dice_wakininja BEGIN
-                SPRINT strref @7161
                 SPRINT str @99999
-                LPF WPN_DMG RET dmg = result END
-                INNER_PATCH_SAVE strref ~%strref%~ BEGIN
+                READ_STRREF 0x54 desc
+                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                     REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
                 END
-                SAY_EVALUATED 0x54 ~%strref%~
+                SAY_EVALUATED 0x54 ~%desc%~
             END ELSE BEGIN
                 LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7161) END
             END
@@ -42,11 +40,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 SPRINT str @99999 // damage
                 SPRINT str_type @99997
                 SPRINT str_new_type @99994
-                READ_STRREF 0x50 desc
+                READ_STRREF 0x54 desc
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                     REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*.*[ %TAB%]*\)%str_type%~ ~\1%str_new_type%~
                 END
-                SAY_EVALUATED 0x50 ~%desc%~
+                SAY_EVALUATED 0x54 ~%desc%~
             END
         END
 
@@ -66,17 +64,17 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 END
 
                 PATCH_IF wpn_dice_comp_installed BEGIN
-                    LPF ALTER_HEADER INT_VAR match_type = 1 dicesize = 4 dicenumber = 2 END
                     PATCH_IF zst_1150_dice_wakininja BEGIN
-                        SPRINT strref @7161
+                        LPF ALTER_HEADER INT_VAR match_type = 1 dicesize = 4 dicenumber = 2 END
+                        READ_STRREF 0x54 desc
                         SPRINT str @99999
                         LPF WPN_DMG RET dmg = result END
-                        INNER_PATCH_SAVE strref ~%strref%~ BEGIN
+                        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                             REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
                         END
-                        SAY_EVALUATED 0x54 ~%strref%~
+                        SAY_EVALUATED 0x54 ~%desc%~
                     END ELSE BEGIN
-                        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7161) END
+                        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7164) END
                     END
 
                     PATCH_IF zst_1150_dice_wakislashing BEGIN
@@ -84,11 +82,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                         SPRINT str @99999 // damage
                         SPRINT str_type @99997
                         SPRINT str_new_type @99994
-                        READ_STRREF 0x50 desc
+                        READ_STRREF 0x54 desc
                         INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                             REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*.*[ %TAB%]*\)%str_type%~ ~\1%str_new_type%~
                         END
-                        SAY_EVALUATED 0x50 ~%desc%~
+                        SAY_EVALUATED 0x54 ~%desc%~
                     END
                 END
 

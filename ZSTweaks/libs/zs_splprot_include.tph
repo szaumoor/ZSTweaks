@@ -42,7 +42,7 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
     OUTER_SET ~zs_xp_<n~                = "-1"
 
     //----------------------------------------------------------------
-    
+
     APPEND ~splprot.2da~ ~ZS_SLASHINGRESIST_>=100%TAB%21%TAB%100%TAB%4~ UNLESS ~ZS_SLASHINGRESIST_>=100~
     APPEND ~splprot.2da~ ~ZS_SLASHINGRESIST_<128%TAB%21%TAB%128%TAB%2~  UNLESS ~ZS_SLASHINGRESIST_<128~
 
@@ -70,7 +70,7 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
     APPEND ~splprot.2da~ ~ZS_CLASS=THIEF%TAB%0x10d%TAB%4%TAB%1~         UNLESS ~ZS_CLASS=THIEF~
     APPEND ~splprot.2da~ ~ZS_CLASS=BARD_ALL%TAB%0x10d%TAB%206%TAB%1~    UNLESS ~ZS_CLASS=BARD_ALL~
 
-    APPEND ~splprot.2da~ ~ZS_XP_>=n%TAB%44%TAB%-1%TAB%2~               UNLESS ~ZS_XP_>=n~
+    // APPEND ~splprot.2da~ ~ZS_XP_>=n%TAB%44%TAB%-1%TAB%2~               UNLESS ~ZS_XP_>=n~
 
     //----------------------------------------------------------------
     COPY_EXISTING ~splprot.2da~ ~override~
