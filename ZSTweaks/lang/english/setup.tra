@@ -24,7 +24,7 @@
 @57 = ~Can't install groups of components if individual components (without subcomponents) are installed already~
 @58 = ~Can't install components included in components that install groups of other components~
 @59 = ~This component must be installed before the next scroll tweak~
-@60 = ~This component is already effectively installed through the EE Fixpack~
+@60 = ~This component is already effectively installed through the EEFixpack~
 
 @10000 = ~Install all tweaks in the general tweaks group (except the ones that require a choice)~
 @10001 = ~Install all tweaks in the gear tweaks group (except the ones that require a choice)~
@@ -5638,7 +5638,7 @@ STATISTICS:
 
 Combat abilities:
 – 30% chance per hit target will take an additional 15 points of fire damage
-– 10% chance per hit a 15-ft. radius fireball will automatically detonate (8d6+12 fire damage; Save vs. Spell for half)
+– 10% chance per hit a 15-ft. radius fireball will automatically detonate (8d6+12 fire damage; save vs. Spell for half)
 
 THAC0: +5
 Damage: 1d6+5, +5 fire damage
