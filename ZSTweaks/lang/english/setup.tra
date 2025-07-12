@@ -2000,7 +2000,7 @@ Because this spell simply conjures plain grease, it's not affected by magic resi
 This ability allows the rogue to set a powerful trap that unleashes a fireball which causes 15d6 damage (Save vs. Spell for half damage) and will knock its victims off their feet for 1 round with no save allowed.~
 
 @6310 = ~Quivering Palm
-The next successful attack forces the target to save vs. Spell or die. At level 18, the save vs. Spell must succeed at -1 to avoid its effects, and at level 26 it improves again, requiring a save vs. Spell at -2.
+Successful attacks during the next 7 seconds force the target to save vs. Spell or die. At level 16, the save vs. Spell must succeed at -1 to avoid its effects, and at level 24 it improves again, requiring a save vs. Spell at -2.
 
 This special ability automatically modifies normal attacks; no targeting needs to be done.~
 
@@ -2046,10 +2046,10 @@ Weight: 0~
 STATISTICS:
 
 Combat abilities:
-– Acts as a +5 weapon against demonic and devilish creatures
+– Acts as a +5 weapon vs. fiends
 
-THAC0: +3, +6 vs. demons and devils
-Damage: 1d6+4, +6 extra crushing damage vs. demons and devils
+THAC0: +3, +6 vs. fiends
+Damage: 1d6+4, +6 extra crushing damage vs. fiends
 Damage type: Crushing
 Speed Factor: 4
 Proficiency Type: Mace
@@ -2565,7 +2565,7 @@ The Jade Fang was the weapon of choice for famed Shou Lung thief Niu Weidan, who
 STATISTICS:
 
 Combat abilities:
-– 15% chance of stunning for 10 seconds if a Save vs. Spell is failed; 5% chance of triggering with no save allowed
+– 15% chance of stunning for 10 seconds if a save vs. Spell is failed; 5% chance of triggering with no save allowed
 – Each hit heals the wielder between 1 to 5 Hit Points. It's more likely to heal less than more
 
 THAC0: +3
@@ -2621,7 +2621,7 @@ Weight: 1~
 STATISTICS:
 
 Equipped abilities:
-– 10% Magic Resistance
+– +10% Magic Resistance
 
 Combat abilities:
 – 50% chance per hit to inflict 1d4 points of Magic damage
