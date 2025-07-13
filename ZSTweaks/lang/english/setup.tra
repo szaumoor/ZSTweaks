@@ -70,7 +70,6 @@
 @1547 = ~Make Protection from Undead scrolls less overpowered but still invaluable vs. undead~
 @1549 = ~Tweak the usability of different armor types~ // TODO
 
-
 /// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
 @1171 = ~Make Silver Dragon Scale also grant 40% cold resistance as you would expect~
@@ -349,7 +348,6 @@ w@444 = ~Make Flesh to Stone use Petrification saves and optionally make some cr
 @1532 = ~Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage. WARNING: Install this component DEAD LAST after other components that modify these items, including components from other mods~
 @1548 = ~Make Void-weapons strength-sapping not affect undead, and able to critically hit to deal double damage~
 
-
 // NEW DESCRIPTIONS
 @5000 = ~Glyph of Warding
 (Abjuration, Evocation)
@@ -403,7 +401,6 @@ Area of Effect: 1 creature
 Saving Throw: Neg.
 
 The Finger of Death spell snuffs out the victim's life force. The caster points <PRO_HISHER> finger at the victim after the incantation is complete, effectively ripping the life out of its body unless a Save vs. Spell is made with a -2 penalty. A creature successfully making the saving throw still receives 2d8 points of damage + 1 per level of the caster.~
-
 
 @5040 = ~Meteor Swarm
 (Evocation)
@@ -742,7 +739,6 @@ Saving Throw: None
 
 The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining <PRO_HIMHER> of 6 levels of experience. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell.~
 
-
 @5260 = ~Aid
 (Necromancy, Conjuration)
 
@@ -754,7 +750,7 @@ Casting Time: 5
 Area of Effect: 1 creature, and everyone around them
 Saving Throw: None
 
-The recipient of this spell gains the benefits of a Bless spell (+1 to attack rolls and saving throws) and a special bonus of 1d8 additional Hit Points, plus a separate 1 HP bonus per level after level 3, for the duration of the spell. The Aid spell enables the recipient to actually have more Hit Points than <PRO_HISHER> current maximum. The  first 1d8 bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic, but the rest will be kept.
+The recipient of this spell gains the benefits of a Bless spell (+1 to attack rolls and saving throws) and a special bonus of 1d8 additional Hit Points, plus a separate 1 HP bonus per level after level 3, for the duration of the spell. The Aid spell enables the recipient to actually have more Hit Points than <PRO_HISHER> current maximum. The first 1d8 bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic, but the rest will be kept.
 
 For example, if a character has 100 HP, and Aid grants them 5 HP from the first bonus, and 15 HP from the second one, their HP will become 120. If they take a hit that reduces their current HP by 25, their HP will become 95, and their maximum HP will go down to 115 HP, since the first 5 HP bonus to maximum health was consumed and therefore lost.~
 
@@ -945,7 +941,6 @@ Requires:
  4 Strength
 
 Weight: 2~
-
 
 @6051 = ~Chaos is a short sword usable only by tieflings. Every time it strikes an opponent, he or she loses 2 points of Dexterity for 5 rounds and becomes more sensitive to poisonous substances. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
 
@@ -1456,9 +1451,9 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: +2 vs. slashing and piercing attacks
-– +1 bonus to saving throws vs. Death and Breath
+– Saving throws vs. Death and Breath: +1
 – +50% Poison damage resistance
-– +5% bonus to all Thieving skills
+– +5% bonus to all thieving skills
 
 Weight: 4~
 
@@ -1469,7 +1464,7 @@ STATISTICS:
 Equipped abilities:
 – Armor Class: +3 vs. missile attacks
 – +15% Missile resistance
-– +1 bonus to saving throws vs. Wand/Rod/Staff and Spell
+– Saving throws vs. Wand and Spell: +1
 – Increases movement speed by a factor of 4
 
 Weight: 4~
@@ -1480,7 +1475,7 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: +1 vs. all attacks
-– +1 bonus to saving throws vs. Petrification/Polymorph and Spell
+– Saving throws vs. Petrification and Spell: +1
 – +20% Magic damage resistance
 – +10% Elemental damage resistance
 
@@ -1492,7 +1487,7 @@ STATISTICS:
 
 Equipped abilities:
 – Electricity Resistance: +40%
-– Electrical damage dealt: +7%
+– Electricity damage bonus: +7%
 – Saves vs. Evocation: +1
 
 Weight: 3~
@@ -1503,7 +1498,7 @@ STATISTICS:
 
 Equipped abilities:
 – Cold Resistance: +40%
-– Cold damage dealt: +7%
+– Cold damage bonus: +7%
 – Saves vs. Evocation: +1
 
 Weight: 3~
@@ -1514,7 +1509,7 @@ STATISTICS:
 
 Equipped abilities:
 – Fire Resistance: +40%
-– Fire damage dealt: +7%
+– Fire damage bonus: +7%
 – Saves vs. Evocation: +1
 
 Weight: 3~
@@ -1525,8 +1520,8 @@ STATISTICS:
 
 Equipped abilities:
 – Fire Resistance: +50%
-– Fire damage dealt: +10%
-– Saves vs. Evocation +1
+– Fire damage bonus: +10%
+– Saves vs. Evocation: +1
 
 Weight: 4~
 
@@ -1536,7 +1531,7 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: set to 5, plus 1
-– +2 bonus to saving throws vs Spell, +1 vs. the rest
+– Saving throws: +2 vs. Spell, +1 vs. otherwise
 – Magic Resistance: +10%
 – Magic damage resistance: +25%
 – Casting speed improved by 1
@@ -1549,11 +1544,10 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: set to 5, plus 1
-– +2 bonus to saving throws vs Spell, +1 vs. the rest
+– Saving throws: +2 vs. Spell, +1 vs. otherwise
 – Magic Resistance: +10%
 – Magic damage resistance: +25%
 – Casting speed improved by 1
-
 
 Weight: 6~
 
@@ -1563,11 +1557,10 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: set to 5, plus 1
-– +2 bonus to saving throws vs Spell, +1 vs. the rest
+– Saving throws: +2 vs. Spell, +1 vs. otherwise
 – Magic Resistance: +10%
 – Magic damage resistance: +25%
 – Casting speed improved by 1
-
 
 Weight: 6~
 
@@ -1719,7 +1712,7 @@ Weight: 1~
 STATISTICS:
 
 Combat abilities:
-– Every hit inflicts pain, making living beings feel weakened for 1 round, suffering a penalty of 2 to THAC0, Armor Class, and damage. This effect does not stack
+– Painful Strike: On hit, living beings are weakened for 1 round, suffering a -2 penalty to THAC0, Armor Class, and damage.
 
 THAC0: +2
 Damage: 1d6+2, slivers add 2 points piercing damage each round for 4 rounds
@@ -1823,7 +1816,6 @@ Proficiency Type: Two-handed Sword
 Type: Two-handed
 
 Weight: 8~
-
 
 @6242 = ~Full plate armor is the best armor a warrior can buy, both in appearance and protection. This armor increases the wearer's Armor Class by one above that of normal full plate. While equipped, the suit provides the wearer with a +1 bonus to all saving throws and grants the wearer immunity to movement-limiting effects such as Web and Grease. This suit was designed for Keldorn, and only he may wear it.
 
@@ -2211,7 +2203,7 @@ Combat abilities:
 – Slays fire elementals, efreet, and salamanders
 
 THAC0: +4
-Damage: 1d10+4, +3 cold damage (tripled against giants)
+Damage: 1d10+4, +3 cold damage (tripled vs. giants)
 Damage type: Piercing or Slashing
 Speed Factor: 5
 Proficiency Type: Halberd
@@ -2220,7 +2212,6 @@ Requires:
  13 Strength
 
 Weight: 12~
-
 
 @6430 = ~Comet
 (Any School)
@@ -2265,7 +2256,7 @@ STATISTICS:
 
 Equipped abilities:
 – +25% probability that a wild surge will have positive effect
-– Every round, the damage of elemental or magical attacks improves randomly by +15%
+– Every round, the elemental or magical damage dealt by the wielder improves randomly by +15%
 
 Weight: 1~
 
@@ -2485,7 +2476,7 @@ STATISTICS:
 Equipped abilities:
 – Elemental resistance: +20%
 – Elemental spell damage: +5%
-– Saves vs. Invocation spells: +2
+– Saves vs. Invocation: +2
 
 Weight: 6~
 
@@ -2499,7 +2490,7 @@ STATISTICS:
 Equipped abilities:
 – Dexterity: +1
 – Saving Throws: +1
-– 1/2 extra attack per round
+– Attacks per round: +1/2
 
 Charge abilities:
 – Twice per day, invoke the spirit of Arannis Alderlight to detect invisiblity and evil.
@@ -2521,7 +2512,7 @@ STATISTICS:
 Equipped abilities:
 – Dexterity: +1
 – Saving Throws: +1
-– 1/2 extra attack per round
+– Attacks per round: +1/2
 
 THAC0: +4
 Damage: 1d8+2 (slashing)
@@ -2601,12 +2592,11 @@ STATISTICS:
 
 Combat abilities:
 – 25% chance per hit that the target must save vs. Death or be held for 2 rounds
-– Hits with this weapon inflict persistent wounds, causing 2 piercing damage per round for 3 rounds
-– +5% critical chances (this weapon only)
+– +5% critical chances
+– Persistent wounds: causes 2 extra piercing damage immediately, and once per round for the next 3 rounds
 
 THAC0: +2
-Damage: 1d4+2, +2 (persistent wound)
-Damage type: Piercing
+Damage: 1d4+2 (piercing)
 Speed Factor: 0
 Proficiency Type: Dagger
 Type: One-handed
@@ -2780,7 +2770,6 @@ CHAOTIC EVIL: Quasit
 – Magic Resistance: 15%
 – Combat: 2 attacks per round at 15 THAC0 for 1d6 damage
 – Special Abilities: Has 100% resistance to fire, cold, and electricity. Can cast Horror once per day. Regenerates 1 HP/round.~
-
 
 @6660 = ~Forged in the black heart of the Abyss by tanar'ri sorcerers for use in the eternal Blood War, this blade was once wielded by the infamous babau assassin Khazzrax the Gasping Death. Lore tells of a blade, black as the night, that Khazzrax would use to slash his victims open, causing fire to briefly flare out of the fresh wound.
 
@@ -3250,11 +3239,9 @@ Weight: 5~
 
 STATISTICS:
 
-Equipped abilities:
-– Critical hit chances: +5%
-
 Combat abilities:
 – Deals an extra 2d5+2 points of slashing damage on a critical hit
+– Critical hit chances: +5%
 
 STATISTICS:
 
@@ -3274,7 +3261,7 @@ STATISTICS:
 
 Equipped abilities:
 – Immunity to backstab and poison
-– Single-classed thieves are granted a +1 bonus to THAC0 and damage
+– THAC0 and damage: +1 (single-classed Thieves only)
 – Protects against critical hits
 
 Charge abilities:
@@ -3614,7 +3601,6 @@ Equipped abilities:
 – Fire Resistance: +50%
 – Open Locks and Find Traps: +20%
 – May memorize one extra spell of levels 1 to 5
-
 
 Weight: 0~
 
@@ -4170,7 +4156,6 @@ Saving Throw: Special
 
 This spell creates a huge disembodied fist that crushes the target and pins them to the ground. In the first round, the spell does 6d6+6 crushing damage. The victim can save at -6 vs. Paralysis to avoid being pinned. If they fail, the hand does 8d6+8 crushing damage the next round. The victim can again save vs. Paralysis at -4. If they fail to save, the hand does a final 10d6+10 crushing damage and disappears. This spell will not be stopped by magic resistance.~
 
-
 @7390 = ~Bolt of Glory
 (Invocation/Evocation)
 
@@ -4248,7 +4233,6 @@ Requires:
  11 Strength
 
 Weight: 9~
-
 
 @7440 = ~Cloak of Non-Detection: Whispers of Silence
 Reportedly created for a lineage of the greatest burglars ever to walk the night, this cloak was apparently a success. No record exists of previous owners.
@@ -4642,17 +4626,14 @@ Weight: 3~
 
 STATISTICS:
 
-Equipped abilities:
-– Chance to score a critical hit: +5%
-
 Combat abilities:
 – Target must save vs. Death or suffer 30 points of poison of damage over 5 rounds
+– Chance to score a critical hit: +5%
 
 Damage: 1d6 (missile)
 Launcher: Bow
 
 Weight: 0~
-
 
 @7610 = ~These gem-studded leather gloves are enchanted so as to augment the skills of any Bard, no matter the kind.
 
@@ -5010,7 +4991,6 @@ Requires:
 
 Weight: 1~
 
-
 @7790 = ~Sun Soulbeam
 The character emits a dazzling burst of light that strikes at all other creatures within a 15-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 9d6 points of fire damage (12d6+3 if undead), unless they Save vs. Spell for half. In addition, all creatures except the character must Save vs. Spell or be blinded for 2 hours.~
 
@@ -5038,7 +5018,6 @@ Equipped abilities:
 – Armor Class: +1, +3 vs. demons and devils
 – Saving Throws: +1, +3 vs. demons and devils
 – Attack damage and THAC0: +2 vs. demons and devils
-
 
 Weight: 0~
 
@@ -5361,7 +5340,6 @@ Requires:
 
 Weight: 1~
 
-
 @8120 = ~Sunray
 (Evocation, Alteration)
 
@@ -5495,11 +5473,9 @@ This powerful spell creates waves of anti-negative energy that sweep outward fro
 
 STATISTICS:
 
-Equipped abilities:
-– Chance to score a critical hit: +5%
-
 Combat abilities:
 – Target must save vs. Death or take 30 points of poison damage in 15 seconds
+– Chance to score a critical hit: +5%
 
 Damage: 1d8 (missile)
 Launcher: Crossbow
@@ -5543,7 +5519,6 @@ Saving Throw: None
 
 This spell creates a staff of force in the caster's hand. It is treated as a magical weapon, doing 1d6 Hit Points of damage per hit, and it can hit creatures that require +1 weapons to hit. The staff also has the power to drain a target of 1d2 Hit Points on every strike. These Hit Points are added to the caster's, but they can only heal damage the caster has taken; they will not raise <PRO_HISHER> Hit Points beyond <PRO_HISHER> normal maximum.~
 
-
 @8227 = ~Otiluke's Freezing Sphere
 (Alteration, Evocation)
 
@@ -5555,7 +5530,6 @@ Area of Effect: 1 creature
 Saving Throw: 1/2
 
 This spell fires an orb of cold at a creature that inflicts 1d4+2 points of cold damage per level of the caster or half if they succeed when saving vs. Spell.~
-
 
 @8230 = ~Wall of Moonlight
 (Invocation)
@@ -5595,7 +5569,6 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 When this spell is cast, the life energy level of the recipient is raised. This reverses any previous life energy level drain of the creature by a force or monster, as well as the attribute draining caused by creatures such as shadows and mind flayers. The casting of this spell is very draining on the priest and <PRO_HESHE> will likely require rest immediately after the casting, as it will cause days' worth of fatigue almost instantaneously.~
-
 
 @8241 = ~Greater Restoration
 (Necromancy)
@@ -5757,7 +5730,7 @@ Casting Time: 8
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-By casting this spell and touching a creature, the priest deals 42 points of damage, plus 3/level (up to 54)  to the creature's body (save vs. Spell for half). This spell has no effect on undead, constructs, or extraplanar creatures.~
+By casting this spell and touching a creature, the priest deals 42 points of damage, plus 3/level (up to 54) to the creature's body (save vs. Spell for half). This spell has no effect on undead, constructs, or extraplanar creatures.~
 
 @8275 = ~Mass Cause Light Wounds
 (Necromancy)
@@ -5850,16 +5823,6 @@ Equipped abilities
 – Negative Plane Protection
 – Immunity to fear
 
-Charge abilities:
-– Fire Giant Strength once per day
-  Strength: 22
-  Duration: 1 turn
-  Area of Effect: The user
-
-– Mass Cure once per day
-  Special: Heals party members 1d8+20 Hit Points
-  Area of Effect: 15-ft. radius
-
 Combat abilities:
 – Undead take an extra 2d4+5 crushing damage
 – Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance to resist this effect when struck:
@@ -5870,6 +5833,16 @@ Combat abilities:
   – Mummies and revenants: 20% chance to resist
   – Wraiths: 5% chance to resist
   – Lesser undead such as Skeletons, Shadows, and Ghouls cannot resist and must save every time they are hit
+
+Charge abilities:
+– Fire Giant Strength once per day
+  Strength: 22
+  Duration: 1 turn
+  Area of Effect: The user
+
+– Mass Cure once per day
+  Special: Heals party members 1d8+20 Hit Points
+  Area of Effect: 15-ft. radius
 
 THAC0: +5
 Damage: 2d4+5 (crushing)
@@ -6277,7 +6250,7 @@ STATISTICS:
 
 Equipped abilities:
 – Does not prevent spellcasting or thieving abilities
-– Casting level: +1 (bards; +2 for Jesters)
+– Casting level: +2 for Jesters, +1 for other Bards
 
 Armor Class: 1 (-1 vs. slashing, 3 vs. crushing)
 Requires:
@@ -6355,7 +6328,7 @@ STATISTICS:
 
 A single target receives the following bonuses for 12 hours:
 – +2 Armor Class vs. undead
-– Saves vs. Death/Poison/Paralysis: +2
+– Saves vs. Death: +2
 – Immunity to level drain and the paralytic touch of ghouls, ghasts, liches, and other undead
 – Immunity to domination attempts by vampires
 – Undead hitting the target will be rebuked, taking 1d4+1 magic damage (save vs. Spell to take half) and being forced to flee for 2 rounds if they fail their saving throw vs. Spell. Once affected, they may not be affected again for 1 turn but the damage always apply.
@@ -6388,9 +6361,7 @@ STATISTICS:
 Equipped abilities:
 – Armor Class: +1
 – Saving Throws: +1
-– Fire Resistance: +50%
-– Electrical Resistance: +50%
-– Acid Resistance: +50%
+– Fire, Electricity, and Acid Resistance: +50%
 
 Charge abilities:
 – Summon 24-HD Greater Air, Earth, and Fire Elemental once per day
@@ -6428,7 +6399,7 @@ STATISTICS:
 
 Equipped abilities:
 – Acid Resistance: +25%
-– Every hit inflicts pain, making living beings feel weakened for 1 round, suffering a penalty of 2 to THAC0, Armor Class, and damage. This effect does not stack
+– Painful Strike: On hit, living beings are weakened for 1 round, suffering a -2 penalty to THAC0, Armor Class, and damage
 
 THAC0: +5
 Damage: 1d6+5, +3 acid damage, slivers add 3 points piercing damage each round for 4 rounds
@@ -6481,7 +6452,7 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: set to 3, plus 1
-– Saving Throws: +2 bonus
+– Saving Throws: +2
 – Magic Resistance: +10%
 – Magic damage resistance: +25%
 – Casting speed improved by 1
@@ -6496,7 +6467,7 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: set to 3, plus 1
-– Saving Throws: +2 bonus
+– Saving Throws: +2
 – Magic Resistance: +10%
 – Magic damage resistance: +25%
 – Casting speed improved by 1
@@ -6511,7 +6482,7 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: set to 3, plus 1
-– Saving Throws: +2 bonus
+– Saving Throws: +2
 – Magic Resistance: +10%
 – Magic damage resistance: +25%
 – Casting speed improved by 1
@@ -6718,7 +6689,6 @@ Requires:
  14 Strength
 
 Weight: 10~
-
 
 @99980 = ~Proficiency Type~
 @99981 = ~Long Sword~
