@@ -1,0 +1,455 @@
+@6130 = ~This flail was created a century ago to commemorate the defeat of the devil Belhifet. It was meant to always remain within the town of Easthaven to remind the people of the great evil that had been barely defeated.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– +10% resistance to slashing, piercing, and crushing damage
+
+THAC0: +3
+Damage: 1d6+4 (crushing)
+Speed Factor: 4
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 12~
+
+@6150 = ~Even the hordes have their heroes, and while they are vilified in civilized company, their deeds are sometimes impressive nonetheless. Krotan was an exceptionally intelligent orc, as far as orcs go, who commanded an ever-shifting legion of ogres, orcs, hobgoblins, and other assorted beasties during the Year of the Lost Lady, 1241 DR. It was in this year that a group of orc bandits allegedly kidnapped and killed a Tethyrian noblewoman, and the response from authorities was a genocidal slaughter of orcs throughout the south in her memory. Krotan mounted a defense that ensured his people were not entirely destroyed; though they were displaced. Krotan himself fell near the end of the conflict, and his head was mounted outside the graveyard where the young lady was buried. As a point of interest, orcs called this time the "Year of Pushing Too Far."
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d6+3, +2 extra vs. humanoids
+Damage type: Crushing
+Speed Factor: 5
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 7~
+
+@6160 = ~This mace is permanently bloodstained, a telltale trace of its many years spent bashing heads. The weapon would have been the bane of humanoids throughout its history, but those that wielded it seem to have been purposely left out of historical record.
+
+STATISTICS:
+
+THAC0: +3
+Damage: 1d6+4, +4 extra vs. humanoids
+Damage type: Crushing
+Speed Factor: 4
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 6~
+
+@6182 = ~Makal of the Pine, a devious druid, carved this club and bonded it with the spirit of his wolverine companion. Like that tenacious creature, Gnasher is a dangerous weapon in the hands of a skilled user. When the club strikes, sharp splinters dig into the victim's flesh, causing extreme pain and even extra damage that continues for some time after the blow. Makal used the club successfully on several occasions, earning the anger of orc loggers threatening his forests.
+
+STATISTICS:
+
+Combat abilities:
+– Painful Strike: On hit, living beings are weakened for 1 round, suffering a -2 penalty to THAC0, Armor Class, and damage.
+
+THAC0: +2
+Damage: 1d6+2, slivers add 2 points piercing damage each round for 4 rounds
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@6350 = ~Jerrod's Mace +3~
+@6351 = ~This was the favored weapon of the priest of Tempus named Jerrod. Jerrod sacrificed his life to save the town of Easthaven from the powerful devil known as Belhifet.
+
+STATISTICS:
+
+Combat abilities:
+– Acts as a +5 weapon vs. fiends
+
+THAC0: +3, +6 vs. fiends
+Damage: 1d6+4, +6 extra crushing damage vs. fiends
+Damage type: Crushing
+Speed Factor: 4
+Proficiency Type: Mace
+Type: One-handed
+
+Weight: 7~
+
+@6360 = ~Bone Club +3, +5 vs. undead~
+@6361 = ~This vicious club was created hundreds of years ago, reportedly by a shaman on a quest for revenge. His family had fallen to undead, and so personal was his rage that he amputated his own leg, using the femur for the body of the weapon. Magical runes empower it, though it is likely the sheer force of the shaman's hatred would have served on its own.
+
+STATISTICS:
+
+Combat abilities:
+– Acts as a +5 weapon against undead
+
+THAC0: +3, +5 vs. undead
+Damage: 1d6+3, +4 vs. undead, double vs. spectral undead
+Damage type: Crushing
+Speed Factor: 1
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@7080 = ~Gulen Rockfire, Slayer of Undead, crafted this powerful throwing axe expressly for reinforcing his claim to his namesake. Blessed by a cross-section of gods, this weapon does phenomenal damage against creatures unwisely rebelling against their deceased status (including to a lesser degree, fiends) and can potentially destroy them in a single blow. Obviously Gulen no longer carries Azuredge, and it is rumored that he died fighting a powerful vampire years ago, only to rise as one himself. This may have softened his stance regarding the undead, at the very least prompting a change of name.
+
+STATISTICS:
+
+Equipped abilities:
+– Acts as a +4 weapon against undead
+
+Combat abilities:
+– Returns to the wielder's hand when thrown
+Undead and fiends must save vs. Death at -2 or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
+  – Fiends: 95%
+  – Liches and demiliches: 80%
+  – Vampires and vampyres: 50%
+  – Spectres, ghosts, and other spectral creatures: 35%
+  – Mummies and revenants: 20%
+  – Wraiths: 5%
+  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time
+
+THAC0: +3
+Damage: 1d6+3, double vs. undead
+Damage type (melee): Slashing
+Damage type (thrown): Missile
+Speed Factor: 1
+Proficiency Type: Axe
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~
+
+@7430 = ~The large spike at the head of this morning star is actually the lethal stinger of a wyvern. The fighter/mage Sedej created this weapon, using his magical abilities to keep the stinger capable of producing poison. The magic he used has actually made the Wyvern's Tail a living weapon that pulses with life in the hands of its wielder.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target must save vs. Poison or take 5 Hit Points of poison damage over 5 seconds. There's a 4% chance the poison will be as potent as that of an adult Wyvern, causing 25 Hit Points of poison damage in total instead.
+
+THAC0: +2
+Damage: 2d4+2, +2 poison damage
+Damage type: Crushing
+Speed Factor: 5
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 9~
+
+@7730 = ~Borok Thundercracker was a dwarven hero that led several campaigns against giants and other "tall vermin" that had plagued his people in a number of their communities. This hammer was his blessed weapon, which his elven allies called his "little iron fist," though not to his face.
+
+STATISTICS:
+
+Combat abilities:
+– Giant humanoids must save vs. Spell at +2 or become stunned for 1 round
+
+THAC0: +2
+Damage: 1d4+3, +1d2 electrical damage
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: War Hammer
+Type: One-handed
+Requires:
+ 9 Strength
+
+Weight: 5~
+
+// +5 flail of the ages
+@7760 = ~This flail has been in the care of Lord de'Arnise for some time, a relic of his adventuring youth. It has been kept disassembled, the individual pieces stored in separate locations, and only used in the direst of emergencies. Lord de'Arnise was likely concerned about the powerful magic that the weapon radiated when compiled, and rightfully so. A trail of destruction has followed it through history, leading straight back to the original owners. The flail was the creation of the warlike rakshasa, a race of vengeful spirits that crave human meat, and used as an adaptable weapon that could suit any battle. During a particularly violent hunt, the flail was lost, only to be returned when they used their affinity for magic to locate its powerful aura. They discovered that the weapon had found its way into the hands of a great human warrior, and the battle that followed was truly splendid. They have since used the item as bait countless times, "losing" it again and again. Powerful items gravitate toward powerful people, and powerful people yield the most glorious battles.
+
+With the addition of the fifth and final head to this weapon created by the evil rakshasa race, the true potential of the Flail of Ages is finally realized.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +15%
+– Unaffected by spells that restrict movement
+
+Combat abilities:
+– 33% chance each hit that target will be slowed for 20 seconds
+
+THAC0: +5
+Damage: 1d6+6, +2 acid, cold, fire, poison, and electrical damage
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 8~
+
+@8050 = ~This heavy mace was created for a very specific purpose: to slay undead. Any such creature hit by it not only feels the sting of the weapon, but also has a chance of being simply blasted from existence. There are legends that speak of a priest so holy a single glancing touch could send a vampire to oblivion, but whether the weapon empowered her or she empowered it is a topic for theologians.
+
+Fiends of the lower planes may be affected as well, but they're very likely to resist it.
+
+STATISTICS:
+
+Combat abilities:
+– Undead and fiends must save vs. Death at -2 or be utterly destroyed. Stronger creatures have a chance to resist this effect when struck:
+  – Fiends: 95% chance to resist
+  – Liches and demiliches: 80% chance to resist
+  – Vampires and vampyres: 50% chance to resist
+  – Spectres, ghosts, and other spectral creatures: 35% chance to resist
+  – Mummies and revenants: 20% chance to resist
+  – Wraiths: 5% chance to resist
+  – Lesser undead such as Skeletons, Shadows, and Ghouls cannot resist and must save every time they are hit
+
+THAC0: +1 (strikes as a +3 weapon)
+Damage: 1d6+2, plus 1d6+2 vs. undead
+Damage type: Crushing
+Speed Factor: 6
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 8~
+
+@8051 = ~This heavy mace was created for a very specific purpose: to slay undead. Any such creature hit by it not only feels the sting of the weapon, but also has a chance of being simply blasted from existence. There are legends that speak of a priest so holy a single glancing touch could send a vampire to oblivion, but whether the weapon empowered her or she empowered it is a topic for theologians.
+
+Fiends of the lower planes may be affected as well, but they're very likely to resist it.
+
+Now that the mace has been coated with illithium, it is even more potent, conferring to its user immunity to the life-draining powers of the more powerful undead.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to level drain
+
+Combat abilities:
+– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance to resist this effect when struck:
+  – Fiends: 95% chance to resist
+  – Liches and demiliches: 80% chance to resist
+  – Vampires and vampyres: 50% chance to resist
+  – Spectres, ghosts, and other spectral creatures: 35% chance to resist
+  – Mummies and revenants: 20% chance to resist
+  – Wraiths: 5% chance to resist
+  – Lesser undead such as Skeletons, Shadows, and Ghouls cannot resist and must save every time they are hit
+
+THAC0: +2 (strikes as a +5 weapon)
+Damage: 1d6+3, plus 1d6+3 vs. undead
+Damage type: Crushing
+Speed Factor: 6
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 8~
+
+@8250 = ~This crude wooden club burns with the raging spirit of the demon forever trapped within by the powerful enchantments placed on the weapon. Occasionally, the demon's wrath escapes in a fiery blast, though the power of the club prevents the inferno from affecting the user.
+
+STATISTICS:
+
+Combat abilities:
+– 20% chance per hit target will take an additional 10 points of fire damage
+– 7% chance per hit a 15-ft. radius fireball will automatically detonate (8d6+12 fire damage; Save vs. Spell for half)
+
+THAC0: +3
+Damage: 1d6+3, +3 fire damage
+Damage type: Crushing
+Speed Factor: 1
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@8251 = ~This crude wooden club burns with the raging spirit of the demon forever trapped within by the powerful enchantments placed on the weapon. Occasionally, the demon's wrath escapes in a fiery blast, though the power of the club prevents the inferno from affecting the user and their allies.
+
+Now that the club is upgraded with the ring of fire resistance, the demon spirit trapped within this weapon is easier to control, focusing its wrath more effectively whenever it releases its blazing power without warning.
+
+STATISTICS:
+
+Combat abilities:
+– 30% chance per hit target will take an additional 15 points of fire damage
+– 10% chance per hit a 15-ft. radius fireball will automatically detonate (8d6+12 fire damage; save vs. Spell for half)
+
+THAC0: +5
+Damage: 1d6+5, +5 fire damage
+Damage type: Crushing
+Speed Factor: 0
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 1~
+
+@8260 = ~This magical weapon is of ancient design, thought to have been devised in Netheril. It crackles with spectacular arcs of lightning when wielded.
+
+STATISTICS:
+
+Equipped abilities:
+– Electrical Resistance: +20%
+– Electrical damage: +5%
+
+THAC0: +3
+Damage: 1d6+4, +1d6 electrical damage
+Damage type: Crushing
+Speed Factor: 4
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 6~
+
+@8261 = ~This magical weapon is of ancient design, thought to have been devised in Netheril. It crackles with spectacular arcs of lightning when wielded.
+
+Infused with the otherworldly starfall ore, the powers of this already formidable weapon are greatly enhanced.
+
+STATISTICS:
+
+Equipped abilities:
+– Electrical Resistance: +40%
+– Electrical damage: +7%
+
+Combat abilities:
+– 12% chance of casting Chain Lightning on target with each successful attack (10d6 electrical damage to all in path; Save vs. Spell for half)
+– Any creature that hits the wielder takes 1d2 electrical damage and has a 15% chance of being stunned for 1 round, unless a save vs. Spell at -4 is made
+
+THAC0: +5
+Damage: 1d6+6, plus 1d6+1 electrical damage
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 4~
+
+@8310 = ~This darksteel hammer has a rune of power inscribed upon its head and has many of the powers of a Mace of Disruption.
+
+STATISTICS:
+
+Equipped abilities:
+– Negative Plane Protection
+
+Combat abilities:
+– Undead take an extra 2d4+4 crushing damage
+– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance to resist this effect when struck:
+  – Fiends: 95% chance to resist
+  – Liches and demiliches: 80% chance to resist
+  – Vampires and vampyres: 50% chance to resist
+  – Spectres, ghosts, and other spectral creatures: 35% chance to resist
+  – Mummies and revenants: 20% chance to resist
+  – Wraiths: 5% chance to resist
+  – Lesser undead such as Skeletons, Shadows, and Ghouls cannot resist and must save every time they are hit
+
+THAC0: +4
+Damage: 2d4+4 (crushing)
+Speed Factor: 0
+Proficiency Type: War Hammer
+Type: One-handed
+Requires:
+ 16 Strength
+
+Weight: 3~
+
+@8311 = ~This darksteel hammer has a rune of power inscribed upon its head and has many of the powers of a Mace of Disruption.
+
+Now that the rune of Clangeddin is inscribed on the head of this hammer, it grants even greater powers to any who wield the weapon.
+
+STATISTICS:
+
+Equipped abilities
+– Negative Plane Protection
+– Immunity to fear
+
+Combat abilities:
+– Undead take an extra 2d4+5 crushing damage
+– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance to resist this effect when struck:
+  – Fiends: 95% chance to resist
+  – Liches and demiliches: 80% chance to resist
+  – Vampires and vampyres: 50% chance to resist
+  – Spectres, ghosts, and other spectral creatures: 35% chance to resist
+  – Mummies and revenants: 20% chance to resist
+  – Wraiths: 5% chance to resist
+  – Lesser undead such as Skeletons, Shadows, and Ghouls cannot resist and must save every time they are hit
+
+Charge abilities:
+– Fire Giant Strength once per day
+  Strength: 22
+  Duration: 1 turn
+  Area of Effect: The user
+
+– Mass Cure once per day
+  Special: Heals party members 1d8+20 Hit Points
+  Area of Effect: 15-ft. radius
+
+THAC0: +5
+Damage: 2d4+5 (crushing)
+Speed Factor: 0
+Proficiency Type: War Hammer
+Type: One-handed
+Requires:
+ 16 Strength
+
+Weight: 2~
+
+@50020 = ~Club +5: Pitchwife
+Forged for <CHARNAME> by amalgamating the oaken, acidic club Blackblood and the splintered club Gnasher, Pitchwife pulses with destructive power. Covered in a tar-like pitchy substance that burns flesh on contact, Pitchwife also drives aggravating spines and splinters into the wound, causing immense pain.
+
+STATISTICS:
+
+Equipped abilities:
+– Acid Resistance: +25%
+– Painful Strike: On hit, living beings are weakened for 1 round, suffering a -2 penalty to THAC0, Armor Class, and damage
+
+THAC0: +5
+Damage: 1d6+5, +3 acid damage, slivers add 3 points piercing damage each round for 4 rounds
+Damage type: Crushing
+Speed Factor: 0
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@50060 = ~The already potent undead-bane Azuredge was further enhanced by <CHARNAME> when <PRO_HESHE> had it coated with a veneer of pure illithium. The axe first forged by Gulen Rockfire still returns to its wielder's hand when thrown and still smites undead with a holy fervor, but now it also protects the wielder from the level-draining assaults of the more powerful graveborn. On a more decorative note, the illithium seems to have shifted the color of the weapon slightly away from its namesake.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to level drain
+– Acts as a +5 weapon against undead
+
+Combat abilities:
+– Returns to the wielder's hand when thrown
+– Undead and fiends must save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance to resist this effect when struck:
+  – Fiends: 95% chance to resist
+  – Liches and demiliches: 80% chance to resist
+  – Vampires and vampyres: 50% chance to resist
+  – Spectres, ghosts, and other spectral creatures: 35% chance to resist
+  – Mummies and revenants: 20% chance to resist
+  – Wraiths: 5% chance to resist
+  – Lesser undead such as Skeletons, Shadows, and Ghouls cannot resist and must save every time they are hit
+
+THAC0: +4
+Damage: 1d6+4, double vs. undead
+Damage type (melee): Slashing
+Damage type (thrown): Missile
+Speed Factor: 0
+Proficiency Type: Axe
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~

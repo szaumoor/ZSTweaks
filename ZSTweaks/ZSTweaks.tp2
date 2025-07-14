@@ -1,6 +1,6 @@
 BACKUP "weidu_external/backup/%MOD_FOLDER%"
 SUPPORT "RoyalProtector at G3's forum https://www.gibberlings3.net/profile/12720-royalprotector/ or G3's Discord Server"
-VERSION "1.5.6b"
+VERSION "1.5.7"
 README ~%MOD_FOLDER%/README.md~
 AUTO_EVAL_STRINGS
 /*
@@ -17,11 +17,23 @@ MODDER
 ALWAYS
 	INCLUDE ~%MOD_FOLDER%/libs/zs_always.tph~
 END
-
 LANGUAGE
 "English"
 "english"
-"ZSTweaks/lang/english/setup.tra"
+"ZSTweaks/lang/english/arcane.tra"
+"ZSTweaks/lang/english/blunt_axe.tra"
+"ZSTweaks/lang/english/classes.tra"
+"ZSTweaks/lang/english/cre.tra"
+"ZSTweaks/lang/english/daggers.tra"
+"ZSTweaks/lang/english/divine.tra"
+"ZSTweaks/lang/english/gear.tra"
+"ZSTweaks/lang/english/general.tra"
+"ZSTweaks/lang/english/installation.tra"
+"ZSTweaks/lang/english/npc.tra"
+"ZSTweaks/lang/english/onehanded_swords.tra"
+"ZSTweaks/lang/english/ranged.tra"
+"ZSTweaks/lang/english/text_patching.tra"
+"ZSTweaks/lang/english/twohanded.tra"
 
 ////////////////////////////////// GENERAL ITEM AND SPELL TWEAK \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 BEGIN @10000 DESIGNATED 103 GROUP @10 // INSTALL ALL IN THIS GROUP
@@ -1274,5 +1286,4 @@ REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 
 BEGIN @1360 DESIGNATED 1360 GROUP @32 // LIGHT CROSSBOW +1/2 APR BONUS
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
-
 /////////////////////////////////////// END OF THE FUN \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

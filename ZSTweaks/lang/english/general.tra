@@ -1,0 +1,165 @@
+@6450 = ~This handsome pewter tankard conforms to the shape of your hand surprisingly well—or perhaps unsurprisingly, as it appears to be yours. "<CHARNAME>" is engraved upon it in large, angular characters. You feel an odd strength course through you when you hold it, not unlike the brief euphoria which often precedes, by one long, fitful sleep, an even longer day of misery. The tankard was a gift from Mironda, the dwarven wild mage and beer connoisseur.
+
+STATISTICS:
+
+Charge abilities:
+– Restore 27 Hit Points three times per day. For 1 turn, the user gets a +1 bonus to Strength and Constitution (does not stack)
+
+Weight: 3~
+
+@7460 = ~When activated, the wand will eject three missiles of magical energy that dart forth and unerringly strike their target. This includes enemy creatures in a melee. The target creature must be seen or otherwise detected to be hit, however, so near-total concealment, such as that offered by arrow slits, can render the spell ineffective. The missiles will inflict 1d4+1 points of damage each.
+
+STATISTICS:
+
+Charge abilities:
+– 3 magic missiles will strike the target
+  Damage: 1d4+1 per missile
+  Range: 100 ft.
+  Area of Effect: 1 creature
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+@7461 = ~A shower of fine chunks of ice fly forth from the drinker of this potion, creating a light dusting of cold flakes that protects all within the area of effect from fire damage. This potion was created to counter Fireball and similar spells.
+
+STATISTICS:
+
+Charge abilities:
+– Protects all within area from +75% of fire damage for 3 rounds
+  Range: 0
+  Area of Effect: 15-ft. radius
+
+Weight: 1~
+
+@7462 = ~This potion is imbued with a powerful enchantment that will simulate a temporary increase in level and will imbue the drinker from nigh-unbreakable confidence. The effect lasts for 2 hours, which makes this potion a powerful ally in a deadly combat.
+
+STATISTICS:
+
+Hit Points: +10% (base only)
+THAC0: +2 bonus
+Immunity to morale failure
+Duration: 2 hours
+
+Weight: 1~
+
+@7463 = ~This potion confers very high resistance to all attacks while giving bonuses to all saving throws and magic resistance. The effects of the elixir last for 1 hour.
+
+STATISTICS:
+
+Armor Class: 0
+Saving Throws: +5
+Magic Resistance: +10%
+Duration: 1 hour
+
+Weight: 1~
+
+@7464 = ~The elixir of health is a powerful healing mixture designed to cleanse the body of all impurities. First, it cures all poisons and diseases; then, once the system has been purged, the imbibed is cured by 20 Hit Points to speed the recovery process.
+
+STATISTICS:
+
+Special: Cures poison and disease, protects against these effects for 10 seconds, and heals 20 Hit Points
+
+Weight: 1~
+
+@7465 = ~This potion heightens the sensory perception of the drinker, which allows them to perform delicate tasks with more skill. The heightened senses also manifest in combat as higher accuracy and better evasive maneuvers.
+
+STATISTICS:
+
+Detect Illusion and Traps: +40%
+Other thieving skills: +20%
+Armor Class and Saving Throws: +2
+THAC0: +1
+Duration: 6 hours
+
+Weight: 1~
+
+@7466 = ~This powerful elixir is similar to the potion of heroism in that it effectively raises the imbiber's level and imbues the drinker with confidence. It affects Hit Points, THAC0, casting speed, damage dealt, and thieving abilities.
+
+STATISTICS:
+
+THAC0: +4 bonus
+Hit Points & Thieving skills: +20% (base only)
+All damage output: +10%
+Casting speed: +1
+Immunity to morale failure
+
+Duration: 4 turns
+
+Weight: 1~
+
+@7467 = ~When wholly consumed, this potion restores 12 Hit Points to the person. The effect is instantaneous and the potion is destroyed in the process.
+
+STATISTICS:
+
+Special: Restores 12 Hit Points
+
+Weight: 1~
+
+@7468 = ~When wholly consumed, this oddly murky potion appears to restore 12 Hit Points to the person. The effect is instantaneous and the potion is destroyed in the process.
+
+STATISTICS:
+
+Weight: 1~
+
+@8090 = ~A Wand of Fear strikes terror into the heart of any creature within its target area. This panic is not universal, however, as the stout of heart have been known to resist its magic. Like all wands, the Wand of Fear can only be used a limited number of times before it is destroyed.
+
+STATISTICS:
+
+Charge abilities:
+– Causes enemies to run in fear unless they save vs. Spell
+  Range: 100 ft.
+  Area of Effect: 15-ft. radius
+  Duration: 1 turn
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+@8100 = ~When used, this wand shoots forth a thin ray of bluish color to a maximum range of 100 ft. When a creature is touched by the ray, it must save vs. Wand at -4 in order to avoid being stunned for 7 rounds.
+
+STATISTICS:
+
+Charge abilities:
+– Stun target (Save vs. Wand at -4 penalty negates)
+  Range: 100 ft.
+  Area of Effect: 1 creature
+  Duration: 7 rounds
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+@8110 = ~This wand will emit a gold beam of energy at its targets up to a maximum range of 80 ft., affecting a 15-ft. radius. If the target creatures fail their Save vs. Wand, they will fall into a deep, comatose sleep for 2 turns. Only creatures up to 4 Hit Dice are affected by this wand.
+
+STATISTICS:
+
+Charge abilities:
+– Sleep (Save vs. Wand negates)
+  Range: 80 ft.
+  Area of Effect: 15-ft. radius
+  Duration: 2 turns
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+@8580 = ~A Protection From Undead scroll invokes a 3-ft. radius circle of protection around the target. It protects the person within from physical attacks as well as from effects often caused by undead such as paralysis, domination, and level drain. It will protect the user for 12 hours.
+
+STATISTICS:
+
+A single target receives the following bonuses for 12 hours:
+– +2 Armor Class vs. undead
+– Saves vs. Death: +2
+– Immunity to level drain and the paralytic touch of ghouls, ghasts, liches, and other undead
+– Immunity to domination attempts by vampires
+– Undead hitting the target will be rebuked, taking 1d4+1 magic damage (save vs. Spell to take half) and being forced to flee for 2 rounds if they fail their saving throw vs. Spell. Once affected, they may not be affected again for 1 turn but the damage always applies.
+
+Requires:
+ 9 Intelligence~
+
+ @8590 = ~Attempts parry~
