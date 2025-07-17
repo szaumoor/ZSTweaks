@@ -232,6 +232,9 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
     END
 
     ACTION_IF is_bg2ee_or_eet BEGIN
+        COPY_EXISTING ~DAGG24.item~ ~override~
+            LPF ALTER_ITEM INT_VAR weight = 1 END
+
         COPY_EXISTING ~MISC4U.itm~ ~override~
             LPF WPN_DICESIZE RET dicesize = result END
             PATCH_IF dicesize = 6 BEGIN
