@@ -35,8 +35,8 @@ ACTION_FOR_EACH ability IN
           ~SPWI523~ ~SPWI712~ ~SPWI812~ ~SPWI911~
 BEGIN
   COPY_EXISTING ~%ability%.SPL~ ~override~
-    SET spl_level = LONG_AT(0x36) - 1
-    DEFINE_ASSOCIATIVE_ARRAY stuff BEGIN  ~%ability%~ => ~%spl_level%~ END
+    SET spl_level = LONG_AT(0x34)
+  DEFINE_ASSOCIATIVE_ARRAY stuff BEGIN ~%ability%~ => ~%spl_level%~ END
 END
 
 COPY ~./zstweaks/macro.tph~ ~./zstweaks/macro.tph~
@@ -46,7 +46,7 @@ COPY ~./zstweaks/macro.tph~ ~./zstweaks/macro.tph~
 
 REINCLUDE ~./zstweaks/macro.tph~
 
-COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~
+COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     LPF CRE_KIT RET kit = result END
     PATCH_IF kit = kit_dragon_disciple BEGIN
       LPM stuff
