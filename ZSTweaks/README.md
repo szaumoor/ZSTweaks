@@ -940,6 +940,14 @@ I hate with passion this 10% chance of killing period-no-questions-asked thing, 
 - Passive +5% MR is now +10% (it has to compete with Carsomyr so 5% for a two-handed weapon is nonsense)
 - The 1-level drain per hit with -5 penalty on the upgraded version is fairly inconsequential by the time you get it (from Abazigal's corpse). Instead, it causes affected creatures to deal -20% damage for 2 rounds, aka it's a weakening effect, with a save vs. Death -5 to save against it. This also affects magical and elemental damage. Does not stack.
 
+**Component 1608:** Make Aule's Staff +3 grant an extra attack per round to non-fighter wizards and sorcerers, inspired by the description
+
+This makes the weapon not just another silly instance of a unique +3 weapon without a single remarkable feature. So it's now a solid staff for wizards and sorcerers. Specifically, it affects mages, mage/thieves, cleric/mages, and sorcerers. They will get an extra attack per round. Other clasess will use it as a regular +3 staff.
+
+**Component 1609:** Make the Impaler slightly more scary: +5% higher critical hit chance, +5 more impaling damage on crits
+
+Self-explanatory. The weapon is already very powerful, so no other changes are made.
+
 </details>
 
 ---
