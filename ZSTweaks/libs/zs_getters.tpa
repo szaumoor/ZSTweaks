@@ -46,12 +46,20 @@ BEGIN
     READ_LONG 0x54 result
 END
 
+DEFINE_PATCH_FUNCTION ITM_MIN_STR
+RET
+    result
+BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    READ_SHORT ITM_min_strength result
+END
+
 DEFINE_PATCH_FUNCTION ITM_MIN_INT
 RET
     result
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_BYTE 0x2a result
+    READ_BYTE ITM_min_intelligence result
 END
 
 DEFINE_PATCH_FUNCTION ITM_MIN_WIS
@@ -59,7 +67,15 @@ RET
     result
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_BYTE 0x2e result
+    READ_BYTE ITM_min_wisdom result
+END
+
+DEFINE_PATCH_FUNCTION ITM_WEIGHT
+RET
+    result
+BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    READ_LONG ITM_weight result
 END
 
 DEFINE_PATCH_FUNCTION WPN_DMG
@@ -214,7 +230,7 @@ RET
     result
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_BYTE 0x31 result
+    READ_BYTE ITM_weapon_proficiency result
 END
 
 DEFINE_PATCH_FUNCTION ITM_ENCH
@@ -222,15 +238,7 @@ RET
     result
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_LONG 0x60 result
-END
-
-DEFINE_PATCH_FUNCTION ITM_MIN_STR
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_SHORT 0x26 result
+    READ_LONG ITM_enchantment result
 END
 
 DEFINE_PATCH_FUNCTION ITM_GLOBALS_NUM

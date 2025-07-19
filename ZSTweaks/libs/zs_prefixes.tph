@@ -233,7 +233,17 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
 
     ACTION_IF is_bg2ee_or_eet BEGIN
         COPY_EXISTING ~DAGG24.item~ ~override~
-            LPF ALTER_ITEM INT_VAR weight = 1 END
+            LPF ITM_WEIGHT RET result END
+            PATCH_IF result = 0 BEGIN
+                PATCH_PRINT "[[FIX]]: Fixing DAGG24.itm (Dagger +3) weight from 0 to 1"
+                LPF ALTER_ITEM INT_VAR weight = 1 END
+                SPRINT str @99990
+                READ_STRREF 0x54 desc
+                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\11~
+                END
+                SAY_EVALUATED 0x54 ~%desc%~
+            END
 
         COPY_EXISTING ~MISC4U.itm~ ~override~
             LPF WPN_DICESIZE RET dicesize = result END

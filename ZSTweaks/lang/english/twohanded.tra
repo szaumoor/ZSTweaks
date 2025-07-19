@@ -819,6 +819,24 @@ Requires:
 
 Weight: 9~
 
+@8610 = ~The Impaler has a palpable aura of magic that hints at the vicious nature of the weapon and why it has been a favorite of several powerful orc chieftains in the past. When a victim is struck they are, as one would guess, very nearly impaled, run through as the massive enchantment does its dirty work.
+
+STATISTICS:
+
+Combat abilities:
+– 5% chance per hit to critically strike, inflicting 5 extra piercing damage on a critical hit
+
+THAC0: +3
+Damage: 1d8+3, +10 piercing damage
+Damage type: Piercing
+Speed Factor: 3
+Proficiency Type: Spear
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
 @50100 = ~Lawrence Lilarcor was well known, not for being brave, but for being an idiot. As the tale goes, the boastful Lilarcor left his village at the urging of his friends so that the "great hero" could do battle with a devious treant. He walked for days in the dead of winter until, feverish, he found his target and began an epic wrestling match. Unfortunately (or perhaps luckily), the "treant" was nothing more than a craggy old normal oak. His friends had been jesting, not actually expecting that Lilarcor would go fight the fictitiously dangerous tree. That might have been the end of it, but Lilarcor, not really knowing what a treant was in the first place, didn't realize the truth. He eventually uprooted the oak and, marching proudly home, he declared himself a hero. Thus was born a laughing stock of epic proportions, and over time the name of Lilarcor became the sacrificial fool in many tales of "less than brilliance."
 
 Lilarcor is not quite as lovable (or annoying, depending on your viewpoint) as it was before <CHARNAME> had it upgraded. When the Mind Flayer Control Circlet was embedded in its hilt, Lilarcor seemed to lose the ability to consciously converse with those nearby and was reduced to making occasional quips. However, Lilarcor's peculiar intelligence (or lack thereof) now serves as a boon (or a blight) to the wielder: the one holding Lilarcor cannot have its intelligence adjusted for any reason. This protects against the intelligence drain associated with the illithids' brain-devouring attack, and the beneficial effects of a potion of Genius.
