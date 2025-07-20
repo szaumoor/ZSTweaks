@@ -16,8 +16,16 @@ ACTION_FOR_EACH ability IN
     ~GA_SPWI103~ ~GA_SPWI217~ ~GA_SPWI304~ ~GA_SPWI418~
     ~GA_SPWI523~ ~GA_SPWI712~ ~GA_SPWI812~ ~GA_SPWI911~
 BEGIN
-    OUTER_TEXT_SPRINT line "ABILITYX   %ability%   ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****      ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****"
+    OUTER_TEXT_SPRINT line "ABILITYX   %ability%    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****"
     APPEND ~CLABSO01.2DA~ ~%line%~
+
+
+END
+
+ACTION_IF spell_shroud_of_flame > 0 BEGIN
+  LPF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHROUD_OF_FLAME" RET spell_res END
+  OUTER_TEXT_SPRINT line "ABILITYX   GA_%spell_res%    ****        ****        ****        ****        ****        ****        ****        ****        ****             ****        ****        ****        ****        ****        ****        ****        ****        ****             ****        ****        ****        ****        ****        ****        ****        ****        ****             ****        ****        ****        ****        ****        ****        ****        ****        ****             ****        ****        ****        ****        ****        ****        ****        ****        ****             ****        ****        ****        ****"
+  APPEND ~CLABSO01.2DA~ ~%line%~
 END
 
 COPY_EXISTING ~CLABSO01.2DA~ ~override~
