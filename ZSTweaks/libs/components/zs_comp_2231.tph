@@ -16,10 +16,8 @@ ACTION_FOR_EACH ability IN
     ~GA_SPWI103~ ~GA_SPWI217~ ~GA_SPWI304~ ~GA_SPWI418~
     ~GA_SPWI523~ ~GA_SPWI712~ ~GA_SPWI812~ ~GA_SPWI911~
 BEGIN
-    OUTER_TEXT_SPRINT line "ABILITYX   %ability%    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****"
-    APPEND ~CLABSO01.2DA~ ~%line%~
-
-
+  OUTER_TEXT_SPRINT line "ABILITYX   %ability%    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****"
+  APPEND ~CLABSO01.2DA~ ~%line%~
 END
 
 ACTION_IF spell_shroud_of_flame > 0 BEGIN
@@ -29,8 +27,8 @@ ACTION_IF spell_shroud_of_flame > 0 BEGIN
 END
 
 COPY_EXISTING ~CLABSO01.2DA~ ~override~
-    LPM reindex_clab
-    PRETTY_PRINT_2DA
+  LPM reindex_clab
+  PRETTY_PRINT_2DA
 
 <<<<<<<<./zstweaks/macro.tph
 DEFINE_PATCH_MACRO stuff BEGIN
@@ -39,8 +37,8 @@ END
 >>>>>>>>
 
 ACTION_FOR_EACH ability IN
-          ~SPWI103~ ~SPWI217~ ~SPWI304~ ~SPWI418~
-          ~SPWI523~ ~SPWI712~ ~SPWI812~ ~SPWI911~
+    ~SPWI103~ ~SPWI217~ ~SPWI304~ ~SPWI418~
+    ~SPWI523~ ~SPWI712~ ~SPWI812~ ~SPWI911~
 BEGIN
   COPY_EXISTING ~%ability%.SPL~ ~override~
     SET spl_level = LONG_AT(0x34)
@@ -48,18 +46,18 @@ BEGIN
 END
 
 COPY ~./zstweaks/macro.tph~ ~./zstweaks/macro.tph~
-  PATCH_PHP_EACH dragon_disciple_fire AS ability => spl_level BEGIN
-    REPLACE_TEXTUALLY ~\(//replaceme\)~ ~ADD_MEMORIZED_SPELL "%ability%" "#%spl_level%" "wizard" (1)%WNL%\1~
-  END
+PATCH_PHP_EACH dragon_disciple_fire AS ability => spl_level BEGIN
+  REPLACE_TEXTUALLY ~\(//replaceme\)~ ~ADD_MEMORIZED_SPELL "%ability%" "#%spl_level%" "wizard" (1)%WNL%\1~
+END
 
 REINCLUDE ~./zstweaks/macro.tph~
 
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
-    LPF CRE_KIT RET kit = result END
-    PATCH_IF kit = kit_dragon_disciple BEGIN
-      LPM stuff
-      PATCH_IF zst_2231_fire_boost BEGIN
-          LPF ADD_CRE_EFFECT INT_VAR opcode = 332 timing = 9 parameter2 = 1 parameter1 = zst_2231_fire_boost_pctg END
-      END
+  LPF CRE_KIT RET kit = result END
+  PATCH_IF kit = kit_dragon_disciple BEGIN
+    LPM stuff
+    PATCH_IF zst_2231_fire_boost BEGIN
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 332 timing = 9 parameter2 = 1 parameter1 = zst_2231_fire_boost_pctg END
     END
+  END
 BUT_ONLY
