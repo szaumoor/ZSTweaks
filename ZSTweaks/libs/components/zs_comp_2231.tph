@@ -21,8 +21,8 @@ BEGIN
 END
 
 ACTION_IF spell_shroud_of_flame > 0 BEGIN
-  LPF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHROUD_OF_FLAME" RET spell_res END
-  OUTER_TEXT_SPRINT line "ABILITYX   GA_%spell_res%    ****        ****        ****        ****        ****        ****        ****        ****        ****             ****        ****        ****        ****        ****        ****        ****        ****        ****             ****        ****        ****        ****        ****        ****        ****        ****        ****             ****        ****        ****        ****        ****        ****        ****        ****        ****             ****        ****        ****        ****        ****        ****        ****        ****        ****             ****        ****        ****        ****"
+  LPF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHROUD_OF_FLAME" RET shroud_res END
+  OUTER_TEXT_SPRINT line "ABILITYX   GA_%shroud_res%    ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****"
   APPEND ~CLABSO01.2DA~ ~%line%~
 END
 
@@ -46,9 +46,9 @@ BEGIN
 END
 
 COPY ~./zstweaks/macro.tph~ ~./zstweaks/macro.tph~
-PATCH_PHP_EACH dragon_disciple_fire AS ability => spl_level BEGIN
-  REPLACE_TEXTUALLY ~\(//replaceme\)~ ~ADD_MEMORIZED_SPELL "%ability%" "#%spl_level%" "wizard" (1)%WNL%\1~
-END
+  PATCH_PHP_EACH dragon_disciple_fire AS ability => spl_level BEGIN
+    REPLACE_TEXTUALLY ~\(//replaceme\)~ ~ADD_MEMORIZED_SPELL "%ability%" "#%spl_level%" "wizard" (1)%WNL%\1~
+  END
 
 REINCLUDE ~./zstweaks/macro.tph~
 
@@ -56,6 +56,9 @@ COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
   LPF CRE_KIT RET kit = result END
   PATCH_IF kit = kit_dragon_disciple BEGIN
     LPM stuff
+    PATCH_IF spell_shroud_of_flame > 0 BEGIN
+      ADD_MEMORIZED_SPELL "%shroud_res%" #5 "wizard" (1)
+    END
     PATCH_IF zst_2231_fire_boost BEGIN
         LPF ADD_CRE_EFFECT INT_VAR opcode = 332 timing = 9 parameter2 = 1 parameter1 = zst_2231_fire_boost_pctg END
     END

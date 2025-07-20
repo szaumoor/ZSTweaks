@@ -1949,9 +1949,9 @@ RR's implementation of Crippling Strike can actually increase Strength if dealin
 
 **Component 2231:** Give Dragon Disciples (Red) automatic access to all fire-based wizard spells and optionally increase fire damage by 5%
 
-This component gives Red Dragon Disciples access to all fire-based wizard spells by default. Additionally, it increases the damage of all fire-based spells by 5% for the Red Dragon Disciple. The latter is optional and can be disabled in the configuration file.
+This component gives Red Dragon Disciples access to all fire-based wizard spells by default. Additionally, it increases the damage of all fire-based spells by 5% for the Red Dragon Disciple. The latter is optional and can be disabled in the configuration file (the percentage bonus can also be configured).
 
-Fair warning: the spell selection when creating the dragon disciple WILL NOT tell you that the spells are available already or otherwise offer any feedback. Just make sure if you use this component that you know that the spells are available already.
+Fair warning: the spell selection when creating the dragon disciple WILL NOT tell you that the spells are available already or otherwise offer any feedback. Just make sure if you use this component that you know that the spells are available already, so pick different spells during the character creation.
 
 Lastly, this will patch any dragon disciples that may exist in the game, adding these spells to their repertoire. Currently, it only supports the dragon disciples that exist in vanilla (even if they were overhauled). Support for specific colors and metals of dragon disciple, such as the ones offered by ToF, might be added in the future. Most likely I only need to know the kit id of those kits to offer compatibility.
 
