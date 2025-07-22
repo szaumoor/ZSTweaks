@@ -6,9 +6,6 @@ END
 
 
 COPY ~%MOD_FOLDER%/items/hamaclub_ac~ ~override~
-
-
-
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF ITM_CAT  RET cat  = result  END
     LPF ITM_PROF RET prof = result END
@@ -16,7 +13,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     PATCH_IF ( cat = 21 AND prof = 97  ) OR  // warhammers
              ( cat = 17 AND prof = 101 ) OR  // maces
              ( cat = 17 AND prof = 115 ) AND // clubs
-             num_abilities > 0 
+             num_abilities > 0
     BEGIN
         LPF ITM_ENCH RET ench = result END
         PATCH_MATCH ench
