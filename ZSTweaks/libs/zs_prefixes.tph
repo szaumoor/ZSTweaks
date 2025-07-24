@@ -232,7 +232,17 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
     END
 
     ACTION_IF is_bg2ee_or_eet BEGIN
-        COPY_EXISTING ~DAGG24.item~ ~override~
+        COPY_EXISTING ~XBOW16.itm~ ~override~
+            PATCH_PRINT "[[FIX]]: Fixing XBOW16.itm (Crossbow of Affliction +4) speed factor from 1 to 0"
+            LPF ALTER_HEADER INT_VAR speed = 0 END
+            SPRINT str @99998
+            READ_STRREF 0x54 desc
+            INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1~ ~\10~
+            END
+            SAY_EVALUATED 0x54 ~%desc%~
+
+        COPY_EXISTING ~DAGG24.itm~ ~override~
             LPF ITM_WEIGHT RET result END
             PATCH_IF result = 0 BEGIN
                 PATCH_PRINT "[[FIX]]: Fixing DAGG24.itm (Dagger +3) weight from 0 to 1"
