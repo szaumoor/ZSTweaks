@@ -70,5 +70,10 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
         PRINT "Project Javelin detected."
     END
 
+    OUTER_SET has_fg_arms_itm_updates = MOD_IS_INSTALLED "forgotten-armament.tp2" "21"
+    ACTION_IF has_fg_arms_itm_updates BEGIN
+        PRINT "Forgotten Armament item updates detected."
+    END
+
     OUTER_SET zs_preinstall_check = 1
 END
