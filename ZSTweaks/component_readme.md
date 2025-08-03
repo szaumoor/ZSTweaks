@@ -69,6 +69,8 @@ The Armor Class debuff is mild and the power of it depends on the enchantment le
 
 Overall this should provide a mild tactical advantage when having at least one of your party members wielding these blunt weapons. This applies to enemies wielding these weapons too, so be warned.
 
+There's also a component that makes this effect only work on creatures that are not wearing armor, as you could think that the overall lessened effectiveness of most armors against blunt weapons is already enough. So this means it will work, for example, against dragons and humber hulks, but not against a regular fighter wearing plate mail. This is **disabled** by default, but you can enable it in the configuration file.
+
 **Component 1435:** Make Darts have a speed factor of 0 and extend the range to 30 ft
 
 Self-explanatory. It's the lightest weapon, realistically. It also makes them slightly less inconvenient by making them have a range equivalent to those of arrows and bolts.

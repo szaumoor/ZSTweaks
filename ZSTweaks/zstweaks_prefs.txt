@@ -26,6 +26,9 @@ OUTER_SET zst_1150_dice_wakislashing     = "1"
 OUTER_SET zst_1150_dice_warhammers       = "1"
 OUTER_SET zst_1150_dice_twohanded_swords = "1"
 
+// This modifies the blunt weapon tweak so the AC debuff only works against enemies that don't wear armor, such as dragons
+OUTER_SET zst_blunt_only_nonarmored = "0"
+
 // allow or disallow weapon categories to be modified by the Finesse component (Component 1450)
 OUTER_SET zst_1450_allow_daggers   = "1"
 OUTER_SET zst_1450_allow_staves    = "1"
