@@ -236,6 +236,10 @@ OUTER_SET zst_2130_avoid_death    = "1"
 OUTER_SET zst_2231_fire_boost      = "1" // include the boost to fire damage in the Dragon Disciple tweak
 OUTER_SET zst_2231_fire_boost_pctg = "5" // percentage bonus if the previous is allowed
 
+// configurations for skald+blade apr bonus
+OUTER_SET zst_2260_allow_blade  = "1"
+OUTER_SET zst_2260_allow_skald  = "1"
+
 /////////////////////////////// Creature Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // vorpal saving throw penalty or bonus for balor's vorpal attacks

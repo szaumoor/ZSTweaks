@@ -69,6 +69,7 @@
 @1546 = ~Make the different shield types more distinct and optionally change shield usability~
 @1547 = ~Make Protection from Undead scrolls less overpowered but still invaluable vs. undead~
 @1549 = ~Tweak the usability of different armor types~ // TODO
+@1555 = ~Make the Slayer Form more interesting, effective in late-game, and less annoying to use~
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -329,7 +330,8 @@ w@444 = ~Make Flesh to Stone use Petrification saves and optionally make some cr
 @2231 = ~Make Dragon Disciples (Red) have automatic access to all fire-based spells and optionally increase fire damage by 5%~
 @2232 = ~Make Called Shot directly increase ranged weapon damage, instead of adding 2 damage after the initial hit~
 //@2240 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and re-enable the unconscious status if successful~ // TODO
-//@2250 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
+@2250 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
+@2260 = ~Make Blades and Skalds get 1/2 APR on levels 7 and 13, much like Fighters~
 
 // CRE TWEAKS
 @3010 = ~Make inappropriately aligned creatures in BG2 more correct~

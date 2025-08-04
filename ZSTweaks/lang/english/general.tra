@@ -163,3 +163,37 @@ Requires:
  9 Intelligence~
 
  @8590 = ~Attempts parry~
+
+@8700 = ~Slayer Form~
+@8701 = ~Slayer Change
+
+Manifest your savage compulsions, taking on the form of the brutal essence of Bhaal: a violent, powerful creature made of teeth and claws. Using this ability reduces your reputation by two points, as even those who do not witness the event can sense the corruption caused by giving yourself over to instinct.
+
+The Slayer form grants the following benefits:
+
+– Strength and Dexterity set to 20 (if higher, they increase by 2)
+– Constitution increased by 3
+– Attacks per round set to 3 (4 at 3 million XP or more)
+– Basic claw and teeth attacks deal 2d6+3 crushing/slashing damage plus +1 cold damage with a +5 THAC0 bonus, acts as a +5 weapon
+– Deals 2d6 extra crushing and slashing damage to targets that are knocked down or unconscious
+– Movement speed increased by a factor of 4
+– Effective AC set to -10
+– Saving Throws improve by to 5
+– Magic Resistance increases by 20%
+– THAC0 set to 0
+– 100 Hit Points, 150 at XP of 3 million or more. If maximum Hit Points are higher, they increase by 20 and 30 respectively
+– Immunity to imprisonment, level drain, stun, and missile attacks~
+
+@8702 = ~Let the Slaughter Begin~
+@8703 = ~Let the Slaughter Begin
+Imprint a sinister mark on nearby creatures, making their deaths strengthen your defenses. Marked enemies must save vs. Death at -2 or be stunned for 2 rounds. If a marked enemy dies within 4 rounds, you gain a +1 bonus to Armor Class for 4 rounds. The mark itself cannot be resisted.~
+
+@8704 = ~Relentless Lunge~
+@8705 = ~Relentless Lunge
+Drive the target to the ground for 1 round if they fail a save vs. Death at -4, dealing 2d6+1 crushing damage. At 3 million XP or higher, the damage increases to 4d6+1.~
+
+@8706 = ~Sumptuous Blood Bath~
+@8707 = ~Sumptuous Blood Bath
+Slash open a foe's arteries, instantly dealing 2d10 slashing damage (halved if they save vs. Death at -4). The target then bleeds for 3 rounds, taking 2 slashing damage each round. Each time the target bleeds, the Slayer is drenched in blood and heals 2d6 hit points. At 3 million XP or more, the initial damage increases to 3d10 slashing and the healing to 4d6 hit points.~
+
+
