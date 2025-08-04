@@ -9,6 +9,7 @@
 - Added missing documentation for Martial Staff in README
 - Fixed a fairly horrendous bug in the script that added fire spells to existing dragon disciple creatures. If anyone installed this and never noticed a problem, is likely because no dragon disciples were found, or they didn't personally find any during the playthrough, as I'm pretty sure spawning them would have crashed the game.
 - Fixed dragon disciple component not adding meteor swarm to their spellbook
+- Fixed Burning Earth in BGEE overlaying other equipped weapons due to a corruption in the flags field
 
 ## Modifications
 
