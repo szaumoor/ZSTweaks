@@ -5,7 +5,8 @@ END ELSE BEGIN
 END
 
 WITH_SCOPE BEGIN
-    OUTER_SPRINT ability = "AP_ZSTWAPR2"
+    COPY ~%MOD_FOLDER%/class_kits/extra_apr~ ~override~
+    OUTER_SPRINT ability "AP_ZSTWAPR2"
     OUTER_TEXT_SPRINT line "ABILITYX    ****        ****        ****        ****        ****        ****        %ability%   ****        ****        ****        ****        ****        %ability%   ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****"
     ACTION_IF zst_2260_allow_blade BEGIN
         APPEND ~CLABBA02.2DA~ ~%line%~
