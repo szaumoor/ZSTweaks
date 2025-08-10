@@ -1,3 +1,9 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1608~) BEGIN
+  FAIL ~Script already included: zs_comp_1608~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1608~ = 1
+END
+
 ACTION_IF NOT is_iwdee BEGIN
     COPY ~%MOD_FOLDER%/items/aule_staff~ ~override~
     COPY_EXISTING ~STAF08.ITM~ ~override~

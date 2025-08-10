@@ -1,0 +1,444 @@
+@6050 = ~This abyssal greensteel blade is one of Haer'Dalis's favorite weapons. This short sword is capable of inflicting an additional 6 points of poison damage if the target fails a saving throw. This blade may only be used by tieflings.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target must save vs. Poison at -1 or suffer 6 points of poison damage over 3 seconds
+– Considered +3 for the purposes of what it can hit
+– Attacks per round: +1/2
+
+THAC0: +2
+Damage: 1d6+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~
+
+@6051 = ~Chaos is a short sword usable only by tieflings. Every time it strikes an opponent, he or she loses 2 points of Dexterity for 5 rounds and becomes more sensitive to poisonous substances. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target suffers a -2 Dexterity penalty for 5 rounds and a -1 penalty to saving throws vs. Poison for 2 rounds
+– Considered +3 for the purposes of what it can hit
+– Attacks per round: +1/2
+
+THAC0: +2
+Damage: 1d6+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~
+
+@6052 = ~This abyssal greensteel blade is one of Haer'Dalis's favorite weapons. This short sword is capable of inflicting an additional 9 points of poison damage if the target fails a saving throw. This blade may only be used by Haer'Dalis.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target must save vs. Poison at -2 or suffer 9 points of poison damage over 3 seconds
+– Considered +5 for the purposes of what it can hit
+– 1 extra attack per round
+
+THAC0: +4
+Damage: 1d6+4 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~
+
+@6053 = ~Chaos is a short sword usable only by Haer'Dalis. Every time it strikes an opponent, he or she loses 2 points of Dexterity for 5 rounds and becomes more sensitive to poisonous substances. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target suffers a -2 Dexterity penalty for 5 rounds and a -1 penalty to Save vs. Poison for 2 rounds
+– Considered +5 for the purposes of what it can hit
+– 1 extra attack per round
+
+THAC0: +4
+Damage: 1d6+4 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~
+
+// enchantment tweak
+@6240 = ~Keldorn distinguished himself early in his career as a paladin and received this blade as a boon from Torm. It is exceptionally accurate, but also protects him in battle with a special magical shield, and any that strike him while he wields it suffer Torm's wrath in the form of magical damage. None but Keldorn may use this sword.
+
+STATISTICS:
+
+Combat abilities:
+– Considered a +3 weapon for the purposes of what it can hit
+
+Equipped abilities:
+– 5 points of magic damage to any who damage the wielder
+
+THAC0: +2
+Damage: 1d10+2 (slashing)
+Speed Factor: 8
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+
+Weight: 8~
+
+// requirements tweak only
+@6241 = ~Keldorn distinguished himself early in his career as a paladin and received this blade as a boon from Torm. It is exceptionally accurate, but also protects him in battle with a special Fireshield, and any that strike him while he wields it suffer Torm's wrath in the form of magical damage. None but Keldorn may use this sword.
+
+STATISTICS:
+
+Equipped abilities:
+– 5 points of magic damage to any who damage the wielder
+
+THAC0: +2
+Damage: 1d10+2 (slashing)
+Speed Factor: 8
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+
+Weight: 8~
+
+@6242 = ~Full plate armor is the best armor a warrior can buy, both in appearance and protection. This armor increases the wearer's Armor Class by one above that of normal full plate. While equipped, the suit provides the wearer with a +1 bonus to all saving throws and grants the wearer immunity to movement-limiting effects such as Web and Grease. This suit was designed for Keldorn, and only he may wear it.
+
+STATISTICS:
+
+Equipped abilities:
+– Saving Throws: +1
+– Immune to movement-limiting effects
+
+Armor Class: 0 (-4 vs. slashing, -3 vs. piercing and missile)
+
+Weight: 70~
+
+@6250 = ~This is Anomen's family shield, given to him by his father. In addition to magical protection, the shield radiates an aura that grants the wielder fire and cold resistance. To protect against ranged attacks, Anomen can use the shield to erect a field of energy. This protection from normal missiles can be used three times per day.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3
+– Fire Resistance: +30%
+– Cold Resistance: +30%
+
+Charge abilities:
+– Protection From Normal Missiles three times per day
+  Duration: 1 hour
+  Area of Effect: The wearer
+
+Weight: 7~
+
+@6260 = ~Sword of Arvoreen +3~
+@6261 = ~Another gift to Mazzy from Arvoreen, this short sword may only be used by her. The enchantments that exist within this sword give it the ability to slow any opponent struck by it.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to slow and stun
+– Attacks per round: +1/2
+
+Combat abilities:
+– Acts as a +4 weapon for the purposes of what it can hit
+– Hit target's movement rate is slowed by 2 for 45 seconds and has a 50% chance of dispelling Haste (Save vs. Wand negates both effects)
+
+THAC0: +4
+Damage: 1d6+3 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@6262 = ~Bow of Arvoreen +3~
+@6263 = ~This enchanted bow has been in Mazzy Fentan's possession for several years, given to her by her god, Arvoreen. It is usable only by her, granting a +3 bonus to hit rolls and a +1 to damage.
+
+Equipped abilities:
+– Attacks per round: +1/2
+
+STATISTICS:
+
+Damage: +1
+THAC0: +3
+Speed Factor: 3
+Proficiency Type: Shortbow
+Type: Two-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+@6270 = ~This blade, although only lightly enchanted, has achieved a semblance of awareness, enough so that it allows only Yoshimo to wield it. Any other than he cannot use this flawless katana in battle.
+
+Combat abilities:
+– Yoshimo wields it as if he is specialized in katanas, unless more highly specialized
+– This katana has +10% critical chances to critically hit
+
+STATISTICS:
+
+THAC0: +3
+Damage: 1d10+1 (slashing)
+Speed Factor: 1
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 5~
+
+@6660 = ~Forged in the black heart of the Abyss by tanar'ri sorcerers for use in the eternal Blood War, this blade was once wielded by the infamous babau assassin Khazzrax the Gasping Death. Lore tells of a blade, black as the night, that Khazzrax would use to slash his victims open, causing fire to briefly flare out of the fresh wound.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Intelligence: -1
+
+Combat abilities:
+– +5 slashing damage vs. good-aligned opponents
+– Acts as a +5 weapon for the purposes of what it can hit
+
+THAC0: +3
+Damage: 1d10+3, +1d4 fire damage
+Damage type: Slashing
+Speed Factor: 7
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 9~
+
+@6670 = ~Forged in the black heart of the Abyss by tanar'ri sorcerers for use in the eternal Blood War, this blade was once wielded by the infamous babau assassin Khazzrax the Gasping Death. Lore tells of a blade, black as the night, that Khazzrax would use to slash his victims open, causing fire to briefly flare out of the fresh wound.
+
+In addition to the sword's regular properties, the demon Ur-Gothoz has been bound within its blade. As he rages with demonic fury at his captivity, the sword is thus empowered.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Intelligence: -1
+
+Combat abilities:
+– +5 slashing damage vs. good-aligned opponents
+– +5 slashing damage vs. devils
+– Acts as a +5 weapon for the purposes of what it can hit
+
+THAC0: +3
+Damage: 1d10+3, plus 1d4+1 fire damage
+Damage type: Slashing
+Speed Factor: 7
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 9~
+
+@6680 = ~Forged in the black heart of the Abyss by tanar'ri sorcerers for use in the eternal Blood War, this blade was once wielded by the infamous babau assassin Khazzrax the Gasping Death. Lore tells of a blade, black as the night, that Khazzrax would use to slash his victims open, causing fire to briefly flare out of the fresh wound.
+
+In addition to the sword's regular properties, the demon Azothet has been bound within its blade. As she rages with demonic fury at her captivity, the sword is thus empowered.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Intelligence: -1
+
+Combat abilities:
+– +5 slashing damage vs. good-aligned opponents
+– +5 slashing damage vs. demons
+– Acts as a +5 weapon for the purposes of what it can hit
+
+THAC0: +3
+Damage: 1d10+3, plus 1d4+1 fire damage
+Damage type: Slashing
+Speed Factor: 7
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 9~
+
+@6690 = ~Forged in the black heart of the Abyss by tanar'ri sorcerers for use in the eternal Blood War, this blade was once wielded by the infamous babau assassin Khazzrax the Gasping Death. Lore tells of a blade, black as the night, that Khazzrax would use to slash his victims open, causing fire to briefly flare out of the fresh wound.
+
+In addition to the sword's regular properties, two rival demons have been magically bound within its blade. As they rage with fury at both each other and against their captivity, they thus empower the blade.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Intelligence: -1
+
+Combat abilities:
+– +5 slashing damage vs. good-aligned opponents
+– +5 slashing damage vs. devils and demons
+– Acts as a +5 weapon for the purposes of what it can hit
+
+THAC0: +3
+Damage: 1d10+3, plus 1d4+2 fire damage
+Damage type: Slashing
+Speed Factor: 7
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 9~
+
+// weapon tweak on
+@7100 = ~This fine katana radiates magical energy when wielded by Valygar. The blade was designed to respond only to those with the blood of the family Corthala flowing through their veins. This +2 blade causes additional poison damage when it strikes an opponent.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. slashing attacks
+– +1 backstab multiplier
+
+Combat abilities:
+– Hit target suffers 3 points of additional poison damage per round for 2 rounds
+
+THAC0: +2, +6 against wizards and sorcerers
+Damage: 1d10+2 (slashing)
+Speed Factor: 2
+Proficiency Type: Katana
+Type: One-handed
+
+Weight: 4~
+
+// only stat restriction tweak on
+@7110 = ~This fine katana radiates magical energy when wielded by Valygar. The blade was designed to respond only to those with the blood of the family Corthala flowing through their veins. This +2 blade causes additional poison damage when it strikes an opponent.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. slashing attacks
+
+Combat abilities:
+– Hit target suffers 3 points of additional poison damage per round for 2 rounds
+
+THAC0: +2
+Damage: 1d10+2 (slashing)
+Speed Factor: 2
+Proficiency Type: Katana
+Type: One-handed
+
+Weight: 4~
+
+@7120 = ~This armor, long in the Corthala bloodline, protects the user against all forms of attacks. The armor is enchanted so that it grants a +3 bonus to Valygar's Armor Class. It also adds a bonus to resisting acid, fire, and magical damage. The armor also makes Valygar immune to charm while he wears it. As it is specially fitted for Valygar, only he may wear it.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm
+– Fire, Acid, and Magic damage resistance: +25%
+
+Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
+
+Weight: 9~
+
+@7490 = ~When younger, Cernd spent a cycle of seasons meditating on his role within nature. He made no shelter, wanting to feel the land unhindered. Nature may have appreciated the intent, for she also knows that for all their dedication, at times her children can be foolish. Cernd found this cloak before the cold season set in, seemingly woven to fit him from the very undergrowth. The message was clear: He can appreciate the rain while still seeking shelter from it. Only Cernd may use this cloak.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +1
+– Elemental damage resistance: +15%
+– Physical damage resistance: +10%
+– Regeneration: +1 HP per 2 rounds
+
+Weight: 3~
+
+@8170 = ~Paralyzed with fear~
+
+@50030 = ~Corthala Family Armor
+This armor, long in the Corthala bloodline, protects the user against all forms of attacks. The armor has been combined with the Shadow Dragon Armor and is now even better at protecting Valygar. The armor is enchanted so that it grants a +5 bonus to Valygar's Armor Class. It also adds a bonus to resisting acid, fire, and magical damage. The armor also makes Valygar immune to charm while he wears it. Finally, the armor grants Valygar non-detection while equipped. As it is specially fitted for Valygar, only he may wear it.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm
+– Non-Detection
+– Fire Resistance: +50%
+– Acid Resistance: +50%
+– Magic Damage Resistance: +50%
+
+Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
+
+Weight: 9~
+
+@50031 = ~Corthala Family Armor
+This armor, long in the Corthala bloodline, protects the user against all forms of attacks. The armor has been combined with the Shadow Dragon Armor and is now even better at protecting Valygar. The armor is enchanted so that it grants a +5 bonus to Valygar's Armor Class. It also adds a bonus to Negative Energy Plane energies, Illusion and Necromancy effects, fire, and magical damage. The armor also makes Valygar immune to charm while he wears it. Finally, the armor grants Valygar non-detection while equipped. As it is specially fitted for Valygar, only he may wear it.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm
+– Negative Plane protection
+– Non-Detection
+– Fire Resistance: +50%
+– Magic Damage Resistance: +50%
+– Saves vs. Illusion and Necromancy effects: +4
+
+Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
+
+Weight: 9~
+
+@50050 = ~Improved Firecam Full-Plate Armor
+This suit of armor was originally designed for Keldorn and few others may wear it. The suit was later enchanted again at <CHARNAME>'s request and it now provides Keldorn with even more protection. While equipped the suit provides the wearer with a +2 bonus to all saving throws and grants the wearer with immunity to movement-limiting effects such as Web and Grease, and immunity to fear. Despite being incredibly strong, the armor is almost weightless.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to movement-limiting effects
+– Immunity to fear and panic
+– Saving Throws: +2
+
+Armor Class: -2 (-6 vs. slashing, -5 vs. piercing and missile)
+
+Weight: 10~
+
+@50090 = ~Keldorn distinguished himself early in his career as a paladin and received this blade as a boon from Torm. It is exceptionally accurate, but also protects him in battle with a special magical shield, and any that strike him while he wields it suffer Torm's wrath in the form of magical damage. None but Keldorn may use this sword.
+
+With <CHARNAME>'s help and the blessing of Torm, the sword was recently re-enchanted to become even more powerful.
+
+STATISTICS:
+
+Equipped abilities:
+– 5 points of magic damage to any who damage the wielder
+
+Combat abilities:
+– Dispel Magic on each hit if a Save vs. Spell is failed
+– 30% chance a hit target is silenced for two rounds
+
+THAC0: +5
+Damage: 1d10+5 (slashing)
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+
+Weight: 8~
+
+@7090 = ~This ring was given to Nalia by her father upon her ascension to adulthood. Bonded to her blood as it is, its powers may not be used by anyone else.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class and Saving Throws: +2
+– Fire Resistance: +50%
+– Open Locks and Find Traps: +20%
+– May memorize one extra spell of levels 1 to 5
+
+Weight: 0~

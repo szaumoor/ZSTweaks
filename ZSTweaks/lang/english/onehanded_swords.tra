@@ -1,0 +1,879 @@
+@6060 = ~Such is the age of this sword that its true origin has been lost to time, but markings hint that it was possibly forged in the service of Helm. Also called the "Sword of Neutrality," it seems designed to seek and terminate extremes, to shift the universe closer to harmonious equilibrium. The further the behavior of a target from true balance, the more potent the damage they suffer.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm and confusion
+– Stacking bonuses that depend on the alignment of the wielder:
+  All alignments: +1 Armor Class, +5% Magic Resistance
+  All morally neutral alignments: +1 Damage, +1 Saving Throws, +5% Magic Resistance
+  True Neutral: +1 Armor Class, +1 Saving throws, +5% Magic Resistance, +5% critical hit chances with all weapons
+
+Combat abilities:
+– Strikes as a +5 weapon
+– Has a damage and THAC0 bonus depending on how far the target's alignment strays from True Neutral:
+  vs. Lawful Neutral and Chaotic Neutral: +1 THAC0, +1 slashing and magic damage
+  vs. Neutral Good, Neutral Evil: +2 THAC0, +2 slashing and magic damage
+  vs. Other Alignments: +3 THAC0, +3 slashing and magic damage
+
+THAC0: +3
+Damage: 1d8+3
+Damage type: Slashing
+Speed Factor: 0
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~
+
+@6070 = ~Hindo was a samurai of great renown, a staunch defender of his people against the evil undead that often ravaged his homelands.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +5%
+
+Charge abilities:
+– Lesser Restoration once per day
+  Special: Reverses any previous level drain
+  Range: Touch
+  Area of Effect: 1 creature
+
+THAC0: +4, +6 vs. undead
+Damage: 1d10+4, +4 extra magic damage vs. undead
+Damage type: Slashing
+Speed Factor: 0
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~
+
+@6071 = ~Hindo was a samurai of great renown, a staunch defender of his people against the evil undead that often ravaged his homelands.
+
+Now reunited with the hand of its original owner, this is a katana worthy of the greatest of samurai.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +10%
+– Immunity to all forms of death magic
+
+Charge abilities:
+– Greater Restoration once per day
+  Special: Reverses any previous level drain; cures feeblemindedness, confusion, berserk, disease, and poison; and fully heals the target
+  Range: Touch
+  Area of Effect: 1 creature
+
+THAC0: +5, +7 vs. undead
+Damage: 1d10+5, +5 extra magic damage vs. undead
+Damage type: Slashing
+Speed Factor: 0
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+@6072 = ~Hindo's Doom +4~
+@6073 = ~Hindo's Doom +5~
+
+@6090 = ~This single-handed weapon is infused with the very essence of virtue, and is rumored to be the sanctified blade of the famous paladin Sir Wediyer. The weapon was lost when Sir Wediyer pursued a fleeing pit fiend through a planar rift. Neither the fiend nor Sir Wediyer ever returned.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +20%
+
+THAC0: +4
+Damage: 2d4+4, +4 extra vs. evil
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 6~
+
+// only evil component +6
+@6091 = ~This single-handed weapon is infused with the very essence of virtue, and is rumored to be the sanctified blade of the famous paladin Sir Wediyer. The weapon was lost when Sir Wediyer pursued a fleeing pit fiend through a planar rift. Neither the fiend nor Sir Wediyer ever returned.
+
+With the Eye of Tyr set into its pommel, Purifier is perhaps the greatest single instrument of holy justice on the face of Faerûn.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +30%
+
+Charge abilities:
+– Dispel Magic at level 20 twice per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+– Mass Cure once per day
+  Special: Heals party members 1d8+20 Hit Points
+  Area of Effect: 15-ft. radius
+
+THAC0: +5
+Damage: 2d4+5, +5 extra vs. evil
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 5~
+
+// only dispel component +6
+@6092 = ~This single-handed weapon is infused with the very essence of virtue, and is rumored to be the sanctified blade of the famous paladin Sir Wediyer. The weapon was lost when Sir Wediyer pursued a fleeing pit fiend through a planar rift. Neither the fiend nor Sir Wediyer ever returned.
+
+With the Eye of Tyr set into its pommel, Purifier is perhaps the greatest single instrument of holy justice on the face of Faerûn.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +30%
+
+Charge abilities:
+– Dispel Magic at level 30 twice per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+– Mass Cure once per day
+  Special: Heals party members 1d8+20 Hit Points
+  Area of Effect: 15-ft. radius
+
+THAC0: +5
+Damage: 2d4+5, +5 extra vs. chaotic evil
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 5~
+
+// both dispel and evil components +6
+@6093 = ~This single-handed weapon is infused with the very essence of virtue, and is rumored to be the sanctified blade of the famous paladin Sir Wediyer. The weapon was lost when Sir Wediyer pursued a fleeing pit fiend through a planar rift. Neither the fiend nor Sir Wediyer ever returned.
+
+With the Eye of Tyr set into its pommel, Purifier is perhaps the greatest single instrument of holy justice on the face of Faerûn.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +30%
+
+Charge abilities:
+– Dispel Magic at level 30 twice per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+– Mass Cure once per day
+  Special: Heals party members 1d8+20 Hit Points
+  Area of Effect: 15-ft. radius
+
+THAC0: +5
+Damage: 2d4+5, +5 extra vs. evil
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 5~
+
+@6100 = ~This blade is highly prized by those who serve the Shadowlord, as well as any who engage in shadowy business.
+
+Combined with the Heart of the Damned into a single lethal weapon, this deadly blade is the preferred tool of assassins and thieves.
+
+STATISTICS:
+
+Combat abilities:
+– 15% chance with every hit to drain 2 levels from opponent
+– 20% chance with every hit that opponent is entangled for 4 rounds
+
+THAC0: +5
+Damage: 1d6+5 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 2~
+
+@6110 = ~The name of the mighty Wu Jen who fashioned this "companion sword" is long forgotten. However, the name Yamato, loosely translated, means "Guardian" or "Defender."
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2, plus +1 against Slashing, Piercing, and Missile
+– +5% resistance to magic and all sources of damage
+
+THAC0: +4
+Damage: 1d8+4 (piercing)
+Speed Factor: 0
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 1~
+
+@6120 = ~The daughter of a high ranking official within the bureaucratic society of Kara-Tur, Usuno rejected her family's station and carved a legend for herself among the yakuza of the underworld.
+
+The blade of this enchanted ninjatō crackles with electrical energy.
+
+STATISTICS:
+
+Equipped abilities:
+– 40% electrical resistance
+
+Combat abilities:
+– 15% chance of inflicting 5d4+1 electrical damage with each hit (Save vs. Spell at -2 for half)
+
+THAC0: +4
+Damage: 1d8+4, +1d3 electrical damage
+Damage type: Slashing
+Speed Factor: 0
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 1~
+
+@6190 = ~This long sword bears the sigil of Tyr and is intended for his most fervent followers.
+
+STATISTICS:
+
+THAC0: +3
+Damage: 1d8+3, +6 extra vs. evil
+Damage type: Slashing
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+@6330 = ~Dak'kon's Zerth Blade +3~
+@6331 = ~This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the "Nameless One."
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Can memorize one extra 1st-, 2nd-, 3rd-, and 4th-level wizard spell
+
+THAC0: +3
+Damage: 1d10+3 (slashing)
+Speed Factor: 1
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+
+@6410 = ~This blade belonged to Dabbar, a long-dead servant of Bhaal that exercised control over his minions in the most brutal of ways. In addition to strengthening the mind against the guile of others, the sword absorbs life energy from an opponent with each successful hit, healing the user. Dabbar considered it a failure of his officers if he returned from battle in less than perfect health, and as the rest of the company watched, he would administer beatings until fully healed.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm and domination spells
+
+Combat abilities:
+– Each hit heals the wielder between 1 and 5 Hit Points. It's more likely to heal less than more.
+
+THAC0: +2
+Damage: 1d8+2 (slashing)
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~
+
+@6490 = ~This is the Frostbrand scimitar Icingdeath. It is one of Drizzt's personal weapons.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +50%
+
+Combat abilities:
+– Acts as a silver +5 weapon for the purposes of what it can hit
+– Creatures immune to fire take +5 cold damage
+
+THAC0: +5
+Damage: 1d8+3, +1d3 cold
+Damage type: Slashing
+Speed Factor: 2
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 8 Strength
+
+Weight: 4~
+
+@6500 = ~This is the magical scimitar +3 that bears the name Twinkle. It is one of the personal weapons of Drizzt. Due to its magical nature, only those pure of heart can use it.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 plus extra +2 against slashing, piercing and missile weapons
+– Saves vs. Spell: +1
+– +8% physical damage resistance
+
+Combat abilities:
+– Acts as a +5 weapon for the purposes of what it can hit
+
+THAC0: +5
+Damage: 1d8+3 (slashing)
+Speed Factor: 2
+Proficiency type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 8 Strength
+
+Weight: 4~
+
+// Hawksight more interesting description
+@6540 = ~Long ago, the famous elven sentinel Arannis Alderlight had this sword forged to help him defend against the forces plotting against his kingdom. The arcane smiths imbued it with the essence of a hawk, and with this blade, Arannis became a force to be reckoned with, able to strike down foes before they could act.
+
+After Arannis faded into legend, Hawksight continued to pass through the hands of other warriors. Each bearer inherited a fragment of Arannis's vigilant spirit, transforming them into ever-vigilant sentinels, ensuring no threat went unseen and no strike landed untrue.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Saving Throws: +1
+– Attacks per round: +1/2
+
+Charge abilities:
+– Twice per day, invoke the spirit of Arannis Alderlight to detect invisibility and evil.
+
+THAC0: +4
+Damage: 1d8+2 (slashing)
+Speed Factor: 3
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 3~
+
+@6541 = ~This scimitar has been magically enhanced to give it greater accuracy in combat. Any wielder who picks up the sword immediately feels their senses becoming keener, their reflexes sharper.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Saving Throws: +1
+– Attacks per round: +1/2
+
+THAC0: +4
+Damage: 1d8+2 (slashing)
+Speed Factor: 3
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 3~
+
+@6700 = ~Beroalf was a barbarian who traveled from the cold north in search of adventure. He sought treasures and glory, but soon all he wanted were companions to share in the excitement of battle, much like those he had left behind in his faraway village. Unfortunately, his coarse remarks and rudimentary hygiene repelled most travelers he met, until he expressed his thoughts to a sympathetic mage. The mage, for a price, constructed Ras, the dancing blade. Though not quite what Beroalf had in mind, he was thrilled nonetheless and wielded the sword for many years. How they were ultimately separated is not known.
+
+Apart from the sword's regular properties, it seemingly reacts of its own volition when it's wielded in combat by subtly moving on its own in ways that promote accuracy and deflection in combat.
+
+STATISTICS:
+
+Combat abilities:
+– Dancing sword can attack on its own for 1 turn
+– Armor Class: +1, +2 vs. slashing and piercing
+– Flashy design: +1/2 attacks per round (Shadowdancers, Blades, and Swashbucklers)
+
+THAC0: +4
+Damage: 1d8+2 (slashing)
+Speed Factor: 1
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~
+
+@6810 = ~This sword radiates evil like a sour odor, and the owner never knows if <PRO_HESHE> wields the weapon or if it wields <PRO_HIMHER>. In addition to its combat abilities, Blackrazor slowly regenerates its owner with the drained strength of opponents.
+
+STATISTICS:
+
+Equipped abilities:
+– Regenerate 1 HP every 5 seconds
+– Immunity to charm and fear
+
+Combat abilities:
+– With every hit, it has a 15% chance of draining 4 levels from the target and healing the wielder by 20 Hit Points as well as hasting <PRO_HIMHER> for 20 seconds and increasing <PRO_HISHER> Strength by 3 points for 20 seconds
+– Acts as a +4 weapon for the purposes of what it can hit
+
+THAC0: +3
+Damage: 1d8+3 (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+
+@6870 = ~Dragonslayer: Peridan
+Few dare to create items such as this, for who does not fear the wrath of dragons, and what action would more tempt their reckoning? Yet, at a time lost in Faerûn's past, there was a need, and this sword was forged in answer. Tempered by a wizard's skill, this blade protects the wielder from the fear they should rightly feel while staring down a dragon's maw. It also bolsters with regeneration, dispels the trickery of illusions, and dares to inflict grievous wounds against the greatest creatures of the realms.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to fear
+– Regenerate 1 Hit Point every 5/2 rounds
+– +15% resistance against acid, electricity, fire, and cold
+– +2 Armor Class and saving throws vs. dragons
+
+Equipped abilities:
+– Acts as a +4 weapon against dragons and wyverns for the purposes of overcoming physical protections
+
+Charge abilities:
+– Detect Invisibility three times per day
+
+THAC0: +2, +6 against dragons and wyverns
+Damage: 1d8+2, plus 2d8+2 against dragons and wyverns
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~
+
+@6980 = ~Vexation +3~
+
+@6981 = ~This blade appears smooth and whole at first glance, but on closer examination, its surface is made of thousands of tiny overlapping scales. When the sword is used to stab an unsuspecting target, scales break off and lodge in the wound, irritating the victim and draining their strength.
+
+STATISTICS:
+
+Combat abilities:
+– Inflicts 1d2 points of bleeding damage on hit and one round later
+– Critical hits inflict 2d4 extra piercing damage
+– Drains 2 points of Strength from the target and transfers them to the wielder for 5 rounds when a successful backstab is performed (non-cumulative)
+
+THAC0: +3
+Damage: 1d6+3 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 2~
+
+@7140 = ~Legend has it that the souls of those who fall beneath this dark blade are forever enslaved, and can be summoned to fight invisibly at the side of the very one who defeated them.
+
+STATISTICS:
+
+Charge abilities:
+– Summon Spectral Blade once per day
+  This dancing sword fights on behalf of the one who wields Spectral Brand for 1 turn, attacking once per round and doing 1d8+3 slashing damage with each hit.
+
+THAC0: +4
+Damage: 1d8+4, +1d4 cold damage
+Damage type: Slashing
+Speed Factor: 1
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 8 Strength
+
+Weight: 2~
+
+@7141 = ~Legend has it that the souls of those who fall beneath this dark blade are forever enslaved, and can be summoned to fight invisibly at the side of the very one who defeated them.
+
+Drawing on the necromancy of the Skull of the Lich, Spectral Brand is now an instrument of unholy death that should never have been unleashed upon the realms.
+
+STATISTICS:
+
+Equipped abilities:
+– Negative Plane Protection
+
+Charge abilities:
+– Armor Piercing Strike once per day
+  Special: +10 THAC0, +4 damage, and +10% critical hit chances. Can't critically miss.
+  Duration: 3 rounds
+
+– Summon Spectral Blade once per day
+  This dancing sword fights on behalf of the one who wields Spectral Brand for 1 turn, attacking once per round and doing 1d8+3 slashing damage with each hit.
+
+THAC0: +5
+Damage: 1d8+5, +1d6 cold damage
+Damage type: Slashing
+Speed Factor: 0
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 8 Strength
+
+Weight: 2~
+
+@7160 = ~Kachiko's Whisper +3~
+@7161 = ~Kachiko's Whisper
+This wakizashi was the favored weapon of a renowned warrior named Kachiko, whose origins trace back to the eastern lands of Kara-Tur. Though much of her early life is largely unknown, it is said she was trained as a shadowdancer, quickly ascending to become one of the most accomplished members of her order.
+
+Old tales recount that, during a mission deep in the heart of a forgotten mountain temple, Kachiko came upon this blade resting atop an ornate pedestal. As her hand closed around the hilt, the sword resonated with a soft whisper, as if acknowledging her presence.
+
+From that moment, the blade's latent powers awakened, and the soft whisper that greeted Kachiko became its namesake. The bond between warrior and weapon grew inseparable, and many of Kachiko's greatest feats were accomplished with this blade at her side.
+
+STATISTICS:
+
+Equipped abilities:
+– +10% bonus in Hiding in the Shadows and Move Silently (shadowdancers only)
+
+Combat abilities:
+– Confounding Whisper: each hit drains 2 points of Wisdom from the target for 5 rounds (save vs. Death negates) and causes Confusion for 1 round.
+
+Charge abilities:
+– Shadow Blink three times per day: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, Stalkers, and monks also gain +1 backstab multiplier during this time (doesn't stack).
+
+THAC0: +3, +4 (shadowdancers)
+Damage: 1d8+3 (piercing)
+Speed Factor: 0
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+  5 Strength
+
+Weight: 2~
+
+@7162 = ~Shadow Blink~
+@7163 = ~Kachiko's Whisper +5~
+@7164 = ~Kachiko's Whisper
+This wakizashi was the favored weapon of a renowned warrior named Kachiko, whose origins trace back to the eastern lands of Kara-Tur. Though much of her early life is largely unknown, it is said she was trained as a shadowdancer, quickly ascending to become one of the most accomplished members of her order.
+
+Old tales recount that, during a mission deep in the heart of a forgotten mountain temple, Kachiko came upon this blade resting atop an ornate pedestal. As her hand closed around the hilt, the sword resonated with a soft whisper, as if acknowledging her presence.
+
+From that moment, the blade's latent powers awakened, and the soft whisper that greeted Kachiko became its namesake. The bond between warrior and weapon grew inseparable, and many of Kachiko's greatest feats were accomplished with this blade at her side.
+
+Now upgraded by Cespenar, this sword has reached the pinnacle of its power—its true potential, first awakened by the warrior Kachiko, is now fully unleashed.
+
+STATISTICS:
+
+Equipped abilities:
+– Immune to deafness and all sound-based magic, including banshee and demilich howls
+– +15% Hide in Shadows and Move Silently (shadowdancer)
+– 10% chance per hour when hit to be affected by Shadow Form (shadowdancer)
+
+Combat abilities:
+– Deadly Whisper: each hit drains 2 points of Wisdom from the target for 5 rounds (save vs. Death at -2 negates) and causes Confusion for 1 round. After one round, there is a 15% chance the sword successfully commands the target to die unless another save vs. Death at -2 succeeds (this can only trigger on the same enemy once every 3 rounds).
+
+Charge abilities:
+– Shadow Blink five times per day: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, stalkers, and monks also gain +1 backstab multiplier during this time (doesn't stack).
+
+THAC0: +5
+Damage: 1d8+5 (piercing)
+Speed Factor: 0
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+  5 Strength
+
+Weight: 2~
+
+@7165 = ~Wisdom Drained~
+@7166 = ~Kachiko's Shadow Form available~
+@7167 = ~Commanded to die~
+
+@7510 = ~This flaming, magical bastard sword was forged in the Elemental Plane of Fire's City of Brass. It was stolen from the city many centuries ago, leaving a long trail of dead behind it as the sultan who oversaw its construction attempted to hunt it down. Over time, his anger cooled and his memory faded, and the sword was left to continually change hands between mortals.
+
+STATISTICS:
+
+Equipped Abilities:
+– Fire Resistance: +50%
+
+Charge Abilities:
+– Cast Delayed Blast Fireball once per day
+  Damage: 15d6 fire (Save vs. Spell for half)
+  Area of Effect: 15-ft. radius
+
+– Cast Sunfire once per day
+  Damage: 15d6 fire (Save vs. Spell for half)
+  Area of Effect: 15-ft. radius
+
+THAC0: +5
+Damage: 2d4+5, +10 fire damage
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 5~
+
+@7540 = ~One of many created in the name of the mage who first discovered how to enchant a blade in this manner, this was the weapon of the outlaw Garno, and many a cleric died at its edge. Garno became disillusioned with the gods when his family was put to the torch by clerics of Loviatar and spent his life seeking revenge. Despite his focused hatred of the devout, it is thought that one of the gods of chaos had a hand in Garno's acquisition of this sword, delighting in the havoc that followed the young man.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to hold and paralysis
+
+Charge abilities:
+– Haste once per day
+  Duration: 1 turn
+
+THAC0: +2
+Damage: 1d6+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 2~
+
+@7560 = ~The benefits inherent in this sword are plain to see: It is exceptionally accurate, and a lick of flame follows every blow, searing the target in addition to the normal damage received, which may linger on the target, causing them to burn even more. It is an efficient troll-killer, though it has not yet been heralded as such in song or legend.
+
+STATISTICS:
+
+Combat abilities:
+– Lingering flame: if a Save vs. Spell is failed, targets continue to burn, suffering 1d3 points of fire damage per round for 3 rounds
+
+THAC0: +3
+Damage: 2d4+3, plus 1d3+1 fire damage
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 5~
+
+@7561 = ~Searing~
+
+@7570 = ~The blade of this weapon seems to shimmer, revealing a fluid, razor edge. Truly there was great skill involved in its construction, as well as a blessing or two from some well-meaning eye above, even though the hilt is comparatively almost clumsily adorned.
+
+STATISTICS:
+
+Equipped abilities:
+– +20% cold resistance
+
+THAC0: +3
+Damage: 1d8+3, +1d2 cold damage
+Damage type: Slashing
+Speed Factor: 2
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 8 Strength
+
+Weight: 3~
+
+@7580 = ~Named for Prince Rashad, former ruler of a minor principality to the east, this blade and many of the prince's possessions were taken by disgruntled palace guards after his death. The role of the guards in the unfortunate affair was never determined, but rumor has it that all died within a year, slain by this very weapon.
+
+STATISTICS:
+
+Combat abilities:
+– Cursed Wound: critical hits prevent most sources of healing for 5/2 rounds
+– +5% critical hit chances with this weapon
+
+THAC0: +2
+Damage: 1d8+2 (slashing)
+Speed Factor: 3
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 4~
+
+@7581 = ~Cursed Wound: cannot heal~
+
+@7660 = ~This weapon has a bloody history, having been used to exercise its namesake many times. Popular among the assassin trade for its size and enchantment, it has been in the possession of many of the realms' more dangerous citizens, though seldom remaining in one place for any length of time.
+
+STATISTICS:
+
+Combat abilities:
+– +10% critical chance (this weapon only)
+– Critical hits cause bleeding: 1d6 piercing damage per round for 3 rounds
+
+THAC0: +4
+Damage: 1d6+4 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 2~
+
+@7670 = ~Short Sword of Backstabbing: The Shadow's Blade
+The Shadow's Blade was created to be the perfect assassin's tool. It is highly sought after by any who settle differences with a blade, and many that possess it do not do so for long.
+
+STATISTICS:
+
+Combat abilities:
+– Backstab multiplier: +1 (single-classed Thieves-only)
+– +2 THAC0 on main hand while holding the blade (single-classed Thieves only)
+
+THAC0: +3
+Damage: 1d6+3 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@7880 = ~This wakizashi is finely made, but gaudy false gems have been glued on to its hilt. The weapon was procured by Bartleby, a local thug whose obsession with the continent of Kara-Tur has made him one of the most obnoxious mercenaries in the local taverns. He rambles for hours on how different the foreign culture is to that of the Sword Coast and prides himself on being a "city samurai," a title that is as offensive as it is undeserved.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1, +3 vs. slashing attacks (Kensai)
+
+THAC0: +1, +2 (Kensai)
+Damage: 1d8+1 (piercing)
+Speed Factor: 2
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 2~
+
+// TODO
+@8000 = ~Power can corrupt even the noblest of mages, and the long-lived elves of Faerûn have seen what devastating consequences can occur when a mage loses control. This elegant long sword, its silver hilt decorated with clear blue gems, was crafted to deal with arcane spellcasters who have abused their gift. The sword assists any hunter who tracks down out-of-control mages, and has particular potency in the hands of wizard slayers and inquisitors.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +5%
+– Magic Damage Resistance: +10%, +25% for Wizard Slayers and Inquisitors
+– Saves vs. Spell: +4 (Wizard Slayers and Inquisitors), +2 (others)
+
+Combat abilities:
+– On a critical hit, the target will be affected by Dispel Magic, which always succeeds
+
+THAC0: +2, +3 (Wizard Slayers and Inquisitors)
+Damage: 1d8+2 (slashing)
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~
+
+@8010 = ~The Burning Earth +2~
+@8011 = ~Flame Tongue +2: The Burning Earth
+There was a time before Neverwinter was warm and before the great Anauroch was dry... or so it is said. Few relics remain to prove such an age existed, and fewer still have an identifiable purpose. "The Burning Earth" seems straightforward enough—it burns a victim with magical fire, and a cryptic rune seems to suggest that the power comes from the ground itself—but whoever constructed it remains a mystery. It looks a perfectly serviceable weapon, but something in the balance or grip is... wrong. It strains the forearm a touch, and does not fit the hand just right. It doesn't seem to hurt a warrior's performance, aside from the nagging doubt that the blade was not made for <PRO_HIMHER>... or any other humanoid.
+
+STATISTICS:
+
+Combat abilities:
+Acts as a +2 weapon in all respects. However, it's more powerful against regenerating, cold-using, and undead creatures:
+ – Werewolves, trolls, planetars, and devas: it acts as a +3 weapon, and deals 1 extra fire damage
+ – Solars: acts as a +4 weapon, and deals 1 extra fire damage
+ – Winter wolves and silver dragons: acts as a +4 weapon, and deals 2 extra fire damage
+ – Undead: acts as a +5 weapon, and deals 3 extra fire damage.
+
+THAC0: +2
+Damage: 1d8+2, +2 fire damage
+Damage type: Slashing
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+
+@8020 = ~When a member of the Scarlet Brotherhood kills one of that organization's "great enemies", they are often rewarded with this sword. How this sword made its way from the world of Greyhawk (where the Brotherhood is based) to Faerûn is a mystery. When unsheathed, the ninjatō will glow blood-red.
+
+STATISTICS:
+
+Equipped abilities:
+– Off-hand THAC0: +2 (monks only)
+– +5% critical chances while holding this weapon (monks only)
+
+Combat abilities:
+– Attacks per round: +1
+– Hit target takes 12 points of poison over 2 rounds (Save vs. Death negates)
+
+THAC0: +3, +5 (Monks only)
+Damage: 1d8+3, +1 Poison damage
+Damage type: Slashing
+Speed Factor: 0
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+@50070 = ~Sword of Arvoreen +5
+Another gift to Mazzy from Arvoreen, this short sword may only be used by her. The enchantments that exist within this sword give it the ability to slow any opponent struck by it.
+
+With <CHARNAME>'s help and the blessing of Arvoreen, the sword was recently re-enchanted to become even more powerful.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to movement-limiting effects and stun
+– Attacks per round: +1/2
+
+Combat abilities:
+– Hit target's movement rate is slowed by 4 for 45 seconds and Haste is dispelled (Save vs. Wand at -2 negates)
+
+THAC0: +5
+Damage: 1d6+5, +4 piercing damage vs. evil
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@50080 = ~This weapon was commissioned by <CHARNAME>, and combines the power of three powerful weapons, Rashad's Talon, Water's Edge, and Adjatha the Drinker, making it a formidable weapon that combines and improves the powers of all three. In addition, however, its mastery over water protects the user from the harmful effects of Horrid Wilting. Most uniquely, the liquid nature of the blade allows it to extend and splash during combat, improving the strike range granted by the weapon to a range of that of two-handed swords.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm and domination
+– Immunity to Horrid Wilting
+
+Combat abilities:
+– Double striking range
+– +5% critical hit chances with this weapon
+– Cursed Wound: critical hits prevent most sources of healing for 2 rounds
+– Each hit heals the wielder between 2 and 6 Hit Points. It's more likely to heal less than more.
+
+THAC0: +4
+Damage: 1d8+4, plus 1d5+1 cold damage
+Damage type: Slashing
+Speed Factor: 1
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 8 Strength
+
+Weight: 3~

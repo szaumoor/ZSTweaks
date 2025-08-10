@@ -1,0 +1,883 @@
+@6080 = ~The Holy Avenger: Carsomyr
+Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerûn, though its origin and history is thought purposefully forgotten so that the sword itself shall never overshadow the importance of the struggles that must be fought today. It is infused with the very essence of virtue and requires as much from any Paladin who would hope to wield it. The evils of the realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease. Carsomyr also harbors a special distaste for the forces of evil, and such creatures must fear additional damage from its touch in battle.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: 50%
+
+Combat abilities:
+– Dispel Magic at level 30 on each hit
+
+Charge abilities:
+– Dispel Magic at level 15 three times per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+THAC0: +5
+Damage: 1d12+5, +5 extra vs. evil
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 7~
+
+@6081 = ~The Holy Avenger: Carsomyr
+Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerûn, though its origin and history is thought purposefully forgotten so that the sword itself shall never overshadow the importance of the struggles that must be fought today. It is infused with the very essence of virtue and requires as much from any Paladin who would hope to wield it. The evils of the realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease. Carsomyr also harbors a special distaste for the forces of evil, and such creatures must fear additional damage from its touch in battle.
+
+Now combined with the Eye of Tyr, even such powerful weapon was made even greater.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: 50%
+
+Combat abilities:
+– Dispel Magic at level 30 whenever the sword strikes an opponent
+
+Charge abilities:
+– Dispel Magic at level 15 three times per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+THAC0: +6
+Damage: 1d12+6, +6 extra vs. evil
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 6~
+
+// Only dispel magic component installed
+@6082 = ~The Holy Avenger: Carsomyr
+Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerûn, though its origin and history is thought purposefully forgotten so that the sword itself shall never overshadow the importance of the struggles that must be fought today. It is infused with the very essence of virtue and requires as much from any Paladin who would hope to wield it. The evils of the realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease. Carsomyr also harbors a special distaste for the forces of chaos and evil, and such creatures must fear additional damage from its touch in battle.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: 50%
+
+Combat abilities:
+– Dispel Magic at level 30 on each hit if a Save vs. Spell is failed
+
+Charge abilities:
+– Dispel Magic at level 20 three times per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+THAC0: +5
+Damage: 1d12+5, +5 extra vs. chaotic evil
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 7~
+
+// dispel magic component and chaotic evil component both installed
+@6083 = ~The Holy Avenger: Carsomyr
+Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerûn, though its origin and history is thought purposefully forgotten so that the sword itself shall never overshadow the importance of the struggles that must be fought today. It is infused with the very essence of virtue and requires as much from any Paladin who would hope to wield it. The evils of the realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease. Carsomyr also harbors a special distaste for the forces of evil, and such creatures must fear additional damage from its touch in battle.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: 50%
+
+Combat abilities:
+– Dispel Magic at level 30 on each hit if a Save vs. Spell is failed
+
+Charge abilities:
+– Dispel Magic at level 20 three times per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+THAC0: +5
+Damage: 1d12+5, +5 extra vs. evil
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 7~
+
+// only dispel magic component installed
+@6084 = ~The Holy Avenger: Carsomyr
+Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerûn, though its origin and history is thought purposefully forgotten so that the sword itself shall never overshadow the importance of the struggles that must be fought today. It is infused with the very essence of virtue and requires as much from any Paladin who would hope to wield it. The evils of the realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease. Carsomyr also harbors a special distaste for the forces of chaos and evil, and such creatures must fear additional damage from its touch in battle.
+
+Now combined with the Eye of Tyr, even such powerful weapon was made even greater.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: 50%
+
+Combat abilities:
+– Dispel Magic at level 30 whenever the sword strikes an opponent if a Save vs. Spell at -2 is failed
+
+Charge abilities:
+– Dispel Magic at level 30 three times per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+THAC0: +6
+Damage: 1d12+6, +6 extra vs. chaotic evil
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 6~
+
+// dispel magic component and chaotic evil component both installed
+@6085 = ~The Holy Avenger: Carsomyr
+Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerûn, though its origin and history is thought purposefully forgotten so that the sword itself shall never overshadow the importance of the struggles that must be fought today. It is infused with the very essence of virtue and requires as much from any Paladin who would hope to wield it. The evils of the realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease. Carsomyr also harbors a special distaste for the forces of evil, and such creatures must fear additional damage from its touch in battle.
+
+Now combined with the Eye of Tyr, even such powerful weapon was made even greater.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: 50%
+
+Combat abilities:
+– Dispel Magic at level 30 whenever the sword strikes an opponent if a Save vs. Spell at -2 is failed
+
+Charge abilities:
+– Dispel Magic at level 30 three times per day
+  Range: 40 ft.
+  Area of Effect: 15-ft. radius
+
+THAC0: +6
+Damage: 1d12+6, +6 extra vs. evil
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 6~
+
+//only evil tweak
+@6170 = ~The title does not refer to the blade itself, but rather to the woman who originally wielded it in the icy hinterlands of Faerûn. Her name was Carerra, and she was a veritable firestorm that swept across arctic trolls and the northern orcish tribes. She was a hated enemy of many a shaman whose magic often floundered against her fury. After a lifetime of raucous battle, it was old age that eventually claimed her. The sword was passed to her granddaughter, an adventurer, who presumably brought it to Amn.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +10%
+
+THAC0: +2
+Damage: 1d10+2, +4 extra vs. evil
+Damage type: Slashing
+Speed Factor: 8
+Proficiency Type: Two-handed sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+// only troll bonus tweak
+@6171 = ~The title does not refer to the blade itself, but rather to the woman who originally wielded it in the icy hinterlands of Faerûn. Her name was Carerra, and she was a veritable firestorm that swept across arctic trolls and the northern orcish tribes. She was a hated enemy of many a shaman whose magic often floundered against her fury. After a lifetime of raucous battle, it was old age that eventually claimed her. The sword was passed to her granddaughter, an adventurer, who presumably brought it to Amn.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +10%
+
+Combat abilities:
+– Inflicts +2 fire damage against trolls
+– Inflicts +4 slashing damage against chaotic evil
+
+THAC0: +2
+Damage: 1d10+2
+Damage type: Slashing
+Speed Factor: 8
+Proficiency Type: Two-handed sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+//both bonuses active
+@6172 = ~The title does not refer to the blade itself, but rather to the woman who originally wielded it in the icy hinterlands of Faerûn. Her name was Carerra, and she was a veritable firestorm that swept across arctic trolls and the northern orcish tribes. She was a hated enemy of many a shaman whose magic often floundered against her fury. After a lifetime of raucous battle, it was old age that eventually claimed her. The sword was passed to her granddaughter, an adventurer, who presumably brought it to Amn.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +10%
+
+Combat abilities:
+– Inflicts +2 fire damage against trolls
+– Inflicts +4 slashing damage against evil
+
+THAC0: +2
+Damage: 1d10+2
+Damage type: Slashing
+Speed Factor: 8
+Proficiency Type: Two-handed sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+// only 1d12
+@6280 = ~The Unholy Reaver: Ir'revrykal
+This dark, two-handed sword radiates evil from a distance. The weapon is not just unholy, but unearthly as well. Long thought to be just a myth, the blade's infamy pervades the accounts of learned bards and ancient sages. According to these accounts, the githyanki wizard-smith Ir'mlar forged the blade many centuries ago in dark caverns deep beneath Tu'narath. This githyanki city floats in the Astral Plane upon the petrified corpse of a dead god known only as "the One in the Void." To craft the sword, Ir'mlar allegedly used the One's own bones, which consist of a metallic substance unknown on the Prime Material Plane. The smith then imbued the weapon with a fiendish entity whom some seers claim was a mighty prince of the lower plane of Carceri. Others claim the sword contains the One in the Void's own spirit, banished within the blade for crimes committed against other gods in past ages. In any case, Ir'revrykal possesses such an enmity against good that only blackguards committed to evil may wield it. Circular runes etched on the blade proclaim its name in ancient tir'su, the githyanki language. The runes translate roughly as "Pain-Servant."
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm
+
+Combat abilities:
+– 50% chance to Dispel Magic on each hit
+
+THAC0: +5
+Damage: 1d12+5, +5 extra vs. good creatures
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+// only dispel magic tweak
+@6281 = ~The Unholy Reaver: Ir'revrykal
+This dark, two-handed sword radiates evil from a distance. The weapon is not just unholy, but unearthly as well. Long thought to be just a myth, the blade's infamy pervades the accounts of learned bards and ancient sages. According to these accounts, the githyanki wizard-smith Ir'mlar forged the blade many centuries ago in dark caverns deep beneath Tu'narath. This githyanki city floats in the Astral Plane upon the petrified corpse of a dead god known only as "the One in the Void." To craft the sword, Ir'mlar allegedly used the One's own bones, which consist of a metallic substance unknown on the Prime Material Plane. The smith then imbued the weapon with a fiendish entity whom some seers claim was a mighty prince of the lower plane of Carceri. Others claim the sword contains the One in the Void's own spirit, banished within the blade for crimes committed against other gods in past ages. In any case, Ir'revrykal possesses such an enmity against good that only blackguards committed to evil may wield it. Circular runes etched on the blade proclaim its name in ancient tir'su, the githyanki language. The runes translate roughly as "Pain-Servant."
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm
+
+Combat abilities:
+– Dispel Magic at level 30 on each hit if a Save vs. Spell is failed
+
+THAC0: +5
+Damage: 1d10+5, +5 extra vs. good creatures
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+// both
+@6282 = ~The Unholy Reaver: Ir'revrykal
+This dark, two-handed sword radiates evil from a distance. The weapon is not just unholy, but unearthly as well. Long thought to be just a myth, the blade's infamy pervades the accounts of learned bards and ancient sages. According to these accounts, the githyanki wizard-smith Ir'mlar forged the blade many centuries ago in dark caverns deep beneath Tu'narath. This githyanki city floats in the Astral Plane upon the petrified corpse of a dead god known only as "the One in the Void." To craft the sword, Ir'mlar allegedly used the One's own bones, which consist of a metallic substance unknown on the Prime Material Plane. The smith then imbued the weapon with a fiendish entity whom some seers claim was a mighty prince of the lower plane of Carceri. Others claim the sword contains the One in the Void's own spirit, banished within the blade for crimes committed against other gods in past ages. In any case, Ir'revrykal possesses such an enmity against good that only blackguards committed to evil may wield it. Circular runes etched on the blade proclaim its name in ancient tir'su, the githyanki language. The runes translate roughly as "Pain-Servant."
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm
+
+Combat abilities:
+– Dispel Magic at level 30 on each hit if a Save vs. Spell is failed
+
+THAC0: +5
+Damage: 1d12+5, +5 extra vs. good creatures
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+@6400 = ~This type of staff is thoroughly linked to the image of the spellcasting profession, rare though it is. It is among the most powerful tools that a wizard can possess, the culmination of complex enchantments and endless study. This particular example is good in melee, grants invisibility, and offers protection from charms and evil. It can also cast Spell Trap and Dispel Magic and launch a Fireball-Lightning Bolt combination. The quintessential Mage item.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Invisibility
+– Immunity to charm
+– Protection From Evil
+
+Combat abilities:
+– Dispel Magic at level 30 on each hit if Save vs. Spell at -2 is failed
+
+Charge abilities:
+– Fireball-Lightning Bolt three times per day
+  Fireball: 10d6 fire damage to all in a 15-ft. radius (Save vs. Spell for half)
+  Lightning: 10d6 electrical damage to all in its path (Save vs. Spell for half)
+  Range: 150 ft.
+
+– Spell Trap once per day
+  Duration: 8 hours or until 30 spell levels have been trapped
+  Area of Effect: The user
+
+THAC0: +1 (strikes as a +5 weapon)
+Damage: 1d6+1 (crushing)
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 4~
+
+@6420 = ~Forged in antiquity by a cult devoted to the goddess Umberlee, this weapon of vengeance was designed to aid the cult's champion in retrieving a holy artifact from the fire giants of the Storm Horn Mountains. That was a lot of hope to place in one champion, and unfortunately the Wave had been lost ever since.
+
+STATISTICS:
+
+Combat abilities:
+– 15% chance of draining the victim of water (+15 cold damage)
+– Slays fire elementals, efreet, and salamanders
+
+THAC0: +4
+Damage: 1d10+4, +3 cold damage (tripled vs. giants)
+Damage type: Piercing or Slashing
+Speed Factor: 5
+Proficiency Type: Halberd
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 12~
+
+@6550 = ~This was the weapon of Dominique Harl, a sightless paladin who frequently traveled Faerûn. When attacked, Dominique would unleash the black mist that is this halberd's namesake, potentially blinding all within 5 feet. This often gave him the advantage, for he lived in darkness all his life, seeing only with the inner light of faith. Dominique eventually fell, his body found in a dark forest, slain by a creature of the night even more at home in the shadows than he.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to blindness
+
+Charge abilities:
+– Blindness three times per day (Save vs. Spell at -2 negates)
+  Duration: 2 hours
+  Area of Effect: 5-ft. radius
+
+THAC0: +4
+Damage: 1d10+4 (piercing or slashing)
+Speed Factor: 5
+Proficiency Type: Halberd
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 10~
+
+@6800 = ~Lawrence Lilarcor was well known, not for being brave, but for being an idiot. As the tale goes, the boastful Lilarcor left his village at the urging of his friends so that the "great hero" could do battle with a devious treant. He walked for days in the dead of winter until, feverish, he found his target and began an epic wrestling match. Unfortunately (or perhaps luckily), the "treant" was nothing more than a craggy old normal oak. His friends had been jesting, not actually expecting that Lilarcor would go fight the fictitiously dangerous tree. That might have been the end of it, but Lilarcor, not really knowing what a treant was in the first place, didn't realize the truth. He eventually uprooted the oak and, marching proudly home, he declared himself a hero. Thus was born a laughing stock of epic proportions, and over time the name of Lilarcor became the sacrificial fool in many tales of "less than brilliance."
+
+It is not known whether this enchanted weapon is Lilarcor himself, perhaps imprisoned by an evil mage or some other odd coincidence of fate, but it certainly acts in a manner consistent with his level of competence. If it is he, he has never bemoaned his captivity. He might not realize, or care, that he is no longer a human.
+
+As a weapon, Lilarcor has its uses, but many a warrior has eventually given it away. Banter such as "Ouch, that musta hurt," "Oh yeah! Got 'im good," and "Beware my bite for it might... might... might really hurt or something" is a constant barrage on a warrior's psyche.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm and confusion
+
+Combat abilities:
+– 25% chance per hit it causes confusion on the target 1 round, unless a save vs. Spell succeeds
+
+THAC0: +3
+Damage: 1d10+3 (slashing)
+Speed Factor: 7
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+// nerf only version
+@6830 = ~A social faux pas placed upstart Andor Licon in a duel with Baron Eeirk, heir to a warrior king. Though they seemed of even skill, Andor grew oddly weaker with each hit of the Baron's family blade. Panicking, he bade his bodyguards kill Eeirk. Despite his claims of morality, some noted that the young noble had positioned his men before the duel was even underway, and though he professed disdain for its dark magic, Andor made a tidy fortune off the sale of the evil blade.
+
+STATISTICS:
+
+Combat abilities:
+– Each hit makes the target receive a cumulative 2 point penalty to their THAC0 for 5 rounds unless they save vs. Spell at -4
+
+THAC0: +4
+Damage: 1d10+4 (slashing)
+Speed Factor: 6
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+// dicesize change only
+@6840 = ~A social faux pas placed upstart Andor Licon in a duel with Baron Eeirk, heir to a warrior king. Though they seemed of even skill, Andor grew oddly weaker with each hit of the Baron's family blade. Panicking, he bade his bodyguards kill Eeirk. Despite his claims of morality, some noted that the young noble had positioned his men before the duel was even underway, and though he professed disdain for its dark magic, Andor made a tidy fortune off the sale of the evil blade.
+
+STATISTICS:
+
+Combat abilities:
+– Each hit makes the target receive a cumulative 2 point penalty to their THAC0 for 2 turns
+
+THAC0: +4
+Damage: 1d12+4 (slashing)
+Speed Factor: 6
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+// dicesize and nerf both
+@6850 = ~A social faux pas placed upstart Andor Licon in a duel with Baron Eeirk, heir to a warrior king. Though they seemed of even skill, Andor grew oddly weaker with each hit of the Baron's family blade. Panicking, he bade his bodyguards kill Eeirk. Despite his claims of morality, some noted that the young noble had positioned his men before the duel was even underway, and though he professed disdain for its dark magic, Andor made a tidy fortune off the sale of the evil blade.
+
+STATISTICS:
+
+Combat abilities:
+– Each hit makes the target receive a cumulative 2 point penalty to their THAC0 for 5 rounds unless they save vs. Spell at -4
+
+THAC0: +4
+Damage: 1d12+4 (slashing)
+Speed Factor: 6
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+@6860 = "Barbarian Warblade +4"
+@6861 = ~This large sword is an enchanted version of the barbaric swords of the northern tribes. Forged during battle and dipped in the blood of the brave fallen, the enchantment granted to the blade by the barbarian gods is incredible.
+
+STATISTICS:
+
+Equipped abilities:
+– Acts as a +4 weapon in all respects except damage when wielded by non-barbarians
+– Barbarians wielding this sword will receive 5% physical damage resistance, and will deal damage as if it was a +5 weapon
+
+THAC0: +4
+Damage: 1d12+2, +1d4 cold damage
+Damage type: Slashing
+Speed Factor: 6
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 11~
+
+@6900 = ~This wide, heavy blade gives way to jagged teeth near its tip, a serrated edge designed to rip and tear flesh. Little is known of the blade's origin, but the elaborate grip marked with worn runes hints that it may have been crafted in ancient Unther.
+
+STATISTICS:
+
+Combat abilities:
+– Deals an extra 2d5+2 points of slashing damage on a critical hit
+– Critical hit chances: +5%
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d10+2 (slashing)
+Speed Factor: 8
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+@7060 = ~This simple staff radiates a powerful enchantment, though its plain design suggests a simple origin. It reflects the quiet strength that faith brings, and was likely the modest weapon of a priest or cleric.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Casting and turning undead level: +1 (clerics only)
+– +1 spell slot for levels 3, 4 and 5 (clerics only)
+
+Charge abilities:
+– Mass Cure twice per day
+  Special: Targets are healed by 1d8+9 hit points
+  Range: 0
+  Area of effect: 15 ft. around the caster
+
+THAC0: +3
+Damage: 1d6+3 (crushing)
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@7130 = ~Carved from the heart of a rotten treant, this spear smells of death. When held in your hands, it groans a little, as if reluctant to allow a living thing to touch it. In battle, the Spear of Withering spits a foul poison into its target upon each successful hit.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target is poisoned for 1 round, suffering 12 poison damage in total, unless a Save vs. Death at -2 succeeds
+
+THAC0: +4
+Damage: 1d6+4, +4 poison damage
+Damage type: Piercing
+Speed Factor: 2
+Proficiency Type: Spear
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 5~
+
+@7500 = ~The electrum-plated shaft of this weapon hums with magical power. Occasionally, blue bolts of energy run down the length of the spear, charging it. In battle when it hits an opponent, it strikes for additional electricity damage, and the damage of this depends entirely of how much energy it contains.
+
+STATISTICS:
+
+Combat abilities:
+– Electrical damage depends on the random electric charge of the spear (1-3). Higher values are less likely to happen
+– May electrify the target during the next 2 rounds, dealing 2 points of electric damage each round (Save vs. Spell at +2)
+
+THAC0: +1
+Damage: 1d6+1, plus 1 to 3 electrical damage
+Damage type: Piercing
+Speed Factor: 5
+Proficiency Type: Spear
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@7501 = ~Electrified for 2 rounds~
+
+@7590 = ~There was a time when magic was distrusted even more so than now, and the burning of "heretics" was woefully common. Delmarey, a witch from the swamplands near Myth Rhynn, faced just such a fate when she was blamed for an unseasonable drought. Taken by surprise and sentenced by a mob, she was put to the torch in the village square. With her dying breath she uttered a foul curse, fueling the fire to an unstoppable magnitude. By dawn, the entire village was reduced to black coal, save the burnt remnant of the pole Delmarey had been bound to. This staff has been imbued with some a part of Delmarey's power, making it highly dangerous weapon.
+
+STATISTICS:
+
+Equipped abilities:
+– +25% Fire resistance
+
+Combat abilities:
+– Hits with this weapon reduce the Fire resistance of the target by -25% for 2 rounds. This effect does not stack.
+
+Charge abilities:
+– Cast Witch's Wrath once per day
+  Area of Effect: All enemies around the caster in 15 ft. Does not affect allies.
+  Damage: 8d6+10 fire damage. Targets affected by Panic take 4d6+10 more damage. No save is allowed.
+  Special: Targets will be affected by Panic and Slow for 3 rounds unless a Save vs. Spell at -2 is made.
+
+THAC0: +4
+Damage: 1d6+4, +4 fire damage
+Damage type: Crushing
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@7591 = ~Witch's Wrath~
+
+@7640 = ~When activated, this rod may be used as a powerful magical staff. Any creature hit by the rod must make a saving throw vs. Spell or become paralyzed in terror, fearing the wielder as if he or she were a flesh-eating demon from the Abyss, which may kill them if the fear goes out of control. There is a drawback to using this rod, however: Each time the rod is used, there is a chance that the wielder loses one point of Constitution for one 24 hours.
+
+STATISTICS:
+
+Combat abilities:
+– Target must save vs. Spell or flee in terror for 2 rounds. After one round, if the the target is still panicking, there's a 20% chance the target dies from the shock if they fail a save vs. Death; if they survive, they become rooted in place for the remaining of the round.
+– Every time the rod hits an opponent, there's a 10% chance the wielder will lose 1 point of Constitution for 24 hours
+
+THAC0: +3
+Damage: 1d6+3 (crushing)
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: Two-handed
+
+Weight: 3~
+
+@7641 = ~Killed by panic~
+
+@7680 = ~Githyanki Silver Sword~
+
+@7681 = ~Each githyanki knight in service to the Lich Queen Vlaakith is granted a silver sword upon reaching a level of power sufficient to conjure these blades into existence. This particular sword is exceptionally sharp, capable of severing a head with a single stroke.
+
+The githyanki's unwavering devotion to their queen inspires both awe and unease. Their fierce loyalty, while admired by some, raises questions for others—what might happen if they were ever forced to confront the imperfections of the very figure they revere?
+
+STATISTICS:
+
+Equipped abilities:
+– Unaffected by mind blasts and domination attempts by Mind Flayers
+
+Combat abilities:
+– Acts as a +5 weapon against Mind Flayers
+– 25% chance per hit that target must save vs. Death at -2 or die from decapitation. Targets killed this way cannot be resurrected without a True Resurrection spell or divine intervention
+– Psionic attack: inflicts 2d8 irresistible psychic damage on a critical hit, which also causes confusion for 10 seconds if a Save vs. Spell at -2 is failed. This damage cannot be resisted, but mindless or brainless creatures won't be affected.
+
+THAC0: +3, +5 vs. Mind Flayers
+Damage: 1d10+3, +5 vs. Mind Flayers (slashing)
+Speed Factor: 6
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 15~
+
+@7682 = ~Psychic damage: 2d8~
+
+@7690 = ~Some believe this massive blade to be of drow origin, though others dispute this claim. However, all agree this great sword was fashioned with a single purpose... to rid the world of the illithid. The attacks from the Psion's Blade inflict grievous wounds on illithids, and those who wield it are immune to the mind flayer's psionic attacks. The bewildering gaze of umber hulks, often found serving the illithid, are similarly rendered harmless.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to confusion and all psionic attacks
+
+Combat abilities:
+– Struck illithids must save vs. Death at -3 or die instantly. This effect can only affect a particular illithid once per round.
+
+THAC0: +5, +7 against Mind Flayers
+Damage: 1d10+5, +7 vs. Mind Flayers (slashing)
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 9~
+
+@7691 = ~Illithid destroyed~
+
+@7700 = ~This was the weapon of Thorvin Dukal, one of seven self-proclaimed Dragonslayers who spent years railing against what they called "an insidious dragon infestation that threatened Faerûn." Thorvin had this weapon enchanted at great expense and used it on many occasions, though of dragons only a single white has fallen to it. The Dragonslayers met their match in a cantankerous ancient red who slew the entire group in an epic battle. This weapon did not end up in the beast's hoard, however, as the creature returned to its lair to recuperate and when it emerged, the field of combat was well scavenged.
+
+STATISTICS:
+
+Combat abilities:
+– Acts as a +6 weapon vs. dragons and wyverns
+
+THAC0: +3, +6 vs. dragons and wyverns
+Damage: 1d10+3, +6 vs. dragons and wyverns
+Damage type: Piercing/Slashing
+Speed Factor: 6
+Proficiency Type: Halberd
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 12~
+
+@7710 = ~Trying to profit from the strength of greater beings, many years ago the mage Ullion founded a dragon-worshiping cult under the moniker "Son of Drago." Attracting followers with promises of conquest, he sought to secure his authority by enchanting this symbolic weapon for his bodyguard, Jaramor Bold. When the Dragon's Breath strikes an opponent, it releases the harsh flames of a red dragon, the poisonous vapor of the green dragon, the blue dragon's lightning bolt, a spray of a black dragon's acid, and the white dragon's penetrating cold. Unfortunately, Ullion was the first to feel its effects, slain by the ambitious Jaramor, who sought to rule. There was no real power to be had without the mage, so the entire organization soon collapsed on itself.
+
+STATISTICS:
+
+THAC0: +4
+Damage: 1d10+4, +1 cold, fire, electrical, acid, and poison damage
+Damage type: Piercing
+Speed Factor: 5
+Proficiency Type: Halberd
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 12~
+
+@7720 = ~Though once a simple halberd, this weapon spent many hundreds of years in a tomb next to the soul phylactery of a powerful lich. The creature was eventually erased from existence, purportedly by another of its kind, but such close proximity to that concentrated evil has imbued this blade with the very essence of night and the chill of darkness, energy that becomes deadly in combat. It is a foul weapon, and a warrior should use it with caution.
+
+STATISTICS:
+
+Combat abilities:
+– Like the touch of shadows, every hit has a 25% chance of reducing the target's Strength by 2 for 5 rounds. If the target has already less than 3 Strength, the attack drains Constitution instead
+– If the target fails to save vs. Death, the essence of undeath in this weapon unleashes extra 1d6 cold damage
+
+THAC0: +2
+Damage: 1d10+2, +2 cold damage
+Damage type: Piercing
+Speed Factor: 7
+Proficiency Type: Halberd
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 12~
+
+@7721 = ~Strength drained by Duskblade~
+@7722 = ~Constitution drained by Duskblade~
+
+@7770 = ~With shaft and tip reunited, Ixil's Spike is a fearsome weapon. During the battle, the head can detach to pin opponents to the ground even as a new head magically reforms on the end of the spear.
+
+STATISTICS:
+
+Equipped abilities:
+– Unaffected by spells that restrict movement
+
+Combat abilities:
+– Hit target is pinned for 3 rounds and takes an additional 1d8+6 piercing damage each round (Save vs. Paralysis negates)
+
+THAC0: +6
+Damage: 1d6+6 (piercing)
+Speed Factor: 1
+Proficiency Type: Spear
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 5~
+
+@8040 = ~Aule's Staff +3~
+@8041 = ~This finely crafted staff was among the spoils taken from the invaders of Durlag's Tower. It is very deadly in combat, and was apparently the property of a spellcaster that enjoyed standing on the front lines. It appears to have a core of iron, yet it is comparable in weight to a normal weapon of its type. Part of the enchantment seems to come from the hide that strengthens the grip: Leather no doubt made from a battle-ready creature of some sort. With the tastes and inclinations of the attackers of the tower well documented, the hide could be almost anything... or anyone.
+
+STATISTICS:
+
+Equipped abilities:
+– Attacks per round: +1 (mages, mage/thieves, cleric/mages, and sorcerers only)
+
+THAC0: +3
+Damage: 1d6+3 (crushing)
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@8140 = ~Taking the blood-soaked shaft of this weapon in hand brings a sudden chill along your spine. The origins of this gruesome halberd are unknown, though the very sight of it has been know to strike terror into the heart of an opponent.
+
+Now combined with the Serpent Shaft, this dark halberd has the ability to slay an opponent with a single blow—unless they can survive the sudden loss of their head.
+
+STATISTICS:
+
+Charge abilities:
+– Cloak of Fear three times per day
+  Special: Affected enemies flee in terror for 4 rounds (Save vs. Spell negates)
+  Range: 0
+  Duration: Instant
+  Area of Effect: 15-ft. radius
+
+Combat abilities:
+– Hit target must save vs. Poison or suffer 2d6 points of poison damage, and become poisoned, suffering 12 points of poison damage over 1 round
+– 10% chance of decapitating opponent with each successful attack (Save vs. Death at -4 negates)
+
+THAC0: +6
+Damage: 1d10+6 (piercing)
+Speed Factor: 3
+Proficiency Type: Halberd
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 10~
+
+@8150 = ~This is one of the many weapons of the great hero Siegfried. The blade is particularly sharp and well-balanced, and in a certain light one can see the faint image of a serpent within the hilt.
+
+STATISTICS:
+
+Combat abilities:
+– 10% chance of inflicting 2d6+12 poison damage with each hit
+
+THAC0: +5
+Damage: 1d10+5 (slashing)
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 9~
+
+@8151 = ~Gram the Sword of Grief +6~
+@8152 = ~This is one of the many weapons of the great hero Siegfried. The blade is particularly sharp and well-balanced, and in a certain light one can see the faint image of a serpent within the hilt.
+
+His fearsome blade is even more powerful with the Heart of the Damned set into its pommel.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +10%
+
+Combat abilities:
+– 15% chance of inflicting 2d6+12 poison damage with each hit
+– Each hit target must save vs. Death (with a -5 penalty) or become weakened for 2 rounds, dealing -20% less damage from all sources. This effect does not stack.
+
+THAC0: +6
+Damage: 1d10+6 (slashing)
+Speed Factor: 4
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 9~
+
+@8610 = ~The Impaler has a palpable aura of magic that hints at the vicious nature of the weapon and why it has been a favorite of several powerful orc chieftains in the past. When a victim is struck they are, as one would guess, very nearly impaled, run through as the massive enchantment does its dirty work.
+
+STATISTICS:
+
+Combat abilities:
+– 5% chance per hit to critically strike, inflicting 5 extra piercing damage on a critical hit
+
+THAC0: +3
+Damage: 1d8+3, +10 piercing damage
+Damage type: Piercing
+Speed Factor: 3
+Proficiency Type: Spear
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@50100 = ~Lawrence Lilarcor was well known, not for being brave, but for being an idiot. As the tale goes, the boastful Lilarcor left his village at the urging of his friends so that the "great hero" could do battle with a devious treant. He walked for days in the dead of winter until, feverish, he found his target and began an epic wrestling match. Unfortunately (or perhaps luckily), the "treant" was nothing more than a craggy old normal oak. His friends had been jesting, not actually expecting that Lilarcor would go fight the fictitiously dangerous tree. That might have been the end of it, but Lilarcor, not really knowing what a treant was in the first place, didn't realize the truth. He eventually uprooted the oak and, marching proudly home, he declared himself a hero. Thus was born a laughing stock of epic proportions, and over time the name of Lilarcor became the sacrificial fool in many tales of "less than brilliance."
+
+Lilarcor is not quite as lovable (or annoying, depending on your viewpoint) as it was before <CHARNAME> had it upgraded. When the Mind Flayer Control Circlet was embedded in its hilt, Lilarcor seemed to lose the ability to consciously converse with those nearby and was reduced to making occasional quips. However, Lilarcor's peculiar intelligence (or lack thereof) now serves as a boon (or a blight) to the wielder: the one holding Lilarcor cannot have its intelligence adjusted for any reason. This protects against the intelligence drain associated with the illithids' brain-devouring attack, and the beneficial effects of a potion of Genius.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to charm and confusion
+– Immunity to intelligence changes
+
+Combat abilities:
+– 30% chance per hit it causes confusion on the target 1 round, unless a Save vs. Spell at -2 succeeds
+
+THAC0: +5
+Damage: 1d10+5 (slashing)
+Speed Factor: 5
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+@50130 = ~Soul Reaver +6: Unholy Avenger
+The powerful Soul Reaver blade has been reforged under the dark guidance of <CHARNAME>. The holy essence of Carsomyr was perverted to help create this abhorrent monstrosity. Soul Reaver is a tool of incredible power and incredible evil. Those who pick it up rarely put it down while still living.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +50%
+
+Combat abilities:
+– Dispel Magic on each hit, unless a save vs. Spell at -2 is made
+– Each hit makes the target receive a cumulative 2 point penalty to their THAC0 for 5 rounds unless a save vs. Spell at -5 succeeds
+
+THAC0: +6
+Damage: 1d12+6, +1d3 magic damage
+Speed Factor: 4
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~

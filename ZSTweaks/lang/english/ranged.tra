@@ -1,0 +1,236 @@
+@6180 = ~Through arcane sorcery, the contradictory elements of fire and ice have been combined within this magnificent shortbow, and arrows shot by this shortbow are imbued by both elements when shot.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +15%
+– Fire Resistance: +15%
+
+Charge abilities:
+– Improved Haste once per day
+  Duration: 23 rounds
+  Area of Effect: The user
+
+THAC0: +4
+Damage: +1 fire and cold damage
+Speed Factor: 2
+Proficiency Type: Shortbow
+Type: Two-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6181 = ~Through arcane sorcery, the contradictory elements of fire and ice have been combined within this magnificent shortbow, and arrows shot by this shortbow are imbued by both elements when shot.
+
+The magical bowstring of Gond makes even this strongly enchanted shortbow more accurate and powerful.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +30%
+– Fire Resistance: +30%
+
+Charge abilities:
+– Improved Haste once per day
+  Duration: 23 rounds
+  Area of Effect: The user
+
+THAC0: +5
+Damage: +2 fire and cold damage
+Speed Factor: 1
+Proficiency Type: Shortbow
+Type: Two-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6370 = ~Taralash was a hunter renowned for his ability to track down even the fleetest of quarry by foot. Few animals ever escaped once he had them in the sights of his mighty longbow.
+
+STATISTICS:
+
+Combat abilities:
+– +2 damage against animals and other non-intelligent beasts, magical or otherwise.
+
+Equipped abilities:
+– Movement rate increased by 2 (base is 9)
+
+THAC0: +5
+Speed Factor: 3
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+@6371 = ~Taralash was a hunter renowned for his ability to track down even the fleetest of quarry by foot. Few animals ever escaped once he had them in the sights of his mighty longbow.
+
+The magical bowstring of Gond makes even the legendary longbow of Taralash more accurate and powerful.
+
+STATISTICS:
+
+Combat abilities:
+– +5 damage against animals and other non-intelligent beasts, magical or otherwise.
+
+Equipped abilities:
+– Movement rate increased by 5 (base is 9)
+
+THAC0: +6
+Damage: +1
+Speed Factor: 2
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 6 Strength
+
+Weight: 1~
+
+@6390 = ~While working for the Shadow Thieves, Fargon Fol collected thousands of small poisonous snakes to create the Asp's Nest. Fargon took each snake and with her powerful magic she made a dart of each. She made the dart so that when it strikes its opponent, the snake returns to life, biting and inflicting poison damage on the target. The title Asp's Nest refers to the entire collection of darts, most of which have vanished, either destroyed in use or lost on a long forgotten battlefield.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target must save vs. Death at -4 or take 1 point of damage every 3 seconds until 40 Hit Points of damage has been inflicted
+
+THAC0: +1
+Damage: 1d3+1, +1d2 poison damage
+Damage type: Missile
+Speed Factor: 1
+Proficiency Type: Dart
+Type: One-handed
+
+Weight: 0~
+
+//bgee version
+@7010 = ~Eagle Bow: Protector of the Dryads
+In order to protect their community from an encroaching orc logging encampment, the hero Hannable the White was given this magnificent bow by the dryads of Gulthmere Forest. A deadly confrontation followed when the loggers dared to try to cut down a great oak tree, nearly killing the dryad linked to it. With the help of powerful forest animals, Hannable slew entire bands of orcs before any more damage was inflicted upon the wood. The orcs were forced to abandon their plans, lest they suffer the continued wrath of Hannable and the forest. Needless to say, the hero who aided the grateful dryads lived happily... nay, VERY happily ever after!
+
+STATISTICS:
+
+Combat abilities:
+– Inflicts +2 extra missile damage against orcs, ogres, gnolls, and goblinoids
+
+THAC0: +2
+Damage: +2
+Speed Factor: 4
+Proficiency Type: Shortbow
+Type: Two-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+@7020 = ~Eagle Bow: Protector of the Dryads
+In order to protect their community from an encroaching orc logging encampment, the hero Hannable the White was given this magnificent bow by the dryads of Gulthmere Forest. A deadly confrontation followed when the loggers dared to try and cut down a great oak tree, nearly killing the dryad linked to it. With the help of powerful forest animals, Hannable slew entire bands of orcs before any more damage was inflicted upon the wood. The orcs were forced to abandon their plans lest they suffer the continued wrath of Hannable and the forest. Needless to say, the hero who aided the grateful dryads lived happily... nay, VERY happily ever after!
+
+STATISTICS:
+
+Combat abilities:
+– Inflicts +2 extra missile damage against orcs, ogres, gnolls, and goblinoids
+
+THAC0: +2
+Speed Factor: 4
+Proficiency Type: Shortbow
+Type: Two-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+@7070 = ~Kestsa was given this longbow many years ago by the Cowled Wizards as reward for his exemplary service in the Athkatla city guard. He was tireless in bringing to justice those who unlawfully used magic. The bow served him well in his cause, granting him resistance to arcane energies, and imbuing his arrows with anti-wizard properties.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Damage Resistance: +33%
+– Magic Resistance: +5%
+
+Combat abilities:
+– Arrows inflict 1d4+1 extra magic damage and 15% wizard spell failure for 4 rounds if a save vs. Spell at -2 is failed
+
+THAC0: +5
+Speed Factor: 3
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+@7600 = ~The Arrow of Biting was designed as a deadly compliment to the archer. Poison smeared on the barbed arrowhead infiltrates the bloodstream of its victims, causing agony and often death.
+
+STATISTICS:
+
+Combat abilities:
+– Target must save vs. Death or suffer 30 points of poison of damage over 5 rounds
+– Chance to score a critical hit: +5%
+
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~
+
+//bg2ee
+@7620 = ~This is a magical arrow that will burst into flames as it is fired at an enemy. The effect is similar to an arrow doused in oil and set to flame.
+
+STATISTICS:
+
+Damage: 1d6, +1d2 fire damage
+Damage type: Missile
+Launcher: Bow
+
+Weight: 0~
+
+// bgee
+@7621 = ~This is a magical arrow that will burst into flames as it is fired at an enemy. The effect is similar to an arrow doused in oil and set to flame.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d6+2, +1d6 fire damage (Save vs. Spell for none)
+Damage type: Missile
+Launcher: Bow
+
+Weight: 0~
+
+// iwdee
+@7622 = ~The arrow of fire is a magical arrow that will burst into flames as it is fired at an enemy. The effect is similar to an arrow doused in oil and set to flame.
+
+STATISTICS:
+
+Combat abilities:
+– 1d6 fire damage (Save vs. Spell negates)
+
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~
+
+@7630 = ~This arrow is long and thin, imbued with magical properties that allow it to "push" itself through armor, striking out towards the heart of the victim.
+
+STATISTICS:
+
+Equipped abilities:
+– Chance to score a critical hit: +10%
+
+THAC0: +4
+Damage: 1d6, +6 piercing damage (Save vs. Death for half)
+Damage type: Missile
+Launcher: Bow
+
+Weight: 0~
+
+@8200 = ~This bolt was designed as a deadly complement to the crossbow. Poison smeared on its barbed tip infiltrates the bloodstream of its victims, causing agony and often death.
+
+STATISTICS:
+
+Combat abilities:
+– Target must save vs. Death or take 30 points of poison damage in 15 seconds
+– Chance to score a critical hit: +5%
+
+Damage: 1d8 (missile)
+Launcher: Crossbow
+
+Weight: 0~

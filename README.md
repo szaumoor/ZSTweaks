@@ -14,7 +14,7 @@ In vanilla, this is not contemplated, likely because there isn't any means of in
 
 As of version 1.4.5 a configuration file is now provided, where the user may change some variables to further customize components. This file is **ZSTweaks/zstweaks_prefs.txt**.
 
-### [See all component details here](ZSTweaks/README.md)
+### [See all component details here](ZSTweaks/component_readme.md)
 
 ## Compatibility and installation order
 
@@ -33,13 +33,14 @@ Currently, relevant compatibility has been added deliberately to:
 - IWDification
 - Project Javelin
 - Rogue Rebalancing
+- Forgotten Armaments
 - Wares of the Planes
 - ZS_ShadowdancerOverhaul
 - Shades of the Sword Coast
 
 ## Notes for users and modders
 
-I highly advise to make this mod the first tweak mod in your mod tweaks, at least in the current state. While the code has been vastly improved since it was first released, it's still quite likely that other older mods will have a better time anticipating changes, and because it's young, I probably haven't added enough support in my tweaks to work universally after other older tweaks that modify the same items.
+I advise making this mod the first tweak mod in your mod tweaks, at least in the current state. While the code has been vastly improved since it was first released, it's still quite likely that other older mods will have a better time anticipating changes, and because it's young, I probably haven't added enough support in my tweaks to work universally after other older tweaks that modify the same items.
 
 An exception to this are components that EXPLICITLY say that they must be installed in a certain order. Finally, I'm not perfect, so if you find a component that probably makes more sense to install in a different order, you might be right. If you find that's the case, and I should probably know this, do let me know.
 

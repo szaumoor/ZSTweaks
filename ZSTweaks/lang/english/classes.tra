@@ -1,0 +1,104 @@
+@5210 = ~Ethereal Retribution
+(Conjuration)
+
+Level: Quest
+Sphere: Summoning
+Range: 40 ft.
+Duration: 3 rounds
+Casting Time: 8
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+Ghostly figures called by the Shaman swirl around the battlefield, tormenting the Shaman's adversaries. All enemies within the area of effect take 6d6 points of magic damage per round for the next 3 rounds (no save). In addition, all living enemies (undead and constructs are unaffected) must save vs. Spell or lose 2 points of Strength every round for 5 rounds. The Strength loss is cumulative, but this spell cannot reduce the Strength of a creature below 1.~
+
+@6300 = ~Set Exploding Trap
+This ability allows the rogue to set a powerful trap that unleashes a fireball which causes 15d6 damage (Save vs. Spell for half damage) and will knock its victims off their feet for 1 round with no save allowed.~
+
+@6310 = ~Quivering Palm
+Successful attacks during the next 7 seconds force the target to save vs. Spell or die. At level 16, the save vs. Spell must succeed at -1 to avoid its effects, and at level 24 it improves again, requiring a save vs. Spell at -2.
+
+This special ability automatically modifies normal attacks; no targeting needs to be done.~
+
+@6320 = ~War Cry
+With a War Cry, the warrior emits a powerful and frightening yell that will panic all opponents in a 15-ft. radius for 1 turn if they don't make their Save vs. Spell at -2, which additionally halves their movement speed for the duration.
+
+Additionally, the warrior and allies have their morale restored to its maximum, are healed by 12 HP, and get a +2 bonus to THAC0 and weapon damage for 3 rounds. During this time, the warrior is also able to land critical hits 5% more often.~
+
+@6440 = ~Poison Weapon
+Each successful hit within the next 5 rounds will inject poison into the target. Each target can only be affected once per round. The amount of poison damage depends on the character's level:
+
+1st - Target suffers 1 poison damage per second for 6 seconds (Save vs. Death at +1 negates)
+5th - Target suffers 1 poison damage per second for 12 seconds (Save vs. Death negates), and also immediately suffers 2 poison damage (no save)
+9th - Target suffers 1 poison damage per second for 18 seconds (Save vs. Death at -1 negates), and also immediately suffers 4 poison damage (no save)
+13th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -2 negates), and also immediately suffers 6 poison damage (no save)
+17th - Target suffers 1 poison damage per second for 27 seconds (Save vs. Death at -3 negates), and also immediately suffers 8 poison damage (no save)
+21st - Target suffers 1 poison damage per second for 30 seconds (Save vs. Death at -4 negates), and also immediately suffers 10 poison damage (no save)~
+
+@6880 = ~Writhing Fog
+(Conjuration)
+
+Level: 2
+Sphere: Summoning
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+This spell conjures a cloud of writhing fog that chills and hinders anyone within its area other than the caster. Creatures in the fog take 1d3+1 points of cold damage per round. The dice size of this damage improves by 1 every level, up to 1d10. In addition, there is a 50% chance that they must save vs. Death or be slowed for 1 round. Creatures immune to cold damage do not suffer any adverse effects from this spell.~
+
+@6990 = ~Spiritual Clarity
+(Abjuration)
+
+Level: 3
+Sphere: Protection
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+With this spell, the shaman strengthens a creature's spiritual resolve and purges the creature's mind of negative influences. The spell removes the effects of fear, berserk, charm, confusion, intoxication, and feeblemind from a single creature.~
+
+@7000 = ~Spirit Fire
+(Conjuration)
+
+Level: 4
+Sphere: Summoning
+Range: 40 ft.
+Duration: Instant
+Casting Time: 4
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+As the Shaman casts this spell, energies gather together from the spirit world and form a pale blue sphere. The Shaman can throw the sphere so that it explodes into a burst of ghostly, azure flames, which deliver 1d4+1 points of magic damage per level of the Shaman (up to a maximum of 12d4+12). There is also a 33% chance that every enemy within the area of effect will be afflicted by the Doom spell (-2 penalty to saving throws and attack rolls for 1 turn). A successful Save vs. Spell halves the damage, but not the Doom effect. Spirits, fey creatures, elementals, and spectral undead take double damage.~
+
+@7530 = ~Favored of the Spirits
+
+Range: 0
+Duration: 24 hours
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: None
+
+This powerful rite shields the Shaman from death for 24 hours or until discharged. While under the protection of this rite, the Shaman is immune to all forms of death magic and vorpal hits. In addition, if the Shaman is reduced below 10% Hit Points and the rite is active, the Shaman instantly receives the benefit of a Heal spell. The rite's protection (including the immunity to death) is completely discharged once the Heal spell is triggered. Further applications of the rite will not stack in any way but replace the previous one.
+
+Requires: Spirit Form~
+
+@7790 = ~Sun Soulbeam
+The character emits a dazzling burst of light that strikes at all other creatures within a 15-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 9d6 points of fire damage (12d6+3 if undead), unless they Save vs. Spell for half. In addition, all creatures except the character must Save vs. Spell or be blinded for 2 hours.~
+
+@7800 = ~Sun Soulray
+The character projects a blast of light from <PRO_HISHER> open palm, dealing 1d8 fire damage for every 2 caster levels (up to a maximum of 5d8 damage) to a single target. Undead creatures take an additional 6 points of damage (which increases by 2 every 2 caster levels). There is no saving throw against this ability.~
+
+@8080 = ~Assassination
+Using every clever trick an experienced Thief has learned in countless battles, this ability allows every strike in the next 7 seconds to act as a backstab, using the Thief's existing backstab modifier to determine damage. Additionally, during this time and for 1 round longer, critical misses are not possible, and critical hit chances increase by 10%.
+
+Specialized thieves (single-classed) benefit more from this:
+
+– Bonus to critical hit chances is +15%
+– +2 Damage and THAC0
+– +1 Attack per round~
+
+@8180 = ~Avoid Death
+With extraordinary effort, a high-level rogue can avoid almost certain death. The effect lasts for 5 rounds, and during this time, the rogue's saving throws vs. Death receive a bonus of 5, Hit Points are increased by 20, and the rogue becomes immune to death magic and level drain. Additionally, during the first round, the rogue will succeed in all saving throws, and their hit points may not go below 1 for the first half of that round.~

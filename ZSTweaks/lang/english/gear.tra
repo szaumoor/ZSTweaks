@@ -1,0 +1,1432 @@
+@6020 = ~This suit of armor is formed from interlocking shadow dragon scales. Elegant workmanship and practical considerations make this armor both beautiful and useful. The shadow dragon scales grant the wearer Non-Detection, protection against level drain, and resistance against Illusion and Necromancy spells.
+
+STATISTICS:
+
+Equipped abilities:
+– Negative Plane protection
+– Non-Detection
+– Saves vs. Illusion and Necromancy effects: +4
+
+Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 10~
+
+@6030 = ~Nizzuf's Maze was a grand hedge maze created by the archmage Nizzuf for his amusement. The maze boasted hundreds of magical traps, most of them extremely lethal. Nizzuf posted a reward big enough to buy a kingdom to the man or woman brave enough to enter the maze and reach its core. Thousands tried and died. But one, Oteg Verm, completed the maze, thanks mainly to this ring which let him "see" where the traps were hidden.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Saves vs. Breath: +1
+– Immunity to backstabs and sneak attacks
+– Detect Traps: +25%
+
+Weight: 0~
+
+@6040 = ~Also called the Wrath of Three Kings, though not associated with any named king in particular, this rod was likely made in 1090 DR. It saw use during the Battle of the Bones, but for which side is uncertain, as it was found amongst the dead after a larger skirmish. Three buttons unlock the rod's magic: The first transforms it into a fearsome enchanted mace; the second, a hypnotic flaming blade; the third, a barbed spear.
+
+STATISTICS:
+
+Combat abilities:
+– This rod may transform into any of the following weapons when used. Each weapon may also change back into the rod at will:
+
+Mace of Royal Might +3: Target must save vs. Spell at +2 or be slowed for 2 rounds
+
+Flaming Sword of Royal Might +3: Targets take +1d4 extra fire damage and must save vs. Spell at +2 or be stunned or put to sleep for 1 round
+
+Spear of Royal Might +3: Targets take +1 piercing damage and must save vs. Death to avoid bleeding for 10 piercing damage for a round, and there's a 10% chance of releasing an arcane blast that deals 2d4+2 magic damage
+
+Weight: 5~
+
+@6041 = ~Mace of Royal Might +3~
+@6042 = ~Flaming Sword of Royal Might +3~
+@6043 = ~Spear of Royal Might +3~
+@6044 = ~This mace has been created via the Rod of Royal Might. Use this item's special use to change it back into the Rod to choose another weapon.
+
+STATISTICS:
+
+Combat abilities:
+– Target must save vs. Spell at +2 or become slowed for 2 rounds
+
+THAC0: +3
+Damage: 1d6+4 (crushing)
+Speed Factor: 4
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 7~
+
+@6045 = ~This flaming sword has been created via the Rod of Lordly Might. Use this item's special use to change it back into the Rod to choose another weapon.
+
+STATISTICS:
+
+Combat abilities:
+– Target must save vs. Spell at +2 or be held or forced to fall into a comatose slumber for 1 round
+
+THAC0: +3
+Damage: 1d8+3, +1d4 (fire)
+Damage type: Slashing
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+
+@6046 = ~This barbed spear has been created via the Rod of Lordly Might. Use this item's special use to change it back into the Rod to choose another weapon.
+
+STATISTICS:
+
+Combat abilities:
+– Target must save vs. Death or start bleeding for 10 points of piercing damage over 1 round
+– Arcane Blast: 10% chance per hit to cause 2d4+2 magical damage
+
+THAC0: +3
+Damage: 1d6+3, +1 piercing damage
+Damage type: Piercing
+Speed Factor: 3
+Proficiency Type: Spear
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 5~
+@6047 = "Arcane Blast"
+@6048 = ~Rod of Royal Might~
+
+@6137 = ~Mage Robe of Cold Affinity~
+@6138 = ~Mage Robe of Fire Affinity~
+@6139 = ~Mage Robe of Electrical Affinity~
+
+@6140 = ~A favorite among Mage/Thieves, the Knave's Robe has been enchanted to shield its wearer from the blades and poisons of any darkened alley and enhance thieving skills. As with others of its type, however, its use is restricted to students of the arcane.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. slashing and piercing attacks
+– Saving throws vs. Death and Breath: +1
+– +50% Poison damage resistance
+– +5% bonus to all thieving skills
+
+Weight: 4~
+
+@6141 = ~This mage robe has been perfected for use by any rambling, itinerant mage that travels from town to town. Its enchantments augment movement speed, provide protection from the bandit's arrow and from the jealous mage/thief that lies in ambush with his Stinking Cloud. As with other robes of its kind, the Traveler's Robe can only be worn by wizards.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3 vs. missile attacks
+– +15% Missile resistance
+– Saving throws vs. Wand and Spell: +1
+– Increases movement speed by a factor of 4
+
+Weight: 4~
+
+@6142 = ~This robe has been specially enchanted to meet the eclectic needs of the adventuring mage. Aside from shielding the wearer from various forms of physical damage, it also provides protection from the basilisk's petrifying gaze and magical powers of rival mages. As with other such robes, the Adventurer's Robe can only be worn by those engaged in the wizardly profession.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1 vs. all attacks
+– Saving throws vs. Petrification and Spell: +1
+– +20% Magic damage resistance
+– +10% Elemental damage resistance
+
+Weight: 4~
+
+@6143 = ~While seen with less frequency than some other mage robes, those of Electrical Affinity can hardly be considered a rarity. Some are worn by paranoiacs seeking protection from a ragged mountain storm, but many more are worn by mages seeking to protect themselves from the intrigues of others of their kind. As with all such robes, a Mage Robe of Electrical Resistance can only be worn by those of the wizardly profession.
+
+STATISTICS:
+
+Equipped abilities:
+– Electricity Resistance: +40%
+– Electricity damage bonus: +7%
+– Saves vs. Evocation: +1
+
+Weight: 3~
+
+@6144 = ~These are a common sight in the Sword Coast region, especially as one travels north toward Neverwinter and the Icewind Dales. Many young mages receive it as a gift from their instructors upon successfully completing their first five years of study. As with other such robes, they can only be worn by those of the wizardly profession.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +40%
+– Cold damage bonus: +7%
+– Saves vs. Evocation: +1
+
+Weight: 3~
+
+@6145 = ~Due to the extremely volatile nature of most magics, Mage Robes of Fire Affinity are not uncommon among young acolytes and their wizardly tutors. As with other such robes, they cannot be worn except by wizards.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +40%
+– Fire damage bonus: +7%
+– Saves vs. Evocation: +1
+
+Weight: 3~
+
+@6146 = ~This heavy crimson robe trimmed in gold signifies the importance of the wearer. Once the property of Edwin Odesseiron, Red Wizard of Thay, the robe was designed to further enhance his already significant magical prowess. Anyone who dons the Robe of Red Flames will deal additional damage whenever they use fire-based magic and will be less likely hurt by it.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +50%
+– Fire damage bonus: +10%
+– Saves vs. Evocation: +1
+
+Weight: 4~
+
+@6147 = ~This powerful mage robe offers protection from all forms of attack, both physical and magical, and improves casting speed slightly. Due to the nature of its enchantment, it can only be worn by wizards of good alignment.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: set to 5, plus 1
+– Saving throws: +2 vs. Spell, +1 vs. otherwise
+– Magic Resistance: +10%
+– Magic damage resistance: +25%
+– Casting speed improved by 1
+
+Weight: 6~
+
+@6148 = ~This powerful mage robe offers protection from all forms of attack, both physical and magical, and improves casting speed slightly. Due to the nature of its enchantment, it can only be worn by wizards of neutral alignment.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: set to 5, plus 1
+– Saving throws: +2 vs. Spell, +1 vs. otherwise
+– Magic Resistance: +10%
+– Magic damage resistance: +25%
+– Casting speed improved by 1
+
+Weight: 6~
+
+@6149 = ~This powerful mage robe offers protection from all forms of attack, both physical and magical, and improves casting speed slightly. Due to the nature of its enchantment, it can only be worn by wizards of evil alignment.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: set to 5, plus 1
+– Saving throws: +2 vs. Spell, +1 vs. otherwise
+– Magic Resistance: +10%
+– Magic damage resistance: +25%
+– Casting speed improved by 1
+
+Weight: 6~
+
+@6340 = ~The Mercykillers are a powerful faction based out of the planar city of Sigil. This ring is given out to Mercykiller assassins when they are sent out to punish those who have broken the laws of Sigil. Often these assassins will roam as far as the Prime Material Plane.
+
+STATISTICS:
+
+Equipped abilities:
+– Move Silently: +20%
+– Hide In Shadows: +20%
+– Set Traps: +20%
+– +5% chances to critically hit, +1 THAC0, +1 weapon damage (single-classed Thieves only)
+
+Weight: 0~
+
+@6460 = ~Red Wizards of Thay consider wild magic dangerous. Its practice is prohibited among their members; no wild mage is allowed within their ranks.
+
+An ambitious young wild mage named Vicross's fear of discovery and desire to master her capricious magic were so great that she managed to conceal her status and rise through the Red Wizard hierarchy. She became an autharch for Aznar Thrul, the tharchion of Priador. In this position, she created the Order of Eight Staves, designed to study wild magic. For years, Vicross and her underlings hunted and captured wild mages across Faerûn, performing a variety of tests on their prisoners, collecting and analyzing results.
+
+Eventually Vicross concocted techniques capable of partially controlling wild surges. She was able to enchant this circlet to reduce wild surge probability—and to minimize negative results. Fearful of her ever suspicious fellow Red Wizards, she wore it at all times, to keep her wild magic from betraying her.
+
+STATISTICS:
+
+Equipped abilities:
+– +25% probability that a wild surge will have positive effect
+– Every round, the elemental or magical damage dealt by the wielder improves randomly by +15%
+
+Weight: 1~
+
+@6461 = ~Wild mages~
+
+@6510 = ~A blacksmith in Cormyr is responsible for designing this item. Say'an Keenedge was renowned for designing the sharpest, best balanced, and most beautiful blades in the country. She was also a bit of a hothead and grew furious when she saw less-skilled fighters wielding her weapons. For her finest work she handed out one of these belts free with purchase, in order that her weapons never be mishandled.
+
+STATISTICS:
+
+Equipped abilities:
+– Slashing and Piercing Damage: +10% bonus
+– THAC0: +2 bonus with the off hand (Blades and Swashbucklers only)
+
+Weight: 2~
+
+@6520 = ~Ages ago, the infamous conjurer Nederath created this artifact from the remains of a powerful beholder. It takes the form of a helm crowned by ten eyestalks. The wearer can gaze through a central eye and focus the helm's power toward enemies.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Immunity to beholder rays that dominate, charm, paralyze, or cause fear effects
+– Protects against critical hits
+
+Charge abilities (may be used 3 times per day each):
+– Control: Target is dominated for 1 turn (Save vs. Spell at -2 negates)
+– Paralyze: Target is held for 1 turn (Save vs. Spell at -1 negates)
+– Fear: Target flees in terror for 1 turn (Save vs. Spell negates)
+
+Weight: 2~
+
+@6530 = ~Wizards specializing in the school of invocation know how dangerous their magic can be—even to the casters themselves. Some go to great lengths to ensure their own safety, wearing protective equipment to minimize damage from their own fireballs. This robe is such an item, providing its wearer with increased resistance to elemental energies and their own spells, while empowering slightly their elemental spells.
+
+STATISTICS:
+
+Equipped abilities:
+– Elemental resistance: +20%
+– Elemental spell damage: +5%
+– Saves vs. Invocation: +2
+
+Weight: 6~
+
+@6740 = ~This burnished, red ring is engraved with depictions of flames and lava coils. Mages and other planar travelers use these rings to protect themselves while visiting the Elemental Plane of Fire and to command fire elementals to do their bidding.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +50%
+
+Charge abilities:
+– Charm Fire Elemental once per day (Save vs. Spell at -2 negates)
+  Range: Touch
+  Duration: 45 seconds
+  Area of Effect: 1 fire elemental
+
+– Burning Hands once per day
+  Damage: 1d3+2 fire
+  Range: 0
+  Area of Effect: 5-ft. cone with 120-degree arc
+
+– Flame Strike once per day
+  Damage: 6d8 fire (Save vs. Spell for half)
+  Range: Visual range of the user
+  Area of Effect: 1 creature
+
+Weight: 0~
+
+@6750 = ~Air elementals make for powerful foes, but with this ring, they can become valuable allies. Dark tales tell of groups of Red Wizards, all with rings of elemental command, descending upon small villages with no warning and destroying every living thing in sight. Although the truth of these rumors is questionable, the fact remains that a ring of this power in the wrong hands is dangerous.
+
+STATISTICS:
+
+Equipped abilities:
+– Electricity Resistance: +50%
+
+Charge abilities:
+– Charm Air Elemental once per day (Save vs. Spell at -2 negates)
+  Range: Touch
+  Duration: 45 seconds
+  Area of Effect: 1 air elemental
+
+– Improved Invisibility once per day
+  Range: Touch
+  Duration: 1 turn
+  Area of Effect: 1 creature
+
+Weight: 0~
+
+@6760 = ~If the songs of bards are correct, all one must do is wear this ring and they will gain the ability to control earth elementals at will. Of course, earth elementals are not easily controlled and care must be taken when commanding one. An angry earth elemental can make short work of an inept adventurer.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Acid Resistance: +50%
+
+Charge abilities:
+– Charm Earth Elemental once per day (Save vs. Spell at -2 negates)
+  Range: Touch
+  Duration: 45 seconds
+  Area of Effect: 1 earth elemental
+
+– Stone to Flesh once per day
+  Range: Touch
+  Area of Effect: 1 creature
+
+Weight: 0~
+
+@6770 = ~This armor, forged from the scales of a silver dragon, is a dead giveaway of wrongdoing on the part of the wearer. While the protection it offers is impressive, one cannot ignore the fact that a creature of incredible grace and beauty had to be destroyed in order for this armor to be made.
+
+STATISTICS:
+
+Equipped Abilities:
+– Charisma: -2
+– Magic Resistance: +15%
+– Cold Resistance: +40%
+– Movement rate increased by 3
+
+Combat abilities:
+– Heals wearer 2 Hit Points each time damage is taken
+
+Armor Class: -2 (-5 vs. slashing, -3 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 15~
+
+@6780 = ~This ring is relatively unadorned, but the vile magic within radiates intense evil. Indeed, its creator, Kangaxx, was no less evil himself, even before millennia of undeath honed his power. It is said that a cadre of Netherese mages fought and imprisoned the demilich once, but being unable to truly destroy him, they became liches themselves to stand guard over his remains. The construction of the ring may have led to their enmity, as each of the gem's nine facets was supposedly empowered by sacrifice and death.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Regenerate 1 Hit Point every 3 seconds
+– Immunity to disease and poison
+
+Charge abilities:
+– Invisibility once per day
+  Duration: 12 hours
+  Area of Effect: The wearer
+
+– Improved Haste three times per day
+  Duration: 2 rounds
+  Area of Effect: The wearer
+
+Weight: 0~
+
+@6790 = ~This ring is fashioned not from gold or precious metal, but from simple oak. Combined with the nymph's tear, it allows a druid to draw upon the natural energies of the world around them.
+
+STATISTICS:
+
+Equipped abilities:
+– Can memorize one extra Druid spell of each level
+– Regenerate 1 HP per round
+
+Weight: 1~
+
+@6820 = ~Thalanta the Fair created many types of cloaks, all known as Cloaks of the Stars. This particular version is simple, with fifteen stars down each sleeve. Once per day, each star can be removed and thrown as a dart. The star disappears, only to return the next day.
+
+STATISTICS:
+
+Equipped abilities:
+– Wearer becomes specialized in darts automatically
+– Saves vs. Spell: +1
+
+Charge abilities:
+– Create thirty +5 darts once per day
+
+Weight: 3~
+
+@6890 = ~Fashioned by the Hierophant Wassalia before she chose to forever dwell on the Elemental Plane of Fire, this suit of armor is not covered by typical metal studs but by heavy red thorns.
+
+STATISTICS:
+
+Combat abilities:
+– Thorn Damage: Any opponent within 6 ft. that successfully hits the wearer suffers 1d4 points of piercing and fire damage
+
+Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 5~
+
+@6910 = ~There is no honor among thieves. Perhaps that is why the Thieves' Hood has been imbued with magical properties to protect the wearer from their own ilk.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to backstab and poison
+– THAC0 and damage: +1 (single-classed Thieves only)
+– Protects against critical hits
+
+Charge abilities:
+– True Sight three times per day
+  Duration: 1 turn
+
+Weight: 2~
+
+@6911 = ~Although this hood does not confer any magical advantages on its wearer, it does have an aura of latent magic.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~
+
+@6920 = ~These boots belonged to Crommus the Minstrel many centuries ago. When Artipheon the mage slew Crommus and severed the bard's voice, some of Artipheon's power infused Crommus's boots. The once ordinary midnight-blue leather boots now glitter as if hundreds of twinkling stars were embedded in the material.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +10%, +18% (Wizard Slayers and Inquisitors)
+
+Weight: 4~
+
+@6970 = ~A glittering green jewel adorns this battered metal helm infused with the power of the dwarven god Dumathoin.
+
+STATISTICS:
+
+Equipped abilities:
+– Physical Damage Resistance: +5%
+– Constitution: +2 (dwarves), +1 (others)
+– Protects against critical hits
+
+Weight: 1~
+
+@7030 = ~Few would dare double-cross a fiend, and fewer still would attempt to triple-cross one. Dorn Il-Khan, half-orc blackguard from the city of Luskan, was one of the few. Approached by a rival of his demonic patron, he agreed to betray his master. Instead, at a critical juncture, he turned the situation on the rival, binding her into a powerful sword. As a reward, his patron granted him this terrifying mask. The silver mask has a grotesque face distorted into a grimace. When donned, the eyes pulse with a deep red when the wearer speaks, adding to its unsettling presence. It hums with a variety of magical enchantments, inspiring fear in all who gaze upon it.
+
+STATISTICS:
+
+Equipped abilities:
+– THAC0: +1
+– Saving Throws: +1
+– Immunity to feeblemindedness, confusion, fear, and charm
+– Protects against critical hits
+
+Charge abilities:
+– Domination once per day (Save vs. Spell at -2 negates)
+  Duration: 8 rounds
+
+– Breathe Acid once per day
+  Damage: 8d6 acid (Save vs. Breath for half)
+  Target must save vs. Death at -4 or fall unconscious for 2 rounds
+
+– Aura of Despair once per day as per the Blackguard spell
+  Duration: 1 turn
+
+Weight: 1~
+
+@7040 = ~The skillful hand of the warlock Wormsor carefully worked several dragon scales into this powerful helmet. Red, white, black, and blue scales overlap, protecting the wearer from normal blows as well as the breath of a dragon, whether it's in the form of fire, cold, acid, or electricity. It is hard to determine whether the benefits originate within the scales or the spells of the mage.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+– +25% resistance to acid, fire, cold, and electricity
+– Saves vs. Breath: +2
+
+Weight: 2~
+
+//not upgraded
+@7050 = ~This helm grants warriors immunities far beyond mere physical protections. It is obvious there once used to be a set of horns protruding from the metal cap, though the horns and any magic associated with them have long since disappeared.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+– Non-physical damage resistance: +25%
+
+Weight: 2~
+
+@7051 = ~The Helm of Rock grants warriors immunities far beyond mere physical protections, and with the addition of the horns, it's even more powerful. Generals and military leaders can command both fear and respect simply by wearing this helm.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+– Physical damage resistance: +7%
+– Magic, Elemental, and Poison damage resistance: +25%
+– Charisma: +1
+
+Charge abilities:
+– Aura of Command three times per day (Save vs. Spell at -2 negates)
+  Special: Targets flee in terror
+  Range: 40 ft.
+  Duration: 5 rounds
+  Area of Effect: 1 creature, which then spreads to enemies within 15 ft.
+
+Weight: 2~
+
+@7150 = ~For a sewer-dweller like Ivan, survival meant going where others refused. Hiding from thugs, Ivan went so deep into the sewers beneath Baldur's Gate that he found natural caves, some of which opened to the ocean. Within one cave, Ivan discovered what he thought was a ruined cloak, all torn and stained. He tossed it into the fire he started, but it would not burn. Curious, he donned it, and with some prying, he discovered its hidden abilities. With the right command, he could shift into a rat, a troll, or a mustard jelly.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Saves vs. Poison: +1
+– Poison Resistance: +50%
+
+Charge abilities:
+– Polymorph Self once per day
+  Special: The wearer can change into a rat, a troll, or a mustard jelly
+
+Weight: 3~
+
+@7170 = ~This is the fabled cloak of Montolio DeBrouchee—the aged, blind mentor of the dark elf ranger Drizzt Do'Urden. Like his famous pupil, Montolio was a master at wielding two blades simultaneously.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Saving Throws: +1
+– THAC0: +2 bonus with off hand
+– THAC0 and Damage: +1 (rangers only)
+
+Weight: 3~
+
+//bgee
+@7180 = ~Ring of Invisibility: Sandthief's Ring
+Held by a master Thief for the better part of a generation, this ring was put to bold use in the markets of Waterdeep. Working a crowd in broad daylight, the rogue would steal countless numbers of purses from nobles, replacing them with bags of sand so the theft would go unnoticed. His identity was never known, but the name "Sandthief" was cursed loudly in its stead. It is rumored he retired, and now lives among the nobles he used to rob.
+
+STATISTICS:
+
+Charge abilities:
+– Invisibility once per day
+
+Weight: 0~
+
+@7190 = ~Legend tells us that this particular type of ioun stone is crafted with the enslaved soul of a troll. This pearly white ioun stone will grant the wearer the ability to regenerate at a rate of 1 Hit Point every round.
+
+STATISTICS:
+
+Equipped abilities:
+– Regenerate 1 Hit Point every round
+
+Weight: 0~
+
+@7200 = ~This ioun stone glows with a dusty rose hue, hinting at calming images and sensations. These images are not just pleasing, but they also protect the wearer from suffering maddening anger and fear.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Protects the wearer against berserk and fear
+
+Weight: 0~
+
+@7210 = ~Highly sought out by wizards, this ioun stone raises the intelligence and the resistance to various magics of those who possess it.
+
+STATISTICS:
+
+Equipped abilities:
+– Intelligence: +1
+– Saves vs. Spell: +1
+– Magic Resistance: +10%
+
+Weight: 0~
+
+@7220 = ~The tough obsidian ioun stone imbues its owner with a similar hardiness.
+
+STATISTICS:
+
+Equipped abilities:
+– Constitution: +1
+– Armor Class: +2 (except crushing)
+– Physical resistance: +5% (except crushing)
+
+Weight: 0~
+
+@7230 = ~Perhaps the silver and gray in this stone hints at the knowledge that only comes with age and experience.
+
+STATISTICS:
+
+Equipped abilities:
+– Wisdom: +1
+– Lore: +15
+– Divine spell casters get 1 extra spell slot from level 1 to 5
+
+Weight: 0~
+
+@7240 = ~Combined with the bronze ioun stone, the Circlet of Netheril is a great boon to any practitioner of the arcane arts. Of course, something so valuable is likely to attract unwanted attention from rival mages...
+
+STATISTICS:
+
+Equipped abilities:
+– Hit Points: +10
+– Can memorize one extra 7th, 8th and 9th level wizard spell
+– +7% magic damage inflicted
+
+Weight: 1~
+
+@7250 = ~This circlet is made of the purest silver and embedded with a green and shimmering jewel that seems to emit a faint glow when caught by moonlight. It was blessed by the drow goddess Eilistraee, granting the wearer increased protection against harmful magic.
+
+STATISTICS:
+
+Equipped abilities:
+– Saving Throws: +1
+– Magic Resistance: +10%
+– +1 Dexterity and Armor Class (non-evil elves only)
+
+Weight: 1~
+
+@7260 = ~Knight Wesic of the Most Noble Order of the Radiant Heart often said, "Attack swiftly and your enemy will be so overwhelmed that the battle will be yours." He lived this principle through these bracers. Before engaging in righteous battle, he would unlock the magic of the Blinding Strike and quickly rush at his enemy. More often than not, his opponent would fall within the first few seconds of battle.
+
+STATISTICS:
+
+Equipped abilities:
+– Movement rate improves by a factor of 3 (default is 10)
+– Weapon speed factor: +2
+– Attacks per round: +1/2
+
+Charge abilities:
+– Improved Haste once per day
+  Duration: 1 turn
+  Area of Effect: The user
+
+Weight: 2~
+
+@7270 = ~Gauntlets of Weapon Skill: Xarrnous's Second Sword Arm
+Perhaps the most well-known owner of these gauntlets was a mercenary named Xarrnous. He specialized in smuggling and frequently loaned these gauntlets to clients if they were to travel with him. In his eyes, an extra sword arm was always handy.
+
+STATISTICS:
+
+Equipped abilities:
+– THAC0 and Damage: +1
+
+Weight: 2~
+
+@7280 = ~Bracers of Archery: The Dale's Protector
+During a dangerous meeting with a rival ruler, the king of the Great Dale requested the protection of his best Archers in addition to his usual guard. The Archers, each equipped with an enchanted bow and bracers, hid within range of the gathering. As predicted, enemy troops attempted to seize the king and force their will over his rule, but none had anticipated the amazing accuracy and lethality of the hidden Archers. The king was able to escape unharmed; in fact, none of the ambush members even lived to approach him.
+
+STATISTICS:
+
+Equipped abilities:
+– THAC0: +3 with missile weapons
+– Damage: +1 with missile weapons (+2 for Archers, Thieves, and Bards)
+
+Weight: 2~
+
+@7290 = ~These rarest of gauntlets are highly sought after by duelists, warriors, and fighters of all kinds.
+
+STATISTICS:
+
+Combat abilities:
+– Extra 1/2 attack per round
+
+THAC0 and Damage: +2
+
+Weight: 1~
+
+@7300 = ~Helm of Infravision: The Eyes of Truth
+Being a scavenger of a sort, Babette Maelestrom had this helm created to aid her in her dungeon excursions. She would later attribute her gathered wealth solely to its power, though likely it was as much her keen eyes as anything.
+
+STATISTICS:
+
+Equipped abilities:
+– Infravision up to 120 ft.
+– Detect Illusions and Traps: +10%
+– Protects against critical hits
+
+Weight: 3~
+
+@7310 = ~These magical gauntlets aid the wearer in the use of weapons. Even an unfamiliar weapon may be used with some skill.
+
+STATISTICS:
+
+Equipped abilities:
+– THAC0 and Damage: +1
+
+Weight: 2~
+
+@7320 = ~These gauntlets assist in the stalking and killing of prey. Favored by hunters and rogues of all kinds, they display their full power when donned by Stalkers, Shadowdancers, and Bounty Hunters. Made of supple leather with brass-buckled straps along the side, these gauntlets are often decorated with embroidered figures of stags, foxes, or, as is the case with this pair, wolves.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Hide in Shadows: +15% (+30% for Stalkers, Shadowdancers, and Bounty Hunters only)
+– Backstab Multiplier: +1 (Stalkers, Shadowdancers, and Bounty Hunters only)
+
+Weight: 2~
+
+@7321 = ~Prowler Gauntlets~
+
+@7330 = ~Defenders of justice are ever eager to acquire another tool which may be used to thwart the machinations of evil. However, these particular gauntlets can only be worn by a warrior of the purest heart.
+
+The willing sacrifice of a vast fortune in gold, combined with the holy venerations of the sanctifying ceremony, have convinced the blessed powers to transform these already formidable gauntlets into gloves of awesome righteous power.
+
+STATISTICS:
+
+Equipped abilities:
+– Permanently blessed
+– Hit Points: +15 (paladins only)
+– One extra spell slot from level 1 to 4 (paladins only)
+– Casting speed: +1 (paladins only)
+– Attacks per round: +1/2 (paladins only)
+
+Charge abilities:
+– Heal once per day
+  Special: Completely heals target, instantly cast
+  Area of Effect: 1 creature
+
+– Mass Cure three times per day
+  Special: Heals self and allies as per the namesake cleric spell.
+  Area of Effect: Caster and allies within 5 ft
+
+– Resurrection once per day
+  Special: Raised target is fully healed, instantly cast
+  Range: Unlimited
+  Area of Effect: 1 creature
+
+Weight: 1~
+
+@7440 = ~Cloak of Non-Detection: Whispers of Silence
+Reportedly created for a lineage of the greatest burglars ever to walk the night, this cloak was apparently a success. No record exists of previous owners.
+
+STATISTICS:
+
+Equipped abilities:
+– While hidden or invisible, the wearer is non-detectable by magical or mundane means except by True Sight
+– +15% bonus to Move Silently
+– Critical hit chances increase by 5% for 2 rounds when the user becomes invisible. This may only happen once per turn
+
+Weight: 3~
+
+@7441 = ~Critical hit chances increased by Whispers of Silence~
+
+@7450 = ~The Cloak of Displacement is a magical item that causes subtle shifts in the image of its wearer. It has the power to actually shift an individual's image by as much as six inches in any direction from their actual location. Aside from being an effective defense in combat situations, it has also been the cause of serious eyestrain amongst fellow party members.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +4 vs. missile attacks
+– Damage resistance: +5%
+– Saves vs. Death, Breath, and Wand: +2
+
+Weight: 3~
+
+@7480 = ~The mad necromancer and lich N'Ashtar Nikadeemus forged this helmet from the bones of his own parents. His highest ranked general would wear it when he rode into battle, using it to instantly slay the commanders of the opposing army. After that, the skeletal armies of N'Ashtar would overrun their demoralized enemies. When N'Ashtar finally fell, the Skull of Death was supposedly destroyed.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+– Saves vs. Necromancy: +4
+– Immunity to necromantic instant-death magic, and vorpal effects
+
+Charge abilities:
+– Death Spell once per day
+  Slays creatures with fewer than 9 Hit Dice
+  Range: 50 ft.
+  Area of Effect: 15-ft. radius
+
+– Finger of Death once per day
+  Slays target if Save vs. Spell at -2 is failed
+  Range: 30 ft.
+  Area of effect: One target
+
+Weight: 2~
+
+@7610 = ~These gem-studded leather gloves are enchanted so as to augment the skills of any Bard, no matter the kind.
+
+STATISTICS:
+
+Equipped abilities:
+– Different bards get different bonuses:
+  All bards: +2 Armor Class, THAC0, Damage, and casting speed. +1 memorizable spells from level 1 to 6
+  Skalds: +1 bonus to Strength and +1/2 attacks per round
+  Blades: +1 bonus to Dexterity and +1/2 attacks per round
+  Jesters: Immune to confusion, slow, and unconsciousness. +6 bonus to saves vs. Enchantment effects
+
+Weight: 1~
+
+@7611 = ~Bards~
+
+@7650 = ~Boots of Avoidance: Senses of the Cat
+The magic of these boots was specifically designed to detect incoming attacks and aid the wearer in avoiding them. They were originally commissioned by the instructor of an archery academy who had tired of suffering "accidents" at the hands of his inexperienced students.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1 Armor Class, +4 extra vs. missile attacks
+– Saves vs. Breath: +1
+– Movement rate increased by a factor of 3
+
+Weight: 4~
+
+@7740 = ~Kazgaroth was an aspect of Bhaal who was a powerful, intelligent, shapeshifting evil beast opposed to the balance and the influence of the Earthmother on the Moonshae Isles. This horn is thought to be made from one its tusks. When blown upon, no sound issues from the horn. Instead, the user of the horn is encased in a globe of power for a short duration. The bubble greatly increases the user's magical defenses and saving throws, as well as partially deflecting incoming physical attacks. The horn draws from the life force of the user every time it is used.
+
+STATISTICS:
+
+Charge abilities:
+Three times per day, blow the horn to activate the powers:
+  – Immunity to 1st, 2nd, and 3rd-level spells
+  – Armor Class: +2, +6 vs. missile attacks
+  – Saving Throws: +2
+  – Magic Resistance: +10%
+  – Physical Resistance: +8%
+  – Duration: 5 rounds
+  – Kazgaroth's Offering: the user has a 50% chance of suffering a random penalty for 2 turns after use.
+
+Weight: 1~
+
+@7741 = ~Kazgaroth's Offering: -10 Max Hit Points~
+@7742 = ~Kazgaroth's Offering: -3 THAC0~
+@7743 = ~Kazgaroth's Offering: -2 Damage~
+@7744 = ~Kazgaroth's Offering: -2 Strength~
+@7745 = ~Kazgaroth's Offering: -2 Constitution~
+@7746 = ~Kazgaroth's Offering: -2 Dexterity~
+@7747 = ~Kazgaroth's Offering: -1 Saving Throws~
+@7748 = ~Kazgaroth's Offering: +2 Casting Speed~
+@7749 = ~Kazgaroth's Offering: -4 Saves vs. Death~
+@7750 = ~Kazgaroth's Offering: -50% movement speed~
+
+@7820 = ~This ring, designed for the hero Zachiira, is engraved with holy symbols. When Zachiira requested aid from King Strohm III, it was the king’s royal advisor, the great and powerful Theurgist Karlash Arnostognas, who made this item, in the hope that it would aid the hero in her battle against a demon vampire. Zachiira survived the encounter, but sadly her triumphal return was met with rather less celebration and rather more grief, as the good king was already dead when she arrived. Zachiira laid the holy artifact at the entrance to the king’s tomb, and it was there the relic was discovered by wandering thrill-seekers.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. evil creatures
+– Attack damage and THAC0: +1 vs. evil creatures
+– Hit Points: +10
+– Chant
+– One extra divine spell slot for level 1 and 2 (good-aligned only)
+
+Weight: 0~
+
+@7830 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1, +3 vs. demons and devils
+– Saving Throws: +1, +3 vs. demons and devils
+– Attack damage and THAC0: +2 vs. demons and devils
+
+Weight: 0~
+
+@7840 = ~Constructed from a rhino beetle's sturdy shell, this armor offers its wearer excellent protection without impeding their motion to the same extent as traditional metal plate mail. The unusual material makes this suit of armor particularly effective against all but crushing weapons.
+
+STATISTICS:
+
+Equipped abilities:
+– Missile Damage Resistance: +18%
+– Slashing Damage Resistance: +12%
+– Piercing Damage Resistance: +8%
+
+Armor Class: 1 (-2 vs. missile, -1 vs. slashing, 0 vs. piercing)
+Requires:
+ 8 Strength
+
+Weight: 25~
+
+@7850 = ~The rhino beetle's carapace makes a most effective shield provided one can survive long enough to pry a piece off the creature. Lightweight but sturdy, this item makes a powerful argument for the premise that the best shields are found in nature, not the forge. The unusual material makes the shield particularly effective against all but crushing weapons.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3, an extra +2 vs. missile attacks, and +1 vs. slashing attacks
+– Missile Damage Resistance: +12%
+– Slashing Damage resistance: +8%
+– Piercing Damage Resistance: +5%
+
+Requires:
+ 10 Strength
+
+Weight: 6~
+
+@7860 = ~This shield was carried by a mercenary working with the Order of the Steel Fang. The warriors of the order were impressed with the mercenary's tenacity and courage. She charged into battle without hesitation and seemed to fight all the harder when she was wounded. When their quest was completed, the Order of the Steel Fang gifted a battleaxe to the mercenary as thanks for her service. In turn, she gave the order her shield as a sign of respect. The shield stayed in the order for years until it was lost on a battlefield.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3, an extra +1 vs. missile attacks
+– Fire Resistance: +25%
+
+Combat abilities:
+– When the wielder's Hit Points drop below 50%, <PRO_HESHE> gains +2 Strength for 5 rounds and may not die from any physical injury for 1 round. The Strength benefit does not stack, and the latter effect can only trigger once every turn.
+
+Requires:
+ 10 Strength
+
+Weight: 4~
+
+@8030 = ~Created for the Grandmaster Assassin Vita Muerte, this suit not only provided protection but also enabled Vita to better pursue and kill her fleeing victims... as the unfortunate wizard who fashioned this item for the ruthless killer soon learned.
+
+STATISTICS:
+
+Equipped abilities:
+– Doubles movement rate
+– Critical misses are no longer possible (thieves only)
+
+Different kinds of benefits for backstabs are unlocked depending on the rogue wearing this suit:
+  – Cripple: Slows the target for 1 round and reduces Strength, Dexterity, and casting speed by 4 for 4 rounds if the target fails a Save vs. Death (kitless thieves).
+  – Subdue: Knocks the target unconscious for 4 rounds if they fail a Save vs. Death. Additionally, inflicts 10 points of non-lethal damage. However, any further damage will wake the target (Bounty Hunter and Stalker).
+  – Beshadow: Harnesses shadow magic to enhance self-defense and offense. Grants 5% damage resistance for 2 rounds, with a 20% chance to become invisible for 2 rounds. During this time, damage increases by 2 and critical hit chances improve by 5% (Shadowdancer). These effects do not stack.
+  – Death Attack: Strikes the target with a lethal precision. If the target fails a Save vs. Death, they are stunned for 1 round. After the stun wears off, if the target has 60 Hit Points or less, they must make another Save vs. Death or die instantly. If the second save is successful, the target instead suffers 2d6 poison damage and becomes more vulnerable to subsequent Death Attacks, receiving a -4 penalty to Saves vs. Death for 5 rounds (Assassin).
+
+Charge abilities:
+– Expose Weakness once per day
+  Special: Removes the target's immunity to backstabs (if applicable), increases damage taken from piercing and slashing attacks by 10%, and imposes a -4 penalty to Armor Class specifically against those attack types.
+  Duration: 4 rounds
+
+Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 5~
+
+@8031 = "Cripple"
+@8032 = "Subdue"
+@8033 = "Beshadow"
+@8034 = "Death Attack"
+@8035 = ~Expose Weakness Applied~
+@8036 = ~Expose Weakness Lost~
+
+@8070 = ~This girdle greatly increases the wearer's Constitution. King Violos used it when leading an expedition against marsh trolls. He'd been severely sickened the past winter and was no longer the healthy man he once was. The belt gave extra years to his life and inspired his men to renew their confidence in their king once more.
+
+STATISTICS:
+
+Equipped abilities:
+– Constitution is set to 18
+
+Weight: 2~
+
+@8300 = ~These gloves are usually given to novices of the Most Noble Order of the Radiant Heart. For anyone outside of the Order to wear these gloves is a rare honor.
+
+STATISTICS:
+
+Equipped abilities:
+– Casting level: +1 (paladins and priests only)
+– Passively heal 1 HP per 5 rounds everyone in the party
+
+Charge abilities:
+– May cast a combination of Lay on Hands and Slow Poison once per day at level 10
+  Special: Heals 20 Hit Points and cures poison as per the Slow Poison spell
+  Range: Touch
+
+Weight: 2~
+
+@8370 = ~This is the blood of the kuo-toan prince.
+
+STATISTICS:
+
+– If fully consumed, it permanently increases the drinker's base THAC0, Armor class vs. missile, and saves vs. Breath by 1.
+
+Weight: 5~
+
+@8371 = ~This eyestalk is from an elder orb who was none too willing to give it up.
+
+STATISTICS:
+
+– If fully consumed, it permanently increases the user's Armor class, and saves vs. Death and Petrification by 1.
+
+Weight: 5~
+
+@8372 = ~This is the blood of an elder brain. Squishy brain matter floats in the dark bloody substance.
+
+STATISTICS:
+
+– If fully consumed, it permanently increases the drinker's casting level (arcane and divine), and saves vs. Spell and Rod by 1.
+
+Weight: 5~
+
+@8373 = ~This is the reconstructed mask of King Strohm the Third. When you place it on your face, the entire world becomes tinted with odd colors. Perhaps this mask will allow you to see something that you hadn't been able to before.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+– Detect Illusion and Find Traps: +10%
+
+Charge abilities:
+– Oracle once per day
+  Special: This spell will cancel all Illusion/Phantasm spells of 5th level and lower within its area of effect.
+
+Weight: 1~
+
+@8374 = ~This wardstone is, in fact, an ioun stone. It appears as a void of darkness, absorbing light from the space around it. Its exact shape is difficult to discern, shrouded as it is in shadow.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to blindness
+– Hide in the Shadows: +5%
+– +2 Armor class vs. all spectral undead and shadow dragons
+– +3% physical damage resistance (Shadowdancers and Dark Soul monks only)
+
+Weight: 1~
+
+@8390 = ~The Mist of Shadows were an elite group of elven Rangers that roamed the Cormanthor wood and were the bane of bandits and monsters alike. This particular armor was worn by Indeera Lakhan, one of the group's most highly decorated officers and second in command. The suit is named for her, though how it came to part her company is unknown.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1 bonus for rangers, elves, and half-elves
+– Hiding ability: +15% (rangers only)
+
+Armor Class: 6 (8 vs. piercing and missile)
+Requires:
+ 4 Strength
+
+Weight: 5~
+
+@8400 = ~Karajah was Calimshan's undisputed champion of pit fighting for a full decade, seemingly unbeatable in the arena. Wearing only a thin leather armor and spiked gauntlets, he would pummel his foes to the ground, impervious to their blows. He attributed his success to the mobility his light armor afforded him, though some suspected there was more to it. Eventually, it was revealed that his armor was heavily enchanted, granting him unnatural resilience. Outraged by the deception, angry spectators threw him into the pit with a club-wielding ogre. The beast managed to break all of Karajah's bones, but the armor remained as good as new...
+
+STATISTICS:
+
+Equipped abilities:
+– Movement rate increases by a factor of 3
+– Crushing damage resistance: +10%
+– Crushing damage dealt: +8%
+
+Armor Class: 5 (2 vs. crushing, 7 vs. piercing and missile)
+Requires:
+ 3 Strength
+
+Weight: 4~
+
+@8410 = ~Originally blessed by Shar, this armor has a long and interesting history. Only the greatest of thieves have ever owned this heavily enchanted armor. The essence of night has been woven into the dark set of armor so that it feels like normal armor but encloses the wearer in a mass of twisting shadows.
+
+STATISTICS:
+
+Equipped abilities:
+– Hide In Shadows: +25%
+– Non-Detection and immunity to divinations except for True Sight
+– At night: become shrouded in shadows, regenerating 1 HP per round. Additionally, each time the wearer is hit, they have a 12% chance of fading as per the Improved Invisibility spell for 4 rounds. This may only trigger once per turn.
+– +5% universal damage resistance (thieves only)
+
+Charge abilities:
+– Shadow Door cast at level 20 once per day
+  Special: Caster is under the effects of Improved Invisibility for 2 turns
+
+– Shadowstep three times per day
+  Special: Caster briefly steps into the Shadow Plane and returns to the Material Plane at the desired location as per the Shadowdancer ability
+
+Armor Class: 3 (5 vs. piercing and missile)
+Requires:
+ 3 Strength
+
+Weight: 5~
+
+@8411 = ~Embraced by shadows~
+
+@8420 = ~This ghastly armor was taken from an orc camp destroyed by barbarians. Instead of standard metal rivets, like normal studded leather, this orc leather is instead laced with hundreds of fire-hardened bones. Finger bones, ribs, and skulls cover the armor, acting much like the traditional metal rivets. Powerful orcish enchantments give the armor special resistance to missile attacks, but its grotesque appearance tends to unsettle and alienate others.
+
+STATISTICS:
+
+Equipped abilities:
+– Charisma: -2
+– +10% resistance to missile damage (double if wearer is half-orc)
+– +10 Hit Points (half-orc only)
+– +1 melee damage (half-orc only)
+
+Armor Class: 4 (2 vs. slashing, 3 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 7~
+
+@8425 = ~A clever thief, Damien Oneknife always tried to gain from the assets of his enemies, no matter the circumstances. After an intense battle with several ghouls in which two of his companions perished, Damien decided to even the odds in future encounters. He skinned one of the undead creatures and brought the hide to a halfling armorer talented in enchanting leather. When the suit was finished, it was magically protective against physical attacks and paralysis. Not very epic perhaps, but practical.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to paralysis, hold, and stun effects
+– Save vs. Death: +3
+
+Armor Class: 4 (6 vs. piercing and missile)
+Requires:
+ 3 Strength
+
+Weight: 4~
+
+@8430 = ~Enchanted ebony rivets adorn the black leather of this armor. Umberlee the Sea Queen granted this armor to Dami Darn, a rogue who slew the conjurer Looxil. The assassination pleased Umberlee, for Looxil had betrayed her in years past. Dami Darn died years later, a knife to the back from her successor in the thieves' guild.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +30%
+– Electric Resistance: +30%
+– Umberlee's boon gives the user a 18% chance per ranged or melee hit to deal 1d4 cold damage, electric damage, or both
+
+Armor Class: 3 (1 vs. slashing, 2 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 7~
+
+@8440 = ~This armor is infamous not for its advantages, but for the betrayal it enabled. Raroh, a master assassin, gifted it to Avlorm, a rising member of his guild. The armor's unique properties—granting resilience and the power to poison weapons—were overshadowed by a fatal flaw: it made the wearer dangerously vulnerable to poison. When Avlorm’s ambition became a threat, Raroh exploited this weakness, using the very armor he had given as a tool to eliminate his rival.
+
+STATISTICS:
+
+Equipped abilities:
+– Save vs. Death: -3
+– All other saves: +1
+– Weakness to poison: -50%
+– Poison damage: +100%
+
+Charge abilities:
+– Poison Weapon once per day
+  Special: Poison your weapon as per the Assassin's ability for 5 rounds
+
+Armor Class: 2 (0 vs. slashing, 1 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 6~
+
+@8450 = ~This heavy and thick bear hide is all that remains of the fabled Aeger. Several hundred years ago, the Aeger, a giant bear, terrorized hundreds of small villages up and down the Sword Coast. The bear was invulnerable to fire, cold, or acid. Finally, the young men and women of several villages banded together, forming a militia almost two hundred people strong. The Aeger was surrounded and finally slain. Less than a dozen villagers survived, and they carved the Aeger's hide amongst themselves. Out of one of the pieces this armor was created.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to confusion
+– Cold, Fire, and Acid Resistance: +15% (30% for barbarians)
+– Physical damage resistance: +3% (barbarians only)
+– Damage with halberds, staves, two-handed swords, and spears: +2 (barbarians only)
+
+Armor Class: 3 (5 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 35~
+
+@8460 = ~Dark Lord Hertious, undead Warlord of Bane, wore this piece of armor for over five hundred years. During this time he was rumored to dwell in a castle somewhere within the Earthfast Mountains. How his armor moved to other lands without him is not certain, though the separation of the two was surely unpleasant.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to fear and panic
+
+Combat abilities:
+– Curse: Each hit has a 15% chance to curse living targets for 6 rounds, imposing a -1 penalty to all rolls, luck, Armor Class, and morale, and increasing their chances of critical misses by 5%. This effect does not stack.
+
+Charge abilities:
+– Cast Horror twice per day
+  Special: All enemies within the area of effect when this spell is cast must save vs. Spell or flee in terror
+  Duration: 1 turn
+
+Armor Class: 0 (-4 vs. slashing, -3 vs. piercing and missile)
+Requires:
+ 15 Strength
+
+Weight: 35~
+
+@8470 = ~This plate mail has been expertly crafted. Sheathed in the chitinous scales of the ankheg, it provides a greater degree of protection than traditional plate mail and is not susceptible to rust. As any world-weary adventurer will tell you, however, the best appreciated aspect of ankheg mail is its light weight and low encumbrance. Monsters come and go, but fatigue is a constant enemy.
+
+STATISTICS:
+
+Equipped abilities:
+– Acid Resistance: +20%
+
+Armor Class: 1 (-2 vs. slashing, 0 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 25~
+
+@8480 = ~Named by Adarius Shin, the Doomplate is deserving of its foreboding title. He had hoped to strike fear in his enemies, but Adarius set a grim precedent when he mysteriously died soon after donning the suit, just as every adventurer who has worn it since has done. It might be said, however, that most adventurers die in their armor and are not known for their longevity.
+
+STATISTICS:
+
+Equipped abilities:
+– Upon first equipping the armor, the wearer must make a saving throw vs. Death. Failing the save results in a permanent reduction of 1 point to both Constitution and saving throws vs. Death. If the save is successful, the armor instead grants a permanent bonus of 1 point to both Constitution and saving throws vs. Death. This effect becomes permanently bound to the wearer and will not transfer to anyone else, regardless of the outcome.
+
+Armor Class: 0 (-3 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 27~
+
+@8490 = ~Few suits of armor in all the realms are the equal of this full plate. All that remains of the origin of the Hart are folktales and legends. The most popular of these is that an impossible battle was once fought against an army of orcs surging through the Three Trees Pass. Arngor of the Oak led the armies of men and elves, and it is said that he dueled with the orc commander till the sun set, and the land was bathed in a bloody mist. Finally, the orc fell, but Arngor had sustained wounds too vast for any to save him. His blood soaked through the armor he wore, infusing it with his courage and nobility. Thus the Armor of the Hart became known to men.
+
+STATISTICS:
+
+Equipped abilities:
+– Every time the wearer is hit, there's a 5% chance it will be granted Armor of Faith (as per the spell) cast at level 10.
+– All attack damage vs. evil is increased by 1
+
+Charged abilities:
+– Cast Bless, as per the priest spell, three times per day
+  Duration: 6 rounds
+
+– Cast Chant, as per the priest spell, once per day
+  Duration: 1 turn
+
+– Cast Aid at level 10 once per day
+  Duration: 1 turn
+
+Armor Class: -2 (-6 vs. slashing, -5 vs. piercing and missile)
+Requires:
+ 15 Strength
+
+Weight: 45~
+
+@8500 = ~This robe was fashioned for Hayes, the traitorous husband of Telana, soon after he discovered his talents as a wild mage. Very wealthy at the time, Hayes commissioned Halruaan wizards to craft it with silk, expensive dyes, and enchantments that would complement his unique talents.
+
+Unfortunately, he wore it only twice: Its richness and clearly magical nature attracted the attention of the Red Wizards who soon pursued him. He gave up using magic unless it was absolutely necessary, hid the robe away, and started wearing a simple tunic. His wife salvaged the robe and passed it on to <CHARNAME>.
+
+STATISTICS:
+
+Equipped abilities:
+– Permanent Chaos Shield on wearer
+– Armor Class: +1 bonus
+– Casting Speed: +1 bonus (wild mages only)
+
+Weight: 3~
+
+@8510 = ~Whether by design or through exposure to intense heat in battle, the chain links of this armor are coal-black throughout. While legends usually speak of knights in shining armor facing great beasts, the fire-resistant enchantment on this suit suggests equally great, if unheralded, battles with fire-breathing creatures.
+
+STATISTICS:
+
+Equipped abilities:
+– Saves vs. Breath: +2
+– Fire Resistance: +30%
+
+Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
+Requires:
+ 8 Strength
+
+Weight: 9~
+
+@8520 = ~Friends of Dekirh Fasthands, a bard who insisted on playing the rowdiest towns on the Sword Coast, gave him this suit of magical chain as a gift. The chain mail was given to protect Dekirh from the drunken spectators who often threw rotting produce, chairs, and even knives at Dekirh. The bard appreciated the gift but painted it with wild colors to better fit into his show.
+
+STATISTICS:
+
+Equipped abilities:
+– Does not prevent spellcasting or thieving abilities
+– Casting level: +2 for Jesters, +1 for other Bards
+
+Armor Class: 1 (-1 vs. slashing, 3 vs. crushing)
+Requires:
+ 8 Strength
+
+Weight: 8~
+
+@8530 = ~The dark red metal used to make this chain is said to come from a hidden mine in the Cloudpeaks. At one time the Bloodway, a band of evil adventurers, all wore armor of this kind, but the other suits have long been lost.
+
+STATISTICS:
+
+Equipped abilities:
+– Piercing Resistance: +10%
+– Every kill while wielding this armor grants the wielder a +1 bonus to THAC0 and attack damage for 1 round
+
+Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
+Requires:
+ 8 Strength
+
+Weight: 7~
+
+@8540 = ~Instead of metal strips, this armor uses wyvern scales bound to a chain backing by means of a magical fire. The resulting armor is ash-gray in color and more flexible than standard splint mail. A ranger, Usher Skacan, made this armor after slaying several wyverns that were killing all the deer and elk in his forest.
+
+STATISTICS:
+
+Armor Class: 2 (0 vs. crushing, 1 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 18~
+
+@8550 = ~This was the armor of Seffer Ekr, and a sign of the goddess Mielikki's favor. She had rewarded the ranger's loyalty with the promise that he would never die in battle, and he defied death for many years, holding orcish hordes back from his home forest. A heart attack claimed him when his time was done, not an enemy's blade.
+
+STATISTICS:
+
+Equipped abilities:
+– Saving Throws: +1 (+2 for rangers)
+– +10 Hit Points (rangers only)
+
+Armor Class: 1 (-1 vs. crushing, 0 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 15~
+
+@8560 = ~Foik Morur demonstrated the effectiveness of these gloves at a community fair near Beregost several years back. He paid a local Archer to fire arrows at him. As the arrows approached, Foik's hands would move of their own accord, either knocking the arrow away or catching it. He earned more than a few pieces of gold for his troubles, and these earnings attracted some shadowy figures to Foik's tent that evening. The next morning, Foik was found dead and the gloves missing.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. missile attacks
+
+Weight: 2~ // todo
+
+// patching other mods
+// item upgrade
+@50000 = ~Ring of Elemental Mastery
+This ring combines the might of elements of Earth, Air and Fire and grants the user dominion over the creatures that hail from those planes. This ring was created for <CHARNAME> and its fame will no doubt grow with <PRO_HIMHER>.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Saving Throws: +1
+– Fire, Electricity, and Acid Resistance: +50%
+
+Charge abilities:
+– Summon 24-HD Greater Air, Earth, and Fire Elemental once per day
+  Range: 20 ft.
+  Duration: 1 hour
+
+– Charm Air, Earth, or Fire Elemental three times per day (no save)
+  Range: Touch
+  Duration: 60 seconds
+  Area of Effect: 1 elemental
+
+– Improved Invisibility once per day
+  Range: Touch
+  Duration: 1 turn
+  Area of Effect: 1 creature
+
+Weight: 0~
+
+@50010 = ~Boots of the Hornet
+The Boots of the Hornet are unsurpassed at increased the speed of their wearer. Combining all of the powers of the Boots of Avoidance and the Boots of Speed, these boots make it very difficult to strike the bearer indeed.
+
+STATISTICS:
+
+Equipped abilities:
+– Doubles movement rate
+– Armor Class: +1 Armor Class, +4 extra vs. missile attacks
+– Saves vs. Breath: +1
+
+Weight: 4~
+
+@50040 = ~Enhanced Robe of the Good Archmagi
+This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's magic resistance and saving throws. Due to the nature of its enchantment, it can only be worn by wizards of good alignment. This particular robe has been further enchanted by <CHARNAME>.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: set to 3, plus 1
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Magic damage resistance: +25%
+– Casting speed improved by 1
+– Can memorize one extra 1st-level spell, one extra 2nd-level spell, one extra 3rd-level spell, and one extra 4th-level spell
+
+Weight: 6~
+
+@50041 = ~Enhanced Robe of the Neutral Archmagi
+This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's magic resistance and saving throws. Due to the nature of its enchantment, it can only be worn by wizards of neutral alignment. This particular robe has been further enchanted by <CHARNAME>.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: set to 3, plus 1
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Magic damage resistance: +25%
+– Casting speed improved by 1
+– Can memorize one extra 1st-level spell, one extra 2nd-level spell, one extra 3rd-level spell, and one extra 4th-level spell
+
+Weight: 6~
+
+@50042 = ~Enhanced Robe of the Evil Archmagi
+This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's magic resistance and saving throws. Due to the nature of its enchantment, it can only be worn by wizards of evil alignment. This particular robe has been further enchanted by <CHARNAME>.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: set to 3, plus 1
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Magic damage resistance: +25%
+– Casting speed improved by 1
+– Can memorize one extra 1st-level spell, one extra 2nd-level spell, one extra 3rd-level spell, and one extra 4th-level spell
+
+Weight: 6~
+
+@50120 = ~Gloves of the Master Thief: Twelve Fingers
+<CHARNAME> had these gloves formed from a number of more mundane items that benefit the rogue. When these gloves are worn by a thief, each glove appears to have an extra magical finger that aids the fortune-hunter in performing their unique skills. In addition, the gloves are stylish. They look almost... gnomish in design.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: 3
+– Saving Throws: +1
+– Pick Pockets: +20%
+– Open Locks and Find Traps: +25%
+– Immunity to backstabs and sneak attacks
+
+Weight: 2~

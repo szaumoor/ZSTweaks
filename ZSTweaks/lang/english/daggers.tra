@@ -1,0 +1,426 @@
+@6000 = ~This seemingly simple dagger, steel blade and bone handle, is an incredibly powerful weapon. Forged by an unfortunate duergar smith centuries earlier, the handle was carved from a tooth of a black dragon and the blade was tempered in the blood of its creator. How it has made its way to you is anyone's guess.
+
+STATISTICS:
+
+Equipped abilities:
+– Acid Resistance: +40%
+
+Combat abilities:
+– Elves, spiders, and denizens native to the Underdark take an extra +5 piercing damage per hit
+
+THAC0: +4
+Damage: 1d4+4, +1d4 acid damage
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6010 = ~Rumored to have been dropped from the Heavens by a careless lesser deity, this dagger is a favorite among thieves and assassins, as it will sometimes magically hide its user from the victim's sight.
+
+STATISTICS:
+
+Combat abilities:
+– 10% chance of making the user go invisible for 1 turn after each successful attack
+
+THAC0: +5
+Damage: 1d4+5, +1 fire and electricity damage
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6011 = ~Dagger of the Star +5~
+@6012 = ~Dagger of the Star +6~
+
+@6013 = ~Rumored to have been dropped from the Heavens by a careless lesser deity, this dagger is a favorite among thieves and assassins, as it will sometimes magically hide its user from the victim's sight.
+
+With the star sapphires encrusting its hilt, this small blade is one of the most dangerous weapons in the realms.
+
+STATISTICS:
+
+Combat abilities:
+– 15% chance of making the user go invisible for 1 turn after each successful attack
+– Star Bolt: Each successful hit has a 15% chance of causing either 1d8 fire, 1d8 of electrical damage, or both
+
+Charge abilities:
+– Heavenly Strike three times per day
+  Special: Raise the dagger to the sky, summoning a bolt of lightning and a column of fire to strike the target, dealing 6d6+24 electrical and fire damage (save vs. Breath at -5 to take a quarter less damage). Adjacent targets take 60% of the fire part of the damage. This action also empowers the wielder, adding +2 fire and electrical damage to all melee and ranged attacks for the next turn.
+  Area of Effect: 1 creature and adjacent allies
+
+THAC0: +6
+Damage: 1d4+6, +2 fire and electricity damage
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6230 = ~This is a vicious weapon used by Neb, covered with old blood and coated in a poison that is both quick-acting and extremely deadly. Only the truly evil would dare to use this item on their own.
+
+STATISTICS:
+
+Combat abilities:
+– Target must save vs. Poison or suffer 2 points of damage per second for 10 seconds
+
+THAC0: +2
+Damage: 1d4+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6380 = ~The typical throwing dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. Unlike a dagger, this one has a smaller handle and is balanced perfectly. A thin coating of poison has been applied to each poisoned throwing dagger, making it a lethal tool in the hands of trained assassins.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target must save vs. Death at -2 or suffer 2 points of poison damage per second for 10 seconds
+
+Damage: 1d4 (missile)
+Speed Factor: 2
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
+
+@6560 = ~This dagger is made entirely from a single cut of jade and has an edge suitable for splitting hairs. A complex ornamental design can be seen on either side, although their historical or cultural significance has long since been forgotten.
+
+The Jade Fang was the weapon of choice for famed Shou Lung thief Niu Weidan, who would use the dagger to immobilize his opponents before draining them of their life force to reinforce his own. Cornered countless times, Niu was always successful in using this dagger to escape. In the end, it wasn't an enemy or vengeful victim that felled Niu, but rather old age. The blade was passed down through his family as an heirloom and did not see use as a combat weapon from that point onward.
+
+STATISTICS:
+
+Combat abilities:
+– 15% chance of stunning for 10 seconds if a save vs. Spell is failed; 5% chance of triggering with no save allowed
+– Each hit heals the wielder between 1 and 5 Hit Points. It's more likely to heal less than more
+
+THAC0: +3
+Damage: 1d4+3 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6570 = ~This +1 silver dagger acts as a +4 dagger vs. lycanthropes. Dynala Goldenhand, an elven Ranger who wished to rid her homeland of its werejackal problem, forged the dagger. She was killed by a tribe of orcs in the Graypeak Mountains as she tracked the werejackal leader.
+
+STATISTICS:
+
+Combat abilities:
+– Acts as a +4 silver weapon against lycanthropes for the purposes of overcoming physical protections and immunities
+
+THAC0: +1, +6 vs. lycanthropes
+Damage: 1d4+1, plus 6 extra damage vs. lycanthropes
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6580 = ~Most who take up the trade of murder for hire do so for reasons other than personal pleasure, but not so the Lady Demarche. She took special pleasure in the torture of her targets... which is why she made this dagger. With but one touch of its polished blade, an opponent was rendered immobile, incapable of so much as screaming, yet the victim could watch and feel all that happened to them. While her opponent was thus held, the Lady would slowly bleed them, sometimes taking several hours before allowing her subject to succumb to the final agony of death. The Lady finally fell victim to her own evil; disarmed by a rival and struck by her own stiletto, her fate was soon sealed.
+
+STATISTICS:
+
+Combat abilities:
+– 25% chance per hit that the target must save vs. Death or be held for 2 rounds
+– +5% critical chances
+– Persistent wounds: causes 2 extra piercing damage immediately, and once per round for the next 3 rounds
+
+THAC0: +2
+Damage: 1d4+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6590 = ~There are no records of this weapon's creator. Nevertheless, its existence can be traced back among thieves and murderers to before Dalereckoning. Its blackened blade was apparently forged from the arcane metals of an iron golem, giving the weapon an appearance as dark as its history. The remnants of the power of the golem in the blade provide the wielder with the ability to sometimes deflect magical attacks, and this energy is sometimes unleashed when hitting an opponent.
+
+STATISTICS:
+
+Equipped abilities:
+– +10% Magic Resistance
+
+Combat abilities:
+– 50% chance per hit to inflict 1d4 points of Magic damage
+
+THAC0: +2
+Damage: 1d4+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6930 = ~The mage who crafted this strange dagger was obsessed with the four elemental planes and sought to create a means to join them together. Opening portals to all of them at once, he managed to join their energies together to enchant this relic, giving it properties of each plane.
+
+Unfortunately, he happened to be standing between the portals, holding the dagger in his hand; when the energies converged, they converged on him. It was the mage’s apprentice who discovered the dagger, clutched in his master’s charred and frozen hands.
+
+STATISTICS:
+
+Equipped abilities:
+– +10% elemental resistance
+
+Combat abilities:
+– Deals an extra 2d4 cold damage to fire elementals
+– Deals an extra 2d4 fire damage to water elementals
+– Deals an extra 2d4 acid damage to earth elementals
+– Deals an extra 2d4 electrical damage to air elementals
+
+THAC0: +2
+Damage: 1d4+2, +2 fire, cold, electrical, or acid damage (random)
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@6940 = ~Acid-Etched Dagger +3~
+
+@6941 = ~This dagger, though old, was obviously crafted well and enchanted carefully. An ordinary dagger would have long ago dissolved in the juices of the albino wyrmling's stomach. Though the dagger is still intact and boasts a sharp edge, its time in the wyrmling's stomach has left swirling patterns of acid etching along the blade and hilt.
+
+STATISTICS:
+
+Combat abilities:
+– 20% chance per hit that the target suffers a -2 penalty to Armor Class and 1d3 extra point of acid damage per round for 3 rounds
+
+THAC0: +3
+Damage: 1d4+3, +1d3 (acid)
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@7340 = ~The original Gemblade produced brilliant jewels when it struck. Now the weapon has used up its ability to create these valuable stones. Instead, it has developed a new ability which unleashes harmful magical energy on hit and empowers casters of the wizardly sort.
+
+STATISTICS:
+
+Equipped abilities:
+– Intelligence: +1
+– 2 additional wizard spell slots for level 1 and 2
+– Acts as a +3 weapon for the purposes of what it can hit
+
+Combat abilities:
+– 33% chance of inflicting an extra 1d4+2 magic damage
+
+THAC0: +2
+Damage: 1d4+2, +1d2 magic damage
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@7350 = ~The typical throwing dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. Unlike a dagger, this one has a smaller handle and is balanced differently.
+
+STATISTICS:
+
+Damage (ranged): 1d4 (missile)
+Damage (melee): 1d3 (piercing)
+Speed Factor (ranged): 2
+Speed Factor (melee): 3
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
+
+//vanilla
+@7351 = ~The typical throwing dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. Unlike a dagger, this one has a smaller handle and is balanced perfectly. A thin coating of poison has been applied to each poisoned throwing dagger, making it a lethal tool in the hands of trained assassins.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target takes 2 points of poison damage per second for 10 seconds unless they save vs. Death (ranged only)
+
+Damage (ranged): 1d4 (missile)
+Damage (melee): 1d3 (piercing), +1d2 (poison, no save)
+Speed Factor (ranged): 2
+Speed Factor (melee): 3
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
+
+// tweaked
+@7352 = ~The typical throwing dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. Unlike a dagger, this one has a smaller handle and is balanced perfectly. A thin coating of poison has been applied to each poisoned throwing dagger, making it a lethal tool in the hands of trained assassins.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target must save vs. Death at -2 or suffer 2 points of poison damage per second for 10 seconds (ranged only)
+
+Damage (ranged): 1d4 (missile)
+Damage (melee): 1d3 (piercing), +1d2 (poison)
+Speed Factor (ranged): 2
+Speed Factor (melee): 3
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
+
+@7780 = ~This cursed dagger, with a blade gleaming red like blood and a hilt studded with a green emerald, is a relic of ancient Thayan necromancy. When it strikes, the victim's life force is siphoned away, healing and empowering the wielder, which allows it to sustain its owner in battle, even from the brink of death. However, in order the power of the dagger to be unleashed, the wielder must be willing to pay the price for its power.
+
+STATISTICS:
+
+Equipped abilities:
+– Wielder's alignment becomes Chaotic Evil
+– Immunity to death magic and level drain
+– Infravision
+– Regenerate 1 HP per 2 rounds
+– -50% weakness to Fire damage
+– +50% resistance to Cold and Electricity
+– Cannot be healed by positive energy spells and most healing potions
+– May only be removed with a Remove Curse spell
+
+Combat abilities:
+– 18% chance per hit of draining 2 levels from the target, which heals the user 1d6 HP plus 10% of the user's maximum HP
+– Wielder increases Strength and Dexterity by 1 point for 7 rounds and regenerates 6 HP over 1 round each time a target is killed by them. During half a round, your HP cannot be reduced below 1
+– Every strike siphons 1 HP, which is transferred to the wielder; vampires absorb 3 HP instead
+
+THAC0: +4
+Damage: 1d4+4 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@8365 = ~The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter. Despite their small size, daggers have a 5% higher chance to score a critical hit and deal increased damage on critical hits compared to other weapons.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d4 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@8366 = ~This dagger is used by Shadow Thieves.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d4 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@8367 = ~This dagger was created for <CHARNAME> by <PRO_HISHER> apprentices.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d4+1 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@8368 = ~The typical throwing dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger. Unlike a dagger, this one has a smaller handle and is balanced differently.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d4 (missile)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
+
+@8570 = ~This dagger is a potent blade favored by assassins all across the realms. This particular dagger of venom was created for use by the Shadow Thieves of Amn. Every time it hits an opponent, it secretes a venom into the bloodstream of the creature. The venom works quickly and efficiently.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target suffers 1 point of poison damage per second for 15 seconds (Save vs. Poison negates)
+
+THAC0: +2
+Damage: 1d4+2 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 2~ // todo
+
+@50110 = ~<CHARNAME> arranged to have this dagger constructed out of the soporiferous Pixie Prick and the deadly Boneblade. The result is a weapon worthy of any assassin.
+
+STATISTICS:
+
+Equipped abilities:
+– Acid Resistance: +50%
+
+Combat abilities:
+– +5% critical hit chances
+– Elves, spiders, and denizens native to the Underdark take an extra +6 piercing damage per hit
+– Hit target must save vs. Poison at -2 or fall asleep. When this triggers, the wielder gains a +5% bonus to critical hit chances (doesn't stack) and +1 to damage and THAC0 (stacks) for 2 rounds
+
+THAC0: +5
+Damage: 1d4+5, +1d6 acid damage
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 3~
+
+@50111 = ~Quietus +5~

@@ -14,15 +14,21 @@ END
 
 ACTION_FOR_EACH ability IN
     ~GA_SPWI103~ ~GA_SPWI217~ ~GA_SPWI304~ ~GA_SPWI418~
-    ~GA_SPWI523~ ~GA_SPWI712~ ~GA_SPWI812~ ~GA_SPW911~
+    ~GA_SPWI523~ ~GA_SPWI712~ ~GA_SPWI812~ ~GA_SPWI911~
 BEGIN
-    OUTER_TEXT_SPRINT line "ABILITYX   %ability%   ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****      ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****"
-    APPEND ~CLABSO01.2DA~ ~%line%~
+  OUTER_TEXT_SPRINT line "ABILITYX   %ability%    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****"
+  APPEND ~CLABSO01.2DA~ ~%line%~
+END
+
+ACTION_IF spell_shroud_of_flame > 0 BEGIN
+  LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHROUD_OF_FLAME" RET shroud_res = spell_res END
+  OUTER_TEXT_SPRINT line "ABILITYX   GA_%shroud_res%    ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****"
+  APPEND ~CLABSO01.2DA~ ~%line%~
 END
 
 COPY_EXISTING ~CLABSO01.2DA~ ~override~
-    LPM reindex_clab
-    PRETTY_PRINT_2DA
+  LPM reindex_clab
+  PRETTY_PRINT_2DA
 
 <<<<<<<<./zstweaks/macro.tph
 DEFINE_PATCH_MACRO stuff BEGIN
@@ -31,12 +37,12 @@ END
 >>>>>>>>
 
 ACTION_FOR_EACH ability IN
-          ~SPWI103~ ~SPWI217~ ~SPWI304~ ~SPWI418~
-          ~SPWI523~ ~SPWI712~ ~SPWI812~ ~SPWI911~
+    ~SPWI103~ ~SPWI217~ ~SPWI304~ ~SPWI418~
+    ~SPWI523~ ~SPWI712~ ~SPWI812~ ~SPWI911~
 BEGIN
   COPY_EXISTING ~%ability%.SPL~ ~override~
-    SET spl_level = LONG_AT(0x36) - 1
-    DEFINE_ASSOCIATIVE_ARRAY stuff BEGIN  ~%ability%~ => ~%spl_level%~ END
+    SET spl_level = LONG_AT(0x34)
+  DEFINE_ASSOCIATIVE_ARRAY stuff BEGIN ~%ability%~ => ~%spl_level%~ END
 END
 
 COPY ~./zstweaks/macro.tph~ ~./zstweaks/macro.tph~
@@ -46,12 +52,15 @@ COPY ~./zstweaks/macro.tph~ ~./zstweaks/macro.tph~
 
 REINCLUDE ~./zstweaks/macro.tph~
 
-COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~
-    LPF CRE_KIT RET kit = result END
-    PATCH_IF kit = kit_dragon_disciple BEGIN
-      LPM stuff
-      PATCH_IF zst_2231_fire_boost BEGIN
-          LPF ADD_CRE_EFFECT INT_VAR opcode = 332 timing = 9 parameter2 = 1 parameter1 = zst_2231_fire_boost_pctg END
-      END
+COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
+  LPF CRE_KIT RET kit = result END
+  PATCH_IF kit = kit_dragon_disciple BEGIN
+    LPM stuff
+    PATCH_IF spell_shroud_of_flame > 0 BEGIN
+      ADD_MEMORIZED_SPELL "%shroud_res%" #5 "wizard" (1)
     END
+    PATCH_IF zst_2231_fire_boost BEGIN
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 332 timing = 9 parameter2 = 1 parameter1 = zst_2231_fire_boost_pctg END
+    END
+  END
 BUT_ONLY
