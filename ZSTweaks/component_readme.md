@@ -443,6 +443,8 @@ This improves this mask's powers in the following ways:
 - Breathe Acid now causes 8d6 acid damage, not 6d6
 - May also cast Aura of Despair as a blackguard of the same level once per day, which is fitting considering the description itself talks about how looking into the mask causes feelings of dread.
 
+If Forgotten Armaments is installed, this component will be skipped, as that mod changes it already in a fairly different way thematically.
+
 **Component 1658:** Make Dragon Helm add protection against acid too, as well as +2 saves against breath
 
 Self-explanatory. As for the reasoning, because it felt odd leaving acid breath out of it. Saves vs. Breath, because well, dragon breath.
@@ -1960,6 +1962,10 @@ Lastly, this will patch any dragon disciples that may exist in the game, adding 
 **Component 2232** Make Called Shot directly increase ranged weapon damage, instead of adding 2 damage after the initial hit
 
 Self-explanatory. Generally speaking, it's more powerful to directly increase the base damage.
+
+**Component 2260:** Make Blades and Skalds get 1/2 APR on levels 7 and 13, much like Fighters
+
+This will give these classes an edge, as they are more martially inclined. It also mirrors how it works in BG3 for Blades.
 
 </details>
 
