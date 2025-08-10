@@ -21,7 +21,7 @@ BEGIN
 END
 
 ACTION_IF spell_shroud_of_flame > 0 BEGIN
-  LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHROUD_OF_FLAME" RET shroud_res END
+  LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHROUD_OF_FLAME" RET shroud_res = spell_res END
   OUTER_TEXT_SPRINT line "ABILITYX   GA_%shroud_res%    ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****"
   APPEND ~CLABSO01.2DA~ ~%line%~
 END
