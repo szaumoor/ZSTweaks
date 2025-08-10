@@ -24,7 +24,7 @@
 @57 = ~Can't install groups of components if individual components (without subcomponents) are installed already~
 @58 = ~Can't install components included in components that install groups of other components~
 @59 = ~This component must be installed before the next scroll tweak~
-@60 = ~This component is already effectively installed through the EEFixpack~
+@60 = ~This component is already effectively installed through the EE Fixpack~
 
 @10000 = ~Install all tweaks in the general tweaks group (except the ones that require a choice)~
 @10001 = ~Install all tweaks in the gear tweaks group (except the ones that require a choice)~
@@ -69,7 +69,7 @@
 @1546 = ~Make the different shield types more distinct and optionally change shield usability~
 @1547 = ~Make Protection from Undead scrolls less overpowered but still invaluable vs. undead~
 @1549 = ~Tweak the usability of different armor types~ // TODO
-@1555 = ~Make the Slayer Form more interesting, effective in late-game, and less annoying to use~
+@1555 = ~Make the Slayer Form more interesting, effective in late-game, and less annoying to use~ // (TODO)
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"

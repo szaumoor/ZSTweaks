@@ -16,11 +16,9 @@
 - Divided the ginormous translation file in a bunch of logical parts. This may make the task of translating the mod less daunting (if anyone ever dares to do that)
 - Added Shroud of Flame to the list of Dragon Disciple fire spells available by default
 - Added a configuration option that makes the blunt weapon tweak only apply to creatures that are not wearing armor, as you could think that the overall lessened effectiveness of most armors against blunt weapons is already enough. This is **disabled** by default, but you can enable it in the configuration file.
-- The Visage component now will detect appropriately the presence of Forgotten Armaments, and it will be skipped if it's detected.
+- The Visage component now will detect appropriately the presence of Forgotten Armaments, and it will be skipped if it's detected, since it's conceptually different.
 
 ## New Components / Features
 
-- Make the Slayer Form more interesting, effective in late-game, and less annoying to use
 - Make the Impaler slightly more scary: +5% higher critical hit chance, +5 more impaling damage on crits
 - Make Blades and Skalds get 1/2 APR on levels 7 and 13, much like Fighters
-
