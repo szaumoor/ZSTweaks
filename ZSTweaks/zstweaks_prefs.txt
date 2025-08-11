@@ -53,14 +53,18 @@ OUTER_SET zst_1450_bards_probability_penalty = 24 // 25%, probabilities go from 
 OUTER_SET zst_1538_jewelry_price = "150"
 
 // allow or disallow tweaks for component 1545 (stat tweaks)
-OUTER_SET zst_1545_strength_bonuses     = "1"
-OUTER_SET zst_1545_constitution_bonuses = "1"
-OUTER_SET zst_1545_dexterity_bonuses    = "1"
-OUTER_SET zst_1545_lore_class_bonuses   = "1" // lore bonuses per class
-OUTER_SET zst_1545_lore_stat_bonuses    = "1" // lore bonuses with intelligence and wisdom
-OUTER_SET zst_1545_racethac0_bonuses    = "1" // thac0 bonuses for race
-OUTER_SET zst_1545_proficiency_bonuses  = "1"
-OUTER_SET zst_1545_weapon_style_bonuses = "1"
+OUTER_SET zst_1545_strength_bonuses       = "1"
+OUTER_SET zst_1545_constitution_bonuses   = "1"
+OUTER_SET zst_1545_dexterity_bonuses      = "1"
+OUTER_SET zst_1545_lore_class_bonuses     = "1" // lore bonuses per class
+OUTER_SET zst_1545_lore_stat_bonuses      = "1" // lore bonuses with intelligence and wisdom
+OUTER_SET zst_1545_racethac0_bonuses      = "1" // thac0 bonuses for race
+OUTER_SET zst_1545_proficiency_bonuses    = "1"
+OUTER_SET zst_1545_weapon_style_bonuses   = "1"
+OUTER_SET zst_1545_weapon_style_twohanded = "1" // allow two handed tweak
+OUTER_SET zst_1545_weapon_style_onehanded = "1" // allow one handed tweak
+OUTER_SET zst_1545_weapon_style_shield    = "1" // allow two handed tweak
+OUTER_SET zst_1545_weapon_style_twoweapon = "1" // allow two weapon tweak
 
 // allow tweaks to different shield types
 OUTER_SET zst_1546_buckler_tweak = "1"

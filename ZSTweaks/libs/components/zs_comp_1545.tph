@@ -42,7 +42,31 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
 END
 
 ACTION_IF zst_1545_proficiency_bonuses BEGIN
-    COPY ~%MOD_FOLDER%/2da/tweaks/WSPECIAL.2DA~ ~override~
+    COPY ~WSPECIAL.2DA~ ~override~
+        PATCH_IF zst_1545_weapon_style_twohanded BEGIN
+            REPLACE_TEXTUALLY ~^\(TWOHANDED-0\).+$~ ~\1 0 0 0 0 1 0 0 0~
+            REPLACE_TEXTUALLY ~^\(TWOHANDED-1\).+$~ ~\1 1 0 0 0 0 0 -1 0~
+            REPLACE_TEXTUALLY ~^\(TWOHANDED-2\).+$~ ~\1 2 0 0 0 0 0 -4 1~
+        END
+
+        PATCH_IF zst_1545_weapon_style_onehanded BEGIN
+            REPLACE_TEXTUALLY ~^\(SINGLEWEAPON-0\).+$~ ~\1 0 0 0 0 0 0 1 0~
+            REPLACE_TEXTUALLY ~^\(SINGLEWEAPON-1\).+$~ ~\1 1 0 0 0 -1 0 -1 1~
+            REPLACE_TEXTUALLY ~^\(SINGLEWEAPON-2\).+$~ ~\1 2 0 0 0 -2 0 -2 1~
+        END
+
+        PATCH_IF zst_1545_weapon_style_shield BEGIN
+            REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-0\).+$~ ~\1 -1 0 1 0 0 1 0 0~
+            REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-1\).+$~ ~\1 0 0 0 0 0 -1 0 0~
+            REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-2\).+$~ ~\1 0 0 0 0 -1 -3 0 0~
+        END
+
+        PATCH_IF zst_1545_weapon_style_shield BEGIN
+            REPLACE_TEXTUALLY ~^\(TWOWEAPON-0\).+$~ ~\1 -1 -2 4 6 2 0 0 0~
+            REPLACE_TEXTUALLY ~^\(TWOWEAPON-1\).+$~ ~\1 -1 -1 2 4 1 0 0 0~
+            REPLACE_TEXTUALLY ~^\(TWOWEAPON-2\).+$~ ~\1 0 0 0 2 -1 0 0 0~
+        END
+
         PRETTY_PRINT_2DA
 END
 
