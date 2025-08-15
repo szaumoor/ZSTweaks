@@ -135,6 +135,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_ids_setup~ BEGIN
     OUTER_SET spell_righteous_wrath_faithful = IDS_OF_SYMBOL (spell CLERIC_RIGHTEOUS_WRATH_OF_THE_FAITHFUL)
     OUTER_SET spell_shout                    = IDS_OF_SYMBOL (spell WIZARD_SHOUT)
     OUTER_SET spell_shroud_of_flame          = IDS_OF_SYMBOL (spell WIZARD_SHROUD_OF_FLAME)
+    OUTER_SET spell_smashing_wave            = IDS_OF_SYMBOL (spell CLERIC_SMASHING_WAVE)
     OUTER_SET spell_unfailing_endurance      = IDS_OF_SYMBOL (spell CLERIC_UNFAILING_ENDURANCE)
     OUTER_SET spell_wall_of_moonlight        = IDS_OF_SYMBOL (spell CLERIC_WALL_OF_MOONLIGHT)
 

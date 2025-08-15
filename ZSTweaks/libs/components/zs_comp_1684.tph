@@ -33,4 +33,5 @@ ACTION_IF NOT is_iwdee BEGIN
         PATCH_IF zst_1450_allow_daggers AND (finesse_component_installed OR general_tweaks_installed) BEGIN
             LPF ALTER_EFFECT INT_VAR header_type = 1 match_opcode = 326 STR_VAR resource = ~ZSTWTHD0~ END
         END
+    BUT_ONLY IF_EXISTS
 END

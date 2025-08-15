@@ -10,7 +10,6 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
     ACTION_IF zst_gender_fix BEGIN
         WITH_SCOPE BEGIN
             PRINT "[[FIX]]: Setting many types of sexless creatures as niether-gendered if they're set to male or female so it doesn't intrude with opcodes that target male/female"
-
             OUTER_SET matches = 0
             COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
                 SET general = BYTE_AT(0x271)
@@ -244,6 +243,10 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
                 END
                 SAY_EVALUATED 0x54 ~%desc%~
             END
+
+        COPY_EXISTING ~SHAKTI1.itm~ ~override~
+            PATCH_PRINT "[[FIX]]: Fixing SHAKTI1.itm (Dagger +3) speed factor from 1 to 0"
+            LPF ALTER_HEADER INT_VAR speed = 0 END
 
         COPY_EXISTING ~MISC4U.itm~ ~override~
             LPF WPN_DICESIZE RET dicesize = result END

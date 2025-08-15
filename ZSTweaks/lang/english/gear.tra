@@ -1430,3 +1430,27 @@ Equipped abilities:
 – Immunity to backstabs and sneak attacks
 
 Weight: 2~
+
+@60000 = ~The cursed girdle of gender, a rare yet oft-discussed magical item, is wrought with a most powerful magic. Anyone unfortunate enough to secure it around their waist instantly finds their gender to be transformed. It is said that, not fifty years past, a nameless court jester was beheaded for presenting the girdle as a gift to Duke Lobelahn's lover.
+
+STATISTICS:
+
+Equipped abilities:
+– Changes the wearer's gender
+– THAC0: +1 vs. the original gender
+– Damage: +1 vs. the original gender
+– May only be removed with a Remove Curse spell
+
+Weight: 2~
+
+@60010 = ~This statue is a replica of a fierce gladiator wielding a blade in each hand. By invoking this figurine, the user temporarily transforms <PRO_HIMHER>self into a blue armored warrior wielding a magical short sword.
+
+STATISTICS:
+
+Charge abilities:
+– Transform once per day
+  Armor Class: Set to -5
+  Special: User is hasted and attacks three times per round with a +4 short sword. The sword critically hits 5% more often and is wielded as if the user has Mastery (3 proficiency slots) in short sword.
+  Duration: 1 turn
+
+Weight: 1~

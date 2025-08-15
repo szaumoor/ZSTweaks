@@ -1,5 +1,6 @@
 
 INCLUDE ~%MOD_FOLDER%/libs/zs_preinstall_check.tph~
+INCLUDE ~%MOD_FOLDER%/libs/zs_npc_array.tph~
 INCLUDE ~%MOD_FOLDER%/libs/zs_ids_setup.tph~
 INCLUDE ~%MOD_FOLDER%/zstweaks_prefs.txt~
 INCLUDE ~%MOD_FOLDER%/libs/zs_tw_functions.tph~

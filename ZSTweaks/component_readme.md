@@ -18,11 +18,12 @@ These are the available changes, all enabled by default, but can each be disable
 
 **Component 1120:** Make some weapon categories suffer penalties to backstabbing for balance
 
-This reduces the backstab multiplier of some weapons that realistically would not be great for backstabs, which also includes pretty broken weapons when used for backstabs, such as the Staff of Ram.
+This reduces the backstab multiplier of some weapons that realistically would not be great for backstabs, which also includes pretty broken weapons when used for backstabs, such as the Staff of Ram. This is fully configurable (check the configuration file), and you may decide both what categories to include for the tweak, and what is the penalty level for each. These are the defaults:
 
 - No penalty: Piercing swords, Ninja-tos, Clubs, and Daggers.
 - -1 penalty: Long swords, Scimitars, Katanas.
 - -2 penalty: Staves
+- No other weapons are considered by default, since they're not normally open to backstabbing.
 
 Note that this will make holding two weapons with backstab penalties increase them additively, which is an unavoidable side effect of the fact that the backstab reduction cannot be applied per weapon, only universally. For example, if you're an assassin with a 6x backstab multiplier, holding two long swords would reduce this to 4x.
 
@@ -39,7 +40,7 @@ Both types of weapons have piercing parts; that's why. The amount of piercing is
 
 This component makes changes to some weapon categories where I feel a tweak would be valuable or more interesting. All of these options are optional and can be turned on and off in the configuration file (all are on by default). Here are the changes:
 
-- Spears: 1d6 is a little low for spears in my opinion, so now they deal 1d8+bonus, filling the imaginary "gap" of two-handed weapons with damage between staves and halberds.
+- Spears: 1d6 is a little low for spears in my opinion, so now they deal 1d8+bonus, filling the imaginary "gap" of two-handed weapons with damage between staves and halberds. This part will also patch Javelins from CamDawg's project Javelin so their dice size also increases by 2.
 - War Hammers: 1d4+1 always felt a little too small and narrow for hammers, so now it will be 1d5+1. This doesn't affect special hammers that have double the damage potential, such as Crom Faeyr. It also includes Voidhammer +3, which only inflicts magic damage.
 - Ninja-tos, Wakizashis, and Katanas: This will make these inflict now 2d4 for ninja-tos and wakizashis and 2d5 for katanas. I think the inclination is clearly towards "Kara-Turan/eastern blades are higher quality." In practical terms, it just means that these swords will deal more minimum damage compared to long swords and scimitars, and luck bonuses would allow maximum damage dealt with less effort. Additionally, it also makes wakizashis a piercing/slashing weapon, since in the real world, they're really more of a slashing weapon anyway though in practical terms it will still keep hitting as piercing most of the time (this change can be disabled or enabled independently).
 - Bastard swords: I never liked that bastard swords were "between long swords and two-handed swords," but there was no max damage difference between long swords and bastard swords. So now they're damage-wise actually between both (1d8+1).
@@ -1656,6 +1657,8 @@ Entangle saves are quite generous and, as such, very difficult to pull off at hi
 
 Therefore, it starts with a +2 bonus (from +3), which improves to +1 at level 5, 0 at level 10, -1 at level 15, and -2 at level 20.
 
+Finally, it changes their saving throws from Spell to Breath and bypasses magic resistance (but still can be dispelled).
+
 **Component 280:** Make Poison (cleric spell) do half damage on a failed save (without poisoning them)
 
 See component 100 for reasoning.
@@ -1963,7 +1966,7 @@ Lastly, this will patch any dragon disciples that may exist in the game, adding 
 
 Self-explanatory. Generally speaking, it's more powerful to directly increase the base damage.
 
-**Component 2260:** Make Blades and Skalds get 1/2 APR on levels 7 and 13, much like Fighters
+**Component 2260:** Make Blades, Skalds, and Swashbucklers get 1/2 APR on levels 7 and 13, much like Fighters
 
 This will give these classes an edge, as they are more martially inclined. It also mirrors how it works in BG3 for Blades.
 

@@ -7,25 +7,137 @@ END
 WITH_SCOPE BEGIN
     OUTER_SET no_valygar_gear_comp = NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1643" AND NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1379"
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
-        PATCH_IF NOT "%SOURCE_RES%" STR_EQ "l#GNOSW" BEGIN // tongue of thaxx, SotSC
+
+        PATCH_IF NOT "%SOURCE_RES%" STR_EQ "l#GNOSW" AND // tongue of thaxx, SotSC
+                 NOT "%SOURCE_RES%" STR_EQ "bdsw1h06" // skip voidsword
+        BEGIN
             LPF ITM_CAT RET wpn_cat = result END
             LPF ITM_PROF RET wpn_prof = result END
             LPF ITM_APPEARANCE RET wpn_appearance = result END
-            PATCH_IF wpn_cat=20 AND (wpn_prof=90 OR wpn_prof=94 OR (wpn_prof=95 AND "%wpn_appearance%" STR_EQ "sc")) BEGIN // long swords, katanas or scimitars
-                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "bdsw1h06" BEGIN // skip voidsword entirely
+
+            PATCH_IF wpn_cat=20 BEGIN // large swords
+
+                PATCH_IF zst_1120_backstab_penalty_lswords > 0 AND wpn_prof=90 BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_lswords%~ END
+                END
+
+                ELSE PATCH_IF zst_1120_backstab_penalty_katana > 0 AND wpn_prof=94 BEGIN
                     PATCH_IF NOT "%SOURCE_RES%" STR_EQ "NPSW04" BEGIN
-                        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
+                            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_katana%~ END
                     END ELSE BEGIN
                         PATCH_IF no_valygar_gear_comp BEGIN
-                            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-1~ END
+                            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_katana%~ END
                         END
                     END
                 END
+
+                ELSE PATCH_IF zst_1120_backstab_penalty_scimitars > 0 AND wpn_prof=95 AND "%wpn_appearance%" STR_EQ "sc" BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_scimitars%~ END
+                END
+
+                ELSE PATCH_IF zst_1120_backstab_penalty_ninjatos > 0 AND wpn_prof=95 AND "%wpn_appearance%" STR_EQ "s1" BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_ninjatos%~ END
+                END
+
+                ELSE PATCH_IF zst_1120_backstab_penalty_bstsword > 0 AND wpn_prof=89 BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_bstsword%~ END
+                END
+
+                ELSE PATCH_IF zst_1120_backstab_penalty_2hsword > 0 AND wpn_prof=93 BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_2hsword%~ END
+                END
+
             END
 
-            PATCH_IF wpn_cat = 26 AND wpn_prof = 102 BEGIN // quarterstaves
-                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-2~ END
+            ELSE PATCH_IF wpn_cat=20 BEGIN // short swords
+
+                PATCH_IF zst_1120_backstab_penalty_sswords > 0 AND wpn_prof=91 BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_sswords%~ END
+                END
+
+                ELSE PATCH_IF zst_1120_backstab_penalty_sswords > 0 AND wpn_prof=95 AND "%wpn_appearance%" STR_EQ "ss" BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_sswords%~ END
+                END
+
             END
+
+            ELSE PATCH_IF wpn_cat=16 BEGIN // daggers
+
+                PATCH_IF zst_1120_backstab_penalty_daggers > 0 AND wpn_prof=96 BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_daggers%~ END
+                END
+
+            END
+
+            ELSE PATCH_IF wpn_cat=17 BEGIN // maces (vanilla maces and clubs)
+
+                PATCH_IF zst_1120_backstab_penalty_maces > 0 AND wpn_prof=101 BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_maces%~ END
+                END
+
+                ELSE PATCH_IF zst_1120_backstab_penalty_clubs > 0 AND wpn_prof=115 BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_clubs%~ END
+                END
+
+            END
+
+            ELSE PATCH_IF wpn_cat=21 BEGIN // hammers
+
+                PATCH_IF zst_1120_backstab_penalty_hammers > 0 AND wpn_prof=97 BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_hammers%~ END
+                END
+
+            END
+
+            ELSE PATCH_IF zst_1120_backstab_penalty_mornstars > 0 AND wpn_cat=22 BEGIN // morning stars
+
+                PATCH_IF wpn_prof=100 BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_mornstars%~ END
+                END
+
+            END
+
+            ELSE PATCH_IF zst_1120_backstab_penalty_flails > 0 AND wpn_cat=23 BEGIN // morning stars
+
+                PATCH_IF wpn_prof=100 BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_flails%~ END
+                END
+
+            END
+
+            ELSE PATCH_IF wpn_cat=25 BEGIN // axes
+
+                PATCH_IF zst_1120_backstab_penalty_axes > 0 AND wpn_prof=92 BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_axes%~ END
+                END
+
+            END
+
+            ELSE PATCH_IF wpn_cat = 26 BEGIN // staff category
+
+                PATCH_IF zst_1120_backstab_penalty_staves > 0 AND wpn_prof = 102 BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_staves%~ END
+                END
+
+            END
+
+            ELSE PATCH_IF wpn_cat = 29 BEGIN // spears category
+
+                PATCH_IF zst_1120_backstab_penalty_spears > 0 AND wpn_prof = 98 BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_spears%~ END
+                END
+
+            END
+
+            ELSE PATCH_IF wpn_cat = 30 BEGIN // halberds category
+
+                PATCH_IF zst_1120_backstab_penalty_halberds > 0 AND wpn_prof = 99 BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_halberds%~ END
+                END
+
+            END
+
         END
-BUT_ONLY
+
+    BUT_ONLY
 END

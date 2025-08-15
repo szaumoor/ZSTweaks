@@ -4,18 +4,28 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_2200~ = 1
 END
 
-COPY_EXISTING "SPCL105.SPL" ~override~
-    LPF ADD_SPL_EFF_SELF INT_VAR t=3 STR_VAR effects = ~op=263,p1=2,p2=1~ END
-
 ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN
     COPY_EXISTING "bdsw1hca.itm" ~override~
         LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 263 END
     BUT_ONLY IF_EXISTS
 END
 
-COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~
-    LPF CRE_KIT RET kit = result END
-    PATCH_IF kit = kit_blackguard BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode=263 target=2 parameter1=2 parameter2=1 timing=1 END
-    END
-BUT_ONLY
+COPY ~%MOD_FOLDER%/class_kits/blackguard~ ~override~
+OUTER_TEXT_SPRINT line "ABILITYX   AP_ZSTWBKG0        ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****"
+APPEND ~CLABPA06.2DA~ ~%line%~
+
+COPY_EXISTING ~CLABPA06.2DA~ ~override~
+  PRETTY_PRINT_2DA
+
+ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
+  ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
+    COPY_EXISTING ~%file%~ ~override~
+      LPF CRE_KIT RET kit = result END
+      PATCH_IF kit = kit_dragon_disciple BEGIN
+        PATCH_IF kit = kit_blackguard BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode=263 target=2 parameter1=2 parameter2=1 timing=9 END
+        END
+      END
+    BUT_ONLY
+  END
+END

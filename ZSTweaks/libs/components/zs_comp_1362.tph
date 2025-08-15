@@ -30,7 +30,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     END
 BUT_ONLY
 
-ACTION_IF zst_blunt_only_nonarmored BEGIN
+ACTION_IF zst_1362_blunt_only_nonarmored BEGIN
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         LPF ITM_CAT RET cat = result END
         LPF ITM_FLAGS RET flags = result END

@@ -872,3 +872,16 @@ Area of Effect: Special
 Saving Throw: None
 
 When this spell is cast, the life energy level of the recipient is raised. This reverses any previous life energy level drain of the creature by a force or monster. A Greater Restoration spell will also restore the Intelligence score of a creature affected by the Feeblemind spell and negate any form of insanity, such as confusion or berserk. It fully heals the target, cures any diseases or poisons. This restoration spreads to the rest of party members, including the priest, who is healed by half its total health only. The casting of this spell is very draining on the priest, and <PRO_HESHE> will likely require rest immediately afterward. This fatigue is profound, additionally causing a -2 penalty to casting speed, damage, THAC0, and Armor Class, as well as a 35% movement speed penalty for 2 turns.~
+
+@8658 = ~Smashing Wave
+(Invocation)
+
+Level: 4
+Sphere: Elemental Water
+Range: 100 ft.
+Duration: Instant
+Casting Time: 3
+Area of Effect: Special
+Saving Throw: Special
+
+This spell summons a 5-ft. wide wave of water that moves in the direction willed by the caster, striking all in its path with massive force. The wave deals 6d8+4 points of crushing damage; in addition, struck creatures have a 33% chance of being either stunned or knocked unconscious for 2 rounds. If the creature struck makes a successful Save vs. Breath Weapon at -1, the damage is reduced by half and the creature avoids being stunned or knocked unconscious.~

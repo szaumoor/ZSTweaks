@@ -4,19 +4,55 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_2260~ = 1
 END
 
-WITH_SCOPE BEGIN
-    COPY ~%MOD_FOLDER%/class_kits/extra_apr~ ~override~
-    OUTER_SPRINT ability "AP_ZSTWAPR2"
-    OUTER_TEXT_SPRINT line "ABILITYX    ****        ****        ****        ****        ****        ****        %ability%   ****        ****        ****        ****        ****        %ability%   ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****"
-    ACTION_IF zst_2260_allow_blade BEGIN
+ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald BEGIN
+
+  WITH_SCOPE BEGIN
+
+      COPY ~%MOD_FOLDER%/class_kits/extra_apr~ ~override~
+      OUTER_SPRINT ability "AP_ZSTWAPR2"
+      OUTER_TEXT_SPRINT line "ABILITYX    ****        ****        ****        ****        ****        ****        %ability%   ****        ****        ****        ****        ****        %ability%   ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****"
+
+      ACTION_IF zst_2260_allow_blade BEGIN
         APPEND ~CLABBA02.2DA~ ~%line%~
         COPY_EXISTING ~CLABBA02.2DA~ ~override~
             PRETTY_PRINT_2DA
-    END
+      END
 
-    ACTION_IF zst_2260_allow_skald BEGIN
+      ACTION_IF zst_2260_allow_skald BEGIN
         APPEND ~CLABBA04.2DA~ ~%line%~
         COPY_EXISTING ~CLABBA04.2DA~ ~override~
             PRETTY_PRINT_2DA
-    END
+      END
+
+      ACTION_IF zst_2260_allow_swash BEGIN
+        APPEND ~CLABTH04.2DA~ ~%line%~
+        COPY_EXISTING ~CLABTH04.2DA~ ~override~
+            PRETTY_PRINT_2DA
+      END
+
+      ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
+        ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
+          COPY_EXISTING ~%file%~ ~override~
+            LPF CRE_KIT RET kit = result END
+            PATCH_IF (zst_2260_allow_blade AND kit = kit_blade) OR
+                     (zst_2260_allow_skald AND kit = kit_skald) OR
+                     (zst_2260_allow_swash AND kit = kit_swashbuckler)
+              BEGIN
+                LPF CRE_FIRST_LEVEL RET level = result END
+                SET applications = (level >= 7) + (level >= 13)
+                PATCH_IF applications > 0 BEGIN
+                  SET p1 = applications == 1 ? 6 : 1
+                  LPF ADD_CRE_EFFECT INT_VAR timing = 9 opcode = 1 target = 1 parameter1=p1 END
+                END
+            END
+          BUT_ONLY
+        END
+      END
+
+  END
+
+END ELSE BEGIN
+  ACTION_IF NOT group_component BEGIN
+    WARN "No classes were selected in the configuration file"
+  END
 END

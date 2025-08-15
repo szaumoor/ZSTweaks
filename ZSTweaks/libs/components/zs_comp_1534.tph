@@ -75,4 +75,9 @@ ACTION_IF NOT is_iwdee BEGIN // iwdee deliberately unsupported for now
 
     COPY_EXISTING "POTN12.ITM" ~override~
         LPF ALTER_ITEM INT_VAR unusable0=0 END
+
+    COPY_EXISTING ~POTN13.ITM~ ~override~ // vanilla explosive / fire breath potions
+                  ~POTN26.ITM~ ~override~
+                  ~POTN27.ITM~ ~override~
+        LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
 END

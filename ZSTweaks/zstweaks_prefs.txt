@@ -17,6 +17,26 @@ OUTER_SET zst_443_death            = "1"
 OUTER_SET zst_443_pain             = "1"
 OUTER_SET zst_443_nerf_npc_symbols = "1"
 
+// backstab penalties to different weapon types (set to 0 to disable, otherwise add a positive number to determine backstab multiplier penalty)
+OUTER_SET zst_1120_backstab_penalty_lswords   = "1"
+OUTER_SET zst_1120_backstab_penalty_katana    = "1"
+OUTER_SET zst_1120_backstab_penalty_scimitars = "1"
+OUTER_SET zst_1120_backstab_penalty_staves    = "2"
+OUTER_SET zst_1120_backstab_penalty_wakis     = "0"
+OUTER_SET zst_1120_backstab_penalty_ninjatos  = "0"
+OUTER_SET zst_1120_backstab_penalty_bstsword  = "0"
+OUTER_SET zst_1120_backstab_penalty_2hsword   = "0"
+OUTER_SET zst_1120_backstab_penalty_sswords   = "0"
+OUTER_SET zst_1120_backstab_penalty_daggers   = "0"
+OUTER_SET zst_1120_backstab_penalty_maces     = "0"
+OUTER_SET zst_1120_backstab_penalty_clubs     = "0"
+OUTER_SET zst_1120_backstab_penalty_hammers   = "0"
+OUTER_SET zst_1120_backstab_penalty_mornstars = "0"
+OUTER_SET zst_1120_backstab_penalty_flails    = "0"
+OUTER_SET zst_1120_backstab_penalty_axes      = "0"
+OUTER_SET zst_1120_backstab_penalty_spears    = "0"
+OUTER_SET zst_1120_backstab_penalty_halberds  = "0"
+
 // control which category of weapons are affected by the dice changes component
 OUTER_SET zst_1150_dice_spears           = "1"
 OUTER_SET zst_1150_dice_bastard_swords   = "1"
@@ -27,7 +47,10 @@ OUTER_SET zst_1150_dice_warhammers       = "1"
 OUTER_SET zst_1150_dice_twohanded_swords = "1"
 
 // This modifies the blunt weapon tweak so the AC debuff only works against enemies that don't wear armor, such as dragons
-OUTER_SET zst_blunt_only_nonarmored = "0"
+OUTER_SET zst_1362_blunt_only_nonarmored = "0"
+
+// save penalty/bonus for arrows of dispelling
+OUTER_SET zst_1371_save_penalty = "-2"
 
 // allow or disallow weapon categories to be modified by the Finesse component (Component 1450)
 OUTER_SET zst_1450_allow_daggers   = "1"
@@ -240,9 +263,10 @@ OUTER_SET zst_2130_avoid_death    = "1"
 OUTER_SET zst_2231_fire_boost      = "1" // include the boost to fire damage in the Dragon Disciple tweak
 OUTER_SET zst_2231_fire_boost_pctg = "5" // percentage bonus if the previous is allowed
 
-// configurations for skald+blade apr bonus
+// configurations for skald+blade+swash apr bonus
 OUTER_SET zst_2260_allow_blade  = "1"
 OUTER_SET zst_2260_allow_skald  = "1"
+OUTER_SET zst_2260_allow_swash  = "1"
 
 /////////////////////////////// Creature Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
