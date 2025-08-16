@@ -19,7 +19,8 @@
 - Entangle component now makes it bypass magic resistance (still dispellable)
 - Entangle component now changes the saving throws required to Save vs. Breath, as it's more accurate in my estimation
 - Improved the implementation of Entangle component
-- Potion overhaul now makes the explosive potions deal fire damage that bypasses magic resistance, as it is, as far as I can tell not magical in nature, but based on dangerous chemicals reacting violently. The wands provide a contrast to this, since they are clearly magical in nature, and thus they are affected by magic resistance (TODO)
+- Potion overhaul now makes the explosive potions deal fire damage that bypasses magic resistance, as it is, as far as I can tell not magical in nature, but based on dangerous chemicals reacting violently. The wands provide a contrast to this, since they are clearly magical in nature, and thus they are affected by magic resistance
+- Axe crit component now adjusted so two-handed axes deal extra damage equal to 1d10 + Bonus instead of 1d12 + Bonus, which fits the damage range in IWD for two-handed axes
 
 ## New Components / Features
 

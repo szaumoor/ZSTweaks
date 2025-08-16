@@ -50,7 +50,7 @@ This component makes changes to some weapon categories where I feel a tweak woul
 
 The only difference between axes and swords functionally is the speed factor. Axes are 2 points slower than long swords. Speed factor determines how early or late you hit during your turn to attack each round. Its significance is debatable, and in my experience it's much more important for backstabbing, to ensure that the first movement of your character when attacking is an actual attack and not something cosmetic. To widen the difference between both, axes have the following difference:
 
-- Melee critical hits for one-handed axes deal extra damage equal to 1d8 + Enchantment (1d12 in the case of two-handed axes)
+- Melee critical hits for one-handed axes deal extra damage equal to 1d8 + Enchantment (1d10 in the case of two-handed axes)
 - Ranged critical hits deal extra damage equal to 1d6 + Enchantment
 
 For example, a critical hit with a +3 sword could deal 20 slashing damage, but if it was an axe, it would deal instead between 24-31 slashing damage (i.e. 20 plus 1d8+3)
