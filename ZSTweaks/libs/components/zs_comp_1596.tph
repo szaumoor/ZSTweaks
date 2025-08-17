@@ -5,8 +5,10 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+
     COPY ~%MOD_FOLDER%/items/shadow_blade~ ~override~
     COPY_EXISTING "SW1H10.itm" ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7670) END
         LPF ADD_EQUIPPED_EFF INT_VAR p1=class_thief p2=5 STR_VAR effects=~op=177,res=ZSTWSHB0;op=177,res=ZSTWSHB1~ END
+
 END

@@ -5,7 +5,9 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+
     ACTION_IF FILE_EXISTS_IN_GAME ~bddagg3a.itm~ BEGIN
+
         COPY_EXISTING ~bddagg3a.itm~ ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7340) ench=3 END
             LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=42,p1=2,p2=3~ END
@@ -21,8 +23,11 @@ ACTION_IF NOT is_iwdee BEGIN
             END
 
     END ELSE BEGIN
+
         ACTION_IF group_component = 0 BEGIN
             WARN "Gemblade not found in game files, skipping..."
         END
+
     END
+    
 END

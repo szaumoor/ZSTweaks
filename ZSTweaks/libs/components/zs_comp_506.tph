@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF spell_wall_of_moonlight > 0 BEGIN
+
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_WALL_OF_MOONLIGHT" RET spell_res END
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8230) END
@@ -32,5 +33,7 @@ ACTION_IF spell_wall_of_moonlight > 0 BEGIN
     BUT_ONLY IF_EXISTS
 
 END ELSE ACTION_IF group_component = 0 BEGIN
+
     PRINT "WARNING: Wall of Moonlight not found in game. This component will not be installed."
+
 END

@@ -150,6 +150,8 @@ Finally, the weapon categories affected are optional and can be turned off in th
 
 **Component 1534:** Rebalance some potions
 
+Firstly there's an option to make potions usable by everyone universally (there's no earthly reason your character can't put that potion up to their mouth and drink it). You can also patch all potions so never stack with themselves (highly recommended to balance gameplay). These options can be disabled in the configuration file.
+
 - Potion of Icedust: instead of providing a set immunity to fire for 1 round, it adds +75% resistance to fire for 3 rounds. I was considering making this effect undispellable but decided against it.
 - Potion of healing (basic): these options are generally never used after a while. Therefore, now they heal 12 HP instead of 9 HP, which makes them marginally more useful without breaking balance
 - Potion of Heroism: it also prevents morale failure as it increases the confidence of the drinker, and improves damage by 1. The THAC0 bonus it provides is no longer set to 90% of current, but instead improves immediately by 2, which is strictly a better outcome, since there will be no longer diminishing returns. It can also be drunk by any class
@@ -158,11 +160,7 @@ Finally, the weapon categories affected are optional and can be turned off in th
 - Potion of Perception: now the proper "detection" thief skills are improved further (find traps and detect illusions): 40%. Additionally, the enhanced perception improves Armor and Saving Throws by 2
 - Potion of Power: this makes the potion prevent morale failure like the potion of heroism, it improves all thieving abilities (not just some), it improves casting speed by 1, and it now also grants +10% higher damage output (physical and magical), which makes it useful for any class. Finally, the THAC0 bonus it provides is no longer to 80% of current, but instead improves immediately by 4, which is strictly a better outcome, since there will be no longer diminishing returns. Its rarity and price should be rewarded handsomely
 - CHARNAME'S Tankard: now it heals 27 HP three times per day, and it adds +1 Strength and Constitution for 1 turn, since it mentions feeling stronger when holding it.
-- All Strength potions: usable by any class
-
-**Component 1535:** Make all potions usable by all classes
-
-Self-explanatory. There's no earthly reason your character can't put that potion up to their mouth and drink it.
+- All Strength potions: usable by any class (independent of the previous universal restriction lift)
 
 **Component 1537:** Make Poison-curing spells an instant cast so attempting to cure poison is less likely to be interrupted
 
@@ -190,10 +188,6 @@ It's also worth mentioning that ToF's feat to use scrolls will also be rendered 
 This component will process all existing scrolls in the game, vanilla or modded, and make sure they're cast at the character level, no matter what your class is. So if you have a level 16 Thief that can use scrolls by whatever means (like using my previous component), they will be able to cast it as if they had a spellcasting level of 16.
 
 This pairs well with the previous component and greatly increases the usability of scrolls as a general resource for the whole party. I would recommend adding the options to enforce stat requirements so it's a bit more fair, but that's just me.
-
-**Component 1601:** Make potions and food items' effects universally incapable of stacking with themselves
-
-This prevents cheesy stacking of things like Potions of Fire Resistance, Potions of Invulnerability, etc. Applies to food items too, such as apples from Lunia and goodberries.
 
 **Component 1650:** Make mage robes without cloaks (like Robe of Vecna) take on the appearance of robes with cloaks
 

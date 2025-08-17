@@ -5,11 +5,13 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT has_eefixpack BEGIN
+
     ACTION_IF NOT is_iwdee BEGIN
+
         COPY_EXISTING ~SPWI518.SPL~ ~override~
             SET dur = 126
             LPF LAST_VALID_HEADER RET new_header = result END
-            FOR ( level = 19; level <= 20; ++level ) BEGIN
+            PATCH_FOR_EACH level IN 19 20 BEGIN
                 LPF ADD_SPELL_HEADER INT_VAR copy_header=new_header - 1 zs_min_level_for_copy = level insert_point=new_header+1 END
                 LPF ALTER_EFFECT INT_VAR header_type=1 header=new_header+1 duration= dur + 6 END
                 ++new_header
@@ -17,12 +19,12 @@ ACTION_IF NOT has_eefixpack BEGIN
             END
 
     END
+
 END ELSE BEGIN
+
     PRINT ~EET Fixpack detected, skipping duration extension for Phantom Blade. Extra phantasmal damage made not affect sleepers only.~
+
 END
 
 COPY_EXISTING ~PHANBLAD.EFF~ ~override~
     LPF ALTER_EFF_FILE INT_VAR special = 1024 END
-
-
-

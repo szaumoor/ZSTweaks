@@ -5,7 +5,9 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+
     WITH_SCOPE BEGIN
+
         COPY ~%MOD_FOLDER%/spells/cleric/sunray~ ~override~
         LAF GET_DMG_TYPE STR_VAR type = "magic" RET magic = result END
         COPY_EXISTING ~SPPR707.SPL~ ~override~
@@ -14,10 +16,12 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 
             PATCH_IF NOT has_eefixpack BEGIN
+
                 LPF DELETE_EFFECT INT_VAR match_opcode = 177 STR_VAR match_resource = "SP707L14" END
                 LPF DELETE_EFFECT INT_VAR match_opcode = 12 END
                 LPF ALTER_EFFECT INT_VAR match_opcode = 177 parameter1=race_vampire parameter2=4 STR_VAR match_resource = "UNDDEATH" END
                 LPF CLONE_EFFECT INT_VAR parameter1=race_vampyre STR_VAR match_resource = "UNDDEATH" END
+
             END ELSE BEGIN
                 LPF DELETE_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~SPPR707A~ END
             END
@@ -42,13 +46,13 @@ ACTION_IF NOT is_iwdee BEGIN
         BUT_ONLY
 
         COPY_EXISTING ~ZSTWSNRB.SPL~ ~override~
-        LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=0 parameter1=dmg7d6 END
-        LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=1 parameter1=dmg7d6 END
-        LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=2 parameter1=dmg8d6 END
-        LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=3 parameter1=dmg8d6 END
-        LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=4 parameter1=dmg9d6 END
-        LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=5 parameter1=dmg9d6 END
-        LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=6 parameter1=dmg10d6 END
+            LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=0 parameter1=dmg7d6 END
+            LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=1 parameter1=dmg7d6 END
+            LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=2 parameter1=dmg8d6 END
+            LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=3 parameter1=dmg8d6 END
+            LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=4 parameter1=dmg9d6 END
+            LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=5 parameter1=dmg9d6 END
+            LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=6 parameter1=dmg10d6 END
         BUT_ONLY
 
         COPY_EXISTING ~SPPR609.SPL~ ~override~
@@ -57,4 +61,5 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_HEADER INT_VAR speed = 4 END
             LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8130) END
     END
+    
 END

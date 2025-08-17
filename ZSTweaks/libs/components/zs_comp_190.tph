@@ -5,13 +5,16 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+
     ACTION_IF zst_190_hpower_thac0 BEGIN
+
         COPY_EXISTING ~SPPR412.SPL~ ~override~
                       ~ohtmps1.SPL~ ~override~
             LPF LAST_VALID_HEADER RET h = result END
             LPF ADD_SPELL_HEADER INT_VAR copy_header = h zs_min_level_for_copy = 21 insert_point=h+1 END
             LPF ALTER_EFFECT INT_VAR header = h+1 match_opcode = 54 parameter1 = 0 END
             LPF ALTER_EFFECT INT_VAR header = h+1 match_duration = 114 duration = 120 END
+
     END
 
     ACTION_IF zst_190_hpower_apr BEGIN
@@ -24,11 +27,15 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target=1 insert_point = 0 STR_VAR resource = ~ZSTWAPR0~ END
 
         ACTION_IF zst_190_hpower_apr_nonfighters_only BEGIN
+
             COPY ~%MOD_FOLDER%/spells/cleric/holy_power~ ~override~
             COPY_EXISTING ~ZSTWAPR1.SPL~ ~override~
                 PATCH_FOR_EACH c IN fighter_all fighter_cleric fighter_druid fighter_mage fighter_thief fighter_mage_cleric fighter_mage_thief BEGIN
                     LPF ADD_SPELL_EFFECT INT_VAR opcode=318 target=1 parameter1=IDS_OF_SYMBOL(class "%c%") parameter2=115 insert_point=0 power=4 STR_VAR resource=~%SOURCE_RES%~ END
                 END
+
         END
+
     END
+    
 END

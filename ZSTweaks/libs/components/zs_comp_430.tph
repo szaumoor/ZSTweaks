@@ -5,20 +5,22 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
-    OUTER_SET new_description = RESOLVE_STR_REF(@6290)
-    COPY_EXISTING ~SPWI101.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=new_description END
-        LPF ALTER_EFFECT INT_VAR header_type = 1 check_globals = 0 resist_dispel = 0 END
-        LPF ALTER_EFFECT INT_VAR match_opcode = 126 header_type = 1 check_globals = 0 parameter1 = 27 END
-        LPF ADD_SPL_EFF_TGT INT_VAR pwr=1 rd=0 STR_VAR effects=~op=30,p1=-25;op=126,p1=75,p2=5~ END
-        LPF SPL_ABILITIES_NUM RET num_abilities=result END
-        SET start_dur = 24
-        FOR ( i = 0; i < num_abilities; ++i ) BEGIN
-            SET dur = start_dur + (i * 6)
-            LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=i duration=dur END
-        END
 
-    COPY_EXISTING ~SCRL66.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
+  OUTER_SET new_description = RESOLVE_STR_REF(@6290)
+  COPY_EXISTING ~SPWI101.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=new_description END
+    LPF ALTER_EFFECT INT_VAR header_type = 1 check_globals = 0 resist_dispel = 0 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 126 header_type = 1 check_globals = 0 parameter1 = 27 END
+    LPF ADD_SPL_EFF_TGT INT_VAR pwr=1 rd=0 STR_VAR effects=~op=30,p1=-25;op=126,p1=75,p2=5~ END
+    LPF SPL_ABILITIES_NUM RET num_abilities=result END
+    
+    SET start_dur = 24
+    FOR ( i = 0; i < num_abilities; ++i ) BEGIN
+        SET dur = start_dur + (i * 6)
+        LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=i duration=dur END
+    END
+
+  COPY_EXISTING ~SCRL66.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
 
 END

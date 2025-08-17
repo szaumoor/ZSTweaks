@@ -5,16 +5,24 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
-    COPY_EXISTING ~SPPR304.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5000) END
-        LPF ALTER_EFFECT INT_VAR match_savingthrow=2**0+2**24 special=2**8 END
-        PATCH_IF NOT has_eefixpack BEGIN
-            LPF LAST_VALID_HEADER RET new_header = result END
-            FOR ( level = 19; level <= 20; ++level ) BEGIN
-                LPF ADD_SPELL_HEADER INT_VAR copy_header = new_header+1 zs_min_level_for_copy=level insert_point=new_header+1 END
-                LPF ALTER_EFFECT INT_VAR header_type=1 header = new_header+1 match_opcode=12 dicenumber=level END
-                ++new_header
-            END
+
+  COPY_EXISTING ~SPPR304.SPL~ ~override~
+      LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5000) END
+      LPF ALTER_EFFECT INT_VAR match_savingthrow=2**0+2**24 special=2**8 END
+
+      PATCH_IF NOT has_eefixpack BEGIN
+
+        LPF LAST_VALID_HEADER RET new_header = result END
+        PATCH_FOR_EACH level IN 19 20 BEGIN
+
+          LPF ADD_SPELL_HEADER INT_VAR copy_header=new_header+1 zs_min_level_for_copy=level insert_point=new_header+1 END
+          LPF ALTER_EFFECT INT_VAR header_type=1 header=new_header+1 match_opcode=12 dicenumber=level END
+          ++new_header
+
         END
-    BUT_ONLY
+
+      END
+
+  BUT_ONLY
+
 END

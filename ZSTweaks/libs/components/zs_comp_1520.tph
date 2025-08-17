@@ -5,7 +5,9 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
     ACTION_IF zst_1520_keldsword BEGIN
+
         OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103")
 
         COPY_EXISTING "NPSW03.ITM" ~override~
@@ -16,10 +18,12 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 SPRINT new_description @6240
                 SPRINT str @99999
                 LPF WPN_DMG RET dmg = result END
+
                 INNER_PATCH_SAVE new_description ~%new_description%~ BEGIN
                     REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d9+%dmg%~
                 END
                 SAY_EVALUATED 0x54 ~%new_description%~
+                
             END ELSE BEGIN
                 LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6240) END
             END
@@ -28,15 +32,18 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         COPY_EXISTING "c2keld02.ITM" ~override~
             LPF RM_STAT_REQS END
             LPF ALTER_HEADER INT_VAR dicesize = 10 END
+
             PATCH_IF two_handed_comp_installed BEGIN
                 LPF ALTER_HEADER INT_VAR dicesize = 9 damage = 6 END
                 SPRINT new_description @50090
                 SPRINT str @99999
                 LPF WPN_DMG RET dmg = result END
+
                 INNER_PATCH_SAVE new_description ~%new_description%~ BEGIN
                     REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)2[Dd]6[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d9+%dmg%~
                 END
                 SAY_EVALUATED 0x54 ~%new_description%~
+
             END ELSE BEGIN
                 LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@50090) END
             END
@@ -51,6 +58,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     END
 
     ACTION_IF zst_1520_keldarmor BEGIN
+
         COPY_EXISTING ~NPPLAT.ITM~ ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@6242) END
             LPF remove_haste_immunity END
@@ -61,4 +69,5 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         BUT_ONLY IF_EXISTS
 
     END
+
 END

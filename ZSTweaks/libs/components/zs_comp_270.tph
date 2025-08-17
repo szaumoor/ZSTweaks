@@ -5,13 +5,15 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
-    COPY_EXISTING ~SPPR105.SPL~ ~override~
-      LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5100) END
-      SET new_bonus = 2
-      LPF ALTER_EFFECT INT_VAR savebonus = new_bonus resist_dispel = 3 END
-      LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 2 END
-      LPF ~CD_LEVEL_SELECT-O-MATIC~ INT_VAR min_abil=1 step_size=5 level_cap=20 min_lev_alt=5 END
-      PATCH_FOR_EACH h IN 1 2 3 4 BEGIN
-          LPF ALTER_EFFECT INT_VAR header = h savebonus = (new_bonus - h) END
-      END
+  COPY_EXISTING ~SPPR105.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5100) END
+    SET new_bonus = 2
+    LPF ALTER_EFFECT INT_VAR savebonus = new_bonus resist_dispel = 3 END
+    LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 2 END
+    LPF DELETE_EFFECT INT_VAR match_opcode = 0 END
+    LPF ADD_SPL_EFF_SELF INT_VAR t=99 ip="-1" dur=9 rd=3 stype=2 sbonus=2 STR_VAR effects = ~op=0,p1=-4;op=1,p1=1~ END
+    LPF ~CD_LEVEL_SELECT-O-MATIC~ INT_VAR min_abil=1 step_size=5 level_cap=20 min_lev_alt=5 END
+    PATCH_FOR_EACH h IN 1 2 3 4 BEGIN
+        LPF ALTER_EFFECT INT_VAR header = h savebonus = (new_bonus - h) END
+    END
 END

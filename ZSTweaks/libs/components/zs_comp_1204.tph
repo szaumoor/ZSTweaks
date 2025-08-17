@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+
     ACTION_IF FILE_EXISTS_IN_GAME ~bdshld04.itm~ BEGIN
         COPY_EXISTING ~bdshld04.ITM~ ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7850) END
@@ -33,4 +34,5 @@ ACTION_IF NOT is_iwdee BEGIN
             WARN "No bdplat04.itm (Rhino Beetle Plate) found in the game"
         END
     END
+    
 END

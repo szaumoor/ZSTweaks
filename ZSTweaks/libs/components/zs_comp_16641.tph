@@ -42,5 +42,4 @@ COPY_EXISTING ~ohrhelm1.ITM~ ~override~
     PATCH_IF crit_flag = 1 BEGIN
         LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
     END
-    BUT_ONLY IF_EXISTS
-
+BUT_ONLY IF_EXISTS

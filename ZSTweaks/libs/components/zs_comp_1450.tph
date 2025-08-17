@@ -39,11 +39,15 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         BEGIN
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN
+
                 LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWD%ench%~ END
                 LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWZ%ench%~ END
+
             END ELSE BEGIN
+
                 LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_dagg_dart+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWD%ench%~ END
                 LPF weapon_damage_by_custom INT_VAR type=2 probability1=(base_dagg_dart+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWZ%ench%~ END
+
             END
 
         END ELSE PATCH_IF zst_1450_allow_darts AND cat=14 BEGIN

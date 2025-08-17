@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
     COPY_EXISTING ~SPER12.ITM~ ~override~
         LPF remove_haste_immunity END
         PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" BEGIN
@@ -21,4 +22,5 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY_EXISTING ~SPPR403.SPL~ ~override~
         LPF DELETE_EFFECT INT_VAR match_opcode=126 END
+
 END

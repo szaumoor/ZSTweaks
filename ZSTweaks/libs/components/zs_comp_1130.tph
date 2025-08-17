@@ -5,7 +5,9 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
     WITH_SCOPE BEGIN
+
         COPY "%MOD_FOLDER%/items/boneblade" ~override~
         LAF GET_DMG_TYPE STR_VAR type = ~acid~ RET acid = result END
         COPY_EXISTING ~DAGG14.ITM~ ~override~
@@ -50,5 +52,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 ip=0 STR_VAR res=~ZSTW_DG7~ effects=~op=12,dsize=6,dnum=1,p2=%acid%,spec=1024;op=177,p1=%race_elf%;op=177,p1=%race_beholder%;op=177,p1=%race_drider%;op=177,p1=%race_hook_horror%;op=177,p1=%race_kuo_toa%;op=177,p1=%race_mind_flayer%;op=177,p1=%race_spider%;op=177,p1=%race_umberhulk%;op=326,ip=-1,res=ZSTW_DG8,p2=138,p1=4~ END
             BUT_ONLY
         END
+
     END
+    
 END

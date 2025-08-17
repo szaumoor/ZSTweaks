@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
     COPY ~%MOD_FOLDER%/items/grandmaster_armor~ ~override~
     COPY_EXISTING ~ZSTWGM06.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@8031) END
@@ -41,4 +42,5 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY_EXISTING ~SPPR403.SPL~ ~override~
         LPF DELETE_EFFECT INT_VAR match_opcode=126 END
+
 END

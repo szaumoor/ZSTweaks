@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+  
     COPY_EXISTING ~PLAT05.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8460) END
 

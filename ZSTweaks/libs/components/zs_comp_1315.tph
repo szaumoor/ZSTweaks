@@ -5,16 +5,21 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
     COPY_EXISTING ~WA2DAK.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@6330) ench=3 END
         LPF ALTER_HEADER INT_VAR match_damage=2 match_to_hit=2 match_speed=2 to_hit=3 speed=1 damage=3 END
         SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
+
         PATCH_IF zst_1450_allow_wakis AND (general_tweaks_installed OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1450") BEGIN //+3 enchantment
+
             LPF PROBABILITY_BONUS INT_VAR ench = 3 RET bonus = result END
             LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 326 probability1=(bonus+base_sci_ka) STR_VAR match_resource = ~ZSTWK2~ resource = ~ZSTWK3~  END
+
         END
 
         PATCH_IF zst_1150_dice_katanas AND (general_tweaks_installed OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150") BEGIN
+
             SPRINT strref @6331
             SPRINT str @99999
             LPF WPN_DMG RET dmg = result END
@@ -22,7 +27,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10~ ~\12d5~
             END
             SAY_EVALUATED 0x54 ~%strref%~
+
         END ELSE BEGIN
+
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6331) END
+
         END
+
 END

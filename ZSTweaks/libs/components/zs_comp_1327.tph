@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
     COPY "%MOD_FOLDER%/items/club_detonation" ~override~
     COPY_EXISTING ~BLUN26.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8250) END
@@ -29,4 +30,5 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         END
 
         LPF ALTER_EFFECT INT_VAR match_opcode = 215 STR_VAR resource = ~ICFIRSDI~ END
+        
 END

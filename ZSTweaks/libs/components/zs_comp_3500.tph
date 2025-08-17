@@ -5,8 +5,10 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+
 	OUTER_SET copied = 0
 	ACTION_IF is_bg2ee_or_eet BEGIN
+
 		COPY ~%MOD_FOLDER%/misc/shadow_plane~ ~override~
 		copied = 1
 		<<<<<<<<.../zstweaks/disable_shadowstep_rasaad.baf
@@ -19,14 +21,17 @@ ACTION_IF NOT is_iwdee BEGIN
 		END
 		>>>>>>>>
 		EXTEND_TOP "oh4230.BCS" ".../zstweaks/disable_shadowstep_rasaad.baf" // rasaad's quest
+
 	END
 
 	//lava's Sostc
 	ACTION_IF FILE_EXISTS_IN_GAME ~L#GNO1.BCS~ BEGIN
+
 		ACTION_IF copied = 0 BEGIN
 			COPY ~%MOD_FOLDER%/misc/shadow_plane~ ~override~
 			copied = 1
 		END
+
 		<<<<<<<<.../zstweaks/disable_shadowstep_sostc1.baf
 		IF
 			!GlobalTimerNotExpired("ZS_SPGnollTimer","L#GNO1")
@@ -92,8 +97,13 @@ ACTION_IF NOT is_iwdee BEGIN
 		END
 		>>>>>>>>
 		EXTEND_TOP "L#GNO6.BCS" ".../zstweaks/disable_shadowstep_sostc6.baf"
+
 	END
+
 	ACTION_IF copied = 0 AND group_component = 0 BEGIN
+
 		WARN "Shadow Plane not found in game files, skipping..."
+		
 	END
+
 END

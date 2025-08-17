@@ -5,11 +5,13 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bgee_or_eet BEGIN
-    COPY_EXISTING ~SHARTD.CRE~ ~override~
-                ~SHARTE.CRE~ ~override~
-                ~SHARTE4.CRE~ ~override~
-                ~SHARTE6.CRE~ ~override~
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 179 timing = 9 parameter2 = 7 parameter1 = 1 special = 1 END
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 178 timing = 9 parameter2 = 7 parameter1 = 1 special = 1 END
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 219 timing = 9 parameter2 = 7 parameter1 = 1 END
+
+  COPY_EXISTING ~SHARTD.CRE~ ~override~
+              ~SHARTE.CRE~ ~override~
+              ~SHARTE4.CRE~ ~override~
+              ~SHARTE6.CRE~ ~override~
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 179 timing = 9 parameter2 = 7 parameter1 = 1 special = 1 END
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 178 timing = 9 parameter2 = 7 parameter1 = 1 special = 1 END
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 219 timing = 9 parameter2 = 7 parameter1 = 1 END
+
 END

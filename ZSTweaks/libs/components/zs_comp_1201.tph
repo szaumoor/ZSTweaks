@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
     OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103")
 
     COPY_EXISTING ~SW2H14.ITM~ ~override~
@@ -44,4 +45,5 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@50100) END
         END
     BUT_ONLY IF_EXISTS
+    
 END

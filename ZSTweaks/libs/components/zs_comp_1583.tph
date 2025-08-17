@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
     OUTER_SET wisdom_drained = RESOLVE_STR_REF(@7165)
     OUTER_SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
     OUTER_SET wakizashi_comp_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "1150"
@@ -25,30 +26,37 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         END
 
         PATCH_IF wpn_dice_comp_installed BEGIN
+
             PATCH_IF zst_1150_dice_wakininja BEGIN
                 SPRINT str @99999
                 READ_STRREF 0x54 desc
+
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                     REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
                 END
                 SAY_EVALUATED 0x54 ~%desc%~
+
             END ELSE BEGIN
                 LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7161) END
             END
 
             PATCH_IF zst_1150_dice_wakislashing BEGIN
+
                 SPRINT str @99999 // damage
                 SPRINT str_type @99997
                 SPRINT str_new_type @99994
                 READ_STRREF 0x54 desc
+
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                     REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*.*[ %TAB%]*\)%str_type%~ ~\1%str_new_type%~
                 END
                 SAY_EVALUATED 0x54 ~%desc%~
+
             END
         END
 
         ACTION_IF zst_1583_kachiko_upgrade BEGIN
+
             COPY ~%MOD_FOLDER%/items/_upgrades/kachiko~ ~override~
             COPY_EXISTING ~ZSTWAWAK.ITM~ ~override~
                 LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@7163) id_ref_desc=RESOLVE_STR_REF(@7164) END
@@ -64,29 +72,35 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 END
 
                 PATCH_IF wpn_dice_comp_installed BEGIN
+
                     PATCH_IF zst_1150_dice_wakininja BEGIN
                         LPF ALTER_HEADER INT_VAR match_type = 1 dicesize = 4 dicenumber = 2 END
                         READ_STRREF 0x54 desc
                         SPRINT str @99999
                         LPF WPN_DMG RET dmg = result END
+
                         INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                             REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
                         END
                         SAY_EVALUATED 0x54 ~%desc%~
+
                     END ELSE BEGIN
                         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7164) END
                     END
 
                     PATCH_IF zst_1150_dice_wakislashing BEGIN
+
                         LPF ALTER_HEADER INT_VAR damage_type = 7 END
                         SPRINT str @99999 // damage
                         SPRINT str_type @99997
                         SPRINT str_new_type @99994
                         READ_STRREF 0x54 desc
+
                         INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                             REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*.*[ %TAB%]*\)%str_type%~ ~\1%str_new_type%~
                         END
                         SAY_EVALUATED 0x54 ~%desc%~
+
                     END
                 END
 
@@ -109,4 +123,5 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             EXTEND_BOTTOM ~botsmith.bcs~ ~%MOD_FOLDER%/baf/kachiko/botsmith.baf~
 
         END
+
 END

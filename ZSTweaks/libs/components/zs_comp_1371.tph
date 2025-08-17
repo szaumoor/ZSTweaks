@@ -6,15 +6,22 @@ END
 
 COPY_EXISTING ~AROW07.ITM~ ~override~
     LPF ALTER_EFFECT INT_VAR check_globals = 0 savingthrow = 1 savebonus = "%zst_1371_save_penalty%" END
+
     PATCH_IF zst_1450_allow_bows AND MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1450" BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode = 326 savingthrow = 0 savebonus = 0 STR_VAR match_resource = "ZSTWA0" END
     END
 
     PATCH_IF zst_1371_save_penalty < 0 BEGIN
+
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8205) END
+
     END ELSE zst_1371_save_penalty = 0 BEGIN
+
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8206) END
+
     END ELSE
+
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8207) END
+
     END
 

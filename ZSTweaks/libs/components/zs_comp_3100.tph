@@ -4,15 +4,16 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_3100~ = 1
 END
 
-COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~
-    LPF CRE_RACE RET race = result END
-    PATCH_IF race = race_beetle BEGIN
-        WRITE_SHORT 0x4e "-1" // piercing modifier
-        WRITE_SHORT 0x50 "-2" // slashing modifier
-        WRITE_SHORT 0x4c "-3" // missile modifier
+COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
+  LPF CRE_RACE RET race = result END
+  PATCH_IF race = race_beetle BEGIN
+    WRITE_SHORT 0x4e "-1" // piercing modifier
+    WRITE_SHORT 0x50 "-2" // slashing modifier
+    WRITE_SHORT 0x4c "-3" // missile modifier
 
-        WRITE_SHORT 0x63 60 // missile resistance
-        WRITE_SHORT 0x60 45 // slashing resistance
-        WRITE_SHORT 0x62 30 // piercing resistance
-    END
+    WRITE_SHORT 0x63 60 // missile resistance
+    WRITE_SHORT 0x60 45 // slashing resistance
+    WRITE_SHORT 0x62 30 // piercing resistance
+  END
+
 BUT_ONLY

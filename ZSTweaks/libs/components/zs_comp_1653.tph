@@ -5,12 +5,14 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
-    COPY ~%MOD_FOLDER%/items/thieves_hood~ ~override~
-    OUTER_SET base_desc = RESOLVE_STR_REF(@6911)
-    COPY_EXISTING "HELM29.ITM" ~override~
-        LPF ALTER_ITEM INT_VAR this_plus="-1" unid_ref_desc=base_desc id_ref_desc=base_desc flags=2**25 END
 
-    COPY_EXISTING "HELM30.ITM" ~override~
-        LPF ALTER_ITEM INT_VAR this_plus="-1" unid_ref_desc=base_desc id_ref_desc=RESOLVE_STR_REF(@6910) flags=2**25 END
-        LPF ADD_EQUIPPED_EFF INT_VAR p1 = 4 p2 = 5 STR_VAR effects = ~op=177,res=ZSTWTVH1;op=177,res=ZSTWTVH2~ END
+  COPY ~%MOD_FOLDER%/items/thieves_hood~ ~override~
+  OUTER_SET base_desc = RESOLVE_STR_REF(@6911)
+  COPY_EXISTING "HELM29.ITM" ~override~
+    LPF ALTER_ITEM INT_VAR this_plus="-1" unid_ref_desc=base_desc id_ref_desc=base_desc flags=2**25 END
+
+  COPY_EXISTING "HELM30.ITM" ~override~
+    LPF ALTER_ITEM INT_VAR this_plus="-1" unid_ref_desc=base_desc id_ref_desc=RESOLVE_STR_REF(@6910) flags=2**25 END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 4 p2 = 5 STR_VAR effects = ~op=177,res=ZSTWTVH1;op=177,res=ZSTWTVH2~ END
+
 END

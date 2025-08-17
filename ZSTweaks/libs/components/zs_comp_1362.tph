@@ -4,7 +4,6 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1362~ = 1
 END
 
-
 COPY ~%MOD_FOLDER%/items/hamaclub_ac~ ~override~
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF ITM_CAT  RET cat  = result END
@@ -22,7 +21,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
             END  2 3 BEGIN
                 LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM2;t=2,ip=0,op=146,p2=1,res=ZSTWMCM2~  END
             END  4 5 BEGIN
-                 LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM3;t=2,ip=0,op=146,p2=1,res=ZSTWMCM3~ END
+                LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM3;t=2,ip=0,op=146,p2=1,res=ZSTWMCM3~ END
             END  6   BEGIN
                 LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM4;t=2,ip=0,op=146,p2=1,res=ZSTWMCM4~  END
             END DEFAULT

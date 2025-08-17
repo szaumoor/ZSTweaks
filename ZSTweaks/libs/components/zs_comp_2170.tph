@@ -7,6 +7,7 @@ END
 OUTER_SET has_shadowdancer_overhaul_thac0_comp = MOD_IS_INSTALLED "ZS_ShadowdanverOverhaul.tp2" "300"
 
 ACTION_IF NOT has_shadowdancer_overhaul_thac0_comp BEGIN
+
     LAF generate_rogue_thac0 STR_VAR class1 = ~thief~ class2 = ~mage_thief~ END
 
     COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
@@ -18,6 +19,7 @@ ACTION_IF NOT has_shadowdancer_overhaul_thac0_comp BEGIN
             LPF CRE_FLAGS RET cre_flags = result END
             LPF CRE_IS_FLAG_SET INT_VAR flag = 4 RET dual_classed_to_thief = result END
             LPF CRE_IS_FLAG_SET INT_VAR flag = 6 RET dual_classed_to_mage = result END
+
             PATCH_IF dual_classed_to_thief != 1 AND dual_classed_to_mage != 1 BEGIN
 
                 PATCH_IF cre_class = class_thief BEGIN
@@ -82,8 +84,13 @@ ACTION_IF NOT has_shadowdancer_overhaul_thac0_comp BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 6 END
                 END
             END
+
         END
+
     BUT_ONLY
+
 END ELSE BEGIN
+
     PRINT "THAC0 overhaul for thieves already installed through ZS_ShadowdancerOverhaul"
+    
 END

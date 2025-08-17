@@ -5,18 +5,18 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
-    COPY ~%MOD_FOLDER%/items/duskblade~ ~override~
-    COPY_EXISTING ~HALB08.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7720) END
-        LPF GET_DMG_TYPE STR_VAR type=~cold~ RET cold = result END
-        LPF ADD_ON_HIT_EFF STR_VAR effects=~op=12,dsize=6,dnum=1,p2=%cold%,stype=4,spec=1024;op=326,pro1=24,p2=124,p1=3,res=ZSTWDSKA;op=326,pro1=24,p2=125,p1=3,res=ZSTWDSKB~ END
-        LPF ALTER_EFFECT INT_VAR match_opcode=12 special=1024 END
 
-    COPY_EXISTING ~ZSTWDSKA.SPL~ ~override~
-        LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@7721) END
-    BUT_ONLY
+  COPY ~%MOD_FOLDER%/items/duskblade~ ~override~
+  COPY_EXISTING ~HALB08.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7720) END
+    LPF GET_DMG_TYPE STR_VAR type=~cold~ RET cold = result END
+    LPF ADD_ON_HIT_EFF STR_VAR effects=~op=12,dsize=6,dnum=1,p2=%cold%,stype=4,spec=1024;op=326,pro1=24,p2=124,p1=3,res=ZSTWDSKA;op=326,pro1=24,p2=125,p1=3,res=ZSTWDSKB~ END
+    LPF ALTER_EFFECT INT_VAR match_opcode=12 special=1024 END
 
-    COPY_EXISTING ~ZSTWDSKB.SPL~ ~override~
-        LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@7722) END
-    BUT_ONLY
+  COPY_EXISTING ~ZSTWDSKA.SPL~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@7721) END
+
+  COPY_EXISTING ~ZSTWDSKB.SPL~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@7722) END
+
 END

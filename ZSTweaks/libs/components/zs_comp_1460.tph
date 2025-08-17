@@ -5,18 +5,24 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
-    COPY_EXISTING "SPER10.ITM" ~override~
-        LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
-        LPF ADD_ON_HIT_EFF INT_VAR rd=2 dur=6 sbonus="-2" stype=4 STR_VAR effects = ~op=25,p1=2,p2=2;op=142,p2=6~ END
-        PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" BEGIN
-            SPRINT desc @7130
-            SPRINT str @99999
-            INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d8~
-            END
-            SAY_EVALUATED 0x54 ~%desc%~
-        END ELSE BEGIN
-            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7130) END
+
+  COPY_EXISTING "SPER10.ITM" ~override~
+      LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
+      LPF ADD_ON_HIT_EFF INT_VAR rd=2 dur=6 sbonus="-2" stype=4 STR_VAR effects = ~op=25,p1=2,p2=2;op=142,p2=6~ END
+
+      PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" BEGIN
+
+        SPRINT desc @7130
+        SPRINT str @99999
+        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d8~
         END
+        SAY_EVALUATED 0x54 ~%desc%~
+
+      END ELSE BEGIN
+
+        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7130) END
+
+      END
 
 END

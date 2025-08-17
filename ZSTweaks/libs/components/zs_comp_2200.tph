@@ -5,9 +5,11 @@ END ELSE BEGIN
 END
 
 ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN
-    COPY_EXISTING "bdsw1hca.itm" ~override~
-        LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 263 END
-    BUT_ONLY IF_EXISTS
+
+  COPY_EXISTING "bdsw1hca.itm" ~override~
+    LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 263 END
+  BUT_ONLY IF_EXISTS
+
 END
 
 COPY ~%MOD_FOLDER%/class_kits/blackguard~ ~override~
@@ -21,11 +23,17 @@ ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
   ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
     COPY_EXISTING ~%file%~ ~override~
       LPF CRE_KIT RET kit = result END
+
       PATCH_IF kit = kit_dragon_disciple BEGIN
+
         PATCH_IF kit = kit_blackguard BEGIN
-            LPF ADD_CRE_EFFECT INT_VAR opcode=263 target=2 parameter1=2 parameter2=1 timing=9 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode=263 target=2 parameter1=2 parameter2=1 timing=9 END
         END
+
       END
+
     BUT_ONLY
+
   END
+  
 END

@@ -41,11 +41,13 @@ ACTION_IF zst_446_fball_buff BEGIN
 
     COPY_EXISTING ~SPWI523D.SPL~ ~override~
         LPF LAST_VALID_HEADER RET last_header = result END
+
         SET dmg = 1
         FOR ( header = 2; header <= last_header; ++header ) BEGIN
             LPF ALTER_EFFECT INT_VAR header = header match_opcode=12 parameter1= dmg END
             ++dmg
         END
+
         dmg = 7
         SET next_level = 16
         FOR ( header = last_header; header < last_header + 5; ++header ) BEGIN
@@ -63,6 +65,7 @@ ACTION_IF zst_446_fball_buff BEGIN
         LPF ALTER_SPELL INT_VAR ref_desc=new_description_fireball_delayed END
         LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 dicenumber = 13 END
         LPF LAST_VALID_HEADER RET last_header = result END
+
         SET dmg = 2
         SET next_level = 14
         FOR ( header = last_header; header < last_header + 5; ++header ) BEGIN
@@ -71,6 +74,7 @@ ACTION_IF zst_446_fball_buff BEGIN
             dmg += 2
             ++next_level
         END
+
         LPF LAST_VALID_HEADER RET last_header = result END
         dmg = 15
         FOR ( header = last_header; header < last_header + 2; ++header ) BEGIN
@@ -80,13 +84,14 @@ ACTION_IF zst_446_fball_buff BEGIN
             ++next_level
         END
 
-
     COPY_EXISTING ~SCRL8N.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=new_description_fireball_delayed END
     BUT_ONLY IF_EXISTS
+
 END
 
 ACTION_IF zst_446_fball_new_animation BEGIN
+
     COPY_EXISTING ~PFIRE2.PRO~  ~override~
         WRITE_BYTE  0x216 0
         WRITE_ASCII 0x21C "SPFIREPI" #8
@@ -109,4 +114,5 @@ ACTION_IF zst_446_fball_new_animation BEGIN
         COPY_EXISTING ~SPWI523D.SPL~ ~override~
             LPF ALTER_HEADER INT_VAR projectile = 234 END
     END
+    
 END

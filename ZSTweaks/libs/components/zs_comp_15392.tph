@@ -6,8 +6,10 @@ END
 
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF ITM_CAT RET cat = result END
+
     PATCH_IF cat = 11 BEGIN
         LPF ITM_USABILITY0 RET usability_flags = result END
+
         PATCH_IF usability_flags > 0 BEGIN
             LPF IS_USABILITY_FLAG_SET INT_VAR flag=9 RET cleric_thief_flag = result END
             LPF IS_USABILITY_FLAG_SET INT_VAR flag=6 RET bard_flag = result END
@@ -41,4 +43,5 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
             END
         END
     END
+    
 BUT_ONLY
