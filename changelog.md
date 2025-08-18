@@ -9,6 +9,7 @@
 - Fixed component that makes throwing daggers usable as melee weapons so it installs in versions of BGEE without SoD
 - Fixed component for Arrow of Fire not correctly patching the description for non-BG2EE games
 - Fixed component making a check twice for no reason
+- Fixed yet another bug with dragon disciple component giving them access to Horrid Wilting instead of Incendiary Cloud
 - Misc code improvements
 
 ## Modifications
