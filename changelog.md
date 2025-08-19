@@ -28,6 +28,7 @@
 - Component that sets APR for magical weapons to 2 sets it to 3/2 for classes that have fighter levels so classes that are more "purist" or not benefiting from warrior class benefits can get more out of it, and maintaining more balance. Improved code for the component as well.
 - Components 1537 and 1601 to make all potions usable by everyone and not stackable with themselves merged with the potion overhaul component. Now you can use the configuration file to specify if you want the overhaul, or the usability tweak, or the self-stack tweak or any combination thereof.
 - Fireball animation part of the fireballs component also patches the explosion from Dragon's Breath to be more visually appealing. Mod component's name modified accordingly: "Make fireball-type spells improve more with level and/or improve explosion animations"
+- Fireball component now also raises the minimum damage to Dragon's Breath (the spell) to 40 (before saves, 20 if saved): 20d10 ⇾ 20d9+20. This is thematically in accordance to other tweaks to powerful spells in this mod
 - Planetar and Deva components now allow both to instantly cast all of their spells
 
 ## New Components / Features
