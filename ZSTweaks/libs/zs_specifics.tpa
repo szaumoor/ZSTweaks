@@ -214,14 +214,15 @@ BEGIN
 END
 
 DEFINE_PATCH_FUNCTION PATCH_FOR_BUCKLER_IMMUNITIES
-// might have to record instances and then patch them in separately
 BEGIN
-    LPF CHECK_EXTENSION INT_VAR suppress = 1 STR_VAR extension = "ITM" RET itm_file = result END
-    LPF CHECK_EXTENSION INT_VAR suppress = 1 STR_VAR extension = "SPL" RET spl_file = result END
-    LPF CHECK_EXTENSION INT_VAR suppress = 1 STR_VAR extension = "CRE" RET cre_file = result END
+    PATCH_IF zst_debug BEGIN
+        LPF CHECK_EXTENSION INT_VAR suppress = 1 STR_VAR extension = "ITM" RET itm_file = result END
+        LPF CHECK_EXTENSION INT_VAR suppress = 1 STR_VAR extension = "SPL" RET spl_file = result END
+        LPF CHECK_EXTENSION INT_VAR suppress = 1 STR_VAR extension = "CRE" RET cre_file = result END
 
-    PATCH_IF NOT itm_file AND NOT spl_file AND NOT cre_file BEGIN
-        PATCH_FAIL "This function only works for .ITM,.SPL, and .CRE files"
+        PATCH_IF NOT itm_file AND NOT spl_file AND NOT cre_file BEGIN
+            PATCH_FAIL "This function only works for .ITM,.SPL, and .CRE files"
+        END
     END
 
     SET nonmagical = 0
@@ -255,7 +256,6 @@ BEGIN
                 END
 
             END
-
         END
     END
 

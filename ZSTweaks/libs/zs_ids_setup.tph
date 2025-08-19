@@ -57,6 +57,8 @@ ACTION_IF !VARIABLE_IS_SET ~zs_ids_setup~ BEGIN
     OUTER_SET gender_female         = IDS_OF_SYMBOL(gender FEMALE)
     OUTER_SET gender_male           = IDS_OF_SYMBOL(gender MALE)
     OUTER_SET gender_niether        = IDS_OF_SYMBOL(gender NIETHER)
+    OUTER_SET gender_summoned       = IDS_OF_SYMBOL(gender SUMMONED)
+    OUTER_SET gender_summoned_demon = IDS_OF_SYMBOL(gender SUMMONED_DEMON)
 
     OUTER_SET alignmen_mask_evil       = IDS_OF_SYMBOL(alignmen MASK_EVIL)
     OUTER_SET alignmen_mask_good       = IDS_OF_SYMBOL(alignmen MASK_GOOD)

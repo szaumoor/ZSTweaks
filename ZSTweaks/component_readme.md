@@ -1529,19 +1529,20 @@ Bigby's spells are generally a pretty poor choice for levels 8 and 9: low damage
   - 2nd round: 8d6+8 crushing damage if save vs. Paralysis at -6 is failed (originally 3d10, save vs. Paralysis at -4)
   - 3rd round: 10d6+10 crushing damage if save vs. Paralysis at -4 is failed (originally 4d10, save vs. Paralysis at -2)
 
-**Component 446:** Make Fireball, Sunfire, and Delayed Blast Fireball scale slightly more up to level 20
+**Component 446:** Make fireball-type spells improve more with level and/or improve explosion animations
 
 Fireball is such a ubiquitous spell in D&D and generally considered like a great spell to clear out groups of enemies. I felt that it could use some extra help at higher levels.
 
 - Fireball: After level 10, when damage is 10d6, an extra point of fire damage will be gained, up to 10d6+10.
 - Sunfire: After level 10, when damage is 10d6, an extra point of damage will be gained, up to 15d6+5. After level 15, 2 points of fire will be gained per level, up to 15d6+15.
-- Delayed Blast Fireball: now it will start off at 13d6 (level 7 spells are gained at level 13) and then grow by 1d6+2 per level, up to 18d6+10, which then increases by +5 each level until level 20, becoming 18d6+20.
+- Delayed Blast Fireball: now it will start off at 13d6 (level 7 spells are gained at level 13) and then grow by 1d6+2 per level, up to 18d6+10, which then increases by +5 each level until level 20, becoming 20d8+20.
+- Dragon's Breath: minimum damage raised from 20 to 40: 20d20 → 18d10+20 fire damage
 
 If you think this is overpowered, consider these damage range values:
 
-- Skull Trap deals 20d6 at level 20 (14d6 with SCS), which is significantly more than the bonus in this component. Comparison:
+- Skull Trap, another level 3 spell, deals 20d6 at level 20 (12d6 with SCS), which is significantly more than the bonus in this component. Comparison:
   - Skull Trap (no SCS): 20-120 damage
-  - Skull Trap (SCS): 14-84 damage
+  - Skull Trap (SCS): 12-72 damage
   - Fireball (with component): 20-70 damage
   - Fireball (without component): 10-60 damage
 - Cone of Cold, another damaging spell of level 5, deals up to 20d4+20 damage too. Comparison:
@@ -1555,7 +1556,7 @@ If you think this is overpowered, consider these damage range values:
 
 Also, Delayed Blast Fireball no longer has a markedly smaller explosion radius compared to Sunfire and Fireball, but the exact same as those.
 
-Lastly, this patches the Fireball explosions such that the god-awful EE explosion is substituted by something much more epic looking in my view. This behavior can be disabled in the configuration file. It's also possible to install **only** the animation change if you like. This includes the Dragon's Breath HLA, featuring a unique explosion.
+Lastly, this patches the Fireball explosions such that the god-awful EE explosion is substituted by something much more epic looking in my view. This behavior can be disabled in the configuration file. It's also possible to install **only** the animation change if you like. This includes the Dragon's Breath HLA, featuring a unique explosion, fitting for a disembodied red dragon breathing down on your poor foes.
 
 **Component 447:** Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance
 
