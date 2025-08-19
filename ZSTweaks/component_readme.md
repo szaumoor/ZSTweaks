@@ -1555,7 +1555,7 @@ If you think this is overpowered, consider these damage range values:
 
 Also, Delayed Blast Fireball no longer has a markedly smaller explosion radius compared to Sunfire and Fireball, but the exact same as those.
 
-Lastly, this patches the Fireball explosions such that the god-awful EE explosion is substituted by something much more epic looking in my view. This behavior can be disabled in the configuration file. It's also possible to install **only** the animation change if you like.
+Lastly, this patches the Fireball explosions such that the god-awful EE explosion is substituted by something much more epic looking in my view. This behavior can be disabled in the configuration file. It's also possible to install **only** the animation change if you like. This includes the Dragon's Breath HLA, featuring a unique explosion.
 
 **Component 447:** Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance
 
