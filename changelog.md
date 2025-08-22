@@ -31,6 +31,7 @@
 - Fireball component now also raises the minimum damage to Dragon's Breath (the spell) to 40 (before saves, 20 if saved): 20d10 ⇾ 20d9+20. This is thematically in accordance to other tweaks to powerful spells in this mod
 - Planetar and Deva components now allow both to instantly cast all of their spells
 
+
 ## New Components / Features
 
 - Make the Plate of the Dark not just a generic +1 full plate but something more unique based on the description
