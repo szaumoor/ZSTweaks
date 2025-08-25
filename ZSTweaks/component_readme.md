@@ -670,6 +670,37 @@ Since Ankhegs actually spit acid, it makes sense that this armor would grant aci
 
 Generally this robe was never very convenient to use, especially considering the alternatives. Even without Chaos Shield. So now it undoes the -1 Armor Class penalty, becoming an actual Armor Class bonus, which could be combined with a good Armor Class bracer, and adds +1 casting speed for wild mages only.
 
+**Component 1218:** Make the Plate of the Dark not just a generic +1 full plate but something more unique based on the description
+
+This improves the unremarkable +1 full plate armor (yet bears a unique description and name -- I hate this so much ffs), so it's at least remarkable if not powerful:
+
+- Provides immunity to panic and morale failure
+- 15% chance to curse living targets when you hit them for 6 rounds, imposing a -1 penalty to all rolls, luck, Armor Class, and morale, and increasing their chances of critical misses by 5%. No saving throw is allowed and it does not stack.
+- May cast Horror twice per day
+
+**Component 1271:** Make the belt of gender inversion give a bonus vs. the original gender of the wearer
+
+This makes the belt provide a functional utility in combat, providing a +1 bonus in combat rolls (THAC0 and damaga) vs. those of the gender you originally had. For example, if your character is a man, becoming a woman with the belt will allow you to perform better in combat against men.
+
+**Component 1291:** Make Shakti Figurine last longer and more powerful
+
+This improves this item's utility such that you can shapeshift into a short sword wielding warrior with the following improvements:
+
+- Attack three times per round (2 per round, hasted)
+- Short sword has a speed factor of 0 and acts as +4
+- Short sword is 5% more likely to critically hit than a normal sword
+- Lasts for 1 turn (from 4 rounds)
+
+**Component 1331:** Make Doomplate an armor for those that want to RIP. AND. TEAR.
+
+I couldn't resist, considering the name of this armor, especially considering that the unique description has no yield at all as far as how it works. Therefore, this armor now provides:
+
+- Armor Class vs. demonic: +2
+- Damage vs. demonic: +2
+- THAC0 vs. demonic: 2
+- 20% resistance to fire
+- Fiends must save vs. Death of have their magic resistance nullified when hit for 2 rounds
+
 </details>
 
 ---
@@ -1156,6 +1187,13 @@ You get this weapon fairly late in BGEE, and it sucks. Also, "cold-using creatur
 - Silver Dragons are included as "cold-using creatures"
 - The extra damage will be fire damage, not slashing
 
+**Component 1701:** Make Ilbratha give the wielder a chance to activate Blur when attacked and make Mirror Image last for longer
+
+This slightly improves the largely unremarkable +1 short sword:
+
+- 7% chance when hit to be affected by Blur
+- Mirror Image lasts a full turn (cast at character level)
+
 </details>
 
 ---
@@ -1304,6 +1342,10 @@ This improves the bolts slightly by causing direct poison damage, which may be u
 **Component 1348:** Make projectiles from Shortbow of Gesen as fast as regular arrows
 
 Self-explanatory, the normal projectiles are way too slow.
+
+**Component 1371:** Make Arrows of Dispelling force a save vs. Spell at -2 for them to work
+
+Simply a balance tweak.
 
 </details>
 
@@ -1579,6 +1621,15 @@ This modifies the projectile so it spreads faster, making it less annoying. Addi
 **Component 452:** Make Icelance upgrade damage every 2 levels up to 10d6
 
 Self-explanatory.
+
+**Component 477:** Make Smashing Wave a bit more powerful and bypass magic resistance
+
+Cool spell that required an improvement:
+
+- Damaged upgraded from 4d10 to 6d8+4
+- Changes of being knocked unconscious or stunned are equal now. 33% chance of being stunned or put to sleep if save is failed, both effects for 2 rounds
+- Save vs. Breath at -1 to avoid both effects and take half damage
+- Magic resistance doesn't apply. Because it's water.
 
 </details>
 
@@ -1964,6 +2015,10 @@ Self-explanatory. Generally speaking, it's more powerful to directly increase th
 **Component 2260:** Make Blades, Skalds, and Swashbucklers get 1/2 APR on levels 7 and 13, much like Fighters
 
 This will give these classes an edge, as they are more martially inclined. It also mirrors how it works in BG3 for Blades.
+
+**Component 2265:** Make Defensive Spin protect against backstabs for its duration and allow very slow movement
+
+This will make it a straight upgrade to the power by providing backstab immunity and allowing movement at 50% of the original speed.
 
 </details>
 

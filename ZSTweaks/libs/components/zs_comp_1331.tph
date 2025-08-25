@@ -1,0 +1,24 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1331~) BEGIN
+  FAIL ~Script already included: zs_comp_1331~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1331~ = 1
+END
+
+ACTION_IF is_bg2ee_or_eet BEGIN
+
+    COPY ~%MOD_FOLDER%/items/doomplate~ ~override~
+    COPY_EXISTING ~PLAT12.ITM~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8480) END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 5 parameter1 = 146 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 4 parameter1 = 226 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 0 parameter1 = 87 END
+        LPF ADD_EQUIPPED_EFF INT_VAR p1=race_demonic p2=4 STR_VAR effects = ~op=219,op=179,spec=2;op=178=spec=2;op=344,spec=6;op=248,p1=0,p2=0,res=ZSTWDOM1;op=249,p1=0,p2=0,res=ZSTWDOM1~ END
+
+    COPY_EXISTING ~PLAT12.ITM~ ~override/ZSTWDOM0.ITM~
+        LPF ALTER_ITEM INT_VAR id_ref_name = RESOLVE_STR_REF(@8481) id_ref_desc = RESOLVE_STR_REF(@8482) END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 178 special = 4 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 179 special = 4 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 248 STR_VAR resource = ~ZSTWDOM2~ END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 249 STR_VAR resource = ~ZSTWDOM2~ END
+        
+END

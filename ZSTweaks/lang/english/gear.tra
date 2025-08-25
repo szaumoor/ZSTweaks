@@ -1206,8 +1206,7 @@ Requires:
 
 Weight: 25~
 
-@8480 = ~Doomplate
-The oldest scraps of tale hint at this armor's original bearer: a nigh-mythical slayer of demons who was said to rip and tear their flesh with his bare hands, carving a wrathful path through infernal hosts. Whether the Doomplate remembers that champion, hungers for such purpose again, or merely amplifies the will of any who stride into the jaws of the abyss… none can say.
+@8480 = ~The oldest scraps of tale hint at this armor's original bearer: a nigh-mythical slayer of demons who was said to rip and tear their flesh with his bare hands, carving a wrathful path through infernal hosts. Whether the Doomplate remembers that champion, hungers for such purpose again, or merely amplifies the will of any who stride into the jaws of the abyss… none can say.
 
 STATISTICS:
 
@@ -1215,12 +1214,42 @@ Equipped abilities:
 – Armor Class: +2 vs. demons and devils
 – Damage: +2 vs. demons and devils
 – THAC0: +2 vs. demons and devils
+– Fire Resistance: +20%
+
+Combat abilities:
+– Magical weapons always overcome the natural weapon immunities of fiends (but not magical protections such as Absolute Immunity and Protection from Magical Weapons)
+– Fiends struck by the wearer must save vs. Death or have their Magic Resistance nullified for 2 rounds
 
 Armor Class: 0 (-3 vs. slashing)
 Requires:
  12 Strength
 
 Weight: 27~
+
+// for later
+@8481 = ~Slayer's Doomplate~
+@8482 = ~The oldest scraps of tale hint at this armor's original bearer: a nigh-mythical slayer of demons who was said to rip and tear their flesh with his bare hands, carving a wrathful path through infernal hosts. Whether the Doomplate remembers that champion, hungers for such purpose again, or merely amplifies the will of any who stride into the jaws of the abyss… none can say.
+
+Now empowered with the hearts of demons, this armor is now an incredibly powerful tool against the hordes of both the Abyss and the Hells.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. demons and devils
+– Damage: +4 vs. demons and devils
+– THAC0: +4 vs. demons and devils
+– Fire Resistance: +40%
+
+Combat abilities:
+– Magical weapons always overcome the natural weapon immunities of fiends (but not magical protections such as Absolute Immunity and Protection from Magical Weapons)
+– Fiends struck by the wearer must save vs. Death at -2 or have their Magic Resistance nullified for 2 rounds
+– 30% chance per hit to
+
+Armor Class: -2 (-5 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 20~
 
 @8490 = ~Few suits of armor in all the realms are the equal of this full plate. All that remains of the origin of the Hart are folktales and legends. The most popular of these is that an impossible battle was once fought against an army of orcs surging through the Three Trees Pass. Arngor of the Oak led the armies of men and elves, and it is said that he dueled with the orc commander till the sun set, and the land was bathed in a bloody mist. Finally, the orc fell, but Arngor had sustained wounds too vast for any to save him. His blood soaked through the armor he wore, infusing it with his courage and nobility. Thus the Armor of the Hart became known to men.
 

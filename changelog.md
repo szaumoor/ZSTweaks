@@ -31,7 +31,6 @@
 - Fireball component now also raises the minimum damage to Dragon's Breath (the spell) to 40 (before saves, 20 if saved): 20d10 ⇾ 20d9+20. This is thematically in accordance to other tweaks to powerful spells in this mod
 - Planetar and Deva components now allow both to instantly cast all of their spells
 
-
 ## New Components / Features
 
 - Make the Plate of the Dark not just a generic +1 full plate but something more unique based on the description
@@ -41,3 +40,4 @@
 - Make Ilbratha give the wielder a chance to activate Blur when attacked and make Mirror Image last for longer
 - Make Smashing Wave a bit more powerful and bypass magic resistance
 - Make Arrows of Dispelling force a save vs. Spell at -2 for them to work
+- Make Doomplate an armor for those that want to RIP. AND. TEAR.

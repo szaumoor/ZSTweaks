@@ -5,7 +5,8 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
-  
+
+    COPY ~%MOD_FOLDER%/items/plate_dark~ ~override~
     COPY_EXISTING ~PLAT05.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8460) END
 
@@ -21,4 +22,5 @@ ACTION_IF NOT is_iwdee BEGIN
 
         LPF ADD_ITEM_HEADER INT_VAR target=4 charges=2 depletion=3 flags=2048 projectile=0 STR_VAR icon = ~SPWI205B~ END
         LPF ADD_ITEM_EFFECT INT_VAR type=3 header=1 target=1 opcode=148 STR_VAR resource= ~SPWI205~ END
+        
 END
