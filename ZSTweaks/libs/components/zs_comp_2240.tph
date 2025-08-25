@@ -1,0 +1,16 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_2240~) BEGIN
+  FAIL ~Script already included: zs_comp_2240~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_2240~ = 1
+END
+
+ACTION_IF is_bg2ee_or_eet BEGIN
+
+    COPY_EXISTING ~OHHDRAIN.SPL~ ~override~
+        WRITE_LONG 0xc "-1" //nonsense identified name
+        WRITE_LONG 0x54 "-1"// nonsense identified desc
+        LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@7222) END
+        SET hexxat_cooldown_str = RESOLVE_STR_REF(@7223)
+        LPF ADD_SPL_EFF_SELF INT_VAR t=3 STR_VAR effects = ~op=172,res=%SOURCE_RES%;op=171,tmg=3,dur=300;op=139,tmg=3,dur=3,p1=%hexxat_cooldown_str%~ END
+
+END

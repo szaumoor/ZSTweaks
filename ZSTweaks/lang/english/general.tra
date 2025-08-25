@@ -167,24 +167,26 @@ Requires:
 @8700 = ~Slayer Form~
 @8701 = ~Slayer Form
 
-Manifest your savage compulsions, taking on the form of the brutal essence of Bhaal: a violent, powerful creature made of teeth and claws. Using this ability reduces your reputation by two points, as even those who do not witness the event can sense the corruption caused by giving yourself over to instinct.
+Manifest your savage compulsions, taking on the form of the brutal essence of Bhaal: a violent, powerful creature made of teeth and claws.
 
 The Slayer form grants the following benefits:
 
 – Strength and Dexterity set to 21 (23 at 3 million XP or more, 25 at 6 million XP or more)
 – Constitution increased by 3
 – Attacks per round set to 3 (7/2 at 3 million XP or more, 4 at 6 million XP or more)
-– Basic claw and teeth attacks deal 1d8+3 crushing/slashing damage plus +1 cold damage with a +5 THAC0 bonus, acts as a +5 weapon. At 3 million XP or more, the damage increases to 2d4+5, and the cold damage to 1d2+1.
-– Deals 2d6 extra crushing and slashing damage to targets that are knocked down or unconscious
+– Basic claw and teeth attacks deal 1d8+3 crushing/slashing damage plus +1 cold damage with a +5 THAC0 bonus, acts as a +5 weapon. At 3 million XP or more, the damage increases to 2d4+5, and the cold damage to 1d2+1. At 6 million XP or more, the damage increases to 2d4+6, the cold damage to 1d3+1, and the THAC0 bonus to +6.
+– All attack hits as if they were +6 magical weapons for the purposes of overcoming weapon immunities
+– Deals 2d6 extra crushing and slashing damage to targets that are knocked down, unconscious, or otherwise disabled
 – Movement speed increased by a factor of 5
 – Effective AC set to -10
-– Saving Throws improve by 5
+– Saving throws improve by 5
 – Magic Resistance increases by 20%
 – THAC0 set to 0
-– 100 Hit Points, 150 at XP of 3 million or more, and 200 HP at XP of 6 million or more. If maximum Hit Points are higher, they increase by 15
+– Fully healed upon transforming
+– 100 Hit Points, 150 at XP of 3 million or more, and 200 HP at XP of 6 million or more. If maximum Hit Points are higher, they increase by 15 instead
 – Immunity to imprisonment, level drain, stun, fear, panic, morale failure, and missile attacks
 
-This form is unstable and must sate its thirst for blood to maintain it. A kill must occur once per turn to maintain it, otherwise, the user will be forced back into their normal shape.~
+This form is unstable and must sate its thirst for blood to maintain it. A kill must occur once per turn to maintain it, otherwise, the user will be forced back into their normal shape. It will nevertheless force the user to transform back into their normal shape after 2 hours.~
 
 @8702 = ~Let the Slaughter Begin~
 @8703 = ~Let the Slaughter Begin

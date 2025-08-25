@@ -41,3 +41,8 @@
 - Make Smashing Wave a bit more powerful and bypass magic resistance
 - Make Arrows of Dispelling force a save vs. Spell at -2 for them to work
 - Make Doomplate an armor for those that want to RIP. AND. TEAR.
+- Make Hexxat's Blood Drain have a 1 Hour (5 turn) cooldown instead of being usable once per day
+
+## Planned future additions
+
+A component to improve the Slayer transformation with new perks and abilities, and a better scaling from the time you get it to the end of ToB.

@@ -1468,6 +1468,12 @@ This component makes Shar-Teel's effectiveness vs. males fit her hate and boasti
 
 Note that this means she has a bonus against things that *may* make no sense they're set as "male", like battle horrors. My mod, however, fixes this whenever a component is installed, ensuring sexless and genderless creatures are set as such. Creatures of that nature include angels, demons, elementals, mind flayers, golems, battle horrors, beholders, and others. All those instances will be fixed so this component and any other that targets gender directly works more consistently. This fix can be disabled in the configuration file, but it's not recommended to install this component without it. Final note: summoned creatures have a special "gender" set to them which marks them as summoned creatures, so they will not be affected by this component, even if their normal version would routinely be considered "male". Not my fault they used "gender" as a weird mark for various purposes, blame Bioware!
 
+**Component 2240:** Make Hexxat's Blood Drain have a 1 Hour (5 turn) cooldown instead of being usable once per day
+
+This improves the usability of this skill by simply allowing it to be used more often. I'm planning to improve it further in the future after I figure out how in the world the ability works.
+
+Fair warning, as with all abilities with cooldown, DO NOT use CTRL+R on Hexxat while it's on cooldown, as it may cause her to lose the ability entirely, since it destroys the effect that **returns** the ability to her.
+
 </details>
 
 ---
