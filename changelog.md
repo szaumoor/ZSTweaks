@@ -11,7 +11,7 @@
 - Fixed component for Arrow of Fire not correctly patching the description for non-BG2EE games
 - Fixed component making a check twice for no reason
 - Fixed yet another bug with dragon disciple component giving them access to Horrid Wilting instead of Incendiary Cloud
-- Hardened the code that deals with arbitrary amounts of weapon types for tweaking such that it does not match items that are not supposed to be considered actual items of the type (like daggers)
+- Hardened the code that deals with arbitrary amounts of weapon types for tweaking such that it does not match items that are not supposed to be considered actual items of the type (like daggers with no equipping animation: SCS shapeshift tokens, Grey the Dog attack weapon...)
 
 ## Modifications
 
