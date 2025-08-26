@@ -26,8 +26,8 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_CAT RET wpn_cat = result END
     LPF ITM_PROF RET wpn_prof = result END
     LPF ITM_ABILITIES_NUM RET num_abilities = result END
-
-	PATCH_IF wpn_cat = 16 AND wpn_prof = 96 AND num_abilities > 0 BEGIN // daggers
+    LPF ITM_APPEARANCE RET appearance = result END
+	PATCH_IF wpn_cat = 16 AND wpn_prof = 96 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") BEGIN // daggers
         LPF ITM_REF_UDESC RET id_udesc = result END
         PATCH_IF (NOT "%SOURCE_RES%" STR_EQ "DAGG01") AND id_udesc = dagg_original_desc_index BEGIN
             LPF ALTER_ITEM INT_VAR unid_ref_desc = new_unid_ref_desc END
@@ -66,7 +66,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP20~ END
                 END DEFAULT
                     LPF ITM_STR_NAME RET name = result END
-                    PATCH_WARN "[Dagger boost] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%. Inform Royal Protector!"
+                    PATCH_WARN "[Dagger boost] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%. Inform RoyalProtector!"
             END
 
             LPF ITM_REF_DESC RET desc_index = result END

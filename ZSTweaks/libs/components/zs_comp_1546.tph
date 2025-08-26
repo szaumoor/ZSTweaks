@@ -49,7 +49,8 @@ COPY_EXISTING "SHLD05.ITM" ~override~
 
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF ITM_CAT RET cat = result END
-    PATCH_IF cat = 12 BEGIN // shields
+    LPF ITM_APPEARANCE RET appearance = result END
+    PATCH_IF cat = 12 AND NOT ("%appearance%" STR_EQ "  ") BEGIN // shields
         PATCH_IF zst_1546_everyone_can_use_all_shields BEGIN
             WRITE_LONG 0x1e 0
         END

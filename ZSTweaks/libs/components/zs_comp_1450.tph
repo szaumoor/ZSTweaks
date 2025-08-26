@@ -25,10 +25,11 @@ END
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_ENCH RET ench = result END
     LPF ITM_ABILITIES_NUM RET num_abilities = result END
-    PATCH_IF ench >= 0 AND ench < 7 AND num_abilities > 0 BEGIN
+    LPF ITM_APPEARANCE RET appearance = result END
+    PATCH_IF ench >= 0 AND ench < 7 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ")
+    BEGIN
         LPF ITM_CAT RET cat = result END
         LPF ITM_PROF RET prof = result END
-        LPF ITM_APPEARANCE RET appearance = result END
         LPF PROBABILITY_BONUS INT_VAR ench = ench RET bonus = result END
 
         PATCH_IF zst_1450_allow_daggers AND cat=16 AND prof=96
