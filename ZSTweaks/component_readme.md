@@ -262,8 +262,8 @@ Overall, these changes may change difficulty slightly, since it will affect crea
 
 (Yet) Another thing that annoys me in the game is that there's not much difference to speak of between the different types of shields. Normally, medium shields provide Armor Class bonuses across the board, while Tower Shields add a bonus to missile, small shields lack missile bonus, and bucklers lack missile and piercing. It lacks more nuance that I would prefer and as such it's reworked in the following manner:
 
-- **Tower** Shields: The base armor class is always 1 point above other shields of their class. However, they're big and clunky, which means it also cause a -1 penalty to THAC0 and Saves vs. Breath. It also inflicts a penalty of -2 to Speed Factor and reduces movement speed by 20%.
-- **Medium** Shields: Inflict a -1 penalty to Speed Factor and Saves vs. Breath, and reduce movement speed by 10%.
+- **Tower** Shields: The base armor class is always 1 point above other shields of their class. However, they're big and clunky, which means it also cause a -1 penalty to THAC0 and Saves vs. Breath. It also inflicts a penalty of -2 to Speed Factor. Optionally, you can make them reduce movement speed by 20% (disabled by default).
+- **Medium** Shields: Inflict a -1 penalty to Speed Factor and Saves vs. Breath, and optionally reduce movement speed by 10% (disabled by default).
 - **Small** Shields: At even enchantment level above 0, they compensate their lack of Armor Class bonus vs. missile by 1. For example, a hypothetical +6 small shield would grant +6 Armor class, but only +3 vs. missile.
 - **Bucklers**: At even enchantment level above 0, they compensate their lack of Armor Class bonus vs. piercing by 1. For example, a hypothetical +6 buckler would grant +6 Armor class, but only +3 vs. piercing. Additionally, the shields can be used to **parry** opponents 10% of the time when attacked in close range (even if the attack fails), inflicting if a save vs Breath is failed (enchantment level adds penalties) 1d2+bonus crushing damage, which opponents a -15% damage susceptibility (if they aren't immune to the damage type) and -2 armor class penalty for half a round. This effect will not work if the user is helpless (stunned, held, unconscious...) and will also not apply to foes that are massive or incorporeal. If my finesse component is installed with the buckler component included, single-classed thieves can do this 20% of the time instead. **Warning:** This should be installed after ANYTHING that adds items that add or modify weapon protection effects, including the component in SCS that increases the power from Mantle and Improved Mantle. The reason for this is that the component needs to patch those resources such that they appropriately block the buckler parry effect according to the shield enchantment level.
 
@@ -1189,10 +1189,7 @@ You get this weapon fairly late in BGEE, and it sucks. Also, "cold-using creatur
 
 **Component 1701:** Make Ilbratha give the wielder a chance to activate Blur when attacked and make Mirror Image last for longer
 
-This slightly improves the largely unremarkable +1 short sword:
-
-- 7% chance when hit to be affected by Blur
-- Mirror Image lasts a full turn (cast at character level)
+This slightly improves the largely unremarkable +1 short sword by giving wielders a 7% chance each time they're hit to be affected by Blur.
 
 </details>
 
@@ -2053,9 +2050,9 @@ This component makes summoned demons grant party XP. It may not catch all instan
 
 Also, pay attention to any mods that modify the behavior of summoned demons, especially if they replace the script. Might or might not work. Please test and report.
 
-**Component 3030:** Make Devas hasted, same as Planetars
+**Component 3030:** Make Devas hasted, same as Planetars, and allow them to instantly cast their spells
 
-I was always annoyed at how immensely more powerful Planetars are compared to Devas. Haste is just too good not to use. Devas will be permanently hasted now, same as Planetars.
+I was always annoyed at how immensely more powerful Planetars are compared to Devas. Haste is just too good not to use. Devas will be permanently hasted now, same as Planetars. Devas will also be able to cast their spells instantly.
 
 **Component 3040:** Make the Planetar more balanced and allow it to grant allies passive partial spell invulnerability
 
@@ -2067,6 +2064,7 @@ Planetars have a 25% of dealing a vorpal hit with a -4 save penalty, which is ev
 - Deals on hit +2 cold and fire damage
 - Fiends and celestials take 4 divine (irresistible) damage on a successful hit
 - Inspired by NWN2, it also grants the Planetar partial invulnerability to magic as per the Minor Globe of Invulnerability spell. This effect is granted to all allies near the Planetar. That is, while the Planetar is around, your party is immune to spell levels from 1 to 3.
+- They can cast all their spells instantly as well
 
 **Component 3050:** Make the Balor's vorpal attack not guaranteed to succeed but be affected by a saving throw too
 

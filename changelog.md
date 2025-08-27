@@ -12,6 +12,7 @@
 - Fixed component making a check twice for no reason
 - Fixed yet another bug with dragon disciple component giving them access to Horrid Wilting instead of Incendiary Cloud
 - Hardened the code that deals with arbitrary amounts of weapon types for tweaking such that it does not match items that are not supposed to be considered actual items of the type (like daggers with no equipping animation: SCS shapeshift tokens, Grey the Dog attack weapon...)
+- Fixed shield component changing the description of the base Tower Shield even if the option was disabled in the config file
 
 ## Modifications
 
@@ -31,6 +32,7 @@
 - Fireball animation part of the fireballs component also patches the explosion from Dragon's Breath to be more visually appealing. Mod component's name modified accordingly: "Make fireball-type spells improve more with level and/or improve explosion animations"
 - Fireball component now also raises the minimum damage to Dragon's Breath (the spell) to 40 (before saves, 20 if saved): 20d10 ⇾ 20d9+20. This is thematically in accordance to other tweaks to powerful spells in this mod
 - Planetar and Deva components now allow both to instantly cast all of their spells
+- Shield component now allows you to opt in or out from the movement speed debuffs. It's OFF by default, that is, no movement speed debuffs will be applied unless you change it.
 
 ## New Components / Features
 

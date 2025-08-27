@@ -5,10 +5,10 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
-    COPY ~%MOD_FOLDER%/items/ilbratha~ ~override~
-    COPY_EXISTING ~SW1H26.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@55000) END
-        LPF ALTER_EFFECT INT_VAR match_duration = 119 duration = 60 END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=232,p2=7,res=ZSTWILB0~ END
+
+  COPY ~%MOD_FOLDER%/items/ilbratha~ ~override~
+  COPY_EXISTING ~SW1H26.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@55000) END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=232,p2=7,res=ZSTWILB0~ END
 
 END

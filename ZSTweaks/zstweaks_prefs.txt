@@ -99,6 +99,7 @@ OUTER_SET zst_1546_buckler_tweak = "1"
 OUTER_SET zst_1546_small_tweak   = "1"
 OUTER_SET zst_1546_medium_tweak  = "1"
 OUTER_SET zst_1546_tower_tweak   = "1"
+OUTER_SET zst_1546_speed_debuffs = "0"
 
 // tweaks to shield usability
 OUTER_SET zst_1546_everyone_can_use_all_shields         = "0"

@@ -1,5 +1,5 @@
-ACTION_IF !VARIABLE_IS_SET ~zs_ids_setup~ BEGIN
-
+ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
+    PRINT "IDS setup running"
     OUTER_SET race_ankheg          = IDS_OF_SYMBOL(race ANKHEG)
     OUTER_SET race_antisolar       = IDS_OF_SYMBOL(race ANTISOLAR)
     OUTER_SET race_basilisk        = IDS_OF_SYMBOL(race BASILISK)
@@ -23,7 +23,6 @@ ACTION_IF !VARIABLE_IS_SET ~zs_ids_setup~ BEGIN
     OUTER_SET race_halforc         = IDS_OF_SYMBOL(race HALFORC)
     OUTER_SET race_hook_horror     = IDS_OF_SYMBOL(race HOOK_HORROR)
     OUTER_SET race_kuo_toa         = IDS_OF_SYMBOL(race "KUO-TOA")
-    PRINT "[[ Kuo-toa: %race_kuo_toa% ]]"
     OUTER_SET race_lich            = IDS_OF_SYMBOL(race LICH)
     OUTER_SET race_mephit          = IDS_OF_SYMBOL(race MEPHIT)
     OUTER_SET race_mimic           = IDS_OF_SYMBOL(race MIMIC)

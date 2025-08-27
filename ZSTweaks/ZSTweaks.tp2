@@ -15,7 +15,7 @@ MODDER
 	fun_args warn
 */
 ALWAYS
-	INCLUDE ~%MOD_FOLDER%/libs/zs_always.tph~
+	INCLUDE ~%MOD_FOLDER%/libs/preambles/zs_always.tph~
 END
 LANGUAGE
 "English"

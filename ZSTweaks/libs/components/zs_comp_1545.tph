@@ -36,13 +36,13 @@ ACTION_IF zst_1545_strength_bonuses BEGIN
         PRETTY_PRINT_2DA
 END
 
-ACTION_IF zst_1545_weapon_style_bonuses BEGIN
-    COPY ~%MOD_FOLDER%/2da/tweaks/STYLBONU.2da~ ~override~
+ACTION_IF zst_1545_proficiency_bonuses BEGIN
+    COPY ~%MOD_FOLDER%/2da/tweaks/WSPECIAL.2da~ ~override~
         PRETTY_PRINT_2DA
 END
 
-ACTION_IF zst_1545_proficiency_bonuses BEGIN
-    COPY ~WSPECIAL.2DA~ ~override~
+ACTION_IF zst_1545_weapon_style_bonuses BEGIN
+    COPY_EXISTING ~STYLBONU.2DA~ ~override~
         PATCH_IF zst_1545_weapon_style_twohanded BEGIN
             REPLACE_TEXTUALLY ~^\(TWOHANDED-0\).+$~ ~\1 0 0 0 0 1 0 0 0~
             REPLACE_TEXTUALLY ~^\(TWOHANDED-1\).+$~ ~\1 1 0 0 0 0 0 -1 0~

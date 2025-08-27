@@ -104,6 +104,8 @@ INT_VAR
     rd  = 1
     pwr = 1
     ip  = "-1"
+    stype = 0
+    sbonus = 0
 STR_VAR
     effects = ""
 BEGIN
@@ -119,6 +121,8 @@ BEGIN
             def_power         = pwr
             def_type          = t
             def_insertpoint   = ip
+            def_savetype      = stype
+            def_savebonus     = sbonus
         STR_VAR
             function_name = ~ADD_SPELL_EFFECT~
             effect_codes  = ~%effects%~

@@ -21,6 +21,7 @@ COPY_EXISTING ~FBLADE.ITM~   ~override~
   LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 12 special = 1024 END
 BUT_ONLY IF_EXISTS
 
+
 COPY_EXISTING ~SMCUDGE.EFF~ ~override~
               ~FBLADE.EFF~ ~override~
   LPF ALTER_EFF_FILE INT_VAR special = 1024 END
