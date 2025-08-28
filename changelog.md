@@ -33,6 +33,7 @@
 - Fireball component now also raises the minimum damage to Dragon's Breath (the spell) to 40 (before saves, 20 if saved): 20d10 ⇾ 20d9+20. This is thematically in accordance to other tweaks to powerful spells in this mod
 - Planetar and Deva components now allow both to instantly cast all of their spells
 - Shield component now allows you to opt in or out from the movement speed debuffs. It's OFF by default, that is, no movement speed debuffs will be applied unless you change it.
+- Entangle component now replaces in BG2EE the horrendously ear-destroying sound that happens when it's active in an area with BGEE's version, which is much more palatable.
 
 ## New Components / Features
 
@@ -40,7 +41,7 @@
 - Make Defensive Spin protect against backstabs for its duration and allow very slow movement
 - Make the belt of gender inversion give a bonus vs. the original gender of the wearer
 - Make Shakti Figurine last longer and more powerful
-- Make Ilbratha give the wielder a chance to activate Blur when attacked and make Mirror Image last for longer
+- Make Ilbratha give the wielder a chance to activate Blur when attacked
 - Make Smashing Wave a bit more powerful and bypass magic resistance
 - Make Arrows of Dispelling force a save vs. Spell at -2 for them to work
 - Make Doomplate an armor for those that want to RIP. AND. TEAR.

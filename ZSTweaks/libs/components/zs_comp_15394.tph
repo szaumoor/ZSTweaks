@@ -32,7 +32,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         LPF ITM_MIN_WIS RET min_wis = result END
         LPF IS_USABILITY_FLAG_SET INT_VAR flag = 7 RET cleric_usable = result END
 
-        PATCH_IF cleric_unusable = 1 BEGIN
+        PATCH_IF cleric_unusable BEGIN
             PATCH_IF min_int = 9 BEGIN
                 LPF ALTER_ITEM INT_VAR min_int = 12 END
             END

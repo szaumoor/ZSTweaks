@@ -20,7 +20,7 @@ ACTION_IF NOT has_shadowdancer_overhaul_thac0_comp BEGIN
             LPF CRE_IS_FLAG_SET INT_VAR flag = 4 RET dual_classed_to_thief = result END
             LPF CRE_IS_FLAG_SET INT_VAR flag = 6 RET dual_classed_to_mage = result END
 
-            PATCH_IF dual_classed_to_thief != 1 AND dual_classed_to_mage != 1 BEGIN
+            PATCH_IF NOT dual_classed_to_thief AND NOT dual_classed_to_mage BEGIN
 
                 PATCH_IF cre_class = class_thief BEGIN
                     SET the_level = first_level
@@ -92,5 +92,5 @@ ACTION_IF NOT has_shadowdancer_overhaul_thac0_comp BEGIN
 END ELSE BEGIN
 
     PRINT "THAC0 overhaul for thieves already installed through ZS_ShadowdancerOverhaul"
-    
+
 END

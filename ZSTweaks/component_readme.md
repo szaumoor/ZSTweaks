@@ -1187,7 +1187,7 @@ You get this weapon fairly late in BGEE, and it sucks. Also, "cold-using creatur
 - Silver Dragons are included as "cold-using creatures"
 - The extra damage will be fire damage, not slashing
 
-**Component 1701:** Make Ilbratha give the wielder a chance to activate Blur when attacked and make Mirror Image last for longer
+**Component 1701:** Make Ilbratha give the wielder a chance to activate Blur when attacked
 
 This slightly improves the largely unremarkable +1 short sword by giving wielders a 7% chance each time they're hit to be affected by Blur.
 
@@ -1706,7 +1706,9 @@ Entangle saves are quite generous and, as such, very difficult to pull off at hi
 
 Therefore, it starts with a +2 bonus (from +3), which improves to +1 at level 5, 0 at level 10, -1 at level 15, and -2 at level 20.
 
-Finally, it changes their saving throws from Spell to Breath and bypasses magic resistance (but still can be dispelled).
+It also changes their saving throws from Spell to Breath and bypasses magic resistance (but still can be dispelled).
+
+Finally, in BG2EE, it also replaces the HORRENDOUS sound while it's active in the field for BGEE's version, which is much more tame and less annoying.
 
 **Component 280:** Make Poison (cleric spell) do half damage on a failed save (without poisoning them)
 

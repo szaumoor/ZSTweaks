@@ -28,7 +28,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
         ACTION_IF zst_190_hpower_apr_nonfighters_only BEGIN
 
-            COPY ~%MOD_FOLDER%/spells/cleric/holy_power~ ~override~
+            COPY ~%MOD_FOLDER%/spells/divine/holy_power~ ~override~
             COPY_EXISTING ~ZSTWAPR1.SPL~ ~override~
                 PATCH_FOR_EACH c IN fighter_all fighter_cleric fighter_druid fighter_mage fighter_thief fighter_mage_cleric fighter_mage_thief BEGIN
                     LPF ADD_SPELL_EFFECT INT_VAR opcode=318 target=1 parameter1=IDS_OF_SYMBOL(class "%c%") parameter2=115 insert_point=0 power=4 STR_VAR resource=~%SOURCE_RES%~ END
@@ -37,5 +37,5 @@ ACTION_IF NOT is_iwdee BEGIN
         END
 
     END
-    
+
 END

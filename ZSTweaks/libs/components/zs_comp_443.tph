@@ -6,7 +6,7 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
     ACTION_IF zst_443_death BEGIN
-        COPY ~%MOD_FOLDER%/spells/symbol_death~ ~override~
+        COPY ~%MOD_FOLDER%/spells/common/symbol_death~ ~override~
         COPY_EXISTING ~SPPR719.SPL~ ~override~
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5190) END
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END

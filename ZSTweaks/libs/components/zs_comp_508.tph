@@ -33,7 +33,7 @@ END
 
 ACTION_IF zst_508_restoration_overhaul BEGIN
 
-  COPY ~%MOD_FOLDER%/spells/cleric/restoration~ ~override~
+  COPY ~%MOD_FOLDER%/spells/divine/restoration~ ~override~
   COPY_EXISTING ~SPPR713.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8600) END
     LPF ALTER_HEADER INT_VAR speed = 9 projectile = projectl_sparblpa END
@@ -48,7 +48,7 @@ ACTION_IF zst_508_restoration_overhaul BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_UNFAILING_ENDURANCE" RET spell_res END
     COPY_EXISTING ~%spell_res%.spl~ ~override~
       LPF ADD_SPL_EFF_TGT STR_VAR effects = ~op=321,pwr=4,res=ZSTWRST0~ END
-      
+
   END
 
 END

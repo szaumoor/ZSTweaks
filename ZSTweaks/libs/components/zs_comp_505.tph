@@ -6,7 +6,7 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
 
-  COPY ~%MOD_FOLDER%/spells/cleric/repulse_undead~ ~override~
+  COPY ~%MOD_FOLDER%/spells/divine/repulse_undead~ ~override~
   COPY_EXISTING ~SPPR515.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8190) END
 

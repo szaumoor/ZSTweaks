@@ -53,10 +53,10 @@ ACTION_IF NOT is_iwdee BEGIN
 
     ACTION_IF zst_468_iwd_call_lightning BEGIN
 
-        COPY ~%MOD_FOLDER%/spells/cleric/call_lightning~ ~override~
+        COPY ~%MOD_FOLDER%/spells/divine/call_lightning~ ~override~
         COPY_EXISTING ~SKYBOLT.PRO~ ~override~
             WRITE_ASCII 0x10 "#EFF_P19" #8
-            
+
     END
 
 END

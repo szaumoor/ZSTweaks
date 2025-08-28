@@ -25,7 +25,7 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
 
         ACTION_IF zst_441_tenser_apr_nonfighters_only BEGIN
-            COPY ~%MOD_FOLDER%/spells/wizard/tenser_transformation~ ~override~
+            COPY ~%MOD_FOLDER%/spells/arcane/tenser_transformation~ ~override~
             COPY_EXISTING ~ZSTWAPR0.SPL~ ~override~
                 PATCH_FOR_EACH c IN fighter_all fighter_cleric fighter_druid fighter_mage fighter_thief fighter_mage_cleric fighter_mage_thief BEGIN
                     LPF ADD_SPELL_EFFECT INT_VAR opcode=318 target=1 parameter1=IDS_OF_SYMBOL(class "%c%") parameter2=105 insert_point=0 power=6 STR_VAR resource=~%SOURCE_RES%~ END

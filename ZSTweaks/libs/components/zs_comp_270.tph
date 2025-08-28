@@ -6,6 +6,10 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
 
+  ACTION_IF is_bg2ee_or_eet BEGIN
+    COPY ~%MOD_FOLDER%/spells/divine/entangle~ ~override~
+  END
+
   COPY_EXISTING ~SPPR105.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5100) END
     SET new_bonus = 2

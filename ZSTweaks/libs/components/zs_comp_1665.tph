@@ -28,13 +28,13 @@ ACTION_IF NOT is_iwdee BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7220) END
         LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
 
-        PATCH_IF crit_flag = 1 BEGIN
+        PATCH_IF crit_flag BEGIN
             LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
         END
 
         LPF ADD_EQUIPPED_EFF INT_VAR p1=5 STR_VAR effects=~op=86;op=88;op=89~ END
         LPF ADD_EQUIPPED_EFF INT_VAR p1=2 STR_VAR effects=~op=0,p2=2;op=0,p2=4;op=0,p2=8~ END
-        
+
     BUT_ONLY IF_EXISTS
 
     COPY_EXISTING ~HELM25.ITM~ ~override~ // silver ioun stone

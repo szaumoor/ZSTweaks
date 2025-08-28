@@ -8,7 +8,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
     WITH_SCOPE BEGIN
 
-        COPY ~%MOD_FOLDER%/spells/cleric/sunray~ ~override~
+        COPY ~%MOD_FOLDER%/spells/divine/sunray~ ~override~
         LAF GET_DMG_TYPE STR_VAR type = "magic" RET magic = result END
         COPY_EXISTING ~SPPR707.SPL~ ~override~
             LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8120) END
@@ -61,5 +61,5 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_HEADER INT_VAR speed = 4 END
             LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8130) END
     END
-    
+
 END
