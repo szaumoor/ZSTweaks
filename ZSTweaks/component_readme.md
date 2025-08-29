@@ -2023,9 +2023,9 @@ Lastly, this will patch any dragon disciples that may exist in the game, adding 
 
 Self-explanatory. Generally speaking, it's more powerful to directly increase the base damage.
 
-**Component 2260:** Make Blades, Skalds, and Swashbucklers get 1/2 APR on levels 7 and 13, much like Fighters
+**Component 2260:** Make Blades, Skalds, and Swashbucklers get 1/2 APR on levels 7 and 13, and able to become Specialized in weapons
 
-This will give these classes an edge, as they are more martially inclined. It also mirrors how it works in BG3 for Blades.
+This will give these classes an edge, as they are more martially inclined. I recommend also using the THAC0 improvement component for bards.
 
 **Component 2265:** Make Defensive Spin protect against backstabs for its duration and allow very slow movement
 

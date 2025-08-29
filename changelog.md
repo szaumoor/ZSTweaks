@@ -35,6 +35,8 @@
 - Planetar and Deva components now allow both to instantly cast all of their spells
 - Shield component now allows you to opt in or out from the movement speed debuffs. It's OFF by default, that is, no movement speed debuffs will be applied unless you change it.
 - Entangle component now replaces in BG2EE the horrendously ear-destroying sound that happens when it's active in an area with BGEE's version, which is much more palatable.
+- Stat tweaks (weapon styles, strength, etc) now patches the description of weapon styles.
+- Blade and Skald APR component now also allows them to take 2 pips in their proficiencies
 
 ## New Components / Features
 

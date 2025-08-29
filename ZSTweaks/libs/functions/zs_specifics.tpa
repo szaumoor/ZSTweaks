@@ -49,11 +49,13 @@ END
 DEFINE_PATCH_FUNCTION SWAP_2DA_TABLE_VALUE
 INT_VAR
     column = "-1"
+    row = "-1"
 STR_VAR
     row_name = "*"
     replacement = "*"
+    match_col_value = "*"
 BEGIN
-    PATCH_IF column < 0 OR "%row_name%" STR_EQ "*" BEGIN
+    PATCH_IF column < 0 OR (row = "-1" AND "%row_name%" STR_EQ "*") BEGIN
         PATCH_FAIL "Invalid column (%column%) or row name (%row_name%)"
     END
 
@@ -61,15 +63,47 @@ BEGIN
         PATCH_FAIL "No replacement was given for the cell in the table"
     END
 
-    READ_2DA_ENTRIES_NOW rows 1
-    FOR ( row = 3; row < rows; ++row ) BEGIN
-        READ_2DA_ENTRY_FORMER rows row 0 label
-        PATCH_IF ~%label%~ STR_EQ ~%row_name%~ BEGIN
-            SET_2DA_ENTRY_LATER rows_out row column replacement
-            SET row = rows
+    PATCH_IF row < 0 BEGIN // we don't know the row we want
+
+        READ_2DA_ENTRIES_NOW rows 1
+        FOR ( row = 3; row < rows; ++row ) BEGIN
+            READ_2DA_ENTRY_FORMER rows row 0 label
+
+            PATCH_IF ~%label%~ STR_EQ ~%row_name%~ BEGIN
+
+                PATCH_IF IS_AN_INT match_col_value BEGIN
+                    READ_2DA_ENTRY_FORMER rows row column value
+                    PATCH_IF value = match_col_value BEGIN
+                        SET_2DA_ENTRY_LATER rows_out row column replacement
+                        SET row = rows
+                    END
+
+                END ELSE BEGIN
+                    SET_2DA_ENTRY_LATER rows_out row column replacement
+                    SET row = rows
+                END
+
+            END
         END
+        SET_2DA_ENTRIES_NOW rows_out 1
+
+    END ELSE BEGIN // we know the row we want
+
+        READ_2DA_ENTRIES_NOW rows 1
+        PATCH_IF IS_AN_INT match_col_value BEGIN
+            READ_2DA_ENTRY_FORMER rows row column value
+            PATCH_IF value = match_col_value BEGIN
+                SET_2DA_ENTRY_LATER rows_out row column replacement
+                SET row = rows
+            END
+
+        END ELSE BEGIN
+            SET_2DA_ENTRY_LATER rows_out row column replacement
+        END
+        SET_2DA_ENTRIES_NOW rows_out 1
+
     END
-    SET_2DA_ENTRIES_NOW rows_out 1
+
 END
 
 DEFINE_PATCH_FUNCTION weapon_damage_by_class

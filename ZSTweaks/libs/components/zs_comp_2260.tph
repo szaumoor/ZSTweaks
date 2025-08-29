@@ -16,11 +16,23 @@ ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald BEGIN
         APPEND ~CLABBA02.2DA~ ~%line%~
         COPY_EXISTING ~CLABBA02.2DA~ ~override~
           PRETTY_PRINT_2DA
+
+          COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+            FOR ( i = 3; i < 31; ++i ) BEGIN
+              LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = 42 STR_VAR replacement = "2" match_col_value = "1" END
+            END
+            PRETTY_PRINT_2DA
       END
 
       ACTION_IF zst_2260_allow_skald BEGIN
         APPEND ~CLABBA04.2DA~ ~%line%~
         COPY_EXISTING ~CLABBA04.2DA~ ~override~
+          PRETTY_PRINT_2DA
+
+        COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+          FOR ( i = 3; i < 31; ++i ) BEGIN
+            LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = 44 STR_VAR replacement = "2" match_col_value = "1" END
+          END
           PRETTY_PRINT_2DA
       END
 
@@ -61,5 +73,5 @@ END ELSE BEGIN
   ACTION_IF NOT group_component BEGIN
     WARN "No classes were selected in the configuration file"
   END
-  
+
 END
