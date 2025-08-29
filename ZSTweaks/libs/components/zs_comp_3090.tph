@@ -35,11 +35,11 @@ COPY_EXISTING ~SHADOWWP.ITM~ ~override~
     LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 2400 END
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~SPIDWR1.ITM~   ~override~
-              ~TROLLSPI.ITM~  ~override~
+COPY_EXISTING ~SPIDWR1.ITM~  ~override~
+              ~TROLLSPI.ITM~ ~override~
     LPF ALTER_EFFECT INT_VAR match_duration = 300 duration = 2400 END
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~bdshadgr.ITM~  ~override~
+COPY_EXISTING ~bdshadgr.ITM~ ~override~
     LPF ALTER_EFFECT INT_VAR match_duration = 180 duration = 2400 END
 BUT_ONLY IF_EXISTS

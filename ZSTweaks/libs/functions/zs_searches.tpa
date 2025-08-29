@@ -81,14 +81,17 @@ RET
     result
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+
     READ_LONG 0x2c4 eff_offset
     READ_LONG 0x2c8 eff_length
     READ_BYTE 0x33 eff_type
+
     PATCH_IF eff_type = 0 BEGIN
         SET effect_size = 0x30
     END ELSE BEGIN
         SET effect_size = 0x108
     END
+
     SET found = 0
     FOR ( index = 0; index < eff_length; ++index ) BEGIN
         PATCH_IF eff_type = 0 BEGIN
@@ -96,13 +99,16 @@ BEGIN
         END ELSE BEGIN
             READ_LONG (eff_offset + 0x08) op
         END
+
         PATCH_IF op = opcode1 OR op = opcode2 BEGIN
             found = 1
             index = eff_length // break
         END
+
         eff_offset += effect_size
     END
     result = found
+
 END
 
 

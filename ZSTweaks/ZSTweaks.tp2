@@ -1297,16 +1297,16 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 BEGIN @3020 DESIGNATED 3020 GROUP @22 // summoned demons give XP to party
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 
-BEGIN @3030 DESIGNATED 3030 GROUP @22 // haste devas tweak
+BEGIN @3030 DESIGNATED 3030 GROUP @22 // Devas tweak
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
-BEGIN @3040 DESIGNATED 3040 GROUP @22 // planetar weapon tweak
+BEGIN @3040 DESIGNATED 3040 GROUP @22 // Planetar tweak
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
-BEGIN @3050 DESIGNATED 3050 GROUP @22 // balor weapon tweak
+BEGIN @3050 DESIGNATED 3050 GROUP @22 // balor tweak
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
-BEGIN @3060 DESIGNATED 3060 GROUP @22 // Mencar is an idiot component
+BEGIN @3060 DESIGNATED 3060 GROUP @22 // Mencar is a drooling idiotic stupid BABOON component
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 
 BEGIN @3070 DESIGNATED 3070 GROUP @22 // feline animation creatures tweak
