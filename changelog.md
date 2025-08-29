@@ -17,6 +17,7 @@
 - Fixed Shadow Wardstone not using "Ioun Stone" as the unidentified item name
 - Fixed Shadow Wardstone not being retroactively patched as protecting against critical hits if related component was installed first
 - Fixed Bolt of Biting component not adding the promised +1 poison damage on hit (irrespective of successful poisoning)
+- Fixed broken Quivering Palm component
 
 ## Modifications
 
@@ -41,6 +42,8 @@
 - Stat tweaks (weapon styles, strength, etc) now patches the description of weapon styles.
 - Blade and Skald APR component now also include Priests of Tempus (only 2 pip proficiency improvement)
 - Blade and Skald APR component now also allows them to take 2 pips in their proficiencies
+- Opened the beetle component to IWDEE
+- Opened Quivering Palm component to IWDEE
 
 ## New Components / Features
 
