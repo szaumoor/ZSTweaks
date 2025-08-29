@@ -40,7 +40,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         COPY ~%MOD_FOLDER%/items/shadow_wardstone~ ~override~
         COPY_EXISTING ~MISC6P.itm~ ~override~ // wardstone
             SET desc = RESOLVE_STR_REF(@8374)
-            LPF ALTER_ITEM INT_VAR unid_ref_desc = desc id_ref_desc = desc category = 7 flags=33554508 END
+            LPF ALTER_ITEM INT_VAR unid_ref_desc=desc id_ref_desc=desc unid_ref_name=8181 category=7 flags=33554508 END
 
             SET blinded_strref1 = 14674
             SET blinded_strref2 = 1474
