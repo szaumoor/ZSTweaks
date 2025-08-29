@@ -42,6 +42,14 @@ ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald BEGIN
           PRETTY_PRINT_2DA
       END
 
+      ACTION_IF zst_2260_allow_tempus BEGIN
+        COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+          FOR ( i = 3; i < 31; ++i ) BEGIN
+            LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = 63 STR_VAR replacement = "2" match_col_value = "1" END
+          END
+          PRETTY_PRINT_2DA
+      END
+
       ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
         ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
           COPY_EXISTING ~%file%~ ~override~

@@ -2023,9 +2023,13 @@ Lastly, this will patch any dragon disciples that may exist in the game, adding 
 
 Self-explanatory. Generally speaking, it's more powerful to directly increase the base damage.
 
-**Component 2260:** Make Blades, Skalds, and Swashbucklers get 1/2 APR on levels 7 and 13, and able to become Specialized in weapons
+**Component 2260:** Make Blades, Skalds, and Swashbucklers and Priest of Tempus get more warrior-type benefits
 
 This will give these classes an edge, as they are more martially inclined. I recommend also using the THAC0 improvement component for bards.
+
+- Blades and Skalds: +1/2 APR at levels 7 and 13, can take 2 pips in proficiencies
+- Swashbucklers: +1/2 APR at levels 7 and 13
+- Priests of Tempus: can take 2 pips in proficiencies
 
 **Component 2265:** Make Defensive Spin protect against backstabs for its duration and allow very slow movement
 
