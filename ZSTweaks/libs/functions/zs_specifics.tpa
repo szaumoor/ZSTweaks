@@ -46,6 +46,32 @@ BEGIN
         SET_2DA_ENTRIES_NOW thac0_out 1
 END
 
+DEFINE_PATCH_FUNCTION SWAP_2DA_TABLE_VALUE
+INT_VAR
+    column = "-1"
+STR_VAR
+    row_name = "*"
+    replacement = "*"
+BEGIN
+    PATCH_IF column < 0 OR "%row_name%" STR_EQ "*" BEGIN
+        PATCH_FAIL "Invalid column (%column%) or row name (%row_name%)"
+    END
+
+    PATCH_IF "%replacement%" STR_EQ "*" BEGIN
+        PATCH_FAIL "No replacement was given for the cell in the table"
+    END
+
+    READ_2DA_ENTRIES_NOW rows 1
+    FOR ( row = 3; row < rows; ++row ) BEGIN
+        READ_2DA_ENTRY_FORMER rows row 0 label
+        PATCH_IF ~%label%~ STR_EQ ~%row_name%~ BEGIN
+            SET_2DA_ENTRY_LATER rows_out row column replacement
+            SET row = rows
+        END
+    END
+    SET_2DA_ENTRIES_NOW rows_out 1
+END
+
 DEFINE_PATCH_FUNCTION weapon_damage_by_class
 INT_VAR header=0 // the weapon header to which the effect is applied
         probability1=100 // the probabilities for the effect to be applied

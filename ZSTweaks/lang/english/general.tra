@@ -200,4 +200,42 @@ Drive the target to the ground for 1 round if they fail a save vs. Death at -4, 
 @8707 = ~Sumptuous Blood Bath
 Slash open a foe's arteries, instantly dealing 2d8+4 slashing damage (halved if they save vs. Death at -4). The target then bleeds for 3 rounds, taking 2 slashing damage each round. Each time the target bleeds, the Slayer is drenched in blood and heals 2d6 hit points. At 3 million XP or more, the initial damage increases to 3d8+6 slashing, the bleeding to 2 slashing twice per round, and the healing to 3d6 hit points. If the save is made, the Slayer only heals once.~
 
+@8800 = ~SINGLE-WEAPON: This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.
+
+No skill (0 slots): The wielder suffers a -1 penalty to Speed Factor.
+
+Proficient (1 slot): The wielder gains a +1 bonus to damage rolls, Armor Class, and Speed Factor. Attacks score critical hits on rolls of 19 or 20.
+
+Specialized (2 slots): The wielder gains a +2 bonus to damage rolls, Armor Class, and Speed Factor. Attacks score critical hits on rolls of 19 or 20.~
+
+@8801 = ~SWORD AND SHIELD: Anyone can pick up a shield and get its basic protection bonuses, but by spending slots on this fighting style, an adventurer can maximize the benefits received.
+
+No skill (0 slots): The wielder suffers a -1 penalty to all combat rolls and a -1 penalty to Armor Class against missile attacks.
+
+Proficient (1 slot): The wielder no longer suffers these penalties and gains a +1 bonus to Armor Class against missile attacks.
+
+Specialized (2 slots): The wielder gains a +1 bonus to Armor Class and an additional +2 bonus to Armor Class against missile attacks.
+
+NOTE: Despite the name of this style, any one-handed melee weapon in combination with a shield will receive the aforementioned bonuses.~
+
+@8802 = ~TWO-HANDED: This fighting style allows the character to use a two-handed melee weapon and receive special bonuses.
+
+No skill (0 slots): The wielder suffers a -1 penalty to Armor Class.
+
+Proficient (1 slot): The wielder no longer suffers Armor Class penalties and gains a +1 bonus to damage rolls and Speed Factor.
+
+Specialized (2 slots): The wielder gains a +2 bonus to damage rolls, a +4 bonus to Speed Factor, and can score critical hits on attack rolls of 19 or 20 when using two-handed weapons.
+
+NOTE: Magical two-handed weapons are more powerful than their single-handed counterparts. This counterbalances the fact that you can't use a second weapon or shield when using a two-handed weapon. The Holy Avenger and Vorpal Sword are examples of weapons that are two-handed.~
+
+@8803 = ~TWO-WEAPON: This fighting style allows the character to use two melee weapons at the same time with fewer penalties.
+
+No skill (0 slots): When wielding two weapons without proficiency, the character suffers a -2 penalty to Armor Class, a -1 penalty to damage rolls with the main weapon (-2 with the off-hand), and a -4 penalty to THAC0 with the main weapon (-6 with the off-hand).
+
+Proficient (1 slot): The penalties are reduced: off-hand damage penalty becomes -1, Armor Class penalty becomes -1, and THAC0 penalties are reduced to -2 with the main weapon and -4 with the off-hand.
+
+Specialized (2 slots): All penalties to Armor Class, and main weapon combat rolls are removed.
+
+Master (3 slots): The off-hand damage penalty is removed, THAC0 penalty with the off-hand is reduced to -2, and the wielder gains a +1 bonus to Armor Class.
+
 

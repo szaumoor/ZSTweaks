@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 WITH_SCOPE BEGIN
+
     OUTER_SET no_valygar_gear_comp = NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1643" AND NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1379"
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
