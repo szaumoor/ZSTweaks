@@ -14,6 +14,8 @@
 - Hardened the code that deals with arbitrary amounts of weapon types for tweaking such that it does not match items that are not supposed to be considered actual items of the type (like daggers with no equipping animation: SCS shapeshift tokens, Grey the Dog attack weapon...)
 - Fixed shield component changing the description of the base Tower Shield even if the option was disabled in the config file
 - Fixed description omissions
+- Fixed Shadow Wardstone not using "Ioun Stone" as the unidentified item name
+- Fixed Shadow Wardstone not being retroactively patched as protecting against critical hits if related component was installed first
 
 ## Modifications
 
