@@ -236,6 +236,7 @@
 @1347 = ~Make Bolts of Biting have an inherent +5% extra critical hit chance, and deal +1 poison damage on hit~
 @1348 = ~Make projectiles from Shortbow of Gesen as fast as regular arrows~
 @1371 = ~Make Arrows of Dispelling force a save vs. Spell at -2 for them to work~
+@1388 = ~Make Acid Arrow's extra damage not subject to magic resistance~
 
 // NPC TWEAKS
 @1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
@@ -280,7 +281,6 @@ w@444 = ~Make Flesh to Stone use Petrification saves and optionally make some cr
 @449 = ~Make Otiluke's Freezing Sphere deal half damage on save~
 @451 = ~Make Chain Lightning scale more strongly and spread faster to enemies~
 @452 = ~Make Icelance upgrade damage every 2 levels up to 10d6~
-@477 = ~Make Smashing Wave a bit more powerful and bypass magic resistance~
 
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
@@ -318,6 +318,7 @@ w@444 = ~Make Flesh to Stone use Petrification saves and optionally make some cr
 @511 = ~Make Unfailing Endurance an area spell that cures the fatigue of the whole party~
 @512 = ~Make Alicorn Lance more effective by increasing damage by 1 dice every 2 levels, up to 8d6~
 @513 = ~Make Whirlwind more effective and able to damage more creatures before dissipating~
+@477 = ~Make Smashing Wave a bit more powerful and bypass magic resistance~
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray and Sun Soulbeam Sun Soul Monks scale further and/or do more damage to undead"

@@ -1350,6 +1350,10 @@ Self-explanatory, the normal projectiles are way too slow.
 
 Simply a balance tweak.
 
+**Component 1388:** Make Acid Arrow's extra damage not subject to magic resistance
+
+Self-explanatory. It also justifies the higher price compared to other elemental arrows more.
+
 </details>
 
 ---
