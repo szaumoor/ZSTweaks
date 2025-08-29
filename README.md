@@ -12,7 +12,7 @@ This is done because there is no advantage that I can see to making that damage 
 
 In vanilla, this is not contemplated, likely because there isn't any means of introducing sleep on hit to arbitrary weapons and as such that circumstance would have never occurred. My mod ZS_WeaponOils does introduce this situation if using the Drow Soporific Oil.
 
-As of version 1.4.5 a configuration file is now provided, where the user may change some variables to further customize components. This file is **ZSTweaks/zstweaks_prefs.txt**.
+As of version 1.4.5 a configuration file is now provided, where the user may change some variables to further customize components. This file is **ZSTweaks/zstweaks_prefs.txt**. Be sure to check it out to see what you can fine tune.
 
 ### [See all component details here](ZSTweaks/component_readme.md)
 

@@ -107,7 +107,7 @@ Exceptions: Grave Binder is not affected by these bonuses because it's an oversi
 
 **Component 1450:** Make some rogue weapons able to do more damage if wielded by pure thieves (Finesse)
 
-This component is an attempt at making single-classed Thieves more effective with a portion of thief-usable weapons without relying on stats, attacks per round, or proficiency points.
+This component is an attempt at making single-classed Thieves (and bards too, optionally) more effective with a portion of thief-usable weapons without relying on stats, attacks per round, or proficiency points.
 
 Essentially, when wielding a Thief weapon, they can use what I call "finesse," which is a concept that I borrowed from NWN. In short, they have a chance per attack to deal extra damage, which stacks additively after the direct damage of the weapon is calculated, and it is based on the base attack damage of the weapon used.
 

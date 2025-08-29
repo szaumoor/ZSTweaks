@@ -13,6 +13,7 @@
 - Fixed yet another bug with dragon disciple component giving them access to Horrid Wilting instead of Incendiary Cloud
 - Hardened the code that deals with arbitrary amounts of weapon types for tweaking such that it does not match items that are not supposed to be considered actual items of the type (like daggers with no equipping animation: SCS shapeshift tokens, Grey the Dog attack weapon...)
 - Fixed shield component changing the description of the base Tower Shield even if the option was disabled in the config file
+- Fixed description omissions
 
 ## Modifications
 
@@ -46,6 +47,7 @@
 - Make Arrows of Dispelling force a save vs. Spell at -2 for them to work
 - Make Doomplate an armor for those that want to RIP. AND. TEAR.
 - Make Hexxat's Blood Drain have a 1 Hour (5 turn) cooldown instead of being usable once per day
+- Make everyone able to perform omni-directional backstabs (aka face-stabbing) (TODO)
 
 ## Planned future additions
 
