@@ -112,6 +112,10 @@ OUTER_SET zst_1546_buckler_wizards                      = "1" // allows wizard c
 // tweaks to armor usability -- ignore for now, unimplemented
 // OUTER_SET zst_1549_full_plate_single_fighters_only = "1"
 
+// tweaks to backstab requirements, set to 1 if you want backstabs without invisibility but with angle requirements
+// otherwise the default is removing angle requirements, but requiring invisibility
+OUTER_SET zst_1600_backstab_no_invis_requirement_only = "0"
+
 ////////////////////////////// Gear tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // allows tweaks to give usability to items in the game as defined in component 1997

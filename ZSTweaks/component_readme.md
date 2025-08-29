@@ -290,6 +290,12 @@ This scroll makes undead completely ignore you, which is frankly quite silly and
 - Undead hitting the user will be rebuked, taking 1d4+1 magic damage (half if saved vs. Spell), and be scared away for 2 rounds if they fail their save. The latter effect can only affect them once per turn.
 - Lasts for 12 hours, similar to IWDEE
 
+**Component 1600:** Make everyone able to perform omni-directional backstabs (aka face-stabbing)
+
+This allows player-created characters as well as all joinable characters to backstab from any angle. Optionally, there is an option to make them able to backstab without invisibility instead, but with the angle requirement intact.
+
+**Warning**: this does not work for imported character files or imported saves. In order to benefit from this component, start a new playthrough. If the benefit was applied in BGEE, it will carry over to BG2EE though, it's just a problem with character files or savegames where that benefit was not applied yet.
+
 </details>
 
 ---

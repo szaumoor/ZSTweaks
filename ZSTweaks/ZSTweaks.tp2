@@ -140,6 +140,9 @@ BEGIN @1547 DESIGNATED 1547 GROUP @10 // protection vs undead tweak
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 
+BEGIN @1600 DESIGNATED 1600 GROUP @10 // backstab requirements
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+
 ///////////////////////////////////// ARMOR/GEAR/MISC TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 BEGIN @10001 DESIGNATED 1001 GROUP @11 // INSTALL ALL COMPONENTS IN GROUP
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54

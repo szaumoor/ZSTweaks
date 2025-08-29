@@ -47,7 +47,7 @@
 - Make Arrows of Dispelling force a save vs. Spell at -2 for them to work
 - Make Doomplate an armor for those that want to RIP. AND. TEAR.
 - Make Hexxat's Blood Drain have a 1 Hour (5 turn) cooldown instead of being usable once per day
-- Make everyone able to perform omni-directional backstabs (aka face-stabbing) (TODO)
+- Make everyone able to perform omnidirectional backstabs (aka face-stabbing)
 
 ## Planned future additions
 
