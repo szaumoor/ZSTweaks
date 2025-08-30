@@ -37,7 +37,7 @@ END
 COPY_EXISTING ~SHLD08.ITM~ ~override~
     READ_LONG 0x8 buckler_strref
 
-PATCH_IF zst_1546_tower_tweak BEGIN
+ACTION_IF zst_1546_tower_tweak BEGIN
     COPY_EXISTING "SHLD05.ITM" ~override~
         SPRINT hyphen @99991
         SPRINT ac_string @99992
@@ -92,6 +92,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
                     WRITE_LONG 0x1e 1615594432
                 END
             END
+
         END
 
         PATCH_IF shield_strref = medium_shield_strref BEGIN
