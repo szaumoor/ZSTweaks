@@ -19,6 +19,7 @@
 - Fixed Bolt of Biting component not adding the promised +1 poison damage on hit (irrespective of successful poisoning)
 - Fixed broken Quivering Palm component
 - Fixed IDS lookup for spectres
+- Fixed stray '\' added to tower shield description Armor Class text in shield component
 
 ## Modifications
 

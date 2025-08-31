@@ -78,7 +78,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
                     PATCH_IF description_index > "-1" BEGIN
                         READ_STRREF 0x54 desc
                         INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%hyphen%[ %TAB%]*%ac_string%[ %TAB%]*:?[ %TAB%]*\)\+%base_ac%~ ~\1\+%new_ac%~
+                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%hyphen%[ %TAB%]*%ac_string%[ %TAB%]*:?[ %TAB%]*\)\+%base_ac%~ ~\1+%new_ac%~
                         END
                         SAY_EVALUATED 0x54 ~%desc%~
                     END

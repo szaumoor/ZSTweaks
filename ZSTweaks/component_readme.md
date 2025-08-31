@@ -219,15 +219,15 @@ This component has a series of optional components that tweak the following (con
   - Fatigue bonuses start at constitution 12, but it only grows above vanilla values at 25 Constitution.
   - HP Penalties for constitution also start at 8 Constitution and increase every 2 Constitution below, except 1 Constitution, where it jumps from -4 to -5 directly.
 - **Dexterity** bonuses
-  - Progression of Armor Class and missile thac0 follows NWN style as well, with the exception that the +7 bonus is always received at 25 Dexterity. This encourages maxing out dexterity if the maximum bonus is desired.
-  - Penalties also start early, at 9 Dexterity. This means for example that Keldorn will have a -1 penalty to ranged thac0 and his Armor Class, since his Dexterity is a terrible 9.
+  - Progression of Armor Class and missile THAC0 follows NWN style as well, with the exception that the +7 bonus is always received at 25 Dexterity. This encourages maxing out dexterity if the maximum bonus is desired.
+  - Penalties also start early, at 9 Dexterity. This means for example that Keldorn will have a -1 penalty to ranged THAC0 and his Armor Class, since his Dexterity is a terrible 9.
 - **Lore** bonuses
   - Per class: Mages now get 5 lore points per level (from 3); Thieves get 4 lore points per level; Clerics, shamans, and druids get 3 lore points per level; paladins and rangers get 2 lore points per level. Fighters and bards are unchanged.
   - Per stats: The benefits and penalties are more streamlined, and the bonuses start at Wisdom or Intelligence 12. The maximum lore bonuses are unchanged, and the penalties increase less harshly, instead of jumping to -10 at 9 Wisdom or Intelligence, it decreases in a more gradual sequence.
 - THAC0 bonuses by race: The only change is that dwarves will get a +1 THAC0 bonus with axes.
 - **Strength** bonuses
   - THAC0 bonuses and penalties streamlined similar to NWN. Penalties start at 9 Strength, bonuses at 12. From Strength 23, bonuses increase by 1 per increase, up to +7.
-  - Extraordinary strength does not add thac0 bonuses anymore.
+  - Extraordinary strength does not add THAC0 bonuses anymore.
   - Damage is also streamlined similar to NWN up to 18 strength (+1 at 12 STR, +2 at 14...), with +4 bonus. At 19 Strength, it jumps to +7, similar to vanilla. Extraordinary strength at 18 Strength adds up to +2 damage: 0-24 gives no bonus, 25-75 gives a +1 bonus, and anything above it gives a +2 bonus (overall bonus of +6).
   - Weight allowance was also streamlined and creatures with Strength <10 will be able to carry a bit more. For example, Imoen will now be able to carry 90 lb instead of 50. At much higher strength, the maximum you can carry has been generally decreased, as in vanilla it makes crazy jumps after 18 Strength (jumps from 200 to 500 -- with this tweak, it jumps to 400). Extraordinary strength grants +5 at 0, then +10, and gradually increases in jumps of 10, up to +100 at 18/100.
   - No changes to forcing locks open.
@@ -246,7 +246,7 @@ This component has a series of optional components that tweak the following (con
     - +2: +1 to Armor Class, +3 to Armor Class vs. Missiles
   - Two-weapon style
     - +0: -2 penalty to Armor Class, -1 to damage with right hand, -2 to damage with left hand, THAC0 for right and left have penalties of -4 and -6, respectively (you don't have any training or using 2 weapons, the left hand suffering the biggest drawback).
-    - +1: Damage penalty on left hand reduced to -1, thac0 penalties for right and left hand reduced to -2 and -4, respectively. Armor class penalty decreased to -1.
+    - +1: Damage penalty on left hand reduced to -1, THAC0 penalties for right and left hand reduced to -2 and -4, respectively. Armor class penalty decreased to -1.
     - +2: Armor class, and Thac0 and Damage penalty for right hand removed
     - +3: Damage penalty for left hand removed, THAC0 penalty for left hand reduced to -2, Armor Class gets a +1 bonus
   - **Weapon proficiencies**: This tiny overhaul addresses primarily something that has bothered me forever about proficiency progression, which is the weird jump in THAC0 from 2 proficiency points to 3. Therefore:
@@ -500,7 +500,7 @@ This improves the gauntlets such that it also improves damage, not just THAC0, m
 
 **Component 1668:** Make The Dale's Protector slightly more powerful and open to all classes
 
-This improves the item such that it's more attractive for ranged weapon users: the thac0 bonus is now +3, and it improves ranged damage as well by +1 (which becomes +2 for Archers, single-classed Thieves, and Bards).
+This improves the item such that it's more attractive for ranged weapon users: the THAC0 bonus is now +3, and it improves ranged damage as well by +1 (which becomes +2 for Archers, single-classed Thieves, and Bards).
 
 **Component 1669:** Make Gauntlets of Extraordinary Specialization improve THAC0 by 2 and open to all classes
 
@@ -858,7 +858,7 @@ This component improves the description to something a bit more interesting than
 
 - The faulty probabilities for vorpal hit are fixed (true 25%, not 26%)
 - The sword acts in **every way** as a +5 two-handed sword **against mind flayers only**, that is, +5 THAC0, +5 enchantment, 1d10+5 damage
-- Against other targets, it's still a +3 weapon in terms of damage, thac0 and enchantment level
+- Against other targets, it's still a +3 weapon in terms of damage, THAC0 and enchantment level
 - Wielding it makes the wielder immune to mind blasts and domination attempts by mind flayers
 - Critical hits cause 2d8 psychic (irresistible) damage and causes Confusion for 10 seconds if a Save vs. Spell at -2 is failed. Creatures without minds or brains are unaffected.
 - Speed factor of 6
@@ -946,7 +946,7 @@ I like the idea of the sword, but it's a little too boring beyond the effect of 
 
 **Component 1602:** Make Dragon's Bane +3 better and act as a +6 weapon in every sense against dragons and wyverns
 
-This makes the weapon act in every way against dragons and wyverns as a +6 weapon (thac0, enchantment, and damage). Otherwise, it acts as a +3 normal halberd.
+This makes the weapon act in every way against dragons and wyverns as a +6 weapon (THAC0, enchantment, and damage). Otherwise, it acts as a +3 normal halberd.
 
 **Component 1603:** Make Dragon's Breath +4 act damage-wise as a +4 weapon
 
@@ -1035,7 +1035,7 @@ Honestly, it kind of feels like it's immediately not useful by the time you get 
 
 The rest stays the same. Side note: the THAC0 bonuses that it grants towards alignments (this is vanilla behavior) are universal, does not apply only to the equalizer, so if you put the weapon off-hand, and then put something else on your main hand, it shall be affected either way. This can be a way of optimizing THAC0 against, for instance, Chaotic Evil targets, such as Demogorgon, when using a character that can duel wield effectively.
 
-This behavior is present in other weapons that have a thac0 bonus vs. types of enemies, such as the silver dagger. Only two-handed weapons can isolate the thac0 bonus (since you can't use another weapon at the same time).
+This behavior is present in other weapons that have a THAC0 bonus vs. types of enemies, such as the silver dagger. Only two-handed weapons can isolate the THAC0 bonus (since you can't use another weapon at the same time).
 
 Hopefully this will make the sword feel more legendary and worth the investment.
 
@@ -1223,7 +1223,7 @@ This component makes the "pain" that the description talks about manifest as a n
 
 **Component 1314:** Make Jerrod's Mace +2 behave as a +3 weapon
 
-This makes the mace +3 for consistency with the power level of other WA-weapons. It also improves the damage and thac0 bonuses against fiends by 1.
+This makes the mace +3 for consistency with the power level of other WA-weapons. It also improves the damage and THAC0 bonuses against fiends by 1.
 
 **Component 1320:** Make Flail of Ages +5 allow Haste and Improved Haste and improve it slightly
 
@@ -1235,7 +1235,7 @@ This makes the club slightly more powerful (+3 in all respects), more shamanic, 
 
 **Component 1323:** Make Azuredge act properly as a +3 weapon and make the disruption effect more balanced
 
-The original hits in terms of extra damage and thac0 like an unenchanted weapon. This component makes the weapon match the basic stats of a +3 weapon. Additionally, it fixes the usual misleading bits in the description for extra damage, and the extra damage to undead was adjusted from 1d6+4 to 1d6+3.
+The original hits in terms of extra damage and THAC0 like an unenchanted weapon. This component makes the weapon match the basic stats of a +3 weapon. Additionally, it fixes the usual misleading bits in the description for extra damage, and the extra damage to undead was adjusted from 1d6+4 to 1d6+3.
 
 Finally, and more importantly, it makes the axe balanced, since anyone can Whirlwind a lich to death with this way too easily. Following a close-ish PnP version, the weapon has different degrees of effectiveness depending on the target (which now also includes fiends, as per PnP). Any creature that applies for the axe's disruption effect must save vs. Death at -2, except:
 
@@ -1340,7 +1340,7 @@ This makes the arrows cause at least 3 extra piercing damage when save succeeds.
 
 **Component 1347:** Make Bolts of Biting have an inherent +5% extra critical hit chance, and deal +1 poison damage on hit
 
-This improves the bolts slightly by causing direct poison damage, which may be useful for caster interruption, and it helps compensates the lack of enchantment or thac0 bonus. Additionally, these bolts will have a 5% higher chance of critically hitting, since I envision these as assassin's tools.
+This improves the bolts slightly by causing direct poison damage, which may be useful for caster interruption, and it helps compensates the lack of enchantment or THAC0 bonus. Additionally, these bolts will have a 5% higher chance of critically hitting, since I envision these as assassin's tools.
 
 **Component 1348:** Make projectiles from Shortbow of Gesen as fast as regular arrows
 
@@ -1974,19 +1974,19 @@ I really dislike things that scale poorly or not at all. This makes Quivering Pa
 
 Among many of the manifestations of the Baldur's Gate series' undying hatred for thieves is that their THAC0 sucks. A LOT. Barely better than wizards. This improves the progression such that it can reach 6, like clerics. The progression per level follows this sequence: 20-19-19-18-17-17-16-15-15-14-13-13-12-11-11-10-9-9-8-7-7-6.
 
-This component will update the thac0 of Thieves and Mage/Thieves in the game depending on their level, but only if it's not better already. This will ignore the few dual-classed NPCs in the game. Regardless, if they're joinable, their thac0 will update appropriately upon leveling up.
+This component will update the THAC0 of Thieves and Mage/Thieves in the game depending on their level, but only if it's not better already. This will ignore the few dual-classed NPCs in the game. Regardless, if they're joinable, their THAC0 will update appropriately upon leveling up.
 
 **Component 2171** Fix Swashbuckler's incorrect THAC0 when Thief THAC0 improvement is installed (only use if no Swashbuckler overhaul is installed!)
 
-Normally, vanilla Swashbuckler gets to a THAC0 level of 2, because every 5 levels, it gets a +1 bonus to both thac0 and damage inflicted. This hinges on the assumption that the maximum thac0 attainable is 10. Changing the maximum THAC0 improvement to 6 means they would achieve, inappropriately, -2 **base** THAC0. This component addresses this inconsistency.
+Normally, vanilla Swashbuckler gets to a THAC0 level of 2, because every 5 levels, it gets a +1 bonus to both THAC0 and damage inflicted. This hinges on the assumption that the maximum THAC0 attainable is 10. Changing the maximum THAC0 improvement to 6 means they would achieve, inappropriately, -2 **base** THAC0. This component addresses this inconsistency.
 
-Therefore, at levels 35 and 40, the swashbuckler will not get thac0 bonuses, only the damage bonus, which should allow them to reach a THAC0 of 0 while still retaining the remaining damage bonuses (+8 in total). This way they will still be more distinguishable from regular thieves despite the THAC0 improvement and generally more useful. If other mods that overhaul the swashbuckler exist, you may request compatibility, as long as this causes actual problems.
+Therefore, at levels 35 and 40, the swashbuckler will not get THAC0 bonuses, only the damage bonus, which should allow them to reach a THAC0 of 0 while still retaining the remaining damage bonuses (+8 in total). This way they will still be more distinguishable from regular thieves despite the THAC0 improvement and generally more useful. If other mods that overhaul the swashbuckler exist, you may request compatibility, as long as this causes actual problems.
 
 **Component 2180:** Make the THAC0 progression of Bards better and more streamlined, so they improve up to 6, like clerics
 
 Refer to component 2170 for reasons. Applies the same bonus to Bards, who also have had their power sucked away by the game.
 
-This component will update the thac0 of Bards in the game depending on their level, but only if it's not better already.
+This component will update the THAC0 of Bards in the game depending on their level, but only if it's not better already.
 
 **Component 2190:** Make Poison Weapon improve a couple of times more every 4 levels (level 17, and 21)
 
@@ -2029,11 +2029,13 @@ Self-explanatory. Generally speaking, it's more powerful to directly increase th
 
 **Component 2260:** Make Blades, Skalds, and Swashbucklers and Priest of Tempus get more warrior-type benefits
 
-This will give these classes an edge, as they are more martially inclined. I recommend also using the THAC0 improvement component for bards.
+This will give these kits an edge, as they are more martially inclined. I recommend also using the THAC0 improvement component for bards (swashbucklers don't need it, but if you want to benefit other thieves, you should too).
 
 - Blades and Skalds: +1/2 APR at levels 7 and 13, can take 2 pips in proficiencies
 - Swashbucklers: +1/2 APR at levels 7 and 13
 - Priests of Tempus: can take 2 pips in proficiencies
+
+Note that this component does not patch their kit descriptions, as it is not intended to be a kit overhaul, but something to add onto whatever you have available.
 
 **Component 2265:** Make Defensive Spin protect against backstabs for its duration and allow very slow movement
 
