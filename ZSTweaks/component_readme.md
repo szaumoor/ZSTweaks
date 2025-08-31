@@ -6,7 +6,7 @@
 
 **Component 120:** Make conjured magical weapons grant 2 APR by default
 
-The problem with these spells is that they promise power, but your little sickly wizard is not a very good fighter at all. I think this promise should be more serious, and therefore, by default, all these weapons grant 2 APR by default.
+The problem with these spells is that they promise power, but your little sickly wizard is not a very good fighter at all. I think this promise should be more serious, and therefore, by default, all these weapons grant 2 APR by default if the caster has no fighter levels. Otherwise they grant 1.5 APR.
 
 **Component 443:** Make "Symbol, X" spells slightly more powerful and rebalance the enemy versions
 

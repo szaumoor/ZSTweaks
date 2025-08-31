@@ -20,6 +20,10 @@
 - Fixed broken Quivering Palm component
 - Fixed IDS lookup for spectres
 - Fixed stray '\' added to tower shield description Armor Class text in shield component
+- Fixed Dolorous Decay making the new effects thereof subject to magic resistance, unlike the vanilla effects.
+- Fixed inconsistent Power in Nature's Beauty component added effects that could cause problems when casting on targets with spell level immunities
+- Fixed incorrect strings being shown when non-vampiric undead are hit by Sunray
+- Fixed small issue in melf component
 
 ## Modifications
 
@@ -47,9 +51,7 @@
 - Opened the beetle component to IWDEE
 - Opened Quivering Palm component to IWDEE
 - Fireseed component now allows the created items to be undispellable.
-- Fixed Dolorous Decay making the new effects thereof subject to magic resistance, unlike the vanilla effects.
-- Fixed inconsistent Power in Nature's Beauty component added effects that could cause problems when casting on targets with spell level immunities
-- Fixed incorrect strings being shown when non-vampiric undead are hit by Sunray
+- Added Mordenkainen's Sword (Force Blade) as another item that benefits from the magic weapons APR component. I forgot. Oops.
 
 ## New Components / Features
 
