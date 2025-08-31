@@ -28,7 +28,8 @@
 - Added Mordenkainen's Sword (Force Blade) as another item that benefits from the magic weapons APR component. I forgot. Oops.
 - Fixed Grease Tweak inappropriately stacking fire resistance and movement speed debuffs
 - Fixed Horror using the incorrect projectile for Enchantment
-- Added the following spells to the component that makes them bypass Magic Resistance: Smashing Wave, Acid Storm, Shout, Great Shout
+- Fixed issue in Ioun Stone overhaul showing the wrong portrait icon
+- Fixed code error causing fire seeds to only cause damage on a failed save
 
 ## Modifications
 
@@ -56,6 +57,9 @@
 - Opened the beetle component to IWDEE
 - Opened Quivering Palm component to IWDEE
 - Fireseed component now allows the created items to be undispellable.
+- Mist of Eldath component now grants 2 HP regeneration per second after initial heal for 2 rounds instead of only 1 HP
+- Added the following spells to the component that makes them bypass Magic Resistance: Smashing Wave, Acid Storm, Shout, Great Shout, Mold Touch, Cloudburst
+- Fire Seed component will make the projectiles bypass magic resistance, just like Melf's Minute Meteors
 
 
 ## New Components / Features

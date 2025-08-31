@@ -16,7 +16,7 @@ ACTION_IF NOT is_iwdee BEGIN
         COPY_EXISTING "HELM19.itm" ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7200) END
             LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 2 END
-            LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=296,res=CDHORROR;op=142,p2=37;op=240,p2=36;op=169,p2=36;op=267,p1=17427;op=267,p1=14007;op=106,p1=1,p2=1;op=23;op=101,p2=24;op=161;op=101,p2=23;op=101,p2=106;op=4;op=142,p1=52;op=169,p2=4;op=101,p2=3;op=296~ END
+            LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=296,res=CDHORROR;op=142,p2=37;op=240,p2=36;op=169,p2=36;op=267,p1=17427;op=267,p1=14007;op=106,p1=1,p2=1;op=23;op=101,p2=24;op=161;op=101,p2=23;op=101,p2=106;op=4;op=142,p2=52;op=169,p2=4;op=101,p2=3;op=296~ END
     END
 
     COPY_EXISTING ~HELM23.ITM~ ~override~ // golden ioun stone

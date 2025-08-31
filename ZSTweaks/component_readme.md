@@ -1756,7 +1756,7 @@ Healing spells are infamously bad in BG/BG2, they heal too little for such a slo
 - Cure Serious Wounds: Heals 30 points plus 3 more points in the next two levels, 2 on the next two, up to 40
 - Cure Critical Wounds: Heals 42 points plus 3 more points per level, up to 54
 - Mass Cure: improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32)
-- Mists of Eldath: Heals 40 points, regenerates 1 HP/s for 2 rounds and prevents poisoning for that ime
+- Mist of Eldath: Heals 40 points, regenerates 1 HP/s for 2 rounds and prevents poisoning for that time
 
 Also, they will no longer be stopped by spell deflection.
 
@@ -2147,10 +2147,15 @@ Additionally, a few spells also bypass magic resistance, because it makes sense 
 - Summon Cow: Because it's a cow falling on you, duh
 - Glitterdust: It's just a ton of conjured sparkly dust that blinds and makes enemies visible. Can be dispelled
 - Magical Stone: because you're just hurling a stone magically
-- Call Lightning: because the druid is beckoning the skies to shoot lightning onto your foes, which means it's not exactly the same as Lightning Bolt, which is generated directly from the wizard
+- Call Lightning / Cloudburst: because the druid is beckoning the skies to shoot lightning onto your foes, which means it's not exactly the same as Lightning Bolt, which is generated directly from the wizard
 - Summon Insects/Insect Plague/Creeping Doom: It's conjured insects doing damage. Can be dispelled though.
 - Nature's Beauty: You're blinding or killing others by the shock, which is something that is the result of plain perception, so I don't think it makes much sense to be affected by magic resistance
 - Storm of Vengeance: Because it's a spell that causes the skies and the earth to go crazy. It might make it more useful in some instances, and not just as a way to kill <=8 HD or to interrupt spellcasters
+- Mold Touch: The druid is sending aggressive brown mold that spreads quickly.
+- Smashing Wave. It's conjured water. A tiny tsunami.
+- Shout / Great Shout: It's... a shout?
+- Acid Rain: It's conjured acid rain.
+- Thorn Spray: Because they're thorns.
 
 Overall this should make all these spells more usable throughout the trilogy of games, especially against enemies such as drow, who have a very high chance of resisting magic.
 

@@ -53,6 +53,24 @@ ACTION_IF spell_smashing_wave BEGIN
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 
+ACTION_IF spell_thorn_spray BEGIN
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_THORN_SPRAY" RET spell_res END
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~ // GREASE, ALL GAMES
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+END
+
+ACTION_IF spell_mold_touch BEGIN
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_MOLD_TOUCH" RET spell_res END
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~ // GREASE, ALL GAMES
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+END
+
+ACTION_IF spell_cloudburst BEGIN
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CLOUDBURST" RET spell_res END
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~ // GREASE, ALL GAMES
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+END
+
 COPY_EXISTING ~SPWI101.SPL~ ~override~ // GREASE, ALL GAMES
               ~SPPR105.SPL~ ~override~ // ENTANGLE ALL GAMES
               ~SPWM111.SPL~ ~override~ // ENTANGLE ALL GAMES
