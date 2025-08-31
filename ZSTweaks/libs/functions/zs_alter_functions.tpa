@@ -280,6 +280,10 @@ INT_VAR
     secondary_type = "-1"
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "EFF" END
+    PATCH_IF target > "-1" BEGIN
+        WRITE_LONG 0x14 target
+    END
+
     PATCH_IF parameter1 > "-999" BEGIN
         WRITE_LONG 0x1c parameter1
     END

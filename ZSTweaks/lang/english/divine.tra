@@ -633,12 +633,13 @@ Other creatures: 4d6 damage (half fire and half magical).
 
 This spell is not affected by magic resistance and creatures affected by radiant damage cannot reduce it in any way through their resistances.~
 
-@8121 = ~Inflicted 7d6 radiant damage~
-@8122 = ~Inflicted 8d6 radiant damage~
-@8123 = ~Inflicted 9d6 radiant damage~
-@8124 = ~Inflicted 10d6 radiant damage~
-@8125 = ~Inflicted 2d6 radiant damage~
+@8121 = ~Takes 7d6 radiant damage~
+@8122 = ~Takes 8d6 radiant damage~
+@8123 = ~Takes 9d6 radiant damage~
+@8124 = ~Takes 10d6 radiant damage~
+@8125 = ~Takes 2d6 radiant damage~
 @8126 = ~Weakened by Sunray~
+@8127 = ~Takes 5d6 radiant damage~
 
 @8130 = ~False Dawn
 (Evocation)

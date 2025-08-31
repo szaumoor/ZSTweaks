@@ -46,6 +46,10 @@
 - Blade and Skald APR component now also allows them to take 2 pips in their proficiencies
 - Opened the beetle component to IWDEE
 - Opened Quivering Palm component to IWDEE
+- Fireseed component now allows the created items to be undispellable.
+- Fixed Dolorous Decay making the new effects thereof subject to magic resistance, unlike the vanilla effects.
+- Fixed inconsistent Power in Nature's Beauty component added effects that could cause problems when casting on targets with spell level immunities
+- Fixed incorrect strings being shown when non-vampiric undead are hit by Sunray
 
 ## New Components / Features
 

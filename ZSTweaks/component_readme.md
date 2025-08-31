@@ -1730,7 +1730,7 @@ This component reduces the need to use them only in pre-fight buffing rituals, d
 
 **Component 310:** Make Fire Seeds create more persistent seeds that do slightly more damage, with an enchantment of 2
 
-Not enough seeds and too little damage. From 4 seeds that do 2d8 to 12 that do 3d8+5. The original is way too unremarkable for a level 6 spell. Additionally, the description will mention the fact that they are thrown with a +2 THAC0 bonus, and the seeds no longer bypass most physical protections due to an enchantment level of +6, so now they will be considered +2. Finally, they will persist for 5 turns instead of 3 (1 in-game hour).
+Not enough seeds and too little damage. From 4 seeds that do 2d8 to 12 that do 3d8+5. The original is way too unremarkable for a level 6 spell. Additionally, the description will mention the fact that they are thrown with a +2 THAC0 bonus, and the seeds no longer bypass most physical protections due to an enchantment level of +6, so now they will be considered +2. Finally, they will persist for 5 turns instead of 3 (1 in-game hour). They cannot be dispelled, either.
 
 **Component 320:** Make Nature's Beauty a bit more likely to kill humanoid enemies and make blinded enemies immune to it
 
