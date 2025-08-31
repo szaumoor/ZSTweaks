@@ -74,6 +74,9 @@
 - Make Hexxat's Blood Drain have a 1 Hour (5 turn) cooldown instead of being usable once per day
 - Make everyone able to perform omnidirectional backstabs (aka face-stabbing)
 - Make Acid Arrow's extra damage not subject to magic resistance
+- Make Static Charge electrocute twice as often, but for half the damage
+- Make Cloudburst last longer and less horrendously bad
+- Make Thorn Spray more powerful and scale with level
 
 ## Planned future additions
 

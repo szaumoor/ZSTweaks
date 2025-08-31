@@ -899,3 +899,29 @@ Area of Effect: Visual range of the caster
 Saving Throw: 1/2
 
 Static Charge is similar to Call Lightning, except it can be used indoors. This spell allows the caster to generate a static charge around any creature within the area of effect, dealing 2d8 points of electrical damage plus an additional 1d8 points per two levels of the caster (save vs. Spell for half). The charge keeps going off once every 5 rounds for the duration of the spell.~
+
+@8564 = ~Cloudburst
+(Invocation)
+
+Level: 3
+Sphere: Elemental Water
+Range: Visual range of the caster
+Duration: 5 rounds
+Casting Time: 6
+Area of Effect: 17-ft. radius
+Saving Throw: None
+
+This spell brings forth a magical rain that saturates the area of effect. All cold and fire-immune creatures take 4d3 points of magic damage per round. In addition, all creatures in the area have a 50% chance per round of being struck by bolts of lightning that deal 2d8 electrical damage. Flame Blade, Shroud of Flame, and salamander auras are extinguished by Cloudburst.~
+
+@8566 = ~Thorn Spray
+(Alteration)
+
+Level: 4
+Sphere: Plant
+Range: 30 ft.
+Duration: Instant
+Casting Time: 3
+Area of Effect: 17-ft. cone with 90-deg. arc
+Saving Throw: 1/2
+
+By means of this spell, the caster can cause a spray of barbs, spikes, thorns, and spines to spring forth from <PRO_HISHER> hand. The thorn spray covers a 17-ft.-long cone, inflicting 4d12 points of piercing damage, increased by 1d12 per two levels, up to 6d12, to all creatures within the area of effect, or half as much if a Save vs. Breath is successful. Magic Resistance does not apply to this spell.~

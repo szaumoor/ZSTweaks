@@ -1,0 +1,19 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_485~) BEGIN
+  FAIL ~Script already included: zs_comp_485~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_485~ = 1
+END
+
+ACTION_IF spell_cloudburst BEGIN
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CLOUDBURST" RET spell_res END
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8564) END
+        LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 match_parameter2 = 4 dicesize = 8 special = (2**24) END
+        LPF ALTER_EFFECT INT_VAR silent = 1 match_probability1 = 50  probability1 = 49 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 match_parameter2 = 64 dicenumber = 4 END
+
+    COPY_EXISTING ~IDPRO301.PRO~ ~override~
+        WRITE_SHORT 0x200 64
+        WRITE_BYTE 0x216 5
+END

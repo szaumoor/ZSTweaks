@@ -1648,6 +1648,25 @@ Cool spell that required an improvement:
 
 This makes the spell trigger twice per turn (aka every 5 rounds / 30 seconds) instead of once per turn. It reduces the dice thrown by 5, such that it starts off dealing 4d8 electric damage, and it increases up to 17d8 at level 20. To me the higher frequency is more useful than the higher damage. Most fights don't last long enough for the damage to become relevant.
 
+**Component 485:** Make Cloudburst last longer and less horrendously bad
+
+It's just... awful in vanilla. It was improved in the following ways:
+
+- Effects no longer subject to magic resistance
+- Effects no longer affect friendlies
+- Electricity damage increased to 2d8, no save to take half
+- Extra damage versus cold and fire-immune creatures doubled (4d3 magic damage)
+- Lasts for 5 rounds from 2
+
+**Component 488:** Make Thorn Spray more powerful and scale with level
+
+Cool spell but very underpowered for a level 4 spell. These are the changes:
+
+- Bypasses magic resistance
+- Starts off dealing 4d12 piercing damage
+- Scales with level, increased damage by 1d12 every two levels, up to 6d12 at level 11
+- Uses saves vs. Breath instead of saves vs. Death
+
 </details>
 
 ---
