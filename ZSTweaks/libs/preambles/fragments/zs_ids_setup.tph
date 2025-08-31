@@ -128,6 +128,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET kit_wild_mage       = IDS_OF_SYMBOL(kit WILDMAGE)
 
     OUTER_SET spell_alicorn                  = IDS_OF_SYMBOL (spell CLERIC_ALICORN_LANCE)
+    OUTER_SET spell_acid_storm               = IDS_OF_SYMBOL (spell WIZARD_ACID_STORM)
     OUTER_SET spell_cause_critical_wounds    = IDS_OF_SYMBOL (spell CLERIC_CAUSE_CRITICAL_WOUNDS_IWD)
     OUTER_SET spell_cause_light_wounds       = IDS_OF_SYMBOL (spell CLERIC_CAUSE_LIGHT_WOUNDS)
     OUTER_SET spell_cause_medium_wounds      = IDS_OF_SYMBOL (spell CLERIC_CAUSE_MEDIUM_WOUNDS)
@@ -136,6 +137,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET spell_cure_moderate_wounds     = IDS_OF_SYMBOL (spell CLERIC_CURE_MODERATE_WOUNDS)
     OUTER_SET spell_curse                    = IDS_OF_SYMBOL (spell CLERIC_CURSE)
     OUTER_SET spell_cleric_energy_drain      = IDS_OF_SYMBOL (spell CLERIC_ENERGY_DRAIN)
+    OUTER_SET spell_darts_of_bone            = IDS_OF_SYMBOL (spell WIZARD_DARTS_OF_BONE)
     OUTER_SET spell_decastave                = IDS_OF_SYMBOL (spell WIZARD_DECASTAVE)
     OUTER_SET spell_eldath                   = IDS_OF_SYMBOL (spell CLERIC_MIST_OF_ELDATH)
     OUTER_SET spell_great_shout              = IDS_OF_SYMBOL (spell WIZARD_GREAT_SHOUT)

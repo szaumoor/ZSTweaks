@@ -290,5 +290,11 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
             SAY_EVALUATED 0x54 ~%desc%~
     END
 
+    ACTION_IF FILE_EXISTS_IN_GAME ~DOBONE.ITM~ BEGIN
+        PRINT "[[FIX]]: Fixing DOBONE.ITM (Darts of Bone) to have a speed factor of 0 (+3 Darts)"
+        COPY_EXISTING ~DOBONE.ITM~ ~override~
+            LPF ALTER_HEADER INT_VAR speed = 0 END
+    END
+
     OUTER_SET ~zs_prefixes~ = 1
 END

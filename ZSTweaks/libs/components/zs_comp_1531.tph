@@ -29,6 +29,30 @@ COPY_EXISTING ~SPPR707.SPL~ ~override~ // SUNRAY, bypasses magic resistance
         LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 12 resist_dispel = 0 END
     END
 
+ACTION_IF spell_acid_storm BEGIN
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_ACID_STORM" RET spell_res END
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~ // GREASE, ALL GAMES
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+END
+
+ACTION_IF spell_shout BEGIN
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHOUT" RET spell_res END
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~ // GREASE, ALL GAMES
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+END
+
+ACTION_IF spell_great_shout BEGIN
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_GREAT_SHOUT" RET spell_res END
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~ // GREASE, ALL GAMES
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+END
+
+ACTION_IF spell_smashing_wave BEGIN
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SMASHING_WAVE" RET spell_res END
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~ // GREASE, ALL GAMES
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+END
+
 COPY_EXISTING ~SPWI101.SPL~ ~override~ // GREASE, ALL GAMES
               ~SPPR105.SPL~ ~override~ // ENTANGLE ALL GAMES
               ~SPWM111.SPL~ ~override~ // ENTANGLE ALL GAMES
@@ -40,6 +64,7 @@ COPY_EXISTING ~SPWI101.SPL~ ~override~ // GREASE, ALL GAMES
               ~SPWI299.SPL~ ~override~ // SUMMON COW, ALL GAMES
               ~SPWM188.SPL~ ~override~ // SUMMON COW, ALL GAMES
               ~SPPR106.SPL~ ~override~ // magical stone
+              ~SPPR302.SPL~ ~override~ // call lightning
               ~SPPR302.SPL~ ~override~ // call lightning
     LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 
@@ -86,5 +111,5 @@ ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING ~OHDETEVL.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=2 END
     BUT_ONLY IF_EXISTS
-    
+
 END

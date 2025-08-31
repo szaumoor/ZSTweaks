@@ -4,6 +4,7 @@
 
 - Misc code improvements
 - Added prefix: Shakti's Figurine +4 short sword has a speed factor of 0 from 1
+- Added prefix: Darts of Bone +3 darts have a speed factor of 0 from 2
 - Moved a portion of IO operations to the beginning to improve the efficiency of components that patch arbitrary numbers of NPCs
 - Fixed yet another bug with the dragon disciple component: fire damage bonus was only applying to creatures, not the kit itself, leading to player-created dragon disciples to not benefit from the bonus
 - Fixed bug with the blackguard backstab x2 component where the effect was not set as permanent appropriately
@@ -27,6 +28,7 @@
 - Added Mordenkainen's Sword (Force Blade) as another item that benefits from the magic weapons APR component. I forgot. Oops.
 - Fixed Grease Tweak inappropriately stacking fire resistance and movement speed debuffs
 - Fixed Horror using the incorrect projectile for Enchantment
+- Added the following spells to the component that makes them bypass Magic Resistance: Smashing Wave, Acid Storm, Shout, Great Shout
 
 ## Modifications
 
