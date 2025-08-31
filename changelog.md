@@ -24,6 +24,8 @@
 - Fixed inconsistent Power in Nature's Beauty component added effects that could cause problems when casting on targets with spell level immunities
 - Fixed incorrect strings being shown when non-vampiric undead are hit by Sunray
 - Fixed small issue in melf component
+- Added Mordenkainen's Sword (Force Blade) as another item that benefits from the magic weapons APR component. I forgot. Oops.
+- Fixed Grease Tweak inappropriately stacking fire resistance and movement speed debuffs
 
 ## Modifications
 
@@ -51,7 +53,7 @@
 - Opened the beetle component to IWDEE
 - Opened Quivering Palm component to IWDEE
 - Fireseed component now allows the created items to be undispellable.
-- Added Mordenkainen's Sword (Force Blade) as another item that benefits from the magic weapons APR component. I forgot. Oops.
+
 
 ## New Components / Features
 
