@@ -18,6 +18,7 @@
 - Fixed Shadow Wardstone not being retroactively patched as protecting against critical hits if related component was installed first
 - Fixed Bolt of Biting component not adding the promised +1 poison damage on hit (irrespective of successful poisoning)
 - Fixed broken Quivering Palm component
+- Fixed IDS lookup for spectres
 
 ## Modifications
 

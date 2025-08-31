@@ -4,9 +4,19 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_2171~ = 1
 END
 
-ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~2170~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~359~ BEGIN
+OUTER_SET class_comp_group_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~359~
+ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~2170~ OR class_comp_group_installed BEGIN
 
     COPY ~%MOD_FOLDER%/class_kits/swash_fix~ ~override~
     COPY ~%MOD_FOLDER%/2da/CLABTH04.2DA~ ~override~
-    
+
+    ACTION_IF zst_2260_allow_swash AND MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~2260~ OR class_comp_group_installed BEGIN
+      COPY ~%MOD_FOLDER%/class_kits/extra_apr~ ~override~
+      OUTER_SPRINT ability "AP_ZSTWAPR2"
+      OUTER_TEXT_SPRINT line "ABILITYX    ****        ****        ****        ****        ****        ****        %ability%   ****        ****        ****        ****        ****        %ability%   ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****"
+      APPEND ~CLABBA04.2DA~ ~%line%~
+      COPY_EXISTING ~CLABBA04.2DA~ ~override~
+        PRETTY_PRINT_2DA
+    END
+
 END

@@ -39,7 +39,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET race_skeleton        = IDS_OF_SYMBOL(race SKELETON)
     OUTER_SET race_slime           = IDS_OF_SYMBOL(race SLIME)
     OUTER_SET race_solar           = IDS_OF_SYMBOL(race SOLAR)
-    OUTER_SET race_specter         = IDS_OF_SYMBOL(race SPECTER)
+    OUTER_SET race_specter         = IDS_OF_SYMBOL(race SPECTRE)
     OUTER_SET race_spectral_undead = IDS_OF_SYMBOL(race SPECTRAL_UNDEAD)
     OUTER_SET race_spider          = IDS_OF_SYMBOL(race SPIDER)
     OUTER_SET race_statue          = IDS_OF_SYMBOL(race STATUE)
