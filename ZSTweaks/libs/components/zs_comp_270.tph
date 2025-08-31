@@ -20,8 +20,8 @@ ACTION_IF NOT is_iwdee BEGIN
 
     LPF ~CD_LEVEL_SELECT-O-MATIC~ INT_VAR step_dur = 0 min_abil=1 step_size=4 level_cap=5 END
     LPF ~CD_LEVEL_SELECT-O-MATIC~ INT_VAR step_dur = 0 min_abil=1 step_size=5 level_cap=20 END
-    
-    PATCH_FOR_EACH h IN 1 2 3 BEGIN
+
+    PATCH_FOR_EACH h IN 1 2 3 4 BEGIN
         LPF ALTER_EFFECT INT_VAR header = h savebonus = (new_bonus - h) END
     END
 
