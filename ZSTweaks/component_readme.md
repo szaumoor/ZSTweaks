@@ -1644,6 +1644,10 @@ Cool spell that required an improvement:
 - Save vs. Breath at -1 to avoid both effects and take half damage
 - Magic resistance doesn't apply. Because it's water.
 
+**Component 479:** Make Static Charge electrocute twice as often, but for half the damage
+
+This makes the spell trigger twice per turn (aka every 5 rounds / 30 seconds) instead of once per turn. It reduces the dice thrown by 5, such that it starts off dealing 4d8 electric damage, and it increases up to 17d8 at level 20. To me the higher frequency is more useful than the higher damage. Most fights don't last long enough for the damage to become relevant.
+
 </details>
 
 ---

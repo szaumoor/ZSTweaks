@@ -886,3 +886,16 @@ Area of Effect: Special
 Saving Throw: Special
 
 This spell summons a 5-ft. wide wave of water that moves in the direction willed by the caster, striking all in its path with massive force. The wave deals 6d8+4 points of crushing damage; in addition, struck creatures have a 33% chance of being either stunned or knocked unconscious for 2 rounds. If the creature struck makes a successful Save vs. Breath Weapon at -1, the damage is reduced by half and the creature avoids being stunned or knocked unconscious. This spell is not affected by Magic Resistance.~
+
+@8562 = ~Static Charge
+(Alteration)
+
+Level: 4
+Sphere: Weather
+Range: 0
+Duration: 1 turn/level
+Casting Time: 9
+Area of Effect: Visual range of the caster
+Saving Throw: 1/2
+
+Static Charge is similar to Call Lightning, except it can be used indoors. This spell allows the caster to generate a static charge around any creature within the area of effect, dealing 2d8 points of electrical damage plus an additional 1d8 points per two levels of the caster (save vs. Spell for half). The charge keeps going off once every 5 rounds for the duration of the spell.~

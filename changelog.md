@@ -61,7 +61,6 @@
 - Added the following spells to the component that makes them bypass Magic Resistance: Smashing Wave, Acid Storm, Shout, Great Shout, Mold Touch, Cloudburst
 - Fire Seed component will make the projectiles bypass magic resistance, just like Melf's Minute Meteors
 
-
 ## New Components / Features
 
 - Make the Plate of the Dark not just a generic +1 full plate but something more unique based on the description

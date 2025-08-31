@@ -31,43 +31,43 @@ COPY_EXISTING ~SPPR707.SPL~ ~override~ // SUNRAY, bypasses magic resistance
 
 ACTION_IF spell_acid_storm BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_ACID_STORM" RET spell_res END
-    COPY_EXISTING ~%spell_res%.SPL~ ~override~ // GREASE, ALL GAMES
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~ 
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 
 ACTION_IF spell_shout BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHOUT" RET spell_res END
-    COPY_EXISTING ~%spell_res%.SPL~ ~override~ // GREASE, ALL GAMES
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 
 ACTION_IF spell_great_shout BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_GREAT_SHOUT" RET spell_res END
-    COPY_EXISTING ~%spell_res%.SPL~ ~override~ // GREASE, ALL GAMES
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 
 ACTION_IF spell_smashing_wave BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SMASHING_WAVE" RET spell_res END
-    COPY_EXISTING ~%spell_res%.SPL~ ~override~ // GREASE, ALL GAMES
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 
 ACTION_IF spell_thorn_spray BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_THORN_SPRAY" RET spell_res END
-    COPY_EXISTING ~%spell_res%.SPL~ ~override~ // GREASE, ALL GAMES
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 
 ACTION_IF spell_mold_touch BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_MOLD_TOUCH" RET spell_res END
-    COPY_EXISTING ~%spell_res%.SPL~ ~override~ // GREASE, ALL GAMES
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 
 ACTION_IF spell_cloudburst BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CLOUDBURST" RET spell_res END
-    COPY_EXISTING ~%spell_res%.SPL~ ~override~ // GREASE, ALL GAMES
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 

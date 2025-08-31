@@ -1,0 +1,17 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_479~) BEGIN
+  FAIL ~Script already included: zs_comp_479~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_479~ = 1
+END
+
+ACTION_IF spell_static_charge BEGIN
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_STATIC_CHARGE" RET spell_res END
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8562) END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 333 special = 30 END
+        LPF SPL_ABILITIES_NUM RET abilities_num = result END
+
+        PATCH_FOR_EACH dice IN 9 10 11 12 13 14 15 16 17 18 19 20 21 22 BEGIN
+            LPF ALTER_EFFECT INT_VAR match_opode = 333 match_dicenumber = dice dicenumber = (dice - 5) END
+        END
+END
