@@ -26,6 +26,7 @@
 - Fixed small issue in melf component
 - Added Mordenkainen's Sword (Force Blade) as another item that benefits from the magic weapons APR component. I forgot. Oops.
 - Fixed Grease Tweak inappropriately stacking fire resistance and movement speed debuffs
+- Fixed Horror using the incorrect projectile for Enchantment
 
 ## Modifications
 

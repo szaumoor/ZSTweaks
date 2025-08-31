@@ -9,6 +9,7 @@ ACTION_IF NOT is_iwdee BEGIN
   OUTER_SET new_description = RESOLVE_STR_REF(@5050)
   COPY_EXISTING ~SPWI205.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc=new_description animation=11 primary_type=4 excl_flags=2**11 STR_VAR casting_sound=~CAS_M05~ END
+    LPF ALTER_HEADER INT_VAR projectile = 170 END
 
   COPY_EXISTING ~SCRL89.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
