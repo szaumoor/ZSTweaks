@@ -130,6 +130,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET spell_alicorn                  = IDS_OF_SYMBOL (spell CLERIC_ALICORN_LANCE)
     OUTER_SET spell_acid_storm               = IDS_OF_SYMBOL (spell WIZARD_ACID_STORM)
     OUTER_SET spell_cause_critical_wounds    = IDS_OF_SYMBOL (spell CLERIC_CAUSE_CRITICAL_WOUNDS_IWD)
+    OUTER_SET spell_cause_disease            = IDS_OF_SYMBOL (spell CLERIC_CAUSE_DISEASE)
     OUTER_SET spell_cause_light_wounds       = IDS_OF_SYMBOL (spell CLERIC_CAUSE_LIGHT_WOUNDS)
     OUTER_SET spell_cause_medium_wounds      = IDS_OF_SYMBOL (spell CLERIC_CAUSE_MEDIUM_WOUNDS)
     OUTER_SET spell_cause_moderate_wounds    = IDS_OF_SYMBOL (spell CLERIC_CAUSE_MODERATE_WOUNDS)

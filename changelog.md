@@ -2,17 +2,16 @@
 
 ## Fixes
 
-- Misc code improvements
-- Added prefix: Shakti's Figurine +4 short sword has a speed factor of 0 from 1
-- Added prefix: Darts of Bone +3 darts have a speed factor of 0 from 2
-- Moved a portion of IO operations to the beginning to improve the efficiency of components that patch arbitrary numbers of NPCs
+- Prefix: Shakti's Figurine +4 short sword has a speed factor of 0 from 1
+- Prefix: Darts of Bone +3 darts have a speed factor of 0 from 2
+- Prefix: Cause Disease uses Necromancy animations, instead of Abjuration ones
+- Prefix: Lilarcor's wrong speed factor fixed from 8 to 7
 - Fixed yet another bug with the dragon disciple component: fire damage bonus was only applying to creatures, not the kit itself, leading to player-created dragon disciples to not benefit from the bonus
 - Fixed bug with the blackguard backstab x2 component where the effect was not set as permanent appropriately
 - Fixed component that makes throwing daggers usable as melee weapons so it installs in versions of BGEE without SoD
 - Fixed component for Arrow of Fire not correctly patching the description for non-BG2EE games
 - Fixed component making a check twice for no reason
 - Fixed yet another bug with dragon disciple component giving them access to Horrid Wilting instead of Incendiary Cloud
-- Hardened the code that deals with arbitrary amounts of weapon types for tweaking such that it does not match items that are not supposed to be considered actual items of the type (like daggers with no equipping animation: SCS shapeshift tokens, Grey the Dog attack weapon...)
 - Fixed shield component changing the description of the base Tower Shield even if the option was disabled in the config file
 - Fixed description omissions
 - Fixed Shadow Wardstone not using "Ioun Stone" as the unidentified item name
@@ -30,9 +29,13 @@
 - Fixed Horror using the incorrect projectile for Enchantment
 - Fixed issue in Ioun Stone overhaul showing the wrong portrait icon
 - Fixed code error causing fire seeds to only cause damage on a failed save
+- Fixed some code errors causing slightly incorrect scaling for Cure/Cause Serious and Moderate wounds
+- Misc code improvements
 
 ## Modifications
 
+- Moved a portion of IO operations to the beginning to improve the efficiency of components that patch arbitrary numbers of NPCs
+- Hardened the code that deals with arbitrary amounts of weapon types for tweaking such that it does not match items that are not supposed to be considered actual items of the type (like daggers with no equipping animation: SCS shapeshift tokens, Grey the Dog attack weapon...)
 - Component 1545 (character stats) now allows users to specify which of the weapon styles they want to modify, if any (all on by default)
 - Protection of undead modification will now not allow stacking with itself
 - Added swashbucklers as another optional target for the +1/2 APR at levels 7 and 13 component
@@ -58,8 +61,9 @@
 - Opened Quivering Palm component to IWDEE
 - Fireseed component now allows the created items to be undispellable.
 - Mist of Eldath component now grants 2 HP regeneration per second after initial heal for 2 rounds instead of only 1 HP
-- Added the following spells to the component that makes them bypass Magic Resistance: Smashing Wave, Acid Storm, Shout, Great Shout, Mold Touch, Cloudburst
+- Added the following spells to the component that makes them bypass Magic Resistance: Smashing Wave, Shout, Great Shout, Mold Touch, Cloudburst, Thorn Spray
 - Fire Seed component will make the projectiles bypass magic resistance, just like Melf's Minute Meteors
+- Grease component will also swap the horrendous repeating sound when it's active, and will use the same sound as Web instead
 
 ## New Components / Features
 

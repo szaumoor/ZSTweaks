@@ -61,9 +61,9 @@ ACTION_IF zst_450_moderate BEGIN
 
                 base_heal += 2
                 SET current_header = 2
-                FOR ( number = 4; number < 8; ++number ) BEGIN
+                FOR ( number = 3; number < 7; ++number ) BEGIN
                     SET heal_jump = 1
-                    PATCH_IF number <= 5 BEGIN
+                    PATCH_IF number < 5 BEGIN
                         SET heal_jump = 2
                     END
                     LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = number + 1 END
@@ -88,9 +88,9 @@ ACTION_IF zst_450_moderate BEGIN
 
                 base_dmg += 2
                 SET current_header = 2
-                FOR ( number = 4; number < 8; ++number ) BEGIN
+                FOR ( number = 3; number < 7; ++number ) BEGIN
                     SET dmg_jump = 1
-                    PATCH_IF number <= 5 BEGIN
+                    PATCH_IF number < 5 BEGIN
                         SET dmg_jump = 2
                     END
                     LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = number + 1 END
@@ -174,7 +174,7 @@ ACTION_IF zst_450_serious BEGIN
             SET current_header = 2
             FOR ( number = 8; number < 12; ++number ) BEGIN
                 SET heal_jump = 2
-                PATCH_IF number <= 10 BEGIN
+                PATCH_IF number < 10 BEGIN
                     SET heal_jump = 3
                 END
                 LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = number END
@@ -209,11 +209,11 @@ ACTION_IF zst_450_serious BEGIN
                     SET current_header = 2
                     FOR ( number = 8; number < 12; ++number ) BEGIN
                         SET dmg_jump = 2
-                        PATCH_IF number <= 10 BEGIN
+                        PATCH_IF number < 10 BEGIN
                             SET dmg_jump = 3
                         END
                         LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = number END
-                        LPF ALTER_EFFECT INT_VAR header = current_header - 1 match_opcode = 12 parameter1 = base_dmg END
+                        LPF ALTER_EFFECT INT_VAR header = current_header - 1 match_opcode=12 parameter1 = base_dmg END
                         base_dmg+=dmg_jump
                         ++current_header
                     END
@@ -233,7 +233,7 @@ ACTION_IF zst_450_serious BEGIN
                 SET current_header = 2
                 FOR ( number = 8; number < 12; ++number ) BEGIN
                     SET dmg_jump = 2
-                    PATCH_IF number <= 10 BEGIN
+                    PATCH_IF number < 10 BEGIN
                         SET dmg_jump = 3
                     END
                     LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = number END
@@ -396,5 +396,5 @@ ACTION_IF zst_450_cause_tweaks AND NOT is_iwdee AND zst_450_harm BEGIN
         LPF ALTER_ITEM INT_VAR min_str = 0 END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=362,p1=-1,p2=1~ END
         LPF ALTER_HEADER INT_VAR to_hit = 1000 END
-        
+
 END

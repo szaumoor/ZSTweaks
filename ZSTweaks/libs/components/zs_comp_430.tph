@@ -22,4 +22,6 @@ ACTION_IF NOT is_iwdee BEGIN
   COPY_EXISTING ~SCRL66.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
 
+  COPY_EXISTING ~ARE_M03.WAV~ ~override/ARE_M01.WAV~
+
 END

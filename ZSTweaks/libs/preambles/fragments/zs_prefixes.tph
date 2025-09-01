@@ -61,6 +61,15 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
     END
 
     ACTION_IF is_bg2ee_or_eet BEGIN
+        PRINT "[[FIX]]: Fixing incorrect speed factor in Lilarcor from 8 to 7"
+        COPY_EXISTING ~SW2H14.ITM~ ~override~
+            LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = 7 END
+            READ_STRREF 0x54 desc
+            SPRINT str_sf @99998
+            INNER_PATCH_SAVE new_description ~%new_description%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)8~ ~\17~
+            END
+            SAY_EVALUATED 0x54 ~%desc%~
 
         PRINT ~[[FIX]]: Non-standard scimitar/wakizashi/ninjato animations~
         COPY_EXISTING ~misc9q.itm~ ~override~
@@ -95,7 +104,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
             WRITE_BYTE 0x272 race_elemental
             WRITE_BYTE 0x273 class_elemental_air
 
-        PRINT "[[FIX]]: Thieves using bastard swords in BG2EE without being able to use them properly or illegaly as per the rules of thieves. Replaced with short swords."
+        PRINT "[[FIX]]: Thieves using bastard swords in BG2EE without being able to use them properly or illegally as per the rules of thieves. Replaced with short swords."
         COPY_EXISTING ~ARNTRA06.CRE~ ~override~
                       ~BMUGG1.CRE~   ~override~
                       ~GENTHF01.CRE~ ~override~
@@ -294,6 +303,15 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
         PRINT "[[FIX]]: Fixing DOBONE.ITM (Darts of Bone) to have a speed factor of 0 (+3 Darts)"
         COPY_EXISTING ~DOBONE.ITM~ ~override~
             LPF ALTER_HEADER INT_VAR speed = 0 END
+    END
+
+    ACTION_IF spell_cause_disease BEGIN
+        PRINT "[[FIX]]: Cause Disease using Abjuration animations, instead of Necromancy ones"
+        LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CAUSE_DISEASE" RET spell_res END
+        COPY_EXISTING ~%spell_res%~ ~override~
+            WRITE_ASCII 0x10 "CAS_P07" #8
+            WRITE_SHORT 0x22 9
+            WRITE_BYTE 0x25 7
     END
 
     OUTER_SET ~zs_prefixes~ = 1

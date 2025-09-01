@@ -1555,6 +1555,8 @@ Finally, it modifies the dice size and damage bonus, such that instead of dealin
 
 A very cool part of other games using the Grease spell is that it actually primes the area for extra fire damage. This component emulates that behavior by causing character in the Grease field a 6-second -25% weakness to fire and also makes part of the speed reduction unavoidable. Failing the save will simply increase the slowdown significantly.
 
+This component also swaps the horrendous repeating sound when it's active for the one that Web uses in BGEE.
+
 **Component 440:** Make Comet bypass magic resistance and apply a mix of cold, fire, and crushing damage
 
 As others have noted, this spell is generally just less powerful than Dragon Breath (the latter also is not affected by Magic Resistance). This is an attempt at making it more unique. As for the rationale, comets are cold and icy, hence the cold damage, but burn when in a collision path, hence the fire damage, and are big rocks, hence the crushing damage. The breakdown of damage is: 2d10+10 cold, 2d10+10 fire, 3d10+10 crushing.
@@ -2177,7 +2179,6 @@ Additionally, a few spells also bypass magic resistance, because it makes sense 
 - Mold Touch: The druid is sending aggressive brown mold that spreads quickly.
 - Smashing Wave. It's conjured water. A tiny tsunami.
 - Shout / Great Shout: It's... a shout?
-- Acid Rain: It's conjured acid rain.
 - Thorn Spray: Because they're thorns.
 
 Overall this should make all these spells more usable throughout the trilogy of games, especially against enemies such as drow, who have a very high chance of resisting magic.

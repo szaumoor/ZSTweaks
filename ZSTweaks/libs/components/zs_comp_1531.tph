@@ -29,11 +29,11 @@ COPY_EXISTING ~SPPR707.SPL~ ~override~ // SUNRAY, bypasses magic resistance
         LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 12 resist_dispel = 0 END
     END
 
-ACTION_IF spell_acid_storm BEGIN
-    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_ACID_STORM" RET spell_res END
-    COPY_EXISTING ~%spell_res%.SPL~ ~override~ 
-        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-END
+// ACTION_IF spell_acid_storm BEGIN
+//     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_ACID_STORM" RET spell_res END
+//     COPY_EXISTING ~%spell_res%.SPL~ ~override~
+//         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+// END
 
 ACTION_IF spell_shout BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHOUT" RET spell_res END
