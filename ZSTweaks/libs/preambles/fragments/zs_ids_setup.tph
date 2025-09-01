@@ -151,6 +151,8 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET spell_shout                    = IDS_OF_SYMBOL (spell WIZARD_SHOUT)
     OUTER_SET spell_shroud_of_flame          = IDS_OF_SYMBOL (spell WIZARD_SHROUD_OF_FLAME)
     OUTER_SET spell_smashing_wave            = IDS_OF_SYMBOL (spell CLERIC_SMASHING_WAVE)
+    OUTER_SET spell_spike_growth             = IDS_OF_SYMBOL (spell CLERIC_SPIKE_GROWTH)
+    OUTER_SET spell_spike_stones             = IDS_OF_SYMBOL (spell CLERIC_SPIKE_STONES)
     OUTER_SET spell_static_charge            = IDS_OF_SYMBOL (spell CLERIC_STATIC_CHARGE)
     OUTER_SET spell_thorn_spray              = IDS_OF_SYMBOL (spell CLERIC_THORN_SPRAY)
     OUTER_SET spell_unfailing_endurance      = IDS_OF_SYMBOL (spell CLERIC_UNFAILING_ENDURANCE)

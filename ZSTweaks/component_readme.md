@@ -1655,10 +1655,10 @@ This makes the spell trigger twice per turn (aka every 5 rounds / 30 seconds) in
 It's just... awful in vanilla. It was improved in the following ways:
 
 - Effects no longer subject to magic resistance
-- Effects no longer affect friendlies
+- Damage effects no longer affect friendlies (the other effects such as dispelling fire shields still affects friendlies), the bolts of lightning only target enemies
 - Electricity damage increased to 2d8, no save to take half
-- Extra damage versus cold and fire-immune creatures doubled (4d3 magic damage)
-- Lasts for 5 rounds from 2
+- Extra damage versus cold and fire-immune creatures doubled (4d3 magic damage). Friendlies are still affected.
+- Lasts for 5 rounds instead of 2
 
 **Component 488:** Make Thorn Spray more powerful and scale with level
 
@@ -1668,6 +1668,14 @@ Cool spell but very underpowered for a level 4 spell. These are the changes:
 - Starts off dealing 4d12 piercing damage
 - Scales with level, increased damage by 1d12 every two levels, up to 6d12 at level 11
 - Uses saves vs. Breath instead of saves vs. Death
+
+**Component 491:** Make Spike Stones deal also slashing damage so it's more effective than Spike Growth
+
+This improves the spell in the following ways:
+
+- Increases the very underwhelming 2d4 piercing damage to 4d4 combined piercing and slashing damage.
+- Forces a save vs. Breath saving throw instead of Spell
+- Increases the movement rate penalty from 30% to 50% when save fails.
 
 </details>
 
@@ -2179,7 +2187,8 @@ Additionally, a few spells also bypass magic resistance, because it makes sense 
 - Mold Touch: The druid is sending aggressive brown mold that spreads quickly.
 - Smashing Wave. It's conjured water. A tiny tsunami.
 - Shout / Great Shout: It's... a shout?
-- Thorn Spray: Because they're thorns.
+- Thorn Spray: Because they're actual physical thorns.
+- Spike growth: Because it's a bunch of spikes from flora.
 
 Overall this should make all these spells more usable throughout the trilogy of games, especially against enemies such as drow, who have a very high chance of resisting magic.
 

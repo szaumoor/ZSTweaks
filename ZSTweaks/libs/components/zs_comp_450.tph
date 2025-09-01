@@ -352,7 +352,7 @@ ACTION_IF zst_450_cure_tweaks AND zst_450_eldath BEGIN
 
         LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_MIST_OF_ELDATH" RET spell_res END
         COPY_EXISTING ~%spell_res%.spl~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8210) END
+            LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8211) ref_desc=RESOLVE_STR_REF(@8210) END
             LPF ALTER_HEADER INT_VAR speed = 6 END
             LPF ALTER_EFFECT INT_VAR match_opcode = 17 parameter1 = 40 END
             LPF ALTER_EFFECT INT_VAR power = 0 resist_dispel = 0 END

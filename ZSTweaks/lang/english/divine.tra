@@ -666,7 +666,7 @@ Saving Throw: None
 
 This powerful spell creates waves of anti-negative energy that sweep outward from the caster. These waves disrupt any undead that attempt to attack the caster, pushing them away from the caster for several seconds, causing Slow for half a round and 8 points of damage (half magical, half radiant which cannot be resisted). There is one wave per round for the duration of the spell. All undead are affected with no saving throw.~
 
-@8210 = ~Mist of Eldath
+@8210 = ~Rejuvenating Mist
 (Invocation)
 
 Level: 7
@@ -678,6 +678,8 @@ Area of Effect: 7-ft. radius
 Saving Throw: None
 
 This spell blankets the area of effect with a silver-blue mist—any creature within the mist will be cured of disease and poison and healed 40 Hit Points. During 2 rounds after the casting, affected creatures remain immune to poison and disease and regenerate 2 Hit Points per second for 2 rounds.~
+
+@8211 = ~Rejuvenating Mist~
 
 @8230 = ~Wall of Moonlight
 (Invocation)
@@ -925,3 +927,16 @@ Area of Effect: 17-ft. cone with 90-deg. arc
 Saving Throw: 1/2
 
 By means of this spell, the caster can cause a spray of barbs, spikes, thorns, and spines to spring forth from <PRO_HISHER> hand. The thorn spray covers a 17-ft.-long cone, inflicting 4d12 points of piercing damage, increased by 1d12 per two levels, up to 6d12, to all creatures within the area of effect, or half as much if a Save vs. Breath is successful. Magic Resistance does not apply to this spell.~
+
+@8576 = ~Spike Stones
+(Alteration, Enchantment)
+
+Level: 5
+Sphere: Elemental Earth
+Range: Visual range of the caster
+Duration: 12 rounds
+Casting Time: 6
+Area of Effect: 8-ft. radius
+Saving Throw: Special
+
+This spell warps the surrounding rock, reshaping the terrain into spiked projections that blend into the background. Any creature entering the area takes 4d4 Hit Points of combined piercing and slashing damage per round, and must make a Save vs. Breath or have its movement rate reduced by 50%.~

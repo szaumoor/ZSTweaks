@@ -71,6 +71,12 @@ ACTION_IF spell_cloudburst BEGIN
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 
+ACTION_IF spell_spike_growth BEGIN
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SPIKE_GROWTH" RET spell_res END
+    COPY_EXISTING ~%spell_res%.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+END
+
 COPY_EXISTING ~SPWI101.SPL~ ~override~ // GREASE, ALL GAMES
               ~SPPR105.SPL~ ~override~ // ENTANGLE ALL GAMES
               ~SPWM111.SPL~ ~override~ // ENTANGLE ALL GAMES

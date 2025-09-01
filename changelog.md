@@ -27,7 +27,7 @@
 - Added Mordenkainen's Sword (Force Blade) as another item that benefits from the magic weapons APR component. I forgot. Oops.
 - Fixed Grease Tweak inappropriately stacking fire resistance and movement speed debuffs
 - Fixed Horror using the incorrect projectile for Enchantment
-- Fixed issue in Ioun Stone overhaul showing the wrong portrait icon
+- Fixed issue in Ioun Stone overhaul showing the wrong portrait icon on one of them
 - Fixed code error causing fire seeds to only cause damage on a failed save
 - Fixed some code errors causing slightly incorrect scaling for Cure/Cause Serious and Moderate wounds
 - Misc code improvements
@@ -40,7 +40,7 @@
 - Protection of undead modification will now not allow stacking with itself
 - Added swashbucklers as another optional target for the +1/2 APR at levels 7 and 13 component
 - Improved the implementation of the blackguard component that allows them to backstab x2
-- Component that adds backstab penalties is now fully configurable: you can add penalties to any and all weapon types, including weapons that are not normally considered "backstab weapons", which makes it more useful in setups where the choice of weapons that can backstab is extended
+- Component that adds backstab penalties is now fully configurable: you can add penalties to any and all weapon types, including weapons that are not normally considered "backstab weapons", which makes it more useful in setups where the choice of weapons that can backstab is extended. And you can define how much a penalty you want, if any
 - Entangle component now makes it bypass magic resistance (still dispellable)
 - Entangle component now changes the saving throws required to Save vs. Breath, as it's more accurate in my estimation
 - Entangle component improves the spell further, making the AC debuff -4 instead of -2, and setting their APR to 1, which mimics difficulty attacking while entangled
@@ -54,16 +54,18 @@
 - Planetar and Deva components now allow both to instantly cast all of their spells
 - Shield component now allows you to opt in or out from the movement speed debuffs. It's OFF by default, that is, no movement speed debuffs will be applied unless you change it.
 - Entangle component now replaces in BG2EE the horrendously ear-destroying sound that happens when it's active in an area with BGEE's version, which is much more palatable.
-- Stat tweaks (weapon styles, strength, etc) now patches the description of weapon styles.
+- Stat tweaks to weapon styles now patch their description in chargen and level-up menus.
 - Blade and Skald APR component now also include Priests of Tempus (only 2 pip proficiency improvement)
 - Blade and Skald APR component now also allows them to take 2 pips in their proficiencies
 - Opened the beetle component to IWDEE
 - Opened Quivering Palm component to IWDEE
-- Fireseed component now allows the created items to be undispellable.
+- Fire Seed component now allows the created items to be undispellable.
 - Mist of Eldath component now grants 2 HP regeneration per second after initial heal for 2 rounds instead of only 1 HP
-- Added the following spells to the component that makes them bypass Magic Resistance: Smashing Wave, Shout, Great Shout, Mold Touch, Cloudburst, Thorn Spray
+- Added the following spells to the component that makes them bypass Magic Resistance: Smashing Wave, Shout, Great Shout, Mold Touch, Cloudburst, Thorn Spray, Spike Growth (all IWD spells, use IWDification to have access in BG)
 - Fire Seed component will make the projectiles bypass magic resistance, just like Melf's Minute Meteors
 - Grease component will also swap the horrendous repeating sound when it's active, and will use the same sound as Web instead
+- Mist of Eldath renamed to Rejuvenating Mist
+- Entangle component now also has similar features such in SCS, where very large creatures, incorporeal creatures, etc, are not affected by it.
 
 ## New Components / Features
 
@@ -81,6 +83,7 @@
 - Make Static Charge electrocute twice as often, but for half the damage
 - Make Cloudburst last longer and less horrendously bad
 - Make Thorn Spray more powerful and scale with level
+- Make Spike Stones deal also slashing damage so it's more effective than Spike Growth
 
 ## Planned future additions
 

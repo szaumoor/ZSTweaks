@@ -9,11 +9,11 @@ ACTION_IF spell_cloudburst BEGIN
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8564) END
         LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
-        LPF ALTER_EFFECT INT_VAR match_opcode = 12 match_parameter2 = 4 dicesize = 8 special = (2**24) END
-        LPF ALTER_EFFECT INT_VAR silent = 1 match_probability1 = 50  probability1 = 49 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 12 match_parameter2 = 4 opcode = 146 parameter2 = 1 parameter1=0 special=0 savingthrow=0 probability1 = 49 STR_VAR resource = ~ZSTWCDBR~ END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 12 match_parameter2 = 4 END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 215 STR_VAR match_resource = "CLOUDBH" END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 match_parameter2 = 64 dicenumber = 4 END
 
     COPY_EXISTING ~IDPRO301.PRO~ ~override~
-        WRITE_SHORT 0x200 64
         WRITE_BYTE 0x216 5
 END
