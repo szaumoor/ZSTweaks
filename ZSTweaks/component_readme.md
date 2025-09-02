@@ -1273,7 +1273,7 @@ The club of detonation is a fairly inconvenient weapon to use, as the fireball i
 - The fireball is no longer the wizard spell, tied to wizard spell levels, but a custom fireball that will deal no damage to the user and allies, and always deal 8d6+12 fire damage (Save vs. Spell for half). The fireball will also bypass magic resistance as it is no longer considered a wizard spell, but fire, so to speak, coming from the demon.
 - Speed factor was also modified to take into account enchantment levels, as generic enchanted weapons do
 - The chances of triggering on the +5 version were increased from 5% to 10%, as the club is no longer conceived as something that may inconvenience the user randomly with a fireball. It's just good news now for your party and bad news for your enemies.
--
+
 **Component 1328:** Make Storm Star slightly more electrifying and improve the chances of the chain lightning part
 
 This makes the weapons more interesting in this way:
@@ -1588,12 +1588,12 @@ Bigby's spells are generally a pretty poor choice for levels 8 and 9: low damage
 
 **Component 446:** Make fireball-type spells improve more with level and/or improve explosion animations
 
-Fireball is such a ubiquitous spell in D&D and generally considered like a great spell to clear out groups of enemies. I felt that it could use some extra help at higher levels.
+Fireball is such a ubiquitous spell in D&D and generally considered like a great spell to clear out groups of enemies. I felt that it could use some extra help at higher levels. Other fireball-type spells also get some benefits:
 
 - Fireball: After level 10, when damage is 10d6, an extra point of fire damage will be gained, up to 10d6+10.
 - Sunfire: After level 10, when damage is 10d6, an extra point of damage will be gained, up to 15d6+5. After level 15, 2 points of fire will be gained per level, up to 15d6+15.
-- Delayed Blast Fireball: now it will start off at 13d6 (level 7 spells are gained at level 13) and then grow by 1d6+2 per level, up to 18d6+10, which then increases by +5 each level until level 20, becoming 20d8+20.
-- Dragon's Breath: minimum damage raised from 20 to 40: 20d20 → 18d10+20 fire damage
+- Delayed Blast Fireball: now it will start off at 13d6 (level 7 spells are gained at level 13) and then grow by 1d6+2 per level, up to 18d6+10, which then increases by +5 each level until level 20, becoming 18d6+20.
+- Dragon's Breath: minimum damage raised from 20 to 40: 20d10 → 20d9+20 fire damage
 
 If you think this is overpowered, consider these damage range values:
 
@@ -1745,7 +1745,9 @@ It only lasts 30 seconds, which might be insufficient for fights with vampires. 
 
 **Component 270:** Make Entangle's saving throws improve slightly at higher levels so it remains relevant for druids
 
-Entangle saves are quite generous and, as such, very difficult to pull off at higher levels. It's such a stereotypical staple ability for druids that it feels wrong to leave druids without them because it becomes very quickly useless.
+Entangle saves are quite generous for the targets and, as such, very difficult to pull off at higher levels. It's such a stereotypical staple ability for druids that it feels wrong to leave druids without them because it becomes very quickly useless. Additionally, the Armor Class debuff improves to -3 and limits APR to 1 while the character is being held by the vines. It also will make creatures that are too big or have unusual qualities immune to it (dragons, shadows, slimes...).
+
+This component also patches other sources of Entanglement to reflect the same properties where it applies, such as in the Short Sword of Mask.
 
 Therefore, it starts with a +2 bonus (from +3), which improves to +1 at level 5, 0 at level 10, -1 at level 15, and -2 at level 20.
 
@@ -1763,7 +1765,7 @@ This component reduces the need to use them only in pre-fight buffing rituals, d
 
 **Component 310:** Make Fire Seeds create more persistent seeds that do slightly more damage, with an enchantment of 2
 
-Not enough seeds and too little damage. From 4 seeds that do 2d8 to 12 that do 3d8+5. The original is way too unremarkable for a level 6 spell. Additionally, the description will mention the fact that they are thrown with a +2 THAC0 bonus, and the seeds no longer bypass most physical protections due to an enchantment level of +6, so now they will be considered +2. Finally, they will persist for 5 turns instead of 3 (1 in-game hour). They cannot be dispelled, either.
+Not enough seeds and too little damage. From 4 seeds that do 2d8 to 12 that do 3d8+5. The original is way too unremarkable for a level 6 spell. Additionally, the description will mention the fact that they are thrown with a +2 THAC0 bonus, and the seeds no longer bypass most physical protections due to an enchantment level of +6, so now they will be considered +2. Finally, they will persist for 5 turns instead of 3 (1 in-game hour). They cannot be dispelled either and bypass magic resistance.
 
 **Component 320:** Make Nature's Beauty a bit more likely to kill humanoid enemies and make blinded enemies immune to it
 
@@ -1789,7 +1791,7 @@ Healing spells are infamously bad in BG/BG2, they heal too little for such a slo
 - Cure Serious Wounds: Heals 30 points plus 3 more points in the next two levels, 2 on the next two, up to 40
 - Cure Critical Wounds: Heals 42 points plus 3 more points per level, up to 54
 - Mass Cure: improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32)
-- Mist of Eldath: Heals 40 points, regenerates 1 HP/s for 2 rounds and prevents poisoning for that time
+- Mist of Eldath: Heals 40 points, regenerates 1 HP/s for 2 rounds and prevents poisoning for that time. Name changed to Rejuvenating Mist
 
 Also, they will no longer be stopped by spell deflection.
 
@@ -1973,7 +1975,7 @@ This should make this HLA more generally useful no matter the situation and perh
 **Component 2130:** Make some Thief HLAs more effective
 
 - Spike trap: Because it's rather strange that it does magic damage and makes you wonder why the thief would have the ability to do this, it now deals heavy piercing damage. (To be fair, the same could be said for the Time Stop trap). Rogue Rebalancing, SCS, and ToF also do this.
-- Exploding trap: I feel like 10d6, which is the same damage of the Fireball spell at max level, is very low for an HLA, so now it's 15d6. Also, the knockdown effect doesn't admit a saving throw anymore (undocumented in vanilla somehow!).
+- Exploding trap: I feel like 10d6, which is the same damage of the Fireball spell at max level, is very low for an HLA, so now it's 15d6. Also, the knockdown effect doesn't admit a saving throw anymore (undocumented in vanilla somehow!). Additionally, it's no longer considered a magical effect, uses a power of 6, and the saving throw was changed from Spell to Breath.
 - Assassination: This improves this power in the following ways:
   - Lasts 7 seconds, so it can forgive an extra second of delay to take advantage of the backstab-every-hit effect
   - It disables critical misses for the duration, and one round after

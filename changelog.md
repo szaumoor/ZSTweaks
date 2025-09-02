@@ -4,7 +4,6 @@
 
 - Prefix: Shakti's Figurine +4 short sword has a speed factor of 0 from 1
 - Prefix: Darts of Bone +3 darts have a speed factor of 0 from 2
-- Prefix: Cause Disease uses Necromancy animations, instead of Abjuration ones
 - Prefix: Lilarcor's wrong speed factor fixed from 8 to 7
 - Fixed yet another bug with the dragon disciple component: fire damage bonus was only applying to creatures, not the kit itself, leading to player-created dragon disciples to not benefit from the bonus
 - Fixed bug with the blackguard backstab x2 component where the effect was not set as permanent appropriately
@@ -45,7 +44,9 @@
 - Entangle component now makes it bypass magic resistance (still dispellable)
 - Entangle component now changes the saving throws required to Save vs. Breath, as it's more accurate in my estimation
 - Entangle component improves the spell further, making the AC debuff -4 instead of -2, and setting their APR to 1, which mimics difficulty attacking while entangled
-- Improved the implementation of Entangle component
+- Improved the implementation of Entangle component.
+- Entangle component now also has similar features such in SCS, where very large creatures, incorporeal creatures, etc, are not affected by it (disabled if SCS was installed first).
+- Entangle component now tweaks other sources of entanglement to follow the same logic, such as Plant Growth (Black Dragons), shambling mound attacks, short sword of mask, Corwin's bow.
 - Potion overhaul now makes the explosive potions deal fire damage that bypasses magic resistance, as it is, as far as I can tell not magical in nature, but based on dangerous chemicals reacting violently. The wands provide a contrast to this, since they are clearly magical in nature, and thus they are affected by magic resistance
 - Axe crit component now adjusted so two-handed axes deal extra damage equal to 1d10 + Bonus instead of 1d12 + Bonus, which fits the damage range in IWD for two-handed axes
 - Component that sets APR for magical weapons to 2 sets it to 3/2 for classes that have fighter levels so classes that are more "purist" or not benefiting from warrior class benefits can get more out of it, and maintaining more balance. Improved code for the component as well.
@@ -66,8 +67,7 @@
 - Fire Seed component will make the projectiles bypass magic resistance, just like Melf's Minute Meteors
 - Grease component will also swap the horrendous repeating sound when it's active, and will use the same sound as Web instead
 - Mist of Eldath renamed to Rejuvenating Mist
-- Entangle component now also has similar features such in SCS, where very large creatures, incorporeal creatures, etc, are not affected by it (disabled if scs was installed first).
-- Entangle component now tweaks other sources of entanglement to follow the same logic, such as Plant Growth (Black Dragons), shambling mound attacks, short sword of mask, Corwin's bow.
+- Exploding Trap is now considered a non-magical attack of level 6. Changed save to take half from Spell to Breath
 
 ## New Components / Features
 

@@ -305,14 +305,5 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
             LPF ALTER_HEADER INT_VAR speed = 0 END
     END
 
-    ACTION_IF spell_cause_disease BEGIN
-        PRINT "[[FIX]]: Cause Disease using Abjuration animations, instead of Necromancy ones"
-        LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CAUSE_DISEASE" RET spell_res END
-        COPY_EXISTING ~%spell_res%~ ~override~
-            WRITE_ASCII 0x10 "CAS_P07" #8
-            WRITE_SHORT 0x22 9
-            WRITE_BYTE 0x25 7
-    END
-
     OUTER_SET ~zs_prefixes~ = 1
 END
