@@ -1,4 +1,5 @@
 ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
+
     OUTER_SET is_bgee = GAME_IS ~bgee~
     OUTER_SET is_bg2ee = GAME_IS ~bg2ee~
     OUTER_SET is_iwdee = GAME_IS ~iwdee~
@@ -46,6 +47,13 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
 
     ACTION_IF has_iwd_spells_divine BEGIN
         PRINT "IWD spells for divine classes detected."
+        PATCH_IF has_scs_iwd_spells_divine BEGIN
+            PRINT "IWD spells for divine classes installed through SCS."
+        END ELSE PATCH_IF has_tof_iwd_spells_divine BEGIN
+            PRINT "IWD spells for divine classes installed through ToF."
+        END ELSE PATCH_IF has_iwd_spells_divine BEGIN
+            PRINT "IWD spells for divine classes installed through IWDification."
+        END
     END
 
     OUTER_SET has_iwdification_arcane   = MOD_IS_INSTALLED "setup-iwdification.tp2" "30"
@@ -55,17 +63,22 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
 
     ACTION_IF has_iwd_spells_arcane BEGIN
         PRINT "IWD spells for arcane classes detected."
+        PATCH_IF has_scs_iwd_spells_arcane BEGIN
+            PRINT "IWD spells for arcane classes installed through SCS."
+        END ELSE PATCH_IF has_tof_iwd_spells_arcane BEGIN
+            PRINT "IWD spells for arcane classes installed through ToF."
+        END ELSE PATCH_IF has_iwd_spells_arcane BEGIN
+            PRINT "IWD spells for arcane classes installed through IWDification."
+        END
     END
 
     OUTER_SET has_zs_shadowdancer_overhaul = MOD_IS_INSTALLED "ZS_ShadowdancerOverhaul.tp2" "100"
-
     ACTION_IF has_zs_shadowdancer_overhaul BEGIN
         PRINT "ZS_ShadowdancerOverhaul detected."
         OUTER_SET kit_zs_shadowdancer = IDS_OF_SYMBOL(kit ZS_SHADOWDANCER)
     END
 
     OUTER_SET has_project_javelin = MOD_IS_INSTALLED "cd_project_javelin.tp2" "1"
-
     ACTION_IF has_project_javelin BEGIN
         PRINT "Project Javelin detected."
     END
@@ -73,6 +86,11 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
     OUTER_SET has_fg_arms_itm_updates = MOD_IS_INSTALLED "forgotten-armament.tp2" "21"
     ACTION_IF has_fg_arms_itm_updates BEGIN
         PRINT "Forgotten Armament item updates detected."
+    END
+
+    OUTER_SET has_scs_spell_nerf = MOD_IS_INSTALLED "setup-stratagems.tp2" "2060"
+    ACTION_IF has_scs_spell_nerf BEGIN
+        PRINT "SCS spell nerf component detected."
     END
 
     OUTER_SET zs_preinstall_check = 1

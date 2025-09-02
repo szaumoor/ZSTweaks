@@ -17,6 +17,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET race_elemental       = IDS_OF_SYMBOL(race ELEMENTAL)
     OUTER_SET race_ettercap        = IDS_OF_SYMBOL(race ETTERCAP)
     OUTER_SET race_genie           = IDS_OF_SYMBOL(race GENIE)
+    OUTER_SET race_giant           = IDS_OF_SYMBOL(race GIANT)
     OUTER_SET race_gibberling      = IDS_OF_SYMBOL(race GIBBERLING)
     OUTER_SET race_golem           = IDS_OF_SYMBOL(race GOLEM)
     OUTER_SET race_half_elf        = IDS_OF_SYMBOL(race HALF_ELF)
@@ -148,6 +149,14 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET spell_mold_touch               = IDS_OF_SYMBOL (spell CLERIC_MOLD_TOUCH)
     OUTER_SET spell_otilukes_freezing_sphere = IDS_OF_SYMBOL (spell WIZARD_OTILUKES_FREEZING_SPHERE)
     OUTER_SET spell_righteous_wrath_faithful = IDS_OF_SYMBOL (spell CLERIC_RIGHTEOUS_WRATH_OF_THE_FAITHFUL)
+    OUTER_SET spell_seven_eyes               = IDS_OF_SYMBOL (spell WIZARD_SEVEN_EYES)
+    OUTER_SET spell_seven_eyes_fortitude     = IDS_OF_SYMBOL (spell SEVEN_EYES_FORTITUDE)
+    OUTER_SET spell_seven_eyes_mage          = IDS_OF_SYMBOL (spell SEVEN_EYES_MAGE)
+    OUTER_SET spell_seven_eyes_mind          = IDS_OF_SYMBOL (spell SEVEN_EYES_MIND)
+    OUTER_SET spell_seven_eyes_spirit        = IDS_OF_SYMBOL (spell SEVEN_EYES_SPIRIT)
+    OUTER_SET spell_seven_eyes_stone         = IDS_OF_SYMBOL (spell SEVEN_EYES_STONE)
+    OUTER_SET spell_seven_eyes_sword         = IDS_OF_SYMBOL (spell SEVEN_EYES_SWORD)
+    OUTER_SET spell_seven_eyes_venom         = IDS_OF_SYMBOL (spell SEVEN_EYES_VENOM)
     OUTER_SET spell_shout                    = IDS_OF_SYMBOL (spell WIZARD_SHOUT)
     OUTER_SET spell_shroud_of_flame          = IDS_OF_SYMBOL (spell WIZARD_SHROUD_OF_FLAME)
     OUTER_SET spell_smashing_wave            = IDS_OF_SYMBOL (spell CLERIC_SMASHING_WAVE)
@@ -161,6 +170,9 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET projectl_magic_missile = IDS_OF_SYMBOL(projectl Magic_Missile)
     OUTER_SET projectl_sparblpa      = IDS_OF_SYMBOL(projectl SPARBLPA) + 1
     OUTER_SET projectl_spklaric      = IDS_OF_SYMBOL(projectl SPKLARIC)
+
+    OUTER_SET splstate_blue_fireshield = IDS_OF_SYMBOL(splstate BLUE_FIRESHIELD)
+    OUTER_SET splstate_red_fireshield = IDS_OF_SYMBOL(splstate RED_FIRESHIELD)
 
     OUTER_SET zs_ids_setup = 1
 

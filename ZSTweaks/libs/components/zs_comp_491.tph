@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF spell_spike_stones BEGIN
+    COPY ~%MOD_FOLDER%/spells/divine/spike_stones~ ~override~
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SPIKE_STONES" RET spell_res END
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF GET_DMG_TYPE STR_VAR type = "slashing" RET slashing = result END

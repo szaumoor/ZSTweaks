@@ -65,7 +65,8 @@
 - Fire Seed component will make the projectiles bypass magic resistance, just like Melf's Minute Meteors
 - Grease component will also swap the horrendous repeating sound when it's active, and will use the same sound as Web instead
 - Mist of Eldath renamed to Rejuvenating Mist
-- Entangle component now also has similar features such in SCS, where very large creatures, incorporeal creatures, etc, are not affected by it.
+- Entangle component now also has similar features such in SCS, where very large creatures, incorporeal creatures, etc, are not affected by it (disabled if scs was installed first).
+- Entangle component now tweaks other sources of entanglement to follow the same logic, such as Plant Growth (Black Dragons), entanglement by shambling mounds, and entanglement by short sword of mask
 
 ## New Components / Features
 
