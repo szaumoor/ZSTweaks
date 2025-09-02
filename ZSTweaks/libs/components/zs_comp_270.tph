@@ -8,14 +8,16 @@ ACTION_IF NOT is_iwdee BEGIN
 
   ACTION_IF is_bg2ee_or_eet BEGIN
     COPY ~%MOD_FOLDER%/spells/divine/entangle~ ~override~
-
-    COPY_EXISTING ~SW1H58.ITM~ ~override~
-                  ~SW1H59.ITM~ ~override~
-                  ~MOUND.ITM~ ~override~
-                  ~spin688.spl~ ~override~
-        LPF ALTER_EFFECT_EX INT_VAR match_opcode = 0 match_parameter1 = "-2" parameter1 = "-4" END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 0 opcode = 1 parameter1 = 1 parameter2 = 1 END
   END
+
+  COPY_EXISTING ~SW1H58.ITM~ ~override~
+                ~SW1H59.ITM~ ~override~
+                ~MOUND.ITM~ ~override~
+                ~spin688.spl~ ~override~
+                ~bdbow06.spl~ ~override~
+    LPF ALTER_EFFECT_EX INT_VAR match_opcode = 0 match_parameter1 = "-2" parameter1 = "-3" END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 0 opcode = 1 parameter1 = 1 parameter2 = 1 END
+  BUT_ONLY IF_EXISTS
 
   COPY_EXISTING ~SPPR105.SPL~ ~override~
                 ~SPWM111.SPL~ ~override~
@@ -25,7 +27,7 @@ ACTION_IF NOT is_iwdee BEGIN
     PATCH_IF NOT has_scs_spell_nerf BEGIN
       LPF ADD_SPL_EFF_SELF INT_VAR t=99 ip="0" rd=0 p2=4 STR_VAR effects=~op=318,p2=63;op=318,p2=13;op=318,p1=%race_dragon%;op=318,p1=%race_elemental%;op=318,p1=%race_shambling_mound%;op=318,p1=%race_treant%;op=318,p1=%race_slime%;op=318,p1=%race_giant%;op=318,p1=%race_shadow%;op=318,p1=%race_spectral_undead%;op=318,p1=%race_wraith%;op=318,p1=%race_specter%;op=318,p1=%race_mist%;op=318,p1=%race_will-o-wisp%;op=318,p1=%race_ankheg%;op=318,p1=%race_wyvern%;op=318,p1=%general_weapon%,p2=3;op=318,p1=%class_spectral_troll%,p2=5~ END
     END
-    LPF ADD_SPL_EFF_SELF INT_VAR t=99 ip="-1" rd=3 STR_VAR effects=~op=0,p1=-4;op=1,p1=1,p2=1~ END
+    LPF ADD_SPL_EFF_SELF INT_VAR t=99 ip="-1" rd=3 STR_VAR effects=~op=0,p1=-3;op=1,p1=1,p2=1~ END
 
   COPY_EXISTING ~SPWM111.SPL~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 0 duration = 60 END
