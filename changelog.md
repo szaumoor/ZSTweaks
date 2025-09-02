@@ -30,6 +30,7 @@
 - Fixed issue in Ioun Stone overhaul showing the wrong portrait icon on one of them
 - Fixed code error causing fire seeds to only cause damage on a failed save
 - Fixed some code errors causing slightly incorrect scaling for Cure/Cause Serious and Moderate wounds
+- Fixed Finesse component not properly taking into account the slings allowing preference
 - Misc code improvements
 
 ## Modifications
@@ -66,7 +67,7 @@
 - Grease component will also swap the horrendous repeating sound when it's active, and will use the same sound as Web instead
 - Mist of Eldath renamed to Rejuvenating Mist
 - Entangle component now also has similar features such in SCS, where very large creatures, incorporeal creatures, etc, are not affected by it (disabled if scs was installed first).
-- Entangle component now tweaks other sources of entanglement to follow the same logic, such as Plant Growth (Black Dragons),  shambling mound attacks, short sword of mask, Corwin's bow.
+- Entangle component now tweaks other sources of entanglement to follow the same logic, such as Plant Growth (Black Dragons), shambling mound attacks, short sword of mask, Corwin's bow.
 
 ## New Components / Features
 
