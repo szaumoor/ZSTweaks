@@ -1641,7 +1641,7 @@ Self-explanatory.
 
 Cool spell that required an improvement:
 
-- Damaged upgraded from 4d10 to 6d8+4
+- Damaged upgraded from 4d10 to 6d8+6 (4-40 -> 12-54)
 - Changes of being knocked unconscious or stunned are equal now. 33% chance of being stunned or put to sleep if save is failed, both effects for 2 rounds
 - Save vs. Breath at -1 to avoid both effects and take half damage
 - Magic resistance doesn't apply. Because it's water.
@@ -1655,8 +1655,9 @@ This makes the spell trigger twice per turn (aka every 5 rounds / 30 seconds) in
 It's just... awful in vanilla. It was improved in the following ways:
 
 - Effects no longer subject to magic resistance
-- Damage effects no longer affect friendlies (the other effects such as dispelling fire shields still affects friendlies), the bolts of lightning only target enemies
-- Electricity damage increased to 2d8, no save to take half
+- Damage effects no longer affect friendlies (the other effects such as dispelling fire shields still affects friendlies), the bolts of lightning only target enemies, protecting allies and neutral targets
+- Electricity damage increased to 2d8+2, no save to take half
+- The probabilities of taking a bolt of lightning increased from 50% to 65%
 - Extra damage versus cold and fire-immune creatures doubled (4d3 magic damage). Friendlies are still affected.
 - Lasts for 5 rounds instead of 2
 

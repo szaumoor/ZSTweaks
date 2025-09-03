@@ -47,11 +47,11 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
 
     ACTION_IF has_iwd_spells_divine BEGIN
         PRINT "IWD spells for divine classes detected."
-        PATCH_IF has_scs_iwd_spells_divine BEGIN
+        ACTION_IF has_scs_iwd_spells_divine BEGIN
             PRINT "IWD spells for divine classes installed through SCS."
-        END ELSE PATCH_IF has_tof_iwd_spells_divine BEGIN
+        END ELSE ACTION_IF has_tof_iwd_spells_divine BEGIN
             PRINT "IWD spells for divine classes installed through ToF."
-        END ELSE PATCH_IF has_iwd_spells_divine BEGIN
+        END ELSE ACTION_IF has_iwd_spells_divine BEGIN
             PRINT "IWD spells for divine classes installed through IWDification."
         END
     END
@@ -63,11 +63,11 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
 
     ACTION_IF has_iwd_spells_arcane BEGIN
         PRINT "IWD spells for arcane classes detected."
-        PATCH_IF has_scs_iwd_spells_arcane BEGIN
+        ACTION_IF has_scs_iwd_spells_arcane BEGIN
             PRINT "IWD spells for arcane classes installed through SCS."
-        END ELSE PATCH_IF has_tof_iwd_spells_arcane BEGIN
+        END ELSE ACTION_IF has_tof_iwd_spells_arcane BEGIN
             PRINT "IWD spells for arcane classes installed through ToF."
-        END ELSE PATCH_IF has_iwd_spells_arcane BEGIN
+        END ELSE ACTION_IF has_iwd_spells_arcane BEGIN
             PRINT "IWD spells for arcane classes installed through IWDification."
         END
     END
