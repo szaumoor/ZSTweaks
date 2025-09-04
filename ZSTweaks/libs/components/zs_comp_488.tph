@@ -12,6 +12,6 @@ ACTION_IF spell_thorn_spray BEGIN
     LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
     LPF ALTER_EFFECT INT_VAR match_savingthrow = 16777220 savingthrow = 16777218 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 4 dicesize = 12 END
-    LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=0 step_size=2 level_cap = 11 min_lev_alt = 7 damage_special = 1 END
+    LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=0 step_size=2 level_cap=11 min_lev_alt=7 damage_rolls=1 damage_special=1 END
 
 END

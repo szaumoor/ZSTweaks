@@ -17,7 +17,7 @@ ACTION_IF NOT is_iwdee BEGIN
     LPF SPL_ABILITIES_NUM RET num_abilities=result END
 
   COPY_EXISTING ~ZSTWGRES.SPL~ ~override~
-    LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur = 6 level_cap = 20 END
+    LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur = 6 dur_special = 1 level_cap = 20 END
 
   COPY_EXISTING ~SCRL66.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END

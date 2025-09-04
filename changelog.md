@@ -31,6 +31,7 @@
 - Fixed some code errors causing slightly incorrect scaling for Cure/Cause Serious and Moderate wounds
 - Fixed Finesse component not properly taking into account the slings allowing preference
 - Misc code improvements
+- Fixed bugs in components like Icelance extending the headers which were making effects with duration have 0 duration due to improper use of CamDawg's header extension libraries
 
 ## Modifications
 
@@ -68,6 +69,8 @@
 - Grease component will also swap the horrendous repeating sound when it's active, and will use the same sound as Web instead
 - Mist of Eldath renamed to Rejuvenating Mist
 - Exploding Trap is now considered a non-magical attack of level 6. Changed save to take half from Spell to Breath
+- Improved the implementation of Symbol of Pain tweak
+- Symbol of Pain no longer requires a save to avoid its effects. Only magic resistance can stop it
 
 ## New Components / Features
 
@@ -86,7 +89,12 @@
 - Make Cloudburst last longer and less horrendously bad
 - Make Thorn Spray more powerful and scale with level
 - Make Spike Stones deal also slashing damage so it's more effective than Spike Growth
+- Make Barkskin last longer, cast faster, and block the first weapon attack
+- Make Seven Eyes' granted abilities more powerful
+- Make Whirlwind more effective and able to damage more creatures before dissipating
+- Make Doom cast faster
 
-## Planned future additions
+## Planned future additions / Ideas
 
-A component to improve the Slayer transformation with new perks and abilities, and a better scaling from the time you get it to the end of ToB.
+- A component to improve the Slayer transformation with new perks and abilities, and a better scaling from the time you get it to the end of ToB.
+- Considering making Entangle deal slight "constriction" damage over time to those affected by it

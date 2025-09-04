@@ -17,8 +17,9 @@ ACTION_IF spell_seven_eyes BEGIN
 
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "SEVEN_EYES_MAGE" RET spell_res END
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8448) END
-        LPF ALTER_EFFECT INT_VAR match_opcode=146 opcode=148 STR_VAR match_resource="SPWI308" resource="SPWI523" END
+        LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8445) END
+        LPF ALTER_HEADER INT_VAR target = 5 END
+        LPF ALTER_EFFECT INT_VAR match_opcode=146 opcode=148 target=1 STR_VAR match_resource="SPWI308" resource="SPWI523" END
 
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "SEVEN_EYES_SPIRIT" RET spell_res END
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CAUSE_CRITICAL_WOUNDS_IWD" RET cause_wounds = spell_res END
@@ -40,7 +41,7 @@ ACTION_IF spell_seven_eyes BEGIN
 
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "SEVEN_EYES_VENOM" RET spell_res END
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8451) END
+        LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8447) END
         LPF ALTER_EFFECT INT_VAR match_opcode=146 STR_VAR match_resource="SPPR411" resource="SPPR610" END
 
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "SEVEN_EYES_MIND" RET spell_res END

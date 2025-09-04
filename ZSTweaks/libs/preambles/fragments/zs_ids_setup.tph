@@ -136,6 +136,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET spell_cause_medium_wounds      = IDS_OF_SYMBOL (spell CLERIC_CAUSE_MEDIUM_WOUNDS)
     OUTER_SET spell_cause_moderate_wounds    = IDS_OF_SYMBOL (spell CLERIC_CAUSE_MODERATE_WOUNDS)
     OUTER_SET spell_cause_serious_wounds     = IDS_OF_SYMBOL (spell CLERIC_CAUSE_SERIOUS_WOUNDS_IWD)
+    OUTER_SET spell_circle_of_bones          = IDS_OF_SYMBOL (spell CLERIC_CIRCLE_OF_BONES)
     OUTER_SET spell_cure_moderate_wounds     = IDS_OF_SYMBOL (spell CLERIC_CURE_MODERATE_WOUNDS)
     OUTER_SET spell_curse                    = IDS_OF_SYMBOL (spell CLERIC_CURSE)
     OUTER_SET spell_cleric_energy_drain      = IDS_OF_SYMBOL (spell CLERIC_ENERGY_DRAIN)
@@ -163,9 +164,11 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET spell_spike_growth             = IDS_OF_SYMBOL (spell CLERIC_SPIKE_GROWTH)
     OUTER_SET spell_spike_stones             = IDS_OF_SYMBOL (spell CLERIC_SPIKE_STONES)
     OUTER_SET spell_static_charge            = IDS_OF_SYMBOL (spell CLERIC_STATIC_CHARGE)
+    OUTER_SET spell_symbol_pain              = IDS_OF_SYMBOL (spell CLERIC_SYMBOL_PAIN)
     OUTER_SET spell_thorn_spray              = IDS_OF_SYMBOL (spell CLERIC_THORN_SPRAY)
     OUTER_SET spell_unfailing_endurance      = IDS_OF_SYMBOL (spell CLERIC_UNFAILING_ENDURANCE)
     OUTER_SET spell_wall_of_moonlight        = IDS_OF_SYMBOL (spell CLERIC_WALL_OF_MOONLIGHT)
+    OUTER_SET spell_whirlwind                = IDS_OF_SYMBOL (spell CLERIC_WHIRLWIND)
 
     OUTER_SET projectl_magic_missile = IDS_OF_SYMBOL(projectl Magic_Missile)
     OUTER_SET projectl_sparblpa      = IDS_OF_SYMBOL(projectl SPARBLPA) + 1

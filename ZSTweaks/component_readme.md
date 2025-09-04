@@ -6,7 +6,7 @@
 
 **Component 120:** Make conjured magical weapons grant 2 APR by default
 
-The problem with these spells is that they promise power, but your little sickly wizard is not a very good fighter at all. I think this promise should be more serious, and therefore, by default, all these weapons grant 2 APR by default if the caster has no fighter levels. Otherwise they grant 1.5 APR.
+The problem with these spells is that they promise power, but your little sickly wizard is not a very good fighter at all. I think this promise should be more serious, and therefore, by default, all these weapons grant 2 APR by default if the caster has no fighter levels. Otherwise, they grant 1.5 APR.
 
 **Component 443:** Make "Symbol, X" spells slightly more powerful and rebalance the enemy versions
 
@@ -40,7 +40,7 @@ Both types of weapons have piercing parts; that's why. The amount of piercing is
 
 This component makes changes to some weapon categories where I feel a tweak would be valuable or more interesting. All of these options are optional and can be turned on and off in the configuration file (all are on by default). Here are the changes:
 
-- Spears: 1d6 is a little low for spears in my opinion, so now they deal 1d8+bonus, filling the imaginary "gap" of two-handed weapons with damage between staves and halberds. This part will also patch Javelins from CamDawg's project Javelin so their dice size also increases by 2.
+- Spears: 1d6 is a little low for spears in my opinion, so now they deal 1d8+bonus, filling the imaginary "gap" of two-handed weapons with damage between staves and halberds. This part will also patch Javelins from CamDawg's project Javelin so their dice size also increase by 2.
 - War Hammers: 1d4+1 always felt a little too small and narrow for hammers, so now it will be 1d5+1. This doesn't affect special hammers that have double the damage potential, such as Crom Faeyr. It also includes Voidhammer +3, which only inflicts magic damage.
 - Ninja-tos, Wakizashis, and Katanas: This will make these inflict now 2d4 for ninja-tos and wakizashis and 2d5 for katanas. I think the inclination is clearly towards "Kara-Turan/eastern blades are higher quality." In practical terms, it just means that these swords will deal more minimum damage compared to long swords and scimitars, and luck bonuses would allow maximum damage dealt with less effort. Additionally, it also makes wakizashis a piercing/slashing weapon, since in the real world, they're really more of a slashing weapon anyway though in practical terms it will still keep hitting as piercing most of the time (this change can be disabled or enabled independently).
 - Bastard swords: I never liked that bastard swords were "between long swords and two-handed swords," but there was no max damage difference between long swords and bastard swords. So now they're damage-wise actually between both (1d8+1).
@@ -70,7 +70,7 @@ The Armor Class debuff is mild and the power of it depends on the enchantment le
 
 Overall this should provide a mild tactical advantage when having at least one of your party members wielding these blunt weapons. This applies to enemies wielding these weapons too, so be warned.
 
-There's also a component that makes this effect only work on creatures that are not wearing armor, as you could think that the overall lessened effectiveness of most armors against blunt weapons is already enough. So this means it will work, for example, against dragons and humber hulks, but not against a regular fighter wearing plate mail. This is **disabled** by default, but you can enable it in the configuration file.
+There's also a component that makes this effect only work on creatures that are not wearing armor, as you could think that the overall lessened effectiveness of most armors against blunt weapons is already enough. So this means it will work, for example, against dragons and umber hulks, but not against a regular fighter wearing plate mail. This is **disabled** by default, but you can enable it in the configuration file.
 
 **Component 1435:** Make Darts have a speed factor of 0 and extend the range to 30 ft
 
@@ -172,10 +172,10 @@ This improves the value of all necklaces, rings, and gems that are not magical i
 
 **Component 1539:** Make classes other than arcane and divine spellcasters able to use scrolls freely
 
-This component opens up scrolls to others, similar to other game editions. You can think of scrolls as set of instructions to cast a spell, which anyone could use if they have the ability. The options are:
+This component opens up scrolls to others, similar to other game editions. You can think of scrolls as set of instructions to cast a spell, which anyone could use if they have the mental capacity. The options are:
 
 - **Everyone can**: scrolls are usable by anyone at any point, with the vanilla restriction of having 9 intelligence at least
-- **Everyone can as long as they have the right stats depending on scroll type**: same as above, but to require more investment to increase your skill set, you need to have Intelligence of 8 + Spell Level to cast a wizard spell scroll, and Wisdom of 8 + Spell Level to cast a priest spell scroll. For example, a level 5 priest scroll would require 13 Wisdom, and a level 8 wizard scroll would require 16 intelligence. Note that this restriction applies also to classes that could use scrolls originally.
+- **Everyone can as long as they have the right stats depending on scroll type**: same as above, but to require more investment, you need to have Intelligence of 8 + Spell Level to cast a wizard spell scroll, and Wisdom of 8 + Spell Level to cast a priest spell scroll. For example, a level 5 priest scroll would require 13 Wisdom, and a level 8 wizard scroll would require 16 intelligence. Note that this restriction applies also to classes that could use scrolls originally.
 - **All bards and Thieves can**: this allows only rogues to do this, with the vanilla rules of 9 intelligence. This was added because rogues are the handy jack-of-all-trades types that can "fake" other classes and are generally skillful and always have an ace up their sleeve.
 - **All bards and Thieves can as long as they have the right stats depending on scroll type**: Same as the previous option, with the restrictions of the second option. Note that this restriction applies also to classes that could use scrolls originally.
 
@@ -215,7 +215,7 @@ This component has a series of optional components that tweak the following (con
 - **Constitution** bonuses
   - It makes the HP bonus progression more streamlined, similar to NWN and 3.5e. The HP bonus is now 1 HP per 2 levels, starting at 12. It grows up to +7 HP at constitution 24 and 25.
   - Non-fighter classes also get a HP bonus from 12 Constitution, however, it grows less, and less quickly, up to +4 at 20 Constitution. This still improves vanilla, where they can only get +2 at most at Constitution 16. +1 HP is granted at constitution 12-14, +2 at 15-16, +3 at 17-19, and +4 at 20+.
-  - Regeneration by constitution starts at 18 constitution but it will be very slow. It starts at 1 HP every 300 seconds at 18, then 240, 180, 160, 140, 120, 90, and finally 60 seconds at 25 constitution.
+  - Regeneration by constitution starts at 18 constitution, but it will be very slow. It starts at 1 HP every 300 seconds at 18, then 240, 180, 160, 140, 120, 90, and finally 60 seconds at 25 constitution.
   - Fatigue bonuses start at constitution 12, but it only grows above vanilla values at 25 Constitution.
   - HP Penalties for constitution also start at 8 Constitution and increase every 2 Constitution below, except 1 Constitution, where it jumps from -4 to -5 directly.
 - **Dexterity** bonuses
@@ -290,7 +290,7 @@ This scroll makes undead completely ignore you, which is frankly quite silly and
 - Undead hitting the user will be rebuked, taking 1d4+1 magic damage (half if saved vs. Spell), and be scared away for 2 rounds if they fail their save. The latter effect can only affect them once per turn.
 - Lasts for 12 hours, similar to IWDEE
 
-**Component 1600:** Make everyone able to perform omni-directional backstabs (aka face-stabbing)
+**Component 1600:** Make everyone able to perform omnidirectional backstabs (aka face-stabbing)
 
 This allows player-created characters as well as all joinable characters to backstab from any angle. Optionally, there is an option to make them able to backstab without invisibility instead, but with the angle requirement intact.
 
@@ -585,7 +585,7 @@ It will also now sport new icons, which are a massive upgrade from the original 
 This improves the gloves by adding the following:
 
 - +1 Casting level for paladins and clerics
-- 1 HP regeneration to the whole party every 5 rounds
+- Party regeneration of 1 Hit Point every 5 rounds
 - The charge ability is now changed to a combination of Lay On Hands cast at level 10, and Slow Poison
 
 **Component 1997:** Make a number of items without functional use become useful (all are optional)
@@ -597,7 +597,7 @@ This improves the gloves by adding the following:
 **FAIR FAT FABULOUS FULL FIERCE WARNING ABOUT THE FIRST THREE:** Don't eat all three. One of them at least is needed for plot reasons. Otherwise, you'll have to fix it with save editing or console commands.
 
 - Mask of King Strohm III: now it protects vs. critical hits, increases Detect Illusion and Find Traps by 10. It has a charge ability to cast Oracle once per day.
-- Shadow Dragon Wardstone: It is now an ioun stone which grants immunity to Blindness. Shadow dragons and other shadow creatures incur in a -2 combat roll penalty towards the wearer. 5% hiding skill and shadowdancers are dark soul monks get a +3% damage resistance.
+- Shadow Dragon Wardstone: It is now an ioun stone which grants immunity to Blindness. Shadow dragons and other shadow creatures incur in a -2 combat roll penalty towards the wearer. 5% hiding skill and shadowdancers and dark moon monks get a +3% damage resistance.
 
 **Component 1198:** Make Ring of the Crusade (SoD) also grant a combat/damage roll bonus vs. demons and devils
 
@@ -1637,46 +1637,18 @@ This modifies the projectile so it spreads faster, making it less annoying. Addi
 
 Self-explanatory.
 
-**Component 477:** Make Smashing Wave a bit more powerful and bypass magic resistance
+**Component 499:** Make Seven Eyes' granted abilities more powerful
 
-Cool spell that required an improvement:
+This improves the spell and the abilities granted by it in the following ways:
 
-- Damaged upgraded from 4d10 to 6d8+6 (4-40 -> 12-54)
-- Changes of being knocked unconscious or stunned are equal now. 33% chance of being stunned or put to sleep if save is failed, both effects for 2 rounds
-- Save vs. Breath at -1 to avoid both effects and take half damage
-- Magic resistance doesn't apply. Because it's water.
-
-**Component 479:** Make Static Charge electrocute twice as often, but for half the damage
-
-This makes the spell trigger twice per turn (aka every 5 rounds / 30 seconds) instead of once per turn. It reduces the dice thrown by 5, such that it starts off dealing 4d8 electric damage, and it increases up to 17d8 at level 20. To me the higher frequency is more useful than the higher damage. Most fights don't last long enough for the damage to become relevant.
-
-**Component 485:** Make Cloudburst last longer and less horrendously bad
-
-It's just... awful in vanilla. It was improved in the following ways:
-
-- Effects no longer subject to magic resistance
-- Damage effects no longer affect friendlies (the other effects such as dispelling fire shields still affects friendlies), the bolts of lightning only target enemies, protecting allies and neutral targets
-- Electricity damage increased to 2d8+2, no save to take half
-- The probabilities of taking a bolt of lightning increased from 50% to 65%
-- Extra damage versus cold and fire-immune creatures doubled (4d3 magic damage). Friendlies are still affected.
-- Lasts for 5 rounds instead of 2
-
-**Component 488:** Make Thorn Spray more powerful and scale with level
-
-Cool spell but very underpowered for a level 4 spell. These are the changes:
-
-- Bypasses magic resistance
-- Starts off dealing 4d12 piercing damage
-- Scales with level, increased damage by 1d12 every two levels, up to 6d12 at level 11
-- Uses saves vs. Breath instead of saves vs. Death
-
-**Component 491:** Make Spike Stones deal also slashing damage so it's more effective than Spike Growth
-
-This improves the spell in the following ways:
-
-- Increases the very underwhelming 2d4 piercing damage to 4d4 combined piercing and slashing damage.
-- Forces a save vs. Breath saving throw instead of Spell
-- Increases the movement rate penalty from 30% to 50% when save fails.
+- It lingers for 8 hours instead of 2 turns
+- Eye of the Mage: Cast Sunfire instead of Lightning Bolt
+- Eye of the Mind: Cast Domination instead of Charm Person
+- Eye of the Sword: Instantly cast 3 Magic Missile spells, instead of just one
+- Eye of Fortitude: No changes currently
+- Eye of Venom: Cast Dolorous Decay instead of Poison
+- Eye of the Spirit: Cast Cause Critical Wounds instead of Ray of Enfeeblement
+- Eye of Stone: Cast Hold Monster instead of Hold Person
 
 </details>
 
@@ -1936,6 +1908,74 @@ This simply makes the spell more useful and worth the memorization slot.
 **Component 512:** Make Alicorn Lance more effective by increasing damage by 1 dice every 2 levels, up to 8d6
 
 Alicorn Lance is not powerful and doesn't scale well. This will make it feasible at higher levels.
+
+**Component 477:** Make Smashing Wave a bit more powerful and bypass magic resistance
+
+Cool spell that required an improvement:
+
+- Damaged upgraded from 4d10 to 6d8+6 (4-40 -> 12-54)
+- Changes of being knocked unconscious or stunned are equal now. 33% chance of being stunned or put to sleep if save is failed, both effects for 2 rounds
+- Save vs. Breath at -1 to avoid both effects and take half damage
+- Magic resistance doesn't apply. Because it's water.
+
+**Component 479:** Make Static Charge electrocute twice as often, but for half the damage
+
+This makes the spell trigger twice per turn (aka every 5 rounds / 30 seconds) instead of once per turn. It reduces the dice thrown by 5, such that it starts off dealing 4d8 electric damage, and it increases up to 17d8 at level 20. To me the higher frequency is more useful than the higher damage. Most fights don't last long enough for the damage to become relevant.
+
+**Component 485:** Make Cloudburst last longer and less horrendously bad
+
+It's just... awful in vanilla. It was improved in the following ways:
+
+- Effects no longer subject to magic resistance
+- Damage effects no longer affect friendlies (the other effects such as dispelling fire shields still affects friendlies), the bolts of lightning only target enemies, protecting allies and neutral targets
+- Electricity damage increased to 2d8+2, no save to take half
+- The probabilities of taking a bolt of lightning increased from 50% to 65%
+- Extra damage versus cold and fire-immune creatures doubled (4d3 magic damage). Friendlies are still affected.
+- Lasts for 5 rounds instead of 2
+
+**Component 488:** Make Thorn Spray more powerful and scale with level
+
+Cool spell but very underpowered for a level 4 spell. These are the changes:
+
+- Bypasses magic resistance
+- Starts off dealing 4d12 piercing damage
+- Scales with level, increased damage by 1d12 every two levels, up to 6d12 at level 11
+- Uses saves vs. Breath instead of saves vs. Death
+
+**Component 491:** Make Spike Stones deal also slashing damage so it's more effective than Spike Growth
+
+This improves the spell in the following ways:
+
+- Increases the very underwhelming 2d4 piercing damage to 4d4 combined piercing and slashing damage.
+- Forces a save vs. Breath saving throw instead of Spell
+- Increases the movement rate penalty from 30% to 50% when save fails.
+
+**Component 492:** Make Barkskin last longer, cast faster, and block the first weapon attack
+
+This component makes the spell more useful for druids:
+
+- Duration increased from 4 rounds + 1 round per level to 1 turn + 1 round per level
+- Casting time reduced to 3
+- 25% crushing damage resistance, 15% for missile and piercing
+- -15% fire resistance
+- +2 Armor Class modifier against crushing, +1 against missile and piercing
+- Blocks the first weapon attack that hits the target as if they had one layer of Stoneskin
+
+For balance, this component also makes Barkskin not available to clerics and paladins, and shield of faith is also not available to druids.
+
+Finally, the component also updates the Staff of the Woodlands to reflect these changes, although it does not grant the one layer of Stoneskin effect.
+
+**Component 496:** Make Doom cast faster
+
+Doom casts very slowly, making it in most scenarios impractical. This makes the casting time 1, similar to Magic Missile, for example. A quick -2 penalty to all saving throws is very useful in many situations, and with a short casting speed, it becomes more feasible for clerics and paladins in general.
+
+**Component 513:** Make Whirlwind more effective and able to damage more creatures before dissipating
+
+This component improves the spell in the following ways:
+
+- Unaffected by magic resistance
+- Damage doubled (2d8 slashing and 2d8 crushing to 4d8 slashing 4d8 and crushing)
+- No limit on the number of creatures damaged or protection against it after being hit once for 1 round
 
 </details>
 

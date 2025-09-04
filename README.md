@@ -52,6 +52,7 @@ An exception to this are components that EXPLICITLY say that they must be instal
 - The developers of WeiDu, including the documentation
 - And the IESDP, an invaluable resource.
 - moggadeet and JDSilvergun for suggesting lines of dialog for Cespenar
+- Troveur for good ideas, feedback, and suggestions for tweaks
 - People on Discord generally for their help, and the great modders out there that allowed their WeiDu code to be available publicly, like The Artisan, jmerry, CamDawg, 11jo, Argent77, Ardanis, DavidW, SubtleDoctor, among others.
 - dark0dave for giving me the idea of adding a configuration file, now an integral part of the mod that I'll never part with and will continue to implement in other mods.
 - For the people in G3 and Discord for reporting bugs
