@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_491~ = 1
 END
 
-ACTION_IF spell_spike_stones BEGIN
+ACTION_IF spell_spike_stones > 0 BEGIN
 
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SPIKE_STONES" RET spell_res END
   COPY_EXISTING ~%spell_res%.SPL~ ~override~

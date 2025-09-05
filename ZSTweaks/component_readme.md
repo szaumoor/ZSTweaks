@@ -1650,6 +1650,10 @@ This improves the spell and the abilities granted by it in the following ways:
 - Eye of the Spirit: Cast Cause Critical Wounds instead of Ray of Enfeeblement
 - Eye of Stone: Cast Hold Monster instead of Hold Person
 
+**Component 500:** Make Control Undead bypass magic resistance and have a -2 penalty to the saving throw
+
+Generally considered a terrible choice for a level 7 spell, this making a little more useful. Might make it more powerful in the future, but this is a start. Just the fact that it didn't bypass magic resistance was a big detriment to the spell, since many undead are resistant to magic, like the majority of skeletons.
+
 </details>
 
 ---
@@ -1927,7 +1931,7 @@ This makes the spell trigger twice per turn (aka every 5 rounds / 30 seconds) in
 It's just... awful in vanilla. It was improved in the following ways:
 
 - Effects no longer subject to magic resistance
-- Damage effects no longer affect friendlies (the other effects such as dispelling fire shields still affects friendlies), the bolts of lightning only target enemies, protecting allies and neutral targets
+- Damage effects no longer affect non-enemies (the other effects such as dispelling fire shields still affects friendlies), the bolts of lightning only target enemies, protecting allies and neutral targets
 - Electricity damage increased to 2d8+2, no save to take half
 - The probabilities of taking a bolt of lightning increased from 50% to 65%
 - Extra damage versus cold and fire-immune creatures doubled (4d3 magic damage). Friendlies are still affected.
@@ -1960,10 +1964,11 @@ This component makes the spell more useful for druids:
 - -15% fire resistance
 - +2 Armor Class modifier against crushing, +1 against missile and piercing
 - Blocks the first weapon attack that hits the target as if they had one layer of Stoneskin
+- Barkskin can no longer stack with itself (seems like a bug to me)
 
 For balance, this component also makes Barkskin not available to clerics and paladins, and shield of faith is also not available to druids.
 
-Finally, the component also updates the Staff of the Woodlands to reflect these changes, although it does not grant the one layer of Stoneskin effect.
+Finally, the component also updates the Staff of the Woodlands to reflect these changes, although it does not grant the one layer of Stoneskin effect. The Armor Class is also set to 1. Barkskin can't be cast on self while holding the staff either.
 
 **Component 496:** Make Doom cast faster
 
@@ -1976,6 +1981,10 @@ This component improves the spell in the following ways:
 - Unaffected by magic resistance
 - Damage doubled (2d8 slashing and 2d8 crushing to 4d8 slashing 4d8 and crushing)
 - No limit on the number of creatures damaged or protection against it after being hit once for 1 round
+
+**Component 497:** Make Produce Fire a much more effective spell
+
+Produce Fire is not very effective for a 4th level spell. The only upside is that the damage it causes is predictable, it being 1 point per level plus 1d4, without any saving throw to take half. However, the damage is too low to be useful. This component improves the spell by simply allowing targets in the area of effect from being affected once per 2 seconds, effectively taking around 60 fire damage at druid level 20, if they remain in the area for the full duration.
 
 </details>
 

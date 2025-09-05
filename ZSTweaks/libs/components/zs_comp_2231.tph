@@ -30,6 +30,7 @@ END
 
 ACTION_IF zst_2231_fire_boost AND zst_2231_fire_boost_pctg > 0 BEGIN
 
+  COPY ~%MOD_FOLDER%/class_kits/dragon_disciple~ ~override~
   COPY_EXISTING ~ZSTWDGD0.SPL~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 332 parameter1 = zst_2231_fire_boost_pctg END
 
@@ -37,7 +38,6 @@ ACTION_IF zst_2231_fire_boost AND zst_2231_fire_boost_pctg > 0 BEGIN
   APPEND ~CLABSO01.2DA~ ~%line%~
 
 END
-
 
 COPY_EXISTING ~CLABSO01.2DA~ ~override~
   LPM reindex_clab

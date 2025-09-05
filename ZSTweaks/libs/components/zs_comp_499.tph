@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_499~ = 1
 END
 
-ACTION_IF spell_seven_eyes BEGIN
+ACTION_IF spell_seven_eyes > 0 BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SEVEN_EYES" RET spell_res END
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8452) END
@@ -22,7 +22,13 @@ ACTION_IF spell_seven_eyes BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode=146 opcode=148 target=1 STR_VAR match_resource="SPWI308" resource="SPWI523" END
 
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "SEVEN_EYES_SPIRIT" RET spell_res END
-    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CAUSE_CRITICAL_WOUNDS_IWD" RET cause_wounds = spell_res END
+
+    ACTION_IF is_iwdee BEGIN
+        LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CAUSE_CRITICAL_WOUNDS" RET cause_wounds = spell_res END
+    END ELSE BEGIN
+        LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CAUSE_CRITICAL_WOUNDS_IWD" RET cause_wounds = spell_res END
+    END
+    
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8449) END
         LPF ALTER_EFFECT INT_VAR match_opcode=146 STR_VAR match_resource="SPWI221" resource="%cause_wounds%" END

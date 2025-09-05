@@ -13,6 +13,7 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5190) END
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END
             LPF ADD_SPL_EFF_TGT INT_VAR pwr=8 p1=60 stype=4 STR_VAR res=~ZSTWSDH0~ effects=~op=326,p2=144,sbonus=6;op=326,p2=145~ END
+        BUT_ONLY IF_EXISTS
 
         OUTER_SET new_description = RESOLVE_STR_REF(@5200)
         COPY_EXISTING ~SPWI817.SPL~ ~override~
@@ -20,6 +21,7 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_SPELL INT_VAR ref_desc=new_description END
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END
             LPF ADD_SPL_EFF_TGT INT_VAR pwr=8 p1=60 stype=4 STR_VAR res=~ZSTWSDH0~ effects=~op=326,p2=144,sbonus=6;op=326,p2=145~ END
+        BUT_ONLY IF_EXISTS
 
         COPY_EXISTING ~SCRLAO.ITM~ ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
@@ -31,8 +33,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
     END
 
-    ACTION_IF zst_443_pain AND spell_symbol_pain BEGIN
-
+    ACTION_IF zst_443_pain AND spell_symbol_pain > 0 BEGIN
         LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SYMBOL_PAIN" RET spell_res END
         COPY_EXISTING ~%spell_res%.SPL~ ~override~
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8280) END
@@ -46,11 +47,12 @@ ACTION_IF NOT is_iwdee BEGIN
 
         COPY_EXISTING ~SPWI898.SPL~ ~override~
                       ~SPWI899.SPL~ ~override~
-        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 96  duration = 42 END
-        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 102 duration = 42 END
-        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 108 duration = 48 END
-        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 112 duration = 48 END
-        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 120 duration = 54 END
+            LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 96  duration = 42 END
+            LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 102 duration = 42 END
+            LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 108 duration = 48 END
+            LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 112 duration = 48 END
+            LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 120 duration = 54 END
+        BUT_ONLY IF_EXISTS
 
     END
 

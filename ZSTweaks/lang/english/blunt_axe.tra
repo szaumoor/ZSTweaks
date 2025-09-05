@@ -178,7 +178,7 @@ Equipped abilities:
 – Unaffected by spells that restrict movement
 
 Combat abilities:
-– 33% chance each hit that target will be slowed for 20 seconds
+– 33% chance of slowing target for 2 rounds if a save vs. Spell at -4 is failed
 
 THAC0: +5
 Damage: 1d6+6, +2 acid, cold, fire, poison, and electrical damage
@@ -190,6 +190,60 @@ Requires:
  13 Strength
 
 Weight: 8~
+
+@7761 = ~This flail has been in the care of Lord de'Arnise for some time, a relic of his adventuring youth. It has been kept disassembled, the individual pieces stored in separate locations, and only used in the direst of emergencies. Lord de'Arnise was likely concerned about the powerful magic that the weapon radiated when compiled, and rightfully so. A trail of destruction has followed it through history, leading straight back to the original owners. The flail was the creation of the warlike rakshasa, a race of vengeful spirits that crave human meat, and used as an adaptable weapon that could suit any battle. During a particularly violent hunt, the flail was lost, only to be returned when they used their affinity for magic to locate its powerful aura. They discovered that the weapon had found its way into the hands of a great human warrior, and the battle that followed was truly splendid. They have since used the item as bait countless times, "losing" it again and again. Powerful items gravitate toward powerful people, and powerful people yield the most glorious battles.
+
+STATISTICS:
+
+Combat abilities:
+– 33% chance of slowing target for 2 rounds if a save vs. Spell at -2 is failed
+
+THAC0: +3
+Damage: 1d6+4, +1 acid damage, +1 cold damage, +1 fire damage
+Damage type: Crushing
+Speed Factor: 4
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 10~
+
+@7762 = ~This four-headed flail causes fire, cold, acid, and poison damage. If the fifth head for the Flail of Ages could be found, it would make this awesome weapon even more powerful.
+
+STATISTICS:
+
+Combat abilities:
+– 33% chance of slowing target for 2 rounds if a save vs. Spell at -3 is failed
+
+THAC0: +4
+Damage: 1d6+5, +1 fire damage, +1 cold damage, +1 acid damage, +1 poison damage
+Damage type: Crushing
+Speed Factor: 3
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 9~
+
+@7763 = ~This four-headed flail causes fire, cold, acid, and electrical damage. If the fifth head for the Flail of Ages could be found, it would make this awesome weapon even more powerful.
+
+STATISTICS:
+
+Combat abilities:
+– 33% chance of slowing target for 2 rounds if a save vs. Spell at -3 is failed
+
+THAC0: +4
+Damage: 1d6+5, +1 fire damage, +1 cold damage, +1 acid damage, +1 electrical damage
+Damage type: Crushing
+Speed Factor: 3
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 9~
 
 @8050 = ~This heavy mace was created for a very specific purpose: to slay undead. Any such creature hit by it not only feels the sting of the weapon, but also has a chance of being simply blasted from existence. There are legends that speak of a priest so holy a single glancing touch could send a vampire to oblivion, but whether the weapon empowered her or she empowered it is a topic for theologians.
 

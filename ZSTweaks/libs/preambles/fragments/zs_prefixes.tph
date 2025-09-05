@@ -84,8 +84,9 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
         COPY_EXISTING ~sw1h68a.itm~ ~override~
             WRITE_ASCII 0x22 "SC" #2
 
-        PRINT "[[FIX]]: Misaligned index in hamm06.itm (Dwarven Thrower +2)"
+        PRINT "[[FIX]]: Fixes for misaligned indexes in Quarterstaff and Dwarven Thrower"
         COPY_EXISTING ~hamm06.itm~ ~override~ // Dwarven Thrower +3
+                      ~staf01.itm~ ~override~ // staff
             LPF FJ_SPL_ITM_REINDEX END
 
         PRINT "[[FIX]]: Aesgareth enemies he fights during the card game being considered 'weapon' instead of 'humanoid', and a couple of others"
@@ -240,6 +241,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
     END
 
     ACTION_IF is_bg2ee_or_eet BEGIN
+
         COPY_EXISTING ~DAGG24.itm~ ~override~
             LPF ITM_WEIGHT RET result END
             PATCH_IF result = 0 BEGIN

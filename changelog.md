@@ -5,6 +5,7 @@
 - Prefix: Shakti's Figurine +4 short sword has a speed factor of 0 from 1
 - Prefix: Darts of Bone +3 darts have a speed factor of 0 from 2
 - Prefix: Lilarcor's wrong speed factor fixed from 8 to 7
+- Prefix: Misaligned indexes in staf01 in bg2ee that could cause corruption when patching the item. Fixpack fixes this too.
 - Fixed yet another bug with the dragon disciple component: fire damage bonus was only applying to creatures, not the kit itself, leading to player-created dragon disciples to not benefit from the bonus
 - Fixed bug with the blackguard backstab x2 component where the effect was not set as permanent appropriately
 - Fixed component that makes throwing daggers usable as melee weapons so it installs in versions of BGEE without SoD
@@ -30,8 +31,18 @@
 - Fixed code error causing fire seeds to only cause damage on a failed save
 - Fixed some code errors causing slightly incorrect scaling for Cure/Cause Serious and Moderate wounds
 - Fixed Finesse component not properly taking into account the slings allowing preference
-- Misc code improvements
 - Fixed bugs in components like Icelance extending the headers which were making effects with duration have 0 duration due to improper use of CamDawg's header extension libraries
+- Fixed blunt weapon component so it patches voidhammer's unusual damage configuration correctly
+- Fix for Hindo's Doom +5 dealing too much damage to undead
+- Fixed bug in undead-disruption weapons that would prevent demonic enemies from possibly being affected by it (mace of disruption, Azuredge...)
+- Actually undid the +7 damage for arrows of piercing, as intended in previous versions
+- Removed the +1 poison damage from arrows of biting, as that was only intended for bolts of biting
+- Corrected out-of-date new description for bolts of biting
+- Mana bow extra damage on failure to save vs spell now bypasses magic resistance, as intended
+- Fixed IDS lookup issue causing problems targeting carrion crawlers
+- Fixed some issues with translation strings
+- Fixed Cure Moderate Wounds not getting the correct description
+- Misc code improvements
 
 ## Modifications
 
@@ -71,6 +82,9 @@
 - Exploding Trap is now considered a non-magical attack of level 6. Changed save to take half from Spell to Breath
 - Improved the implementation of Symbol of Pain tweak
 - Symbol of Pain no longer requires a save to avoid its effects. Only magic resistance can stop it
+- Flail of Ages now will also nerf the Slow effects of flail of ages, since they're notoriously a death sentence for mages and other casters, so now they will require a save vs. Spell at -2 to be affected (-3 with the +4 version, -4 with the +5 version)
+- Added Sahuagin to the list of creatures that the Bone Blade dagger does extra damage to
+- It's now possible to install only the store additions in the poisoned throwing daggers component
 
 ## New Components / Features
 
@@ -93,8 +107,13 @@
 - Make Seven Eyes' granted abilities more powerful
 - Make Whirlwind more effective and able to damage more creatures before dissipating
 - Make Doom cast faster
+- Make Produce Fire a much more effective spell
+- Make Control Undead bypass magic resistance and have a -2 penalty to the saving throw
 
 ## Planned future additions / Ideas
 
 - A component to improve the Slayer transformation with new perks and abilities, and a better scaling from the time you get it to the end of ToB.
 - Considering making Entangle deal slight "constriction" damage over time to those affected by it
+- More tweaks to vanilla armors that are unique in name but have nothing special about them, like Fallorain's Plate
+- Tackle the rest of IWD spells that are underwhelming
+- Ranged sneak attacks for thieves and rangers

@@ -13,7 +13,8 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     PATCH_IF ( cat = 21 AND prof = 97  ) OR  // warhammers
              ( cat = 17 AND prof = 101 ) OR  // maces
              ( cat = 17 AND prof = 115 ) AND // clubs
-             num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ")
+             num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") AND
+             NOT ("%SOURCE_RES%" STR_EQ "bdhamm02") // exception
     BEGIN
         LPF ITM_ENCH RET ench = result END
         PATCH_MATCH ench
@@ -22,13 +23,17 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
             END  2 3 BEGIN
                 LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM2;t=2,ip=0,op=146,p2=1,res=ZSTWMCM2~  END
             END  4 5 BEGIN
-                LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM3;t=2,ip=0,op=146,p2=1,res=ZSTWMCM3~ END
+                LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM3;t=2,ip=0,op=146,p2=1,res=ZSTWMCM3~  END
             END  6   BEGIN
                 LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM4;t=2,ip=0,op=146,p2=1,res=ZSTWMCM4~  END
             END DEFAULT
         END
     END
 BUT_ONLY
+
+COPY_EXISTING ~bdhamm02.itm~ ~override~
+    LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=-1,op=146,p2=1,res=ZSTWMCM2~ END
+BUT_ONLY IF_EXISTS
 
 ACTION_IF zst_1362_blunt_only_nonarmored BEGIN
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~

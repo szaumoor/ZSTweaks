@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_485~ = 1
 END
 
-ACTION_IF spell_cloudburst BEGIN
+ACTION_IF spell_cloudburst > 0 BEGIN
 
   COPY ~%MOD_FOLDER%/spells/divine/cloudburst~ ~override~
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CLOUDBURST" RET spell_res END

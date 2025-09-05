@@ -29,49 +29,49 @@ COPY_EXISTING ~SPPR707.SPL~ ~override~ // SUNRAY, bypasses magic resistance
         LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 12 resist_dispel = 0 END
     END
 
-// ACTION_IF spell_acid_storm BEGIN
+// ACTION_IF spell_acid_storm > 0 BEGIN
 //     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_ACID_STORM" RET spell_res END
 //     COPY_EXISTING ~%spell_res%.SPL~ ~override~
 //         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 // END
 
-ACTION_IF spell_shout BEGIN
+ACTION_IF spell_shout > 0 BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHOUT" RET spell_res END
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 
-ACTION_IF spell_great_shout BEGIN
+ACTION_IF spell_great_shout > 0 BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_GREAT_SHOUT" RET spell_res END
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 
-ACTION_IF spell_smashing_wave BEGIN
+ACTION_IF spell_smashing_wave > 0 BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SMASHING_WAVE" RET spell_res END
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 
-ACTION_IF spell_thorn_spray BEGIN
+ACTION_IF spell_thorn_spray > 0 BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_THORN_SPRAY" RET spell_res END
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 
-ACTION_IF spell_mold_touch BEGIN
+ACTION_IF spell_mold_touch > 0 BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_MOLD_TOUCH" RET spell_res END
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 
-ACTION_IF spell_cloudburst BEGIN
+ACTION_IF spell_cloudburst > 0 BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CLOUDBURST" RET spell_res END
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
 END
 
-ACTION_IF spell_spike_growth BEGIN
+ACTION_IF spell_spike_growth > 0 BEGIN
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SPIKE_GROWTH" RET spell_res END
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END

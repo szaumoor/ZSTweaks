@@ -128,7 +128,7 @@ OUTER_SET zst_1997_shadow = "1"
 ////////////////////////////// Dagger tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // poisoned throwing daggers tweaks
-OUTER_SET zst_1000_sbonus          = "-2"  // saving throw penalty
+OUTER_SET zst_1000_sbonus          = "-2"  // saving throw penalty, values of 0 or above disable that part
 OUTER_SET zst_1000_store_additions = "1"   // increase the stock of poisoned daggers
 OUTER_SET zst_1000_stack_mult      = "100" // percentage multiplier for the number of stacks of poisoned throwing daggers inserted. For example, if you only want half, you'd set this to 50, if you want 20% more, you'd set it to 120. Values of zero and below are ignored.
 

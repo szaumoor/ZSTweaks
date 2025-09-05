@@ -5,9 +5,9 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
-  
-    COPY_EXISTING ~SPPR411.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5110) END
-        LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 256 END
+
+  COPY_EXISTING ~SPPR411.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5110) END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 256 END
 
 END

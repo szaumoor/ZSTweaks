@@ -43,9 +43,16 @@ ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald BEGIN
       END
 
       ACTION_IF zst_2260_allow_tempus BEGIN
+
+        ACTION_IF is_bg2ee_or_eet BEGIN
+          OUTER_SET tempus_col = 63
+        END ELSE ACTION_IF is_bgee OR is_iwdee BEGIN
+          OUTER_SET tempus_col = 62
+        END 
+
         COPY_EXISTING ~WEAPPROF.2DA~ ~override~
           FOR ( i = 3; i < 31; ++i ) BEGIN
-            LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = 63 STR_VAR replacement = "2" match_col_value = "1" END
+            LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = tempus_col STR_VAR replacement = "2" match_col_value = "1" END
           END
           PRETTY_PRINT_2DA
       END
