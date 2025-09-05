@@ -13,14 +13,14 @@ ACTION_IF zst_508_restoration_stat_drain BEGIN
                 ~ohbresto.SPL~ ~override~
                 ~cdpr417.SPL~ ~override~
 
-      READ_LONG 0x34 spl_level
-      PATCH_IF spl_level = 1 BEGIN
-          spl_level = 7
-      END
+    READ_LONG 0x34 spl_level
+    PATCH_IF spl_level = 1 BEGIN
+        spl_level = 7
+    END
 
-      PATCH_FOR_EACH res IN ~SHADOWWP~ ~TROLLSPI~ ~SPIDWR1~ ~bdshadgr~ ~MINDFLAY~ BEGIN
-          LPF ADD_SPELL_EFFECT INT_VAR power=spl_level target=2 opcode=321 STR_VAR resource=~%res%~ END
-      END
+    PATCH_FOR_EACH res IN ~SHADOWWP~ ~TROLLSPI~ ~SPIDWR1~ ~bdshadgr~ ~MINDFLAY~ BEGIN
+        LPF ADD_SPELL_EFFECT INT_VAR power=spl_level target=2 opcode=321 STR_VAR resource=~%res%~ END
+    END
 
   BUT_ONLY IF_EXISTS
 
@@ -33,7 +33,7 @@ END
 
 ACTION_IF zst_508_restoration_overhaul BEGIN
 
-  COPY ~%MOD_FOLDER%/spells/cleric/restoration~ ~override~
+  COPY ~%MOD_FOLDER%/spells/divine/restoration~ ~override~
   COPY_EXISTING ~SPPR713.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8600) END
     LPF ALTER_HEADER INT_VAR speed = 9 projectile = projectl_sparblpa END
@@ -44,9 +44,11 @@ ACTION_IF zst_508_restoration_overhaul BEGIN
     LPF ADD_SPL_EFF_TGT INT_VAR pwr=7 p2=44 rd=0 STR_VAR effects = ~op=326,res=ZSTWRST1;op=326,res=ZSTWRST1~ END
 
   ACTION_IF spell_unfailing_endurance > 0 BEGIN
+
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_UNFAILING_ENDURANCE" RET spell_res END
     COPY_EXISTING ~%spell_res%.spl~ ~override~
-        LPF ADD_SPL_EFF_TGT STR_VAR effects = ~op=321,pwr=4,res=ZSTWRST0~ END
+      LPF ADD_SPL_EFF_TGT STR_VAR effects = ~op=321,pwr=4,res=ZSTWRST0~ END
+
   END
 
 END

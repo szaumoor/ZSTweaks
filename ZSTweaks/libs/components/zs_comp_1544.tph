@@ -45,7 +45,6 @@ WITH_SCOPE BEGIN
                             INNER_ACTION BEGIN
                                 LAF CREATE_SPELL INT_VAR flags=33604096 STR_VAR spell = ~RPSC%number%~ END
                                 COPY_EXISTING ~RPSC%number%.SPL~ ~override~
-                                    // LPF ALTER_SPELL INT_VAR ref_name = scroll_name END // causes duplicated log entries
                                     FOR ( index = 0; index < 50; ++index ) BEGIN
                                         LPF ADD_SPELL_HEADER INT_VAR type=header_type target=target range=5000
                                         required_level=(index+1) END

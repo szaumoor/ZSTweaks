@@ -5,7 +5,8 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
-    COPY ~%MOD_FOLDER%/spells/wizard/horrid_wilting~ ~override~
+
+    COPY ~%MOD_FOLDER%/spells/arcane/horrid_wilting~ ~override~
     OUTER_SET new_description = RESOLVE_STR_REF(@6210)
     COPY_EXISTING ~ohbwat01.CRE~ ~override~
                   ~bdwe1str.CRE~ ~override~
@@ -22,7 +23,7 @@ ACTION_IF NOT is_iwdee BEGIN
         LPF ALTER_SPELL INT_VAR ref_desc=new_description END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize=7 END
 
-        FOR ( dicenumber = 16; dicenumber <= 20; ++dicenumber ) BEGIN
+        PATCH_FOR_EACH dicenumber IN 16 17 18 19 20 BEGIN
             LPF ALTER_EFFECT INT_VAR match_dicenumber = dicenumber parameter1 = dicenumber END
         END
 
@@ -38,7 +39,6 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 5
                 timing = 1
                 resist_dispel = 1
-
             STR_VAR
                 resource = ~ZSTWHW16.EFF~
         END

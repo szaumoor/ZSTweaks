@@ -5,10 +5,10 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
-    COPY_EXISTING "MISCBC.itm" ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6810) ench=4 END
+  COPY_EXISTING "MISCBC.itm" ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6810) ench=4 END
 
-        PATCH_IF NOT has_eefixpack BEGIN
-            LPF ALTER_EFFECT INT_VAR check_globals=0 match_probability1=15 probability1=14 END
-        END
+    PATCH_IF NOT has_eefixpack BEGIN
+      LPF ALTER_EFFECT INT_VAR check_globals=0 match_probability1=15 probability1=14 END
+    END
 END

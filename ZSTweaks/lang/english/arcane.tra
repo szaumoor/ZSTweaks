@@ -382,6 +382,20 @@ Saving Throw: 1/2
 
 This spell creates a Fireball that hovers at a point determined by the caster. The Fireball will stay in position until someone walks too close to it; at that point, it will explode, dealing 13d6 points of fire damage, which increases by 1d6+2 up to level 18 (18d6+10), and then increases again by +5 at levels 19 and 20 (maximum of 18d6+20). Victims are allowed a saving throw vs. Spell for half damage.~
 
+@7523 = ~Dragon's Breath
+(Any School)
+
+Level: 10
+Range: 320 ft.
+Duration: Instant
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+This spell causes a disembodied head of a red dragon to appear and breathe fire with the strength of an adult red dragon. In addition to the enormous 20d9+20 fireball, the force of the dragon's breath knocks an opponent off their feet and away from the caster. The victim can save vs. Breath Weapon to take half damage and not be blown backwards.
+
+This spell will not harm party members.~
+
 @8220 = ~Melf's Acid Arrow
 (Conjuration/Summoning)
 
@@ -441,3 +455,95 @@ Area of Effect: 1 creature
 Saving Throw: Special
 
 This spell fires a magical lance of ice at a target of the caster's choosing. It automatically hits, inflicting 5d6 points of cold damage and forcing the target to make a Save vs. Spell or be stunned for 3 rounds. Its damage improves by 1d6 every 2 levels, up to 8d6.~
+
+@8444  = ~Eye of the Mind
+
+This orb protects the caster against mental attacks such as charm, emotion, and fear.
+
+The eye can be expended as the 5th-level wizard spell Domination, bringing a humanoid creature under the caster's control for 1 turn (Save vs. Spell at -2 negates).~
+
+@8445 = ~Eye of the Mage
+
+This eye absorbs one manifestation of fire, electrical, cold, or acid damage.
+
+The eye can also be expended as the 5th-level wizard spell Sunfire, dealing 15d6 fire damage to all creatures around the caster.~
+
+@8446 = ~Eye of the Sword
+
+This eye deflects the first physical damaging attack that strikes the caster.
+
+The eye may be expended as three 1st-level wizard spell Magic Missile, creating 15 missiles, that each strike a target for 1d4+1 magic damage.~
+
+@8447 = ~Eye of Venom
+
+This eye halts any one attack or effect that could poison the caster.
+
+The eye can also be expended as the 6th-level priest spell Dolorous Decay, slowing one creature down for 2 rounds and causing poison damage over a period of 1 turn (Save vs. Poison at -2 negates).~
+
+@8448 = ~Eye of Fortitude
+
+This eye blocks one stunning, deafness, blindness, or silence effect.
+
+It may alternatively be expended as the 4th-level wizard spell Shout, dealing 4d6 magic damage and deafening creatures within a 35-ft. cone (Save vs. Spell halves damage and negates deafness).~
+
+@8449 = ~Eye of the Spirit
+
+This eye blocks one instant-death magic attack (Death Spell; Finger of Death; Power Word, Kill; Slay Living; Destruction).
+
+The wizard may instead choose to expend the eye's power as the 5th-level priest spell Cause Critical Wounds, dealing a minimum of 27 points of damage upon touching a target (Save vs. Spell for half).~
+
+@8451 = ~Eye of Stone
+
+This eye shields the caster from a single petrification attack.
+
+It can also be used as the 5th-level wizard spell Hold Monster, rendering creatures immobile for 1 round/level (Save vs. Spell at -2 negates).~
+
+@8452 = ~Seven Eyes
+(Abjuration)
+
+Level: 7
+Range: 0
+Duration: 8 hours
+Casting Time: 2 rounds
+Area of Effect: The caster
+Saving Throw: None
+
+This spell conjures forth seven magical orbs that float in a ring above the caster's head. Each eye has a defensive and offensive ability, though once either one is used, the eye will lose its power. The powers of each eye are described below.
+
+Eye of the Mind: This orb protects the caster against mental attacks such as charm, emotion, and fear. The eye can be expended as the 5th-level wizard spell Domination, bringing creature under the caster's control for 1 turn (Save vs. Spell at -2 negates).
+
+Eye of the Sword: This eye deflects the first physical damaging attack that strikes the caster. The eye may be expended as three 1st-level wizard spell Magic Missile, creating 15 missiles, that each strike a target for 1d4+1 magic damage.
+
+Eye of the Mage: This eye absorbs one manifestation of fire, electrical, cold, or acid damage. The eye can also be expended as the 5th-level wizard spell Sunfire, dealing 15d6 fire damage to all creatures around the caster.
+
+Eye of Venom: This eye halts any one attack or effect that could poison the caster. The eye can also be expended as the 6th-level priest spell Dolorous Decay, slowing one creature down for 2 rounds and causing poison damage over a period of 1 turn (Save vs. Poison at -2 negates).
+
+Eye of the Spirit: This eye blocks one instant-death magic attack (Death Spell; Finger of Death; Power Word, Kill; Slay Living; Destruction). The wizard may instead choose to expend the eye's power as the 5th-level priest spell Cause Critical Wounds, dealing a minimum of 27 points of damage upon touching a target (Save vs. Spell for half).
+
+Eye of Fortitude: This eye blocks one stunning, deafness, blindness, or silence effect. It may alternatively be expended as the 4th-level wizard spell Shout, dealing 4d6 magic damage and deafening creatures within a 35-ft. cone (Save vs. Spell halves damage and negates deafness).
+
+Eye of Stone: This eye shields the caster from a single petrification attack. It can also be used as the 5th-level wizard spell Hold Monster, rendering creatures immobile for 1 round/level (Save vs. Spell at -2 negates).~
+
+@8465 = ~Soul Eater
+(Necromancy)
+
+Level: 6
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 5
+Area of Effect: 7-ft. radius
+Saving Throw: None
+
+This spell deals 4d8 magic damage to all living creatures within the area of effect. Any creatures that die as a result of this damage are obliterated, and their essence is transformed into a 3-Hit-Dice skeleton under control of the caster. Also, for each creature that dies in this manner, the caster receives a +1 bonus to Strength, Dexterity, and Constitution for 1 turn. Soul Eater has no effect on undead, constructs, and elemental creatures.~
+
+@8467 = ~Control Undead
+(Necromancy)
+
+Level: 7
+Range: 40 ft.
+Duration: 6 rounds + 1 round/level
+Casting Time: 7
+Area of Effect: 4-ft. radius
+Saving Throw: Special
+
+The Control Undead spell allows the caster to take control of undead creatures within the area of effect. This creates a telepathic link between the caster and the undead, allowing complete control. If the undead have 3 Hit Dice or less, then there is no Saving Throw allowed; however, if they have 4 Hit Dice or more, a Save vs. Spell at -2 is allowed to negate the effect. The undead remain under the control of the caster for the duration of the spell or until they are affected by a Dispel Magic. This spell cannot be stopped by the undead creature's resistance to magic.~

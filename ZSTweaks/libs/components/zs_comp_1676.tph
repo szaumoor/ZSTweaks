@@ -5,21 +5,27 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
-    COPY_EXISTING ~HELM17.itm~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7480) END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=346,p1=4,spec=7;op=101,p2=13;op=101,p2=55~ END
 
-        LPF ADD_ITEM_HEADER INT_VAR copy_header = 1 END
-        LPF ALTER_HEADER INT_VAR match_type=3 header=1 STR_VAR icon = ~SPWI713B~ END
+  COPY_EXISTING ~HELM17.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7480) END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=346,p1=4,spec=7;op=101,p2=13;op=101,p2=55~ END
 
-        PATCH_IF NOT has_eefixpack BEGIN
-            LPF ALTER_EFFECT INT_VAR header=1 match_opcode=146 STR_VAR match_resource=~SPWI605~ resource=~SPWI713~ END
-            LPF ALTER_EFFECT INT_VAR match_opcode=146 target=1 STR_VAR match_resource=~SPWI605~ END
-            LPF ALTER_EFFECT INT_VAR target=1 opcode = 148 STR_VAR match_resource=~SPWI605~  END
-            LPF ALTER_HEADER INT_VAR match_type=3 target=4 STR_VAR match_icon = ~SPWI605B~ END
-        END ELSE BEGIN
-            LPF ALTER_EFFECT INT_VAR header_type=3 header=1 match_opcode=148 target=2 opcode=146 STR_VAR match_resource=~SPWI605~ resource=~SPWI713~ END
-            LPF ALTER_HEADER INT_VAR match_type=3 header=1 STR_VAR icon = ~SPWI713B~ END
-            LPF ALTER_HEADER INT_VAR match_type=3 target=1 STR_VAR match_icon = ~SPWI713B~ END
-        END
+    LPF ADD_ITEM_HEADER INT_VAR copy_header = 1 END
+    LPF ALTER_HEADER INT_VAR match_type=3 header=1 STR_VAR icon = ~SPWI713B~ END
+
+    PATCH_IF NOT has_eefixpack BEGIN
+
+      LPF ALTER_EFFECT INT_VAR header=1 match_opcode=146 STR_VAR match_resource=~SPWI605~ resource=~SPWI713~ END
+      LPF ALTER_EFFECT INT_VAR match_opcode=146 target=1 STR_VAR match_resource=~SPWI605~ END
+      LPF ALTER_EFFECT INT_VAR target=1 opcode = 148 STR_VAR match_resource=~SPWI605~  END
+      LPF ALTER_HEADER INT_VAR match_type=3 target=4 STR_VAR match_icon = ~SPWI605B~ END
+
+    END ELSE BEGIN
+
+      LPF ALTER_EFFECT INT_VAR header_type=3 header=1 match_opcode=148 target=2 opcode=146 STR_VAR match_resource=~SPWI605~ resource=~SPWI713~ END
+      LPF ALTER_HEADER INT_VAR match_type=3 header=1 STR_VAR icon = ~SPWI713B~ END
+      LPF ALTER_HEADER INT_VAR match_type=3 target=1 STR_VAR match_icon = ~SPWI713B~ END
+
+    END
+
 END

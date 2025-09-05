@@ -5,12 +5,17 @@ END ELSE BEGIN
 END
 
 ACTION_IF zst_1591_soul_reaver_nerf OR zst_1591_soul_reaver_dicesize BEGIN
+
     OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103")
+
 END ELSE BEGIN
+
     WARN ~No tweaks were selected for Soul Reaver~
+
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
     ACTION_IF zst_1591_soul_reaver_nerf BEGIN
 
         COPY_EXISTING "SW2H08.ITM" ~override~
@@ -40,6 +45,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     END
 
     ACTION_IF zst_1591_soul_reaver_dicesize BEGIN
+
         COPY_EXISTING "SW2H08.ITM" ~override~
             PATCH_IF zst_1591_soul_reaver_nerf BEGIN
                 SPRINT strref @6850
@@ -68,4 +74,5 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 END
             END
     END
+    
 END

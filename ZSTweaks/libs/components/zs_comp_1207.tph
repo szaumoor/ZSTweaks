@@ -5,8 +5,10 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+
     COPY ~%MOD_FOLDER%/items/protector_second~ ~override~
     COPY_EXISTING ~LEAT03.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8390) END
         LPF ADD_EQUIPPED_EFF INT_VAR p2=4 STR_VAR res="ZSTWPRS2" effects = ~op=177,p1=%race_half_elf%;op=177,p1=%race_elf%;op=177,p1=%class_ranger_all%,p2=5;op=177,p1=%class_ranger_all%,p2=5,res=ZSTWPRS0;op=177,p1=%class_ranger_all%,p2=5,res=ZSTWPRS1~ END
+
 END

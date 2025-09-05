@@ -5,10 +5,12 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
-    COPY ~%MOD_FOLDER%/items/dale_protector~ ~override~
-    COPY_EXISTING ~BRAC04.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7280) unusable0=0 END
-        LPF ALTER_EFFECT INT_VAR match_opcode=167 parameter1=3 END
-        LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=167 opcode=286 parameter1=1 END
-        LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR res=~ZSTWDLP0~ effects=~op=177,p1=%class_ranger_all%;op=177,p1=%class_thief_all%;op=177,p1=%class_bard_all%~ END
+
+  COPY ~%MOD_FOLDER%/items/dale_protector~ ~override~
+  COPY_EXISTING ~BRAC04.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7280) unusable0=0 END
+    LPF ALTER_EFFECT INT_VAR match_opcode=167 parameter1=3 END
+    LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=167 opcode=286 parameter1=1 END
+    LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR res=~ZSTWDLP0~ effects=~op=177,p1=%class_ranger_all%;op=177,p1=%class_thief_all%;op=177,p1=%class_bard_all%~ END
+
 END

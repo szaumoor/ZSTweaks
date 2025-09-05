@@ -37,19 +37,22 @@ END
 COPY_EXISTING ~SHLD08.ITM~ ~override~
     READ_LONG 0x8 buckler_strref
 
-COPY_EXISTING "SHLD05.ITM" ~override~
-    SPRINT hyphen @99991
-    SPRINT ac_string @99992
-    READ_STRREF UNIDENTIFIED_DESC desc
-    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%hyphen%[ %TAB%]*%ac_string%[ %TAB%]*:?[ %TAB%]*\)\+1~ ~\1+2~
-    END
-    SAY_EVALUATED UNIDENTIFIED_DESC ~%desc%~
-    LPF ITM_REF_UDESC RET changed_description_index = result END
+ACTION_IF zst_1546_tower_tweak BEGIN
+    COPY_EXISTING "SHLD05.ITM" ~override~
+        SPRINT hyphen @99991
+        SPRINT ac_string @99992
+        READ_STRREF UNIDENTIFIED_DESC desc
+        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%hyphen%[ %TAB%]*%ac_string%[ %TAB%]*:?[ %TAB%]*\)\+1~ ~\1+2~
+        END
+        SAY_EVALUATED UNIDENTIFIED_DESC ~%desc%~
+        LPF ITM_REF_UDESC RET changed_description_index = result END
+END
 
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF ITM_CAT RET cat = result END
-    PATCH_IF cat = 12 BEGIN // shields
+    LPF ITM_APPEARANCE RET appearance = result END
+    PATCH_IF cat = 12 AND NOT ("%appearance%" STR_EQ "  ") BEGIN // shields
         PATCH_IF zst_1546_everyone_can_use_all_shields BEGIN
             WRITE_LONG 0x1e 0
         END
@@ -62,7 +65,10 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
                 SET base_ac = result + 1
                 SET new_ac = result + 2
                 LPF ALTER_EFFECT INT_VAR match_opcode=0 match_parameter2=0 match_parameter1=base_ac parameter1=new_ac END
-                LPF ADD_EQUIPPED_EFF INT_VAR p1="-1" STR_VAR effects = ~op=278;op=36;op=190,p1=-2;op=176,p1=80,p2=5~ END
+                LPF ADD_EQUIPPED_EFF INT_VAR p1="-1" STR_VAR effects = ~op=278;op=36;op=190,p1=-2~ END
+                PATCH_IF zst_1546_speed_debuffs BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=176,p1=80,p2=5~ END
+                END
 
                 PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SHLD05" BEGIN
                     LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
@@ -72,7 +78,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
                     PATCH_IF description_index > "-1" BEGIN
                         READ_STRREF 0x54 desc
                         INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%hyphen%[ %TAB%]*%ac_string%[ %TAB%]*:?[ %TAB%]*\)\+%base_ac%~ ~\1\+%new_ac%~
+                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%hyphen%[ %TAB%]*%ac_string%[ %TAB%]*:?[ %TAB%]*\)\+%base_ac%~ ~\1+%new_ac%~
                         END
                         SAY_EVALUATED 0x54 ~%desc%~
                     END
@@ -86,11 +92,15 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
                     WRITE_LONG 0x1e 1615594432
                 END
             END
+
         END
 
         PATCH_IF shield_strref = medium_shield_strref BEGIN
             PATCH_IF zst_1546_medium_tweak BEGIN
-                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=36,p1=-1;op=190,p1=-1;op=176,p1=90,p2=5~ END
+                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=36,p1=-1;op=190,p1=-1~ END
+                PATCH_IF zst_1546_speed_debuffs BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=176,p1=90,p2=5~ END
+                END
             END
 
             PATCH_IF zst_1546_everyone_can_use_all_shields = 0 BEGIN

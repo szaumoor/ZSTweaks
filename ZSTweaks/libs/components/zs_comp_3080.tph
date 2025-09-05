@@ -12,5 +12,5 @@ COPY_EXISTING ~CARRIO1.ITM~  ~override~
               ~TROLLSPI.ITM~ ~override~
               ~WOLFVA1.ITM~  ~override~
               ~BDGHASTG.ITM~ ~override~
-    LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
+  LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
 BUT_ONLY IF_EXISTS

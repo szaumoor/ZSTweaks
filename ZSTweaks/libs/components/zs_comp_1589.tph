@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+
     COPY ~%MOD_FOLDER%/items/rashad~ ~override~
     COPY_EXISTING "ZSTWRASH.SPL" ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1=RESOLVE_STR_REF(@7581) END
@@ -23,4 +24,5 @@ ACTION_IF NOT is_iwdee BEGIN
     ACTION_IF group_component OR (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1470~ AND MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1588~) BEGIN
         INCLUDE ~%MOD_FOLDER%/patches/item_upgrade/scripts/zs_watertalon.tph~
     END
+
 END

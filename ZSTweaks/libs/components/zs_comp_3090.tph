@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_3090~ = 1
 END
 
-COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~
+COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     READ_BYTE 0x272 race
     PATCH_IF race = race_shadow BEGIN
         PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP "ZS#SD.*" != 0 BEGIN // ignore shadowdancer kit creatures
@@ -35,11 +35,11 @@ COPY_EXISTING ~SHADOWWP.ITM~ ~override~
     LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 2400 END
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~SPIDWR1.ITM~   ~override~
-              ~TROLLSPI.ITM~  ~override~
+COPY_EXISTING ~SPIDWR1.ITM~  ~override~
+              ~TROLLSPI.ITM~ ~override~
     LPF ALTER_EFFECT INT_VAR match_duration = 300 duration = 2400 END
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~bdshadgr.ITM~  ~override~
+COPY_EXISTING ~bdshadgr.ITM~ ~override~
     LPF ALTER_EFFECT INT_VAR match_duration = 180 duration = 2400 END
 BUT_ONLY IF_EXISTS

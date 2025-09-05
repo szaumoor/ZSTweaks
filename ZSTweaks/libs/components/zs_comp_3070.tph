@@ -4,12 +4,15 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_3070~ = 1
 END
 
-COPY_EXISTING_REGEXP ~^.+\.CRE$~ ~override~
-    READ_LONG 0x28 animation
-    PATCH_IF animation = 0x7f0b OR animation = 0x7f0a BEGIN
-        LPF CRE_OP_PRESENT INT_VAR opcode1 = 126 opcode2 = 176 RET result END
-        PATCH_IF result = 0 BEGIN
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 176 timing=9 parameter1 = 6 END
-        END
+COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
+  READ_LONG 0x28 animation
+  PATCH_IF animation = 0x7f0b OR animation = 0x7f0a BEGIN
+    
+    LPF CRE_OP_PRESENT INT_VAR opcode1 = 126 opcode2 = 176 RET result END
+
+    PATCH_IF result = 0 BEGIN
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 timing=9 parameter1 = 6 END
     END
+
+  END
 BUT_ONLY

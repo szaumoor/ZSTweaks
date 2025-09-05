@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT MOD_IS_INSTALLED "ZS_ShadowdanverOverhaul.tp2" "400" BEGIN
+
     LAF generate_rogue_thac0 STR_VAR class1 = ~bard~ END
 
     COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
@@ -70,6 +71,9 @@ ACTION_IF NOT MOD_IS_INSTALLED "ZS_ShadowdanverOverhaul.tp2" "400" BEGIN
             END
         END
     BUT_ONLY
+
 END ELSE BEGIN
+
     PRINT "THAC0 overhaul for bards already installed through ZS_ShadowdancerOverhaul"
+    
 END

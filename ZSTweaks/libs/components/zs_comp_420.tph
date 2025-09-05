@@ -5,8 +5,10 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+
     COPY_EXISTING ~SPPR111.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6200) END
+
         LPF SPL_ABILITIES_NUM RET num_abilities = result END
         SET start_dur = 24
         FOR ( i = 0; i < num_abilities; ++i ) BEGIN

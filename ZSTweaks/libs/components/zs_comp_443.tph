@@ -5,12 +5,15 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+
     ACTION_IF zst_443_death BEGIN
-        COPY ~%MOD_FOLDER%/spells/symbol_death~ ~override~
+
+        COPY ~%MOD_FOLDER%/spells/common/symbol_death~ ~override~
         COPY_EXISTING ~SPPR719.SPL~ ~override~
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5190) END
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END
             LPF ADD_SPL_EFF_TGT INT_VAR pwr=8 p1=60 stype=4 STR_VAR res=~ZSTWSDH0~ effects=~op=326,p2=144,sbonus=6;op=326,p2=145~ END
+        BUT_ONLY IF_EXISTS
 
         OUTER_SET new_description = RESOLVE_STR_REF(@5200)
         COPY_EXISTING ~SPWI817.SPL~ ~override~
@@ -18,6 +21,7 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_SPELL INT_VAR ref_desc=new_description END
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END
             LPF ADD_SPL_EFF_TGT INT_VAR pwr=8 p1=60 stype=4 STR_VAR res=~ZSTWSDH0~ effects=~op=326,p2=144,sbonus=6;op=326,p2=145~ END
+        BUT_ONLY IF_EXISTS
 
         COPY_EXISTING ~SCRLAO.ITM~ ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
@@ -26,29 +30,30 @@ ACTION_IF NOT is_iwdee BEGIN
         COPY_EXISTING ~SCRLAM.ITM~ ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
         BUT_ONLY IF_EXISTS
+
     END
 
-    ACTION_IF zst_443_pain BEGIN
-        ACTION_IF is_iwdee BEGIN
-            OUTER_TEXT_SPRINT symbol_pain ~SPPR714~
-        END ELSE BEGIN
-            OUTER_TEXT_SPRINT symbol_pain ~SPPR733~
-        END
-        COPY_EXISTING ~%symbol_pain%.SPL~ ~override~
+    ACTION_IF zst_443_pain AND spell_symbol_pain > 0 BEGIN
+        LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SYMBOL_PAIN" RET spell_res END
+        COPY_EXISTING ~%spell_res%.SPL~ ~override~
             LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8280) END
-            LPF ADD_SPL_EFF_TGT STR_VAR effects=~t=99,op=332,pwr=7,p1=-10,dur=66,stype=1~ END
+            LPF ADD_SPL_EFF_TGT STR_VAR effects=~t=99,op=332,pwr=7,p1=-10,dur=66~ END
             LPF ALTER_EFFECT INT_VAR match_duration = 660 duration = 66 END
-            LPF ALTER_EFFECT INT_VAR check_globals = 0 match_savingthrow = 1 savebonus = "-4" END
-        BUT_ONLY IF_EXISTS
+            LPF ALTER_EFFECT INT_VAR check_globals = 0 match_savingthrow = 1 savebonus = 0 savingthrow = 0 END
+
     END
 
     ACTION_IF zst_443_nerf_npc_symbols BEGIN
+
         COPY_EXISTING ~SPWI898.SPL~ ~override~
                       ~SPWI899.SPL~ ~override~
-        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 96  duration = 42 END
-        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 102 duration = 42 END
-        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 108 duration = 48 END
-        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 112 duration = 48 END
-        LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 120 duration = 54 END
+            LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 96  duration = 42 END
+            LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 102 duration = 42 END
+            LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 108 duration = 48 END
+            LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 112 duration = 48 END
+            LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 120 duration = 54 END
+        BUT_ONLY IF_EXISTS
+
     END
+
 END

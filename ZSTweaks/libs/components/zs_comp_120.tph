@@ -4,6 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_120~ = 1
 END
 
+COPY ~%MOD_FOLDER%/general/magical_weapons~ ~override~
 
 COPY_EXISTING ~FBLADE.ITM~   ~override~
               ~SHILLE.ITM~   ~override~
@@ -13,36 +14,33 @@ COPY_EXISTING ~FBLADE.ITM~   ~override~
               ~SHAMMR.ITM~   ~override~
               ~SHAMMR2.ITM~  ~override~
               ~SHAMMR3.ITM~  ~override~
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=2,p2=1~ END
-    LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 12 special = 1024 END
-
-COPY_EXISTING ~SHILLEL.ITM~ ~override~
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=2,p2=1~ END
+              ~SHILLEL.ITM~  ~override~
+              ~MOONBLA.ITM~  ~override~
+              ~SMCUDGE.ITM~  ~override~
+              ~DECASTA.ITM~  ~override~
+              ~MSWORD.ITM~  ~override~
+  LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=177,p1=%class_fighter_all%,res=ZSTWMW1;op=177,p1=%class_paladin_all%,res=ZSTWMW1;op=177,p1=%class_ranger_all%,res=ZSTWMW1;op=177,p1=%class_monk%,res=ZSTWMW1;op=177,p1=%class_mage_thief%,res=ZSTWMW0;op=177,p1=%class_mage%,res=ZSTWMW0;op=177,p1=%class_sorcerer%,res=ZSTWMW0;op=177,p1=%class_druid%,res=ZSTWMW0;op=177,p1=%class_cleric_mage%,res=ZSTWMW0;op=177,p1=%class_cleric%,res=ZSTWMW0;op=177,p1=%class_bard_all%,res=ZSTWMW0;op=177,p1=%class_thief%,res=ZSTWMW0;op=177,p1=%class_shaman%,res=ZSTWMW0~ END
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~MOONBLA.ITM~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode=12 special=1024 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=2,p2=1~ END
+COPY_EXISTING ~FBLADE.ITM~   ~override~
+              ~SHILLE.ITM~   ~override~
+              ~PHANBLAD.ITM~ ~override~
+              ~BLAKBLAD.ITM~ ~override~
+              ~SHAMMR.ITM~   ~override~
+              ~SHAMMR2.ITM~  ~override~
+              ~SHAMMR3.ITM~  ~override~
+              ~SHILLEL.ITM~  ~override~
+              ~MOONBLA.ITM~  ~override~
+              ~SMCUDGE.ITM~  ~override~
+              ~DECASTA.ITM~  ~override~
+              ~MSWORD.ITM~  ~override~
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 12 special = 1024 END
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~SMCUDGE.ITM~ ~override~
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=2,p2=1~ END
-BUT_ONLY IF_EXISTS
-
+COPY_EXISTING ~FIRESEED.ITM~ ~override~
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 12 special = 1280 END
 
 COPY_EXISTING ~SMCUDGE.EFF~ ~override~
-    LPF ALTER_EFF_FILE INT_VAR special = 1024 END
+              ~FBLADE.EFF~ ~override~
+  LPF ALTER_EFF_FILE INT_VAR special = 1024 END
 BUT_ONLY IF_EXISTS
-
-COPY_EXISTING ~DECASTA.ITM~ ~override~
-    LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 12 special = 1024 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=2,p2=1~ END
-BUT_ONLY IF_EXISTS
-
-COPY_EXISTING ~FBLADE.ITM~ ~override~
-    LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 12 special = 1024 END
-
-COPY_EXISTING ~FBLADE.EFF~ ~override~
-    LPF ALTER_EFF_FILE INT_VAR special = 1024 END
-BUT_ONLY IF_EXISTS
-

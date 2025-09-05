@@ -17,6 +17,26 @@ OUTER_SET zst_443_death            = "1"
 OUTER_SET zst_443_pain             = "1"
 OUTER_SET zst_443_nerf_npc_symbols = "1"
 
+// backstab penalties to different weapon types (set to 0 to disable, otherwise add a positive number to determine backstab multiplier penalty)
+OUTER_SET zst_1120_backstab_penalty_lswords   = "1"
+OUTER_SET zst_1120_backstab_penalty_katana    = "1"
+OUTER_SET zst_1120_backstab_penalty_scimitars = "1"
+OUTER_SET zst_1120_backstab_penalty_staves    = "2"
+OUTER_SET zst_1120_backstab_penalty_wakis     = "0"
+OUTER_SET zst_1120_backstab_penalty_ninjatos  = "0"
+OUTER_SET zst_1120_backstab_penalty_bstsword  = "0"
+OUTER_SET zst_1120_backstab_penalty_2hsword   = "0"
+OUTER_SET zst_1120_backstab_penalty_sswords   = "0"
+OUTER_SET zst_1120_backstab_penalty_daggers   = "0"
+OUTER_SET zst_1120_backstab_penalty_maces     = "0"
+OUTER_SET zst_1120_backstab_penalty_clubs     = "0"
+OUTER_SET zst_1120_backstab_penalty_hammers   = "0"
+OUTER_SET zst_1120_backstab_penalty_mornstars = "0"
+OUTER_SET zst_1120_backstab_penalty_flails    = "0"
+OUTER_SET zst_1120_backstab_penalty_axes      = "0"
+OUTER_SET zst_1120_backstab_penalty_spears    = "0"
+OUTER_SET zst_1120_backstab_penalty_halberds  = "0"
+
 // control which category of weapons are affected by the dice changes component
 OUTER_SET zst_1150_dice_spears           = "1"
 OUTER_SET zst_1150_dice_bastard_swords   = "1"
@@ -27,7 +47,10 @@ OUTER_SET zst_1150_dice_warhammers       = "1"
 OUTER_SET zst_1150_dice_twohanded_swords = "1"
 
 // This modifies the blunt weapon tweak so the AC debuff only works against enemies that don't wear armor, such as dragons
-OUTER_SET zst_blunt_only_nonarmored = "0"
+OUTER_SET zst_1362_blunt_only_nonarmored = "0"
+
+// save penalty/bonus for arrows of dispelling
+OUTER_SET zst_1371_save_penalty = "-2"
 
 // allow or disallow weapon categories to be modified by the Finesse component (Component 1450)
 OUTER_SET zst_1450_allow_daggers   = "1"
@@ -49,24 +72,34 @@ OUTER_SET zst_1450_allow_bucklers  = "1"
 OUTER_SET zst_1450_allow_bards               = "1"
 OUTER_SET zst_1450_bards_probability_penalty = 24 // 25%, probabilities go from 0 to 99
 
+// potions are usable by everyone
+OUTER_SET zst_1534_potions_usable_everyone   = "1"
+OUTER_SET zst_1534_potion_overhaul           = "1"
+OUTER_SET zst_1534_potions_cannot_self_stack = "1"
+
 // tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted  half, you would type 50.
 OUTER_SET zst_1538_jewelry_price = "150"
 
 // allow or disallow tweaks for component 1545 (stat tweaks)
-OUTER_SET zst_1545_strength_bonuses     = "1"
-OUTER_SET zst_1545_constitution_bonuses = "1"
-OUTER_SET zst_1545_dexterity_bonuses    = "1"
-OUTER_SET zst_1545_lore_class_bonuses   = "1" // lore bonuses per class
-OUTER_SET zst_1545_lore_stat_bonuses    = "1" // lore bonuses with intelligence and wisdom
-OUTER_SET zst_1545_racethac0_bonuses    = "1" // thac0 bonuses for race
-OUTER_SET zst_1545_proficiency_bonuses  = "1"
-OUTER_SET zst_1545_weapon_style_bonuses = "1"
+OUTER_SET zst_1545_strength_bonuses       = "1"
+OUTER_SET zst_1545_constitution_bonuses   = "1"
+OUTER_SET zst_1545_dexterity_bonuses      = "1"
+OUTER_SET zst_1545_lore_class_bonuses     = "1" // lore bonuses per class
+OUTER_SET zst_1545_lore_stat_bonuses      = "1" // lore bonuses with intelligence and wisdom
+OUTER_SET zst_1545_racethac0_bonuses      = "1" // thac0 bonuses for race
+OUTER_SET zst_1545_proficiency_bonuses    = "1"
+OUTER_SET zst_1545_weapon_style_bonuses   = "1"
+OUTER_SET zst_1545_weapon_style_twohanded = "1" // allow two handed tweak
+OUTER_SET zst_1545_weapon_style_onehanded = "1" // allow one handed tweak
+OUTER_SET zst_1545_weapon_style_shield    = "1" // allow two handed tweak
+OUTER_SET zst_1545_weapon_style_twoweapon = "1" // allow two weapon tweak
 
 // allow tweaks to different shield types
 OUTER_SET zst_1546_buckler_tweak = "1"
 OUTER_SET zst_1546_small_tweak   = "1"
 OUTER_SET zst_1546_medium_tweak  = "1"
 OUTER_SET zst_1546_tower_tweak   = "1"
+OUTER_SET zst_1546_speed_debuffs = "0"
 
 // tweaks to shield usability
 OUTER_SET zst_1546_everyone_can_use_all_shields         = "0"
@@ -78,6 +111,10 @@ OUTER_SET zst_1546_buckler_wizards                      = "1" // allows wizard c
 
 // tweaks to armor usability -- ignore for now, unimplemented
 // OUTER_SET zst_1549_full_plate_single_fighters_only = "1"
+
+// tweaks to backstab requirements, set to 1 if you want backstabs without invisibility but with angle requirements
+// otherwise the default is removing angle requirements, but requiring invisibility
+OUTER_SET zst_1600_backstab_no_invis_requirement_only = "0"
 
 ////////////////////////////// Gear tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -91,7 +128,7 @@ OUTER_SET zst_1997_shadow = "1"
 ////////////////////////////// Dagger tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // poisoned throwing daggers tweaks
-OUTER_SET zst_1000_sbonus          = "-2"  // saving throw penalty
+OUTER_SET zst_1000_sbonus          = "-2"  // saving throw penalty, values of 0 or above disable that part
 OUTER_SET zst_1000_store_additions = "1"   // increase the stock of poisoned daggers
 OUTER_SET zst_1000_stack_mult      = "100" // percentage multiplier for the number of stacks of poisoned throwing daggers inserted. For example, if you only want half, you'd set this to 50, if you want 20% more, you'd set it to 120. Values of zero and below are ignored.
 
@@ -236,9 +273,11 @@ OUTER_SET zst_2130_avoid_death    = "1"
 OUTER_SET zst_2231_fire_boost      = "1" // include the boost to fire damage in the Dragon Disciple tweak
 OUTER_SET zst_2231_fire_boost_pctg = "5" // percentage bonus if the previous is allowed
 
-// configurations for skald+blade apr bonus
+// configurations for skald+blade+swash apr bonus
 OUTER_SET zst_2260_allow_blade  = "1"
 OUTER_SET zst_2260_allow_skald  = "1"
+OUTER_SET zst_2260_allow_swash  = "1"
+OUTER_SET zst_2260_allow_tempus = "1"
 
 /////////////////////////////// Creature Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

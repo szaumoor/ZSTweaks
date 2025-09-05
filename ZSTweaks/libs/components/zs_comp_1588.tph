@@ -5,13 +5,15 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
-    COPY_EXISTING "SW1H52.itm" ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7570) END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=28,p1=20~ END
-        LPF GET_DMG_TYPE STR_VAR type="cold" RET cold = result END
-        LPF ADD_ON_HIT_EFF STR_VAR effects=~op=12,dsize=2,dnum=1,p2=%cold%,spec=1024~ END
 
-    ACTION_IF group_component OR (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1470~ AND MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1589~) BEGIN
-        INCLUDE ~%MOD_FOLDER%/patches/item_upgrade/scripts/zs_watertalon.tph~
-    END
+  COPY_EXISTING "SW1H52.itm" ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7570) END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=28,p1=20~ END
+    LPF GET_DMG_TYPE STR_VAR type="cold" RET cold = result END
+    LPF ADD_ON_HIT_EFF STR_VAR effects=~op=12,dsize=2,dnum=1,p2=%cold%,spec=1024~ END
+
+  ACTION_IF group_component OR (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1470~ AND MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1589~) BEGIN
+    INCLUDE ~%MOD_FOLDER%/patches/item_upgrade/scripts/zs_watertalon.tph~
+  END
+
 END

@@ -7,11 +7,13 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING ~NPSW04.ITM~ ~override~
         SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
+
         PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1120" OR general_tweaks_installed BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 263 parameter1 = 1 END
         END ELSE BEGIN
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=1~ END
         END
+
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=178,p1=202,p2=5,spec=4;op=178,p1=19,p2=5,spec=4~ END
         LPF RM_STAT_REQS END
         LPF ALTER_EFFECT INT_VAR match_opcode = 25 special = 6 END
@@ -20,11 +22,14 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             SPRINT strref @7100
             SPRINT str @99999
             LPF WPN_DMG RET dmg = result END
+
             INNER_PATCH_SAVE strref ~%strref%~ BEGIN
                 REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10~ ~\12d5~
             END
             SAY_EVALUATED 0x54 ~%strref%~
+
         END ELSE BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7100) END
         END
+
 END

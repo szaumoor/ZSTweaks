@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+
     COPY_EXISTING ~CLCK12.ITM~ ~override~ // knave
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6140) END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 2 END
@@ -46,7 +47,8 @@ ACTION_IF NOT is_iwdee BEGIN
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 29 parameter1 = 40 END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=3~ END
 
-    COPY_EXISTING_REGEXP ~^CLCK1[567]\.ITM$~ ~override~ // archmage robes
+    COPY_EXISTING_REGEXP ~^CLCK1[567]\.itm$~ ~override~ // archmage robes
+
         PATCH_IF "%SOURCE_RES%" STR_EQ ~CLCK15~ BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6147) END
         END ELSE PATCH_IF "%SOURCE_RES%" STR_EQ ~CLCK16~ BEGIN

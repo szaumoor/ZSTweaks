@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
     COPY ~%MOD_FOLDER%/items/psion_blade~ ~override~
     COPY_EXISTING ~ZSTWPSIA.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1=RESOLVE_STR_REF(@7691) END
@@ -14,6 +15,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,p1=%race_mind_flayer%,p2=4,res=ZSTWPSIB~ END
 
         PATCH_IF zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN
+
             SPRINT strref @7690
             SPRINT str @99999
             LPF WPN_DMG RET dmg = result END
@@ -21,7 +23,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]10[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?,[ %TAB%]\+7 vs. Mind Flayers~ ~\11d9+%dmg%, +8 vs. Mind Flayers~
             END
             SAY_EVALUATED 0x54 ~%strref%~
+
         END ELSE BEGIN
+
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7690) END
+
         END
+        
 END

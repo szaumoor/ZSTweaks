@@ -189,7 +189,7 @@ Weight: 0~
 STATISTICS:
 
 THAC0: +2
-Damage: 1d6+2, +1d6 fire damage (Save vs. Spell for none)
+Damage: 1d6+2, +1d6 fire damage
 Damage type: Missile
 Launcher: Bow
 
@@ -201,7 +201,7 @@ Weight: 0~
 STATISTICS:
 
 Combat abilities:
-– 1d6 fire damage (Save vs. Spell negates)
+– 1d6 fire damage
 
 Damage: 1d6 (missile)
 Launcher: Bow
@@ -230,7 +230,45 @@ Combat abilities:
 – Target must save vs. Death or take 30 points of poison damage in 15 seconds
 – Chance to score a critical hit: +5%
 
-Damage: 1d8 (missile)
+Damage: 1d8, +1 poison damage
+Damage type: Missile
 Launcher: Crossbow
 
 Weight: 0~
+
+@8205 = ~This arrow will remove the magical enchantments that its victim is surrounded by.
+
+STATISTICS:
+
+Combat abilities:
+– Dispel Magic on target when hit if save vs. Spell at %zst_1371_save_penalty% fails
+
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~
+
+@8206 = ~This arrow will remove the magical enchantments that its victim is surrounded by.
+
+STATISTICS:
+
+Combat abilities:
+– Dispel Magic on target when hit if save vs. Spell fails
+
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~
+
+@8207 = ~This arrow will remove the magical enchantments that its victim is surrounded by.
+
+STATISTICS:
+
+Combat abilities:
+– Dispel Magic on target when hit if save vs. Spell at +%zst_1371_save_penalty% fails
+
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~
+

@@ -5,17 +5,24 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT has_eefixpack BEGIN
-    ACTION_IF NOT is_iwdee BEGIN
-        COPY_EXISTING ~SPPR508.SPL~ ~override~
-            LPF LAST_VALID_HEADER RET new_header = result END
-            SET d = 1080
-            FOR ( level = 19; level <= 20; ++level ) BEGIN
-                LPF ADD_SPELL_HEADER INT_VAR copy_header = new_header+1 zs_min_level_for_copy=level insert_point=new_header+1 END
-                LPF ALTER_EFFECT INT_VAR header_type=1 header = new_header+1 match_duration=d duration=(d+60) END
-                d+=60
-                ++new_header
-            END
-    END
+
+  ACTION_IF NOT is_iwdee BEGIN
+
+    COPY_EXISTING ~SPPR508.SPL~ ~override~
+      LPF LAST_VALID_HEADER RET new_header = result END
+      SET d = 1080
+
+      PATCH_FOR_EACH level IN 19 20 BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = new_header+1 zs_min_level_for_copy=level insert_point=new_header+1 END
+        LPF ALTER_EFFECT INT_VAR header_type=1 header = new_header+1 match_duration=d duration=(d+60) END
+        d+=60
+        ++new_header
+      END
+
+  END
+
 END ELSE BEGIN
-    PRINT ~EET Fixpack detected, skipping Chaotic Commands component.~
+
+  PRINT ~EET Fixpack detected, skipping Chaotic Commands component.~
+
 END

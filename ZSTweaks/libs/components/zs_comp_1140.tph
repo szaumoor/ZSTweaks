@@ -5,7 +5,9 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
     WITH_SCOPE BEGIN
+        OUTER_SET finesse_component_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "1450"
         LAF GET_DMG_TYPE STR_VAR type = ~fire~ RET f = result END
         LAF GET_DMG_TYPE STR_VAR type = ~electricity~ RET el = result END
         OUTER_SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
@@ -15,7 +17,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 20 probability1 = 9 END
             LPF ADD_ON_HIT_EFF INT_VAR p1=1 spec=1024 STR_VAR effects = ~op=12,p2=%f%;op=12,p2=%el%~ END
 
-            PATCH_IF zst_1450_allow_daggers AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR general_tweaks_installed) BEGIN // update +5 enchantment
+            PATCH_IF zst_1450_allow_daggers AND (finesse_component_installed OR general_tweaks_installed) BEGIN // update +5 enchantment
                 LPF PROBABILITY_BONUS INT_VAR ench = 5 RET bonus = result END
                 LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 probability1 = (base_dagg_dart+bonus) STR_VAR match_resource=~ZSTWD4~ resource=~ZSTWD5~ END
             END
@@ -54,7 +56,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ADD_ON_HIT_EFF INT_VAR p1=2 spec=1024 STR_VAR effects = ~op=12,p2=%f%;op=12,p2=%el%~ END
             LPF ADD_ITEM_HEADER INT_VAR range=50 charges=2 flags=2560 depletion=3 STR_VAR icon=~SPPR612B~ END
             LPF ADD_ON_HIT_EFF INT_VAR t=3 p2=1 STR_VAR effects = ~op=146,res=ZSTWDST0;op=146,res=ZSTWDST1;op=146,tgt=1,res=ZSTWDST6~ END
-            PATCH_IF zst_1450_allow_daggers AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR general_tweaks_installed) BEGIN // update +6 enchantment
+            PATCH_IF zst_1450_allow_daggers AND (finesse_component_installed OR general_tweaks_installed) BEGIN // update +6 enchantment
                 LPF PROBABILITY_BONUS INT_VAR ench = 6 RET bonus = result END
                 LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 probability1=(bonus+base_dagg_dart) STR_VAR match_resource=~ZSTWD5~ resource=~ZSTWD6~ END
             END
@@ -72,4 +74,5 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 6 to_hit = 6 END
             END
     END
+
 END

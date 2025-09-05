@@ -25,13 +25,14 @@ END
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_ENCH RET ench = result END
     LPF ITM_ABILITIES_NUM RET num_abilities = result END
-    PATCH_IF ench >= 0 AND ench < 7 AND num_abilities > 0 BEGIN
+    LPF ITM_APPEARANCE RET appearance = result END
+    PATCH_IF ench >= 0 AND ench < 7 AND num_abilities > 0
+    BEGIN
         LPF ITM_CAT RET cat = result END
         LPF ITM_PROF RET prof = result END
-        LPF ITM_APPEARANCE RET appearance = result END
         LPF PROBABILITY_BONUS INT_VAR ench = ench RET bonus = result END
 
-        PATCH_IF zst_1450_allow_daggers AND cat=16 AND prof=96
+        PATCH_IF zst_1450_allow_daggers AND cat=16 AND prof=96 AND NOT ("%appearance%" STR_EQ "  ")
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg15" // Last Resort (wares of the planes)
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg05" // Entropic Blade (wares of the planes)
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg09" //
@@ -39,14 +40,18 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         BEGIN
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN
+
                 LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWD%ench%~ END
                 LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWZ%ench%~ END
+
             END ELSE BEGIN
+
                 LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_dagg_dart+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWD%ench%~ END
                 LPF weapon_damage_by_custom INT_VAR type=2 probability1=(base_dagg_dart+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWZ%ench%~ END
+
             END
 
-        END ELSE PATCH_IF zst_1450_allow_darts AND cat=14 BEGIN
+        END ELSE PATCH_IF zst_1450_allow_slings AND cat=14 BEGIN
 
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "bdbull02" BEGIN // bullets of darkness (SoD)
 
@@ -115,7 +120,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                 LPF weapon_damage_by_custom INT_VAR type=2 probability1=(base_dagg_dart+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWT%ench%~ END
             END
 
-        END ELSE PATCH_IF zst_1450_allow_staves AND cat=26 AND prof=102 BEGIN
+        END ELSE PATCH_IF zst_1450_allow_staves AND cat=26 AND prof=102 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN
                 LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ls_staff+bonus) STR_VAR class=~THIEF~ spell=~ZSTWQ%ench%~ END
@@ -123,7 +128,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                 LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_ls_staff+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWQ%ench%~ END
             END
 
-        END ELSE PATCH_IF zst_1450_allow_lswords AND cat=20 AND prof=90 BEGIN
+        END ELSE PATCH_IF zst_1450_allow_lswords AND cat=20 AND prof=90 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
 
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "bdsw1h06" // voidsword (SoD)
                  AND NOT "%SOURCE_RES%" STR_EQ "KILLSW01" // cheat sword
@@ -166,7 +171,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                 LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWJ%ench%~ END
             END
 
-        END ELSE PATCH_IF zst_1450_allow_katanas AND cat=20 AND prof=94 BEGIN
+        END ELSE PATCH_IF zst_1450_allow_katanas AND cat=20 AND prof=94 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN
                 LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sci_ka+bonus) STR_VAR class=~THIEF~ spell=~ZSTWK%ench%~ END
@@ -182,7 +187,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                 LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWW%ench%~ END
             END
 
-        END ELSE PATCH_IF zst_1450_allow_sswords AND cat=19 AND prof=91 BEGIN
+        END ELSE PATCH_IF zst_1450_allow_sswords AND cat=19 AND prof=91 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN
                 LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ss_club+bonus) STR_VAR class=~THIEF~ spell=~ZSTWY%ench%~ END
@@ -190,7 +195,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                 LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_ss_club+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWY%ench%~ END
             END
 
-        END ELSE PATCH_IF zst_1450_allow_clubs AND cat=17 AND prof=115 BEGIN
+        END ELSE PATCH_IF zst_1450_allow_clubs AND cat=17 AND prof=115 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
 
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "l#BASR7" BEGIN // lava's
 

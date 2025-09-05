@@ -151,11 +151,11 @@ Level: 1
 Sphere: Plant
 Range: Visual range of the caster
 Duration: 1 turn
-Casting Time: 4
+Casting Time: 3
 Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
-By means of this spell, the caster is able to cause plants in the area of effect to entangle creatures within the area. The grasses, weeds, bushes, and even trees wrap, twist, and entwine about the creatures, holding them fast. Once per round, a creature can attempt to save vs. Spell with a +2 bonus to avoid entanglement. The difficulty of the saving throw improves by 1 at level 5 and every fifth level thereafter.  An entangled creature can still attack, but receives a -2 penalty to its Armor Class.~
+By means of this spell, the caster is able to cause plants in the area of effect to entangle creatures within the area. The grasses, weeds, bushes, and even trees wrap, twist, and entwine about the creatures, holding them fast. Once per round, a creature can attempt to save vs. Breath with a +2 bonus to avoid entanglement. The difficulty of the saving throw improves by 1 at level 5 and every fifth level thereafter. An entangled creature can still attack once per round, but receives a -3 penalty to its Armor Class.~
 
 @5110 = ~Poison
 (Necromancy)
@@ -633,12 +633,13 @@ Other creatures: 4d6 damage (half fire and half magical).
 
 This spell is not affected by magic resistance and creatures affected by radiant damage cannot reduce it in any way through their resistances.~
 
-@8121 = ~Inflicted 7d6 radiant damage~
-@8122 = ~Inflicted 8d6 radiant damage~
-@8123 = ~Inflicted 9d6 radiant damage~
-@8124 = ~Inflicted 10d6 radiant damage~
-@8125 = ~Inflicted 2d6 radiant damage~
+@8121 = ~Takes 7d6 radiant damage~
+@8122 = ~Takes 8d6 radiant damage~
+@8123 = ~Takes 9d6 radiant damage~
+@8124 = ~Takes 10d6 radiant damage~
+@8125 = ~Takes 2d6 radiant damage~
 @8126 = ~Weakened by Sunray~
+@8127 = ~Takes 5d6 radiant damage~
 
 @8130 = ~False Dawn
 (Evocation)
@@ -665,7 +666,7 @@ Saving Throw: None
 
 This powerful spell creates waves of anti-negative energy that sweep outward from the caster. These waves disrupt any undead that attempt to attack the caster, pushing them away from the caster for several seconds, causing Slow for half a round and 8 points of damage (half magical, half radiant which cannot be resisted). There is one wave per round for the duration of the spell. All undead are affected with no saving throw.~
 
-@8210 = ~Mist of Eldath
+@8210 = ~Rejuvenating Mist
 (Invocation)
 
 Level: 7
@@ -676,7 +677,9 @@ Casting Time: 6
 Area of Effect: 7-ft. radius
 Saving Throw: None
 
-This spell blankets the area of effect with a silver-blue mist—any creature within the mist will be cured of disease and poison and healed 40 Hit Points. During 2 rounds after the casting, affected creatures remain immune to poison and disease and regenerate 1 HP per second for 2 rounds.~
+This spell blankets the area of effect with a silver-blue mist—any creature within the mist will be cured of disease and poison and healed 40 Hit Points. During 2 rounds after the casting, affected creatures remain immune to poison and disease and regenerate 2 Hit Points per second for 2 rounds.~
+
+@8211 = ~Rejuvenating Mist~
 
 @8230 = ~Wall of Moonlight
 (Invocation)
@@ -816,9 +819,9 @@ Range: Visual range of the caster
 Duration: 11 rounds
 Casting Time: 3
 Area of Effect: 12-ft. radius
-Saving Throw: Neg.
+Saving Throw: None
 
-Symbol, Pain is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area of effect to make a saving throw vs. Spell at -4. Those who fail their saving throws are overwhelmed by pain, suffering a -4 penalty to their attack rolls, a -10% penalty to all damage inflicted, a -2 penalty to their Dexterity scores, and a -2 penalty to their Armor Class.~
+Symbol, Pain is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area of effect to be overwhelmed by pain, suffering a -4 penalty to their attack rolls, a -10% penalty to all damage inflicted, a -2 penalty to their Dexterity scores, and a -2 penalty to their Armor Class.~
 
 @8290 = ~Righteous Wrath of the Faithful
 (Enchantment/Charm)
@@ -846,7 +849,6 @@ Saving Throw: Special
 
 This spell creates a silver-hued, partially ethereal lance shaped in the form of an alicorn (a unicorn horn). The caster chooses a target, and the alicorn lance instantaneously fires at it, inflicting 3d6 points of piercing damage plus 1d6 every 2 levels, up to 8d6, with a Save vs. Spell for half. Although the alicorn lance dissipates after it strikes, it always leaves a silvery radiance around the target that makes it easier to see and hit, giving it a -2 penalty to its Armor Class for 3 rounds.~
 
-//todo
 @8360 = ~Whirlwind
 (Invocation)
 
@@ -858,7 +860,7 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: Special
 
-This spell creates a small whirlwind within the caster's sight. The whirlwind will fly around randomly, harming friend and foe alike. The caster is immune to <PRO_HISHER> own spell, and elementals and other huge creatures are also unaffected. If a creature is caught in the path of the whirlwind, it takes 4d8 crushing damage, 4d8 slashing damage, and must make a Save vs. Breath Weapon or be stunned for 2 rounds. Creatures with 2 or fewer Hit Dice are automatically killed by this spell. A maximum of 10 targets can be affected, after which the whirlwind will dissipate. This spell is not affected by magic resistance.~
+This spell creates a small whirlwind within the caster's sight. The whirlwind will fly around randomly, harming friend and foe alike. The caster is immune to <PRO_HISHER> own spell, and elementals and other huge creatures are also unaffected. If a creature is caught in the path of the whirlwind, it takes 4d8 crushing damage, 4d8 slashing damage, and must make a Save vs. Breath Weapon or be stunned for 2 rounds. Creatures with 2 or fewer Hit Dice are automatically killed by this spell. This spell is not affected by Magic Resistance.~
 
 @8600 = ~Greater Restoration
 (Necromancy)
@@ -872,3 +874,120 @@ Area of Effect: Special
 Saving Throw: None
 
 When this spell is cast, the life energy level of the recipient is raised. This reverses any previous life energy level drain of the creature by a force or monster. A Greater Restoration spell will also restore the Intelligence score of a creature affected by the Feeblemind spell and negate any form of insanity, such as confusion or berserk. It fully heals the target, cures any diseases or poisons. This restoration spreads to the rest of party members, including the priest, who is healed by half its total health only. The casting of this spell is very draining on the priest, and <PRO_HESHE> will likely require rest immediately afterward. This fatigue is profound, additionally causing a -2 penalty to casting speed, damage, THAC0, and Armor Class, as well as a 35% movement speed penalty for 2 turns.~
+
+@8658 = ~Smashing Wave
+(Invocation)
+
+Level: 4
+Sphere: Elemental Water
+Range: 100 ft.
+Duration: Instant
+Casting Time: 3
+Area of Effect: Special
+Saving Throw: Special
+
+This spell summons a 5-ft. wide wave of water that moves in the direction willed by the caster, striking all in its path with massive force. The wave deals 6d8+4 points of crushing damage; in addition, struck creatures have a 33% chance of being either stunned or knocked unconscious for 2 rounds. If the creature struck makes a successful Save vs. Breath Weapon at -1, the damage is reduced by half and the creature avoids being stunned or knocked unconscious. This spell is not affected by Magic Resistance.~
+
+@8562 = ~Static Charge
+(Alteration)
+
+Level: 4
+Sphere: Weather
+Range: 0
+Duration: 1 turn/level
+Casting Time: 9
+Area of Effect: Visual range of the caster
+Saving Throw: 1/2
+
+Static Charge is similar to Call Lightning, except it can be used indoors. This spell allows the caster to generate a static charge around any creature within the area of effect, dealing 2d8 points of electrical damage plus an additional 1d8 points per two levels of the caster (save vs. Spell for half). The charge keeps going off once every 5 rounds for the duration of the spell.~
+
+@8564 = ~Cloudburst
+(Invocation)
+
+Level: 3
+Sphere: Elemental Water
+Range: Visual range of the caster
+Duration: 5 rounds
+Casting Time: 6
+Area of Effect: 17-ft. radius
+Saving Throw: None
+
+This spell brings forth a magical rain that saturates the area of effect. All cold and fire-immune creatures take 4d3 points of magic damage per round. In addition, all creatures in the area have a 50% chance per round of being struck by bolts of lightning that deal 2d8 electrical damage. Flame Blade, Shroud of Flame, and salamander auras are extinguished by Cloudburst.~
+
+@8566 = ~Thorn Spray
+(Alteration)
+
+Level: 4
+Sphere: Plant
+Range: 30 ft.
+Duration: Instant
+Casting Time: 3
+Area of Effect: 17-ft. cone with 90-deg. arc
+Saving Throw: 1/2
+
+By means of this spell, the caster can cause a spray of barbs, spikes, thorns, and spines to spring forth from <PRO_HISHER> hand. The thorn spray covers a 17-ft.-long cone, inflicting 4d12 points of piercing damage, increased by 1d12 per two levels, up to 6d12, to all creatures within the area of effect, or half as much if a Save vs. Breath is successful. Magic Resistance does not apply to this spell.~
+
+@8576 = ~Spike Stones
+(Alteration, Enchantment)
+
+Level: 5
+Sphere: Elemental Earth
+Range: Visual range of the caster
+Duration: 12 rounds
+Casting Time: 6
+Area of Effect: 8-ft. radius
+Saving Throw: Special
+
+This spell warps the surrounding rock, reshaping the terrain into spiked projections that blend into the background. Any creature entering the area takes 4d4 Hit Points of combined piercing and slashing damage per round, and must make a Save vs. Breath or have its movement rate reduced by 50%.~
+
+@8588 = ~Barkskin
+(Alteration)
+
+Level: 2
+Sphere: Protection, Plant
+Range: Touch
+Duration: 1 turn + 1 round/level
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+When a priest casts the Barkskin spell upon a creature, its skin becomes as tough as bark, increasing its base Armor Class to 6, plus 1 for every 4 levels of the priest: Armor Class 5 at 4th level, Armor Class 4 at 8th, and so on. In addition, Saving Throws vs. all attack forms except magic gain a +1 bonus. This spell can be placed on the caster or on any other creature <PRO_HESHE> touches.~
+
+@8589 = ~Known only as the "Wild Man of the Wood," the man that carried this staff was a legendary figure near Trademeet until the day he died and returned to the soil. Those who saw him remember his dark, bark-like skin, a feature that would fade if the staff were set aside. He would harass irresponsible loggers and poachers, and old-timers tell of mercenaries chasing him with a dozen hunting dogs or more. The animals seemed ready to rip the poor druid to pieces, but he quickly turned them on their former masters. Rushing forward in hopes of ending his influence, the men-at-arms saw the final power of the staff, and as the vegetation trembled with the "Wild Man's" magical calling, there formed a green, rotting mix of life and death that shambled overtop of the terrified soldiers, killing them all.
+
+STATISTICS:
+
+Equipped abilities:
+– Wielder is under the effects of Barkskin at all times when the staff is held, although this will not grant the benefit of blocking the first blow from a weapon, as the normal spell does. This effect will not stack with castings of the Barkskin spell.
+
+Charge abilities:
+– Summon 8-HD Shambling Mound
+  Range: 40 ft.
+  Duration: 100 seconds
+
+– Enhanced Charm Animal (Save vs. Spell at -4 negates)
+  Range: 40 ft.
+  Duration: 1 hour
+
+THAC0: +4
+Damage: 1d6+4 (crushing)
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 2~
+
+@8606 = ~Produce Fire
+(Alteration)
+
+Level: 4
+Sphere: Elemental Fire
+Range: Visual range of the caster
+Duration: 1 round
+Casting Time: 7
+Area of Effect: 4-ft. radius
+Saving Throw: None
+
+When cast, flames erupt from the target point, dealing 1d4 points of fire damage plus 1 point per level of the caster to all creatures within the spell's radius. Creatures will take damage every 2 seconds regardless of when they enter the area of effect. A target may only be affected by this spell three times per round at most.~

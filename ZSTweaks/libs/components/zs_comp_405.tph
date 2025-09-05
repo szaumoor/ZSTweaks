@@ -6,13 +6,12 @@ END
 
 OUTER_SET new_description = RESOLVE_STR_REF(@7380)
 COPY_EXISTING ~SPWI813.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=new_description END
-    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_resist_dispel = 1 resist_dispel = 3 END
-    PATCH_IF NOT is_iwdee BEGIN
-        LPF CLONE_EFFECT INT_VAR match_opcode=215 parameter2=29 opcode=324 duration=0 STR_VAR resource=~SPWI813~ insert=~first~ END
-    END
+  LPF ALTER_SPELL INT_VAR ref_desc=new_description END
+  LPF ALTER_EFFECT INT_VAR check_globals = 0 match_resist_dispel = 1 resist_dispel = 3 END
+  PATCH_IF NOT is_iwdee BEGIN
+    LPF CLONE_EFFECT INT_VAR match_opcode=215 parameter2=29 opcode=324 duration=0 STR_VAR resource=~SPWI813~ insert=~first~ END
+  END
 
 COPY_EXISTING ~SCRL9H.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
+  LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
 BUT_ONLY IF_EXISTS
-

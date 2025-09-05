@@ -12,7 +12,7 @@ This is done because there is no advantage that I can see to making that damage 
 
 In vanilla, this is not contemplated, likely because there isn't any means of introducing sleep on hit to arbitrary weapons and as such that circumstance would have never occurred. My mod ZS_WeaponOils does introduce this situation if using the Drow Soporific Oil.
 
-As of version 1.4.5 a configuration file is now provided, where the user may change some variables to further customize components. This file is **ZSTweaks/zstweaks_prefs.txt**.
+As of version 1.4.5 a configuration file is now provided, where the user may change some variables to further customize components. This file is **ZSTweaks/zstweaks_prefs.txt**. Be sure to check it out to see what you can fine tune.
 
 ### [See all component details here](ZSTweaks/component_readme.md)
 
@@ -52,6 +52,7 @@ An exception to this are components that EXPLICITLY say that they must be instal
 - The developers of WeiDu, including the documentation
 - And the IESDP, an invaluable resource.
 - moggadeet and JDSilvergun for suggesting lines of dialog for Cespenar
+- Troveur for good ideas, feedback, and suggestions for tweaks
 - People on Discord generally for their help, and the great modders out there that allowed their WeiDu code to be available publicly, like The Artisan, jmerry, CamDawg, 11jo, Argent77, Ardanis, DavidW, SubtleDoctor, among others.
 - dark0dave for giving me the idea of adding a configuration file, now an integral part of the mod that I'll never part with and will continue to implement in other mods.
 - For the people in G3 and Discord for reporting bugs

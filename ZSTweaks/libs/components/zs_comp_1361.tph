@@ -8,8 +8,8 @@ COPY ~%MOD_FOLDER%/items/axes_crit~ ~override~
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF ITM_CAT RET cat = result END
     LPF ITM_ABILITIES_NUM RET num_abilities = result END
-    PATCH_IF cat = 25 AND num_abilities > 0 // axes
-    // exceptions
+    LPF ITM_APPEARANCE RET appearance = result END
+    PATCH_IF cat = 25 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ")
     AND NOT "%SOURCE_RES%" STR_EQ "a7-ax08" BEGIN // AXE OF THE JESTER (wares of the planes)
         LPF ITM_ENCH RET ench = result END
         LPF IS_FLAG_SET INT_VAR flag = 1 RET is_two_handed = result END

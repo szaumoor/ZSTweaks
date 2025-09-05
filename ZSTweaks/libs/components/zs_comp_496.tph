@@ -1,0 +1,16 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_496~) BEGIN
+  FAIL ~Script already included: zs_comp_496~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_496~ = 1
+END
+
+
+COPY_EXISTING ~SPPR113.SPL~ ~override~
+    LPF ALTER_HEADER INT_VAR speed = 1 END
+
+    SPRINT cast_speed @99970
+    READ_STRREF 0x50 desc
+    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%cast_speed%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\11~ //thac0
+    END
+    SAY_EVALUATED 0x50 ~%desc%~

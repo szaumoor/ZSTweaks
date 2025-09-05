@@ -18,4 +18,3 @@ COPY_EXISTING ~BOLTUND.EFF~ ~override~
 
 COPY_EXISTING ~BOLTDEM.EFF~ ~override~
     LPF ALTER_EFF_FILE INT_VAR parameter1=6 dicesize=8 dicenumber=8 END
-

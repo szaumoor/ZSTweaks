@@ -1177,7 +1177,7 @@ Weight: 35~
 STATISTICS:
 
 Equipped abilities:
-– Immunity to fear and panic
+– Immunity to fear and morale failure
 
 Combat abilities:
 – Curse: Each hit has a 15% chance to curse living targets for 6 rounds, imposing a -1 penalty to all rolls, luck, Armor Class, and morale, and increasing their chances of critical misses by 5%. This effect does not stack.
@@ -1206,18 +1206,52 @@ Requires:
 
 Weight: 25~
 
-@8480 = ~Named by Adarius Shin, the Doomplate is deserving of its foreboding title. He had hoped to strike fear in his enemies, but Adarius set a grim precedent when he mysteriously died soon after donning the suit, just as every adventurer who has worn it since has done. It might be said, however, that most adventurers die in their armor and are not known for their longevity.
+@8480 = ~The oldest scraps of tale hint at this armor's original bearer: a nigh-mythical slayer of demons who was said to rip and tear their flesh with his bare hands, carving a wrathful path through infernal hosts. Whether the Doomplate remembers that champion, hungers for such purpose again, or merely amplifies the will of any who stride into the jaws of the abyss… none can say.
 
 STATISTICS:
 
 Equipped abilities:
-– Upon first equipping the armor, the wearer must make a saving throw vs. Death. Failing the save results in a permanent reduction of 1 point to both Constitution and saving throws vs. Death. If the save is successful, the armor instead grants a permanent bonus of 1 point to both Constitution and saving throws vs. Death. This effect becomes permanently bound to the wearer and will not transfer to anyone else, regardless of the outcome.
+– Armor Class: +2 vs. demons and devils
+– Damage: +2 vs. demons and devils
+– THAC0: +2 vs. demons and devils
+– Fire Resistance: +20%
+
+Combat abilities:
+– Magical weapons always overcome the natural weapon immunities of fiends (but not magical protections such as Absolute Immunity and Protection from Magical Weapons)
+– Fiends struck by the wearer must save vs. Death or have their Magic Resistance nullified for 2 rounds
 
 Armor Class: 0 (-3 vs. slashing)
 Requires:
  12 Strength
 
 Weight: 27~
+
+// for later
+@8481 = ~Slayer's Doomplate~
+@8482 = ~The oldest scraps of tale hint at this armor's original bearer: a nigh-mythical slayer of demons who was said to rip and tear their flesh with his bare hands, carving a wrathful path through infernal hosts. Whether the Doomplate remembers that champion, hungers for such purpose again, or merely amplifies the will of any who stride into the jaws of the abyss… none can say.
+
+Now empowered with the hearts of demons, this armor is now an incredibly powerful tool against the hordes of both the Abyss and the Hells.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. demons and devils
+– Damage: +4 vs. demons and devils
+– THAC0: +4 vs. demons and devils
+– Fire Resistance: +40%
+
+Combat abilities:
+– Magical weapons always overcome the natural weapon immunities of fiends (but not magical protections such as Absolute Immunity and Protection from Magical Weapons)
+– Fiends struck by the wearer must save vs. Death at -2 or have their Magic Resistance nullified for 2 rounds
+– 30% chance per hit to
+
+Armor Class: -2 (-5 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 20~
+
+@8483 = ~Magic Resistance Nullified~
 
 @8490 = ~Few suits of armor in all the realms are the equal of this full plate. All that remains of the origin of the Hart are folktales and legends. The most popular of these is that an impossible battle was once fought against an army of orcs surging through the Three Trees Pass. Arngor of the Oak led the armies of men and elves, and it is said that he dueled with the orc commander till the sun set, and the land was bathed in a bloody mist. Finally, the orc fell, but Arngor had sustained wounds too vast for any to save him. His blood soaked through the armor he wore, infusing it with his courage and nobility. Thus the Armor of the Hart became known to men.
 
@@ -1430,3 +1464,27 @@ Equipped abilities:
 – Immunity to backstabs and sneak attacks
 
 Weight: 2~
+
+@60000 = ~The cursed girdle of gender, a rare yet oft-discussed magical item, is wrought with a most powerful magic. Anyone unfortunate enough to secure it around their waist instantly finds their gender to be transformed. It is said that, not fifty years past, a nameless court jester was beheaded for presenting the girdle as a gift to Duke Lobelahn's lover.
+
+STATISTICS:
+
+Equipped abilities:
+– Changes the wearer's gender
+– THAC0: +1 vs. the original gender
+– Damage: +1 vs. the original gender
+– May only be removed with a Remove Curse spell
+
+Weight: 2~
+
+@60010 = ~This statue is a replica of a fierce gladiator wielding a blade in each hand. By invoking this figurine, the user temporarily transforms <PRO_HIMHER>self into a blue armored warrior wielding a magical short sword.
+
+STATISTICS:
+
+Charge abilities:
+– Transform once per day
+  Armor Class: Set to -5
+  Special: User is hasted and attacks three times per round with a +4 short sword. The sword critically hits 5% more often and is wielded as if the user has Mastery (3 proficiency slots) in short sword.
+  Duration: 1 turn
+
+Weight: 1~

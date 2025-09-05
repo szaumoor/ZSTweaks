@@ -6,23 +6,42 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    COPY_EXISTING ~BLUN30.ITM~  ~override~ // all the damn variations of flail of ages
-                  ~BLUN30C.ITM~ ~override~
-                  ~BLUN30D.ITM~ ~override~
-                  ~BLUN14.ITM~  ~override~
-                  ~BLUN14D.ITM~ ~override~
-                  ~BLUN14E.ITM~ ~override~
-                  ~BLUN14F.ITM~ ~override~
-                  ~BLUN14G.ITM~ ~override~
-                  ~BLUN14H.ITM~ ~override~
-                  ~BLUN14I.ITM~ ~override~
-        LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
+  COPY_EXISTING ~BLUN30.ITM~  ~override~ // all the damn variations of flail of ages
+                ~BLUN30C.ITM~ ~override~
+                ~BLUN30D.ITM~ ~override~
+                ~BLUN14.ITM~  ~override~
+                ~BLUN14D.ITM~ ~override~
+                ~BLUN14E.ITM~ ~override~
+                ~BLUN14F.ITM~ ~override~
+                ~BLUN14G.ITM~ ~override~
+                ~BLUN14H.ITM~ ~override~
+                ~BLUN14I.ITM~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
 
-    COPY_EXISTING ~BLUN30.ITM~ ~override~
-        LPF remove_haste_immunity END
-        LPF ALTER_EFFECT INT_VAR match_opcode = 166 parameter1 = 15 END
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7760) END
+  COPY_EXISTING ~BLUN14.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7761) END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 probability1=32 savingthrow = 1 savebonus = "-2" END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 40 probability1=32 savingthrow = 1 savebonus = "-2" duration = 12 END
 
-    COPY_EXISTING ~SPPR403.SPL~ ~override~
-        LPF DELETE_EFFECT INT_VAR match_opcode=126 END
+  COPY_EXISTING ~BLUN30C.ITM~ ~override~
+                ~BLUN30D.ITM~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 probability1=32 savingthrow = 1 savebonus = "-3" END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 40 probability1=32 savingthrow = 1 savebonus = "-3" duration = 12 END
+
+  COPY_EXISTING ~BLUN30C.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7762) END
+
+  COPY_EXISTING ~BLUN30D.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7763) END
+
+  COPY_EXISTING ~BLUN30.ITM~ ~override~
+    LPF remove_haste_immunity END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 166 parameter1 = 15 END
+    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7760) END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 probability1=32 savingthrow = 1 savebonus = "-4" END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 40 probability1=32 savingthrow = 1 savebonus = "-4" duration = 12 END
+
+  COPY_EXISTING ~SPPR403.SPL~ ~override~
+    LPF DELETE_EFFECT INT_VAR match_opcode=126 END
+
 END

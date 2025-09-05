@@ -52,10 +52,8 @@
 @1530 = ~Make the inexplicably double damage magical throwing daggers deal normal, to not make them the obvious choice~
 @1533 = ~Rebalance some wands~
 @1534 = ~Rebalance some potions~
-@1535 = ~Make all potions usable by all classes~
 @1537 = ~Make Poison-curing spells an instant cast so attempting to cure poison is less likely to be interrupted~
 @1650 = ~Make mage robes without cloak (like Robe of Vecna) take on the appearance of a robe with cloak~
-@1601 = ~Make potions and food items' effects universally incapable of stacking with themselves~
 @1541 = ~Make vorpal hits not work if target is under Stoneskin or Ironskins~
 @1538 = ~Make jewelry and other items meant to be sold more valuable~
 @1539 = ~Make classes other than arcane and divine spellcasters able to use scrolls freely~
@@ -70,6 +68,7 @@
 @1547 = ~Make Protection from Undead scrolls less overpowered but still invaluable vs. undead~
 @1549 = ~Tweak the usability of different armor types~ // TODO
 @1555 = ~Make the Slayer Form more interesting, effective in late-game, and less annoying to use~ // (TODO)
+@1600 = ~Make everyone able to perform omnidirectional backstabs (aka face-stabbing)~
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -133,7 +132,10 @@
 @1215 = ~Make Aeger's Hide more powerful when used by Barbarians~
 @1216 = ~Make Ankheg's Plate grant 20% acid resistance~
 @1217 = ~Make Hayes' Robe actually grant +1 to Armor Class, and +1 casting speed for wild mages only~
-@1218 = ~Make the Plate of the Dark not just a generic +1 full plate but something more unique based on the description~ // TODO
+@1218 = ~Make the Plate of the Dark not just a generic +1 full plate but something more unique based on the description~
+@1271 = ~Make the belt of gender inversion give a bonus vs. the original gender of the wearer~
+@1291 = ~Make Shakti Figurine last longer and more powerful~
+@1331 = ~Make Doomplate an armor for those that want to RIP. AND. TEAR.~
 
 /// DAGGER TWEAKS
 @1000 = "Make throwing poisoned daggers less rare and more likely to poison enemies"
@@ -204,6 +206,7 @@
 @1596 = ~Make The Shadow Blade +3 not just unique in name and description, but in function~
 @1598 = ~Make Cutthroat +4 not just unique in name and description, but in function~
 @1605 = ~Make The Burning Earth better improve the horrendously misleading description~
+@1701 = ~Make Ilbratha give the wielder a chance to activate Blur when attacked~
 
 // AXES AND ONE-HANDED BLUNT WEAPONS
 @1310 = "Make Defender of Easthaven damage reduction a little more moderate"
@@ -232,6 +235,8 @@
 @1346 = ~Make Arrows of Piercing always cause at least half of the extra piercing damage~
 @1347 = ~Make Bolts of Biting have an inherent +5% extra critical hit chance, and deal +1 poison damage on hit~
 @1348 = ~Make projectiles from Shortbow of Gesen as fast as regular arrows~
+@1371 = ~Make Arrows of Dispelling force a save vs. Spell at -2 for them to work~
+@1388 = ~Make Acid Arrow's extra damage not subject to magic resistance~
 
 // NPC TWEAKS
 @1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
@@ -247,6 +252,7 @@
 @1645 = ~Make Cernd's cloak more powerful~
 @1646 = ~Make Sarevok's Deathbringer assault a bit more balanced~
 @1647 = ~Make Shar-Teel especially effective when fighting male-gendered opponents~
+@2240 = ~Make Hexxat's Blood Drain have a 1 Hour (5 turn) cooldown instead of being usable once per day~
 
 // WIZARD SPELLS
 @140 = "Make Finger of Death's magical damage on a successful save standardized"
@@ -269,12 +275,14 @@
 @441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level and Attacks per Round at the appropriate levels"
 w@444 = ~Make Flesh to Stone use Petrification saves and optionally make some creatures immune to it like in IWD~
 @445 = ~Make Bigby's spells more powerful~
-@446 = ~Make Fireball spells slightly scale more up to level 20 and optionally give them a better explosion animation~
+@446 = ~Make fireball-type spells improve more with level and/or improve explosion animations~
 @447 = ~Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance~
 @448 = ~Make Decastave at least grant proficiency with staff while it's held~
 @449 = ~Make Otiluke's Freezing Sphere deal half damage on save~
 @451 = ~Make Chain Lightning scale more strongly and spread faster to enemies~
 @452 = ~Make Icelance upgrade damage every 2 levels up to 10d6~
+@499 = ~Make Seven Eyes' granted abilities more powerful~
+@500 = ~Make Control Undead bypass magic resistance and have a -2 penalty to the saving throw~
 
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
@@ -286,7 +294,7 @@ w@444 = ~Make Flesh to Stone use Petrification saves and optionally make some cr
 @240 = "Make Goodberries create six berries that heal 2d4 and grant very slow regeneration for 8 hours"
 @250 = "Make Earthquake more effective and disable annoyances"
 @260 = "Make Negative Plane Protection's duration increase somewhat as you level up"
-@270 = "Make Entangle's saving throws improve slightly at higher levels so it remains relevant for druids"
+@270 = "Make Entangle more powerful and relevant for druids and shamans"
 @280 = "Make Poison (cleric spell) do half damage on a failed save (without poisoning them)"
 @300 = "Make Iron Skins cast as fast a Stoneskin"
 @310 = "Make Fire Seeds create more seeds that do slightly more damage, with an enchantment of 2"
@@ -312,6 +320,15 @@ w@444 = ~Make Flesh to Stone use Petrification saves and optionally make some cr
 @511 = ~Make Unfailing Endurance an area spell that cures the fatigue of the whole party~
 @512 = ~Make Alicorn Lance more effective by increasing damage by 1 dice every 2 levels, up to 8d6~
 @513 = ~Make Whirlwind more effective and able to damage more creatures before dissipating~
+@477 = ~Make Smashing Wave a bit more powerful and bypass magic resistance~
+@479 = ~Make Static Charge electrocute twice as often, but for half the damage~
+@485 = ~Make Cloudburst last longer and less horrendously bad~
+@488 = ~Make Thorn Spray more powerful and scale with level~
+@491 = ~Make Spike Stones deal also slashing damage so it's more effective than Spike Growth~
+@492 = ~Make Barkskin last longer, cast faster, and block the first weapon attack~
+@496 = ~Make Doom cast faster~
+@497 = ~Make Produce Fire a much more effective spell~
+//@515 = ~Make Circle of Bones more effective and less inconvenient~
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray and Sun Soulbeam Sun Soul Monks scale further and/or do more damage to undead"
@@ -329,14 +346,13 @@ w@444 = ~Make Flesh to Stone use Petrification saves and optionally make some cr
 @2230 = ~Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value~
 @2231 = ~Make Dragon Disciples (Red) have automatic access to all fire-based spells and optionally increase fire damage by 5%~
 @2232 = ~Make Called Shot directly increase ranged weapon damage, instead of adding 2 damage after the initial hit~
-//@2240 = ~Make Hexxat's Blood Drain more likely to hit, add a small chance of Level Drain, empower Hexxat if successful, and re-enable the unconscious status if successful~ // TODO
-@2250 = ~Make Blades and Skalds able to become Specialized in weapons~ // todo
-@2260 = ~Make Blades and Skalds get 1/2 APR on levels 7 and 13, much like Fighters~
+@2260 = ~Make Blades, Skalds, and Swashbucklers and Priest of Tempus get more warrior-type benefits~
+@2265 = ~Make Defensive Spin protect against backstabs for its duration and allow very slow movement~
 
 // CRE TWEAKS
 @3010 = ~Make inappropriately aligned creatures in BG2 more correct~
 @3020 = ~Make summoned demons grant XP to the party when they kill something~
-@3030 = ~Make Devas hasted, same as Planetars~
+@3030 = ~Make Devas hasted, same as Planetars, and allow them to instantly cast their spells~
 @3040 = ~Make the Planetar more balanced and allow it to grant allies passive partial spell invulnerability~
 @3050 = ~Make the Balor's vorpal attack not guaranteed to succeed but affected by a saving throw~
 @3060 = ~Make that dumb Mencar Pebblemuncher a fair fighter for his level~

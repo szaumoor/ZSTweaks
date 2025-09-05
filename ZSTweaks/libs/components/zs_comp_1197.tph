@@ -40,7 +40,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         COPY ~%MOD_FOLDER%/items/shadow_wardstone~ ~override~
         COPY_EXISTING ~MISC6P.itm~ ~override~ // wardstone
             SET desc = RESOLVE_STR_REF(@8374)
-            LPF ALTER_ITEM INT_VAR unid_ref_desc = desc id_ref_desc = desc category = 7 flags=33554508 END
+            LPF ALTER_ITEM INT_VAR unid_ref_desc=desc id_ref_desc=desc unid_ref_name=8181 category=7 flags=33554508 END
 
             SET blinded_strref1 = 14674
             SET blinded_strref2 = 1474
@@ -51,6 +51,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
             PATCH_IF has_zs_shadowdancer_overhaul BEGIN
                 LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS0;op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS1;op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS2;op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS3~ END
+            END
+
+            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "16640" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "16642" BEGIN
+                LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
             END
     END
 END

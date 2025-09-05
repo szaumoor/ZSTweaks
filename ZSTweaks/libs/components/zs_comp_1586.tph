@@ -5,24 +5,27 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
-    COPY_EXISTING "SW1H39.itm" ~override~
-      SET desc = RESOLVE_STR_REF(@7560)
-      LPF ALTER_ITEM INT_VAR id_ref_desc=desc END
-      LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=12 dicesize=3 dicenumber=1 special=1024 END
-      LPF GET_DMG_TYPE STR_VAR type="fire" RET fire = result END
-      SET burning = RESOLVE_STR_REF(@7561)
-      LPF ADD_ON_HIT_EFF INT_VAR p2=fire tmg=4 dnum=1 dsize=3 stype=1 STR_VAR effects=~op=12,tmg=0,spec=1024;op=12,dur=6,spec=1024;op=12,dur=12,spec=1024;op=139,tmg=0,dnum=0,dsize=0,p2=0,p1=%burning%~ END
 
-      PATCH_IF zst_1150_dice_bastard_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN
-          SPRINT strref @7560
-          SPRINT str @99999
-          LPF WPN_DMG RET dmg = result END
-          INNER_PATCH_SAVE strref ~%strref%~ BEGIN
-              REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)2[Dd]4[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d8+%dmg%~
-          END
-          SAY_EVALUATED 0x54 ~%strref%~
-      END ELSE BEGIN
-          LPF ALTER_ITEM INT_VAR id_ref_desc=desc END
+  COPY_EXISTING "SW1H39.itm" ~override~
+    SET desc = RESOLVE_STR_REF(@7560)
+    LPF ALTER_ITEM INT_VAR id_ref_desc=desc END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=12 dicesize=3 dicenumber=1 special=1024 END
+    LPF GET_DMG_TYPE STR_VAR type="fire" RET fire = result END
+    SET burning = RESOLVE_STR_REF(@7561)
+    LPF ADD_ON_HIT_EFF INT_VAR p2=fire tmg=4 dnum=1 dsize=3 stype=1 STR_VAR effects=~op=12,tmg=0,spec=1024;op=12,dur=6,spec=1024;op=12,dur=12,spec=1024;op=139,tmg=0,dnum=0,dsize=0,p2=0,p1=%burning%~ END
+
+    PATCH_IF zst_1150_dice_bastard_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN
+      SPRINT strref @7560
+      SPRINT str @99999
+      LPF WPN_DMG RET dmg = result END
+
+      INNER_PATCH_SAVE strref ~%strref%~ BEGIN
+          REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)2[Dd]4[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d8+%dmg%~
       END
+      SAY_EVALUATED 0x54 ~%strref%~
+
+    END ELSE BEGIN
+      LPF ALTER_ITEM INT_VAR id_ref_desc=desc END
+    END
 
 END

@@ -6,7 +6,7 @@ Equipped abilities:
 – Acid Resistance: +40%
 
 Combat abilities:
-– Elves, spiders, and denizens native to the Underdark take an extra +5 piercing damage per hit
+– Elves, spiders, sahuagins and denizens native to the Underdark take an extra +5 piercing damage per hit
 
 THAC0: +4
 Damage: 1d4+4, +1d4 acid damage
@@ -88,7 +88,7 @@ Weight: 1~
 STATISTICS:
 
 Combat abilities:
-– Hit target must save vs. Death at -2 or suffer 2 points of poison damage per second for 10 seconds
+– Hit target must save vs. Death at %zst_1000_sbonus% or suffer 2 points of poison damage per second for 10 seconds
 
 Damage: 1d4 (missile)
 Speed Factor: 2
@@ -285,7 +285,7 @@ Weight: 0~
 STATISTICS:
 
 Combat abilities:
-– Hit target must save vs. Death at -2 or suffer 2 points of poison damage per second for 10 seconds (ranged only)
+– Hit target must save vs. Death at %zst_1000_sbonus% or suffer 2 points of poison damage per second for 10 seconds (ranged only)
 
 Damage (ranged): 1d4 (missile)
 Damage (melee): 1d3 (piercing), +1d2 (poison)

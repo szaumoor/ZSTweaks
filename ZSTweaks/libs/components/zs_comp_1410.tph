@@ -5,12 +5,17 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
     ACTION_IF zst_1410_ureaver_dispel OR zst_1410_ureaver_dicesize BEGIN
+
         COPY_EXISTING ~DAM5.EFF~ ~override~
             LPF ALTER_EFF_FILE INT_VAR special=1024 END
         OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103")
+
     END ELSE BEGIN
+
         WARN ~No Unholy Reaver tweaks were selected~
+
     END
 
     ACTION_IF zst_1410_ureaver_dispel BEGIN
@@ -21,6 +26,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=177 match_parameter2=8 match_parameter1=1 savingthrow=0 END
 
             PATCH_IF zst_1410_ureaver_dicesize = 0 BEGIN
+
                 SPRINT strref @6281
                 PATCH_IF two_handed_comp_installed BEGIN
                     SPRINT str @99999
@@ -32,6 +38,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 END ELSE BEGIN
                     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6281) END
                 END
+
             END
 
     END
@@ -46,6 +53,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             END
 
             PATCH_IF two_handed_comp_installed BEGIN
+
                 LPF ALTER_HEADER INT_VAR match_type=1 match_dicesize=9 match_dicenumber=1 match_damage=6 dicesize=6 dicenumber=2 damage=5 END
                 SPRINT str @99999
                 LPF WPN_DMG RET dmg = result END
@@ -55,6 +63,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 SAY_EVALUATED 0x54 ~%strref%~
 
             END ELSE BEGIN
+
                 LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 10 dicesize = 12 END
 
                 PATCH_IF zst_1410_ureaver_dispel BEGIN
@@ -65,4 +74,5 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
             END
     END
+
 END

@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+
     COPY_EXISTING "HELM18.itm" ~override~ // Pearly white ioun stone
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7190) END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 98 parameter1 = 6 END
@@ -15,7 +16,7 @@ ACTION_IF NOT is_iwdee BEGIN
         COPY_EXISTING "HELM19.itm" ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7200) END
             LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 2 END
-            LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=296,res=CDHORROR;op=142,p2=37;op=240,p2=36;op=169,p2=36;op=267,p1=17427;op=267,p1=14007;op=106,p1=1,p2=1;op=23;op=101,p2=24;op=161;op=101,p2=23;op=101,p2=106;op=4;op=142,p1=52;op=169,p2=4;op=101,p2=3;op=296~ END
+            LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=296,res=CDHORROR;op=142,p2=37;op=240,p2=36;op=169,p2=36;op=267,p1=17427;op=267,p1=14007;op=106,p1=1,p2=1;op=23;op=101,p2=24;op=161;op=101,p2=23;op=101,p2=106;op=4;op=142,p2=52;op=169,p2=4;op=101,p2=3;op=296~ END
     END
 
     COPY_EXISTING ~HELM23.ITM~ ~override~ // golden ioun stone
@@ -26,11 +27,14 @@ ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING ~HELM24.ITM~ ~override~ // obsidian ioun stone
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7220) END
         LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
-        PATCH_IF crit_flag = 1 BEGIN
+
+        PATCH_IF crit_flag BEGIN
             LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
         END
+
         LPF ADD_EQUIPPED_EFF INT_VAR p1=5 STR_VAR effects=~op=86;op=88;op=89~ END
         LPF ADD_EQUIPPED_EFF INT_VAR p1=2 STR_VAR effects=~op=0,p2=2;op=0,p2=4;op=0,p2=8~ END
+
     BUT_ONLY IF_EXISTS
 
     COPY_EXISTING ~HELM25.ITM~ ~override~ // silver ioun stone
@@ -49,4 +53,5 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7250) END
             LPF ADD_EQUIPPED_EFF INT_VAR p2=8 STR_VAR effects=~op=177,p1=1,res=ZSTWEIL1;op=177,p1=1,res=ZSTWEIL2;op=177,p1=2,res=ZSTWEIL1;op=177,p1=2,res=ZSTWEIL2~ END
     END
+
 END

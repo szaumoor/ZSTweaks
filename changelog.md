@@ -2,23 +2,118 @@
 
 ## Fixes
 
-- README information omissions fixed
-- Many corrections to typos and grammar issues in all the text in the mod and used by the mod as translation strings
-- Added DAGG24 (Dagger +3) prefix: should have a weight of 1 instead of 0
-- Fixed instances of tph scripts not performing a check to avoid double inclusions
-- Added missing documentation for Martial Staff in README
-- Fixed a fairly horrendous bug in the script that added fire spells to existing dragon disciple creatures. If anyone installed this and never noticed a problem, is likely because no dragon disciples were found, or they didn't personally find any during the playthrough, as I'm pretty sure spawning them would have crashed the game.
-- Fixed dragon disciple component not adding meteor swarm to their spellbook
-- Fixed Burning Earth in BGEE overlaying other equipped weapons due to a corruption in the flags field
+- Prefix: Shakti's Figurine +4 short sword has a speed factor of 0 from 1
+- Prefix: Darts of Bone +3 darts have a speed factor of 0 from 2
+- Prefix: Lilarcor's wrong speed factor fixed from 8 to 7
+- Prefix: Misaligned indexes in staf01 in bg2ee that could cause corruption when patching the item. Fixpack fixes this too.
+- Fixed yet another bug with the dragon disciple component: fire damage bonus was only applying to creatures, not the kit itself, leading to player-created dragon disciples to not benefit from the bonus
+- Fixed bug with the blackguard backstab x2 component where the effect was not set as permanent appropriately
+- Fixed component that makes throwing daggers usable as melee weapons so it installs in versions of BGEE without SoD
+- Fixed component for Arrow of Fire not correctly patching the description for non-BG2EE games
+- Fixed component making a check twice for no reason
+- Fixed yet another bug with dragon disciple component giving them access to Horrid Wilting instead of Incendiary Cloud
+- Fixed shield component changing the description of the base Tower Shield even if the option was disabled in the config file
+- Fixed description omissions
+- Fixed Shadow Wardstone not using "Ioun Stone" as the unidentified item name
+- Fixed Shadow Wardstone not being retroactively patched as protecting against critical hits if related component was installed first
+- Fixed Bolt of Biting component not adding the promised +1 poison damage on hit (irrespective of successful poisoning)
+- Fixed broken Quivering Palm component
+- Fixed IDS lookup for spectres
+- Fixed stray '\' added to tower shield description Armor Class text in shield component
+- Fixed Dolorous Decay making the new effects thereof subject to magic resistance, unlike the vanilla effects.
+- Fixed inconsistent Power in Nature's Beauty component added effects that could cause problems when casting on targets with spell level immunities
+- Fixed incorrect strings being shown when non-vampiric undead are hit by Sunray
+- Fixed small issue in melf component
+- Added Mordenkainen's Sword (Force Blade) as another item that benefits from the magic weapons APR component. I forgot. Oops.
+- Fixed Grease Tweak inappropriately stacking fire resistance and movement speed debuffs
+- Fixed Horror using the incorrect projectile for Enchantment
+- Fixed issue in Ioun Stone overhaul showing the wrong portrait icon on one of them
+- Fixed code error causing fire seeds to only cause damage on a failed save
+- Fixed some code errors causing slightly incorrect scaling for Cure/Cause Serious and Moderate wounds
+- Fixed Finesse component not properly taking into account the slings allowing preference
+- Fixed bugs in components like Icelance extending the headers which were making effects with duration have 0 duration due to improper use of CamDawg's header extension libraries
+- Fixed blunt weapon component so it patches voidhammer's unusual damage configuration correctly
+- Fix for Hindo's Doom +5 dealing too much damage to undead
+- Fixed bug in undead-disruption weapons that would prevent demonic enemies from possibly being affected by it (mace of disruption, Azuredge...)
+- Actually undid the +7 damage for arrows of piercing, as intended in previous versions
+- Removed the +1 poison damage from arrows of biting, as that was only intended for bolts of biting
+- Corrected out-of-date new description for bolts of biting
+- Mana bow extra damage on failure to save vs spell now bypasses magic resistance, as intended
+- Fixed IDS lookup issue causing problems targeting carrion crawlers
+- Fixed some issues with translation strings
+- Fixed Cure Moderate Wounds not getting the correct description
+- Misc code improvements
 
 ## Modifications
 
-- Divided the ginormous translation file in a bunch of logical parts. This may make the task of translating the mod less daunting (if anyone ever dares to do that)
-- Added Shroud of Flame to the list of Dragon Disciple fire spells available by default
-- Added a configuration option that makes the blunt weapon tweak only apply to creatures that are not wearing armor, as you could think that the overall lessened effectiveness of most armors against crushing is already enough. This is **disabled** by default, but you can enable it in the configuration file.
-- The Visage component now will detect appropriately the presence of Forgotten Armaments, and it will be skipped if it's detected, since it's conceptually different.
+- Moved a portion of IO operations to the beginning to improve the efficiency of components that patch arbitrary numbers of NPCs
+- Hardened the code that deals with arbitrary amounts of weapon types for tweaking such that it does not match items that are not supposed to be considered actual items of the type (like daggers with no equipping animation: SCS shapeshift tokens, Grey the Dog attack weapon...)
+- Component 1545 (character stats) now allows users to specify which of the weapon styles they want to modify, if any (all on by default)
+- Protection of undead modification will now not allow stacking with itself
+- Added swashbucklers as another optional target for the +1/2 APR at levels 7 and 13 component
+- Improved the implementation of the blackguard component that allows them to backstab x2
+- Component that adds backstab penalties is now fully configurable: you can add penalties to any and all weapon types, including weapons that are not normally considered "backstab weapons", which makes it more useful in setups where the choice of weapons that can backstab is extended. And you can define how much a penalty you want, if any
+- Entangle component now makes it bypass magic resistance (still dispellable)
+- Entangle component now changes the saving throws required to Save vs. Breath, as it's more accurate in my estimation
+- Entangle component improves the spell further, making the AC debuff -4 instead of -2, and setting their APR to 1, which mimics difficulty attacking while entangled
+- Improved the implementation of Entangle component.
+- Entangle component now also has similar features such in SCS, where very large creatures, incorporeal creatures, etc, are not affected by it (disabled if SCS was installed first).
+- Entangle component now tweaks other sources of entanglement to follow the same logic, such as Plant Growth (Black Dragons), shambling mound attacks, short sword of mask, Corwin's bow.
+- Potion overhaul now makes the explosive potions deal fire damage that bypasses magic resistance, as it is, as far as I can tell not magical in nature, but based on dangerous chemicals reacting violently. The wands provide a contrast to this, since they are clearly magical in nature, and thus they are affected by magic resistance
+- Axe crit component now adjusted so two-handed axes deal extra damage equal to 1d10 + Bonus instead of 1d12 + Bonus, which fits the damage range in IWD for two-handed axes
+- Component that sets APR for magical weapons to 2 sets it to 3/2 for classes that have fighter levels so classes that are more "purist" or not benefiting from warrior class benefits can get more out of it, and maintaining more balance. Improved code for the component as well.
+- Components 1537 and 1601 to make all potions usable by everyone and not stackable with themselves merged with the potion overhaul component. Now you can use the configuration file to specify if you want the overhaul, or the usability tweak, or the self-stack tweak or any combination thereof.
+- Fireball animation part of the fireballs component also patches the explosion from Dragon's Breath to be more visually appealing. Mod component's name modified accordingly: "Make fireball-type spells improve more with level and/or improve explosion animations"
+- Fireball component now also raises the minimum damage to Dragon's Breath (the spell) to 40 (before saves, 20 if saved): 20d10 ⇾ 20d9+20. This is thematically in accordance to other tweaks to powerful spells in this mod
+- Planetar and Deva components now allow both to instantly cast all of their spells
+- Shield component now allows you to opt in or out from the movement speed debuffs. It's OFF by default, that is, no movement speed debuffs will be applied unless you change it.
+- Entangle component now replaces in BG2EE the horrendously ear-destroying sound that happens when it's active in an area with BGEE's version, which is much more palatable.
+- Stat tweaks to weapon styles now patch their description in chargen and level-up menus.
+- Blade and Skald APR component now also include Priests of Tempus (only 2 pip proficiency improvement)
+- Blade and Skald APR component now also allows them to take 2 pips in their proficiencies
+- Opened the beetle component to IWDEE
+- Opened Quivering Palm component to IWDEE
+- Fire Seed component now allows the created items to be undispellable.
+- Mist of Eldath component now grants 2 HP regeneration per second after initial heal for 2 rounds instead of only 1 HP
+- Added the following spells to the component that makes them bypass Magic Resistance: Smashing Wave, Shout, Great Shout, Mold Touch, Cloudburst, Thorn Spray, Spike Growth (all IWD spells, use IWDification to have access in BG)
+- Fire Seed component will make the projectiles bypass magic resistance, just like Melf's Minute Meteors
+- Grease component will also swap the horrendous repeating sound when it's active, and will use the same sound as Web instead
+- Mist of Eldath renamed to Rejuvenating Mist
+- Exploding Trap is now considered a non-magical attack of level 6. Changed save to take half from Spell to Breath
+- Improved the implementation of Symbol of Pain tweak
+- Symbol of Pain no longer requires a save to avoid its effects. Only magic resistance can stop it
+- Flail of Ages now will also nerf the Slow effects of flail of ages, since they're notoriously a death sentence for mages and other casters, so now they will require a save vs. Spell at -2 to be affected (-3 with the +4 version, -4 with the +5 version)
+- Added Sahuagin to the list of creatures that the Bone Blade dagger does extra damage to
+- It's now possible to install only the store additions in the poisoned throwing daggers component
 
 ## New Components / Features
 
-- Make the Impaler slightly more scary: +5% higher critical hit chance, +5 more impaling damage on crits
-- Make Blades and Skalds get 1/2 APR on levels 7 and 13, much like Fighters
+- Make the Plate of the Dark not just a generic +1 full plate but something more unique based on the description
+- Make Defensive Spin protect against backstabs for its duration and allow very slow movement
+- Make the belt of gender inversion give a bonus vs. the original gender of the wearer
+- Make Shakti Figurine last longer and more powerful
+- Make Ilbratha give the wielder a chance to activate Blur when attacked
+- Make Smashing Wave a bit more powerful and bypass magic resistance
+- Make Arrows of Dispelling force a save vs. Spell at -2 for them to work
+- Make Doomplate an armor for those that want to RIP. AND. TEAR.
+- Make Hexxat's Blood Drain have a 1 Hour (5 turn) cooldown instead of being usable once per day
+- Make everyone able to perform omnidirectional backstabs (aka face-stabbing)
+- Make Acid Arrow's extra damage not subject to magic resistance
+- Make Static Charge electrocute twice as often, but for half the damage
+- Make Cloudburst last longer and less horrendously bad
+- Make Thorn Spray more powerful and scale with level
+- Make Spike Stones deal also slashing damage so it's more effective than Spike Growth
+- Make Barkskin last longer, cast faster, and block the first weapon attack
+- Make Seven Eyes' granted abilities more powerful
+- Make Whirlwind more effective and able to damage more creatures before dissipating
+- Make Doom cast faster
+- Make Produce Fire a much more effective spell
+- Make Control Undead bypass magic resistance and have a -2 penalty to the saving throw
+
+## Planned future additions / Ideas
+
+- A component to improve the Slayer transformation with new perks and abilities, and a better scaling from the time you get it to the end of ToB.
+- Considering making Entangle deal slight "constriction" damage over time to those affected by it
+- More tweaks to vanilla armors that are unique in name but have nothing special about them, like Fallorain's Plate
+- Tackle the rest of IWD spells that are underwhelming
+- Ranged sneak attacks for thieves and rangers

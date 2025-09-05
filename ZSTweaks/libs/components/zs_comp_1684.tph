@@ -5,8 +5,10 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+
     OUTER_SET general_tweaks_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~
     OUTER_SET finesse_component_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~
+
     COPY_EXISTING ~dagg05.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7350) END
         LPF GET_DMG_TYPE STR_VAR type=~piercing~ RET dmg = result END
@@ -18,7 +20,7 @@ ACTION_IF NOT is_iwdee BEGIN
         END
 
     COPY_EXISTING ~dagg16.itm~ ~override~
-        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1000~ OR group_component = 1 BEGIN
+        PATCH_IF (zst_1000_sbonus > 0 AND MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1000~) OR group_component = 1 BEGIN
             SET desc = RESOLVE_STR_REF(@7352)
         END ELSE BEGIN
             SET desc = RESOLVE_STR_REF(@7351)
@@ -33,4 +35,6 @@ ACTION_IF NOT is_iwdee BEGIN
         PATCH_IF zst_1450_allow_daggers AND (finesse_component_installed OR general_tweaks_installed) BEGIN
             LPF ALTER_EFFECT INT_VAR header_type = 1 match_opcode = 326 STR_VAR resource = ~ZSTWTHD0~ END
         END
+    BUT_ONLY IF_EXISTS
+
 END
