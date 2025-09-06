@@ -1487,7 +1487,7 @@ Fair warning, as with all abilities with cooldown, DO NOT use CTRL+R on Hexxat w
 
 <details>
 
-<summary><b>Wizard Spell Tweaks</b></summary>
+<summary><b>Arcane Magic Tweaks</b></summary>
 
 **Component 140:** Standardize Finger of Death magical damage on a successful save
 
@@ -1660,7 +1660,7 @@ Generally considered a terrible choice for a level 7 spell, this making a little
 
 <details>
 
-<summary><b>Cleric/Druid Spell Tweaks</b></summary>
+<summary><b>Divine Spell Tweaks</b></summary>
 
 **Component 100:** Make Glyph of Warding do damage on a failed save and extend damage up to level 20, and not 18
 

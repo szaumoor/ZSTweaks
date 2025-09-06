@@ -12,7 +12,7 @@ ACTION_IF NOT is_iwdee BEGIN
                   ~bdwe1str.CRE~ ~override~
                   ~bdwe2str.CRE~ ~override~
                   ~ELWATG01.CRE~ ~override~
-        LPF ALTER_CRE INT_VAR class=219 END
+        LPF ALTER_CRE INT_VAR class=class_elemental_water END
     BUT_ONLY IF_EXISTS
 
     COPY_EXISTING ~SCRL9G.ITM~ ~override~
@@ -27,7 +27,7 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_EFFECT INT_VAR match_dicenumber = dicenumber parameter1 = dicenumber END
         END
 
-        LPF ADD_SPL_EFF_TGT INT_VAR t=99 ip=0 pwr=8 p2=105 STR_VAR effects=~op=324,p2=55;op=324,p1=%class_elemental_air%;op=324,p1=%class_elemental_earth%;op=324,p1=%class_elemental_fire%~ END
+        LPF ADD_SPL_EFF_TGT INT_VAR t=99 ip=0 pwr=8 p2=105 STR_VAR res="%SOURCE_RES%" effects=~op=324,p2=55;op=324,p1=%class_elemental_air%;op=324,p1=%class_elemental_earth%;op=324,p1=%class_elemental_fire%~ END
         LPF ADD_SPELL_EFFECT // damage for water elementals
             INT_VAR
                 insert_point = 1
@@ -84,7 +84,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 105
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
         LPF ADD_SPELL_EFFECT // immunity for myconids
             INT_VAR
@@ -97,7 +97,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 11
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
         LPF ADD_SPELL_EFFECT // immunity for plants
             INT_VAR
@@ -111,7 +111,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 103
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
 
         LPF ADD_SPELL_EFFECT // damage for water elementals
@@ -171,7 +171,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 105
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
         LPF ADD_SPELL_EFFECT // immunity for myconids
             INT_VAR
@@ -184,7 +184,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 11
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
         LPF ADD_SPELL_EFFECT // immunity for plants
             INT_VAR
@@ -198,7 +198,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 103
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
 
         LPF ADD_SPELL_EFFECT // damage for water elementals
@@ -258,7 +258,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 105
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
         LPF ADD_SPELL_EFFECT // immunity for myconids
             INT_VAR
@@ -271,7 +271,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 11
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
         LPF ADD_SPELL_EFFECT // immunity for plants
             INT_VAR
@@ -285,7 +285,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 103
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
 
         LPF ADD_SPELL_EFFECT // damage for water elementals
@@ -345,7 +345,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 105
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
         LPF ADD_SPELL_EFFECT // immunity for myconids
             INT_VAR
@@ -372,7 +372,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 103
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
 
         LPF ADD_SPELL_EFFECT // damage for water elementals
@@ -432,7 +432,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 105
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
         LPF ADD_SPELL_EFFECT // immunity for myconids
             INT_VAR
@@ -445,7 +445,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 11
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
         LPF ADD_SPELL_EFFECT // immunity for plants
             INT_VAR
@@ -459,7 +459,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 103
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~SP%SOURCE_RES%WI812~
         END
 
     COPY_EXISTING ~SPWISH32.SPL~ ~override~
@@ -518,7 +518,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 105
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
         LPF ADD_SPELL_EFFECT // immunity for myconids
             INT_VAR
@@ -530,7 +530,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 11
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
         LPF ADD_SPELL_EFFECT // immunity for plants
             INT_VAR
@@ -543,7 +543,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 parameter2 = 103
                 resist_dispel = 1
             STR_VAR
-                resource = ~SPWI812~
+                resource = ~%SOURCE_RES%~
         END
     BUT_ONLY IF_EXISTS
 

@@ -1,14 +1,14 @@
 @10 = ~General Tweaks~
-@11 = ~Armor/Gear Tweaks~
+@11 = ~Gear Tweaks~
 @12 = ~Dagger Tweaks~
 @13 = ~Two-handed Melee Weapon Tweaks~
 @14 = ~One-handed Swords Tweaks~
-@15 = ~Axes and Blunt Weapon Tweaks~
-@16 = ~Ranged Weapons and Projectile Tweaks~
+@15 = ~Axes & Blunt Weapon Tweaks~
+@16 = ~Ranged Weapon & Projectiles Tweaks~
 @17 = ~NPC Tweaks~
 @19 = ~Arcane Magic Tweaks~
 @20 = ~Divine Magic Tweaks~
-@21 = ~Class and Kit Tweaks~
+@21 = ~Class & Kit Tweaks~
 @22 = ~Creature Tweaks~
 @32 = ~End-of-install-order Tweaks~
 
@@ -24,19 +24,19 @@
 @57 = ~Can't install groups of components if individual components (without subcomponents) are installed already~
 @58 = ~Can't install components included in components that install groups of other components~
 @59 = ~This component must be installed before the next scroll tweak~
-@60 = ~This component is already effectively installed through the EE Fixpack~
+@60 = ~This component is already effectively installed through the Fixpack~
 
-@10000 = ~Install all tweaks in the general tweaks group (except the ones that require a choice)~
-@10001 = ~Install all tweaks in the gear tweaks group (except the ones that require a choice)~
-@10002 = ~Install all tweaks in the dagger tweaks group~
-@10003 = ~Install all tweaks in the two-handed weapons tweaks group~
-@10004 = ~Install all tweaks in the one-handed swords tweaks group~
-@10005 = ~Install all tweaks in the axes/blunt tweaks group~
-@10006 = ~Install all tweaks in the ranged tweaks group~
-@10007 = ~Install all tweaks in the NPC tweaks group~
-@10008 = ~Install all tweaks in the wizard spells tweaks group~
-@10009 = ~Install all tweaks in the cleric/druid spells tweaks group~
-@10010 = ~Install all tweaks in the class/kit tweaks group~
+@10000 = ~Install all tweaks in the General Tweaks group (except the ones that require a choice)~
+@10001 = ~Install all tweaks in the Gear Tweaks group (except the ones that require a choice)~
+@10002 = ~Install all tweaks in the Dagger Tweaks group~
+@10003 = ~Install all tweaks in the Two-handed Weapons Tweaks group~
+@10004 = ~Install all tweaks in the One-handed Swords Tweaks group~
+@10005 = ~Install all tweaks in the Axes & Blunt Weapon Tweaks group~
+@10006 = ~Install all tweaks in the Ranged Weapon & Projectiles Tweaks group~
+@10007 = ~Install all tweaks in the NPC Tweaks group~
+@10008 = ~Install all tweaks in the Arcane Magic Tweaks group~
+@10009 = ~Install all tweaks in the Divine Magic Tweaks group~
+@10010 = ~Install all tweaks in the Class & Kit Tweaks group~
 
 /// General Item & Spell Tweaks
 @120 = "Make conjured magical weapons grant 2 APR by default"
