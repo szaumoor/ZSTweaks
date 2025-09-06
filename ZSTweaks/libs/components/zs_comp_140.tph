@@ -9,19 +9,8 @@ ACTION_IF NOT is_iwdee BEGIN
     OUTER_SET new_description = RESOLVE_STR_REF(@5030)
     COPY_EXISTING ~SPWI713.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=new_description END
-        LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = 14 END
-
-        SET headers = 0
-        FOR ( i = 15; i <= 20; ++i ) BEGIN
-            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = i insert_point=headers+1 END
-            ++headers
-        END
-
-        SET damage = 15
-        FOR ( i = 1; i <= headers; ++i ) BEGIN
-            LPF ALTER_EFFECT INT_VAR header = i match_opcode = 12 parameter1 = damage END
-            ++damage
-        END
+        LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = 13 END
+        LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=0 dur_special=1 level_cap=20 min_lev_alt=13 damage_fixed=1 END
 
     COPY_EXISTING ~SCRL8O.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END

@@ -5,11 +5,13 @@ END ELSE BEGIN
 END
 
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
-    LPF ITM_CAT RET type = result END
-    PATCH_IF type = 2 BEGIN
-        LPF ITM_APPEARANCE RET armor_appearance = result END
-        PATCH_IF "%armor_appearance%" STR_EQ "2w" BEGIN // apperance of simple robes
-            LPF ALTER_ITEM STR_VAR appearance="3W" END
-        END
+
+  LPF ITM_CAT RET type = result END
+  PATCH_IF type = 2 BEGIN
+    LPF ITM_APPEARANCE RET armor_appearance = result END
+    PATCH_IF "%armor_appearance%" STR_EQ "2w" BEGIN // apperance of simple robes
+      LPF ALTER_ITEM STR_VAR appearance="3W" END
     END
+  END
+
 BUT_ONLY
