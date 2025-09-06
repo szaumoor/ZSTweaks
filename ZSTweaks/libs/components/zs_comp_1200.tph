@@ -8,6 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY_EXISTING ~SPER12.ITM~ ~override~
         LPF remove_haste_immunity END
+
         PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" BEGIN
             SPRINT new_description @7770
             SPRINT str @99999
@@ -18,6 +19,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         END ELSE BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7770) END
         END
+
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize=8 parameter1=6 dicenumber=1 END
 
     COPY_EXISTING ~SPPR403.SPL~ ~override~

@@ -12,9 +12,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY_EXISTING ~RING27.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6740) END
+
     COPY_EXISTING ~RING28.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6750) END
         LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=29,p1=50~ END
+
     COPY_EXISTING ~RING29.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6760) END
         LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=27,p1=50~ END

@@ -5,7 +5,9 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
     COPY_EXISTING ~PLAT06.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8470) END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=20~ END
+      LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8470) END
+      LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=20~ END
+
 END

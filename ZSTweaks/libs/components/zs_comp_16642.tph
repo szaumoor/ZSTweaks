@@ -5,7 +5,7 @@ END ELSE BEGIN
 END
 
 COPY_EXISTING ~HELM18.itm~ ~override~
-    LPF ITM_REF_UNAME RET ioun_strref = result END
+  LPF ITM_REF_UNAME RET ioun_strref = result END
 
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
@@ -14,9 +14,9 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
   LPF ITM_APPEARANCE RET appearance = result END
 
   PATCH_IF cat=7 AND strref = %ioun_strref% BEGIN
+    
     LPF ITM_FLAGS RET flags = result END
     LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
-
     PATCH_IF crit_flag BEGIN
       LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
     END

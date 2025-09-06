@@ -21,9 +21,7 @@ ACTION_IF NOT has_eefixpack BEGIN
     END
 
 END ELSE BEGIN
-
-    PRINT ~EET Fixpack detected, skipping duration extension for Phantom Blade. Extra phantasmal damage made not affect sleepers only.~
-
+    PRINT ~EET Fixpack detected, skipping duration extension for Phantom Blade.~
 END
 
 COPY_EXISTING ~PHANBLAD.EFF~ ~override~

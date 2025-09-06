@@ -150,7 +150,7 @@ OUTER_SET zst_1410_ureaver_dicesize = "1"
 OUTER_SET zst_1591_soul_reaver_nerf     = "1"
 OUTER_SET zst_1591_soul_reaver_dicesize = "1"
 
-////////////////////////////// One-handed swords tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+////////////////////////////// One-handed Swords Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // allows the purifier parts of the tweak
 OUTER_SET zst_1240_purifier_evil   = "1"
@@ -162,7 +162,11 @@ OUTER_SET zst_1580_hawksight_extra = "1"
 // allows kachiko's wakizashi (whisper) to be upgraded by cespenar
 OUTER_SET zst_1583_kachiko_upgrade = "1"
 
-/////////////////////////////// NPC tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+////////////////////////////// Axes & Blunt Weapon Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET zst_1310_easthaven_dr = "10" // damage reduction defender of easthaven can provide. Specify to your needs
+
+/////////////////////////////// NPC Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // determines the net slashing damage of Sarevok's Deathbringer Assault in component 1646. Default is 150 (50 less than normal). Note that now it allows a saving throw to take half as well
 OUTER_SET zst_1646_sare_dmg = "120"
@@ -172,7 +176,7 @@ OUTER_SET zst_1646_sare_dmg = "120"
 // sets the saving throw penalty (or bonus) for Asp's Nest component
 OUTER_SET zst_1010_asp_nest_sbonus = "-4"
 
-/////////////////////////////// Wizard Spell Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+/////////////////////////////// Arcane Magic Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // allows the Luck tweaks
 OUTER_SET zst_145_luck_boost     = "1" // effect boost
@@ -197,7 +201,7 @@ OUTER_SET zst_446_fball_new_animation = "1" // new explosion animation
 
 OUTER_SET zst_447_melf_no_mr = "1" // makes Melf's Acid Arrow bypass MR, since it's conjured acid
 
-/////////////////////////////// Cleric Spell Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+/////////////////////////////// Divine Magic Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // allows the Flame Blade tweaks
 OUTER_SET zst_101_fblade_undead    = "1" // bonus damage to undead

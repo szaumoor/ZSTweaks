@@ -14,9 +14,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         OUTER_SET bastard_comp_installed = zst_1150_dice_bastard_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103")
 
     END ELSE BEGIN
-
         WARN ~No Purifier tweaks were selected~
-
     END
 
     ACTION_IF zst_1240_purifier_evil BEGIN
@@ -101,7 +99,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 END ELSE BEGIN
                     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6092) END
                 END
-                
+
             END
     END
 

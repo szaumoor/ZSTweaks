@@ -6,19 +6,16 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
 
-    ACTION_IF FILE_EXISTS_IN_GAME ~bdring10.itm~ BEGIN
-        COPY_EXISTING ~bdring10.ITM~ ~override~
-            LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7820) END
-            LPF CLONE_EFFECT INT_VAR match_opcode=219 opcode = 178 special = 1 END
-            LPF CLONE_EFFECT INT_VAR match_opcode = 178 opcode = 179 END
-            LPF ADD_EQUIPPED_EFF INT_VAR p1=alignmen_mask_good p2=8 STR_VAR effects = ~op=177,res=ZSTWPUR0;op=177,res=ZSTWPUR1~ END
+  ACTION_IF FILE_EXISTS_IN_GAME ~bdring10.itm~ BEGIN
 
-    END ELSE BEGIN
+    COPY_EXISTING ~bdring10.ITM~ ~override~
+      LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7820) END
+      LPF CLONE_EFFECT INT_VAR match_opcode=219 opcode = 178 special = 1 END
+      LPF CLONE_EFFECT INT_VAR match_opcode = 178 opcode = 179 END
+      LPF ADD_EQUIPPED_EFF INT_VAR p1=alignmen_mask_good p2=8 STR_VAR effects = ~op=177,res=ZSTWPUR0;op=177,res=ZSTWPUR1~ END
 
-        ACTION_IF group_component = 0 BEGIN
-            WARN "No bdring10.itm (Ring of Purity) found in the game"
-        END
-
-    END
+  END ELSE BEGIN
+    ACTION_IF NOT group_component BEGIN WARN "No bdring10.itm (Ring of Purity) found in the game" END
+  END
 
 END

@@ -703,9 +703,11 @@ I couldn't resist, considering the name of this armor, especially considering th
 
 - Armor Class vs. demonic: +2
 - Damage vs. demonic: +2
-- THAC0 vs. demonic: 2
-- 20% resistance to fire
+- THAC0 vs. demonic: +2
+- +20% resistance to fire
 - Fiends must save vs. Death of have their magic resistance nullified when hit for 2 rounds
+
+A new original description is also provided, inspired, of course, by Doom.
 
 </details>
 

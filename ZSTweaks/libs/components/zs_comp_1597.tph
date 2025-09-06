@@ -9,7 +9,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
   COPY ~%MOD_FOLDER%/items/rhynn~ ~override~
   COPY_EXISTING ~ZSTWRHYA.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@7591) END
-  BUT_ONLY
 
   COPY_EXISTING ~STAF20.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7590) END

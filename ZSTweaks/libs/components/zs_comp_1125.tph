@@ -28,9 +28,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         SAY_EVALUATED 0x54 ~%strref%~
 
       END ELSE BEGIN
-
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8020) END
-        
       END
 
   END

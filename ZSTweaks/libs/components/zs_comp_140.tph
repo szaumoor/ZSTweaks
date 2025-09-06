@@ -6,14 +6,14 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
 
-    OUTER_SET new_description = RESOLVE_STR_REF(@5030)
-    COPY_EXISTING ~SPWI713.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=new_description END
-        LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = 13 END
-        LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=0 dur_special=1 level_cap=20 min_lev_alt=13 damage_fixed=1 END
+  OUTER_SET new_description = RESOLVE_STR_REF(@5030)
+  COPY_EXISTING ~SPWI713.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc=new_description END
+    LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = 13 END
+    LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=0 dur_special=1 level_cap=20 min_lev_alt=14 damage_fixed=1 END
 
-    COPY_EXISTING ~SCRL8O.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
-    BUT_ONLY IF_EXISTS
+  COPY_EXISTING ~SCRL8O.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
+  BUT_ONLY IF_EXISTS
 
 END

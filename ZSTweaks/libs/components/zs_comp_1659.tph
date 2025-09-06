@@ -5,10 +5,11 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
   COPY_EXISTING ~HELM31.itm~ ~override~
                 ~HELM32.itm~ ~override~
-                
     LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 31 END
+
     PATCH_IF "%SOURCE_RES%" STR_EQ "HELM31" BEGIN
 
       LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7050) END
@@ -16,11 +17,9 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     END ELSE BEGIN
 
       LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7051) END
-
-      FOR ( new_opcode = 86; new_opcode <= 89; ++new_opcode ) BEGIN
+      PATCH_FOR_EACH new_opcode IN 86 87 88 89 BEGIN
           LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = new_opcode parameter1 = 7 END
       END
-
       LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 6 parameter1 = 1 END
       LPF ALTER_HEADER INT_VAR match_type = 3 projectile = projectl_spklaric END
 

@@ -6,12 +6,16 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
+  ACTION_IF zst_1310_easthaven_dr <= 0 OR zst_1310_easthaven_dr > 127 BEGIN
+    FAIL ~Invalid setting for Defender of Easthaven's damage resistance. Must be between 1 and 127.~
+  END
+
   COPY_EXISTING ~WAFLAIL.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6130) END
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 2 END
 
     PATCH_FOR_EACH opcode IN 86 87 88 BEGIN
-      LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = opcode parameter1 = 10 END
+      LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = opcode parameter1 = zst_1310_easthaven_dr END
     END
 
 END

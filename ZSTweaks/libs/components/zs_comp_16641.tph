@@ -9,6 +9,7 @@ COPY_EXISTING ~HELM20.ITM~ ~override~ // pale green ioun
     PATCH_IF crit_flag BEGIN
         LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
     END
+BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~HELM24.ITM~ ~override~
     LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
@@ -36,6 +37,7 @@ COPY_EXISTING ~bdhelm16.ITM~ ~override~ // circlet of lost souls
     PATCH_IF crit_flag BEGIN
         LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
     END
+BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~ohrhelm1.ITM~ ~override~
     LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END

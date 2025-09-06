@@ -22,6 +22,7 @@ ACTION_IF NOT is_iwdee AND FILE_EXISTS_IN_GAME ~DAGG16.itm~ BEGIN
     ACTION_IF zst_1000_store_additions BEGIN
 
         ACTION_IF is_bg2ee_or_eet BEGIN
+
             COPY_EXISTING ~ARLED.STO~ ~override~
                 LPF REPLACE_STORE_ITEM INT_VAR number_in_stock=((30 * zst_1000_stack_mult) / 100) charges1=2 STR_VAR old_item=~DAGG16~ new_item=~DAGG16~ END
             COPY_EXISTING ~SLSHOP02.STO~ ~override~
@@ -40,11 +41,11 @@ ACTION_IF NOT is_iwdee AND FILE_EXISTS_IN_GAME ~DAGG16.itm~ BEGIN
             COPY_EXISTING ~STO0703.STO~  ~override~
                             ~ULGOTH.STO~   ~override~
                             ~HIGHHEDG.STO~ ~override~
-                LPF ADD_STORE_ITEM_EX INT_VAR stack = ((6 * zst_1000_stack_mult) / 100) charge1 = 5 STR_VAR item_name = ~DAGG16~ END
+                LPF ADD_STORE_ITEM_EX INT_VAR stack=((6 * zst_1000_stack_mult) / 100) charge1=5 STR_VAR item_name=~DAGG16~ END
 
             COPY_EXISTING ~STOBLACK.STO~ ~override~
                             ~STOSILEN.STO~ ~override~
-                LPF ADD_STORE_ITEM_EX INT_VAR stack = ((8 * zst_1000_stack_mult) / 100) charge1 = 6 STR_VAR item_name = ~DAGG16~ END
+                LPF ADD_STORE_ITEM_EX INT_VAR stack=((8 * zst_1000_stack_mult) / 100) charge1=6 STR_VAR item_name=~DAGG16~ END
 
         END
 

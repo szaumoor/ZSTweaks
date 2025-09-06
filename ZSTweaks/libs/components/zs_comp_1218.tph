@@ -6,21 +6,21 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
 
-    COPY ~%MOD_FOLDER%/items/plate_dark~ ~override~
-    COPY_EXISTING ~PLAT05.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8460) END
+  COPY ~%MOD_FOLDER%/items/plate_dark~ ~override~
+  COPY_EXISTING ~PLAT05.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8460) END
 
-        PATCH_IF is_bg2ee_or_eet BEGIN
-            SET strref_panic1 = 17427
-            SET strref_panic2 = 14007
-        END ELSE BEGIN
-            SET strref_panic1 = 25818
-            SET strref_panic2 = 20568
-        END
+    PATCH_IF is_bg2ee_or_eet BEGIN
+      SET strref_panic1 = 17427
+      SET strref_panic2 = 14007
+    END ELSE BEGIN
+      SET strref_panic1 = 25818
+      SET strref_panic2 = 20568
+    END
 
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=296,res=CDHORROR;op=240,p2=36;op=169,p2=36;op=267,p1=%strref_panic1%;op=267,p1=%strref_panic2%;op=106,p2=1,p1=1;op=161;op=23;op=101,p2=24;op=142,p2=37;op=101,p2=23;op=101,p2=106;op=248,res=ZSTWPDKA;op=249,res=ZSTWPDKA~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=296,res=CDHORROR;op=240,p2=36;op=169,p2=36;op=267,p1=%strref_panic1%;op=267,p1=%strref_panic2%;op=106,p2=1,p1=1;op=161;op=23;op=101,p2=24;op=142,p2=37;op=101,p2=23;op=101,p2=106;op=248,res=ZSTWPDKA;op=249,res=ZSTWPDKA~ END
 
-        LPF ADD_ITEM_HEADER INT_VAR target=4 charges=2 range=50 depletion=3 flags=2048 projectile=0 STR_VAR icon = ~SPWI205B~ END
-        LPF ADD_ITEM_EFFECT INT_VAR type=3 header=1 target=1 opcode=148 STR_VAR resource= ~SPWI205~ END
+    LPF ADD_ITEM_HEADER INT_VAR target=4 charges=2 range=50 depletion=3 flags=2048 projectile=0 STR_VAR icon = ~SPWI205B~ END
+    LPF ADD_ITEM_EFFECT INT_VAR type=3 header=1 target=1 opcode=148 STR_VAR resource= ~SPWI205~ END
 
 END

@@ -13,16 +13,13 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=177 parameter1=kit_bounty_hunter END
             LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=177
             match_parameter1=kit_bounty_hunter parameter1=kit_shadowdancer END
+            
             PATCH_IF has_zs_shadowdancer_overhaul BEGIN
                 LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=177 match_parameter1=kit_bounty_hunter parameter1=kit_zs_shadowdancer END
             END
 
     END ELSE BEGIN
-
-        ACTION_IF group_component = 0 BEGIN
-            WARN "bbrac05.itm not found, skipping"
-        END
-
+        ACTION_IF NOT group_component BEGIN WARN "bbrac05.itm not found, skipping" END
     END
 
 END

@@ -6,10 +6,10 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    COPY ~%MOD_FOLDER%/items/hayes_robes~ ~override~
-    COPY_EXISTING ~ohnrobe1.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8500) END
-        LPF ALTER_EFFECT INT_VAR match_opcode = 0 parameter1 = 1 END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=177,p2=9,p1=%kit_wild_mage%,res=ZSTWHAYE~ END
-        
+  COPY ~%MOD_FOLDER%/items/hayes_robes~ ~override~
+  COPY_EXISTING ~ohnrobe1.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8500) END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 0 parameter1 = 1 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=177,p2=9,p1=%kit_wild_mage%,res=ZSTWHAYE~ END
+
 END

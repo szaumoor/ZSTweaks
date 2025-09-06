@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF zst_446_fball_buff BEGIN
+
     OUTER_SET new_description_fireball = RESOLVE_STR_REF(@7520)
     COPY_EXISTING ~SPWI304.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=new_description_fireball END
@@ -22,7 +23,6 @@ ACTION_IF zst_446_fball_buff BEGIN
         LPF ALTER_ITEM INT_VAR id_ref_desc=new_description_fireball END
     BUT_ONLY IF_EXISTS
 
-
     COPY_EXISTING ~SCRL1G.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=new_description_fireball END
 
@@ -37,7 +37,6 @@ ACTION_IF zst_446_fball_buff BEGIN
     COPY_EXISTING ~SCRLAR.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR id_ref_desc=new_description_sunfire END
     BUT_ONLY IF_EXISTS
-
 
     COPY_EXISTING ~SPWI523D.SPL~ ~override~
         LPF LAST_VALID_HEADER RET last_header = result END

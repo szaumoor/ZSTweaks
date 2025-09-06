@@ -22,6 +22,7 @@ ACTION_IF zst_145_luck_boost BEGIN
 
     COPY_EXISTING ~SPWI209.SPL~ ~override~
         SET the_dur = 18
+
         PATCH_IF zst_145_luck_dur_boost BEGIN
             LPF ALTER_SPELL INT_VAR ref_desc=luck_dur_boost_desc END
             the_dur = 60

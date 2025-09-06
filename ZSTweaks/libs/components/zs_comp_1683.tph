@@ -23,11 +23,7 @@ ACTION_IF NOT is_iwdee BEGIN
             END
 
     END ELSE BEGIN
-
-        ACTION_IF group_component = 0 BEGIN
-            WARN "Gemblade not found in game files, skipping..."
-        END
-
+        ACTION_IF NOT group_component BEGIN WARN "bddagg3a.itm not found in game files, skipping..." END
     END
-    
+
 END

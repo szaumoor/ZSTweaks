@@ -26,8 +26,8 @@ ACTION_IF NOT is_iwdee BEGIN
 
     COPY_EXISTING ~HELM24.ITM~ ~override~ // obsidian ioun stone
         LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7220) END
+        
         LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
-
         PATCH_IF crit_flag BEGIN
             LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
         END

@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF NOT is_iwdee BEGIN
+
     COPY ~%MOD_FOLDER%/spells/arcane/melf~ ~override~
     COPY_EXISTING ~SPWI211.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8220) END

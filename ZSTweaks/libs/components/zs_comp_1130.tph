@@ -35,6 +35,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 LPF ALTER_EFFECT INT_VAR match_opcode = 324 match_parameter2 = 19 probability1 = 29 probability2 = 0 END
                 LPF ALTER_EFFECT INT_VAR match_probability2 = 50 probability1 = 100 probability2 = 0 END
                 LPF ALTER_HEADER INT_VAR match_type = 1 dicesize = 4 dicenumber = 1 END
+                
                 SET general_tweaks_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~
                 PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR general_tweaks_installed BEGIN
                     LPF ALTER_HEADER INT_VAR match_type = 1 damage = 5 to_hit = 6 END
@@ -42,15 +43,19 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 END ELSE BEGIN
                     LPF ALTER_HEADER INT_VAR match_type = 1 damage = 5 to_hit = 5 END
                 END
+
                 PATCH_IF zst_1450_allow_daggers AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ OR general_tweaks_installed) BEGIN
                     LPF PROBABILITY_BONUS INT_VAR ench = 5 RET bonus = result END
                     LPF ALTER_EFFECT INT_VAR probability1 =(bonus+base_dagg_dart) STR_VAR match_resource = ~ZSTWD4~ resource = ~ZSTWD5~  END
                 END
+
                 LPF ALTER_ITEM INT_VAR id_ref_name = RESOLVE_STR_REF(@50111) id_ref_desc=RESOLVE_STR_REF(@50110) ench=5 END
                 LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=50;op=301,p1=1,p2=1~ END
 
                 LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 ip=0 STR_VAR res=~ZSTW_DG7~ effects=~op=12,dsize=6,dnum=1,p2=%acid%,spec=1024;op=177,p1=%race_elf%;op=177,p1=%race_beholder%;op=177,p1=%race_drider%;op=177,p1=%race_hook_horror%;op=177,p1=%race_kuo_toa%;op=177,p1=%race_mind_flayer%;op=177,p1=%race_spider%;op=177,p1=%race_umberhulk%;op=177,p1=%race_sahuagin%;op=326,ip=-1,res=ZSTW_DG8,p2=138,p1=4~ END
+
             BUT_ONLY
+
         END
 
     END

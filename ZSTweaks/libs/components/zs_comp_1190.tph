@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+    
     OUTER_SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
 
     COPY ~%MOD_FOLDER%/items/rod_might~ ~override~
@@ -64,4 +65,5 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         END ELSE BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=desc END
         END
+
 END

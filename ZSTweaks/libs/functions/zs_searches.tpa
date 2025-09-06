@@ -111,4 +111,54 @@ BEGIN
 
 END
 
+DEFINE_PATCH_FUNCTION SPELL_OPCODE_PRESENT
+INT_VAR
+    opcode = "-1"
+STR_VAR
+    resource = "*"
+RET
+    result
+BEGIN
+    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    PATCH_IF opcode <= 0 BEGIN
+        PATCH_FAIL ~Invalid opcode specified for SPELL_OPCODE_PRESENT.~
+    END
+
+    READ_LONG 0x64 ability_offset
+    READ_SHORT 0x68 num_abilities
+
+    PATCH_IF num_abilities > 0 BEGIN
+        SET effect_offset = LONG_AT 0x6a
+        SET effects_number = SHORT_AT (ability_offset + 0x1e)
+
+        PATCH_IF effects_number > 0 BEGIN
+
+            FOR ( index = 0; index < effects_number; ++index ) BEGIN
+
+                SET base_eff_offset = effect_offset + (index * 0x30)
+                READ_SHORT base_eff_offset op
+                PATCH_IF opcode = op BEGIN
+                    PATCH_IF "%resource%" STR_EQ "*" BEGIN
+                        result = 1
+                        index = effects_number
+                    END ELSE BEGIN
+                        READ_ASCII (base_eff_offset + 0x14) assigned_resource
+                        PATCH_IF "%resource%" STR_EQ "%assigned_resource%" BEGIN
+                            result = 1
+                            index = effects_number
+                        END
+                    END
+                END
+            END
+
+        END ELSE BEGIN
+            result = 0
+        END
+
+    END ELSE BEGIN
+        result = 0
+    END
+
+END
+
 

@@ -6,9 +6,9 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    COPY ~%MOD_FOLDER%/items/deep_night~ ~override~
-    COPY_EXISTING ~LEAT17.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8430) END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=28,p1=30;op=29,p1=30;op=248,res=ZSTWDPN0;op=249,res=ZSTWDPN0~ END
-        
+  COPY ~%MOD_FOLDER%/items/deep_night~ ~override~
+  COPY_EXISTING ~LEAT17.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8430) END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=28,p1=30;op=29,p1=30;op=248,res=ZSTWDPN0;op=249,res=ZSTWDPN0~ END
+
 END

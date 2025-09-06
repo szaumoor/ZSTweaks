@@ -14,11 +14,7 @@ ACTION_IF NOT is_iwdee BEGIN
       LPF CLONE_EFFECT INT_VAR match_opcode = 177 parameter1 = kit_inquisitor END
 
   END ELSE BEGIN
-
-    ACTION_IF group_component = 0 BEGIN
-      WARN "bdboot03.itm not found"
-    END
-
+    ACTION_IF NOT group_component BEGIN WARN "bdboot03.itm not found" END
   END
 
 END

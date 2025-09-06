@@ -24,7 +24,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF DELETE_EFFECT INT_VAR match_opcode = 141 match_parameter2 = 39 END
             LPF DELETE_EFFECT INT_VAR match_opcode = 61 END
             LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
-            LPF ALTER_EFFECT_EX INT_VAR probability1 = 24 STR_VAR match_probability1_ex = ~(o_probability1 > 0)~ END
+            LPF ALTER_EFFECT_EX INT_VAR probability1 = 24 STR_VAR match_probability1_ex = ~(o_probability1 < 100)~ END
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=ZSTWVRPA,stype=4,sbonus=-2~ END
 
     END
