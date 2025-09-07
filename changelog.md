@@ -4,6 +4,7 @@
 
 - Improved the code fixing probability of Silver Sword so it doesn't warn when the fixpack is installed too
 - Asp's Nest description will now correctly reflect the value selected in the configuration file
+- Ensured other components that grant immunity to death or killing opcode they also grant immunity to the custom resource for vorpal hits in the vorpal component, to ensure consistency
 
 ## Modifications
 
