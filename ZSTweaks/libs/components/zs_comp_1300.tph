@@ -15,7 +15,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
         PATCH_IF NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ AND NOT general_tweaks_installed  BEGIN
-            LPF ALTER_EFFECT INT_VAR match_probability1 = 25 probability1=24 END
+            LPF ALTER_EFFECT_EX INT_VAR probability1=24 STR_VAR match_probability1_ex = "(o_probability1 < 100)" END
         END
 
         LPF ALTER_HEADER INT_VAR type = 1 speed = 6 END
