@@ -114,12 +114,17 @@ END
 DEFINE_PATCH_FUNCTION SPELL_OPCODE_PRESENT
 INT_VAR
     opcode = "-1"
+    parameter2 = "-1"
+    silent = 0
 STR_VAR
     resource = "*"
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    PATCH_IF NOT silent BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    END
+
     PATCH_IF opcode <= 0 BEGIN
         PATCH_FAIL ~Invalid opcode specified for SPELL_OPCODE_PRESENT.~
     END
@@ -129,15 +134,17 @@ BEGIN
 
     PATCH_IF num_abilities > 0 BEGIN
         SET effect_offset = LONG_AT 0x6a
+        SET globals_number = SHORT_AT 0x70
         SET effects_number = SHORT_AT (ability_offset + 0x1e)
 
         PATCH_IF effects_number > 0 BEGIN
 
             FOR ( index = 0; index < effects_number; ++index ) BEGIN
 
-                SET base_eff_offset = effect_offset + (index * 0x30)
+                SET base_eff_offset = effect_offset + (globals_number * 0x30) + (index * 0x30)
                 READ_SHORT base_eff_offset op
-                PATCH_IF opcode = op BEGIN
+                READ_LONG (base_eff_offset + 0x08) p2
+                PATCH_IF opcode = op AND (parameter2 < 0 OR parameter2 = p2) BEGIN
                     PATCH_IF "%resource%" STR_EQ "*" BEGIN
                         result = 1
                         index = effects_number
@@ -158,6 +165,52 @@ BEGIN
     END ELSE BEGIN
         result = 0
     END
+
+END
+
+// checks globals only
+DEFINE_PATCH_FUNCTION ITM_OPCODE_PRESENT
+INT_VAR
+    opcode = "-1"
+    parameter2 = "-1"
+    silent = 0
+STR_VAR
+    resource = "*"
+RET
+    result
+BEGIN
+    PATCH_IF NOT silent BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    END
+
+    PATCH_IF opcode <= 0 BEGIN
+        PATCH_FAIL ~Invalid opcode specified for ITM_OPCODE_PRESENT.~
+    END
+
+    READ_LONG 0x6a ability_offset
+    READ_SHORT 0x70 num_abilities
+
+    PATCH_IF num_abilities > 0 BEGIN
+        FOR ( index = 0; index < num_abilities; ++index ) BEGIN
+
+            SET base_eff_offset = ability_offset + (index * 0x30)
+            READ_SHORT base_eff_offset op
+            READ_LONG (base_eff_offset + 0x08) p2
+            PATCH_IF opcode = op AND (parameter2 < 0 OR parameter2 = p2) BEGIN
+                PATCH_IF "%resource%" STR_EQ "*" BEGIN
+                    result = 1
+                    index = num_abilities
+                END ELSE BEGIN
+                    READ_ASCII (base_eff_offset + 0x14) assigned_resource
+                    PATCH_IF "%resource%" STR_EQ "%assigned_resource%" BEGIN
+                        result = 1
+                        index = num_abilities
+                    END
+                END
+            END
+        END
+
+    END ELSE BEGIN result = 0 END
 
 END
 
