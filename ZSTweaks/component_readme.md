@@ -967,7 +967,7 @@ I hate with passion this 10% chance of killing period-no-questions-asked thing, 
 
 - The chance of killing (vorpal hit) is now bound to a Save vs. Death at -4 to trigger, similar to Axe of the Unyielding
 - Additionally, Cloak of Fear can be instantly cast.
-- And the poison damage is set up differently, and brings elements from the Serpent Shaft. Instead of causing 3d6 poison damage instantly, the damage is now restructured such that it causes 2d6 poison damage instantly AND poisons the target for 1 round (12 poison damage in total). This ensures a minimum dealt damage of 14 within a round, and you deal a 1-round annoyance for casters as well.
+- And the poison damage is set up differently, and brings elements from the Serpent Shaft. Instead of causing 3d6 poison damage instantly, the damage is now restructured such that it causes 2d6 poison damage instantly AND poisons the target for 1 round (12 poison damage in total). This ensures minimum damage dealt of 14 within a round, and you deal a 1-round annoyance for casters as well.
 
 **Component 1607:** Make Gram, the Sword of Grief able to become +6 and rebalance effects
 

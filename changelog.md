@@ -3,6 +3,7 @@
 ## Fixes
 
 - Improved the code fixing probability of Silver Sword so it doesn't warn when the fixpack is installed too
+- Asp's Nest description will now correctly reflect the value selected in the configuration file
 
 ## Modifications
 
