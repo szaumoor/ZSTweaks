@@ -69,6 +69,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=ZSTWVRPA,stype=4,sbonus=-2~ END
 
+        PRINT "Patching items and spells with immunity to the Vorpal effect..."
         COPY_EXISTING_REGEXP ~^.+\.\(itm\|spl\)$~ ~override~
             READ_ASCII 0 sig (4)
             SET present = 0
