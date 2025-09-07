@@ -188,19 +188,6 @@ Saving Throw: None
 
 Through this spell, the caster imbues <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The priest's Strength score is set to 18/00—even if it is normally higher—<PRO_HISHER> THAC0 becomes that of a Fighter of the same level, gains 1/2 attacks per round at level 7 and another one at level 13, and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.~
 
-@5140 = ~Iron Skins
-(Alteration)
-
-Sphere: Elemental
-Level: 5
-Range: 0
-Duration: 12 hours
-Casting Time: 1
-Area of Effect: The caster
-Saving Throw: None
-
-When a Druid casts this powerful spell upon <PRO_HIMHER>self, an outer skin of iron will move up from the ground, completely covering <PRO_HIMHER>. This skin is, of course, magical and will hinder the Druid in no way. The effect of this is to protect the Druid from physical attacks such as melee weapons and projectiles. For every 2 levels of the caster, an additional skin is gained upon casting. For example, a 10th-level Druid would receive 5 skins. For each skin the Druid possesses, the spell will stop one attack, so a 10th-level Druid would be protected from the first 5 attacks made against <PRO_HIMHER> but the 6th would affect <PRO_HIMHER> normally. The skins will remain on the Druid until <PRO_HESHE> is affected by a Dispel Magic, all the skins are removed due to physical attacks, or the spell's duration expires. It is important to note that this will not protect the Druid from any area attacks such as Fireball; however, it will protect <PRO_HIMHER> from physical magical attacks such as Magic Missile.~
-
 @5150 = ~Fire Seeds
 (Conjuration/Summoning)
 

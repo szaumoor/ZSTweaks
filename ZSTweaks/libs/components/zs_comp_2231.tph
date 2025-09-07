@@ -66,7 +66,9 @@ COPY ~./zstweaks/macro.tph~ ~./zstweaks/macro.tph~
 REINCLUDE ~./zstweaks/macro.tph~
 
 ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
+
   ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
+
     COPY_EXISTING ~%file%~ ~override~
       LPF CRE_KIT RET kit = result END
       PATCH_IF kit = kit_dragon_disciple BEGIN

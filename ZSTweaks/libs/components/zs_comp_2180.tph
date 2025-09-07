@@ -72,8 +72,4 @@ ACTION_IF NOT MOD_IS_INSTALLED "ZS_ShadowdanverOverhaul.tp2" "400" BEGIN
         END
     BUT_ONLY
 
-END ELSE BEGIN
-
-    PRINT "THAC0 overhaul for bards already installed through ZS_ShadowdancerOverhaul"
-    
-END
+END ELSE BEGIN PRINT "THAC0 overhaul already installed (ZS_ShadowdancerOverhaul)" END

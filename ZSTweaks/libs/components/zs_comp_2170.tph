@@ -89,8 +89,4 @@ ACTION_IF NOT has_shadowdancer_overhaul_thac0_comp BEGIN
 
     BUT_ONLY
 
-END ELSE BEGIN
-
-    PRINT "THAC0 overhaul for thieves already installed through ZS_ShadowdancerOverhaul"
-
-END
+END ELSE BEGIN PRINT "THAC0 overhaul already installed (ZS_ShadowdancerOverhaul)" END

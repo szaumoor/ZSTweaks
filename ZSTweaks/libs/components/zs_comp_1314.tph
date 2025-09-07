@@ -18,5 +18,5 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     WRITE_LONG 0x14 1
     WRITE_LONG 0x24 2
     WRITE_LONG 0x3c 0
-    
+
 END
