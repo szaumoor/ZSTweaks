@@ -19,3 +19,4 @@
 ## New components
 
 - Make Slow Poison and Neutralize Poison grant a very brief immunity to poison effects (TODO)
+- Make the Robe of Vecna the Robe of Larloch instead
