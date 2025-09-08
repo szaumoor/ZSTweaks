@@ -12,7 +12,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         SPRINT effect_str ~op=326,pro1=14,res=ZSTWVRPA~
 
         PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~3050~ BEGIN
-            effect_str = "%effect_str%" + "stype=4,sbonus=-2"
+            effect_str = "%effect_str%" + "stype=4,sbonus=%zst_3050_balor_vorpal_penalty%"
         END
 
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~%effect_str%~ END
