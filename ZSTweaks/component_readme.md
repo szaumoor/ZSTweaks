@@ -166,6 +166,8 @@ Firstly there's an option to make potions usable by everyone universally (there'
 
 Self-explanatory. It's quite a pain when it's something that is supposed to cut a poison's effect short, but it's almost guaranteed to be interrupted for the caster unless you're extremely precise with casting timing (and you're lucky). This does not fully prevent interruption, but it makes timing the cast far easier.
 
+Additionally, these spells provide a very short immunity to poison effects after ingestion. Half a round for Slow Poison, and 1 round for Neutralize Poison.
+
 **Component 1538:** Make jewelry and other items meant to be sold more valuable
 
 This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component increases the value of those by 50% by default. However, this is fully customizable. Check the ZSTweaks/**zstweaks.prefs.txt** file if you want to customize this.

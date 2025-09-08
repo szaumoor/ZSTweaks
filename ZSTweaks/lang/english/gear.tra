@@ -1323,18 +1323,28 @@ Weight: 8~
 STATISTICS:
 
 Equipped abilities:
-– Piercing Resistance: +10%
-– Every kill while wielding this armor grants the wielder a +1 bonus to THAC0 and attack damage for 1 round
+– Piercing Resistance: +12%
+– Thieving abilities are not disabled while wearing this armor
+
+Combat abilities:
+– Every kill while wielding this armor grants the wielder a +1 bonus to THAC0 and attack damage for 8 seconds
+– Damage: +2 (while wielding daggers)
 
 Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
 Requires:
  8 Strength
 
-Weight: 7~
+Weight: 5~
 
 @8540 = ~Instead of metal strips, this armor uses wyvern scales bound to a chain backing by means of a magical fire. The resulting armor is ash-gray in color and more flexible than standard splint mail. A ranger, Usher Skacan, made this armor after slaying several wyverns that were killing all the deer and elk in his forest.
 
 STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. wyverns and other draconic creatures
+– Immunity to poison
+– Fire Resistance: +20%
+
 
 Armor Class: 2 (0 vs. crushing, 1 vs. piercing and missile)
 Requires:
