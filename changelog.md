@@ -10,6 +10,7 @@
 - Fixed code bug with Wall of Moonlight component that prevented it from patching subspells correctly
 - Fixed bug in recent new component for Doomplate that wasn't setting demonic Magic Resistance to 0 correctly
 - Elixir of Health in potion overhaul now properly disables the "Poison" and "Poisoned" strings in the combat log for the brief period where it grants invulnerability to further poisoning
+- Fixed issue where Balor vorpal saving throw penalty would not apply accurately if installing the vorpal component after the balor component
 - Misc code fixes
 
 ## Modifications
