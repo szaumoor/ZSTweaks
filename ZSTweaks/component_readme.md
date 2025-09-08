@@ -711,6 +711,34 @@ I couldn't resist, considering the name of this armor, especially considering th
 
 A new original description is also provided, inspired, of course, by Doom.
 
+**Component 1333:** Make the Robe of Vecna the Robe of Larloch instead
+
+This will probably not be a favorite since the robe is effectively "the best", and what you want for powergaming, but I decided to make it more nuanced, with some inspiration from NWN functionally. It's also now the Robe of Larloch, not Vecna, since it's probably much more lore-appropriate to begin with, and Larloch is also a lich of immense power anyway. So here are the changes (sorry, some nerfs are involved):
+
+- Armor Class: 5 (vanilla)
+- Casting Speed: +2 (down from +4)
+- Magic Resistance: +10% (vanilla)
+- +2 to all saving throws against spells of all schools of magic
+- Enemies in the field of vision of the wearer suffer a -1 penalty to all saving throws against spells of all schools of magic
+
+**Component 1334:** Make Ashen Scales more unique beyond enchantment level
+
+Yay, I love me another item with a unique description but no unique function. This armor now provides something beyond the enchantment level:
+
+- +20% fire resistance
+- Immunity to Poison
+- +2 Armor Class vs. wyverns and dragons
+- Wearable by rangers and druids
+
+**Component 1335:** Make Crimson Chain more unique beyond enchantment level
+
+Yay, I love me another item with a unique description but no unique function. This armor now provides something beyond the enchantment level:
+
+- +12% piercing damage resistance
+- +2 damage while wielding daggers
+- Enemies killed while wearing the armor grant the wearer +1 THAC0 and damage for 7 seconds
+- May be worn by thieves and bards, and does not disable thieving abilities
+
 </details>
 
 ---
