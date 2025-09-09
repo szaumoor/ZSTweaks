@@ -27,11 +27,13 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_PROF RET wpn_prof = result END
     LPF ITM_ABILITIES_NUM RET num_abilities = result END
     LPF ITM_APPEARANCE RET appearance = result END
-	PATCH_IF wpn_cat = 16 AND wpn_prof = 96 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") BEGIN // daggers
+	PATCH_IF wpn_cat = 16 AND wpn_prof = 96 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
+
         LPF ITM_REF_UDESC RET id_udesc = result END
         PATCH_IF (NOT "%SOURCE_RES%" STR_EQ "DAGG01") AND id_udesc = dagg_original_desc_index BEGIN
             LPF ALTER_ITEM INT_VAR unid_ref_desc = new_unid_ref_desc END
         END
+
         PATCH_IF NOT "%SOURCE_RES%" STR_EQ "dagg04" // not grave binder (fake dagger) exceptions
              AND NOT "%SOURCE_RES%" STR_EQ "a7-dg05" // Entropic Blade (wares of the planes)
              AND NOT "%SOURCE_RES%" STR_EQ "a7-dg06" // Enlightenment (wares of the planes)
@@ -41,39 +43,25 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             LPF WPN_SPEED RET speed = result END
             LPF WPN_THAC0 RET thac0 = result END
 
+            SET thac0_bonus = thac0 + 1
             SET actual_speed = (speed - 2)
             PATCH_IF actual_speed < 0 BEGIN
                 actual_speed = 0
             END
-
-            SET thac0_bonus = thac0 + 1
             LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = actual_speed to_hit = thac0_bonus END
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1~ END
 
-            PATCH_MATCH ench
-            WITH 0 BEGIN
-                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP08~ END
-                END 1 BEGIN
-                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP10~ END
-                END 2 BEGIN
-                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP12~ END
-                END 3 BEGIN
-                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP14~ END
-                END 4 BEGIN
-                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP16~ END
-                END 5 BEGIN
-                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP18~ END
-                END 6 BEGIN
-                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDP20~ END
-                END DEFAULT
-                    LPF ITM_STR_NAME RET name = result END
-                    PATCH_WARN "[Dagger boost] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, %name%. Inform RoyalProtector!"
+            PATCH_IF ench >= 0 AND ench <= 6 BEGIN
+                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1;op=341,p2=1,res=ZSTWDPB%ench%~ END
+            END ELSE BEGIN
+                LPF ITM_STR_NAME RET name = result END
+                PATCH_WARN "[Dagger boost] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, with name '%name%'. Inform RoyalProtector!"
             END
 
             LPF ITM_REF_DESC RET desc_index = result END
             LPF ITM_REF_UDESC RET udesc_index = result END
 
             PATCH_IF desc_index > "-1" BEGIN
+
                 READ_STRREF 0x54 desc
                 SPRINT str_sf @99998
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
@@ -81,16 +69,22 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                     REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*THAC0[ %TAB%]*:?[ %TAB%]*\)\+[0-9]~ ~\1+%thac0_bonus%~ //thac0
                 END
                 SAY_EVALUATED 0x54 ~%desc%~
+
             END ELSE PATCH_IF desc_index = "-1" AND udesc_index != dagg_original_desc_index BEGIN
+
                 READ_STRREF 0x50 desc
                 SPRINT str_sf @99998
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                     REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\1%actual_speed%~ // speed
                 END
                 SAY_EVALUATED 0x50 ~%desc%~
+
             END
+
         END
+
     END
+    
 BUT_ONLY
 
 ACTION_IF is_bg2ee_or_eet BEGIN
