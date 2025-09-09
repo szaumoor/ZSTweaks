@@ -11,6 +11,7 @@
 - Fixed bug in recent new component for Doomplate that wasn't setting demonic Magic Resistance to 0 correctly
 - Elixir of Health in potion overhaul now properly disables the "Poison" and "Poisoned" strings in the combat log for the brief period where it grants invulnerability to further poisoning
 - Fixed issue where Balor vorpal saving throw penalty would not apply accurately if installing the vorpal component after the balor component
+- Dagger boost component is now more resilient and less prone to errors, simplified code
 - Misc code fixes
 
 ## Modifications
@@ -19,6 +20,8 @@
 - Component that makes cure poison spells instantly cast now update their descriptions
 - Removed .tra references in cases where changes to description are minimal (such as changing the casting speed of a spell)
 - Cure Poison component now also grants them a very brief immunity to poison effects to avoid immediate re-poisoning
+- Dagger boost component now also causes missile damage on crits with throwing daggers, instead of piercing
+- Dagger boost bonus to speed factor and thac0 now also applies to ranged modes
 
 ## New components
 

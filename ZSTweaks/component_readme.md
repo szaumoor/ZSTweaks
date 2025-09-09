@@ -90,7 +90,7 @@ This is a small change to make daggers slightly more appealing on a general leve
 - THAC0 is always 1 higher (e.g. a Dagger +2 will have a +3 THAC0 bonus, and the description will reflect it)
 - Speed factor is 2 points lower (normally always 0, in the case of custom daggers, this may be different if their speed factor is unusually high). Description will reflect this
 - +5% Critical chance, which may stack with a similar bonus in any particular daggers. Description will not reflect this.
-- Deadly critical hits: critical hits do moderately greater damage in a second tick. The formula for critical damage added is 2 dice of **Max Weapon Damage** **+** (**Max weapon damage**). Specifically:
+- Deadly critical hits: critical hits do moderately greater damage in a second tick. The formula for critical damage added is 2 dice of **Max Weapon Damage** **+** (**Max weapon damage**). All these bonuses are additive and not affected by strength. Specifically:
   - Dagger **+0** ⇾ 2d4+4, i.e., 6-12 damage
   - Dagger **+1** ⇾ 2d5+5, i.e., 7-15 damage
   - Dagger **+2** ⇾ 2d6+6, i.e., 8-18 damage
@@ -100,8 +100,6 @@ This is a small change to make daggers slightly more appealing on a general leve
   - Dagger **+6** ⇾ 2d10+10, i.e., 12-30 damage
 
 Example: An attack with a dagger +2 with a character that has single-weapon proficiency rolls an 18, which becomes a critical hit. The damage of this hit is 16. Immediately after, another 2d6+6 will be rolled, adding 8-18 damage to the critical hit, thus making the full damage of the critical hit between 24 and 34.
-
-All these bonuses are additive, which means they are not affected by most effects, or strength, although it also means that they're good weapons for characters with low strength, as when they critically hit, they will have a fairly substantial bonus, regardless of it.
 
 Exceptions: Grave Binder is not affected by these bonuses because it's an oversized dagger. Other unusual daggers will be treated on a case-by-case basis.
 

@@ -4,30 +4,19 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1440~ = 1
 END
 
-COPY ~%MOD_FOLDER%/items/dagger_boost~ ~override~
-COPY_EXISTING "ZSTWDP08.spl" ~override~ // spells to insert projectiles to (critical dagger effect)
-    LPF ALTER_HEADER INT_VAR match_type = 1 projectile =1 END
-BUT_ONLY
-
-COPY_EXISTING_REGEXP "^ZSTWDP1[02468]\.spl$" ~override~ // spells to insert projectiles to (throwing daggers and darts)
-    LPF ALTER_HEADER INT_VAR match_type = 1 projectile = 1 END
-BUT_ONLY
-
-COPY_EXISTING "ZSTWDP20.spl" ~override~ // spells to insert projectiles to (critical dagger effect)
-    LPF ALTER_HEADER INT_VAR match_type = 1 projectile = 1 END
-BUT_ONLY
-
 OUTER_SET new_unid_ref_desc = RESOLVE_STR_REF(@8365)
 COPY_EXISTING "DAGG01.ITM" ~override~
     LPF ITM_REF_UDESC RET dagg_original_desc_index = result END
     LPF ALTER_ITEM INT_VAR unid_ref_desc = new_unid_ref_desc END
 
+COPY ~%MOD_FOLDER%/items/dagger_boost~ ~override~
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_CAT RET wpn_cat = result END
     LPF ITM_PROF RET wpn_prof = result END
     LPF ITM_ABILITIES_NUM RET num_abilities = result END
     LPF ITM_APPEARANCE RET appearance = result END
-	PATCH_IF wpn_cat = 16 AND wpn_prof = 96 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
+    LPF ITM_ENCH RET ench = result END
+	PATCH_IF wpn_cat = 16 AND wpn_prof = 96 AND ench <= 6 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
 
         LPF ITM_REF_UDESC RET id_udesc = result END
         PATCH_IF (NOT "%SOURCE_RES%" STR_EQ "DAGG01") AND id_udesc = dagg_original_desc_index BEGIN
@@ -39,7 +28,6 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
              AND NOT "%SOURCE_RES%" STR_EQ "a7-dg06" // Enlightenment (wares of the planes)
              AND NOT "%SOURCE_RES%" STR_EQ "AGMOOSE" // moose dagger (ajoc mod)
         BEGIN
-            LPF ITM_ENCH RET ench = result END
             LPF WPN_SPEED RET speed = result END
             LPF WPN_THAC0 RET thac0 = result END
 
@@ -48,18 +36,11 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             PATCH_IF actual_speed < 0 BEGIN
                 actual_speed = 0
             END
-            LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = actual_speed to_hit = thac0_bonus END
-
-            PATCH_IF ench >= 0 AND ench <= 6 BEGIN
-                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1;op=341,p2=1,res=ZSTWDPB%ench%~ END
-            END ELSE BEGIN
-                LPF ITM_STR_NAME RET name = result END
-                PATCH_WARN "[Dagger boost] Interesting, we found a weapon with more than +6 in enchantment: %SOURCE_RES%, with name '%name%'. Inform RoyalProtector!"
-            END
+            LPF ALTER_HEADER_EX INT_VAR speed=actual_speed to_hit=thac0_bonus STR_VAR match_type_ex=~(o_type = 1 OR o_type = 2)~ END
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1;op=341,p2=1,res=ZSTWDPB%ench%,spec=1;op=341,p2=1,res=ZSTWDPT%ench%,spec=2~ END
 
             LPF ITM_REF_DESC RET desc_index = result END
             LPF ITM_REF_UDESC RET udesc_index = result END
-
             PATCH_IF desc_index > "-1" BEGIN
 
                 READ_STRREF 0x54 desc
@@ -84,15 +65,17 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         END
 
     END
-    
+
 BUT_ONLY
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
     COPY_EXISTING ~DAGG18.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR unid_ref_desc = RESOLVE_STR_REF(@8366) END
 
     COPY_EXISTING ~DAGG19.ITM~ ~override~
         LPF ALTER_ITEM INT_VAR unid_ref_desc = RESOLVE_STR_REF(@8367) END
+
 END
 
 
