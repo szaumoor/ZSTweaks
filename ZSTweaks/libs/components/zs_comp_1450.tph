@@ -37,6 +37,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg05" // Entropic Blade (wares of the planes)
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg09" //
             AND NOT "%SOURCE_RES%" STR_EQ "ysgldag.itm" // fishing for trouble non-usable dagger
+            AND NOT "%SOURCE_RES%" STR_EQ "AGMOOSE" // moose dagger (ajoc mod)
         BEGIN
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN

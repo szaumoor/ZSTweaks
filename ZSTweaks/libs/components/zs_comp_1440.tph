@@ -35,6 +35,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         PATCH_IF NOT "%SOURCE_RES%" STR_EQ "dagg04" // not grave binder (fake dagger) exceptions
              AND NOT "%SOURCE_RES%" STR_EQ "a7-dg05" // Entropic Blade (wares of the planes)
              AND NOT "%SOURCE_RES%" STR_EQ "a7-dg06" // Enlightenment (wares of the planes)
+             AND NOT "%SOURCE_RES%" STR_EQ "AGMOOSE" // moose dagger (ajoc mod)
         BEGIN
             LPF ITM_ENCH RET ench = result END
             LPF WPN_SPEED RET speed = result END
