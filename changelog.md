@@ -17,6 +17,7 @@
 ## Modifications
 
 - Vorpal component now patches all items and spells that provide immunity to kill target opcodes, for a more cohesive experience when hitting enemies with immunity to instant death effects
+- Vorpal component can now also be set to disable chunking with vorpal hits (see config file)
 - Component that makes cure poison spells instantly cast now update their descriptions
 - Removed .tra references in cases where changes to description are minimal (such as changing the casting speed of a spell)
 - Cure Poison component now also grants them a very brief immunity to poison effects to avoid immediate re-poisoning

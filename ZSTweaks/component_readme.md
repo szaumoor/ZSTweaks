@@ -208,6 +208,8 @@ This patching is manual, and I'm not too sure I can make a script that does this
 
 If you want this component working for other mod-added weapons that cause vorpal hits (including creature attacks), let me know, and I'll make sure this component patches those too.
 
+Additionally, you can disable chunking from the vorpal hits that this mod includes. This is optional and can be enabled in the configuration file (disabled by default).
+
 **Component 1545:** Make the basic benefits and progression of various character stats more streamlined or interesting
 
 This component has a series of optional components that tweak the following (consult the config file to allow or disallow -- all allowed by default):

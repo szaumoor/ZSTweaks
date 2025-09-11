@@ -80,6 +80,9 @@ OUTER_SET zst_1534_potions_cannot_self_stack = "1"
 // tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted  half, you would type 50.
 OUTER_SET zst_1538_jewelry_price = "150"
 
+// set to 1 to prevent chunking with the vorpal component
+OUTER_SET zst_1541_vorpal_no_chunking = "0"
+
 // allow or disallow tweaks for component 1545 (stat tweaks)
 OUTER_SET zst_1545_strength_bonuses       = "1"
 OUTER_SET zst_1545_constitution_bonuses   = "1"
