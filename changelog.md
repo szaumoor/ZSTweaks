@@ -12,6 +12,7 @@
 - Elixir of Health in potion overhaul now properly disables the "Poison" and "Poisoned" strings in the combat log for the brief period where it grants invulnerability to further poisoning
 - Fixed issue where Balor vorpal saving throw penalty would not apply accurately if installing the vorpal component after the balor component
 - Dagger boost component is now more resilient and less prone to errors, simplified code
+- Fixed dragon disciple component assigning Shroud of Flame to the wrong spell level on creatures
 - Misc code fixes
 
 ## Modifications
@@ -23,6 +24,7 @@
 - Cure Poison component now also grants them a very brief immunity to poison effects to avoid immediate re-poisoning
 - Dagger boost component now also causes missile damage on crits with throwing daggers, instead of piercing
 - Dagger boost bonus to speed factor and thac0 now also applies to ranged modes
+- Potion overhaul now also includes Potion of Regeneration, increasing the regeneration from 2 HP per round to 3 HP per round
 
 ## New components
 
