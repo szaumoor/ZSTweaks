@@ -105,9 +105,9 @@ ACTION_IF zst_1534_potion_overhaul BEGIN
             LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 dur=240 pwr=4 STR_VAR effects=~op=23,spec=1;op=189,p1=1~ END
 
         // potion of regeneration
-        COPY_EXISTING ~POTN41.ITM~ ~override~
+        COPY_EXISTING ~POTN42.ITM~ ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7469) END
-            LPF ALTER_EFFECT INT_VAR match_opcode = 93 parameter2 = 3 parameter1 = 2 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 98 parameter2 = 3 parameter1 = 2 END
 
         ACTION_IF NOT zst_1534_potions_usable_everyone BEGIN
 

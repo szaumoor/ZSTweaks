@@ -22,7 +22,7 @@
 - Component that makes cure poison spells instantly cast now update their descriptions
 - Removed .tra references in cases where changes to description are minimal (such as changing the casting speed of a spell)
 - Cure Poison component now also grants them a very brief immunity to poison effects to avoid immediate re-poisoning
-- Dagger boost component now also causes missile damage on crits with throwing daggers, instead of piercing
+- Dagger boost component now also causes missile damage on crits with throwing daggers, instead of piercing (3 seconds for Slow Poison, 1 round for Neutralize Poison)
 - Dagger boost bonus to speed factor and thac0 now also applies to ranged modes
 - Potion overhaul now also includes Potion of Regeneration, increasing the regeneration from 2 HP per round to 3 HP per round
 

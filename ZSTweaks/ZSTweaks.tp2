@@ -1,6 +1,6 @@
 BACKUP "weidu_external/backup/ZSTweaks"
 SUPPORT "RoyalProtector at G3's forum https://www.gibberlings3.net/profile/12720-royalprotector/ or G3's Discord Server"
-VERSION "1.5.8b"
+VERSION "1.5.9"
 README ~%MOD_FOLDER%/component_readme.md~
 AUTO_EVAL_STRINGS
 /*
@@ -1324,7 +1324,7 @@ BEGIN @2200 DESIGNATED 2200 GROUP @21 // BLACKGUARD BACKSTAB TWEAK
 REQUIRE_PREDICATE GAME_IS "iwdee bg2ee bgee eet" @54
 FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 
-BEGIN @3500 DESIGNATED 3500ç GROUP @21 // SHADOWSTEP AREA TWEAK
+BEGIN @3500 DESIGNATED 3500 GROUP @21 // SHADOWSTEP AREA TWEAK
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 FORBID_COMPONENT "ZSTweaks.tp2" "359" @58
 

@@ -6,7 +6,7 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    PATCH_IF zst_1541_vorpal_no_chunking BEGIN
+    ACTION_IF zst_1541_vorpal_no_chunking BEGIN
         COPY_EXISTING ~ZSTWVRPA.SPL~ ~override~
             LPF ALTER_EFFECT INT_VAR match_opcode = 13 parameter2 = (2**2) END
     END

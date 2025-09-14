@@ -27,7 +27,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
             PATCH_IF dagger_boost_installed OR general_tweaks_installed BEGIN // update +5 enchantment
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 5 to_hit = 6 END
-                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDP16~ resource=~ZSTWDP18~ END
+                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDPB4~ resource=~ZSTWDPB5~ END
+                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDPT4~ resource=~ZSTWDPT5~ END
 
                 READ_STRREF 0x54 desc
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
@@ -62,10 +63,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 LPF PROBABILITY_BONUS INT_VAR ench = 6 RET bonus = result END
                 LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 probability1=(bonus+base_dagg_dart) STR_VAR match_resource=~ZSTWD5~ resource=~ZSTWD6~ END
             END
-            
+
             PATCH_IF dagger_boost_installed OR general_tweaks_installed BEGIN // update +6 enchantment
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 6 to_hit = 7 END
-                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDP18~ resource=~ZSTWDP20~ END
+                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDPB5~ resource=~ZSTWDPB6~ END
+                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDPT5~ resource=~ZSTWDPT6~ END
 
                 READ_STRREF 0x54 desc
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
