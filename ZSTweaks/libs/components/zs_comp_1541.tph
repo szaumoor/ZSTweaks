@@ -5,6 +5,12 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
+
+    ACTION_IF zst_1541_vorpal_no_chunking BEGIN
+        COPY_EXISTING ~ZSTWVRPA.SPL~ ~override~
+            LPF ALTER_EFFECT INT_VAR match_opcode = 13 parameter2 = (2**2) END
+    END
+
     OUTER_SET two_handed_comp_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1199~
     COPY ~%MOD_FOLDER%/items/vorpal_weapons~ ~override~
     COPY_EXISTING ~BALOR.ITM~ ~override~
@@ -12,7 +18,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         SPRINT effect_str ~op=326,pro1=14,res=ZSTWVRPA~
 
         PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~3050~ BEGIN
-            effect_str = "%effect_str%" + "stype=4,sbonus=-2"
+            effect_str = "%effect_str%" + "stype=4,sbonus=%zst_3050_balor_vorpal_penalty%"
         END
 
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~%effect_str%~ END
@@ -68,6 +74,31 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         COPY_EXISTING ~FINSOL02.ITM~ ~override~
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=ZSTWVRPA,stype=4,sbonus=-2~ END
+
+        PRINT "Patching items and spells with immunity to the Vorpal effect..."
+        COPY_EXISTING_REGEXP ~^.+\.\(itm\|spl\)$~ ~override~
+            READ_ASCII 0 sig (4)
+            SET present = 0
+            PATCH_MATCH "%sig%" WITH
+            "SPL "
+            BEGIN
+                LPF SPELL_OPCODE_PRESENT INT_VAR opcode = 101 parameter2 = 13 silent=1 RET present = result END
+            END
+
+            "ITM "
+            BEGIN
+                LPF ITM_OPCODE_PRESENT INT_VAR opcode = 101 parameter2 = 13 silent=1 RET present = result END
+            END
+
+            DEFAULT
+                PATCH_WARN "Found invalid file: %SOURCE_RES%"
+            END
+
+            PATCH_IF present BEGIN
+                LPF CLONE_EFFECT INT_VAR match_opcode=101 match_parameter2=13 opcode=206 parameter2=0 STR_VAR resource="ZSTWVRPA" END
+            END
+        BUT_ONLY
+
 END
 
 

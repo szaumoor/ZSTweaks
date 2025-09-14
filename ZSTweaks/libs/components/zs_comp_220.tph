@@ -21,6 +21,7 @@ ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING ~SPIN723.SPL~ ~override~
       LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1=2 END
       LPF CLONE_EFFECT INT_VAR match_opcode = 12 parameter2=piercing dicesize=6 dicenumber=1 STR_VAR insert=~below~ END
+
   END
 
 END

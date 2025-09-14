@@ -7,7 +7,13 @@ END
 ACTION_IF NOT is_iwdee BEGIN
 
   COPY_EXISTING ~SPPR506.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5140) END
     LPF ALTER_HEADER INT_VAR speed = 1 END
+
+    SPRINT cast_speed @99970
+    READ_STRREF 0x50 desc
+    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+      REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%cast_speed%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\11~ // casting speed
+    END
+    SAY_EVALUATED 0x50 ~%desc%~
 
 END

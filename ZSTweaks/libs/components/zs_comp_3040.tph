@@ -5,9 +5,9 @@ END ELSE BEGIN
 END
 
 COPY ~%MOD_FOLDER%/creatures/planetar~ ~override~
-
 COPY_EXISTING ~PLANETAR.ITM~ ~override~
   LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=189,p2=1~ END
+
   PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN // stoneskin vorpal prot
 
     LPF DELETE_EFFECT STR_VAR match_resource = ~ZSTWVRPA~ END

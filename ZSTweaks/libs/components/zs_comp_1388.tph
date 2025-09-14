@@ -5,4 +5,4 @@ END ELSE BEGIN
 END
 
 COPY_EXISTING ~AROW04.ITM~ ~override~
-    LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
+  LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END

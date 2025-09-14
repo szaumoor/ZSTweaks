@@ -13,9 +13,5 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RR#THL1A.SPL~ BEGIN
     LPF ADD_SPL_EFF_TGT INT_VAR pwr=0 rd=0 insert_point=0 STR_VAR res="%SOURCE_RES%" effects = ~op=321,stype=4,sbonus=-4;op=318,p2=55;op=318,p1=%race_slime%,p2=104;op=318,p2=104,p1=%race_elemental%~ END
 
 END ELSE BEGIN
-
-  ACTION_IF group_component = 0 BEGIN
-    WARN "RR's Crippling Strike file not found. This component will not be installed."
-  END
-
+  ACTION_IF NOT group_component BEGIN WARN "RR's Crippling Strike file not found." END
 END

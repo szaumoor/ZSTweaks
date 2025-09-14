@@ -115,16 +115,20 @@ ACTION_IF zst_446_fball_new_animation BEGIN
         LPF ALTER_HEADER INT_VAR projectile = 244 END
 
     ACTION_IF NOT is_iwdee BEGIN // iwdee has a different projectile, skipping for now
+
         COPY_EXISTING ~SPWI523D.SPL~ ~override~
             LPF ALTER_HEADER INT_VAR projectile = 234 END
+
     END
 
     ACTION_IF is_bg2ee_or_eet BEGIN
+
         COPY_EXISTING ~SPDRBRTH.PRO~ ~override~
             WRITE_BYTE 0x216 0
             WRITE_BYTE 0x217 254
             WRITE_ASCII 0x228 "SPFIRIMP" #8
             WRITE_ASCII 0x230 "SPFLAMES" #8
+
     END
 
 END

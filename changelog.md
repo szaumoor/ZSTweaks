@@ -2,21 +2,32 @@
 
 ## Fixes
 
-- Fixed Horrid Wilting not properly protecting fire elementals from it, as well as other small fixes
-- Fixed the Seven Eyes component granting 4 Magic Missiles to the Sword Eye instead of 3
-- Fixed regression bug in the previous version on the component that increases or decreases the price of gems, rings, and amulets that prevented non-gems from benefitting
-- Fixed Yamato's component not taking into account users that disabled wakizashis and ninjatos from being affected by the component that changes their damage configuration after installing it
-- Fixed Dakkon's katana and Kachiko's wakizashi component in the code that updates it if Finesse was installed such that it takes into account if their respective weapon types were enabled in the config options
-- Fixed some of the new components not being disabled appropriately when the group-wide component was installed
-- Added guard for components that modify SoD items, so they don't error out if SoD is not installed
+- Improved the code fixing probability of Silver Sword so it doesn't warn when the fixpack is installed too
+- Improved the code by using better and time-tested functions
+- Asp's Nest description will now correctly reflect the value selected in the configuration file
+- Ensured other components that grant immunity to death or killing opcode they also grant immunity to the custom resource for vorpal hits in the vorpal component, to ensure consistency
+- Performance improvements due to unnecessary loops being removed from some components
+- Fixed code bug with Wall of Moonlight component that prevented it from patching subspells correctly
+- Fixed bug in recent new component for Doomplate that wasn't setting demonic Magic Resistance to 0 correctly
+- Elixir of Health in potion overhaul now properly disables the "Poison" and "Poisoned" strings in the combat log for the brief period where it grants invulnerability to further poisoning
+- Fixed issue where Balor vorpal saving throw penalty would not apply accurately if installing the vorpal component after the balor component
+- Dagger boost component is now more resilient and less prone to errors, simplified code
+- Fixed dragon disciple component assigning Shroud of Flame to the wrong spell level on creatures
+- Misc code fixes
 
 ## Modifications
 
-- Improved the implementation of the Comet component
-- Improved the implementation of the Finger of Death component
-- Improved the implementation of very old components in need of a code revision with better functions (read: CamDawg's functions)
-- Minor .tra edits, improvements or tweaks
-- Various refactorings, code cleanup, and code quality improvements
-- Blackrazor component will retroactively update the finesse element if the finesse component was installed first, as it is required when enchantment level changes
-- Added option to customize how much damage resistance the Defender of Easthaven provides. Default is 10%.
-- Massively improved the efficiency of the Cloak of Fear component
+- Vorpal component now patches all items and spells that provide immunity to kill target opcodes, for a more cohesive experience when hitting enemies with immunity to instant death effects
+- Vorpal component can now also be set to disable chunking with vorpal hits (see config file)
+- Component that makes cure poison spells instantly cast now update their descriptions
+- Removed .tra references in cases where changes to description are minimal (such as changing the casting speed of a spell)
+- Cure Poison component now also grants them a very brief immunity to poison effects to avoid immediate re-poisoning
+- Dagger boost component now also causes missile damage on crits with throwing daggers, instead of piercing (3 seconds for Slow Poison, 1 round for Neutralize Poison)
+- Dagger boost bonus to speed factor and thac0 now also applies to ranged modes
+- Potion overhaul now also includes Potion of Regeneration, increasing the regeneration from 2 HP per round to 3 HP per round
+
+## New components
+
+- Make the Robe of Vecna the Robe of Larloch instead
+- Make Ashen Scales more unique beyond enchantment level
+- Make Crimson Chain more unique beyond enchantment level

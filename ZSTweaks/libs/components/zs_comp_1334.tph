@@ -1,0 +1,23 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1334~) BEGIN
+  FAIL ~Script already included: zs_comp_1334~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1334~ = 1
+END
+
+ACTION_IF is_bg2ee_or_eet BEGIN
+
+  COPY_EXISTING ~CHAN17.ITM~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8540) END
+
+    LPF ITM_USABILITY0 RET flags = result END
+    LPF IS_BIT_SET INT_VAR bit=30 bit_field=flags RET druid_unusable = result END
+    
+    PATCH_IF druid_unusable BEGIN
+      WRITE_LONG 0x1e (THIS - 2**30)
+    END
+
+    LPF CLONE_EFFECT INT_VAR match_opcode = 145 opcode = 30 parameter1 = 20 END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 145 opcode = 84 parameter1 = 20 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=267,p1=14017;op=267,p1=14662;op=173,p1=100;op=101,p2=25;op=169,p2=6;op=142,p2=30;op=219,p2=4,p1=%race_wyvern%;op=219,p2=4,p1=%race_dragon%~ END
+
+END

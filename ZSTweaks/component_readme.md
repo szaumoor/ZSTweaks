@@ -90,7 +90,7 @@ This is a small change to make daggers slightly more appealing on a general leve
 - THAC0 is always 1 higher (e.g. a Dagger +2 will have a +3 THAC0 bonus, and the description will reflect it)
 - Speed factor is 2 points lower (normally always 0, in the case of custom daggers, this may be different if their speed factor is unusually high). Description will reflect this
 - +5% Critical chance, which may stack with a similar bonus in any particular daggers. Description will not reflect this.
-- Deadly critical hits: critical hits do moderately greater damage in a second tick. The formula for critical damage added is 2 dice of **Max Weapon Damage** **+** (**Max weapon damage**). Specifically:
+- Deadly critical hits: critical hits do moderately greater damage in a second tick. The formula for critical damage added is 2 dice of **Max Weapon Damage** **+** (**Max weapon damage**). All these bonuses are additive and not affected by strength. Specifically:
   - Dagger **+0** ⇾ 2d4+4, i.e., 6-12 damage
   - Dagger **+1** ⇾ 2d5+5, i.e., 7-15 damage
   - Dagger **+2** ⇾ 2d6+6, i.e., 8-18 damage
@@ -100,8 +100,6 @@ This is a small change to make daggers slightly more appealing on a general leve
   - Dagger **+6** ⇾ 2d10+10, i.e., 12-30 damage
 
 Example: An attack with a dagger +2 with a character that has single-weapon proficiency rolls an 18, which becomes a critical hit. The damage of this hit is 16. Immediately after, another 2d6+6 will be rolled, adding 8-18 damage to the critical hit, thus making the full damage of the critical hit between 24 and 34.
-
-All these bonuses are additive, which means they are not affected by most effects, or strength, although it also means that they're good weapons for characters with low strength, as when they critically hit, they will have a fairly substantial bonus, regardless of it.
 
 Exceptions: Grave Binder is not affected by these bonuses because it's an oversized dagger. Other unusual daggers will be treated on a case-by-case basis.
 
@@ -159,12 +157,15 @@ Firstly there's an option to make potions usable by everyone universally (there'
 - Elixir of Health: the HP recovered is now 20 (from 10) and protects against being poisoned (but not to direct poison damage; not dispellable) for 10 seconds. This is added such that when taking heavy damage, if you're poisoned, it's more desirable than just gulping down a better HP potion to ensure survivability
 - Potion of Perception: now the proper "detection" thief skills are improved further (find traps and detect illusions): 40%. Additionally, the enhanced perception improves Armor and Saving Throws by 2
 - Potion of Power: this makes the potion prevent morale failure like the potion of heroism, it improves all thieving abilities (not just some), it improves casting speed by 1, and it now also grants +10% higher damage output (physical and magical), which makes it useful for any class. Finally, the THAC0 bonus it provides is no longer to 80% of current, but instead improves immediately by 4, which is strictly a better outcome, since there will be no longer diminishing returns. Its rarity and price should be rewarded handsomely
+- Potion of Regeneration: now it heals 3 HP per round for 3 turns (from 2 HP per round for 2 turns).
 - CHARNAME'S Tankard: now it heals 27 HP three times per day, and it adds +1 Strength and Constitution for 1 turn, since it mentions feeling stronger when holding it.
 - All Strength potions: usable by any class (independent of the previous universal restriction lift)
 
 **Component 1537:** Make Poison-curing spells an instant cast so attempting to cure poison is less likely to be interrupted
 
 Self-explanatory. It's quite a pain when it's something that is supposed to cut a poison's effect short, but it's almost guaranteed to be interrupted for the caster unless you're extremely precise with casting timing (and you're lucky). This does not fully prevent interruption, but it makes timing the cast far easier.
+
+Additionally, these spells provide a very short immunity to poison effects after ingestion. Half a round for Slow Poison, and 1 round for Neutralize Poison.
 
 **Component 1538:** Make jewelry and other items meant to be sold more valuable
 
@@ -207,6 +208,8 @@ This patching is manual, and I'm not too sure I can make a script that does this
 - Silver sword
 
 If you want this component working for other mod-added weapons that cause vorpal hits (including creature attacks), let me know, and I'll make sure this component patches those too.
+
+Additionally, you can disable chunking from the vorpal hits that this mod includes. This is optional and can be enabled in the configuration file (disabled by default).
 
 **Component 1545:** Make the basic benefits and progression of various character stats more streamlined or interesting
 
@@ -709,6 +712,34 @@ I couldn't resist, considering the name of this armor, especially considering th
 
 A new original description is also provided, inspired, of course, by Doom.
 
+**Component 1333:** Make the Robe of Vecna the Robe of Larloch instead
+
+This will probably not be a favorite since the robe is effectively "the best", and what you want for powergaming, but I decided to make it more nuanced, with some inspiration from NWN functionally. It's also now the Robe of Larloch, not Vecna, since it's probably much more lore-appropriate to begin with, and Larloch is also a lich of immense power anyway. So here are the changes (sorry, some nerfs are involved):
+
+- Armor Class: 5 (vanilla)
+- Casting Speed: +2 (down from +4)
+- Magic Resistance: +10% (vanilla)
+- +2 to all saving throws against spells of all schools of magic
+- Enemies in the field of vision of the wearer suffer a -1 penalty to all saving throws against spells of all schools of magic
+
+**Component 1334:** Make Ashen Scales more unique beyond enchantment level
+
+Yay, I love me another item with a unique description but no unique function. This armor now provides something beyond the enchantment level:
+
+- +20% fire resistance
+- Immunity to Poison
+- +2 Armor Class vs. wyverns and dragons
+- Wearable by rangers and druids
+
+**Component 1335:** Make Crimson Chain more unique beyond enchantment level
+
+Yay, I love me another item with a unique description but no unique function. This armor now provides something beyond the enchantment level:
+
+- +12% piercing damage resistance
+- +2 damage while wielding daggers
+- Enemies killed while wearing the armor grant the wearer +1 THAC0 and damage for 7 seconds
+- May be worn by thieves and bards, and does not disable thieving abilities
+
 </details>
 
 ---
@@ -967,7 +998,7 @@ I hate with passion this 10% chance of killing period-no-questions-asked thing, 
 
 - The chance of killing (vorpal hit) is now bound to a Save vs. Death at -4 to trigger, similar to Axe of the Unyielding
 - Additionally, Cloak of Fear can be instantly cast.
-- And the poison damage is set up differently, and brings elements from the Serpent Shaft. Instead of causing 3d6 poison damage instantly, the damage is now restructured such that it causes 2d6 poison damage instantly AND poisons the target for 1 round (12 poison damage in total). This ensures a minimum dealt damage of 14 within a round, and you deal a 1-round annoyance for casters as well.
+- And the poison damage is set up differently, and brings elements from the Serpent Shaft. Instead of causing 3d6 poison damage instantly, the damage is now restructured such that it causes 2d6 poison damage instantly AND poisons the target for 1 round (12 poison damage in total). This ensures minimum damage dealt of 14 within a round, and you deal a 1-round annoyance for casters as well.
 
 **Component 1607:** Make Gram, the Sword of Grief able to become +6 and rebalance effects
 
@@ -1760,7 +1791,7 @@ It was always a fairly odd choice of level 7 spell. Some mods resolve this by mo
 
 At the beginning of BGEE this spell is largely unremarkable and provides no protection of note to the cleric. Now it will at least provide a minor Armor Class bonus by default, which makes this spell the only one in vanilla BG that improves the Armor Class of the cleric other than Defensive Harmony (IIRC).
 
-**Component 450:** Make healing spells other than Heal more worth using
+**Component 450:** Make cure and cause wound spells other than Heal/Harm more worth using
 
 Healing spells are infamously bad in BG/BG2, they heal too little for such a slow cast, and they don't improve with level. With this tweak:
 
@@ -1772,7 +1803,7 @@ Healing spells are infamously bad in BG/BG2, they heal too little for such a slo
 - Mass Cure: improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32)
 - Mist of Eldath: Heals 40 points, regenerates 1 HP/s for 2 rounds and prevents poisoning for that time. Name changed to Rejuvenating Mist
 
-Also, they will no longer be stopped by spell deflection.
+Also, they will no longer be stopped by spell deflection. Finally, it can also tweak the "cause wounds" spells in the same magnitude as the "cure wounds" spells. 
 
 All of these specific tweaks to these spells may be disabled or enabled in the config file.
 

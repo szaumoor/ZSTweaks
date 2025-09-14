@@ -26,7 +26,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_ENCH RET ench = result END
     LPF ITM_ABILITIES_NUM RET num_abilities = result END
     LPF ITM_APPEARANCE RET appearance = result END
-    PATCH_IF ench >= 0 AND ench < 7 AND num_abilities > 0
+    PATCH_IF ench >= 0 AND ench <= 6 AND num_abilities > 0
     BEGIN
         LPF ITM_CAT RET cat = result END
         LPF ITM_PROF RET prof = result END
@@ -37,6 +37,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg05" // Entropic Blade (wares of the planes)
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg09" //
             AND NOT "%SOURCE_RES%" STR_EQ "ysgldag.itm" // fishing for trouble non-usable dagger
+            AND NOT "%SOURCE_RES%" STR_EQ "AGMOOSE" // moose dagger (ajoc mod)
         BEGIN
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN

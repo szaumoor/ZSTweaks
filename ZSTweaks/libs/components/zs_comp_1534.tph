@@ -5,22 +5,27 @@ END ELSE BEGIN
 END
 
 ACTION_IF zst_1534_potions_usable_everyone BEGIN
+
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_CAT RET cat = result END
         PATCH_IF cat = 9 BEGIN
             LPF ALTER_ITEM INT_VAR unusable0=0 END
         END
     BUT_ONLY
+
 END
 
 ACTION_IF zst_1534_potions_cannot_self_stack BEGIN
+
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         LPF ITM_CAT RET category_itm=result END
+
         PATCH_IF category_itm = 9 OR category_itm = 13 BEGIN // if it's a potion or food item
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "GBERRY" BEGIN
                 LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
             END
         END
+
     BUT_ONLY
 
     ACTION_IF NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "240" AND NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "99" BEGIN
@@ -28,9 +33,11 @@ ACTION_IF zst_1534_potions_cannot_self_stack BEGIN
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
         BUT_ONLY IF_EXISTS
     END
+
 END
 
 ACTION_IF zst_1534_potion_overhaul BEGIN
+
     ACTION_IF NOT is_iwdee BEGIN // iwdee deliberately unsupported for now
         //icedust potion
         ACTION_IF FILE_EXISTS_IN_GAME ~WAND16.ITM~ BEGIN
@@ -78,7 +85,7 @@ ACTION_IF zst_1534_potion_overhaul BEGIN
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7464) END
             LPF ALTER_EFFECT INT_VAR match_opcode=17 parameter1=20 END
             LPF ALTER_EFFECT INT_VAR silent=1 match_opcode = 94 parameter2=0 opcode = 164 END
-            LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 dur=10 rd=0 pwr=4 STR_VAR effects=~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25~ END
+            LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 dur=10 rd=0 pwr=4 STR_VAR effects=~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=267,p1=14017;op=267,p1=14662~ END
 
         // potion of perception
         COPY_EXISTING ~POTN39.ITM~ ~override~
@@ -97,13 +104,20 @@ ACTION_IF zst_1534_potion_overhaul BEGIN
             LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 332 parameter1=10 parameter2=0 END
             LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 dur=240 pwr=4 STR_VAR effects=~op=23,spec=1;op=189,p1=1~ END
 
+        // potion of regeneration
+        COPY_EXISTING ~POTN42.ITM~ ~override~
+            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7469) END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 98 parameter2 = 3 parameter1 = 2 END
+
         ACTION_IF NOT zst_1534_potions_usable_everyone BEGIN
+
             COPY_EXISTING_REGEXP "^POTN0[3-7]\.itm$" ~override~
                 LPF ALTER_ITEM INT_VAR unusable0=0 END
             BUT_ONLY
 
             COPY_EXISTING "POTN12.ITM" ~override~
                 LPF ALTER_ITEM INT_VAR unusable0=0 END
+
         END
 
         COPY_EXISTING ~POTN13.ITM~ ~override~ // vanilla explosive / fire breath potions
@@ -112,10 +126,7 @@ ACTION_IF zst_1534_potion_overhaul BEGIN
             LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
 
     END ELSE BEGIN
-
-        ACTION_IF group_component = 0 BEGIN
-            PRINT "Potion Overhaul is currently not supported for IWDEE due to lack of testing"
-        END
-
+        ACTION_IF NOT group_component BEGIN PRINT "Potion Overhaul is currently not supported for IWDEE" END
     END
+
 END

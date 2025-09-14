@@ -12,14 +12,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
     PATCH_IF NOT has_eefixpack BEGIN
 
-      LPF LAST_VALID_HEADER RET new_header = result END
-      PATCH_FOR_EACH level IN 19 20 BEGIN
-
-        LPF ADD_SPELL_HEADER INT_VAR copy_header=new_header+1 zs_min_level_for_copy=level insert_point=new_header+1 END
-        LPF ALTER_EFFECT INT_VAR header_type=1 header=new_header+1 match_opcode=12 dicenumber=level END
-        ++new_header
-
-      END
+      LPF ~CD_LEVEL_SELECT-O-MATIC~ INT_VAR min_abil=1 step_dur=0 dur_special=1 step_size=2 level_cap=20 damage_rolls=1 min_lev_alt=5 damage_special = 1 END
 
     END
 

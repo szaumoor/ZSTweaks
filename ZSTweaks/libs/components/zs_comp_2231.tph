@@ -66,13 +66,15 @@ COPY ~./zstweaks/macro.tph~ ~./zstweaks/macro.tph~
 REINCLUDE ~./zstweaks/macro.tph~
 
 ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
+
   ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
+
     COPY_EXISTING ~%file%~ ~override~
       LPF CRE_KIT RET kit = result END
       PATCH_IF kit = kit_dragon_disciple BEGIN
         LPM stuff
         PATCH_IF spell_shroud_of_flame > 0 BEGIN
-          ADD_MEMORIZED_SPELL "%shroud_res%" #5 "wizard" (1)
+          ADD_MEMORIZED_SPELL "%shroud_res%" #4 "wizard" (1)
         END
         PATCH_IF zst_2231_fire_boost AND zst_2231_fire_boost_pctg > 0 BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 332 timing = 9 parameter2 = 1 parameter1 = zst_2231_fire_boost_pctg END

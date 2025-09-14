@@ -14,7 +14,8 @@ ACTION_IF NOT is_iwdee BEGIN
             SET general_tweaks_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~
             PATCH_IF general_tweaks_installed OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ BEGIN
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 3 to_hit = 4  END
-                LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWDP12~ resource = ~ZSTWDP14~ END
+                LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWDPB2~ resource = ~ZSTWDPB3~ END
+                LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWDPT2~ resource = ~ZSTWDPT3~ END
 
                 READ_STRREF 0x54 desc
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN

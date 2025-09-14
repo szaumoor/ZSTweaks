@@ -51,7 +51,7 @@ Weight: 1~
 STATISTICS:
 
 Combat abilities:
-– +2 damage against animals and other non-intelligent beasts, magical or otherwise.
+– +2 damage against animals and other non-intelligent beasts and monsters
 
 Equipped abilities:
 – Movement rate increased by 2 (base is 9)
@@ -72,7 +72,7 @@ The magical bowstring of Gond makes even the legendary longbow of Taralash more 
 STATISTICS:
 
 Combat abilities:
-– +5 damage against animals and other non-intelligent beasts, magical or otherwise.
+– +5 damage against animals and other non-intelligent beasts and monsters
 
 Equipped abilities:
 – Movement rate increased by 5 (base is 9)
@@ -92,7 +92,7 @@ Weight: 1~
 STATISTICS:
 
 Combat abilities:
-– Hit target must save vs. Death at -4 or take 1 point of damage every 3 seconds until 40 Hit Points of damage has been inflicted
+– Hit target must save vs. Death at %zst_1010_asp_nest_sbonus% or take 1 point of damage every 3 seconds until 40 Hit Points of damage has been inflicted
 
 THAC0: +1
 Damage: 1d3+1, +1d2 poison damage

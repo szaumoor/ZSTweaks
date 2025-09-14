@@ -8,7 +8,7 @@ OUTER_SET zst_debug = "0" // normally at 0 for users
 
 ////////////////////////////// Pre-fixes \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-OUTER_SET zst_gender_fix = "1" // In vanilla game, many creatures are inappropriately set to 'male' (never female, I wonder why?) even though they should be completely independent of it, such as golems, statues, mists, fungus, slimes, mind flayers... This interferes with opcodes that target based on gender since the results will be far less consistent and/or logical than they should be
+OUTER_SET zst_gender_fix = "1" // In vanilla game, many creatures are inappropriately set to 'male' (never female, I wonder why?) even though they should be completely independent of it, such as golems, statues, mists, fungus, slimes, mind flayers... This interferes with opcodes that target based on gender, leading to results that will be anything but logical.
 
 ////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -80,6 +80,9 @@ OUTER_SET zst_1534_potions_cannot_self_stack = "1"
 // tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted  half, you would type 50.
 OUTER_SET zst_1538_jewelry_price = "150"
 
+// set to 1 to prevent chunking with the vorpal component
+OUTER_SET zst_1541_vorpal_no_chunking = "0"
+
 // allow or disallow tweaks for component 1545 (stat tweaks)
 OUTER_SET zst_1545_strength_bonuses       = "1"
 OUTER_SET zst_1545_constitution_bonuses   = "1"
@@ -91,7 +94,7 @@ OUTER_SET zst_1545_proficiency_bonuses    = "1"
 OUTER_SET zst_1545_weapon_style_bonuses   = "1"
 OUTER_SET zst_1545_weapon_style_twohanded = "1" // allow two handed tweak
 OUTER_SET zst_1545_weapon_style_onehanded = "1" // allow one handed tweak
-OUTER_SET zst_1545_weapon_style_shield    = "1" // allow two handed tweak
+OUTER_SET zst_1545_weapon_style_shield    = "1" // allow sword and shield tweak
 OUTER_SET zst_1545_weapon_style_twoweapon = "1" // allow two weapon tweak
 
 // allow tweaks to different shield types
