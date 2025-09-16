@@ -9,6 +9,8 @@
 ## Modifications
 
 - Ankheg upgraded plate from Thalantyr Upgrade Ex mod will now be patched
+- Cure Poison component now makes it bypass spell protections such as Globe of Invulnerability
+- Made the implementation of some recent tweaks more resilient to changes
 
 ## New components
 
