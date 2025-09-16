@@ -7,7 +7,7 @@ END
 ACTION_IF spell_whirlwind > 0 BEGIN
 
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_WHIRLWIND" RET spell_res END
-  ACTION_IF NOT has_eefixpack BEGIN
+  ACTION_IF has_eefixpack BEGIN
 
     COPY_EXISTING ~%spell_res%.SPL~ ~override~
       LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8360) END

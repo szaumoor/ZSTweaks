@@ -8,5 +8,5 @@ COPY_EXISTING ~BALOR.ITM~ ~override~
   PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
     LPF ALTER_EFFECT INT_VAR match_opcode=326 match_probability1=14 savingthrow=4 savebonus=zst_3050_balor_vorpal_penalty END
   END ELSE BEGIN
-    LPF ALTER_EFFECT INT_VAR check_globals=0 match_probability1=15 probability1=14 savingthrow=4 savebonus=zst_3050_balor_vorpal_penalty END
+    LPF ALTER_EFFECT_EX INT_VAR check_globals=0 probability1=14 savingthrow=4 savebonus=zst_3050_balor_vorpal_penalty STR_VAR match_probability1_ex="(o_probability1 < 100)"  END
   END

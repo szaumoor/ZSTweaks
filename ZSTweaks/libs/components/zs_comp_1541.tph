@@ -6,13 +6,13 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
+    COPY ~%MOD_FOLDER%/items/vorpal_weapons~ ~override~
     ACTION_IF zst_1541_vorpal_no_chunking BEGIN
         COPY_EXISTING ~ZSTWVRPA.SPL~ ~override~
             LPF ALTER_EFFECT INT_VAR match_opcode = 13 parameter2 = (2**2) END
     END
 
     OUTER_SET two_handed_comp_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1199~
-    COPY ~%MOD_FOLDER%/items/vorpal_weapons~ ~override~
     COPY_EXISTING ~BALOR.ITM~ ~override~
         LPF DELETE_EFFECT INT_VAR check_globals = 0 END
         SPRINT effect_str ~op=326,pro1=14,res=ZSTWVRPA~
