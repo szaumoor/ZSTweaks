@@ -64,6 +64,8 @@ ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald BEGIN
 
     END
 
+    PRINT "Patching all non-joinable NPCs that use the Skald/Blade/Swashbuckler kits (depending on configuration)"
+    SILENT
     ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
 
       ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
@@ -88,6 +90,7 @@ ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald BEGIN
       END
 
     END
+    VERBOSE
 
   END
 

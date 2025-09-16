@@ -8,7 +8,9 @@ COPY_EXISTING ~SPIN102.SPL~ ~override~
               ~SPPR404.SPL~ ~override~
               ~SPPR212.SPL~ ~override~
               ~SPIN201.SPL~ ~override~
+
   LPF ALTER_HEADER INT_VAR speed = 0 END
+  LPF ALTER_EFFECT INT_VAR power = 0 END
 
   SPRINT cast_speed @99970
   READ_STRREF 0x50 desc
@@ -21,25 +23,14 @@ BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~SPPR404.SPL~ ~override~
               ~SPIN201.SPL~ ~override~
-  LPF CLONE_EFFECT INT_VAR match_opcode=11 opcode=169 parameter2=137 duration=6 END
-  LPF CLONE_EFFECT INT_VAR match_opcode=11 opcode=169 parameter2=6 duration=6 END
-  LPF CLONE_EFFECT INT_VAR match_opcode=11 opcode=169 parameter2=7 duration=6 END
-  LPF CLONE_EFFECT INT_VAR match_opcode=11 opcode=101 parameter2=78 duration=6 END
-  LPF CLONE_EFFECT INT_VAR match_opcode=11 opcode=101 parameter2=25 duration=6 END
-  LPF CLONE_EFFECT INT_VAR match_opcode=11 opcode=267 parameter1=14017 duration=6 END
-  LPF CLONE_EFFECT INT_VAR match_opcode=11 opcode=267 parameter1=14662 duration=6 END
+
+  LPF ADD_SPL_EFF_TGT INT_VAR pwr=0 rd=0 dur=6 STR_VAR effects = ~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=267,p1=14017;op=267,p1=14662~ END
 
 BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~SPIN102.SPL~ ~override~
               ~SPPR212.SPL~ ~override~
-  LPF ALTER_HEADER INT_VAR speed = 0 END
-  LPF CLONE_EFFECT INT_VAR match_opcode=11 opcode=169 parameter2=137 duration=3 END
-  LPF CLONE_EFFECT INT_VAR match_opcode=11 opcode=169 parameter2=6 duration=3 END
-  LPF CLONE_EFFECT INT_VAR match_opcode=11 opcode=169 parameter2=7 duration=3 END
-  LPF CLONE_EFFECT INT_VAR match_opcode=11 opcode=101 parameter2=78 duration=3 END
-  LPF CLONE_EFFECT INT_VAR match_opcode=11 opcode=101 parameter2=25 duration=3 END
-  LPF CLONE_EFFECT INT_VAR match_opcode=11 opcode=267 parameter1=14017 duration=3 END
-  LPF CLONE_EFFECT INT_VAR match_opcode=11 opcode=267 parameter1=14662 duration=3 END
+
+  LPF ADD_SPL_EFF_TGT INT_VAR pwr=0 rd=0 dur=3 STR_VAR effects = ~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=267,p1=14017;op=267,p1=14662~ END
 
 BUT_ONLY IF_EXISTS

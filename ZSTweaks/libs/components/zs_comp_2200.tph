@@ -19,6 +19,8 @@ APPEND ~CLABPA06.2DA~ ~%line%~
 COPY_EXISTING ~CLABPA06.2DA~ ~override~
   PRETTY_PRINT_2DA
 
+PRINT "Patching all non-joinable NPCs that use the Blackguard kit"
+SILENT
 ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
 
   ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
@@ -33,3 +35,4 @@ ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
   END
 
 END
+VERBOSE

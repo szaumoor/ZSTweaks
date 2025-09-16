@@ -1,11 +1,13 @@
-ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
-    WITH_SCOPE BEGIN
-        PRINT "[[FIX]]: Setting invisible stalker enemies as elementals of the Elemental Plane of Air instead of spectres"        COPY_EXISTING ~STALKE.CRE~   ~override~
-                      ~SENSTALK.CRE~ ~override~
-            WRITE_BYTE 0x272 race_elemental
-            WRITE_BYTE 0x273 class_elemental_air
-        BUT_ONLY IF_EXISTS
-    END
+ACTION_IF !VARIABLE_IS_SET ZS_MARKER_FILE_EXISTS BEGIN
+    OUTER_SET ZS_MARKER_FILE_EXISTS = FILE_EXISTS_IN_GAME "ZSSETUP.RP"
+END
+
+ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
+    PRINT "[[FIX]]: Setting invisible stalker enemies as elementals of the Elemental Plane of Air instead of spectres"        COPY_EXISTING ~STALKE.CRE~   ~override~
+                    ~SENSTALK.CRE~ ~override~
+        WRITE_BYTE 0x272 race_elemental
+        WRITE_BYTE 0x273 class_elemental_air
+    BUT_ONLY IF_EXISTS
 
     ACTION_IF zst_gender_fix BEGIN
         WITH_SCOPE BEGIN
