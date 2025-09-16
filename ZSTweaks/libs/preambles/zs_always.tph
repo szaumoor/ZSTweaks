@@ -4,6 +4,15 @@ INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_npc_array.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_ids_setup.tph~
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_tw_functions.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_prefixes.tph~
-INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_splprot_include.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_standardize_shields.tph~
+INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_splprot_include.tph~
+
+ACTION_IF NOT ZS_MARKER_FILE_EXISTS BEGIN
+    PRINT "Generating marker file ZSSETUP.RP"
+    SILENT
+    COPY_EXISTING ~sw1h01.itm~ ~override/ZSSETUP.RP~
+    OUTER_SET ZS_MARKER_FILE_EXISTS = 1
+    VERBOSE
+END
+
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_component_include.tph~

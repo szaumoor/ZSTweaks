@@ -3,10 +3,6 @@ ACTION_IF !VARIABLE_IS_SET ZS_MARKER_FILE_EXISTS BEGIN
 END
 
 ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
-
-    PRINT "PREFIXES: Generating marker file ZSSETUP.RP"
-    COPY_EXISTING ~sw1h01.itm~ ~override/ZSSETUP.RP~
-
     PRINT "[[FIX]]: Setting invisible stalker enemies as elementals of the Elemental Plane of Air instead of spectres"        COPY_EXISTING ~STALKE.CRE~   ~override~
                     ~SENSTALK.CRE~ ~override~
         WRITE_BYTE 0x272 race_elemental

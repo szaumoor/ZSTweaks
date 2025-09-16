@@ -65,6 +65,8 @@ COPY ~./zstweaks/macro.tph~ ~./zstweaks/macro.tph~
 
 REINCLUDE ~./zstweaks/macro.tph~
 
+PRINT "Patching all non-joinable NPCs that use the Dragon Disciple kit"
+SILENT
 ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
 
   ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
@@ -85,3 +87,4 @@ ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
   END
 
 END
+VERBOSE
