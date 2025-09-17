@@ -129,6 +129,7 @@ BEGIN
         PATCH_FAIL ~Invalid opcode specified for SPELL_OPCODE_PRESENT.~
     END
 
+    result = 0
     READ_LONG 0x64 ability_offset
     READ_SHORT 0x68 num_abilities
 
@@ -158,12 +159,7 @@ BEGIN
                 END
             END
 
-        END ELSE BEGIN
-            result = 0
         END
-
-    END ELSE BEGIN
-        result = 0
     END
 
 END
