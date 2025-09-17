@@ -35,13 +35,9 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         COPY_EXISTING "c2sw2h02.itm" ~override~
             LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@50130) END
-            LPF ALTER_EFFECT INT_VAR match_opcode=54 match_duration=120 duration=30 savingthrow=1 savebonus="-5" END
+            LPF ALTER_EFFECT INT_VAR match_opcode=54 duration=30 savingthrow=1 savebonus="-5" END
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 3 special = 1024 END
-
-            PATCH_FOR_EACH value IN 240 77 81 215 177 58 141 139 174 BEGIN
-                LPF ALTER_EFFECT INT_VAR match_opcode = value savingthrow = 1 savebonus = "-2" END
-            END
-
+            LPF ALTER_EFFECT_EX INT_VAR savingthrow = 1 savebonus = "-2" STR_VAR match_opcode_ex="(o_opcode != 12 AND o_opcode != 54)" END
         BUT_ONLY IF_EXISTS
 
     END

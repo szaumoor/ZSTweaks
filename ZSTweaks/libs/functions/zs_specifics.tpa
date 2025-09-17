@@ -128,7 +128,7 @@ INT_VAR header=0 // the weapon header to which the effect is applied
         insert_point = 0
         custom_p1 = 0
         custom_p2 = 0
-STR_VAR spelll="" // a spell which is cast on the target on a successful hit, but only if the wielder is the correct class
+STR_VAR spell="" // a spell which is cast on the target on a successful hit, but only if the wielder is the correct class
 BEGIN
     LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
 	LPF ADD_ITEM_EFFECT
