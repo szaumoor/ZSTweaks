@@ -25,7 +25,7 @@ ACTION_IF NOT is_iwdee BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~bdplat04.itm~ BEGIN
 
         COPY_EXISTING ~bdplat04.ITM~ ~override~
-            LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7860) END
+            LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7840) END
             LPF ALTER_EFFECT INT_VAR match_opcode=89 parameter1=12 END
             LPF CLONE_EFFECT INT_VAR match_opcode=89 opcode=86 parameter1=8 END
             LPF CLONE_EFFECT INT_VAR match_opcode=89 opcode=88 parameter1=5 END
