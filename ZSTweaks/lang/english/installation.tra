@@ -69,6 +69,7 @@
 @1549 = ~Tweak the usability of different armor types~ // TODO
 @1555 = ~Make the Slayer Form more interesting, effective in late-game, and less annoying to use~ // (TODO)
 @1600 = ~Make everyone able to perform omnidirectional backstabs (aka face-stabbing)~
+@1360 = "Make Light Crossbows get +1/2 more APR"
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -366,7 +367,6 @@ w@444 = ~Make Flesh to Stone use Petrification saves and optionally make some cr
 @3100 = ~Make Beetles more resistant to non-crushing weapons~
 
 // END-OF-INSTALL ORDER TWEAKS
-@1360 = "Make Light Crossbows get +1/2 more APR"
 @1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense. WARNING: Install after other tweaks and mods that change the same spells, to be safer~
 @1532 = ~Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage. WARNING: Install this component DEAD LAST after other components that modify these items, including components from other mods~
 @1548 = ~Make Void-weapons strength-sapping not affect undead, and able to critically hit to deal double damage~

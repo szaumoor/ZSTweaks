@@ -13,8 +13,8 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
   LPF ITM_MIN_STR RET min_str = result END
   LPF ITM_REF_UNAME RET name_strref = result END
 
-  PATCH_IF wpn_cat = 27 AND wpn_prof = 103 AND (name_strref = %light_xbow_strref% OR min_str <= 8) BEGIN 
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6,p2=0~ END
+  PATCH_IF wpn_cat = 27 AND wpn_prof = 103 AND (name_strref = %light_xbow_strref% OR min_str <= 8) BEGIN
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~ip=0,op=1,p1=6,p2=0~ END
   END
 
 BUT_ONLY

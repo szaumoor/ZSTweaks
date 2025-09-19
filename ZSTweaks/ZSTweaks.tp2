@@ -47,6 +47,7 @@ FORBID_COMPONENT "ZSTweaks.tp2" "1533" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1534
 FORBID_COMPONENT "ZSTweaks.tp2" "1537" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1650" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1541" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1545" @57
 FORBID_COMPONENT "ZSTweaks.tp2" "1546" @57 FORBID_COMPONENT "ZSTweaks.tp2" "1547" @57
+FORBID_COMPONENT "ZSTweaks.tp2" "1360" @57
 
 BEGIN @120 DESIGNATED 120 GROUP @10 // MAGIC WEAPONS APR
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
@@ -141,6 +142,9 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 
 BEGIN @1600 DESIGNATED 1600 GROUP @10 // backstab requirements
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+
+BEGIN @1360 DESIGNATED 1360 GROUP @10 // LIGHT CROSSBOW +1/2 APR BONUS
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 
 ///////////////////////////////////// ARMOR/GEAR/MISC TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1392,7 +1396,4 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 
 BEGIN @1548 DESIGNATED 1548 GROUP @32 // void-weapons tweak
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
-
-BEGIN @1360 DESIGNATED 1360 GROUP @32 // LIGHT CROSSBOW +1/2 APR BONUS
-REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 /////////////////////////////////////// END OF THE FUN \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

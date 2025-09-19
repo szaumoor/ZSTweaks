@@ -10,6 +10,12 @@
 - Fixed Holy Power not properly adding APR bonuses to non-warrior classes
 - Fixed Holy Power excluding **non-warriors** instead of **warriors** from getting the APR bonus
 - Fixed Holy Power and Tenser's Transformation not being excluded from affecting rangers and paladins for the APR bonus
+- Fixed Rhino's Beetle Shield wrong description
+- Fix light crossbow tweak not working after some other tweaks to crossbows
+
+## Modifications
+
+- Light Crossbow tweak no longer requires to be installed at the last, and becomes part of the general tweaks section.
 
 ## New components
 
