@@ -1689,7 +1689,7 @@ Generally considered a terrible choice for a level 7 spell, this making a little
 
 **Component 502:** Make Hold Undead bypass Magic Resistance
 
-Same reasoning as component 500.
+Same reasoning as component 500. Applies to Priest of Lathander's version of the spell.
 
 </details>
 
