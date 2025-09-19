@@ -1570,9 +1570,9 @@ Improves the usability of Death Fog as a "general purpose" damage dealer instead
 
 2 levels of drain is unremarkable and a waste of a spell slot, particularly when the likely enemies to fight by the time you get this spell are fairly high level. Additionally, this makes the spell behave similarly to how it does IWDEE, where outsiders, undead, and constructs are ensured to be immune to it.
 
-**Component 405** Make Maze bypass Magic Resistance, like Imprisonment, and make Minotaurs immune to it
+**Component 405** Make Maze bypass Magic Resistance, like Imprisonment, and make minotaurs immune to it
 
-I think this makes this spell quite more useful, although perhaps it's too powerful like that if used against some enemies. I like this tweak, but I'll use the spell judiciously (perhaps not mazing dragons, for example). Additionally, Minotaurs are immune to it, same as IWDEE.
+I think this makes this spell quite more useful, although perhaps it's too powerful like that if used against some enemies. I like this tweak, but I'll use the spell judiciously (perhaps not mazing dragons, for example). Additionally, minotaurs are immune to it, same as IWDEE.
 
 **Component 407** Make base Imp Familiars have 12/24 HP like the other familiars
 
@@ -1686,6 +1686,10 @@ This improves the spell and the abilities granted by it in the following ways:
 **Component 500:** Make Control Undead bypass magic resistance and have a -2 penalty to the saving throw
 
 Generally considered a terrible choice for a level 7 spell, this making a little more useful. Might make it more powerful in the future, but this is a start. Just the fact that it didn't bypass magic resistance was a big detriment to the spell, since many undead are resistant to magic, like the majority of skeletons.
+
+**Component 502:** Make Hold Undead bypass Magic Resistance
+
+Same reasoning as component 500.
 
 </details>
 
@@ -1803,7 +1807,7 @@ Healing spells are infamously bad in BG/BG2, they heal too little for such a slo
 - Mass Cure: improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32)
 - Mist of Eldath: Heals 40 points, regenerates 1 HP/s for 2 rounds and prevents poisoning for that time. Name changed to Rejuvenating Mist
 
-Also, they will no longer be stopped by spell deflection. Finally, it can also tweak the "cause wounds" spells in the same magnitude as the "cure wounds" spells. 
+Also, they will no longer be stopped by spell deflection. Finally, it can also tweak the "cause wounds" spells in the same magnitude as the "cure wounds" spells.
 
 All of these specific tweaks to these spells may be disabled or enabled in the config file.
 

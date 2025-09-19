@@ -168,6 +168,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET spell_spike_growth             = IDS_OF_SYMBOL (spell CLERIC_SPIKE_GROWTH)
     OUTER_SET spell_spike_stones             = IDS_OF_SYMBOL (spell CLERIC_SPIKE_STONES)
     OUTER_SET spell_static_charge            = IDS_OF_SYMBOL (spell CLERIC_STATIC_CHARGE)
+    OUTER_SET spell_sunscorch                = IDS_OF_SYMBOL (spell CLERIC_SUNSCORCH)
     OUTER_SET spell_symbol_pain              = IDS_OF_SYMBOL (spell CLERIC_SYMBOL_PAIN)
     OUTER_SET spell_thorn_spray              = IDS_OF_SYMBOL (spell CLERIC_THORN_SPRAY)
     OUTER_SET spell_unfailing_endurance      = IDS_OF_SYMBOL (spell CLERIC_UNFAILING_ENDURANCE)

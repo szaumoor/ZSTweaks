@@ -1075,6 +1075,10 @@ BEGIN @500 DESIGNATED 500 GROUP @19 // control undead TWEAK
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @52
 FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 
+BEGIN @502 DESIGNATED 502 GROUP @19 // hold undead TWEAK
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
+
 /////////////////////////////////// CLERIC/DRUID SPELL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 BEGIN @10009 DESIGNATED 99 GROUP @20 // INSTALL ALL COMPONENTS IN THE GROUP
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54

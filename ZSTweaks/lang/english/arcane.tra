@@ -547,3 +547,16 @@ Area of Effect: 4-ft. radius
 Saving Throw: Special
 
 The Control Undead spell allows the caster to take control of undead creatures within the area of effect. This creates a telepathic link between the caster and the undead, allowing complete control. If the undead have 3 Hit Dice or less, then there is no Saving Throw allowed; however, if they have 4 Hit Dice or more, a Save vs. Spell at -2 is allowed to negate the effect. The undead remain under the control of the caster for the duration of the spell or until they are affected by a Dispel Magic. This spell cannot be stopped by the undead creature's resistance to magic.~
+
+
+@8609 = ~Hold Undead
+(Necromancy)
+
+Level: 3
+Range: 35 ft.
+Duration: 2 rounds/level
+Casting Time: 3
+Area of Effect: 1 creature and any enemies within 4 ft.
+Saving Throw: Neg.
+
+This spell holds 1d4 undead creatures rigidly immobile and in place. The effect is centered on the victim selected by the caster. Any enemies within 4 ft. of the target are also affected. Those who succeed on their Saving Throws are totally unaffected by the spell. Held creatures cannot move or speak, but they remain aware of events around them and can use abilities not requiring motion or speech. Being held does not prevent the worsening of the subject's condition due to wounds. Undead cannot resist this spell through Magic Resistance.~
