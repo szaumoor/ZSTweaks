@@ -19,11 +19,17 @@ WITH_SCOPE BEGIN
     COPY_EXISTING ~zstwfoo.cre~ ~override/CHARBASE.cre~
         LPF ADD_CRE_EFFECT INT_VAR opcode = 303 timing = 9 parameter2 = omnistab_p2 END
 
+    OUTER_SET counter = 0
+    SILENT
     ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
         ACTION_IF !(IS_AN_INT dv) BEGIN
             COPY_EXISTING ~%file%~ ~override~
                 LPF ADD_CRE_EFFECT INT_VAR opcode = 303 timing = 9 parameter2 = omnistab_p2 END
+            ++counter
         END
     END
+
+    VERBOSE
+    PRINT "Processed %counter% joinable creature files for omnistabbing."
 
 END

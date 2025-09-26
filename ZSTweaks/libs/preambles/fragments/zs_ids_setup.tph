@@ -28,6 +28,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET race_mephit          = IDS_OF_SYMBOL(race MEPHIT)
     OUTER_SET race_mimic           = IDS_OF_SYMBOL(race MIMIC)
     OUTER_SET race_mind_flayer     = IDS_OF_SYMBOL(race MIND_FLAYER)
+    OUTER_SET race_minotaur        = IDS_OF_SYMBOL(race MINOTAUR)
     OUTER_SET race_mist            = IDS_OF_SYMBOL(race MIST)
     OUTER_SET race_myconid         = IDS_OF_SYMBOL(race MYCONID)
     OUTER_SET race_otyugh          = IDS_OF_SYMBOL(race OTYUGH)

@@ -5,6 +5,8 @@ END ELSE BEGIN
 END
 
 WITH_SCOPE BEGIN
+    PRINT "Creating subspells to allow scrolls to scale with character level..."
+    SILENT
     OUTER_SET scroll_counter = 0
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         LPF ITM_CAT RET cat = result END
@@ -13,6 +15,7 @@ WITH_SCOPE BEGIN
             SPRINT filename_base "RPSC"
             READ_LONG 0x0c scroll_name
             PATCH_IF scroll_counter > 9999 BEGIN
+                PATCH_VERBOSE
                 PATCH_FAIL "Too many scrolls to process!"
             END ELSE PATCH_IF scroll_counter < 10 BEGIN
                 SPRINT number "000%scroll_counter%"
@@ -68,5 +71,6 @@ WITH_SCOPE BEGIN
             END
         END
     BUT_ONLY
-
+    VERBOSE
+    PRINT "Found %scroll_counter% usable scrolls for scroll scaling."
 END

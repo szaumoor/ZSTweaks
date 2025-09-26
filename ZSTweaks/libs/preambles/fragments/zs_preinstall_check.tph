@@ -93,5 +93,20 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
         PRINT "SCS spell nerf component detected."
     END
 
+    OUTER_SET has_zs_item_pack_kukris = FILE_EXISTS_IN_GAME ~ZSIPKUK0.ITM~
+    ACTION_IF has_zs_item_pack_kukris BEGIN
+        PRINT "ZS_ItemPack pack with kukris detected."
+    END
+
+    OUTER_SET has_zs_item_pack_estocs = FILE_EXISTS_IN_GAME ~ZSIPEST0.ITM~
+    ACTION_IF has_zs_item_pack_estocs BEGIN
+        PRINT "ZS_ItemPack pack with estocs detected."
+    END
+
+    OUTER_SET has_zs_item_pack_rapiers = FILE_EXISTS_IN_GAME ~ZSIPRAP0.ITM~
+    ACTION_IF has_zs_item_pack_rapiers BEGIN
+        PRINT "ZS_ItemPack pack with rapiers detected."
+    END
+
     OUTER_SET zs_preinstall_check = 1
 END

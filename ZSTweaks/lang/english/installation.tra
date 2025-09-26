@@ -44,7 +44,7 @@
 @1120 = "Make some weapon categories suffer penalties to backstabbing for balance"
 @1121 = ~Make Flails and Morning Stars always inflict a small amount of piercing damage~
 @1150 = "Make some weapon categories adjust their damage configuration"
-@1361 = ~Make axes deal extra damage equal to its base damage on critical hits~
+@1361 = ~Make axes or halberds deal extra damage equal to its base damage on critical hits~
 @1362 = ~Make maces, clubs, and hammers damage the target's Armor Class temporarily based on enchantment level~
 @1435 = "Make Darts have a speed factor of 0 and extend the range to 30 ft"
 @1440 = "Make Daggers have general extra features to compensate for the low damage"
@@ -70,6 +70,7 @@
 @1555 = ~Make the Slayer Form more interesting, effective in late-game, and less annoying to use~ // (TODO)
 @1600 = ~Make everyone able to perform omnidirectional backstabs (aka face-stabbing)~
 @1360 = "Make Light Crossbows get +1/2 more APR"
+@1329 = ~Make disrupt undead weapons more balanced and closer to PnP rules~
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -220,13 +221,10 @@
 @1314 = "Make Jerrod's Mace +2 behave as a +3 weapon"
 @1320 = "Make Flail of Ages +5 allow Haste and Improved Haste and improve it slightly"
 @1321 = "Make Bone Club +2, +3 against undead's effect reflect the description better and improve it slightly"
-@1323 = ~Make Azuredge act properly as a +3 weapon and make the disruption effect more balanced~
 @1324 = ~Make Wyvern's Tail +2 cause poison damage on hit and have a chance of poisoning~
 @1325 = ~Make Borok's Fist +2 different from Ashideena +2~
-@1326 = ~Make Maces of Disruption more balanced when fighting the undead and improve misleading description~
 @1327 = ~Make Club of Detonation's Fireball not tied to wizard level and improve it slightly~
 @1328 = ~Make Storm Star slightly more electrifying and improve the chances of the chain lightning part~
-@1329 = ~Make Runic Hammer's undead disruption more balanced~
 
 // RANGED WEAPONS
 @1010 = ~Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost~

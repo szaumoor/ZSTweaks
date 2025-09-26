@@ -76,19 +76,19 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=ZSTWVRPA,stype=4,sbonus=-2~ END
 
         PRINT "Patching items and spells with immunity to the Vorpal effect..."
+
+        OUTER_SET opcode = 101
+        OUTER_SET parameter2 = 13
+        OUTER_SPRINT resource "*"
         COPY_EXISTING_REGEXP ~^.+\.\(itm\|spl\)$~ ~override~
-            READ_ASCII 0 sig (4)
             SET present = 0
+            READ_ASCII 0x0 sig (4)
             PATCH_MATCH "%sig%" WITH
             "SPL "
-            BEGIN
-                LPF SPELL_OPCODE_PRESENT INT_VAR opcode = 101 parameter2 = 13 silent=1 RET present = result END
-            END
+            BEGIN LPM SPELL_OPCODE_PRESENT END
 
             "ITM "
-            BEGIN
-                LPF ITM_OPCODE_PRESENT INT_VAR opcode = 101 parameter2 = 13 silent=1 RET present = result END
-            END
+            BEGIN LPM ITM_OPCODE_PRESENT END
 
             DEFAULT
                 PATCH_WARN "Found invalid file: %SOURCE_RES%"
@@ -97,6 +97,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             PATCH_IF present BEGIN
                 LPF CLONE_EFFECT INT_VAR match_opcode=101 match_parameter2=13 opcode=206 parameter2=0 STR_VAR resource="ZSTWVRPA" END
             END
+
         BUT_ONLY
 
 END

@@ -46,14 +46,14 @@ This component makes changes to some weapon categories where I feel a tweak woul
 - Bastard swords: I never liked that bastard swords were "between long swords and two-handed swords," but there was no max damage difference between long swords and bastard swords. So now they're damage-wise actually between both (1d8+1).
 - Two-handed swords: This increases the minimum damage, similar to bastard swords, and will deal 1d9+1 as base. Two-handed swords that deal 1d12 base damage will instead deal 2d6.
 
-**Component 1361:** Make axes deal extra damage equal to its base damage on critical hits
+**Component 1361:** Make axes or halberds deal extra damage equal to its base damage on critical hits
 
-The only difference between axes and swords functionally is the speed factor. Axes are 2 points slower than long swords. Speed factor determines how early or late you hit during your turn to attack each round. Its significance is debatable, and in my experience it's much more important for backstabbing, to ensure that the first movement of your character when attacking is an actual attack and not something cosmetic. To widen the difference between both, axes have the following difference:
+The only difference between axes and swords functionally is the speed factor. Axes are 2 points slower than long swords. In the case of Halberds, they're one point faster than two-handed swords. Speed factor determines how early or late you hit during your turn to attack each round. Its significance is debatable, and in my experience it's much more important for backstabbing, to ensure that the first movement of your character when attacking is an actual attack and not something cosmetic. To widen the difference between both, axes have the following difference:
 
-- Melee critical hits for one-handed axes deal extra damage equal to 1d8 + Enchantment (1d10 in the case of two-handed axes)
+- Melee critical hits for one-handed axes deal extra damage equal to 1d8 + Enchantment (1d10 in the case of two-handed axes and halberds)
 - Ranged critical hits deal extra damage equal to 1d6 + Enchantment
 
-For example, a critical hit with a +3 sword could deal 20 slashing damage, but if it was an axe, it would deal instead between 24-31 slashing damage (i.e. 20 plus 1d8+3)
+For example, a critical hit with a +3 sword could deal 20 slashing damage, but if it was an axe, it would deal instead between 24-31 slashing damage (i.e. 20 plus 1d8+3). Configuration options are added to modify axes and halberds independently.
 
 This is conceptually how it works in NWN. Axes deal triple critical damage. That would be absurd in the context of BG's health pools, but it provides regardless a bonus. Skull breaker!
 
@@ -101,6 +101,13 @@ This is a small change to make daggers slightly more appealing on a general leve
 
 Example: An attack with a dagger +2 with a character that has single-weapon proficiency rolls an 18, which becomes a critical hit. The damage of this hit is 16. Immediately after, another 2d6+6 will be rolled, adding 8-18 damage to the critical hit, thus making the full damage of the critical hit between 24 and 34.
 
+**Kukris** from my **Item Pack** will be affected slightly differently:
+
+- Speed Factor will only be reduced by 1 point, not 2
+- No THAC0 bonus
+- No extra critical hit chance (they all have an implied 5% critical chance already). Instead, its base damage will be increased to 1d4+1
+- Critical hit extra damage still exists
+
 Exceptions: Grave Binder is not affected by these bonuses because it's an oversized dagger. Other unusual daggers will be treated on a case-by-case basis.
 
 **Component 1450:** Make some rogue weapons able to do more damage if wielded by pure thieves (Finesse)
@@ -113,12 +120,12 @@ You could think of this as a part dirty-fighting combat skills of rogues, or lik
 
 This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashis, ninja-tos, katanas, and short swords. The general rule for damage is Dice Number * (Dice size - 1) + Bonus (with exceptions). To be more specific:
 
-- **Long swords, Staves**: 6-15% chance to inflict 1d7/5+bonus of slashing/crushing damage
-- **Katanas, Scimitars**: 9-18% chance to inflict 1d9+bonus/1d7+bonus of slashing damage
+- **Long swords, Staves**: 6-15% chance to inflict 1d7/5+bonus of slashing/crushing damage. Estocs from my item pack will have a 4% higher chance of triggering finesse (10-19%), dealing 1d6+2 plus bonus of piercing damage.
+- **Katanas, Scimitars**: 10-19% chance to inflict 1d9+bonus/1d7+bonus of slashing damage
 - **Ninja-tos, Wakizashis, Slings**: 16-25% chance inflict 1d7+bonus/1d3+bonus of slashing/piercing/missile damage
-- **Short Swords, Clubs**: 26-35% chance to inflict 1d5+bonus of piercing/crushing damage
+- **Short Swords, Clubs**: 26-35% chance to inflict 1d5+bonus of piercing/crushing damage. Rapiers from my item pack will have a 5% lower chance of triggering finesse (26-30%).
 - **Bows, Crossbows**: 31-40% chance to inflict 1d5 or 1d7 of missile damage, respectively
-- **Darts, Daggers**: 43-52% chance to inflict 2 + bonus / 2 (rounded down), 1d3+bonus of missile or piercing damage, respectively
+- **Darts, Daggers**: 43-52% chance to inflict 2 + bonus / 2 (rounded down), 1d3+bonus of missile or piercing damage, respectively. Kukris from my item pack will have a 7% lower chance of triggering finesse (36-45%).
 
 A counterbalance is also added such that this damage forces a save vs. Breath to take only half of the damage (extra damage dealt, assuming a failed saving throw and before resistances, is *never* lower than 2). This saving throw bonus or penalty depends on the wielder's current dexterity, which improves up to 24 dexterity. This save's penalty increases by the enchantment level as well. For example, if you have a Long Sword +0 that gets a +2 bonus at a particular level of dexterity, using a Long Sword +3 would make it a penalty of -1 instead. More details:
 

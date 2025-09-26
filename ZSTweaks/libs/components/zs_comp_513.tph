@@ -7,23 +7,12 @@ END
 ACTION_IF spell_whirlwind > 0 BEGIN
 
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_WHIRLWIND" RET spell_res END
-  ACTION_IF has_eefixpack BEGIN
 
-    COPY_EXISTING ~%spell_res%.SPL~ ~override~
-      LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8360) END
-      LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber=4 END
-      LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
-      LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~%SOURCE_RES%~ END
-
-  END ELSE BEGIN
-
-    COPY_EXISTING ~%spell_res%.SPL~ ~override~
-      LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8360) END
-
-    COPY_EXISTING ~%spell_res%A.SPL~ ~override~
-      LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber=4 END
-
-  END
+  COPY_EXISTING ~%spell_res%.SPL~ ~override~
+    LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8360) END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber=4 END
+    LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
+    LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~%SOURCE_RES%~ END
 
   COPY_EXISTING ~whirlw.PRO~ ~override~
     WRITE_SHORT 0xa   6

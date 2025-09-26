@@ -31,16 +31,11 @@ INT_VAR
     unusable4     = "-1"
     price         = "-1"
     max_stack     = "-1"
-    lore_id       = "-1"
+    lore          = "-1"
     weight        = "-1"
     ench          = "-1"
     this_plus     = 0 // to enable addition to values, a value of 1 will add, -1 will subtract, to the current value instead of setting on some fields
 STR_VAR
-    //// Use these for passing strings directly -- will be added to the TLK, tra refs will need to be set as variables first
-    general_name = ~~
-    id_name      = ~~
-    general_desc = ~~
-    id_desc      = ~~
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     used_up_itm = ~none~
     appearance  = ~none~
@@ -48,7 +43,10 @@ STR_VAR
     ground_icon = ~none~
     desc_img    = ~none~
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
+
     PATCH_IF unid_ref_name > "-2" BEGIN
         WRITE_LONG 0x08 unid_ref_name
     END ELSE PATCH_IF unid_ref_name < "-2" BEGIN
@@ -151,10 +149,10 @@ BEGIN
         PATCH_FAIL "Passed a non-default (-1) negative value to max_stack"
     END
 
-    PATCH_IF lore_id > "-1" BEGIN
-        WRITE_SHORT 0x42 lore_id
-    END ELSE PATCH_IF lore_id < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to lore_id"
+    PATCH_IF lore > "-1" BEGIN
+        WRITE_SHORT 0x42 lore
+    END ELSE PATCH_IF lore < "-1" BEGIN
+        PATCH_FAIL "Passed a non-default (-1) negative value to lore"
     END
 
     PATCH_IF weight > "-1" BEGIN
@@ -205,34 +203,6 @@ BEGIN
         PATCH_FAIL "Passed a non-default (-1) negative value to price"
     END
 
-    PATCH_IF STRING_LENGTH "%general_name%" > 0 BEGIN
-        PATCH_IF unid_ref_name > "-2" BEGIN
-            PATCH_FAIL "Already passed an string reference for general name! It will be substituted by %general_name%."
-        END
-        SAY NAME1 "%general_name%"
-    END
-
-    PATCH_IF STRING_LENGTH "%id_name%" > 0 BEGIN
-        PATCH_IF id_ref_name > "-2" BEGIN
-            PATCH_FAIL "Already passed an string reference for identified name! It will be substituted by %id_name%."
-        END
-        SAY NAME2 "%id_name%"
-    END
-
-    PATCH_IF STRING_LENGTH "%general_desc%" > 0 BEGIN
-        PATCH_IF unid_ref_desc > "-2" BEGIN
-            PATCH_FAIL "Already passed an string reference for general description! It will be substituted by %general_desc%."
-        END
-        SAY UNIDENTIFIED_DESC "%general_desc%"
-    END
-
-    PATCH_IF STRING_LENGTH "%id_desc%" > 0 BEGIN
-        PATCH_IF id_ref_desc > "-2" BEGIN
-            PATCH_FAIL "Already passed an string reference for identified description! It will be substituted by %id_desc%."
-        END
-        SAY IDENTIFIED_DESC "%id_desc%"
-    END
-
     PATCH_IF NOT "%used_up_itm%" STR_EQ "none" BEGIN
         WRITE_ASCII 0x10 "%used_up_itm%" #8
     END
@@ -268,32 +238,140 @@ INT_VAR
     probability2   = "-1"
     dicenumber     = "-1"
     dicesize       = "-1"
-    save_type      = "-1"
-    savingthrow    = "-999"
+    savingthrow    = "-1"
+    savebonus      = "-999"
     special        = "-1"
     primary_type   = "-1"
     min_level      = "-1"
     max_level      = "-1"
-    dispel_resist  = "-1"
+    resist_dispel  = "-1"
     parameter3     = "-1"
     parameter4     = "-1"
+    parameter5     = "-1"
     secondary_type = "-1"
+STR_VAR
+    resource = ~none~
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "EFF" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "EFF" END
+    END
+
+    PATCH_IF opcode > "-1" BEGIN
+        WRITE_LONG 0x10 opcode
+    END ELSE PATCH_IF opcode < "-1" BEGIN
+        PATCH_FAIL "Passed a non-default (-1) negative value to opcode"
+    END
+
     PATCH_IF target > "-1" BEGIN
         WRITE_LONG 0x14 target
+    END ELSE PATCH_IF target < "-1" BEGIN
+        PATCH_FAIL "Passed a non-default (-1) negative value to target"
+    END
+
+    PATCH_IF power > "-1" BEGIN
+        WRITE_LONG 0x18 power
+    END ELSE PATCH_IF power < "-1" BEGIN
+        PATCH_FAIL "Passed a non-default (-1) negative value to power"
     END
 
     PATCH_IF parameter1 > "-999" BEGIN
         WRITE_LONG 0x1c parameter1
+    END ELSE PATCH_IF parameter1 < "-999" BEGIN
+        PATCH_FAIL "Passed a negative value under the default (-999) to parameter1"
     END
 
     PATCH_IF parameter2 > "-1" BEGIN
         WRITE_LONG 0x20 parameter2
+    END ELSE PATCH_IF parameter2 < "-1" BEGIN
+        PATCH_FAIL "Passed a non-default (-1) negative value to parameter2"
+    END
+
+    PATCH_IF timing > "-1" BEGIN
+        WRITE_LONG 0x24 timing
+    END ELSE PATCH_IF timing < "-1" BEGIN
+        PATCH_FAIL "Passed a negative value under the default (-1) to timing"
+    END
+
+    PATCH_IF duration > "-1" BEGIN
+        WRITE_LONG 0x27 duration
+    END ELSE PATCH_IF duration < "-1" BEGIN
+        PATCH_FAIL "Passed a negative value under the default (-1) to duration"
+    END
+
+    PATCH_IF probability1 > "-1" BEGIN
+        WRITE_SHORT 0x2c probability1
+    END ELSE PATCH_IF probability1 < "-1" BEGIN
+        PATCH_FAIL "Passed a non-default (-1) negative value to probability1"
+    END
+
+    PATCH_IF probability2 > "-1" BEGIN
+        WRITE_SHORT 0x2e probability2
+    END ELSE PATCH_IF probability2 < "-1" BEGIN
+        PATCH_FAIL "Passed a non-default (-1) negative value to probability2"
+    END
+
+    PATCH_IF NOT "%resource%" STR_EQ "none" BEGIN
+        WRITE_ASCII 0x30 "%resource%" #8
+    END
+
+    PATCH_IF dicenumber > "-1" BEGIN
+        WRITE_LONG 0x38 dicenumber
+    END ELSE PATCH_IF dicenumber < "-1" BEGIN
+        PATCH_FAIL "Passed a non-default (-1) negative value to dicenumber"
+    END
+
+    PATCH_IF dicesize > "-1" BEGIN
+        WRITE_LONG 0x3c dicesize
+    END ELSE PATCH_IF dicesize < "-1" BEGIN
+        PATCH_FAIL "Passed a non-default (-1) negative value to dicesize"
+    END
+
+    PATCH_IF savingthrow > "-1" BEGIN
+        WRITE_LONG 0x40 savingthrow
+    END ELSE PATCH_IF savingthrow < "-1" BEGIN
+        PATCH_FAIL "Passed a non-default (-1) negative value to savingthrow"
+    END
+
+    PATCH_IF savebonus > "-999" BEGIN
+        WRITE_LONG 0x44 savebonus
+    END ELSE PATCH_IF savebonus < "-999" BEGIN
+        PATCH_FAIL "Passed a negative value under the default (-999) to savebonus"
+    END
+
+    PATCH_IF primary_type > "-1" BEGIN
+        WRITE_LONG 0x4c primary_type
+    END ELSE PATCH_IF primary_type < "-1" BEGIN
+        PATCH_FAIL "Passed a negative value under the default (-1) to primary_type"
+    END
+
+    PATCH_IF secondary_type > "-1" BEGIN
+        WRITE_LONG 0xd0 secondary_type
+    END ELSE PATCH_IF secondary_type < "-1" BEGIN
+        PATCH_FAIL "Passed a negative value under the default (-1) to secondary_type"
+    END
+
+    PATCH_IF resist_dispel > "-1" BEGIN
+        WRITE_LONG 0x5c resist_dispel
+    END ELSE PATCH_IF resist_dispel < "-1" BEGIN
+        PATCH_FAIL "Passed a negative value under the default (-1) to resist_dispel"
     END
 
     PATCH_IF parameter3 > "-1" BEGIN
         WRITE_LONG 0x60 parameter3
+    END ELSE PATCH_IF parameter3 < "-1" BEGIN
+        PATCH_FAIL "Passed a non-default (-1) negative value to parameter3"
+    END
+
+    PATCH_IF parameter4 > "-1" BEGIN
+        WRITE_LONG 0x64 parameter4
+    END ELSE PATCH_IF parameter4 < "-1" BEGIN
+        PATCH_FAIL "Passed a non-default (-1) negative value to parameter4"
+    END
+
+    PATCH_IF parameter5 > "-1" BEGIN
+        WRITE_LONG 0x68 parameter5
+    END ELSE PATCH_IF parameter5 < "-1" BEGIN
+        PATCH_FAIL "Passed a non-default (-1) negative value to parameter5"
     END
 
     PATCH_IF dicesize > "-1" BEGIN
@@ -332,7 +410,10 @@ STR_VAR
     casting_sound = ~none~
     icon = ~none~
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    END
+
     PATCH_IF ref_name > "-2" BEGIN
         WRITE_LONG 0x08 ref_name
     END ELSE PATCH_IF ref_name < "-2" BEGIN
@@ -421,7 +502,10 @@ INT_VAR
 STR_VAR
     dialog = ~none~
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    END
+
     PATCH_IF name > "-2" BEGIN
         WRITE_LONG 0x08 name
     END ELSE PATCH_IF name < "-2" BEGIN
@@ -476,9 +560,11 @@ INT_VAR
     trap_size      = "-1"
     explosion_size = "-1"
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "PRO" END
-    READ_SHORT 0x8 projectile_type
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "PRO" END
+    END
 
+    READ_SHORT 0x8 projectile_type
     PATCH_IF trap_size > "-1" BEGIN
         PATCH_IF projectile_type = 3 BEGIN
             WRITE_SHORT 0x204 trap_size
@@ -502,7 +588,10 @@ INT_VAR
     match_timing = "-1"
     timing = "-1"
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    END
+
     READ_LONG 0x2c4 effects_offset
     READ_LONG 0x2c8 effects_num
     SET effect_bytes = 0

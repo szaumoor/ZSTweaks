@@ -140,6 +140,6 @@ BUT_ONLY
 ACTION_IF zst_1546_buckler_tweak BEGIN
     PRINT "Patching creatures, spells, and items with weapon immunities with appropriate buckler parry immunity..."
     COPY_EXISTING_REGEXP ~^.+\.\(cre\|itm\|spl\)$~ ~override~
-        LPF PATCH_FOR_BUCKLER_IMMUNITIES END
+        LPM PATCH_FOR_BUCKLER_IMMUNITIES
     BUT_ONLY
 END

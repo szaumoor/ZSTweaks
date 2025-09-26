@@ -8,7 +8,10 @@ INT_VAR
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    END
+
     READ_LONG 0x64 ability_offset
     READ_SHORT 0x68 num_abilities
 
@@ -47,7 +50,10 @@ INT_VAR
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
+
     READ_LONG 0x64 ability_offset
     READ_SHORT 0x68 num_abilities
 
@@ -73,14 +79,11 @@ BEGIN
 END
 
 // This function tries to see if an opcode (effect) is present in a given creature file.
-DEFINE_PATCH_FUNCTION CRE_OP_PRESENT
-INT_VAR
-    opcode1 = "-1"
-    opcode2 = "-1"
-RET
-    result
+DEFINE_PATCH_MACRO CRE_OP_PRESENT
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    END
 
     READ_LONG 0x2c4 eff_offset
     READ_LONG 0x2c8 eff_length
@@ -107,29 +110,19 @@ BEGIN
 
         eff_offset += effect_size
     END
-    result = found
+    present = found
 
 END
 
-DEFINE_PATCH_FUNCTION SPELL_OPCODE_PRESENT
-INT_VAR
-    opcode = "-1"
-    parameter2 = "-1"
-    silent = 0
-STR_VAR
-    resource = "*"
-RET
-    result
+DEFINE_PATCH_MACRO SPELL_OPCODE_PRESENT
 BEGIN
-    PATCH_IF NOT silent BEGIN
+    PATCH_IF zs_debug BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+        PATCH_IF opcode <= 0 BEGIN
+            PATCH_FAIL ~Invalid opcode specified for SPELL_OPCODE_PRESENT.~
+        END
     END
 
-    PATCH_IF opcode <= 0 BEGIN
-        PATCH_FAIL ~Invalid opcode specified for SPELL_OPCODE_PRESENT.~
-    END
-
-    result = 0
     READ_LONG 0x64 ability_offset
     READ_SHORT 0x68 num_abilities
 
@@ -145,14 +138,14 @@ BEGIN
                 SET base_eff_offset = effect_offset + (globals_number * 0x30) + (index * 0x30)
                 READ_SHORT base_eff_offset op
                 READ_LONG (base_eff_offset + 0x08) p2
-                PATCH_IF opcode = op AND (parameter2 < 0 OR parameter2 = p2) BEGIN
+                PATCH_IF opcode = op AND VARIABLE_IS_SET "parameter2" AND (parameter2 < 0 OR parameter2 = p2) BEGIN
                     PATCH_IF "%resource%" STR_EQ "*" BEGIN
-                        result = 1
+                        present = 1
                         index = effects_number
                     END ELSE BEGIN
                         READ_ASCII (base_eff_offset + 0x14) assigned_resource
                         PATCH_IF "%resource%" STR_EQ "%assigned_resource%" BEGIN
-                            result = 1
+                            present = 1
                             index = effects_number
                         END
                     END
@@ -165,22 +158,13 @@ BEGIN
 END
 
 // checks globals only
-DEFINE_PATCH_FUNCTION ITM_OPCODE_PRESENT
-INT_VAR
-    opcode = "-1"
-    parameter2 = "-1"
-    silent = 0
-STR_VAR
-    resource = "*"
-RET
-    result
+DEFINE_PATCH_MACRO ITM_OPCODE_PRESENT
 BEGIN
-    PATCH_IF NOT silent BEGIN
+    PATCH_IF zs_debug BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
-    END
-
-    PATCH_IF opcode <= 0 BEGIN
-        PATCH_FAIL ~Invalid opcode specified for ITM_OPCODE_PRESENT.~
+        PATCH_IF opcode <= 0 BEGIN
+            PATCH_FAIL ~Invalid opcode specified for ITM_OPCODE_PRESENT.~
+        END
     END
 
     READ_LONG 0x6a ability_offset
@@ -194,20 +178,18 @@ BEGIN
             READ_LONG (base_eff_offset + 0x08) p2
             PATCH_IF opcode = op AND (parameter2 < 0 OR parameter2 = p2) BEGIN
                 PATCH_IF "%resource%" STR_EQ "*" BEGIN
-                    result = 1
+                    present = 1
                     index = num_abilities
                 END ELSE BEGIN
                     READ_ASCII (base_eff_offset + 0x14) assigned_resource
                     PATCH_IF "%resource%" STR_EQ "%assigned_resource%" BEGIN
-                        result = 1
+                        present = 1
                         index = num_abilities
                     END
                 END
             END
         END
 
-    END ELSE BEGIN result = 0 END
+    END
 
 END
-
-

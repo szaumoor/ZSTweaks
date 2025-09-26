@@ -25,11 +25,14 @@ ACTION_IF NOT is_iwdee BEGIN
         LPF DELETE_EFFECT INT_VAR match_opcode = 206 END
 
     ACTION_IF NOT has_eefixpack BEGIN
-    // ADD EFFECT REMOVAL TO AURA EFFECTS TO VARIOUS REMOVE-FEAR TYPE EFFECTS only affects spells for now
+
+        OUTER_SET opcode = 321
+        OUTER_SPRINT resource "SPPR416"
         COPY_EXISTING_REGEXP ~^.+\.spl$~ ~override~
-            LPF SPELL_OPCODE_PRESENT INT_VAR opcode = 321 STR_VAR resource = "SPPR416" RET found = result END
-            PATCH_IF found BEGIN
-                LPF CLONE_EFFECT INT_VAR silent=1 match_opcode=321 STR_VAR match_resource=~SPPR416~ resource=~#COFEAR~ END
+            SET present = 0
+            LPM SPELL_OPCODE_PRESENT
+            PATCH_IF present BEGIN
+                LPF CLONE_EFFECT INT_VAR match_opcode=321 STR_VAR match_resource=~SPPR416~ resource=~#COFEAR~ END
             END
         BUT_ONLY
     END

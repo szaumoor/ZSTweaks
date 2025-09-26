@@ -16,7 +16,15 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_ABILITIES_NUM RET num_abilities = result END
     LPF ITM_APPEARANCE RET appearance = result END
     LPF ITM_ENCH RET ench = result END
-	PATCH_IF wpn_cat = 16 AND wpn_prof = 96 AND ench <= 6 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
+
+	PATCH_IF wpn_cat = 16 AND wpn_prof = 96 AND ench <= 6 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ")
+             AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKUK0") // KUKRI exceptions
+             AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKUK1") // KUKRI exceptions
+             AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKUK2") // KUKRI exceptions
+             AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKUK3") // KUKRI exceptions
+             AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKRE0") // KUKRI ECLIPSE exception
+             AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKRE2") // KUKRI ECLIPSE exception
+    BEGIN
 
         LPF ITM_REF_UDESC RET id_udesc = result END
         PATCH_IF (NOT "%SOURCE_RES%" STR_EQ "DAGG01") AND id_udesc = dagg_original_desc_index BEGIN
@@ -28,20 +36,15 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
              AND NOT "%SOURCE_RES%" STR_EQ "a7-dg06" // Enlightenment (wares of the planes)
              AND NOT "%SOURCE_RES%" STR_EQ "AGMOOSE" // moose dagger (ajoc mod)
         BEGIN
-            LPF WPN_SPEED RET speed = result END
-            LPF WPN_THAC0 RET thac0 = result END
 
-            SET thac0_bonus = thac0 + 1
-            SET actual_speed = (speed - 2)
-            PATCH_IF actual_speed < 0 BEGIN
-                actual_speed = 0
-            END
-            LPF ALTER_HEADER_EX INT_VAR speed=actual_speed to_hit=thac0_bonus STR_VAR match_type_ex=~(o_type = 1 OR o_type = 2)~ END
+            LPF ALTER_HEADER_EX STR_VAR match_type_ex=~(o_type = 1 OR o_type = 2)~ to_hit_ex = ~(THIS + 1)~ speed_ex = ~((speed > 1) ? (THIS - 2) : 0)~ END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1;op=341,p2=1,res=ZSTWDPB%ench%,spec=1;op=341,p2=1,res=ZSTWDPT%ench%,spec=2~ END
 
             LPF ITM_REF_DESC RET desc_index = result END
             LPF ITM_REF_UDESC RET udesc_index = result END
             PATCH_IF desc_index > "-1" BEGIN
+                LPF WPN_SPEED RET actual_speed = result END
+                LPF WPN_THAC0 RET thac0_bonus = result END
 
                 READ_STRREF 0x54 desc
                 SPRINT str_sf @99998
@@ -67,6 +70,36 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     END
 
 BUT_ONLY
+
+ACTION_IF has_zs_item_pack_kukris BEGIN
+
+    COPY_EXISTING ~ZSIPKUK0.ITM~ ~override~
+        READ_STRREF 0x50 desc
+        SPRINT str @99999
+        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]4~ ~\11d4+1~
+        END
+        SAY_EVALUATED 0x50 ~%desc%~
+        READ_LONG 0x50 kukri_unid_desc
+
+    COPY_EXISTING_REGEXP ~^ZSIPK[UR][KE][0-3]\.ITM~ ~override~
+        LPF ALTER_HEADER_EX STR_VAR damage_ex = ~(THIS + 1)~ speed_ex = ~((o_speed > 0) ? (THIS - 1) : 0)~ END
+        LPF ITM_ENCH RET ench = result END
+        SET damage_bonus = ench + 1
+        SET speed = (   (3 - ench) < 0 ? 0 : (3 - ench)    )
+        READ_STRREF 0x54 desc
+        SPRINT str @99999
+        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\1%speed%~ // speed
+            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]4\+?[1-9]?~ ~\11d4+%damage_bonus%~
+        END
+        SAY_EVALUATED 0x54 ~%desc%~
+        LPF ALTER_ITEM INT_VAR unid_ref_desc = kukri_unid_desc END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDPB%ench%,spec=1;op=341,p2=1,res=ZSTWDPT%ench%,spec=2~ END
+
+    BUT_ONLY IF_EXISTS
+
+END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 

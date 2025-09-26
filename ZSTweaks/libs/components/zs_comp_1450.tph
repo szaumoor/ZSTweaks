@@ -40,15 +40,20 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             AND NOT "%SOURCE_RES%" STR_EQ "AGMOOSE" // moose dagger (ajoc mod)
         BEGIN
 
+            SET pro_ench_bonus = base_dagg_dart+bonus
+            PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP ~^ZSIPK[UR][KE][0-3]\.itm$~ BEGIN
+                SET pro_ench_bonus = pro_ench_bonus - 7
+            END
+
             PATCH_IF NOT zst_1450_allow_bards BEGIN
 
-                LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWD%ench%~ END
-                LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWZ%ench%~ END
+                LPF weapon_damage_by_class INT_VAR type=1 probability1=pro_ench_bonus STR_VAR class=~THIEF~ spell=~ZSTWD%ench%~ END
+                LPF weapon_damage_by_class INT_VAR type=2 probability1=pro_ench_bonus STR_VAR class=~THIEF~ spell=~ZSTWZ%ench%~ END
 
             END ELSE BEGIN
 
-                LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_dagg_dart+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWD%ench%~ END
-                LPF weapon_damage_by_custom INT_VAR type=2 probability1=(base_dagg_dart+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWZ%ench%~ END
+                LPF weapon_damage_by_custom INT_VAR type=1 probability1=pro_ench_bonus custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWD%ench%~ END
+                LPF weapon_damage_by_custom INT_VAR type=2 probability1=pro_ench_bonus custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWZ%ench%~ END
 
             END
 
@@ -136,10 +141,20 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                  AND NOT "%SOURCE_RES%" STR_EQ "a7-sw01" // celestial fire (wares of the planes)
             BEGIN
 
+                SPRINT code "L" // plain longsword
+                SET pro_ench_bonus = base_ls_staff+bonus
+                PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP ~^ZSIPEST[0-3]\$~ OR
+                         "%SOURCE_RES%" STRING_MATCHES_REGEXP ~^ZSIPBLS[02]$~ OR
+                         "%SOURCE_RES%" STR_EQ "ZSIPSTM0"
+                BEGIN
+                    SET pro_ench_bonus = pro_ench_bonus + 4
+                    SPRINT code "E" // estoc
+                END
+
                 PATCH_IF NOT zst_1450_allow_bards BEGIN
-                    LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ls_staff+bonus) STR_VAR class=~THIEF~ spell=~ZSTWL%ench%~ END
+                    LPF weapon_damage_by_class INT_VAR type=1 probability1=(pro_ench_bonus) STR_VAR class=~THIEF~ spell=~ZSTW%code%%ench%~ END
                 END ELSE BEGIN
-                    LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_ls_staff+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWL%ench%~ END
+                    LPF weapon_damage_by_custom INT_VAR type=1 probability1=(pro_ench_bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWL%ench%~ END
                 END
 
             END ELSE BEGIN
@@ -189,6 +204,14 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             END
 
         END ELSE PATCH_IF zst_1450_allow_sswords AND cat=19 AND prof=91 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
+
+            SET pro_ench_bonus = base_ls_staff+bonus
+            PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP ~^ZSIPRAP[0-3]$~ OR
+                     "%SOURCE_RES%" STRING_MATCHES_REGEXP ~^ZSIPBLS[02]$~ OR
+                     "%SOURCE_RES%" STR_EQ "ZSIPSTM0"
+            BEGIN
+                SET pro_ench_bonus = pro_ench_bonus + 4
+            END
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN
                 LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ss_club+bonus) STR_VAR class=~THIEF~ spell=~ZSTWY%ench%~ END

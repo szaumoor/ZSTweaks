@@ -2,7 +2,9 @@ DEFINE_PATCH_FUNCTION ITM_APPEARANCE
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_ASCII 0x22 result (2)
 END
 
@@ -10,7 +12,9 @@ DEFINE_PATCH_FUNCTION ITM_PRICE
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_LONG 0x34 result
 END
 
@@ -18,7 +22,9 @@ DEFINE_PATCH_FUNCTION ITM_REF_UNAME
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_LONG 0x08 result
 END
 
@@ -26,7 +32,9 @@ DEFINE_PATCH_FUNCTION ITM_STR_NAME
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_ASCII 0x0c result
 END
 
@@ -34,7 +42,9 @@ DEFINE_PATCH_FUNCTION ITM_STR_DESC
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_ASCII 0x54 result
 END
 
@@ -42,7 +52,9 @@ DEFINE_PATCH_FUNCTION ITM_REF_DESC
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_LONG 0x54 result
 END
 
@@ -50,7 +62,9 @@ DEFINE_PATCH_FUNCTION ITM_MIN_STR
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_SHORT 0x26 result
 END
 
@@ -58,7 +72,9 @@ DEFINE_PATCH_FUNCTION ITM_MIN_INT
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_BYTE 0x2a result
 END
 
@@ -66,7 +82,9 @@ DEFINE_PATCH_FUNCTION ITM_MIN_WIS
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_BYTE 0x2c result
 END
 
@@ -74,7 +92,9 @@ DEFINE_PATCH_FUNCTION ITM_WEIGHT
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_LONG 0x4c result
 END
 
@@ -84,10 +104,17 @@ INT_VAR
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
+    
     LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
-    SET offset = 0x72 + (header * 0x38)
-    READ_SSHORT (offset + 0x1a) result
+    PATCH_IF header != "-1" BEGIN
+        SET offset = 0x72 + (header * 0x38)
+        READ_SHORT (offset + 0x1a) result
+    END ELSE BEGIN
+        SET result = "-1"
+    END
 END
 
 DEFINE_PATCH_FUNCTION WPN_DICENUM
@@ -96,10 +123,17 @@ INT_VAR
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
+
     LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
+    PATCH_IF header != "-1" BEGIN
     SET offset = 0x72 + (header * 0x38)
-    READ_BYTE (offset + 0x19) result
+        READ_BYTE (offset + 0x19) result
+    END ELSE BEGIN
+        SET result = "-1"
+    END
 END
 
 DEFINE_PATCH_FUNCTION WPN_SPEED
@@ -108,9 +142,11 @@ INT_VAR
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
 
+    LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
     PATCH_IF header != "-1" BEGIN
         SET offset = 0x72 + (header * 0x38)
         READ_BYTE (offset + 0x12) result
@@ -125,9 +161,11 @@ INT_VAR
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
 
+    LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
     PATCH_IF header != "-1" BEGIN
         SET offset = 0x72 + (header * 0x38)
         READ_BYTE (offset + 0x16) result
@@ -142,9 +180,11 @@ INT_VAR
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
 
+    LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
     PATCH_IF header != "-1" BEGIN
         SET offset = 0x72 + (header * 0x38)
         READ_BYTE (offset + 0x14) result
@@ -157,7 +197,9 @@ DEFINE_PATCH_FUNCTION ITM_REF_UDESC
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_LONG 0x50 result
 END
 
@@ -165,7 +207,9 @@ DEFINE_PATCH_FUNCTION ITM_STR_UDESC
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_ASCII 0x50 result
 END
 
@@ -173,7 +217,9 @@ DEFINE_PATCH_FUNCTION ITM_FLAGS
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_LONG 0x18 result
 END
 
@@ -181,7 +227,9 @@ DEFINE_PATCH_FUNCTION ITM_USABILITY0
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_LONG 0x1e result
 END
 
@@ -189,7 +237,9 @@ DEFINE_PATCH_FUNCTION ITM_USABILITY1
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_BYTE 0x29 result
 END
 
@@ -197,7 +247,9 @@ DEFINE_PATCH_FUNCTION ITM_USABILITY2
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_BYTE 0x2b result
 END
 
@@ -205,7 +257,9 @@ DEFINE_PATCH_FUNCTION ITM_USABILITY3
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_BYTE 0x2d result
 END
 
@@ -213,7 +267,9 @@ DEFINE_PATCH_FUNCTION ITM_USABILITY4
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_BYTE 0x2f result
 END
 
@@ -221,7 +277,9 @@ DEFINE_PATCH_FUNCTION ITM_CAT
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_SHORT 0x1c result
 END
 
@@ -229,7 +287,9 @@ DEFINE_PATCH_FUNCTION ITM_PROF
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_BYTE 0x31 result
 END
 
@@ -237,7 +297,9 @@ DEFINE_PATCH_FUNCTION ITM_ENCH
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_LONG 0x60 result
 END
 
@@ -245,7 +307,9 @@ DEFINE_PATCH_FUNCTION ITM_GLOBALS_NUM
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_SHORT 0x70 result
 END
 
@@ -253,7 +317,9 @@ DEFINE_PATCH_FUNCTION ITM_ABILITIES_NUM
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_SHORT 0x68 result
 END
 
@@ -261,7 +327,9 @@ DEFINE_PATCH_FUNCTION ITM_ABILITIES_OFFSET
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
     READ_LONG 0x64 result
 END
 
@@ -269,7 +337,9 @@ DEFINE_PATCH_FUNCTION SPL_ABILITIES_NUM
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    END
     READ_SHORT 0x68 result
 END
 
@@ -277,7 +347,9 @@ DEFINE_PATCH_FUNCTION SPL_REF_NAME
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    END
     READ_LONG 0x08 result
 END
 
@@ -285,7 +357,9 @@ DEFINE_PATCH_FUNCTION SPL_GLOBALS_NUM
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    END
     READ_SHORT 0x70 result
 END
 
@@ -293,7 +367,9 @@ DEFINE_PATCH_FUNCTION CRE_MAX_HEALTH
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    END
     READ_SHORT 0x26 result
 END
 
@@ -301,7 +377,9 @@ DEFINE_PATCH_FUNCTION CRE_CLASS
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    END
     READ_BYTE 0x273 result
 END
 
@@ -309,7 +387,9 @@ DEFINE_PATCH_FUNCTION CRE_FIRST_LEVEL
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    END
     READ_BYTE 0x234 result
 END
 
@@ -317,7 +397,9 @@ DEFINE_PATCH_FUNCTION CRE_SECOND_LEVEL
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    END
     READ_BYTE 0x235 result
 END
 
@@ -325,7 +407,9 @@ DEFINE_PATCH_FUNCTION CRE_THIRD_LEVEL
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    END
     READ_BYTE 0x236 result
 END
 
@@ -333,7 +417,9 @@ DEFINE_PATCH_FUNCTION CRE_THAC0
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    END
     READ_BYTE 0x52 result
 END
 
@@ -341,7 +427,9 @@ DEFINE_PATCH_FUNCTION CRE_RACE
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    END
     READ_BYTE 0x272 result
 END
 
@@ -349,7 +437,9 @@ DEFINE_PATCH_FUNCTION CRE_FLAGS
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    END
     READ_LONG 0x10 result
 END
 
@@ -357,6 +447,8 @@ DEFINE_PATCH_FUNCTION CRE_KIT
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    END
     result = SHORT_AT 0x246 | (SHORT_AT 0x244) << 16
 END
