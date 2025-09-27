@@ -97,6 +97,7 @@ OUTER_SET zst_1545_dexterity_bonuses      = "1"
 OUTER_SET zst_1545_lore_class_bonuses     = "1" // lore bonuses per class
 OUTER_SET zst_1545_lore_stat_bonuses      = "1" // lore bonuses with intelligence and wisdom
 OUTER_SET zst_1545_racethac0_bonuses      = "1" // thac0 bonuses for race
+OUTER_SET zst_1545_racethac0_bonuses      = "1" // shorty bonuses to saving throws (0: nullify, 1: tone progression down, 2: standardize)
 OUTER_SET zst_1545_proficiency_bonuses    = "1"
 OUTER_SET zst_1545_weapon_style_bonuses   = "1"
 OUTER_SET zst_1545_weapon_style_twohanded = "1" // allow two handed tweak

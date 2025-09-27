@@ -22,6 +22,7 @@
 - Moved fix for raceless water elementals to the prefix section, instead of the horrid wilting component
 - Library improvements with performance optimizations
 - Made many installation checks only run on debug mode, to improve performance on releases
+- Fixed shadow creature component not being open to IWDEE when it should
 
 ## Modifications
 
@@ -34,11 +35,12 @@
     - Rapiers have a 5% less chance of triggering a finesse hit compared to other swords (21-30%)
     - Estocs have a 4% higher chance of triggering a finesse hit compared to other swords (10-19%)
     - No changes for shurikens
-  - The new disruption component will patch Shining Light of Lathander and Blade of Calling with the new rebalanced undead-disruption effect
+  - The new disruption component will patch Shining Light of Lathander with the new rebalanced undead-disruption effect
 - Katanas and scimitars now have a 10-19% chance to trigger finesse instead of 9-18%
 - Improved the implementation of the axes critical hit bonus component to allow configuration of axes and halberds independently.
-- Backstab penalty component now allows configuration of the kukri, estoc, and rapier in my item pack. By default, they stay at 0 penalty, except estocs, which have a -1 penalty, which aligns with the long sword proficiency they have.
-- Earthquake component now causes 5d10 crushing damage to stone and juggernaut golems once, as per PnP
+- Backstab penalty component now allows configuration of the kukri, estoc, and rapier in my item pack. By default, they stay at 0 penalty, except estocs, which have a -1 penalty, which aligns with the long sword proficiency they have. (TODO)
+- Earthquake component now causes 5d10 crushing damage to stone and juggernaut golems once, as per PnP (TODO)
+- Character stats now also allows modifying the saving throws for shorty races. You can choose a toned down version, to standardize it to +2 bonus, regardless of constitution, or to nullify it entirely. Race description will not be updated for now (TODO)
 
 ## New components
 
@@ -47,6 +49,6 @@
 - Make Holy and Unholy Word more generally effective throughout the game (TODO)
 - Make Disintegrate cause damage to constructs, disrupting defenses, with a chance of holding them (TODO)
 - Make minotaurs slightly more dangerous and have the chance to gore with their horns on a successful hit (TODO)
-- Make yuanti move faster and inflict minor poison damage on melee (TODO)
+- Make Yuan-ti move faster and inflict minor poison damage on melee (TODO)
 - Make Stone to Flesh harmful towards Stone Golems (TODO)
 - Make composite bows have a mild damage bonus that depends on strength (TODO)

@@ -234,7 +234,11 @@ This component has a series of optional components that tweak the following (con
 - **Lore** bonuses
   - Per class: Mages now get 5 lore points per level (from 3); Thieves get 4 lore points per level; Clerics, shamans, and druids get 3 lore points per level; paladins and rangers get 2 lore points per level. Fighters and bards are unchanged.
   - Per stats: The benefits and penalties are more streamlined, and the bonuses start at Wisdom or Intelligence 12. The maximum lore bonuses are unchanged, and the penalties increase less harshly, instead of jumping to -10 at 9 Wisdom or Intelligence, it decreases in a more gradual sequence.
-- THAC0 bonuses by race: The only change is that dwarves will get a +1 THAC0 bonus with axes.
+- **THAC0 bonuses by race**: The only change is that dwarves will get a +1 THAC0 bonus with axes.
+- Shorty constitution bonuses. This comes in three flavors:
+  - **Nullify**: Shorties no longer get saving throw bonuses based on constitution
+  - **Tone down**: Shorties get tone down, slower-progressing constitution bonuses. They start with a +1 saving throw bonus at 12 constitution, and it grows up to +3 at 21 constitution and above (vanilla grows up to +5 at 25 CON). This is the default option in the configuration.
+  - **Standardize**: Shorties just get a +2 saving throw bonus regardless of constitution
 - **Strength** bonuses
   - THAC0 bonuses and penalties streamlined similar to NWN. Penalties start at 9 Strength, bonuses at 12. From Strength 23, bonuses increase by 1 per increase, up to +7.
   - Extraordinary strength does not add THAC0 bonuses anymore.
