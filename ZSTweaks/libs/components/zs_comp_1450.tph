@@ -143,8 +143,8 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
                 SPRINT code "L" // plain longsword
                 SET pro_ench_bonus = base_ls_staff+bonus
-                PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP ~^ZSIPEST[0-3]\$~ OR
-                         "%SOURCE_RES%" STRING_MATCHES_REGEXP ~^ZSIPBLS[02]$~ OR
+                PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP ~^ZSIPEST[0-3]$~ = 0 OR
+                         "%SOURCE_RES%" STRING_MATCHES_REGEXP ~^ZSIPBLS[02]$~ = 0 OR
                          "%SOURCE_RES%" STR_EQ "ZSIPSTM0"
                 BEGIN
                     SET pro_ench_bonus = pro_ench_bonus + 4
@@ -154,7 +154,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                 PATCH_IF NOT zst_1450_allow_bards BEGIN
                     LPF weapon_damage_by_class INT_VAR type=1 probability1=(pro_ench_bonus) STR_VAR class=~THIEF~ spell=~ZSTW%code%%ench%~ END
                 END ELSE BEGIN
-                    LPF weapon_damage_by_custom INT_VAR type=1 probability1=(pro_ench_bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWL%ench%~ END
+                    LPF weapon_damage_by_custom INT_VAR type=1 probability1=(pro_ench_bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTW%code%%ench%~ END
                 END
 
             END ELSE BEGIN
@@ -206,8 +206,8 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         END ELSE PATCH_IF zst_1450_allow_sswords AND cat=19 AND prof=91 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
 
             SET pro_ench_bonus = base_ls_staff+bonus
-            PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP ~^ZSIPRAP[0-3]$~ OR
-                     "%SOURCE_RES%" STRING_MATCHES_REGEXP ~^ZSIPBLS[02]$~ OR
+            PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP ~^ZSIPRAP[0-3]$~ = 0 OR
+                     "%SOURCE_RES%" STRING_MATCHES_REGEXP ~^ZSIPBLS[02]$~ = 0 OR
                      "%SOURCE_RES%" STR_EQ "ZSIPSTM0"
             BEGIN
                 SET pro_ench_bonus = pro_ench_bonus + 4

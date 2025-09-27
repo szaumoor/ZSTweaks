@@ -18,8 +18,16 @@ WITH_SCOPE BEGIN
 
             PATCH_IF wpn_cat=20 BEGIN // large swords
 
-                PATCH_IF zst_1120_backstab_penalty_lswords > 0 AND wpn_prof=90 BEGIN
-                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_lswords%~ END
+                PATCH_IF wpn_prof=90 BEGIN
+
+                    PATCH_IF zst_1120_backstab_penalty_lswords > 0 BEGIN
+                        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_lswords%~ END
+                    END
+
+                    PATCH_IF zst_1120_backstab_penalty_lswords > 0 BEGIN
+                        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_lswords%~ END
+                    END
+
                 END
 
                 ELSE PATCH_IF zst_1120_backstab_penalty_katana > 0 AND wpn_prof=94 BEGIN
