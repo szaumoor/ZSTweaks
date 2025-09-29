@@ -23,6 +23,7 @@
 - Library improvements with performance optimizations
 - Made many installation checks only run on debug mode, to improve performance on releases
 - Fixed shadow creature component not being open to IWDEE when it should
+- Fixed incorrect description for purifier component
 
 ## Modifications
 
@@ -38,9 +39,9 @@
   - The new disruption component will patch Shining Light of Lathander with the new rebalanced undead-disruption effect
 - Katanas and scimitars now have a 10-19% chance to trigger finesse instead of 9-18%
 - Improved the implementation of the axes critical hit bonus component to allow configuration of axes and halberds independently.
-- Backstab penalty component now allows configuration of the kukri, estoc, and rapier in my item pack. By default, they stay at 0 penalty, except estocs, which have a -1 penalty, which aligns with the long sword proficiency they have. (TODO)
-- Earthquake component now causes 5d10 crushing damage to stone and juggernaut golems once, as per PnP (TODO)
-- Character stats now also allows modifying the saving throws for shorty races. You can choose a toned down version, to standardize it to +2 bonus, regardless of constitution, or to nullify it entirely. Race description will not be updated for now (TODO)
+- Backstab penalty component now allows configuration of the kukri, estoc, and rapier in my item pack. By default, they stay at 0 penalty, except estocs, which have a -1 penalty, which aligns with the long sword proficiency they have.
+- Earthquake component now causes 5d10 crushing damage to stone and juggernaut golems once, as per PnP
+- Character stats now also allows modifying the saving throws for shorty races. You can choose a toned down version, to standardize it to +2 bonus, regardless of constitution, or to nullify it entirely. Race description will not be updated for now
 
 ## New components
 

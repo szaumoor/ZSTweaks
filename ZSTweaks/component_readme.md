@@ -106,7 +106,14 @@ Example: An attack with a dagger +2 with a character that has single-weapon prof
 - Speed Factor will only be reduced by 1 point, not 2
 - No THAC0 bonus
 - No extra critical hit chance (they all have an implied 5% critical chance already). Instead, its base damage will be increased to 1d4+1
-- Critical hit extra damage still exists
+- Critical hit extra damage is not quite as high:
+  - Kukri **+0** ⇾ 1d4+4, i.e., 5-8 damage
+  - Kukri **+1** ⇾ 1d5+5, i.e., 6-10 damage
+  - Kukri **+2** ⇾ 1d6+6, i.e., 7-12 damage
+  - Kukri **+3** ⇾ 1d7+7, i.e., 8-14 damage
+  - Kukri **+4** ⇾ 1d8+8, i.e., 9-16 damage
+  - Kukri **+5** ⇾ 1d9+9, i.e., 10-18 damage
+  - Kukri **+6** ⇾ 1d10+10, i.e., 11-20 damage
 
 Exceptions: Grave Binder is not affected by these bonuses because it's an oversized dagger. Other unusual daggers will be treated on a case-by-case basis.
 
@@ -1022,7 +1029,7 @@ I hate with passion this 10% chance of killing period-no-questions-asked thing, 
 
 **Component 1608:** Make Aule's Staff +3 grant an extra attack per round to non-fighter wizards and sorcerers, inspired by the description
 
-This makes the weapon not just another silly instance of a unique +3 weapon without a single remarkable feature. So it's now a solid staff for wizards and sorcerers. Specifically, it affects mages, mage/thieves, cleric/mages, and sorcerers. They will get an extra attack per round. Other clasess will use it as a regular +3 staff.
+This makes the weapon not just another silly instance of a unique +3 weapon without a single remarkable feature. So it's now a solid staff for wizards and sorcerers. Specifically, it affects mages, mage/thieves, cleric/mages, and sorcerers. They will get an extra attack per round. Other classes will use it as a regular +3 staff.
 
 **Component 1609:** Make the Impaler slightly more scary: +5% higher critical hit chance, +5 more impaling damage on crits
 
@@ -1067,7 +1074,7 @@ In reality, the sword deals 1d8+2 against all enemies and 1d8+2 again in a secon
 
 **Component 1210:** Make The Equalizer slightly more powerful
 
-Honestly, it kind of feels like it's immediately not useful by the time you get it. The description is also slightly misleading because it looks like it will deal, for example, 1d8+6 against some alignments in the same way that a +6 longsword would, but it's not like that. It actually just inflicts 1d8 (like a normal non-magical sword) and then additively includes the damage, which is generally much less powerful. Therefore, the following improvements now exist:
+Honestly, it kind of feels like it's immediately not useful by the time you get it. The description is also slightly misleading because it looks like it will deal, for example, 1d8+6 against some alignments in the same way that a +6 long sword would, but it's not like that. It actually just inflicts 1d8 (like a normal non-magical sword) and then additively includes the damage, which is generally much less powerful. Therefore, the following improvements now exist:
 
 - The sword now has an enchantment of 5 for the purposes of what it can hit and in terms of speed factor.
 - The sword acts as a 1d8+3 in all other respects as a baseline.
@@ -1100,7 +1107,7 @@ Makes the chance-based Level drain take 2 levels instead of just one and the Ent
 
 Just as the title says. It's kind of funny considering the description of the weapon mentions Pit Fiends, which are Lawful Evil.
 
-It also makes the dispel-on-hit effect equal to those in the Staff of the Magi and Carsomyr.
+It also makes the charge ability of Dispel Magic effect equal in power as those in the Staff of the Magi and Carsomyr.
 
 Both changes are optional.
 

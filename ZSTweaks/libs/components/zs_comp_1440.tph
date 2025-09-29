@@ -86,7 +86,7 @@ ACTION_IF has_zs_item_pack_kukris BEGIN
         LPF ALTER_HEADER_EX STR_VAR damage_ex = ~(THIS + 1)~ speed_ex = ~((o_speed > 0) ? (THIS - 1) : 0)~ END
         LPF ITM_ENCH RET ench = result END
         SET damage_bonus = ench + 1
-        SET speed = (   (3 - ench) < 0 ? 0 : (3 - ench)    )
+        SET speed = (   (2 - ench) < 0 ? 0 : (2 - ench)    )
         READ_STRREF 0x54 desc
         SPRINT str @99999
         INNER_PATCH_SAVE desc ~%desc%~ BEGIN

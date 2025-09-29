@@ -6,6 +6,10 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
 
+    COPY_EXISTING ~SPPR720.SPL~ ~override~
+        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5090) END
+        LPF ADD_SPL_EFF_TGT STR_VAR effects = ~op=177,res=ZSTWEKG0,p2=5,p1=%class_golem_stone%,ip=0~
+
     ACTION_IF zst_250_quake_pfriendly BEGIN
 
         COPY_EXISTING ~SPPR720.SPL~ ~override~

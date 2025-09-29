@@ -20,17 +20,20 @@ WITH_SCOPE BEGIN
 
                 PATCH_IF wpn_prof=90 BEGIN
 
-                    PATCH_IF zst_1120_backstab_penalty_lswords > 0 BEGIN
-                        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_lswords%~ END
-                    END
+                    PATCH_IF zst_1120_backstab_penalty_rp_estocs > 0 AND has_zs_item_pack_estocs AND
+                             LONG_AT(0x08) = zs_estoc_general_string_index
+                    BEGIN
 
-                    PATCH_IF zst_1120_backstab_penalty_lswords > 0 BEGIN
+                        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_rp_estocs%~ END
+
+                    END ELSE PATCH_IF zst_1120_backstab_penalty_lswords > 0 BEGIN
                         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_lswords%~ END
                     END
 
                 END
 
                 ELSE PATCH_IF zst_1120_backstab_penalty_katana > 0 AND wpn_prof=94 BEGIN
+
                     PATCH_IF NOT "%SOURCE_RES%" STR_EQ "NPSW04" BEGIN
                             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_katana%~ END
                     END ELSE BEGIN
@@ -38,41 +41,66 @@ WITH_SCOPE BEGIN
                             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_katana%~ END
                         END
                     END
+
                 END
 
                 ELSE PATCH_IF zst_1120_backstab_penalty_scimitars > 0 AND wpn_prof=95 AND "%wpn_appearance%" STR_EQ "sc" BEGIN
+
                     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_scimitars%~ END
+
                 END
 
                 ELSE PATCH_IF zst_1120_backstab_penalty_ninjatos > 0 AND wpn_prof=95 AND "%wpn_appearance%" STR_EQ "s1" BEGIN
+
                     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_ninjatos%~ END
+
                 END
 
                 ELSE PATCH_IF zst_1120_backstab_penalty_bstsword > 0 AND wpn_prof=89 BEGIN
+
                     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_bstsword%~ END
+
                 END
 
                 ELSE PATCH_IF zst_1120_backstab_penalty_2hsword > 0 AND wpn_prof=93 BEGIN
+
                     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_2hsword%~ END
+
                 END
 
             END
 
             ELSE PATCH_IF wpn_cat=20 BEGIN // short swords
 
-                PATCH_IF zst_1120_backstab_penalty_sswords > 0 AND wpn_prof=91 BEGIN
+                PATCH_IF zst_1120_backstab_penalty_rp_rapiers > 0 AND has_zs_item_pack_rapiers AND
+                             LONG_AT(0x08) = zs_rapier_general_string_index
+                BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_rp_rapiers%~ END
+                END
+
+                ELSE PATCH_IF zst_1120_backstab_penalty_sswords > 0 AND wpn_prof=91 BEGIN
+
                     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_sswords%~ END
+
                 END
 
                 ELSE PATCH_IF zst_1120_backstab_penalty_sswords > 0 AND wpn_prof=95 AND "%wpn_appearance%" STR_EQ "ss" BEGIN
+
                     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_sswords%~ END
+
                 END
 
             END
 
             ELSE PATCH_IF wpn_cat=16 BEGIN // daggers
 
-                PATCH_IF zst_1120_backstab_penalty_daggers > 0 AND wpn_prof=96 BEGIN
+                PATCH_IF zst_1120_backstab_penalty_rp_kukris > 0 AND has_zs_item_pack_kukris AND
+                             LONG_AT(0x08) = zs_kukri_general_string_index
+                BEGIN
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_rp_kukris%~ END
+                END
+
+                ELSE PATCH_IF zst_1120_backstab_penalty_daggers > 0 AND wpn_prof=96 BEGIN
                     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_daggers%~ END
                 END
 
