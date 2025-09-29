@@ -34,10 +34,13 @@ END
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     READ_BYTE 0x272 race
     PATCH_IF race = race_shadow BEGIN
+
         PATCH_IF has_zs_shadowdancer_overhaul BEGIN
-            PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP "ZS#SD.*" != 0 BEGIN
+            READ_ASCII 0x2cc script_name
+            PATCH_IF "%script_name%" STR_EQ "ZS_SDSHD" BEGIN
                 LPM modify_shadow
             END
+
         END ELSE BEGIN
             LPM modify_shadow
         END

@@ -21,8 +21,8 @@
 - Disabled some other fixes when the fixpack is installed
 - Moved fix for raceless water elementals to the prefix section, instead of the horrid wilting component
 - Library improvements with performance optimizations
-- Made many installation checks only run on debug mode, to improve performance on releases
-- Fixed shadow creature component not being open to IWDEE when it should
+- Made many runtime checks on code run on debug mode, to improve performance on releases
+- Fixed shadow creature component not being open to IWDEE when it should. Also improved the performance of the component installation.
 - Fixed incorrect description for purifier component
 
 ## Modifications
@@ -52,4 +52,3 @@
 - Make minotaurs slightly more dangerous and have the chance to gore with their horns on a successful hit (TODO)
 - Make Yuan-ti move faster and inflict minor poison damage on melee (TODO)
 - Make Stone to Flesh harmful towards Stone Golems (TODO)
-- Make composite bows have a mild damage bonus that depends on strength (TODO)

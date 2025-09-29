@@ -29,6 +29,7 @@ Currently, relevant compatibility has been added deliberately to:
 - ToF
 - SCS
 - EEFixpack
+- ZS_ItemPack
 - Item Upgrade
 - IWDification
 - Project Javelin
