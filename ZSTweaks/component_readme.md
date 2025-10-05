@@ -1703,11 +1703,15 @@ This improves the spell and the abilities granted by it in the following ways:
 
 **Component 500:** Make Control Undead bypass magic resistance and have a -2 penalty to the saving throw
 
-Generally considered a terrible choice for a level 7 spell, this making a little more useful. Might make it more powerful in the future, but this is a start. Just the fact that it didn't bypass magic resistance was a big detriment to the spell, since many undead are resistant to magic, like the majority of skeletons.
+Generally considered a terrible choice for a level 7 spell, this makes it a little more useful. Might make it more powerful in the future, but this is a start. Just the fact that it didn't bypass magic resistance was a big detriment to the spell, since many undead are resistant to magic, like the majority of skeletons.
 
 **Component 502:** Make Hold Undead bypass Magic Resistance
 
-Same reasoning as component 500. Applies to Priest of Lathander's version of the spell.
+Same reasoning as component 500. Applies to Priest of Lathander's version of the spell. Note that this does not affect liches or demiliches, because both creatures are immune to level 4 spells (liches: 1-5, demiliches: 1-8).
+
+**Component 522:** Make Disintegrate cause damage and slow some golems, as per PnP
+
+This makes the spell cause 1d12 crushing damage to all clay golems, including other creatures considered clay golems in the game such as sand, magical, and brain golems. Additionally, they will be slowed immediately for 2 rounds, dispels their haste if they have it, and prevents them from hasting themselves for one round.
 
 </details>
 
@@ -1864,9 +1868,9 @@ However, the casting time is very high now (2 full rounds), which makes it less 
 
 This component allows creatures that have True Sight or True Seeing active to automatically resist the effects of Nature's Beauty since the spell is effectively an illusion that kills and blinds.
 
-**Component 466:** Make Shield of Archons absorb more spell levels (equivalent to cleric level)
+**Component 466:** Make Shield of Archons absorb more spell levels and closer to PnP
 
-This component improves this spell such that it has equal level of spell absorption as that of the cleric level (20 for BG, 30 for IWDEE).
+This component improves this spell such that it has equal level of spell absorption as that of the cleric level (20 for BG, 30 for IWDEE). Additionally, to remove the alignment connotations, it changes its name to Planar Shield, since archons are good-aligned celestials. Finally, following PnP, it will also give the user a +4 saving throw bonus against all non-absorbable effects.
 
 **Component 467:** Make Sunray and False Dawn less OP and/or more balanced
 

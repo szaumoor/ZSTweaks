@@ -275,7 +275,7 @@
 @430 = ~Make Grease bypass magic resistance, apply a fire resistance debuff, and reduce some movement speed regardless~
 @440 = ~Make Comet bypass magic resistance and apply a mix of cold, fire, and crushing damage~
 @441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level and Attacks per Round at the appropriate levels"
-w@444 = ~Make Flesh to Stone use Petrification saves and optionally make some creatures immune to it like in IWD~
+@444 = ~Make Flesh to Stone and Stone to Flesh more unique~
 @445 = ~Make Bigby's spells more powerful~
 @446 = ~Make fireball-type spells improve more with level and/or improve explosion animations~
 @447 = ~Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance~
@@ -286,6 +286,7 @@ w@444 = ~Make Flesh to Stone use Petrification saves and optionally make some cr
 @499 = ~Make Seven Eyes' granted abilities more powerful~
 @500 = ~Make Control Undead bypass magic resistance and have a -2 penalty to the saving throw~
 @502 = ~Make Hold Undead bypass Magic Resistance~
+@522 = ~Make Disintegrate cause damage and slow some golems, as per PnP~
 
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
@@ -310,7 +311,7 @@ w@444 = ~Make Flesh to Stone use Petrification saves and optionally make some cr
 @462 = ~Make Magical Stone bypass magic resistance and deal both magic and missile damage~
 @463 = ~Make Dolorous Decay more powerful~
 @464 = ~Make Wondrous Recall also recall wizard spells, and a higher number of them~
-@466 = ~Make Shield of Archons absorb more spell levels (equivalent to cleric level)~
+@466 = ~Make Shield of Archons absorb more spell levels and closer to PnP~
 @467 = ~Make Sunray and False Dawn less OP and/or more balanced~
 @468 = ~Make Call Lightning's damage and scaling more balanced~
 @501 = ~Make Chaotic Commands' duration extend up to level 20 instead of only 18~

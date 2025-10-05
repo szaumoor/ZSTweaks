@@ -102,6 +102,8 @@ When this spell is cast, a local tremor of fairly high strength rips the ground.
  2nd: All creatures affected take 3d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
  3rd: All creatures affected take 2d6 points of damage. A successful saving throw vs. Spell halves the damage.
 
+Special case: stone golems of all kinds, including golem juggernauts, immediately take 5d10 crushing damage on the first tremor and are held for 1 round.
+
 Additionally, earth elementals dislike mere mortals toying with the land and there is a 3% chance that casting this spell will cause an earth elemental to appear and attack the party.~
 
 // party friendly version earthquake more effective
@@ -118,9 +120,11 @@ Saving Throw: Special
 
 When this spell is cast, a local tremor of fairly high strength rips the ground. The shock is over in several rounds. The earthquake affects all creatures in its area of effect except the caster and <HISHER> party. There are 3 tremors that are caused by the earthquake:
 
- 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful saving throw vs. Spell with a -6 penalty halves the damage and negates the fall.
- 2nd: All creatures affected take 5d6 points of damage. A successful saving throw vs. Spell with a -4 penalty halves the damage.
- 3rd: All creatures affected take 4d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
+ 1st: All enemies affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful saving throw vs. Spell with a -6 penalty halves the damage and negates the fall.
+ 2nd: All enemies affected take 5d6 points of damage. A successful saving throw vs. Spell with a -4 penalty halves the damage.
+ 3rd: All enemies affected take 4d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
+
+Special case: stone golems of all kinds, including golem juggernauts, immediately take 5d10 crushing damage on the first tremor, with no save allowed to resist it or take half.
 
 Additionally, earth elementals dislike mere mortals toying with the land and there is a 2% chance that casting this spell will cause an earth elemental to appear and attack the party.~
 
@@ -141,6 +145,8 @@ When this spell is cast, a local tremor of fairly high strength rips the ground.
  1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful saving throw vs. Spell with a -6 penalty halves the damage and negates the fall.
  2nd: All creatures affected take 5d6 points of damage. A successful saving throw vs. Spell with a -4 penalty halves the damage.
  3rd: All creatures affected take 4d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
+
+ Special case: stone golems of all kinds, including golem juggernauts, immediately take 5d10 crushing damage on the first tremor, with no save allowed to resist it or take half.
 
 Additionally, earth elementals dislike mere mortals toying with the land and there is a 2% chance that casting this spell will cause an earth elemental to appear and attack the party.~
 
@@ -573,7 +579,7 @@ Call Lightning must be cast outside; otherwise, it will not work, and the spell 
 
 Since the electrical damage comes from the skies naturally, Magic Resistance does not affect this spell.~
 
-@7550 = ~Shield of the Archons
+@7550 = ~Planar Shield
 (Abjuration)
 
 Level: 7
@@ -584,7 +590,9 @@ Casting Time: 9
 Area of Effect: The caster
 Saving Throw: None
 
-This powerful abjuration spell causes the spells cast against the priest to be absorbed and consumed. This affects a total of spell levels equal to the level of the caster, which includes spells cast from scrolls and innate spell-like abilities, but excludes the following: area effects that are not centered directly upon the priest, as well as area effects that are stationary, such as Cloudkill and Stinking Cloud. As long as the spell is cast directly at the priest, it will be absorbed provided that there are spell levels remaining. For example, if there is only 1 level left and a 3rd-level spell is cast at the priest, the spell will be absorbed while canceling the shield.~
+This powerful abjuration spell causes the spells cast against the priest to be absorbed and consumed. This affects a total of spell levels equal to the level of the caster, which includes spells cast from scrolls and innate spell-like abilities, but excludes the following: area effects that are not centered directly upon the priest, as well as area effects that are stationary, such as Cloudkill and Stinking Cloud. For those effects, and including effects that are not considered spells to be absorbed, the caster is granted a +4 saving throw bonus. As long as the spell is cast directly at the priest, it will be absorbed provided that there are spell levels remaining. For example, if there is only 1 level left and a 3rd-level spell is cast at the priest, the spell will be absorbed while canceling the shield.~
+
+@7551 = ~Planar Shield~
 
 @8060 = ~Curse
 (Conjuration/Summoning)

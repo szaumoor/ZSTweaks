@@ -42,13 +42,15 @@
 - Backstab penalty component now allows configuration of the kukri, estoc, and rapier in my item pack. By default, they stay at 0 penalty, except estocs, which have a -1 penalty, which aligns with the long sword proficiency they have.
 - Earthquake component now causes 5d10 crushing damage to stone and juggernaut golems once, as per PnP
 - Character stats now also allows modifying the saving throws for shorty races. You can choose a toned down version, to standardize it to +2 bonus, regardless of constitution, or to nullify it entirely. Race description will not be updated for now
+- Shield of Archons component modified to follow PnP slightly more closely, which provides an extra edge to the spell. First, it's renamed to Planar Shield, as "archons" are implied to be good-aligned, and evil casters would have access to Shield of the Tanar'ri instead. To generalize it, the name was changed. The spell now also provides a +4 bonus to saving throws against area effects that are not centered directly on the caster, as well as stationary area effects, or non-magical or non-absorbable effects.
+- Hugely simplified the code in Shield of Archons component using CamDawg's functions (praise be to him)
 
 ## New components
 
 - Make Hold Undead bypass Magic Resistance
 - Make disrupt undead weapons more balanced and closer to PnP rules. [This replaces the old components that tweaked specific weapons]
 - Make Holy and Unholy Word more generally effective throughout the game (TODO)
-- Make Disintegrate cause damage to constructs, disrupting defenses, with a chance of holding them (TODO)
+- Make Disintegrate cause damage to constructs, disrupting defenses, with a chance of holding them
 - Make minotaurs slightly more dangerous and have the chance to gore with their horns on a successful hit (TODO)
 - Make Yuan-ti move faster and inflict minor poison damage on melee (TODO)
 - Make Stone to Flesh harmful towards Stone Golems (TODO)

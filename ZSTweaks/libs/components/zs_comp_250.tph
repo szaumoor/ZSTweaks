@@ -6,9 +6,11 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
 
+    COPY ~%MOD_FOLDER%/spells/divine/earthquake~ ~override~
+
     COPY_EXISTING ~SPPR720.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5090) END
-        LPF ADD_SPL_EFF_TGT STR_VAR effects = ~op=177,res=ZSTWEKG0,p2=5,p1=%class_golem_stone%,ip=0~
+        LPF ADD_SPL_EFF_TGT STR_VAR effects = ~op=177,res=ZSTWEKG0,p2=5,p1=%class_golem_clay%,ip=0;op=177,res=ZSTWEKG1,p2=5,p1=%class_golem_clay%,ip=0~ END
 
     ACTION_IF zst_250_quake_pfriendly BEGIN
 
