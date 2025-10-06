@@ -204,7 +204,10 @@ OUTER_SET zst_441_tenser_thac0                = "1" // THAC0 tweak
 OUTER_SET zst_441_tenser_apr                  = "1" // APR tweak
 OUTER_SET zst_441_tenser_apr_nonfighters_only = "1" // APR bonus only for nonfighters
 
+// allow parts of the flesh/stone tweak
+OUTER_SET zst_444_flesh_stone     = "1"
 OUTER_SET zst_444_flesh_stone_iwd = "1" // adds some creatures immunities to the spell as per IWD
+OUTER_SET zst_444_stone_flesh     = "1"
 
 // allows the Fireball tweaks
 OUTER_SET zst_446_fball_buff          = "1" // damage buff

@@ -44,6 +44,7 @@
 - Character stats now also allows modifying the saving throws for shorty races. You can choose a toned down version, to standardize it to +2 bonus, regardless of constitution, or to nullify it entirely. Race description will not be updated for now
 - Shield of Archons component modified to follow PnP slightly more closely, which provides an extra edge to the spell. First, it's renamed to Planar Shield, as "archons" are implied to be good-aligned, and evil casters would have access to Shield of the Tanar'ri instead. To generalize it, the name was changed. The spell now also provides a +4 bonus to saving throws against area effects that are not centered directly on the caster, as well as stationary area effects, or non-magical or non-absorbable effects.
 - Hugely simplified the code in Shield of Archons component using CamDawg's functions (praise be to him)
+- Flesh to stone component now also adds the option to lightly overhaul the Stone to Flesh spell, making it cause damage to stone golems, as per PnP.
 
 ## New components
 
@@ -53,4 +54,4 @@
 - Make Disintegrate cause damage to constructs, disrupting defenses, with a chance of holding them
 - Make minotaurs slightly more dangerous and have the chance to gore with their horns on a successful hit (TODO)
 - Make Yuan-ti move faster and inflict minor poison damage on melee (TODO)
-- Make Stone to Flesh harmful towards Stone Golems (TODO)
+- Overhaul some of the golem creatures

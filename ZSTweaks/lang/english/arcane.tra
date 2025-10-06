@@ -572,3 +572,23 @@ Area of Effect: 1 creature
 Saving Throw: Neg.
 
 When this spell is cast at another creature, a thin green ray is shot out. Upon contact with the ray, the creature must make a Saving Throw vs. Spell or be transformed into dust. This transformation is instantaneous and irreversible—they are gone forever. There is also a good chance that this will destroy some if not all of the items that the creature is carrying. Clay, sand, brain, and magic golems are particularly susceptible to this spell, taking 1d12 crushing damage instantly, becoming slowed for 2 rounds with no save allowed, and preventing them from hasting themselves for 1 round.~
+
+@8640 = ~Stone to Flesh
+(Alteration)
+
+Level: 6
+Range: 50 ft.
+Duration: Permanent
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell is the reverse of Flesh to Stone and will return any creature that has been turned to stone back to flesh. All possessions on the creature likewise return to normal. The effect is instantaneous and there are no Saving Throw checks required. An exception is when this spell is cast on stone golems, where they will lose their immunity to weapons up to +2 enchantment permanently, if they fail a save vs. Spell.~
+
+@8641 = ~This scroll will remove the effects of petrification from anyone afflicted by such an unfortunate condition. Simply approach the victim who has been turned to stone, read the scroll, and target the statue. This will also make stone golems lose their immunity to weapons up to +2 enchantment permanently, if they fail a save vs. Spell.
+
+STATISTICS:
+
+– Stone to Flesh
+  Range: 50 ft.
+  Area of Effect: 1 creature~
