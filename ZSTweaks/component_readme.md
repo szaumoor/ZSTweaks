@@ -1718,6 +1718,25 @@ Same reasoning as component 500. Applies to Priest of Lathander's version of the
 
 This makes the spell cause 1d12 crushing damage to all clay golems, including other creatures considered clay golems in the game such as sand, magical, and brain golems. Additionally, they will be slowed immediately for 2 rounds, dispels their haste if they have it, and prevents them from hasting themselves for one round.
 
+**Component 539:** Make Holy and Unholy Word more generally effective
+
+Generally these two spells are not considered very effective, especially for mid to late SoA and beyond, because it causes deafness, which does not cause trouble to non-spellcasters. And it doesn't bypass magic resistance (slay effect excepted). This component improves it significantly, trying to address that concern, as well as incorporating PnP additions from the second edition and others:
+
+Holy Word now:
+
+- Bypasses Magic Resistance
+- The area of effect is doubled. Normally it has a fireball-sized area of effect, but now it should cover essentially anything you can see
+- Affects not just evil and undead, but anything non-good (i.e. also neutral) and undead
+- Does not affect deafened creatures, as it is a sonic attack
+- Sends summons back to where they came from if they fail a save vs. Spell at -4, similar to PnP
+- Slays anything of level 3 and below (vanilla), but also creatures with 40 Hit Points or less with no ways for them to save their sorry butts other than immunity to death effects, such as with Death Ward
+- Enemies of HD of 4 to 7 suffer Stun, Slow, Deafness, and Blindness for 1 to 4 turns (random) with a 90% chance of spell failure
+- Enemies of HD of 8 to 11 suffer Slow, Deafness, and Blindness for 5 rounds with a 75% chance of spell failure
+- Enemies of HD of 12 and above suffer Deafness and Blindness for 4 rounds with a 50% chance of spell failure
+- Finally, it is one of the few spells that can affect demiliches, and causes them to lose 10% of their HP, and 2d6 magic damage (they usually cast Protection from Magical Energy at the outset anyway, nullifying the latter).
+
+Unholy Word is identical in the benefits, except demiliches are not affected by it, and it can affect all non-evil, not just the good, extending its usability.
+
 </details>
 
 ---
