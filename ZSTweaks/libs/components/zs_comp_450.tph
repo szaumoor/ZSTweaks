@@ -356,7 +356,7 @@ ACTION_IF zst_450_cure_tweaks AND zst_450_eldath BEGIN
             LPF ALTER_HEADER INT_VAR speed = 6 END
             LPF ALTER_EFFECT INT_VAR match_opcode = 17 parameter1 = 40 END
             LPF ALTER_EFFECT INT_VAR power = 0 resist_dispel = 0 END
-            LPF ADD_SPL_EFF_TGT INT_VAR t=2 dur=12 pwr=0 STR_VAR effects=~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=98,p2=3,spec=42~ END
+            LPF ADD_SPL_EFF_TGT INT_VAR t=2 dur=12 pwr=0 STR_VAR effects=~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=98,p2=2,p1=2,spec=42~ END
 
     END
 

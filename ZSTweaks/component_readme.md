@@ -1718,25 +1718,6 @@ Same reasoning as component 500. Applies to Priest of Lathander's version of the
 
 This makes the spell cause 1d12 crushing damage to all clay golems, including other creatures considered clay golems in the game such as sand, magical, and brain golems. Additionally, they will be slowed immediately for 2 rounds, dispels their haste if they have it, and prevents them from hasting themselves for one round.
 
-**Component 539:** Make Holy and Unholy Word more generally effective
-
-Generally these two spells are not considered very effective, especially for mid to late SoA and beyond, because it causes deafness, which does not cause trouble to non-spellcasters. And it doesn't bypass magic resistance (slay effect excepted). This component improves it significantly, trying to address that concern, as well as incorporating PnP additions from the second edition and others:
-
-Holy Word now:
-
-- Bypasses Magic Resistance
-- The area of effect is doubled. Normally it has a fireball-sized area of effect, but now it should cover essentially anything you can see
-- Affects not just evil and undead, but anything non-good (i.e. also neutral) and undead
-- Does not affect deafened creatures, as it is a sonic attack
-- Sends summons back to where they came from if they fail a save vs. Spell at -4, similar to PnP
-- Slays anything of level 3 and below (vanilla), but also creatures with 40 Hit Points or less with no ways for them to save their sorry butts other than immunity to death effects, such as with Death Ward
-- Enemies of HD of 4 to 7 suffer Stun, Slow, Deafness, and Blindness for 1 to 4 turns (random) with a 90% chance of spell failure
-- Enemies of HD of 8 to 11 suffer Slow, Deafness, and Blindness for 5 rounds with a 75% chance of spell failure
-- Enemies of HD of 12 and above suffer Deafness and Blindness for 4 rounds with a 50% chance of spell failure
-- Finally, it is one of the few spells that can affect demiliches, and causes them to lose 10% of their HP, and 2d6 magic damage (they usually cast Protection from Magical Energy at the outset anyway, nullifying the latter).
-
-Unholy Word is identical in the benefits, except demiliches are not affected by it, and it can affect all non-evil, not just the good, extending its usability.
-
 </details>
 
 ---
@@ -1833,11 +1814,13 @@ Nature's beauty is the druidic Wail of the Banshee (only for humanoids anyway), 
 
 Additionally, much like IWDEE, blinded enemies are not affected, which is to be expected given the nature of the spell.
 
+Finally, it can be configured to make True Sight prevent the effect, since it is an illusion.
+
 **Component 330:** Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)
 
 It was always a fairly odd choice of level 7 spell. Some mods resolve this by moving it to lower levels. This is another way of resolving it. It will behave like Chaos, having a save penalty of -4 instead of -2.
 
-**Component Armor Class** Make Armor of Faith also add a +2 AC bonus to make it useful at low levels
+**Component 420:** Make Armor of Faith also add a +2 Armor Class and resistance to poison damage
 
 At the beginning of BGEE this spell is largely unremarkable and provides no protection of note to the cleric. Now it will at least provide a minor Armor Class bonus by default, which makes this spell the only one in vanilla BG that improves the Armor Class of the cleric other than Defensive Harmony (IIRC).
 
@@ -1851,7 +1834,7 @@ Healing spells are infamously bad in BG/BG2, they heal too little for such a slo
 - Cure Serious Wounds: Heals 30 points plus 3 more points in the next two levels, 2 on the next two, up to 40
 - Cure Critical Wounds: Heals 42 points plus 3 more points per level, up to 54
 - Mass Cure: improves the power of this spell as a combat spell by improving the casting speed to 2 (from 5), and it improves the healing slightly from 1d8 + 1/level (max of 21-28) to 4d3 + 1/level (24-32)
-- Mist of Eldath: Heals 40 points, regenerates 1 HP/s for 2 rounds and prevents poisoning for that time. Name changed to Rejuvenating Mist
+- Mist of Eldath: Heals 40 points, regenerates 2 HP/s for 2 rounds and prevents poisoning for that time. Name changed to Rejuvenating Mist
 
 Also, they will no longer be stopped by spell deflection. Finally, it can also tweak the "cause wounds" spells in the same magnitude as the "cure wounds" spells.
 
@@ -1887,10 +1870,6 @@ This component allows cleric/mages to benefit more by allowing arcane spell reca
 - Up to 4 spells will be recalled additionally of up to level 5
 
 However, the casting time is very high now (2 full rounds), which makes it less convenient to cast in the middle of combat and serves more as a recovery after combat spell, unless triggered by contingencies or sequencers. Bear in mind that if this spell is cast through scripts, the caster might have a lapse in judgment and stop the casting after only one round of casting to do something else, because it seems the engine doesn't ever expect casting times over just below 1 full round (i.e., casting speed of 9).
-
-**Component 465:** Make Nature's Beauty blocked by True Sight
-
-This component allows creatures that have True Sight or True Seeing active to automatically resist the effects of Nature's Beauty since the spell is effectively an illusion that kills and blinds.
 
 **Component 466:** Make Shield of Archons absorb more spell levels and closer to PnP
 
@@ -1960,14 +1939,14 @@ None of these effects are subject to magic resistance though it's a level 5 effe
 This spell is thematically beautiful but very underperforming, especially due to how it only works once per turn. This improves the spell in the following ways:
 
 - The damage from the spell can now affect a target once per round instead of per turn. It's up to you how much you want to exploit the enemy's AI with this.
-- The damage is the same, but the minimum damage has been increased: evil targets take 2d8+4 (from 2d10) magic damage, and undead take additionally 3d8+6. This damage is no longer resistable by magic resistance
-- The spell also causes enemies blindness for 1 round, with a 40% chance of pushing them back away **from the original caster** and knocking them prone for half a round, unless they save vs. Spell. This effect cannot be stopped by magic resistance either.
+- The damage is the same, but the minimum damage has been increased: evil targets take 2d8+4 (from 2d10) magic damage, and undead take additionally 3d8+6. This damage is no longer resistible by magic resistance
+- The spell also causes enemies blindness for 1 round, with a 40% chance of pushing them back away **from the original caster** and knocking them prone for half a round, unless they save vs. Spell. This effect cannot be stopped by magic resistance either. Because it pushed them away from the caster, it is recommended for the purposes of strategy, to stand at the other end of the wall from the enemies.
 
 **Component 507:** Make Aid a party buff and optionally disable the character glow
 
 This makes the spell generally more useful by making it a party buff. To avoid issues with combat scripts, the targeting is vanilla, that is, Aid is cast on a target, and then it spreads to nearby targets. Also, for convenience, the range of the spell is no longer melee, but equivalent to the range of the spell Poison.
 
-Optionally, the character glow can be disabled in the configuration file.
+Optionally, the character glow can be disabled in the configuration file, as it causes a lot of visual clutter when it spreads to everyone.
 
 **Component 508:** Make Restoration-type spells restore stat draining and make Greater version an area of effect spell
 
@@ -1977,7 +1956,7 @@ Optionally, it can overhaul the greater restoration spell so it's more worth the
 
 - It spreads on impact, granting the effects to every party member except the priest.
 - The priest is only healed by half their total health.
-- Still causes deep fatigue on the caster, and worsens the casting speed, Thac0, damage, and armor class of the priest by 2 for 2 turns. Their movement speed is also reduced by 35%. Both these effects can be removed by Unfailing Endurance.
+- Still causes deep fatigue on the caster, and worsens the casting speed, Thac0, damage, and armor class of the priest by 2 for 2 turns. Their movement speed is also reduced by 35%. All of these effects can be removed with Unfailing Endurance.
 - The casting duration is tripled (9 from 3).
 
 **Component 509:** Make Silence 15ft Radius party-friendly
@@ -2000,7 +1979,7 @@ Alicorn Lance is not powerful and doesn't scale well. This will make it feasible
 
 Cool spell that required an improvement:
 
-- Damaged upgraded from 4d10 to 6d8+6 (4-40 -> 12-54)
+- Damaged upgraded from 4d10 to 6d8+6 (4-40 → 12-54)
 - Changes of being knocked unconscious or stunned are equal now. 33% chance of being stunned or put to sleep if save is failed, both effects for 2 rounds
 - Save vs. Breath at -1 to avoid both effects and take half damage
 - Magic resistance doesn't apply. Because it's water.
@@ -2068,6 +2047,25 @@ This component improves the spell in the following ways:
 **Component 497:** Make Produce Fire a much more effective spell
 
 Produce Fire is not very effective for a 4th level spell. The only upside is that the damage it causes is predictable, it being 1 point per level plus 1d4, without any saving throw to take half. However, the damage is too low to be useful. This component improves the spell by simply allowing targets in the area of effect from being affected once per 2 seconds, effectively taking around 60 fire damage at druid level 20, if they remain in the area for the full duration.
+
+**Component 539:** Make Holy and Unholy Word more generally effective
+
+Generally these two spells are not considered very effective, especially for mid to late SoA and beyond, because it causes only deafness, which does not cause trouble to non-spellcasters. And it doesn't bypass magic resistance (slay effect excepted). This component improves it significantly, trying to address that concern, as well as incorporating PnP additions from the second edition and others:
+
+Holy Word now:
+
+- Bypasses Magic Resistance
+- The area of effect is doubled. Normally it has a fireball-sized area of effect, but now it should cover essentially anything you can see
+- Affects not just evil and undead, but anything non-good (i.e. also neutral) and undead
+- Does not affect deafened creatures, as it is a sonic attack
+- Sends summons back to where they came from if they fail a save vs. Spell at -4, similar to PnP
+- Slays anything of level 3 and below (vanilla), but also creatures with 40 Hit Points or less with no ways for them to save their sorry butts other than immunity to death effects, such as with Death Ward
+- Enemies of HD of 4 to 7 suffer Stun, Slow, Deafness, and Blindness for 1 to 4 turns (random) with a 90% chance of spell failure
+- Enemies of HD of 8 to 11 suffer Slow, Deafness, and Blindness for 5 rounds with a 75% chance of spell failure
+- Enemies of HD of 12 and above suffer Deafness and Blindness for 4 rounds with a 50% chance of spell failure
+- Finally, it is one of the few spells that can affect demiliches, and causes them to lose 10% of their HP, and 2d6 magic damage (they usually cast Protection from Magical Energy at the outset anyway, nullifying the latter).
+
+Unholy Word is identical in the benefits, except demiliches are not affected by it, and it can affect all non-evil, not just the good, extending its usability.
 
 </details>
 
