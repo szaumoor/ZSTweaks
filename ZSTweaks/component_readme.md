@@ -2308,6 +2308,17 @@ This improves yuan-ti enemies in the following way:
 
 Additionally, my mod fixes in passing ICYUAN01 from attacking with long swords with a penalty of -2 to THAC0 due to missing proficiencies.
 
+**Component 3120:** Overhaul some of the golem creatures
+
+- Iron golems: They now have no resistance to electric damage (only element they aren't immune to) and absorb 27% of fire damage as healing (from 25%). Additionally, they resist 33% of physical damage (from 20%)
+- Flesh golems: They absorb 27% of electric damage as healing (from 25%).
+- Adamantite golems: Normally identical to Iron Golems, except with 70% higher physical resistance, they're now slightly more powerful. They are, according to lore, *almost* impossible to defeat. Therefore:
+  - Strength increased to 25 from 24
+  - Outright immune to missile attack damage
+  - Immune to all elements and all spells, as per usual
+  - They can stomp the ground, causing it to tremble, knocking down all non-flying, up-to-medium-sized creatures in a 30 feet radius, and take 4d10 crushing damage (save vs. Breath for half).
+
+
 </details>
 
 ---

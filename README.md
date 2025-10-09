@@ -56,6 +56,7 @@ An exception to this are components that EXPLICITLY say that they must be instal
 - Thanks to Angel for sharing information about PnP stuff that helped me design some tweaks
 - Troveur for good ideas, feedback, and suggestions for tweaks
 - People on Discord generally for their help, and the great modders out there that allowed their WeiDu code to be available publicly, like The Artisan, jmerry, CamDawg, 11jo, Argent77, Ardanis, DavidW, SubtleDoctor, among others.
+- The Artisan for participating in conversations about some tweaks and providing insights
 - dark0dave for giving me the idea of adding a configuration file, now an integral part of the mod that I'll never part with and will continue to implement in other mods.
 - For the people in G3 and Discord for reporting bugs
 - zenblack for feedback, brainstorming, and icon-making.

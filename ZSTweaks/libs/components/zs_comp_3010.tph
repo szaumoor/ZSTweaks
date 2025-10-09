@@ -14,7 +14,7 @@ COPY_EXISTING ~c6kalden.cre~ ~override~ // paladins that help with bodhi, curren
 
 // converting to NG
 COPY_EXISTING ~ARVAL.CRE~    ~override~ // Arval Mornmaster, currently LE, should be NG
-              ~BHARVAL.CRE~  ~override~
+              ~BHARVAL.CRE~  ~override~ // Arval Mornmaster, currently LE, should be NG
               ~c6cler1.cre~  ~override~ // cleric of lathander, neutral, should probably be NG
   LPF ALTER_CRE INT_VAR alignment=alignmen_neutral_good END
 
@@ -54,12 +54,13 @@ COPY_EXISTING ~shth011.cre~  ~override~ // Hanz thief, this version is evil for 
 COPY_EXISTING ~aemerhob.cre~ ~override~ // hobgoblin, no alignment for some reason, LE now
               ~gguard01.cre~ ~override~ // guard harassing evilly a beggar
               ~golbra01.cre~ ~override~ // brain golem, they're always LE like mindflayers, CG in EE (??)
+              ~udgol.cre~    ~override~ // brain golem, they're always LE like mindflayers, Neutral in EE
               ~hgwra01.cre~  ~override~ // Gorion Wraith, shouldn't be Lawful Good
               ~maeguy02.cre~ ~override~ // maevar henchman, probably shouldnt be CN, instead LE
               ~noblem1.cre~  ~override~ // evil nobleman asshole
               ~noblem2.cre~  ~override~ // evil nobleman asshole
               ~tolger.cre~   ~override~ // tolgerias, he's obviously evil lol, not chaotic good
-              ~tolger2.cre~  ~override~
+              ~tolger2.cre~  ~override~ // tolgerias, he's obviously evil lol, not chaotic good
   LPF ALTER_CRE INT_VAR alignment=alignmen_lawful_evil END
 
 // converting to NE
