@@ -2300,11 +2300,11 @@ These resistances are fully customizable in the configuration file. (TODO)
 
 This improves yuan-ti enemies in the following way:
 
-- +3 bonus to their Armor Class vs. Missile because their slim and serpentine bodies are hard to hit
-- +2 bonus to their Armor Class vs Piercing because the same reason
+- +2 bonus to their Armor Class vs. Missile because their slim and serpentine bodies are hard to hit
+- +1 bonus to their Armor Class vs Piercing because the same reason
 - They inflict 1d4 poison damage on each melee attack universally
 - They're 75% resistant to poison damage (but not poisoning itself)
-- They move 2 points faster than normal
+- They move 3 points faster than normal
 
 Additionally, my mod fixes in passing ICYUAN01 from attacking with long swords with a penalty of -2 to THAC0 due to missing proficiencies.
 

@@ -55,6 +55,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET race_werewolf        = IDS_OF_SYMBOL(race LYCANTHROPE)
     OUTER_SET race_wraith          = IDS_OF_SYMBOL(race WRAITH)
     OUTER_SET race_wyvern          = IDS_OF_SYMBOL(race WYVERN)
+    OUTER_SET race_yuanti          = IDS_OF_SYMBOL(race YUANTI)
 
     OUTER_SET gender_female         = IDS_OF_SYMBOL(gender FEMALE)
     OUTER_SET gender_male           = IDS_OF_SYMBOL(gender MALE)

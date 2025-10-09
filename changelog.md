@@ -53,9 +53,9 @@
 ## New components
 
 - Make Hold Undead bypass Magic Resistance
-- Make disrupt undead weapons more balanced and closer to PnP rules. [This replaces the old components that tweaked specific weapons]
+- Make disrupt undead weapons more balanced and closer to PnP rules. [Replaces the old components that tweaked specific weapons]
 - Make Holy and Unholy Word more generally effective
 - Make Disintegrate cause damage to constructs, disrupting defenses, with a chance of holding them
 - Make minotaurs slightly more dangerous and have the chance to gore with their horns on a successful hit (TODO)
-- Make Yuan-ti move faster and inflict minor poison damage on melee (TODO)
+- Make Yuan-ti slightly more powerful
 - Overhaul some of the golem creatures
