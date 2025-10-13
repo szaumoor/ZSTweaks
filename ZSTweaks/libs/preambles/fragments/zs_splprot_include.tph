@@ -41,6 +41,8 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
     OUTER_SET ~zs_xp_>=n~               = "-1"
     OUTER_SET ~zs_xp_<n~                = "-1"
 
+    OUTER_SET ~zs_has_stoneskins~       = "-1"
+
     //----------------------------------------------------------------
     ACTION_IF NOT ZS_MARKER_FILE_EXISTS BEGIN
 
@@ -70,6 +72,8 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
 
         APPEND ~splprot.2da~ ~ZS_CLASS=THIEF%TAB%0x10d%TAB%4%TAB%1~         UNLESS ~ZS_CLASS=THIEF~
         APPEND ~splprot.2da~ ~ZS_CLASS=BARD_ALL%TAB%0x10d%TAB%206%TAB%1~    UNLESS ~ZS_CLASS=BARD_ALL~
+        
+        APPEND ~splprot.2da~ ~ZS_HAS_STONESKINS%TAB%88%TAB%1%TAB%4~         UNLESS ~ZS_HAS_STONESKINS~
 
     END
 
@@ -152,6 +156,10 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
 
             ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_CLASS=BARD_ALL~ BEGIN
                 ~zs_class_bard_all~ = row
+            END
+
+            ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_HAS_STONESKINS~ BEGIN
+                ~zs_has_stoneskins~ = row
             END
         END
 
@@ -253,7 +261,8 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
                 ~zs_hideinshadows_>n~     = "-1" OR
                 ~zs_class_thief~          = "-1" OR
                 ~zs_class_bard_all~       = "-1" OR
-                ~zs_thief_or_bard_all~    = "-1"
+                ~zs_thief_or_bard_all~    = "-1" OR
+                ~zs_has_stoneskins~       = "-1" 
         BEGIN
             WARN "Error: Not all splprot entries could be inserted!"
             ACTION_IF ~zs_slashingresist_<128~  = "-1" BEGIN
@@ -334,6 +343,10 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
             ACTION_IF ~zs_thief_or_bard_all~    = "-1" BEGIN
                 PRINT "zs_thief_or_bard_all not set!"
             END
+            ACTION_IF ~zs_has_stoneskins~       = "-1" BEGIN
+                PRINT "zs_has_stoneskins not set!"
+            END
+
 
             FAIL "Exiting installation."
         END

@@ -7,10 +7,11 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY ~%MOD_FOLDER%/items/vorpal_weapons~ ~override~
-    ACTION_IF zst_1541_vorpal_no_chunking BEGIN
-        COPY_EXISTING ~ZSTWVRPA.SPL~ ~override~
+    COPY_EXISTING ~ZSTWVRPA.SPL~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = ~%zs_has_stoneskins%~ END
+        PATCH_IF zst_1541_vorpal_no_chunking BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 13 parameter2 = (2**2) END
-    END
+        END
 
     OUTER_SET two_handed_comp_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1199~
     COPY_EXISTING ~BALOR.ITM~ ~override~
@@ -99,15 +100,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             END
 
         BUT_ONLY
-
-    COPY_EXISTING ~spwi408.spl~ ~override~
-                  ~melstone.spl~ ~override~
-                  ~spin694.spl~ ~override~
-        LPF CLONE_EFFECT INT_VAR match_opcode = 218 opcode = 328 parameter1=0 parameter2=18 special=1 END
-
-    COPY_EXISTING ~sppr506.spl~ ~override~
-        LPF CLONE_EFFECT INT_VAR match_opcode = 218 opcode = 328 parameter1=0 parameter2=19 special=1 END
-
 
 END
 
