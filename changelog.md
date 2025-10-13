@@ -28,6 +28,7 @@
 - Forgot to upgrade the regeneration granted by Eldath's Mist in the code from 1 HP/s to 2 HP/s
 - Improved the code of the Armor of Faith component (more old code gone wrong!)
 - Added Underdark Brain Golems to the list of incorrectly aligned creatures fixed by the alignment creature component (was Neutral, should be Lawful Evil)
+- Fixed Vorpal Hit component not working as expected due to missing spell states in Stoneskin and Iron Skins
 
 ## Modifications
 

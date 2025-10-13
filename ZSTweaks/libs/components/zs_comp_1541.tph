@@ -100,6 +100,15 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         BUT_ONLY
 
+    COPY_EXISTING ~spwi408.spl~ ~override~
+                  ~melstone.spl~ ~override~
+                  ~spin694.spl~ ~override~
+        LPF CLONE_EFFECT INT_VAR match_opcode = 218 opcode = 328 parameter1=0 parameter2=18 special=1 END
+
+    COPY_EXISTING ~sppr506.spl~ ~override~
+        LPF CLONE_EFFECT INT_VAR match_opcode = 218 opcode = 328 parameter1=0 parameter2=19 special=1 END
+
+
 END
 
 
