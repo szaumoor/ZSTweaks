@@ -2,8 +2,10 @@
 
 ## Fixes
 
-- Added prefix: One yuan-ti creature file was using long swords without proficiency for it, resulting in them incurring in penalties
+- Added prefix: One yuan-ti creature file was using long swords without proficiency for it, resulting in them incurring in penalties. Disabled if the fixpack is installed (currently only existing in CamDawg's fork)
 - Added prefix: No minotaurs in BG2 are set to minotaurs race-wise, resulting in them not being affected by opcodes that target minotaurs, such as my Maze tweak
+- Added prefix: Golem Juggernaut standardized to Stone Golem
+- Added prefix: Greater Clay Golem should be treated as a Clay Golem class-wise
 - Added fix for Unholy Reaver for Item Upgrade not being tweaked appropriately in the Soul Reaver component.
 - Fixed installation crash with Cloak of Fear component
 - Excluded the part that distributes the "Remove Fear" effect for Cloak of Fear if fixpack is installed, since they do that already.
@@ -29,6 +31,7 @@
 - Improved the code of the Armor of Faith component (more old code gone wrong!)
 - Added Underdark Brain Golems to the list of incorrectly aligned creatures fixed by the alignment creature component (was Neutral, should be Lawful Evil)
 - Fixed Vorpal Hit component not working as expected due to missing spell states in Stoneskin and Iron Skins
+- Disabled more prefixes that are rendered moot if the EEFixpack is installed
 
 ## Modifications
 

@@ -2310,14 +2310,22 @@ Additionally, my mod fixes in passing ICYUAN01 from attacking with long swords w
 
 **Component 3120:** Overhaul some of the golem creatures
 
-- Iron golems: They now have no resistance to electric damage (only element they aren't immune to) and absorb 27% of fire damage as healing (from 25%). Additionally, they resist 33% of physical damage (from 20%)
-- Flesh golems: They absorb 27% of electric damage as healing (from 25%).
-- Adamantite golems: Normally identical to Iron Golems, except with 70% higher physical resistance, they're now slightly more powerful. They are, according to lore, *almost* impossible to defeat. Therefore:
+- **Iron** golems: They now have no resistance to electric damage (only element they aren't immune to) and absorb 27% of fire damage as healing (from 25%). Additionally, they resist 33% of physical damage (from 35%)
+- **Flesh** golems: They absorb 27% of electric damage as healing (from 25%), and are immune to both fire and cold. Their base health is also increased from 40 to 45. Their animation is now changed to Ogrillon, similar to BGEE, and for consistency with other golems, their movement speed will be sharply increased. They also resist now 15% of physical damage.
+- **Stone** golems: They now resist **25**% of physical damage (from 0%).
+- **Lesser clay** golems: they have half of the normal resistances of clay golems instead of none. So they will take half of the damaging from slashing, piercing, and missile, instead of resisting it all.
+- **Brain** golems: They resist **10% more** piercing, slashing, and missile damage (**35%**). They will also use a Ogrillon animation, with a pinkish brainy hue.
+- **Magic golem****: 27% of the non-physical damage they take is always absorbed as healing.
+- **Adamantite golems**: Normally identical to Iron Golems, except with 70% higher physical resistance, they're now slightly more powerful. They are, according to lore, *almost* impossible to defeat. Therefore:
   - Strength increased to 25 from 24
-  - Outright immune to missile attack damage
-  - Immune to all elements and all spells, as per usual
-  - They can stomp the ground, causing it to tremble, knocking down all non-flying, up-to-medium-sized creatures in a 30 feet radius, and take 4d10 crushing damage (save vs. Breath for half).
-
+  - Immune to missile attack damage
+  - Immune to all elements and all spells. No longer absorbs damage from it. They also deflect every spell level.
+  - Immune to stun, critical hits, and backstabs.
+  - They can stomp the ground, causing it to tremble, knocking down all non-flying, up-to-medium-sized creatures in a 30 feet radius, and take 5d10 crushing damage (save vs. Breath at -4 for half damage and to avoid unconsciousness).
+  - Base health increased to 96 from 80
+  - Saving throws improved by +2
+  - Armor Class: 0 (from 3)
+  - THAC0: 0 (from 3)
 
 </details>
 

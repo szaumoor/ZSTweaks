@@ -1,0 +1,141 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_3120~) BEGIN
+  FAIL ~Script already included: zs_comp_3120~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_3120~ = 1
+END
+
+COPY_EXISTING_REGEXP ~^.+\.cre~ ~override~
+  READ_BYTE 0x272 race
+  PATCH_IF race = race_golem BEGIN
+    READ_BYTE 0x273 class
+
+    PATCH_IF class = class_golem_flesh BEGIN
+
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 176 timing = 9 parameter1 = 8 END
+      WRITE_LONG 0x28 0x7001
+      WRITE_BYTE 0x59 100
+      WRITE_BYTE 0x5a 100
+      WRITE_BYTE 0x5b 127
+      WRITE_BYTE 0x5e 100
+      WRITE_BYTE 0x5f 100
+
+      READ_SHORT 0x26 max_hp
+      PATCH_IF max_hp < 45 BEGIN
+
+        WRITE_SHORT 0x26 45
+        READ_SHORT 0x24 current_hp
+
+        PATCH_IF current_hp = max_hp BEGIN
+          WRITE_SHORT 0x24 45
+        END
+
+      END
+
+      PATCH_IF BYTE_AT 0x60 < 15 BEGIN
+        WRITE_BYTE 0x60 15
+      END
+
+      PATCH_IF BYTE_AT 0x61 < 15 BEGIN
+        WRITE_BYTE 0x61 15
+      END
+
+      PATCH_IF BYTE_AT 0x62 < 15 BEGIN
+        WRITE_BYTE 0x62 15
+      END
+
+      PATCH_IF BYTE_AT 0x63 < 15 BEGIN
+        WRITE_BYTE 0x63 15
+      END
+      
+    END 
+
+  END
+
+COPY_EXISTING ~goliro01.cre~ ~override~
+              ~gorgrd01.cre~ ~override~
+              ~gorgrd02.cre~ ~override~
+              ~kpgol04.cre~  ~override~
+              ~obsmod01.cre~  ~override~
+              ~shiron.cre~  ~override~
+  PATCH_IF BYTE_AT 0x5b > 0 BEGIN
+    WRITE_BYTE 0x5b 0
+  END
+
+  PATCH_IF BYTE_AT 0x60 < 35 BEGIN
+    WRITE_BYTE 0x60 35
+  END
+
+  PATCH_IF BYTE_AT 0x61 < 35 BEGIN
+    WRITE_BYTE 0x61 35
+  END
+
+  PATCH_IF BYTE_AT 0x62 < 35 BEGIN
+    WRITE_BYTE 0x62 35
+  END
+
+  PATCH_IF BYTE_AT 0x63 < 35 BEGIN
+    WRITE_BYTE 0x63 35
+  END
+
+
+COPY_EXISTING ~golsto01.cre~ ~override~
+
+  PATCH_IF BYTE_AT 0x60 < 25 BEGIN
+    WRITE_BYTE 0x60 25
+  END
+
+  PATCH_IF BYTE_AT 0x61 < 25 BEGIN
+    WRITE_BYTE 0x61 25
+  END
+
+  PATCH_IF BYTE_AT 0x62 < 25 BEGIN
+    WRITE_BYTE 0x62 25
+  END
+
+  PATCH_IF BYTE_AT 0x63 < 25 BEGIN
+    WRITE_BYTE 0x63 25
+  END
+
+COPY ~%MOD_FOLDER%/creatures/adamantine_golem~ ~override~
+COMPILE ~%MOD_FOLDER%/baf/adamantine_golem~
+
+ADD_PROJECTILE ~%MOD_FOLDER%/pro/zststada.pro~
+
+COPY_EXISTING ~zstgolqk.spl~ ~override~
+  LPF ALTER_HEADER INT_VAR projectile = %zststada% END
+
+COPY_EXISTING ~golada01.cre~ ~override~
+              ~golkill2.cre~ ~override~
+              ~gordeckb.cre~ ~override~
+  ADD_CRE_ITEM "helmnoan" #0 #0 #0 ~unstealable&undroppable~ "helmet"
+  WRITE_BYTE 0x238 25 //str
+
+  // new combat script
+  WRITE_ASCII 0x260 ~zstgolad~
+
+  // health
+  WRITE_SHORT 0x24 96
+  WRITE_SHORT 0x26 96
+
+  // ac
+  WRITE_SHORT 0x46 0
+  WRITE_SHORT 0x48 0
+
+  // damage immunities and magic resistance
+  WRITE_BYTE 0x59 100
+  WRITE_BYTE 0x5a 100
+  WRITE_BYTE 0x5b 100
+  WRITE_BYTE 0x5c 100
+  WRITE_BYTE 0x5d 100
+  WRITE_BYTE 0x5e 100
+  WRITE_BYTE 0x5f 100
+  WRITE_BYTE 0x63 100 // immunity to missile damage
+
+  WRITE_BYTE 0x52 0 // thac0
+
+  // saving throws
+  WRITE_BYTE 0x54 (THIS - 2)
+  WRITE_BYTE 0x55 (THIS - 2)
+  WRITE_BYTE 0x56 (THIS - 2)
+  WRITE_BYTE 0x57 (THIS - 2)
+  WRITE_BYTE 0x58 (THIS - 2)
