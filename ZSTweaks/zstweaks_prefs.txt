@@ -8,7 +8,7 @@ OUTER_SET zs_debug = "0" // normally at 0 for users
 
 ////////////////////////////// Pre-fixes \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-OUTER_SET zst_gender_fix = "1" // In vanilla game, many creatures are inappropriately set to 'male' (never female, I wonder why?) even though they should be completely independent of it, such as golems, statues, mists, fungus, slimes, mind flayers... This interferes with opcodes that target based on gender, leading to results that will be anything but logical.
+OUTER_SET zst_gender_fix = "1" // In vanilla game, many creatures are inappropriately set to 'male' (never female, I wonder why?) even though they should be completely independent of it, such as golems, statues, mists, fungus, slimes, mind flayers... This interferes with opcodes that target based on gender, leading to results that will be anything but logical. It is recommended to leave this on if you're planning on installing something that targets gender of male or female, such as my Shar-Teel component
 
 ////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -19,7 +19,7 @@ OUTER_SET zst_443_nerf_npc_symbols = "1"
 
 // backstab penalties to different weapon types (set to 0 to disable, otherwise add a positive number to determine backstab multiplier penalty)
 OUTER_SET zst_1120_backstab_penalty_lswords    = "1"
-OUTER_SET zst_1120_backstab_penalty_rp_estocs  = "1" // my item pack stocks
+OUTER_SET zst_1120_backstab_penalty_rp_estocs  = "1" // my item pack estocs
 OUTER_SET zst_1120_backstab_penalty_katana     = "1"
 OUTER_SET zst_1120_backstab_penalty_scimitars  = "1"
 OUTER_SET zst_1120_backstab_penalty_staves     = "2"
@@ -77,7 +77,7 @@ OUTER_SET zst_1450_allow_bucklers  = "1"
 
 // allow bards to benefit from finesse
 OUTER_SET zst_1450_allow_bards               = "1"
-OUTER_SET zst_1450_bards_probability_penalty = 24 // 25%, probabilities go from 0 to 99
+OUTER_SET zst_1450_bards_probability_penalty = 24 // 25% actually, probabilities go from 0 to 99. Multiplicative
 
 // potions are usable by everyone
 OUTER_SET zst_1534_potions_usable_everyone   = "1"
@@ -87,7 +87,7 @@ OUTER_SET zst_1534_potions_cannot_self_stack = "1"
 // tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted  half, you would type 50.
 OUTER_SET zst_1538_jewelry_price = "150"
 
-// set to 1 to prevent chunking with the vorpal component
+// set to 1 to prevent chunking with vorpals hits in the vorpal component
 OUTER_SET zst_1541_vorpal_no_chunking = "0"
 
 // allow or disallow tweaks for component 1545 (stat tweaks)
@@ -97,7 +97,7 @@ OUTER_SET zst_1545_dexterity_bonuses      = "1"
 OUTER_SET zst_1545_lore_class_bonuses     = "1" // lore bonuses per class
 OUTER_SET zst_1545_lore_stat_bonuses      = "1" // lore bonuses with intelligence and wisdom
 OUTER_SET zst_1545_racethac0_bonuses      = "1" // thac0 bonuses for race
-OUTER_SET zst_1545_shorty_bonuses         = "2" // shorty bonuses to saves (0: disable, 1: nullify, 2: toned down, 3: standardize)
+OUTER_SET zst_1545_shorty_bonuses         = "2" // 0: disable, 1: nullify, 2: toned down, 3: standardize (readme for details)
 OUTER_SET zst_1545_proficiency_bonuses    = "1"
 OUTER_SET zst_1545_weapon_style_bonuses   = "1"
 OUTER_SET zst_1545_weapon_style_twohanded = "1" // allow two handed tweak
@@ -119,9 +119,6 @@ OUTER_SET zst_1546_tower_all_fighter_classes            = "0" // restricts tower
 OUTER_SET zst_1546_small_thieves_bards                  = "1" // allows bards and thieves to use small shields
 OUTER_SET zst_1546_small_medium_thieves_bards           = "0" // allows bards and thieves to use small and medium shields
 OUTER_SET zst_1546_buckler_wizards                      = "1" // allows wizard classes to use bucklers
-
-// tweaks to armor usability -- ignore for now, unimplemented
-// OUTER_SET zst_1549_full_plate_single_fighters_only = "1"
 
 // tweaks to backstab requirements, set to 1 if you want backstabs without invisibility but with angle requirements
 // otherwise the default is removing angle requirements, but requiring invisibility
@@ -179,7 +176,7 @@ OUTER_SET zst_1310_easthaven_dr = "10" // damage reduction defender of easthaven
 
 /////////////////////////////// NPC Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-// determines the net slashing damage of Sarevok's Deathbringer Assault in component 1646. Default is 150 (50 less than normal). Note that now it allows a saving throw to take half as well
+// determines the net slashing damage of Sarevok's Deathbringer Assault in component 1646. Default is 120 (70 less than normal). Note that now it allows a saving throw to take half as well
 OUTER_SET zst_1646_sare_dmg = "120"
 
 /////////////////////////////// Ranged Weapon Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -193,11 +190,11 @@ OUTER_SET zst_1010_asp_nest_sbonus = "-4"
 OUTER_SET zst_145_luck_boost     = "1" // effect boost
 OUTER_SET zst_145_luck_dur_boost = "1" // effect duration boost
 
-// this allows the tweak to disable backstabs for Black Blade of Disaster and/or Golem Iron Fist
+// this allows the tweak to enable or disable backstabs for Black Blade of Disaster and/or Iron Golem fist
 OUTER_SET zst_160_bbod   = "1"
 OUTER_SET zst_160_goliro = "1"
 
-OUTER_SET zst_390_deathfog_no_mr = "1" // makes Death Fog bypass MR, since it's conjured acid
+OUTER_SET zst_390_deathfog_no_mr = "1" // makes Death Fog acid damage bypass MR, since it's conjured acid
 
 // allows the Tenser's Transformation tweaks
 OUTER_SET zst_441_tenser_thac0                = "1" // THAC0 tweak

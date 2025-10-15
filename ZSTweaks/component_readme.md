@@ -2207,6 +2207,18 @@ Note that this component does not patch their kit descriptions, as it is not int
 
 This will make it a straight upgrade to the power by providing backstab immunity and allowing movement at 50% of the original speed.
 
+**Component 2270:** Make Whirlwind and Evasion grant 3 uses of the Improved variants instead of existing as a silly lesser version
+
+As it says. This is a new way of resolving this widely recognized dumb design. The HLAS are replaced as follows:
+
+- Evasion -> Unlock Evasion (grants 3 uses of Improved Evasion, now just called Evasion)
+- Improved Evasion -> Evasion: Additional Use (grants another use, if desired)
+- Whirlwind -> Unlock Whirlwind Attack (grants 3 uses of Improved Whirlwind Attack, now just called Whirlwind Attack)
+- Improved Whirlwind Attack -> Whirlwind Attack: Additional Use (grants another use, if desired)
+
+Additionally, Improved Evasion (Evasion now) doubles the movement speed granted (factor of 4 instead of 2) and makes it use opcode 176, so it's not removed by Free Action.
+
+
 </details>
 
 ---

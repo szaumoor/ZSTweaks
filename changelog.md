@@ -54,6 +54,7 @@
 - Hugely simplified the code in Shield of Archons component using CamDawg's functions (praise be to him)
 - Flesh to stone component now also adds the option to lightly overhaul the Stone to Flesh spell, making it cause damage to stone golems, as per PnP.
 - Armor of Faith now also includes damage reduction against Poison damage (not poisoning itself)
+- Death Fog component is now closer to PnP, and the summon banishment effect is removed. Now it deals more acid damage, reduces acid resistance, decreases movement speed and bypasses magic resistance. (TODO)
 
 ## New components
 
@@ -63,4 +64,5 @@
 - Make Disintegrate cause damage and slow some golems, as per PnP
 - Make minotaurs slightly more dangerous and have the chance to gore with their horns on a successful hit (TODO)
 - Make Yuan-ti slightly more powerful
+- Make Whirlwind and Evasion grant 3 uses of the Improved variants instead of existing as a silly lesser version (TODO)
 - Overhaul some of the golem creatures (TODO)
