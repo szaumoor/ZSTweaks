@@ -6,16 +6,52 @@ END
 
 OUTER_SET group_component = 1
 
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3010.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3020.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3030.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3040.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3050.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3060.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3070.tph"
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_creature_group_install.txt~
+
+ACTION_IF zs_3010_alignment_tweak BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3010.tph"
+END
+
+ACTION_IF zs_3020_summoned_demons_tweak BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3020.tph"
+END
+
+ACTION_IF zs_3030_celestials_tweak BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3030.tph"
+END
+
+ACTION_IF zs_3050_balors_tweak BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3050.tph"
+END
+
+ACTION_IF zs_3060_mencar_tweak BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3060.tph"
+END
+
+ACTION_IF zs_3070_felines_tweak BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3070.tph"
+END
+
+ACTION_IF zs_3080_natural_attacks_tweak BEGIN
 INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3080.tph"
+END
+
+ACTION_IF zs_3090_shadows_tweak BEGIN
 INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3090.tph"
+END
+
+ACTION_IF zs_3100_beetles_tweak BEGIN
 INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3100.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3110.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3120.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3130.tph"
+END
+
+ACTION_IF zs_3110_yuantis_tweak BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3110.tph"
+END
+
+ACTION_IF zs_3120_golems_tweak BEGIN
+ INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3120.tph"
+END
+
+ACTION_IF zs_3130_minotaurs_tweak BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3130.tph"
+END

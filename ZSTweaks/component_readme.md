@@ -2246,11 +2246,9 @@ This component makes summoned demons grant party XP. It may not catch all instan
 
 Also, pay attention to any mods that modify the behavior of summoned demons, especially if they replace the script. Might or might not work. Please test and report.
 
-**Component 3030:** Make Devas hasted, same as Planetars, and allow them to instantly cast their spells
+**Component 3030:** Make celestial summons more powerful or balanced
 
 I was always annoyed at how immensely more powerful Planetars are compared to Devas. Haste is just too good not to use. Devas will be permanently hasted now, same as Planetars. Devas will also be able to cast their spells instantly.
-
-**Component 3040:** Make the Planetar more balanced and allow it to grant allies passive partial spell invulnerability
 
 Planetars have a 25% of dealing a vorpal hit with a -4 save penalty, which is even more powerful than the silver sword. It's a common source of cheese. The following changes are in:
 

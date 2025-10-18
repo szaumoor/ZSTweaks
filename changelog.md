@@ -55,6 +55,8 @@
 - Flesh to stone component now also adds the option to lightly overhaul the Stone to Flesh spell, making it cause damage to stone golems, as per PnP.
 - Armor of Faith now also includes damage reduction against Poison damage (not poisoning itself)
 - Death Fog component is now closer to PnP, and the banishment effect is removed. Now it deals more acid damage, reduces acid resistance, decreases movement speed and bypasses magic resistance. (TODO)
+- Deva and Planetar components now merged
+- Added a group installation component for creature tweaks. I've also *cautiously* added the option to choose which components are installed through user input. See **ZSTweaks/configurations/zstweaks_creature_group_install.txt**, if you're interested and set it as per your liking.
 
 ## New components
 

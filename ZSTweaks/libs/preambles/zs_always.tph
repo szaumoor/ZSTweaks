@@ -1,4 +1,4 @@
-INCLUDE ~%MOD_FOLDER%/zstweaks_prefs.txt~
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_prefs.txt~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_preinstall_check.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_npc_array.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_ids_setup.tph~

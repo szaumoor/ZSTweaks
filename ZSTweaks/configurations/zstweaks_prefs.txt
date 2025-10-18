@@ -298,3 +298,7 @@ OUTER_SET zst_2260_allow_tempus = "1"
 
 // vorpal saving throw penalty or bonus for balor's vorpal attacks
 OUTER_SET zst_3050_balor_vorpal_penalty = "-4"
+
+// choose celestial types to include in celestial tweaks
+OUTER_SET zst_3030_devas     = "1"
+OUTER_SET zst_3030_planetars = "1"
