@@ -5,6 +5,9 @@ END ELSE BEGIN
 END
 
 COPY ~%MOD_FOLDER%/creatures/yuanti~ ~override~
+OUTER_SET melee_effect = "zsipyua2"
+OUTER_SET movement_boost = 3
+
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     READ_BYTE 0x272 race
     PATCH_IF race = race_yuanti AND
@@ -14,8 +17,8 @@ COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
         WRITE_SHORT 0x4c (THIS - 2)
         WRITE_SHORT 0x4e (THIS - 1)
 
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 timing=9 parameter1 = 3 END
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 173 timing=9 parameter1 = 75 END
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 248 timing=9 STR_VAR resource = "ZSIPYUA2" END
+        LPF ADD_CRE_PASSIVE INT_VAR opcode = 173 parameter1 = 75 END
+        LPM ADD_CRE_MELEE_EFFECT 
+        LPM ADD_CRE_MOVEMENT_BOOST 
     END
 BUT_ONLY

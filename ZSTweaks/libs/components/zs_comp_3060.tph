@@ -4,50 +4,54 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_3060~ = 1
 END
 
-DEFINE_PATCH_FUNCTION CALCULATE_HP_VANILLA
-INT_VAR
-    level = 1
-STR_VAR
-    class = ""
-RET
-    result
-BEGIN
-    SET total           = 0
-    SET overgrowth      = 0
-    SET max_dice_thrown = 0
+ACTION_IF is_bg2ee_or_eet BEGIN
+    
+    DEFINE_PATCH_FUNCTION CALCULATE_HP_VANILLA // subpar temporary algorithm
+    INT_VAR
+        level = 1
+    STR_VAR
+        class = ""
+    RET
+        result
+    BEGIN
+        SET total           = 0
+        SET overgrowth      = 0
+        SET max_dice_thrown = 0
 
-    PATCH_IF "%class%" STR_EQ "fighter" BEGIN
-        total           = 10
-        overgrowth      = 3
-        max_dice_thrown = 9
+        PATCH_IF "%class%" STR_EQ "fighter" BEGIN
+            total           = 10
+            overgrowth      = 3
+            max_dice_thrown = 9
 
-    END ELSE PATCH_IF "%class%" STR_EQ "rogue" BEGIN
-        total           = 6
-        overgrowth      = 2
-        max_dice_thrown = 10
+        END ELSE PATCH_IF "%class%" STR_EQ "rogue" BEGIN
+            total           = 6
+            overgrowth      = 2
+            max_dice_thrown = 10
 
-    END ELSE PATCH_IF "%class%" STR_EQ "cleric" BEGIN
-        total           = 8
-        overgrowth      = 2
-        max_dice_thrown = 9
+        END ELSE PATCH_IF "%class%" STR_EQ "cleric" BEGIN
+            total           = 8
+            overgrowth      = 2
+            max_dice_thrown = 9
 
-    END ELSE PATCH_IF "%class%" STR_EQ "wizard" BEGIN
-        total           = 4
-        overgrowth       = 1
-        max_dice_thrown = 10
+        END ELSE PATCH_IF "%class%" STR_EQ "wizard" BEGIN
+            total           = 4
+            overgrowth       = 1
+            max_dice_thrown = 10
 
+        END
+
+        PATCH_IF level <= max_dice_thrown BEGIN
+            total = total * level
+        END ELSE BEGIN
+            total = total * max_dice_thrown + (level - max_dice_thrown) * overgrowth
+        END
+        result = total
     END
 
-    PATCH_IF level <= max_dice_thrown BEGIN
-        total = total * level
-    END ELSE BEGIN
-        total = total * max_dice_thrown + (level - max_dice_thrown) * overgrowth
-    END
-    result = total
+    COPY_EXISTING ~sevpat01.cre~ ~override~
+        LPF CALCULATE_HP_VANILLA INT_VAR level = BYTE_AT(0x234) STR_VAR class = "fighter" RET result END
+        WRITE_SHORT 0x24 result
+        WRITE_SHORT 0x26 result
+        WRITE_BYTE  0x53 1
+
 END
-
-COPY_EXISTING ~sevpat01.cre~ ~override~
-    LPF CALCULATE_HP_VANILLA INT_VAR level = BYTE_AT(0x234) STR_VAR class = "fighter" RET result END
-    WRITE_SHORT 0x24 result
-    WRITE_SHORT 0x26 result
-    WRITE_BYTE  0x53 1

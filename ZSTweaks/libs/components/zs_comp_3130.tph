@@ -1,0 +1,76 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_3130~) BEGIN
+  FAIL ~Script already included: zs_comp_3130~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_3130~ = 1
+END
+
+ACTION_IF is_bg2ee_or_eet BEGIN
+
+  COPY ~%MOD_FOLDER%/creatures/minotaurs~ ~override~
+  OUTER_SET melee_effect = "zstmino0"
+  OUTER_SET movement_boost = 5
+
+  COPY_EXISTING_REGEXP ~^.*\.cre$~ ~override~
+    READ_BYTE 0x272 race
+
+    PATCH_IF race = race_minotaur BEGIN // minotaurs
+    
+      LPM ADD_CRE_MELEE_EFFECT // can gore
+      LPM ADD_CRE_MOVEMENT_BOOST // moves faster
+      LPM ADD_CRE_CRIT_BOOST // crits 5% more often
+
+      READ_BYTE 0x240 morale_break // don't get scared so easily
+      PATCH_IF morale_break > 3 BEGIN
+        WRITE_BYTE 0x240 3
+      END
+
+      WRITE_BYTE 0x273 class_fighter // are naturally fighters
+
+      READ_SHORT 0x26 max_hp // have at least 60 hp
+      PATCH_IF max_hp < 60 BEGIN
+
+        WRITE_SHORT 0x26 60
+        READ_SHORT 0x24 current_hp
+
+        PATCH_IF current_hp = max_hp BEGIN
+          WRITE_SHORT 0x24 60
+        END
+
+      END
+      
+      READ_BYTE 0x23d con
+      PATCH_IF con < 17 BEGIN // have at least 17 constitution
+        WRITE_BYTE 0x23d 17
+      END
+
+      READ_BYTE 0x238 str
+      PATCH_IF str < 20 BEGIN // 20 strength
+        WRITE_BYTE 0x238 20
+      END 
+
+      // and 15% resistance to physical damage
+      PATCH_IF BYTE_AT 0x60 < 15 BEGIN
+        WRITE_BYTE 0x60 15
+      END
+
+      PATCH_IF BYTE_AT 0x61 < 15 BEGIN
+        WRITE_BYTE 0x61 15
+      END
+
+      PATCH_IF BYTE_AT 0x62 < 15 BEGIN
+        WRITE_BYTE 0x62 15
+      END
+
+      PATCH_IF BYTE_AT 0x63 < 15 BEGIN
+        WRITE_BYTE 0x63 15
+      END
+
+      PATCH_IF BYTE_AT 0x74 < 3 BEGIN // and have at least 3 pips in axes (legacy profs)
+        WRITE_BYTE 0x74 3
+      END
+
+    END
+
+  BUT_ONLY
+
+END

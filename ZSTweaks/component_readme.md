@@ -2322,11 +2322,11 @@ Additionally, my mod fixes in passing ICYUAN01 from attacking with long swords w
 
 **Component 3120:** Overhaul some of the golem creatures
 
-- **Iron** golems: They now have no resistance to electric damage (only element they aren't immune to) and absorb 27% of fire damage as healing (from 25%). Additionally, they resist 33% of physical damage (from 35%)
+- **Iron** golems: They now have no resistance to electric damage (only element they aren't immune to) and absorb 27% of fire damage as healing (from 25%). Additionally, they resist 35% of physical damage (from 20%), double for missile damage.
 - **Flesh** golems: They absorb 27% of electric damage as healing (from 25%), and are immune to both fire and cold. Their base health is also increased from 40 to 45. Their animation is now changed to Ogrillon, similar to BGEE, and for consistency with other golems, their movement speed will be sharply increased. They also resist now 15% of physical damage.
 - **Stone** golems: They now resist **25**% of physical damage (from 0%).
 - **Lesser clay** golems: they have half of the normal resistances of clay golems instead of none. So they will take half of the damaging from slashing, piercing, and missile, instead of resisting it all.
-- **Brain** golems: They resist **10% more** piercing, slashing, and missile damage (**35%**). They will also use a Ogrillon animation, with a pinkish brainy hue.
+- **Brain** golems: They resist **10% more** piercing, slashing, and missile damage (**35%**). They will also use the Ogrillon animation, with a pinkish brainy hue.
 - **Magic golem****: 27% of the non-physical damage they take is always absorbed as healing.
 - **Adamantite golems**: Normally identical to Iron Golems, except with 70% higher physical resistance, they're now slightly more powerful. They are, according to lore, *almost* impossible to defeat. Therefore:
   - Strength increased to 25 from 24
@@ -2338,6 +2338,23 @@ Additionally, my mod fixes in passing ICYUAN01 from attacking with long swords w
   - Saving throws improved by +2
   - Armor Class: 0 (from 3)
   - THAC0: 0 (from 3)
+
+**Component 3130:** Make minotaurs tougher and more dangerous
+
+Most of minotaurs are wimps in the game. This is what it changes:
+
+- First of all, my mod ensures that the minotaurs in BG2EE are recognized as actual minotaurs race-wise
+- Patches the minotaurs, conferring various boons:
+  - Minimum HP: 50 -> 60
+  - Class set to Fighter, which allows them to benefit from Constitution bonuses
+  - Strength: 18/100 -> 20
+  - Constitution: 9 -> 17. In vanilla this ensures a minimum HP of 72
+  - 15% resistance to physical damage
+  - They no longer panic so easily
+  - They move 5 points faster than normal
+  - They critically hit 5% more often. Take care of monks and mages
+  - They now have three points in Axe proficiency (from none). This will in turn grant them half an attack per round, as it would for fighters, resulting in 5/2 attacks per round as baseline.
+  - Their hits have a 50% chance of goring, inflicting 2d6 piercing damage (save vs. Breath to take half),  and 3d8 extra if Save vs. Breath fails (no save to take only half), which also grants the minotaur a +1 bonus to their damage and 1/2 to their Attacks per round for 2 rounds. These benefits can't affect the minotaur more than once every 9 seconds, and the victim cannot suffer this extra damage more than once per round. The basic 2d6 piercing damage can happen at any time with the aforementioned 50% chance per hit.
 
 </details>
 

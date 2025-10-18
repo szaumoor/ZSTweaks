@@ -359,7 +359,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
         END
     END
 
-    ACTION_IF FILE_EXISTS_IN_GAME ~DOBONE.ITM~ BEGIN
+    ACTION_IF NOT has_eefixpack AND FILE_EXISTS_IN_GAME ~DOBONE.ITM~ BEGIN
 
         PRINT "[[FIX]]: Fixing DOBONE.ITM (Darts of Bone) to have a speed factor of 0 (+3 Darts)"
         COPY_EXISTING ~DOBONE.ITM~ ~override~

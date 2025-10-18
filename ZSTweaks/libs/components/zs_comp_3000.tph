@@ -1,0 +1,21 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_3000~) BEGIN
+  FAIL ~Script already included: zs_comp_3000~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_3000~ = 1
+END
+
+OUTER_SET group_component = 1
+
+INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3010.tph"
+INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3020.tph"
+INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3030.tph"
+INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3040.tph"
+INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3050.tph"
+INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3060.tph"
+INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3070.tph"
+INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3080.tph"
+INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3090.tph"
+INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3100.tph"
+INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3110.tph"
+INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3120.tph"
+INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3130.tph"

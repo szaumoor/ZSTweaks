@@ -30,6 +30,43 @@ BEGIN
     END
 END
 
+DEFINE_PATCH_FUNCTION ADD_CRE_PASSIVE
+INT_VAR
+    opcode = 0
+    parameter1 = 0
+    parameter2 = 0
+    timing = 9
+    target = 1
+STR_VAR
+    resource = ""
+BEGIN
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    END
+
+    LPM ADD_CRE_EFFECT
+END
+
+DEFINE_PATCH_MACRO ADD_CRE_MELEE_EFFECT 
+BEGIN
+    LPF ADD_CRE_PASSIVE INT_VAR opcode = 248 STR_VAR resource = melee_effect END
+END
+
+DEFINE_PATCH_MACRO ADD_CRE_RANGED_EFFECT 
+BEGIN
+    LPF ADD_CRE_PASSIVE INT_VAR opcode = 249 STR_VAR resource = ranged_effect END
+END
+
+DEFINE_PATCH_MACRO ADD_CRE_MOVEMENT_BOOST
+BEGIN
+    LPF ADD_CRE_PASSIVE INT_VAR opcode = 176 parameter1 = movement_boost END
+END
+
+DEFINE_PATCH_MACRO ADD_CRE_CRIT_BOOST
+BEGIN
+    LPF ADD_CRE_PASSIVE INT_VAR opcode = 301 parameter1 = 1 END
+END
+
 DEFINE_PATCH_FUNCTION ADD_ON_HIT_EFF
 INT_VAR
     tgt    = 2
