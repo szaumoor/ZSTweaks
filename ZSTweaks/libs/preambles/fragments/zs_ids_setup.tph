@@ -79,6 +79,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET general_animal        = IDS_OF_SYMBOL(general ANIMAL)
     OUTER_SET general_gianthumanoid = IDS_OF_SYMBOL(general GIANTHUMANOID)
     OUTER_SET general_humanoid      = IDS_OF_SYMBOL(general HUMANOID)
+    OUTER_SET general_plant         = IDS_OF_SYMBOL(general PLANT)
     OUTER_SET general_undead        = IDS_OF_SYMBOL(general UNDEAD)
     OUTER_SET general_weapon        = IDS_OF_SYMBOL(general WEAPON)
 

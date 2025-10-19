@@ -6,6 +6,7 @@
 - Added prefix: No minotaurs in BG2 are set to minotaurs race-wise, resulting in them not being affected by opcodes that target minotaurs, such as my Maze tweak
 - Added prefix: Golem Juggernaut standardized to Stone Golem
 - Added prefix: Greater Clay Golem should be treated as a Clay Golem class-wise
+- Added prefix: Shambling Mounds will be set as Plants and Shambling Mounds race-wise
 - Added fix for Unholy Reaver for Item Upgrade not being tweaked appropriately in the Soul Reaver component.
 - Fixed installation crash with Cloak of Fear component
 - Excluded the part that distributes the "Remove Fear" effect for Cloak of Fear if fixpack is installed, since they do that already.
@@ -16,14 +17,14 @@
 - Fixed Holy Power and Tenser's Transformation not being excluded from affecting rangers and paladins for the APR bonus
 - Fixed Rhino's Beetle Shield wrong description
 - Fix light crossbow tweak not working after some other tweaks to crossbows
-- Removed unnecessary whirlwind fixpack blocks since they don't actually more (old code gone wrong!)
+- Removed unnecessary whirlwind fixpack blocks since they don't actually change anything (old code gone wrong!)
 - Fixed Dale Protector boosting all weapon damage instead of only ranged weapon damage to rangers, bards, and thieves
 - Fixed an inaccuracy on Dale Protector's description regarding the damage bonus, as it affects all rangers, not just archers
 - Fix prefix gated to only run when the fixpack is installed, which is precisely the opposite of what was intended
 - Disabled some other fixes when the fixpack is installed
 - Moved fix for raceless water elementals to the prefix section, instead of the horrid wilting component
 - Library improvements with performance optimizations
-- Made many runtime checks on code run on debug mode, to improve performance on releases
+- Made many runtime checks of code run on debug mode, to improve performance on releases
 - Fixed shadow creature component not being open to IWDEE when it should. Also improved the performance of the component installation.
 - Fixed incorrect description for purifier component
 - Deleted documentation of components that no longer exist or were merged into other components
@@ -33,6 +34,9 @@
 - Fixed Vorpal Hit component not working as expected due to missing spell states in Stoneskin and Iron Skins
 - Disabled more prefixes that are rendered moot if the Fixpack is installed
 - Fixed Swashkalbladepus component not patching swashbucklers if only swashbucklers were selected in the preferences
+- Fixed bug in the effects of Horrid Wilting when targeting specific types of creatures (Wizard version)
+- Improved the implementation of the Horrid Wilting component, deleting hundreds of lines of code lol
+- Horrid Wilting will target plant creatures more accurately
 
 ## Modifications
 
@@ -56,7 +60,7 @@
 - Flesh to stone component now also adds the option to lightly overhaul the Stone to Flesh spell, making it cause damage to stone golems, as per PnP.
 - Armor of Faith now also includes damage reduction against Poison damage (not poisoning itself)
 - Death Fog component is now closer to PnP, and the banishment effect is removed. Now it deals more acid damage, reduces acid resistance, decreases movement speed and bypasses magic resistance. (TODO)
-- Deva and Planetar components now merged
+- Deva and Planetar components now merged in one, with appropriate configuration options to choose either or both
 - Configuration file is now in **ZSTweaks/configurations**
 - Added a group installation component for creature tweaks.
 - *Cautiously* added the option to choose which components are installed through user input in the creatures, npc, and class/kit tweaks. See **ZSTweaks/configurations**, if you're interested and set it as per your liking.

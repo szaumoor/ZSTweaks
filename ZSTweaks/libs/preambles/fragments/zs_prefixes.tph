@@ -367,5 +367,19 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
 
     END
 
+    PRINT "[[FIX]]: Setting Shambling Mounds to the race of Shambling Mound of Plant type"
+    COPY_EXISTING ~globsham.cre~ ~override~
+                  ~hgmnd2.cre~   ~override~
+                  ~hgmound.cre~  ~override~
+                  ~smound01.cre~ ~override~
+                  ~bpshamb.cre~  ~override~
+                  ~smoundsu.cre~ ~override~
+                  ~sshamb.cre~   ~override~
+                  ~cyshamb.cre~  ~override~
+                  ~shmblr.cre~   ~override~
+        WRITE_BYTE 0x271 general_plant
+        WRITE_BYTE 0x272 race_shambling_mound
+    BUT_ONLY IF_EXISTS
+
     OUTER_SET ~zs_prefixes~ = 1
 END
