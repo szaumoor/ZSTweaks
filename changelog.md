@@ -32,6 +32,7 @@
 - Added Underdark Brain Golems to the list of incorrectly aligned creatures fixed by the alignment creature component (was Neutral, should be Lawful Evil)
 - Fixed Vorpal Hit component not working as expected due to missing spell states in Stoneskin and Iron Skins
 - Disabled more prefixes that are rendered moot if the Fixpack is installed
+- Fixed Swashkalbladepus component not patching swashbucklers if only swashbucklers were selected in the preferences
 
 ## Modifications
 

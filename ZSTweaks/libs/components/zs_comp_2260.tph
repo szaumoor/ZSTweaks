@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_2260~ = 1
 END
 
-ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald BEGIN
+ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald OR zst_2260_allow_swash OR zst_2260_allow_tempus BEGIN
 
   WITH_SCOPE BEGIN
 

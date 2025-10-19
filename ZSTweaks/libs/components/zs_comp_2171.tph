@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_2171~ = 1
 END
 
-OUTER_SET class_comp_group_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~359~
+OUTER_SET class_comp_group_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~359~ AND zst_group_2170_thac0_thief
 ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~2170~ OR class_comp_group_installed BEGIN
 
   COPY ~%MOD_FOLDER%/class_kits/swash_fix~ ~override~
