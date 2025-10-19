@@ -4,7 +4,7 @@
 
 This mod is a compilation of tweaks that I think personally improve things as they are in the vanilla game. The vast majority of the tweaks are designed to be simple improvements of underpowered items or abilities. Some of them overhaul the game a bit more extensively, though not radically.
 
-Every group of components, except those that have only a few items, has as the first component the option to install all components in the group, except those that require user input. **NEW (1.6.1):** I'm cautiously and gradually implementing the possibility of the user deciding what from the group they want to install. Currently, it is only available for the creature and class/kit tweaks. See **ZSTweaks/configurations**, as these for options. More in the future. Do note that by default, every component is allowed to be installed.
+Every group of components, except those that have only a few items, has as the first component the option to install all components in the group, except those that require user input. **NEW (1.6.1):** I'm cautiously and gradually implementing the possibility of the user deciding what from the group they want to install. Currently, it is only available for the creature, npc, and class/kit tweaks. See **ZSTweaks/configurations**, as these for options. More in the future. Do note that by default, every component is allowed to be installed.
 
 Finally, any component that adds damage to items on hit, or alters items with damage on hit, will mark the damage effects as not capable of waking up sleepers.
 

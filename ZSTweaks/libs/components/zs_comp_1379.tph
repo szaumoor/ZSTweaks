@@ -5,18 +5,60 @@ END ELSE BEGIN
 END
 
 OUTER_SET group_component = 1
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_npc_group_install.txt~
 
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1380.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1480.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1500.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1510.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1520.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1640.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1641.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1642.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1643.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1644.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1645.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1646.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1647.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2240.tph~
+ACTION_IF zst_group_1380_haerdalis_blades BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1380.tph~
+END
+
+ACTION_IF zst_group_1480_yoshimo_katana BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1480.tph~
+END
+
+ACTION_IF zst_group_1500_mazzy_weapons BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1500.tph~
+END
+
+ACTION_IF zst_group_1510_anomen_shield BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1510.tph~
+END
+
+ACTION_IF zst_group_1520_keldorn_gear BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1520.tph~
+END
+
+ACTION_IF zst_group_1640_dorn_blades BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1640.tph~
+END
+
+ACTION_IF zst_group_1641_item_creation_npc BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1641.tph~
+END
+
+ACTION_IF zst_group_1642_nalia_ring BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1642.tph~
+END
+
+ACTION_IF zst_group_1643_corthala_blade BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1643.tph~
+END
+
+ACTION_IF zst_group_1644_gear_restriction BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1644.tph~
+END
+
+ACTION_IF zst_group_1645_cernd_cloak BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1645.tph~
+END
+
+ACTION_IF zst_group_1646_sarevok BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1646.tph~
+END
+
+ACTION_IF zst_group_1647_sharteel BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1647.tph~
+END
+
+ACTION_IF zst_group_2240_hexxat_blood_drain BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2240.tph~
+END
