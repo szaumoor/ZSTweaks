@@ -1,0 +1,14 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1336~) BEGIN
+  FAIL ~Script already included: zs_comp_1336~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1336~ = 1
+END
+
+ACTION_IF is_bg2ee_or_eet BEGIN
+
+    COPY_EXISTING ~ohrclck1.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@60030) END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=30,p1=20;op=177,p2=9,p1=%kit_sun_soul%,res=zstcwls0;op=177,p2=9,p1=%kit_lathander%,res=zstcwls0~ END
+        LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 146 parameter1 = 20 parameter2 = 2 END
+
+END

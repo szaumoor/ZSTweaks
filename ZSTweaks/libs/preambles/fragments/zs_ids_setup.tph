@@ -133,9 +133,11 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET kit_dragon_disciple = IDS_OF_SYMBOL(kit DRAGON_DISCIPLE)
     OUTER_SET kit_inquisitor      = IDS_OF_SYMBOL(kit INQUISITOR)
     OUTER_SET kit_jester          = IDS_OF_SYMBOL(kit JESTER)
+    OUTER_SET kit_lathander       = IDS_OF_SYMBOL(kit GODLATHANDER)
     OUTER_SET kit_skald           = IDS_OF_SYMBOL(kit SKALD)
     OUTER_SET kit_shadowdancer    = IDS_OF_SYMBOL(kit SHADOWDANCER)
     OUTER_SET kit_stalker         = IDS_OF_SYMBOL(kit STALKER)
+    OUTER_SET kit_sun_soul        = IDS_OF_SYMBOL(kit SUN_SOUL)
     OUTER_SET kit_swashbuckler    = IDS_OF_SYMBOL(kit SWASHBUCKLER)
     OUTER_SET kit_wild_mage       = IDS_OF_SYMBOL(kit WILDMAGE)
 

@@ -194,8 +194,6 @@ OUTER_SET zst_145_luck_dur_boost = "1" // effect duration boost
 OUTER_SET zst_160_bbod   = "1"
 OUTER_SET zst_160_goliro = "1"
 
-OUTER_SET zst_390_deathfog_no_mr = "1" // makes Death Fog acid damage bypass MR, since it's conjured acid
-
 // allows the Tenser's Transformation tweaks
 OUTER_SET zst_441_tenser_thac0                = "1" // THAC0 tweak
 OUTER_SET zst_441_tenser_apr                  = "1" // APR tweak

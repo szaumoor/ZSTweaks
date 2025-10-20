@@ -758,6 +758,14 @@ Yay, I love me another item with a unique description but no unique function. Th
 - Enemies killed while wearing the armor grant the wearer +1 THAC0 and damage for 7 seconds
 - May be worn by thieves and bards, and does not disable thieving abilities
 
+**Component 1336:** Make Cowl of the Stars more generally useful (Rasaad's Quest)
+
+I don't like wearable items that *only* give charged abilities, generally. The following improvements were made:
+
+- Gives 20% resistance to fire to all wearers
+- Creates 20 Melf's Minute Meteors once per day, regardless of wizard level
+- Additionally, since I think it's thematic, it gives Sun Soul monks and Priests of Lathander a 20% chance of inflicting extra 2d4 fire damage with all their melee attacks.
+
 </details>
 
 ---
