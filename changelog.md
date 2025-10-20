@@ -65,6 +65,7 @@
 - Configuration file is now in **ZSTweaks/configurations**
 - Added a group installation component for creature tweaks.
 - *Cautiously* added the option to choose which components are installed through user input in the creatures, npc, and class/kit tweaks. See **ZSTweaks/configurations**, if you're interested and set it as per your liking.
+- Fixed issue in RR's Crippling Strike component preventing the effects from being set at the wrong position in the effect stack, which prevented immunities and refreshing effects from working
 
 ## New components
 
