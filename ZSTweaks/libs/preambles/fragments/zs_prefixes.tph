@@ -204,7 +204,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
         PRINT "[[FIX]]: Setting green dragons to have actually the race of green dragon"
         COPY_EXISTING ~bazdra03.CRE~ ~override~
                       ~fsdragon.CRE~ ~override~
-            WRITE_BYTE 0x272 race_green_dragon
+            WRITE_BYTE 0x273 class_green_dragon
 
     END
 

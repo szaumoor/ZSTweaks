@@ -1,5 +1,5 @@
 ACTION_IF !VARIABLE_IS_SET zst_config_file_copied BEGIN
-    COPY ~%MOD_FOLDER%/zstweaks_prefs.txt~ ~override~
+    COPY ~%MOD_FOLDER%/configurations/zstweaks_prefs.txt~ ~override~
     OUTER_SET zst_config_file_copied = 1
 END
 

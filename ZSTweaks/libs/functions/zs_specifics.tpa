@@ -49,6 +49,7 @@ DEFINE_PATCH_FUNCTION SWAP_2DA_TABLE_VALUE
 INT_VAR
     column = "-1"
     row = "-1"
+    start_at_col = 0
 STR_VAR
     row_name = "*"
     replacement = "*"
@@ -70,18 +71,23 @@ BEGIN
 
         READ_2DA_ENTRIES_NOW rows 1
         FOR ( row = 3; row < rows; ++row ) BEGIN
-            READ_2DA_ENTRY_FORMER rows row 0 label
+            READ_2DA_ENTRY_FORMER rows row start_at_col label
 
             PATCH_IF ~%label%~ STR_EQ ~%row_name%~ BEGIN
-
+                PATCH_PRINT "Found label %row_name%"
                 PATCH_IF IS_AN_INT match_col_value BEGIN
+                    PATCH_PRINT "Match_col_value is a number: %match_col_value%"
                     READ_2DA_ENTRY_FORMER rows row column value
                     PATCH_IF value = match_col_value BEGIN
+                        PATCH_PRINT "Found match_col_value: %value%"
+                        PATCH_PRINT "Setting %replacement% at %column%"
                         SET_2DA_ENTRY_LATER rows_out row column replacement
                         SET row = rows
                     END
 
                 END ELSE BEGIN
+                    PATCH_PRINT "Match_col_value is not a number: %match_col_value%"
+                    PATCH_PRINT "Setting %replacement% at %column%"
                     SET_2DA_ENTRY_LATER rows_out row column replacement
                     SET row = rows
                 END
