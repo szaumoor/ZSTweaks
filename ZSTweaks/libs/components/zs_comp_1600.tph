@@ -15,9 +15,28 @@ WITH_SCOPE BEGIN
             LPF ALTER_EFFECT INT_VAR parameter2 = omnistab_p2 END
     END
 
-    COPY_EXISTING  ~CHARBASE.cre~ ~override/zstwfoo.cre~
-    COPY_EXISTING ~zstwfoo.cre~ ~override/CHARBASE.cre~
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 303 timing = 9 parameter2 = omnistab_p2 END
+    // COPY_EXISTING ~CHARBASE.cre~ ~override/zstwfoo.cre~
+    // COPY_EXISTING ~zstwfoo.cre~  ~override/CHARBASE.cre~
+    //     LPF ADD_CRE_EFFECT INT_VAR opcode = 303 timing = 9 parameter2 = omnistab_p2 END
+
+    ACTION_IF is_bg2ee_or_eet BEGIN
+
+        EXTEND_BOTTOM ~ar0602.baf~ ~%MOD_FOLDER%/baf/omnistab/ar0602.baf~ // irenicus dungeon
+        EXTEND_BOTTOM ~ar4000.baf~ ~%MOD_FOLDER%/baf/omnistab/ar4000.baf~ // tob initial area
+        EXTEND_BOTTOM ~ar8000.baf~ ~%MOD_FOLDER%/baf/omnistab/ar8000.baf~ // black pits 2 initial area
+
+    END
+
+    ACTION_IF is_bgee OR is_eet BEGIN
+
+        EXTEND_BOTTOM ~ar2600.baf~ ~%MOD_FOLDER%/baf/omnistab/ar2600.baf~ // candlekeep area
+        EXTEND_BOTTOM ~oh9310.baf~ ~%MOD_FOLDER%/baf/omnistab/oh9310.baf~ // black pits 1 area
+
+        ACTION_IF is_eet OR includes_sod BEGIN
+            EXTEND_BOTTOM ~bd0120.baf~ ~%MOD_FOLDER%/baf/omnistab/bd0120.baf~ // sod initial area
+        END
+
+    END
 
     OUTER_SET counter = 0
     SILENT
