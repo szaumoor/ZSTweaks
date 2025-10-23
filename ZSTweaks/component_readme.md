@@ -2224,7 +2224,7 @@ As it says. This is a new way of resolving this widely recognized dumb design. T
 - Whirlwind -> Unlock Whirlwind Attack (grants 3 uses of Improved Whirlwind Attack, now just called Whirlwind Attack)
 - Improved Whirlwind Attack -> Whirlwind Attack: Additional Use (grants another use, if desired)
 
-Additionally, Improved Evasion (Evasion now) doubles the movement speed granted (factor of 4 instead of 2) and makes it use opcode 176, so it's not removed by Free Action.
+Additionally, Improved Evasion (Evasion now) doubles the movement speed granted (factor of 4 instead of 2) and makes it use opcode 176, so it's not removed by Free Action. There are options in the configuration file to select only one of these, if desired.
 
 
 </details>

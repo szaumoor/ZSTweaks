@@ -75,6 +75,6 @@
 - Make Disintegrate cause damage and slow some golems, as per PnP
 - Make minotaurs slightly more dangerous and have the chance to gore with their horns on a successful hit
 - Make Yuan-ti slightly more powerful
-- Make Whirlwind and Evasion grant 3 uses of the Improved variants instead of existing as a silly lesser version (TODO)
+- Make Whirlwind and Evasion grant 3 uses of the Improved variants instead of existing as a silly lesser version
 - Overhaul golem creatures (TODO)
 - Make Cowl of the Stars more generally useful (Rasaad's Quest)

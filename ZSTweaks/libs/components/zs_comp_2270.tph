@@ -6,40 +6,60 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    COPY ~%MOD_FOLDER%/class_kits/evawhirl~ ~override~
-    COPY_EXISTING ~zstweva0.spl~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8750) ref_desc = RESOLVE_STR_REF(@8751) END
-        
-    COPY_EXISTING ~zstweva1.spl~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8752) ref_desc = RESOLVE_STR_REF(@8753) END
+    ACTION_IF zst_2270_allow_evasion BEGIN
 
-    COPY_EXISTING ~spcl914.spl~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8758) ref_desc = RESOLVE_STR_REF(@8759) END
-        LPF ALTER_EFFECT INT_VAR match_opcode = 126 opcode = 176 parameter1 = 4 END
+        COPY ~%MOD_FOLDER%/class_kits/evasion~ ~override~
+        COPY_EXISTING ~zstweva0.spl~ ~override~
+            LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8750) ref_desc = RESOLVE_STR_REF(@8751) END
+            
+        COPY_EXISTING ~zstweva1.spl~ ~override~
+            LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8752) ref_desc = RESOLVE_STR_REF(@8753) END
 
-    COPY_EXISTING ~zstwwhl0.spl~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8754) ref_desc = RESOLVE_STR_REF(@8755) END
-        
-    COPY_EXISTING ~zstwwhl1.spl~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8756) ref_desc = RESOLVE_STR_REF(@8757) END
+        COPY_EXISTING ~spcl914.spl~ ~override~
+            LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8758) ref_desc = RESOLVE_STR_REF(@8759) END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 126 opcode = 176 parameter1 = 4 END
 
-    COPY_EXISTING ~spcl901.spl~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8760) ref_desc = RESOLVE_STR_REF(@8761) END
+        DEFINE_PATCH_MACRO HLA_EVA_FIX BEGIN
+            REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL913\)[ %TAB%]~ BEGIN END ~AP_ZSTWEVA0~
+            REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL914\)[ %TAB%]~ BEGIN END ~AP_ZSTWEVA1~
+            LPF SWAP_2DA_TABLE_VALUE INT_VAR column=6 start_at_col=1 STR_VAR row_name="AP_ZSTWEVA0" replacement="1" END
+            PRETTY_PRINT_2DA
+        END
 
-    DEFINE_PATCH_MACRO HLA_WAR_FIX BEGIN
-       // LPF SWAP_2DA_TABLE_VALUE INT_VAR column=1 start_at_col=1 STR_VAR row_name="GA_SPCL900" replacement="GA_ZSTWWHL0" END
-        //SET "ability" = 0
-        REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL900\)[ %TAB%]~ BEGIN END ~GA_ZSTWWHL0~
-       // REPLACE "GA_SPCL900" "GA_ZSTWWHL0"
-        LPF SWAP_2DA_TABLE_VALUE INT_VAR column=6 start_at_col=1 STR_VAR row_name="GA_ZSTWWHL0" replacement="1" END
-        PRETTY_PRINT_2DA
+        COPY_EXISTING_REGEXP ~^luth[0-9]?[0-9]\.2da$~ ~override~ // paladins HLA tables
+            LPM HLA_EVA_FIX
+        COPY_EXISTING_REGEXP ~^luba[0-9]?[0-9]\.2da$~ ~override~ // rangers HLA tables
+            LPM HLA_EVA_FIX
+
     END
 
-    COPY_EXISTING_REGEXP ~^lufi[0-9]?[0-9]\.2da$~ ~override~ // figthers HLA tables
-        LPM HLA_WAR_FIX
-    COPY_EXISTING_REGEXP ~^lupa[0-9]?[0-9]\.2da$~ ~override~ // paladins HLA tables
-        LPM HLA_WAR_FIX
-    COPY_EXISTING_REGEXP ~^lura[0-9]?[0-9]\.2da$~ ~override~ // rangers HLA tables
-        LPM HLA_WAR_FIX
+
+    ACTION_IF zst_2270_allow_whirlwind BEGIN
+        
+        COPY ~%MOD_FOLDER%/class_kits/whirlwind~ ~override~
+        COPY_EXISTING ~zstwwhl0.spl~ ~override~
+            LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8754) ref_desc = RESOLVE_STR_REF(@8755) END
+            
+        COPY_EXISTING ~zstwwhl1.spl~ ~override~
+            LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8756) ref_desc = RESOLVE_STR_REF(@8757) END
+
+        COPY_EXISTING ~spcl901.spl~ ~override~
+            LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8760) ref_desc = RESOLVE_STR_REF(@8761) END
+
+        DEFINE_PATCH_MACRO HLA_WAR_FIX BEGIN
+            REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL900\)[ %TAB%]~ BEGIN END ~AP_ZSTWWHL0~
+            REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL901\)[ %TAB%]~ BEGIN END ~AP_ZSTWWHL1~
+            LPF SWAP_2DA_TABLE_VALUE INT_VAR column=6 start_at_col=1 STR_VAR row_name="AP_ZSTWWHL0" replacement="1" END
+            PRETTY_PRINT_2DA
+        END
+
+        COPY_EXISTING_REGEXP ~^lufi[0-9]?[0-9]\.2da$~ ~override~ // figthers HLA tables
+            LPM HLA_WAR_FIX
+        COPY_EXISTING_REGEXP ~^lupa[0-9]?[0-9]\.2da$~ ~override~ // paladins HLA tables
+            LPM HLA_WAR_FIX
+        COPY_EXISTING_REGEXP ~^lura[0-9]?[0-9]\.2da$~ ~override~ // rangers HLA tables
+            LPM HLA_WAR_FIX
+
+    END 
      
 END
