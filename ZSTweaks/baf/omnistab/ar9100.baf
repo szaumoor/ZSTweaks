@@ -1,0 +1,13 @@
+IF
+    Global("zs_omnistab_guard_variable","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("zs_omnistab_guard_variable","GLOBAL",1)
+        ApplySpellRES("ZSTWOMNB", Player1)
+        ApplySpellRES("ZSTWOMNB", Player2)
+        ApplySpellRES("ZSTWOMNB", Player3)
+        ApplySpellRES("ZSTWOMNB", Player4)
+        ApplySpellRES("ZSTWOMNB", Player5)
+        ApplySpellRES("ZSTWOMNB", Player6)
+        Continue()
+END

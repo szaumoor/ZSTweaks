@@ -27,6 +27,14 @@ WITH_SCOPE BEGIN
 
     END
 
+    ACTION_IF is_iwdee BEGIN
+
+        EXTEND_BOTTOM ~ar9100.baf~ ~%MOD_FOLDER%/baf/omnistab/ar9100.baf~ // HoW
+        EXTEND_BOTTOM ~ar1006.baf~ ~%MOD_FOLDER%/baf/omnistab/ar1006.baf~ // easthaven inn (iwdee)
+
+    END
+
+
     ACTION_IF is_bgee OR is_eet BEGIN
 
         EXTEND_BOTTOM ~ar2600.baf~ ~%MOD_FOLDER%/baf/omnistab/ar2600.baf~ // candlekeep area
