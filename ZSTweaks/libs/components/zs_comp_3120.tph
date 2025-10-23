@@ -141,4 +141,19 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     WRITE_BYTE 0x56 (THIS - 2)
     WRITE_BYTE 0x57 (THIS - 2)
     WRITE_BYTE 0x58 (THIS - 2)
+
+    // immunity to stun
+    LPF ADD_CRE_PASSIVE INT_VAR opcode = 267 parameter1 = 14043 END
+    LPF ADD_CRE_PASSIVE INT_VAR opcode = 267 parameter1 = 1280  END
+    LPF ADD_CRE_PASSIVE INT_VAR opcode = 296 STR_VAR resource = "SPFLAYER" END
+    LPF ADD_CRE_PASSIVE INT_VAR opcode = 101 parameter2 = 210 END
+    LPF ADD_CRE_PASSIVE INT_VAR opcode = 101 parameter2 = 45 END
+    LPF ADD_CRE_PASSIVE INT_VAR opcode = 169 parameter2 = 55 END
+    LPF ADD_CRE_PASSIVE INT_VAR opcode = 292 parameter2 = 1 END
+
+    // completely immune to all magical effects
+    FOR ( spell_level = 1; spell_level <=9; ++spell_level ) BEGIN
+      LPF ADD_CRE_PASSIVE INT_VAR opcode = 102 parameter2 = spell_level END
+    END
+
 END

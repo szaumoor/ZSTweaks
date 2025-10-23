@@ -60,7 +60,7 @@
 - Hugely simplified the code in Shield of Archons component using CamDawg's functions (praise be to him)
 - Flesh to stone component now also adds the option to lightly overhaul the Stone to Flesh spell, making it cause damage to stone golems, as per PnP.
 - Armor of Faith now also includes damage reduction against Poison damage (not poisoning itself)
-- Death Fog component is now closer to PnP, renamed to Acid Fog, and the banishment effect is removed. Now it deals more acid damage, reduces acid resistance, Armor Class, and physical resistances, decreases movement speed and bypasses magic resistance. (TODO)
+- Death Fog component is now closer to PnP, renamed to Acid Fog, and the banishment effect is removed. Now it deals more acid damage, reduces acid resistance, Armor Class, and physical resistances, decreases movement speed and bypasses magic resistance.
 - Deleted the configuration option in Death Fog as it's no longer relevant
 - Deva and Planetar components now merged in one, with appropriate configuration options to choose either or both
 - Configuration file is now in **ZSTweaks/configurations**
@@ -77,5 +77,5 @@
 - Make minotaurs slightly more dangerous and have the chance to gore with their horns on a successful hit
 - Make Yuan-ti slightly more powerful
 - Make Whirlwind and Evasion grant 3 uses of the Improved variants instead of existing as a silly lesser version
-- Overhaul golem creatures (TODO)
+- Overhaul golem creatures
 - Make Cowl of the Stars more generally useful (Rasaad's Quest)
