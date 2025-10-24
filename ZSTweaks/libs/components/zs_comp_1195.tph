@@ -6,6 +6,7 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
+  COPY_EXISTING ~%MOD_FOLDER%/items/gloves_healing~ ~override~
   COPY_EXISTING ~BRAC20.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8300) END
     LPF DELETE_EFFECT END
