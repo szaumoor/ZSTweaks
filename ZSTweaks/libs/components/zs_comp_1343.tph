@@ -7,11 +7,10 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY_EXISTING ~BOW13.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7070) END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7070) END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=166,p1=5;op=142,p2=63~ END
     LPF ALTER_EFFECT INT_VAR match_opcode = 31 match_parameter1 = 20 parameter1 = 33 END
-    LPF GET_DMG_TYPE STR_VAR type = ~magic~ RET magic = result END
     LPF ADD_ON_HIT_EFF INT_VAR sbonus="-2" stype=1 t=4
-    STR_VAR effects = ~op=12,p1=1,tmg=1,rd=0,p2=%magic%,dsize=4,dnum=1,spec=1024;op=60,rd=1,p1=10,dur=24~ END
+    STR_VAR effects = ~op=12,p1=1,tmg=1,rd=0,p2=%op12_magic%,dsize=4,dnum=1,spec=1024;op=60,rd=1,p1=10,dur=24~ END
 
 END

@@ -7,11 +7,11 @@ END
 ACTION_IF NOT is_iwdee BEGIN
 
   COPY_EXISTING ~BRAC09.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7270) END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7270) END
     LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=54 opcode=73 END
 
   COPY_EXISTING ~bdbrac09.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7310) END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7310) END
     LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=54 opcode=73 END
   BUT_ONLY IF_EXISTS
 

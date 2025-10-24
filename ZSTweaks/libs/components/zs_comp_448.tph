@@ -8,7 +8,7 @@ ACTION_IF spell_decastave > 0 BEGIN
 
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_DECASTAVE" RET spell_res END
   COPY_EXISTING ~%spell_res%.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc =RESOLVE_STR_REF(@8225) END
+    LPF ALTER_SPELL INT_VAR desc =RESOLVE_STR_REF(@8225) END
 
   COPY_EXISTING ~DECASTA.ITM~ ~override~
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=233,p1=1,p2=102,rd=1~ END

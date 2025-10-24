@@ -9,15 +9,15 @@ ACTION_IF NOT is_iwdee BEGIN
   OUTER_SET fade_speed_holy = (25 << 16)
   ADD_PROJECTILE ~%MOD_FOLDER%/pro/ZSTWRDPJ.pro~
   COPY_EXISTING ~SPPR710.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8650) END
+    LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8650) END
     LPF ALTER_HEADER INT_VAR projectile = %ZSTWRDPJ% END
     LPF DELETE_EFFECT_EX STR_VAR match_opcode = "(o_opcode != 215)" END
-    LPF ADD_SPL_EFF_TGT INT_VAR rd=2 tmg=0 pwr=7 STR_VAR effects = ~op=326,p2=104,p1=%race_demilich%,res=ZSTWRD07;op=318,p2=104,p1=%race_demilich%,res=%SOURCE_RES%;op=326,p2=107,p1=6,res=ZSTWRD04;op=318,p2=66,res=%SOURCE_RES%;op=141,p2=22,dur=2,tmg=1;op=61,p1=2155905024,p2=%fade_speed_holy%,dur=2;op=177,p2=3,p1=%general_undead%,res=ZSTWRD05;op=318,p2=1,res=%SOURCE_RES%;op=177,p2=8,p1=%alignmen_mask_evil%,res=ZSTWRD05;op=177,p2=8,p1=%alignmen_mask_neutral%,res=ZSTWRD05~ END
+    LPF ADD_SPL_TGTEFF INT_VAR rd=2 tmg=0 pwr=7 STR_VAR effects = ~op=326,p2=104,p1=%race_demilich%,res=ZSTWRD07;op=318,p2=104,p1=%race_demilich%,res=%SOURCE_RES%;op=326,p2=107,p1=6,res=ZSTWRD04;op=318,p2=66,res=%SOURCE_RES%;op=141,p2=22,dur=2,tmg=1;op=61,p1=2155905024,p2=%fade_speed_holy%,dur=2;op=177,p2=3,p1=%general_undead%,res=ZSTWRD05;op=318,p2=1,res=%SOURCE_RES%;op=177,p2=8,p1=%alignmen_mask_evil%,res=ZSTWRD05;op=177,p2=8,p1=%alignmen_mask_neutral%,res=ZSTWRD05~ END
 
   COPY_EXISTING ~SPPR715.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8651) END
+    LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8651) END
     LPF ALTER_HEADER INT_VAR projectile = %ZSTWRDPJ% END
     LPF DELETE_EFFECT_EX STR_VAR match_opcode = "(o_opcode != 215)" END
-    LPF ADD_SPL_EFF_TGT INT_VAR rd=2 tmg=0 pwr=7 STR_VAR effects = ~op=326,p2=107,p1=6,res=ZSTWRD04;op=318,p2=66,res=%SOURCE_RES%;op=141,p2=22,dur=2,tmg=1;op=61,p1=2138112,p2=%fade_speed_holy%,dur=2;op=177,p2=8,p1=%alignmen_mask_good%,res=ZSTWRD05;op=177,p2=8,p1=%alignmen_mask_neutral%,res=ZSTWRD05~ END
+    LPF ADD_SPL_TGTEFF INT_VAR rd=2 tmg=0 pwr=7 STR_VAR effects = ~op=326,p2=107,p1=6,res=ZSTWRD04;op=318,p2=66,res=%SOURCE_RES%;op=141,p2=22,dur=2,tmg=1;op=61,p1=2138112,p2=%fade_speed_holy%,dur=2;op=177,p2=8,p1=%alignmen_mask_good%,res=ZSTWRD05;op=177,p2=8,p1=%alignmen_mask_neutral%,res=ZSTWRD05~ END
 
 END

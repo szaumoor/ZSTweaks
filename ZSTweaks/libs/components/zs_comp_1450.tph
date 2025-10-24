@@ -30,7 +30,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     BEGIN
         LPF ITM_CAT RET cat = result END
         LPF ITM_PROF RET prof = result END
-        LPF PROBABILITY_BONUS INT_VAR ench = ench RET bonus = result END
+        LPM PROBABILITY_BONUS
 
         PATCH_IF zst_1450_allow_daggers AND cat=16 AND prof=96 AND NOT ("%appearance%" STR_EQ "  ")
             AND NOT "%SOURCE_RES%" STR_EQ "a7-dg15" // Last Resort (wares of the planes)

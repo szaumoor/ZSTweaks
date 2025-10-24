@@ -7,7 +7,7 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY_EXISTING ~FIGURE01.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@60010) END
+    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@60010) END
     LPF ALTER_EFFECT INT_VAR match_duration = 24 duration = 60 END
 
   COPY_EXISTING ~SHAKTI1.ITM~ ~override~

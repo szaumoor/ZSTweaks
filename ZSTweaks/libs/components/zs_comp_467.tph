@@ -9,9 +9,8 @@ ACTION_IF NOT is_iwdee BEGIN
     WITH_SCOPE BEGIN
 
         COPY ~%MOD_FOLDER%/spells/divine/sunray~ ~override~
-        LAF GET_DMG_TYPE STR_VAR type = "magic" RET magic = result END
         COPY_EXISTING ~SPPR707.SPL~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8120) END
+            LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8120) END
             LPF ~CD_TRIM-O-MATIC~ INT_VAR level_cap = 1 END
             LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
             LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 146 power = 7 STR_VAR match_resource = "SPPR609D" END
@@ -27,11 +26,11 @@ ACTION_IF NOT is_iwdee BEGIN
                 LPF DELETE_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~SPPR707A~ END
             END
 
-            LPF ADD_SPL_EFF_TGT INT_VAR pwr=7 STR_VAR effects = ~op=326,p2=2,res=ZSTWSNRA;op=326,p2=1,res=ZSTWSNRC~ END
-            LPF ADD_SPL_EFF_TGT INT_VAR rd=0 pwr=7 p2=104 STR_VAR effects=~op=326,p1=%race_vampire%,res=ZSTWSNRB;op=326,p1=%race_vampyre%,res=ZSTWSNRB;op=326,p1=%race_shadow%,res=ZSTWSNRF;op=326,p1=%race_specter%,res=ZSTWSNRF;op=326,p1=%race_wraith%,res=ZSTWSNRF;op=326,p1=%race_spectral_undead%,res=ZSTWSNRF;op=326,p1=%class_spectral_troll%,p2=105,res=ZSTWSNRF;op=326,p1=%race_myconid%,res=ZSTWSNRD~ END
+            LPF ADD_SPL_TGTEFF INT_VAR pwr=7 STR_VAR effects = ~op=326,p2=2,res=ZSTWSNRA;op=326,p2=1,res=ZSTWSNRC~ END
+            LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=7 p2=104 STR_VAR effects=~op=326,p1=%race_vampire%,res=ZSTWSNRB;op=326,p1=%race_vampyre%,res=ZSTWSNRB;op=326,p1=%race_shadow%,res=ZSTWSNRF;op=326,p1=%race_specter%,res=ZSTWSNRF;op=326,p1=%race_wraith%,res=ZSTWSNRF;op=326,p1=%race_spectral_undead%,res=ZSTWSNRF;op=326,p1=%class_spectral_troll%,p2=105,res=ZSTWSNRF;op=326,p1=%race_myconid%,res=ZSTWSNRD~ END
 
         COPY_EXISTING ~UNDDEATH.EFF~ ~override~
-            LPF ALTER_EFF_FILE INT_VAR target=2 parameter1=100 parameter2=3 + magic END
+            LPF ALTER_EFF_FILE INT_VAR target=2 parameter1=100 parameter2=3 + op12_magic END
             WRITE_LONG 0x38 0
             WRITE_LONG 0x3c 0
             WRITE_LONG 0x24 0
@@ -67,9 +66,9 @@ ACTION_IF NOT is_iwdee BEGIN
 
         COPY_EXISTING ~SPPR609.SPL~ ~override~
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 5 END
-            LPF CLONE_EFFECT INT_VAR match_opcode = 12 parameter2 = magic END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 12 parameter2 = op12_magic END
             LPF ALTER_HEADER INT_VAR speed = 4 END
-            LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8130) END
+            LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8130) END
     END
 
 END

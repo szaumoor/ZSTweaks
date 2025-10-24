@@ -20,13 +20,13 @@ ACTION_IF NOT is_iwdee BEGIN
 
         OUTER_SET new_description = RESOLVE_STR_REF(@5130)
         COPY_EXISTING ~SPWI603.SPL~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_desc=new_description END
+            LPF ALTER_SPELL INT_VAR desc=new_description END
             LPF ADD_SPELL_EFFECT INT_VAR opcode=146 target=1 parameter2=1 power=6 STR_VAR resource = ~ZSTWAPR0~ END
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target=1 insert_point = 0 STR_VAR resource = ~ZSTWAPR1~ END
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target=1 insert_point = 0 STR_VAR resource = ~ZSTWAPR0~ END
 
         COPY_EXISTING ~SCRL7G.ITM~ ~override~
-            LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
+            LPF ALTER_ITEM INT_VAR id_desc=new_description END
 
         ACTION_IF zst_441_tenser_apr_nonfighters_only BEGIN
 

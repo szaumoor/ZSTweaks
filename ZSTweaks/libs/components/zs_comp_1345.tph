@@ -19,5 +19,5 @@ END ELSE BEGIN
 END
 
 COPY_EXISTING ~AROW08.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=string END
+    LPF ALTER_ITEM INT_VAR id_desc=string END
     LPF ALTER_EFFECT INT_VAR header_type = 2 match_opcode = 12 resist_dispel=0 savingthrow = 0 special = 1024 END

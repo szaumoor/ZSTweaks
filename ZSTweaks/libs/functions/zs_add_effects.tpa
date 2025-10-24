@@ -32,39 +32,46 @@ END
 
 DEFINE_PATCH_FUNCTION ADD_CRE_PASSIVE
 INT_VAR
-    opcode = 0
-    parameter1 = 0
-    parameter2 = 0
-    timing = 9
-    target = 1
+    op = 0
+    p1 = 0
+    p2 = 0
+    tmg = 9
+    tgt = 1
 STR_VAR
-    resource = ""
+    res = ""
 BEGIN
     PATCH_IF zs_debug BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
     END
+
+    opcode = op
+    parameter1 = p1
+    parameter2 = p2
+    timing = t
+    target = tgt
+    resource = ~%res%~
 
     LPM ADD_CRE_EFFECT
 END
 
 DEFINE_PATCH_MACRO ADD_CRE_MELEE_EFFECT 
 BEGIN
-    LPF ADD_CRE_PASSIVE INT_VAR opcode = 248 STR_VAR resource = melee_effect END
+    LPF ADD_CRE_PASSIVE INT_VAR op = 248 STR_VAR res = melee_effect END
 END
 
 DEFINE_PATCH_MACRO ADD_CRE_RANGED_EFFECT 
 BEGIN
-    LPF ADD_CRE_PASSIVE INT_VAR opcode = 249 STR_VAR resource = ranged_effect END
+    LPF ADD_CRE_PASSIVE INT_VAR op = 249 STR_VAR res = ranged_effect END
 END
 
 DEFINE_PATCH_MACRO ADD_CRE_MOVEMENT_BOOST
 BEGIN
-    LPF ADD_CRE_PASSIVE INT_VAR opcode = 176 parameter1 = movement_boost END
+    LPF ADD_CRE_PASSIVE INT_VAR op = 176 p1 = movement_boost END
 END
 
 DEFINE_PATCH_MACRO ADD_CRE_CRIT_BOOST
 BEGIN
-    LPF ADD_CRE_PASSIVE INT_VAR opcode = 301 parameter1 = 1 END
+    LPF ADD_CRE_PASSIVE INT_VAR op = 301 p1 = 1 END
 END
 
 DEFINE_PATCH_FUNCTION ADD_ON_HIT_EFF
@@ -120,29 +127,22 @@ END
 
 DEFINE_PATCH_FUNCTION ADD_SLEEP_SAFE_DMG // untested; always preset target for now
 INT_VAR
-    p1 = 0
-    p2 = "-1"
-    dnum = 0
-    dsize = 0
-    t = 1
-    ip = "-1"
-    prechecks = 0
+    p1       = 0
+    p2       = "-1"
+    dnum     = 0
+    dsize    = 0
+    t        = 1
+    ip       = "-1"
 STR_VAR
-    dmg_type = ~*~
-    type     = 1
+    type = 1
 BEGIN
     PATCH_IF zs_debug BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     END
-
-    PATCH_IF p2 = "-1" BEGIN
-        LPF GET_DMG_TYPE STR_VAR type = ~%dmg_type%~ RET p2 = result END
-    END
-
     LPF ADD_ON_HIT_EFF STR_VAR effects = EVAL ~ip=%ip%,t=%t%,op=12,p1=%p1%,p2=%p2%,dnum=%dnum%,dsize=%dsize%,spec=1024~ END
 END
 
-DEFINE_PATCH_FUNCTION ADD_SPL_EFF_SELF
+DEFINE_PATCH_FUNCTION ADD_SPL_SELFEFF
 INT_VAR
     p1  = 0
     p2  = 0
@@ -179,7 +179,7 @@ BEGIN
     END
 END
 
-DEFINE_PATCH_FUNCTION ADD_SPL_EFF_TGT
+DEFINE_PATCH_FUNCTION ADD_SPL_TGTEFF
 INT_VAR
     p1     = 0
     p2     = 0

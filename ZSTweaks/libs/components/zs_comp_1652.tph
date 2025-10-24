@@ -20,7 +20,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@8034) END
 
     COPY_EXISTING "LEAT24.ITM" ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8030) END
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8030) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 126 opcode = 176 END
         LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=177,p1=%class_thief%,res=ZSTWGM01;op=177,p1=%class_thief%,res=ZSTWGM00~ END
         LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_bounty_hunter%,res=ZSTWGM03;op=177,p1=%kit_stalker%,res=ZSTWGM03;op=177,p1=%kit_shadowdancer%,res=ZSTWGM04;op=177,p1=%kit_assassin%,res=ZSTWGM05~ END

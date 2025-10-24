@@ -8,7 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY_EXISTING ~%MOD_FOLDER%/items/gloves_healing~ ~override~
   COPY_EXISTING ~BRAC20.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8300) END
+    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8300) unusable0=(2**18 + 2**30) END
     LPF DELETE_EFFECT END
     LPF ADD_ON_HIT_EFF INT_VAR t=3 pwr=0 p2=2 STR_VAR effects=~op=146,p1=10,res=SPCL211;op=146,p1=10,res=SPIN102~ END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=272,p1=30,p2=3,res=ZSTWGHEA~ END

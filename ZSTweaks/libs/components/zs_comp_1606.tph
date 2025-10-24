@@ -12,7 +12,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
 
   COPY_EXISTING ~HALB11.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8140) END
+    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8140) END
 
     PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
       LPF ALTER_EFFECT INT_VAR match_opcode = 326 savingthrow = 4 savebonus = "-4" END

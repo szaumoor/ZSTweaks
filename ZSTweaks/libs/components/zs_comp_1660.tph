@@ -7,10 +7,9 @@ END
 ACTION_IF NOT is_iwdee BEGIN
 
   COPY_EXISTING "dagg03.ITM" ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6590) END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6590) END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=166,p1=10~ END
-    LPF GET_DMG_TYPE STR_VAR type = ~magic~ RET magic_dmg = result END
-    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,dsize=4,dnum=1,pro1=49,p2=%magic_dmg%,spec=1024~ END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,dsize=4,dnum=1,pro1=49,p2=%op12_magic%,spec=1024~ END
 
     PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
       READ_STRREF 0x54 desc

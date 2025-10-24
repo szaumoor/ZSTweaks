@@ -9,7 +9,7 @@ ACTION_IF NOT is_iwdee BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~bdring10.itm~ BEGIN
 
     COPY_EXISTING ~bdring03.ITM~ ~override~
-      LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@7830) END
+      LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@7830) END
       LPF CLONE_EFFECT INT_VAR match_opcode=219 opcode = 178 special=2 END
       LPF CLONE_EFFECT INT_VAR match_opcode = 178 opcode = 179 END
 

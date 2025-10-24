@@ -23,7 +23,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                     END
                     SAY_EVALUATED 0x54 ~%new_description%~
                 END ELSE BEGIN
-                    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6660) END
+                    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6660) END
                 END
             END
 
@@ -37,7 +37,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                     END
                     SAY_EVALUATED 0x54 ~%new_description%~
                 END ELSE BEGIN
-                    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6670) END
+                    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6670) END
                 END
             END
 
@@ -51,7 +51,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                     END
                     SAY_EVALUATED 0x54 ~%new_description%~
                 END ELSE BEGIN
-                    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6680) END
+                    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6680) END
                 END
             END
 
@@ -65,7 +65,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                     END
                     SAY_EVALUATED 0x54 ~%new_description%~
                 END ELSE BEGIN
-                    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6690) END
+                    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6690) END
                 END
             END
 

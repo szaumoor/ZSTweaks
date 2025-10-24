@@ -1,4 +1,5 @@
 ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
+    
     PRINT "Adding and/or finding all splprot entries required for RoyalProtector's mods..."
 
     // ----------------------------------------------------------------
@@ -91,6 +92,7 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
         COUNT_2DA_COLS cols
         READ_2DA_ENTRIES_NOW rows cols
         FOR ( row = 1; row < rows; ++row ) BEGIN
+
             READ_2DA_ENTRY_FORMER rows row 0 ~stat~
 
             PATCH_IF ~%stat%~ STR_EQ ~ZS_SLASHINGRESIST_>=100~ BEGIN
@@ -176,6 +178,7 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
             ELSE PATCH_IF ~%stat%~ STR_EQ ~ZS_HAS_STONESKINS~ BEGIN
                 ~zs_has_stoneskins~ = row
             END
+
         END
 
     //----------------------------------------------------------------
@@ -380,7 +383,6 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
             ACTION_IF ~zs_has_stoneskins~       = "-1" BEGIN
                 PRINT "zs_has_stoneskins not set!"
             END
-
 
             FAIL "Exiting installation."
         END

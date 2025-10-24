@@ -5,12 +5,12 @@ END ELSE BEGIN
 END
 
 COPY_EXISTING ~HELM18.itm~ ~override~
-  LPF ITM_REF_UNAME RET ioun_strref = result END
+  LPF ITM_GENERAL_NAME RET ioun_strref = result END
 
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
   LPF ITM_CAT RET cat = result END
-  LPF ITM_REF_UNAME RET strref = result END
+  LPF ITM_GENERAL_NAME RET strref = result END
   LPF ITM_APPEARANCE RET appearance = result END
 
   PATCH_IF cat=7 AND "%appearance%" STR_EQ "jb" BEGIN

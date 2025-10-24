@@ -12,6 +12,7 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
         READ_LONG 0x8 buckler_shield_strref
 
     ACTION_IF zs_debug BEGIN
+
         PRINT "Finding incorrect shield strrefs for debugging..."
         COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
             LPF ITM_CAT RET cat = result END
@@ -26,6 +27,7 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
                 END
             END
         BUT_ONLY
+        
     END
 
     COPY_EXISTING ~NPSHLD.itm~ ~override~ // Delryn's Shield

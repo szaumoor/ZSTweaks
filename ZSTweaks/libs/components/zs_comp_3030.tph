@@ -45,9 +45,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
       LPF ALTER_ITEM INT_VAR ench = 5 END
       LPF ALTER_HEADER INT_VAR to_hit = 5 END
-      LPF GET_DMG_TYPE STR_VAR type = "fire" RET fire = result END
-      LPF GET_DMG_TYPE STR_VAR type = "cold" RET cold = result END
-      LPF ADD_ON_HIT_EFF INT_VAR p1=2 spec=1024 STR_VAR effects = ~op=12,p2=%fire%;op=12,p2=%cold%~ END
+      LPF ADD_ON_HIT_EFF INT_VAR p1=2 spec=1024 STR_VAR effects = ~op=12,p2=%op12_fire%;op=12,p2=%op12_cold%~ END
       LPF ALTER_EFFECT INT_VAR match_opcode = 58 parameter1 = 25 parameter2 = 2 END
 
       LPF ADD_ON_HIT_EFF INT_VAR p2=104 STR_VAR effects = ~op=326,p1=%race_demonic%,res=ZSTWPLNT;op=326,p1=%race_planetar%,res=ZSTWPLNT;op=326,p1=%race_darkplanetar%,res=ZSTWPLNT;op=326,p1=%race_solar%,res=ZSTWPLNT;op=326,p1=%race_antisolar%,res=ZSTWPLNT;op=326,p2=1,res=ZSTWPLNT~ END
@@ -59,7 +57,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       ADD_MEMORIZED_SPELL ~ZSTWPLTE~ #0 ~innate~ (1)
 
     COPY_EXISTING ~ZSTWPLTE.SPL~ ~override~
-      LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8160) ref_desc = RESOLVE_STR_REF(@8161) END
+      LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8160) desc = RESOLVE_STR_REF(@8161) END
       
   END
 

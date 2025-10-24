@@ -8,7 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY "%MOD_FOLDER%/items/club_detonation" ~override~
     COPY_EXISTING ~BLUN26.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8250) END
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8250) END
         LPF ALTER_HEADER INT_VAR speed = 1 END
 
         PATCH_IF NOT has_eefixpack BEGIN
@@ -20,7 +20,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode = 215 STR_VAR resource = ~ICFIRSDI~ END
 
     COPY_EXISTING ~BLUN27.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8251) END
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8251) END
         LPF ALTER_HEADER INT_VAR speed = 0 END
 
         PATCH_IF NOT has_eefixpack BEGIN

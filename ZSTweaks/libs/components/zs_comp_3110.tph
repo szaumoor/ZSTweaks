@@ -17,7 +17,7 @@ COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
         WRITE_SHORT 0x4c (THIS - 2)
         WRITE_SHORT 0x4e (THIS - 1)
 
-        LPF ADD_CRE_PASSIVE INT_VAR opcode = 173 parameter1 = 75 END
+        LPF ADD_CRE_PASSIVE INT_VAR op=173 p1=75 END
         LPM ADD_CRE_MELEE_EFFECT 
         LPM ADD_CRE_MOVEMENT_BOOST 
     END

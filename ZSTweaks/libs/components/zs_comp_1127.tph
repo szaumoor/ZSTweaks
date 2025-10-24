@@ -7,7 +7,7 @@ END
  ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY_EXISTING "SW1H32.ITM" ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6870) END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6870) END
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 98 parameter1 = 15 END
     LPF ALTER_HEADER INT_VAR match_type = 3 charges = 3 END
     LPF CLONE_EFFECT INT_VAR header_type=1 match_opcode=177 parameter1=race_wyvern END

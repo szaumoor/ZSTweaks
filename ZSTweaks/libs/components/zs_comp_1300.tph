@@ -11,7 +11,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode=139 match_savebonus=0 match_savingthrow=0 parameter1=RESOLVE_STR_REF(@7682) END
 
     COPY_EXISTING ~SW2H15.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@7680) price=10000 END
+        LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@7680) price=10000 END
 
         SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
         PATCH_IF NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ AND NOT general_tweaks_installed  BEGIN
@@ -36,7 +36,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             SAY_EVALUATED 0x54 ~%new_description%~
 
         END ELSE BEGIN
-            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7681) END
+            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7681) END
         END
 
 END

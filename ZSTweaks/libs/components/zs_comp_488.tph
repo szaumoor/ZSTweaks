@@ -8,7 +8,7 @@ ACTION_IF spell_thorn_spray > 0 BEGIN
 
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_THORN_SPRAY" RET spell_res END
   COPY_EXISTING ~%spell_res%.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8566) END
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8566) END
     LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
     LPF ALTER_EFFECT INT_VAR match_savingthrow = 16777220 savingthrow = 16777218 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 4 dicesize = 12 END

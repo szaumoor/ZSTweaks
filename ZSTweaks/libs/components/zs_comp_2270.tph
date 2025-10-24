@@ -10,13 +10,13 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         COPY ~%MOD_FOLDER%/class_kits/evasion~ ~override~
         COPY_EXISTING ~zstweva0.spl~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8750) ref_desc = RESOLVE_STR_REF(@8751) END
+            LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8750) desc = RESOLVE_STR_REF(@8751) END
             
         COPY_EXISTING ~zstweva1.spl~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8752) ref_desc = RESOLVE_STR_REF(@8753) END
+            LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8752) desc = RESOLVE_STR_REF(@8753) END
 
         COPY_EXISTING ~spcl914.spl~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8758) ref_desc = RESOLVE_STR_REF(@8759) END
+            LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8758) desc = RESOLVE_STR_REF(@8759) END
             LPF ALTER_EFFECT INT_VAR match_opcode = 126 opcode = 176 parameter1 = 4 END
 
         DEFINE_PATCH_MACRO HLA_EVA_FIX BEGIN
@@ -38,13 +38,13 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         
         COPY ~%MOD_FOLDER%/class_kits/whirlwind~ ~override~
         COPY_EXISTING ~zstwwhl0.spl~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8754) ref_desc = RESOLVE_STR_REF(@8755) END
+            LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8754) desc = RESOLVE_STR_REF(@8755) END
             
         COPY_EXISTING ~zstwwhl1.spl~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8756) ref_desc = RESOLVE_STR_REF(@8757) END
+            LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8756) desc = RESOLVE_STR_REF(@8757) END
 
         COPY_EXISTING ~spcl901.spl~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8760) ref_desc = RESOLVE_STR_REF(@8761) END
+            LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8760) desc = RESOLVE_STR_REF(@8761) END
 
         DEFINE_PATCH_MACRO HLA_WAR_FIX BEGIN
             REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL900\)[ %TAB%]~ BEGIN END ~AP_ZSTWWHL0~

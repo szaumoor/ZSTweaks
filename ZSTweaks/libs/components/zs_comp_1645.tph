@@ -7,7 +7,7 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY_EXISTING ~NPCLCK.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7490) END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7490) END
     LPF ITM_GLOBALS_NUM RET globals = result END
     LPF ALTER_EFFECT INT_VAR match_opcode = 0 parameter1 = 2 END
     LPF ADD_EQUIPPED_EFF INT_VAR p1=10 ip=(globals - 2) STR_VAR effects = ~op=86;op=87;op=88;op=89;op=27,p1=15;op=28,p1=15;op=29,p1=15;op=30,p1=15;op=98,p1=12,p2=3~ END

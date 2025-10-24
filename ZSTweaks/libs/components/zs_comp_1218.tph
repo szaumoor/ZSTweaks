@@ -8,7 +8,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
   COPY ~%MOD_FOLDER%/items/plate_dark~ ~override~
   COPY_EXISTING ~PLAT05.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8460) END
+    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8460) END
 
     PATCH_IF is_bg2ee_or_eet BEGIN
       SET strref_panic1 = 17427

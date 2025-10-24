@@ -8,7 +8,7 @@ ACTION_IF zst_2100_sunsoul_ray BEGIN
 
   COPY ~%MOD_FOLDER%/class_kits/sunsoul_ray~ ~override~
   COPY_EXISTING "SPCL236.SPL" ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7800) END
+    LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7800) END
     LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 zs_min_level_for_copy = 12 END
     LPF ALTER_EFFECT INT_VAR header = 5 match_opcode = 12 dicenumber = 6 END
     LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 177 STR_VAR resource = ~ZSTWF06~ END
@@ -23,7 +23,7 @@ END
 ACTION_IF zst_2100_sunsoul_beam BEGIN
 
   COPY_EXISTING "SPCL239.SPL" ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7790) END
+    LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7790) END
 
   COPY_EXISTING "SPCL239a.eff" ~override~
     LPF ALTER_EFF_FILE INT_VAR parameter1=0 dicesize=6 dicenumber=3 END

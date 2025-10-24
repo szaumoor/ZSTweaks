@@ -9,7 +9,7 @@ ACTION_IF NOT is_bgee_or_iwdee BEGIN
   COPY_EXISTING "DAGG11.ITM" ~override~
                 "DAGG12.ITM" ~override~
     LPF ALTER_HEADER INT_VAR dicenumber = 1 END
-    LPF ITM_REF_DESC RET description_index = result END
+    LPF ITM_desc RET description_index = result END
     
     PATCH_IF description_index > "-1" BEGIN
       READ_STRREF 0x54 desc

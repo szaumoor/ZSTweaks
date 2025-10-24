@@ -9,7 +9,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/wondrous_gloves~ ~override~
   COPY_EXISTING ~BRAC25.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7610) END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7610) END
     LPF ALTER_EFFECT INT_VAR match_opcode=54 parameter1=2 END
     LPF ALTER_EFFECT INT_VAR match_opcode=0 parameter1=2 END
     LPF DELETE_EFFECT INT_VAR match_opcode=42 multi_match=2 END

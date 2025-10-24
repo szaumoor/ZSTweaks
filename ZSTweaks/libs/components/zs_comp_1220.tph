@@ -8,7 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/ras~ ~override~
   COPY_EXISTING_REGEXP ~^SW1H33[AC]?\.ITM$~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6700) END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6700) END
   BUT_ONLY
 
   COPY_EXISTING ~SW1H33.ITM~ ~override~

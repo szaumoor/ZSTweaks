@@ -8,7 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/night_gift~ ~override~
   COPY_EXISTING ~LEAT14.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8410) END
+    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8410) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 275 parameter1= 25 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 7 parameter1 = 237 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=69;op=206,res=SPWI203;op=206,res=SPPR309;op=206,res=SPWI322;op=206,res=SPWI515;op=232,p2=13,res=ZSTWNGG#,spec=2~ END

@@ -12,7 +12,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING ~spin852.spl~ ~override~ // first phase of transformation, holds name and description
                   ~spin822.spl~ ~override~
                   ~spin823.spl~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8700) ref_desc = RESOLVE_STR_REF(@8701) END
+        LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8700) desc = RESOLVE_STR_REF(@8701) END
 
     COPY_EXISTING ~slayerw1.itm~ ~override~ // actual weapon
         LPF ALTER_HEADER INT_VAR dicenumber = 2 dicesize = 6 to_hit = 5 damage = 3 damage_type = 8 END

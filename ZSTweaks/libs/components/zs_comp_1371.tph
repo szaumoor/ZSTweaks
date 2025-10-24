@@ -13,15 +13,15 @@ COPY_EXISTING ~AROW07.ITM~ ~override~
 
     PATCH_IF zst_1371_save_penalty < 0 BEGIN
 
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8205) END
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8205) END
 
     END ELSE PATCH_IF zst_1371_save_penalty = 0 BEGIN
 
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8206) END
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8206) END
 
     END ELSE BEGIN
 
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8207) END
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8207) END
 
     END
 

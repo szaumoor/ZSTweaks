@@ -4,7 +4,6 @@ END
 
 ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
 
-
     ACTION_IF is_iwdee BEGIN
 
         ACTION_IF NOT has_eefixpack BEGIN
@@ -115,6 +114,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
         BUT_ONLY
 
         ACTION_IF NOT has_eefixpack BEGIN // proficiency issues
+
             PRINT "[[FIX]]: Thieves using bastard swords in BG2EE without being able to use them properly or illegally as per the rules of thieves. Replaced with short swords."
             COPY_EXISTING ~ARNTRA06.CRE~ ~override~
                         ~BMUGG1.CRE~   ~override~
@@ -237,6 +237,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
         END
 
         ACTION_IF is_bgee_or_eet BEGIN
+
             COPY_EXISTING   ~bdwrai01.cre~ ~override~ // wraith
                             ~bdwrait1.cre~ ~override~ // wraith
                             ~bpshadow.cre~ ~override~ // shadow
@@ -252,6 +253,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                 BUT_ONLY IF_EXISTS
 
         END ELSE ACTION_IF is_bg2ee_or_eet BEGIN // bg2ee
+
             COPY_EXISTING   ~chwraith.cre~ ~override~ // child spirit
                             ~firwra01.cre~ ~override~ // greater wraith
                             ~fsghos.cre~   ~override~ // ghost
@@ -315,7 +317,9 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
     BUT_ONLY IF_EXISTS
 
     ACTION_IF zst_gender_fix BEGIN
+
         WITH_SCOPE BEGIN
+
             PRINT "[[FIX]]: Setting many types of sexless creatures as niether-gendered if they're set to male or female so it doesn't intrude with opcodes that target male/female"
             OUTER_SET matches = 0
             COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
@@ -356,7 +360,9 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                 END
             BUT_ONLY
             PRINT "[[FIX]]: Found %matches% matches that were set to 'niether' gender"
+            
         END
+
     END
 
     ACTION_IF NOT has_eefixpack AND FILE_EXISTS_IN_GAME ~DOBONE.ITM~ BEGIN

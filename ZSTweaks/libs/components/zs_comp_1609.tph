@@ -8,7 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/impaler~ ~override~
   COPY_EXISTING ~SPER08.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8610) END
+    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8610) END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = "op=301,p1=1,p2=1;op=341,p2=1,res=ZSTWIMPA" END
 
     PATCH_IF zst_1150_dice_spears AND MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" BEGIN

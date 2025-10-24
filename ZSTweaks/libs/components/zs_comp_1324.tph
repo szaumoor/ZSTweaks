@@ -7,7 +7,7 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY_EXISTING ~BLUN17.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7430) END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7430) END
     LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=12 parameter1=2 savingthrow=0 savebonus=0 END
     LPF ALTER_EFFECT INT_VAR match_opcode=12 special=1024 END
     LPF ADD_ON_HIT_EFF INT_VAR tmg=0 p2=2 dur=5 stype=4 STR_VAR effects = ~op=25,p1=1,pro2=4;op=25,p1=5,pro1=3,sbonus=-2~ END

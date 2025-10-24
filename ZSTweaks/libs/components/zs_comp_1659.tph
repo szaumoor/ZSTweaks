@@ -12,11 +12,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     PATCH_IF "%SOURCE_RES%" STR_EQ "HELM31" BEGIN
 
-      LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7050) END
+      LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7050) END
 
     END ELSE BEGIN
 
-      LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7051) END
+      LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7051) END
       PATCH_FOR_EACH new_opcode IN 86 87 88 89 BEGIN
           LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = new_opcode parameter1 = 7 END
       END

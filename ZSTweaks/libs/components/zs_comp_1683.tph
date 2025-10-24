@@ -9,10 +9,9 @@ ACTION_IF NOT is_iwdee BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~bddagg3a.itm~ BEGIN
 
         COPY_EXISTING ~bddagg3a.itm~ ~override~
-            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7340) ench=3 END
+            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7340) ench=3 END
             LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=42,p1=2,p2=3~ END
-            LPF GET_DMG_TYPE STR_VAR type=~magic~ RET dmg = result END
-            LPF ADD_ON_HIT_EFF INT_VAR spec=1024 STR_VAR effects=~op=12,dsize=2,dnum=1,p2=%dmg%;op=12,p1=2,p2=%dmg%,dsize=4,dnum=1,pro1=32~ END
+            LPF ADD_ON_HIT_EFF INT_VAR spec=1024 STR_VAR effects=~op=12,dsize=2,dnum=1,p2=%op12_magic%;op=12,p1=2,p2=%op12_magic%,dsize=4,dnum=1,pro1=32~ END
 
             PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
                 READ_STRREF 0x54 desc

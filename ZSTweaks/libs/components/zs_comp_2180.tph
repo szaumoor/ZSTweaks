@@ -6,7 +6,8 @@ END
 
 ACTION_IF NOT MOD_IS_INSTALLED "ZS_ShadowdanverOverhaul.tp2" "400" BEGIN
 
-    LAF generate_rogue_thac0 STR_VAR class1 = ~bard~ END
+    OUTER_SPRINT class1 ~bard~
+    LAM generate_rogue_thac0
 
     COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
         LPF CRE_CLASS RET cre_class = result END

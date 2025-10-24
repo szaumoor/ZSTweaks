@@ -29,7 +29,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
   // azuredge
   COPY ~%MOD_FOLDER%/items/azuredge~ ~override~
   COPY_EXISTING ~AX1H10.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7080) END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7080) END
     LPF ALTER_HEADER INT_VAR match_type = 1 to_hit = 3 damage = 3 END
     LPF ALTER_HEADER INT_VAR match_type = 2 to_hit = 3 damage = 3 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=344,p1=4,p2=3,spec=4~ END
@@ -46,7 +46,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~c2ax1h01.itm~ BEGIN
     COPY ~%MOD_FOLDER%/patches/item_upgrade/azuredge~ ~override~
     COPY_EXISTING ~c2ax1h01.itm~ ~override~
-      LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@50060) END
+      LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50060) END
       LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=344,p1=4,p2=3,spec=5~ END
       LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR match_resource = ~DIE~ END
       LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR match_resource = ~MESDIE~ END
@@ -63,7 +63,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
   // mace of disruption
   COPY ~%MOD_FOLDER%/items/maces_of_disruption~ ~override~
   COPY_EXISTING ~BLUN12.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8050) END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8050) END
     LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR match_resource = ~DIE~ END
     LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR match_resource = ~MESDIE~ END
     LPF ADD_ON_HIT_EFF INT_VAR t=1 p2 = 4 STR_VAR res=~ZSTWDH01~ effects = ~op=177,p1=%race_demonic%,pro1=4,res=ZSTWDH02;op=177,p1=%race_demonic%,pro1=4;op=177,p1=%race_lich%,pro1=19,res=ZSTWDH02;op=177,p1=%race_lich%,pro1=19;op=177,p1=%race_demilich%,pro1=19,res=ZSTWDH02;op=177,p1=%race_demilich%,pro1=19;op=177,p1=%race_vampire%,pro1=49,res=ZSTWDH02;op=177,p1=%race_vampire%,pro1=49;op=177,p1=%race_vampyre%,pro1=49,res=ZSTWDH02;op=177,p1=%race_vampyre%,pro1=49;op=177,p1=%class_revenant_mummy%,p2=5,pro1=79,res=ZSTWDH02;op=177,p1=%class_revenant_mummy%,p2=5,pro1=79;op=177,p1=%race_spectral_undead%,pro1=64,res=ZSTWDH02;op=177,p1=%race_spectral_undead%,pro1=64;op=177,p1=%race_specter%,pro1=64,res=ZSTWDH02;op=177,p1=%race_specter%,pro1=64;op=177,p1=%race_wraith%,pro1=94,res=ZSTWDH02;op=177,p1=%race_wraith%,pro1=94;op=177,p1=%class_spectral_troll%,p2=5,pro1=64,res=ZSTWDH02;op=177,p1=%class_spectral_troll%,p2=5,pro1=64~ END
@@ -71,7 +71,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ADD_ON_HIT_EFF INT_VAR t=99 p2=3 p1=general_undead STR_VAR res=~ZSTWDH01~ effects=~op=177,res=ZSTWDH02;op=177~ END
 
   COPY_EXISTING ~BLUN25.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8051) END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8051) END
     LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR match_resource = ~DIE~ END
     LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR match_resource = ~MESDIE~ END
     LPF ADD_ON_HIT_EFF INT_VAR t=99 p2=4 STR_VAR res=~ZSTWDH03~ effects=~op=177,p1=%race_demonic%,pro1=4,res=ZSTWDH04;op=177,p1=%race_demonic%,pro1=4;op=177,p1=%race_lich%,pro1=19,res=ZSTWDH04;op=177,p1=%race_lich%,pro1=19;op=177,p1=%race_demilich%,pro1=19,res=ZSTWDH04;op=177,p1=%race_demilich%,pro1=19;op=177,p1=%race_vampire%,pro1=49,res=ZSTWDH04;op=177,p1=%race_vampire%,pro1=49;op=177,p1=%race_vampyre%,pro1=49,res=ZSTWDH04;op=177,p1=%race_vampyre%,pro1=49;op=177,p1=%class_revenant_mummy%,p2=5,pro1=79,res=ZSTWDH04;op=177,p1=%class_revenant_mummy%,p2=5,pro1=79;op=177,p1=%race_spectral_undead%,pro1=64,res=ZSTWDH04;op=177,p1=%race_spectral_undead%,pro1=64;op=177,p1=%race_specter%,pro1=64,res=ZSTWDH04;op=177,p1=%race_specter%,pro1=64;op=177,p1=%race_wraith%,pro1=94,res=ZSTWDH04;op=177,p1=%race_wraith%,pro1=94;op=177,p1=%class_spectral_troll%,p2=5,pro1=64,res=ZSTWDH04;op=177,p1=%class_spectral_troll%,p2=5,pro1=64~ END
@@ -100,9 +100,9 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 ~HAMM11.ITM~ ~override~
 
     PATCH_IF "%SOURCE_RES%" STR_EQ "HAMM10" BEGIN
-      LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8310) END
+      LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8310) END
     END ELSE BEGIN
-      LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8311) END
+      LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8311) END
     END
 
     LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR match_resource = ~DIE~ END

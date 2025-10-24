@@ -5,17 +5,13 @@ OUTER_SET base_ls_staff = 5
 OUTER_SET base_sci_ka = 9
 OUTER_SET base_ss_club = 25
 
-DEFINE_PATCH_FUNCTION PROBABILITY_BONUS
-INT_VAR
-    ench = "-1"
-RET
-    result
+DEFINE_PATCH_MACRO PROBABILITY_BONUS
 BEGIN
-    PATCH_IF ench = 1 BEGIN SET result = 2 END ELSE
-    PATCH_IF ench = 2 BEGIN SET result = 3 END ELSE
-    PATCH_IF ench = 3 BEGIN SET result = 5 END ELSE
-    PATCH_IF ench = 4 BEGIN SET result = 6 END ELSE
-    PATCH_IF ench = 5 BEGIN SET result = 8 END ELSE
-    PATCH_IF ench = 6 BEGIN SET result = 9 END
-    ELSE SET result = 0
+    PATCH_MATCH ench WITH
+        0   BEGIN bonus=0 END
+        1 2 BEGIN bonus=ench+1 END
+        3 4 BEGIN bonus=ench+2 END
+        5 6 BEGIN bonus=ench+3 END
+        DEFAULT
+    END
 END

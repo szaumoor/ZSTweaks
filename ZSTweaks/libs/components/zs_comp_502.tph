@@ -6,5 +6,5 @@ END
 
 COPY_EXISTING ~SPWI324.SPL~ ~override~
               ~spcl742.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8609) END
+    LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8609) END
     LPF ALTER_EFFECT INT_VAR resist_dispel = 3 END

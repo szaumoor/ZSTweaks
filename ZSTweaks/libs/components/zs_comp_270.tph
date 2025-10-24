@@ -21,14 +21,14 @@ ACTION_IF NOT is_iwdee BEGIN
 
   COPY_EXISTING ~SPPR105.SPL~ ~override~
                 ~SPWM111.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5100) END
+    LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5100) END
     LPF ALTER_EFFECT_EX INT_VAR match_opcode = 0 STR_VAR match_parameter1_ex = ~"-2"~ parameter1_ex = ~"-3"~ END
     LPF CLONE_EFFECT INT_VAR match_opcode = 0 opcode = 1 parameter2 = 1 parameter1 = 1 END
     LPF ALTER_EFFECT INT_VAR resist_dispel = 3 END
     LPF ALTER_EFFECT INT_VAR silent = 1 match_savingthrow = 1 savingthrow = 2 END
 
     PATCH_IF NOT has_scs_spell_nerf BEGIN
-      LPF ADD_SPL_EFF_TGT INT_VAR t=99 ip=0 rd=0 p2=104 STR_VAR res=~%SOURCE_RES%~ effects=~op=318,p2=63;op=318,p2=13;op=318,p1=%race_dragon%;op=318,p1=%race_elemental%;op=318,p1=%race_shambling_mound%;op=318,p1=%race_treant%;op=318,p1=%race_slime%;op=318,p1=%race_giant%;op=318,p1=%race_shadow%;op=318,p1=%race_spectral_undead%;op=318,p1=%race_wraith%;op=318,p1=%race_specter%;op=318,p1=%race_mist%;op=318,p1=%race_will-o-wisp%;op=318,p1=%race_ankheg%;op=318,p1=%race_wyvern%;op=318,p1=%general_weapon%,p2=103;op=318,p1=%class_spectral_troll%,p2=105~ END
+      LPF ADD_SPL_TGTEFF INT_VAR t=99 ip=0 rd=0 p2=104 STR_VAR res=~%SOURCE_RES%~ effects=~op=318,p2=63;op=318,p2=13;op=318,p1=%race_dragon%;op=318,p1=%race_elemental%;op=318,p1=%race_shambling_mound%;op=318,p1=%race_treant%;op=318,p1=%race_slime%;op=318,p1=%race_giant%;op=318,p1=%race_shadow%;op=318,p1=%race_spectral_undead%;op=318,p1=%race_wraith%;op=318,p1=%race_specter%;op=318,p1=%race_mist%;op=318,p1=%race_will-o-wisp%;op=318,p1=%race_ankheg%;op=318,p1=%race_wyvern%;op=318,p1=%general_weapon%,p2=103;op=318,p1=%class_spectral_troll%,p2=105~ END
     END
 
   COPY_EXISTING ~SPPR105.SPL~ ~override~

@@ -7,7 +7,7 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY_EXISTING ~LEAT18.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8440) END
+    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8440) END
     LPF DELETE_EFFECT INT_VAR match_opcode = 33 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=33,p1=-4;op=325,p1=1;op=173,p1=-50;op=332,p2=6,p1=100~ END
     LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=3 flags=2048 projectile=0 STR_VAR icon = ~spcl423b~ END

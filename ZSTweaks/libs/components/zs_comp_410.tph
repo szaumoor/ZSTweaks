@@ -8,11 +8,11 @@ ACTION_IF NOT is_iwdee BEGIN
 
     DEFINE_PATCH_MACRO HORRID_WILTING_SEC_DMG BEGIN
         LPF ALTER_EFFECT_EX INT_VAR match_opcode = 12 STR_VAR parameter1_ex = "(o_dicenumber)" dicesize=7 END
-        LPF ADD_SPL_EFF_TGT INT_VAR t=99 ip=0 pwr=8 p2=105 STR_VAR res="%SOURCE_RES%" effects=~op=324,p2=55;op=324,p1=%class_elemental_air%;op=324,p1=%class_elemental_earth%;op=324,p1=%class_elemental_fire%~ END
-        LPF ADD_SPL_EFF_TGT INT_VAR pwr=8 STR_VAR res="zstwhw00" effects=~op=326,p2=105,p1=%class_elemental_water%;op=326,p2=104,p1=%race_myconid%;op=326,p2=104,p1=%race_shambling_mound%;op=326,p2=104,p1=%race_treant%~ END
-        LPF ADD_SPL_EFF_TGT INT_VAR pwr=8 STR_VAR res="%SOURCE_RES%" effects=~op=318,p2=105,p1=%class_elemental_water%;op=318,p2=104,p1=%race_myconid%;op=318,p2=104,p1=%race_shambling_mound%;op=318,p2=104,p1=%race_treant%;op=318,p2=103,p1=%general_plant%~ END
-        LPF ADD_SPL_EFF_TGT INT_VAR pwr=8 STR_VAR res="zstwhw00" effects=~op=326,p2=103,p1=%general_plant%~ END
-        LPF ADD_SPL_EFF_TGT INT_VAR pwr=8 STR_VAR res="%SOURCE_RES%" effects=~op=318,p2=103,p1=%general_plant%~ END
+        LPF ADD_SPL_TGTEFF INT_VAR t=99 ip=0 pwr=8 p2=105 STR_VAR res="%SOURCE_RES%" effects=~op=324,p2=55;op=324,p1=%class_elemental_air%;op=324,p1=%class_elemental_earth%;op=324,p1=%class_elemental_fire%~ END
+        LPF ADD_SPL_TGTEFF INT_VAR pwr=8 STR_VAR res="zstwhw00" effects=~op=326,p2=105,p1=%class_elemental_water%;op=326,p2=104,p1=%race_myconid%;op=326,p2=104,p1=%race_shambling_mound%;op=326,p2=104,p1=%race_treant%~ END
+        LPF ADD_SPL_TGTEFF INT_VAR pwr=8 STR_VAR res="%SOURCE_RES%" effects=~op=318,p2=105,p1=%class_elemental_water%;op=318,p2=104,p1=%race_myconid%;op=318,p2=104,p1=%race_shambling_mound%;op=318,p2=104,p1=%race_treant%;op=318,p2=103,p1=%general_plant%~ END
+        LPF ADD_SPL_TGTEFF INT_VAR pwr=8 STR_VAR res="zstwhw00" effects=~op=326,p2=103,p1=%general_plant%~ END
+        LPF ADD_SPL_TGTEFF INT_VAR pwr=8 STR_VAR res="%SOURCE_RES%" effects=~op=318,p2=103,p1=%general_plant%~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 12 probability2=1 STR_VAR insert=~last~ END
         LPF DELETE_EFFECT INT_VAR match_opcode = 12 match_probability2 = 0 END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 match_probability2 = 1 probability2 = 0 END
@@ -21,11 +21,11 @@ ACTION_IF NOT is_iwdee BEGIN
     COPY ~%MOD_FOLDER%/spells/arcane/horrid_wilting~ ~override~
     OUTER_SET new_description = RESOLVE_STR_REF(@6210)
     COPY_EXISTING ~SCRL9G.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
+        LPF ALTER_ITEM INT_VAR id_desc=new_description END
     BUT_ONLY IF_EXISTS
 
     COPY_EXISTING ~SPWI812.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=new_description END
+        LPF ALTER_SPELL INT_VAR desc=new_description END
         SPRINT sec_dmg_res "zstwhw00"
         LPM HORRID_WILTING_SEC_DMG
 

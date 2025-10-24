@@ -191,7 +191,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET projectl_spklaric      = IDS_OF_SYMBOL(projectl SPKLARIC)
 
     OUTER_SET splstate_blue_fireshield = IDS_OF_SYMBOL(splstate BLUE_FIRESHIELD)
-    OUTER_SET splstate_red_fireshield = IDS_OF_SYMBOL(splstate RED_FIRESHIELD)
+    OUTER_SET splstate_red_fireshield  = IDS_OF_SYMBOL(splstate RED_FIRESHIELD)
 
     OUTER_SET zs_ids_setup = 1
 

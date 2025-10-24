@@ -24,13 +24,13 @@ BUT_ONLY IF_EXISTS
 COPY_EXISTING ~SPPR404.SPL~ ~override~
               ~SPIN201.SPL~ ~override~
 
-  LPF ADD_SPL_EFF_TGT INT_VAR pwr=0 rd=0 dur=6 STR_VAR effects = ~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=267,p1=14017;op=267,p1=14662~ END
+  LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 dur=6 STR_VAR effects = ~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=267,p1=14017;op=267,p1=14662~ END
 
 BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~SPIN102.SPL~ ~override~
               ~SPPR212.SPL~ ~override~
 
-  LPF ADD_SPL_EFF_TGT INT_VAR pwr=0 rd=0 dur=3 STR_VAR effects = ~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=267,p1=14017;op=267,p1=14662~ END
+  LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 dur=3 STR_VAR effects = ~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=267,p1=14017;op=267,p1=14662~ END
 
 BUT_ONLY IF_EXISTS

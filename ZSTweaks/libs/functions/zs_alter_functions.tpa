@@ -1,17 +1,16 @@
 /*
-    Modify the basic values of any item, to ease use without having to memorize offsets or remember the size in bytes of
-    anything.
+    Modify the basic values of any item, to ease use without having to memorize offsets or remember the size in bytes of anything (which I HATE!).
 
-    All integer variables except variables to refer to string references default to -1. String references default to -2, since
-    -1 is a value one might want to have for string references.
+    All integer variables except variables to refer to string references default to -1. String references default to -2, since -1 is a value one might want to have for string references to
+    mean no reference.
 */
 DEFINE_PATCH_FUNCTION ALTER_ITEM
 INT_VAR
     //// Use these for known string references, or pass a new string using RESOLVE_STR_REF(<string>)
-    unid_ref_name = "-2"
-    id_ref_name   = "-2"
-    unid_ref_desc = "-2"
-    id_ref_desc   = "-2"
+    general_name  = "-2"
+    id_name       = "-2"
+    general_desc  = "-2"
+    id_desc       = "-2"
     ////////////////////////////////////////////////////////////////////////////////////////////////
     flags         = "-1"
     category      = "-1"
@@ -36,7 +35,6 @@ INT_VAR
     ench          = "-1"
     this_plus     = 0 // to enable addition to values, a value of 1 will add, -1 will subtract, to the current value instead of setting on some fields
 STR_VAR
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     used_up_itm = ~none~
     appearance  = ~none~
     icon        = ~none~
@@ -47,28 +45,28 @@ BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     END
 
-    PATCH_IF unid_ref_name > "-2" BEGIN
-        WRITE_LONG 0x08 unid_ref_name
-    END ELSE PATCH_IF unid_ref_name < "-2" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-2) to unid_ref_name"
+    PATCH_IF general_name > "-2" BEGIN
+        WRITE_LONG 0x08 general_name
+    END ELSE PATCH_IF general_name < "-2" BEGIN
+        PATCH_FAIL "Passed a negative value under the default (-2) to general_name"
     END
 
-    PATCH_IF unid_ref_desc > "-2" BEGIN
-        WRITE_LONG 0x50 unid_ref_desc
-    END ELSE PATCH_IF unid_ref_desc < "-2" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-2) to unid_ref_desc"
+    PATCH_IF general_desc > "-2" BEGIN
+        WRITE_LONG 0x50 general_desc
+    END ELSE PATCH_IF general_desc < "-2" BEGIN
+        PATCH_FAIL "Passed a negative value under the default (-2) to general_desc"
     END
 
-    PATCH_IF id_ref_name > "-2" BEGIN
-        WRITE_LONG 0x0c id_ref_name
-    END ELSE PATCH_IF id_ref_name < "-2" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-2) to id_ref_name"
+    PATCH_IF id_name > "-2" BEGIN
+        WRITE_LONG 0x0c id_name
+    END ELSE PATCH_IF id_name < "-2" BEGIN
+        PATCH_FAIL "Passed a negative value under the default (-2) to id_name"
     END
 
-    PATCH_IF id_ref_desc > "-2" BEGIN
-        WRITE_LONG 0x54 id_ref_desc
-    END ELSE PATCH_IF id_ref_desc < "-2" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-2) to id_ref_desc"
+    PATCH_IF id_desc > "-2" BEGIN
+        WRITE_LONG 0x54 id_desc
+    END ELSE PATCH_IF id_desc < "-2" BEGIN
+        PATCH_FAIL "Passed a negative value under the default (-2) to id_desc"
     END
 
     PATCH_IF flags > "-1" BEGIN
@@ -396,8 +394,8 @@ END
 
 DEFINE_PATCH_FUNCTION ALTER_SPELL
 INT_VAR
-    ref_name = "-2"
-    ref_desc = "-2"
+    name = "-2"
+    desc = "-2"
     flags = "-1"
     spell_type = "-1"
     excl_flags = "-1"
@@ -414,16 +412,16 @@ BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
     END
 
-    PATCH_IF ref_name > "-2" BEGIN
-        WRITE_LONG 0x08 ref_name
-    END ELSE PATCH_IF ref_name < "-2" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-2) to ref_name"
+    PATCH_IF name > "-2" BEGIN
+        WRITE_LONG 0x08 name
+    END ELSE PATCH_IF name < "-2" BEGIN
+        PATCH_FAIL "Passed a negative value under the default (-2) to name"
     END
 
-    PATCH_IF ref_desc > "-2" BEGIN
-        WRITE_LONG 0x50 ref_desc
-    END ELSE PATCH_IF ref_desc < "-2" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-2) to ref_desc"
+    PATCH_IF desc > "-2" BEGIN
+        WRITE_LONG 0x50 desc
+    END ELSE PATCH_IF desc < "-2" BEGIN
+        PATCH_FAIL "Passed a negative value under the default (-2) to desc"
     END
 
     PATCH_IF flags > "-1" BEGIN
@@ -582,31 +580,3 @@ BEGIN
     END
 END
 
-DEFINE_PATCH_FUNCTION FOREACH_CRE_EFF
-INT_VAR
-    match_opcode = "-1"
-    match_timing = "-1"
-    timing = "-1"
-BEGIN
-    PATCH_IF zs_debug BEGIN
-        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
-    END
-
-    READ_LONG 0x2c4 effects_offset
-    READ_LONG 0x2c8 effects_num
-    SET effect_bytes = 0
-    FOR (index = 0 ; index < effects_num ; ++index) BEGIN
-        READ_LONG 0x08 opcode
-        PATCH_IF match_opcode = "-1" OR (match_opcode >= 0 AND opcode = match_opcode) BEGIN
-            PATCH_IF timing > "-1" AND (timing <= 10 OR timing = 4096) BEGIN
-                READ_LONG (effects_offset + effect_bytes + 0x1c) current_timing
-                PATCH_IF match_timing = "-1" OR (match_timing >= 0 AND current_timing = match_timing) BEGIN
-                    WRITE_LONG (effects_offset + effect_bytes + 0x1c) timing
-                END
-            END ELSE BEGIN
-                PATCH_FAIL "Invalid effect timing: %timing%"
-            END
-        END
-        effect_bytes += 0x108
-    END
-END

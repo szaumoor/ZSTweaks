@@ -21,7 +21,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
         COPY_EXISTING ~SPPR412.SPL~ ~override~
                       ~ohtmps1.SPL~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5120) END
+            LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5120) END
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target=1 parameter2 = 1 power = 4 STR_VAR resource = ~ZSTWAPR1~ END
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target=1 insert_point = 0 STR_VAR resource = ~ZSTWAPR1~ END
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target=1 insert_point = 0 STR_VAR resource = ~ZSTWAPR0~ END
