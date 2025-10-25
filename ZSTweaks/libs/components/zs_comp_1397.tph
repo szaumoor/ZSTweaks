@@ -1,0 +1,13 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1397~) BEGIN
+  FAIL ~Script already included: zs_comp_1397~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1397~ = 1
+END
+
+COPY ~%SOURCE_RES%/general/ranged/sneak~ ~override~
+OUTER_TEXT_SPRINT line "ABILITYX   AP_ZSTIVSK0        ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****"
+
+COPY_EXISTING_REGEXP ~^clabth\d\d\.2da$~ ~override~
+                     ~^clabmo\d\d\.2da$~ ~override~
+                     ~^clabra\d\d\.2da$~ ~override~
+    APPEND ~%SOURCE_FILE%~ ~%line%~

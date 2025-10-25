@@ -1345,6 +1345,23 @@ This makes the weapons more interesting in this way:
 
 This applies the same rules as the Mace of Disruption tweak (component 1326), and also merges bits of the description in the non-upgraded version with the upgraded one.
 
+**Component 1397:** Make rangers, thieves, and monks get combat bonuses if attacking with ranged weapons from invisibility
+
+This component addresses partially one detail that has annoyed me since the beginning of my experience of the game. Combat bonuses from invisibility only work for melee attacks. This will have a focus on rangers and thieves, though. Details:
+
+- Attacking from invisibility gives the user a +4 THAC0 bonus, similar to the bonus to melee attacks
+- Ranged damage bonuses are applied to act as a sort of "sneak attack" with projectiles
+  - Rangers get +1 damage when attacking from invisibility. Every four levels, they get +3 damage, up to 16, with +5 ranged attack damage bonus.
+  - Thieves and monks get +3 damage when attacking from invisibility, and progress up to +12 damage at level 21.
+- All thief kits except Swashbuckler, all ranger kits, and all monk kits receive this bonus
+- Extra damage bonuses for thieves specifically are nullified if they have a fighter class, getting only the partial bonus that rangers get.
+
+Caveats:
+
+This is not possible to implement in a straightforward manner. It requires timers that continually check whether the rangers, monk, or thief is invisible in order to apply the benefit or not. It is possible to momentarily not be affected by the bonus when entering invisible or continuing to have the benefit after getting out of invisibility (< 1 second). Currently, the only feedback to help the user identify if it's safe to attack with the bonus applied is the user interface applying the damage bonus when holding a bow.
+
+This also does not affect enemies. Only the player and joinable characters will benefit, if it applies to them (monks, rangers, and thieves, i.e. classes that can hide).
+
 </details>
 
 ---

@@ -81,3 +81,4 @@
 - Make Whirlwind and Evasion grant 3 uses of the Improved variants instead of existing as a silly lesser version
 - Overhaul golem creatures
 - Make Cowl of the Stars more generally useful (Rasaad's Quest)
+- Make rangers and rogues have a THAC0 and Damage bonus if attacking with ranged weapons from invisibility
