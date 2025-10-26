@@ -1,0 +1,20 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_555~) BEGIN
+  FAIL ~Script already included: zs_comp_555~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_555~ = 1
+END
+
+ACTION_IF NOT is_iwdee BEGIN // disabled for iwdee for now
+
+    COPY ~%MOD_FOLDER%/spells/arcane/chromatic_orb~ ~override~
+    OUTER_FOR ( pro_n = 0; pro_n <=7; ++pro_n ) BEGIN
+       ADD_PROJECTILE ~%MOD_FOLDER%/pro/chromatic_orb/zstchrp%pro_n%.pro~
+    END 
+
+    COPY_EXISTING ~spwi118.spl~ ~override/zstwi118.spl~
+    COPY_EXISTING ~spwi118.spl~ ~override~
+        LPF DELETE_EFFECT END
+        LPF ADD_SPL_SELFEFF INT_VAR p2=102 pwr=1 rd=0 STR_VAR effects=~op=326,p1=2,res=zstchrm0;op=318,p1=2,res=%SOURCE_RES%;op=146,tgt=2,res=zstwi118~ END
+
+
+END

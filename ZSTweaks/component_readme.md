@@ -1741,6 +1741,22 @@ Same reasoning as component 500. Applies to Priest of Lathander's version of the
 
 This makes the spell cause 1d12 crushing damage to all clay golems, including other creatures considered clay golems in the game such as sand, magical, and brain golems. Additionally, they will be slowed immediately for 2 rounds, dispels their haste if they have it, and prevents them from hasting themselves for one round.
 
+**Component 555:** Make Chromatic Orb more interesting by providing party-only chromatic varieties
+
+This improves Chromatic Orb to make it a little more interesting, giving players the choice to cast different varieties of the spell at the moment of casting. Here's the varieties:
+
+- White (Light): Can't be resisted with saving throws. Damages Armor Class by 4 immediately for 3 rounds.
+- Black (Slay): Slays the enemy if they fail a save vs. Spell at 4 and deals some magic damage.
+- Yellow (Acid): Causes increasing acid damage over level. Bypasses magic resistance.
+- Orange (Fire): Causes mild fire damage in a small area.
+- Purple (Sonic): Causes magic and crushing damage. Golems take double damage and can't resist it.
+- //... 
+
+Caveats:
+
+- To not interfere with enemy AI, enemies will cast the vanilla version of it (what it is at the moment of installation). If you want other tweaks to modify the base chromatic orb, and you want enemies to use that, install those tweaks before this one.
+- The spell is no longer usable in contingencies and spell triggers due to the "select spell" nature thereof, similar to what happens with Spell Immunity, for example.
+
 </details>
 
 ---
