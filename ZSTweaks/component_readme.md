@@ -1959,10 +1959,6 @@ In summary, higher minimum damage, more moderate scaling, a bit lower maximum da
 
 Additionally, it also makes the lightning bolts look like they do in IWDEE, which is a bit more impressive than the vanilla version. Both the boost and the animation can be disabled in the configuration file, thus allowing you to install only the animation part, if you prefer.
 
-**Component 501:** Make Chaotic Commands' duration extend up to level 20 instead of only 18
-
-Simply fixes the weird inconsistency of some spells where they only scale up to 18, even if the only change is duration, which is this case.
-
 **Component 505:** Make Repulse Undead more useful by causing damage and Slow when they're repulsed
 
 This improves the spell in the following ways:

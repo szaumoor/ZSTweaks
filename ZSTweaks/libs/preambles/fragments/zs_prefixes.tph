@@ -16,6 +16,19 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
 
     END
 
+    ACTION_IF NOT is_iwdee BEGIN
+
+        ACTION_IF NOT has_eefixpack BEGIN
+            
+            PRINT ~[[FIX]]: Fixing scaling of Chaotic Command's duration.spl~
+            COPY_EXISTING ~SPPR508.SPL~ ~override~
+                LPF LAST_VALID_HEADER RET new_header = result END
+                LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=60 level_cap=20 END
+
+        END
+
+    END
+
     ACTION_IF is_bg2ee_or_eet BEGIN
 
         ACTION_IF NOT has_eefixpack BEGIN
