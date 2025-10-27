@@ -4,6 +4,10 @@ END
 
 ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
 
+    PRINT "[[FIX]]: Marking Phantom's Blade extra damage as not waking up sleepers"
+    COPY_EXISTING ~PHANBLAD.EFF~ ~override~
+        LPF ALTER_EFF_FILE INT_VAR special = 1024 END
+
     ACTION_IF is_iwdee BEGIN
 
         ACTION_IF NOT has_eefixpack BEGIN
@@ -19,10 +23,13 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
     ACTION_IF NOT is_iwdee BEGIN
 
         ACTION_IF NOT has_eefixpack BEGIN
-            
-            PRINT ~[[FIX]]: Fixing scaling of Chaotic Command's duration.spl~
+
+            PRINT ~[[FIX]]: Fixing scaling of Phantom's Blade duration~
+            COPY_EXISTING ~SPWI518.SPL~ ~override~
+                LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=6 level_cap=20 END
+                
+            PRINT ~[[FIX]]: Fixing scaling of Chaotic Command's duration~
             COPY_EXISTING ~SPPR508.SPL~ ~override~
-                LPF LAST_VALID_HEADER RET new_header = result END
                 LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=60 level_cap=20 END
 
         END

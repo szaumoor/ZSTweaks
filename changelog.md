@@ -73,6 +73,8 @@
 - Fixed issue in RR's Crippling Strike component preventing the effects from being set at the wrong position in the effect stack, which prevented immunities and refreshing effects from working
 - Removed the Chaotic Commands component, now an element of the prefix part of this mod (disabled if fixpack is installed)
 - Added an option in the preferences file to make the component that sets backstab multiplier to 0 in BBOD and Iron Golem fist so it's only backstab multiplier reduction, as per your preferences (disabled by default)
+- Improved the code in Phantom's Blade Tweak/Fix
+- Moved the Phantom's Blade component into a prefix (extending headers to level 20 & marking extra damage as not waking up sleepers; former doesn't run if fixpack is installed)
 
 ## New components
 

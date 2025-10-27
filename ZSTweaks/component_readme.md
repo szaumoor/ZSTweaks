@@ -1579,10 +1579,6 @@ Technical details: this sets backstab multiplier to 0x. It would be possible to 
 
 This can also be made to function as backstab multiplier reduction instead of an outright disable. Check configuration file. If backstab multiplier reduction is chosen, it will override whatever was added by component 1150, if it was installed before. Component 1150 will still add a reduction of backstab multiplier if installed after, however.
 
-**Component 161:** Make Phantom Blade scale in duration up to level 20, instead of to level 18
-
-Only fixes damage waking sleepers issue in IWDEE, as the duration scales fine in IWDEE.
-
 **Component 170:** Make Wail of the Banshee inflict some magical damage and deafness on a successful save
 
 This exists because I personally dislike using spells, especially high level spells, which are powerful but unpredictable, so that there is a benefit to using them regardless. Therefore, on a successful save (or if the target is simply immune to the slaying effect), it will cause 3d6+3 magic damage and cause deafness for 2 rounds.
