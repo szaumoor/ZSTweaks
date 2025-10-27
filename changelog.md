@@ -72,6 +72,7 @@
 - *Cautiously* added the option to choose which components are installed through user input in the creatures, npc, and class/kit tweaks. See **ZSTweaks/configurations**, if you're interested and set it as per your liking.
 - Fixed issue in RR's Crippling Strike component preventing the effects from being set at the wrong position in the effect stack, which prevented immunities and refreshing effects from working
 - Removed the Chaotic Commands component, now an element of the prefix part of this mod (disabled if fixpack is installed)
+- Added an option in the preferences file to make the component that sets backstab multiplier to 0 in BBOD and Iron Golem fist so it's only backstab multiplier reduction, as per your preferences (disabled by default)
 
 ## New components
 

@@ -1571,9 +1571,13 @@ This component matches the magic damage inflicted by the wizard version of Finge
 
 The bonus that Luck provides really doesn't justify such a short duration. Now it lasts 1 turn instead of 3 rounds (i.e., 18 seconds) and makes it generally more useful by adding also a 5% critical hit chance boost, 10% total bonus thief skill bonus, as well as 2 Armor Class. The rest is unchanged. You can choose which parts of the component you want to install in the configuration file.
 
-**Component 160:** Make Black Blade of Disaster and golem iron fist unsuitable for backstabs (optional, see config)
+**Component 160:** Make Black Blade of Disaster and golem iron fist unsuitable for backstabs
 
 This exists simply to destroy any temptation to use these as cheesy ways to get insane numbers with backstabs that would instantly kill most things with HP and normal damage resistances in one hit. So now they should not be able to trigger backstabs. You can disable either case in the configuration file.
+
+Technical details: this sets backstab multiplier to 0x. It would be possible to make them backstab again if you had effects on that increased backstab multiplier. So if you were a level 21 assassin and shape-shifted to an iron golem, your backstab multiplier would change from 7x to 0x, and if you then added an item that increased it by, and cast an ability that increased it by 2, your backstab multiplier would become 3x, even as an iron golem.
+
+This can also be made to function as backstab multiplier reduction instead of an outright disable. Check configuration file. If backstab multiplier reduction is chosen, it will override whatever was added by component 1150, if it was installed before. Component 1150 will still add a reduction of backstab multiplier if installed after, however.
 
 **Component 161:** Make Phantom Blade scale in duration up to level 20, instead of to level 18
 
