@@ -31,16 +31,12 @@ ACTION_IF zst_group_2160_quivering_palm BEGIN
   INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2160.tph~
 END
 
-ACTION_IF zst_group_2170_thac0_thief BEGIN
+ACTION_IF zst_group_2170_thac0_rogue BEGIN
   INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2170.tph~
 END
 
 ACTION_IF zst_group_2171_swashbuckler_fix BEGIN
   INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2171.tph~
-END
-
-ACTION_IF zst_group_2180_thac0_bard BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2180.tph~
 END
 
 ACTION_IF zst_group_2190_poison_weapon BEGIN

@@ -282,6 +282,9 @@ OUTER_SET zst_2130_exploding_trap = "1"
 OUTER_SET zst_2130_assassination  = "1"
 OUTER_SET zst_2130_avoid_death    = "1"
 
+OUTER_SET zst_2170_thac0_thieves = "1"
+OUTER_SET zst_2170_thac0_bards   = "1"
+
 // allows tweaks to Dragon Disciple
 OUTER_SET zst_2231_fire_boost      = "1" // include the boost to fire damage in the Dragon Disciple tweak
 OUTER_SET zst_2231_fire_boost_pctg = "5" // percentage bonus if the previous is allowed

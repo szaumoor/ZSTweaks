@@ -2175,23 +2175,17 @@ Side note: things like Critical Strike and Power Attack are already not breachab
 
 I really dislike things that scale poorly or not at all. This makes Quivering Palm saving throw penalty improve to -1 at level 16 and to -2 at level 24. Additionally, the effect lasts 7 seconds, up from 5 seconds, to give more leeway.
 
-**Component 2170:** Make the THAC0 progression of Thieves better and more streamlined, so they improve up to 6, like clerics
+**Component 2170:** Make the THAC0 progression of Thieves and Bards better and more streamlined
 
-Among many of the manifestations of the Baldur's Gate series' undying hatred for thieves is that their THAC0 sucks. A LOT. Barely better than wizards. This improves the progression such that it can reach 6, like clerics. The progression per level follows this sequence: 20-19-19-18-17-17-16-15-15-14-13-13-12-11-11-10-9-9-8-7-7-6.
+Among many of the manifestations of the Baldur's Gate series' undying hatred for thieves and bards is that their THAC0 sucks. A LOT. Barely better than wizards. This improves the progression such that it can reach 6, like clerics. The progression per level follows this sequence: 20-19-19-18-17-17-16-15-15-14-13-13-12-11-11-10-9-9-8-7-7-6.
 
-This component will update the THAC0 of Thieves and Mage/Thieves in the game depending on their level, but only if it's not better already. This will ignore the few dual-classed NPCs in the game. Regardless, if they're joinable, their THAC0 will update appropriately upon leveling up.
+This component will update the THAC0 of Bards, Thieves and Mage/Thieves in the game depending on their level, but only if it's not better already. This will ignore the few dual-classed NPCs in the game. Regardless, if they're joinable, their THAC0 will update appropriately upon leveling up.
 
 **Component 2171** Fix Swashbuckler's incorrect THAC0 when Thief THAC0 improvement is installed (only use if no Swashbuckler overhaul is installed!)
 
 Normally, vanilla Swashbuckler gets to a THAC0 level of 2, because every 5 levels, it gets a +1 bonus to both THAC0 and damage inflicted. This hinges on the assumption that the maximum THAC0 attainable is 10. Changing the maximum THAC0 improvement to 6 means they would achieve, inappropriately, -2 **base** THAC0. This component addresses this inconsistency.
 
 Therefore, at levels 35 and 40, the swashbuckler will not get THAC0 bonuses, only the damage bonus, which should allow them to reach a THAC0 of 0 while still retaining the remaining damage bonuses (+8 in total). This way they will still be more distinguishable from regular thieves despite the THAC0 improvement and generally more useful. If other mods that overhaul the swashbuckler exist, you may request compatibility, as long as this causes actual problems.
-
-**Component 2180:** Make the THAC0 progression of Bards better and more streamlined, so they improve up to 6, like clerics
-
-Refer to component 2170 for reasons. Applies the same bonus to Bards, who also have had their power sucked away by the game.
-
-This component will update the THAC0 of Bards in the game depending on their level, but only if it's not better already.
 
 **Component 2190:** Make Poison Weapon improve a couple of times more every 4 levels (level 17, and 21)
 
@@ -2230,7 +2224,7 @@ Lastly, this will patch any dragon disciples that may exist in the game, adding 
 
 **Component 2232** Make Called Shot directly increase ranged weapon damage, instead of adding 2 damage after the initial hit
 
-Self-explanatory. Generally speaking, it's more powerful to directly increase the base damage.
+Self-explanatory. Generally speaking, it's more powerful to directly increase the base damage because it will count towards a critical hit multiplier.
 
 **Component 2260:** Make Blades, Skalds, and Swashbucklers and Priest of Tempus get more warrior-type benefits
 

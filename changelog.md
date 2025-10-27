@@ -40,6 +40,8 @@
 - Fixed issue where imported characters would not receive the omnistabbing effect. Now this benefit will be applied to all created characters upon spawning in the initial area.
 - Fixed issue with Gloves of Healing not working correctly due to missing code for resource copy
 - Various library refactorings and optimizations to improve performance
+- Fixed some broken code in swashbuckler thac0 fix component if it was run in a non-linear installation
+- Merged the components for thac0 improvement for thieves and bards together
 
 ## Modifications
 
