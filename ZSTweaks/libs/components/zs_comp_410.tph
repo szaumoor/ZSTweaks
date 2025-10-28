@@ -10,7 +10,7 @@ ACTION_IF NOT is_iwdee BEGIN
         LPF ALTER_EFFECT_EX INT_VAR match_opcode = 12 dicesize=7 STR_VAR parameter1_ex = "(o_dicenumber)" END
         LPF ADD_SPL_TGTEFF INT_VAR t=99 ip=0 pwr=8 p2=105 STR_VAR res="%SOURCE_RES%" effects=~op=324,p2=55;op=324,p1=%class_elemental_air%;op=324,p1=%class_elemental_earth%;op=324,p1=%class_elemental_fire%~ END
         LPF ADD_SPL_TGTEFF INT_VAR pwr=8 STR_VAR res="zstwhw00" effects=~op=326,p2=105,p1=%class_elemental_water%;op=326,p2=104,p1=%race_myconid%;op=326,p2=104,p1=%race_shambling_mound%;op=326,p2=104,p1=%race_treant%~ END
-        LPF ADD_SPL_TGTEFF INT_VAR pwr=8 STR_VAR res="%SOURCE_RES%" effects=~op=318,p2=105,p1=%class_elemental_water%;op=318,p2=104,p1=%race_myconid%;op=318,p2=104,p1=%race_shambling_mound%;op=318,p2=104,p1=%race_treant%;op=318,p2=103,p1=%general_plant%~ END
+        LPF ADD_SPL_TGTEFF INT_VAR pwr=8 STR_VAR res="%SOURCE_RES%" effects=~op=318,p2=105,p1=%class_elemental_water%;op=318,p2=104,p1=%race_myconid%;op=318,p2=104,p1=%race_shambling_mound%;op=318,p2=104,p1=%race_treant%~ END
         LPF ADD_SPL_TGTEFF INT_VAR pwr=8 STR_VAR res="zstwhw00" effects=~op=326,p2=103,p1=%general_plant%~ END
         LPF ADD_SPL_TGTEFF INT_VAR pwr=8 STR_VAR res="%SOURCE_RES%" effects=~op=318,p2=103,p1=%general_plant%~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 12 probability2=1 STR_VAR insert=~last~ END

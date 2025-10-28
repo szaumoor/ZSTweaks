@@ -13,19 +13,10 @@ ACTION_IF NOT is_iwdee BEGIN
     LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 8 dicenumber = 2 parameter1 = 4 END
     LPF DELETE_EFFECT INT_VAR match_opcode = 177 END
-    LPF ADD_SPL_TGTEFF INT_VAR pwr=6 rd=0 STR_VAR effects = ~ip=0,op=318,p2=%zs_acid_immunity%;op=146,p2=1,res=zstacfg0;op=146,p2=1,res=zstacfg1;op=326,p2=104,p1=%race_myconid%,res=zstacfg2;op=326,p2=104,p1=%race_shambling_mound%,res=zstacfg2;op=326,p2=104,p1=%race_treant%,res=zstacfg2;op=318,p2=103,p1=%race_myconid%,res=%SOURCE_RES%;op=318,p2=103,p1=%race_shambling_mound%,res=%SOURCE_RES%;op=318,p2=103,p1=%race_treant%,res=%SOURCE_RES%;op=326,p2=103,p1=%general_plant%,res=zstacfg2~ END
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=6 rd=0 STR_VAR res="%SOURCE_RES%" effects = ~ip=0,op=318,p2=%zs_acid_immunity%;op=146,p2=1,res=zstacfg0;op=146,p2=1,res=zstacfg1;op=326,p2=104,p1=%race_myconid%,res=zstacfg2;op=326,p2=104,p1=%race_shambling_mound%,res=zstacfg2;op=326,p2=104,p1=%race_treant%,res=zstacfg2;op=318,p2=104,p1=%race_myconid%;op=318,p2=104,p1=%race_shambling_mound%;op=318,p2=104,p1=%race_treant%;op=326,p2=103,p1=%general_plant%,res=zstacfg2~ END
 
   COPY_EXISTING ~SCRL7R.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_name=new_name id_desc=new_description END
-
-  COPY_EXISTING ~ohrclck3.itm~ ~override~
-    SPRINT planar_shield @7551
-    SPRINT shield_archons @7552
-    READ_STRREF 0x54 desc
-    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*\)%shield_archons%~ ~\1%planar_shield%~
-    END
-    SAY_EVALUATED 0x54 ~%desc%~
 
 END
 

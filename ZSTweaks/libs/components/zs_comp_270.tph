@@ -17,6 +17,7 @@ ACTION_IF NOT is_iwdee BEGIN
                 ~bdbow06.spl~ ~override~
     LPF ALTER_EFFECT_EX INT_VAR match_opcode = 0 STR_VAR match_parameter1_ex = ~"-2"~ parameter1_ex = ~"-3"~ END
     LPF CLONE_EFFECT INT_VAR match_opcode = 0 opcode = 1 parameter1 = 1 parameter2 = 1 END
+    LPF ALTER_EFFECT INT_VAR match_resist_dispel = 1 resist_dispel = 3 END
   BUT_ONLY IF_EXISTS
 
   COPY_EXISTING ~SPPR105.SPL~ ~override~

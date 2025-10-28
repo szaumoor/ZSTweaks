@@ -44,40 +44,38 @@ BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
     END
 
-    opcode = op
-    timing = tmg
-    target = tgt
-    parameter1 = p1
-    parameter2 = p2
-    parameter3 = 0
-    parameter4 = 0
-    power = 0
-    resist_dispel = 0
-    duration = 0
-    probability1 = 100
-    probability2 = 0
+    SET opcode = op
+    SET target = tgt
+    SET timing = tmg
+    SET power = 0
+    SET parameter1 = p1
+    SET parameter2 = p2
+    SET resist_dispel = 0
+    SET duration = 0
+    SET probability1 = 100
+    SET probability2 = 0
     SPRINT resource ~%res%~
-    SPRINT resource2 ~~
+    SET dicenumber = 0
+    SET dicesize = 0
+    SET savingthrow = 0
+    SET savebonus = 0
+    SET school = 0
+    SET lowestafflvl = 0
+    SET highestafflvl = 0
+    SET parameter3 = 0
+    SET parameter4 = 0
     SPRINT vvcresource ~~
+    SPRINT resource2 ~~
+    SET casterx = 0 - 1
+    SET castery = 0 - 1
+    SET targetx = 0 - 1
+    SET targety = 0 - 1
+    SET restype = 0
     SPRINT effsource ~~
+    SET sourceslot = "-1"
     SPRINT effvar ~~
-    dicenumber = 0
-    dicesize = 0
-    savingthrow = 0
-    savebonus = 0
-    school = 0
-    special = 0
-    lowestafflvl = 0
-    highestafflvl = 0
-    casterx = 0
-    castery = 0
-    targetx = 0
-    targety = 0
-    restype = 0
-    sourceslot = 0
-    casterlvl = 0
-    sectype = 0
-    insert_point = 0
+    SET casterlvl = 0
+    SET sectype = 0
 
 
     LPM ADD_CRE_EFFECT

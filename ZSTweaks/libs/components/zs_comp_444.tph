@@ -12,7 +12,7 @@ ACTION_IF zst_444_flesh_stone BEGIN
         LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 16 END
 
         PATCH_IF NOT is_iwdee AND zst_444_flesh_stone_iwd BEGIN
-            LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=6 ip=0 p2=104 STR_VAR effects = ~op=324,p2=138,p1=128;op=324,p1=%race_skeleton%;op=324,p1=%race_demilich%;op=324,p1=%race_shadow%;op=324,p1=%race_wraith%;op=324,p1=%race_slime%;op=324,p1=%race_mist%;op=324,p1=%race_golem%;op=324,p1=%race_elemental%;op=324,p1=%race_statue%;op=324,p1=%race_spectral_undead%;op=324,p1=%race_shambling_mound%~ END
+            LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=6 ip=0 p2=104 STR_VAR res="%SOURCE_RES%" effects = ~op=324,p2=138,p1=128;op=324,p1=%race_skeleton%;op=324,p1=%race_demilich%;op=324,p1=%race_shadow%;op=324,p1=%race_wraith%;op=324,p1=%race_slime%;op=324,p1=%race_mist%;op=324,p1=%race_golem%;op=324,p1=%race_elemental%;op=324,p1=%race_statue%;op=324,p1=%race_spectral_undead%;op=324,p1=%race_shambling_mound%~ END
         END
 
     COPY_EXISTING ~SCRL7H.ITM~ ~override~
@@ -27,7 +27,7 @@ ACTION_IF zst_444_flesh_stone BEGIN
         LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 16 END
 
         PATCH_IF NOT is_iwdee AND zst_444_flesh_stone_iwd BEGIN
-            LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=6 ip=0 p2=104 STR_VAR effects = ~op=324,p2=138,p1=128;op=324,p1=%race_skeleton%;op=324,p1=%race_demilich%;op=324,p1=%race_shadow%;op=324,p1=%race_wraith%;op=324,p1=%race_slime%;op=324,p1=%race_mist%;op=324,p1=%race_golem%;op=324,p1=%race_elemental%;op=324,p1=%race_statue%;op=324,p1=%race_spectral_undead%;op=324,p1=%race_shambling_mound%~ END
+            LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=6 ip=0 p2=104 STR_VAR res="%SOURCE_RES%" effects = ~op=324,p2=138,p1=128;op=324,p1=%race_skeleton%;op=324,p1=%race_demilich%;op=324,p1=%race_shadow%;op=324,p1=%race_wraith%;op=324,p1=%race_slime%;op=324,p1=%race_mist%;op=324,p1=%race_golem%;op=324,p1=%race_elemental%;op=324,p1=%race_statue%;op=324,p1=%race_spectral_undead%;op=324,p1=%race_shambling_mound%~ END
         END
 
     BUT_ONLY IF_EXISTS

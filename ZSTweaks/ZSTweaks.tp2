@@ -4,15 +4,15 @@ VERSION "1.6.1"
 README ~%MOD_FOLDER%/component_readme.md~
 AUTO_EVAL_STRINGS
 
-MODDER
-	setup_tra none
-	area_variables none
-	missing_extern warn
-	missing_resref warn
-	ict2_actions warn
-	missing_eval none
-	overwriting_file none
-	fun_args warn
+// MODDER
+// 	setup_tra none
+// 	area_variables none
+// 	missing_extern warn
+// 	missing_resref warn
+// 	ict2_actions warn
+// 	missing_eval none
+// 	overwriting_file none
+// 	fun_args warn
 
 ALWAYS
 	INCLUDE ~%MOD_FOLDER%/libs/preambles/zs_always.tph~
@@ -1036,7 +1036,7 @@ BEGIN @441 DESIGNATED 441 GROUP @19 // TENSER
 REQUIRE_PREDICATE GAME_IS "bgee bg2ee eet" @53
 FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 
-BEGIN @444 DESIGNATED 444 GROUP @19 // FLESH TO STONE 
+BEGIN @444 DESIGNATED 444 GROUP @19 // FLESH AND STONE 
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 

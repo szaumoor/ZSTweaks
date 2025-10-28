@@ -7,11 +7,11 @@ Equipped abilities:
 – Stacking bonuses that depend on the alignment of the wielder:
   All alignments: +1 Armor Class, +5% Magic Resistance
   All morally neutral alignments: +1 Damage, +1 Saving Throws, +5% Magic Resistance
-  True Neutral: +1 Armor Class, +1 Saving throws, +5% Magic Resistance, +5% critical hit chances with all weapons
+  True Neutral: +1 Armor Class, +1 Saving Throws, +5% Magic Resistance, +5% critical hit chances with all weapons
 
 Combat abilities:
-– Strikes as a +5 weapon
-– Has a damage and THAC0 bonus depending on how far the target's alignment strays from True Neutral:
+– Strikes as a +5 weapon for the purposes of overcoming weapon immunities
+– Damage and THAC0 bonuses depends on how far a target's alignment strays from True Neutral:
   vs. Lawful Neutral and Chaotic Neutral: +1 THAC0, +1 slashing and magic damage
   vs. Neutral Good, Neutral Evil: +2 THAC0, +2 slashing and magic damage
   vs. Other Alignments: +3 THAC0, +3 slashing and magic damage

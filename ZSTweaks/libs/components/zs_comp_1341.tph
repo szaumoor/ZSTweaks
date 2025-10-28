@@ -17,7 +17,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_HEADER INT_VAR match_damage = 3 damage = 4 match_to_hit = 3 to_hit = 4 END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=166,p1=5~ END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=178,p1=%general_undead%,p2=3,spec=2~ END
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p2=2;op=12,p1=4,p2=%op12_magic%~ END
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p2=2,res=%SOURCE_RES%;op=12,p1=4,p2=%op12_magic%~ END
 
             PATCH_IF finesse_installed BEGIN // update +4 enchantment
                 SET ench = 4
@@ -43,7 +43,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6073) ench=5 END
             LPF ALTER_HEADER INT_VAR match_damage = 4 damage = 5 match_to_hit = 4 to_hit = 5 END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=178,p1=%general_undead%,p2=3,spec=2~ END
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p2=2;op=12,p1=5,p2=%op12_magic%~ END
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p2=2,res=%SOURCE_RES%;op=12,p1=5,p2=%op12_magic%~ END
 
             PATCH_IF finesse_installed BEGIN // update +5 enchantment
                 SET ench = 5

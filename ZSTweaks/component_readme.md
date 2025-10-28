@@ -1105,9 +1105,9 @@ This makes it useful for far longer, and more like the Sword of Mordenkainen. Ad
 - THAC0: +4
 - It's a flashy sword, and kits that are used to flashy fighting get bonus +1/2 APR: Blades, Shadowdancers, and Swashbucklers
 
-**Component 1230:** Make Short Sword of Mask +5 slightly more powerful
+**Component 1230:** Make Short Sword of Mask slightly more powerful
 
-Makes the chance-based Level drain take 2 levels instead of just one and the Entangle effect 5% more likely to trigger (20%).
+Makes the chance-based Level drain take 2 levels instead of just one and the Entangle effect 5% more likely to trigger (20%). In both versions of the sword, the entangle is no longer subject to magic resistance.
 
 **Component 1240:** Make Purifier's dispel magic much better and damage bonus affect all evil, not just Chaotic Evil
 

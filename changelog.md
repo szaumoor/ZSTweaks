@@ -32,6 +32,7 @@
 - Improved the code of the Armor of Faith component (more old code gone wrong!)
 - Added Underdark Brain Golems to the list of incorrectly aligned creatures fixed by the alignment creature component (was Neutral, should be Lawful Evil)
 - Fixed Vorpal Hit component not working as expected due to missing spell states in Stoneskin and Iron Skins
+- Fixed bugs preventing Psion Blade component from stopping the Mindflayer Slay effect for stoneskinned alhoons
 - Disabled more prefixes that are rendered moot if the Fixpack is installed
 - Fixed Swashkalbladepus component not patching swashbucklers if only swashbucklers were selected in the preferences
 - Fixed bug in the effects of Horrid Wilting when targeting specific types of creatures (Wizard version)
@@ -45,6 +46,10 @@
 - Fixed code error in prefix that could potentially delete some effects from thief NPCs
 - Fixed Fireball component not tweaking the minimum damage from Dragon's Breath correctly due to a code error
 - Fixed issue with the scaling in HW after a recent refactoring
+- Fixed Flesh to Stone tweak adding IWD immunities not correctly providing such immunities. Whoopsie.
+- Fixed Hindo's Doom not properly protecting non-undead from the extra magical damage
+- Fixed Usuno's Blade granting a save to take half for the regular electricity damage instead of to the chance-based fat extra damage
+- Some description fixes on some tweaked items
 
 ## Modifications
 
@@ -78,6 +83,7 @@
 - Added an option in the preferences file to make the component that sets backstab multiplier to 0 in BBOD and Iron Golem fist so it's only backstab multiplier reduction, as per your preferences (disabled by default)
 - Improved the code in Phantom's Blade Tweak/Fix
 - Moved the Phantom's Blade component into a prefix (extending headers to level 20 & marking extra damage as not waking up sleepers; former doesn't run if fixpack is installed)
+- Short Sword of Mask entangle effect is now not subject to magic resistance, but can be dispelled still
 
 ## New components
 
