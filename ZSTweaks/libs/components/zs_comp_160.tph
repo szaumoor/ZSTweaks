@@ -13,7 +13,7 @@ ACTION_IF NOT is_iwdee BEGIN
         END
 
         COPY_EXISTING ~BLAKBLAD.ITM~ ~override~
-            LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 263 match_parameter1 = zst_1120_backstab_penalty_lswords END
+            LPF DELETE_EFFECT INT_VAR match_opcode = 263 match_parameter1 = zst_1120_backstab_penalty_lswords END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~%base_effect%~ END
         BUT_ONLY IF_EXISTS
     END

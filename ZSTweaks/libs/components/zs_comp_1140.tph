@@ -18,7 +18,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ADD_ON_HIT_EFF INT_VAR p1=1 spec=1024 STR_VAR effects = ~op=12,p2=%op12_fire%;op=12,p2=%op12_electricity%~ END
 
             PATCH_IF zst_1450_allow_daggers AND (finesse_component_installed OR general_tweaks_installed) BEGIN // update +5 enchantment
-                LPF PROBABILITY_BONUS INT_VAR ench = 5 RET bonus = result END
+                SET ench = 5
+                LPM PROBABILITY_BONUS
                 LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 probability1 = (base_dagg_dart+bonus) STR_VAR match_resource=~ZSTWD4~ resource=~ZSTWD5~ END
             END
 
@@ -57,7 +58,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ADD_ON_HIT_EFF INT_VAR t=3 p2=1 STR_VAR effects = ~op=146,res=ZSTWDST0;op=146,res=ZSTWDST1;op=146,tgt=1,res=ZSTWDST6~ END
 
             PATCH_IF zst_1450_allow_daggers AND (finesse_component_installed OR general_tweaks_installed) BEGIN // update +6 enchantment
-                LPF PROBABILITY_BONUS INT_VAR ench = 6 RET bonus = result END
+                SET ench = 6
+                LPM PROBABILITY_BONUS
                 LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 probability1=(bonus+base_dagg_dart) STR_VAR match_resource=~ZSTWD5~ resource=~ZSTWD6~ END
             END
 

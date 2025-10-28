@@ -12,8 +12,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
 
         PATCH_IF zst_1450_allow_katanas AND (general_tweaks_installed OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1450") BEGIN
-
-            LPF PROBABILITY_BONUS INT_VAR ench = 3 RET bonus = result END
+            SET ench = 3
+            LPM PROBABILITY_BONUS
             LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 326 probability1=(bonus+base_sci_ka) STR_VAR match_resource = ~ZSTWK2~ resource = ~ZSTWK3~  END
 
         END

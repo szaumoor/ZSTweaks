@@ -42,6 +42,9 @@
 - Various library refactorings and optimizations to improve performance
 - Fixed some broken code in swashbuckler thac0 fix component if it was run in a non-linear installation
 - Merged the components for thac0 improvement for thieves and bards together
+- Fixed code error in prefix that could potentially delete some effects from thief NPCs
+- Fixed Fireball component not tweaking the minimum damage from Dragon's Breath correctly due to a code error
+- Fixed issue with the scaling in HW after a recent refactoring
 
 ## Modifications
 

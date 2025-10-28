@@ -45,23 +45,52 @@ BEGIN
     END
 
     opcode = op
+    timing = tmg
+    target = tgt
     parameter1 = p1
     parameter2 = p2
-    timing = t
-    target = tgt
-    resource = ~%res%~
+    parameter3 = 0
+    parameter4 = 0
+    power = 0
+    resist_dispel = 0
+    duration = 0
+    probability1 = 100
+    probability2 = 0
+    SPRINT resource ~%res%~
+    SPRINT resource2 ~~
+    SPRINT vvcresource ~~
+    SPRINT effsource ~~
+    SPRINT effvar ~~
+    dicenumber = 0
+    dicesize = 0
+    savingthrow = 0
+    savebonus = 0
+    school = 0
+    special = 0
+    lowestafflvl = 0
+    highestafflvl = 0
+    casterx = 0
+    castery = 0
+    targetx = 0
+    targety = 0
+    restype = 0
+    sourceslot = 0
+    casterlvl = 0
+    sectype = 0
+    insert_point = 0
+
 
     LPM ADD_CRE_EFFECT
 END
 
 DEFINE_PATCH_MACRO ADD_CRE_MELEE_EFFECT 
 BEGIN
-    LPF ADD_CRE_PASSIVE INT_VAR op = 248 STR_VAR res = melee_effect END
+    LPF ADD_CRE_PASSIVE INT_VAR op = 248 STR_VAR res = "%melee_effect%" END
 END
 
 DEFINE_PATCH_MACRO ADD_CRE_RANGED_EFFECT 
 BEGIN
-    LPF ADD_CRE_PASSIVE INT_VAR op = 249 STR_VAR res = ranged_effect END
+    LPF ADD_CRE_PASSIVE INT_VAR op = 249 STR_VAR res = "%ranged_effect%" END
 END
 
 DEFINE_PATCH_MACRO ADD_CRE_MOVEMENT_BOOST

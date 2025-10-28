@@ -40,7 +40,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             LPF ALTER_HEADER_EX STR_VAR match_type_ex=~(o_type = 1 OR o_type = 2)~ to_hit_ex = ~(THIS + 1)~ speed_ex = ~((speed > 1) ? (THIS - 2) : 0)~ END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1;op=341,p2=1,res=ZSTWDPB%ench%,spec=1;op=341,p2=1,res=ZSTWDPT%ench%,spec=2~ END
 
-            LPF ITM_desc RET desc_index = result END
+            LPF ITM_ID_DESC RET desc_index = result END
             LPF ITM_GENERAL_DESC RET udesc_index = result END
             PATCH_IF desc_index > "-1" BEGIN
                 LPF WPN_SPEED RET actual_speed = result END

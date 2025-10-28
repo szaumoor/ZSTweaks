@@ -863,7 +863,7 @@ This copies the design of SoD's special throwing dagger such that you can use va
 This component doesn't make the weapon available. Mods such as Unfinished Business, which gives it to Artemis Entreri in Bodhi's Lair can give you access to this. So essentially this component makes the dagger a bit of a SoA powerhouse sort of similar to Blackrazor. Here's the changes:
 
 - BAM changed so its gem on the hilt looks green, like Artemis Entreri's dagger.
-- Description changed to something different from Soultaker dagger. Check "unique_descriptions.md"
+- Description changed to something different from Soultaker dagger.
 - Gleams red
 - Changes of draining levels is now 18%, and it drains 2 levels. Recover 1d6 HP plus 10% of your max health upon draining levels.
 - 1 HP drained per hit; 3 HP when wielded by vampires
@@ -911,7 +911,7 @@ Additionally, since the dispel-on-hit thing is pretty cheesy, a saving throw vs.
 
 **Component 1300:** Make Silver Sword significantly more unique and add a more interesting (IMO) description
 
-This component improves the description to something a bit more interesting than "hey, this sword is evil and can cut heads off." See the file "unique_descriptions.md" for details. Additionally:
+This component improves the description to something a bit more interesting than "hey, this sword is evil and can cut heads off". Additionally:
 
 - The faulty probabilities for vorpal hit are fixed (true 25%, not 26%)
 - The sword acts in **every way** as a +5 two-handed sword **against mind flayers only**, that is, +5 THAC0, +5 enchantment, 1d10+5 damage
@@ -1167,7 +1167,7 @@ This component takes the theme of speed and accuracy more seriously, and hence, 
 - Universal +1 saving throw bonus
 - +1/2 APR
 
-Optionally, it also adds a description worth-reading (YMMV). I really dislike items with unique names, but with no interesting description or brief backstory. It seems lazy and uninteresting to add a named item without any background. Additionally, it adds a minor power to it, based on this brief backstory. See unique_descriptions.md for details.
+Optionally, it also adds a description worth-reading (YMMV). I really dislike items with unique names, but with no interesting description or brief backstory. It seems lazy and uninteresting to add a named item without any background. Additionally, it adds a minor power to it, based on this brief backstory.
 
 **Component 1582:** Make Vexation +2 more powerful
 
@@ -1180,7 +1180,7 @@ Note that this will make the encounter relatively more difficult, obviously. Pro
 
 **Component 1583:** Make Kachiko's Wakizashi more unique and add an optional upgrade path for Cespenar
 
-I really hate unique items with nothing in the description worth reading, so I tried to add something a bit more worth reading and hopefully not too cringy (see unique_descriptions.md for details). For reasons described in the description, it is now called Kachiko's Whisper. The following additions are included:
+I really hate unique items with nothing in the description worth reading, so I tried to add something a bit more worth reading and hopefully not too cringy. For reasons described in the description, it is now called Kachiko's Whisper. The following additions are included:
 
 - Wisdom penalty (which can kill, technically, and I guess remove spell slots from priests) lasts for 6 rounds now as opposed to 2 rounds.
 - Shadowdancers receive: +10% Hiding skills and +1 THAC0

@@ -89,7 +89,7 @@ ACTION_IF zst_446_fball_buff BEGIN
 
     COPY_EXISTING ~SPWI922.SPL~ ~override~
         LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7523) END
-        LPF ALTER_SPELL INT_VAR match_opcode = 12 parameter1 = 20 dicesize = 9 parameter1 = 20 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 20 dicesize = 9 parameter1 = 20 END
     BUT_ONLY IF_EXISTS
 
 END

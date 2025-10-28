@@ -11,7 +11,7 @@ ACTION_IF zst_group_2100_sunsoul BEGIN
   INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2100.tph~
 END
 
-ACTION_IF zst_group_360_shaman BEGIN
+ACTION_IF zst_group_360_shaman_abilities BEGIN
   INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_360.tph~
 END
 

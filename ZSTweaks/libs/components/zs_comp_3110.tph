@@ -5,7 +5,7 @@ END ELSE BEGIN
 END
 
 COPY ~%MOD_FOLDER%/creatures/yuanti~ ~override~
-OUTER_SET melee_effect = "zsipyua2"
+OUTER_SPRINT melee_effect "zsipyua2"
 OUTER_SET movement_boost = 3
 
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~

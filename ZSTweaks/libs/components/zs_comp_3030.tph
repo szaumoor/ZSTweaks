@@ -6,14 +6,14 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  ACTION_IF zs_3030_devas BEGIN
+  ACTION_IF zst_3030_devas BEGIN
 
     COPY_EXISTING ~DEVA.ITM~ ~override~
       LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=16;op=189,p2=1~ END
 
   END
 
-  ACTION_IF zs_3030_planetars BEGIN
+  ACTION_IF zst_3030_planetars BEGIN
 
     COPY ~%MOD_FOLDER%/creatures/planetar~ ~override~
     COPY_EXISTING ~PLANETAR.ITM~ ~override~

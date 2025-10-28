@@ -161,7 +161,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                         ~GENTH02.CRE~  ~override~
                         ~GENTMG01.CRE~ ~override~
                         ~SHTH05.CRE~   ~override~
-                LPF DELETE_EFFECT INT_VAR silent = 1 match_pcode = 233 match_parameter1 = 1 match_parameter2 = 96 END
+                LPF DELETE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 1 match_parameter2 = 96 END
                 LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 96 timing=9 target=1 END
 
             PRINT "[[FIX]]: Thieves using short swords without being proficient in them. Adding one pip to proficiency in short swords for them"
@@ -178,7 +178,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                         ~SARTHF01.CRE~ ~override~
                         ~IRETHF04.CRE~ ~override~
                         ~ISHTHF03.CRE~ ~override~
-                LPF DELETE_EFFECT INT_VAR silent = 1 match_pcode = 233 match_parameter1 = 1 match_parameter2 = 91 END
+                LPF DELETE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 1 match_parameter2 = 91 END
                 LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing=9 target=1 END
 
             PRINT "[[FIX]]: Thieves using a long swords without being proficient in them. Adding one pip to proficiency in long swords"
@@ -199,7 +199,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                         ~STGUARD2.CRE~ ~override~
                         ~STGUARD3.CRE~ ~override~
                         ~THIEF4.CRE~    ~override~
-                LPF DELETE_EFFECT INT_VAR silent = 1 match_pcode = 233 match_parameter1 = 1 match_parameter2 = 90 END
+                LPF DELETE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 1 match_parameter2 = 90 END
                 LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing=9 target=1 END
 
 

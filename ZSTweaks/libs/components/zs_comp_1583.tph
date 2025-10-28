@@ -63,7 +63,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = wisdom_drained END
                 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_probability1=14 parameter1=RESOLVE_STR_REF(@7167) END
                 PATCH_IF general_tweaks_installed OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" BEGIN
-                    LPF PROBABILITY_BONUS INT_VAR ench = 5 RET bonus = result END
+                    SET ench = 5
+                    LPM PROBABILITY_BONUS
                     PATCH_IF NOT zst_1450_allow_bards BEGIN
                         LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) STR_VAR class=~THIEF~ spell=~ZSTWW5~ END
                     END ELSE BEGIN

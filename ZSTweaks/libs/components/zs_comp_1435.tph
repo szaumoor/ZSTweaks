@@ -29,7 +29,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         END
 
         LPF ALTER_HEADER INT_VAR match_type = 2 speed = 0 range=30 END
-        LPF ITM_desc RET desc_index = result END
+        LPF ITM_ID_DESC RET desc_index = result END
         LPF ITM_GENERAL_DESC RET udesc_index = result END
 
         PATCH_IF desc_index > "-1" BEGIN

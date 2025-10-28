@@ -3,17 +3,17 @@ SUPPORT "https://www.gibberlings3.net/profile/12720-royalprotector/, IE Discord 
 VERSION "1.6.1"
 README ~%MOD_FOLDER%/component_readme.md~
 AUTO_EVAL_STRINGS
-/*
+
 MODDER
 	setup_tra none
-	area_variables warn
+	area_variables none
 	missing_extern warn
 	missing_resref warn
 	ict2_actions warn
 	missing_eval none
 	overwriting_file none
 	fun_args warn
-*/
+
 ALWAYS
 	INCLUDE ~%MOD_FOLDER%/libs/preambles/zs_always.tph~
 END

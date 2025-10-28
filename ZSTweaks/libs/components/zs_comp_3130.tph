@@ -7,7 +7,7 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/creatures/minotaurs~ ~override~
-  OUTER_SET melee_effect = "zstmino0"
+  OUTER_SPRINT melee_effect "zstmino0"
   OUTER_SET movement_boost = 5
 
   COPY_EXISTING_REGEXP ~^.*\.cre$~ ~override~

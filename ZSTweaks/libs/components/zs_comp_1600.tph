@@ -23,7 +23,7 @@ WITH_SCOPE BEGIN
 
         EXTEND_BOTTOM ~ar0602.baf~ ~%MOD_FOLDER%/baf/omnistab/ar0602.baf~ // irenicus dungeon
         EXTEND_BOTTOM ~ar4000.baf~ ~%MOD_FOLDER%/baf/omnistab/ar4000.baf~ // tob initial area
-        EXTEND_BOTTOM ~ar8000.baf~ ~%MOD_FOLDER%/baf/omnistab/ar8000.baf~ // black pits 2 initial area
+        EXTEND_BOTTOM ~ar8000.baf~ ~%MOD_FOLDER%/baf/omnistab/oh8000.baf~ // black pits 2 initial area
 
     END
 

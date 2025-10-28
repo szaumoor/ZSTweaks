@@ -141,11 +141,16 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                  AND NOT "%SOURCE_RES%" STR_EQ "a7-sw01" // celestial fire (wares of the planes)
             BEGIN
 
-                SPRINT code "L" // plain longsword
                 SET pro_ench_bonus = base_ls_staff+bonus
-                PATCH_IF LONG_AT(0x08) = zs_estoc_general_string_index BEGIN
-                    SET pro_ench_bonus = pro_ench_bonus + 4
-                    SPRINT code "E" // estoc
+                SPRINT code "L" // plain longsword
+
+                PATCH_IF has_zs_item_pack_estocs BEGIN
+
+                    PATCH_IF LONG_AT(0x08) = zs_estoc_general_string_index BEGIN
+                        SET pro_ench_bonus = pro_ench_bonus + 4
+                        SPRINT code "E" // estoc
+                    END
+
                 END
 
                 PATCH_IF NOT zst_1450_allow_bards BEGIN
@@ -202,9 +207,13 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
         END ELSE PATCH_IF zst_1450_allow_sswords AND cat=19 AND prof=91 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
 
-            SET pro_ench_bonus = base_ss_club+bonus
-            PATCH_IF LONG_AT(0x08) = zs_rapier_general_string_index BEGIN
-                SET pro_ench_bonus = pro_ench_bonus - 5
+            PATCH_IF has_zs_item_pack_rapiers BEGIN
+
+                SET pro_ench_bonus = base_ss_club+bonus
+                PATCH_IF LONG_AT(0x08) = zs_rapier_general_string_index BEGIN
+                    SET pro_ench_bonus = pro_ench_bonus - 5
+                END
+            
             END
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN

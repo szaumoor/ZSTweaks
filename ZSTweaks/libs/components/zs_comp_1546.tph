@@ -74,7 +74,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
                     LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
                     SPRINT hyphens @99991
                     SPRINT ac_string @99992
-                    LPF ITM_desc RET description_index = result END
+                    LPF ITM_ID_DESC RET description_index = result END
                     PATCH_IF description_index > "-1" BEGIN
                         READ_STRREF 0x54 desc
                         INNER_PATCH_SAVE desc ~%desc%~ BEGIN

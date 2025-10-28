@@ -39,7 +39,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ADD_ON_HIT_EFF STR_VAR effects =~op=12,dsize=4,dnum=1,p2=%op12_fire%,spec=1024~ END
 
         PATCH_IF zst_1450_allow_lswords AND (general_tweaks_installed OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1450") BEGIN
-            LPF PROBABILITY_BONUS INT_VAR ench = 3 RET bonus = result END
+            SET ench = 3
+            LPM PROBABILITY_BONUS
             LPF ALTER_EFFECT INT_VAR match_opcode=326 probability1=(bonus+base_ls_staff) STR_VAR match_resource="ZSTWL1" resource="ZSTWL3" END
         END
 

@@ -16,7 +16,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 rd=2 STR_VAR res=~ZSTWBL04~ effects = ~op=177,p1=%race_spectral_undead%;op=177,p1=%race_specter%;op=177,p1=%race_wraith%;op=177,p1=%race_shadow%;op=177,p1=5,p1=%class_spectral_troll%~ END
 
     PATCH_IF zst_1450_allow_clubs AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN
-      LPF PROBABILITY_BONUS INT_VAR ench=3 RET bonus=result END
+      SET ench = 3
+      LPM PROBABILITY_BONUS
       LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 probability1=(bonus+base_ss_club) STR_VAR match_resource=~ZSTWQ2~ resource=~ZSTWQ3~ END
     END
 

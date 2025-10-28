@@ -55,7 +55,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
   COPY_EXISTING ~aemerhob.cre~ ~override~ // hobgoblin, no alignment for some reason, LE now
                 ~gguard01.cre~ ~override~ // guard harassing evilly a beggar
                 ~golbra01.cre~ ~override~ // brain golem, they're always LE like mindflayers, CG in EE (??)
-                ~udgol.cre~    ~override~ // brain golem, they're always LE like mindflayers, Neutral in EE
+                ~udgolem.cre~    ~override~ // brain golem, they're always LE like mindflayers, Neutral in EE
                 ~hgwra01.cre~  ~override~ // Gorion Wraith, shouldn't be Lawful Good
                 ~maeguy02.cre~ ~override~ // maevar henchman, probably shouldnt be CN, instead LE
                 ~noblem1.cre~  ~override~ // evil nobleman asshole

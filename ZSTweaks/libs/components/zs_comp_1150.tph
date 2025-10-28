@@ -75,7 +75,7 @@ ACTION_IF zst_1150_dice_spears BEGIN
                 LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 6 match_dicenumber = 1 dicesize = 8 silent = 1 END
                 PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SPER01" BEGIN
                     LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
-                    LPF ITM_desc RET description_index = result END
+                    LPF ITM_ID_DESC RET description_index = result END
                     PATCH_IF description_index > "-1" BEGIN
                         READ_STRREF 0x54 desc
                         SPRINT str @99999
@@ -100,7 +100,7 @@ ACTION_IF zst_1150_dice_warhammers BEGIN
             REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]4~ ~\11d5~
         END
         SAY_EVALUATED 0x54 ~%desc%~
-        LPF ITM_desc RET changed_description_index = result END
+        LPF ITM_ID_DESC RET changed_description_index = result END
 
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         LPF ITM_CAT RET wpn_cat = result END
@@ -111,7 +111,7 @@ ACTION_IF zst_1150_dice_warhammers BEGIN
             LPF ALTER_HEADER INT_VAR match_type = 2 match_dicesize = 4 match_dicenumber = 1 dicesize = 5 silent = 1 END
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "HAMM01" BEGIN
                 LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
-                LPF ITM_desc RET description_index = result END
+                LPF ITM_ID_DESC RET description_index = result END
                 PATCH_IF description_index > "-1" BEGIN
                     READ_STRREF 0x54 desc
                     SPRINT str @99999
@@ -172,7 +172,7 @@ ACTION_IF zst_1150_dice_wakininja BEGIN
 
                 PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
                     LPF ALTER_ITEM INT_VAR general_desc = changed_description_index_ninjato END
-                    LPF ITM_desc RET description_index = result END
+                    LPF ITM_ID_DESC RET description_index = result END
                     PATCH_IF description_index > "-1" BEGIN
                         READ_STRREF 0x54 desc
                         SPRINT str_sf @99998
@@ -192,7 +192,7 @@ ACTION_IF zst_1150_dice_wakininja BEGIN
 
                 PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
                     LPF ALTER_ITEM INT_VAR general_desc = changed_description_index_waki END
-                    LPF ITM_desc RET description_index = result END
+                    LPF ITM_ID_DESC RET description_index = result END
                     PATCH_IF description_index > "-1" BEGIN
                         READ_STRREF 0x54 desc
                         SPRINT str @99999
@@ -230,7 +230,7 @@ ACTION_IF zst_1150_dice_wakislashing BEGIN
 
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
                 LPF ALTER_ITEM INT_VAR general_desc = changed_description_index_waki END
-                LPF ITM_desc RET description_index = result END
+                LPF ITM_ID_DESC RET description_index = result END
                 PATCH_IF description_index > "-1" BEGIN
                     READ_STRREF 0x54 desc
                     SPRINT str @99999 // damage
@@ -269,7 +269,7 @@ ACTION_IF zst_1150_dice_katanas BEGIN
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=10 match_dicenumber=1 dicesize=5 dicenumber=2 END
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H43" BEGIN
                 LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
-                LPF ITM_desc RET description_index = result END
+                LPF ITM_ID_DESC RET description_index = result END
                 PATCH_IF description_index > "-1" BEGIN
                     READ_STRREF 0x54 desc
                     SPRINT str @99999
@@ -306,7 +306,7 @@ ACTION_IF zst_1150_dice_bastard_swords BEGIN
 
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H01" BEGIN
                 LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
-                LPF ITM_desc RET description_index = result END
+                LPF ITM_ID_DESC RET description_index = result END
                 PATCH_IF description_index > "-1" BEGIN
                     READ_STRREF 0x54 desc
                     SPRINT str @99999
@@ -344,7 +344,7 @@ ACTION_IF zst_1150_dice_twohanded_swords BEGIN
 
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW2H01" BEGIN
                 LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
-                LPF ITM_desc RET description_index = result END
+                LPF ITM_ID_DESC RET description_index = result END
                 PATCH_IF description_index > "-1" BEGIN
                     READ_STRREF 0x54 desc
                     SPRINT str @99999

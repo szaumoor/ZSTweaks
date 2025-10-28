@@ -153,7 +153,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     // completely immune to all magical effects
     FOR ( spell_level = 1; spell_level <=9; ++spell_level ) BEGIN
-      LPF ADD_CRE_PASSIVE INT_VAR op = 102 parameter2 = spell_level END
+      LPF ADD_CRE_PASSIVE INT_VAR op = 102 p2 = spell_level END
     END
 
 END

@@ -20,7 +20,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p2=2;op=12,p1=4,p2=%op12_magic%~ END
 
             PATCH_IF finesse_installed BEGIN // update +4 enchantment
-                LPF PROBABILITY_BONUS INT_VAR ench = 4 RET bonus = result END
+                SET ench = 4
+                LPM PROBABILITY_BONUS
                 LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 326 probability1=(bonus+base_sci_ka) STR_VAR match_resource = ~ZSTWK3~ resource = ~ZSTWK4~  END
             END
 
@@ -45,7 +46,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p2=2;op=12,p1=5,p2=%op12_magic%~ END
 
             PATCH_IF finesse_installed BEGIN // update +5 enchantment
-                LPF PROBABILITY_BONUS INT_VAR ench = 5 RET bonus = result END
+                SET ench = 5
+                LPM PROBABILITY_BONUS
                 LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 326 probability1=(bonus+base_sci_ka) STR_VAR match_resource = ~ZSTWK4~ resource = ~ZSTWK5~ END
             END
 
