@@ -692,8 +692,7 @@ STATISTICS:
 
 Combat abilities:
 – Extra 1/2 attack per round
-
-THAC0 and Damage: +2
+– THAC0 and Damage: +2
 
 Weight: 1~
 
@@ -1540,3 +1539,19 @@ Charge abilities:
 – Melf's Minute Meteors once per day cast as a level 20 wizard, once per day
 
 Weight: 3~
+
+@60040 = ~Although monks traditionally shun armor, these bracers of Grand Master Tzu-Zan are highly sought after by the practitioners of weaponless combat.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Hit Points: +15
+– Protects against critical hits
+
+Combat abilities:
+– THAC0: +1
+– Damage: +1
+– On a critical miss, the monk gains 1 extra attack per round, critical misses are no longer possible, and the next hit will become a critical hit. This lasts for 3 rounds and may not happen again during these 3 rounds.
+
+Weight: 1~

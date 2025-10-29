@@ -764,6 +764,17 @@ I don't like wearable items that *only* give charged abilities, generally. The f
 - Creates 20 Melf's Minute Meteors once per day, regardless of wizard level
 - Additionally, since I think it's thematic, it gives Sun Soul monks and Priests of Lathander a 20% chance of inflicting extra 2d4 fire damage with all their melee attacks.
 
+**Component 1351:** Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing
+
+These gauntlets are not a very interesting reward for monks. Gauntlets of Crushing are a better option. You only miss out on them, I believe, if you start a ToB playthrough directly without importing. And who does that?
+
+- Armor Class: +1 (vanilla)
+- Hit Points: +15 (vanilla)
+- Protects against critical hits
+- THAC0: +1 (new)
+- Damage: +1 (new)
+- On a critical miss, the monk gains 1 extra attack per round, critical misses are no longer possible, and the next hit will become a critical hit. This lasts for 3 rounds and may not happen again during these 3 rounds. (new)
+
 </details>
 
 ---

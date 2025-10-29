@@ -97,4 +97,5 @@
 - Overhaul golem creatures
 - Make Cowl of the Stars more generally useful (Rasaad's Quest)
 - Make rangers and rogues have a THAC0 and Damage bonus if attacking with ranged weapons from invisibility
-- Make Chromatic Orb more interesting by providing party-only chromatic varieties (TODO)
+- Make Chromatic Orb more interesting by providing party-only chromatic varieties
+- Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing
