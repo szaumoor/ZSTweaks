@@ -297,19 +297,13 @@ This allows player-created characters as well as all joinable characters to back
 
 <summary><b>Armor/Gear/Misc Items Tweaks</b></summary>
 
-This section includes specific armor and gear tweaks (as well as items that don't fall squarely on any category, like the Rod of Might), and it updates descriptions accordingly in a destructive way (i.e. if previous mods updated the description, it will be overwritten without text surgery).
-
 **Component 1170:** Make Shadow Dragon Scale behave less like a Black Dragon Scale
 
-It seems like a mistake to me that this armor, made from a creature from the plane of Shadow that doesn't even use acid as a breath weapon, grants you acid resistance. Instead of acid resistance, it offers:
-
-- Negative Plane Protection
-- Non-Detection
-- Saves vs. Illusion and Necromancy spells: +4 bonus
+This is clearly a mistake since Shadow Dragons don't use acid as breath weapon. Instead, it offers Negative Plane Protection, Non-Detection, and +4 bonus to saves vs. Illusion and Necromancy spells.
 
 **Component 1171:** Make Silver Dragon Scale also grant 40% cold resistance as you would expect
 
-Silver Dragons wield and are resistant to cold, the same as White Dragons. It should grant cold resistance, much like the Fire Dragon Plate does for fire.
+Silver Dragons wield and are resistant to cold so it should grant cold resistance, much like the Fire Dragon Plate does for fire.
 
 **Component 1172:** Make Rings of Elemental Control more likely to charm the elementals and add missing resistances
 
@@ -317,7 +311,7 @@ This improves the power of the charm by making the save against it -2 instead of
 
 **Component 1173:** Make Ring of Gaxx's improved haste last 2 full rounds and not 10 seconds
 
-It's pretty strange to limit it to 10 seconds. It's 2 full rounds now.
+Self-explanatory.
 
 **Component 1174:** Make Heartwood Ring add 1 spell slot per level, as well as 1 HP/round regeneration
 
@@ -325,21 +319,15 @@ This makes this ring significantly more useful for an Archdruid, adding 1 extra 
 
 **Component 1180:** Make Ring of Danger Sense defensively better and protect against backstabs
 
-This component grants the ring:
-
 - +1 bonus to Armor Class
 - +1 bonus to saves vs. Breath
-- Immunity to backstabs and sneak attacks
-
-Self-explanatory and ever useful, for any class. Anti-chunking for mages.
+- Immunity to backstabs
 
 **Component 1316:** Make the Mercykiller Ring more useful for rogues that like killing
 
-This makes the ring also add a +1 damage bonus, +1 THAC0 bonus, and +5% critical hit chances with all weapons, along with the other bonuses, but only to pure, single-classed Thieves (for balance and to encourage commitment). The ring can also be equipped by rangers, but only the vanilla benefits will apply.
+Adds a +1 damage and THAC0 bonus, and +5% critical hit chances, along with the other bonuses, but only to single-classed Thieves (for balance and to encourage commitment). The ring can also be equipped by rangers.
 
 **Component 1317:** Make the basic robes and Archmage robes slightly more remarkable
-
-I do not like that most robes except the most powerful ones are largely unremarkable. This is the list of changes:
 
 - **Knave's Robe**
   - +2 Armor Class against Slashing and Piercing (was +1 against Piercing)
@@ -356,7 +344,7 @@ I do not like that most robes except the most powerful ones are largely unremark
   - Save vs. Petrification +1 (vanilla) and Save vs. Spell +1 (new)
   - +20% Magic damage resistance
   - +10% Elemental damage resistance
-- **Elemental resistance robes**: resistance increased to 40%, adds 7% damage bonus in the relevant element and +1 save vs. evocation spells. This also increases the damage resistance of Robe of Red Flames to 50%, and adds the evocation bonus, for consistency (it's a straight upgrade from the Robe of Fire Resistance).
+- **Elemental resistance robes**: resistance increases 20->40%, adds 7% damage bonus in the relevant element and +1 save vs. evocation spells. This also increases the damage resistance of Robe of Red Flames to 50%, and adds the evocation bonus, for consistency (it's a straight upgrade from the Robe of Fire Resistance).
 - **Archmage Robes**
   - Armor Class set to 5 (vanilla), and it also improves it by 1 additively (new)
   - Magic resistance increases by 10%, not 5%
@@ -378,16 +366,11 @@ This improves the component slightly such that the Domination power is as powerf
 
 **Component 1610:** Make Robe of Invocation also improve all elemental damage by 5% and add a +2 bonus against Invocation
 
-This makes this robe improve Invocation wizards in more ways, similarly to my tweaks to elemental robes, but with milder damage bonuses, since it's a more universal bonus:
-
-- 5% elemental damage bonus
-- +2 save vs. Invocation
+This makes this robe improve Invocation wizards in more ways, similarly to my tweaks to elemental robes, but with milder damage bonuses, since it's a more universal bonus: 5% elemental damage bonus and +2 save vs. Invocation.
 
 **Component 1620:** Make Vicross' Thayan Circlet more interesting for Wild Mages
 
-This makes the circlet a bit more valuable by making it more effective in controlling Wild Surges. It's a little underwhelming to just have the same bonus as the robe of Hayes.
-
-Additionally, in the same theme of chaos related to wild magic, while wearing the circlet, they get a 15% bonus to a random non-physical type of damage, except poison. So, for example, if you happen to be in a Magic Damage bonus round, a Horrid Wilting that deals 100 damage would deal 115 damage. If not, too bad, try again.
+This makes the circlet a bit more valuable by making it more effective in controlling Wild Surges. Additionally, while wearing the circlet, they get a 15% bonus to a random non-physical type of damage, except poison. For example, if you happen to be in a Magic Damage bonus round, a Horrid Wilting that deals 100 damage would deal 115 damage.
 
 To promote specialization, this also restricts the circlet to Wild Mages.
 
@@ -418,11 +401,11 @@ This improves this item in the following ways:
 
 **Component 1654:** Make Star-Strewn Boots slightly better and favor Inquisitors too (SoD)
 
-This makes these boots improve Magic Resistance by 10% for everyone (from 7%) and Inquisitors and Wizard Slayers by 18%. Inquisitors are added because they fit fairly well in the anti-wizard theme.
+This makes these boots improve Magic Resistance by 10% for everyone (from 7%) and Inquisitors and Wizard Slayers by 18%.
 
 **Component 1655:** Make Crown of Lies more consequential when used
 
--30 lore is generally not very important since it's not used for any game interaction, just for identifying objects, which is ordinarily a mundane and inconsequential task. Therefore now it reduces lore by -20 BUT it also decreases Wisdom by 2 (which would affect Cleric/Mages more), Detect Illusions by 10, and inflicts -2 saving throw penalty vs. Illusion magic. This is compensated slightly such that it provides 2 spell slots for level 4 too (3 and 4).
+Now it reduces lore by -20 (from 30) BUT it also decreases Wisdom by 2 (which would affect Cleric/Mages more), Detect Illusions by 10, and inflicts -2 saving throw penalty vs. Illusion magic. This is compensated by providing 2 spell slots for level 4 too.
 
 **Component 1656:** Make the Helmet of Dumathoin very slightly more powerful
 
@@ -565,11 +548,11 @@ To me, the duration of the effects is too short. Plus, the "unknown" damage to t
 
 **Component 1190:** Make Rod of Lordly Might usable by any class and more powerful
 
-The rod is conceptually quite interesting but generally underperforming. This component changes the name to "Rod of Royal Might" (even the descriptions mentions royalty):
+The rod is conceptually quite interesting but generally underperforming. This component changes the names to `<item_type> of Royal Might` and all become +3 at least:
 
-- **Mace +2** is renamed to Mace of Royal Might +3, becomes a +3 weapon, and the save against panic is now at +2, not +5, and the panic is now instead a 2-round Slow effect.
-- **Flaming Long Sword +1** is renamed to Flaming Sword of Royal Might +3, becomes a +3 weapon, causes 1d4 fire damage per hit, and since it's "hypnotic" it has a 50% chance of causing Stun, and 50% change of causing asleep for 1 round. The save against it is now +2 instead of +5. Additionally, it makes it look like an actual flaming sword when held.
-- **Spear +3** is renamed to Spear of Royal Might +3, and it is now reworked to have a 10% chance to cause an "Arcane Blast", that causes 2d4+2 magical damage, and it now also causes bleeding if the target fails a Save vs. Death, causing 10 piercing damage over 1 round if the save is failed.
+- **Mace +2**,  save vs. effect is made at +2, not +5, and the panic is now instead a 2-round Slow effect.
+- **Flaming Long Sword +1**, causes 1d4 fire damage per hit, and since it's "hypnotic" it has a 50% chance of causing Stun, and 50% change of causing asleep for 1 round. The save against it is now +2 instead of +5. Additionally, it makes it look like an actual flaming sword when held.
+- **Spear +3** has a 10% chance to cause an "Arcane Blast", that deals 2d4+2 magical damage, and it now also causes bleeding if the target fails a Save vs. Death, causing 10 piercing damage over 1 round.
 
 It will also now sport new icons, which are a massive upgrade from the original ones. All made by zenblack.
 
@@ -1277,17 +1260,21 @@ This makes the club slightly more powerful (+3 in all respects), more shamanic, 
 
 **Component 1323:** Make Azuredge act properly as a +3 weapon and make the disruption effect more balanced
 
-The original hits in terms of extra damage and THAC0 like an unenchanted weapon. This component makes the weapon match the basic stats of a +3 weapon. Additionally, it fixes the usual misleading bits in the description for extra damage, and the extra damage to undead was adjusted from 1d6+4 to 1d6+3.
+This component rebalances Azuredge to be more powerful as a baseline weapon but less of a guaranteed "I win" button against powerful undead.
 
-Finally, and more importantly, it makes the axe balanced, since anyone can Whirlwind a lich to death with this way too easily. Following a close-ish PnP version, the weapon has different degrees of effectiveness depending on the target (which now also includes fiends, as per PnP). Any creature that applies for the axe's disruption effect must save vs. Death at -2, except:
+- The axe is now fully a +3 weapon
+- Bonus damage against undead is adjusted to 1d6+3.
+- Slay effect is rebalanced to be more in line with PnP rules, preventing cheese tactics like destroying liches with Whirlwind Attack. The effect now also works on fiends.
 
-- Fiends: 95% chance of resisting it without having to save against it.
-- Liches and demiliches: 80% chance
-- Vampires and vampyres: 50% chance
-- Spectres, ghosts, and other spectral creatures: 35% chance
-- Mummies and revenants: 20% chance
-- Wraiths: 5% chance
-- Other lesser undead creatures, such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time.
+Slayable creatures must make a save vs. Death at -2. However, some creatures have a chance to resist the effect before a save is rolled:
+
+- **95% Resistance**: Fiends
+- **80% Resistance**: Liches, Demiliches
+- **50% Resistance**: Vampires
+- **35% Resistance**: Spectres, Ghosts
+- **20% Resistance**: Mummies, Revenants
+- **5% Resistance**: Wraiths
+- **No resistance**: Lesser undead (Skeletons, Ghouls, etc.)
 
 **Component 1324:** Make Wyvern's Tail +2 cause poison damage on hit and have a chance of poisoning
 
@@ -1752,21 +1739,15 @@ Caveats:
 
 **Component 100:** Make Glyph of Warding do damage on a failed save and extend damage up to level 20, and not 18
 
-Generally, I do not believe in damaging spells that can be avoided completely with Saving Throws, at least in this game, because, for the most part, they constitute, sooner or later, a waste of a spell slot.
-
-Therefore, it will always cause half damage. Additionally, it extends the headers up to level 20, such that the damage grows up to 20d4 instead of 18d4.
+Most damaging spells that can be completely avoided are a waste of a spell slot. Thus, it will always cause half damage. Additionally, it extends the headers up to level 20, such that the damage grows up to 20d4 instead of 18d4.
 
 **Component 101:** Make Flame Blade be more effective vs. undead, and last for as long as it does in IWDEE
 
-This is essentially how it works in IWDEE, except the +2 enchantment bonus, which is an addition to make it an effective tool against undead. This also fixes the inaccurate description in IWDEE (it's +4 fire damage, not +2). Note that this will mark the weapon as magical due to technical reasons, which will make the weapon not effective against something that is protected against magical weapons but not normal ones.
-
-Finally, it also makes the spell scale duration-wise like in IWDEE. Now it follows the usual convention.
+This makes the sword behave as +2 vs. undead. For technical reasons, this will make the weapon no longer considered non-magical. Finally, it doubles the duration of the spell.
 
 **Component 110:** Make Bless and Curse last longer and increase the casting speed from 6 to 3
 
-I don't think 36 seconds with a very long casting makes this spell desirable in most situations. Therefore, now the duration is 36 seconds plus 1 round per 2 levels up to level 19, and the casting speed is increased. Curse will also be affected if the spell is present in the game, such as with SCS and IWDification. For obvious reasons, if you're planning to use IWDEE spells, install after any mod that inserts them.
-
-Finally, it fixes in passing a bug in Curse, which is that instead of decreasing the morale of enemies by 1, it increases it by 10 (the curse of overconfidence?). This will be addressed eventually by the fixpack, if installed.
+It's not worth it to cast it due to the short duration and the long casting. To improve this, both last 6 rounds plus one extra round every two rounds and faster casting speed.
 
 **Component 130:** Standardize Hold Person's saving throw penalties
 
@@ -1774,9 +1755,7 @@ This component equalizes the saving throw penalty in the cleric version of Hold 
 
 **Component 190:** Make Holy Power grant a THAC0 of 0 at max level and APR at the appropriate levels
 
-Makes this spell achieve a THAC0 of 0 at max level, since the description clearly states "fighter of the same level."
-
-And it further tightens the gap between the cleric and the fighter they want to emulate, getting 1/2 APR at levels 7 and 13. This APR does not stack with the one provided by Tenser's transformation (component 441). By default, non-fighter classes are the only ones getting the extra APR. This can be disabled in the configuration file.
+Makes this spell achieve a THAC0 of 0 at max level, since the description clearly states "fighter of the same level." It further tightens the gap between the cleric and the fighter they want to emulate, getting 1/2 APR at levels 7 and 13. This APR does not stack with the one provided by Tenser's transformation (component 441). By default, non-fighter classes are the only ones getting the extra APR. This can be disabled in the configuration file.
 
 **Component 230:** Make Cloak of Fear work as a temporary aura of fear, like in IWDEE
 
@@ -1786,23 +1765,17 @@ This uses the same filename and the same effect as in IWDEE, and attempts to pat
 
 **Component 240:** Make Goodberries generate six berries, each healing 2d4 instead of 1 point of damage and granting very slow regeneration for 8 hours
 
-Conceptually, I think it's a cool spell for druids and rangers, and it might be a teensy bit useful perhaps for the beginning of BGEE, but generally not useful after that. Now it will heal 2d4 immediately and add a regeneration of 1 HP per turn for 20 turns. Now it also generates six berries because I like the idea of having enough to give one to every party member.
-
-Additionally, it allows stacks of 12 berries.
+Conceptually, I think it's a cool spell for druids and rangers, but it's not too useful. Now it heals 2d4 immediately and add a regeneration of 1 HP per turn for 20 turns and generates 6 berries with each casting, and stacks of 12.
 
 **Component 250:** Make Earthquake more effective and disable annoyances
 
-Earthquake is generally very inconvenient to be cast at any point because of how it affects your whole party. This disables that behavior, and in case you don't enjoy feeling like casting it might give you a tiny seizure, it also disables the screen shake.
-
-It also makes it more effective, by making the saves and damage decay less harshly:
+Earthquake is generally very inconvenient to be cast at any point because of how it affects your whole party. This disables that behavior, and in case you don't enjoy feeling like casting it might give you a tiny seizure, it also disables the screen shake.It also makes it more effective, by making the saves and damage decay less harshly:
 
 1st round: vanilla, 6d6 damage, -6 save to avoid unconsciousness
 2nd round: 5d6 damage, -4 save
 3rd round: 4d6 damage, -2 save
 
-Additionally, it fixes the likely incorrect probability of 3% to summon a hostile elemental, so it is 2% instead.
-
-These three tweaks (party-friendly, no shake, effectiveness) are all optional, to honor the previous design that divided them in three components and can be disabled in the configuration file (all enabled by default).
+These three tweaks modifications are all optional.
 
 **Component 260:** Make Negative Plane Protection's duration increase somewhat as you level up
 
@@ -2237,17 +2210,16 @@ Also, pay attention to any mods that modify the behavior of summoned demons, esp
 
 **Component 3030:** Make celestial summons more powerful or balanced
 
-I was always annoyed at how immensely more powerful Planetars are compared to Devas. Haste is just too good not to use. Devas will be permanently hasted now, same as Planetars. Devas will also be able to cast their spells instantly.
+This component rebalances Deva and Planetar summons to make both more balanced choices.
 
-Planetars have a 25% of dealing a vorpal hit with a -4 save penalty, which is even more powerful than the silver sword. It's a common source of cheese. The following changes are in:
-
-- Weapon are considered +5 for the purposes of what they can hit, and THAC0 bonus (weapon damage unchanged)
-- Weapon no longer vorpal, and the chances of dispel lowered to 20%
-- Dispel on hit level is now 25 instead of 10. Level 10 is unlikely to ever be useful by the time you get to summon Planetars, and it matches their levels.
-- Deals on hit +2 cold and fire damage
-- Fiends and celestials take 4 divine (irresistible) damage on a successful hit
-- Inspired by NWN2, it also grants the Planetar partial invulnerability to magic as per the Minor Globe of Invulnerability spell. This effect is granted to all allies near the Planetar. That is, while the Planetar is around, your party is immune to spell levels from 1 to 3.
-- They can cast all their spells instantly as well
+- **Devas**: Are now permanently hasted and can cast their spells instantly, bringing them more in line with Planetars.
+- **Planetars**: Their powerful vorpal hit is removed to reduce cheese. Instead, their attacks are reworked:
+  - Considered a +5 weapon for THAC0 and what it can hit.
+  - 20% chance to cast Dispel Magic at level 25 on hit.
+  - Deals +2 cold and +2 fire damage on hit.
+  - Deals an additional 4 divine (irresistible) damage to fiends and celestials.
+  - They and all nearby allies are protected by a permanent invisible Minor Globe of Invulnerability (toggleable).
+  - They can also cast all their spells instantly.
 
 **Component 3050:** Make the Balor's vorpal attack not guaranteed to succeed but be affected by a saving throw too
 
@@ -2292,8 +2264,6 @@ This component makes the beetles generally more resistant to anything that doesn
 - 30% resistance to piercing damage, +1 Armor class bonus modifier.
 - No resistance to crushing damage.
 - Armor class vs. missile damage gets a -2 modifier.
-
-These resistances are fully customizable in the configuration file. (TODO)
 
 **Component 3110:** Make Yuan-ti slightly more powerful and inflict minor poison damage on melee attacks
 
