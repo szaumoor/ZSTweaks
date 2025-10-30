@@ -2125,32 +2125,23 @@ This should make this HLA more generally useful no matter the situation and perh
 
 **Component 2130:** Make some Thief HLAs more effective
 
-- Spike trap: Because it's rather strange that it does magic damage and makes you wonder why the thief would have the ability to do this, it now deals heavy piercing damage. (To be fair, the same could be said for the Time Stop trap). Rogue Rebalancing, SCS, and ToF also do this.
-- Exploding trap: I feel like 10d6, which is the same damage of the Fireball spell at max level, is very low for an HLA, so now it's 15d6. Also, the knockdown effect doesn't admit a saving throw anymore (undocumented in vanilla somehow!). Additionally, it's no longer considered a magical effect, uses a power of 6, and the saving throw was changed from Spell to Breath.
-- Assassination: This improves this power in the following ways:
-  - Lasts 7 seconds, so it can forgive an extra second of delay to take advantage of the backstab-every-hit effect
-  - It disables critical misses for the duration, and one round after
-  - It improves critical hit chances by +10% for the duration, and one round after
-  - For single-classed thieves, there are more benefits: +2 Damage, +2 THAC0, +1 APR, net +15% critical hit chance improvement
-  - Benefits other than backstabbing every hit will last one round longer (that is, 7 seconds + 1 round, aka 13 seconds). This won't stack if there's more than one casting of Assassination available.
-  - Overall, this will make the power less likely to be a waste by removing critical misses, increasing the chances of critical hits, which benefits the character even when facing a foe immune to backstabs, and rewarding specialization of Thieves to make them more combat ready.
-- Avoid Death: This improves this ability such that it prevents rogues from dying from Health damage for 3 seconds, and all saving throws succeed as well. This essentially makes the ability a "panic button" that you can select to survive most things during those three seconds that can be saved against, including physical damage. It's a small timeframe, but I think it's long enough to be useful, and short enough to not be overpowered. Other than those 3 seconds, the ability functions as normal. This additionally documents in the description the fact that it also protects against level drain, which is missing in the original description.
+- **Spike Trap**: Damage type is changed from magical to piercing for thematic consistency.
+- **Exploding Trap**: Damage is increased to 15d6 (from 10d6). The knockdown effect no longer allows a saving throw, and the save for half damage is changed from vs. Spell to vs. Breath.
+- **Assassination**:
+  - Duration of backstab every hit increased to 7 seconds. Other effects last for 2 more rounds.
+  - For the duration and one round after, grants immunity to critical misses and +10% critical hit chance.
+  - **Single-classed thieves** gain additional bonuses: +2 Damage, +2 THAC0, +1 APR, and a further +5% critical hit chance.
+- **Avoid Death**: Now acts as a "panic button." For 3 seconds after activation, the rogue cannot be killed by HP damage and automatically succeeds on all saving throws. The ability's original effects remain active for the full duration. The description is also updated to mention its protection against level drain.
 
 **Component 2150:** Make a selection of HLAs unable to be breached
 
-I do not find abilities that tap into "inner strength" or pure skill-based physical abilities a candidate for breach. If they're not dispellable, then they're not breachable either. What exactly is the spell supposedly dispelling?
-
-One concern could be that for balance purposes, some of these should be breachable, but I do not believe this is warranted in this case.
-
-The following abilities are no longer breachable:
+I do not find abilities that tap into "inner strength" or pure skill-based physical abilities a candidate for breach. If they're not dispellable, then they're not breachable either. What exactly is the spell supposedly dispelling? The following abilities are no longer breachable:
 
 - **Evasion and Improved Evasion:** You're concentrating on your epic dodging skills as a rogue, using your training and experience. Can you "breach" reflexes and experience? NO!
 - **Assassination:** You're using your training in hitting on weak points unexpectedly in a superior manner, exerting such an amazing ability, you always succeed, even if the target is not hit unexpectedly. Can you breach assassination skills? NO!
 - **Avoid Death:** You're using your training and nigh-preternatural roguish luck to escape terrible odds and stubbornly survive. Can you breach luck and survival skills? NO!
-- **Hardiness:** The warrior is concentrating on defending, bearing blows and the pain, to survive the punishment inflicted upon them, using their training and experience. Same as before.
-- **Resist Magic:** Same as Hardiness. This one I find harder to rationalize in an earthly way, but regardless, it's a warrior-borne ability, so I see no need to effectively consider it magical (aka breachable).
-
-Side note: things like Critical Strike and Power Attack are already not breachable. It's a nonsensical inconsistency. If it's not mentioned here but seems like my argument would apply, it means it's already not breachable.
+- **Hardiness:** The warrior is concentrating on defending, bearing blows and the pain, to survive the punishment inflicted upon them, using their training and experience.
+- **Resist Magic:** Same as Hardiness. This one I find harder to rationalize in an earthly way, but regardless, it's a warrior-borne ability, so I see no need to effectively consider it magical.
 
 **Component 2160:** Make Quivering Palm slightly more powerful at high levels
 
@@ -2160,36 +2151,23 @@ I really dislike things that scale poorly or not at all. This makes Quivering Pa
 
 Among many of the manifestations of the Baldur's Gate series' undying hatred for thieves and bards is that their THAC0 sucks. A LOT. Barely better than wizards. This improves the progression such that it can reach 6, like clerics. The progression per level follows this sequence: 20-19-19-18-17-17-16-15-15-14-13-13-12-11-11-10-9-9-8-7-7-6.
 
-This component will update the THAC0 of Bards, Thieves and Mage/Thieves in the game depending on their level, but only if it's not better already. This will ignore the few dual-classed NPCs in the game. Regardless, if they're joinable, their THAC0 will update appropriately upon leveling up.
+This component will update the THAC0 of Bards, Thieves and Mage/Thieves in the game depending on their level, but only if it's not better already.
 
 **Component 2171** Fix Swashbuckler's incorrect THAC0 when Thief THAC0 improvement is installed (only use if no Swashbuckler overhaul is installed!)
 
-Normally, vanilla Swashbuckler gets to a THAC0 level of 2, because every 5 levels, it gets a +1 bonus to both THAC0 and damage inflicted. This hinges on the assumption that the maximum THAC0 attainable is 10. Changing the maximum THAC0 improvement to 6 means they would achieve, inappropriately, -2 **base** THAC0. This component addresses this inconsistency.
-
-Therefore, at levels 35 and 40, the swashbuckler will not get THAC0 bonuses, only the damage bonus, which should allow them to reach a THAC0 of 0 while still retaining the remaining damage bonuses (+8 in total). This way they will still be more distinguishable from regular thieves despite the THAC0 improvement and generally more useful. If other mods that overhaul the swashbuckler exist, you may request compatibility, as long as this causes actual problems.
+Normally, vanilla Swashbuckler gets to a THAC0 level of 2, because every 5 levels, it gets a +1 bonus to both THAC0 and damage inflicted. This hinges on the assumption that the maximum THAC0 attainable is 10. Changing the maximum THAC0 improvement to 6 means they would achieve, inappropriately, -2 **base** THAC0. This component addresses this inconsistency. If other mods that overhaul the swashbuckler exist, you may request compatibility, as long as this causes actual problems (likely will if they expect normal THAC0 progression).
 
 **Component 2190:** Make Poison Weapon improve a couple of times more every 4 levels (level 17, and 21)
 
 This makes Poison Weapon more powerful and reliable at high levels. At level 17, the save penalty improves to -3, lasts for 27 seconds, and the immediate poison damage increases to 8. At level 21, the save penalty improves to -4, lasts for 30 seconds, and the immediate poison damage increases to 10.
 
-Don't use this if you're using another overhaul for this ability, or an Assassin or Blackguard overhaul that changes this ability. If they use a separate ability and leave the original intact, this component will change the original, which might or might not be useful in your game—it all depends on whether there's any other class, kit, or NPC left that might use it and are high-level enough to benefit.
-
 **Component 2200:** Allow Blackguards to perform backstabs as if they had a 2x backstab multiplier
 
-Self-explanatory. It depends on the spell granting negative plane protection. As such, if different blackguard variants exist, as long as they use the same spell that grants them this passive feature, they will be affected by this.
-
-Additionally, it allows a certain enemy blackguard in SoD to perform backstabs on you if the conditions are met, even if a component in this mod is reducing the backstab damage to their weapon.
-
-It will also patch any blackguards in the game such that they are guaranteed to be able to backstab.
+Self-explanatory. It will also patch any blackguards in the game such that they are guaranteed to be able to backstab, if they possess an eligible weapon and somehow can go invisible and attack (yes, there is one).
 
 **Component 3500:** Make Shadowstep impossible to use while in the Shadow Plane
 
-This seems more a bugfix than a tweak, but it bothers me, and it's not tackled anywhere else so here it is. No one can cast Shadowstep during those sequences, since those abilities rely on a brief plane shift to the Prime's parallel plane: the Plane of Shadow. This needs to be patched manually, and only the following areas are targeted:
-
-- Rasaad's ToB quest areas in the SP
-- Lava's Shades of the Sword Coast SP in Gnoll Stronghold
-
-This is compatible with my Shadowdancer overhaul.
+This seems more a bugfix than a tweak, but it bothers me, and it's not tackled anywhere else so here it is. No one can cast Shadowstep during those sequences, since those abilities rely on a brief plane shift to the Prime's parallel plane: the Plane of Shadow. This needs to be patched manually, and only Rasaad's ToB quest areas and Lava's Shades of the Sword Coast Gnoll Stronghold variant are affected. This is compatible with my Shadowdancer overhaul.
 
 **Component 2230:** Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value
 
@@ -2197,11 +2175,9 @@ RR's implementation of Crippling Strike can actually increase Strength if dealin
 
 **Component 2231:** Give Dragon Disciples (Red) automatic access to all fire-based wizard spells and optionally increase fire damage by 5%
 
-This component gives Red Dragon Disciples access to all fire-based wizard spells by default. Additionally, it increases the damage of all fire-based spells by 5% for the Red Dragon Disciple. The latter is optional and can be disabled in the configuration file (the percentage bonus can also be configured).
+This component gives Red Dragon Disciples access to all fire-based wizard spells by default and a fire damage bonus of 5%. The latter is optional and can be disabled in the configuration file (the percentage bonus can also be configured). It will patch any dragon disciples that may exist in the game, adding these spells and bonus to them.
 
-Fair warning: the spell selection when creating the dragon disciple WILL NOT tell you that the spells are available already or otherwise offer any feedback. Just make sure if you use this component that you know that the spells are available already, so pick different spells during the character creation.
-
-Lastly, this will patch any dragon disciples that may exist in the game, adding these spells to their repertoire. Currently, it only supports the dragon disciples that exist in vanilla (even if they were overhauled). Support for specific colors and metals of dragon disciple, such as the ones offered by ToF, might be added in the future. Most likely I only need to know the kit id of those kits to offer compatibility.
+**Warning**: the spell selection when creating the dragon disciple **WILL NOT** tell you that the spells are available already or otherwise offer any feedback. Just make sure if you use this component that you know that the spells are available already, so pick different spells during character creation.
 
 **Component 2232** Make Called Shot directly increase ranged weapon damage, instead of adding 2 damage after the initial hit
 
@@ -2225,13 +2201,12 @@ This will make it a straight upgrade to the power by providing backstab immunity
 
 As it says. This is a new way of resolving this widely recognized dumb design. The HLAS are replaced as follows:
 
-- Evasion -> Unlock Evasion (grants 3 uses of Improved Evasion, now just called Evasion)
-- Improved Evasion -> Evasion: Additional Use (grants another use, if desired)
-- Whirlwind -> Unlock Whirlwind Attack (grants 3 uses of Improved Whirlwind Attack, now just called Whirlwind Attack)
-- Improved Whirlwind Attack -> Whirlwind Attack: Additional Use (grants another use, if desired)
+- Evasion → Unlock Evasion (grants 3 uses of Improved Evasion, now just called Evasion)
+- Improved Evasion → Evasion: Additional Use (grants another use, if desired)
+- Whirlwind → Unlock Whirlwind Attack (grants 3 uses of Improved Whirlwind Attack, now just called Whirlwind Attack)
+- Improved Whirlwind Attack → Whirlwind Attack: Additional Use (grants another use, if desired)
 
 Additionally, Improved Evasion (Evasion now) doubles the movement speed granted (factor of 4 instead of 2) and makes it use opcode 176, so it's not removed by Free Action. There are options in the configuration file to select only one of these, if desired.
-
 
 </details>
 
