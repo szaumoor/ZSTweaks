@@ -6,15 +6,15 @@
 
 **Component 120:** Make conjured magical weapons grant 2 APR by default
 
-The problem with these spells is that they promise power, but your little sickly wizard is not a very good fighter at all. I think this promise should be more serious, and therefore, by default, all these weapons grant 2 APR by default if the caster has no fighter levels. Otherwise, they grant 1.5 APR.
+These spells promise power, but your little wizard is not a good fighter at all. Thus, by default, they grant 2 APR if the caster has no fighter levels (otherwise, 1.5).
 
 **Component 443:** Make "Symbol, X" spells slightly more powerful and rebalance the enemy versions
 
 The following changes are enabled by default but can be configured individually:
 
-- **Symbol, Death**: Since it's difficult to know an enemy's exact health, this spell is often wasted on targets with more than 60 HP. This tweak allows the spell to affect targets above the 60 HP threshold, but they receive a +6 bonus to their saving throw, giving the spell a chance to succeed even against healthier foes.
-- **Symbol, Pain**: The spell no longer allows a saving throw. It also reduces the target's damage output by 10%, and its duration is reduced from 11 turns to a more reasonable 11 rounds.
-- **Nerf enemy symbol spells**: Enemy-cast Symbol spells now have the same duration as player-cast versions, removing an artificial difficulty disparity.
+- **Symbol, Death**: Since it's difficult to know an enemy's exact health, this spell is often wasted on targets with more than 60 HP. This allows the spell to affect targets above the 60 HP threshold, but with a +6 bonus to their saves.
+- **Symbol, Pain**: No longer allows a saving throw. It also reduces the target's damage output by 10%, and its duration is reduced from 11 turns to a more reasonable 11 rounds.
+- **Nerf enemy symbol spells**: Enemy-cast Symbol spells now have the same duration as player-cast versions, removing an artificial disparity.
 
 **Component 1120:** Make some weapon categories suffer penalties to backstabbing for balance
 
@@ -30,7 +30,7 @@ Other weapon types are not affected by default, as they cannot normally be used 
 
 **Component 1121:** Make Flails and Morning Stars always inflict a small amount of piercing damage
 
-Both types of weapons have piercing parts; that's why. The amount of piercing is very small and depends on enchantment level:
+Both types of weapons have piercing parts; that's why. Enchantment level:
 
 - +0, +1 ⇾ 1 point of piercing damage
 - 2+, +3 ⇾ 1d2 points of piercing damage
@@ -41,11 +41,11 @@ Both types of weapons have piercing parts; that's why. The amount of piercing is
 
 This component adjusts the base damage of several weapon categories to make them more distinct or viable. All changes are enabled by default but can be configured individually.
 
-- **Spears**: Base damage is increased from 1d6 to 1d8, positioning them between staves and halberds. This also affects Javelins from CamDawg's Project Javelin, increasing their damage die by 2.
-- **War Hammers**: Base damage is increased from 1d4+1 to 1d5+1. This does not affect special hammers like Crom Faeyr or Voidhammer +3.
-- **Ninja-tos, Wakizashis, and Katanas**: To reflect their reputed quality, these Kara-Turan blades now deal 2d4 (Ninja-tos/Wakizashis) and 2d5 (Katanas) base damage, increasing their minimum damage compared to other swords. Additionally, Wakizashis become piercing/slashing weapons (this can be configured separately).
-- **Bastard Swords**: Base damage is increased from 1d8 to 1d8+1, placing them more squarely between long swords and two-handed swords in terms of damage potential.
-- **Two-handed Swords**: Base damage is increased from 1d10 to 1d9+1. Swords that originally deal 1d12 will now deal 2d6, raising the minimum damage for all weapons in this category.
+- **Spears**: Base damage is increased from 1d6 to 1d8. This also affects Javelins from CamDawg's Project Javelin, increasing their damage die by 2.
+- **War Hammers**: Base damage is increased from 1d4+1 to 1d5+1. This does not affect special hammers like Crom Faeyr that have a 2d4 base damage.
+- **Ninja-tos, Wakizashis, and Katanas**: Kara-Turan blades now deal 2d4 (Ninja-tos/Wakizashis) and 2d5 (Katanas) base damage, increasing their minimum damage. Additionally, Wakizashis become piercing/slashing weapons (this can be configured separately).
+- **Bastard Swords**: Base damage is increased from 1d8 to 1d8+1, placing them in between long swords and two-handed swords in terms of damage.
+- **Two-handed Swords**: Base damage is now 1d9+1. Swords that originally deal 1d12 will now deal 2d6, raising the minimum damage for all weapons in this category.
 
 **Component 1361:** Make axes or halberds deal extra damage equal to its base damage on critical hits
 
