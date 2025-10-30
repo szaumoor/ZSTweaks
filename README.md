@@ -27,8 +27,8 @@ So far, compatibility has been added to:
 - ToF
 - SCS
 - EEFixpack
-- ZS_ItemPack
 - IWDification
+- ZS_ItemPack
 - Item Upgrade
 - Project Javelin
 - Rogue Rebalancing
