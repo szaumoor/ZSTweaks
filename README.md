@@ -32,10 +32,10 @@ So far, compatibility has been added to:
 - Item Upgrade
 - Project Javelin
 - Rogue Rebalancing
-- Forgotten Armaments
 - Wares of the Planes
-- ZS_ShadowdancerOverhaul
+- Forgotten Armaments
 - Shades of the Sword Coast
+- ZS_ShadowdancerOverhaul
 
 ## Notes for users and modders
 
