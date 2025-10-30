@@ -82,7 +82,7 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
     ACTION_IF zst_1545_weapon_style_shield BEGIN
         COPY_EXISTING ~STYLBONU.2DA~ ~override~
             REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-0\).+$~ ~\1 -1 0 1 0 0 1 0 0~
-            REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-1\).+$~ ~\1 0 0 0 0 0 -1 0 0~
+            REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-1\).+$~ ~\1 0 0 0 0 0 -2 0 0~
             REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-2\).+$~ ~\1 0 0 0 0 -1 -3 0 0~
 
         COPY_EXISTING ~WEAPPROF.2DA~ ~override~

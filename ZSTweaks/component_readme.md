@@ -10,22 +10,23 @@ The problem with these spells is that they promise power, but your little sickly
 
 **Component 443:** Make "Symbol, X" spells slightly more powerful and rebalance the enemy versions
 
-These are the available changes, all enabled by default, but can each be disabled in the configuration file:
+The following changes are enabled by default but can be configured individually:
 
-- Symbol, Death: This spell is useless if the health of the enemy, which ordinarily you cannot know, is above that threshold, so it's fairly wasteful to use the spell unless the enemy is Near Death or the enemies are very weak anyway and easy to kill. As such, now the spell works for HP above 60, but with a bonus of +6, giving it at least some (small) chance of working at all times.
-- Symbol, Pain: The save will now be made at -4, not 0, similar to other Symbol spells. It will also reduce damage output by 10% for its duration. The duration seems rather silly, so it'll be reduced to 11 rounds instead of 11 turns.
-- Nerf enemy symbol spells: These spells exist so the enemies don't kill, stun, or scare themselves with them. But funnily enough they also have effects that last more than double compared to the player-usable ones. I hate that sort of artificial disparity / difficulty, so now the durations will match.
+- **Symbol, Death**: Since it's difficult to know an enemy's exact health, this spell is often wasted on targets with more than 60 HP. This tweak allows the spell to affect targets above the 60 HP threshold, but they receive a +6 bonus to their saving throw, giving the spell a chance to succeed even against healthier foes.
+- **Symbol, Pain**: The spell no longer allows a saving throw. It also reduces the target's damage output by 10%, and its duration is reduced from 11 turns to a more reasonable 11 rounds.
+- **Nerf enemy symbol spells**: Enemy-cast Symbol spells now have the same duration as player-cast versions, removing an artificial difficulty disparity.
 
 **Component 1120:** Make some weapon categories suffer penalties to backstabbing for balance
 
-This reduces the backstab multiplier of some weapons that realistically would not be great for backstabs, which also includes pretty broken weapons when used for backstabs, such as the Staff of Ram. This is fully configurable (check the configuration file), and you may decide both what categories to include for the tweak, and what is the penalty level for each. These are the defaults:
+This component reduces the backstab multiplier for weapons that are ill-suited for backstabbing, such as the Staff of the Ram. The tweak is fully configurable, allowing you to choose which weapon categories are affected and their respective penalty levels. The default penalties are:
 
-- No penalty: Piercing swords, Ninja-tos, Clubs, and Daggers.
-- -1 penalty: Long swords, Scimitars, Katanas.
-- -2 penalty: Staves
-- No other weapons are considered by default, since they're not normally open to backstabbing.
+- **No penalty**: Daggers, Clubs, Ninjatôs, Short Swords, and Rapiers from my Item Pack.
+- **-1 multiplier**: Long Swords, Scimitars, and Katanas, and Estocs from my Item Pack.
+- **-2 multiplier**: Staves.
 
-Note that this will make holding two weapons with backstab penalties increase them additively, which is an unavoidable side effect of the fact that the backstab reduction cannot be applied per weapon, only universally. For example, if you're an assassin with a 6x backstab multiplier, holding two long swords would reduce this to 4x.
+Other weapon types are not affected by default, as they cannot normally be used for backstabbing.
+
+**Note**: Due to an engine limitation, penalties from dual-wielding affected weapons will stack. For example, an Assassin with a x7 backstab multiplier wielding two long swords (-1 penalty each) will have their multiplier reduced to x5.
 
 **Component 1121:** Make Flails and Morning Stars always inflict a small amount of piercing damage
 
@@ -38,39 +39,40 @@ Both types of weapons have piercing parts; that's why. The amount of piercing is
 
 **Component 1150:** Make some weapon categories adjust their baseline damage
 
-This component makes changes to some weapon categories where I feel a tweak would be valuable or more interesting. All of these options are optional and can be turned on and off in the configuration file (all are on by default). Here are the changes:
+This component adjusts the base damage of several weapon categories to make them more distinct or viable. All changes are enabled by default but can be configured individually.
 
-- Spears: 1d6 is a little low for spears in my opinion, so now they deal 1d8+bonus, filling the imaginary "gap" of two-handed weapons with damage between staves and halberds. This part will also patch Javelins from CamDawg's project Javelin so their dice size also increase by 2.
-- War Hammers: 1d4+1 always felt a little too small and narrow for hammers, so now it will be 1d5+1. This doesn't affect special hammers that have double the damage potential, such as Crom Faeyr. It also includes Voidhammer +3, which only inflicts magic damage.
-- Ninja-tos, Wakizashis, and Katanas: This will make these inflict now 2d4 for ninja-tos and wakizashis and 2d5 for katanas. I think the inclination is clearly towards "Kara-Turan/eastern blades are higher quality." In practical terms, it just means that these swords will deal more minimum damage compared to long swords and scimitars, and luck bonuses would allow maximum damage dealt with less effort. Additionally, it also makes wakizashis a piercing/slashing weapon, since in the real world, they're really more of a slashing weapon anyway though in practical terms it will still keep hitting as piercing most of the time (this change can be disabled or enabled independently).
-- Bastard swords: I never liked that bastard swords were "between long swords and two-handed swords," but there was no max damage difference between long swords and bastard swords. So now they're damage-wise actually between both (1d8+1).
-- Two-handed swords: This increases the minimum damage, similar to bastard swords, and will deal 1d9+1 as base. Two-handed swords that deal 1d12 base damage will instead deal 2d6.
+- **Spears**: Base damage is increased from 1d6 to 1d8, positioning them between staves and halberds. This also affects Javelins from CamDawg's Project Javelin, increasing their damage die by 2.
+- **War Hammers**: Base damage is increased from 1d4+1 to 1d5+1. This does not affect special hammers like Crom Faeyr or Voidhammer +3.
+- **Ninja-tos, Wakizashis, and Katanas**: To reflect their reputed quality, these Kara-Turan blades now deal 2d4 (Ninja-tos/Wakizashis) and 2d5 (Katanas) base damage, increasing their minimum damage compared to other swords. Additionally, Wakizashis become piercing/slashing weapons (this can be configured separately).
+- **Bastard Swords**: Base damage is increased from 1d8 to 1d8+1, placing them more squarely between long swords and two-handed swords in terms of damage potential.
+- **Two-handed Swords**: Base damage is increased from 1d10 to 1d9+1. Swords that originally deal 1d12 will now deal 2d6, raising the minimum damage for all weapons in this category.
 
 **Component 1361:** Make axes or halberds deal extra damage equal to its base damage on critical hits
 
-The only difference between axes and swords functionally is the speed factor. Axes are 2 points slower than long swords. In the case of Halberds, they're one point faster than two-handed swords. Speed factor determines how early or late you hit during your turn to attack each round. Its significance is debatable, and in my experience it's much more important for backstabbing, to ensure that the first movement of your character when attacking is an actual attack and not something cosmetic. To widen the difference between both, axes have the following difference:
+Functionally, the difference between axes and swords is their Speed Factor. To create a more meaningful distinction, this component gives axes and halberds a bonus to critical hit damage, inspired by their implementation in *NWN*.
 
-- Melee critical hits for one-handed axes deal extra damage equal to 1d8 + Enchantment (1d10 in the case of two-handed axes and halberds)
-- Ranged critical hits deal extra damage equal to 1d6 + Enchantment
+On a critical hit, affected weapons deal extra damage in a separate damage tick:
 
-For example, a critical hit with a +3 sword could deal 20 slashing damage, but if it was an axe, it would deal instead between 24-31 slashing damage (i.e. 20 plus 1d8+3). Configuration options are added to modify axes and halberds independently.
+- **One-handed Axes**: 1d8 + Enchantment
+- **Two-handed Axes & Halberds**: 1d10 + Enchantment
+- **Throwing Axes**: 1d6 + Enchantment
 
-This is conceptually how it works in NWN. Axes deal triple critical damage. That would be absurd in the context of BG's health pools, but it provides regardless a bonus. Skull breaker!
+For example, a critical hit with a +3 one-handed axe that deals 20 damage will inflict an additional 1d8+3 damage, for a total of 24-31. This component can be configured to affect axes and halberds independently.
 
 **Component 1362:** Make maces, clubs, and hammers damage the target's AC temporarily based on enchantment level
 
-This component adds a concept present in various games to maces and hammers, which is that armor is (or becomes) less effective when hit by them. This is true in BG in the sense that non-clothing armors are generally set, with a few exceptions, to be easier to hit with blunt weapons, but it doesn't apply to the numerous and the vast majority of creatures that don't use an actual armor item.
+This component introduces the concept that blunt weapons are effective at damaging armor. While most armors in the game already have penalties against blunt weapons, this tweak extends a similar effect to creatures with natural armor.
 
-The Armor Class debuff is mild and the power of it depends on the enchantment level of the weapon. It applies only to maces, clubs, and hammers, and lasts 12 seconds, which is refreshed each hit with no save allowed. Lower-level debuffs cannot override higher level debuffs. For example, if you have a character applying a -3 debuff with a +4 club, another character with a +1 mace will not remove the previous one. That is, the more powerful takes precedence.
+Maces, clubs, and hammers will apply a non-stacking Armor Class debuff on hit. The effect lasts for 2 rounds, is refreshed with each hit, and does not allow a saving throw. More powerful debuffs will always override weaker ones.
 
-- +0,+1: -1 Armor Class debuff for 2 rounds
-- +2,+3: -2 Armor Class debuff for 2 rounds
-- +4,+5: -3 Armor Class debuff for 2 rounds
-- +6: -4 Armor Class debuff for 2 rounds
+- **+0, +1**: -1 AC
+- **+2, +3**: -2 AC
+- **+4, +5**: -3 AC
+- **+6**: -4 AC
 
-Overall this should provide a mild tactical advantage when having at least one of your party members wielding these blunt weapons. This applies to enemies wielding these weapons too, so be warned.
+This provides a tactical advantage when using blunt weapons, but be aware that enemies wielding these weapons will also benefit from this effect.
 
-There's also a component that makes this effect only work on creatures that are not wearing armor, as you could think that the overall lessened effectiveness of most armors against blunt weapons is already enough. So this means it will work, for example, against dragons and umber hulks, but not against a regular fighter wearing plate mail. This is **disabled** by default, but you can enable it in the configuration file.
+An optional setting in the configuration file can restrict this effect to only apply to creatures without wearable armor (e.g., dragons, umber hulks). This option is **disabled** by default.
 
 **Component 1435:** Make Darts have a speed factor of 0 and extend the range to 30 ft
 
@@ -78,79 +80,57 @@ Self-explanatory. It's the lightest weapon, realistically. It also makes them sl
 
 **Component 1440:** Make daggers have general extra features to compensate for the low damage
 
-There's generally very little reason to use a dagger because:
+Daggers are often overlooked due to their low damage output. This component aims to make them more appealing by adding the following traits:
 
-- All other melee weapons cause more damage
-- Your other weapons will never be stolen (read the proficiency description for daggers in BG)
-- Using the dagger has no benefits of any sort for being a small weapon
-- A saving grace they might have is that some might have a semi-interesting effect which likely gets overshadowed later
+- **+1 THAC0**: A Dagger +2 will grant a +3 THAC0 bonus.
+- **-2 Speed Factor**: Most daggers will have a Speed Factor of 0.
+- **+5% Critical Hit Chance**: This bonus stacks with any existing critical chance on the dagger.
+- **Deadly Critical Hits**: On a critical hit, daggers deal extra damage in a second damage tick. The formula for this bonus damage is `2d(Max_Weapon_Damage) + Max_Weapon_Damage`. For example, a critical hit with a Dagger +2 that deals 16 damage will inflict an additional 2d6+6 (8-18) damage, for a total of 24-34 damage.
+- **Kukris** from my **Item Pack** are affected differently:
+  - **-1 Speed Factor**
+  - **No THAC0 bonus**
+  - **Base damage increased to 1d4+1** instead of an extra critical hit chance.
+  - **Reduced critical hit bonus damage**, with the formula `1d(Max_Weapon_Damage) + Max_Weapon_Damage`. For example, a critical hit with a kukri +2 that deals 16 damage will inflict an additional 1d6+6 (7-12) damage, for a total of 23-28 damage.
 
-This is a small change to make daggers slightly more appealing on a general level. They will all have the following traits:
-
-- THAC0 is always 1 higher (e.g. a Dagger +2 will have a +3 THAC0 bonus, and the description will reflect it)
-- Speed factor is 2 points lower (normally always 0, in the case of custom daggers, this may be different if their speed factor is unusually high). Description will reflect this
-- +5% Critical chance, which may stack with a similar bonus in any particular daggers. Description will not reflect this.
-- Deadly critical hits: critical hits do moderately greater damage in a second tick. The formula for critical damage added is 2 dice of **Max Weapon Damage** **+** (**Max weapon damage**). All these bonuses are additive and not affected by strength. Specifically:
-  - Dagger **+0** ⇾ 2d4+4, i.e., 6-12 damage
-  - Dagger **+1** ⇾ 2d5+5, i.e., 7-15 damage
-  - Dagger **+2** ⇾ 2d6+6, i.e., 8-18 damage
-  - Dagger **+3** ⇾ 2d7+7, i.e., 9-21 damage
-  - Dagger **+4** ⇾ 2d8+8, i.e., 10-24 damage
-  - Dagger **+5** ⇾ 2d9+9, i.e., 11-27 damage
-  - Dagger **+6** ⇾ 2d10+10, i.e., 12-30 damage
-
-Example: An attack with a dagger +2 with a character that has single-weapon proficiency rolls an 18, which becomes a critical hit. The damage of this hit is 16. Immediately after, another 2d6+6 will be rolled, adding 8-18 damage to the critical hit, thus making the full damage of the critical hit between 24 and 34.
-
-**Kukris** from my **Item Pack** will be affected slightly differently:
-
-- Speed Factor will only be reduced by 1 point, not 2
-- No THAC0 bonus
-- No extra critical hit chance (they all have an implied 5% critical chance already). Instead, its base damage will be increased to 1d4+1
-- Critical hit extra damage is not quite as high:
-  - Kukri **+0** ⇾ 1d4+4, i.e., 5-8 damage
-  - Kukri **+1** ⇾ 1d5+5, i.e., 6-10 damage
-  - Kukri **+2** ⇾ 1d6+6, i.e., 7-12 damage
-  - Kukri **+3** ⇾ 1d7+7, i.e., 8-14 damage
-  - Kukri **+4** ⇾ 1d8+8, i.e., 9-16 damage
-  - Kukri **+5** ⇾ 1d9+9, i.e., 10-18 damage
-  - Kukri **+6** ⇾ 1d10+10, i.e., 11-20 damage
-
-Exceptions: Grave Binder is not affected by these bonuses because it's an oversized dagger. Other unusual daggers will be treated on a case-by-case basis.
+**Exceptions**: Oversized daggers like Grave Binder are not affected. Other unusual daggers are handled on a case-by-case basis.
 
 **Component 1450:** Make some rogue weapons able to do more damage if wielded by pure thieves (Finesse)
 
-This component is an attempt at making single-classed Thieves (and bards too, optionally) more effective with a portion of thief-usable weapons without relying on stats, attacks per round, or proficiency points.
+This component aims to make single-classed Thieves (and optionally Bards) more effective with certain weapons by introducing a "Finesse" mechanic, inspired by *NWN*.
 
-Essentially, when wielding a Thief weapon, they can use what I call "finesse," which is a concept that I borrowed from NWN. In short, they have a chance per attack to deal extra damage, which stacks additively after the direct damage of the weapon is calculated, and it is based on the base attack damage of the weapon used.
+When wielding an eligible weapon, they have a chance on each attack to deal extra damage. This can be thought of as a minor sneak attack or a dirty fighting trick that triggers occasionally, helping to narrow the power gap between pure rogues and their multiclassed counterparts.
 
-You could think of this as a part dirty-fighting combat skills of rogues, or like a minor sneak attack that triggers rarely. This gives pure thieves a slight edge and makes the power gap between them and multiclassed thieves tighter. The chances of triggering are modified by weapon type and the enchantment level (2% per odd enchantment level, 1% for even).
+The chance to trigger Finesse depends on the weapon type and its enchantment level (+2% for odd enchantment levels, +1% for even). The bonus damage is based on the weapon's base damage and is applied additively.
 
-This includes bows, crossbows, clubs, daggers, long swords, scimitars, wakizashis, ninja-tos, katanas, and short swords. The general rule for damage is Dice Number * (Dice size - 1) + Bonus (with exceptions). To be more specific:
+- **6-15% Chance**: **Long Swords** (1d7+bonus), **Staves** (1d5+bonus).
+- **10-19% Chance**: **Katanas** (1d9+bonus), **Scimitars** (1d7+bonus), **Estocs** (ZS_ItemPack, 1d6+2+bonus)
+- **16-25% Chance**: **Ninjatôs / Wakizashis** (1d7+bonus), **Slings** (1d3+bonus)
+- **21-30% Chance**: **Rapiers** (ZS_ItemPack, 1d5+bonus)
+- **26-35% Chance**: **Short Swords** (1d5+bonus), **Clubs** (1d5+bonus)
+- **31-40% Chance**: **Bows** (1d5), **Crossbows** (1d7)
+- **36-45% Chance**: **Kukris** (ZS_ItemPack, 1d3+bonus)
+- **43-52% Chance**: **Daggers** (1d3+bonus), **Darts** (2+bonus divided by 2)
 
-- **Long swords, Staves**: 6-15% chance to inflict 1d7/5+bonus of slashing/crushing damage. Estocs from my item pack will have a 4% higher chance of triggering finesse (10-19%), dealing 1d6+2 plus bonus of piercing damage.
-- **Katanas, Scimitars**: 10-19% chance to inflict 1d9+bonus/1d7+bonus of slashing damage
-- **Ninja-tos, Wakizashis, Slings**: 16-25% chance inflict 1d7+bonus/1d3+bonus of slashing/piercing/missile damage
-- **Short Swords, Clubs**: 26-35% chance to inflict 1d5+bonus of piercing/crushing damage. Rapiers from my item pack will have a 5% lower chance of triggering finesse (26-30%).
-- **Bows, Crossbows**: 31-40% chance to inflict 1d5 or 1d7 of missile damage, respectively
-- **Darts, Daggers**: 43-52% chance to inflict 2 + bonus / 2 (rounded down), 1d3+bonus of missile or piercing damage, respectively. Kukris from my item pack will have a 7% lower chance of triggering finesse (36-45%).
+As a counterbalance, the target can make a Save vs. Breath to take only half of the finesse damage. The saving throw is modified by the wielder's Dexterity and the weapon's enchantment level. For example, a Long Sword +0 at a certain DEX might force a save at +2, while a Long Sword +3 would force a save at -1. Dexterity bonuses may improve this save penalty by up to -6 at 24 DEX.
 
-A counterbalance is also added such that this damage forces a save vs. Breath to take only half of the damage (extra damage dealt, assuming a failed saving throw and before resistances, is *never* lower than 2). This saving throw bonus or penalty depends on the wielder's current dexterity, which improves up to 24 dexterity. This save's penalty increases by the enchantment level as well. For example, if you have a Long Sword +0 that gets a +2 bonus at a particular level of dexterity, using a Long Sword +3 would make it a penalty of -1 instead. More details:
+- **+7 to 0**: Katanas
+- **+6 to -1**: Long Swords, Scimitars, Estocs (ZS_ItemPack)
+- **+5 to -2**: Ninja-tos, Wakizashis
+- **+4 to -3**: Short Swords, Slings, Clubs, Staves, Rapiers (ZS_ItemPack)
+- **+3 to -4**: Darts, Shurikens (ZS_ItemPack), Bows, Crossbows, Daggers, Kukris (ZS_ItemPack)
 
-- **Katanas**: +0 katanas at DEX <12 force a save at +7 bonus; progresses up to 0 at DEX >=24
-- **Long swords, Scimitars**: +0 weapons at DEX <12 force a save vs. +6; progresses up to -1 at DEX >=24
-- **Ninja-tos and Wakizashis**: +0 weapons at DEX <12 force a save vs. +5; progresses up to -2 at DEX >=24
-- **Short Swords, Slings, Clubs, Staves**: +0 weapons at DEX <12 force a save vs. +4; progresses up to -3 at DEX >=24
-- **Darts, Bows, Crossbows, Daggers**: +0 weapons at DEX <12 force a save at +3 bonus; progresses up to -4 at DEX >=24
+This component does not automatically account for special weapons with unusual damage effects (e.g., Voidsword +3, which deals only magic damage). These are handled manually. Currently, supported items include:
 
-Note that this component does not account (automatically) for special weaponry which may use a different kind of damage-dealing effect than normal or otherwise vary in normal parameters. For example, Voidsword +3 in SoD causes only magic damage and is not part of the damage of the weapon as such, but exists as a separate effect. These have to be added manually (in that example, the extra damage would occur in the same way as the others, but only as magic damage, which is intended). Currently, the following thief-usable items are accounted for:
+- Voidsword, Void-arrows, Void-bullets (SoD/BG2)
+- Fierce Swirl +2 (Shades of the Sword Coast)
 
-- Voidsword, Void-arrows, Void-bullets (SoD/BG2, magic damage)
-- Fierce Swirl +2 (Lava's Shades of the Sword Coast -- BGEE, magic damage)
-- 1d2 Arrows of Antimagic will be skipped (SoD, it's meant to deal almost no damage)
-- Arrows of Detonation are also skipped, since they're not designed to pierce
-- Broken Spirit Arrow +1 will be skipped (The Calling -- BGEE, it's designed to deal only 1 point of damage)
+The following items are intentionally skipped:
 
-Finally, the weapon categories affected are optional and can be turned off in the configuration file. As such, you can disable categories if you don't want them affected by the "finesse" effect.
+- Arrows of Antimagic (SoD)
+- Arrows of Detonation
+- Broken Spirit Arrow +1 (The Calling)
+
+All weapon categories are enabled by default but can be individually disabled in the configuration file.
 
 **Component 1533:** Rebalance some wands
 
@@ -162,18 +142,18 @@ Finally, the weapon categories affected are optional and can be turned off in th
 
 **Component 1534:** Rebalance some potions
 
-Firstly there's an option to make potions usable by everyone universally (there's no earthly reason your character can't put that potion up to their mouth and drink it). You can also patch all potions so never stack with themselves (highly recommended to balance gameplay). These options can be disabled in the configuration file.
+This component includes two optional, universal changes: making all potions usable by any class and preventing potions from stacking with themselves. Both are enabled by default and can be configured.
 
-- Potion of Icedust: instead of providing a set immunity to fire for 1 round, it adds +75% resistance to fire for 3 rounds. I was considering making this effect undispellable but decided against it.
-- Potion of healing (basic): these options are generally never used after a while. Therefore, now they heal 12 HP instead of 9 HP, which makes them marginally more useful without breaking balance
-- Potion of Heroism: it also prevents morale failure as it increases the confidence of the drinker, and improves damage by 1. The THAC0 bonus it provides is no longer set to 90% of current, but instead improves immediately by 2, which is strictly a better outcome, since there will be no longer diminishing returns. It can also be drunk by any class
-- Potion of Invulnerability: it also increases magic resistance by +10%, and it can be used by any class
-- Elixir of Health: the HP recovered is now 20 (from 10) and protects against being poisoned (but not to direct poison damage; not dispellable) for 10 seconds. This is added such that when taking heavy damage, if you're poisoned, it's more desirable than just gulping down a better HP potion to ensure survivability
-- Potion of Perception: now the proper "detection" thief skills are improved further (find traps and detect illusions): 40%. Additionally, the enhanced perception improves Armor and Saving Throws by 2
-- Potion of Power: this makes the potion prevent morale failure like the potion of heroism, it improves all thieving abilities (not just some), it improves casting speed by 1, and it now also grants +10% higher damage output (physical and magical), which makes it useful for any class. Finally, the THAC0 bonus it provides is no longer to 80% of current, but instead improves immediately by 4, which is strictly a better outcome, since there will be no longer diminishing returns. Its rarity and price should be rewarded handsomely
-- Potion of Regeneration: now it heals 3 HP per round for 3 turns (from 2 HP per round for 2 turns).
-- CHARNAME'S Tankard: now it heals 27 HP three times per day, and it adds +1 Strength and Constitution for 1 turn, since it mentions feeling stronger when holding it.
-- All Strength potions: usable by any class (independent of the previous universal restriction lift)
+- **Potion of Icedust**: Grants +75% Fire Resistance for 3 rounds, instead of immunity for 1 round.
+- **Potion of Healing**: Heals 12 HP instead of 9.
+- **Potion of Heroism**: Now usable by any class. Grants immunity to morale failure, +1 damage, and a flat +2 THAC0 bonus (instead of a percentage-based one).
+- **Potion of Invulnerability**: Now usable by any class and grants an additional +10% Magic Resistance.
+- **Elixir of Health**: Heals 20 HP (up from 10) and grants immunity to being poisoned for 10 seconds (does not affect direct poison damage).
+- **Potion of Perception**: Now grants a +40% bonus to Find Traps and Detect Illusions, and a +2 bonus to AC and all Saving Throws.
+- **Potion of Power**: Now usable by any class. Grants immunity to morale failure, improves all thieving skills, grants +1 Casting Speed, +10% to all damage output, and a flat +4 THAC0 bonus.
+- **Potion of Regeneration**: Heals 3 HP per round for 3 turns (up from 2 HP/round for 2 turns).
+- **CHARNAME'S Tankard**: Heals 27 HP (3/day) and grants +1 Strength and Constitution for 1 turn.
+- **All Strength Potions**: Usable by any class (this is a separate option from the universal one).
 
 **Component 1537:** Make Poison-curing spells an instant cast so attempting to cure poison is less likely to be interrupted
 
@@ -183,121 +163,115 @@ Additionally, these spells provide a very short immunity to poison effects after
 
 **Component 1538:** Make jewelry and other items meant to be sold more valuable
 
-This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component increases the value of those by 50% by default. However, this is fully customizable. Check the ZSTweaks/**zstweaks.prefs.txt** file if you want to customize this.
+This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component increases the value of those by 50% by default. However, this is fully customizable. Check the ZSTweaks/configurations/**zstweaks.prefs.txt** file if you want to customize this.
 
 **Component 1539:** Make classes other than arcane and divine spellcasters able to use scrolls freely
 
-This component opens up scrolls to others, similar to other game editions. You can think of scrolls as set of instructions to cast a spell, which anyone could use if they have the mental capacity. The options are:
+This component removes class restrictions from scrolls, allowing non-spellcasters to use them. It offers several options:
 
-- **Everyone can**: scrolls are usable by anyone at any point, with the vanilla restriction of having 9 intelligence at least
-- **Everyone can as long as they have the right stats depending on scroll type**: same as above, but to require more investment, you need to have Intelligence of 8 + Spell Level to cast a wizard spell scroll, and Wisdom of 8 + Spell Level to cast a priest spell scroll. For example, a level 5 priest scroll would require 13 Wisdom, and a level 8 wizard scroll would require 16 intelligence. Note that this restriction applies also to classes that could use scrolls originally.
-- **All bards and Thieves can**: this allows only rogues to do this, with the vanilla rules of 9 intelligence. This was added because rogues are the handy jack-of-all-trades types that can "fake" other classes and are generally skillful and always have an ace up their sleeve.
-- **All bards and Thieves can as long as they have the right stats depending on scroll type**: Same as the previous option, with the restrictions of the second option. Note that this restriction applies also to classes that could use scrolls originally.
+- **Everyone can use scrolls**: Any character with at least 9 Intelligence can use any scroll.
+- **Everyone can use scrolls (with stat requirements)**: Any character can use scrolls, but doing so requires an attribute score of `8 + Spell Level`. Wizard scrolls require Intelligence, and priest scrolls require Wisdom. This restriction also applies to classes that could normally use scrolls.
+- **Bards and Thieves can use scrolls**: Only Bards and Thieves gain the ability to use any scroll, requiring at least 9 Intelligence. This reflects their nature as resourceful jack-of-all-trades.
+- **Bards and Thieves can use scrolls (with stat requirements)**: Same as the above, but with the attribute requirements (`8 + Spell Level` in INT/WIS).
 
-Note that this component differentiates between "wizard scroll" and "priest scroll" by usability flags. If a spell scroll allows priests to use them, they are considered priest spell scrolls.
-
-It's also worth mentioning that ToF's feat to use scrolls will also be rendered useless, where it applies.
+This component identifies a scroll as a "priest scroll" if it is usable by any priest class; otherwise, it is considered a "wizard scroll."
 
 **Component 1544:** Make scrolls always cast at the character level regardless of class
 
-This component will process all existing scrolls in the game, vanilla or modded, and make sure they're cast at the character level, no matter what your class is. So if you have a level 16 Thief that can use scrolls by whatever means (like using my previous component), they will be able to cast it as if they had a spellcasting level of 16.
-
-This pairs well with the previous component and greatly increases the usability of scrolls as a general resource for the whole party. I would recommend adding the options to enforce stat requirements so it's a bit more fair, but that's just me.
+This component will process all existing scrolls in the game and make sure they're cast at character level, no matter what your class is. So if you have a level 16 Thief that can use scrolls by whatever means, they will be able to cast it at level 16. This pairs well with the previous component and greatly increases the usability of scrolls as a general resource for the whole party. I would recommend enforcing stat requirements so it's a bit more fair.
 
 **Component 1650:** Make mage robes without cloaks (like Robe of Vecna) take on the appearance of robes with cloaks
 
-Purely cosmetic tweak. I've never liked the look of robes without cloaks or without hoods (there's really nothing to look at). Since the hooded version is more involved and many may prefer to see the character's head, the cloaked look is the default one.
+I've never liked the look of robes without cloaks or without hoods (there's really nothing to look at). Since the hooded version is more involved and many may prefer to see the character's head, the cloaked look is the default one.
 
 **Component 1541:** Make vorpal hits not work if target is under Stoneskin or Ironskins
 
-This component patches all weapons that deal vorpal hits in the vanilla game such that they don't work as long as the target is under the Stoneskin or Ironskins spells, as per the 2nd edition.
+Inspired by 2nd Edition rules, this component prevents vorpal hits from affecting targets protected by Stoneskin or Ironskin.
 
-This patching is manual, and I'm not too sure I can make a script that does this automatically for any and all sources of vorpal hits installed through other mods, and as such it patches the following vanilla sources of vorpal hits:
+This component manually patches the following vanilla sources of vorpal hits:
 
-- Axe of the unyielding +5
+- Axe of the Unyielding +5
 - Ravager +6
-- Balor's weapon
+- Silver Sword
+- Balor's vorpal attack
 - Solar's Bow/Sword
-- Planetar's Sword (unless my component for Planetars is installed, which already removes the vorpal component)
-- Silver sword
+- Planetar's Sword (unless the Planetar component is installed, which already removes the vorpal effect)
 
-If you want this component working for other mod-added weapons that cause vorpal hits (including creature attacks), let me know, and I'll make sure this component patches those too.
-
-Additionally, you can disable chunking from the vorpal hits that this mod includes. This is optional and can be enabled in the configuration file (disabled by default).
+Support for mod-added items with vorpal effects can be added upon request. Additionally, an option in the configuration file allows you to prevent vorpal hits from chunking targets. This is disabled by default.
 
 **Component 1545:** Make the basic benefits and progression of various character stats more streamlined or interesting
 
-This component has a series of optional components that tweak the following (consult the config file to allow or disallow -- all allowed by default):
+This component overhauls character stats for a more streamlined progression and interesting choices. All tweaks are enabled by default.
 
-- **Constitution** bonuses
-  - It makes the HP bonus progression more streamlined, similar to NWN and 3.5e. The HP bonus is now 1 HP per 2 levels, starting at 12. It grows up to +7 HP at constitution 24 and 25.
-  - Non-fighter classes also get a HP bonus from 12 Constitution, however, it grows less, and less quickly, up to +4 at 20 Constitution. This still improves vanilla, where they can only get +2 at most at Constitution 16. +1 HP is granted at constitution 12-14, +2 at 15-16, +3 at 17-19, and +4 at 20+.
-  - Regeneration by constitution starts at 18 constitution, but it will be very slow. It starts at 1 HP every 300 seconds at 18, then 240, 180, 160, 140, 120, 90, and finally 60 seconds at 25 constitution.
-  - Fatigue bonuses start at constitution 12, but it only grows above vanilla values at 25 Constitution.
-  - HP Penalties for constitution also start at 8 Constitution and increase every 2 Constitution below, except 1 Constitution, where it jumps from -4 to -5 directly.
-- **Dexterity** bonuses
-  - Progression of Armor Class and missile THAC0 follows NWN style as well, with the exception that the +7 bonus is always received at 25 Dexterity. This encourages maxing out dexterity if the maximum bonus is desired.
-  - Penalties also start early, at 9 Dexterity. This means for example that Keldorn will have a -1 penalty to ranged THAC0 and his Armor Class, since his Dexterity is a terrible 9.
-- **Lore** bonuses
-  - Per class: Mages now get 5 lore points per level (from 3); Thieves get 4 lore points per level; Clerics, shamans, and druids get 3 lore points per level; paladins and rangers get 2 lore points per level. Fighters and bards are unchanged.
-  - Per stats: The benefits and penalties are more streamlined, and the bonuses start at Wisdom or Intelligence 12. The maximum lore bonuses are unchanged, and the penalties increase less harshly, instead of jumping to -10 at 9 Wisdom or Intelligence, it decreases in a more gradual sequence.
-- **THAC0 bonuses by race**: The only change is that dwarves will get a +1 THAC0 bonus with axes.
-- Shorty constitution bonuses. This comes in three flavors:
-  - **Nullify**: Shorties no longer get saving throw bonuses based on constitution
-  - **Tone down**: Shorties get tone down, slower-progressing constitution bonuses. They start with a +1 saving throw bonus at 12 constitution, and it grows up to +3 at 21 constitution and above (vanilla grows up to +5 at 25 CON). This is the default option in the configuration.
-  - **Standardize**: Shorties just get a +2 saving throw bonus regardless of constitution
-- **Strength** bonuses
-  - THAC0 bonuses and penalties streamlined similar to NWN. Penalties start at 9 Strength, bonuses at 12. From Strength 23, bonuses increase by 1 per increase, up to +7.
-  - Extraordinary strength does not add THAC0 bonuses anymore.
-  - Damage is also streamlined similar to NWN up to 18 strength (+1 at 12 STR, +2 at 14...), with +4 bonus. At 19 Strength, it jumps to +7, similar to vanilla. Extraordinary strength at 18 Strength adds up to +2 damage: 0-24 gives no bonus, 25-75 gives a +1 bonus, and anything above it gives a +2 bonus (overall bonus of +6).
-  - Weight allowance was also streamlined and creatures with Strength <10 will be able to carry a bit more. For example, Imoen will now be able to carry 90 lb instead of 50. At much higher strength, the maximum you can carry has been generally decreased, as in vanilla it makes crazy jumps after 18 Strength (jumps from 200 to 500 -- with this tweak, it jumps to 400). Extraordinary strength grants +5 at 0, then +10, and gradually increases in jumps of 10, up to +100 at 18/100.
-  - No changes to forcing locks open.
-- **Weapon styles**
-  - Two-handed
-    - +0: -1 to Armor Class (no training means you deflect attacks worse)
-    - +1: No Armor class penalty, +1 to damage, +1 to Speed Factor
-    - +2: +2 to damage, +4 to Speed Factor, critical rolls require one point less to happen (i.e. default 19-20)
-  - Single weapon
-    - +0: -1 to speed factor (no training means you wield with less grace)
-    - +1: +1 to damage, Armor Class, and Speed Factor, critical rolls are 1 higher (i.e. 19-20)
-    - +2: +2 to damage, Armor Class, and Speed Factor
-  - Sword and shield
-    - +0: -1 damage, THAC0, and Armor class penalty vs Missile (no training means you can't deflect arrows very well, and can't handle using a weapon without the help of your offhand)
-    - +1: All penalties removed, +1 to Armor Class vs. Missiles
-    - +2: +1 to Armor Class, +3 to Armor Class vs. Missiles
-  - Two-weapon style
-    - +0: -2 penalty to Armor Class, -1 to damage with right hand, -2 to damage with left hand, THAC0 for right and left have penalties of -4 and -6, respectively (you don't have any training or using 2 weapons, the left hand suffering the biggest drawback).
-    - +1: Damage penalty on left hand reduced to -1, THAC0 penalties for right and left hand reduced to -2 and -4, respectively. Armor class penalty decreased to -1.
-    - +2: Armor class, and Thac0 and Damage penalty for right hand removed
-    - +3: Damage penalty for left hand removed, THAC0 penalty for left hand reduced to -2, Armor Class gets a +1 bonus
-  - **Weapon proficiencies**: This tiny overhaul addresses primarily something that has bothered me forever about proficiency progression, which is the weird jump in THAC0 from 2 proficiency points to 3. Therefore:
-    - 1 proficiency point: No penalty or bonus (vanilla)
-    - 2 proficiency points: +1 THAC0 and +2 Damage (vanilla)
-    - 3 proficiency points: +2 THAC0 and +3 Damage (-1 THAC0 compared to vanilla)
-    - 4 proficiency points: +3 THAC0 and +4 Damage (same THAC0 as 3 pips in vanilla)
-    - 5 proficiency points: +4 THAC0 and +5 Damage (+1 THAC0 compared to vanilla, which caps at +3)
+- **Constitution**:
+  - **HP Bonus (Fighters)**: Progression is streamlined. Starts at 12 CON and grants +1 HP every 2 points, up to +7 HP at 24/25 CON.
+  - **HP Bonus (Non-Fighters)**: Now receive a bonus starting at 12 CON, up to +4 HP at 20 CON.
+  - **Regeneration**: Starts at 18 CON (1 HP / 300s) and improves to 1 HP / 60s at 25 CON.
+  - **Fatigue & HP Penalties**: Fatigue bonuses start at 12 CON. HP penalties start at 8 CON.
+- **Dexterity**:
+  - AC and Ranged THAC0 bonuses are streamlined. The +7 bonus is now only achieved at 25 DEX.
+  - Penalties now begin at 9 DEX.
+- **Lore**:
+  - **By Class**: Mages get +5/level, Thieves +4/level, Clerics/Shamans/Druids +3/level, and Paladins/Rangers +2/level. Fighters and bards are unchanged (1 and 10, respectively)
+  - **By Stat**: Bonuses from INT/WIS start at 12, with a more gradual progression for both bonuses and penalties.
+- **Racial THAC0**: Dwarves gain a +1 THAC0 bonus with axes.
+- **Shorty Saves**: The saving throw bonus from Constitution for shorty races can be configured:
+  - **Nullify**: Removes the bonus entirely.
+  - **Tone Down (Default)**: Slower progression, starting at +1 (12 CON) and capping at +3 (21+ CON).
+  - **Standardize**: A flat +2 bonus, regardless of Constitution.
+- **Strength**:
+  - THAC0 and Damage bonuses are streamlined. Penalties start at 9 STR, bonuses at 12 STR.
+  - Exceptional Strength (18/xx) no longer provides a THAC0 bonus. Its damage bonus is now +0 (18/01-24), +1 (18/25-75), or +2 (18/76+).
+  - Weight allowance is adjusted to be more gradual, increasing capacity at low STR and decreasing it at very high STR.
+- **Weapon Styles**:
+  - **Two-Handed Style**:
+    - **0 Pips**: -1 to Armor Class
+    - **1 Pip**: +1 Damage, +1 Speed Factor.
+    - **2 Pips**: +2 Damage, +4 Speed Factor, critical threat range increased by 1.
+  - **Single-Weapon Style**:
+    - **0 Pips**: -1 to Speed Factor
+    - **1 Pip**: +1 Damage, +1 AC, +1 Speed Factor, critical threat range increased by 1.
+    - **2 Pips**: +2 Damage, +2 AC, +2 Speed Factor.
+  - **Sword and Shield Style**:
+    - **0 Pips**: -1 damage, THAC0, and AC penalty vs. Missiles.
+    - **1 Pip**: +2 AC vs. Missiles.
+    - **2 Pips**: +1 AC, +4 AC vs. Missiles.
+  - **Two-Weapon Style**:
+    - **0 Pips**: -2 AC; THAC0: -4 (main-hand) / -6 (off-hand); Damage: -2 (main-hand) / -1 (off-hand).
+    - **1 Pip**: THAC0 penalties reduced to -2 (main-hand) / -4 (off-hand).
+    - **2 Pips**: Main-hand THAC0 penalty removed.
+    - **3 Pips**: Off-hand THAC0 penalty reduced to -2.
+- **Weapon Proficiencies**: THAC0 progression is smoothed out.
+  - **1 Pip**: No bonus (vanilla).
+  - **2 Pips**: +1 THAC0, +2 Damage (vanilla).
+  - **3 Pips**: +2 THAC0, +3 Damage.
+  - **4 Pips**: +3 THAC0, +4 Damage.
+  - **5 Pips**: +4 THAC0, +5 Damage.
 
-Overall, these changes may change difficulty slightly, since it will affect creatures with player-usable classes. Or maybe not, since the player will also benefit from these changes.
+These changes may affect difficulty, as they apply to any creature using player classes.
 
 **Component 1546:** Make the different shield types more distinct and optionally change shield usability
 
-(Yet) Another thing that annoys me in the game is that there's not much difference to speak of between the different types of shields. Normally, medium shields provide Armor Class bonuses across the board, while Tower Shields add a bonus to missile, small shields lack missile bonus, and bucklers lack missile and piercing. It lacks more nuance that I would prefer and as such it's reworked in the following manner:
+This component reworks shields to make each type more distinct, adding unique benefits and drawbacks.
 
-- **Tower** Shields: The base armor class is always 1 point above other shields of their class. However, they're big and clunky, which means it also cause a -1 penalty to THAC0 and Saves vs. Breath. It also inflicts a penalty of -2 to Speed Factor. Optionally, you can make them reduce movement speed by 20% (disabled by default).
-- **Medium** Shields: Inflict a -1 penalty to Speed Factor and Saves vs. Breath, and optionally reduce movement speed by 10% (disabled by default).
-- **Small** Shields: At even enchantment level above 0, they compensate their lack of Armor Class bonus vs. missile by 1. For example, a hypothetical +6 small shield would grant +6 Armor class, but only +3 vs. missile.
-- **Bucklers**: At even enchantment level above 0, they compensate their lack of Armor Class bonus vs. piercing by 1. For example, a hypothetical +6 buckler would grant +6 Armor class, but only +3 vs. piercing. Additionally, the shields can be used to **parry** opponents 10% of the time when attacked in close range (even if the attack fails), inflicting if a save vs Breath is failed (enchantment level adds penalties) 1d2+bonus crushing damage, which opponents a -15% damage susceptibility (if they aren't immune to the damage type) and -2 armor class penalty for half a round. This effect will not work if the user is helpless (stunned, held, unconscious...) and will also not apply to foes that are massive or incorporeal. If my finesse component is installed with the buckler component included, single-classed thieves can do this 20% of the time instead. **Warning:** This should be installed after ANYTHING that adds items that add or modify weapon protection effects, including the component in SCS that increases the power from Mantle and Improved Mantle. The reason for this is that the component needs to patch those resources such that they appropriately block the buckler parry effect according to the shield enchantment level.
+- **Tower Shields**: Provide +1 AC over other shields of the same enchantment but are clunky, incurring a -1 penalty to THAC0 and Saves vs. Breath, and a -2 penalty to Speed Factor. An optional setting can also reduce movement speed by 20%.
+- **Medium Shields**: Inflict a -1 penalty to Speed Factor and Saves vs. Breath. An optional setting can also reduce movement speed by 10%.
+- **Small Shields**: At even enchantment levels, their AC penalty vs. Missiles is offset by 1
+- **Bucklers**: At even enchantment levels, their AC bonus vs. Piercing is offset by 1. Additionally, bucklers have a 10% chance to **Parry** melee attacks. A successful parry inflicts 1d2+bonus crushing damage and applies a -2 AC penalty and -15% damage vulnerability to the attacker for half a round (Save vs. Breath negates, improves with enchantment level).
 
-Optionally, there are also options in the configuration file to achieve the following:
+The configuration file provides several options to change shield usability:
 
-- Make all shields usable by all classes (**off** by default)
-- Only single-classed warrior classes can use Tower Shields (**on** by default)
-- Only fighter classes (single classed, multiclasses, or dual classed) can use Tower Shields (**off** by default)
-- Thieves and bards can use Small Shields (**on** by default)
-- Thieves and Bards can use Small and Medium Shields (**off** by default)
-- Wizards can use bucklers (**on** by default)
+- Allow all classes to use all shields (**off** by default).
+- Restrict Tower Shields to single-classed warriors (**on** by default).
+- Restrict Tower Shields to any class with a fighter level (**off** by default).
+- Allow Thieves and Bards to use Small Shields (**on** by default).
+- Allow Thieves and Bards to use Small and Medium Shields (**off** by default).
+- Allow Wizards to use Bucklers (**on** by default).
 
-**BIG FAT WARNING:** This component uses the following convention to distinguish between different shields: it must have as an unidentified name either "Buckler", "Small Shield", "Medium Shield", or "Tower Shield". My mod will patch the instances in vanilla where it isn't the case, but it will not be able to detect modded shields that don't follow this convention. If you have a mod that adds shields that don't follow this convention, please let me know and I will add support for it. You could also patch it yourself with NearInfinity before running my mod, and it will work fine.
+Important notes:
+
+- **Buckler Parry**: This component should be installed **after** any mods that add or modify weapon protection effects (e.g., SCS's Mantle tweaks) to ensure the parry is correctly blocked by those protections.
+- **Mod Compatibility**: This component identifies shield types by their unidentified name (e.g., "Buckler", "Small Shield"). While vanilla items are patched, mod-added shields not following this convention will not be affected. Please report any incompatible mods so support can be added.
 
 **Component 1547:** Make Protection from Undead scrolls less overpowered but still invaluable vs. undead
 

@@ -59,8 +59,8 @@
   - Dagger component modifies the kukris differently, granting no thac0 or critical hit bonus, half the speed bonus, but base damage is increased from 1d4 to 1d4+1
   - With Finesse:
     - Kukris have a 7% less chance of triggering a finesse hit compared to other daggers (37-45%)
-    - Rapiers have a 5% less chance of triggering a finesse hit compared to other swords (21-30%)
-    - Estocs have a 4% higher chance of triggering a finesse hit compared to other swords (10-19%)
+    - Rapiers have a 5% less chance of triggering a finesse hit compared to other short swords (21-30%)
+    - Estocs have a 4% higher chance of triggering a finesse hit compared to other long swords (10-19%)
     - No changes for shurikens
   - The new disruption component will patch Shining Light of Lathander with the new rebalanced undead-disruption effect
 - Katanas and scimitars now have a 10-19% chance to trigger finesse instead of 9-18%
@@ -84,6 +84,9 @@
 - Improved the code in Phantom's Blade Tweak/Fix
 - Moved the Phantom's Blade component into a prefix (extending headers to level 20 & marking extra damage as not waking up sleepers; former doesn't run if fixpack is installed)
 - Short Sword of Mask entangle effect is now not subject to magic resistance, but can be dispelled still
+- Shortened the component descriptions and improved the writing a bit
+- Stats tweak now switches back to the default bonus from sword and shield +2 AC vs missile, so it's more enticing for classes that can only put a single point, beyond removing the penalties of having no proficiency
+- Deleted needless files
 
 ## New components
 
