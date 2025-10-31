@@ -4,17 +4,17 @@
 
 <summary>
 
-##
-
-### General Tweaks
+## General Tweaks
 
 </summary>
 
-## Make conjured magical weapons grant 2 APR by default (120)
+##
+
+### Make conjured magical weapons grant 2 APR by default (120)
 
 These spells promise power, but your little wizard is not a good fighter at all. Thus, by default, they grant 2 APR if the caster has no fighter levels (otherwise, 1.5).
 
-**Component 443:** Make "Symbol, X" spells slightly more powerful and rebalance the enemy versions
+### Make "Symbol, X" spells slightly more powerful and rebalance the enemy versions (443)
 
 The following changes are enabled by default but can be configured individually:
 
