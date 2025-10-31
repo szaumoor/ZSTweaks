@@ -582,7 +582,7 @@ This component blends the two flavors of descriptions in BGEE and BG2EE and make
 - Crushing damage resistance increases by 10%
 - Crushing damage dealt increases by 8%
 
-**Component 1209:** Make The Night's Gift +5 a bit more interesting as an armor
+### Make The Night's Gift +5 a bit more interesting as an armor (1209)
 
 Heavily leaning on the lore of the item (blessed by Shar):
 
@@ -591,32 +591,32 @@ Heavily leaning on the lore of the item (blessed by Shar):
 - 5% physical damage resistance for all thieves wearing it (single class or not)
 - At night, regenerate 1 HP per round, and when you're hit, there's a 12% chance of becoming invisible as per the Improved invisibility spell for 4 rounds. This effect can only trigger once per turn.
 
-**Component 1211:** Make Orc Leathers grant special bonuses to half-orc wearers
+### Make Orc Leathers grant special bonuses to half-orc wearers (1211)
 
 The armor now leans more heavily into the orcish theme:
 
 - -2 Charisma (from -1), so it's potentially more meaningful
 - Half-orcs only: +1 to inflicted damage, +10 maximum HP, missile resistance is doubled
-
-**Component 1212:** Make Skin of the Ghoul +4 protect against all kinds of paralysis
+  
+### Make Skin of the Ghoul +4 protect against all kinds of paralysis (1212)
 
 This includes paralysis from ghouls and magical commands. It's of course inspired by the fact that the skin is made from a ghoul.
 
-**Component 1213:** Make Armor of Deep Night +4 slightly better inspired by the Umberlee's related backstory
+### Make Armor of Deep Night +4 more unique inspired by the backstory (1213)
 
-Following the Umberlee theme, this armor now provides a 20% resistance to cold and electricity. Additionally, it provides a 18% chance of inflicting 1d4 cold and electric damage with each successful melee or ranged attack the wearer does.
+Following the Umberlee theme, this armor now provides a 20% resistance to cold and electricity. Additionally, it provides an 18% chance of inflicting 1d4 cold and electric damage with each successful melee or ranged attack the wearer does.
 
-**Component 1214:** Make Armor of the Viper more interesting by offering a few advantages to offset the penalties
+### Make Armor of the Viper more interesting (1214)
 
 Despite the +5 enchantment, I find the armor generally not worth using, especially since it's pretty much always a better idea to use a non-unique armor with an item of protection instead. Therefore:
 
-- Save vs. Death: -3 (from -2)
+- Save vs. Death penalty: -3 (from vanilla -2)
 - Other saves: +1
 - -50% poison resistance. **Bear in mind this weakness will likely not work without the fixpack installed**.
 - +100% poison damage inflicted. So if you're a vanilla assassin, for example, each poison tick would inflict 2 damage. Same for any kind of poison spell that might be accessible to the wearer.
 - Charge ability: Poison Weapon, as per the vanilla assassin ability, once per day.
 
-**Component 1215:** Make Aeger's Hide more powerful when used by Barbarians
+### Make Aeger's Hide more powerful when used by Barbarians (1215)
 
 Now, since this armor is Hide Armor, and hide armor is usually thematically associated with barbarians, the following is added:
 
@@ -624,15 +624,15 @@ Now, since this armor is Hide Armor, and hide armor is usually thematically asso
 - Elemental resistances doubled for barbarians.
 - Barbarians also get a +3% physical damage resistance.
 
-**Component 1216:** Make Ankheg's Plate grant 20% acid resistance
+### Make Ankheg's Plate grant 20% acid resistance (1216)
 
 Since Ankhegs actually spit acid, it makes sense that this armor would grant acid resistance. A small buff, especially since the sources of acid damage are limited (at least in BG) but it makes sense thematically.
 
-**Component 1217:** Make Hayes' Robe actually grant +1 to Armor Class, and +1 casting speed for wild mages only
+### Make Hayes' Robe grant +1 to Armor Class and casting speed to wild mages (1217)
 
 Generally this robe was never very convenient to use, especially considering the alternatives. Even without Chaos Shield. So now it undoes the -1 Armor Class penalty, becoming an actual Armor Class bonus, which could be combined with a good Armor Class bracer, and adds +1 casting speed for wild mages only.
 
-**Component 1218:** Make the Plate of the Dark not just a generic +1 full plate but something more unique based on the description
+### Make the Plate of the Dark not just a generic +1 full plate (1218)
 
 This improves the unremarkable +1 full plate armor (yet bears a unique description and name -- I hate this so much ffs), so it's at least remarkable if not powerful:
 
@@ -640,11 +640,11 @@ This improves the unremarkable +1 full plate armor (yet bears a unique descripti
 - 15% chance to curse living targets when you hit them for 6 rounds, imposing a -1 penalty to all rolls, luck, Armor Class, and morale, and increasing their chances of critical misses by 5%. No saving throw is allowed and it does not stack.
 - May cast Horror twice per day
 
-**Component 1271:** Make the belt of gender inversion give a bonus vs. the original gender of the wearer
+### Make the belt of gender inversion give a bonus vs. the original gender (1271)
 
-This makes the belt provide a functional utility in combat, providing a +1 bonus in combat rolls (THAC0 and damaga) vs. those of the gender you originally had. For example, if your character is a man, becoming a woman with the belt will allow you to perform better in combat against men.
+This makes the belt provide a functional utility in combat, providing a +1 bonus in combat rolls vs. those of the gender you originally had. For example, if your character is a man, becoming a woman with the belt will allow you to perform better in combat against men.
 
-**Component 1291:** Make Shakti Figurine last longer and more powerful
+### Make Shakti Figurine last longer and more powerful (1291)
 
 This improves this item's utility such that you can shapeshift into a short sword wielding warrior with the following improvements:
 
@@ -653,7 +653,7 @@ This improves this item's utility such that you can shapeshift into a short swor
 - Short sword is 5% more likely to critically hit than a normal sword
 - Lasts for 1 turn (from 4 rounds)
 
-**Component 1331:** Make Doomplate an armor for those that want to RIP. AND. TEAR.
+### Make Doomplate an armor for those that want to RIP. AND. TEAR. (1331)
 
 I couldn't resist, considering the name of this armor, especially considering that the unique description has no yield at all as far as how it works. Therefore, this armor now provides:
 
@@ -665,7 +665,7 @@ I couldn't resist, considering the name of this armor, especially considering th
 
 A new original description is also provided, inspired, of course, by Doom.
 
-**Component 1333:** Make the Robe of Vecna the Robe of Larloch instead
+### Make the Robe of Vecna the Robe of Larloch instead (1333)
 
 This will probably not be a favorite since the robe is effectively "the best", and what you want for powergaming, but I decided to make it more nuanced, with some inspiration from NWN functionally. It's also now the Robe of Larloch, not Vecna, since it's probably much more lore-appropriate to begin with, and Larloch is also a lich of immense power anyway. So here are the changes (sorry, some nerfs are involved):
 
@@ -675,7 +675,7 @@ This will probably not be a favorite since the robe is effectively "the best", a
 - +2 to all saving throws against spells of all schools of magic
 - Enemies in the field of vision of the wearer suffer a -1 penalty to all saving throws against spells of all schools of magic
 
-**Component 1334:** Make Ashen Scales more unique beyond enchantment level
+### Make Ashen Scales more unique beyond enchantment level (1334)
 
 Yay, I love me another item with a unique description but no unique function. This armor now provides something beyond the enchantment level:
 
@@ -684,7 +684,7 @@ Yay, I love me another item with a unique description but no unique function. Th
 - +2 Armor Class vs. wyverns and dragons
 - Wearable by rangers and druids
 
-**Component 1335:** Make Crimson Chain more unique beyond enchantment level
+### Make Crimson Chain more unique beyond enchantment level (1335)
 
 Yay, I love me another item with a unique description but no unique function. This armor now provides something beyond the enchantment level:
 
@@ -693,7 +693,7 @@ Yay, I love me another item with a unique description but no unique function. Th
 - Enemies killed while wearing the armor grant the wearer +1 THAC0 and damage for 7 seconds
 - May be worn by thieves and bards, and does not disable thieving abilities
 
-**Component 1336:** Make Cowl of the Stars more generally useful (Rasaad's Quest)
+### Make Cowl of the Stars more generally useful (1336)
 
 I don't like wearable items that *only* give charged abilities, generally. The following improvements were made:
 
@@ -701,7 +701,7 @@ I don't like wearable items that *only* give charged abilities, generally. The f
 - Creates 20 Melf's Minute Meteors once per day, regardless of wizard level
 - Additionally, since I think it's thematic, it gives Sun Soul monks and Priests of Lathander a 20% chance of inflicting extra 2d4 fire damage with all their melee attacks.
 
-**Component 1351:** Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing
+### Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing (1351)
 
 These gauntlets are not a very interesting reward for monks. Gauntlets of Crushing are a better option. You only miss out on them, I believe, if you start a ToB playthrough directly without importing. And who does that?
 
@@ -718,7 +718,11 @@ These gauntlets are not a very interesting reward for monks. Gauntlets of Crushi
 
 <details>
 
-<summary><b>Dagger Tweaks</b></summary>
+<summary>
+
+## Dagger Tweaks
+
+</summary>
 
 **Component 1000:** Make throwing poisoned daggers less rare and more likely to poison enemies
 
