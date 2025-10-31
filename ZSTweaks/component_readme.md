@@ -2,7 +2,7 @@
 
 <details>
 
-<summary> <b> General Tweaks </b> </summary>
+<summary> <b style="font-size:120%;"> General Tweaks </b> </summary>
 
 **Component 120:** Make conjured magical weapons grant 2 APR by default
 
