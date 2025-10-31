@@ -87,6 +87,7 @@
 - Shortened the component descriptions and improved the writing a bit
 - Stats tweak now switches back to the default bonus from sword and shield +2 AC vs missile, so it's more enticing for classes that can only put a single point, beyond removing the penalties of having no proficiency
 - Deleted needless files
+- Stat component now reduces the lore per level of bards from 10 to 8, to tighten the differences slightly (but they are still gaining 3 more points than wizards and sorcerers regardless)
 
 ## New components
 

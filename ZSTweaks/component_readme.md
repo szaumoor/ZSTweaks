@@ -204,24 +204,20 @@ Support for mod-added items with vorpal effects can be added upon request. Addit
 This component overhauls character stats for a more streamlined progression and interesting choices. All tweaks are enabled by default.
 
 - **Constitution**:
-  - **HP Bonus (Fighters)**: Progression is streamlined. Starts at 12 CON and grants +1 HP every 2 points, up to +7 HP at 24/25 CON.
-  - **HP Bonus (Non-Fighters)**: Now receive a bonus starting at 12 CON, up to +4 HP at 20 CON.
+  - **HP Bonus**: Progression is streamlined. Starts at 12 CON and grants +1 HP every 2 points, up to +7 HP at 24/25 CON. Non-Fighters benefit more slowly, gaining up to +4 HP at 20 CON. HP penalties start at 8 CON.
   - **Regeneration**: Starts at 18 CON (1 HP / 300s) and improves to 1 HP / 60s at 25 CON.
-  - **Fatigue & HP Penalties**: Fatigue bonuses start at 12 CON. HP penalties start at 8 CON.
-- **Dexterity**:
-  - AC and Ranged THAC0 bonuses are streamlined. The +7 bonus is now only achieved at 25 DEX.
-  - Penalties now begin at 9 DEX.
+  - **Fatigue**: Fatigue bonuses start at 12 CON.
+- **Dexterity**: AC and Ranged THAC0 bonuses are streamlined. The +7 bonus is now only achieved at 25 DEX. Penalties now begin at 9 DEX.
 - **Lore**:
   - **By Class**: Mages get +5/level, Thieves +4/level, Clerics/Shamans/Druids +3/level, and Paladins/Rangers +2/level. Fighters and bards are unchanged (1 and 10, respectively)
-  - **By Stat**: Bonuses from INT/WIS start at 12, with a more gradual progression for both bonuses and penalties.
+  - **By Stat**: Bonuses from INT/WIS start at 12, with a more gradual progression for both bonuses and penalties. Bards get a reduced 8 lore per level.
 - **Racial THAC0**: Dwarves gain a +1 THAC0 bonus with axes.
 - **Shorty Saves**: The saving throw bonus from Constitution for shorty races can be configured:
   - **Nullify**: Removes the bonus entirely.
   - **Tone Down (Default)**: Slower progression, starting at +1 (12 CON) and capping at +3 (21+ CON).
   - **Standardize**: A flat +2 bonus, regardless of Constitution.
 - **Strength**:
-  - THAC0 and Damage bonuses are streamlined. Penalties start at 9 STR, bonuses at 12 STR.
-  - Exceptional Strength (18/xx) no longer provides a THAC0 bonus. Its damage bonus is now +0 (18/01-24), +1 (18/25-75), or +2 (18/76+).
+  - THAC0 and Damage bonuses are streamlined. Penalties start at 9 STR, bonuses at 12 STR. Exceptional Strength (18/xx) no longer provides a THAC0 bonus. Its damage bonus is now +0 (18/01-24), +1 (18/25-75), or +2 (18/76+).
   - Weight allowance is adjusted to be more gradual, increasing capacity at low STR and decreasing it at very high STR.
 - **Weapon Styles**:
   - **Two-Handed Style**:
@@ -241,14 +237,7 @@ This component overhauls character stats for a more streamlined progression and 
     - **1 Pip**: THAC0 penalties reduced to -2 (main-hand) / -4 (off-hand).
     - **2 Pips**: Main-hand THAC0 penalty removed.
     - **3 Pips**: Off-hand THAC0 penalty reduced to -2.
-- **Weapon Proficiencies**: THAC0 progression is smoothed out.
-  - **1 Pip**: No bonus (vanilla).
-  - **2 Pips**: +1 THAC0, +2 Damage (vanilla).
-  - **3 Pips**: +2 THAC0, +3 Damage.
-  - **4 Pips**: +3 THAC0, +4 Damage.
-  - **5 Pips**: +4 THAC0, +5 Damage.
-
-These changes may affect difficulty, as they apply to any creature using player classes.
+- **Weapon Proficiencies**: THAC0 progression is smoothed out, gaining 1 THAC0 at 2 pips, and then another one per pip up to +4 at 5 pips.
 
 **Component 1546:** Make the different shield types more distinct and optionally change shield usability
 
@@ -275,15 +264,11 @@ Important notes:
 
 **Component 1547:** Make Protection from Undead scrolls less overpowered but still invaluable vs. undead
 
-This scroll makes undead completely ignore you, which is frankly quite silly and not very interesting. It's like asking for cheesy gameplay. Instead, it does the following:
+This component rebalances the scroll, replacing its "invisibility to undead" effect with a suite of powerful defensive bonuses. For 12 hours, the user gains:
 
-- Undead will acknowledge you, but...
-- You're immune to vampiric domination attempts
-- You're immune to paralytic touches of ghouls, ghasts, and liches
-- You're immune to level drain
-- +2 bonus to saves vs. Death/Paralysis/Poison
-- Undead hitting the user will be rebuked, taking 1d4+1 magic damage (half if saved vs. Spell), and be scared away for 2 rounds if they fail their save. The latter effect can only affect them once per turn.
-- Lasts for 12 hours, similar to IWDEE
+- Immunity to level drain, vampiric domination, and paralysis from undead.
+- A +2 bonus to saves vs. Death, Paralysis, and Poison.
+- A retaliatory effect: Undead that attack the user are rebuked, taking 1d4+1 magic damage and are feared for 2 rounds (Save vs. Spell for half damage and to negate fear).
 
 **Component 1600:** Make everyone able to perform omnidirectional backstabs (aka face-stabbing)
 
@@ -344,7 +329,7 @@ Adds a +1 damage and THAC0 bonus, and +5% critical hit chances, along with the o
   - Save vs. Petrification +1 (vanilla) and Save vs. Spell +1 (new)
   - +20% Magic damage resistance
   - +10% Elemental damage resistance
-- **Elemental resistance robes**: resistance increases 20->40%, adds 7% damage bonus in the relevant element and +1 save vs. evocation spells. This also increases the damage resistance of Robe of Red Flames to 50%, and adds the evocation bonus, for consistency (it's a straight upgrade from the Robe of Fire Resistance).
+- **Elemental resistance robes**: resistance increases 20→40%, adds 7% damage bonus in the relevant element and +1 save vs. evocation spells. This also increases the damage resistance of Robe of Red Flames to 50%, and adds the evocation bonus, for consistency (it's a straight upgrade from the Robe of Fire Resistance).
 - **Archmage Robes**
   - Armor Class set to 5 (vanilla), and it also improves it by 1 additively (new)
   - Magic resistance increases by 10%, not 5%
@@ -380,17 +365,15 @@ I mean, they're THORNS; the only difference is that they're FIERY. Instead of on
 
 **Component 1652:** Make Grandmaster's Armor's movement bonus not affected by Free Action and grant perks to rogues
 
-This component makes the doubled movement of this armor not be affected by Free Action at all, and the following traits are gained:
+This component overhauls the Grandmaster's Armor, making its movement bonus immune to Free Action and adding several new passive perks for single-classed thieves:
 
-- Critical misses are no longer possible (Thieves only)
-- Different kinds of benefits for backstabs are unlocked depending on the rogue wearing this suit:
-  - Crippling Attack: Slow for 1 round, and reduce Strength, Dexterity, and casting speed by 4 for 4 rounds if a Save vs. Death is failed (kitless Thief)
-  - Subduing Attack: Render the victim unconscious for 4 rounds if a Save vs. Death is failed. Additionally, 10 extra non-lethal damage will be inflicted. However, further damage will wake the victim up (Bounty Hunter and Stalker)
-  - Shadow Attack: Empowers self with shadow magic, increasing damage resistance by 5% for 2 rounds, with a 20% chance of making themselves invisible for 2 rounds, increasing –without stacking– damage by 2, and critical chances by 5% (Shadowdancer)
-  - Death Attack: Stun the victim for 1 round if a Save vs. Death is failed. After one round, the victim dies if they're 60 HP or under and a Save vs. Death is failed again. If the victim survives this, they take instead 2d6 poison damage and become more susceptible to the next Death attack, reducing their Saves vs. Death by 4 for 5 rounds (Assassin)
-- New charge ability: Expose Weakness (doesn't interrupt invisibility)
-  - Special: once per day, target loses immunity to backstabs, if they had it, take 10% more damage from piercing and slashing attacks, suffering additionally a -4 penalty to Armor Class against piercing and slashing
-  - Duration: 4 rounds
+- **Passive Bonuses (Thieves only)**: Grants immunity to critical misses.
+- **Special Backstab Attacks**: Each rogue kit gains a unique on-backstab effect:
+  - **Kitless Thief**: Crippling Attack - Slows and reduces STR, DEX, and casting speed by 4 for 4 rounds (save vs. Death).
+  - **Bounty Hunter/Stalker**: Subduing Attack - Knocks the target unconscious (save vs. Death), +10 non-lethal damage.
+  - **Shadowdancer**: Shadow Attack - A 2-round non-stacking self-buff that grants 5% total damage resistance, a +2 bonus to damage, +5% to critical chances, and a 20% chance for invisibility.
+  - **Assassin**: Death Attack - Stuns the target for 1 round (save vs. Death), and they die if they have 60 HP or less and fail another save vs. Death after that round; otherwise they take 2d6 poison damage and their saves vs. Death are damaged by 4 for 5 rounds.
+- **New Charge Ability**: Expose Weakness (1/day), which removes the target's backstab immunity and lowers their defenses to piercing and slashing damage by 10% for 4 rounds. Can be cast invisibly.
 
 **Component 1653:** Make Thieves' Hood protect against critical hits and slightly more advantageous for single-classed thieves: +1 THAC0 and Damage
 
@@ -528,11 +511,7 @@ In my opinion, these gloves are very, very mundane, and not wondrous. Therefore,
 
 **Component 1678:** Make Senses of the Cat imbue the user of more cat-like features
 
-Cats forever!
-
-- It improves Armor Class by 1 and adds +4 bonus against missiles
-- +1 Saves vs. Breath
-- Movement rate increased by a factor of 3
+Cats forever! Now it improves Armor Class by 1 and adds +4 bonus against missiles, gives a +1 Saves vs. Breath, and movement rate increases by a factor of 3.
 
 **Component 1679:** Make the Horn of Kazgaroth more useful and the self-damage more unique
 
@@ -828,22 +807,18 @@ This copies the design of SoD's special throwing dagger such that you can use va
 
 **Component 1686:** Make Life-Stealer +4 a more powerful cursed weapon (requires mod to make it available, such as UB)
 
-This component doesn't make the weapon available. Mods such as Unfinished Business, which gives it to Artemis Entreri in Bodhi's Lair can give you access to this. So essentially this component makes the dagger a bit of a SoA powerhouse sort of similar to Blackrazor. Here's the changes:
+This component overhauls the unused Life-Stealer +4 dagger, turning it into a powerful cursed weapon. Note this does not add the weapon to the game; a mod like Unfinished Business is required to obtain it.
 
-- BAM changed so its gem on the hilt looks green, like Artemis Entreri's dagger.
-- Description changed to something different from Soultaker dagger.
-- Gleams red
-- Changes of draining levels is now 18%, and it drains 2 levels. Recover 1d6 HP plus 10% of your max health upon draining levels.
-- 1 HP drained per hit; 3 HP when wielded by vampires
-- Targets killed while wielding this weapon grant the wielder +1 Strength, +1 Dexterity, 6 HP regenerated over 1 round, and 3 seconds where your HP cannot go below 1.
-- Grants 50% resistance to cold and electricity
-- Inflicts a -50% penalty to fire
-- Infravision
-- Character's alignment becomes Chaotic Evil
-- Immunity to death magic and level drain
-- 1 HP regenerated every 2 rounds
-- Cannot be healed by any of the spells in the Cure Wounds family, Heal, and similar, as well as vanilla healing potions.
-- Cursed, can only be removed with a Remove Curse spell
+- **Appearance**: The dagger's appearance is changed to resemble Artemis Entreri's iconic green-gemmed dagger, and it now gleams red.
+- **On Hit**: Drains 1 HP (3 HP if the wielder is a vampire) with 18% chance to drain 2 levels, healing the wielder for 1d6 HP + 10% of their max HP.
+- **On Kill**: Grants the wielder +1 STR, +1 DEX, 6 HP regeneration over 1 round, and prevents their HP from dropping below 1 for 3 seconds.
+- **Passive Effects**:
+  - Grants +50% Cold/Electricity Resistance, -50% Fire Resistance, Infravision, and immunity to death magic and level drain.
+  - Regenerates 1 HP every 2 rounds.
+- **Curse**:
+  - Changes the wielder's alignment to Chaotic Evil.
+  - The wielder cannot be healed by most conventional healing spells or potions.
+  - Can only be unequipped with a Remove Curse spell.
 
 **Component 1530:** Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time to maximize damage
 
@@ -1639,32 +1614,14 @@ Bigby's spells are generally a pretty poor choice for levels 8 and 9: low damage
 
 **Component 446:** Make fireball-type spells improve more with level and/or improve explosion animations
 
-Fireball is such a ubiquitous spell in D&D and generally considered like a great spell to clear out groups of enemies. I felt that it could use some extra help at higher levels. Other fireball-type spells also get some benefits:
+This component rebalances several Fireball-type spells to improve their damage scaling at higher levels, making them more competitive choices throughout the game.
 
-- Fireball: After level 10, when damage is 10d6, an extra point of fire damage will be gained, up to 10d6+10.
-- Sunfire: After level 10, when damage is 10d6, an extra point of damage will be gained, up to 15d6+5. After level 15, 2 points of fire will be gained per level, up to 15d6+15.
-- Delayed Blast Fireball: now it will start off at 13d6 (level 7 spells are gained at level 13) and then grow by 1d6+2 per level, up to 18d6+10, which then increases by +5 each level until level 20, becoming 18d6+20.
-- Dragon's Breath: minimum damage raised from 20 to 40: 20d10 → 20d9+20 fire damage
+- **Fireball**: Damage scales beyond level 10, up to a maximum of 10d6+10.
+- **Sunfire**: Damage scales beyond level 10, up to a maximum of 15d6+15.
+- **Delayed Blast Fireball**: Damage scaling is significantly improved, starting at 13d6 and progressing to 18d6+20 at level 20. Its explosion radius is also increased to match Fireball.
+- **Dragon's Breath**: Minimum damage is increased. The formula changes from 20d10 to 20d9+20.
 
-If you think this is overpowered, consider these damage range values:
-
-- Skull Trap, another level 3 spell, deals 20d6 at level 20 (12d6 with SCS), which is significantly more than the bonus in this component. Comparison:
-  - Skull Trap (no SCS): 20-120 damage
-  - Skull Trap (SCS): 12-72 damage
-  - Fireball (with component): 20-70 damage
-  - Fireball (without component): 10-60 damage
-- Cone of Cold, another damaging spell of level 5, deals up to 20d4+20 damage too. Comparison:
-  - Cone of cold: 40-100 cold damage
-  - Sunfire (with component): 30-105 fire damage
-  - Sunfire (without component): 15-90 fire damage
-- Horrid Wilting deals 20d8, and it's a ubiquitous spell for players because of the huge damage potential, and Delayed Blast Fireball is an unimpressive contender comparatively (despite the spell level difference). Comparison:
-  - Horrid Wilting deals 20-160 damage (40-160 with my HW tweak)
-  - Delayed Blast Fireball (with component): 38-128 damage
-  - Delayed Blast Fireball (without component): 15-90 damage
-
-Also, Delayed Blast Fireball no longer has a markedly smaller explosion radius compared to Sunfire and Fireball, but the exact same as those.
-
-Lastly, this patches the Fireball explosions such that the god-awful EE explosion is substituted by something much more epic looking in my view. This behavior can be disabled in the configuration file. It's also possible to install **only** the animation change if you like. This includes the Dragon's Breath HLA, featuring a unique explosion, fitting for a disembodied red dragon breathing down on your poor foes.
+Additionally, this component includes an optional visual overhaul that replaces the default EE explosion animations for Fireball, Sunfire, Delayed Blast Fireball, and Dragon's Breath with more impressive custom visuals. The damage rebalance and the new animations can be toggled individually in the configuration file.
 
 **Component 447:** Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance
 
@@ -1903,19 +1860,12 @@ This solution follows the 2nd edition more closely, where only undead who are sp
 
 **Component 468:** Rebalance Call Lightning's damage and scaling
 
-This spell is quite powerful, up to 4 bolts dealing 20-160 (or half when saved) damage each. I am bothered it doesn't scale up to level 20, it stops at level 18 (dealing 20d8 for bolt), which is understandable for balance reasons (unlike other spells where it makes little sense like Glyph of Warding or Phantom Blade—wink wink I have components to fix that).
+This component rebalances the spell to provide smoother damage scaling and makes it bypass Magic Resistance, as it is as natural effect brought by the druid.
 
-Therefore, I rebalanced it so it starts out dealing a bit less damage, and it builds up until 20 until it deals a similar amount of damage as vanilla at level 18. It will also bypass Magic Resistance because this spell is simply the result of a druid beckoning the skies to throw lightning bolts at something, not magical energy coming out from the druid. Specifics:
+- **Damage**: The damage formula is changed to increase the minimum damage while slightly lowering the maximum potential. It starts at 7d6+7 and scales up to 20d6+25 at level 20.
+- **Visuals**: An optional change replaces the vanilla lightning bolt animation with the more impressive version from **IWDEE**.
 
-- It starts out dealing 7d6+7 electric damage (from 7d8).
-- Every level thereafter up to level 18, the dice number thrown increases by 1 and the extra damage increases by 1. For example, at the next level, you would deal 8d6+8 electric damage (from 8d8).
-- When reaching level 18, the maximum damage would be 20d6+20 electric damage (from 20d8), i.e., 40-140 vs. 18-144.
-- After level 18, only the bonus damage increases: at level 19, the spell deals 20d6+22 electric damage, and at level 20, it deals 20d6+25 electric damage.
-- Final comparison of maximum possible damage (with save failed and no resistances) at level 20: 45-145 vs. 20-160.
-
-In summary, higher minimum damage, more moderate scaling, a bit lower maximum damage, and magic resistance has no effect.
-
-Additionally, it also makes the lightning bolts look like they do in IWDEE, which is a bit more impressive than the vanilla version. Both the boost and the animation can be disabled in the configuration file, thus allowing you to install only the animation part, if you prefer.
+Both changes can be toggled individually in the configuration file.
 
 **Component 505:** Make Repulse Undead more useful by causing damage and Slow when they're repulsed
 
