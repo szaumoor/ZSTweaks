@@ -7,7 +7,9 @@
 ## General Tweaks
 
 </summary>
+
 ##
+
 ### Make conjured magical weapons grant 2 APR by default (120)
 
 These spells promise power, but your little wizard is not a good fighter at all. Thus, by default, they grant 2 APR if the caster has no fighter levels (otherwise, 1.5).
@@ -20,7 +22,7 @@ The following changes are enabled by default but can be configured individually:
 - **Symbol, Pain**: No longer allows a saving throw. It also reduces the target's damage output by 10%, and its duration is reduced from 11 turns to a more reasonable 11 rounds.
 - **Nerf enemy symbol spells**: Enemy-cast Symbol spells now have the same duration as player-cast versions, removing an artificial disparity.
 
-**Component 1120:** Make some weapon categories suffer penalties to backstabbing for balance
+### Make some weapon categories suffer penalties to backstabbing for balance (1120)
 
 This component reduces the backstab multiplier for weapons that are ill-suited for backstabbing, such as the Staff of the Ram. The tweak is fully configurable, allowing you to choose which weapon categories are affected and their respective penalty levels. The default penalties are:
 
@@ -41,7 +43,7 @@ Both types of weapons have piercing parts; that's why. Enchantment level:
 - +4, +5 ⇾ 1d2+1 points of piercing damage
 - +6 ⇾ 1d3+1 points of piercing damage
 
-**Component 1150:** Make some weapon categories adjust their baseline damage
+### Make some weapon categories adjust their baseline damage (1150)
 
 This component adjusts the base damage of several weapon categories to make them more distinct or viable. All changes are enabled by default but can be configured individually.
 
@@ -63,7 +65,7 @@ On a critical hit, affected weapons deal extra damage in a separate damage tick:
 
 For example, a critical hit with a +3 one-handed axe that deals 20 damage will inflict an additional 1d8+3 damage, for a total of 24-31. This component can be configured to affect axes and halberds independently.
 
-**Component 1362:** Make maces, clubs, and hammers damage the target's AC temporarily based on enchantment level
+### Make maces, clubs, and hammers damage the target's AC temporarily (1362)
 
 This component introduces the concept that blunt weapons are effective at damaging armor. While most armors in the game already have penalties against blunt weapons, this tweak extends a similar effect to creatures with natural armor.
 
@@ -78,11 +80,11 @@ This provides a tactical advantage when using blunt weapons, but be aware that e
 
 An optional setting in the configuration file can restrict this effect to only apply to creatures without wearable armor (e.g., dragons, umber hulks). This option is **disabled** by default.
 
-**Component 1435:** Make Darts have a speed factor of 0 and extend the range to 30 ft
+### Make darts faster and with longer range (1435)
 
 Self-explanatory. It's the lightest weapon, realistically. It also makes them slightly less inconvenient by making them have a range equivalent to those of arrows and bolts.
 
-**Component 1440:** Make daggers have general extra features to compensate for the low damage
+### Make daggers get extra features to compensate for low damage (1440)
 
 Daggers are often overlooked due to their low damage output. This component aims to make them more appealing by adding the following traits:
 
@@ -98,7 +100,7 @@ Daggers are often overlooked due to their low damage output. This component aims
 
 **Exceptions**: Oversized daggers like Grave Binder are not affected. Other unusual daggers are handled on a case-by-case basis.
 
-**Component 1450:** Make some rogue weapons able to do more damage if wielded by pure thieves (Finesse)
+### Make thief weapons able to do 'Finesse' damage when used by pure rogues (1450)
 
 This component aims to make single-classed Thieves (and optionally Bards) more effective with certain weapons by introducing a "Finesse" mechanic, inspired by *NWN*.
 
@@ -136,7 +138,7 @@ The following items are intentionally skipped:
 
 All weapon categories are enabled by default but can be individually disabled in the configuration file.
 
-**Component 1533:** Rebalance some wands
+### Make some wands more balanced (1533)
 
 - Wand of Magic Missiles: it casts 3 missiles, not 1, which makes it generally useful for the majority of both games, same as casting from a scroll. A single missile is quite often a missed opportunity for an action during your round
 - Wand of Fear: Fear effect duration reduced from 15 rounds to 1 turn, undocumented +2 save bonus is eliminated, and as such it will be as effective as the Horror spell or the War Cry HLA (sad, sad, vanilla HLA)
@@ -144,7 +146,7 @@ All weapon categories are enabled by default but can be individually disabled in
 - Wand of Sleep: description now notes that it only works for up to 4 HD monsters
 - To be continued
 
-**Component 1534:** Rebalance some potions
+### Make some potions more balanced or useful (1534)
 
 This component includes two optional, universal changes: making all potions usable by any class and preventing potions from stacking with themselves. Both are enabled by default and can be configured.
 
@@ -159,17 +161,17 @@ This component includes two optional, universal changes: making all potions usab
 - **CHARNAME'S Tankard**: Heals 27 HP (3/day) and grants +1 Strength and Constitution for 1 turn.
 - **All Strength Potions**: Usable by any class (this is a separate option from the universal one).
 
-**Component 1537:** Make Poison-curing spells an instant cast so attempting to cure poison is less likely to be interrupted
+### Make poison-curing spells cast instantly & protect vs. poison briefly (1537)
 
 Self-explanatory. It's quite a pain when it's something that is supposed to cut a poison's effect short, but it's almost guaranteed to be interrupted for the caster unless you're extremely precise with casting timing (and you're lucky). This does not fully prevent interruption, but it makes timing the cast far easier.
 
 Additionally, these spells provide a very short immunity to poison effects after ingestion. Half a round for Slow Poison, and 1 round for Neutralize Poison.
 
-**Component 1538:** Make jewelry and other items meant to be sold more valuable
+### Make jewelry more valuable (1538)
 
 This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component increases the value of those by 50% by default. However, this is fully customizable. Check the ZSTweaks/configurations/**zstweaks.prefs.txt** file if you want to customize this.
 
-**Component 1539:** Make classes other than arcane and divine spellcasters able to use scrolls freely
+### Make more classes able to use scrolls freely (1539)
 
 This component removes class restrictions from scrolls, allowing non-spellcasters to use them. It offers several options:
 
@@ -180,15 +182,15 @@ This component removes class restrictions from scrolls, allowing non-spellcaster
 
 This component identifies a scroll as a "priest scroll" if it is usable by any priest class; otherwise, it is considered a "wizard scroll."
 
-**Component 1544:** Make scrolls always cast at the character level regardless of class
+### Make scrolls always cast at the character level regardless of class (1544)
 
 This component will process all existing scrolls in the game and make sure they're cast at character level, no matter what your class is. So if you have a level 16 Thief that can use scrolls by whatever means, they will be able to cast it at level 16. This pairs well with the previous component and greatly increases the usability of scrolls as a general resource for the whole party. I would recommend enforcing stat requirements so it's a bit more fair.
 
-**Component 1650:** Make mage robes without cloaks (like Robe of Vecna) take on the appearance of robes with cloaks
+### Make mage robes without cloaks cloaked (1650)
 
 I've never liked the look of robes without cloaks or without hoods (there's really nothing to look at). Since the hooded version is more involved and many may prefer to see the character's head, the cloaked look is the default one.
 
-**Component 1541:** Make vorpal hits not work if target is under Stoneskin or Ironskins
+### Make vorpal hits fail if target has stoneskins (1541)
 
 Inspired by 2nd Edition rules, this component prevents vorpal hits from affecting targets protected by Stoneskin or Ironskin.
 
@@ -203,7 +205,7 @@ This component manually patches the following vanilla sources of vorpal hits:
 
 Support for mod-added items with vorpal effects can be added upon request. Additionally, an option in the configuration file allows you to prevent vorpal hits from chunking targets. This is disabled by default.
 
-**Component 1545:** Make the basic benefits and progression of various character stats more streamlined or interesting
+### Make character stats more streamlined or interesting (1545)
 
 This component overhauls character stats for a more streamlined progression and interesting choices. All tweaks are enabled by default.
 
@@ -243,7 +245,7 @@ This component overhauls character stats for a more streamlined progression and 
     - **3 Pips**: Off-hand THAC0 penalty reduced to -2.
 - **Weapon Proficiencies**: THAC0 progression is smoothed out, gaining 1 THAC0 at 2 pips, and then another one per pip up to +4 at 5 pips.
 
-**Component 1546:** Make the different shield types more distinct and optionally change shield usability
+### Make shield types more distinct and change shield usability (1546)
 
 This component reworks shields to make each type more distinct, adding unique benefits and drawbacks.
 
@@ -266,7 +268,7 @@ Important notes:
 - **Buckler Parry**: This component should be installed **after** any mods that add or modify weapon protection effects (e.g., SCS's Mantle tweaks) to ensure the parry is correctly blocked by those protections.
 - **Mod Compatibility**: This component identifies shield types by their unidentified name (e.g., "Buckler", "Small Shield"). While vanilla items are patched, mod-added shields not following this convention will not be affected. Please report any incompatible mods so support can be added.
 
-**Component 1547:** Make Protection from Undead scrolls less overpowered but still invaluable vs. undead
+### Make Protection from Undead more balanced (1547)
 
 This component rebalances the scroll, replacing its "invisibility to undead" effect with a suite of powerful defensive bonuses. For 12 hours, the user gains:
 
@@ -274,7 +276,7 @@ This component rebalances the scroll, replacing its "invisibility to undead" eff
 - A +2 bonus to saves vs. Death, Paralysis, and Poison.
 - A retaliatory effect: Undead that attack the user are rebuked, taking 1d4+1 magic damage and are feared for 2 rounds (Save vs. Spell for half damage and to negate fear).
 
-**Component 1600:** Make everyone able to perform omnidirectional backstabs (aka face-stabbing)
+### Make everyone able to perform omnidirectional backstabs (1600)
 
 This allows player-created characters as well as all joinable characters to backstab from any angle. Optionally, there is an option to make them able to backstab without invisibility instead, but with the angle requirement intact.
 
