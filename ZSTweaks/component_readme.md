@@ -392,32 +392,25 @@ This improves this item in the following ways:
 
 This makes these boots improve Magic Resistance by 10% for everyone (from 7%) and Inquisitors and Wizard Slayers by 18%.
 
-**Component 1655:** Make Crown of Lies more consequential when used
+### Make Crown of Lies more consequential when used (1655)
 
 Now it reduces lore by -20 (from 30) BUT it also decreases Wisdom by 2 (which would affect Cleric/Mages more), Detect Illusions by 10, and inflicts -2 saving throw penalty vs. Illusion magic. This is compensated by providing 2 spell slots for level 4 too.
 
-**Component 1656:** Make the Helmet of Dumathoin very slightly more powerful
+### Make the Helmet of Dumathoin slightly more powerful
 
-This improves the damage resistance it grants to 5%. The reason for this lies in the fact that the game only uses integers for most calculations, including damage. This means that the vanilla 3% damage reduction, for classes that have no other sources to reduce damage, would have to be hit with a physical attack of at least 34 damage to reduce the damage by 1, which is the minimum amount, which oftentimes means you're dealing with an enemy that is about to chunk or delete you anyway.
+This component increases the damage resistance granted by the helm from 3% to 5%. Due to the way the game engine rounds damage calculations, the original 3% is often ineffective. The new 5% value provides a small but more consistent benefit, especially for classes that already have other sources of damage reduction.
 
-5% would reduce the threshold before the reduction to 20 points of received damage. It's still mild and shouldn't unbalance anything. For Barbarians, Cleric, Paladins, Shadowdancers (in restricted contexts), and Dwarven Defenders, it will provide a juicier bonus since they all have ways to add physical damage reduction.
+### Make The Visage grant Aura of Despair once per day and improve powers (1657)
 
-**Component 1657:** Make The Visage add the capacity to cast Aura of Despair once per day and improve powers slightly
+This component improves The Visage by increasing its Breathe Acid damage to 8d6 (from 6d6) and adding the ability to cast Aura of Despair once per day. The component will be skipped if Forgotten Armaments is installed.
 
-This improves this mask's powers in the following ways:
-
-- Breathe Acid now causes 8d6 acid damage, not 6d6
-- May also cast Aura of Despair as a blackguard of the same level once per day, which is fitting considering the description itself talks about how looking into the mask causes feelings of dread.
-
-If Forgotten Armaments is installed, this component will be skipped, as that mod changes it already in a fairly different way thematically.
-
-**Component 1658:** Make Dragon Helm add protection against acid too, as well as +2 saves against breath
+### Make Dragon Helm add protection against acid and saves vs. breath (1658)
 
 Self-explanatory. As for the reasoning, because it felt odd leaving acid breath out of it. Saves vs. Breath, because well, dragon breath.
 
 It also tweaks the description slightly, because oddly enough it talks about having red, white, and green scales. I was expecting red, white, and **blue**, since blue dragons are the ones who produce electricity, and green dragons exhale poisonous gas. Now it mentions having red, white, black (dragons with acid breath), and blue scales.
 
-**Component 1659:** Make the Helm of the Rock a bit more protective and commanding
+### Make the Helm of the Rock more protective and commanding (1659)
 
 This makes both versions of the helm a truly universal non-physical damage protector by adding a 25% resistance to magic damage. Additionally, the upgraded version gets the following:
 
@@ -425,27 +418,23 @@ This makes both versions of the helm a truly universal non-physical damage prote
 - +1 Charisma
 - Aura of Command is no longer single-target; it spreads upon impact, similarly to Hold Person, but in a bigger area.
 
-**Component 1661:** Make Cloak of the Sewers also protect against poison
+### Make Cloak of the Sewers also protect vs. poison (1661)
 
-This makes the cloak grant additionally grant a Save vs. Poison bonus of +1, as well as 50% poison damage reduction.
+This makes the cloak grant a +1 bonus to save vs. Death and 50% poison damage reduction.
 
-**Component 1662:** Make Montolio's Cloak grant a damage and THAC0 bonus to rangers
+### Make Montolio's Cloak grant extra perks to rangers (1662)
 
-This makes this cloak more meaningful for rangers, even if they don't focus on dual-wielding combat style. Rangers get a +1 THAC0 and Damage while wearing it.
+This makes this cloak more meaningful for rangers, being granted a +1 bonus to THAC0 and Damage.
 
-**Component 1663:** Make the Sandthief Ring in BGEE work as in BG2EE (one use per day)
+### Make Sandthief Ring consistently grant one use of invisibility per day (1663)
 
 This makes this ring reusable instead of having limited charges.
 
-**Component 1664:** Make all ioun stones and circlets protect against critical hits
+### Make ioun stones and circlets protect vs. critical hits (1664)
 
-Self-explanatory. This component is in a way softly incompatible with the spirit of other components, because it makes protection against critical hits more pervasive. An example of this is the tweak that makes Thieves' Hood protect against critical hits.
+Self-explanatory. You can choose to affect all, only ioun stones, circlets, or a selection of those that I deemed more logical or balanced: Pale Green Ioun Stone, Obsidian Ioun Stone, Malla's Stone, Wong Fei Ioun Stone, Circlet of the Lost Souls, and Headband of the Devout.
 
-You can choose to affect all, only ioun stones, only circlets, or a selection of those that I deemed more logical or balanced: Pale Green Ioun Stone, Obsidian Ioun Stone, Malla's Stone, Wong Fei Ioun Stone, Circlet of the Lost Souls, Headband of the Devout.
-
-**Component 1665:** Make several basic ioun stones and circlets a bit more interesting or powerful
-
-This modifies a selection of vanilla ioun stones and circlets:
+### Make ioun stones and circlets a bit more interesting or powerful (1665)
 
 - Dusty Rose Ioun Stone: Inspired by the description, it also protects against berserk and fear. The Armor Class bonus is also now 2. Additionally, it changes the BAM so it has a pinkish hue
 - Pearly White Ioun Stone: This improves the trollish regeneration from 1 HP per 5 rounds to 1 HP per round
@@ -455,49 +444,47 @@ This modifies a selection of vanilla ioun stones and circlets:
 - Circlet of Netheril: This makes it more useful and final for sorcerous classes by adding one extra spell slot for level 9 as well, as well as a +7% bonus to magic damage dealt
 - Eilistraee's Boon +1: Non-evil elves get +1 DEX
 
-**Component 1666:** Make Bracers of Blinding's Improved Haste effect last 1 turn and improve speed passively
+### Make Bracers of Blinding's more generally useful for everyone (1666)
 
-The original lasts 20 seconds. Additionally, it improves weapon speed factor by 2, movement rate by 2, and APR by 1/2.
+Improved Haste charge ability now lasts 40 seconds more (1 full turn). Additionally, it improves weapon speed factor by 2, movement rate by 2, and APR by 1/2.
 
-**Component 1667:** Make Xarrnous's Second Sword Arm (and SoD's version) also add +1 damage (lesser Legacy of the Masters)
+### Make Xarrnous's Second Sword Arm also add +1 damage (1667)
 
 This improves the gauntlets such that it also improves damage, not just THAC0, making it a lesser version of Legacy of the Masters.
 
-**Component 1668:** Make The Dale's Protector slightly more powerful and open to all classes
+### Make The Dale's Protector slightly more powerful and open to all classes (1668)
 
-This improves the item such that it's more attractive for ranged weapon users: the THAC0 bonus is now +3, and it improves ranged damage as well by +1 (which becomes +2 for Archers, single-classed Thieves, and Bards).
+This improves the item such that it's more attractive for ranged weapon users: the THAC0 bonus is now +3, and it improves ranged damage as well by +1 (which becomes +2 for Rangers, single-classed Thieves, and Bards).
 
-**Component 1669:** Make Gauntlets of Extraordinary Specialization improve THAC0 by 2 and open to all classes
+### Make Gauntlets of Extraordinary Specialization improve THAC0 by 2 and open to all classes (1669)
 
 Self-explanatory.
 
-**Component 1671:** Make The Eyes of Truth add a bonus to Detect illusions and Find Traps
+### Make The Eyes of Truth add a bonus to Detect illusions and Find Traps (1671)
 
 I decided to take the name of the item more seriously. And let's face it, this item is always an automatic sell. In this state, at least it has some use for Fighter/Thieves or Cleric/Thieves. +10% bonus to both skills
 
-**Component 1672:** Make Stalker Gauntlets also benefit Bounty Hunters and Shadowdancers
+### Make Stalker Gauntlets also benefit Bounty Hunters and Shadowdancers (1672)
 
 It seems obvious that both the Stalker and Bounty Hunter "professions" align with each other, stalking prey and hunting for a bounty. Shadowdancers are masters of stealth via innate shadow magic, so I don't think it's far-fetched either. Both Stalker-only benefits apply, including the enhanced backstab multiplier.
 
-**Component 1673** Make Blessed Bracers more powerful
+### Make Blessed Bracers more powerful (1673)
 
 This makes the bracers far more worth the trouble for paladins. Instead of just letting you cast Resurrection and Cure Critical Wounds, and give you +10 HP:
 
-- You can cast Resurrection once per day
-- You can cast Heal once per day (instantly cast)
-- You can cast Mass Heal three times per day
-- All wearers get a "blessing": +1 THAC0 and Damage (Use Any Item users or good-aligned paladins)
+- You can cast Resurrection and Heal once per day, and Mass Heal three times per day
+- All wearers get a "blessing": +1 THAC0 and Damage
 - Paladin-only bonuses: +1 Casting Speed, +1 spell slots (1-4), +1/2 APR, +15 HP
 
-**Component 1674:** Make Whispers of Silence improve Move Silently, and protect vs. detection spells except True Sight and grant a bonus sometimes when going invisible
+### Make Whispers of Silence improve stealth and damage from stealth (1674)
 
 This makes the cloak more useful for the purposes of avoiding detection, since Non-Detection is an unremarkable protection. As such, the wearer is also immune to other invisibility-detecting spells, except True Sight. Additionally, it adds a 10% bonus to Move Silently, and a +5% critical hit chances for 2 rounds while the user is invisible, which is an effect that may trigger once per turn (watch out for the red glow on character).
 
-**Component 1675:** Make Cloak of Displacement add +5% damage resistance
+### Make Cloak of Displacement add +5% damage resistance (1675)
 
 Makes the cloak add "displacement" in the same way as "displacement" is faked with things like Shadow Form and Spirit Form, i.e., damage resistance. In this case, just +5% damage resistance (universal).
 
-**Component 1676:** Make Skull of Death allows casting Finger of Death, and protect against Necromantic instant-death effects
+### Make Skull of Death add casting of Finger of Death and protect vs. necromantic death effects (1676)
 
 I don't like items that **only** add an ability without any passive benefit. Therefore:
 
@@ -505,7 +492,7 @@ I don't like items that **only** add an ability without any passive benefit. The
 - Saves vs. Necromancy spells: +4 saves
 - Immunity to necromantic death effects and vorpal hits. On a technical level, this means immunity to the Slay and Kill Target opcodes, but not to the Power Word Kill, Petrification, or Disintegration opcodes
 
-**Component 1677:** Make Wondrous Gloves Wondrous
+### Make Wondrous Gloves Wondrous (1677)
 
 In my opinion, these gloves are very, very mundane, and not wondrous. Therefore, the effects of wearing these gloves are now useful for all bards, with specific benefits according to vanilla kits and for bards in general.
 
@@ -515,11 +502,11 @@ In my opinion, these gloves are very, very mundane, and not wondrous. Therefore,
 - Jesters get immunity to confusion, slow, and unconsciousness, as well as +6 bonus saves vs. Enchantment spells
 - Only bards can wear these.
 
-**Component 1678:** Make Senses of the Cat imbue the user of more cat-like features
+### Make Senses of the Cat imbue the user of more cat-like features (1678)
 
 Cats forever! Now it improves Armor Class by 1 and adds +4 bonus against missiles, gives a +1 Saves vs. Breath, and movement rate increases by a factor of 3.
 
-**Component 1679:** Make the Horn of Kazgaroth more useful and the self-damage more unique
+### Make the Horn of Kazgaroth more useful and unique (1679)
 
 To me, the duration of the effects is too short. Plus, the "unknown" damage to the user becomes "known" too easily. I slightly tweaked the description, by describing what Kazgaroth is, plus:
 
@@ -531,17 +518,17 @@ To me, the duration of the effects is too short. Plus, the "unknown" damage to t
 - Physical resistance: +8% resistance
 - The Horn now has a 50% chance of causing **ONE** deleterious effect on the user: -10 Max Hit Points, -3 THAC0, -2 Damage, -2 Strength, -2 Constitution, -2 Dexterity, -1 Saving Throws, -4 Saves vs. Death, or -50% movement speed. This penalty persists for 2 turns.
 
-**Component 1190:** Make Rod of Lordly Might usable by any class and more powerful
+### Make Rod of Lordly Might usable by any class and more powerful (1190)
 
 The rod is conceptually quite interesting but generally underperforming. This component changes the names to `<item_type> of Royal Might` and all become +3 at least:
 
-- **Mace +2**,  save vs. effect is made at +2, not +5, and the panic is now instead a 2-round Slow effect.
+- **Mace +2**, save vs. effect is made at +2, not +5, and the panic is now instead a 2-round Slow effect.
 - **Flaming Long Sword +1**, causes 1d4 fire damage per hit, and since it's "hypnotic" it has a 50% chance of causing Stun, and 50% change of causing asleep for 1 round. The save against it is now +2 instead of +5. Additionally, it makes it look like an actual flaming sword when held.
 - **Spear +3** has a 10% chance to cause an "Arcane Blast", that deals 2d4+2 magical damage, and it now also causes bleeding if the target fails a Save vs. Death, causing 10 piercing damage over 1 round.
 
 It will also now sport new icons, which are a massive upgrade from the original ones. All made by zenblack.
 
-**Component 1195:** Make Gloves of Healing worth more than what you get by selling them
+### Make Gloves of Healing worth more than what you get by selling them (1195)
 
 This improves the gloves by adding the following:
 
@@ -549,7 +536,7 @@ This improves the gloves by adding the following:
 - Party regeneration of 1 Hit Point every 5 rounds
 - The charge ability is now changed to a combination of Lay On Hands cast at level 10, and Slow Poison
 
-**Component 1997:** Make a number of items without functional use become useful (all are optional)
+### Make a number of quest items functionally useful (1997)
 
 - Kuo-Toa's Blood: can be consumed to permanently improve THAC0, Armor Class vs. missile, saves vs. Breath by 1
 - Eyestalk of an Elder Orb: can be consumed to permanently increase Armor Class and saves vs. Petrification and Death by 1
@@ -560,25 +547,25 @@ This improves the gloves by adding the following:
 - Mask of King Strohm III: now it protects vs. critical hits, increases Detect Illusion and Find Traps by 10. It has a charge ability to cast Oracle once per day.
 - Shadow Dragon Wardstone: It is now an ioun stone which grants immunity to Blindness. Shadow dragons and other shadow creatures incur in a -2 combat roll penalty towards the wearer. 5% hiding skill and shadowdancers and dark moon monks get a +3% damage resistance.
 
-**Component 1198:** Make Ring of the Crusade (SoD) also grant a combat/damage roll bonus vs. demons and devils
+### Make Ring of the Crusade grant combat bonuses vs. demons and devils (1198)
 
 Self-explanatory, the wearer will get a +2 bonus to combat and damage rolls vs. demons and devils.
 
-**Component 1206:** Make Ring of Purity (SoD) also grant combat bonuses vs. evil and grant a spell slot bonus to the good aligned
+### Make Ring of Purity benefit the good-aligned more (1206)
 
 The ring now adds a +1 bonus to THAC0 and Damage vs. evil creatures, as well as 1 extra spell slot for levels 1 and 2 for the good aligned.
 
-**Component 1203:** Make Girdle of Fortitude set Constitution to 18 on equip, instead of with a charge ability
+### Make Girdle of Fortitude set Constitution to 18 on equip (1203)
 
 This makes the belt generally more useful and frankly makes more sense if you consider the description.
 
-**Component 1204:** Make Rhino Beetle Gear (SoD) provide more protection to non-crushing, and rebalance damage resistances
+### Make Rhino Beetle Gear have a more balanced set of resistances (1204)
 
 This follows the same philosophy as the tweak to beetle creatures. The armor now provides a 18% resistance to missile, 12% resistance to slashing, and the Armor Class was slightly tweaked to reflect this theme.
 
 The shield does the same, providing a 12% resistance to missile, 8% resistance to slashing, and 5% resistance to piercing. It also provides a +1 Armor Class bonus to piercing.
 
-**Component 1207:** Make Protector of the Second a special leather armor that is more powerful when used by rangers
+### Make Protector of the Second more powerful when used by rangers (1207)
 
 Following the theme of the description, it provides a bonus to rangers and elves:
 
@@ -586,6 +573,14 @@ Following the theme of the description, it provides a bonus to rangers and elves
 - +15% to hiding for rangers.
 
 Good choice for early to mid-game elven rangers, perhaps even better for stalkers.
+
+### Make Karajah's Life and Death more unique inspired by the description (1208)
+
+This component blends the two flavors of descriptions in BGEE and BG2EE and makes it more unique, granting the following traits:
+
+- Movement rate increases by 3
+- Crushing damage resistance increases by 10%
+- Crushing damage dealt increases by 8%
 
 **Component 1209:** Make The Night's Gift +5 a bit more interesting as an armor
 
