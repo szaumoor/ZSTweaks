@@ -284,39 +284,43 @@ This allows player-created characters as well as all joinable characters to back
 
 <details>
 
-<summary><b>Armor/Gear/Misc Items Tweaks</b></summary>
+<summary>
 
-**Component 1170:** Make Shadow Dragon Scale behave less like a Black Dragon Scale
+## Gear Tweaks
+
+</summary>
+
+### Make Shadow Dragon Scale behave less like a Black Dragon Scale (1170)
 
 This is clearly a mistake since Shadow Dragons don't use acid as breath weapon. Instead, it offers Negative Plane Protection, Non-Detection, and +4 bonus to saves vs. Illusion and Necromancy spells.
 
-**Component 1171:** Make Silver Dragon Scale also grant 40% cold resistance as you would expect
+### Make Silver Dragon Scale also grant 40% cold resistance (1171)
 
 Silver Dragons wield and are resistant to cold so it should grant cold resistance, much like the Fire Dragon Plate does for fire.
 
-**Component 1172:** Make Rings of Elemental Control more likely to charm the elementals and add missing resistances
+### Make Rings of Elemental Control more powerful (1172)
 
 This improves the power of the charm by making the save against it -2 instead of +2. Additionally, the rings grant 50% resistance to the related element consistently.
 
-**Component 1173:** Make Ring of Gaxx's improved haste last 2 full rounds and not 10 seconds
+### Make Ring of Gaxx's improved haste last 2 rounds (1173)
 
-Self-explanatory.
+Just because it feels odd to make it precisely 10 seconds.
 
-**Component 1174:** Make Heartwood Ring add 1 spell slot per level, as well as 1 HP/round regeneration
+### Make Heartwood Ring grant spell slots and regeneration (1174)
 
 This makes this ring significantly more useful for an Archdruid, adding 1 extra spell slot of every level and a slow regeneration effect as the nigh-timeless druidic legend you are.
 
-**Component 1180:** Make Ring of Danger Sense defensively better and protect against backstabs
+### Make Ring of Danger Sense grant defensive traits (1180)
 
 - +1 bonus to Armor Class
 - +1 bonus to saves vs. Breath
 - Immunity to backstabs
 
-**Component 1316:** Make the Mercykiller Ring more useful for rogues that like killing
+### Make Mercykiller Ring more useful for pure thieves and rangers (1316)
 
 Adds a +1 damage and THAC0 bonus, and +5% critical hit chances, along with the other bonuses, but only to single-classed Thieves (for balance and to encourage commitment). The ring can also be equipped by rangers.
 
-**Component 1317:** Make the basic robes and Archmage robes slightly more remarkable
+### Make the basic arcane robes more remarkable (1317)
 
 - **Knave's Robe**
   - +2 Armor Class against Slashing and Piercing (was +1 against Piercing)
@@ -341,33 +345,31 @@ Adds a +1 damage and THAC0 bonus, and +5% critical hit chances, along with the o
   - Casting speed increases by 1
   - Saving throws bonus against Spell at +2, +1 for the rest
 
-**Component 1560:** Make Belt of Skillful Blade also increase piercing damage by 10%
+### Make Belt of Skillful Blade also improve piercing damage (1560)
 
 This makes the belt include piercing damage, such that it affects things like daggers, short swords and wakizashis.
 
-**Component 1561:** Make Cloak of the Stars create 30 darts instead of six, and add passive effects
+### Make Cloak of the Stars more useful (1561)
 
-6 darts is really unremarkable for a once-per-day effect. 30 is far more interesting. Additionally, if you wear it, you become specialized in darts immediately (unless proficiency is higher) and gain a Save vs. Spell bonus of +2. Perhaps you don't need to sell it immediately anymore!
+Creating 6 darts is really unremarkable for a once-per-day effect. 30 is far more interesting. Additionally, if you wear it, you become specialized in darts immediately (unless proficiency is higher) and gain a Save vs. Spell bonus of +2. Perhaps you don't need to sell it immediately anymore!
 
-**Component 1570:** Make Eyes of the Beholder's skills mirror the power of the spells they're based on
+### Make Eyes of the Beholder better and grant immunity to matching rays (1570)
 
-This improves the component slightly such that the Domination power is as powerful as the Domination spell, i.e., a -2 penalty to save vs. Spell, and the Paralyze spell is as powerful as wizard version of Hold Person, i.e., a -1 penalty to save vs. Spell. Additionally, the helmet makes the wearer immune to beholder rays that cause the same effects; that is, you cannot be paralyzed, charmed, or scared by beholder rays.
+This improves the helm slightly such that the Domination power is as powerful as the Domination spell, i.e., a -2 penalty to save vs. Spell, and the Paralyze spell is as powerful as wizard version of Hold Person, i.e., a -1 penalty to save vs. Spell. Additionally, the helmet makes the wearer immune to beholder rays that cause the same effects; that is, you cannot be paralyzed, charmed, or scared by beholder rays.
 
-**Component 1610:** Make Robe of Invocation also improve all elemental damage by 5% and add a +2 bonus against Invocation
+### Make Robe of Invocation increase elemental damage and defense (1610)
 
 This makes this robe improve Invocation wizards in more ways, similarly to my tweaks to elemental robes, but with milder damage bonuses, since it's a more universal bonus: 5% elemental damage bonus and +2 save vs. Invocation.
 
-**Component 1620:** Make Vicross' Thayan Circlet more interesting for Wild Mages
+### Make Thayan Circlet more interesting for wild mages (1620)
 
-This makes the circlet a bit more valuable by making it more effective in controlling Wild Surges. Additionally, while wearing the circlet, they get a 15% bonus to a random non-physical type of damage, except poison. For example, if you happen to be in a Magic Damage bonus round, a Horrid Wilting that deals 100 damage would deal 115 damage.
+This component reworks the Thayan Circlet, restricting it to Wild Mages and granting them improved control over Wild Surges. It also provides a rotating 15% damage bonus to a random non-physical damage type (excluding poison).
 
-To promote specialization, this also restricts the circlet to Wild Mages.
-
-**Component 1651:** Make Studded Leather of Thorns cause some piercing damage too when being hit
+### Make Studded Leather of Thorns cause some piercing damage too (1651)
 
 I mean, they're THORNS; the only difference is that they're FIERY. Instead of only inflicting 1d4 fire damage, they also inflict 1d4 piercing damage, making it an overall more useful defensive armor.
 
-**Component 1652:** Make Grandmaster's Armor's movement bonus not affected by Free Action and grant perks to rogues
+### Make Grandmaster's Armor's better and grant perks to backstabbers (1652)
 
 This component overhauls the Grandmaster's Armor, making its movement bonus immune to Free Action and adding several new passive perks for single-classed thieves:
 
@@ -379,14 +381,14 @@ This component overhauls the Grandmaster's Armor, making its movement bonus immu
   - **Assassin**: Death Attack - Stuns the target for 1 round (save vs. Death), and they die if they have 60 HP or less and fail another save vs. Death after that round; otherwise they take 2d6 poison damage and their saves vs. Death are damaged by 4 for 5 rounds.
 - **New Charge Ability**: Expose Weakness (1/day), which removes the target's backstab immunity and lowers their defenses to piercing and slashing damage by 10% for 4 rounds. Can be cast invisibly.
 
-**Component 1653:** Make Thieves' Hood protect against critical hits and slightly more advantageous for single-classed thieves: +1 THAC0 and Damage
+### Make Thieves' Hood better and grant perks to single-classed thieves (1653)
 
 This improves this item in the following ways:
 
 - Both upgraded and non-upgraded versions now protect against critical hits, essentially giving a Thief access to critical hit protection without requiring fighter levels.
 - Single-classed thieves gain +1 THAC0 and Damage (for balance and to promote specialization) in the upgraded version
 
-**Component 1654:** Make Star-Strewn Boots slightly better and favor Inquisitors too (SoD)
+### Make Star-Strewn Boots better and favor Inquisitors too (1654)
 
 This makes these boots improve Magic Resistance by 10% for everyone (from 7%) and Inquisitors and Wizard Slayers by 18%.
 
