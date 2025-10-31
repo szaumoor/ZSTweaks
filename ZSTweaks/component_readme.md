@@ -7,9 +7,7 @@
 ## General Tweaks
 
 </summary>
-
 ##
-
 ### Make conjured magical weapons grant 2 APR by default (120)
 
 These spells promise power, but your little wizard is not a good fighter at all. Thus, by default, they grant 2 APR if the caster has no fighter levels (otherwise, 1.5).
