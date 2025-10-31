@@ -8,8 +8,6 @@
 
 </summary>
 
-##
-
 ### Make conjured magical weapons grant 2 APR by default (120)
 
 These spells promise power, but your little wizard is not a good fighter at all. Thus, by default, they grant 2 APR if the caster has no fighter levels (otherwise, 1.5).
@@ -34,7 +32,7 @@ Other weapon types are not affected by default, as they cannot normally be used 
 
 **Note**: Due to an engine limitation, penalties from dual-wielding affected weapons will stack. For example, an Assassin with a x7 backstab multiplier wielding two long swords (-1 penalty each) will have their multiplier reduced to x5.
 
-**Component 1121:** Make Flails and Morning Stars always inflict a small amount of piercing damage
+### Make flails and morning stars always inflict some piercing damage (1121)
 
 Both types of weapons have piercing parts; that's why. Enchantment level:
 
@@ -53,7 +51,7 @@ This component adjusts the base damage of several weapon categories to make them
 - **Bastard Swords**: Base damage is increased from 1d8 to 1d8+1, placing them in between long swords and two-handed swords in terms of damage.
 - **Two-handed Swords**: Base damage is now 1d9+1. Swords that originally deal 1d12 will now deal 2d6, raising the minimum damage for all weapons in this category.
 
-**Component 1361:** Make axes or halberds deal extra damage equal to its base damage on critical hits
+### Make axes or halberds deal extra damage on critical hits (1361)
 
 Functionally, the difference between axes and swords is their Speed Factor. To create a more meaningful distinction, this component gives axes and halberds a bonus to critical hit damage, inspired by their implementation in *NWN*.
 
@@ -266,7 +264,7 @@ The configuration file provides several options to change shield usability:
 Important notes:
 
 - **Buckler Parry**: This component should be installed **after** any mods that add or modify weapon protection effects (e.g., SCS's Mantle tweaks) to ensure the parry is correctly blocked by those protections.
-- **Mod Compatibility**: This component identifies shield types by their unidentified name (e.g., "Buckler", "Small Shield"). While vanilla items are patched, mod-added shields not following this convention will not be affected. Please report any incompatible mods so support can be added.
+- **Mod Compatibility**: This component identifies shield types by their unidentified name (e.g., "Buckler", "Small Shield"). While vanilla items are patched to conform to this schema, mod-added shields not following this convention will not be affected. Please report any incompatible mods so support can be added.
 
 ### Make Protection from Undead more balanced (1547)
 
