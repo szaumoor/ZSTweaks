@@ -50,6 +50,7 @@
 - Fixed Hindo's Doom not properly protecting non-undead from the extra magical damage
 - Fixed Usuno's Blade granting a save to take half for the regular electricity damage instead of to the chance-based fat extra damage
 - Some description fixes on some tweaked items
+- Many components renamed. Mostly to shorten them
 
 ## Modifications
 

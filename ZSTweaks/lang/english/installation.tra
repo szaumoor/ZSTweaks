@@ -70,7 +70,7 @@
 @1600 = ~Make everyone able to perform omnidirectional backstabs~
 @1360 = "Make Light Crossbows get +1/2 more APR"
 @1329 = ~Make disrupt undead weapons more balanced and closer to PnP rules~
-@1397 = ~Make rangers, thieves, and monks get combat bonuses if attacking with ranged weapons from invisibility~
+@1397 = ~Make rangers, thieves, and monks hit harder with ranged weapons if invisible~
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -218,16 +218,16 @@
 
 // AXES AND ONE-HANDED BLUNT WEAPONS
 @1310 = "Make Defender of Easthaven damage reduction a little more moderate"
-@1311 = "Make Krotan's Skullcrusher +2 slightly less generic"
-@1312 = "Make Skullcrusher +3 slightly more crushy"
-@1313 = "Make Gnasher +2 slightly more painful"
-@1314 = "Make Jerrod's Mace +2 behave as a +3 weapon"
+@1311 = "Make Krotan's Skullcrusher slightly less generic"
+@1312 = "Make Skullcrusher slightly more crushy"
+@1313 = "Make Gnasher slightly more painful"
+@1314 = "Make Jerrod's Mace behave as a +3 weapon"
 @1320 = "Make Flail of Ages +5 allow Haste and Improved Haste and improve it slightly"
-@1321 = "Make Bone Club +2, +3 against undead's effect reflect the description better and improve it slightly"
-@1324 = ~Make Wyvern's Tail +2 cause poison damage on hit and have a chance of poisoning~
-@1325 = ~Make Borok's Fist +2 different from Ashideena +2~
-@1327 = ~Make Club of Detonation's Fireball not tied to wizard level and improve it slightly~
-@1328 = ~Make Storm Star slightly more electrifying and improve the chances of the chain lightning part~
+@1321 = "Make Bone Club reflect the description better and improve it slightly"
+@1324 = ~Make Wyvern's Tail more poisonous~
+@1325 = ~Make Borok's Fist different from Ashideena~
+@1327 = ~Make Club of Detonation's better and its fireball power class-agnostic~
+@1328 = ~Make Storm Star more shockingly electrifying~
 
 // RANGED WEAPONS
 @1010 = ~Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost~

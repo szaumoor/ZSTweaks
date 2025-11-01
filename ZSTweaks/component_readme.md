@@ -278,6 +278,41 @@ This component rebalances the scroll, replacing its "invisibility to undead" eff
 
 This allows player-created characters as well as all joinable characters to backstab from any angle. Optionally, there is an option to make them able to backstab without invisibility instead, but with the angle requirement intact.
 
+### Make disrupt undead weapons more balanced and closer to PnP rules (1329)
+
+This component rebalances disruption weapons to be more balanced when slaying undead, following a PnP inspired formula. No longer will it nearly as feasible to whirlwind attack a lich to death (not impossible mind you). The weapons that are affected are Shining Light of Lathander (upgraded) from my Item Pack, Azuredge, Mace of Disruption, Runic Hammer, and Deva weapons.
+
+Slayable creatures must make a save vs. Death at -2. However, some creatures have a chance to resist the effect before a save is rolled:
+
+- **95% Resistance**: Fiends
+- **80% Resistance**: Liches, Demiliches
+- **50% Resistance**: Vampires
+- **35% Resistance**: Spectres, Ghosts
+- **20% Resistance**: Mummies, Revenants
+- **5% Resistance**: Wraiths
+- **No resistance**: Lesser undead (Skeletons, Ghouls, etc.)
+
+Other details:
+
+- Azuredge is now fully a +3 weapon and bonus damage against undead is adjusted to 1d6+3.
+
+### Make rangers, thieves, and monks hit harder with ranged weapons if invisible (1397)
+
+This component addresses partially one detail that has annoyed me since the beginning of my experience of the game. Combat bonuses from invisibility only work for melee attacks. This will have a focus on rangers and thieves, though. Details:
+
+- Attacking from invisibility gives the user a +4 THAC0 bonus, similar to the bonus to melee attacks
+- Ranged damage bonuses are applied to act as a sort of "sneak attack" with projectiles
+  - Rangers get +1 damage when attacking from invisibility. Every four levels, they get +3 damage, up to 16, with +5 ranged attack damage bonus.
+  - Thieves and monks get +3 damage when attacking from invisibility, and progress up to +12 damage at level 21.
+- All thief kits except Swashbuckler, all ranger kits, and all monk kits receive this bonus
+- Extra damage bonuses for thieves specifically are nullified if they have a fighter class, getting only the partial bonus that rangers get.
+
+Caveats:
+
+This is not possible to implement in a straightforward manner. It requires timers that continually check whether the rangers, monk, or thief is invisible in order to apply the benefit or not. It is possible to momentarily not be affected by the bonus when entering invisible or continuing to have the benefit after getting out of invisibility (< 1 second). Currently, the only feedback to help the user identify if it's safe to attack with the bonus applied is the user interface applying the damage bonus when holding a bow.
+
+This also does not affect enemies. Only the player and joinable characters will benefit, if it applies to them (monks, rangers, and thieves, i.e. classes that can hide).
+
 </details>
 
 ---
@@ -1173,74 +1208,52 @@ This slightly improves the largely unremarkable +1 short sword by giving wielder
 
 <details>
 
-<summary><b>Axes and Blunt Weapon Tweaks</b></summary>
+<summary>
 
-**Component 1310:** Make Defender of Easthaven damage reduction a little more moderate
+## Axes and Blunt Weapon Tweaks
+
+</summary>
+
+### Make Defender of Easthaven damage reduction a little more moderate (1310)
 
 The bonuses of this weapon are very significant, and it is an infamous tool for powergaming and no-reload runs. I reduced the resistances to 10%. It's still significant, while still reducing the chances of breaking the game.
 
-**Component 1311:** Make Krotan's Skullcrusher +2 slightly less generic
+### Make Krotan's Skullcrusher slightly less generic (1311)
 
 Yet another enchanted, unique weapon without any special trait of any kind. It now possesses the same bonus as Skullcrusher (in the vanilla game), which is a +2 damage bonus to humanoids
 
-**Component 1312:** Make Skullcrusher +3 slightly more crushy
+### Make Skullcrusher slightly more crushy (1312)
 
 This component improves the extra damage against humanoids to +4.
 
-**Component 1313:** Make Gnasher +2 slightly more painful
+### Make Gnasher slightly more painful (1313)
 
 This component makes the "pain" that the description talks about manifest as a non-stackable 2-round weakness: -2 penalty to Armor Class, THAC0, and Damage.
 
-**Component 1314:** Make Jerrod's Mace +2 behave as a +3 weapon
+### Make Jerrod's Mace behave as a +3 weapon (1314)
 
 This makes the mace +3 for consistency with the power level of other WA-weapons. It also improves the damage and THAC0 bonuses against fiends by 1.
 
-**Component 1320:** Make Flail of Ages +5 allow Haste and Improved Haste and improve it slightly
+### Make Flail of Ages +5 allow Haste and Improved Haste and improve it slightly (1320)
 
 I think everyone agrees that this type of restriction (Free Action) makes the weapons immediately less appealing. It will not reset your character's movement speed either. A side effect of this component is that the Free Action spell no longer sets movement speed to the baseline. The description was adjusted to reflect that.
 
-**Component 1321:** Make Bone Club +2, +3 against undead's effect reflect the description better and improve it slightly
+### Make Bone Club reflect the description better and improve it slightly (1321)
 
 This makes the club slightly more powerful (+3 in all respects), more shamanic, and more damaging to undead: acts as +5 against them, with THAC0 bonus of +5 against undead, undead take +4 damage, and spectral undead take +8.
 
-**Component 1323:** Make Azuredge act properly as a +3 weapon and make the disruption effect more balanced
-
-This component rebalances Azuredge to be more powerful as a baseline weapon but less of a guaranteed "I win" button against powerful undead.
-
-- The axe is now fully a +3 weapon
-- Bonus damage against undead is adjusted to 1d6+3.
-- Slay effect is rebalanced to be more in line with PnP rules, preventing cheese tactics like destroying liches with Whirlwind Attack. The effect now also works on fiends.
-
-Slayable creatures must make a save vs. Death at -2. However, some creatures have a chance to resist the effect before a save is rolled:
-
-- **95% Resistance**: Fiends
-- **80% Resistance**: Liches, Demiliches
-- **50% Resistance**: Vampires
-- **35% Resistance**: Spectres, Ghosts
-- **20% Resistance**: Mummies, Revenants
-- **5% Resistance**: Wraiths
-- **No resistance**: Lesser undead (Skeletons, Ghouls, etc.)
-
-**Component 1324:** Make Wyvern's Tail +2 cause poison damage on hit and have a chance of poisoning
+### Make Wyvern's Tail more poisonous (1324)
 
 This improves this item in the following ways:
 
 - Causes 2 poison damage per hit with no save allowed
 - If save vs. Poison is failed, it deals 5 poison damage over 5 seconds. There's a 4% chance that this poison will be as lethal as that of an adult wyvern, becoming instead 25 poison damage over 5 seconds. The save vs. Death is at -2 in this case.
 
-**Component 1325:** Make Borok's Fist +2 different from Ashideena +2
+### Make Borok's Fist different from Ashideena (1325)
 
 This exists simply because I hate that it's identical to Ashideena. So, inspired by the description, it has a neat bonus against giant humanoids: on hit, they get Stunned for 1 round if they fail a save vs. Spell at +2. Additionally, the electrical damage on hit is 1d2 and not 1, so it is very slightly more effective as a general use weapon compared to Ashideena.
 
-**Component 1326:** Make Maces of Disruption more balanced when fighting the undead and improve misleading description
-
-Refer to component 1323. The upgraded Mace of Disruption +2's only difference as far as disruption goes is that the save vs. Death improves from -2 to -4.
-
-Additionally, the extra damage applied to the undead is always the base damage of the weapon, instead of 1d6+2 for the first, and 1d6+1 for the second.
-
-Finally, this also modifies the deva's Mace of Disruption such that it follows the same rules.
-
-**Component 1327** Make Club of Detonation's Fireball not tied to wizard level and improve it slightly
+### Make Club of Detonation's better and its fireball power class-agnostic (1327)
 
 The club of detonation is a fairly inconvenient weapon to use, as the fireball is presented as a detriment, and the upgrade to it reduces its chances to trigger. It was reworked as follows:
 
@@ -1248,7 +1261,7 @@ The club of detonation is a fairly inconvenient weapon to use, as the fireball i
 - Speed factor was also modified to take into account enchantment levels, as generic enchanted weapons do
 - The chances of triggering on the +5 version were increased from 5% to 10%, as the club is no longer conceived as something that may inconvenience the user randomly with a fireball. It's just good news now for your party and bad news for your enemies.
 
-**Component 1328:** Make Storm Star slightly more electrifying and improve the chances of the chain lightning part
+### Make Storm Star more shockingly electrifying (1328)
 
 This makes the weapons more interesting in this way:
 
@@ -1257,27 +1270,6 @@ This makes the weapons more interesting in this way:
 - +5 version will deal +1 more electric damage on hit
 - +5 version chain lightning effect will have a 12% chance of triggering instead of 5%
 - Whosoever holds this mace, if they be worthy, will have their body crackling with electricity, causing 1d2 electric damage to any who dare hit them, with a 15% chance of stunning them for 1 round if they fail a save vs. Spell at -4
-
-**Component 1329:** Make Runic Hammer's undead disruption more balanced
-
-This applies the same rules as the Mace of Disruption tweak (component 1326), and also merges bits of the description in the non-upgraded version with the upgraded one.
-
-**Component 1397:** Make rangers, thieves, and monks get combat bonuses if attacking with ranged weapons from invisibility
-
-This component addresses partially one detail that has annoyed me since the beginning of my experience of the game. Combat bonuses from invisibility only work for melee attacks. This will have a focus on rangers and thieves, though. Details:
-
-- Attacking from invisibility gives the user a +4 THAC0 bonus, similar to the bonus to melee attacks
-- Ranged damage bonuses are applied to act as a sort of "sneak attack" with projectiles
-  - Rangers get +1 damage when attacking from invisibility. Every four levels, they get +3 damage, up to 16, with +5 ranged attack damage bonus.
-  - Thieves and monks get +3 damage when attacking from invisibility, and progress up to +12 damage at level 21.
-- All thief kits except Swashbuckler, all ranger kits, and all monk kits receive this bonus
-- Extra damage bonuses for thieves specifically are nullified if they have a fighter class, getting only the partial bonus that rangers get.
-
-Caveats:
-
-This is not possible to implement in a straightforward manner. It requires timers that continually check whether the rangers, monk, or thief is invisible in order to apply the benefit or not. It is possible to momentarily not be affected by the bonus when entering invisible or continuing to have the benefit after getting out of invisibility (< 1 second). Currently, the only feedback to help the user identify if it's safe to attack with the bonus applied is the user interface applying the damage bonus when holding a bow.
-
-This also does not affect enemies. Only the player and joinable characters will benefit, if it applies to them (monks, rangers, and thieves, i.e. classes that can hide).
 
 </details>
 
