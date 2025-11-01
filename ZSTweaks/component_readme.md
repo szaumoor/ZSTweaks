@@ -2274,52 +2274,32 @@ Most of minotaurs are wimps in the game. This is what it changes:
 
 <details>
 
-<summary><b>End-of-install-order components </b></summary>
+<summary>
 
-**Component 1531:** Make all divination spells and a few spells ignore magic resistance, where it makes sense
+## End-of-install-order components
 
-This component makes divination spells that are affected by Magic Resistance (which seems odd) lose that restriction and also cannot be dispelled by Dispel Magic, unless noted. Affected spells include: Detect Evil, Know Alignment.
+</summary>
 
-Additionally, a few spells also bypass magic resistance, because it makes sense in my judgment. My rationale:
+### Make a selection of spells ignore magic resistance (1531)
 
-- Stinking Cloud: It's a fart cloud that smells so awful, it can make you lose consciousness. Puh-lease
-- Entangle, Grease & Web (and other web spells used by creatures): It's physical webs, grease, and animated vegetation, so I think it makes sense
-- Summon Cow: Because it's a cow falling on you, duh
-- Glitterdust: It's just a ton of conjured sparkly dust that blinds and makes enemies visible. Can be dispelled
-- Magical Stone: because you're just hurling a stone magically
-- Call Lightning / Cloudburst: because the druid is beckoning the skies to shoot lightning onto your foes, which means it's not exactly the same as Lightning Bolt, which is generated directly from the wizard
-- Summon Insects/Insect Plague/Creeping Doom: It's conjured insects doing damage. Can be dispelled though.
-- Nature's Beauty: You're blinding or killing others by the shock, which is something that is the result of plain perception, so I don't think it makes much sense to be affected by magic resistance
-- Storm of Vengeance: Because it's a spell that causes the skies and the earth to go crazy. It might make it more useful in some instances, and not just as a way to kill <=8 HD or to interrupt spellcasters
-- Mold Touch: The druid is sending aggressive brown mold that spreads quickly.
-- Smashing Wave. It's conjured water. A tiny tsunami.
-- Shout / Great Shout: It's... a shout?
-- Thorn Spray: Because they're actual physical thorns.
-- Spike growth: Because it's a bunch of spikes from flora.
+Additionally, a some selected spells also bypass magic resistance, because it makes sense in my judgment. The full list of spells is: Detect Evil, Know Alignment, Stinking Cloud, Entangle, Grease, Web, Summon Cow, Glitterdust, Magical Stone, Call Lightning, Cloudburst, Summon Insects/ Insect Plague / Creeping Doom, Nature's Beauty, Storm of Vengeance, Mold Touch, Smashing Wave, Shout / Great Shout, Thorn Spray, Spike Growth.
 
-Overall this should make all these spells more usable throughout the trilogy of games, especially against enemies such as drow, who have a very high chance of resisting magic.
+Bear in mind this component should be installed after tweaks that affect these spells, especially if they add new effects to them; otherwise, this tweak will only work partially, and inconsistent results could ensue.
 
-Please bear in mind that this component should be installed after tweaks that affect these spells, especially if they add new effects to them; otherwise, this tweak will only work partially, and inconsistent results could ensue. For this reason, this component is not included as part of the component that installs the whole group of components.
+### Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage (1532)
 
-**Component 1532:** Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage
+I do not like gear that you can wear without any effect whatsoever. I can live with rings that don't do that, because there's no reasonable benefit to just wearing a ring. Therefore, wearing unenchanted belts, boots, and bracers will grant the wearer +1 HP which I think is reasonable enough, and it doesn't change balance much. For consistency, the magical variants also grant that. The unenchanted items will still be the worst choice, but should encourage filling all the gear slots.
 
-I do not like gear that you can wear without any effect whatsoever. I can live with rings that don't do that, because there's no reasonable benefit to just wearing a ring. Therefore, wearing unenchanted belts, boots, and bracers will grant the wearer +1 HP which I think is reasonable enough, and it doesn't change balance much.
+**WARNING**: Install this component DEAD LAST after ANY mod or component that modifies items.
 
-For consistency, all the enchanted belts, boots and bracers will also grant this. The unenchanted items will still be a bottom-of-the-barrel choice, but at least they don't exist just as unglorified decoration and will provide some use, especially at the beginning of BGEE (and IWDEE?), which should encourage filling all the gear slots.
+### Make Void-weapons slightly more effective and logical (1548)
 
-Side effect to take note: if a joinable character joins while having any such item equipped, you must re-equip it in order to benefit from this effect, as the newly available effect will not be re-evaluated otherwise.
+- On-equip strength-sapping effect will no longer affect undead (such as with Hexxat).
+- The weapons will be able to critically hit, dealing double damage, which is a feature that was missing from the original implementation.
 
-WARNING: Install this component DEAD LAST after ANY mod that modifies items, including any other component in this mod that modifies such items. When in doubt, just make it your last.
+This component should be installed after any other tweak that may change void weapons, or their weapon groups in general.
 
-**Component 1548:** Make Void-weapons strength-sapping not affect undead, and able to critically hit to deal double damage
-
-Void-weapons are supposed to be the bane of the living, not the dead. Therefore, the on-equip strength-sapping effect will no longer affect undead (such as with Hexxat).
-
-Additionally, the weapons will be able to critically hit, dealing double damage, which is a feature that was missing from the original implementation. That is, on a critical hit they will deal double their magic damage, similar to other weapons, instead of doing nothing.
-
-This component should be installed after any other tweak that may change void weapons, or their weapon groups in general. Note that my backstab multiplier tweak will not affect the voidsword, so you can install it before or after this component, it doesn't matter, as backstab multipliers don't apply to those weapons (for now wink wink).
-
-**Component 1360:** Make Light Crossbows get +1/2 more APR
+### Make Light Crossbows get +1/2 more APR (1360)
 
 Just a small bonus to make it more interesting and different compared to heavy crossbows. It's not too far-fetched to think smaller crossbows can be reloaded faster. This will affect crossbows that have an APR bonus already, i.e., 1/2 APR will be added.
 

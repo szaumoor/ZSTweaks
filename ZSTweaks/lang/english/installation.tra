@@ -372,9 +372,9 @@
 @3130 = ~Make minotaurs tougher and more dangerous~
 
 // END-OF-INSTALL ORDER TWEAKS
-@1531 = ~Make all divination spells and a few spells ignore magic resistance, where it makes sense. WARNING: Install after other tweaks and mods that change the same spells, to be safer~
+@1531 = ~Make a selection of spells ignore magic resistance~
 @1532 = ~Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage. WARNING: Install this component DEAD LAST after other components that modify these items, including components from other mods~
-@1548 = ~Make Void-weapons strength-sapping not affect undead, and able to critically hit to deal double damage~
+@1548 = ~Make Void-weapons slightly more effective and logical~
 
 
 @6542 = ~This component is only available if the previous tweak was installed~
