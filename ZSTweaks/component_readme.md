@@ -818,29 +818,31 @@ This reduces the number of dice thrown of DAGG11 and DAGG12 to 1, so they are no
 
 <details>
 
-<summary><b>Two-handed Melee Weapons Tweaks</b></summary>
+<summary>
 
-**Component 1200:** Make Ixil's Spike allow Haste and Improved Haste and improve it slightly
+## Two-handed Melee Weapons Tweaks
 
-I think everyone agrees that this type of restriction (Free Action) makes the weapon in question immediately less appealing. It will not reset your character's movement speed either. A side effect of this component is that the Free Action spell no longer sets movement speed to the baseline. The description was adjusted to reflect that.
+<summary>
 
-Additionally, the damage when pinned is now 1d8+6 rather than 1d6+5.
+### Make Ixil's Spike allow Haste and Improved Haste and improve it slightly (1200)
 
-**Component 1201:** Make Lilarcor +3 have a chance of causing confusion on hit
+I think everyone agrees that this type of restriction (Free Action) makes the weapon in question immediately less appealing. It will not reset your character's movement speed either. A side effect of this component is that the Free Action spell no longer sets movement speed to the baseline. The description was adjusted to reflect that. Additionally, the damage when pinned is now 1d8+6 rather than 1d6+5.
+
+### Make Lilarcor have a chance of causing confusion on hit (1201)
 
 It seems appropriate that the talking sword containing the blood-lusting, raving, screaming lunatic can cause confusion on hit. Now it has a 25% chance of causing confusion on hit for 1 round if Save vs. Spell is failed.
 
-**Component 1202:** Make Warblade +4 slightly more unique and more potent when wielded by barbarians
+### Make Warblade slightly more unique and potent when used by barbarians (1202)
 
 Since this was blessed by northern barbarian gods, the sword now causes 1d4 cold damage on contact, but makes the sword damage actually 1d12+2 (keep reading, don't worry). Barbarians wielding this sword will receive +5% physical resistance, and the sword's bonus damage is increased by 3 (1d12+5). Lastly, it will be renamed to "Barbarian Warblade +4", just because.
 
-**Component 1280:** Make Carsomyr more balanced and affect any kind of evil and not just Chaotic Evil
+### Make Carsomyr more balanced and affect all evil (1280)
 
 Not that it needs to be more powerful, but it feels wrong to not be especially effective against non-chaotic evil (but yes, I understand it's because it's the opposite of a paladin's alignment).
 
 Additionally, since the dispel-on-hit thing is pretty cheesy, a saving throw vs. Spell is added as counterbalance. No penalty with +5, -2 with +6 version. As for the ability to cast Dispel Magic, since level 15 dispel is quite weak, especially for the +6 version, it's now level 20-30 for each version.
 
-**Component 1300:** Make Silver Sword significantly more unique and add a more interesting (IMO) description
+### Make Silver Sword more unique (1300)
 
 This component improves the description to something a bit more interesting than "hey, this sword is evil and can cut heads off". Additionally:
 
@@ -851,50 +853,46 @@ This component improves the description to something a bit more interesting than
 - Critical hits cause 2d8 psychic (irresistible) damage and causes Confusion for 10 seconds if a Save vs. Spell at -2 is failed. Creatures without minds or brains are unaffected.
 - Speed factor of 6
 
-**Component 1318:** Make Flame of the North able to kill trolls, and the extra damage affect all evil, not just Chaotic Evil
+### Make Flame of the North able to kill trolls and affect all evil (1318)
 
 Self-explanatory. Also, The backstory of the sword heavily implies it was involved in the slaughter of many trolls. Therefore, the sword can completely destroy trolls on hit by causing +2 fire damage on hit to trolls only.
 
-**Component 1390:** Make Staff of the Magi force a saving throw to dispel effects on hits
+### Make Staff of the Magi force a saving throw to dispel effects on hits (1390)
 
 The dispel-on-hit thing is pretty cheesy so, yeah. That. Save vs. Spell at -2
 
-**Component 1410:** Make Ir'revrykal dispel magic not depend on probabilities and increase base damage
+### Make Ir'revrykal more powerful (1410)
 
 This essentially is the same tweak to Carsomyr, except the chance of dispelling is also 100%. The saving throw vs. spell has no penalty. It also makes the weapon have 1d12 base damage much like Carsomyr, tightening the resemblance between both swords. Both features are optional.
 
-**Component 1460:** Make Spear of Withering able to poison on contact if save is failed
+### Make Spear of Withering able to poison on contact (1460)
 
 I feel like this spear should be more withery, especially considering it's a +4 weapon! This makes the spear able to inflict 12 extra poison damage over one round if a save vs. Death at -2 is failed.
 
-**Component 1540:** Make Wave +4 slightly more powerful
+### Make Wave +4 slightly more powerful (1540)
 
 This component improves Wave +4 by making it always deal 3 points of cold damage per hit. Giants take 9 cold damage instead, since it was made to fight fire giants. This may make it a fine choice for a weapon for a large portion of ToB.
 
-**Component 1587:** Make Rod of Terror inspire less Terror by how awful it is and more by how effective it is
+### Make Rod of Terror inspire less Terror by not just being awful (1587)
 
 Panic is very unlikely to happen, and panic is generally not very convenient because it makes it difficult to hit the enemies. Plus, the permanent-until-death penalty discourages pretty much any idea of using this item. Therefore:
 
 - Save vs. Spell for Panic has no penalty now, and it only lasts 2 rounds. On the second round, if the target is still suffering from panic, there's a 20% chance that the affected creature must save vs. Death, or be killed by the shock. Even if they survive, they become rooted in place for the remainder of the round in panic
 - The penalty to Charisma is now a penalty to Constitution which is more meaningful and is no longer permanent but lasts 24 hours (2 in-game hours, or 3 full normal 8-hour rests). The chance of this happening is 10% instead of 20%
 
-**Component 1590:** Make Blackmist more powerfully blinding and grant immunity to blindness
+### Make Blackmist more blinding and grant immunity to blindness (1590)
 
 This makes Blackmist's blindness power more likely to be effective by adding a -2 save penalty. Additionally, you're immune to blindness while wielding it.
 
-**Component 1591:** Make Soul Reaver slightly more balanced and deal 1d12 damage
+### Make Soul Reaver more balanced and deal 1d12 damage (1591)
 
-Soul Reaver is fairly unbalanced, particularly because it reduces THAC0 by 2 cumulatively for 2 full minutes, and it's fairly easy to make any enemy to not be able to hit anything at all. This tweak reduces this duration to 5 rounds, and requires a Save vs. Spell at -4 to resist.
+Soul Reaver is fairly unbalanced, particularly because it reduces THAC0 by 2 cumulatively for 2 full minutes, and it's fairly easy to make any enemy to not be able to hit anything at all. This tweak reduces this duration to 5 rounds, and requires a Save vs. Spell at -4 to resist. And it now also deals 1d12 slashing damage (or 2d6 if the two-handed general tweak was installed). Both changes are optional.
 
-Also, the sword looks like it's fairly massive. You may disagree, but that's how it comes across to me. So this will also match the dice size of other blades like Carsomyr and Warblade: 1d12 (or 2d6 if the two-handed general tweak was installed).
+### Make Sword of Ruin slightly more powerful (1593)
 
-Both changes are optional.
+This makes the extra critical damage more substantial, 2d5+2 (from 2d4).
 
-**Component 1593:** Make Sword of Ruin +2 slightly more powerful
-
-This makes the extra critical damage of the weapon a bit more substantial, 2d5+2 (from 2d4).
-
-**Component 1594:** Make Cleric's staff more unique and actually benefit clerics
+### Make Cleric's staff more unique and benefit clerics (1594)
 
 I don't like that it's just casually called "cleric's" staff, without anything special added to it beyond the plain enchantment level (what else is new?). Therefore, it gains a few perks:
 
@@ -903,19 +901,11 @@ I don't like that it's just casually called "cleric's" staff, without anything s
 - +1 turn undead and casting level (clerics only)
 - May cast Mass Cure (at minimum level, 1d8+9 healing) twice per day
 
-**Component 1595:** Make Halcyon +1 a bit more powerful
+### Make Halcyon a bit more powerful (1595)
 
-There aren't many spears in the game. It would be tragic if most were boring. This makes the electrical damage of the weapon random, between 1 and 3 (inclusive):
+This makes the electrical damage random, between 1 and 3, with higher chance to cause less. Every hit also has a chance of "electrifying" the target: 2 electricity damage per round for 2 rounds if Save vs. Spell at +2 is failed.
 
-- 50% chance of causing 1 electrical damage
-- 30% chance of causing 2 electrical damage
-- 20% chance of causing 3 electrical damage
-
-Every hit has a chance of electrifying the target: 2 electricity damage per round for 2 rounds if Save vs. Spell at +2 is failed.
-
-Hopefully this is slightly less boring!
-
-**Component 1597:** Make the Staff of Rhynn not just unique in name and description, but in function
+### Make Staff of Rhynn actually unique (1597)
 
 Another example of a highly enchanted weapon without any special property. I based this tweak on the description, which is frankly horrific but inspiring. Therefore:
 
@@ -924,30 +914,28 @@ Another example of a highly enchanted weapon without any special property. I bas
 - Hits with this weapon reduce Fire Resistance by 25% (doesn't stack) for 2 rounds
 - Special ability: **Witch's Wrath** once per day. It works as a Sunfire that causes 8d6+10 fire damage to all enemies around the caster without affecting party members. The damage will be increased by 4d6+10 if the target is affected by Panic. The explosion itself will cause Horror and Slow for 3 rounds unless a Save vs. Spell at -2 is made
 
-**Component 1599:** Make Psion's Blade more offensively powerful against Illithids
-
-I like the idea of the sword, but it's a little too boring beyond the effect of the great +5 enchantment. Now:
+### Make Psion's Blade more powerful vs. illithids (1599)
 
 - Deals 1d10+5 damage, but against mind flayers, it deals 1d10+7 (as if it were a +7 weapon without being one)
 - THAC0 bonus: +5, but against mind flayers, it's +7
 - Mind flayers struck with this weapon must save vs. Death at -3 or die instantly. You'll see an "Illithid destroyed" message in the log when it happens. However, this effect can only be attempted on the same mind flayer once per round, and Stoneskin / Ironskin will stop it
 
-**Component 1602:** Make Dragon's Bane +3 better and act as a +6 weapon in every sense against dragons and wyverns
+### Make Dragon's Bane act as a +6 weapon vs. dragons and wyverns (1602)
 
 This makes the weapon act in every way against dragons and wyverns as a +6 weapon (THAC0, enchantment, and damage). Otherwise, it acts as a +3 normal halberd.
 
-**Component 1603:** Make Dragon's Breath +4 act damage-wise as a +4 weapon
+### Make Dragon's Breath act damage-wise as a +4 weapon (1603)
 
 This weapon, similarly to The Equalizer, deals unenchanted level damage by default and adds additive damage separately. For the purposes of multipliers, it's a fairly less powerful halberd compared to any other +4 halberd, despite the added multi-elemental +5 damage per hit. This makes the weapon damage truly 1d10+4, with the extra damage intact. If it's okay for the Flail of Ages +5, it is okay for this too.
 
-**Component 1604:** Make Duskblade +2 more imbued with the essence of necromancy
+### Make Duskblade more imbued with the essence of necromancy (1604)
 
 This component enhances the weapon a bit, inspired by the description about how it got its powers because of the persistent presence of undeath:
 
 - Other than +2 cold damage, it has a chance to unleash extra 1d6 cold damage if hit target fails a Save vs. Death
 - Every hit has a 25% chance of decreasing Strength by 2 for 5 rounds. This can't kill the target. If Strength is less than 3, it drains -2 Constitution instead, which can kill the target (though it would be fairly difficult to pull it off considering the duration of 5 rounds)
 
-**Component 1606:** Make the Ravager's vorpal hit bound by saving throws with harsh penalties and rebalance effects
+### Make the Ravager halberd more balanced (1606)
 
 I hate with passion this 10% chance of killing period-no-questions-asked thing, so:
 
@@ -955,7 +943,7 @@ I hate with passion this 10% chance of killing period-no-questions-asked thing, 
 - Additionally, Cloak of Fear can be instantly cast.
 - And the poison damage is set up differently, and brings elements from the Serpent Shaft. Instead of causing 3d6 poison damage instantly, the damage is now restructured such that it causes 2d6 poison damage instantly AND poisons the target for 1 round (12 poison damage in total). This ensures minimum damage dealt of 14 within a round, and you deal a 1-round annoyance for casters as well.
 
-**Component 1607:** Make Gram, the Sword of Grief able to become +6 and rebalance effects
+### Make Gram, the Sword of Grief able to become +6 and rebalance effects (1607)
 
 - Poison is underrepresented and as such, its minimum damage has been risen:
   - Base version: instead of 2d12, it's 2d6+12, with a 10% chance of triggering (vanilla)
@@ -964,13 +952,13 @@ I hate with passion this 10% chance of killing period-no-questions-asked thing, 
 - Passive +5% MR is now +10% (it has to compete with Carsomyr so 5% for a two-handed weapon is nonsense)
 - The 1-level drain per hit with -5 penalty on the upgraded version is fairly inconsequential by the time you get it (from Abazigal's corpse). Instead, it causes affected creatures to deal -20% damage for 2 rounds, aka it's a weakening effect, with a save vs. Death -5 to save against it. This also affects magical and elemental damage. Does not stack.
 
-**Component 1608:** Make Aule's Staff +3 grant an extra attack per round to non-fighter wizards and sorcerers, inspired by the description
+### Make Aule's Staff more effective for non-fighter wizards and sorcerers (1608)
 
-This makes the weapon not just another silly instance of a unique +3 weapon without a single remarkable feature. So it's now a solid staff for wizards and sorcerers. Specifically, it affects mages, mage/thieves, cleric/mages, and sorcerers. They will get an extra attack per round. Other classes will use it as a regular +3 staff.
+This makes the weapon not just another silly instance of a unique +3 weapon without a single remarkable feature. So it's now a solid staff for wizards and sorcerers, inspired by the description. Specifically, it affects mages, mage/thieves, cleric/mages, and sorcerers. They will get an extra attack per round. Other classes will use it as a regular +3 staff.
 
-**Component 1609:** Make the Impaler slightly more scary: +5% higher critical hit chance, +5 more impaling damage on crits
+### Make the Impaler slightly more scary (1609)
 
-Self-explanatory. The weapon is already very powerful, so no other changes are made.
+The weapon now has +5% higher chance to critically hit, and critical hits add +5 piercing damage.
 
 </details>
 
@@ -978,25 +966,21 @@ Self-explanatory. The weapon is already very powerful, so no other changes are m
 
 <details>
 
-<summary><b>One-handed Sword Tweaks</b></summary>
+<summary>
 
-**Component 1125:** Make Ninja-to of the Scarlet available for non-monks and improve it slightly, especially for monks
+## One-handed Sword Tweaks
 
-This makes this sword usable by non-monks of any alignment. Additionally, the sword gets the following two traits for every user:
+</summary>
 
-- Inflicts +1 poison damage per hit
-- Speed Factor of 0
+### Make Ninja-to of the Scarlet better and available for non-monks (1125)
 
-And for Monks only, additionally:
+This makes this sword usable by non-monks of any alignment. Additionally, the sword has now a speed factor of 0 and inflicts 1 poison of damage on hit. And for Monks only, additionally, it gives a +5% critical hit chances while holding this weapon and grant a +2 THAC0 bonus and again for off-hand weapons.
 
-- +5% critical hit chances while holding this weapon
-- +2 THAC0 bonus, +2 extra for off-hand weapons
-
-**Component 1126:** Make Blackrazor able to hit targets immune to +3
+### Make Blackrazor able to hit targets immune to +3 (1126)
 
 This allows this sword to be usable in more cases. Since it's extremely powerful, no other changes are added.
 
-**Component 1127:** Make Peridan more powerful against dragons and wyverns and less misleading in the description
+### Make Peridan more powerful vs. dragons and wyverns with a better description (1127)
 
 The description of Peridan is slightly misleading because it states that it does "double damage to dragons." You may think that every time you do damage to a dragon with it, you deal the same damage again, or perhaps you think the damage value of every attack is always double of what it would be against other enemies (like a critical hit). Uhh, not quite.
 
@@ -1009,7 +993,7 @@ In reality, the sword deals 1d8+2 against all enemies and 1d8+2 again in a secon
 - Detect Invisibility can be cast three times, not once per day
 - Deals an additional tick of 2d8+2 damage if the target is a dragon or wyvern
 
-**Component 1210:** Make The Equalizer slightly more powerful
+### Make The Equalizer slightly more powerful (1210)
 
 Honestly, it kind of feels like it's immediately not useful by the time you get it. The description is also slightly misleading because it looks like it will deal, for example, 1d8+6 against some alignments in the same way that a +6 long sword would, but it's not like that. It actually just inflicts 1d8 (like a normal non-magical sword) and then additively includes the damage, which is generally much less powerful. Therefore, the following improvements now exist:
 
@@ -1027,7 +1011,7 @@ This behavior is present in other weapons that have a THAC0 bonus vs. types of e
 
 Hopefully this will make the sword feel more legendary and worth the investment.
 
-**Component 1220:** Make Ras slightly better and the Dancing Blade last for 1 turn instead of 4 rounds
+### Make Ras, the Dancing Sword slightly better (1220)
 
 This makes it useful for far longer, and more like the Sword of Mordenkainen. Additionally, drawing inspiration on this "dancing" thing, it has extra features given by the fact that the sword can "dance" on its own while being wielded as if with sentience:
 
@@ -1036,11 +1020,11 @@ This makes it useful for far longer, and more like the Sword of Mordenkainen. Ad
 - THAC0: +4
 - It's a flashy sword, and kits that are used to flashy fighting get bonus +1/2 APR: Blades, Shadowdancers, and Swashbucklers
 
-**Component 1230:** Make Short Sword of Mask slightly more powerful
+### Make Short Sword of Mask slightly more powerful (1230)
 
-Makes the chance-based Level drain take 2 levels instead of just one and the Entangle effect 5% more likely to trigger (20%). In both versions of the sword, the entangle is no longer subject to magic resistance.
+Makes the chance-based Level drain take 2 levels instead of just one and the Entangle effect 5% more likely to trigger (20%). In both versions of the sword, entangle is no longer subject to magic resistance.
 
-**Component 1240:** Make Purifier's dispel magic much better and damage bonus affect all evil, not just Chaotic Evil
+### Make Purifier's powers better and affect all evil (1240)
 
 Just as the title says. It's kind of funny considering the description of the weapon mentions Pit Fiends, which are Lawful Evil.
 
@@ -1048,13 +1032,13 @@ It also makes the charge ability of Dispel Magic effect equal in power as those 
 
 Both changes are optional.
 
-**Component 1250:** Make Yamato's passive abilities more substantial
+### Make Yamato's passive abilities more substantial (1250)
 
 The effect is pretty underwhelming for a +4 weapon. Since it's advertised as a defender weapon, the following is added:
 
 Armor Class bonus improved to 2 (instead of 1) plus 1 against slashing, piercing, and missile weapons. 5% universal damage and magic resistance.
 
-**Component 1260:** Make Usuno's Blade slightly more electrically powerful
+### Make Usuno's Blade slightly more electrically powerful (1260)
 
 The effect is pretty underwhelming for a +4 weapon. Now:
 
@@ -1062,27 +1046,27 @@ The effect is pretty underwhelming for a +4 weapon. Now:
 - Every hit deals 1d3 electrical damage with no save allowed
 - Increases electrical damage resistance by 40%
 
-**Component 1270:** Make Spectral Brand slightly better and make the dancing blade last for 1 turn instead of 4 rounds
+### Make Spectral Brand slightly better (1270)
 
-This makes it useful for far longer, and more like the Sword of Mordenkainen. Additionally, the Armor Piercing charge ability also improves damage by +4, critical hit chances by +10%, and critically misses become impossible to trigger (effectively impossible unless something is increasing the chances of having critical misses).
+This makes the summoned blade last for a full turn instead of 4 rounds. Additionally, the Armor Piercing charge ability also improves damage by +4, critical hit chances by +10%, and critically misses become impossible to trigger (effectively impossible unless something is increasing the chances of having critical misses).
 
-**Component 1315:** Make Dak'kon's Zerth Blade behave as a +3 weapon
+### Make Dak'kon's Zerth Blade behave as a +3 weapon (1315)
 
 This makes the katana +3, for consistency with the power level of other WA-weapons.
 
-**Component 1319:** Make Holy Sword of Tyr +3 affect all evil, not just chaotic evil
+### Make Holy Sword of Tyr affect all evil (1319)
 
 Self-explanatory. I also removed the weird preamble that includes the first sentence of the general description of long swords. Seems lazy, and perhaps a mistake.
 
-**Component 1341:** Make Hindo's Doom a +4 and +5 weapon and inflict extra damage to undead
+### Make Hindo's Doom a +4 and +5 weapon and inflict extra damage to undead (1341)
 
 This allows the game to grant you a +4 and +5 katana, and following the theme of the katana, each strike inflicts +4 or +5 extra magical damage to undead only, depending on upgrade.
 
-**Component 1470:** Make Adjatha the Drinker thirstier
+### Make Adjatha the Drinker thirstier (1470)
 
 This component will make the healing per it based on probabilities, such that there is a 50% chance it will heal by 1, 20% it will heal by 2, 15% it heals by 3, 10% it heals by 4, and 5% it heals by 5.
 
-**Component 1550** Make Drizzt's weapons slightly more worth stealing in BG2
+### Make Drizzt's weapons slightly more worth stealing in BG2 (1550)
 
 By the time you get this weapon in BG2, it's generally underwhelming, and you have better weapons already. This improves his weapon in a few ways, trying not to stray too much from the lore:
 
@@ -1090,7 +1074,7 @@ By the time you get this weapon in BG2, it's generally underwhelming, and you ha
 - Icingdeath: It's a "frost" weapon, and as such, it also inflicts 1d3 cold damage per hit, +5 against creatures immune to fire (fire elementals, fire salamanders, fire giants, etc.). It's also considered a silver weapon.
 - Twinkle: It has a defensive theme, therefore: added +2 Armor Class bonus against slashing, piercing and missile, +1 save vs. Spell, +8% physical damage resistance.
 
-**Component 1580:** Make Hawksight improve your senses, reflexes, and accuracy more keenly, and give it a more unique description
+### Make Hawksight slightly more passively powerful with a unique description (1580)
 
 This component takes the theme of speed and accuracy more seriously, and hence, other than giving +1 Dexterity it also:
 
@@ -1100,7 +1084,7 @@ This component takes the theme of speed and accuracy more seriously, and hence, 
 
 Optionally, it also adds a description worth-reading (YMMV). I really dislike items with unique names, but with no interesting description or brief backstory. It seems lazy and uninteresting to add a named item without any background. Additionally, it adds a minor power to it, based on this brief backstory.
 
-**Component 1582:** Make Vexation +2 more powerful
+### Make Vexation more powerful (1582)
 
 I've always liked this sword conceptually, and it's introduced into the game in a very cool way. This makes this short sword another +3 weapon and additionally improved in the following ways:
 
@@ -1109,7 +1093,7 @@ I've always liked this sword conceptually, and it's introduced into the game in 
 
 Note that this will make the encounter relatively more difficult, obviously. Protect your mages: they will likely be targeted and promptly chunked.
 
-**Component 1583:** Make Kachiko's Wakizashi more unique and add an optional upgrade path for Cespenar
+### Make Kachiko's Wakizashi more unique with an upgrade path for Cespenar (1583)
 
 I really hate unique items with nothing in the description worth reading, so I tried to add something a bit more worth reading and hopefully not too cringy. For reasons described in the description, it is now called Kachiko's Whisper. The following additions are included:
 
@@ -1119,7 +1103,7 @@ I really hate unique items with nothing in the description worth reading, so I t
 
 This component also adds a path to be improved by Cespenar, requiring a scroll of Shadow Door and Wail of the Banshee, and 10,000 gold pieces, becoming a +5 weapon. This can be disabled in the configuration files.
 
-**Component 1584:** Make The Brass Blade +5 cast a more powerful Fireball not tied to caster level
+### Make The Brass Blade cast better fireball spells (1584)
 
 The Brass Blade is an unused weapon that allows you to throw a Fireball as per the 3rd level wizard spell, and it's tied to caster level, which means only Fighter/Mages would be able to take advantage of the full power of this -- other classes would throw a much weaker Fireball. This changes the power so it casts instead a Delayed Fireball cast at max level (15d6 fire damage with vanilla values) at a particular target, regardless of the presence or absence of caster level, and adds the power to cast Sunfire too. Next, it also reduces the fire damage per hit from 10 to 5, since that was a little on the overpowered side.
 
@@ -1129,41 +1113,39 @@ Finally, it fixes two likely bugs: spells cast being set as conjurer spells inst
 
 Note: you need to have a mod installed that restores this weapon in order to get it organically. An example of this is **Convenient Enhanced Edition NPCs** by Argent77.
 
-**Component 1585:** Make Arbane's Sword of Agility's Haste last 1 turn, not 2 rounds
+### Make Arbane's Sword of Agility's Haste last 1 turn (1585)
 
-Self-explanatory. Additionally, the speed factor of the weapon is now 0.
+1 turn is better than 2 rounds. Additionally, the speed factor of the weapon is now 0.
 
-**Component 1586:** Make Blade of Searing more Searing
+### Make Blade of Searing more Searing (1586)
 
 This makes this weapon more interesting by replacing the simple +1 fire damage by:
 
 - 1d3+1 fire damage on hit
 - Can make the target catch on fire, causing it to receive 1d3 fire damage per round for 3 rounds if a save vs. Spell is failed
 
-**Component 1588** Make Water's Edge not just unique in name and description, but in function
+### Make Water's Edge unique in function (1588)
 
 The unique description with no unique functionality bothers me, therefore:
 
 - +20% cold resistance on equipping
 - Causes 1d2 cold damage on hit
 
-**Component 1589** Make Rashad's Talon not just unique in name and description, but in function
+### Make Rashad's Talon unique in function (1589)
 
 The unique description with no unique functionality bothers me, therefore:
 
 - Cursed wound: critical hits with this weapon prevent most sources of healing for 2 rounds
 - +5% critical hit chances with this weapon
 
-**Component 1596:** Make The Shadow Blade +3 not just unique in name and description, but in function
-
-The sword has the following benefits now:
+### Make The Shadow Blade unique in function (1596)
 
 - +1 Backstab bonus (single-classed thieves only)
 - +2 Main Hand THAC0 (single-classed thieves only)
 
 They're relegated to single classed thieves because they need it more, I want to promote specialization, and for balance, since multiclassed Thieves have other alternate means of increasing their THAC0 and general damage.
 
-**Component 1598:** Make Cutthroat +4 not just unique in name and description, but in function
+### Make Cutthroat unique in function (1598)
 
 This weapon is not even a normal +4 weapon, since the speed factor is not 0 as it normally would. This is a bug that is fixed by the fixpack, and also by this mod automatically. Therefore:
 
@@ -1171,7 +1153,7 @@ This weapon is not even a normal +4 weapon, since the speed factor is not 0 as i
 - Critical hit chances: +10%
 - Critical hits cause bleeding: 1d6 piercing damage immediately, and again each round for 2 rounds
 
-**Component 1605:** Make The Burning Earth better improve the horrendously misleading description
+### Make The Burning Earth better and improve the misleading description (1605)
 
 You get this weapon fairly late in BGEE, and it sucks. Also, "cold-using creatures" only includes WINTER WOLVES. The description is overly generous because there's not much point in calling it "cold-using creatures" if it's only winter wolves. Here are the changes:
 
@@ -1181,7 +1163,7 @@ You get this weapon fairly late in BGEE, and it sucks. Also, "cold-using creatur
 - Silver Dragons are included as "cold-using creatures"
 - The extra damage will be fire damage, not slashing
 
-**Component 1701:** Make Ilbratha give the wielder a chance to activate Blur when attacked
+### Make Ilbratha give the wielder a chance to activate Blur when attacked (1701)
 
 This slightly improves the largely unremarkable +1 short sword by giving wielders a 7% chance each time they're hit to be affected by Blur.
 
