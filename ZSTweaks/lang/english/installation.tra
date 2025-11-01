@@ -50,7 +50,6 @@
 @1435 = "Make darts faster and with longer range"
 @1440 = "Make daggers get extra features to compensate for low damage"
 @1450 = "Make thief weapons able to do 'Finesse' damage when used by pure rogues"
-@1530 = ~Make the inexplicably double damage magical throwing daggers deal normal, to not make them the obvious choice~
 @1533 = ~Make some wands more balanced~
 @1534 = ~Make some potions more balanced or useful~
 @1537 = ~Make poison-curing spells cast instantly & protect vs. poison briefly~
@@ -139,7 +138,7 @@
 @1271 = ~Make the belt of gender inversion give a bonus vs. the original gender~
 @1291 = ~Make Shakti Figurine last longer and more powerful~
 @1331 = ~Make Doomplate an armor for those that want to RIP. AND. TEAR.~
-@1333 = ~Make the Robe of Vecna the Robe of Larloch instead~
+@1333 = ~Make the Robe of Vecna the Robe of Larloch~
 @1334 = ~Make Ashen Scales more unique beyond enchantment level~
 @1335 = ~Make Crimson Chain more unique beyond enchantment level~
 @1336 = ~Make Cowl of the Stars more generally useful~
@@ -147,18 +146,19 @@
 
 /// DAGGER TWEAKS
 @1000 = "Make throwing poisoned daggers less rare and more likely to poison enemies"
-@1130 = "Make Bone Blade dagger more special and not just a plain +4 dagger"
-@1140 = "Make Dagger of the Star slightly more powerful"
-@1490 = ~Make Neb's Nasty Cutter have an unlimited amount of poison~
-@1630 = ~Make The Jade's Fang slightly more powerful and improve the life-steal effect~
-@1660 = ~Make Heart of the Golem +2 get a couple more magic-based features, inspired by the description~
-@1670 = ~Make Werebane +1 (Silver Dagger) a bit more effective against Lycanthropes~
-@1680 = ~Make Stiletto of Demarchess +2 a bit more powerful and bleed every hit~
-@1681 = ~Make Elements' Fury +2 slightly more powerful (SoD)~
-@1682 = ~Make Acid-Etched Dagger +2 generally more powerful and act as +3 (SoD)~
-@1683 = ~Make Gemblade +2 more powerful and more worth hanging onto for wizards (SoD)~
+@1130 = "Make Bone Blade not just a plain +4 dagger"
+@1140 = "Make Dagger of the Star more powerful"
+@1490 = ~Make Neb's Nasty Cutter never run out of poison~
+@1630 = ~Make The Jade's Fang more powerful~
+@1660 = ~Make Heart of the Golem +2 more unique based on the description~
+@1670 = ~Make Werebane more effective vs. lycanthropes~
+@1680 = ~Make Stiletto of Demarchess more sadistically powerful~
+@1681 = ~Make Elements' Fury more powerful~
+@1682 = ~Make Acid-Etched Dagger a more powerful +3 weapon~
+@1683 = ~Make Gemblade more worth hanging onto for wizards~
 @1684 = ~Make basic throwing daggers usable as melee weapons~
-@1686 = ~Make Life-Stealer +4 a more powerful cursed weapon (requires mod to make it available, such as UB)~
+@1686 = ~Make Life-Stealer +4 a more powerful cursed weapon~
+@1530 = ~Make throwing dagger's damage standardized~
 
 /// TWO-HANDED MELEE WEAPONS
 @1200 = "Make Ixil's Spike allow Haste and Improved Haste and improve it slightly"

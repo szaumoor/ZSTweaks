@@ -561,9 +561,9 @@ This makes the belt generally more useful and frankly makes more sense if you co
 
 ### Make Rhino Beetle Gear have a more balanced set of resistances (1204)
 
-This follows the same philosophy as the tweak to beetle creatures. The armor now provides a 18% resistance to missile, 12% resistance to slashing, and the Armor Class was slightly tweaked to reflect this theme.
+This follows the same philosophy as the tweak to beetle creatures. The armor now provides 18% resistance to missile, 12% to slashing, and the Armor Class was tweaked to reflect this theme.
 
-The shield does the same, providing a 12% resistance to missile, 8% resistance to slashing, and 5% resistance to piercing. It also provides a +1 Armor Class bonus to piercing.
+The shield does the same, providing a 12% resistance to missile, 8% to slashing, and 5% to piercing. It also provides a +1 Armor Class bonus to piercing.
 
 ### Make Protector of the Second more powerful when used by rangers (1207)
 
@@ -665,14 +665,14 @@ I couldn't resist, considering the name of this armor, especially considering th
 
 A new original description is also provided, inspired, of course, by Doom.
 
-### Make the Robe of Vecna the Robe of Larloch instead (1333)
+### Make the Robe of Vecna the Robe of Larloch (1333)
 
-This will probably not be a favorite since the robe is effectively "the best", and what you want for powergaming, but I decided to make it more nuanced, with some inspiration from NWN functionally. It's also now the Robe of Larloch, not Vecna, since it's probably much more lore-appropriate to begin with, and Larloch is also a lich of immense power anyway. So here are the changes (sorry, some nerfs are involved):
+This will probably not be a favorite since the robe is effectively "the best", and what you want for powergaming, but I decided to make it more nuanced, with some inspiration from NWN functionally. It's now the Robe of Larloch, not Vecna, since it's probably much more lore-appropriate to begin with, and Larloch is also a lich of immense power anyway. So here are the changes (sorry, some nerfs are involved):
 
 - Armor Class: 5 (vanilla)
 - Casting Speed: +2 (down from +4)
 - Magic Resistance: +10% (vanilla)
-- +2 to all saving throws against spells of all schools of magic
+- +2 to all saving throws against spells of all schools of magic (specifically the schools of magic, it won't be reflected in the character summary, but it will affect saves vs. spells of every school magic either way)
 - Enemies in the field of vision of the wearer suffer a -1 penalty to all saving throws against spells of all schools of magic
 
 ### Make Ashen Scales more unique beyond enchantment level (1334)
@@ -697,9 +697,9 @@ Yay, I love me another item with a unique description but no unique function. Th
 
 I don't like wearable items that *only* give charged abilities, generally. The following improvements were made:
 
-- Gives 20% resistance to fire to all wearers
+- +20% resistance to fire
 - Creates 20 Melf's Minute Meteors once per day, regardless of wizard level
-- Additionally, since I think it's thematic, it gives Sun Soul monks and Priests of Lathander a 20% chance of inflicting extra 2d4 fire damage with all their melee attacks.
+- Additionally it gives Sun Soul monks and Priests of Lathander a 20% chance of inflicting extra 2d4 fire damage with all their melee attacks.
 
 ### Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing (1351)
 
@@ -724,31 +724,19 @@ These gauntlets are not a very interesting reward for monks. Gauntlets of Crushi
 
 </summary>
 
-**Component 1000:** Make throwing poisoned daggers less rare and more likely to poison enemies
+### Make throwing poisoned daggers less rare and more likely to poison enemies (1000)
 
-First, this component increases the stock of these throwing daggers. In BG2, they're only increased in the same stores where they're found. There are now exactly 356 poisoned throwing daggers to be bought in the stores, which is more than double the amount available in stores by default. They're also spread more evenly among stores.
+This component makes Poisoned Throwing Daggers more available and effective.
 
-In BGEE there are none, even though in SoD there are 800 in Waizahb's stock (halfling thieves' guild merchant in Coalition Camp). A bunch will also be spread to a few other relevant merchants in the main game:
+- **Availability**: Sharply increases the stock in BG2 stores and adds them to several merchants in BGEE. The quantity is configurable.
+- **Effectiveness**: The poison now forces a Save vs. Death at -2, making it harder to resist. This penalty is also configurable.
 
-- Silence: 48
-- Black Lily: 48
-- Ulgoth's Beard innkeeper: 30
-- Thalantyr & Halbazzer (not SoD): 30
+### Make Bone Blade not just a plain +4 dagger (1130)
 
-The quantity can be increased or decreased using the configuration file.
+- Being made partially from the tooth of a black dragon, it deals 1d4 acid damage on hit and increases Acid Resistance by 40%
+- Being tempered in the blood of the duergar smith, every hit causes +5 extra piercings damage vs. elves, and other inhabitants of the Underdark: beholders, mind flayers, kuo-toa, hook horrors, driders, spiders, and umber hulks.
 
-Secondly, this component makes these items force a save vs. Death at -2 to avoid poisoning, which makes them more useful and compensates for their rarity. This save penalty can be overridden in the configuration file too.
-
-**Component 1130:** Make Bone Blade dagger more special and not just a plain +4 dagger
-
-Plain enchanted weapons are boring, and the higher the enchantment level, the more egregious that is, as far as I'm concerned, especially if the description suggests it **is** unique (I'm looking at you too, Cutthroat +4).
-
-Instead of simply giving the usual +4 weapon bonuses:
-
-- Being made partially from the tooth of a black dragon, it causes extra 1d4 acid damage on hit and increases Acid Resistance by 40% for the user
-- Being tempered in the blood of the duergar smith, every hit causes +5 extra damage against all elves, including drow, and other inhabitants native to (or frequent inhabitants of) the Underdark: beholders, mind flayers, kuo-toa, hook horrors, driders, spiders, and umber hulks
-
-**Component 1140:** Make Dagger of the Star slightly more powerful.
+### Make Dagger of the Star more powerful (1140)
 
 - Dagger of the Star +4 becomes +5, the chance of invisibility increases to 10%, and it inflicts +1 electric and fire damage each hit.
 - Dagger of the Star +5 becomes one of the few privileged +6 weapons and inflicts +2 electric and fire damage per hit
@@ -756,61 +744,56 @@ Instead of simply giving the usual +4 weapon bonuses:
 
 Finally, it has a charge ability usable twice per day called Heavenly Strike, that causes a lightning bolt to fall from the sky dealing 6d6+24 electrical damage (save vs. Breath at -5 to take three quarters of the damage) followed shortly by a column of fire that deals 6d6+24 fire damage (save vs. Breath at -5 to take three quarters of the damage). The fire damage spreads to enemies that stand too close to the fire, which deals 60% of the potential fire damage. Doing this, also empowers the wielder's attacks for 1 turn, dealing +2 fire and electrical damage per hit.
 
-**Component 1490:** Make Neb's Nasty Cutter have an unlimited amount of poison
+### Make Neb's Nasty Cutter never run out of poison (1490)
 
-The dagger will always cause 20 poison damage over 10 seconds if a save vs. Death is failed and never deplete.
+Self-explanatory.
 
-**Component 1630:** Make The Jade's Fang slightly more powerful and improve the life-steal effect
+### Make The Jade's Fang more powerful (1630)
 
-This component will make the healing per it based on probabilities, such that there is a 50% chance it will heal by 1, 20% chance it will heal by 2, 15% chance it heals by 3, 10% chance it heals by 4, and 5% chance it heals by 5. Additionally, there is a 15% chance the stun effect happens too, but only if a Save vs. Spell is failed (the vanilla 5% chance gives no saving throws). All the effects now bypass Magic Resistance, like the Stupifier in BGEE and Adjatha the Drinker (which is probably an oversight in this case).
+This component will make the healing per it based on probabilities, such that there is a 50% chance it will heal by 1, 20% chance it will heal by 2, 15% chance it heals by 3, 10% chance it heals by 4, and 5% chance it heals by 5. Additionally, there is a 15% chance the stun effect happens too, but only if a Save vs. Spell is failed (the vanilla 5% chance gives no saving throws). All the effects now bypass Magic Resistance, which is probably an oversight.
 
-**Component 1660:** Make Heart of the Golem +2 get a couple more magic-based features, inspired by the description
-
-This makes the dagger, which is made from arcane metals from a golem, imbued with something more magically golem-like:
+### Make Heart of the Golem +2 more unique based on the description (1660)
 
 - Improves Magic Resistance by 10% when held
 - 50% chance of inflicting 1d4 magic damage, no save
 
-**Component 1670:** Make Werebane +1 (Silver Dagger) a bit more effective against Lycanthropes
+### Make Werebane more effective vs. lycanthropes (1670)
 
 Werebane's description is a little misleading. It doesn't cause +4 damage against Lycanthropes. The 1d4+1 base damage of the weapon doesn't become 1d4+5. This type of confusing description is common to all weapons that do extra damage to specific creatures. Instead, it causes 1d4+1, and if the target is a Lycanthrope, another tick of 3 piercing damage is inflicted. This improves this extra additive tick of damage so it inflicts 6 instead, and the additional THAC0 is also +6.
 
-**Component 1680:** Make Stiletto of Demarchess +2 a bit more powerful and bleed every hit
+### Make Stiletto of Demarchess more sadistically powerful (1680)
 
 This component makes the weapon try to stun the victim with a probability of 25% instead of 20%. Inspired by the sadistic story behind the weapon, it now has +5% higher critical hit chances, and it also causes bleeding every hit, similar to Gnasher, inflicting 2 extra piercing damage, as well as 2 more per round for 3 rounds.
 
-**Component 1681:** Make Elements' Fury +2 slightly more powerful
-
-This component makes this dagger a bit more powerful in the following ways:
+### Make Elements' Fury more powerful (1681)
 
 - Damage dice number against elementals improved by 1: 2d4
 - Elemental resistance improved by 10% while holding it.
 - Random elemental damage improved to 2
 
-**Component 1682:** Make Acid-Etched Dagger +2 generally more powerful and act as +3
+### Make Acid-Etched Dagger a more powerful +3 weapon (1682)
 
-This component makes this weapon one of the few +3 weapons in the expansion, acting in every way as a +3 weapon, as well as:
-
+- Weapon is now +3
 - Acid damage on hit increased from 1 to 1d3
 - 20% chance of causing 1d3 acid damage per round for 3 rounds (improved from 1, 15% chance), as well as adding an Armor Class penalty of 2 for 3 rounds
 
-**Component 1683:** Make Gemblade +2 more powerful and more worth hanging onto for wizards
+### Make Gemblade more worth hanging onto for wizards (1683)
 
-This makes Gemblade +2 more worth using. Gemblade is one of those "cool items" design-wise, but functionally, it has nothing that interesting, particularly considering INT bonuses are generally useless in the vanilla game. So now, other than increasing INT by 1:
+Gemblade is one of those "cool items" that are functionally not interesting, particularly considering INT bonuses are generally unimportant in vanilla game. So now, other than increasing INT by 1:
 
 - Every hit causes an additional 1d2 magic damage
 - 33% chances of causing additional 1d4+2 magic damage
 - Mages/Sorcerers can cast 2 more spells of levels 1 and 2 while holding it.
 - Acts as a +3 weapon for the purposes of what it can hit
 
-**Component 1684:** Make basic throwing daggers usable as melee weapons
+### Make basic throwing daggers usable as melee weapons (1684)
 
 This copies the design of SoD's special throwing dagger such that you can use vanilla throwing daggers as melee weapons if desired. The items modified are:
 
 - Throwing dagger (dagg05.itm): Has a melee option that deals 1d3 piercing damage, with a speed factor of 3
 - Poisoned throwing dagger (dagg16.itm): Has a melee option that deals 1d3 piercing damage, plus +1 poison damage (no save). The usual poisoning ability does not work in this mode, only in ranged mode. This was done because otherwise using it as a melee weapon is too obvious as a better choice.
 
-**Component 1686:** Make Life-Stealer +4 a more powerful cursed weapon (requires mod to make it available, such as UB)
+### Make Life-Stealer +4 a more powerful cursed weapon (1686)
 
 This component overhauls the unused Life-Stealer +4 dagger, turning it into a powerful cursed weapon. Note this does not add the weapon to the game; a mod like Unfinished Business is required to obtain it.
 
@@ -825,7 +808,7 @@ This component overhauls the unused Life-Stealer +4 dagger, turning it into a po
   - The wielder cannot be healed by most conventional healing spells or potions.
   - Can only be unequipped with a Remove Curse spell.
 
-**Component 1530:** Moderate the inexplicably double damage magical throwing daggers do, to not make them the obvious choice all the time to maximize damage
+### Make throwing dagger's damage standardized (1530)
 
 This reduces the number of dice thrown of DAGG11 and DAGG12 to 1, so they are not the only good choice for daggers to maximize damage. And for consistency. Generally speaking, I dislike this sort of unbalanced design. DAGG11 specifically, already conforms to this rule in BGEE.
 
