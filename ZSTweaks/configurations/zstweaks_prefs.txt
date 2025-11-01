@@ -256,6 +256,8 @@ OUTER_SET zst_451_chain_lightning_projectile = "1" // speeds up animation
 OUTER_SET zst_468_call_lightning_boost = "1"
 OUTER_SET zst_468_iwd_call_lightning   = "1" // makes call lightning in BG use (partially) the animation from IWD
 
+OUTER_SET zst_496_doom_casting_speed = "1" // set to desired improved casting speed for Doom (0-8, anything else will throw an error)
+
 OUTER_SET zst_507_disable_aidglow = "0" // disables the character color pulse with Aid to avoid excessive color pollution
 
 OUTER_SET zst_508_restoration_stat_drain = "1"

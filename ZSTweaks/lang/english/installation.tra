@@ -292,22 +292,22 @@
 @555 = ~Make Chromatic Orb more interesting by providing party-only chromatic varieties~
 
 // CLERIC SPELLS
-@100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20, instead of just to 18"
+@100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20"
 @101 = ~Make Flame Blade be more effective vs. undead, and last for as long as it does in IWDEE~
 @110 = "Make Bless and Curse last longer and increase the casting speed from 6 to 3"
 @130 = "Make Hold Person saving throw penalties standardized at -1"
 @190 = "Make Holy Power grant a THAC0 of 0 at max level and APR at the appropriate levels"
-@230 = "Make Cloak of Fear work as a temporary aura of fear, like in IWDEE"
-@240 = "Make Goodberries create six berries that heal 2d4 and grant very slow regeneration for 8 hours"
+@230 = "Make Cloak of Fear work as a temporary aura of fear"
+@240 = "Make Goodberries more genuinely useful"
 @250 = "Make Earthquake more effective and disable annoyances"
 @260 = "Make Negative Plane Protection's duration increase somewhat as you level up"
 @270 = "Make Entangle more powerful and relevant for druids and shamans"
-@280 = "Make Poison (cleric spell) do half damage on a failed save (without poisoning them)"
+@280 = "Make Poison spell do half damage on a failed save"
 @300 = "Make Iron Skins cast as fast a Stoneskin"
-@310 = "Make Fire Seeds create more seeds that do slightly more damage, with an enchantment of 2"
-@320 = "Make Nature's Beauty more dangerous and targets that are under True Sight or blinded immune to it"
-@330 = "Make Cleric's level 7 version of confusion act like Chaos (-4 saving throw penalty)"
-@420 = ~Make Armor of Faith also add a +2 Armor Class and resistance to poison damage~
+@310 = "Make Fire Seeds markedly more useful and powerful"
+@320 = "Make Nature's Beauty better and more logical in how it works"
+@330 = "Make Cleric's level 7 version of confusion act like Chaos"
+@420 = ~Make Armor of Faith also add Armor Class and poison damage resistance~
 @450 = ~Make cure and cause wound spells other than Heal/Harm more worth using~
 @461 = ~Make Bolt of Glory slightly more effective and reorganize the damage distribution per type of enemy~
 @462 = ~Make Magical Stone bypass magic resistance and deal both magic and missile damage~
@@ -321,7 +321,7 @@
 @507 = ~Make Aid a party buff~
 @508 = ~Make Restoration-type spells restore stat draining by mind flayers and shadow-creatures~
 @509 = ~Make Silence 15ft Radius party-friendly~
-@510 = ~Make Righteous Wrath of the Faithful only cause some fatigue, instead of guaranteeing it, similar to Haste and restore the attack damage bonus~
+@510 = ~Make Righteous Wrath of the Faithful slightly better~
 @511 = ~Make Unfailing Endurance an area spell that cures the fatigue of the whole party~
 @512 = ~Make Alicorn Lance more effective by increasing damage by 1 dice every 2 levels, up to 8d6~
 @513 = ~Make Whirlwind more effective and able to damage more creatures before dissipating~
@@ -329,7 +329,7 @@
 @479 = ~Make Static Charge electrocute twice as often, but for half the damage~
 @485 = ~Make Cloudburst last longer and less horrendously bad~
 @488 = ~Make Thorn Spray more powerful and scale with level~
-@491 = ~Make Spike Stones deal also slashing damage so it's more effective than Spike Growth~
+@491 = ~Make Spike Stones strictly more effective than Spike Growth~
 @492 = ~Make Barkskin last longer, cast faster, and block the first weapon attack~
 @496 = ~Make Doom cast faster~
 @497 = ~Make Produce Fire a much more effective spell~
@@ -337,23 +337,23 @@
 @539 = ~Make Holy and Unholy Word more generally effective~
 
 // KITS AND CLASSES
-@2100 = "Make Sun Soul Ray and Sun Soulbeam Sun Soul Monks scale further and/or do more damage to undead"
+@2100 = "Make Sun Soul Ray and Sun Soulbeam more powerful"
 @360 = "Make Shaman's unique spells more powerful"
-@2120 = "Make War Cry inflict fear with a -2 saving throw penalty and rally the allies"
+@2120 = "Make War Cry significantly more useful"
 @2130 = "Make some Thief HLAs more effective"
 @2150 = "Make a selection of HLAs unable to be breached"
 @2160 = ~Make Quivering Palm's saving throw improve twice at later levels~
 @2170 = ~Make the THAC0 progression of Thieves and Bards better and more streamlined~
-@2171 = ~Fix Swashbuckler THAC0 when Thief THAC0 improvement is installed (use ONLY if no Swashbuckler overhaul is installed!)~
-@2190 = ~Make Poison Weapon improve twice more every 4 levels (level 17, and 21)~
+@2171 = ~Make vanilla Swashbuckler THAC0 consistent Thief THAC0 improvement is installed~
+@2190 = ~Make Poison Weapon improve twice more every 4 levels~
 @2200 = ~Make Blackguards able to backstab as if they had a 2x multiplier~
 @3500 = ~Make Shadowstep impossible to use while in the Shadow Plane~
-@2230 = ~Make RR's Crippling strike no longer able to increase Strength; instead it reduces STR to half its current value~
-@2231 = ~Make Dragon Disciples (Red) have automatic access to all fire-based spells and optionally increase fire damage by 5%~
-@2232 = ~Make Called Shot directly increase ranged weapon damage, instead of adding 2 damage after the initial hit~
+@2230 = ~Make RR's Crippling strike no longer able to increase Strength~
+@2231 = ~Give Dragon Disciples direct access to all fire wizard spells and increase fire damage by 5%~
+@2232 = ~Make Called Shot directly increase ranged weapon damage~
 @2260 = ~Make Blades, Skalds, and Swashbucklers and Priest of Tempus get more warrior-type benefits~
 @2265 = ~Make Defensive Spin protect against backstabs for its duration and allow very slow movement~
-@2270 = ~Make Whirlwind and Evasion grant 3 uses of the Improved variants instead of existing as a silly lesser version~
+@2270 = ~Make Whirlwind and Evasion grant once 3 uses of the Improved variants~
 
 // CRE TWEAKS
 @3010 = ~Make inappropriately aligned creatures in BG2 more correct~
@@ -363,11 +363,11 @@
 @3050 = ~Make the Balor's vorpal attack not guaranteed to succeed but affected by a saving throw~
 @3060 = ~Make that dumb Mencar Pebblemuncher a fair fighter for his level~
 @3070 = ~Make lions and other cat creatures not slow as molasses~
-@3080 = ~Make creature on-hit effects that should be natural not behave as magical attacks that can be dispelled or magically resisted~
-@3090 = ~Make Shadow creatures slightly harder to damage, and make strength sapping last much longer so it's an actual inconvenience~
+@3080 = ~Make creature on-hit effects that should be natural not behave as magical attacks~
+@3090 = ~Make Shadow creatures slightly more dangerous~
 @3100 = ~Make Beetles more resistant to non-crushing weapons~
 @3110 = ~Make Yuan-ti slightly more powerful~
-@3120 = ~Overhaul golem creatures~
+@3120 = ~Make some golem creatures more unique~
 @3130 = ~Make minotaurs tougher and more dangerous~
 
 // END-OF-INSTALL ORDER TWEAKS

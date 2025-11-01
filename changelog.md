@@ -91,6 +91,7 @@
 - Stat component now reduces the lore per level of bards from 10 to 8, to tighten the differences slightly (but they are still gaining 3 more points than wizards and sorcerers regardless)
 - Deleted duplicated .tra entries
 - Added missing documentation entry for Karajah armor tweak
+- Doom component has now a configurable casting speed (accepted values 0-8)
 
 ## New components
 
