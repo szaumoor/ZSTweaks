@@ -857,7 +857,7 @@ This reduces the number of dice thrown of DAGG11 and DAGG12 to 1, so they are no
 
 ## Two-handed Melee Weapons Tweaks
 
-<summary>
+</summary>
 
 ### Make Ixil's Spike allow Haste and Improved Haste and improve it slightly (1200)
 
