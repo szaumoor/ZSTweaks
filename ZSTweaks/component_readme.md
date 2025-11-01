@@ -1277,17 +1277,21 @@ This makes the weapons more interesting in this way:
 
 <details>
 
-<summary><b>Ranged Weapon Tweaks</b></summary>
+<summary>
 
-**Component 1010:** Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost
+## Ranged Weapon Tweaks
+
+</summary>
+
+### Make Asp's Nest darts more dangerous (1010)
 
 This makes those very expensive darts much more likely to affect characters, which is a fair compensation for their rarity and huge monetary cost. Save vs. Death is now at -4 (unless overridden in the configuration file). Additionally, 1d2 poison damage is caused on contact.
 
-**Component 1330:** Make Darkfire Bow slightly more remarkable
+### Make Darkfire Bow slightly more remarkable (1330)
 
 Makes the elemental resistances against fire and frost increase to 15%, 30% at +5. Additionally, the +4 version makes all arrows deal extra 1 cold and fire damage (2 damage at +5).
 
-**Component 1340:** Make Taralash slightly more remarkable
+### Make Taralash slightly more remarkable (1340)
 
 The +5 version literally just increases the THAC0 bonus by 1. That's a bit too boring for a +5 weapon. I'm not saying these changes are much better—but slightly better? Absolutely!
 
@@ -1295,11 +1299,11 @@ The +5 version literally just increases the THAC0 bonus by 1. That's a bit too b
 - Adds a damage bonus of 1 like a regular composite bow
 - Animals and other kinds of unintelligent beasts, magical or not, take +2 and +5 extra damage added on top of the arrow's normal damage (+4 and +5 version respectively). The list of such creatures includes: anything tagged as animal, ankhegs, carrion crawlers, chimeras, ettercaps, gibberlings, hook horrors, otyughs, spiders, trolls, umber hulks, wyverns, and basilisks.
 
-**Component 1342:** Make Protector of the Dryads deal +2 damage to orcs, ogres, gnolls, and goblinoids
+### Make Protector of the Dryads deal +2 damage to orcs, ogres, gnolls, and goblinoids (1342)
 
 Inspired by the description, it deals +2 damage to orcs... as well as some groups of similar monsters that would band together to spread evil on the Sword Coast: ogres, gnolls, goblinoids (goblins, hobgoblins, and bugbears).
 
-**Component 1343:** Make Mana bow more magical and more deadly against arcane casters
+### Make Mana bow more magical and more deadly against arcane casters (1343)
 
 This follows the theme of the description, which is an anti-wizard theme, and thus the following changes were added:
 
@@ -1307,33 +1311,33 @@ This follows the theme of the description, which is an anti-wizard theme, and th
 - Magic Resistance: 5%
 - Arrows force a Save vs. Spell at -2 or the target suffers 1d4+1 magic damage and 10% cumulative arcane casting failure for 4 rounds (which can be dispelled)
 
-**Component 1344** Make Arrows of Biting apply poison faster and improve the misleading description
+### Make Arrows of Biting apply poison faster and improve the misleading description (1344)
 
 The description states that 30% of the health of the target will be lost by the time the poison is done, but that's not actually true. Therefore, now it deals 30 points of poison damage over 30 seconds, similar to Bolts of Biting, but slower. Additionally, these arrows will have a 5% higher chance of critically hitting.
 
 This will in turn make Hobgoblins and Sirens in BGEE significantly more dangerous if they get the poison off on you, since -30 HP is a big deal in BGEE. Keep the antidotes and healing ready (my potion, cure poison spells, and healing spell overhauls help wink wink).
 
-**Component 1345:** Make Arrows of Fire cause fire damage always, same as Arrows of Ice
+### Make Arrows of Fire cause fire damage always, same as Arrows of Ice (1345)
 
 This removes the save from the damage effect, therefore 1dx fire damage will always be inflicted.
 
-**Component 1346:** Make Arrows of Piercing always cause at least half of the extra piercing damage
+### Make Arrows of Piercing always cause at least half of the extra piercing damage (1346)
 
 This makes the arrows cause at least 3 extra piercing damage when save succeeds. This should make these expensive arrows feel like less of a waste when used, especially against targets with good saves. Additionally, these arrows will have a 10% higher chance of critically hitting.
 
-**Component 1347:** Make Bolts of Biting have an inherent +5% extra critical hit chance, and deal +1 poison damage on hit
+### Make Bolts of Biting slightly more deadly (1347)
 
 This improves the bolts slightly by causing direct poison damage, which may be useful for caster interruption, and it helps compensates the lack of enchantment or THAC0 bonus. Additionally, these bolts will have a 5% higher chance of critically hitting, since I envision these as assassin's tools.
 
-**Component 1348:** Make projectiles from Shortbow of Gesen as fast as regular arrows
+### Make projectiles from Shortbow of Gesen as fast as regular arrows (1348)
 
 Self-explanatory, the normal projectiles are way too slow.
 
-**Component 1371:** Make Arrows of Dispelling force a save vs. Spell at -2 for them to work
+### Make Arrows of Dispelling force a save vs. Spell at -2 for them to work (1371)
 
 Simply a balance tweak.
 
-**Component 1388:** Make Acid Arrow's extra damage not subject to magic resistance
+### Make Acid Arrow's extra damage not subject to magic resistance (1388)
 
 Self-explanatory. It also justifies the higher price compared to other elemental arrows more.
 
@@ -1343,9 +1347,13 @@ Self-explanatory. It also justifies the higher price compared to other elemental
 
 <details>
 
-<summary><b>NPC Tweaks</b></summary>
+<summary>
 
-**Component 1380:** Make Chaos and Entropy grant 1/2 APR each and improve them slightly.
+## NPC Tweaks
+
+</summary>
+
+### Make Chaos and Entropy grant 1/2 APR each and improve them slightly (1380)
 
 My first move whenever I used Haer'Dalis was to give him swords that granted him extra attacks. These are his personal swords, so it feels wrong to not use them. This makes it more appealing to use them since now he will have 3 APR when dual wielding by default. Both have a speed factor of 0.
 
@@ -1360,7 +1368,7 @@ This component is compatible with Improved Haer'Dalis Swords mod, which makes th
 - Act as +5 weapons
 - Can only be wielded by Haer'Dalis
 
-**Component 1480:** Make Yoshimo's Katana slightly more unique and powerful
+### Make Yoshimo's Katana slightly more unique and powerful (1480)
 
 This component keeps to the idea that it is only lightly enchanted, but it also offers a few advantages to Yoshimo only:
 
@@ -1369,7 +1377,7 @@ This component keeps to the idea that it is only lightly enchanted, but it also 
 - Sets proficiency with katanas to 2, unless it's higher.
 - +10% critical hit chance
 
-**Component 1500:** Make Mazzy's weapons slightly more powerful
+### Make Mazzy's weapons slightly more powerful (1500)
 
 Come on, Arvoreen! Be more generous to your most faithful holy warrior.
 
@@ -1379,41 +1387,41 @@ Come on, Arvoreen! Be more generous to your most faithful holy warrior.
 
 This component will patch Item Upgrade's upgraded versions of these weapons as well.
 
-**Component 1510:** Make Delryn's family shield become a +2 shield
+### Make Delryn's family shield become a +2 shield (1510)
 
-Just a simple buff to make the shield a good option for longer. This also applies automatically the changes to this item in **Component 1644**
+Just a simple buff to make the shield a good option for longer. This also applies automatically the changes to this item in Component 1644.
 
-**Component 1520:** Make Hallowed Redeemer able to hit enemies immune to +2 weapons
+### Make Hallowed Redeemer able to hit enemies immune to +2 weapons (1520)
 
 This extends the usability of the weapon, despite the lower damage, if the constant shield the weapon grants is desired. This also applies automatically the changes to this item in **Component 1644**
 
-**Component 1640:** Make Abyssal Blades more powerful (Dorn's Quest)
+### Make Abyssal Blades more powerful (1640)
 
 This improves the blades such that they have an enchantment of 5 (only for the purposes of what they can hit!), and thus their usability is extended until the end of the game, if so desired.
 
 Additionally, the versions that have one fiend in them deal +1 fire damage compared to baseline. The version that has two deals +2.
 
-**Component 1641:** Make the item creation abilities of vanilla NPCs slightly better
+### Make the item creation abilities of vanilla NPCs slightly better (1641)
 
 This makes these skills generate more items. Jan Jansen will create 10 Bruiser Mates. Eldoth will create 15 poisoned arrows. Additionally, his poisoned arrows will deal 20 poison damage over 40 seconds instead of 13.
 
-**Component 1642:** Make Nalia's ring slightly more powerful
+### Make Nalia's ring slightly more powerful (1642)
 
 Equipped items that you cannot remove from NPCs are quite inconvenient, since they prevent your character from being upgraded in the ways you desire. This component makes the ring more powerful, relatively diminishing this annoyance. Specifically, other than improving Armor Class and saving throws by 2, and granting 50% fire resistance, it also adds:
 
 - +20% bonus to Pick Locks and Find Traps (compensates fewer Thief levels compared to Imoen)
 - 1 extra spell slot from level 1 to 5
 
-**Component 1643:** Make Corthala family blade more powerful and more effective against wizards
+### Make Corthala family blade more powerful and more effective against wizards (1643)
 
 This makes the blade grant Valygar the following perks:
 
 - +1 backstab multiplier (this will ignore the backstab multiplier tweak and behave as you would expect)
 - Total bonus of +6 THAC0 against wizards and sorcerers
 
-It also applies automatically the changes to this item in **Component 1644**
+It also applies automatically the changes to this item in Component 1644.
 
-**Component 1644:** Remove the unnecessary stat restrictions in NPC's gear
+### Remove the unnecessary stat restrictions in NPC's gear (1644)
 
 The stat restrictions are a remnant of an older, inferior way of making the gear usable only by THEM... Unless, of course, you happen to have the exact same stats as them. This removes these restrictions, though only in the items that seem too arbitrary:
 
@@ -1424,7 +1432,7 @@ The stat restrictions are a remnant of an older, inferior way of making the gear
 
 The rest seem less arbitrary: Jan Jansen's special gear requires 17 dexterity (i.e., ability to handle it), Mazzy's (no special restrictions), Haer'Dalis' (no special restrictions), and Yoshimo's (no special restrictions).
 
-**Component 1645:** Make Cernd's cloak more powerful
+### Make Cernd's cloak more powerful (1645)
 
 This component makes Cernd's cloak more worth hanging onto. As it stands, it is like a +1 cloak of protection, with the bonus that it can be worn with other magically protective items. Now it's more unique and seems more significant for our druidic lupine sensei. Additions (saving throws stay as they were):
 
@@ -1437,7 +1445,7 @@ Overall, this will complement his werewolf shapes and druidic traits. Obviously 
 
 It will also remove the needless stat restrictions from the item.
 
-**Component 1646:** Make Sarevok's Deathbringer assault a bit more balanced
+### Make Sarevok's Deathbringer assault a bit more balanced (1646)
 
 Deathbringer assault is a bit stupid. Yes, it's very cool. Yes, big ToB bosses are not affected. And it triggers only 3% of the time. But it's still 200 slashing damage, without even a save to take only half. Sarevok also causes stun (even though it's supposed to be a fear-induced state) 11% of the time when he hits for 2 rounds, which is almost always a death sentence when it happens, and cannot be dispelled, as it is a natural effect. The following changes are applied:
 
@@ -1449,7 +1457,7 @@ Deathbringer assault is a bit stupid. Yes, it's very cool. Yes, big ToB bosses a
 
 This component contains the same fixes as Tresset's deathbringer assault component. No need to use both.
 
-**Component 1647:** Make Shar-Teel especially effective when fighting male-gendered opponents
+### Make Shar-Teel especially effective when fighting male-gendered opponents (1647)
 
 This component makes Shar-Teel's effectiveness vs. males fit her hate and boasting. A bit gimmicky, but it's very amusing to me:
 
@@ -1458,9 +1466,9 @@ This component makes Shar-Teel's effectiveness vs. males fit her hate and boasti
 
 Note that this means she has a bonus against things that *may* make no sense they're set as "male", like battle horrors. My mod, however, fixes this whenever a component is installed, ensuring sexless and genderless creatures are set as such. Creatures of that nature include angels, demons, elementals, mind flayers, golems, battle horrors, beholders, and others. All those instances will be fixed so this component and any other that targets gender directly works more consistently. This fix can be disabled in the configuration file, but it's not recommended installing this component without it. Final note: summoned creatures have a special "gender" set to them which marks them as summoned creatures, so they will not be affected by this component, even if their normal version would routinely be considered "male". Not my fault they used "gender" as a weird mark for various purposes, blame Bioware!
 
-**Component 2240:** Make Hexxat's Blood Drain have a 1 Hour (5 turn) cooldown instead of being usable once per day
+### Make Hexxat's Blood Drain have a cooldown instead of being usable once per day (2240)
 
-This improves the usability of this skill by simply allowing it to be used more often. I'm planning to improve it further in the future after I figure out how in the world the ability works.
+This improves the usability of this skill by simply allowing it to be used more often (once per in-game hour). I'm planning to improve it further in the future after I figure out how in the world the ability works.
 
 Fair warning, as with all abilities with cooldown, DO NOT use CTRL+R on Hexxat while it's on cooldown, as it may cause her to lose the ability entirely, since it destroys the effect that **returns** the ability to her.
 
@@ -1470,17 +1478,21 @@ Fair warning, as with all abilities with cooldown, DO NOT use CTRL+R on Hexxat w
 
 <details>
 
-<summary><b>Arcane Magic Tweaks</b></summary>
+<summary>
 
-**Component 140:** Standardize Finger of Death magical damage on a successful save
+## Arcane Magic Tweaks
+
+</summary>
+
+### Standardize Finger of Death magical damage on a successful save (140)
 
 This component matches the magic damage inflicted by the wizard version of Finger of Death so it's as powerful as the priest version.
 
-**Component 145:** Make Luck last for 1 turn and add 5% critical hit chances, 2 Armor Class, 5% more to thieving
+### Make Luck last longer and benefit more (145)
 
 The bonus that Luck provides really doesn't justify such a short duration. Now it lasts 1 turn instead of 3 rounds (i.e., 18 seconds) and makes it generally more useful by adding also a 5% critical hit chance boost, 10% total bonus thief skill bonus, as well as 2 Armor Class. The rest is unchanged. You can choose which parts of the component you want to install in the configuration file.
 
-**Component 160:** Make Black Blade of Disaster and golem iron fist unsuitable for backstabs
+### Make Black Blade of Disaster and golem iron fist unsuitable for backstabs (160)
 
 This exists simply to destroy any temptation to use these as cheesy ways to get insane numbers with backstabs that would instantly kill most things with HP and normal damage resistances in one hit. So now they should not be able to trigger backstabs. You can disable either case in the configuration file.
 
@@ -1488,69 +1500,69 @@ Technical details: this sets backstab multiplier to 0x. It would be possible to 
 
 This can also be made to function as backstab multiplier reduction instead of an outright disable. Check configuration file. If backstab multiplier reduction is chosen, it will override whatever was added by component 1150, if it was installed before. Component 1150 will still add a reduction of backstab multiplier if installed after, however.
 
-**Component 170:** Make Wail of the Banshee inflict some magical damage and deafness on a successful save
+### Make Wail of the Banshee cause side effects on successful save (170)
 
 This exists because I personally dislike using spells, especially high level spells, which are powerful but unpredictable, so that there is a benefit to using them regardless. Therefore, on a successful save (or if the target is simply immune to the slaying effect), it will cause 3d6+3 magic damage and cause deafness for 2 rounds.
 
-**Component 180:** Make Meteor Swarm more likely to do more damage, and bypass magic resistance like Fire Storm
+### Make Meteor Swarm do more minimum damage and bypass magic resistance (180)
 
 The problem with Meter Swarm is that the likelihood of doing very low damage is quite high, which is pretty bad for a level 9 spell. To make it worse, it doesn't bypass Magic Resistance either. Now it will instead do it like Fire Storm, causing 2d10 + 1 point/level (i.e, 22-40 fire damage per round instead of 4-40 damage per round), and no Magic Resistance will apply.
 
-**Component 210:** Make Horror an Enchantment spell
+### Make Horror an Enchantment spell (210)
 
 This mod simply changes the school to Enchantment, which is probably more accurate for a mind-altering spell.
 
-**Component 220:** Make Ice Storm do more damage, including piercing damage
+### Make Ice Storm do more damage, including piercing damage (220)
 
 I think the damage is a little low for a 4 round static effect (2-16 cold damage per round). Now the damage will be 2d8+2 cold damage plus 1d6+2 piercing damage. Piercing was added because the animation indicates pointy ice is what falls down upon your foes.
 
-**Component 370:** Make Ray of Enfeeblement a Necromancy spell
+### Make Ray of Enfeeblement a Necromancy spell (370)
 
 It probably makes more sense to make this spell a Necromancy spell like in NWN and NWN2.
 
-**Component 380:** Make Contagion cause 4 points of Strength and Dexterity damage
+### Make Contagion cause 4 points of Strength and Dexterity damage (380)
 
 2 points of damage for STR, DEX and CHA is underwhelming, and CHA reduction is irrelevant unless using particular mods. Now it reduces 4 STR and DEX, which should be a little more meaningful and more worth the level 4 slot.
 
-**Component 390:** Make Death Fog inflict 1d8+8 acid damage and optionally bypass Magic Resistance
+### Make Death Fog inflict 1d8+8 acid damage and optionally bypass Magic Resistance (390)
 
 Improves the usability of Death Fog as a "general purpose" damage dealer instead of just a stationary lingering anti-summon spell. The options for acid spells are very lacking in the game anyway. So instead of 8 acid damage per round now it will be between 9 and 16 per round with no save. Optionally, magic resistance will be bypassed. You can undo this in the configuration file.
 
-**Component 400:** Make Energy Drain take 6 levels instead of 2
+### Make Energy Drain take 6 levels instead of 2 (400)
 
 2 levels of drain is unremarkable and a waste of a spell slot, particularly when the likely enemies to fight by the time you get this spell are fairly high level. Additionally, this makes the spell behave similarly to how it does IWDEE, where outsiders, undead, and constructs are ensured to be immune to it.
 
-**Component 405** Make Maze bypass Magic Resistance, like Imprisonment, and make minotaurs immune to it
+### Make Maze bypass Magic Resistance and make minotaurs immune to it (405)
 
 I think this makes this spell quite more useful, although perhaps it's too powerful like that if used against some enemies. I like this tweak, but I'll use the spell judiciously (perhaps not mazing dragons, for example). Additionally, minotaurs are immune to it, same as IWDEE.
 
-**Component 407** Make base Imp Familiars have 12/24 HP like the other familiars
+### Make base Imp Familiars have 12/24 HP like the other familiars (407)
 
 This allows you to be Lawful Evil and enjoy the same amount of HP bonus as other alignments. I see no reason there should be a bias against the Imp familiar.
 
-**Component 410:** Make Horrid Wilting actually more effective against plants and Water Elementals and increase minimum damage
+### Make Horrid Wilting more effective vs. plants and Water Elementals and increase minimum damage (410)
 
 This makes the spell mirror the behavior in 5E/BG3, where plant and water-based creatures always take maximum damage with a Save vs. Spell at -2 (this penalty is missing in vanilla), halved on a save. Additionally, enemies that are not damaged by draining moisture are unaffected (undead, golems, and non-water elementals).
 
 Finally, it modifies the dice size and damage bonus, such that instead of dealing 1d8 damage per level, it deals 1d7+1 per level. Ultimately, it deals the same maximum damage. The difference is that the minimum damage dealt will be higher, such that the damage range will be 40-160 at max level, if the saving throw is failed (vanilla is 20-160).
 
-**Component 430:** Make Grease bypass Magic Resistance, apply a Fire Resistance debuff to affected characters, and reduce movement speed regardless, as per the description
+### Make Grease bypass Magic Resistance and more useful tactically (430)
 
 A very cool part of other games using the Grease spell is that it actually primes the area for extra fire damage. This component emulates that behavior by causing character in the Grease field a 6-second -25% weakness to fire and also makes part of the speed reduction unavoidable. Failing the save will simply increase the slowdown significantly.
 
 This component also swaps the horrendous repeating sound when it's active for the one that Web uses in BGEE.
 
-**Component 440:** Make Comet bypass magic resistance and apply a mix of cold, fire, and crushing damage
+### Make Comet bypass magic resistance and deal a mix of cold, fire, and crushing damage (440)
 
 As others have noted, this spell is generally just less powerful than Dragon Breath (the latter also is not affected by Magic Resistance). This is an attempt at making it more unique. As for the rationale, comets are cold and icy, hence the cold damage, but burn when in a collision path, hence the fire damage, and are big rocks, hence the crushing damage. The breakdown of damage is: 2d10+10 cold, 2d10+10 fire, 3d10+10 crushing.
 
-**Component 441:** Make Tenser's Transformation grant a THAC0 of 0 at max level and APR at the appropriate levels
+### Make Tenser's Transformation grant a THAC0 of 0 at max level and APR at the appropriate levels (441)
 
 Makes this spell achieve a THAC0 of 0 at max level, since the description clearly states "fighter of the same level." They also get 1/2 APR at levels 7 and 13. This APR does not stack with the one provided by Holy Power (component 190).
 
 Finally, by default, it will only grant APR to non-fighter casters, as fighters already have the APR they need. This can be disabled in the configuration file.
 
-**Component 444:** Make Flesh to Stone and Stone to Flesh more unique
+### Make Flesh to Stone and Stone to Flesh more unique (444)
 
 This overhauls these two spells (both optional) in the following manner:
 
@@ -1561,7 +1573,7 @@ Note for users and modders: The Stone to Flesh spell tweak is implemented somewh
 
 This will also make the wizard spell not affect golems, specters, and other creatures that are immune to petrification according to IWDEE.
 
-**Component 445:** Make Bigby's spells more powerful
+### Make Bigby's spells more powerful (445)
 
 Bigby's spells are generally a pretty poor choice for levels 8 and 9: low damage and a high chance of either spell doing nothing. This tweak improves those two spells such that they do more damage and are more likely to be effective, bypassing magic resistance as well (but can still be dispelled):
 
@@ -1574,7 +1586,7 @@ Bigby's spells are generally a pretty poor choice for levels 8 and 9: low damage
   - 2nd round: 8d6+8 crushing damage if save vs. Paralysis at -6 is failed (originally 3d10, save vs. Paralysis at -4)
   - 3rd round: 10d6+10 crushing damage if save vs. Paralysis at -4 is failed (originally 4d10, save vs. Paralysis at -2)
 
-**Component 446:** Make fireball-type spells improve more with level and/or improve explosion animations
+### Make fireball-type spells improve more with level and/or improve explosion animations (446)
 
 This component rebalances several Fireball-type spells to improve their damage scaling at higher levels, making them more competitive choices throughout the game.
 
@@ -1585,29 +1597,29 @@ This component rebalances several Fireball-type spells to improve their damage s
 
 Additionally, this component includes an optional visual overhaul that replaces the default EE explosion animations for Fireball, Sunfire, Delayed Blast Fireball, and Dragon's Breath with more impressive custom visuals. The damage rebalance and the new animations can be toggled individually in the configuration file.
 
-**Component 447:** Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance
+### Make Melf's Acid Arrow have a chance of splashing enemies and bypass magic resistance (447)
 
 This makes this spell more similar to the 5E behavior, where the acid creates a splash zone. The splash zone will affect immediately adjacent enemies if they fail a save vs. Breath, without affecting the primary target, or allies, for convenience and to avoid modifying the normal strategy in the game when using this spell or meddling with enemy AI. The splash damage is equal to the base immediate damage of the spell, and it does not persist over time, only the primary target gets damage over time. This splash can be avoided with an Evasion check if this feature exists in the game.
 
 Additionally, the spell will bypass magic resistance, as it is conceived as conjured acid, not a magical effect. This behavior can be disabled in the configuration file.
 
-**Component 448:** Make Decastave at least grant proficiency with staff while it's held
+### Make Decastave at least grant proficiency with staff while it's held (448)
 
 Self-explanatory. Small quality of life change.
 
-**Component 449:** Make Otiluke's Freezing Sphere deal half damage on save
+### Make Otiluke's Freezing Sphere deal half damage on save (449)
 
 Self-explanatory. Most spells that deal damage only on a failed save are not very attractive. This will make it a better choice.
 
-**Component 451:** Make Chain Lightning scale more strongly and spread faster to enemies
+### Make Chain Lightning scale more strongly and spread faster to enemies (451)
 
 This modifies the projectile so it spreads faster, making it less annoying. Additionally, the starting damage is now 8d6, increasing to 12d6 with the same scaling as vanilla. Both things can be freely allowed or disallowed through the configuration file. Not available for IWDEE.
 
-**Component 452:** Make Icelance upgrade damage every 2 levels up to 10d6
+### Make Icelance upgrade damage every 2 levels up to 10d6 (452)
 
 Self-explanatory.
 
-**Component 499:** Make Seven Eyes' granted abilities more powerful
+### Make Seven Eyes' granted abilities more powerful (499)
 
 This improves the spell and the abilities granted by it in the following ways:
 
@@ -1620,19 +1632,19 @@ This improves the spell and the abilities granted by it in the following ways:
 - Eye of the Spirit: Cast Cause Critical Wounds instead of Ray of Enfeeblement
 - Eye of Stone: Cast Hold Monster instead of Hold Person
 
-**Component 500:** Make Control Undead bypass magic resistance and have a -2 penalty to the saving throw
+### Make Control Undead much more likely to be effective (500)
 
-Generally considered a terrible choice for a level 7 spell, this makes it a little more useful. Might make it more powerful in the future, but this is a start. Just the fact that it didn't bypass magic resistance was a big detriment to the spell, since many undead are resistant to magic, like the majority of skeletons.
+Generally considered a terrible choice for a level 7 spell, this makes it a little more useful. Might make it more powerful in the future, but for now, it bypasses magic resistance and the saving throw has a penalty of -2. Just the fact that it didn't bypass magic resistance was a big detriment to the spell, since many undead are resistant to magic, like the majority of skeletons.
 
-**Component 502:** Make Hold Undead bypass Magic Resistance
+### Make Hold Undead bypass Magic Resistance (502)
 
-Same reasoning as component 500. Applies to Priest of Lathander's version of the spell. Note that this does not affect liches or demiliches, because both creatures are immune to level 4 spells (liches: 1-5, demiliches: 1-8).
+Same reasoning as component 500. Applies to Priest of Lathander's version of the spell. Note that this does not affect liches or demiliches, because both creatures are immune to level 4 spells (liches: 1-5, demiliches: immune to everything).
 
-**Component 522:** Make Disintegrate cause damage and slow some golems, as per PnP
+### Make Disintegrate cause damage and slow some golems, as per PnP (522)
 
 This makes the spell cause 1d12 crushing damage to all clay golems, including other creatures considered clay golems in the game such as sand, magical, and brain golems. Additionally, they will be slowed immediately for 2 rounds, dispels their haste if they have it, and prevents them from hasting themselves for one round.
 
-**Component 555:** Make Chromatic Orb more interesting by providing party-only chromatic varieties
+### Make Chromatic Orb more interesting by providing party-only chromatic varieties (555)
 
 This improves Chromatic Orb to make it a little more interesting, giving players the choice to cast different varieties of the spell at the moment of casting. Here's the varieties:
 
@@ -1654,7 +1666,11 @@ Caveats:
 
 <details>
 
-<summary><b>Divine Spell Tweaks</b></summary>
+<summary>
+
+## Divine Spell Tweaks
+
+</summary>
 
 **Component 100:** Make Glyph of Warding do damage on a failed save and extend damage up to level 20, and not 18
 

@@ -230,15 +230,15 @@
 @1328 = ~Make Storm Star more shockingly electrifying~
 
 // RANGED WEAPONS
-@1010 = ~Make Asp's Nest darts much more likely to poison, to compensate for the rarity and cost~
+@1010 = ~Make Asp's Nest darts more dangerous~
 @1330 = "Make Darkfire Bow slightly more remarkable"
 @1340 = "Make Taralash slightly more remarkable"
 @1342 = ~Make Protector of the Dryads deal +2 damage to orcs, ogres, gnolls, and goblinoids~
 @1343 = ~Make Mana bow more magical and more deadly against arcane casters~
-@1344 = ~Make Arrows of Biting apply poison more effectively with a +5% inherent critical hit chance~
+@1344 = ~Make Arrows of Biting apply poison faster and improve the misleading description~
 @1345 = ~Make Arrows of Fire cause fire damage always, same as Arrows of Ice~
 @1346 = ~Make Arrows of Piercing always cause at least half of the extra piercing damage~
-@1347 = ~Make Bolts of Biting have an inherent +5% extra critical hit chance, and deal +1 poison damage on hit~
+@1347 = ~Make Bolts of Biting slightly more deadly~
 @1348 = ~Make projectiles from Shortbow of Gesen as fast as regular arrows~
 @1371 = ~Make Arrows of Dispelling force a save vs. Spell at -2 for them to work~
 @1388 = ~Make Acid Arrow's extra damage not subject to magic resistance~
@@ -249,7 +249,7 @@
 @1500 = ~Make Mazzy's weapons more powerful~
 @1510 = ~Make Delryn's family shield become a +2 shield~
 @1520 = ~Make Keldorn's unique gear a bit more effective and convenient~
-@1640 = ~Make Abyssal Blades more powerful (Dorn's Quest)~
+@1640 = ~Make Abyssal Blades more powerful~
 @1641 = ~Make the item creation abilities of vanilla NPCs slightly better~
 @1642 = ~Make Nalia's ring more powerful~
 @1643 = ~Make Corthala family blade more powerful and more effective against wizards~
@@ -257,31 +257,30 @@
 @1645 = ~Make Cernd's cloak more powerful~
 @1646 = ~Make Sarevok's Deathbringer assault a bit more balanced~
 @1647 = ~Make Shar-Teel especially effective when fighting male-gendered opponents~
-@2240 = ~Make Hexxat's Blood Drain have a 1 Hour (5 turn) cooldown instead of being usable once per day~
+@2240 = ~Make Hexxat's Blood Drain have a cooldown instead of being usable once per day~
 
 // WIZARD SPELLS
 @140 = "Make Finger of Death's magical damage on a successful save standardized"
-@145 = ~Make Luck last for 1 turn and add 5% critical hit chances, 2 Armor Class, 5% more to thieving~
-@160 = "Make Black Blade of Disaster and golem iron fist unsuitable for backstabs (optional, see config)"
-@161 = ~Make Phantom Blade scale in duration up to level 20, instead of to level 18~
-@170 = "Make Wail of the Banshee inflict some magical damage and deafness on a successful save"
-@180 = "Make Meteor Swarm more likely to do more damage, and bypass magic resistance like Fire Storm"
+@145 = ~Make Luck last longer and benefit more~
+@160 = "Make Black Blade of Disaster and golem iron fist unsuitable for backstabs"
+@170 = "Make Wail of the Banshee cause side effects on successful save"
+@180 = "Make Meteor Swarm do more minimum damage and bypass magic resistance"
 @210 = "Make Horror an Enchantment spell"
 @220 = "Make Ice Storm do more damage, including piercing damage"
 @370 = "Make Ray of Enfeeblement a Necromancy spell"
 @380 = "Make Contagion cause 4 points of Strength and Dexterity damage"
 @390 = "Make Death Fog better and closer to PnP somewhat"
 @400 = "Make Energy Drain take 6 levels instead of 2"
-@405 = ~Make Maze bypass magic resistance, like Imprisonment, and make minotaurs immune to it~
+@405 = ~Make Maze bypass Magic Resistance and make minotaurs immune to it~
 @407 = ~Make base imp familiars have 12/24 HP like the other familiars~
-@410 = ~Make Horrid Wilting actually more effective against plants and water elementals and increase minimum damage~
-@430 = ~Make Grease bypass magic resistance, apply a fire resistance debuff, and reduce some movement speed regardless~
-@440 = ~Make Comet bypass magic resistance and apply a mix of cold, fire, and crushing damage~
-@441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level and Attacks per Round at the appropriate levels"
+@410 = ~Make Horrid Wilting more effective vs. plants and Water Elementals and increase minimum damage~
+@430 = ~Make Grease bypass Magic Resistance and more useful tactically~
+@440 = ~Make Comet bypass magic resistance and deal a mix of cold, fire, and crushing damage~
+@441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level and APR at the appropriate levels"
 @444 = ~Make Flesh to Stone and Stone to Flesh more unique~
 @445 = ~Make Bigby's spells more powerful~
 @446 = ~Make fireball-type spells improve more with level and/or improve explosion animations~
-@447 = ~Make Melf's Acid Arrow have a chance of splashing enemies and optionally bypass magic resistance~
+@447 = ~Make Melf's Acid Arrow have a chance of splashing enemies and bypass magic resistance~
 @448 = ~Make Decastave at least grant proficiency with staff while it's held~
 @449 = ~Make Otiluke's Freezing Sphere deal half damage on save~
 @451 = ~Make Chain Lightning scale more strongly and spread faster to enemies~
