@@ -594,3 +594,29 @@ STATISTICS:
 – Stone to Flesh
   Range: 50 ft.
   Area of Effect: 1 creature~
+
+@75000 = ~Chromatic Orb 
+(Evocation)
+
+Level: 1
+Range: 90 ft.
+Duration: Special
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell causes a 2-ft. diameter sphere to appear in the caster's hand. At the moment of casting, the caster has the choice of creating an orb of different colors, each color causing a different effect. When thrown, the sphere heads unerringly to its target. The effects vary as follows:
+
+ 1st Level: Start off with access to the White and Orange orbs. 
+ 4th Level: Gain access to the Light Blue and Green orbs.
+ 7th Level: Gain access to the Yellow orb.
+ 10th Level: Gain access to the Purple orb.
+ 13th Level: Gains access to the Black orb.
+
+WHITE: Cause 1d2+1 points of magic damage and cause a -2 penalty to AC and THAC0 for 1 round, with no save allowed, and causes Blindness if a save vs. Spell is failed. At level 4 at 7, duration increases by half a round and the penalty increases by 1.
+ORANGE: Cause 2d4+1 fire damage in a small area around the primary target. At level 4 and 7, the flames become more dangerous, inflicting an additional 1d4 fire damage (save vs. Breath for half for this portion of the damage).
+LIGHT BLUE: Cause 2d4+1 cold damage and inflicts Slow on the target for 1 round if a save vs. Spell is failed. At level 7 and 10, the duration of the Slow effect increases by 1 round. At level 4 and 7, the damage increases by 1d4, up to 4d4+1 cold damage.
+GREEN: Cause 2d4+1 poison damage and target becomes poisoned if they fail a save vs. Death, taking 4 points of damage over 2 rounds. At level 7, the poisoning damage increases to 6. At level 10, it becomes 12.
+YELLOW: Cause 2d4+1 acid damage that bypasses magic resistance. Damage increases by 2d4 every three levels, up to 6d4+1.
+PURPLE: Causes a thunderous sonic thud that causes 1d4+2 crushing damage and 1d4 magic damage, deafening them, causing a 30% casting failure, and saving throw penalty of -1, for 2 rounds without any save allowed, as well as stunning them for 1 round if they fail a save vs. Death. Golems and other constructs are susceptible to this version, suffering 4d4 irresistible damage. At level 13, the saving throw penalty increases to -2, and at level 16, the stun duration increases by half a round. Note that deafness and saving throw penalties do not affect creatures without hearing.
+BLACK: Causes 1d4+1 magic damage and slays target if they fail a save vs. Spell at +6. Save bonus is reduced by 1 at level 16 and 19.~

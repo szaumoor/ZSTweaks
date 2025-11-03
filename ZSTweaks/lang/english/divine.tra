@@ -594,6 +594,7 @@ This powerful abjuration spell causes the spells cast against the priest to be a
 
 @7551 = ~10% chance to cast Planar Shield~
 @7552 = ~10% chance to cast Shield of the Archons~
+@7553 = ~Planar Shield~
 
 @8060 = ~Curse
 (Conjuration/Summoning)
@@ -996,21 +997,21 @@ Sphere: Combat
 Range: 0
 Duration: Special
 Casting Time: 1
-Area of Effect: 15-ft. radius
+Area of Effect: 30-ft. radius
 Saving Throw: None
 
-Uttering a Holy Word spell creates magic of tremendous power. The priest acts as a bridge between <PRO_HISHER> god and the Prime Material Plane, causing a sonic explosion centered on the priest and reaching up to a 30-ft. radius. It affects only enemy non-good creatures and undead of any alignment that are caught in the area of effect. The effects vary depending on the target's status and Hit Dice:
+Uttering a Holy Word spell creates magic of tremendous power. The priest acts as a bridge between <PRO_HISHER> deity and the Prime Material Plane, causing a sonic explosion centered on the priest and reaching up to a 30-ft. radius. It affects only enemy non-good creatures and undead of any alignment that are caught in the area of effect. The effects vary depending on the target's status and Hit Dice:
 
 Status  —  Effects of Holy Word
 Summoned — Banished or destroyed (save vs. Spell at -4 to avoid)
 Less than 4 HD, or with 40 Hit Points of less  —  Destroyed or killed instantly
-4 to 7 HD  —  Stunned, slowed, blinded, and deafened for 1 to 4 turns
+4 to 7 HD  —  Stunned, slowed, blinded, and deafened for 1 to 4 turns with a 90% chance of spell failure
 8 to 11 HD  —  Slowed, blinded, and deafened for 5 rounds with a 75% chance of spell failure
 12 HD and up  —  Blinded and deafened for 4 rounds with a 50% chance of spell failure
 
-A special case for this spell is for demiliches, who despite being otherwise unaffected by this spell, they will immediately take damage equivalent to 5% of their total health, plus 2d6 magic damage upon casting this spell.
+This spell has a special effect on demiliches. Though normally immune, they will instead take damage equal to 5% of their total health, plus 2d6 magic damage.
 
-There is no Saving Throw nor is it affected by Magic Resistance, but side effects are negated for deafened targets, or targets that have no hearing, except in the case of banishment of summoned creatures. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that this spell may not be cast by any priest of evil alignment.~
+There is no Saving Throw nor is it affected by Magic Resistance, but side effects are negated for deafened targets, or targets that have no hearing, except in the case of killing effects, and the banishment of summoned creatures. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that this spell may not be cast by any priest of evil alignment.~
 
 @8651 = ~Unholy Word
 (Conjuration/Summoning)
@@ -1020,16 +1021,16 @@ Sphere: Combat
 Range: 0
 Duration: Special
 Casting Time: 1
-Area of Effect: 15-ft. radius
+Area of Effect: 30-ft. radius
 Saving Throw: None
 
-Uttering an Unholy Word spell creates magic of tremendous power. The priest acts as a bridge between <PRO_HISHER> god and the Prime Material Plane, causing a sonic explosion centered on the priest and reaching up to a 30-ft. radius. It affects only enemy creatures of any non-evil alignment that are caught in the area of effect. The effects vary depending on the target's status and Hit Dice:
+Uttering an Unholy Word spell creates magic of tremendous power. The priest acts as a bridge between <PRO_HISHER> deity and the Prime Material Plane, causing a sonic explosion centered on the priest and reaching up to a 30-ft. radius. It affects only enemy creatures of any non-evil alignment that are caught in the area of effect. The effects vary depending on the target's status and Hit Dice:
 
-Status  —  Effects of Holy Word
+Status  —  Effects of Unholy Word
 Summoned — Banished or destroyed (save vs. Spell at -4 to avoid)
 Less than 4 HD, or with 40 Hit Points of less — Destroyed or killed instantly
 4 to 7 HD  —  Stunned, slowed, blinded, and deafened for 1 to 4 turns with a 90% chance of spell failure
 8 to 11 HD  —  Slowed, blinded, and deafened for 5 rounds with a 75% chance of spell failure
 12 HD and up  —  Blinded and deafened for 4 rounds with a 50% chance of spell failure
 
-There is no Saving Throw nor is it affected by Magic Resistance, but side effects are negated for deafened targets, or targets that have no hearing, except in the case of banishment of summoned creatures. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that priests of good alignment may not cast this spell.~
+There is no Saving Throw nor is it affected by Magic Resistance, but side effects are negated for deafened targets, or targets that have no hearing, except in the case of killing effects, and the banishment of summoned creatures. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that priests of good alignment may not cast this spell.~

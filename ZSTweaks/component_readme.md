@@ -995,6 +995,13 @@ This makes the weapon not just another silly instance of a unique +3 weapon with
 
 The weapon now has +5% higher chance to critically hit, and critical hits add +5 piercing damage.
 
+### Make Harbinger more convenient (1696)
+
+- Fireball now no longer depends on wizard level, it will deal 10d6 fire damage, and behaves otherwise like a normal wizard fireball spell
+- For convenience, the fireball now does not damage the wielder, but can damage the allies
+- The ogre petrification effect is now set up so non-ogres don't have to save vs. spell when hit, polluting the console log for no reason
+- "Restored" a sound effect on the fireball that was pointing to an invalid resource, and added one similar that makes the fireball have a new snappy sound
+
 </details>
 
 ---

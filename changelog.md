@@ -107,3 +107,4 @@
 - Make rangers and rogues have a THAC0 and Damage bonus if attacking with ranged weapons from invisibility
 - Make Chromatic Orb more interesting by providing party-only chromatic varieties
 - Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing
+- Make Harbinger more convenient
