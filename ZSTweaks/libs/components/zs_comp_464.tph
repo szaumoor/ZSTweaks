@@ -9,8 +9,8 @@ ACTION_IF NOT is_iwdee BEGIN
   COPY_EXISTING ~SPPR611.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7420) END
     LPF ALTER_HEADER INT_VAR speed=20 END
-    LPF ALTER_EFFECT INT_VAR match_opcode=261 parameter1=1 END
-    LPF CLONE_EFFECT INT_VAR match_opcode=261 parameter1=0 END
-    LPF CLONE_EFFECT INT_VAR match_opcode=261 parameter1=5 END
+    LPF DELETE_EFFECT INT_VAR match_opcode = 261 END
+    LPF ADD_SPL_SELFEFF INT_VAR ip=0 STR_VAR effects = ~op=261,p2=1,p1=1;op=261,p2=1,p1=1;op=261,p2=0,p1=1;op=261,p2=0,p1=1;
+    op=261,p2=1,p1=5;op=261,p2=1,p1=5;op=261,p2=1,p1=5;op=261,p2=1,p1=5;op=261,p2=0,p1=5;op=261,p2=0,p1=5;op=261,p2=0,p1=5;op=261,p2=0,p1=5~ END   
 
 END

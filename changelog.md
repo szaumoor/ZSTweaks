@@ -51,6 +51,13 @@
 - Fixed Usuno's Blade granting a save to take half for the regular electricity damage instead of to the chance-based fat extra damage
 - Some description fixes on some tweaked items
 - Many components renamed. Mostly to shorten them
+- Fixed magical stone component not properly setting it to bypass magic resistance
+- Fixed bugged making Armor of Faith increasing poison resistance by 2 at every level instead of by the same degree other resistances are improved
+- Fixed barkskin spell not having a properly updated new description reflecting the tweak
+- Fixed bug with the level scaling in Glyph of Warding, NP Protection, caused after the last refactoring
+- Misc passing fixes to vanilla files
+- Dolorous Decay component fixes in passing the issue of the decaying icon bypassing magic resistance unlike the rest of damaging effects
+- Fixed the completely broken wondrous recall component
 
 ## Modifications
 
@@ -92,6 +99,7 @@
 - Deleted duplicated .tra entries
 - Added missing documentation entry for Karajah armor tweak
 - Doom component has now a configurable casting speed (accepted values 0-8)
+- Nature's Beauty component now makes it bypass magic resistance (while remaining dispellable)
 
 ## New components
 
@@ -108,3 +116,4 @@
 - Make Chromatic Orb more interesting by providing party-only chromatic varieties
 - Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing
 - Make Harbinger more convenient
+- Make Aura of Flaming Death increase fire resistance instead of setting it to 90%

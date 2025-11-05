@@ -69,6 +69,18 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF CLONE_EFFECT INT_VAR match_opcode = 12 parameter2 = op12_magic END
             LPF ALTER_HEADER INT_VAR speed = 4 END
             LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8130) END
+
+        
+        COPY_EXISTING ~dawnvis.eff~ ~override~ 
+                      ~dawncon.eff~ ~override~
+            WRITE_LONG 0x14 2 // targeting
+            WRITE_LONG 0x38 0
+            WRITE_LONG 0x3c 0
+
+        COPY_EXISTING ~dawncon.eff~ ~override~ // fixing nonsense
+            WRITE_LONG 0x20 0
+
+
     END
 
 END

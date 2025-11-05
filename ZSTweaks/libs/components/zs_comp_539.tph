@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_539~ = 1
 END
 
-ACTION_IF NOT is_iwdee BEGIN
+ACTION_IF is_bg2ee_or_eet BEGIN
 
   OUTER_SET fade_speed_holy = (25 << 16)
   ADD_PROJECTILE ~%MOD_FOLDER%/pro/ZSTWRDPJ.pro~

@@ -8,6 +8,6 @@ ACTION_IF NOT is_iwdee BEGIN
 
   COPY_EXISTING ~SPPR413.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5080) END
-    LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=6 step_size=2 level_cap=19 END
+    LPF ~CD_EXTEND-O-MATIC~ INT_VAR base_dur = 30 step_dur=6 step_size=2 level_cap=19 min_lev_alt=8 END
 
 END

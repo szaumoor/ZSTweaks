@@ -47,4 +47,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
     END
 
+    COPY_EXISTING ~SPPR704.SPL~ ~override~  // NATURE'S BEAUTY
+        LPF ALTER_EFFECT INT_VAR resist_dispel = 3 END
+
 END

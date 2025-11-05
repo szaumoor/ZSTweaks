@@ -9,8 +9,7 @@ ACTION_IF NOT is_iwdee BEGIN
   COPY_EXISTING ~SPPR106.SPL~ ~override~
     LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7400) END
     LPF ALTER_HEADER INT_VAR speed=2 END
-    LPF ALTER_EFFECT INT_VAR check_globals=0 header=0 resist_dispel=0 END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 12 resist_dispel = 1 END
     LPF CLONE_EFFECT INT_VAR match_opcode=12 parameter2="%op12_missile%" END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 resist_dispel=0 END
     
 END

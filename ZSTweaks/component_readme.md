@@ -1804,7 +1804,7 @@ This component improves the spell in the following ways:
 This component allows cleric/mages to benefit more by allowing arcane spell recalling. The spell now functions as follows:
 
 - Guarantees the recall of 2 level-1 wizard **and** cleric spells
-- Up to 4 spells will be recalled additionally of up to level 5
+- Four more spells will be recalled additionally of up to level 5
 
 However, the casting time is very high now (2 full rounds), which makes it less convenient to cast in the middle of combat and serves more as a recovery after combat spell, unless triggered by contingencies or sequencers. Bear in mind that if this spell is cast through scripts, the caster might have a lapse in judgment and stop the casting after only one round of casting to do something else, because it seems the engine doesn't ever expect casting times over just below 1 full round (i.e., casting speed of 9).
 
@@ -1973,6 +1973,10 @@ This component improves the spell in the following ways:
 ### Make Produce Fire a much more effective spell (497)
 
 Produce Fire is not very effective for a 4th level spell. The only upside is that the damage it causes is predictable, it being 1 point per level plus 1d4, without any saving throw to take half. However, the damage is too low to be useful. This component improves the spell by simply allowing targets in the area of effect from being affected once per 2 seconds, effectively taking around 60 fire damage at druid level 20, if they remain in the area for the full duration.
+
+### Make Aura of Flaming Death increase fire resistance instead of setting it to 90% (515)
+
+Sel- explanatory. This will also prevent some nonsense like creatures immune to fire suddenly becoming no longer immune. If they cast it, such as fiends.
 
 ### Make Holy and Unholy Word more generally effective (539)
 

@@ -948,7 +948,15 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
-When a priest casts the Barkskin spell upon a creature, its skin becomes as tough as bark, increasing its base Armor Class to 6, plus 1 for every 4 levels of the priest: Armor Class 5 at 4th level, Armor Class 4 at 8th, and so on. In addition, Saving Throws vs. all attack forms except magic gain a +1 bonus. This spell can be placed on the caster or on any other creature <PRO_HESHE> touches.~
+When a druid or shaman casts the Barkskin spell upon a creature, its skin becomes as tough as bark, setting its base Armor Class to 6, plus 1 for every 4 levels of the caster, up to a base Armor Class of 1. In addition, the following traits are gained
+
+– Saving throws vs. all but Spell gain a +1 bonus. 
+– Takes 15% less damage from piercing and missile (25% for crushing).
+– Armor class vs. piercing and missile improves by 1 (2 for crushing).
+– Suffers a 15% weakness to all forms of fire.
+– First physical attack against the user is blocked as if they were protected by one layer of Stoneskin.
+
+This spell can be placed on the caster or on any other creature <PRO_HESHE> touches.~
 
 @8589 = ~Known only as the "Wild Man of the Wood," the man that carried this staff was a legendary figure near Trademeet until the day he died and returned to the soil. Those who saw him remember his dark, bark-like skin, a feature that would fade if the staff were set aside. He would harass irresponsible loggers and poachers, and old-timers tell of mercenaries chasing him with a dozen hunting dogs or more. The animals seemed ready to rip the poor druid to pieces, but he quickly turned them on their former masters. Rushing forward in hopes of ending his influence, the men-at-arms saw the final power of the staff, and as the vegetation trembled with the "Wild Man's" magical calling, there formed a green, rotting mix of life and death that shambled overtop of the terrified soldiers, killing them all.
 
