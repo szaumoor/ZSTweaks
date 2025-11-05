@@ -100,6 +100,7 @@
 - Added missing documentation entry for Karajah armor tweak
 - Doom component has now a configurable casting speed (accepted values 0-8)
 - Nature's Beauty component now makes it bypass magic resistance (while remaining dispellable)
+- Wail of the Banshee component now makes the spell bypass magic resistance, as intended.
 
 ## New components
 

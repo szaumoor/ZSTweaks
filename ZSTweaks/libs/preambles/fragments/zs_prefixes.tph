@@ -26,7 +26,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
 
             PRINT ~[[FIX]]: Fixing scaling of Phantom's Blade duration~
             COPY_EXISTING ~SPWI518.SPL~ ~override~
-                LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=6 level_cap=20 END
+                LPF ~CD_EXTEND-O-MATIC~ INT_VAR base_dur = 72 step_dur=6 level_cap=20 END
                 
             PRINT ~[[FIX]]: Fixing scaling of Chaotic Command's duration~
             COPY_EXISTING ~SPPR508.SPL~ ~override~
