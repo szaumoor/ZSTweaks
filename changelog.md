@@ -59,6 +59,7 @@
 - Misc passing fixes to vanilla files
 - Dolorous Decay component fixes in passing the issue of the decaying icon bypassing magic resistance unlike the rest of damaging effects
 - Fixed the completely broken wondrous recall component
+- Removed unused code in some components
 
 ## Modifications
 
@@ -105,6 +106,7 @@
 - Adjatha the drinker component now disables the "healed" console line with every hit. That's just annoying. You already it heals dammit. Every hit.
 - Robe of Hayes component now makes it increases the chances of a positive outcome by 5%, instead of setting it to 15%, which allows stacking with Chaos Shields and Thayan Circlet. This makes the maximum bonus of positive outcomes of 55% with my tweaks. Improved Chaos Shield sets it to 25%, Thayan Circlet increases it by 25%, and this increases it by 5%.
 - Scroll usability component no longer uses weidu subcomponents and is entirely controlled with the config file (component 1539, default is everyone can use scrolls with stat requirements)
+- Same as above for the ioun stone and circlet critical hit protection. Default only patches a few that I selected, as per the original subcomponents (check readme and config file)
 
 ## New components
 

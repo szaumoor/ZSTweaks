@@ -132,6 +132,12 @@ OUTER_SET zst_1600_backstab_no_invis_requirement_only = "0"
 
 ////////////////////////////// Gear tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+// circlet / ioun critical hit protection configuration, only select one, component will fail otherwise
+OUTER_SET zst_1664_crits_all      = "0"
+OUTER_SET zst_1664_crits_iouns    = "0"
+OUTER_SET zst_1664_crits_circlets = "0"
+OUTER_SET zst_1664_crits_selected = "1" // default, only a few protect vs. critical hits
+
 // allows tweaks to give usability to items in the game as defined in component 1997
 OUTER_SET zst_1997_kuotoa = "1"
 OUTER_SET zst_1997_orb    = "1"
