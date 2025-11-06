@@ -1,0 +1,241 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1539~) BEGIN
+  FAIL ~Script already included: zs_comp_1539~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1539~ = 1
+END
+
+ACTION_IF zst_1539_all_no_reqs < 0 OR zst_1539_all_reqs < 0 OR zst_1539_rogues_no_reqs < 0 OR zst_1539_rogues_reqs < 0 BEGIN
+    FAIL "Scroll usability component: Valid values for options are 0 (false, or disable) or 1 (true or enable)."
+END
+
+ACTION_IF (zst_1539_all_no_reqs + zst_1539_all_reqs + zst_1539_rogues_no_reqs + zst_1539_rogues_reqs) > 1 BEGIN
+     FAIL "Scroll usability component: Incorrect options selected, please check the config file."
+END
+
+ACTION_IF zst_1539_all_no_reqs BEGIN
+
+    COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
+        LPF ITM_CAT RET cat = result END
+        PATCH_IF cat = 11 BEGIN
+            LPF ITM_USABILITY0 RET flags = result END
+            PATCH_IF flags > 0 BEGIN
+                LPF ALTER_ITEM INT_VAR unusable0 = 0 END
+            END
+
+            LPF ALTER_ITEM INT_VAR unusable0=0 unusable2=0 END
+            READ_BYTE 0x29 unusable1
+            READ_BYTE 0x2d unusable3
+            READ_BYTE 0x2f unusable4
+
+            FOR ( bit = 0; bit < 7; ++bit ) BEGIN
+                LPF IS_BIT_SET INT_VAR bit = bit bit_field = unusable1 RET bit_set = result END
+                PATCH_IF bit_set BEGIN
+                    WRITE_BYTE 0x29 (THIS - 2 ** bit)
+                END
+            END
+
+            LPF IS_BIT_SET INT_VAR bit = 7 bit_field = unusable3 RET bit_set = result END
+            PATCH_IF bit_set BEGIN
+                WRITE_BYTE 0x2d (THIS - 2**7)
+            END
+
+            FOR ( bit = 0; bit < 6; ++bit ) BEGIN
+                LPF IS_BIT_SET INT_VAR bit = bit bit_field = unusable4 RET bit_set = result END
+                PATCH_IF bit_set BEGIN
+                    WRITE_BYTE 0x2f (THIS - 2 ** bit)
+                END
+            END
+        END
+        
+    BUT_ONLY
+
+END ELSE ACTION_IF zst_1539_all_reqs BEGIN
+
+    COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
+        LPF ITM_CAT RET cat = result END
+        PATCH_IF cat = 11 BEGIN
+            LPF ITM_USABILITY0 RET usability_flags = result END
+            PATCH_IF usability_flags > 0 BEGIN
+
+                LPF ITM_MIN_INT RET min_int = result END
+                PATCH_IF min_int != 0 BEGIN // skip letters and the like
+
+                    LPF ITM_ABILITIES_NUM RET abilities = result END
+                    LPF ITM_ABILITIES_OFFSET RET offset = result END
+
+                    SET found = 0
+                    GET_OFFSET_ARRAY ab_array 0x64 4 0x68 2 0 0 0x38
+                    PHP_EACH ab_array AS int => ab_off BEGIN
+                        GET_OFFSET_ARRAY2 fx_array ab_off ITM_V10_HEAD_EFFECTS
+                        PHP_EACH fx_array AS int => fx_off BEGIN
+                            SET opcode = SHORT_AT (fx_off)
+                            PATCH_IF opcode = 146 OR opcode = 148 BEGIN
+                                ++found
+                                PATCH_IF found = 1 BEGIN
+                                    READ_ASCII ( fx_off + 0x14 ) resource
+                                    TO_UPPER resource
+                                    INNER_PATCH_FILE ~%resource%.SPL~ BEGIN
+                                        READ_LONG 0x34 spell_level
+                                        READ_SHORT 0x1c spell_type
+                                    END
+                                END
+                            END
+                        END
+                    END
+
+                    PATCH_IF found = 1 AND spell_level > 0 AND spell_level <= 10 BEGIN // skip spells with invalid levels
+                        PATCH_IF min_int > 0 BEGIN // skip items that don't have a minimum int requirement
+                            PATCH_IF spell_type = 1 BEGIN // wizard spell
+                                LPF ALTER_ITEM INT_VAR min_int = 8 + spell_level END
+                            END ELSE PATCH_IF spell_type = 2 BEGIN // priest spell
+                                LPF ALTER_ITEM INT_VAR min_wis = 8 + spell_level END
+                            END
+                        END
+                    END
+                    LPF ALTER_ITEM INT_VAR unusable0=0 unusable2=0 END
+                    READ_BYTE 0x29 unusable1
+                    READ_BYTE 0x2d unusable3
+                    READ_BYTE 0x2f unusable4
+
+                    FOR ( bit = 0; bit < 7; ++bit ) BEGIN
+                        LPF IS_BIT_SET INT_VAR bit = bit bit_field = unusable1 RET bit_set = result END
+                        PATCH_IF bit_set BEGIN
+                            WRITE_BYTE 0x29 (THIS - 2 ** bit)
+                        END
+                    END
+
+                    LPF IS_BIT_SET INT_VAR bit = 7 bit_field = unusable3 RET bit_set = result END
+                    PATCH_IF bit_set BEGIN
+                        WRITE_BYTE 0x2d (THIS - 2**7)
+                    END
+
+                    FOR ( bit = 0; bit < 6; ++bit ) BEGIN
+                        LPF IS_BIT_SET INT_VAR bit = bit bit_field = unusable4 RET bit_set = result END
+                        PATCH_IF bit_set BEGIN
+                            WRITE_BYTE 0x2f (THIS - 2 ** bit)
+                        END
+                    END
+                END
+            END
+        END
+    BUT_ONLY
+
+END ELSE ACTION_IF zst_1539_rogues_no_reqs BEGIN
+
+    COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
+        LPF ITM_CAT RET cat = result END
+
+        PATCH_IF cat = 11 BEGIN
+            LPF ITM_USABILITY0 RET usability_flags = result END
+
+            PATCH_IF usability_flags > 0 BEGIN
+                LPF IS_USABILITY_FLAG_SET INT_VAR flag=9 RET cleric_thief_flag = result END
+                LPF IS_USABILITY_FLAG_SET INT_VAR flag=6 RET bard_flag = result END
+                LPF IS_USABILITY_FLAG_SET INT_VAR flag=16 RET fighter_mage_thief = result END
+                LPF IS_USABILITY_FLAG_SET INT_VAR flag=17 RET fighter_thief = result END
+                LPF IS_USABILITY_FLAG_SET INT_VAR flag=19 RET mage_thief = result END
+                LPF IS_USABILITY_FLAG_SET INT_VAR flag=22 RET thief = result END
+
+                PATCH_IF cleric_thief_flag BEGIN
+                    WRITE_LONG 0x1e (THIS - 2**9)
+                END
+
+                PATCH_IF bard_flag BEGIN
+                    WRITE_LONG 0x1e (THIS - 2**6)
+                END
+
+                PATCH_IF fighter_mage_thief BEGIN
+                    WRITE_LONG 0x1e (THIS - 2**16)
+                END
+
+                PATCH_IF fighter_thief BEGIN
+                    WRITE_LONG 0x1e (THIS - 2**17)
+                END
+
+                PATCH_IF mage_thief BEGIN
+                    WRITE_LONG 0x1e (THIS - 2**19)
+                END
+
+                PATCH_IF thief BEGIN
+                    WRITE_LONG 0x1e (THIS - 2**22)
+                END
+            END
+        END
+        
+    BUT_ONLY
+
+END ELSE ACTION_IF zst_1539_rogues_reqs BEGIN
+
+    COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
+        LPF ITM_CAT RET cat = result END
+        PATCH_IF cat = 11 BEGIN
+            LPF ITM_USABILITY0 RET usability_flags = result END
+            PATCH_IF usability_flags > 0 BEGIN
+                LPF IS_USABILITY_FLAG_SET INT_VAR flag=9 RET cleric_thief_flag = result END
+                LPF IS_USABILITY_FLAG_SET INT_VAR flag=6 RET bard_flag = result END
+                LPF IS_USABILITY_FLAG_SET INT_VAR flag=16 RET fighter_mage_thief = result END
+                LPF IS_USABILITY_FLAG_SET INT_VAR flag=17 RET fighter_thief = result END
+                LPF IS_USABILITY_FLAG_SET INT_VAR flag=19 RET mage_thief = result END
+                LPF IS_USABILITY_FLAG_SET INT_VAR flag=22 RET thief = result END
+
+                PATCH_IF cleric_thief_flag BEGIN
+                    WRITE_LONG 0x1e (THIS - 2**9)
+                END
+
+                PATCH_IF bard_flag BEGIN
+                    WRITE_LONG 0x1e (THIS - 2**6)
+                END
+
+                PATCH_IF fighter_mage_thief BEGIN
+                    WRITE_LONG 0x1e (THIS - 2**16)
+                END
+
+                PATCH_IF fighter_thief BEGIN
+                    WRITE_LONG 0x1e (THIS - 2**17)
+                END
+
+                PATCH_IF mage_thief BEGIN
+                    WRITE_LONG 0x1e (THIS - 2**19)
+                END
+
+                PATCH_IF thief BEGIN
+                    WRITE_LONG 0x1e (THIS - 2**22)
+                END
+
+                LPF ITM_MIN_INT RET min_int = result END
+                PATCH_IF min_int != 0 BEGIN // skip letters and the like
+                    SET found = 0
+                    GET_OFFSET_ARRAY ab_array 0x64 4 0x68 2 0 0 0x38
+                    PHP_EACH ab_array AS int => ab_off BEGIN
+                        GET_OFFSET_ARRAY2 fx_array ab_off ITM_V10_HEAD_EFFECTS
+                        PHP_EACH fx_array AS int => fx_off BEGIN
+                            SET opcode = SHORT_AT (fx_off)
+                            PATCH_IF opcode = 146 OR opcode = 148 BEGIN
+                                ++found
+                                PATCH_IF found = 1 BEGIN
+                                    READ_ASCII ( fx_off + 0x14 ) resource
+                                    TO_UPPER resource
+                                    INNER_PATCH_FILE ~%resource%.SPL~ BEGIN
+                                        READ_LONG 0x34 spell_level
+                                        READ_SHORT 0x1c spell_type
+                                    END
+                                END
+                            END
+                        END
+                    END
+
+                    PATCH_IF found = 1 AND spell_level > 0 AND spell_level <= 10 BEGIN // skip spells with invalid levels
+                        PATCH_IF min_int > 0 BEGIN // skip items that don't have a minimum int requirement
+                            PATCH_IF spell_type = 1 BEGIN // wizard spell
+                                LPF ALTER_ITEM INT_VAR min_int = 8 + spell_level END
+                            END ELSE PATCH_IF spell_type = 2 BEGIN // priest spell
+                                LPF ALTER_ITEM INT_VAR min_wis = 8 + spell_level END
+                            END
+                        END
+                    END
+                END
+            END
+        END
+BUT_ONLY
+
+END

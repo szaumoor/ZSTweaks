@@ -87,6 +87,12 @@ OUTER_SET zst_1534_potions_cannot_self_stack = "1"
 // tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted  half, you would type 50.
 OUTER_SET zst_1538_jewelry_price = "150"
 
+// Only select one, failure to do this will make the component fail immediately
+OUTER_SET zst_1539_all_no_reqs    = "0" // all can use scrolls
+OUTER_SET zst_1539_all_reqs       = "1" // all can use scrolls with stat requirements (default)
+OUTER_SET zst_1539_rogues_no_reqs = "0" // rogues can use scrolls
+OUTER_SET zst_1539_rogues_reqs    = "0" // rogues can use scrolls with stat requirements
+
 // set to 1 to prevent chunking with vorpals hits in the vorpal component
 OUTER_SET zst_1541_vorpal_no_chunking = "0"
 
