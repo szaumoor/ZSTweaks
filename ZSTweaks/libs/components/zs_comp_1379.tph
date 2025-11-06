@@ -62,3 +62,7 @@ END
 ACTION_IF zst_group_2240_hexxat_blood_drain BEGIN
   INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2240.tph~
 END
+
+ACTION_IF zst_group_2250_edwin_amulet BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2250.tph~
+END

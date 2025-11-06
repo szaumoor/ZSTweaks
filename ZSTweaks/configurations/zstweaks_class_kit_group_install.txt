@@ -1,4 +1,5 @@
-// Set here to "1" those components that you wish you install as part of the group installation of class kit tweaks (preview of feature!)
+// Set here to "1" those components that you wish you install as part of the group installation of class kit tweaks
+// Set to 0 to DISABLE
 // REMEMBER TO SET 2171 TO 0 IF YOU USE A SWASHBUCKLER OVERHAUL
 
 OUTER_SET zst_group_2100_sunsoul             = "1"

@@ -1,4 +1,5 @@
-// Set here to "1" those components that you wish you install as part of the group installation of creature tweaks (preview of feature!)
+// Set here to "1" those components that you wish you install as part of the group installation of creature tweaks
+// Set to 0 to DISABLE
 
 OUTER_SET zst_group_3010_alignment_tweak       = "1"
 OUTER_SET zst_group_3020_summoned_demons_tweak = "1"

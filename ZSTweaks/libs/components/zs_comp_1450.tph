@@ -207,9 +207,9 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
         END ELSE PATCH_IF zst_1450_allow_sswords AND cat=19 AND prof=91 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
 
+            SET pro_ench_bonus = base_ss_club+bonus
             PATCH_IF has_zs_item_pack_rapiers BEGIN
 
-                SET pro_ench_bonus = base_ss_club+bonus
                 PATCH_IF LONG_AT(0x08) = zs_rapier_general_string_index BEGIN
                     SET pro_ench_bonus = pro_ench_bonus - 5
                 END
