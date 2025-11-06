@@ -104,6 +104,7 @@
 - Wail of the Banshee component now makes the spell bypass magic resistance
 - Adjatha the drinker component now disables the "healed" console line with every hit. That's just annoying. You already it heals dammit. Every hit.
 - Robe of Hayes component now makes it increases the chances of a positive outcome by 5%, instead of setting it to 15%, which allows stacking with Chaos Shields and Thayan Circlet. This makes the maximum bonus of positive outcomes of 55% with my tweaks. Improved Chaos Shield sets it to 25%, Thayan Circlet increases it by 25%, and this increases it by 5%.
+- Scroll usability component no longer uses weidu subcomponents and is entirely controlled with the config file (component 1539, default is everyone can use scrolls with stat requirements)
 
 ## New components
 
