@@ -7,6 +7,7 @@
 - Added prefix: Golem Juggernaut standardized to Stone Golem
 - Added prefix: Greater Clay Golem should be treated as a Clay Golem class-wise
 - Added prefix: Shambling Mounds will be set as Plants and Shambling Mounds race-wise
+- Added prefix: My mod will now automatically fix the issue introduced in 2.6.6 where simulacra cannot find traps or enter stealth
 - Added fix for Unholy Reaver for Item Upgrade not being tweaked appropriately in the Soul Reaver component.
 - Fixed installation crash with Cloak of Fear component
 - Excluded the part that distributes the "Remove Fear" effect for Cloak of Fear if fixpack is installed, since they do that already.

@@ -4,6 +4,10 @@ END
 
 ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
 
+    PRINT "[[FIX]]: Fixing 2.6.6 bug that prevents finding traps and stealth for simulacra"
+    COPY_EXISTING ~simulacr.spl~ ~override~
+        LPF DELETE_EFFECT_EX INT_VAR match_opcode=144 STR_VAR match_parameter2_ex = ~(o_parameter2 = 14 OR o_parameter2 = 0)~ END
+
     PRINT "[[FIX]]: Marking Phantom's Blade extra damage as not waking up sleepers"
     COPY_EXISTING ~PHANBLAD.EFF~ ~override~
         LPF ALTER_EFF_FILE INT_VAR special = 1024 END
