@@ -101,7 +101,7 @@
 - Doom component has now a configurable casting speed (accepted values 0-8)
 - Nature's Beauty component now makes it bypass magic resistance (while remaining dispellable)
 - Wail of the Banshee component now makes the spell bypass magic resistance
-- Adjatha the drinker component now disabled the "healed" console line with every hit. That's just annoying. You already it heals dammit. Every hit.
+- Adjatha the drinker component now disables the "healed" console line with every hit. That's just annoying. You already it heals dammit. Every hit.
 
 ## New components
 
