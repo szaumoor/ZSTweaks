@@ -1,0 +1,15 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_2250~) BEGIN
+  FAIL ~Script already included: zs_comp_2250~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_2250~ = 1
+END
+
+ACTION_IF is_bg2ee_or_eet BEGIN
+
+    COPY_EXISTING ~wa2shiel.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_name = RESOLVE_STR_REF(@60050) ench = 2 END
+        LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode = 44 OR o_opcode = 197)" END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 0 parameter1 = 3 END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=206,res=spin982;op=206,res=spin984;op=206,res=spin991;op=206,res=spin552;op=219,p2=4,p1=%race_beholder%;op=219,p2=4,p1=%race_mind_flayer%;op=219,p2=4,p1=%race_umberhulk%;op=219,p2=4,p1=%race_kuo_toa%;op=219,p2=4,p1=%race_hook_horror%;op=219,p2=4,p1=%race_drider%~ END
+
+END

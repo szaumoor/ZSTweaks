@@ -747,6 +747,13 @@ These gauntlets are not a very interesting reward for monks. Gauntlets of Crushi
 - Damage: +1 (new)
 - On a critical miss, the monk gains 1 extra attack per round, critical misses are no longer possible, and the next hit will become a critical hit. This lasts for 3 rounds and may not happen again during these 3 rounds. (new)
 
+### Make Shield of Balduran less of a auto-win item (1365)
+
+It's basically a way to skip the difficulty of beholders fairly easily. It's now a bit more nuanced:
+
+- Armor Class: +3, down from +4, but now with a +2 bonus vs. beholders, mind flayers, kuo-toa, driders, umber hulks, and hook horrors (underdark theme). This is equivalent to a "protection vs. `<creature>`" effect, and does not stack with others that target the same.
+- No longer reflects all beholder rays. It now only grants immunity to those that instantly kill: death rays, and petrification and disintegration rays.
+
 </details>
 
 ---

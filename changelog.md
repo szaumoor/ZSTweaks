@@ -118,3 +118,5 @@
 - Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing
 - Make Harbinger more convenient
 - Make Aura of Flaming Death increase fire resistance instead of setting it to 90%
+- Make Edwin's amulet nuanced in the privileges it grants to that snake
+- Make Shield of Balduran less of a auto-win item
