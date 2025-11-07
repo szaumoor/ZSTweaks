@@ -62,6 +62,7 @@
 - Removed unused code in some components
 - Corrected slowdown in Warcry component
 - Fixed Assassination not preventing non-pure-thieves from getting extra goodies when casting it
+- Fixed girdle of inverted gender not targeting the original gender of females
 - Fixed issue with Voidhammer applying blunt weapon AC debuff from component even to the undead when it shouldn't (TODO)
 
 ## Modifications
