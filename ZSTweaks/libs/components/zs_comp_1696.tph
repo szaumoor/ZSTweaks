@@ -13,5 +13,4 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ALTER_EFFECT INT_VAR match_opcode = 146 probability1=5 STR_VAR resource = "zstharb0" END
     LPF ALTER_EFFECT INT_VAR match_opcode = 174 probability1=5 STR_VAR resource = "misc_01c" END
 
-
 END

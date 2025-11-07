@@ -60,6 +60,7 @@ ACTION_IF NOT is_iwdee BEGIN
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 166 parameter1 = 10 END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 37 parameter1 = 2 END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=31,p1=25;op=189,p1=1;op=0,p1=1,p2=0~ END
+
     BUT_ONLY
 
      COPY_EXISTING ~c2robe01.ITM~ ~override~
@@ -75,6 +76,7 @@ ACTION_IF NOT is_iwdee BEGIN
         END
 
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=31,p1=25;op=189,p1=1;op=0,p1=1,p2=0~ END
+        
     BUT_ONLY IF_EXISTS
 
 END
