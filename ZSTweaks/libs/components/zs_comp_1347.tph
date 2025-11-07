@@ -7,4 +7,4 @@ END
 COPY_EXISTING ~BOLT04.ITM~ ~override~
   LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8200) END
   LPF CLONE_EFFECT INT_VAR match_opcode=142 opcode=12 duration=0 savingthrow=0 parameter1=1 parameter2=op12_poison END
-  LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=2,p2=1,spec=2~ END
+  LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1,spec=2~ END

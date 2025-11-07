@@ -66,6 +66,7 @@
 - Fixed issue with girdle of fortitude preventing it from working correctly due to leftover mangled code that was supposed to have been deleted
 - Fixed issue with Bone Club not targeting spectral trolls appropriately
 - Fixed "pain" part of Gnasher not working at all due to using an incorrect opcode
+- Fixed bolt of biting adding 5% more critical hit chance bonus than indended (10% vs. 5%)
 - Fixed small intercompatibility issue between Storm Star component and the blunt weapon component
 - Fixed issue with Voidhammer applying blunt weapon AC debuff from component even to the undead when it shouldn't (TODO)
 
