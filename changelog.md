@@ -64,6 +64,7 @@
 - Fixed Assassination not preventing non-pure-thieves from getting extra goodies when casting it
 - Fixed girdle of inverted gender not targeting the original gender of females
 - Fixed issue with girdle of fortitude preventing it from working correctly due to leftover mangled code that was supposed to have been deleted
+- Fixed issue with Bone Club not targeting spectral trolls appropriately
 - Fixed issue with Voidhammer applying blunt weapon AC debuff from component even to the undead when it shouldn't (TODO)
 
 ## Modifications

@@ -13,7 +13,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 344 special = 5 END
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 177 STR_VAR resource = ~ZSTWBL03~ END
     LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 177 STR_VAR resource = ~ZSTWBL04~ END
-    LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 rd=2 STR_VAR res=~ZSTWBL04~ effects = ~op=177,p1=%race_spectral_undead%;op=177,p1=%race_specter%;op=177,p1=%race_wraith%;op=177,p1=%race_shadow%;op=177,p1=5,p1=%class_spectral_troll%~ END
+    LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 rd=2 STR_VAR res=~ZSTWBL04~ effects = ~op=177,p1=%race_spectral_undead%;op=177,p1=%race_specter%;op=177,p1=%race_wraith%;op=177,p1=%race_shadow%;op=177,p2=5,p1=%class_spectral_troll%~ END
 
     PATCH_IF zst_1450_allow_clubs AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN
       SET ench = 3
