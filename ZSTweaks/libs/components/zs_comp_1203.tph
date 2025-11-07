@@ -9,6 +9,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
   COPY_EXISTING ~BELT09.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8070) END
     LPF DELETE_ITEM_HEADER INT_VAR header_type = "-1" END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=318,;op=10,p1=18,p2=1~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=10,p1=18,p2=1~ END
 
 END
