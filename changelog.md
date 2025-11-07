@@ -120,6 +120,7 @@
 - Arrow of piercing extra damage now bypasses magic resistance
 - Restored -10 save penalty to be knocked down (sleep) in exploding trap component
 - Taralash now increases damage vs. animals and unintelligent monsters and beasts directly, instead of as a separate additive tick
+- Cloak of displacement component now removes the blur effect
 
 ## New components
 
