@@ -70,6 +70,7 @@
 - Fixed small intercompatibility issue between Storm Star component and the blunt weapon component
 - Cloak of the stars now increases proficiency points in darts by 1 instead of setting it to 2, due to issues associated with the setting of pips. Also fixed error in description
 - Fixed issue with Voidhammer applying blunt weapon AC debuff from component even to the undead when it shouldn't (TODO)
+- Fixed Finesse component only modifying dagger effects for bards instead of every effect (TODO)
 
 ## Modifications
 

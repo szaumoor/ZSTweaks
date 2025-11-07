@@ -8,18 +8,20 @@ ADD_PROJECTILE ~%MOD_FOLDER%/pro/ZSTW_INP.PRO~
 ADD_PROJECTILE ~%MOD_FOLDER%/pro/ZSTW_IND.PRO~
 
 COPY ~%MOD_FOLDER%/items/finesse_weapons~ ~override~
-COPY_EXISTING_REGEXP "^ZSTW[ABSM#][0-6]\.spl$" ~override~ // for arrows, bolts and sling bullets
+COPY_EXISTING_REGEXP "^zstw[absm#][0-6]\.spl$" ~override~ // for arrows, bolts and sling bullets
     LPF ALTER_HEADER INT_VAR match_type=2 projectile="%ZSTW_INP%" END
 BUT_ONLY
 
-COPY_EXISTING_REGEXP "^ZSTW[TZ][0-6]\.spl$" ~override~ // throwing daggers and darts
+COPY_EXISTING_REGEXP "^zstw[tz][0-6]\.spl$" ~override~ // throwing daggers and darts
     LPF ALTER_HEADER INT_VAR match_type=2 projectile="%ZSTW_IND%" END
 BUT_ONLY
 
 ACTION_IF zst_1450_allow_bards BEGIN
-    COPY_EXISTING_REGEXP "^ZSTW[D][0-6]\.spl$" ~override~ // bard allowing
-        LPF CLONE_EFFECT INT_VAR match_opcode=326 opcode=318 parameter1=class_bard_all probability1=zst_1450_bards_probability_penalty parameter2=105 STR_VAR resource="%SOURCE_RES%" END
+
+    COPY_EXISTING_REGEXP "^zstw[_#$absmdejklqtwyz][0-6]\.spl$" ~override~ // bard allowing
+        LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode=318 parameter1=class_bard_all probability1=zst_1450_bards_probability_penalty parameter2=105 STR_VAR resource="%SOURCE_RES%" END
     BUT_ONLY
+
 END
 
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
