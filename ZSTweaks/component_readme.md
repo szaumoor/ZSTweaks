@@ -386,7 +386,7 @@ This makes the belt include piercing damage, such that it affects things like da
 
 ### Make Cloak of the Stars more useful (1561)
 
-Creating 6 darts is really unremarkable for a once-per-day effect. 30 is far more interesting. Additionally, if you wear it, you become specialized in darts immediately (unless proficiency is higher) and gain a Save vs. Spell bonus of +2. Perhaps you don't need to sell it immediately anymore!
+Creating 6 darts is really unremarkable for a once-per-day effect. 30 is far more interesting. Additionally, if you wear it, you are granted one extra proficiency point in darts immediately and a Save vs. Spell bonus of +2.
 
 ### Make Eyes of the Beholder better and grant immunity to matching rays (1570)
 

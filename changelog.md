@@ -68,6 +68,7 @@
 - Fixed "pain" part of Gnasher not working at all due to using an incorrect opcode
 - Fixed bolt of biting adding 5% more critical hit chance bonus than intended (10% vs. 5%)
 - Fixed small intercompatibility issue between Storm Star component and the blunt weapon component
+- Cloak of the stars now increases proficiency points in darts by 1 instead of setting it to 2, due to issues associated with the setting of pips. Also fixed error in description
 - Fixed issue with Voidhammer applying blunt weapon AC debuff from component even to the undead when it shouldn't (TODO)
 
 ## Modifications

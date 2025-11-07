@@ -22,7 +22,7 @@ ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING ~CLCK14.ITM~ ~override~ // adventurer
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6142) END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter2 = 0 END
-        LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=37,p1=1;op=31,p1=20;op=30;op=29;op=28;op=27~ END
+        LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=37,p1=1;op=31,p1=20;op=30;op=84;op=29;op=28;op=85;op=27~ END
 
     COPY_EXISTING ~CLCK09.ITM~ ~override~ // cold resist clck
         LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6137) id_desc=RESOLVE_STR_REF(@6144) END
