@@ -1337,7 +1337,7 @@ This removes the save from the damage effect, therefore 1dx fire damage will alw
 
 ### Make Arrows of Piercing always cause at least half of the extra piercing damage (1346)
 
-This makes the arrows cause at least 3 extra piercing damage when save succeeds. This should make these expensive arrows feel like less of a waste when used, especially against targets with good saves. Additionally, these arrows will have a 10% higher chance of critically hitting.
+This makes the arrows cause at least 3 extra piercing damage when save succeeds. This should make these expensive arrows feel like less of a waste when used, especially against targets with good saves. Additionally, these arrows will have a 10% higher chance of critically hitting. Magic resistance is also not affected.
 
 ### Make Bolts of Biting slightly more deadly (1347)
 
@@ -2054,7 +2054,7 @@ The war cry also rallies the allies now, causing the following effects:
 ### Make some Thief HLAs more effective (2130)
 
 - **Spike Trap**: Damage type is changed from magical to piercing for thematic consistency.
-- **Exploding Trap**: Damage is increased to 15d6 (from 10d6). The knockdown effect no longer allows a saving throw, and the save for half damage is changed from vs. Spell to vs. Breath.
+- **Exploding Trap**: Damage is increased to 15d6 (from 10d6) and the save for half damage is changed from vs. Spell to vs. Breath.
 - **Assassination**:
   - Duration of backstab every hit increased to 7 seconds. Other effects last for 2 more rounds.
   - For the duration and one round after, grants immunity to critical misses and +10% critical hit chance.

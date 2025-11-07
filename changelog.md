@@ -60,6 +60,9 @@
 - Dolorous Decay component fixes in passing the issue of the decaying icon bypassing magic resistance unlike the rest of damaging effects
 - Fixed the completely broken wondrous recall component
 - Removed unused code in some components
+- Corrected slowdown in Warcry component
+- Fixed Assassination not preventing non-pure-thieves from getting extra goodies when casting it
+- Fixed issue with Voidhammer applying blunt weapon AC debuff from component even to the undead when it shouldn't (TODO)
 
 ## Modifications
 
@@ -108,6 +111,8 @@
 - Scroll usability component no longer uses weidu subcomponents and is entirely controlled with the config file (component 1539, default is everyone can use scrolls with stat requirements)
 - Same as above for the ioun stone and circlet critical hit protection. Default only patches a few that I selected, as per the original subcomponents (check readme and config file)
 - Improved the code of the flame blade component
+- Arrow of piercing extra damage now bypasses magic resistance
+- Restored -10 save penalty to be knocked down (sleep) in exploding trap component
 
 ## New components
 

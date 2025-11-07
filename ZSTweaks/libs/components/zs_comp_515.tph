@@ -6,7 +6,7 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    COPY_EXISTING ~sppr730.spl~ ~override~
-        LPF ALTER_EFFECT_EX INT_VAR parameter2 = 0 STR_VAR match_opcode_ex = "(o_opcode = 84 OR o_opcode = 30)" END
+  COPY_EXISTING ~sppr730.spl~ ~override~
+    LPF ALTER_EFFECT_EX INT_VAR parameter2 = 0 STR_VAR match_opcode_ex = "(o_opcode = 84 OR o_opcode = 30)" END
 
 END

@@ -21,7 +21,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         COPY_EXISTING "SPCL911B.SPL" ~override~
             LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=12 dicenumber=15 END
             LPF ALTER_EFFECT INT_VAR resist_dispel = 0 power = 6 END
-            LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=39 duration=6 savingthrow=0 savebonus=0 END
+            LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=39 duration=6 savingthrow=(2**1 + 2**24) END
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 savingthrow = (2**1 + 2**24) END
 
     END
@@ -33,7 +33,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_EFFECT INT_VAR match_duration = 6 duration = 7 END
             LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
             LPF ADD_SPL_SELFEFF INT_VAR dur=13 rd=0 pwr=0 STR_VAR effects = ~op=301,p1=2;op=362,p1=-1~ END
-            LPF ADD_SPL_SELFEFF INT_VAR pwr=0 rd=0 STR_VAR effects=~op=318,p2=115,p1=%class_thief%~ END
+            LPF ADD_SPL_SELFEFF INT_VAR pwr=0 rd=0 STR_VAR effects=~op=318,p2=115,p1=%class_thief%,res=%SOURCE_RES%~ END
             LPF ADD_SPL_SELFEFF INT_VAR pwr=0 rd=0 dur=13 STR_VAR effects=~op=1,p1=1;op=278,p1=2;op=73,p1=2;op=301,p1=1~ END
             LPF ADD_SPL_SELFEFF STR_VAR effects=~op=321,ip=0,rd=0,pwr=0,res=%SOURCE_RES%~ END
 
