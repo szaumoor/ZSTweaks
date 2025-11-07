@@ -6,12 +6,12 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    COPY ~%MOD_FOLDER%/items/harbinger~ ~override~
-    COPY_EXISTING ~sw2h07.itm~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@41236) END
-        LPF ALTER_EFFECT INT_VAR match_opcode=177 opcode=326 parameter2=104 savingthrow = 0 STR_VAR match_resource=~ogpet~ resource="zstharb1" END
-        LPF ALTER_EFFECT INT_VAR match_opcode = 146 probability1=5 STR_VAR resource = "zstharb0" END
-        LPF ALTER_EFFECT INT_VAR match_opcode = 174 probability1=5 STR_VAR resource = "misc_01c" END
+  COPY ~%MOD_FOLDER%/items/harbinger~ ~override~
+  COPY_EXISTING ~sw2h07.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@41236) END
+    LPF ALTER_EFFECT INT_VAR match_opcode=177 opcode=326 parameter2=104 savingthrow=0 STR_VAR match_resource=~ogpet~ resource="zstharb1" END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 146 probability1=5 STR_VAR resource = "zstharb0" END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 174 probability1=5 STR_VAR resource = "misc_01c" END
 
 
 END
