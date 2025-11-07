@@ -15,7 +15,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8261) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 1 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 29 parameter1 = 40 END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 146 parameter1 = 1 probability1 = 11 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 146 parameter1 = 1 probability1 = 11 STR_VAR match_resource = "SPBLUN29" END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=332,p1=7,p2=3;op=232,p1=1,res=ZSTWSTST~ END
 
 END
