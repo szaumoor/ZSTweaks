@@ -6,7 +6,7 @@ END
 
 OUTER_SET group_component = 1
 
-OUTER_SPRINT config_path "%MOD_FOLDER%/configuration/zstweaks_arcane_group_install.txt"
+OUTER_SPRINT config_path "%MOD_FOLDER%/configurations/zstweaks_arcane_group_install.txt"
 INCLUDE ~%config_path%~
 COPY ~%config_path%~ ~override~
 

@@ -19,7 +19,7 @@ BUT_ONLY
 ACTION_IF zst_1450_allow_bards BEGIN
 
     COPY_EXISTING_REGEXP "^zstw[_#$absmdejklqtwyz][0-6]\.spl$" ~override~ // bard allowing
-        LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode=318 parameter1=class_bard_all probability1=zst_1450_bards_probability_penalty parameter2=105 STR_VAR resource="%SOURCE_RES%" END
+        LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 target=9 opcode=318 parameter1=class_bard_all probability1=zst_1450_bards_probability_penalty parameter2=105 STR_VAR resource="%SOURCE_RES%" END
     BUT_ONLY
 
 END
