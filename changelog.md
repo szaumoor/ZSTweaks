@@ -100,7 +100,7 @@
 - Deva and Planetar components now merged in one, with appropriate configuration options to choose either or both
 - Configuration file is now in **ZSTweaks/configurations**
 - Added a group installation component for creature tweaks.
-- *Cautiously* added the option to choose which components are installed through user input in the creatures, npc, class/kit tweaks, and divine magic. See **ZSTweaks/configurations**, if you're interested and set it as per your liking.
+- *Cautiously* added the option to choose which components are installed through user input in the creatures, npc, class/kit tweaks, arcane, and divine magic. See **ZSTweaks/configurations**, if you're interested and set it as per your liking.
 - Fixed issue in RR's Crippling Strike component preventing the effects from being set at the wrong position in the effect stack, which prevented immunities and refreshing effects from working
 - Removed the Chaotic Commands component, now an element of the prefix part of this mod (disabled if fixpack is installed)
 - Added an option in the preferences file to make the component that sets backstab multiplier to 0 in BBOD and Iron Golem fist so it's only backstab multiplier reduction, as per your preferences (disabled by default)
@@ -125,18 +125,19 @@
 - Restored -10 save penalty to be knocked down (sleep) in exploding trap component
 - Taralash now increases damage vs. animals and unintelligent monsters and beasts directly, instead of as a separate additive tick
 - Cloak of displacement component now removes the blur effect
+- Previous component that overhauled undead disruption weapons now merged in the new component
 
 ## New components
 
 - Make Hold Undead bypass Magic Resistance
-- Make disrupt undead weapons more balanced and closer to PnP rules. [Replaces the old components that tweaked specific weapons]
-- Make Holy and Unholy Word more generally effective
+- Make disrupt undead weapons more balanced and closer to PnP rules
+- Make Holy and Unholy Word more effective
 - Make Disintegrate cause damage and slow some golems, as per PnP
-- Make minotaurs slightly more dangerous and have the chance to gore with their horns on a successful hit
+- Make minotaurs tougher and more dangerous
 - Make Yuan-ti slightly more powerful
-- Make Whirlwind and Evasion grant 3 uses of the Improved variants instead of existing as a silly lesser version
+- Make Whirlwind and Evasion grant once 3 uses of the Improved variants
 - Overhaul golem creatures
-- Make Cowl of the Stars more generally useful (Rasaad's Quest)
+- Make Cowl of the Stars more useful
 - Make rangers and rogues have a THAC0 and Damage bonus if attacking with ranged weapons from invisibility
 - Make Chromatic Orb more interesting by providing party-only chromatic varieties
 - Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing

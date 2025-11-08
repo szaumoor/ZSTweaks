@@ -4,7 +4,7 @@
 
 This mod is a collection of personal tweaks designed to improve the vanilla game experience. While most components offer simple enhancements for underpowered items and abilities, some provide more extensive, but not radical, overhauls.
 
-Each component group includes an option to install all its tweaks at once. As of version 1.6.1, you can customize these group installations for creature, NPC, and class/kit tweaks via the configuration files in the `ZSTweaks/configurations` directory. By default, all components in a group are selected for installation.
+Each component group includes an option to install all its tweaks at once. As of version 1.6.1, you can customize these group installations for creature, NPC, arcane, divine, and class/kit tweaks via the configuration files in the `ZSTweaks/configurations` directory. By default, all components in a group are selected for installation.
 
 This mod also includes several bugfixes that are necessary for the tweaks to function as intended. Some of these fixes are automatically disabled if the EEFixpack.
 
@@ -18,7 +18,7 @@ As of version 1.4.5, many components can be customized by editing `ZSTweaks/conf
 
 This mod was developed and tested on game version 2.6.6. All tweaks are designed with this version in mind, so compatibility with previous versions is not guaranteed, and no support will be provided for them.
 
-For best results, this mod should be installed after other content mods, such as item packs, quest mods, NPC mods, and the IWD spell pack. If this mod is installed before them, its tweaks may not apply correctly or at all.
+For best results, this mod should be installed after other content mods, such as item packs, quest mods, NPC mods, and the IWDEE spell pack. If this mod is installed before them, its tweaks may not apply correctly or at all.
 
 Compatibility with other tweak mods that affect the same content depends on the specific changes. While some tweaks may be compatible, others with conflicting designs could lead to unbalanced results or installation failures. Please be judicious when combining tweaks that serve a similar purpose.
 
@@ -57,4 +57,4 @@ I also would recommend installing things in the order they're presented in the m
 - The Artisan for participating in conversations about some tweaks and providing insights
 - dark0dave for giving me the idea of adding a configuration file, now an integral part of the mod that I'll never part with and will continue to implement in other mods.
 - For the people in G3 and Discord for reporting bugs
-- zenblack for feedback, brainstorming, and icon-making.
+- zenblack for feedback (hehe), brainstorming, and icon-making.
