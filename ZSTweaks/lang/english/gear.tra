@@ -36,7 +36,7 @@ Mace of Royal Might +3: Target must save vs. Spell at +2 or be slowed for 2 roun
 
 Flaming Sword of Royal Might +3: Targets take +1d4 extra fire damage and must save vs. Spell at +2 or be stunned or put to sleep for 1 round
 
-Spear of Royal Might +3: Targets take +1 piercing damage and must save vs. Death to avoid bleeding for 10 piercing damage for a round, and there's a 10% chance of releasing an arcane blast that deals 2d4+2 magic damage
+Spear of Royal Might +3: Targets with blood take +1 piercing damage and must save vs. Death to avoid bleeding for 10 piercing damage for a round, and there's a 10% chance of releasing an arcane blast that deals 2d4+2 magic damage
 
 Weight: 5~
 
@@ -83,7 +83,7 @@ Weight: 4~
 STATISTICS:
 
 Combat abilities:
-– Target must save vs. Death or start bleeding for 10 points of piercing damage over 1 round
+– Target with blood must save vs. Death or start bleeding for 10 points of piercing damage over 1 round
 – Arcane Blast: 10% chance per hit to cause 2d4+2 magical damage
 
 THAC0: +3
