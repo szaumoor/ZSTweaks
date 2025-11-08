@@ -126,6 +126,7 @@
 - Taralash now increases damage vs. animals and unintelligent monsters and beasts directly, instead of as a separate additive tick
 - Cloak of displacement component now removes the blur effect
 - Previous component that overhauled undead disruption weapons now merged in the new component
+- Asp's Nest component now makes it a +3 weapon
 
 ## New components
 

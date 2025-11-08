@@ -89,14 +89,16 @@ STATISTICS:
 Combat abilities:
 – Hit target must save vs. Death at %zst_1010_asp_nest_sbonus% or take 1 point of damage every 3 seconds until 40 Hit Points of damage has been inflicted
 
-THAC0: +1
-Damage: 1d3+1, +1d2 poison damage
+THAC0: +3
+Damage: 1d3+3, +1d2 poison damage
 Damage type: Missile
-Speed Factor: 1
+Speed Factor: 0
 Proficiency Type: Dart
 Type: One-handed
 
 Weight: 0~
+
+@6391 = "Asp's Nest +3"
 
 //bgee version
 @7010 = ~Eagle Bow: Protector of the Dryads
