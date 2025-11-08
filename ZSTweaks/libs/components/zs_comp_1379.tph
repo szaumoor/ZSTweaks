@@ -5,7 +5,10 @@ END ELSE BEGIN
 END
 
 OUTER_SET group_component = 1
-INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_npc_group_install.txt~
+
+OUTER_SPRINT config_path ~%MOD_FOLDER%/configurations/zstweaks_npc_group_install.txt~
+INCLUDE ~%config_path%~
+COPY ~%config_path%~ ~override~
 
 ACTION_IF zst_group_1380_haerdalis_blades BEGIN
   INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1380.tph~
