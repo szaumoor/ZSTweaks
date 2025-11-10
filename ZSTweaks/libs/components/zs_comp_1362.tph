@@ -10,10 +10,11 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF ITM_PROF RET prof = result END
     LPF ITM_APPEARANCE RET appearance = result END
     LPF ITM_ABILITIES_NUM RET num_abilities = result END
-    PATCH_IF ( cat = 21 AND prof = 97  ) OR  // warhammers
-             ( cat = 17 AND prof = 101 ) OR  // maces
-             ( cat = 17 AND prof = 115 ) AND // clubs
-             num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") AND
+    PATCH_IF (( cat = 21 AND prof = 97  )     OR  // warhammers
+              ( cat = 17 AND prof = 101 )     OR  // maces
+              ( cat = 17 AND prof = 115 ))    AND // clubs
+             num_abilities > 0                AND
+             NOT ("%appearance%" STR_EQ "  ") AND
              NOT ("%SOURCE_RES%" STR_EQ "bdhamm02") // exception
     BEGIN
         LPF ITM_ENCH RET ench = result END
@@ -36,6 +37,7 @@ COPY_EXISTING ~bdhamm02.itm~ ~override~
 BUT_ONLY IF_EXISTS
 
 ACTION_IF zst_1362_blunt_only_nonarmored BEGIN
+
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         LPF ITM_CAT RET cat = result END
         LPF ITM_FLAGS RET flags = result END
@@ -47,4 +49,5 @@ ACTION_IF zst_1362_blunt_only_nonarmored BEGIN
             END
         END
     BUT_ONLY
+
 END

@@ -33,7 +33,7 @@
 - Improved the code of the Armor of Faith component (more old code gone wrong!)
 - Added Underdark Brain Golems to the list of incorrectly aligned creatures fixed by the alignment creature component (was Neutral, should be Lawful Evil)
 - Fixed Vorpal Hit component not working as expected due to missing spell states in Stoneskin and Iron Skins
-- Fixed bugs preventing Psion Blade component from stopping the Mindflayer Slay effect for stoneskinned alhoons
+- Fixed bugs preventing Psion Blade component from stopping the mind flayer Slay effect for stoneskinned alhoons
 - Disabled more prefixes that are rendered moot if the Fixpack is installed
 - Fixed Swashkalbladepus component not patching swashbucklers if only swashbucklers were selected in the preferences
 - Fixed bug in the effects of Horrid Wilting when targeting specific types of creatures (Wizard version)
@@ -60,19 +60,19 @@
 - Dolorous Decay component fixes in passing the issue of the decaying icon bypassing magic resistance unlike the rest of damaging effects
 - Fixed the completely broken wondrous recall component
 - Removed unused code in some components
-- Corrected slowdown in Warcry component
+- Corrected slowdown in War Cry component
 - Fixed Assassination not preventing non-pure-thieves from getting extra goodies when casting it
 - Fixed girdle of inverted gender not targeting the original gender of females
 - Fixed issue with girdle of fortitude preventing it from working correctly due to leftover mangled code that was supposed to have been deleted
 - Fixed issue with Bone Club not targeting spectral trolls appropriately
 - Fixed "pain" part of Gnasher not working at all due to using an incorrect opcode
 - Fixed bolt of biting adding 5% more critical hit chance bonus than intended (10% vs. 5%)
-- Fixed small intercompatibility issue between Storm Star component and the blunt weapon component
+- Fixed small inter-compatibility issue between Storm Star component and the blunt weapon component
 - Cloak of the stars now increases proficiency points in darts by 1 instead of setting it to 2, due to issues associated with the setting of pips. Also fixed error in description
 - Fixed Dragon's Bane causing an extra (vanilla) +3 additive damage tick when it was supposed to be removed
 - Fixed Finesse component only modifying dagger effects for bards instead of every effect
 - Fixed Borok's fist description if the weapon dice size for warhammers is installed
-- Fixed issue with Voidhammer applying blunt weapon AC debuff from component even to the undead when it shouldn't (TODO)
+- Fixed issue with Voidhammer applying blunt weapon AC debuff from component even to the undead when it shouldn't
 
 ## Modifications
 
@@ -103,20 +103,20 @@
 - *Cautiously* added the option to choose which components are installed through user input in the creatures, npc, class/kit tweaks, arcane, and divine magic. See **ZSTweaks/configurations**, if you're interested and set it as per your liking. These files are also copied to override to aid compatibility code in other mods (include the variables).
 - Fixed issue in RR's Crippling Strike component preventing the effects from being set at the wrong position in the effect stack, which prevented immunities and refreshing effects from working
 - Removed the Chaotic Commands component, now an element of the prefix part of this mod (disabled if fixpack is installed)
-- Added an option in the preferences file to make the component that sets backstab multiplier to 0 in BBOD and Iron Golem fist so it's only backstab multiplier reduction, as per your preferences (disabled by default)
+- Added an option in the preferences file to make the component that sets backstab multiplier to 0 in BBOD and Iron Golem fist, so it's only backstab multiplier reduction, as per your preferences (disabled by default)
 - Improved the code in Phantom's Blade Tweak/Fix
 - Moved the Phantom's Blade component into a prefix (extending headers to level 20 & marking extra damage as not waking up sleepers; former doesn't run if fixpack is installed)
 - Short Sword of Mask entangle effect is now not subject to magic resistance, but can be dispelled still
-- Shortened the component descriptions and improved the writing a bit
+- Shortened the component descriptions and improved the writing
 - Stats tweak now switches back to the default bonus from sword and shield +2 AC vs missile, so it's more enticing for classes that can only put a single point, beyond removing the penalties of having no proficiency
 - Deleted needless files
 - Stat component now reduces the lore per level of bards from 10 to 8, to tighten the differences slightly (but they are still gaining 3 more points than wizards and sorcerers regardless)
-- Deleted duplicated .tra entries
+- Deleted duplicated translation entries
 - Added missing documentation entry for Karajah armor tweak
 - Doom component has now a configurable casting speed (accepted values 0-8)
 - Nature's Beauty component now makes it bypass magic resistance (while remaining dispellable)
 - Wail of the Banshee component now makes the spell bypass magic resistance
-- Adjatha the drinker component now disables the "healed" console line with every hit. That's just annoying. You already it heals dammit. Every hit.
+- Adjatha the drinker component now disables the "healed" console line with every hit. That's just annoying. You already know it heals dammit. Every hit.
 - Robe of Hayes component now makes it increases the chances of a positive outcome by 5%, instead of setting it to 15%, which allows stacking with Chaos Shields and Thayan Circlet. This makes the maximum bonus of positive outcomes of 55% with my tweaks. Improved Chaos Shield sets it to 25%, Thayan Circlet increases it by 25%, and this increases it by 5%.
 - Scroll usability component no longer uses weidu subcomponents and is entirely controlled with the config file (component 1539, default is everyone can use scrolls with stat requirements)
 - Same as above for the ioun stone and circlet critical hit protection. Default only patches a few that I selected, as per the original subcomponents (check readme and config file)
@@ -127,7 +127,7 @@
 - Cloak of displacement component now removes the blur effect
 - Previous component that overhauled undead disruption weapons now merged in the new component
 - Asp's Nest component now makes it a +3 weapon
-- Spear form of Rod of Royal Might now does not inflict bleeding to undead, elementals, golems, shambling mounds, and slimes
+- Spear form of `Rod of Royal Might` does not inflict bleeding to undead, elementals, golems, shambling mounds, and slimes
 
 ## New components
 
@@ -138,7 +138,7 @@
 - Make minotaurs tougher and more dangerous
 - Make Yuan-ti slightly more powerful
 - Make Whirlwind and Evasion grant once 3 uses of the Improved variants
-- Overhaul golem creatures
+- Make some golem creatures more unique
 - Make Cowl of the Stars more useful
 - Make rangers and rogues have a THAC0 and Damage bonus if attacking with ranged weapons from invisibility
 - Make Chromatic Orb more interesting by providing party-only chromatic varieties
@@ -147,3 +147,4 @@
 - Make Aura of Flaming Death increase fire resistance instead of setting it to 90%
 - Make Edwin's amulet nuanced in the privileges it grants to that snake
 - Make Shield of Balduran less of an auto-win item
+- Make single-classed thieves and bards able to throw sand in the enemy's eyes
