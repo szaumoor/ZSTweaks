@@ -11,7 +11,7 @@
 - Added fix for Unholy Reaver for Item Upgrade not being tweaked appropriately in the Soul Reaver component.
 - Fixed installation crash with Cloak of Fear component
 - Excluded the part that distributes the "Remove Fear" effect for Cloak of Fear if fixpack is installed, since they do that already.
-- Small library fix
+- Small library fixes, deleted unused library code, added aVENGER functions
 - Fixed Ring of Purity tweak not copying over the resources required for the item to work properly.
 - Fixed Holy Power not properly adding APR bonuses to non-warrior classes
 - Fixed Holy Power excluding **non-warriors** instead of **warriors** from getting the APR bonus
@@ -74,6 +74,7 @@
 - Fixed Borok's fist description if the weapon dice size for warhammers is installed
 - Fixed issue with Voidhammer applying blunt weapon AC debuff from component even to the undead when it shouldn't
 - Slightly improved the efficiency of the installation of some components
+- Improved the implementation of components that add abilities to class or kits to remove the chances of errors in mods installations after mine
 
 ## Modifications
 

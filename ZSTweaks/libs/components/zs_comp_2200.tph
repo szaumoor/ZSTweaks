@@ -13,11 +13,8 @@ ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR MOD_IS_INSTALLED "ZSTweaks.t
 END
 
 COPY ~%MOD_FOLDER%/class_kits/blackguard~ ~override~
-OUTER_TEXT_SPRINT line "ABILITYX   AP_ZSTWBKG0        ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****"
-APPEND ~CLABPA06.2DA~ ~%line%~
-
 COPY_EXISTING ~CLABPA06.2DA~ ~override~
-  PRETTY_PRINT_2DA
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "AP_ZSTWBKG0" END
 
 PRINT "Patching all non-joinable NPCs that use the Blackguard kit"
 SILENT

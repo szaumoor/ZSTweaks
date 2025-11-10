@@ -14,12 +14,8 @@ ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~2170~ OR class_comp_group_installed B
   ACTION_IF zst_2260_allow_swash AND MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~2260~  BEGIN
 
     COPY ~%MOD_FOLDER%/class_kits/extra_apr~ ~override~
-    OUTER_SPRINT ability "AP_ZSTWAPR2"
-    OUTER_TEXT_SPRINT line "ABILITYX    ****        ****        ****        ****        ****        ****        %ability%   ****        ****        ****        ****        ****        %ability%   ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****"
-    APPEND ~CLABTH04.2DA~ ~%line%~
-
     COPY_EXISTING ~CLABTH04.2DA~ ~override~
-      PRETTY_PRINT_2DA
+      LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 f_MaxLevel = 13 f_Increment = 6 STR_VAR f_Entry = "AP_ZSTWAPR2" END
 
   END
 

@@ -9,18 +9,15 @@ ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald OR zst_2260_allow_swash O
   WITH_SCOPE BEGIN
 
     COPY ~%MOD_FOLDER%/class_kits/extra_apr~ ~override~
-    OUTER_SPRINT ability "AP_ZSTWAPR2"
-    OUTER_TEXT_SPRINT line "ABILITYX    ****        ****        ****        ****        ****        ****        %ability%   ****        ****        ****        ****        ****        %ability%   ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****"
 
     ACTION_IF zst_2260_allow_blade BEGIN
 
-      APPEND ~CLABBA02.2DA~ ~%line%~
       COPY_EXISTING ~CLABBA02.2DA~ ~override~
-        PRETTY_PRINT_2DA
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 f_MaxLevel = 13 f_Increment = 6 STR_VAR f_Entry = "AP_ZSTWAPR2" END
 
       COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         FOR ( i = 3; i < 31; ++i ) BEGIN
-          LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = 42 STR_VAR replacement = "2" match_col_value = "1" END
+          LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = 42 f_Increment = 6 STR_VAR replacement = "2" match_col_value = "1" END
         END
         PRETTY_PRINT_2DA
 
@@ -28,9 +25,8 @@ ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald OR zst_2260_allow_swash O
 
     ACTION_IF zst_2260_allow_skald BEGIN
 
-      APPEND ~CLABBA04.2DA~ ~%line%~
       COPY_EXISTING ~CLABBA04.2DA~ ~override~
-        PRETTY_PRINT_2DA
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 f_MaxLevel = 13 f_Increment = 6 STR_VAR f_Entry = "AP_ZSTWAPR2" END
 
       COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         FOR ( i = 3; i < 31; ++i ) BEGIN
@@ -42,9 +38,8 @@ ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald OR zst_2260_allow_swash O
 
     ACTION_IF zst_2260_allow_swash BEGIN
 
-      APPEND ~CLABTH04.2DA~ ~%line%~
       COPY_EXISTING ~CLABTH04.2DA~ ~override~
-        PRETTY_PRINT_2DA
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 f_MaxLevel = 13 f_Increment = 6 STR_VAR f_Entry = "AP_ZSTWAPR2" END
 
     END
 

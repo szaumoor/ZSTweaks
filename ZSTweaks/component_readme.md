@@ -331,7 +331,7 @@ This is clearly a mistake since Shadow Dragons don't use acid as breath weapon. 
 
 ### Make Silver Dragon Scale also grant 40% cold resistance (1171)
 
-Silver Dragons wield and are resistant to cold so it should grant cold resistance, much like the Fire Dragon Plate does for fire.
+The reason is that Silver Dragons wield and are resistant to cold.
 
 ### Make Rings of Elemental Control more powerful (1172)
 
