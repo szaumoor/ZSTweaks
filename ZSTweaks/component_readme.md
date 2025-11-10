@@ -302,7 +302,7 @@ This component addresses partially one detail that has annoyed me since the begi
 
 - Attacking from invisibility gives the user a +4 THAC0 bonus, similar to the bonus to melee attacks
 - Ranged damage bonuses are applied to act as a sort of "sneak attack" with projectiles
-  - Rangers get +1 damage when attacking from invisibility. Every four levels, they get +3 damage, up to 16, with +5 ranged attack damage bonus.
+  - Rangers get +1 damage when attacking from invisibility. Every four levels, they get an extra +1 damage, up to 16, with +5 ranged attack damage bonus.
   - Thieves and monks get +3 damage when attacking from invisibility, and progress up to +12 damage at level 21.
 - All thief kits except Swashbuckler, all ranger kits, and all monk kits receive this bonus
 - Extra damage bonuses for thieves specifically are nullified if they have a fighter class, getting only the partial bonus that rangers get.
