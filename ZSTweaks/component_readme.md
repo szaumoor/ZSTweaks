@@ -2136,6 +2136,8 @@ As it says. This is a new way of resolving this widely recognized dumb design. T
 
 Additionally, Improved Evasion (Evasion now) doubles the movement speed granted (factor of 4 instead of 2) and makes it use opcode 176, so it's not removed by Free Action. There are options in the configuration file to select only one of these, if desired.
 
+Current limitation: it only affects vanilla classes and kits of fighter, ranger, paladin, monk, thief, bard, including multiclasses.
+
 </details>
 
 ---
