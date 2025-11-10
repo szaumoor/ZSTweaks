@@ -39,10 +39,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             END
         END
 
-        COPY_EXISTING_REGEXP ~^luth[0-9]?[0-9]\.2da$~ ~override~ // paladins HLA tables
+        COPY_EXISTING_REGEXP ~^lu(th|ft|fmt|ct)[0-9]?[0-9]?\.2da$~ ~override~ // thief HLA tables
             LPM HLA_EVA_FIX
         BUT_ONLY
-        COPY_EXISTING_REGEXP ~^luba[0-9]?[0-9]\.2da$~ ~override~ // rangers HLA tables
+        COPY_EXISTING_REGEXP ~^luba[0-9]?[0-9]?\.2da$~ ~override~ // bards HLA tables
             LPM HLA_EVA_FIX
         BUT_ONLY
 
@@ -89,7 +89,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPM HLA_WAR_FIX
         BUT_ONLY
 
-        COPY_EXISTING_REGEXP ~^lu([cr]|[ra])[0-9]?[0-9]?\.2da$~ ~override~ // ranger HLA tables
+        COPY_EXISTING_REGEXP ~^lu(cr|ra)[0-9]?[0-9]?\.2da$~ ~override~ // ranger HLA tables
             LPM HLA_WAR_FIX
         BUT_ONLY
 
