@@ -20,16 +20,31 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 126 opcode = 176 parameter1 = 4 END
 
         DEFINE_PATCH_MACRO HLA_EVA_FIX BEGIN
-            REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL913\)[ %TAB%]~ BEGIN END ~AP_ZSTWEVA0~
-            REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL914\)[ %TAB%]~ BEGIN END ~AP_ZSTWEVA1~
-            LPF SWAP_2DA_TABLE_VALUE INT_VAR column=6 start_at_col=1 STR_VAR row_name="AP_ZSTWEVA0" replacement="1" END
-            PRETTY_PRINT_2DA
+            SET eva0_replace_success = 0
+            REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL913\)[ %TAB%]~ BEGIN eva0_replace_success = 1 END ~AP_ZSTWEVA0~
+            PATCH_IF eva0_replace_success BEGIN
+                SET eva1_replace_success = 0
+                REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL914\)[ %TAB%]~ BEGIN eva1_replace_success = 1 END ~AP_ZSTWEVA1~
+
+                PATCH_IF eva0_replace_success AND eva1_replace_success BEGIN
+                    LPF SWAP_2DA_TABLE_VALUE INT_VAR column=6 start_at_col=1 STR_VAR row_name="AP_ZSTWEVA0" replacement="1" END
+                END
+
+                PATCH_IF eva0_replace_success OR eva1_replace_success BEGIN
+                    PRETTY_PRINT_2DA
+                END
+
+            END ELSE BEGIN
+                PATCH_WARN "Evasion HLA not found, skipping for class with %SOURCE_RES% table"
+            END
         END
 
         COPY_EXISTING_REGEXP ~^luth[0-9]?[0-9]\.2da$~ ~override~ // paladins HLA tables
             LPM HLA_EVA_FIX
+        BUT_ONLY
         COPY_EXISTING_REGEXP ~^luba[0-9]?[0-9]\.2da$~ ~override~ // rangers HLA tables
             LPM HLA_EVA_FIX
+        BUT_ONLY
 
     END
 
@@ -47,18 +62,36 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8760) desc = RESOLVE_STR_REF(@8761) END
 
         DEFINE_PATCH_MACRO HLA_WAR_FIX BEGIN
-            REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL900\)[ %TAB%]~ BEGIN END ~AP_ZSTWWHL0~
-            REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL901\)[ %TAB%]~ BEGIN END ~AP_ZSTWWHL1~
-            LPF SWAP_2DA_TABLE_VALUE INT_VAR column=6 start_at_col=1 STR_VAR row_name="AP_ZSTWWHL0" replacement="1" END
-            PRETTY_PRINT_2DA
+            SET whrl0_replace_success = 0
+            REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL900\)[ %TAB%]~ BEGIN whrl0_replace_success = 1 END ~AP_ZSTWWHL0~
+            PATCH_IF whrl0_replace_success BEGIN
+
+                SET whrl1_replace_success = 0
+                REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL901\)[ %TAB%]~ BEGIN whrl1_replace_success = 1 END ~AP_ZSTWWHL1~
+                PATCH_IF whrl0_replace_success AND whrl1_replace_success BEGIN
+                LPF SWAP_2DA_TABLE_VALUE INT_VAR column=6 start_at_col=1 STR_VAR row_name="AP_ZSTWWHL0" replacement="1" END
+                END
+
+                PATCH_IF whrl0_replace_success OR whrl1_replace_success BEGIN
+                    PRETTY_PRINT_2DA
+                END
+
+            END ELSE BEGIN
+                PATCH_WARN "Whirlwind Attack HLA not found, skipping for class with %SOURCE_RES% table"
+            END
         END
 
-        COPY_EXISTING_REGEXP ~^lufi[0-9]?[0-9]\.2da$~ ~override~ // figthers HLA tables
+        COPY_EXISTING_REGEXP ~^luf[imctd][0-9tc]?[0-9]?\.2da$~ ~override~ // fighter HLA tables
             LPM HLA_WAR_FIX
-        COPY_EXISTING_REGEXP ~^lupa[0-9]?[0-9]\.2da$~ ~override~ // paladins HLA tables
+        BUT_ONLY
+
+        COPY_EXISTING_REGEXP ~^lupa[0-9]?[0-9]?\.2da$~ ~override~ // paladin HLA tables
             LPM HLA_WAR_FIX
-        COPY_EXISTING_REGEXP ~^lura[0-9]?[0-9]\.2da$~ ~override~ // rangers HLA tables
+        BUT_ONLY
+
+        COPY_EXISTING_REGEXP ~^lu([cr]|[ra])[0-9]?[0-9]?\.2da$~ ~override~ // ranger HLA tables
             LPM HLA_WAR_FIX
+        BUT_ONLY
 
     END 
      
