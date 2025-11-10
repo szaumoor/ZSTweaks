@@ -5,64 +5,54 @@ END ELSE BEGIN
 END
 
 COPY ~%SOURCE_RES%/general/ranged/sneak~ ~override~
-OUTER_TEXT_SPRINT line "ABILITYX   AP_ZSTIVSK0        ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****"
-
-COPY_EXISTING_REGEXP ~^clabth\d{2}\.2da$~ ~override~
-                     ~^clabmo\d{2}\.2da$~ ~override~
-                     ~^clabra\d{2}\.2da$~ ~override~
-  APPEND ~%SOURCE_FILE%~ ~%line%~
-
 
 ACTION_CLEAR_ARRAY thief_clabs
-ACTION_DEFINE_ASSOCIATIVE_ARRAY thief_clabs BEGIN
-  clabth01, 0 => 1 
-END
-
 ACTION_CLEAR_ARRAY ranger_clabs
-ACTION_DEFINE_ASSOCIATIVE_ARRAY ranger_clabs BEGIN
-  clabth01, 0 => 1 
-END
-
 ACTION_CLEAR_ARRAY monk_clabs
-ACTION_DEFINE_ASSOCIATIVE_ARRAY monk_clabs BEGIN
-  clabth01, 0 => 1 
-END
+
+ACTION_DEFINE_ASSOCIATIVE_ARRAY thief_clabs  BEGIN clabth01, 0 => 1 END
+ACTION_DEFINE_ASSOCIATIVE_ARRAY ranger_clabs BEGIN clabra01, 0 => 1 END
+ACTION_DEFINE_ASSOCIATIVE_ARRAY monk_clabs   BEGIN clabmo01, 0 => 1 END
   
 COPY_EXISTING ~kitlist.2da~ ~override~
   COUNT_2DA_ROWS 9 rows
-  FOR (index = 2 ; index < rows ; ++index) BEGIN // skip reserve row
+  FOR ( index = 2 ; index < rows ; ++index ) BEGIN
+    
     READ_2DA_ENTRY index 8 9 class
 
     PATCH_IF class = class_thief BEGIN
-      READ_2DA_ENTRY index 1 9 kitid
       READ_2DA_ENTRY index 5 9 clab
-      DEFINE_ASSOCIATIVE_ARRAY thief_clabs BEGIN "%clab%", "%kitid%" => 0 END
+      DEFINE_ASSOCIATIVE_ARRAY thief_clabs BEGIN "%clab%" => 0 END
     END  
 
     PATCH_IF class = class_ranger BEGIN
-      READ_2DA_ENTRY index 1 9 kitid
       READ_2DA_ENTRY index 5 9 clab
-      DEFINE_ASSOCIATIVE_ARRAY ranger_clabs BEGIN "%clab%", "%kitid%" => 0 END
+      DEFINE_ASSOCIATIVE_ARRAY ranger_clabs BEGIN "%clab%" => 0 END
     END 
 
     PATCH_IF class = class_monk BEGIN
-      READ_2DA_ENTRY index 1 9 kitid
       READ_2DA_ENTRY index 5 9 clab
-      DEFINE_ASSOCIATIVE_ARRAY monk_clabs BEGIN "%clab%", "%kitid%" => 0 END
+      DEFINE_ASSOCIATIVE_ARRAY monk_clabs BEGIN "%clab%" => 0 END
     END 
 
   END
 BUT_ONLY
 
 ACTION_PHP_EACH thief_clabs AS key => value BEGIN
-  APPEND ~%key%~ ~%line%~
+  COPY_EXISTING ~%key%.2da~ ~override~
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "AP_ZSTIVSK0" END
+  BUT_ONLY IF_EXISTS
 END
 
 ACTION_PHP_EACH ranger_clabs AS key => value BEGIN
-  APPEND ~%key%~ ~%line%~
+  COPY_EXISTING ~%key%.2da~ ~override~
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "AP_ZSTIVSK0" END
+  BUT_ONLY IF_EXISTS
 END
 
 ACTION_PHP_EACH monk_clabs AS key => value BEGIN
-  APPEND ~%key%~ ~%line%~
+  COPY_EXISTING ~%key%.2da~ ~override~
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "AP_ZSTIVSK0" END
+  BUT_ONLY IF_EXISTS
 END
 

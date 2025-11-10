@@ -2,6 +2,7 @@
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_a7functions.tpa~ // Argent77
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_ardanis_functions.tpa~ // Ardanis
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_cdfunctions.tpa~ // CamDawg
+INCLUDE ~%MOD_FOLDER%/libs/functions/zs_avenger.tpa~ // avenger, with slight modifications
 
 // my function libraries
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_find_weapon.tpa~
