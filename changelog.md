@@ -73,6 +73,7 @@
 - Fixed Finesse component only modifying dagger effects for bards instead of every effect
 - Fixed Borok's fist description if the weapon dice size for warhammers is installed
 - Fixed issue with Voidhammer applying blunt weapon AC debuff from component even to the undead when it shouldn't
+- Slightly improved the efficiency of the installation of some components
 
 ## Modifications
 

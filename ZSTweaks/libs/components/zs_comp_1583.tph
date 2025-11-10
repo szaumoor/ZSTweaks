@@ -66,7 +66,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                     SET ench = 5
                     LPM PROBABILITY_BONUS
                     PATCH_IF NOT zst_1450_allow_bards BEGIN
-                        LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) STR_VAR class=~THIEF~ spell=~ZSTWW5~ END
+                        LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) class=class_thief STR_VAR spell=~ZSTWW5~ END
                     END ELSE BEGIN
                         LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWW5~ END
                     END

@@ -10,25 +10,59 @@ OUTER_TEXT_SPRINT line "ABILITYX   AP_ZSTIVSK0        ****        ****        **
 COPY_EXISTING_REGEXP ~^clabth\d{2}\.2da$~ ~override~
                      ~^clabmo\d{2}\.2da$~ ~override~
                      ~^clabra\d{2}\.2da$~ ~override~
-    APPEND ~%SOURCE_FILE%~ ~%line%~
+  APPEND ~%SOURCE_FILE%~ ~%line%~
 
 
-OUTER_SET default_paladin = 9558
-ACTION_CLEAR_ARRAY  cd_pal_clabs
-ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_pal_clabs BEGIN // start with base class tables
-  ~%default_paladin%~, clabpa01, 0 => 1 // generic paladin abilities
+ACTION_CLEAR_ARRAY thief_clabs
+ACTION_DEFINE_ASSOCIATIVE_ARRAY thief_clabs BEGIN
+  clabth01, 0 => 1 
+END
+
+ACTION_CLEAR_ARRAY ranger_clabs
+ACTION_DEFINE_ASSOCIATIVE_ARRAY ranger_clabs BEGIN
+  clabth01, 0 => 1 
+END
+
+ACTION_CLEAR_ARRAY monk_clabs
+ACTION_DEFINE_ASSOCIATIVE_ARRAY monk_clabs BEGIN
+  clabth01, 0 => 1 
 END
   
-// add kit tables dynamically by reading kitlist
 COPY_EXISTING ~kitlist.2da~ ~override~
   COUNT_2DA_ROWS 9 rows
   FOR (index = 2 ; index < rows ; ++index) BEGIN // skip reserve row
     READ_2DA_ENTRY index 8 9 class
-    PATCH_IF class = 6 BEGIN
+
+    PATCH_IF class = class_thief BEGIN
       READ_2DA_ENTRY index 1 9 kitid
-      READ_2DA_ENTRY index 4 9 desc
       READ_2DA_ENTRY index 5 9 clab
-      DEFINE_ASSOCIATIVE_ARRAY cd_pal_clabs BEGIN "%desc%", "%clab%", "%kitid%" => 0 END
+      DEFINE_ASSOCIATIVE_ARRAY thief_clabs BEGIN "%clab%", "%kitid%" => 0 END
     END  
+
+    PATCH_IF class = class_ranger BEGIN
+      READ_2DA_ENTRY index 1 9 kitid
+      READ_2DA_ENTRY index 5 9 clab
+      DEFINE_ASSOCIATIVE_ARRAY ranger_clabs BEGIN "%clab%", "%kitid%" => 0 END
+    END 
+
+    PATCH_IF class = class_monk BEGIN
+      READ_2DA_ENTRY index 1 9 kitid
+      READ_2DA_ENTRY index 5 9 clab
+      DEFINE_ASSOCIATIVE_ARRAY monk_clabs BEGIN "%clab%", "%kitid%" => 0 END
+    END 
+
   END
-  BUT_ONLY
+BUT_ONLY
+
+ACTION_PHP_EACH thief_clabs AS key => value BEGIN
+  APPEND ~%key%~ ~%line%~
+END
+
+ACTION_PHP_EACH ranger_clabs AS key => value BEGIN
+  APPEND ~%key%~ ~%line%~
+END
+
+ACTION_PHP_EACH monk_clabs AS key => value BEGIN
+  APPEND ~%key%~ ~%line%~
+END
+

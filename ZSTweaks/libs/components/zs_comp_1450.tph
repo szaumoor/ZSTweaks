@@ -49,8 +49,8 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN
 
-                LPF weapon_damage_by_class INT_VAR type=1 probability1=pro_ench_bonus STR_VAR class=~THIEF~ spell=~ZSTWD%ench%~ END
-                LPF weapon_damage_by_class INT_VAR type=2 probability1=pro_ench_bonus STR_VAR class=~THIEF~ spell=~ZSTWZ%ench%~ END
+                LPF weapon_damage_by_class INT_VAR type=1 probability1=pro_ench_bonus class=class_thief STR_VAR spell=~ZSTWD%ench%~ END
+                LPF weapon_damage_by_class INT_VAR type=2 probability1=pro_ench_bonus class=class_thief STR_VAR spell=~ZSTWZ%ench%~ END
 
             END ELSE BEGIN
 
@@ -64,7 +64,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "bdbull02" BEGIN // bullets of darkness (SoD)
 
                 PATCH_IF NOT zst_1450_allow_bards BEGIN
-                    LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_sling_wk_nj+bonus) STR_VAR class=~THIEF~ spell=~ZSTWS%ench%~ END
+                    LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_sling_wk_nj+bonus) class=class_thief STR_VAR spell=~ZSTWS%ench%~ END
                 END ELSE BEGIN
                     LPF weapon_damage_by_custom INT_VAR type=2 probability1=(base_sling_wk_nj+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWS%ench%~ END
                 END
@@ -72,7 +72,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             END ELSE BEGIN
 
                 PATCH_IF NOT zst_1450_allow_bards BEGIN
-                    LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_sling_wk_nj+bonus) insert_point="-1" STR_VAR class=~THIEF~ spell=~ZSTW#3~ END
+                    LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_sling_wk_nj+bonus) insert_point="-1" class=class_thief STR_VAR spell=~ZSTW#3~ END
                 END ELSE BEGIN
                     LPF weapon_damage_by_custom INT_VAR type=2 probability1=(base_sling_wk_nj+bonus) insert_point="-1" custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTW#3~ END
                 END
@@ -88,7 +88,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                 PATCH_IF NOT "%SOURCE_RES%" STR_EQ "bdarow02" BEGIN // void-tipped arrows (SoD)
 
                     PATCH_IF NOT zst_1450_allow_bards BEGIN
-                        LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_arrow_bolt+bonus) STR_VAR class=~THIEF~ spell=~ZSTWA%ench%~ END
+                        LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_arrow_bolt+bonus) class=class_thief STR_VAR spell=~ZSTWA%ench%~ END
                     END ELSE BEGIN
                         LPF weapon_damage_by_custom INT_VAR type=2 probability1=(base_arrow_bolt+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWA%ench%~ END
                     END
@@ -96,7 +96,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                 END ELSE BEGIN
 
                     PATCH_IF NOT zst_1450_allow_bards BEGIN
-                        LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_arrow_bolt+bonus) insert_point="-1" STR_VAR class=~THIEF~ spell=~ZSTWM3~ END
+                        LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_arrow_bolt+bonus) insert_point="-1" class=class_thief STR_VAR spell=~ZSTWM3~ END
                     END ELSE BEGIN
                         LPF weapon_damage_by_custom INT_VAR type=2 probability1=(base_arrow_bolt+bonus) insert_point="-1" custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWM3~ END
                     END
@@ -113,7 +113,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             BEGIN
 
                 PATCH_IF NOT zst_1450_allow_bards BEGIN
-                    LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_arrow_bolt+bonus) STR_VAR class=~THIEF~ spell=~ZSTWB%ench%~ END
+                    LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_arrow_bolt+bonus) class=class_thief STR_VAR spell=~ZSTWB%ench%~ END
                 END ELSE BEGIN
                     LPF weapon_damage_by_custom INT_VAR type=2 probability1=(base_arrow_bolt+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWB%ench%~ END
                 END
@@ -123,7 +123,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         END ELSE PATCH_IF zst_1450_allow_darts AND cat=24 AND prof=106 BEGIN
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN
-                LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWT%ench%~ END
+                LPF weapon_damage_by_class INT_VAR type=2 probability1=(base_dagg_dart+bonus) class=class_thief STR_VAR spell=~ZSTWT%ench%~ END
             END ELSE BEGIN
                 LPF weapon_damage_by_custom INT_VAR type=2 probability1=(base_dagg_dart+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWT%ench%~ END
             END
@@ -131,7 +131,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         END ELSE PATCH_IF zst_1450_allow_staves AND cat=26 AND prof=102 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN
-                LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ls_staff+bonus) STR_VAR class=~THIEF~ spell=~ZSTWQ%ench%~ END
+                LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ls_staff+bonus) class=class_thief STR_VAR spell=~ZSTWQ%ench%~ END
             END ELSE BEGIN
                 LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_ls_staff+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWQ%ench%~ END
             END
@@ -156,7 +156,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                 END
 
                 PATCH_IF NOT zst_1450_allow_bards BEGIN
-                    LPF weapon_damage_by_class INT_VAR type=1 probability1=(pro_ench_bonus) STR_VAR class=~THIEF~ spell=~ZSTW%code%%ench%~ END
+                    LPF weapon_damage_by_class INT_VAR type=1 probability1=(pro_ench_bonus) class=class_thief STR_VAR spell=~ZSTW%code%%ench%~ END
                 END ELSE BEGIN
                     LPF weapon_damage_by_custom INT_VAR type=1 probability1=(pro_ench_bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTW%code%%ench%~ END
                 END
@@ -166,7 +166,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                 PATCH_IF "%SOURCE_RES%" STR_EQ "bdsw1h06" BEGIN // voidsword (SoD)
 
                     PATCH_IF NOT zst_1450_allow_bards BEGIN
-                        LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ls_staff+bonus) insert_point="-1" STR_VAR class=~THIEF~ spell=~ZSTW$3~ END
+                        LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ls_staff+bonus) insert_point="-1" class=class_thief STR_VAR spell=~ZSTW$3~ END
                     END ELSE BEGIN
                         LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_ls_staff+bonus) insert_point="-1" custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTW$3~ END
                     END
@@ -178,7 +178,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         END ELSE PATCH_IF zst_1450_allow_scimitars AND cat=20 AND prof=95 AND "%appearance%" STR_EQ "sc" BEGIN
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN
-                LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sci_ka+bonus) STR_VAR class=~THIEF~ spell=~ZSTWL%ench%~ END
+                LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sci_ka+bonus) class=class_thief STR_VAR spell=~ZSTWL%ench%~ END
             END ELSE BEGIN
                 LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_sci_ka+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWL%ench%~ END
             END
@@ -186,7 +186,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         END ELSE PATCH_IF zst_1450_allow_ninjatos AND cat=20 AND prof=95 AND "%appearance%" STR_EQ "s1" BEGIN
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN
-                LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sling_wk_nj+bonus)STR_VAR class=~THIEF~ spell=~ZSTWJ%ench%~ END
+                LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) class=class_thief STR_VAR spell=~ZSTWJ%ench%~ END
             END ELSE BEGIN
                 LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWJ%ench%~ END
             END
@@ -194,7 +194,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         END ELSE PATCH_IF zst_1450_allow_katanas AND cat=20 AND prof=94 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN
-                LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sci_ka+bonus) STR_VAR class=~THIEF~ spell=~ZSTWK%ench%~ END
+                LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sci_ka+bonus) class=class_thief STR_VAR spell=~ZSTWK%ench%~ END
             END ELSE BEGIN
                 LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_sci_ka+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWK%ench%~ END
             END
@@ -202,7 +202,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         END ELSE PATCH_IF zst_1450_allow_wakis AND cat=19 AND prof=95 AND "%appearance%" STR_EQ "ss" BEGIN
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN
-                LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) STR_VAR class=~THIEF~ spell=~ZSTWW%ench%~ END
+                LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) class=class_thief STR_VAR spell=~ZSTWW%ench%~ END
             END ELSE BEGIN
                 LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWW%ench%~ END
             END
@@ -219,7 +219,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             END
 
             PATCH_IF NOT zst_1450_allow_bards BEGIN
-                LPF weapon_damage_by_class INT_VAR type=1 probability1=pro_ench_bonus STR_VAR class=~THIEF~ spell=~ZSTWY%ench%~ END
+                LPF weapon_damage_by_class INT_VAR type=1 probability1=pro_ench_bonus class=class_thief STR_VAR spell=~ZSTWY%ench%~ END
             END ELSE BEGIN
                 LPF weapon_damage_by_custom INT_VAR type=1 probability1=pro_ench_bonus custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWY%ench%~ END
             END
@@ -229,7 +229,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "l#BASR7" BEGIN // lava's
 
                 PATCH_IF NOT zst_1450_allow_bards BEGIN
-                    LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ss_club+bonus) STR_VAR class=~THIEF~ spell=~ZSTWQ%ench%~ END
+                    LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ss_club+bonus) class=class_thief STR_VAR spell=~ZSTWQ%ench%~ END
                 END ELSE BEGIN
                     LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_ss_club+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWQ%ench%~ END
                 END
@@ -237,7 +237,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             END ELSE BEGIN
 
                 PATCH_IF NOT zst_1450_allow_bards BEGIN
-                    LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ss_club+bonus) STR_VAR class=~THIEF~ spell=~ZSTW_2~ END
+                    LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_ss_club+bonus) class=class_thief STR_VAR spell=~ZSTW_2~ END
                 END ELSE BEGIN
                     LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_ss_club+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTW_2~ END
                 END

@@ -15,13 +15,13 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=57,p2=%alignmen_chaotic_evil%;op=9,p1=%color%,p2=%loc_fade_speed%;op=63;op=142,p2=114;op=142,p2=35;op=30,p1=-50;op=98,p1=12,p2=3,spec=56;op=169,p2=51;op=267,p1=14026;op=267,p1=64285;op=267,p1=14665;op=101,p2=13;op=101,p2=55;op=101,p2=134;op=101,p2=209;op=101,p2=238;op=101,p2=216;op=267,p1=41495;op=267,p1=40968;op=267,p1=40969;op=267,p1=40979;op=267,p1=41616;op=169,p2=59;op=142,p2=90;op=142,p2=99;op=28,p1=50;op=142,p2=25;op=29,p1=50;op=142,p2=27;op=232,p2=12,res=ZSTWVMPC;op=318,res=SPIN101;op=318,res=SPIN200;op=318,res=SPIN958;op=318,res=SPPR103op=318,res=SPPR315;op=318,res=SPPR317;op=318,res=SPPR401;op=318,res=SPPR502;op=318,res=SPPR514;op=318,res=SPPR217;op=318,res=SPPR103;op=318,res=DW#FPPLO;op=318,res=SPCL111;op=318,res=SPIN201;op=318,res=SPPR212;op=318,res=SPPR404;op=318,res=SPPR103;op=318,res=DEVAHEAL;op=318,res=SPPR607;op=318,res=SPWISH28;op=318,res=SPWISH39;op=318,res=SPWM168;op=318,res=SPIN699;op=318,res=SPIN102;op=318,res=POTN17;op=318,res=POTN08;op=318,res=POTN52;op=206,res=ZSTWVRPA~ END
 
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=17,p1=1;op=326,res=ZSTWVMPD~ END
-    LPF weapon_damage_by_race INT_VAR insert_point = "-1" STR_VAR race = "vampire" spell = "ZSTWVMPA" END
+    LPF weapon_damage_by_race INT_VAR insert_point = "-1" race = race_vampire STR_VAR spell = "ZSTWVMPA" END
 
     SET general_tweaks_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~
     PATCH_IF zst_1450_allow_daggers AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ OR general_tweaks_installed) BEGIN // finesse
       SET ench = 4
       LPM PROBABILITY_BONUS
-      LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_dagg_dart+bonus) STR_VAR class=~THIEF~ spell=~ZSTWD%ench%~ END
+      LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_dagg_dart+bonus) class=class_thief STR_VAR spell=~ZSTWD%ench%~ END
     END
 
     PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR general_tweaks_installed BEGIN
