@@ -298,20 +298,19 @@ Other details:
 
 ### Make rangers, thieves, and monks hit harder with ranged weapons if invisible (1397)
 
-This component addresses partially one detail that has annoyed me since the beginning of my experience of the game. Combat bonuses from invisibility only work for melee attacks. This will have a focus on rangers and thieves, though. Details:
+This component enables combat bonuses from invisibility for ranged attacks, focusing on Rangers, Thieves, and Monks. This is to simulate a ranged sneak attack of sorts.
 
-- Attacking from invisibility gives the user a +4 THAC0 bonus, similar to the bonus to melee attacks
-- Ranged damage bonuses are applied to act as a sort of "sneak attack" with projectiles
-  - Rangers get +1 damage when attacking from invisibility. Every four levels, they get an extra +1 damage, up to 16, with +5 ranged attack damage bonus.
-  - Thieves and monks get +3 damage when attacking from invisibility, and progress up to +12 damage at level 21.
-- All thief kits except Swashbuckler, all ranger kits, and all monk kits receive this bonus
-- Extra damage bonuses for thieves specifically are nullified if they have a fighter class, getting only the partial bonus that rangers get.
+- **THAC0 Bonus**: Grants a +4 THAC0 bonus when attacking from invisibility, mirroring melee bonuses.
+- **Ranged Damage Bonus (from invisibility)**:
+  - **Rangers**: +1 damage, scaling up to +5 at level 16.
+  - **Thieves & Monks**: +3 damage, scaling up to +12 at level 21.
+- **Applicability**: Applies to all Thief kits (except Swashbuckler), all Ranger kits, and all Monk kits.
+- **Thieves with Fighter Class**: Their damage bonus is reduced to match that of Rangers.
 
-Caveats:
+**Important Notes**:
 
-This is not possible to implement in a straightforward manner. It requires timers that continually check whether the rangers, monk, or thief is invisible in order to apply the benefit or not. It is possible to momentarily not be affected by the bonus when entering invisible or continuing to have the benefit after getting out of invisibility (< 1 second). Currently, the only feedback to help the user identify if it's safe to attack with the bonus applied is the user interface applying the damage bonus when holding a bow.
-
-This also does not affect enemies. Only the player and joinable characters will benefit, if it applies to them (monks, rangers, and thieves, i.e. classes that can hide).
+- This effect is implemented using timers, which may result in minor, momentary delays in application or removal when entering/exiting invisibility.
+- Only player and joinable characters benefit; enemies are unaffected.
 
 </details>
 
@@ -2137,6 +2136,10 @@ As it says. This is a new way of resolving this widely recognized dumb design. T
 Additionally, Improved Evasion (Evasion now) doubles the movement speed granted (factor of 4 instead of 2) and makes it use opcode 176, so it's not removed by Free Action. There are options in the configuration file to select only one of these, if desired.
 
 Current limitation: it only affects vanilla classes and kits of fighter, ranger, paladin, monk, thief, bard, including multiclasses.
+
+### Make single-classed thieves and bards able to throw sand in the enemy's eyes (2280)
+
+Just to add a new dimension to the fight dirty stuff on rogues. Also, just because I want to promote specialization, this is only available for single-classed thieves and bards. Once per turn, you can throw sand onto the enemies eyes, causing very minor non-lethal damage and impair them for up to a round if they fail a save vs. Breath. Many powerful creatures are immune to this effect, but it offers a new thing to try out once per turn.
 
 </details>
 

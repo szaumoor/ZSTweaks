@@ -73,3 +73,11 @@ END
 ACTION_IF zst_group_2265_blade_spins BEGIN
   INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2265.tph~
 END
+
+ACTION_IF zst_group_2270_whirl_evasion BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2270.tph~
+END
+
+ACTION_IF zst_group_2280_sand_throw BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2280.tph~
+END
