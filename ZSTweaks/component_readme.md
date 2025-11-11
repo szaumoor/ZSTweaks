@@ -746,11 +746,11 @@ These gauntlets are not a very interesting reward for monks. Gauntlets of Crushi
 - Damage: +1 (new)
 - On a critical miss, the monk gains 1 extra attack per round, critical misses are no longer possible, and the next hit will become a critical hit. This lasts for 3 rounds and may not happen again during these 3 rounds. (new)
 
-### Make Shield of Balduran less of a auto-win item (1365)
+### Make Shield of Balduran less of an auto-win item (1365)
 
 It's basically a way to skip the difficulty of beholders fairly easily. It's now a bit more nuanced:
 
-- Armor Class: +3, down from +4, but now with a +2 bonus vs. beholders, mind flayers, kuo-toa, driders, umber hulks, and hook horrors (underdark theme). This is equivalent to a "protection vs. `<creature>`" effect, and does not stack with others that target the same.
+- Armor Class: +3, down from +4, but now with a +2 bonus vs. beholders, mind flayers, kuo-toa, driders, umber hulks, and hook horrors (Underdark theme). This is equivalent to a "protection vs. `<creature>`" effect, and does not stack with others that target the same.
 - No longer reflects all beholder rays. It now only grants immunity to those that instantly kill: death rays, and petrification and disintegration rays.
 
 </details>
@@ -831,14 +831,14 @@ Gemblade is one of those "cool items" that are functionally not interesting, par
 
 This copies the design of SoD's special throwing dagger such that you can use vanilla throwing daggers as melee weapons if desired. The items modified are:
 
-- Throwing dagger (dagg05.itm): Has a melee option that deals 1d3 piercing damage, with a speed factor of 3
-- Poisoned throwing dagger (dagg16.itm): Has a melee option that deals 1d3 piercing damage, plus +1 poison damage (no save). The usual poisoning ability does not work in this mode, only in ranged mode. This was done because otherwise using it as a melee weapon is too obvious as a better choice.
+- Throwing dagger `dagg05.itm`: Has a melee option that deals 1d3 piercing damage, with a speed factor of 3
+- Poisoned throwing dagger `dagg16.itm`: Has a melee option that deals 1d3 piercing damage, plus +1 poison damage (no save). The usual poisoning ability does not work in this mode, only in ranged mode. This was done because otherwise using it as a melee weapon is too obvious as a better choice.
 
 ### Make Life-Stealer +4 a more powerful cursed weapon (1686)
 
 This component overhauls the unused Life-Stealer +4 dagger, turning it into a powerful cursed weapon. Note this does not add the weapon to the game; a mod like Unfinished Business is required to obtain it.
 
-- **Appearance**: The dagger's appearance is changed to resemble Artemis Entreri's iconic green-gemmed dagger, and it now gleams red.
+- **Appearance**: The dagger's appearance is changed to resemble Artemis Entreri's iconic green-jeweled dagger, and it now gleams red.
 - **On Hit**: Drains 1 HP (3 HP if the wielder is a vampire) with 18% chance to drain 2 levels, healing the wielder for 1d6 HP + 10% of their max HP.
 - **On Kill**: Grants the wielder +1 STR, +1 DEX, 6 HP regeneration over 1 round, and prevents their HP from dropping below 1 for 3 seconds.
 - **Passive Effects**:
@@ -851,7 +851,7 @@ This component overhauls the unused Life-Stealer +4 dagger, turning it into a po
 
 ### Make throwing dagger's damage standardized (1530)
 
-This reduces the number of dice thrown of DAGG11 and DAGG12 to 1, so they are not the only good choice for daggers to maximize damage. And for consistency. Generally speaking, I dislike this sort of unbalanced design. DAGG11 specifically, already conforms to this rule in BGEE.
+This reduces the number of dice thrown of `dagg11` and `dagg12` to 1, so they are not the only good choice for daggers to maximize damage. And for consistency. Generally speaking, I dislike this sort of unbalanced design. `dagg11` specifically, already conforms to this rule in BGEE.
 
 </details>
 
@@ -908,7 +908,7 @@ This essentially is the same tweak to Carsomyr, except the chance of dispelling 
 
 ### Make Spear of Withering able to poison on contact (1460)
 
-I feel like this spear should be more withery, especially considering it's a +4 weapon! This makes the spear able to inflict 12 extra poison damage over one round if a save vs. Death at -2 is failed.
+I feel like this spear should be more withering, especially considering it's a +4 weapon! This makes the spear able to inflict 12 extra poison damage over one round if a save vs. Death at -2 is failed.
 
 ### Make Wave +4 slightly more powerful (1540)
 
@@ -1147,11 +1147,7 @@ This component also adds a path to be improved by Cespenar, requiring a scroll o
 
 ### Make The Brass Blade cast better fireball spells (1584)
 
-The Brass Blade is an unused weapon that allows you to throw a Fireball as per the 3rd level wizard spell, and it's tied to caster level, which means only Fighter/Mages would be able to take advantage of the full power of this -- other classes would throw a much weaker Fireball. This changes the power so it casts instead a Delayed Fireball cast at max level (15d6 fire damage with vanilla values) at a particular target, regardless of the presence or absence of caster level, and adds the power to cast Sunfire too. Next, it also reduces the fire damage per hit from 10 to 5, since that was a little on the overpowered side.
-
-Technical side note: since Type 2 is bugged for op146, as it makes spells cast bypass magic resistance as if the caster targeted themselves, it uses now Type 0, which unfortunately means the spell casting will have the casting speed of the spells in question.
-
-Finally, it fixes two likely bugs: spells cast being set as conjurer spells instead of evocation, and the fire damage of the sword bypassing mirror images.
+The Brass Blade is an unused weapon that allows you to throw a Fireball as per the 3rd level wizard spell, and it's tied to caster level, which means only Fighter/Mages would be able to take advantage of the full power of this -- other classes would throw a much weaker Fireball. This changes the power such that it casts instead a Delayed Fireball at max level, and adds the power to cast Sunfire too. Next, it also reduces fire damage on hit per from 10 to 5, since that was a little overpowered and fixes that damage being able to bypass mirror images.
 
 Note: you need to have a mod installed that restores this weapon in order to get it organically. An example of this is **Convenient Enhanced Edition NPCs** by Argent77.
 
@@ -1364,7 +1360,7 @@ Self-explanatory. It also justifies the higher price compared to other elemental
 
 My first move whenever I used Haer'Dalis was to give him swords that granted him extra attacks. These are his personal swords, so it feels wrong to not use them. This makes it more appealing to use them since now he will have 3 APR when dual wielding by default. Both have a speed factor of 0.
 
-Additionally, it makes Entropy cause 6 poison damage, on a Save vs. Death at -1 instead of 3 with a save without penalties or bonuses, and it makes Chaos reduce the struck opponent's saving throws vs. Death by 1 for 2 rounds. They both gain a speed factor of 0 and can hit targets immune to +2 weapons, like Balors.
+Additionally, it makes Entropy cause 6 poison damage, on a Save vs. Death at -1 instead of 3 with a save without penalties or bonuses, and it makes Chaos reduce the struck opponent's saving throws vs. Death by 1 for 2 rounds. They both gain a speed factor of 0 and can hit targets immune to +2 weapons, like balors.
 
 Chaos is also now similarly restricted to Tieflings, much like Entropy and according to the description.
 
@@ -1462,7 +1458,7 @@ Deathbringer assault is a bit stupid. Yes, it's very cool. Yes, big ToB bosses a
 - The probability of stun (now a special type of fear) is a proper 10% chance
 - For flavor, Sarevok will also use his "Die!" line when a Deathbringer Assault happens
 
-This component contains the same fixes as Tresset's deathbringer assault component. No need to use both.
+This component contains the same fixes as Tresset's Deathbringer Assault component. No need to use both.
 
 ### Make Shar-Teel especially effective when fighting male-gendered opponents (1647)
 
@@ -1629,7 +1625,7 @@ Self-explanatory. Most spells that deal damage only on a failed save are not ver
 
 ### Make Chain Lightning scale more strongly and spread faster to enemies (451)
 
-This modifies the projectile so it spreads faster, making it less annoying. Additionally, the starting damage is now 8d6, increasing to 12d6 with the same scaling as vanilla. Both things can be freely allowed or disallowed through the configuration file. Not available for IWDEE.
+This modifies the projectile making it spread faster to enemies. Additionally, the starting damage is now 8d6, increasing to 12d6 with the same scaling as vanilla. Both things can be freely allowed or disallowed through the configuration file. Not available for IWDEE.
 
 ### Make Icelance upgrade damage every 2 levels up to 10d6 (452)
 
@@ -1662,7 +1658,7 @@ This makes the spell cause 1d12 crushing damage to all clay golems, including ot
 
 ### Make Chromatic Orb more interesting by providing party-only chromatic varieties (555)
 
-This improves Chromatic Orb to make it a little more interesting, giving players the choice to cast different varieties of the spell at the moment of casting. Here's the varieties:
+This improves Chromatic Orb to make it a little more interesting, giving players the choice to cast different varieties of the spell at the moment of casting. Here are the varieties:
 
 - White (Light): Can't be resisted with saving throws. Damages Armor Class by 4 immediately for 3 rounds.
 - Black (Slay): Slays the enemy if they fail a save vs. Spell at 4 and deals some magic damage.
@@ -1720,7 +1716,7 @@ Conceptually, I think it's a cool spell for druids and rangers, but it's not too
 
 ### Make Earthquake more effective and disable annoyances (250)
 
-Earthquake is generally very inconvenient to be cast at any point because of how it affects your whole party. This disables that behavior, and in case you don't enjoy feeling like casting it might give you a tiny seizure, it also disables the screen shake.It also makes it more effective, by making the saves and damage decay less harshly:
+Earthquake is generally very inconvenient to be cast at any point because of how it affects your whole party. This disables that behavior, and in case you don't enjoy feeling like casting it might give you a tiny seizure, it also disables the screen shake. It also makes it more effective, by making the saves and damage decay less harshly:
 
 1st round: vanilla, 6d6 damage, -6 save to avoid unconsciousness
 2nd round: 5d6 damage, -4 save
@@ -1760,7 +1756,7 @@ Not enough seeds and too little damage. From 4 seeds that do 2d8 to 12 that do 3
 
 Nature's beauty is the druidic Wail of the Banshee (only for humanoids anyway), but it is fairly unlikely to kill (especially considering druids cannot have a Necromancy bonus to spells—without save editing or special kits, that is). Save bonus is now +2 instead of +3.
 
-Additionally, much like IWDEE, blinded enemies are not affected, which is to be expected given the nature of the spell.Finally, it can be configured to make True Sight prevent the effect, since it is an illusion.
+Additionally, much like IWDEE, blinded enemies are not affected, which is to be expected given the nature of the spell. Finally, it can be configured to make True Sight prevent the effect, since it is an illusion.
 
 ### Make Cleric's level 7 version of confusion act like Chaos (330)
 
@@ -1768,7 +1764,7 @@ It was always a fairly odd choice of level 7 spell. Some mods resolve this by mo
 
 ### Make Armor of Faith also add Armor Class and poison damage resistance (420)
 
-At the beginning of BGEE this spell is largely unremarkable and provides no protection of note to the cleric. Now it will at least provide a minor Armor Class bonus by default, which makes this spell the only one in vanilla BG that improves the Armor Class of the cleric other than Defensive Harmony (IIRC).
+At the beginning of BGEE this spell is largely unremarkable and provides no protection of note to the cleric. Now it will at least provide a minor Armor Class bonus by default, which makes this spell the only one in vanilla BG that improves the Armor Class of the cleric other than Defensive Harmony.
 
 ### Make cure and cause wound spells other than Heal/Harm more worth using (450)
 
@@ -1791,7 +1787,7 @@ All of these specific tweaks to these spells may be disabled or enabled in the c
 This makes the Bolt of Glory generally more effective and rearranges the damage such that outsiders and undead are always ahead in potential damage compared to Prime Material creatures. Additionally, the description accurately notes other less-known characteristics of this spell, such as how it has no effect on celestial beings (planetars, devas, solars, aasimar) and how it bypasses Magic Resistance. Here's the damage distribution now:
 
 - Prime Material Plane creatures: 4d4+6 magic damage
-- Outsiders (except fiendish and celestials; elementals, genies, gith...): 6d6+6 magic damage
+- Outsiders (except fiendish and celestials; elementals, genies, githyanki...): 6d6+6 magic damage
 - Undead: 8d6+6 magic damage
 - Fiendish outsiders (demons, devils, evil planetars, and fallen solars): 8d8+6
 
@@ -1925,10 +1921,8 @@ This makes the spell trigger twice per turn (aka every 5 rounds / 30 seconds) in
 
 ### Make Cloudburst last longer and less horrendously bad (485)
 
-It's just... awful in vanilla. It was improved in the following ways:
-
 - Effects no longer subject to magic resistance
-- Damage effects no longer affect non-enemies (the other effects such as dispelling fire shields still affects friendlies), the bolts of lightning only target enemies, protecting allies and neutral targets
+- Damage effects no longer affect non-enemies, but other effects such as dispelling fire shields still affects friendlies
 - Electricity damage increased to 2d8+2, no save to take half
 - The probabilities of taking a bolt of lightning increased from 50% to 65%
 - Extra damage versus cold and fire-immune creatures doubled (4d3 magic damage). Friendlies are still affected.
@@ -1985,7 +1979,7 @@ Produce Fire is not very effective for a 4th level spell. The only upside is tha
 
 ### Make Aura of Flaming Death increase fire resistance instead of setting it to 90% (515)
 
-Sel- explanatory. This will also prevent some nonsense like creatures immune to fire suddenly becoming no longer immune. If they cast it, such as fiends.
+Self-explanatory. This will also prevent some nonsense like creatures immune to fire suddenly becoming no longer immune. If they cast it, such as fiends.
 
 ### Make Holy and Unholy Word more generally effective (539)
 
@@ -2120,7 +2114,7 @@ This will make it a straight upgrade to the power by providing backstab immunity
 
 ### Make Whirlwind and Evasion grant once 3 uses of the Improved variants (2270)
 
-As it says. This is a new way of resolving this widely recognized dumb design. The HLAS are replaced as follows:
+As it says. This is a new way of resolving this widely recognized dumb design. The HLAs are replaced as follows:
 
 - Evasion → Unlock Evasion (grants 3 uses of Improved Evasion, now just called Evasion)
 - Improved Evasion → Evasion: Additional Use (grants another use, if desired)
@@ -2156,7 +2150,7 @@ This is a more correct alignment revision compared to Oversight's component, spe
 - Making the Spectator beholder evil. They're supposed to be Lawful Neutral. BD's corrections show that.
 - I didn't make Melissan evil before the plot reveals her nature. It defeats the purpose of the deception and the twist.
 
-I also added other creatures that I spotted that seem to be problematic too. For example, the skin dancer version of Rejiek is... Neutral Good. Ooookay.
+I also added other creatures that I spotted that seem to be problematic too. For example, the skin dancer version of Rejiek is... Neutral Good. How about no?
 
 It preserves the most egregious fixes for errors that still exist. Like Tolgerias being Chaotic Good. Yeah, right.
 
@@ -2192,6 +2186,7 @@ I hate his guts. He's a level 14 fighter with 200 health and 4.5 Attacks per rou
 
 - Removing artificial health for a fighter of his level. Health will now be 105 plus the constitution bonus, which unless a mod changes how constitution works, it will be 105 + 45 = 150
 - Removes the extra APR, so he will have 2.5 APR, as expected for a level 14 fighter according to his proficiency and fighter levels. This of course may vary if mods change the fighter classes
+- And yes, now he's Mr. Pebblemuncher instead of Pebblecrusher. He eats rocks because he's just that stupid.
 
 ### Make lions and other cat creatures not slow as molasses (3070)
 
@@ -2257,18 +2252,18 @@ Additionally, my mod fixes in passing ICYUAN01 from attacking with long swords w
 
 Most of minotaurs are wimps in the game. This is what it changes:
 
-- First of all, my mod ensures that the minotaurs in BG2EE are recognized as actual minotaurs race-wise
+- First, my mod ensures that the minotaurs in BG2EE are recognized as actual minotaurs race-wise
 - Patches the minotaurs, conferring various boons:
-  - Minimum HP: 50 -> 60
+  - Minimum HP: 50 → 60
   - Class set to Fighter, which allows them to benefit from Constitution bonuses
-  - Strength: 18/100 -> 20
-  - Constitution: 9 -> 17. In vanilla this ensures a minimum HP of 72
+  - Strength: 18/100 → 20
+  - Constitution: 9 → 17. In vanilla this ensures a minimum HP of 72
   - 15% resistance to physical damage
-  - They no longer panic so easily
+  - They no longer panic as easily
   - They move 5 points faster than normal
   - They critically hit 5% more often. Take care of monks and mages
   - They now have three points in Axe proficiency (from none). This will in turn grant them half an attack per round, as it would for fighters, resulting in 5/2 attacks per round as baseline.
-  - Their hits have a 50% chance of goring, inflicting 2d6 piercing damage (save vs. Breath to take half),  and 3d8 extra if Save vs. Breath fails (no save to take only half), which also grants the minotaur a +1 bonus to their damage and 1/2 to their Attacks per round for 2 rounds. These benefits can't affect the minotaur more than once every 9 seconds, and the victim cannot suffer this extra damage more than once per round. The basic 2d6 piercing damage can happen at any time with the aforementioned 50% chance per hit.
+  - Their hits have a 50% chance of goring, inflicting 2d6 piercing damage (save vs. Breath to take half), and 3d8 extra if Save vs. Breath fails (no save to take only half), which also grants the minotaur a +1 bonus to their damage and 1/2 to their Attacks per round for 2 rounds. These benefits can't affect the minotaur more than once every 9 seconds, and the victim cannot suffer this extra damage more than once per round. The basic 2d6 piercing damage can happen at any time with the aforementioned 50% chance per hit.
 
 </details>
 
