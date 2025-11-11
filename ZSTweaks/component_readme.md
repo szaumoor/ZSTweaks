@@ -45,11 +45,11 @@ Both types of weapons have piercing parts; that's why. Enchantment level:
 
 This component adjusts the base damage of several weapon categories to make them more distinct or viable. All changes are enabled by default but can be configured individually.
 
-- **Spears**: Base damage is increased from 1d6 to 1d8. This also affects Javelins from CamDawg's Project Javelin, increasing their damage die by 2.
-- **War Hammers**: Base damage is increased from 1d4+1 to 1d5+1. This does not affect special hammers like Crom Faeyr that have a 2d4 base damage.
-- **Ninja-tos, Wakizashis, and Katanas**: Kara-Turan blades now deal 2d4 (Ninja-tos/Wakizashis) and 2d5 (Katanas) base damage, increasing their minimum damage. Additionally, Wakizashis become piercing/slashing weapons (this can be configured separately).
-- **Bastard Swords**: Base damage is increased from 1d8 to 1d8+1, placing them in between long swords and two-handed swords in terms of damage.
-- **Two-handed Swords**: Base damage is now 1d9+1. Swords that originally deal 1d12 will now deal 2d6, raising the minimum damage for all weapons in this category.
+- **Spears**: Base damage is increased from 1d6 to 1d8. This also affects javelins from Project Javelin, increasing their damage die thrown by 2.
+- **War Hammers**: Base damage is increased from 1d4+1 to 1d5+1. This does not affect special hammers like `Crom Faeyr` that have a 2d4 base damage.
+- **Ninjatôs, Wakizashis, and Katanas**: Kara-Turan blades now deal 2d4 (Ninjatôs/Wakizashis) and 2d5 (Katanas) base damage, increasing their minimum damage. Additionally, Wakizashis become piercing/slashing weapons (this can be configured separately).
+- **Bastard Swords**: Maximum damage is increased from 2d4 to 1d8+1, placing them in between long swords and two-handed swords in terms of damage.
+- **Two-handed Swords**: Base damage is now 1d9+1, increasing minimum damage, and those that deal 1d12 will deal 2d6, raising the minimum damage for all by 1.
 
 ### Make axes or halberds deal extra damage on critical hits (1361)
 
@@ -119,7 +119,7 @@ As a counterbalance, the target can make a Save vs. Breath to take only half of 
 
 - **+7 to 0**: Katanas
 - **+6 to -1**: Long Swords, Scimitars, Estocs (ZS_ItemPack)
-- **+5 to -2**: Ninja-tos, Wakizashis
+- **+5 to -2**: Ninjatôs, Wakizashis
 - **+4 to -3**: Short Swords, Slings, Clubs, Staves, Rapiers (ZS_ItemPack)
 - **+3 to -4**: Darts, Shurikens (ZS_ItemPack), Bows, Crossbows, Daggers, Kukris (ZS_ItemPack)
 
@@ -1020,7 +1020,7 @@ The weapon now has +5% higher chance to critically hit, and critical hits add +5
 
 </summary>
 
-### Make Ninja-to of the Scarlet better and available for non-monks (1125)
+### Make Ninjatô of the Scarlet Brotherhood better and more available (1125)
 
 This makes this sword usable by non-monks of any alignment. Additionally, the sword has now a speed factor of 0 and inflicts 1 poison of damage on hit. And for Monks only, additionally, it gives a +5% critical hit chances while holding this weapon and grant a +2 THAC0 bonus and again for off-hand weapons.
 
@@ -1074,17 +1074,11 @@ Makes the chance-based Level drain take 2 levels instead of just one and the Ent
 
 ### Make Purifier's powers better and affect all evil (1240)
 
-Just as the title says. It's kind of funny considering the description of the weapon mentions Pit Fiends, which are Lawful Evil.
-
-It also makes the charge ability of Dispel Magic effect equal in power as those in the Staff of the Magi and Carsomyr.
-
-Both changes are optional.
+Just as the title says. It's kind of funny considering the description of the weapon mentions Pit Fiends, which are Lawful Evil. It also makes the charge ability of Dispel Magic effect equal in power as those in the Staff of the Magi and Carsomyr. Both changes are optional.
 
 ### Make Yamato's passive abilities more substantial (1250)
 
-The effect is pretty underwhelming for a +4 weapon. Since it's advertised as a defender weapon, the following is added:
-
-Armor Class bonus improved to 2 (instead of 1) plus 1 against slashing, piercing, and missile weapons. 5% universal damage and magic resistance.
+The effect is pretty underwhelming for a +4 weapon. Since it's advertised as a defender weapon, Armor Class bonus improved to 2 (instead of 1) plus 1 against slashing, piercing, and missile weapons. 5% universal damage and magic resistance.
 
 ### Make Usuno's Blade slightly more electrically powerful (1260)
 
@@ -1143,13 +1137,13 @@ Note that this will make the encounter relatively more difficult, obviously. Pro
 
 ### Make Kachiko's Wakizashi more unique with an upgrade path for Cespenar (1583)
 
-I really hate unique items with nothing in the description worth reading, so I tried to add something a bit more worth reading and hopefully not too cringy. For reasons described in the description, it is now called Kachiko's Whisper. The following additions are included:
+I really hate unique items with nothing in the description worth reading, so I tried to add something a bit more worth reading. For reasons described in the description, it is now called Kachiko's Whisper. The following additions are included:
 
-- Wisdom penalty (which can kill, technically, and I guess remove spell slots from priests) lasts for 6 rounds now as opposed to 2 rounds.
+- Confounding whisper: Wisdom -2 penalty lasts for 6 rounds now as opposed to 2 rounds.
 - Shadowdancers receive: +10% Hiding skills and +1 THAC0
-- Can cast Shadow Jump three times per day: teleport instantly to a place in sight, becoming invisible for 2 rounds, and becoming unable to critically miss for the duration.
+- Can cast Shadow Blink three times per day: teleport instantly to a place in sight, becoming invisible for 2 rounds, and becoming unable to critically miss for the duration. Shadowdancers, monks, and stalkers get a +1 to their backstab multiplier for the duration.
 
-This component also adds a path to be improved by Cespenar, requiring a scroll of Shadow Door and Wail of the Banshee, and 10,000 gold pieces, becoming a +5 weapon. This can be disabled in the configuration files.
+This component also adds a path to be improved by Cespenar, requiring a scroll of Shadow Door and Wail of the Banshee, and 10000 gold pieces, becoming a +5 weapon. This can be disabled in the configuration file.
 
 ### Make The Brass Blade cast better fireball spells (1584)
 

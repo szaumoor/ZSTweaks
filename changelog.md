@@ -130,6 +130,7 @@
 - Previous component that overhauled undead disruption weapons now merged in the new component
 - Asp's Nest component now makes it a +3 weapon
 - Spear form of `Rod of Royal Might` does not inflict bleeding to undead, elementals, golems, shambling mounds, and slimes
+- Added immunity to Holy Word and Unholy word to the upgraded Kachiko's Whisper, as it is also sound-based magic
 
 ## New components
 
