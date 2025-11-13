@@ -34,21 +34,14 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 LPF ALTER_EFFECT INT_VAR match_opcode = 126 opcode = 176 parameter1 = 4 END
 
             DEFINE_PATCH_MACRO HLA_EVA_FIX BEGIN
-                SET eva0_replace_success = 0
-                REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL913\)[ %TAB%]~ BEGIN eva0_replace_success = 1 END ~AP_ZSTWEVA0~
-                PATCH_IF eva0_replace_success BEGIN
-                    SET eva1_replace_success = 0
+                SET eva0_exists = RESOURCE_CONTAINS "%SOURCE_FILE%" "GA_SPCL913"
+                SET eva1_exists = RESOURCE_CONTAINS "%SOURCE_FILE%" "GA_SPCL914"
+
+                PATCH_IF eva0_exists AND eva1_exists BEGIN
+                    REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL913\)[ %TAB%]~ BEGIN eva0_replace_success = 1 END ~AP_ZSTWEVA0~
+                    LPF SWAP_2DA_TABLE_VALUE INT_VAR column=6 start_at_col=1 STR_VAR row_name="AP_ZSTWEVA0" replacement="1" END
                     REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL914\)[ %TAB%]~ BEGIN eva1_replace_success = 1 END ~AP_ZSTWEVA1~
-
-                    PATCH_IF eva0_replace_success AND eva1_replace_success BEGIN
-                        LPF SWAP_2DA_TABLE_VALUE INT_VAR column=6 start_at_col=1 STR_VAR row_name="AP_ZSTWEVA0" replacement="1" END
-                    END
-
-                    PATCH_IF eva0_replace_success OR eva1_replace_success BEGIN
-                        PRETTY_PRINT_2DA
-                    END
-
-                END 
+                END
             END
         END
 
@@ -65,10 +58,9 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             COPY_EXISTING ~spcl901.spl~ ~override~
                 LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8760) desc = RESOLVE_STR_REF(@8761) END
 
-            DEFINE_PATCH_MACRO HLA_WAR_FIX BEGIN
-                SET whrl0_replace_success = 0
-                SET wh0_exists = RESOURCE_CONTAINS "%FILE_RES%" "GA_SPCL900"
-                SET wh1_exists = RESOURCE_CONTAINS "%FILE_RES%" "GA_SPCL901"
+            DEFINE_PATCH_MACRO HLA_WAR_FIX BEGIN                
+                SET wh0_exists = RESOURCE_CONTAINS "%SOURCE_FILE%" "GA_SPCL900"
+                SET wh1_exists = RESOURCE_CONTAINS "%SOURCE_FILE%" "GA_SPCL901"
 
                 PATCH_IF wh0_exists AND wh1_exists BEGIN
                     REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL900\)[ %TAB%]~ BEGIN END ~AP_ZSTWWHL0~
@@ -76,20 +68,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                     REPLACE_EVALUATE ~^\(newline\)\|\(GA_SPCL901\)[ %TAB%]~ BEGIN END ~AP_ZSTWWHL1~
                 END
 
-                
-                PATCH_IF whrl0_replace_success BEGIN
-
-                    SET whrl1_replace_success = 0
-                    
-                    PATCH_IF whrl0_replace_success AND whrl1_replace_success BEGIN
-                        LPF SWAP_2DA_TABLE_VALUE INT_VAR column=6 start_at_col=1 STR_VAR row_name="AP_ZSTWWHL0" replacement="1" END
-                    END
-
-                    PATCH_IF whrl0_replace_success OR whrl1_replace_success BEGIN
-                        PRETTY_PRINT_2DA
-                    END
-
-                END 
             END
 
         END 
