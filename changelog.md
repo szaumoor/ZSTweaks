@@ -127,7 +127,6 @@
 - Restored -10 save penalty to be knocked down (sleep) in exploding trap component
 - Taralash now increases damage vs. animals and unintelligent monsters and beasts directly, instead of as a separate additive tick
 - Cloak of displacement component now removes the blur effect
-- Previous component that overhauled undead disruption weapons now merged in the new component
 - Asp's Nest component now makes it a +3 weapon
 - Spear form of `Rod of Royal Might` does not inflict bleeding to undead, elementals, golems, shambling mounds, and slimes
 - Added immunity to Holy Word and Unholy word to the upgraded Kachiko's Whisper, as it is also sound-based magic
