@@ -4,9 +4,9 @@
 
 This mod is a collection of personal tweaks designed to improve the vanilla game experience. While most components offer simple enhancements for underpowered items and abilities, some provide more extensive, but not radical, overhauls.
 
-Each component group includes an option to install up to all of its components at once, except those that require user input or I deem less likely to be wanted. As of version 1.6.1, you can customize these group installations for creature, NPC, arcane, divine, and class/kit tweaks via the configuration files in the `ZSTweaks/configurations` directory. By default, all components in a group are selected for installation. These files are also copied, when they're used, in override to assist in creating compatibility code on mods installed after this one.
+Each component group includes an option to install up to all of its components at once, except those that require user input or I deem less likely to be wanted. As of version 1.6.1, you can customize these group installations for creature, NPC, arcane, divine, ranged, and class/kit tweaks via the configuration files in the `ZSTweaks/configurations` directory. By default, all components in a group are selected for installation. These files are also copied, when they're used, in override to assist in creating compatibility code on mods installed after this one.
 
-This mod also includes several bugfixes that are necessary for the tweaks to function as intended. Some of these fixes are automatically disabled if the EEFixpack.
+This mod also includes several bugfixes that are necessary for the tweaks to function as intended. Some of these fixes are automatically disabled if the EEFixpack is installed.
 
 On-hit damage effects from this mod or on weapons the mod tweaks are also changed not to wake sleeping targets. This prevents a corner case where a weapon that applies sleep on hit could immediately wake the target with a secondary damage effect.
 
