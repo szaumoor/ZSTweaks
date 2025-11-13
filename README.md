@@ -39,11 +39,20 @@ I am open to providing compatibility for other mods. You can contact me on the f
 
 ## Notes for users and modders
 
-I advise making this mod the first tweak mod in your mod tweaks, since it is quite likely that older tweak packs such as Tweaks Anthology will have a better time anticipating and reacting to changes. An exception to this are components that **EXPLICITLY** say that they must be installed in a certain order. Finally, I'm not perfect, so if you find a component that probably makes more sense to install in a different order, you might be right. If you find that's the case, do let me know.
+**For users:** I advise making this mod the first tweak mod in your mod tweaks, since it is quite likely that older tweak packs such as Tweaks Anthology will have a better time anticipating and reacting to changes. An exception to this are components that **EXPLICITLY** say that they must be installed in a certain order. Finally, I'm not perfect, so if you find a component that probably makes more sense to install in a different order, you might be right. If you find that's the case, do let me know.
 
 I also would recommend installing things in the order they're presented in the mod, if you can help it, as this is the way it's been most heavily tested, due to how time-consuming it is. If you find any issues, let me know.
 
-For modders: To add compatibility with other mods, do include the files with the variables in your code to help to detect components and variants thereof. To check that the mod has been installed (any component), you may also check for the existence of the file `zssetup.rp` in override with a ```FILE_EXISTS_IN_GAME``` check.
+---
+
+**For modders**: To add compatibility with other mods, do include the files with the variables in your code to help to detect components and variants thereof. To check that the mod has been installed (any component), you may also check for the existence of the file `zssetup.rp` in override with a ```FILE_EXISTS_IN_GAME``` check. There are three possibilities as to how a component is installed, and all should be combined logically:
+
+- Installed the **specific** component by iterating through the components **manually**. In this case, the detection is a matter of using a ```MOD_IS_INSTALLED "ZSTweaks.tp2" "<component_number>"```. As every component is part of a group-installing component, this is never sufficient, except in the last group, because it only has three components, so I omitted making a group out of it.
+- Installed as part of a **predefined** **group-install**. This is a legacy system, and will disappear over time. Currently, this applies to all groups up to and not including the axe/blunt group, except for the last one (end of install components). This requires you to check for the installation of this group-install component, such as ```MOD_IS_INSTALLED "ZSTweaks.tp2" "103"```, which checks if my general tweaks and first group of tweaks is installed. This should be used in combination with the previous, to cover all bases.
+- Installed as part of a user-defined selection. This applies to all groups not mentioned in the previous point. In this case, you would have to first check that the group-install component is installed, and that the variable that _allows_ that component inside is set to 1. An example would be ```MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1328_mace_storm_star```, which would tell you if the user has installed my tweak to Storm Star, as part of their personal selection. This would be combined with the previous check
+- To check variations of this component, including variables that allow parts of the same component or not, you would also need to include the variables in `configurations/zstweaks_prefs.txt`.
+
+And that's it. Oh, and, sorry. If I can, I will provide the compatibility code myself!
 
 ## Credits
 
