@@ -4,15 +4,54 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1009~ = 1
 END
 
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1010.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1330.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1340.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1342.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1343.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1344.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1345.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1346.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1347.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1348.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1371.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1388.tph~
+OUTER_SPRINT config_path ~%MOD_FOLDER%/configurations/zstweaks_ranged_group_install.txt~
+INCLUDE ~%config_path%~
+COPY ~%config_path%~ ~override~
+
+ACTION_IF zst_group_1010_asp_nest BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1010.tph~
+END
+
+ACTION_IF zst_group_1330_darkfire_bow BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1330.tph~
+END
+
+ACTION_IF zst_group_1340_taralash BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1340.tph~
+END
+
+ACTION_IF zst_group_1342_protector_dryads BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1342.tph~
+END
+
+ACTION_IF zst_group_1343_mana_bow BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1343.tph~
+END
+
+ACTION_IF zst_group_1344_arrow_biting BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1344.tph~
+END
+
+ACTION_IF zst_group_1345_arrow_fire BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1345.tph~
+END
+
+ACTION_IF zst_group_1346_arrow_piercing BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1346.tph~
+END
+
+ACTION_IF zst_group_1347_bolts_biting BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1347.tph~
+END
+
+ACTION_IF zst_group_1348_shortbow_gesen BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1348.tph~
+END
+
+ACTION_IF zst_group_1371_arrow_dispelling BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1371.tph~
+END
+
+ACTION_IF zst_group_1388_arrow_acid BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1388.tph~
+END

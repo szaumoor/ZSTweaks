@@ -100,7 +100,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
 	END
 
-	ACTION_IF copied = 0 AND group_component = 0 BEGIN
+	ACTION_IF copied = 0 AND NOT group_component BEGIN
 
 		WARN "Shadow Plane not found in game files, skipping..."
 		

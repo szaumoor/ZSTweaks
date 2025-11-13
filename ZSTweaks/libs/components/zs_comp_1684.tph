@@ -19,7 +19,7 @@ ACTION_IF NOT is_iwdee BEGIN
         END
 
     COPY_EXISTING ~dagg16.itm~ ~override~
-        PATCH_IF (zst_1000_sbonus > 0 AND MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1000~) OR group_component = 1 BEGIN
+        PATCH_IF (zst_1000_sbonus > 0 AND MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1000~) OR group_component BEGIN
             SET desc = RESOLVE_STR_REF(@7352)
         END ELSE BEGIN
             SET desc = RESOLVE_STR_REF(@7351)

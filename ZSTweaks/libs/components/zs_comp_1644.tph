@@ -14,7 +14,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                   ~NPPLAT.ITM~ ~override~
                   ~NPARM.ITM~  ~override~
 
-        PATCH_IF "%SOURCE_RES%" STR_EQ "NPSW04" AND NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1643" AND group_component = 0 BEGIN
+        PATCH_IF "%SOURCE_RES%" STR_EQ "NPSW04" AND NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1643" AND NOT group_component BEGIN
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7110) END
         END
 
@@ -22,7 +22,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7120) END
         END
 
-        PATCH_IF "%SOURCE_RES%" STR_EQ "NPSW03" AND NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1520" AND group_component = 0 BEGIN
+        PATCH_IF "%SOURCE_RES%" STR_EQ "NPSW03" AND NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1520" AND NOT group_component BEGIN
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6241) END
         END
 

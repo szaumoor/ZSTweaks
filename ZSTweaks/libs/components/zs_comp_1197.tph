@@ -60,7 +60,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS0;op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS1;op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS2;op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS3~ END
             END
 
-            PATCH_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "16640" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "16642" BEGIN
+            PATCH_IF (zst_1664_crits_all OR zst_1664_crits_iouns) AND MOD_IS_INSTALLED "ZSTweaks.tp2" "1664" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1001" BEGIN
                 LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
             END
     END
