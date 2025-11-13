@@ -1,0 +1,14 @@
+// Set here to "1" those components that you wish you install as part of the group installation of npc tweaks
+// Set to 0 to DISABLE
+
+OUTER_SET zst_group_1310_flail_easthaven   = "1"
+OUTER_SET zst_group_1311_mace_krotan       = "1"
+OUTER_SET zst_group_1312_mace_skullcrusher = "1"
+OUTER_SET zst_group_1313_mace_gnasher      = "1"
+OUTER_SET zst_group_1314_mace_jerrod       = "1"
+OUTER_SET zst_group_1320_flail_ages        = "1"
+OUTER_SET zst_group_1321_club_bone         = "1"
+OUTER_SET zst_group_1324_flail_wyvern_tail = "1"
+OUTER_SET zst_group_1325_hammer_borok_fist = "1"
+OUTER_SET zst_group_1327_club_detonation   = "1"
+OUTER_SET zst_group_1328_mace_storm_star   = "1"

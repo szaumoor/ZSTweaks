@@ -17,7 +17,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       READ_STRREF 0x54 desc
       SPRINT str @99999
       INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-          REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]4~ ~\11d5~
+        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]4~ ~\11d5~
       END
       SAY_EVALUATED 0x54 ~%desc%~
 

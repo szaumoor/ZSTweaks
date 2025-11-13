@@ -4,7 +4,7 @@
 
 This mod is a collection of tweaks designed to improve the vanilla game experience. While most components offer simple enhancements for underpowered items and abilities, some provide more extensive, but not radical, overhauls.
 
-Each component group includes an option to install up to all of its components at once, except those that require user input or I deem less likely to be wanted. As of version 1.6.1, you can customize these group installations for creature, NPC, arcane, divine, ranged, and class/kit tweaks via the configuration files in the `ZSTweaks/configurations` directory. By default, all components in a group are selected for installation. These files are also copied, when they're used, in override to assist in creating compatibility code on mods installed after this one.
+Each component group includes an option to install up to all of its components at once, except those that require user input or I deem less likely to be wanted. As of version 1.6.1, you can customize these group installations for creature, NPC, arcane, divine, ranged, axes/blunt, and class/kit tweaks via the configuration files in the `ZSTweaks/configurations` directory. By default, all components in a group are selected for installation.
 
 This mod also includes several bugfixes that are necessary for the tweaks to function as intended. Some of these fixes are automatically disabled if the EEFixpack is installed.
 
@@ -42,6 +42,8 @@ I am open to providing compatibility for other mods. You can contact me on the f
 I advise making this mod the first tweak mod in your mod tweaks, since it is quite likely that older tweak packs such as Tweaks Anthology will have a better time anticipating and reacting to changes. An exception to this are components that **EXPLICITLY** say that they must be installed in a certain order. Finally, I'm not perfect, so if you find a component that probably makes more sense to install in a different order, you might be right. If you find that's the case, do let me know.
 
 I also would recommend installing things in the order they're presented in the mod, if you can help it, as this is the way it's been most heavily tested, due to how time-consuming it is. If you find any issues, let me know.
+
+For modders: To add compatibility with other mods, do include the files with the variables in your code to help to detect components and variants thereof. To check that the mod has been installed (any component), you may also check for the existence of the file `zssetup.rp` in override with a ```FILE_EXISTS_IN_GAME``` check.
 
 ## Credits
 
