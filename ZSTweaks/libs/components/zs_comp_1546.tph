@@ -138,8 +138,34 @@ BUT_ONLY
 
 // patch weapon enchantment protections with protection vs buckler parry
 ACTION_IF zst_1546_buckler_tweak BEGIN
+
     PRINT "Patching creatures, spells, and items with weapon immunities with appropriate buckler parry immunity..."
+    ACTION_IF zs_debug BEGIN
+        OUTER_SET matches = 0
+    END
+
+    DEFINE_PATCH_MACRO nonmagical_macro BEGIN
+        LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=120 match_parameter2=2 match_parameter1=0 opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~ZSTWBK00~ END
+    END
+
+    DEFINE_PATCH_MACRO magical_macro BEGIN
+        PATCH_FOR_EACH ench IN 1 2 3 4 5 6 BEGIN
+            LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=120 match_parameter2=1 match_parameter1=0 opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~ZSTWBK0%ench%~ END
+        END
+    END
+
+    DEFINE_PATCH_MACRO enchantment_macro BEGIN
+        FOR ( index = 1; index <= enchantment; ++index ) BEGIN
+            LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=120 match_parameter2=0 match_parameter1=index opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~ZSTWBK0%index%~ END
+        END
+    END
+
     COPY_EXISTING_REGEXP ~^.+\.\(cre\|itm\|spl\)$~ ~override~
-        LPM PATCH_FOR_BUCKLER_IMMUNITIES
+        LPM PATCH_FOR_WPN_IMMUNITIES
     BUT_ONLY
+
+    ACTION_IF zs_debug BEGIN
+        PRINT "Patched %matches% resources to protect against buckler effects"
+    END
+
 END

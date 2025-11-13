@@ -182,7 +182,7 @@ This component identifies a scroll as a "priest scroll" if it is usable by any p
 
 ### Make scrolls always cast at the character level regardless of class (1544)
 
-This component will process all existing scrolls in the game and make sure they're cast at character level, no matter what your class is. So if you have a level 16 Thief that can use scrolls by whatever means, they will be able to cast it at level 16. This pairs well with the previous component and greatly increases the usability of scrolls as a general resource for the whole party. I would recommend enforcing stat requirements so it's a bit more fair.
+This component will process all existing scrolls in the game and make sure they're cast at character level, no matter what your class is. So if you have a level 16 Thief that can use scrolls by whatever means, they will be able to cast it at level 16. This pairs well with the previous component and greatly increases the usability of scrolls as a general resource for the whole party. I would recommend enforcing stat requirements too to make it fairer.
 
 ### Make mage robes without cloaks cloaked (1650)
 
@@ -264,7 +264,7 @@ The configuration file provides several options to change shield usability:
 Important notes:
 
 - **Buckler Parry**: This component should be installed **after** any mods that add or modify weapon protection effects (e.g., SCS's Mantle tweaks) to ensure the parry is correctly blocked by those protections.
-- **Mod Compatibility**: This component identifies shield types by their unidentified name (e.g., "Buckler", "Small Shield"). While vanilla items are patched to conform to this schema, mod-added shields not following this convention will not be affected. Please report any incompatible mods so support can be added.
+- **Mod Compatibility**: This component identifies shield types by their unidentified name (e.g., "Buckler", "Small Shield"). While vanilla items are patched to conform to this schema, mod-added shields not following this convention will not be affected. Please report any incompatible mods.
 
 ### Make Protection from Undead more balanced (1547)
 
@@ -436,7 +436,7 @@ This component increases the damage resistance granted by the helm from 3% to 5%
 
 ### Make The Visage grant Aura of Despair once per day and improve powers (1657)
 
-This component improves The Visage by increasing its Breathe Acid damage to 8d6 (from 6d6) and adding the ability to cast Aura of Despair once per day. The component will be skipped if Forgotten Armaments is installed.
+This component improves The Visage by increasing its `Breathe Acid` damage to 8d6 (from 6d6) and adding the ability to cast Aura of Despair once per day. The component will be skipped if Forgotten Armaments is installed.
 
 ### Make Dragon Helm add protection against acid and saves vs. breath (1658)
 
