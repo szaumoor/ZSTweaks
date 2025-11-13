@@ -31,7 +31,6 @@ ACTION_PHP_EACH my_clabs AS clab => _ BEGIN
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "AP_ZSTSAND1" END  
 END
 
-// patch immunities; code to run inside the patch
 DEFINE_PATCH_MACRO magical_macro BEGIN END
 DEFINE_PATCH_MACRO enchantment_macro BEGIN END
 DEFINE_PATCH_MACRO nonmagical_macro BEGIN
@@ -43,9 +42,3 @@ OUTER_SET matches = 0
 COPY_EXISTING_REGEXP ~^.+\.\(cre\|itm\|spl\)$~ ~override~
   LPM PATCH_FOR_WPN_IMMUNITIES
 BUT_ONLY
-
-// ranges for spells
-COPY_EXISTING ~zstsand0.spl~ ~override~
-              ~zstsand1.spl~ ~override~
-              ~zstsand2.spl~ ~override~
-  LPF ALTER_HEADER INT_VAR range = 2 END

@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1397~ = 1
 END
 
-COPY ~%SOURCE_RES%/general/ranged/sneak~ ~override~
+COPY ~%MOD_FOLDER%/general/ranged_sneak~ ~override~
 
 ACTION_CLEAR_ARRAY my_clabs
 COPY_EXISTING ~kitlist.2da~ ~override~
@@ -13,7 +13,9 @@ COPY_EXISTING ~kitlist.2da~ ~override~
     READ_2DA_ENTRY index 8 9 class
     PATCH_IF ((class = class_thief) OR (class = class_ranger) OR (class = class_monk)) BEGIN
       READ_2DA_ENTRY index 5 9 clab
-      DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN "%clab%" => "%class%" END
+      PATCH_IF NOT "%clab%" STR_EQ "clabth04" AND NOT "%clab%" STR_EQ "clabrn02" BEGIN
+        DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN "%clab%" => "%class%" END
+      END
     END  
 
   END
@@ -28,4 +30,3 @@ ACTION_PHP_EACH my_clabs AS clab => _ BEGIN
   COPY_EXISTING ~%clab%.2da~ ~override~
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "AP_ZSTIVSK0" END  
 END
-

@@ -12,7 +12,7 @@ Saving Throw: Special
 Ghostly figures called by the Shaman swirl around the battlefield, tormenting the Shaman's adversaries. All enemies within the area of effect take 6d6 points of magic damage per round for the next 3 rounds (no save). In addition, all living enemies (undead and constructs are unaffected) must save vs. Spell or lose 2 points of Strength every round for 5 rounds. The Strength loss is cumulative, but this spell cannot reduce the Strength of a creature below 1.~
 
 @6300 = ~Set Exploding Trap
-This ability allows the rogue to set a powerful trap that unleashes a fireball which causes 15d6 damage (Save vs. Breath for half damage) and will knock its victims off their feet for 1 round with no save allowed.~
+This ability allows the rogue to set a powerful trap that unleashes a fireball which causes 15d6 damage (Save vs. Breath for half damage) and will knock its victims off their feet for 1 round with unless they save vs. Spell at -10.~
 
 @6310 = ~Quivering Palm
 Successful attacks during the next 7 seconds force the target to save vs. Spell or die. At level 16, the save vs. Spell must succeed at -1 to avoid its effects, and at level 24 it improves again, requiring a save vs. Spell at -2.
@@ -136,13 +136,13 @@ This ability allows the warrior to unleash a flurry of super-fast blows. The abi
 @8880 = ~Throw Sand~
 @8881 = ~Throw Sand
 
-A rogue's best weapon is their willingness to not play by the rules. Throw sand or any other earth-like substance at the opponent's eyes, causing the following effects:
+A rogue's best weapon is <PRO_HISHER> willingness to not play by the rules. Throw sand or any other earth-like substance at the opponent's eyes, causing the following effects:
 
 – 1d2 nonlethal damage (save vs. Breath)
 – Armor Class is reduced by 2 for 1 round (save vs. Breath at +2)
 – Saving throws suffer a -1 penalty for 1 round (save vs. Breath at +2)
 – Attacks per round are reduced by 2 for 1 round (save vs. Breath at +2)
-– Target is confused for half a round (save vs. Breath at +2)
+– Target is confused and moves 40% slower for half a round (save vs. Breath at +2)
 – Target has a 50% chance to be blinded too for 1 round (save vs. Breath at +4)
 
 This ability may be used once per turn, and saving throw penalties improve by 1 every tenth level. Additionally, this ability has no effect in the following cases:
