@@ -1014,7 +1014,7 @@ The weapon now has +5% higher chance to critically hit, and critical hits add +5
 
 <summary>
 
-## One-handed Sword
+## One-handed Swords
 
 </summary>
 
