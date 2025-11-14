@@ -9,15 +9,14 @@ ACTION_IF NOT is_iwdee BEGIN // disabled for iwdee for now
   COPY ~%MOD_FOLDER%/spells/arcane/chromatic_orb~ ~override~
   OUTER_FOR ( pro_n = 0; pro_n <=7; ++pro_n ) BEGIN
     ADD_PROJECTILE ~%MOD_FOLDER%/pro/chromatic_orb/zstchrp%pro_n%.pro~
+    COPY_EXISTING ~zstwchr%pro_n%.spl~ ~override~
+      LPF ALTER_HEADER INT_VAR projectile = "%zstchrp%pro_n%%" END
   END 
-
-//  COPY_EXISTING ~~
 
   COPY_EXISTING ~spwi118.spl~ ~override/zstwi118.spl~
   COPY_EXISTING ~spwi118.spl~ ~override~
     LPF DELETE_EFFECT END
     LPF ALTER_HEADER INT_VAR projectile = 1 END
     LPF ADD_SPL_SELFEFF INT_VAR rd=0 STR_VAR effects=~op=326,p1=2,p2=102,res=zstchrm0;op=326,p1=2,p2=112,res=zstwi118~ END
-
 
 END

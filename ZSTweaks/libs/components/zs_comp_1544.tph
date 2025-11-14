@@ -5,26 +5,61 @@ END ELSE BEGIN
 END
 
 WITH_SCOPE BEGIN
+    DEFINE_PATCH_MACRO add_spell_headers BEGIN
+        SET type = header_type
+        SET target = tgt
+        SET range = 5000
+        SET required_level = index + 1
+        SET type=1
+        SET location=4
+        SET target=1
+        SET target_count=0
+        SET speed=0
+        SET projectile=1
+        SET zs_min_level_for_copy = 0
+        SET copy_header=0
+        SET insert_point=~-1~
+        SPRINT icon ~~
+        LPM ADD_SPELL_HEADER
+        SET parameter1= index+1
+        SET header=index+1
+        SET opcode = op
+        SET target = op_target
+        SET timing = 0
+        SET parameter2 = 0
+        SET resist_dispel = 0
+        SET duration = 0
+        SET probability1 = 100
+        SET probability2 = 0
+        SET power = 0
+        SET dicenumber = 0
+        SET dicesize = 0
+        SET savingthrow = 0
+        SET savebonus = 0
+        SET special = 0
+        SET insert_point = "-1"
+        SPRINT resource "%spell%"
+        LPM ADD_SPELL_EFFECT
+    END
+
     PRINT "Creating subspells to allow scrolls to scale with character level..."
     SILENT
-    OUTER_SET scroll_counter = 0
+    OUTER_SET scrolls = 0
+    OUTER_SPRINT prefix "rpsc"
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-        LPF ITM_CAT RET cat = result END
-        LPF ITM_MIN_INT RET min_int = result END
-        PATCH_IF cat = 11 AND min_int != 0 BEGIN
-            SPRINT filename_base "RPSC"
+        PATCH_IF SHORT_AT(0x1c) = 11 AND BYTE_AT(0x2a) != 0 BEGIN
             READ_LONG 0x0c scroll_name
-            PATCH_IF scroll_counter > 9999 BEGIN
+            PATCH_IF scrolls > 9999 BEGIN
                 PATCH_VERBOSE
                 PATCH_FAIL "Too many scrolls to process!"
-            END ELSE PATCH_IF scroll_counter < 10 BEGIN
-                SPRINT number "000%scroll_counter%"
-            END ELSE PATCH_IF scroll_counter < 100 BEGIN
-                SPRINT number "00%scroll_counter%"
-            END ELSE PATCH_IF scroll_counter < 1000 BEGIN
-                SPRINT number "0%scroll_counter%"
-            END ELSE PATCH_IF scroll_counter < 10000 BEGIN
-                SPRINT number "%scroll_counter%"
+            END ELSE PATCH_IF scrolls < 10 BEGIN
+                SPRINT number "000%scrolls%"
+            END ELSE PATCH_IF scrolls < 100 BEGIN
+                SPRINT number "00%scrolls%"
+            END ELSE PATCH_IF scrolls < 1000 BEGIN
+                SPRINT number "0%scrolls%"
+            END ELSE PATCH_IF scrolls < 10000 BEGIN
+                SPRINT number "%scrolls%"
             END
 
             SET found = 0
@@ -32,39 +67,34 @@ WITH_SCOPE BEGIN
             PHP_EACH ab_array AS int => ab_off BEGIN
                 GET_OFFSET_ARRAY2 fx_array ab_off ITM_V10_HEAD_EFFECTS
                 PHP_EACH fx_array AS int => fx_off BEGIN
-                    SET opcode = SHORT_AT ( fx_off )
-                    SET opcode_target = BYTE_AT ( fx_off + 0x2 )
-                    PATCH_IF opcode = 146 OR opcode = 148 BEGIN
+                    SET op = SHORT_AT ( fx_off )
+                    SET op_target = BYTE_AT ( fx_off + 0x2 )
+                    PATCH_IF op = 146 OR op = 148 BEGIN
                         ++found
                         PATCH_IF found = 1 BEGIN
-                            READ_ASCII ( fx_off + 0x14 ) resource
-                            TO_UPPER resource
-                            INNER_PATCH_FILE ~%resource%.SPL~ BEGIN
+                            READ_ASCII ( fx_off + 0x14 ) spell
+                            INNER_PATCH_FILE ~%spell%.spl~ BEGIN
                                 READ_LONG 0x64 offset
                                 SET header_type = BYTE_AT ( offset )
-                                SET target = BYTE_AT ( offset + 0xc )
+                                SET tgt = BYTE_AT ( offset + 0xc )
                             END
 
                             INNER_ACTION BEGIN
-                                LAF CREATE_SPELL INT_VAR flags=33604096 STR_VAR spell = ~RPSC%number%~ END
-                                COPY_EXISTING ~RPSC%number%.SPL~ ~override~
-                                    FOR ( index = 0; index < 50; ++index ) BEGIN
-                                        LPF ADD_SPELL_HEADER INT_VAR type=header_type target=target range=5000
-                                        required_level=(index+1) END
-                                        LPF ADD_SPELL_EFFECT
-                                            INT_VAR
-                                                parameter1 = (index+1)
-                                                header = (index+1)
-                                                opcode = opcode
-                                                target = opcode_target
-                                            STR_VAR
-                                                resource = ~%resource%~
-                                        END
+                                OUTER_SET flags = 33604096
+                                OUTER_SET type = 4
+                                OUTER_SET school = 0
+                                OUTER_SET sectype = 0
+                                OUTER_SET level = 1
+                                OUTER_SPRINT spell ~%prefix%%number%~
+                                LAM CREATE_SPELL 
+                                COPY_EXISTING ~%prefix%%number%.spl~ ~override~
+                                    FOR ( index=0; index < 50; ++index ) BEGIN
+                                        LPM add_spell_headers
                                     END
-                                BUT_ONLY
                             END
-                            ++scroll_counter
-                            LPF ALTER_EFFECT INT_VAR match_opcode=opcode parameter2=1 resist_dispel=0 power=0 STR_VAR resource = ~RPSC%number%~ END
+
+                            ++scrolls
+                            LPF ALTER_EFFECT INT_VAR match_opcode=op parameter2=1 resist_dispel=0 power=0 STR_VAR resource=~%prefix%%number%~ END
                         END
                     END
                 END
@@ -72,5 +102,5 @@ WITH_SCOPE BEGIN
         END
     BUT_ONLY
     VERBOSE
-    PRINT "Found %scroll_counter% usable scrolls for scroll scaling."
+    PRINT "Found %scrolls% usable scrolls for scroll scaling."
 END

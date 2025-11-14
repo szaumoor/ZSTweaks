@@ -153,6 +153,25 @@ COPY ~...inlined/ag#dummy.spl~ ~override/%spell%.spl~
   WRITE_LONG 0x6a 0x72
 END
 
+DEFINE_ACTION_MACRO ~CREATE_SPELL~ BEGIN
+<<<<<<<<...inlined/ag#dummy.spl
+>>>>>>>>
+COPY ~...inlined/ag#dummy.spl~ ~override/%spell%.spl~
+  INSERT_BYTES 0 0x72
+  WRITE_ASCII 0 ~SPL V1  ~
+
+  WRITE_LONG 0x18 flags
+  WRITE_SHORT 0x1c type
+  WRITE_SHORT 0x25 school
+  WRITE_BYTE 0x27 sectype
+  WRITE_LONG 0x34 level
+
+  WRITE_LONG 0xc `0
+  WRITE_LONG 0x54 `0
+  WRITE_LONG 0x64 0x72
+  WRITE_LONG 0x6a 0x72
+END
+
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -175,6 +194,64 @@ DEFINE_PATCH_FUNCTION ~ADD_SPELL_HEADER~
   RET
     insert_point
 BEGIN
+  LPF ~FJ_SPL_ITM_REINDEX~ END
+  hs=0x28
+
+  READ_LONG 0x64 ho
+  READ_SHORT 0x68 hc
+  READ_LONG 0x6a eo
+  insert_point = (insert_point>hc || insert_point<0) ? hc : insert_point
+  copy_header = (copy_header<0) ? 0 : copy_header
+
+  PATCH_IF copy_header>hc BEGIN
+    PATCH_WARN ~Unable to copy %copy_header%th header, %SOURCE_FILE% contains only %hc% headers!~
+  END ELSE BEGIN
+    INSERT_BYTES ho+insert_point*hs hs
+    hc+=1
+    eo+=hs
+    PATCH_IF copy_header BEGIN
+      READ_SHORT ho+(copy_header - 1)*hs+0x1e ec
+      READ_SHORT ho+(copy_header - 1)*hs+0x20 ei
+      READ_ASCII eo+ei*0x30 effs (ec*0x30)
+      READ_ASCII ho+(copy_header - 1)*hs copy (hs)
+      WRITE_ASCIIE ho+insert_point*hs ~%copy%~ (hs)
+    END
+    WRITE_SHORT 0x68 hc
+    WRITE_LONG 0x6a eo
+
+    READ_SHORT 0x70 ei // technically, it is a counter
+    FOR (i=ho;i<ho+hc*hs;i+=hs) BEGIN
+      READ_SHORT i+0x1e ec
+      WRITE_SHORT i+0x20 ei
+      ei+=ec
+    END
+
+    off=ho+insert_point*hs
+    PATCH_IF copy_header BEGIN
+      READ_SHORT ho+insert_point*hs+0x1e ec
+      READ_SHORT ho+insert_point*hs+0x20 ei
+      INSERT_BYTES eo+ei*0x30 ec*0x30
+      WRITE_ASCIIE eo+ei*0x30 ~%effs%~ (ec*0x30)
+    END ELSE BEGIN
+      WRITE_BYTE off type
+      WRITE_BYTE off+0x2 location
+      WRITE_ASCIIE off+0x4 ~%icon%~ (8)
+      WRITE_BYTE off+0xc target
+      WRITE_BYTE off+0xd target_count
+      WRITE_SHORT off+0xe range
+      WRITE_SHORT off+0x10 required_level
+      WRITE_LONG off+0x12 speed
+      WRITE_SHORT off+0x26 projectile
+    END
+    PATCH_IF zs_min_level_for_copy BEGIN
+      WRITE_SHORT off+0x10 zs_min_level_for_copy
+    END ELSE BEGIN
+      WRITE_SHORT off+0x10 required_level
+    END
+  END
+END
+
+DEFINE_PATCH_MACRO ~ADD_SPELL_HEADER~ BEGIN
   LPF ~FJ_SPL_ITM_REINDEX~ END
   hs=0x28
 

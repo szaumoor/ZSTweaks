@@ -4,7 +4,7 @@
 
 <summary>
 
-## General Tweaks
+## General
 
 </summary>
 
@@ -318,7 +318,7 @@ This component enables combat bonuses from invisibility for ranged attacks, focu
 
 <summary>
 
-## Gear Tweaks
+## Gear
 
 </summary>
 
@@ -759,7 +759,7 @@ It's basically a way to skip the difficulty of beholders fairly easily. It's now
 
 <summary>
 
-## Dagger Tweaks
+## Daggers
 
 </summary>
 
@@ -859,7 +859,7 @@ This reduces the number of dice thrown of `dagg11` and `dagg12` to 1, so they ar
 
 <summary>
 
-## Two-handed Melee Weapons Tweaks
+## Two-handed
 
 </summary>
 
@@ -1014,7 +1014,7 @@ The weapon now has +5% higher chance to critically hit, and critical hits add +5
 
 <summary>
 
-## One-handed Sword Tweaks
+## One-handed Sword
 
 </summary>
 
@@ -1211,7 +1211,7 @@ This slightly improves the largely unremarkable +1 short sword by giving wielder
 
 <summary>
 
-## Axes and Blunt Weapon Tweaks
+## Axes & Blunt
 
 </summary>
 
@@ -1280,7 +1280,7 @@ This makes the weapons more interesting in this way:
 
 <summary>
 
-## Ranged Weapon Tweaks
+## Ranged
 
 </summary>
 
@@ -1350,7 +1350,7 @@ Self-explanatory. It also justifies the higher price compared to other elemental
 
 <summary>
 
-## NPC Tweaks
+## NPCs
 
 </summary>
 
@@ -1490,7 +1490,7 @@ There are no words to express how much I hate that Edwin is the best wizard to h
 
 <summary>
 
-## Arcane Magic Tweaks
+## Arcane Magic
 
 </summary>
 
@@ -1678,7 +1678,7 @@ Caveats:
 
 <summary>
 
-## Divine Spell Tweaks
+## Divine Magic
 
 </summary>
 
@@ -2006,7 +2006,7 @@ Unholy Word is identical in the benefits, except demiliches are not affected by 
 
 <summary>
 
-## Class/Kit-related Tweaks
+## Classes
 
 </summary>
 
@@ -2135,7 +2135,7 @@ Just to add a new dimension to the fight dirty stuff on rogues. Also, just becau
 
 <summary>
 
-## Creature Tweaks
+## Creatures
 
 </summary>
 
@@ -2271,7 +2271,7 @@ Most of minotaurs are wimps in the game. This is what it changes:
 
 <summary>
 
-## End-of-install-order components
+## End-of-install-order
 
 </summary>
 
