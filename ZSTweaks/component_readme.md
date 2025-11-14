@@ -1658,17 +1658,19 @@ This makes the spell cause 1d12 crushing damage to all clay golems, including ot
 
 This improves Chromatic Orb to make it a little more interesting, giving players the choice to cast different varieties of the spell at the moment of casting. Here are the varieties:
 
-- White (Light): Can't be resisted with saving throws. Damages Armor Class by 4 immediately for 3 rounds.
-- Black (Slay): Slays the enemy if they fail a save vs. Spell at 4 and deals some magic damage.
-- Yellow (Acid): Causes increasing acid damage over level. Bypasses magic resistance.
-- Orange (Fire): Causes mild fire damage in a small area.
-- Purple (Sonic): Causes magic and crushing damage. Golems take double damage and can't resist it.
-- //... 
+- White (Light): Damages Armor Class, Base THAC0 by 2 immediately (no save) and blinds (save vs. Spell) for 1 round and deals minor magic damage. Duration of effects increases by half a round and penalties increase by 1 at level 4 and 7.
+- Black (Death): Slays the enemy if they fail a save vs. Spell at 6 and deals 1d4 magic damage. At levels 16 and 20, the saving throw's penalty to resist being slain.
+- Green (Poison): Causes 2d4+1 poison damage and poisons target if they fail a save vs. Death, causing 1 point of poison damage every 3 seconds for 2 rounds. At levels 7 and 10, the poison's rate of application increases (every 2 and 1 second, respectively).
+- Light Blue (Cold): Causes 2d4+1 cold damage and applies Slow for 1 round if they fail a save vs. Spell. Duration of Slow increases by 1 round at levels 7 and 10.
+- Yellow (Acid): Causes 2d4+1 acid damage that bypasses magic resistance. This damage increases progressively up to 4d4+10 at level 20.
+- Orange (Fire): Causes 2d4+1 fire damage. At levels 4 and 7, damage increases by 1d4 and affects a small area (save vs. Breath to take half -- only this part)
+- Purple (Sonic): Causes 1d4 magic damage and 1d4+2 crushing damage. Deafens for 2 rounds, causing a 30% casting failure for arcane and divine spells, with no save allowed, and stuns for 1 round if a save vs. Spell is failed. Golems take double damage and can't resist it.
 
 Caveats:
 
 - To not interfere with enemy AI, enemies will cast the vanilla version of it (what it is at the moment of installation). If you want other tweaks to modify the base chromatic orb, and you want enemies to use that, install those tweaks before this one.
-- The spell is no longer usable in contingencies and spell triggers due to the "select spell" nature thereof, similar to what happens with Spell Immunity, for example.
+- The spell is no longer truly usable in contingencies and spell triggers due to the "select spell" nature thereof, similar to what happens with Spell Immunity, for example.
+- Due to the technical limitations, and the hacky method to make it not interfere with AI, the spell will have a somewhat odd behavior. When casting on anything, the spell menu will come up without further effect, then you need to select a chromatic orb color, and then cast it on the intended target. You can even cast it on self, and then select a color and cast on the intended target. In other words, the first "casting" is irrelevant as far as targeting is concerned. This is caused because it cannot be self-targeted, as that would disrupt AI.
 
 </details>
 
