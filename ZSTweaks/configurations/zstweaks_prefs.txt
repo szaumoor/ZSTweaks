@@ -84,7 +84,7 @@ OUTER_SET zst_1534_potions_usable_everyone   = "1"
 OUTER_SET zst_1534_potion_overhaul           = "1"
 OUTER_SET zst_1534_potions_cannot_self_stack = "1"
 
-// tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted  half, you would type 50.
+// tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted half, you would type 50.
 OUTER_SET zst_1538_jewelry_price = "150"
 
 // Only select one, failure to do this will make the component fail immediately

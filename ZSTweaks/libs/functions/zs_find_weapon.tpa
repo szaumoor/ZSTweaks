@@ -28,7 +28,6 @@ BEGIN
         PATCH_FAIL ~Cannot mix indiscriminate searching with searching at particular slot~
     END
 
-
     SET found = 0
     READ_LONG 0x2bc item_offset
     READ_LONG 0x2b8 item_slots_offset

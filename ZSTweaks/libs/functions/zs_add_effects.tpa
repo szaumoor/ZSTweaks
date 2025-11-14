@@ -77,7 +77,6 @@ BEGIN
     SET casterlvl = 0
     SET sectype = 0
 
-
     LPM ADD_CRE_EFFECT
 END
 

@@ -11,7 +11,7 @@ COPY_EXISTING ~kitlist.2da~ ~override~
   COUNT_2DA_ROWS 9 rows
   FOR ( index = 2; index < rows; ++index ) BEGIN
     READ_2DA_ENTRY index 8 9 class
-    PATCH_IF ((class = class_thief) OR (class = class_ranger) OR (class = class_monk)) BEGIN
+    PATCH_IF class = class_thief OR class = class_ranger OR class = class_monk BEGIN
       READ_2DA_ENTRY index 5 9 clab
       PATCH_IF NOT "%clab%" STR_EQ "clabth04" AND NOT "%clab%" STR_EQ "clabrn02" BEGIN
         DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN "%clab%" => "%class%" END

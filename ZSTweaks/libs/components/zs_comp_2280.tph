@@ -8,13 +8,14 @@ COPY ~%MOD_FOLDER%/class_kits/sand_throw~ ~override~
 COPY_EXISTING ~zstsand0.spl~ ~override~
   LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8880) desc = RESOLVE_STR_REF(@8881) END
   LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF(@8882) END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_duration = 60 parameter1 = RESOLVE_STR_REF(@8883) END
 
 ACTION_CLEAR_ARRAY my_clabs
 COPY_EXISTING ~kitlist.2da~ ~override~
   COUNT_2DA_ROWS 9 rows
   FOR ( index = 2; index < rows; ++index ) BEGIN
     READ_2DA_ENTRY index 8 9 class
-    PATCH_IF ((class = class_thief) OR (class = class_bard)) BEGIN
+    PATCH_IF class = class_thief OR class = class_bard BEGIN
       READ_2DA_ENTRY index 5 9 clab
       DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN "%clab%" => "%class%" END
     END  

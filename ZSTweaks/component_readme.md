@@ -2119,9 +2119,9 @@ As it says. This is a new way of resolving this widely recognized dumb design. T
 - Whirlwind → Unlock Whirlwind Attack (grants 3 uses of Improved Whirlwind Attack, now just called Whirlwind Attack)
 - Improved Whirlwind Attack → Whirlwind Attack: Additional Use (grants another use, if desired)
 
-Additionally, Improved Evasion (Evasion now) doubles the movement speed granted (factor of 4 instead of 2) and makes it use opcode 176, so it's not removed by Free Action. There are options in the configuration file to select only one of these, if desired.
+Additionally, Improved Evasion (Evasion now) triples the movement speed granted (factor of 6 instead of 2) and makes it use opcode 176, so it's not removed by Free Action. There are options in the configuration file to select only one of these, if desired.
 
-Current limitation: it only affects vanilla classes and kits of fighter, ranger, paladin, monk, thief, bard, including multiclasses.
+It affects all classes and kits, including modded ones. It only affects HLA tables that have *both* the basic and improved evasion available. This means that the swashbuckler, for example, will not be affected by the whirlwind attack part, since they have only access to the lesser version.
 
 ### Make single-classed thieves and bards able to throw sand in the enemy's eyes (2280)
 

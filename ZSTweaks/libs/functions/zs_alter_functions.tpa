@@ -222,7 +222,6 @@ BEGIN
     END
 END
 
-
 DEFINE_PATCH_FUNCTION ALTER_EFF_FILE
 INT_VAR
     opcode         = "-1"
@@ -391,7 +390,6 @@ BEGIN
     END
 END
 
-
 DEFINE_PATCH_FUNCTION ALTER_SPELL
 INT_VAR
     name = "-2"
@@ -486,7 +484,6 @@ BEGIN
         WRITE_ASCII 0x10 "%casting_sound%" #8
     END
 END
-
 
 DEFINE_PATCH_FUNCTION ALTER_CRE
 INT_VAR
