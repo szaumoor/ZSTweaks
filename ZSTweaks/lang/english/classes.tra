@@ -135,20 +135,13 @@ This ability allows the warrior to unleash a flurry of super-fast blows. The abi
 @8880 = ~Throw Sand~
 @8881 = ~Throw Sand
 
-A rogue's best weapon is <PRO_HISHER> willingness to not play by the rules. Throw sand or any other earth-like substance at the opponent's eyes, causing the following effects:
+A rogue's best weapon is <PRO_HISHER> willingness to not play by the rules. Once per turn, they can throw sand in an opponent's eyes.
 
 – 1d2 nonlethal damage (save vs. Breath)
-– Armor Class is reduced by 2 for 1 round (save vs. Breath at +2)
-– Saving throws suffer a -1 penalty for 1 round (save vs. Breath at +2)
-– Attacks per round are reduced by 2 for 1 round (save vs. Breath at +2)
-– Target is confused and moves 40% slower for half a round (save vs. Breath at +2)
-– Target has a 50% chance to be blinded too for 1 round (save vs. Breath at +4)
+– If the save vs. Breath is failed at +2, Armor Class and APR are reduced by 2 and saving throws by 1 (1 round), and the target is confused and moves 40% slower (half a round)
+– 50% chance: Blindness for 1 round if save vs. Breath is failed at +4
 
-This ability may be used once per turn, and saving throw penalties improve by 1 every tenth level. Additionally, this ability has no effect in the following cases:
-
-– Earth Elementals are not affected in any way
-– Undead, golems, blind or eyeless targets, other elementals, massive targets, and ankhegs may not suffer any effects beyond the physical damage
-– Any creature that is immune to normal weapons is also immune to this ability~
+The saving throw becomes harsher as the rogue levels up, improving every tenth level. Many creatures, such as undead, golems, the sightless, and elementals, are resistant or immune to this ability.~
 
 @8882 = ~Discombobulated~
 @8883 = ~Throw Sand is available for use~
