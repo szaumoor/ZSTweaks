@@ -14,7 +14,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
     ACTION_IF is_bgee BEGIN
 
-        COPY_EXISTING ~misc89.itm~ ~overrride~
+        COPY_EXISTING ~misc89.itm~ ~override~
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@70010) END
             LPM edwin_goodies
 
@@ -22,7 +22,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
     ACTION_IF is_eet BEGIN
 
-        COPY_EXISTING ~misc89_.itm~ ~overrride~
+        COPY_EXISTING ~misc89_.itm~ ~override~
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@70010) END
             LPM edwin_goodies
 
@@ -31,7 +31,7 @@ ACTION_IF NOT is_iwdee BEGIN
     ACTION_IF is_bg2ee_or_eet BEGIN
         
         OUTER_SET applicable_levels += 2**2 + 2**3
-        COPY_EXISTING ~misc89.itm~ ~overrride~
+        COPY_EXISTING ~misc89.itm~ ~override~
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@70011) END
             LPM edwin_goodies
 
