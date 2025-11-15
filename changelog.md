@@ -75,6 +75,7 @@
 - Fixed issue with Voidhammer applying blunt weapon AC debuff from component even to the undead when it shouldn't
 - Slightly improved the efficiency of the installation of some components
 - Improved the implementation of components that add abilities to class or kits to remove the chances of errors in mods installations after mine
+- Fixed Barkskin component not removing the appropriate spells from joinable druids and clerics where applicable
 
 ## Modifications
 
