@@ -344,6 +344,14 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
 
         WITH_SCOPE BEGIN
 
+            DEFINE_PATCH_MACRO fix_gender BEGIN
+                SET gender = BYTE_AT(0x275)
+                PATCH_IF gender = gender_male OR gender = gender_female BEGIN
+                    ++matches
+                    WRITE_BYTE 0x275 gender_niether
+                END
+            END
+
             PRINT "[[FIX]]: Setting many types of sexless creatures as niether-gendered if they're set to male or female so it doesn't intrude with opcodes that target male/female"
             OUTER_SET matches = 0
             COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
@@ -376,13 +384,17 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                          race    = race_otyugh          OR
                          general = general_weapon
                 BEGIN
-                    SET gender = BYTE_AT(0x275)
-                    PATCH_IF gender = gender_male OR gender = gender_female BEGIN
-                        ++matches
-                        WRITE_BYTE 0x275 gender_niether
-                    END
+                    LPM fix_gender
                 END
             BUT_ONLY
+
+            COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
+                SET race    = BYTE_AT(0x272)
+                LPF IS_BIT_SET INT_VAR bit_field = LONG_AT(0x20) bit = 7 RET petrified = result END
+                PATCH_IF race = race_statue AND NOT petrified BEGIN
+                    LPM fix_gender
+                END
+
             PRINT "[[FIX]]: Found %matches% matches that were set to 'niether' gender"
             
         END

@@ -76,6 +76,7 @@
 - Slightly improved the efficiency of the installation of some components
 - Improved the implementation of components that add abilities to class or kits to remove the chances of errors in mods installations after mine
 - Fixed Barkskin component not removing the appropriate spells from joinable druids and clerics where applicable
+- Fixed the gender fix setting petrified people ("statues") to gender of niether. It will now skip petrified folks. Sorry Branwen
 
 ## Modifications
 
