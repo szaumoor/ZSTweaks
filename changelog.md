@@ -80,7 +80,7 @@
 
 ## Modifications
 
-- Light Crossbow tweak no longer requires to be installed at the last, and becomes part of the general tweaks section.
+- Light Crossbow tweak no longer requires to be installed as a last component, and becomes part of the general tweaks section.
 - Merged all the components that tweak disruption weapons into a single component in the General Tweaks section. It also now includes a tweak to one of my items in my Item Pack.
 - Added compatibility with my Item Pack (ZS_ItemPack) in the following way:
   - Dagger component modifies the kukris differently, granting no thac0 or critical hit bonus, half the speed bonus, but base damage is increased from 1d4 to 1d4+1

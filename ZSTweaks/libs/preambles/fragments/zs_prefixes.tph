@@ -359,7 +359,6 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                 SET race    = BYTE_AT(0x272)
                 PATCH_IF race    = race_golem           OR
                          race    = race_treant          OR
-                         race    = race_statue          OR
                          race    = race_demonic         OR
                          race    = race_mind_flayer     OR
                          race    = race_mist            OR
