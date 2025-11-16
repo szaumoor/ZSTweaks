@@ -1648,7 +1648,7 @@ Generally considered a terrible choice for a level 7 spell, this makes it a litt
 
 ### Make Hold Undead bypass Magic Resistance (502)
 
-Same reasoning as component 500. Applies to Priest of Lathander's version of the spell. Note that this does not affect liches or demiliches, because both creatures are immune to level 4 spells (liches: 1-5, demiliches: immune to everything).
+Same reasoning as component 500. Applies to Priest of Lathander's version of the spell. Note that this does not affect liches or demiliches, because both creatures are immune to level 4 spells (liches: 1-5, demiliches: immune to everything). Additionally, it makes the save at -1 to mirror Hold Person.
 
 ### Make Disintegrate cause damage and slow some golems, as per PnP (522)
 

@@ -1006,7 +1006,7 @@ Range: 0
 Duration: Special
 Casting Time: 1
 Area of Effect: 30-ft. radius
-Saving Throw: None
+Saving Throw: Special
 
 Uttering a Holy Word spell creates magic of tremendous power. The priest acts as a bridge between <PRO_HISHER> deity and the Prime Material Plane, causing a sonic explosion centered on the priest and reaching up to a 30-ft. radius. It affects only enemy non-good creatures and undead of any alignment that are caught in the area of effect. The effects vary depending on the target's status and Hit Dice:
 
@@ -1019,7 +1019,7 @@ Less than 4 HD, or with 40 Hit Points of less  —  Destroyed or killed instantl
 
 This spell has a special effect on demiliches. Though normally immune, they will instead take damage equal to 5% of their total health, plus 2d6 magic damage.
 
-There is no Saving Throw nor is it affected by Magic Resistance, but side effects are negated for deafened targets, or targets that have no hearing, except in the case of killing effects, and the banishment of summoned creatures. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that this spell may not be cast by any priest of evil alignment.~
+This spell is not affected by Magic Resistance, but side effects are negated for deafened targets, and on targets that have no hearing, except in the case of killing effects, and the banishment of summoned creatures. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that this spell may not be cast by any priest of evil alignment.~
 
 @8651 = ~Unholy Word
 (Conjuration/Summoning)
@@ -1030,7 +1030,7 @@ Range: 0
 Duration: Special
 Casting Time: 1
 Area of Effect: 30-ft. radius
-Saving Throw: None
+Saving Throw: Special
 
 Uttering an Unholy Word spell creates magic of tremendous power. The priest acts as a bridge between <PRO_HISHER> deity and the Prime Material Plane, causing a sonic explosion centered on the priest and reaching up to a 30-ft. radius. It affects only enemy creatures of any non-evil alignment that are caught in the area of effect. The effects vary depending on the target's status and Hit Dice:
 
@@ -1041,4 +1041,4 @@ Less than 4 HD, or with 40 Hit Points of less — Destroyed or killed instantly
 8 to 11 HD  —  Slowed, blinded, and deafened for 5 rounds with a 75% chance of spell failure
 12 HD and up  —  Blinded and deafened for 4 rounds with a 50% chance of spell failure
 
-There is no Saving Throw nor is it affected by Magic Resistance, but side effects are negated for deafened targets, or targets that have no hearing, except in the case of killing effects, and the banishment of summoned creatures. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that priests of good alignment may not cast this spell.~
+This spell is not affected by Magic Resistance, but side effects are negated for deafened targets, and on targets that have no hearing, except in the case of killing effects, and the banishment of summoned creatures. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that priests of good alignment may not cast this spell.~

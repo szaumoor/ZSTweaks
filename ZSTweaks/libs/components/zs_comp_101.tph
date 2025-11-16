@@ -42,7 +42,7 @@ ACTION_IF zst_101_fblade_dur_boost OR zst_101_fblade_undead BEGIN
 
             COPY_EXISTING ~SPPR206.SPL~ ~override~
                 LPF ~CD_TRIM-O-MATIC~ INT_VAR level_cap = 1 END
-                LPF ~CD_EXTEND-O-MATIC~ INT_VAR base_dur = 24 step_dur=6 level_cap=20 END
+                LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur=6 level_cap=20 END
                 
         END
     END
