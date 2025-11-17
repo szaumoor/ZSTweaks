@@ -133,7 +133,8 @@
 - Asp's Nest component now makes it a +3 weapon
 - Spear form of `Rod of Royal Might` does not inflict bleeding to undead, elementals, golems, shambling mounds, and slimes
 - Added immunity to Holy Word and Unholy word to the upgraded Kachiko's Whisper, as it is also sound-based magic
-- Added a section in the readme to explain how adding compatibility code with this mod works
+- Magical Stone component now makes its damage scale: 1d6 magic & missile damage at level 3, 1d8 at level 5. Still does not affect the IWD version, which works differently and deals more damage to the undead
+- Added a section in the readme to explain how adding compatibility code with this mod works (sorry)
 
 ## New components
 

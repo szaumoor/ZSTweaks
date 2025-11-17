@@ -226,6 +226,8 @@ OUTER_SET zst_446_fball_new_animation = "1" // new explosion animation
 
 OUTER_SET zst_447_melf_no_mr = "1" // makes Melf's Acid Arrow bypass MR, since it's conjured acid
 
+OUTER_SET zst_561_web_save_nerf = "1" // enable or disable the nert to the save penalty in the web spell
+
 /////////////////////////////// Divine Magic Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // allows the Flame Blade tweaks

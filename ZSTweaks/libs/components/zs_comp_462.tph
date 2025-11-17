@@ -11,5 +11,8 @@ ACTION_IF NOT is_iwdee BEGIN
     LPF ALTER_HEADER INT_VAR speed=2 END
     LPF CLONE_EFFECT INT_VAR match_opcode=12 parameter2="%op12_missile%" END
     LPF ALTER_EFFECT INT_VAR check_globals=0 resist_dispel=0 END
-    
+    LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=0 step_size=2 level_cap=5 damage_special=1 damage_rolls=1 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 match_dicenumber = 2 dicenumber = 1 dicesize = 6 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 match_dicenumber = 3 dicenumber = 1 dicesize = 8 END
+
 END

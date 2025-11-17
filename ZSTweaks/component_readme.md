@@ -1678,7 +1678,9 @@ Just makes the spell slightly more convenient and safe to use.
 
 ### Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance (561)
 
-Just because I think it makes more sense and the spell is pretty overpowered but a level 2 spell and paralyzing effects are often a death sentence. I actually think many spells should be forcing a save vs. Breath and not a save vs. Spell. Ugh. This mirrors what I did for Entangle.
+Just because I think it makes more sense and the spell is pretty overpowered for a level 2 spell and paralyzing effects are often a death sentence. I actually think many spells should be forcing a save vs. Breath and not a save vs. Spell. Ugh. This mirrors what I did for Entangle.
+
+This change to save bonus does not affect special abilities outside the spells themselves such as spider abilities.
 
 </details>
 
@@ -1801,7 +1803,7 @@ This makes the Bolt of Glory generally more effective and rearranges the damage 
 
 ### Make Magical Stone bypass Magic Resistance and deal both magic and missile damage (462)
 
-Generally, this spell is pretty worthless and barely even worth thinking about. This improves its usability by making it bypass Magic Resistance, since it is essentially a pebble enchanted to be thrown at an enemy. Now it deals 1d4 missile damage and 1d4 magic damage.
+Generally, this spell is pretty worthless and barely even worth thinking about. This improves its usability by making it bypass Magic Resistance, since it is essentially a pebble enchanted to be thrown at an enemy. Now it deals 1d4 missile damage and 1d4 magic damage. It will now also scale with level, dealing 1d6 magic and missile damage at level 5, and then 1d8 magic and missile damage at level 10.
 
 ### Make Dolorous Decay more powerful (463)
 

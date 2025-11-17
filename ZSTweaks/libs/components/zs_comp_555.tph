@@ -7,7 +7,7 @@ END
 ACTION_IF NOT is_iwdee BEGIN // disabled for iwdee for now
 
   COPY ~%MOD_FOLDER%/spells/arcane/chromatic_orb~ ~override~
-  OUTER_FOR ( pro_n = 0; pro_n <=7; ++pro_n ) BEGIN
+  OUTER_FOR ( pro_n = 0; pro_n <=6; ++pro_n ) BEGIN
     ADD_PROJECTILE ~%MOD_FOLDER%/pro/chromatic_orb/zstchrp%pro_n%.pro~
     COPY_EXISTING ~zstwchr%pro_n%.spl~ ~override~
       LPF ALTER_HEADER INT_VAR projectile = "%zstchrp%pro_n%%" speed = 0 END
