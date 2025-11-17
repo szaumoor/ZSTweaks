@@ -19,7 +19,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       LPF WPN_DMG RET dmg = result END
 
       INNER_PATCH_SAVE strref ~%strref%~ BEGIN
-          REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)2[Dd]4[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d8+%dmg%~
+        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)2[Dd]4[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d8+%dmg%~
       END
       SAY_EVALUATED 0x54 ~%strref%~
 
