@@ -1672,6 +1672,14 @@ Caveats:
 - The spell is no longer truly usable in contingencies and spell triggers due to the "select spell" nature thereof, similar to what happens with Spell Immunity, for example.
 - Due to the technical limitations, and the hacky method to make it not interfere with AI, the spell will have a somewhat odd behavior. When casting on anything, the spell menu will come up without further effect, then you need to select a chromatic orb color, and then cast it on the intended target. You can even cast it on self, and then select a color and cast on the intended target. In other words, the first "casting" is irrelevant as far as targeting is concerned. This is caused because it cannot be self-targeted, as that would disrupt AI.
 
+### Make Agannazar's Scorcher not pause the caster (558)
+
+Just makes the spell slightly more convenient and safe to use.
+
+### Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance (561)
+
+Just because I think it makes more sense and the spell is pretty overpowered but a level 2 spell and paralyzing effects are often a death sentence. I actually think many spells should be forcing a save vs. Breath and not a save vs. Spell. Ugh. This mirrors what I did for Entangle.
+
 </details>
 
 ---

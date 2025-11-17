@@ -11,6 +11,10 @@
 @99994 = ~(piercing or slashing, whichever is better)~
 @99995 = ~Damage type~
 @99996 = ~Piercing~
-@99997 = ~(piercing)~ // for text patching
-@99998 = ~Speed Factor~ // for text patching
-@99999 = ~Damage~ // for text patching
+@99997 = ~(piercing)~ 
+@99998 = ~Speed Factor~ 
+@99999 = ~Damage~ 
+
+@100000 = "with a -2 penalty"
+@100001 = "vs. Spell"
+@100002 = "vs. Breath"

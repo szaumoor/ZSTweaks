@@ -129,3 +129,11 @@ END
 ACTION_IF zst_group_555_chromatic_orb BEGIN
   INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_555.tph~
 END
+
+ACTION_IF zst_group_558_agannazar BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_558.tph~
+END
+
+ACTION_IF zst_group_555_web BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_561.tph~
+END

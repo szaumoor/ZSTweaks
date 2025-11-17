@@ -154,3 +154,5 @@
 - Make Edwin's amulet nuanced in the privileges it grants to that snake
 - Make Shield of Balduran less of an auto-win item
 - Make single-classed thieves and bards able to throw sand in the enemy's eyes
+- Make Agannazar's Scorcher not pause the caster
+- Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance
