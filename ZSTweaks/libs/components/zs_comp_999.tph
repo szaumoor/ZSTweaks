@@ -1,22 +1,66 @@
 ACTION_IF (VARIABLE_IS_SET ~zs_comp_999~) BEGIN
-  FAIL ~Script already included: zs_comp_999~
+  FAIL ~Script already   INCLUDEd: zs_comp_999~
 END ELSE BEGIN
   OUTER_SET ~zs_comp_999~ = 1
 END
 
 OUTER_SET group_component = 1
+OUTER_SPRINT config_path "%MOD_FOLDER%/configurations/zstweaks_dagger_group_install.txt"
+INCLUDE ~%config_path%~
+COPY ~%config_path%~ ~override~
 
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1000.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1130.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1140.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1490.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1630.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1660.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1670.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1680.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1681.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1682.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1683.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1684.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1686.tph"
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1530.tph"
+ACTION_IF zst_group_1000_poisoned_throw_dagg BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1000.tph"
+END
+
+ACTION_IF zst_group_1130_bone_blade BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1130.tph"
+END
+
+ACTION_IF zst_group_1140_dagger_star BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1140.tph"
+END
+
+ACTION_IF zst_group_1490_neb_dagger BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1490.tph"
+END
+
+ACTION_IF zst_group_1630_jade_fang BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1630.tph"
+END
+
+ACTION_IF zst_group_1660_heart_golem BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1660.tph"
+END
+
+ACTION_IF zst_group_1670_silver_dagger BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1670.tph"
+END
+
+ACTION_IF zst_group_1680_stiletto_demarchess BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1680.tph"
+END
+
+ACTION_IF zst_group_1681_elements_fury BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1681.tph"
+END
+
+ACTION_IF zst_group_1682_acid_etched_dagger BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1682.tph"
+END
+
+ACTION_IF zst_group_1683_gemblade BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1683.tph"
+END
+
+ACTION_IF zst_group_1684_throwing_dagg_melee BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1684.tph"
+END
+
+ACTION_IF zst_group_1686_life_stealer BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1686.tph"
+END
+
+ACTION_IF zst_group_1530_throw_dagg_nonsense BEGIN
+  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1530.tph"
+END
