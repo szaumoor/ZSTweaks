@@ -1,34 +1,114 @@
 ACTION_IF (VARIABLE_IS_SET ~zs_comp_1199~) BEGIN
-  FAIL ~Script already included: zs_comp_1199~
+  FAIL ~Script already   INCLUDEd: zs_comp_1199~
 END ELSE BEGIN
   OUTER_SET ~zs_comp_1199~ = 1
 END
 
 OUTER_SET group_component = 1
+OUTER_SPRINT config_path "%MOD_FOLDER%/configurations/zstweaks_twohanded_group_install.txt"
+INCLUDE ~%config_path%~
+COPY ~%config_path%~ ~override~
 
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1200.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1201.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1202.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1280.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1300.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1318.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1390.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1410.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1460.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1540.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1587.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1590.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1591.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1593.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1594.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1595.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1597.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1599.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1602.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1603.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1604.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1606.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1607.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1608.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1609.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1696.tph~
+ACTION_IF zst_group_1200_ixil_spike BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1200.tph~
+END
+
+ACTION_IF zst_group_1201_lilarcor BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1201.tph~
+END
+
+ACTION_IF zst_group_1202_warblade BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1202.tph~
+END
+
+ACTION_IF zst_group_1280_carsomyr BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1280.tph~
+END
+
+ACTION_IF zst_group_1300_silver_sword BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1300.tph~
+END
+
+ACTION_IF zst_group_1318_flame_north BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1318.tph~
+END
+
+ACTION_IF zst_group_1390_staff_magi BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1390.tph~
+END
+
+ACTION_IF zst_group_1410_unholy_reaver BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1410.tph~
+END
+
+ACTION_IF zst_group_1460_spear_withering BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1460.tph~
+END
+
+ACTION_IF zst_group_1540_wave BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1540.tph~
+END
+
+ACTION_IF zst_group_1587_rod_terror BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1587.tph~
+END
+
+ACTION_IF zst_group_1590_blackmist BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1590.tph~
+END
+
+ACTION_IF zst_group_1591_soul_reaver BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1591.tph~
+END
+
+ACTION_IF zst_group_1593_sword_ruin BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1593.tph~
+END
+
+ACTION_IF zst_group_1594_staff_cleric BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1594.tph~
+END
+
+ACTION_IF zst_group_1595_halcyon BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1595.tph~
+END
+
+ACTION_IF zst_group_1597_staff_rhynn BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1597.tph~
+END
+
+ACTION_IF zst_group_1599_psion_blade BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1599.tph~
+END
+
+ACTION_IF zst_group_1602_dragons_bane_halb BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1602.tph~
+END
+
+ACTION_IF zst_group_1603_dragons_breath_halb BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1603.tph~
+END
+
+ACTION_IF zst_group_1604_duskblade_halb BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1604.tph~
+END
+
+ACTION_IF zst_group_1606_ravager BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1606.tph~
+END
+
+ACTION_IF zst_group_1607_gram_grief BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1607.tph~
+END
+
+ACTION_IF zst_group_1608_aule_martial_staff BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1608.tph~
+END
+
+ACTION_IF zst_group_1609_impaler BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1609.tph~
+END
+
+ACTION_IF zst_group_1696_harbinger BEGIN
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1696.tph~
+END
