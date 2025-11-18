@@ -78,6 +78,7 @@
 - Fixed Barkskin component not removing the appropriate spells from joinable druids and clerics where applicable
 - Fixed the gender fix setting petrified people ("statues") to gender of niether. It will now skip petrified folks. Sorry Branwen
 - Added plants to the gender prefix (general category)
+- Fixed Ring of the Crusade component not being installed at all in the group-install component of Gear tweaks
 
 ## Modifications
 
