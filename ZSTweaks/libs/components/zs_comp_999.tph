@@ -1,5 +1,5 @@
 ACTION_IF (VARIABLE_IS_SET ~zs_comp_999~) BEGIN
-  FAIL ~Script already   INCLUDEd: zs_comp_999~
+  FAIL ~Script already includedd: zs_comp_999~
 END ELSE BEGIN
   OUTER_SET ~zs_comp_999~ = 1
 END
