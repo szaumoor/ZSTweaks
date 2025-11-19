@@ -7,7 +7,7 @@ END
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
   PATCH_IF SHORT_AT(0x1c) = 2 BEGIN
-    LPF ITM_APPEARANCE RET armor_appearance = result END
+    READ_ASCII 0x22 armor_appearance (2)
     PATCH_IF "%armor_appearance%" STR_EQ "2w" BEGIN // apperance of simple robes
       LPF ALTER_ITEM STR_VAR appearance="3W" END
     END

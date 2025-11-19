@@ -7,7 +7,7 @@ END
 ACTION_IF NOT is_iwdee BEGIN
 
     COPY_EXISTING ~SPPR416.SPL~ ~override~
-        LPF SPL_NAME RET cloak_fear_strref = result END
+        READ_LONG 0x08 cloak_fear_strref
 
     COPY ~%MOD_FOLDER%/spells/divine/cloak_fear~ ~override~
     COPY_EXISTING ~SPPR416.SPL~ ~override~

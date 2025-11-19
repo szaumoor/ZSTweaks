@@ -47,12 +47,12 @@ ACTION_IF zst_1546_tower_tweak BEGIN
             REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%hyphen%[ %TAB%]*%ac_string%[ %TAB%]*:?[ %TAB%]*\)\+1~ ~\1+2~
         END
         SAY_EVALUATED UNIDENTIFIED_DESC ~%desc%~
-        LPF ITM_GENERAL_DESC RET changed_description_index = result END
+        READ_LONG 0x50 changed_description_index
 END
 
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     READ_SHORT 0x1c cat
-    LPF ITM_APPEARANCE RET appearance = result END
+    READ_ASCII 0x22 appearance (2)
     PATCH_IF cat = 12 AND NOT ("%appearance%" STR_EQ "  ") BEGIN // shields
         PATCH_IF zst_1546_everyone_can_use_all_shields BEGIN
             WRITE_LONG 0x1e 0
@@ -75,7 +75,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
                     LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
                     SPRINT hyphens @99991
                     SPRINT ac_string @99992
-                    LPF ITM_ID_DESC RET description_index = result END
+                    READ_LONG 0x54 description_index
                     PATCH_IF description_index > "-1" BEGIN
                         READ_STRREF 0x54 desc
                         INNER_PATCH_SAVE desc ~%desc%~ BEGIN

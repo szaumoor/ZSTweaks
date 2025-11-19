@@ -23,7 +23,7 @@ ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
   ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
 
     COPY_EXISTING ~%file%~ ~override~
-      LPF CRE_KIT RET kit = result END
+      SET kit = SHORT_AT 0x246 | (SHORT_AT 0x244) << 16
 
       PATCH_IF kit = kit_blackguard BEGIN
         LPF ADD_CRE_EFFECT INT_VAR opcode=263 target=2 parameter1=2 parameter2=1 timing=9 END

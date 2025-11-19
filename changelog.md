@@ -79,6 +79,7 @@
 - Fixed the gender fix setting petrified people ("statues") to gender of niether. It will now skip petrified folks. Sorry Branwen
 - Added plants to the gender prefix (general category)
 - Fixed Ring of the Crusade component not being installed at all in the group-install component of Gear tweaks
+- Vastly reduced the library size on some parts to reduce the number of function calls, as these are unfortunately costly performance-wise with WeiDu
 
 ## Modifications
 

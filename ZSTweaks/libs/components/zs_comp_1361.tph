@@ -9,10 +9,10 @@ ACTION_IF zst_1361_axes_crits OR zst_1361_halberds_crits BEGIN
 
     COPY ~%MOD_FOLDER%/items/ax_halb_crit~ ~override~
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-        LPF ITM_CAT RET cat = result END
-        LPF ITM_ABILITIES_NUM RET num_abilities = result END
-        LPF ITM_APPEARANCE RET appearance = result END
-        LPF ITM_ENCH RET ench = result END
+        READ_SHORT 0x1c cat
+        READ_SHORT 0x68 num_abilities
+        READ_ASCII 0x22 appearance (2)
+        READ_LONG 0x60 ench
         PATCH_IF ench < 7 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
 
             PATCH_IF zst_1361_axes_crits AND cat = 25 AND NOT "%SOURCE_RES%" STR_EQ "a7-ax08" // AXE OF THE JESTER (wares of the planes)

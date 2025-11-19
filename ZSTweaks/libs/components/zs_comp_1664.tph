@@ -16,7 +16,7 @@ END
 ACTION_IF zst_1664_crits_all OR zst_1664_crits_iouns BEGIN
 
     COPY_EXISTING ~HELM18.itm~ ~override~
-        LPF ITM_GENERAL_NAME RET ioun_strref = result END
+        READ_LONG 0x08 ioun_strref
 
 END
 
@@ -24,9 +24,9 @@ ACTION_IF zst_1664_crits_all BEGIN
 
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
-        LPF ITM_CAT RET cat = result END
-        LPF ITM_GENERAL_NAME RET strref = result END
-        LPF ITM_APPEARANCE RET appearance = result END
+        READ_SHORT 0x1c cat
+        READ_LONG 0x08 strref
+        READ_ASCII 0x22 appearance (2)
 
         PATCH_IF cat=7 AND (strref = %ioun_strref% OR ("%appearance%" STR_EQ "jb") ) BEGIN
 
@@ -43,13 +43,13 @@ END ELSE ACTION_IF zst_1664_crits_iouns BEGIN
 
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
-        LPF ITM_CAT RET cat = result END
-        LPF ITM_GENERAL_NAME RET strref = result END
-        LPF ITM_APPEARANCE RET appearance = result END
+        READ_SHORT 0x1c cat
+        READ_LONG 0x08 strref
+        READ_ASCII 0x22 appearance (2)
 
         PATCH_IF cat=7 AND strref = %ioun_strref% BEGIN
             
-            LPF ITM_FLAGS RET flags = result END
+            READ_LONG 0x18 flags
             LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
             PATCH_IF crit_flag BEGIN
             LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
@@ -63,12 +63,12 @@ END ELSE ACTION_IF zst_1664_crits_circlets BEGIN
 
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
-        LPF ITM_CAT RET cat = result END
-        LPF ITM_APPEARANCE RET appearance = result END
+        READ_SHORT 0x1c cat
+        READ_ASCII 0x22 appearance (2)
 
         PATCH_IF cat=7 AND "%appearance%" STR_EQ "jb" BEGIN
 
-            LPF ITM_FLAGS RET flags = result END
+            READ_LONG 0x18 flags
             LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
             PATCH_IF crit_flag BEGIN
             LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END

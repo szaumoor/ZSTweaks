@@ -15,7 +15,7 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
 
         PRINT "Finding incorrect shield strrefs for debugging..."
         COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-            LPF ITM_CAT RET cat = result END
+            READ_SHORT 0x1c cat
             PATCH_IF cat = 12 BEGIN
                 READ_LONG 0x8 strref
                 PATCH_IF strref != small_shield_strref   AND

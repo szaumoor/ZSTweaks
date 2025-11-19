@@ -5,7 +5,7 @@ END ELSE BEGIN
 END
 
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
-  LPF CRE_RACE RET race = result END
+  READ_BYTE 0x272 race
   PATCH_IF race = race_beetle BEGIN
 
     WRITE_SHORT 0x4e "-1" // piercing modifier

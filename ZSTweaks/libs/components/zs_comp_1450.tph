@@ -25,13 +25,13 @@ ACTION_IF zst_1450_allow_bards BEGIN
 END
 
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
-    LPF ITM_ENCH RET ench = result END
-    LPF ITM_ABILITIES_NUM RET num_abilities = result END
-    LPF ITM_APPEARANCE RET appearance = result END
+    READ_LONG 0x60 ench
+    READ_SHORT 0x68 num_abilities
+    READ_ASCII 0x22 appearance (2)
     PATCH_IF ench >= 0 AND ench <= 6 AND num_abilities > 0
     BEGIN
-        LPF ITM_CAT RET cat = result END
-        LPF ITM_PROF RET prof = result END
+        READ_SHORT 0x1c cat
+        READ_BYTE 0x31 prof
         LPM PROBABILITY_BONUS
 
         PATCH_IF zst_1450_allow_daggers AND cat=16 AND prof=96 AND NOT ("%appearance%" STR_EQ "  ")

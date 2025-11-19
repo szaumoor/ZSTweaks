@@ -58,7 +58,7 @@ BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     END
 
-    LPF ITM_FLAGS RET itm_flags = result END
+    READ_LONG 0x18 itm_flags
     LPF IS_BIT_SET INT_VAR bit = flag bit_field = itm_flags RET set = result END
     result = set
 END
@@ -73,7 +73,7 @@ BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     END
 
-    LPF ITM_USABILITY0 RET itm_flags = result END
+    READ_LONG 0x1e itm_flags
     LPF IS_BIT_SET INT_VAR bit = flag bit_field = itm_flags RET set = result END
     result = set
 END
@@ -88,7 +88,7 @@ BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
     END
 
-    LPF CRE_FLAGS RET cre_flags = result END
+    READ_LONG 0x10 cre_flags
     LPF IS_BIT_SET INT_VAR bit = flag bit_field = cre_flags RET set = result END
     result = set
 END

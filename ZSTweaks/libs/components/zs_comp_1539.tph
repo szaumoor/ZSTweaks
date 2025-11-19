@@ -17,7 +17,7 @@ ACTION_IF zst_1539_all_no_reqs BEGIN
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         READ_SHORT 0x1c cat
         PATCH_IF cat = 11 BEGIN
-            LPF ITM_USABILITY0 RET flags = result END
+            READ_LONG 0x1e flags
             PATCH_IF flags > 0 BEGIN
                 LPF ALTER_ITEM INT_VAR unusable0 = 0 END
             END
@@ -54,14 +54,14 @@ END ELSE ACTION_IF zst_1539_all_reqs BEGIN
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         READ_SHORT 0x1c cat
         PATCH_IF cat = 11 BEGIN
-            LPF ITM_USABILITY0 RET usability_flags = result END
+            READ_LONG 0x1e usability_flags
             PATCH_IF usability_flags > 0 BEGIN
 
-                LPF ITM_MIN_INT RET min_int = result END
+                READ_BYTE 0x2a min_int
                 PATCH_IF min_int != 0 BEGIN // skip letters and the like
 
-                    LPF ITM_ABILITIES_NUM RET abilities = result END
-                    LPF ITM_ABILITIES_OFFSET RET offset = result END
+                    READ_SHORT 0x68 abilities
+                    READ_LONG 0x64 offset
 
                     SET found = 0
                     GET_OFFSET_ARRAY ab_array 0x64 4 0x68 2 0 0 0x38
@@ -125,7 +125,7 @@ END ELSE ACTION_IF zst_1539_rogues_no_reqs BEGIN
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         READ_SHORT 0x1c cat
         PATCH_IF cat = 11 BEGIN
-            LPF ITM_USABILITY0 RET usability_flags = result END
+            READ_LONG 0x1e usability_flags
 
             PATCH_IF usability_flags > 0 BEGIN
                 LPF IS_USABILITY_FLAG_SET INT_VAR flag=9 RET cleric_thief_flag = result END
@@ -168,7 +168,7 @@ END ELSE ACTION_IF zst_1539_rogues_reqs BEGIN
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         READ_SHORT 0x1c cat
         PATCH_IF cat = 11 BEGIN
-            LPF ITM_USABILITY0 RET usability_flags = result END
+            READ_LONG 0x1e usability_flags
             PATCH_IF usability_flags > 0 BEGIN
                 LPF IS_USABILITY_FLAG_SET INT_VAR flag=9 RET cleric_thief_flag = result END
                 LPF IS_USABILITY_FLAG_SET INT_VAR flag=6 RET bard_flag = result END
@@ -201,7 +201,7 @@ END ELSE ACTION_IF zst_1539_rogues_reqs BEGIN
                     WRITE_LONG 0x1e (THIS - 2**22)
                 END
 
-                LPF ITM_MIN_INT RET min_int = result END
+                READ_BYTE 0x2a min_int
                 PATCH_IF min_int != 0 BEGIN // skip letters and the like
                     SET found = 0
                     GET_OFFSET_ARRAY ab_array 0x64 4 0x68 2 0 0 0x38

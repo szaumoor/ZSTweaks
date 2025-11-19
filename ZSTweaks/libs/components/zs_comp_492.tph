@@ -26,7 +26,7 @@ ACTION_IF NOT is_iwdee BEGIN
     LPF ALTER_HEADER INT_VAR speed = 3 END
 
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target=2 insert_point = 0 STR_VAR resource = "%SOURCE_RES%" END
-    LPF SPL_ABILITIES_NUM RET headers = result END
+    READ_SHORT 0x68 headers
 
     //FOR ( i = 0; i < headers; ++i ) BEGIN
     LPF ALTER_EFFECT_EX STR_VAR match_duration_ex = ~(o_duration > 0)~ duration_ex = ~(THIS + 18)~ END

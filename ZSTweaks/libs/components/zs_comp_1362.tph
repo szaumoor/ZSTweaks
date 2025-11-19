@@ -7,9 +7,9 @@ END
 COPY ~%MOD_FOLDER%/items/hamaclub_ac~ ~override~
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF ITM_CAT  RET cat  = result END
-    LPF ITM_PROF RET prof = result END
-    LPF ITM_APPEARANCE RET appearance = result END
-    LPF ITM_ABILITIES_NUM RET num_abilities = result END
+    READ_BYTE 0x31 prof
+    READ_ASCII 0x22 appearance (2)
+    READ_SHORT 0x68 num_abilities
     PATCH_IF (( cat = 21 AND prof = 97  )     OR  // warhammers
               ( cat = 17 AND prof = 101 )     OR  // maces
               ( cat = 17 AND prof = 115 ))    AND // clubs
@@ -39,8 +39,8 @@ BUT_ONLY IF_EXISTS
 ACTION_IF zst_1362_blunt_only_nonarmored BEGIN
 
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-        LPF ITM_CAT RET cat = result END
-        LPF ITM_FLAGS RET flags = result END
+        READ_SHORT 0x1c cat
+        READ_LONG 0x18 flags
         LPF IS_BIT_SET INT_VAR bit=2 bit_field=flags RET droppable = result END
         PATCH_IF cat = 2 BEGIN
             LPF IS_BIT_SET INT_VAR bit=2 bit_field=flags RET droppable = result END

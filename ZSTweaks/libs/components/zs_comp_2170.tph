@@ -15,12 +15,12 @@ ACTION_IF zst_2170_thac0_thieves BEGIN
         LAM generate_rogue_thac0
 
         COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
-            LPF CRE_CLASS RET cre_class = result END
+            READ_BYTE 0x273 cre_class
             PATCH_IF cre_class = class_thief OR cre_class = class_mage_thief BEGIN
-                LPF CRE_THAC0 RET thac0 = result END
-                LPF CRE_FIRST_LEVEL RET first_level = result END
-                LPF CRE_SECOND_LEVEL RET second_level = result END
-                LPF CRE_FLAGS RET cre_flags = result END
+                READ_BYTE 0x52 thac0
+                READ_BYTE 0x234 first_level
+                READ_BYTE 0x235 second_level
+                READ_LONG 0x10 cre_flags
                 LPF CRE_IS_FLAG_SET INT_VAR flag = 4 RET dual_classed_to_thief = result END
                 LPF CRE_IS_FLAG_SET INT_VAR flag = 6 RET dual_classed_to_mage = result END
 
@@ -106,10 +106,10 @@ ACTION_IF zst_2170_thac0_bards BEGIN
         LAM generate_rogue_thac0
 
         COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
-            LPF CRE_CLASS RET cre_class = result END
+            READ_BYTE 0x273 cre_class
             PATCH_IF cre_class = class_bard BEGIN
-                LPF CRE_THAC0 RET thac0 = result END
-                LPF CRE_FIRST_LEVEL RET first_level = result END
+                READ_BYTE 0x52 thac0
+                READ_BYTE 0x234 first_level
 
                 PATCH_IF (first_level = 2 OR first_level = 3) AND thac0 = 20 BEGIN
                     LPF ALTER_CRE INT_VAR thac0 = 19 END

@@ -8,7 +8,7 @@ ACTION_IF is_bgee_bg2ee_or_eet BEGIN
   
   COPY_EXISTING "SW1H24.ITM" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8011) id_name=RESOLVE_STR_REF(@8010) ench=2 END
-    LPF ITM_FLAGS RET flags = result END
+    READ_LONG 0x18 flags
 
     LPF IS_BIT_SET INT_VAR bit=9 bit_field=flags RET cold_iron = result END
     PATCH_IF NOT cold_iron BEGIN
