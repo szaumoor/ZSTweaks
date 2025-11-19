@@ -9,7 +9,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
 
     PATCH_IF NOT critical_item BEGIN
 
-        LPF ITM_CAT RET itm_cat = result END
+        READ_SHORT 0x1c itm_cat
         PATCH_IF itm_cat = 34 BEGIN // gems
 
             LPF ITM_PRICE RET p = result END

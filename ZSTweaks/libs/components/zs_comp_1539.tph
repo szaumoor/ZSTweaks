@@ -15,7 +15,7 @@ END
 ACTION_IF zst_1539_all_no_reqs BEGIN
 
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-        LPF ITM_CAT RET cat = result END
+        READ_SHORT 0x1c cat
         PATCH_IF cat = 11 BEGIN
             LPF ITM_USABILITY0 RET flags = result END
             PATCH_IF flags > 0 BEGIN
@@ -52,7 +52,7 @@ ACTION_IF zst_1539_all_no_reqs BEGIN
 END ELSE ACTION_IF zst_1539_all_reqs BEGIN
 
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-        LPF ITM_CAT RET cat = result END
+        READ_SHORT 0x1c cat
         PATCH_IF cat = 11 BEGIN
             LPF ITM_USABILITY0 RET usability_flags = result END
             PATCH_IF usability_flags > 0 BEGIN
@@ -123,8 +123,7 @@ END ELSE ACTION_IF zst_1539_all_reqs BEGIN
 END ELSE ACTION_IF zst_1539_rogues_no_reqs BEGIN
 
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-        LPF ITM_CAT RET cat = result END
-
+        READ_SHORT 0x1c cat
         PATCH_IF cat = 11 BEGIN
             LPF ITM_USABILITY0 RET usability_flags = result END
 
@@ -167,7 +166,7 @@ END ELSE ACTION_IF zst_1539_rogues_no_reqs BEGIN
 END ELSE ACTION_IF zst_1539_rogues_reqs BEGIN
 
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-        LPF ITM_CAT RET cat = result END
+        READ_SHORT 0x1c cat
         PATCH_IF cat = 11 BEGIN
             LPF ITM_USABILITY0 RET usability_flags = result END
             PATCH_IF usability_flags > 0 BEGIN

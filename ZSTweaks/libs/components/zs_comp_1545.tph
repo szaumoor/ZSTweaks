@@ -45,12 +45,13 @@ ACTION_IF zst_1545_shorty_bonuses > 0 BEGIN
 
     ACTION_MATCH zst_1545_shorty_bonuses WITH
         1
-        BEGIN COPY ~%MOD_FOLDER%/2da/tweaks/shorty_bonuses/nullified~ ~override~  END
+            BEGIN COPY ~%MOD_FOLDER%/2da/tweaks/shorty_bonuses/nullified~ ~override~  END
         2
-        BEGIN COPY ~%MOD_FOLDER%/2da/tweaks/shorty_bonuses/toned_down~ ~override~ END
+            BEGIN COPY ~%MOD_FOLDER%/2da/tweaks/shorty_bonuses/toned_down~ ~override~ END
         3
-        BEGIN COPY ~%MOD_FOLDER%/2da/tweaks/shorty_bonuses/standardized~ ~override~ END
-        DEFAULT WARN "WARNING: shorty bonuses not applied, invalid option: %zst_1545_shorty_bonuses% (1: nullify, 2: toned down, 3: standardized)"
+            BEGIN COPY ~%MOD_FOLDER%/2da/tweaks/shorty_bonuses/standardized~ ~override~ END
+        DEFAULT
+            WARN "WARNING: shorty bonuses not applied, invalid option: %zst_1545_shorty_bonuses% (1: nullify, 2: toned down, 3: standardized)"
     END
 
 END
@@ -58,6 +59,7 @@ END
 ACTION_IF zst_1545_weapon_style_bonuses BEGIN
 
     ACTION_IF zst_1545_weapon_style_twohanded BEGIN
+
         COPY_EXISTING ~STYLBONU.2DA~ ~override~
             REPLACE_TEXTUALLY ~^\(TWOHANDED-0\).+$~ ~\1 0 0 0 0 1 0 0 0~
             REPLACE_TEXTUALLY ~^\(TWOHANDED-1\).+$~ ~\1 1 0 0 0 0 0 -1 0~
@@ -66,9 +68,11 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
         COPY_EXISTING ~WEAPPROF.2DA~ ~override~
             SET new_str = RESOLVE_STR_REF(@8802)
             LPF SWAP_2DA_TABLE_VALUE INT_VAR column = 3 STR_VAR row_name = "2HANDED" replacement = "%new_str%" END
+
     END
 
     ACTION_IF zst_1545_weapon_style_onehanded BEGIN
+
         COPY_EXISTING ~STYLBONU.2DA~ ~override~
             REPLACE_TEXTUALLY ~^\(SINGLEWEAPON-0\).+$~ ~\1 0 0 0 0 0 0 1 0~
             REPLACE_TEXTUALLY ~^\(SINGLEWEAPON-1\).+$~ ~\1 1 0 0 0 -1 0 -1 1~
@@ -77,9 +81,11 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
         COPY_EXISTING ~WEAPPROF.2DA~ ~override~
             SET new_str = RESOLVE_STR_REF(@8800)
             LPF SWAP_2DA_TABLE_VALUE INT_VAR column = 3 STR_VAR row_name = "SINGLEWEAPON" replacement = "%new_str%" END
+
     END
 
     ACTION_IF zst_1545_weapon_style_shield BEGIN
+
         COPY_EXISTING ~STYLBONU.2DA~ ~override~
             REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-0\).+$~ ~\1 -1 0 1 0 0 1 0 0~
             REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-1\).+$~ ~\1 0 0 0 0 0 -2 0 0~
@@ -88,9 +94,11 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
         COPY_EXISTING ~WEAPPROF.2DA~ ~override~
             SET new_str = RESOLVE_STR_REF(@8801)
             LPF SWAP_2DA_TABLE_VALUE INT_VAR column = 3 STR_VAR row_name = "SWORDANDSHIELD" replacement = "%new_str%" END
+
     END
 
     ACTION_IF zst_1545_weapon_style_twoweapon BEGIN
+
         COPY_EXISTING ~STYLBONU.2DA~ ~override~
             REPLACE_TEXTUALLY ~^\(TWOWEAPON-0\).+$~ ~\1 -1 -2 4 6 2 0 0 0~
             REPLACE_TEXTUALLY ~^\(TWOWEAPON-1\).+$~ ~\1 -1 -1 2 4 1 0 0 0~
@@ -99,10 +107,12 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
         COPY_EXISTING ~WEAPPROF.2DA~ ~override~
             SET new_str = RESOLVE_STR_REF(@8803)
             LPF SWAP_2DA_TABLE_VALUE INT_VAR column = 3 STR_VAR row_name = "2WEAPON" replacement = "%new_str%" END
+
     END
 
     COPY_EXISTING ~STYLBONU.2DA~ ~override~
                   ~WEAPPROF.2DA~ ~override~
         PRETTY_PRINT_2DA
+        
 END
 

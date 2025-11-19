@@ -15,10 +15,6 @@ WITH_SCOPE BEGIN
             LPF ALTER_EFFECT INT_VAR parameter2 = omnistab_p2 END
     END
 
-    // COPY_EXISTING ~CHARBASE.cre~ ~override/zstwfoo.cre~
-    // COPY_EXISTING ~zstwfoo.cre~  ~override/CHARBASE.cre~
-    //     LPF ADD_CRE_EFFECT INT_VAR opcode = 303 timing = 9 parameter2 = omnistab_p2 END
-
     ACTION_IF is_bg2ee_or_eet BEGIN
 
         EXTEND_BOTTOM ~ar0602.baf~ ~%MOD_FOLDER%/baf/omnistab/ar0602.baf~ // irenicus dungeon
@@ -57,6 +53,9 @@ WITH_SCOPE BEGIN
     END
 
     VERBOSE
-    PRINT "Processed %counter% joinable creature files for omnistabbing."
+
+    ACTION_IF zs_debug BEGIN
+        PRINT "Processed %counter% joinable creature files for omnistabbing."
+    END
 
 END

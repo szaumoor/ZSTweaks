@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF zst_1546_buckler_tweak BEGIN
+
     COPY "%MOD_FOLDER%/items/bucklers" "override"
 
     OUTER_SET projectile = 345
@@ -50,7 +51,7 @@ ACTION_IF zst_1546_tower_tweak BEGIN
 END
 
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-    LPF ITM_CAT RET cat = result END
+    READ_SHORT 0x1c cat
     LPF ITM_APPEARANCE RET appearance = result END
     PATCH_IF cat = 12 AND NOT ("%appearance%" STR_EQ "  ") BEGIN // shields
         PATCH_IF zst_1546_everyone_can_use_all_shields BEGIN
