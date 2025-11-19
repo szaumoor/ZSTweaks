@@ -15,7 +15,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_PROF RET wpn_prof = result END
     LPF ITM_ABILITIES_NUM RET num_abilities = result END
     LPF ITM_APPEARANCE RET appearance = result END
-    LPF ITM_ENCH RET ench = result END
+    READ_LONG 0x60 ench
 
 	PATCH_IF wpn_cat = 16 AND wpn_prof = 96 AND ench <= 6 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ")
              AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKUK0") // KUKRI exceptions

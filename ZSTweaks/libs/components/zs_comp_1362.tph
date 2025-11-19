@@ -17,7 +17,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
              NOT ("%appearance%" STR_EQ "  ") AND
              NOT ("%SOURCE_RES%" STR_EQ "bdhamm02") // exception
     BEGIN
-        LPF ITM_ENCH RET ench = result END
+        READ_LONG 0x60 ench
         PATCH_MATCH ench
             WITH 0 1 BEGIN
                 LPF ADD_ON_HIT_EFF INT_VAR ip=0 p2=1 STR_VAR effects=~op=146,res=ZSTWMCM1;t=2,op=146,res=ZSTWMCM1~  END

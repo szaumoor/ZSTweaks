@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1533~ = 1
 END
 
-ACTION_IF NOT is_iwdee BEGIN // support for iwdee not currently determined
+ACTION_IF NOT is_iwdee BEGIN 
 
   OUTER_SET wand_missile_desc = RESOLVE_STR_REF(@7460)
   COPY_EXISTING ~WAND03.ITM~ ~override~

@@ -7,8 +7,7 @@ END
 ACTION_IF zst_1534_potions_usable_everyone BEGIN
 
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
-        LPF ITM_CAT RET cat = result END
-        PATCH_IF cat = 9 BEGIN
+        PATCH_IF SHORT_AT (0x1c) = 9 BEGIN
             LPF ALTER_ITEM INT_VAR unusable0=0 END
         END
     BUT_ONLY
@@ -18,17 +17,18 @@ END
 ACTION_IF zst_1534_potions_cannot_self_stack BEGIN
 
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-        LPF ITM_CAT RET category_itm=result END
+        READ_SHORT 0x1c cat
+        PATCH_IF cat = 9 OR cat = 13 BEGIN 
 
-        PATCH_IF category_itm = 9 OR category_itm = 13 BEGIN // if it's a potion or food item
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "GBERRY" BEGIN
                 LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
             END
+
         END
 
     BUT_ONLY
 
-    ACTION_IF NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "240" AND NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "99" BEGIN
+    ACTION_IF NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "240" AND NOT (zst_group_240_goodberry AND MOD_IS_INSTALLED "ZSTweaks.tp2" "99")BEGIN
         COPY_EXISTING ~GBERRY.ITM~ ~override~
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
         BUT_ONLY IF_EXISTS
@@ -125,8 +125,6 @@ ACTION_IF zst_1534_potion_overhaul BEGIN
                       ~POTN27.ITM~ ~override~
             LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
 
-    END ELSE BEGIN
-        ACTION_IF NOT group_component BEGIN PRINT "Potion Overhaul is currently not supported for IWDEE" END
     END
 
 END

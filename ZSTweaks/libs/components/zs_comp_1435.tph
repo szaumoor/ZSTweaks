@@ -23,6 +23,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPF ITM_PROF RET wpn_prof = result END
     LPF ITM_ABILITIES_NUM RET num_abilities = result END
 	PATCH_IF wpn_cat = 24 AND wpn_prof = 106 AND num_abilities > 0 BEGIN // darts
+
         LPF ITM_GENERAL_DESC RET id_udesc = result END
         PATCH_IF (NOT "%SOURCE_RES%" STR_EQ "DART01") AND id_udesc = basic_dart_udesc BEGIN
             LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
@@ -47,5 +48,6 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             END
             SAY_EVALUATED 0x50 ~%desc%~
         END
+        
     END
 BUT_ONLY

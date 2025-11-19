@@ -8,7 +8,6 @@ END
 ACTION_IF zst_1361_axes_crits OR zst_1361_halberds_crits BEGIN
 
     COPY ~%MOD_FOLDER%/items/ax_halb_crit~ ~override~
-
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         LPF ITM_CAT RET cat = result END
         LPF ITM_ABILITIES_NUM RET num_abilities = result END

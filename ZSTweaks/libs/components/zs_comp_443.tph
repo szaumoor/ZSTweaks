@@ -34,6 +34,7 @@ ACTION_IF NOT is_iwdee BEGIN
     END
 
     ACTION_IF zst_443_pain AND spell_symbol_pain > 0 BEGIN
+        
         LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SYMBOL_PAIN" RET spell_res END
         COPY_EXISTING ~%spell_res%.SPL~ ~override~
             LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8280) END
