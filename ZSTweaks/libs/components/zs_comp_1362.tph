@@ -6,7 +6,7 @@ END
 
 COPY ~%MOD_FOLDER%/items/hamaclub_ac~ ~override~
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-    LPF ITM_CAT  RET cat  = result END
+    READ_SHORT 0x1c cat
     READ_BYTE 0x31 prof
     READ_ASCII 0x22 appearance (2)
     READ_SHORT 0x68 num_abilities

@@ -73,8 +73,8 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                 LPF FJ_SPL_ITM_REINDEX END
 
             COPY_EXISTING ~DAGG24.itm~ ~override~
-                READ_LONG 0x4c result
-                PATCH_IF result = 0 BEGIN
+                READ_LONG 0x4c itm_weight
+                PATCH_IF itm_weight = 0 BEGIN
                     PATCH_PRINT "[[FIX]]: Fixing DAGG24.itm (Dagger +3) weight from 0 to 1"
                     LPF ALTER_ITEM INT_VAR weight = 1 END
                     SPRINT str @99990
