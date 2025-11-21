@@ -182,7 +182,7 @@ ACTION_IF zst_group_1197_misc_item_func_additions BEGIN
 END
 
 ACTION_IF zst_group_1198_ring_crusade BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1197.tph~
+  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1198.tph~
 END
 
 ACTION_IF zst_group_1203_girdle_fortitude BEGIN
