@@ -17,7 +17,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     READ_ASCII 0x22 appearance (2)
     READ_LONG 0x60 ench
 
-	PATCH_IF wpn_cat = 16 AND wpn_prof = 96 AND ench <= 6 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ")
+	PATCH_IF cat = 16 AND wpn_prof = 96 AND ench <= 6 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ")
              AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKUK0") // KUKRI exceptions
              AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKUK1") // KUKRI exceptions
              AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKUK2") // KUKRI exceptions

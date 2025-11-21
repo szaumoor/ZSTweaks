@@ -16,6 +16,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     OUTER_SET two_handed_comp_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1199~
     OUTER_SET creature_comp_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~3000~
 
+    INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_creature_group_install.txt~
     COPY_EXISTING ~BALOR.ITM~ ~override~
         LPF DELETE_EFFECT INT_VAR check_globals = 0 END
         SPRINT effect_str ~op=326,pro1=14,res=ZSTWVRPA~

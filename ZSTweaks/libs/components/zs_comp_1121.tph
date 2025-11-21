@@ -9,7 +9,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     READ_BYTE 0x31 wpn_prof
     READ_SHORT 0x68 num_abilities
     READ_ASCII 0x22 appearance (2)
-	PATCH_IF (wpn_cat = 22 OR wpn_cat = 23) AND wpn_prof = 100 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
+	PATCH_IF (cat = 22 OR cat = 23) AND wpn_prof = 100 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
         READ_LONG 0x60 ench
         PATCH_MATCH ench
             WITH 0 1 BEGIN

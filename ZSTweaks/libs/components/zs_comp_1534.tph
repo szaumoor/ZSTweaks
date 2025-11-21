@@ -28,6 +28,7 @@ ACTION_IF zst_1534_potions_cannot_self_stack BEGIN
 
     BUT_ONLY
 
+    INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_divine_group_install.txt~
     ACTION_IF NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "240" AND 
               NOT (zst_group_240_goodberry AND MOD_IS_INSTALLED "ZSTweaks.tp2" "99")
     BEGIN

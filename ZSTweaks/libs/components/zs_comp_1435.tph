@@ -22,7 +22,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     READ_SHORT 0x1c cat
     READ_BYTE 0x31 wpn_prof
     READ_SHORT 0x68 num_abilities
-	PATCH_IF wpn_cat = 24 AND wpn_prof = 106 AND num_abilities > 0 BEGIN // darts
+	PATCH_IF cat = 24 AND wpn_prof = 106 AND num_abilities > 0 BEGIN // darts
 
         READ_LONG 0x50 id_udesc
         PATCH_IF (NOT "%SOURCE_RES%" STR_EQ "DART01") AND id_udesc = basic_dart_udesc BEGIN

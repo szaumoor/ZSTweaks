@@ -72,7 +72,7 @@ ACTION_IF zst_1150_dice_spears BEGIN
         READ_BYTE 0x31 wpn_prof
         READ_SHORT 0x68 num_abilities
 
-        PATCH_IF wpn_cat = 29 AND wpn_prof = 98 AND num_abilities > 0 BEGIN
+        PATCH_IF cat = 29 AND wpn_prof = 98 AND num_abilities > 0 BEGIN
 
             PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP "cdjav[0-4][bepq]?" != 0 BEGIN
 
@@ -115,7 +115,7 @@ ACTION_IF zst_1150_dice_warhammers BEGIN
         READ_SHORT 0x1c cat
         READ_BYTE 0x31 wpn_prof
         READ_SHORT 0x68 num_abilities
-        PATCH_IF wpn_cat = 21 AND wpn_prof = 97 AND num_abilities > 0 BEGIN  // warhammers
+        PATCH_IF cat = 21 AND wpn_prof = 97 AND num_abilities > 0 BEGIN  // warhammers
             LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 4 match_dicenumber = 1 dicesize = 5 silent = 1 END
             LPF ALTER_HEADER INT_VAR match_type = 2 match_dicesize = 4 match_dicenumber = 1 dicesize = 5 silent = 1 END
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "HAMM01" BEGIN
@@ -275,7 +275,7 @@ ACTION_IF zst_1150_dice_katanas BEGIN
         READ_SHORT 0x1c cat
         READ_BYTE 0x31 wpn_prof
         READ_SHORT 0x68 num_abilities
-        PATCH_IF wpn_cat = 20 AND wpn_prof = 94 AND num_abilities > 0 BEGIN // katanas
+        PATCH_IF cat = 20 AND wpn_prof = 94 AND num_abilities > 0 BEGIN // katanas
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=10 match_dicenumber=1 dicesize=5 dicenumber=2 END
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H43" BEGIN
                 LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
@@ -311,7 +311,7 @@ ACTION_IF zst_1150_dice_bastard_swords BEGIN
         READ_SHORT 0x1c cat
         READ_BYTE 0x31 wpn_prof
         READ_SHORT 0x68 num_abilities
-        PATCH_IF wpn_cat = 20 AND wpn_prof = 89 AND num_abilities > 0  BEGIN // bastard swords
+        PATCH_IF cat = 20 AND wpn_prof = 89 AND num_abilities > 0  BEGIN // bastard swords
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=4 match_dicenumber=2 dicenumber=1 dicesize=8 END
             LPF WPN_DMG RET dmg = result END
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 damage=dmg+1 END
@@ -350,7 +350,7 @@ ACTION_IF zst_1150_dice_twohanded_swords BEGIN
         READ_SHORT 0x1c cat
         READ_BYTE 0x31 wpn_prof
         READ_SHORT 0x68 num_abilities
-        PATCH_IF wpn_cat = 20 AND wpn_prof = 93 AND num_abilities > 0 BEGIN // two-handed swords
+        PATCH_IF cat = 20 AND wpn_prof = 93 AND num_abilities > 0 BEGIN // two-handed swords
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=12 match_dicenumber=1 dicenumber=2 dicesize=6 END
             LPF WPN_DMG RET dmg = result END
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=10 match_dicenumber=1 dicesize=9 damage=dmg+1 END
