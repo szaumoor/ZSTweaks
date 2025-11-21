@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1531~ = 1
 END
 
-INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_endofinstallorder_group_install.txt~
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_divine_group_install.txt~
 
 COPY_EXISTING ~SPWI224.SPL~ ~override~  // GLITTERDUST, ALL GAMES
               ~SPPR319.SPL~ ~override~  // SUMMON INSECTS
