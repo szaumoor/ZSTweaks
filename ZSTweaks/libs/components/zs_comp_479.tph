@@ -12,7 +12,7 @@ ACTION_IF spell_static_charge > 0 BEGIN
     LPF ALTER_EFFECT INT_VAR match_opcode = 333 special = 30 END
 
     PATCH_FOR_EACH dice IN 9 10 11 12 13 14 15 16 17 18 19 20 21 22 BEGIN
-      LPF ALTER_EFFECT INT_VAR match_opode = 333 match_dicenumber = dice dicenumber = (dice - 5) END
+      LPF ALTER_EFFECT INT_VAR match_opcode = 333 match_dicenumber = dice dicenumber = (dice - 5) END
     END
 
 END
