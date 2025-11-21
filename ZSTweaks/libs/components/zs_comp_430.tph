@@ -14,7 +14,6 @@ ACTION_IF NOT is_iwdee BEGIN
     LPF ALTER_EFFECT INT_VAR header_type = 1 check_globals = 0 resist_dispel = 0 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 126 header_type = 1 check_globals = 0 parameter1 = 27 END
     LPF ADD_SPL_TGTEFF INT_VAR pwr=1 rd=0 STR_VAR effects=~op=146,p2=1,res=ZSTWGRES~ END
-    LPF SPL_ABILITIES_NUM RET num_abilities=result END
 
   COPY_EXISTING ~ZSTWGRES.SPL~ ~override~
     LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur = 6 level_cap = 20 END
