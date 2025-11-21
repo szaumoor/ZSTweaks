@@ -2248,12 +2248,12 @@ Additionally, my mod fixes in passing ICYUAN01 from attacking with long swords w
 - **Brain** golems: They resist **10% more** piercing, slashing, and missile damage (**35%**). They will also use the Ogrillon animation, with a pinkish brainy hue.
 - **Magic golem****: 27% of the non-physical damage they take is always absorbed as healing.
 - **Adamantite golems**: Normally identical to Iron Golems, except with 70% higher physical resistance, they're now slightly more powerful. They are, according to lore, *almost* impossible to defeat. Therefore:
-  - Strength increased to 25 from 24
+  - Strength increased from 24 to 25
   - Immune to missile attack damage
   - Immune to all elements and all spells. No longer absorbs damage from it. They also deflect every spell level.
   - Immune to stun, critical hits, and backstabs.
-  - They can stomp the ground, causing it to tremble, knocking down all non-flying, up-to-medium-sized creatures in a 30 feet radius, and take 5d10 crushing damage (save vs. Breath at -4 for half damage and to avoid unconsciousness).
-  - Base health increased to 96 from 80
+  - They can stomp the ground, causing it to tremble, knocking down all non-flying, up-to-medium-sized creatures in a 30 feet radius, and take 5d10 crushing damage (save vs. Breath at -4 for half damage and to avoid unconsciousness). Trying to run away of block his passage triggers them to use this ability.
+  - Base health increased from 80 to 96
   - Saving throws improved by +2
   - Armor Class: 0 (from 3)
   - THAC0: 0 (from 3)

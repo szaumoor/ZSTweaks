@@ -8,7 +8,9 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     WITH_SCOPE BEGIN
 
-        OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103")
+        OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND
+                                             (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR 
+                                             (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice))
         COPY_EXISTING ~SW2H17.ITM~ ~override~
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 12 dicesize = 2 dicenumber = 6 END
             LPF ALTER_EFFECT_EX INT_VAR probability1 = 9 STR_VAR match_probability1_ex = "(o_probability1 < 100)" END

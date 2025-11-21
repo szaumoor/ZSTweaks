@@ -4,7 +4,9 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_2200~ = 1
 END
 
-ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN
+ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR
+         (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1120_backstab_penalties)
+BEGIN
 
   COPY_EXISTING "bdsw1hca.itm" ~override~
     LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 263 END

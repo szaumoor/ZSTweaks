@@ -18,16 +18,21 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF weapon_damage_by_race INT_VAR insert_point = "-1" race = race_vampire STR_VAR spell = "ZSTWVMPA" END
 
     SET general_tweaks_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~
-    PATCH_IF zst_1450_allow_daggers AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ OR general_tweaks_installed) BEGIN // finesse
+    PATCH_IF zst_1450_allow_daggers AND
+            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ OR
+            (general_tweaks_installed AND zst_group_1450_finesse)) 
+    BEGIN
       SET ench = 4
       LPM PROBABILITY_BONUS
       LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_dagg_dart+bonus) class=class_thief STR_VAR spell=~ZSTWD%ench%~ END
     END
 
-    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR general_tweaks_installed BEGIN
+    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR
+            (general_tweaks_installed AND zst_group_1440_dagger_boost) 
+    BEGIN
       READ_STRREF 0x54 desc
       INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-          REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*THAC0[ %TAB%]*:?[ %TAB%]*\)\+[0-9]~ ~\1+5~ //thac0
+        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*THAC0[ %TAB%]*:?[ %TAB%]*\)\+[0-9]~ ~\1+5~ //thac0
       END
       SAY_EVALUATED 0x54 ~%desc%~
     END

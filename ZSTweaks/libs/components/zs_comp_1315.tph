@@ -11,14 +11,20 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ALTER_HEADER INT_VAR match_damage=2 match_to_hit=2 match_speed=2 to_hit=3 speed=1 damage=3 END
         SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
 
-        PATCH_IF zst_1450_allow_katanas AND (general_tweaks_installed OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1450") BEGIN
+        PATCH_IF zst_1450_allow_katanas AND
+                (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR 
+                (general_tweaks_installed AND zst_group_1450_finesse))
+        BEGIN
             SET ench = 3
             LPM PROBABILITY_BONUS
             LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 326 probability1=(bonus+base_sci_ka) STR_VAR match_resource = ~ZSTWK2~ resource = ~ZSTWK3~  END
 
         END
 
-        PATCH_IF zst_1150_dice_katanas AND (general_tweaks_installed OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150") BEGIN
+        PATCH_IF zst_1150_dice_katanas AND
+                (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
+                (general_comp_installed AND zst_group_1150_weapon_dice))
+        BEGIN
 
             SPRINT strref @6331
             SPRINT str @99999

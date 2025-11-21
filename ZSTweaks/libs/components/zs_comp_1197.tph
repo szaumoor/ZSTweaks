@@ -7,27 +7,34 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1997_kuotoa BEGIN
+
         COPY_EXISTING ~MISCA7.itm~ ~override~ //kuo
             LPF ALTER_ITEM INT_VAR general_desc = RESOLVE_STR_REF(@8370) END
             LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=1 projectile=0 STR_VAR icon = ~IMISC8H~ END
             LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 tmg=9 rd=0 p1=1 STR_VAR effects = ~op=0,p2=2;op=54;op=36~ END
+
    END
 
     ACTION_IF zst_1997_orb BEGIN
+
         COPY_EXISTING ~MISCA8.itm~ ~override~ //eye
             LPF ALTER_ITEM INT_VAR general_desc = RESOLVE_STR_REF(@8371) END
             LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=1 projectile=0 STR_VAR icon = ~IMISCA8~ END
             LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 tmg=9 rd=0 p1=1 STR_VAR effects = ~op=0;op=33;op=35~ END
+
     END
 
     ACTION_IF zst_1997_brain BEGIN
+
         COPY_EXISTING ~MISCBV.itm~ ~override~ // brain
             LPF ALTER_ITEM INT_VAR general_desc = RESOLVE_STR_REF(@8372) END
             LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=1 projectile=0 STR_VAR icon = ~IMISC8H~ END
             LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 tmg=9 rd=0 p1=1 STR_VAR effects = ~op=191;op=191,p2=1;op=34;op=37~ END
+
     END
 
     ACTION_IF zst_1997_strohm BEGIN
+
         COPY_EXISTING ~KEY20.itm~ ~override~ // STROHM
             SET desc = RESOLVE_STR_REF(@8373)
 
@@ -41,9 +48,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=3 projectile=0 flags=2048 STR_VAR icon = ~IKEY20~ END
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~t=3,op=146,tgt=1,res=SPWI515~ END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=91,p1=10;op=276,p1=10~ END
+
     END
 
     ACTION_IF zst_1997_shadow BEGIN
+
         COPY ~%MOD_FOLDER%/items/shadow_wardstone~ ~override~
         COPY_EXISTING ~MISC6P.itm~ ~override~ // wardstone
             SET desc = RESOLVE_STR_REF(@8374)
@@ -60,8 +69,12 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS0;op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS1;op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS2;op=177,p1=%kit_zs_shadowdancer%,res=ZSTWWDS3~ END
             END
 
-            PATCH_IF (zst_1664_crits_all OR zst_1664_crits_iouns) AND MOD_IS_INSTALLED "ZSTweaks.tp2" "1664" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1001" BEGIN
+            PATCH_IF (zst_1664_crits_all OR zst_1664_crits_iouns) AND 
+                      (MOD_IS_INSTALLED "ZSTweaks.tp2" "1664" OR
+                      (MOD_IS_INSTALLED "ZSTweaks.tp2" "1001" AND zst_group_1664_ioun_circlet_crits))
+            BEGIN
                 LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
             END
+
     END
 END

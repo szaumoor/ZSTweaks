@@ -12,7 +12,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ALTER_EFFECT INT_VAR match_opcode=12 dicesize=2 dicenumber=1 parameter1=0 special=1024 END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,stype=1,sbonus=2,res=ZSTWBRKA,p2=3,p1=%general_gianthumanoid%~ END
 
-    PATCH_IF zst_1150_dice_warhammers AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN
+    PATCH_IF zst_1150_dice_warhammers AND
+            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
+            (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice))
+    BEGIN
 
       READ_STRREF 0x54 desc
       SPRINT str @99999

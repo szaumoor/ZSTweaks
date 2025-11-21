@@ -155,6 +155,16 @@ BEGIN
 	LPF ADD_ITEM_EFFECT INT_VAR type header probability1 probability2 insert_point opcode=326 target=1 timing=1 parameter1=race parameter2=104 STR_VAR resource="%spell%" END
 END
 
+DEFINE_PATCH_MACRO RM_STAT_REQS BEGIN
+
+    WRITE_SHORT 0x26 0 // STR
+    WRITE_BYTE 0x2c 0 // DEX
+    WRITE_BYTE 0x2e 0 // WIS
+    WRITE_BYTE 0x2a 0 // INT
+    WRITE_BYTE 0x30 0 // CON
+    WRITE_BYTE 0x32 0 // CHA
+END
+
 DEFINE_PATCH_FUNCTION RM_STAT_REQS
 INT_VAR // exceptions
     str = "-1"

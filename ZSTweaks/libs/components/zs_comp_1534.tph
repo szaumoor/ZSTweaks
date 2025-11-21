@@ -28,7 +28,9 @@ ACTION_IF zst_1534_potions_cannot_self_stack BEGIN
 
     BUT_ONLY
 
-    ACTION_IF NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "240" AND NOT (zst_group_240_goodberry AND MOD_IS_INSTALLED "ZSTweaks.tp2" "99")BEGIN
+    ACTION_IF NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "240" AND 
+              NOT (zst_group_240_goodberry AND MOD_IS_INSTALLED "ZSTweaks.tp2" "99")
+    BEGIN
         COPY_EXISTING ~GBERRY.ITM~ ~override~
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
         BUT_ONLY IF_EXISTS

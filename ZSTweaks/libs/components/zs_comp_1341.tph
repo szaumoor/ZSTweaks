@@ -9,8 +9,12 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     WITH_SCOPE BEGIN
 
         OUTER_SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
-        OUTER_SET finesse_installed = zst_1450_allow_katanas AND (general_tweaks_installed OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1450")
-        OUTER_SET katanas_comp_installed = zst_1150_dice_katanas AND (general_tweaks_installed OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150")
+        OUTER_SET finesse_installed = zst_1450_allow_katanas AND
+                                     (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR
+                                     (general_tweaks_installed AND zst_group_1450_finesse))
+        OUTER_SET katanas_comp_installed = zst_1150_dice_katanas AND 
+                                          (MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" OR 
+                                          (general_tweaks_installed AND zst_group_1150_weapon_dice))
 
         COPY_EXISTING ~SW1H70.ITM~ ~override~
             LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6072) ench=4 END

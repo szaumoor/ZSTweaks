@@ -8,7 +8,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1520_keldsword BEGIN
 
-        OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103")
+        OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND
+                                             (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
+                                             (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND
+                                              zst_group_1150_weapon_dice)) 
 
         COPY_EXISTING "NPSW03.ITM" ~override~
             LPF ALTER_ITEM INT_VAR ench=3 END

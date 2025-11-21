@@ -13,7 +13,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,tmg=0,dsize=4,dnum=1,p2=%op12_cold%,spec=1024~ END
     LPF ADD_EQUIPPED_EFF INT_VAR p1=kit_barbarian p2=9 STR_VAR effects=~op=177,res=ZSTWWARA;op=177,res=ZSTWWARB;op=177,res=ZSTWWARC;op=177,res=ZSTWWARD;op=177,res=ZSTWWARE~ END
 
-    PATCH_IF zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103") BEGIN
+    PATCH_IF zst_1150_dice_twohanded_swords AND
+            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
+            (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice)) 
+    BEGIN
       SPRINT new_description @6861
       SPRINT str @99999
       LPF WPN_DMG RET dmg = result END

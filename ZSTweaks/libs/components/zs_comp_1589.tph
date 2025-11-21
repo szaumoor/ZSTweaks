@@ -21,7 +21,11 @@ ACTION_IF NOT is_iwdee BEGIN
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7580) END
         LPF ADD_EQUIPPED_EFF INT_VAR p2=1 spec=1 STR_VAR effects=~op=341,res=ZSTWRASH;op=301,p1=1~ END
 
-    ACTION_IF group_component OR (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1470~ AND MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1588~) BEGIN
+    OUTER_SET required_comps_installed = (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1470~ AND
+                                          MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1588~) OR
+                                         (group_component AND zst_group_1470_adjatha_drinker AND zst_group_1588_waters_edge)
+
+    ACTION_IF required_comps_installed BEGIN
         INCLUDE ~%MOD_FOLDER%/patches/item_upgrade/scripts/zs_watertalon.tph~
     END
 

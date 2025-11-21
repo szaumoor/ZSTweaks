@@ -13,7 +13,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ADD_ON_HIT_EFF INT_VAR ip=0 tmg=1 tgt=1 STR_VAR effects=~op=17,pro1=69,pro2=50,p1=2;op=17,pro1=84,pro2=70,p1=3;op=17,pro1=94,pro2=85,p1=4;op=17,pro1=100,pro2=95,p1=5~ END
     LPF DELETE_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 14022 END
 
-  ACTION_IF group_component OR (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1588~ AND MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1589~) BEGIN
+  OUTER_SET required_comps_installed = (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1588~ AND
+                                        MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1589~) OR
+                                       (group_component AND zst_group_1588_waters_edge AND zst_group_1589_rashad_talon)
+
+  ACTION_IF required_comps_installed BEGIN
     INCLUDE ~%MOD_FOLDER%/patches/item_upgrade/scripts/zs_watertalon.tph~
   END
 

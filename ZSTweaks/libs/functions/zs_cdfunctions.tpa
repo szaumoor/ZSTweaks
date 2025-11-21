@@ -3,6 +3,7 @@
 /////                                                  \\\\\
 
 // got tired of crappy ALTER_ITEM_HEADER and ALTER_SPELL_HEADER
+
 DEFINE_PATCH_FUNCTION ALTER_HEADER
 
   // defines what we're going to check

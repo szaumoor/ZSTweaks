@@ -11,7 +11,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 40 STR_VAR effects = ~op=29~ END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,tmg=9,p2=%op12_electricity%,dsize=3,dnum=1,spec=1024~ END
 
-    PATCH_IF zst_1150_dice_wakininja AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150") BEGIN
+    PATCH_IF zst_1150_dice_wakininja AND 
+            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
+            (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice)) 
+    BEGIN
       SPRINT strref @6120
       SPRINT str @99999
       LPF WPN_DMG RET dmg = result END

@@ -8,8 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     OUTER_SET wisdom_drained = RESOLVE_STR_REF(@7165)
     OUTER_SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
-    OUTER_SET wakizashi_comp_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "1150"
-    OUTER_SET wpn_dice_comp_installed = zst_1150_dice_wakininja AND (general_tweaks_installed OR wakizashi_comp_installed)
+    OUTER_SET wpn_dice_comp_installed = (MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" OR (general_tweaks_installed AND zst_group_1150_weapon_dice))
 
     COPY ~%MOD_FOLDER%/items/kachiko~ ~override~
     COPY_EXISTING "WAWAK.ITM" ~override~

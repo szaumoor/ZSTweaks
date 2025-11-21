@@ -6,7 +6,8 @@ END
 
 WITH_SCOPE BEGIN
 
-    OUTER_SET no_valygar_gear_comp = NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1643" AND NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1379"
+    OUTER_SET no_valygar_gear_comp = NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1643" 
+                                     AND NOT (MOD_IS_INSTALLED "ZSTweaks.tp2" "1379" AND zst_group_1643_corthala_blade)
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
         PATCH_IF NOT "%SOURCE_RES%" STR_EQ "l#GNOSW" AND // tongue of thaxx, SotSC

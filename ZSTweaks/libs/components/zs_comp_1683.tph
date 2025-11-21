@@ -13,7 +13,9 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=42,p1=2,p2=3~ END
             LPF ADD_ON_HIT_EFF INT_VAR spec=1024 STR_VAR effects=~op=12,dsize=2,dnum=1,p2=%op12_magic%;op=12,p1=2,p2=%op12_magic%,dsize=4,dnum=1,pro1=32~ END
 
-            PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
+            PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR 
+                    (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ AND zst_group_1440_dagger_boost)
+            BEGIN
                 READ_STRREF 0x54 desc
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                     REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*THAC0[ %TAB%]*:?[ %TAB%]*\)\+[0-9]~ ~\1+5~ //thac0

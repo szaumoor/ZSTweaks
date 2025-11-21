@@ -21,7 +21,9 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       LPF ALTER_HEADER INT_VAR to_hit = 5 END
       LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=189,p2=1~ END
 
-      PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN // stoneskin vorpal prot
+      PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ OR
+              (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ AND zst_group_1541_vorpal_tweak)
+      BEGIN
 
         LPF DELETE_EFFECT STR_VAR match_resource = ~ZSTWVRPA~ END
         LPF ALTER_EFFECT INT_VAR match_probability1 = 24 probability1 = 19 END
@@ -36,11 +38,9 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
       END
 
-      
       LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 81 parameter2 = 0 END // bullshit fixed from deafness opcode
       LPF ALTER_EFFECT INT_VAR match_opcode = 58 parameter1 = 25 parameter2 = 2 END
       
-
       LPF ADD_ON_HIT_EFF INT_VAR p1=2 spec=1024 STR_VAR effects = ~op=12,p2=%op12_fire%;op=12,p2=%op12_cold%~ END
       LPF ADD_ON_HIT_EFF INT_VAR p2=104 STR_VAR effects = ~op=326,p1=%race_demonic%,res=ZSTWPLNT;op=326,p1=%race_planetar%,res=ZSTWPLNT;op=326,p1=%race_darkplanetar%,res=ZSTWPLNT;op=326,p1=%race_solar%,res=ZSTWPLNT;op=326,p1=%race_antisolar%,res=ZSTWPLNT;op=326,p2=1,res=ZSTWPLNT~ END
 
