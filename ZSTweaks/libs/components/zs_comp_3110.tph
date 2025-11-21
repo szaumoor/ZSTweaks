@@ -11,7 +11,6 @@ OUTER_SET movement_boost = 3
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     READ_BYTE 0x272 race
     PATCH_IF race = race_yuanti AND
-        // exceptions
          NOT "%SOURCE_RES%" STR_EQ "zsipyua1" // formless serpent from my item pack
     BEGIN
         WRITE_SHORT 0x4c (THIS - 2)

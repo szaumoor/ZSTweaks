@@ -17,7 +17,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     PATCH_IF zst_1450_allow_clubs AND 
             (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR 
-            (general_tweaks_installed AND zst_group_1450_finesse)) 
+            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ AND zst_group_1450_finesse)) 
     BEGIN
       SET ench = 3
       LPM PROBABILITY_BONUS
