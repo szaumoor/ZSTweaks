@@ -6,6 +6,7 @@ END
 
 WITH_SCOPE BEGIN
 
+    INCLUDE "%MOD_FOLDER%/configurations/zstweaks_npc_group_install.txt"
     OUTER_SET no_valygar_gear_comp = NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1643" 
                                      AND NOT (MOD_IS_INSTALLED "ZSTweaks.tp2" "1379" AND zst_group_1643_corthala_blade)
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~

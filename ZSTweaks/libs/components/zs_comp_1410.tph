@@ -7,7 +7,8 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1410_ureaver_dispel OR zst_1410_ureaver_dicesize BEGIN
-
+        
+        INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
         COPY_EXISTING ~DAM5.EFF~ ~override~
             LPF ALTER_EFF_FILE INT_VAR special=1024 END
         OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND 

@@ -10,101 +10,101 @@ INCLUDE ~%config_path%~
 COPY ~%config_path%~ ~override~
 
 ACTION_IF zst_group_120_magic_weapons_apr BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_120.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_120.tph" END
 END
 
 ACTION_IF zst_group_443_symbol_spells BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_443.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_443.tph" END
 END
 
 ACTION_IF zst_group_1120_backstab_penalties BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1120.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1120.tph" END
 END
 
 ACTION_IF zst_group_1121_flails_morningstars BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1121.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1121.tph" END
 END
 
 ACTION_IF zst_group_1150_weapon_dice BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1150.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1150.tph" END
 END
 
 ACTION_IF zst_group_1361_axe_halb_crits BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1361.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1361.tph" END
 END
 
 ACTION_IF zst_group_1362_blunt_wpn_ac BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1362.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1362.tph" END
 END
 
 ACTION_IF zst_group_1435_dart_range_speed BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1435.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1435.tph" END
 END
 
 ACTION_IF zst_group_1440_dagger_boost BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1440.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1440.tph" END
 END
 
 ACTION_IF zst_group_1450_finesse BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1450.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1450.tph" END
 END
 
 ACTION_IF zst_group_1533_wand_rebalance BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1533.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1533.tph" END
 END
 
 ACTION_IF zst_group_1534_potion_rebalance BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1534.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1534.tph" END
 END
 
 ACTION_IF zst_group_1537_instant_cure_poison BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1537.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1537.tph" END
 END
 
 ACTION_IF zst_group_1650_robe_appearance BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1650.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1650.tph~ END
 END
 
 ACTION_IF zst_group_1541_vorpal_tweak BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1541.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1541.tph" END
 END
 
 ACTION_IF zst_group_1538_jewelry_price BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1538.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1538.tph" END
 END
 
 ACTION_IF zst_group_1539_scroll_usability BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1539.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1539.tph" END
 END
 
 ACTION_IF zst_group_1544_scrolls_at_char_lvl BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1544.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1544.tph" END
 END
 
 ACTION_IF zst_group_1545_character_stats BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1545.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1545.tph" END
 END
 
 ACTION_IF zst_group_1546_shield_overhaul BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1546.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1546.tph" END
 END
 
 ACTION_IF zst_group_1547_protection_vs_undead BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1547.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1547.tph" END
 END
 
 ACTION_IF zst_group_1600_omnistabbing_tweaks BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1600.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1600.tph" END
 END
 
 ACTION_IF zst_group_1360_light_crossbow BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1360.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1360.tph" END
 END
 
 ACTION_IF zst_group_1329_disruption_wpn_tweak BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1329.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1329.tph" END
 END
 
 ACTION_IF zst_group_1397_ranged_sneak_attack BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1397.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1397.tph" END
 END

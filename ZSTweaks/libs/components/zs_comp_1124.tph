@@ -10,109 +10,109 @@ INCLUDE ~%config_path%~
 COPY ~%config_path%~ ~override~
 
 ACTION_IF zst_group_1125_ninjato_scarlet BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1125.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1125.tph~ END
 END
 
 ACTION_IF zst_group_1126_blackrazor BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1126.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1126.tph~ END
 END
 
 ACTION_IF zst_group_1127_peridan BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1127.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1127.tph~ END
 END
 
 ACTION_IF zst_group_1210_equalizer BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1210.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1210.tph~ END
 END
 
 ACTION_IF zst_group_1220_ras BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1220.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1220.tph~ END
 END
 
 ACTION_IF zst_group_1230_sword_mask BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1230.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1230.tph~ END
 END
 
 ACTION_IF zst_group_1240_purifier BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1240.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1240.tph~ END
 END
 
 ACTION_IF zst_group_1250_yamato BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1250.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1250.tph~ END
 END
 
 ACTION_IF zst_group_1260_usuno_blade BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1260.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1260.tph~ END
 END
 
 ACTION_IF zst_group_1270_spectral_brand BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1270.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1270.tph~ END
 END
 
 ACTION_IF zst_group_1315_dakkon_katana BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1315.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1315.tph~ END
 END
 
 ACTION_IF zst_group_1319_holy_sword_tyr BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1319.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1319.tph~ END
 END
 
 ACTION_IF zst_group_1341_hindos_doom BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1341.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1341.tph~ END
 END
 
 ACTION_IF zst_group_1470_adjatha_drinker BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1470.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1470.tph~ END
 END
 
 ACTION_IF zst_group_1550_drizzt_weapons BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1550.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1550.tph~ END
 END
 
 ACTION_IF zst_group_1580_hawksight BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1580.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1580.tph~ END
 END
 
 ACTION_IF zst_group_1582_vexation_sod BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1582.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1582.tph~ END
 END
 
 ACTION_IF zst_group_1583_kachiko_waki BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1583.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1583.tph~ END
 END
 
 ACTION_IF zst_group_1584_brass_blade BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1584.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1584.tph~ END
 END
 
 ACTION_IF zst_group_1585_arbane_sword BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1585.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1585.tph~ END
 END
 
 ACTION_IF zst_group_1586_blade_searing BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1586.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1586.tph~ END
 END
 
 ACTION_IF zst_group_1588_waters_edge BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1588.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1588.tph~ END
 END
 
 ACTION_IF zst_group_1589_rashad_talon BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1589.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1589.tph~ END
 END
 
 ACTION_IF zst_group_1596_shadow_blade BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1596.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1596.tph~ END
 END
 
 ACTION_IF zst_group_1598_cutthroat BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1598.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1598.tph~ END
 END
 
 ACTION_IF zst_group_1605_burning_earth BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1605.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1605.tph~ END
 END
 
 ACTION_IF zst_group_1701_ilbratha BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1701.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1701.tph~ END
 END

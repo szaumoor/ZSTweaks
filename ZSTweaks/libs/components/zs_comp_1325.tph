@@ -6,6 +6,7 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
+  INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
   COPY ~%MOD_FOLDER%/items/borok_fist~ ~override~
   COPY_EXISTING ~HAMM05.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7730) END

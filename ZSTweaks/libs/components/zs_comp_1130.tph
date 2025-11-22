@@ -18,7 +18,9 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=40~ END
             LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 STR_VAR res=~ZSTW_DG6~ effects=~op=12,dsize=4,dnum=1,p2=%op12_acid%,spec=1024;op=177,p1=%race_elf%;op=177,p1=%race_beholder%;op=177,p1=%race_drider%;op=177,p1=%race_hook_horror%;op=177,p1=%race_kuo_toa%;op=177,p1=%race_mind_flayer%;op=177,p1=%race_spider%;op=177,p1=%race_umberhulk%;op=177,p1=%race_sahuagin%~ END
 
-            PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR (general_tweaks_installed AND zst_group_1440_dagger_boost)BEGIN
+            PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR
+                    (general_tweaks_installed AND zst_group_1440_dagger_boost)
+            BEGIN
                 READ_STRREF 0x54 desc
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                     REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*THAC0[ %TAB%]*:?[ %TAB%]*\)\+[0-9]~ ~\1+5~ //thac0

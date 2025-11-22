@@ -4,6 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1371~ = 1
 END
 
+INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
 COPY_EXISTING ~AROW07.ITM~ ~override~
     LPF ALTER_EFFECT INT_VAR check_globals = 0 savingthrow = 1 savebonus = "%zst_1371_save_penalty%" END
 

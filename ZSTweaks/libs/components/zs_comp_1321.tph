@@ -5,7 +5,8 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
-
+  
+  INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
   COPY ~%MOD_FOLDER%/items/bone_club~ ~override~
   COPY_EXISTING ~BLUN23.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6361) id_name=RESOLVE_STR_REF(@6360) ench=3 END

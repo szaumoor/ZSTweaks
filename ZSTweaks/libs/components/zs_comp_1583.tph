@@ -54,70 +54,70 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             END
         END
 
-        ACTION_IF zst_1583_kachiko_upgrade BEGIN
+    ACTION_IF zst_1583_kachiko_upgrade BEGIN
 
-            COPY ~%MOD_FOLDER%/items/_upgrades/kachiko~ ~override~
-            COPY_EXISTING ~ZSTWAWAK.ITM~ ~override~
-                LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@7163) id_desc=RESOLVE_STR_REF(@7164) END
-                LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = wisdom_drained END
-                LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_probability1=14 parameter1=RESOLVE_STR_REF(@7167) END
-                PATCH_IF general_tweaks_installed OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" BEGIN
-                    SET ench = 5
-                    LPM PROBABILITY_BONUS
-                    PATCH_IF NOT zst_1450_allow_bards BEGIN
-                        LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) class=class_thief STR_VAR spell=~ZSTWW5~ END
-                    END ELSE BEGIN
-                        LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWW5~ END
+        COPY ~%MOD_FOLDER%/items/_upgrades/kachiko~ ~override~
+        COPY_EXISTING ~ZSTWAWAK.ITM~ ~override~
+            LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@7163) id_desc=RESOLVE_STR_REF(@7164) END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = wisdom_drained END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_probability1=14 parameter1=RESOLVE_STR_REF(@7167) END
+            PATCH_IF general_tweaks_installed OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" BEGIN
+                SET ench = 5
+                LPM PROBABILITY_BONUS
+                PATCH_IF NOT zst_1450_allow_bards BEGIN
+                    LPF weapon_damage_by_class INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) class=class_thief STR_VAR spell=~ZSTWW5~ END
+                END ELSE BEGIN
+                    LPF weapon_damage_by_custom INT_VAR type=1 probability1=(base_sling_wk_nj+bonus) custom_p2=zs_thief_or_bard_all STR_VAR spell=~ZSTWW5~ END
+                END
+            END
+
+            PATCH_IF wpn_dice_comp_installed BEGIN
+
+                PATCH_IF zst_1150_dice_wakininja BEGIN
+                    LPF ALTER_HEADER INT_VAR match_type = 1 dicesize = 4 dicenumber = 2 END
+                    READ_STRREF 0x54 desc
+                    SPRINT str @99999
+                    LPF WPN_DMG RET dmg = result END
+
+                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
                     END
+                    SAY_EVALUATED 0x54 ~%desc%~
+
+                END ELSE BEGIN
+                    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7164) END
                 END
 
-                PATCH_IF wpn_dice_comp_installed BEGIN
+                PATCH_IF zst_1150_dice_wakislashing BEGIN
 
-                    PATCH_IF zst_1150_dice_wakininja BEGIN
-                        LPF ALTER_HEADER INT_VAR match_type = 1 dicesize = 4 dicenumber = 2 END
-                        READ_STRREF 0x54 desc
-                        SPRINT str @99999
-                        LPF WPN_DMG RET dmg = result END
+                    LPF ALTER_HEADER INT_VAR damage_type = 7 END
+                    SPRINT str @99999 // damage
+                    SPRINT str_type @99997
+                    SPRINT str_new_type @99994
+                    READ_STRREF 0x54 desc
 
-                        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]8~ ~\12d4~
-                        END
-                        SAY_EVALUATED 0x54 ~%desc%~
-
-                    END ELSE BEGIN
-                        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7164) END
+                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*.*[ %TAB%]*\)%str_type%~ ~\1%str_new_type%~
                     END
+                    SAY_EVALUATED 0x54 ~%desc%~
 
-                    PATCH_IF zst_1150_dice_wakislashing BEGIN
-
-                        LPF ALTER_HEADER INT_VAR damage_type = 7 END
-                        SPRINT str @99999 // damage
-                        SPRINT str_type @99997
-                        SPRINT str_new_type @99994
-                        READ_STRREF 0x54 desc
-
-                        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                            REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*.*[ %TAB%]*\)%str_type%~ ~\1%str_new_type%~
-                        END
-                        SAY_EVALUATED 0x54 ~%desc%~
-
-                    END
                 END
+            END
 
-                PATCH_IF has_zs_shadowdancer_overhaul BEGIN
-                    LPF ADD_EQUIPPED_EFF INT_VAR p1=kit_zs_shadowdancer p2=9 STR_VAR effects=~op=177,res=ZSTWKCH4;op=177,res=ZSTWKCH5;op=177,res=ZSTWKCH6~ END
-                    LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 pwr=1 rd=1 STR_VAR effects = ~op=326,p2=109,p1=%kit_zs_shadowdancer%,res=ZSTWKCH3~ END
-                END
+            PATCH_IF has_zs_shadowdancer_overhaul BEGIN
+                LPF ADD_EQUIPPED_EFF INT_VAR p1=kit_zs_shadowdancer p2=9 STR_VAR effects=~op=177,res=ZSTWKCH4;op=177,res=ZSTWKCH5;op=177,res=ZSTWKCH6~ END
+                LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 pwr=1 rd=1 STR_VAR effects = ~op=326,p2=109,p1=%kit_zs_shadowdancer%,res=ZSTWKCH3~ END
+            END
 
-                PATCH_IF spell_shout > 0 BEGIN
-                    LPF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHOUT" RET spell_res END
-                    LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPWI913" resource = "%spell_res%" END
-                END
+            PATCH_IF spell_shout > 0 BEGIN
+                LPF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHOUT" RET spell_res END
+                LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPWI913" resource = "%spell_res%" END
+            END
 
-                PATCH_IF spell_great_shout > 0 BEGIN
-                    LPF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_GREAT_SHOUT" RET spell_res END
-                    LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPWI913" resource = "%spell_res%" END
-                END
+            PATCH_IF spell_great_shout > 0 BEGIN
+                LPF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_GREAT_SHOUT" RET spell_res END
+                LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPWI913" resource = "%spell_res%" END
+            END
 
             COMPILE ~%MOD_FOLDER%/dlg/zs_kachiko_upgrade.d~
             EXTEND_BOTTOM ~botsmith.bcs~ ~%MOD_FOLDER%/baf/kachiko/botsmith.baf~

@@ -10,57 +10,57 @@ INCLUDE ~%config_path%~
 COPY ~%config_path%~ ~override~
 
 ACTION_IF zst_group_1000_poisoned_throw_dagg BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1000.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1000.tph" END
 END
 
 ACTION_IF zst_group_1130_bone_blade BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1130.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1130.tph" END
 END
 
 ACTION_IF zst_group_1140_dagger_star BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1140.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1140.tph" END
 END
 
 ACTION_IF zst_group_1490_neb_dagger BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1490.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1490.tph" END
 END
 
 ACTION_IF zst_group_1630_jade_fang BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1630.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1630.tph" END
 END
 
 ACTION_IF zst_group_1660_heart_golem BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1660.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1660.tph" END
 END
 
 ACTION_IF zst_group_1670_silver_dagger BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1670.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1670.tph" END
 END
 
 ACTION_IF zst_group_1680_stiletto_demarchess BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1680.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1680.tph" END
 END
 
 ACTION_IF zst_group_1681_elements_fury BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1681.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1681.tph" END
 END
 
 ACTION_IF zst_group_1682_acid_etched_dagger BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1682.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1682.tph" END
 END
 
 ACTION_IF zst_group_1683_gemblade BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1683.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1683.tph" END
 END
 
 ACTION_IF zst_group_1684_throwing_dagg_melee BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1684.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1684.tph" END
 END
 
 ACTION_IF zst_group_1686_life_stealer BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1686.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1686.tph" END
 END
 
 ACTION_IF zst_group_1530_throw_dagg_nonsense BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1530.tph"
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1530.tph" END
 END

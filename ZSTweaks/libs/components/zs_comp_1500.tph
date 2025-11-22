@@ -6,6 +6,7 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
+  INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
   COPY_EXISTING "NPSW01.ITM" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6261) id_name=RESOLVE_STR_REF(@6260) ench=4 END
 

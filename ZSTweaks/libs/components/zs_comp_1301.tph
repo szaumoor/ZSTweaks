@@ -4,50 +4,51 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1301~ = 1
 END
 
+OUTER_SET group_component = 1
 OUTER_SPRINT config_path ~%MOD_FOLDER%/configurations/zstweaks_blunt_axe_group_install.txt~
 INCLUDE ~%config_path%~
 COPY ~%config_path%~ ~override~
 
 ACTION_IF zst_group_1310_flail_easthaven BEGIN
-  INCLUDE ~ZSTweaks/libs/components/zs_comp_1310.tph~
+  WITH_SCOPE BEGIN INCLUDE ~ZSTweaks/libs/components/zs_comp_1310.tph~ END
 END
 
 ACTION_IF zst_group_1311_mace_krotan BEGIN
-  INCLUDE ~ZSTweaks/libs/components/zs_comp_1311.tph~
+  WITH_SCOPE BEGIN INCLUDE ~ZSTweaks/libs/components/zs_comp_1311.tph~ END
 END
 
 ACTION_IF zst_group_1312_mace_skullcrusher BEGIN
-  INCLUDE ~ZSTweaks/libs/components/zs_comp_1312.tph~
+  WITH_SCOPE BEGIN INCLUDE ~ZSTweaks/libs/components/zs_comp_1312.tph~ END
 END
 
 ACTION_IF zst_group_1313_mace_gnasher BEGIN
-  INCLUDE ~ZSTweaks/libs/components/zs_comp_1313.tph~
+  WITH_SCOPE BEGIN INCLUDE ~ZSTweaks/libs/components/zs_comp_1313.tph~ END
 END
 
 ACTION_IF zst_group_1314_mace_jerrod BEGIN
-  INCLUDE ~ZSTweaks/libs/components/zs_comp_1314.tph~
+  WITH_SCOPE BEGIN INCLUDE ~ZSTweaks/libs/components/zs_comp_1314.tph~ END
 END
 
 ACTION_IF zst_group_1320_flail_ages BEGIN
-  INCLUDE ~ZSTweaks/libs/components/zs_comp_1320.tph~
+  WITH_SCOPE BEGIN INCLUDE ~ZSTweaks/libs/components/zs_comp_1320.tph~ END
 END
 
 ACTION_IF zst_group_1321_club_bone BEGIN
-  INCLUDE ~ZSTweaks/libs/components/zs_comp_1321.tph~
+  WITH_SCOPE BEGIN INCLUDE ~ZSTweaks/libs/components/zs_comp_1321.tph~ END
 END
 
 ACTION_IF zst_group_1324_flail_wyvern_tail BEGIN
-  INCLUDE ~ZSTweaks/libs/components/zs_comp_1324.tph~
+  WITH_SCOPE BEGIN INCLUDE ~ZSTweaks/libs/components/zs_comp_1324.tph~ END
 END
 
 ACTION_IF zst_group_1325_hammer_borok_fist BEGIN
-  INCLUDE ~ZSTweaks/libs/components/zs_comp_1325.tph~
+  WITH_SCOPE BEGIN INCLUDE ~ZSTweaks/libs/components/zs_comp_1325.tph~ END
 END
 
 ACTION_IF zst_group_1327_club_detonation BEGIN
-  INCLUDE ~ZSTweaks/libs/components/zs_comp_1327.tph~
+  WITH_SCOPE BEGIN INCLUDE ~ZSTweaks/libs/components/zs_comp_1327.tph~ END
 END
 
 ACTION_IF zst_group_1328_mace_storm_star BEGIN
-  INCLUDE ~ZSTweaks/libs/components/zs_comp_1328.tph~
+  WITH_SCOPE BEGIN INCLUDE ~ZSTweaks/libs/components/zs_comp_1328.tph~ END
 END

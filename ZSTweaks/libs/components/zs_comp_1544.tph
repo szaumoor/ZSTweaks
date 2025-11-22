@@ -20,7 +20,9 @@ WITH_SCOPE BEGIN
         SET copy_header=0
         SET insert_point=~-1~
         SPRINT icon ~~
+
         LPM ADD_SPELL_HEADER
+
         SET parameter1= index+1
         SET header=index+1
         SET opcode = op
@@ -38,7 +40,7 @@ WITH_SCOPE BEGIN
         SET savebonus = 0
         SET special = 0
         SET insert_point = "-1"
-        SPRINT resource "%spell%"
+        SPRINT resource "%original_spell%"
         LPM ADD_SPELL_EFFECT
     END
 
@@ -72,8 +74,8 @@ WITH_SCOPE BEGIN
                     PATCH_IF op = 146 OR op = 148 BEGIN
                         ++found
                         PATCH_IF found = 1 BEGIN
-                            READ_ASCII ( fx_off + 0x14 ) spell
-                            INNER_PATCH_FILE ~%spell%.spl~ BEGIN
+                            READ_ASCII ( fx_off + 0x14 ) original_spell
+                            INNER_PATCH_FILE ~%original_spell%.spl~ BEGIN
                                 READ_LONG 0x64 offset
                                 SET header_type = BYTE_AT ( offset )
                                 SET tgt = BYTE_AT ( offset + 0xc )

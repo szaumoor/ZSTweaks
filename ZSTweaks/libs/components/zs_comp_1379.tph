@@ -11,61 +11,61 @@ INCLUDE ~%config_path%~
 COPY ~%config_path%~ ~override~
 
 ACTION_IF zst_group_1380_haerdalis_blades BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1380.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1380.tph~ END
 END
 
 ACTION_IF zst_group_1480_yoshimo_katana BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1480.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1480.tph~ END
 END
 
 ACTION_IF zst_group_1500_mazzy_weapons BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1500.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1500.tph~ END
 END
 
 ACTION_IF zst_group_1510_anomen_shield BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1510.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1510.tph~ END
 END
 
 ACTION_IF zst_group_1520_keldorn_gear BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1520.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1520.tph~ END
 END
 
 ACTION_IF zst_group_1640_dorn_blades BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1640.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1640.tph~ END
 END
 
 ACTION_IF zst_group_1641_item_creation_npc BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1641.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1641.tph~ END
 END
 
 ACTION_IF zst_group_1642_nalia_ring BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1642.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1642.tph~ END
 END
 
 ACTION_IF zst_group_1643_corthala_blade BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1643.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1643.tph~ END
 END
 
 ACTION_IF zst_group_1644_gear_restriction BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1644.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1644.tph~ END
 END
 
 ACTION_IF zst_group_1645_cernd_cloak BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1645.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1645.tph~ END
 END
 
 ACTION_IF zst_group_1646_sarevok BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1646.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1646.tph~ END
 END
 
 ACTION_IF zst_group_1647_sharteel BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1647.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1647.tph~ END
 END
 
 ACTION_IF zst_group_2240_hexxat_blood_drain BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2240.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2240.tph~ END
 END
 
 ACTION_IF zst_group_2250_edwin_amulet BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2250.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2250.tph~ END
 END

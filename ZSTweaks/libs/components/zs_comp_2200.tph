@@ -4,6 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_2200~ = 1
 END
 
+INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
 ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR
          (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1120_backstab_penalties)
 BEGIN

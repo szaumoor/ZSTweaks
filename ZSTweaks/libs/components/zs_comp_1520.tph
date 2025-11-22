@@ -7,7 +7,8 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1520_keldsword BEGIN
-
+        
+        INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
         OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND
                                              (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
                                              (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND

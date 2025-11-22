@@ -7,7 +7,8 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1240_purifier_evil OR zst_1240_purifier_dispel BEGIN
-
+        
+        INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
         COPY_EXISTING "SW1H64A.EFF" ~override~
                       "SW1H65A.EFF" ~override~
             LPF ALTER_EFF_FILE INT_VAR special=1024 END

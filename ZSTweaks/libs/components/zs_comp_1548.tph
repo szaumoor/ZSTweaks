@@ -7,9 +7,11 @@ END
 COPY ~%MOD_FOLDER%/items/voidweapons/ZSTWVD00.SPL~ ~override~
      ~%MOD_FOLDER%/items/voidweapons/ZSTWVD01.SPL~ ~override~
 
-ACTION_IF zst_1150_dice_warhammers AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" OR
-            (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND
-             zst_group_1150_weapon_dice)) 
+INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
+ACTION_IF zst_1150_dice_warhammers AND 
+         (MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" OR
+         (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND
+          zst_group_1150_weapon_dice)) 
 BEGIN
 
     COPY_EXISTING ~ZSTWVD01.SPL~ ~override~

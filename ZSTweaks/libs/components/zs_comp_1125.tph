@@ -8,6 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   WITH_SCOPE BEGIN
 
+    INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
     COPY ~%MOD_FOLDER%/items/waninja~ ~override~
     COPY_EXISTING "WANINJA.itm" ~override~
       LPF ALTER_ITEM INT_VAR unusable0=1074057600 END

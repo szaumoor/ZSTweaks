@@ -8,6 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     WITH_SCOPE BEGIN
 
+        INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
         OUTER_SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
         OUTER_SET finesse_installed = zst_1450_allow_katanas AND
                                      (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR

@@ -11,14 +11,14 @@ INCLUDE ~%config_path%~
 COPY ~%config_path%~ ~override~
 
 ACTION_IF zst_group_1531_selective_spells_mr BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1531.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1531.tph~ END
 END
 
 ACTION_IF zst_group_1532_unenchanted_items_1hp BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1532.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1532.tph~ END
 END
 
 ACTION_IF zst_group_1548_voidweapons BEGIN
-  INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1548.tph~
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1548.tph~ END
 END
 

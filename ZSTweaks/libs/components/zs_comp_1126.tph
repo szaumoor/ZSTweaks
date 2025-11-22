@@ -6,6 +6,7 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
+  INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
   COPY_EXISTING "MISCBC.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6810) ench=4 END
     LPF ALTER_EFFECT_EX INT_VAR probability1 = 14 STR_VAR match_probability1_ex = "(o_probability1 < 100)" END

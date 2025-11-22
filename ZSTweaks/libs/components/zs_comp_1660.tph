@@ -6,6 +6,7 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
 
+  INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
   COPY_EXISTING "dagg03.ITM" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6590) END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=166,p1=10~ END

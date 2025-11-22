@@ -15,6 +15,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   ACTION_IF zst_3030_planetars BEGIN
 
+    INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
     COPY ~%MOD_FOLDER%/creatures/planetar~ ~override~
     COPY_EXISTING ~PLANETAR.ITM~ ~override~
       LPF ALTER_ITEM INT_VAR ench = 5 END

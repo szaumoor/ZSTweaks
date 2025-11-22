@@ -33,6 +33,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING ~NPSHLD.ITM~ ~override~
         LPF RM_STAT_REQS INT_VAR str=SHORT_AT(0x26) END
 
+    INCLUDE "%MOD_FOLDER%/configurations/zstweaks_gear_group_install.txt"
     // item upgrade patch, no stat requirements
     COPY_EXISTING ~c2valy01.ITM~ ~override~
 

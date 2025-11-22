@@ -6,6 +6,7 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
+  INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
   COPY ~%MOD_FOLDER%/items/drizzt_weapons~ ~override~
   COPY_EXISTING "SW1H15.ITM" ~override~
     LPF ALTER_ITEM INT_VAR this_plus=1 id_desc=RESOLVE_STR_REF(@6490) ench=5 flags=2**8 END

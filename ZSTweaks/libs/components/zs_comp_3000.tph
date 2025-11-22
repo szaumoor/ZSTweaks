@@ -11,49 +11,73 @@ INCLUDE ~%config_path%~
 COPY ~%config_path%~ ~override~
 
 ACTION_IF zst_group_3010_alignment_tweak BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3010.tph"
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3010.tph"
+  END
 END
 
 ACTION_IF zst_group_3020_summoned_demons_tweak BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3020.tph"
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3020.tph"
+  END
 END
 
 ACTION_IF zst_group_3030_celestials_tweak BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3030.tph"
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3030.tph"
+  END
 END
 
 ACTION_IF zst_group_3050_balors_tweak BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3050.tph"
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3050.tph"
+  END
 END
 
 ACTION_IF zst_group_3060_mencar_tweak BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3060.tph"
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3060.tph"
+  END
 END
 
 ACTION_IF zst_group_3070_felines_tweak BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3070.tph"
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3070.tph"
+  END
 END
 
 ACTION_IF zst_group_3080_natural_attacks_tweak BEGIN
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3080.tph"
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3080.tph"
+  END
 END
 
 ACTION_IF zst_group_3090_shadows_tweak BEGIN
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3090.tph"
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3090.tph"
+  END
 END
 
 ACTION_IF zst_group_3100_beetles_tweak BEGIN
-INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3100.tph"
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3100.tph"
+  END
 END
 
 ACTION_IF zst_group_3110_yuantis_tweak BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3110.tph"
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3110.tph"
+  END
 END
 
 ACTION_IF zst_group_3120_golems_tweak BEGIN
- INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3120.tph"
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3120.tph"
+  END
 END
 
 ACTION_IF zst_group_3130_minotaurs_tweak BEGIN
-  INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3130.tph"
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3130.tph"
+  END
 END

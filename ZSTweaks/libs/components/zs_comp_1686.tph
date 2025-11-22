@@ -6,6 +6,7 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
+  INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
   COPY ~%MOD_FOLDER%/items/life_stealer~ ~override~
   COPY_EXISTING ~DAGG20.ITM~ ~override~
     LPF ALTER_ITEM INT_VAR this_plus=1 id_desc=RESOLVE_STR_REF(@7780) flags=2**4 STR_VAR icon = ~ZSTWVMPB~ END
