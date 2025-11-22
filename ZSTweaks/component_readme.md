@@ -310,6 +310,19 @@ This component enables combat bonuses from invisibility for ranged attacks, focu
 - This effect is implemented using timers, which may result in minor, momentary delays in application or removal when entering/exiting invisibility.
 - Only player and joinable characters benefit; enemies are unaffected.
 
+### Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage (1532)
+
+I do not like gear that you can wear without any effect whatsoever. I can live with rings that don't do that, because there's no reasonable benefit to just wearing a ring. Therefore, wearing unenchanted belts, boots, and bracers will grant the wearer +1 HP which I think is reasonable enough, and it doesn't change balance much. For consistency, the magical variants also grant that. The unenchanted items will still be the worst choice, but should encourage filling all the gear slots.
+
+### Make Void-weapons slightly more effective and logical (1548)
+
+- On-equip strength-sapping effect will no longer affect undead (such as with Hexxat).
+- The weapons will be able to critically hit, dealing double damage, which is a feature that was missing from the original implementation.
+
+### Make Light Crossbows get +1/2 more APR (1360)
+
+Just a small bonus to make it more interesting and different compared to heavy crossbows. It's not too far-fetched to think smaller crossbows can be reloaded faster. This will affect crossbows that have an APR bonus already, such as crossbows of speed.
+
 </details>
 
 ---
@@ -2292,23 +2305,6 @@ Most of minotaurs are wimps in the game. This is what it changes:
 Additionally, a some selected spells also bypass magic resistance, because it makes sense in my judgment. The full list of spells is: Detect Evil, Know Alignment, Stinking Cloud, Entangle, Grease, Web, Summon Cow, Glitterdust, Magical Stone, Call Lightning, Cloudburst, Summon Insects/ Insect Plague / Creeping Doom, Nature's Beauty, Storm of Vengeance, Mold Touch, Smashing Wave, Shout / Great Shout, Thorn Spray, Spike Growth.
 
 Bear in mind this component should be installed after tweaks that affect these spells, especially if they add new effects to them; otherwise, this tweak will only work partially, and inconsistent results could ensue.
-
-### Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage (1532)
-
-I do not like gear that you can wear without any effect whatsoever. I can live with rings that don't do that, because there's no reasonable benefit to just wearing a ring. Therefore, wearing unenchanted belts, boots, and bracers will grant the wearer +1 HP which I think is reasonable enough, and it doesn't change balance much. For consistency, the magical variants also grant that. The unenchanted items will still be the worst choice, but should encourage filling all the gear slots.
-
-**WARNING**: Install this component DEAD LAST after ANY mod or component that modifies items.
-
-### Make Void-weapons slightly more effective and logical (1548)
-
-- On-equip strength-sapping effect will no longer affect undead (such as with Hexxat).
-- The weapons will be able to critically hit, dealing double damage, which is a feature that was missing from the original implementation.
-
-This component should be installed after any other tweak that may change void weapons, or their weapon groups in general.
-
-### Make Light Crossbows get +1/2 more APR (1360)
-
-Just a small bonus to make it more interesting and different compared to heavy crossbows. It's not too far-fetched to think smaller crossbows can be reloaded faster. This will affect crossbows that have an APR bonus already, i.e., 1/2 APR will be added.
 
 </details>
 

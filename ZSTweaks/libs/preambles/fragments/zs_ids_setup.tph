@@ -57,6 +57,8 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET race_wyvern          = IDS_OF_SYMBOL(race WYVERN)
     OUTER_SET race_yuanti          = IDS_OF_SYMBOL(race YUANTI)
 
+    OUTER_SET ea_pc = IDS_OF_SYMBOL(ea PC)
+
     OUTER_SET gender_female         = IDS_OF_SYMBOL(gender FEMALE)
     OUTER_SET gender_male           = IDS_OF_SYMBOL(gender MALE)
     OUTER_SET gender_niether        = IDS_OF_SYMBOL(gender NIETHER)

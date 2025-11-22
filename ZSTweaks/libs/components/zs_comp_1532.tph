@@ -4,11 +4,12 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1532~ = 1
 END
 
+COPY ~%MOD_FOLDER%/general/1hp_bonus~ ~override~
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
   READ_SHORT 0x1c cat
   PATCH_MATCH cat WITH 6 4 3 BEGIN // belts, boots and bracers
-    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=318,p1=2,p2=112,res=%SOURCE_RES%;op=18,p1=1,p2=3~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=177,p2=2,p1=%ea_pc%,res=zstw1hp0~ END
   END DEFAULT END
 
 BUT_ONLY

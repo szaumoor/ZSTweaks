@@ -138,6 +138,9 @@
 - Added immunity to Holy Word and Unholy word to the upgraded Kachiko's Whisper, as it is also sound-based magic
 - Magical Stone component now makes its damage scale: 1d6 magic & missile damage at level 3, 1d8 at level 5. Still does not affect the IWD version, which works differently and deals more damage to the undead
 - Added a section in the readme to explain how adding compatibility code with this mod works (sorry)
+- Voidweapon component no longer part of the end-of-installation group, as a better solution was used to prevent problems, and is now part of the general tweaks
+- +1 HP bonus to bracers, boots, and belts component no longer part of the end-of-installation group, as a better solution was used to prevent problems, and is now part of the general tweaks
+- Component to patch various spells to make them bypass magic resistance remains part of the end-of-installation group. The group will remain there, so it blends well with the current design for users where they can choose everything they want out of the entire installation of the mod, especially by running `weinstall zstweaks --yes`.
 
 ## New components
 
