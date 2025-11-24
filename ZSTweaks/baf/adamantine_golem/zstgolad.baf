@@ -1,5 +1,5 @@
 IF
-  Range(NearestEnemyOf(Myself),3)
+  Range(NearestEnemyOf(Myself),6)
   Global("rp_idle","LOCALS",1)
 THEN
   RESPONSE #100
@@ -9,7 +9,7 @@ THEN
 END
 
 IF
-  Range(NearestEnemyOf(Myself),3)
+  Range(NearestEnemyOf(Myself),6)
   Global("zsidle","LOCALS",1)
 THEN
   RESPONSE #100
@@ -18,7 +18,7 @@ THEN
 END
 
 IF
-  !Range(NearestEnemyOf(Myself),3)
+  !Range(NearestEnemyOf(Myself),6)
   Global("zsidle","LOCALS",0)
   !GlobalTimerNotExpired("zsquake","LOCALS")
 THEN
@@ -30,16 +30,16 @@ END
 IF
   GlobalTimerExpired("zsquake","LOCALS")
   Global("zsidle","LOCALS",1)
-  !Range(NearestEnemyOf(Myself),3)
+  !Range(NearestEnemyOf(Myself),6)
 THEN
   RESPONSE #100
     SetGlobalTimer("zsquake","LOCALS",12)
-    // earthquake spell
+    ForceSpellRES("zstgolqk", Myself)
 END
 
 IF
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		AttackReevaluate(NearestEnemyOf(Myself),5)
+		AttackReevaluate(NearestEnemyOf(Myself),6)
 END

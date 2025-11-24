@@ -679,7 +679,7 @@ Generally this robe was never very convenient to use, especially considering the
 
 ### Make the Plate of the Dark not just a generic +1 full plate (1218)
 
-This improves the unremarkable +1 full plate armor (yet bears a unique description and name -- I hate this so much ffs), so it's at least remarkable if not powerful:
+This improves the unremarkable +1 full plate armor (yet bears a unique description and name -- I hate this so much), so it's at least remarkable if not powerful:
 
 - Provides immunity to panic and morale failure
 - 15% chance to curse living targets when you hit them for 6 rounds, imposing a -1 penalty to all rolls, luck, Armor Class, and morale, and increasing their chances of critical misses by 5%. No saving throw is allowed and it does not stack.
@@ -743,7 +743,7 @@ Yay, I love me another item with a unique description but no unique function. Th
 I don't like wearable items that *only* give charged abilities, generally. The following improvements were made:
 
 - +20% resistance to fire
-- Creates 20 Melf's Minute Meteors once per day, regardless of wizard level
+- Creates 20 meteors once per day, regardless of wizard level
 - Additionally it gives Sun Soul monks and Priests of Lathander a 20% chance of inflicting extra 2d4 fire damage with all their melee attacks.
 
 ### Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing (1351)
@@ -1103,7 +1103,7 @@ The effect is pretty underwhelming for a +4 weapon. Now:
 
 This makes the summoned blade last for a full turn instead of 4 rounds. Additionally, the Armor Piercing charge ability also improves damage by +4, critical hit chances by +10%, and critically misses become impossible to trigger (effectively impossible unless something is increasing the chances of having critical misses).
 
-### Make Dak'kon's Zerth Blade behave as a +3 weapon (1315)
+### Make Dakkon's Zerth Blade behave as a +3 weapon (1315)
 
 This makes the katana +3, for consistency with the power level of other WA-weapons.
 
