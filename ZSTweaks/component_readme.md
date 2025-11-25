@@ -223,7 +223,7 @@ This component overhauls character stats for a more streamlined progression and 
 - **Strength**:
   - THAC0 and Damage bonuses are streamlined. Penalties start at 9 STR, bonuses at 12 STR. Exceptional Strength (18/xx) no longer provides a THAC0 bonus. Its damage bonus is now +0 (18/01-24), +1 (18/25-75), or +2 (18/76+).
   - Weight allowance is adjusted to be more gradual, increasing capacity at low STR and decreasing it at very high STR.
-- **Weapon Styles**:
+- **Weapon Styles**: This part of the component tries to make every point valuable by adding to having low or no points, and making each point truly rewarding to hopefully avoid any point where adding another one seems pointless. This encourages investing on it.
   - **Two-Handed Style**:
     - **0 Pips**: -1 to Armor Class
     - **1 Pip**: +1 Damage, +1 Speed Factor.
@@ -234,23 +234,23 @@ This component overhauls character stats for a more streamlined progression and 
     - **2 Pips**: +2 Damage, +2 AC, +2 Speed Factor.
   - **Sword and Shield Style**:
     - **0 Pips**: -1 damage, THAC0, and AC penalty vs. Missiles.
-    - **1 Pip**: +2 AC vs. Missiles.
+    - **1 Pip**: No penalties, +2 AC vs. Missiles.
     - **2 Pips**: +1 AC, +4 AC vs. Missiles.
   - **Two-Weapon Style**:
-    - **0 Pips**: -2 AC; THAC0: -4 (main-hand) / -6 (off-hand); Damage: -2 (main-hand) / -1 (off-hand).
-    - **1 Pip**: THAC0 penalties reduced to -2 (main-hand) / -4 (off-hand).
-    - **2 Pips**: Main-hand THAC0 penalty removed.
-    - **3 Pips**: Off-hand THAC0 penalty reduced to -2.
+    - **0 Pips**: -2 AC; THAC0: -4 (main-hand) / -6 (off-hand); Damage: -1 (main-hand) / -2 (off-hand).
+    - **1 Pip**: -1 AC; THAC0: -2 (main-hand) / -4 (off-hand); Damage: -1 (main hand) / -1 (off-hand)
+    - **2 Pips**: No AC penalty; THAC0: -1 (main hand) / -3 (off-hand); Damage: No penalty (main hand) / -1 (off-hand)
+    - **3 Pips**: THAC0: -2 (off-hand); Damage: No penalties
 - **Weapon Proficiencies**: THAC0 progression is smoothed out, gaining 1 THAC0 at 2 pips, and then another one per pip up to +4 at 5 pips.
 
 ### Make shield types more distinct and change shield usability (1546)
 
 This component reworks shields to make each type more distinct, adding unique benefits and drawbacks.
 
-- **Tower Shields**: Provide +1 AC over other shields of the same enchantment but are clunky, incurring a -1 penalty to THAC0 and Saves vs. Breath, and a -2 penalty to Speed Factor. An optional setting can also reduce movement speed by 20%.
+- **Tower Shields**: Provide +1 AC over other shields of the same enchantment but are clunky, incurring a -1 penalty to THAC0 and saves vs. Breath, and a -2 penalty to speed factor. An optional setting can also reduce movement speed by 20%.
 - **Medium Shields**: Inflict a -1 penalty to Speed Factor and Saves vs. Breath. An optional setting can also reduce movement speed by 10%.
 - **Small Shields**: At even enchantment levels, their AC penalty vs. Missiles is offset by 1
-- **Bucklers**: At even enchantment levels, their AC bonus vs. Piercing is offset by 1. Additionally, bucklers have a 10% chance to **Parry** melee attacks. A successful parry inflicts 1d2+bonus crushing damage and applies a -2 AC penalty and -15% damage vulnerability to the attacker for half a round (Save vs. Breath negates, improves with enchantment level).
+- **Bucklers**: At even enchantment levels, their AC bonus vs. piercing is offset by 1. Additionally, bucklers have a 10% chance to **parry** frontal melee attacks. A successful parry inflicts 1d2+bonus crushing damage and applies a -2 AC penalty and -15% damage vulnerability to the attacker for half a round (save vs. Breath negates, improves with enchantment level).
 
 The configuration file provides several options to change shield usability:
 
@@ -263,8 +263,8 @@ The configuration file provides several options to change shield usability:
 
 Important notes:
 
-- **Buckler Parry**: This component should be installed **after** any mods that add or modify weapon protection effects (e.g., SCS's Mantle tweaks) to ensure the parry is correctly blocked by those protections.
-- **Mod Compatibility**: This component identifies shield types by their unidentified name (e.g., "Buckler", "Small Shield"). While vanilla items are patched to conform to this schema, mod-added shields not following this convention will not be affected. Please report any incompatible mods.
+- **Buckler parry**: This component should be installed **after** any mods that add or modify weapon protection effects (e.g., SCS's Mantle tweaks) to ensure the parry is correctly blocked by those protections.
+- **Mod compatibility**: This component identifies shield types by their unidentified name (e.g., "Buckler", "Small Shield"). While vanilla items are patched to conform to this schema, mod-added shields not following this convention will not be affected. Please report any incompatible mods.
 
 ### Make Protection from Undead more balanced (1547)
 
@@ -280,17 +280,17 @@ This allows player-created characters as well as all joinable characters to back
 
 ### Make disrupt undead weapons more balanced and closer to PnP rules (1329)
 
-This component rebalances disruption weapons to be more balanced when slaying undead, following a PnP inspired formula. No longer will it nearly as feasible to whirlwind attack a lich to death (not impossible mind you). The weapons that are affected are Shining Light of Lathander (upgraded) from my Item Pack, Azuredge, Mace of Disruption, Runic Hammer, and Deva weapons.
+This component rebalances disruption weapons to be more balanced when slaying undead, following a PnP inspired formula. No longer will it nearly as feasible to whirlwind attack a lich to death (not impossible mind you). The weapons that are affected are Shining Light of Lathander (upgraded) from my Item Pack, Azuredge, maces of disruption, runic hammer, and deva weapons.
 
 Slayable creatures must make a save vs. Death at -2. However, some creatures have a chance to resist the effect before a save is rolled:
 
 - **95% Resistance**: Fiends
-- **80% Resistance**: Liches, Demiliches
-- **50% Resistance**: Vampires
-- **35% Resistance**: Spectres, Ghosts
-- **20% Resistance**: Mummies, Revenants
+- **80% Resistance**: Liches, demiliches
+- **50% Resistance**: Vampires, vampyres
+- **35% Resistance**: Spectres, ghosts
+- **20% Resistance**: Mummies, revenants
 - **5% Resistance**: Wraiths
-- **No resistance**: Lesser undead (Skeletons, Ghouls, etc.)
+- **No resistance**: Lesser undead (skeletons, ghouls, etc.)
 
 Other details:
 
@@ -2281,12 +2281,12 @@ Most of minotaurs are wimps in the game. This is what it changes:
   - Class set to Fighter, which allows them to benefit from Constitution bonuses
   - Strength: 18/100 → 20
   - Constitution: 9 → 17. In vanilla this ensures a minimum HP of 72
-  - 15% resistance to physical damage
+  - 15% resistance to physical damage (+5% if the resistances are above it and lower or equal to 45%)
   - They no longer panic as easily
   - They move 5 points faster than normal
   - They critically hit 5% more often. Take care of monks and mages
   - They now have three points in Axe proficiency (from none). This will in turn grant them half an attack per round, as it would for fighters, resulting in 5/2 attacks per round as baseline.
-  - Their hits have a 50% chance of goring, inflicting 2d6 piercing damage (save vs. Breath to take half), and 3d8 extra if Save vs. Breath fails (no save to take only half), which also grants the minotaur a +1 bonus to their damage and 1/2 to their Attacks per round for 2 rounds. These benefits can't affect the minotaur more than once every 9 seconds, and the victim cannot suffer this extra damage more than once per round. The basic 2d6 piercing damage can happen at any time with the aforementioned 50% chance per hit.
+  - Their hits have a 50% chance of goring, inflicting 2d6 piercing damage (save vs. Breath to take half), and 3d8 extra if Save vs. Breath fails (no save to take only half), which also grants the minotaur a +1 bonus to their damage and 1/2 to their attacks per round for 2 rounds. These benefits can't affect the minotaur more than once every 9 seconds, and the victim cannot suffer this extra damage more than once per round. The basic 2d6 piercing damage can happen at any time with the aforementioned 50% chance per hit.
 
 </details>
 

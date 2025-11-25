@@ -141,6 +141,7 @@
 - Voidweapon component no longer part of the end-of-installation group, as a better solution was used to prevent problems, and is now part of the general tweaks
 - +1 HP bonus to bracers, boots, and belts component no longer part of the end-of-installation group, as a better solution was used to prevent problems, and is now part of the general tweaks
 - Component to patch various spells to make them bypass magic resistance remains part of the end-of-installation group. The group will remain there, so it blends well with the current design for users where they can choose everything they want out of the entire installation of the mod, especially by running `weinstall zstweaks --yes`.
+- Smoothed out the progression of two-weapon fighting style, trying to keep to the theme of making each point meaningful and having a single point always valuable
 
 ## New components
 
