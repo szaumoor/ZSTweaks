@@ -49,20 +49,34 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       END 
 
       // and 15% resistance to physical damage
-      PATCH_IF BYTE_AT 0x60 < 15 BEGIN
+
+      SET resist1 = BYTE_AT 0x60
+      SET resist2 = BYTE_AT 0x61
+      SET resist3 = BYTE_AT 0x62
+      SET resist4 = BYTE_AT 0x63
+
+      PATCH_IF resist1 < 15 BEGIN
         WRITE_BYTE 0x60 15
+      END ELSE PATCH_IF resist1 <= 45 BEGIN
+        WRITE_BYTE 0x60 (THIS + 5)
       END
 
-      PATCH_IF BYTE_AT 0x61 < 15 BEGIN
+      PATCH_IF resist2 < 15 BEGIN
         WRITE_BYTE 0x61 15
+      END ELSE PATCH_IF resist2 <= 45 BEGIN
+        WRITE_BYTE 0x61 (THIS + 5)
       END
 
-      PATCH_IF BYTE_AT 0x62 < 15 BEGIN
+      PATCH_IF resist3 < 15 BEGIN
         WRITE_BYTE 0x62 15
+      END ELSE PATCH_IF resist3 <= 45 BEGIN
+        WRITE_BYTE 0x62 (THIS + 5)
       END
 
-      PATCH_IF BYTE_AT 0x63 < 15 BEGIN
+      PATCH_IF resist4 < 15 BEGIN
         WRITE_BYTE 0x63 15
+      END ELSE PATCH_IF resist4 <= 45 BEGIN
+        WRITE_BYTE 0x63 (THIS + 5)
       END
 
       PATCH_IF BYTE_AT 0x74 < 3 BEGIN // and have at least 3 pips in axes (legacy profs)

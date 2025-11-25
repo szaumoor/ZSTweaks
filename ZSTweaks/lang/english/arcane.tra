@@ -70,7 +70,7 @@ Casting Time: 6
 Area of Effect: 15-ft. radius
 Saving Throw: Special
 
-The casting of an Acid Fog spell creates an area of solid fog that has the additional property of being highly acidic. All enemies not immune to acid suffer 2d8+4 points of acid damage (double if it's a plant-based creature such as a myconid) each round they are exposed to the vapors, which also damages their Armor Class once every three rounds by 4, their physical resistances by 15%, and their acid resistance by 30% for 1 turn after being exposed (none of these penalties stack with each other). This fog also reduces movement speed by half unless a save vs. Death at -2 succeeds and is not affected by Magic Resistance, as it is effectively conjured natural acid.~
+The casting of an Acid Fog spell creates an area of solid fog that has the additional property of being highly acidic. All enemies not immune to acid suffer 2d8+4 points of acid damage (double for plants and myconids) each round they are exposed to the vapors, which also damages their Armor Class once every three rounds by 4, their physical resistances by 15%, and their acid resistance by 30% for 1 turn after being exposed (none of these penalties stack with each other). This fog also reduces movement speed by half unless a save vs. Death at -2 succeeds and is not affected by Magic Resistance, as it is effectively conjured natural acid.~
 
 @5231 = ~Acid Fog~
 
@@ -108,7 +108,7 @@ Casting Time: 8
 Area of Effect: 15-ft. radius
 Saving Throw: 1/2
 
-This spell evaporates moisture from the bodies of every living creature within the area of effect, inflicting 1d7+1 damage per level of the caster. Affected creatures are allowed a saving throw vs. Spell for half damage. This spell is especially devastating to water elementals and plant creatures (including fungal creatures such as Myconids), who receive a penalty of -2 to their saving throws and always take the maximum damage possible. This spell will not harm party members.~
+This spell evaporates moisture from the bodies of every living creature within the area of effect, inflicting 1d7+1 damage per level of the caster. Affected creatures are allowed a saving throw vs. Spell for half damage. This spell is especially devastating to water elementals and plant creatures (including fungal creatures such as myconids), who receive a penalty of -2 to their saving throws and always take the maximum damage possible. This spell will not harm party members.~
 
 @6290 = ~Grease
 (Conjuration/Summoning)
@@ -152,7 +152,7 @@ This spell enables the caster to attempt to summon a familiar to act as <PRO_HIS
 
 (Note: This spell may only be cast by the protagonist.)
 
-The creature is always more intelligent than others of its type (typically by 2 or 3 Intelligence points), and its bond with the wizard confers upon it an exceptionally long life. The wizard has an empathic link with the familiar and can issue it mental commands. The caster receives half the familiar's total Hit Points (rounded down) as bonus Hit Points. However, the caster must take care to treat <PRO_HISHER> familiar well, for if the familiar should die, the caster loses the bonus Hit Points and the familiar's Hit Points again as damage. Also when a familiar dies, the caster loses 1 point of Constitution PERMANENTLY.
+The creature is always more intelligent than others of its type (typically by 2 or 3 Intelligence points), and its bond with the wizard confers upon it an exceptionally long life. The wizard has an empathic link with the familiar and can issue it mental commands. The caster receives half the familiar's total Hit Points (rounded down) as bonus Hit Points. However, the caster must take care to treat <PRO_HISHER> familiar well, for if the familiar should die, the caster loses the bonus Hit Points and the familiar's Hit Points again as damage. Also, when a familiar dies, the caster loses 1 point of Constitution PERMANENTLY.
 
 Example: A Mage has 12 Hit Points and casts Find Familiar. The imp summoned has 9 Hit Points, so the caster gets a bonus of 4 Hit Points. The caster now has 16 Hit Points. If the familiar dies, the caster loses those 4 Hit Points (putting <PRO_HIMHER> back at 12), loses 1 point of Constitution permanently (which may cause additional Hit Point loss), and takes 9 damage.
 
@@ -264,19 +264,6 @@ Area of Effect: 1 creature
 Saving Throw: Neg.
 
 This spell turns flesh of any sort to stone. All possessions on the person of the creature likewise turn to stone. The intended subject of the spell receives a saving throw vs. Petrification to avoid the effect. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The reverse of this spell may be cast upon the victim in order to restore life, but this is the only way.~
-
-@6960 = ~This glittering golden crown looks impressive, but its substance is base fool's gold and the "gems" set around it are bits of colored glass. Placing the crown on one's head allows the wearer to prepare extra spells but fills the head with false knowledge, making it hard to distinguish between truth and falsity.
-
-STATISTICS:
-
-Equipped abilities:
-– Can memorize 2 extra 3rd-level, 2 extra 4th-level, and 1 extra 5th-level wizard spell
-– Lore: -15
-– Wisdom: -2
-– Saves vs. Illusion: -2
-– Detect Illusion: -20%
-
-Weight: 1~
 
 @7360 = ~Wail of the Banshee
 (Necromancy)
@@ -518,7 +505,7 @@ Eye of the Sword: This eye deflects the first physical damaging attack that stri
 
 Eye of the Mage: This eye absorbs one manifestation of fire, electrical, cold, or acid damage. The eye can also be expended as the 5th-level wizard spell Sunfire, dealing 15d6 fire damage to all creatures around the caster.
 
-Eye of Venom: This eye halts any one attack or effect that could poison the caster. The eye can also be expended as the 6th-level priest spell Dolorous Decay, slowing one creature down for 2 rounds and causing poison damage over a period of 1 turn (Save vs. Poison at -2 negates).
+Eye of Venom: This eye halts one attack or effect that could poison the caster. The eye can also be expended as the 6th-level priest spell Dolorous Decay, slowing one creature down for 2 rounds and causing poison damage over a period of 1 turn (Save vs. Poison at -2 negates).
 
 Eye of the Spirit: This eye blocks one instant-death magic attack (Death Spell; Finger of Death; Power Word, Kill; Slay Living; Destruction). The wizard may instead choose to expend the eye's power as the 5th-level priest spell Cause Critical Wounds, dealing a minimum of 27 points of damage upon touching a target (Save vs. Spell for half).
 
@@ -572,7 +559,7 @@ Casting Time: 6
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-When this spell is cast at another creature, a thin green ray is shot out. Upon contact with the ray, the creature must make a Saving Throw vs. Spell or be transformed into dust. This transformation is instantaneous and irreversible—they are gone forever. There is also a good chance that this will destroy some if not all of the items that the creature is carrying. Clay, sand, brain, and magic golems are particularly susceptible to this spell, taking 1d12 crushing damage instantly, becoming slowed for 2 rounds with no save allowed, and preventing them from hasting themselves for 1 round.~
+When this spell is cast at another creature, a thin green ray is shot out. Upon contact with the ray, the creature must make a Saving Throw vs. Spell or be transformed into dust. This transformation is instantaneous and irreversible—they are gone forever. There is also a good chance that this will destroy some if not all the items that the creature is carrying. Clay, sand, brain, and magic golems are particularly susceptible to this spell, taking 1d12 crushing damage instantly, becoming slowed for 2 rounds with no save allowed, and preventing them from hasting themselves for 1 round.~
 
 @8640 = ~Stone to Flesh
 (Alteration)
@@ -606,7 +593,7 @@ Saving Throw: Special
 
 This spell causes a 2-ft. diameter sphere to appear in the caster's hand. At the moment of casting, the caster has the choice of creating an orb of different colors, each color causing a different effect. When thrown, the sphere heads unerringly to its target. The effects vary as follows:
 
- 1st Level: Start off with access to the White and Orange orbs. 
+ 1st Level: Start off with access to the White and Orange orbs.
  4th Level: Gain access to the Light Blue and Green orbs.
  7th Level: Gain access to the Yellow orb.
  10th Level: Gain access to the Purple orb.
@@ -617,5 +604,5 @@ ORANGE: 2d4+1 fire damage in a small area around the primary target. At level 4 
 LIGHT BLUE: Cause 2d4+1 cold damage and inflicts Slow on the target for 1 round if a save vs. Spell is failed. At level 7 and 10, the duration of the Slow effect increases by 1 round. At level 4 and 7, the damage increases by 1d4, up to 4d4+1 cold damage.
 GREEN: Cause 2d4+1 poison damage and target becomes poisoned if they fail a save vs. Death, taking 4 points of damage over 2 rounds. At level 7, the poisoning damage increases to 6. At level 10, it becomes 12.
 YELLOW: Cause 2d4+1 acid damage that bypasses magic resistance. Damage increases by 2d4 every three levels, up to 6d4+1.
-PURPLE: Causes a thunderous sonic thud that causes 1d4+2 crushing damage and 1d4 magic damage, deafening them, causing a 30% casting failure, and saving throw penalty of -1, for 2 rounds without any save allowed, as well as stunning them for 1 round if they fail a save vs. Death. Golems and other constructs are susceptible to this version, suffering 4d4 irresistible damage. At level 13, the saving throw penalty increases to -2, and at level 16, the stun duration increases by half a round. 
+PURPLE: Causes a thunderous sonic thud that causes 1d4+2 crushing damage and 1d4 magic damage, deafening them, causing a 30% casting failure, and saving throw penalty of -1, for 2 rounds without any save allowed, as well as stunning them for 1 round if they fail a save vs. Death. Golems and other constructs are susceptible to this version, suffering 4d4 irresistible damage. At level 13, the saving throw penalty increases to -2, and at level 16, the stun duration increases by half a round.
 BLACK: Causes 1d4+1 magic damage and slays target if they fail a save vs. Spell at +6. Save bonus is reduced by 1 at level 16 and 19.~

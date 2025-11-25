@@ -1739,13 +1739,13 @@ Conceptually, I think it's a cool spell for druids and rangers, but it's not too
 
 ### Make Earthquake more effective and disable annoyances (250)
 
-Earthquake is generally very inconvenient to be cast at any point because of how it affects your whole party. This disables that behavior, and in case you don't enjoy feeling like casting it might give you a tiny seizure, it also disables the screen shake. It also makes it more effective, by making the saves and damage decay less harshly:
+Earthquake is generally very inconvenient to be cast at any point because of how it affects your whole party. This disables that behavior, and in case you don't enjoy feeling like casting it might make you dizzy, it also disables the screen shake. Finally, it also makes it more effective, by making the saves and damage decay less harshly:
 
 1st round: vanilla, 6d6 damage, -6 save to avoid unconsciousness
 2nd round: 5d6 damage, -4 save
 3rd round: 4d6 damage, -2 save
 
-These three tweaks modifications are all optional.
+These three separate modifications are all optional. Check the config file.
 
 ### Make Negative Plane Protection's duration increase somewhat as you level up (260)
 
@@ -1753,7 +1753,7 @@ It only lasts 30 seconds, which might be insufficient for fights with vampires. 
 
 ### Make Entangle more powerful and relevant for druids and shamans (270)
 
-Entangle saves are quite generous for the targets and, as such, very difficult to pull off at higher levels. It's such a stereotypical staple ability for druids that it feels wrong to leave druids without them because it becomes very quickly useless. Additionally, the Armor Class debuff improves to -3 and limits APR to 1 while the character is being held by the vines. It also will make creatures that are too big or have unusual qualities immune to it (dragons, shadows, slimes...).
+Entangle saves are quite generous for the targets and, as such, very difficult to pull off at higher levels. It's such a hallmark ability for druids that it feels wrong to leave druids without them because it becomes very quickly useless. Additionally, the Armor Class debuff improves to -3 and limits APR to 1 while the character is being held by the vines. It also will make creatures that are too big or have unusual qualities immune to it (dragons, shadows, slimes...).
 
 This component also patches other sources of Entanglement to reflect the same properties where it applies, such as in the Short Sword of Mask.
 
@@ -1777,7 +1777,7 @@ Not enough seeds and too little damage. From 4 seeds that do 2d8 to 12 that do 3
 
 ### Make Nature's Beauty better and more logical in how it works (320)
 
-Nature's beauty is the druidic Wail of the Banshee (only for humanoids anyway), but it is fairly unlikely to kill (especially considering druids cannot have a Necromancy bonus to spells—without save editing or special kits, that is). Save bonus is now +2 instead of +3.
+Nature's beauty is the druidic Wail of the Banshee (only for humanoids anyway), but it is fairly unlikely to kill (especially considering druids cannot have an Illusionist bonus to spells—without save editing or special kits, that is). Save bonus to avoid this effect is now +2 instead of +3.
 
 Additionally, much like IWDEE, blinded enemies are not affected, which is to be expected given the nature of the spell. Finally, it can be configured to make True Sight prevent the effect, since it is an illusion.
 
@@ -1810,13 +1810,13 @@ All of these specific tweaks to these spells may be disabled or enabled in the c
 This makes the Bolt of Glory generally more effective and rearranges the damage such that outsiders and undead are always ahead in potential damage compared to Prime Material creatures. Additionally, the description accurately notes other less-known characteristics of this spell, such as how it has no effect on celestial beings (planetars, devas, solars, aasimar) and how it bypasses Magic Resistance. Here's the damage distribution now:
 
 - Prime Material Plane creatures: 4d4+6 magic damage
-- Outsiders (except fiendish and celestials; elementals, genies, githyanki...): 6d6+6 magic damage
+- Non-fiendish and non-celestial outsiders: 6d6+6 magic damage
 - Undead: 8d6+6 magic damage
-- Fiendish outsiders (demons, devils, evil planetars, and fallen solars): 8d8+6
+- Fiendish outsiders (including fallen planetars, devas and solars): 8d8+6
 
 ### Make Magical Stone bypass Magic Resistance and deal both magic and missile damage (462)
 
-Generally, this spell is pretty worthless and barely even worth thinking about. This improves its usability by making it bypass Magic Resistance, since it is essentially a pebble enchanted to be thrown at an enemy. Now it deals 1d4 missile damage and 1d4 magic damage. It will now also scale with level, dealing 1d6 magic and missile damage at level 5, and then 1d8 magic and missile damage at level 10.
+Generally, this spell is pretty worthless and barely even worth thinking about. This improves its usability by making it bypass Magic Resistance, since it is essentially a pebble enchanted to be thrown at an enemy. Now it deals 1d4 missile damage and 1d4 magic damage. It will now also scale with level, dealing 1d6 magic and missile damage at level 3, and then 1d8 magic and missile damage at level 5.
 
 ### Make Dolorous Decay more powerful (463)
 
@@ -1862,10 +1862,10 @@ Solution:
 - Blindness works as usual
 - The damage to non-undead is 4d6 (half fire, half magic), blindness is still 1 turn as usual
 - The damage inflicted is half fire, half radiant for undead (radiant cannot be resisted)
-- Undead take 1d6 fire and radiant damage per level up to:
-  - Vampires and Vampyres: 20d6 and must save vs. Spell or be utterly destroyed
-  - Spectral undead: 15d6, and weakens them, causing Slow or Confusion for 2 rounds
-  - Other cadaverous undead: 10d6, no other side effects
+- Undead take 1d6 fire and radiant damage (half from each) per level up to:
+  - Vampires and Vampyres: Up to 10d6 fire damage and 10d6 radiant damage and must save vs. Spell or be utterly destroyed
+  - Spectral undead: 8d6 fire damage, and 7d6 radiant damage, and weakens them, causing Slow or Confusion for 2 rounds
+  - Other cadaverous undead: 5d6 fire and 5d6 radiant damage, no other side effects
 
 This solution follows the 2nd edition more closely, where only undead who are specifically sensitive to light may be destroyed by it. Spectral undead are generally weakened, but not destroyed, vampires, vampyres, and vampire spawn can be utterly destroyed, and other cadaverous undead aren't weakened or destroyed (including liches and demiliches -- the latter is immune to essentially all spells though, including Sunray).
 
