@@ -909,9 +909,14 @@ This component improves the description to something a bit more interesting than
 
 Self-explanatory. Also, The backstory of the sword heavily implies it was involved in the slaughter of many trolls. Therefore, the sword can completely destroy trolls on hit by causing +2 fire damage on hit to trolls only.
 
-### Make Staff of the Magi force a saving throw to dispel effects on hits (1390)
+### Make Staff of the Magi more balanced (1390)
 
-The dispel-on-hit thing is pretty cheesy so, yeah. That. Save vs. Spell at -2
+Staff of Magi is a little silly for two main reasons:
+
+- Always-dispel every hit
+- Automatic invisibility on equipping the weapon, leading to enough cheese to kill a lactose-intolerant elephant
+
+This alleviates the problem by making the invisibility on equip only affect the user once per turn at most, and adding a charge ability that lets you cast instead Mass Invisibility, a spell that gives all allies improved invisibility, which is an effect that can be pretty powerful in certain situations.
 
 ### Make Ir'revrykal more powerful (1410)
 

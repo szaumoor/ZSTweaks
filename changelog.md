@@ -81,6 +81,7 @@
 - Fixed Ring of the Crusade component not being installed at all in the group-install component of Gear tweaks
 - Vastly reduced the library size on some parts to reduce the number of function calls, as these are unfortunately costly performance-wise with WeiDu
 - Fixed some components not reacting to the presence of a component through the group component install
+- Fixed issue which forced wielders of staff of magi to save vs. spell to benefit from passive effects and made finesse-type effects also subject to the save vs spell
 
 ## Modifications
 
