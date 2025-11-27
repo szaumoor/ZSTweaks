@@ -7,7 +7,8 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt~
-  COPY_EXISTING ~STAF11.ITM~ ~override~
+  COPY ~%MOD_FOLDER%/items/staff_magi~ ~override~
+  COPY_EXISTING ~staf11.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6400) END
     LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type=1 savingthrow=1 savebonus="-2" END
 
@@ -15,6 +16,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       LPF ALTER_EFFECT INT_VAR match_opcode = 326 savingthrow = 0 savebonus = 0 STR_VAR match_resource = "ZSTWQ5" END
     END
 
+    LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 20 opcode = 146 timing = 0 STR_VAR resource = ~zstaf110~ END
     LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 20 END
-    
+    LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=146 STR_VAR match_resource=~zstaf110~ resource=~zstaf111~ insert=~below~ END
+
 END

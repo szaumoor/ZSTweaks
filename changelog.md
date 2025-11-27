@@ -168,3 +168,4 @@
 - Make Agannazar's Scorcher not pause the caster
 - Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance
 - Make Imprisonment prevent movement while the animation plays out
+  
