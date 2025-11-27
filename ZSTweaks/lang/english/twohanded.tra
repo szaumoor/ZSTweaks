@@ -304,29 +304,31 @@ Requires:
 
 Weight: 10~
 
-@6400 = ~This type of staff is thoroughly linked to the image of the spellcasting profession, rare though it is. It is among the most powerful tools that a wizard can possess, the culmination of complex enchantments and endless study. This particular example is good in melee, grants invisibility, and offers protection from charms and evil. It can also cast Spell Trap and Dispel Magic and launch a Fireball-Lightning Bolt combination. The quintessential Mage item.
+@6400 = ~This type of staff is thoroughly linked to the image of the spellcasting profession, rare though it is. It is among the most powerful tools that a wizard can possess, the culmination of complex enchantments and endless study. This particular example is good in melee, grants invisibility once per turn, and offers permanent protection from charms and evil. It can also cast Spell Trap, dispel magic on hit, cause a massive Sunfire explosion around the caster, and even allow the wizard to cast any spell they currently know for free once per day. The quintessential mage item.
 
 STATISTICS:
 
 Equipped abilities:
 – Armor Class: +2
 – Saving Throws: +2
-– Invisibility
 – Immunity to charm
 – Protection From Evil
+– Turns the user invisible once per turn
 
 Combat abilities:
-– Dispel Magic at level 30 on each hit if Save vs. Spell at -2 is failed
+– Dispel Magic at level 30 on each hit if a save vs. Spell at -2 is failed
 
 Charge abilities:
-– Fireball-Lightning Bolt three times per day
-  Fireball: 10d6 fire damage to all in a 15-ft. radius (Save vs. Spell for half)
-  Lightning: 10d6 electrical damage to all in its path (Save vs. Spell for half)
+– Double Sunfire twice per day
+  Special: 20d6 fire damage to all in a 15-ft. radius around the caster (save vs. Spell for half)
   Range: 150 ft.
 
 – Spell Trap once per day
   Duration: 8 hours or until 30 spell levels have been trapped
   Area of Effect: The user
+
+– Cast any known spell once per day
+  Special: The power of the staff allows the wizard to channel any known spell, even if it's not memorized
 
 THAC0: +1 (strikes as a +5 weapon)
 Damage: 1d6+1 (crushing)
@@ -913,36 +915,3 @@ Requires:
  14 Strength
 
 Weight: 10~
-
-@42000 = ~This type of staff is thoroughly linked to the image of the spellcasting profession, rare though it is. It is among the most powerful tools that a wizard can possess, the culmination of complex enchantments and endless study. This particular example is good in melee, grants invisibility, and offers protection from charms and evil. It can also cast Spell Trap and Dispel Magic and launch a Fireball-Lightning Bolt combination. The quintessential Mage item.
-
-STATISTICS:
-
-Equipped abilities:
-– Armor Class: +2
-– Saving Throws: +2
-– Immunity to charm
-– Protection From Evil
-
-Combat abilities:
-– Dispel Magic at level 30 on each hit if Save vs. Spell at -2 is failed
-
-Charge abilities:
-– Fireball-Lightning Bolt three times per day
-  Fireball: 10d6 fire damage to all in a 15-ft. radius (Save vs. Spell for half)
-  Lightning: 10d6 electrical damage to all in its path (Save vs. Spell for half)
-  Range: 150 ft.
-
-– Spell Trap once per day
-  Duration: 8 hours or until 30 spell levels have been trapped
-  Area of Effect: The user
-
-THAC0: +1 (strikes as a +5 weapon)
-Damage: 1d6+1 (crushing)
-Speed Factor: 1
-Proficiency Type: Quarterstaff
-Type: Two-handed
-Requires:
- 5 Strength
-
-Weight: 4~

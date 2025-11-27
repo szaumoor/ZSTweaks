@@ -162,6 +162,10 @@ OUTER_SET zst_1280_carsomyr_evil   = "1"
 OUTER_SET zst_1318_fnorth_evil   = "1"
 OUTER_SET zst_1318_fnorth_trolls = "1"
 
+// staff of magi usability tweaks for balance
+// Possible values: 0 (no restrictions), 1 (non-fighter mages can use it), 2 (default: only single-classed wizards can)
+OUTER_SET zst_1390_staff_magi_usability = "2"
+
 // allows the unholy reaver parts of the tweak
 OUTER_SET zst_1410_ureaver_dispel   = "1"
 OUTER_SET zst_1410_ureaver_dicesize = "1"

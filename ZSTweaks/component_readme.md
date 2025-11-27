@@ -916,7 +916,13 @@ Staff of Magi is a little silly for two main reasons:
 - Always-dispel every hit
 - Automatic invisibility on equipping the weapon, leading to enough cheese to kill a lactose-intolerant elephant
 
-This alleviates the problem by making the invisibility on equip only affect the user once per turn at most, and adding a charge ability that lets you cast any known spell the user has once per day. Additionally, the silly fireball/lightning bolt combination is now replaced by a double-strength Sunfire (aka cast twice).
+This rebalances and enhances the staff in the following manner:
+
+- The dispel on-hit only works if the target hit fails a save vs. Spell at -2
+- Makes the invisibility on equip only affect a specific user once per turn at most
+- Now has a charge ability that lets the wizard cast any *known* spell the user has once per day
+- Since this tweak also allows someone to turn the whole party invisible by passing the staff around, as balance change, it now also can only be used by wizards. A configuration option can constrict this balance further, making it accessible only to pure mages, only to non-fighter mages (which includes cleric/mages and mage/thieves), otherwise, all sorcerers and mages can use it.
+- Additionally, the silly fireball/lightning bolt combination is now replaced by a double-strength Sunfire (aka cast twice).
 
 ### Make Ir'revrykal more powerful (1410)
 
