@@ -143,6 +143,8 @@
 - +1 HP bonus to bracers, boots, and belts component no longer part of the end-of-installation group, as a better solution was used to prevent problems, and is now part of the general tweaks
 - Component to patch various spells to make them bypass magic resistance remains part of the end-of-installation group. The group will remain there, so it blends well with the current design for users where they can choose everything they want out of the entire installation of the mod, especially by running `weinstall zstweaks --yes`.
 - Smoothed out the progression of two-weapon fighting style, trying to keep to the theme of making each point meaningful and having a single point always valuable
+- Maze component now prevents the target from moving while the mazing animation plays out
+- Staff of Magi component now prevents the invisibility effect on equip being used more than once per turn to a wielder, the fireball/lightning combo is now a double sunfire effect (20d6 fire damage) usable twice per day, and the staff also allows the user to cast any spell they have memorized once per day. (TODO)
 
 ## New components
 
@@ -165,3 +167,4 @@
 - Make single-classed thieves and bards able to throw sand in the enemy's eyes
 - Make Agannazar's Scorcher not pause the caster
 - Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance
+- Make Imprisonment prevent movement while the animation plays out

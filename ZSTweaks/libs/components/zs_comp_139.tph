@@ -134,6 +134,10 @@ ACTION_IF zst_group_558_agannazar BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_558.tph~ END
 END
 
-ACTION_IF zst_group_555_web BEGIN
+ACTION_IF zst_group_561_web BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_561.tph~ END
+END
+
+ACTION_IF zst_group_562_imprisonment BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_562.tph~ END
 END

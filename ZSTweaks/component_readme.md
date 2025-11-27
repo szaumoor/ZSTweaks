@@ -916,7 +916,7 @@ Staff of Magi is a little silly for two main reasons:
 - Always-dispel every hit
 - Automatic invisibility on equipping the weapon, leading to enough cheese to kill a lactose-intolerant elephant
 
-This alleviates the problem by making the invisibility on equip only affect the user once per turn at most, and adding a charge ability that lets you cast instead Mass Invisibility, a spell that gives all allies improved invisibility, which is an effect that can be pretty powerful in certain situations.
+This alleviates the problem by making the invisibility on equip only affect the user once per turn at most, and adding a charge ability that lets you cast any known spell the user has once per day. Additionally, the silly fireball/lightning bolt combination is now replaced by a double-strength Sunfire (aka cast twice).
 
 ### Make Ir'revrykal more powerful (1410)
 
@@ -1564,6 +1564,8 @@ Improves the usability of Death Fog as a "general purpose" damage dealer instead
 
 I think this makes this spell quite more useful, although perhaps it's too powerful like that if used against some enemies. I like this tweak, but I'll use the spell judiciously (perhaps not mazing dragons, for example). Additionally, minotaurs are immune to it, same as IWDEE.
 
+It will also prevent movement while the animation plays out. It also patches the shadowdancer version to behave the same (inapplicable if my shadowdancer overhaul is installed).
+
 ### Make base Imp Familiars have 12/24 HP like the other familiars (407)
 
 This allows you to be Lawful Evil and enjoy the same amount of HP bonus as other alignments. I see no reason there should be a bias against the Imp familiar.
@@ -1699,6 +1701,10 @@ Just makes the spell slightly more convenient and safe to use.
 Just because I think it makes more sense and the spell is pretty overpowered for a level 2 spell and paralyzing effects are often a death sentence. I actually think many spells should be forcing a save vs. Breath and not a save vs. Spell. Ugh. This mirrors what I did for Entangle.
 
 This change to save bonus does not affect special abilities outside the spells themselves such as spider abilities.
+
+### Make Imprisonment prevent movement while the animation plays out (562)
+
+Just a small tweak to make it look better, in my opinion. It's probably compatible with any other tweak to the spell.
 
 </details>
 
