@@ -2304,6 +2304,14 @@ Most of minotaurs are wimps in the game. This is what it changes:
   - They critically hit 5% more often. Take care of monks and mages
   - They now have three points in Axe proficiency (from none). This will in turn grant them half an attack per round, as it would for fighters, resulting in 5/2 attacks per round as baseline.
   - Their hits have a 50% chance of goring, inflicting 2d6 piercing damage (save vs. Breath to take half), and 3d8 extra if Save vs. Breath fails (no save to take only half), which also grants the minotaur a +1 bonus to their damage and 1/2 to their attacks per round for 2 rounds. These benefits can't affect the minotaur more than once every 9 seconds, and the victim cannot suffer this extra damage more than once per round. The basic 2d6 piercing damage can happen at any time with the aforementioned 50% chance per hit.
+  
+### Make ogre / oni mages regenerating fiends, as per PnP (3140)
+
+So ogre mages are not really ogres. It's some sort of weird misnomer. They're actually oni, essentially fiends, similar to night hags and rakshasha. Ogre mages are also capable of regenerating. So what this component does is simply:
+
+- All ogre mages regenerate health by 1 HP per round. Might increase difficulty somewhat, especially if they use magical protections.
+- Their race is now set as demonic. Because they're fiends and not ogres. So any effect that targets "demonic" will affect them too. I might refine this classification in the future.
+- And just for hoots, because they slumber around more slowly than molasses, their movement rate was increased by 2.
 
 </details>
 

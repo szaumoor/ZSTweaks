@@ -8,14 +8,14 @@ ACTION_FOR_EACH ability IN
     ~GA_SPWI103~ ~GA_SPWI217~ ~GA_SPWI304~ ~GA_SPWI418~
     ~GA_SPWI523~ ~GA_SPWI712~ ~GA_SPWI810~ ~GA_SPWI911~
 BEGIN
-  COPY_EXISTING ~CLABSO01.2DA~ ~override~
+  COPY_EXISTING ~clabso01.2da~ ~override~
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "%ability%" END
 END
 
 ACTION_IF spell_shroud_of_flame > 0 BEGIN
 
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHROUD_OF_FLAME" RET shroud_res = spell_res END
-  COPY_EXISTING ~CLABSO01.2DA~ ~override~
+  COPY_EXISTING ~clabso01.2da~ ~override~
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "GA_%shroud_res%" END
 
 END
@@ -23,10 +23,10 @@ END
 ACTION_IF zst_2231_fire_boost AND zst_2231_fire_boost_pctg > 0 BEGIN
 
   COPY ~%MOD_FOLDER%/class_kits/dragon_disciple~ ~override~
-  COPY_EXISTING ~ZSTWDGD0.SPL~ ~override~
+  COPY_EXISTING ~zstwdgd0.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 332 parameter1 = zst_2231_fire_boost_pctg END
 
-  COPY_EXISTING ~CLABSO01.2DA~ ~override~
+  COPY_EXISTING ~clabso01.2da~ ~override~
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "AP_ZSTWDGD0" END
 
 END
@@ -38,12 +38,13 @@ END
 >>>>>>>>
 
 ACTION_FOR_EACH ability IN
-    ~SPWI103~ ~SPWI217~ ~SPWI304~ ~SPWI418~
-    ~SPWI523~ ~SPWI712~ ~SPWI810~ ~SPWI911~
+    ~spwi103~ ~spwi217~ ~spwi304~ ~spwi418~
+    ~spwi523~ ~spwi712~ ~spwi810~ ~spwi911~
 BEGIN
   COPY_EXISTING ~%ability%.SPL~ ~override~
     SET spl_level = LONG_AT(0x34)
-  DEFINE_ASSOCIATIVE_ARRAY stuff BEGIN ~%ability%~ => ~%spl_level%~ END
+    DEFINE_ASSOCIATIVE_ARRAY stuff BEGIN ~%ability%~ => ~%spl_level%~ END
+  BUT_ONLY
 END
 
 COPY ~./zstweaks/macro.tph~ ~./zstweaks/macro.tph~

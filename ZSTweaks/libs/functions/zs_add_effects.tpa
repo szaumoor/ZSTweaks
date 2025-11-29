@@ -37,6 +37,7 @@ INT_VAR
     p2 = 0
     tmg = 9
     tgt = 1
+    dur = 0
 STR_VAR
     res = ""
 BEGIN
@@ -51,7 +52,7 @@ BEGIN
     SET parameter1 = p1
     SET parameter2 = p2
     SET resist_dispel = 0
-    SET duration = 0
+    SET duration = dur
     SET probability1 = 100
     SET probability2 = 0
     SPRINT resource ~%res%~

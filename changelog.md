@@ -144,7 +144,7 @@
 - Component to patch various spells to make them bypass magic resistance remains part of the end-of-installation group. The group will remain there, so it blends well with the current design for users where they can choose everything they want out of the entire installation of the mod, especially by running `weinstall zstweaks --yes`.
 - Smoothed out the progression of two-weapon fighting style, trying to keep to the theme of making each point meaningful and having a single point always valuable
 - Maze component now prevents the target from moving while the mazing animation plays out
-- Staff of Magi component now prevents the invisibility effect on equip being used more than once per turn to a wielder, the fireball/lightning combo is now a double sunfire effect (20d6 fire damage) usable twice per day, and the staff also allows the user to cast any spell they have memorized once per day. (TODO)
+- Staff of Magi component now prevents the invisibility effect on equip being used more than once per turn to a wielder, the fireball/lightning combo is now a double sunfire effect (20d6 fire damage) usable twice per day, and the staff also allows the user to cast any spell they have memorized once per day.
 
 ## New components
 
@@ -168,4 +168,8 @@
 - Make Agannazar's Scorcher not pause the caster
 - Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance
 - Make Imprisonment prevent movement while the animation plays out
+- Make Staff of Power more interesting and balanced (TODO: fix broken paralysis, add more cool stuff)
+- Make Staff of Command more interesting and balanced (TODO: make domination thing more balanced -- saves, less duration, maybe immunity to psionics while holding it)
+- Make Charm spells slightly better (TODO: no hostile reaction, slight bonus to Charm Person +2 saves, maybe funnel some benefits when subject is under some other effect)
+- Make ogre / oni mages regenerating fiends, as per PnP
   
