@@ -145,6 +145,7 @@
 - Smoothed out the progression of two-weapon fighting style, trying to keep to the theme of making each point meaningful and having a single point always valuable
 - Maze component now prevents the target from moving while the mazing animation plays out
 - Staff of Magi component now prevents the invisibility effect on equip being used more than once per turn to a wielder, the fireball/lightning combo is now a double sunfire effect (20d6 fire damage) usable twice per day, and the staff also allows the user to cast any spell they have memorized once per day.
+- Celestial component also makes the dispel on hit for planetars subject to saving throws
 
 ## New components
 

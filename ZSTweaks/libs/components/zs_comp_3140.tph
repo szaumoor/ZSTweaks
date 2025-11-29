@@ -4,15 +4,17 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_3140~ = 1
 END
 
-COPY_EXISTING_REGEXP ~^·+\.cre$~ ~override~
+COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     
-    PATCH_IF BYTE_AT(0x272) = race_ogre AND BYTE_AT(0x273) = class_ogre_mage BEGIN
-        
-        WRITE_BYTE 0x272 race_demonic
-        LPF DELETE_EFFECT INT_VAR match_opcode = 98 END
-        LPF ADD_PASSIVE_EFFECT INT_VAR op=98 p1=6 p2=3 tmg=4 dur=1 END
-        LPF ADD_PASSIVE_EFFECT INT_VAR op=176 p1=2 END
+  PATCH_IF BYTE_AT(0x272) = race_ogre AND
+           BYTE_AT(0x273) = class_ogre_mage 
+  BEGIN
+      
+    WRITE_BYTE 0x272 race_demonic
+    LPF DELETE_EFFECT INT_VAR match_opcode = 98 END
+    LPF ADD_CRE_PASSIVE INT_VAR op=98 p1=6 p2=3 tmg=4 dur=1 END
+    LPF ADD_CRE_PASSIVE INT_VAR op=176 p1=2 END
 
-    END
+  END
 
 BUT_ONLY
