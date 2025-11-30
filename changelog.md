@@ -82,6 +82,7 @@
 - Vastly reduced the library size on some parts to reduce the number of function calls, as these are unfortunately costly performance-wise with WeiDu
 - Fixed some components not reacting to the presence of a component through the group component install
 - Fixed issue which forced wielders of staff of magi to save vs. spell to benefit from passive effects and made finesse-type effects also subject to the save vs spell
+- Removed meaningless console string when celestials disable the party partial spell invulnerability
 
 ## Modifications
 
@@ -146,6 +147,7 @@
 - Maze component now prevents the target from moving while the mazing animation plays out
 - Staff of Magi component now prevents the invisibility effect on equip being used more than once per turn to a wielder, the fireball/lightning combo is now a double sunfire effect (20d6 fire damage) usable twice per day, and the staff also allows the user to cast any spell they have memorized once per day.
 - Celestial component also makes the dispel on hit for planetars subject to saving throws
+- Celestial component actually makes the planetars cleric/mages so their cleric spells are have scaling
 
 ## New components
 

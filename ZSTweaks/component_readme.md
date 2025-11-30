@@ -2212,6 +2212,7 @@ This component rebalances Deva and Planetar summons to make both more balanced c
   - Deals an additional 4 divine (irresistible) damage to fiends and celestials.
   - They and all nearby allies are protected by a permanent invisible Minor Globe of Invulnerability (toggleable).
   - They can also cast all their spells instantly.
+  - Now considered cleric/mages so their cleric spells have scaling, if there's any
 
 ### Make the Balor's vorpal attack not guaranteed to succeed but be affected by a saving throw too (3050)
 

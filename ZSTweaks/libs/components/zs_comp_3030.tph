@@ -50,6 +50,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING ~plangood.cre~ ~override~
                   ~planevil.cre~ ~override~
       ADD_MEMORIZED_SPELL ~ZSTWPLTE~ #0 ~innate~ (1)
+      WRITE_BYTE 0x273 class_cleric_mage
 
     COPY_EXISTING ~ZSTWPLTE.SPL~ ~override~
       LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8160) desc = RESOLVE_STR_REF(@8161) END
