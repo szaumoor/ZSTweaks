@@ -83,6 +83,7 @@
 - Fixed some components not reacting to the presence of a component through the group component install
 - Fixed issue which forced wielders of staff of magi to save vs. spell to benefit from passive effects and made finesse-type effects also subject to the save vs spell
 - Removed meaningless console string when celestials disable the party partial spell invulnerability
+- Fixed ability to disable partial spell invulnerability from planetars not applying to the party but the planetar itself, rendering it useless
 
 ## Modifications
 
@@ -148,6 +149,8 @@
 - Staff of Magi component now prevents the invisibility effect on equip being used more than once per turn to a wielder, the fireball/lightning combo is now a double sunfire effect (20d6 fire damage) usable twice per day, and the staff also allows the user to cast any spell they have memorized once per day.
 - Celestial component also makes the dispel on hit for planetars subject to saving throws
 - Celestial component actually makes the planetars cleric/mages so their cleric spells are have scaling
+- Added option for the earthquake component to only reduce the shake intensity greatly, check preferences
+- Earthquake component now makes the silly behavior of the spell where the quake sounds and the screen shake overlap and stack for every affected creature such that it only happens once every time it triggers. For technical reasons, the caster will be the generator of both the sound and shake, if it exists, which probably doesn't look too odd, considering a quake should probably be LOUD.
 
 ## New components
 

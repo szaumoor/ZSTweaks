@@ -1756,13 +1756,15 @@ Conceptually, I think it's a cool spell for druids and rangers, but it's not too
 
 ### Make Earthquake more effective and disable annoyances (250)
 
-Earthquake is generally very inconvenient to be cast at any point because of how it affects your whole party. This disables that behavior, and in case you don't enjoy feeling like casting it might make you dizzy, it also disables the screen shake. Finally, it also makes it more effective, by making the saves and damage decay less harshly:
+Earthquake is generally very inconvenient to be cast at any point because of how it affects your whole party. This disables that behavior, and in case you don't enjoy feeling like casting it might make you dizzy, it also disables the screen shake or reduces it greatly. Finally, it also makes it more effective, by making the saves and damage decay less harshly:
 
-1st round: vanilla, 6d6 damage, -6 save to avoid unconsciousness
+1st round: vanilla, 6d6 damage, -6 save vs. death to avoid unconsciousness
 2nd round: 5d6 damage, -4 save
 3rd round: 4d6 damage, -2 save
 
 These three separate modifications are all optional. Check the config file.
+
+Finally, because Earthquake has this silly behavior where the sound of the quake triggers for every affected creature, it now will only ring once every time it triggers, using the caster as the center point of the sound.
 
 ### Make Negative Plane Protection's duration increase somewhat as you level up (260)
 

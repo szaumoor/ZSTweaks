@@ -244,9 +244,9 @@ OUTER_SET zst_190_hpower_apr                  = "1" // APR tweak
 OUTER_SET zst_190_hpower_apr_nonfighters_only = "1" // APR bonus only for nonfighters
 
 // allows certain parts of the tweaks to earthquake in the relevant component
-OUTER_SET zst_250_quake_pfriendly = "1" // party friendly
-OUTER_SET zst_250_quake_no_shake  = "1" // no more seizures
-OUTER_SET zst_250_quake_boost     = "1" // effect boost
+OUTER_SET zst_250_quake_pfriendly        = "1" // party friendly
+OUTER_SET zst_250_quake_shake_intensity  = "2" // 0 = no change, 1 = no shake, 2 = still present, dramatically less shake
+OUTER_SET zst_250_quake_boost            = "1" // effect boost
 
 // allows certain parts of the tweaks to nature's beauty in the relevant component
 OUTER_SET zst_320_natbeauty_boost      = "1"
