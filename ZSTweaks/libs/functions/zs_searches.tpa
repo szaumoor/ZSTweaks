@@ -120,6 +120,10 @@ BEGIN
         PATCH_IF opcode <= 0 BEGIN
             PATCH_FAIL ~Invalid opcode specified for SPELL_OPCODE_PRESENT.~
         END
+        
+        PATCH_IF NOT (VARIABLE_IS_SET "parameter2" OR VARIABLE_IS_SET "resource") BEGIN
+            PATCH_FAIL "Must provide at least parameter2 or resource to SPELL_CODE_PRESENT"
+        END
     END
 
     READ_LONG 0x64 ability_offset
@@ -132,21 +136,36 @@ BEGIN
 
         PATCH_IF effects_number > 0 BEGIN
 
+            SET p2_set = VARIABLE_IS_SET "parameter2"
+            SET res_set = VARIABLE_IS_SET "resource"
+            SET matches_needed = p2_set + res_set
+
             FOR ( index = 0; index < effects_number; ++index ) BEGIN
 
                 SET base_eff_offset = effect_offset + (globals_number * 0x30) + (index * 0x30)
                 READ_SHORT base_eff_offset op
                 READ_LONG (base_eff_offset + 0x08) p2
-                PATCH_IF opcode = op AND VARIABLE_IS_SET "parameter2" AND (parameter2 < 0 OR parameter2 = p2) BEGIN
-                    PATCH_IF "%resource%" STR_EQ "*" BEGIN
-                        present = 1
-                        index = effects_number
-                    END ELSE BEGIN
-                        READ_ASCII (base_eff_offset + 0x14) assigned_resource
-                        PATCH_IF "%resource%" STR_EQ "%assigned_resource%" BEGIN
+                READ_ASCII (base_eff_offset + 0x14) assigned_resource
+
+                PATCH_IF opcode = op BEGIN
+
+                    PATCH_IF p2_set OR res_set BEGIN
+
+                        SET matches = 0
+
+                        PATCH_IF p2_set AND parameter2 = p2 BEGIN
+                            ++matches
+                        END
+
+                        PATCH_IF res_set AND "%resource%" STR_EQ "%assigned_resource%" BEGIN
+                            ++matches
+                        END
+
+                        PATCH_IF matches = matches_needed BEGIN
                             present = 1
                             index = effects_number
                         END
+
                     END
                 END
             END
@@ -160,33 +179,54 @@ END
 DEFINE_PATCH_MACRO ITM_OPCODE_PRESENT
 BEGIN
     PATCH_IF zs_debug BEGIN
-        LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
         PATCH_IF opcode <= 0 BEGIN
             PATCH_FAIL ~Invalid opcode specified for ITM_OPCODE_PRESENT.~
+        END
+
+        PATCH_IF NOT (VARIABLE_IS_SET "parameter2" OR VARIABLE_IS_SET "resource") BEGIN
+            PATCH_FAIL "Must provide at least parameter2 or resource to SPELL_CODE_PRESENT"
         END
     END
 
     READ_LONG 0x6a ability_offset
-    READ_SHORT 0x70 num_abilities
+    READ_SHORT 0x70 effects_number
 
-    PATCH_IF num_abilities > 0 BEGIN
-        FOR ( index = 0; index < num_abilities; ++index ) BEGIN
+    PATCH_IF effects_number > 0 BEGIN
+
+        SET p2_set = VARIABLE_IS_SET "parameter2"
+        SET res_set = VARIABLE_IS_SET "resource"
+        SET matches_needed = p2_set + res_set
+
+        FOR ( index = 0; index < effects_number; ++index ) BEGIN
 
             SET base_eff_offset = ability_offset + (index * 0x30)
             READ_SHORT base_eff_offset op
             READ_LONG (base_eff_offset + 0x08) p2
-            PATCH_IF opcode = op AND (parameter2 < 0 OR parameter2 = p2) BEGIN
-                PATCH_IF "%resource%" STR_EQ "*" BEGIN
-                    present = 1
-                    index = num_abilities
-                END ELSE BEGIN
-                    READ_ASCII (base_eff_offset + 0x14) assigned_resource
-                    PATCH_IF "%resource%" STR_EQ "%assigned_resource%" BEGIN
-                        present = 1
-                        index = num_abilities
+            READ_ASCII (base_eff_offset + 0x14) assigned_resource
+
+            PATCH_IF opcode = op BEGIN
+                
+                PATCH_IF p2_set OR res_set BEGIN
+
+                    SET matches = 0
+
+                    PATCH_IF p2_set AND parameter2 = p2 BEGIN
+                        ++matches
                     END
+
+                    PATCH_IF res_set AND "%resource%" STR_EQ "%assigned_resource%" BEGIN
+                        ++matches
+                    END
+
+                    PATCH_IF matches = matches_needed BEGIN
+                        present = 1
+                        index = effects_number
+                    END
+
                 END
             END
+
         END
 
     END

@@ -11,25 +11,6 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
     COPY_EXISTING ~SHLD08.itm~ ~override~
         READ_LONG 0x8 buckler_shield_strref
 
-    ACTION_IF zs_debug BEGIN
-
-        PRINT "Finding incorrect shield strrefs for debugging..."
-        COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-            READ_SHORT 0x1c cat
-            PATCH_IF cat = 12 BEGIN
-                READ_LONG 0x8 strref
-                PATCH_IF strref != small_shield_strref   AND
-                         strref != medium_shield_strref  AND
-                         strref != large_shield_strref   AND
-                         strref != buckler_shield_strref
-                BEGIN
-                    PATCH_WARN "[[WARNING FOR SHIELD COMPONENTS]] Incorrect shield strref found at shield category: %SOURCE_RES%"
-                END
-            END
-        BUT_ONLY
-        
-    END
-
     COPY_EXISTING ~NPSHLD.itm~ ~override~ // Delryn's Shield
                   ~x#ajshld.itm~ ~override~ // Ajantis' Shield
                   ~x#fai3.itm~ ~override~ // dented shield
@@ -62,6 +43,25 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
                   ~ORRSHLD.itm~ ~override~
         WRITE_LONG 0x8 large_shield_strref
     BUT_ONLY IF_EXISTS
+
+    ACTION_IF zs_debug BEGIN
+
+        PRINT "Finding incorrect shield strrefs for debugging..."
+        COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
+            READ_SHORT 0x1c cat
+            PATCH_IF cat = 12 BEGIN
+                READ_LONG 0x8 strref
+                PATCH_IF strref != small_shield_strref   AND
+                         strref != medium_shield_strref  AND
+                         strref != large_shield_strref   AND
+                         strref != buckler_shield_strref
+                BEGIN
+                    PATCH_WARN "[[WARNING FOR SHIELD COMPONENTS]] Incorrect shield strref found at shield category: %SOURCE_RES%"
+                END
+            END
+        BUT_ONLY
+        
+    END
 
 
     OUTER_SET "zst_shields_fixed" = 1
