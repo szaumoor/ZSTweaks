@@ -5,11 +5,18 @@ END ELSE BEGIN
 END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
-
+ 
   COPY_EXISTING ~staf12.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@41236) STR_VAR appearance = "q4" ench=4 END
-    LPF ALTER_HEADER INT_VAR match_type=1 type=2 range=30 dicesize=0 dicenumber=0 projectile=70 overhand=20 backhand=80 END
+    LPF ALTER_HEADER INT_VAR match_type=1 speed=2 END 
+    LPF CLONE_HEADER INT_VAR match_type=1 type=2 dicesize=0 dicenumber=0 range=30 projectile=70 overhand=20  backhand=80 flag_str_damage=0 STR_VAR icon = "spwi112c" END
+
+    LPF ADD_ON_HIT_EFF INT_VAR t=1 pro1=9 stype=1 STR_VAR effects = ~op=45,dur=15;op=139,p1=1280~ END
+
     LPF ADD_ITEM_EFFECT INT_VAR type=2 opcode=12 target=2 parameter2=op12_magic parameter1=1 dicesize=4 dicenumber=1 resist_dispel=1 END
+    LPF ADD_ITEM_EFFECT INT_VAR type=2 opcode=12 target=2 parameter2=op12_magic probability1=4 parameter1=1 dicesize=4 dicenumber=1 resist_dispel=1 END
+
+    LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=177,p1=%class_mage%,res=zstaf120;op=177,p1=%class_sorcerer%,res=zstaf121;op=177,p1=%class_mage%,res=zstaf120;op=177,p1=%class_sorcerer%,res=zstaf121~ END
 
   OUTER_SET opcode = 206
   OUTER_SPRINT resource "SPWI101"
@@ -28,7 +35,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         END
 
         PATCH_IF present BEGIN
-            LPF CLONE_EFFECT INT_VAR match_opcode=101 match_parameter2=13 opcode=206 parameter2=0 STR_VAR resource="ZSTWVRPA" END
+            LPF CLONE_EFFECT INT_VAR match_opcode=opcode opcode=206 parameter2=0 STR_VAR resource="%resource%" END
         END
 
     BUT_ONLY

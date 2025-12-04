@@ -2,11 +2,11 @@
 
 ## Description
 
-This mod is a collection of tweaks designed to improve the vanilla game experience. While most components offer simple enhancements for underpowered items and abilities, some provide more extensive, but not radical, overhauls.
+This mod is a collection of tweaks designed to improve the vanilla game experience. While most components offer simple enhancements for underpowered items and abilities, some provide more extensive, but not radical, overhauls. Two of the main themes in my tweaks (outside spell tweaks) are that I want to reward specialization (single class vs. multiclass), and that unique items that have nothing functionally unique become unique. Nothing kills my mojo more than an item with an awesome name and backstory that literally just behaves like the base item with a +1 bonus to base stats (such as Fallorain's Plate).
 
-Each component group includes an option to install up to all of its components at once, except those that require user input or I deem less likely to be wanted. As of version 1.6.1, you can customize these group installations for all groups of components via the configuration files in the `ZSTweaks/configurations` directory. By default, all components in a group are selected for installation. Warning: do not change values in the configuration file in the middle of an installation or before completing your ZSTweaks installation to avoid issues.
+Each component group includes an option to install up to all of its components at once. You can customize these group installations for all groups of components via the configuration files in the `ZSTweaks/configurations` directory. By default, all components in a group are selected for installation. Warning: do not change values in the configuration file in the middle of an installation or before completing your ZSTweaks installation to avoid issues.
 
-This mod also includes several bugfixes that are necessary for the tweaks to function as intended. Some of these fixes are automatically disabled if the EEFixpack is installed.
+This mod also includes several bugfixes that are necessary for the tweaks to function as intended. Some of these fixes are automatically disabled if the EEFixpack is installed, as they'd be redundant.
 
 On-hit damage effects from this mod or on weapons the mod tweaks are also changed not to wake sleeping targets. This prevents a corner case where a weapon that applies sleep on hit could immediately wake the target with a secondary damage effect.
 

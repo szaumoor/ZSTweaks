@@ -309,17 +309,18 @@ Weight: 10~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +2
-– Saving Throws: +2
+– Armor class: +2
+– Saving throws: +2
 – Immunity to charm
-– Protection From Evil
+– Protection from evil
+– Strikes as a +5 weapon for the purposes of overcoming weapon immunities
 – Turns the user invisible once per turn
 
 Combat abilities:
 – Dispel Magic at level 30 on each hit if a save vs. Spell at -2 is failed
 
 Charge abilities:
-– Double Sunfire twice per day
+– Double Sunfire cast at level 10 twice per day
   Special: 20d6 fire damage to all in a 15-ft. radius around the caster (save vs. Spell for half)
   Range: 150 ft.
 
@@ -330,8 +331,9 @@ Charge abilities:
 – Cast any known spell once per day
   Special: The power of the staff allows the wizard to channel any known spell, even if it's not memorized
 
-THAC0: +1 (strikes as a +5 weapon)
-Damage: 1d6+1 (crushing)
+THAC0: +1, +5 for single-classed mages and sorcerers
+Damage: 1d6+1, +5 (sorcerers and single-classed mages)
+Damage type: Crushing
 Speed Factor: 1
 Proficiency Type: Quarterstaff
 Type: Two-handed
@@ -915,3 +917,40 @@ Requires:
  14 Strength
 
 Weight: 10~
+
+@42424 = ~A mage's staff is far more than just a gilded walking stick, most being enchanted to an impressive degree. This one is no exception, and whoever the previous owner was, they were powerful indeed. It enables a mage to better escape hostile magic and avoid physical blows, and can erect a Globe of Invulnerability once per day. Offensively, it can shoot magic missiles to the enemies from a safe distance which the mage must throw with skill, and allows the mage to cast a paralyzing Lightning Bolt twice per day. 
+
+STATISTICS:
+
+Equipped abilities:
+– Armor class: +2
+– Saving throws: +2
+– Magic resistance: +5% (10% for single-classed mages and sorcerers)
+– Attacks per round: Set to 2 (sorcerers and single-classed mages)
+– Casting level: +1
+– 5% chance to inflict double magic damage on the ranged attacks
+– Ranged THAC0 improves with intelligence too: +1 THAC0 for every 2 points, starting at 17
+– Melee hits have a 10% chance of stunning the target for 5/2 rounds if a save vs. Spell is failed
+– Acts as a +4 weapon for the purposes of what it can hit
+
+Charge abilities:
+– Globe of Invulnerability once per day
+  Special: Immunity to 1st- through 4th-level spells
+  Duration: 2 turns
+  Area of Effect: The user
+
+– Lightning Bolt of Paralyzation twice per day
+  Damage: 10d6 electrical to all in its path (save vs. Spell for half)
+  Special: Stuns target for 5/2 rounds if a save vs. Spell is failed
+  Range: 100 ft.
+
+THAC0: +2, +4 for sorcerers and single-classed mages
+Damage (melee): 1d6+2 (crushing)
+Damage (ranged): 3d4+3 (magic)
+Speed Factor: 2
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
