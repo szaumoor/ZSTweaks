@@ -954,3 +954,156 @@ Requires:
  5 Strength
 
 Weight: 3~
+
+
+@42430 = ~This staff seems to draw from elven artistic traditions, though tied less to the forest than is usually customary. It was apparently designed to control air elementals, being able to summon one as a servant to the wielder and potentially destroying creatures of the same type in a single blow. When necessary, it can also spawn a cloud of gas, causing anyone within the area of effect to fall into a deep slumber. Some effects are limited by charges.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Dexterity: +1
+– Electricity resistance: +20%
+– Electricity damage: +4% (8% for single-classed druids and shamans)
+– Air Elementals attack the wielder with a -2 penalty to their THAC0
+– Acts as +4 weapon in every respect vs. elementals
+
+Combat abilities:
+– Struck air elementals save vs. Spell or be destroyed but extremely powerful elementals such as elemental princes will not be affected.
+
+Charge abilities:
+– Summon 8-HD Lesser Air Elemental once per day
+  Range: 20 ft.
+  Duration: 1 hour
+
+– Sleep Cloud once per day (Save vs. Death negates)
+  Range: 40 ft.
+  Duration: 3 rounds
+
+
+THAC0: +2
+Damage: 1d6+2, +1d2 electricity damage (double on a critical hit)
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@42431 = ~Linked to the Plane of Earth, this staff may have been fashioned by an ancient druidic sect. It can summon an earth elemental, though it also has the potential to slay such creatures in a single blow, possibly hinting at how difficult it is to control them. It can also free a person from the earth by casting Stone to Flesh. 
+
+STATISTICS:
+
+Equipped abilities:
+– Saves vs. Death: +1
+– Constitution: +1
+– Acid and poison damage resistance: +20%
+– Acid and poison damage: +4% (8% for single-classed druids and shamans)
+– Earth Elementals attack the wielder with a -2 penalty to their THAC0
+– Acts as +4 weapon in every respect vs. elementals
+
+Combat abilities:
+– Struck earth elementals must save vs. Spell or be destroyed but extremely powerful elementals such as elemental princes will not be affected.
+
+Charge abilities:
+– Summon 8-HD Lesser Earth Elemental once per day
+  Range: 20 ft.
+  Duration: 1 hour
+
+– Stone to Flesh once per day
+  Special: Revert effects of a petrification attack
+  Range: Touch
+
+– Ironskins once per day
+  Special: Protects against the first three weapon attacks vs. the user
+  Range: Caster
+
+THAC0: +2
+Damage: 1d6+2 , +1 acid damage, +1 poison damage (double on a critical hit)
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@42432 = ~This staff bears an ancient rune that may link it to the wizards of faraway Halruaa, but it is impossible to be certain. Drawing from the Plane of Fire, it can erupt in a Fire Shield that damages attackers, it can summon a fire elemental under the control of the wielder, and it can potentially draw all the energy from any fire elemental that it hits, destroying them instantly. Regardless of who uses it, anyone with the ability to channel the power of fire will find the staff allows them to channel their igneous fury more effectively, but those that know how to use the best, such as red dragon disciples and invokers.
+
+STATISTICS:
+
+Equipped abilities:
+– Strength: +1
+– Fire resistance: +20%
+– Fire damage: +4% (8% for single-classed druids, shamans, and dragon disciples)
+– Dragon Disciples and Invokers can attack twice per round with the staff and inflict double fire damage
+– Dragon Disciples and Invokers reduce the Fire Resistance of targets by 20% for 2 rounds on hit
+– Fire Elementals attack the wielder with a -2 penalty to their THAC0
+– Acts as +4 weapon in every respect vs. elementals
+
+Combat abilities:
+– Struck fire elementals must save vs. Spell or be destroyed but extremely powerful elementals such as elemental princes will not be affected.
+
+Charge abilities:
+– Summon 8-HD Lesser Fire Elemental once per day
+  Range: 20 ft.
+  Duration: 1 hour
+
+– Fireshield (Red) once per day
+  Fire Resistance: +50%
+  Special: Any who strike the user within a 5-ft. radius suffers 1d8+2 fire damage
+  Duration: 13 rounds
+  Area of Effect: The user
+
+THAC0: +2
+Damage: 1d6+2, +1d2 fire damage (double on a critical hit)
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@42440 = ~There are stories that tell of these staves sprouting in the growth around druid groves when the forest is threatened. Fanciful tales, but truth or not, this staff is a powerful tool. It draws energy from storms, and there is a chance that any melee blow might trigger a thunderclap that knocks enemies down. It can also throw small bolts of lightning from a distance by the will of the druid. It casts Lightning Bolt, Chain Lightning, and if circumstances warrant it, it can summon a lightning storm to blast enemies to dust. Some abilities are limited by charges.
+
+STATISTICS:
+
+Equipped abilities:
+– Electricity damage: +12% (shamans, and single-classed druids or clerics)
+– Attacks vs. the wielder deal 1d2 electricity damage back
+
+Combat abilities:
+– Thunderclap (melee): 10% chance of stunning hit target for 2 rounds and dealing 4d5 electricity damage (Save vs. Spell negates)
+– Ranged attacks decreases electricity resistance by 10% for 1 turn for susceptible targets (Save vs. Spell negates)
+
+Charge abilities:
+– Lightning Bolt once per day
+  Damage: 10d6 electrical (Save vs. Spell for half)
+  Area of Effect: Path of bolt
+  Range: 25 ft.
+
+– Chain Lightning once per day
+  Damage: 10d6 electrical damage to the first enemy it touches and every other enemy in close proximity
+  Area of Effect: One enemy and everyone within 15ft
+  Range: 25 ft.
+
+– Call Lightning once per day
+  Special: Calls forth 5 lightning bolts in total, one per turn. Only works outside
+  Damage: 5d8 electrical per strike
+  Range: 80 ft.
+
+THAC0: +2
+Damage (melee): 1d6+2, +3 electricity damage
+Damage (ranged): 2d6+3 electricity damage
+Speed Factor: 2
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 4~

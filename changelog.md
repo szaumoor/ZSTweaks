@@ -148,9 +148,10 @@
 - Maze component now prevents the target from moving while the mazing animation plays out
 - Staff of Magi component now prevents the invisibility effect on equip being used more than once per turn to a wielder, the fireball/lightning combo is now a double sunfire effect (20d6 fire damage) usable twice per day, and the staff also allows the user to cast any spell they have memorized once per day.
 - Celestial component also makes the dispel on hit for planetars subject to saving throws
-- Celestial component actually makes the planetars cleric/mages so their cleric spells are have scaling
-- Added option for the earthquake component to only reduce the shake intensity greatly, check preferences
+- Celestial component actually makes the planetars cleric/mages so their cleric spells scale (level 20)
+- Added option for the earthquake component to only reduce the shake intensity greatly, instead of removing it entirely, check preferences
 - Earthquake component now makes the silly behavior of the spell where the quake sounds and the screen shake overlap and stack for every affected creature such that it only happens once every time it triggers. For technical reasons, the caster will be the generator of both the sound and shake, if it exists, which probably doesn't look too odd, considering a quake should probably be LOUD.
+- Added fixes from the shadowdancer overhaul mod to the prefixes of this mod 
 
 ## New components
 
@@ -175,7 +176,5 @@
 - Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance
 - Make Imprisonment prevent movement while the animation plays out
 - Make Staff of Power more interesting and balanced (TODO: fix broken paralysis, add more cool stuff)
-- Make Staff of Command more interesting and balanced (TODO: make domination thing more balanced -- saves, less duration, maybe immunity to psionics while holding it)
-- Make Charm spells slightly better (TODO: no hostile reaction, slight bonus to Charm Person +2 saves, maybe funnel some benefits when subject is under some other effect)
 - Make ogre / oni mages regenerating fiends, as per PnP
   

@@ -12,6 +12,28 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
     COPY_EXISTING ~phanblad.eff~ ~override~
         LPF ALTER_EFF_FILE INT_VAR special = 1024 END
 
+    ACTION_IF NOT has_eefixpack BEGIN
+
+        ACTION_IF FILE_EXISTS_IN_GAME ~spcl936.spl~ AND !(MOD_IS_INSTALLED ~ZS_ShadowdancerOverhaul.tp2~ ~100~) BEGIN
+            PRINT "[[FIX]]: Extending duration of Shadow Twin to the intended 2 turns"
+            COPY_EXISTING ~spcl936.spl~ ~override~ // Shadow Twin, fixed wrong duration
+                LPF ALTER_EFFECT INT_VAR silent= match_duration = 60 duration = 120 END
+        END 
+        
+        PRINT "[[FIX]]: Setting the right THAC0 penalty to the Shadowdancer kit for using weapons without proficiency"
+        COPY_EXISTING ~clswpbon.2da~ ~override~
+            READ_2DA_ENTRIES_NOW clswpbon 1
+            FOR (row = 3; row < clswpbon; ++row) BEGIN
+                READ_2DA_ENTRY_FORMER clswpbon row 0 label
+                PATCH_IF (~%label%~ STR_EQ ~SHADOWDANCER~) BEGIN
+                SET_2DA_ENTRY_LATER clswpbon_out row 3 3
+                SET row = clswpbon
+                END
+            END
+            SET_2DA_ENTRIES_NOW clswpbon_out 1
+
+    END
+
     ACTION_IF is_iwdee BEGIN
 
         ACTION_IF NOT has_eefixpack BEGIN
