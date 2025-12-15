@@ -6,7 +6,7 @@ END
 
 COPY ~%MOD_FOLDER%/creatures/yuanti~ ~override~
 OUTER_SPRINT melee_effect "zsipyua2"
-OUTER_SET movement_boost = 3
+OUTER_SET movement_boost = 4
 
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     READ_BYTE 0x272 race

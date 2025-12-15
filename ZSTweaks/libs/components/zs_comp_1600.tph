@@ -17,27 +17,27 @@ WITH_SCOPE BEGIN
 
     ACTION_IF is_bg2ee_or_eet BEGIN
 
-        EXTEND_BOTTOM ~ar0602.baf~ ~%MOD_FOLDER%/baf/omnistab/ar0602.baf~ // irenicus dungeon
-        EXTEND_BOTTOM ~ar4000.baf~ ~%MOD_FOLDER%/baf/omnistab/ar4000.baf~ // tob initial area
-        EXTEND_BOTTOM ~ar8000.baf~ ~%MOD_FOLDER%/baf/omnistab/oh8000.baf~ // black pits 2 initial area
+        EXTEND_BOTTOM ~ar0602.bcs~ ~%MOD_FOLDER%/baf/omnistab/ar0602.baf~ // irenicus dungeon
+        EXTEND_BOTTOM ~ar4000.bcs~ ~%MOD_FOLDER%/baf/omnistab/ar4000.baf~ // tob initial area
+        EXTEND_BOTTOM ~ar8000.bcs~ ~%MOD_FOLDER%/baf/omnistab/oh8000.baf~ // black pits 2 initial area
 
     END
 
     ACTION_IF is_iwdee BEGIN
 
-        EXTEND_BOTTOM ~ar9100.baf~ ~%MOD_FOLDER%/baf/omnistab/ar9100.baf~ // HoW
-        EXTEND_BOTTOM ~ar1006.baf~ ~%MOD_FOLDER%/baf/omnistab/ar1006.baf~ // easthaven inn (iwdee)
+        EXTEND_BOTTOM ~ar9100.bcs~ ~%MOD_FOLDER%/baf/omnistab/ar9100.baf~ // HoW
+        EXTEND_BOTTOM ~ar1006.bcs~ ~%MOD_FOLDER%/baf/omnistab/ar1006.baf~ // easthaven inn (iwdee)
 
     END
 
 
     ACTION_IF is_bgee OR is_eet BEGIN
 
-        EXTEND_BOTTOM ~ar2600.baf~ ~%MOD_FOLDER%/baf/omnistab/ar2600.baf~ // candlekeep area
-        EXTEND_BOTTOM ~oh9310.baf~ ~%MOD_FOLDER%/baf/omnistab/oh9310.baf~ // black pits 1 area
+        EXTEND_BOTTOM ~ar2600.bcs~ ~%MOD_FOLDER%/baf/omnistab/ar2600.baf~ // candlekeep area
+        EXTEND_BOTTOM ~oh9310.bcs~ ~%MOD_FOLDER%/baf/omnistab/oh9310.baf~ // black pits 1 area
 
         ACTION_IF is_eet OR includes_sod BEGIN
-            EXTEND_BOTTOM ~bd0120.baf~ ~%MOD_FOLDER%/baf/omnistab/bd0120.baf~ // sod initial area
+            EXTEND_BOTTOM ~bd0120.bcs~ ~%MOD_FOLDER%/baf/omnistab/bd0120.baf~ // sod initial area
         END
 
     END
