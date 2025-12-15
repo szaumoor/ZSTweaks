@@ -1602,12 +1602,10 @@ Finally, by default, it will only grant APR to non-fighter casters, as fighters 
 
 This overhauls these two spells (both optional) in the following manner:
 
-- Flesh to Stone: This makes this spell force a save vs. Petrification instead of a save vs. Spell. I think Flesh to Stone and Disintegrate are way too similar functionally, and it's almost always a better idea to use Flesh to Stone over Disintegrate (they're both even boosted equally if cast by a Transmuter). This affects the version that beholders use as well. Additionally, you can choose in the configuration file to add exceptions to this spell explicitly like in IWD (like to elementals and spectral undead).
+- Flesh to Stone: This makes this spell force a save vs. Petrification instead of a save vs. Spell. I think Flesh to Stone and Disintegrate are way too similar functionally, and it's almost always a better idea to use Flesh to Stone over Disintegrate (and they're both boosted equally if cast by a Transmuter). This affects the version that beholders use as well. Additionally, you can choose in the configuration file to add exceptions to this spell explicitly like in IWD (like to elementals and spectral undead).
 - Stone to Flesh: this spell should affect stone golem as per PnP, making them lose their weapon immunities permanently if they fail their save vs. Spell. All weapons, enchanted and unenchanted will be able to affect it.
 
 Note for users and modders: The Stone to Flesh spell tweak is implemented somewhat naively, since it counts on them using the `IMMUNE2.ITM` item on to provide their immunities. If they have some other item doing that, this might not work. This seems the preferred way in the vanilla files, regardless. This tweak will also try to strip immunities embedded in the creature file itself but won't target other things that might be providing part of their immunities such as their weapons. If you try this, let me know if you notice anything strange.
-
-This will also make the wizard spell not affect golems, specters, and other creatures that are immune to petrification according to IWDEE.
 
 ### Make Bigby's spells more powerful (445)
 
