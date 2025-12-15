@@ -17,7 +17,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
         ACTION_IF FILE_EXISTS_IN_GAME ~spcl936.spl~ AND !(MOD_IS_INSTALLED ~ZS_ShadowdancerOverhaul.tp2~ ~100~) BEGIN
             PRINT "[[FIX]]: Extending duration of Shadow Twin to the intended 2 turns"
             COPY_EXISTING ~spcl936.spl~ ~override~ // Shadow Twin, fixed wrong duration
-                LPF ALTER_EFFECT INT_VAR silent= match_duration = 60 duration = 120 END
+                LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 60 duration = 120 END
         END 
         
         PRINT "[[FIX]]: Setting the right THAC0 penalty to the Shadowdancer kit for using weapons without proficiency"
