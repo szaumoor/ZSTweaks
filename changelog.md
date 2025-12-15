@@ -175,6 +175,5 @@
 - Make Agannazar's Scorcher not pause the caster
 - Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance
 - Make Imprisonment prevent movement while the animation plays out
-- Make Staff of Power more interesting and balanced (TODO: fix broken paralysis, add more cool stuff)
 - Make ogre / oni mages regenerating fiends, as per PnP
   
