@@ -6,6 +6,7 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
+  // flesh golems
   COPY_EXISTING_REGEXP ~^.+\.cre~ ~override~
     READ_BYTE 0x272 race
     PATCH_IF race = race_golem BEGIN
@@ -61,7 +62,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     END
 
-
+  // iron golems
   COPY_EXISTING ~goliro01.cre~ ~override~
                 ~gorgrd01.cre~ ~override~
                 ~gorgrd02.cre~ ~override~
@@ -89,7 +90,17 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     END
 
 
+  // stone golem and juggernaut golems
   COPY_EXISTING ~golsto01.cre~ ~override~
+                ~jugjug01.cre~ ~override~
+             //  ~jugjug02.cre~ ~override~ // probably has plot armor
+                ~dstone1.cre~ ~override~
+                ~kpgol03.cre~ ~override~
+                ~kpgol05.cre~ ~override~
+                ~stgol01.cre~ ~override~
+                ~tomegol3.cre~ ~override~
+                ~goljug01.cre~ ~override~
+                ~tomegol4.cre~ ~override~
 
     PATCH_IF BYTE_AT 0x60 < 25 BEGIN
       WRITE_BYTE 0x60 25
@@ -107,11 +118,29 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       WRITE_BYTE 0x63 25
     END
 
-  COPY ~%MOD_FOLDER%/creatures/adamantine_golem~ ~override~
-  COMPILE ~%MOD_FOLDER%/baf/adamantine_golem~
+  // magic golem
+  COPY_EXISTING ~golmag01.cre~ ~override~
+    WRITE_BYTE 0x59 127
+    WRITE_BYTE 0x5a 127
+    WRITE_BYTE 0x5b 127
+    WRITE_BYTE 0x5c 127
+    WRITE_BYTE 0x5e 127
+    WRITE_BYTE 0x5f 127
 
+  // brain golems
   COPY_EXISTING ~golbra01.cre~ ~override~
                 ~udgolem.cre~ ~override~
+
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 176 timing = 9 parameter1 = 8 END
+
+    WRITE_LONG 0x28 0x7001
+    WRITE_LONG 0xc8  18082 // battle cry 1
+    WRITE_LONG 0xcc  18081 // battle cry 2
+    WRITE_LONG 0xec  5657  // damaged (ogre mage8 is 5860, I prefer ghoul 5657)
+    WRITE_LONG 0xf0  5847  // dying
+    WRITE_LONG 0x10c 18082 // select1
+    WRITE_LONG 0x110 18081 // select2
+
     PATCH_IF BYTE_AT 0x60 < 35 BEGIN
       WRITE_BYTE 0x60 35
     END
@@ -124,14 +153,9 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       WRITE_BYTE 0x63 35
     END
 
-  COPY_EXISTING ~golmag01.cre~ ~override~
-    WRITE_BYTE 0x59 127
-    WRITE_BYTE 0x5a 127
-    WRITE_BYTE 0x5b 127
-    WRITE_BYTE 0x5c 127
-    WRITE_BYTE 0x5e 127
-    WRITE_BYTE 0x5f 127  
-
+  // adamantine golem
+  COPY ~%MOD_FOLDER%/creatures/adamantine_golem~ ~override~
+  COMPILE ~%MOD_FOLDER%/baf/adamantine_golem~
   ADD_PROJECTILE ~%MOD_FOLDER%/pro/zststada.pro~
   COPY_EXISTING ~zstgolqk.spl~ ~override~
     LPF ALTER_HEADER INT_VAR projectile = %zststada% END

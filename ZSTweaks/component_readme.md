@@ -2280,9 +2280,11 @@ Additionally, my mod fixes in passing ICYUAN01 from attacking with long swords w
 
 ### Make some golem creatures more unique (3120)
 
+This component makes golems *generally* more resilient, so be warned that difficulty will increase.
+
 - **Iron** golems: They now have no resistance to electric damage (only element they aren't immune to) and absorb 27% of fire damage as healing (from 25%). Additionally, they resist 35% of physical damage (from 20%), double for missile damage.
 - **Flesh** golems: They absorb 27% of electric damage as healing (from 25%), and are immune to both fire and cold. Their base health is also increased from 40 to 45. Their animation is now changed to Ogrillon, similar to BGEE, and for consistency with other golems, their movement speed will be sharply increased. They also resist now 15% of physical damage.
-- **Stone** golems: They now resist **25**% of physical damage (from 0%).
+- **Stone** golems: They now resist **25**% of physical damage (from 0%). This includes juggernaut golems.
 - **Lesser clay** golems: they have half of the normal resistances of clay golems instead of none. So they will take half of the damaging from slashing, piercing, and missile, instead of resisting it all.
 - **Brain** golems: They resist **10% more** piercing, slashing, and missile damage (**35%**). They will also use the Ogrillon animation, with a pinkish brainy hue.
 - **Magic golem****: 27% of the non-physical damage they take is always absorbed as healing.
@@ -2291,7 +2293,7 @@ Additionally, my mod fixes in passing ICYUAN01 from attacking with long swords w
   - Immune to missile attack damage
   - Immune to all elements and all spells. No longer absorbs damage from it. They also deflect every spell level.
   - Immune to stun, critical hits, and backstabs.
-  - They can stomp the ground, causing it to tremble, knocking down all non-flying, up-to-medium-sized creatures in a 30 feet radius, and take 5d10 crushing damage (save vs. Breath at -4 for half damage and to avoid unconsciousness). Trying to run away of block his passage triggers them to use this ability.
+  - They can stomp the ground, causing it to tremble, knocking down all non-flying, up-to-medium-sized creatures in a 30 feet radius, and take 5d10 crushing damage (save vs. Breath at -4 for half damage and to avoid unconsciousness). Trying to run away to block his passage triggers them to use this ability.
   - Base health increased from 80 to 96
   - Saving throws improved by +2
   - Armor Class: 0 (from 3)
