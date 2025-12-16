@@ -13,13 +13,21 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
       PATCH_IF class = class_golem_flesh BEGIN
 
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 timing = 9 parameter1 = 8 END
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 timing = 9 parameter1 = 10 END
         WRITE_LONG 0x28 0x7001
         WRITE_BYTE 0x59 100
         WRITE_BYTE 0x5a 100
         WRITE_BYTE 0x5b 127
         WRITE_BYTE 0x5e 100
         WRITE_BYTE 0x5f 100
+
+        // soundset stuff so they don't talk about pipsqueaks
+        WRITE_LONG 0xc8  18082 // battle cry 1
+        WRITE_LONG 0xcc  18081 // battle cry 2
+        WRITE_LONG 0xec  5657  // damaged (ogre mage8 is 5860, I prefer ghoul)
+        WRITE_LONG 0xf0  5847  // dying
+        WRITE_LONG 0x10c 18082 // select1
+        WRITE_LONG 0x110 18081 // select2
 
         READ_SHORT 0x26 max_hp
         PATCH_IF max_hp < 45 BEGIN
