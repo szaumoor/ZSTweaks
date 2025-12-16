@@ -13,7 +13,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
       PATCH_IF class = class_golem_flesh BEGIN
 
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 timing = 9 parameter1 = 10 END
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 timing = 9 parameter1 = 8 END
         WRITE_LONG 0x28 0x7001
         WRITE_BYTE 0x59 100
         WRITE_BYTE 0x5a 100
@@ -24,7 +24,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         // soundset stuff so they don't talk about pipsqueaks
         WRITE_LONG 0xc8  18082 // battle cry 1
         WRITE_LONG 0xcc  18081 // battle cry 2
-        WRITE_LONG 0xec  5657  // damaged (ogre mage8 is 5860, I prefer ghoul)
+        WRITE_LONG 0xec  5657  // damaged (ogre mage8 is 5860, I prefer ghoul 5657)
         WRITE_LONG 0xf0  5847  // dying
         WRITE_LONG 0x10c 18082 // select1
         WRITE_LONG 0x110 18081 // select2
@@ -60,6 +60,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       END 
 
     END
+
 
   COPY_EXISTING ~goliro01.cre~ ~override~
                 ~gorgrd01.cre~ ~override~
@@ -109,8 +110,29 @@ ACTION_IF is_bg2ee_or_eet BEGIN
   COPY ~%MOD_FOLDER%/creatures/adamantine_golem~ ~override~
   COMPILE ~%MOD_FOLDER%/baf/adamantine_golem~
 
-  ADD_PROJECTILE ~%MOD_FOLDER%/pro/zststada.pro~
+  COPY_EXISTING ~golbra01.cre~ ~override~
+                ~udgolem.cre~ ~override~
+    PATCH_IF BYTE_AT 0x60 < 35 BEGIN
+      WRITE_BYTE 0x60 35
+    END
 
+    PATCH_IF BYTE_AT 0x62 < 35 BEGIN
+      WRITE_BYTE 0x62 35
+    END
+
+    PATCH_IF BYTE_AT 0x63 < 35 BEGIN
+      WRITE_BYTE 0x63 35
+    END
+
+  COPY_EXISTING ~golmag01.cre~ ~override~
+    WRITE_BYTE 0x59 127
+    WRITE_BYTE 0x5a 127
+    WRITE_BYTE 0x5b 127
+    WRITE_BYTE 0x5c 127
+    WRITE_BYTE 0x5e 127
+    WRITE_BYTE 0x5f 127  
+
+  ADD_PROJECTILE ~%MOD_FOLDER%/pro/zststada.pro~
   COPY_EXISTING ~zstgolqk.spl~ ~override~
     LPF ALTER_HEADER INT_VAR projectile = %zststada% END
     LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@80000) END
