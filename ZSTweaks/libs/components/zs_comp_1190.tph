@@ -56,7 +56,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=12 savebonus=0 savingthrow=0 parameter1=2 special=1024 probability1=9 END
         LPF ALTER_EFFECT INT_VAR match_opcode = 7 parameter1=44 END
         LPF ADD_ON_HIT_EFF INT_VAR p2=104 STR_VAR effects = ~op=318,p2=55;op=318,p2=9;op=318,p1=%race_shambling_mound%;op=318,p1=%race_slime%~ END
-        LPF ADD_ON_HIT_EFF INT_VAR p1=2 p2=op12_piercing tmg=3 stype=2 spec=1024 STR_VAR effects = ~op=12,tmg=0,p1=1,stype=0;op=12,p1=1,dur=1;op=12,dur=2;op=12,dur=3;op=12,dur=4;op=12,dur=5;op=12,p1=1,dur=6~ END
+        LPF ADD_ON_HIT_EFF INT_VAR p1=2 p2=op12_piercing tmg=3 stype=4 spec=1024 STR_VAR effects = ~op=12,tmg=0,p1=1,stype=0;op=12,p1=1,dur=1;op=12,dur=2;op=12,dur=3;op=12,dur=4;op=12,dur=5;op=12,p1=1,dur=6~ END
 
         PATCH_IF zst_1150_dice_spears AND weapon_dice_installed BEGIN
             SPRINT desc @6046

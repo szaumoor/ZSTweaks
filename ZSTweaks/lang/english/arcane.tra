@@ -61,7 +61,7 @@ Saving Throw: Neg.
 By means of a Ray of Enfeeblement, a wizard weakens an opponent, reducing its Strength and thereby the attacks that rely upon it. The victim is reduced to a Strength of 5 for the duration of the spell unless a Save vs. Spell is made. This spell does not affect combat bonuses due to magical items, and those conferring increased Strength function normally. However, the target receives all the penalties for 5 Strength such as attack and damage penalties as well as lower weight allowance.~
 
 @5230 = ~Acid Fog
-(Conjuration)
+(Invocation)
 
 Level: 6
 Range: 30 ft.
@@ -70,7 +70,7 @@ Casting Time: 6
 Area of Effect: 15-ft. radius
 Saving Throw: Special
 
-The casting of an Acid Fog spell creates an area of solid fog that has the additional property of being highly acidic. All enemies not immune to acid suffer 2d8+4 points of acid damage (double for plants and myconids) each round they are exposed to the vapors, which also damages their Armor Class once every three rounds by 4, their physical resistances by 15%, and their acid resistance by 30% for 1 turn after being exposed (none of these penalties stack with each other). This fog also reduces movement speed by half unless a save vs. Death at -2 succeeds and is not affected by Magic Resistance, as it is effectively conjured natural acid.~
+The casting of an Acid Fog spell creates an area of solid, highly caustic fog. All enemies not immune to acid suffer 2d8+4 points of acid damage (double for plants and myconids) each round they are exposed to the vapors, which also damages their Armor Class once every three rounds by 4, their physical resistances by 15%, and their acid resistance by 30% for 1 turn after being exposed (none of these penalties stack with each other). This fog also reduces movement speed by half for one round unless a save vs. Death at -2 succeeds and is not affected by Magic Resistance, as it is effectively conjured natural acid.~
 
 @5231 = ~Acid Fog~
 
