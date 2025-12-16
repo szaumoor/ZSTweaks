@@ -1676,7 +1676,15 @@ Same reasoning as component 500. Applies to Priest of Lathander's version of the
 
 ### Make Disintegrate cause damage and slow some golems, as per PnP (522)
 
-This makes the spell cause 1d12 crushing damage to all clay golems, including other creatures considered clay golems in the game such as sand, magical, and brain golems. Additionally, they will be slowed immediately for 2 rounds, dispels their haste if they have it, and prevents them from hasting themselves for one round.
+This makes the spell cause 1d12 crushing damage to all clay golems, including other creatures considered clay golems in the game such as sand, magical, and brain golems. Additionally, they will be affected immediately by the following effects for 2 rounds:
+
+- Movement speed decreases to a third of what they have
+- -10 penalty to speed factor
+- -2 to Armor Class and saving throws
+- -4 to all combat rolls
+- -1/2 attacks per round
+
+This effectively means that hasted clay golems for example, would have most of the benefits they get from their Golem Haste for those 2 rounds.
 
 ### Make Chromatic Orb more interesting by providing party-only chromatic varieties (555)
 
