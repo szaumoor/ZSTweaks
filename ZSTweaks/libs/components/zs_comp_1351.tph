@@ -6,9 +6,9 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    COPY ~%MOD_FOLDER%/items/tzu~ ~override~
-    COPY_EXISTING ~brac26.itm~ ~override~
-        LPF ALTER_ITEM INT_VAR ref_desc = RESOLVE_STR_REF(@60040) this_plus = 1 flags = 2**25 END
-        LPF ADD_EQUIPPED_EFF INT_VAR p1=2 STR_VAR effects = ~op=288;op=289;op=361,res=zstwtzu0~ END
+  COPY ~%MOD_FOLDER%/items/tzu~ ~override~
+  COPY_EXISTING ~brac26.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@60040) this_plus = 1 flags = 2**25 END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1=2 STR_VAR effects = ~op=288;op=289;op=361,res=zstwtzu0~ END
 
 END
