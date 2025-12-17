@@ -1706,7 +1706,7 @@ Caveats:
 
 ### Make Agannazar's Scorcher not pause the caster (558)
 
-Just makes the spell slightly more convenient and safe to use.
+Just makes the spell more convenient and safe to use.
 
 ### Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance (561)
 
