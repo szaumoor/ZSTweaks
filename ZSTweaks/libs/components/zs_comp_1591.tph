@@ -69,6 +69,18 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6840) END
                     END
                 END
+
+            COPY_EXISTING "c2sw2h02.itm" ~override~
+                PATCH_IF two_handed_comp_installed BEGIN
+                    SPRINT str @99999
+                    LPF WPN_DMG RET dmg = result END
+                    INNER_PATCH_SAVE strref ~%strref%~ BEGIN
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]12[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\12d6+%dmg%~
+                    END
+                    SAY_EVALUATED 0x54 ~%strref%~
+                END
+            BUT_ONLY IF_EXISTS
+
         END
                                                     
     END ELSE BEGIN WARN ~No tweaks were selected for Soul Reaver~ END
