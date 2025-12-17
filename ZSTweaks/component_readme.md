@@ -1504,7 +1504,7 @@ There are no words to express how much I hate that Edwin is the best wizard to h
 - Removed the spell slot bonus madness: In BGEE, he gets *one* extra spell slot of levels 1 and 2. In BG2EE, this is extended to levels 3 and 4 too. That's it. It's a nice bonus, but not game breaking.
 - He gets a +2 to saving throws vs. conjuration spells of other wizards, which stacks with his normal +2 specialization bonus.
 - However, he has a -2 saving throw penalty against spells outside his specialization.
-- And finally, he always cast spells as if he was one level above his actual level.
+- And finally, he always cast spells as if he was two levels above his actual level (1 in BGEE).
 
 </details>
 
