@@ -33,4 +33,4 @@ COPY_EXISTING ~SCRL09.ITM~ ~override~
         SET five_levels_drained = 41616
     END
 
-    LPF ADD_ON_HIT_EFF INT_VAR t=99 dur=3600 rd=3 STR_VAR effects = ~op=321,ip=0,res=%SOURCE_RES%,dur=0,rd=0;op=33,p1=2;op=267,p1=%one_level_drained%;op=267,p1=%two_levels_drained%;op=267,p1=%three_levels_drained%;op=267,p1=%four_levels_drained%;op=267,p1=%five_levels_drained%;op=101,p2=216;op=206,res=SPIN883;op=318,res=GHOUL1;op=318,res=GHOULLOR;op=318,res=GHOULT;op=318,res=LICH02;op=232,p1=1,res=ZSTWPUN0~ END
+    LPF ADD_ON_HIT_EFF INT_VAR t=99 dur=3600 rd=3 STR_VAR effects = ~op=321,ip=0,res=%SOURCE_RES%,dur=0,rd=0;op=33,p1=2;op=267,p1=%one_level_drained%;op=267,p1=%two_levels_drained%;op=267,p1=%three_levels_drained%;op=267,p1=%four_levels_drained%;op=267,p1=%five_levels_drained%;op=101,p2=216;op=206,res=spin883;op=318,res=ghoul1;op=318,res=ghoullor;op=318,res=ghoult;op=318,res=lich02;op=232,p1=1,res=zstwpun0~ END

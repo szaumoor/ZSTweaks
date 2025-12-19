@@ -51,7 +51,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                  NOT (two_handed_comp_installed AND zst_group_1300_silver_sword) 
         BEGIN 
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=zstwvrpa,stype=4,sbonus=-2~ END
         END ELSE BEGIN
             LPF DELETE_EFFECT INT_VAR check_globals = 0 match_probability1 = 24 END
         END
