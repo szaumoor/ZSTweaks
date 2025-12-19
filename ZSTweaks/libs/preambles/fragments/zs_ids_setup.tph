@@ -118,6 +118,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET class_mist                = IDS_OF_SYMBOL(class MIST)
     OUTER_SET class_monk                = IDS_OF_SYMBOL(class MONK)
     OUTER_SET class_ogre_mage           = IDS_OF_SYMBOL(class OGRE_MAGE)
+    OUTER_SET class_ogre_ogrillon       = IDS_OF_SYMBOL(class OGRE_OGRILLON)
     OUTER_SET class_paladin             = IDS_OF_SYMBOL(class PALADIN)
     OUTER_SET class_paladin_all         = IDS_OF_SYMBOL(class PALADIN_ALL)
     OUTER_SET class_ranger              = IDS_OF_SYMBOL(class RANGER)
