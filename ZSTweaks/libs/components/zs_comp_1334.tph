@@ -6,7 +6,7 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY_EXISTING ~CHAN17.ITM~ ~override~
+  COPY_EXISTING ~chan17.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8540) END
 
     READ_LONG 0x1e flags

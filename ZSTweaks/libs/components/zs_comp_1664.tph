@@ -15,7 +15,7 @@ END
 
 ACTION_IF zst_1664_crits_all OR zst_1664_crits_iouns BEGIN
 
-    COPY_EXISTING ~HELM18.itm~ ~override~
+    COPY_EXISTING ~helm18.itm~ ~override~
         READ_LONG 0x08 ioun_strref
 
 END
@@ -80,28 +80,28 @@ END ELSE ACTION_IF zst_1664_crits_circlets BEGIN
 
 END ELSE ACTION_IF zst_1664_crits_selected BEGIN
 
-    COPY_EXISTING ~HELM20.ITM~ ~override~ // pale green ioun
+    COPY_EXISTING ~helm20.itm~ ~override~ // pale green ioun
         LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
         PATCH_IF crit_flag BEGIN
             LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
         END
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~HELM24.ITM~ ~override~
+    COPY_EXISTING ~helm24.itm~ ~override~
         LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
         PATCH_IF crit_flag BEGIN
             LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
         END
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~AMSOUL01.ITM~ ~override~
+    COPY_EXISTING ~amsoul01.itm~ ~override~
         LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
         PATCH_IF crit_flag BEGIN
             LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
         END
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~HELM34.ITM~ ~override~
+    COPY_EXISTING ~helm34.itm~ ~override~
         LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
         PATCH_IF crit_flag BEGIN
             LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END

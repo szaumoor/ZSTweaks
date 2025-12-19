@@ -6,11 +6,11 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY_EXISTING ~HELM31.itm~ ~override~
-                ~HELM32.itm~ ~override~
+  COPY_EXISTING ~helm31.itm~ ~override~
+                ~helm32.itm~ ~override~
     LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 31 END
 
-    PATCH_IF "%SOURCE_RES%" STR_EQ "HELM31" BEGIN
+    PATCH_IF "%SOURCE_RES%" STR_EQ "helm31" BEGIN
 
       LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7050) END
 

@@ -6,25 +6,25 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
 
-    COPY_EXISTING "HELM18.itm" ~override~ // Pearly white ioun stone
+    COPY_EXISTING "helm18.itm" ~override~ // Pearly white ioun stone
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7190) END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 98 parameter1 = 6 END
     BUT_ONLY IF_EXISTS
 
-    ACTION_IF FILE_EXISTS_IN_GAME ~HELM19.itm~ BEGIN // Dusty Rose Ioun stone
+    ACTION_IF FILE_EXISTS_IN_GAME ~helm19.itm~ BEGIN // Dusty Rose Ioun stone
         COPY ~%MOD_FOLDER%/bam/IHELM19.BAM~ ~override~
-        COPY_EXISTING "HELM19.itm" ~override~
+        COPY_EXISTING "helm19.itm" ~override~
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7200) END
             LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 2 END
-            LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=296,res=CDHORROR;op=142,p2=37;op=240,p2=36;op=169,p2=36;op=267,p1=17427;op=267,p1=14007;op=106,p1=1,p2=1;op=23;op=101,p2=24;op=161;op=101,p2=23;op=101,p2=106;op=4;op=142,p2=52;op=169,p2=4;op=101,p2=3;op=296~ END
+            LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=296,res=cdhorror;op=142,p2=37;op=240,p2=36;op=169,p2=36;op=267,p1=17427;op=267,p1=14007;op=106,p1=1,p2=1;op=23;op=101,p2=24;op=161;op=101,p2=23;op=101,p2=106;op=4;op=142,p2=52;op=169,p2=4;op=101,p2=3;op=296~ END
     END
 
-    COPY_EXISTING ~HELM23.ITM~ ~override~ // golden ioun stone
+    COPY_EXISTING ~helm23.itm~ ~override~ // golden ioun stone
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7210) END
         LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=37,p1=1;op=166,p1=10~ END
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~HELM24.ITM~ ~override~ // obsidian ioun stone
+    COPY_EXISTING ~helm24.itm~ ~override~ // obsidian ioun stone
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7220) END
         
         LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
@@ -37,21 +37,21 @@ ACTION_IF NOT is_iwdee BEGIN
 
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~HELM25.ITM~ ~override~ // silver ioun stone
+    COPY_EXISTING ~helm25.itm~ ~override~ // silver ioun stone
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7230) END
         LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=21,p1=15;op=62,p1=1,p2=31~ END
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~HELM28.ITM~ ~override~ // circle of netheril
+    COPY_EXISTING ~helm28.itm~ ~override~ // circle of netheril
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7240) END
         LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=42,p1=1,p2=256;op=332,p1=7,p2=5~ END
     BUT_ONLY IF_EXISTS
 
-    ACTION_IF FILE_EXISTS_IN_GAME ~BAND03.ITM~ BEGIN // EILISTRAEE'S BOON
+    ACTION_IF FILE_EXISTS_IN_GAME ~band03.itm~ BEGIN // EILISTRAEE'S BOON
         COPY ~%MOD_FOLDER%/items/eil_boon~ ~override~
-        COPY_EXISTING ~BAND03.ITM~ ~override~
+        COPY_EXISTING ~band03.itm~ ~override~
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7250) END
-            LPF ADD_EQUIPPED_EFF INT_VAR p2=8 STR_VAR effects=~op=177,p1=1,res=ZSTWEIL1;op=177,p1=1,res=ZSTWEIL2;op=177,p1=2,res=ZSTWEIL1;op=177,p1=2,res=ZSTWEIL2~ END
+            LPF ADD_EQUIPPED_EFF INT_VAR p2=8 STR_VAR effects=~op=177,p1=1,res=zstweil1;op=177,p1=1,res=zstweil2;op=177,p1=2,res=zstweil1;op=177,p1=2,res=zstweil2~ END
     END
 
 END

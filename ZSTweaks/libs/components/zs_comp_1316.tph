@@ -7,8 +7,8 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/mercykiller_ring~ ~override~
-  COPY_EXISTING ~WA2RING.ITM~ ~override~
+  COPY_EXISTING ~wa2ring.itm~ ~override~
     LPF ALTER_ITEM INT_VAR unusable0=1611987392 id_desc=RESOLVE_STR_REF(@6340) END
-    LPF ADD_EQUIPPED_EFF INT_VAR p1=4 p2=5 STR_VAR effects=~op=177,res=ZSTWTHM1;op=177,res=ZSTWTHM2;op=177,res=ZSTWTHM3~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1=4 p2=5 STR_VAR effects=~op=177,res=zstwthm1;op=177,res=zstwthm2;op=177,res=zstwthm3~ END
 
 END

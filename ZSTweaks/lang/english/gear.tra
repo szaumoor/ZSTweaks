@@ -54,7 +54,7 @@ Spear of Royal Might +3: Targets with blood take +1 piercing damage and must sav
 Weight: 5~
 
 @6041 = ~Mace of Royal Might +3~
-@6042 = ~Flaming Sword of Royal Might +3~
+@6042 = ~Sword of Royal Might +3~
 @6043 = ~Spear of Royal Might +3~
 @6044 = ~This mace has been created via the Rod of Royal Might. Use this item's special use to change it back into the Rod to choose another weapon.
 
@@ -91,7 +91,7 @@ Requires:
 
 Weight: 4~
 
-@6046 = ~This barbed spear has been created via the Rod of Lordly Might. Use this item's special use to change it back into the Rod to choose another weapon.
+@6046 = ~This barbed spear has been created via the Rod of Royal Might. Use this item's special use to change it back into the Rod to choose another weapon.
 
 STATISTICS:
 
@@ -121,9 +121,9 @@ Weight: 5~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +2 vs. slashing and piercing attacks
+– Armor Class: +2 vs. slashing and piercing
 – Saving throws vs. Death and Breath: +1
-– +50% Poison damage resistance
+– Poison damage resistance: +50%
 – +5% bonus to all thieving skills
 
 Weight: 4~
@@ -133,8 +133,8 @@ Weight: 4~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +3 vs. missile attacks
-– +15% Missile resistance
+– Armor Class: +3 vs. missile
+– Missile resistance: +15%
 – Saving throws vs. Wand and Spell: +1
 – Increases movement speed by a factor of 4
 
@@ -145,10 +145,10 @@ Weight: 4~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +1 vs. all attacks
+– Armor Class: +1
 – Saving throws vs. Petrification and Spell: +1
-– +20% Magic damage resistance
-– +10% Elemental damage resistance
+– Magic damage resistance: +20%
+– Elemental damage resistance: +10%
 
 Weight: 4~
 
@@ -497,11 +497,11 @@ Equipped abilities:
 – Protects against critical hits
 
 Charge abilities:
-– Domination once per day (Save vs. Spell at -2 negates)
+– Domination once per day (save vs. Spell at -2 negates)
   Duration: 8 rounds
 
 – Breathe Acid once per day
-  Damage: 8d6 acid (Save vs. Breath for half)
+  Damage: 8d6+12 acid (save vs. Breath for half)
   Target must save vs. Death at -4 or fall unconscious for 2 rounds
 
 – Aura of Despair once per day as per the Blackguard spell
@@ -515,7 +515,7 @@ STATISTICS:
 
 Equipped abilities:
 – Protects against critical hits
-– +25% resistance to acid, fire, cold, and electricity
+– +25% resistance to all elements
 – Saves vs. Breath: +2
 
 Weight: 2~
@@ -538,7 +538,7 @@ STATISTICS:
 Equipped abilities:
 – Protects against critical hits
 – Physical damage resistance: +7%
-– Magic, Elemental, and Poison damage resistance: +25%
+– Non-physical damage resistance: +25%
 – Charisma: +1
 
 Charge abilities:
@@ -626,6 +626,7 @@ Equipped abilities:
 – Constitution: +1
 – Armor Class: +2 (except crushing)
 – Physical resistance: +5% (except crushing)
+– Protects against critical hits
 
 Weight: 0~
 

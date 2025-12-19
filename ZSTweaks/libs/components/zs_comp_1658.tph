@@ -6,7 +6,7 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY_EXISTING ~HELM21.itm~ ~override~
+  COPY_EXISTING ~helm21.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7040) END
     LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 27 END
     LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 36 parameter1 = 2 END

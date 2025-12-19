@@ -7,7 +7,7 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/thayan_circlet~ ~override~
-  COPY_EXISTING "ohnhelm1.ITM" ~override~
+  COPY_EXISTING "ohnhelm1.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6460) END
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 281 parameter1 = 25 END
     SET description_note = RESOLVE_STR_REF(@6461)
