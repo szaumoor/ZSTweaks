@@ -1637,7 +1637,7 @@ This makes this spell more similar to the 5E behavior, where the acid creates a 
 
 Additionally, the spell will bypass magic resistance, as it is conceived as conjured acid, not a magical effect. This behavior can be disabled in the configuration file.
 
-### Make Decastave at least grant proficiency with staff while it's held (448)
+### Make Decastave grant one extra proficiency point with staff while it's held (448)
 
 Self-explanatory. Small quality of life change.
 

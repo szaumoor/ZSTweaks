@@ -11,6 +11,7 @@ ACTION_IF spell_decastave > 0 BEGIN
     LPF ALTER_SPELL INT_VAR desc =RESOLVE_STR_REF(@8225) END
 
   COPY_EXISTING ~DECASTA.ITM~ ~override~
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=233,p1=1,p2=102,rd=1~ END
+    SET proficiency = (102 << 16) | 1
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=233,p1=1,p2=%proficiency%,rd=1~ END
 
 END
