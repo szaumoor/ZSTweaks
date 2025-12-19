@@ -9,10 +9,13 @@ ACTION_IF is_bg2ee_or_eet BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~zsipsl02.itm~ BEGIN
 
     COPY ~%MOD_FOLDER%/items/_zs_itempack/shining_light_lathander~ ~override~
-    COPY_EXISTING ~ZSIPSL02.itm~ ~override~
+    COPY_EXISTING ~zsipsl02.itm~ ~override~
       LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode = 318 OR o_opcode = 13 OR o_opcode = 139)" END
-      LPF ADD_ON_HIT_EFF INT_VAR t=1 p2 = 4 STR_VAR res=~ZSIP##00~ effects = ~op=177,p1=%race_demonic%,pro1=4,res=ZSIP##01;op=177,p1=%race_demonic%,pro1=4;op=177,p1=%race_lich%,pro1=19,res=ZSIP##01;op=177,p1=%race_lich%,pro1=19;op=177,p1=%race_demilich%,pro1=19,res=ZSIP##01;op=177,p1=%race_demilich%,pro1=19;op=177,p1=%race_vampire%,pro1=49,res=ZSIP##01;op=177,p1=%race_vampire%,pro1=49;op=177,p1=%race_vampyre%,pro1=49,res=ZSIP##01;op=177,p1=%race_vampyre%,pro1=49;op=177,p1=%class_revenant_mummy%,p2=5,pro1=79,res=ZSIP##01;op=177,p1=%class_revenant_mummy%,p2=5,pro1=79;op=177,p1=%race_spectral_undead%,pro1=64,res=ZSIP##01;op=177,p1=%race_spectral_undead%,pro1=64;op=177,p1=%race_specter%,pro1=64,res=ZSIP##01;op=177,p1=%race_specter%,pro1=64;op=177,p1=%race_wraith%,pro1=94,res=ZSIP##01;op=177,p1=%race_wraith%,pro1=94;op=177,p1=%class_spectral_troll%,p2=5,pro1=64,res=ZSIP##01;op=177,p1=%class_spectral_troll%,p2=5,pro1=64~ END
+
+      LPF ADD_ON_HIT_EFF INT_VAR t=1 p2 = 4 STR_VAR res=~zsip##00~ effects = ~op=177,p1=%race_demonic%,pro1=4,res=zsip##01;op=177,p1=%race_demonic%,pro1=4;op=177,p1=%race_lich%,pro1=19,res=zsip##01;op=177,p1=%race_lich%,pro1=19;op=177,p1=%race_demilich%,pro1=19,res=zsip##01;op=177,p1=%race_demilich%,pro1=19;op=177,p1=%race_vampire%,pro1=49,res=zsip##01;op=177,p1=%race_vampire%,pro1=49;op=177,p1=%race_vampyre%,pro1=49,res=zsip##01;op=177,p1=%race_vampyre%,pro1=49;op=177,p1=%class_revenant_mummy%,p2=5,pro1=79,res=zsip##01;op=177,p1=%class_revenant_mummy%,p2=5,pro1=79;op=177,p1=%race_spectral_undead%,pro1=64,res=zsip##01;op=177,p1=%race_spectral_undead%,pro1=64;op=177,p1=%race_specter%,pro1=64,res=zsip##01;op=177,p1=%race_specter%,pro1=64;op=177,p1=%race_wraith%,pro1=94,res=zsip##01;op=177,p1=%race_wraith%,pro1=94;op=177,p1=%class_spectral_troll%,p2=5,pro1=64,res=zsip##01;op=177,p1=%class_spectral_troll%,p2=5,pro1=64~ END
+
       LPF ADD_ON_HIT_EFF INT_VAR t=1 p2=104 STR_VAR res=~%SOURCE_RES%~ effects = ~op=318,p1=%race_demonic%;op=318,p1=%race_lich%;op=318,p1=%race_demilich%;op=318,p1=%race_vampire%;op=318,p1=%race_vampyre%;op=318,p2=105,p1=%class_revenant_mummy%;op=318,p1=%race_spectral_undead%;op=318,p1=%race_specter%;op=318,p1=%race_wraith%;op=318,p1=%class_spectral_troll%,p2=105~ END
+
       LPF ADD_ON_HIT_EFF INT_VAR t=99 p2=3 p1=general_undead STR_VAR res=~ZSIP##00~ effects=~op=177,res=ZSIP##01;op=177~ END
 
       READ_STRREF 0x54 strref
