@@ -8,12 +8,12 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
   COPY ~%MOD_FOLDER%/items/life_stealer~ ~override~
-  COPY_EXISTING ~DAGG20.ITM~ ~override~
+  COPY_EXISTING ~dagg20.itm~ ~override~
     LPF ALTER_ITEM INT_VAR this_plus=1 id_desc=RESOLVE_STR_REF(@7780) flags=2**4 STR_VAR icon = ~ZSTWVMPB~ END
     LPF DELETE_EFFECT INT_VAR check_globals = 0 END
     LPF RGB INT_VAR red = 232 blue = 42 green = 42 RET color = result END
     SET loc_fade_speed = 21 + ( 40 << 16 )
-    LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=57,p2=%alignmen_chaotic_evil%;op=9,p1=%color%,p2=%loc_fade_speed%;op=63;op=142,p2=114;op=142,p2=35;op=30,p1=-50;op=98,p1=12,p2=3,spec=56;op=169,p2=51;op=267,p1=14026;op=267,p1=64285;op=267,p1=14665;op=101,p2=13;op=101,p2=55;op=101,p2=134;op=101,p2=209;op=101,p2=238;op=101,p2=216;op=267,p1=41495;op=267,p1=40968;op=267,p1=40969;op=267,p1=40979;op=267,p1=41616;op=169,p2=59;op=142,p2=90;op=142,p2=99;op=28,p1=50;op=142,p2=25;op=29,p1=50;op=142,p2=27;op=232,p2=12,res=ZSTWVMPC;op=318,res=SPIN101;op=318,res=SPIN200;op=318,res=SPIN958;op=318,res=SPPR103op=318,res=SPPR315;op=318,res=SPPR317;op=318,res=SPPR401;op=318,res=SPPR502;op=318,res=SPPR514;op=318,res=SPPR217;op=318,res=SPPR103;op=318,res=DW#FPPLO;op=318,res=SPCL111;op=318,res=SPIN201;op=318,res=SPPR212;op=318,res=SPPR404;op=318,res=SPPR103;op=318,res=DEVAHEAL;op=318,res=SPPR607;op=318,res=SPWISH28;op=318,res=SPWISH39;op=318,res=SPWM168;op=318,res=SPIN699;op=318,res=SPIN102;op=318,res=POTN17;op=318,res=POTN08;op=318,res=POTN52;op=206,res=ZSTWVRPA~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=57,p2=%alignmen_chaotic_evil%;op=9,p1=%color%,p2=%loc_fade_speed%;op=63;op=142,p2=114;op=142,p2=35;op=30,p1=-50;op=98,p1=12,p2=3,spec=56;op=169,p2=51;op=267,p1=14026;op=267,p1=64285;op=267,p1=14665;op=101,p2=13;op=101,p2=55;op=101,p2=134;op=101,p2=209;op=101,p2=238;op=101,p2=216;op=267,p1=41495;op=267,p1=40968;op=267,p1=40969;op=267,p1=40979;op=267,p1=41616;op=169,p2=59;op=142,p2=90;op=142,p2=99;op=28,p1=50;op=142,p2=25;op=29,p1=50;op=142,p2=27;op=232,p2=12,res=zstwvmpc;op=318,res=spin101;op=318,res=spin200;op=318,res=spin958;op=318,res=sppr103op=318,res=sppr315;op=318,res=sppr317;op=318,res=sppr401;op=318,res=sppr502;op=318,res=sppr514;op=318,res=sppr217;op=318,res=sppr103;op=318,res=dw#fpplo;op=318,res=spcl111;op=318,res=spin201;op=318,res=sppr212;op=318,res=sppr404;op=318,res=sppr103;op=318,res=devaheal;op=318,res=sppr607;op=318,res=spwish28;op=318,res=spwish39;op=318,res=spwm168;op=318,res=spin699;op=318,res=spin102;op=318,res=potn17;op=318,res=potn08;op=318,res=potn52;op=206,res=zstwvrpa~ END
 
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=17,p1=1;op=326,res=ZSTWVMPD~ END
     LPF weapon_damage_by_race INT_VAR insert_point = "-1" race = race_vampire STR_VAR spell = "ZSTWVMPA" END

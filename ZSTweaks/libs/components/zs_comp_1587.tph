@@ -7,10 +7,10 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/rod_terror~ ~override~
-  COPY_EXISTING "ZSTWTRRA.SPL" ~override~
+  COPY_EXISTING "zstwtrra.spl" ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1=RESOLVE_STR_REF(@7641) END
 
-  COPY_EXISTING "RODS05.ITM" ~override~
+  COPY_EXISTING "rods05.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7640) END
     LPF ALTER_EFFECT INT_VAR match_savingthrow=1 savebonus=0 END
     LPF ALTER_EFFECT_EX INT_VAR probability1=9 STR_VAR match_probability1_ex="(o_probability1 > 0)" END

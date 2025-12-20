@@ -443,17 +443,17 @@ STATISTICS:
 Equipped abilities:
 – Immunity to fear
 – Regenerate 1 Hit Point every 5/2 rounds
-– +15% resistance against acid, electricity, fire, and cold
-– +2 Armor Class and saving throws vs. dragons
+– +15% resistance vs. acid, electricity, fire, and cold
+– Armor Class: +2 vs. dragons and wyverns
 
-Equipped abilities:
-– Acts as a +4 weapon against dragons and wyverns for the purposes of overcoming physical protections
+Combat abilities:
+– Acts as a +4 weapon against dragons and wyverns for the purposes of overcoming weapon immunities
 
 Charge abilities:
 – Detect Invisibility three times per day
 
 THAC0: +2, +6 against dragons and wyverns
-Damage: 1d8+2, plus 2d8+2 against dragons and wyverns
+Damage: 1d8+2, plus 2d8+2 vs. dragons and wyverns
 Damage type: Slashing
 Speed Factor: 3
 Proficiency Type: Long Sword
@@ -815,10 +815,10 @@ Equipped abilities:
 
 Combat abilities:
 – Attacks per round: +1
-– Hit target takes 12 points of poison over 2 rounds (Save vs. Death negates)
+– Hit target takes 12 points of poison over 2 rounds (save vs. Death negates)
 
-THAC0: +3, +5 (Monks only)
-Damage: 1d8+3, +1 Poison damage
+THAC0: +3, +5 (monks only)
+Damage: 1d8+3, +1 poison damage
 Damage type: Slashing
 Speed Factor: 0
 Proficiency Type: Scimitar/Wakizashi/Ninjatō

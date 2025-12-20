@@ -11,8 +11,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                                          (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
                                          (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice))
 
-    COPY_EXISTING ~SW2H14.ITM~ ~override~
-        LPF ADD_ON_HIT_EFF INT_VAR stype=1 rd=3 pro1=24 STR_VAR effects = ~op=128,dur=6;op=139,p1=14782~ END
+    COPY_EXISTING ~sw2h14.itm~ ~override~
+        LPF ADD_ON_HIT_EFF INT_VAR stype=1 rd=3 pro1=24 STR_VAR effects = ~op=128,dur=12;op=139,p1=14782~ END
 
         PATCH_IF two_handed_comp_installed BEGIN
             SPRINT new_description @6800
@@ -31,7 +31,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY_EXISTING ~c2sw2h01.itm~ ~override~
         LPF ALTER_HEADER INT_VAR match_type = 1 speed = 5 END
-        LPF ADD_ON_HIT_EFF INT_VAR sbonus="-2" stype=1 rd=3 pro1=29 STR_VAR effects = ~op=128,dur=6;op=139,p1=14782~ END
+        LPF ADD_ON_HIT_EFF INT_VAR sbonus="-2" stype=1 rd=3 pro1=29 STR_VAR effects = ~op=128,dur=12;op=139,p1=14782~ END
 
         PATCH_IF two_handed_comp_installed BEGIN
             LPF ALTER_HEADER INT_VAR match_type = 1 dicesize = 9 dicenumber = 1 damage = 6 END

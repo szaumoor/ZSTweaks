@@ -198,8 +198,8 @@ Equipped abilities:
 – Magic Resistance: +10%
 
 Combat abilities:
-– Inflicts +2 fire damage against trolls
-– Inflicts +4 slashing damage against chaotic evil
+– Inflicts +2 fire damage vs. trolls
+– Inflicts +4 slashing damage vs. chaotic evil
 
 THAC0: +2
 Damage: 1d10+2
@@ -221,8 +221,8 @@ Equipped abilities:
 – Magic Resistance: +10%
 
 Combat abilities:
-– Inflicts +2 fire damage against trolls
-– Inflicts +4 slashing damage against evil
+– Inflicts +2 fire damage vs. trolls
+– Inflicts +4 slashing damage vs. evil
 
 THAC0: +2
 Damage: 1d10+2
@@ -352,7 +352,7 @@ Combat abilities:
 
 THAC0: +4
 Damage: 1d10+4, +3 cold damage (tripled vs. giants)
-Damage type: Piercing or Slashing
+Damage type: Piercing/Slashing
 Speed Factor: 5
 Proficiency Type: Halberd
 Type: Two-handed
@@ -395,7 +395,7 @@ Equipped abilities:
 – Immunity to charm and confusion
 
 Combat abilities:
-– 25% chance per hit it causes confusion on the target 1 round, unless a save vs. Spell succeeds
+– 25% chance per hit it causes confusion on the target 2 round, unless a save vs. Spell succeeds
 
 THAC0: +3
 Damage: 1d10+3 (slashing)
@@ -531,7 +531,7 @@ Weight: 3~
 STATISTICS:
 
 Combat abilities:
-– Hit target is poisoned for 1 round, suffering 12 poison damage in total, unless a Save vs. Death at -2 succeeds
+– Hit target is poisoned for 1 round, suffering 12 poison damage in total, unless a save vs. Death at -2 succeeds
 
 THAC0: +4
 Damage: 1d6+4, +4 poison damage
@@ -594,13 +594,13 @@ Weight: 3~
 
 @7591 = ~Witch's Wrath~
 
-@7640 = ~When activated, this rod may be used as a powerful magical staff. Any creature hit by the rod must make a saving throw vs. Spell or become paralyzed in terror, fearing the wielder as if he or she were a flesh-eating demon from the Abyss, which may kill them if the fear goes out of control. There is a drawback to using this rod, however: Each time the rod is used, there is a chance that the wielder loses one point of Constitution for one 24 hours.
+@7640 = ~When activated, this rod may be used as a powerful magical staff. Any creature hit by the rod must make a saving throw vs. Spell or become paralyzed in terror, fearing the wielder as if he or she were a flesh-eating demon from the Abyss, which may kill them if the fear goes out of control. There is a drawback to using this rod, however: each time the rod is used, there is a chance that the wielder loses one point of constitution for 24 hours.
 
 STATISTICS:
 
 Combat abilities:
 – Target must save vs. Spell or flee in terror for 2 rounds. After one round, if the the target is still panicking, there's a 20% chance the target dies from the shock if they fail a save vs. Death; if they survive, they become rooted in place for the remaining of the round.
-– Every time the rod hits an opponent, there's a 10% chance the wielder will lose 1 point of Constitution for 24 hours
+– Every time the rod hits an opponent, there's a 10% chance the wielder will lose 1 point of constitution for 24 hours
 
 THAC0: +3
 Damage: 1d6+3 (crushing)
@@ -686,7 +686,7 @@ STATISTICS:
 
 THAC0: +4
 Damage: 1d10+4, +1 cold, fire, electrical, acid, and poison damage
-Damage type: Piercing
+Damage type: Piercing/Slashing
 Speed Factor: 5
 Proficiency Type: Halberd
 Type: Two-handed
@@ -705,7 +705,7 @@ Combat abilities:
 
 THAC0: +2
 Damage: 1d10+2, +2 cold damage
-Damage type: Piercing
+Damage type: Piercing/Slashing
 Speed Factor: 7
 Proficiency Type: Halberd
 Type: Two-handed
@@ -773,7 +773,7 @@ Combat abilities:
 – 10% chance of decapitating opponent with each successful attack (Save vs. Death at -4 negates)
 
 THAC0: +6
-Damage: 1d10+6 (piercing)
+Damage: 1d10+6 (piercing or slashing)
 Speed Factor: 3
 Proficiency Type: Halberd
 Type: Two-handed
@@ -828,7 +828,7 @@ Weight: 9~
 STATISTICS:
 
 Combat abilities:
-– 5% chance per hit to critically strike, inflicting 5 extra piercing damage on a critical hit
+– +5% extra chance per hit to critically strike, inflicting 5 extra piercing damage on a critical hit
 
 THAC0: +3
 Damage: 1d8+3, +10 piercing damage
@@ -865,7 +865,7 @@ Equipped abilities:
 – Immunity to intelligence changes
 
 Combat abilities:
-– 30% chance per hit it causes confusion on the target 1 round, unless a Save vs. Spell at -2 succeeds
+– 30% chance per hit it causes confusion on the target 2 rounds, unless a save vs. Spell at -2 succeeds
 
 THAC0: +5
 Damage: 1d10+5 (slashing)

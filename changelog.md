@@ -8,9 +8,7 @@
 - Added prefix: Greater Clay Golem should be treated as a Clay Golem class-wise **✓**
 - Added prefix: Shambling Mounds will be set as Plants and Shambling Mounds race-wise **✓**
 - Added prefix: My mod will now automatically fix the issue introduced in 2.6.6 where simulacra cannot find traps or enter stealth **✓**
-  
-- Added fix for Unholy Reaver for Item Upgrade not being tweaked appropriately in the Soul Reaver component.
-  
+- Added fix for Unholy Reaver for Item Upgrade not being tweaked appropriately in the Soul Reaver component. **✓**
 - Fixed installation crash with Cloak of Fear component **✓**
 - Excluded the part that distributes the "Remove Fear" effect for Cloak of Fear if fixpack is installed, since they do that already. **✓**
 - Small library fixes and changes tom improve design and performance **✓**
@@ -18,9 +16,7 @@
 - Fixed Holy Power not properly adding APR bonuses to non-warrior classes **✓**
 - Fixed Holy Power excluding **non-warriors** instead of **warriors** from getting the APR bonus **✓**
 - Fixed Holy Power and Tenser's Transformation not being excluded from affecting rangers and paladins for the APR bonus **✓**
-  
-- Fixed Rhino's Beetle Shield wrong description
-  
+- Fixed Rhino's Beetle Shield wrong description **✓**
 - Fix light crossbow tweak not working after some other tweaks to crossbows **✓**
 - Removed unnecessary whirlwind fixpack blocks since they don't actually change anything (old code gone wrong!) **✓**
 - Fixed Dale Protector boosting all weapon damage instead of only ranged weapon damage to rangers, bards, and thieves **✓**
@@ -32,9 +28,7 @@
 - Fixed shadow creature component not being open to IWDEE and improved the performance of the component installation. **✓**
 - Fixed incorrect description for purifier component **✓**
 - Deleted documentation of components that no longer exist or were merged into other components **✓**
-  
-- Forgot to upgrade the regeneration granted by Eldath's Mist in the code from 1 HP/s to 2 HP/s
-  
+- Forgot to upgrade the regeneration granted by Eldath's Mist in the code from 1 HP/s to 2 HP/s  **✓**
 - Improved the code of the Armor of Faith component (more old code gone wrong!) **✓**
 - Added Underdark Brain Golems to the list of incorrectly aligned creatures fixed by the alignment creature component **✓**
 - Fixed Vorpal Hit component not working as expected due to missing spell states in Stoneskin and Iron Skins **✓**
@@ -84,6 +78,12 @@
 - Fixed issue which forced wielders of staff of magi to save vs. spell to benefit from passive effects and made finesse-type effects also subject to the save vs spell **✓**
 - Removed meaningless console string when celestials disable the party partial spell invulnerability **✓**
 - Fixed ability to disable spell invulnerability from planetars not applying to the party but the planetar, rendering it useless **✓**
+- Fixed Protection from Undead rebuke ability not working due to using a spell with no range **✓**
+- Fixed Icedust having inconsistent duration **✓** (double check)
+- Fixed Knave Robe protecting vs. missile instead of the intended piercing **✓**
+- Fixed Stiletto of Demarchess not handling immunities to bleeding as expected **✓**
+- Attempted to fix the description inconsistency when mixing poisoned throwing dagger component with melee throwing dagger component
+- Marked impaler extra damage as not waking up sleepers as intended **✓**
 
 ## Modifications
 
@@ -153,28 +153,34 @@
 - Added option for the earthquake component to only reduce the shake intensity greatly, instead of removing it entirely, check preferences **✓**
 - Earthquake component now makes the silly behavior of the spell where the quake sounds and the screen shake overlap and stack for every affected creature such that it only happens once every time it triggers. For technical reasons, the caster will be the generator of both the sound and shake, if it exists, which probably doesn't look too odd, considering a quake should probably be LOUD. **✓**
 - Added simulacrum fixes from the shadowdancer overhaul mod to the prefixes of this mod **✓**
+- Decastave component now increases proficiency in staves by 1 instead of setting it to 1 **✓**
+- Protection from undead rebuke ability now deals 2d4+1 magic damage (double than before), and the panic it can cause lasts one round more (3 in total). It can no longer, however, apply a rebuke (damage or panic) more than 3 times per round to the same target. **✓**
+- Increased the duration of possible confusion effect by 1 round in Lilarcor tweak
 
 ## New components
 
 - Make Hold Undead bypass Magic Resistance **✓**
 - Make disrupt undead weapons more balanced and closer to PnP rules **✓**
 - Make Holy and Unholy Word more effective **✓**
-- Make Disintegrate cause damage and slow some golems, as per PnP 
+- Make Disintegrate cause damage and slow some golems, as per PnP **✓**
 - Make minotaurs tougher and more dangerous **✓**
 - Make Yuan-ti slightly more powerful **✓**
 - Make Whirlwind and Evasion grant once 3 uses of the Improved variants **✓**
-- Make some golem creatures more unique
-- Make Cowl of the Stars more useful
-- Make rangers and rogues have a THAC0 and Damage bonus if attacking with ranged weapons from invisibility
+- Make Cowl of the Stars more useful **✓**
+- Make rangers and rogues have a THAC0 and Damage bonus if attacking with ranged weapons from invisibility **✓**
+
+- Make some golem creatures more unique **✓** (double check)
+  
 - Make Chromatic Orb more interesting by providing party-only chromatic varieties
-- Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing
-- Make Harbinger more convenient
+
+- Make single-classed thieves and bards able to throw sand in the enemy's eyes **✓**
+- Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing **✓**
+- Make Harbinger more convenient **✓**
 - Make Aura of Flaming Death increase fire resistance instead of setting it to 90% **✓**
-- Make Edwin's amulet nuanced in the privileges it grants to that snake
-- Make Shield of Balduran less of an auto-win item
-- Make single-classed thieves and bards able to throw sand in the enemy's eyes
-- Make Agannazar's Scorcher not pause the caster
-- Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance
-- Make Imprisonment prevent movement while the animation plays out
-- Make ogre / oni mages regenerating fiends, as per PnP
+- Make Edwin's amulet nuanced in the privileges it grants to that snake **✓**
+- Make Shield of Balduran less of an auto-win item **✓**
+- Make Agannazar's Scorcher not pause the caster **✓**
+- Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance **✓**
+- Make Imprisonment prevent movement while the animation plays out **✓**
+- Make ogre / oni mages regenerating fiends, as per PnP **✓**
   

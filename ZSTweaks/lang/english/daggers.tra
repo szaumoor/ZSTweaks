@@ -163,11 +163,9 @@ STATISTICS:
 Equipped abilities:
 – +10% Magic Resistance
 
-Combat abilities:
-– 50% chance per hit to inflict 1d4 points of Magic damage
-
 THAC0: +2
-Damage: 1d4+2 (piercing)
+Damage: 1d4+2, +1d4 magic damage (50% chance)
+Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
 Type: One-handed

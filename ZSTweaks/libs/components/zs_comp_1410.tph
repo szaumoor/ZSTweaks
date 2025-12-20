@@ -9,7 +9,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     ACTION_IF zst_1410_ureaver_dispel OR zst_1410_ureaver_dicesize BEGIN
         
         INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
-        COPY_EXISTING ~DAM5.EFF~ ~override~
+        COPY_EXISTING ~dam5.eff~ ~override~
             LPF ALTER_EFF_FILE INT_VAR special=1024 END
         OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND 
                                              (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
@@ -24,7 +24,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1410_ureaver_dispel BEGIN
 
-        COPY_EXISTING ~ohreaver.ITM~ ~override~
+        COPY_EXISTING ~ohreaver.itm~ ~override~
             LPF ALTER_EFFECT INT_VAR check_globals=0 probability1=100 END
             LPF ALTER_EFFECT INT_VAR check_globals=0 savingthrow=1 END
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=177 match_parameter2=8 match_parameter1=1 savingthrow=0 END
@@ -49,7 +49,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1410_ureaver_dicesize BEGIN
 
-        COPY_EXISTING "ohreaver.ITM" ~override~
+        COPY_EXISTING "ohreaver.itm" ~override~
             PATCH_IF zst_1410_ureaver_dispel BEGIN
                 SPRINT strref @6282
             END ELSE BEGIN

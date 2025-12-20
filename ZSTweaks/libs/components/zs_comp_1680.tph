@@ -13,7 +13,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ALTER_EFFECT INT_VAR match_opcode = 142 check_globals = 0 probability1 = 24 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 check_globals = 0 probability1 = 24 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1~ END
-    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=324,p2=55;op=12,p1=2,p2=%op12_piercing%,spec=1024;op=142,p2=137,dur=18~ END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p2=55,res=%SOURCE_RES%;op=12,p1=2,p2=%op12_piercing%,spec=1024;op=142,p2=137,dur=18~ END
     
     SET dur = 6
     FOR ( round = 0; round < 3; ++round ) BEGIN

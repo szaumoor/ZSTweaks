@@ -14,7 +14,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         OUTER_SET finesse_component_installed = (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR (general_tweaks_installed AND zst_group_1450_finesse))
         OUTER_SET dagger_boost_installed = (MOD_IS_INSTALLED "ZSTweaks.tp2" "1440" OR (general_tweaks_installed AND zst_group_1440_dagger_boost))
 
-        COPY_EXISTING ~DAGG21.ITM~ ~override~
+        COPY_EXISTING ~dagg21.itm~ ~override~
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6010) id_name=RESOLVE_STR_REF(@6011) ench=5 END
             LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 20 probability1 = 9 END
             LPF ADD_ON_HIT_EFF INT_VAR p1=1 spec=1024 STR_VAR effects = ~op=12,p2=%op12_fire%;op=12,p2=%op12_electricity%~ END
@@ -22,13 +22,13 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             PATCH_IF zst_1450_allow_daggers AND (finesse_component_installed OR general_tweaks_installed) BEGIN // update +5 enchantment
                 SET ench = 5
                 LPM PROBABILITY_BONUS
-                LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 probability1 = (base_dagg_dart+bonus) STR_VAR match_resource=~ZSTWD4~ resource=~ZSTWD5~ END
+                LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 probability1 = (base_dagg_dart+bonus) STR_VAR match_resource=~zstwd4~ resource=~zstwd5~ END
             END
 
             PATCH_IF dagger_boost_installed OR general_tweaks_installed BEGIN // update +5 enchantment
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 5 to_hit = 6 END
-                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDPB4~ resource=~ZSTWDPB5~ END
-                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDPT4~ resource=~ZSTWDPT5~ END
+                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~zstwdpb4~ resource=~zstwdpb5~ END
+                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~zstwdpt4~ resource=~zstwdpt5~ END
 
                 READ_STRREF 0x54 desc
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
@@ -44,31 +44,31 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         ADD_PROJECTILE ~%MOD_FOLDER%/pro/fstrikh.PRO~ ~Heavenly Flames IWDEE~
         COPY ~%MOD_FOLDER%/items/dagger_star~ ~override~
 
-        COPY_EXISTING ~ZSTWDST0.SPL~ ~override~
+        COPY_EXISTING ~zstwdst0.spl~ ~override~
             LPF ALTER_HEADER INT_VAR projectile = %calllih% END
 
-        COPY_EXISTING ~ZSTWDST1.SPL~ ~override~
+        COPY_EXISTING ~zstwdst1.spl~ ~override~
             LPF ALTER_HEADER INT_VAR projectile = %fstrikh% END
 
-        COPY_EXISTING ~DAGG22.ITM~ ~override~
+        COPY_EXISTING ~dagg22.itm~ ~override~
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6013) id_name=RESOLVE_STR_REF(@6012) ench=6 END
             LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 20 probability1 = 14 END
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 special=1024 END
             LPF ADD_ON_HIT_EFF INT_VAR dsize=8 dnum=1 spec=1024 STR_VAR effects=~op=12,p2=%op12_fire%,pro1=93,pro2=89;op=12,p2=%op12_electricity%,pro1=88,pro2=84~ END
             LPF ADD_ON_HIT_EFF INT_VAR p1=2 spec=1024 STR_VAR effects = ~op=12,p2=%op12_fire%;op=12,p2=%op12_electricity%~ END
-            LPF ADD_ITEM_HEADER INT_VAR range=50 charges=2 flags=2560 depletion=3 STR_VAR icon=~SPPR612B~ END
-            LPF ADD_ON_HIT_EFF INT_VAR t=3 p2=1 STR_VAR effects = ~op=146,res=ZSTWDST0;op=146,res=ZSTWDST1;op=146,tgt=1,res=ZSTWDST6~ END
+            LPF ADD_ITEM_HEADER INT_VAR range=50 charges=2 flags=2560 depletion=3 STR_VAR icon=~sppr612b~ END
+            LPF ADD_ON_HIT_EFF INT_VAR t=3 p2=1 STR_VAR effects = ~op=146,res=zstwdst0;op=146,res=zstwdst1;op=146,tgt=1,res=zstwdst6~ END
 
             PATCH_IF zst_1450_allow_daggers AND finesse_component_installed BEGIN // update +6 enchantment
                 SET ench = 6
                 LPM PROBABILITY_BONUS
-                LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 probability1=(bonus+base_dagg_dart) STR_VAR match_resource=~ZSTWD5~ resource=~ZSTWD6~ END
+                LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=326 probability1=(bonus+base_dagg_dart) STR_VAR match_resource=~zstwd5~ resource=~zstwd6~ END
             END
 
             PATCH_IF dagger_boost_installed BEGIN // update +6 enchantment
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 6 to_hit = 7 END
-                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDPB5~ resource=~ZSTWDPB6~ END
-                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~ZSTWDPT5~ resource=~ZSTWDPT6~ END
+                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~zstwdpb5~ resource=~zstwdpb6~ END
+                LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=341 STR_VAR match_resource=~zstwdpt5~ resource=~zstwdpt6~ END
 
                 READ_STRREF 0x54 desc
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
