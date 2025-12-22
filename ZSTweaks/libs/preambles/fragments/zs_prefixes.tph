@@ -69,6 +69,10 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
 
     ACTION_IF is_bg2ee_or_eet BEGIN
 
+        PRINT "[[FIX]]: Lord Jierdan no longer classified as an animal but a monster."
+        COPY_EXISTING ~firkra01.cre~ ~override~
+            WRITE_BYTE 0x271 general_monster
+
         ACTION_IF NOT has_eefixpack BEGIN
 
             PRINT "[[FIX]]: Fixing incorrect speed factor in Lilarcor from 8 to 7"

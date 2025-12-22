@@ -10,7 +10,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     FAIL ~Invalid setting for Defender of Easthaven's damage resistance. Must be between 1 and 127.~
   END
 
-  COPY_EXISTING ~WAFLAIL.ITM~ ~override~
+  COPY_EXISTING ~waflail.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6130) END
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 2 END
 

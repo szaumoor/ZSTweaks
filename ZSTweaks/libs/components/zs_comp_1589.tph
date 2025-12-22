@@ -7,19 +7,19 @@ END
 ACTION_IF NOT is_iwdee BEGIN
 
     COPY ~%MOD_FOLDER%/items/rashad~ ~override~
-    COPY_EXISTING "ZSTWRASH.SPL" ~override~
+    COPY_EXISTING "zstwrash.spl" ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1=RESOLVE_STR_REF(@7581) END
         LPF ALTER_EFFECT INT_VAR match_duration = 12 duration = 15 END
     BUT_ONLY
 
-    COPY_EXISTING ~SPPR307.SPL~ ~override~
-                  ~SPWI410.SPL~ ~override~
+    COPY_EXISTING ~sppr307.spl~ ~override~
+                  ~spwi410.spl~ ~override~
         READ_BYTE 0x34 spell_level
-        LPF ADD_SPELL_EFFECT INT_VAR target=2 opcode=321 power=spell_level STR_VAR resource = ~ZSTWRASH~ END
+        LPF ADD_SPELL_EFFECT INT_VAR target=2 opcode=321 power=spell_level STR_VAR resource = ~zstwrash~ END
 
-    COPY_EXISTING "SW1H23.itm" ~override~
+    COPY_EXISTING "sw1h23.itm" ~override~
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7580) END
-        LPF ADD_EQUIPPED_EFF INT_VAR p2=1 spec=1 STR_VAR effects=~op=341,res=ZSTWRASH;op=301,p1=1~ END
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=1 spec=1 STR_VAR effects=~op=341,res=zstwrash;op=301,p1=1~ END
 
     OUTER_SET required_comps_installed = (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1470~ AND
                                           MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1588~) OR

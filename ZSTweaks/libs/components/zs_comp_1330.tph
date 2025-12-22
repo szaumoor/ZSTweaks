@@ -8,7 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   WITH_SCOPE BEGIN
 
-    COPY_EXISTING ~BOW20.ITM~ ~override~
+    COPY_EXISTING ~bow20.itm~ ~override~
       LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6180) END
       LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 28 parameter1 = 15 END
       LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 30 parameter1 = 15 END
@@ -16,7 +16,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 85 parameter1 = 15 END
       LPF ADD_ON_HIT_EFF INT_VAR t=4 p1=1 spec=1024 STR_VAR effects = ~op=12,p2=%op12_cold%;op=12,p2=%op12_fire%~ END
 
-    COPY_EXISTING ~BOW21.ITM~ ~override~
+    COPY_EXISTING ~bow21.itm~ ~override~
       LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6181) END
       LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 28 parameter1 = 30 END
       LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 30 parameter1 = 30 END
