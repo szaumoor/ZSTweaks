@@ -1318,11 +1318,11 @@ Makes the elemental resistances against fire and frost increase to 15%, 30% at +
 
 ### Make Taralash slightly more remarkable (1340)
 
-The +5 version literally just increases the THAC0 bonus by 1. That's a bit too boring for a +5 weapon. I'm not saying these changes are much better—but slightly better? Absolutely!
+The +5 version literally just increases the THAC0 bonus by 1. Nothing more. So now they're reworked as follows:
 
-- Makes the movement bonus increase to 5.
-- Adds a damage bonus of 1 like a regular composite bow
-- Animals and other kinds of unintelligent beasts, magical or not, take +2 and +5 extra damage added on top of the arrow's normal damage (+4 and +5 version respectively). The list of such creatures includes: anything tagged as animal, ankhegs, carrion crawlers, chimeras, ettercaps, gibberlings, hook horrors, otyughs, spiders, trolls, umber hulks, wyverns, and basilisks.
+- +5 version makes the movement bonus 5 (from 2).
+- +5 version adds a damage bonus of 1 like as if it was a composite bow
+- Both versions deal 3 or 5 extra damage to living non-humanoids, and apply a small debuff if they fail their save, damaging their Armor Class, saving throws, and movement speed for 2 rounds.
 
 ### Make Protector of the Dryads deal +2 damage to orcs, ogres, gnolls, and goblinoids (1342)
 
