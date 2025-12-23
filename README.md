@@ -22,7 +22,7 @@ For best results, this mod should be installed after other content mods, such as
 
 Compatibility with other tweak mods that affect the same content depends on the specific changes. While some tweaks may be compatible, others with conflicting designs could lead to unbalanced results or installation failures. Please be judicious when combining tweaks that serve a similar purpose.
 
-I am open to providing compatibility for other mods. You can contact me on the forums or at <royalprotector@keemail.me> with any requests or questions. So far, compatibility has been added to:
+I am open to providing compatibility for other mods. You can contact me on the forums or at <kaelyn@tuta.io> with any requests or questions. So far, compatibility has been added to:
 
 - ToF
 - SCS
@@ -45,27 +45,27 @@ I also would recommend installing things in the order they're presented in the m
 
 ---
 
-**For modders**: To add compatibility with other mods, do include the files with the variables in your code to help to detect components and variants thereof. To check that the mod has been installed (any component), you may also check for the existence of the file `zssetup.rp` in override with a ```FILE_EXISTS_IN_GAME``` check. There are three possibilities as to how a component is installed, and all should be combined logically:
+**For modders**: To add compatibility with other mods, do include the files with the variables in your code to help to detect components and variants thereof. To check that the mod has been installed (any component), you may also check for the existence of the file `zssetup.rp` in override with a ```FILE_EXISTS_IN_GAME``` check. There are two possibilities as to how a component is installed, and both should be combined logically:
 
-- Installed the **specific** component by iterating through the components **manually**. In this case, the detection is a matter of using a ```MOD_IS_INSTALLED "ZSTweaks.tp2" "<component_number>"```. As every component is part of a group-installing component, this is never sufficient, except in the last group, because it only has three components, so I omitted making a group out of it.
-- Installed as part of a **predefined** **group-install**. This is a legacy system, and will disappear over time. Currently, this applies to all groups up to and not including the axe/blunt group, except for the last one (end of install components). This requires you to check for the installation of this group-install component, such as ```MOD_IS_INSTALLED "ZSTweaks.tp2" "103"```, which checks if my general tweaks and first group of tweaks is installed. This should be used in combination with the previous, to cover all bases.
-- Installed as part of a user-defined selection. This applies to all groups not mentioned in the previous point. In this case, you would have to first check that the group-install component is installed, and that the variable that _allows_ that component inside is set to 1. An example would be ```MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1328_mace_storm_star```, which would tell you if the user has installed my tweak to Storm Star, as part of their personal selection. This would be combined with the previous check
-- To check variations of this component, including variables that allow parts of the same component or not, you would also need to include the variables in `configurations/zstweaks_prefs.txt`.
+- Installed the **specific** component by iterating through the components **manually**. In this case, the detection is a matter of using a ```MOD_IS_INSTALLED "ZSTweaks.tp2" "<component_number>"```. As every component is part of a group-installing component, this is never sufficient.
+- Installed as part of a user-defined selection. In this case, you would have to first check that the group-install component is installed, and that the variable that _allows_ that component inside is set to 1. An example would be ```MOD_IS_INSTALLED "ZSTweaks.tp2" "1301" AND zst_group_1328_mace_storm_star```, which would tell you if the user has installed my tweak to Storm Star, as part of their personal selection. This should be combined with the previous check.
 
-And that's it. Oh, and, sorry. If I can, I will provide the compatibility code myself!
+Taking as an example the storm start component, a complete check would be: ```MOD_IS_INSTALLED "ZSTweaks.tp2" "1328" OR (MOD_IS_INSTALLED "ZSTweaks.tp2" "1301" AND zst_group_1328_mace_storm_star)```. This check asks: _is the component installed either individually or as part of its group?_.
+
+Finally, to check variations on the installed component, if there are any, you would also need to include the variables in `configurations/zstweaks_prefs.txt`. That's it. I know it's a bit of pain so if I can, I will provide the compatibility code myself.
 
 ## Credits
 
-- To BeamDog and Bioware for the game, obviously.
-- CamDawg for spending significant time to explain details about how WeiDu works, sharing insights, helpful code, and other matters for modding. Many thanks for your video tutorials too
+- To BeamDog and Bioware for the game
+- CamDawg for explaining details about WeiDu, sharing insights and code, his tutorial livestreams, and other matters
 - DavidW for his very helpful WeiDu tutorial
-- The developers of WeiDu, including the documentation
-- And the IESDP, an invaluable resource.
+- WeiDu devs and the included documentation
+- IESDP, an invaluable resource.
 - moggadeet and JDSilvergun for suggesting lines of dialog for Cespenar
-- Thanks to Angel for sharing information about PnP stuff that helped me design some tweaks
-- Troveur for good ideas, feedback, and suggestions for tweaks
-- People on Discord generally for their help, and the great modders out there that allowed their WeiDu code to be available publicly, like The Artisan, jmerry, CamDawg, 11jo, Argent77, Ardanis, DavidW, SubtleDoctor, among others.
-- The Artisan for participating in conversations about some tweaks and providing insights
-- dark0dave for giving me the idea of adding a configuration file, now an integral part of the mod that I'll never part with and will continue to implement in other mods.
+- Angel for sharing information about PnP stuff that helped me design some tweaks
+- Troveur for ideas, feedback, and suggestions
+- People on Discord for their help, and the great modders out there that share their code
+- The Artisan for brainstorming and insight
+- dark0dave for giving me the idea of adding a configuration file
 - For the people in G3 and Discord for reporting bugs
-- zenblack for feedback (hehe), brainstorming, and icon-making.
+- zenblack for feedback, brainstorming, and icon-making

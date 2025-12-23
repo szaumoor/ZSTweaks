@@ -135,7 +135,7 @@
 - Improved the code of the flame blade component **✓**
 - Arrow of piercing extra damage now bypasses magic resistance **✓**
 - Restored -10 save penalty to be knocked down (sleep) in exploding trap component **✓**
-- Taralash now increases damage vs. animals and unintelligent monsters and beasts directly, instead of as a separate additive tick **✓**
+- Taralash now adds damage vs. all living nonhumanoids, which is more useful than the original design, it will also apply mild debuffs on a failed save **✓**
 - Cloak of displacement component now removes the blur effect **✓**
 - Asp's Nest component now makes it a +3 weapon **✓**
 - Spear form of `Rod of Royal Might` does not inflict bleeding to undead, elementals, golems, shambling mounds, and slimes **✓**
