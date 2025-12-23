@@ -6,7 +6,7 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY_EXISTING ~OHHDRAIN.SPL~ ~override~
+  COPY_EXISTING ~ohhdrain.spl~ ~override~
     WRITE_LONG 0xc "-1" //nonsense identified name
     WRITE_LONG 0x54 "-1"// nonsense identified desc
     LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@7222) END

@@ -12,7 +12,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                                              (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR 
                                              (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice))
 
-        COPY_EXISTING_REGEXP "^ohdsw2h[a-d]\.ITM$" ~override~
+        COPY_EXISTING_REGEXP "^ohdsw2h[a-d]\.itm$" ~override~
             LPF ALTER_ITEM INT_VAR ench=5 END
 
             PATCH_IF "%SOURCE_RES%" STR_EQ "ohdsw2ha" BEGIN
@@ -74,14 +74,14 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
         BUT_ONLY
 
-        COPY_EXISTING_REGEXP "^ohdsw2h[bc]\.ITM$" ~override~
+        COPY_EXISTING_REGEXP "^ohdsw2h[bc]\.itm$" ~override~
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 1 END
         BUT_ONLY
 
-        COPY_EXISTING "ohdsw2hd.ITM" ~override~
+        COPY_EXISTING "ohdsw2hd.itm" ~override~
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 2 END
 
-        COPY_EXISTING "HOLYAVEN.EFF" ~override~
+        COPY_EXISTING "holyaven.eff" ~override~
             LPF ALTER_EFF_FILE INT_VAR special = 1024 END
     END
 

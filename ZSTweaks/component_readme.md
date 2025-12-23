@@ -1443,6 +1443,8 @@ This makes the blade grant Valygar the following perks:
 
 - +1 backstab multiplier (this will ignore the backstab multiplier tweak and behave as you would expect)
 - Total bonus of +6 THAC0 against wizards and sorcerers
+- It changes description and icon to poison instead of bleeding, since bleeding in vanilla game is utter bs.
+- It also makes the poison damage subject to save vs. Death at -2
 
 It also applies automatically the changes to this item in Component 1644.
 

@@ -7,7 +7,7 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
     
     INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
-    COPY_EXISTING ~NPSW04.ITM~ ~override~
+    COPY_EXISTING ~npsw04.itm~ ~override~
         SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
 
         PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1120" OR
@@ -20,7 +20,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=178,p1=202,p2=5,spec=4;op=178,p1=19,p2=5,spec=4~ END
         LPF RM_STAT_REQS END
-        LPF ALTER_EFFECT INT_VAR match_opcode = 25 special = 6 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 25 special = 6 savingthrow=4 savebonus = "-2" END
 
         PATCH_IF zst_1150_dice_katanas AND
                 (MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" OR

@@ -6,7 +6,7 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY_EXISTING "NPSHLD.ITM" ~override~
+  COPY_EXISTING "npshld.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6250) ench=2 END
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 3 END
     LPF RM_STAT_REQS INT_VAR str=SHORT_AT(0x26) END

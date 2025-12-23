@@ -8,8 +8,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1280_carsomyr_dispel OR zst_1280_carsomyr_evil BEGIN
 
-        COPY_EXISTING ~HOLYAVEN.EFF~ ~override~
-                      ~SW2H19A.EFF~ ~override~
+        COPY_EXISTING ~holyaven.eff~ ~override~
+                      ~sw2h19a.eff~ ~override~
             LPF ALTER_EFF_FILE INT_VAR special=1024 END
         OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND
                                              (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR

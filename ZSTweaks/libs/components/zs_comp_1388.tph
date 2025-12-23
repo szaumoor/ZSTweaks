@@ -4,5 +4,5 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1388~ = 1
 END
 
-COPY_EXISTING ~AROW04.ITM~ ~override~
-  LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
+COPY_EXISTING ~arow04.itm~ ~override~
+  LPF ALTER_EFFECT INT_VAR resist_dispel = 0 special = 1024 END
