@@ -10,7 +10,7 @@ ACTION_IF NOT is_iwdee BEGIN
   COPY_EXISTING ~spwi713.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc=new_description END
     LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = 14 END
-    LPF ~CD_LEVEL_SELECT-O-MATIC~ INT_VAR min_abil=1 min_lev_alt=15 step_dur=0 dur_special=1 level_cap=20 damage_fixed=1 damage_special=1 END
+    LPF ~CD_LEVEL_SELECT-O-MATIC~ INT_VAR min_abil=1 min_lev_alt=14 step_dur=0 dur_special=1 level_cap=20 damage_fixed=1 damage_special=1 END
 
   COPY_EXISTING ~scrl8o.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=new_description END
