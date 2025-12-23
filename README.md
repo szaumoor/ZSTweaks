@@ -57,7 +57,7 @@ Finally, to check variations on the installed component, if there are any, you w
 ## Credits
 
 - To BeamDog and Bioware for the game
-- CamDawg for explaining details about WeiDu, sharing insights and code, his tutorial livestreams, and other matters
+- CamDawg for explaining WeiDu, sharing insights & code, and his tutorials
 - DavidW for his very helpful WeiDu tutorial
 - WeiDu devs and the included documentation
 - IESDP, an invaluable resource.
