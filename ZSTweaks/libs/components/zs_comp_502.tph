@@ -4,8 +4,8 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_502~ = 1
 END
 
-COPY_EXISTING ~SPWI324.SPL~ ~override~
-              ~spcl742.SPL~ ~override~
+COPY_EXISTING ~spwi324.spl~ ~override~
+              ~spcl742.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8609) END
     LPF ALTER_EFFECT INT_VAR resist_dispel = 3 END
-    LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savebonus = "-2" END
+    LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savebonus = "-1" END
