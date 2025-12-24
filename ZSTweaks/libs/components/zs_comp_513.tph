@@ -8,13 +8,13 @@ ACTION_IF spell_whirlwind > 0 BEGIN
 
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_WHIRLWIND" RET spell_res END
 
-  COPY_EXISTING ~%spell_res%.SPL~ ~override~
+  COPY_EXISTING ~%spell_res%.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8360) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber=4 END
     LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
     LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~%SOURCE_RES%~ END
 
-  COPY_EXISTING ~whirlw.PRO~ ~override~
+  COPY_EXISTING ~whirlw.pro~ ~override~
     WRITE_SHORT 0xa   6
     WRITE_SHORT 0x2a  60
     WRITE_SHORT 0x200 (THIS - 2**15)

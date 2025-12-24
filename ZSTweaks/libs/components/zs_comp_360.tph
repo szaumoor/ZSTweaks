@@ -6,19 +6,20 @@ END
 
 ACTION_IF zst_360_etheral_retribution BEGIN
 
-    COPY_EXISTING ~SPPR751.SPL~ ~override~
+    COPY_EXISTING ~sppr751.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5210) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 6 dicenumber = 6 END
         LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savebonus = "-2" END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 318 match_parameter2 = 125 match_parameter1 = 2 parameter1 = 3 END
 
 END
 
 ACTION_IF zst_360_writhing_fog BEGIN
 
-    COPY_EXISTING ~SPPR250.SPL~ ~override~
+    COPY_EXISTING ~sppr250.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@6880) END
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 12 parameter1 = 1 END
-        LPF ALTER_EFFECT INT_VAR check_globals = 0 match_savingthrow = 4 probability1 = 49 END
+        LPF ALTER_EFFECT_EX INT_VAR check_globals = 0 STR_VAR match_probability1_ex = "(o_probability1 < 21)" probability1 = 49 END
         SET new_level = 4
         SET new_dicesize = 4
         FOR ( dice = 0; dice < 7; ++dice ) BEGIN
@@ -30,19 +31,19 @@ ACTION_IF zst_360_writhing_fog BEGIN
 
 END
 
-ACTION_IF zst_360_spirit_fire BEGIN
+ACTION_IF zst_360_spiritual_clarity BEGIN
 
-    COPY_EXISTING ~SPPR350.SPL~ ~override~
+    COPY_EXISTING ~sppr350.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@6990) END
         LPF ALTER_HEADER INT_VAR match_speed = 9 speed = 6 END
         LPF ADD_SPL_TGTEFF INT_VAR pwr=3 STR_VAR effects = ~op=164;op=4;op=240,p2=5;op=240,p2=4~ END
 
 END
 
-ACTION_IF zst_360_spiritual_clarity BEGIN
+ACTION_IF zst_360_spirit_fire BEGIN
 
-    COPY_EXISTING ~SPPR450.SPL~ ~override~
-                  ~SPPR450B.SPL~ ~override~
+    COPY_EXISTING ~sppr450.spl~ ~override~
+                  ~sppr450b.spl~ ~override~
 
         PATCH_IF "%SOURCE_RES%" STR_EQ "SPPR450.SPL" BEGIN
             LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7000) END
@@ -52,7 +53,7 @@ ACTION_IF zst_360_spiritual_clarity BEGIN
         SET start_dmg = 7
         FOR ( curr_header = 0; curr_header <= h; ++curr_header ) BEGIN
             LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=curr_header match_opcode=12 parameter1=start_dmg END
-            PATCH_IF "%SOURCE_RES%" STR_EQ "SPPR450.SPL" BEGIN
+            PATCH_IF "%SOURCE_RES%" STR_EQ "sppr450.spl" BEGIN
                 LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 header=curr_header match_opcode=146 savingthrow=0 probability1=32 END
             END
             ++start_dmg
@@ -69,8 +70,8 @@ END
 
 ACTION_IF zst_360_favored_spirits BEGIN
 
-    COPY_EXISTING ~SPCL941.SPL~ ~override~
+    COPY_EXISTING ~spcl941.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7530) END
-        LPF ALTER_EFFECT INT_VAR check_globals = 0 match_duration = 300 duration = 7200 END
+        LPF ALTER_EFFECT_EX INT_VAR check_globals=0 duration=7200 STR_VAR match_duration_ex="(o_duration >= 300 AND o_duration < 7200)" END
         
 END

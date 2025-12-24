@@ -11,12 +11,12 @@ ACTION_IF spell_righteous_wrath_faithful > 0 BEGIN
   COPY_EXISTING ~%spell_res%.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8290) END
 
-  COPY_EXISTING ~%spell_res%A.SPL~ ~override~
-                ~%spell_res%B.SPL~ ~override~
+  COPY_EXISTING ~%spell_res%a.SPL~ ~override~
+                ~%spell_res%b.SPL~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 93 parameter1 = 4 resist_dispel = 2 END
   BUT_ONLY IF_EXISTS
 
-  COPY_EXISTING ~%spell_res%A.SPL~ ~override~
+  COPY_EXISTING ~%spell_res%a.SPL~ ~override~
     LPF CLONE_EFFECT INT_VAR match_opcode = 54 opcode = 73 END
   BUT_ONLY IF_EXISTS
 

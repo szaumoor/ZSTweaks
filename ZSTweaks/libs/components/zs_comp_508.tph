@@ -6,26 +6,26 @@ END
 
 ACTION_IF zst_508_restoration_stat_drain BEGIN
 
-  COPY_EXISTING ~SPPR713.SPL~ ~override~
-                ~SPWISH46.SPL~ ~override~
-                ~SPWISH07.SPL~ ~override~
-                ~SPPR417.SPL~ ~override~
-                ~ohbresto.SPL~ ~override~
-                ~cdpr417.SPL~ ~override~
+  COPY_EXISTING ~sppr713.spl~ ~override~
+                ~spwish46.spl~ ~override~
+                ~spwish07.spl~ ~override~
+                ~sppr417.spl~ ~override~
+                ~ohbresto.spl~ ~override~
+                ~cdpr417.spl~ ~override~
 
     READ_LONG 0x34 spl_level
     PATCH_IF spl_level = 1 BEGIN
       spl_level = 7
     END
 
-    PATCH_FOR_EACH res IN ~SHADOWWP~ ~TROLLSPI~ ~SPIDWR1~ ~bdshadgr~ ~MINDFLAY~ BEGIN
+    PATCH_FOR_EACH res IN ~shadowwp~ ~trollspi~ ~spidwr1~ ~bdshadgr~ ~mindflay~ BEGIN
       LPF ADD_SPELL_EFFECT INT_VAR power=spl_level target=2 opcode=321 STR_VAR resource=~%res%~ END
     END
 
   BUT_ONLY IF_EXISTS
 
-  COPY_EXISTING ~SPWISH07.SPL~ ~override~
-                ~SPWISH46.SPL~ ~override~
+  COPY_EXISTING ~spwish07.spl~ ~override~
+                ~spwish46.spl~ ~override~
     LPF DELETE_EFFECT INT_VAR match_opcode = 93 END
   BUT_ONLY IF_EXISTS
 
@@ -34,20 +34,20 @@ END
 ACTION_IF zst_508_restoration_overhaul BEGIN
 
   COPY ~%MOD_FOLDER%/spells/divine/restoration~ ~override~
-  COPY_EXISTING ~SPPR713.SPL~ ~override~
+  COPY_EXISTING ~sppr713.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8600) END
     LPF ALTER_HEADER INT_VAR speed = 9 projectile = projectl_sparblpa END
     LPF DELETE_EFFECT INT_VAR match_opcode = 17 END
     LPF DELETE_EFFECT INT_VAR match_opcode = 93 END
-    LPF ADD_SPL_SELFEFF INT_VAR pwr=7 p2=1 rd=0 STR_VAR effects = ~op=146,res=ZSTWRST0~ END
-    LPF ADD_SPL_TGTEFF INT_VAR pwr=7 p2=43 rd=0 STR_VAR effects = ~op=326,res=ZSTWRST1~ END
-    LPF ADD_SPL_TGTEFF INT_VAR pwr=7 p2=44 rd=0 STR_VAR effects = ~op=326,res=ZSTWRST1;op=326,res=ZSTWRST1~ END
+    LPF ADD_SPL_SELFEFF INT_VAR pwr=7 p2=1 rd=0 STR_VAR effects = ~op=146,res=zstwrst0~ END
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=7 p2=43 rd=0 STR_VAR effects = ~op=326,res=zstwrst1~ END
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=7 p2=44 rd=0 STR_VAR effects = ~op=326,res=zstwrst1;op=326,res=zstwrst1~ END
 
   ACTION_IF spell_unfailing_endurance > 0 BEGIN
 
     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_UNFAILING_ENDURANCE" RET spell_res END
     COPY_EXISTING ~%spell_res%.spl~ ~override~
-      LPF ADD_SPL_TGTEFF STR_VAR effects = ~op=321,pwr=4,res=ZSTWRST0~ END
+      LPF ADD_SPL_TGTEFF STR_VAR effects = ~op=321,pwr=4,res=zstwrst0~ END
 
   END
 

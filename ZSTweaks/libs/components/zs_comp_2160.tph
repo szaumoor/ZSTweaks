@@ -5,8 +5,8 @@ END ELSE BEGIN
 END
 
 COPY ~%MOD_FOLDER%/class_kits/quivering_palm~ ~override~
-COPY_EXISTING "SPCL820.SPL" ~override~
+COPY_EXISTING "spcl820.spl" ~override~
   LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@6310) END
   LPF ALTER_EFFECT INT_VAR match_duration=5 duration=7 END
   LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 248 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode=248 target=2 parameter2=4 duration=7 insert_point=0 STR_VAR resource=~ZSTWMNK2~ END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode=248 target=2 parameter2=4 duration=7 insert_point=0 STR_VAR resource=~zstwmnk2~ END

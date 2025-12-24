@@ -47,11 +47,11 @@ COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     END
 BUT_ONLY
 
-COPY_EXISTING ~SHADOWWP.ITM~ ~override~
+COPY_EXISTING ~shadowwp.itm~ ~override~
     LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 2400 END
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~SPIDWR1.ITM~  ~override~
+COPY_EXISTING ~spidwr1.itm~ ~override~
     PATCH_IF is_iwdee BEGIN
         LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 2400 END
     END ELSE BEGIN
@@ -59,7 +59,7 @@ COPY_EXISTING ~SPIDWR1.ITM~  ~override~
     END
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~TROLLSPI.ITM~ ~override~
+COPY_EXISTING ~trollspi.itm~ ~override~
     LPF ALTER_EFFECT INT_VAR match_duration = 300 duration = 2400 END
 BUT_ONLY IF_EXISTS
 
