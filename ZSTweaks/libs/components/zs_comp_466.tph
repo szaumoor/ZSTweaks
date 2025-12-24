@@ -18,3 +18,4 @@ COPY_EXISTING ~ohrclck3.itm~ ~override~
       REPLACE_TEXTUALLY ~%shield_archons%~ ~%planar_shield%~
   END
   SAY_EVALUATED 0x54 ~%desc%~
+BUT_ONLY IF_EXISTS

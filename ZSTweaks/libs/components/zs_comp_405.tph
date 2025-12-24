@@ -19,6 +19,7 @@ ACTION_IF NOT has_zs_shadowdancer_overhaul BEGIN
 
   COPY_EXISTING ~spcl937.spl~ ~override~
     LPF CLONE_EFFECT INT_VAR match_opcode=215 opcode=176 END
+  BUT_ONLY IF_EXISTS
 
 END
 
