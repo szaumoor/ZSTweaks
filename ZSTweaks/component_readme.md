@@ -1776,7 +1776,7 @@ Finally, because Earthquake has this silly behavior where the sound of the quake
 
 ### Make Negative Plane Protection's duration increase somewhat as you level up (260)
 
-It only lasts 30 seconds, which might be insufficient for fights with vampires. Since it's a very powerful effect, the increases in duration are moderate, one round per 2 levels after level 7, up to 11 rounds at level 19.
+It only lasts 5 rounds, which is insufficient for fights with vampires. Since it's a very powerful effect, the increases in duration are moderate, one round per 2 levels up to 11 rounds at level 20.
 
 ### Make Entangle more powerful and relevant for druids and shamans (270)
 

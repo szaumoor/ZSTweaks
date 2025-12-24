@@ -6,7 +6,7 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
 
-  COPY_EXISTING ~SPPR106.SPL~ ~override~
+  COPY_EXISTING ~sppr106.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7400) END
     LPF ALTER_HEADER INT_VAR speed=2 END
     LPF CLONE_EFFECT INT_VAR match_opcode=12 parameter2="%op12_missile%" END
