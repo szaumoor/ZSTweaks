@@ -1925,7 +1925,7 @@ This spell is thematically beautiful but very underperforming, especially due to
 
 ### Make Aid a party buff and optionally disable the character glow (507)
 
-This makes the spell generally more useful by making it a party buff. To avoid issues with combat scripts, the targeting is vanilla, that is, Aid is cast on a target, and then it spreads to nearby targets. Also, for convenience, the range of the spell is no longer melee, but equivalent to the range of the spell Poison.
+This makes the spell generally more useful by making it a party buff. To avoid issues with combat scripts, the targeting is vanilla, that is, Aid is cast on a target, and then it spreads to nearby targets. Also, for convenience, the range of the spell is no longer melee, but equivalent to the range of the spell Poison. It also adds a maximum HP buff of +1 HP per level after level 5, to a maximum of +17 HP (on top of the usual 1d8 from Aid opcode).
 
 Optionally, the character glow can be disabled in the configuration file, as it causes a lot of visual clutter when it spreads to everyone.
 
