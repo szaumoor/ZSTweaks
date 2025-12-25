@@ -194,4 +194,3 @@
 - Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance
 - Make Imprisonment prevent movement while the animation plays out
 - Make ogre / oni mages regenerating fiends, as per PnP
-  
