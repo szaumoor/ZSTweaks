@@ -11,7 +11,7 @@ ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING "bdboot03.itm" ~override~
       LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6920) END
       LPF ALTER_EFFECT INT_VAR match_opcode = 166 parameter1 = 10 END
-      LPF CLONE_EFFECT INT_VAR match_opcode = 177 parameter1 = kit_inquisitor END
+      LPF CLONE_EFFECT INT_VAR match_opcode = 177 match_parameter2 = 9 parameter1 = kit_inquisitor END
 
   END ELSE BEGIN
     ACTION_IF NOT group_component BEGIN WARN "bdboot03.itm not found" END

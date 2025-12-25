@@ -6,7 +6,7 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
 
-  COPY_EXISTING ~BOOT04.ITM~ ~override~
+  COPY_EXISTING ~boot04.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7650) END
     LPF ALTER_EFFECT INT_VAR match_opcode=0 parameter1 = 4 END
     LPF ADD_EQUIPPED_EFF INT_VAR p1=1 STR_VAR effects = ~op=0;op=36;op=176,p1=3~ END

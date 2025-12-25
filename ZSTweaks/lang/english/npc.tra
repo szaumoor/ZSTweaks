@@ -474,3 +474,30 @@ Equipped abilities:
 – Extra spell slots: One more for spell level 1, 2, 3 and 4
 
 Weight: 1~
+
+@70020 = ~These are Eldoth's personal poisoned arrows. He learned how to use poison at a young age and can create enough venom for about 5 arrows per day. He is the only person who can safely handle these arrows.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target takes 1 point of poison damage every 2 seconds for 40 seconds (Save vs. Poison negates)
+
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~
+
+@70021 = ~These are Eldoth's personal poisoned arrows. He learned how to use poison at a young age and can create enough venom for about 15 arrows per day. He is the only person who can safely handle these arrows.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target takes 1 point of poison damage every 2 seconds for 40 seconds (Save vs. Poison negates)
+
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~
+
+@70030 = ~Create Bruiser Mates
+This ability crafts 10 of Jan's patented Flasher Master Bruiser Mates, adding them to the character's inventory. Handle with care!~

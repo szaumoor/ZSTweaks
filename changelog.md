@@ -84,6 +84,10 @@
 - Ethereal Retribution tweak in the shaman component fixes in passing the bug where enemies could be killed by the strength sapping effect
 - Fixed incorrect checks to determine what parts of the shaman abilities component are installed according to the preferences
 - Fixed inconsistency that could arise when combining certain components with the void-weapon component
+- Fixed bug with the Sandthief BGEE tweak that would prevent it from recharging after resting as intended
+- Fixed bug with Eilistraee's Boon tweak on the ioun/circlet overhaul that would not give elves extra Armor Class due to missing resource
+- Fixed Ankheg's Plate tweak not actually running in BGEE games
+- Fixed item creation by npc tweak not updating descriptions
 
 ## Modifications
 

@@ -4,15 +4,15 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1216~ = 1
 END
 
-ACTION_IF is_bg2ee_or_eet BEGIN
+ACTION_IF NOT is_iwdee BEGIN
 
-  COPY_EXISTING ~PLAT06.ITM~ ~override~
-                ~PLAT06_.ITM~ ~override~
+  COPY_EXISTING ~plat06.itm~ ~override~
+                ~plat06_.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8470) END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=20~ END
   BUT_ONLY IF_EXISTS
 
-  COPY_EXISTING ~BZPLM06A.ITM~ ~override~
+  COPY_EXISTING ~bzplm06a.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8471) END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=20~ END
   BUT_ONLY IF_EXISTS

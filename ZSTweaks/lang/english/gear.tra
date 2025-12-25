@@ -19,7 +19,7 @@ STATISTICS:
 
 Equipped abilities:
 – Can memorize 2 extra 3rd-level, 2 extra 4th-level, and 1 extra 5th-level wizard spell
-– Lore: -15
+– Lore: -20
 – Wisdom: -2
 – Saves vs. Illusion: -2
 – Detect Illusion: -20%
@@ -846,17 +846,17 @@ Equipped abilities:
 
 Weight: 4~
 
-@7740 = ~Kazgaroth was an aspect of Bhaal who was a powerful, intelligent, shapeshifting evil beast opposed to the balance and the influence of the Earthmother on the Moonshae Isles. This horn is thought to be made from one its tusks. When blown upon, no sound issues from the horn. Instead, the user of the horn is encased in a globe of power for a short duration. The bubble greatly increases the user's magical defenses and saving throws, as well as partially deflecting incoming physical attacks. The horn draws from the life force of the user every time it is used.
+@7740 = ~Kazgaroth was an aspect of Bhaal who was a powerful, intelligent, shapeshifting evil beast opposed to the balance and the influence of the Earthmother on the Moonshae Isles. This horn is thought to be made from one its tusks. When blown upon, no sound issues from the horn. Instead, the user of the horn is encased in a globe of power for a short duration. The bubble greatly increases the user's magical defenses and saving throws, as well as partially deflecting incoming physical attacks. The horn draws attempts to draw from the life force of the user every time it is used.
 
 STATISTICS:
 
 Charge abilities:
 Three times per day, blow the horn to activate the powers:
   – Immunity to 1st, 2nd, and 3rd-level spells
-  – Armor Class: +2, +6 vs. missile attacks
-  – Saving Throws: +2
-  – Magic Resistance: +10%
-  – Physical Resistance: +8%
+  – Armor class: +2, +6 vs. missile attacks
+  – Saving throws: +2
+  – Magic resistance: +10%
+  – Physical damage resistance: +8%
   – Duration: 5 rounds
   – Kazgaroth's Offering: the user has a 50% chance of suffering a random penalty for 2 turns after use.
 

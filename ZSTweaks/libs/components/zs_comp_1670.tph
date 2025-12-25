@@ -8,10 +8,10 @@ ACTION_IF NOT is_iwdee BEGIN
 
   INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
   COPY ~%MOD_FOLDER%/items/werebane~ ~override~
-  COPY_EXISTING "dagg09.ITM" ~override~
+  COPY_EXISTING "dagg09.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6570) END
     LPF ALTER_HEADER INT_VAR match_type = 1 speed = 0 silent = 1 END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 177 check_globals = 0 STR_VAR resource = ~ZSTWWED6~ END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 177 check_globals = 0 STR_VAR resource = ~zstwwed6~ END
 
     PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR 
             (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ AND zst_group_1440_dagger_boost)
@@ -23,7 +23,7 @@ ACTION_IF NOT is_iwdee BEGIN
       SAY_EVALUATED 0x54 ~%desc%~
     END
 
-  COPY_EXISTING "LYCNHIT3.EFF" ~override~
+  COPY_EXISTING "lycnhit3.eff" ~override~
     LPF ALTER_EFF_FILE INT_VAR parameter3 = 5 END
 
 END

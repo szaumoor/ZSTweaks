@@ -12,6 +12,14 @@ ACTION_IF NOT is_iwdee BEGIN
     LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=2 match_savingthrow=4 savebonus=zst_1010_asp_nest_sbonus END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,dsize=2,dnum=1,p2=%op12_poison%,t=2,spec=1024~ END
     LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+
+    PATCH_IF zst_1450_allow_darts AND
+            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ OR
+            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ AND zst_group_1450_finesse)) 
+    BEGIN
+      LPF ALTER_EFFECT STR_VAR match_resource = "zstwt1" resource = "zstwt3" END
+    END
+
   BUT_ONLY IF_EXISTS
 
 END
