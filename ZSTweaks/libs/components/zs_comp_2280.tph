@@ -1,0 +1,45 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_2280~) BEGIN
+  FAIL ~Script already included: zs_comp_2280~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_2280~ = 1
+END
+
+COPY ~%MOD_FOLDER%/class_kits/sand_throw~ ~override~
+COPY_EXISTING ~zstsand0.spl~ ~override~
+  LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8880) desc = RESOLVE_STR_REF(@8881) END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF(@8882) END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_duration = 60 parameter1 = RESOLVE_STR_REF(@8883) END
+
+ACTION_CLEAR_ARRAY my_clabs
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS 9 rows
+  FOR ( index = 2; index < rows; ++index ) BEGIN
+    READ_2DA_ENTRY index 8 9 class
+    PATCH_IF class = class_thief OR class = class_bard BEGIN
+      READ_2DA_ENTRY index 5 9 clab
+      DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN "%clab%" => "%class%" END
+    END  
+
+  END
+
+ACTION_DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN
+  clabth01 =>  class_thief 
+  clabba01 =>  class_bard
+END
+
+ACTION_PHP_EACH my_clabs AS clab => _ BEGIN
+  COPY_EXISTING ~%clab%.2da~ ~override~
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "AP_ZSTSAND1" END  
+END
+
+DEFINE_PATCH_MACRO magical_macro BEGIN END
+DEFINE_PATCH_MACRO enchantment_macro BEGIN END
+DEFINE_PATCH_MACRO nonmagical_macro BEGIN
+  LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=120 match_parameter2=2 match_parameter1=0 opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~zstsand0~ END
+END
+
+PRINT "Patching creatures, spells, and items with weapon immunities with appropriate sand attack immunity"
+OUTER_SET matches = 0
+COPY_EXISTING_REGEXP ~^.+\.\(cre\|itm\|spl\)$~ ~override~
+  LPM PATCH_FOR_WPN_IMMUNITIES
+BUT_ONLY

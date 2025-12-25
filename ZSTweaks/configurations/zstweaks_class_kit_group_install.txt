@@ -1,0 +1,23 @@
+// Set here to "1" those components that you wish you install as part of the group installation of class kit tweaks
+// Set to 0 to DISABLE
+// REMEMBER TO SET 2171 TO 0 IF YOU USE A SWASHBUCKLER OVERHAUL
+
+OUTER_SET zst_group_2100_sunsoul             = "1"
+OUTER_SET zst_group_360_shaman_abilities     = "1"
+OUTER_SET zst_group_2120_warcy               = "1"
+OUTER_SET zst_group_2130_thief_hlas          = "1"
+OUTER_SET zst_group_2150_non_breachable_hlas = "1"
+OUTER_SET zst_group_2160_quivering_palm      = "1"
+OUTER_SET zst_group_2170_thac0_rogue         = "1"
+OUTER_SET zst_group_2171_swashbuckler_fix    = "1"
+OUTER_SET zst_group_2190_poison_weapon       = "1"
+OUTER_SET zst_group_2200_blackguard_backstab = "1"
+OUTER_SET zst_group_3500_shadowstep_area     = "1"
+OUTER_SET zst_group_2230_rr_crippling_strike = "1"
+OUTER_SET zst_group_2231_dragon_disciple     = "1"
+OUTER_SET zst_group_2232_called_shot         = "1"
+OUTER_SET zst_group_2260_skalwashblade_apr   = "1"
+OUTER_SET zst_group_2265_blade_spins         = "1"
+OUTER_SET zst_group_2270_whirl_evasion       = "1"
+OUTER_SET zst_group_2280_sand_throw          = "1"
+

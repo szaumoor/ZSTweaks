@@ -6,19 +6,78 @@ END
 
 OUTER_SET group_component = 1
 
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2100.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_360.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2120.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2130.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2150.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2160.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2170.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2180.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2190.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2200.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_3500.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2230.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2231.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2232.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2260.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2265.tph~
+OUTER_SPRINT config_path ~%MOD_FOLDER%/configurations/zstweaks_class_kit_group_install.txt~
+INCLUDE ~%config_path%~
+COPY ~%config_path%~ ~override~
+
+ACTION_IF zst_group_2100_sunsoul BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2100.tph~ END
+END
+
+ACTION_IF zst_group_360_shaman_abilities BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_360.tph~ END
+END
+
+ACTION_IF zst_group_2120_warcy BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2120.tph~ END
+END
+
+ACTION_IF zst_group_2130_thief_hlas BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2130.tph~ END
+END
+
+ACTION_IF zst_group_2150_non_breachable_hlas BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2150.tph~ END
+END
+
+ACTION_IF zst_group_2160_quivering_palm BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2160.tph~ END
+END
+
+ACTION_IF zst_group_2170_thac0_rogue BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2170.tph~ END
+END
+
+ACTION_IF zst_group_2171_swashbuckler_fix BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2171.tph~ END
+END
+
+ACTION_IF zst_group_2190_poison_weapon BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2190.tph~ END
+END
+
+ACTION_IF zst_group_2200_blackguard_backstab BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2200.tph~ END
+END
+
+ACTION_IF zst_group_3500_shadowstep_area BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_3500.tph~ END
+END
+
+ACTION_IF zst_group_2230_rr_crippling_strike BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2230.tph~ END
+END
+
+ACTION_IF zst_group_2231_dragon_disciple BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2231.tph~ END
+END
+
+ACTION_IF zst_group_2232_called_shot BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2232.tph~ END
+END
+
+ACTION_IF zst_group_2260_skalwashblade_apr BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2260.tph~ END
+END
+
+ACTION_IF zst_group_2265_blade_spins BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2265.tph~ END
+END
+
+ACTION_IF zst_group_2270_whirl_evasion BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2270.tph~ END
+END
+
+ACTION_IF zst_group_2280_sand_throw BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2280.tph~ END
+END

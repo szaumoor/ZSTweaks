@@ -1,0 +1,43 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_2250~) BEGIN
+  FAIL ~Script already included: zs_comp_2250~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_2250~ = 1
+END
+
+ACTION_IF NOT is_iwdee BEGIN
+
+    OUTER_SET applicable_levels = 2**0 + 2**1
+    OUTER_SET cast_level_boost = 1
+    DEFINE_PATCH_MACRO edwin_goodies BEGIN
+        LPF DELETE_EFFECT INT_VAR check_headers = 0 END // sanity check in case something else adds charge abilities
+        LPF ADD_EQUIPPED_EFF INT_VAR p1="-2" STR_VAR effects = ~op=346,p1=2,spec=2;op=346,spec=1;op=346,spec=3;op=346,spec=4;op=346,spec=5;op=346,spec=6;op=346,spec=7;op=346,spec=8;op=191,p1=%cast_level_boost%;op=42,p1=1,p2=%applicable_levels%~ END
+    END
+
+    ACTION_IF is_bgee BEGIN
+        
+        COPY_EXISTING ~misc89.itm~ ~override~
+            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@70010) general_desc=RESOLVE_STR_REF(@70010) END
+            LPM edwin_goodies
+
+    END
+
+    ACTION_IF is_eet BEGIN
+
+        COPY_EXISTING ~misc89_.itm~ ~override~
+            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@70010) general_desc=RESOLVE_STR_REF(@70010) END
+            LPM edwin_goodies
+
+    END
+
+    ACTION_IF is_bg2ee_or_eet BEGIN
+        
+        OUTER_SET applicable_levels += 2**2 + 2**3
+        OUTER_SET cast_level_boost += 1
+        COPY_EXISTING ~misc89.itm~ ~override~
+            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@70011) general_desc=RESOLVE_STR_REF(@70011) END
+            LPM edwin_goodies
+
+    END
+
+
+END

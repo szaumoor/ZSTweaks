@@ -1,0 +1,234 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_3120~) BEGIN
+  FAIL ~Script already included: zs_comp_3120~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_3120~ = 1
+END
+
+COPY_EXISTING ~7001.ini~ ~override~
+  REPLACE_TEXTUALLY ~ogril08~ ~~
+
+COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
+  READ_BYTE 0x272 race
+  READ_BYTE 0x273 class
+  READ_LONG 0x28 animation
+
+  PATCH_IF animation = 0x7001 AND race = race_ogre AND class = class_ogre_ogrillon BEGIN
+
+    READ_LONG 0xec hit_sound
+    PATCH_IF hit_sound < 0 BEGIN
+
+      WRITE_LONG 0xec 5870
+      
+    END
+
+  END
+
+ACTION_IF is_bg2ee_or_eet BEGIN
+
+  // flesh golems
+  COPY_EXISTING_REGEXP ~^.+\.cre~ ~override~
+    READ_BYTE 0x272 race
+    PATCH_IF race = race_golem BEGIN
+      READ_BYTE 0x273 class
+
+      PATCH_IF class = class_golem_flesh BEGIN
+
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 timing = 9 parameter1 = 8 END
+        WRITE_LONG 0x28 0x7001
+        WRITE_BYTE 0x59 100
+        WRITE_BYTE 0x5a 100
+        WRITE_BYTE 0x5b 127
+        WRITE_BYTE 0x5e 100
+        WRITE_BYTE 0x5f 100
+
+        // soundset stuff so they don't talk about pipsqueaks
+        WRITE_LONG 0xc8  18082 // battle cry 1
+        WRITE_LONG 0xcc  18081 // battle cry 2
+        WRITE_LONG 0xec  5657  // damaged (ogre mage8 is 5860, I prefer ghoul 5657)
+        WRITE_LONG 0xf0  5847  // dying
+        WRITE_LONG 0x10c 18082 // select1
+        WRITE_LONG 0x110 18081 // select2
+
+        READ_SHORT 0x26 max_hp
+        PATCH_IF max_hp < 45 BEGIN
+
+          WRITE_SHORT 0x26 45
+          READ_SHORT 0x24 current_hp
+
+          PATCH_IF current_hp = max_hp BEGIN
+            WRITE_SHORT 0x24 45
+          END
+
+        END
+
+        PATCH_IF BYTE_AT 0x60 < 15 BEGIN
+          WRITE_BYTE 0x60 15
+        END
+
+        PATCH_IF BYTE_AT 0x61 < 15 BEGIN
+          WRITE_BYTE 0x61 15
+        END
+
+        PATCH_IF BYTE_AT 0x62 < 15 BEGIN
+          WRITE_BYTE 0x62 15
+        END
+
+        PATCH_IF BYTE_AT 0x63 < 15 BEGIN
+          WRITE_BYTE 0x63 15
+        END
+        
+      END 
+
+    END
+
+  // iron golems
+  COPY_EXISTING ~goliro01.cre~ ~override~
+                ~gorgrd01.cre~ ~override~
+                ~gorgrd02.cre~ ~override~
+                ~kpgol04.cre~  ~override~
+                ~obsmod01.cre~  ~override~
+                ~shiron.cre~  ~override~
+    PATCH_IF BYTE_AT 0x5b > 0 BEGIN
+      WRITE_BYTE 0x5b 0
+    END
+    
+    PATCH_IF BYTE_AT 0x60 < 35 BEGIN
+      WRITE_BYTE 0x60 35
+    END
+
+    PATCH_IF BYTE_AT 0x61 < 35 BEGIN
+      WRITE_BYTE 0x61 35
+    END
+
+    PATCH_IF BYTE_AT 0x62 < 70 BEGIN
+      WRITE_BYTE 0x62 70
+    END
+
+    PATCH_IF BYTE_AT 0x63 < 35 BEGIN
+      WRITE_BYTE 0x63 35
+    END
+
+
+  // stone golem and juggernaut golems
+  COPY_EXISTING ~golsto01.cre~ ~override~
+                ~jugjug01.cre~ ~override~
+             //  ~jugjug02.cre~ ~override~ // probably has plot armor
+                ~dstone1.cre~ ~override~
+                ~kpgol03.cre~ ~override~
+                ~kpgol05.cre~ ~override~
+                ~stgol01.cre~ ~override~
+                ~tomegol3.cre~ ~override~
+                ~goljug01.cre~ ~override~
+                ~tomegol4.cre~ ~override~
+
+    PATCH_IF BYTE_AT 0x60 < 25 BEGIN
+      WRITE_BYTE 0x60 25
+    END
+
+    PATCH_IF BYTE_AT 0x61 < 25 BEGIN
+      WRITE_BYTE 0x61 25
+    END
+
+    PATCH_IF BYTE_AT 0x62 < 25 BEGIN
+      WRITE_BYTE 0x62 25
+    END
+
+    PATCH_IF BYTE_AT 0x63 < 25 BEGIN
+      WRITE_BYTE 0x63 25
+    END
+
+  // magic golem
+  COPY_EXISTING ~golmag01.cre~ ~override~
+    WRITE_BYTE 0x59 127
+    WRITE_BYTE 0x5a 127
+    WRITE_BYTE 0x5b 127
+    WRITE_BYTE 0x5c 127
+    WRITE_BYTE 0x5e 127
+    WRITE_BYTE 0x5f 127
+
+  // brain golems
+  COPY_EXISTING ~golbra01.cre~ ~override~
+                ~udgolem.cre~ ~override~
+
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 176 timing = 9 parameter1 = 8 END
+
+    WRITE_LONG 0x28 0x7001
+    WRITE_LONG 0xc8  18082 // battle cry 1
+    WRITE_LONG 0xcc  18081 // battle cry 2
+    WRITE_LONG 0xec  5657  // damaged (ogre mage8 is 5860, I prefer ghoul 5657)
+    WRITE_LONG 0xf0  5847  // dying
+    WRITE_LONG 0x10c 18082 // select1
+    WRITE_LONG 0x110 18081 // select2
+
+    PATCH_IF BYTE_AT 0x60 < 35 BEGIN
+      WRITE_BYTE 0x60 35
+    END
+
+    PATCH_IF BYTE_AT 0x62 < 35 BEGIN
+      WRITE_BYTE 0x62 35
+    END
+
+    PATCH_IF BYTE_AT 0x63 < 35 BEGIN
+      WRITE_BYTE 0x63 35
+    END
+
+  // adamantine golem
+  COPY ~%MOD_FOLDER%/creatures/adamantine_golem~ ~override~
+  COMPILE ~%MOD_FOLDER%/baf/adamantine_golem~
+  ADD_PROJECTILE ~%MOD_FOLDER%/pro/zststada.pro~
+  COPY_EXISTING ~zstgolqk.spl~ ~override~
+    LPF ALTER_HEADER INT_VAR projectile = %zststada% END
+    LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@80000) END
+
+  COPY_EXISTING ~golada01.cre~ ~override~
+                ~golkill2.cre~ ~override~
+                ~gordeckb.cre~ ~override~
+    ADD_CRE_ITEM "helmnoan" #0 #0 #0 ~unstealable&undroppable~ "helmet"
+    WRITE_BYTE 0x238 25 //str
+
+    // new combat script
+    WRITE_ASCII 0x260 ~zstgolad~
+
+    // health
+    WRITE_SHORT 0x24 96
+    WRITE_SHORT 0x26 96
+
+    // ac
+    WRITE_SHORT 0x46 0
+    WRITE_SHORT 0x48 0
+
+    // damage immunities and magic resistance
+    WRITE_BYTE 0x59 100
+    WRITE_BYTE 0x5a 100
+    WRITE_BYTE 0x5b 100
+    WRITE_BYTE 0x5c 100
+    WRITE_BYTE 0x5d 100
+    WRITE_BYTE 0x5e 100
+    WRITE_BYTE 0x5f 100
+    WRITE_BYTE 0x63 100 // immunity to missile damage
+
+    WRITE_BYTE 0x52 0 // thac0
+
+    // saving throws
+    WRITE_BYTE 0x54 (THIS - 2)
+    WRITE_BYTE 0x55 (THIS - 2)
+    WRITE_BYTE 0x56 (THIS - 2)
+    WRITE_BYTE 0x57 (THIS - 2)
+    WRITE_BYTE 0x58 (THIS - 2)
+
+    // immunity to stun
+    LPF ADD_CRE_PASSIVE INT_VAR op = 267 p1 = 14043 END
+    LPF ADD_CRE_PASSIVE INT_VAR op = 267 p1 = 1280  END
+    LPF ADD_CRE_PASSIVE INT_VAR op = 296 STR_VAR res = "SPFLAYER" END
+    LPF ADD_CRE_PASSIVE INT_VAR op = 101 p2 = 210 END
+    LPF ADD_CRE_PASSIVE INT_VAR op = 101 p2 = 45  END
+    LPF ADD_CRE_PASSIVE INT_VAR op = 169 p2 = 55  END
+    LPF ADD_CRE_PASSIVE INT_VAR op = 292 p2 = 1   END
+    LPF ADD_CRE_PASSIVE INT_VAR op = 73  p1 = 2   END
+
+    // completely immune to all magical effects
+    FOR ( spell_level = 1; spell_level <=9; ++spell_level ) BEGIN
+      LPF ADD_CRE_PASSIVE INT_VAR op = 102 p1 = spell_level END
+    END
+
+END

@@ -9,9 +9,9 @@ ACTION_IF NOT is_iwdee BEGIN
     ACTION_IF zst_320_natbeauty_boost BEGIN
 
         COPY_EXISTING ~SPPR704.SPL~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5170) END
+            LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5170) END
             LPF ALTER_EFFECT INT_VAR match_opcode = 55 savebonus = 2 END
-            LPF ADD_SPL_EFF_TGT STR_VAR effects=~ip=0,op=324,p2=23,rd=2,res=SPPR704,pwr=7~ END
+            LPF ADD_SPL_TGTEFF STR_VAR effects=~ip=0,op=324,p2=23,rd=2,res=SPPR704,pwr=7~ END
     END
 
     ACTION_IF zst_320_natbeauty_true_sight BEGIN
@@ -46,5 +46,8 @@ ACTION_IF NOT is_iwdee BEGIN
         BUT_ONLY IF_EXISTS
 
     END
+
+    COPY_EXISTING ~SPPR704.SPL~ ~override~  // NATURE'S BEAUTY
+        LPF ALTER_EFFECT INT_VAR resist_dispel = 3 END
 
 END

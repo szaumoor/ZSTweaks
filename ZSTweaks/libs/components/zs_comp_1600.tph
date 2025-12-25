@@ -15,15 +15,47 @@ WITH_SCOPE BEGIN
             LPF ALTER_EFFECT INT_VAR parameter2 = omnistab_p2 END
     END
 
-    COPY_EXISTING  ~CHARBASE.cre~ ~override/zstwfoo.cre~
-    COPY_EXISTING ~zstwfoo.cre~ ~override/CHARBASE.cre~
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 303 timing = 9 parameter2 = omnistab_p2 END
+    ACTION_IF is_bg2ee_or_eet BEGIN
 
+        EXTEND_BOTTOM ~ar0602.bcs~ ~%MOD_FOLDER%/baf/omnistab/ar0602.baf~ // irenicus dungeon
+        EXTEND_BOTTOM ~ar4000.bcs~ ~%MOD_FOLDER%/baf/omnistab/ar4000.baf~ // tob initial area
+        EXTEND_BOTTOM ~ar8000.bcs~ ~%MOD_FOLDER%/baf/omnistab/oh8000.baf~ // black pits 2 initial area
+
+    END
+
+    ACTION_IF is_iwdee BEGIN
+
+        EXTEND_BOTTOM ~ar9100.bcs~ ~%MOD_FOLDER%/baf/omnistab/ar9100.baf~ // HoW
+        EXTEND_BOTTOM ~ar1006.bcs~ ~%MOD_FOLDER%/baf/omnistab/ar1006.baf~ // easthaven inn (iwdee)
+
+    END
+
+
+    ACTION_IF is_bgee OR is_eet BEGIN
+
+        EXTEND_BOTTOM ~ar2600.bcs~ ~%MOD_FOLDER%/baf/omnistab/ar2600.baf~ // candlekeep area
+        EXTEND_BOTTOM ~oh9310.bcs~ ~%MOD_FOLDER%/baf/omnistab/oh9310.baf~ // black pits 1 area
+
+        ACTION_IF is_eet OR includes_sod BEGIN
+            EXTEND_BOTTOM ~bd0120.bcs~ ~%MOD_FOLDER%/baf/omnistab/bd0120.baf~ // sod initial area
+        END
+
+    END
+
+    OUTER_SET counter = 0
+    SILENT
     ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
         ACTION_IF !(IS_AN_INT dv) BEGIN
             COPY_EXISTING ~%file%~ ~override~
                 LPF ADD_CRE_EFFECT INT_VAR opcode = 303 timing = 9 parameter2 = omnistab_p2 END
+            ++counter
         END
+    END
+
+    VERBOSE
+
+    ACTION_IF zs_debug BEGIN
+        PRINT "Processed %counter% joinable creature files for omnistabbing."
     END
 
 END

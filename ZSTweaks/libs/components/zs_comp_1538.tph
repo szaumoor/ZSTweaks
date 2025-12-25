@@ -9,21 +9,21 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
 
     PATCH_IF NOT critical_item BEGIN
 
-        LPF ITM_CAT RET itm_cat = result END
+        READ_SHORT 0x1c itm_cat
         PATCH_IF itm_cat = 34 BEGIN // gems
 
-            LPF ITM_PRICE RET p = result END
+            READ_LONG 0x34 p
             PATCH_IF p > 0  BEGIN
                 LPF ALTER_ITEM INT_VAR price = ((p * zst_1538_jewelry_price) / 100) END
             END
 
         END ELSE PATCH_IF itm_cat = 1 OR itm_cat = 10 BEGIN // rings and necklaces
 
-            LPF ITM_GLOBALS_NUM RET globals = result END
-            LPF ITM_ABILITIES_NUM RET abilities = result END
+            READ_SHORT 0x70 globals
+            READ_SHORT 0x68 abilities
             PATCH_IF globals = 0 AND abilities = 0 BEGIN //sellable rings and necklaces without effects
 
-                LPF ITM_PRICE RET p = result END
+                READ_LONG 0x34 p
                 PATCH_IF p > 0 BEGIN
                     LPF ALTER_ITEM INT_VAR price = ((p * zst_1538_jewelry_price) / 100) END
                 END

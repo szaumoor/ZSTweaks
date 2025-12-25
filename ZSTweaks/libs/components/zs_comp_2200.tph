@@ -4,7 +4,11 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_2200~ = 1
 END
 
-ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103" BEGIN
+INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
+ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR
+         (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" 
+          AND zst_group_1120_backstab_penalties AND zst_1120_backstab_penalty_lswords > 0)
+BEGIN
 
   COPY_EXISTING "bdsw1hca.itm" ~override~
     LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 263 END
@@ -13,11 +17,8 @@ ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR MOD_IS_INSTALLED "ZSTweaks.t
 END
 
 COPY ~%MOD_FOLDER%/class_kits/blackguard~ ~override~
-OUTER_TEXT_SPRINT line "ABILITYX   AP_ZSTWBKG0        ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****        ****        ****        ****        ****        ****              ****        ****        ****        ****"
-APPEND ~CLABPA06.2DA~ ~%line%~
-
-COPY_EXISTING ~CLABPA06.2DA~ ~override~
-  PRETTY_PRINT_2DA
+COPY_EXISTING ~clabpa06.2da~ ~override~
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "AP_ZSTWBKG0" END
 
 PRINT "Patching all non-joinable NPCs that use the Blackguard kit"
 SILENT
@@ -26,7 +27,7 @@ ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
   ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
 
     COPY_EXISTING ~%file%~ ~override~
-      LPF CRE_KIT RET kit = result END
+      SET kit = SHORT_AT 0x246 | (SHORT_AT 0x244) << 16
 
       PATCH_IF kit = kit_blackguard BEGIN
         LPF ADD_CRE_EFFECT INT_VAR opcode=263 target=2 parameter1=2 parameter2=1 timing=9 END

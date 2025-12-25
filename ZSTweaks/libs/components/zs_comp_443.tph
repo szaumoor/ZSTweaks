@@ -9,35 +9,36 @@ ACTION_IF NOT is_iwdee BEGIN
     ACTION_IF zst_443_death BEGIN
 
         COPY ~%MOD_FOLDER%/spells/common/symbol_death~ ~override~
-        COPY_EXISTING ~SPPR719.SPL~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5190) END
+        COPY_EXISTING ~sppr719.spl~ ~override~
+            LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5190) END
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-            LPF ADD_SPL_EFF_TGT INT_VAR pwr=8 p1=60 stype=4 STR_VAR res=~ZSTWSDH0~ effects=~op=326,p2=144,sbonus=6;op=326,p2=145~ END
+            LPF ADD_SPL_TGTEFF INT_VAR pwr=8 p1=60 STR_VAR effects=~op=326,p2=144,res=zstwsdh0;op=326,p2=145,res=zstwsdh1~ END
         BUT_ONLY IF_EXISTS
 
         OUTER_SET new_description = RESOLVE_STR_REF(@5200)
-        COPY_EXISTING ~SPWI817.SPL~ ~override~
-                      ~SPWI897.SPL~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_desc=new_description END
+        COPY_EXISTING ~spwi817.spl~ ~override~
+                      ~spwi897.spl~ ~override~
+            LPF ALTER_SPELL INT_VAR desc=new_description END
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-            LPF ADD_SPL_EFF_TGT INT_VAR pwr=8 p1=60 stype=4 STR_VAR res=~ZSTWSDH0~ effects=~op=326,p2=144,sbonus=6;op=326,p2=145~ END
+            LPF ADD_SPL_TGTEFF INT_VAR pwr=8 p1=60 STR_VAR effects=~op=326,p2=144,res=zstwsdh0;op=326,p2=145,res=zstwsdh1~ END
         BUT_ONLY IF_EXISTS
 
-        COPY_EXISTING ~SCRLAO.ITM~ ~override~
-            LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
+        COPY_EXISTING ~scrlao.itm~ ~override~
+            LPF ALTER_ITEM INT_VAR id_desc=new_description END
         BUT_ONLY IF_EXISTS
 
-        COPY_EXISTING ~SCRLAM.ITM~ ~override~
-            LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
+        COPY_EXISTING ~scrlam.itm~ ~override~
+            LPF ALTER_ITEM INT_VAR id_desc=new_description END
         BUT_ONLY IF_EXISTS
 
     END
 
     ACTION_IF zst_443_pain AND spell_symbol_pain > 0 BEGIN
+        
         LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SYMBOL_PAIN" RET spell_res END
-        COPY_EXISTING ~%spell_res%.SPL~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8280) END
-            LPF ADD_SPL_EFF_TGT STR_VAR effects=~t=99,op=332,pwr=7,p1=-10,dur=66~ END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8280) END
+            LPF ADD_SPL_TGTEFF STR_VAR effects=~t=99,op=332,pwr=7,p1=-10,dur=66~ END
             LPF ALTER_EFFECT INT_VAR match_duration = 660 duration = 66 END
             LPF ALTER_EFFECT INT_VAR check_globals = 0 match_savingthrow = 1 savebonus = 0 savingthrow = 0 END
 
@@ -45,8 +46,8 @@ ACTION_IF NOT is_iwdee BEGIN
 
     ACTION_IF zst_443_nerf_npc_symbols BEGIN
 
-        COPY_EXISTING ~SPWI898.SPL~ ~override~
-                      ~SPWI899.SPL~ ~override~
+        COPY_EXISTING ~spwi898.spl~ ~override~
+                      ~spwi899.spl~ ~override~
             LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 96  duration = 42 END
             LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 102 duration = 42 END
             LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 108 duration = 48 END

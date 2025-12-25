@@ -7,96 +7,102 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY ~%MOD_FOLDER%/items/vorpal_weapons~ ~override~
-    ACTION_IF zst_1541_vorpal_no_chunking BEGIN
-        COPY_EXISTING ~ZSTWVRPA.SPL~ ~override~
+    COPY_EXISTING ~zstwvrpa.spl~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = ~%zs_has_stoneskins%~ END
+        PATCH_IF zst_1541_vorpal_no_chunking BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 13 parameter2 = (2**2) END
-    END
+        END
 
     OUTER_SET two_handed_comp_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1199~
-    COPY_EXISTING ~BALOR.ITM~ ~override~
-        LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-        SPRINT effect_str ~op=326,pro1=14,res=ZSTWVRPA~
+    OUTER_SET creature_comp_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~3000~
 
-        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~3050~ BEGIN
+    INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_creature_group_install.txt~
+    COPY_EXISTING ~balor.itm~ ~override~
+        LPF DELETE_EFFECT INT_VAR check_globals = 0 END
+        SPRINT effect_str ~op=326,pro1=14,res=zstwvrpa~
+
+        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~3050~ OR (zst_group_3050_balors_tweak AND creature_comp_installed) BEGIN
             effect_str = "%effect_str%" + "stype=4,sbonus=%zst_3050_balor_vorpal_penalty%"
         END
 
         LPF ADD_ON_HIT_EFF STR_VAR effects = ~%effect_str%~ END
 
-    ACTION_IF NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~3060~ BEGIN
+    ACTION_IF zst_3030_planetars AND 
+              NOT (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~3030~ OR
+              (creature_comp_installed AND zst_group_3030_celestials_tweak))
+    BEGIN
 
-        COPY_EXISTING ~PLANETAR.ITM~ ~override~
+        COPY_EXISTING ~planetar.itm~ ~override~
             LPF DELETE_EFFECT INT_VAR match_opcode = 13 END
             LPF DELETE_EFFECT INT_VAR match_opcode = 141 match_parameter2 = 39 END
             LPF DELETE_EFFECT INT_VAR match_opcode = 61 END
             LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
             LPF ALTER_EFFECT_EX INT_VAR probability1 = 24 STR_VAR match_probability1_ex = ~(o_probability1 < 100)~ END
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=ZSTWVRPA,stype=4,sbonus=-2~ END
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=zstwvrpa,stype=4,sbonus=-2~ END
 
     END
 
-    COPY_EXISTING ~GITH.ITM~ ~override~
+    COPY_EXISTING ~gith.itm~ ~override~
         LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=ZSTWVRPA,stype=4~ END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=zstwvrpa,stype=4~ END
 
-    COPY_EXISTING ~SW2H15.ITM~ ~override~
-        PATCH_IF NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1300~ AND NOT two_handed_comp_installed BEGIN // SILVER SWORD TWEAK
-
+    COPY_EXISTING ~sw2h15.itm~ ~override~
+        PATCH_IF NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1300~ AND
+                 NOT (two_handed_comp_installed AND zst_group_1300_silver_sword) 
+        BEGIN 
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=ZSTWVRPA,stype=4,sbonus=-2~ END
-
         END ELSE BEGIN
-
             LPF DELETE_EFFECT INT_VAR check_globals = 0 match_probability1 = 24 END
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=ZSTWVRPA,stype=4,sbonus=-2~ END
-
         END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=zstwvrpa,stype=4,sbonus=-2~ END
 
-    COPY_EXISTING ~AX1H15.ITM~ ~override~
+    COPY_EXISTING ~ax1h15.itm~ ~override~
         LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=9,res=ZSTWVRPA,stype=4,sbonus=-4~ END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=9,res=zstwvrpa,stype=4,sbonus=-4~ END
 
-    COPY_EXISTING ~HALB11.ITM~ ~override~
-        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1606~ OR two_handed_comp_installed BEGIN
+    COPY_EXISTING ~halb11.itm~ ~override~
+        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1606~ OR
+                (two_handed_comp_installed AND zst_group_1606_ravager)
+        BEGIN
 
             LPF DELETE_EFFECT INT_VAR match_probability1 = 9 END
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=9,res=ZSTWVRPA,stype=4,sbonus=-4,ip=0~ END
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=9,res=zstwvrpa,stype=4,sbonus=-4,ip=0~ END
 
         END ELSE BEGIN
 
             LPF DELETE_EFFECT INT_VAR match_opcode = 13 END
             LPF DELETE_EFFECT INT_VAR match_opcode = 141 match_parameter2 = 39 END
             LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=9,res=ZSTWVRPA,ip=0~ END
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=9,res=zstwvrpa,ip=0~ END
 
         END
 
-        COPY_EXISTING ~FINSOL02.ITM~ ~override~
+        COPY_EXISTING ~finsol02.itm~ ~override~
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=ZSTWVRPA,stype=4,sbonus=-2~ END
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=326,pro1=24,res=zstwvrpa,stype=4,sbonus=-2~ END
 
         PRINT "Patching items and spells with immunity to the Vorpal effect..."
+
+        OUTER_SET opcode = 101
+        OUTER_SET parameter2 = 13
         COPY_EXISTING_REGEXP ~^.+\.\(itm\|spl\)$~ ~override~
-            READ_ASCII 0 sig (4)
             SET present = 0
+            READ_ASCII 0x0 sig (4)
             PATCH_MATCH "%sig%" WITH
             "SPL "
-            BEGIN
-                LPF SPELL_OPCODE_PRESENT INT_VAR opcode = 101 parameter2 = 13 silent=1 RET present = result END
-            END
+            BEGIN LPM SPELL_OPCODE_PRESENT END
 
             "ITM "
-            BEGIN
-                LPF ITM_OPCODE_PRESENT INT_VAR opcode = 101 parameter2 = 13 silent=1 RET present = result END
-            END
+            BEGIN LPM ITM_OPCODE_PRESENT END
 
             DEFAULT
                 PATCH_WARN "Found invalid file: %SOURCE_RES%"
             END
 
             PATCH_IF present BEGIN
-                LPF CLONE_EFFECT INT_VAR match_opcode=101 match_parameter2=13 opcode=206 parameter2=0 STR_VAR resource="ZSTWVRPA" END
+                LPF CLONE_EFFECT INT_VAR match_opcode=101 match_parameter2=13 opcode=206 parameter2=0 STR_VAR resource="zstwvrpa" END
             END
+
         BUT_ONLY
 
 END

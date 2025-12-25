@@ -1,10 +1,10 @@
 ACTION_IF !VARIABLE_IS_SET item_upgrade_talon_installed BEGIN
     OUTER_SET item_upgrade_talon_installed = 1
     COPY_EXISTING ~c2sw1h03.itm~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@50080) END
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@50080) END
         LPF DELETE_EFFECT INT_VAR check_globals = 0 END
         LPF ALTER_HEADER INT_VAR range = 2 END
-        LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 dnum=1 dsize=5 STR_VAR dmg_type = ~cold~ END
+        LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 dnum=1 dsize=5 p2=op12_cold END
         LPF ADD_ON_HIT_EFF INT_VAR ip=0 tmg=1 tgt=1 STR_VAR effects=~op=17,pro1=49,p1=2;op=17,pro1=69,pro2=50,p1=3;op=17,pro1=84,pro2=70,p1=4;op=17,pro1=94,pro2=85,p1=5;op=17,pro1=100,pro2=95,p1=6~ END
         LPF ADD_EQUIPPED_EFF INT_VAR p2=1 spec=1 STR_VAR effects=~op=341,res=ZSTWRASH;op=301,p1=1~ END
     BUT_ONLY IF_EXISTS

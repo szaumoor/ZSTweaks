@@ -12,7 +12,7 @@ Saving Throw: Special
 Ghostly figures called by the Shaman swirl around the battlefield, tormenting the Shaman's adversaries. All enemies within the area of effect take 6d6 points of magic damage per round for the next 3 rounds (no save). In addition, all living enemies (undead and constructs are unaffected) must save vs. Spell or lose 2 points of Strength every round for 5 rounds. The Strength loss is cumulative, but this spell cannot reduce the Strength of a creature below 1.~
 
 @6300 = ~Set Exploding Trap
-This ability allows the rogue to set a powerful trap that unleashes a fireball which causes 15d6 damage (Save vs. Breath for half damage) and will knock its victims off their feet for 1 round with no save allowed.~
+This ability allows the rogue to set a powerful trap that unleashes a fireball which causes 15d6 damage (Save vs. Breath for half damage) and will knock its victims off their feet for 1 round with unless they save vs. Spell at -10.~
 
 @6310 = ~Quivering Palm
 Successful attacks during the next 7 seconds force the target to save vs. Spell or die. At level 16, the save vs. Spell must succeed at -1 to avoid its effects, and at level 24 it improves again, requiring a save vs. Spell at -2.
@@ -105,3 +105,43 @@ With extraordinary effort, a high-level rogue can avoid almost certain death. Th
 
 @8191 = ~Defensive Spin
 During the next 4 rounds, the character moves at half their normal speed, gains a +1 bonus to Armor Class per level, and becomes immune to backstab.~
+
+@8750 = ~Unlock Evasion~
+@8751 = ~Unlock Evasion
+A rogue's natural sense of preservation becomes heightened with the use of the Evasion ability. This ability improves Armor Class by 6 and Saving Throws by 3. In addition, Evasion allows the rogue to move so quickly that <PRO_HISHER> movement rate is increased by 4 (base is 9) and normal missiles have no chance of striking <PRO_HIMHER>. Evasion lasts for 5 rounds. This grants three uses of this ability.~
+
+@8752 = ~Evasion: Additional Use~
+@8753 = ~Evasion: Additional Use
+This allows the rogue to use his special Evasion ability another time per day.
+
+Requires: Unlock Evasion~
+
+@8754 = ~Unlock Whirlwind Attack~
+@8755 = ~Unlock Whirlwind Attack
+This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Whirlwind Attack lasts for one round. The warrior is granted three uses of this ability.~
+@8756 = ~Whirlwind Attack: Additional Use~
+@8757 = ~Whirlwing Attack: Additional Use
+This allows the warrior to use his special Whirlwind Attack ability another time per day.
+
+Requires: Unlock Whirlwind Attack~
+
+@8758 = ~Evasion~
+@8759 = ~Evasion
+A rogue's natural sense of preservation becomes heightened with the use of the Evasion ability. This ability improves Armor Class by 6 and Saving Throws by 3. In addition, Evasion allows the rogue to move so quickly that <PRO_HISHER> movement rate is increased by 4 (base is 9) and normal missiles have no chance of striking <PRO_HIMHER>. Evasion lasts for 5 rounds.~
+@8760 = ~Whirlwind Attack~
+@8761 = ~Whirlwind Attack
+This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Whirlwind Attack lasts for one round.~
+
+@8880 = ~Throw Sand~
+@8881 = ~Throw Sand
+
+A rogue's best weapon is <PRO_HISHER> willingness to not play by the rules. Once per turn, they can throw sand in an opponent's eyes.
+
+– 1d2 nonlethal damage (save vs. Breath)
+– If the save vs. Breath is failed at +2, Armor Class and APR are reduced by 2 and saving throws by 1 (1 round), and the target is confused and moves 40% slower (half a round)
+– 50% chance: Blindness for 1 round if save vs. Breath is failed at +4
+
+The saving throw becomes harsher as the rogue levels up, improving every tenth level. Many creatures, such as undead, golems, the sightless, and elementals, are resistant or immune to this ability.~
+
+@8882 = ~Discombobulated~
+@8883 = ~Throw Sand is available for use~

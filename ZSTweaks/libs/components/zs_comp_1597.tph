@@ -8,12 +8,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/rhynn~ ~override~
   COPY_EXISTING ~ZSTWRHYA.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@7591) END
+    LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@7591) END
 
   COPY_EXISTING ~STAF20.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7590) END
-    LPF GET_DMG_TYPE STR_VAR type=~fire~ RET fire = result END
-    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=4,p2=%fire%,spec=1024~ END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7590) END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,p1=4,p2=%op12_fire%,spec=1024~ END
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 25 STR_VAR effects = ~op=30;op=84~ END
     LPF ADD_ITEM_HEADER INT_VAR target=5 required_id=1 school=6 sectype=10 charges=1 depletion=3 flags=2**9 + 2**11 STR_VAR icon=~SPWI523B~ END
     LPF ADD_ON_HIT_EFF STR_VAR effects=~op=146,p1=1,p2=1,t=3,tmg=1,res=ZSTWRHYA;op=321,res=STAF20;op=30,p1=-25,dur=12,rd=3~ END

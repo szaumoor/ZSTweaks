@@ -7,11 +7,11 @@ Equipped abilities:
 – Stacking bonuses that depend on the alignment of the wielder:
   All alignments: +1 Armor Class, +5% Magic Resistance
   All morally neutral alignments: +1 Damage, +1 Saving Throws, +5% Magic Resistance
-  True Neutral: +1 Armor Class, +1 Saving throws, +5% Magic Resistance, +5% critical hit chances with all weapons
+  True Neutral: +1 Armor Class, +1 Saving Throws, +5% Magic Resistance, +5% critical hit chances with all weapons
 
 Combat abilities:
-– Strikes as a +5 weapon
-– Has a damage and THAC0 bonus depending on how far the target's alignment strays from True Neutral:
+– Strikes as a +5 weapon for the purposes of overcoming weapon immunities
+– Damage and THAC0 bonuses depends on how far a target's alignment strays from True Neutral:
   vs. Lawful Neutral and Chaotic Neutral: +1 THAC0, +1 slashing and magic damage
   vs. Neutral Good, Neutral Evil: +2 THAC0, +2 slashing and magic damage
   vs. Other Alignments: +3 THAC0, +3 slashing and magic damage
@@ -443,17 +443,17 @@ STATISTICS:
 Equipped abilities:
 – Immunity to fear
 – Regenerate 1 Hit Point every 5/2 rounds
-– +15% resistance against acid, electricity, fire, and cold
-– +2 Armor Class and saving throws vs. dragons
+– +15% resistance vs. acid, electricity, fire, and cold
+– Armor Class: +2 vs. dragons and wyverns
 
-Equipped abilities:
-– Acts as a +4 weapon against dragons and wyverns for the purposes of overcoming physical protections
+Combat abilities:
+– Acts as a +4 weapon against dragons and wyverns for the purposes of overcoming weapon immunities
 
 Charge abilities:
 – Detect Invisibility three times per day
 
 THAC0: +2, +6 against dragons and wyverns
-Damage: 1d8+2, plus 2d8+2 against dragons and wyverns
+Damage: 1d8+2, plus 2d8+2 vs. dragons and wyverns
 Damage type: Slashing
 Speed Factor: 3
 Proficiency Type: Long Sword
@@ -574,9 +574,9 @@ Now upgraded by Cespenar, this sword has reached the pinnacle of its power—its
 STATISTICS:
 
 Equipped abilities:
-– Immune to deafness and all sound-based magic, including banshee and demilich howls
-– +15% Hide in Shadows and Move Silently (shadowdancer)
-– 10% chance per hour when hit to be affected by Shadow Form (shadowdancer)
+– Immune to deafness and all sound-based magic, such as Holy Word and Wail of the Banshee
+– +15% Hide in Shadows and Move Silently (shadowdancer only)
+– 10% chance per hour when hit to be affected by Shadow Form (shadowdancer only)
 
 Combat abilities:
 – Deadly Whisper: each hit drains 2 points of Wisdom from the target for 5 rounds (save vs. Death at -2 negates) and causes Confusion for 1 round. After one round, there is a 15% chance the sword successfully commands the target to die unless another save vs. Death at -2 succeeds (this can only trigger on the same enemy once every 3 rounds).
@@ -815,10 +815,10 @@ Equipped abilities:
 
 Combat abilities:
 – Attacks per round: +1
-– Hit target takes 12 points of poison over 2 rounds (Save vs. Death negates)
+– Hit target takes 12 points of poison over 2 rounds (save vs. Death negates)
 
-THAC0: +3, +5 (Monks only)
-Damage: 1d8+3, +1 Poison damage
+THAC0: +3, +5 (monks only)
+Damage: 1d8+3, +1 poison damage
 Damage type: Slashing
 Speed Factor: 0
 Proficiency Type: Scimitar/Wakizashi/Ninjatō

@@ -1,0 +1,89 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_3000~) BEGIN
+  FAIL ~Script already included: zs_comp_3000~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_3000~ = 1
+END
+
+OUTER_SET group_component = 1
+
+OUTER_SPRINT config_path ~%MOD_FOLDER%/configurations/zstweaks_creature_group_install.txt~
+INCLUDE ~%config_path%~
+COPY ~%config_path%~ ~override~
+
+ACTION_IF zst_group_3010_alignment_tweak BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3010.tph"
+  END
+END
+
+ACTION_IF zst_group_3020_summoned_demons_tweak BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3020.tph"
+  END
+END
+
+ACTION_IF zst_group_3030_celestials_tweak BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3030.tph"
+  END
+END
+
+ACTION_IF zst_group_3050_balors_tweak BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3050.tph"
+  END
+END
+
+ACTION_IF zst_group_3060_mencar_tweak BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3060.tph"
+  END
+END
+
+ACTION_IF zst_group_3070_felines_tweak BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3070.tph"
+  END
+END
+
+ACTION_IF zst_group_3080_natural_attacks_tweak BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3080.tph"
+  END
+END
+
+ACTION_IF zst_group_3090_shadows_tweak BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3090.tph"
+  END
+END
+
+ACTION_IF zst_group_3100_beetles_tweak BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3100.tph"
+  END
+END
+
+ACTION_IF zst_group_3110_yuantis_tweak BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3110.tph"
+  END
+END
+
+ACTION_IF zst_group_3120_golems_tweak BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3120.tph"
+  END
+END
+
+ACTION_IF zst_group_3130_minotaurs_tweak BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3130.tph"
+  END
+END
+
+ACTION_IF zst_group_3140_ogre_mages_tweak BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3140.tph"
+  END
+END

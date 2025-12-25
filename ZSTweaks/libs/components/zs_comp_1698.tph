@@ -1,0 +1,47 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1698~) BEGIN
+  FAIL ~Script already included: zs_comp_1698~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1698~ = 1
+END
+
+ACTION_IF is_bg2ee_or_eet BEGIN
+  
+  COPY ~%MOD_FOLDER%/items/staff_power~ ~override~
+  COPY_EXISTING ~staf12.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@42424) STR_VAR appearance = "q4" ench=4 END
+    LPF ALTER_HEADER INT_VAR match_type=1 speed=2 END 
+    LPF CLONE_HEADER INT_VAR match_type=1 type=2 dicesize=0 dicenumber=0 range=30 projectile=70 overhand=20  backhand=80 flag_str_damage=0 STR_VAR icon = "spwi112c" END
+
+    LPF ADD_ON_HIT_EFF INT_VAR t=1 pro1=9 stype=1 STR_VAR effects = ~op=45,dur=15;op=139,p1=1280~ END
+
+    LPF ADD_ITEM_EFFECT INT_VAR type=2 opcode=12 target=2 parameter2=op12_magic parameter1=1 dicesize=4 dicenumber=1 resist_dispel=1 END
+    LPF ADD_ITEM_EFFECT INT_VAR type=2 opcode=12 target=2 parameter2=op12_magic probability1=4 parameter1=1 dicesize=4 dicenumber=1 resist_dispel=1 END
+
+    LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=177,p1=%class_mage%,res=zstaf120;op=177,p1=%class_sorcerer%,res=zstaf120;op=177,p1=%class_mage%,res=zstaf121;op=177,p1=%class_sorcerer%,res=zstaf121;op=177,p1=%class_mage%,res=zstaf122;op=177,p1=%class_sorcerer%,res=zstaf122~ END
+
+    LPF ALTER_HEADER INT_VAR match_type=3 charges = 1 STR_VAR match_icon = ~spwi602b~ END
+    LPF ALTER_HEADER INT_VAR match_type=3 charges = 2 STR_VAR match_icon = ~spwi308b~ END
+
+  OUTER_SET opcode = 206
+  OUTER_SPRINT res "spwi101"
+  COPY_EXISTING_REGEXP ~^.+\.\(itm\|spl\)$~ ~override~
+        SET present = 0
+        READ_ASCII 0x0 sig (4)
+        PATCH_MATCH "%sig%" WITH
+        "SPL "
+        BEGIN LPM SPELL_OPCODE_PRESENT END
+
+        "ITM "
+        BEGIN LPM ITM_OPCODE_PRESENT END
+
+        DEFAULT
+            PATCH_WARN "Found invalid file: %SOURCE_RES%"
+        END
+
+        PATCH_IF present BEGIN
+            LPF CLONE_EFFECT INT_VAR match_opcode=opcode opcode=206 parameter2=0 STR_VAR resource="%res%" END
+        END
+
+    BUT_ONLY
+
+END

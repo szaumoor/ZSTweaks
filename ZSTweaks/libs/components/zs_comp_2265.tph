@@ -4,7 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_2265~ = 1
 END
 
-COPY_EXISTING ~SPCL522.SPL~ ~override~
-  LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8191) END
+COPY_EXISTING ~spcl522.spl~ ~override~
+  LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8191) END
   LPF ALTER_EFFECT INT_VAR match_opcode = 176 parameter2 = 5 parameter1 = 50 END
   LPF CLONE_EFFECT INT_VAR match_opcode = 65 opcode = 292 parameter2 = 1 END

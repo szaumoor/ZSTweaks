@@ -4,31 +4,27 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1533~ = 1
 END
 
-ACTION_IF NOT is_iwdee BEGIN // support for iwdee not currently determined
+OUTER_SET wand_missile_desc = RESOLVE_STR_REF(@7460)
+COPY_EXISTING ~wand03.itm~ ~override~
+              ~wand12_.itm~ ~override~ 
+  LPF ALTER_HEADER INT_VAR match_type = 3 match_projectile=projectl_magic_missile projectile = 70 END
+  LPF ALTER_ITEM INT_VAR id_desc=wand_missile_desc END
+BUT_ONLY IF_EXISTS
 
-  OUTER_SET wand_missile_desc = RESOLVE_STR_REF(@7460)
-  COPY_EXISTING ~WAND03.ITM~ ~override~
-                ~WAND12_.ITM~ ~override~ //
+ACTION_IF is_bgee OR is_iwdee BEGIN
+  COPY_EXISTING ~wand12.itm~ ~override~
     LPF ALTER_HEADER INT_VAR match_type = 3 match_projectile=projectl_magic_missile projectile = 70 END
-    LPF ALTER_ITEM INT_VAR id_ref_desc=wand_missile_desc END
-  BUT_ONLY IF_EXISTS
-
-  ACTION_IF is_bgee BEGIN
-    COPY_EXISTING ~WAND12.ITM~ ~override~
-      LPF ALTER_HEADER INT_VAR match_type = 3 match_projectile=projectl_magic_missile projectile = 70 END
-      LPF ALTER_ITEM INT_VAR id_ref_desc=wand_missile_desc END
-  END
-
-  COPY_EXISTING ~WAND02.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8090) END
-    LPF ALTER_EFFECT INT_VAR duration = 60 END
-    LPF ALTER_EFFECT INT_VAR silent=1 match_savebonus = 2 savebonus = 0 END
-
-  COPY_EXISTING ~WAND04.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8100) END
-    LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 42 END
-
-  COPY_EXISTING ~WAND08.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8110) END
-    
+    LPF ALTER_ITEM INT_VAR id_desc=wand_missile_desc END
 END
+
+COPY_EXISTING ~wand02.itm~ ~override~
+  LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8090) END
+  LPF ALTER_EFFECT INT_VAR duration = 60 END
+  LPF ALTER_EFFECT INT_VAR silent=1 match_savebonus = 2 savebonus = 0 END
+
+COPY_EXISTING ~wand04.itm~ ~override~
+  LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8100) END
+  LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 42 END
+
+COPY_EXISTING ~wand08.itm~ ~override~
+  LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8110) END

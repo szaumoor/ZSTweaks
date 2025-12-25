@@ -307,7 +307,7 @@ Equipped abilities:
 – +1 backstab multiplier
 
 Combat abilities:
-– Hit target suffers 3 points of additional poison damage per round for 2 rounds
+– Hit target suffers 3 points of additional poison damage per round for 2 rounds if a save vs. Death at -2 is failed
 
 THAC0: +2, +6 against wizards and sorcerers
 Damage: 1d10+2 (slashing)
@@ -326,7 +326,7 @@ Equipped abilities:
 – Armor Class: +2 vs. slashing attacks
 
 Combat abilities:
-– Hit target suffers 3 points of additional poison damage per round for 2 rounds
+– Hit target suffers 3 points of additional poison damage per round for 2 rounds 
 
 THAC0: +2
 Damage: 1d10+2 (slashing)
@@ -450,3 +450,54 @@ In order to survive, a vampire needs sustenance. This ability will drain the tar
 Saving Throw: Save vs. Death~
 
 @7223 = ~Blood Drain available for use~
+
+@70010 = ~This is Edwin's birthright, inlaid with his family stone.
+
+STATISTICS:
+
+Equipped abilities:
+– Saves vs. conjuration spells: +2, +4 with his specialization bonus
+– Saves vs. non-conjuration spells: -2
+– Casting level: +1
+– Extra spell slots: One more for spell level 1 and 2
+
+Weight: 1~
+
+@70011 = ~This is Edwin's birthright, inlaid with his family stone.
+
+STATISTICS:
+
+Equipped abilities:
+– Saves vs. conjuration spells: +2, +4 with his specialization bonus
+– Saves vs. non-conjuration spells: -2
+– Casting level: +2
+– Extra spell slots: One more for spell level 1, 2, 3 and 4
+
+Weight: 1~
+
+@70020 = ~These are Eldoth's personal poisoned arrows. He learned how to use poison at a young age and can create enough venom for about 5 arrows per day. He is the only person who can safely handle these arrows.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target takes 1 point of poison damage every 2 seconds for 40 seconds (Save vs. Poison negates)
+
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~
+
+@70021 = ~These are Eldoth's personal poisoned arrows. He learned how to use poison at a young age and can create enough venom for about 15 arrows per day. He is the only person who can safely handle these arrows.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target takes 1 point of poison damage every 2 seconds for 40 seconds (Save vs. Poison negates)
+
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~
+
+@70030 = ~Create Bruiser Mates
+This ability crafts 10 of Jan's patented Flasher Master Bruiser Mates, adding them to the character's inventory. Handle with care!~

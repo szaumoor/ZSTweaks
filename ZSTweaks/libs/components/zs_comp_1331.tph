@@ -8,7 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/doomplate~ ~override~
   COPY_EXISTING ~PLAT12.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8480) END
+    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8480) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 5 parameter1 = 146 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 4 parameter1 = 226 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 0 parameter1 = 87 END
@@ -18,7 +18,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@8483) END
 
   COPY_EXISTING ~PLAT12.ITM~ ~override/ZSTWDOM0.ITM~
-    LPF ALTER_ITEM INT_VAR id_ref_name = RESOLVE_STR_REF(@8481) id_ref_desc = RESOLVE_STR_REF(@8482) END
+    LPF ALTER_ITEM INT_VAR id_name = RESOLVE_STR_REF(@8481) id_desc = RESOLVE_STR_REF(@8482) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 178 special = 4 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 179 special = 4 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 248 STR_VAR resource = ~ZSTWDOM2~ END

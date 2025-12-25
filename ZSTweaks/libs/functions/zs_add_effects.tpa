@@ -11,7 +11,10 @@ STR_VAR
     res     = ~~
     effects = ~~ // effect codes
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
+
     LPF a7_auto_apply_spl_effect
         INT_VAR
             def_target      = 1
@@ -25,6 +28,77 @@ BEGIN
             function_name = ~ADD_ITEM_EQEFFECT~
             effect_codes  = ~%effects%~
     END
+END
+
+DEFINE_PATCH_FUNCTION ADD_CRE_PASSIVE
+INT_VAR
+    op = 0
+    p1 = 0
+    p2 = 0
+    tmg = 9
+    tgt = 1
+    dur = 0
+STR_VAR
+    res = ""
+BEGIN
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+    END
+
+    SET opcode = op
+    SET target = tgt
+    SET timing = tmg
+    SET power = 0
+    SET parameter1 = p1
+    SET parameter2 = p2
+    SET resist_dispel = 0
+    SET duration = dur
+    SET probability1 = 100
+    SET probability2 = 0
+    SPRINT resource ~%res%~
+    SET dicenumber = 0
+    SET dicesize = 0
+    SET savingthrow = 0
+    SET savebonus = 0
+    SET school = 0
+    SET lowestafflvl = 0
+    SET highestafflvl = 0
+    SET parameter3 = 0
+    SET parameter4 = 0
+    SPRINT vvcresource ~~
+    SPRINT resource2 ~~
+    SET casterx = 0 - 1
+    SET castery = 0 - 1
+    SET targetx = 0 - 1
+    SET targety = 0 - 1
+    SET restype = 0
+    SPRINT effsource ~~
+    SET sourceslot = "-1"
+    SPRINT effvar ~~
+    SET casterlvl = 0
+    SET sectype = 0
+
+    LPM ADD_CRE_EFFECT
+END
+
+DEFINE_PATCH_MACRO ADD_CRE_MELEE_EFFECT 
+BEGIN
+    LPF ADD_CRE_PASSIVE INT_VAR op = 248 STR_VAR res = "%melee_effect%" END
+END
+
+DEFINE_PATCH_MACRO ADD_CRE_RANGED_EFFECT 
+BEGIN
+    LPF ADD_CRE_PASSIVE INT_VAR op = 249 STR_VAR res = "%ranged_effect%" END
+END
+
+DEFINE_PATCH_MACRO ADD_CRE_MOVEMENT_BOOST
+BEGIN
+    LPF ADD_CRE_PASSIVE INT_VAR op = 176 p1 = movement_boost END
+END
+
+DEFINE_PATCH_MACRO ADD_CRE_CRIT_BOOST
+BEGIN
+    LPF ADD_CRE_PASSIVE INT_VAR op = 301 p1 = 1 END
 END
 
 DEFINE_PATCH_FUNCTION ADD_ON_HIT_EFF
@@ -49,7 +123,10 @@ STR_VAR
     res     = ~~
     effects = ~~
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
+
     LPF a7_auto_apply_spl_effect
         INT_VAR
             def_target        = tgt
@@ -77,25 +154,22 @@ END
 
 DEFINE_PATCH_FUNCTION ADD_SLEEP_SAFE_DMG // untested; always preset target for now
 INT_VAR
-    p1 = 0
-    p2 = "-1"
-    dnum = 0
-    dsize = 0
-    t = 1
-    ip = "-1"
-    prechecks = 0
+    p1       = 0
+    p2       = "-1"
+    dnum     = 0
+    dsize    = 0
+    t        = 1
+    ip       = "-1"
 STR_VAR
-    dmg_type = ~*~
-    type     = 1
+    type = 1
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    PATCH_IF p2 = "-1" BEGIN
-        LPF GET_DMG_TYPE STR_VAR type = ~%dmg_type%~ RET p2 = result END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     END
     LPF ADD_ON_HIT_EFF STR_VAR effects = EVAL ~ip=%ip%,t=%t%,op=12,p1=%p1%,p2=%p2%,dnum=%dnum%,dsize=%dsize%,spec=1024~ END
 END
 
-DEFINE_PATCH_FUNCTION ADD_SPL_EFF_SELF
+DEFINE_PATCH_FUNCTION ADD_SPL_SELFEFF
 INT_VAR
     p1  = 0
     p2  = 0
@@ -109,7 +183,10 @@ INT_VAR
 STR_VAR
     effects = ""
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    END
+
     LPF a7_auto_apply_spl_effect
         INT_VAR
             def_target        = 1
@@ -129,7 +206,7 @@ BEGIN
     END
 END
 
-DEFINE_PATCH_FUNCTION ADD_SPL_EFF_TGT
+DEFINE_PATCH_FUNCTION ADD_SPL_TGTEFF
 INT_VAR
     p1     = 0
     p2     = 0
@@ -146,7 +223,10 @@ STR_VAR
     res     = ""
     effects = ""
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    END
+
     LPF a7_auto_apply_spl_effect
         INT_VAR
             def_target        = tgt

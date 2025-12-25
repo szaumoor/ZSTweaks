@@ -9,14 +9,12 @@ ACTION_IF spell_cloudburst > 0 BEGIN
   COPY ~%MOD_FOLDER%/spells/divine/cloudburst~ ~override~
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CLOUDBURST" RET spell_res END
   COPY_EXISTING ~%spell_res%.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8564) END
+    LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8564) END
     LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-    LPF GET_DMG_TYPE STR_VAR type = "electricity" RET electricity = result END
-    LPF GET_DMG_TYPE STR_VAR type = "magic" RET magic = result END
-    LPF CLONE_EFFECT INT_VAR match_opcode=12 match_parameter2=electricity opcode=146 parameter2=1 parameter1=0 special=0 savingthrow=0 probability1=64 dicenumber = 0 dicesize = 0 STR_VAR resource=~ZSTWCDBR~ END
-    LPF DELETE_EFFECT INT_VAR match_opcode=12 match_parameter2=electricity END
+    LPF CLONE_EFFECT INT_VAR match_opcode=12 match_parameter2=op12_electricity opcode=146 parameter2=1 parameter1=0 special=0 savingthrow=0 probability1=64 dicenumber = 0 dicesize = 0 STR_VAR resource=~ZSTWCDBR~ END
+    LPF DELETE_EFFECT INT_VAR match_opcode=12 match_parameter2=op12_electricity END
     LPF DELETE_EFFECT INT_VAR match_opcode=215 STR_VAR match_resource="CLOUDBH" END
-    LPF ALTER_EFFECT INT_VAR match_opcode=12 match_parameter2=magic dicenumber=4 END
+    LPF ALTER_EFFECT INT_VAR match_opcode=12 match_parameter2=op12_magic dicenumber=4 END
 
   COPY_EXISTING ~IDPRO301.PRO~ ~override~
     WRITE_BYTE 0x216 5

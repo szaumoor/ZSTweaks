@@ -6,15 +6,15 @@ END
 
  ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY_EXISTING "SW1H32.ITM" ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6870) END
+  COPY_EXISTING "sw1h32.itm" ~override~
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6870) END
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 98 parameter1 = 15 END
     LPF ALTER_HEADER INT_VAR match_type = 3 charges = 3 END
     LPF CLONE_EFFECT INT_VAR header_type=1 match_opcode=177 parameter1=race_wyvern END
     LPF ADD_EQUIPPED_EFF INT_VAR p2=4 STR_VAR effects = ~op=178,spec=4,p1=%race_dragon%;op=178,spec=4,p1=%race_wyvern%;op=219,p1=%race_dragon%;op=219,p1=%race_wyvern%;op=344,p1=%race_dragon%,spec=4;op=344,p1=%race_wyvern%,spec=4~ END
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 15 STR_VAR effects = ~op=27;op=28;op=29;op=30~ END
 
-  COPY_EXISTING "SW1H32C.EFF" ~override~
+  COPY_EXISTING "sw1h32c.eff" ~override~
     LPF ALTER_EFF_FILE INT_VAR dicenumber=2 special=1024 END
 
 END

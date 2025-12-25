@@ -1,0 +1,332 @@
+// Here you can adjust values to apply different changes to components without having to deal with set installation options in the Weidu installer. Do not remove quotation marks when changing values.
+
+// All options that are about "allowing" a tweak or not follow the binary format of "1" (true) to allow the tweak during installation time, and "0" (false) to not allow. Change it to your preferences according to that. If the values have a different meaning, it will be noted.
+
+////////////////////////////// Misc \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET zs_debug = "0" // normally at 0 for users
+
+////////////////////////////// Pre-fixes \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET zst_gender_fix = "1" // In vanilla game, many creatures are inappropriately set to 'male' (never female, I wonder why?) even though they should be completely independent of it, such as golems, statues, mists, fungus, slimes, mind flayers... This interferes with opcodes that target based on gender, leading to results that will be anything but logical. It is recommended to leave this on if you're planning on installing something that targets gender of male or female, such as my Shar-Teel component
+
+////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// tweaks to the different Symbol, X spells
+OUTER_SET zst_443_death            = "1"
+OUTER_SET zst_443_pain             = "1"
+OUTER_SET zst_443_nerf_npc_symbols = "1"
+
+// backstab penalties to different weapon types (set to 0 to disable, otherwise add a positive number to determine backstab multiplier penalty)
+OUTER_SET zst_1120_backstab_penalty_lswords    = "1"
+OUTER_SET zst_1120_backstab_penalty_rp_estocs  = "1" // my item pack estocs
+OUTER_SET zst_1120_backstab_penalty_katana     = "1"
+OUTER_SET zst_1120_backstab_penalty_scimitars  = "1"
+OUTER_SET zst_1120_backstab_penalty_staves     = "2"
+OUTER_SET zst_1120_backstab_penalty_wakis      = "0"
+OUTER_SET zst_1120_backstab_penalty_ninjatos   = "0"
+OUTER_SET zst_1120_backstab_penalty_bstsword   = "0"
+OUTER_SET zst_1120_backstab_penalty_2hsword    = "0"
+OUTER_SET zst_1120_backstab_penalty_sswords    = "0"
+OUTER_SET zst_1120_backstab_penalty_rp_rapiers = "0" // my item pack rapiers
+OUTER_SET zst_1120_backstab_penalty_daggers    = "0"
+OUTER_SET zst_1120_backstab_penalty_rp_kukris  = "0" // my item pack kukris
+OUTER_SET zst_1120_backstab_penalty_maces      = "0"
+OUTER_SET zst_1120_backstab_penalty_clubs      = "0"
+OUTER_SET zst_1120_backstab_penalty_hammers    = "0"
+OUTER_SET zst_1120_backstab_penalty_mornstars  = "0"
+OUTER_SET zst_1120_backstab_penalty_flails     = "0"
+OUTER_SET zst_1120_backstab_penalty_axes       = "0"
+OUTER_SET zst_1120_backstab_penalty_spears     = "0"
+OUTER_SET zst_1120_backstab_penalty_halberds   = "0"
+
+// control which category of weapons are affected by the dice changes component
+OUTER_SET zst_1150_dice_spears           = "1"
+OUTER_SET zst_1150_dice_bastard_swords   = "1"
+OUTER_SET zst_1150_dice_katanas          = "1"
+OUTER_SET zst_1150_dice_wakininja        = "1"
+OUTER_SET zst_1150_dice_wakislashing     = "1"
+OUTER_SET zst_1150_dice_warhammers       = "1"
+OUTER_SET zst_1150_dice_twohanded_swords = "1"
+
+// axe and halberd critical hit bonus
+OUTER_SET zst_1361_axes_crits     = "1"
+OUTER_SET zst_1361_halberds_crits = "1"
+
+// This modifies the blunt weapon tweak so the AC debuff only works against enemies that don't wear armor, such as dragons
+OUTER_SET zst_1362_blunt_only_nonarmored = "0"
+
+// save penalty/bonus for arrows of dispelling
+OUTER_SET zst_1371_save_penalty = "-2"
+
+// allow or disallow weapon categories to be modified by the Finesse component (Component 1450)
+OUTER_SET zst_1450_allow_daggers   = "1"
+OUTER_SET zst_1450_allow_staves    = "1"
+OUTER_SET zst_1450_allow_sswords   = "1"
+OUTER_SET zst_1450_allow_lswords   = "1"
+OUTER_SET zst_1450_allow_scimitars = "1"
+OUTER_SET zst_1450_allow_katanas   = "1"
+OUTER_SET zst_1450_allow_clubs     = "1"
+OUTER_SET zst_1450_allow_wakis     = "1"
+OUTER_SET zst_1450_allow_ninjatos  = "1"
+OUTER_SET zst_1450_allow_slings    = "1"
+OUTER_SET zst_1450_allow_bows      = "1"
+OUTER_SET zst_1450_allow_xbows     = "1"
+OUTER_SET zst_1450_allow_darts     = "1"
+OUTER_SET zst_1450_allow_bucklers  = "1"
+
+// allow bards to benefit from finesse
+OUTER_SET zst_1450_allow_bards               = "1"
+OUTER_SET zst_1450_bards_probability_penalty = 24 // 25% actually, probabilities go from 0 to 99. Multiplicative
+
+// potions are usable by everyone
+OUTER_SET zst_1534_potions_usable_everyone   = "1"
+OUTER_SET zst_1534_potion_overhaul           = "1"
+OUTER_SET zst_1534_potions_cannot_self_stack = "1"
+
+// tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted half, you would type 50.
+OUTER_SET zst_1538_jewelry_price = "150"
+
+// Only select one, failure to do this will make the component fail immediately
+OUTER_SET zst_1539_all_no_reqs    = "0" // all can use scrolls
+OUTER_SET zst_1539_all_reqs       = "1" // all can use scrolls with stat requirements (default)
+OUTER_SET zst_1539_rogues_no_reqs = "0" // rogues can use scrolls
+OUTER_SET zst_1539_rogues_reqs    = "0" // rogues can use scrolls with stat requirements
+
+// set to 1 to prevent chunking with vorpals hits in the vorpal component
+OUTER_SET zst_1541_vorpal_no_chunking = "0"
+
+// allow or disallow tweaks for component 1545 (stat tweaks)
+OUTER_SET zst_1545_strength_bonuses       = "1"
+OUTER_SET zst_1545_constitution_bonuses   = "1"
+OUTER_SET zst_1545_dexterity_bonuses      = "1"
+OUTER_SET zst_1545_lore_class_bonuses     = "1" // lore bonuses per class
+OUTER_SET zst_1545_lore_stat_bonuses      = "1" // lore bonuses with intelligence and wisdom
+OUTER_SET zst_1545_racethac0_bonuses      = "1" // thac0 bonuses for race
+OUTER_SET zst_1545_shorty_bonuses         = "2" // 0: disable, 1: nullify, 2: toned down, 3: standardize (readme for details)
+OUTER_SET zst_1545_proficiency_bonuses    = "1"
+OUTER_SET zst_1545_weapon_style_bonuses   = "1"
+OUTER_SET zst_1545_weapon_style_twohanded = "1" // allow two handed tweak
+OUTER_SET zst_1545_weapon_style_onehanded = "1" // allow one handed tweak
+OUTER_SET zst_1545_weapon_style_shield    = "1" // allow sword and shield tweak
+OUTER_SET zst_1545_weapon_style_twoweapon = "1" // allow two weapon tweak
+
+// allow tweaks to different shield types
+OUTER_SET zst_1546_buckler_tweak = "1"
+OUTER_SET zst_1546_small_tweak   = "1"
+OUTER_SET zst_1546_medium_tweak  = "1"
+OUTER_SET zst_1546_tower_tweak   = "1"
+OUTER_SET zst_1546_speed_debuffs = "0"
+
+// tweaks to shield usability
+OUTER_SET zst_1546_everyone_can_use_all_shields         = "0"
+OUTER_SET zst_1546_tower_single_classed_fighter_classes = "1" // restricts tower shields to single-classed warrior classes
+OUTER_SET zst_1546_tower_all_fighter_classes            = "0" // restricts tower shields to all classes with a fighter class
+OUTER_SET zst_1546_small_thieves_bards                  = "1" // allows bards and thieves to use small shields
+OUTER_SET zst_1546_small_medium_thieves_bards           = "0" // allows bards and thieves to use small and medium shields
+OUTER_SET zst_1546_buckler_wizards                      = "1" // allows wizard classes to use bucklers
+
+// tweaks to backstab requirements, set to 1 if you want backstabs without invisibility but with angle requirements
+// otherwise the default is removing angle requirements, but requiring invisibility
+OUTER_SET zst_1600_backstab_no_invis_requirement_only = "0"
+
+////////////////////////////// Gear tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// circlet / ioun critical hit protection configuration, only select one, component will fail otherwise
+OUTER_SET zst_1664_crits_all      = "0"
+OUTER_SET zst_1664_crits_iouns    = "0"
+OUTER_SET zst_1664_crits_circlets = "0"
+OUTER_SET zst_1664_crits_selected = "1" // default, only a few protect vs. critical hits
+
+// allows tweaks to give usability to items in the game as defined in component 1997
+OUTER_SET zst_1997_kuotoa = "1"
+OUTER_SET zst_1997_orb    = "1"
+OUTER_SET zst_1997_brain  = "1"
+OUTER_SET zst_1997_strohm = "1"
+OUTER_SET zst_1997_shadow = "1"
+
+////////////////////////////// Dagger tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// poisoned throwing daggers tweaks
+OUTER_SET zst_1000_sbonus          = "-2"  // saving throw penalty, values of 0 or above disable that part
+OUTER_SET zst_1000_store_additions = "1"   // increase the stock of poisoned daggers
+OUTER_SET zst_1000_stack_mult      = "100" // percentage multiplier for the number of stacks of poisoned throwing daggers inserted. For example, if you only want half, you'd set this to 50, if you want 20% more, you'd set it to 120. Values of zero and below are ignored.
+
+////////////////////////////// Two-handed weapons tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// allows the carsomyr parts of the tweak
+OUTER_SET zst_1280_carsomyr_dispel = "1"
+OUTER_SET zst_1280_carsomyr_evil   = "1"
+
+// allows the flame of north parts of the tweak
+OUTER_SET zst_1318_fnorth_evil   = "1"
+OUTER_SET zst_1318_fnorth_trolls = "1"
+
+// staff of magi usability tweaks for balance
+// Possible values: 0 (no restrictions), 1 (non-fighter mages can use it), 2 (default: only single-classed wizards can)
+OUTER_SET zst_1390_staff_magi_usability = "2"
+
+// allows the unholy reaver parts of the tweak
+OUTER_SET zst_1410_ureaver_dispel   = "1"
+OUTER_SET zst_1410_ureaver_dicesize = "1"
+
+// allows the soul reaver parts of the tweak
+OUTER_SET zst_1591_soul_reaver_nerf     = "1"
+OUTER_SET zst_1591_soul_reaver_dicesize = "1"
+
+////////////////////////////// One-handed Swords Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// allows the purifier parts of the tweak
+OUTER_SET zst_1240_purifier_evil   = "1"
+OUTER_SET zst_1240_purifier_dispel = "1"
+
+// adds the new backstory to Hawksight, including the new charge ability
+OUTER_SET zst_1580_hawksight_extra = "1"
+
+// allows kachiko's wakizashi (whisper) to be upgraded by cespenar
+OUTER_SET zst_1583_kachiko_upgrade = "1"
+
+////////////////////////////// Axes & Blunt Weapon Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+OUTER_SET zst_1310_easthaven_dr = "10" // damage reduction defender of easthaven can provide. Specify to your needs
+
+/////////////////////////////// NPC Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// determines the net slashing damage of Sarevok's Deathbringer Assault in component 1646. Default is 120 (70 less than normal). Note that now it allows a saving throw to take half as well
+OUTER_SET zst_1646_sare_dmg = "120"
+
+/////////////////////////////// Ranged Weapon Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// sets the saving throw penalty (or bonus) for Asp's Nest component
+OUTER_SET zst_1010_asp_nest_sbonus = "-4"
+
+/////////////////////////////// Arcane Magic Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// allows the Luck tweaks
+OUTER_SET zst_145_luck_boost     = "1" // effect boost
+OUTER_SET zst_145_luck_dur_boost = "1" // effect duration boost
+
+// this allows the tweak to enable or disable backstabs for Black Blade of Disaster and/or Iron Golem fist
+// the last two allow you to define how much the backstab multiplier should be reduced by, if that's your preference
+// for a fair debuff (set to higher than zero numbers, to define by how much should the backstab multiplier be reduced)
+OUTER_SET zst_160_bbod                  = "1"
+OUTER_SET zst_160_goliro                = "1"
+OUTER_SET zst_160_bbod_reduction_only   = "0"
+OUTER_SET zst_160_goliro_reduction_only = "0"
+
+// allows the Tenser's Transformation tweaks
+OUTER_SET zst_441_tenser_thac0                = "1" // THAC0 tweak
+OUTER_SET zst_441_tenser_apr                  = "1" // APR tweak
+OUTER_SET zst_441_tenser_apr_nonfighters_only = "1" // APR bonus only for nonfighters
+
+// allow parts of the flesh/stone tweak
+OUTER_SET zst_444_flesh_stone     = "1"
+OUTER_SET zst_444_flesh_stone_iwd = "1" // adds some creatures immunities to the spell as per IWD
+OUTER_SET zst_444_stone_flesh     = "1"
+
+// allows the Fireball tweaks
+OUTER_SET zst_446_fball_buff          = "1" // damage buff
+OUTER_SET zst_446_fball_new_animation = "1" // new explosion animation
+
+OUTER_SET zst_447_melf_no_mr = "1" // makes Melf's Acid Arrow bypass MR, since it's conjured acid
+
+OUTER_SET zst_561_web_save_nerf = "1" // enable or disable the nert to the save penalty in the web spell
+
+/////////////////////////////// Divine Magic Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// allows the Flame Blade tweaks
+OUTER_SET zst_101_fblade_undead    = "1" // bonus damage to undead
+OUTER_SET zst_101_fblade_dur_boost = "1" // duration bonus
+
+// allows the Holy Power tweaks
+OUTER_SET zst_190_hpower_thac0                = "1" // THAC0 tweak
+OUTER_SET zst_190_hpower_apr                  = "1" // APR tweak
+OUTER_SET zst_190_hpower_apr_nonfighters_only = "1" // APR bonus only for nonfighters
+
+// allows certain parts of the tweaks to earthquake in the relevant component
+OUTER_SET zst_250_quake_pfriendly        = "1" // party friendly
+OUTER_SET zst_250_quake_shake_intensity  = "2" // 0 = no change, 1 = no shake, 2 = still present, dramatically less shake
+OUTER_SET zst_250_quake_boost            = "1" // effect boost
+
+// allows certain parts of the tweaks to nature's beauty in the relevant component
+OUTER_SET zst_320_natbeauty_boost      = "1"
+OUTER_SET zst_320_natbeauty_true_sight = "1" // True sight provides immunity to it
+
+// control whether the cure and cause tweaks will be applied
+OUTER_SET zst_450_cure_tweaks  = "1"
+OUTER_SET zst_450_cause_tweaks = "1"
+
+// allow tweaks to particular healing/causing spells, if tweak for healing/causing is enabled
+OUTER_SET zst_450_light    = "1"
+OUTER_SET zst_450_moderate = "1"
+OUTER_SET zst_450_medium   = "1"
+OUTER_SET zst_450_serious  = "1"
+OUTER_SET zst_450_critical = "1"
+OUTER_SET zst_450_eldath   = "1"
+OUTER_SET zst_450_mass     = "1"
+OUTER_SET zst_450_harm     = "1"
+
+// allow chain lightning tweaks
+OUTER_SET zst_451_chain_lightning_boost      = "1"
+OUTER_SET zst_451_chain_lightning_projectile = "1" // speeds up animation
+
+// allow call lightning tweaks
+OUTER_SET zst_468_call_lightning_boost = "1"
+OUTER_SET zst_468_iwd_call_lightning   = "1" // makes call lightning in BG use (partially) the animation from IWD
+
+OUTER_SET zst_496_doom_casting_speed = "1" // set to desired improved casting speed for Doom (0-8, anything else will throw an error)
+
+OUTER_SET zst_507_disable_aidglow = "0" // disables the character color pulse with Aid to avoid excessive color pollution
+
+OUTER_SET zst_508_restoration_stat_drain = "1"
+OUTER_SET zst_508_restoration_overhaul   = "1"
+
+/////////////////////////////// NPC Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// allows tweaks for keldorn's gear
+OUTER_SET zst_1520_keldsword = "1"
+OUTER_SET zst_1520_keldarmor = "1"
+
+/////////////////////////////// Class/Kit Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// allows tweaks to particular shaman spells and abilities
+OUTER_SET zst_360_etheral_retribution = "1"
+OUTER_SET zst_360_writhing_fog        = "1"
+OUTER_SET zst_360_spirit_fire         = "1"
+OUTER_SET zst_360_spiritual_clarity   = "1"
+OUTER_SET zst_360_favored_spirits     = "1"
+
+// tweaks to sun soul monk abilities
+OUTER_SET zst_2100_sunsoul_ray  = "1"
+OUTER_SET zst_2100_sunsoul_beam = "1"
+
+// allows tweaks to particular thief HLAs
+OUTER_SET zst_2130_spike_trap     = "1"
+OUTER_SET zst_2130_exploding_trap = "1"
+OUTER_SET zst_2130_assassination  = "1"
+OUTER_SET zst_2130_avoid_death    = "1"
+
+OUTER_SET zst_2170_thac0_thieves = "1"
+OUTER_SET zst_2170_thac0_bards   = "1"
+
+// allows tweaks to Dragon Disciple
+OUTER_SET zst_2231_fire_boost      = "1" // include the boost to fire damage in the Dragon Disciple tweak
+OUTER_SET zst_2231_fire_boost_pctg = "5" // percentage bonus if the previous is allowed
+
+// configurations for skald+blade+swash apr bonus
+OUTER_SET zst_2260_allow_blade  = "1"
+OUTER_SET zst_2260_allow_skald  = "1"
+OUTER_SET zst_2260_allow_swash  = "1"
+OUTER_SET zst_2260_allow_tempus = "1"
+
+OUTER_SET zst_2270_allow_evasion   = "1"
+OUTER_SET zst_2270_allow_whirlwind = "1"
+
+/////////////////////////////// Creature Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// vorpal saving throw penalty or bonus for balor's vorpal attacks
+OUTER_SET zst_3050_balor_vorpal_penalty = "-4"
+
+// choose celestial types to include in celestial tweaks
+OUTER_SET zst_3030_devas     = "1"
+OUTER_SET zst_3030_planetars = "1"

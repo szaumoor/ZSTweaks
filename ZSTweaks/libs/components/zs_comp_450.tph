@@ -10,9 +10,9 @@ ACTION_IF zst_450_light BEGIN
 
         COPY_EXISTING ~SPPR103.SPL~ ~override~
             PATCH_IF is_iwdee BEGIN
-                LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6471) END
+                LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@6471) END
             END ELSE BEGIN
-                LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6470) END
+                LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@6470) END
             END
 
             SET base_heal = 9
@@ -31,7 +31,7 @@ ACTION_IF zst_450_light BEGIN
 
             LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CAUSE_LIGHT_WOUNDS" RET spell_res END
             COPY_EXISTING ~%spell_res%.spl~ ~override~
-                LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8270) END
+                LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8270) END
 
                 SET base_dmg = 9
                 FOR ( number = 1; number <= 4; ++number ) BEGIN
@@ -54,7 +54,7 @@ ACTION_IF zst_450_moderate BEGIN
 
             LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CURE_MODERATE_WOUNDS" RET spell_res END
             COPY_EXISTING ~%spell_res%.SPL~ ~override~
-                LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6472) END
+                LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@6472) END
                 LPF ALTER_EFFECT INT_VAR power = 0 resist_dispel = 0 END
                 SET base_heal = 13
                 LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 17 parameter1 = base_heal END
@@ -82,7 +82,7 @@ ACTION_IF zst_450_moderate BEGIN
 
             LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CAUSE_MODERATE_WOUNDS" RET spell_res END
             COPY_EXISTING ~%spell_res%.spl~ ~override~
-                LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8271) END
+                LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8271) END
                 SET base_dmg = 13
                 LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = base_dmg END
 
@@ -110,9 +110,9 @@ ACTION_IF zst_450_medium BEGIN
 
         COPY_EXISTING ~SPPR315.SPL~ ~override~
             PATCH_IF is_iwdee BEGIN
-                LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6474) END
+                LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@6474) END
             END ELSE BEGIN
-                LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6473) END
+                LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@6473) END
             END
 
             SET base_heal = 20
@@ -135,7 +135,7 @@ ACTION_IF zst_450_medium BEGIN
 
             LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CAUSE_MEDIUM_WOUNDS" RET spell_res END
             COPY_EXISTING ~%spell_res%.spl~ ~override~
-                LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8272) END
+                LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8272) END
                 SET base_dmg = 20
                 LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = base_dmg END
 
@@ -162,9 +162,9 @@ ACTION_IF zst_450_serious BEGIN
         OUTER_SET non_iwdee_desc = RESOLVE_STR_REF(@6475)
         COPY_EXISTING ~SPPR401.SPL~ ~override~
             PATCH_IF is_iwdee BEGIN
-                LPF ALTER_SPELL INT_VAR ref_desc=iwdee_desc END
+                LPF ALTER_SPELL INT_VAR desc=iwdee_desc END
             END ELSE BEGIN
-                LPF ALTER_SPELL INT_VAR ref_desc=non_iwdee_desc END
+                LPF ALTER_SPELL INT_VAR desc=non_iwdee_desc END
             END
 
             SET base_heal = 30
@@ -186,9 +186,9 @@ ACTION_IF zst_450_serious BEGIN
         COPY_EXISTING ~SCRL56.ITM~ ~override~
 
             PATCH_IF is_iwdee BEGIN
-                LPF ALTER_ITEM INT_VAR id_ref_desc=iwdee_desc END
+                LPF ALTER_ITEM INT_VAR id_desc=iwdee_desc END
             END ELSE BEGIN
-                LPF ALTER_ITEM INT_VAR id_ref_desc=non_iwdee_desc END
+                LPF ALTER_ITEM INT_VAR id_desc=non_iwdee_desc END
             END
 
         BUT_ONLY IF_EXISTS
@@ -202,7 +202,7 @@ ACTION_IF zst_450_serious BEGIN
 
                 LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CAUSE_SERIOUS_WOUNDS_IWD" RET spell_res END
                 COPY_EXISTING ~%spell_res%.spl~ ~override~
-                    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8273) END
+                    LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8273) END
                     SET base_dmg = 30
                     LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = base_dmg END
                     base_dmg += 3
@@ -223,10 +223,9 @@ ACTION_IF zst_450_serious BEGIN
 
             LAF CREATE_SPELL INT_VAR flags=33604096 STR_VAR spell = ~ZSTWSERS~ END
             COPY_EXISTING ~ZSTWSERS.SPL~ ~override~
-                LPF GET_DMG_TYPE STR_VAR type=~magic~ RET magic_dmg = result END
                 SET fade_speed = (25 << 16)
                 LPF ADD_SPELL_HEADER END
-                LPF ADD_SPL_EFF_TGT INT_VAR pwr=0 stype=1 STR_VAR effects=~op=12,p1=30,p2=%magic_dmg%,spec=256;op=215,res=SPCAUSEW;op=61,p1=1996800,p2=%fade_speed%~ END
+                LPF ADD_SPL_TGTEFF INT_VAR pwr=0 stype=1 STR_VAR effects=~op=12,p1=30,p2=%op12_magic%,spec=256;op=215,res=SPCAUSEW;op=61,p1=1996800,p2=%fade_speed%~ END
 
                 SET base_dmg = 30
                 base_dmg += 3
@@ -264,9 +263,9 @@ ACTION_IF zst_450_critical BEGIN
         COPY_EXISTING ~SPPR502.SPL~ ~override~
                       ~bdcaela3.SPL~ ~override~
             PATCH_IF is_iwdee BEGIN
-                LPF ALTER_SPELL INT_VAR ref_desc=iwdee_desc END
+                LPF ALTER_SPELL INT_VAR desc=iwdee_desc END
             END ELSE BEGIN
-                LPF ALTER_SPELL INT_VAR ref_desc=non_iwdee_desc END
+                LPF ALTER_SPELL INT_VAR desc=non_iwdee_desc END
             END
 
             SET base_heal = 42
@@ -286,9 +285,9 @@ ACTION_IF zst_450_critical BEGIN
         COPY_EXISTING ~SCRL61.ITM~ ~override~
 
             PATCH_IF is_iwdee BEGIN
-                LPF ALTER_ITEM INT_VAR id_ref_desc=iwdee_desc END
+                LPF ALTER_ITEM INT_VAR id_desc=iwdee_desc END
             END ELSE BEGIN
-                LPF ALTER_ITEM INT_VAR id_ref_desc=non_iwdee_desc END
+                LPF ALTER_ITEM INT_VAR id_desc=non_iwdee_desc END
             END
 
         BUT_ONLY IF_EXISTS
@@ -301,7 +300,7 @@ ACTION_IF zst_450_critical BEGIN
 
                     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CAUSE_CRITICAL_WOUNDS_IWD" RET spell_res END
                     COPY_EXISTING ~%spell_res%.spl~ ~override~
-                        LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8274) END
+                        LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8274) END
                         SET base_dmg = 42
                         LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 parameter1 = base_dmg END
                         base_dmg += 3
@@ -319,10 +318,9 @@ ACTION_IF zst_450_critical BEGIN
 
                 LAF CREATE_SPELL INT_VAR flags=33604096 STR_VAR spell = ~ZSTWCRIT~ END
                 COPY_EXISTING ~ZSTWCRIT.SPL~ ~override~
-                    LPF GET_DMG_TYPE STR_VAR type=~magic~ RET magic_dmg = result END
                     SET fade_speed = (25 << 16)
                     LPF ADD_SPELL_HEADER END
-                    LPF ADD_SPL_EFF_TGT INT_VAR pwr=0 stype=1 STR_VAR effects=~op=12,p1=42,p2=%magic_dmg%,spec=256;op=215,res=SPCAUSEW;op=61,p1=1996800,p2=%fade_speed%~ END
+                    LPF ADD_SPL_TGTEFF INT_VAR pwr=0 stype=1 STR_VAR effects=~op=12,p1=42,p2=%op12_magic%,spec=256;op=215,res=SPCAUSEW;op=61,p1=1996800,p2=%fade_speed%~ END
 
                     SET base_dmg = 42
                     base_dmg += 3
@@ -352,11 +350,11 @@ ACTION_IF zst_450_cure_tweaks AND zst_450_eldath BEGIN
 
         LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_MIST_OF_ELDATH" RET spell_res END
         COPY_EXISTING ~%spell_res%.spl~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@8211) ref_desc=RESOLVE_STR_REF(@8210) END
+            LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8211) desc=RESOLVE_STR_REF(@8210) END
             LPF ALTER_HEADER INT_VAR speed = 6 END
             LPF ALTER_EFFECT INT_VAR match_opcode = 17 parameter1 = 40 END
             LPF ALTER_EFFECT INT_VAR power = 0 resist_dispel = 0 END
-            LPF ADD_SPL_EFF_TGT INT_VAR t=2 dur=12 pwr=0 STR_VAR effects=~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=98,p2=3,spec=42~ END
+            LPF ADD_SPL_TGTEFF INT_VAR t=2 dur=12 pwr=0 STR_VAR effects=~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=98,p2=2,p1=2,spec=42~ END
 
     END
 
@@ -367,7 +365,7 @@ ACTION_IF zst_450_mass BEGIN
     ACTION_IF zst_450_cure_tweaks BEGIN
 
         COPY_EXISTING ~SPPR514.SPL~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6480) END
+            LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@6480) END
             LPF ALTER_EFFECT INT_VAR power = 0 resist_dispel = 0 END
             LPF ALTER_EFFECT INT_VAR match_opcode = 17 dicenumber = 4 dicesize = 3 END
             LPF ALTER_HEADER INT_VAR match_type = 1 speed = 2 END
@@ -380,7 +378,7 @@ ACTION_IF zst_450_mass BEGIN
 
             LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_MASS_CAUSE_LIGHT_WOUNDS" RET spell_res END
             COPY_EXISTING ~%spell_res%.spl~ ~override~
-                LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8275) END
+                LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8275) END
                 LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 4 dicesize = 3 END
                 LPF ALTER_HEADER INT_VAR match_type = 1 speed = 2 END
 

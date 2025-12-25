@@ -18,7 +18,7 @@ Level: 1
 Sphere: All
 Range: 40 ft.
 Duration: 6 rounds + 1 round/2 levels
-Casting Time: 9
+Casting Time: 3
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
@@ -102,6 +102,8 @@ When this spell is cast, a local tremor of fairly high strength rips the ground.
  2nd: All creatures affected take 3d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
  3rd: All creatures affected take 2d6 points of damage. A successful saving throw vs. Spell halves the damage.
 
+Special case: stone golems of all kinds, including golem juggernauts, immediately take 5d10 crushing damage on the first tremor and are held for 1 round.
+
 Additionally, earth elementals dislike mere mortals toying with the land and there is a 3% chance that casting this spell will cause an earth elemental to appear and attack the party.~
 
 // party friendly version earthquake more effective
@@ -118,9 +120,11 @@ Saving Throw: Special
 
 When this spell is cast, a local tremor of fairly high strength rips the ground. The shock is over in several rounds. The earthquake affects all creatures in its area of effect except the caster and <HISHER> party. There are 3 tremors that are caused by the earthquake:
 
- 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful saving throw vs. Spell with a -6 penalty halves the damage and negates the fall.
- 2nd: All creatures affected take 5d6 points of damage. A successful saving throw vs. Spell with a -4 penalty halves the damage.
- 3rd: All creatures affected take 4d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
+ 1st: All enemies affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful saving throw vs. Spell with a -6 penalty halves the damage and negates the fall.
+ 2nd: All enemies affected take 5d6 points of damage. A successful saving throw vs. Spell with a -4 penalty halves the damage.
+ 3rd: All enemies affected take 4d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
+
+Special case: stone golems of all kinds, including golem juggernauts, immediately take 5d10 crushing damage on the first tremor, with no save allowed to resist it or take half.
 
 Additionally, earth elementals dislike mere mortals toying with the land and there is a 2% chance that casting this spell will cause an earth elemental to appear and attack the party.~
 
@@ -141,6 +145,8 @@ When this spell is cast, a local tremor of fairly high strength rips the ground.
  1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful saving throw vs. Spell with a -6 penalty halves the damage and negates the fall.
  2nd: All creatures affected take 5d6 points of damage. A successful saving throw vs. Spell with a -4 penalty halves the damage.
  3rd: All creatures affected take 4d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
+
+ Special case: stone golems of all kinds, including golem juggernauts, immediately take 5d10 crushing damage on the first tremor, with no save allowed to resist it or take half.
 
 Additionally, earth elementals dislike mere mortals toying with the land and there is a 2% chance that casting this spell will cause an earth elemental to appear and attack the party.~
 
@@ -274,7 +280,7 @@ Casting Time: 5
 Area of Effect: 1 creature, and everyone around them
 Saving Throw: None
 
-The recipient of this spell gains the benefits of a Bless spell (+1 to attack rolls and saving throws) and a special bonus of 1d8 additional Hit Points, plus a separate 1 HP bonus per level after level 3, for the duration of the spell. The Aid spell enables the recipient to actually have more Hit Points than <PRO_HISHER> current maximum. The first 1d8 bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic, but the rest will be kept.
+The recipient of this spell gains the benefits of a Bless spell (+1 to attack rolls and saving throws) and a special bonus of 1d8 additional Hit Points, plus a separate 1 HP bonus per level, which increases by 1 at level 5 and every level thereafter, for the duration of the spell. The Aid spell enables the recipient to actually have more Hit Points than <PRO_HISHER> current maximum. The first 1d8 bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic, but the rest will be kept.
 
 For example, if a character has 100 HP, and Aid grants them 5 HP from the first bonus, and 15 HP from the second one, their HP will become 120. If they take a hit that reduces their current HP by 25, their HP will become 95, and their maximum HP will go down to 115 HP, since the first 5 HP bonus to maximum health was consumed and therefore lost.~
 
@@ -530,7 +536,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-By using this spell, the priest can charm a pebble, which becomes magical and flies out and hits a target opponent. The stone deals 1d4 points of magic and missile damage to whomever it hits.~
+By using this spell, the priest can charm a pebble, which becomes magical and flies out and hits a target opponent. The stone deals 1d4 points of magic and missile damage to whomever it hits. This damage increases to 1d6 at level 3, and 1d8 at level 5.~
 
 @7410 = ~Dolorous Decay
 (Alteration, Necromancy)
@@ -573,7 +579,7 @@ Call Lightning must be cast outside; otherwise, it will not work, and the spell 
 
 Since the electrical damage comes from the skies naturally, Magic Resistance does not affect this spell.~
 
-@7550 = ~Shield of the Archons
+@7550 = ~Planar Shield
 (Abjuration)
 
 Level: 7
@@ -584,7 +590,12 @@ Casting Time: 9
 Area of Effect: The caster
 Saving Throw: None
 
-This powerful abjuration spell causes the spells cast against the priest to be absorbed and consumed. This affects a total of spell levels equal to the level of the caster, which includes spells cast from scrolls and innate spell-like abilities, but excludes the following: area effects that are not centered directly upon the priest, as well as area effects that are stationary, such as Cloudkill and Stinking Cloud. As long as the spell is cast directly at the priest, it will be absorbed provided that there are spell levels remaining. For example, if there is only 1 level left and a 3rd-level spell is cast at the priest, the spell will be absorbed while canceling the shield.~
+This powerful abjuration spell causes the spells cast against the priest to be absorbed and consumed. This affects a total of spell levels equal to the level of the caster, which includes spells cast from scrolls and innate spell-like abilities, but excludes the following: area effects that are not centered directly upon the priest, as well as area effects that are stationary, such as Cloudkill and Stinking Cloud. For those effects, and including effects that are not considered spells to be absorbed, the caster is granted a +4 saving throw bonus. As long as the spell is cast directly at the priest, it will be absorbed provided that there are spell levels remaining. For example, if there is only 1 level left and a 3rd-level spell is cast at the priest, the spell will be absorbed while canceling the shield.~
+
+@7551 = ~10% chance to cast Planar Shield~
+@7552 = ~10% chance to cast Shield of the Archons~
+@7553 = ~Planar Shield~
+@7554 = ~Protected by Planar Shield~
 
 @8060 = ~Curse
 (Conjuration/Summoning)
@@ -593,7 +604,7 @@ Level: 1
 Sphere: All
 Range: Visual range of the caster
 Duration: 6 rounds + 1 round/2 levels
-Casting Time: 9
+Casting Time: 3
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
@@ -808,7 +819,7 @@ Casting Time: 3
 Area of Effect: 12-ft. radius
 Saving Throw: None
 
-Symbol, Pain is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area of effect to be overwhelmed by pain, suffering a -4 penalty to their attack rolls, a -10% penalty to all damage inflicted, a -2 penalty to their Dexterity scores, and a -2 penalty to their Armor Class.~
+Symbol, Pain is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area of effect to be overwhelmed by pain, suffering a -4 penalty to their attack rolls, a -10% penalty to all damage inflicted, a -2 penalty to their Dexterity scores, and a -2 penalty to their Armor Class. There is no saving throw.~
 
 @8290 = ~Righteous Wrath of the Faithful
 (Enchantment/Charm)
@@ -938,7 +949,15 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
-When a priest casts the Barkskin spell upon a creature, its skin becomes as tough as bark, increasing its base Armor Class to 6, plus 1 for every 4 levels of the priest: Armor Class 5 at 4th level, Armor Class 4 at 8th, and so on. In addition, Saving Throws vs. all attack forms except magic gain a +1 bonus. This spell can be placed on the caster or on any other creature <PRO_HESHE> touches.~
+When a druid or shaman casts the Barkskin spell upon a creature, its skin becomes as tough as bark, setting its base Armor Class to 6, plus 1 for every 4 levels of the caster, up to a base Armor Class of 1. In addition, the following traits are gained
+
+– Saving throws vs. all but Spell gain a +1 bonus.
+– Takes 15% less damage from piercing and missile (25% for crushing).
+– Armor class vs. piercing and missile improves by 1 (2 for crushing).
+– Suffers a 15% weakness to all forms of fire.
+– First physical attack against the user is blocked as if they were protected by one layer of Stoneskin.
+
+This spell can be placed on the caster or on any other creature <PRO_HESHE> touches.~
 
 @8589 = ~Known only as the "Wild Man of the Wood," the man that carried this staff was a legendary figure near Trademeet until the day he died and returned to the soil. Those who saw him remember his dark, bark-like skin, a feature that would fade if the staff were set aside. He would harass irresponsible loggers and poachers, and old-timers tell of mercenaries chasing him with a dozen hunting dogs or more. The animals seemed ready to rip the poor druid to pieces, but he quickly turned them on their former masters. Rushing forward in hopes of ending his influence, the men-at-arms saw the final power of the staff, and as the vegetation trembled with the "Wild Man's" magical calling, there formed a green, rotting mix of life and death that shambled overtop of the terrified soldiers, killing them all.
 
@@ -978,3 +997,49 @@ Area of Effect: 4-ft. radius
 Saving Throw: None
 
 When cast, flames erupt from the target point, dealing 1d4 points of fire damage plus 1 point per level of the caster to all creatures within the spell's radius. Creatures will take damage every 2 seconds regardless of when they enter the area of effect. A target may only be affected by this spell three times per round at most.~
+
+@8650 = ~Holy Word
+(Conjuration/Summoning)
+
+Level: 7
+Sphere: Combat
+Range: 0
+Duration: Special
+Casting Time: 1
+Area of Effect: 30-ft. radius
+Saving Throw: Special
+
+Uttering a Holy Word spell creates magic of tremendous power. The priest acts as a bridge between <PRO_HISHER> deity and the Prime Material Plane, causing a sonic explosion centered on the priest and reaching up to a 30-ft. radius. It affects only enemy non-good creatures and undead of any alignment that are caught in the area of effect. The effects vary depending on the target's status and Hit Dice:
+
+Status — Effects of Holy Word
+Summoned — Banished or destroyed (save vs. Spell at -4 to avoid)
+Less than 4 HD, or with 40 Hit Points of less — Destroyed or killed instantly
+4 to 7 HD — Stunned, slowed, blinded, and deafened for 1 to 4 turns with a 90% chance of spell failure
+8 to 11 HD — Slowed, blinded, and deafened for 5 rounds with a 75% chance of spell failure
+12 HD and up — Blinded and deafened for 4 rounds with a 50% chance of spell failure
+
+This spell has a special effect on demiliches. Though normally immune, they will instead take damage equal to 5% of their total health, plus 2d6 magic damage.
+
+This spell is not affected by Magic Resistance, but side effects are negated for deafened targets, and on targets that have no hearing, except in the case of killing effects, and the banishment of summoned creatures. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that this spell may not be cast by any priest of evil alignment.~
+
+@8651 = ~Unholy Word
+(Conjuration/Summoning)
+
+Level: 7
+Sphere: Combat
+Range: 0
+Duration: Special
+Casting Time: 1
+Area of Effect: 30-ft. radius
+Saving Throw: Special
+
+Uttering an Unholy Word spell creates magic of tremendous power. The priest acts as a bridge between <PRO_HISHER> deity and the Prime Material Plane, causing a sonic explosion centered on the priest and reaching up to a 30-ft. radius. It affects only enemy creatures of any non-evil alignment that are caught in the area of effect. The effects vary depending on the target's status and Hit Dice:
+
+Status — Effects of Unholy Word
+Summoned — Banished or destroyed (save vs. Spell at -4 to avoid)
+Less than 4 HD, or with 40 Hit Points of less — Destroyed or killed instantly
+4 to 7 HD — Stunned, slowed, blinded, and deafened for 1 to 4 turns with a 90% chance of spell failure
+8 to 11 HD — Slowed, blinded, and deafened for 5 rounds with a 75% chance of spell failure
+12 HD and up — Blinded and deafened for 4 rounds with a 50% chance of spell failure
+
+This spell is not affected by Magic Resistance, but side effects are negated for deafened targets, and on targets that have no hearing, except in the case of killing effects, and the banishment of summoned creatures. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that priests of good alignment may not cast this spell.~

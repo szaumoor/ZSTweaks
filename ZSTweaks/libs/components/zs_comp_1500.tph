@@ -6,12 +6,20 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY_EXISTING "NPSW01.ITM" ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6261) id_ref_name=RESOLVE_STR_REF(@6260) ench=4 END
+  INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
+  COPY_EXISTING "npsw01.itm" ~override~
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6261) id_name=RESOLVE_STR_REF(@6260) ench=4 END
 
-    PATCH_IF zst_1450_allow_sswords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~) BEGIN
-      LPF PROBABILITY_BONUS INT_VAR ench=3 RET bonus=result END
-      LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 1 probability1=(bonus+base_ss_club) STR_VAR match_resource = ~ZSTWY2~ resource = ~ZSTWY3~  END
+    PATCH_IF zst_1450_allow_sswords AND 
+            (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR
+            (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND
+             zst_group_1450_finesse))
+    BEGIN
+
+      SET ench = 3
+      LPM PROBABILITY_BONUS
+      LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 probability1=(bonus+base_ss_club) STR_VAR match_resource=~ZSTWY2~ resource=~ZSTWY3~ END
+      
     END
 
     LPF ALTER_HEADER INT_VAR type=1 match_damage=2 match_to_hit=2 damage=3 to_hit=4 speed=0 END
@@ -22,18 +30,18 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY ~%MOD_FOLDER%/patches/item_upgrade/mazzy~ ~override~
     COPY_EXISTING "c2mazz01.itm" ~override~
-      LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@50070) END
+      LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50070) END
       LPF ALTER_HEADER INT_VAR type=1 match_to_hit=5 to_hit=6 END
       LPF ALTER_EFFECT INT_VAR match_savingthrow = 8 savebonus = "-2" END
-      LPF remove_haste_immunity END
+      LPM remove_haste_immunity
       LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6,rd=2;op=319,pwr=1,p2=11,res=Mazzy,spec=9104~ END
       LPF DELETE_EFFECT INT_VAR check_globals = 0 END
       LPF ADD_ON_HIT_EFF INT_VAR stype=8 sbonus="-2" STR_VAR effects = ~ip=0,op=177,p2=8,p1=%alignmen_mask_evil%,res=ZSTWMAZZ;op=126,p1=-4,dur=45;op=337,p1=-1,p2=16;op=337,p1=38,p2=240~ END
 
   END
 
-  COPY_EXISTING "NPBOW.ITM" ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6263) id_ref_name=RESOLVE_STR_REF(@6262) ench=3 END
+  COPY_EXISTING "npbow.itm" ~override~
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6263) id_name=RESOLVE_STR_REF(@6262) ench=3 END
     LPF ALTER_HEADER INT_VAR type = 4 damage = 1 match_to_hit = 2 to_hit = 3 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6,rd=2;op=319,pwr=1,p2=11,res=Mazzy,spec=9104~ END
 

@@ -1,0 +1,125 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_1664~) BEGIN
+  FAIL ~Script already included: zs_comp_1664~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_1664~ = 1
+END
+
+
+ACTION_IF zst_1664_crits_all < 0 OR zst_1664_crits_iouns < 0 OR zst_1664_crits_circlets < 0 OR zst_1664_crits_selected < 0 BEGIN
+    FAIL "Scroll usability component: Valid values for options are 0 (false, or disable) or 1 (true or enable)."
+END
+
+ACTION_IF (zst_1664_crits_all + zst_1664_crits_iouns + zst_1664_crits_circlets + zst_1664_crits_selected) > 1 BEGIN
+     FAIL "Scroll usability component: Incorrect options selected, please check the config file."
+END
+
+ACTION_IF zst_1664_crits_all OR zst_1664_crits_iouns BEGIN
+
+    COPY_EXISTING ~helm18.itm~ ~override~
+        READ_LONG 0x08 ioun_strref
+
+END
+
+ACTION_IF zst_1664_crits_all BEGIN
+
+    COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
+
+        READ_SHORT 0x1c cat
+        READ_LONG 0x08 strref
+        READ_ASCII 0x22 appearance (2)
+
+        PATCH_IF cat=7 AND (strref = %ioun_strref% OR ("%appearance%" STR_EQ "jb") ) BEGIN
+
+            LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+            PATCH_IF crit_flag BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+            END
+
+        END
+
+    BUT_ONLY
+
+END ELSE ACTION_IF zst_1664_crits_iouns BEGIN
+
+    COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
+
+        READ_SHORT 0x1c cat
+        READ_LONG 0x08 strref
+        READ_ASCII 0x22 appearance (2)
+
+        PATCH_IF cat=7 AND strref = %ioun_strref% BEGIN
+            
+            READ_LONG 0x18 flags
+            LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+            PATCH_IF crit_flag BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+            END
+
+        END
+
+    BUT_ONLY
+
+END ELSE ACTION_IF zst_1664_crits_circlets BEGIN
+
+    COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
+
+        READ_SHORT 0x1c cat
+        READ_ASCII 0x22 appearance (2)
+
+        PATCH_IF cat=7 AND "%appearance%" STR_EQ "jb" BEGIN
+
+            READ_LONG 0x18 flags
+            LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+            PATCH_IF crit_flag BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+            END
+
+        END
+
+    BUT_ONLY
+
+END ELSE ACTION_IF zst_1664_crits_selected BEGIN
+
+    COPY_EXISTING ~helm20.itm~ ~override~ // pale green ioun
+        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+        PATCH_IF crit_flag BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+        END
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~helm24.itm~ ~override~
+        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+        PATCH_IF crit_flag BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+        END
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~amsoul01.itm~ ~override~
+        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+        PATCH_IF crit_flag BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+        END
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~helm34.itm~ ~override~
+        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+        PATCH_IF crit_flag BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+        END
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~bdhelm16.ITM~ ~override~ // circlet of lost souls
+        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+        PATCH_IF crit_flag BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+        END
+    BUT_ONLY IF_EXISTS
+
+    COPY_EXISTING ~ohrhelm1.ITM~ ~override~
+        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
+        PATCH_IF crit_flag BEGIN
+            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+        END
+    BUT_ONLY IF_EXISTS
+
+END

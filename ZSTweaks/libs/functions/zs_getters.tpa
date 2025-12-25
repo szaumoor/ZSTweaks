@@ -1,82 +1,110 @@
-DEFINE_PATCH_FUNCTION ITM_APPEARANCE
+/*DEFINE_PATCH_FUNCTION FROM_HEADER_FIELD
+INT_VAR
+    match_type             = "-1"
+    match_type_flags       = "-1"
+    match_ability_location = "-1"
+    match_alt_dicesize     = "-1"
+    match_target           = "-1"
+    match_targets_num      = "-1"
+    match_range            = "-1"
+    match_launcher         = "-1"
+    match_alt_dicenum      = "-1"
+    match_speed            = "-1"
+    match_alt_damage       = "-1"
+    match_to_hit           = "-1"
+    match_dicesize         = "-1"
+    match_primary_school   = "-1"
+    match_dicenum          = "-1"
+    match_secondary_school = "-1"
+    match_damage           = "-1"
+    match_damage_type      = "-1"
+    match_num_effects      = "-1"
+    match_charges          = "-1"
+    match_when_drained     = "-1"
+    match_flags            = "-1"
+    match_projectile       = "-1"
+    match_overhead         = "-1"
+    match_backhand         = "-1"
+    match_thrust           = "-1"
+    match_is_arrow         = "-1"
+    match_is_bolt          = "-1"
+    match_is_bullet        = "-1"
+STR_VAR
+    get = ~*~
+    match_icon = ~~
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_ASCII 0x22 result (2)
-END
 
-DEFINE_PATCH_FUNCTION ITM_PRICE
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_LONG 0x34 result
-END
+    LPF CHECK_EXTENSION INT_VAR fail_on_mismatch=0 STR_VAR extension = "SPL" RET is_spl = result END
+    LPF CHECK_EXTENSION INT_VAR fail_on_mismatch=0 STR_VAR extension = "ITM" RET is_itm = result END
 
-DEFINE_PATCH_FUNCTION ITM_REF_UNAME
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_LONG 0x08 result
-END
+    PATCH_IF NOT (is_itm OR is_spl) BEGIN
+        PATCH_FAIL "This function only works for .ITM and .SPL files"
+    END
 
-DEFINE_PATCH_FUNCTION ITM_STR_NAME
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_ASCII 0x0c result
-END
+    SPRINT result "*"
 
-DEFINE_PATCH_FUNCTION ITM_STR_DESC
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_ASCII 0x54 result
-END
 
-DEFINE_PATCH_FUNCTION ITM_REF_DESC
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_LONG 0x54 result
-END
+    PATCH_IF is_itm BEGIN
+        SET abil_length = 0x38
+    END ELSE
+    PATCH_IF is_spl BEGIN
+        SET abil_length = 0x28
+    END
 
-DEFINE_PATCH_FUNCTION ITM_MIN_STR
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_SHORT 0x26 result
-END
+    READ_LONG   0x64 abil_off
+    READ_SHORT  0x68 abil_num
 
-DEFINE_PATCH_FUNCTION ITM_MIN_INT
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_BYTE 0x2a result
-END
+    FOR (index = 0 ; index < abil_num ; ++index) BEGIN
 
-DEFINE_PATCH_FUNCTION ITM_MIN_WIS
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_BYTE 0x2c result
-END
+      PATCH_IF ((header < 0) OR (header = index)) BEGIN
 
-DEFINE_PATCH_FUNCTION ITM_WEIGHT
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_LONG 0x4c result
-END
+        SET base = abil_off + (index * abil_length)
+        READ_BYTE  (base + 0x00) o_type
+        READ_BYTE  (base + 0x02) o_location
+        READ_ASCII (base + 0x04) o_icon (8) NULL
+        READ_BYTE  (base + 0x0c) o_target
+        READ_BYTE  (base + 0x0d) o_target_num
+        READ_SHORT (base + 0x0e) o_range
+        READ_SHORT (base + pro_off) o_projectile
+
+        PATCH_IF abil_length = 0x38 BEGIN
+          // item headers only
+          READ_BYTE  (base + 0x01) o_identify
+          READ_BYTE  (base + 0x03) o_alt_dicesize
+          READ_BYTE  (base + 0x10) o_launcher
+          READ_BYTE  (base + 0x11) o_alt_dicenumber
+          READ_BYTE  (base + 0x12) o_speed
+          READ_BYTE  (base + 0x13) o_alt_damage
+          READ_SHORT (base + 0x14) o_to_hit
+          READ_BYTE  (base + 0x16) o_dicesize
+          READ_BYTE  (base + 0x17) o_primary
+          READ_BYTE  (base + 0x18) o_dicenumber
+          READ_BYTE  (base + 0x19) o_secondary
+          READ_SHORT (base + 0x1a) o_damage
+          READ_SHORT (base + 0x1c) o_damage_type
+          READ_SHORT (base + 0x22) o_charges
+          READ_SHORT (base + 0x24) o_drained
+          READ_LONG  (base + 0x26) o_flags
+          READ_SHORT (base + 0x2c) o_overhand
+          READ_SHORT (base + 0x2e) o_backhand
+          READ_SHORT (base + 0x30) o_thrust
+          READ_SHORT (base + 0x32) o_arrow
+          READ_SHORT (base + 0x34) o_bolt
+          READ_SHORT (base + 0x36) o_bullet
+
+        END ELSE BEGIN
+
+          READ_SHORT (base + 0x10) o_level
+          READ_SHORT (base + 0x12) o_speed
+
+        END
+
+END */
+
+
+
 
 DEFINE_PATCH_FUNCTION WPN_DMG
 INT_VAR
@@ -84,10 +112,17 @@ INT_VAR
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
+    
     LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
-    SET offset = 0x72 + (header * 0x38)
-    READ_SSHORT (offset + 0x1a) result
+    PATCH_IF header != "-1" BEGIN
+        SET offset = 0x72 + (header * 0x38)
+        READ_SHORT (offset + 0x1a) result
+    END ELSE BEGIN
+        SET result = "-1"
+    END
 END
 
 DEFINE_PATCH_FUNCTION WPN_DICENUM
@@ -96,10 +131,17 @@ INT_VAR
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
+
     LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
+    PATCH_IF header != "-1" BEGIN
     SET offset = 0x72 + (header * 0x38)
-    READ_BYTE (offset + 0x19) result
+        READ_BYTE (offset + 0x19) result
+    END ELSE BEGIN
+        SET result = "-1"
+    END
 END
 
 DEFINE_PATCH_FUNCTION WPN_SPEED
@@ -108,9 +150,11 @@ INT_VAR
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
 
+    LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
     PATCH_IF header != "-1" BEGIN
         SET offset = 0x72 + (header * 0x38)
         READ_BYTE (offset + 0x12) result
@@ -125,9 +169,11 @@ INT_VAR
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
 
+    LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
     PATCH_IF header != "-1" BEGIN
         SET offset = 0x72 + (header * 0x38)
         READ_BYTE (offset + 0x16) result
@@ -142,9 +188,11 @@ INT_VAR
 RET
     result
 BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
 
+    LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
     PATCH_IF header != "-1" BEGIN
         SET offset = 0x72 + (header * 0x38)
         READ_BYTE (offset + 0x14) result
@@ -153,210 +201,3 @@ BEGIN
     END
 END
 
-DEFINE_PATCH_FUNCTION ITM_REF_UDESC
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_LONG 0x50 result
-END
-
-DEFINE_PATCH_FUNCTION ITM_STR_UDESC
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_ASCII 0x50 result
-END
-
-DEFINE_PATCH_FUNCTION ITM_FLAGS
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_LONG 0x18 result
-END
-
-DEFINE_PATCH_FUNCTION ITM_USABILITY0
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_LONG 0x1e result
-END
-
-DEFINE_PATCH_FUNCTION ITM_USABILITY1
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_BYTE 0x29 result
-END
-
-DEFINE_PATCH_FUNCTION ITM_USABILITY2
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_BYTE 0x2b result
-END
-
-DEFINE_PATCH_FUNCTION ITM_USABILITY3
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_BYTE 0x2d result
-END
-
-DEFINE_PATCH_FUNCTION ITM_USABILITY4
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_BYTE 0x2f result
-END
-
-DEFINE_PATCH_FUNCTION ITM_CAT
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_SHORT 0x1c result
-END
-
-DEFINE_PATCH_FUNCTION ITM_PROF
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_BYTE 0x31 result
-END
-
-DEFINE_PATCH_FUNCTION ITM_ENCH
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_LONG 0x60 result
-END
-
-DEFINE_PATCH_FUNCTION ITM_GLOBALS_NUM
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_SHORT 0x70 result
-END
-
-DEFINE_PATCH_FUNCTION ITM_ABILITIES_NUM
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_SHORT 0x68 result
-END
-
-DEFINE_PATCH_FUNCTION ITM_ABILITIES_OFFSET
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
-    READ_LONG 0x64 result
-END
-
-DEFINE_PATCH_FUNCTION SPL_ABILITIES_NUM
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
-    READ_SHORT 0x68 result
-END
-
-DEFINE_PATCH_FUNCTION SPL_REF_NAME
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
-    READ_LONG 0x08 result
-END
-
-DEFINE_PATCH_FUNCTION SPL_GLOBALS_NUM
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
-    READ_SHORT 0x70 result
-END
-
-DEFINE_PATCH_FUNCTION CRE_MAX_HEALTH
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
-    READ_SHORT 0x26 result
-END
-
-DEFINE_PATCH_FUNCTION CRE_CLASS
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
-    READ_BYTE 0x273 result
-END
-
-DEFINE_PATCH_FUNCTION CRE_FIRST_LEVEL
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
-    READ_BYTE 0x234 result
-END
-
-DEFINE_PATCH_FUNCTION CRE_SECOND_LEVEL
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
-    READ_BYTE 0x235 result
-END
-
-DEFINE_PATCH_FUNCTION CRE_THIRD_LEVEL
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
-    READ_BYTE 0x236 result
-END
-
-DEFINE_PATCH_FUNCTION CRE_THAC0
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
-    READ_BYTE 0x52 result
-END
-
-DEFINE_PATCH_FUNCTION CRE_RACE
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
-    READ_BYTE 0x272 result
-END
-
-DEFINE_PATCH_FUNCTION CRE_FLAGS
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
-    READ_LONG 0x10 result
-END
-
-DEFINE_PATCH_FUNCTION CRE_KIT
-RET
-    result
-BEGIN
-    LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
-    result = SHORT_AT 0x246 | (SHORT_AT 0x244) << 16
-END

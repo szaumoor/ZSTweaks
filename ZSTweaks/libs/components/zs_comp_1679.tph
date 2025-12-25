@@ -6,8 +6,8 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
 
-  COPY_EXISTING ~MISC73.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7740) END
+  COPY_EXISTING ~misc73.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7740) END
     LPF ALTER_HEADER INT_VAR charges=3 drained = 3 END
     LPF ALTER_EFFECT INT_VAR match_duration=18 duration=30 END
     LPF CLONE_EFFECT INT_VAR match_opcode=102 multi_match=1 parameter1=3 END

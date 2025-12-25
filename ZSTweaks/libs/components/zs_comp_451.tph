@@ -10,7 +10,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
         COPY_EXISTING ~SPWI615.SPL~ ~override~
                       ~SPDR601.SPL~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8330) END
+            LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8330) END
 
             PATCH_FOR_EACH dicenum IN 10 9 8 7 6 BEGIN // go header by header instead
                 LPF ALTER_EFFECT INT_VAR match_dicenumber = dicenum dicenumber = (dicenum + 2) END

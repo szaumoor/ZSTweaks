@@ -13,6 +13,19 @@ Requires:
 
 Weight: 10~
 
+@6960 = ~This glittering golden crown looks impressive, but its substance is base fool's gold and the "gems" set around it are bits of colored glass. Placing the crown on one's head allows the wearer to prepare extra spells but fills the head with false knowledge, making it hard to distinguish between truth and falsity.
+
+STATISTICS:
+
+Equipped abilities:
+– Can memorize 2 extra 3rd-level, 2 extra 4th-level, and 1 extra 5th-level wizard spell
+– Lore: -20
+– Wisdom: -2
+– Saves vs. Illusion: -2
+– Detect Illusion: -20%
+
+Weight: 1~
+
 @6030 = ~Nizzuf's Maze was a grand hedge maze created by the archmage Nizzuf for his amusement. The maze boasted hundreds of magical traps, most of them extremely lethal. Nizzuf posted a reward big enough to buy a kingdom to the man or woman brave enough to enter the maze and reach its core. Thousands tried and died. But one, Oteg Verm, completed the maze, thanks mainly to this ring which let him "see" where the traps were hidden.
 
 STATISTICS:
@@ -36,12 +49,12 @@ Mace of Royal Might +3: Target must save vs. Spell at +2 or be slowed for 2 roun
 
 Flaming Sword of Royal Might +3: Targets take +1d4 extra fire damage and must save vs. Spell at +2 or be stunned or put to sleep for 1 round
 
-Spear of Royal Might +3: Targets take +1 piercing damage and must save vs. Death to avoid bleeding for 10 piercing damage for a round, and there's a 10% chance of releasing an arcane blast that deals 2d4+2 magic damage
+Spear of Royal Might +3: Targets with blood take +1 piercing damage and must save vs. Death to avoid bleeding for 10 piercing damage for a round, and there's a 10% chance of releasing an arcane blast that deals 2d4+2 magic damage
 
 Weight: 5~
 
 @6041 = ~Mace of Royal Might +3~
-@6042 = ~Flaming Sword of Royal Might +3~
+@6042 = ~Sword of Royal Might +3~
 @6043 = ~Spear of Royal Might +3~
 @6044 = ~This mace has been created via the Rod of Royal Might. Use this item's special use to change it back into the Rod to choose another weapon.
 
@@ -60,7 +73,7 @@ Requires:
 
 Weight: 7~
 
-@6045 = ~This flaming sword has been created via the Rod of Lordly Might. Use this item's special use to change it back into the Rod to choose another weapon.
+@6045 = ~This flaming sword has been created via the Rod of Royal Might. Use this item's special use to change it back into the Rod to choose another weapon.
 
 STATISTICS:
 
@@ -78,12 +91,12 @@ Requires:
 
 Weight: 4~
 
-@6046 = ~This barbed spear has been created via the Rod of Lordly Might. Use this item's special use to change it back into the Rod to choose another weapon.
+@6046 = ~This barbed spear has been created via the Rod of Royal Might. Use this item's special use to change it back into the Rod to choose another weapon.
 
 STATISTICS:
 
 Combat abilities:
-– Target must save vs. Death or start bleeding for 10 points of piercing damage over 1 round
+– Target with blood must save vs. Death or start bleeding for 10 points of piercing damage over 1 round
 – Arcane Blast: 10% chance per hit to cause 2d4+2 magical damage
 
 THAC0: +3
@@ -108,9 +121,9 @@ Weight: 5~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +2 vs. slashing and piercing attacks
+– Armor Class: +2 vs. slashing and piercing
 – Saving throws vs. Death and Breath: +1
-– +50% Poison damage resistance
+– Poison damage resistance: +50%
 – +5% bonus to all thieving skills
 
 Weight: 4~
@@ -120,8 +133,8 @@ Weight: 4~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +3 vs. missile attacks
-– +15% Missile resistance
+– Armor Class: +3 vs. missile
+– Missile resistance: +15%
 – Saving throws vs. Wand and Spell: +1
 – Increases movement speed by a factor of 4
 
@@ -132,10 +145,10 @@ Weight: 4~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +1 vs. all attacks
+– Armor Class: +1
 – Saving throws vs. Petrification and Spell: +1
-– +20% Magic damage resistance
-– +10% Elemental damage resistance
+– Magic damage resistance: +20%
+– Elemental damage resistance: +10%
 
 Weight: 4~
 
@@ -408,8 +421,8 @@ Weight: 1~
 STATISTICS:
 
 Equipped abilities:
-– Wearer becomes specialized in darts automatically
-– Saves vs. Spell: +1
+– Wearer gains one proficiency point in darts
+– Save vs. Spell: +2
 
 Charge abilities:
 – Create thirty +5 darts once per day
@@ -484,11 +497,11 @@ Equipped abilities:
 – Protects against critical hits
 
 Charge abilities:
-– Domination once per day (Save vs. Spell at -2 negates)
+– Domination once per day (save vs. Spell at -2 negates)
   Duration: 8 rounds
 
 – Breathe Acid once per day
-  Damage: 8d6 acid (Save vs. Breath for half)
+  Damage: 8d6+12 acid (save vs. Breath for half)
   Target must save vs. Death at -4 or fall unconscious for 2 rounds
 
 – Aura of Despair once per day as per the Blackguard spell
@@ -502,7 +515,7 @@ STATISTICS:
 
 Equipped abilities:
 – Protects against critical hits
-– +25% resistance to acid, fire, cold, and electricity
+– +25% resistance to all elements
 – Saves vs. Breath: +2
 
 Weight: 2~
@@ -525,7 +538,7 @@ STATISTICS:
 Equipped abilities:
 – Protects against critical hits
 – Physical damage resistance: +7%
-– Magic, Elemental, and Poison damage resistance: +25%
+– Non-physical damage resistance: +25%
 – Charisma: +1
 
 Charge abilities:
@@ -613,6 +626,7 @@ Equipped abilities:
 – Constitution: +1
 – Armor Class: +2 (except crushing)
 – Physical resistance: +5% (except crushing)
+– Protects against critical hits
 
 Weight: 0~
 
@@ -682,7 +696,7 @@ STATISTICS:
 
 Equipped abilities:
 – THAC0: +3 with missile weapons
-– Damage: +1 with missile weapons (+2 for Archers, Thieves, and Bards)
+– Damage: +1 with missile weapons, +2 for rangers, thieves, and bards
 
 Weight: 2~
 
@@ -692,13 +706,11 @@ STATISTICS:
 
 Combat abilities:
 – Extra 1/2 attack per round
-
-THAC0 and Damage: +2
+– THAC0 and Damage: +2
 
 Weight: 1~
 
-@7300 = ~Helm of Infravision: The Eyes of Truth
-Being a scavenger of a sort, Babette Maelestrom had this helm created to aid her in her dungeon excursions. She would later attribute her gathered wealth solely to its power, though likely it was as much her keen eyes as anything.
+@7300 = ~Being a scavenger of a sort, Babette Maelestrom had this helm created to aid her in her dungeon excursions. She would later attribute her gathered wealth solely to its power, though likely it was as much her keen eyes as anything.
 
 STATISTICS:
 
@@ -834,17 +846,17 @@ Equipped abilities:
 
 Weight: 4~
 
-@7740 = ~Kazgaroth was an aspect of Bhaal who was a powerful, intelligent, shapeshifting evil beast opposed to the balance and the influence of the Earthmother on the Moonshae Isles. This horn is thought to be made from one its tusks. When blown upon, no sound issues from the horn. Instead, the user of the horn is encased in a globe of power for a short duration. The bubble greatly increases the user's magical defenses and saving throws, as well as partially deflecting incoming physical attacks. The horn draws from the life force of the user every time it is used.
+@7740 = ~Kazgaroth was an aspect of Bhaal who was a powerful, intelligent, shapeshifting evil beast opposed to the balance and the influence of the Earthmother on the Moonshae Isles. This horn is thought to be made from one its tusks. When blown upon, no sound issues from the horn. Instead, the user of the horn is encased in a globe of power for a short duration. The bubble greatly increases the user's magical defenses and saving throws, as well as partially deflecting incoming physical attacks. The horn draws attempts to draw from the life force of the user every time it is used.
 
 STATISTICS:
 
 Charge abilities:
 Three times per day, blow the horn to activate the powers:
   – Immunity to 1st, 2nd, and 3rd-level spells
-  – Armor Class: +2, +6 vs. missile attacks
-  – Saving Throws: +2
-  – Magic Resistance: +10%
-  – Physical Resistance: +8%
+  – Armor class: +2, +6 vs. missile attacks
+  – Saving throws: +2
+  – Magic resistance: +10%
+  – Physical damage resistance: +8%
   – Duration: 5 rounds
   – Kazgaroth's Offering: the user has a 50% chance of suffering a random penalty for 2 turns after use.
 
@@ -1296,7 +1308,7 @@ Unfortunately, he wore it only twice: Its richness and clearly magical nature at
 STATISTICS:
 
 Equipped abilities:
-– Permanent Chaos Shield on wearer
+– Wild Surges are 5% more likely to be positive
 – Armor Class: +1 bonus
 – Casting Speed: +1 bonus (wild mages only)
 
@@ -1525,3 +1537,47 @@ Equipped abilities:
 – Enemies around the caster suffer a -1 penalty to their saving throws vs. all schools of magic
 
 Weight: 3~
+
+@60030 = ~Though the Sun Soul philosophy's adherents avoid violence when possible, this cowl was designed to avoid it after it becomes impossible. When the command word is spoken, a series of small flaming hot globes appear in the wearer's hands that can be thrown unerringly towards a target.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire resistance: +20%
+
+Combat abilities:
+– Melee attacks have a 20% chance of causing 2d4 fire damage (Sun Soul monks and priests of Lathander only)
+
+Charge abilities:
+– Melf's Minute Meteors once per day cast as a level 20 wizard, once per day
+
+Weight: 3~
+
+@60040 = ~Although monks traditionally shun armor, these bracers of Grand Master Tzu-Zan are highly sought after by the practitioners of weaponless combat.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Hit Points: +15
+– Protects against critical hits
+
+Combat abilities:
+– Fist THAC0: +2
+– Fist Damage: +2
+– On a critical miss, the monk gains 1 extra attack per round, critical misses are no longer possible, and the next hit will become a critical hit. This lasts for 3 rounds and may not happen again during these 3 rounds.
+
+Weight: 1~
+
+@60050 = ~This shield was worn by the hero Balduran. It is part of a set of weapons and armor that was stolen from the museum in the city of Baldur's Gate.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3, +5 vs. beholders, kuo-toa, umber hulks, illithids, hook horrors, and driders
+– Immunity to all types of killing effects from beholder rays, including petrification and disintegration
+
+Requires:
+ 12 Strength
+
+Weight: 4~

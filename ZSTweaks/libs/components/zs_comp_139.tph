@@ -6,31 +6,138 @@ END
 
 OUTER_SET group_component = 1
 
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_140.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_145.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_160.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_161.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_170.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_180.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_210.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_220.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_370.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_380.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_390.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_400.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_405.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_407.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_410.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_430.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_440.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_441.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_444.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_445.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_446.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_447.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_448.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_449.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_451.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_452.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_499.tph~
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_500.tph~
+OUTER_SPRINT config_path "%MOD_FOLDER%/configurations/zstweaks_arcane_group_install.txt"
+INCLUDE ~%config_path%~
+COPY ~%config_path%~ ~override~
+
+ACTION_IF zst_group_140_finger_death BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_140.tph~ END
+END
+
+ACTION_IF zst_group_145_luck BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_145.tph~ END
+END
+
+ACTION_IF zst_group_160_no_backstab_bbod_goliro BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_160.tph~ END
+END
+
+ACTION_IF zst_group_170_wail_banshee BEGIN
+WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_170.tph~ END
+END
+
+ACTION_IF zst_group_180_meteor_swarm BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_180.tph~ END
+END
+
+ACTION_IF zst_group_210_horror_ench BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_210.tph~ END
+END
+
+ACTION_IF zst_group_220_ice_storm BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_220.tph~ END
+END
+
+ACTION_IF zst_group_370_ray_enfeeblement BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_370.tph~ END
+END
+
+ACTION_IF zst_group_380_contagion BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_380.tph~ END
+END
+
+ACTION_IF zst_group_390_acid_fog BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_390.tph~ END
+END
+
+ACTION_IF zst_group_400_energy_dragin BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_400.tph~ END
+END
+
+ACTION_IF zst_group_405_maze BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_405.tph~ END
+END
+
+ACTION_IF zst_group_407_familiar_imp BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_407.tph~ END
+END
+
+ACTION_IF zst_group_410_horrid_wilting BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_410.tph~ END
+END
+
+ACTION_IF zst_group_430_grease BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_430.tph~ END
+END
+
+ACTION_IF zst_group_440_comet BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_440.tph~ END
+END
+
+ACTION_IF zst_group_441_tenser BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_441.tph~ END
+END
+
+ACTION_IF zst_group_444_flesh_stone BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_444.tph~ END
+END
+
+ACTION_IF zst_group_445_bigby_spells BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_445.tph~ END
+END
+
+ACTION_IF zst_group_446_fireball_scaling BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_446.tph~ END
+END
+
+ACTION_IF zst_group_447_melfs_acid BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_447.tph~ END
+END
+
+ACTION_IF zst_group_448_decastave BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_448.tph~ END
+END
+
+ACTION_IF zst_group_449_freezing_sphere BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_449.tph~ END
+END
+
+ACTION_IF zst_group_451_chain_lightning BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_451.tph~ END
+END
+
+ACTION_IF zst_group_452_icelance BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_452.tph~ END
+END
+
+ACTION_IF zst_group_499_seven_eyes BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_499.tph~ END
+END
+
+ACTION_IF zst_group_500_control_undead BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_500.tph~ END
+END
+
+ACTION_IF zst_group_502_hold_undead BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_502.tph~ END
+END
+
+ACTION_IF zst_group_522_disintegrate BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_522.tph~ END
+END
+
+ACTION_IF zst_group_555_chromatic_orb BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_555.tph~ END
+END
+
+ACTION_IF zst_group_558_agannazar BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_558.tph~ END
+END
+
+ACTION_IF zst_group_561_web BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_561.tph~ END
+END
+
+ACTION_IF zst_group_562_imprisonment BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_562.tph~ END
+END

@@ -1,0 +1,75 @@
+DEFINE_PATCH_FUNCTION set_clab_2da_entries 
+INT_VAR
+ f_MinLevel = 1
+ f_MaxLevel = 50
+ f_Increment = 100 // leave as is to insert only once
+STR_VAR
+ f_Entry = "****"
+BEGIN
+  COUNT_2DA_COLS num_col
+  READ_2DA_ENTRIES_NOW r2en num_col
+  c = 0
+  newrow = r2en + 1
+  SPRINT newrow "zs#row%newrow%"
+  FOR (i=f_MinLevel;i < num_col AND i <= f_MaxLevel;i += f_Increment) BEGIN
+    SPRINT cell ""
+    FOR (j = 0;!"%cell%" STR_EQ "****" AND j < r2en;++j) BEGIN
+      READ_2DA_ENTRY_FORMER r2en j i cell
+      PATCH_IF "%cell%" STR_EQ "****" BEGIN
+        SET_2DA_ENTRY_LATER s2el j i "%f_Entry%"
+      END
+    END
+    PATCH_IF !"%cell%" STR_EQ "****" BEGIN
+      FOR (j = c;j < i - 1;++j) BEGIN //- 1 because that's where we'd want our entry
+        SPRINT newrow "%newrow% ****"
+        ++c
+      END
+      SPRINT newrow "%newrow% %f_Entry%"
+      ++c
+    END
+  END
+  SET_2DA_ENTRIES_NOW s2el num_col
+  PATCH_IF c > 0 BEGIN
+    FOR (i = c;i < num_col - 1;++i) BEGIN //- 1 because num_col includes the row name
+      SPRINT newrow "%newrow% ****"
+    END
+    INSERT_2DA_ROW r2en num_col "%newrow%"
+  END
+END
+
+DEFINE_PATCH_FUNCTION set_lu_2da_entries 
+STR_VAR 
+    f_Replace = "*"
+    f_Icon = "*"
+    f_Strref = "*"
+    f_MinLevel = 1 
+    f_MaxLevel = 99 
+    f_NumAllowed = 16 
+    f_Prereq = "*" 
+    f_ExcludedBy = "*" 
+    f_Alignment = "*"
+BEGIN
+  COUNT_2DA_COLS num_col
+  READ_2DA_ENTRIES_NOW r2en num_col
+  SPRINT cell ""
+  FOR (i = 0;!"%cell%" STRING_EQUAL_CASE "%f_Replace%" AND !"%cell%" STRING_EQUAL_CASE "*" AND i < r2en;++i) BEGIN
+    READ_2DA_ENTRY_FORMER r2en i 1 cell
+    PATCH_IF "%cell%" STRING_EQUAL_CASE "%f_Replace%" OR "%cell%" STRING_EQUAL_CASE "*" BEGIN
+      SET_2DA_ENTRY_LATER s2el i 1 "%f_Ability%"
+      SET_2DA_ENTRY_LATER s2el i 2 "%f_Icon%"
+      SET_2DA_ENTRY_LATER s2el i 3 "%f_Strref%"
+      SET_2DA_ENTRY_LATER s2el i 4 "%f_MinLevel%"
+      SET_2DA_ENTRY_LATER s2el i 5 "%f_MaxLevel%"
+      SET_2DA_ENTRY_LATER s2el i 6 "%f_NumAllowed%"
+      SET_2DA_ENTRY_LATER s2el i 7 "%f_Prereq%"
+      SET_2DA_ENTRY_LATER s2el i 8 "%f_ExcludedBy%"
+      SET_2DA_ENTRY_LATER s2el i 9 "%f_Alignment%"
+    END
+  END
+  SET_2DA_ENTRIES_NOW s2el num_col
+  PATCH_IF !"%cell%" STRING_EQUAL_CASE "*" AND !"%cell%" STRING_EQUAL_CASE "%f_Replace%" BEGIN //Quite regardless of the fact only so many HLAs fit in the GUI
+    newrow = r2en + 1
+    SPRINT newrow "fl#row%newrow% %f_Ability% %f_Icon% %f_Strref% %f_MinLevel% %f_MaxLevel% %f_NumAllowed% %f_Prereq% %f_ExcludedBy% %f_Alignment%"
+    INSERT_2DA_ROW r2en num_col "%newrow%"
+  END
+END

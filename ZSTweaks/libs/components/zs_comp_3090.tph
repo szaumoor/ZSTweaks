@@ -4,39 +4,62 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_3090~ = 1
 END
 
+DEFINE_PATCH_MACRO modify_shadow
+BEGIN
+    WRITE_SHORT 0x46 (THIS - 2)
+    WRITE_SHORT 0x48 (THIS - 2)
+    WRITE_SHORT 0x4c (THIS - 2)
+
+    PATCH_IF BYTE_AT(0x60) < 30 BEGIN
+        WRITE_BYTE 0x60 30
+    END
+
+    PATCH_IF BYTE_AT(0x61) < 30 BEGIN
+        WRITE_BYTE 0x61 30
+    END
+
+    PATCH_IF BYTE_AT(0x62) < 30 BEGIN
+        WRITE_BYTE 0x62 30
+    END
+
+    PATCH_IF BYTE_AT(0x63) < 30 BEGIN
+        WRITE_BYTE 0x63 30
+    END
+END
+
+ACTION_IF has_zs_shadowdancer_overhaul BEGIN
+    PRINT "Skipping shadow adjustments to shadow summons in ZS_ShadowdancerOverhaul."
+END
+
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     READ_BYTE 0x272 race
     PATCH_IF race = race_shadow BEGIN
-        PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP "ZS#SD.*" != 0 BEGIN // ignore shadowdancer kit creatures
-            WRITE_SHORT 0x46 (THIS - 2)
-            WRITE_SHORT 0x48 (THIS - 2)
-            WRITE_SHORT 0x4c (THIS - 2)
 
-            PATCH_IF BYTE_AT(0x60) < 30 BEGIN
-                WRITE_BYTE 0x60 30
+        PATCH_IF has_zs_shadowdancer_overhaul BEGIN
+            READ_ASCII 0x2cc script_name
+            PATCH_IF "%script_name%" STR_EQ "ZS_SDSHD" BEGIN
+                LPM modify_shadow
             END
 
-            PATCH_IF BYTE_AT(0x61) < 30 BEGIN
-                WRITE_BYTE 0x61 30
-            END
-
-            PATCH_IF BYTE_AT(0x62) < 30 BEGIN
-                WRITE_BYTE 0x62 30
-            END
-
-            PATCH_IF BYTE_AT(0x63) < 30 BEGIN
-                WRITE_BYTE 0x63 30
-            END
+        END ELSE BEGIN
+            LPM modify_shadow
         END
     END
 BUT_ONLY
 
-COPY_EXISTING ~SHADOWWP.ITM~ ~override~
+COPY_EXISTING ~shadowwp.itm~ ~override~
     LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 2400 END
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~SPIDWR1.ITM~  ~override~
-              ~TROLLSPI.ITM~ ~override~
+COPY_EXISTING ~spidwr1.itm~ ~override~
+    PATCH_IF is_iwdee BEGIN
+        LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 2400 END
+    END ELSE BEGIN
+        LPF ALTER_EFFECT INT_VAR match_duration = 300 duration = 2400 END
+    END
+BUT_ONLY IF_EXISTS
+
+COPY_EXISTING ~trollspi.itm~ ~override~
     LPF ALTER_EFFECT INT_VAR match_duration = 300 duration = 2400 END
 BUT_ONLY IF_EXISTS
 

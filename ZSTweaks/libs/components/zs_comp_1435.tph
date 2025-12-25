@@ -11,26 +11,27 @@ BUT_ONLY IF_EXISTS
 COPY_EXISTING "DART01.ITM" ~override~
     SPRINT str_sf @99998
     READ_STRREF 0x50 desc
-    LPF ITM_REF_UDESC RET basic_dart_udesc = result END
+    READ_LONG 0x50 basic_dart_udesc
     INNER_PATCH_SAVE desc ~%desc%~ BEGIN
         REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)2~ ~\10~ // speed modification
     END
     SAY_EVALUATED 0x50 ~%desc%~
-    LPF ITM_REF_UDESC RET changed_description_index = result END
+    READ_LONG 0x50 changed_description_index
 
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
-    LPF ITM_CAT RET wpn_cat = result END
-    LPF ITM_PROF RET wpn_prof = result END
-    LPF ITM_ABILITIES_NUM RET num_abilities = result END
-	PATCH_IF wpn_cat = 24 AND wpn_prof = 106 AND num_abilities > 0 BEGIN // darts
-        LPF ITM_REF_UDESC RET id_udesc = result END
+    READ_SHORT 0x1c cat
+    READ_BYTE 0x31 wpn_prof
+    READ_SHORT 0x68 num_abilities
+	PATCH_IF cat = 24 AND wpn_prof = 106 AND num_abilities > 0 BEGIN // darts
+
+        READ_LONG 0x50 id_udesc
         PATCH_IF (NOT "%SOURCE_RES%" STR_EQ "DART01") AND id_udesc = basic_dart_udesc BEGIN
-            LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
+            LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
         END
 
         LPF ALTER_HEADER INT_VAR match_type = 2 speed = 0 range=30 END
-        LPF ITM_REF_DESC RET desc_index = result END
-        LPF ITM_REF_UDESC RET udesc_index = result END
+        READ_LONG 0x54 desc_index
+        READ_LONG 0x50 udesc_index
 
         PATCH_IF desc_index > "-1" BEGIN
             READ_STRREF 0x54 desc
@@ -47,5 +48,6 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             END
             SAY_EVALUATED 0x50 ~%desc%~
         END
+        
     END
 BUT_ONLY

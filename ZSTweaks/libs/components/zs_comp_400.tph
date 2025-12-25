@@ -9,8 +9,8 @@ OUTER_SET new_description_priest = RESOLVE_STR_REF(@5251)
 
 ACTION_IF is_iwdee BEGIN
 
-    COPY_EXISTING ~SPPR739.SPL~ ~override~
-        LPF ALTER_SPELL INT_VAR ref_desc=new_description_priest END
+    COPY_EXISTING ~sppr739.spl~ ~override~
+        LPF ALTER_SPELL INT_VAR desc=new_description_priest END
         LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=216 parameter1=6 header=0 END
         LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
 
@@ -19,26 +19,26 @@ END ELSE ACTION_IF has_iwd_spells_divine BEGIN
    ACTION_IF spell_cleric_energy_drain > 0 BEGIN
         LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_ENERGY_DRAIN" RET spell_res END
         COPY_EXISTING ~%spell_res%.spl~ ~override~
-            LPF ALTER_SPELL INT_VAR ref_desc = new_description_priest END
+            LPF ALTER_SPELL INT_VAR desc = new_description_priest END
             LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=216 parameter1=6 header=0 END
             LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
     END
 
 END
 
-COPY_EXISTING ~SPWI914.SPL~ ~override~
-              ~SPWISH19.SPL~ ~override~
+COPY_EXISTING ~spwi914.spl~ ~override~
+              ~spwish19.spl~ ~override~
 
     SET undead_or_golem = 55
-    LPF ALTER_SPELL INT_VAR ref_desc=new_description END
+    LPF ALTER_SPELL INT_VAR desc=new_description END
     LPF ALTER_EFFECT INT_VAR header_type=1 check_globals=0 match_opcode=216 parameter1=6 header=0 END
 
-    PATCH_IF has_iwdification_divine BEGIN
-        LPF ADD_SPL_EFF_TGT INT_VAR tmg=0 rd=0 pwr=9 ip=0 p2=104 STR_VAR effects = ~op=324,p1=%race_salamander%;op=324,p1=%race_darkplanetar%;op=324,p1=%race_planetar%;op=324,p1=%race_antisolar%;op=324,p1=%race_solar%;op=324,p1=%race_rakshasa%;op=324,p1=%race_genie%;op=324,p1=%race_elemental%;op=324,p1=%race_mephit%;op=324,p1=%race_demonic%;op=324,p2=%undead_or_golem%~ END
+    PATCH_IF NOT has_iwdification_divine BEGIN
+        LPF ADD_SPL_TGTEFF INT_VAR tmg=0 rd=0 pwr=9 ip=0 p2=104 STR_VAR res="%MOD_FOLDER%" effects = ~op=324,p1=%race_salamander%;op=324,p1=%race_darkplanetar%;op=324,p1=%race_planetar%;op=324,p1=%race_antisolar%;op=324,p1=%race_solar%;op=324,p1=%race_rakshasa%;op=324,p1=%race_genie%;op=324,p1=%race_elemental%;op=324,p1=%race_mephit%;op=324,p1=%race_demonic%;op=324,p2=%undead_or_golem%~ END
     END
 
 BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~SCRL9W.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=new_description END
+    LPF ALTER_ITEM INT_VAR id_desc=new_description END
 BUT_ONLY IF_EXISTS

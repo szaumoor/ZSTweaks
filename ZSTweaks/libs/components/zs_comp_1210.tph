@@ -7,17 +7,17 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/equalizer~ ~override~
-  COPY_EXISTING ~SW1H54.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6060) ench=5 END
+  COPY_EXISTING ~sw1h54.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6060) ench=5 END
     LPF ALTER_HEADER INT_VAR damage = 3 speed = 0 to_hit = 3 END
     LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 177 END
-    LPF ADD_ON_HIT_EFF INT_VAR p2=8 STR_VAR res=~ZSTWEQ10~ effects=~op=177,p1=%alignmen_lawful_evil%;op=177,p1=%alignmen_lawful_good%;op=177,p1=%alignmen_chaotic_evil%;op=177,p1=%alignmen_chaotic_good%~ END
-    LPF ADD_ON_HIT_EFF INT_VAR p2=8 STR_VAR res=~ZSTWEQ11~ effects = ~op=177,p1=%alignmen_neutral_good%;op=177,p1=%alignmen_neutral_evil%~ END
-    LPF ADD_ON_HIT_EFF INT_VAR p2=8 STR_VAR res=~ZSTWEQ12~ effects=~op=177,p1=%alignmen_lawful_neutral%;op=177,p1=%alignmen_chaotic_neutral%~ END
+    LPF ADD_ON_HIT_EFF INT_VAR p2=8 STR_VAR res=~zstweq10~ effects=~op=177,p1=%alignmen_lawful_evil%;op=177,p1=%alignmen_lawful_good%;op=177,p1=%alignmen_chaotic_evil%;op=177,p1=%alignmen_chaotic_good%~ END
+    LPF ADD_ON_HIT_EFF INT_VAR p2=8 STR_VAR res=~zstweq11~ effects = ~op=177,p1=%alignmen_neutral_good%;op=177,p1=%alignmen_neutral_evil%~ END
+    LPF ADD_ON_HIT_EFF INT_VAR p2=8 STR_VAR res=~zstweq12~ effects=~op=177,p1=%alignmen_lawful_neutral%;op=177,p1=%alignmen_chaotic_neutral%~ END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=0,p1=1;op=166,p1=5~ END
-    LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=alignmen_neutral STR_VAR effects=~op=177,res=ZSTWEQ04;op=177,res=ZSTWEQ05;op=177,res=ZSTWEQ07;op=177,res=ZSTWEQ09~ END
-    LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=alignmen_lawful_neutral STR_VAR effects=~op=177,res=ZSTWEQ06;op=177,res=ZSTWEQ08~ END
-    LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=alignmen_chaotic_neutral STR_VAR effects=~op=177,res=ZSTWEQ06;op=177,res=ZSTWEQ08~ END
-    LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=alignmen_mask_neutral STR_VAR effects=~op=177,res=ZSTWEQ13~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=alignmen_neutral STR_VAR effects=~op=177,res=zstweq04;op=177,res=zstweq05;op=177,res=zstweq07;op=177,res=zstweq09~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=alignmen_lawful_neutral STR_VAR effects=~op=177,res=zstweq06;op=177,res=zstweq08~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=alignmen_chaotic_neutral STR_VAR effects=~op=177,res=zstweq06;op=177,res=zstweq08~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p2=8 p1=alignmen_mask_neutral STR_VAR effects=~op=177,res=zstweq13~ END
 
 END

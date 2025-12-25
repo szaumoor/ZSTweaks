@@ -5,13 +5,13 @@ END
 APPEND BOTSMITH
   IF ~~ THEN BEGIN ZSTWKachiko_PartyHasAtLeastOneItem SAY ~Ooh? What's this? Kachiko's whispery sword? Spooky!~
     IF ~!PartyHasItem("SCRL2H")
-        !PartyHasItem("SCRL9V")~  GOTO ZSTWKachiko_PartyDoesNotHaveAllParts
+        !PartyHasItem("SCRL9V")~ GOTO ZSTWKachiko_PartyDoesNotHaveAllParts
 
     IF ~!PartyHasItem("SCRL2H")
-         PartyHasItem("SCRL9V")~  GOTO ZSTWKachiko_PartyHasWailOfBansheeOnly
+         PartyHasItem("SCRL9V")~ GOTO ZSTWKachiko_PartyHasWailOfBansheeOnly
 
     IF ~PartyHasItem("SCRL2H")
-        !PartyHasItem("SCRL9V")~  GOTO ZSTWKachiko_PartyHasShadowDoorOnly
+        !PartyHasItem("SCRL9V")~ GOTO ZSTWKachiko_PartyHasShadowDoorOnly
 
     IF ~PartyHasItem("SCRL2H")
         PartyHasItem("SCRL9V")~ GOTO ZSTWKachiko_PartyHasAllParts

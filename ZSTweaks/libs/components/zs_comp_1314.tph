@@ -6,15 +6,15 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY_EXISTING ~WAMACE.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6351) id_ref_name=RESOLVE_STR_REF(@6350) ench=3 END
+  COPY_EXISTING ~wamace.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6351) id_name=RESOLVE_STR_REF(@6350) ench=3 END
     LPF ALTER_HEADER INT_VAR match_damage = 3 match_to_hit = 2 match_speed = 5 to_hit = 3 speed = 4 damage = 4 END
 
-  COPY_EXISTING ~DAMACEA.EFF~ ~override~
+  COPY_EXISTING ~damacea.eff~ ~override~
     LPF ALTER_EFF_FILE INT_VAR special = 1024 END
     WRITE_LONG 0x1c 6
 
-  COPY_EXISTING ~DAMACEB.EFF~ ~override~
+  COPY_EXISTING ~damaceb.eff~ ~override~
     WRITE_LONG 0x14 1
     WRITE_LONG 0x24 2
     WRITE_LONG 0x3c 0

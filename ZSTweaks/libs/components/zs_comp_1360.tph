@@ -5,16 +5,16 @@ END ELSE BEGIN
 END
 
 COPY_EXISTING ~xbow04.itm~ ~override~
-  LPF ITM_REF_UNAME RET light_xbow_strref = result END
+  READ_LONG 0x08 light_xbow_strref
 
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
-  LPF ITM_CAT RET wpn_cat = result END
-  LPF ITM_PROF RET wpn_prof = result END
-  LPF ITM_MIN_STR RET min_str = result END
-  LPF ITM_REF_UNAME RET name_strref = result END
+  READ_SHORT 0x1c cat
+  READ_BYTE 0x31 prof
+  READ_SHORT 0x26 min_str
+  READ_LONG 0x08 name_strref 
 
-  PATCH_IF wpn_cat = 27 AND wpn_prof = 103 AND (name_strref = %light_xbow_strref% OR min_str <= 8) BEGIN 
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6,p2=0~ END
+  PATCH_IF cat = 27 AND prof = 103 AND (name_strref = %light_xbow_strref% OR min_str <= 8) BEGIN
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~ip=0,op=1,p1=6,p2=0~ END
   END
 
 BUT_ONLY

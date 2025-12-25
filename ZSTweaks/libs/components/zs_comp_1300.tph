@@ -10,11 +10,15 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING ~ZSTWSWSA.SPL~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=139 match_savebonus=0 match_savingthrow=0 parameter1=RESOLVE_STR_REF(@7682) END
 
+    INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
     COPY_EXISTING ~SW2H15.ITM~ ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@7680) price=10000 END
+        LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@7680) price=10000 END
 
-        SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
-        PATCH_IF NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ AND NOT general_tweaks_installed  BEGIN
+        SET general_comp_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
+        SET vorpal_comp_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ OR
+                                   (general_comp_installed AND zst_group_1541_vorpal_tweak)
+                                   
+        PATCH_IF NOT vorpal_comp_installed  BEGIN
             LPF ALTER_EFFECT_EX INT_VAR probability1=24 STR_VAR match_probability1_ex = "(o_probability1 < 100)" END
         END
 
@@ -22,7 +26,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ADD_EQUIPPED_EFF INT_VAR p1=race_mind_flayer p2=4 spec=2 STR_VAR effects= ~op=178;op=179;op=344,spec=5~ END
         LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=341,p2=1,spec=1,res=ZSTWSWSA;op=206,res=SPIN975;op=206,res=SPIN974;op=206,res=SPIN910;op=206,res=SPIN959;op=206,res=SPIN834;op=206,res=SPIN775~ END
 
-        PATCH_IF zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR general_tweaks_installed) BEGIN
+        PATCH_IF zst_1150_dice_twohanded_swords AND
+                (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
+                (general_comp_installed AND zst_group_1150_weapon_dice)) 
+        BEGIN
 
             SPRINT new_description @7681
             SPRINT str @99999
@@ -36,7 +43,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             SAY_EVALUATED 0x54 ~%new_description%~
 
         END ELSE BEGIN
-            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7681) END
+            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7681) END
         END
 
 END

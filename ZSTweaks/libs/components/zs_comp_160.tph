@@ -7,14 +7,25 @@ END
 ACTION_IF NOT is_iwdee BEGIN
 
     ACTION_IF zst_160_bbod BEGIN
-        COPY_EXISTING ~BLAKBLAD.ITM~ ~override~
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=0,p2=1~ END
+        OUTER_SPRINT base_effect ~op=263,p1=0,p2=1~
+        ACTION_IF zst_160_bbod_reduction_only BEGIN
+            OUTER_SPRINT base_effect ~op=263,p1=%zst_160_bbod_reduction_only%~
+        END
+
+        COPY_EXISTING ~blakblad.itm~ ~override~
+            LPF DELETE_EFFECT INT_VAR match_opcode = 263 match_parameter1 = zst_1120_backstab_penalty_lswords END
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~%base_effect%~ END
         BUT_ONLY IF_EXISTS
     END
 
     ACTION_IF zst_160_goliro BEGIN
-        COPY_EXISTING ~CDGOLIRO.ITM~ ~override~
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=0,p2=1~ END
+        OUTER_SPRINT base_effect ~op=263,p1=0,p2=1~
+        ACTION_IF zst_160_goliro_reduction_only BEGIN
+            OUTER_SPRINT base_effect ~op=263,p1=%zst_160_goliro_reduction_only%~
+        END
+
+        COPY_EXISTING ~cdgoliro.itm~ ~override~
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~%base_effect%~ END
         BUT_ONLY IF_EXISTS
     END
     

@@ -1,0 +1,45 @@
+IF
+  Range(NearestEnemyOf(Myself),6)
+  Global("rp_idle","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobal("rp_idle","LOCALS",0)
+    SetGlobalTimer("rpquake","LOCALS",999)
+    Continue()
+END
+
+IF
+  Range(NearestEnemyOf(Myself),6)
+  Global("zsidle","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobal("zsidle","LOCALS",0)
+    Continue()
+END
+
+IF
+  !Range(NearestEnemyOf(Myself),6)
+  Global("zsidle","LOCALS",0)
+  !GlobalTimerNotExpired("zsquake","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobal("zsidle","LOCALS",1)
+    SetGlobalTimer("zsquake","LOCALS",12)
+END
+
+IF
+  GlobalTimerExpired("zsquake","LOCALS")
+  Global("zsidle","LOCALS",1)
+  !Range(NearestEnemyOf(Myself),6)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("zsquake","LOCALS",12)
+    ForceSpellRES("zstgolqk", Myself)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),6)
+END

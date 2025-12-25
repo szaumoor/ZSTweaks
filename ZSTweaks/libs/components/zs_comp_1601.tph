@@ -5,7 +5,7 @@ END ELSE BEGIN
 END
 
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-  LPF ITM_CAT RET category_itm=result END
+  READ_SHORT 0x1c category_itm
   PATCH_IF category_itm = 9 OR category_itm = 13 BEGIN // if it's a potion or food item
 
     PATCH_IF NOT "%SOURCE_RES%" STR_EQ "GBERRY" BEGIN
@@ -16,10 +16,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
 
 BUT_ONLY
 
-ACTION_IF NOT (zst_1534_potions_cannot_self_stack AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "240" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "99")) BEGIN
-
-    COPY_EXISTING ~GBERRY.ITM~ ~override~
-      LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
-    BUT_ONLY IF_EXISTS
-
-END
+COPY_EXISTING ~GBERRY.ITM~ ~override~
+  LPF DELETE_EFFECT INT_VAR match_opcode = 321 STR_VAR match_resource = "GBERRY" END
+  LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
+BUT_ONLY IF_EXISTS

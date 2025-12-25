@@ -46,6 +46,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
     OUTER_SET has_iwd_spells_divine     = has_iwdification_divine OR has_scs_iwd_spells_divine OR has_tof_iwd_spells_divine
 
     ACTION_IF has_iwd_spells_divine BEGIN
+
         PRINT "IWD spells for divine classes detected."
         ACTION_IF has_scs_iwd_spells_divine BEGIN
             PRINT "IWD spells for divine classes installed through SCS."
@@ -54,6 +55,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
         END ELSE ACTION_IF has_iwd_spells_divine BEGIN
             PRINT "IWD spells for divine classes installed through IWDification."
         END
+
     END
 
     OUTER_SET has_iwdification_arcane   = MOD_IS_INSTALLED "setup-iwdification.tp2" "30"
@@ -62,6 +64,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
     OUTER_SET has_iwd_spells_arcane     = has_iwdification_arcane OR has_scs_iwd_spells_arcane OR has_tof_iwd_spells_arcane
 
     ACTION_IF has_iwd_spells_arcane BEGIN
+
         PRINT "IWD spells for arcane classes detected."
         ACTION_IF has_scs_iwd_spells_arcane BEGIN
             PRINT "IWD spells for arcane classes installed through SCS."
@@ -70,12 +73,15 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
         END ELSE ACTION_IF has_iwd_spells_arcane BEGIN
             PRINT "IWD spells for arcane classes installed through IWDification."
         END
+
     END
 
     OUTER_SET has_zs_shadowdancer_overhaul = MOD_IS_INSTALLED "ZS_ShadowdancerOverhaul.tp2" "100"
     ACTION_IF has_zs_shadowdancer_overhaul BEGIN
+
         PRINT "ZS_ShadowdancerOverhaul detected."
         OUTER_SET kit_zs_shadowdancer = IDS_OF_SYMBOL(kit ZS_SHADOWDANCER)
+
     END
 
     OUTER_SET has_project_javelin = MOD_IS_INSTALLED "cd_project_javelin.tp2" "1"
@@ -91,6 +97,33 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
     OUTER_SET has_scs_spell_nerf = MOD_IS_INSTALLED "setup-stratagems.tp2" "2060"
     ACTION_IF has_scs_spell_nerf BEGIN
         PRINT "SCS spell nerf component detected."
+    END
+
+    OUTER_SET has_zs_item_pack_kukris = FILE_EXISTS_IN_GAME ~ZSIPKUK0.ITM~
+    ACTION_IF has_zs_item_pack_kukris BEGIN
+
+        PRINT "ZS_ItemPack pack generic kukris detected."
+        COPY_EXISTING ~ZSIPKUK0.ITM~ ~override~
+            READ_LONG 0x08 zs_kukri_general_string_index
+
+    END
+
+    OUTER_SET has_zs_item_pack_estocs = FILE_EXISTS_IN_GAME ~ZSIPEST0.ITM~
+    ACTION_IF has_zs_item_pack_estocs BEGIN
+
+        PRINT "ZS_ItemPack pack generic estocs detected."
+        COPY_EXISTING ~ZSIPEST0.ITM~ ~override~
+            READ_LONG 0x08 zs_estoc_general_string_index
+
+    END
+
+    OUTER_SET has_zs_item_pack_rapiers = FILE_EXISTS_IN_GAME ~ZSIPRAP0.ITM~
+    ACTION_IF has_zs_item_pack_rapiers BEGIN
+
+        PRINT "ZS_ItemPack pack generic rapiers detected."
+        COPY_EXISTING ~ZSIPRAP0.ITM~ ~override~
+            READ_LONG 0x08 zs_rapier_general_string_index
+            
     END
 
     OUTER_SET zs_preinstall_check = 1

@@ -7,23 +7,23 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY ~%MOD_FOLDER%/items/grandmaster_armor~ ~override~
-    COPY_EXISTING ~ZSTWGM06.SPL~ ~override~
+    COPY_EXISTING ~zstwgm06.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@8031) END
 
-    COPY_EXISTING ~ZSTWGM07.SPL~ ~override~
+    COPY_EXISTING ~zstwgm07.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@8032) END
 
-    COPY_EXISTING ~ZSTWGM09.SPL~ ~override~
+    COPY_EXISTING ~zstwgm09.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@8033) END
 
-    COPY_EXISTING ~ZSTWGM10.SPL~ ~override~
+    COPY_EXISTING ~zstwgm10.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@8034) END
 
-    COPY_EXISTING "LEAT24.ITM" ~override~
-        LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@8030) END
+    COPY_EXISTING "leat24.itm" ~override~
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8030) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 126 opcode = 176 END
-        LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=177,p1=%class_thief%,res=ZSTWGM01;op=177,p1=%class_thief%,res=ZSTWGM00~ END
-        LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_bounty_hunter%,res=ZSTWGM03;op=177,p1=%kit_stalker%,res=ZSTWGM03;op=177,p1=%kit_shadowdancer%,res=ZSTWGM04;op=177,p1=%kit_assassin%,res=ZSTWGM05~ END
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=177,p1=%class_thief%,res=zstwgm01;op=177,p1=%class_thief%,res=zstwgm00~ END
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_bounty_hunter%,res=zstwgm03;op=177,p1=%kit_stalker%,res=zstwgm03;op=177,p1=%kit_shadowdancer%,res=zstwgm04;op=177,p1=%kit_assassin%,res=zstwgm05~ END
 
         PATCH_IF has_zs_shadowdancer_overhaul BEGIN
             LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_zs_shadowdancer%,res=ZSTWGM04~ END
@@ -33,10 +33,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         SET lose_expose = RESOLVE_STR_REF(@8036)
         LPF RGB INT_VAR red=242 green=39 blue = 12 RET color = result END
         SET parameter2 = 255 + (30 << 16)
-        LPF ADD_ITEM_HEADER INT_VAR type=3 required_id=1 location=3 range=1000 target=1 target_count=1 charges=1 depletion=3 flags=2**11 projectile=54 STR_VAR icon = ~ZSTWGMBM~ END
-        LPF ADD_ON_HIT_EFF INT_VAR t=3 dur=24 STR_VAR effects=~op=88,p1=-10;op=86,p1=-10;op=0,p2=4,p1=-4;op=0,p2=8,p1=-4;op=292;op=139,p1=%apply_expose%,dur=0;op=139,p1=%lose_expose%,dur=24,tmg=3;op=50,p1=%color%,p2=%parameter2%;op=174,dur=0,res=EFF_M05~ END
+        LPF ADD_ITEM_HEADER INT_VAR type=3 required_id=1 location=3 range=1000 target=1 target_count=1 charges=1 depletion=3 flags=2**11 projectile=54 STR_VAR icon = ~zstwgmbm~ END
+        LPF ADD_ON_HIT_EFF INT_VAR t=3 dur=24 STR_VAR effects=~op=88,p1=-10;op=86,p1=-10;op=0,p2=4,p1=-4;op=0,p2=8,p1=-4;op=292;op=139,p1=%apply_expose%,dur=0;op=139,p1=%lose_expose%,dur=24,tmg=3;op=50,p1=%color%,p2=%parameter2%;op=174,dur=0,res=eff_m05~ END
 
-    COPY_EXISTING ~SPPR403.SPL~ ~override~
+    COPY_EXISTING ~sppr403.spl~ ~override~
         LPF DELETE_EFFECT INT_VAR match_opcode=126 END
 
 END

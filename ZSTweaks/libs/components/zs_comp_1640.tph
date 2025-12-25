@@ -7,10 +7,12 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     WITH_SCOPE BEGIN
+        INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
+        OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND 
+                                             (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR 
+                                             (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice))
 
-        OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103")
-
-        COPY_EXISTING_REGEXP "^ohdsw2h[a-d]\.ITM$" ~override~
+        COPY_EXISTING_REGEXP "^ohdsw2h[a-d]\.itm$" ~override~
             LPF ALTER_ITEM INT_VAR ench=5 END
 
             PATCH_IF "%SOURCE_RES%" STR_EQ "ohdsw2ha" BEGIN
@@ -23,7 +25,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                     END
                     SAY_EVALUATED 0x54 ~%new_description%~
                 END ELSE BEGIN
-                    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6660) END
+                    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6660) END
                 END
             END
 
@@ -37,7 +39,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                     END
                     SAY_EVALUATED 0x54 ~%new_description%~
                 END ELSE BEGIN
-                    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6670) END
+                    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6670) END
                 END
             END
 
@@ -51,7 +53,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                     END
                     SAY_EVALUATED 0x54 ~%new_description%~
                 END ELSE BEGIN
-                    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6680) END
+                    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6680) END
                 END
             END
 
@@ -65,21 +67,21 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                     END
                     SAY_EVALUATED 0x54 ~%new_description%~
                 END ELSE BEGIN
-                    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6690) END
+                    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6690) END
                 END
             END
 
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
         BUT_ONLY
 
-        COPY_EXISTING_REGEXP "^ohdsw2h[bc]\.ITM$" ~override~
+        COPY_EXISTING_REGEXP "^ohdsw2h[bc]\.itm$" ~override~
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 1 END
         BUT_ONLY
 
-        COPY_EXISTING "ohdsw2hd.ITM" ~override~
+        COPY_EXISTING "ohdsw2hd.itm" ~override~
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 2 END
 
-        COPY_EXISTING "HOLYAVEN.EFF" ~override~
+        COPY_EXISTING "holyaven.eff" ~override~
             LPF ALTER_EFF_FILE INT_VAR special = 1024 END
     END
 

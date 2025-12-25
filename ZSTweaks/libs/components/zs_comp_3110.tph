@@ -1,0 +1,23 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_3110~) BEGIN
+  FAIL ~Script already included: zs_comp_3110~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_3110~ = 1
+END
+
+COPY ~%MOD_FOLDER%/creatures/yuanti~ ~override~
+OUTER_SPRINT melee_effect "zsipyua2"
+OUTER_SET movement_boost = 4
+
+COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
+    READ_BYTE 0x272 race
+    PATCH_IF race = race_yuanti AND
+         NOT "%SOURCE_RES%" STR_EQ "zsipyua1" // formless serpent from my item pack
+    BEGIN
+        WRITE_SHORT 0x4c (THIS - 2)
+        WRITE_SHORT 0x4e (THIS - 1)
+
+        LPF ADD_CRE_PASSIVE INT_VAR op=173 p1=75 END
+        LPM ADD_CRE_MELEE_EFFECT 
+        LPM ADD_CRE_MOVEMENT_BOOST 
+    END
+BUT_ONLY

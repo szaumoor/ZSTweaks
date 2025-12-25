@@ -38,6 +38,7 @@ Weight: 1~
 STATISTICS:
 
 Hit Points: +10% (base only)
+Damage: +1
 THAC0: +2 bonus
 Immunity to morale failure
 Duration: 2 hours
@@ -157,7 +158,7 @@ Requires:
 
 Weight: 1~
 
-@8580 = ~A Protection From Undead scroll invokes a 3-ft. radius circle of protection around the target. It protects the person within from physical attacks as well as from effects often caused by undead such as paralysis, domination, and level drain. It will protect the user for 12 hours.
+@8580 = ~A Protection From Undead scroll invokes an invisibile 3-ft. radius circle of protection around the target. It protects the target within from physical attacks as well as from effects often caused by undead such as paralysis, domination, and level drain. It will protect the user for 12 hours.
 
 STATISTICS:
 
@@ -243,8 +244,7 @@ No skill (0 slots): When wielding two weapons without proficiency, the character
 
 Proficient (1 slot): The penalties are reduced: off-hand damage penalty becomes -1, Armor Class penalty becomes -1, and THAC0 penalties are reduced to -2 with the main weapon and -4 with the off-hand.
 
-Specialized (2 slots): All penalties to Armor Class, and main weapon combat rolls are removed.
+Specialized (2 slots): All penalties to Armor Class and damage rolls with the main hand are removed. THAC0 penalties become -1 with the main hand and -3 with the off-hand.
 
-Master (3 slots): The off-hand damage penalty is removed, THAC0 penalty with the off-hand is reduced to -2, and the wielder gains a +1 bonus to Armor Class.~
-
+Master (3 slots): The off-hand damage penalty is removed, THAC0 penalty with the main hand is removed, and in the off-hand it is reduced to -2.~
 

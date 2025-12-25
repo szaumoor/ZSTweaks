@@ -8,7 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/blessed_bracers~ ~override~
   COPY_EXISTING ~BRAC23.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7330) END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7330) END
     LPF ALTER_EFFECT INT_VAR header_type=3 match_opcode=146 STR_VAR match_resource=~SPPR502~ resource=~SPPR607~ END
     LPF ALTER_HEADER INT_VAR match_type=3 STR_VAR match_icon=~SPPR502B~ icon = ~SPPR607B~ END
     LPF ADD_ITEM_HEADER INT_VAR copy_header=2 END

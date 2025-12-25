@@ -50,11 +50,11 @@ Weight: 1~
 
 STATISTICS:
 
-Combat abilities:
-– +2 damage against animals and other non-intelligent beasts and monsters
-
 Equipped abilities:
 – Movement rate increased by 2 (base is 9)
+
+Combat abilities:
+– Damage: Each shot inflicts 3 extra missile damage to living non-humanoids. These targets must save vs. Death at -1 or suffer a penalty of 2 to Armor Class and 1 to Saving Throws, and have their movement speed reduced by 50% for 2 rounds.
 
 THAC0: +5
 Speed Factor: 3
@@ -71,11 +71,11 @@ The magical bowstring of Gond makes even the legendary longbow of Taralash more 
 
 STATISTICS:
 
-Combat abilities:
-– +5 damage against animals and other non-intelligent beasts and monsters
-
 Equipped abilities:
 – Movement rate increased by 5 (base is 9)
+
+Combat abilities:
+– Damage: Each shot inflicts 5 extra missile damage to living non-humanoids. These targets must save vs. Death at -3 or suffer a penalty of 4 to Armor Class and 2 to saving throws, and have their movement speed reduced by 50% for 2 rounds.
 
 THAC0: +6
 Damage: +1
@@ -94,14 +94,16 @@ STATISTICS:
 Combat abilities:
 – Hit target must save vs. Death at %zst_1010_asp_nest_sbonus% or take 1 point of damage every 3 seconds until 40 Hit Points of damage has been inflicted
 
-THAC0: +1
-Damage: 1d3+1, +1d2 poison damage
+THAC0: +3
+Damage: 1d3+3, +1d2 poison damage
 Damage type: Missile
-Speed Factor: 1
+Speed Factor: 0
 Proficiency Type: Dart
 Type: One-handed
 
 Weight: 0~
+
+@6391 = "Asp's Nest +3"
 
 //bgee version
 @7010 = ~Eagle Bow: Protector of the Dryads
@@ -148,7 +150,7 @@ Equipped abilities:
 – Magic Resistance: +5%
 
 Combat abilities:
-– Arrows inflict 1d4+1 extra magic damage and 15% wizard spell failure for 4 rounds if a save vs. Spell at -2 is failed
+– Arrows inflict 1d4+1 extra magic damage and 15% arcane spell failure for 4 rounds if a save vs. Spell at -2 is failed
 
 THAC0: +5
 Speed Factor: 3
@@ -212,8 +214,9 @@ Weight: 0~
 
 STATISTICS:
 
-Equipped abilities:
+Combat abilities:
 – Chance to score a critical hit: +10%
+– Behaves as a +3 weapon for the purposes of overcoming weapon immunities
 
 THAC0: +4
 Damage: 1d6, +6 piercing damage (Save vs. Death for half)

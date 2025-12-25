@@ -4,17 +4,17 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_461~ = 1
 END
 
-COPY_EXISTING ~SPPR612.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@7390) END
+COPY_EXISTING ~sppr612.spl~ ~override~
+    LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7390) END
 
-COPY_EXISTING ~BOLTPRIM.EFF~ ~override~
-    LPF ALTER_EFF_FILE INT_VAR parameter1=6 dicesize=4 dicenumber=4 END
+COPY_EXISTING ~boltprim.eff~ ~override~
+    LPF ALTER_EFF_FILE INT_VAR target=2 parameter1=6 dicesize=4 dicenumber=4 END
 
-COPY_EXISTING ~BOLTELEM.EFF~ ~override~
-    LPF ALTER_EFF_FILE INT_VAR parameter1=6 dicesize=6 dicenumber=6 END
+COPY_EXISTING ~boltelem.eff~ ~override~
+    LPF ALTER_EFF_FILE INT_VAR target=2 parameter1=6 dicesize=6 dicenumber=6 END
 
-COPY_EXISTING ~BOLTUND.EFF~ ~override~
-    LPF ALTER_EFF_FILE INT_VAR parameter1=6 dicesize=6 dicenumber=8 END
+COPY_EXISTING ~boltund.eff~ ~override~
+    LPF ALTER_EFF_FILE INT_VAR target=2 parameter1=6 dicesize=6 dicenumber=8 END
 
-COPY_EXISTING ~BOLTDEM.EFF~ ~override~
-    LPF ALTER_EFF_FILE INT_VAR parameter1=6 dicesize=8 dicenumber=8 END
+COPY_EXISTING ~boltdem.eff~ ~override~
+    LPF ALTER_EFF_FILE INT_VAR target=2 parameter1=6 dicesize=8 dicenumber=8 END

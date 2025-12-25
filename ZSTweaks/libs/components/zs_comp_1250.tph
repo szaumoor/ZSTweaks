@@ -6,11 +6,15 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
+  INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
   COPY_EXISTING ~SW1H66.ITM~ ~override~
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 2 END
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 5 STR_VAR effects=~op=0,p1=1,p2=2;op=0,p1=1,p2=4;op=0,p1=1,p2=8;op=27;op=28;op=29;op=30;op=31;op=86;op=87;op=88;op=89;op=166;op=173~ END
 
-    PATCH_IF zst_1150_dice_wakininja AND (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" OR MOD_IS_INSTALLED "ZSTweaks.tp2" "1150") BEGIN
+    PATCH_IF zst_1150_dice_wakininja AND 
+            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
+            (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice)) 
+    BEGIN
 
       SPRINT strref @6110
       SPRINT str @99999
@@ -21,7 +25,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       SAY_EVALUATED 0x54 ~%strref%~
 
     END ELSE BEGIN
-      LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6110) END
+      LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6110) END
     END
 
 END

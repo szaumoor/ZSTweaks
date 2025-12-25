@@ -7,8 +7,8 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/ilbratha~ ~override~
-  COPY_EXISTING ~SW1H26.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc = RESOLVE_STR_REF(@55000) END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=232,p2=7,res=ZSTWILB0~ END
+  COPY_EXISTING ~sw1h26.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@55000) END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=232,p2=7,res=zstwilb0~ END
 
 END

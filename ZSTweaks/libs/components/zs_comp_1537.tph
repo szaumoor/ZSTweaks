@@ -4,10 +4,10 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1537~ = 1
 END
 
-COPY_EXISTING ~SPIN102.SPL~ ~override~
-              ~SPPR404.SPL~ ~override~
-              ~SPPR212.SPL~ ~override~
-              ~SPIN201.SPL~ ~override~
+COPY_EXISTING ~spin102.spl~ ~override~
+              ~sppr404.spl~ ~override~
+              ~sppr212.spl~ ~override~
+              ~spin201.spl~ ~override~
 
   LPF ALTER_HEADER INT_VAR speed = 0 END
   LPF ALTER_EFFECT INT_VAR power = 0 END
@@ -21,16 +21,16 @@ COPY_EXISTING ~SPIN102.SPL~ ~override~
 
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~SPPR404.SPL~ ~override~
-              ~SPIN201.SPL~ ~override~
+COPY_EXISTING ~sppr404.spl~ ~override~
+              ~spin201.spl~ ~override~
 
-  LPF ADD_SPL_EFF_TGT INT_VAR pwr=0 rd=0 dur=6 STR_VAR effects = ~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=267,p1=14017;op=267,p1=14662~ END
+  LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 dur=6 STR_VAR effects = ~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=267,p1=14017;op=267,p1=14662~ END
 
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~SPIN102.SPL~ ~override~
-              ~SPPR212.SPL~ ~override~
+COPY_EXISTING ~spin102.spl~ ~override~
+              ~sppr212.spl~ ~override~
 
-  LPF ADD_SPL_EFF_TGT INT_VAR pwr=0 rd=0 dur=3 STR_VAR effects = ~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=267,p1=14017;op=267,p1=14662~ END
+  LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 dur=3 STR_VAR effects = ~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=267,p1=14017;op=267,p1=14662~ END
 
 BUT_ONLY IF_EXISTS

@@ -1,0 +1,16 @@
+// Set here to "1" those components that you wish you install as part of the group installation of creature tweaks
+// Set to 0 to DISABLE
+
+OUTER_SET zst_group_3010_alignment_tweak       = "1"
+OUTER_SET zst_group_3020_summoned_demons_tweak = "1"
+OUTER_SET zst_group_3030_celestials_tweak      = "1"
+OUTER_SET zst_group_3050_balors_tweak          = "1"
+OUTER_SET zst_group_3060_mencar_tweak          = "1"
+OUTER_SET zst_group_3070_felines_tweak         = "1"
+OUTER_SET zst_group_3080_natural_attacks_tweak = "1"
+OUTER_SET zst_group_3090_shadows_tweak         = "1"
+OUTER_SET zst_group_3100_beetles_tweak         = "1"
+OUTER_SET zst_group_3110_yuantis_tweak         = "1"
+OUTER_SET zst_group_3120_golems_tweak          = "1"
+OUTER_SET zst_group_3130_minotaurs_tweak       = "1"
+OUTER_SET zst_group_3140_ogre_mages_tweak       = "1"

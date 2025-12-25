@@ -6,7 +6,55 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY_EXISTING ~DEVA.ITM~ ~override~
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=16;op=189,p2=1~ END
+  ACTION_IF zst_3030_devas BEGIN
+
+    COPY_EXISTING ~deva.itm~ ~override~
+      LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=16;op=189,p2=1~ END
+
+  END
+
+  ACTION_IF zst_3030_planetars BEGIN
+
+    INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
+    COPY ~%MOD_FOLDER%/creatures/planetar~ ~override~
+    COPY_EXISTING ~planetar.itm~ ~override~
+      LPF ALTER_ITEM INT_VAR ench = 5 END
+      LPF ALTER_HEADER INT_VAR to_hit = 5 END
+      LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=189,p2=1~ END
+
+      PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ OR
+              (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ AND zst_group_1541_vorpal_tweak)
+      BEGIN
+
+        LPF DELETE_EFFECT STR_VAR match_resource = ~zstwvrpa~ END
+        LPF ALTER_EFFECT INT_VAR match_probability1 = 24 probability1 = 19 savingthrow = 1 savebonus = "-2" END
+
+      END ELSE BEGIN
+
+        LPF DELETE_EFFECT INT_VAR match_opcode = 13 END // no vorpal effect
+        LPF DELETE_EFFECT INT_VAR match_opcode = 141 match_parameter2 =  39 END // no vorpal effect
+        LPF DELETE_EFFECT INT_VAR match_opcode = 61 END // no vorpal effect
+        LPF DELETE_EFFECT INT_VAR match_opcode = 139 END // no vorpal effect
+        LPF ALTER_EFFECT_EX INT_VAR probability1=19 savingthrow = 1 savebonus = "-2" STR_VAR match_probability1_ex=~(o_probability1 < 100)~ END
+
+      END
+
+      LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 81 parameter2 = 0 END // bullshit fixed from deafness opcode
+      LPF ALTER_EFFECT INT_VAR match_opcode = 58 parameter1 = 25 parameter2 = 2 END
+      
+      LPF ADD_ON_HIT_EFF INT_VAR p1=2 spec=1024 STR_VAR effects = ~op=12,p2=%op12_fire%;op=12,p2=%op12_cold%~ END
+      LPF ADD_ON_HIT_EFF INT_VAR p2=104 STR_VAR effects = ~op=326,p1=%race_demonic%,res=zstwplnt;op=326,p1=%race_planetar%,res=zstwplnt;op=326,p1=%race_darkplanetar%,res=zstwplnt;op=326,p1=%race_solar%,res=zstwplnt;op=326,p1=%race_antisolar%,res=zstwplnt;op=326,p2=1,res=zstwplnt~ END
+
+      LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=206,res=sppr326;op=206,res=sppr324;op=206,res=sppr302;op=206,res=spcl722;op=206,res=spwi308;op=206,res=spwi304;op=206,res=spwi204;op=206,res=spwi101;op=206,res=sppr302;op=206,res=sppr304;op=206,res=spwi313;op=206,res=sppr313;op=206,res=sppr314;op=206,res=sppr105;op=206,res=spwi215;op=206,res=spwi213;op=206,res=sppr211;op=102,p1=1;op=102,p1=2;op=102,p1=3~ END // invulnerability to level 1-3 spells
+
+    COPY_EXISTING ~plangood.cre~ ~override~
+                  ~planevil.cre~ ~override~
+      ADD_MEMORIZED_SPELL ~zstwplte~ #0 ~innate~ (1)
+      WRITE_BYTE 0x273 class_cleric_mage
+
+    COPY_EXISTING ~zstwplte.spl~ ~override~
+      LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8160) desc = RESOLVE_STR_REF(@8161) END
+      
+  END
 
 END

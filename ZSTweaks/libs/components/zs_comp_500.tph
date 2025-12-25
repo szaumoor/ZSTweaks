@@ -7,7 +7,7 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY_EXISTING ~SPWI720.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8467) END
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8467) END
     LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savebonus = "-2" END
     LPF ALTER_EFFECT INT_VAR resist_dispel = 3 END
 

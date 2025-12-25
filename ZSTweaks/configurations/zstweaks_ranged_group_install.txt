@@ -1,0 +1,15 @@
+// Set here to "1" those components that you wish you install as part of the group installation of npc tweaks
+// Set to 0 to DISABLE
+
+OUTER_SET zst_group_1010_asp_nest         = "1"
+OUTER_SET zst_group_1330_darkfire_bow     = "1"
+OUTER_SET zst_group_1340_taralash         = "1"
+OUTER_SET zst_group_1342_protector_dryads = "1"
+OUTER_SET zst_group_1343_mana_bow         = "1"
+OUTER_SET zst_group_1344_arrow_biting     = "1"
+OUTER_SET zst_group_1345_arrow_fire       = "1"
+OUTER_SET zst_group_1346_arrow_piercing   = "1"
+OUTER_SET zst_group_1347_bolts_biting     = "1"
+OUTER_SET zst_group_1348_shortbow_gesen   = "1"
+OUTER_SET zst_group_1371_arrow_dispelling = "1"
+OUTER_SET zst_group_1388_arrow_acid       = "1"

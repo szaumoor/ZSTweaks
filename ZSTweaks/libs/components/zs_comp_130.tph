@@ -4,6 +4,6 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_130~ = 1
 END
 
-COPY_EXISTING ~SPPR208.SPL~ ~override~
-  LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@5020) END
+COPY_EXISTING ~sppr208.spl~ ~override~
+  LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5020) END
   LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savebonus = "-1" END

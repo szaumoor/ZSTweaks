@@ -2,19 +2,196 @@
 
 ## Fixes
 
-- Ankheg plate variant introduced by EET will now be detected in relevant component as intended
-- Vorpal weapons component will now correctly patch the vorpal spell to not chunk two-handed weapons when the relevant option is enabled without throwing an error
-- Fix for whirlwind component when fixpack is not installed due to inverted logic
-- Quivering Palm component was open to all games but inappropriately only patched bg2ee and eet
+- Added prefix: One yuan-ti creature file was using long swords without proficiency for it, resulting in them incurring in penalties. Disabled if the fixpack is installed
+- Added prefix: No minotaurs in BG2 are set to minotaurs race-wise, resulting in them not being affected by opcodes that target minotaurs, such as my Maze tweak
+- Added prefix: Golem Juggernaut standardized to Stone Golem
+- Added prefix: Greater Clay Golem should be treated as a Clay Golem class-wise
+- Added prefix: Shambling Mounds will be set as Plants and Shambling Mounds race-wise
+- Added prefix: My mod will now automatically fix the issue introduced in 2.6.6 where simulacra cannot find traps or enter stealth
+- Added fix for Unholy Reaver for Item Upgrade not being tweaked appropriately in the Soul Reaver component.
+- Fixed installation crash with Cloak of Fear component
+- Excluded the part that distributes the "Remove Fear" effect for Cloak of Fear if fixpack is installed, since they do that already.
+- Small library fixes and changes tom improve design and performance
+- Fixed Ring of Purity tweak not copying over the resources required for the item to work properly.
+- Fixed Holy Power not properly adding APR bonuses to non-warrior classes
+- Fixed Holy Power excluding **non-warriors** instead of **warriors** from getting the APR bonus
+- Fixed Holy Power and Tenser's Transformation not being excluded from affecting rangers and paladins for the APR bonus
+- Fixed Rhino's Beetle Shield wrong description
+- Fix light crossbow tweak not working after some other tweaks to crossbows
+- Removed unnecessary whirlwind fixpack blocks since they don't actually change anything (old code gone wrong!)
+- Fixed Dale Protector boosting all weapon damage instead of only ranged weapon damage to rangers, bards, and thieves
+- Fixed an inaccuracy on Dale Protector's description regarding the damage bonus, as it affects all rangers, not just archers
+- Fix prefix gated to only run when the fixpack is installed, which is precisely the opposite of what was intended
+- Disabled some other fixes when the fixpack is installed
+- Moved fix for raceless water elementals to the prefix section, instead of the horrid wilting component
+- Made many runtime checks of code run on debug mode, to improve performance on releases
+- Fixed shadow creature component not being open to IWDEE and improved the performance of the component installation.
+- Fixed incorrect description for purifier component
+- Deleted documentation of components that no longer exist or were merged into other components
+- Forgot to upgrade the regeneration granted by Eldath's Mist in the code from 1 HP/s to 2 HP/s
+- Improved the code of the Armor of Faith component (more old code gone wrong!)
+- Fixed Vorpal Hit component not working as expected due to missing spell states in Stoneskin and Iron Skins
+- Fixed bugs preventing Psion Blade component from stopping the mind flayer Slay effect for stoneskinned alhoons
+- Disabled more prefixes that are rendered moot if the Fixpack is installed
+- Fixed Swashkalbladepus component not patching swashbucklers if only swashbucklers were selected in the preferences
+- Fixed bug in the effects of Horrid Wilting when targeting specific types of creatures (Wizard version)
+- Improved the implementation of the Horrid Wilting component, deleting hundreds of lines of code lol
+- Horrid Wilting will target plant creatures more accurately
+- Fixed issue where imported characters would not receive the omnistabbing effect. Now this benefit will be applied to all created characters upon spawning in the initial area.
+- Fixed issue with Gloves of Healing not working correctly due to missing code for resource copy
+- Various library refactorings and optimizations to improve performance
+- Fixed some broken code in swashbuckler thac0 fix component if it was run in a non-linear installation
+- Fixed code error in prefix that could potentially delete some effects from thief NPCs
+- Fixed Fireball component not tweaking the minimum damage from Dragon's Breath correctly due to a code error
+- Fixed Flesh to Stone tweak option to include IWD immunities not working
+- Fixed Hindo's Doom not properly protecting non-undead from the extra magical damage
+- Fixed Usuno's Blade granting a save to take half for the regular electricity damage instead of to the chance-based fat extra damage
+- Some description fixes on some tweaked items
+- Many components renamed. Mostly to shorten them
+- Fixed magical stone component not properly setting it to bypass magic resistance
+- Fixed barkskin spell not having a properly updated new description reflecting the tweak
+- Fixed bug with the level scaling in Glyph of Warding and Negative Plane Protection, caused after the last refactoring
+- Dolorous Decay component fixes the issue of decaying icon bypassing magic resistance unlike the rest of damaging effects
+- Fixed the completely broken wondrous recall component
+- Corrected slowdown in War Cry component
+- Fixed Assassination not preventing non-pure-thieves from getting extra goodies when casting it
+- Fixed girdle of inverted gender not targeting the original gender of females
+- Fixed issue with girdle of fortitude preventing it from working correctly due to leftover mangled code
+- Fixed issue with Bone Club not targeting spectral trolls appropriately
+- Fixed "pain" part of Gnasher not working at all due to using an incorrect opcode
+- Fixed bolt of biting adding 5% more critical hit chance bonus than intended
+- Fixed small inter-compatibility issue between Storm Star component and the blunt weapon component
+- Fixed Dragon's Bane causing an extra +3 additive damage tick when it was supposed to be removed
+- Fixed Finesse component only modifying dagger effects for bards instead of every effect
+- Fixed Borok's fist description if the weapon dice size for warhammers is installed
+- Fixed issue with Voidhammer applying blunt weapon AC debuff from component even to the undead when it shouldn't
+- Improved the implementation of components that add abilities to class or kits to remove the chances of errors in mods after mine
+- Fixed Barkskin component not removing the appropriate spells from joinable druids and clerics where applicable
+- Fixed the gender fix setting petrified people ("statues") to gender of niether. It will now skip petrified folks. Sorry Branwen
+- Added plants to the gender prefix (general category)
+- Fixed Ring of the Crusade component not being installed at all in the group-install component of Gear tweaks
+- Fixed some components not reacting to the presence of a component through the group component install
+- Fixed issue which forced wielders of staff of magi to save vs. spell to benefit from passive effects and made finesse-type effects also subject to the save vs spell
+- Removed meaningless console string when celestials disable the party partial spell invulnerability
+- Fixed ability to disable spell invulnerability from planetars not applying to the party but the planetar, rendering it useless
+- Fixed Protection from Undead rebuke ability not working due to using a spell with no range
+- Fixed Icedust having inconsistent duration (double check)
+- Fixed Knave Robe protecting vs. missile instead of the intended piercing
+- Fixed Stiletto of Demarchess not handling immunities to bleeding as expected
+- Attempted to fix the description inconsistency when mixing poisoned throwing dagger component with melee throwing dagger component
+- Marked impaler extra damage as not waking up sleepers as intended
+- Curse / Bless component will fix in passing the issue in the Curse spell which increases morale instead of reducing it from enemies.
+- Ethereal Retribution tweak in the shaman component fixes in passing the bug where enemies could be killed by the strength sapping effect
+- Fixed incorrect checks to determine what parts of the shaman abilities component are installed according to the preferences
+- Fixed inconsistency that could arise when combining certain components with the void-weapon component
+- Fixed bug with the Sandthief BGEE tweak that would prevent it from recharging after resting as intended
+- Fixed bug with Eilistraee's Boon tweak on the ioun/circlet overhaul that would not give elves extra Armor Class due to missing resource
+- Fixed Ankheg's Plate tweak not actually running in BGEE games
+- Fixed item creation by npc tweak not updating descriptions
 
 ## Modifications
 
-- Ankheg upgraded plate from Thalantyr Upgrade Ex mod will now be patched
-- Cure Poison component now makes it bypass spell protections such as Globe of Invulnerability
-- Made the implementation of some recent tweaks more resilient to changes
-- Added marker file to prevent re-running prefixes and splprot additions on every separate installer run to speed things up
-- Reduced pointless console output verbosity of some recent new components, which probably improves performance since printing to console is generally slow
+- Cloak of the stars now increases proficiency points in darts by 1 instead of setting it to 2
+- Merged the components for thac0 improvement for thieves and bards together
+- Added Underdark Brain Golems to the list of incorrectly aligned creatures fixed by the alignment creature component
+- Light Crossbow tweak no longer requires to be installed as a last component, and becomes part of the general tweaks section.
+- Merged all the components that tweak disruption weapons into a single component in the General Tweaks section. It also now includes a tweak to one of my items in my Item Pack.
+- Added compatibility with my Item Pack (ZS_ItemPack) in the following way:
+  - Dagger component modifies the kukris differently, granting no thac0 or critical hit bonus, half the speed bonus, but base damage is increased from 1d4 to 1d4+1
+  - With Finesse:
+    - Kukris have a 7% less chance of triggering a finesse hit compared to other daggers (37-45%)
+    - Rapiers have a 5% less chance of triggering a finesse hit compared to other short swords (21-30%)
+    - Estocs have a 4% higher chance of triggering a finesse hit compared to other long swords (10-19%)
+    - No changes for shurikens
+  - The new disruption component will patch Shining Light of Lathander with the new rebalanced undead-disruption effect
+- Katanas and scimitars now have a 10-19% chance to trigger finesse instead of 9-18%
+- Improved the implementation of the axes critical hit bonus component to allow configuration of axes and halberds independently.
+- Backstab penalty component now allows configuration of the kukri, estoc, and rapier in my item pack. By default, they stay at 0 penalty, except estocs, which have a -1 penalty, which aligns with the long sword proficiency they have.
+- Ensured Earthquake "sleep" effect is also nonmagical
+- Earthquake component now causes 5d10 crushing damage to clay golems once, as per PnP
+- Character stats now also allows modifying the saving throws for shorty races. You can choose a toned down version, to standardize it to +2 bonus, regardless of constitution, or to nullify it entirely. Race description will not be updated for now
+- Shield of Archons component modified to follow PnP slightly more closely, which provides an extra edge to the spell. First, it's renamed to Planar Shield, as "archons" are implied to be good-aligned, and evil casters would have access to Shield of the Tanar'ri instead. To generalize it, the name was changed. The spell now also provides a +4 bonus to saving throws against area effects that are not centered directly on the caster, as well as stationary area effects, or non-magical or non-absorbable effects.**✓**
+- Hugely simplified the code in Shield of Archons component using CamDawg's functions (praise be to him)
+- Flesh to stone component now also adds the option to lightly overhaul the Stone to Flesh spell, making it remove the weapon immunities of Stone Golems as per PnP
+- Armor of Faith now also includes damage reduction against Poison damage (not poisoning itself)
+- Death Fog component is now closer to PnP, renamed to Acid Fog, and the banishment effect is removed. Now it deals more acid damage, reduces acid resistance, Armor Class, and physical resistances, decreases movement speed and bypasses magic resistance.
+- Deleted the configuration option in Death Fog as it's no longer relevant
+- Deva and Planetar components now merged in one, with appropriate configuration options to choose either or both
+- Configuration file is now in **ZSTweaks/configurations**
+- Added a group installation component for creature tweaks.
+- Added the option to choose which components in a group are installed through user input. See **ZSTweaks/configurations**, if you're interested and set it as per your liking. These files are also copied to override to aid compatibility code in other mods (includes the variables).
+- Fixed issue in RR's Crippling Strike component preventing the effects from being set at the wrong position in the effect stack, which prevented immunities and refreshing effects from working
+- Removed the Chaotic Commands component, now an element of the prefix part of this mod (disabled if fixpack is installed)
+- Added an option in the preferences file to make the component that sets backstab multiplier to 0 in BBOD and Iron Golem fist, so it's only backstab multiplier reduction, as per your preferences (disabled by default)
+- Improved the code in Phantom's Blade Tweak/Fix
+- Moved the Phantom's Blade component into a prefix (extending headers to level 20 & marking extra damage as not waking up sleepers; former doesn't run if fixpack is installed)
+- Short Sword of Mask entangle effect is now not subject to magic resistance, but can be dispelled still
+- Shortened the component descriptions and improved the writing
+- Stats tweak now switches back to the default bonus from sword and shield +2 AC vs missile, so it's more enticing for classes that can only put a single point, beyond removing the penalties of having no proficiency
+- Deleted needless files
+- Stat component now reduces the lore per level of bards from 10 to 8, to tighten the differences slightly (but they are still gaining 3 more points than wizards and sorcerers regardless)
+- Deleted duplicated translation entries
+- Added missing documentation entry for Karajah armor tweak
+- Doom component has now a configurable casting speed (accepted values 0-8)
+- Nature's Beauty component now makes it bypass magic resistance (while remaining dispellable)
+- Wail of the Banshee component now makes the spell bypass magic resistance
+- Adjatha the drinker component now disables the "healed" console line with every hit. That's just annoying. You already know it heals dammit. Every hit.
+- Robe of Hayes component now makes it increases the chances of a positive outcome by 5%, instead of setting it to 15%, which allows stacking with Chaos Shields and Thayan Circlet. This makes the maximum bonus of positive outcomes of 55% with my tweaks. Improved Chaos Shield sets it to 25%, Thayan Circlet increases it by 25%, and this increases it by 5%.
+- Scroll usability component no longer uses weidu subcomponents and is entirely controlled with the config file (component 1539, default is everyone can use scrolls with stat requirements)
+- Same as above for the ioun stone and circlet critical hit protection. Default only patches a few that I selected, as per the original subcomponents (check readme and config file)
+- Improved the code of the flame blade component
+- Arrow of piercing extra damage now bypasses magic resistance
+- Restored -10 save penalty to be knocked down (sleep) in exploding trap component
+- Taralash now adds damage vs. all living nonhumanoids, which is more useful than the original design, it will also apply mild debuffs on a failed save
+- Cloak of displacement component now removes the blur effect
+- Asp's Nest component now makes it a +3 weapon
+- Spear form of `Rod of Royal Might` does not inflict bleeding to undead, elementals, golems, shambling mounds, and slimes
+- Added immunity to Holy Word and Unholy word to the upgraded Kachiko's Whisper, as it is also sound-based magic
+- Magical Stone component now makes its damage scale: 1d6 magic & missile damage at level 3, 1d8 at level 5. Still does not affect the IWD version, which works differently and deals more damage to the undead
+- Added a section in the readme to explain how adding compatibility code with this mod works (sorry)
+- Voidweapon component no longer part of the end-of-installation group, as a better solution was used to prevent problems, and is now part of the general tweaks
+- +1 HP bonus to bracers, boots, and belts component no longer part of the end-of-installation group, as a better solution was used to prevent problems, and is now part of the general tweaks
+- Component to patch various spells to make them bypass magic resistance remains part of the end-of-installation group. The group will remain there, so it blends well with the current design for users where they can choose everything they want out of the entire installation of the mod, especially by running `weinstall zstweaks --yes`. But should still be mindful of components that might require installation at different times for compatibility reasons.
+- Smoothed out the progression of two-weapon fighting style, trying to keep to the theme of making each point meaningful and having a single point always valuable
+- Maze component now prevents the target from moving while the mazing animation plays out
+- Staff of Magi component now prevents the invisibility effect on equip being used more than once per turn to a wielder, the fireball/lightning combo is now a double sunfire effect (20d6 fire damage) usable twice per day, and the staff also allows the user to cast any spell they have memorized once per day.
+- Celestial component also makes the dispel on hit for planetars subject to saving throws
+- Celestial component actually makes the planetars cleric/mages so their cleric spells scale (level 20)
+- Added option for the earthquake component to only reduce the shake intensity greatly, instead of removing it entirely, check preferences
+- Earthquake component now makes the silly behavior of the spell where the quake sounds and the screen shake overlap and stack for every affected creature such that it only happens once every time it triggers. For technical reasons, the caster will be the generator of both the sound and shake, if it exists, which probably doesn't look too odd, considering a quake should probably be LOUD.
+- Added simulacrum fixes from the shadowdancer overhaul mod to the prefixes of this mod
+- Decastave component now increases proficiency in staves by 1 instead of setting it to 1
+- Protection from undead rebuke ability now deals 2d4+1 magic damage (double than before), and the panic it can cause lasts one round more (3 in total). It can no longer, however, apply a rebuke (damage or panic) more than 3 times per round to the same target.
+- Increased the duration of possible confusion effect by 1 round in Lilarcor tweak
+- Opened the shadow blade component to IWDEE, as the weapon exists there too
+- Opened the Gauntlets of weapon expertise to IWDEE
+- Opened Senses of the Cat to IWDEE
+- Opened Cloak of Displacement to IWDEE
+- Opened the basic mage robe buff to IWDEE
+- Opened the wand rebalance component to IWDEE
+- Standardized Arrows of Piercing to have an enchantment level of 3, such as in IWDEE
 
 ## New components
 
--
+- Make Hold Undead bypass Magic Resistance
+- Make disrupt undead weapons more balanced and closer to PnP rules
+- Make Holy and Unholy Word more effective
+- Make Disintegrate cause damage and slow some golems, as per PnP
+- Make minotaurs tougher and more dangerous
+- Make Yuan-ti slightly more powerful
+- Make Whirlwind and Evasion grant once 3 uses of the Improved variants
+- Make Cowl of the Stars more useful
+- Make rangers and rogues have a THAC0 and Damage bonus if attacking with ranged weapons from invisibility
+- Make some golem creatures more unique
+- Make Chromatic Orb more interesting by providing party-only chromatic varieties
+- Make single-classed thieves and bards able to throw sand in the enemy's eyes
+- Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing
+- Make Harbinger more convenient
+- Make Aura of Flaming Death increase fire resistance instead of setting it to 90%
+- Make Edwin's amulet nuanced in the privileges it grants to that snake
+- Make Shield of Balduran less of an auto-win item
+- Make Agannazar's Scorcher not pause the caster
+- Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance
+- Make Imprisonment prevent movement while the animation plays out
+- Make ogre / oni mages regenerating fiends, as per PnP
+  

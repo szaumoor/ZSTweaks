@@ -8,12 +8,15 @@ ACTION_IF NOT is_iwdee BEGIN
 
     ACTION_IF FILE_EXISTS_IN_GAME ~bddagg01.itm~ BEGIN
 
+        INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
         COPY_EXISTING ~bddagg01.itm~ ~override~
-            LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6930) END
+            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6930) END
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 2 special = 1024 END
             LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=27;op=28;op=29;op=30~ END
 
-            PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ BEGIN
+            PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR 
+                     MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ AND zst_group_1440_dagger_boost 
+            BEGIN
                 READ_STRREF 0x54 desc
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                     REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*THAC0[ %TAB%]*:?[ %TAB%]*\)\+[0-9]~ ~\1+3~ //thac0
@@ -21,12 +24,10 @@ ACTION_IF NOT is_iwdee BEGIN
                 SAY_EVALUATED 0x54 ~%desc%~
             END
 
-        COPY_EXISTING_REGEXP ~^bddagg1[A-D]\.eff$~ ~override~
+        COPY_EXISTING_REGEXP ~^bddagg1[a-d]\.eff$~ ~override~
             LPF ALTER_EFF_FILE INT_VAR dicenumber = 2 special=1024 END
         BUT_ONLY
 
-    END ELSE BEGIN
-        ACTION_IF NOT group_component BEGIN WARN "bddagg01.itm not found in game" END
-    END
+    END ELSE ACTION_IF NOT group_component BEGIN WARN "bddagg01.itm not found in game" END
 
 END

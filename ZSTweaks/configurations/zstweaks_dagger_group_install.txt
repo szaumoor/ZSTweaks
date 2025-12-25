@@ -1,0 +1,17 @@
+// Set here to "1" those components that you wish you install as part of the group installation of dagger tweaks
+// Set to 0 to DISABLE
+
+OUTER_SET zst_group_1000_poisoned_throw_dagg = "1"
+OUTER_SET zst_group_1130_bone_blade          = "1"
+OUTER_SET zst_group_1140_dagger_star         = "1"
+OUTER_SET zst_group_1490_neb_dagger          = "1"
+OUTER_SET zst_group_1630_jade_fang           = "1"
+OUTER_SET zst_group_1660_heart_golem         = "1"
+OUTER_SET zst_group_1670_silver_dagger       = "1"
+OUTER_SET zst_group_1680_stiletto_demarchess = "1"
+OUTER_SET zst_group_1681_elements_fury       = "1"
+OUTER_SET zst_group_1682_acid_etched_dagger  = "1"
+OUTER_SET zst_group_1683_gemblade            = "1"
+OUTER_SET zst_group_1684_throwing_dagg_melee = "1"
+OUTER_SET zst_group_1686_life_stealer        = "1"
+OUTER_SET zst_group_1530_throw_dagg_nonsense = "1"

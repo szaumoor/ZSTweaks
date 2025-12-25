@@ -1,95 +1,161 @@
 ACTION_IF !VARIABLE_IS_SET ZS_MARKER_FILE_EXISTS BEGIN
-    OUTER_SET ZS_MARKER_FILE_EXISTS = FILE_EXISTS_IN_GAME "ZSSETUP.RP"
+    OUTER_SET ZS_MARKER_FILE_EXISTS = FILE_EXISTS_IN_GAME "zssetup.rp"
 END
 
 ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
-    PRINT "[[FIX]]: Setting invisible stalker enemies as elementals of the Elemental Plane of Air instead of spectres"        COPY_EXISTING ~STALKE.CRE~   ~override~
-                    ~SENSTALK.CRE~ ~override~
-        WRITE_BYTE 0x272 race_elemental
-        WRITE_BYTE 0x273 class_elemental_air
-    BUT_ONLY IF_EXISTS
 
-    ACTION_IF zst_gender_fix BEGIN
-        WITH_SCOPE BEGIN
-            PRINT "[[FIX]]: Setting many types of sexless creatures as niether-gendered if they're set to male or female so it doesn't intrude with opcodes that target male/female"
-            OUTER_SET matches = 0
-            COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
-                SET general = BYTE_AT(0x271)
-                SET race    = BYTE_AT(0x272)
-                PATCH_IF race    = race_golem              OR
-                         race    = race_treant             OR
-                         race    = race_statue             OR
-                         race    = race_demonic            OR
-                         race    = race_mind_flayer        OR
-                         race    = race_mist               OR
-                         race    = race_planetar           OR
-                         race    = race_darkplanetar       OR
-                         race    = race_solar              OR
-                         race    = race_antisolar          OR
-                         race    = race_beholder           OR
-                         race    = race_genie              OR
-                         race    = race_slime              OR
-                         race    = race_mimic              OR
-                         race    = race_doppleganger       OR
-                         race    = race_myconid            OR
-                         race    = race_shadow             OR
-                         race    = race_wraith             OR
-                         race    = race_specter            OR
-                         race    = race_spectral_undead    OR
-                         race    = race_elemental          OR
-                         race    = race_shambling_mound    OR
-                         race    = race_shrieker           OR
-                         race    = ~%race_will-o-wisp%~    OR
-                         race    = race_otyugh             OR
-                         general = general_weapon
-                BEGIN
-                    SET gender = BYTE_AT(0x275)
-                    PATCH_IF gender = gender_male OR gender = gender_female BEGIN
-                        ++matches
-                        WRITE_BYTE 0x275 gender_niether
-                    END
+    PRINT "[[FIX]]: Fixing 2.6.6 bug that prevents finding traps and stealth for simulacra"
+    COPY_EXISTING ~simulacr.spl~ ~override~
+        LPF DELETE_EFFECT_EX INT_VAR match_opcode=144 STR_VAR match_parameter2_ex = ~(o_parameter2 = 14 OR o_parameter2 = 0)~ END
+
+    PRINT "[[FIX]]: Marking Phantom's Blade extra damage as not waking up sleepers"
+    COPY_EXISTING ~phanblad.eff~ ~override~
+        LPF ALTER_EFF_FILE INT_VAR special = 1024 END
+
+    ACTION_IF NOT has_eefixpack BEGIN
+
+        ACTION_IF FILE_EXISTS_IN_GAME ~spcl936.spl~ AND !(MOD_IS_INSTALLED ~ZS_ShadowdancerOverhaul.tp2~ ~100~) BEGIN
+            PRINT "[[FIX]]: Extending duration of Shadow Twin to the intended 2 turns"
+            COPY_EXISTING ~spcl936.spl~ ~override~ // Shadow Twin, fixed wrong duration
+                LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 60 duration = 120 END
+        END 
+        
+        PRINT "[[FIX]]: Setting the right THAC0 penalty to the Shadowdancer kit for using weapons without proficiency"
+        COPY_EXISTING ~clswpbon.2da~ ~override~
+            READ_2DA_ENTRIES_NOW clswpbon 1
+            FOR (row = 3; row < clswpbon; ++row) BEGIN
+                READ_2DA_ENTRY_FORMER clswpbon row 0 label
+                PATCH_IF (~%label%~ STR_EQ ~SHADOWDANCER~) BEGIN
+                SET_2DA_ENTRY_LATER clswpbon_out row 3 3
+                SET row = clswpbon
                 END
-            BUT_ONLY
-            PRINT "[[FIX]]: Found %matches% matches that were set to 'niether' gender"
-        END
+            END
+            SET_2DA_ENTRIES_NOW clswpbon_out 1
+
     END
 
     ACTION_IF is_iwdee BEGIN
-        ACTION_IF has_eefixpack BEGIN
-            PRINT ~[[FIX]]: Fixing broken BONECIR.spl~
-            COPY_EXISTING ~#BONECIR.spl~ ~override~
+
+        ACTION_IF NOT has_eefixpack BEGIN
+
+            PRINT ~[[FIX]]: Fixing broken #bonecir.spl~
+            COPY_EXISTING ~#bonecir.spl~ ~override~
                 WRITE_ASCII 0x0 "SPL " (4)
+
         END
+
+    END
+
+    ACTION_IF NOT is_iwdee BEGIN
+
+        ACTION_IF NOT has_eefixpack BEGIN
+
+            PRINT ~[[FIX]]: Fixing scaling of Phantom's Blade and Chaotic Command's duration~
+            COPY_EXISTING ~spwi518.spl~ ~override~
+                LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special = 1 step_dur=6 level_cap=20 END         
+            COPY_EXISTING ~sppr508.spl~ ~override~
+                LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special = 1 step_dur=60 level_cap=20 END
+
+            PRINT ~[[FIX]]: Fixing Hakeashar and Nishruu being identified as ogre mages class-wise~
+            COPY_EXISTING "nishrusu.cre" "override"
+                          "haksu.cre" "override"
+                WRITE_BYTE 0x271 general_monster
+                WRITE_BYTE 0x272 race_mist 
+                WRITE_BYTE 0x273 class_mist 
+
+        END
+
     END
 
     ACTION_IF is_bg2ee_or_eet BEGIN
-        PRINT "[[FIX]]: Fixing incorrect speed factor in Lilarcor from 8 to 7"
-        COPY_EXISTING ~SW2H14.ITM~ ~override~
-            LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = 7 END
-            READ_STRREF 0x54 desc
-            SPRINT str_sf @99998
-            INNER_PATCH_SAVE new_description ~%new_description%~ BEGIN
-                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)8~ ~\17~
+
+        PRINT "[[FIX]]: Lord Jierdan no longer classified as an animal but a monster."
+        COPY_EXISTING ~firkra01.cre~ ~override~
+            WRITE_BYTE 0x271 general_monster
+
+        ACTION_IF NOT has_eefixpack BEGIN
+
+            PRINT "[[FIX]]: Fixing incorrect speed factor in Lilarcor from 8 to 7"
+            COPY_EXISTING ~sw2h14.itm~ ~override~
+                LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = 7 END
+                READ_STRREF 0x54 desc
+                SPRINT str_sf @99998
+                INNER_PATCH_SAVE new_description ~%new_description%~ BEGIN
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)8~ ~\17~
+                END
+                SAY_EVALUATED 0x54 ~%desc%~
+
+            PRINT ~[[FIX]]: Non-standard scimitar/wakizashi/ninjato animations~
+            COPY_EXISTING ~misc9q.itm~ ~override~
+                WRITE_ASCII 0x22 "SC" #2
+
+            COPY_EXISTING ~sw1h66.itm~ ~override~
+                WRITE_ASCII 0x22 "SS" #2
+
+            COPY_EXISTING ~sw1h67.itm~ ~override~
+                WRITE_ASCII 0x22 "S1" #2
+
+            COPY_EXISTING ~sw1h68a.itm~ ~override~
+                WRITE_ASCII 0x22 "SC" #2
+
+            PRINT "[[FIX]]: Fixes for misaligned indexes in Quarterstaff and Dwarven Thrower"
+            COPY_EXISTING ~hamm06.itm~ ~override~
+                          ~staf01.itm~ ~override~
+                LPF FJ_SPL_ITM_REINDEX END
+
+            COPY_EXISTING ~dagg24.itm~ ~override~
+                READ_LONG 0x4c itm_weight
+                PATCH_IF itm_weight = 0 BEGIN
+                    PATCH_PRINT "[[FIX]]: Fixing dagg24.itm (Dagger +3) weight from 0 to 1"
+                    LPF ALTER_ITEM INT_VAR weight = 1 END
+                    SPRINT str @99990
+                    READ_STRREF 0x54 desc
+                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\11~
+                    END
+                    SAY_EVALUATED 0x54 ~%desc%~
+                END
+
+            PRINT "[[FIX]]: Fixing shakti1.itm (Dagger +3) speed factor from 1 to 0"
+            COPY_EXISTING ~shakti1.itm~ ~override~
+                LPF ALTER_HEADER INT_VAR speed = 0 END
+
+            COPY_EXISTING ~misc4q.itm~ ~override~
+            LPF WPN_DICENUM RET dicenum = result END
+            LPF WPN_DICESIZE RET dicesize = result END
+            PATCH_IF dicesize = 4 AND dicenum = 2 BEGIN
+                PATCH_PRINT "[[FIX]]: Fixing misc4q.itm (The Ogre's Sword) so it uses bastard sword proficiency"
+                LPF ALTER_ITEM INT_VAR lore = 0 wpn_prof = 89 END
+                LPF ALTER_HEADER INT_VAR silent = 1 dicesize = 8 dicenumber = 1 END
+                SPRINT str @99980
+                SPRINT ls_str @99981
+                SPRINT bs_str @99982
+                READ_STRREF 0x50 desc
+                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)%ls_str%~ ~\1%bs_str%~
+                END
+                SAY_EVALUATED 0x50 ~%desc%~
             END
-            SAY_EVALUATED 0x54 ~%desc%~
 
-        PRINT ~[[FIX]]: Non-standard scimitar/wakizashi/ninjato animations~
-        COPY_EXISTING ~misc9q.itm~ ~override~
-            WRITE_ASCII 0x22 "SC" #2
+            PRINT "[[FIX]]: sw1h28.itm (Cutthroat +4) so it has a speed factor of 0"
+            COPY_EXISTING "sw1h28.itm" ~override~
+                LPF ALTER_HEADER INT_VAR speed = 0 END
+                READ_STRREF 0x54 desc
+                SPRINT str_sf @99998
+                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\10~
+                END
+                SAY_EVALUATED 0x54 ~%desc%~
 
-        COPY_EXISTING ~sw1h66.itm~ ~override~
-            WRITE_ASCII 0x22 "SS" #2
+        END
 
-        COPY_EXISTING ~sw1h67.itm~ ~override~
-            WRITE_ASCII 0x22 "S1" #2
+        PRINT "[[FIX]]: Standardizing Golem Juggernaut to Stone Golem class"
+        COPY_EXISTING ~tomegol4.cre~ ~override~
+            WRITE_BYTE 0x273 class_golem_stone
 
-        COPY_EXISTING ~sw1h68a.itm~ ~override~
-            WRITE_ASCII 0x22 "SC" #2
-
-        PRINT "[[FIX]]: Fixes for misaligned indexes in Quarterstaff and Dwarven Thrower"
-        COPY_EXISTING ~hamm06.itm~ ~override~ // Dwarven Thrower +3
-                      ~staf01.itm~ ~override~ // staff
-            LPF FJ_SPL_ITM_REINDEX END
+        PRINT "[[FIX]]: Making Greater Clay Golem a Clay Golem class instead of Iron"
+        COPY_EXISTING ~ohbgol01.cre~ ~override~
+            WRITE_BYTE 0x273 class_golem_clay
 
         PRINT "[[FIX]]: Aesgareth enemies he fights during the card game being considered 'weapon' instead of 'humanoid', and a couple of others"
         COPY_EXISTING ~gordeck1.cre~ ~override~
@@ -102,78 +168,131 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
             END
         BUT_ONLY
 
-        PRINT "[[FIX]]: Guardian of Air (ToB) should be set as an invisible stalker, not a human"
-        COPY_EXISTING ~GORSTALK.cre~ ~override~
-            WRITE_BYTE 0x272 race_elemental
-            WRITE_BYTE 0x273 class_elemental_air
+        ACTION_IF NOT has_eefixpack BEGIN // proficiency issues
 
-        PRINT "[[FIX]]: Thieves using bastard swords in BG2EE without being able to use them properly or illegally as per the rules of thieves. Replaced with short swords."
-        COPY_EXISTING ~ARNTRA06.CRE~ ~override~
-                      ~BMUGG1.CRE~   ~override~
-                      ~GENTHF01.CRE~ ~override~
-                      ~PIRPIR05.CRE~ ~override~
-            LPF IS_WEAPON_EQUIPPED INT_VAR at_slot = 1 STR_VAR weapon = ~sw1h01~ RET found END
-            PATCH_IF found BEGIN
-                REPLACE_CRE_ITEM ~SW1H07~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
-            END
+            PRINT "[[FIX]]: Thieves using bastard swords in BG2EE without being able to use them properly or illegally as per the rules of thieves. Replaced with short swords."
+            COPY_EXISTING ~arntra06.cre~ ~override~
+                          ~bmugg1.cre~   ~override~
+                          ~genthf01.cre~ ~override~
+                          ~pirpir05.cre~ ~override~
+                LPF IS_WEAPON_EQUIPPED INT_VAR at_slot = 1 STR_VAR weapon = ~sw1h01~ RET found END
+                PATCH_IF found BEGIN
+                    REPLACE_CRE_ITEM ~sw1h07~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+                END
 
-        PRINT "[[FIX]]: Cambions that are set as 'thieves' wielding bastard swords without proficiency for it. Adding large sword proficiency 1 to them"
-        COPY_EXISTING ~CAMBION1.CRE~ ~override~
-                      ~TELCAM1.CRE~  ~override~
-            PATCH_IF BYTE_AT(0x6e) = 0 BEGIN // if they have no proficiency in large swords
-                WRITE_BYTE 0x6f 1 // add one pip to large sword proficiency
-            END
+            PRINT "[[FIX]]: Cambions that are set as 'thieves' wielding bastard swords without proficiency for it. Adding large sword proficiency 1 to them"
+            COPY_EXISTING ~cambion1.cre~ ~override~
+                          ~telcam1.cre~  ~override~
+                PATCH_IF BYTE_AT(0x6e) = 0 BEGIN // if they have no proficiency in large swords
+                    WRITE_BYTE 0x6f 1 // add one pip to large sword proficiency
+                END
 
-        PRINT "[[FIX]]: Thieves using daggers without being proficient in them. Adding one pip to proficiency in daggers for them"
-        COPY_EXISTING ~AR18THIF.CRE~ ~override~
-                      ~ARNMAN09.CRE~ ~override~
-                      ~BEELOO.CRE~   ~override~
-                      ~BSHOP01.CRE~  ~override~
-                      ~DRIM01.CRE~   ~override~
-                      ~GENTH02.CRE~  ~override~
-                      ~GENTMG01.CRE~ ~override~
-                      ~SHTH05.CRE~   ~override~
-            LPF DELETE_EFFECT INT_VAR silent = 1 match_pcode = 233 match_parameter1 = 1 match_parameter2 = 96 END
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 96 timing=9 target=1 END
+            PRINT "[[FIX]]: Thieves using daggers without being proficient in them. Adding one pip to proficiency in daggers for them"
+            COPY_EXISTING ~ar18thif.cre~ ~override~
+                          ~arnman09.cre~ ~override~
+                          ~beeloo.cre~   ~override~
+                          ~bshop01.cre~  ~override~
+                          ~drim01.cre~   ~override~
+                          ~genth02.cre~  ~override~
+                          ~gentmg01.cre~ ~override~
+                          ~shth05.cre~   ~override~
+                LPF DELETE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 1 match_parameter2 = 96 END
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 96 timing=9 target=1 END
 
-        PRINT "[[FIX]]: Thieves using short swords without being proficient in them. Adding one pip to proficiency in short swords for them"
-        COPY_EXISTING ~DSHOP01.CRE~ ~override~
-                      ~GENTH01.CRE~  ~override~
-                      ~GPTHIEF1.CRE~ ~override~
-                      ~IRETHF03.CRE~ ~override~
-                      ~ISHCLO01.CRE~ ~override~
-                      ~ISHTHF01.CRE~ ~override~
-                      ~PARTHF.CRE~   ~override~
-                      ~UDDOOR08.CRE~ ~override~
-                      ~UDDOOR09.CRE~ ~override~
-                      ~WAYLANE.CRE~  ~override~
-                      ~SARTHF01.CRE~ ~override~
-                      ~IRETHF04.CRE~ ~override~
-                      ~ISHTHF03.CRE~ ~override~
-            LPF DELETE_EFFECT INT_VAR silent = 1 match_pcode = 233 match_parameter1 = 1 match_parameter2 = 91 END
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing=9 target=1 END
+            PRINT "[[FIX]]: Thieves using short swords without being proficient in them. Adding one pip to proficiency in short swords for them"
+            COPY_EXISTING ~dshop01.cre~  ~override~
+                          ~genth01.cre~  ~override~
+                          ~gpthief1.cre~ ~override~
+                          ~irethf03.cre~ ~override~
+                          ~ishclo01.cre~ ~override~
+                          ~ishthf01.cre~ ~override~
+                          ~parthf.cre~   ~override~
+                          ~uddoor08.cre~ ~override~
+                          ~uddoor09.cre~ ~override~
+                          ~waylane.cre~  ~override~
+                          ~sarthf01.cre~ ~override~
+                          ~irethf04.cre~ ~override~
+                          ~ishthf03.cre~ ~override~
+                LPF DELETE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 1 match_parameter2 = 91 END
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing=9 target=1 END
 
-        PRINT "[[FIX]]: Thief ('Trainee') using a long sword without being proficient in them. Adding one pip to proficiency in long swords for them"
-        COPY_EXISTING ~ARNTRA01.CRE~ ~override~ // needs to avoid duplication of this effect
-            LPF DELETE_EFFECT INT_VAR silent = 1 match_pcode = 233 match_parameter1 = 1 match_parameter2 = 90 END
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing=9 target=1 END
+            PRINT "[[FIX]]: Thieves using a long swords without being proficient in them. Adding one pip to proficiency in long swords"
+            COPY_EXISTING ~arntra01.cre~  ~override~
+                          ~dassin.cre~    ~override~
+                          ~arnfgt03.cre~  ~override~
+                          ~arnman10.cre~  ~override~
+                          ~arnman11.cre~  ~override~
+                          ~arntra01.cre~  ~override~
+                          ~arntra03.cre~  ~override~
+                          ~arntra05.cre~  ~override~
+                          ~arnwar01.cre~  ~override~
+                          ~flyfgt02.cre~  ~override~
+                          ~flyfgt03.cre~  ~override~
+                          ~shadth01.cre~  ~override~
+                          ~shadth02.cre~  ~override~
+                          ~stguard1.cre~  ~override~
+                          ~stguard2.cre~  ~override~
+                          ~stguard3.cre~  ~override~
+                          ~thief4.cre~    ~override~
+                LPF DELETE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 1 match_parameter2 = 90 END
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing=9 target=1 END
+
+
+            PRINT "[[FIX]]: Yuan-ti using long swords without being proficient in them. Setting proficiencies to large swords to 3, as seemingly intended"
+            COPY_EXISTING ~icyuan01.cre~ ~override~
+                WRITE_BYTE 0x6e 3
+                
+        END
+
+        PRINT "[[FIX]]: Minotaurs being set to the Ogre/gnoll race instead of Minotaurs"
+        COPY_EXISTING ~icmin01.cre~  ~override~
+                      ~amminot.cre~  ~override~
+                      ~ohbmin01.cre~ ~override~
+                      ~ohbminsu.cre~ ~override~
+                      ~garock.cre~   ~override~
+                      ~hlmafer.cre~  ~override~
+                      ~ohnghall.cre~ ~override~
+                      ~rock.cre~     ~override~
+                      ~slandor.cre~  ~override~
+            WRITE_BYTE 0x272 race_minotaur
+
+        PRINT "[[FIX]]: Setting green dragons to have actually the race of green dragon"
+        COPY_EXISTING ~bazdra03.cre~ ~override~
+                      ~fsdragon.cre~ ~override~
+            WRITE_BYTE 0x273 class_green_dragon
 
     END
 
-    ACTION_IF is_bgee_or_eet BEGIN
+    ACTION_IF NOT has_eefixpack BEGIN
+
+        PRINT "[[FIX]]: Setting water elementals to their proper class of elemental of water instead of nothing"
+        COPY_EXISTING ~ohbwat01.cre~ ~override~
+                      ~bdwe1str.cre~ ~override~
+                      ~bdwe2str.cre~ ~override~
+                      ~elwatg01.cre~ ~override~
+            LPF ALTER_CRE INT_VAR class=class_elemental_water END
+        BUT_ONLY IF_EXISTS
+
+    END
+
+    ACTION_IF is_bgee_or_eet AND NOT has_eefixpack BEGIN
+
         PRINT "[[FIX]]: Fixing Riggilo having 4 pips in big swords but none in small swords while being forced to use small swords. Setting him to have 1 pip in small swords too."
-        COPY_EXISTING ~RIGGILO.CRE~ ~override~
+        COPY_EXISTING ~riggilo.cre~ ~override~
             PATCH_IF BYTE_AT(0x6e) = 0 BEGIN
                 WRITE_BYTE 0x6f 1
             END
+
     END
 
-    ACTION_IF has_eefixpack = 0 BEGIN
+    ACTION_IF NOT has_eefixpack BEGIN
+        
         ACTION_IF is_bgee_bg2ee_or_eet BEGIN
             PRINT "[[FIX]]: Removing bizarre & unused spell selection from shadow creatures that can be exploitable by the player"
         END
 
         ACTION_IF is_bgee_or_eet BEGIN
+
             COPY_EXISTING   ~bdwrai01.cre~ ~override~ // wraith
                             ~bdwrait1.cre~ ~override~ // wraith
                             ~bpshadow.cre~ ~override~ // shadow
@@ -189,125 +308,151 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                 BUT_ONLY IF_EXISTS
 
         END ELSE ACTION_IF is_bg2ee_or_eet BEGIN // bg2ee
-            COPY_EXISTING   ~chwraith.cre~ ~override~ // child spirit
-                            ~firwra01.cre~ ~override~ // greater wraith
-                            ~fsghos.cre~   ~override~ // ghost
-                            ~fsghos2.cre~  ~override~ // ghost
-                            ~gormisti.cre~ ~override~ // ice mist
-                            ~gormistp.cre~ ~override~ // poison mist
-                            ~hgmis01.cre~  ~override~ // vampiric wraith
-                            ~hgmis02.cre~  ~override~ // swamp horror
-                            ~hgwra01.cre~  ~override~ // gorion (casts all spells via forcespell)
-                            ~hgwra02.cre~  ~override~ // devil shade
-                            ~hgwra03.cre~  ~override~ // devil shade
-                            ~kshadow.cre~  ~override~ // shadow
-                            ~mistcd01.cre~ ~override~ // crimson death
-                            ~mistho01.cre~ ~override~ // mist horror
-                            ~mistpo01.cre~ ~override~ // poison mist
-                            ~mistposu.cre~ ~override~ // poison mist
-                            ~mistva01.cre~ ~override~ // vampiric mist
-                            ~mistwa01.cre~ ~override~ // wandering horror
-                            ~ohhburic.cre~ ~override~ // burich
-                            ~ohhshad.cre~  ~override~ // shadow
-                            ~ohhshfi1.cre~ ~override~ // shadow fiend
-                            ~ohhshfi2.cre~ ~override~ // devil shade
-                            ~rngsha.cre~   ~override~ // shadow
-                            ~rngsha01.cre~ ~override~ // shadow
-                            ~rngsha02.cre~ ~override~ // shadow patrick - knows cure medium wounds and has generic priest script to use it, but doesn't have it memorized
-                            ~rngsha03.cre~ ~override~ // shadow
-                            ~rngsha04.cre~ ~override~ // shadow jailor
-                            ~rngsha2d.cre~ ~override~ // shadow patrick
-                            ~sarspir.cre~  ~override~ // prison spirit
-                            ~sdshadfi.cre~ ~override~ // shadow fiend
-                            ~sdshadow.cre~ ~override~ // shadow
-                            ~sewsha01.cre~ ~override~ // shadow fiend
-                            ~sewsha02.cre~ ~override~ // shadow fiend
-                            ~sewsha03.cre~ ~override~ // shadow
-                            ~shadfi01.cre~ ~override~ // shadow fiend
-                            ~shadfi02.cre~ ~override~ // devil shade
-                            ~shadow01.cre~ ~override~ // shadow
-                            ~shadowsu.cre~ ~override~ // shadow
-                            ~slaysh01.cre~ ~override~ // slayer shadow
-                            ~spectr01.cre~ ~override~ // specter
-                            ~spellh01.cre~ ~override~ // spellhaunt
-                            //~tanwiz1.cre~  ~override~ // vellin dahn
-                            ~telslav.cre~  ~override~ // slave wraith
-                            ~telwrai.cre~  ~override~ // demon wraith
-                            ~uhcreat.cre~  ~override~ // shadow
-                            ~wraith01.cre~ ~override~ // wraith
-                            ~wrashi01.cre~ ~override~ // shimmering wraith
+
+            COPY_EXISTING ~chwraith.cre~ ~override~ // child spirit
+                          ~firwra01.cre~ ~override~ // greater wraith
+                          ~fsghos.cre~   ~override~ // ghost
+                          ~fsghos2.cre~  ~override~ // ghost
+                          ~gormisti.cre~ ~override~ // ice mist
+                          ~gormistp.cre~ ~override~ // poison mist
+                          ~hgmis01.cre~  ~override~ // vampiric wraith
+                          ~hgmis02.cre~  ~override~ // swamp horror
+                          ~hgwra01.cre~  ~override~ // gorion (casts all spells via forcespell)
+                          ~hgwra02.cre~  ~override~ // devil shade
+                          ~hgwra03.cre~  ~override~ // devil shade
+                          ~kshadow.cre~  ~override~ // shadow
+                          ~mistcd01.cre~ ~override~ // crimson death
+                          ~mistho01.cre~ ~override~ // mist horror
+                          ~mistpo01.cre~ ~override~ // poison mist
+                          ~mistposu.cre~ ~override~ // poison mist
+                          ~mistva01.cre~ ~override~ // vampiric mist
+                          ~mistwa01.cre~ ~override~ // wandering horror
+                          ~ohhburic.cre~ ~override~ // burich
+                          ~ohhshad.cre~  ~override~ // shadow
+                          ~ohhshfi1.cre~ ~override~ // shadow fiend
+                          ~ohhshfi2.cre~ ~override~ // devil shade
+                          ~rngsha.cre~   ~override~ // shadow
+                          ~rngsha01.cre~ ~override~ // shadow
+                          ~rngsha02.cre~ ~override~ // shadow patrick - knows cure medium wounds and has generic priest script to use it, but doesn't have it memorized
+                          ~rngsha03.cre~ ~override~ // shadow
+                          ~rngsha04.cre~ ~override~ // shadow jailor
+                          ~rngsha2d.cre~ ~override~ // shadow patrick
+                          ~sarspir.cre~  ~override~ // prison spirit
+                          ~sdshadfi.cre~ ~override~ // shadow fiend
+                          ~sdshadow.cre~ ~override~ // shadow
+                          ~sewsha01.cre~ ~override~ // shadow fiend
+                          ~sewsha02.cre~ ~override~ // shadow fiend
+                          ~sewsha03.cre~ ~override~ // shadow
+                          ~shadfi01.cre~ ~override~ // shadow fiend
+                          ~shadfi02.cre~ ~override~ // devil shade
+                          ~shadow01.cre~ ~override~ // shadow
+                          ~shadowsu.cre~ ~override~ // shadow
+                          ~slaysh01.cre~ ~override~ // slayer shadow
+                          ~spectr01.cre~ ~override~ // specter
+                          ~spellh01.cre~ ~override~ // spellhaunt
+                          //~tanwiz1.cre~  ~override~ // vellin dahn
+                          ~telslav.cre~  ~override~ // slave wraith
+                          ~telwrai.cre~  ~override~ // demon wraith
+                          ~uhcreat.cre~  ~override~ // shadow
+                          ~wraith01.cre~ ~override~ // wraith
+                          ~wrashi01.cre~ ~override~ // shimmering wraith
                 REMOVE_MEMORIZED_SPELL ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
                 REMOVE_KNOWN_SPELL ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
             BUT_ONLY IF_EXISTS
         END
+
     END
 
-    ACTION_IF is_bg2ee_or_eet BEGIN
+    PRINT "[[FIX]]: Setting invisible stalker enemies as elementals of the Elemental Plane of Air instead of spectres/human"
+    COPY_EXISTING ~stalke.cre~   ~override~
+                  ~senstalk.cre~ ~override~
+                  ~gorstalk.cre~ ~override~
+        WRITE_BYTE 0x272 race_elemental
+        WRITE_BYTE 0x273 class_elemental_air
+    BUT_ONLY IF_EXISTS
 
-        COPY_EXISTING ~DAGG24.itm~ ~override~
-            LPF ITM_WEIGHT RET result END
-            PATCH_IF result = 0 BEGIN
-                PATCH_PRINT "[[FIX]]: Fixing DAGG24.itm (Dagger +3) weight from 0 to 1"
-                LPF ALTER_ITEM INT_VAR weight = 1 END
-                SPRINT str @99990
-                READ_STRREF 0x54 desc
-                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\11~
+    ACTION_IF zst_gender_fix BEGIN
+
+        WITH_SCOPE BEGIN
+
+            DEFINE_PATCH_MACRO fix_gender BEGIN
+                SET gender = BYTE_AT(0x275)
+                PATCH_IF gender = gender_male OR gender = gender_female BEGIN
+                    ++matches
+                    WRITE_BYTE 0x275 gender_niether
                 END
-                SAY_EVALUATED 0x54 ~%desc%~
             END
 
-        COPY_EXISTING ~SHAKTI1.itm~ ~override~
-            PATCH_PRINT "[[FIX]]: Fixing SHAKTI1.itm (Dagger +3) speed factor from 1 to 0"
-            LPF ALTER_HEADER INT_VAR speed = 0 END
-
-        COPY_EXISTING ~MISC4U.itm~ ~override~
-            LPF WPN_DICESIZE RET dicesize = result END
-            PATCH_IF dicesize = 6 BEGIN
-                PATCH_PRINT "[[FIX]]: Fixing MISC4U.itm (Embarl's Dagger) dicesize from 6 to 4"
-                LPF ALTER_ITEM INT_VAR lore_id = 0 END
-                LPF ALTER_HEADER INT_VAR silent = 1 dicesize = 4 END
-                SPRINT str @99999
-                READ_STRREF 0x54 desc
-                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]6~ ~\11d4~
+            PRINT "[[FIX]]: Setting many types of sexless creatures as 'niether'-gendered if they're set to male or female so it doesn't intrude with opcodes that target male/female"
+            OUTER_SET matches = 0
+            COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
+                SET general = BYTE_AT(0x271)
+                SET race    = BYTE_AT(0x272)
+                PATCH_IF race    = race_golem           OR
+                         race    = race_treant          OR
+                         race    = race_demonic         OR
+                         race    = race_mind_flayer     OR
+                         race    = race_mist            OR
+                         race    = race_planetar        OR
+                         race    = race_darkplanetar    OR
+                         race    = race_solar           OR
+                         race    = race_antisolar       OR
+                         race    = race_beholder        OR
+                         race    = race_genie           OR
+                         race    = race_slime           OR
+                         race    = race_mimic           OR
+                         race    = race_doppleganger    OR
+                         race    = race_myconid         OR
+                         race    = race_shadow          OR
+                         race    = race_wraith          OR
+                         race    = race_specter         OR
+                         race    = race_spectral_undead OR
+                         race    = race_elemental       OR
+                         race    = race_shambling_mound OR
+                         race    = race_shrieker        OR
+                         race    = ~%race_will-o-wisp%~ OR
+                         race    = race_otyugh          OR
+                         general = general_weapon       OR
+                         general = general_plant
+                BEGIN
+                    LPM fix_gender
                 END
-                SAY_EVALUATED 0x54 ~%desc%~
-            END
+            BUT_ONLY
 
-        COPY_EXISTING ~MISC4Q.itm~ ~override~
-            LPF WPN_DICENUM RET dicenum = result END
-            LPF WPN_DICESIZE RET dicesize = result END
-            PATCH_IF dicesize = 4 AND dicenum = 2 BEGIN
-                PATCH_PRINT "[[FIX]]: Fixing MISC4Q.itm (The Ogre's Sword) so it uses bastard sword proficiency"
-                LPF ALTER_ITEM INT_VAR lore_id = 0 wpn_prof = 89 END
-                LPF ALTER_HEADER INT_VAR silent = 1 dicesize = 8 dicenumber = 1 END
-                SPRINT str @99980
-                SPRINT ls_str @99981
-                SPRINT bs_str @99982
-                READ_STRREF 0x50 desc
-                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)%ls_str%~ ~\1%bs_str%~
+            COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
+                SET race = BYTE_AT(0x272)
+                LPF IS_BIT_SET INT_VAR bit_field = LONG_AT(0x20) bit = 7 RET petrified = result END
+                PATCH_IF race = race_statue AND NOT petrified BEGIN
+                    LPM fix_gender
                 END
-                SAY_EVALUATED 0x50 ~%desc%~
-            END
 
-         COPY_EXISTING "SW1H28.itm" ~override~
-            PATCH_PRINT "[[FIX]]: SW1H28.itm (Cutthroat +4) so it has a speed factor of 0"
-            LPF ALTER_HEADER INT_VAR speed = 0 END
-            READ_STRREF 0x54 desc
-            SPRINT str_sf @99998
-            INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str_sf%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\10~
-            END
-            SAY_EVALUATED 0x54 ~%desc%~
+            PRINT "[[FIX]]: Found %matches% matches that were set to 'niether' gender"
+            
+        END
+
     END
 
-    ACTION_IF FILE_EXISTS_IN_GAME ~DOBONE.ITM~ BEGIN
-        PRINT "[[FIX]]: Fixing DOBONE.ITM (Darts of Bone) to have a speed factor of 0 (+3 Darts)"
-        COPY_EXISTING ~DOBONE.ITM~ ~override~
+    ACTION_IF NOT has_eefixpack AND FILE_EXISTS_IN_GAME ~dobone.itm~ BEGIN
+
+        PRINT "[[FIX]]: Fixing dobone.itm (Darts of Bone) to have a speed factor of 0 (+3 Darts)"
+        COPY_EXISTING ~dobone.itm~ ~override~
             LPF ALTER_HEADER INT_VAR speed = 0 END
+
     END
+
+    PRINT "[[FIX]]: Setting Shambling Mounds to the race of Shambling Mound and Plant type"
+    COPY_EXISTING ~globsham.cre~ ~override~
+                  ~hgmnd2.cre~   ~override~
+                  ~hgmound.cre~  ~override~
+                  ~smound01.cre~ ~override~
+                  ~bpshamb.cre~  ~override~
+                  ~smoundsu.cre~ ~override~
+                  ~sshamb.cre~   ~override~
+                  ~cyshamb.cre~  ~override~
+                  ~shmblr.cre~   ~override~
+        WRITE_BYTE 0x271 general_plant
+        WRITE_BYTE 0x272 race_shambling_mound
+    BUT_ONLY IF_EXISTS
 
     OUTER_SET ~zs_prefixes~ = 1
 END

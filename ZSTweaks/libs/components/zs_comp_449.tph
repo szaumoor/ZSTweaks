@@ -8,7 +8,7 @@ ACTION_IF spell_otilukes_freezing_sphere > 0 BEGIN
 
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_OTILUKES_FREEZING_SPHERE" RET spell_res END
   COPY_EXISTING ~%spell_res%.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@8227) END
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8227) END
     LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 special = (2**8) END
     
 END

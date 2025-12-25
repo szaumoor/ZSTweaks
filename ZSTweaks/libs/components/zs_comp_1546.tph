@@ -5,6 +5,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF zst_1546_buckler_tweak BEGIN
+
     COPY "%MOD_FOLDER%/items/bucklers" "override"
 
     OUTER_SET projectile = 345
@@ -46,12 +47,12 @@ ACTION_IF zst_1546_tower_tweak BEGIN
             REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%hyphen%[ %TAB%]*%ac_string%[ %TAB%]*:?[ %TAB%]*\)\+1~ ~\1+2~
         END
         SAY_EVALUATED UNIDENTIFIED_DESC ~%desc%~
-        LPF ITM_REF_UDESC RET changed_description_index = result END
+        READ_LONG 0x50 changed_description_index
 END
 
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-    LPF ITM_CAT RET cat = result END
-    LPF ITM_APPEARANCE RET appearance = result END
+    READ_SHORT 0x1c cat
+    READ_ASCII 0x22 appearance (2)
     PATCH_IF cat = 12 AND NOT ("%appearance%" STR_EQ "  ") BEGIN // shields
         PATCH_IF zst_1546_everyone_can_use_all_shields BEGIN
             WRITE_LONG 0x1e 0
@@ -71,10 +72,10 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
                 END
 
                 PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SHLD05" BEGIN
-                    LPF ALTER_ITEM INT_VAR unid_ref_desc = changed_description_index END
+                    LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
                     SPRINT hyphens @99991
                     SPRINT ac_string @99992
-                    LPF ITM_REF_DESC RET description_index = result END
+                    READ_LONG 0x54 description_index
                     PATCH_IF description_index > "-1" BEGIN
                         READ_STRREF 0x54 desc
                         INNER_PATCH_SAVE desc ~%desc%~ BEGIN
@@ -138,8 +139,34 @@ BUT_ONLY
 
 // patch weapon enchantment protections with protection vs buckler parry
 ACTION_IF zst_1546_buckler_tweak BEGIN
+
     PRINT "Patching creatures, spells, and items with weapon immunities with appropriate buckler parry immunity..."
+    ACTION_IF zs_debug BEGIN
+        OUTER_SET matches = 0
+    END
+
+    DEFINE_PATCH_MACRO nonmagical_macro BEGIN
+        LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=120 match_parameter2=2 match_parameter1=0 opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~ZSTWBK00~ END
+    END
+
+    DEFINE_PATCH_MACRO magical_macro BEGIN
+        PATCH_FOR_EACH ench IN 1 2 3 4 5 6 BEGIN
+            LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=120 match_parameter2=1 match_parameter1=0 opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~ZSTWBK0%ench%~ END
+        END
+    END
+
+    DEFINE_PATCH_MACRO enchantment_macro BEGIN
+        FOR ( index = 1; index <= enchantment; ++index ) BEGIN
+            LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=120 match_parameter2=0 match_parameter1=index opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~ZSTWBK0%index%~ END
+        END
+    END
+
     COPY_EXISTING_REGEXP ~^.+\.\(cre\|itm\|spl\)$~ ~override~
-        LPF PATCH_FOR_BUCKLER_IMMUNITIES END
+        LPM PATCH_FOR_WPN_IMMUNITIES
     BUT_ONLY
+
+    ACTION_IF zs_debug BEGIN
+        PRINT "Patched %matches% resources to protect against buckler effects"
+    END
+
 END

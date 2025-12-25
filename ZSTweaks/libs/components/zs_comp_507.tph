@@ -4,32 +4,13 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_507~ = 1
 END
 
-COPY_EXISTING ~SPPR201.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc = RESOLVE_STR_REF(@5260) END
+COPY_EXISTING ~sppr201.spl~ ~override~
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@5260) END
     LPF ALTER_HEADER INT_VAR range=10 projectile = 160 END
 
     PATCH_IF zst_507_disable_aidglow BEGIN
         LPF DELETE_EFFECT INT_VAR opcode=8 END
     END
-
-    READ_SHORT 0x68 abilities
-    SET hp_bonus = 1
-    SET dur = 6
-    FOR ( index = 0; index < abilities; ++index ) BEGIN
-
-        LPF ADD_SPELL_EFFECT
-            INT_VAR
-                header=(index+1)
-                opcode=18
-                power=2
-                target=2
-                parameter1=hp_bonus
-                resist_dispel=3
-                duration = dur
-        END
-
-        dur += 6
-        PATCH_IF index >= 3 BEGIN
-            ++hp_bonus
-        END
-    END
+    
+    LPF CLONE_EFFECT_EX INT_VAR match_opcode=129 opcode=18 
+    STR_VAR parameter1_ex = "(((o_duration / 6) - 1) < 5 ? 1 : (((o_duration / 6) - 1) - 3))" END

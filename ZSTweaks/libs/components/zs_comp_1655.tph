@@ -9,7 +9,7 @@ ACTION_IF NOT is_iwdee BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~bdhelm01.itm~ BEGIN
 
     COPY_EXISTING "bdhelm01.itm" ~override~
-      LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6960) END
+      LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6960) END
       LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 21 END
       LPF ALTER_EFFECT INT_VAR match_opcode=42 match_parameter2=2**3 parameter1=2 END
       LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=21,p1=-20;op=49,p1=-2;op=346,p1=-2,spec=5;op=276,p1=-20~ END

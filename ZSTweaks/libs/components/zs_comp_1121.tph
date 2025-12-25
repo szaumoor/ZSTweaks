@@ -5,24 +5,23 @@ END ELSE BEGIN
 END
 
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
-    LPF ITM_CAT RET wpn_cat = result END
-    LPF ITM_PROF RET wpn_prof = result END
-    LPF ITM_ABILITIES_NUM RET num_abilities = result END
-    LPF ITM_APPEARANCE RET appearance = result END
-	PATCH_IF (wpn_cat = 22 OR wpn_cat = 23) AND wpn_prof = 100 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
-        LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = result END
-        LPF ITM_ENCH RET ench = result END
+    READ_SHORT 0x1c cat
+    READ_BYTE 0x31 wpn_prof
+    READ_SHORT 0x68 num_abilities
+    READ_ASCII 0x22 appearance (2)
+	PATCH_IF (cat = 22 OR cat = 23) AND wpn_prof = 100 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
+        READ_LONG 0x60 ench
         PATCH_MATCH ench
             WITH 0 1 BEGIN
-                LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 ip=0 p2=piercing END
+                LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 ip=0 p2=op12_piercing END
             END 2 3 BEGIN
-                LPF ADD_SLEEP_SAFE_DMG INT_VAR dsize=2 dnum=1 ip=0 p2=piercing END
+                LPF ADD_SLEEP_SAFE_DMG INT_VAR dsize=2 dnum=1 ip=0 p2=op12_piercing END
             END 4 5 BEGIN
-                LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 dsize=2 dnum=1 ip=0 p2=piercing END
+                LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 dsize=2 dnum=1 ip=0 p2=op12_piercing END
             END 6 BEGIN
-                LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 dsize=3 dnum=1 ip=0 p2=piercing END
+                LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 dsize=3 dnum=1 ip=0 p2=op12_piercing END
             END DEFAULT
-                LPF ITM_STR_NAME RET name = result END
+                READ_ASCII 0x0c  name
                 PATCH_WARN "[Flails Tweak] Interesting, we found a flail with enchantment outside [0-6]: %SOURCE_RES%, with name '%name%'. Inform RoyalProtector!"
         END
     END

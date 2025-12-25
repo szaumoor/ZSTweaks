@@ -198,8 +198,8 @@ Equipped abilities:
 – Magic Resistance: +10%
 
 Combat abilities:
-– Inflicts +2 fire damage against trolls
-– Inflicts +4 slashing damage against chaotic evil
+– Inflicts +2 fire damage vs. trolls
+– Inflicts +4 slashing damage vs. chaotic evil
 
 THAC0: +2
 Damage: 1d10+2
@@ -221,8 +221,8 @@ Equipped abilities:
 – Magic Resistance: +10%
 
 Combat abilities:
-– Inflicts +2 fire damage against trolls
-– Inflicts +4 slashing damage against evil
+– Inflicts +2 fire damage vs. trolls
+– Inflicts +4 slashing damage vs. evil
 
 THAC0: +2
 Damage: 1d10+2
@@ -304,32 +304,36 @@ Requires:
 
 Weight: 10~
 
-@6400 = ~This type of staff is thoroughly linked to the image of the spellcasting profession, rare though it is. It is among the most powerful tools that a wizard can possess, the culmination of complex enchantments and endless study. This particular example is good in melee, grants invisibility, and offers protection from charms and evil. It can also cast Spell Trap and Dispel Magic and launch a Fireball-Lightning Bolt combination. The quintessential Mage item.
+@6400 = ~This type of staff is thoroughly linked to the image of the spellcasting profession, rare though it is. It is among the most powerful tools that a wizard can possess, the culmination of complex enchantments and endless study. This particular example is good in melee, grants invisibility once per turn, and offers permanent protection from charms and evil. It can also cast Spell Trap, dispel magic on hit, cause a massive Sunfire explosion around the caster, and even allow the wizard to cast any spell they currently know for free once per day. The quintessential mage item.
 
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +2
-– Saving Throws: +2
-– Invisibility
+– Armor class: +2
+– Saving throws: +2
 – Immunity to charm
-– Protection From Evil
+– Protection from evil
+– Strikes as a +5 weapon for the purposes of overcoming weapon immunities
+– Turns the user invisible once per turn
 
 Combat abilities:
-– Dispel Magic at level 30 on each hit if Save vs. Spell at -2 is failed
+– Dispel Magic at level 30 on each hit if a save vs. Spell at -2 is failed
 
 Charge abilities:
-– Fireball-Lightning Bolt three times per day
-  Fireball: 10d6 fire damage to all in a 15-ft. radius (Save vs. Spell for half)
-  Lightning: 10d6 electrical damage to all in its path (Save vs. Spell for half)
+– Double Sunfire cast at level 10 twice per day
+  Special: 20d6 fire damage to all in a 15-ft. radius around the caster (save vs. Spell for half)
   Range: 150 ft.
 
 – Spell Trap once per day
   Duration: 8 hours or until 30 spell levels have been trapped
   Area of Effect: The user
 
-THAC0: +1 (strikes as a +5 weapon)
-Damage: 1d6+1 (crushing)
+– Cast any known spell once per day
+  Special: The power of the staff allows the wizard to channel any known spell, even if it's not memorized
+
+THAC0: +1, +5 for single-classed mages and sorcerers
+Damage: 1d6+1, +5 (sorcerers and single-classed mages)
+Damage type: Crushing
 Speed Factor: 1
 Proficiency Type: Quarterstaff
 Type: Two-handed
@@ -348,7 +352,7 @@ Combat abilities:
 
 THAC0: +4
 Damage: 1d10+4, +3 cold damage (tripled vs. giants)
-Damage type: Piercing or Slashing
+Damage type: Piercing/Slashing
 Speed Factor: 5
 Proficiency Type: Halberd
 Type: Two-handed
@@ -391,7 +395,7 @@ Equipped abilities:
 – Immunity to charm and confusion
 
 Combat abilities:
-– 25% chance per hit it causes confusion on the target 1 round, unless a save vs. Spell succeeds
+– 25% chance per hit it causes confusion on the target for 2 rounds, unless a save vs. Spell succeeds
 
 THAC0: +3
 Damage: 1d10+3 (slashing)
@@ -527,7 +531,7 @@ Weight: 3~
 STATISTICS:
 
 Combat abilities:
-– Hit target is poisoned for 1 round, suffering 12 poison damage in total, unless a Save vs. Death at -2 succeeds
+– Hit target is poisoned for 1 round, suffering 12 poison damage in total, unless a save vs. Death at -2 succeeds
 
 THAC0: +4
 Damage: 1d6+4, +4 poison damage
@@ -590,13 +594,13 @@ Weight: 3~
 
 @7591 = ~Witch's Wrath~
 
-@7640 = ~When activated, this rod may be used as a powerful magical staff. Any creature hit by the rod must make a saving throw vs. Spell or become paralyzed in terror, fearing the wielder as if he or she were a flesh-eating demon from the Abyss, which may kill them if the fear goes out of control. There is a drawback to using this rod, however: Each time the rod is used, there is a chance that the wielder loses one point of Constitution for one 24 hours.
+@7640 = ~When activated, this rod may be used as a powerful magical staff. Any creature hit by the rod must make a saving throw vs. Spell or become paralyzed in terror, fearing the wielder as if he or she were a flesh-eating demon from the Abyss, which may kill them if the fear goes out of control. There is a drawback to using this rod, however: each time the rod is used, there is a chance that the wielder loses one point of constitution for 24 hours.
 
 STATISTICS:
 
 Combat abilities:
 – Target must save vs. Spell or flee in terror for 2 rounds. After one round, if the the target is still panicking, there's a 20% chance the target dies from the shock if they fail a save vs. Death; if they survive, they become rooted in place for the remaining of the round.
-– Every time the rod hits an opponent, there's a 10% chance the wielder will lose 1 point of Constitution for 24 hours
+– Every time the rod hits an opponent, there's a 10% chance the wielder will lose 1 point of constitution for 24 hours
 
 THAC0: +3
 Damage: 1d6+3 (crushing)
@@ -682,7 +686,7 @@ STATISTICS:
 
 THAC0: +4
 Damage: 1d10+4, +1 cold, fire, electrical, acid, and poison damage
-Damage type: Piercing
+Damage type: Piercing/Slashing
 Speed Factor: 5
 Proficiency Type: Halberd
 Type: Two-handed
@@ -701,7 +705,7 @@ Combat abilities:
 
 THAC0: +2
 Damage: 1d10+2, +2 cold damage
-Damage type: Piercing
+Damage type: Piercing/Slashing
 Speed Factor: 7
 Proficiency Type: Halberd
 Type: Two-handed
@@ -769,7 +773,7 @@ Combat abilities:
 – 10% chance of decapitating opponent with each successful attack (Save vs. Death at -4 negates)
 
 THAC0: +6
-Damage: 1d10+6 (piercing)
+Damage: 1d10+6 (piercing or slashing)
 Speed Factor: 3
 Proficiency Type: Halberd
 Type: Two-handed
@@ -824,7 +828,7 @@ Weight: 9~
 STATISTICS:
 
 Combat abilities:
-– 5% chance per hit to critically strike, inflicting 5 extra piercing damage on a critical hit
+– +5% extra chance per hit to critically strike, inflicting 5 extra piercing damage on a critical hit
 
 THAC0: +3
 Damage: 1d8+3, +10 piercing damage
@@ -837,6 +841,19 @@ Requires:
 
 Weight: 3~
 
+
+
+// my item pack
+@8620 = ~– Undead must save vs. Death or be utterly destroyed~
+@8621 = ~Undead and fiends must save vs. Death or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
+  – Fiends: 95%
+  – Liches and demiliches: 80%
+  – Vampires and vampyres: 50%
+  – Spectres, ghosts, and other spectral creatures: 35%
+  – Mummies and revenants: 20%
+  – Wraiths: 5%
+  – Other lesser undead creatures such as Skeletons, Shadows, and Ghouls have no chance of resisting it and must therefore save against it every time~
+
 @50100 = ~Lawrence Lilarcor was well known, not for being brave, but for being an idiot. As the tale goes, the boastful Lilarcor left his village at the urging of his friends so that the "great hero" could do battle with a devious treant. He walked for days in the dead of winter until, feverish, he found his target and began an epic wrestling match. Unfortunately (or perhaps luckily), the "treant" was nothing more than a craggy old normal oak. His friends had been jesting, not actually expecting that Lilarcor would go fight the fictitiously dangerous tree. That might have been the end of it, but Lilarcor, not really knowing what a treant was in the first place, didn't realize the truth. He eventually uprooted the oak and, marching proudly home, he declared himself a hero. Thus was born a laughing stock of epic proportions, and over time the name of Lilarcor became the sacrificial fool in many tales of "less than brilliance."
 
 Lilarcor is not quite as lovable (or annoying, depending on your viewpoint) as it was before <CHARNAME> had it upgraded. When the Mind Flayer Control Circlet was embedded in its hilt, Lilarcor seemed to lose the ability to consciously converse with those nearby and was reduced to making occasional quips. However, Lilarcor's peculiar intelligence (or lack thereof) now serves as a boon (or a blight) to the wielder: the one holding Lilarcor cannot have its intelligence adjusted for any reason. This protects against the intelligence drain associated with the illithids' brain-devouring attack, and the beneficial effects of a potion of Genius.
@@ -848,7 +865,7 @@ Equipped abilities:
 – Immunity to intelligence changes
 
 Combat abilities:
-– 30% chance per hit it causes confusion on the target 1 round, unless a Save vs. Spell at -2 succeeds
+– 30% chance per hit it causes confusion on the target for 2 rounds, unless a save vs. Spell at -2 succeeds
 
 THAC0: +5
 Damage: 1d10+5 (slashing)
@@ -881,3 +898,210 @@ Requires:
  14 Strength
 
 Weight: 10~
+
+
+@41236 = ~When the hero Trueblood destroyed the Harbinger, a demon gorging itself on the blood of peasant folk near Luskan, he bound its essence in the only vessel capable of holding it, his fabled sword, Deliverance. Though the evil creature was dominated by the will of the semi-sentient blade, it was not truly defeated, and it transformed the weapon from within. Now it acts much like any other enchanted weapon, but when it strikes, there is a small chance that a fireball erupts, a sign that the demon within still rages at its imprisonment. There is also a chance that any ogre it hits will be turned to stone. Whether this is an ability of the demon or a vestigial power of the original blade is not known.
+
+STATISTICS:
+
+Combat abilities:
+– Fireball: 6% chance per hit that a 10d6 fireball explodes, centered on the target. Wielder is unaffected.
+– Flesh to Stone: All struck ogres must save vs. Spell or be turned to stone
+
+THAC0: +3
+Damage: 1d10+3 (slashing)
+Speed Factor: 7
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+@42424 = ~A mage's staff is far more than just a gilded walking stick, most being enchanted to an impressive degree. This one is no exception, and whoever the previous owner was, they were powerful indeed. It enables a mage to better escape hostile magic and avoid physical blows, and can erect a Globe of Invulnerability once per day. Offensively, it can shoot magic missiles to the enemies from a safe distance which the mage must throw with skill, and allows the mage to cast a paralyzing Lightning Bolt twice per day. 
+
+STATISTICS:
+
+Equipped abilities:
+– Armor class: +2
+– Saving throws: +2
+– Magic resistance: +5% (10% for single-classed mages and sorcerers)
+– Attacks per round: Set to 2 (sorcerers and single-classed mages)
+– Casting level: +1
+– 5% chance to inflict double magic damage on the ranged attacks
+– Melee hits have a 10% chance of stunning the target for 5/2 rounds if a save vs. Spell is failed
+– Acts as a +4 weapon for the purposes of what it can hit
+
+Charge abilities:
+– Globe of Invulnerability once per day
+  Special: Immunity to 1st- through 4th-level spells
+  Duration: 2 turns
+  Area of Effect: The user
+
+– Lightning Bolt of Paralyzation twice per day
+  Damage: 10d6 electrical to all in its path (save vs. Spell for half)
+  Special: Stuns target for 5/2 rounds if a save vs. Spell is failed
+  Range: 100 ft.
+
+THAC0: +2, +4 for sorcerers and single-classed mages
+Damage (melee): 1d6+2 (crushing)
+Damage (ranged): 3d4+3 (magic)
+Speed Factor: 2
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@42430 = ~This staff seems to draw from elven artistic traditions, though tied less to the forest than is usually customary. It was apparently designed to control air elementals, being able to summon one as a servant to the wielder and potentially destroying creatures of the same type in a single blow. When necessary, it can also spawn a cloud of gas, causing anyone within the area of effect to fall into a deep slumber. Some effects are limited by charges.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Dexterity: +1
+– Electricity resistance: +20%
+– Electricity damage: +4% (8% for single-classed druids and shamans)
+– Air Elementals attack the wielder with a -2 penalty to their THAC0
+– Acts as +4 weapon in every respect vs. elementals
+
+Combat abilities:
+– Struck air elementals save vs. Spell or be destroyed but extremely powerful elementals such as elemental princes will not be affected.
+
+Charge abilities:
+– Summon 8-HD Lesser Air Elemental once per day
+  Range: 20 ft.
+  Duration: 1 hour
+
+– Sleep Cloud once per day (Save vs. Death negates)
+  Range: 40 ft.
+  Duration: 3 rounds
+
+
+THAC0: +2
+Damage: 1d6+2, +1d2 electricity damage (double on a critical hit)
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@42431 = ~Linked to the Plane of Earth, this staff may have been fashioned by an ancient druidic sect. It can summon an earth elemental, though it also has the potential to slay such creatures in a single blow, possibly hinting at how difficult it is to control them. It can also free a person from the earth by casting Stone to Flesh. 
+
+STATISTICS:
+
+Equipped abilities:
+– Saves vs. Death: +1
+– Constitution: +1
+– Acid and poison damage resistance: +20%
+– Acid and poison damage: +4% (8% for single-classed druids and shamans)
+– Earth Elementals attack the wielder with a -2 penalty to their THAC0
+– Acts as +4 weapon in every respect vs. elementals
+
+Combat abilities:
+– Struck earth elementals must save vs. Spell or be destroyed but extremely powerful elementals such as elemental princes will not be affected.
+
+Charge abilities:
+– Summon 8-HD Lesser Earth Elemental once per day
+  Range: 20 ft.
+  Duration: 1 hour
+
+– Stone to Flesh once per day
+  Special: Revert effects of a petrification attack
+  Range: Touch
+
+– Ironskins once per day
+  Special: Protects against the first three weapon attacks vs. the user
+  Range: Caster
+
+THAC0: +2
+Damage: 1d6+2 , +1 acid damage, +1 poison damage (double on a critical hit)
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@42432 = ~This staff bears an ancient rune that may link it to the wizards of faraway Halruaa, but it is impossible to be certain. Drawing from the Plane of Fire, it can erupt in a Fire Shield that damages attackers, it can summon a fire elemental under the control of the wielder, and it can potentially draw all the energy from any fire elemental that it hits, destroying them instantly. Regardless of who uses it, anyone with the ability to channel the power of fire will find the staff allows them to channel their igneous fury more effectively, but those that know how to use the best, such as red dragon disciples and invokers.
+
+STATISTICS:
+
+Equipped abilities:
+– Strength: +1
+– Fire resistance: +20%
+– Fire damage: +4% (8% for single-classed druids, shamans, and dragon disciples)
+– Dragon Disciples and Invokers can attack twice per round with the staff and inflict double fire damage
+– Dragon Disciples and Invokers reduce the Fire Resistance of targets by 20% for 2 rounds on hit
+– Fire Elementals attack the wielder with a -2 penalty to their THAC0
+– Acts as +4 weapon in every respect vs. elementals
+
+Combat abilities:
+– Struck fire elementals must save vs. Spell or be destroyed but extremely powerful elementals such as elemental princes will not be affected.
+
+Charge abilities:
+– Summon 8-HD Lesser Fire Elemental once per day
+  Range: 20 ft.
+  Duration: 1 hour
+
+– Fireshield (Red) once per day
+  Fire Resistance: +50%
+  Special: Any who strike the user within a 5-ft. radius suffers 1d8+2 fire damage
+  Duration: 13 rounds
+  Area of Effect: The user
+
+THAC0: +2
+Damage: 1d6+2, +1d2 fire damage (double on a critical hit)
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+@42440 = ~There are stories that tell of these staves sprouting in the growth around druid groves when the forest is threatened. Fanciful tales, but truth or not, this staff is a powerful tool. It draws energy from storms, and there is a chance that any melee blow might trigger a thunderclap that knocks enemies down. It can also throw small bolts of lightning from a distance by the will of the druid. It casts Lightning Bolt, Chain Lightning, and if circumstances warrant it, it can summon a lightning storm to blast enemies to dust. Some abilities are limited by charges.
+
+STATISTICS:
+
+Equipped abilities:
+– Electricity damage: +12% (shamans, and single-classed druids or clerics)
+– Attacks vs. the wielder deal 1d2 electricity damage back
+
+Combat abilities:
+– Thunderclap (melee): 10% chance of stunning hit target for 2 rounds and dealing 4d5 electricity damage (Save vs. Spell negates)
+– Ranged attacks decreases electricity resistance by 10% for 1 turn for susceptible targets (Save vs. Spell negates)
+
+Charge abilities:
+– Lightning Bolt once per day
+  Damage: 10d6 electrical (Save vs. Spell for half)
+  Area of Effect: Path of bolt
+  Range: 25 ft.
+
+– Chain Lightning once per day
+  Damage: 10d6 electrical damage to the first enemy it touches and every other enemy in close proximity
+  Area of Effect: One enemy and everyone within 15ft
+  Range: 25 ft.
+
+– Call Lightning once per day
+  Special: Calls forth 5 lightning bolts in total, one per turn. Only works outside
+  Damage: 5d8 electrical per strike
+  Range: 80 ft.
+
+THAC0: +2
+Damage (melee): 1d6+2, +3 electricity damage
+Damage (ranged): 2d6+3 electricity damage
+Speed Factor: 2
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 4~

@@ -4,12 +4,11 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_110~ = 1
 END
 
-OUTER_SET bless_desc = RESOLVE_STR_REF(@5010)
-COPY_EXISTING ~SPPR101.SPL~  ~override~
-              ~BDCAELA5.SPL~ ~override~
+COPY_EXISTING ~sppr101.spl~  ~override~
+              ~bdcaela5.spl~ ~override~
   LPF ALTER_HEADER INT_VAR speed = 3 END
-  LPF ALTER_SPELL INT_VAR ref_desc=bless_desc END
-  LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=6 level_cap=20 END
+  LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5010) END
+  LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur=6 step_size=2 level_cap=20 END
 BUT_ONLY IF_EXISTS
 
 ACTION_IF spell_curse > 0 BEGIN
@@ -17,8 +16,9 @@ ACTION_IF spell_curse > 0 BEGIN
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CURSE" RET spell_res END
   COPY_EXISTING ~%spell_res%.spl~ ~override~
     LPF ALTER_HEADER INT_VAR speed = 3 END
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@8060) END
-    LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=6 level_cap=20 END
+    LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8060) END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 23 special = 1 END // make sure it actually reduces morale
+    LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur=6 step_size=2 level_cap=20 END
 
 END
 

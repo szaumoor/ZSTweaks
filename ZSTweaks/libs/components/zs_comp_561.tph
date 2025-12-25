@@ -1,0 +1,35 @@
+ACTION_IF (VARIABLE_IS_SET ~zs_comp_561~) BEGIN
+  FAIL ~Script already included: zs_comp_561~
+END ELSE BEGIN
+  OUTER_SET ~zs_comp_561~ = 1
+END
+
+COPY_EXISTING ~spwi215.spl~ ~override~
+              ~spdr201.spl~ ~override~
+              ~spin566.spl~ ~override~
+              ~spin683.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_savingthrow=1 savingthrow=2 END
+BUT_ONLY IF_EXISTS
+
+COPY_EXISTING ~spwi215.spl~ ~override~
+              ~spdr201.spl~ ~override~
+
+    PATCH_IF zst_561_web_save_nerf BEGIN
+        LPF ALTER_EFFECT INT_VAR match_savingthrow=2 savebonus=0 END
+    END
+
+    SPRINT penalty   @100000
+    SPRINT vs_spell  @100001
+    SPRINT vs_breath @100002
+
+    READ_STRREF 0x50 desc
+    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+      REPLACE_TEXTUALLY ~%vs_spell%~ ~%vs_breath%~
+      PATCH_IF zst_561_web_save_nerf BEGIN
+        REPLACE_TEXTUALLY ~%penalty%~ ~~
+        REPLACE_TEXTUALLY ~ \. ~ ~. ~
+      END
+    END
+    SAY_EVALUATED 0x50 ~%desc%~
+
+BUT_ONLY IF_EXISTS

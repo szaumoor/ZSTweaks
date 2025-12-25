@@ -7,8 +7,11 @@ END
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     WITH_SCOPE BEGIN
-
-        OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR MOD_IS_INSTALLED "ZSTweaks.tp2" "103")
+        
+        INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
+        OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND
+                                             (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR 
+                                             (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice))
         COPY_EXISTING ~SW2H17.ITM~ ~override~
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 12 dicesize = 2 dicenumber = 6 END
             LPF ALTER_EFFECT_EX INT_VAR probability1 = 9 STR_VAR match_probability1_ex = "(o_probability1 < 100)" END
@@ -26,11 +29,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 SAY_EVALUATED 0x54 ~%new_description%~
 
             END ELSE BEGIN
-                LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8150) END
+                LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8150) END
             END
 
         COPY_EXISTING ~SW2H18.ITM~ ~override~
-            LPF ALTER_ITEM INT_VAR ench=6 id_ref_name = RESOLVE_STR_REF(@8151) END
+            LPF ALTER_ITEM INT_VAR ench=6 id_name = RESOLVE_STR_REF(@8151) END
             LPF ALTER_EFFECT INT_VAR match_opcode = 166 parameter1 = 10 END
             LPF ALTER_EFFECT_EX INT_VAR probability1 = 14 STR_VAR match_probability1_ex = "(o_probability1 < 100)" END
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 12 dicesize = 2 dicenumber = 6 END
@@ -59,7 +62,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 SAY_EVALUATED 0x54 ~%new_description%~
 
             END ELSE BEGIN
-                LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@8152) END
+                LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8152) END
             END
 
         END

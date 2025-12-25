@@ -6,11 +6,10 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY_EXISTING "LEAT23.ITM" ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@6890) END
+  COPY_EXISTING "leat23.itm" ~override~
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6890) END
 
-  COPY_EXISTING "LEAT23A.SPL" ~override~
-    LPF GET_DMG_TYPE STR_VAR type = ~piercing~ RET piercing = result END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 12 parameter2 = piercing END
+  COPY_EXISTING "leat23a.spl" ~override~
+    LPF CLONE_EFFECT INT_VAR match_opcode = 12 parameter2 = op12_piercing END
 
 END

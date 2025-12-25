@@ -7,13 +7,8 @@ END
 ACTION_IF NOT is_iwdee BEGIN
 
   COPY_EXISTING ~SPPR111.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_desc=RESOLVE_STR_REF(@6200) END
-
-    LPF SPL_ABILITIES_NUM RET num_abilities = result END
-    SET start_dur = 24
-    FOR ( i = 0; i < num_abilities; ++i ) BEGIN
-        SET dur = start_dur + (i * 6)
-        LPF ADD_SPELL_EFFECT INT_VAR header=i+1 target=1 opcode=0 parameter1=2 power=1 duration=dur resist_dispel=3 END
-    END
+    LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@6200) END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 89 opcode = 0 parameter1 = 2 END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 89 opcode = 173 END
 
 END

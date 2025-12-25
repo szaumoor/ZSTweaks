@@ -6,10 +6,25 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
+  INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
   COPY ~%MOD_FOLDER%/items/borok_fist~ ~override~
   COPY_EXISTING ~HAMM05.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_desc=RESOLVE_STR_REF(@7730) END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7730) END
     LPF ALTER_EFFECT INT_VAR match_opcode=12 dicesize=2 dicenumber=1 parameter1=0 special=1024 END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,stype=1,sbonus=2,res=ZSTWBRKA,p2=3,p1=%general_gianthumanoid%~ END
 
+    PATCH_IF zst_1150_dice_warhammers AND
+            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
+            (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice))
+    BEGIN
+
+      READ_STRREF 0x54 desc
+      SPRINT str @99999
+      INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)1[Dd]4~ ~\11d5~
+      END
+      SAY_EVALUATED 0x54 ~%desc%~
+
+    END
+    
 END

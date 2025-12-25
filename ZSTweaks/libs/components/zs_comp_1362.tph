@@ -6,39 +6,41 @@ END
 
 COPY ~%MOD_FOLDER%/items/hamaclub_ac~ ~override~
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-    LPF ITM_CAT  RET cat  = result END
-    LPF ITM_PROF RET prof = result END
-    LPF ITM_APPEARANCE RET appearance = result END
-    LPF ITM_ABILITIES_NUM RET num_abilities = result END
-    PATCH_IF ( cat = 21 AND prof = 97  ) OR  // warhammers
-             ( cat = 17 AND prof = 101 ) OR  // maces
-             ( cat = 17 AND prof = 115 ) AND // clubs
-             num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") AND
+    READ_SHORT 0x1c cat
+    READ_BYTE 0x31 prof
+    READ_ASCII 0x22 appearance (2)
+    READ_SHORT 0x68 num_abilities
+    PATCH_IF (( cat = 21 AND prof = 97  )     OR  // warhammers
+              ( cat = 17 AND prof = 101 )     OR  // maces
+              ( cat = 17 AND prof = 115 ))    AND // clubs
+             num_abilities > 0                AND
+             NOT ("%appearance%" STR_EQ "  ") AND
              NOT ("%SOURCE_RES%" STR_EQ "bdhamm02") // exception
     BEGIN
-        LPF ITM_ENCH RET ench = result END
+        READ_LONG 0x60 ench
         PATCH_MATCH ench
             WITH 0 1 BEGIN
-                LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM1;t=2,ip=0,op=146,p2=1,res=ZSTWMCM1~  END
+                LPF ADD_ON_HIT_EFF INT_VAR ip=0 p2=1 STR_VAR effects=~op=146,res=ZSTWMCM1;t=2,op=146,res=ZSTWMCM1~  END
             END  2 3 BEGIN
-                LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM2;t=2,ip=0,op=146,p2=1,res=ZSTWMCM2~  END
+                LPF ADD_ON_HIT_EFF INT_VAR ip=0 p2=1 STR_VAR effects=~op=146,res=ZSTWMCM2;t=2,op=146,res=ZSTWMCM2~  END
             END  4 5 BEGIN
-                LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM3;t=2,ip=0,op=146,p2=1,res=ZSTWMCM3~  END
+                LPF ADD_ON_HIT_EFF INT_VAR ip=0 p2=1 STR_VAR effects=~op=146,res=ZSTWMCM3;t=2,op=146,res=ZSTWMCM3~  END
             END  6   BEGIN
-                LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=0,op=146,p2=1,res=ZSTWMCM4;t=2,ip=0,op=146,p2=1,res=ZSTWMCM4~  END
+                LPF ADD_ON_HIT_EFF INT_VAR ip=0 p2=1 STR_VAR effects=~op=146,res=ZSTWMCM4;t=2,op=146,res=ZSTWMCM4~  END
             END DEFAULT
         END
     END
 BUT_ONLY
 
 COPY_EXISTING ~bdhamm02.itm~ ~override~
-    LPF ADD_ON_HIT_EFF STR_VAR effects=~ip=-1,op=146,p2=1,res=ZSTWMCM2~ END
+    LPF ADD_ON_HIT_EFF STR_VAR effects=~op=146,p2=1,res=ZSTWMCM2~ END
 BUT_ONLY IF_EXISTS
 
 ACTION_IF zst_1362_blunt_only_nonarmored BEGIN
+
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
-        LPF ITM_CAT RET cat = result END
-        LPF ITM_FLAGS RET flags = result END
+        READ_SHORT 0x1c cat
+        READ_LONG 0x18 flags
         LPF IS_BIT_SET INT_VAR bit=2 bit_field=flags RET droppable = result END
         PATCH_IF cat = 2 BEGIN
             LPF IS_BIT_SET INT_VAR bit=2 bit_field=flags RET droppable = result END
@@ -47,4 +49,5 @@ ACTION_IF zst_1362_blunt_only_nonarmored BEGIN
             END
         END
     BUT_ONLY
+
 END
