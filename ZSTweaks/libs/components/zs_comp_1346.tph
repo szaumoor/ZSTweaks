@@ -5,6 +5,13 @@ END ELSE BEGIN
 END
 
 COPY_EXISTING ~AROW10.ITM~ ~override~
-  LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7630) END
+  LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7630) ench=3 END
   LPF ALTER_EFFECT INT_VAR header_type = 2 resist_dispel = 0 match_opcode = 12 special = (2**8 + 2**10) END
   LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=2,p2=1,spec=2~ END
+
+  PATCH_IF zst_1450_allow_bows AND
+            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ OR
+            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ AND zst_group_1450_finesse)) 
+  BEGIN
+    LPF ALTER_EFFECT INT_VAR silent = 1 STR_VAR match_resource = "zstwt1" resource = "zstwt3" END
+  END

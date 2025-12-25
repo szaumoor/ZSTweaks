@@ -163,6 +163,13 @@
 - Decastave component now increases proficiency in staves by 1 instead of setting it to 1
 - Protection from undead rebuke ability now deals 2d4+1 magic damage (double than before), and the panic it can cause lasts one round more (3 in total). It can no longer, however, apply a rebuke (damage or panic) more than 3 times per round to the same target.
 - Increased the duration of possible confusion effect by 1 round in Lilarcor tweak
+- Opened the shadow blade component to IWDEE, as the weapon exists there too
+- Opened the Gauntlets of weapon expertise to IWDEE
+- Opened Senses of the Cat to IWDEE
+- Opened Cloak of Displacement to IWDEE
+- Opened the basic mage robe buff to IWDEE
+- Opened the wand rebalance component to IWDEE
+- Standardized Arrows of Piercing to have an enchantment level of 3, such as in IWDEE
 
 ## New components
 

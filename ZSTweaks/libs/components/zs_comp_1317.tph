@@ -4,79 +4,77 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1317~ = 1
 END
 
-ACTION_IF NOT is_iwdee BEGIN
+COPY_EXISTING ~clck12.itm~ ~override~ // knave
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6140) END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 2 END
+    LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter2 = 4 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=36,p1=1;op=173,p1=50~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 5 STR_VAR effects = ~op=275;op=276;op=277;op=59;op=90;op=91;op=92~ END
 
-    COPY_EXISTING ~clck12.itm~ ~override~ // knave
-        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6140) END
-        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 2 END
-        LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter2 = 4 END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=36,p1=1;op=173,p1=50~ END
-        LPF ADD_EQUIPPED_EFF INT_VAR p1 = 5 STR_VAR effects = ~op=275;op=276;op=277;op=59;op=90;op=91;op=92~ END
+COPY_EXISTING ~clck13.itm~ ~override~ // traveler
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6141) END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 3 END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 36 opcode = 37 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=34,p1=1;op=89,p1=15;op=176,p1=4~ END
 
-    COPY_EXISTING ~clck13.itm~ ~override~ // traveler
-        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6141) END
-        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 3 END
-        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 36 opcode = 37 END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=34,p1=1;op=89,p1=15;op=176,p1=4~ END
+COPY_EXISTING ~clck14.itm~ ~override~ // adventurer
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6142) END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter2 = 0 END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=37,p1=1;op=31,p1=20;op=30;op=84;op=29;op=28;op=85;op=27~ END
 
-    COPY_EXISTING ~clck14.itm~ ~override~ // adventurer
-        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6142) END
-        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter2 = 0 END
-        LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=37,p1=1;op=31,p1=20;op=30;op=84;op=29;op=28;op=85;op=27~ END
+COPY_EXISTING ~clck09.itm~ ~override~ // cold resist clck
+    LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6137) id_desc=RESOLVE_STR_REF(@6144) END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 28 parameter1 = 40 END
+    LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 28 opcode = 85 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=2~ END
 
-    COPY_EXISTING ~clck09.itm~ ~override~ // cold resist clck
-        LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6137) id_desc=RESOLVE_STR_REF(@6144) END
-        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 28 parameter1 = 40 END
-        LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 28 opcode = 85 END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=2~ END
+COPY_EXISTING ~clck10.itm~ ~override~ // fire resist clck
+    LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6138) id_desc=RESOLVE_STR_REF(@6145) END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 30 parameter1 = 40 END
+    LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 30 opcode = 84 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=1~ END
 
-    COPY_EXISTING ~clck10.itm~ ~override~ // fire resist clck
-        LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6138) id_desc=RESOLVE_STR_REF(@6145) END
-        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 30 parameter1 = 40 END
-        LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 30 opcode = 84 END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=1~ END
+COPY_EXISTING ~bdrobe05.itm~ ~override~ // robe of flames
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6146) END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 30 parameter1 = 50 END
+    LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 30 opcode = 84 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6~ END
+BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~bdrobe05.itm~ ~override~ // robe of flames
-        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6146) END
-        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 30 parameter1 = 50 END
-        LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 30 opcode = 84 END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6~ END
+COPY_EXISTING ~clck11.itm~ ~override~ // electric resist clck
+    LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6139) id_desc=RESOLVE_STR_REF(@6143) END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 29 parameter1 = 40 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=3~ END
 
-    COPY_EXISTING ~clck11.itm~ ~override~ // electric resist clck
-        LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6139) id_desc=RESOLVE_STR_REF(@6143) END
-        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 29 parameter1 = 40 END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=3~ END
+COPY_EXISTING_REGEXP ~^clck1[567]\.itm$~ ~override~ // archmage robes
 
-    COPY_EXISTING_REGEXP ~^clck1[567]\.itm$~ ~override~ // archmage robes
+    PATCH_IF "%SOURCE_RES%" STR_EQ ~clck15~ BEGIN
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6147) END
+    END ELSE PATCH_IF "%SOURCE_RES%" STR_EQ ~clck16~ BEGIN
+            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6148) END
+    END ELSE BEGIN
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6149) END
+    END
 
-        PATCH_IF "%SOURCE_RES%" STR_EQ ~clck15~ BEGIN
-            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6147) END
-        END ELSE PATCH_IF "%SOURCE_RES%" STR_EQ ~clck16~ BEGIN
-                LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6148) END
-        END ELSE BEGIN
-            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6149) END
-        END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 166 parameter1 = 10 END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 37 parameter1 = 2 END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=31,p1=25;op=189,p1=1;op=0,p1=1,p2=0~ END
 
-        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 166 parameter1 = 10 END
-        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 37 parameter1 = 2 END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=31,p1=25;op=189,p1=1;op=0,p1=1,p2=0~ END
+BUT_ONLY
 
-    BUT_ONLY
+COPY_EXISTING ~c2robe01.itm~ ~override~
+                ~c2robe02.itm~ ~override~
+                ~c2robe03.itm~ ~override~
 
-     COPY_EXISTING ~c2robe01.itm~ ~override~
-                   ~c2robe02.itm~ ~override~
-                   ~c2robe03.itm~ ~override~
+    PATCH_IF "%SOURCE_RES%" STR_EQ ~c2robe01~ BEGIN
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50040) END
+    END ELSE PATCH_IF "%SOURCE_RES%" STR_EQ ~c2robe02~ BEGIN
+            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50041) END
+    END ELSE BEGIN
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50042) END
+    END
 
-        PATCH_IF "%SOURCE_RES%" STR_EQ ~c2robe01~ BEGIN
-            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50040) END
-        END ELSE PATCH_IF "%SOURCE_RES%" STR_EQ ~c2robe02~ BEGIN
-                LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50041) END
-        END ELSE BEGIN
-            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50042) END
-        END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=31,p1=25;op=189,p1=1;op=0,p1=1,p2=0~ END
+    
+BUT_ONLY IF_EXISTS
 
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=31,p1=25;op=189,p1=1;op=0,p1=1,p2=0~ END
-        
-    BUT_ONLY IF_EXISTS
-
-END

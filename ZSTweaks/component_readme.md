@@ -1348,7 +1348,7 @@ This removes the save from the damage effect, therefore 1dx fire damage will alw
 
 ### Make Arrows of Piercing always cause at least half of the extra piercing damage (1346)
 
-This makes the arrows cause at least 3 extra piercing damage when save succeeds. This should make these expensive arrows feel like less of a waste when used, especially against targets with good saves. Additionally, these arrows will have a 10% higher chance of critically hitting. Magic resistance is also not affected.
+This makes the arrows cause at least 3 extra piercing damage when save succeeds. This should make these expensive arrows feel like less of a waste when used, especially against targets with good saves. Additionally, these arrows will have a 10% higher chance of critically hitting. Magic resistance is also not affected. It also standardizes them to behave as +3 weapon, like in IWDEE.
 
 ### Make Bolts of Biting slightly more deadly (1347)
 
