@@ -36,7 +36,7 @@ END
 ACTION_IF FILE_EXISTS_IN_GAME ~bdbull02.itm~ BEGIN
 
     COPY_EXISTING ~bdbull02.itm~ ~override~
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=zstwvd01~ END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=zstwvd05~ END
 
 END
 

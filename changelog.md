@@ -83,6 +83,7 @@
 - Curse / Bless component will fix in passing the issue in the Curse spell which increases morale instead of reducing it from enemies.
 - Ethereal Retribution tweak in the shaman component fixes in passing the bug where enemies could be killed by the strength sapping effect
 - Fixed incorrect checks to determine what parts of the shaman abilities component are installed according to the preferences
+- Fixed inconsistency that could arise when combining certain components with the void-weapon component
 
 ## Modifications
 
