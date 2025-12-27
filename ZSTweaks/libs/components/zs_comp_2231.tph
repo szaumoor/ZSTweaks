@@ -5,8 +5,8 @@ END ELSE BEGIN
 END
 
 ACTION_FOR_EACH ability IN
-    ~ga_spwi103~ ~ga_spwi217~ ~ga_spwi304~ ~ga_spwi418~
-    ~ga_spwi523~ ~ga_spwi712~ ~ga_spwi810~ ~ga_spwi911~
+    ~GA_SPWI103~ ~GA_SPWI217~ ~GA_SPWI304~ ~GA_SPWI418~
+    ~GA_SPWI523~ ~GA_SPWI712~ ~GA_SPWI810~ ~GA_SPWI911~
 BEGIN
   COPY_EXISTING ~clabso01.2da~ ~override~
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "%ability%" END
