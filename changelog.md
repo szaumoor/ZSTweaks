@@ -6,6 +6,7 @@
 - Tagged components in the README to indicate compatible games
 - Added compatibility code that patches IWDEE spells, distinguishing between IWDEE with fixpack or BG with or without it (IWDification does not add fixed spells, even if the fixpack is installed previously)
 - Update wand rebalance component so it patches appropriate when the game is IWDEE and the Fixpack is present
+- Poison Weapon component was incorrectly not open to BGEE
   
 ## Modification
 
@@ -34,3 +35,10 @@
   - Dolorous Decay (463)
   - Wondrous Recall (464)
   - Sun Spells (467, only False Dawn part)
+  - Repulse Undead (505)
+  - Silence (509)
+  - Aura of Flaming Death (515)
+  - Holy/Unholy Word (539)
+  - Poison Weapon (2190)
+  - Minotaurs (3130)
+  - Ogre Mages (3140)
