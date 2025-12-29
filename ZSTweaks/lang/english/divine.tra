@@ -652,6 +652,19 @@ Saving Throw: None
 
 False Dawn calls into existence a bright reddish light, as if a sunrise were occurring, within the area of effect. All undead creatures within a False Dawn suffer 10d6 points of fire and magic damage. There is no saving throw. Affected undead also act confused for two rounds after the False Dawn appears.~
 
+@8131 = ~False Dawn
+(Evocation)
+
+Level: 6
+Sphere: Sun
+Range: 0
+Duration: Instant
+Casting Time: 4
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+False Dawn calls into existence a bright reddish light, as if a sunrise were occurring, within the area of effect. All undead creatures within the area suffer 10d6 points of fire and magic damage and are blinded on the round after the false dawn appears. There is no Saving Throw.~
+
 @8190 = ~Repulse Undead
 (Abjuration)
 

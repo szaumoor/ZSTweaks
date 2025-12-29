@@ -4,12 +4,12 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_467~ = 1
 END
 
-ACTION_IF NOT is_iwdee BEGIN
+WITH_SCOPE BEGIN
 
-    WITH_SCOPE BEGIN
-
+    ACTION_IF NOT is_iwdee BEGIN
+        
         COPY ~%MOD_FOLDER%/spells/divine/sunray~ ~override~
-        COPY_EXISTING ~SPPR707.SPL~ ~override~
+        COPY_EXISTING ~sppr707.spl~ ~override~
             LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8120) END
             LPF ~CD_TRIM-O-MATIC~ INT_VAR level_cap = 1 END
             LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
@@ -29,7 +29,7 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ADD_SPL_TGTEFF INT_VAR pwr=7 STR_VAR effects = ~op=326,p2=2,res=ZSTWSNRA;op=326,p2=1,res=ZSTWSNRC~ END
             LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=7 p2=104 STR_VAR effects=~op=326,p1=%race_vampire%,res=ZSTWSNRB;op=326,p1=%race_vampyre%,res=ZSTWSNRB;op=326,p1=%race_shadow%,res=ZSTWSNRF;op=326,p1=%race_specter%,res=ZSTWSNRF;op=326,p1=%race_wraith%,res=ZSTWSNRF;op=326,p1=%race_spectral_undead%,res=ZSTWSNRF;op=326,p1=%class_spectral_troll%,p2=105,res=ZSTWSNRF;op=326,p1=%race_myconid%,res=ZSTWSNRD~ END
 
-        COPY_EXISTING ~UNDDEATH.EFF~ ~override~
+        COPY_EXISTING ~unddeath.eff~ ~override~
             LPF ALTER_EFF_FILE INT_VAR target=2 parameter1=100 parameter2=3 + op12_magic END
             WRITE_LONG 0x38 0
             WRITE_LONG 0x3c 0
@@ -42,11 +42,11 @@ ACTION_IF NOT is_iwdee BEGIN
         OUTER_SET dmg9d6  = RESOLVE_STR_REF(@8123)
         OUTER_SET dmg10d6 = RESOLVE_STR_REF(@8124)
 
-        COPY_EXISTING ~ZSTWSNRE.SPL~ ~override~
+        COPY_EXISTING ~zstwsnre.spl~ ~override~
             LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1=weakened END
         BUT_ONLY
 
-        COPY_EXISTING ~ZSTWSNRB.SPL~ ~override~
+        COPY_EXISTING ~zstwsnrb.spl~ ~override~
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=0 parameter1=dmg7d6 END
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=1 parameter1=dmg7d6 END
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=2 parameter1=dmg8d6 END
@@ -56,31 +56,41 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 header=6 parameter1=dmg10d6 END
         BUT_ONLY
 
-        COPY_EXISTING ~ZSTWSNRC.SPL~ ~override~
+        COPY_EXISTING ~zstwsnrc.spl~ ~override~
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 parameter1=dmg5d6 END
         BUT_ONLY
 
-        COPY_EXISTING ~ZSTWSNRF.SPL~ ~override~
+        COPY_EXISTING ~zstwsnrf.spl~ ~override~
             LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 parameter1=dmg7d6 END
         BUT_ONLY
 
-        COPY_EXISTING ~SPPR609.SPL~ ~override~
+    END
+
+    COPY_EXISTING ~sppr609.spl~ ~override~
+        PATCH_IF is_iwdee BEGIN SPRINT tra_ref @8131 END ELSE BEGIN SPRINT tra_ref @8130 END
+        LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(tra_ref) END
+        LPF ALTER_HEADER INT_VAR speed = 4 END
+        
+        PATCH_IF NOT is_iwdee OR is_iwdee AND NOT has_eefixpack BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 5 END
             LPF CLONE_EFFECT INT_VAR match_opcode = 12 parameter2 = op12_magic END
-            LPF ALTER_HEADER INT_VAR speed = 4 END
-            LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8130) END
+        END
 
-        
-        COPY_EXISTING ~dawnvis.eff~ ~override~ 
-                      ~dawncon.eff~ ~override~
-            WRITE_LONG 0x14 2 // targeting
-            WRITE_LONG 0x38 0
-            WRITE_LONG 0x3c 0
+    ACTION_IF is_iwdee AND has_eefixpack BEGIN
 
-        COPY_EXISTING ~dawncon.eff~ ~override~ // fixing nonsense
-            WRITE_LONG 0x20 0
-
+        COPY_EXISTING ~sppr609a.spl~ ~override~
+            LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 5 END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 12 parameter2 = op12_magic END
 
     END
+    
+    COPY_EXISTING ~dawnvis.eff~ ~override~ 
+                    ~dawncon.eff~ ~override~
+        WRITE_LONG 0x14 2 // targeting
+        WRITE_LONG 0x38 0
+        WRITE_LONG 0x3c 0
+
+    COPY_EXISTING ~dawncon.eff~ ~override~ // fixing nonsense
+        WRITE_LONG 0x20 0
 
 END
