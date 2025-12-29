@@ -1649,7 +1649,7 @@ Self-explanatory. Most spells that deal damage only on a failed save are not ver
 
 ### Make Chain Lightning scale more strongly and spread faster to enemies (451)
 
-This modifies the projectile making it spread faster to enemies. Additionally, the starting damage is now 8d6, increasing to 12d6 with the same scaling as vanilla. Both things can be freely allowed or disallowed through the configuration file. Not available for IWDEE.
+This modifies the projectile making it spread faster to enemies. Additionally, for non-IWDEE games, the starting damage is now 8d6, increasing to 12d6 with the same scaling as vanilla. Both things can be freely allowed or disallowed through the configuration file.
 
 ### Make Icelance upgrade damage every 2 levels up to 10d6 (452)
 

@@ -9,6 +9,7 @@
   
 ## Modification
 
+- Improved implementation of Chain Lightning
 - Opened the following components to IWDEE:
   - Goodberries (240)
   - Imprisonment (562)  
@@ -22,3 +23,8 @@
   - Throwing Daggers with Melee Mode (1684)
   - Ankheg's Plate (1216)
   - Whispers of Silence (1674)
+  - Chain Lightning (451, projectile improvement only)
+  - Holy Power (190)
+  - Negative Plane Protection (260)
+  - Entangle (270)
+  - Fire seeds (310)

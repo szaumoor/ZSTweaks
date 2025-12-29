@@ -6,7 +6,7 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
 
-  COPY_EXISTING ~SPPR506.SPL~ ~override~
+  COPY_EXISTING ~sppr506.spl~ ~override~
     LPF ALTER_HEADER INT_VAR speed = 1 END
 
     SPRINT cast_speed @99970

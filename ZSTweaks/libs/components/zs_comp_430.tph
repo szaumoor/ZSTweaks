@@ -9,18 +9,20 @@ ACTION_IF NOT is_iwdee BEGIN
   COPY ~%MOD_FOLDER%/spells/arcane/grease~ ~override~
   OUTER_SET new_description = RESOLVE_STR_REF(@6290)
 
-  COPY_EXISTING ~SPWI101.SPL~ ~override~
+  COPY_EXISTING ~spwi101.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc=new_description END
     LPF ALTER_EFFECT INT_VAR header_type = 1 check_globals = 0 resist_dispel = 0 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 126 header_type = 1 check_globals = 0 parameter1 = 27 END
-    LPF ADD_SPL_TGTEFF INT_VAR pwr=1 rd=0 STR_VAR effects=~op=146,p2=1,res=ZSTWGRES~ END
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=1 rd=0 STR_VAR effects=~op=146,p2=1,res=zstwgres~ END
 
-  COPY_EXISTING ~ZSTWGRES.SPL~ ~override~
-    LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur = 6 level_cap = 20 END
+  ACTION_IF NOT is_iwdee BEGIN
+    COPY_EXISTING ~zstwgres.spl~ ~override~
+      LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur = 6 level_cap = 20 END
+  END
 
-  COPY_EXISTING ~SCRL66.ITM~ ~override~
+  COPY_EXISTING ~scrl66.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=new_description END
 
-  COPY_EXISTING ~ARE_M03.WAV~ ~override/ARE_M01.WAV~
+  COPY_EXISTING ~are_m03.wav~ ~override/are_m01.wav~
 
 END
