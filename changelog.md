@@ -5,6 +5,7 @@
 - Cleaner implementation of the Meteor Swarm component
 - Tagged components in the README to indicate compatible games
 - Added compatibility code that patches IWDEE spells, distinguishing between IWDEE with fixpack or BG with or without it (IWDification does not add fixed spells, even if the fixpack is installed previously)
+- Update wand rebalance component so it patches appropriate when the game is IWDEE and the Fixpack is present
   
 ## Modification
 

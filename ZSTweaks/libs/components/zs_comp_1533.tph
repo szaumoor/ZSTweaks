@@ -24,7 +24,18 @@ COPY_EXISTING ~wand02.itm~ ~override~
 
 COPY_EXISTING ~wand04.itm~ ~override~
   LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8100) END
-  LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 42 END
+
+ACTION_IF NOT is_iwdee OR (is_iwdee AND NOT has_eefixpack) BEGIN
+
+  COPY_EXISTING ~wand04.itm~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 42 END
+    
+END ELSE ACTION_IF is_iwdee AND has_eefixpack BEGIN
+
+  COPY_EXISTING ~wand04.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 42 END
+
+END
 
 COPY_EXISTING ~wand08.itm~ ~override~
   LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8110) END
