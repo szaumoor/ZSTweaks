@@ -4,11 +4,7 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_1674~ = 1
 END
 
-ACTION_IF NOT is_iwdee BEGIN
-
-  COPY ~%MOD_FOLDER%/items/whispers_silence~ ~override~
-  COPY_EXISTING ~clck06.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7440) END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=59,p1=15;op=206,res=spwi322;op=206,res=spwi515;op=272,p1=1,p2=3,res=zstwsil0~ END
-
-END
+COPY ~%MOD_FOLDER%/items/whispers_silence~ ~override~
+COPY_EXISTING ~clck06.itm~ ~override~
+  LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7440) END
+  LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=59,p1=15;op=206,res=spwi322;op=206,res=spwi515;op=272,p1=1,p2=3,res=zstwsil0~ END

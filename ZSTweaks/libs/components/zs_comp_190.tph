@@ -4,37 +4,34 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_190~ = 1
 END
 
-ACTION_IF NOT is_iwdee BEGIN
 
-    ACTION_IF zst_190_hpower_thac0 BEGIN
+ACTION_IF NOT is_iwdee AND zst_190_hpower_thac0 BEGIN
 
-        COPY_EXISTING ~SPPR412.SPL~ ~override~
-                      ~ohtmps1.SPL~ ~override~
-            LPF LAST_VALID_HEADER RET h = result END
-            LPF ADD_SPELL_HEADER INT_VAR copy_header = h zs_min_level_for_copy = 21 insert_point=h+1 END
-            LPF ALTER_EFFECT INT_VAR header = h+1 match_opcode = 54 parameter1 = 0 END
-            LPF ALTER_EFFECT INT_VAR header = h+1 match_duration = 114 duration = 120 END
+  COPY_EXISTING ~sppr412.spl~ ~override~
+                ~ohtmps1.spl~ ~override~
+    LPF LAST_VALID_HEADER RET h = result END
+    LPF ADD_SPELL_HEADER INT_VAR copy_header = h zs_min_level_for_copy = 21 insert_point=h+1 END
+    LPF ALTER_EFFECT INT_VAR header = h+1 match_opcode = 54 parameter1 = 0 END
+    LPF ALTER_EFFECT INT_VAR header = h+1 match_duration = 114 duration = 120 END
 
-    END
+END
 
-    ACTION_IF zst_190_hpower_apr BEGIN
+ACTION_IF zst_190_hpower_apr BEGIN
 
-        COPY_EXISTING ~SPPR412.SPL~ ~override~
-                      ~ohtmps1.SPL~ ~override~
-            LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5120) END
-            LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target=1 parameter2 = 1 power = 4 STR_VAR resource = ~ZSTWAPR1~ END
-            LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target=1 insert_point = 0 STR_VAR resource = ~ZSTWAPR1~ END
-            LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target=1 insert_point = 0 STR_VAR resource = ~ZSTWAPR0~ END
+  COPY_EXISTING ~sppr412.spl~ ~override~
+                ~ohtmps1.spl~ ~override~
+    LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5120) END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target=1 parameter2 = 1 power = 4 STR_VAR resource = ~zstwapr1~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target=1 insert_point = 0 STR_VAR resource = ~zstwapr1~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target=1 insert_point = 0 STR_VAR resource = ~zstwapr0~ END
 
-        ACTION_IF zst_190_hpower_apr_nonfighters_only BEGIN
+  ACTION_IF zst_190_hpower_apr_nonfighters_only BEGIN
 
-            COPY ~%MOD_FOLDER%/spells/divine/holy_power~ ~override~
-            COPY_EXISTING ~ZSTWAPR1.SPL~ ~override~
-                PATCH_FOR_EACH c IN fighter_all ranger_all paladin_all BEGIN
-                    LPF ADD_SPELL_EFFECT INT_VAR opcode=318 target=1 parameter1=IDS_OF_SYMBOL(class "%c%") parameter2=105 insert_point=0 power=4 STR_VAR resource=~%SOURCE_RES%~ END
-                END
-
-        END
+    COPY ~%MOD_FOLDER%/spells/divine/holy_power~ ~override~
+    COPY_EXISTING ~zstwapr1.spl~ ~override~
+      PATCH_FOR_EACH c IN fighter_all ranger_all paladin_all BEGIN
+        LPF ADD_SPELL_EFFECT INT_VAR opcode=318 target=1 parameter1=IDS_OF_SYMBOL(class "%c%") parameter2=105 insert_point=0 power=4 STR_VAR resource=~%SOURCE_RES%~ END
+      END
 
     END
 

@@ -4,17 +4,13 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_380~ = 1
 END
 
-ACTION_IF NOT is_iwdee BEGIN
-
-  OUTER_SET new_description = RESOLVE_STR_REF(@5240)
-  COPY_EXISTING ~SPWI409.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR desc=new_description END
-    LPF DELETE_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 9 END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 4 parameter1 = 4 END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 5 parameter1 = 4 END
+OUTER_SET new_description = RESOLVE_STR_REF(@5240)
+COPY_EXISTING ~spwi409.spl~ ~override~
+  LPF ALTER_SPELL INT_VAR desc=new_description END
+  LPF DELETE_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 9 END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 4 parameter1 = 4 END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 5 parameter1 = 4 END
 
 
-  COPY_EXISTING ~SCRLA8.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_desc=new_description END
-
-END
+COPY_EXISTING ~scrla8.itm~ ~override~
+  LPF ALTER_ITEM INT_VAR id_desc=new_description END
