@@ -6,7 +6,7 @@ END
 
 ACTION_IF NOT is_iwdee BEGIN
 
-  COPY_EXISTING ~STAF14.ITM~ ~override~
+  COPY_EXISTING ~staf14.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8589) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 0 parameter1 = 1 END
     LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 0 parameter1 = 2 parameter2 = 1 END

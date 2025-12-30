@@ -7,6 +7,7 @@
 - Added compatibility code that patches IWDEE spells, distinguishing between IWDEE with fixpack or BG with or without it (IWDification does not add fixed spells, even if the fixpack is installed previously)
 - Update wand rebalance component so it patches appropriate when the game is IWDEE and the Fixpack is present
 - Poison Weapon component was incorrectly not open to BGEE
+- Fixed Imprisonment component not being open to bg2ee due to a typo
   
 ## Modification
 
@@ -42,3 +43,6 @@
   - Poison Weapon (2190)
   - Minotaurs (3130)
   - Ogre Mages (3140)
+  - Golem Overhaul (3120)
+  - Chromatic Orb (555)
+  - Barkskin (492) // TODO

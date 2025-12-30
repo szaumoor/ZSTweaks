@@ -1120,7 +1120,7 @@ REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 
 BEGIN @562 DESIGNATED 562 GROUP @19 // IMPRISONMENT 
-REQUIRE_PREDICATE GAME_IS "iwdee bgee 2ee eet" @52
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @52
 FORBID_COMPONENT "ZSTweaks.tp2" "139" @58
 
 /////////////////////////////////// DIVINE SPELL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
