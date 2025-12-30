@@ -40,7 +40,6 @@
   - Silence (509)
   - Aura of Flaming Death (515)
   - Holy/Unholy Word (539)
-  - Poison Weapon (2190)
   - Minotaurs (3130)
   - Ogre Mages (3140)
   - Golem Overhaul (3120)
