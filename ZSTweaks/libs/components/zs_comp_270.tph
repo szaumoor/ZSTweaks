@@ -29,7 +29,7 @@ COPY_EXISTING ~sppr105.spl~ ~override~
   PATCH_IF NOT is_iwdee BEGIN
     LPF ALTER_EFFECT_EX INT_VAR match_opcode = 0 STR_VAR match_parameter1_ex = ~"-2"~ parameter1_ex = ~"-3"~ END
   END ELSE BEGIN
-    LPF CLONE_EFFECT_EX INT_VAR match_opcode = 142 match_parameter2 = 144 parameter2 = 0 opcode = 0 STR_VAR parameter1 = ~"-3"~ END
+    LPF CLONE_EFFECT_EX INT_VAR match_opcode = 142 match_parameter2 = 144 parameter2 = 0 opcode = 0 STR_VAR parameter1_ex = ~"-3"~ END
   END
 
   LPF CLONE_EFFECT INT_VAR match_opcode = 0 opcode = 1 parameter2 = 1 parameter1 = 1 END

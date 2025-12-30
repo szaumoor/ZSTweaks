@@ -4,10 +4,23 @@ END ELSE BEGIN
   OUTER_SET ~zs_comp_2232~ = 1
 END
 
-COPY_EXISTING ~spcl121.spl~ ~override~
-  LPF CLONE_EFFECT INT_VAR check_globals=0 match_opcode=249 opcode=286 parameter1=2 STR_VAR match_resource=~ARCHSTUN~ END
-  LPF DELETE_EFFECT INT_VAR check_globals=0 match_opcode=249 STR_VAR match_resource=~ARCHSTUN~ END
+ACTION_IF NOT has_artisan_archer_kit BEGIN
 
-COPY_EXISTING ~archslow.eff~ ~override~
-              ~archhit.eff~ ~override~
-  WRITE_LONG 0x14 2
+  COPY_EXISTING ~spcl121.spl~ ~override~
+    LPF CLONE_EFFECT INT_VAR check_globals=0 match_opcode=249 opcode=286 parameter1=2 STR_VAR match_resource = ~ARCHSTUN~ END
+    LPF DELETE_EFFECT INT_VAR check_globals=0 match_opcode=249 STR_VAR match_resource=~ARCHSTUN~ END
+
+  COPY_EXISTING ~archslow.eff~ ~override~
+                ~archhit.eff~ ~override~
+    WRITE_LONG 0x14 2
+
+END ELSE BEGIN
+
+  COPY_EXISTING ~spcl121.spl~ ~override~
+    LPF CLONE_HEADER INT_VAR header = 0 level = 16 END
+    LPF CLONE_EFFECT INT_VAR check_globals=0 header=1 match_opcode=249 opcode=286 parameter1=2 multi_match = 0 END 
+
+  COPY_EXISTING ~c0arccs1.spl~ ~override~
+    LPF DELETE_EFFECT INT_VAR match_opcode = 12 END
+  
+END

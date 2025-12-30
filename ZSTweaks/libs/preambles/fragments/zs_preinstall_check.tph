@@ -127,5 +127,11 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
             
     END
 
+    OUTER_SET has_artisan_archer_kit = MOD_IS_INSTALLED "ArtisansKitpack.tp2" "2010"
+    ACTION_IF has_artisan_archer_kit BEGIN
+
+        PRINT "Artisan Kitpack Archer detected"
+    END
+
     OUTER_SET zs_preinstall_check = 1
 END
