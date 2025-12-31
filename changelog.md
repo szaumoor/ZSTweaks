@@ -22,15 +22,15 @@
   - Contagion (380)
   - Horror (210)
   - Meteor Swarm (180)
-  - Wail of the Banshee (170) // recheck
+  - Wail of the Banshee (170)
   - Backstab reduction for Iron Golem Fist and BBoD (160)
   - Throwing Daggers with Melee Mode (1684)
   - Ankheg's Plate (1216)
   - Whispers of Silence (1674)
-  - Holy Power (190) // recheck
+  - Holy Power (190)
   - Negative Plane Protection (260)
   - Entangle (270)
-  - Fire seeds (310) // recheck
+  - Fire seeds (310)
   - Nature's Beauty (320)
   - Confusion (330)
   - Armor of Faith (420)
@@ -44,6 +44,6 @@
   - Minotaurs (3130)
   - Ogre Mages (3140)
   - Golem Overhaul (3120)
-  - Chromatic Orb (555) // recheck
+  - Chromatic Orb (555)
   - Called Shot (2232)
-  - Barkskin (492) // TODO
+  - Barkskin (492)
