@@ -1,5 +1,3 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
   COPY_EXISTING ~7001.ini~ ~override~
@@ -87,8 +85,8 @@ COPY_EXISTING ~goliro01.cre~ ~override~
               ~gorgrd01.cre~ ~override~
               ~gorgrd02.cre~ ~override~
               ~kpgol04.cre~  ~override~
-              ~obsmod01.cre~  ~override~
-              ~shiron.cre~  ~override~
+              ~obsmod01.cre~ ~override~
+              ~shiron.cre~   ~override~
   PATCH_IF BYTE_AT 0x5b > 0 BEGIN
     WRITE_BYTE 0x5b 0
   END

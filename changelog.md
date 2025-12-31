@@ -9,6 +9,7 @@
 - Poison Weapon component was incorrectly not open to BGEE
 - Fixed Imprisonment component not being open to bg2ee due to a typo
 - Fixed Holy Power failing to copy resources if a configuration option for the component wasn't selected
+- Fire seeds now last for 7 hours (35 turns), which is the maximum in IWDEE, and much more than in BG
   
 ## Modification
 
@@ -29,7 +30,7 @@
   - Holy Power (190) // recheck
   - Negative Plane Protection (260)
   - Entangle (270)
-  - Fire seeds (310)
+  - Fire seeds (310) // recheck
   - Nature's Beauty (320)
   - Confusion (330)
   - Armor of Faith (420)
@@ -43,6 +44,6 @@
   - Minotaurs (3130)
   - Ogre Mages (3140)
   - Golem Overhaul (3120)
-  - Chromatic Orb (555)
+  - Chromatic Orb (555) // recheck
   - Called Shot (2232)
   - Barkskin (492) // TODO

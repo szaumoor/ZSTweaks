@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING ~sppr709.spl~ ~override~
   LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5180) END
   LPF ALTER_EFFECT INT_VAR match_savebonus = "-2" savebonus = "-4" END

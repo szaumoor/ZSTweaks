@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     
   PATCH_IF BYTE_AT(0x272) = race_ogre AND

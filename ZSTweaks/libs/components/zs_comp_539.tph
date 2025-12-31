@@ -1,5 +1,3 @@
-
-
 OUTER_SET fade_speed_holy = (25 << 16)
 ADD_PROJECTILE ~%MOD_FOLDER%/pro/ZSTWRDPJ.pro~
 COPY ~%MOD_FOLDER%/spells/divine/divine_words~ ~override~

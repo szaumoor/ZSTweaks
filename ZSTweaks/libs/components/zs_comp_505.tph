@@ -1,5 +1,3 @@
-
-
 COPY ~%MOD_FOLDER%/spells/divine/repulse_undead~ ~override~
 COPY_EXISTING ~sppr515.spl~ ~override~
   LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8190) END

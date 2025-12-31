@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING ~sppr111.spl~ ~override~
   LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@6200) END
   LPF CLONE_EFFECT INT_VAR match_opcode = 89 opcode = 0 parameter1 = 2 END
