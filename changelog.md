@@ -8,6 +8,7 @@
 - Update wand rebalance component so it patches appropriate when the game is IWDEE and the Fixpack is present
 - Poison Weapon component was incorrectly not open to BGEE
 - Fixed Imprisonment component not being open to bg2ee due to a typo
+- Fixed Holy Power failing to copy resources if a configuration option for the component wasn't selected
   
 ## Modification
 
@@ -20,13 +21,12 @@
   - Contagion (380)
   - Horror (210)
   - Meteor Swarm (180)
-  - Wail of the Banshee (170)
+  - Wail of the Banshee (170) // recheck
   - Backstab reduction for Iron Golem Fist and BBoD (160)
   - Throwing Daggers with Melee Mode (1684)
   - Ankheg's Plate (1216)
   - Whispers of Silence (1674)
-  - Chain Lightning (451, projectile improvement only)
-  - Holy Power (190)
+  - Holy Power (190) // recheck
   - Negative Plane Protection (260)
   - Entangle (270)
   - Fire seeds (310)

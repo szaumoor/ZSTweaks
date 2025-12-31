@@ -1,5 +1,4 @@
-
-
 COPY_EXISTING ~sppr413.spl~ ~override~
   LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5080) END
-  LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur=6 step_size=2 level_cap=20 min_lev_alt=8 END
+  PATCH_IF is_iwdee BEGIN SET cap = 30 END ELSE BEGIN SET cap = 20 END
+  LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur=6 step_size=2 level_cap=cap min_lev_alt=8 END
