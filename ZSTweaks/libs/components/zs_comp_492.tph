@@ -21,7 +21,7 @@ ACTION_IF NOT is_iwdee BEGIN
     LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 206 STR_VAR resource = "SPPR202" END
   BUT_ONLY IF_EXISTS
 
-  COPY_EXISTING ~SPPR202.SPL~ ~override~
+  COPY_EXISTING ~sppr202.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8588) END
     LPF ALTER_HEADER INT_VAR speed = 3 END
 
@@ -44,7 +44,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
     WRITE_LONG 0x1e (2**30)
 
-  COPY_EXISTING ~SPPR111.SPL~ ~override~
+  COPY_EXISTING ~sppr111.spl~ ~override~
     WRITE_LONG 0x1e (2**31)
 
   SILENT

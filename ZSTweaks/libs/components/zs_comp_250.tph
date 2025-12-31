@@ -10,7 +10,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
     COPY_EXISTING ~sppr720.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5090) END
-        LPF ADD_SPL_TGTEFF INT_VAR ip=0 rd=0 p2=5 p1=class_golem_clay STR_VAR effects = ~op=177,res=ZSTWEKG0;op=177,res=ZSTWEKG1,dur=6~ END
+        LPF ADD_SPL_TGTEFF INT_VAR ip=0 rd=0 p2=5 p1=class_golem_clay STR_VAR effects = ~op=177,res=zstwekg0;op=177,res=zstwekg1,dur=6~ END
         LPF ALTER_EFFECT_EX INT_VAR target = 1 STR_VAR match_opcode_ex = "((o_opcode = 269) OR (o_opcode = 272) OR (o_opcode = 174))" END
 
     ACTION_IF zst_250_quake_pfriendly BEGIN
@@ -59,7 +59,7 @@ ACTION_IF NOT is_iwdee BEGIN
         ACTION_IF NOT is_bgee BEGIN
             COPY_EXISTING ~spogre01.spl~ ~override~
                 LPF DELETE_EFFECT INT_VAR match_opcode = 269 END
-                LPF DELETE_EFFECT STR_VAR match_resource = ~SHAKE1~ END
+                LPF DELETE_EFFECT STR_VAR match_resource = ~shake1~ END
         END
 
     END

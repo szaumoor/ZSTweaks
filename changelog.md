@@ -44,4 +44,5 @@
   - Ogre Mages (3140)
   - Golem Overhaul (3120)
   - Chromatic Orb (555)
+  - Called Shot (2232)
   - Barkskin (492) // TODO

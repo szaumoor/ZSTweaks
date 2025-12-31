@@ -41,7 +41,7 @@ ACTION_FOR_EACH ability IN
     ~spwi103~ ~spwi217~ ~spwi304~ ~spwi418~
     ~spwi523~ ~spwi712~ ~spwi810~ ~spwi911~
 BEGIN
-  COPY_EXISTING ~%ability%.SPL~ ~override~
+  COPY_EXISTING ~%ability%.spl~ ~override~
     SET spl_level = LONG_AT(0x34)
     DEFINE_ASSOCIATIVE_ARRAY stuff BEGIN ~%ability%~ => ~%spl_level%~ END
   BUT_ONLY

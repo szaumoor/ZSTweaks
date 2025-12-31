@@ -6,19 +6,20 @@ END
 
 ACTION_IF NOT is_iwdee AND zst_451_chain_lightning_boost BEGIN
 
-    COPY_EXISTING ~spwi615.spl~ ~override~
-                  ~spdr601.spl~ ~override~
-        LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8330) END
-        LPF ALTER_EFFECT_EX STR_VAR dicenumber_ex = "(THIS + 2)" END
+  COPY_EXISTING ~spwi615.spl~ ~override~
+                ~spdr601.spl~ ~override~
+    LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8330) END
+    LPF ALTER_EFFECT_EX STR_VAR dicenumber_ex = "(THIS + 2)" END
 
 END
 
 ACTION_IF zst_451_chain_lightning_projectile BEGIN
 
-    COPY_EXISTING ~lightcha.pro~ ~override~
-        WRITE_SHORT 0xa   35
-        WRITE_SHORT 0x14e 2
-        WRITE_SHORT 0x150 2
-        WRITE_SHORT 0x152 2
-        WRITE_LONG  0xc   1
+  COPY_EXISTING ~lightcha.pro~ ~override~
+    WRITE_SHORT 0xa   35
+    WRITE_SHORT 0x14e 2
+    WRITE_SHORT 0x150 2
+    WRITE_SHORT 0x152 2
+    WRITE_LONG  0xc   1
+
 END

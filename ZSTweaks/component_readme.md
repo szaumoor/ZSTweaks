@@ -2144,7 +2144,7 @@ This component gives Red Dragon Disciples access to all fire-based wizard spells
 
 **Warning**: the spell selection when creating the dragon disciple **WILL NOT** tell you that the spells are available already or otherwise offer any feedback. Just make sure if you use this component that you know that the spells are available already, so pick different spells during character creation.
 
-### Make Called Shot directly increase ranged weapon damage (2231) (IWDEE BGEE BG2EE EET)
+### Make Called Shot directly increase ranged weapon damage (2232) (IWDEE BGEE BG2EE EET)
 
 Generally speaking, it's more powerful to directly increase the base damage because it will count towards a critical hit multiplier.
 

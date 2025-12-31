@@ -4,4 +4,5 @@ ACTION_IF !VARIABLE_IS_SET zst_config_file_copied BEGIN
 END
 
 OUTER_SET group_component = 0
+LAM CHECK_COMPONENT_DUPE
 INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_%COMPONENT_NUMBER%.tph~
