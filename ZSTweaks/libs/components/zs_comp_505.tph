@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_505~) BEGIN
-  FAIL ~Script already included: zs_comp_505~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_505~ = 1
-END
+
 
 COPY ~%MOD_FOLDER%/spells/divine/repulse_undead~ ~override~
 COPY_EXISTING ~sppr515.spl~ ~override~

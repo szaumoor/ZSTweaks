@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_448~) BEGIN
-  FAIL ~Script already included: zs_comp_448~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_448~ = 1
-END
+
 
 ACTION_IF spell_decastave > 0 BEGIN
 

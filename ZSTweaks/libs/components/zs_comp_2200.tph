@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_2200~) BEGIN
-  FAIL ~Script already included: zs_comp_2200~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_2200~ = 1
-END
+
 
 INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
 ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR

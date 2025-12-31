@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_1545~) BEGIN
-  FAIL ~Script already included: zs_comp_1545~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_1545~ = 1
-END
+
 
 ACTION_IF zst_1545_constitution_bonuses BEGIN
     COPY ~%MOD_FOLDER%/2da/tweaks/hpconbon.2da~ ~override~

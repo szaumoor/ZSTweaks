@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_400~) BEGIN
-  FAIL ~Script already included: zs_comp_400~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_400~ = 1
-END
+
 
 OUTER_SET new_description        = RESOLVE_STR_REF(@5250)
 OUTER_SET new_description_priest = RESOLVE_STR_REF(@5251)

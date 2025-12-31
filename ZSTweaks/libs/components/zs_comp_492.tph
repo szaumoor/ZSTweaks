@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_492~) BEGIN
-  FAIL ~Script already included: zs_comp_492~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_492~ = 1
-END
+
 
 ACTION_IF NOT is_iwdee BEGIN
 

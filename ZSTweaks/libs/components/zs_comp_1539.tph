@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_1539~) BEGIN
-  FAIL ~Script already included: zs_comp_1539~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_1539~ = 1
-END
+
 
 ACTION_IF zst_1539_all_no_reqs < 0 OR zst_1539_all_reqs < 0 OR zst_1539_rogues_no_reqs < 0 OR zst_1539_rogues_reqs < 0 BEGIN
     FAIL "Scroll usability component: Valid values for options are 0 (false, or disable) or 1 (true or enable)."

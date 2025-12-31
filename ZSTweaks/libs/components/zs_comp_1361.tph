@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_1361~) BEGIN
-  FAIL ~Script already included: zs_comp_1361~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_1361~ = 1
-END
+
 
 
 ACTION_IF zst_1361_axes_crits OR zst_1361_halberds_crits BEGIN

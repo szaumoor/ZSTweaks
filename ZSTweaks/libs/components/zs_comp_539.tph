@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_539~) BEGIN
-  FAIL ~Script already included: zs_comp_539~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_539~ = 1
-END
+
 
 OUTER_SET fade_speed_holy = (25 << 16)
 ADD_PROJECTILE ~%MOD_FOLDER%/pro/ZSTWRDPJ.pro~
