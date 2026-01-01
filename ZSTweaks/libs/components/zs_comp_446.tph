@@ -1,9 +1,7 @@
-
-
 ACTION_IF zst_446_fball_buff BEGIN
 
     OUTER_SET new_description_fireball = RESOLVE_STR_REF(@7520)
-    COPY_EXISTING ~SPWI304.SPL~ ~override~
+    COPY_EXISTING ~spwi304.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=new_description_fireball END
         LPF LAST_VALID_HEADER RET new_header = result END
         SET next_level = 11
@@ -15,26 +13,26 @@ ACTION_IF zst_446_fball_buff BEGIN
             ++dmg
         END
 
-    COPY_EXISTING ~SCRL5Z.ITM~ ~override~
+    COPY_EXISTING ~scrl5z.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_desc=new_description_fireball END
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~SCRL1G.ITM~ ~override~
+    COPY_EXISTING ~scrl1g.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_desc=new_description_fireball END
 
     OUTER_SET new_description_sunfire = RESOLVE_STR_REF(@7521)
-    COPY_EXISTING ~SPWI523.SPL~ ~override~
+    COPY_EXISTING ~spwi523.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=new_description_sunfire END
 
-    COPY_EXISTING ~SCRLAL.ITM~ ~override~
+    COPY_EXISTING ~scrlal.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_desc=new_description_sunfire END
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~SCRLAR.ITM~ ~override~
+    COPY_EXISTING ~scrlar.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_desc=new_description_sunfire END
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~SPWI523D.SPL~ ~override~
+    COPY_EXISTING ~spwi523d.spl~ ~override~
         LPF LAST_VALID_HEADER RET last_header = result END
 
         SET dmg = 1
@@ -52,11 +50,11 @@ ACTION_IF zst_446_fball_buff BEGIN
             dmg += 2
         END
 
-    COPY_EXISTING ~DFIREBL.PRO~ ~override~
+    COPY_EXISTING ~dfirebl.pro~ ~override~
         WRITE_SHORT 0x206 256
 
     OUTER_SET new_description_fireball_delayed = RESOLVE_STR_REF(@7522)
-    COPY_EXISTING ~SPWI712.SPL~ ~override~
+    COPY_EXISTING ~spwi712.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=new_description_fireball_delayed END
         LPF ALTER_EFFECT INT_VAR header = 0 match_opcode = 12 dicenumber = 13 END
         LPF LAST_VALID_HEADER RET last_header = result END
@@ -79,51 +77,47 @@ ACTION_IF zst_446_fball_buff BEGIN
             ++next_level
         END
 
-    COPY_EXISTING ~SCRL8N.ITM~ ~override~
+    COPY_EXISTING ~scrl8n.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_desc=new_description_fireball_delayed END
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~SPWI922.SPL~ ~override~
+    COPY_EXISTING ~spwi922.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7523) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 20 dicesize = 9 parameter1 = 20 END
     BUT_ONLY IF_EXISTS
 
 END
 
-ACTION_IF zst_446_fball_new_animation BEGIN
+ACTION_IF NOT is_iwdee AND zst_446_fball_new_animation BEGIN
 
-    COPY_EXISTING ~PFIRE2.PRO~  ~override~
+    COPY_EXISTING ~pfire2.pro~ ~override~
         WRITE_BYTE  0x216 0
-        WRITE_ASCII 0x21C "SPFIREPI" #8
-        WRITE_ASCII 0x228 "SPFIRIMP" #8
-        WRITE_ASCII 0x230 "SPFIRIMP" #8
+        WRITE_ASCII 0x21C "spfirepi" #8
+        WRITE_ASCII 0x228 "spfirimp" #8
+        WRITE_ASCII 0x230 "spfirimp" #8
 
-    COPY_EXISTING ~DFIREBL.PRO~ ~override~
+    COPY_EXISTING ~dfirebl.pro~ ~override~
         WRITE_BYTE  0x210 1
-        WRITE_ASCII 0x21C "SPFIREPI" #8
-        WRITE_ASCII 0x228 "SPFIRIMP" #8
-        WRITE_ASCII 0x230 "SPFIRIMP" #8
+        WRITE_ASCII 0x21C "spfirepi" #8
+        WRITE_ASCII 0x228 "spfirimp" #8
+        WRITE_ASCII 0x230 "spfirimp" #8
 
-    COPY_EXISTING ~SPWI304.SPL~ ~override~
+    COPY_EXISTING ~spwi304.spl~ ~override~
         LPF ALTER_HEADER INT_VAR projectile = 234 END
 
-    COPY_EXISTING ~SPWI712.SPL~ ~override~
+    COPY_EXISTING ~spwi712.spl~ ~override~
         LPF ALTER_HEADER INT_VAR projectile = 244 END
 
-    ACTION_IF NOT is_iwdee BEGIN // iwdee has a different projectile, skipping for now
-
-        COPY_EXISTING ~SPWI523D.SPL~ ~override~
-            LPF ALTER_HEADER INT_VAR projectile = 234 END
-
-    END
+    COPY_EXISTING ~spwi523d.spl~ ~override~
+        LPF ALTER_HEADER INT_VAR projectile = 234 END
 
     ACTION_IF is_bg2ee_or_eet BEGIN
 
-        COPY_EXISTING ~SPDRBRTH.PRO~ ~override~
+        COPY_EXISTING ~spdrbrth.pro~ ~override~
             WRITE_BYTE 0x216 0
             WRITE_BYTE 0x217 254
-            WRITE_ASCII 0x228 "SPFIRIMP" #8
-            WRITE_ASCII 0x230 "SPFLAMES" #8
+            WRITE_ASCII 0x228 "spfirimp" #8
+            WRITE_ASCII 0x230 "spflames" #8
 
     END
 
