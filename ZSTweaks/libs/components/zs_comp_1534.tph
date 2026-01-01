@@ -1,5 +1,3 @@
-
-
 ACTION_IF zst_1534_potions_usable_everyone BEGIN
 
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
@@ -16,7 +14,7 @@ ACTION_IF zst_1534_potions_cannot_self_stack BEGIN
         READ_SHORT 0x1c cat
         PATCH_IF cat = 9 OR cat = 13 BEGIN 
 
-            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "GBERRY" BEGIN
+            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "gberry" BEGIN
                 LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
             END
 
@@ -28,7 +26,7 @@ ACTION_IF zst_1534_potions_cannot_self_stack BEGIN
     ACTION_IF NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "240" AND 
               NOT (zst_group_240_goodberry AND MOD_IS_INSTALLED "ZSTweaks.tp2" "99")
     BEGIN
-        COPY_EXISTING ~GBERRY.ITM~ ~override~
+        COPY_EXISTING ~gberry.itm~ ~override~
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
         BUT_ONLY IF_EXISTS
     END
@@ -37,97 +35,95 @@ END
 
 ACTION_IF zst_1534_potion_overhaul BEGIN
 
-    ACTION_IF NOT is_iwdee BEGIN // iwdee deliberately unsupported for now
-        //icedust potion
-        ACTION_IF FILE_EXISTS_IN_GAME ~wand16.itm~ BEGIN
+    //icedust potion
+    ACTION_IF FILE_EXISTS_IN_GAME ~wand16.itm~ BEGIN
 
-            COPY_EXISTING ~wand16.itm~ ~override~
-                LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7461) END
+        COPY_EXISTING ~wand16.itm~ ~override~
+            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7461) END
 
-            COPY_EXISTING ~spin713.spl~ ~override~
-                LPF ALTER_HEADER INT_VAR match_type = 2 projectile = 160 END
-                LPF ALTER_EFFECT_EX INT_VAR duration = 18 STR_VAR match_duration_ex = "(o_duration >= 6)" END
-                LPF ALTER_EFFECT INT_VAR match_opcode = 30 parameter1=75 parameter2=0 END
-                LPF ALTER_EFFECT INT_VAR match_opcode = 141 parameter2 = 29 END
-                LPF DELETE_EFFECT INT_VAR match_opcode = 61 END
-                LPF RGB INT_VAR red = 50 green = 181 blue = 199 RET color = result END
-                SET fade_speed = ( 25 << 16 )
-                LPF ADD_SPL_TGTEFF INT_VAR pwr=4 STR_VAR effects=~ip=0,op=321,res=%SOURCE_RES%,;op=142,p2=16,t=2,dur=18;op=61,p1=%color%,p2=%fade_speed%,tmg=1,rd=1~ END
-
-        END
-
-        // charname's tankard
-        COPY_EXISTING "ohntank.ITM" ~override~
-            LPF ALTER_ITEM INT_VAR general_desc=RESOLVE_STR_REF(@6450) END
-            LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=3 match_opcode=17 dicesize=0 dicenumber=0 parameter1=27 END
-            LPF ADD_ON_HIT_EFF INT_VAR t=3 p1=1 tgt=1 dur=60 tmg=0 STR_VAR effects=~op=10;op=44~ END
-            LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 tmg=0 STR_VAR effects=~op=321,res=%SOURCE_RES%,ip=0~ END
-        BUT_ONLY IF_EXISTS
-
-        // potion of healing (basic)
-        COPY_EXISTING ~potn08.itm~ ~override~
-            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7467) END
-            LPF ALTER_EFFECT INT_VAR match_opcode=17 parameter1=12 END
-
-        COPY_EXISTING ~potn25.itm~ ~override~ // oddly murky potion consistency description change
-            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7468) END
-
-        // potion of heroism
-        COPY_EXISTING ~potn09.itm~ ~override~
-            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7462) unusable0=0 END
-            LPF ALTER_EFFECT INT_VAR match_opcode = 54 parameter1 = 2 parameter2= 0 END
-            LPF ADD_ON_HIT_EFF INT_VAR dur=600 rd=1 pwr=4 t=3 tgt=1 STR_VAR effects=~op=23,spec=1;op=73,p1=1~ END
-
-        // potion of invunerability
-        COPY_EXISTING ~potn11.itm~ ~override~
-            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7463) unusable0=0 END
-            LPF ADD_ON_HIT_EFF INT_VAR dur=300 rd=1 pwr=4 t=3 tgt=1 STR_VAR effects=~op=166,p1=10~ END
-
-        // elixir of health
-        COPY_EXISTING ~potn17.itm~ ~override~
-            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7464) END
-            LPF ALTER_EFFECT INT_VAR match_opcode=17 parameter1=20 END
-            LPF ALTER_EFFECT INT_VAR silent=1 match_opcode = 94 parameter2=0 opcode = 164 END
-            LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 dur=10 rd=0 pwr=4 STR_VAR effects=~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=267,p1=14017;op=267,p1=14662~ END
-
-        // potion of perception
-        COPY_EXISTING ~potn39.itm~ ~override~
-            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7465) END
-            LPF ALTER_EFFECT INT_VAR match_opcode=91 parameter1=40 END
-            LPF CLONE_EFFECT INT_VAR match_opcode=91 opcode=276 parameter1=40 END
-            LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 p1=2 dur=1800 rd=1 pwr=4 STR_VAR effects=~op=0,p1=1;op=325;op=278~ END
-
-        //potion of power
-        COPY_EXISTING ~potn41.itm~ ~override~
-            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7466) END
-            LPF ALTER_EFFECT INT_VAR match_opcode = 54 parameter1 = 4 parameter2= 0 END
-            LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 277 END
-            LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 276 END
-            LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 59 END
-            LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 332 parameter1=10 parameter2=0 END
-            LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 dur=240 pwr=4 STR_VAR effects=~op=23,spec=1;op=189,p1=1~ END
-
-        // potion of regeneration
-        COPY_EXISTING ~potn42.itm~ ~override~
-            LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7469) END
-            LPF ALTER_EFFECT INT_VAR match_opcode = 98 parameter2 = 3 parameter1 = 2 END
-
-        ACTION_IF NOT zst_1534_potions_usable_everyone BEGIN
-
-            COPY_EXISTING_REGEXP "^potn0[3-7]\.itm$" ~override~
-                LPF ALTER_ITEM INT_VAR unusable0=0 END
-            BUT_ONLY
-
-            COPY_EXISTING "potn12.itm" ~override~
-                LPF ALTER_ITEM INT_VAR unusable0=0 END
-
-        END
-
-        COPY_EXISTING ~potn13.itm~ ~override~ // vanilla explosive / fire breath potions
-                      ~potn26.itm~ ~override~
-                      ~potn27.itm~ ~override~
-            LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
+        COPY_EXISTING ~spin713.spl~ ~override~
+            LPF ALTER_HEADER INT_VAR match_type = 2 projectile = 160 END
+            LPF ALTER_EFFECT_EX INT_VAR duration = 18 STR_VAR match_duration_ex = "(o_duration >= 6)" END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 30 parameter1=75 parameter2=0 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 141 parameter2 = 29 END
+            LPF DELETE_EFFECT INT_VAR match_opcode = 61 END
+            LPF RGB INT_VAR red = 50 green = 181 blue = 199 RET color = result END
+            SET fade_speed = ( 25 << 16 )
+            LPF ADD_SPL_TGTEFF INT_VAR pwr=4 STR_VAR effects=~ip=0,op=321,res=%SOURCE_RES%,;op=142,p2=16,t=2,dur=18;op=61,p1=%color%,p2=%fade_speed%,tmg=1,rd=1~ END
 
     END
+
+    // charname's tankard
+    COPY_EXISTING "ohntank.ITM" ~override~
+        LPF ALTER_ITEM INT_VAR general_desc=RESOLVE_STR_REF(@6450) END
+        LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=3 match_opcode=17 dicesize=0 dicenumber=0 parameter1=27 END
+        LPF ADD_ON_HIT_EFF INT_VAR t=3 p1=1 tgt=1 dur=60 tmg=0 STR_VAR effects=~op=10;op=44~ END
+        LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 tmg=0 STR_VAR effects=~op=321,res=%SOURCE_RES%,ip=0~ END
+    BUT_ONLY IF_EXISTS
+
+    // potion of healing (basic)
+    COPY_EXISTING ~potn08.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7467) END
+        LPF ALTER_EFFECT INT_VAR match_opcode=17 parameter1=12 END
+
+    COPY_EXISTING ~potn25.itm~ ~override~ // oddly murky potion consistency description change
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7468) END
+
+    // potion of heroism
+    COPY_EXISTING ~potn09.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7462) unusable0=0 END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 54 parameter1 = 2 parameter2= 0 END
+        LPF ADD_ON_HIT_EFF INT_VAR dur=600 rd=1 pwr=4 t=3 tgt=1 STR_VAR effects=~op=23,spec=1;op=73,p1=1~ END
+
+    // potion of invunerability
+    COPY_EXISTING ~potn11.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7463) unusable0=0 END
+        LPF ADD_ON_HIT_EFF INT_VAR dur=300 rd=3 pwr=4 t=3 tgt=1 STR_VAR effects=~op=166,p1=10~ END
+
+    // elixir of health
+    COPY_EXISTING ~potn17.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7464) END
+        LPF ALTER_EFFECT INT_VAR match_opcode=17 parameter1=18 END
+        LPF ALTER_EFFECT INT_VAR silent=1 match_opcode = 94 parameter2=0 opcode = 164 END
+        LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 dur=10 rd=0 pwr=4 STR_VAR effects=~op=169,p2=137;op=169,p2=6;op=169,p2=7;op=101,p2=78;op=101,p2=25;op=267,p1=14017;op=267,p1=14662~ END
+
+    // potion of perception
+    COPY_EXISTING ~potn39.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7465) END
+        LPF ALTER_EFFECT INT_VAR match_opcode=91 parameter1=40 END
+        LPF CLONE_EFFECT INT_VAR match_opcode=91 opcode=276 parameter1=40 END
+        LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 p1=1 dur=1800 rd=1 pwr=4 STR_VAR effects=~op=0;op=325;op=278~ END
+
+    //potion of power
+    COPY_EXISTING ~potn41.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7466) END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 54 parameter1 = 4 parameter2= 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 277 END
+        LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 276 END
+        LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 59 END
+        LPF CLONE_EFFECT INT_VAR match_opcode=92 opcode = 332 parameter1=10 parameter2=0 END
+        LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 dur=240 pwr=4 STR_VAR effects=~op=23,spec=1;op=189,p1=1~ END
+
+    // potion of regeneration
+    COPY_EXISTING ~potn42.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7469) END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 98 parameter2 = 3 parameter1 = 2 END
+
+    ACTION_IF NOT zst_1534_potions_usable_everyone BEGIN
+
+        COPY_EXISTING_REGEXP "^potn0[3-7]\.itm$" ~override~
+            LPF ALTER_ITEM INT_VAR unusable0=0 END
+        BUT_ONLY
+
+        COPY_EXISTING "potn12.itm" ~override~
+            LPF ALTER_ITEM INT_VAR unusable0=0 END
+
+    END
+
+    COPY_EXISTING ~potn13.itm~ ~override~ // vanilla explosive / fire breath potions
+                    ~potn26.itm~ ~override~
+                    ~potn27.itm~ ~override~
+        LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
+
 
 END

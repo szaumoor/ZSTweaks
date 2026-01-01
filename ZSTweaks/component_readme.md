@@ -153,7 +153,7 @@ This component includes two optional, universal changes: making all potions usab
 - **Potion of Heroism**: Now usable by any class. Grants immunity to morale failure, +1 damage, and a flat +2 THAC0 bonus (instead of a percentage-based one).
 - **Potion of Invulnerability**: Now usable by any class and grants an additional +10% Magic Resistance.
 - **Elixir of Health**: Heals 20 HP (up from 10) and grants immunity to being poisoned for 10 seconds (does not affect direct poison damage).
-- **Potion of Perception**: Now grants a +40% bonus to Find Traps and Detect Illusions, and a +2 bonus to AC and all Saving Throws.
+- **Potion of Perception**: Now grants a +40% bonus to Find Traps and Detect Illusions, and a +1 bonus to Armor class, THAC0, and all saving throws.
 - **Potion of Power**: Now usable by any class. Grants immunity to morale failure, improves all thieving skills, grants +1 Casting Speed, +10% to all damage output, and a flat +4 THAC0 bonus.
 - **Potion of Regeneration**: Heals 3 HP per round for 3 turns (up from 2 HP/round for 2 turns).
 - **CHARNAME'S Tankard**: Heals 27 HP (3/day) and grants +1 Strength and Constitution for 1 turn.
