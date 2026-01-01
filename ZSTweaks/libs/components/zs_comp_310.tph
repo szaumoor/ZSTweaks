@@ -1,19 +1,14 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_310~) BEGIN
-  FAIL ~Script already included: zs_comp_310~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_310~ = 1
-END
+COPY_EXISTING ~sppr606.spl~ ~override~
+  LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5150) END
+  LPF ~CD_TRIM-O-MATIC~ INT_VAR level_cap = 1 END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 122 parameter1 = 12 duration=2100 END
+  LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
 
-ACTION_IF NOT is_iwdee BEGIN
-
-  COPY_EXISTING ~SPPR606.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5150) END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 122 parameter1 = 12 duration=300 END
-    LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
-
-  COPY_EXISTING ~FIRESEED.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR general_desc=RESOLVE_STR_REF(@5160) ench=2 END
-    LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 12 parameter1 = 5 dicesize = 8 dicenumber = 3 END
-    LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
-
-END
+COPY_EXISTING ~fireseed.itm~ ~override~
+              ~fseeds.itm~ ~override~
+  SET new_desc = RESOLVE_STR_REF(@5160)
+  LPF ALTER_ITEM INT_VAR general_desc=new_desc id_desc=new_desc ench=2 END
+  LPF ALTER_EFFECT INT_VAR check_globals = 0 match_opcode = 12 parameter1 = 5 dicesize = 8 dicenumber = 3 END
+  LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
+  LPF ALTER_HEADER INT_VAR to_hit = 2 END
+BUT_ONLY IF_EXISTS

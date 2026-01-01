@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_1546~) BEGIN
-  FAIL ~Script already included: zs_comp_1546~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_1546~ = 1
-END
+
 
 ACTION_IF zst_1546_buckler_tweak BEGIN
 

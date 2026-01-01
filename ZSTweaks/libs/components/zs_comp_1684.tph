@@ -1,45 +1,38 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_1684~) BEGIN
-  FAIL ~Script already included: zs_comp_1684~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_1684~ = 1
-END
 
-ACTION_IF NOT is_iwdee BEGIN
 
-    INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
-    OUTER_SET general_tweaks_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~
-    OUTER_SET finesse_component_installed = (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ OR
-                                            (general_tweaks_installed AND zst_group_1450_finesse))
+INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
+OUTER_SET general_tweaks_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~
+OUTER_SET finesse_component_installed = (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ OR
+                                        (general_tweaks_installed AND zst_group_1450_finesse))
 
-    COPY_EXISTING ~dagg05.itm~ ~override~
-        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7350) END
-        LPF ADD_ITEM_HEADER INT_VAR copy_header=1 END
-        LPF ALTER_HEADER INT_VAR header=1 type=1 range=0 speed=3 dicesize=3 backhand=20 thrust=80 damage_type=1 overhand=0 projectile=1 flag_strength=1 flag_str_damage = 0 END
+COPY_EXISTING ~dagg05.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7350) END
+    LPF ADD_ITEM_HEADER INT_VAR copy_header=1 END
+    LPF ALTER_HEADER INT_VAR header=1 type=1 range=0 speed=3 dicesize=3 backhand=20 thrust=80 damage_type=1 overhand=0 projectile=1 flag_strength=1 flag_str_damage = 0 END
 
-        PATCH_IF zst_1450_allow_daggers AND finesse_component_installed BEGIN
-            LPF ALTER_EFFECT INT_VAR header_type = 1 match_opcode = 326 STR_VAR resource = ~zstwthd0~ END
-        END
+    PATCH_IF zst_1450_allow_daggers AND finesse_component_installed BEGIN
+        LPF ALTER_EFFECT INT_VAR header_type = 1 match_opcode = 326 STR_VAR resource = ~zstwthd0~ END
+    END
 
-    COPY_EXISTING ~dagg16.itm~ ~override~
-        PATCH_IF zst_1000_sbonus > 0 AND
-                (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1000~ OR
-                (group_component AND zst_group_1000_poisoned_throw_dagg))
-        BEGIN
-            SET desc = RESOLVE_STR_REF(@7352)
-        END ELSE BEGIN
-            SET desc = RESOLVE_STR_REF(@7351)
-        END
+COPY_EXISTING ~dagg16.itm~ ~override~
+    PATCH_IF zst_1000_sbonus > 0 AND
+            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1000~ OR
+            (group_component AND zst_group_1000_poisoned_throw_dagg))
+    BEGIN
+        SET desc = RESOLVE_STR_REF(@7352)
+    END ELSE BEGIN
+        SET desc = RESOLVE_STR_REF(@7351)
+    END
 
-        LPF ALTER_ITEM INT_VAR id_desc=desc general_desc=desc END
-        LPF ADD_ITEM_HEADER INT_VAR copy_header=1 END
-        LPF ALTER_HEADER INT_VAR header=1 type=1 range=0 speed=3 dicesize=3 backhand=20 thrust=80 damage_type=1 overhand=0 projectile=1 flag_strength=1 flag_str_damage=0 END
-        LPF DELETE_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=142 END
-        LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=25 opcode=12 parameter1=1 parameter2=op12_poison duration=0 savebonus=0 savingthrow=0 special=1024 END
+    LPF ALTER_ITEM INT_VAR id_desc=desc general_desc=desc END
+    LPF ADD_ITEM_HEADER INT_VAR copy_header=1 END
+    LPF ALTER_HEADER INT_VAR header=1 type=1 range=0 speed=3 dicesize=3 backhand=20 thrust=80 damage_type=1 overhand=0 projectile=1 flag_strength=1 flag_str_damage=0 END
+    LPF DELETE_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=142 END
+    LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=25 opcode=12 parameter1=1 parameter2=op12_poison duration=0 savebonus=0 savingthrow=0 special=1024 END
 
-        PATCH_IF zst_1450_allow_daggers AND finesse_component_installed BEGIN
-            LPF ALTER_EFFECT INT_VAR header_type = 1 match_opcode = 326 STR_VAR resource = ~zstwthd0~ END
-        END
+    PATCH_IF zst_1450_allow_daggers AND finesse_component_installed BEGIN
+        LPF ALTER_EFFECT INT_VAR header_type = 1 match_opcode = 326 STR_VAR resource = ~zstwthd0~ END
+    END
 
-    BUT_ONLY IF_EXISTS
+BUT_ONLY IF_EXISTS
 
-END

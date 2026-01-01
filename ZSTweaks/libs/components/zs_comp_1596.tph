@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_1596~) BEGIN
-  FAIL ~Script already included: zs_comp_1596~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_1596~ = 1
-END
+
 
 COPY ~%MOD_FOLDER%/items/shadow_blade~ ~override~
 COPY_EXISTING "sw1h10.itm" ~override~

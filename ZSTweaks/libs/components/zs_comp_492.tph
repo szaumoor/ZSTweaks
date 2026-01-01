@@ -1,74 +1,63 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_492~) BEGIN
-  FAIL ~Script already included: zs_comp_492~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_492~ = 1
-END
+COPY_EXISTING ~staf14.itm~ ~override~
+  LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8589) END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 0 parameter1 = 1 END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 0 parameter1 = 2 parameter2 = 1 END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 0 match_parameter2 = 1 parameter1 = 1 parameter2 = 2 END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 0 match_parameter2 = 2 parameter1 = 1 parameter2 = 4 END
+  LPF CLONE_EFFECT_EX INT_VAR match_opcode = 33 opcode = 30 STR_VAR parameter1_ex = ~"-15"~ END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 30 opcode = 84 END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 84 opcode = 87 parameter1 = 25 END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 87 opcode = 88 parameter1 = 15 END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 88 opcode = 89 END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 89 opcode = 318 parameter1=0 parameter2=0 STR_VAR resource = "SPPR202" END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 206 STR_VAR resource = "SPPR202" END
+BUT_ONLY IF_EXISTS
 
-ACTION_IF NOT is_iwdee BEGIN
+COPY_EXISTING ~sppr202.spl~ ~override~
+  LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8588) END
+  LPF ALTER_HEADER INT_VAR speed = 3 END
 
-  COPY_EXISTING ~STAF14.ITM~ ~override~
-    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8589) END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 0 parameter1 = 1 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 0 parameter1 = 2 parameter2 = 1 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 0 match_parameter2 = 1 parameter1 = 1 parameter2 = 2 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 0 match_parameter2 = 2 parameter1 = 1 parameter2 = 4 END
-    LPF CLONE_EFFECT_EX INT_VAR match_opcode = 33 opcode = 30 STR_VAR parameter1_ex = ~"-15"~ END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 30 opcode = 84 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 84 opcode = 87 parameter1 = 25 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 87 opcode = 88 parameter1 = 15 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 88 opcode = 89 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 89 opcode = 318 parameter1=0 parameter2=0 STR_VAR resource = "SPPR202" END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 206 STR_VAR resource = "SPPR202" END
-  BUT_ONLY IF_EXISTS
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target=2 insert_point = 0 STR_VAR resource = "%SOURCE_RES%" END
 
-  COPY_EXISTING ~SPPR202.SPL~ ~override~
-    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8588) END
-    LPF ALTER_HEADER INT_VAR speed = 3 END
+  LPF ALTER_EFFECT_EX STR_VAR match_duration_ex = ~(o_duration >= 6)~ duration_ex = ~(THIS + 18)~ END
 
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target=2 insert_point = 0 STR_VAR resource = "%SOURCE_RES%" END
-    READ_SHORT 0x68 headers
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 218 END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 0 parameter1 = 2 parameter2 = 1 END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 0 match_parameter2 = 1 parameter1 = 1 parameter2 = 2 END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 0 match_parameter2 = 2 parameter1 = 1 parameter2 = 4 END
+  LPF CLONE_EFFECT_EX INT_VAR match_opcode = 33 opcode = 30 STR_VAR parameter1_ex = ~"-15"~ END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 30 opcode = 84 END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 84 opcode = 87 parameter1 = 25 END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 87 opcode = 88 parameter1 = 15 END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 88 opcode = 89 END
 
-    //FOR ( i = 0; i < headers; ++i ) BEGIN
-    LPF ALTER_EFFECT_EX STR_VAR match_duration_ex = ~(o_duration > 0)~ duration_ex = ~(THIS + 18)~ END
-    //END
+  WRITE_LONG 0x1e (2**30)
 
-    LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 218 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 0 parameter1 = 2 parameter2 = 1 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 0 match_parameter2 = 1 parameter1 = 1 parameter2 = 2 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 0 match_parameter2 = 2 parameter1 = 1 parameter2 = 4 END
-    LPF CLONE_EFFECT_EX INT_VAR match_opcode = 33 opcode = 30 STR_VAR parameter1_ex = ~"-15"~ END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 30 opcode = 84 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 84 opcode = 87 parameter1 = 25 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 87 opcode = 88 parameter1 = 15 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 88 opcode = 89 END
+COPY_EXISTING ~sppr111.spl~ ~override~
+  WRITE_LONG 0x1e (2**31)
 
-    WRITE_LONG 0x1e (2**30)
+SILENT
+ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
+  ACTION_IF !(IS_AN_INT dv) BEGIN
+    COPY_EXISTING ~%file%~ ~override~
+    
+      READ_BYTE 0x273 class
+      PATCH_IF class = class_druid OR class = class_fighter_druid OR class = class_ranger BEGIN
+        REMOVE_MEMORIZED_SPELL "SPPR111" 
+        REMOVE_KNOWN_SPELL "SPPR111" 
+      END 
+      
+      ELSE PATCH_IF class=class_cleric         OR
+                    class=class_fighter_cleric OR
+                    class=class_cleric_mage    OR
+                    class=class_cleric_thief   OR
+                    class=class_fighter_mage_cleric 
+      BEGIN
+          REMOVE_MEMORIZED_SPELL "SPPR202" 
+          REMOVE_KNOWN_SPELL "SPPR202"
+      END
 
-  COPY_EXISTING ~SPPR111.SPL~ ~override~
-    WRITE_LONG 0x1e (2**31)
-
-  SILENT
-  ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
-    ACTION_IF !(IS_AN_INT dv) BEGIN
-      COPY_EXISTING ~%file%~ ~override~
-        READ_BYTE 0x273 class
-        PATCH_IF class = class_druid OR class = class_fighter_druid OR class = class_ranger BEGIN
-          REMOVE_MEMORIZED_SPELL "SPPR111" 
-          REMOVE_KNOWN_SPELL "SPPR111" 
-        END 
-        
-        ELSE PATCH_IF class=class_cleric         OR
-                      class=class_fighter_cleric OR
-                      class=class_cleric_mage    OR
-                      class=class_cleric_thief   OR
-                      class=class_fighter_mage_cleric 
-        BEGIN
-            REMOVE_MEMORIZED_SPELL "SPPR202" 
-            REMOVE_KNOWN_SPELL "SPPR202"
-        END
-
-    END
   END
-
-  VERBOSE  
 END
+
+VERBOSE  

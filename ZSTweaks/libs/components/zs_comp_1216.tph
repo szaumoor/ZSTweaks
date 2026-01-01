@@ -1,20 +1,16 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_1216~) BEGIN
-  FAIL ~Script already included: zs_comp_1216~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_1216~ = 1
-END
 
-ACTION_IF NOT is_iwdee BEGIN
 
-  COPY_EXISTING ~plat06.itm~ ~override~
-                ~plat06_.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8470) END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=20~ END
-  BUT_ONLY IF_EXISTS
+COPY_EXISTING ~plat06.itm~ ~override~
+              ~plat06_.itm~ ~override~
+  LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8470) END
+  LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=20~ END
+BUT_ONLY IF_EXISTS
 
-  COPY_EXISTING ~bzplm06a.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8471) END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=20~ END
-  BUT_ONLY IF_EXISTS
+COPY_EXISTING ~bzplm06a.itm~ ~override~
+  LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8471) END
+  LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=20~ END
+BUT_ONLY IF_EXISTS
 
+ACTION_IF is_iwdee AND NOT FILE_EXISTS_IN_GAME "plat06.itm" AND NOT group_component BEGIN
+  WARN "Ankheg's Plate Armor not found in IWDEE."
 END

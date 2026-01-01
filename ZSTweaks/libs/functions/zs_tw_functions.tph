@@ -13,5 +13,6 @@ INCLUDE ~%MOD_FOLDER%/libs/functions/zs_checks.tpa~
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_getters.tpa~
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_searches.tpa~
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_specifics.tpa~
+INCLUDE ~%MOD_FOLDER%/libs/functions/zs_file_dupe_check.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_tw_finesse_probonus.tph~
 

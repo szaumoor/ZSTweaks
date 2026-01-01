@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_1121~) BEGIN
-  FAIL ~Script already included: zs_comp_1121~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_1121~ = 1
-END
+
 
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     READ_SHORT 0x1c cat
@@ -22,7 +18,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
                 LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 dsize=3 dnum=1 ip=0 p2=op12_piercing END
             END DEFAULT
                 READ_ASCII 0x0c  name
-                PATCH_WARN "[Flails Tweak] Interesting, we found a flail with enchantment outside [0-6]: %SOURCE_RES%, with name '%name%'. Inform RoyalProtector!"
+                PATCH_WARN "[Flails Tweak] Interesting, we found a flail with enchantment outside [0-6]: %SOURCE_RES%, with name '%name%'. Inform Kaelyn!"
         END
     END
 BUT_ONLY

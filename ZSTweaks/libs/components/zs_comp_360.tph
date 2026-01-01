@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_360~) BEGIN
-  FAIL ~Script already included: zs_comp_360~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_360~ = 1
-END
+
 
 ACTION_IF zst_360_etheral_retribution BEGIN
 
@@ -10,7 +6,7 @@ ACTION_IF zst_360_etheral_retribution BEGIN
         LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5210) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 6 dicenumber = 6 END
         LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savebonus = "-2" END
-        LPF ALTER_EFFECT INT_VAR match_opcode = 318 match_parameter2 = 125 match_parameter1 = 2 parameter1 = 3 END
+        LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 318 match_parameter2 = 125 match_parameter1 = 2 parameter1 = 3 END
 
 END
 

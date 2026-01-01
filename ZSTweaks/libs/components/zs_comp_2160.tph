@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_2160~) BEGIN
-  FAIL ~Script already included: zs_comp_2160~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_2160~ = 1
-END
+
 
 COPY ~%MOD_FOLDER%/class_kits/quivering_palm~ ~override~
 COPY_EXISTING "spcl820.spl" ~override~

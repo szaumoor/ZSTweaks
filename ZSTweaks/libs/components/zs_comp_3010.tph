@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_3010~) BEGIN
-  FAIL ~Script already included: zs_comp_3010~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_3010~ = 1
-END
+
 
 ACTION_IF is_bg2ee_or_eet BEGIN
   // converting to LG

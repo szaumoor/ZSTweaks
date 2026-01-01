@@ -24,17 +24,18 @@ Compatibility with other tweak mods that affect the same content depends on the 
 
 I am open to providing compatibility for other mods. You can contact me on the forums or at <kaelyn@tuta.io> with any requests or questions. So far, compatibility has been added to:
 
-- ToF
-- SCS
 - EEFixpack
-- IWDification
-- ZS_ItemPack
+- Forgotten Armaments
 - Item Upgrade
+- IWDification
 - Project Javelin
 - Rogue Rebalancing
-- Wares of the Planes
-- Forgotten Armaments
+- Sword Coast Stratagems (SCS)
 - Shades of the Sword Coast
+- Talents of Faêrun
+- The Artisan's Kitpack
+- Wares of the Planes
+- ZS_ItemPack
 - ZS_ShadowdancerOverhaul
 
 ## Notes for users and modders

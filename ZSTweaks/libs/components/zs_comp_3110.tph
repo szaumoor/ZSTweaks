@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_3110~) BEGIN
-  FAIL ~Script already included: zs_comp_3110~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_3110~ = 1
-END
+
 
 COPY ~%MOD_FOLDER%/creatures/yuanti~ ~override~
 OUTER_SPRINT melee_effect "zsipyua2"

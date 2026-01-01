@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_461~) BEGIN
-  FAIL ~Script already included: zs_comp_461~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_461~ = 1
-END
+
 
 COPY_EXISTING ~sppr612.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7390) END

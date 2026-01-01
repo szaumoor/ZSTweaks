@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_488~) BEGIN
-  FAIL ~Script already included: zs_comp_488~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_488~ = 1
-END
+
 
 ACTION_IF spell_thorn_spray > 0 BEGIN
 

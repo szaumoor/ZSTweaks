@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_1435~) BEGIN
-  FAIL ~Script already included: zs_comp_1435~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_1435~ = 1
-END
+
 
 COPY_EXISTING ~DOBONE.ITM~ ~override~
     LPF ALTER_HEADER INT_VAR range = 30 END

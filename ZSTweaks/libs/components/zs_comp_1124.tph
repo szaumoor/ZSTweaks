@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_1124~) BEGIN
-  FAIL ~Script already includedd: zs_comp_1124~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_1124~ = 1
-END
+
 
 OUTER_SET group_component = 1
 OUTER_SPRINT config_path "%MOD_FOLDER%/configurations/zstweaks_onehanded_swords_group_install.txt"

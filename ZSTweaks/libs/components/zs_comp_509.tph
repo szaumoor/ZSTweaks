@@ -1,12 +1,11 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_509~) BEGIN
-  FAIL ~Script already included: zs_comp_509~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_509~ = 1
-END
-
 ACTION_IF NOT is_iwdee BEGIN
 
-  COPY_EXISTING ~SPPR211.SPL~ ~override~
-    LPF ALTER_HEADER INT_VAR projectile = 169 END
+  COPY_EXISTING ~sppr211.spl~ ~override~
+    LPF ALTER_HEADER INT_VAR projectile = 169 END 
+
+END ELSE BEGIN
+
+  COPY_EXISTING ~idpro245.pro~ ~override~
+    WRITE_SHORT 0x200 (2**10 + 2**6)
     
 END

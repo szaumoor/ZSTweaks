@@ -1,15 +1,21 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_477~) BEGIN
-  FAIL ~Script already included: zs_comp_477~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_477~ = 1
-END
+
 
 ACTION_IF spell_smashing_wave > 0 BEGIN
 
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SMASHING_WAVE" RET spell_res END
+
+  ACTION_IF is_iwdee AND has_eefixpack BEGIN
+    COPY_EXISTING ~%spell_res%a.spl~ ~override~
+      LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 8 dicenumber = 6 parameter1 = 6 resist_dispel = 0 END
+  END
+
   COPY_EXISTING ~%spell_res%.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8658) END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 8 dicenumber = 6 parameter1 = 6 END
+
+    PATCH_IF NOT is_iwdee OR is_iwdee AND NOT has_eefixpack BEGIN
+      LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 8 dicenumber = 6 parameter1 = 6 END
+    END
+
     LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
     LPF ALTER_EFFECT INT_VAR match_duration = 12 probability1 = 15 END
     LPF ALTER_EFFECT INT_VAR match_duration = 6 probability1 = 32 probability2 = 16 END

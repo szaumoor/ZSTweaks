@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_1601~) BEGIN
-  FAIL ~Script already included: zs_comp_1601~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_1601~ = 1
-END
+
 
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
   READ_SHORT 0x1c category_itm

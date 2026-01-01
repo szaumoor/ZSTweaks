@@ -1,12 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_562~) BEGIN
-  FAIL ~Script already included: zs_comp_562~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_562~ = 1
-END
 
-ACTION_IF is_bg2ee_or_eet BEGIN
 
-    COPY_EXISTING ~spwi910.spl~ ~override~
-        LPF CLONE_EFFECT INT_VAR match_opcode=215 opcode=176 STR_VAR match_resource=~spmaze1~ END
-
-END
+COPY_EXISTING ~spwi910.spl~ ~override~
+    LPF CLONE_EFFECT INT_VAR match_opcode=215 opcode=176 STR_VAR match_resource=~spmaze1~ END

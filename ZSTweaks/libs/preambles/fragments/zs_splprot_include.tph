@@ -1,6 +1,6 @@
 ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
     
-    PRINT "Adding and/or finding all splprot entries required for RoyalProtector's mods..."
+    PRINT "Adding and/or finding all splprot entries required for Kaelyn's mods..."
 
     // ----------------------------------------------------------------
 

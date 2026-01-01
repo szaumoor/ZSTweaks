@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_2171~) BEGIN
-  FAIL ~Script already included: zs_comp_2171~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_2171~ = 1
-END
+
 
 OUTER_SET class_comp_group_installed = group_component AND zst_group_2170_thac0_rogue AND zst_2170_thac0_thieves
 

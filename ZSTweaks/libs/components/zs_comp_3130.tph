@@ -1,10 +1,6 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_3130~) BEGIN
-  FAIL ~Script already included: zs_comp_3130~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_3130~ = 1
-END
 
-ACTION_IF is_bg2ee_or_eet BEGIN
+
+ACTION_IF is_iwdee_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/creatures/minotaurs~ ~override~
   OUTER_SPRINT melee_effect "zstmino0"

@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_1561~) BEGIN
-  FAIL ~Script already included: zs_comp_1561~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_1561~ = 1
-END
+
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 

@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_405~) BEGIN
-  FAIL ~Script already included: zs_comp_405~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_405~ = 1
-END
+
 
 OUTER_SET new_description = RESOLVE_STR_REF(@7380)
 COPY_EXISTING ~spwi813.spl~ ~override~

@@ -1,8 +1,4 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_1534~) BEGIN
-  FAIL ~Script already included: zs_comp_1534~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_1534~ = 1
-END
+
 
 ACTION_IF zst_1534_potions_usable_everyone BEGIN
 

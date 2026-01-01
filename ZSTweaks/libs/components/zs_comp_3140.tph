@@ -1,9 +1,3 @@
-ACTION_IF (VARIABLE_IS_SET ~zs_comp_3140~) BEGIN
-  FAIL ~Script already included: zs_comp_3140~
-END ELSE BEGIN
-  OUTER_SET ~zs_comp_3140~ = 1
-END
-
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     
   PATCH_IF BYTE_AT(0x272) = race_ogre AND
