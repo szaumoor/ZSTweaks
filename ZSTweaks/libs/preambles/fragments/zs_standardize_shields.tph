@@ -1,46 +1,54 @@
 ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
-    COPY_EXISTING ~SHLD03.itm~ ~override~
+
+    COPY_EXISTING ~shld03.itm~ ~override~
         READ_LONG 0x8 medium_shield_strref
 
-    COPY_EXISTING ~SHLD01.itm~ ~override~
+    COPY_EXISTING ~shld01.itm~ ~override~
         READ_LONG 0x8 small_shield_strref
 
-    COPY_EXISTING ~SHLD05.itm~ ~override~
+    COPY_EXISTING ~shld05.itm~ ~override~
         READ_LONG 0x8 large_shield_strref
 
-    COPY_EXISTING ~SHLD08.itm~ ~override~
+    COPY_EXISTING ~shld08.itm~ ~override~
         READ_LONG 0x8 buckler_shield_strref
 
-    COPY_EXISTING ~NPSHLD.itm~ ~override~ // Delryn's Shield
-                  ~x#ajshld.itm~ ~override~ // Ajantis' Shield
-                  ~x#fai3.itm~ ~override~ // dented shield
-                  ~BEETSHLD.itm~ ~override~
-                  ~DNTSHD1.itm~ ~override~
-                  ~DNTSHD2.itm~ ~override~
-                  ~NYMSHLD.itm~ ~override~
+    COPY_EXISTING ~npshld.itm~   ~override~ // delryn's shield
+                  ~x#ajshld.itm~ ~override~ // ajantis' shield
+                  ~x#fai3.itm~   ~override~ // dented shield
+                  ~beetshld.itm~ ~override~
+                  ~dntshd1.itm~  ~override~
+                  ~dntshd2.itm~  ~override~
+                  ~nymshld.itm~  ~override~
+                  ~l#hasym.itm~  ~override~
+                  ~l#kudddd.itm~ ~override~
+                  ~l#mcshi.itm~  ~override~
+                  ~l#mcshi2.itm~ ~override~
         WRITE_LONG 0x8 medium_shield_strref
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~BDSHLD07.itm~ ~override~ // Mkhiin Shield
-                  ~BDSHLD01.itm~ ~override~ // buckler of the fist (using a duplicated 'buckler' string reference)
-                  ~SHLD17.ITM~   ~override~
-                  ~SHLD33.ITM~   ~override~
-                  ~SKELSHLD.ITM~ ~override~
-                  ~L#FAIBU.ITM~  ~override~
-                  ~l#FWMSHI.itm~ ~override~
-                  ~l#ORMBUC.itm~ ~override~
-                  ~l#ORMBUS.itm~ ~override~
+    COPY_EXISTING ~bdshld07.itm~ ~override~ // mkhiin shield
+                  ~bdshld01.itm~ ~override~ // buckler of the fist (using a duplicated 'buckler' string reference)
+                  ~shld17.itm~   ~override~
+                  ~shld33.itm~   ~override~
+                  ~skelshld.itm~ ~override~
+                  ~l#faibu.itm~  ~override~
+                  ~l#fwmshi.itm~ ~override~
+                  ~l#ormbuc.itm~ ~override~
+                  ~l#ormbus.itm~ ~override~
+                  ~l#xibuc.itm~  ~override~
+                  ~l0buc2.itm~   ~override~
         WRITE_LONG 0x8 buckler_shield_strref
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~BDSHLD02.itm~ ~override~ // suncatcher (using a duplicated 'small shield' string reference)
-                  ~SHLD28.itm~ ~override~
+    COPY_EXISTING ~bdshld02.itm~ ~override~ // suncatcher (using a duplicated 'small shield' string reference)
+                  ~shld28.itm~   ~override~
+                  ~c0atshld.itm~ ~override~
         WRITE_LONG 0x8 small_shield_strref
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~L#ZSOD3.itm~  ~override~
-                  ~X#FASH01.itm~ ~override~
-                  ~ORRSHLD.itm~ ~override~
+    COPY_EXISTING ~l#zsod3.itm~  ~override~
+                  ~x#fash01.itm~ ~override~
+                  ~orrshld.itm~  ~override~
         WRITE_LONG 0x8 large_shield_strref
     BUT_ONLY IF_EXISTS
 
