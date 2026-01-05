@@ -33,7 +33,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
              AND NOT "%SOURCE_RES%" STR_EQ "AGMOOSE" // moose dagger (ajoc mod)
         BEGIN
 
-            LPF ALTER_HEADER_EX STR_VAR match_type_ex=~(o_type = 1 OR o_type = 2)~ to_hit_ex = ~(THIS + 1)~ speed_ex = ~((speed > 1) ? (THIS - 2) : 0)~ END
+            LPF ALTER_HEADER_EX STR_VAR match_type_ex=~(o_type = 1 OR o_type = 2)~ to_hit_ex = ~(THIS + 1)~ speed_ex = ~((o_speed > 1) ? (THIS - 2) : 0)~ END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1;op=341,p2=1,res=ZSTWDPB%ench%,spec=1;op=341,p2=1,res=ZSTWDPT%ench%,spec=2~ END
 
             READ_LONG 0x54 desc_index
