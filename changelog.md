@@ -2,4 +2,4 @@
 
 ## Fixes
 
-- Dagger boost was erroneously pushing speed factor below 0 after a recent refactoring
+- Added sanity check for Sand Throw ability so it's never added more than once to a character
