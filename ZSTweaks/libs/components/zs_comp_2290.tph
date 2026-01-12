@@ -19,21 +19,13 @@ END
 
 ACTION_PHP_EACH my_clabs AS clab => class BEGIN
 
+    ACTION_IF "%class%" = class_thief OR "%class%" = class_bard BEGIN OUTER_SET lvl = 6 END
+    ELSE BEGIN OUTER_SET lvl = 3 END
+
     COPY_EXISTING ~%clab%.2da~ ~override~
-        PATCH_IF class = class_thief OR class = class_bard BEGIN SET lvl = 7 END
-        ELSE BEGIN SET lvl = 4 END
-        
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = lvl f_MaxLevel = lvl STR_VAR f_Entry = "AP_ZSTEVAD0" END 
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = lvl STR_VAR f_Entry = "AP_ZSTEVAD0" END 
 
 END
-
-
-COPY_EXISTING ~clabth01.2da~ ~override~
-              ~clabba01.2da~ ~override~
-     LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 f_MaxLevel = 7 STR_VAR f_Entry = "AP_ZSTEVAD0" END  
-
-COPY_EXISTING ~clabmo01.2da~ ~override~
-    LPF set_clab_2da_entries INT_VAR f_MinLevel = 4 f_MaxLevel = 4 STR_VAR f_Entry = "AP_ZSTEVAD0" END  
 
 COPY_EXISTING ~zstevad2.spl~ ~override~
     LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8890) desc = RESOLVE_STR_REF(@8891) END

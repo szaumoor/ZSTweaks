@@ -18,13 +18,14 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
-
+    
     strategy:
       matrix:
         platform: [windows, linux]
 
     env:
       TAG_NAME: ${{ github.event.inputs.tag || github.ref_name }}
+      PROJECT_NAME: ZSTweaks
 
     steps:
       - name: Checkout code
@@ -38,17 +39,25 @@ jobs:
           git tag $TAG_NAME
           git push origin $TAG_NAME
 
+      - name: Create combined README
+        run: |
+          cat ${PROJECT_NAME}/readme.md >> ${PROJECT_NAME}/full_readme.md
+          echo "\n---" >> ${PROJECT_NAME}/full_readme.md
+          cat ${PROJECT_NAME}/component_readme.md >> full_readme.md
+
       - name: Create filtered zip
         run: |
           mkdir package
 
           EXCLUDES="--exclude='changelog.md' \
-                    --exclude='README.md' \
                     --exclude='LICENSE' \
                     --exclude='.github/' \
                     --exclude='.git/' \
                     --exclude='package/' \
-                    --exclude='.gitignore'"
+                    --exclude='.gitignore' \
+                    --exclude='readme.md' \
+                    --exclude='${PROJECT_NAME}/readme.md' \
+                    --exclude='${PROJECT_NAME}/component_readme.md'"
 
           if [ "${{ matrix.platform }}" = "linux" ]; then
             EXCLUDES="$EXCLUDES --exclude='*.exe'"
@@ -57,7 +66,7 @@ jobs:
           rsync -av $EXCLUDES ./ package/
 
           cd package
-          zip -r ../${{ matrix.platform }}-ZSTweaks-${TAG_NAME}.zip .
+          zip -r ../${{ matrix.platform }}-${PROJECT_NAME}-${TAG_NAME}.zip .
 
       - name: Read changelog from file
         id: changelog
@@ -70,8 +79,8 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ env.TAG_NAME }}
-          name: "ZSTweaks ${{ env.TAG_NAME }}"
+          name: "${{ env.PROJECT_NAME }} ${{ env.TAG_NAME }}"
           body: ${{ steps.changelog.outputs.body }}
-          files: ZSTweaks_${{ env.TAG_NAME }}_${{ matrix.platform }}.zip
+          files: ${{ env.PROJECT_NAME }}_${{ env.TAG_NAME }}_${{ matrix.platform }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

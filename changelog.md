@@ -3,6 +3,7 @@
 ## Fixes
 
 - Added compatibility bits for latest features of my shadowdancer mod
+- Fixed bug with some of the components adding abilities to classes and kits injecting the abilities one level above intended
 
 ## Modifications
 
@@ -11,5 +12,5 @@
 
 ## New components
 
-- Make single-classed thieves, bards, and monks able to briefly avoid damaging AoE and projectiles once per day
+- Make single-classed thieves, bards, and monks able to briefly avoid damaging AoE and projectiles once per day // need icon!!!
 - Make drow's magic resistance lower (configurable)
