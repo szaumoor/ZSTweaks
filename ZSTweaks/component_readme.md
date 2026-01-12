@@ -2183,7 +2183,7 @@ Just to add a new dimension to the fight dirty stuff on rogues. Also, just becau
 
 This gives these classes (multiclass thieves don't count, you want the benefit of a second class, you got enough) an ability they can use once per day to avoid projectiles and most AoE spells and dragon breaths. This lasts for 23 ticks (around one second and a half), which means it should be used *as you're about to be hit by it*. The full list of abilities and spells are: all fireball spells and abilities, all basic projectiles (arrows, bolts, throwing weapons, etc), all dragon breaths, and the spells Dragon Breath, Comet, Produce Fire, Smashing Wave, Thorn Spray, Skull Trap, Glyph of Warding, Holy Smite, Unholy Blight, Burning Hands, Cone of Cold.
 
-Thieves and bards get this ability at level 10 and monks get this ability at level 7.
+Thieves and bards get this ability at level 7 and monks get this ability at level 4.
 
 </details>
 
