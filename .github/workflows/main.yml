@@ -19,6 +19,10 @@ jobs:
   release:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        platform: [windows, linux]
+
     env:
       TAG_NAME: ${{ github.event.inputs.tag || github.ref_name }}
 
@@ -27,7 +31,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Create Git tag (only if manual)
-        if: github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'workflow_dispatch' && matrix.platform == 'windows'
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
@@ -37,16 +41,30 @@ jobs:
       - name: Create filtered zip
         run: |
           mkdir package
-          rsync -av --exclude='changelog.md' --exclude='README.md' --exclude='LICENSE' --exclude='.github/' --exclude='.git/' --exclude='package/' --exclude='.gitignore' ./ package/
+
+          EXCLUDES="--exclude='changelog.md' \
+                    --exclude='README.md' \
+                    --exclude='LICENSE' \
+                    --exclude='.github/' \
+                    --exclude='.git/' \
+                    --exclude='package/' \
+                    --exclude='.gitignore'"
+
+          if [ "${{ matrix.platform }}" = "linux" ]; then
+            EXCLUDES="$EXCLUDES --exclude='*.exe'"
+          fi
+
+          rsync -av $EXCLUDES ./ package/
+
           cd package
-          zip -r ../ZSTweaks_${TAG_NAME}.zip .
+          zip -r ../${{ matrix.platform }}-ZSTweaks-${TAG_NAME}.zip .
 
       - name: Read changelog from file
         id: changelog
         run: |
-            echo "body<<EOF" >> $GITHUB_OUTPUT
-            cat changelog.md >> $GITHUB_OUTPUT
-            echo "EOF" >> $GITHUB_OUTPUT
+          echo "body<<EOF" >> $GITHUB_OUTPUT
+          cat changelog.md >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
@@ -54,6 +72,6 @@ jobs:
           tag_name: ${{ env.TAG_NAME }}
           name: "ZSTweaks ${{ env.TAG_NAME }}"
           body: ${{ steps.changelog.outputs.body }}
-          files: ZSTweaks_${{ env.TAG_NAME }}.zip
+          files: ZSTweaks_${{ env.TAG_NAME }}_${{ matrix.platform }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
