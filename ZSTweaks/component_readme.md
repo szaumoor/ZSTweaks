@@ -2179,6 +2179,12 @@ It affects all classes and kits, including modded ones. It only affects HLA tabl
 
 Just to add a new dimension to the fight dirty stuff on rogues. Also, just because I want to promote specialization, this is only available for single-classed thieves and bards. Once per turn, you can throw sand onto the enemies eyes, causing very minor non-lethal damage and impair them for up to a round if they fail a save vs. Breath. Many powerful creatures are immune to this effect, but it offers a new thing to try out once per turn.
 
+### Make single-classed thieves, bards, and monks able to briefly avoid damaging AoE and projectiles once per day (2290) (IWDEE BGEE BG2EE EET)
+
+This gives these classes (multiclass thieves don't count, you want the benefit of a second class, you got enough) an ability they can use once per day to avoid projectiles and most AoE spells and dragon breaths. This lasts for 23 ticks (around one second and a half), which means it should be used *as you're about to be hit by it*. The full list of abilities and spells are: all fireball spells and abilities, all basic projectiles (arrows, bolts, throwing weapons, etc), all dragon breaths, and the spells Dragon Breath, Comet, Produce Fire, Smashing Wave, Thorn Spray, Skull Trap, Glyph of Warding, Holy Smite, Unholy Blight, Burning Hands, Cone of Cold.
+
+Thieves and bards get this ability at level 10 and monks get this ability at level 7.
+
 </details>
 
 ---
@@ -2325,6 +2331,10 @@ So ogre mages are not really ogres. It's some sort of weird misnomer. They're ac
 - All ogre mages regenerate health by 1 HP per round. Might increase difficulty somewhat, especially if they use magical protections.
 - Their race is now set as demonic. Because they're fiends and not ogres. So any effect that targets "demonic" will affect them too. I might refine this classification in the future.
 - And just for hoots, because they slumber around more slowly than molasses, their movement rate was increased by 2.
+
+### Make drow's magic resistance lower (configurable) (3150) (IWDEE BGEE BG2EE EET)
+
+As it says. Note that the patching is manual and every drow has to be found and patched manually, it will not detect mod-added drow by default. Either do a pull request or notify me of a mod that adds drow but I can't promise I'll fix anything quickly, especially if I don't plan on using the mod.
 
 </details>
 

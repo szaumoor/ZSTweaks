@@ -2,4 +2,9 @@
 
 ## Fixes
 
-- Added sanity check for Sand Throw ability so it's never added more than once to a character
+- Added compatibility bits for latest features of my shadowdancer mod
+
+## New components
+
+- Make single-classed thieves, bards, and monks able to briefly avoid damaging AoE and projectiles once per day
+- Make drow's magic resistance lower (configurable)

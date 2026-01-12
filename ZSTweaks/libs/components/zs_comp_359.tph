@@ -1,5 +1,3 @@
-
-
 OUTER_SET group_component = 1
 
 OUTER_SPRINT config_path ~%MOD_FOLDER%/configurations/zstweaks_class_kit_group_install.txt~
@@ -76,4 +74,8 @@ END
 
 ACTION_IF zst_group_2280_sand_throw BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2280.tph~ END
+END
+
+ACTION_IF zst_group_2290_roguish_evade BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2290.tph~ END
 END

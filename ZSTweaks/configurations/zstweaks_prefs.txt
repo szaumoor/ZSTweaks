@@ -330,3 +330,6 @@ OUTER_SET zst_3050_balor_vorpal_penalty = "-4"
 // choose celestial types to include in celestial tweaks
 OUTER_SET zst_3030_devas     = "1"
 OUTER_SET zst_3030_planetars = "1"
+
+// sets the magic resistance of drow to a percentage of what they have (default: 75, valid range is 20-90)
+OUTER_SET zst_3150_drow_mr_pctg_of_base = "75"

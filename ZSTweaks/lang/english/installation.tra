@@ -355,6 +355,7 @@
 @2265 = ~Make Defensive Spin protect against backstabs for its duration and allow very slow movement~
 @2270 = ~Make Whirlwind and Evasion grant once 3 uses of the Improved variants~
 @2280 = ~Make single-classed thieves and bards able to throw sand in the enemy's eyes~
+@2290 = ~Make single-classed thieves, bards, and monks able to briefly avoid damaging AoE and projectiles once per day~
 
 // CRE TWEAKS
 @3010 = ~Make inappropriately aligned creatures in BG2 more correct~
@@ -371,6 +372,7 @@
 @3120 = ~Make some golem creatures more unique~
 @3130 = ~Make minotaurs tougher and more dangerous~
 @3140 = ~Make ogre / oni mages regenerating fiends, as per PnP~
+@3150 = ~Make drow's magic resistance lower (configurable)~
 
 // END-OF-INSTALL ORDER TWEAKS
 @1531 = ~Make a selection of spells ignore magic resistance~

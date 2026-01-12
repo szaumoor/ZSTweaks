@@ -1,0 +1,75 @@
+COPY ~%MOD_FOLDER%/class_kits/roguish_evasion~ ~override~
+ACTION_CLEAR_ARRAY my_clabs
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS 9 rows
+  FOR ( index = 2; index < rows; ++index ) BEGIN
+    READ_2DA_ENTRY index 8 9 class
+    PATCH_IF class = class_thief OR class = class_bard OR class = class_monk BEGIN
+      READ_2DA_ENTRY index 5 9 clab
+      DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN "%clab%" => "%class%" END
+    END  
+
+  END
+
+ACTION_DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN
+  clabth01 =>  class_thief 
+  clabba01 =>  class_bard
+  clabmo01 =>  class_monk
+END
+
+ACTION_PHP_EACH my_clabs AS clab => class BEGIN
+
+    COPY_EXISTING ~%clab%.2da~ ~override~
+        PATCH_IF class = class_thief OR class = class_bard BEGIN SET lvl = 10 END
+        ELSE BEGIN SET lvl = 5 END
+        
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = lvl f_MaxLevel = lvl STR_VAR f_Entry = "AP_ZSTEVAD0" END 
+
+END
+
+
+COPY_EXISTING ~clabth01.2da~ ~override~
+              ~clabba01.2da~ ~override~
+     
+
+COPY_EXISTING ~clabmo01.2da~ ~override~
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_MaxLevel = 5 STR_VAR f_Entry = "AP_ZSTEVAD0" END  
+
+
+COPY_EXISTING ~zstevad2.spl~ ~override~
+    LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8890) desc = RESOLVE_STR_REF(@8891) END
+
+COPY_EXISTING ~zstevad3.spl~ ~override~
+    PATCH_IF NOT is_iwdee BEGIN
+        LPF DELETE_EFFECT STR_VAR match_resource = "spin134" END
+    END
+
+    PATCH_IF spell_produce_fire > 0 BEGIN
+        LPF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_PRODUCE_FIRE" RET spell_res END
+        LPF CLONE_EFFECT STR_VAR match_resource = "spwi001" resource = "%spell_res%" END
+    END
+
+    PATCH_IF spell_smashing_wave > 0 BEGIN
+        LPF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SMASHING_WAVE" RET spell_res END
+        LPF CLONE_EFFECT STR_VAR match_resource = "spwi001" resource = "%spell_res%" END
+        LPF CLONE_EFFECT STR_VAR match_resource = "spwi001" resource = "%spell_res%a" END
+    END
+
+    PATCH_IF spell_thorn_spray > 0 BEGIN
+        LPF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_THORN_SPRAY" RET spell_res END
+        LPF CLONE_EFFECT STR_VAR match_resource = "spwi001" resource = "%spell_res%" END
+    END
+
+    PATCH_IF spell_vitriolic_sphere > 0 BEGIN
+        LPF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_VITRIOLIC_SPHERE" RET spell_res END
+        LPF CLONE_EFFECT STR_VAR match_resource = "spwi001" resource = "%spell_res%" END
+        LPF CLONE_EFFECT STR_VAR match_resource = "spwi001" resource = "%spell_res%y" END
+        LPF CLONE_EFFECT STR_VAR match_resource = "spwi001" resource = "%spell_res%z" END
+    END
+
+    PATCH_IF spell_snillock_snowball_swarm > 0 BEGIN
+        LPF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SNILLOCS_SNOWBALL_SWARM" RET spell_res END
+        LPF CLONE_EFFECT STR_VAR match_resource = "spwi001" resource = "%spell_res%" END
+        LPF CLONE_EFFECT STR_VAR match_resource = "spwi001" resource = "%spell_res%b" END
+        LPF CLONE_EFFECT STR_VAR match_resource = "spwi001" resource = "%spell_res%c" END
+    END
