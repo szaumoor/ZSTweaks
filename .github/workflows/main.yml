@@ -21,7 +21,7 @@ jobs:
     
     strategy:
       matrix:
-        platform: [windows, linux]
+        platform: [windows, linux, mac]
 
     env:
       TAG_NAME: ${{ github.event.inputs.tag || github.ref_name }}
@@ -68,7 +68,7 @@ jobs:
             --exclude=${PROJECT_NAME}/component_readme.md
           )
 
-          if [ "${{ matrix.platform }}" = "linux" ]; then
+          if [[ "${{ matrix.platform }}" != "windows" ]]; then
             EXCLUDES+=( --exclude=*.exe )
           fi
 
