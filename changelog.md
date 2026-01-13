@@ -12,5 +12,5 @@
 
 ## New components
 
-- Make single-classed thieves, bards, and monks able to briefly avoid damaging AoE and projectiles once per day // need icon!!!
+- Make single-classed thieves, bards, and monks able to briefly avoid damaging AoE and projectiles once per day
 - Make drow's magic resistance lower (configurable)
