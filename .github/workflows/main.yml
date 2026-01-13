@@ -33,7 +33,8 @@ jobs:
 
       - name: Derive platform short name
         run: |
-          echo "PLATFORM_SHORT=${{ matrix.platform }:0:3}" >> $GITHUB_ENV
+          PLATFORM="${{ matrix.platform }}"
+          echo "PLATFORM_SHORT=${PLATFORM:0:3}" >> $GITHUB_ENV
 
       - name: Create Git tag (only if manual)
         if: github.event_name == 'workflow_dispatch' && matrix.platform == 'windows'
