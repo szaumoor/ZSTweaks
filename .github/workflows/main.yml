@@ -51,21 +51,23 @@ jobs:
         run: |
           mkdir package
 
-          EXCLUDES="--exclude='changelog.md' \
-                    --exclude='LICENSE' \
-                    --exclude='.github/' \
-                    --exclude='.git/' \
-                    --exclude='package/' \
-                    --exclude='.gitignore' \
-                    --exclude='readme.md' \
-                    --exclude='${PROJECT_NAME}/readme.md' \
-                    --exclude='${PROJECT_NAME}/component_readme.md'"
+          EXCLUDES=(
+            --exclude='changelog.md
+            --exclude='LICENSE
+            --exclude='.github/
+            --exclude='.git/
+            --exclude='package/
+            --exclude='.gitignore
+            --exclude='README.md
+            --exclude='${PROJECT_NAME}/readme.md
+            --exclude='${PROJECT_NAME}/component_readme.md
+          )
 
           if [ "${{ matrix.platform }}" = "linux" ]; then
-            EXCLUDES="$EXCLUDES --exclude='*.exe'"
+            EXCLUDES+=( --exclude=*.exe )
           fi
 
-          rsync -av $EXCLUDES ./ package/
+          rsync -av "${EXCLUDES[@]}" ./ package/
 
           cd package
           zip -r ../${{ matrix.platform }}-${PROJECT_NAME}-${TAG_NAME}.zip .
