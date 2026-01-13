@@ -31,6 +31,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Derive platform short name
+        run: |
+          echo "PLATFORM_SHORT=${{ matrix.platform }:0:3}" >> $GITHUB_ENV
+
       - name: Create Git tag (only if manual)
         if: github.event_name == 'workflow_dispatch' && matrix.platform == 'windows'
         run: |
@@ -51,6 +55,8 @@ jobs:
         run: |
           mkdir package
 
+          PLATFORM_SHORT="${{ matrix.platform }:0:3}"
+
           EXCLUDES=(
             --exclude=changelog.md
             --exclude=LICENSE
@@ -70,7 +76,7 @@ jobs:
           rsync -av "${EXCLUDES[@]}" ./ package/
 
           cd package
-          zip -r ../${{ matrix.platform }}-${PROJECT_NAME}-${TAG_NAME}.zip .
+          zip -r ../${PLATFORM_SHORT}-${PROJECT_NAME}-${TAG_NAME}.zip .
 
       - name: Read changelog from file
         id: changelog
@@ -85,6 +91,6 @@ jobs:
           tag_name: ${{ env.TAG_NAME }}
           name: "${{ env.PROJECT_NAME }} ${{ env.TAG_NAME }}"
           body: ${{ steps.changelog.outputs.body }}
-          files: ${{ matrix.platform }}-${{ env.PROJECT_NAME }}-${{ env.TAG_NAME }}.zip
+          files: ${{ env.PLATFORM_SHORT }}-${{ env.PROJECT_NAME }}-${{ env.TAG_NAME }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
