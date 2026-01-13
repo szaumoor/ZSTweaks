@@ -1,5 +1,3 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
   COPY_EXISTING ~spcl423.spl~ ~override~

@@ -1,5 +1,3 @@
-
-
 COPY ~%MOD_FOLDER%/class_kits/sand_throw~ ~override~
 COPY_EXISTING ~zstsand0.spl~ ~override~
   LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@8880) desc = RESOLVE_STR_REF(@8881) END
