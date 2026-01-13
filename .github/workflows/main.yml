@@ -52,15 +52,15 @@ jobs:
           mkdir package
 
           EXCLUDES=(
-            --exclude='changelog.md
-            --exclude='LICENSE
-            --exclude='.github/
-            --exclude='.git/
-            --exclude='package/
-            --exclude='.gitignore
-            --exclude='README.md
-            --exclude='${PROJECT_NAME}/readme.md
-            --exclude='${PROJECT_NAME}/component_readme.md
+            --exclude=changelog.md
+            --exclude=LICENSE
+            --exclude=.github/
+            --exclude=.git/
+            --exclude=package/
+            --exclude=.gitignore
+            --exclude=README.md
+            --exclude=${PROJECT_NAME}/readme.md
+            --exclude=${PROJECT_NAME}/component_readme.md
           )
 
           if [ "${{ matrix.platform }}" = "linux" ]; then
