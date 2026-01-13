@@ -41,9 +41,11 @@ jobs:
 
       - name: Create combined README
         run: |
-          cat ${PROJECT_NAME}/readme.md >> ${PROJECT_NAME}/full_readme.md
-          echo "\n---" >> ${PROJECT_NAME}/full_readme.md
-          cat ${PROJECT_NAME}/component_readme.md >> full_readme.md
+          cat ${PROJECT_NAME}/readme.md > ${PROJECT_NAME}/full_readme.md
+          echo "" >> ${PROJECT_NAME}/full_readme.md
+          echo "---" >> ${PROJECT_NAME}/full_readme.md
+          echo "" >> ${PROJECT_NAME}/full_readme.md
+          cat ${PROJECT_NAME}/component_readme.md >> ${PROJECT_NAME}/full_readme.md
 
       - name: Create filtered zip
         run: |
@@ -81,6 +83,6 @@ jobs:
           tag_name: ${{ env.TAG_NAME }}
           name: "${{ env.PROJECT_NAME }} ${{ env.TAG_NAME }}"
           body: ${{ steps.changelog.outputs.body }}
-          files: ${{ env.PROJECT_NAME }}_${{ env.TAG_NAME }}_${{ matrix.platform }}.zip
+          files: ${{ matrix.platform }}-${{ env.PROJECT_NAME }}-${{ env.TAG_NAME }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
