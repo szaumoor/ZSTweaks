@@ -743,7 +743,7 @@ Weight: 5~
 STATISTICS:
 
 Equipped abilities:
-– Attacks per round: +1 (mages, mage/thieves, cleric/mages, and sorcerers only)
+– Attacks per round: +1 (sorcerers and mages without fighter levels)
 
 THAC0: +3
 Damage: 1d6+3 (crushing)
@@ -811,7 +811,7 @@ Equipped abilities:
 
 Combat abilities:
 – 15% chance of inflicting 2d6+12 poison damage with each hit
-– Each hit target must save vs. Death (with a -5 penalty) or become weakened for 2 rounds, dealing -20% less damage from all sources. This effect does not stack.
+– Target must save vs. Death at -5 or become weakened for 2 rounds, dealing -20% less damage from all sources. This effect does not stack.
 
 THAC0: +6
 Damage: 1d10+6 (slashing)
@@ -828,7 +828,7 @@ Weight: 9~
 STATISTICS:
 
 Combat abilities:
-– +5% extra chance per hit to critically strike, inflicting 5 extra piercing damage on a critical hit
+– +5% chance to critically strike, inflicting 5 extra piercing damage on a critical hit
 
 THAC0: +3
 Damage: 1d8+3, +10 piercing damage

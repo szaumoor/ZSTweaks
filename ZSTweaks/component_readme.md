@@ -581,7 +581,7 @@ This improves the gloves by adding the following:
 - Party regeneration of 1 Hit Point every 5 rounds
 - The charge ability is now changed to a combination of Lay On Hands cast at level 10, and Slow Poison
 
-### Make a number of quest items functionally useful (1997) (BG2EE EET)
+### Make a number of quest items functionally useful (1197) (BG2EE EET)
 
 - Kuo-Toa's Blood: can be consumed to permanently improve THAC0, Armor Class vs. missile, saves vs. Breath by 1
 - Eyestalk of an Elder Orb: can be consumed to permanently increase Armor Class and saves vs. Petrification and Death by 1
@@ -1018,6 +1018,8 @@ I hate with passion this 10% chance of killing period-no-questions-asked thing, 
 ### Make Aule's Staff more effective for non-fighter wizards and sorcerers (1608) (BGEE BG2EE EET)
 
 This makes the weapon not just another silly instance of a unique +3 weapon without a single remarkable feature. So it's now a solid staff for wizards and sorcerers, inspired by the description. Specifically, it affects mages, mage/thieves, cleric/mages, and sorcerers. They will get an extra attack per round. Other classes will use it as a regular +3 staff.
+
+In BG2 (not EET), this patches the Martial Staff, which is effectively the same staff but with a less unique description.
 
 ### Make the Impaler slightly more scary (1609) (BG2EE EET)
 

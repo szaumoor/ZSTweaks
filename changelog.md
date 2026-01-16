@@ -2,15 +2,10 @@
 
 ## Fixes
 
-- Added compatibility bits for latest features of my shadowdancer mod
-- Fixed bug with some of the components adding abilities to classes and kits injecting the abilities one level above intended
+- Fixed installation error on 1197 due to component installation check running twice.
+- Fixed readme marking component 1197 as 1997 (which doesn't exist)
+- Fixed component 1608 patching Martial Staff in EET `staf08.itm`, leading to a redundancy because it copies Aule's Staff into the game as `staf08_.itm`. Thanks Graion Dilach.
 
 ## Modifications
 
-- New releases should now properly include and open the readme if chosen when installing. It will also now open both the base readme and the readme detailing every component. I recommend a text editor or similar application that can render markdown appropriately.
-- Mod releases will now generate a Windows version, and a Linux version which simply skips the .exe since it has no use there
-
-## New components
-
-- Make single-classed thieves, bards, and monks able to briefly avoid damaging AoE and projectiles once per day
-- Make drow's magic resistance lower (configurable)
+- A few string corrections in the translation files
