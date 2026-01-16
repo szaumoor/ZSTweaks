@@ -581,7 +581,7 @@ This improves the gloves by adding the following:
 - Party regeneration of 1 Hit Point every 5 rounds
 - The charge ability is now changed to a combination of Lay On Hands cast at level 10, and Slow Poison
 
-### Make a number of quest items functionally useful (1997) (BG2EE EET)
+### Make a number of quest items functionally useful (1197) (BG2EE EET)
 
 - Kuo-Toa's Blood: can be consumed to permanently improve THAC0, Armor Class vs. missile, saves vs. Breath by 1
 - Eyestalk of an Elder Orb: can be consumed to permanently increase Armor Class and saves vs. Petrification and Death by 1
