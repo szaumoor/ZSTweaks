@@ -1019,6 +1019,8 @@ I hate with passion this 10% chance of killing period-no-questions-asked thing, 
 
 This makes the weapon not just another silly instance of a unique +3 weapon without a single remarkable feature. So it's now a solid staff for wizards and sorcerers, inspired by the description. Specifically, it affects mages, mage/thieves, cleric/mages, and sorcerers. They will get an extra attack per round. Other classes will use it as a regular +3 staff.
 
+In BG2 (not EET), this patches the Martial Staff, which is effectively the same staff but with a less unique description.
+
 ### Make the Impaler slightly more scary (1609) (BG2EE EET)
 
 The weapon now has +5% higher chance to critically hit, and critical hits add +5 piercing damage.

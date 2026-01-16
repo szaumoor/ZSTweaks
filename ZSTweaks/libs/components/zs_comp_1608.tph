@@ -1,10 +1,21 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
+  DEFINE_PATCH_MACRO patch BEGIN
+      LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8041) id_name = RESOLVE_STR_REF(@8040) END
+      LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR res=~zstwausf~ effects = "op=177,p1=%class_mage%;op=177,p1=%class_mage_thief%;op=177,p1=%class_cleric_mage%;op=177,p1=%class_sorcerer%" END
+  END
+
   COPY ~%MOD_FOLDER%/items/aule_staff~ ~override~
-  COPY_EXISTING ~staf08.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8041) id_name = RESOLVE_STR_REF(@8040) END
-    LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR res=~ZSTWAUSF~ effects = "op=177,p1=%class_mage%;op=177,p1=%class_mage_thief%;op=177,p1=%class_cleric_mage%;op=177,p1=%class_sorcerer%" END
+  ACTION_IF NOT is_eet BEGIN
+
+    COPY_EXISTING ~staf08.itm~ ~override~
+      LPM patch
+
+  END ELSE BEGIN
+
+    COPY_EXISTING ~staf08_.itm~ ~override~
+      LPM patch
+
+  END
 
 END
