@@ -186,6 +186,7 @@ COPY_EXISTING ~c6drow1.cre~  ~override~
 
               // others
               ~l#arsdro.cre~ ~override~ // lava
+              ~gv#vynd.cre~  ~override~ // vynd from glam npc mod
 
     READ_BYTE 0x5d mr
     PATCH_IF mr >= 20 BEGIN
