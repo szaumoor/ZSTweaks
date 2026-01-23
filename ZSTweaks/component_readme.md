@@ -1015,11 +1015,11 @@ I hate with passion this 10% chance of killing period-no-questions-asked thing, 
 - Passive +5% MR is now +10% (it has to compete with Carsomyr so 5% for a two-handed weapon is nonsense)
 - The 1-level drain per hit with -5 penalty on the upgraded version is fairly inconsequential by the time you get it (from Abazigal's corpse). Instead, it causes affected creatures to deal -20% damage for 2 rounds, aka it's a weakening effect, with a save vs. Death -5 to save against it. This also affects magical and elemental damage. Does not stack.
 
-### Make Aule's Staff more effective for non-fighter wizards and sorcerers (1608) (BGEE BG2EE EET)
+### Make Aule's Staf more effective for non-fighter wizards and sorcerers (1608) (BGEE BG2EE EET)
 
 This makes the weapon not just another silly instance of a unique +3 weapon without a single remarkable feature. So it's now a solid staff for wizards and sorcerers, inspired by the description. Specifically, it affects mages, mage/thieves, cleric/mages, and sorcerers. They will get an extra attack per round. Other classes will use it as a regular +3 staff.
 
-In BG2 (not EET), this patches the Martial Staff, which is effectively the same staff but with a less unique description.
+In BG2, this patches the Martial Staff, which is effectively the same staff but with a less unique description.
 
 ### Make the Impaler slightly more scary (1609) (BG2EE EET)
 
