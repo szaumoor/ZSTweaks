@@ -1,5 +1,3 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY_EXISTING ~ohhdrain.spl~ ~override~
@@ -7,6 +5,33 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     WRITE_LONG 0x54 "-1"// nonsense identified desc
     LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@7222) END
     SET hexxat_cooldown_str = RESOLVE_STR_REF(@7223)
-    LPF ADD_SPL_SELFEFF INT_VAR t=3 STR_VAR effects = ~op=172,res=%SOURCE_RES%;op=171,tmg=3,dur=300;op=139,tmg=3,dur=300,p1=%hexxat_cooldown_str%~ END
+
+    LPF ADD_SPELL_CFEFFECT
+      INT_VAR
+        opcode = 172
+        target = 1
+        insert_point = "-1"
+      STR_VAR
+        resource = "%SOURCE_RES%"
+    END
+
+    LPF ADD_SPELL_CFEFFECT
+      INT_VAR
+        opcode = 171
+        target = 1
+        timing = 3
+        duration = 300
+        insert_point = "-1"
+    END
+
+    LPF ADD_SPELL_CFEFFECT
+      INT_VAR
+        opcode = 139
+        target = 1
+        timing = 3
+        duration = 300
+        insert_point = "-1"
+        parameter1 = hexxat_cooldown_str
+    END
 
 END
