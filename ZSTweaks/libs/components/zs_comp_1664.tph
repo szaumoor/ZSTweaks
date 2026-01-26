@@ -1,12 +1,9 @@
-
-
-
 ACTION_IF zst_1664_crits_all < 0 OR zst_1664_crits_iouns < 0 OR zst_1664_crits_circlets < 0 OR zst_1664_crits_selected < 0 BEGIN
-    FAIL "Scroll usability component: Valid values for options are 0 (false, or disable) or 1 (true or enable)."
+    FAIL "[FAIL]: Scroll usability component: Valid values for options are 0 (false, or disable) or 1 (true or enable)."
 END
 
 ACTION_IF (zst_1664_crits_all + zst_1664_crits_iouns + zst_1664_crits_circlets + zst_1664_crits_selected) > 1 BEGIN
-     FAIL "Scroll usability component: Incorrect options selected, please check the config file."
+     FAIL "[FAIL]: Scroll usability component: Incorrect options selected, please check the config file."
 END
 
 ACTION_IF zst_1664_crits_all OR zst_1664_crits_iouns BEGIN

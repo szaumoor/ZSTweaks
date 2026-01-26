@@ -2,7 +2,7 @@ DEFINE_ACTION_MACRO CHECK_COMPONENT_DUPE
 BEGIN
 
     ACTION_IF (VARIABLE_IS_SET ~zs_comp_%COMPONENT_NUMBER%~) BEGIN
-        FAIL ~Script already included: zs_comp_%COMPONENT_NUMBER%~
+        FAIL ~[FAIL]: Script already included: zs_comp_%COMPONENT_NUMBER%.tph~
     END ELSE BEGIN
         OUTER_SET ~zs_comp_%COMPONENT_NUMBER%~ = 1
     END

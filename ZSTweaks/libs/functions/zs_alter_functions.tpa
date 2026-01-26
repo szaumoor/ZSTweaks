@@ -48,25 +48,25 @@ BEGIN
     PATCH_IF general_name > "-2" BEGIN
         WRITE_LONG 0x08 general_name
     END ELSE PATCH_IF general_name < "-2" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-2) to general_name"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to general_name"
     END
 
     PATCH_IF general_desc > "-2" BEGIN
         WRITE_LONG 0x50 general_desc
     END ELSE PATCH_IF general_desc < "-2" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-2) to general_desc"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to general_desc"
     END
 
     PATCH_IF id_name > "-2" BEGIN
         WRITE_LONG 0x0c id_name
     END ELSE PATCH_IF id_name < "-2" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-2) to id_name"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to id_name"
     END
 
     PATCH_IF id_desc > "-2" BEGIN
         WRITE_LONG 0x54 id_desc
     END ELSE PATCH_IF id_desc < "-2" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-2) to id_desc"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to id_desc"
     END
 
     PATCH_IF flags > "-1" BEGIN
@@ -78,127 +78,127 @@ BEGIN
             WRITE_LONG 0x18 (THIS - flags)
         END
     END ELSE PATCH_IF flags < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to flags"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to flags"
     END
 
     PATCH_IF category > "-1" BEGIN
         WRITE_BYTE 0x1c category
     END ELSE PATCH_IF category < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to category"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to category"
     END
 
     PATCH_IF wpn_prof > "-1" BEGIN
         WRITE_LONG 0x31 wpn_prof
     END ELSE PATCH_IF wpn_prof < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to wpn_prof"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to wpn_prof"
     END
 
     PATCH_IF min_level > "-1" BEGIN
         WRITE_SHORT 0x24 min_level
     END ELSE PATCH_IF min_level < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to min_level"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to min_level"
     END
 
     PATCH_IF min_str > "-1" BEGIN
         WRITE_SHORT 0x26 min_str
     END ELSE PATCH_IF min_str < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to min_level"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to min_level"
     END
 
     PATCH_IF min_str_bonus > "-1" BEGIN
         WRITE_BYTE 0x28 min_str_bonus
     END ELSE PATCH_IF min_str_bonus < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to min_str_bonus"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to min_str_bonus"
     END
 
     PATCH_IF min_int > "-1" BEGIN
         WRITE_BYTE 0x2a min_int
     END ELSE PATCH_IF min_int < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to min_int"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to min_int"
     END
 
     PATCH_IF min_dex > "-1" BEGIN
         WRITE_BYTE 0x2c min_dex
     END ELSE PATCH_IF min_dex < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to min_dex"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to min_dex"
     END
 
     PATCH_IF min_wis > "-1" BEGIN
         WRITE_BYTE 0x2e min_wis
     END ELSE PATCH_IF min_wis < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to min_wis"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to min_wis"
     END
 
     PATCH_IF min_con > "-1" BEGIN
         WRITE_BYTE 0x30 min_con
     END ELSE PATCH_IF min_con < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to min_con"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to min_con"
     END
 
     PATCH_IF min_cha > "-1" BEGIN
         WRITE_SHORT 0x30 min_cha
     END ELSE PATCH_IF min_cha < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to min_cha"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to min_cha"
     END
 
     PATCH_IF max_stack > "-1" BEGIN
         WRITE_SHORT 0x38 max_stack
     END ELSE PATCH_IF max_stack < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to max_stack"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to max_stack"
     END
 
     PATCH_IF lore > "-1" BEGIN
         WRITE_SHORT 0x42 lore
     END ELSE PATCH_IF lore < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to lore"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to lore"
     END
 
     PATCH_IF weight > "-1" BEGIN
         WRITE_LONG 0x4c weight
     END ELSE PATCH_IF weight < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to weight"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to weight"
     END
 
     PATCH_IF ench > "-1" BEGIN
         WRITE_LONG 0x60 ench
     END ELSE PATCH_IF ench < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to ench"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to ench"
     END
 
     PATCH_IF unusable0 > "-1" BEGIN
         WRITE_LONG 0x1e unusable0
     END ELSE PATCH_IF unusable0 < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to unusable0"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to unusable0"
     END
 
     PATCH_IF unusable1 > "-1" BEGIN
         WRITE_BYTE 0x29 unusable1
     END ELSE PATCH_IF unusable1 < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to unusable1"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to unusable1"
     END
 
     PATCH_IF unusable2 > "-1" BEGIN
         WRITE_BYTE 0x2b unusable2
     END ELSE PATCH_IF unusable2 < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to unusable2"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to unusable2"
     END
 
     PATCH_IF unusable3 > "-1" BEGIN
         WRITE_BYTE 0x2d unusable3
     END ELSE PATCH_IF unusable3 < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to unusable3"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to unusable3"
     END
 
     PATCH_IF unusable4 > "-1" BEGIN
         WRITE_BYTE 0x2f unusable4
     END ELSE PATCH_IF unusable4 < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to unusable4"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to unusable4"
     END
 
     PATCH_IF price > "-1" BEGIN
         WRITE_LONG 0x34 price
     END ELSE PATCH_IF price < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to price"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to price"
     END
 
     PATCH_IF NOT "%used_up_itm%" STR_EQ "none" BEGIN
@@ -256,55 +256,55 @@ BEGIN
     PATCH_IF opcode > "-1" BEGIN
         WRITE_LONG 0x10 opcode
     END ELSE PATCH_IF opcode < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to opcode"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to opcode"
     END
 
     PATCH_IF target > "-1" BEGIN
         WRITE_LONG 0x14 target
     END ELSE PATCH_IF target < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to target"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to target"
     END
 
     PATCH_IF power > "-1" BEGIN
         WRITE_LONG 0x18 power
     END ELSE PATCH_IF power < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to power"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to power"
     END
 
     PATCH_IF parameter1 > "-999" BEGIN
         WRITE_LONG 0x1c parameter1
     END ELSE PATCH_IF parameter1 < "-999" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-999) to parameter1"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-999) to parameter1"
     END
 
     PATCH_IF parameter2 > "-1" BEGIN
         WRITE_LONG 0x20 parameter2
     END ELSE PATCH_IF parameter2 < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to parameter2"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to parameter2"
     END
 
     PATCH_IF timing > "-1" BEGIN
         WRITE_LONG 0x24 timing
     END ELSE PATCH_IF timing < "-1" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-1) to timing"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-1) to timing"
     END
 
     PATCH_IF duration > "-1" BEGIN
         WRITE_LONG 0x27 duration
     END ELSE PATCH_IF duration < "-1" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-1) to duration"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-1) to duration"
     END
 
     PATCH_IF probability1 > "-1" BEGIN
         WRITE_SHORT 0x2c probability1
     END ELSE PATCH_IF probability1 < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to probability1"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to probability1"
     END
 
     PATCH_IF probability2 > "-1" BEGIN
         WRITE_SHORT 0x2e probability2
     END ELSE PATCH_IF probability2 < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to probability2"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to probability2"
     END
 
     PATCH_IF NOT "%resource%" STR_EQ "none" BEGIN
@@ -314,79 +314,79 @@ BEGIN
     PATCH_IF dicenumber > "-1" BEGIN
         WRITE_LONG 0x38 dicenumber
     END ELSE PATCH_IF dicenumber < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to dicenumber"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to dicenumber"
     END
 
     PATCH_IF dicesize > "-1" BEGIN
         WRITE_LONG 0x3c dicesize
     END ELSE PATCH_IF dicesize < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to dicesize"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to dicesize"
     END
 
     PATCH_IF savingthrow > "-1" BEGIN
         WRITE_LONG 0x40 savingthrow
     END ELSE PATCH_IF savingthrow < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to savingthrow"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to savingthrow"
     END
 
     PATCH_IF savebonus > "-999" BEGIN
         WRITE_LONG 0x44 savebonus
     END ELSE PATCH_IF savebonus < "-999" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-999) to savebonus"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-999) to savebonus"
     END
 
     PATCH_IF primary_type > "-1" BEGIN
         WRITE_LONG 0x4c primary_type
     END ELSE PATCH_IF primary_type < "-1" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-1) to primary_type"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-1) to primary_type"
     END
 
     PATCH_IF secondary_type > "-1" BEGIN
         WRITE_LONG 0xd0 secondary_type
     END ELSE PATCH_IF secondary_type < "-1" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-1) to secondary_type"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-1) to secondary_type"
     END
 
     PATCH_IF resist_dispel > "-1" BEGIN
         WRITE_LONG 0x5c resist_dispel
     END ELSE PATCH_IF resist_dispel < "-1" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-1) to resist_dispel"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-1) to resist_dispel"
     END
 
     PATCH_IF parameter3 > "-1" BEGIN
         WRITE_LONG 0x60 parameter3
     END ELSE PATCH_IF parameter3 < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to parameter3"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to parameter3"
     END
 
     PATCH_IF parameter4 > "-1" BEGIN
         WRITE_LONG 0x64 parameter4
     END ELSE PATCH_IF parameter4 < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to parameter4"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to parameter4"
     END
 
     PATCH_IF parameter5 > "-1" BEGIN
         WRITE_LONG 0x68 parameter5
     END ELSE PATCH_IF parameter5 < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to parameter5"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to parameter5"
     END
 
     PATCH_IF dicesize > "-1" BEGIN
         WRITE_LONG 0x3c dicesize
     END ELSE PATCH_IF dicesize < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to dicesize"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to dicesize"
     END
 
     PATCH_IF dicenumber > "-1" BEGIN
         WRITE_LONG 0x38 dicenumber
     END ELSE PATCH_IF dicenumber < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to dicenumber"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to dicenumber"
     END
 
     PATCH_IF special > "-1" BEGIN
         WRITE_LONG 0x48 special
     END ELSE PATCH_IF special < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to special"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to special"
     END
 END
 
@@ -413,13 +413,13 @@ BEGIN
     PATCH_IF name > "-2" BEGIN
         WRITE_LONG 0x08 name
     END ELSE PATCH_IF name < "-2" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-2) to name"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to name"
     END
 
     PATCH_IF desc > "-2" BEGIN
         WRITE_LONG 0x50 desc
     END ELSE PATCH_IF desc < "-2" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-2) to desc"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to desc"
     END
 
     PATCH_IF flags > "-1" BEGIN
@@ -431,13 +431,13 @@ BEGIN
             WRITE_LONG 0x18 (THIS - flags)
         END
     END ELSE PATCH_IF flags < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to flags"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to flags"
     END
 
     PATCH_IF spell_type > "-1" BEGIN
         WRITE_LONG 0x1c spell_type
     END ELSE PATCH_IF spell_type < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to spell_type"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to spell_type"
     END
 
     PATCH_IF excl_flags > "-1" BEGIN
@@ -449,31 +449,31 @@ BEGIN
             WRITE_LONG 0x1e (THIS - excl_flags)
         END
     END ELSE PATCH_IF flags < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to excl_flags"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to excl_flags"
     END
 
     PATCH_IF animation > "-1" BEGIN
         WRITE_LONG 0x22 animation
     END ELSE PATCH_IF spell_type < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to animation"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to animation"
     END
 
     PATCH_IF primary_type > "-1" BEGIN
         WRITE_LONG 0x25 primary_type
     END ELSE PATCH_IF primary_type < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to primary_type"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to primary_type"
     END
 
     PATCH_IF secondary_type > "-1" BEGIN
         WRITE_LONG 0x27 secondary_type
     END ELSE PATCH_IF secondary_type < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to secondary_type"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to secondary_type"
     END
 
     PATCH_IF spell_level > "-1" BEGIN
         WRITE_LONG 0x34 spell_level
     END ELSE PATCH_IF spell_level < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to spell_level"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to spell_level"
     END
 
     PATCH_IF NOT "%icon%" STR_EQ "none" BEGIN
@@ -504,45 +504,45 @@ BEGIN
     PATCH_IF name > "-2" BEGIN
         WRITE_LONG 0x08 name
     END ELSE PATCH_IF name < "-2" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-2) to name"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to name"
     END
 
     PATCH_IF tooltip > "-2" BEGIN
         WRITE_LONG 0x0c tooltip
     END ELSE PATCH_IF tooltip < "-2" BEGIN
-        PATCH_FAIL "Passed a negative value under the default (-2) to tooltip"
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to tooltip"
     END
 
     PATCH_IF current_health > "-1" BEGIN
         WRITE_SHORT 0x24 current_health
     END ELSE PATCH_IF current_health < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to current_health"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to current_health"
     END
 
     PATCH_IF max_health > "-1" BEGIN
         WRITE_SHORT 0x26 max_health
     END ELSE PATCH_IF max_health < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to max_health"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to max_health"
     END
 
     PATCH_IF class > "-1" BEGIN
         WRITE_BYTE 0x273 class
     END ELSE PATCH_IF class < "-1" BEGIN
-        PATCH_FAIL "Passed a non-default (-1) negative value to class"
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to class"
     END
 
     PATCH_IF thac0 >= "-128" AND thac0 <= 127 BEGIN
         WRITE_BYTE 0x52 thac0
     END ELSE BEGIN
         PATCH_IF thac0 != "-129" BEGIN
-            PATCH_FAIL "Passed an out-of-bounds value to thac0 (valid values are between -128 to 127)"
+            PATCH_FAIL "[FAIL]: Passed an out-of-bounds value to thac0 (valid values are between -128 to 127)"
         END
     END
 
     PATCH_IF alignment > "-1" AND alignment <= 255 BEGIN
         WRITE_BYTE 0x27b alignment
     END ELSE PATCH_IF alignment < "-1" BEGIN
-        PATCH_FAIL "Passed an out-of-bounds value to thac0 (valid values are between 0 to 255)"
+        PATCH_FAIL "[FAIL]: Passed an out-of-bounds value to thac0 (valid values are between 0 to 255)"
     END
 
     PATCH_IF NOT "%dialog%" STR_EQ "none" BEGIN
@@ -564,7 +564,7 @@ BEGIN
         PATCH_IF projectile_type = 3 BEGIN
             WRITE_SHORT 0x204 trap_size
         END ELSE BEGIN
-            PATCH_FAIL "Trap size can only be modified if the projectile is an Area of Effect"
+            PATCH_FAIL "[FAIL]: Trap size can only be modified if the projectile is an Area of Effect"
         END
     END
 
@@ -572,7 +572,7 @@ BEGIN
         PATCH_IF projectile_type = 3 BEGIN
             WRITE_SHORT 0x206 explosion_size
         END ELSE BEGIN
-            PATCH_FAIL "Explosion size can only be modified if the projectile is an Area of Effect"
+            PATCH_FAIL "[FAIL]: Explosion size can only be modified if the projectile is an Area of Effect"
         END
     END
 END

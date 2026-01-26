@@ -1,5 +1,3 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
     ACTION_IF FILE_EXISTS_IN_GAME ~bdsw2h03.itm~ BEGIN
@@ -28,6 +26,6 @@ ACTION_IF NOT is_iwdee BEGIN
         COPY_EXISTING ~bdsw2h03.spl~ ~override~
             LPF ALTER_EFFECT INT_VAR match_opcode=12 match_dicesize=4 match_parameter1=0 dicesize=5 parameter1=2 special=1024 END
 
-    END ELSE ACTION_IF NOT group_component BEGIN WARN "bdsw2h03.itm not found in game" END
+    END ELSE ACTION_IF NOT group_component BEGIN WARN "[WARN]: bdsw2h03.itm not found in game" END
 
 END

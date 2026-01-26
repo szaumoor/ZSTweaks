@@ -32,7 +32,7 @@ DEFINE_PATCH_MACRO nonmagical_macro BEGIN
   LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=120 match_parameter2=2 match_parameter1=0 opcode=206 parameter1=0 parameter2=0 STR_VAR resource=~zstsand0~ END
 END
 
-PRINT "Patching creatures, spells, and items with weapon immunities with appropriate sand attack immunity"
+PRINT "[INFO]: Patching creatures, spells, and items with weapon immunities with appropriate sand attack immunity"
 OUTER_SET matches = 0
 COPY_EXISTING_REGEXP ~^.+\.\(cre\|itm\|spl\)$~ ~override~
   LPM PATCH_FOR_WPN_IMMUNITIES

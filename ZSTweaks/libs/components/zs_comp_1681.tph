@@ -1,5 +1,3 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
     ACTION_IF FILE_EXISTS_IN_GAME ~bddagg01.itm~ BEGIN
@@ -24,6 +22,6 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_EFF_FILE INT_VAR dicenumber = 2 special=1024 END
         BUT_ONLY
 
-    END ELSE ACTION_IF NOT group_component BEGIN WARN "bddagg01.itm not found in game" END
+    END ELSE ACTION_IF NOT group_component BEGIN WARN "[WARN]: bddagg01.itm not found in game" END
 
 END

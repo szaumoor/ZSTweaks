@@ -9,7 +9,7 @@ INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_standardize_shields.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_splprot_include.tph~
 
 ACTION_IF NOT ZS_MARKER_FILE_EXISTS BEGIN
-    PRINT "Generating marker file zssetup.rp"
+    PRINT "[INFO]: Generating marker file zssetup.rp"
     SILENT
     COPY_EXISTING ~sw1h01.itm~ ~override/zssetup.rp~
     OUTER_SET ZS_MARKER_FILE_EXISTS = 1

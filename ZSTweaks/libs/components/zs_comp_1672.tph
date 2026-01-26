@@ -1,5 +1,3 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
   ACTION_IF FILE_EXISTS_IN_GAME ~bdbrac05.itm~ BEGIN
@@ -14,7 +12,7 @@ ACTION_IF NOT is_iwdee BEGIN
       END
 
   END ELSE BEGIN
-    ACTION_IF NOT group_component BEGIN WARN "bbrac05.itm not found, skipping" END
+    ACTION_IF NOT group_component BEGIN WARN "[WARN]: bbrac05.itm not found, skipping" END
   END
 
 END

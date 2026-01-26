@@ -24,7 +24,7 @@ BEGIN
 END
 
 ACTION_IF has_zs_shadowdancer_overhaul BEGIN
-    PRINT "Skipping shadow adjustments to shadow summons in ZS_ShadowdancerOverhaul."
+    PRINT "[INFO]: Skipping shadow adjustments to shadow summons in ZS_ShadowdancerOverhaul."
 END
 
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~

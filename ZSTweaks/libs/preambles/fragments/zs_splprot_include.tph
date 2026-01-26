@@ -1,6 +1,6 @@
 ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
     
-    PRINT "Adding and/or finding all splprot entries required for Kaelyn's mods..."
+    PRINT "[INFO]: Adding and/or finding all splprot entries required for Kaelyn's mods..."
 
     // ----------------------------------------------------------------
 
@@ -292,99 +292,99 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
                   ~zs_thief_or_bard_all~    = "-1" OR
                   ~zs_has_stoneskins~       = "-1" 
         BEGIN
-            WARN "Error: Not all splprot entries could be inserted!"
+            WARN "[WARN]: Not all splprot entries could be inserted!"
             ACTION_IF ~zs_slashingresist_<128~  = "-1" BEGIN
-                PRINT "zs_slashingresist_<128 not set!"
+                PRINT "[WARN]: zs_slashingresist_<128 not set!"
             END
             ACTION_IF ~zs_slashingresist_>=100~ = "-1" BEGIN
-                PRINT "zs_slashingresist_>=100 not set!"
+                PRINT "[WARN]: zs_slashingresist_>=100 not set!"
             END
             ACTION_IF ~zs_slashing_immunity~    = "-1" BEGIN
-                PRINT "zs_slashing_immunity not set!"
+                PRINT "[WARN]: zs_slashing_immunity not set!"
             END
             ACTION_IF ~zs_crushingresist_<128~  = "-1" BEGIN
-                PRINT "zs_crushingresist_<128 not set!"
+                PRINT "[WARN]: zs_crushingresist_<128 not set!"
             END
             ACTION_IF ~zs_crushingresist_>=100~ = "-1" BEGIN
-                PRINT "zs_crushingresist_>=100 not set!"
+                PRINT "[WARN]: zs_crushingresist_>=100 not set!"
             END
             ACTION_IF ~zs_crushing_immunity~    = "-1" BEGIN
-                PRINT "zs_crushing_immunity not set!"
+                PRINT "[WARN]: zs_crushing_immunity not set!"
             END
             ACTION_IF ~zs_piercingresist_<128~  = "-1" BEGIN
-                PRINT "zs_piercingresist_<128 not set!"
+                PRINT "[WARN]: zs_piercingresist_<128 not set!"
             END
             ACTION_IF ~zs_piercingresist_>=100~ = "-1" BEGIN
-                PRINT "zs_piercingresist_>=100 not set!"
+                PRINT "[WARN]: zs_piercingresist_>=100 not set!"
             END
             ACTION_IF ~zs_piercing_immunity~    = "-1" BEGIN
-                PRINT "zs_piercing_immunity not set!"
+                PRINT "[WARN]: zs_piercing_immunity not set!"
             END
             ACTION_IF ~zs_missileresist_<128~   = "-1" BEGIN
-                PRINT "zs_missileresist_<128 not set!"
+                PRINT "[WARN]: zs_missileresist_<128 not set!"
             END
             ACTION_IF ~zs_missileresist_>=100~  = "-1" BEGIN
-                PRINT "zs_missileresist_>=100 not set!"
+                PRINT "[WARN]: zs_missileresist_>=100 not set!"
             END
             ACTION_IF ~zs_missile_immunity~     = "-1" BEGIN
-                PRINT "zs_missile_immunity not set!"
+                PRINT "[WARN]: zs_missile_immunity not set!"
             END
             ACTION_IF ~zs_electricresist_<128~  = "-1" BEGIN
-                PRINT "zs_electricresist_<128 not set!"
+                PRINT "[WARN]: zs_electricresist_<128 not set!"
             END
             ACTION_IF ~zs_electricresist_>=100~ = "-1" BEGIN
-                PRINT "zs_electricresist_>=100 not set!"
+                PRINT "[WARN]: zs_electricresist_>=100 not set!"
             END
             ACTION_IF ~zs_electric_immunity~    = "-1" BEGIN
-                PRINT "zs_electric_immunity not set!"
+                PRINT "[WARN]: zs_electric_immunity not set!"
             END
             ACTION_IF ~zs_coldresist_<128~      = "-1" BEGIN
-                PRINT "zs_coldresist_<128 not set!"
+                PRINT "[WARN]: zs_coldresist_<128 not set!"
             END
             ACTION_IF ~zs_coldresist_>=100~     = "-1" BEGIN
-                PRINT "zs_coldresist_>=100 not set!"
+                PRINT "[WARN]: zs_coldresist_>=100 not set!"
             END
             ACTION_IF ~zs_cold_immunity~        = "-1" BEGIN
-                PRINT "zs_cold_immunity not set!"
+                PRINT "[WARN]: zs_cold_immunity not set!"
             END
             ACTION_IF ~zs_fireresist_<128~      = "-1" BEGIN
-                PRINT "zs_fireresist_<128 not set!"
+                PRINT "[WARN]: zs_fireresist_<128 not set!"
             END
             ACTION_IF ~zs_fireresist_>=100~     = "-1" BEGIN
-                PRINT "zs_fireresist_>=100 not set!"
+                PRINT "[WARN]: zs_fireresist_>=100 not set!"
             END
             ACTION_IF ~zs_fire_immunity~        = "-1" BEGIN
-                PRINT "zs_fire_immunity not set!"
+                PRINT "[WARN]: zs_fire_immunity not set!"
             END
             ACTION_IF ~zs_acidresist_<128~      = "-1" BEGIN
-                PRINT "zs_acidresist_<128 not set!"
+                PRINT "[WARN]: zs_acidresist_<128 not set!"
             END
             ACTION_IF ~zs_acidresist_>=100~     = "-1" BEGIN
-                PRINT "zs_acidresist_>=100 not set!"
+                PRINT "[WARN]: zs_acidresist_>=100 not set!"
             END
             ACTION_IF ~zs_acid_immunity~        = "-1" BEGIN
-                PRINT "zs_acid_immunity not set!"
+                PRINT "[WARN]: zs_acid_immunity not set!"
             END
             ACTION_IF ~zs_hideinshadows_<n~     = "-1" BEGIN
-                PRINT "zs_hideinshadows_<n not set!"
+                PRINT "[WARN]: zs_hideinshadows_<n not set!"
             END
             ACTION_IF ~zs_hideinshadows_>n~     = "-1" BEGIN
-                PRINT "zs_hideinshadows_>n not set!"
+                PRINT "[WARN]: zs_hideinshadows_>n not set!"
             END
             ACTION_IF ~zs_class_thief~          = "-1" BEGIN
-                PRINT "zs_class_thief not set!"
+                PRINT "[WARN]: zs_class_thief not set!"
             END
             ACTION_IF ~zs_class_bard_all~       = "-1" BEGIN
-                PRINT "zs_class_bard_all not set!"
+                PRINT "[WARN]: zs_class_bard_all not set!"
             END
             ACTION_IF ~zs_thief_or_bard_all~    = "-1" BEGIN
-                PRINT "zs_thief_or_bard_all not set!"
+                PRINT "[WARN]: zs_thief_or_bard_all not set!"
             END
             ACTION_IF ~zs_has_stoneskins~       = "-1" BEGIN
-                PRINT "zs_has_stoneskins not set!"
+                PRINT "[WARN]: zs_has_stoneskins not set!"
             END
 
-            FAIL "Exiting installation."
+            FAIL "[FAIL]: Exiting installation."
         END
 
         COPY_EXISTING ~splprot.2da~ ~override~

@@ -1,5 +1,5 @@
 ACTION_IF NOT (zst_3150_drow_mr_pctg_of_base >= 20 AND zst_3150_drow_mr_pctg_of_base <= 90) BEGIN
-    FAIL "Invalid range for magic resistance reduction for drow"
+    FAIL "[FAIL]: Invalid range for magic resistance reduction for drow"
 END
               // bg2ee
 COPY_EXISTING ~c6drow1.cre~  ~override~

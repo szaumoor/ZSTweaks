@@ -53,7 +53,7 @@ ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald OR zst_2260_allow_swash O
 
     END
 
-    PRINT "Patching all non-joinable NPCs that use the Skald/Blade/Swashbuckler kits (depending on configuration)"
+    PRINT "[INFO]: Patching all non-joinable NPCs that use the Skald/Blade/Swashbuckler kits (depending on configuration)"
     SILENT
     ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
 
@@ -84,5 +84,5 @@ ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald OR zst_2260_allow_swash O
   END
 
 END ELSE BEGIN
-  ACTION_IF NOT group_component BEGIN WARN "No classes were selected in the configuration file" END
+  ACTION_IF NOT group_component BEGIN WARN "[WARN]: No classes were selected in the configuration file" END
 END

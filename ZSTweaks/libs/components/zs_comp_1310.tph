@@ -3,7 +3,7 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   ACTION_IF zst_1310_easthaven_dr <= 0 OR zst_1310_easthaven_dr > 127 BEGIN
-    FAIL ~Invalid setting for Defender of Easthaven's damage resistance. Must be between 1 and 127.~
+    FAIL ~[FAIL]: Invalid setting for Defender of Easthaven's damage resistance. Must be between 1 and 127.~
   END
 
   COPY_EXISTING ~waflail.itm~ ~override~

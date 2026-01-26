@@ -1,5 +1,3 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
     ACTION_IF FILE_EXISTS_IN_GAME ~bddagg05.itm~ BEGIN
@@ -13,8 +11,8 @@ ACTION_IF NOT is_iwdee BEGIN
                     (general_tweaks_installed AND zst_group_1440_dagger_boost)
             BEGIN
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 3 to_hit = 4  END
-                LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWDPB2~ resource = ~ZSTWDPB3~ END
-                LPF ALTER_EFFECT STR_VAR match_resource = ~ZSTWDPT2~ resource = ~ZSTWDPT3~ END
+                LPF ALTER_EFFECT STR_VAR match_resource = ~zstwdpb2~ resource = ~zstwdpb3~ END
+                LPF ALTER_EFFECT STR_VAR match_resource = ~zstwdpt2~ resource = ~zstwdpt3~ END
 
                 READ_STRREF 0x54 desc
                 INNER_PATCH_SAVE desc ~%desc%~ BEGIN
@@ -35,7 +33,7 @@ ACTION_IF NOT is_iwdee BEGIN
             BEGIN
                 SET ench = 3
                 LPM PROBABILITY_BONUS
-                LPF ALTER_EFFECT INT_VAR probability1 =(bonus+base_dagg_dart) STR_VAR match_resource = ~ZSTWD2~ resource = ~ZSTWD3~  END
+                LPF ALTER_EFFECT INT_VAR probability1 =(bonus+base_dagg_dart) STR_VAR match_resource = ~zstwd2~ resource = ~zstwd3~  END
             END
 
         COPY_EXISTING ~bddagg05.spl~ ~override~
@@ -43,7 +41,7 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 STR_VAR effects = ~op=0,dur=18,p1=-2,ip=3~ END
 
     END ELSE BEGIN
-        ACTION_IF NOT group_component BEGIN WARN "bddagg05.itm not found in game files, skipping..." END
+        ACTION_IF NOT group_component BEGIN WARN "[WARN]: bddagg05.itm not found in game files, skipping..." END
     END
 
 END

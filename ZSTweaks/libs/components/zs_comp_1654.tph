@@ -1,5 +1,3 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
   ACTION_IF FILE_EXISTS_IN_GAME "bdboot03.itm" BEGIN
@@ -10,7 +8,7 @@ ACTION_IF NOT is_iwdee BEGIN
       LPF CLONE_EFFECT INT_VAR match_opcode = 177 match_parameter2 = 9 parameter1 = kit_inquisitor END
 
   END ELSE BEGIN
-    ACTION_IF NOT group_component BEGIN WARN "bdboot03.itm not found" END
+    ACTION_IF NOT group_component BEGIN WARN "[WARN]: bdboot03.itm not found" END
   END
 
 END

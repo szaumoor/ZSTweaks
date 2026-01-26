@@ -1,25 +1,23 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1240_purifier_evil OR zst_1240_purifier_dispel BEGIN
         
         INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
-        COPY_EXISTING "SW1H64A.EFF" ~override~
-                      "SW1H65A.EFF" ~override~
+        COPY_EXISTING "sw1h64a.eff" ~override~
+                      "sw1h65a.eff" ~override~
             LPF ALTER_EFF_FILE INT_VAR special=1024 END
         OUTER_SET bastard_comp_installed = zst_1150_dice_bastard_swords AND
                                           (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
                                           (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice))
 
     END ELSE BEGIN
-        WARN ~No Purifier tweaks were selected~
+        WARN ~[WARN]: No Purifier tweaks were selected~
     END
 
     ACTION_IF zst_1240_purifier_evil BEGIN
 
-        PRINT ~Applying Purifier's damage vs. all evil tweak~
-        COPY_EXISTING ~SW1H64.ITM~ ~override~
+        PRINT ~[INFO]: Applying Purifier's damage vs. all evil tweak~
+        COPY_EXISTING ~sw1h64.itm~ ~override~
             LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=177 match_parameter2=8 parameter1=alignmen_mask_evil END
 
             PATCH_IF bastard_comp_installed BEGIN
@@ -42,7 +40,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             OUTER_SPRINT strref @6091
         END
 
-        COPY_EXISTING ~SW1H65.ITM~ ~override~
+        COPY_EXISTING ~sw1h65.itm~ ~override~
             LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 match_opcode=177 match_parameter2=8 parameter1=alignmen_mask_evil END
 
             PATCH_IF bastard_comp_installed BEGIN
@@ -68,18 +66,18 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1240_purifier_dispel BEGIN
 
-        PRINT ~Applying Purifier's dispel magic boost~
+        PRINT ~[INFO]: Applying Purifier's dispel magic boost~
         ACTION_IF zst_1240_purifier_evil BEGIN
             OUTER_SPRINT strref @6093
         END ELSE BEGIN
             OUTER_SPRINT strref @6092
         END
 
-        COPY_EXISTING ~SW1H65.ITM~ ~override~
+        COPY_EXISTING ~sw1h65.itm~ ~override~
             PATCH_IF NOT has_eefixpack BEGIN
-                LPF ALTER_EFFECT INT_VAR header_type=3 match_opcode = 146 parameter1 = 30 STR_VAR match_resource="SPPR303" END
+                LPF ALTER_EFFECT INT_VAR header_type=3 match_opcode = 146 parameter1 = 30 STR_VAR match_resource="sppr303" END
             END ELSE BEGIN
-                LPF ALTER_EFFECT INT_VAR header_type=3 match_opcode = 148 parameter1 = 30 STR_VAR match_resource="SPPR303" END
+                LPF ALTER_EFFECT INT_VAR header_type=3 match_opcode = 148 parameter1 = 30 STR_VAR match_resource="sppr303" END
             END
 
             PATCH_IF bastard_comp_installed BEGIN

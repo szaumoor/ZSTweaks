@@ -1,5 +1,3 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
     ACTION_IF FILE_EXISTS_IN_GAME ~bddagg3a.itm~ BEGIN
@@ -20,6 +18,6 @@ ACTION_IF NOT is_iwdee BEGIN
                 SAY_EVALUATED 0x54 ~%desc%~
             END
 
-    END ELSE ACTION_IF NOT group_component BEGIN WARN "bddagg3a.itm not found in game files, skipping..." END
+    END ELSE ACTION_IF NOT group_component BEGIN WARN "[WARN]: bddagg3a.itm not found in game files, skipping..." END
 
 END

@@ -9,23 +9,23 @@ RET
 BEGIN
     // precondition checks
     PATCH_IF zs_debug AND NOT FILE_EXISTS_IN_GAME ~%weapon%.ITM~ BEGIN
-        PATCH_FAIL ~Weapon %weapon% does not exist in game~
+        PATCH_FAIL ~[FAIL]: Weapon %weapon% does not exist in game~
     END
 
     PATCH_IF at_slot < 0 OR at_slot > 4 BEGIN
-        PATCH_FAIL ~at_slot must be set between 1 and 4 (inclusive)~
+        PATCH_FAIL ~[FAIL]: at_slot must be set between 1 and 4 (inclusive)~
     END
 
     PATCH_IF anywhere != 0 AND anywhere != 1 BEGIN
-        PATCH_FAIL ~anywhere must be set to 0 (false) or 1 (true)~
+        PATCH_FAIL ~[FAIL]: anywhere must be set to 0 (false) or 1 (true)~
     END
 
     PATCH_IF at_slot > 0 AND anywhere = 1 BEGIN
-        PATCH_FAIL ~at_slot must not be set when anywhere is on (1)~
+        PATCH_FAIL ~[FAIL]: at_slot must not be set when anywhere is on (1)~
     END
 
     PATCH_IF at_slot > 0 AND anywhere = 1 BEGIN
-        PATCH_FAIL ~Cannot mix indiscriminate searching with searching at particular slot~
+        PATCH_FAIL ~[FAIL]: Cannot mix indiscriminate searching with searching at particular slot~
     END
 
     SET found = 0
@@ -77,6 +77,6 @@ BEGIN
 
     // postcondition check
     PATCH_IF zs_debug AND found != 0 AND found != 1 BEGIN
-        PATCH_FAIL ~Found value is not 0 or 1~
+        PATCH_FAIL ~[FAIL]: Found value is not 0 or 1~
     END
 END
