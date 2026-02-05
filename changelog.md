@@ -9,3 +9,5 @@
 
 - Misc internal fixes
 - Revised the Aule's Staff component so it patches the Martial Staff without changing its name or basic description in EET. In BG2EE it replaces the staff for Aule's Staff, because it's at least unique.
+- Added Claw of Kazgaroth support for IWD (lava's mod)
+- Added minor compatibility bit between my tweak to The Visage and [The Pursuit of Justice mod by bucketfulofsunshine](https://github.com/bucketfulofsunshine/the-pursuit-of-justice) so descriptions are in line
