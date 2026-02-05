@@ -22,6 +22,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         timing = 3
         duration = 300
         insert_point = "-1"
+      STR_VAR
+        resource = "%SOURCE_RES%"
     END
 
     LPF ADD_SPELL_CFEFFECT
