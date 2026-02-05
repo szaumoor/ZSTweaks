@@ -1,5 +1,3 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1318_fnorth_evil OR zst_1318_fnorth_trolls BEGIN
@@ -11,7 +9,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                                              (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
                                              (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice)) 
 
-    END ELSE BEGIN WARN "No Flame of the North tweaks were selected" END
+    END ELSE BEGIN WARN "[WARN]: No Flame of the North tweaks were selected" END
 
     ACTION_IF zst_1318_fnorth_evil BEGIN
 
@@ -47,7 +45,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 SPRINT strref @6171
             END
             
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,tmg=1,p1=129,p2=4,res=ZSTWTRL0~ END
+            LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,tmg=1,p1=129,p2=4,res=zstwtrl0~ END
 
             PATCH_IF two_handed_comp_installed BEGIN
 

@@ -1,5 +1,3 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt~
@@ -16,7 +14,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         2 
         BEGIN LPF ALTER_ITEM INT_VAR unusable0 = 1618739136 END END
       DEFAULT 
-        PATCH_WARN "WARNING: Used configuration value for Staff of Magi outside of valid parameters (0-2). No restrictions added" 
+        PATCH_WARN "[WARN]: Used configuration value for Staff of Magi outside of valid parameters (0-2). No restrictions added" 
       END
 
     END

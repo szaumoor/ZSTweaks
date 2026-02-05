@@ -1,11 +1,9 @@
-
-
 ACTION_IF zst_1539_all_no_reqs < 0 OR zst_1539_all_reqs < 0 OR zst_1539_rogues_no_reqs < 0 OR zst_1539_rogues_reqs < 0 BEGIN
-    FAIL "Scroll usability component: Valid values for options are 0 (false, or disable) or 1 (true or enable)."
+    FAIL "[FAIL]: Scroll usability component: Valid values for options are 0 (false, or disable) or 1 (true or enable)."
 END
 
 ACTION_IF (zst_1539_all_no_reqs + zst_1539_all_reqs + zst_1539_rogues_no_reqs + zst_1539_rogues_reqs) > 1 BEGIN
-     FAIL "Scroll usability component: Incorrect options selected, please check the config file."
+     FAIL "[FAIL]: Scroll usability component: Incorrect options selected, please check the config file."
 END
 
 ACTION_IF zst_1539_all_no_reqs BEGIN
@@ -231,6 +229,6 @@ END ELSE ACTION_IF zst_1539_rogues_reqs BEGIN
                 END
             END
         END
-BUT_ONLY
+    BUT_ONLY
 
 END

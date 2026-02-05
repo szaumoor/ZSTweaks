@@ -1,5 +1,3 @@
-
-
 INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
 ACTION_IF MOD_IS_INSTALLED "ZSTweaks.tp2" "1120" OR
          (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" 
@@ -16,7 +14,7 @@ COPY ~%MOD_FOLDER%/class_kits/blackguard~ ~override~
 COPY_EXISTING ~clabpa06.2da~ ~override~
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "AP_ZSTWBKG0" END
 
-PRINT "Patching all non-joinable NPCs that use the Blackguard kit"
+PRINT "[INFO]: Patching all non-joinable NPCs that use the Blackguard kit"
 SILENT
 ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
 

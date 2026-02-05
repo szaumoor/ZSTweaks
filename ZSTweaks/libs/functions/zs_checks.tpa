@@ -8,7 +8,7 @@ RET
     result
 BEGIN
     PATCH_IF STRING_LENGTH "%extension%" = 0 BEGIN
-        PATCH_FAIL "Extension is empty"
+        PATCH_FAIL "[FAIL]: Extension is empty"
     END
 
     SET last_index = (STRING_LENGTH "%SOURCE_RES%") + 1
@@ -17,9 +17,9 @@ BEGIN
         result = 0
         PATCH_IF NOT suppress BEGIN
             PATCH_IF fail_on_mismatch BEGIN
-                PATCH_FAIL "This function only works for .%extension% files"
+                PATCH_FAIL "[WARN]: This function only works for .%extension% files"
             END ELSE BEGIN
-                PATCH_WARN "This function only works for .%extension% files"
+                PATCH_WARN "[WARN]: This function only works for .%extension% files"
             END
         END
 
@@ -37,7 +37,7 @@ RET
     result // 1 if flag is set, 0 if it's unset. -1 if invalid flag is asked for
 BEGIN
     ACTION_IF bit_field = "-1" BEGIN
-        FAIL "Bit field not set"
+        FAIL "[FAIL]: Bit field not set"
     END
     
     ACTION_IF bit >= 0 AND bit < bit_limit BEGIN

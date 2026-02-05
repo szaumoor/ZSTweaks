@@ -755,6 +755,20 @@ Requires:
 
 Weight: 3~
 
+@8042 = ~This humble staff radiates powerful magic, and was likely the simple-seeming weapon of a traveling mage or cleric. It would certainly prove more than ample for dealing with most threats encountered on the road.
+
+STATISTICS:
+
+THAC0: +3
+Damage: 1d6+3 (crushing)
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 4~
+
 @8140 = ~Taking the blood-soaked shaft of this weapon in hand brings a sudden chill along your spine. The origins of this gruesome halberd are unknown, though the very sight of it has been know to strike terror into the heart of an opponent.
 
 Now combined with the Serpent Shaft, this dark halberd has the ability to slay an opponent with a single blow—unless they can survive the sudden loss of their head.

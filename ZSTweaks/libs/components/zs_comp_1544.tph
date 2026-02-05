@@ -1,6 +1,5 @@
-
-
 WITH_SCOPE BEGIN
+
     DEFINE_PATCH_MACRO add_spell_headers BEGIN
         SET type = header_type
         SET target = tgt
@@ -40,16 +39,18 @@ WITH_SCOPE BEGIN
         LPM ADD_SPELL_EFFECT
     END
 
-    PRINT "Creating subspells to allow scrolls to scale with character level..."
+    PRINT "[INFO]: Creating subspells to allow scrolls to scale with character level..."
     SILENT
+
     OUTER_SET scrolls = 0
     OUTER_SPRINT prefix "rpsc"
+
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         PATCH_IF SHORT_AT(0x1c) = 11 AND BYTE_AT(0x2a) != 0 BEGIN
             READ_LONG 0x0c scroll_name
             PATCH_IF scrolls > 9999 BEGIN
                 PATCH_VERBOSE
-                PATCH_FAIL "Too many scrolls to process!"
+                PATCH_FAIL "[FAIL]: Too many scrolls to process!"
             END ELSE PATCH_IF scrolls < 10 BEGIN
                 SPRINT number "000%scrolls%"
             END ELSE PATCH_IF scrolls < 100 BEGIN
@@ -99,6 +100,8 @@ WITH_SCOPE BEGIN
             END
         END
     BUT_ONLY
+
     VERBOSE
-    PRINT "Found %scrolls% usable scrolls for scroll scaling."
+    PRINT "[INFO]: Found %scrolls% usable scrolls for scroll scaling."
+
 END

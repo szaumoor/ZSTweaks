@@ -1,5 +1,5 @@
 ACTION_IF NOT (zst_3150_drow_mr_pctg_of_base >= 20 AND zst_3150_drow_mr_pctg_of_base <= 90) BEGIN
-    FAIL "Invalid range for magic resistance reduction for drow"
+    FAIL "[FAIL]: Invalid range for magic resistance reduction for drow"
 END
               // bg2ee
 COPY_EXISTING ~c6drow1.cre~  ~override~
@@ -180,11 +180,13 @@ COPY_EXISTING ~c6drow1.cre~  ~override~
               ~ilmadia.cre~  ~override~
               ~ilair.cre~    ~override~
               ~drowsor.cre~  ~override~
-              ~drowspe.cre~ ~override~
-              ~drowvan.cre~ ~override~
+              ~drowspe.cre~  ~override~
+              ~drowvan.cre~  ~override~
+              ~nym.cre~      ~override~
 
               // others
               ~l#arsdro.cre~ ~override~ // lava
+              ~gv#vynd.cre~  ~override~ // vynd from glam npc mod
 
     READ_BYTE 0x5d mr
     PATCH_IF mr >= 20 BEGIN

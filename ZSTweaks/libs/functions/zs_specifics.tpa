@@ -57,11 +57,11 @@ BEGIN
     END
 
     PATCH_IF column < 0 OR (row = "-1" AND "%row_name%" STR_EQ "*") BEGIN
-        PATCH_FAIL "Invalid column (%column%) or row name (%row_name%)"
+        PATCH_FAIL "[FAIL]: Invalid column (%column%) or row name (%row_name%)"
     END
 
     PATCH_IF "%replacement%" STR_EQ "*" BEGIN
-        PATCH_FAIL "No replacement was given for the cell in the table"
+        PATCH_FAIL "[FAIL]: No replacement was given for the cell in the table"
     END
 
     PATCH_IF row < 0 BEGIN // we don't know the row we want
@@ -200,7 +200,7 @@ BEGIN
         PATCH_IF SHORT_AT(ab_off) = 0 AND LONG_AT(ab_off + 0x8) = 0 BEGIN
             result = (LONG_AT(ab_off + 0x4)) - 1
             PATCH_IF result = "-1" BEGIN
-                PATCH_WARN "Something went wrong, the shield %SOURCE_RES% had no base AC value: %result%"
+                PATCH_WARN "[WARN]: Something went wrong, the shield %SOURCE_RES% had no base AC value: %result%"
             END
         END
     END
@@ -215,7 +215,7 @@ BEGIN
     END
 
     PATCH_IF type < 0 BEGIN
-        PATCH_FAIL "Must specify a type of Armor Class to patch on shield"
+        PATCH_FAIL "[FAIL]: Must specify a type of Armor Class to patch on shield"
     END
 
     SET found = 0
@@ -227,10 +227,10 @@ BEGIN
             READ_LONG (ab_off + 0x4) base_ac ELSE "-999"
 
             PATCH_IF base_ac = "-999" BEGIN
-                PATCH_WARN "Something went wrong, the shield %SOURCE_RES% had no type %type% AC value!"
+                PATCH_WARN "[WARN]: Something went wrong, the shield %SOURCE_RES% had no type %type% AC value!"
             END ELSE BEGIN
                 PATCH_IF found = 2 BEGIN
-                    PATCH_WARN "Found more than 2 type %type% AC values in shield %SOURCE_RES%."
+                    PATCH_WARN "[WARN]: Found more than 2 type %type% AC values in shield %SOURCE_RES%."
                 END
             END
 
@@ -252,7 +252,7 @@ BEGIN
         LPF CHECK_EXTENSION INT_VAR suppress=1 STR_VAR extension = "CRE" RET cre_file = result END
 
         PATCH_IF NOT itm_file AND NOT spl_file AND NOT cre_file BEGIN
-            PATCH_FAIL "This function only works for .ITM,.SPL, and .CRE files"
+            PATCH_FAIL "[FAIL]: This function only works for .ITM,.SPL, and .CRE files"
         END
 
     END ELSE BEGIN

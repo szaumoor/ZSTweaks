@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING ~plat06.itm~ ~override~
               ~plat06_.itm~ ~override~
   LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8470) END
@@ -12,5 +10,5 @@ COPY_EXISTING ~bzplm06a.itm~ ~override~
 BUT_ONLY IF_EXISTS
 
 ACTION_IF is_iwdee AND NOT FILE_EXISTS_IN_GAME "plat06.itm" AND NOT group_component BEGIN
-  WARN "Ankheg's Plate Armor not found in IWDEE."
+  WARN "[WARN]: Ankheg's Plate Armor not found in IWDEE."
 END

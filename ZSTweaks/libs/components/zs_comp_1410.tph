@@ -1,5 +1,3 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1410_ureaver_dispel OR zst_1410_ureaver_dicesize BEGIN
@@ -14,7 +12,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     END ELSE BEGIN
 
-        WARN ~No Unholy Reaver tweaks were selected~
+        WARN ~[WARN]: No Unholy Reaver tweaks were selected~
 
     END
 

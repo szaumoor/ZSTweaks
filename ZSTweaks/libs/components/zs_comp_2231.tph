@@ -48,7 +48,7 @@ COPY ~./zstweaks/macro.tph~ ~./zstweaks/macro.tph~
 
 REINCLUDE ~./zstweaks/macro.tph~
 
-PRINT "Patching all non-joinable NPCs that use the Dragon Disciple kit"
+PRINT "[INFO]: Patching all non-joinable NPCs that use the Dragon Disciple kit"
 SILENT
 
 ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
@@ -65,7 +65,7 @@ ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
         END
 
         PATCH_IF zst_2231_fire_boost AND zst_2231_fire_boost_pctg > 0 BEGIN
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 332 timing = 9 parameter2 = 1 parameter1 = zst_2231_fire_boost_pctg END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 332 timing = 9 parameter2 = 1 parameter1 = zst_2231_fire_boost_pctg END
         END
         
       END

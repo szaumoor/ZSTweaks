@@ -118,11 +118,11 @@ BEGIN
     PATCH_IF zs_debug BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
         PATCH_IF opcode <= 0 BEGIN
-            PATCH_FAIL ~Invalid opcode specified for SPELL_OPCODE_PRESENT.~
+            PATCH_FAIL ~[FAIL]: Invalid opcode specified for SPELL_OPCODE_PRESENT.~
         END
         
         PATCH_IF NOT (VARIABLE_IS_SET "parameter2" OR VARIABLE_IS_SET "resource") BEGIN
-            PATCH_FAIL "Must provide at least parameter2 or resource to SPELL_CODE_PRESENT"
+            PATCH_FAIL "[FAIL]: Must provide at least parameter2 or resource to SPELL_CODE_PRESENT"
         END
     END
 
@@ -181,11 +181,11 @@ BEGIN
     PATCH_IF zs_debug BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
         PATCH_IF opcode <= 0 BEGIN
-            PATCH_FAIL ~Invalid opcode specified for ITM_OPCODE_PRESENT.~
+            PATCH_FAIL ~[FAIL]: Invalid opcode specified for ITM_OPCODE_PRESENT.~
         END
 
         PATCH_IF NOT (VARIABLE_IS_SET "parameter2" OR VARIABLE_IS_SET "resource") BEGIN
-            PATCH_FAIL "Must provide at least parameter2 or resource to SPELL_CODE_PRESENT"
+            PATCH_FAIL "[FAIL]: Must provide at least parameter2 or resource to SPELL_CODE_PRESENT"
         END
     END
 

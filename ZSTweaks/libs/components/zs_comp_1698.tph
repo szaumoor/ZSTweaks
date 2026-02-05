@@ -1,5 +1,3 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
   
   COPY ~%MOD_FOLDER%/items/staff_power~ ~override~
@@ -31,7 +29,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         BEGIN LPM ITM_OPCODE_PRESENT END
 
         DEFAULT
-            PATCH_WARN "Found invalid file: %SOURCE_RES%"
+            PATCH_WARN "[WARN]: Found invalid file: %SOURCE_RES%"
         END
 
         PATCH_IF present BEGIN

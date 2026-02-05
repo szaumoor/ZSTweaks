@@ -54,7 +54,7 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
 
     ACTION_IF zs_debug BEGIN
 
-        PRINT "Finding incorrect shield strrefs for debugging..."
+        PRINT "[DEBUG]: Finding incorrect shield strrefs for debugging..."
         COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
             READ_SHORT 0x1c cat
             PATCH_IF cat = 12 BEGIN
@@ -64,13 +64,12 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
                          strref != large_shield_strref   AND
                          strref != buckler_shield_strref
                 BEGIN
-                    PATCH_WARN "[[WARNING FOR SHIELD COMPONENTS]] Incorrect shield strref found at shield category: %SOURCE_RES%"
+                    PATCH_WARN "[DEBUG]: Incorrect shield strref found at shield category: %SOURCE_RES%"
                 END
             END
         BUT_ONLY
         
     END
-
 
     OUTER_SET "zst_shields_fixed" = 1
 END
