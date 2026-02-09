@@ -1,5 +1,3 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY_EXISTING ~sw1h58.itm~ ~override~

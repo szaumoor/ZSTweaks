@@ -1,12 +1,10 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/wave~ ~override~
-  COPY_EXISTING "HALB09.ITM" ~override~
+  COPY_EXISTING "halb09.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6420) END
     LPF ALTER_EFFECT_EX INT_VAR probability1 = 14 STR_VAR match_probability1_ex="(o_probability1 < 100)" END
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
-    LPF ADD_ON_HIT_EFF INT_VAR tmg=1 STR_VAR effects = ~op=12,p1=3,p2=%op12_cold%,spec=1024;op=177,p1=142,p2=4,res=ZSTWWAVE~ END
+    LPF ADD_ON_HIT_EFF INT_VAR tmg=1 STR_VAR effects = ~op=12,p1=3,p2=%op12_cold%,spec=1024;op=177,p1=142,p2=4,res=zstwwave~ END
 
 END

@@ -1,5 +1,3 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
     COPY_EXISTING "helm18.itm" ~override~ // Pearly white ioun stone

@@ -1,14 +1,12 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
   COPY ~%MOD_FOLDER%/items/warblade~ ~override~
-  COPY_EXISTING ~SW2H09.ITM~ ~override~
+  COPY_EXISTING ~sw2h09.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6860) price=19500 END
     LPF ALTER_HEADER INT_VAR match_damage = 4 damage = 2 END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,tmg=0,dsize=4,dnum=1,p2=%op12_cold%,spec=1024~ END
-    LPF ADD_EQUIPPED_EFF INT_VAR p1=kit_barbarian p2=9 STR_VAR effects=~op=177,res=ZSTWWARA;op=177,res=ZSTWWARB;op=177,res=ZSTWWARC;op=177,res=ZSTWWARD;op=177,res=ZSTWWARE~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1=kit_barbarian p2=9 STR_VAR effects=~op=177,res=zstwwara;op=177,res=zstwwarb;op=177,res=zstwwarc;op=177,res=zstwward;op=177,res=zstwware~ END
 
     PATCH_IF zst_1150_dice_twohanded_swords AND
             (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR

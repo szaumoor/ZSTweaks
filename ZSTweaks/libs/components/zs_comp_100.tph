@@ -1,8 +1,6 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
-  COPY_EXISTING ~SPPR304.SPL~ ~override~
+  COPY_EXISTING ~sppr304.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5000) END
     LPF ALTER_EFFECT INT_VAR match_savingthrow=2**0+2**24 special=2**8 END
 

@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING ~spwi324.spl~ ~override~
               ~spcl742.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8609) END

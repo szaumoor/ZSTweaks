@@ -1,9 +1,7 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
-  COPY_EXISTING ~SW1H67.ITM~ ~override~
+  COPY_EXISTING ~sw1h67.itm~ ~override~
     LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=12 dicesize=4 dicenumber=5 parameter1=1 savebonus="-2" probability1=14 special=1280 END
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 40 STR_VAR effects = ~op=29~ END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=12,tmg=9,p2=%op12_electricity%,dsize=3,dnum=1,spec=1024~ END

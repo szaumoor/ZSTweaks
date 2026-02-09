@@ -1,5 +1,3 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
   COPY ~%MOD_FOLDER%/spells/arcane/grease~ ~override~

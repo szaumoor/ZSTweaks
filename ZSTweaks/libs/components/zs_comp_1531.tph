@@ -1,5 +1,3 @@
-
-
 INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_divine_group_install.txt~
 
 COPY_EXISTING ~spwi224.spl~ ~override~  // glitterdust, all games

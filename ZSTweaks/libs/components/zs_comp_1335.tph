@@ -1,9 +1,7 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/crimson_chain~ ~override~
-  COPY_EXISTING ~CHAN11.ITM~ ~override~
+  COPY_EXISTING ~chan11.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8530) END
 
     READ_LONG 0x1e flags
@@ -19,8 +17,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     END
 
     LPF DELETE_EFFECT INT_VAR match_opcode = 144 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 145 opcode = 183 parameter2 = 16 STR_VAR resource = "ZSTWCRH0" END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 145 opcode = 183 parameter2 = 16 STR_VAR resource = "zstwcrh0" END
     LPF CLONE_EFFECT INT_VAR match_opcode = 145 opcode = 88 parameter1 = 12 END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 145 opcode = 232 parameter2 = 12 STR_VAR resource = "ZSTWCRH1" END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 145 opcode = 232 parameter2 = 12 STR_VAR resource = "zstwcrh1" END
 
 END

@@ -1,8 +1,6 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    COPY_EXISTING ~SPER12.ITM~ ~override~
+    COPY_EXISTING ~sper12.itm~ ~override~
         LPM remove_haste_immunity
 
         PATCH_IF zst_1150_dice_spears AND 
@@ -21,7 +19,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize=8 parameter1=6 dicenumber=1 END
 
-    COPY_EXISTING ~SPPR403.SPL~ ~override~
+    COPY_EXISTING ~sppr403.spl~ ~override~
         LPF DELETE_EFFECT INT_VAR match_opcode=126 END
 
 END

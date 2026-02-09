@@ -1,5 +1,3 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
   ACTION_IF FILE_EXISTS_IN_GAME ~bdhelm09.itm~ BEGIN

@@ -1,8 +1,6 @@
-
-
 ACTION_IF zst_1150_dice_spears BEGIN
 
-    COPY_EXISTING "SPER01.ITM" ~override~
+    COPY_EXISTING "sper01.itm" ~override~
         SPRINT str @99999
         READ_STRREF 0x50 desc
         INNER_PATCH_SAVE desc ~%desc%~ BEGIN
@@ -73,7 +71,7 @@ ACTION_IF zst_1150_dice_spears BEGIN
             PATCH_IF "%SOURCE_RES%" STRING_MATCHES_REGEXP "cdjav[0-4][bepq]?" != 0 BEGIN
 
                 LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 6 match_dicenumber = 1 dicesize = 8 silent = 1 END
-                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SPER01" BEGIN
+                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "sper01" BEGIN
 
                     LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
                     READ_LONG 0x54 description_index
@@ -98,7 +96,7 @@ END
 
 ACTION_IF zst_1150_dice_warhammers BEGIN
 
-    COPY_EXISTING "HAMM01.ITM" ~override~
+    COPY_EXISTING "hamm01.itm" ~override~
         SPRINT str @99999
         READ_STRREF 0x54 desc
         INNER_PATCH_SAVE desc ~%desc%~ BEGIN
@@ -114,7 +112,7 @@ ACTION_IF zst_1150_dice_warhammers BEGIN
         PATCH_IF cat = 21 AND wpn_prof = 97 AND num_abilities > 0 BEGIN  // warhammers
             LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 4 match_dicenumber = 1 dicesize = 5 silent = 1 END
             LPF ALTER_HEADER INT_VAR match_type = 2 match_dicesize = 4 match_dicenumber = 1 dicesize = 5 silent = 1 END
-            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "HAMM01" BEGIN
+            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "hamm01" BEGIN
                 LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
                 READ_LONG 0x54 description_index
                 PATCH_IF description_index > "-1" BEGIN
@@ -134,14 +132,14 @@ ACTION_IF zst_1150_dice_warhammers BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 5 END
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~ZSTWVD01.SPL~ ~override~
+    COPY_EXISTING ~zstwvd01.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 5 END
     BUT_ONLY IF_EXISTS
 END
 
 ACTION_IF zst_1150_dice_wakininja BEGIN
 
-    COPY_EXISTING "SW1H48.ITM" ~override~
+    COPY_EXISTING "sw1h48.itm" ~override~
         SPRINT str @99999
         SPRINT str_sf @99998
         READ_STRREF 0x50 desc
@@ -152,7 +150,7 @@ ACTION_IF zst_1150_dice_wakininja BEGIN
         SAY_EVALUATED 0x50 ~%desc%~
         READ_LONG 0x50 changed_description_index_ninjato
 
-    COPY_EXISTING "SW1H46.ITM" ~override~
+    COPY_EXISTING "sw1h46.itm" ~override~
         SPRINT str @99999
         READ_STRREF 0x50 desc
         INNER_PATCH_SAVE desc ~%desc%~ BEGIN
@@ -175,7 +173,7 @@ ACTION_IF zst_1150_dice_wakininja BEGIN
                     LPF ALTER_HEADER INT_VAR match_type = 1 speed = s END
                 END
 
-                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
+                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "sw1h48" BEGIN
                     LPF ALTER_ITEM INT_VAR general_desc = changed_description_index_ninjato END
                     READ_LONG 0x54 description_index
                     PATCH_IF description_index > "-1" BEGIN
@@ -195,7 +193,7 @@ ACTION_IF zst_1150_dice_wakininja BEGIN
             END ELSE PATCH_IF wpn_prof=95 AND "%wpn_appearance%" STR_EQ "ss" BEGIN // wakis
                 LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=8 match_dicenumber=1 dicenumber=2 dicesize=4 END
 
-                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
+                PATCH_IF NOT "%SOURCE_RES%" STR_EQ "sw1h48" BEGIN
                     LPF ALTER_ITEM INT_VAR general_desc = changed_description_index_waki END
                     READ_LONG 0x54 description_index
                     PATCH_IF description_index > "-1" BEGIN
@@ -215,7 +213,7 @@ ACTION_IF zst_1150_dice_wakininja BEGIN
 END
 
 ACTION_IF zst_1150_dice_wakislashing BEGIN
-    COPY_EXISTING "SW1H46.ITM" ~override~
+    COPY_EXISTING "sw1h46.itm" ~override~
         SPRINT str @99999 // damage
         SPRINT str_type @99997
         SPRINT str_new_type @99994
@@ -233,7 +231,7 @@ ACTION_IF zst_1150_dice_wakislashing BEGIN
         PATCH_IF wpn_prof = 95 AND "%wpn_appearance%" STR_EQ "ss" AND num_abilities > 0 BEGIN // wakizashis
             LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 damage_type = 7 END
 
-            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H48" BEGIN
+            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "sw1h48" BEGIN
                 LPF ALTER_ITEM INT_VAR general_desc = changed_description_index_waki END
                 READ_LONG 0x54 description_index
                 PATCH_IF description_index > "-1" BEGIN
@@ -258,7 +256,7 @@ END
 
 ACTION_IF zst_1150_dice_katanas BEGIN
 
-    COPY_EXISTING "SW1H43.ITM" ~override~
+    COPY_EXISTING "sw1h43.itm" ~override~
         SPRINT str @99999
         READ_STRREF 0x50 desc
         INNER_PATCH_SAVE desc ~%desc%~ BEGIN
@@ -273,7 +271,7 @@ ACTION_IF zst_1150_dice_katanas BEGIN
         READ_SHORT 0x68 num_abilities
         PATCH_IF cat = 20 AND wpn_prof = 94 AND num_abilities > 0 BEGIN // katanas
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=10 match_dicenumber=1 dicesize=5 dicenumber=2 END
-            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H43" BEGIN
+            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "sw1h43" BEGIN
                 LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
                 READ_LONG 0x54 description_index
                 PATCH_IF description_index > "-1" BEGIN
@@ -294,7 +292,7 @@ END
 
 ACTION_IF zst_1150_dice_bastard_swords BEGIN
 
-    COPY_EXISTING "SW1H01.ITM" ~override~
+    COPY_EXISTING "sw1h01.itm" ~override~
         SPRINT str @99999
         READ_STRREF 0x50 desc
         INNER_PATCH_SAVE desc ~%desc%~ BEGIN
@@ -312,7 +310,7 @@ ACTION_IF zst_1150_dice_bastard_swords BEGIN
             LPF WPN_DMG RET dmg = result END
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 damage=dmg+1 END
 
-            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW1H01" BEGIN
+            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "sw1h01" BEGIN
                 LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
                 READ_LONG 0x54 description_index
                 PATCH_IF description_index > "-1" BEGIN
@@ -333,7 +331,7 @@ END
 
 ACTION_IF zst_1150_dice_twohanded_swords BEGIN
 
-    COPY_EXISTING "SW2H01.ITM" ~override~
+    COPY_EXISTING "sw2h01.itm" ~override~
         SPRINT str @99999
         READ_STRREF 0x50 desc
         INNER_PATCH_SAVE desc ~%desc%~ BEGIN
@@ -351,7 +349,7 @@ ACTION_IF zst_1150_dice_twohanded_swords BEGIN
             LPF WPN_DMG RET dmg = result END
             LPF ALTER_HEADER INT_VAR silent=1 match_type=1 match_dicesize=10 match_dicenumber=1 dicesize=9 damage=dmg+1 END
 
-            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "SW2H01" BEGIN
+            PATCH_IF NOT "%SOURCE_RES%" STR_EQ "sw2h01" BEGIN
                 LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
                 READ_LONG 0x54 description_index
                 PATCH_IF description_index > "-1" BEGIN

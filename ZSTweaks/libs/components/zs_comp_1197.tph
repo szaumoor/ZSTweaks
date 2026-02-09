@@ -4,7 +4,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         COPY_EXISTING ~misca7.itm~ ~override~ //kuo
             LPF ALTER_ITEM INT_VAR general_desc = RESOLVE_STR_REF(@8370) END
-            LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=1 projectile=0 STR_VAR icon = ~IMISC8H~ END
+            LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=1 projectile=0 STR_VAR icon = ~imisc8h~ END
             LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 tmg=9 rd=0 p1=1 STR_VAR effects = ~op=0,p2=2;op=54;op=36~ END
 
    END
@@ -13,7 +13,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         COPY_EXISTING ~misca8.itm~ ~override~ //eye
             LPF ALTER_ITEM INT_VAR general_desc = RESOLVE_STR_REF(@8371) END
-            LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=1 projectile=0 STR_VAR icon = ~IMISCA8~ END
+            LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=1 projectile=0 STR_VAR icon = ~imisca8~ END
             LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 tmg=9 rd=0 p1=1 STR_VAR effects = ~op=0;op=33;op=35~ END
 
     END
@@ -22,7 +22,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         COPY_EXISTING ~miscbv.itm~ ~override~ // brain
             LPF ALTER_ITEM INT_VAR general_desc = RESOLVE_STR_REF(@8372) END
-            LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=1 projectile=0 STR_VAR icon = ~IMISC8H~ END
+            LPF ADD_ITEM_HEADER INT_VAR target=5 charges=1 depletion=1 projectile=0 STR_VAR icon = ~imisc8h~ END
             LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 tmg=9 rd=0 p1=1 STR_VAR effects = ~op=191;op=191,p2=1;op=34;op=37~ END
 
     END

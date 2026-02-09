@@ -1,7 +1,5 @@
-
-
 COPY "%MOD_FOLDER%/items/protection_undead" ~override~
-COPY_EXISTING ~SCRL09.ITM~ ~override~
+COPY_EXISTING ~scrl09.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8580) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 100 opcode = 219 END
 

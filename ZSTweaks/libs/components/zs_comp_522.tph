@@ -1,6 +1,4 @@
-
-
 COPY ~%MOD_FOLDER%/spells/arcane/disintegrate~ ~override~
 COPY_EXISTING ~spwi616.spl~ ~override~
   LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8630) END
-  LPF ADD_SPL_TGTEFF STR_VAR effects = "pwr=0,rd=0,op=326,p2=105,p1=%class_golem_clay%,ip=0,res=ZSTDSTGR" END
+  LPF ADD_SPL_TGTEFF STR_VAR effects = "pwr=0,rd=0,op=326,p2=105,p1=%class_golem_clay%,ip=0,res=zstdstgr" END

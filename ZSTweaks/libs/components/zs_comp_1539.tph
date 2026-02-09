@@ -68,7 +68,7 @@ END ELSE ACTION_IF zst_1539_all_reqs BEGIN
                                 PATCH_IF found = 1 BEGIN
                                     READ_ASCII ( fx_off + 0x14 ) resource
                                     TO_UPPER resource
-                                    INNER_PATCH_FILE ~%resource%.SPL~ BEGIN
+                                    INNER_PATCH_FILE ~%resource%.spl~ BEGIN
                                         READ_LONG 0x34 spell_level
                                         READ_SHORT 0x1c spell_type
                                     END
@@ -208,7 +208,7 @@ END ELSE ACTION_IF zst_1539_rogues_reqs BEGIN
                                 PATCH_IF found = 1 BEGIN
                                     READ_ASCII ( fx_off + 0x14 ) resource
                                     TO_UPPER resource
-                                    INNER_PATCH_FILE ~%resource%.SPL~ BEGIN
+                                    INNER_PATCH_FILE ~%resource%.spl~ BEGIN
                                         READ_LONG 0x34 spell_level
                                         READ_SHORT 0x1c spell_type
                                     END

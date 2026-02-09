@@ -121,8 +121,8 @@ ACTION_IF zst_1534_potion_overhaul BEGIN
     END
 
     COPY_EXISTING ~potn13.itm~ ~override~ // vanilla explosive / fire breath potions
-                    ~potn26.itm~ ~override~
-                    ~potn27.itm~ ~override~
+                  ~potn26.itm~ ~override~
+                  ~potn27.itm~ ~override~
         LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
 
 

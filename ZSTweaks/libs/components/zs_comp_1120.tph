@@ -1,5 +1,3 @@
-
-
 WITH_SCOPE BEGIN
 
     INCLUDE "%MOD_FOLDER%/configurations/zstweaks_npc_group_install.txt"
@@ -7,7 +5,7 @@ WITH_SCOPE BEGIN
                                      AND NOT (MOD_IS_INSTALLED "ZSTweaks.tp2" "1379" AND zst_group_1643_corthala_blade)
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
-        PATCH_IF NOT "%SOURCE_RES%" STR_EQ "l#GNOSW" AND // tongue of thaxx, SotSC
+        PATCH_IF NOT "%SOURCE_RES%" STR_EQ "l#gnosw" AND // tongue of thaxx, SotSC
                  NOT "%SOURCE_RES%" STR_EQ "bdsw1h06" // skip voidsword
         BEGIN
             READ_SHORT 0x1c cat
@@ -32,7 +30,7 @@ WITH_SCOPE BEGIN
 
                 ELSE PATCH_IF zst_1120_backstab_penalty_katana > 0 AND wpn_prof=94 BEGIN
 
-                    PATCH_IF NOT "%SOURCE_RES%" STR_EQ "NPSW04" BEGIN
+                    PATCH_IF NOT "%SOURCE_RES%" STR_EQ "npsw04" BEGIN
                             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_katana%~ END
                     END ELSE BEGIN
                         PATCH_IF no_valygar_gear_comp BEGIN

@@ -1,5 +1,3 @@
-
-
 ACTION_IF is_iwdee BEGIN
 
     OUTER_SET string = RESOLVE_STR_REF(@7622)
@@ -14,6 +12,6 @@ END ELSE BEGIN
 
 END
 
-COPY_EXISTING ~AROW08.ITM~ ~override~
+COPY_EXISTING ~arow08.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=string END
     LPF ALTER_EFFECT INT_VAR header_type = 2 match_opcode = 12 resist_dispel=0 savingthrow = 0 special = 1024 END

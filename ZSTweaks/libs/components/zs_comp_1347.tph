@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING ~bolt04.itm~ ~override~
   LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8200) END
   LPF CLONE_EFFECT INT_VAR match_opcode=142 opcode=12 duration=0 savingthrow=0 parameter1=1 parameter2=op12_poison special=1024 END

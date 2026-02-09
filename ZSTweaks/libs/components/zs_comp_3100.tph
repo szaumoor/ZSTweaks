@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
   READ_BYTE 0x272 race
   PATCH_IF race = race_beetle BEGIN

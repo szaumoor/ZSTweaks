@@ -1,9 +1,7 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
-  COPY_EXISTING ~SPER09.ITM~ ~override~
+  COPY_EXISTING ~sper09.itm~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 probability1 = 49 END
     LPF CLONE_EFFECT INT_VAR match_probability1 = 49 parameter1 = 2 probability2 = 50 probability1 = 79 END
     LPF CLONE_EFFECT INT_VAR match_probability1 = 79 parameter1 = 3 probability2 = 80 probability1 = 100 END

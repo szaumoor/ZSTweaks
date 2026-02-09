@@ -1,7 +1,5 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
-  COPY_EXISTING ~ohdarmor.ITM~ ~override~
+  COPY_EXISTING ~ohdarmor.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6770) END
     LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=28,p1=40~ END
 END

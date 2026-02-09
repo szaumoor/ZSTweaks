@@ -1,5 +1,3 @@
-
-
 COPY ~%MOD_FOLDER%/general/magical_weapons~ ~override~
 
 COPY_EXISTING ~fblade.itm~   ~override~
@@ -30,7 +28,7 @@ COPY_EXISTING ~fblade.itm~   ~override~
               ~moonbla.itm~  ~override~
               ~smcudge.itm~  ~override~
               ~decasta.itm~  ~override~
-              ~msword.itm~  ~override~
+              ~msword.itm~   ~override~
   LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 12 special = 1024 END
 BUT_ONLY IF_EXISTS
 

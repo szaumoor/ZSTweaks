@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING ~sppr208.spl~ ~override~
   LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5020) END
   LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savebonus = "-1" END

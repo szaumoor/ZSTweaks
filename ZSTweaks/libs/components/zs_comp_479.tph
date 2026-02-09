@@ -1,5 +1,3 @@
-
-
 ACTION_IF spell_static_charge > 0 BEGIN
 
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_STATIC_CHARGE" RET spell_res END

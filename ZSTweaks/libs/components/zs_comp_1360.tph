@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING ~xbow04.itm~ ~override~
   READ_LONG 0x08 light_xbow_strref
 

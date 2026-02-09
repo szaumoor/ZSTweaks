@@ -1,4 +1,2 @@
-
-
 COPY_EXISTING ~spwi910.spl~ ~override~
     LPF CLONE_EFFECT INT_VAR match_opcode=215 opcode=176 STR_VAR match_resource=~spmaze1~ END

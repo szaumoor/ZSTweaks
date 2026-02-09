@@ -1,16 +1,14 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY ~%MOD_FOLDER%/items/psion_blade~ ~override~
-    COPY_EXISTING ~ZSTWPSIA.SPL~ ~override~
+    COPY_EXISTING ~zstwpsia.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1=RESOLVE_STR_REF(@7691) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = zs_has_stoneskins END
 
     INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
-    COPY_EXISTING ~SW2H21.ITM~ ~override~
+    COPY_EXISTING ~sw2h21.itm~ ~override~
         LPF ADD_EQUIPPED_EFF INT_VAR p1=race_mind_flayer p2=4 spec=2 STR_VAR effects= ~op=178;op=179~ END
-        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,p1=%race_mind_flayer%,p2=4,res=ZSTWPSIB~ END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,p1=%race_mind_flayer%,p2=4,res=zstwpsib~ END
         LPF ALTER_EFFECT_EX INT_VAR check_headers = 0 duration=0 STR_VAR match_duration_ex="(o_duration > 0)" END
 
         PATCH_IF zst_1150_dice_twohanded_swords AND

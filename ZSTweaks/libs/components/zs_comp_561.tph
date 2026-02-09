@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING ~spwi215.spl~ ~override~
               ~spdr201.spl~ ~override~
               ~spin566.spl~ ~override~

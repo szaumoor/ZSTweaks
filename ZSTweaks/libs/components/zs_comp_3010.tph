@@ -1,5 +1,3 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
   // converting to LG
   COPY_EXISTING ~c6kalden.cre~ ~override~ // paladins that help with bodhi, currently LN, should be LG

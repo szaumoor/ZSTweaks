@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
     LPF IS_FLAG_SET INT_VAR flag=0 RET critical_item = result END // critical item
 

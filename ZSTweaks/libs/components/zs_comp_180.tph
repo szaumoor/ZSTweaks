@@ -1,5 +1,3 @@
-
-
 OUTER_SET new_description = RESOLVE_STR_REF(@5040)
 COPY_EXISTING ~spwi911.spl~ ~override~
               ~spwish24.spl~ ~override~

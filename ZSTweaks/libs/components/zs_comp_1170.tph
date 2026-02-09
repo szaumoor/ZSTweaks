@@ -1,14 +1,12 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY_EXISTING ~LEAT19.ITM~ ~override~
+  COPY_EXISTING ~leat19.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6020) END
     LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 27 END
     LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 142 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=69;op=169,p2=59;op=169,p2=53;op=142,p2=90;op=142,p2=31;op=101,p2=216;op=282,p1=1,p2=2;op=267,p1=41495;op=267,p1=40968;op=267,p1=40969;op=267,p1=40979;op=267,p1=41616;op=346,p1=4,spec=5;op=346,p1=4,spec=7~ END
 
-  COPY_EXISTING ~c2valy01.ITM~ ~override~
+  COPY_EXISTING ~c2valy01.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50031) END
     LPF RM_STAT_REQS END
     LPF ADD_EQUIPPED_EFF STR_VAR effects =~op=169,p2=59;op=169,p2=53;op=142,p2=90;op=101,p2=216;op=282,p1=1,p2=2;op=267,p1=41495;op=267,p1=40968;op=267,p1=40969;op=267,p1=40979;op=267,p1=41616;op=346,p1=4,spec=5;op=346,p1=4,spec=7~ END

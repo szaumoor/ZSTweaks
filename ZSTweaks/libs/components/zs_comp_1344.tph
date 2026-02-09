@@ -1,6 +1,4 @@
-
-
-COPY_EXISTING ~AROW05.ITM~ ~override~
+COPY_EXISTING ~arow05.itm~ ~override~
   LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7600) END
   LPF ALTER_EFFECT INT_VAR header_type = 2 match_opcode = 25 parameter1=1 parameter2=0 duration = 30 END
   LPF ALTER_EFFECT INT_VAR match_opcode=142 duration=30 END

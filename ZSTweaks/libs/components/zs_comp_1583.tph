@@ -1,5 +1,3 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     OUTER_SET wisdom_drained = RESOLVE_STR_REF(@7165)

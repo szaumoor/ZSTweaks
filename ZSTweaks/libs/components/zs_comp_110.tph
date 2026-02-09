@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING ~sppr101.spl~  ~override~
               ~bdcaela5.spl~ ~override~
   LPF ALTER_HEADER INT_VAR speed = 3 END

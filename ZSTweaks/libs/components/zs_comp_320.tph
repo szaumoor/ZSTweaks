@@ -45,5 +45,3 @@ END
 COPY_EXISTING ~sppr704.spl~ ~override~  // NATURE'S BEAUTY
     LPF ALTER_EFFECT INT_VAR resist_dispel = 3 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 74 duration = 0 timing = 1 END
-
-

@@ -1,10 +1,8 @@
-
-
-COPY_EXISTING ~DOBONE.ITM~ ~override~
+COPY_EXISTING ~dobone.itm~ ~override~
     LPF ALTER_HEADER INT_VAR range = 30 END
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING "DART01.ITM" ~override~
+COPY_EXISTING "dart01.itm" ~override~
     SPRINT str_sf @99998
     READ_STRREF 0x50 desc
     READ_LONG 0x50 basic_dart_udesc
@@ -21,7 +19,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 	PATCH_IF cat = 24 AND wpn_prof = 106 AND num_abilities > 0 BEGIN // darts
 
         READ_LONG 0x50 id_udesc
-        PATCH_IF (NOT "%SOURCE_RES%" STR_EQ "DART01") AND id_udesc = basic_dart_udesc BEGIN
+        PATCH_IF (NOT "%SOURCE_RES%" STR_EQ "dart01") AND id_udesc = basic_dart_udesc BEGIN
             LPF ALTER_ITEM INT_VAR general_desc = changed_description_index END
         END
 

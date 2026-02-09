@@ -1,5 +1,3 @@
-
-
 OUTER_SET wand_missile_desc = RESOLVE_STR_REF(@7460)
 COPY_EXISTING ~wand03.itm~ ~override~
               ~wand12_.itm~ ~override~ 

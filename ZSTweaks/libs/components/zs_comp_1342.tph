@@ -1,5 +1,3 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
   COPY ~%MOD_FOLDER%/items/protector_dryads~ ~override~
@@ -10,6 +8,6 @@ ACTION_IF NOT is_iwdee BEGIN
       LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7020) END
     END
 
-    LPF ADD_ON_HIT_EFF INT_VAR tmg=1 p2=4 t=4 STR_VAR res=~ZSTWMI01~ effects=~op=177,p1=113;op=177,p1=143;op=177,p1=165;op=177,p1=110;op=177,p1=161;op=177,p1=111~ END
+    LPF ADD_ON_HIT_EFF INT_VAR tmg=1 p2=4 t=4 STR_VAR res=~zstwmi01~ effects=~op=177,p1=113;op=177,p1=143;op=177,p1=165;op=177,p1=110;op=177,p1=161;op=177,p1=111~ END
 
 END

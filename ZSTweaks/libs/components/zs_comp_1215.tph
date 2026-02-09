@@ -1,10 +1,8 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/aeger_hide~ ~override~
-  COPY_EXISTING ~LEAT20.ITM~ ~override~
+  COPY_EXISTING ~leat20.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8450) END
-    LPF ADD_EQUIPPED_EFF INT_VAR p1=kit_barbarian p2=9 STR_VAR effects = ~op=177,res=ZSTWAEGA;op=177,res=ZSTWAEGB;op=177,res=ZSTWAEGC;op=177,res=ZSTWAEGD;op=177,res=ZSTWAEGE;op=177,res=ZSTWAEGF;op=177,res=ZSTWAEGG;op=177,res=ZSTWAEGH;op=177,res=ZSTWAEGJ;op=177,res=ZSTWAEGK;op=177,res=ZSTWAEGL~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1=kit_barbarian p2=9 STR_VAR effects = ~op=177,res=zstwaega;op=177,res=zstwaegb;op=177,res=zstwaegc;op=177,res=zstwaegd;op=177,res=zstwaege;op=177,res=zstwaegf;op=177,res=zstwaegg;op=177,res=zstwaegh;op=177,res=zstwaegj;op=177,res=zstwaegk;op=177,res=zstwaegl~ END
 
 END

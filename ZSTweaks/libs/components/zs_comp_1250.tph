@@ -1,9 +1,7 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
-  COPY_EXISTING ~SW1H66.ITM~ ~override~
+  COPY_EXISTING ~sw1h66.itm~ ~override~
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 2 END
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 5 STR_VAR effects=~op=0,p1=1,p2=2;op=0,p1=1,p2=4;op=0,p1=1,p2=8;op=27;op=28;op=29;op=30;op=31;op=86;op=87;op=88;op=89;op=166;op=173~ END
 

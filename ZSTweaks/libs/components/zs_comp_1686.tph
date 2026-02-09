@@ -1,11 +1,9 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
   COPY ~%MOD_FOLDER%/items/life_stealer~ ~override~
   COPY_EXISTING ~dagg20.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR this_plus=1 id_desc=RESOLVE_STR_REF(@7780) flags=2**4 STR_VAR icon = ~ZSTWVMPB~ END
+    LPF ALTER_ITEM INT_VAR this_plus=1 id_desc=RESOLVE_STR_REF(@7780) flags=2**4 STR_VAR icon = ~zstwvmpb~ END
     LPF DELETE_EFFECT INT_VAR check_globals = 0 END
     LPF RGB INT_VAR red = 232 blue = 42 green = 42 RET color = result END
     SET loc_fade_speed = 21 + ( 40 << 16 )

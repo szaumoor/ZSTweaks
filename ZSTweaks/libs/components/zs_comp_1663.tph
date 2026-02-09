@@ -1,5 +1,3 @@
-
-
 ACTION_IF is_bgee_or_eet BEGIN
 
   COPY_EXISTING "ring05.itm" ~override~

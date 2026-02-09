@@ -1,5 +1,3 @@
-
-
 OUTER_SET new_description        = RESOLVE_STR_REF(@5250)
 OUTER_SET new_description_priest = RESOLVE_STR_REF(@5251)
 
@@ -22,7 +20,7 @@ END ELSE ACTION_IF has_iwd_spells_divine BEGIN
 
 END
 
-COPY_EXISTING ~spwi914.spl~ ~override~
+COPY_EXISTING ~spwi914.spl~  ~override~
               ~spwish19.spl~ ~override~
 
     SET undead_or_golem = 55
@@ -35,6 +33,6 @@ COPY_EXISTING ~spwi914.spl~ ~override~
 
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~SCRL9W.ITM~ ~override~
+COPY_EXISTING ~scrl9w.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=new_description END
 BUT_ONLY IF_EXISTS
