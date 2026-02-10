@@ -1,14 +1,14 @@
-ACTION_IF NOT is_iwdee BEGIN
-
-  COPY_EXISTING ~carrio1.itm~  ~override~
-                ~ghoul1.itm~   ~override~
-                ~ghast1.itm~   ~override~
-                ~ghoullor.itm~ ~override~
-                ~lich02.itm~   ~override~
-                ~trollspi.itm~ ~override~
-                ~wolfva1.itm~  ~override~
-                ~bdghastg.itm~ ~override~
-    LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
-  BUT_ONLY IF_EXISTS
-
-END
+COPY_EXISTING ~carrio1.itm~  ~override~
+              ~ghoul1.itm~   ~override~
+              ~ghast1.itm~   ~override~
+              ~ghoullor.itm~ ~override~
+              ~lich02.itm~   ~override~
+              ~trollspi.itm~ ~override~
+              ~wolfva1.itm~  ~override~
+              ~bdghastg.itm~ ~override~
+              ~otyugh.itm~   ~override~
+              ~iotyugh.itm~  ~override~
+              ~bdotyg01.itm~ ~override~
+              ~l#mcoty.itm~  ~override~
+  LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
+BUT_ONLY IF_EXISTS
