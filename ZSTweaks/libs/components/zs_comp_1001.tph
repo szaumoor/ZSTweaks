@@ -270,3 +270,7 @@ END
 ACTION_IF zst_group_1365_shield_of_balduran BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1365.tph~ END
 END
+
+ACTION_IF zst_group_1366_helm_of_balduran BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1366.tph~ END
+END

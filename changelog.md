@@ -10,6 +10,7 @@
 - Misc internal fixes
 - Added configuration option to make smashing wave party friendly. On by default.
 - Added otyugh attacks to component 3080, as they should not be considered magical (their mouth is full of disease, what's there to dispel or resist with magic resistance?)
+- Added also a missing natural weapon of carrion crawler that wasn't being patched by component 3080
 - Opened component 3080 to IWDEE
 
 ## New components

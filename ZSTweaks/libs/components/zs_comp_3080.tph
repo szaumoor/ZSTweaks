@@ -1,4 +1,5 @@
 COPY_EXISTING ~carrio1.itm~  ~override~
+              ~bdccraw1.itm~ ~override~
               ~ghoul1.itm~   ~override~
               ~ghast1.itm~   ~override~
               ~ghoullor.itm~ ~override~
