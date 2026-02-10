@@ -8,6 +8,12 @@ ACTION_IF spell_smashing_wave > 0 BEGIN
   END
 
   COPY_EXISTING ~%spell_res%.spl~ ~override~
+    SPRINT desc_if_no_friendly_fire ""
+
+    PATCH_IF zst_477_smashing_wave_party_friendly BEGIN
+      SPRINT desc_if_no_friendly_fire @8659
+    END
+
     LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8658) END
 
     PATCH_IF NOT is_iwdee OR is_iwdee AND NOT has_eefixpack BEGIN

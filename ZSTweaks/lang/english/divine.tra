@@ -897,7 +897,9 @@ Casting Time: 3
 Area of Effect: Special
 Saving Throw: Special
 
-This spell summons a 5-ft. wide wave of water that moves in the direction willed by the caster, striking all in its path with massive force. The wave deals 6d8+4 points of crushing damage; in addition, struck creatures have a 33% chance of being either stunned or knocked unconscious for 2 rounds. If the creature struck makes a successful Save vs. Breath Weapon at -1, the damage is reduced by half and the creature avoids being stunned or knocked unconscious. This spell is not affected by Magic Resistance.~
+This spell summons a 5-ft. wide wave of water that moves in the direction willed by the caster, striking all in its path%desc_if_no_friendly_fire% with massive force. The wave deals 6d8+4 points of crushing damage; in addition, struck creatures have a 33% chance of being either stunned or knocked unconscious for 2 rounds. If the creature struck makes a successful Save vs. Breath Weapon at -1, the damage is reduced by half and the creature avoids being stunned or knocked unconscious. This spell is not affected by Magic Resistance.~
+
+@8659 = ~ except allies~
 
 @8562 = ~Static Charge
 (Alteration)
