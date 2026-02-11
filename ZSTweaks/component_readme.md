@@ -1966,6 +1966,8 @@ Cool spell that required an improvement:
 - Changes of being knocked unconscious or stunned are equal now. 33% chance of being stunned or put to sleep if save is failed, both effects for 2 rounds
 - Save vs. Breath at -1 to avoid both effects and take half damage
 - Magic resistance doesn't apply. Because it's water.
+- Casting speed decreased from 9 to 6
+- Optionally, it does not harm allies (but can harm neutral targets). On by default
 
 ### Make Static Charge electrocute twice as often, but for half the damage (479) (IWDEE BGEE BG2EE EET)
 
