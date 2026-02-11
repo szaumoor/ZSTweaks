@@ -21,4 +21,3 @@
   - Immunity to stun, and 2 HP/round regeneration, instead of +1 THAC0 and +5 Hit Points
 - Make the effects on-hit of Otyugh attacks nonmagical and subject to saving throws (3160) (all games)
   - Save vs. Death at -2 instead of no way to prevent it beyond being immune to poison / undead / golem
-  
