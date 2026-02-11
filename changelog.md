@@ -16,7 +16,7 @@
 ## New components
 
 - Make Helm of Balduran to work as it does in BG3 (BGEE BG2EE EET)
-  - Immunity to charm, and 2 HP/round regeneration, instead of +1 THAC0 and +5 Hit Points
-- Make the effects on-hit of Otyugh attacks nonmagical and subject to saving throws
+  - Immunity to stun, and 2 HP/round regeneration, instead of +1 THAC0 and +5 Hit Points
+- Make the effects on-hit of Otyugh attacks nonmagical and subject to saving throws (all games)
   - Save vs. Death at -2 instead of no save way to prevent it beyond being immune to poison
   
