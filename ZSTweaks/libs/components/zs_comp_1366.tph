@@ -9,7 +9,7 @@ ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING ~helm07.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@60060) END
         LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex="(o_opcode = 18 OR o_opcode = 54)" END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=177,p2=2,res=zstbldhm~ END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=177,p2=2,dur=3153600000,res=zstbldhm~ END
         LPF ADD_EQUIPPED_EFF INT_VAR rd=0 STR_VAR effectsd = ~op=46;op=240,p2=55~ END
         LPF ADD_EQUIPPED_EFF INT_VAR rd=0 p2=2 STR_VAR effects = ~op=321,res=bdshries;op=321,res=icetrlst;op=321,res=spin974;op=321,res=sppr718;op=321,res=sppr984;op=321,res=spwi118e;op=321,res=spwi118g;op=321,res=spwi816;op=321,res=spwi898~ END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=169,p2=55;op=296,res=spflayer;op=267,p1=%stunned_strref%;op=267,p1=26050;op=101,p2=210;op=101,p2=45~ END
