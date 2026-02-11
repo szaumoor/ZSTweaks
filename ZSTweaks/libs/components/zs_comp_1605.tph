@@ -1,5 +1,3 @@
-
-
 ACTION_IF is_bgee_bg2ee_or_eet BEGIN
   
   COPY_EXISTING "sw1h24.itm" ~override~

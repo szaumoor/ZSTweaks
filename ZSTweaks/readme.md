@@ -2,7 +2,7 @@
 
 ## Description
 
-This mod is a collection of tweaks designed to improve the vanilla game experience. While most components offer simple enhancements for underpowered items and abilities, some provide more extensive, but not radical, overhauls. Two of the main themes in my tweaks (outside spell tweaks) are that I want to reward specialization (single class vs. multiclass), and that unique items that have nothing functionally unique become unique. Nothing kills my mojo more than an item with an awesome name and backstory that literally just behaves like the base item with a +1 bonus to base stats (such as Fallorain's Plate).
+This mod is a collection of tweaks designed to improve the vanilla game experience in the Enhanced Edition of the Infinity Engine games, except for PST:EE. While most components offer simple enhancements for underpowered items and abilities, some provide more extensive, but not radical, overhauls. Two of the main themes in my tweaks (outside spell tweaks) are that I want to reward specialization (single class vs. multiclass), and that unique items that have nothing functionally unique become unique. Nothing kills my mojo more than an item with an awesome name and backstory that literally just behaves like the base item with a +1 bonus to base stats (such as Fallorain's Plate).
 
 Each component group includes an option to install up to all of its components at once. You can customize these group installations for all groups of components via the configuration files in the `ZSTweaks/configurations` directory. By default, all components in a group are selected for installation. Warning: do not change values in the configuration file in the middle of an installation or before completing your ZSTweaks installation to avoid issues.
 

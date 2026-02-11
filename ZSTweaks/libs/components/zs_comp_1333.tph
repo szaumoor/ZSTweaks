@@ -1,11 +1,9 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/vecna~ ~override~
-  COPY_EXISTING ~WA2ROBE.ITM~ ~override~
+  COPY_EXISTING ~wa2robe.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_name = RESOLVE_STR_REF(@60020) id_desc = RESOLVE_STR_REF(@60021) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 189 parameter1 = 2 END
-    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 2 STR_VAR effects = ~op=346,spec=1;op=346,spec=2;op=346,spec=3;op=346,spec=4;op=346,spec=5;op=346,spec=6;op=346,spec=7;op=346,spec=8;op=232,p1=2,p2=1,res=ZSTWVCN1~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 2 STR_VAR effects = ~op=346,spec=1;op=346,spec=2;op=346,spec=3;op=346,spec=4;op=346,spec=5;op=346,spec=6;op=346,spec=7;op=346,spec=8;op=232,p1=2,p2=1,res=zstwvcn1~ END
 
 END

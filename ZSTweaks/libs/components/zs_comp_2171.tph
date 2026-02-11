@@ -1,5 +1,3 @@
-
-
 OUTER_SET class_comp_group_installed = group_component AND zst_group_2170_thac0_rogue AND zst_2170_thac0_thieves
 
 ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~2170~ OR class_comp_group_installed BEGIN
@@ -10,7 +8,7 @@ ACTION_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~2170~ OR class_comp_group_installed B
   ACTION_IF zst_2260_allow_swash AND MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~2260~  BEGIN
 
     COPY ~%MOD_FOLDER%/class_kits/extra_apr~ ~override~
-    COPY_EXISTING ~CLABTH04.2DA~ ~override~
+    COPY_EXISTING ~clabth04.2da~ ~override~
       LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 f_MaxLevel = 13 f_Increment = 6 STR_VAR f_Entry = "AP_ZSTWAPR2" END
 
   END

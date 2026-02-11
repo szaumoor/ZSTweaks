@@ -1,5 +1,3 @@
-
-
 COPY ~%MOD_FOLDER%/class_kits/quivering_palm~ ~override~
 COPY_EXISTING "spcl820.spl" ~override~
   LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@6310) END

@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
   READ_SHORT 0x1c category_itm
   PATCH_IF category_itm = 9 OR category_itm = 13 BEGIN // if it's a potion or food item

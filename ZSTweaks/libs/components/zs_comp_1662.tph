@@ -1,12 +1,10 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/montolio~ ~override~
-  COPY_EXISTING ~CLCK32.ITM~ ~override~
+  COPY_EXISTING ~clck32.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7170) END
-    LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=0 opcode=177 parameter1=209 parameter2=5 STR_VAR resource=~ZSTWMON1~ END
+    LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=0 opcode=177 parameter1=209 parameter2=5 STR_VAR resource=~zstwmon1~ END
     LPF CLONE_EFFECT INT_VAR check_headers=0 match_opcode=177 match_parameter1=209 match_parameter2=5
-    STR_VAR resource=~ZSTWMON2~ END
+    STR_VAR resource=~zstwmon2~ END
 
 END

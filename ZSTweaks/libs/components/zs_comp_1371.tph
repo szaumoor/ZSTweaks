@@ -1,7 +1,5 @@
-
-
 INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
-COPY_EXISTING ~AROW07.ITM~ ~override~
+COPY_EXISTING ~arow07.itm~ ~override~
     LPF ALTER_EFFECT INT_VAR check_globals = 0 savingthrow = 1 savebonus = "%zst_1371_save_penalty%" END
 
     PATCH_IF zst_1450_allow_bows AND 
@@ -9,7 +7,7 @@ COPY_EXISTING ~AROW07.ITM~ ~override~
             (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND
              zst_group_1450_finesse)) 
     BEGIN
-        LPF ALTER_EFFECT INT_VAR match_opcode = 326 savingthrow = 0 savebonus = 0 STR_VAR match_resource = "ZSTWA0" END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 326 savingthrow = 0 savebonus = 0 STR_VAR match_resource = "zstwa0" END
     END
 
     PATCH_IF zst_1371_save_penalty < 0 BEGIN

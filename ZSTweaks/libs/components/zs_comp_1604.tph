@@ -1,17 +1,15 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/duskblade~ ~override~
-  COPY_EXISTING ~HALB08.ITM~ ~override~
+  COPY_EXISTING ~halb08.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7720) END
-    LPF ADD_ON_HIT_EFF STR_VAR effects=~op=12,dsize=6,dnum=1,p2=%op12_cold%,stype=4,spec=1024;op=326,pro1=24,p2=124,p1=3,res=ZSTWDSKA;op=326,pro1=24,p2=125,p1=3,res=ZSTWDSKB~ END
+    LPF ADD_ON_HIT_EFF STR_VAR effects=~op=12,dsize=6,dnum=1,p2=%op12_cold%,stype=4,spec=1024;op=326,pro1=24,p2=124,p1=3,res=zstwdska;op=326,pro1=24,p2=125,p1=3,res=zstwdskb~ END
     LPF ALTER_EFFECT INT_VAR match_opcode=12 special=1024 END
 
-  COPY_EXISTING ~ZSTWDSKA.SPL~ ~override~
+  COPY_EXISTING ~zstwdska.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@7721) END
 
-  COPY_EXISTING ~ZSTWDSKB.SPL~ ~override~
+  COPY_EXISTING ~zstwdskb.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1 = RESOLVE_STR_REF(@7722) END
 
 END

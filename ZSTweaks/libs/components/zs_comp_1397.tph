@@ -1,5 +1,3 @@
-
-
 COPY ~%MOD_FOLDER%/general/ranged_sneak~ ~override~
 
 ACTION_CLEAR_ARRAY my_clabs

@@ -1,17 +1,15 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/storm_star~ ~override~
-  COPY_EXISTING ~BLUN28.ITM~ ~override~
+  COPY_EXISTING ~blun28.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8260) END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=29,p1=20;op=142,p2=27;op=332,p1=5,p2=3~ END
 
-  COPY_EXISTING ~BLUN29.ITM~ ~override~
+  COPY_EXISTING ~blun29.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8261) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 1 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 29 parameter1 = 40 END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 146 parameter1 = 1 probability1 = 11 STR_VAR match_resource = "SPBLUN29" END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=332,p1=7,p2=3;op=232,p1=1,res=ZSTWSTST~ END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 146 parameter1 = 1 probability1 = 11 STR_VAR match_resource = "spblun29" END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=332,p1=7,p2=3;op=232,p1=1,res=zstwstst~ END
 
 END

@@ -1,4 +1,2 @@
-
-
 COPY_EXISTING ~arow04.itm~ ~override~
   LPF ALTER_EFFECT INT_VAR resist_dispel = 0 special = 1024 END

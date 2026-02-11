@@ -1,5 +1,3 @@
-
-
 <<<<<<<<.../zstweaks/summoned_demons_givexp.baf
 IF
   Killed([ANYONE])
@@ -11,6 +9,6 @@ END
 >>>>>>>>
 APPEND ~object.ids~ ~94 LastKilled~ UNLESS ~^94[ %TAB%]+LastKilled$~
 
-EXTEND_TOP "DEMNABSU.BCS" ".../zstweaks/summoned_demons_givexp.baf"
-EXTEND_TOP "DEMGLASU.BCS" ".../zstweaks/summoned_demons_givexp.baf"
-EXTEND_TOP "DEMPITSU.BCS" ".../zstweaks/summoned_demons_givexp.baf"
+EXTEND_TOP "demnabsu.bcs" ".../zstweaks/summoned_demons_givexp.baf"
+EXTEND_TOP "demglasu.bcs" ".../zstweaks/summoned_demons_givexp.baf"
+EXTEND_TOP "dempitsu.bcs" ".../zstweaks/summoned_demons_givexp.baf"

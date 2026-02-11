@@ -1,9 +1,7 @@
-
-
 ACTION_IF spell_spike_stones > 0 BEGIN
 
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SPIKE_STONES" RET spell_res END
-  COPY_EXISTING ~%spell_res%.SPL~ ~override~
+  COPY_EXISTING ~%spell_res%.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8576) END
     LPF CLONE_EFFECT INT_VAR match_opcode=12 parameter2=op12_slashing END
     LPF ALTER_EFFECT INT_VAR match_savingthrow = 1 savingthrow = 2 END

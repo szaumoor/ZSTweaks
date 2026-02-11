@@ -1,5 +1,3 @@
-
-
 COPY ~%MOD_FOLDER%/creatures/yuanti~ ~override~
 OUTER_SPRINT melee_effect "zsipyua2"
 OUTER_SET movement_boost = 4

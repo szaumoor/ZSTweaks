@@ -1,5 +1,3 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
@@ -14,7 +12,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
       SET ench = 3
       LPM PROBABILITY_BONUS
-      LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 probability1=(bonus+base_ss_club) STR_VAR match_resource=~ZSTWY2~ resource=~ZSTWY3~ END
+      LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=1 probability1=(bonus+base_ss_club) STR_VAR match_resource=~zstwy2~ resource=~zstwy3~ END
       
     END
 
@@ -32,7 +30,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       LPM remove_haste_immunity
       LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6,rd=2;op=319,pwr=1,p2=11,res=Mazzy,spec=9104~ END
       LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-      LPF ADD_ON_HIT_EFF INT_VAR stype=8 sbonus="-2" STR_VAR effects = ~ip=0,op=177,p2=8,p1=%alignmen_mask_evil%,res=ZSTWMAZZ;op=126,p1=-4,dur=45;op=337,p1=-1,p2=16;op=337,p1=38,p2=240~ END
+      LPF ADD_ON_HIT_EFF INT_VAR stype=8 sbonus="-2" STR_VAR effects = ~ip=0,op=177,p2=8,p1=%alignmen_mask_evil%,res=zstwmazz;op=126,p1=-4,dur=45;op=337,p1=-1,p2=16;op=337,p1=38,p2=240~ END
 
   END
 

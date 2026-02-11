@@ -1,5 +1,3 @@
-
-
 ACTION_IF zst_160_bbod BEGIN
 
     OUTER_SPRINT base_effect ~op=263,p1=0,p2=1~

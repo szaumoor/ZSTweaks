@@ -1,8 +1,6 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
-  COPY_EXISTING ~LEAT09.ITM~ ~override~
+  COPY_EXISTING ~leat09.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8400) END
     LPF CLONE_EFFECT INT_VAR match_opcode = 0 match_parameter2 = 16 parameter2 = 1 parameter1 = 3 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=87,p1=10;op=332,p2=9,p1=8;op=176,p1=3~ END

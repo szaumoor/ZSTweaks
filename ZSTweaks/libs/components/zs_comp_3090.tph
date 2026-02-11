@@ -1,5 +1,3 @@
-
-
 DEFINE_PATCH_MACRO modify_shadow
 BEGIN
     WRITE_SHORT 0x46 (THIS - 2)
@@ -33,7 +31,7 @@ COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
 
         PATCH_IF has_zs_shadowdancer_overhaul BEGIN
             READ_ASCII 0x2cc script_name
-            PATCH_IF "%script_name%" STR_EQ "ZS_SDSHD" BEGIN
+            PATCH_IF "%script_name%" STR_EQ "zs_sdshd" BEGIN
                 LPM modify_shadow
             END
 

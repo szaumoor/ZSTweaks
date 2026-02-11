@@ -1,8 +1,6 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY_EXISTING ~PSPEART.PRO~ ~override~
+  COPY_EXISTING ~pspeart.pro~ ~override~
     WRITE_SHORT 0xa 60
 
 END

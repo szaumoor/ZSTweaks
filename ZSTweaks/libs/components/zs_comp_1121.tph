@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     READ_SHORT 0x1c cat
     READ_BYTE 0x31 wpn_prof

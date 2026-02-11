@@ -1,9 +1,7 @@
-
-
 ACTION_IF NOT is_bgee_or_iwdee BEGIN
 
-  COPY_EXISTING "DAGG11.ITM" ~override~
-                "DAGG12.ITM" ~override~
+  COPY_EXISTING "dagg11.itm" ~override~
+                "dagg12.itm" ~override~
     LPF ALTER_HEADER INT_VAR dicenumber = 1 END
     READ_LONG 0x54 description_index
     

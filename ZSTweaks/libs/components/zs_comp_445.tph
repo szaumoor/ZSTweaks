@@ -1,43 +1,41 @@
-
-
 OUTER_SET new_description_clenched = RESOLVE_STR_REF(@7381)
-COPY_EXISTING ~SPWI818.SPL~ ~override~ // bigby's clenched fist
+COPY_EXISTING ~spwi818.spl~ ~override~ // bigby's clenched fist
     LPF ALTER_SPELL INT_VAR desc=new_description_clenched END
     LPF LAST_VALID_HEADER RET h = result END
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h resist_dispel=3 END //
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h match_savingthrow=4 savebonus="-4" END
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h match_opcode=12 parameter1=6 dicesize=6 dicenumber=4 END
 
-COPY_EXISTING ~SCRLB1.ITM~ ~override~
+COPY_EXISTING ~scrlb1.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=new_description_clenched END
 
-COPY_EXISTING ~SPWI818A.SPL~ ~override~ // bigby's fist subspell
+COPY_EXISTING ~spwi818a.spl~ ~override~ // bigby's fist subspell
     LPF LAST_VALID_HEADER RET h = result END
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h resist_dispel=3 END 
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h match_opcode=12 match_duration=6 parameter1=4 dicesize=6 dicenumber=6 END
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h match_opcode=12 match_duration=12 parameter1=2 dicesize=8 dicenumber=6 END
 
-COPY_EXISTING ~SPWI818B.SPL~ ~override~ // bigby's second subspell
+COPY_EXISTING ~spwi818b.spl~ ~override~ // bigby's second subspell
     LPF LAST_VALID_HEADER RET h = result END
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h match_opcode=206 savebonus="-2" END
 
 OUTER_SET new_description_crushing = RESOLVE_STR_REF(@7382)
-COPY_EXISTING ~SPWI918.SPL~ ~override~ // bigby's crushing hand
+COPY_EXISTING ~spwi918.spl~ ~override~ // bigby's crushing hand
     LPF ALTER_SPELL INT_VAR desc=new_description_crushing END
     LPF LAST_VALID_HEADER RET h = result END
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h resist_dispel=3 END // bypasses magic resistance but still applies dispel
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h match_savingthrow=4 savebonus="-6" END
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h match_opcode=12 parameter1=6 dicesize=6 dicenumber=6 END
 
-COPY_EXISTING ~SCRLB2.ITM~ ~override~
+COPY_EXISTING ~scrlb2.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=new_description_crushing END
 
-COPY_EXISTING ~SPWI918A.SPL~ ~override~ // bigby's fist subspell
+COPY_EXISTING ~spwi918a.spl~ ~override~ // bigby's fist subspell
     LPF LAST_VALID_HEADER RET h = result END
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h resist_dispel=3 END // bypasses magic resistance but still applies dispel
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h match_opcode=12 match_duration=6 parameter1=8 dicesize=6 dicenumber=8 END
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h match_opcode=12 match_duration=12 parameter1=10 dicesize=10 dicenumber=6 END
 
-COPY_EXISTING ~SPWI918B.SPL~ ~override~ // bigby's second subspell
+COPY_EXISTING ~spwi918b.spl~ ~override~ // bigby's second subspell
     LPF LAST_VALID_HEADER RET h = result END
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h match_opcode=206 savebonus="-4" END

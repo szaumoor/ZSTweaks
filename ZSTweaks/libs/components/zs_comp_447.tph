@@ -1,5 +1,3 @@
-
-
 COPY ~%MOD_FOLDER%/spells/arcane/melf~ ~override~
 COPY_EXISTING ~spwi211.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8220) END

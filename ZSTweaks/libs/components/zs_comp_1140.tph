@@ -1,5 +1,3 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     WITH_SCOPE BEGIN
@@ -36,8 +34,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                 LPF ALTER_HEADER INT_VAR match_type = 1 damage = 5 to_hit = 5 END
             END
 
-        ADD_PROJECTILE ~%MOD_FOLDER%/pro/calllih.PRO~ ~Call Lightning IWDEE~
-        ADD_PROJECTILE ~%MOD_FOLDER%/pro/fstrikh.PRO~ ~Heavenly Flames IWDEE~
+        ADD_PROJECTILE ~%MOD_FOLDER%/pro/calllih.pro~ ~Call Lightning IWDEE~
+        ADD_PROJECTILE ~%MOD_FOLDER%/pro/fstrikh.pro~ ~Heavenly Flames IWDEE~
         COPY ~%MOD_FOLDER%/items/dagger_star~ ~override~
 
         COPY_EXISTING ~zstwdst0.spl~ ~override~

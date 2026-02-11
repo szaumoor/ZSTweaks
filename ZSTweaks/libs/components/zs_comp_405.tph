@@ -1,5 +1,3 @@
-
-
 OUTER_SET new_description = RESOLVE_STR_REF(@7380)
 COPY_EXISTING ~spwi813.spl~ ~override~
   LPF ALTER_SPELL INT_VAR desc=new_description END

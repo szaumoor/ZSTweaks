@@ -137,6 +137,7 @@
 @1336 = ~Make Cowl of the Stars more useful~
 @1351 = ~Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing~
 @1365 = ~Make Shield of Balduran less of an auto-win item~
+@1366 = "Make Helm of Balduran to work as it does in BG3"
 
 /// DAGGER TWEAKS
 @1000 = "Make throwing poisoned daggers less rare and more likely to poison enemies"
@@ -373,10 +374,11 @@
 @3130 = ~Make minotaurs tougher and more dangerous~
 @3140 = ~Make ogre / oni mages regenerating fiends, as per PnP~
 @3150 = ~Make drow's magic resistance lower (configurable)~
+@3160 = ~Make the effects on-hit of Otyugh attacks nonmagical and subject to saving throws~
 
 // END-OF-INSTALL ORDER TWEAKS
 @1531 = ~Make a selection of spells ignore magic resistance~
-@1532 = ~Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage. WARNING: Install this component DEAD LAST after other components that modify these items, including components from other mods~
+@1532 = ~Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage~
 @1548 = ~Make Void-weapons slightly more effective and logical~
 
 

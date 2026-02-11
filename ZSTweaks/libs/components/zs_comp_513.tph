@@ -1,5 +1,3 @@
-
-
 ACTION_IF spell_whirlwind > 0 BEGIN
 
   WITH_SCOPE BEGIN

@@ -2,11 +2,23 @@
 
 ## Fixes
 
-- Fix for Hexxat's Blood Drain so the cooldown works even if Hexxat is interrupted when trying to "cast" the Blood Drain
+- Fixed small typo in descriptions of Holy Words.
+- Fix for small issue for compatibility with Fishing for trouble in Finesse component
+- Removed super-serious warning in component 1532 since it no longer applies (install whenever, not necessarily at the very end).
 
 ## Modifications
 
 - Misc internal fixes
-- Revised the Aule's Staff component so it patches the Martial Staff without changing its name or basic description in EET. In BG2EE it replaces the staff for Aule's Staff, because it's at least unique.
-- Added minor compatibility bit between my tweak to The Visage and [The Pursuit of Justice mod by bucketfulofsunshine](https://github.com/bucketfulofsunshine/the-pursuit-of-justice) so descriptions are in line
-- Added Vynd from Glam NPC and Nym from IWDEE to the list of drow to have magic resistance toned down
+- Added configuration option to make smashing wave party friendly. On by default.
+- Smashing Wave component now also decreases casting time from 9 to 6
+- Added otyugh attacks to component 3080, as they should not be considered magical (their mouth is full of disease, what's there to dispel or resist with magic resistance?)
+- Added also a missing natural weapon of carrion crawler that wasn't being patched by component 3080
+- Opened component 3080 to IWDEE
+
+## New components
+
+- Make Helm of Balduran to work as it does in BG3 (1366) (BGEE BG2EE EET)
+  - Immunity to stun, and 2 HP/round regeneration, instead of +1 THAC0 and +5 Hit Points
+- Make the effects on-hit of Otyugh attacks nonmagical and subject to saving throws (3160) (all games)
+  - Save vs. Death at -2 instead of no way to prevent it beyond being immune to poison / undead / golem
+  

@@ -1,4 +1,2 @@
-
-
 COPY_EXISTING ~spwi217.spl~ ~override~
     LPF DELETE_EFFECT INT_VAR match_opcode = 165 END

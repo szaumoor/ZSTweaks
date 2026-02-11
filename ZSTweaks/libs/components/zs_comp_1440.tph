@@ -1,7 +1,5 @@
-
-
 OUTER_SET new_general_desc = RESOLVE_STR_REF(@8365)
-COPY_EXISTING "DAGG01.ITM" ~override~
+COPY_EXISTING "dagg01.itm" ~override~
     READ_LONG 0x50 dagg_original_desc_index
     LPF ALTER_ITEM INT_VAR general_desc = new_general_desc END
 
@@ -14,12 +12,12 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     READ_LONG 0x60 ench
 
 	PATCH_IF cat = 16 AND wpn_prof = 96 AND ench <= 6 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ")
-             AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKUK0") // KUKRI exceptions
-             AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKUK1") // KUKRI exceptions
-             AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKUK2") // KUKRI exceptions
-             AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKUK3") // KUKRI exceptions
-             AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKRE0") // KUKRI ECLIPSE exception
-             AND NOT ("%SOURCE_RES%" STR_EQ "ZSIPKRE2") // KUKRI ECLIPSE exception
+             AND NOT ("%SOURCE_RES%" STR_EQ "zsipkuk0") // KUKRI exceptions
+             AND NOT ("%SOURCE_RES%" STR_EQ "zsipkuk1") // KUKRI exceptions
+             AND NOT ("%SOURCE_RES%" STR_EQ "zsipkuk2") // KUKRI exceptions
+             AND NOT ("%SOURCE_RES%" STR_EQ "zsipkuk3") // KUKRI exceptions
+             AND NOT ("%SOURCE_RES%" STR_EQ "zsipkre0") // KUKRI ECLIPSE exception
+             AND NOT ("%SOURCE_RES%" STR_EQ "zsipkre2") // KUKRI ECLIPSE exception
     BEGIN
 
         READ_LONG 0x50 id_udesc
@@ -30,11 +28,11 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
         PATCH_IF NOT "%SOURCE_RES%" STR_EQ "dagg04" // not grave binder (fake dagger) exceptions
              AND NOT "%SOURCE_RES%" STR_EQ "a7-dg05" // Entropic Blade (wares of the planes)
              AND NOT "%SOURCE_RES%" STR_EQ "a7-dg06" // Enlightenment (wares of the planes)
-             AND NOT "%SOURCE_RES%" STR_EQ "AGMOOSE" // moose dagger (ajoc mod)
+             AND NOT "%SOURCE_RES%" STR_EQ "agmoose" // moose dagger (ajoc mod)
         BEGIN
 
             LPF ALTER_HEADER_EX STR_VAR match_type_ex=~(o_type = 1 OR o_type = 2)~ to_hit_ex = ~(THIS + 1)~ speed_ex = ~((o_speed > 1) ? (THIS - 2) : 0)~ END
-            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1;op=341,p2=1,res=ZSTWDPB%ench%,spec=1;op=341,p2=1,res=ZSTWDPT%ench%,spec=2~ END
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p1=1,p2=1;op=341,p2=1,res=zstwdpb%ench%,spec=1;op=341,p2=1,res=zstwdpt%ench%,spec=2~ END
 
             READ_LONG 0x54 desc_index
             READ_LONG 0x50 udesc_index
@@ -69,7 +67,7 @@ BUT_ONLY
 
 ACTION_IF has_zs_item_pack_kukris BEGIN
 
-    COPY_EXISTING ~ZSIPKUK0.ITM~ ~override~
+    COPY_EXISTING ~zsipkuk0.itm~ ~override~
         READ_STRREF 0x50 desc
         SPRINT str @99999
         INNER_PATCH_SAVE desc ~%desc%~ BEGIN
@@ -78,7 +76,7 @@ ACTION_IF has_zs_item_pack_kukris BEGIN
         SAY_EVALUATED 0x50 ~%desc%~
         READ_LONG 0x50 kukri_unid_desc
 
-    COPY_EXISTING_REGEXP ~^ZSIPK[UR][KE][0-3]\.ITM~ ~override~
+    COPY_EXISTING_REGEXP ~^zsipk[ur][ke][0-3]\.itm~ ~override~
         LPF ALTER_HEADER_EX STR_VAR damage_ex = ~(THIS + 1)~ speed_ex = ~((o_speed > 0) ? (THIS - 1) : 0)~ END
         READ_LONG 0x60 ench
         SET damage_bonus = ench + 1
@@ -91,7 +89,7 @@ ACTION_IF has_zs_item_pack_kukris BEGIN
         END
         SAY_EVALUATED 0x54 ~%desc%~
         LPF ALTER_ITEM INT_VAR general_desc = kukri_unid_desc END
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=ZSTWDPB%ench%,spec=1;op=341,p2=1,res=ZSTWDPT%ench%,spec=2~ END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=zstwdpb%ench%,spec=1;op=341,p2=1,res=zstwdpt%ench%,spec=2~ END
 
     BUT_ONLY IF_EXISTS
 
@@ -99,10 +97,10 @@ END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    COPY_EXISTING ~DAGG18.ITM~ ~override~
+    COPY_EXISTING ~dagg18.itm~ ~override~
         LPF ALTER_ITEM INT_VAR general_desc = RESOLVE_STR_REF(@8366) END
 
-    COPY_EXISTING ~DAGG19.ITM~ ~override~
+    COPY_EXISTING ~dagg19.itm~ ~override~
         LPF ALTER_ITEM INT_VAR general_desc = RESOLVE_STR_REF(@8367) END
 
 END

@@ -1,5 +1,3 @@
-
-
 COPY ~%MOD_FOLDER%/spells/arcane/chromatic_orb~ ~override~
 OUTER_FOR ( pro_n = 0; pro_n <=6; ++pro_n ) BEGIN
   ADD_PROJECTILE ~%MOD_FOLDER%/pro/chromatic_orb/zstchrp%pro_n%.pro~

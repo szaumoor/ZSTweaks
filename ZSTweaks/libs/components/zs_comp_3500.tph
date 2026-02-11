@@ -10,16 +10,16 @@ ACTION_IF NOT is_iwdee BEGIN
 			!GlobalTimerNotExpired("ZS_SPRasaadTimer","oh4230")
 		THEN
 			RESPONSE #100
-				ApplySpellRES("ZSTWSHC",Player1)
+				ApplySpellRES("zstwshc",Player1)
 				SetGlobalTimer("ZS_SPRasaadTimer","oh4230",4)
 		END
 		>>>>>>>>
-		EXTEND_BOTTOM "oh4230.BCS" ".../zstweaks/disable_shadowstep_rasaad.baf" // rasaad's quest
+		EXTEND_BOTTOM "oh4230.bcs" ".../zstweaks/disable_shadowstep_rasaad.baf" // rasaad's quest
 
 	END
 
 	//lava's Sostc
-	ACTION_IF FILE_EXISTS_IN_GAME ~L#GNO1.BCS~ BEGIN
+	ACTION_IF FILE_EXISTS_IN_GAME ~l#gno1.bcs~ BEGIN
 
 		ACTION_IF NOT copied BEGIN
 			COPY ~%MOD_FOLDER%/misc/shadow_plane~ ~override~
@@ -28,69 +28,69 @@ ACTION_IF NOT is_iwdee BEGIN
 
 		<<<<<<<<.../zstweaks/disable_shadowstep_sostc1.baf
 		IF
-			!GlobalTimerNotExpired("ZS_SPGnollTimer","L#GNO1")
+			!GlobalTimerNotExpired("ZS_SPGnollTimer","l#gno1")
 		THEN
 			RESPONSE #100
-				ApplySpellRES("ZSTWSHC",Player1)
-				SetGlobalTimer("ZS_SGnollTimer","L#GNO1",4)
+				ApplySpellRES("zstwshc",Player1)
+				SetGlobalTimer("ZS_SGnollTimer","l#gno1",4)
 		END
 		>>>>>>>>
-		EXTEND_BOTTOM "L#GNO1.BCS" ".../zstweaks/disable_shadowstep_sostc1.baf"
+		EXTEND_BOTTOM "l#gno1.bcs" ".../zstweaks/disable_shadowstep_sostc1.baf"
 
 		<<<<<<<<.../zstweaks/disable_shadowstep_sostc2.baf
 		IF
-			!GlobalTimerNotExpired("ZS_SPGnollTimer","L#GNO2")
+			!GlobalTimerNotExpired("ZS_SPGnollTimer","l#gno2")
 		THEN
 			RESPONSE #100
-				ApplySpellRES("ZSTWSHC",Player1)
-				SetGlobalTimer("ZS_SGnollTimer","L#GNO2",4)
+				ApplySpellRES("zstwshc",Player1)
+				SetGlobalTimer("ZS_SGnollTimer","l#gno2",4)
 		END
 		>>>>>>>>
-		EXTEND_BOTTOM "L#GNO2.BCS" ".../zstweaks/disable_shadowstep_sostc2.baf"
+		EXTEND_BOTTOM "l#gno2.bcs" ".../zstweaks/disable_shadowstep_sostc2.baf"
 
 		<<<<<<<<.../zstweaks/disable_shadowstep_sostc3.baf
 		IF
-			!GlobalTimerNotExpired("ZS_SPGnollTimer","L#GNO3")
+			!GlobalTimerNotExpired("ZS_SPGnollTimer","l#gno3")
 		THEN
 			RESPONSE #100
-				ApplySpellRES("ZSTWSHC",Player1)
-				SetGlobalTimer("ZS_SGnollTimer","L#GNO3",4)
+				ApplySpellRES("zstwshc",Player1)
+				SetGlobalTimer("ZS_SGnollTimer","l#gno3",4)
 		END
 		>>>>>>>>
-		EXTEND_BOTTOM "L#GNO3.BCS" ".../zstweaks/disable_shadowstep_sostc3.baf"
+		EXTEND_BOTTOM "l#gno3.bcs" ".../zstweaks/disable_shadowstep_sostc3.baf"
 
 		<<<<<<<<.../zstweaks/disable_shadowstep_sostc4.baf
 		IF
-			!GlobalTimerNotExpired("ZS_SPGnollTimer","L#GNO4")
+			!GlobalTimerNotExpired("ZS_SPGnollTimer","l#gno4")
 		THEN
 			RESPONSE #100
-				ApplySpellRES("ZSTWSHC",Player1)
-				SetGlobalTimer("ZS_SGnollTimer","L#GNO4",4)
+				ApplySpellRES("zstwshc",Player1)
+				SetGlobalTimer("ZS_SGnollTimer","l#gno4",4)
 		END
 		>>>>>>>>
-		EXTEND_BOTTOM "L#GNO4.BCS" ".../zstweaks/disable_shadowstep_sostc4.baf"
+		EXTEND_BOTTOM "l#gno4.bcs" ".../zstweaks/disable_shadowstep_sostc4.baf"
 
 		<<<<<<<<.../zstweaks/disable_shadowstep_sostc5.baf
 		IF
-			!GlobalTimerNotExpired("ZS_SPGnollTimer","L#GNO5")
+			!GlobalTimerNotExpired("ZS_SPGnollTimer","l#gno5")
 		THEN
 			RESPONSE #100
-				ApplySpellRES("ZSTWSHC",Player1)
-				SetGlobalTimer("ZS_SGnollTimer","L#GNO5",4)
+				ApplySpellRES("zstwshc",Player1)
+				SetGlobalTimer("ZS_SGnollTimer","l#gno5",4)
 		END
 		>>>>>>>>
-		EXTEND_BOTTOM "L#GNO5.BCS" ".../zstweaks/disable_shadowstep_sostc5.baf"
+		EXTEND_BOTTOM "l#gno5.bcs" ".../zstweaks/disable_shadowstep_sostc5.baf"
 
 		<<<<<<<<.../zstweaks/disable_shadowstep_sostc6.baf
 		IF
-			!GlobalTimerNotExpired("ZS_SPGnollTimer","L#GNO6")
+			!GlobalTimerNotExpired("ZS_SPGnollTimer","l#gno6")
 		THEN
 			RESPONSE #100
-				ApplySpellRES("ZSTWSHC",Player1)
-				SetGlobalTimer("ZS_SGnollTimer","L#GNO6",4)
+				ApplySpellRES("zstwshc",Player1)
+				SetGlobalTimer("ZS_SGnollTimer","l#gno6",4)
 		END
 		>>>>>>>>
-		EXTEND_BOTTOM "L#GNO6.BCS" ".../zstweaks/disable_shadowstep_sostc6.baf"
+		EXTEND_BOTTOM "l#gno6.bcs" ".../zstweaks/disable_shadowstep_sostc6.baf"
 
 	END
 

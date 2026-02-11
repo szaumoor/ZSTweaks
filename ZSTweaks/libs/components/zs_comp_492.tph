@@ -9,8 +9,8 @@ COPY_EXISTING ~staf14.itm~ ~override~
   LPF CLONE_EFFECT INT_VAR match_opcode = 84 opcode = 87 parameter1 = 25 END
   LPF CLONE_EFFECT INT_VAR match_opcode = 87 opcode = 88 parameter1 = 15 END
   LPF CLONE_EFFECT INT_VAR match_opcode = 88 opcode = 89 END
-  LPF CLONE_EFFECT INT_VAR match_opcode = 89 opcode = 318 parameter1=0 parameter2=0 STR_VAR resource = "SPPR202" END
-  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 206 STR_VAR resource = "SPPR202" END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 89 opcode = 318 parameter1=0 parameter2=0 STR_VAR resource = "sppr202" END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 206 STR_VAR resource = "sppr202" END
 BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~sppr202.spl~ ~override~
@@ -43,8 +43,8 @@ ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
     
       READ_BYTE 0x273 class
       PATCH_IF class = class_druid OR class = class_fighter_druid OR class = class_ranger BEGIN
-        REMOVE_MEMORIZED_SPELL "SPPR111" 
-        REMOVE_KNOWN_SPELL "SPPR111" 
+        REMOVE_MEMORIZED_SPELL "sppr111" 
+        REMOVE_KNOWN_SPELL "sppr111" 
       END 
       
       ELSE PATCH_IF class=class_cleric         OR
@@ -53,8 +53,8 @@ ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
                     class=class_cleric_thief   OR
                     class=class_fighter_mage_cleric 
       BEGIN
-          REMOVE_MEMORIZED_SPELL "SPPR202" 
-          REMOVE_KNOWN_SPELL "SPPR202"
+          REMOVE_MEMORIZED_SPELL "sppr202" 
+          REMOVE_KNOWN_SPELL "sppr202"
       END
 
   END

@@ -1,10 +1,7 @@
-
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/wondrous_gloves~ ~override~
-  COPY_EXISTING ~BRAC25.itm~ ~override~
+  COPY_EXISTING ~brac25.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7610) END
     LPF ALTER_EFFECT INT_VAR match_opcode=54 parameter1=2 END
     LPF ALTER_EFFECT INT_VAR match_opcode=0 parameter1=2 END
@@ -13,6 +10,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ADD_EQUIPPED_EFF INT_VAR p1=2 STR_VAR effects=~op=73;op=189~ END
 
     SET usability_str = RESOLVE_STR_REF(@7621)
-    LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_skald%,res=ZSTWWNDA;op=177,p1=%kit_skald%,res=ZSTWWNDC;op=177,p1=%kit_blade%,res=ZSTWWNDB;op=177,p1=%kit_blade%,res=ZSTWWNDC;op=177,p1=%kit_jester%,res=ZSTWWNDD;op=177,p1=%kit_jester%,res=ZSTWWNDE;op=177,p1=%kit_jester%,res=ZSTWWNDF;op=177,p1=%kit_jester%,res=ZSTWWNDG;op=177,p1=%kit_jester%,res=ZSTWWNDH;op=177,p1=%kit_jester%,res=ZSTWWNDI;op=177,p1=%kit_jester%,res=ZSTWWNDJ;op=177,p1=%kit_jester%,res=ZSTWWNDK;op=319,p1=5,p2=5,pwr=1,spec=%usability_str%~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_skald%,res=zstwwnda;op=177,p1=%kit_skald%,res=zstwwndc;op=177,p1=%kit_blade%,res=zstwwndb;op=177,p1=%kit_blade%,res=zstwwndc;op=177,p1=%kit_jester%,res=zstwwndd;op=177,p1=%kit_jester%,res=zstwwnde;op=177,p1=%kit_jester%,res=zstwwndf;op=177,p1=%kit_jester%,res=zstwwndg;op=177,p1=%kit_jester%,res=zstwwndh;op=177,p1=%kit_jester%,res=zstwwndi;op=177,p1=%kit_jester%,res=zstwwndj;op=177,p1=%kit_jester%,res=zstwwndk;op=319,p1=5,p2=5,pwr=1,spec=%usability_str%~ END
 
 END

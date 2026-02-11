@@ -1,5 +1,3 @@
-
-
 OUTER_SET group_component = 1
 
 OUTER_SPRINT config_path ~%MOD_FOLDER%/configurations/zstweaks_creature_group_install.txt~
@@ -87,5 +85,11 @@ END
 ACTION_IF zst_group_3150_drow_mr_tweak BEGIN
   WITH_SCOPE BEGIN
     INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3150.tph"
+  END
+END
+
+ACTION_IF zst_group_3160_otyugh_tweak BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3160.tph"
   END
 END

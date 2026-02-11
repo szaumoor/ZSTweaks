@@ -1,6 +1,3 @@
-
-
-
 ACTION_IF NOT is_iwdee AND zst_190_hpower_thac0 BEGIN
 
   COPY_EXISTING ~sppr412.spl~ ~override~

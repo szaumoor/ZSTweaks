@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING ~sppr612.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7390) END
 

@@ -1,16 +1,14 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
   
-  COPY_EXISTING_REGEXP "^SPCL90[47]\.SPL$" ~override~
+  COPY_EXISTING_REGEXP "^spcl90[47]\.spl$" ~override~
     LPF ALTER_SPELL INT_VAR secondary_type=0 END
   BUT_ONLY IF_EXISTS
 
-  COPY_EXISTING_REGEXP "^SPCL91[3467]\.SPL$" ~override~
+  COPY_EXISTING_REGEXP "^spcl91[3467]\.spl$" ~override~
     LPF ALTER_SPELL INT_VAR secondary_type=0 END
   BUT_ONLY IF_EXISTS
 
-  COPY_EXISTING ~SPWISH12.SPL~ ~override~
+  COPY_EXISTING ~spwish12.spl~ ~override~
     LPF ALTER_SPELL INT_VAR secondary_type=0 END
   BUT_ONLY IF_EXISTS
 

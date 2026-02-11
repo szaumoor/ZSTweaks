@@ -1,0 +1,6 @@
+COPY_EXISTING ~otyugh.itm~   ~override~
+              ~iotyugh.itm~  ~override~
+              ~bdotyg01.itm~ ~override~
+              ~l#mcoty.itm~  ~override~
+    LPF ALTER_EFFECT_EX INT_VAR savingthrow = 4 savebonus = "-2" resist_dispel=0 silent=1 STR_VAR match_duration_ex = "(o_duration > 6)" match_savingthrow_ex = "(o_savingthrow = 0)" END
+BUT_ONLY IF_EXISTS

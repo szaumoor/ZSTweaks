@@ -1,5 +1,3 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_2270_allow_evasion OR zst_2270_allow_whirlwind BEGIN

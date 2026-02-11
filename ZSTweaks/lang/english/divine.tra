@@ -897,7 +897,9 @@ Casting Time: 3
 Area of Effect: Special
 Saving Throw: Special
 
-This spell summons a 5-ft. wide wave of water that moves in the direction willed by the caster, striking all in its path with massive force. The wave deals 6d8+4 points of crushing damage; in addition, struck creatures have a 33% chance of being either stunned or knocked unconscious for 2 rounds. If the creature struck makes a successful Save vs. Breath Weapon at -1, the damage is reduced by half and the creature avoids being stunned or knocked unconscious. This spell is not affected by Magic Resistance.~
+This spell summons a 5-ft. wide wave of water that moves in the direction willed by the caster, striking all in its path%desc_if_no_friendly_fire% with massive force. The wave deals 6d8+4 points of crushing damage; in addition, struck creatures have a 33% chance of being either stunned or knocked unconscious for 2 rounds. If the creature struck makes a successful Save vs. Breath Weapon at -1, the damage is reduced by half and the creature avoids being stunned or knocked unconscious. This spell is not affected by Magic Resistance.~
+
+@8659 = ~ except allies~
 
 @8562 = ~Static Charge
 (Alteration)
@@ -1026,7 +1028,7 @@ Uttering a Holy Word spell creates magic of tremendous power. The priest acts as
 
 Status — Effects of Holy Word
 Summoned — Banished or destroyed (save vs. Spell at -4 to avoid)
-Less than 4 HD, or with 40 Hit Points of less — Destroyed or killed instantly
+Less than 4 HD, or with 40 Hit Points or less — Destroyed or killed instantly
 4 to 7 HD — Stunned, slowed, blinded, and deafened for 1 to 4 turns with a 90% chance of spell failure
 8 to 11 HD — Slowed, blinded, and deafened for 5 rounds with a 75% chance of spell failure
 12 HD and up — Blinded and deafened for 4 rounds with a 50% chance of spell failure
@@ -1050,7 +1052,7 @@ Uttering an Unholy Word spell creates magic of tremendous power. The priest acts
 
 Status — Effects of Unholy Word
 Summoned — Banished or destroyed (save vs. Spell at -4 to avoid)
-Less than 4 HD, or with 40 Hit Points of less — Destroyed or killed instantly
+Less than 4 HD, or with 40 Hit Points or less — Destroyed or killed instantly
 4 to 7 HD — Stunned, slowed, blinded, and deafened for 1 to 4 turns with a 90% chance of spell failure
 8 to 11 HD — Slowed, blinded, and deafened for 5 rounds with a 75% chance of spell failure
 12 HD and up — Blinded and deafened for 4 rounds with a 50% chance of spell failure

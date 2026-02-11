@@ -1,5 +1,3 @@
-
-
 ACTION_IF zst_2100_sunsoul_ray BEGIN
 
   COPY ~%MOD_FOLDER%/class_kits/sunsoul_ray~ ~override~

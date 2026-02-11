@@ -1,9 +1,7 @@
-
-
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
-  COPY_EXISTING ~BALOR.ITM~ ~override~
+  COPY_EXISTING ~balor.itm~ ~override~
     PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1541~ OR
             (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ AND zst_group_1541_vorpal_tweak)
     BEGIN

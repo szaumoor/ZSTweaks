@@ -1,10 +1,8 @@
-
-
 ACTION_IF NOT is_iwdee BEGIN
 
   COPY ~%MOD_FOLDER%/items/girdle_gender~ ~override~
-  COPY_EXISTING ~BELT05.ITM~ ~override~
+  COPY_EXISTING ~belt05.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@60000) END
-    LPF ADD_EQUIPPED_EFF INT_VAR ip=0 p2=7 STR_VAR effects = ~op=177,p1=%gender_male%,res=ZSTWGND0;op=177,p1=%gender_male%,res=ZSTWGND1;op=177,p1=%gender_female%,res=ZSTWGND2;op=177,p1=%gender_female%,res=ZSTWGND3~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR ip=0 p2=7 STR_VAR effects = ~op=177,p1=%gender_male%,res=zstwgnd0;op=177,p1=%gender_male%,res=zstwgnd1;op=177,p1=%gender_female%,res=zstwgnd2;op=177,p1=%gender_female%,res=zstwgnd3~ END
 
 END
