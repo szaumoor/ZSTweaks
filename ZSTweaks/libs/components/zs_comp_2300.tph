@@ -1,0 +1,9 @@
+COPY_EXISTING ~spdwd02.spl~ ~override~
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8900) END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 176 parameter1 = 60 END
+    LPF ALTER_EFFECT INT_VAR match_opcode=33 opcode = 325 END
+    LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode >= 34 AND o_opcode <= 37)" END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 325 opcode=0 END
+    LPF CLONE_EFFECT_EX INT_VAR match_opcode = 325 opcode=1 STR_VAR parameter1_ex = ~"-6"~ END
+    LPF CLONE_EFFECT_EX INT_VAR match_opcode = 325 opcode=73 STR_VAR parameter1_ex = ~"-1"~ END
+    LPF CLONE_EFFECT_EX INT_VAR match_opcode = 73 opcode=278 STR_VAR parameter1_ex = ~"-1"~ END

@@ -79,3 +79,7 @@ END
 ACTION_IF zst_group_2290_roguish_evade BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2290.tph~ END
 END
+
+ACTION_IF zst_group_2300_defensive_stance BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2300.tph~ END
+END

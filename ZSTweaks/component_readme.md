@@ -2189,6 +2189,15 @@ This gives these classes (multiclass thieves don't count, you want the benefit o
 
 Thieves and bards get this ability at level 7 and monks get this ability at level 4.
 
+### Make Defensive Stance slightly more balanced (2300) (IWDEE BGEE BG2EE EET)
+
+This component rebalances the power slightly:
+
+- It now also adds a +2 to Armor Class, not just Saving Throws
+- Movement rate penalty reduced to 40%
+- -1 penalty to THAC0 and Damage
+- -1/2 fewer attacks per round. For example, at the start of the game in BGEE, this would force their APR down to 1 when fighting with only one weapon, and after level 13, it would be reduced to 2 APR, all other things being equal.
+
 </details>
 
 ---
