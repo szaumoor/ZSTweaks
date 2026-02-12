@@ -154,3 +154,14 @@ Once per day, a dextrous user can perform a sudden, very fast maneuver to avoid 
 Hence, the user becomes immune to all fireball spells and abilities, all basic projectiles (arrows, bolts, throwing weapons, etc), all dragon breaths, and the spells Dragon Breath, Comet, Produce Fire, Smashing Wave, Thorn Spray, Skull Trap, Glyph of Warding, Holy Smite, Unholy Blight, Burning Hands, Cone of Cold. However, these immunities may only occur in characters that possess at least 16 dexterity, as they are hard to perform. 
 
 Finally, as the duration is very short, failure to time it correctly will render the ability largely irrelevant.~
+
+
+@8900 = ~Defensive Stance
+For 1 turn, the character gains +50% resistance to all forms of physical damage and a +2 bonus to Saving Throws and Armor Class, but incurs in the following penalties:
+
+– 40% movement rate penalty
+– -1 THAC0
+– -1 Damage
+– -1/2 attacks per round
+
+Additionally, Defensive Stance may not be used in conjunction with the High-Level Ability Hardiness.~
