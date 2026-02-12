@@ -10,22 +10,22 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
     ACTION_IF is_bgee BEGIN
 
         ACTION_IF includes_sod BEGIN
-            PRINT "[INFO]: Baldur's Gate: Enhanced Edition with Siege of Dragonspear detected."
+            PRINT "[INFO]: Baldur's Gate: Enhanced Edition with Siege of Dragonspear detected"
         END ELSE BEGIN
-            PRINT "[INFO]: Baldur's Gate: Enhanced Edition without Siege of Dragonspear detected."
+            PRINT "[INFO]: Baldur's Gate: Enhanced Edition without Siege of Dragonspear detected"
         END
 
     END ELSE ACTION_IF is_bg2ee BEGIN
 
-        PRINT "[INFO]: Baldur's Gate II: Enhanced Edition detected."
+        PRINT "[INFO]: Baldur's Gate II: Enhanced Edition detected"
 
     END ELSE ACTION_IF is_iwdee BEGIN
 
-        PRINT "[INFO]: Icewind Dale: Enhanced Edition detected."
+        PRINT "[INFO]: Icewind Dale: Enhanced Edition detected"
 
     END ELSE ACTION_IF is_eet BEGIN
 
-        PRINT "[INFO]: Enhanced Edition Trilogy detected."
+        PRINT "[INFO]: Enhanced Edition Trilogy detected"
 
     END
 
@@ -38,7 +38,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
     OUTER_SET has_eefixpack = MOD_IS_INSTALLED "eefixpack.tp2" "0"
 
     ACTION_IF has_eefixpack BEGIN
-        PRINT "[INFO]: EEFixpack detected."
+        PRINT "[INFO]: EEFixpack detected"
     END
 
     OUTER_SET has_iwdification_divine   = MOD_IS_INSTALLED "setup-iwdification.tp2" "40"
@@ -48,13 +48,13 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
 
     ACTION_IF has_iwd_spells_divine BEGIN
 
-        PRINT "[INFO]: IWD spells for divine classes detected."
+        PRINT "[INFO]: IWD spells for divine classes detected"
         ACTION_IF has_scs_iwd_spells_divine BEGIN
-            PRINT "[INFO]: IWD spells for divine classes installed through SCS."
+            PRINT "[INFO]: IWD spells for divine classes installed through SCS"
         END ELSE ACTION_IF has_tof_iwd_spells_divine BEGIN
-            PRINT "[INFO]: IWD spells for divine classes installed through ToF."
+            PRINT "[INFO]: IWD spells for divine classes installed through ToF"
         END ELSE ACTION_IF has_iwd_spells_divine BEGIN
-            PRINT "[INFO]: IWD spells for divine classes installed through IWDification."
+            PRINT "[INFO]: IWD spells for divine classes installed through IWDification"
         END
 
     END
@@ -66,13 +66,13 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
 
     ACTION_IF has_iwd_spells_arcane BEGIN
 
-        PRINT "[INFO]: IWD spells for arcane classes detected."
+        PRINT "[INFO]: IWD spells for arcane classes detected"
         ACTION_IF has_scs_iwd_spells_arcane BEGIN
-            PRINT "[INFO]: IWD spells for arcane classes installed through SCS."
+            PRINT "[INFO]: IWD spells for arcane classes installed through SCS"
         END ELSE ACTION_IF has_tof_iwd_spells_arcane BEGIN
-            PRINT "[INFO]: IWD spells for arcane classes installed through ToF."
+            PRINT "[INFO]: IWD spells for arcane classes installed through ToF"
         END ELSE ACTION_IF has_iwd_spells_arcane BEGIN
-            PRINT "[INFO]: IWD spells for arcane classes installed through IWDification."
+            PRINT "[INFO]: IWD spells for arcane classes installed through IWDification"
         END
 
     END
@@ -80,30 +80,30 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
     OUTER_SET has_zs_shadowdancer_overhaul = MOD_IS_INSTALLED "ZS_ShadowdancerOverhaul.tp2" "100"
     ACTION_IF has_zs_shadowdancer_overhaul BEGIN
 
-        PRINT "[INFO]: ZS_ShadowdancerOverhaul detected."
+        PRINT "[INFO]: ZS_ShadowdancerOverhaul detected"
         OUTER_SET kit_zs_shadowdancer = IDS_OF_SYMBOL(kit ZS_SHADOWDANCER)
 
     END
 
     OUTER_SET has_project_javelin = MOD_IS_INSTALLED "cd_project_javelin.tp2" "1"
     ACTION_IF has_project_javelin BEGIN
-        PRINT "[INFO]: Project Javelin detected."
+        PRINT "[INFO]: Project Javelin detected"
     END
 
     OUTER_SET has_fg_arms_itm_updates = MOD_IS_INSTALLED "forgotten-armament.tp2" "21"
     ACTION_IF has_fg_arms_itm_updates BEGIN
-        PRINT "[INFO]: Forgotten Armament item updates detected."
+        PRINT "[INFO]: Forgotten Armament item updates detected"
     END
 
     OUTER_SET has_scs_spell_nerf = MOD_IS_INSTALLED "setup-stratagems.tp2" "2060"
     ACTION_IF has_scs_spell_nerf BEGIN
-        PRINT "[INFO]: SCS spell nerf component detected."
+        PRINT "[INFO]: SCS spell nerf component detected"
     END
 
     OUTER_SET has_zs_item_pack_kukris = FILE_EXISTS_IN_GAME ~zsipkuk0.itm~
     ACTION_IF has_zs_item_pack_kukris BEGIN
 
-        PRINT "[INFO]: ZS_ItemPack pack generic kukris detected."
+        PRINT "[INFO]: ZS_ItemPack pack generic kukris detected"
         COPY_EXISTING ~zsipkuk0.itm~ ~override~
             READ_LONG 0x08 zs_kukri_general_string_index
 
@@ -112,7 +112,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
     OUTER_SET has_zs_item_pack_estocs = FILE_EXISTS_IN_GAME ~zsipest0.itm~
     ACTION_IF has_zs_item_pack_estocs BEGIN
 
-        PRINT "[INFO]: ZS_ItemPack pack generic estocs detected."
+        PRINT "[INFO]: ZS_ItemPack pack generic estocs detected"
         COPY_EXISTING ~zsipest0.itm~ ~override~
             READ_LONG 0x08 zs_estoc_general_string_index
 
@@ -121,7 +121,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
     OUTER_SET has_zs_item_pack_rapiers = FILE_EXISTS_IN_GAME ~zsiprap0.itm~
     ACTION_IF has_zs_item_pack_rapiers BEGIN
 
-        PRINT "[INFO]: ZS_ItemPack pack generic rapiers detected."
+        PRINT "[INFO]: ZS_ItemPack pack generic rapiers detected"
         COPY_EXISTING ~zsiprap0.itm~ ~override~
             READ_LONG 0x08 zs_rapier_general_string_index
             

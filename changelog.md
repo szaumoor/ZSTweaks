@@ -2,8 +2,5 @@
 
 ## Fixes
 
-- Prevented group-install component from being installed if specific Helm of Balduran tweak was installed, like with the rest of components.
-
-## New components
-
-- Make Defensive Stance slightly more balanced
+- Fixed integer overflow issue in helm of balduran component
+- Included compatibility for EET properly to the helm of balduran component so the version in the BG1 part is affected
