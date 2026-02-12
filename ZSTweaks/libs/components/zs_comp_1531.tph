@@ -98,7 +98,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
     ACTION_IF NOT has_eefixpack BEGIN
 
-        COPY_EXISTING ~ohdwand1.ITM~ ~override~
+        COPY_EXISTING ~ohdwand1.itm~ ~override~
             LPF ALTER_EFFECT INT_VAR match_resist_dispel=1 resist_dispel=3 END
         BUT_ONLY IF_EXISTS
 

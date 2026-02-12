@@ -764,6 +764,10 @@ It's basically a way to skip the difficulty of beholders fairly easily. It's now
 - Armor Class: +3, down from +4, but now with a +2 bonus vs. beholders, mind flayers, kuo-toa, driders, umber hulks, and hook horrors (Underdark theme). This is equivalent to a "protection vs. `<creature>`" effect, and does not stack with others that target the same.
 - No longer reflects all beholder rays. It now only grants immunity to those that instantly kill: death rays, and petrification and disintegration rays.
 
+### Make Helm of Balduran work as it does in BG3 (1366) (BGEE BG2EE EET)
+
+
+
 </details>
 
 ---
