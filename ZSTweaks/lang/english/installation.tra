@@ -41,8 +41,8 @@
 @10012 = ~Install user-selected components in the End-of-install-order group~
 
 /// General Item & Spell Tweaks
-@120 = "Make conjured magical weapons grant 2 APR by default"
-@443 = ~Make "Symbol, X" spells slightly more powerful and rebalance the enemy versions~
+@120  = "Make conjured magical weapons grant 2 APR by default"
+@443  = ~Make "Symbol, X" spells slightly more powerful and rebalance the enemy versions~
 @1120 = "Make some weapon categories suffer penalties to backstabbing for balance"
 @1121 = ~Make flails and morning stars always inflict some piercing damage~
 @1150 = "Make some weapon categories adjust their damage configuration"
@@ -137,7 +137,7 @@
 @1336 = ~Make Cowl of the Stars more useful~
 @1351 = ~Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing~
 @1365 = ~Make Shield of Balduran less of an auto-win item~
-@1366 = "Make Helm of Balduran to work as it does in BG3"
+@1366 = "Make Helm of Balduran work as it does in BG3"
 
 /// DAGGER TWEAKS
 @1000 = "Make throwing poisoned daggers less rare and more likely to poison enemies"
@@ -339,7 +339,7 @@
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray and Sun Soulbeam more powerful"
-@360 = "Make Shaman's unique spells more powerful"
+@360  = "Make Shaman's unique spells more powerful"
 @2120 = "Make War Cry significantly more useful"
 @2130 = "Make some Thief HLAs more effective"
 @2150 = "Make a selection of HLAs unable to be breached"
@@ -350,7 +350,7 @@
 @2200 = ~Make Blackguards able to backstab as if they had a 2x multiplier~
 @3500 = ~Make Shadowstep impossible to use while in the Shadow Plane~
 @2230 = ~Make RR's Crippling strike no longer able to increase Strength~
-@2231 = ~Give Dragon Disciples direct access to all fire wizard spells and increase fire damage by 5%~
+@2231 = ~Make Dragon Disciples able to access most arcane fire spells automatically and increase fire damage dealt~
 @2232 = ~Make Called Shot directly increase ranged weapon damage~
 @2260 = ~Make Blades, Skalds, and Swashbucklers and Priest of Tempus get more warrior-type benefits~
 @2265 = ~Make Defensive Spin protect against backstabs for its duration and allow very slow movement~
