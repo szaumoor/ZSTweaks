@@ -2191,7 +2191,7 @@ Thieves and bards get this ability at level 7 and monks get this ability at leve
 
 ### Make Defensive Stance slightly more balanced (2300) (IWDEE BGEE BG2EE EET)
 
-This component rebalances the power slightly since less movement speed seems pretty tame for a penalty for the benefit of halving all physical damage. It's reworked as follows:
+This component rebalances the power slightly:
 
 - It now also adds a +2 to Armor Class, not just Saving Throws
 - Movement rate penalty reduced to 40%
