@@ -26,6 +26,7 @@ ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
       PATCH_IF kit = kit_blackguard BEGIN
         LPF ADD_CRE_EFFECT INT_VAR opcode=263 target=2 parameter1=2 parameter2=1 timing=9 END
       END
+    BUT_ONLY
 
   END
 

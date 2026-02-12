@@ -31,13 +31,14 @@ COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
 
         PATCH_IF has_zs_shadowdancer_overhaul BEGIN
             READ_ASCII 0x2cc script_name
-            PATCH_IF "%script_name%" STR_EQ "zs_sdshd" BEGIN
+            PATCH_IF NOT "%script_name%" STR_EQ "zs_sdshd" BEGIN
                 LPM modify_shadow
             END
 
         END ELSE BEGIN
             LPM modify_shadow
         END
+        
     END
 BUT_ONLY
 

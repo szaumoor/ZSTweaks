@@ -75,6 +75,7 @@ ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald OR zst_2260_allow_swash O
             END
 
           END
+        BUT_ONLY
 
       END
 
