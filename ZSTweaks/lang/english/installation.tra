@@ -5,7 +5,7 @@
 @14 = ~One-handed Swords~
 @15 = ~Axes & Blunt~
 @16 = ~Ranged~
-@17 = ~NPCs~
+@17 = ~Joinable Characters~
 @19 = ~Arcane Magic~
 @20 = ~Divine Magic~
 @21 = ~Classes~
@@ -33,7 +33,7 @@
 @10004 = ~Install user-selected components in the One-handed Swords group~
 @10005 = ~Install user-selected components in the Axes & Blunt group~
 @10006 = ~Install user-selected components in the Ranged group~
-@10007 = ~Install user-selected components in the NPC group~
+@10007 = ~Install user-selected components in the Joinable Characters group~
 @10008 = ~Install user-selected components in the Arcane Magic group~
 @10009 = ~Install user-selected components in the Divine Magic group~
 @10010 = ~Install user-selected components in the Classes group~
@@ -240,7 +240,7 @@
 @1371 = ~Make Arrows of Dispelling force a save vs. Spell at -2 for them to work~
 @1388 = ~Make Acid Arrow's extra damage not subject to magic resistance~
 
-// NPC TWEAKS
+// JOINABLE CHARACTERS TWEAKS
 @1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
 @1480 = "Make Yoshimo's Katana more unique and powerful"
 @1500 = ~Make Mazzy's weapons more powerful~
@@ -256,6 +256,7 @@
 @1647 = ~Make Shar-Teel especially effective when fighting male-gendered opponents~
 @2240 = ~Make Hexxat's Blood Drain have a cooldown instead of being usable once per day~
 @2250 = ~Make Edwin's amulet nuanced in the privileges it grants to that snake~
+@1556 = ~Make Harper Pin not forcibly only usable by Jaheira (as per the description)~
 
 // WIZARD SPELLS
 @140 = "Make Finger of Death's magical damage on a successful save standardized"

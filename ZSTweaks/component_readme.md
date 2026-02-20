@@ -766,7 +766,7 @@ It's basically a way to skip the difficulty of beholders fairly easily. It's now
 
 ### Make Helm of Balduran work as it does in BG3 (1366) (BGEE BG2EE EET)
 
-
+Instead of granting +1 to THAC0 and +5 HP, it grants immunity to stun and 2 HP/round regeneration. Other benefits are kept.
 
 </details>
 
@@ -1380,7 +1380,7 @@ Self-explanatory. It also justifies the higher price compared to other elemental
 
 <summary>
 
-## NPCs
+## Joinable Characters
 
 </summary>
 
