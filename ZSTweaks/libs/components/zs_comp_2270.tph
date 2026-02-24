@@ -70,7 +70,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             COPY_EXISTING ~lu%abbr%.2da~ ~override~
                 LPM HLA_EVA_FIX
                 LPM HLA_WAR_FIX
-                
+            BUT_ONLY IF_EXISTS
         END
 
     END

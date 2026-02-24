@@ -49,7 +49,7 @@ This component adjusts the base damage of several weapon categories to make them
 - **War Hammers**: Base damage is increased from 1d4+1 to 1d5+1. This does not affect special hammers like `Crom Faeyr` that have a 2d4 base damage.
 - **Ninjatôs, Wakizashis, and Katanas**: Kara-Turan blades now deal 2d4 (Ninjatôs/Wakizashis) and 2d5 (Katanas) base damage, increasing their minimum damage. Additionally, Wakizashis become piercing/slashing weapons (this can be configured separately).
 - **Bastard Swords**: Maximum damage is increased from 2d4 to 1d8+1, placing them in between long swords and two-handed swords in terms of damage.
-- **Two-handed Swords**: Base damage is now 1d9+1, increasing minimum damage, and those that deal 1d12 will deal 2d6, raising the minimum damage for all by 1.
+- **Two-handed Swords**: Base damage is now 1d9+1, increasing minimum damage, and those that deal 1d12 will deal 2d6, effectively making weapons in this category always have a minimum damage of 2.
 
 ### Make axes or halberds deal extra damage on critical hits (1361) (IWDEE BGEE BG2EE EET)
 
@@ -80,14 +80,14 @@ An optional setting in the configuration file can restrict this effect to only a
 
 ### Make darts faster and with longer range (1435) (IWDEE BGEE BG2EE EET)
 
-Self-explanatory. It's the lightest weapon, realistically. It also makes them slightly less inconvenient by making them have a range equivalent to those of arrows and bolts.
+This sets their speed factor to 0. It's the lightest weapon, realistically. It also makes them slightly less inconvenient by making them have a range equivalent to those of arrows and bolts.
 
 ### Make daggers get extra features to compensate for low damage (1440) (IWDEE BGEE BG2EE EET)
 
 Daggers are often overlooked due to their low damage output. This component aims to make them more appealing by adding the following traits:
 
 - **+1 THAC0**: A Dagger +2 will grant a +3 THAC0 bonus.
-- **-2 Speed Factor**: Most daggers will have a Speed Factor of 0.
+- **-2 Speed Factor**: Most daggers will have a Speed Factor of 0 by default.
 - **+5% Critical Hit Chance**: This bonus stacks with any existing critical chance on the dagger.
 - **Deadly Critical Hits**: On a critical hit, daggers deal extra damage in a second damage tick. The formula for this bonus damage is `2d(Max_Weapon_Damage) + Max_Weapon_Damage`. For example, a critical hit with a Dagger +2 that deals 16 damage will inflict an additional 2d6+6 (8-18) damage, for a total of 24-34 damage.
 - **Kukris** from my **Item Pack** are affected differently:
@@ -167,7 +167,7 @@ Additionally, these spells provide a very short immunity to poison effects after
 
 ### Make jewelry more valuable (1538) (IWDEE BGEE BG2EE EET)
 
-This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component increases the value of those by 50% by default. However, this is fully customizable. Check the ZSTweaks/configurations/**zstweaks.prefs.txt** file if you want to customize this.
+This improves the value of all necklaces, rings, and gems that are not magical in nature (no passive or active traits of any sort). The component increases the value of those by 50% by default. However, this percetange is fully customizable. Check the ZSTweaks/configurations/**zstweaks.prefs.txt** file if you want to customize this.
 
 ### Make more classes able to use scrolls freely (1539) (IWDEE BGEE BG2EE EET)
 
@@ -209,37 +209,37 @@ This component overhauls character stats for a more streamlined progression and 
 
 - **Constitution**:
   - **HP Bonus**: Progression is streamlined. Starts at 12 CON and grants +1 HP every 2 points, up to +7 HP at 24/25 CON. Non-Fighters benefit more slowly, gaining up to +4 HP at 20 CON. HP penalties start at 8 CON.
-  - **Regeneration**: Starts at 18 CON (1 HP / 300s) and improves to 1 HP / 60s at 25 CON.
-  - **Fatigue**: Fatigue bonuses start at 12 CON.
+  - **Regeneration**: Generally toned down but stats earlier: at 18 CON regenerate 1 HP / 5 turns, improving up to 1 HP / turn at 25 CON.
+  - **Fatigue**: Fatigue bonuses start at 12 CON instead of 16.
 - **Dexterity**: AC and Ranged THAC0 bonuses are streamlined. The +7 bonus is now only achieved at 25 DEX. Penalties now begin at 9 DEX.
 - **Lore**:
-  - **By Class**: Mages get +5/level, Thieves +4/level, Clerics/Shamans/Druids +3/level, and Paladins/Rangers +2/level. Fighters and bards are unchanged (1 and 10, respectively)
-  - **By Stat**: Bonuses from INT/WIS start at 12, with a more gradual progression for both bonuses and penalties. Bards get a reduced 8 lore per level.
+  - **By Class**: Mages get +5/level, Thieves +4/level, Clerics/Shamans/Druids +3/level, and Paladins/Rangers +2/level. Fighters are unchanged (1 per level) and bards get a reduced 8 lore per level.
+  - **By Stat**: Bonuses from INT/WIS start at 12, with a more gradual progression for both bonuses and penalties. 
 - **Racial THAC0**: Dwarves gain a +1 THAC0 bonus with axes.
 - **Shorty Saves**: The saving throw bonus from Constitution for shorty races can be configured:
   - **Nullify**: Removes the bonus entirely.
   - **Tone Down (Default)**: Slower progression, starting at +1 (12 CON) and capping at +3 (21+ CON).
   - **Standardize**: A flat +2 bonus, regardless of Constitution.
 - **Strength**:
-  - THAC0 and Damage bonuses are streamlined. Penalties start at 9 STR, bonuses at 12 STR. Exceptional Strength (18/xx) no longer provides a THAC0 bonus. Its damage bonus is now +0 (18/01-24), +1 (18/25-75), or +2 (18/76+).
+  - THAC0 and Damage bonuses are streamlined. Penalties start at 9 STR, bonuses at 12 STR. Exceptional Strength (18/xx) no longer provides a THAC0 bonus. Its damage bonus is now +0 (18/01-24), +1 (18/25-75), and +2 (18/76+).
   - Weight allowance is adjusted to be more gradual, increasing capacity at low STR and decreasing it at very high STR.
-- **Weapon Styles**: This part of the component tries to make every point valuable by adding to having low or no points, and making each point truly rewarding to hopefully avoid any point where adding another one seems pointless. This encourages investing on it.
+- **Weapon Styles**: This part of the component tries to make every point valuable by adding penalties to having low or no points, and making each point truly rewarding to hopefully avoid any point where adding another one seems pointless. This encourages investing on it.
   - **Two-Handed Style**:
     - **0 Pips**: -1 to Armor Class
     - **1 Pip**: +1 Damage, +1 Speed Factor.
     - **2 Pips**: +2 Damage, +4 Speed Factor, critical threat range increased by 1.
   - **Single-Weapon Style**:
     - **0 Pips**: -1 to Speed Factor
-    - **1 Pip**: +1 Damage, +1 AC, +1 Speed Factor, critical threat range increased by 1.
-    - **2 Pips**: +2 Damage, +2 AC, +2 Speed Factor.
+    - **1 Pip**: +1 Damage, +1 Armor Class, +1 Speed Factor, critical threat range increased by 1.
+    - **2 Pips**: +2 Damage, +2 Armor Class, +2 Speed Factor.
   - **Sword and Shield Style**:
-    - **0 Pips**: -1 damage, THAC0, and AC penalty vs. Missiles.
-    - **1 Pip**: No penalties, +2 AC vs. Missiles.
-    - **2 Pips**: +1 AC, +4 AC vs. Missiles.
+    - **0 Pips**: -1 damage, THAC0, and Armor Class penalty vs. Missiles.
+    - **1 Pip**: No penalties, +2 Armor Class vs. Missiles.
+    - **2 Pips**: +1 AC, +4 Armor Class vs. Missiles.
   - **Two-Weapon Style**:
-    - **0 Pips**: -2 AC; THAC0: -4 (main-hand) / -6 (off-hand); Damage: -1 (main-hand) / -2 (off-hand).
-    - **1 Pip**: -1 AC; THAC0: -2 (main-hand) / -4 (off-hand); Damage: -1 (main hand) / -1 (off-hand)
-    - **2 Pips**: No AC penalty; THAC0: -1 (main hand) / -3 (off-hand); Damage: No penalty (main hand) / -1 (off-hand)
+    - **0 Pips**: -2 Armor Class; THAC0: -4 (main-hand) / -6 (off-hand); Damage: -1 (main-hand) / -2 (off-hand).
+    - **1 Pip**: -1 Armor Class; THAC0: -2 (main-hand) / -4 (off-hand); Damage: -1 (main hand) / -1 (off-hand)
+    - **2 Pips**: No Armor Class penalty; THAC0: -1 (main hand) / -3 (off-hand); Damage: No penalty (main hand) / -1 (off-hand)
     - **3 Pips**: THAC0: -2 (off-hand); Damage: No penalties
 - **Weapon Proficiencies**: THAC0 progression is smoothed out, gaining 1 THAC0 at 2 pips, and then another one per pip up to +4 at 5 pips.
 
@@ -248,9 +248,9 @@ This component overhauls character stats for a more streamlined progression and 
 This component reworks shields to make each type more distinct, adding unique benefits and drawbacks.
 
 - **Tower Shields**: Provide +1 AC over other shields of the same enchantment but are clunky, incurring a -1 penalty to THAC0 and saves vs. Breath, and a -2 penalty to speed factor. An optional setting can also reduce movement speed by 20%.
-- **Medium Shields**: Inflict a -1 penalty to Speed Factor and Saves vs. Breath. An optional setting can also reduce movement speed by 10%.
+- **Medium Shields**: Causes a -1 penalty to Speed Factor and Saves vs. Breath. An optional setting can also reduce movement speed by 10%.
 - **Small Shields**: At even enchantment levels, their AC penalty vs. Missiles is offset by 1
-- **Bucklers**: At even enchantment levels, their AC bonus vs. piercing is offset by 1. Additionally, bucklers have a 10% chance to **parry** frontal melee attacks. A successful parry inflicts 1d2+bonus crushing damage and applies a -2 AC penalty and -15% damage vulnerability to the attacker for half a round (save vs. Breath negates, improves with enchantment level).
+- **Bucklers**: At even enchantment levels, their AC bonus vs. piercing is offset by 1. Additionally, bucklers have a 10% chance to **parry** frontal melee attacks. A successful parry inflicts 1d2+bonus crushing damage and applies a -2 AC penalty and -15% damage vulnerability to the attacker for 4 seconds (save vs. Breath negates, improves with enchantment level).
 
 The configuration file provides several options to change shield usability:
 
@@ -261,18 +261,18 @@ The configuration file provides several options to change shield usability:
 - Allow Thieves and Bards to use Small and Medium Shields (**off** by default).
 - Allow Wizards to use Bucklers (**on** by default).
 
-Important notes:
+**Important notes**:
 
 - **Buckler parry**: This component should be installed **after** any mods that add or modify weapon protection effects (e.g., SCS's Mantle tweaks) to ensure the parry is correctly blocked by those protections.
 - **Mod compatibility**: This component identifies shield types by their unidentified name (e.g., "Buckler", "Small Shield"). While vanilla items are patched to conform to this schema, mod-added shields not following this convention will not be affected. Please report any incompatible mods.
 
 ### Make Protection from Undead more balanced (1547) (IWDEE BGEE BG2EE EET)
 
-This component rebalances the scroll, replacing its "invisibility to undead" effect with a suite of powerful defensive bonuses. For 12 hours, the user gains:
+This component rebalances the scroll, replacing its "undead act as if you don't exist" effect with a suite of powerful defensive bonuses. For 12 hours, the user gains:
 
 - Immunity to level drain, vampiric domination, and paralysis from undead.
 - A +2 bonus to saves vs. Death, Paralysis, and Poison.
-- A retaliatory effect: Undead that attack the user are rebuked, taking 1d4+1 magic damage and are feared for 2 rounds (Save vs. Spell for half damage and to negate fear).
+- A retaliatory effect: Undead that attack the user are rebuked, taking 1d4+1 magic damage and are panicked (as if turned) for 2 rounds (Save vs. Spell for half damage and to negate fear).
 
 ### Make everyone able to perform omnidirectional backstabs (1600) (IWDEE BGEE BG2EE EET)
 
@@ -2037,7 +2037,7 @@ Produce Fire is not very effective for a 4th level spell. The only upside is tha
 
 ### Make Aura of Flaming Death increase fire resistance instead of setting it to 90% (515) (IWDEE BGEE BG2EE EET)
 
-Self-explanatory. This will also prevent some nonsense like creatures immune to fire suddenly becoming no longer immune. If they cast it, such as fiends.
+Self-explanatory. This will also prevent some nonsense like creatures immune to fire suddenly becoming no longer immune if they cast it, such as the case of some fiends.
 
 ### Make Holy and Unholy Word more generally effective (539) (IWDEE BGEE BG2EE EET)
 
@@ -2104,14 +2104,14 @@ The war cry also rallies the allies now, causing the following effects:
   - Duration of backstab every hit increased to 7 seconds. Other effects last for 2 more rounds.
   - For the duration and one round after, grants immunity to critical misses and +10% critical hit chance.
   - **Single-classed thieves** gain additional bonuses: +2 Damage, +2 THAC0, +1 APR, and a further +5% critical hit chance.
-- **Avoid Death**: Now acts as a "panic button." For 3 seconds after activation, the rogue cannot be killed by HP damage and automatically succeeds on all saving throws. The ability's original effects remain active for the full duration. The description is also updated to mention its protection against level drain.
+- **Avoid Death**: Now acts as a "panic button." For 3 seconds after activation, the rogue cannot be killed by HP damage and automatically succeeds on all saving throws. The ability's original effects remain active for the full duration. The description is also updated to mention its (vanilla) protection vs. level drain.
 
 ### Make a selection of HLAs unable to be breached (2150) (BG2EE EET)
 
 I do not find abilities that tap into "inner strength" or pure skill-based physical abilities a candidate for breach. If they're not dispellable, then they're not breachable either. What exactly is the spell supposedly dispelling? The following abilities are no longer breachable:
 
 - **Evasion and Improved Evasion:** You're concentrating on your epic dodging skills as a rogue, using your training and experience. Can you "breach" reflexes and experience? NO!
-- **Assassination:** You're using your training in hitting on weak points unexpectedly in a superior manner, exerting such an amazing ability, you always succeed, even if the target is not hit unexpectedly. Can you breach assassination skills? NO!
+- **Assassination:** You're using your training in hitting on weak points in a superior manner, exerting such an amazing ability, you always succeed, even if the target is not hit unexpectedly. Can you breach assassination skills? NO!
 - **Avoid Death:** You're using your training and nigh-preternatural roguish luck to escape terrible odds and stubbornly survive. Can you breach luck and survival skills? NO!
 - **Hardiness:** The warrior is concentrating on defending, bearing blows and the pain, to survive the punishment inflicted upon them, using their training and experience.
 - **Resist Magic:** Same as Hardiness. This one I find harder to rationalize in an earthly way, but regardless, it's a warrior-borne ability, so I see no need to effectively consider it magical.
@@ -2154,7 +2154,7 @@ This component gives Red Dragon Disciples access to all fire-based wizard spells
 
 ### Make Called Shot directly increase ranged weapon damage (2232) (IWDEE BGEE BG2EE EET)
 
-Generally speaking, it's more powerful to directly increase the base damage because it will count towards a critical hit multiplier.
+Generally speaking, it's more powerful to directly increase the base damage because it will count towards a critical hit multiplier. This is compatible with The Artisan's Archer Overhaul, if it's installed after it.
 
 ### Make Blades, Skalds, and Swashbucklers and Priest of Tempus get more warrior-type benefits (2260) (IWDEE BGEE BG2EE EET)
 
@@ -2168,7 +2168,7 @@ Note that this component does not patch their kit descriptions, as it is not int
 
 ### Make Defensive Spin protect against backstabs for its duration and allow very slow movement (2265) (IWDEE BGEE BG2EE EET)
 
-This will make it a straight upgrade to the power by providing backstab immunity and allowing movement at 50% of the original speed.
+This is a straight upgrade to the power since disabling movement is highly inconvenient. And immunity to backstab is just an extra nicety that may be sometimes useful, especially if defensive spells are unavailable. Movement rate is set at 50% (Boots of Speed would set it back to baseline, as an example).
 
 ### Make Whirlwind and Evasion grant once 3 uses of the Improved variants (2270) (BG2EE EET)
 
@@ -2185,13 +2185,13 @@ It affects all classes and kits, including modded ones. It only affects HLA tabl
 
 ### Make single-classed thieves and bards able to throw sand in the enemy's eyes (2280) (IWDEE BGEE BG2EE EET)
 
-Just to add a new dimension to the fight dirty stuff on rogues. Also, just because I want to promote specialization, this is only available for single-classed thieves and bards. Once per turn, you can throw sand onto the enemies eyes, causing very minor non-lethal damage and impair them for up to a round if they fail a save vs. Breath. Many powerful creatures are immune to this effect, but it offers a new thing to try out once per turn.
+Just to add a new dimension to the fight dirty stuff on rogues. Also, just because I want to promote specialization, this is only available for single-classed thieves and bards. Once per turn, you can throw sand onto the enemies eyes, causing very minor non-lethal damage and impair them for up to a round if they fail a save vs. Breath. Many powerful creatures are immune to this effect, but it offers a new thing to try out once per turn. It's explicitly only allowed to single-class because they deserve the love.
 
 ### Make single-classed thieves, bards, and monks able to briefly avoid damaging AoE and projectiles once per day (2290) (IWDEE BGEE BG2EE EET)
 
-This gives these classes (multiclass thieves don't count, you want the benefit of a second class, you got enough) an ability they can use once per day to avoid projectiles and most AoE spells and dragon breaths. This lasts for 23 ticks (around one second and a half), which means it should be used *as you're about to be hit by it*. The full list of abilities and spells are: all fireball spells and abilities, all basic projectiles (arrows, bolts, throwing weapons, etc), all dragon breaths, and the spells Dragon Breath, Comet, Produce Fire, Smashing Wave, Thorn Spray, Skull Trap, Glyph of Warding, Holy Smite, Unholy Blight, Burning Hands, Cone of Cold.
+This gives these classes (multiclass thieves don't count, you want the benefit of a second class, you got enough) an ability they can use to avoid projectiles and most AoE spells and dragon breaths. This lasts for 23 ticks (around one second and a half), which means it should be used *as you're about to be hit by it*. The full list of abilities and spells are: all fireball spells and abilities, all basic projectiles (arrows, bolts, throwing weapons, etc), all dragon breaths, and the spells Dragon Breath, Comet, Produce Fire, Smashing Wave, Thorn Spray, Skull Trap, Glyph of Warding, Holy Smite, Unholy Blight, Burning Hands, Cone of Cold.
 
-Thieves and bards get this ability at level 7 and monks get this ability at level 4.
+Thieves and bards get this ability at level 7 and monks get this ability at level 4. For balance, this is usable only once per rest and as mentioned, its duration will only be enough to avoid likely only one effect (or more if they all happen to strike at around the same time),
 
 ### Make Defensive Stance slightly more balanced (2300) (IWDEE BGEE BG2EE EET)
 
@@ -2243,7 +2243,7 @@ This component rebalances Deva and Planetar summons to make both more balanced c
   - 20% chance to cast Dispel Magic at level 25 on hit.
   - Deals +2 cold and +2 fire damage on hit.
   - Deals an additional 4 divine (irresistible) damage to fiends and celestials.
-  - They and all nearby allies are protected by a permanent invisible Minor Globe of Invulnerability (toggleable).
+  - They and all nearby allies are protected by a permanent invisible Minor Globe of Invulnerability (toggleable). This only affects friendly summoned planetars.
   - They can also cast all their spells instantly.
   - Now considered cleric/mages so their cleric spells have scaling, if there's any
 
@@ -2278,7 +2278,7 @@ There are several creatures whose effects when they hit don't seem to make much 
 
 This component makes the following changes:
 
-- All creatures of the shadow race will have at least a 30% physical damage resistance
+- All creatures of the shadow race will have at least a 30% physical damage resistance. Skips my Shadow summon in my shadowdancer overhaul, as they are handled in a very particular way.
 - And a +2 bonus to their Armor Class, whatever that is
 - Strength sapping from shadows, spirit trolls, spider wraiths and the like always lasts for 8 hours, making it more than an inconvenience. It's a real problem now if you get hit too often.
 
@@ -2290,7 +2290,6 @@ This component makes the beetles generally more resistant to anything that doesn
 - 45% resistance to slashing damage, +2 Armor class bonus modifier.
 - 30% resistance to piercing damage, +1 Armor class bonus modifier.
 - No resistance to crushing damage.
-- Armor class vs. missile damage gets a -2 modifier.
 
 ### Make Yuan-ti slightly more powerful and inflict minor poison damage on melee attacks (3110) (IWDEE BGEE BG2EE EET)
 
@@ -2310,7 +2309,7 @@ This component makes golems *generally* more resilient, so be warned that diffic
 - **Iron** golems: They now have no resistance to electric damage (only element they aren't immune to) and absorb 27% of fire damage as healing (from 25%). Additionally, they resist 35% of physical damage (from 20% in BG, 0% in IWDEE), double for missile damage.
 - **Flesh** golems: They absorb 27% of electric damage as healing (from 25%), and are immune to both fire and cold. Their base health is also increased from 40 to 45. Their animation is now changed to Ogrillon, similar to BGEE, and for consistency with other golems, their movement speed will be sharply increased. They also resist now 15% of physical damage. (Not IWDEE)
 - **Stone** golems: They now resist **25**% of physical damage (from 0%). This includes juggernaut golems.
-- **Lesser clay** golems: they have half of the normal resistances of clay golems instead of none. So they will take half of the damaging from slashing, piercing, and missile, instead of resisting it all.
+- **Lesser clay** golems: they have half of the normal resistances of clay golems instead of none. So they will take half of the damage from slashing, piercing, and missile, instead of resisting it all.
 - **Brain** golems: They resist **10% more** piercing, slashing, and missile damage (**35%**). They will also use the Ogrillon animation, with a pinkish brainy hue.
 - **Magic golem****: 27% of the non-physical damage they take is always absorbed as healing.
 - **Adamantite golems**: Normally identical to Iron Golems, except with 70% higher physical resistance, they're now slightly more powerful. They are, according to lore, *almost* impossible to defeat. Therefore:

@@ -3,13 +3,16 @@
 ## Fixes
 
 - Minor text fixes
-- Added description for Helm of Balduran
+- Added prefix: Fix for Balduran's Plate preventing for no reason characters of level 5 and below from benefitting from the Charisma bonus. Will be disabled if Fixpack is installed, once they merge the fix I sent them
+- Added component description for Helm of Balduran
 - Fixed shadow creature component affecting only the shadows from my shadowdancer overhaul instead of affecting all other than those, as it was intended
 - Fixed some components modifying undefined amount of creatures erroneously marking files as modified even when no changes were applied to them
+- Added sanity file existence check for some components
 
 ## Modifications
 
 - Renamed the NPC group to the Joinable Characters group
+- Shadow creature component will also patch them so they move slightly faster (factor of 2) (TODO)
 
 ## New components
 
@@ -18,8 +21,6 @@
   - Can be set as a long sword (both cases), standardize to bastard sword, or keep it as is, with the same stats
   - They all share the same icon (golden sword from BG1)
 - Make Mold Touch a tad more powerful and convenient
-- Make Plate of Balduran more effective and remove odd weird design choices
-  - Becomes +3?, HP bonus increases to +10 from +4. Removed that weird minimum level 6 for its bonuses to apply.
 - Make Harper Pin not forcibly only usable by Jaheira (as per the description)
 - Make Keepsake Locket (Jaheira's Romance) provide some minor benefits
 - Make Sword of Chaos reflect BG3's take on it
