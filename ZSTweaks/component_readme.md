@@ -1514,9 +1514,13 @@ There are no words to express how much I hate that Edwin is the best wizard to h
 - However, he has a -2 saving throw penalty against spells outside his specialization.
 - And finally, he always cast spells as if he was two levels above his actual level (1 in BGEE).
 
-### Make Harper Pin not forcibly only usable by Jaheira (as per the description) (1556) (BG2EE EET)
+### Make minor improvements to Jaheira-specific items (1556) (BG2EE EET)
 
-Self-explanatory. Even the description states that it is not bound to the Harper, just hints that most Harpers would probably not want to part with it. But your pal Jaheira is generous enough.
+Harper pin: Even the description states that it is not bound to the Harper, just hints that most Harpers would probably not want to part with it. But your pal Jaheira is generous enough, so anyone may now be able to wear it.
+
+Keepsake Locket: Now it provides a minor bonus of +5 HP.
+
+Both items can be toggled on and off. Both are on by default. Check the config file.
 
 </details>
 

@@ -21,7 +21,6 @@
   - Can be set as a long sword (both cases), standardize to bastard sword, or keep it as is, with the same stats
   - They all share the same icon (golden sword from BG1)
 - Make Mold Touch a tad more powerful and convenient
-- Make Harper Pin not forcibly only usable by Jaheira (as per the description)
-- Make Keepsake Locket (Jaheira's Romance) provide some minor benefits
+- Make minor improvements to Jaheira-specific items
 - Make Sword of Chaos reflect BG3's take on it
   - Healing of 1d6 per hit (max three times per round), deals 1d4 extra necrotic damage (irresistible damage that only affects the living)
