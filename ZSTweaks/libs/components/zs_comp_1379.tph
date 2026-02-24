@@ -63,3 +63,7 @@ END
 ACTION_IF zst_group_2250_edwin_amulet BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2250.tph~ END
 END
+
+ACTION_IF zst_group_1556_jaheira_harper_pin BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1556.tph~ END
+END

@@ -1505,7 +1505,7 @@ This improves the usability of this skill by simply allowing it to be used more 
 
 Fair warning, as with all abilities with cooldown, DO NOT use CTRL+R on Hexxat while it's on cooldown, as it may cause her to lose the ability entirely, since it destroys the effect that **returns** the ability to her.
 
-### Make Edwin's amulet nuanced in the privileges it grants to that snake (2250) (BG2EE EET)
+### Make Edwin's amulet nuanced in the privileges it grants to that snake (2250) (BGEE BG2EE EET)
 
 There are no words to express how much I hate that Edwin is the best wizard to have along because of the absurdly overpowered amulet he has. He, like Haer'Dalis, represents another one of those instances I hate of an NPC going to always be better than CHARNAME in their class or kit. So now the item gives him something a bit more nuanced:
 
@@ -1513,6 +1513,10 @@ There are no words to express how much I hate that Edwin is the best wizard to h
 - He gets a +2 to saving throws vs. conjuration spells of other wizards, which stacks with his normal +2 specialization bonus.
 - However, he has a -2 saving throw penalty against spells outside his specialization.
 - And finally, he always cast spells as if he was two levels above his actual level (1 in BGEE).
+
+### Make Harper Pin not forcibly only usable by Jaheira (as per the description) (1556) (BG2EE EET)
+
+Self-explanatory. Even the description states that it is not bound to the Harper, just hints that most Harpers would probably not want to part with it. But your pal Jaheira is generous enough.
 
 </details>
 
