@@ -11,8 +11,8 @@
 
 ## Modifications
 
-- Renamed the NPC group to the Joinable Characters group
-- Shadow creature component will also patch them so they move slightly faster (factor of 2) (TODO)
+- Renamed the NPC group to the Joinable Characters group, as that is much more accurate
+- Shadow creature component will also patch them so they move slightly faster (factor of 2)
 
 ## New components
 
