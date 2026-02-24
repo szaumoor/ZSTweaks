@@ -20,7 +20,8 @@
   - Now considered +2 weapons, deals extra damage vs. all shapeshifters, +2 saving throws vs. spell merges changes of the BG2 version
   - Can be set as a long sword (both cases), standardize to bastard sword, or keep it as is, with the same stats
   - They all share the same icon (golden sword from BG1)
-- Make Mold Touch a tad more powerful and convenient
 - Make minor improvements to Jaheira-specific items
+  - Harper pin: Usable by everyone
+  - Keepsake Locket: Minor 5 HP bonus
 - Make Sword of Chaos reflect BG3's take on it
   - Healing of 1d6 per hit (max three times per round), deals 1d4 extra necrotic damage (irresistible damage that only affects the living)
