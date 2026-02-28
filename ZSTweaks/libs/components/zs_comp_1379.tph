@@ -1,6 +1,6 @@
 OUTER_SET group_component = 1
 
-OUTER_SPRINT config_path ~%MOD_FOLDER%/configurations/zstweaks_npc_group_install.txt~
+OUTER_SPRINT config_path ~%MOD_FOLDER%/configurations/zstweaks_joinables_group_install.txt~
 INCLUDE ~%config_path%~
 COPY ~%config_path%~ ~override~
 
@@ -64,6 +64,6 @@ ACTION_IF zst_group_2250_edwin_amulet BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2250.tph~ END
 END
 
-ACTION_IF zst_group_1556_jaheira_harper_pin BEGIN
+ACTION_IF zst_group_1556_jaheira_items BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1556.tph~ END
 END
