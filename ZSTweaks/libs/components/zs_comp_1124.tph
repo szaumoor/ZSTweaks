@@ -110,3 +110,7 @@ END
 ACTION_IF zst_group_1701_ilbratha BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1701.tph~ END
 END
+
+ACTION_IF zst_group_1705_balduran_swords BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1705.tph~ END
+END
