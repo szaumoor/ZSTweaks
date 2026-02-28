@@ -390,6 +390,8 @@ Adds a +1 damage and THAC0 bonus, and +5% critical hit chances, along with the o
   - Casting speed increases by 1
   - Saving throws bonus against Spell at +2, +1 for the rest
 
+Possibly incompatible with Forgotten Armaments. The item tweak part thereof touches various items, and apparently Traveler's Robe is one of them.
+
 ### Make Belt of Skillful Blade also improve piercing damage (1560) (BG2EE EET)
 
 This makes the belt include piercing damage, such that it affects things like daggers, short swords and wakizashis.
@@ -1036,6 +1038,17 @@ The weapon now has +5% higher chance to critically hit, and critical hits add +5
 - The ogre petrification effect is now set up so non-ogres don't have to save vs. spell when hit, polluting the console log for no reason
 - "Restored" a sound effect on the fireball that was pointing to an invalid resource, and added one similar that makes the fireball have a new snappy sound
 
+### Make Sword of Chaos reflect BG3's take on it (1708)
+
+This replaces the 1 HP damage/absorption effects for:
+
+- On hit, restore 1-6 Hit Points, randomly assigned. The lower the healing, the more likely it triggers on hit.
+- Every hit deals 1d4 necrotic damage, conceptualized as a type of damage that only affects living things and cannot be resisted.
+- The amount of necrotic damage and the HP restoration are independent of each other.
+- None of the effects trigger on targets protected with stoneskins.
+- It glows.
+- Ascension's +4 version also has the exact same additions, replacing their take on its effects on hit (though it does not touch the effect that causes anyone other than Sarevok to suffer penalties with each hit). It also fixes text format inconsistencies which makes it look out of place compared to other items in EE, as well as problems with the item such as not having the speed factor of a +4 weapon. It also removes the unnecessary stat restrictions (such as requiring a certain level of intelligence or constitution).
+
 </details>
 
 ---
@@ -1518,7 +1531,7 @@ There are no words to express how much I hate that Edwin is the best wizard to h
 
 Harper pin: Even the description states that it is not bound to the Harper, just hints that most Harpers would probably not want to part with it. But your pal Jaheira is generous enough, so anyone may now be able to wear it.
 
-Keepsake Locket: Now it provides a minor bonus of +5 HP.
+Keepsake Locket: Now it provides a minor bonus of +5 HP. Only Jaheira and Charname can wear it. This restriction can be toggled on and off in the configuration file.
 
 Both items can be toggled on and off. Both are on by default. Check the config file.
 
