@@ -310,14 +310,16 @@ This component enables combat bonuses from invisibility for ranged attacks, focu
 - This effect is implemented using timers, which may result in minor, momentary delays in application or removal when entering/exiting invisibility.
 - Only player and joinable characters benefit; enemies are unaffected.
 
-### Make all bracers, belts and boots grant +1 HP, so unenchanted variants aren't just garbage (1532) (IWDEE BGEE BG2EE EET)
+### Make bracers, belts and boots grant +1 HP, so even unenchanted variants have an actual use (1532) (IWDEE BGEE BG2EE EET)
 
 I do not like gear that you can wear without any effect whatsoever. I can live with rings that don't do that, because there's no reasonable benefit to just wearing a ring. Therefore, wearing unenchanted belts, boots, and bracers will grant the wearer +1 HP which I think is reasonable enough, and it doesn't change balance much. For consistency, the magical variants also grant that. The unenchanted items will still be the worst choice, but should encourage filling all the gear slots.
+
+Optionally, you can give the same treatment to body armors (including robes), cloaks, helmets, and shields. There's an option for each that you can choose to activate (off by default).
 
 ### Make Void-weapons slightly more effective and logical (1548) (BGEE BG2EE EET)
 
 - On-equip strength-sapping effect will no longer affect undead (such as with Hexxat).
-- The weapons will be able to critically hit, dealing double damage, which is a feature that was missing from the original implementation.
+- Critical hits with the weapon will now actually deal double damage, which is a feature that was missing from the original implementation.
 
 ### Make Light Crossbows get +1/2 more APR (1360) (IWDEE BGEE BG2EE EET)
 
@@ -579,7 +581,8 @@ It will also now sport new icons, which are a massive upgrade from the original 
 
 This improves the gloves by adding the following:
 
-- +1 Casting level for paladins and clerics
+- Clerics can wear them now
+- +1 casting level for paladins and clerics
 - Party regeneration of 1 Hit Point every 5 rounds
 - The charge ability is now changed to a combination of Lay On Hands cast at level 10, and Slow Poison
 
@@ -593,6 +596,8 @@ This improves the gloves by adding the following:
 
 - Mask of King Strohm III: now it protects vs. critical hits, increases Detect Illusion and Find Traps by 10. It has a charge ability to cast Oracle once per day.
 - Shadow Dragon Wardstone: It is now an ioun stone which grants immunity to Blindness. Shadow dragons and other shadow creatures incur in a -2 combat roll penalty towards the wearer. 5% hiding skill and shadowdancers and dark moon monks get a +3% damage resistance.
+
+All off these can be toggled on and off in the preferences file.
 
 ### Make Ring of the Crusade grant combat bonuses vs. demons and devils (1198) (BGEE BG2EE EET)
 
@@ -2383,13 +2388,22 @@ As it says. Note that the patching is manual and every drow has to be found and 
 
 ## End-of-install-order
 
-</summary>d
+</summary>
 
 ### Make a selection of spells ignore magic resistance (1531) (IWDEE BGEE BG2EE EET)
 
 The full list of spells is: Detect Evil, Know Alignment, Stinking Cloud, Entangle, Grease, Web, Summon Cow, Glitterdust, Magical Stone, Call Lightning, Cloudburst, Summon Insects/ Insect Plague / Creeping Doom, Nature's Beauty, Storm of Vengeance, Mold Touch, Smashing Wave, Shout / Great Shout, Thorn Spray, Spike Growth.
 
 Bear in mind this component should be installed after tweaks that affect these spells, especially if they add new effects to them; otherwise, this tweak will only work partially, and inconsistent results could ensue.
+
+### Make Handmaiden's Mace +2 (Viconia's romance) reflect BG3's take on it (1381) (BG2EE EET)
+
+- Sets strength to 18, unless it's already 18 or higher. This is determined only at the moment of equipping the mace.
+- Relaxes the unusability of the mace, allowing all classes that can wield maces to wield it, as well as the neutrally aligned. It keeps the restriction to those of elven or half-elven ancestry. The fixpack also enforces unusability to tieflings and vampires, and that is kept.
+- Slightly increases the price from 2500 to 3000
+- Poison effect is kept as is
+
+This component is part of this group as a precaution, since the technicalities of making strength only be set to 18 if under 18 can make tweaks added after this one cease to work as intended.
 
 </details>
 

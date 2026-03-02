@@ -130,6 +130,16 @@ OUTER_SET zst_1546_buckler_wizards                      = "1" // allows wizard c
 // otherwise the default is removing angle requirements, but requiring invisibility
 OUTER_SET zst_1600_backstab_no_invis_requirement_only = "0"
 
+// allowances for the 1 HP bonus to wearables
+OUTER_SET zst_1532_add_1hp_to_belts      = "1"
+OUTER_SET zst_1532_add_1hp_to_boots      = "1"
+OUTER_SET zst_1532_add_1hp_to_bracers    = "1"
+// additional allowances (off by default)
+OUTER_SET zst_1532_add_1hp_to_body_armor = "0"
+OUTER_SET zst_1532_add_1hp_to_cloaks     = "0"
+OUTER_SET zst_1532_add_1hp_to_helmets    = "0"
+OUTER_SET zst_1532_add_1hp_to_shields    = "0"
+
 ////////////////////////////// Gear tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // circlet / ioun critical hit protection configuration, only select one, component will fail otherwise
