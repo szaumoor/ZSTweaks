@@ -1,6 +1,6 @@
 BACKUP "weidu_external/backup/ZSTweaks"
 SUPPORT "Kaelyn at Gibberlings3 forum https://www.gibberlings3.net/profile/12720-kaelyn/ or at kaelyn@tuta.io"
-VERSION "1.6.5c"
+VERSION "1.6.6"
 README ~%MOD_FOLDER%/full_readme.md~
 AUTO_EVAL_STRINGS
 
@@ -1501,7 +1501,11 @@ FORBID_COMPONENT "ZSTweaks.tp2" "3000" @58
 /////////////////////////////////////// END-OF-INSTALL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 BEGIN @10012 DESIGNATED 10012 GROUP @32 // INSTALL USER-DEFINED COMPONENTS IN GROUP 
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
-FORBID_COMPONENT "ZSTweaks.tp2" "1531" @58
+FORBID_COMPONENT "ZSTweaks.tp2" "1531" @58 FORBID_COMPONENT "ZSTweaks.tp2" "1381" @58
+
+BEGIN @1381 DESIGNATED 1381 GROUP @32 // HANDMAIDEN MACE 
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "10012" @58
 
 BEGIN @1531 DESIGNATED 1531 GROUP @32 // SELECTIVE SPELLS MR BYPASS 
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
