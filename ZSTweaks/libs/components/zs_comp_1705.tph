@@ -1,0 +1,79 @@
+ACTION_IF NOT is_iwdee BEGIN
+
+    ACTION_IF zst_1705_balduran_sword_as_bastard_sword = 1  AND zst_1705_balduran_sword_as_long_sword = 1 
+            OR zst_1705_balduran_sword_as_bastard_sword = 0 AND zst_1705_balduran_sword_as_long_sword = 0
+    BEGIN
+        FAIL "[FAIL]: Incorrect settings for Balduran's Sword, please select only ONE proficiency option."
+    END 
+
+    COPY ~%MOD_FOLDER%/items/balduran_swords~ ~override~
+
+    ACTION_IF is_bgee BEGIN
+        OUTER_SPRINT bg1_resource "sw1h18"
+    END
+
+    ACTION_IF is_eet BEGIN
+        OUTER_SPRINT bg1_resource "sw1h18_"
+    END
+
+    ACTION_IF zst_1705_balduran_sword_as_bastard_sword BEGIN
+
+        OUTER_SET baldur_prof = 89
+        OUTER_SET baldur_weight = 7
+        OUTER_SPRINT baldur_dice @55104
+        OUTER_SPRINT baldur_proficiency @55101
+        
+        OUTER_SET baldur_required_str = 11
+        OUTER_SET baldur_speed_factor = 6
+        OUTER_SPRINT baldur_appearance "s0"
+        OUTER_SET baldur_unusable0 = 1074059136
+
+        OUTER_SET bastard_comp_installed = zst_1150_dice_bastard_swords AND
+                                          (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
+                                          (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice))
+
+        ACTION_IF NOT bastard_comp_installed BEGIN
+            OUTER_SET baldur_dice_thrown = 2
+            OUTER_SET baldur_dicesize = 4                        
+            OUTER_SET baldur_bonus_damage = 2
+        END ELSE BEGIN
+            OUTER_SET baldur_dice_thrown = 1
+            OUTER_SET baldur_dicesize = 8                        
+            OUTER_SET baldur_bonus_damage = 3
+        END
+
+    END ELSE ACTION_IF zst_1705_balduran_sword_as_long_sword BEGIN
+
+        OUTER_SET baldur_prof = 90
+        OUTER_SET baldur_weight = 3
+        OUTER_SPRINT baldur_dice @55103
+        OUTER_SPRINT baldur_proficiency @55102
+        OUTER_SET baldur_dice_thrown = 1
+        OUTER_SET baldur_dicesize = 8
+        OUTER_SET baldur_required_str = 6
+        OUTER_SET baldur_speed_factor = 3
+        OUTER_SPRINT baldur_appearance "s1"
+        OUTER_SET baldur_unusable0 = 1615648640
+        OUTER_SET baldur_bonus_damage = 2
+
+    END
+
+    COPY_EXISTING ~%bg1_resource%.itm~ ~override~
+                  ~wa2sw1h.itm~        ~override~
+        LPF ALTER_ITEM INT_VAR ench=2 id_desc = RESOLVE_STR_REF(@55100) wpn_prof=baldur_prof weight=baldur_weight min_str=baldur_required_str flags=876 appearance=baldur_appearance unusable0=baldur_unusable0 END
+
+        LPF ALTER_HEADER INT_VAR speed = baldur_speed_factor dicesize = baldur_dicesize dicenumber = baldur_dice_thrown damage=baldur_bonus_damage END
+
+        PATCH_IF zst_1705_balduran_sword_rename_emperors_sword BEGIN
+            LPF ALTER_ITEM INT_VAR id_name = RESOLVE_STR_REF(@55105) END
+        END
+
+        LPF DELETE_EFFECT END
+        LPF ADD_EQUIPPED_EFF INT_VAR p1 = 99 STR_VAR effects = ~op=7,p2=21;op=7,p2=20;op=7,p2=16~ END // colors
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=4 spec=4 STR_VAR effects = ~op=344,p1=%race_lycanthrope%;op=178,p1=%race_lycanthrope%,spec=2;op=344,p1=%race_dragon%;op=178,p1=%race_dragon%,spec=2;op=344,p1=%race_mimic%;op=178,p1=%race_mimic%,spec=2;op=344,p1=%race_doppleganger%;op=178,p1=%race_doppleganger%,spec=2;op=344,p1=%race_vampire%;op=178,p1=%race_vampire%,spec=2;op=344,p1=%race_vampyre%;op=178,p1=%race_vampyre%,spec=2;op=344,p1=%race_rakshasa%;op=178,p1=%race_rakshasa%,spec=2;op=344,p1=%race_demonic%;op=178,p1=%race_demonic%,spec=2;op=344,p2=5,p1=%class_druid_all%;op=178,p2=5,p1=%class_druid_all%,spec=2~ END // ench / thac0 bonuses
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=166,p1=7;op=37,p1=2;op=142,p2=63~ END
+
+        // zstbldu0 (dmg resource)
+        LPF ADD_ON_HIT_EFF INT_VAR p2=4 STR_VAR res=~zstbldu0~ effects = ~op=177,p1=%race_lycanthrope%;op=177,p1=%race_dragon%;op=177,p1=%race_mimic%;op=177,p1=%race_doppleganger%;op=177,p1=%race_vampire%;op=177,p1=%race_vampyre%;op=177,p1=%race_rakshasa%;op=177,p1=%race_demonic%;op=177,p2=5,p1=%class_druid_all%~ END
+ 
+END

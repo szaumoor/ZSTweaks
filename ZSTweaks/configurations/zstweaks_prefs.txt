@@ -196,6 +196,13 @@ OUTER_SET zst_1580_hawksight_extra = "1"
 // allows kachiko's wakizashi (whisper) to be upgraded by cespenar
 OUTER_SET zst_1583_kachiko_upgrade = "1"
 
+// balduran's sword
+// Check only ONE of these (bastard sword is the default). Failure to do so will cause installation to fail.
+OUTER_SET zst_1705_balduran_sword_as_bastard_sword      = "1"
+OUTER_SET zst_1705_balduran_sword_as_long_sword         = "0"
+// rename the sword to its name in BG3, Sword of the Emperor
+OUTER_SET zst_1705_balduran_sword_rename_emperors_sword = "1"
+
 ////////////////////////////// Axes & Blunt Weapon Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 OUTER_SET zst_1310_easthaven_dr = "10" // damage reduction defender of easthaven can provide. Specify to your needs

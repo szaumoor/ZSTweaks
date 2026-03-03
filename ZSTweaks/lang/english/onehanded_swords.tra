@@ -910,10 +910,10 @@ Equipped abilities:
 – Save vs. Spell: +2
 
 Combat abilities:
-– Acts as a +4 weapon vs. shapeshifters. This includes all lycanthropes, loup garou, mimics, dopplegangers, changelings, and vampires.
+– Acts as a +4 weapon vs. shapeshifters. This includes all druids, lycanthropes, loup garou, mimics, dopplegangers, changelings, demons, devils, rakshasa, and vampires.
 
 THAC0: +2, +4 vs. shapeshifters
-Damage: %baldur_dice%+2, +4 magic damage vs. shapeshifters
+Damage: %baldur_dice%+%baldur_bonus_damage%, +4 magic damage vs. shapeshifters
 Damage type: Slashing
 Speed Factor: %baldur_speed_factor%
 Proficiency Type: %baldur_proficiency%
@@ -927,3 +927,4 @@ Weight: %baldur_weight%~
 @55102 = ~Long Sword~
 @55103 = ~1d8~
 @55104 = ~2d4~
+@55109 = ~Sword of the Emperor +2~
