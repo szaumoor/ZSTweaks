@@ -1,9 +1,5 @@
 OUTER_SET group_component = 1
 
-OUTER_SPRINT config_path ~%MOD_FOLDER%/configurations/zstweaks_class_kit_group_install.txt~
-INCLUDE ~%config_path%~
-COPY ~%config_path%~ ~override~
-
 ACTION_IF zst_group_2100_sunsoul BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2100.tph~ END
 END

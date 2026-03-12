@@ -1,11 +1,5 @@
 ACTION_IF NOT is_iwdee BEGIN
 
-    ACTION_IF zst_1705_balduran_sword_as_bastard_sword = 1  AND zst_1705_balduran_sword_as_long_sword = 1 
-            OR zst_1705_balduran_sword_as_bastard_sword = 0 AND zst_1705_balduran_sword_as_long_sword = 0
-    BEGIN
-        FAIL "[FAIL]: Incorrect settings for Balduran's Sword, please select only ONE proficiency option."
-    END 
-
     COPY ~%MOD_FOLDER%/items/balduran_swords~ ~override~
 
     ACTION_IF is_bgee BEGIN
@@ -60,9 +54,9 @@ ACTION_IF NOT is_iwdee BEGIN
 
     COPY_EXISTING ~%bg1_resource%.itm~ ~override~
                   ~wa2sw1h.itm~        ~override~
-        LPF ALTER_ITEM INT_VAR ench=2 id_desc = RESOLVE_STR_REF(@55100) wpn_prof=baldur_prof weight=baldur_weight min_str=baldur_required_str flags=876 appearance=baldur_appearance unusable0=baldur_unusable0 END
+        LPF ALTER_ITEM INT_VAR ench=2 id_desc = RESOLVE_STR_REF(@55100) wpn_prof=baldur_prof weight=baldur_weight min_str=baldur_required_str flags=876 appearance=baldur_appearance unusable0=baldur_unusable0 STR_VAR icon=~zstblduz~ ground_icon=~csw1h05~ END
 
-        LPF ALTER_HEADER INT_VAR speed = baldur_speed_factor dicesize = baldur_dicesize dicenumber = baldur_dice_thrown damage=baldur_bonus_damage END
+        LPF ALTER_HEADER INT_VAR speed = baldur_speed_factor dicesize = baldur_dicesize dicenumber = baldur_dice_thrown damage=baldur_bonus_damage STR_VAR icon=~zstblduz~ END
 
         PATCH_IF zst_1705_balduran_sword_rename_emperors_sword BEGIN
             LPF ALTER_ITEM INT_VAR id_name = RESOLVE_STR_REF(@55105) END

@@ -1,4 +1,4 @@
-ACTION_IF !VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
+ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
 
     OUTER_SET is_bgee = GAME_IS ~bgee~
     OUTER_SET is_bg2ee = GAME_IS ~bg2ee~

@@ -1,6 +1,5 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
     COPY_EXISTING ~wa2dak.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6330) ench=3 END
         LPF ALTER_HEADER INT_VAR match_damage=2 match_to_hit=2 match_speed=2 to_hit=3 speed=1 damage=3 END

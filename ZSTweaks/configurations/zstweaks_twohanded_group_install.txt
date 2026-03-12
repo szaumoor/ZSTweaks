@@ -1,5 +1,6 @@
 // Set here to "1" those components that you wish you install as part of the group installation of two-handed tweaks
 // Set to 0 to DISABLE
+// DO NOT change values in this file while the installation runs.
 
 OUTER_SET zst_group_1200_ixil_spike          = "1"
 OUTER_SET zst_group_1201_lilarcor            = "1"

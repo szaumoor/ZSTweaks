@@ -1,7 +1,6 @@
 ACTION_IF NOT is_iwdee BEGIN
 
     COPY ~%MOD_FOLDER%/items/voidweapons~ ~override~
-    INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
     ACTION_IF zst_1150_dice_warhammers AND 
             (MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" OR
             (group_component AND zst_group_1150_weapon_dice)) 

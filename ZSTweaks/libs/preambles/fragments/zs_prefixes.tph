@@ -16,10 +16,12 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
 
     ACTION_IF NOT has_eefixpack BEGIN
 
-        ACTION_IF FILE_EXISTS_IN_GAME ~spcl936.spl~ AND !(MOD_IS_INSTALLED ~ZS_ShadowdancerOverhaul.tp2~ ~100~) BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME ~spcl936.spl~ AND NOT has_zs_shadowdancer_overhaul BEGIN
+
             PRINT "[INFO]: Extending duration of Shadow Twin to the intended 2 turns"
             COPY_EXISTING ~spcl936.spl~ ~override~ // Shadow Twin, fixed wrong duration
                 LPF ALTER_EFFECT INT_VAR silent=1 match_duration = 60 duration = 120 END
+
         END 
         
         PRINT "[INFO]: Setting the right THAC0 penalty to the Shadowdancer kit for using weapons without proficiency"
@@ -27,7 +29,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
             READ_2DA_ENTRIES_NOW clswpbon 1
             FOR (row = 3; row < clswpbon; ++row) BEGIN
                 READ_2DA_ENTRY_FORMER clswpbon row 0 label
-                PATCH_IF (~%label%~ STR_EQ ~SHADOWDANCER~) BEGIN
+                PATCH_IF (~%label%~ STR_EQ ~shadowdancer~) BEGIN
                 SET_2DA_ENTRY_LATER clswpbon_out row 3 3
                 SET row = clswpbon
                 END
@@ -60,7 +62,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
 
             PRINT ~[INFO]: Fixing Hakeashar and Nishruu being identified as ogre mages class-wise~
             COPY_EXISTING "nishrusu.cre" "override"
-                          "haksu.cre" "override"
+                          "haksu.cre"    "override"
                 WRITE_BYTE 0x271 general_monster
                 WRITE_BYTE 0x272 race_mist 
                 WRITE_BYTE 0x273 class_mist 
@@ -70,16 +72,17 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
     END
 
     ACTION_IF is_bg2ee_or_eet BEGIN
-        
-        PRINT "[INFO]: Balduran's Plate no longer preventing characters of level 5 or less from getting a Charisma increase"
-        COPY_EXISTING ~wa2plat.itm~ ~override~
-            LPF ALTER_EFFECT INT_VAR match_dicesize = 6 dicesize = 0 END
 
         PRINT "[INFO]: Lord Jierdan no longer classified as an animal but a monster."
         COPY_EXISTING ~firkra01.cre~ ~override~
             WRITE_BYTE 0x271 general_monster
 
         ACTION_IF NOT has_eefixpack BEGIN
+
+            PRINT "[INFO]: Balduran's Plate no longer preventing characters of level 5 or less from getting a Charisma increase"
+            COPY_EXISTING ~wa2plat.itm~ ~override~
+                LPF ALTER_EFFECT INT_VAR match_dicesize = 6 dicesize = 0 END
+            BUT_ONLY
 
             PRINT "[INFO]: Fixing incorrect speed factor in Lilarcor from 8 to 7"
             COPY_EXISTING ~sw2h14.itm~ ~override~
@@ -127,23 +130,23 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                 LPF ALTER_HEADER INT_VAR speed = 0 END
 
             COPY_EXISTING ~misc4q.itm~ ~override~
-            LPF WPN_DICENUM RET dicenum = result END
-            LPF WPN_DICESIZE RET dicesize = result END
-            PATCH_IF dicesize = 4 AND dicenum = 2 BEGIN
-                PATCH_PRINT "[INFO]: Fixing misc4q.itm (The Ogre's Sword) so it uses bastard sword proficiency"
-                LPF ALTER_ITEM INT_VAR lore = 0 wpn_prof = 89 END
-                LPF ALTER_HEADER INT_VAR silent = 1 dicesize = 8 dicenumber = 1 END
-                SPRINT str @99980
-                SPRINT ls_str @99981
-                SPRINT bs_str @99982
-                READ_STRREF 0x50 desc
-                INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                    REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)%ls_str%~ ~\1%bs_str%~
+                LPF WPN_DICENUM RET dicenum = result END
+                LPF WPN_DICESIZE RET dicesize = result END
+                PATCH_IF dicesize = 4 AND dicenum = 2 BEGIN
+                    PATCH_PRINT "[INFO]: Fixing misc4q.itm (The Ogre's Sword) so it uses bastard sword proficiency"
+                    LPF ALTER_ITEM INT_VAR lore = 0 wpn_prof = 89 END
+                    LPF ALTER_HEADER INT_VAR silent = 1 dicesize = 8 dicenumber = 1 END
+                    SPRINT str @99980
+                    SPRINT ls_str @99981
+                    SPRINT bs_str @99982
+                    READ_STRREF 0x50 desc
+                    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)%ls_str%~ ~\1%bs_str%~
+                    END
+                    SAY_EVALUATED 0x50 ~%desc%~
                 END
-                SAY_EVALUATED 0x50 ~%desc%~
-            END
 
-            PRINT "[INFO]: sw1h28.itm (Cutthroat +4) so it has a speed factor of 0"
+            PRINT "[INFO]: Fixing Cutthroat +4 so it has a speed factor of 0 as expected"
             COPY_EXISTING "sw1h28.itm" ~override~
                 LPF ALTER_HEADER INT_VAR speed = 0 END
                 READ_STRREF 0x54 desc
@@ -185,6 +188,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                 PATCH_IF found BEGIN
                     REPLACE_CRE_ITEM ~sw1h07~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
                 END
+            BUT_ONLY
 
             PRINT "[INFO]: Cambions that are set as 'thieves' wielding bastard swords without proficiency for it. Adding large sword proficiency 1 to them"
             COPY_EXISTING ~cambion1.cre~ ~override~
@@ -192,6 +196,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                 PATCH_IF BYTE_AT(0x6e) = 0 BEGIN // if they have no proficiency in large swords
                     WRITE_BYTE 0x6f 1 // add one pip to large sword proficiency
                 END
+            BUT_ONLY
 
             PRINT "[INFO]: Thieves using daggers without being proficient in them. Adding one pip to proficiency in daggers for them"
             COPY_EXISTING ~ar18thif.cre~ ~override~
@@ -243,7 +248,6 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                 LPF DELETE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 1 match_parameter2 = 90 END
                 LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing=9 target=1 END
 
-
             PRINT "[INFO]: Yuan-ti using long swords without being proficient in them. Setting proficiencies to large swords to 3, as seemingly intended"
             COPY_EXISTING ~icyuan01.cre~ ~override~
                 WRITE_BYTE 0x6e 3
@@ -288,6 +292,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
             PATCH_IF BYTE_AT(0x6e) = 0 BEGIN
                 WRITE_BYTE 0x6f 1
             END
+        BUT_ONLY
 
     END
 
@@ -311,7 +316,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                             ~slaysh01.cre~ ~override~ // slayer shadow
                 REMOVE_MEMORIZED_SPELL ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
                 REMOVE_KNOWN_SPELL     ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
-                BUT_ONLY IF_EXISTS
+            BUT_ONLY IF_EXISTS
 
         END ELSE ACTION_IF is_bg2ee_or_eet BEGIN // bg2ee
 
@@ -365,6 +370,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                 REMOVE_MEMORIZED_SPELL ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
                 REMOVE_KNOWN_SPELL ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
             BUT_ONLY IF_EXISTS
+
         END
 
     END
@@ -431,6 +437,7 @@ ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
                 PATCH_IF race = race_statue AND NOT petrified BEGIN
                     LPM fix_gender
                 END
+            BUT_ONLY
 
             PRINT "[INFO]: Found %matches% matches that were set to 'niether' gender"
             

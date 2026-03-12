@@ -2,13 +2,17 @@
 
 // All options that are about "allowing" a tweak or not follow the binary format of "1" (true) to allow the tweak during installation time, and "0" (false) to not allow. Change it to your preferences according to that. If the values have a different meaning, it will be noted.
 
+// DO NOT change values in this file while the installation runs.
+
 ////////////////////////////// Misc \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-OUTER_SET zs_debug = "0" // normally at 0 for users
+OUTER_SET zs_debug = "0" // normally at 0 for users. Don't touch
 
 ////////////////////////////// Pre-fixes \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-OUTER_SET zst_gender_fix = "1" // In vanilla game, many creatures are inappropriately set to 'male' (never female, I wonder why?) even though they should be completely independent of it, such as golems, statues, mists, fungus, slimes, mind flayers... This interferes with opcodes that target based on gender, leading to results that will be anything but logical. It is recommended to leave this on if you're planning on installing something that targets gender of male or female, such as my Shar-Teel component
+// In vanilla game, many creatures are inappropriately set to 'male' (never female, I wonder why?) even though they should be completely independent of it, such as golems, statues, mists, fungus, slimes, mind flayers... all of them are according to the lore, sexless and genderless creatures. This interferes with opcodes that target based on gender/sex, leading to results that will be anything but logical. It is recommended to leave this on if you're planning on installing something that targets "gender" of male or female, such as my Shar-Teel component
+
+OUTER_SET zst_gender_fix = "1" 
 
 ////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -19,7 +23,7 @@ OUTER_SET zst_443_nerf_npc_symbols = "1"
 
 // backstab penalties to different weapon types (set to 0 to disable, otherwise add a positive number to determine backstab multiplier penalty)
 OUTER_SET zst_1120_backstab_penalty_lswords    = "1"
-OUTER_SET zst_1120_backstab_penalty_rp_estocs  = "1" // my item pack estocs
+OUTER_SET zst_1120_backstab_penalty_kaelyn_estocs  = "1" // my item pack estocs
 OUTER_SET zst_1120_backstab_penalty_katana     = "1"
 OUTER_SET zst_1120_backstab_penalty_scimitars  = "1"
 OUTER_SET zst_1120_backstab_penalty_staves     = "2"
@@ -28,9 +32,9 @@ OUTER_SET zst_1120_backstab_penalty_ninjatos   = "0"
 OUTER_SET zst_1120_backstab_penalty_bstsword   = "0"
 OUTER_SET zst_1120_backstab_penalty_2hsword    = "0"
 OUTER_SET zst_1120_backstab_penalty_sswords    = "0"
-OUTER_SET zst_1120_backstab_penalty_rp_rapiers = "0" // my item pack rapiers
+OUTER_SET zst_1120_backstab_penalty_kaelyn_rapiers = "0" // my item pack rapiers
 OUTER_SET zst_1120_backstab_penalty_daggers    = "0"
-OUTER_SET zst_1120_backstab_penalty_rp_kukris  = "0" // my item pack kukris
+OUTER_SET zst_1120_backstab_penalty_kaelyn_kukris  = "0" // my item pack kukris
 OUTER_SET zst_1120_backstab_penalty_maces      = "0"
 OUTER_SET zst_1120_backstab_penalty_clubs      = "0"
 OUTER_SET zst_1120_backstab_penalty_hammers    = "0"
@@ -56,7 +60,7 @@ OUTER_SET zst_1361_halberds_crits = "1"
 // This modifies the blunt weapon tweak so the AC debuff only works against enemies that don't wear armor, such as dragons
 OUTER_SET zst_1362_blunt_only_nonarmored = "0"
 
-// save penalty/bonus for arrows of dispelling
+// save penalty/bonus for arrows of dispelling, valid values range from -10 to 10 
 OUTER_SET zst_1371_save_penalty = "-2"
 
 // allow or disallow weapon categories to be modified by the Finesse component (Component 1450)
@@ -73,21 +77,20 @@ OUTER_SET zst_1450_allow_slings    = "1"
 OUTER_SET zst_1450_allow_bows      = "1"
 OUTER_SET zst_1450_allow_xbows     = "1"
 OUTER_SET zst_1450_allow_darts     = "1"
-OUTER_SET zst_1450_allow_bucklers  = "1"
 
 // allow bards to benefit from finesse
 OUTER_SET zst_1450_allow_bards               = "1"
-OUTER_SET zst_1450_bards_probability_penalty = 24 // 25% actually, probabilities go from 0 to 99. Multiplicative
+OUTER_SET zst_1450_bards_probability_penalty = 24 // 25% actually, probabilities go from 0 to 99. Multiplicative, for example, if a thief has a 50% chance of inflicting a Finesse hit, a 25% penalty would transform that 50% chance for bards to 37.5% chance. Valid range is anywhere between 0 and 98. Other values are nonsensical.
 
 // potions are usable by everyone
 OUTER_SET zst_1534_potions_usable_everyone   = "1"
 OUTER_SET zst_1534_potion_overhaul           = "1"
 OUTER_SET zst_1534_potions_cannot_self_stack = "1"
 
-// tweaks the price of jewery. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted half, you would type 50.
+// tweaks the price of jewelry. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted half, you would type 50.
 OUTER_SET zst_1538_jewelry_price = "150"
 
-// Only select one, failure to do this will make the component fail immediately
+// Only select one, failure to do this will make the mod fail to install immediately
 OUTER_SET zst_1539_all_no_reqs    = "0" // all can use scrolls
 OUTER_SET zst_1539_all_reqs       = "1" // all can use scrolls with stat requirements (default)
 OUTER_SET zst_1539_rogues_no_reqs = "0" // rogues can use scrolls
@@ -110,6 +113,11 @@ OUTER_SET zst_1545_weapon_style_twohanded = "1" // allow two handed tweak
 OUTER_SET zst_1545_weapon_style_onehanded = "1" // allow one handed tweak
 OUTER_SET zst_1545_weapon_style_shield    = "1" // allow sword and shield tweak
 OUTER_SET zst_1545_weapon_style_twoweapon = "1" // allow two weapon tweak
+OUTER_SET zst_1545_saving_throws_rogue    = "1" // saving throw table for thieves and bards
+OUTER_SET zst_1545_saving_throws_priest   = "1" // saving throw table for priests, druids, and shamans
+OUTER_SET zst_1545_saving_throws_warrior  = "1" // saving throw table for fighters, paladins, and rangers
+OUTER_SET zst_1545_saving_throws_rogue    = "1" // saving throw table for wizards and sorcerers
+OUTER_SET zst_1545_saving_throws_monk     = "1" // saving throw table for monks
 
 // allow tweaks to different shield types
 OUTER_SET zst_1546_buckler_tweak = "1"

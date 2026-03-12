@@ -1,7 +1,4 @@
 OUTER_SET group_component = 1
-OUTER_SPRINT config_path "%MOD_FOLDER%/configurations/zstweaks_gear_group_install.txt"
-INCLUDE ~%config_path%~
-COPY ~%config_path%~ ~override~
 
 ACTION_IF zst_group_1170_shadow_dragon_armor BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1170.tph~ END

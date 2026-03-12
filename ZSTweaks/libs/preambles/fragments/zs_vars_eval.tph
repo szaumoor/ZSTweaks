@@ -1,0 +1,363 @@
+ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
+    PRINT "[INFO]: Running the preferences check script. Any incorrectly set preferences will be reported and installation will prompty fail..."
+    WITH_SCOPE BEGIN
+
+        OUTER_SET failures = 0
+        DEFINE_ACTION_MACRO f_plus BEGIN OUTER_SET failures+=1 END
+
+        // -------------------------------------------------------------------------------------------------------- \\
+
+        ACTION_IF zst_gender_fix != 0 AND zst_gender_fix != 1 BEGIN
+            WARN "[WARN]: Gender fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_gender_fix%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------SYMBOL X SPELLS------------------------------------------------- \\
+
+        OUTER_SET valid_death_x = zst_443_death != 0 AND zst_443_death != 1
+        OUTER_SET valid_pain_x = zst_443_pain != 0 AND zst_443_pain != 1
+        OUTER_SET valid_npc_x = zst_443_nerf_npc_symbols != 0 AND zst_443_nerf_npc_symbols != 1
+
+        ACTION_IF valid_death_x OR valid_pain_x OR valid_npc_x BEGIN
+            WARN "[WARN]: Symbol X preferences should be set to 0 (disable) or 1 (enable). Actual values:"
+
+            ACTION_IF valid_death_x BEGIN
+                WARN "[WARN]: DEATH: %zst_443_death%"
+                LAM f_plus
+            END
+
+            ACTION_IF zst_443_pain BEGIN
+                WARN "[WARN]: PAIN: %zst_443_pain%"
+                LAM f_plus
+            END
+
+            ACTION_IF zst_443_nerf_npc_symbols BEGIN
+                WARN "[WARN]: NERF NPC SYMBOLS: %zst_443_nerf_npc_symbols%"
+                LAM f_plus
+            END
+        END
+
+        // ----------------------------------------BACKSTAB PENALTIES------------------------------------------------- \\
+
+        ACTION_IF zst_1120_backstab_penalty_lswords < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Long Sword set to an inappropriate value: %zst_1120_backstab_penalty_lswords%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF has_zs_item_pack_estocs AND zst_1120_backstab_penalty_kaelyn_estocs < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for ZS_ItemPack estocs set to an inappropriate value: %zst_1120_backstab_penalty_kaelyn_estocs%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_katana < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Katana set to an inappropriate value: %zst_1120_backstab_penalty_katana%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_scimitars < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Scimitars set to an inappropriate value: %zst_1120_backstab_penalty_scimitars%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_staves < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Staves set to an inappropriate value: %zst_1120_backstab_penalty_staves%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_wakis < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Wakizashis set to an inappropriate value: %zst_1120_backstab_penalty_wakis%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_ninjatos < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Ninjatôs set to an inappropriate value: %zst_1120_backstab_penalty_ninjatos%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_bstsword < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Bastard Swords set to an inappropriate value: %zst_1120_backstab_penalty_bstsword%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_2hsword < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Two-Handed Swords set to an inappropriate value: %zst_1120_backstab_penalty_2hsword%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_sswords < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Short Swords set to an inappropriate value: %zst_1120_backstab_penalty_sswords%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF has_zs_item_pack_rapiers AND zst_1120_backstab_penalty_kaelyn_rapiers < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for ZS_ItemPack rapiers set to an inappropriate value: %zst_1120_backstab_penalty_kaelyn_rapiers%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_daggers < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Daggers set to an inappropriate value: %zst_1120_backstab_penalty_daggers%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF has_zs_item_pack_kukris AND zst_1120_backstab_penalty_kaelyn_kukris < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for ZS_ItemPack rapiers set to an inappropriate value: %zst_1120_backstab_penalty_kaelyn_kukris%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_maces < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Maces set to an inappropriate value: %zst_1120_backstab_penalty_maces%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_clubs < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Clubs set to an inappropriate value: %zst_1120_backstab_penalty_clubs%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_hammers < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for War Hammers set to an inappropriate value: %zst_1120_backstab_penalty_hammers%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_mornstars < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Morning Stars set to an inappropriate value: %zst_1120_backstab_penalty_mornstars%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_flails < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Flails set to an inappropriate value: %zst_1120_backstab_penalty_flails%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_axes < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Axes set to an inappropriate value: %zst_1120_backstab_penalty_axes%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_spears < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Spears set to an inappropriate value: %zst_1120_backstab_penalty_spears%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_halberds < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Halberds set to an inappropriate value: %zst_1120_backstab_penalty_halberds%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        // ----------------------------------------DICE SIZE PREFS------------------------------------------------- \\
+
+        ACTION_IF zst_1150_dice_spears != 0 AND zst_1150_dice_spears != 1 BEGIN
+            WARN "[WARN]: Dice size tweak for Spears should be set to 0 (disable) or 1 (enable). Actual value: %zst_1150_dice_spears%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1150_dice_bastard_swords != 0 AND zst_1150_dice_bastard_swords != 1 BEGIN
+            WARN "[WARN]: Dice size tweak for Bastard Swords should be set to 0 (disable) or 1 (enable). Actual value: %zst_1150_dice_bastard_swords%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1150_dice_katanas != 0 AND zst_1150_dice_katanas != 1 BEGIN
+            WARN "[WARN]: Dice size tweak for Katanas should be set to 0 (disable) or 1 (enable). Actual value: %zst_1150_dice_katanas%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1150_dice_wakininja != 0 AND zst_1150_dice_wakininja != 1 BEGIN
+            WARN "[WARN]: Dice size tweak for Wakizashi/Ninjatô should be set to 0 (disable) or 1 (enable). Actual value: %zst_1150_dice_wakininja%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1150_dice_wakislashing != 0 AND zst_1150_dice_wakislashing != 1 BEGIN
+            WARN "[WARN]: Piercing/Slashing tweak for Wakizashi should be set to 0 (disable) or 1 (enable). Actual value: %zst_1150_dice_wakislashing%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1150_dice_warhammers != 0 AND zst_1150_dice_warhammers != 1 BEGIN
+            WARN "[WARN]: Dice size tweak for War Hammers should be set to 0 (disable) or 1 (enable). Actual value: %zst_1150_dice_warhammers%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1150_dice_twohanded_swords != 0 AND zst_1150_dice_twohanded_swords != 1 BEGIN
+            WARN "[WARN]: Dice size tweak for Two-Handed Swords should be set to 0 (disable) or 1 (enable). Actual value: %zst_1150_dice_warhammers%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------AXES & HALBERD CRITS------------------------------------------------- \\
+
+        ACTION_IF zst_1361_axes_crits != 0 AND zst_1361_axes_crits != 1 BEGIN
+            WARN "[WARN]: Critical damage tweak for Axes should be set to 0 (disable) or 1 (enable). Actual value: %zst_1361_axes_crits%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1361_halberds_crits != 0 AND zst_1361_halberds_crits != 1 BEGIN
+            WARN "[WARN]: Critical damage tweak for Halberds should be set to 0 (disable) or 1 (enable). Actual value: %zst_1361_axes_crits%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------BLUNT WEAPONS AC DEBUFF------------------------------------------------- \\
+
+        ACTION_IF zst_1362_blunt_only_nonarmored != 0 AND zst_1362_blunt_only_nonarmored != 1 BEGIN
+            WARN "[WARN]: Blunt weapons AC debuff setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1362_blunt_only_nonarmored%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------ARROW DISPELLING ST------------------------------------------------- \\
+
+        ACTION_IF zst_1371_save_penalty < "-10" OR zst_1371_save_penalty > 10 BEGIN
+            WARN "[WARN]: Enforced saving throw bonus for Arrows of Dispelling should be set between -10 and 10. Actual value: %zst_1371_save_penalty%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------FINESSE PREFERENCES------------------------------------------------- \\
+
+        ACTION_IF zst_1450_allow_daggers != 0 AND zst_1450_allow_daggers != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Daggers setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_daggers%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_staves != 0 AND zst_1450_allow_staves != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Staves setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_staves%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_sswords != 0 AND zst_1450_allow_sswords != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Short Swords setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_sswords%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_lswords != 0 AND zst_1450_allow_lswords != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Long Swords setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_lswords%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_scimitars != 0 AND zst_1450_allow_scimitars != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Scimitars setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_scimitars%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_katanas != 0 AND zst_1450_allow_katanas != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Katanas setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_katanas%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_clubs != 0 AND zst_1450_allow_clubs != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Clubs setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_clubs%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_wakis != 0 AND zst_1450_allow_wakis != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Wakizashis setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_wakis%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_ninjatos != 0 AND zst_1450_allow_ninjatos != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Ninjatôs setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_ninjatos%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_slings != 0 AND zst_1450_allow_slings != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Slings setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_slings%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_bows != 0 AND zst_1450_allow_bows != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Bows setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_bows%"
+            LAM f_plus
+        END
+        
+        ACTION_IF zst_1450_allow_xbows != 0 AND zst_1450_allow_xbows != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Crossbows setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_xbows%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_darts != 0 AND zst_1450_allow_darts != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Darts setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_darts%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_bards != 0 AND zst_1450_allow_bards != 1 BEGIN
+            WARN "[WARN]: Finesse setting to allow Bards to benefit should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_bards%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_bards_probability_penalty < 0 OR zst_1450_bards_probability_penalty > 98 BEGIN
+            WARN "[WARN]: Probability penalty for Bards should be set between 0 (1% chance penalty) and 98 (99% chance penalty). Actual value: %zst_1450_bards_probability_penalty%%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------POTION OVERHAUL------------------------------------------------- \\
+
+        ACTION_IF zst_1534_potions_usable_everyone != 0 AND zst_1534_potions_usable_everyone != 1 BEGIN
+            WARN "[WARN]: Setting to allow potions to be used by everyone should be set to 0 (disable) or 1 (enable). Actual value: %zst_1534_potions_usable_everyone%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1534_potion_overhaul != 0 AND zst_1534_potion_overhaul != 1 BEGIN
+            WARN "[WARN]: Setting to allow potions to be overhauled should be set to 0 (disable) or 1 (enable). Actual value: %zst_1534_potion_overhaul%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1534_potions_cannot_self_stack != 0 AND zst_1534_potions_cannot_self_stack != 1 BEGIN
+            WARN "[WARN]: Setting to not allow potions to self-stack should be set to 0 (disable) or 1 (enable). Actual value: %zst_1534_potions_cannot_self_stack%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------JEWELRY PRICES------------------------------------------------- \\
+
+        ACTION_IF zst_1538_jewelry_price < 0 BEGIN
+            WARN "[WARN]: Setting to modify jewelry prices should be set to a positive number. Actual value: %zst_1538_jewelry_price%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------SCROLL USABILITY------------------------------------------------- \\
+
+        OUTER_SET zst_1539_all_no_reqs_eval = zst_1539_all_no_reqs != 0 AND zst_1539_all_no_reqs != 1
+        OUTER_SET zst_1539_all_reqs_eval = zst_1539_all_reqs != 0 AND zst_1539_all_reqs != 1
+        OUTER_SET zst_1539_rogues_no_reqs_eval = zst_1539_rogues_no_reqs != 0 AND zst_1539_rogues_no_reqs != 1
+        OUTER_SET zst_1539_rogues_reqs_eval = zst_1539_rogues_reqs != 0 AND zst_1539_rogues_reqs != 1
+
+        ACTION_IF zst_1539_all_no_reqs_eval OR zst_1539_all_reqs_eval OR zst_1539_rogues_no_reqs_eval OR zst_1539_rogues_reqs_eval BEGIN
+            WARN "[WARN]: Scroll usability component has some option set to something other than 0 (disabled) or 1 (enabled)."
+            LAM f_plus
+        END
+
+        ACTION_IF (zst_1539_all_no_reqs + zst_1539_all_reqs + zst_1539_rogues_no_reqs + zst_1539_rogues_reqs) > 1 BEGIN
+            WARN "[WARN]: Scroll usability component should only have one setting set to 1, please check the config file"
+            LAM f_plus
+        END
+
+        // ----------------------------------------VORPAL NO CHUNKING------------------------------------------------- \\
+
+        ACTION_IF zst_1541_vorpal_no_chunking != 0 AND zst_1541_vorpal_no_chunking != 1 BEGIN
+            WARN "[WARN]: Setting to not allow vorpal hits to chunk should be set to 0 (disable) or 1 (enable). Actual value: %zst_1541_vorpal_no_chunking%"
+            LAM f_plus
+        END
+
+
+        // ----------------------------------------BALDURAN SWORDS------------------------------------------------- \\
+
+        ACTION_IF (zst_1705_balduran_sword_as_bastard_sword = 1  AND zst_1705_balduran_sword_as_long_sword  = 1) OR
+                (zst_1705_balduran_sword_as_bastard_sword = 0  AND zst_1705_balduran_sword_as_long_sword  = 0)
+        BEGIN
+            WARN "[WARN]: Incorrect settings for Balduran's Sword's proficiency standardization, please set one of them to 1, not both or neither."
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1705_balduran_sword_rename_emperors_sword != 0 AND zst_1705_balduran_sword_rename_emperors_sword != 1 
+        BEGIN
+            WARN "[WARN]: Balduran's rename option should be set to 1 or 0. Actual value: %zst_1705_balduran_sword_rename_emperors_sword%"
+            LAM f_plus
+        END  
+
+
+        // -------------------------------------------------------------------------------------------------------- \\
+
+        ACTION_IF failures > 0 BEGIN
+            FAIL "[FAIL]: There were %failures% incorrectly set settings in the preferences. Please check the logs and revise."
+        END ELSE BEGIN
+            PRINT "[INFO]: All good with the settings, proceeding..."
+        END
+
+        OUTER_SET zs_preinstall_check = 1
+
+    END
+END

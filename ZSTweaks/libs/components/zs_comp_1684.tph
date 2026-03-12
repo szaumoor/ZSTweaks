@@ -1,6 +1,3 @@
-
-
-INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
 OUTER_SET general_tweaks_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~
 OUTER_SET finesse_component_installed = (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ OR
                                         (general_tweaks_installed AND zst_group_1450_finesse))
