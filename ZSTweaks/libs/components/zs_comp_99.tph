@@ -222,7 +222,7 @@ ACTION_IF zst_group_491_spike_stones BEGIN
   END
 END
 
-ACTION_IF zst_group_492_barksin BEGIN
+ACTION_IF zst_group_492_barkskin BEGIN
   WITH_SCOPE BEGIN
     INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_492.tph~
   END
