@@ -1,4 +1,3 @@
-INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
 COPY_EXISTING ~arow07.itm~ ~override~
     LPF ALTER_EFFECT INT_VAR check_globals = 0 savingthrow = 1 savebonus = "%zst_1371_save_penalty%" END
 
