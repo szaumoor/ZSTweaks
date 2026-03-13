@@ -1,8 +1,7 @@
 
 ACTION_IF NOT is_iwdee BEGIN
 
-  ACTION_IF// NOT is_iwdee AND
-   zst_451_chain_lightning_boost BEGIN
+  ACTION_IF zst_451_chain_lightning_boost BEGIN
 
     COPY_EXISTING ~spwi615.spl~ ~override~
                   ~spdr601.spl~ ~override~

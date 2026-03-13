@@ -1,14 +1,11 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    ACTION_IF zst_1318_fnorth_evil OR zst_1318_fnorth_trolls BEGIN
-
-        COPY_EXISTING ~flamenor.eff~ ~override~
-            LPF ALTER_EFF_FILE INT_VAR special=1024 END
-        OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND
-                                             (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
-                                             (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice)) 
-
-    END ELSE BEGIN WARN "[WARN]: No Flame of the North tweaks were selected" END
+    COPY_EXISTING ~flamenor.eff~ ~override~
+        LPF ALTER_EFF_FILE INT_VAR special=1024 END
+        
+    OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND
+                                          (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
+                                          (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice)) 
 
     ACTION_IF zst_1318_fnorth_evil BEGIN
 

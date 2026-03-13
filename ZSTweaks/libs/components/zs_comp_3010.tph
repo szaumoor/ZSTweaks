@@ -8,8 +8,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ALTER_CRE INT_VAR alignment=alignmen_lawful_good END
 
   // converting to NG
-  COPY_EXISTING ~ARVAL.CRE~    ~override~ // Arval Mornmaster, currently LE, should be NG
-                ~BHARVAL.CRE~  ~override~ // Arval Mornmaster, currently LE, should be NG
+  COPY_EXISTING ~arval.cre~    ~override~ // Arval Mornmaster, currently LE, should be NG
+                ~bharval.cre~  ~override~ // Arval Mornmaster, currently LE, should be NG
                 ~c6cler1.cre~  ~override~ // cleric of lathander, neutral, should probably be NG
     LPF ALTER_CRE INT_VAR alignment=alignmen_neutral_good END
 

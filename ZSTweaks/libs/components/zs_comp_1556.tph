@@ -1,10 +1,7 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    OUTER_SET edits = 0
-
     ACTION_IF zst_1556_harper_pin BEGIN
 
-        OUTER_SET edits += 1
         COPY_EXISTING ~misc5x.itm~ ~override~
             LPF DELETE_EFFECT INT_VAR match_opcode = 319 match_special = 9456 END
 
@@ -12,7 +9,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     ACTION_IF zst_1556_keepsake_locket BEGIN
 
-        OUTER_SET edits += 1
         COPY_EXISTING ~misc5w.itm~ ~override~
             SET desc = RESOLVE_STR_REF(@70040)
             LPF ALTER_ITEM INT_VAR general_desc=desc id_desc=desc END
@@ -42,5 +38,4 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     END
 
-    ACTION_IF NOT edits BEGIN WARN "[WARN]: No applicable tweaks in Jaheira's component were selected." END
 END
