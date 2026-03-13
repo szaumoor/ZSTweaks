@@ -1,5 +1,7 @@
 ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
 
+    PRINT "[INFO]: Manually standardizing strrefs for shields of different types to allow shield tweak to work propery... Don't worry, it's harmless even if you don't want to install it..."
+
     COPY_EXISTING ~shld03.itm~ ~override~
         READ_LONG 0x8 medium_shield_strref
 

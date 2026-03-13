@@ -332,6 +332,347 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
             LAM f_plus
         END
 
+        // ----------------------------------------STAT BONUSES------------------------------------------------- \\
+
+        ACTION_IF zst_1545_strength_bonuses != 0 AND zst_1545_strength_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change strength bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_strength_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_constitution_bonuses != 0 AND zst_1545_constitution_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change constitution bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_constitution_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_dexterity_bonuses != 0 AND zst_1545_dexterity_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change dexterity bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_dexterity_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_lore_class_bonuses != 0 AND zst_1545_lore_class_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change lore by class bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_lore_class_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_lore_stat_bonuses != 0 AND zst_1545_lore_stat_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change lore by stat bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_lore_stat_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_racethac0_bonuses != 0 AND zst_1545_racethac0_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change racial thac0 bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_racethac0_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_shorty_bonuses < 0 AND zst_1545_shorty_bonuses > 3 BEGIN
+            WARN "[WARN]: Setting to change shorty bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_shorty_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_proficiency_bonuses != 0 AND zst_1545_proficiency_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change weapon proficiency bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_proficiency_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_proficiency_bonuses != 0 AND zst_1545_proficiency_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change weapon proficiency bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_proficiency_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_weapon_style_bonuses != 0 AND zst_1545_weapon_style_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change weapon style bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_weapon_style_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_weapon_style_twohanded != 0 AND zst_1545_weapon_style_twohanded != 1 BEGIN
+            WARN "[WARN]: Setting to change two-handed weapon style bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_weapon_style_twohanded%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_weapon_style_onehanded != 0 AND zst_1545_weapon_style_onehanded != 1 BEGIN
+            WARN "[WARN]: Setting to change one-handed weapon style bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_weapon_style_onehanded%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_weapon_style_shield != 0 AND zst_1545_weapon_style_shield != 1 BEGIN
+            WARN "[WARN]: Setting to change sword and shield style bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_weapon_style_onehanded%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_weapon_style_twoweapon != 0 AND zst_1545_weapon_style_twoweapon != 1 BEGIN
+            WARN "[WARN]: Setting to change two-weapon style bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_weapon_style_twoweapon%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_saving_throws_rogue != 0 AND zst_1545_saving_throws_rogue != 1 BEGIN
+            WARN "[WARN]: Setting to change rogue saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_rogue%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_saving_throws_priest != 0 AND zst_1545_saving_throws_priest != 1 BEGIN
+            WARN "[WARN]: Setting to change priest saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_priest%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_saving_throws_warrior != 0 AND zst_1545_saving_throws_warrior != 1 BEGIN
+            WARN "[WARN]: Setting to change warrior saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_warrior%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_saving_throws_wizard != 0 AND zst_1545_saving_throws_wizard != 1 BEGIN
+            WARN "[WARN]: Setting to change wizard saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_wizard%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_saving_throws_monk != 0 AND zst_1545_saving_throws_monk != 1 BEGIN
+            WARN "[WARN]: Setting to change monk saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_monk%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------SHIELD TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_1546_everyone_can_use_all_shields != 0 AND zst_1546_everyone_can_use_all_shields != 1 BEGIN
+            WARN "[WARN]: Setting to allow everyone to use shields should be set to 0 (disable) or 1 (enable). Actual value: %zst_1546_everyone_can_use_all_shields%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1546_tower_single_classed_fighter_classes != 0 AND zst_1546_tower_single_classed_fighter_classes != 1 BEGIN
+            WARN "[WARN]: Setting to allow only single-classed fighters to use tower shields should be set to 0 (disable) or 1 (enable). Actual value: %zst_1546_everyone_can_use_all_shields%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1546_tower_all_fighter_classes != 0 AND zst_1546_tower_all_fighter_classes != 1 BEGIN
+            WARN "[WARN]: Setting to allow only fighters to use tower shields should be set to 0 (disable) or 1 (enable). Actual value: %zst_1546_tower_all_fighter_classes%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1546_tower_all_fighter_classes = 1 AND zst_1546_tower_all_fighter_classes = 1 BEGIN
+            WARN "[WARN]: Setting to allow all fighters and only single-classed fighters to use tower shields should not be both set to 1 (enable)."
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1546_small_thieves_bards != 0 AND zst_1546_small_thieves_bards != 1 BEGIN
+            WARN "[WARN]: Setting to allow thieves and bards to use small shields should be set to 0 (disable) or 1 (enable). Actual value: %zst_1546_small_thieves_bards%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1546_small_medium_thieves_bards != 0 AND zst_1546_small_medium_thieves_bards != 1 BEGIN
+            WARN "[WARN]: Setting to allow thieves and bards to use small and medium shields should be set to 0 (disable) or 1 (enable). Actual value: %zst_1546_small_medium_thieves_bards%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1546_buckler_wizards != 0 AND zst_1546_buckler_wizards != 1 BEGIN
+            WARN "[WARN]: Setting to allow wizards to use bucklers should be set to 0 (disable) or 1 (enable). Actual value: %zst_1546_buckler_wizards%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------OMNISTABBING TWEAK------------------------------------------------- \\
+
+        ACTION_IF zst_1600_backstab_no_invis_requirement_only != 0 AND zst_1600_backstab_no_invis_requirement_only != 1 BEGIN
+            WARN "[WARN]: Setting to define how omnistabbing should be implemented should be set to 0 (omnidirectional backstabs with invisibility) and 1 (normal backstab angle requirements, but doesn't need invisibility). Actual value: %zst_1546_buckler_wizards%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------1HP GEAR BOOST------------------------------------------------- \\
+
+        ACTION_IF zst_1532_add_1hp_to_belts != 0 AND zst_1532_add_1hp_to_belts != 1 BEGIN
+            WARN "[WARN]: Setting to allow adding 1HP to all belts should be set to 0 (disable) or 1 (enable). Actual value: %zst_1532_add_1hp_to_belts%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1532_add_1hp_to_boots != 0 AND zst_1532_add_1hp_to_boots != 1 BEGIN
+            WARN "[WARN]: Setting to allow adding 1HP to all boots should be set to 0 (disable) or 1 (enable). Actual value: %zst_1532_add_1hp_to_boots%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1532_add_1hp_to_bracers != 0 AND zst_1532_add_1hp_to_bracers != 1 BEGIN
+            WARN "[WARN]: Setting to allow adding 1HP to all bracers should be set to 0 (disable) or 1 (enable). Actual value: %zst_1532_add_1hp_to_bracers%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1532_add_1hp_to_body_armor != 0 AND zst_1532_add_1hp_to_body_armor != 1 BEGIN
+            WARN "[WARN]: Setting to allow adding 1HP to all body armor should be set to 0 (disable) or 1 (enable). Actual value: %zst_1532_add_1hp_to_body_armor%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1532_add_1hp_to_cloaks != 0 AND zst_1532_add_1hp_to_cloaks != 1 BEGIN
+            WARN "[WARN]: Setting to allow adding 1HP to all cloaks should be set to 0 (disable) or 1 (enable). Actual value: %zst_1532_add_1hp_to_cloaks%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1532_add_1hp_to_helmets != 0 AND zst_1532_add_1hp_to_helmets != 1 BEGIN
+            WARN "[WARN]: Setting to allow adding 1HP to all helmets should be set to 0 (disable) or 1 (enable). Actual value: %zst_1532_add_1hp_to_helmets%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1532_add_1hp_to_shields != 0 AND zst_1532_add_1hp_to_shields != 1 BEGIN
+            WARN "[WARN]: Setting to allow adding 1HP to all shields should be set to 0 (disable) or 1 (enable). Actual value: %zst_1532_add_1hp_to_shields%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------CIRCLET IOUN CRIT PROT------------------------------------------------- \\
+        OUTER_SET iouncrit_issues = 0
+
+        ACTION_IF zst_1664_crits_all != 0 AND zst_1664_crits_all != 1 BEGIN
+            WARN "[WARN]: Setting to make all circlets and ioun stones protect vs. critical hits should be set to 0 (disable) or 1 (enable). Actual value: %zst_1664_crits_all%"
+            LAM f_plus
+            OUTER_SET iouncrit_issues = 1
+        END
+
+        ACTION_IF zst_1664_crits_iouns != 0 AND zst_1664_crits_iouns != 1 BEGIN
+            WARN "[WARN]: Setting to make all ioun stones protect vs. critical hits should be set to 0 (disable) or 1 (enable). Actual value: %zst_1664_crits_iouns%"
+            LAM f_plus
+            OUTER_SET iouncrit_issues = 1
+        END
+
+        ACTION_IF zst_1664_crits_circlets != 0 AND zst_1664_crits_circlets != 1 BEGIN
+            WARN "[WARN]: Setting to make all circlets protect vs. critical hits should be set to 0 (disable) or 1 (enable). Actual value: %zst_1664_crits_circlets%"
+            LAM f_plus
+            OUTER_SET iouncrit_issues = 1
+        END
+
+        ACTION_IF zst_1664_crits_selected != 0 AND zst_1664_crits_selected != 1 BEGIN
+            WARN "[WARN]: Setting to make a selection of  circlets and ioun stones protect vs. critical hits should be set to 0 (disable) or 1 (enable). Actual value: %zst_1664_crits_selected%"
+            LAM f_plus
+            OUTER_SET iouncrit_issues = 1
+        END
+        
+        ACTION_IF NOT iouncrit_issues BEGIN
+            OUTER_SET comb_iouncrit_settings = zst_1664_crits_all + zst_1664_crits_iouns + zst_1664_crits_circlets + zst_1664_crits_selected
+
+            ACTION_IF comb_iouncrit_settings > 1 BEGIN
+                WARN "[WARN]: Only one setting in the circlets/ioun protection vs. crits should be set to 1( enable). Actual value: %zst_1664_crits_selected%"
+                LAM f_plus
+            END ELSE ACTION_IF comb_iouncrit_settings = 0 BEGIN
+                WARN "[WARN]: No setting in the circlets/ioun protection vs. crits were picked, leading to no changes by the component One should be set to 1"
+                LAM f_plus
+            END
+        END
+
+        // ----------------------------------------MISC ITEM FUNCTIONAL TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_1997_kuotoa != 0 AND zst_1997_kuotoa != 1 BEGIN
+            WARN "[WARN]: Setting to make kuo-toa's blood have a practical function should be set to 0 (disable) or 1 (enable). Actual value: %zst_1997_kuotoa%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1997_orb != 0 AND zst_1997_orb != 1 BEGIN
+            WARN "[WARN]: Setting to make Elder Orb eye have a practical function should be set to 0 (disable) or 1 (enable). Actual value: %zst_1997_orb%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1997_brain != 0 AND zst_1997_brain != 1 BEGIN
+            WARN "[WARN]: Setting to make Elder Brain eye have a practical function should be set to 0 (disable) or 1 (enable). Actual value: %zst_1997_brain%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1997_strohm != 0 AND zst_1997_strohm != 1 BEGIN
+            WARN "[WARN]: Setting to make Strohm's Mask have a practical function should be set to 0 (disable) or 1 (enable). Actual value: %zst_1997_strohm%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1997_shadow != 0 AND zst_1997_shadow != 1 BEGIN
+            WARN "[WARN]: Setting to make Shadow Wardstone have a practical function should be set to 0 (disable) or 1 (enable). Actual value: %zst_1997_shadow%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------DAGGER TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_1000_sbonus > 0 OR zst_1000_sbonus < "-10" BEGIN
+            WARN "[WARN]: Setting to modify the saving throw of poisoned throwing daggers should be set to 0 (disable) or a negative value (up to -10). Actual value: %zst_1000_sbonus%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1000_store_additions != 0 AND zst_1000_store_additions != 1 BEGIN
+            WARN "[WARN]: Setting to add more poisoned throwing daggers to stores should be set to 0 (disable) or 1 (enable). Actual value: %zst_1000_store_additions%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1000_stack_mult <= 0 BEGIN
+            WARN "[WARN]: Setting to add more poisoned throwing daggers to stores via a percentage should be set to a value between 1 (99% fewer daggers, but why would you?) and a positive number like 150 (50% bigger stacks). Actual value: %zst_1000_stack_mult%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------CARSOMYR------------------------------------------------- \\
+
+        ACTION_IF zst_1280_carsomyr_dispel != 0 AND zst_1280_carsomyr_dispel != 1 BEGIN
+            WARN "[WARN]: Setting to add a save vs. spell to Carsomy's dispel should be set to 0 (disable) or 1 (enable). Actual value: %zst_1280_carsomyr_dispel%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1280_carsomyr_evil != 0 AND zst_1280_carsomyr_evil != 1 BEGIN
+            WARN "[WARN]: Setting to make Carsomy's extra damage to apply to all evil should be set to 0 (disable) or 1 (enable). Actual value: %zst_1280_carsomyr_evil%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------FLAME OF THE NORTH------------------------------------------------- \\
+
+        ACTION_IF zst_1318_fnorth_evil != 0 AND zst_1318_fnorth_evil != 1 BEGIN
+            WARN "[WARN]: Setting to make Flame of the North's extra damage to apply to all evil should be set to 0 (disable) or 1 (enable). Actual value: %zst_1318_fnorth_evil%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1318_fnorth_trolls != 0 AND zst_1318_fnorth_trolls != 1 BEGIN
+            WARN "[WARN]: Setting to make Flame of the North add extra damage vs. trolls should be set to 0 (disable) or 1 (enable). Actual value: %zst_1318_fnorth_trolls%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------STAFF OF MAGI------------------------------------------------- \\
+
+        ACTION_IF zst_1390_staff_magi_usability < 0 OR zst_1390_staff_magi_usability > 2 BEGIN
+            WARN "[WARN]: Setting to define the Staff of the Magi tweak should be set to 0, 1 or 2 (check config file). Actual value: %zst_1390_staff_magi_usability%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------UNHOLY REAVER------------------------------------------------- \\
+
+        ACTION_IF zst_1410_ureaver_dispel != 0 AND zst_1410_ureaver_dispel != 1 BEGIN
+            WARN "[WARN]: Setting to tweak Unholy Reaver's dispel should be set to 0 (disable) or 1 (enable). Actual value: %zst_1410_ureaver_dispel%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1410_ureaver_dicesize != 0 AND zst_1410_ureaver_dicesize != 1 BEGIN
+            WARN "[WARN]: Setting to make Unholy Reaver's dice size 1d12 should be set to 0 (disable) or 1 (enable). Actual value: %zst_1410_ureaver_dicesize%"
+            LAM f_plus
+        END
+
+         // ----------------------------------------SOUL REAVER------------------------------------------------- \\
+
+        ACTION_IF zst_1591_soul_reaver_nerf != 0 AND zst_1591_soul_reaver_nerf != 1 BEGIN
+            WARN "[WARN]: Setting to nerf Soul Reaver's curse on hit should be set to 0 (disable) or 1 (enable). Actual value: %zst_1591_soul_reaver_nerf%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1591_soul_reaver_dicesize != 0 AND zst_1591_soul_reaver_dicesize != 1 BEGIN
+            WARN "[WARN]: Setting to make Soul Reaver's dice size should be set to 0 (disable) or 1 (enable). Actual value: %zst_1591_soul_reaver_dicesize%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------PURIFIER------------------------------------------------- \\
+
+        ACTION_IF zst_1240_purifier_dispel != 0 AND zst_1240_purifier_dispel != 1 BEGIN
+            WARN "[WARN]: Setting to improve Purifier's dispel should be set to 0 (disable) or 1 (enable). Actual value: %zst_1240_purifier_dispel%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1240_purifier_evil != 0 AND zst_1240_purifier_evil != 1 BEGIN
+            WARN "[WARN]: Setting to make Purifier's extra damage to apply to all evil should be set to 0 (disable) or 1 (enable). Actual value: %zst_1240_purifier_evil%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------HAWKSIGHT------------------------------------------------- \\
+
+        ACTION_IF zst_1580_hawksight_extra != 0 AND zst_1580_hawksight_extra != 1 BEGIN
+            WARN "[WARN]: Setting to add spice to Hawksight should be set to 0 (disable) or 1 (enable). Actual value: %zst_1580_hawksight_extra%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------KACHIKO'S WAKIZASHI------------------------------------------------- \\
+
+        ACTION_IF zst_1583_kachiko_upgrade != 0 AND zst_1583_kachiko_upgrade != 1 BEGIN
+            WARN "[WARN]: Setting to add a Cespenar upgrade path for Kachiko's Wakizashi should be set to 0 (disable) or 1 (enable). Actual value: %zst_1583_kachiko_upgrade%"
+            LAM f_plus
+        END
 
         // ----------------------------------------BALDURAN SWORDS------------------------------------------------- \\
 
@@ -344,9 +685,460 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
 
         ACTION_IF zst_1705_balduran_sword_rename_emperors_sword != 0 AND zst_1705_balduran_sword_rename_emperors_sword != 1 
         BEGIN
-            WARN "[WARN]: Balduran's rename option should be set to 1 or 0. Actual value: %zst_1705_balduran_sword_rename_emperors_sword%"
+            WARN "[WARN]: Balduran's Sword rename option should be set to 1 or 0. Actual value: %zst_1705_balduran_sword_rename_emperors_sword%"
             LAM f_plus
-        END  
+        END
+
+        // ----------------------------------------EASTHAVEN FLAIL------------------------------------------------- \\
+
+        ACTION_IF zst_1310_easthaven_dr != 0 AND zst_1310_easthaven_dr != 1 BEGIN
+            WARN "[WARN]: Setting to add a Cespenar upgrade path for Kachiko's Wakizashi should be set to 0 (disable) or 1 (enable). Actual value: %zst_1583_kachiko_upgrade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1310_easthaven_dr <= 0 OR zst_1310_easthaven_dr > 127 BEGIN
+            WARN ~[WARN]: Invalid setting for Defender of Easthaven's damage resistance. Must be between 1 and 127. Actual value: %zst_1310_easthaven_dr%~
+        END
+
+        // ----------------------------------------SAREVOK DEATHBRINGER ASSAULT------------------------------------------------- \\
+
+        ACTION_IF zst_1646_sare_dmg <= 0 BEGIN
+            WARN ~[WARN]: Invalid setting for Deathbringer's assault damage. Must be between a non-zero positive number. Actual value: %zst_1646_sare_dmg%~
+        END
+
+        // ----------------------------------------ASP'S NEST------------------------------------------------- \\
+
+        ACTION_IF zst_1010_asp_nest_sbonus < "-10" OR zst_1010_asp_nest_sbonus >= 0 BEGIN
+            WARN ~[WARN]: Invalid setting for Asp's Nest saving throw bonus. Must be between -10 and -1. Actual value: %zst_1010_asp_nest_sbonus%~
+        END
+
+        // ----------------------------------------LUCK TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_145_luck_boost != 0 AND zst_145_luck_boost != 1 BEGIN
+            WARN "[WARN]: Setting to boost Luck should be set to 0 (disable) or 1 (enable). Actual value: %zst_145_luck_boost%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_145_luck_dur_boost != 0 AND zst_145_luck_dur_boost != 1 BEGIN
+            WARN "[WARN]: Setting to boost Luck duration should be set to 0 (disable) or 1 (enable). Actual value: %zst_145_luck_dur_boost%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------BBOD GOLIRO BACKSTAB------------------------------------------------- \\
+
+        ACTION_IF zst_160_bbod != 0 AND zst_160_bbod != 1 BEGIN
+            WARN "[WARN]: Setting to nerf BBoD backstab multiplier should be set to 0 (disable) or 1 (enable). Actual value: %zst_160_bbod%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_160_goliro != 0 AND zst_160_goliro != 1 BEGIN
+            WARN "[WARN]: Setting to nerf Iron Golem backstab multiplier should be set to 0 (disable) or 1 (enable). Actual value: %zst_160_goliro%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_160_bbod_reduction_only < 0 BEGIN
+            WARN "[WARN]: Setting to nerf BBoD backstab multiplier by a specific amount should be set to 0 (disable) or a positive number (specific backstab multiplier reduction). Actual value: %zst_160_bbod_reduction_only%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_160_goliro_reduction_only < 0 BEGIN
+            WARN "[WARN]: Setting to nerf Iron Golem backstab multiplier by a specific amount should be set to 0 (disable) or a positive number (specific backstab multiplier reduction). Actual value: %zst_160_goliro_reduction_only%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------TENSER TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_441_tenser_thac0 != 0 AND zst_441_tenser_thac0 != 1 BEGIN
+            WARN "[WARN]: Setting to fix Tenser's THAC0 bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_441_tenser_thac0%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_441_tenser_apr != 0 AND zst_441_tenser_apr != 1 BEGIN
+            WARN "[WARN]: Setting to add APR bonuses to Tenser at the appropriate levels should be set to 0 (disable) or 1 (enable). Actual value: %zst_441_tenser_apr%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_441_tenser_apr_nonfighters_only != 0 AND zst_441_tenser_apr_nonfighters_only != 1 BEGIN
+            WARN "[WARN]: Setting to add APR bonuses to Tenser only to non-fighters for balance should be set to 0 (disable) or 1 (enable). Actual value: %zst_441_tenser_apr%"
+            LAM f_plus
+        END
+
+         // ----------------------------------------FLESH STONE TWEAKS------------------------------------------------- \\
+
+         ACTION_IF zst_444_flesh_stone != 0 AND zst_444_flesh_stone != 1 BEGIN
+            WARN "[WARN]: Setting to allow Flesh to Stone tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_441_tenser_apr%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_444_flesh_stone_iwd != 0 AND zst_444_flesh_stone_iwd != 1 BEGIN
+            WARN "[WARN]: Setting to give Flesh to Stone IWD protections to various creatures should be set to 0 or 1 (enable). Actual value: %zst_444_flesh_stone_iwd%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_444_stone_flesh != 0 AND zst_444_stone_flesh != 1 BEGIN
+            WARN "[WARN]: Setting to allow Stone to Flesh tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_444_stone_flesh%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------FIREBALL TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_446_fball_buff != 0 AND zst_446_fball_buff != 1 BEGIN
+            WARN "[WARN]: Setting to buff Fireball-like spellsk should be set to 0 (disable) or 1 (enable). Actual value: %zst_446_fball_buff%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_446_fball_new_animation != 0 AND zst_446_fball_new_animation != 1 BEGIN
+            WARN "[WARN]: Setting to improve the horrendous Fireball animations in BG should be set to 0 (disable) or 1 (enable). Actual value: %zst_446_fball_new_animation%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------MELFS ACID ARROW------------------------------------------------- \\
+
+        ACTION_IF zst_447_melf_no_mr != 0 AND zst_447_melf_no_mr != 1 BEGIN
+            WARN "[WARN]: Setting to make Melf's Acid Arrow bypass MR should be set to 0 (disable) or 1 (enable). Actual value: %zst_447_melf_no_mr%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------WEB TWEAK------------------------------------------------- \\
+
+        ACTION_IF zst_561_web_save_nerf != 0 AND zst_561_web_save_nerf != 1 BEGIN
+            WARN "[WARN]: Setting to make Web's save nerfed and use a save vs. Breath should be set to 0 (disable) or 1 (enable). Actual value: %zst_561_web_save_nerf%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------WEB TWEAK------------------------------------------------- \\
+
+        ACTION_IF zst_101_fblade_undead != 0 AND zst_101_fblade_undead != 1 BEGIN
+            WARN "[WARN]: Setting to make Flame Blade more effective vs. undead should be set to 0 (disable) or 1 (enable). Actual value: %zst_101_fblade_undead%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_101_fblade_dur_boost != 0 AND zst_101_fblade_dur_boost != 1 BEGIN
+            WARN "[WARN]: Setting to make Flame Blade last longer should be set to 0 (disable) or 1 (enable). Actual value: %zst_101_fblade_dur_boost%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------HOLY POWER------------------------------------------------- \\
+
+        ACTION_IF zst_190_hpower_thac0 != 0 AND zst_190_hpower_thac0 != 1 BEGIN
+            WARN "[WARN]: Setting to fix Holy Power's THAC0 bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_190_hpower_thac0%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_190_hpower_apr != 0 AND zst_190_hpower_apr != 1 BEGIN
+            WARN "[WARN]: Setting to add APR bonuses to Holy Power at the appropriate levels should be set to 0 (disable) or 1 (enable). Actual value: %zst_190_hpower_apr%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_190_hpower_apr_nonfighters_only != 0 AND zst_190_hpower_apr_nonfighters_only != 1 BEGIN
+            WARN "[WARN]: Setting to add APR bonuses to Holy Power only to non-fighters for balance should be set to 0 (disable) or 1 (enable). Actual value: %zst_190_hpower_apr_nonfighters_only%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------EARTH QUAKE------------------------------------------------- \\
+
+        ACTION_IF zst_250_quake_pfriendly != 0 AND zst_250_quake_pfriendly != 1 BEGIN
+            WARN "[WARN]: Setting to make Earthquake party friendly should be set to 0 (disable) or 1 (enable). Actual value: %zst_250_quake_pfriendly%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_250_quake_shake_intensity < 0 OR zst_250_quake_shake_intensity > 2 BEGIN
+            WARN "[WARN]: Setting to change Earthquake screen shake intensity should be set to 0 (disabled), 1 (no shake), or 2 (much less shake). Actual value: %zst_250_quake_shake_intensity%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_250_quake_boost != 0 AND zst_250_quake_boost != 1 BEGIN
+            WARN "[WARN]: Setting to make Earthquake more powerful should be set to 0 (disable) or 1 (enable). Actual value: %zst_250_quake_shake_intensity%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------NATURE'S BEAUTY------------------------------------------------- \\
+
+        ACTION_IF zst_320_natbeauty_boost != 0 AND zst_320_natbeauty_boost != 1 BEGIN
+            WARN "[WARN]: Setting to boost Nature's Beauty should be set to 0 (disable) or 1 (enable). Actual value: %zst_320_natbeauty_boost%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_320_natbeauty_true_sight != 0 AND zst_320_natbeauty_true_sight != 1 BEGIN
+            WARN "[WARN]: Setting to give True Sight immunity to Nature's Beauty should be set to 0 (disable) or 1 (enable). Actual value: %zst_320_natbeauty_true_sight%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------NATURE'S BEAUTY------------------------------------------------- \\
+
+        ACTION_IF zst_450_cure_tweaks != 0 AND zst_450_cure_tweaks != 1 BEGIN
+            WARN "[WARN]: Setting to allow Cure tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_cure_tweaks%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_cause_tweaks != 0 AND zst_450_cause_tweaks != 1 BEGIN
+            WARN "[WARN]: Setting to allow Cause tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_cause_tweaks%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_light != 0 AND zst_450_light != 1 BEGIN
+            WARN "[WARN]: Setting to allow Light Wounds tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_light%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_moderate != 0 AND zst_450_moderate != 1 BEGIN
+            WARN "[WARN]: Setting to allow Moderate Wounds tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_moderate%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_medium != 0 AND zst_450_medium != 1 BEGIN
+            WARN "[WARN]: Setting to allow Medium Wounds tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_medium%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_serious != 0 AND zst_450_serious != 1 BEGIN
+            WARN "[WARN]: Setting to allow Serious Wounds tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_serious%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_critical != 0 AND zst_450_critical != 1 BEGIN
+            WARN "[WARN]: Setting to allow Critical Wounds tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_critical%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_eldath != 0 AND zst_450_eldath != 1 BEGIN
+            WARN "[WARN]: Setting to allow Eldath tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_eldath%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_mass != 0 AND zst_450_mass != 1 BEGIN
+            WARN "[WARN]: Setting to allow Mass tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_mass%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_harm != 0 AND zst_450_harm != 1 BEGIN
+            WARN "[WARN]: Setting to allow Harm tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_harm%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------CHAIN LIGHTNING------------------------------------------------- \\
+
+        ACTION_IF zst_451_chain_lightning_boost != 0 AND zst_451_chain_lightning_boost != 1 BEGIN
+            WARN "[WARN]: Setting to boost Chain Lightning should be set to 0 (disable) or 1 (enable). Actual value: %zst_451_chain_lightning_boost%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_451_chain_lightning_projectile != 0 AND zst_451_chain_lightning_projectile != 1 BEGIN
+            WARN "[WARN]: Setting to improve Chain Lightning projectile should be set to 0 (disable) or 1 (enable). Actual value: %zst_451_chain_lightning_projectile%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------CALL LIGHTNING------------------------------------------------- \\
+
+        ACTION_IF zst_468_call_lightning_boost != 0 AND zst_468_call_lightning_boost != 1 BEGIN
+            WARN "[WARN]: Setting to boost Call Lightning should be set to 0 (disable) or 1 (enable). Actual value: %zst_468_call_lightning_boost%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_468_call_lightning_boost != 0 AND zst_468_call_lightning_boost != 1 BEGIN
+            WARN "[WARN]: Setting to replace Call Lightning's animation with the much better IWD one should be set to 0 (disable) or 1 (enable). Actual value: %zst_468_call_lightning_boost%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------SMASHING WAVE------------------------------------------------- \\
+
+        ACTION_IF zst_477_smashing_wave_party_friendly != 0 AND zst_477_smashing_wave_party_friendly != 1 BEGIN
+            WARN "[WARN]: Setting to make Smashing Wave party friendly should be set to 0 (disable) or 1 (enable). Actual value: %zst_477_smashing_wave_party_friendly%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------DOOM CASTING SPEED------------------------------------------------- \\
+
+        ACTION_IF zst_496_doom_casting_speed < 0 OR zst_496_doom_casting_speed > 8 BEGIN
+            WARN "[WARN]: Setting to improve the casting speed of Doom should be set to a value between 0 and 8 (inclusive). Actual value: %zst_496_doom_casting_speed%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------AID GLOW------------------------------------------------- \\
+
+        ACTION_IF zst_507_disable_aidglow != 0 AND zst_507_disable_aidglow != 1 BEGIN
+            WARN "[WARN]: Setting to disable Aid's intense glow should be set to 0 (disable) or 1 (enable). Actual value: %zst_507_disable_aidglow%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------RESTORATION TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_508_restoration_stat_drain != 0 AND zst_508_restoration_stat_drain != 1 BEGIN
+            WARN "[WARN]: Setting to make Restoration remove stat drains should be set to 0 (disable) or 1 (enable). Actual value: %zst_508_restoration_stat_drain%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_508_restoration_overhaul != 0 AND zst_508_restoration_overhaul != 1 BEGIN
+            WARN "[WARN]: Setting to overhaul Restoration spells should be set to 0 (disable) or 1 (enable). Actual value: %zst_508_restoration_overhaul%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------KELDORN TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_1520_keldsword != 0 AND zst_1520_keldsword != 1 BEGIN
+            WARN "[WARN]: Setting to tweak Keldorn's Sword should be set to 0 (disable) or 1 (enable). Actual value: %zst_1520_keldsword%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1520_keldarmor != 0 AND zst_1520_keldarmor != 1 BEGIN
+            WARN "[WARN]: Setting to tweak Keldorn's Armor should be set to 0 (disable) or 1 (enable). Actual value: %zst_1520_keldarmor%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------JAHEIRA ITEMS------------------------------------------------- \\
+
+        ACTION_IF zst_1556_harper_pin != 0 AND zst_1556_harper_pin != 1 BEGIN
+            WARN "[WARN]: Setting to include tweak to Harper Pin should be set to 0 (disable) or 1 (enable). Actual value: %zst_1556_harper_pin%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1556_keepsake_locket != 0 AND zst_1556_keepsake_locket != 1 BEGIN
+            WARN "[WARN]: Setting to include tweak to Keepsake Locket should be set to 0 (disable) or 1 (enable). Actual value: %zst_1556_keepsake_locket%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1556_keepsake_locket_restrict != 0 AND zst_1556_keepsake_locket_restrict != 1 BEGIN
+            WARN "[WARN]: Setting to restrict Keepsake Locket to CHARNAME and Jaheira should be set to 0 (disable) or 1 (enable). Actual value: %zst_1556_keepsake_locket_restrict%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------SHAMAN ABILITIES------------------------------------------------- \\
+
+        ACTION_IF zst_360_etheral_retribution != 0 AND zst_360_etheral_retribution != 1 BEGIN
+            WARN "[WARN]: Setting to include Ethereal Retribution tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_360_etheral_retribution%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_360_writhing_fog != 0 AND zst_360_writhing_fog != 1 BEGIN
+            WARN "[WARN]: Setting to include Writhing Fog tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_360_writhing_fog%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_360_spirit_fire != 0 AND zst_360_spirit_fire != 1 BEGIN
+            WARN "[WARN]: Setting to include Spirit Fire tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_360_spirit_fire%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_360_spiritual_clarity != 0 AND zst_360_spiritual_clarity != 1 BEGIN
+            WARN "[WARN]: Setting to include Spiritual Clarity tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_360_spiritual_clarity%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_360_favored_spirits != 0 AND zst_360_favored_spirits != 1 BEGIN
+            WARN "[WARN]: Setting to include Favored of the Spirits tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_360_favored_spirits%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------SUN SOUL MONK------------------------------------------------- \\
+
+        ACTION_IF zst_2100_sunsoul_ray != 0 AND zst_2100_sunsoul_ray != 1 BEGIN
+            WARN "[WARN]: Setting to include Sun Soul Ray tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_2100_sunsoul_ray%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2100_sunsoul_beam != 0 AND zst_2100_sunsoul_beam != 1 BEGIN
+            WARN "[WARN]: Setting to include Sun Soul Beam tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_2100_sunsoul_beam%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------THIEF HLA------------------------------------------------- \\
+
+        ACTION_IF zst_2130_spike_trap != 0 AND zst_2130_spike_trap != 1 BEGIN
+            WARN "[WARN]: Setting to include Spike Trap tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_2130_spike_trap%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2130_exploding_trap != 0 AND zst_2130_exploding_trap != 1 BEGIN
+            WARN "[WARN]: Setting to include Exploding Trap tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_2130_exploding_trap%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2130_assassination != 0 AND zst_2130_assassination != 1 BEGIN
+            WARN "[WARN]: Setting to include Assassination tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_2130_assassination%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2130_avoid_death != 0 AND zst_2130_avoid_death != 1 BEGIN
+            WARN "[WARN]: Setting to include Avoid Death tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_2130_avoid_death%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------THAC0 ROGUES------------------------------------------------- \\
+
+        ACTION_IF zst_2170_thac0_thieves != 0 AND zst_2170_thac0_thieves != 1 BEGIN
+            WARN "[WARN]: Setting to include THAC0 boost for Thieves should be set to 0 (disable) or 1 (enable). Actual value: %zst_2170_thac0_thieves%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2170_thac0_bards != 0 AND zst_2170_thac0_bards != 1 BEGIN
+            WARN "[WARN]: Setting to include THAC0 boost for Bards should be set to 0 (disable) or 1 (enable). Actual value: %zst_2170_thac0_bards%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------DRAGON DISCIPLE ABILITIES------------------------------------------------- \\
+
+        ACTION_IF zst_2231_fire_boost != 0 AND zst_2231_fire_boost != 1 BEGIN
+            WARN "[WARN]: Setting to boost fire damage by Dragon Disciples should be set to 0 (disable) or 1 (enable). Actual value: %zst_2231_fire_boost%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2231_fire_boost_pctg <= 0 BEGIN
+            WARN "[WARN]: Setting to set percentage of fire damage boost by Dragon Disciples should be set between 1 and a positive number. Actual value: %zst_2231_fire_boost_pctg%%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------BLADE SKALD SWASH TEMPUS------------------------------------------------- \\
+
+        ACTION_IF (zst_2260_allow_blade + zst_2260_allow_skald + zst_2260_allow_swash + zst_2260_allow_tempus) = 0 BEGIN
+            WARN "[WARN]: Settings to boost Swashkaltempublades have no settings set to 1, rending the component useless."
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2260_allow_blade != 0 AND zst_2260_allow_blade != 1 BEGIN
+            WARN "[WARN]: Setting to boost Blades should be set to 0 (disable) or 1 (enable). Actual value: %zst_2260_allow_blade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2260_allow_skald != 0 AND zst_2260_allow_skald != 1 BEGIN
+            WARN "[WARN]: Setting to boost Skalds should be set to 0 (disable) or 1 (enable). Actual value: %zst_2260_allow_skald%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2260_allow_swash != 0 AND zst_2260_allow_swash != 1 BEGIN
+            WARN "[WARN]: Setting to boost Swashbuckler should be set to 0 (disable) or 1 (enable). Actual value: %zst_2260_allow_swash%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2260_allow_tempus != 0 AND zst_2260_allow_tempus != 1 BEGIN
+            WARN "[WARN]: Setting to boost Priest of Tempus should be set to 0 (disable) or 1 (enable). Actual value: %tempus_selected_x%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------BALORS------------------------------------------------- \\
+
+        ACTION_IF zst_3050_balor_vorpal_penalty < "-10" OR zst_3050_balor_vorpal_penalty > 10 BEGIN
+            WARN "[WARN]: Setting to force a save for Balor's vorpal hits should be set to -10 and 10. Actual value: %zst_3050_balor_vorpal_penalty%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------CELESTIALS TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_3030_devas != 0 AND zst_3030_devas != 1 BEGIN
+            WARN "[WARN]: Setting to improve devas should be set to 0 (disable) or 1 (enable). Actual value: %zst_3030_devas%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_3030_planetars != 0 AND zst_3030_planetars != 1 BEGIN
+            WARN "[WARN]: Setting to improve planetars should be set to 0 (disable) or 1 (enable). Actual value: %zst_3030_planetars%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------DROW MR TWEAK------------------------------------------------- \\
+
+        ACTION_IF zst_3150_drow_mr_pctg_of_base < 20 OR zst_3150_drow_mr_pctg_of_base > 90 BEGIN
+            WARN "[WARN]: Setting to reduce drow resistance to a percentage of it should be set between 20 to 90. Actual value: %zst_3150_drow_mr_pctg_of_base%"
+            LAM f_plus
+        END
 
         // ----------------------------------------GROUP COMP VARIABLES (GENERAL)------------------------------------------------- \\
 

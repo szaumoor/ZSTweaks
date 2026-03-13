@@ -82,7 +82,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
                 END
             END
 
-            PATCH_IF zst_1546_everyone_can_use_all_shields = 0 BEGIN
+            PATCH_IF NOT zst_1546_everyone_can_use_all_shields BEGIN
                 PATCH_IF zst_1546_tower_single_classed_fighter_classes BEGIN
                     WRITE_LONG 0x1e 1615853504
                 END ELSE PATCH_IF zst_1546_tower_all_fighter_classes BEGIN
@@ -100,7 +100,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
                 END
             END
 
-            PATCH_IF zst_1546_everyone_can_use_all_shields = 0 BEGIN
+            PATCH_IF NOT zst_1546_everyone_can_use_all_shields BEGIN
                 PATCH_IF zst_1546_small_medium_thieves_bards BEGIN
                     WRITE_LONG 0x1e 1610874880
                 END
@@ -113,7 +113,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
                 LPF PATCH_SHIELD INT_VAR type=2 END
             END
 
-            PATCH_IF zst_1546_everyone_can_use_all_shields = 0  BEGIN
+            PATCH_IF NOT zst_1546_everyone_can_use_all_shields BEGIN
                 PATCH_IF zst_1546_small_thieves_bards BEGIN
                     WRITE_LONG 0x1e 1610874880
                 END

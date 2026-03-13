@@ -1,6 +1,6 @@
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_preinstall_check.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_vars.tph~
-INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_preference_validation.tph~
+INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_vars_eval.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_npc_array.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_ids_setup.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_constants.tph~

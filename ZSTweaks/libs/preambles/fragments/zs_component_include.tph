@@ -1,5 +1,19 @@
 ACTION_IF !VARIABLE_IS_SET zst_config_file_copied BEGIN
-    COPY ~%MOD_FOLDER%/configurations/zstweaks_prefs.txt~ ~override~
+    // COPY ~%MOD_FOLDER%/configurations/zstweaks_prefs.txt~ ~override~
+    // COPY ~%MOD_FOLDER%/configurations/zstweaks_arcane_group_install.txt~ ~override~
+    // COPY ~%MOD_FOLDER%/configurations/zstweaks_blunt_axe_group_install.txt~ ~override~
+    // COPY ~%MOD_FOLDER%/configurations/zstweaks_class_kit_group_install.txt~ ~override~
+    // COPY ~%MOD_FOLDER%/configurations/zstweaks_creature_group_install.txt~ ~override~
+    // COPY ~%MOD_FOLDER%/configurations/zstweaks_dagger_group_install.txt~ ~override~
+    // COPY ~%MOD_FOLDER%/configurations/zstweaks_divine_group_install.txt~ ~override~
+    // COPY ~%MOD_FOLDER%/configurations/zstweaks_endofinstallorder_group_install.txt~ ~override~
+    // COPY ~%MOD_FOLDER%/configurations/zstweaks_gear_group_install.txt~ ~override~
+    // COPY ~%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt~ ~override~
+    // COPY ~%MOD_FOLDER%/configurations/zstweaks_joinables_group_install.txt~ ~override~
+    // COPY ~%MOD_FOLDER%/configurations/zstweaks_onehanded_swords_group_install.txt~ ~override~
+    // COPY ~%MOD_FOLDER%/configurations/zstweaks_ranged_group_install.txt~ ~override~
+    // COPY ~%MOD_FOLDER%/configurations/zstweaks_ranged_group_install.txt~ ~override~
+    COPY ~%MOD_FOLDER%/configurations~ ~override~
     OUTER_SET zst_config_file_copied = 1
 END
 
