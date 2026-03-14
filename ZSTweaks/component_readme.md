@@ -214,7 +214,7 @@ This component overhauls character stats for a more streamlined progression and 
 - **Dexterity**: AC and Ranged THAC0 bonuses are streamlined. The +7 bonus is now only achieved at 25 DEX. Penalties now begin at 9 DEX.
 - **Lore**:
   - **By Class**: Mages get +5/level, Thieves +4/level, Clerics/Shamans/Druids +3/level, and Paladins/Rangers +2/level. Fighters are unchanged (1 per level) and bards get a reduced 8 lore per level.
-  - **By Stat**: Bonuses from INT/WIS start at 12, with a more gradual progression for both bonuses and penalties. 
+  - **By Stat**: Bonuses from INT/WIS start at 12, with a more gradual progression for both bonuses and penalties.
 - **Racial THAC0**: Dwarves gain a +1 THAC0 bonus with axes.
 - **Shorty Saves**: The saving throw bonus from Constitution for shorty races can be configured:
   - **Nullify**: Removes the bonus entirely.
@@ -242,6 +242,12 @@ This component overhauls character stats for a more streamlined progression and 
     - **2 Pips**: No Armor Class penalty; THAC0: -1 (main hand) / -3 (off-hand); Damage: No penalty (main hand) / -1 (off-hand)
     - **3 Pips**: THAC0: -2 (off-hand); Damage: No penalties
 - **Weapon Proficiencies**: THAC0 progression is smoothed out, gaining 1 THAC0 at 2 pips, and then another one per pip up to +4 at 5 pips.
+- **Saving Throw Tables** (all optional)
+  - **Warrior** classes (rangers, paladins, fighters): Slightly worse saves except vs. Death. Some of them start off as better, like vs. Breath. Generally expect them to be slightly worse at resisting spells that affect the mind, and generally anything that isn't forcing a save vs. Death. This includes rangers, paladins, and fighters. Final saves look like 3 7 6 7 8 (vanilla being 3 5 4 4 6). The idea is that fighter classes shouldn't be quite so good as dodging and resisting charms but definitely should be able to resist things that try to kill them outright.
+  - **Rogue** classes (thieves and bards): Saves vs. Breath get big boost compared to others, since it is the ability to get out of the way of dangerous things like dragon breath (which funnily enough in vanilla is the worst of their saves). It also affects IWD evasion which gives rogues a chance to completely evade all the effects of some things like fireballs. Final saves look like 8 4 7 6 5 (vanilla being 8 4 7 11 5).
+  - **Priests**, druids, and shamans: Saves vs. Death are one point worse, equal to fighters, saves vs. Breath are 2 points worse (one point better than vanilla rogue -- they really hated rogues, didn't they). They have oodles of ways to improve their own saving throws and those in their party anyway. Final saves look like 3 6 5 10 7 (vanilla is 2 6 5 8 7).
+  - **Wizards** and sorcerers: Worse save vs. death (2 points worse than rogues), since they should be sicklier, so easier to poison and some instant death effects like Wail of the Banshee. Worse save vs. Breath (2 points worse) so they can be incinerated by dragon fire more easily. They excel at spell-like effects, enchantments, etc. Final saves look like 10 3 5 9 4 (vanilla is 8 3 5 7 4).
+  - **Monks**: Save vs. Death is 1 point worse, being still the class with the best saves vs. Death, save vs. Breath is one point better, matching rogues, and save vs. Spell one point worse, leaving wizards as the best ones to save vs. Spell. Final saves look like 2 5 4 6 5 (vanilla is 1 5 4 7 4)
 
 ### Make shield types more distinct and change shield usability (1546) (IWDEE BGEE BG2EE EET)
 
@@ -2403,7 +2409,7 @@ Bear in mind this component should be installed after tweaks that affect these s
 - Slightly increases the price from 2500 to 3000
 - Poison effect is kept as is
 
-This component is part of this group as a precaution, since the technicalities of making strength only be set to 18 if under 18 can make tweaks added after this one cease to work as intended.
+This component is part of this group as a precaution, since the technicalities of making strength only be set to 18 if under 18 can make tweaks that add new effect on-equip after this one cease to work as intended. I might rework this in the future so it's not needed, as long as the solution satisfies me.
 
 </details>
 

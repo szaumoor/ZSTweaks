@@ -17,7 +17,7 @@ Requires:
 
 Weight: 2~
 
-@6051 = ~Chaos is a short sword usable only by tieflings. Every time it strikes an opponent, he or she temporarily loses part of their dexterity and becomes more sensitive to poisonous substances. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
+@6051 = ~Chaos is a short sword usable only by tieflings. Every time it strikes an opponent, he or she is temporarily weakened. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
 
 STATISTICS:
 
@@ -55,7 +55,7 @@ Requires:
 
 Weight: 2~
 
-@6053 = ~Chaos is a short sword usable only by Haer'Dalis. Every time it strikes an opponent, he or she temporarily loses part of their dexterity and becomes more sensitive to poisonous substances. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
+@6053 = ~Chaos is a short sword usable only by Haer'Dalis. Every time it strikes an opponent, he or she is temporarily weakened. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
 
 STATISTICS:
 
@@ -511,3 +511,5 @@ Equipped abilities:
 – Hit Points: +5
 
 Weight: 1~
+
+@70041 = ~Only Jaheira or <CHARNAME> may use this locket.~

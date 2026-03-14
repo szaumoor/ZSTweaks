@@ -22,10 +22,14 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
 
                 ACTION_IF NOT IS_AN_INT dv BEGIN // joinable NPC
-
+                    OUTER_SET exists = FILE_EXISTS_IN_GAME "%file%"
+                    PRINT "[DEBUG]: Attempting to patch %file%"
+                    ACTION_IF NOT exists BEGIN
+                        PRINT "           But it does not exist..."
+                    END
                     COPY_EXISTING ~%file%~ ~override~
                         PATCH_IF LONG_AT(0x8) != 9456 BEGIN
-                            LPF ADD_CRE_EFFECT INT_VAR opcode=180 target=1 timing=9 parameter1=RESOLVE_STR_REF(@10127) STR_VAR resource=~misc5w~ END
+                            LPF ADD_CRE_EFFECT INT_VAR opcode=180 target=1 timing=9 parameter1=RESOLVE_STR_REF(@70041) STR_VAR resource=~misc5w~ END
                         END
                     BUT_ONLY
 

@@ -7,7 +7,7 @@
 ////////////////////////////// Misc \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 OUTER_SET zs_debug = "0" // normally at 0 for users. Don't touch
-
+OUTER_SET zs_allow_prefixes = "1" // leave on to fix various issues, including things that are required to ensure functionality of some components. Change at your own risk, I don't recommend it and I probably won't help if there's a problem with this off.
 OUTER_SET crash_if_var_errors_found = "1" // crashes the execution of the mod (any component) if any values in the preferences are outside the valid ranges
 
 ////////////////////////////// Pre-fixes \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -211,7 +211,7 @@ OUTER_SET zst_1583_kachiko_upgrade = "1"
 OUTER_SET zst_1705_balduran_sword_as_bastard_sword      = "1"
 OUTER_SET zst_1705_balduran_sword_as_long_sword         = "0"
 // rename the sword to its name in BG3, Sword of the Emperor
-OUTER_SET zst_1705_balduran_sword_rename_emperors_sword = "1"
+OUTER_SET zst_1705_balduran_sword_rename_emperors_sword = "0"
 
 ////////////////////////////// Axes & Blunt Weapon Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

@@ -3,16 +3,19 @@
 ## Fixes
 
 - Minor text fixes
-- Added prefix: Fix for Balduran's Plate preventing for no reason characters of level 5 and below from benefitting from the Charisma bonus. Will be in the future disabled if Fixpack is installed, once they make a new release. Regardless, it will not cause any problems, even if you install the fixpack from master.
+- Added prefix: Fix for Balduran's Plate preventing for no reason characters of level 5 and below from benefitting from the Charisma bonus. Will be in the future disabled if Fixpack is installed, once they make a new release. Regardless, it will not cause any problems, even if you install the fixpack from master, which contains the fix.
 - Added component description for Helm of Balduran
-- Fixed shadow creature component affecting only the shadows from my shadowdancer overhaul instead of affecting all other than those, as it was intended
+- Fixed shadow creature component affecting only the shadows from my shadowdancer overhaul (if installed) instead of affecting all other than those, as it was intended
 - Fixed some components modifying undefined amount of creatures erroneously marking files as modified even when no changes were applied to them
 - Added sanity file existence check for some components
 - Fixed bug when installing Vexation tweak that causes it to fail due to missing code
-- Various fixes causing installation errors when installing components in a non-linear, skipping way
+- Various fixes causing installation errors when installing components in a non-linear way or jumping components
+- Fixed Entropy +2 being restricted to Blades, since that is no longer part of the design
+- Fixed Haer'Dalis blades
 
 ## Modifications
 
+- Added the possibility of disabling the prefixes if you wanna do it for some reason (check preferences file). Not recommended. Do so if you have a very good reason. I probably won't help if you get problems by doing this.
 - Renamed the NPC group to the Joinable Characters group, as that is much more accurate
 - Shadow creature component will also patch them so they move slightly faster (factor of 2)
 - Component 1532 now allows customization of which gear gets the +1 HP treatment, and adds the possibility of including body armor, helmets, cloaks, and shields. Each addition is independent of each other. Mix as you please.
@@ -23,12 +26,7 @@
   - This effect will not affect constructs such as golems
   - Version from the Haer'Dalis swords upgrade mod will still only grant 1/2 APR each instead of 1 each, which is likely excessive in most scenarios.
 - Slight description modification to the description of Haer'Dalis' weapons
-- Component 1545 (character stats tweak) also offers a tweak for the saving throws tables or various classes (all optional)
-  - **Warrior** classes (rangers, paladins, fighters): Slightly worse saves except vs. Death. Some of them start off as better, like vs. Breath. Generally expect them to be slightly worse at resisting spells that affect the mind, and generally anything that isn't forcing a save vs. Death. This includes rangers, paladins, and fighters. Final saves look like 3 7 6 7 8 (vanilla being 3 5 4 4 6). The idea is that fighter classes shouldn't be quite so good as dodging and resisting charms but definitely should be able to resist things that try to kill them outright.
-  - **Rogue** classes (thieves and bards): Saves vs. Breath get big boost compared to others, since it is the ability to get out of the way of dangerous things like dragon breath (which funnily enough in vanilla is the worst of their saves). It also affects IWD evasion which gives rogues a chance to completely evade all the effects of some things like fireballs. Final saves look like 8 4 7 6 5 (vanilla being 8 4 7 11 5).
-  - **Priests**, druids, and shamans: Saves vs. Death are one point worse, equal to fighters, saves vs. Breath are 2 points worse (one point better than vanilla rogue -- they really hated rogues, didn't they). They have oodles of ways to improve their own saving throws and those in their party anyway. Final saves look like 3 6 5 10 7 (vanilla is 2 6 5 8 7).
-  - **Wizards** and sorcerers: Worse save vs. death (2 points worse than rogues), since they should be sicklier, so easier to poison and some instant death effects like Wail of the Banshee. Worse save vs. Breath (2 points worse) so they can be incinerated by dragon fire more easily. They excel at spell-like effects, enchantments, etc. Final saves look like 10 3 5 9 4 (vanilla is 8 3 5 7 4).
-  - **Monks**: Save vs. Death is 1 point worse, being still the class with the best saves vs. Death, save vs. Breath is one point better, matching rogues, and save vs. Spell one point worse, leaving wizards as the best ones to save vs. Spell. Final saves look like 2 5 4 6 5 (vanilla is 1 5 4 7 4)
+- Component 1545 (character stats tweak) also offers a tweak for the saving throws tables or various classes (all optional), and patches creatures with the appropriate classes (skips multiclass), with a tolerance of +/-2 compared to the new tables.
 
 ## New components
 
