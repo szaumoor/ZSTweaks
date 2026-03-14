@@ -210,7 +210,7 @@ BEGIN
     END
 
     PATCH_IF NOT "%ground_icon%" STR_EQ "none" BEGIN
-        WRITE_ASCII 0x3a "%ground_icon%" #8
+        WRITE_ASCII 0x44 "%ground_icon%" #8
     END
 
     PATCH_IF NOT "%desc_img%" STR_EQ "none" BEGIN
