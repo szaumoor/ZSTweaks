@@ -22,7 +22,7 @@ Weight: 2~
 STATISTICS:
 
 Combat abilities:
-– Touch of Chaos: For two rounds, hit target suffers a non-stacking -5 Dexterity penalty and, chosen randomly, a stacking -1 penalty to saving throws vs. Poison, Armor Class, or THAC0
+– Touch of Chaos: For two rounds, hit target suffers a non-stacking -5 Dexterity penalty and, chosen randomly, a stacking -1 penalty to saving throws vs. Poison, Armor Class, THAC0, or Damage. Constructs such as golems are unaffected.
 – Considered a +3 enchanted weapon for the purposes of what it can hit
 – Attacks per round: +1/2
 
@@ -60,7 +60,7 @@ Weight: 2~
 STATISTICS:
 
 Combat abilities:
-– Touch of Chaos: For two rounds, hit target suffers a non-stacking -5 Dexterity penalty and, chosen randomly, a stacking -1 penalty to saving throws vs. Poison, Armor Class, or THAC0
+– Touch of Chaos: For two rounds, hit target suffers a non-stacking -5 Dexterity penalty and, chosen randomly, a stacking -1 penalty to saving throws vs. Poison, Armor Class, THAC0, or Damage. Constructs such as golems are unaffected.
 – Considered a +5 enchanted weapon for the purposes of what it can hit
 – Attacks per round: +1/2
 
@@ -79,11 +79,11 @@ Weight: 2~
 
 STATISTICS:
 
-Combat abilities:
-– Considered a +3 weapon for the purposes of what it can hit
-
 Equipped abilities:
 – 5 points of magic damage to any who damage the wielder
+
+Combat abilities:
+– Considered a +3 weapon for the purposes of what it can hit
 
 THAC0: +2
 Damage: 1d10+2 (slashing)

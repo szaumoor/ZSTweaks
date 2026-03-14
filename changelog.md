@@ -16,10 +16,10 @@
 - Renamed the NPC group to the Joinable Characters group, as that is much more accurate
 - Shadow creature component will also patch them so they move slightly faster (factor of 2)
 - Component 1532 now allows customization of which gear gets the +1 HP treatment, and adds the possibility of including body armor, helmets, cloaks, and shields. Each addition is independent of each other. Mix as you please.
-- The mod will now do a check of every available preference, and if something is incorrectly set it will emit warnings, log every error, and make the installation fail before anything can be installed, instead of doing it component by component basis. Only change things for components you plan to install. Do not change preferences mid installation. Ever.
-- Tweak to Haer'Dalis weapons changed slightly for balance, as the increased APR can make it a bit too powerful (TODO)
-  - Chaos will now drain 5 Dexterity on contact (non stacking), and may randomly drain also 1 point of Save vs. Poison, THAC0, or Armor Class.
-  - Duration brought down to 2 rounds from 5. This affects
+- Mod will now parse all the preferences files to make sure they have values that make sense, stopping the installation if any warnings come up. The console will log everything found. Only change things for components you plan to install. Do not change preferences mid installation. Ever.
+- Tweak to Haer'Dalis weapons changed slightly for balance, as the increased APR can make it a bit too powerful
+  - Chaos will now drain 5 Dexterity on contact (non stacking), and may randomly drain also 1 point of Save vs. Poison, THAC0, Damage, or Armor Class.
+  - Duration brought down to 2 rounds from 5.
   - This effect will not affect constructs such as golems
   - Version from the Haer'Dalis swords upgrade mod will still only grant 1/2 APR each instead of 1 each, which is likely excessive in most scenarios.
 - Slight description modification to the description of Haer'Dalis' weapons

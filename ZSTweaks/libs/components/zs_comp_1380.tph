@@ -20,12 +20,12 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6051) ench=3 END
         LPF ALTER_HEADER INT_VAR match_type = 1 speed = 0 END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6;op=319,pwr=1,p1=153,p2=4,spec=8332~ END
-        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=33,p1=-1,dur=12,rd=2~ END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p1=27;op=146,p2=1,res=zsthaer0;op=146,p2=1,res=zsthaer1~ END
 
     COPY_EXISTING "news06.ITM" ~override~
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6053) ench=5 END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6~ END
-        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=33,p1=-2,dur=18,rd=2~ END
+         LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p1=27;op=146,p2=1,res=zsthaer0;op=146,p2=1,res=zsthaer1~ END
         LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=319 parameter1=9182 parameter2=10 special=9182 END
     BUT_ONLY IF_EXISTS
 

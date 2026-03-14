@@ -1,4 +1,4 @@
-ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
+ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
     PRINT "[INFO]: Running the preferences check script. Any incorrectly set preferences will be reported and installation will prompty fail..."
     WITH_SCOPE BEGIN
 
@@ -785,11 +785,6 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
 
         // ----------------------------------------EASTHAVEN FLAIL------------------------------------------------- \\
 
-        ACTION_IF zst_1310_easthaven_dr != 0 AND zst_1310_easthaven_dr != 1 BEGIN
-            WARN "[WARN]: Setting to add a Cespenar upgrade path for Kachiko's Wakizashi should be set to 0 (disable) or 1 (enable). Actual value: %zst_1583_kachiko_upgrade%"
-            LAM f_plus
-        END
-
         ACTION_IF zst_1310_easthaven_dr <= 0 OR zst_1310_easthaven_dr > 127 BEGIN
             WARN ~[WARN]: Invalid setting for Defender of Easthaven's damage resistance. Must be between 1 and 127. Actual value: %zst_1310_easthaven_dr%~
         END
@@ -1463,7 +1458,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
             LAM f_plus
         END
 
-        ACTION_IF zst_group_1548_voidweapons != 0 AND zst_group_1548_voodooweapons != 1 BEGIN
+        ACTION_IF zst_group_1548_voidweapons != 0 AND zst_group_1548_voidweapons != 1 BEGIN
             WARN "[WARN]: Voidweapons group component should be set to 1 or 0. Actual value: %zst_group_1548_voidweapons%"
             LAM f_plus
         END
@@ -2135,7 +2130,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
             LAM f_plus
         END
 
-        ACTION_IF zst_group_492_barkskin != 0 AND zst_group_492_barksin != 1 BEGIN
+        ACTION_IF zst_group_492_barkskin != 0 AND zst_group_492_barkskin != 1 BEGIN
             WARN "[WARN]: Barkskin group component should be set to 1 or 0. Actual value: %zst_group_492_barkskin%"
             LAM f_plus
         END
@@ -2951,7 +2946,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
             PRINT "[INFO]: All good with the settings, proceeding..."
         END
 
-        OUTER_SET zs_preinstall_check = 1
 
     END
+    OUTER_SET zs_vars_check = 1
 END

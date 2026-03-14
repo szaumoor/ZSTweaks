@@ -54,12 +54,12 @@ ACTION_IF NOT is_iwdee BEGIN
 
     COPY_EXISTING ~%bg1_resource%.itm~ ~override~
                   ~wa2sw1h.itm~        ~override~
-        LPF ALTER_ITEM INT_VAR ench=2 id_desc = RESOLVE_STR_REF(@55100) wpn_prof=baldur_prof weight=baldur_weight min_str=baldur_required_str flags=876 appearance=baldur_appearance unusable0=baldur_unusable0 STR_VAR icon=~zstblduz~ ground_icon=~csw1h05~ END
+        LPF ALTER_ITEM INT_VAR ench=2 id_desc = RESOLVE_STR_REF(@55100) wpn_prof=baldur_prof weight=baldur_weight min_str=baldur_required_str flags=876 unusable0=baldur_unusable0 STR_VAR icon=~zstblduz~ ground_icon=~csw1h05~ appearance="%baldur_appearance%" END
 
         LPF ALTER_HEADER INT_VAR speed = baldur_speed_factor dicesize = baldur_dicesize dicenumber = baldur_dice_thrown damage=baldur_bonus_damage STR_VAR icon=~zstblduz~ END
 
         PATCH_IF zst_1705_balduran_sword_rename_emperors_sword BEGIN
-            LPF ALTER_ITEM INT_VAR id_name = RESOLVE_STR_REF(@55105) END
+            LPF ALTER_ITEM INT_VAR id_name = RESOLVE_STR_REF(@55109) END
         END
 
         LPF DELETE_EFFECT END
@@ -69,5 +69,6 @@ ACTION_IF NOT is_iwdee BEGIN
 
         // zstbldu0 (dmg resource)
         LPF ADD_ON_HIT_EFF INT_VAR p2=4 STR_VAR res=~zstbldu0~ effects = ~op=177,p1=%race_lycanthrope%;op=177,p1=%race_dragon%;op=177,p1=%race_mimic%;op=177,p1=%race_doppleganger%;op=177,p1=%race_vampire%;op=177,p1=%race_vampyre%;op=177,p1=%race_rakshasa%;op=177,p1=%race_demonic%;op=177,p2=5,p1=%class_druid_all%~ END
+    IF_EXISTS
  
 END
