@@ -8,7 +8,7 @@
 
 OUTER_SET zs_debug = "0" // normally at 0 for users. Don't touch
 OUTER_SET zs_allow_prefixes = "1" // leave on to fix various issues, including things that are required to ensure functionality of some components. Change at your own risk, I don't recommend it and I probably won't help if there's a problem with this off.
-OUTER_SET crash_if_var_errors_found = "1" // crashes the execution of the mod (any component) if any values in the preferences are outside the valid ranges
+OUTER_SET crash_if_var_errors_found = "1" // crashes the execution of the mod (any component) if any values in the preferences are outside the valid ranges. This is the only variable that forces a crash if it's not set to either 0 or 1
 
 ////////////////////////////// Pre-fixes \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -118,8 +118,9 @@ OUTER_SET zst_1545_weapon_style_twoweapon = "1" // allow two weapon tweak
 OUTER_SET zst_1545_saving_throws_rogue    = "1" // saving throw table for thieves and bards
 OUTER_SET zst_1545_saving_throws_priest   = "1" // saving throw table for priests, druids, and shamans
 OUTER_SET zst_1545_saving_throws_warrior  = "1" // saving throw table for fighters, paladins, and rangers
-OUTER_SET zst_1545_saving_throws_wizard    = "1" // saving throw table for wizards and sorcerers
+OUTER_SET zst_1545_saving_throws_wizard   = "1" // saving throw table for wizards and sorcerers
 OUTER_SET zst_1545_saving_throws_monk     = "1" // saving throw table for monks
+OUTER_SET zst_1545_saving_throws_patch    = "1" // patch humanoid creatures to adapt to the saving throw table (note: this changes the balance of the game slightly)
 
 // allow tweaks to different shield types
 OUTER_SET zst_1546_buckler_tweak = "1"

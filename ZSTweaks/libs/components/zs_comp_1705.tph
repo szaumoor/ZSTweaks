@@ -6,7 +6,7 @@ ACTION_IF NOT is_iwdee BEGIN
         OUTER_SPRINT bg1_resource "sw1h18"
     END
 
-    ACTION_IF is_eet BEGIN
+    ACTION_IF is_bg2ee_or_eet BEGIN
         OUTER_SPRINT bg1_resource "sw1h18_"
     END
 
@@ -52,8 +52,12 @@ ACTION_IF NOT is_iwdee BEGIN
 
     END
 
+    OUTER_SET bastard_comp_installed = zst_1150_dice_bastard_swords AND
+                                       (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
+                                       (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice))
+
     COPY_EXISTING ~%bg1_resource%.itm~ ~override~
-                  ~wa2s1h.itm~        ~override~
+                  ~wa2s1h.itm~         ~override~
         LPF ALTER_ITEM INT_VAR ench=2 id_desc = RESOLVE_STR_REF(@55100) wpn_prof=baldur_prof weight=baldur_weight min_str=baldur_required_str flags=876 unusable0=baldur_unusable0 STR_VAR icon=~zstblduz~ desc_img=~csw1h05~ appearance="%baldur_appearance%" END
 
         LPF ALTER_HEADER INT_VAR speed = baldur_speed_factor dicesize = baldur_dicesize dicenumber = baldur_dice_thrown damage=baldur_bonus_damage STR_VAR icon=~zstblduz~ END
@@ -62,12 +66,21 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_ITEM INT_VAR id_name = RESOLVE_STR_REF(@55109) END
         END
 
+        PATCH_IF bastard_comp_installed BEGIN
+            LPF ALTER_HEADER INT_VAR damage=3 dicesize = 8 dicenumber = 1 END
+            SPRINT strref @55100
+            SPRINT str @99999
+            INNER_PATCH_SAVE strref ~%strref%~ BEGIN
+                REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%str%[ %TAB%]*:?[ %TAB%]*\)2[Dd]4[ %TAB%]?\+[ %TAB%]?[0-9][0-9]?~ ~\11d8~
+            END
+            SAY_EVALUATED 0x54 ~%strref%~
+        END
+
         LPF DELETE_EFFECT END
         LPF ADD_EQUIPPED_EFF INT_VAR p1 = 99 STR_VAR effects = ~op=7,p2=21;op=7,p2=20;op=7,p2=16~ END // colors
         LPF ADD_EQUIPPED_EFF INT_VAR p2=4 spec=4 STR_VAR effects = ~op=344,p1=%race_lycanthrope%;op=178,p1=%race_lycanthrope%,spec=2;op=344,p1=%race_dragon%;op=178,p1=%race_dragon%,spec=2;op=344,p1=%race_mimic%;op=178,p1=%race_mimic%,spec=2;op=344,p1=%race_doppleganger%;op=178,p1=%race_doppleganger%,spec=2;op=344,p1=%race_vampire%;op=178,p1=%race_vampire%,spec=2;op=344,p1=%race_vampyre%;op=178,p1=%race_vampyre%,spec=2;op=344,p1=%race_rakshasa%;op=178,p1=%race_rakshasa%,spec=2;op=344,p1=%race_demonic%;op=178,p1=%race_demonic%,spec=2;op=344,p2=5,p1=%class_druid_all%;op=178,p2=5,p1=%class_druid_all%,spec=2~ END // ench / thac0 bonuses
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=166,p1=7;op=37,p1=2;op=142,p2=63~ END
 
-        // zstbldu0 (dmg resource)
         LPF ADD_ON_HIT_EFF INT_VAR p2=4 STR_VAR res=~zstbldu0~ effects = ~op=177,p1=%race_lycanthrope%;op=177,p1=%race_dragon%;op=177,p1=%race_mimic%;op=177,p1=%race_doppleganger%;op=177,p1=%race_vampire%;op=177,p1=%race_vampyre%;op=177,p1=%race_rakshasa%;op=177,p1=%race_demonic%;op=177,p2=5,p1=%class_druid_all%~ END
     IF_EXISTS
  

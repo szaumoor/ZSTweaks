@@ -107,3 +107,7 @@ END
 // ACTION_IF zst_group_1698_staff_power BEGIN
 //   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1698.tph~ END
 // END
+
+ACTION_IF zst_group_1708_sword_of_chaos BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1708.tph~ END
+END

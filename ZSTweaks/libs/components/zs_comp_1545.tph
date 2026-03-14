@@ -170,7 +170,7 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
         OUTER_SET incl = 1
     END
 
-    ACTION_IF incl BEGIN
+    ACTION_IF zst_1545_saving_throws_patch AND incl BEGIN
         OUTER_SET tolerance = 2
 
         COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
@@ -187,36 +187,24 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
                 SET resolved_level = first_level > 21 ? 21 : first_level
 
                 PATCH_IF class = class_thief OR class = class_bard BEGIN
-                    READ_STRREF 0x08 name
-                    PATCH_PRINT "[DEBUG]: Patching %SOURCE_RES% (%name%) of level %first_level%"
-
+                    
                     PATCH_IF ABS (save_death - $death_rogue_table("%resolved_level%")) > tolerance BEGIN
-                        SET new_value = $death_rogue_table("%resolved_level%")
-                        PATCH_PRINT "                 Changing Save vs. Death from %save_death% to %new_value%"
                         WRITE_BYTE 0x54 $death_rogue_table("%resolved_level%")
                     END
 
                     PATCH_IF ABS (save_wands - $wands_rogue_table("%resolved_level%")) > tolerance BEGIN
-                        SET new_value = $wands_rogue_table("%resolved_level%")
-                        PATCH_PRINT "                 Changing Save vs. Wands from %save_wands% to %new_value%"
                         WRITE_BYTE 0x55 $wands_rogue_table("%resolved_level%")
                     END
 
                     PATCH_IF ABS (save_poly - $poly_rogue_table("%resolved_level%")) > tolerance BEGIN
-                        SET new_value = $poly_rogue_table("%resolved_level%")
-                        PATCH_PRINT "                 Changing Save vs. Poly from %save_poly% to %new_value%"
                         WRITE_BYTE 0x56 $poly_rogue_table("%resolved_level%")
                     END
 
                     PATCH_IF ABS (save_breath - $breath_rogue_table("%resolved_level%")) > tolerance BEGIN
-                        SET new_value = $breath_rogue_table("%resolved_level%")
-                        PATCH_PRINT "                 Changing Save vs. Breath from %save_breath% to %new_value%"
                         WRITE_BYTE 0x57 $breath_rogue_table("%resolved_level%")
                     END
 
                     PATCH_IF ABS (save_spell - $spell_rogue_table("%resolved_level%")) > tolerance BEGIN
-                        SET new_value = $spell_rogue_table("%resolved_level%")
-                        PATCH_PRINT "                 Changing Save vs. Spell from %save_spell% to %new_value%"
                         WRITE_BYTE 0x58 $spell_rogue_table("%resolved_level%")
                     END                   
 

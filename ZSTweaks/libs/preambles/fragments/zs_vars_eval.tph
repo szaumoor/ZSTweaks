@@ -12,6 +12,16 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
+        ACTION_IF zs_allow_prefixes != 0 AND zs_allow_prefixes != 1 BEGIN
+            WARN "[WARN]: Allow prefixes should be set to 0 (disable) or 1 (enable). Actual value: %zs_allow_prefixes%"
+            LAM f_plus
+        END
+
+        ACTION_IF crash_if_var_errors_found != 0 AND crash_if_var_errors_found != 1 BEGIN
+            FAIL "[FAIL]: Crash if var errors found should be set to 0 (disable) or 1 (enable). Actual value: %crash_if_var_errors_found%"
+            LAM f_plus
+        END
+
         // ----------------------------------------SYMBOL X SPELLS------------------------------------------------- \\
 
         OUTER_SET valid_death_x = zst_443_death != 0 AND zst_443_death != 1
@@ -485,6 +495,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         ACTION_IF zst_1545_saving_throws_monk != 0 AND zst_1545_saving_throws_monk != 1 BEGIN
             WARN "[WARN]: Setting to change monk saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_monk%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_saving_throws_patch != 0 AND zst_1545_saving_throws_patch != 1 BEGIN
+            WARN "[WARN]: Setting to patch creature saving throw tables should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_patch%"
             LAM f_plus
         END
 
@@ -2931,7 +2946,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Harbinger group component should be set to 1 or 0. Actual value: %zst_group_1696_harbinger%"
             LAM f_plus
         END
-
+        
+        ACTION_IF zst_group_1708_sword_of_chaos != 0 AND zst_group_1708_sword_of_chaos != 1 BEGIN
+            WARN "[WARN]: Sword of Chaos group component should be set to 1 or 0. Actual value: %zst_group_1708_sword_of_chaos%"
+            LAM f_plus
+        END
 
         // -------------------------------------------------------------------------------------------------------- \\
 
