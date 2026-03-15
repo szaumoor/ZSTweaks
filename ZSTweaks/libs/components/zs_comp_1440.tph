@@ -18,6 +18,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
              AND NOT ("%SOURCE_RES%" STR_EQ "zsipkuk3") // KUKRI exceptions
              AND NOT ("%SOURCE_RES%" STR_EQ "zsipkre0") // KUKRI ECLIPSE exception
              AND NOT ("%SOURCE_RES%" STR_EQ "zsipkre2") // KUKRI ECLIPSE exception
+             AND NOT ("%SOURCE_RES%" STR_EQ "daggshit") // carbos shank
     BEGIN
 
         READ_LONG 0x50 id_udesc

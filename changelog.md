@@ -26,6 +26,7 @@
   - Version from the Haer'Dalis swords upgrade mod will still only grant 1/2 APR each instead of 1 each, which is likely excessive in most scenarios.
 - Slight description modification to the description of Haer'Dalis' weapons
 - Component 1545 (character stats tweak) also offers a tweak for the saving throws tables or various classes (all optional), and patches creatures with the appropriate classes (skips multiclass), with a tolerance of +/-2 compared to the new tables.
+- Dagger Boost component no longer boosts DAGGSHIT (yes, that's the real ID), wielded by Carbos and Shank at the beginning of BGEE, since they can one-shot you if they get lucky with a dagger that normally does not deal more than 1 damage.
 
 ## New components
 
@@ -42,5 +43,12 @@
 - Make Handmaiden's Mace +2 (Viconia's romance) reflect BG3's take on it
   - Only difference is that it sets strength to 18 (if current strength below that value)
   - Minor description fix since the logic in the second paragraph is backwards.
-  - Must be installed as an end-of-installation component due to implementation details
-- Make all single-classed thieves apply a Sneak Attack Crippling strike on backstabs (TODO)
+  - Must be installed as an end-of-installation component due to implementation details, or at least after you're sure no other component will add on-equip effect to it.
+- Make all single-classed thieves apply a Sneak Attack Crippling strike on backstabs
+- Make IWD evasion balanced (TODO)
+  - Some options to choose:
+    - Evasion attempts can critically miss (5%). This pairs well with my saving throw overhaul, if you feel that the improved saves vs. breath gives them too much advantage.
+    - Only single-classed thieves can evade
+    - Multi-classed thieves can evade, but only manage to make an attempt 50% of the time
+  - Part of the end-of-installation group, as it will affect resources where the evade effect has been given, and it's probably best to run it right at the end (and SCS, if applies).
+- Make multi-classed thieves always incur in a -1 backstab multiplier for balance (TODO)
