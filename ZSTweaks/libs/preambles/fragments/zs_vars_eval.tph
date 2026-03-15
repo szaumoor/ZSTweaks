@@ -1809,6 +1809,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
+        ACTION_IF zst_group_2350_crippling_backstab != 0 AND zst_group_2350_crippling_backstab != 1 BEGIN
+            WARN "[WARN]: Crippling Backstab group component should be set to 1 or 0. Actual value: %zst_group_2350_crippling_backstab%"
+            LAM f_plus
+        END
+
         // ----------------------------------------GROUP COMP VARIABLES (CREATURE)------------------------------------------------- \\
 
         ACTION_IF zst_group_3010_alignment_tweak != 0 AND zst_group_3010_alignment_tweak != 1 BEGIN

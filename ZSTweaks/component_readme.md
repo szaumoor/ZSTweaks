@@ -243,8 +243,8 @@ This component overhauls character stats for a more streamlined progression and 
     - **3 Pips**: THAC0: -2 (off-hand); Damage: No penalties
 - **Weapon Proficiencies**: THAC0 progression is smoothed out, gaining 1 THAC0 at 2 pips, and then another one per pip up to +4 at 5 pips.
 - **Saving Throw Tables** (all optional)
-  - **Warrior** classes (rangers, paladins, fighters): Slightly worse saves except vs. Death. Some of them start off as better, like vs. Breath. Generally expect them to be slightly worse at resisting spells that affect the mind, and generally anything that isn't forcing a save vs. Death. This includes rangers, paladins, and fighters. Final saves look like 3 7 6 7 8 (vanilla being 3 5 4 4 6). The idea is that fighter classes shouldn't be quite so good as dodging and resisting charms but definitely should be able to resist things that try to kill them outright.
-  - **Rogue** classes (thieves and bards): Saves vs. Breath get big boost compared to others, since it is the ability to get out of the way of dangerous things like dragon breath (which funnily enough in vanilla is the worst of their saves). It also affects IWD evasion which gives rogues a chance to completely evade all the effects of some things like fireballs. Final saves look like 8 4 7 6 5 (vanilla being 8 4 7 11 5).
+  - **Warrior** classes (rangers, paladins, fighters): Slightly worse saves except vs. Death. Some of them start off as better, like vs. Breath. Generally expect them to be slightly worse at resisting spells that affect the mind, and generally anything that isn't forcing a save vs. Death. This includes rangers, paladins, and fighters. Final saves look like 3 7 5 6 8 (vanilla being 3 5 4 4 6). The idea is that fighter classes shouldn't be quite so good as dodging and resisting charms but definitely should be able to resist things that try to kill them outright.
+  - **Rogue** classes (thieves and bards): Saves vs. Breath get big boost compared to others, now being the ones that have the best save vs. breath, slightly worse save vs. spell. Worth noting is that Save vs. Breath also affects IWD evasion which gives rogues a chance to completely evade all the effects of some things like fireballs. Final saves look like 8 4 7 5 6 (vanilla being 8 4 7 11 5).
   - **Priests**, druids, and shamans: Saves vs. Death are one point worse, equal to fighters, saves vs. Breath are 2 points worse (one point better than vanilla rogue -- they really hated rogues, didn't they). They have oodles of ways to improve their own saving throws and those in their party anyway. Final saves look like 3 6 5 10 7 (vanilla is 2 6 5 8 7).
   - **Wizards** and sorcerers: Worse save vs. death (2 points worse than rogues), since they should be sicklier, so easier to poison and some instant death effects like Wail of the Banshee. Worse save vs. Breath (2 points worse) so they can be incinerated by dragon fire more easily. They excel at spell-like effects, enchantments, etc. Final saves look like 10 3 5 9 4 (vanilla is 8 3 5 7 4).
   - **Monks**: Save vs. Death is 1 point worse, being still the class with the best saves vs. Death, save vs. Breath is one point better, matching rogues, and save vs. Spell one point worse, leaving wizards as the best ones to save vs. Spell. Final saves look like 2 5 4 6 5 (vanilla is 1 5 4 7 4)
@@ -2233,6 +2233,20 @@ This component rebalances the power slightly:
 - Movement rate penalty reduced to 40%
 - -1 penalty to THAC0 and Damage
 - -1/2 fewer attacks per round. For example, at the start of the game in BGEE, this would force their APR down to 1 when fighting with only one weapon, and after level 13, it would be reduced to 2 APR, all other things being equal.
+
+### Make all single-classed thieves apply a Sneak Attack Crippling strike on backstabs (2350) (IWDEE BGEE BG2EE EET)
+
+This component emulates the mechanics, partially, of the Sneak Attack option (i.e. using sneak attacks instead of backstabs). These cause a -1 to attack rolls (THAC0 and damage rolls) for 1 turn, after which the target becomes immune to sneak attacks for 70 rounds (talk about harsh). How it works:
+
+- Single-classed thieves (only, no exceptions, no matter what you do) get this ability at level 5. I only allow single-classed thieves because once again (say it with me), I want to reward (highly) specialization.
+- Upon backstabbing successfully a target, they suffer a -1 penalty to attack rolls for 30 seconds.
+- During this time, they're immune to this crippling strike.
+- The penalty increases to -2 at level 9, -3 at level 13, and -4 at level 17. It does not grow up to -7 like in IWD at level 30. Might be just me, but -7 seems excessive, especially for damage rolls.
+- Targets may be affected by a crippling strike once every 5 rounds, backstabbing repeatedly does not refresh duration.
+- A helpful console string will appear when a successful one is made
+- Constructs, undead, mist creatures, oozes, shambling mounds, and elementals are unaffected.
+
+Don't mix with Sneak Attacks, only use if you're planning to use Backstabs.
 
 </details>
 

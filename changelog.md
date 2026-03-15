@@ -43,3 +43,4 @@
   - Only difference is that it sets strength to 18 (if current strength below that value)
   - Minor description fix since the logic in the second paragraph is backwards.
   - Must be installed as an end-of-installation component due to implementation details
+- Make all single-classed thieves apply a Sneak Attack Crippling strike on backstabs (TODO)
