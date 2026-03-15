@@ -254,10 +254,10 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
             READ_BYTE 0x58 save_spell
 
             PATCH_IF first_level > 0 AND general = general_humanoid BEGIN
-                SET resolved_level = first_level > 21 ? 21 : first_level
 
                 PATCH_IF class = class_thief OR class = class_bard BEGIN
 
+                    SET resolved_level = first_level > 21 ? 21 : first_level
                     PATCH_IF ABS (save_death - $death_rogue_table("%resolved_level%")) > tolerance BEGIN
                         WRITE_BYTE 0x54 $death_rogue_table("%resolved_level%")
                     END
@@ -280,11 +280,95 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
 
                 END ELSE PATCH_IF class = class_cleric OR class = class_druid OR class = class_shaman BEGIN
 
+                    SET resolved_level = first_level > 19 ? 19 : first_level
+                    PATCH_IF ABS (save_death - $death_priest_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x54 $death_priest_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_wands - $wands_priest_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x55 $wands_priest_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_poly - $poly_priest_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x56 $poly_priest_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_breath - $breath_priest_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x57 $breath_priest_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_spell - $spell_priest_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x58 $spell_priest_table("%resolved_level%")
+                    END                   
+
                 END ELSE PATCH_IF class = class_fighter OR class = class_paladin OR class = class_ranger BEGIN
 
+                    SET resolved_level = first_level > 17 ? 17 : first_level
+                    PATCH_IF ABS (save_death - $death_warrior_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x54 $death_warrior_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_wands - $wands_warrior_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x55 $wands_warrior_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_poly - $poly_warrior_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x56 $poly_warrior_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_breath - $breath_warrior_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x57 $breath_warrior_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_spell - $spell_warrior_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x58 $spell_warrior_table("%resolved_level%")
+                    END  
+
                 END ELSE PATCH_IF class = class_mage OR class = class_sorcerer BEGIN
+                    
+                    SET resolved_level = first_level > 21 ? 21 : first_level
+                    PATCH_IF ABS (save_death - $death_wizard_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x54 $death_wizard_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_wands - $wands_wizard_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x55 $wands_wizard_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_poly - $poly_wizard_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x56 $poly_wizard_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_breath - $breath_wizard_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x57 $breath_wizard_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_spell - $spell_wizard_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x58 $spell_wizard_table("%resolved_level%")
+                    END 
 
                 END ELSE PATCH_IF class = class_monk BEGIN
+
+                    SET resolved_level = first_level > 17 ? 17 : first_level
+                    PATCH_IF ABS (save_death - $death_monk_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x54 $death_monk_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_wands - $wands_monk_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x55 $wands_monk_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_poly - $poly_monk_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x56 $poly_monk_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_breath - $breath_monk_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x57 $breath_monk_table("%resolved_level%")
+                    END
+
+                    PATCH_IF ABS (save_spell - $spell_monk_table("%resolved_level%")) > tolerance BEGIN
+                        WRITE_BYTE 0x58 $spell_monk_table("%resolved_level%")
+                    END 
 
                 END
 
