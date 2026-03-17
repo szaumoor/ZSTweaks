@@ -364,6 +364,7 @@
 @2290 = ~Make single-classed thieves, bards, and monks able to briefly avoid damaging AoE and projectiles once per day~
 @2300 = ~Make Defensive Stance slightly more balanced~
 @2350 = ~Make all single-classed thieves apply a Sneak Attack Crippling strike on backstabs~
+@2400 = ~Make multi-classed thieves always incur in a -1 backstab multiplier for balance~
 
 // CRE TWEAKS
 @3010 = ~Make inappropriately aligned creatures in BG2 more correct~
@@ -385,6 +386,7 @@
 
 // END-OF-INSTALL ORDER TWEAKS
 @1381 = ~Make Handmaiden's Mace +2 (Viconia's romance) reflect BG3's take on it~
+@2370 = ~Make IWD evasion balanced~
 @1531 = ~Make a selection of spells ignore magic resistance~
 
 @6542 = ~This component is only available if the previous tweak was installed~

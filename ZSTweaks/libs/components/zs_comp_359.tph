@@ -83,3 +83,7 @@ END
 ACTION_IF zst_group_2350_crippling_backstab BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2350.tph~ END
 END
+
+ACTION_IF zst_group_2400_multiclass_backstab BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2400.tph~ END
+END

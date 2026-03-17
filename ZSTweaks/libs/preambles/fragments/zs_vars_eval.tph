@@ -1314,6 +1314,16 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
+        ACTION_IF zst_2370_iwd_evade_critical_misses != 0 AND zst_2370_iwd_evade_critical_misses != 1 BEGIN
+            WARN "[WARN]: Setting to add a chance of critically missing an evasion should be set to 0 (disable) or 1 (enable). Actual value: %zst_2370_iwd_evade_critical_misses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2370_iwd_evade_usability < 0 OR zst_2370_iwd_evade_usability > 2 BEGIN
+            WARN "[WARN]: Setting to set the usability of the thief evasion ability should be set to 0 (disable), 1 (only single thieves), or 2 (single thieves, and multiclass have a 50% chance of triggering the evade attempt). Actual value: %zst_2370_iwd_evade_usability%"
+            LAM f_plus
+        END
+
         // ----------------------------------------BALORS------------------------------------------------- \\
 
         ACTION_IF zst_3050_balor_vorpal_penalty < "-10" OR zst_3050_balor_vorpal_penalty > 10 BEGIN
@@ -1813,6 +1823,12 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Crippling Backstab group component should be set to 1 or 0. Actual value: %zst_group_2350_crippling_backstab%"
             LAM f_plus
         END
+        
+
+        ACTION_IF zst_group_2400_multiclass_backstab != 0 AND zst_group_2400_multiclass_backstab != 1 BEGIN
+            WARN "[WARN]: Multiclass backstab penalty group component should be set to 1 or 0. Actual value: %zst_group_2350_crippling_backstab%"
+            LAM f_plus
+        END
 
         // ----------------------------------------GROUP COMP VARIABLES (CREATURE)------------------------------------------------- \\
 
@@ -2184,6 +2200,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         ACTION_IF zst_group_1381_handmaiden_mace != 0 AND zst_group_1381_handmaiden_mace != 1 BEGIN
             WARN "[WARN]: Handmaiden's Mace group component should be set to 1 or 0. Actual value: %zst_group_1381_handmaiden_mace%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2370_iwd_evasion_tweak != 0 AND zst_group_2370_iwd_evasion_tweak != 1 BEGIN
+            WARN "[WARN]: IWD Evasion Tweak group component should be set to 1 or 0. Actual value: %zst_group_1381_handmaiden_mace%"
             LAM f_plus
         END
 

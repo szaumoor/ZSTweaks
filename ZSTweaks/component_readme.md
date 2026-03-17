@@ -2248,6 +2248,10 @@ This component emulates the mechanics, partially, of the Sneak Attack option (i.
 
 Don't mix with Sneak Attacks, only use if you're planning to use Backstabs.
 
+### Make multi-classed thieves always incur in a -1 backstab multiplier for balance (2400) (IWDEE BGEE BG2EE EET)
+
+Thieves are almost always used as multiclass because it's vastly superior to just picking a single-class thief. This component aims to address this by making multiclass thieves incur a -1 backstab multiplier. A second class already gives them plenty of advantages.
+
 </details>
 
 ---
@@ -2410,12 +2414,6 @@ As it says. Note that the patching is manual and every drow has to be found and 
 
 </summary>
 
-### Make a selection of spells ignore magic resistance (1531) (IWDEE BGEE BG2EE EET)
-
-The full list of spells is: Detect Evil, Know Alignment, Stinking Cloud, Entangle, Grease, Web, Summon Cow, Glitterdust, Magical Stone, Call Lightning, Cloudburst, Summon Insects/ Insect Plague / Creeping Doom, Nature's Beauty, Storm of Vengeance, Mold Touch, Smashing Wave, Shout / Great Shout, Thorn Spray, Spike Growth.
-
-Bear in mind this component should be installed after tweaks that affect these spells, especially if they add new effects to them; otherwise, this tweak will only work partially, and inconsistent results could ensue.
-
 ### Make Handmaiden's Mace +2 (Viconia's romance) reflect BG3's take on it (1381) (BG2EE EET)
 
 - Sets strength to 18, unless it's already 18 or higher. This is determined only at the moment of equipping the mace.
@@ -2424,6 +2422,22 @@ Bear in mind this component should be installed after tweaks that affect these s
 - Poison effect is kept as is
 
 This component is part of this group as a precaution, since the technicalities of making strength only be set to 18 if under 18 can make tweaks that add new effect on-equip after this one cease to work as intended. I might rework this in the future so it's not needed, as long as the solution satisfies me.
+
+### Make IWD evasion balanced (2370) (IWDEE BGEE BG2EE EET)
+
+Some options to choose:
+
+- Evasion attempts can critically miss (5%). This pairs well with my saving throw overhaul, if you feel that the improved saves vs. breath gives them too much advantage.
+- Only single-classed thieves can evade
+- Multi-classed thieves can evade, but only manage to make an attempt 50% of the time
+
+Check preferences and choose your preference. Install after all content that adds spells and effects, and tweaks, and definitely after any component that includes IWD Evasion to the game. To be extra sure, add it at the end.
+
+### Make a selection of spells ignore magic resistance (1531) (IWDEE BGEE BG2EE EET)
+
+The full list of spells is: Detect Evil, Know Alignment, Stinking Cloud, Entangle, Grease, Web, Summon Cow, Glitterdust, Magical Stone, Call Lightning, Cloudburst, Summon Insects/ Insect Plague / Creeping Doom, Nature's Beauty, Storm of Vengeance, Mold Touch, Smashing Wave, Shout / Great Shout, Thorn Spray, Spike Growth.
+
+Bear in mind this component should be installed after tweaks that affect these spells, especially if they add new effects to them; otherwise, this tweak will only work partially, and inconsistent results could ensue.
 
 </details>
 

@@ -1,0 +1,34 @@
+COPY "%MOD_FOLDER%/end_of_install/evasion_limit" ~override~
+
+COPY_EXISTING_REGEXP ~^.+\.\(itm\|spl\)$~ ~override~
+
+    READ_ASCII 0x0 signature (4)
+    SET itm_file = ~%signature%~ STR_EQ ~ITM ~
+    SET spl_file = ~%signature%~ STR_EQ ~SPL ~
+
+    PATCH_IF itm_file BEGIN
+        READ_LONG  0x64 abilities_offset
+        READ_SHORT 0x68 abilities_num
+
+        FOR ( i = 0; i < abilities_num; ++i ) BEGIN
+
+            READ_SHORT (abilities_offset + (i * 0x38) + 0x1e) effects_num
+
+            FOR ( i = 0; i < effects_num; ++i ) BEGIN
+                READ_SHORT (abilities_offset + (i * 0x38) + 0x38) effects_num
+            END
+
+        END
+
+    END
+
+    LPF ALTER_EFFECT_EX 
+        INT_VAR 
+            match_parameter2=63 
+            opcode = 177
+        STR_VAR 
+            match_opcode_ex = "(o_opcode = 324 OR o_opcode = 318)" 
+            resource = ""
+    END
+
+BUT_ONLY

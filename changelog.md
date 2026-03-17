@@ -51,4 +51,4 @@
     - Only single-classed thieves can evade
     - Multi-classed thieves can evade, but only manage to make an attempt 50% of the time
   - Part of the end-of-installation group, as it will affect resources where the evade effect has been given, and it's probably best to run it right at the end (and SCS, if applies).
-- Make multi-classed thieves always incur in a -1 backstab multiplier for balance (TODO)
+- Make multi-classed thieves always incur in a -1 backstab multiplier for balance
