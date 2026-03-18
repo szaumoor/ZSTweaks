@@ -8,7 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     COPY ~%MOD_FOLDER%/items/sword_chaos~ ~override~
     COPY_EXISTING ~zstswsr1.spl~ ~override~
         PATCH_FOR_EACH p1 IN 1 2 3 4 BEGIN
-            LPF ALTER_EFFECT_EX INT_VAR match_opcode = 139 match_parameter = RESOLVE_STR_REF(@42453) END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = p1 parameter1 = RESOLVE_STR_REF(@42453) END
         END
     
     COPY_EXISTING ~sw2h16.itm~ ~override~

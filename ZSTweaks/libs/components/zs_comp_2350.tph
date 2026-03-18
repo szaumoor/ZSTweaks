@@ -1,4 +1,4 @@
-PRINT "[INFO]: Installing backstab crippling strike that mirrors the mechanics of Sneak Attack. Second warning not to install this if you forced the game to use Sneak Attacks instead of Backstabs. Just don't."
+PRINT "[INFO]: Installing backstab crippling strike that mirrors the mechanics of Sneak Attack. Second warning not to install this if you set the game to use Sneak Attacks instead of Backstabs. Just don't."
 
 COPY_EXISTING ~%MOD_FOLDER%/class_kits/backstab_crippling~ ~override~
 

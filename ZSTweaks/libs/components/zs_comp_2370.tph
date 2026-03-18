@@ -9,7 +9,6 @@ DEFINE_PATCH_MACRO apply_changes BEGIN
         j = effects_num
         // break
 
-        PATCH_PRINT "--------------------- Patching %SOURCE_FILE%"
         PATCH_IF zst_2370_iwd_evade_usability > 0 BEGIN
             
             PATCH_IF effects > 9999 BEGIN

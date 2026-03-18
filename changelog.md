@@ -31,24 +31,8 @@
 ## New components
 
 - Make Balduran's Swords better and draw inspiration from BG3
-  - Standardized to +2 weapons, deals extra damage vs. all shapeshifters (dragons, mimics, doppelgangers, vampires, all fiends, including rakshasas), adds tweaks the bonuses accordingly to all three sources for the weapon.
-  - The versions may be standardized as a long sword or as a bastard sword (config options)
-  - They all share the same icon (golden sword from BG1)
-  - Can change the name of the weapon if desired (config options)
 - Make minor improvements to Jaheira-specific items (both toggleable in the config)
-  - Harper pin: Usable by everyone
-  - Keepsake Locket: Minor 5 HP bonus. Restricted to only CHARNAME or Jaheira if desired (config options)
-- Make Sword of Chaos reflect BG3's take on it
-  - Healing of 1-6 per hit (bias towards lower amounts of healing), deals 1d4 extra necrotic damage (irresistible damage that only affects the living). Ascension upgraded version covered. Does not affect stoneskinned targets and non-living targets
 - Make Handmaiden's Mace +2 (Viconia's romance) reflect BG3's take on it
-  - Only difference is that it sets strength to 18 (if current strength below that value)
-  - Minor description fix since the logic in the second paragraph is backwards.
-  - Must be installed as an end-of-installation component due to implementation details, or at least after you're sure no other component will add on-equip effect to it.
 - Make all single-classed thieves apply a Sneak Attack Crippling strike on backstabs
 - Make IWD evasion balanced
-  - Some options to choose:
-    - Evasion attempts can critically miss (5%). This pairs well with my saving throw overhaul, if you feel that the improved saves vs. breath gives them too much advantage.
-    - Only single-classed thieves can evade
-    - Multi-classed thieves can evade, but only manage to make an attempt 50% of the time
-  - Part of the end-of-installation group, as it will affect resources where the evade effect has been given, and it's probably best to run it right at the end (and SCS, if applies).
 - Make multi-classed thieves always incur in a -1 backstab multiplier for balance
