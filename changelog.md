@@ -11,6 +11,7 @@
 - Fixed bug when installing Vexation tweak that causes it to fail due to missing code
 - Various fixes causing installation errors when installing components in a non-linear way or jumping components
 - Fixed Entropy +2 being restricted to Blades, since that is no longer part of the design
+- Chromatic Orb from Avengers now benefit from the component for the spell
 
 ## Modifications
 
