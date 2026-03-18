@@ -26,7 +26,7 @@
   - Version from the Haer'Dalis swords upgrade mod will still only grant 1/2 APR each instead of 1 each, which is likely excessive in most scenarios.
 - Slight description modification to the description of Haer'Dalis' weapons
 - Component 1545 (character stats tweak) also offers a tweak for the saving throws tables or various classes (all optional), and patches creatures with the appropriate classes (skips multiclass), with a tolerance of +/-2 compared to the new tables.
-- Dagger Boost component no longer boosts DAGGSHIT (yes, that's the real ID), wielded by Carbos and Shank at the beginning of BGEE, since they can one-shot you if they get lucky with a dagger that normally does not deal more than 1 damage.
+- Dagger Boost component no longer boosts DAGGSHIT (yes, that's the real ID), wielded by Carbos and Shank at the beginning of BGEE, since they can one-shot you if they get lucky with a dagger that normally does not deal more than 1 damage if they critically hit.
 
 ## New components
 

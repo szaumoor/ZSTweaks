@@ -79,13 +79,12 @@ ACTION_IF zs_allow_prefixes BEGIN
             COPY_EXISTING ~firkra01.cre~ ~override~
                 WRITE_BYTE 0x271 general_monster
 
+            PRINT "[INFO]: Balduran's Plate no longer preventing characters of level 5 or less from getting a Charisma increase"
+            COPY_EXISTING ~wa2plat.itm~ ~override~
+                LPF ALTER_EFFECT INT_VAR check_headers=0 match_dicesize = 6 dicesize = 0 END
+            BUT_ONLY
+
             ACTION_IF NOT has_eefixpack BEGIN
-
-                PRINT "[INFO]: Balduran's Plate no longer preventing characters of level 5 or less from getting a Charisma increase"
-                COPY_EXISTING ~wa2plat.itm~ ~override~
-                    LPF ALTER_EFFECT INT_VAR match_dicesize = 6 dicesize = 0 END
-                BUT_ONLY
-
                 PRINT "[INFO]: Fixing incorrect speed factor in Lilarcor from 8 to 7"
                 COPY_EXISTING ~sw2h14.itm~ ~override~
                     LPF ALTER_HEADER INT_VAR silent = 1 match_type = 1 speed = 7 END

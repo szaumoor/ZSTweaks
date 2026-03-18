@@ -4,6 +4,10 @@ ACTION_IF zst_group_1381_handmaiden_mace BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1381.tph~ END
 END
 
+ACTION_IF zst_group_2370_iwd_evasion_tweak BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2370.tph~ END
+END
+
 ACTION_IF zst_group_1531_selective_spells_mr BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1531.tph~ END
 END

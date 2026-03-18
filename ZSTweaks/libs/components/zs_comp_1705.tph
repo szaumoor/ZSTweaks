@@ -76,7 +76,7 @@ ACTION_IF NOT is_iwdee BEGIN
             SAY_EVALUATED 0x54 ~%strref%~
         END
 
-        LPF DELETE_EFFECT END
+        LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 8)" END
         LPF ADD_EQUIPPED_EFF INT_VAR p1 = 99 STR_VAR effects = ~op=7,p2=21;op=7,p2=20;op=7,p2=16~ END // colors
         LPF ADD_EQUIPPED_EFF INT_VAR p2=4 spec=4 STR_VAR effects = ~op=344,p1=%race_lycanthrope%;op=178,p1=%race_lycanthrope%,spec=2;op=344,p1=%race_dragon%;op=178,p1=%race_dragon%,spec=2;op=344,p1=%race_mimic%;op=178,p1=%race_mimic%,spec=2;op=344,p1=%race_doppleganger%;op=178,p1=%race_doppleganger%,spec=2;op=344,p1=%race_vampire%;op=178,p1=%race_vampire%,spec=2;op=344,p1=%race_vampyre%;op=178,p1=%race_vampyre%,spec=2;op=344,p1=%race_rakshasa%;op=178,p1=%race_rakshasa%,spec=2;op=344,p1=%race_demonic%;op=178,p1=%race_demonic%,spec=2;op=344,p2=5,p1=%class_druid_all%;op=178,p2=5,p1=%class_druid_all%,spec=2~ END // ench / thac0 bonuses
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=166,p1=7;op=37,p1=2;op=142,p2=63~ END
