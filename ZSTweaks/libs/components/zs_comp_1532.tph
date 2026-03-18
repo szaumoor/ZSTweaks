@@ -1,9 +1,17 @@
 COPY ~%MOD_FOLDER%/general/1hp_bonus~ ~override~
 COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
 
-  READ_SHORT 0x1c cat
-  PATCH_MATCH cat WITH 6 4 3 BEGIN // belts, boots and bracers
+  READ_SHORT 0x1c category
+
+  PATCH_IF 
+      ( category =  6 AND zst_1532_add_1hp_to_belts     ) OR
+      ( category =  4 AND zst_1532_add_1hp_to_boots     ) OR
+      ( category =  3 AND zst_1532_add_1hp_to_bracers   ) OR
+      ( category =  2 AND zst_1532_add_1hp_to_body_armor) OR
+      ( category = 12 AND zst_1532_add_1hp_to_shields   ) OR
+      ( category =  7 AND zst_1532_add_1hp_to_helmets   )
+  BEGIN
     LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=177,p2=2,p1=%ea_pc%,res=zstw1hp0~ END
-  END DEFAULT END
+  END 
 
 BUT_ONLY

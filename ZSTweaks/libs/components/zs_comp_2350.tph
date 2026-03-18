@@ -1,0 +1,29 @@
+PRINT "[INFO]: Installing backstab crippling strike that mirrors the mechanics of Sneak Attack. Second warning not to install this if you set the game to use Sneak Attacks instead of Backstabs. Just don't."
+
+COPY_EXISTING ~%MOD_FOLDER%/class_kits/backstab_crippling~ ~override~
+
+COPY_EXISTING ~zstcrpk3.spl~ ~override~
+    FOR ( penalty = 1; penalty <= 4; ++penalty ) BEGIN
+        LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = penalty parameter1 = RESOLVE_STR_REF(@8950) END
+    END
+
+ACTION_CLEAR_ARRAY my_clabs
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS 9 rows
+  FOR ( index = 2; index < rows; ++index ) BEGIN
+    READ_2DA_ENTRY index 8 9 class
+    PATCH_IF class = class_thief BEGIN
+      READ_2DA_ENTRY index 5 9 clab
+      DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN "%clab%" => "%class%" END
+    END  
+
+  END
+
+ACTION_DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN
+  clabth01 =>  class_thief 
+END
+
+ACTION_PHP_EACH my_clabs AS clab => _ BEGIN
+  COPY_EXISTING ~%clab%.2da~ ~override~
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 4 f_MaxLevel = 4 STR_VAR f_Entry = "AP_ZSTCRPK0" END  
+END

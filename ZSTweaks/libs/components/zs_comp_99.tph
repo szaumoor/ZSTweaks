@@ -1,9 +1,5 @@
 OUTER_SET group_component = 1
 
-OUTER_SPRINT config_path ~%MOD_FOLDER%/configurations/zstweaks_divine_group_install.txt~
-INCLUDE ~%config_path%~
-COPY ~%config_path%~ ~override~
-
 ACTION_IF zst_group_100_glyph_warding BEGIN
   WITH_SCOPE BEGIN
     INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_100.tph~
@@ -226,7 +222,7 @@ ACTION_IF zst_group_491_spike_stones BEGIN
   END
 END
 
-ACTION_IF zst_group_492_barksin BEGIN
+ACTION_IF zst_group_492_barkskin BEGIN
   WITH_SCOPE BEGIN
     INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_492.tph~
   END

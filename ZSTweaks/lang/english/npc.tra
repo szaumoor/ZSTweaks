@@ -1,10 +1,10 @@
-@6050 = ~This abyssal greensteel blade is one of Haer'Dalis's favorite weapons. This short sword is capable of inflicting an additional 6 points of poison damage if the target fails a saving throw. This blade may only be used by tieflings.
+@6050 = ~This blade is one of Haer'Dalis's favorite weapons. Made from green steel tempered from ore found only in the Nine Hells of Baator, this abyssal short sword is capable of inflicting an additional poison damage if the target fails to resist it. This blade may only be used by tieflings.
 
 STATISTICS:
 
 Combat abilities:
 – Hit target must save vs. Poison at -1 or suffer 6 points of poison damage over 3 seconds
-– Considered +3 for the purposes of what it can hit
+– Considered a +3 enchanted weapon for the purposes of what it can hit
 – Attacks per round: +1/2
 
 THAC0: +2
@@ -17,13 +17,13 @@ Requires:
 
 Weight: 2~
 
-@6051 = ~Chaos is a short sword usable only by tieflings. Every time it strikes an opponent, he or she loses 2 points of Dexterity for 5 rounds and becomes more sensitive to poisonous substances. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
+@6051 = ~Chaos is a short sword usable only by tieflings. Every time it strikes an opponent, he or she is temporarily weakened. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
 
 STATISTICS:
 
 Combat abilities:
-– Hit target suffers a -2 Dexterity penalty for 5 rounds and a -1 penalty to saving throws vs. Poison for 2 rounds
-– Considered +3 for the purposes of what it can hit
+– Touch of Chaos: For two rounds, hit target suffers a non-stacking -5 Dexterity penalty and, chosen randomly, a stacking -1 penalty to saving throws vs. Poison, Armor Class, THAC0, or Damage. Constructs such as golems are unaffected.
+– Considered a +3 enchanted weapon for the purposes of what it can hit
 – Attacks per round: +1/2
 
 THAC0: +2
@@ -36,14 +36,14 @@ Requires:
 
 Weight: 2~
 
-@6052 = ~This abyssal greensteel blade is one of Haer'Dalis's favorite weapons. This short sword is capable of inflicting an additional 9 points of poison damage if the target fails a saving throw. This blade may only be used by Haer'Dalis.
+@6052 = ~This blade is one of Haer'Dalis's favorite weapons. Made from green steel tempered from ore found only in the Nine Hells of Baator, this abyssal short sword is capable of inflicting an additional poison damage if the target fails to resist it. This blade may only be used by tieflings.
 
 STATISTICS:
 
 Combat abilities:
 – Hit target must save vs. Poison at -2 or suffer 9 points of poison damage over 3 seconds
-– Considered +5 for the purposes of what it can hit
-– 1 extra attack per round
+– Considered a +5 enchanted weapon for the purposes of what it can hit
+– Attacks per round: +1/2
 
 THAC0: +4
 Damage: 1d6+4 (piercing)
@@ -55,14 +55,14 @@ Requires:
 
 Weight: 2~
 
-@6053 = ~Chaos is a short sword usable only by Haer'Dalis. Every time it strikes an opponent, he or she loses 2 points of Dexterity for 5 rounds and becomes more sensitive to poisonous substances. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
+@6053 = ~Chaos is a short sword usable only by Haer'Dalis. Every time it strikes an opponent, he or she is temporarily weakened. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
 
 STATISTICS:
 
 Combat abilities:
-– Hit target suffers a -2 Dexterity penalty for 5 rounds and a -1 penalty to Save vs. Poison for 2 rounds
-– Considered +5 for the purposes of what it can hit
-– 1 extra attack per round
+– Touch of Chaos: For two rounds, hit target suffers a non-stacking -5 Dexterity penalty and, chosen randomly, a stacking -1 penalty to saving throws vs. Poison, Armor Class, THAC0, or Damage. Constructs such as golems are unaffected.
+– Considered a +5 enchanted weapon for the purposes of what it can hit
+– Attacks per round: +1/2
 
 THAC0: +4
 Damage: 1d6+4 (piercing)
@@ -79,11 +79,11 @@ Weight: 2~
 
 STATISTICS:
 
-Combat abilities:
-– Considered a +3 weapon for the purposes of what it can hit
-
 Equipped abilities:
 – 5 points of magic damage to any who damage the wielder
+
+Combat abilities:
+– Considered a +3 weapon for the purposes of what it can hit
 
 THAC0: +2
 Damage: 1d10+2 (slashing)
@@ -501,3 +501,15 @@ Weight: 0~
 
 @70030 = ~Create Bruiser Mates
 This ability crafts 10 of Jan's patented Flasher Master Bruiser Mates, adding them to the character's inventory. Handle with care!~
+
+
+@70040 = ~This is a well-crafted locket, obviously made with care, and typical of keepsake items often given to loved ones. A minor enchantment has attempted to capture the likeness of both <CHARNAME> and Jaheira within, making it a thoughtful gift of remembrance. One side has suffered some smudging, but it is a sweet gift nonetheless.
+
+STATISTICS:
+
+Equipped abilities:
+– Hit Points: +5
+
+Weight: 1~
+
+@70041 = ~Only Jaheira or <CHARNAME> may use this locket.~

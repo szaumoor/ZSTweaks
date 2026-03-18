@@ -1,0 +1,12 @@
+ACTION_IF is_bg2ee_or_eet BEGIN
+
+    COPY_EXISTING ~hlolth.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR unusable1=0 unusable2=0 unusable3=0 unusable4=0 price=3000 unusable0=0 id_desc=RESOLVE_STR_REF(@60500) END                
+        
+        PATCH_FOR_EACH bit IN 2 12 18 19 22 24 26 27 28 29 30 31 BEGIN                                                                
+            WRITE_LONG 0x1e (THIS + 2**bit)
+        END
+
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=318,res=%SOURCE_RES%,p2=124,p1=18;op=44,p2=1,p1=18~ END
+
+END

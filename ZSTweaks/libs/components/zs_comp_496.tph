@@ -1,8 +1,3 @@
-ACTION_IF zst_496_doom_casting_speed < 0 OR zst_496_doom_casting_speed > 8 BEGIN
-  FAIL "[FAIL]: Invalid casting speed %zst_496_doom_casting_speed%. Must be between 0 and 8."
-END
-
-
 COPY_EXISTING ~sppr113.spl~ ~override~
   LPF ALTER_HEADER INT_VAR speed = zst_496_doom_casting_speed END
 

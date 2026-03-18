@@ -1,0 +1,108 @@
+COPY "%MOD_FOLDER%/end_of_install/evasion_limit" ~override~
+
+DEFINE_PATCH_MACRO apply_changes BEGIN
+
+    PATCH_IF (opcode = 324 OR opcode = 318) AND p2 = 63 BEGIN
+
+        // break on next iteration
+        i = abilities_num
+        j = effects_num
+        // break
+
+        PATCH_IF zst_2370_iwd_evade_usability > 0 BEGIN
+            
+            PATCH_IF effects > 9999 BEGIN
+                PATCH_VERBOSE
+                PATCH_FAIL "[FAIL]: Too many effects to process!"
+            END ELSE PATCH_IF effects < 10 BEGIN
+                SPRINT number "000%effects%"
+            END ELSE PATCH_IF effects < 100 BEGIN
+                SPRINT number "00%effects%"
+            END ELSE PATCH_IF effects < 1000 BEGIN
+                SPRINT number "0%effects%"
+            END ELSE PATCH_IF scrolls < 10000 BEGIN
+                SPRINT number "%effects%"
+            END
+
+            SPRINT resource "%SOURCE_RES%"
+            INNER_ACTION BEGIN
+                COPY_EXISTING ~zstiwev0.EFF~ ~override/klev%number%.eff~
+                    WRITE_ASCII 0x30 "%resource%" #8
+            END
+
+            LPF CLONE_EFFECT_EX INT_VAR opcode=177 parameter2=5 parameter1=class_thief match_parameter2=63 STR_VAR resource="klev%number%" match_opcode_ex="(o_opcode=324 OR o_opcode=318)" END
+            LPF DELETE_EFFECT_EX INT_VAR match_parameter2=63 STR_VAR match_opcode_ex="(o_opcode=324 OR o_opcode=318)" END 
+
+            PATCH_IF zst_2370_iwd_evade_usability = 2 BEGIN
+
+                PATCH_FOR_EACH class IN fighter_thief cleric_thief mage_thief fighter_mage_thief BEGIN
+                    LPF CLONE_EFFECT_EX INT_VAR match_opcode=177 match_parameter2=5 match_parameter1=class_thief parameter1=IDS_OF_SYMBOL(class "%class%") probability1=49 END
+                END
+
+            END
+
+            ++effects
+        END
+
+        PATCH_IF zst_2370_iwd_evade_critical_misses BEGIN
+
+            PATCH_IF zst_2370_iwd_evade_usability = 0 BEGIN
+
+                LPF ALTER_EFFECT_EX INT_VAR match_parameter2=63 STR_VAR match_opcode_ex="(o_opcode=324 OR o_opcode=318)" END
+
+            END ELSE BEGIN
+                LPF ALTER_EFFECT_EX STR_VAR match_resource="klev%number%" probability1_ex="(THIS == 100 ? 94 : 44)" END      
+            END
+
+        END 
+
+    END
+
+END
+
+OUTER_SET effects = 0
+SILENT
+COPY_EXISTING_REGEXP ~^.+\.\(itm\|spl\)$~ ~override~
+
+    READ_ASCII 0x0 signature (4)
+    SET itm_file = ~%signature%~ STR_EQ ~ITM ~
+    SET spl_file = ~%signature%~ STR_EQ ~SPL ~
+
+    PATCH_IF itm_file BEGIN
+        READ_LONG  0x64 abilities_offset
+        READ_SHORT 0x68 abilities_num
+
+        FOR ( i = 0; i < abilities_num; ++i ) BEGIN
+
+            READ_SHORT (abilities_offset + (i * 0x38) + 0x1e) effects_num
+
+            FOR ( j = 0; j < effects_num; ++j ) BEGIN
+                READ_SHORT (abilities_offset + (i * 0x38) + 0x38 + (j * 0x30)) opcode
+                READ_LONG (abilities_offset + (i * 0x38) + 0x38 + (j * 0x30) + 0x08) p2
+                LPM apply_changes     
+            END
+
+        END
+
+    END ELSE PATCH_IF spl_file BEGIN
+
+        READ_LONG  0x64 abilities_offset
+        READ_SHORT 0x68 abilities_num
+
+        FOR ( i = 0; i < abilities_num; ++i ) BEGIN
+
+            READ_SHORT (abilities_offset + (i * 0x28) + 0x1e) effects_num
+
+            FOR ( j = 0; j < effects_num; ++j ) BEGIN
+                READ_SHORT (abilities_offset + (i * 0x28) + 0x28 + (j * 0x30)) opcode
+                READ_LONG (abilities_offset + (i * 0x28) + 0x28 + (j * 0x30) + 0x08) p2
+                LPM apply_changes     
+            END
+
+        END
+
+    END
+
+BUT_ONLY
+
+VERBOSE

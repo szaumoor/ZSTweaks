@@ -1,3 +1,6 @@
+OUTER_SET opcode1 = 126
+OUTER_SET opcode2 = 176
+
 DEFINE_PATCH_MACRO modify_shadow
 BEGIN
     WRITE_SHORT 0x46 (THIS - 2)
@@ -18,6 +21,12 @@ BEGIN
 
     PATCH_IF BYTE_AT(0x63) < 30 BEGIN
         WRITE_BYTE 0x63 30
+    END
+  
+    SET present = 0
+    LPM CRE_OP_PRESENT
+    PATCH_IF NOT present BEGIN
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 timing=9 parameter1 = 2 END
     END
 END
 

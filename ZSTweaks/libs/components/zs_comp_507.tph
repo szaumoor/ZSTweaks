@@ -1,5 +1,3 @@
-
-
 COPY_EXISTING ~sppr201.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@5260) END
     LPF ALTER_HEADER INT_VAR range=10 projectile = 160 END

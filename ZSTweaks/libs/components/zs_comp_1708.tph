@@ -1,0 +1,25 @@
+ACTION_IF is_bg2ee_or_eet BEGIN
+
+    DEFINE_PATCH_MACRO sarechaosweak BEGIN
+        LPF DELETE_EFFECT_EX INT_VAR check_globals = 0 STR_VAR match_resource_ex = ~(NOT o_resource STR_EQ "reaver")~ END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p2=55,res=%SOURCE_RES%;op=318,p2=204,res=%SOURCE_RES%;op=146,p2=1,res=zstswsr0;op=146,p2=1,res=zstswsr1~ END
+    END
+
+    COPY ~%MOD_FOLDER%/items/sword_chaos~ ~override~
+    COPY_EXISTING ~zstswsr1.spl~ ~override~
+        PATCH_FOR_EACH p1 IN 1 2 3 4 BEGIN
+            LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = p1 parameter1 = RESOLVE_STR_REF(@42453) END
+        END
+    
+    COPY_EXISTING ~sw2h16.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@42450) END
+        LPM sarechaosweak
+
+    COPY_EXISTING ~finsarev.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR min_con=0 min_int=0 id_name = RESOLVE_STR_REF(@42451) id_desc = RESOLVE_STR_REF(@42452) END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 0 END
+        LPF ALTER_HEADER INT_VAR speed = 6 END
+        LPM sarechaosweak
+    IF_EXISTS
+
+END

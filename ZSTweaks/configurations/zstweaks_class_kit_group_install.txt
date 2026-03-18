@@ -1,6 +1,7 @@
 // Set here to "1" those components that you wish you install as part of the group installation of class kit tweaks
 // Set to 0 to DISABLE
 // REMEMBER TO SET 2171 TO 0 IF YOU USE A SWASHBUCKLER OVERHAUL
+// DO NOT change values in this file while the installation runs.
 
 OUTER_SET zst_group_2100_sunsoul             = "1"
 OUTER_SET zst_group_360_shaman_abilities     = "1"
@@ -22,4 +23,6 @@ OUTER_SET zst_group_2270_whirl_evasion       = "1"
 OUTER_SET zst_group_2280_sand_throw          = "1"
 OUTER_SET zst_group_2290_roguish_evade       = "1"
 OUTER_SET zst_group_2300_defensive_stance    = "1"
+OUTER_SET zst_group_2350_crippling_backstab  = "1"
+OUTER_SET zst_group_2400_multiclass_backstab = "1"
 

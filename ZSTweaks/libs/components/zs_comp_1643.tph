@@ -1,6 +1,5 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
     
-    INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
     COPY_EXISTING ~npsw04.itm~ ~override~
         SET general_tweaks_installed = MOD_IS_INSTALLED "ZSTweaks.tp2" "103"
 

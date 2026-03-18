@@ -1,0 +1,40 @@
+ACTION_IF is_bg2ee_or_eet BEGIN
+
+    ACTION_IF zst_1556_harper_pin BEGIN
+
+        COPY_EXISTING ~misc5x.itm~ ~override~
+            LPF DELETE_EFFECT INT_VAR match_opcode = 319 match_special = 9456 END
+
+    END
+
+    ACTION_IF zst_1556_keepsake_locket BEGIN
+
+        COPY_EXISTING ~misc5w.itm~ ~override~
+            SET desc = RESOLVE_STR_REF(@70040)
+            LPF ALTER_ITEM INT_VAR general_desc=desc id_desc=desc END
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=18,p1=5,p2=3~ END
+
+
+        ACTION_IF zst_1556_keepsake_locket_restrict BEGIN
+
+            PRINT "[INFO]: Ensuring only CHARNAME and Jaheira can wear the Keepsake Locket..."
+            SILENT
+            ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
+
+                ACTION_IF NOT IS_AN_INT dv BEGIN // joinable NPC
+                    COPY_EXISTING ~%file%~ ~override~
+                        PATCH_IF LONG_AT(0x8) != 9456 BEGIN
+                            LPF ADD_CRE_EFFECT INT_VAR opcode=180 target=1 timing=9 parameter1=RESOLVE_STR_REF(@70041) STR_VAR resource=~misc5w~ END
+                        END
+                    BUT_ONLY
+
+                END
+
+            END
+            VERBOSE
+
+        END
+
+    END
+
+END

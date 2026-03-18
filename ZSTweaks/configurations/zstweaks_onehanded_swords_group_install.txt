@@ -1,5 +1,6 @@
 // Set here to "1" those components that you wish you install as part of the group installation of one-handed sword tweaks
 // Set to 0 to DISABLE
+// DO NOT change values in this file while the installation runs.
 
 OUTER_SET zst_group_1125_ninjato_scarlet = "1"
 OUTER_SET zst_group_1126_blackrazor      = "1"
@@ -28,3 +29,4 @@ OUTER_SET zst_group_1596_shadow_blade    = "1"
 OUTER_SET zst_group_1598_cutthroat       = "1"
 OUTER_SET zst_group_1605_burning_earth   = "1"
 OUTER_SET zst_group_1701_ilbratha        = "1"
+OUTER_SET zst_group_1705_balduran_swords = "1"

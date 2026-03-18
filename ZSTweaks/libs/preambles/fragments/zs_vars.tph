@@ -1,0 +1,27 @@
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_prefs.txt~
+
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt~
+
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_arcane_group_install.txt~
+
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_blunt_axe_group_install.txt~
+
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_class_kit_group_install.txt~
+
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_creature_group_install.txt~
+
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_dagger_group_install.txt~
+
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_divine_group_install.txt~
+
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_endofinstallorder_group_install.txt~
+
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_gear_group_install.txt~
+
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_joinables_group_install.txt~
+
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_onehanded_swords_group_install.txt~
+
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_ranged_group_install.txt~
+
+INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_twohanded_group_install.txt~

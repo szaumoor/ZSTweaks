@@ -1,6 +1,6 @@
 ACTION_IF NOT is_iwdee AND FILE_EXISTS_IN_GAME ~dagg16.itm~ BEGIN
 
-    ACTION_IF zst_1000_sbonus < 0 BEGIN
+    ACTION_IF zst_1000_sbonus != 0 BEGIN
 
         COPY_EXISTING "dagg16.itm" ~override~
 

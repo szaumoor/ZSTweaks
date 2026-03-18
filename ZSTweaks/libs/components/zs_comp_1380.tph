@@ -1,14 +1,14 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
     
     COPY_EXISTING "npsw05.itm" ~override~
-        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6050) ench=3 END
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6050) ench=3 unusable1=0 unusable2=0 unusable3=0 unusable4=0 END
         LPF ALTER_HEADER INT_VAR match_type = 1 speed = 0 END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6~ END
         LPF ALTER_EFFECT_EX INT_VAR check_globals=0 match_savingthrow=4 savebonus="-1" END
         LPF ALTER_EFFECT INT_VAR match_opcode = 25 parameter1 = 2 END
 
-    COPY_EXISTING "news05.ITM" ~override~
-        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6052) ench=5 END
+    COPY_EXISTING "news05.itm" ~override~
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6052) ench=5 unusable1=0 unusable2=0 unusable3=0 unusable4=0 END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6~ END
         LPF ALTER_EFFECT_EX INT_VAR check_globals=0 match_savingthrow=4 savebonus="-1" END
         LPF ALTER_EFFECT INT_VAR match_opcode = 25 parameter1 = 3 END
@@ -19,17 +19,21 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING "npsw06.itm" ~override~
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6051) ench=3 END
         LPF ALTER_HEADER INT_VAR match_type = 1 speed = 0 END
+        LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 326)" 
+                                     match_resource_ex = ~("%o_resource%" STRING_MATCHES_REGEXP "zstwy.+" != 0)~ END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6;op=319,pwr=1,p1=153,p2=4,spec=8332~ END
-        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=33,p1=-1,dur=12,rd=2~ END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p2=27,res=%SOURCE_RES%;op=146,p2=1,res=zsthaer0;op=146,p2=1,res=zsthaer1~ END
 
-    COPY_EXISTING "news06.ITM" ~override~
+    COPY_EXISTING "news06.itm" ~override~
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6053) ench=5 END
+        LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 326)" 
+                                     match_resource_ex = ~("%o_resource%" STRING_MATCHES_REGEXP "zstwy.+" != 0)~ END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=1,p1=6~ END
-        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=33,p1=-2,dur=18,rd=2~ END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p2=27,res=%SOURCE_RES%;op=146,p2=1,res=zsthaer0;op=146,p2=1,res=zsthaer1~ END
         LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=319 parameter1=9182 parameter2=10 special=9182 END
     BUT_ONLY IF_EXISTS
 
-    COPY_EXISTING ~item_use.2DA~ ~override~
+    COPY_EXISTING ~item_use.2da~ ~override~
         REPLACE_TEXTUALLY ~^\(NPSW0[56]\|c2hd[12]\)[ %TAB%]+HAERDALIS.*~ ~~
         PRETTY_PRINT_2DA
 

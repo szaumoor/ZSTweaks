@@ -1,7 +1,4 @@
 OUTER_SET group_component = 1
-OUTER_SPRINT config_path "%MOD_FOLDER%/configurations/zstweaks_twohanded_group_install.txt"
-INCLUDE ~%config_path%~
-COPY ~%config_path%~ ~override~
 
 ACTION_IF zst_group_1200_ixil_spike BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1200.tph~ END
@@ -110,3 +107,7 @@ END
 // ACTION_IF zst_group_1698_staff_power BEGIN
 //   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1698.tph~ END
 // END
+
+ACTION_IF zst_group_1708_sword_of_chaos BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1708.tph~ END
+END

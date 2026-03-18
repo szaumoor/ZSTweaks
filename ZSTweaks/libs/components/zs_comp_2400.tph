@@ -1,0 +1,4 @@
+COPY ~%MOD_FOLDER%/class_kits/backstab_multiclass~ ~override~
+
+COPY_EXISTING ~clabfi01.2da~ ~override~
+    LPF set_clab_2da_entries INT_VAR f_MinLevel=1 f_MaxLevel=50 f_Increment=1 STR_VAR f_Entry = "AP_ZSTTHFM0" END  

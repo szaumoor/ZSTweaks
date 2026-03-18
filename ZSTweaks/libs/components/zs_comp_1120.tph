@@ -1,6 +1,5 @@
 WITH_SCOPE BEGIN
 
-    INCLUDE "%MOD_FOLDER%/configurations/zstweaks_npc_group_install.txt"
     OUTER_SET no_valygar_gear_comp = NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "1643" 
                                      AND NOT (MOD_IS_INSTALLED "ZSTweaks.tp2" "1379" AND zst_group_1643_corthala_blade)
     COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
@@ -16,11 +15,11 @@ WITH_SCOPE BEGIN
 
                 PATCH_IF wpn_prof=90 BEGIN
 
-                    PATCH_IF zst_1120_backstab_penalty_rp_estocs > 0 AND has_zs_item_pack_estocs AND
+                    PATCH_IF zst_1120_backstab_penalty_kaelyn_estocs > 0 AND has_zs_item_pack_estocs AND
                              LONG_AT(0x08) = zs_estoc_general_string_index
                     BEGIN
 
-                        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_rp_estocs%~ END
+                        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_kaelyn_estocs%~ END
 
                     END ELSE PATCH_IF zst_1120_backstab_penalty_lswords > 0 BEGIN
                         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_lswords%~ END
@@ -68,10 +67,10 @@ WITH_SCOPE BEGIN
 
             ELSE PATCH_IF cat=20 BEGIN // short swords
 
-                PATCH_IF zst_1120_backstab_penalty_rp_rapiers > 0 AND has_zs_item_pack_rapiers AND
+                PATCH_IF zst_1120_backstab_penalty_kaelyn_rapiers > 0 AND has_zs_item_pack_rapiers AND
                              LONG_AT(0x08) = zs_rapier_general_string_index
                 BEGIN
-                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_rp_rapiers%~ END
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_kaelyn_rapiers%~ END
                 END
 
                 ELSE PATCH_IF zst_1120_backstab_penalty_sswords > 0 AND wpn_prof=91 BEGIN
@@ -90,10 +89,10 @@ WITH_SCOPE BEGIN
 
             ELSE PATCH_IF cat=16 BEGIN // daggers
 
-                PATCH_IF zst_1120_backstab_penalty_rp_kukris > 0 AND has_zs_item_pack_kukris AND
+                PATCH_IF zst_1120_backstab_penalty_kaelyn_kukris > 0 AND has_zs_item_pack_kukris AND
                              LONG_AT(0x08) = zs_kukri_general_string_index
                 BEGIN
-                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_rp_kukris%~ END
+                    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=263,p1=-%zst_1120_backstab_penalty_kaelyn_kukris%~ END
                 END
 
                 ELSE PATCH_IF zst_1120_backstab_penalty_daggers > 0 AND wpn_prof=96 BEGIN

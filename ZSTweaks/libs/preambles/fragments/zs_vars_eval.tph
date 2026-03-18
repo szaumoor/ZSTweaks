@@ -1,0 +1,2997 @@
+ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
+    PRINT "[INFO]: Running the preferences check script. Any incorrectly set preferences will be reported and installation will prompty fail..."
+    WITH_SCOPE BEGIN
+
+        OUTER_SET failures = 0
+        DEFINE_ACTION_MACRO f_plus BEGIN OUTER_SET failures+=1 END
+
+        // -------------------------------------------------------------------------------------------------------- \\
+
+        ACTION_IF zst_gender_fix != 0 AND zst_gender_fix != 1 BEGIN
+            WARN "[WARN]: Gender fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_gender_fix%"
+            LAM f_plus
+        END
+
+        ACTION_IF zs_allow_prefixes != 0 AND zs_allow_prefixes != 1 BEGIN
+            WARN "[WARN]: Allow prefixes should be set to 0 (disable) or 1 (enable). Actual value: %zs_allow_prefixes%"
+            LAM f_plus
+        END
+
+        ACTION_IF crash_if_var_errors_found != 0 AND crash_if_var_errors_found != 1 BEGIN
+            FAIL "[FAIL]: Crash if var errors found should be set to 0 (disable) or 1 (enable). Actual value: %crash_if_var_errors_found%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------SYMBOL X SPELLS------------------------------------------------- \\
+
+        OUTER_SET valid_death_x = zst_443_death != 0 AND zst_443_death != 1
+        OUTER_SET valid_pain_x = zst_443_pain != 0 AND zst_443_pain != 1
+        OUTER_SET valid_npc_x = zst_443_nerf_npc_symbols != 0 AND zst_443_nerf_npc_symbols != 1
+
+        ACTION_IF valid_death_x OR valid_pain_x OR valid_npc_x BEGIN
+            WARN "[WARN]: Symbol X preferences should be set to 0 (disable) or 1 (enable). Actual values:"
+
+            ACTION_IF valid_death_x BEGIN
+                WARN "[WARN]: DEATH: %zst_443_death%"
+                LAM f_plus
+            END
+
+            ACTION_IF zst_443_pain BEGIN
+                WARN "[WARN]: PAIN: %zst_443_pain%"
+                LAM f_plus
+            END
+
+            ACTION_IF zst_443_nerf_npc_symbols BEGIN
+                WARN "[WARN]: NERF NPC SYMBOLS: %zst_443_nerf_npc_symbols%"
+                LAM f_plus
+            END
+        END
+
+        ACTION_IF zst_443_death = 0 AND zst_443_pain = 0 AND zst_443_nerf_npc_symbols = 0 BEGIN
+            PRINT "[WARN]: No tweaks were selected for the Symbol, X component, leading to no effect."
+            LAM f_plus
+        END
+
+        // ----------------------------------------BACKSTAB PENALTIES------------------------------------------------- \\
+
+        ACTION_IF zst_1120_backstab_penalty_lswords < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Long Sword set to an inappropriate value: %zst_1120_backstab_penalty_lswords%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF has_zs_item_pack_estocs AND zst_1120_backstab_penalty_kaelyn_estocs < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for ZS_ItemPack estocs set to an inappropriate value: %zst_1120_backstab_penalty_kaelyn_estocs%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_katana < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Katana set to an inappropriate value: %zst_1120_backstab_penalty_katana%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_scimitars < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Scimitars set to an inappropriate value: %zst_1120_backstab_penalty_scimitars%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_staves < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Staves set to an inappropriate value: %zst_1120_backstab_penalty_staves%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_wakis < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Wakizashis set to an inappropriate value: %zst_1120_backstab_penalty_wakis%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_ninjatos < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Ninjatôs set to an inappropriate value: %zst_1120_backstab_penalty_ninjatos%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_bstsword < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Bastard Swords set to an inappropriate value: %zst_1120_backstab_penalty_bstsword%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_2hsword < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Two-Handed Swords set to an inappropriate value: %zst_1120_backstab_penalty_2hsword%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_sswords < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Short Swords set to an inappropriate value: %zst_1120_backstab_penalty_sswords%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF has_zs_item_pack_rapiers AND zst_1120_backstab_penalty_kaelyn_rapiers < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for ZS_ItemPack rapiers set to an inappropriate value: %zst_1120_backstab_penalty_kaelyn_rapiers%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_daggers < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Daggers set to an inappropriate value: %zst_1120_backstab_penalty_daggers%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF has_zs_item_pack_kukris AND zst_1120_backstab_penalty_kaelyn_kukris < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for ZS_ItemPack rapiers set to an inappropriate value: %zst_1120_backstab_penalty_kaelyn_kukris%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_maces < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Maces set to an inappropriate value: %zst_1120_backstab_penalty_maces%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_clubs < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Clubs set to an inappropriate value: %zst_1120_backstab_penalty_clubs%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_hammers < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for War Hammers set to an inappropriate value: %zst_1120_backstab_penalty_hammers%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_mornstars < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Morning Stars set to an inappropriate value: %zst_1120_backstab_penalty_mornstars%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_flails < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Flails set to an inappropriate value: %zst_1120_backstab_penalty_flails%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_axes < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Axes set to an inappropriate value: %zst_1120_backstab_penalty_axes%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_spears < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Spears set to an inappropriate value: %zst_1120_backstab_penalty_spears%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_halberds < 0 BEGIN
+            WARN "[WARN]: Backstab penalty for Halberds set to an inappropriate value: %zst_1120_backstab_penalty_halberds%. Should be 0 (disabled), or a positive number (enabled, determines backstab penalty)"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1120_backstab_penalty_lswords   = 0 AND
+                  zst_1120_backstab_penalty_daggers   = 0 AND
+                  zst_1120_backstab_penalty_katana    = 0 AND
+                  zst_1120_backstab_penalty_scimitars = 0 AND
+                  zst_1120_backstab_penalty_staves    = 0 AND
+                  zst_1120_backstab_penalty_wakis     = 0 AND
+                  zst_1120_backstab_penalty_ninjatos  = 0 AND
+                  zst_1120_backstab_penalty_bstsword  = 0 AND
+                  zst_1120_backstab_penalty_2hsword   = 0 AND
+                  zst_1120_backstab_penalty_maces     = 0 AND
+                  zst_1120_backstab_penalty_sswords   = 0 AND
+                  zst_1120_backstab_penalty_clubs     = 0 AND
+                  zst_1120_backstab_penalty_hammers   = 0 AND
+                  zst_1120_backstab_penalty_mornstars = 0 AND
+                  zst_1120_backstab_penalty_flails    = 0 AND
+                  zst_1120_backstab_penalty_axes      = 0 AND
+                  zst_1120_backstab_penalty_spears    = 0 AND
+                  zst_1120_backstab_penalty_halberds  = 0 AND
+                  has_zs_item_pack_rapiers = 1 AND zst_1120_backstab_penalty_kaelyn_rapiers = 0 AND
+                  has_zs_item_pack_kukris  = 1 AND zst_1120_backstab_penalty_kaelyn_kukris  = 0 AND
+                  has_zs_item_pack_estocs  = 1 AND zst_1120_backstab_penalty_kaelyn_estocs  = 0
+        BEGIN
+            PRINT "[WARN]: No tweaks were selected for the Backstab penalties, leading to no effect."
+            LAM f_plus
+        END
+
+        // ----------------------------------------DICE SIZE PREFS------------------------------------------------- \\
+
+        ACTION_IF zst_1150_dice_spears != 0 AND zst_1150_dice_spears != 1 BEGIN
+            WARN "[WARN]: Dice size tweak for Spears should be set to 0 (disable) or 1 (enable). Actual value: %zst_1150_dice_spears%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1150_dice_bastard_swords != 0 AND zst_1150_dice_bastard_swords != 1 BEGIN
+            WARN "[WARN]: Dice size tweak for Bastard Swords should be set to 0 (disable) or 1 (enable). Actual value: %zst_1150_dice_bastard_swords%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1150_dice_katanas != 0 AND zst_1150_dice_katanas != 1 BEGIN
+            WARN "[WARN]: Dice size tweak for Katanas should be set to 0 (disable) or 1 (enable). Actual value: %zst_1150_dice_katanas%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1150_dice_wakininja != 0 AND zst_1150_dice_wakininja != 1 BEGIN
+            WARN "[WARN]: Dice size tweak for Wakizashi/Ninjatô should be set to 0 (disable) or 1 (enable). Actual value: %zst_1150_dice_wakininja%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1150_dice_wakislashing != 0 AND zst_1150_dice_wakislashing != 1 BEGIN
+            WARN "[WARN]: Piercing/Slashing tweak for Wakizashi should be set to 0 (disable) or 1 (enable). Actual value: %zst_1150_dice_wakislashing%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1150_dice_warhammers != 0 AND zst_1150_dice_warhammers != 1 BEGIN
+            WARN "[WARN]: Dice size tweak for War Hammers should be set to 0 (disable) or 1 (enable). Actual value: %zst_1150_dice_warhammers%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1150_dice_twohanded_swords != 0 AND zst_1150_dice_twohanded_swords != 1 BEGIN
+            WARN "[WARN]: Dice size tweak for Two-Handed Swords should be set to 0 (disable) or 1 (enable). Actual value: %zst_1150_dice_warhammers%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------AXES & HALBERD CRITS------------------------------------------------- \\
+
+        ACTION_IF zst_1361_axes_crits != 0 AND zst_1361_axes_crits != 1 BEGIN
+            WARN "[WARN]: Critical damage tweak for Axes should be set to 0 (disable) or 1 (enable). Actual value: %zst_1361_axes_crits%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1361_halberds_crits != 0 AND zst_1361_halberds_crits != 1 BEGIN
+            WARN "[WARN]: Critical damage tweak for Halberds should be set to 0 (disable) or 1 (enable). Actual value: %zst_1361_axes_crits%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1361_axes_crits = 0 AND zst_1361_halberds_crits = 0 BEGIN
+            PRINT "[WARN]: No tweaks were selected for the critical damage tweaks, leading to no effect."
+            LAM f_plus
+        END
+
+        // ----------------------------------------BLUNT WEAPONS AC DEBUFF------------------------------------------------- \\
+
+        ACTION_IF zst_1362_blunt_only_nonarmored != 0 AND zst_1362_blunt_only_nonarmored != 1 BEGIN
+            WARN "[WARN]: Blunt weapons AC debuff setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1362_blunt_only_nonarmored%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------ARROW DISPELLING ST------------------------------------------------- \\
+
+        ACTION_IF zst_1371_save_penalty < "-10" OR zst_1371_save_penalty > 10 BEGIN
+            WARN "[WARN]: Enforced saving throw bonus for Arrows of Dispelling should be set between -10 and 10. Actual value: %zst_1371_save_penalty%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------FINESSE PREFERENCES------------------------------------------------- \\
+
+        ACTION_IF zst_1450_allow_daggers != 0 AND zst_1450_allow_daggers != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Daggers setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_daggers%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_staves != 0 AND zst_1450_allow_staves != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Staves setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_staves%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_sswords != 0 AND zst_1450_allow_sswords != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Short Swords setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_sswords%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_lswords != 0 AND zst_1450_allow_lswords != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Long Swords setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_lswords%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_scimitars != 0 AND zst_1450_allow_scimitars != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Scimitars setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_scimitars%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_katanas != 0 AND zst_1450_allow_katanas != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Katanas setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_katanas%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_clubs != 0 AND zst_1450_allow_clubs != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Clubs setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_clubs%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_wakis != 0 AND zst_1450_allow_wakis != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Wakizashis setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_wakis%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_ninjatos != 0 AND zst_1450_allow_ninjatos != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Ninjatôs setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_ninjatos%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_slings != 0 AND zst_1450_allow_slings != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Slings setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_slings%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_bows != 0 AND zst_1450_allow_bows != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Bows setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_bows%"
+            LAM f_plus
+        END
+        
+        ACTION_IF zst_1450_allow_xbows != 0 AND zst_1450_allow_xbows != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Crossbows setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_xbows%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_darts != 0 AND zst_1450_allow_darts != 1 BEGIN
+            WARN "[WARN]: Finesse setting for Darts setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_darts%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_bards != 0 AND zst_1450_allow_bards != 1 BEGIN
+            WARN "[WARN]: Finesse setting to allow Bards to benefit should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_bards%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_bards_probability_penalty < 0 OR zst_1450_bards_probability_penalty > 98 BEGIN
+            WARN "[WARN]: Probability penalty for Bards should be set between 0 (1% chance penalty) and 98 (99% chance penalty). Actual value: %zst_1450_bards_probability_penalty%%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1450_allow_daggers   = 0 AND
+                  zst_1450_allow_staves    = 0 AND
+                  zst_1450_allow_sswords   = 0 AND
+                  zst_1450_allow_lswords   = 0 AND
+                  zst_1450_allow_scimitars = 0 AND
+                  zst_1450_allow_katanas   = 0 AND
+                  zst_1450_allow_clubs     = 0 AND
+                  zst_1450_allow_wakis     = 0 AND
+                  zst_1450_allow_ninjatos  = 0 AND
+                  zst_1450_allow_slings    = 0 AND
+                  zst_1450_allow_bows      = 0 AND
+                  zst_1450_allow_xbows     = 0 AND
+                  zst_1450_allow_darts     = 0 
+        BEGIN
+            WARN "[WARN]: No weapon groups were selected for the Finesse component, leading to no effect."
+            LAM f_plus
+        END
+
+        // ----------------------------------------POTION OVERHAUL------------------------------------------------- \\
+
+        ACTION_IF zst_1534_potions_usable_everyone != 0 AND zst_1534_potions_usable_everyone != 1 BEGIN
+            WARN "[WARN]: Setting to allow potions to be used by everyone should be set to 0 (disable) or 1 (enable). Actual value: %zst_1534_potions_usable_everyone%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1534_potion_overhaul != 0 AND zst_1534_potion_overhaul != 1 BEGIN
+            WARN "[WARN]: Setting to allow potions to be overhauled should be set to 0 (disable) or 1 (enable). Actual value: %zst_1534_potion_overhaul%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1534_potions_cannot_self_stack != 0 AND zst_1534_potions_cannot_self_stack != 1 BEGIN
+            WARN "[WARN]: Setting to not allow potions to self-stack should be set to 0 (disable) or 1 (enable). Actual value: %zst_1534_potions_cannot_self_stack%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1534_potions_usable_everyone = 0 AND zst_1534_potion_overhaul = 0 AND zst_1534_potions_cannot_self_stack = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected for the Potion Overhaul, no changes are made"
+            LAM f_plus
+        END
+
+        // ----------------------------------------JEWELRY PRICES------------------------------------------------- \\
+
+        ACTION_IF zst_1538_jewelry_price < 0 BEGIN
+            WARN "[WARN]: Setting to modify jewelry prices should be set to a positive number. Actual value: %zst_1538_jewelry_price%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------SCROLL USABILITY------------------------------------------------- \\
+
+        OUTER_SET zst_1539_all_no_reqs_eval = zst_1539_all_no_reqs != 0 AND zst_1539_all_no_reqs != 1
+        OUTER_SET zst_1539_all_reqs_eval = zst_1539_all_reqs != 0 AND zst_1539_all_reqs != 1
+        OUTER_SET zst_1539_rogues_no_reqs_eval = zst_1539_rogues_no_reqs != 0 AND zst_1539_rogues_no_reqs != 1
+        OUTER_SET zst_1539_rogues_reqs_eval = zst_1539_rogues_reqs != 0 AND zst_1539_rogues_reqs != 1
+
+        ACTION_IF zst_1539_all_no_reqs_eval OR zst_1539_all_reqs_eval OR zst_1539_rogues_no_reqs_eval OR zst_1539_rogues_reqs_eval BEGIN
+            WARN "[WARN]: Scroll usability component has some option set to something other than 0 (disabled) or 1 (enabled)."
+            LAM f_plus
+        END
+
+        ACTION_IF (zst_1539_all_no_reqs + zst_1539_all_reqs + zst_1539_rogues_no_reqs + zst_1539_rogues_reqs) > 1 BEGIN
+            WARN "[WARN]: Scroll usability component should only have one setting set to 1, please check the config file"
+            LAM f_plus
+        END
+
+        // ----------------------------------------VORPAL NO CHUNKING------------------------------------------------- \\
+
+        ACTION_IF zst_1541_vorpal_no_chunking != 0 AND zst_1541_vorpal_no_chunking != 1 BEGIN
+            WARN "[WARN]: Setting to not allow vorpal hits to chunk should be set to 0 (disable) or 1 (enable). Actual value: %zst_1541_vorpal_no_chunking%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------STAT BONUSES------------------------------------------------- \\
+
+        ACTION_IF zst_1545_strength_bonuses != 0 AND zst_1545_strength_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change strength bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_strength_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_constitution_bonuses != 0 AND zst_1545_constitution_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change constitution bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_constitution_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_dexterity_bonuses != 0 AND zst_1545_dexterity_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change dexterity bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_dexterity_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_lore_class_bonuses != 0 AND zst_1545_lore_class_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change lore by class bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_lore_class_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_lore_stat_bonuses != 0 AND zst_1545_lore_stat_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change lore by stat bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_lore_stat_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_racethac0_bonuses != 0 AND zst_1545_racethac0_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change racial thac0 bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_racethac0_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_shorty_bonuses < 0 AND zst_1545_shorty_bonuses > 3 BEGIN
+            WARN "[WARN]: Setting to change shorty bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_shorty_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_proficiency_bonuses != 0 AND zst_1545_proficiency_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change weapon proficiency bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_proficiency_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_proficiency_bonuses != 0 AND zst_1545_proficiency_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change weapon proficiency bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_proficiency_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_weapon_style_bonuses != 0 AND zst_1545_weapon_style_bonuses != 1 BEGIN
+            WARN "[WARN]: Setting to change weapon style bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_weapon_style_bonuses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_weapon_style_twohanded != 0 AND zst_1545_weapon_style_twohanded != 1 BEGIN
+            WARN "[WARN]: Setting to change two-handed weapon style bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_weapon_style_twohanded%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_weapon_style_onehanded != 0 AND zst_1545_weapon_style_onehanded != 1 BEGIN
+            WARN "[WARN]: Setting to change one-handed weapon style bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_weapon_style_onehanded%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_weapon_style_shield != 0 AND zst_1545_weapon_style_shield != 1 BEGIN
+            WARN "[WARN]: Setting to change sword and shield style bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_weapon_style_onehanded%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_weapon_style_twoweapon != 0 AND zst_1545_weapon_style_twoweapon != 1 BEGIN
+            WARN "[WARN]: Setting to change two-weapon style bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_weapon_style_twoweapon%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_saving_throws_rogue != 0 AND zst_1545_saving_throws_rogue != 1 BEGIN
+            WARN "[WARN]: Setting to change rogue saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_rogue%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_saving_throws_priest != 0 AND zst_1545_saving_throws_priest != 1 BEGIN
+            WARN "[WARN]: Setting to change priest saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_priest%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_saving_throws_warrior != 0 AND zst_1545_saving_throws_warrior != 1 BEGIN
+            WARN "[WARN]: Setting to change warrior saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_warrior%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_saving_throws_wizard != 0 AND zst_1545_saving_throws_wizard != 1 BEGIN
+            WARN "[WARN]: Setting to change wizard saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_wizard%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_saving_throws_monk != 0 AND zst_1545_saving_throws_monk != 1 BEGIN
+            WARN "[WARN]: Setting to change monk saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_monk%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1545_saving_throws_patch != 0 AND zst_1545_saving_throws_patch != 1 BEGIN
+            WARN "[WARN]: Setting to patch creature saving throw tables should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_patch%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------SHIELD TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_1546_everyone_can_use_all_shields != 0 AND zst_1546_everyone_can_use_all_shields != 1 BEGIN
+            WARN "[WARN]: Setting to allow everyone to use shields should be set to 0 (disable) or 1 (enable). Actual value: %zst_1546_everyone_can_use_all_shields%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1546_tower_single_classed_fighter_classes != 0 AND zst_1546_tower_single_classed_fighter_classes != 1 BEGIN
+            WARN "[WARN]: Setting to allow only single-classed fighters to use tower shields should be set to 0 (disable) or 1 (enable). Actual value: %zst_1546_everyone_can_use_all_shields%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1546_tower_all_fighter_classes != 0 AND zst_1546_tower_all_fighter_classes != 1 BEGIN
+            WARN "[WARN]: Setting to allow only fighters to use tower shields should be set to 0 (disable) or 1 (enable). Actual value: %zst_1546_tower_all_fighter_classes%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1546_tower_all_fighter_classes = 1 AND zst_1546_tower_all_fighter_classes = 1 BEGIN
+            WARN "[WARN]: Setting to allow all fighters and only single-classed fighters to use tower shields should not be both set to 1 (enable)."
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1546_small_thieves_bards != 0 AND zst_1546_small_thieves_bards != 1 BEGIN
+            WARN "[WARN]: Setting to allow thieves and bards to use small shields should be set to 0 (disable) or 1 (enable). Actual value: %zst_1546_small_thieves_bards%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1546_small_medium_thieves_bards != 0 AND zst_1546_small_medium_thieves_bards != 1 BEGIN
+            WARN "[WARN]: Setting to allow thieves and bards to use small and medium shields should be set to 0 (disable) or 1 (enable). Actual value: %zst_1546_small_medium_thieves_bards%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1546_buckler_wizards != 0 AND zst_1546_buckler_wizards != 1 BEGIN
+            WARN "[WARN]: Setting to allow wizards to use bucklers should be set to 0 (disable) or 1 (enable). Actual value: %zst_1546_buckler_wizards%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------OMNISTABBING TWEAK------------------------------------------------- \\
+
+        ACTION_IF zst_1600_backstab_no_invis_requirement_only != 0 AND zst_1600_backstab_no_invis_requirement_only != 1 BEGIN
+            WARN "[WARN]: Setting to define how omnistabbing should be implemented should be set to 0 (omnidirectional backstabs with invisibility) and 1 (normal backstab angle requirements, but doesn't need invisibility). Actual value: %zst_1546_buckler_wizards%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------1HP GEAR BOOST------------------------------------------------- \\
+
+        ACTION_IF zst_1532_add_1hp_to_belts != 0 AND zst_1532_add_1hp_to_belts != 1 BEGIN
+            WARN "[WARN]: Setting to allow adding 1HP to all belts should be set to 0 (disable) or 1 (enable). Actual value: %zst_1532_add_1hp_to_belts%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1532_add_1hp_to_boots != 0 AND zst_1532_add_1hp_to_boots != 1 BEGIN
+            WARN "[WARN]: Setting to allow adding 1HP to all boots should be set to 0 (disable) or 1 (enable). Actual value: %zst_1532_add_1hp_to_boots%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1532_add_1hp_to_bracers != 0 AND zst_1532_add_1hp_to_bracers != 1 BEGIN
+            WARN "[WARN]: Setting to allow adding 1HP to all bracers should be set to 0 (disable) or 1 (enable). Actual value: %zst_1532_add_1hp_to_bracers%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1532_add_1hp_to_body_armor != 0 AND zst_1532_add_1hp_to_body_armor != 1 BEGIN
+            WARN "[WARN]: Setting to allow adding 1HP to all body armor should be set to 0 (disable) or 1 (enable). Actual value: %zst_1532_add_1hp_to_body_armor%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1532_add_1hp_to_cloaks != 0 AND zst_1532_add_1hp_to_cloaks != 1 BEGIN
+            WARN "[WARN]: Setting to allow adding 1HP to all cloaks should be set to 0 (disable) or 1 (enable). Actual value: %zst_1532_add_1hp_to_cloaks%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1532_add_1hp_to_helmets != 0 AND zst_1532_add_1hp_to_helmets != 1 BEGIN
+            WARN "[WARN]: Setting to allow adding 1HP to all helmets should be set to 0 (disable) or 1 (enable). Actual value: %zst_1532_add_1hp_to_helmets%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1532_add_1hp_to_shields != 0 AND zst_1532_add_1hp_to_shields != 1 BEGIN
+            WARN "[WARN]: Setting to allow adding 1HP to all shields should be set to 0 (disable) or 1 (enable). Actual value: %zst_1532_add_1hp_to_shields%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------CIRCLET IOUN CRIT PROT------------------------------------------------- \\
+        OUTER_SET iouncrit_issues = 0
+
+        ACTION_IF zst_1664_crits_all != 0 AND zst_1664_crits_all != 1 BEGIN
+            WARN "[WARN]: Setting to make all circlets and ioun stones protect vs. critical hits should be set to 0 (disable) or 1 (enable). Actual value: %zst_1664_crits_all%"
+            LAM f_plus
+            OUTER_SET iouncrit_issues = 1
+        END
+
+        ACTION_IF zst_1664_crits_iouns != 0 AND zst_1664_crits_iouns != 1 BEGIN
+            WARN "[WARN]: Setting to make all ioun stones protect vs. critical hits should be set to 0 (disable) or 1 (enable). Actual value: %zst_1664_crits_iouns%"
+            LAM f_plus
+            OUTER_SET iouncrit_issues = 1
+        END
+
+        ACTION_IF zst_1664_crits_circlets != 0 AND zst_1664_crits_circlets != 1 BEGIN
+            WARN "[WARN]: Setting to make all circlets protect vs. critical hits should be set to 0 (disable) or 1 (enable). Actual value: %zst_1664_crits_circlets%"
+            LAM f_plus
+            OUTER_SET iouncrit_issues = 1
+        END
+
+        ACTION_IF zst_1664_crits_selected != 0 AND zst_1664_crits_selected != 1 BEGIN
+            WARN "[WARN]: Setting to make a selection of  circlets and ioun stones protect vs. critical hits should be set to 0 (disable) or 1 (enable). Actual value: %zst_1664_crits_selected%"
+            LAM f_plus
+            OUTER_SET iouncrit_issues = 1
+        END
+        
+        ACTION_IF NOT iouncrit_issues BEGIN
+            OUTER_SET comb_iouncrit_settings = zst_1664_crits_all + zst_1664_crits_iouns + zst_1664_crits_circlets + zst_1664_crits_selected
+
+            ACTION_IF comb_iouncrit_settings > 1 BEGIN
+                WARN "[WARN]: Only one setting in the circlets/ioun protection vs. crits should be set to 1( enable). Actual value: %zst_1664_crits_selected%"
+                LAM f_plus
+            END ELSE ACTION_IF comb_iouncrit_settings = 0 BEGIN
+                WARN "[WARN]: No setting in the circlets/ioun protection vs. crits were picked, leading to no changes by the component One should be set to 1"
+                LAM f_plus
+            END
+        END
+
+        // ----------------------------------------MISC ITEM FUNCTIONAL TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_1997_kuotoa != 0 AND zst_1997_kuotoa != 1 BEGIN
+            WARN "[WARN]: Setting to make kuo-toa's blood have a practical function should be set to 0 (disable) or 1 (enable). Actual value: %zst_1997_kuotoa%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1997_orb != 0 AND zst_1997_orb != 1 BEGIN
+            WARN "[WARN]: Setting to make Elder Orb eye have a practical function should be set to 0 (disable) or 1 (enable). Actual value: %zst_1997_orb%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1997_brain != 0 AND zst_1997_brain != 1 BEGIN
+            WARN "[WARN]: Setting to make Elder Brain eye have a practical function should be set to 0 (disable) or 1 (enable). Actual value: %zst_1997_brain%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1997_strohm != 0 AND zst_1997_strohm != 1 BEGIN
+            WARN "[WARN]: Setting to make Strohm's Mask have a practical function should be set to 0 (disable) or 1 (enable). Actual value: %zst_1997_strohm%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1997_shadow != 0 AND zst_1997_shadow != 1 BEGIN
+            WARN "[WARN]: Setting to make Shadow Wardstone have a practical function should be set to 0 (disable) or 1 (enable). Actual value: %zst_1997_shadow%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1997_kuotoa = 0 AND zst_1997_orb = 0 AND zst_1997_brain = 0 AND zst_1997_strohm = 0 AND zst_1997_shadow = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected in the Misc Item Functional component, leading to no changes"
+            LAM f_plus
+        END
+
+        // ----------------------------------------DAGGER TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_1000_sbonus > 0 OR zst_1000_sbonus < "-10" BEGIN
+            WARN "[WARN]: Setting to modify the saving throw of poisoned throwing daggers should be set to 0 (disable) or a negative value (up to -10). Actual value: %zst_1000_sbonus%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1000_store_additions != 0 AND zst_1000_store_additions != 1 BEGIN
+            WARN "[WARN]: Setting to add more poisoned throwing daggers to stores should be set to 0 (disable) or 1 (enable). Actual value: %zst_1000_store_additions%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1000_stack_mult <= 0 BEGIN
+            WARN "[WARN]: Setting to add more poisoned throwing daggers to stores via a percentage should be set to a value between 1 (99% fewer daggers, but why would you?) and a positive number like 150 (50% bigger stacks). Actual value: %zst_1000_stack_mult%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1000_store_additions = 0 AND zst_1000_sbonus = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected in the Poisoned Throwing Dagger component, leading to no changes."
+            LAM f_plus
+        END
+
+        // ----------------------------------------CARSOMYR------------------------------------------------- \\
+
+        ACTION_IF zst_1280_carsomyr_dispel != 0 AND zst_1280_carsomyr_dispel != 1 BEGIN
+            WARN "[WARN]: Setting to add a save vs. spell to Carsomy's dispel should be set to 0 (disable) or 1 (enable). Actual value: %zst_1280_carsomyr_dispel%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1280_carsomyr_evil != 0 AND zst_1280_carsomyr_evil != 1 BEGIN
+            WARN "[WARN]: Setting to make Carsomy's extra damage to apply to all evil should be set to 0 (disable) or 1 (enable). Actual value: %zst_1280_carsomyr_evil%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1280_carsomyr_dispel = 0 AND zst_1280_carsomyr_evil = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected in the Carsomy component, leading to no changes."
+            LAM f_plus
+        END
+
+        // ----------------------------------------FLAME OF THE NORTH------------------------------------------------- \\
+
+        ACTION_IF zst_1318_fnorth_evil != 0 AND zst_1318_fnorth_evil != 1 BEGIN
+            WARN "[WARN]: Setting to make Flame of the North's extra damage to apply to all evil should be set to 0 (disable) or 1 (enable). Actual value: %zst_1318_fnorth_evil%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1318_fnorth_trolls != 0 AND zst_1318_fnorth_trolls != 1 BEGIN
+            WARN "[WARN]: Setting to make Flame of the North add extra damage vs. trolls should be set to 0 (disable) or 1 (enable). Actual value: %zst_1318_fnorth_trolls%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1318_fnorth_evil = 0 AND zst_1318_fnorth_trolls = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected in the Flame of the North component, leading to no changes."
+            LAM f_plus
+        END
+
+        // ----------------------------------------STAFF OF MAGI------------------------------------------------- \\
+
+        ACTION_IF zst_1390_staff_magi_usability < 0 OR zst_1390_staff_magi_usability > 2 BEGIN
+            WARN "[WARN]: Setting to define the Staff of the Magi tweak should be set to 0, 1 or 2 (check config file). Actual value: %zst_1390_staff_magi_usability%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------UNHOLY REAVER------------------------------------------------- \\
+
+        ACTION_IF zst_1410_ureaver_dispel != 0 AND zst_1410_ureaver_dispel != 1 BEGIN
+            WARN "[WARN]: Setting to tweak Unholy Reaver's dispel should be set to 0 (disable) or 1 (enable). Actual value: %zst_1410_ureaver_dispel%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1410_ureaver_dicesize != 0 AND zst_1410_ureaver_dicesize != 1 BEGIN
+            WARN "[WARN]: Setting to make Unholy Reaver's dice size 1d12 should be set to 0 (disable) or 1 (enable). Actual value: %zst_1410_ureaver_dicesize%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1410_ureaver_dispel = 0 AND zst_1410_ureaver_dicesize = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected in the Unholy Reaver component, leading to no changes."
+            LAM f_plus
+        END
+
+         // ----------------------------------------SOUL REAVER------------------------------------------------- \\
+
+        ACTION_IF zst_1591_soul_reaver_nerf != 0 AND zst_1591_soul_reaver_nerf != 1 BEGIN
+            WARN "[WARN]: Setting to nerf Soul Reaver's curse on hit should be set to 0 (disable) or 1 (enable). Actual value: %zst_1591_soul_reaver_nerf%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1591_soul_reaver_dicesize != 0 AND zst_1591_soul_reaver_dicesize != 1 BEGIN
+            WARN "[WARN]: Setting to make Soul Reaver's dice size should be set to 0 (disable) or 1 (enable). Actual value: %zst_1591_soul_reaver_dicesize%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1591_soul_reaver_nerf = 0 AND zst_1591_soul_reaver_dicesize = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected in the Soul Reaver component, leading to no changes."
+            LAM f_plus
+        END
+
+        // ----------------------------------------PURIFIER------------------------------------------------- \\
+
+        ACTION_IF zst_1240_purifier_dispel != 0 AND zst_1240_purifier_dispel != 1 BEGIN
+            WARN "[WARN]: Setting to improve Purifier's dispel should be set to 0 (disable) or 1 (enable). Actual value: %zst_1240_purifier_dispel%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1240_purifier_evil != 0 AND zst_1240_purifier_evil != 1 BEGIN
+            WARN "[WARN]: Setting to make Purifier's extra damage to apply to all evil should be set to 0 (disable) or 1 (enable). Actual value: %zst_1240_purifier_evil%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1240_purifier_dispel = 0 AND zst_1240_purifier_evil = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected in the Purifier component, leading to no changes."
+            LAM f_plus
+        END
+
+        // ----------------------------------------HAWKSIGHT------------------------------------------------- \\
+
+        ACTION_IF zst_1580_hawksight_extra != 0 AND zst_1580_hawksight_extra != 1 BEGIN
+            WARN "[WARN]: Setting to add spice to Hawksight should be set to 0 (disable) or 1 (enable). Actual value: %zst_1580_hawksight_extra%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------KACHIKO'S WAKIZASHI------------------------------------------------- \\
+
+        ACTION_IF zst_1583_kachiko_upgrade != 0 AND zst_1583_kachiko_upgrade != 1 BEGIN
+            WARN "[WARN]: Setting to add a Cespenar upgrade path for Kachiko's Wakizashi should be set to 0 (disable) or 1 (enable). Actual value: %zst_1583_kachiko_upgrade%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------BALDURAN SWORDS------------------------------------------------- \\
+
+        ACTION_IF (zst_1705_balduran_sword_as_bastard_sword = 1  AND zst_1705_balduran_sword_as_long_sword  = 1) OR
+                (zst_1705_balduran_sword_as_bastard_sword = 0  AND zst_1705_balduran_sword_as_long_sword  = 0)
+        BEGIN
+            WARN "[WARN]: Incorrect settings for Balduran's Sword's proficiency standardization, please set one of them to 1, not both or neither."
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1705_balduran_sword_rename_emperors_sword != 0 AND zst_1705_balduran_sword_rename_emperors_sword != 1 
+        BEGIN
+            WARN "[WARN]: Balduran's Sword rename option should be set to 1 or 0. Actual value: %zst_1705_balduran_sword_rename_emperors_sword%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------EASTHAVEN FLAIL------------------------------------------------- \\
+
+        ACTION_IF zst_1310_easthaven_dr <= 0 OR zst_1310_easthaven_dr > 127 BEGIN
+            WARN ~[WARN]: Invalid setting for Defender of Easthaven's damage resistance. Must be between 1 and 127. Actual value: %zst_1310_easthaven_dr%~
+        END
+
+        // ----------------------------------------SAREVOK DEATHBRINGER ASSAULT------------------------------------------------- \\
+
+        ACTION_IF zst_1646_sare_dmg <= 0 BEGIN
+            WARN ~[WARN]: Invalid setting for Deathbringer's assault damage. Must be between a non-zero positive number. Actual value: %zst_1646_sare_dmg%~
+        END
+
+        // ----------------------------------------ASP'S NEST------------------------------------------------- \\
+
+        ACTION_IF zst_1010_asp_nest_sbonus < "-10" OR zst_1010_asp_nest_sbonus >= 0 BEGIN
+            WARN ~[WARN]: Invalid setting for Asp's Nest saving throw bonus. Must be between -10 and -1. Actual value: %zst_1010_asp_nest_sbonus%~
+        END
+
+        // ----------------------------------------LUCK TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_145_luck_boost != 0 AND zst_145_luck_boost != 1 BEGIN
+            WARN "[WARN]: Setting to boost Luck should be set to 0 (disable) or 1 (enable). Actual value: %zst_145_luck_boost%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_145_luck_dur_boost != 0 AND zst_145_luck_dur_boost != 1 BEGIN
+            WARN "[WARN]: Setting to boost Luck duration should be set to 0 (disable) or 1 (enable). Actual value: %zst_145_luck_dur_boost%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_145_luck_dur_boost = 0 AND zst_145_luck_boost = 0 BEGIN
+            WARN "[WARN]: Settings for Luck are all disabled, leading to no effect for the component."
+            LAM f_plus
+        END
+
+        // ----------------------------------------BBOD GOLIRO BACKSTAB------------------------------------------------- \\
+
+        ACTION_IF zst_160_bbod != 0 AND zst_160_bbod != 1 BEGIN
+            WARN "[WARN]: Setting to nerf BBoD backstab multiplier should be set to 0 (disable) or 1 (enable). Actual value: %zst_160_bbod%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_160_goliro != 0 AND zst_160_goliro != 1 BEGIN
+            WARN "[WARN]: Setting to nerf Iron Golem backstab multiplier should be set to 0 (disable) or 1 (enable). Actual value: %zst_160_goliro%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_160_bbod = 0 AND zst_160_bbod = 0 BEGIN
+            WARN "[WARN]: Settings for BBOD and Goliro backstab reduction are all disabled, leading to no effect for the component."
+            LAM f_plus
+        END
+
+        ACTION_IF zst_160_bbod_reduction_only < 0 BEGIN
+            WARN "[WARN]: Setting to nerf BBoD backstab multiplier by a specific amount should be set to 0 (disable) or a positive number (specific backstab multiplier reduction). Actual value: %zst_160_bbod_reduction_only%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_160_goliro_reduction_only < 0 BEGIN
+            WARN "[WARN]: Setting to nerf Iron Golem backstab multiplier by a specific amount should be set to 0 (disable) or a positive number (specific backstab multiplier reduction). Actual value: %zst_160_goliro_reduction_only%"
+            LAM f_plus
+        END
+
+
+        // ----------------------------------------TENSER TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_441_tenser_thac0 != 0 AND zst_441_tenser_thac0 != 1 BEGIN
+            WARN "[WARN]: Setting to fix Tenser's THAC0 bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_441_tenser_thac0%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_441_tenser_apr != 0 AND zst_441_tenser_apr != 1 BEGIN
+            WARN "[WARN]: Setting to add APR bonuses to Tenser at the appropriate levels should be set to 0 (disable) or 1 (enable). Actual value: %zst_441_tenser_apr%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_441_tenser_thac0 = 0 AND zst_441_tenser_apr = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected for Tenser, leading to the component having no effect."
+            LAM f_plus
+        END
+
+        ACTION_IF zst_441_tenser_apr_nonfighters_only != 0 AND zst_441_tenser_apr_nonfighters_only != 1 BEGIN
+            WARN "[WARN]: Setting to add APR bonuses to Tenser only to non-fighters for balance should be set to 0 (disable) or 1 (enable). Actual value: %zst_441_tenser_apr%"
+            LAM f_plus
+        END
+
+         // ----------------------------------------FLESH STONE TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_444_flesh_stone != 0 AND zst_444_flesh_stone != 1 BEGIN
+            WARN "[WARN]: Setting to allow Flesh to Stone tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_441_tenser_apr%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_444_flesh_stone_iwd != 0 AND zst_444_flesh_stone_iwd != 1 BEGIN
+            WARN "[WARN]: Setting to give Flesh to Stone IWD protections to various creatures should be set to 0 or 1 (enable). Actual value: %zst_444_flesh_stone_iwd%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_444_stone_flesh != 0 AND zst_444_stone_flesh != 1 BEGIN
+            WARN "[WARN]: Setting to allow Stone to Flesh tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_444_stone_flesh%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_444_flesh_stone = 0 AND zst_444_stone_flesh = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected for Flesh/Stone component, leading to the component having no effect."
+            LAM f_plus
+        END
+
+        // ----------------------------------------FIREBALL TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_446_fball_buff != 0 AND zst_446_fball_buff != 1 BEGIN
+            WARN "[WARN]: Setting to buff Fireball-like spellsk should be set to 0 (disable) or 1 (enable). Actual value: %zst_446_fball_buff%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_446_fball_new_animation != 0 AND zst_446_fball_new_animation != 1 BEGIN
+            WARN "[WARN]: Setting to improve the horrendous Fireball animations in BG should be set to 0 (disable) or 1 (enable). Actual value: %zst_446_fball_new_animation%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_446_fball_buff = 0 AND zst_446_fball_new_animation = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected for Fireball component, leading to the component having no effect"
+            LAM f_plus
+        END
+
+        // ----------------------------------------MELFS ACID ARROW------------------------------------------------- \\
+
+        ACTION_IF zst_447_melf_no_mr != 0 AND zst_447_melf_no_mr != 1 BEGIN
+            WARN "[WARN]: Setting to make Melf's Acid Arrow bypass MR should be set to 0 (disable) or 1 (enable). Actual value: %zst_447_melf_no_mr%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------WEB TWEAK------------------------------------------------- \\
+
+        ACTION_IF zst_561_web_save_nerf != 0 AND zst_561_web_save_nerf != 1 BEGIN
+            WARN "[WARN]: Setting to make Web's save nerfed and use a save vs. Breath should be set to 0 (disable) or 1 (enable). Actual value: %zst_561_web_save_nerf%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------FLAME BLADE------------------------------------------------- \\
+
+        ACTION_IF zst_101_fblade_undead != 0 AND zst_101_fblade_undead != 1 BEGIN
+            WARN "[WARN]: Setting to make Flame Blade more effective vs. undead should be set to 0 (disable) or 1 (enable). Actual value: %zst_101_fblade_undead%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_101_fblade_dur_boost != 0 AND zst_101_fblade_dur_boost != 1 BEGIN
+            WARN "[WARN]: Setting to make Flame Blade last longer should be set to 0 (disable) or 1 (enable). Actual value: %zst_101_fblade_dur_boost%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------HOLY POWER------------------------------------------------- \\
+
+        ACTION_IF zst_190_hpower_thac0 != 0 AND zst_190_hpower_thac0 != 1 BEGIN
+            WARN "[WARN]: Setting to fix Holy Power's THAC0 bonuses should be set to 0 (disable) or 1 (enable). Actual value: %zst_190_hpower_thac0%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_190_hpower_apr != 0 AND zst_190_hpower_apr != 1 BEGIN
+            WARN "[WARN]: Setting to add APR bonuses to Holy Power at the appropriate levels should be set to 0 (disable) or 1 (enable). Actual value: %zst_190_hpower_apr%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_190_hpower_apr = 0 AND zst_190_hpower_thac0 = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected for Holy Power, leading to the component having no effect."
+            LAM f_plus
+        END
+
+        ACTION_IF zst_190_hpower_apr_nonfighters_only != 0 AND zst_190_hpower_apr_nonfighters_only != 1 BEGIN
+            WARN "[WARN]: Setting to add APR bonuses to Holy Power only to non-fighters for balance should be set to 0 (disable) or 1 (enable). Actual value: %zst_190_hpower_apr_nonfighters_only%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------EARTH QUAKE------------------------------------------------- \\
+
+        ACTION_IF zst_250_quake_pfriendly != 0 AND zst_250_quake_pfriendly != 1 BEGIN
+            WARN "[WARN]: Setting to make Earthquake party friendly should be set to 0 (disable) or 1 (enable). Actual value: %zst_250_quake_pfriendly%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_250_quake_shake_intensity < 0 OR zst_250_quake_shake_intensity > 2 BEGIN
+            WARN "[WARN]: Setting to change Earthquake screen shake intensity should be set to 0 (disabled), 1 (no shake), or 2 (much less shake). Actual value: %zst_250_quake_shake_intensity%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_250_quake_boost != 0 AND zst_250_quake_boost != 1 BEGIN
+            WARN "[WARN]: Setting to make Earthquake more powerful should be set to 0 (disable) or 1 (enable). Actual value: %zst_250_quake_shake_intensity%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------NATURE'S BEAUTY------------------------------------------------- \\
+
+        ACTION_IF zst_320_natbeauty_boost != 0 AND zst_320_natbeauty_boost != 1 BEGIN
+            WARN "[WARN]: Setting to boost Nature's Beauty should be set to 0 (disable) or 1 (enable). Actual value: %zst_320_natbeauty_boost%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_320_natbeauty_true_sight != 0 AND zst_320_natbeauty_true_sight != 1 BEGIN
+            WARN "[WARN]: Setting to give True Sight immunity to Nature's Beauty should be set to 0 (disable) or 1 (enable). Actual value: %zst_320_natbeauty_true_sight%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------NATURE'S BEAUTY------------------------------------------------- \\
+
+        ACTION_IF zst_450_cure_tweaks != 0 AND zst_450_cure_tweaks != 1 BEGIN
+            WARN "[WARN]: Setting to allow Cure tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_cure_tweaks%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_cause_tweaks != 0 AND zst_450_cause_tweaks != 1 BEGIN
+            WARN "[WARN]: Setting to allow Cause tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_cause_tweaks%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_light != 0 AND zst_450_light != 1 BEGIN
+            WARN "[WARN]: Setting to allow Light Wounds tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_light%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_moderate != 0 AND zst_450_moderate != 1 BEGIN
+            WARN "[WARN]: Setting to allow Moderate Wounds tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_moderate%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_medium != 0 AND zst_450_medium != 1 BEGIN
+            WARN "[WARN]: Setting to allow Medium Wounds tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_medium%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_serious != 0 AND zst_450_serious != 1 BEGIN
+            WARN "[WARN]: Setting to allow Serious Wounds tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_serious%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_critical != 0 AND zst_450_critical != 1 BEGIN
+            WARN "[WARN]: Setting to allow Critical Wounds tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_critical%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_eldath != 0 AND zst_450_eldath != 1 BEGIN
+            WARN "[WARN]: Setting to allow Eldath tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_eldath%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_mass != 0 AND zst_450_mass != 1 BEGIN
+            WARN "[WARN]: Setting to allow Mass tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_mass%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_450_harm != 0 AND zst_450_harm != 1 BEGIN
+            WARN "[WARN]: Setting to allow Harm tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_harm%"
+            LAM f_plus
+        END
+
+        ACTION_IF (zst_450_cure_tweaks = 0 AND zst_450_cause_tweaks = 0) OR
+                  (zst_450_light = 0 AND zst_450_moderate = 0 AND zst_450_medium = 0 AND zst_450_serious = 0 AND zst_450_critical = 0 AND zst_450_eldath = 0 AND zst_450_mass = 0 AND zst_450_harm = 0)
+        BEGIN
+            WARN "[WARN]: No tweaks were selected for the Cure/Cause component, leading to no changes."
+            LAM f_plus
+        END
+
+                  
+
+        // ----------------------------------------CHAIN LIGHTNING------------------------------------------------- \\
+
+        ACTION_IF zst_451_chain_lightning_boost != 0 AND zst_451_chain_lightning_boost != 1 BEGIN
+            WARN "[WARN]: Setting to boost Chain Lightning should be set to 0 (disable) or 1 (enable). Actual value: %zst_451_chain_lightning_boost%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_451_chain_lightning_projectile != 0 AND zst_451_chain_lightning_projectile != 1 BEGIN
+            WARN "[WARN]: Setting to improve Chain Lightning projectile should be set to 0 (disable) or 1 (enable). Actual value: %zst_451_chain_lightning_projectile%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_451_chain_lightning_projectile = 0 AND zst_451_chain_lightning_boost = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected for the Chain Lightning component, leading to no changes."
+            LAM f_plus
+        END
+
+        // ----------------------------------------CALL LIGHTNING------------------------------------------------- \\
+
+        ACTION_IF zst_468_call_lightning_boost != 0 AND zst_468_call_lightning_boost != 1 BEGIN
+            WARN "[WARN]: Setting to boost Call Lightning should be set to 0 (disable) or 1 (enable). Actual value: %zst_468_call_lightning_boost%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_468_call_lightning_boost != 0 AND zst_468_call_lightning_boost != 1 BEGIN
+            WARN "[WARN]: Setting to replace Call Lightning's animation with the much better IWD one should be set to 0 (disable) or 1 (enable). Actual value: %zst_468_call_lightning_boost%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_468_call_lightning_boost = 0 AND zst_468_call_lightning_boost = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected for the Call Lightning component, leading to no changes."
+            LAM f_plus
+        END
+
+        // ----------------------------------------SMASHING WAVE------------------------------------------------- \\
+
+        ACTION_IF zst_477_smashing_wave_party_friendly != 0 AND zst_477_smashing_wave_party_friendly != 1 BEGIN
+            WARN "[WARN]: Setting to make Smashing Wave party friendly should be set to 0 (disable) or 1 (enable). Actual value: %zst_477_smashing_wave_party_friendly%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------DOOM CASTING SPEED------------------------------------------------- \\
+
+        ACTION_IF zst_496_doom_casting_speed < 0 OR zst_496_doom_casting_speed > 8 BEGIN
+            WARN "[WARN]: Setting to improve the casting speed of Doom should be set to a value between 0 and 8 (inclusive). Actual value: %zst_496_doom_casting_speed%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------AID GLOW------------------------------------------------- \\
+
+        ACTION_IF zst_507_disable_aidglow != 0 AND zst_507_disable_aidglow != 1 BEGIN
+            WARN "[WARN]: Setting to disable Aid's intense glow should be set to 0 (disable) or 1 (enable). Actual value: %zst_507_disable_aidglow%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------RESTORATION TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_508_restoration_stat_drain != 0 AND zst_508_restoration_stat_drain != 1 BEGIN
+            WARN "[WARN]: Setting to make Restoration remove stat drains should be set to 0 (disable) or 1 (enable). Actual value: %zst_508_restoration_stat_drain%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_508_restoration_overhaul != 0 AND zst_508_restoration_overhaul != 1 BEGIN
+            WARN "[WARN]: Setting to overhaul Restoration spells should be set to 0 (disable) or 1 (enable). Actual value: %zst_508_restoration_overhaul%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_508_restoration_stat_drain = 0 AND zst_508_restoration_overhaul = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected for Restoration, leading to no changes."
+            LAM f_plus
+        END
+
+        // ----------------------------------------KELDORN TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_1520_keldsword != 0 AND zst_1520_keldsword != 1 BEGIN
+            WARN "[WARN]: Setting to tweak Keldorn's Sword should be set to 0 (disable) or 1 (enable). Actual value: %zst_1520_keldsword%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1520_keldarmor != 0 AND zst_1520_keldarmor != 1 BEGIN
+            WARN "[WARN]: Setting to tweak Keldorn's Armor should be set to 0 (disable) or 1 (enable). Actual value: %zst_1520_keldarmor%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1520_keldsword = 0 AND zst_1520_keldarmor = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected for Keldorn, leading to no changes."
+            LAM f_plus
+        END
+
+        // ----------------------------------------JAHEIRA ITEMS------------------------------------------------- \\
+
+        ACTION_IF zst_1556_harper_pin != 0 AND zst_1556_harper_pin != 1 BEGIN
+            WARN "[WARN]: Setting to include tweak to Harper Pin should be set to 0 (disable) or 1 (enable). Actual value: %zst_1556_harper_pin%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1556_keepsake_locket != 0 AND zst_1556_keepsake_locket != 1 BEGIN
+            WARN "[WARN]: Setting to include tweak to Keepsake Locket should be set to 0 (disable) or 1 (enable). Actual value: %zst_1556_keepsake_locket%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1556_keepsake_locket_restrict != 0 AND zst_1556_keepsake_locket_restrict != 1 BEGIN
+            WARN "[WARN]: Setting to restrict Keepsake Locket to CHARNAME and Jaheira should be set to 0 (disable) or 1 (enable). Actual value: %zst_1556_keepsake_locket_restrict%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1556_harper_pin = 0 AND zst_1556_keepsake_locket = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected for Harper's Items component, leading to no changes."
+            LAM f_plus
+        END
+
+        // ----------------------------------------SHAMAN ABILITIES------------------------------------------------- \\
+
+        ACTION_IF zst_360_etheral_retribution != 0 AND zst_360_etheral_retribution != 1 BEGIN
+            WARN "[WARN]: Setting to include Ethereal Retribution tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_360_etheral_retribution%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_360_writhing_fog != 0 AND zst_360_writhing_fog != 1 BEGIN
+            WARN "[WARN]: Setting to include Writhing Fog tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_360_writhing_fog%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_360_spirit_fire != 0 AND zst_360_spirit_fire != 1 BEGIN
+            WARN "[WARN]: Setting to include Spirit Fire tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_360_spirit_fire%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_360_spiritual_clarity != 0 AND zst_360_spiritual_clarity != 1 BEGIN
+            WARN "[WARN]: Setting to include Spiritual Clarity tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_360_spiritual_clarity%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_360_favored_spirits != 0 AND zst_360_favored_spirits != 1 BEGIN
+            WARN "[WARN]: Setting to include Favored of the Spirits tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_360_favored_spirits%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_360_favored_spirits = 0 AND zst_360_spiritual_clarity = 0 AND
+                  zst_360_spirit_fire = 0 AND zst_360_writhing_fog = 0 AND zst_360_etheral_retribution = 0 
+        BEGIN
+            WARN "[WARN]: No tweaks were selected for the Shaman abilities component, leading to no changes."
+            LAM f_plus
+        END
+
+        // ----------------------------------------SUN SOUL MONK------------------------------------------------- \\
+
+        ACTION_IF zst_2100_sunsoul_ray != 0 AND zst_2100_sunsoul_ray != 1 BEGIN
+            WARN "[WARN]: Setting to include Sun Soul Ray tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_2100_sunsoul_ray%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2100_sunsoul_beam != 0 AND zst_2100_sunsoul_beam != 1 BEGIN
+            WARN "[WARN]: Setting to include Sun Soul Beam tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_2100_sunsoul_beam%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------THIEF HLA------------------------------------------------- \\
+
+        ACTION_IF zst_2130_spike_trap != 0 AND zst_2130_spike_trap != 1 BEGIN
+            WARN "[WARN]: Setting to include Spike Trap tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_2130_spike_trap%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2130_exploding_trap != 0 AND zst_2130_exploding_trap != 1 BEGIN
+            WARN "[WARN]: Setting to include Exploding Trap tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_2130_exploding_trap%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2130_assassination != 0 AND zst_2130_assassination != 1 BEGIN
+            WARN "[WARN]: Setting to include Assassination tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_2130_assassination%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2130_avoid_death != 0 AND zst_2130_avoid_death != 1 BEGIN
+            WARN "[WARN]: Setting to include Avoid Death tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_2130_avoid_death%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2130_spike_trap = 0 AND zst_2130_exploding_trap = 0 AND
+                  zst_2130_assassination = 0 AND zst_2130_avoid_death = 0 
+        BEGIN
+            WARN "[WARN]: No tweaks were selected for the Thief HLA component, leading to no changes."
+            LAM f_plus
+        END
+
+        // ----------------------------------------THAC0 ROGUES------------------------------------------------- \\
+
+        ACTION_IF zst_2170_thac0_thieves != 0 AND zst_2170_thac0_thieves != 1 BEGIN
+            WARN "[WARN]: Setting to include THAC0 boost for Thieves should be set to 0 (disable) or 1 (enable). Actual value: %zst_2170_thac0_thieves%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2170_thac0_bards != 0 AND zst_2170_thac0_bards != 1 BEGIN
+            WARN "[WARN]: Setting to include THAC0 boost for Bards should be set to 0 (disable) or 1 (enable). Actual value: %zst_2170_thac0_bards%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------DRAGON DISCIPLE ABILITIES------------------------------------------------- \\
+
+        ACTION_IF zst_2231_fire_boost != 0 AND zst_2231_fire_boost != 1 BEGIN
+            WARN "[WARN]: Setting to boost fire damage by Dragon Disciples should be set to 0 (disable) or 1 (enable). Actual value: %zst_2231_fire_boost%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2231_fire_boost_pctg <= 0 BEGIN
+            WARN "[WARN]: Setting to set percentage of fire damage boost by Dragon Disciples should be set between 1 and a positive number. Actual value: %zst_2231_fire_boost_pctg%%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------BLADE SKALD SWASH TEMPUS------------------------------------------------- \\
+
+        ACTION_IF (zst_2260_allow_blade + zst_2260_allow_skald + zst_2260_allow_swash + zst_2260_allow_tempus) = 0 BEGIN
+            WARN "[WARN]: Settings to boost Swashkaltempublades have no settings set to 1, rending the component useless."
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2260_allow_blade != 0 AND zst_2260_allow_blade != 1 BEGIN
+            WARN "[WARN]: Setting to boost Blades should be set to 0 (disable) or 1 (enable). Actual value: %zst_2260_allow_blade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2260_allow_skald != 0 AND zst_2260_allow_skald != 1 BEGIN
+            WARN "[WARN]: Setting to boost Skalds should be set to 0 (disable) or 1 (enable). Actual value: %zst_2260_allow_skald%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2260_allow_swash != 0 AND zst_2260_allow_swash != 1 BEGIN
+            WARN "[WARN]: Setting to boost Swashbuckler should be set to 0 (disable) or 1 (enable). Actual value: %zst_2260_allow_swash%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2260_allow_tempus != 0 AND zst_2260_allow_tempus != 1 BEGIN
+            WARN "[WARN]: Setting to boost Priest of Tempus should be set to 0 (disable) or 1 (enable). Actual value: %zst_2260_allow_tempus%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------EVASION / WHIRLWIND------------------------------------------------- \\
+
+        ACTION_IF zst_2270_allow_evasion != 0 AND zst_2270_allow_evasion != 1 BEGIN
+            WARN "[WARN]: Setting to improve Evasion HLA should be set to 0 (disable) or 1 (enable). Actual value: %zst_2270_allow_evasion%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2270_allow_whirlwind != 0 AND zst_2270_allow_whirlwind != 1 BEGIN
+            WARN "[WARN]: Setting to improve Whirlwind HLA should be set to 0 (disable) or 1 (enable). Actual value: %zst_2260_allow_blade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2270_allow_evasion = 0 AND zst_2270_allow_whirlwind = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected for the Evasion/Whirlwind component, leading to no changes."
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2370_iwd_evade_critical_misses != 0 AND zst_2370_iwd_evade_critical_misses != 1 BEGIN
+            WARN "[WARN]: Setting to add a chance of critically missing an evasion should be set to 0 (disable) or 1 (enable). Actual value: %zst_2370_iwd_evade_critical_misses%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2370_iwd_evade_usability < 0 OR zst_2370_iwd_evade_usability > 2 BEGIN
+            WARN "[WARN]: Setting to set the usability of the thief evasion ability should be set to 0 (disable), 1 (only single thieves), or 2 (single thieves, and multiclass have a 50% chance of triggering the evade attempt). Actual value: %zst_2370_iwd_evade_usability%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------BALORS------------------------------------------------- \\
+
+        ACTION_IF zst_3050_balor_vorpal_penalty < "-10" OR zst_3050_balor_vorpal_penalty > 10 BEGIN
+            WARN "[WARN]: Setting to force a save for Balor's vorpal hits should be set to -10 and 10. Actual value: %zst_3050_balor_vorpal_penalty%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------CELESTIALS TWEAKS------------------------------------------------- \\
+
+        ACTION_IF zst_3030_devas != 0 AND zst_3030_devas != 1 BEGIN
+            WARN "[WARN]: Setting to improve devas should be set to 0 (disable) or 1 (enable). Actual value: %zst_3030_devas%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_3030_planetars != 0 AND zst_3030_planetars != 1 BEGIN
+            WARN "[WARN]: Setting to improve planetars should be set to 0 (disable) or 1 (enable). Actual value: %zst_3030_planetars%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_3030_devas = 0 AND zst_3030_planetars = 0 BEGIN
+            WARN "[WARN]: No tweaks were selected for the Celestials component, leading to no changes."
+            LAM f_plus
+        END
+
+        // ----------------------------------------DROW MR TWEAK------------------------------------------------- \\
+
+        ACTION_IF zst_3150_drow_mr_pctg_of_base < 20 OR zst_3150_drow_mr_pctg_of_base > 90 BEGIN
+            WARN "[WARN]: Setting to reduce drow resistance to a percentage of it should be set between 20 to 90. Actual value: %zst_3150_drow_mr_pctg_of_base%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------GROUP COMP VARIABLES (GENERAL)------------------------------------------------- \\
+
+        ACTION_IF zst_group_120_magic_weapons_apr != 0 AND zst_group_120_magic_weapons_apr != 1 BEGIN
+            WARN "[WARN]: Magic weapons APR group component should be set to 1 or 0. Actual value: %zst_group_120_magic_weapons_apr%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_443_symbol_spells != 0 AND zst_group_443_symbol_spells != 1 BEGIN
+            WARN "[WARN]: Symbol spells group component should be set to 1 or 0. Actual value: %zst_group_443_symbol_spells%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1120_backstab_penalties != 0 AND zst_group_1120_backstab_penalties != 1 BEGIN 
+            WARN "[WARN]: Backstab penalties group component should be set to 1 or 0. Actual value: %zst_group_1120_backstab_penalties%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1121_flails_morningstars != 0 AND zst_group_1121_flails_morningstars != 1 BEGIN 
+            WARN "[WARN]: Flails and Morning Stars group component should be set to 1 or 0. Actual value: %zst_group_1121_flails_morningstars%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1150_weapon_dice != 0 AND zst_group_1150_weapon_dice != 1 BEGIN 
+            WARN "[WARN]: Weapon dice improvement group component should be set to 1 or 0. Actual value: %zst_group_1150_weapon_dice%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1361_axe_halb_crits != 0 AND zst_group_1361_axe_halb_crits != 1 BEGIN 
+            WARN "[WARN]: Axes and Halberds group component should be set to 1 or 0. Actual value: %zst_group_1361_axe_halb_crits%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1362_blunt_wpn_ac != 0 AND zst_group_1362_blunt_wpn_ac != 1 BEGIN 
+            WARN "[WARN]: Blunt weapons AC debuff group component should be set to 1 or 0. Actual value: %zst_group_1362_blunt_wpn_ac%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1435_dart_range_speed != 0 AND zst_group_1435_dart_range_speed != 1 BEGIN 
+            WARN "[WARN]: Dart range speed group component should be set to 1 or 0. Actual value: %zst_group_1435_dart_range_speed%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1440_dagger_boost != 0 AND zst_group_1440_dagger_boost != 1 BEGIN
+            WARN "[WARN]: Dagger boost group component should be set to 1 or 0. Actual value: %zst_group_1440_dagger_boost%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1450_finesse != 0 AND zst_group_1450_finesse != 1 BEGIN
+            WARN "[WARN]: Finesse group component should be set to 1 or 0. Actual value: %zst_group_1450_finesse%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1533_wand_rebalance != 0 AND zst_group_1533_wand_rebalance != 1 BEGIN
+            WARN "[WARN]: Wand rebalance group component should be set to 1 or 0. Actual value: %zst_group_1533_wand_rebalance%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1534_potion_rebalance != 0 AND zst_group_1534_potion_rebalance != 1 BEGIN
+            WARN "[WARN]: Potion rebalance group component should be set to 1 or 0. Actual value: %zst_group_1534_potion_rebalance%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1537_instant_cure_poison != 0 AND zst_group_1537_instant_cure_poison != 1 BEGIN
+            WARN "[WARN]: Instant cure and poison group component should be set to 1 or 0. Actual value: %zst_group_1537_instant_cure_poison%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1650_robe_appearance != 0 AND zst_group_1650_robe_appearance != 1 BEGIN
+            WARN "[WARN]: Robe appearance group component should be set to 1 or 0. Actual value: %zst_group_1650_robe_appearance%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1541_vorpal_tweak != 0 AND zst_group_1541_vorpal_tweak != 1 BEGIN
+            WARN "[WARN]: Vorpal tweak group component should be set to 1 or 0. Actual value: %zst_group_1541_vorpal_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1538_jewelry_price != 0 AND zst_group_1538_jewelry_price != 1 BEGIN
+            WARN "[WARN]: Jewelry price group component should be set to 1 or 0. Actual value: %zst_group_1538_jewelry_price%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1539_scroll_usability != 0 AND zst_group_1539_scroll_usability != 1 BEGIN
+            WARN "[WARN]: Scroll usability group component should be set to 1 or 0. Actual value: %zst_group_1539_scroll_usability%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1544_scrolls_at_char_lvl != 0 AND zst_group_1544_scrolls_at_char_lvl != 1 BEGIN 
+            WARN "[WARN]: Scroll at character level group component should be set to 1 or 0. Actual value: %zst_group_1544_scrolls_at_char_lvl%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1545_character_stats != 0 AND zst_group_1545_character_stats != 1 BEGIN 
+            WARN "[WARN]: Character stats group component should be set to 1 or 0. Actual value: %zst_group_1545_character_stats%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1546_shield_overhaul != 0 AND zst_group_1546_shield_overhaul != 1 BEGIN 
+            WARN "[WARN]: Shield overhaul group component should be set to 1 or 0. Actual value: %zst_group_1546_shield_overhaul%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1547_protection_vs_undead != 0 AND zst_group_1547_protection_vs_undead != 1 BEGIN 
+            WARN "[WARN]: Protection vs undead group component should be set to 1 or 0. Actual value: %zst_group_1547_protection_vs_undead%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1600_omnistabbing_tweaks != 0 AND zst_group_1600_omnistabbing_tweaks != 1 BEGIN
+            WARN "[WARN]: Omnistabbing group component should be set to 1 or 0. Actual value: %zst_group_1600_omnistabbing_tweaks%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1360_light_crossbow != 0 AND zst_group_1360_light_crossbow != 1 BEGIN
+             WARN "[WARN]: Light crossbow group component should be set to 1 or 0. Actual value: %zst_group_1360_light_crossbow%"
+            LAM f_plus
+
+        END
+
+        ACTION_IF zst_group_1329_disruption_wpn_tweak != 0 AND zst_group_1329_disruption_wpn_tweak != 1 BEGIN
+            WARN "[WARN]: Disruption weapon tweak group component should be set to 1 or 0. Actual value: %zst_group_1329_disruption_wpn_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1397_ranged_sneak_attack != 0 AND zst_group_1397_ranged_sneak_attack != 1 BEGIN
+            WARN "[WARN]: Ranged sneak attack group component should be set to 1 or 0. Actual value: %zst_group_1397_ranged_sneak_attack%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1548_voidweapons != 0 AND zst_group_1548_voidweapons != 1 BEGIN
+            WARN "[WARN]: Voidweapons group component should be set to 1 or 0. Actual value: %zst_group_1548_voidweapons%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1532_unenchanted_items_1hp != 0 AND zst_group_1532_unenchanted_items_1hp != 1 BEGIN
+            WARN "[WARN]: Unenchanted items 1HP group component should be set to 1 or 0. Actual value: %zst_group_1532_unenchanted_items_1hp%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------GROUP COMP VARIABLES (ARCANE)------------------------------------------------- \\
+
+        ACTION_IF zst_group_140_finger_death != 0 AND zst_group_140_finger_death != 1 BEGIN
+            WARN "[WARN]: Finger of Death group component should be set to 1 or 0. Actual value: %zst_group_140_finger_death%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_145_luck != 0 AND zst_group_145_luck != 1 BEGIN
+            WARN "[WARN]: Luck group component should be set to 1 or 0. Actual value: %zst_group_145_luck%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_160_no_backstab_bbod_goliro != 0 AND zst_group_160_no_backstab_bbod_goliro != 1 BEGIN
+            WARN "[WARN]: No Backstab BBoD/Iron Golem group component should be set to 1 or 0. Actual value: %zst_group_160_no_backstab_bbod_goliro%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_170_wail_banshee != 0 AND zst_group_170_wail_banshee != 1 BEGIN
+            WARN "[WARN]: Wail of the Banshee group component should be set to 1 or 0. Actual value: %zst_group_170_wail_banshee%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_180_meteor_swarm != 0 AND zst_group_180_meteor_swarm != 1 BEGIN
+            WARN "[WARN]: Meteor Swarm group component should be set to 1 or 0. Actual value: %zst_group_180_meteor_swarm%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_210_horror_ench != 0 AND zst_group_210_horror_ench != 1 BEGIN
+            WARN "[WARN]: Horror Enchantment group component should be set to 1 or 0. Actual value: %zst_group_210_horror_ench%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_220_ice_storm != 0 AND zst_group_220_ice_storm != 1 BEGIN
+            WARN "[WARN]: Ice Storm group component should be set to 1 or 0. Actual value: %zst_group_220_ice_storm%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_370_ray_enfeeblement != 0 AND zst_group_370_ray_enfeeblement != 1 BEGIN
+            WARN "[WARN]: Ray of Enfeeblement group component should be set to 1 or 0. Actual value: %zst_group_370_ray_enfeeblement%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_380_contagion != 0 AND zst_group_380_contagion != 1 BEGIN
+            WARN "[WARN]: Contagion group component should be set to 1 or 0. Actual value: %zst_group_380_contagion%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_390_acid_fog != 0 AND zst_group_390_acid_fog != 1 BEGIN
+            WARN "[WARN]: Acid Fog group component should be set to 1 or 0. Actual value: %zst_group_390_acid_fog%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_400_energy_dragin != 0 AND zst_group_400_energy_dragin != 1 BEGIN
+            WARN "[WARN]: Energy Drain group component should be set to 1 or 0. Actual value: %zst_group_400_energy_dragin%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_405_maze != 0 AND zst_group_405_maze != 1 BEGIN
+            WARN "[WARN]: Maze group component should be set to 1 or 0. Actual value: %zst_group_405_maze%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_407_familiar_imp != 0 AND zst_group_407_familiar_imp != 1 BEGIN
+            WARN "[WARN]: Familiar Imp group component should be set to 1 or 0. Actual value: %zst_group_407_familiar_imp%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_410_horrid_wilting != 0 AND zst_group_410_horrid_wilting != 1 BEGIN
+            WARN "[WARN]: Horrid Wilting group component should be set to 1 or 0. Actual value: %zst_group_410_horrid_wilting%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_430_grease != 0 AND zst_group_430_grease != 1 BEGIN
+            WARN "[WARN]: Grease group component should be set to 1 or 0. Actual value: %zst_group_430_grease%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_440_comet != 0 AND zst_group_440_comet != 1 BEGIN
+            WARN "[WARN]: Comet group component should be set to 1 or 0. Actual value: %zst_group_440_comet%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_441_tenser != 0 AND zst_group_441_tenser != 1 BEGIN
+            WARN "[WARN]: Tenser group component should be set to 1 or 0. Actual value: %zst_group_441_tenser%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_444_flesh_stone != 0 AND zst_group_444_flesh_stone != 1 BEGIN
+            WARN "[WARN]: Flesh to Stone group component should be set to 1 or 0. Actual value: %zst_group_444_flesh_stone%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_445_bigby_spells != 0 AND zst_group_445_bigby_spells != 1 BEGIN
+            WARN "[WARN]: Bigby Spells group component should be set to 1 or 0. Actual value: %zst_group_445_bigby_spells%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_446_fireball_scaling != 0 AND zst_group_446_fireball_scaling != 1 BEGIN
+            WARN "[WARN]: Fireball Scaling group component should be set to 1 or 0. Actual value: %zst_group_446_fireball_scaling%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_447_melfs_acid != 0 AND zst_group_447_melfs_acid != 1 BEGIN
+            WARN "[WARN]: Melf's Acid Arrow group component should be set to 1 or 0. Actual value: %zst_group_447_melfs_acid%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_448_decastave != 0 AND zst_group_448_decastave != 1 BEGIN
+            WARN "[WARN]: Decastave group component should be set to 1 or 0. Actual value: %zst_group_448_decastave%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_449_freezing_sphere != 0 AND zst_group_449_freezing_sphere != 1 BEGIN
+            WARN "[WARN]: Freezing Sphere group component should be set to 1 or 0. Actual value: %zst_group_449_freezing_sphere%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_451_chain_lightning != 0 AND zst_group_451_chain_lightning != 1 BEGIN
+            WARN "[WARN]: Chain Lightning group component should be set to 1 or 0. Actual value: %zst_group_451_chain_lightning%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_452_icelance != 0 AND zst_group_452_icelance != 1 BEGIN
+            WARN "[WARN]: Icelance group component should be set to 1 or 0. Actual value: %zst_group_452_icelance%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_499_seven_eyes != 0 AND zst_group_499_seven_eyes != 1 BEGIN
+            WARN "[WARN]: Seven Eyes group component should be set to 1 or 0. Actual value: %zst_group_499_seven_eyes%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_500_control_undead != 0 AND zst_group_500_control_undead != 1 BEGIN
+            WARN "[WARN]: Control Undead group component should be set to 1 or 0. Actual value: %zst_group_500_control_undead%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_502_hold_undead != 0 AND zst_group_502_hold_undead != 1 BEGIN
+            WARN "[WARN]: Hold Undead group component should be set to 1 or 0. Actual value: %zst_group_502_hold_undead%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_522_disintegrate != 0 AND zst_group_522_disintegrate != 1 BEGIN
+            WARN "[WARN]: Disintegrate group component should be set to 1 or 0. Actual value: %zst_group_522_disintegrate%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_555_chromatic_orb != 0 AND zst_group_555_chromatic_orb != 1 BEGIN
+            WARN "[WARN]: Chromatic Orb group component should be set to 1 or 0. Actual value: %zst_group_555_chromatic_orb%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_558_agannazar != 0 AND zst_group_558_agannazar != 1 BEGIN
+            WARN "[WARN]: Agannazar group component should be set to 1 or 0. Actual value: %zst_group_558_agannazar%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_561_web != 0 AND zst_group_561_web != 1 BEGIN
+            WARN "[WARN]: Web group component should be set to 1 or 0. Actual value: %zst_group_561_web%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_562_imprisonment != 0 AND zst_group_562_imprisonment != 1 BEGIN
+            WARN "[WARN]: Imprisonment group component should be set to 1 or 0. Actual value: %zst_group_562_imprisonment%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------GROUP COMP VARIABLES (BLUNT/AXE)------------------------------------------------- \\
+
+        ACTION_IF zst_group_1310_flail_easthaven != 0 AND zst_group_1310_flail_easthaven != 1 BEGIN
+            WARN "[WARN]: Flail of Easthaven group component should be set to 1 or 0. Actual value: %zst_group_1310_flail_easthaven%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1311_mace_krotan != 0 AND zst_group_1311_mace_krotan != 1 BEGIN
+            WARN "[WARN]: Krotan's Skullcrusher group component should be set to 1 or 0. Actual value: %zst_group_1311_mace_krotan%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1312_mace_skullcrusher != 0 AND zst_group_1312_mace_skullcrusher != 1 BEGIN
+            WARN "[WARN]: Skullcrusher group component should be set to 1 or 0. Actual value: %zst_group_1312_mace_skullcrusher%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1313_mace_gnasher != 0 AND zst_group_1313_mace_gnasher != 1 BEGIN
+            WARN "[WARN]: Gnasher group component should be set to 1 or 0. Actual value: %zst_group_1313_mace_gnasher%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1314_mace_jerrod != 0 AND zst_group_1314_mace_jerrod != 1 BEGIN
+            WARN "[WARN]: Jerrod's Mace group component should be set to 1 or 0. Actual value: %zst_group_1314_mace_jerrod%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1320_flail_ages != 0 AND zst_group_1320_flail_ages != 1 BEGIN
+            WARN "[WARN]: Flail of Ages group component should be set to 1 or 0. Actual value: %zst_group_1320_flail_ages%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1321_club_bone != 0 AND zst_group_1321_club_bone != 1 BEGIN
+            WARN "[WARN]: Bone Club group component should be set to 1 or 0. Actual value: %zst_group_1321_club_bone%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1324_flail_wyvern_tail != 0 AND zst_group_1324_flail_wyvern_tail != 1 BEGIN
+            WARN "[WARN]: Wyvern's Tail group component should be set to 1 or 0. Actual value: %zst_group_1324_flail_wyvern_tail%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1325_hammer_borok_fist != 0 AND zst_group_1325_hammer_borok_fist != 1 BEGIN
+            WARN "[WARN]: Borok's Fist group component should be set to 1 or 0. Actual value: %zst_group_1325_hammer_borok_fist%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1327_club_detonation != 0 AND zst_group_1327_club_detonation != 1 BEGIN
+            WARN "[WARN]: Club of Detonation group component should be set to 1 or 0. Actual value: %zst_group_1327_club_detonation%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1328_mace_storm_star != 0 AND zst_group_1328_mace_storm_star != 1 BEGIN
+            WARN "[WARN]: Storm Star group component should be set to 1 or 0. Actual value: %zst_group_1328_mace_storm_star%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------GROUP COMP VARIABLES (CLASS/KIT)------------------------------------------------- \\
+
+        ACTION_IF zst_group_2100_sunsoul != 0 AND zst_group_2100_sunsoul != 1 BEGIN
+            WARN "[WARN]: Sun Soul group component should be set to 1 or 0. Actual value: %zst_group_2100_sunsoul%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_360_shaman_abilities != 0 AND zst_group_360_shaman_abilities != 1 BEGIN
+            WARN "[WARN]: Shaman Abilities group component should be set to 1 or 0. Actual value: %zst_group_360_shaman_abilities%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2120_warcy != 0 AND zst_group_2120_warcy != 1 BEGIN
+            WARN "[WARN]: War Cry group component should be set to 1 or 0. Actual value: %zst_group_2120_warcy%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2130_thief_hlas != 0 AND zst_group_2130_thief_hlas != 1 BEGIN
+            WARN "[WARN]: Thief HLAs group component should be set to 1 or 0. Actual value: %zst_group_2130_thief_hlas%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2150_non_breachable_hlas != 0 AND zst_group_2150_non_breachable_hlas != 1 BEGIN
+            WARN "[WARN]: Non-breachable HLAs group component should be set to 1 or 0. Actual value: %zst_group_2150_non_breachable_hlas%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2160_quivering_palm != 0 AND zst_group_2160_quivering_palm != 1 BEGIN
+            WARN "[WARN]: Quivering Palm group component should be set to 1 or 0. Actual value: %zst_group_2160_quivering_palm%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2170_thac0_rogue != 0 AND zst_group_2170_thac0_rogue != 1 BEGIN
+            WARN "[WARN]: THAC0 Rogue group component should be set to 1 or 0. Actual value: %zst_group_2170_thac0_rogue%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2171_swashbuckler_fix != 0 AND zst_group_2171_swashbuckler_fix != 1 BEGIN
+            WARN "[WARN]: Swashbuckler Fix group component should be set to 1 or 0. Actual value: %zst_group_2171_swashbuckler_fix%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2190_poison_weapon != 0 AND zst_group_2190_poison_weapon != 1 BEGIN
+            WARN "[WARN]: Poison Weapon group component should be set to 1 or 0. Actual value: %zst_group_2190_poison_weapon%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2200_blackguard_backstab != 0 AND zst_group_2200_blackguard_backstab != 1 BEGIN
+            WARN "[WARN]: Blackguard Backstab group component should be set to 1 or 0. Actual value: %zst_group_2200_blackguard_backstab%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3500_shadowstep_area != 0 AND zst_group_3500_shadowstep_area != 1 BEGIN
+            WARN "[WARN]: Shadowstep Area group component should be set to 1 or 0. Actual value: %zst_group_3500_shadowstep_area%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2230_rr_crippling_strike != 0 AND zst_group_2230_rr_crippling_strike != 1 BEGIN
+            WARN "[WARN]: RR Crippling Strike group component should be set to 1 or 0. Actual value: %zst_group_2230_rr_crippling_strike%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2231_dragon_disciple != 0 AND zst_group_2231_dragon_disciple != 1 BEGIN
+            WARN "[WARN]: Dragon Disciple group component should be set to 1 or 0. Actual value: %zst_group_2231_dragon_disciple%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2232_called_shot != 0 AND zst_group_2232_called_shot != 1 BEGIN
+            WARN "[WARN]: Called Shot group component should be set to 1 or 0. Actual value: %zst_group_2232_called_shot%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2260_skalwashblade_apr != 0 AND zst_group_2260_skalwashblade_apr != 1 BEGIN
+            WARN "[WARN]: Skald/Swashbuckler/Blade APR group component should be set to 1 or 0. Actual value: %zst_group_2260_skalwashblade_apr%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2265_blade_spins != 0 AND zst_group_2265_blade_spins != 1 BEGIN
+            WARN "[WARN]: Blade Spins group component should be set to 1 or 0. Actual value: %zst_group_2265_blade_spins%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2270_whirl_evasion != 0 AND zst_group_2270_whirl_evasion != 1 BEGIN
+            WARN "[WARN]: Whirlwind/Evasion group component should be set to 1 or 0. Actual value: %zst_group_2270_whirl_evasion%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2280_sand_throw != 0 AND zst_group_2280_sand_throw != 1 BEGIN
+            WARN "[WARN]: Sand Throw group component should be set to 1 or 0. Actual value: %zst_group_2280_sand_throw%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2290_roguish_evade != 0 AND zst_group_2290_roguish_evade != 1 BEGIN
+            WARN "[WARN]: Roguish Evasion group component should be set to 1 or 0. Actual value: %zst_group_2290_roguish_evade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2300_defensive_stance != 0 AND zst_group_2300_defensive_stance != 1 BEGIN
+            WARN "[WARN]: Defensive Stance group component should be set to 1 or 0. Actual value: %zst_group_2300_defensive_stance%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2350_crippling_backstab != 0 AND zst_group_2350_crippling_backstab != 1 BEGIN
+            WARN "[WARN]: Crippling Backstab group component should be set to 1 or 0. Actual value: %zst_group_2350_crippling_backstab%"
+            LAM f_plus
+        END
+        
+
+        ACTION_IF zst_group_2400_multiclass_backstab != 0 AND zst_group_2400_multiclass_backstab != 1 BEGIN
+            WARN "[WARN]: Multiclass backstab penalty group component should be set to 1 or 0. Actual value: %zst_group_2350_crippling_backstab%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------GROUP COMP VARIABLES (CREATURE)------------------------------------------------- \\
+
+        ACTION_IF zst_group_3010_alignment_tweak != 0 AND zst_group_3010_alignment_tweak != 1 BEGIN
+            WARN "[WARN]: Alignment Tweak group component should be set to 1 or 0. Actual value: %zst_group_3010_alignment_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3020_summoned_demons_tweak != 0 AND zst_group_3020_summoned_demons_tweak != 1 BEGIN
+            WARN "[WARN]: Summoned Demons Tweak group component should be set to 1 or 0. Actual value: %zst_group_3020_summoned_demons_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3030_celestials_tweak != 0 AND zst_group_3030_celestials_tweak != 1 BEGIN
+            WARN "[WARN]: Celestials Tweak group component should be set to 1 or 0. Actual value: %zst_group_3030_celestials_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3050_balors_tweak != 0 AND zst_group_3050_balors_tweak != 1 BEGIN
+            WARN "[WARN]: Balors Tweak group component should be set to 1 or 0. Actual value: %zst_group_3050_balors_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3060_mencar_tweak != 0 AND zst_group_3060_mencar_tweak != 1 BEGIN
+            WARN "[WARN]: Mencar Tweak group component should be set to 1 or 0. Actual value: %zst_group_3060_mencar_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3070_felines_tweak != 0 AND zst_group_3070_felines_tweak != 1 BEGIN
+            WARN "[WARN]: Felines Tweak group component should be set to 1 or 0. Actual value: %zst_group_3070_felines_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3080_natural_attacks_tweak != 0 AND zst_group_3080_natural_attacks_tweak != 1 BEGIN
+            WARN "[WARN]: Natural Attacks Tweak group component should be set to 1 or 0. Actual value: %zst_group_3080_natural_attacks_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3090_shadows_tweak != 0 AND zst_group_3090_shadows_tweak != 1 BEGIN
+            WARN "[WARN]: Shadows Tweak group component should be set to 1 or 0. Actual value: %zst_group_3090_shadows_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3100_beetles_tweak != 0 AND zst_group_3100_beetles_tweak != 1 BEGIN
+            WARN "[WARN]: Beetles Tweak group component should be set to 1 or 0. Actual value: %zst_group_3100_beetles_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3110_yuantis_tweak != 0 AND zst_group_3110_yuantis_tweak != 1 BEGIN
+            WARN "[WARN]: Yuan-tis Tweak group component should be set to 1 or 0. Actual value: %zst_group_3110_yuantis_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3120_golems_tweak != 0 AND zst_group_3120_golems_tweak != 1 BEGIN
+            WARN "[WARN]: Golems Tweak group component should be set to 1 or 0. Actual value: %zst_group_3120_golems_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3130_minotaurs_tweak != 0 AND zst_group_3130_minotaurs_tweak != 1 BEGIN
+            WARN "[WARN]: Minotaurs Tweak group component should be set to 1 or 0. Actual value: %zst_group_3130_minotaurs_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3140_ogre_mages_tweak != 0 AND zst_group_3140_ogre_mages_tweak != 1 BEGIN
+            WARN "[WARN]: Ogre Mages Tweak group component should be set to 1 or 0. Actual value: %zst_group_3140_ogre_mages_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3150_drow_mr_tweak != 0 AND zst_group_3150_drow_mr_tweak != 1 BEGIN
+            WARN "[WARN]: Drow MR Tweak group component should be set to 1 or 0. Actual value: %zst_group_3150_drow_mr_tweak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3160_otyugh_tweak != 0 AND zst_group_3160_otyugh_tweak != 1 BEGIN
+            WARN "[WARN]: Otyugh Tweak group component should be set to 1 or 0. Actual value: %zst_group_3160_otyugh_tweak%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------GROUP COMP VARIABLES (DAGGER)------------------------------------------------- \\
+
+        ACTION_IF zst_group_1000_poisoned_throw_dagg != 0 AND zst_group_1000_poisoned_throw_dagg != 1 BEGIN
+            WARN "[WARN]: Poisoned Throwing Dagger group component should be set to 1 or 0. Actual value: %zst_group_1000_poisoned_throw_dagg%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1130_bone_blade != 0 AND zst_group_1130_bone_blade != 1 BEGIN
+            WARN "[WARN]: Bone Blade group component should be set to 1 or 0. Actual value: %zst_group_1130_bone_blade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1140_dagger_star != 0 AND zst_group_1140_dagger_star != 1 BEGIN
+            WARN "[WARN]: Dagger of the Stars group component should be set to 1 or 0. Actual value: %zst_group_1140_dagger_star%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1490_neb_dagger != 0 AND zst_group_1490_neb_dagger != 1 BEGIN
+            WARN "[WARN]: Neb's Dagger group component should be set to 1 or 0. Actual value: %zst_group_1490_neb_dagger%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1630_jade_fang != 0 AND zst_group_1630_jade_fang != 1 BEGIN
+            WARN "[WARN]: Jade Fang group component should be set to 1 or 0. Actual value: %zst_group_1630_jade_fang%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1660_heart_golem != 0 AND zst_group_1660_heart_golem != 1 BEGIN
+            WARN "[WARN]: Heart of the Golem group component should be set to 1 or 0. Actual value: %zst_group_1660_heart_golem%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1670_silver_dagger != 0 AND zst_group_1670_silver_dagger != 1 BEGIN
+            WARN "[WARN]: Silver Dagger group component should be set to 1 or 0. Actual value: %zst_group_1670_silver_dagger%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1680_stiletto_demarchess != 0 AND zst_group_1680_stiletto_demarchess != 1 BEGIN
+            WARN "[WARN]: Stiletto of Demarchess group component should be set to 1 or 0. Actual value: %zst_group_1680_stiletto_demarchess%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1681_elements_fury != 0 AND zst_group_1681_elements_fury != 1 BEGIN
+            WARN "[WARN]: Element's Fury group component should be set to 1 or 0. Actual value: %zst_group_1681_elements_fury%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1682_acid_etched_dagger != 0 AND zst_group_1682_acid_etched_dagger != 1 BEGIN
+            WARN "[WARN]: Acid Etched Dagger group component should be set to 1 or 0. Actual value: %zst_group_1682_acid_etched_dagger%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1683_gemblade != 0 AND zst_group_1683_gemblade != 1 BEGIN
+            WARN "[WARN]: Gemblade group component should be set to 1 or 0. Actual value: %zst_group_1683_gemblade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1684_throwing_dagg_melee != 0 AND zst_group_1684_throwing_dagg_melee != 1 BEGIN
+            WARN "[WARN]: Throwing Dagger Melee group component should be set to 1 or 0. Actual value: %zst_group_1684_throwing_dagg_melee%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1686_life_stealer != 0 AND zst_group_1686_life_stealer != 1 BEGIN
+            WARN "[WARN]: Life Stealer group component should be set to 1 or 0. Actual value: %zst_group_1686_life_stealer%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1530_throw_dagg_nonsense != 0 AND zst_group_1530_throw_dagg_nonsense != 1 BEGIN
+            WARN "[WARN]: Throwing Dagger Nonsense group component should be set to 1 or 0. Actual value: %zst_group_1530_throw_dagg_nonsense%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------GROUP COMP VARIABLES (DIVINE)------------------------------------------------- \\
+
+        ACTION_IF zst_group_100_glyph_warding != 0 AND zst_group_100_glyph_warding != 1 BEGIN
+            WARN "[WARN]: Glyph of Warding group component should be set to 1 or 0. Actual value: %zst_group_100_glyph_warding%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_101_flame_blade != 0 AND zst_group_101_flame_blade != 1 BEGIN
+            WARN "[WARN]: Flame Blade group component should be set to 1 or 0. Actual value: %zst_group_101_flame_blade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_110_bless_bane != 0 AND zst_group_110_bless_bane != 1 BEGIN
+            WARN "[WARN]: Bless/Bane group component should be set to 1 or 0. Actual value: %zst_group_110_bless_bane%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_130_hold_person != 0 AND zst_group_130_hold_person != 1 BEGIN
+            WARN "[WARN]: Hold Person group component should be set to 1 or 0. Actual value: %zst_group_130_hold_person%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_190_holy_power != 0 AND zst_group_190_holy_power != 1 BEGIN
+            WARN "[WARN]: Holy Power group component should be set to 1 or 0. Actual value: %zst_group_190_holy_power%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_230_cloak_fear != 0 AND zst_group_230_cloak_fear != 1 BEGIN
+            WARN "[WARN]: Cloak of Fear group component should be set to 1 or 0. Actual value: %zst_group_230_cloak_fear%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_240_goodberry != 0 AND zst_group_240_goodberry != 1 BEGIN
+            WARN "[WARN]: Goodberry group component should be set to 1 or 0. Actual value: %zst_group_240_goodberry%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_250_earthquake != 0 AND zst_group_250_earthquake != 1 BEGIN
+            WARN "[WARN]: Earthquake group component should be set to 1 or 0. Actual value: %zst_group_250_earthquake%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_260_negative_plane != 0 AND zst_group_260_negative_plane != 1 BEGIN
+            WARN "[WARN]: Negative Plane Protection group component should be set to 1 or 0. Actual value: %zst_group_260_negative_plane%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_270_entangle != 0 AND zst_group_270_entangle != 1 BEGIN
+            WARN "[WARN]: Entangle group component should be set to 1 or 0. Actual value: %zst_group_270_entangle%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_280_cleric_poison != 0 AND zst_group_280_cleric_poison != 1 BEGIN
+            WARN "[WARN]: Cleric Poison group component should be set to 1 or 0. Actual value: %zst_group_280_cleric_poison%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_300_iron_skins != 0 AND zst_group_300_iron_skins != 1 BEGIN
+            WARN "[WARN]: Iron Skins group component should be set to 1 or 0. Actual value: %zst_group_300_iron_skins%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_310_fireseeds != 0 AND zst_group_310_fireseeds != 1 BEGIN
+            WARN "[WARN]: Fireseeds group component should be set to 1 or 0. Actual value: %zst_group_310_fireseeds%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_320_nature_beauty != 0 AND zst_group_320_nature_beauty != 1 BEGIN
+            WARN "[WARN]: Nature's Beauty group component should be set to 1 or 0. Actual value: %zst_group_320_nature_beauty%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_330_cleric_confusion != 0 AND zst_group_330_cleric_confusion != 1 BEGIN
+            WARN "[WARN]: Cleric Confusion group component should be set to 1 or 0. Actual value: %zst_group_330_cleric_confusion%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_420_armor_faith != 0 AND zst_group_420_armor_faith != 1 BEGIN
+            WARN "[WARN]: Armor of Faith group component should be set to 1 or 0. Actual value: %zst_group_420_armor_faith%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_450_cure_cause_wounds != 0 AND zst_group_450_cure_cause_wounds != 1 BEGIN
+            WARN "[WARN]: Cure/Cause Wounds group component should be set to 1 or 0. Actual value: %zst_group_450_cure_cause_wounds%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_461_bolt_glory != 0 AND zst_group_461_bolt_glory != 1 BEGIN
+            WARN "[WARN]: Bolt of Glory group component should be set to 1 or 0. Actual value: %zst_group_461_bolt_glory%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_462_magical_stone != 0 AND zst_group_462_magical_stone != 1 BEGIN
+            WARN "[WARN]: Magical Stone group component should be set to 1 or 0. Actual value: %zst_group_462_magical_stone%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_463_dolorous_decay != 0 AND zst_group_463_dolorous_decay != 1 BEGIN
+            WARN "[WARN]: Dolorous Decay group component should be set to 1 or 0. Actual value: %zst_group_463_dolorous_decay%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_464_wondrous_recall != 0 AND zst_group_464_wondrous_recall != 1 BEGIN
+            WARN "[WARN]: Wondrous Recall group component should be set to 1 or 0. Actual value: %zst_group_464_wondrous_recall%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_466_shield_archons != 0 AND zst_group_466_shield_archons != 1 BEGIN
+            WARN "[WARN]: Shield of the Archons group component should be set to 1 or 0. Actual value: %zst_group_466_shield_archons%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_467_sunray_false_dawn != 0 AND zst_group_467_sunray_false_dawn != 1 BEGIN
+            WARN "[WARN]: Sunray/False Dawn group component should be set to 1 or 0. Actual value: %zst_group_467_sunray_false_dawn%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_468_call_lightning != 0 AND zst_group_468_call_lightning != 1 BEGIN
+            WARN "[WARN]: Call Lightning group component should be set to 1 or 0. Actual value: %zst_group_468_call_lightning%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_505_repulse_undead != 0 AND zst_group_505_repulse_undead != 1 BEGIN
+            WARN "[WARN]: Repulse Undead group component should be set to 1 or 0. Actual value: %zst_group_505_repulse_undead%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_506_wall_moonlight != 0 AND zst_group_506_wall_moonlight != 1 BEGIN
+            WARN "[WARN]: Wall of Moonlight group component should be set to 1 or 0. Actual value: %zst_group_506_wall_moonlight%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_507_aid != 0 AND zst_group_507_aid != 1 BEGIN
+            WARN "[WARN]: Aid group component should be set to 1 or 0. Actual value: %zst_group_507_aid%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_508_restoration != 0 AND zst_group_508_restoration != 1 BEGIN
+            WARN "[WARN]: Restoration group component should be set to 1 or 0. Actual value: %zst_group_508_restoration%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_509_silence != 0 AND zst_group_509_silence != 1 BEGIN
+            WARN "[WARN]: Silence group component should be set to 1 or 0. Actual value: %zst_group_509_silence%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_510_righteous_wrath != 0 AND zst_group_510_righteous_wrath != 1 BEGIN
+            WARN "[WARN]: Righteous Wrath of the Faithful group component should be set to 1 or 0. Actual value: %zst_group_510_righteous_wrath%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_511_unfailing_endurance != 0 AND zst_group_511_unfailing_endurance != 1 BEGIN
+            WARN "[WARN]: Unfailing Endurance group component should be set to 1 or 0. Actual value: %zst_group_511_unfailing_endurance%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_512_alicorn_lance != 0 AND zst_group_512_alicorn_lance != 1 BEGIN
+            WARN "[WARN]: Alicorn Lance group component should be set to 1 or 0. Actual value: %zst_group_512_alicorn_lance%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_477_smashing_wave != 0 AND zst_group_477_smashing_wave != 1 BEGIN
+            WARN "[WARN]: Smashing Wave group component should be set to 1 or 0. Actual value: %zst_group_477_smashing_wave%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_479_static_charge != 0 AND zst_group_479_static_charge != 1 BEGIN
+            WARN "[WARN]: Static Charge group component should be set to 1 or 0. Actual value: %zst_group_479_static_charge%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_485_cloudburst != 0 AND zst_group_485_cloudburst != 1 BEGIN
+            WARN "[WARN]: Cloudburst group component should be set to 1 or 0. Actual value: %zst_group_485_cloudburst%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_488_thorn_spray != 0 AND zst_group_488_thorn_spray != 1 BEGIN
+            WARN "[WARN]: Thorn Spray group component should be set to 1 or 0. Actual value: %zst_group_488_thorn_spray%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_491_spike_stones != 0 AND zst_group_491_spike_stones != 1 BEGIN
+            WARN "[WARN]: Spike Stones group component should be set to 1 or 0. Actual value: %zst_group_491_spike_stones%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_492_barkskin != 0 AND zst_group_492_barkskin != 1 BEGIN
+            WARN "[WARN]: Barkskin group component should be set to 1 or 0. Actual value: %zst_group_492_barkskin%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_496_doom != 0 AND zst_group_496_doom != 1 BEGIN
+            WARN "[WARN]: Doom group component should be set to 1 or 0. Actual value: %zst_group_496_doom%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_513_whirlwind != 0 AND zst_group_513_whirlwind != 1 BEGIN
+            WARN "[WARN]: Whirlwind group component should be set to 1 or 0. Actual value: %zst_group_513_whirlwind%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_497_produce_fire != 0 AND zst_group_497_produce_fire != 1 BEGIN
+            WARN "[WARN]: Produce Fire group component should be set to 1 or 0. Actual value: %zst_group_497_produce_fire%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_515_aura_flaming_death != 0 AND zst_group_515_aura_flaming_death != 1 BEGIN
+            WARN "[WARN]: Aura of Flaming Death group component should be set to 1 or 0. Actual value: %zst_group_515_aura_flaming_death%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_539_holy_unholy_words != 0 AND zst_group_539_holy_unholy_words != 1 BEGIN
+            WARN "[WARN]: Holy/Unholy Words group component should be set to 1 or 0. Actual value: %zst_group_539_holy_unholy_words%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------GROUP COMP VARIABLES (ENDOFINSTALL)------------------------------------------------- \\
+
+        ACTION_IF zst_group_1381_handmaiden_mace != 0 AND zst_group_1381_handmaiden_mace != 1 BEGIN
+            WARN "[WARN]: Handmaiden's Mace group component should be set to 1 or 0. Actual value: %zst_group_1381_handmaiden_mace%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2370_iwd_evasion_tweak != 0 AND zst_group_2370_iwd_evasion_tweak != 1 BEGIN
+            WARN "[WARN]: IWD Evasion Tweak group component should be set to 1 or 0. Actual value: %zst_group_1381_handmaiden_mace%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1531_selective_spells_mr != 0 AND zst_group_1531_selective_spells_mr != 1 BEGIN
+            WARN "[WARN]: Selective Spells MR group component should be set to 1 or 0. Actual value: %zst_group_1531_selective_spells_mr%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------GROUP COMP VARIABLES (GEAR)------------------------------------------------- \\
+
+        ACTION_IF zst_group_1170_shadow_dragon_armor != 0 AND zst_group_1170_shadow_dragon_armor != 1 BEGIN
+            WARN "[WARN]: Shadow Dragon Armor group component should be set to 1 or 0. Actual value: %zst_group_1170_shadow_dragon_armor%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1171_silver_dragon_armor != 0 AND zst_group_1171_silver_dragon_armor != 1 BEGIN
+            WARN "[WARN]: Silver Dragon Armor group component should be set to 1 or 0. Actual value: %zst_group_1171_silver_dragon_armor%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1172_rings_elemental_control != 0 AND zst_group_1172_rings_elemental_control != 1 BEGIN
+            WARN "[WARN]: Rings of Elemental Control group component should be set to 1 or 0. Actual value: %zst_group_1172_rings_elemental_control%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1173_ring_gaxx != 0 AND zst_group_1173_ring_gaxx != 1 BEGIN
+            WARN "[WARN]: Ring of Gaxx group component should be set to 1 or 0. Actual value: %zst_group_1173_ring_gaxx%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1174_heartwood_ring != 0 AND zst_group_1174_heartwood_ring != 1 BEGIN
+            WARN "[WARN]: Heartwood Ring group component should be set to 1 or 0. Actual value: %zst_group_1174_heartwood_ring%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1180_ring_danger != 0 AND zst_group_1180_ring_danger != 1 BEGIN
+            WARN "[WARN]: Ring of Danger Sense group component should be set to 1 or 0. Actual value: %zst_group_1180_ring_danger%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1316_mercykiller_ring != 0 AND zst_group_1316_mercykiller_ring != 1 BEGIN
+            WARN "[WARN]: Mercykiller Ring group component should be set to 1 or 0. Actual value: %zst_group_1316_mercykiller_ring%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1317_basic_robes_buff != 0 AND zst_group_1317_basic_robes_buff != 1 BEGIN
+            WARN "[WARN]: Basic Robes Buff group component should be set to 1 or 0. Actual value: %zst_group_1317_basic_robes_buff%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1560_belt_blade != 0 AND zst_group_1560_belt_blade != 1 BEGIN
+            WARN "[WARN]: Belt of the Blade group component should be set to 1 or 0. Actual value: %zst_group_1560_belt_blade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1561_cloak_of_stars != 0 AND zst_group_1561_cloak_of_stars != 1 BEGIN
+            WARN "[WARN]: Cloak of Stars group component should be set to 1 or 0. Actual value: %zst_group_1561_cloak_of_stars%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1570_eye_of_beholder != 0 AND zst_group_1570_eye_of_beholder != 1 BEGIN
+            WARN "[WARN]: Eye of the Beholder group component should be set to 1 or 0. Actual value: %zst_group_1570_eye_of_beholder%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1610_robe_invocation != 0 AND zst_group_1610_robe_invocation != 1 BEGIN
+            WARN "[WARN]: Robe of Invocation group component should be set to 1 or 0. Actual value: %zst_group_1610_robe_invocation%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1620_thayan_circlet != 0 AND zst_group_1620_thayan_circlet != 1 BEGIN
+            WARN "[WARN]: Thayan Circlet group component should be set to 1 or 0. Actual value: %zst_group_1620_thayan_circlet%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1651_studded_leather_thorns != 0 AND zst_group_1651_studded_leather_thorns != 1 BEGIN
+            WARN "[WARN]: Studded Leather of Thorns group component should be set to 1 or 0. Actual value: %zst_group_1651_studded_leather_thorns%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1652_grandmaster_armor != 0 AND zst_group_1652_grandmaster_armor != 1 BEGIN
+            WARN "[WARN]: Grandmaster's Armor group component should be set to 1 or 0. Actual value: %zst_group_1652_grandmaster_armor%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1653_thieves_hood != 0 AND zst_group_1653_thieves_hood != 1 BEGIN
+            WARN "[WARN]: Thieves' Hood group component should be set to 1 or 0. Actual value: %zst_group_1653_thieves_hood%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1654_star_strewn_cloak != 0 AND zst_group_1654_star_strewn_cloak != 1 BEGIN
+            WARN "[WARN]: Star-Strewn Cloak group component should be set to 1 or 0. Actual value: %zst_group_1654_star_strewn_cloak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1655_crown_lies != 0 AND zst_group_1655_crown_lies != 1 BEGIN
+            WARN "[WARN]: Crown of Lies group component should be set to 1 or 0. Actual value: %zst_group_1655_crown_lies%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1656_helm_dumathoin != 0 AND zst_group_1656_helm_dumathoin != 1 BEGIN
+            WARN "[WARN]: Helm of Dumathoin group component should be set to 1 or 0. Actual value: %zst_group_1656_helm_dumathoin%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1657_the_visage != 0 AND zst_group_1657_the_visage != 1 BEGIN
+            WARN "[WARN]: The Visage group component should be set to 1 or 0. Actual value: %zst_group_1657_the_visage%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1658_dragon_helm != 0 AND zst_group_1658_dragon_helm != 1 BEGIN
+            WARN "[WARN]: Dragon Helm group component should be set to 1 or 0. Actual value: %zst_group_1658_dragon_helm%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1659_helm_rock != 0 AND zst_group_1659_helm_rock != 1 BEGIN
+            WARN "[WARN]: Helm of the Rock group component should be set to 1 or 0. Actual value: %zst_group_1659_helm_rock%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1661_cloak_sewers != 0 AND zst_group_1661_cloak_sewers != 1 BEGIN
+            WARN "[WARN]: Cloak of the Sewers group component should be set to 1 or 0. Actual value: %zst_group_1661_cloak_sewers%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1662_montolio_cloak != 0 AND zst_group_1662_montolio_cloak != 1 BEGIN
+            WARN "[WARN]: Montolio's Cloak group component should be set to 1 or 0. Actual value: %zst_group_1662_montolio_cloak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1663_sandthief_ring != 0 AND zst_group_1663_sandthief_ring != 1 BEGIN
+            WARN "[WARN]: Sandthief's Ring group component should be set to 1 or 0. Actual value: %zst_group_1663_sandthief_ring%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1664_ioun_circlet_crits != 0 AND zst_group_1664_ioun_circlet_crits != 1 BEGIN
+            WARN "[WARN]: Ioun/Circlet Crits group component should be set to 1 or 0. Actual value: %zst_group_1664_ioun_circlet_crits%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1665_ioun_overhaul != 0 AND zst_group_1665_ioun_overhaul != 1 BEGIN
+            WARN "[WARN]: Ioun Stone Overhaul group component should be set to 1 or 0. Actual value: %zst_group_1665_ioun_overhaul%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1666_blinding_bracers != 0 AND zst_group_1666_blinding_bracers != 1 BEGIN
+            WARN "[WARN]: Blinding Bracers group component should be set to 1 or 0. Actual value: %zst_group_1666_blinding_bracers%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1667_xarrnous_second_sword_arm != 0 AND zst_group_1667_xarrnous_second_sword_arm != 1 BEGIN
+            WARN "[WARN]: Xarrnous' Second Sword Arm group component should be set to 1 or 0. Actual value: %zst_group_1667_xarrnous_second_sword_arm%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1668_dale_protector != 0 AND zst_group_1668_dale_protector != 1 BEGIN
+            WARN "[WARN]: Dale's Protector group component should be set to 1 or 0. Actual value: %zst_group_1668_dale_protector%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1669_gauntlets_extra_spec != 0 AND zst_group_1669_gauntlets_extra_spec != 1 BEGIN
+            WARN "[WARN]: Gauntlets of Extra Specialization group component should be set to 1 or 0. Actual value: %zst_group_1669_gauntlets_extra_spec%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1671_helm_truth != 0 AND zst_group_1671_helm_truth != 1 BEGIN
+            WARN "[WARN]: Helm of Truth group component should be set to 1 or 0. Actual value: %zst_group_1671_helm_truth%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1672_stalker_gauntlets != 0 AND zst_group_1672_stalker_gauntlets != 1 BEGIN
+            WARN "[WARN]: Stalker Gauntlets group component should be set to 1 or 0. Actual value: %zst_group_1672_stalker_gauntlets%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1673_blessed_bracers != 0 AND zst_group_1673_blessed_bracers != 1 BEGIN
+            WARN "[WARN]: Blessed Bracers group component should be set to 1 or 0. Actual value: %zst_group_1673_blessed_bracers%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1674_whispers_silence != 0 AND zst_group_1674_whispers_silence != 1 BEGIN
+            WARN "[WARN]: Whispers of Silence group component should be set to 1 or 0. Actual value: %zst_group_1674_whispers_silence%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1675_cloak_displacement != 0 AND zst_group_1675_cloak_displacement != 1 BEGIN
+            WARN "[WARN]: Cloak of Displacement group component should be set to 1 or 0. Actual value: %zst_group_1675_cloak_displacement%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1676_skull_death != 0 AND zst_group_1676_skull_death != 1 BEGIN
+            WARN "[WARN]: Skull of Death group component should be set to 1 or 0. Actual value: %zst_group_1676_skull_death%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1677_wondrous_gloves != 0 AND zst_group_1677_wondrous_gloves != 1 BEGIN
+            WARN "[WARN]: Wondrous Gloves group component should be set to 1 or 0. Actual value: %zst_group_1677_wondrous_gloves%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1678_senses_cat != 0 AND zst_group_1678_senses_cat != 1 BEGIN
+            WARN "[WARN]: Senses of the Cat group component should be set to 1 or 0. Actual value: %zst_group_1678_senses_cat%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1679_horn_kazgaroth != 0 AND zst_group_1679_horn_kazgaroth != 1 BEGIN
+            WARN "[WARN]: Horn of Kazgaroth group component should be set to 1 or 0. Actual value: %zst_group_1679_horn_kazgaroth%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1190_rod_might != 0 AND zst_group_1190_rod_might != 1 BEGIN
+            WARN "[WARN]: Rod of Might group component should be set to 1 or 0. Actual value: %zst_group_1190_rod_might%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1195_gloves_healing != 0 AND zst_group_1195_gloves_healing != 1 BEGIN
+            WARN "[WARN]: Gloves of Healing group component should be set to 1 or 0. Actual value: %zst_group_1195_gloves_healing%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1197_misc_item_func_additions != 0 AND zst_group_1197_misc_item_func_additions != 1 BEGIN
+            WARN "[WARN]: Misc Item Functional Additions group component should be set to 1 or 0. Actual value: %zst_group_1197_misc_item_func_additions%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1198_ring_crusade != 0 AND zst_group_1198_ring_crusade != 1 BEGIN
+            WARN "[WARN]: Ring of the Crusade group component should be set to 1 or 0. Actual value: %zst_group_1198_ring_crusade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1203_girdle_fortitude != 0 AND zst_group_1203_girdle_fortitude != 1 BEGIN
+            WARN "[WARN]: Girdle of Fortitude group component should be set to 1 or 0. Actual value: %zst_group_1203_girdle_fortitude%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1204_rhino_beetle_gear != 0 AND zst_group_1204_rhino_beetle_gear != 1 BEGIN
+            WARN "[WARN]: Rhino Beetle Gear group component should be set to 1 or 0. Actual value: %zst_group_1204_rhino_beetle_gear%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1206_ring_purity != 0 AND zst_group_1206_ring_purity != 1 BEGIN
+            WARN "[WARN]: Ring of Purity group component should be set to 1 or 0. Actual value: %zst_group_1206_ring_purity%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1207_protector_second != 0 AND zst_group_1207_protector_second != 1 BEGIN
+            WARN "[WARN]: Protector of the Second group component should be set to 1 or 0. Actual value: %zst_group_1207_protector_second%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1208_karajah_leather != 0 AND zst_group_1208_karajah_leather != 1 BEGIN
+            WARN "[WARN]: Karajah's Leather group component should be set to 1 or 0. Actual value: %zst_group_1208_karajah_leather%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1209_night_gift_armor != 0 AND zst_group_1209_night_gift_armor != 1 BEGIN
+            WARN "[WARN]: Night's Gift Armor group component should be set to 1 or 0. Actual value: %zst_group_1209_night_gift_armor%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1211_orc_leathers != 0 AND zst_group_1211_orc_leathers != 1 BEGIN
+            WARN "[WARN]: Orc Leathers group component should be set to 1 or 0. Actual value: %zst_group_1211_orc_leathers%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1212_skin_ghoul != 0 AND zst_group_1212_skin_ghoul != 1 BEGIN
+            WARN "[WARN]: Skin of the Ghoul group component should be set to 1 or 0. Actual value: %zst_group_1212_skin_ghoul%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1213_armor_deep_night != 0 AND zst_group_1213_armor_deep_night != 1 BEGIN
+            WARN "[WARN]: Armor of Deep Night group component should be set to 1 or 0. Actual value: %zst_group_1213_armor_deep_night%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1214_armor_viper != 0 AND zst_group_1214_armor_viper != 1 BEGIN
+            WARN "[WARN]: Armor of the Viper group component should be set to 1 or 0. Actual value: %zst_group_1214_armor_viper%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1215_aegers_hide != 0 AND zst_group_1215_aegers_hide != 1 BEGIN
+            WARN "[WARN]: Aeger's Hide group component should be set to 1 or 0. Actual value: %zst_group_1215_aegers_hide%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1216_ankhegs_plate != 0 AND zst_group_1216_ankhegs_plate != 1 BEGIN
+            WARN "[WARN]: Ankheg's Plate group component should be set to 1 or 0. Actual value: %zst_group_1216_ankhegs_plate%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1217_hayes_robe != 0 AND zst_group_1217_hayes_robe != 1 BEGIN
+            WARN "[WARN]: Hayes' Robe group component should be set to 1 or 0. Actual value: %zst_group_1217_hayes_robe%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1218_plate_of_the_dark != 0 AND zst_group_1218_plate_of_the_dark != 1 BEGIN
+            WARN "[WARN]: Plate of the Dark group component should be set to 1 or 0. Actual value: %zst_group_1218_plate_of_the_dark%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1271_girdle_gender != 0 AND zst_group_1271_girdle_gender != 1 BEGIN
+            WARN "[WARN]: Girdle of Gender group component should be set to 1 or 0. Actual value: %zst_group_1271_girdle_gender%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1291_shakti_figurine != 0 AND zst_group_1291_shakti_figurine != 1 BEGIN
+            WARN "[WARN]: Shakti Figurine group component should be set to 1 or 0. Actual value: %zst_group_1291_shakti_figurine%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1331_doomplate != 0 AND zst_group_1331_doomplate != 1 BEGIN
+            WARN "[WARN]: Doomplate group component should be set to 1 or 0. Actual value: %zst_group_1331_doomplate%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1333_robe_of_vecna != 0 AND zst_group_1333_robe_of_vecna != 1 BEGIN
+            WARN "[WARN]: Robe of Vecna group component should be set to 1 or 0. Actual value: %zst_group_1333_robe_of_vecna%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1334_ashen_scales != 0 AND zst_group_1334_ashen_scales != 1 BEGIN
+            WARN "[WARN]: Ashen Scales group component should be set to 1 or 0. Actual value: %zst_group_1334_ashen_scales%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1335_crimson_chain != 0 AND zst_group_1335_crimson_chain != 1 BEGIN
+            WARN "[WARN]: Crimson Chain group component should be set to 1 or 0. Actual value: %zst_group_1335_crimson_chain%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1336_cowl_of_the_stars != 0 AND zst_group_1336_cowl_of_the_stars != 1 BEGIN
+            WARN "[WARN]: Cowl of the Stars group component should be set to 1 or 0. Actual value: %zst_group_1336_cowl_of_the_stars%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1351_tzuzan_bracers != 0 AND zst_group_1351_tzuzan_bracers != 1 BEGIN
+            WARN "[WARN]: Tzu-zan's Bracers group component should be set to 1 or 0. Actual value: %zst_group_1351_tzuzan_bracers%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1365_shield_of_balduran != 0 AND zst_group_1365_shield_of_balduran != 1 BEGIN
+            WARN "[WARN]: Shield of Balduran group component should be set to 1 or 0. Actual value: %zst_group_1365_shield_of_balduran%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1366_helm_of_balduran != 0 AND zst_group_1366_helm_of_balduran != 1 BEGIN
+            WARN "[WARN]: Helm of Balduran group component should be set to 1 or 0. Actual value: %zst_group_1366_helm_of_balduran%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------GROUP COMP VARIABLES (JOINABLES)------------------------------------------------- \\
+
+        ACTION_IF zst_group_1380_haerdalis_blades != 0 AND zst_group_1380_haerdalis_blades != 1 BEGIN
+            WARN "[WARN]: Haer'Dalis' Blades group component should be set to 1 or 0. Actual value: %zst_group_1380_haerdalis_blades%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1480_yoshimo_katana != 0 AND zst_group_1480_yoshimo_katana != 1 BEGIN
+            WARN "[WARN]: Yoshimo's Katana group component should be set to 1 or 0. Actual value: %zst_group_1480_yoshimo_katana%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1500_mazzy_weapons != 0 AND zst_group_1500_mazzy_weapons != 1 BEGIN
+            WARN "[WARN]: Mazzy's Weapons group component should be set to 1 or 0. Actual value: %zst_group_1500_mazzy_weapons%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1510_anomen_shield != 0 AND zst_group_1510_anomen_shield != 1 BEGIN
+            WARN "[WARN]: Anomen's Shield group component should be set to 1 or 0. Actual value: %zst_group_1510_anomen_shield%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1520_keldorn_gear != 0 AND zst_group_1520_keldorn_gear != 1 BEGIN
+            WARN "[WARN]: Keldorn's Gear group component should be set to 1 or 0. Actual value: %zst_group_1520_keldorn_gear%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1640_dorn_blades != 0 AND zst_group_1640_dorn_blades != 1 BEGIN
+            WARN "[WARN]: Dorn's Blades group component should be set to 1 or 0. Actual value: %zst_group_1640_dorn_blades%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1641_item_creation_npc != 0 AND zst_group_1641_item_creation_npc != 1 BEGIN
+            WARN "[WARN]: Item Creation NPC group component should be set to 1 or 0. Actual value: %zst_group_1641_item_creation_npc%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1642_nalia_ring != 0 AND zst_group_1642_nalia_ring != 1 BEGIN
+            WARN "[WARN]: Nalia's Ring group component should be set to 1 or 0. Actual value: %zst_group_1642_nalia_ring%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1643_corthala_blade != 0 AND zst_group_1643_corthala_blade != 1 BEGIN
+            WARN "[WARN]: Corthala's Blade group component should be set to 1 or 0. Actual value: %zst_group_1643_corthala_blade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1644_gear_restriction != 0 AND zst_group_1644_gear_restriction != 1 BEGIN
+            WARN "[WARN]: Gear Restriction group component should be set to 1 or 0. Actual value: %zst_group_1644_gear_restriction%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1645_cernd_cloak != 0 AND zst_group_1645_cernd_cloak != 1 BEGIN
+            WARN "[WARN]: Cernd's Cloak group component should be set to 1 or 0. Actual value: %zst_group_1645_cernd_cloak%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1646_sarevok != 0 AND zst_group_1646_sarevok != 1 BEGIN
+            WARN "[WARN]: Sarevok group component should be set to 1 or 0. Actual value: %zst_group_1646_sarevok%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1647_sharteel != 0 AND zst_group_1647_sharteel != 1 BEGIN
+            WARN "[WARN]: Shar-Teel group component should be set to 1 or 0. Actual value: %zst_group_1647_sharteel%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2240_hexxat_blood_drain != 0 AND zst_group_2240_hexxat_blood_drain != 1 BEGIN
+            WARN "[WARN]: Hexxat's Blood Drain group component should be set to 1 or 0. Actual value: %zst_group_2240_hexxat_blood_drain%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2250_edwin_amulet != 0 AND zst_group_2250_edwin_amulet != 1 BEGIN
+            WARN "[WARN]: Edwin's Amulet group component should be set to 1 or 0. Actual value: %zst_group_2250_edwin_amulet%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1556_jaheira_items != 0 AND zst_group_1556_jaheira_items != 1 BEGIN
+            WARN "[WARN]: Jaheira's Items group component should be set to 1 or 0. Actual value: %zst_group_1556_jaheira_items%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------GROUP COMP VARIABLES (ONE-HANDED SWORDS)------------------------------------------------- \\
+
+        ACTION_IF zst_group_1125_ninjato_scarlet != 0 AND zst_group_1125_ninjato_scarlet != 1 BEGIN
+            WARN "[WARN]: Ninjato of the Scarlet Brotherhood group component should be set to 1 or 0. Actual value: %zst_group_1125_ninjato_scarlet%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1126_blackrazor != 0 AND zst_group_1126_blackrazor != 1 BEGIN
+            WARN "[WARN]: Blackrazor group component should be set to 1 or 0. Actual value: %zst_group_1126_blackrazor%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1127_peridan != 0 AND zst_group_1127_peridan != 1 BEGIN
+            WARN "[WARN]: Peridan group component should be set to 1 or 0. Actual value: %zst_group_1127_peridan%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1210_equalizer != 0 AND zst_group_1210_equalizer != 1 BEGIN
+            WARN "[WARN]: Equalizer group component should be set to 1 or 0. Actual value: %zst_group_1210_equalizer%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1220_ras != 0 AND zst_group_1220_ras != 1 BEGIN
+            WARN "[WARN]: Ras Dancing Sword group component should be set to 1 or 0. Actual value: %zst_group_1220_ras%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1230_sword_mask != 0 AND zst_group_1230_sword_mask != 1 BEGIN
+            WARN "[WARN]: Sword of Mask group component should be set to 1 or 0. Actual value: %zst_group_1230_sword_mask%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1240_purifier != 0 AND zst_group_1240_purifier != 1 BEGIN
+            WARN "[WARN]: Purifier group component should be set to 1 or 0. Actual value: %zst_group_1240_purifier%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1250_yamato != 0 AND zst_group_1250_yamato != 1 BEGIN
+            WARN "[WARN]: Yamato group component should be set to 1 or 0. Actual value: %zst_group_1250_yamato%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1260_usuno_blade != 0 AND zst_group_1260_usuno_blade != 1 BEGIN
+            WARN "[WARN]: Usuno's Blade group component should be set to 1 or 0. Actual value: %zst_group_1260_usuno_blade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1270_spectral_brand != 0 AND zst_group_1270_spectral_brand != 1 BEGIN
+            WARN "[WARN]: Spectral Brand group component should be set to 1 or 0. Actual value: %zst_group_1270_spectral_brand%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1315_dakkon_katana != 0 AND zst_group_1315_dakkon_katana != 1 BEGIN
+            WARN "[WARN]: Dak'kon's Katana group component should be set to 1 or 0. Actual value: %zst_group_1315_dakkon_katana%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1319_holy_sword_tyr != 0 AND zst_group_1319_holy_sword_tyr != 1 BEGIN
+            WARN "[WARN]: Holy Sword of Tyr group component should be set to 1 or 0. Actual value: %zst_group_1319_holy_sword_tyr%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1341_hindos_doom != 0 AND zst_group_1341_hindos_doom != 1 BEGIN
+            WARN "[WARN]: Hindo's Doom group component should be set to 1 or 0. Actual value: %zst_group_1341_hindos_doom%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1470_adjatha_drinker != 0 AND zst_group_1470_adjatha_drinker != 1 BEGIN
+            WARN "[WARN]: Adjatha the Drinker group component should be set to 1 or 0. Actual value: %zst_group_1470_adjatha_drinker%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1550_drizzt_weapons != 0 AND zst_group_1550_drizzt_weapons != 1 BEGIN
+            WARN "[WARN]: Drizzt's Weapons group component should be set to 1 or 0. Actual value: %zst_group_1550_drizzt_weapons%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1580_hawksight != 0 AND zst_group_1580_hawksight != 1 BEGIN
+            WARN "[WARN]: Hawksight group component should be set to 1 or 0. Actual value: %zst_group_1580_hawksight%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1582_vexation_sod != 0 AND zst_group_1582_vexation_sod != 1 BEGIN
+            WARN "[WARN]: Vexation SOD group component should be set to 1 or 0. Actual value: %zst_group_1582_vexation_sod%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1583_kachiko_waki != 0 AND zst_group_1583_kachiko_waki != 1 BEGIN
+            WARN "[WARN]: Kachiko's Wakizashi group component should be set to 1 or 0. Actual value: %zst_group_1583_kachiko_waki%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1584_brass_blade != 0 AND zst_group_1584_brass_blade != 1 BEGIN
+            WARN "[WARN]: Brass Blade group component should be set to 1 or 0. Actual value: %zst_group_1584_brass_blade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1585_arbane_sword != 0 AND zst_group_1585_arbane_sword != 1 BEGIN
+            WARN "[WARN]: Arbane's Sword group component should be set to 1 or 0. Actual value: %zst_group_1585_arbane_sword%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1586_blade_searing != 0 AND zst_group_1586_blade_searing != 1 BEGIN
+            WARN "[WARN]: Blade of Searing group component should be set to 1 or 0. Actual value: %zst_group_1586_blade_searing%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1588_waters_edge != 0 AND zst_group_1588_waters_edge != 1 BEGIN
+            WARN "[WARN]: Water's Edge group component should be set to 1 or 0. Actual value: %zst_group_1588_waters_edge%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1589_rashad_talon != 0 AND zst_group_1589_rashad_talon != 1 BEGIN
+            WARN "[WARN]: Rashad's Talon group component should be set to 1 or 0. Actual value: %zst_group_1589_rashad_talon%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1596_shadow_blade != 0 AND zst_group_1596_shadow_blade != 1 BEGIN
+            WARN "[WARN]: Shadow Blade group component should be set to 1 or 0. Actual value: %zst_group_1596_shadow_blade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1598_cutthroat != 0 AND zst_group_1598_cutthroat != 1 BEGIN
+            WARN "[WARN]: Cutthroat group component should be set to 1 or 0. Actual value: %zst_group_1598_cutthroat%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1605_burning_earth != 0 AND zst_group_1605_burning_earth != 1 BEGIN
+            WARN "[WARN]: Burning Earth group component should be set to 1 or 0. Actual value: %zst_group_1605_burning_earth%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1701_ilbratha != 0 AND zst_group_1701_ilbratha != 1 BEGIN
+            WARN "[WARN]: Ilbratha group component should be set to 1 or 0. Actual value: %zst_group_1701_ilbratha%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1705_balduran_swords != 0 AND zst_group_1705_balduran_swords != 1 BEGIN
+            WARN "[WARN]: Balduran's Swords group component should be set to 1 or 0. Actual value: %zst_group_1705_balduran_swords%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------GROUP COMP VARIABLES (RANGED)------------------------------------------------- \\
+
+        ACTION_IF zst_group_1010_asp_nest != 0 AND zst_group_1010_asp_nest != 1 BEGIN
+            WARN "[WARN]: Asp's Nest group component should be set to 1 or 0. Actual value: %zst_group_1010_asp_nest%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1330_darkfire_bow != 0 AND zst_group_1330_darkfire_bow != 1 BEGIN
+            WARN "[WARN]: Darkfire Bow group component should be set to 1 or 0. Actual value: %zst_group_1330_darkfire_bow%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1340_taralash != 0 AND zst_group_1340_taralash != 1 BEGIN
+            WARN "[WARN]: Taralash group component should be set to 1 or 0. Actual value: %zst_group_1340_taralash%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1342_protector_dryads != 0 AND zst_group_1342_protector_dryads != 1 BEGIN
+            WARN "[WARN]: Protector of the Dryads group component should be set to 1 or 0. Actual value: %zst_group_1342_protector_dryads%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1343_mana_bow != 0 AND zst_group_1343_mana_bow != 1 BEGIN
+            WARN "[WARN]: Mana Bow group component should be set to 1 or 0. Actual value: %zst_group_1343_mana_bow%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1344_arrow_biting != 0 AND zst_group_1344_arrow_biting != 1 BEGIN
+            WARN "[WARN]: Arrow of Biting group component should be set to 1 or 0. Actual value: %zst_group_1344_arrow_biting%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1345_arrow_fire != 0 AND zst_group_1345_arrow_fire != 1 BEGIN
+            WARN "[WARN]: Arrow of Fire group component should be set to 1 or 0. Actual value: %zst_group_1345_arrow_fire%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1346_arrow_piercing != 0 AND zst_group_1346_arrow_piercing != 1 BEGIN
+            WARN "[WARN]: Arrow of Piercing group component should be set to 1 or 0. Actual value: %zst_group_1346_arrow_piercing%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1347_bolts_biting != 0 AND zst_group_1347_bolts_biting != 1 BEGIN
+            WARN "[WARN]: Bolts of Biting group component should be set to 1 or 0. Actual value: %zst_group_1347_bolts_biting%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1348_shortbow_gesen != 0 AND zst_group_1348_shortbow_gesen != 1 BEGIN
+            WARN "[WARN]: Shortbow of Gesen group component should be set to 1 or 0. Actual value: %zst_group_1348_shortbow_gesen%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1371_arrow_dispelling != 0 AND zst_group_1371_arrow_dispelling != 1 BEGIN
+            WARN "[WARN]: Arrow of Dispelling group component should be set to 1 or 0. Actual value: %zst_group_1371_arrow_dispelling%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1388_arrow_acid != 0 AND zst_group_1388_arrow_acid != 1 BEGIN
+            WARN "[WARN]: Arrow of Acid group component should be set to 1 or 0. Actual value: %zst_group_1388_arrow_acid%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------GROUP COMP VARIABLES (TWOHANDED)------------------------------------------------- \\
+
+        ACTION_IF zst_group_1200_ixil_spike != 0 AND zst_group_1200_ixil_spike != 1 BEGIN
+            WARN "[WARN]: Ixil's Spike group component should be set to 1 or 0. Actual value: %zst_group_1200_ixil_spike%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1201_lilarcor != 0 AND zst_group_1201_lilarcor != 1 BEGIN
+            WARN "[WARN]: Lilarcor group component should be set to 1 or 0. Actual value: %zst_group_1201_lilarcor%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1202_warblade != 0 AND zst_group_1202_warblade != 1 BEGIN
+            WARN "[WARN]: Warblade group component should be set to 1 or 0. Actual value: %zst_group_1202_warblade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1280_carsomyr != 0 AND zst_group_1280_carsomyr != 1 BEGIN
+            WARN "[WARN]: Carsomyr group component should be set to 1 or 0. Actual value: %zst_group_1280_carsomyr%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1300_silver_sword != 0 AND zst_group_1300_silver_sword != 1 BEGIN
+            WARN "[WARN]: Silver Sword group component should be set to 1 or 0. Actual value: %zst_group_1300_silver_sword%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1318_flame_north != 0 AND zst_group_1318_flame_north != 1 BEGIN
+            WARN "[WARN]: Flame of the North group component should be set to 1 or 0. Actual value: %zst_group_1318_flame_north%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1390_staff_magi != 0 AND zst_group_1390_staff_magi != 1 BEGIN
+            WARN "[WARN]: Staff of the Magi group component should be set to 1 or 0. Actual value: %zst_group_1390_staff_magi%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1410_unholy_reaver != 0 AND zst_group_1410_unholy_reaver != 1 BEGIN
+            WARN "[WARN]: Unholy Reaver group component should be set to 1 or 0. Actual value: %zst_group_1410_unholy_reaver%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1460_spear_withering != 0 AND zst_group_1460_spear_withering != 1 BEGIN
+            WARN "[WARN]: Spear of Withering group component should be set to 1 or 0. Actual value: %zst_group_1460_spear_withering%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1540_wave != 0 AND zst_group_1540_wave != 1 BEGIN
+            WARN "[WARN]: Wave group component should be set to 1 or 0. Actual value: %zst_group_1540_wave%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1587_rod_terror != 0 AND zst_group_1587_rod_terror != 1 BEGIN
+            WARN "[WARN]: Rod of Terror group component should be set to 1 or 0. Actual value: %zst_group_1587_rod_terror%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1590_blackmist != 0 AND zst_group_1590_blackmist != 1 BEGIN
+            WARN "[WARN]: Blackmist group component should be set to 1 or 0. Actual value: %zst_group_1590_blackmist%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1591_soul_reaver != 0 AND zst_group_1591_soul_reaver != 1 BEGIN
+            WARN "[WARN]: Soul Reaver group component should be set to 1 or 0. Actual value: %zst_group_1591_soul_reaver%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1593_sword_ruin != 0 AND zst_group_1593_sword_ruin != 1 BEGIN
+            WARN "[WARN]: Sword of Ruin group component should be set to 1 or 0. Actual value: %zst_group_1593_sword_ruin%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1594_staff_cleric != 0 AND zst_group_1594_staff_cleric != 1 BEGIN
+            WARN "[WARN]: Staff of the Cleric group component should be set to 1 or 0. Actual value: %zst_group_1594_staff_cleric%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1595_halcyon != 0 AND zst_group_1595_halcyon != 1 BEGIN
+            WARN "[WARN]: Halcyon group component should be set to 1 or 0. Actual value: %zst_group_1595_halcyon%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1597_staff_rhynn != 0 AND zst_group_1597_staff_rhynn != 1 BEGIN
+            WARN "[WARN]: Staff of Rhynn group component should be set to 1 or 0. Actual value: %zst_group_1597_staff_rhynn%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1599_psion_blade != 0 AND zst_group_1599_psion_blade != 1 BEGIN
+            WARN "[WARN]: Psion's Blade group component should be set to 1 or 0. Actual value: %zst_group_1599_psion_blade%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1602_dragons_bane_halb != 0 AND zst_group_1602_dragons_bane_halb != 1 BEGIN
+            WARN "[WARN]: Dragon's Bane Halberd group component should be set to 1 or 0. Actual value: %zst_group_1602_dragons_bane_halb%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1603_dragons_breath_halb != 0 AND zst_group_1603_dragons_breath_halb != 1 BEGIN
+            WARN "[WARN]: Dragon's Breath Halberd group component should be set to 1 or 0. Actual value: %zst_group_1603_dragons_breath_halb%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1604_duskblade_halb != 0 AND zst_group_1604_duskblade_halb != 1 BEGIN
+            WARN "[WARN]: Duskblade Halberd group component should be set to 1 or 0. Actual value: %zst_group_1604_duskblade_halb%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1606_ravager != 0 AND zst_group_1606_ravager != 1 BEGIN
+            WARN "[WARN]: Ravager Halberd group component should be set to 1 or 0. Actual value: %zst_group_1606_ravager%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1607_gram_grief != 0 AND zst_group_1607_gram_grief != 1 BEGIN
+            WARN "[WARN]: Gram the Sword of Grief group component should be set to 1 or 0. Actual value: %zst_group_1607_gram_grief%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1608_aule_martial_staff != 0 AND zst_group_1608_aule_martial_staff != 1 BEGIN
+            WARN "[WARN]: Aule's Martial Staff group component should be set to 1 or 0. Actual value: %zst_group_1608_aule_martial_staff%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1609_impaler != 0 AND zst_group_1609_impaler != 1 BEGIN
+            WARN "[WARN]: Impaler group component should be set to 1 or 0. Actual value: %zst_group_1609_impaler%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1696_harbinger != 0 AND zst_group_1696_harbinger != 1 BEGIN
+            WARN "[WARN]: Harbinger group component should be set to 1 or 0. Actual value: %zst_group_1696_harbinger%"
+            LAM f_plus
+        END
+        
+        ACTION_IF zst_group_1708_sword_of_chaos != 0 AND zst_group_1708_sword_of_chaos != 1 BEGIN
+            WARN "[WARN]: Sword of Chaos group component should be set to 1 or 0. Actual value: %zst_group_1708_sword_of_chaos%"
+            LAM f_plus
+        END
+
+        // -------------------------------------------------------------------------------------------------------- \\
+
+        ACTION_IF failures > 0 BEGIN
+            FAIL "[FAIL]: There were %failures% errors in the settings. Please check the logs and revise."
+
+            ACTION_IF crash_if_var_errors_found BEGIN
+                FAIL "ABORTING INSTALLATION DUE TO ERRORS"
+            END
+            
+        END ELSE BEGIN
+            PRINT "[INFO]: All good with the settings, proceeding..."
+        END
+
+
+    END
+    OUTER_SET zs_vars_check = 1
+END

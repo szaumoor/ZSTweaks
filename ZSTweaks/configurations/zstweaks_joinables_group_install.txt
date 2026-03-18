@@ -1,5 +1,6 @@
 // Set here to "1" those components that you wish you install as part of the group installation of npc tweaks
 // Set to 0 to DISABLE
+// DO NOT change values in this file while the installation runs.
 
 OUTER_SET zst_group_1380_haerdalis_blades   = "1"
 OUTER_SET zst_group_1480_yoshimo_katana     = "1"
@@ -16,6 +17,7 @@ OUTER_SET zst_group_1646_sarevok            = "1"
 OUTER_SET zst_group_1647_sharteel           = "1"
 OUTER_SET zst_group_2240_hexxat_blood_drain = "1"
 OUTER_SET zst_group_2250_edwin_amulet       = "1"
+OUTER_SET zst_group_1556_jaheira_items      = "1"
 
 
 

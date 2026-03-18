@@ -1058,3 +1058,24 @@ Less than 4 HD, or with 40 Hit Points or less — Destroyed or killed instantly
 12 HD and up — Blinded and deafened for 4 rounds with a 50% chance of spell failure
 
 This spell is not affected by Magic Resistance, but side effects are negated for deafened targets, and on targets that have no hearing, except in the case of killing effects, and the banishment of summoned creatures. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that priests of good alignment may not cast this spell.~
+
+@800000 = ~Mold Touch
+(Alteration)
+
+Level: 3
+Sphere: Plant
+Range: Touch
+Duration: Special
+Casting Time: 4
+Area of Effect: 10-ft. radius
+Saving Throw: Special
+
+This spell infects the creature the caster touches with a rapidly spreading brown mold that quickly dies once the spell expires. The brown mold is attracted to heat and becomes more aggressive the more body heat the victim has. As a consequence, if the infected creature fails a Save vs. Spell, the infection is severe, causing the creature to take 4d6 cold damage immediately, 3d6 cold damage twice in the next 2 rounds, and finally, 2d6 cold damage at the fourth round, ending the spell. If, however, the Saving Throw is successful, the damage taken is only 2d6 per round, lasting only three rounds. Each round after the first, the nearest creature within 10 ft. of the victim must make a Save vs. Spell or be infected by the mold at full strength. This process continues until the mold fails to infect a suitable host in time. Creatures already under the effects of the mold cannot contract it again for its duration, and the druid who cast it is completely immune to it.
+
+Because of the nature of the mold, it affects certain creatures differently:
+
+— Fire-based creatures (such as Fire Elementals) always take full damage, as the mold aggressively consumes the heat.
+— Other elementals, cold-based creatures, corporeal undead, myconids, plants, and constructs are immune to it, but may pass it to others.
+— All spectral and mist creatures are immune and cannot carry it either.
+— It cannot affect targets protected by elemental shields.
+— Cannot be blocked by Magic Resistance, but it can be dispelled.~

@@ -1,6 +1,5 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  INCLUDE "%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt"
   COPY_EXISTING "npsw02.itm" ~override~
     LPF ALTER_HEADER INT_VAR match_type = 1 match_speed = 3 speed = 1 END
     SET proficiency = (1 << 16) | 94

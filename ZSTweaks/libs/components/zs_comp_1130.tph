@@ -2,9 +2,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     WITH_SCOPE BEGIN
         OUTER_SET general_tweaks_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~
-        ACTION_IF general_tweaks_installed BEGIN
-            INCLUDE ~%MOD_FOLDER%/configurations/zstweaks_general_group_install.txt~
-        END
 
         COPY "%MOD_FOLDER%/items/boneblade" ~override~
         COPY_EXISTING ~dagg14.itm~ ~override~
