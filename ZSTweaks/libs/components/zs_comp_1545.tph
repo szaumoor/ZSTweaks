@@ -242,7 +242,7 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
             5 => 16 10 => 15  15 => 13  20 => 12
         END
 
-        ACTION_DEFINE_ASSOCIATIVE_ARRAY wand_wizard_table BEGIN
+        ACTION_DEFINE_ASSOCIATIVE_ARRAY wands_wizard_table BEGIN
             1 => 11 6  => 9  11 => 7  16 => 5  21 => 3
             2 => 11 7  => 9  12 => 7  17 => 5  
             3 => 11 8  => 9  13 => 7  18 => 5  
@@ -312,6 +312,7 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
     END
 
     ACTION_IF zst_1545_saving_throws_patch AND incl BEGIN
+        PRINT "[INFO]: Patching creatures with the new saving throw tables..."
         OUTER_SET tolerance = 2
 
         COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
@@ -326,7 +327,7 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
 
             PATCH_IF first_level > 0 AND general = general_humanoid BEGIN
 
-                PATCH_IF class = class_thief OR class = class_bard BEGIN
+                PATCH_IF zst_1545_saving_throws_rogue AND class = class_thief OR class = class_bard BEGIN
 
                     SET resolved_level = first_level > 21 ? 21 : first_level
                     PATCH_IF ABS (save_death - $death_rogue_table("%resolved_level%")) > tolerance BEGIN
@@ -349,7 +350,7 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
                         WRITE_BYTE 0x58 $spell_rogue_table("%resolved_level%")
                     END                   
 
-                END ELSE PATCH_IF class = class_cleric OR class = class_druid OR class = class_shaman BEGIN
+                END ELSE PATCH_IF zst_1545_saving_throws_priest AND class = class_cleric OR class = class_druid OR class = class_shaman BEGIN
 
                     SET resolved_level = first_level > 19 ? 19 : first_level
                     PATCH_IF ABS (save_death - $death_priest_table("%resolved_level%")) > tolerance BEGIN
@@ -372,7 +373,7 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
                         WRITE_BYTE 0x58 $spell_priest_table("%resolved_level%")
                     END                   
 
-                END ELSE PATCH_IF class = class_fighter OR class = class_paladin OR class = class_ranger BEGIN
+                END ELSE PATCH_IF zst_1545_saving_throws_warrior AND class = class_fighter OR class = class_paladin OR class = class_ranger BEGIN
 
                     SET resolved_level = first_level > 17 ? 17 : first_level
                     PATCH_IF ABS (save_death - $death_warrior_table("%resolved_level%")) > tolerance BEGIN
@@ -395,7 +396,7 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
                         WRITE_BYTE 0x58 $spell_warrior_table("%resolved_level%")
                     END  
 
-                END ELSE PATCH_IF class = class_mage OR class = class_sorcerer BEGIN
+                END ELSE PATCH_IF zst_1545_saving_throws_wizard AND class = class_mage OR class = class_sorcerer BEGIN
                     
                     SET resolved_level = first_level > 21 ? 21 : first_level
                     PATCH_IF ABS (save_death - $death_wizard_table("%resolved_level%")) > tolerance BEGIN
@@ -418,7 +419,7 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
                         WRITE_BYTE 0x58 $spell_wizard_table("%resolved_level%")
                     END 
 
-                END ELSE PATCH_IF class = class_monk BEGIN
+                END ELSE PATCH_IF zst_1545_saving_throws_monk AND class = class_monk BEGIN
 
                     SET resolved_level = first_level > 19 ? 19 : first_level
                     PATCH_IF ABS (save_death - $death_monk_table("%resolved_level%")) > tolerance BEGIN

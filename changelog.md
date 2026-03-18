@@ -8,7 +8,6 @@
 - Fixed shadow creature component affecting only the shadows from my shadowdancer overhaul (if installed) instead of affecting all other than those, as it was intended
 - Fixed some components modifying undefined amount of creatures erroneously marking files as modified even when no changes were applied to them
 - Added sanity file existence check for some components
-- Fixed bug when installing Vexation tweak that causes it to fail due to missing code
 - Various fixes causing installation errors when installing components in a non-linear way or jumping components
 - Fixed Entropy +2 being restricted to Blades, since that is no longer part of the design
 - Chromatic Orb from Avengers now benefit from the component for the spell
@@ -46,7 +45,7 @@
   - Minor description fix since the logic in the second paragraph is backwards.
   - Must be installed as an end-of-installation component due to implementation details, or at least after you're sure no other component will add on-equip effect to it.
 - Make all single-classed thieves apply a Sneak Attack Crippling strike on backstabs
-- Make IWD evasion balanced (TODO)
+- Make IWD evasion balanced
   - Some options to choose:
     - Evasion attempts can critically miss (5%). This pairs well with my saving throw overhaul, if you feel that the improved saves vs. breath gives them too much advantage.
     - Only single-classed thieves can evade
