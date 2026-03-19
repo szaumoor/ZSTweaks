@@ -5,6 +5,27 @@ OUTER_FOR ( pro_n = 0; pro_n <=6; ++pro_n ) BEGIN
     LPF ALTER_HEADER INT_VAR projectile = "%zstchrp%pro_n%%" speed = 0 END
 END 
 
+COPY_EXISTING ~zstwchr1.spl~ ~override~ // orange
+  LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@75002) END
+
+COPY_EXISTING ~zstwchr3.spl~ ~override~ // light blue
+  LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@75003) END
+
+COPY_EXISTING ~zstwchr0.spl~ ~override~ // white
+  LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@75001) END
+
+COPY_EXISTING ~zstwchr2.spl~ ~override~ // green
+  LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@75004) END
+
+COPY_EXISTING ~zstwchr4.spl~ ~override~ // black
+  LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@75007) END
+
+COPY_EXISTING ~zstwchr5.spl~ ~override~ // purple
+  LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@75006) END
+
+COPY_EXISTING ~zstwchr6.spl~ ~override~ // yellow
+  LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@75005) END
+
 DEFINE_PATCH_MACRO apply_changes BEGIN
   LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@75000) END
   LPF DELETE_EFFECT END
@@ -19,6 +40,7 @@ COPY_EXISTING ~spdr101.spl~ ~override/zstdr118.spl~
 COPY_EXISTING ~spwi118.spl~ ~override~
   SPRINT sp_res "zstwi118"
   LPM apply_changes
+
 COPY_EXISTING ~spdr101.spl~ ~override~
   SPRINT sp_res "zstdr118"
   LPM apply_changes
