@@ -30,7 +30,7 @@ DEFINE_PATCH_MACRO apply_changes BEGIN
   LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@75000) END
   LPF DELETE_EFFECT END
   LPF ALTER_HEADER INT_VAR projectile = 1 END
-  LPF ADD_SPL_SELFEFF INT_VAR rd=0 STR_VAR effects=~op=326,p1=2,p2=102,res=zstchrm0;op=326,p1=2,p2=112,res=%sp_res%~ END
+  LPF ADD_SPL_SELFEFF INT_VAR rd=0 STR_VAR effects=~op=326,p1=2,p2=102,res=%scaling_spl%;op=326,p1=2,p2=112,res=%sp_res%~ END
   LPF ~CD_TRIM-O-MATIC~ INT_VAR level_cap = 1 END
 END
 
@@ -39,9 +39,14 @@ COPY_EXISTING ~spdr101.spl~ ~override/zstdr118.spl~
 
 COPY_EXISTING ~spwi118.spl~ ~override~
   SPRINT sp_res "zstwi118"
+  SPRINT scaling_spl "zstchrm0"
   LPM apply_changes
+
+COPY_EXISTING ~zstchrm0.spl~ ~override/zstchrm1.spl~
+  LPF ALTER_SPELL INT_VAR spell_type = 2 END
 
 COPY_EXISTING ~spdr101.spl~ ~override~
   SPRINT sp_res "zstdr118"
+  SPRINT scaling_spl "zstchrm1"
   LPM apply_changes
   
