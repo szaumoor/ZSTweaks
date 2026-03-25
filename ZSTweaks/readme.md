@@ -22,7 +22,7 @@ For best results, this mod should be installed after other content mods, such as
 
 Compatibility with other tweak mods that affect the same content depends on the specific changes. While some tweaks may be compatible, others with conflicting designs could lead to unbalanced results or installation failures. Please be judicious when combining tweaks that serve a similar purpose.
 
-I am open to providing compatibility for other mods. You can contact me on the forums or at <kaelyn@tuta.io> with any requests or questions. So far, compatibility has been added to:
+I am open to providing compatibility for other mods. You can contact me on the forums or at <kaelyn@tuta.io> with any requests or questions. So far, compatibility *some* compatibility has been added for:
 
 - EEFixpack
 - Forgotten Armaments

@@ -1257,6 +1257,16 @@ You get this weapon fairly late in BGEE, and it sucks. Also, "cold-using creatur
 
 This slightly improves the largely unremarkable +1 short sword by giving wielders a 7% chance each time they're hit to be affected by Blur.
 
+### Make Balduran's Swords better and draw inspiration from BG3 (1705) (BG2EE EET)
+
+This standardizes the swords as either long swords or bastard swords. And now:
+
+- They act by default as +2, +4 vs. all shapeshifting creatures, including druids, dragons, and rakshasas.
+- Deal +4 magic damage against those
+- Increases Magic Resistance by 7% and Save vs. Spell by +2
+
+You have the option to select which type of sword to standardize it to, and also whether it should be renamed as it is in BG3. It's all in the preferences file.
+
 </details>
 
 ---
@@ -1292,6 +1302,8 @@ This makes the mace +3 for consistency with the power level of other WA-weapons.
 ### Make Flail of Ages +5 allow Haste and Improved Haste and improve it slightly (1320) (BG2EE EET)
 
 I think everyone agrees that this type of restriction (Free Action) makes the weapons immediately less appealing. It will not reset your character's movement speed either. A side effect of this component is that the Free Action spell no longer sets movement speed to the baseline. The description was adjusted to reflect that.
+
+Finally is nerfs that ridiculous Slow effect so it reduces duration, and it requires a save vs. Spell to trigger, the penalty for which improves the more powerful the flail is.
 
 ### Make Bone Club reflect the description better and improve it slightly (1321) (BG2EE EET)
 
