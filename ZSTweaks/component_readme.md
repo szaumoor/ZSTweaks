@@ -1336,7 +1336,7 @@ This makes the weapons more interesting in this way:
 - +4 version will increase electric damage output by 5%, the +5 version by 7%
 - +5 version will deal +1 more electric damage on hit
 - +5 version chain lightning effect will have a 12% chance of triggering instead of 5%
-- Whosoever holds this mace, if they be worthy, will have their body crackling with electricity, causing 1d2 electric damage to any who dare hit them, with a 15% chance of stunning them for 1 round if they fail a save vs. Spell at -4
+- Whosoever holds this mace, if they be worthy, will have their body crackle with electricity, causing 1d2 electric damage to any who dare hit them, with a 15% chance of stunning them for 1 round if they fail a save vs. Spell at -4
 
 </details>
 
