@@ -1,0 +1,4 @@
+COPY ~%MOD_FOLDER%/spells/arcane/magic_missile~ ~override~
+COPY_EXISTING ~spwi112.spl~ ~override~
+   LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@75100) END
+   LPF CLONE_EFFECT INT_VAR match_opcode=12 multi_match=1 opcode=326 target=1 parameter2=109 parameter1=kit_mage_invoker STR_VAR resource=~zstmgmis~ END
