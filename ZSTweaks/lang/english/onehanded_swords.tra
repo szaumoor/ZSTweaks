@@ -11,7 +11,7 @@ Equipped abilities:
 
 Combat abilities:
 – Strikes as a +5 weapon for the purposes of overcoming weapon immunities
-– Damage and THAC0 bonuses depends on how far a target's alignment strays from True Neutral:
+– Damage and THAC0 bonuses depend on how far a target's alignment strays from True Neutral:
   vs. Lawful Neutral and Chaotic Neutral: +1 THAC0, +1 slashing and magic damage
   vs. Neutral Good, Neutral Evil: +2 THAC0, +2 slashing and magic damage
   vs. Other Alignments: +3 THAC0, +3 slashing and magic damage
@@ -214,8 +214,9 @@ Weight: 2~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +2, plus +1 against Slashing, Piercing, and Missile
-– +5% resistance to magic and all sources of damage
+– Armor Class: +2, plus +1 vs. Slashing, Piercing, and Missile
+– Magic Resistance: +5%
+– Resistance to Damage (all sources): +5%
 
 THAC0: +4
 Damage: 1d8+4 (piercing)
@@ -227,7 +228,7 @@ Requires:
 
 Weight: 1~
 
-@6120 = ~The daughter of a high ranking official within the bureaucratic society of Kara-Tur, Usuno rejected her family's station and carved a legend for herself among the yakuza of the underworld.
+@6120 = ~The daughter of a high-ranking official within the bureaucratic society of Kara-Tur, Usuno rejected her family's station and carved a legend for herself among the yakuza of the underworld.
 
 The blade of this enchanted ninjatō crackles with electrical energy.
 
@@ -272,7 +273,7 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: +1
-– Can memorize one extra 1st-, 2nd-, 3rd-, and 4th-level wizard spell
+– Can memorize one extra wizard spell of each level from 1st through 4th
 
 THAC0: +3
 Damage: 1d10+3 (slashing)
@@ -292,7 +293,7 @@ Equipped abilities:
 – Immunity to charm and domination spells
 
 Combat abilities:
-– Each hit heals the wielder between 1 and 5 Hit Points. It's more likely to heal less than more.
+– Each hit heals the wielder between 1 and 5 Hit Points. Lower healing amounts are more likely than higher ones
 
 THAC0: +2
 Damage: 1d8+2 (slashing)
@@ -331,8 +332,8 @@ Weight: 4~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +2 plus extra +2 against slashing, piercing and missile weapons
-– Saves vs. Spell: +1
+– Armor Class: +2, plus an extra +2 vs. Slashing, Piercing, and Missile
+– Save vs. Spell: +1
 – +8% physical damage resistance
 
 Combat abilities:
@@ -341,7 +342,7 @@ Combat abilities:
 THAC0: +5
 Damage: 1d8+3 (slashing)
 Speed Factor: 2
-Proficiency type: Scimitar/Wakizashi/Ninjatō
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
 Type: One-handed
 Requires:
  8 Strength
@@ -361,7 +362,8 @@ Equipped abilities:
 – Attacks per round: +1/2
 
 Charge abilities:
-– Twice per day, invoke the spirit of Arannis Alderlight to detect invisibility and evil.
+– Alderlight's Vigilance, twice per day
+  Special: Invoke the spirit of Arannis Alderlight to detect invisibility and evil.
 
 THAC0: +4
 Damage: 1d8+2 (slashing)
@@ -394,7 +396,7 @@ Weight: 3~
 
 @6700 = ~Beroalf was a barbarian who traveled from the cold north in search of adventure. He sought treasures and glory, but soon all he wanted were companions to share in the excitement of battle, much like those he had left behind in his faraway village. Unfortunately, his coarse remarks and rudimentary hygiene repelled most travelers he met, until he expressed his thoughts to a sympathetic mage. The mage, for a price, constructed Ras, the dancing blade. Though not quite what Beroalf had in mind, he was thrilled nonetheless and wielded the sword for many years. How they were ultimately separated is not known.
 
-Apart from the sword's regular properties, it seemingly reacts of its own volition when it's wielded in combat by subtly moving on its own in ways that promote accuracy and deflection in combat.
+Apart from the sword's regular properties, it seemingly reacts of its own volition when wielded in combat by subtly moving on its own in ways that improve accuracy and deflection.
 
 STATISTICS:
 
@@ -422,7 +424,7 @@ Equipped abilities:
 – Immunity to charm and fear
 
 Combat abilities:
-– With every hit, it has a 15% chance of draining 4 levels from the target and healing the wielder by 20 Hit Points as well as hasting <PRO_HIMHER> for 20 seconds and increasing <PRO_HISHER> Strength by 3 points for 20 seconds
+– With every hit, there is a 15% chance to drain 4 levels from the target, heal the wielder by 20 Hit Points, and for 20 seconds, haste the wielder and increase their Strength by 3
 – Acts as a +4 weapon for the purposes of what it can hit
 
 THAC0: +3
@@ -436,7 +438,7 @@ Requires:
 Weight: 4~
 
 @6870 = ~Dragonslayer: Peridan
-Few dare to create items such as this, for who does not fear the wrath of dragons, and what action would more tempt their reckoning? Yet, at a time lost in Faerûn's past, there was a need, and this sword was forged in answer. Tempered by a wizard's skill, this blade protects the wielder from the fear they should rightly feel while staring down a dragon's maw. It also bolsters with regeneration, dispels the trickery of illusions, and dares to inflict grievous wounds against the greatest creatures of the realms.
+Few dare to create items such as this, for who does not fear the wrath of dragons, and what action would more tempt their reckoning? Yet, at a time lost in Faerûn's past, there was a need, and this sword was forged in answer. Tempered by a wizard's skill, this blade protects the wielder from the fear they should rightly feel while staring down a dragon's maw. It also bolsters the wielder with regeneration, dispels the trickery of illusions, and dares to inflict grievous wounds against the greatest creatures of the realms.
 
 STATISTICS:
 
@@ -514,7 +516,7 @@ Equipped abilities:
 
 Charge abilities:
 – Armor Piercing Strike once per day
-  Special: +10 THAC0, +4 damage, and +10% critical hit chances. Can't critically miss.
+  Special: +10 THAC0, +4 damage, and +10% critical hit chance. Can't critically miss.
   Duration: 3 rounds
 
 – Summon Spectral Blade once per day
@@ -542,15 +544,16 @@ From that moment, the blade's latent powers awakened, and the soft whisper that 
 STATISTICS:
 
 Equipped abilities:
-– +10% bonus in Hiding in the Shadows and Move Silently (shadowdancers only)
+– +10% bonus to Hiding in the Shadows and Move Silently (Shadowdancer only)
 
 Combat abilities:
 – Confounding Whisper: each hit drains 2 points of Wisdom from the target for 5 rounds (save vs. Death negates) and causes Confusion for 1 round.
 
 Charge abilities:
-– Shadow Blink three times per day: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, Stalkers, and monks also gain +1 backstab multiplier during this time (doesn't stack).
+– Shadow Blink three times per day
+  Special: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, Stalkers, and Monks also gain a +1 backstab multiplier during this time (doesn't stack).
 
-THAC0: +3, +4 (shadowdancers)
+THAC0: +3, +4 (Shadowdancers)
 Damage: 1d8+3 (piercing)
 Speed Factor: 0
 Proficiency Type: Scimitar/Wakizashi/Ninjatō
@@ -574,15 +577,16 @@ Now upgraded by Cespenar, this sword has reached the pinnacle of its power—its
 STATISTICS:
 
 Equipped abilities:
-– Immune to deafness and all sound-based magic, such as Holy Word and Wail of the Banshee
-– +15% Hide in Shadows and Move Silently (shadowdancer only)
-– 10% chance per hour when hit to be affected by Shadow Form (shadowdancer only)
+– Immunity to deafness and all sound-based magic, such as Holy Word and Wail of the Banshee
+– +15% bonus to Hide in Shadows and Move Silently (Shadowdancer only)
+– 10% chance when hit, once per hour, to be affected by Shadow Form (Shadowdancer only)
 
 Combat abilities:
 – Deadly Whisper: each hit drains 2 points of Wisdom from the target for 5 rounds (save vs. Death at -2 negates) and causes Confusion for 1 round. After one round, there is a 15% chance the sword successfully commands the target to die unless another save vs. Death at -2 succeeds (this can only trigger on the same enemy once every 3 rounds).
 
 Charge abilities:
-– Shadow Blink five times per day: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, stalkers, and monks also gain +1 backstab multiplier during this time (doesn't stack).
+– Shadow Blink five times per day
+  Special: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Shadowdancers, Stalkers, and Monks also gain a +1 backstab multiplier during this time (doesn't stack).
 
 THAC0: +5
 Damage: 1d8+5 (piercing)
@@ -602,10 +606,10 @@ Weight: 2~
 
 STATISTICS:
 
-Equipped Abilities:
+Equipped abilities:
 – Fire Resistance: +50%
 
-Charge Abilities:
+Charge abilities:
 – Cast Delayed Blast Fireball once per day
   Damage: 15d6 fire (Save vs. Spell for half)
   Area of Effect: 15-ft. radius
@@ -646,12 +650,12 @@ Requires:
 
 Weight: 2~
 
-@7560 = ~The benefits inherent in this sword are plain to see: It is exceptionally accurate, and a lick of flame follows every blow, searing the target in addition to the normal damage received, which may linger on the target, causing them to burn even more. It is an efficient troll-killer, though it has not yet been heralded as such in song or legend.
+@7560 = ~The benefits inherent in this sword are plain to see: it is exceptionally accurate, and a lick of flame follows every blow, searing the target in addition to the normal damage received, which may linger on the target, causing them to burn even more. It is an efficient troll-killer, though it has not yet been heralded as such in song or legend.
 
 STATISTICS:
 
 Combat abilities:
-– Lingering flame: if a Save vs. Spell is failed, targets continue to burn, suffering 1d3 points of fire damage per round for 3 rounds
+– Lingering flame: on a failed Save vs. Spell, targets continue to burn, suffering 1d3 points of fire damage per round for 3 rounds
 
 THAC0: +3
 Damage: 2d4+3, plus 1d3+1 fire damage
@@ -666,7 +670,7 @@ Weight: 5~
 
 @7561 = ~Searing~
 
-@7570 = ~The blade of this weapon seems to shimmer, revealing a fluid, razor edge. Truly there was great skill involved in its construction, as well as a blessing or two from some well-meaning eye above, even though the hilt is comparatively almost clumsily adorned.
+@7570 = ~The blade of this weapon seems to shimmer, revealing a fluid, razor-sharp edge. Truly there was great skill involved in its construction, as well as a blessing or two from some well-meaning eye above, even though the hilt is comparatively almost clumsily adorned.
 
 STATISTICS:
 
@@ -690,7 +694,7 @@ STATISTICS:
 
 Combat abilities:
 – Cursed Wound: critical hits prevent most sources of healing for 5/2 rounds
-– +5% critical hit chances with this weapon
+– Critical Hit chance: +5% (this weapon)
 
 THAC0: +2
 Damage: 1d8+2 (slashing)
@@ -704,7 +708,7 @@ Weight: 4~
 
 @7581 = ~Cursed Wound: cannot heal~
 
-@7660 = ~This weapon has a bloody history, having been used to exercise its namesake many times. Popular among the assassin trade for its size and enchantment, it has been in the possession of many of the realms' more dangerous citizens, though seldom remaining in one place for any length of time.
+@7660 = ~This weapon has a bloody history, having been used to carry out its namesake many times. Popular among the assassin trade for its size and enchantment, it has been in the possession of many of the realms' more dangerous citizens, though seldom remaining in one place for any length of time.
 
 STATISTICS:
 
@@ -723,12 +727,12 @@ Requires:
 Weight: 2~
 
 @7670 = ~Short Sword of Backstabbing: The Shadow's Blade
-The Shadow's Blade was created to be the perfect assassin's tool. It is highly sought after by any who settle differences with a blade, and many that possess it do not do so for long.
+The Shadow's Blade was created to be the perfect assassin's tool. It is highly sought after by any who settle differences with a blade, and many who possess it do not do so for long.
 
 STATISTICS:
 
 Combat abilities:
-– Backstab multiplier: +1 (single-classed Thieves-only)
+– Backstab multiplier: +1 (single-classed Thieves only)
 – +2 THAC0 on main hand while holding the blade (single-classed Thieves only)
 
 THAC0: +3
@@ -766,7 +770,7 @@ STATISTICS:
 Equipped abilities:
 – Magic Resistance: +5%
 – Magic Damage Resistance: +10%, +25% for Wizard Slayers and Inquisitors
-– Saves vs. Spell: +4 (Wizard Slayers and Inquisitors), +2 (others)
+– Save vs. Spell: +4 (Wizard Slayers and Inquisitors), +2 (others)
 
 Combat abilities:
 – On a critical hit, the target will be affected by Dispel Magic, which always succeeds
@@ -788,7 +792,7 @@ There was a time before Neverwinter was warm and before the great Anauroch was d
 STATISTICS:
 
 Combat abilities:
-Acts as a +2 weapon in all respects. However, it's more powerful against regenerating, cold-using, and undead creatures:
+Acts as a +2 weapon in all respects. However, it is more powerful against regenerating, cold-using, and undead creatures:
  – Werewolves, trolls, planetars, and devas: it acts as a +3 weapon, and deals 1 extra fire damage
  – Solars: acts as a +4 weapon, and deals 1 extra fire damage
  – Winter wolves and silver dragons: acts as a +4 weapon, and deals 2 extra fire damage
@@ -815,7 +819,7 @@ Equipped abilities:
 
 Combat abilities:
 – Attacks per round: +1
-– Hit target takes 12 points of poison over 2 rounds (save vs. Death negates)
+– On hit, the target takes 12 points of poison damage over 2 rounds (save vs. Death negates)
 
 THAC0: +3, +5 (monks only)
 Damage: 1d8+3, +1 poison damage
@@ -853,7 +857,7 @@ Requires:
 
 Weight: 3~
 
-@50080 = ~This weapon was commissioned by <CHARNAME>, and combines the power of three powerful weapons, Rashad's Talon, Water's Edge, and Adjatha the Drinker, making it a formidable weapon that combines and improves the powers of all three. In addition, however, its mastery over water protects the user from the harmful effects of Horrid Wilting. Most uniquely, the liquid nature of the blade allows it to extend and splash during combat, improving the strike range granted by the weapon to a range of that of two-handed swords.
+@50080 = ~This weapon was commissioned by <CHARNAME>, and combines the power of three powerful weapons, Rashad's Talon, Water's Edge, and Adjatha the Drinker, making it a formidable weapon that combines and improves the powers of all three. In addition, however, its mastery over water protects the user from the harmful effects of Horrid Wilting. Most uniquely, the liquid nature of the blade allows it to extend and splash during combat, granting it the striking range of a two-handed sword.
 
 STATISTICS:
 
@@ -865,7 +869,7 @@ Combat abilities:
 – Double striking range
 – +5% critical hit chances with this weapon
 – Cursed Wound: critical hits prevent most sources of healing for 2 rounds
-– Each hit heals the wielder between 2 and 6 Hit Points. It's more likely to heal less than more.
+– Each hit heals the wielder between 2 and 6 Hit Points. Lower healing amounts are more likely than higher ones
 
 THAC0: +4
 Damage: 1d8+4, plus 1d5+1 cold damage
@@ -899,7 +903,7 @@ Requires:
 
 Weight: 2~
 
-@55100 = ~Bathed in a golden finishing, this magical blade was the favored weapon of Balduran, the famous adventurer who founded the city of Baldur's Gate. It is made with rare metals that allow it to inflict mortal wounds to those that are sensitive to cold iron or silver, such as the loup garou.
+@55100 = ~Bathed in a golden finish, this magical blade was the favored weapon of Balduran, the famous adventurer who founded the city of Baldur's Gate. It is made with rare metals that allow it to inflict mortal wounds to those that are sensitive to cold iron or silver, such as the loup garou.
 
 There's a graceful swarthiness to this sword. The inscription in the steel reads: "My eye wanders far from home / To shores of distant Anchorome."
 
@@ -910,7 +914,7 @@ Equipped abilities:
 – Save vs. Spell: +2
 
 Combat abilities:
-– Acts as a +4 weapon vs. shapeshifters. This includes all druids, lycanthropes, loup garou, mimics, dopplegangers, changelings, demons, devils, rakshasa, and vampires.
+– Acts as a +4 weapon vs. shapeshifters. This includes all druids, lycanthropes, loup garou, mimics, doppelgangers, changelings, demons, devils, rakshasa, and vampires.
 
 THAC0: +2, +4 vs. shapeshifters
 Damage: %baldur_dice%+%baldur_bonus_damage%, +4 magic damage vs. shapeshifters
