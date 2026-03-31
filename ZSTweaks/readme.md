@@ -49,9 +49,9 @@ I also would recommend installing things in the order they're presented in the m
 **For modders**: To add compatibility with other mods, do include the files with the variables in your code to help to detect components and variants thereof. To check that the mod has been installed (any component), you may also check for the existence of the file `zssetup.rp` in override with a ```FILE_EXISTS_IN_GAME``` check. There are two possibilities as to how a component is installed, and both should be combined logically:
 
 - Installed the **specific** component by iterating through the components **manually**. In this case, the detection is a matter of using a ```MOD_IS_INSTALLED "ZSTweaks.tp2" "<component_number>"```. As every component is part of a group-installing component, this is never sufficient.
-- Installed as part of a user-defined selection. In this case, you would have to first check that the group-install component is installed, and that the variable that _allows_ that component inside is set to 1. An example would be ```MOD_IS_INSTALLED "ZSTweaks.tp2" "1301" AND zst_group_1328_mace_storm_star```, which would tell you if the user has installed my tweak to Storm Star, as part of their personal selection. This should be combined with the previous check.
+- Installed as part of a user-defined selection. In this case, you would have to first check that the group-install component is installed, and that the variable that *allow*_ that component inside is set to 1. An example would be ```MOD_IS_INSTALLED "ZSTweaks.tp2" "1301" AND zst_group_1328_mace_storm_star```, which would tell you if the user has installed my tweak to Storm Star, as part of their personal selection. This should be combined with the previous check.
 
-Taking as an example the storm start component, a complete check would be: ```MOD_IS_INSTALLED "ZSTweaks.tp2" "1328" OR (MOD_IS_INSTALLED "ZSTweaks.tp2" "1301" AND zst_group_1328_mace_storm_star)```. This check asks: _is the component installed either individually or as part of its group?_.
+Taking as an example the storm start component, a complete check would be: ```MOD_IS_INSTALLED "ZSTweaks.tp2" "1328" OR (MOD_IS_INSTALLED "ZSTweaks.tp2" "1301" AND zst_group_1328_mace_storm_star)```. This check asks: *is the component installed either individually or as part of its group?*.
 
 Finally, to check variations on the installed component, if there are any, you would also need to include the variables in `configurations/zstweaks_prefs.txt`. That's it. I know it's a bit of pain so if I can, I will provide the compatibility code myself.
 
@@ -62,7 +62,7 @@ Finally, to check variations on the installed component, if there are any, you w
 - DavidW for his very helpful WeiDu tutorial
 - WeiDu devs and the included documentation
 - IESDP, an invaluable resource.
-- moggadeet and JDSilvergun for suggesting lines of dialog for Cespenar
+- Moggadeet and JDSilvergun for suggesting lines of dialog for Cespenar
 - Angel for sharing information about PnP stuff that helped me design some tweaks
 - Troveur for ideas, feedback, and suggestions
 - People on Discord for their help, and the great modders out there that share their code

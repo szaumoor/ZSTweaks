@@ -625,3 +625,15 @@ BLACK: Causes 1d4+1 magic damage and slays target if they fail a save vs. Spell 
 @75006 = ~Purple~
 @75007 = ~Black~
 
+@75100 = ~Magic Missile
+(Evocation)
+
+Level: 1
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell creates up to five missiles of magical energy that dart forth from the wizard's fingertip and unerringly strike their target, which must be a creature of some sort. Each missile inflicts 1d4+1 points of damage (1d5+2 when cast by Invokers). For every 2 extra levels of experience, the wizard gains an additional missile—<PRO_HESHE> has 2 at 3rd level, 3 at 5th level, 4 at 7th level, up to a total of 5 at 9th level.~
+

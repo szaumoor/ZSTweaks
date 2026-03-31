@@ -70,6 +70,7 @@
 @1397 = ~Make rangers, thieves, and monks hit harder with ranged weapons if invisible~
 @1532 = ~Make bracers, belts and boots grant +1 HP, so even unenchanted variants have an actual use~
 @1548 = ~Make Void-weapons slightly more effective and logical~
+@1559 = ~Make Protection From Magic scroll not a cheesy way to dispel all magic from an enemy~
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -86,7 +87,7 @@
 @1610 = ~Make Robe of Invocation increase elemental damage and defense~
 @1620 = ~Make Thayan Circlet more interesting for wild mages~
 @1651 = ~Make Studded Leather of Thorns cause some piercing damage too~
-@1652 = ~Make Grandmaster's Armor's better and grant perks to backstabbers~
+@1652 = ~Make Grandmaster's Armor better and grant perks to backstabbers~
 @1653 = ~Make Thieves' Hood better and grant perks to single-classed thieves~
 @1654 = ~Make Star-Strewn Boots better and favor Inquisitors too~
 @1655 = ~Make Crown of Lies more consequential when used (SoD)~
@@ -99,7 +100,7 @@
 @1663 = ~Make Sandthief Ring consistently grant one use of invisibility per day~
 @1664 = ~Make ioun stones and/or circlets protect vs. critical hits~
 @1665 = ~Make ioun stones and circlets a bit more interesting or powerful~
-@1666 = ~Make Bracers of Blinding's more generally useful for everyone~
+@1666 = ~Make Bracers of Blinding more generally useful for everyone~
 @1667 = ~Make Xarrnous's Second Sword Arm also add +1 damage~
 @1668 = ~Make The Dale's Protector slightly more powerful and open to all classes~
 @1669 = ~Make Gauntlets of Extraordinary Specialization improve THAC0 by 2 and open to all classes~
@@ -110,7 +111,7 @@
 @1675 = ~Make Cloak of Displacement add +5% damage resistance~
 @1676 = ~Make Skull of Death add casting of Finger of Death and protect vs. necromantic death effects~
 @1677 = ~Make Wondrous Gloves Wondrous~
-@1678 = ~Make Senses of the Cat imbue the user of more cat-like features~
+@1678 = ~Make Senses of the Cat imbue the user with more cat-like features~
 @1679 = ~Make the Horn of Kazgaroth more useful and unique~
 @1190 = "Make Rod of Lordly Might usable by any class and more powerful"
 @1195 = ~Make Gloves of Healing worth more than what you get by selling them~
@@ -227,7 +228,7 @@
 @1321 = "Make Bone Club reflect the description better and improve it slightly"
 @1324 = ~Make Wyvern's Tail more poisonous~
 @1325 = ~Make Borok's Fist different from Ashideena~
-@1327 = ~Make Club of Detonation's better and its fireball power class-agnostic~
+@1327 = ~Make Club of Detonation better and its fireball power class-agnostic~
 @1328 = ~Make Storm Star more shockingly electrifying~
 
 // RANGED WEAPONS
@@ -284,7 +285,7 @@
 @445 = ~Make Bigby's spells more powerful~
 @446 = ~Make fireball-type spells improve more with level and/or improve explosion animations~
 @447 = ~Make Melf's Acid Arrow have a chance of splashing enemies and bypass magic resistance~
-@448 = ~Make Decastave grant one extra proficiency point with staff while it's held~
+@448 = ~Make Decastave grant one extra proficiency point with staves while it's held~
 @449 = ~Make Otiluke's Freezing Sphere deal half damage on save~
 @451 = ~Make Chain Lightning scale more strongly and spread faster to enemies~
 @452 = ~Make Icelance upgrade damage every 2 levels up to 10d6~
@@ -296,6 +297,7 @@
 @558 = ~Make Agannazar's Scorcher not pause the caster~
 @561 = ~Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance~
 @562 = ~Make Imprisonment prevent movement while the animation plays out~
+@572 = ~Make Magic Missiles inflict 1d5+2 magic damage when cast by Invokers~
 
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20"

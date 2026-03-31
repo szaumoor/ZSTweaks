@@ -107,3 +107,7 @@ END
 ACTION_IF zst_group_1532_unenchanted_items_1hp BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1532.tph~ END
 END
+
+ACTION_IF zst_group_1559_protection_from_magic BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1559.tph~ END
+END
