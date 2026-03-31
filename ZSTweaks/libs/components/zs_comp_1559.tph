@@ -1,0 +1,2 @@
+COPY_EXISTING ~scrl07.itm~ ~override~
+    LPF ADD_ON_HIT STR_VAR effects = "t=3,op=318,ip=0,p2=51" END

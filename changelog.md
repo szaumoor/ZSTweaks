@@ -11,5 +11,5 @@
   
 ## New Components
 
-- Make Protection From Magic scroll not a cheesy way to dispel all magic from an enemy (TODO) (IWDEE BGEE BG2EE EET)
-- Make Magic Missiles inflict 1d2 extra magic damage when cast by Invokers
+- Make Protection From Magic scroll not a cheesy way to dispel all magic from an enemy (1559) (IWDEE BGEE BG2EE EET)
+- Make Magic Missiles inflict 1d2 extra magic damage when cast by Invokers (572) (IWDEE BGEE BG2EE EET)

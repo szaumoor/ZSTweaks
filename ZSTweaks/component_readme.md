@@ -330,6 +330,10 @@ Optionally, you can give the same treatment to body armors (including robes), cl
 
 Just a small bonus to make it more interesting and different compared to heavy crossbows. It's not too far-fetched to think smaller crossbows can be reloaded faster. This will affect crossbows that have an APR bonus already, such as crossbows of speed.
 
+### Make Protection From Magic scroll not a cheesy way to dispel all magic from an enemy (1559) (IWDEE BGEE BG2EE EET)
+
+This simply makes the scroll not work on targets that are currently enemies, to remove the temptation to use this scroll to invalidate all their magic protections. It's a rough fix and there are situations where it will still work out. Another way to fix it would be to make the scroll self-only, but I went for making enemies immune for now.
+
 </details>
 
 ---
@@ -1768,6 +1772,10 @@ This change to the save bonus does not affect special abilities outside the spel
 ### Make Imprisonment prevent movement while the animation plays out (562) (IWDEE BGEE BG2EE EET)
 
 Just a small tweak to make it look better, in my opinion. It's probably compatible with any other tweak to the spell.
+
+### Make Magic Missiles inflict 1d2 extra magic damage when cast by Invokers (572) (IWDEE BGEE BG2EE EET)
+
+Each missile will effectively deal, instead of 2-5 points of damage, 3-7 damage. This is the first in a conceived series of new tweaks to give specialist wizards more incentives.
 
 </details>
 

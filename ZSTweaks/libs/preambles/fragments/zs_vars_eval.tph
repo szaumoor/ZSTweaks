@@ -1493,6 +1493,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
+        ACTION_IF zst_group_1559_protection_from_magic != 0 AND zst_group_1559_protection_from_magic != 1 BEGIN
+            WARN "[WARN]: Protection from Magic group component should be set to 1 or 0. Actual value: %zst_group_1559_protection_from_magic%"
+            LAM f_plus
+        END
+
         // ----------------------------------------GROUP COMP VARIABLES (ARCANE)------------------------------------------------- \\
 
         ACTION_IF zst_group_140_finger_death != 0 AND zst_group_140_finger_death != 1 BEGIN
@@ -1657,6 +1662,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         ACTION_IF zst_group_562_imprisonment != 0 AND zst_group_562_imprisonment != 1 BEGIN
             WARN "[WARN]: Imprisonment group component should be set to 1 or 0. Actual value: %zst_group_562_imprisonment%"
+            LAM f_plus
+        END
+ 
+        ACTION_IF zst_group_572_magic_missile != 0 AND zst_group_572_magic_missile != 1 BEGIN
+            WARN "[WARN]: Magic Missile group component should be set to 1 or 0. Actual value: %zst_group_562_imprisonment%"
             LAM f_plus
         END
 
