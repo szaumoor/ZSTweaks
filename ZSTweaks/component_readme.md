@@ -1773,9 +1773,9 @@ This change to the save bonus does not affect special abilities outside the spel
 
 Just a small tweak to make it look better, in my opinion. It's probably compatible with any other tweak to the spell.
 
-### Make Magic Missiles inflict 1d2 extra magic damage when cast by Invokers (572) (IWDEE BGEE BG2EE EET)
+### Make Magic Missiles inflict 1d5+2 magic damage when cast by Invokers (572) (IWDEE BGEE BG2EE EET)
 
-Each missile will effectively deal, instead of 2-5 points of damage, 3-7 damage. This is the first in a conceived series of new tweaks to give specialist wizards more incentives.
+This is the first in a conceived series of new tweaks to give specialist wizards more incentives. Install this after any other mod that affects the effects of the spell, as the implementation requires moving their current state to subspells. Any tweak for the spell applied after this one will likely not work as expected.
 
 </details>
 

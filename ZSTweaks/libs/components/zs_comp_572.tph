@@ -1,4 +1,32 @@
-COPY ~%MOD_FOLDER%/spells/arcane/magic_missile~ ~override~
+LAF cd_clone_spell STR_VAR source="spwi112" destination="zstmgmi0" END // invoker
+LAF cd_clone_spell STR_VAR source="spwi112" destination="zstmgmi1" END // non invoker
+
+COPY_EXISTING ~zstmgmi0.spl~ ~override~
+   LPF ALTER_SPELL INT_VAR desc = 0 name = 0 STR_VAR casting_sound = "" END
+   LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize=5 parameter1=2 END
+
+COPY_EXISTING ~zstmgmi1.spl~ ~override~
+   LPF ALTER_SPELL INT_VAR desc = 0 name = 0 STR_VAR casting_sound = "" END
+
+LAF cd_clone_spell STR_VAR source="zstmgmi0" destination="zstmgmi2" END // invoker
+LAF cd_clone_spell STR_VAR source="zstmgmi0" destination="zstmgmi3" END // non invoker
+
+COPY_EXISTING ~zstmgmi2.spl~ ~override~
+              ~zstmgmi3.spl~ ~override~
+   LPF DELETE_EFFECT END
+   LPF ALTER_HEADER INT_VAR projectile = 1 END
+   LPF ~CD_TRIM-O-MATIC~ INT_VAR level_cap = 1 END
+
+COPY_EXISTING ~zstmgmi2.spl~ ~override~
+   LPF ADD_SPL_TGTEFF STR_VAR effects = ~rd=0,t=99,op=146,p2=1,res=zstmgmi0,pwr=100~ END
+
+COPY_EXISTING ~zstmgmi3.spl~ ~override~
+   LPF ADD_SPL_TGTEFF STR_VAR effects = ~rd=0,t=99,op=146,p2=1,res=zstmgmi1,pwr=100~ END
+
 COPY_EXISTING ~spwi112.spl~ ~override~
    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@75100) END
-   LPF CLONE_EFFECT INT_VAR match_opcode=12 multi_match=1 opcode=326 target=1 parameter2=109 parameter1=kit_mage_invoker STR_VAR resource=~zstmgmis~ END
+   LPF ALTER_HEADER INT_VAR projectile = 1 END
+   LPF CLONE_EFFECT INT_VAR power=100 match_opcode=12 multi_match=1 opcode=326 target=1 dicesize=0 timing=0 resist_dispel=0 dicenumber=0 parameter2=109 parameter1=kit_mage_invoker STR_VAR resource=~zstmgmi2~ END
+   LPF CLONE_EFFECT INT_VAR power=100 match_opcode=12 multi_match=1 opcode=326 target=1 dicesize=0 timing=0 resist_dispel=0 dicenumber=0 parameter2=zs_not_equal_kit parameter1=kit_mage_invoker STR_VAR resource=~zstmgmi3~ END
+   LPF DELETE_EFFECT_EX INT_VAR check_globals = 0 STR_VAR match_opcode_ex = "(o_opcode != 326)" END
+   
