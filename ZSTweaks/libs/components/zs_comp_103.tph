@@ -111,3 +111,7 @@ END
 ACTION_IF zst_group_1559_protection_from_magic BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1559.tph~ END
 END
+
+ACTION_IF zst_group_582_true_sight BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_582.tph~ END
+END

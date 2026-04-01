@@ -1497,6 +1497,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Protection from Magic group component should be set to 1 or 0. Actual value: %zst_group_1559_protection_from_magic%"
             LAM f_plus
         END
+      
+        ACTION_IF zst_group_582_true_sight != 0 AND zst_group_582_true_sight != 1 BEGIN
+            WARN "[WARN]: True Sight group component should be set to 1 or 0. Actual value: %zst_group_582_true_sight%"
+            LAM f_plus
+        END
 
         // ----------------------------------------GROUP COMP VARIABLES (ARCANE)------------------------------------------------- \\
 
