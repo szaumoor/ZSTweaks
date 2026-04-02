@@ -1,9 +1,9 @@
-@6050 = ~This blade is one of Haer'Dalis's favorite weapons. Made from green steel tempered from ore found only in the Nine Hells of Baator, this abyssal short sword is capable of inflicting an additional poison damage if the target fails to resist it. This blade may only be used by tieflings.
+@6050 = ~This blade is one of Haer'Dalis's favorite weapons. Made from green steel tempered from ore found only in the Nine Hells of Baator, this abyssal short sword is capable of inflicting additional poison damage if the target fails to resist it. This blade may only be used by tieflings.
 
 STATISTICS:
 
 Combat abilities:
-– Hit target must save vs. Poison at -1 or suffer 6 points of poison damage over 3 seconds
+– Hit target must Save vs. Poison at -1 or suffer 6 points of poison damage over 3 seconds
 – Considered a +3 enchanted weapon for the purposes of what it can hit
 – Attacks per round: +1/2
 
@@ -17,12 +17,12 @@ Requires:
 
 Weight: 2~
 
-@6051 = ~Chaos is a short sword usable only by tieflings. Every time it strikes an opponent, he or she is temporarily weakened. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
+@6051 = ~Chaos is a short sword usable only by tieflings. Every time it strikes an opponent, the target is temporarily weakened. Haer'Dalis prefers using Chaos with its partner—Entropy. When dual wielding these two blades, Haer'Dalis is a dangerous opponent.
 
 STATISTICS:
 
 Combat abilities:
-– Touch of Chaos: For two rounds, hit target suffers a non-stacking -5 Dexterity penalty and, chosen randomly, a stacking -1 penalty to saving throws vs. Poison, Armor Class, THAC0, or Damage. Constructs such as golems are unaffected.
+– Touch of Chaos: For two rounds, hit target suffers a non-stacking -5 Dexterity penalty and one randomly chosen stacking -1 penalty to saving throws vs. Poison, Armor Class, THAC0, or Damage. Constructs such as golems are unaffected.
 – Considered a +3 enchanted weapon for the purposes of what it can hit
 – Attacks per round: +1/2
 
@@ -36,12 +36,12 @@ Requires:
 
 Weight: 2~
 
-@6052 = ~This blade is one of Haer'Dalis's favorite weapons. Made from green steel tempered from ore found only in the Nine Hells of Baator, this abyssal short sword is capable of inflicting an additional poison damage if the target fails to resist it. This blade may only be used by tieflings.
+@6052 = ~This blade is one of Haer'Dalis's favorite weapons. Made from green steel tempered from ore found only in the Nine Hells of Baator, this abyssal short sword is capable of inflicting additional poison damage if the target fails to resist it. This blade may only be used by tieflings.
 
 STATISTICS:
 
 Combat abilities:
-– Hit target must save vs. Poison at -2 or suffer 9 points of poison damage over 3 seconds
+– Hit target must Save vs. Poison at -2 or suffer 9 points of poison damage over 3 seconds
 – Considered a +5 enchanted weapon for the purposes of what it can hit
 – Attacks per round: +1/2
 
@@ -60,7 +60,7 @@ Weight: 2~
 STATISTICS:
 
 Combat abilities:
-– Touch of Chaos: For two rounds, hit target suffers a non-stacking -5 Dexterity penalty and, chosen randomly, a stacking -1 penalty to saving throws vs. Poison, Armor Class, THAC0, or Damage. Constructs such as golems are unaffected.
+– Touch of Chaos: For two rounds, hit target suffers a non-stacking -5 Dexterity penalty and one randomly chosen stacking -1 penalty to saving throws vs. Poison, Armor Class, THAC0, or Damage. Constructs such as golems are unaffected.
 – Considered a +5 enchanted weapon for the purposes of what it can hit
 – Attacks per round: +1/2
 
@@ -94,7 +94,7 @@ Type: Two-handed
 Weight: 8~
 
 // requirements tweak only
-@6241 = ~Keldorn distinguished himself early in his career as a paladin and received this blade as a boon from Torm. It is exceptionally accurate, but also protects him in battle with a special Fireshield, and any that strike him while he wields it suffer Torm's wrath in the form of magical damage. None but Keldorn may use this sword.
+@6241 = ~Keldorn distinguished himself early in his career as a paladin and received this blade as a boon from Torm. It is exceptionally accurate, but also protects him in battle with a special magical shield, and any that strike him from the front while he wields it suffer Torm's wrath in the form of magical damage. None but Keldorn may use this sword.
 
 STATISTICS:
 
@@ -115,13 +115,13 @@ STATISTICS:
 
 Equipped abilities:
 – Saving Throws: +1
-– Immune to movement-limiting effects
+– Immunity to movement-limiting effects
 
 Armor Class: 0 (-4 vs. slashing, -3 vs. piercing and missile)
 
 Weight: 70~
 
-@6250 = ~This is Anomen's family shield, given to him by his father. In addition to magical protection, the shield radiates an aura that grants the wielder fire and cold resistance. To protect against ranged attacks, Anomen can use the shield to erect a field of energy. This protection from normal missiles can be used three times per day.
+@6250 = ~This is Anomen's family shield, given to him by his father. In addition to magical protection, the shield radiates an aura that grants the wielder resistance to fire and cold. To protect against ranged attacks, Anomen can use the shield to erect a field of energy. This protection from normal missiles can be used three times per day.
 
 STATISTICS:
 
@@ -138,7 +138,7 @@ Charge abilities:
 Weight: 7~
 
 @6260 = ~Sword of Arvoreen +3~
-@6261 = ~Another gift to Mazzy from Arvoreen, this short sword may only be used by her. The enchantments that exist within this sword give it the ability to slow any opponent struck by it.
+@6261 = ~Another gift from Arvoreen to Mazzy, this short sword may only be used by her. The enchantments that exist within this sword give it the ability to slow any opponent struck by it.
 
 STATISTICS:
 
@@ -148,7 +148,7 @@ Equipped abilities:
 
 Combat abilities:
 – Acts as a +4 weapon for the purposes of what it can hit
-– Hit target's movement rate is slowed by 2 for 45 seconds and has a 50% chance of dispelling Haste (Save vs. Wand negates both effects)
+– The target's movement rate is reduced is slowed by 2 for 45 seconds and has a 50% chance of dispelling Haste (Save vs. Wand negates both effects)
 
 THAC0: +4
 Damage: 1d6+3 (piercing)
@@ -161,12 +161,12 @@ Requires:
 Weight: 3~
 
 @6262 = ~Bow of Arvoreen +3~
-@6263 = ~This enchanted bow has been in Mazzy Fentan's possession for several years, given to her by her god, Arvoreen. It is usable only by her, granting a +3 bonus to hit rolls and a +1 to damage.
+@6263 = ~This enchanted bow has been in Mazzy Fentan's possession for several years, given to her by her god, Arvoreen. It is usable only by her.
+
+STATISTICS:
 
 Equipped abilities:
 – Attacks per round: +1/2
-
-STATISTICS:
 
 THAC0: +3
 Damage: +1
@@ -180,11 +180,11 @@ Weight: 2~
 
 @6270 = ~This blade, although only lightly enchanted, has achieved a semblance of awareness, enough so that it allows only Yoshimo to wield it. Any other than he cannot use this flawless katana in battle.
 
-Combat abilities:
-– Yoshimo wields it as if he is specialized in katanas, unless more highly specialized
-– This katana has +10% critical chances to critically hit
-
 STATISTICS:
+
+Combat abilities:
+– Yoshimo wields it as if he had one more proficiency point in katanas
+– +10% chance to score a critical hit
 
 THAC0: +3
 Damage: 1d10+1 (slashing)
@@ -273,7 +273,7 @@ Weight: 9~
 
 @6690 = ~Forged in the black heart of the Abyss by tanar'ri sorcerers for use in the eternal Blood War, this blade was once wielded by the infamous babau assassin Khazzrax the Gasping Death. Lore tells of a blade, black as the night, that Khazzrax would use to slash his victims open, causing fire to briefly flare out of the fresh wound.
 
-In addition to the sword's regular properties, two rival demons have been magically bound within its blade. As they rage with fury at both each other and against their captivity, they thus empower the blade.
+In addition to the sword's regular properties, two rival demons have been magically bound within its blade. As they rage with fury at each other and at their shared captivity, they thus empower the blade.
 
 STATISTICS:
 
@@ -304,10 +304,10 @@ STATISTICS:
 
 Equipped abilities:
 – Armor Class: +2 vs. slashing attacks
-– +1 backstab multiplier
+– Backstab multiplier: +1
 
 Combat abilities:
-– Hit target suffers 3 points of additional poison damage per round for 2 rounds if a save vs. Death at -2 is failed
+– Hit target suffers 3 points of additional poison damage per round for 2 rounds on a failed Save vs. Death at -2
 
 THAC0: +2, +6 against wizards and sorcerers
 Damage: 1d10+2 (slashing)
@@ -336,27 +336,27 @@ Type: One-handed
 
 Weight: 4~
 
-@7120 = ~This armor, long in the Corthala bloodline, protects the user against all forms of attacks. The armor is enchanted so that it grants a +3 bonus to Valygar's Armor Class. It also adds a bonus to resisting acid, fire, and magical damage. The armor also makes Valygar immune to charm while he wears it. As it is specially fitted for Valygar, only he may wear it.
+@7120 = ~This armor, long in the Corthala bloodline, protects the wearer against all forms of attacks. The armor is enchanted so that it grants a +3 bonus to Valygar's Armor Class. It also adds a bonus to resisting acid, fire, and magical damage. The armor also makes Valygar immune to charm while he wears it. As it is specially fitted for Valygar, only he may wear it.
 
 STATISTICS:
 
 Equipped abilities:
 – Immunity to charm
-– Fire, Acid, and Magic damage resistance: +25%
+– Fire, Acid, and Magic Damage Resistance: +25%
 
 Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
 
 Weight: 9~
 
-@7490 = ~When younger, Cernd spent a cycle of seasons meditating on his role within nature. He made no shelter, wanting to feel the land unhindered. Nature may have appreciated the intent, for she also knows that for all their dedication, at times her children can be foolish. Cernd found this cloak before the cold season set in, seemingly woven to fit him from the very undergrowth. The message was clear: He can appreciate the rain while still seeking shelter from it. Only Cernd may use this cloak.
+@7490 = ~When he was younger, Cernd spent a cycle of seasons meditating on his role within nature. He made no shelter, wanting to feel the land unhindered. Nature may have appreciated the intent, for she also knows that for all their dedication, at times her children can be foolish. Cernd found this cloak before the cold season set in, seemingly woven to fit him from the very undergrowth. The message was clear: He can appreciate the rain while still seeking shelter from it. Only Cernd may use this cloak.
 
 STATISTICS:
 
 Equipped abilities:
 – Armor Class: +2
 – Saving Throws: +1
-– Elemental damage resistance: +15%
-– Physical damage resistance: +10%
+– Elemental Damage Resistance: +15%
+– Physical Damage Resistance: +10%
 – Regeneration: +1 HP per 2 rounds
 
 Weight: 3~
@@ -380,7 +380,7 @@ Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
 Weight: 9~
 
 @50031 = ~Corthala Family Armor
-This armor, long in the Corthala bloodline, protects the user against all forms of attacks. The armor has been combined with the Shadow Dragon Armor and is now even better at protecting Valygar. The armor is enchanted so that it grants a +5 bonus to Valygar's Armor Class. It also adds a bonus to Negative Energy Plane energies, Illusion and Necromancy effects, fire, and magical damage. The armor also makes Valygar immune to charm while he wears it. Finally, the armor grants Valygar non-detection while equipped. As it is specially fitted for Valygar, only he may wear it.
+This armor, long in the Corthala bloodline, protects the user against all forms of attacks. The armor has been combined with the Shadow Dragon Armor and is now even better at protecting Valygar. The armor is enchanted so that it grants a +5 bonus to Valygar's Armor Class. It also adds protection against Negative Energy Plane energies, Illusion and Necromancy effects, fire, and magical damage. The armor also makes Valygar immune to charm while he wears it. Finally, the armor grants Valygar non-detection while equipped. As it is specially fitted for Valygar, only he may wear it.
 
 STATISTICS:
 
@@ -397,7 +397,7 @@ Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
 Weight: 9~
 
 @50050 = ~Improved Firecam Full-Plate Armor
-This suit of armor was originally designed for Keldorn and few others may wear it. The suit was later enchanted again at <CHARNAME>'s request and it now provides Keldorn with even more protection. While equipped the suit provides the wearer with a +2 bonus to all saving throws and grants the wearer with immunity to movement-limiting effects such as Web and Grease, and immunity to fear. Despite being incredibly strong, the armor is almost weightless.
+This suit of armor was originally designed for Keldorn and few others may wear it. The suit was later enchanted again at <CHARNAME>'s request and it now provides Keldorn with even more protection. While equipped, the suit provides the wearer with a +2 bonus to all saving throws and grants the wearer immunity to movement-limiting effects such as Web and Grease, and fear. Despite being incredibly strong, the armor is almost weightless.
 
 STATISTICS:
 
@@ -421,7 +421,7 @@ Equipped abilities:
 
 Combat abilities:
 – Dispel Magic on each hit if a Save vs. Spell is failed
-– 30% chance a hit target is silenced for two rounds
+– 30% chance that the hit target is silenced for 2 rounds
 
 THAC0: +5
 Damage: 1d10+5 (slashing)
@@ -439,13 +439,13 @@ Equipped abilities:
 – Armor Class and Saving Throws: +2
 – Fire Resistance: +50%
 – Open Locks and Find Traps: +20%
-– May memorize one extra spell of levels 1 to 5
+– May memorize one extra spell of each level from 1 to 5
 
 Weight: 0~
 
 @7222 = ~Blood Drain
 
-In order to survive, a vampire needs sustenance. This ability will drain the target of 1-4 Constitution and knock the target unconscious for 5 rounds. This ability may be used once per hour (5 turns).
+In order to survive, a vampire needs sustenance. This ability will drain 1-4 points of Constitution from the target and knock them unconscious for 5 rounds. This ability may be used once per hour (5 turns).
 
 Saving Throw: Save vs. Death~
 
@@ -456,10 +456,10 @@ Saving Throw: Save vs. Death~
 STATISTICS:
 
 Equipped abilities:
-– Saves vs. conjuration spells: +2, +4 with his specialization bonus
-– Saves vs. non-conjuration spells: -2
+– Saving Throws vs. Conjuration: +2
+– Saving Throws vs. Non-Conjuration: -2
 – Casting level: +1
-– Extra spell slots: One more for spell level 1 and 2
+– Extra spell slots: One extra spell slot for levels 1 and 2
 
 Weight: 1~
 
@@ -468,10 +468,10 @@ Weight: 1~
 STATISTICS:
 
 Equipped abilities:
-– Saves vs. conjuration spells: +2, +4 with his specialization bonus
-– Saves vs. non-conjuration spells: -2
+– Saving Throws vs. Conjuration: +2
+– Saving Throws vs. Non-Conjuration: -2
 – Casting level: +2
-– Extra spell slots: One more for spell level 1, 2, 3 and 4
+– Extra spell slots: One extra spell slot for levels 1, 2, 3, and 4
 
 Weight: 1~
 
@@ -500,7 +500,7 @@ Launcher: Bow
 Weight: 0~
 
 @70030 = ~Create Bruiser Mates
-This ability crafts 10 of Jan's patented Flasher Master Bruiser Mates, adding them to the character's inventory. Handle with care!~
+This ability crafts 10 of Jan's patented Flasher Master Bruiser Mates, adding them to the user's inventory. Handle with care!~
 
 
 @70040 = ~This is a well-crafted locket, obviously made with care, and typical of keepsake items often given to loved ones. A minor enchantment has attempted to capture the likeness of both <CHARNAME> and Jaheira within, making it a thoughtful gift of remembrance. One side has suffered some smudging, but it is a sweet gift nonetheless.

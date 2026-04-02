@@ -62,7 +62,7 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
 
-Casting a Goodberry spell creates 6 magical berries that the caster can carry with <PRO_HIMHER>. Each berry restores 2d4 Hit Points when eaten and grant a slow regeneration of 1 HP per turn for 8 hours.~
+Casting a Goodberry spell creates 6 magical berries that the caster can carry with <PRO_HIMHER>. Each berry restores 2d4 Hit Points when eaten and grants a slow regeneration of 1 HP per turn for 8 hours.~
 
 @5070 = ~Created by the Goodberry spell, these simple-looking blueberries will heal 2d4 points of damage for each handful of berries eaten and help the body heal faster for 8 hours.
 
@@ -124,7 +124,7 @@ When this spell is cast, a local tremor of fairly high strength rips the ground.
  2nd: All enemies affected take 5d6 points of damage. A successful saving throw vs. Spell with a -4 penalty halves the damage.
  3rd: All enemies affected take 4d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
 
-Special case: stone golems of all kinds, including golem juggernauts, immediately take 5d10 crushing damage on the first tremor, with no save allowed to resist it or take half.
+Special case: stone golems of all kinds, including golem juggernauts, immediately take 5d10 crushing damage on the first tremor, with no save allowed.
 
 Additionally, earth elementals dislike mere mortals toying with the land and there is a 2% chance that casting this spell will cause an earth elemental to appear and attack the party.~
 
@@ -146,7 +146,7 @@ When this spell is cast, a local tremor of fairly high strength rips the ground.
  2nd: All creatures affected take 5d6 points of damage. A successful saving throw vs. Spell with a -4 penalty halves the damage.
  3rd: All creatures affected take 4d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
 
- Special case: stone golems of all kinds, including golem juggernauts, immediately take 5d10 crushing damage on the first tremor, with no save allowed to resist it or take half.
+Special case: stone golems of all kinds, including golem juggernauts, immediately take 5d10 crushing damage on the first tremor, with no save allowed.
 
 Additionally, earth elementals dislike mere mortals toying with the land and there is a 2% chance that casting this spell will cause an earth elemental to appear and attack the party.~
 
@@ -161,7 +161,7 @@ Casting Time: 3
 Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
-By means of this spell, the caster is able to cause plants in the area of effect to entangle creatures within the area. The grasses, weeds, bushes, and even trees wrap, twist, and entwine about the creatures, holding them fast. Once per round, a creature can attempt to save vs. Breath with a +2 bonus to avoid entanglement. The difficulty of the saving throw improves by 1 at level 5 and every fifth level thereafter. An entangled creature can still attack once per round, but receives a -3 penalty to its Armor Class.~
+By means of this spell, the caster is able to cause plants in the area of effect to entangle creatures within the area. The grasses, weeds, bushes, and even trees wrap, twist, and entwine about the creatures, holding them fast. Once per round, a creature can attempt to Save vs. Breath with a +2 bonus to avoid entanglement. The difficulty of the saving throw improves by 1 at level 5 and every fifth level thereafter. An entangled creature can still attack once per round, but receives a -3 penalty to its Armor Class.~
 
 @5110 = ~Poison
 (Necromancy)
@@ -192,7 +192,7 @@ Casting Time: 6
 Area of Effect: The caster
 Saving Throw: None
 
-Through this spell, the caster imbues <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The priest's Strength score is set to 18/00—even if it is normally higher—<PRO_HISHER> THAC0 becomes that of a Fighter of the same level, gains 1/2 attacks per round at level 7 and another one at level 13, and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.~
+Through this spell, the caster imbues <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The priest's Strength score is set to 18/00—even if it is normally higher—<PRO_HISHER> THAC0 becomes that of a Fighter of the same level, <PRO_HESHE> gains 1/2 attacks per round at level 7 and another one at level 13, and gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.~
 
 @5150 = ~Fire Seeds
 (Conjuration/Summoning)
@@ -205,7 +205,7 @@ Casting Time: 9
 Area of Effect: The caster
 Saving Throw: 1/2
 
-Casting the Fire Seed spell creates 12 fire seeds that will appear in the caster's inventory. The seeds will remain in existence for 7 hours after the spell is cast. If they are thrown at an enemy, a fireball will ensue, causing 3d8+5 points of damage to all within a 7-ft. radius unless they make a saving throw vs. Spell for half damage. These seeds are thrown with a THAC0 bonus of +2 and are considered +2 weapons for the purposes of what they can hit.~
+Casting the Fire Seed spell creates 12 fire seeds that will appear in the caster's inventory. The seeds will remain in existence for 7 hours after the spell is cast. If they are thrown at an enemy, they explode in a fireball, causing 3d8+5 points of damage to all within a 7-ft. radius unless they make a saving throw vs. Spell for half damage. These seeds are thrown with a THAC0 bonus of +2 and are considered +2 weapons for the purposes of what they can hit.~
 
 @5160 = ~Created by the Fire Seeds spell. When thrown at opponents, they explode into small fireballs that do 3d8+5 points of damage to everyone within a 7-ft. radius.
 
@@ -227,7 +227,7 @@ Casting Time: 6
 Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
-When this spell is cast, the caster appears to undergo a remarkable transformation. The caster becomes the very ideal of beauty: For a male, this is usually a nymph; for a female, it varies. As with a nymph, anyone viewing the disguised caster must make a saving throw vs. Spell with +2 bonus or die of longing for the denied illusion. Even if the saving throw is successful, hapless viewers of the transformed Druid are all instantly smitten with permanent blindness (until dispelled). The transformation is instantaneous, but lasts only seconds, affecting those near the caster (excluding fellow party members).~
+When this spell is cast, the caster appears to undergo a remarkable transformation. They become the very ideal of beauty and longing, the shape of which depends on the nature of the creature witnessing it. Anyone viewing the disguised caster must make a saving throw vs. Spell at +2 or die of longing for the denied illusion. Even if the saving throw is successful, hapless viewers of the transformed Druid are all instantly smitten with permanent blindness (until dispelled). The transformation is instantaneous, but lasts only seconds, affecting those near the caster (excluding fellow party members).~
 
 @5180 = ~Confusion
 (Enchantment/Charm)
@@ -277,12 +277,10 @@ Sphere: Necromantic
 Range: Touch
 Duration: 1 round + 1 round/level
 Casting Time: 5
-Area of Effect: 1 creature, and everyone around them
+Area of Effect: 1 creature, and allies within 15 ft.
 Saving Throw: None
 
-The recipient of this spell gains the benefits of a Bless spell (+1 to attack rolls and saving throws) and a special bonus of 1d8 additional Hit Points, plus a separate 1 HP bonus per level, which increases by 1 at level 5 and every level thereafter, for the duration of the spell. The Aid spell enables the recipient to actually have more Hit Points than <PRO_HISHER> current maximum. The first 1d8 bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic, but the rest will be kept.
-
-For example, if a character has 100 HP, and Aid grants them 5 HP from the first bonus, and 15 HP from the second one, their HP will become 120. If they take a hit that reduces their current HP by 25, their HP will become 95, and their maximum HP will go down to 115 HP, since the first 5 HP bonus to maximum health was consumed and therefore lost.~
+The recipient of this spell gains the benefits of a Bless spell (+1 to attack rolls and saving throws) and a special bonus of 1d8 additional Hit Points, plus a separate 1 HP bonus per level, which increases by 1 at level 5 and every level thereafter, for the duration of the spell. The Aid spell enables the recipient to actually have more Hit Points than <PRO_HISHER> current maximum. The first 1d8 bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic, but the rest will be kept.~
 
 @6200 = ~Armor of Faith
 (Abjuration)
@@ -295,7 +293,7 @@ Casting Time: 1
 Area of Effect: The caster
 Saving Throw: None
 
-The caster of the Armor of Faith receives significant protection against melee and magical attacks. This magical armor is a force of energy that absorbs or deflects a portion of the damage intended for the caster. At 1st level, the protection is 5%, and every 5 levels of the caster improves this by another 5%: For example, a 20th-level priest would have 25% of <PRO_HISHER> damage "absorbed" if protected by this spell. Finally, it applies an Armor Class bonus of 2 for the duration.~
+The caster of the Armor of Faith receives significant protection against all attacks. This magical armor is a force of energy that absorbs or deflects a portion of the damage intended for the caster. At 1st level, the protection is 5%, and every 5 levels of the caster improves this by another 5%: For example, a 20th-level priest would have 25% of <PRO_HISHER> damage "absorbed" if protected by this spell. Finally, it applies an Armor Class bonus of 2 for the duration.~
 
 @6470 = ~Cure Light Wounds
 (Necromancy)
@@ -308,7 +306,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: None
 
-By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest causes 8 points plus 1/level (up to 12) of wound or other injury damage to the creature's body to be healed. This healing cannot affect creatures without corporeal bodies, nor can it cure wounds of creatures not living or of extraplanar origin.
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest causes 8 points plus 1 per level (up to 12) of wound or other injury damage to the creature's body to be healed. This healing cannot affect creatures without corporeal bodies, nor can it cure wounds of creatures not living or of extraplanar origin.
 
 Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
 
@@ -324,7 +322,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: None
 
-By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 8 Hit Points plus 1/level (up to 12) to the creature's body and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures.~
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 8 Hit Points plus 1 per level (up to 12) to the creature's body and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures.~
 
 // iwdee
 @6472 = ~Cure Moderate Wounds
@@ -338,7 +336,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: None
 
-A stronger version of the 1st-level priest spell Cure Light Wounds, Cure Moderate Wounds heals 13 Hit Points, which increases to 19 over the next 4 levels, and cures intoxication.~
+A stronger version of the 1st-level priest spell Cure Light Wounds, Cure Moderate Wounds heals 13 Hit Points, increasing to 19 over the next 4 levels, and cures intoxication.~
 
 @6473 = ~Cure Medium Wounds
 (Necromancy)
@@ -351,7 +349,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: None
 
-By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 20 points plus 2/level (up to 28) of wound or other injury damage from the creature's body. This healing cannot affect creatures without corporeal bodies, nor can it cure wounds of creatures not living or of extraplanar origin. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 20 points plus 2 per level (up to 28) of wound or other injury damage from the creature's body. This healing cannot affect creatures without corporeal bodies, nor can it cure wounds of creatures not living or of extraplanar origin. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
 
 // iwdee
 @6474 = ~Cure Medium Wounds
@@ -365,7 +363,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: None
 
-By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 20 Hit Points plus 2/level (up to 28) to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures.~
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 20 Hit Points plus 2 per level (up to 28) to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures.~
 
 @6475 = ~Cure Serious Wounds
 (Necromancy)
@@ -392,7 +390,7 @@ Casting Time: 7
 Area of Effect: 1 creature
 Saving Throw: None
 
-By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 30 Hit Points, which increases up to 40 over the next 4 levels, and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures.~
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 30 Hit Points, which increases to 40 over the next 4 levels, and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures.~
 
 @6477 = ~Cure Critical Wounds
 (Necromancy)
@@ -405,7 +403,7 @@ Casting Time: 8
 Area of Effect: 1 creature
 Saving Throw: None
 
-The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hands upon a creature and heals 42 points plus 3/level (up to 54) of damage from wounds or other injuries. The spell does not affect creatures without corporeal bodies, those of extraplanar origin, or those not living.~
+The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hands upon a creature and heals 42 points plus 3 per level (up to 54) of damage from wounds or other injuries. The spell does not affect creatures without corporeal bodies, those of extraplanar origin, or those not living.~
 
 // iwdee
 @6478 = ~Cure Critical Wounds
@@ -419,7 +417,7 @@ Casting Time: 8
 Area of Effect: 1 creature
 Saving Throw: None
 
-By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 42 Hit Points plus 3/level (up to 54) and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by evil-aligned characters.~
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 42 Hit Points plus 3 per level (up to 54) and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by evil-aligned characters.~
 
 @6480 = ~Mass Cure
 (Necromancy)
@@ -432,7 +430,7 @@ Casting Time: 2
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-When casting this spell, the priest must picture the faces of <PRO_HISHER> fellow party members clearly and focus on the unity of the group. Upon completion, all party members within a 15-ft. radius of the caster are healed 4d3 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
+When casting this spell, the priest must picture the faces of <PRO_HISHER> fellow party members clearly and focus on the unity of the group. Upon completion, all party members within a 15-ft. radius of the caster are healed 4d3 + 1 per level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
 
 //flame blade boost iwdee
 @6600 = ~Flame Blade
@@ -446,7 +444,7 @@ Casting Time: 4
 Area of Effect: The caster
 Saving Throw: None
 
-With this spell, the caster causes a blazing ray of red-hot fire to spring forth from <PRO_HISHER> hand. This blade-like ray is wielded as if it were a scimitar (i.e. it uses the Scimitar proficiency). If the caster successfully hits with the flame blade in melee combat, the creature struck suffers 1d4 points of slashing damage plus 4 points of fire damage, with a further 4 fire damage if the creature is undead. It is not a magical weapon in the normal sense of the term, but the sword functions as a +2 weapon against undead.~
+With this spell, the caster causes a blazing ray of red-hot fire to spring forth from <PRO_HISHER> hand. This blade-like ray is wielded as if it were a scimitar (i.e. it uses the Scimitar proficiency). If the caster successfully hits with the flame blade in melee combat, the creature struck suffers 1d4 points of slashing damage plus 4 points of fire damage, with a further 4 fire damage if the creature is undead. It is not a magical weapon in the normal sense of the term, but the blade functions as a +2 weapon against undead.~
 
 //flame blade bg boost, no duration boost
 @6610 = ~Flame Blade
@@ -460,7 +458,7 @@ Casting Time: 4
 Area of Effect: Special
 Saving Throw: None
 
-With this spell, the caster causes a blazing ray of red-hot fire to spring forth from <PRO_HISHER> hand. This blade-like ray is wielded as if it were a sword that the caster already knows how to use, hence there are no bonuses or penalties. If the caster successfully hits with the flame blade in melee combat, the creature struck suffers 1d4 points of slashing damage, plus an additional 1d2+4 points of fire damage. It is not a magical weapon in the normal sense of the term, but the sword functions as a +2 weapon against undead.~
+With this spell, the caster causes a blazing ray of red-hot fire to spring forth from <PRO_HISHER> hand. This blade-like ray is wielded as if it were a sword that the caster already knows how to use, hence there are no bonuses or penalties. If the caster successfully hits with the flame blade in melee combat, the creature struck suffers 1d4 points of slashing damage, plus an additional 1d2+4 points of fire damage. It is not a magical weapon in the normal sense of the term, but the blade functions as a +2 weapon against undead.~
 
 //flame blade bg duration boost
 @6620 = ~Flame Blade
@@ -469,7 +467,7 @@ With this spell, the caster causes a blazing ray of red-hot fire to spring forth
 Level: 2
 Sphere: Elemental (Fire)
 Range: 0
-Duration: 4 rounds + 1 round/ level
+Duration: 4 rounds + 1 round/level
 Casting Time: 4
 Area of Effect: Special
 Saving Throw: None
@@ -488,7 +486,7 @@ Casting Time: 4
 Area of Effect: Special
 Saving Throw: None
 
-With this spell, the caster causes a blazing ray of red-hot fire to spring forth from <PRO_HISHER> hand. This blade-like ray is wielded as if it were a sword that the caster already knows how to use, hence there are no bonuses or penalties. If the caster successfully hits with the flame blade in melee combat, the creature struck suffers 1d4 points of slashing damage, plus an additional 1d2+4 points of fire damage. It is not a magical weapon in the normal sense of the term, but the sword functions as a +2 weapon against undead.~
+With this spell, the caster causes a blazing ray of red-hot fire to spring forth from <PRO_HISHER> hand. This blade-like ray is wielded as if it were a sword that the caster already knows how to use, hence there are no bonuses or penalties. If the caster successfully hits with the flame blade in melee combat, the creature struck suffers 1d4 points of slashing damage, plus an additional 1d2+4 points of fire damage. It is not a magical weapon in the normal sense of the term, but the blade functions as a +2 weapon against undead.~
 
 // iwdee description
 @6640 = ~Cloak of Fear
@@ -502,7 +500,7 @@ Casting Time: 6
 Area of Effect: The caster
 Saving Throw: Neg.
 
-Cloak of Fear bestows the caster with an aura of fear in a 5-ft. radius. All creatures that enter the cloak's area of effect must make a Save vs. Spell or flee in panic for 3 rounds. The aura does not affect undead creatures.~
+Cloak of Fear bestows upon the caster with an aura of fear in a 5-ft. radius. All creatures that enter the cloak's area of effect must make a Save vs. Spell or flee in panic for 3 rounds. The aura does not affect undead creatures.~
 
 @7390 = ~Bolt of Glory
 (Invocation/Evocation)
@@ -536,7 +534,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-By using this spell, the priest can charm a pebble, which becomes magical and flies out and hits a target opponent. The stone deals 1d4 points of magic and missile damage to whomever it hits. This damage increases to 1d6 at level 3, and 1d8 at level 5.~
+By using this spell, the priest can charm a pebble, which becomes magical and flies out and hits a target. The stone deals 1d4 points of magic and missile damage to whomever it hits. This damage increases to 1d6 at level 3, and 1d8 at level 5.~
 
 @7410 = ~Dolorous Decay
 (Alteration, Necromancy)
@@ -549,7 +547,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: Special
 
-This spell affects a single living creature. Dolorous Decay is a rotting and withering of the body that spreads throughout the afflicted creature quickly. The target creature will automatically be slowed for 2 rounds and suffer 2d10 poison damage immediately with no save. Furthermore, if the target fails a saving throw vs. Poison with a -3 penalty, <PRO_HESHE> will suffer 1 point of damage per second for 1 turn, and suffer a -2 penalty to THAC0, Damage, and Armor Class, and will suffer 8% extra physical damage for that duration.~
+This spell affects a single living creature. Dolorous Decay is a rotting and withering of the body that spreads throughout the afflicted creature quickly. The target creature will automatically be slowed for 2 rounds and suffer 2d10 poison damage immediately with no save. Furthermore, if the target fails a saving throw vs. Poison with a -3 penalty, they will take 1 point of damage per second for 1 turn, and suffer a -2 penalty to THAC0, Damage, and Armor Class, as well as a 8% physical damage resistance penalty for the duration.~
 
 @7420 = ~Wondrous Recall
 (Alteration)
@@ -562,7 +560,7 @@ Casting Time: 2 rounds
 Area of Effect: The caster
 Saving Throw: None
 
-This spell enables the caster to bring back to memory 2 spells that have been previously cast of level 1, and 4 more spells of up to level 5. If no spells have been cast yet, nothing happens. Wondrous Recall will additionally recall wizard spells to the same degree, if the user has the capacity to memorize arcane magic.~
+This spell enables the caster to recall two 1st-level spells, and four more spells of up to 5th level. If no spells have been cast yet or otherwise lost from memory, nothing happens. Wondrous Recall can also bring back an equal amount of wizard spells, if the user has the capacity to memorize arcane magic.~
 
 @7470 = ~Call Lightning
 (Alteration)
@@ -575,9 +573,7 @@ Casting Time: 9
 Area of Effect: 360-ft. radius
 Saving Throw: 1/2
 
-Call Lightning must be cast outside; otherwise, it will not work, and the spell is wasted. The caster is able to beckon the skies to throw one bolt of lightning per round. The spell has a duration of 1 round every 4 levels of the caster. Each bolt causes 2d6+1 points of electrical damage, plus an additional 1d6+1 points per level of the caster, up to level 18 (20d6+20). At levels 19 and 20, the damage increases by 2 and 3, respectively, for a maximum of 20d6+25. Thus, an 8th-level caster will call down two bolts, each dealing 10d6+10 points of electrical damage. The bolt of lightning flashes down in a vertical stroke at any of the priest's enemies. The first enemy struck by the lightning will be the enemy targeted. After that, any enemy (but no allies) may be struck by the ensuing lightning storm.
-
-Since the electrical damage comes from the skies naturally, Magic Resistance does not affect this spell.~
+The caster is able to beckon the skies to shoot one bolt of lightning per round. This spell must be cast outside; otherwise, the spell is wasted. The first bolt flashes down in a vertical stroke at one of the caster's enemies. After that, any enemy in the area may be struck by the ensuing lightning storm. Each bolt causes 2d6+1 points of electrical damage, plus 1d6+1 per caster level, up to level 18. At levels 19 and 20, the damage increases by 2 and 3, respectively, for a maximum of damage of 20d6+25. Finally, since the damage comes from the skies naturally, Magic Resistance does not affect it.~
 
 @7550 = ~Planar Shield
 (Abjuration)
@@ -608,7 +604,7 @@ Casting Time: 3
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-When uttering the Curse spell, the caster lowers the morale of enemy creatures and any saving throws and attack rolls they make by 1. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster. Affected creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not.~
+When uttering the Curse spell, the caster lowers enemy morale, saving throws, and attack rolls by 1. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster. Affected creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not.~
 
 @8120 = ~Sunray
 (Evocation, Alteration)
@@ -621,12 +617,12 @@ Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: Special
 
-When this spell is cast, it causes a ray of sunlight to beam down upon the caster and everyone within a 15-ft. radius. All creatures within the area of effect must save vs. Spell or be blinded for 1 turn. The damage grows by 1d6 every caster level, and different types of creatures that are hit by the Sunray take damage differently depending on their nature:
+When this spell is cast, it causes a ray of sunlight to beam down upon the caster and everyone within a 15-ft. radius. All creatures within the area of effect must Save vs. Spell or be blinded for 1 turn. The damage increases by 1d6 per every caster level, and different types of creatures that are hit by the Sunray take damage differently depending on their nature:
 
-Vampires, vampyres, and vampire spawn: Up to 20d6 damage (half fire, half radiant). Must save vs. Spell or be destroyed
-Spectral undead: Up to 15d6 damage (half fire, half radiant). Must save vs. Spell or be Slowed or Confused for 2 rounds
+Vampires, vampyres, and vampire spawn: Up to 20d6 damage (half fire, half radiant). Must Save vs. Spell or be destroyed
+Spectral undead: Up to 15d6 damage (half fire, half radiant). Must Save vs. Spell or be Slowed or Confused for 2 rounds
 Other cadaverous undead: 10d6 damage (half fire, half radiant).
-Fungal creatures: 8d6 damage (half fire and half magical). Must save vs. Spell or be Slowed or Confused for 2 rounds
+Fungal creatures: 8d6 damage (half fire and half magical). Must Save vs. Spell or be Slowed or Confused for 2 rounds
 Other creatures: 4d6 damage (half fire and half magical).
 
 This spell is not affected by magic resistance and creatures affected by radiant damage cannot reduce it in any way through their resistances.~
@@ -650,7 +646,7 @@ Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-False Dawn calls into existence a bright reddish light, as if a sunrise were occurring, within the area of effect. All undead creatures within a False Dawn suffer 10d6 points of fire and magic damage. There is no saving throw. Affected undead also act confused for two rounds after the False Dawn appears.~
+False Dawn calls into existence a bright reddish light, as if a sunrise were occurring, within the area of effect. All undead creatures within a False Dawn suffer 10d6 points of fire and magic damage. There is no saving throw. Affected undead also act confused for two rounds after False Dawn appears.~
 
 @8131 = ~False Dawn
 (Evocation)
@@ -663,7 +659,7 @@ Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-False Dawn calls into existence a bright reddish light, as if a sunrise were occurring, within the area of effect. All undead creatures within the area suffer 10d6 points of fire and magic damage and are blinded on the round after the false dawn appears. There is no Saving Throw.~
+False Dawn calls into existence a bright reddish light, as if a sunrise were occurring, within the area of effect. All undead creatures within the area suffer 10d6 points of fire and magic damage and are blinded on the round after False Dawn appears. There is no saving throw.~
 
 @8190 = ~Repulse Undead
 (Abjuration)
@@ -703,7 +699,7 @@ Casting Time: 7
 Area of Effect: 8 ft. long, 2 ft. wide wall
 Saving Throw: None
 
-This spell invokes a shimmering tapestry of blue-white force. This wall is intangible, requiring no physical anchor, and can easily be passed through. Evil creatures passing through the wall take 2d8+4 magic damage; undead creatures take 3d8+6 (evil undead would take 5d8+10). Additionally, affected creatures must save vs. Spell or be blinded by 1 round and repulsed backwards with a 40% chance of being knocked to the ground for half a round. A creature that has passed through the wall can only be affected by it once per round. These effects cannot be stopped by magic resistance.~
+This spell invokes a shimmering tapestry of blue-white force. This wall is intangible, requiring no physical anchor, and can easily be passed through. Evil creatures passing through the wall take 2d8+4 magic damage; undead creatures take 3d8+6 (evil undead would take 5d8+10). Additionally, affected creatures must Save vs. Spell or be blinded for 1 round and repulsed backwards with a 40% chance of being knocked to the ground for half a round. A creature that has passed through the wall can only be affected by it once per round. These effects cannot be stopped by magic resistance.~
 
 @8235 = ~Unfailing Endurance
 (Necromancy)
@@ -716,7 +712,7 @@ Casting Time: 2 rounds
 Area of Effect: 1 creature and allies around them
 Saving Throw: None
 
-This spell restores the stamina of the creature and all allies around them, eliminating any fatigue.~
+This spell restores the stamina of the touched creature and all nearby allies, eliminating any fatigue.~
 
 @8240 = ~Lesser Restoration
 (Necromancy)
@@ -729,7 +725,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-When this spell is cast, the life energy level of the recipient is raised. This reverses any previous life energy level drain of the creature by a force or monster, as well as the attribute draining caused by creatures such as shadows and mind flayers. The casting of this spell is very draining on the priest and <PRO_HESHE> will likely require rest immediately after the casting, as it will cause days' worth of fatigue almost instantaneously.~
+When this spell is cast, the life energy level of the recipient is raised. This reverses any previous life energy drain inflicted on the creature by a force or monster, as well as the attribute draining caused by creatures such as shadows and mind flayers. The casting of this spell is very draining on the priest and <PRO_HESHE> will likely require rest immediately after the casting, as it will cause days' worth of fatigue almost instantaneously.~
 
 @8241 = ~Greater Restoration
 (Necromancy)
@@ -742,7 +738,7 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
-When this spell is cast, the life energy level of the recipient is raised. This reverses any previous life energy level drain of the creature by a force or monster, as well as the attribute draining caused by creatures such as shadows and mind flayers. A Greater Restoration spell will also restore the Intelligence score of a creature affected by the Feeblemind spell and negate any form of insanity, such as confusion or berserk. It fully heals the target and cures any diseases or poisons. The casting of this spell is very draining on the priest, and <PRO_HESHE> will likely require rest immediately afterward.~
+When this spell is cast, the life energy level of the recipient is raised. This reverses any previous life energy drain on the creature by a force or monster, as well as the attribute draining caused by creatures such as shadows and mind flayers. A Greater Restoration spell will also restore the Intelligence score of a creature affected by the Feeblemind spell and negate any form of insanity, such as confusion or berserk. It fully heals the target and cures any disease or poison. The casting of this spell is very draining on the priest, and <PRO_HESHE> will likely require rest immediately afterward.~
 
 @8270 = ~Cause Light Wounds
 (Necromancy)
@@ -755,7 +751,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-By casting this spell and touching a creature, the priest deals 8 points of damage plus 1/level (up to 12) to the creature's body (save vs. Spell for half). This spell has no effect on undead, constructs, or extraplanar creatures.~
+By casting this spell and touching a creature, the priest deals 8 points of damage plus 1 per level (up to 12) to the creature's body (Save vs. Spell for half). This spell has no effect on undead, constructs, or extraplanar creatures.~
 
 @8271 = ~Cause Moderate Wounds
 (Necromancy)
@@ -768,7 +764,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-By casting this spell and touching a creature, the priest deals 13 points of damage, which increases to 19 over the next 4 levels to the creature's body (save vs. Spell for half). This spell has no effect on undead, constructs, or extraplanar creatures.~
+By casting this spell and touching a creature, the priest deals 13 points of damage, which increases to 19 over the next 4 levels to the creature's body (Save vs. Spell for half). This spell has no effect on undead, constructs, or extraplanar creatures.~
 
 @8272 = ~Cause Medium Wounds
 (Necromancy)
@@ -781,7 +777,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-By casting this spell and touching a creature, the priest deals 20 points of damage plus 2/level (up to 28) (save vs. Spell for half) to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures.~
+By casting this spell and touching a creature, the priest deals 20 points of damage plus 2 per level (up to 28) (Save vs. Spell for half) to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures.~
 
 @8273 = ~Cause Serious Wounds
 (Necromancy)
@@ -794,7 +790,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-By casting this spell and touching a creature, the priest deals 30 points of damage, which increases up to 40 over the next 3 levels, to the creature's body (save vs. Spell for half). This spell has no effect on undead, constructs, or extraplanar creatures.~
+By casting this spell and touching a creature, the priest deals 30 points of damage, which increases up to 40 over the next 3 levels, to the creature's body (Save vs. Spell for half). This spell has no effect on undead, constructs, or extraplanar creatures.~
 
 @8274 = ~Cause Critical Wounds
 (Necromancy)
@@ -807,7 +803,7 @@ Casting Time: 8
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-By casting this spell and touching a creature, the priest deals 42 points of damage, plus 3/level (up to 54) to the creature's body (save vs. Spell for half). This spell has no effect on undead, constructs, or extraplanar creatures.~
+By casting this spell and touching a creature, the priest deals 42 points of damage, plus 3 per level (up to 54) to the creature's body (Save vs. Spell for half). This spell has no effect on undead, constructs, or extraplanar creatures.~
 
 @8275 = ~Mass Cause Light Wounds
 (Necromancy)
@@ -820,7 +816,7 @@ Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: 1/2
 
-By casting this spell, the priest deals 4d3 + 1/level points of damage to nearby enemies. A successful Save vs. Spell halves the damage. This spell has no effect on undead, constructs, or extraplanar creatures.~
+By casting this spell, the priest deals 4d3 + 1 per level points of damage to nearby enemies. A successful Save vs. Spell halves the damage. This spell has no effect on undead, constructs, or extraplanar creatures.~
 
 @8280 = ~Symbol, Pain
 (Conjuration/Summoning)
@@ -845,7 +841,7 @@ Casting Time: 8
 Area of Effect: 17-ft. radius
 Saving Throw: None
 
-This spell bestows a form of divine madness upon the priest's allies, improving their combat skills. All the priest's allies in the area of effect gain a +1 to attack rolls and saving throws, plus 8 bonus Hit Points for the duration of the spell (these Hit Points can take a target beyond <PRO_HISHER> Hit Point maximum). Allies of the same alignment, however, gain an extra attack every round (canceling haste), a +2 bonus to their attack rolls, damage rolls, and saving throws, and immunity to charm and hold spells. Similar to the Haste spell, anyone affected by Righteous Wrath of the Faithful will suffer extra fatigue at the end.~
+This spell bestows a form of divine madness upon the priest's allies, improving their combat skills. All the priest's allies in the area of effect gain a +1 bonus to attack rolls and saving throws, plus 8 bonus Hit Points for the duration of the spell (these Hit Points can take a target beyond <PRO_HISHER> Hit Point maximum). Allies of the same alignment, however, gain an extra attack every round (canceling haste), a +2 bonus to their attack rolls, damage rolls, and saving throws, and immunity to charm and hold spells. Similar to the Haste spell, anyone affected by Righteous Wrath of the Faithful will suffer extra fatigue at the end.~
 
 @8340 = ~Alicorn Lance
 (Invocation)
@@ -884,7 +880,7 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
 
-When this spell is cast, the life energy level of the recipient is raised. This reverses any previous life energy level drain of the creature by a force or monster. A Greater Restoration spell will also restore the Intelligence score of a creature affected by the Feeblemind spell and negate any form of insanity, such as confusion or berserk. It fully heals the target, cures any diseases or poisons. This restoration spreads to the rest of party members, including the priest, who is healed by half its total health only. The casting of this spell is very draining on the priest, and <PRO_HESHE> will likely require rest immediately afterward. This fatigue is profound, additionally causing a -2 penalty to casting speed, damage, THAC0, and Armor Class, as well as a 35% movement speed penalty for 2 turns.~
+When this spell is cast, the life energy level of the recipient is raised. This reverses any previous life energy drain inflicted on the creature by a force or monster. A Greater Restoration spell will also restore the Intelligence score of a creature affected by the Feeblemind spell and negate any form of insanity, such as confusion or berserk. It fully heals the target, and cures any disease or poison. This restoration spreads to the rest of the party members, including the priest, who is healed by half its total health only. The casting of this spell is very draining on the priest, and <PRO_HESHE> will likely require rest immediately afterward. This fatigue is profound, additionally causing a -2 penalty to casting speed, damage, THAC0, and Armor Class, as well as a 35% movement speed penalty for 2 turns.~
 
 @8658 = ~Smashing Wave
 (Invocation)
@@ -912,7 +908,7 @@ Casting Time: 9
 Area of Effect: Visual range of the caster
 Saving Throw: 1/2
 
-Static Charge is similar to Call Lightning, except it can be used indoors. This spell allows the caster to generate a static charge around any creature within the area of effect, dealing 2d8 points of electrical damage plus an additional 1d8 points per two levels of the caster (save vs. Spell for half). The charge keeps going off once every 5 rounds for the duration of the spell.~
+Static Charge is similar to Call Lightning, except it can be used indoors. This spell allows the caster to generate a static charge around any creature within the area of effect, dealing 2d8 points of electrical damage plus an additional 1d8 points per two levels of the caster (Save vs. Spell for half). The charge keeps going off once every 5 rounds for the duration of the spell.~
 
 @8564 = ~Cloudburst
 (Invocation)
@@ -964,7 +960,7 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
-When a druid or shaman casts the Barkskin spell upon a creature, its skin becomes as tough as bark, setting its base Armor Class to 6, plus 1 for every 4 levels of the caster, up to a base Armor Class of 1. In addition, the following traits are gained
+When a druid or shaman casts the Barkskin spell upon a creature, its skin becomes as tough as bark, setting its base Armor Class to 6, plus 1 for every 4 levels of the caster, up to a base Armor Class of 1. In addition, the following traits are gained:
 
 – Saving throws vs. all but Spell gain a +1 bonus.
 – Takes 15% less damage from piercing and missile (25% for crushing).
@@ -1027,7 +1023,7 @@ Saving Throw: Special
 Uttering a Holy Word spell creates magic of tremendous power. The priest acts as a bridge between <PRO_HISHER> deity and the Prime Material Plane, causing a sonic explosion centered on the priest and reaching up to a 30-ft. radius. It affects only enemy non-good creatures and undead of any alignment that are caught in the area of effect. The effects vary depending on the target's status and Hit Dice:
 
 Status — Effects of Holy Word
-Summoned — Banished or destroyed (save vs. Spell at -4 to avoid)
+Summoned — Banished or destroyed (Save vs. Spell at -4 to avoid)
 Less than 4 HD, or with 40 Hit Points or less — Destroyed or killed instantly
 4 to 7 HD — Stunned, slowed, blinded, and deafened for 1 to 4 turns with a 90% chance of spell failure
 8 to 11 HD — Slowed, blinded, and deafened for 5 rounds with a 75% chance of spell failure
@@ -1051,7 +1047,7 @@ Saving Throw: Special
 Uttering an Unholy Word spell creates magic of tremendous power. The priest acts as a bridge between <PRO_HISHER> deity and the Prime Material Plane, causing a sonic explosion centered on the priest and reaching up to a 30-ft. radius. It affects only enemy creatures of any non-evil alignment that are caught in the area of effect. The effects vary depending on the target's status and Hit Dice:
 
 Status — Effects of Unholy Word
-Summoned — Banished or destroyed (save vs. Spell at -4 to avoid)
+Summoned — Banished or destroyed (Save vs. Spell at -4 to avoid)
 Less than 4 HD, or with 40 Hit Points or less — Destroyed or killed instantly
 4 to 7 HD — Stunned, slowed, blinded, and deafened for 1 to 4 turns with a 90% chance of spell failure
 8 to 11 HD — Slowed, blinded, and deafened for 5 rounds with a 75% chance of spell failure
@@ -1070,7 +1066,7 @@ Casting Time: 4
 Area of Effect: 10-ft. radius
 Saving Throw: Special
 
-This spell infects the creature the caster touches with a rapidly spreading brown mold that quickly dies once the spell expires. The brown mold is attracted to heat and becomes more aggressive the more body heat the victim has. As a consequence, if the infected creature fails a Save vs. Spell, the infection is severe, causing the creature to take 4d6 cold damage immediately, 3d6 cold damage twice in the next 2 rounds, and finally, 2d6 cold damage at the fourth round, ending the spell. If, however, the Saving Throw is successful, the damage taken is only 2d6 per round, lasting only three rounds. Each round after the first, the nearest creature within 10 ft. of the victim must make a Save vs. Spell or be infected by the mold at full strength. This process continues until the mold fails to infect a suitable host in time. Creatures already under the effects of the mold cannot contract it again for its duration, and the druid who cast it is completely immune to it.
+This spell infects the creature the caster touches with a rapidly spreading brown mold that quickly dies once the spell expires. The brown mold is attracted to heat and becomes more aggressive the more body heat the victim has. As a consequence, if the infected creature fails a Save vs. Spell, the infection is severe, causing the creature to take 4d6 cold damage immediately, 3d6 cold damage twice in the next 2 rounds, and finally, 2d6 cold damage at the fourth round, ending the spell. If, however, the saving throw is successful, the damage taken is only 2d6 per round, lasting only three rounds. Each round after the first, the nearest creature within 10 ft. of the victim must make a Save vs. Spell or be infected by the mold at full strength. This process continues until the mold fails to infect a suitable host in time. Creatures already under the effects of the mold cannot contract it again for its duration, and the druid who cast it is completely immune to it.
 
 Because of the nature of the mold, it affects certain creatures differently:
 

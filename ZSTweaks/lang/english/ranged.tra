@@ -1,4 +1,4 @@
-@6180 = ~Through arcane sorcery, the contradictory elements of fire and ice have been combined within this magnificent shortbow, and arrows shot by this shortbow are imbued by both elements when shot.
+@6180 = ~Through arcane sorcery, the contradictory elements of fire and ice have been combined within this magnificent shortbow, and arrows shot by this shortbow are imbued by both elements.
 
 STATISTICS:
 
@@ -21,9 +21,9 @@ Requires:
 
 Weight: 1~
 
-@6181 = ~Through arcane sorcery, the contradictory elements of fire and ice have been combined within this magnificent shortbow, and arrows shot by this shortbow are imbued by both elements when shot.
+@6181 = ~Through arcane sorcery, the contradictory elements of fire and ice have been combined within this magnificent shortbow, and arrows shot by this shortbow are imbued by both elements.
 
-The magical bowstring of Gond makes even this strongly enchanted shortbow more accurate and powerful.
+The magical bowstring of Gond makes this already strongly enchanted shortbow even more accurate and powerful.
 
 STATISTICS:
 
@@ -54,7 +54,7 @@ Equipped abilities:
 – Movement rate increased by 2 (base is 9)
 
 Combat abilities:
-– Damage: Each shot inflicts 3 extra missile damage to living non-humanoids. These targets must save vs. Death at -1 or suffer a penalty of 2 to Armor Class and 1 to Saving Throws, and have their movement speed reduced by 50% for 2 rounds.
+– Damage: Each shot inflicts 3 extra missile damage to living non-humanoids. These targets must Save vs. Death at -1 or suffer a penalty of 2 to Armor Class and 1 to Saving Throws, and have their movement speed reduced by 50% for 2 rounds.
 
 THAC0: +5
 Speed Factor: 3
@@ -75,7 +75,7 @@ Equipped abilities:
 – Movement rate increased by 5 (base is 9)
 
 Combat abilities:
-– Damage: Each shot inflicts 5 extra missile damage to living non-humanoids. These targets must save vs. Death at -3 or suffer a penalty of 4 to Armor Class and 2 to saving throws, and have their movement speed reduced by 50% for 2 rounds.
+– Damage: Each shot inflicts 5 extra missile damage to living non-humanoids. These targets must Save vs. Death at -3 or suffer a penalty of 4 to Armor Class and 2 to Saving Throws, and have their movement speed reduced by 50% for 2 rounds.
 
 THAC0: +6
 Damage: +1
@@ -87,12 +87,12 @@ Requires:
 
 Weight: 1~
 
-@6390 = ~While working for the Shadow Thieves, Fargon Fol collected thousands of small poisonous snakes to create the Asp's Nest. Fargon took each snake and with her powerful magic she made a dart of each. She made the dart so that when it strikes its opponent, the snake returns to life, biting and inflicting poison damage on the target. The title Asp's Nest refers to the entire collection of darts, most of which have vanished, either destroyed in use or lost on a long forgotten battlefield.
+@6390 = ~While working for the Shadow Thieves, Fargon Fol collected thousands of small venomous snakes to create the Asp's Nest. Fargon took each snake and with her powerful magic, she turned each one into a dart. She made the dart so that when it strikes its opponent, the snake returns to life, biting and inflicting poison damage on the target. The title Asp's Nest refers to the entire collection of darts, most of which have vanished, either destroyed in use or lost on a long-forgotten battlefield.
 
 STATISTICS:
 
 Combat abilities:
-– Hit target must save vs. Death at %zst_1010_asp_nest_sbonus% or take 1 point of damage every 3 seconds until 40 Hit Points of damage has been inflicted
+– Hit target must Save vs. Death at %zst_1010_asp_nest_sbonus% or take 1 point of damage every 3 seconds until 40 Hit Points of damage have been inflicted
 
 THAC0: +3
 Damage: 1d3+3, +1d2 poison damage
@@ -125,7 +125,7 @@ Requires:
 Weight: 2~
 
 @7020 = ~Eagle Bow: Protector of the Dryads
-In order to protect their community from an encroaching orc logging encampment, the hero Hannable the White was given this magnificent bow by the dryads of Gulthmere Forest. A deadly confrontation followed when the loggers dared to try and cut down a great oak tree, nearly killing the dryad linked to it. With the help of powerful forest animals, Hannable slew entire bands of orcs before any more damage was inflicted upon the wood. The orcs were forced to abandon their plans lest they suffer the continued wrath of Hannable and the forest. Needless to say, the hero who aided the grateful dryads lived happily... nay, VERY happily ever after!
+In order to protect their community from an encroaching orc logging encampment, the hero Hannable the White was given this magnificent bow by the dryads of Gulthmere Forest. A deadly confrontation followed when the loggers dared to try and cut down a great oak tree, nearly killing the dryad linked to it. With the help of powerful forest animals, Hannable slew entire bands of orcs before any more damage was inflicted upon the wood. The orcs were forced to abandon their plans, lest they suffer the continued wrath of Hannable and the forest. Needless to say, the hero who aided the grateful dryads lived happily... nay, VERY happily ever after!
 
 STATISTICS:
 
@@ -141,7 +141,7 @@ Requires:
 
 Weight: 2~
 
-@7070 = ~Kestsa was given this longbow many years ago by the Cowled Wizards as reward for his exemplary service in the Athkatla city guard. He was tireless in bringing to justice those who unlawfully used magic. The bow served him well in his cause, granting him resistance to arcane energies, and imbuing his arrows with anti-wizard properties.
+@7070 = ~Kestsa was given this longbow many years ago by the Cowled Wizards as a reward for his exemplary service in the Athkatla city guard. He was tireless in bringing to justice those who unlawfully used magic. The bow served him well in his cause, granting him resistance to arcane energies, and imbuing his arrows with anti-wizard properties.
 
 STATISTICS:
 
@@ -150,7 +150,7 @@ Equipped abilities:
 – Magic Resistance: +5%
 
 Combat abilities:
-– Arrows inflict 1d4+1 extra magic damage and 15% arcane spell failure for 4 rounds if a save vs. Spell at -2 is failed
+– Arrows inflict 1d4+1 extra magic damage and 15% arcane spell failure for 4 rounds on a failed Save vs. Spell at -2
 
 THAC0: +5
 Speed Factor: 3
@@ -161,12 +161,12 @@ Requires:
 
 Weight: 2~
 
-@7600 = ~The Arrow of Biting was designed as a deadly compliment to the archer. Poison smeared on the barbed arrowhead infiltrates the bloodstream of its victims, causing agony and often death.
+@7600 = ~The Arrow of Biting was designed as a deadly complement to the archer. Poison smeared on the barbed arrowhead infiltrates the bloodstream of its victims, causing agony and often death.
 
 STATISTICS:
 
 Combat abilities:
-– Target must save vs. Death or suffer 30 points of poison of damage over 5 rounds
+– Target must Save vs. Death or suffer 30 points of poison damage over 5 rounds
 – Chance to score a critical hit: +5%
 
 Damage: 1d6 (missile)
@@ -230,7 +230,7 @@ Weight: 0~
 STATISTICS:
 
 Combat abilities:
-– Target must save vs. Death or take 30 points of poison damage in 15 seconds
+– Target must Save vs. Death or take 30 points of poison damage in 15 seconds
 – Chance to score a critical hit: +5%
 
 Damage: 1d8, +1 poison damage
@@ -239,36 +239,36 @@ Launcher: Crossbow
 
 Weight: 0~
 
-@8205 = ~This arrow will remove the magical enchantments that its victim is surrounded by.
+@8205 = ~This arrow will remove the magical enchantments surrounding its victim.
 
 STATISTICS:
 
 Combat abilities:
-– Dispel Magic on target when hit if save vs. Spell at %zst_1371_save_penalty% fails
+– Dispel Magic on target when hit if a Save vs. Spell at %zst_1371_save_penalty% fails
 
 Damage: 1d6 (missile)
 Launcher: Bow
 
 Weight: 0~
 
-@8206 = ~This arrow will remove the magical enchantments that its victim is surrounded by.
+@8206 = ~This arrow will remove the magical enchantments surrounding its victim.
 
 STATISTICS:
 
 Combat abilities:
-– Dispel Magic on target when hit if save vs. Spell fails
+– Dispel Magic on target when hit if a Save vs. Spell fails
 
 Damage: 1d6 (missile)
 Launcher: Bow
 
 Weight: 0~
 
-@8207 = ~This arrow will remove the magical enchantments that its victim is surrounded by.
+@8207 = ~This arrow will remove the magical enchantments surrounding its victim.
 
 STATISTICS:
 
 Combat abilities:
-– Dispel Magic on target when hit if save vs. Spell at +%zst_1371_save_penalty% fails
+– Dispel Magic on target when hit if a Save vs. Spell at +%zst_1371_save_penalty% fails
 
 Damage: 1d6 (missile)
 Launcher: Bow
