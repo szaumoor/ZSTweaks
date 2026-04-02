@@ -1,9 +1,9 @@
-@6450 = ~This handsome pewter tankard conforms to the shape of your hand surprisingly well—or perhaps unsurprisingly, as it appears to be yours. "<CHARNAME>" is engraved upon it in large, angular characters. You feel an odd strength course through you when you hold it, not unlike the brief euphoria which often precedes, by one long, fitful sleep, an even longer day of misery. The tankard was a gift from Mironda, the dwarven wild mage and beer connoisseur.
+@6450 = ~This handsome pewter tankard conforms to the shape of your hand surprisingly well—or perhaps unsurprisingly, as it appears to be yours. "<CHARNAME>" is engraved upon it in large, angular characters. You feel an odd strength course through you when you hold it, not unlike the brief euphoria which often precedes, after one long, fitful sleep, an even longer day of misery. The tankard was a gift from Mironda, the dwarven wild mage and beer connoisseur.
 
 STATISTICS:
 
 Charge abilities:
-– Restore 27 Hit Points three times per day. For 1 turn, the user gets a +1 bonus to Strength and Constitution (does not stack)
+– Restore 27 Hit Points three times per day. For 1 turn, the user gain a +1 bonus to Strength and Constitution (does not stack)
 
 Weight: 3~
 
@@ -27,13 +27,14 @@ Weight: 1~
 STATISTICS:
 
 Charge abilities:
-– Protects all within area from +75% of fire damage for 3 rounds
+– Protects all within the area from +75% of fire damage
+  Duration: 3 rounds
   Range: 0
   Area of Effect: 15-ft. radius
 
 Weight: 1~
 
-@7462 = ~This potion is imbued with a powerful enchantment that will simulate a temporary increase in level and will imbue the drinker from nigh-unbreakable confidence. The effect lasts for 2 hours, which makes this potion a powerful ally in a deadly combat.
+@7462 = ~This potion is imbued with a powerful enchantment that will simulate a temporary increase in level and will imbue the drinker with nigh-unbreakable confidence. The effect lasts for 2 hours, which makes this potion a powerful ally in a deadly fight.
 
 STATISTICS:
 
@@ -56,7 +57,7 @@ Duration: 1 hour
 
 Weight: 1~
 
-@7464 = ~The elixir of health is a powerful healing mixture designed to cleanse the body of all impurities. First, it cures all poisons and diseases; then, once the system has been purged, the imbibed is cured by 20 Hit Points to speed the recovery process.
+@7464 = ~The elixir of health is a powerful healing mixture designed to cleanse the body of all impurities. First, it cures all poisons and diseases; then, once the system has been purged, the imbiber is cured by 20 Hit Points to speed the recovery process.
 
 STATISTICS:
 
@@ -77,12 +78,13 @@ Duration: 6 hours
 
 Weight: 1~
 
-@7466 = ~This powerful elixir is similar to the potion of heroism in that it effectively raises the imbiber's level and imbues the drinker with confidence. It affects Hit Points, THAC0, casting speed, damage dealt, and thieving abilities.
+@7466 = ~This powerful rare elixir raises the imbiber's power and imbues them with confidence. It affects Hit Points, THAC0, casting speed, damage dealt, and thieving abilities.
 
 STATISTICS:
 
 THAC0: +4 bonus
-Hit Points & Thieving skills: +20% (base only)
+Hit Points: +20% (base only)
+Thieving skills: +20% (base only)
 All damage output: +10%
 Casting speed: +1
 Immunity to morale failure
@@ -105,7 +107,7 @@ STATISTICS:
 
 Weight: 1~
 
-@7469 = ~This is a powerful elixir that imbues the drinker with the regeneration ability similar to that of a troll, wounds literally closing over and healing as you watch. The effect, which lasts for 3 turns, is to regenerate 2 Hit Points per round.
+@7469 = ~This is a powerful elixir that imbues the drinker with the regeneration ability similar to that of a troll, wounds literally closing over and healing as you watch.
 
 STATISTICS:
 
@@ -119,7 +121,7 @@ Weight: 1~
 STATISTICS:
 
 Charge abilities:
-– Causes enemies to run in fear unless they save vs. Spell
+– Causes enemies to run in fear unless they Save vs. Spell
   Range: 100 ft.
   Area of Effect: 15-ft. radius
   Duration: 1 turn
@@ -129,12 +131,12 @@ Requires:
 
 Weight: 1~
 
-@8100 = ~When used, this wand shoots forth a thin ray of bluish color to a maximum range of 100 ft. When a creature is touched by the ray, it must save vs. Wand at -4 in order to avoid being stunned for 7 rounds.
+@8100 = ~When used, this wand shoots forth a thin ray of bluish color to a maximum range of 100 ft. When a creature is touched by the ray, it must Save vs. Wand at -4 in order to avoid being stunned.
 
 STATISTICS:
 
 Charge abilities:
-– Stun target (Save vs. Wand at -4 penalty negates)
+– Stun target (Save vs. Wand at -4 negates)
   Range: 100 ft.
   Area of Effect: 1 creature
   Duration: 7 rounds
@@ -148,7 +150,7 @@ Weight: 1~
 
 STATISTICS:
 
-Charge abilities:
+Charge abilities:save vs.
 – Sleep (Save vs. Wand negates)
   Range: 80 ft.
   Area of Effect: 15-ft. radius
@@ -159,7 +161,7 @@ Requires:
 
 Weight: 1~
 
-@8580 = ~A Protection From Undead scroll invokes an invisibile 3-ft. radius circle of protection around the target. It protects the target within from physical attacks as well as from effects often caused by undead such as paralysis, domination, and level drain. It will protect the user for 12 hours.
+@8580 = ~A Protection From Undead scroll invokes an invisible 3-ft. radius circle of protection around the target. It protects the target from physical attacks as well as from effects often caused by undead such as paralysis, domination, and level drain. It will protect the user for 12 hours.
 
 STATISTICS:
 
@@ -168,12 +170,12 @@ A single target receives the following bonuses for 12 hours:
 – Saves vs. Death: +2
 – Immunity to level drain and the paralytic touch of ghouls, ghasts, liches, and other undead
 – Immunity to domination attempts by vampires
-– Undead hitting the target will be rebuked, taking 1d4+1 magic damage (save vs. Spell to take half) and being forced to flee for 2 rounds if they fail their saving throw vs. Spell. Once affected, they may not be affected again for 1 turn but the damage always applies.
+– Undead hitting the target will be rebuked, taking 1d4+1 magic damage (Save vs. Spell to take half) and being forced to flee for 2 rounds if they fail their saving throw vs. Spell. Once affected, they may not be affected again for 1 turn but the damage always applies.
 
 Requires:
  9 Intelligence~
 
- @8590 = ~Attempts parry~
+ @8590 = ~Attempts to Parry~
 
 @8700 = ~Slayer Form~
 @8701 = ~Slayer Form
@@ -185,31 +187,31 @@ The Slayer form grants the following benefits:
 – Strength and Dexterity set to 21 (23 at 3 million XP or more, 25 at 6 million XP or more)
 – Constitution increased by 3
 – Attacks per round set to 3 (7/2 at 3 million XP or more, 4 at 6 million XP or more)
-– Basic claw and teeth attacks deal 1d8+3 crushing/slashing damage plus +1 cold damage with a +5 THAC0 bonus, acts as a +5 weapon. At 3 million XP or more, the damage increases to 2d4+5, and the cold damage to 1d2+1. At 6 million XP or more, the damage increases to 2d4+6, the cold damage to 1d3+1, and the THAC0 bonus to +6.
-– All attack hits as if they were +6 magical weapons for the purposes of overcoming weapon immunities
+– Basic claw and teeth attacks deal 1d8+3 crushing/slashing damage plus +1 cold damage with a +5 THAC0 bonus, and acts as a +5 weapon. At 3 million XP or more, the damage increases to 2d4+5, and the cold damage to 1d2+1. At 6 million XP or more, the damage increases to 2d4+6, the cold damage to 1d3+1, and the THAC0 bonus to +6.
+– All attacks act as +6 magical weapons for the purposes of overcoming weapon immunities
 – Deals 2d6 extra crushing and slashing damage to targets that are knocked down, unconscious, or otherwise disabled
 – Movement speed increased by a factor of 5
 – Effective AC set to -10
-– Saving throws improve by 5
+– Saving throws: +5
 – Magic Resistance increases by 20%
 – THAC0 set to 0
 – Fully healed upon transforming
-– 100 Hit Points, 150 at XP of 3 million or more, and 200 HP at XP of 6 million or more. If maximum Hit Points are higher, they increase by 15 instead
+– +100 Hit Points, +150 at XP of 3 million or more, and 200 HP at XP of 6 million or more. If maximum Hit Points are higher, they increase by 15 instead
 – Immunity to imprisonment, level drain, stun, fear, panic, morale failure, and missile attacks
 
-This form is unstable and must sate its thirst for blood to maintain it. A kill must occur once per turn to maintain it, otherwise, the user will be forced back into their normal shape. It will nevertheless force the user to transform back into their normal shape after 2 hours.~
+This form is unstable and must sate its thirst for blood to maintain the form. A kill must occur once per turn to maintain it, otherwise, the user will be forced back into their normal shape. It will nevertheless force the user to transform back into their normal shape after 2 hours.~
 
 @8702 = ~Let the Slaughter Begin~
 @8703 = ~Let the Slaughter Begin
-Scream like a ravenous beast, imprinting a sinister mark on nearby creatures, which makes their deaths strengthen your defenses and fury. Marked enemies must save vs. Death at -2 or be stunned for 2 rounds. If a marked enemy dies within 4 rounds, you gain a +1 bonus to Armor Class, Damage, and THAC0 for 4 rounds. The mark itself cannot be resisted.~
+Scream like a ravenous beast, imprinting a sinister mark on nearby creatures, causing their deaths to strengthen your defenses and fury. Marked enemies must Save vs. Death at -2 or be stunned for 2 rounds. If a marked enemy dies within 4 rounds, you gain a +1 bonus to Armor Class, Damage, and THAC0 for 4 rounds. The mark itself cannot be resisted.~
 
 @8704 = ~Relentless Lunge~
 @8705 = ~Relentless Lunge
-Drive the target to the ground for 1 round if they fail a save vs. Death at -4, dealing 2d6+1 crushing damage. At 3 million XP or higher, the damage increases to 4d6+2.~
+Drive the target to the ground for 1 round if they fail a Save vs. Death at -4, dealing 2d6+1 crushing damage. At 3 million XP or higher, the damage increases to 4d6+2.~
 
 @8706 = ~Sumptuous Blood Bath~
 @8707 = ~Sumptuous Blood Bath
-Slash open a foe's arteries, instantly dealing 2d8+4 slashing damage (halved if they save vs. Death at -4). The target then bleeds for 3 rounds, taking 2 slashing damage each round. Each time the target bleeds, the Slayer is drenched in blood and heals 2d6 hit points. At 3 million XP or more, the initial damage increases to 3d8+6 slashing, the bleeding to 2 slashing twice per round, and the healing to 3d6 hit points. If the save is made, the Slayer only heals once.~
+Slash open a foe's arteries, instantly dealing 2d8+4 slashing damage (halved if they Save vs. Death at -4). The target then bleeds for 3 rounds, taking 2 slashing damage each round. Each time the target bleeds, the Slayer is drenched in blood and heals 2d6 Hit Points. At 3 million XP or more, the initial damage increases to 3d8+6 slashing, the bleeding to 2 slashing twice per round, and the healing to 3d6 Hit Points. If the save is made, the Slayer only heals once.~
 
 @8800 = ~SINGLE-WEAPON: This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.
 
