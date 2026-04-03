@@ -71,6 +71,7 @@
 @1532 = ~Make bracers, belts and boots grant +1 HP, so even unenchanted variants have an actual use~
 @1548 = ~Make Void-weapons slightly more effective and logical~
 @1559 = ~Make Protection From Magic scroll not a cheesy way to dispel all magic from an enemy~
+@582 = ~Make True Sight dispel illusions once per second instead of once per round~
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -298,7 +299,6 @@
 @561 = ~Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance~
 @562 = ~Make Imprisonment prevent movement while the animation plays out~
 @572 = ~Make Magic Missiles inflict 1d5+2 magic damage when cast by Invokers~
-@582 = ~Make True Sight dispel illusions once per second instead of once per round~
 
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20"
