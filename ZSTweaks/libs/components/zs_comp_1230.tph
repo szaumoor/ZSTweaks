@@ -8,7 +8,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 216 parameter1 = 2 probability1 = 34 probability2 = 20 END
     LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 141 probability1 = 34 probability2 = 20 END
     LPF ALTER_EFFECT INT_VAR match_resist_dispel = 1 resist_dispel = 3 END
-    LPF ALTER_EFFECT_EX INT_VAR check_globals=0 probability=19 STR_VAR match_probability1_ex = "(o_probability1=15 OR o_probability1=14)" END
+    LPF ALTER_EFFECT_EX INT_VAR check_globals=0 probability1=19 STR_VAR match_probability1_ex = "(o_probability1=15 OR o_probability1=14)" END
     LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode = 139 probability1 = 34 probability2 = 20 parameter1 = 40968 END
 
 END

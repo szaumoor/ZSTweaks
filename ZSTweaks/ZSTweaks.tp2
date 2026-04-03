@@ -4,15 +4,15 @@ VERSION "1.6.8"
 README ~%MOD_FOLDER%/full_readme.md~
 AUTO_EVAL_STRINGS
 
-MODDER
-	setup_tra none
-	area_variables none
-	missing_extern warn
-	missing_resref warn
-	ict2_actions warn
-	missing_eval none
-	overwriting_file none
-	fun_args warn
+// MODDER
+// 	setup_tra none
+// 	area_variables none
+// 	missing_extern warn
+// 	missing_resref warn
+// 	ict2_actions warn
+// 	missing_eval none
+// 	overwriting_file none
+// 	fun_args warn
 
 ALWAYS
 	INCLUDE ~%MOD_FOLDER%/libs/preambles/zs_always.tph~

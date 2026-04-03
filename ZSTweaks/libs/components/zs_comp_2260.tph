@@ -11,7 +11,7 @@ ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald OR zst_2260_allow_swash O
 
       COPY_EXISTING ~weapprof.2da~ ~override~
         FOR ( i = 3; i < 31; ++i ) BEGIN
-          LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = 42 f_Increment = 6 STR_VAR replacement = "2" match_col_value = "1" END
+          LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = 42 STR_VAR replacement = "2" match_col_value = "1" END
         END
         PRETTY_PRINT_2DA
 
