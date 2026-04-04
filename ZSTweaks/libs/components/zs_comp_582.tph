@@ -4,7 +4,7 @@ COPY_EXISTING ~sppr950.spl~  ~override~
               ~spcl232d.spl~ ~override~
               ~sppr505d.spl~ ~override~
     LPF ALTER_SPELL INT_VAR name = "-1" END // removes useless console logging, would overwhelm with one-per-second dispels
-    LPF ALTER_EFFECT INT_VAR match_opcode = 328 match_parameter2 = 72 duration = 2 END
+    LPF ALTER_EFFECT INT_VAR silent=1 match_opcode = 328 match_parameter2 = 72 duration = 2 END
 BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~spwi609.spl~ ~override~
@@ -22,10 +22,18 @@ COPY_EXISTING ~spdr401.spl~ ~override~
               ~spwi206.spl~ ~override~
               ~spwi405.spl~ ~override~
               ~spwi721.spl~ ~override~
-              ~spin118.spl~ ~override~
               ~spwi307.spl~ ~override~
               ~spwi505.spl~ ~override~
               ~sppr516.spl~ ~override~
-              ~potn10.itm~ ~override~
-              ~ring05.itm~ ~override~
-    LPF CLONE_EFFECT INT_VAR match_opcode=20 opcode=318 timing=0 resist_dispel=0 parameter2=110 parameter1=72 power=0 STR_VAR insert="first" resource="%SOURCE_RES%" END
+              ~potn10.itm~  ~override~
+              ~ring05.itm~  ~override~
+    LPF CLONE_EFFECT INT_VAR match_opcode=20 opcode=318 timing=0 duration=0 resist_dispel=0 parameter2=110 parameter1=72 power=0 STR_VAR insert="first" resource="%SOURCE_RES%" END
+BUT_ONLY IF_EXISTS
+
+ACTION_IF NOT is_iwdee BEGIN
+
+    COPY_EXISTING ~spin118.spl~ ~override~
+        LPF CLONE_EFFECT INT_VAR match_opcode=20 opcode=318 timing=0 duration=0 resist_dispel=0 parameter2=110 parameter1=72 power=0 STR_VAR insert="first" resource="%SOURCE_RES%" END
+    BUT_ONLY
+
+END
