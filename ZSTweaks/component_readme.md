@@ -334,6 +334,10 @@ Just a small bonus to make it more interesting and different compared to heavy c
 
 This simply makes the scroll not work on targets that are currently enemies, to remove the temptation to use this scroll to invalidate all their magic protections. It's a rough fix and there are situations where it will still work out. Another way to fix it would be to make the scroll self-only, but I went for making enemies immune for now.
 
+### Make True Sight dispel illusions once per second instead of once per round (582) (IWDEE BGEE BG2EE EET)
+
+This makes the spell behave a little closer to what is supposed to be and makes the issue of being able to go invisible in between True Sight pulses and attack much less likely to succeed. It's not instant dispelling, but it's close enough that it likely does not matter.
+
 </details>
 
 ---

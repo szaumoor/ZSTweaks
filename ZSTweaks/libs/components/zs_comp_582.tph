@@ -4,29 +4,36 @@ COPY_EXISTING ~sppr950.spl~  ~override~
               ~spcl232d.spl~ ~override~
               ~sppr505d.spl~ ~override~
     LPF ALTER_SPELL INT_VAR name = "-1" END // removes useless console logging, would overwhelm with one-per-second dispels
+    LPF ALTER_EFFECT INT_VAR silent=1 match_opcode = 328 match_parameter2 = 72 duration = 2 END
 BUT_ONLY IF_EXISTS
 
 COPY_EXISTING ~spwi609.spl~ ~override~
               ~spcl732.spl~ ~override~
               ~spcl232.spl~ ~override~
               ~sppr505.spl~ ~override~
-    LPF ALTER_EFFECT_EX INT_VAR opcode = 139 parameter1=RESOLVE_STR_REF("True Sight continues...") STR_VAR match_resource_ex = "(~%o_resource%~ STR_EQ ~sppr950~ OR ~%o_resource%~ STR_EQ ~spcl232d~ OR ~%o_resource%~ STR_EQ ~sppr505d~)" resource="" END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 139 match_duration = 54 duration=60 parameter1 =RESOLVE_STR_REF("True Sight has ended") END
-    LPF CLONE_EFFECT INT_VAR match_opcode = 139 match_duration = 60 opcode = 272 timing=0 parameter1=1 parameter2=3 STR_VAR resource = ~zsttrsh0~ END
+    LPF ALTER_EFFECT INT_VAR silent=1 match_opcode = 328 match_parameter2 = 72 duration = 2 END
+    LPF ALTER_EFFECT_EX INT_VAR opcode = 139 parameter1=RESOLVE_STR_REF(@80900) parameter2=0 STR_VAR match_resource_ex = "(~%o_resource%~ STR_EQ ~sppr950~ OR ~%o_resource%~ STR_EQ ~spcl232d~ OR ~%o_resource%~ STR_EQ ~sppr505d~)" match_duration_ex = "(o_duration <= 54)" resource="" END
+    LPF CLONE_EFFECT INT_VAR match_opcode=146 opcode=139 match_duration=60 timing=4 parameter1=RESOLVE_STR_REF(@80901) parameter2=0 STR_VAR resource="" END
+    LPF CLONE_EFFECT INT_VAR match_opcode=139 match_duration=60 opcode=272 timing=0 parameter1=1 parameter2=3 multi_match=1 STR_VAR resource = ~zsttrsh0~ insert="last" END
 BUT_ONLY IF_EXISTS
 
-// player usable spells
+// player usable sources of invisibility (stops them from working completely with true sight active)
 COPY_EXISTING ~spdr401.spl~ ~override~
-              ~spin118.spl~ ~override~
               ~spwi206.spl~ ~override~
-              ~spwi307.spl~ ~override~
               ~spwi405.spl~ ~override~
               ~spwi721.spl~ ~override~
+              ~spwi307.spl~ ~override~
               ~spwi505.spl~ ~override~
               ~sppr516.spl~ ~override~
-    LPF ADD_SPL_TGTEFF INT_VAR t=99 STR_VAR effects = ~op=318,res=%SOURCE_RES%,tmg=0,dur=0,p2=110,p1=72,pwr=0~ END
+              ~potn10.itm~  ~override~
+              ~ring05.itm~  ~override~
+    LPF CLONE_EFFECT INT_VAR match_opcode=20 opcode=318 timing=0 duration=0 resist_dispel=0 parameter2=110 parameter1=72 power=0 STR_VAR insert="first" resource="%SOURCE_RES%" END
+BUT_ONLY IF_EXISTS
 
-// player usable items
-COPY_EXISTING ~potn10.itm~ ~override~
-              ~ring05.itm~ ~override~ // sandthief
-    LPF ADD_ON_HIT_EFF INT_VAR t=99 STR_VAR effects = ~op=318,res=%SOURCE_RES%,tmg=0,dur=0,p2=110,p1=72,pwr=0~ END
+ACTION_IF NOT is_iwdee BEGIN
+
+    COPY_EXISTING ~spin118.spl~ ~override~
+        LPF CLONE_EFFECT INT_VAR match_opcode=20 opcode=318 timing=0 duration=0 resist_dispel=0 parameter2=110 parameter1=72 power=0 STR_VAR insert="first" resource="%SOURCE_RES%" END
+    BUT_ONLY
+
+END
