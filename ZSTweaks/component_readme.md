@@ -458,7 +458,7 @@ This makes these boots improve Magic Resistance by 10% for everyone (from 7%) an
 
 Now it reduces Lore by 20 (down from 30), but it also decreases Wisdom by 2, Detect Illusions by 10, and applies a -2 saving throw penalty vs. Illusion magic. This is compensated by providing 2 spell slots at level 4.
 
-### Make the Helmet of Dumathoin slightly more powerful (BGEE BG2EE EET)
+### Make the Helmet of Dumathoin slightly more powerful (1656) (BGEE BG2EE EET)
 
 This component increases the damage resistance granted by the helm from 3% to 5%. Due to the way the game engine rounds damage calculations, the original 3% is often ineffective. The new 5% value provides a small but more consistent benefit, especially for classes that already have other sources of damage reduction.
 
