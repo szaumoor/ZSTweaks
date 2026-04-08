@@ -230,6 +230,8 @@ OUTER_SET zst_1010_asp_nest_sbonus = "-4"
 
 /////////////////////////////// Arcane Magic Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+OUTER_SET zst_140_finger_death_no_projectile = "0"
+
 // allows the Luck tweaks
 OUTER_SET zst_145_luck_boost     = "1" // effect boost
 OUTER_SET zst_145_luck_dur_boost = "1" // effect duration boost

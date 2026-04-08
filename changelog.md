@@ -1,16 +1,17 @@
 # Changelog
 
-## Fixes
+## Modifications
 
-- Improved the description of many, many tweaked items and spells for all the components in this mod, fixing typos and many other problems and inconsistencies
-- The Shadow Dragon Wardstone turned ioun stone no longer has a description that mentions giving extra benefits to "Dark Soul" monks. I can see where my mind was.
-- Changed the heteronormative-ish(?) implications in the vanilla description of Nature's Beauty where males prefer nymphs and for females "it varies", to something more neutral. You're welcome.
-- Many other rewrites of rushed descriptions and the like, as well as fixed vanilla weirdness in the descriptions of some the spells I tweak
-- Fixed bug in Helm of Balduran component due to a typo
-- Fixed bug in Short Sword of Mask component due to a typo
-- Fixed bug in Club of Detonation component due to a typo
-- Fixed bug in NPC Item Creation component due to a typo
+- Added a configuration option for Finger of Death so it doesn't use a projectile, that is, upon casting, the target immediately suffers its effect.
 
 ## New Components
 
-- Make True Sight dispel illusions once per second instead of once per round (582) (IWDEE BGEE BG2EE EET)
+- Make Haste and Improved Haste more balanced by making them last much less (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
+- Make Fallorain's Plate +1 more unique (1369) (BGEE BG2EE EET) (TODO)
+- Make Pride of the Legion +2 more unique (xxxx) (BG2EE EET) (TODO)
+- Make Armor of the Hart +3 more unique (xxxx) (BG2EE EET) (TODO)
+- Make T'rachie's Plate +5 more unique (xxxx) (BG2EE EET) (TODO)
+- Make Armor of Missile Attraction +2 more unique (xxxx) (BG2EE EET) (TODO)
+- Make Mail of the Dead +2 more unique (xxxx) (BGEE BG2EE EET) (TODO)
+- Make Jester's Chain +4 more unique (xxxx) (BG2EE EET) (TODO)
+- Make Ashen Scales +2 more unique (xxxx) (BG2EE EET) (TODO)

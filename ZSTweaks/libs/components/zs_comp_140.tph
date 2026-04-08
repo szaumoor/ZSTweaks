@@ -10,4 +10,12 @@ ACTION_IF NOT is_iwdee BEGIN
     LPF ALTER_ITEM INT_VAR id_desc=new_description END
   BUT_ONLY IF_EXISTS
 
+  ACTION_IF zst_140_finger_death_no_projectile BEGIN
+
+    COPY_EXISTING ~spwi713.spl~ ~override~
+                  ~sppr708.spl~ ~override~
+      LPF ALTER_HEADER INT_VAR projectile=1 END
+
+  END
+
 END

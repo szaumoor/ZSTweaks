@@ -515,7 +515,7 @@ Weight: 1~
 @7032 = ~The~
 @7033 = ~This~
 
-@7040 = ~The skillful hand of the warlock Wormsor carefully worked several dragon scales into this powerful helmet. Red, white, black, and blue scales overlap, protecting the wearer from normal blows as well as the breath of a dragon, whether it's in the form of fire, cold, acid, or electricity. It is hard to determine whether the benefits originate within the scales or the spells of the mage.
+@7040 = ~The skillful hand of the warlock Wormsor carefully worked several dragon scales into this powerful helmet. Red, white, ebony, and blue scales overlap, protecting the wearer from normal blows as well as the breath of a dragon, whether it's in the form of fire, cold, acid, or electricity. It is hard to determine whether the benefits originate within the scales or the spells of the mage.
 
 STATISTICS:
 
@@ -1326,8 +1326,8 @@ Weight: 3~
 STATISTICS:
 
 Equipped abilities:
-– Saves vs. Breath: +2
 – Fire Resistance: +30%
+– Saves vs. Breath: +2
 
 Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
 Requires:
@@ -1601,3 +1601,111 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 1~
+
+@60100 = ~Captain Fallorain, leader of Calimshan's 12th cavalry brigade, wore this enchanted armor for the last time during the Battle of the Spider Swamp. There he lost his life and army trying to rid an unrecorded evil from the area.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. evil
+
+Armor Class: 2 (-1 vs. slashing)
+Requires:
+ 11 Strength
+
+Weight: 20~
+
+@60150 = ~Not many suits of this armor, originally used by the legions of Unther, remain in use today. The few suits that exist are usually in the hands of rich collectors. Simply finding a suit of this armor is enough to earn an adventurer a small fortune.
+
+STATISTICS:
+
+Armor Class: -1 (-5 vs. slashing, -4 vs. piercing and missile)
+Requires:
+ 15 Strength
+
+Weight: 40~
+
+@60200 = ~Few suits of armor in all the realms are the equal of this full plate. All that remains of the origin of the Hart are folktales and legends. The most popular of these is that an impossible battle was once fought against an army of orcs surging through the Three Trees Pass. Arngor of the Oak led the armies of men and elves, and it is said that he dueled with the orc commander till the sun set and the land was bathed in a bloody mist. Finally the orc fell, but Arngor had sustained wounds too vast for any to save him. His blood soaked through the armor he wore, infusing it with his courage and nobility. Thus the Armor of the Hart became known to men.
+
+STATISTICS:
+
+Equipped abilities:
+– Charisma: +2
+– Aura of Courage: The armor infuses the wearer and allies close by with morale, minimizing the chances of morale failure.
+
+Armor Class: -2 (-6 vs. slashing, -5 vs. piercing and missile)
+Requires:
+ 15 Strength
+
+Weight: 45~
+
+@60250 = ~In his aging years, Baron T'rachie coveted the wife of the lowly foot soldier Libol. Instead of openly pursuing her and causing a scandal, he instead created this suit of armor. He gifted it to the soldier. This armor's curse sickened Libol and hideously disfigured him, and his wife fled from him in disgust. Libol, trapped in the armor but not certain of T'rachie's treachery, asked to be sent to the wastes for a dangerous tour of duty against marauding ogres. He never returned, and Baron T'rachie was free to pursue Libol's widow. This armor is cursed and requires powerful magic to remove.
+
+STATISTICS:
+
+Equipped abilities:
+– Constitution: -2
+– Charisma: -5
+– May only be removed with a Remove Curse spell
+
+Armor Class: -2 (-5 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 35~
+
+@60300 = ~This odd-looking suit of studded leather cannot be removed once put on, except under intervention by a priest. While improving the protection against all melee weapons, this armor actually becomes a target for missile weapons, and hence so does its wearer. The choice is simple: deadly arrows or deadly swords.
+
+STATISTICS:
+
+Equipped abilities:
+– May only be removed with a Remove Curse spell
+
+Armor Class: 5 (3 vs. slashing, 4 vs. piercing, 15 vs. missile)
+Requires:
+ 6 Strength
+
+Weight: 8~
+
+@60350 = ~A mage can make an extremely effective assassin, as Vorusta illustrated over four hundred years ago. He would create skeleton warriors equipped with this enchanted armor and a powerful blade, and give their circlet of power to the target as a friendly gift. When the killing machine was through with its work, Vorusta retrieved the equipment and started the entire process over.
+
+STATISTICS:
+
+Armor Class: 3 (1 vs. slashing, 5 vs. crushing)
+Requires:
+ 8 Strength
+
+Weight: 10~
+
+@60400 = ~Friends of Dekirh Fasthands, a bard who insisted on playing the rowdiest towns on the Sword Coast, gave him this suit of magical chain as a gift. The chain mail was given to protect Dekirh from the drunken spectators who often threw rotting produce, chairs, and even knives at Dekirh. The bard appreciated the gift but painted it with wild colors to better fit into his show.
+
+STATISTICS:
+
+Armor Class: 1 (-1 vs. slashing, 3 vs. crushing)
+Requires:
+ 8 Strength
+
+Weight: 8~
+
+@60450 = ~This odd-looking suit of studded leather cannot be removed once put on, except under intervention by a priest. While improving the protection against all melee weapons, this armor actually becomes a target for missile weapons, and hence so does its wearer. The choice is simple: deadly arrows or deadly swords.
+
+STATISTICS:
+
+Equipped abilities:
+– May only be removed with a Remove Curse spell
+
+Armor Class: 5 (3 vs. slashing, 4 vs. piercing, 15 vs. missile)
+Requires:
+ 6 Strength
+
+Weight: 8~
+
+@60500 = ~Instead of metal strips, this armor uses wyvern scales bound to a chain backing by means of a magical fire. The resulting armor is ash-gray in color and more flexible than standard splint mail. A ranger, Usher Skacan, made this armor after slaying several wyverns that were killing all the deer and elk in his forest.
+
+STATISTICS:
+
+Armor Class: 2 (0 vs. crushing, 1 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 18~

@@ -816,6 +816,13 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN ~[WARN]: Invalid setting for Asp's Nest saving throw bonus. Must be between -10 and -1. Actual value: %zst_1010_asp_nest_sbonus%~
         END
 
+        // ----------------------------------------FINGER OF DEATH------------------------------------------------- \\
+
+        ACTION_IF zst_140_finger_death_no_projectile != 0 AND zst_140_finger_death_no_projectile != 1 BEGIN
+            WARN "[WARN]: Setting to remove Finger of Death projectile should be set to 0 (disable) or 1 (enable). Actual value: %zst_140_finger_death_no_projectile%"
+            LAM f_plus
+        END
+
         // ----------------------------------------LUCK TWEAKS------------------------------------------------- \\
 
         ACTION_IF zst_145_luck_boost != 0 AND zst_145_luck_boost != 1 BEGIN
