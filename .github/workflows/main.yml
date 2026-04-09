@@ -93,3 +93,25 @@ jobs:
           files: ${{ env.PLATFORM_SHORT }}-${{ env.PROJECT_NAME }}-${{ env.TAG_NAME }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload to Nexus Mods (BG1)
+        if: matrix.platform == 'windows'
+        uses: Nexus-Mods/upload-action@v1.0.0-beta.3
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_group_id: ${{ secrets.NEXUS_ZSTWEAKS_BG1_FILE_GROUP_ID }}
+          filename: ${{ env.PROJECT_NAME }}-${{ env.TAG_NAME }}.zip
+          version: ${{ env.TAG_NAME }}
+          display_name: ${{ env.PROJECT_NAME }} ${{ env.TAG_NAME }}
+          file_category: main
+
+      - name: Upload to Nexus Mods (BG2)
+        if: matrix.platform == 'windows'
+        uses: Nexus-Mods/upload-action@v1.0.0-beta.3
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_group_id: ${{ secrets.NEXUS_ZSTWEAKS_BG2_FILE_GROUP_ID }}
+          filename: ${{ env.PROJECT_NAME }}-${{ env.TAG_NAME }}.zip
+          version: ${{ env.TAG_NAME }}
+          display_name: ${{ env.PROJECT_NAME }} ${{ env.TAG_NAME }}
+          file_category: main
