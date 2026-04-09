@@ -100,7 +100,7 @@ jobs:
         with:
           api_key: ${{ secrets.NEXUSMODS_API_KEY }}
           file_group_id: ${{ secrets.NEXUS_ZSTWEAKS_BG1_FILE_GROUP_ID }}
-          filename: ${{ env.PROJECT_NAME }}-${{ env.TAG_NAME }}.zip
+          filename: ${{ env.PLATFORM_SHORT }}-${{ env.PROJECT_NAME }}-${{ env.TAG_NAME }}.zip
           version: ${{ env.TAG_NAME }}
           display_name: ${{ env.PROJECT_NAME }} ${{ env.TAG_NAME }}
           file_category: main
@@ -111,7 +111,7 @@ jobs:
         with:
           api_key: ${{ secrets.NEXUSMODS_API_KEY }}
           file_group_id: ${{ secrets.NEXUS_ZSTWEAKS_BG2_FILE_GROUP_ID }}
-          filename: ${{ env.PROJECT_NAME }}-${{ env.TAG_NAME }}.zip
+          filename: ${{ env.PLATFORM_SHORT }}-${{ env.PROJECT_NAME }}-${{ env.TAG_NAME }}.zip
           version: ${{ env.TAG_NAME }}
           display_name: ${{ env.PROJECT_NAME }} ${{ env.TAG_NAME }}
           file_category: main
