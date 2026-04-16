@@ -722,7 +722,7 @@ This improves this item's utility such that you can shapeshift into a short-swor
 
 I couldn't resist, considering the name of this armor, especially since its unique description gives no real hint as to how it works. Therefore, this armor now provides:
 
-- Armor Class vs. fiends: +2
+- Armor Class ans Saving Throws vs. fiends: +2
 - Damage vs. fiends: +2
 - THAC0 vs. fiends: +2
 - +20% resistance to fire
@@ -746,7 +746,7 @@ Yay, I love me another item with a unique description but no unique function. Th
 
 - +20% fire resistance
 - Immunity to Poison
-- +2 Armor Class vs. wyverns and dragons
+- +2 Armor Class and Saving Throws vs. wyverns and dragons
 - Wearable by rangers and druids
 
 ### Make Crimson Chain more unique beyond enchantment level (1335) (BG2EE EET)
@@ -1096,7 +1096,7 @@ In reality, the sword deals 1d8+2 against all enemies, and against dragons it de
 - Regeneration improved to 1 HP per 5/2 rounds
 - Adds 15% resistance to all elements (i.e., the damage type of most dragons)
 - +4 THAC0 bonus against dragons and wyverns
-- +2 Armor Class vs. Dragons and Wyverns (essentially like a "Protection from Dragons and Wyverns" spell)
+- +2 Armor Class and Saving Throws vs. Dragons and Wyverns (essentially like a "Protection from Dragons and Wyverns" spell)
 - Detect Invisibility can be cast three times per day instead of once
 - Deals an additional tick of 2d8+2 damage if the target is a dragon or wyvern
 
@@ -1316,7 +1316,7 @@ Finally, it nerfs that ridiculous Slow effect so that it lasts 2 rounds and requ
 
 This makes the club slightly more powerful (+3 in all respects), more shamanic, and more damaging to undead: it acts as +5 against them, with a +5 THAC0 bonus against undead; undead take +4 damage, and spectral undead take +8.
 
-### Make Wyvern's Tail more poisonous (1324) (BG2EE EET)
+### Make Wyvern's Tail more venomous (1324) (BG2EE EET)
 
 This improves this item in the following ways:
 
@@ -1538,7 +1538,7 @@ This component contains the same fixes as Tresset's Deathbringer Assault compone
 This component makes Shar-Teel's effectiveness against males fit her hatred and boasting. A bit gimmicky, but very amusing to me:
 
 - +1 THAC0 and damage against males of any race
-- +2 Armor Class vs. males (essentially as if she had a Protection from Men spell on her)
+- +2 Armor Class and Saving Throws vs. men (essentially as if she had a Protection from Men spell on her)
 
 Note that this means she has a bonus against things that may make no sense if they are set as "male", like battle horrors. My mod, however, fixes this whenever a component is installed, ensuring sexless and genderless creatures are set as such. Creatures of that nature include angels, demons, elementals, mind flayers, golems, battle horrors, beholders, and others. All those instances will be fixed so this component, and any other that targets gender directly, works more consistently. This fix can be disabled in the configuration file, but installing this component without it is not recommended. Final note: summoned creatures have a special "gender" set to them that marks them as summoned creatures, so they will not be affected by this component, even if their normal version would routinely be considered "male". Not my fault they used "gender" as a weird mark for various purposes; blame Bioware!
 

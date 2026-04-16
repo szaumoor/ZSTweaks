@@ -103,6 +103,7 @@ jobs:
           filename: ${{ env.PLATFORM_SHORT }}-${{ env.PROJECT_NAME }}-${{ env.TAG_NAME }}.zip
           version: ${{ env.TAG_NAME }}
           display_name: ${{ env.PROJECT_NAME }} ${{ env.TAG_NAME }}
+          description: Changelog at https://github.com/szaumoor/ZSTweaks/blob/50dda3103e0d270791b61a64b27b0c2de885f28e/changelog.md
           file_category: main
 
       - name: Upload to Nexus Mods (BG2)
@@ -114,4 +115,5 @@ jobs:
           filename: ${{ env.PLATFORM_SHORT }}-${{ env.PROJECT_NAME }}-${{ env.TAG_NAME }}.zip
           version: ${{ env.TAG_NAME }}
           display_name: ${{ env.PROJECT_NAME }} ${{ env.TAG_NAME }}
+          description: Changelog at https://github.com/szaumoor/ZSTweaks/blob/50dda3103e0d270791b61a64b27b0c2de885f28e/changelog.md
           file_category: main
