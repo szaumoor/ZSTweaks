@@ -3,6 +3,7 @@
 ## Modifications
 
 - Added a configuration option for Finger of Death so it doesn't use a projectile, that is, upon casting, the target immediately suffers its effect.
+- Component that makes natural effects nonmagical now includes Poisonous Breath from Neothelid (SoD)
 
 ## New Components
 

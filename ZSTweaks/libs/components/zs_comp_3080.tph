@@ -11,5 +11,6 @@ COPY_EXISTING ~carrio1.itm~  ~override~
               ~iotyugh.itm~  ~override~
               ~bdotyg01.itm~ ~override~
               ~l#mcoty.itm~  ~override~
+              ~spin520.spl~  ~override~
   LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
 BUT_ONLY IF_EXISTS
