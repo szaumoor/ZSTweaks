@@ -2346,6 +2346,7 @@ There are several creatures whose on-hit effects do not seem to make much sense 
 - Ghouls, Ghasts, Liches, Shadow Fiends, and Vampiric Wolves: Their paralysis can no longer be dispelled or resisted by magic resistance. It is a natural effect and thus may only be resisted with saving throws and removed with spells such as Remove Paralysis or Free Action.
 - Spirit Trolls: Their Strength sapping is no longer considered magical, same as other shadow creatures and wraith spiders. It does not make much sense for it to be magical compared to other shadows. Therefore, it may only be cured with Restoration spells or by resting or waiting.
 - Carrion Crawlers: Their paralysis is no longer considered magical. In fact, in the lore, it is not magical at all; it is a paralytic toxin spread with their tentacles. There is even a paralytic poison made from their brain juices.
+- Poisonous Breath from Neothelids is no longer considered a magical effect and as such magic resistance has no effect on it.
 
 ### Make Shadow creatures slightly more dangerous (3090) (IWDEE BGEE BG2EE EET)
 
