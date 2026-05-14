@@ -1,6 +1,7 @@
 ACTION_IF NOT is_iwdee BEGIN
 
     COPY_EXISTING ~plat02.itm~ ~override~
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=219,p2=8,p1=%alignmen_mask_evil%~ END
+    BUT_ONLY IF_EXISTS
     
-
 END

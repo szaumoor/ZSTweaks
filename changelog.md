@@ -7,7 +7,7 @@
 
 ## New Components
 
-- Make Haste and Improved Haste more balanced by making them last much less (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
+- Make Haste and Improved Haste more balanced by making them last much less (577) (IWDEE BGEE BG2EE EET) (TODO)
 - Make Fallorain's Plate +1 more unique (1369) (BGEE BG2EE EET) (TODO)
 - Make Pride of the Legion +2 more unique (xxxx) (BG2EE EET) (TODO)
 - Make Armor of the Hart +3 more unique (xxxx) (BG2EE EET) (TODO)

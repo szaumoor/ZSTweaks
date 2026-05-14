@@ -1,0 +1,40 @@
+ACTION_IF is_iwdee BEGIN OUTER_SET the_cap = 30 END ELSE BEGIN OUTER_SET the_cap=20 END
+
+DEFINE_PATCH_MACRO nerf_haste BEGIN
+    LPF ~CD_TRIM-O-MATIC~ INT_VAR level_cap = 1 END
+    LPF ALTER_EFFECT_EX INT_VAR duration = start_duration STR_VAR match_duration_ex = "(o_duration > 5)" END
+    LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur=6 step_size=level_jump level_cap=the_cap END
+END
+
+DEFINE_PATCH_MACRO ~nerf_haste#normal~ BEGIN
+    SET start_duration = 12
+    SET level_jump = 3 
+    LPM nerf_haste
+END
+
+DEFINE_PATCH_MACRO ~nerf_haste#improved~ BEGIN
+    SET start_duration = 18
+    SET level_jump = 4 
+    LPM nerf_haste
+END
+
+
+COPY_EXISTING ~spin828~ ~override~ // mazzy
+    LPM ~nerf_haste#normal~
+
+COPY_EXISTING ~spra301~ ~override~ // kit_stalker
+    LPM ~nerf_haste#normal~
+
+COPY_EXISTING ~spwi305~ ~override~ // wizard
+    LPM ~nerf_haste#normal~
+
+COPY_EXISTING ~spwi613~ ~override~ // wizard improved haste
+    LPM ~nerf_haste#improved~
+
+COPY_EXISTING ~spwish36~ ~override~ // improved haste wish
+              ~spwish37~ ~override~
+              ~spwish38~ ~override~
+    LPF ALTER_EFFECT_EX INT_VAR duration = 30 STR_VAR match_duration_ex = "(o_duration > 5)" END
+BUT_ONLY IF_EXISTS
+
+

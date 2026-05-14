@@ -1781,6 +1781,15 @@ Just a small tweak to make it look better, in my opinion. It's probably compatib
 
 This is the first in a conceived series of new tweaks to give specialist wizards more incentives. Install this after any other mod that affects the effects of the spell, as the implementation requires moving their current state to subspells. Any tweak for the spell applied after this one will likely not work as expected.
 
+### Make Haste and Improved Haste more balanced by making them last much less (577) (IWDEE BGEE BG2EE EET)
+
+It's amazing how strongly Haste can turn the tides of battle. It's a powerful effect that should last less than it does. The durations are:
+
+- Haste: In vanilla duration is 3 rounds plus 1 per level (max 23 rounds in BG, 33 in IWD). This is now 1 round per 3 levels (2 rounds by the time mages get it, max 7 rounds for BG, 10 in IWD).
+- Improved Haste: Same duration as Haste in vanilla. This is now 1 round plus another round per 4 levels (3 rounds by the time mages get it, max 5 rounds for BG, 8 rounds for IWD).
+
+Haste effects on items are not changed to make them more valuable.
+
 </details>
 
 ---
@@ -2346,7 +2355,7 @@ There are several creatures whose on-hit effects do not seem to make much sense 
 - Ghouls, Ghasts, Liches, Shadow Fiends, and Vampiric Wolves: Their paralysis can no longer be dispelled or resisted by magic resistance. It is a natural effect and thus may only be resisted with saving throws and removed with spells such as Remove Paralysis or Free Action.
 - Spirit Trolls: Their Strength sapping is no longer considered magical, same as other shadow creatures and wraith spiders. It does not make much sense for it to be magical compared to other shadows. Therefore, it may only be cured with Restoration spells or by resting or waiting.
 - Carrion Crawlers: Their paralysis is no longer considered magical. In fact, in the lore, it is not magical at all; it is a paralytic toxin spread with their tentacles. There is even a paralytic poison made from their brain juices.
-- Poisonous Breath from Neothelids is no longer considered a magical effect and as such magic resistance has no effect on it.
+- Poisonous Breath from Neothelid (SoD) is no longer considered a magical effect and as such magic resistance has no effect on it.
 
 ### Make Shadow creatures slightly more dangerous (3090) (IWDEE BGEE BG2EE EET)
 

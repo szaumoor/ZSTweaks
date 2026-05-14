@@ -40,7 +40,7 @@ ACTION_IF zst_group_390_acid_fog BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_390.tph~ END
 END
 
-ACTION_IF zst_group_400_energy_dragin BEGIN
+ACTION_IF zst_group_400_energy_drain BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_400.tph~ END
 END
 
@@ -134,4 +134,8 @@ END
 
 ACTION_IF zst_group_572_magic_missile BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_572.tph~ END
+END
+
+ACTION_IF zst_group_577_haste_nerf BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_577.tph~ END
 END

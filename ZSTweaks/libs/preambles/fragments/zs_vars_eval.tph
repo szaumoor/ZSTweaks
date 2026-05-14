@@ -1562,8 +1562,8 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
-        ACTION_IF zst_group_400_energy_dragin != 0 AND zst_group_400_energy_dragin != 1 BEGIN
-            WARN "[WARN]: Energy Drain group component should be set to 1 or 0. Actual value: %zst_group_400_energy_dragin%"
+        ACTION_IF zst_group_400_energy_drain != 0 AND zst_group_400_energy_drain != 1 BEGIN
+            WARN "[WARN]: Energy Drain group component should be set to 1 or 0. Actual value: %zst_group_400_energy_drain%"
             LAM f_plus
         END
 
@@ -1678,7 +1678,12 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         END
  
         ACTION_IF zst_group_572_magic_missile != 0 AND zst_group_572_magic_missile != 1 BEGIN
-            WARN "[WARN]: Magic Missile group component should be set to 1 or 0. Actual value: %zst_group_562_imprisonment%"
+            WARN "[WARN]: Magic Missile group component should be set to 1 or 0. Actual value: %zst_group_572_magic_missile%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_577_haste_nerf != 0 AND zst_group_577_haste_nerf != 1 BEGIN
+            WARN "[WARN]: Haste Nerf group component should be set to 1 or 0. Actual value: %zst_group_577_haste_nerf%"
             LAM f_plus
         END
 
@@ -2574,6 +2579,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         ACTION_IF zst_group_1366_helm_of_balduran != 0 AND zst_group_1366_helm_of_balduran != 1 BEGIN
             WARN "[WARN]: Helm of Balduran group component should be set to 1 or 0. Actual value: %zst_group_1366_helm_of_balduran%"
+            LAM f_plus
+        END
+  
+        ACTION_IF zst_group_1369_fallorain_plate != 0 AND zst_group_1369_fallorain_plate != 1 BEGIN
+            WARN "[WARN]: Fallorain's Plate group component should be set to 1 or 0. Actual value: %zst_group_1369_fallorain_plate%"
             LAM f_plus
         END
 
