@@ -4,12 +4,13 @@
 
 - Added a configuration option for Finger of Death so it doesn't use a projectile, that is, upon casting, the target immediately suffers its effect.
 - Component that makes natural effects nonmagical now includes Poisonous Breath from Neothelid (SoD)
+- Various components for items that damage trolls in a thematic way now stop their regeneration very briefly when they are burned. (TODO -- TENTATIVE)
 
 ## New Components
 
-- Make Haste and Improved Haste more balanced by making them last much less (577) (IWDEE BGEE BG2EE EET) (TODO)
-- Make Fallorain's Plate +1 more unique (1369) (BGEE BG2EE EET) (TODO)
-- Make Pride of the Legion +2 more unique (xxxx) (BG2EE EET) (TODO)
+- Make Haste and Improved Haste more balanced by making them last much less (577) (IWDEE BGEE BG2EE EET)
+- Make Fallorain's Plate +1 more unique (1369) (BGEE BG2EE EET)
+- Make Pride of the Legion +2 more unique (1373) (BG2EE EET)
 - Make Armor of the Hart +3 more unique (xxxx) (BG2EE EET) (TODO)
 - Make T'rachie's Plate +5 more unique (xxxx) (BG2EE EET) (TODO)
 - Make Armor of Missile Attraction +2 more unique (xxxx) (BG2EE EET) (TODO)

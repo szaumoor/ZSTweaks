@@ -1,0 +1,10 @@
+ACTION_IF is_bg2ee_or_eet BEGIN
+
+    COPY_EXISTING ~plat15.itm~ ~override~
+        LPF IS_BIT_SET INT_VAR bit=1 bit_field=SHORT_AT(0x1e) RET unused_evil_set = result END
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF("") this_plus=1 flags=(unused_evil_set ? 0 : 2) END
+        LPF ADD_ITEM_HEADER INT_VAR type=3 required_id=1 location=3 range=1000 target=1 target_count=1 charges=1 depletion=3 flags=2**11 projectile=1 STR_VAR icon = ~zstprid4~ END
+        LPF ADD_ON_HIT_EFF INT_VAR t=3 STR_VAR effects = ~op=146,p2=1,res=zstprid2~ END 
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=296,res=cdhorror;op=240,p2=36;op=169,p2=36;op=267,p1=17427;op=267,p1=14007;op=106,p2=1,p1=1;op=161;op=23;op=101,p2=24;op=142,p2=37;op=101,p2=23;op=101,p2=106;op=177,p2=5,p1=%class_paladin_all%,res=zstprid0;op=177,p2=5,p1=%class_paladin_all%,res=zstprid1~ END
+
+END

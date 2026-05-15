@@ -2587,6 +2587,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
+        ACTION_IF zst_group_1373_pride_legion != 0 AND zst_group_1373_pride_legion != 1 BEGIN
+            WARN "[WARN]: Pride of the Legion group component should be set to 1 or 0. Actual value: %zst_group_1373_pride_legion%"
+            LAM f_plus
+        END
+
         // ----------------------------------------GROUP COMP VARIABLES (JOINABLES)------------------------------------------------- \\
 
         ACTION_IF zst_group_1380_haerdalis_blades != 0 AND zst_group_1380_haerdalis_blades != 1 BEGIN
