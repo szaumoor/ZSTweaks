@@ -2268,9 +2268,9 @@ This component rebalances the power slightly:
 
 ### Make all single-classed thieves apply a Sneak Attack Crippling strike on backstabs (2350) (IWDEE BGEE BG2EE EET)
 
-This component partially emulates the mechanics of the Sneak Attack option, i.e. using sneak attacks instead of backstabs. These cause a -1 penalty to attack rolls, THAC0 and damage rolls, for 1 turn, after which the target becomes immune to sneak attacks for 70 rounds. Talk about harsh. Here is how it works:
+This component partially emulates the mechanics of the Sneak Attack option, i.e. using sneak attacks instead of backstabs. The original implementation of Sneak Attack Crippling Strike cause a -1 penalty to THAC0 and damage rolls for 1 turn, after which the target becomes immune to sneak attacks (backstabs) for 70 rounds. Talk about harsh. Here is how this partial reconstruction works:
 
-- Single-classed thieves only, no exceptions, no matter what you do, get this ability at level 5. I only allow single-classed thieves because, once again, I want to reward specialization.
+- Granted at level 5 to single-classed thieves. I only allow single-classed because I want to reward specialization, and thieves deserve it.
 - Upon successfully backstabbing a target, they suffer a -1 penalty to attack rolls for 30 seconds.
 - During this time, they're immune to this crippling strike.
 - The penalty increases to -2 at level 9, -3 at level 13, and -4 at level 17. It does not grow up to -7 like in IWD at level 30. Might be just me, but -7 seems excessive, especially for damage rolls.
@@ -2282,7 +2282,7 @@ Do not mix this with Sneak Attacks; use it only if you are planning to use backs
 
 ### Make multi-classed thieves always incur in a -1 backstab multiplier for balance (2400) (IWDEE BGEE BG2EE EET)
 
-Thieves are almost always used as multiclasses because that is vastly superior to picking a single-class thief. This component aims to address that by making multiclass thieves incur a -1 backstab multiplier. A second class already gives them plenty of advantages.
+Thieves are almost always used in multiclass because that is vastly superior to picking a single-class thief. This component aims to address that by making multiclass thieves incur a -1 backstab multiplier. A second class already gives them plenty of advantages. Mix this with tweaks that improve single-classed thieves, if you believe in my holy mission and crusade to achieve true Thief supremacy.
 
 </details>
 

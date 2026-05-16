@@ -12,7 +12,7 @@
 - Make Haste and Improved Haste more balanced by making them last much less (577) (IWDEE BGEE BG2EE EET)
 - Make Fallorain's Plate +1 more unique (1369) (BGEE BG2EE EET)
 - Make Pride of the Legion +2 more unique (1373) (BG2EE EET)
-- Make Armor of the Hart +3 more unique (xxxx) (BG2EE EET) (TODO)
+- Make Armor of the Hart +3 more unique (1375) (BG2EE EET) (TODO)
 - Make T'rachie's Plate +5 more unique (xxxx) (BG2EE EET) (TODO)
 - Make Armor of Missile Attraction +2 more unique (xxxx) (BG2EE EET) (TODO)
 - Make Mail of the Dead +2 more unique (xxxx) (BGEE BG2EE EET) (TODO)
