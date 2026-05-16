@@ -680,7 +680,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         // ----------------------------------------CARSOMYR------------------------------------------------- \\
 
         ACTION_IF zst_1280_carsomyr_dispel != 0 AND zst_1280_carsomyr_dispel != 1 BEGIN
-            WARN "[WARN]: Setting to add a save vs. spell to Carsomy's dispel should be set to 0 (disable) or 1 (enable). Actual value: %zst_1280_carsomyr_dispel%"
+            WARN "[WARN]: Setting to add a Save vs. spell to Carsomy's dispel should be set to 0 (disable) or 1 (enable). Actual value: %zst_1280_carsomyr_dispel%"
             LAM f_plus
         END
 
@@ -939,7 +939,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         // ----------------------------------------WEB TWEAK------------------------------------------------- \\
 
         ACTION_IF zst_561_web_save_nerf != 0 AND zst_561_web_save_nerf != 1 BEGIN
-            WARN "[WARN]: Setting to make Web's save nerfed and use a save vs. Breath should be set to 0 (disable) or 1 (enable). Actual value: %zst_561_web_save_nerf%"
+            WARN "[WARN]: Setting to make Web's save nerfed and use a Save vs. Breath should be set to 0 (disable) or 1 (enable). Actual value: %zst_561_web_save_nerf%"
             LAM f_plus
         END
 

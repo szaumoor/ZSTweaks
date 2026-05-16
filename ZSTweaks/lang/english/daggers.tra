@@ -52,7 +52,7 @@ Combat abilities:
 
 Charge abilities:
 – Heavenly Strike three times per day
-  Special: Raise the dagger to the sky, summoning a bolt of lightning and a column of fire to strike the target, dealing 6d6+24 electrical and fire damage (save vs. Breath at -5 to take a quarter less damage). Adjacent targets take 60% of the fire part of the damage. This action also empowers the wielder, adding +2 fire and electrical damage to all melee and ranged attacks for the next turn.
+  Special: Raise the dagger to the sky, summoning a bolt of lightning and a column of fire to strike the target, dealing 6d6+24 electrical and fire damage (Save vs. Breath at -5 to take a quarter less damage). Adjacent targets take 60% of the fire part of the damage. This action also empowers the wielder, adding +2 fire and electrical damage to all melee and ranged attacks for the next turn.
   Area of Effect: 1 creature and adjacent allies
 
 THAC0: +6
@@ -71,7 +71,7 @@ Weight: 1~
 STATISTICS:
 
 Combat abilities:
-– Target must save vs. Poison or suffer 2 points of damage per second for 10 seconds
+– Target must Save vs. Poison or suffer 2 points of damage per second for 10 seconds
 
 THAC0: +2
 Damage: 1d4+2 (piercing)
@@ -88,7 +88,7 @@ Weight: 1~
 STATISTICS:
 
 Combat abilities:
-– Hit target must save vs. Death at %zst_1000_sbonus% or suffer 2 points of poison damage per second for 10 seconds
+– Hit target must Save vs. Death at %zst_1000_sbonus% or suffer 2 points of poison damage per second for 10 seconds
 
 Damage: 1d4 (missile)
 Speed Factor: 2
@@ -106,7 +106,7 @@ The Jade Fang was the weapon of choice for famed Shou Lung thief Niu Weidan, who
 STATISTICS:
 
 Combat abilities:
-– 15% chance of stunning for 10 seconds if a save vs. Spell is failed; 5% chance of triggering with no save allowed
+– 15% chance of stunning for 10 seconds if a Save vs. Spell is failed; 5% chance of triggering with no save allowed
 – Each hit heals the wielder between 1 and 5 Hit Points. It's more likely to heal less than more
 
 THAC0: +3
@@ -142,7 +142,7 @@ Weight: 1~
 STATISTICS:
 
 Combat abilities:
-– 25% chance per hit that the target must save vs. Death or be held for 2 rounds
+– 25% chance per hit that the target must Save vs. Death or be held for 2 rounds
 – +5% critical chances
 – Persistent wounds: causes 2 extra piercing damage immediately, and once per round for the next 3 rounds
 
@@ -264,7 +264,7 @@ Weight: 0~
 STATISTICS:
 
 Combat abilities:
-– Hit target takes 2 points of poison damage per second for 10 seconds unless they save vs. Death (ranged only)
+– Hit target takes 2 points of poison damage per second for 10 seconds unless they Save vs. Death (ranged only)
 
 Damage (ranged): 1d4 (missile)
 Damage (melee): 1d3 (piercing), +1d2 (poison, no save)
@@ -283,7 +283,7 @@ Weight: 0~
 STATISTICS:
 
 Combat abilities:
-– Hit target must save vs. Death at %zst_1000_sbonus% or suffer 2 points of poison damage per second for 10 seconds (ranged only)
+– Hit target must Save vs. Death at %zst_1000_sbonus% or suffer 2 points of poison damage per second for 10 seconds (ranged only)
 
 Damage (ranged): 1d4 (missile)
 Damage (melee): 1d3 (piercing), +1d2 (poison)
@@ -408,7 +408,7 @@ Equipped abilities:
 Combat abilities:
 – +5% critical hit chances
 – Elves, spiders, and denizens native to the Underdark take an extra +6 piercing damage per hit
-– Hit target must save vs. Poison at -2 or fall asleep. When this triggers, the wielder gains a +5% bonus to critical hit chances (doesn't stack) and +1 to damage and THAC0 (stacks) for 2 rounds
+– Hit target must Save vs. Poison at -2 or fall asleep. When this triggers, the wielder gains a +5% bonus to critical hit chances (doesn't stack) and +1 to damage and THAC0 (stacks) for 2 rounds
 
 THAC0: +5
 Damage: 1d4+5, +1d6 acid damage

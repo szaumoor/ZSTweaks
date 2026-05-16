@@ -4,6 +4,7 @@
 
 - Added a configuration option for Finger of Death so it doesn't use a projectile, that is, upon casting, the target immediately suffers its effect.
 - Component that makes natural effects nonmagical now includes Poisonous Breath from Neothelid (SoD)
+- Clarified the descriptions of various components that use the "protection vs. <type>" to mention that saving throws against effects caused by those creatures also gain a +2 boost.
 - Various components for items that damage trolls in a thematic way now stop their regeneration very briefly when they are burned. (TODO -- TENTATIVE)
 
 ## New Components
