@@ -279,3 +279,11 @@ END
 ACTION_IF zst_group_1373_pride_legion BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1373.tph~ END
 END
+
+ACTION_IF zst_group_1375_armor_hart BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1375.tph~ END
+END
+
+ACTION_IF zst_group_1385_trachie_plate BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1385.tph~ END
+END

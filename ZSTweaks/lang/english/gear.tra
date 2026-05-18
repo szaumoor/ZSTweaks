@@ -1656,9 +1656,16 @@ Weight: 45~
 STATISTICS:
 
 Equipped abilities:
-– Constitution: -2
-– Charisma: -5
+– Constitution: -1
+– Save vs. Death: -2
+– Charisma: -6
+– Repulsiveness: Every time a living humanoid enemy hits the user, or the user hits them, there's a 10% chance they become nauseated, receiving a -2 penalty to THAC0 and Saving Throws for 3 rounds, as well as taking 6 poison damage (Save vs. Death for half). Constructs are unaffected as well as any creature naturally immune to poison.
 – May only be removed with a Remove Curse spell
+
+Charge abilities:
+– Cloak of Fear twice per day
+  Special: Enemies around the user must Save vs. Spell of become panicked for 4 rounds
+  Casting time: Instant
 
 Armor Class: -2 (-5 vs. slashing)
 Requires:
@@ -1682,6 +1689,9 @@ Weight: 8~
 @60350 = ~A mage can make an extremely effective assassin, as Vorusta illustrated over four hundred years ago. He would create skeleton warriors equipped with this enchanted armor and a powerful blade, and give their circlet of power to the target as a friendly gift. When the killing machine was through with its work, Vorusta retrieved the equipment and started the entire process over.
 
 STATISTICS:
+
+Equipped abilities:
+– Undead Ward: Any friendly undead within 15 ft. of the caster is granted a +2 bonus to Armor Class and Saving Throws, as well as a +10% extra resistance to all damage
 
 Armor Class: 3 (1 vs. slashing, 5 vs. crushing)
 Requires:

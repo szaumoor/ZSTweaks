@@ -1,0 +1,11 @@
+ACTION_IF is_bg2ee_or_eet BEGIN
+
+    COPY_EXISTING ~plat17.itm~ ~override~
+        // nonsense bugs. No effect but it's a good idea to remove them
+        LPF DELETE_EFFECT_EX INT_VAR match_opcode=126 STR_VAR match_parameter1_ex=~(o_parameter1 < 0)~ END
+        LPF ALTER_EFFECT_EX INT_VAR match_opcode=6 dicesize=0 STR_VAR parameter1_ex = ~(o_parameter1 = "-6")~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 10 opcode = 33 END
+        LPF ALTER_EFFECT_EX INT_VAR match_opcode=10 STR_VAR parameter1_ex = ~(o_parameter1 = "-1")~ END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=248,res=zstrach0;op=232,p1=1,res=zstrach1~ END
+
+END
