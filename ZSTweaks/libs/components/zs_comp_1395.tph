@@ -1,0 +1,7 @@
+ACTION_IF NOT is_iwdee BEGIN
+
+   COPY_EXISTING ~chan03.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@60300) END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=232,p1=101,p2=20,res=zstmldd0~ END
+
+END

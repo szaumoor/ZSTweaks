@@ -2,10 +2,13 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY_EXISTING ~plat17.itm~ ~override~
         // nonsense bugs. No effect but it's a good idea to remove them
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@60250) END
         LPF DELETE_EFFECT_EX INT_VAR match_opcode=126 STR_VAR match_parameter1_ex=~(o_parameter1 < 0)~ END
         LPF ALTER_EFFECT_EX INT_VAR match_opcode=6 dicesize=0 STR_VAR parameter1_ex = ~(o_parameter1 = "-6")~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 10 opcode = 33 END
         LPF ALTER_EFFECT_EX INT_VAR match_opcode=10 STR_VAR parameter1_ex = ~(o_parameter1 = "-1")~ END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=248,res=zstrach0;op=232,p1=1,res=zstrach1~ END
+        LPF ADD_ITEM_HEADER INT_VAR type=3 location=3 target=5 charges=2 depletion=3 flags=2**11 STR_VAR icon = ~sppr416~ END
+        LPF ADD_ON_HIT_EFF INT_VAR t=3 p1=20 p2=2 tmg=9 tgt=1 STR_VAR effects = ~op=146,res=sppr416~ END
 
 END

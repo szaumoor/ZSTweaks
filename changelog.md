@@ -14,7 +14,6 @@
 - Make Pride of the Legion +2 more unique (1373) (BG2EE EET)
 - Make Armor of the Hart +3 more unique (1375) (BG2EE EET)
 - Make T'rachie's Plate +5 more unique (1385) (BG2EE EET)
-- Make Armor of Missile Attraction +2 more unique (xxxx) (BG2EE EET) (TODO)
-- Make Mail of the Dead +2 more unique (xxxx) (BGEE BG2EE EET) (TODO)
+- Make Mail of the Dead +2 more unique (1395) (BGEE BG2EE EET)
 - Make Jester's Chain +4 more unique (xxxx) (BG2EE EET) (TODO)
 - Make Ashen Scales +2 more unique (xxxx) (BG2EE EET) (TODO)

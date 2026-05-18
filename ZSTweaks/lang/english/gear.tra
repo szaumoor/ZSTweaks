@@ -1673,25 +1673,12 @@ Requires:
 
 Weight: 35~
 
-@60300 = ~This odd-looking suit of studded leather cannot be removed once put on, except under intervention by a priest. While improving the protection against all melee weapons, this armor actually becomes a target for missile weapons, and hence so does its wearer. The choice is simple: deadly arrows or deadly swords.
+@60300 = ~A mage can make an extremely effective assassin, as Vorusta illustrated over four hundred years ago. He would create skeleton warriors equipped with this enchanted armor and a powerful blade, and give their circlet of power to the target as a friendly gift. When the killing machine was through with its work, Vorusta retrieved the equipment and started the entire process over.
 
 STATISTICS:
 
 Equipped abilities:
-– May only be removed with a Remove Curse spell
-
-Armor Class: 5 (3 vs. slashing, 4 vs. piercing, 15 vs. missile)
-Requires:
- 6 Strength
-
-Weight: 8~
-
-@60350 = ~A mage can make an extremely effective assassin, as Vorusta illustrated over four hundred years ago. He would create skeleton warriors equipped with this enchanted armor and a powerful blade, and give their circlet of power to the target as a friendly gift. When the killing machine was through with its work, Vorusta retrieved the equipment and started the entire process over.
-
-STATISTICS:
-
-Equipped abilities:
-– Undead Ward: Any friendly undead within 15 ft. of the caster is granted a +2 bonus to Armor Class and Saving Throws, as well as a +10% extra resistance to all damage
+– Undead Ward: Any friendly undead within 15 ft. of the caster is granted a +4 bonus to Armor Class, a +2 bonus to Saving Throws, a +12% resistance to physical damage, and a +25% to magical damage
 
 Armor Class: 3 (1 vs. slashing, 5 vs. crushing)
 Requires:
@@ -1699,7 +1686,7 @@ Requires:
 
 Weight: 10~
 
-@60400 = ~Friends of Dekirh Fasthands, a bard who insisted on playing the rowdiest towns on the Sword Coast, gave him this suit of magical chain as a gift. The chain mail was given to protect Dekirh from the drunken spectators who often threw rotting produce, chairs, and even knives at Dekirh. The bard appreciated the gift but painted it with wild colors to better fit into his show.
+@60350 = ~Friends of Dekirh Fasthands, a bard who insisted on playing the rowdiest towns on the Sword Coast, gave him this suit of magical chain as a gift. The chain mail was given to protect Dekirh from the drunken spectators who often threw rotting produce, chairs, and even knives at Dekirh. The bard appreciated the gift but painted it with wild colors to better fit into his show.
 
 STATISTICS:
 
@@ -1709,20 +1696,7 @@ Requires:
 
 Weight: 8~
 
-@60450 = ~This odd-looking suit of studded leather cannot be removed once put on, except under intervention by a priest. While improving the protection against all melee weapons, this armor actually becomes a target for missile weapons, and hence so does its wearer. The choice is simple: deadly arrows or deadly swords.
-
-STATISTICS:
-
-Equipped abilities:
-– May only be removed with a Remove Curse spell
-
-Armor Class: 5 (3 vs. slashing, 4 vs. piercing, 15 vs. missile)
-Requires:
- 6 Strength
-
-Weight: 8~
-
-@60500 = ~Instead of metal strips, this armor uses wyvern scales bound to a chain backing by means of a magical fire. The resulting armor is ash-gray in color and more flexible than standard splint mail. A ranger, Usher Skacan, made this armor after slaying several wyverns that were killing all the deer and elk in his forest.
+@60400 = ~Instead of metal strips, this armor uses wyvern scales bound to a chain backing by means of a magical fire. The resulting armor is ash-gray in color and more flexible than standard splint mail. A ranger, Usher Skacan, made this armor after slaying several wyverns that were killing all the deer and elk in his forest.
 
 STATISTICS:
 
