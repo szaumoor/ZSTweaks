@@ -2282,7 +2282,7 @@ Do not mix this with Sneak Attacks; use it only if you are planning to use backs
 
 ### Make multi-classed thieves always incur in a -1 backstab multiplier for balance (2400) (IWDEE BGEE BG2EE EET)
 
-Thieves are almost always used in multiclass because that is vastly superior to picking a single-class thief. This component aims to address that by making multiclass thieves incur a -1 backstab multiplier. A second class already gives them plenty of advantages. Mix this with tweaks that improve single-classed thieves, if you believe in my holy mission and crusade to achieve true Thief supremacy.
+Thieves are almost always used in multiclass because that is vastly superior to picking a single-class thief. This component aims to partially address that imbalance by making multiclass thieves incur a -1 backstab multiplier. A second class already gives them plenty of advantages. Mix this with tweaks that improve single-classed thieves, if you believe in my holy mission and crusade to achieve true Thief supremacy.
 
 </details>
 
@@ -2326,12 +2326,12 @@ This component rebalances Deva and Planetar summons to make them more balanced c
   - Deals +2 cold and +2 fire damage on hit.
   - Deals an additional 4 divine (irresistible) damage to fiends and celestials.
   - They and all nearby allies are protected by a permanent invisible Minor Globe of Invulnerability (toggleable). This only affects friendly summoned planetars.
-  - They can also cast all their spells instantly.
+  - They also cast all their spells instantly.
   - Now considered cleric/mages so their cleric spells have scaling where applicable
 
 ### Make the Balor's vorpal attack not guaranteed to succeed but be affected by a saving throw too (3050) (BG2EE EET)
 
-I do not like being killed without any reasonable chance to defend against the killing blow other than luck or Death Ward, especially with demons, who are very capricious about whom to target. The Balor's vorpal attack has a 16% chance of killing anything forever, with no resurrection allowed, and only by equipping something that grants immunity to death effects, or using Death Ward, can you avoid it. Therefore:
+I do not like being killed without any reasonable chance to defend against the killing blow other than luck or Death Ward, especially with demons, who are very capricious about whom to target. The Balor's vorpal attack has a 16% chance of killing anything by chunking, and only by equipping something that grants immunity to death effects, or using Death Ward, can you avoid it. Therefore:
 
 - Probability of triggering properly brought down to 15%, as intended
 - It still forces a Save vs. Death at -4 to trigger. This penalty can be overridden in the config file.
@@ -2363,7 +2363,7 @@ This component makes the following changes:
 
 - All creatures of the shadow race will have at least 30% physical damage resistance. This skips my Shadow summon in my Shadowdancer overhaul, as it is handled in a very particular way.
 - And a +2 bonus to their Armor Class, whatever that is
-- Strength sapping from shadows, spirit trolls, spider wraiths, and the like always lasts for 8 hours, making it more than an inconvenience. It is a real problem now if you get hit too often.
+- Strength sapping from shadows, spirit trolls, spider wraiths, and the like always last for 8 hours, making it more than an inconvenience. It is a real problem now if you get hit too often.
 
 ### Make Beetles more resistant to non-crushing weapons (3100) (IWDEE BGEE BG2EE EET)
 
@@ -2464,7 +2464,7 @@ Some options to choose from:
 - Only single-classed thieves can evade (OFF by default)
 - Multi-classed thieves can evade, but they only manage to make an attempt 50% of the time (ON by default)
 
-Check preferences and choose your preference. Install after all content that adds spells, effects, and tweaks, and definitely after any component that adds IWD Evasion to the game. To be extra sure, put it at the end.
+Check the config file to choose what you like. Install after all content that adds spells, effects, and tweaks, and definitely after any component that adds IWD Evasion to the game. To be extra sure, put it at the end.
 
 ### Make a selection of spells ignore magic resistance (1531) (IWDEE BGEE BG2EE EET)
 

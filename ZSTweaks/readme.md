@@ -44,6 +44,8 @@ I am open to providing compatibility for other mods. You can contact me on the f
 
 I also would recommend installing things in the order they're presented in the mod, if you can help it, as this is the way it's been most heavily tested, due to how time-consuming it is. If you find any issues, let me know.
 
+The prefix for this mod is either "tw" or "t". That is, if you find a file that starts by "zst" or "zstw", it comes from this mod.
+
 ---
 
 **For modders**: To add compatibility with other mods, do include the files with the variables in your code to help to detect components and variants thereof. To check that the mod has been installed (any component), you may also check for the existence of the file `zssetup.rp` in override with a ```FILE_EXISTS_IN_GAME``` check. There are two possibilities as to how a component is installed, and both should be combined logically:
