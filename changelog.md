@@ -7,6 +7,7 @@
 - Clarified the descriptions of various components that use the "protection vs. <type>" to mention that saving throws against effects caused by those creatures also gain a +2 boost.
 - Various components for items that damage trolls in a thematic way now stop their regeneration very briefly when they are burned. (TODO -- TENTATIVE)
 - Added framework to log errors and warnings onto a file in ZSTweaks/logs for users to examine after installation. The file inside will be called "errors_found.txt" if there are errors.
+- Mod components now use the LABEL functionality
 
 ## New Components
 

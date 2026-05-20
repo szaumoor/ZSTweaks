@@ -45,7 +45,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
         PRINT "[INFO]: EEFixpack detected"
     END
 
-    OUTER_SET has_EEex = ID_OF_LABEL "EEex.tp2" ~B3-EEex-Main~ != "-231"
+    OUTER_SET has_EEex = MOD_IS_INSTALLED "EEex.tp2" "1"
 
     ACTION_IF has_EEex BEGIN
         PRINT "[INFO]: EEex detected"
