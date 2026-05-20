@@ -152,7 +152,7 @@ BEGIN
     END
 END
 
-DEFINE_PATCH_FUNCTION ADD_SLEEP_SAFE_DMG // untested; always preset target for now
+DEFINE_PATCH_FUNCTION ADD_SLEEP_SAFE_DMG
 INT_VAR
     p1       = 0
     p2       = "-1"

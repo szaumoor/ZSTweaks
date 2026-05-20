@@ -39,8 +39,6 @@ BEGIN
     END
 END
 
-LAF LOG_WARNING_FAIL STR_VAR message = "Error!!!" END
-
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_preinstall_check.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_vars.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_vars_eval.tph~
