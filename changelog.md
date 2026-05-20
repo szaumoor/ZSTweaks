@@ -6,6 +6,7 @@
 - Component that makes natural effects nonmagical now includes Poisonous Breath from Neothelid (SoD) and also resources created by the Fixpack
 - Clarified the descriptions of various components that use the "protection vs. <type>" to mention that saving throws against effects caused by those creatures also gain a +2 boost.
 - Various components for items that damage trolls in a thematic way now stop their regeneration very briefly when they are burned. (TODO -- TENTATIVE)
+- Added framework to log errors and warnings onto a file in ZSTweaks/logs for users to examine after installation. The file inside will be called "errors_found.txt" if there are errors.
 
 ## New Components
 
@@ -17,3 +18,6 @@
 - Make Mail of the Dead +2 more unique (1395) (BGEE BG2EE EET)
 - Make Jester's Chain +4 more unique (xxxx) (BG2EE EET) (TODO)
 - Make Ashen Scales +2 more unique (xxxx) (BG2EE EET) (TODO)
+- Make most vanilla bosses immune to being cheesed with Thief Traps (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
+- Make Necromancers have access to a new HLA: Vampiric Feast (xxxx) (BG2EE EET) (TODO)
+- Make all fear effects reduce movement speed by half to make it less inconvenient (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
