@@ -38,6 +38,12 @@ I am open to providing compatibility for other mods. You can contact me on the f
 - ZS_ItemPack
 - ZS_ShadowdancerOverhaul
 
+## Some mod recommendations
+
+- I recommend [Xgatt's Casting Level fix](https://github.com/Xgatt/XGTCumulativeCasterLevels) if you use EEex, since it will make any of the tweaks that I do to casting level work in harmony with other effects that change caster level.
+- EEFixpack. It's not completely polished, but it fixes tons of things and eventually will probably be a backbone for every game setup
+- IWDification, especially the IWD spell packs for BG, so my tweaks can take full advantage. They also make druids and paladins significantly more interesting and capable as spellcasters
+
 ## Notes for users and modders
 
 **For users:** I advise making this mod the first tweak mod in your mod tweaks, since it is quite likely that older tweak packs such as Tweaks Anthology will have a better time anticipating and reacting to changes. An exception to this are components that **EXPLICITLY** say that they must be installed in a certain order. Finally, I'm not perfect, so if you find a component that probably makes more sense to install in a different order, you might be right. If you find that's the case, do let me know.
