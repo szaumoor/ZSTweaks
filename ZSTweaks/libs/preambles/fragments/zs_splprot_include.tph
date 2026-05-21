@@ -299,7 +299,6 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
                   ~zs_has_stoneskins~       = "-1" OR
                   ~zs_not_equal_kit~        = "-1"
         BEGIN
-            WARN "[WARN]: Not all splprot entries could be inserted!"
             ACTION_IF ~zs_slashingresist_<128~  = "-1" BEGIN
                 PRINT "[WARN]: zs_slashingresist_<128 not set!"
             END
@@ -394,7 +393,8 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
                 PRINT "[WARN]: zs_not_equal_kit not set!"
             END
 
-            FAIL "[FAIL]: Exiting installation."
+            LAF LOG_WARNING_FAIL STR_VAR log_level="fail" message = "[FAIL]: Not all splprot entries could be inserted! Exiting installation." END
+
         END
 
         COPY_EXISTING ~splprot.2da~ ~override~

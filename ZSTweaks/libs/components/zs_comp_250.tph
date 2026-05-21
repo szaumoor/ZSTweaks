@@ -21,11 +21,9 @@ ACTION_IF NOT is_iwdee BEGIN
 
             PATCH_IF zst_250_quake_shake_intensity = 1 BEGIN
                 LPF DELETE_EFFECT INT_VAR match_opcode = 269 END
-                LPF DELETE_EFFECT STR_VAR match_resource = ~SHAKE1~ END
+                LPF DELETE_EFFECT STR_VAR match_resource = ~shake1~ END
             END ELSE PATCH_IF zst_250_quake_shake_intensity = 2 BEGIN
-                LPF ALTER_EFFECT INT_VAR match_opcode = 269 parameter1 = (5) END
-            END ELSE BEGIN
-                PATCH_FAIL "[FAIL]: Incorrect setting for Earthquake set: %zst_250_quake_shake_intensity%. Accepted values are 1 (disable) or 2 (highly reduced)"
+                LPF ALTER_EFFECT INT_VAR match_opcode = 269 parameter1 = 5 END
             END
 
         BUT_ONLY IF_EXISTS
@@ -51,9 +49,11 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
 
         ACTION_IF NOT is_bgee BEGIN
+
             COPY_EXISTING ~spogre01.spl~ ~override~
                 LPF DELETE_EFFECT INT_VAR match_opcode = 269 END
                 LPF DELETE_EFFECT STR_VAR match_resource = ~shake1~ END
+                
         END
 
     END

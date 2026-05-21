@@ -1,5 +1,10 @@
 # Changelog
 
+## Fixes
+
+- Removed redundant warnings in the mod components that are already handled by my preference variable check at the outset.
+- Fixed incorrect check for file existence for the Ring of the Crusade (SoD)
+
 ## Modifications
 
 - Added a configuration option for Finger of Death so it doesn't use a projectile, that is, upon casting, the target immediately suffers its effect.
@@ -19,6 +24,6 @@
 - Make Mail of the Dead +2 more unique (1395) (BGEE BG2EE EET)
 - Make Jester's Chain +4 more unique (xxxx) (BG2EE EET) (TODO)
 - Make Ashen Scales +2 more unique (xxxx) (BG2EE EET) (TODO)
-- Make most vanilla bosses immune to being cheesed with Thief Traps (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
+- Make some creatures immune to being cheesed with Thief Traps (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
 - Make Necromancers have access to a new HLA: Vampiric Feast (xxxx) (BG2EE EET) (TODO)
 - Make all fear effects reduce movement speed by half to make it less inconvenient (xxxx) (IWDEE BGEE BG2EE EET) (TODO)

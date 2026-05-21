@@ -44,9 +44,7 @@ ACTION_IF zst_1545_shorty_bonuses > 0 BEGIN
             BEGIN COPY ~%MOD_FOLDER%/2da/tweaks/shorty_bonuses/toned_down~ ~override~ END
         3
             BEGIN COPY ~%MOD_FOLDER%/2da/tweaks/shorty_bonuses/standardized~ ~override~ END
-        DEFAULT
-            WARN "[WARN]: shorty bonuses not applied, invalid option: %zst_1545_shorty_bonuses% (1: nullify, 2: toned down, 3: standardized)"
-    END
+        DEFAULT END
 
 END
 

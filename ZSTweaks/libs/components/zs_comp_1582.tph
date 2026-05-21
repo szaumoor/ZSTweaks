@@ -23,7 +23,7 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF DELETE_EFFECT INT_VAR match_opcode = 139 match_timing=4 match_parameter1 = 25137 silent = 1 END
 
     END ELSE BEGIN
-        ACTION_IF NOT group_component BEGIN WARN "[WARN]: bdsw1h21.itm not found. Skipping." END
+        LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: Vexation short sword not found. Skipping. -- Harmless unless it's EET or SoD." END
     END
 
 END

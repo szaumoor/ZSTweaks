@@ -1,6 +1,6 @@
 ACTION_IF NOT is_iwdee BEGIN
 
-  ACTION_IF FILE_EXISTS_IN_GAME ~bdring10.itm~ BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~bdring03.itm~ BEGIN
 
     COPY_EXISTING ~bdring03.itm~ ~override~
       LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@7830) END
@@ -8,7 +8,7 @@ ACTION_IF NOT is_iwdee BEGIN
       LPF CLONE_EFFECT INT_VAR match_opcode = 178 opcode = 179 END
 
   END ELSE BEGIN
-    ACTION_IF NOT group_component BEGIN WARN "[WARN]: No bdring03.itm found in the game" END
+    LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: No Ring of the Crusade found in the game -- Harmless if not EET or not SoD" END
   END
 
 END

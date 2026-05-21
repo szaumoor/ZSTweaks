@@ -24,6 +24,6 @@ ACTION_IF spell_wall_of_moonlight > 0 BEGIN
                   ~%spell_res%b.spl~ ~override~
         LPF ADD_SPL_TGTEFF INT_VAR pwr=4 stype=1 rd=0 STR_VAR effects = ~op=74,dur=6;op=139,p1=%blindness_strref%;op=39,pro1=39,dur=3,p2=1,spec=130;op=235,pro1=39,p1=12,p2=2,dur=2~ END
 
-END ELSE ACTION_IF NOT group_component BEGIN
-    PRINT "[WARN]: Wall of Moonlight not found in game. This component will not be installed."
+END ELSE BEGIN 
+    LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: Wall of Moonlight not found in game. This component will not be installed -- Harmless if not IWD or no IWD spells present" END
 END

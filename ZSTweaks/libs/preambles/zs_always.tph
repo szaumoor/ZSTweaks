@@ -1,5 +1,7 @@
 DEFINE_ACTION_FUNCTION LOG_WARNING_FAIL
 INT_VAR
+    force_warn = 0
+    predicate_stdout = "-1"
 STR_VAR
     message = ""
     log_level = "warn"
@@ -23,11 +25,21 @@ BEGIN
                 COPY ~%MOD_FOLDER%/logs/errors_found.txt~ ~%MOD_FOLDER%/logs/errors_found.txt~
                 APPEND_OUTER ~%MOD_FOLDER%/logs/errors_found.txt~ "%message%"                
             END
- 
-            ACTION_IF is_warn BEGIN         
-                PRINT "%message%"
-            END ELSE BEGIN
-                FAIL "%message%"
+
+            ACTION_IF predicate_stdout = "-1" OR predicate_stdout BEGIN
+
+                ACTION_IF is_warn BEGIN
+
+                    ACTION_IF force_warn BEGIN
+                        WARN "%message%"
+                    END ELSE BEGIN         
+                        PRINT "%message%"
+                    END
+
+                END ELSE BEGIN
+                    FAIL "%message%"
+                END
+
             END
 
         END ELSE BEGIN

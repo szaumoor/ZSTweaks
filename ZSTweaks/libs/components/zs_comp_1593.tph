@@ -25,6 +25,8 @@ ACTION_IF NOT is_iwdee BEGIN
         COPY_EXISTING ~bdsw2h03.spl~ ~override~
             LPF ALTER_EFFECT INT_VAR match_opcode=12 match_dicesize=4 match_parameter1=0 dicesize=5 parameter1=2 special=1024 END
 
-    END ELSE ACTION_IF NOT group_component BEGIN WARN "[WARN]: bdsw2h03.itm not found in game" END
+    END ELSE BEGIN
+        LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: Sword of Ruin not found. Skipping. -- Harmless unless it's EET or SoD." END
+    END
 
 END

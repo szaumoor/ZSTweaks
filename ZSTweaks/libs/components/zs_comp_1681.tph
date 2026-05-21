@@ -21,6 +21,8 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_EFF_FILE INT_VAR dicenumber = 2 special=1024 END
         BUT_ONLY
 
-    END ELSE ACTION_IF NOT group_component BEGIN WARN "[WARN]: bddagg01.itm not found in game" END
+    END ELSE BEGIN 
+        LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: Element's Fury not found, skipping. -- Harmless unless you're not EET or SoD." END
+    END
 
 END

@@ -22,6 +22,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING "ohdmask.spl" ~override~
       LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 8 END
 
-  END ELSE ACTION_IF NOT group_component BEGIN WARN "[WARN]: FA item updates detected, skipping." END
+  END ELSE BEGIN 
+    LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: Forgotten Armaments item updates detected, skipping edits to The Visage. -- Harmless unless you didn't know FA updated that item." END
+  END
 
 END

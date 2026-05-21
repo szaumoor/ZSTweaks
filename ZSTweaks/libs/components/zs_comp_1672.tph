@@ -12,7 +12,7 @@ ACTION_IF NOT is_iwdee BEGIN
       END
 
   END ELSE BEGIN
-    ACTION_IF NOT group_component BEGIN WARN "[WARN]: bbrac05.itm not found, skipping" END
+    LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: Stalker Gauntlets not found, skipping. -- Harmless unless you're not EET or SoD." END
   END
 
 END
