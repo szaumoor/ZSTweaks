@@ -93,7 +93,7 @@ Daggers are often overlooked due to their low damage output. This component aims
 - **Kukris** from my **Item Pack** are affected differently:
   - **-1 Speed Factor**
   - **No THAC0 bonus**
-  - **Base damage increased to 1d4+1** instead of an extra critical hit chance.
+  - **Base damage increased to 1d4+1** instead of increased critical hit chance (which they have by default in the original design).
   - **Reduced critical hit bonus damage**, with the formula `1d(Max_Weapon_Damage) + Max_Weapon_Damage`. For example, a critical hit with a kukri +2 that deals 16 damage will inflict an additional 1d6+6 (7-12) damage, for a total of 23-28 damage.
 
 **Exceptions**: Oversized daggers like Grave Binder are not affected. Other unusual daggers are handled on a case-by-case basis.

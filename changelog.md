@@ -4,6 +4,7 @@
 
 - Removed redundant warnings in the mod components that are already handled by my preference variable check at the outset.
 - Fixed incorrect check for file existence for the Ring of the Crusade (SoD)
+- Fixed the description of a mod-added upgraded version of Ankheg's Plate in BGEE that didn't reflect the bonus acid resistance in the description
 
 ## Modifications
 

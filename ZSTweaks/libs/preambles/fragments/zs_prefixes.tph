@@ -64,7 +64,7 @@ ACTION_IF zs_allow_prefixes BEGIN
 
                 PRINT ~[INFO]: Fixing Hakeashar and Nishruu being identified as ogre mages class-wise~
                 COPY_EXISTING "nishrusu.cre" "override"
-                            "haksu.cre"    "override"
+                              "haksu.cre"    "override"
                     WRITE_BYTE 0x271 general_monster
                     WRITE_BYTE 0x272 race_mist 
                     WRITE_BYTE 0x273 class_mist 
@@ -169,10 +169,10 @@ ACTION_IF zs_allow_prefixes BEGIN
 
             PRINT "[INFO]: Aesgareth enemies he fights during the card game being considered 'weapon' instead of 'humanoid', and a couple of others"
             COPY_EXISTING ~gordeck1.cre~ ~override~
-                        ~gordeck2.cre~ ~override~
-                        ~gordeck3.cre~ ~override~
-                        ~gordeck4.cre~ ~override~
-                        ~ohnavrum.cre~ ~override~
+                          ~gordeck2.cre~ ~override~
+                          ~gordeck3.cre~ ~override~
+                          ~gordeck4.cre~ ~override~
+                          ~ohnavrum.cre~ ~override~
                 PATCH_IF BYTE_AT(0x271) = general_weapon BEGIN
                     WRITE_BYTE 0x271 general_humanoid
                 END
@@ -182,9 +182,9 @@ ACTION_IF zs_allow_prefixes BEGIN
 
                 PRINT "[INFO]: Thieves using bastard swords in BG2EE without being able to use them properly or illegally as per the rules of thieves. Replaced with short swords."
                 COPY_EXISTING ~arntra06.cre~ ~override~
-                            ~bmugg1.cre~   ~override~
-                            ~genthf01.cre~ ~override~
-                            ~pirpir05.cre~ ~override~
+                              ~bmugg1.cre~   ~override~
+                              ~genthf01.cre~ ~override~
+                              ~pirpir05.cre~ ~override~
                     LPF IS_WEAPON_EQUIPPED INT_VAR at_slot = 1 STR_VAR weapon = ~sw1h01~ RET found END
                     PATCH_IF found BEGIN
                         REPLACE_CRE_ITEM ~sw1h07~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
@@ -193,7 +193,7 @@ ACTION_IF zs_allow_prefixes BEGIN
 
                 PRINT "[INFO]: Cambions that are set as 'thieves' wielding bastard swords without proficiency for it. Adding large sword proficiency 1 to them"
                 COPY_EXISTING ~cambion1.cre~ ~override~
-                            ~telcam1.cre~  ~override~
+                              ~telcam1.cre~  ~override~
                     PATCH_IF BYTE_AT(0x6e) = 0 BEGIN // if they have no proficiency in large swords
                         WRITE_BYTE 0x6f 1 // add one pip to large sword proficiency
                     END
@@ -201,51 +201,51 @@ ACTION_IF zs_allow_prefixes BEGIN
 
                 PRINT "[INFO]: Thieves using daggers without being proficient in them. Adding one pip to proficiency in daggers for them"
                 COPY_EXISTING ~ar18thif.cre~ ~override~
-                            ~arnman09.cre~ ~override~
-                            ~beeloo.cre~   ~override~
-                            ~bshop01.cre~  ~override~
-                            ~drim01.cre~   ~override~
-                            ~genth02.cre~  ~override~
-                            ~gentmg01.cre~ ~override~
-                            ~shth05.cre~   ~override~
+                              ~arnman09.cre~ ~override~
+                              ~beeloo.cre~   ~override~
+                              ~bshop01.cre~  ~override~
+                              ~drim01.cre~   ~override~
+                              ~genth02.cre~  ~override~
+                              ~gentmg01.cre~ ~override~
+                              ~shth05.cre~   ~override~
                     LPF DELETE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 1 match_parameter2 = 96 END
                     LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 96 timing=9 target=1 END
 
                 PRINT "[INFO]: Thieves using short swords without being proficient in them. Adding one pip to proficiency in short swords for them"
                 COPY_EXISTING ~dshop01.cre~  ~override~
-                            ~genth01.cre~  ~override~
-                            ~gpthief1.cre~ ~override~
-                            ~irethf03.cre~ ~override~
-                            ~ishclo01.cre~ ~override~
-                            ~ishthf01.cre~ ~override~
-                            ~parthf.cre~   ~override~
-                            ~uddoor08.cre~ ~override~
-                            ~uddoor09.cre~ ~override~
-                            ~waylane.cre~  ~override~
-                            ~sarthf01.cre~ ~override~
-                            ~irethf04.cre~ ~override~
-                            ~ishthf03.cre~ ~override~
+                              ~genth01.cre~  ~override~
+                              ~gpthief1.cre~ ~override~
+                              ~irethf03.cre~ ~override~
+                              ~ishclo01.cre~ ~override~
+                              ~ishthf01.cre~ ~override~
+                              ~parthf.cre~   ~override~
+                              ~uddoor08.cre~ ~override~
+                              ~uddoor09.cre~ ~override~
+                              ~waylane.cre~  ~override~
+                              ~sarthf01.cre~ ~override~
+                              ~irethf04.cre~ ~override~
+                              ~ishthf03.cre~ ~override~
                     LPF DELETE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 1 match_parameter2 = 91 END
                     LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing=9 target=1 END
 
                 PRINT "[INFO]: Thieves using a long swords without being proficient in them. Adding one pip to proficiency in long swords"
                 COPY_EXISTING ~arntra01.cre~  ~override~
-                            ~dassin.cre~    ~override~
-                            ~arnfgt03.cre~  ~override~
-                            ~arnman10.cre~  ~override~
-                            ~arnman11.cre~  ~override~
-                            ~arntra01.cre~  ~override~
-                            ~arntra03.cre~  ~override~
-                            ~arntra05.cre~  ~override~
-                            ~arnwar01.cre~  ~override~
-                            ~flyfgt02.cre~  ~override~
-                            ~flyfgt03.cre~  ~override~
-                            ~shadth01.cre~  ~override~
-                            ~shadth02.cre~  ~override~
-                            ~stguard1.cre~  ~override~
-                            ~stguard2.cre~  ~override~
-                            ~stguard3.cre~  ~override~
-                            ~thief4.cre~    ~override~
+                              ~dassin.cre~    ~override~
+                              ~arnfgt03.cre~  ~override~
+                              ~arnman10.cre~  ~override~
+                              ~arnman11.cre~  ~override~
+                              ~arntra01.cre~  ~override~
+                              ~arntra03.cre~  ~override~
+                              ~arntra05.cre~  ~override~
+                              ~arnwar01.cre~  ~override~
+                              ~flyfgt02.cre~  ~override~
+                              ~flyfgt03.cre~  ~override~
+                              ~shadth01.cre~  ~override~
+                              ~shadth02.cre~  ~override~
+                              ~stguard1.cre~  ~override~
+                              ~stguard2.cre~  ~override~
+                              ~stguard3.cre~  ~override~
+                              ~thief4.cre~    ~override~
                     LPF DELETE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 1 match_parameter2 = 90 END
                     LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing=9 target=1 END
 
@@ -257,19 +257,19 @@ ACTION_IF zs_allow_prefixes BEGIN
 
             PRINT "[INFO]: Minotaurs being set to the Ogre/gnoll race instead of Minotaurs"
             COPY_EXISTING ~icmin01.cre~  ~override~
-                        ~amminot.cre~  ~override~
-                        ~ohbmin01.cre~ ~override~
-                        ~ohbminsu.cre~ ~override~
-                        ~garock.cre~   ~override~
-                        ~hlmafer.cre~  ~override~
-                        ~ohnghall.cre~ ~override~
-                        ~rock.cre~     ~override~
-                        ~slandor.cre~  ~override~
+                          ~amminot.cre~  ~override~
+                          ~ohbmin01.cre~ ~override~
+                          ~ohbminsu.cre~ ~override~
+                          ~garock.cre~   ~override~
+                          ~hlmafer.cre~  ~override~
+                          ~ohnghall.cre~ ~override~
+                          ~rock.cre~     ~override~
+                          ~slandor.cre~  ~override~
                 WRITE_BYTE 0x272 race_minotaur
 
             PRINT "[INFO]: Setting green dragons to have actually the race of green dragon"
             COPY_EXISTING ~bazdra03.cre~ ~override~
-                        ~fsdragon.cre~ ~override~
+                          ~fsdragon.cre~ ~override~
                 WRITE_BYTE 0x273 class_green_dragon
 
         END
@@ -278,9 +278,9 @@ ACTION_IF zs_allow_prefixes BEGIN
 
             PRINT "[INFO]: Setting water elementals to their proper class of elemental of water instead of nothing"
             COPY_EXISTING ~ohbwat01.cre~ ~override~
-                        ~bdwe1str.cre~ ~override~
-                        ~bdwe2str.cre~ ~override~
-                        ~elwatg01.cre~ ~override~
+                          ~bdwe1str.cre~ ~override~
+                          ~bdwe2str.cre~ ~override~
+                          ~elwatg01.cre~ ~override~
                 LPF ALTER_CRE INT_VAR class=class_elemental_water END
             BUT_ONLY IF_EXISTS
 
@@ -305,69 +305,69 @@ ACTION_IF zs_allow_prefixes BEGIN
 
             ACTION_IF is_bgee_or_eet BEGIN
 
-                COPY_EXISTING   ~bdwrai01.cre~ ~override~ // wraith
-                                ~bdwrait1.cre~ ~override~ // wraith
-                                ~bpshadow.cre~ ~override~ // shadow
-                                ~bpwrai01.cre~ ~override~ // wraith
-                                ~daitel.cre~   ~override~ // ghost
-                                ~mistpo01.cre~ ~override~ // poison mist
-                                ~mistposu.cre~ ~override~ // poison mist
-                                ~shadfi02.cre~ ~override~ // devil shade
-                                ~shadowsu.cre~ ~override~ // shadow
-                                ~slaysh01.cre~ ~override~ // slayer shadow
+                COPY_EXISTING ~bdwrai01.cre~ ~override~ // wraith
+                              ~bdwrait1.cre~ ~override~ // wraith
+                              ~bpshadow.cre~ ~override~ // shadow
+                              ~bpwrai01.cre~ ~override~ // wraith
+                              ~daitel.cre~   ~override~ // ghost
+                              ~mistpo01.cre~ ~override~ // poison mist
+                              ~mistposu.cre~ ~override~ // poison mist
+                              ~shadfi02.cre~ ~override~ // devil shade
+                              ~shadowsu.cre~ ~override~ // shadow
+                              ~slaysh01.cre~ ~override~ // slayer shadow
                     REMOVE_MEMORIZED_SPELL ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
-                    REMOVE_KNOWN_SPELL     ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
+                    REMOVE_KNOWN_SPELL ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
                 BUT_ONLY IF_EXISTS
 
             END ELSE ACTION_IF is_bg2ee_or_eet BEGIN // bg2ee
 
                 COPY_EXISTING ~chwraith.cre~ ~override~ // child spirit
-                            ~firwra01.cre~ ~override~ // greater wraith
-                            ~fsghos.cre~   ~override~ // ghost
-                            ~fsghos2.cre~  ~override~ // ghost
-                            ~gormisti.cre~ ~override~ // ice mist
-                            ~gormistp.cre~ ~override~ // poison mist
-                            ~hgmis01.cre~  ~override~ // vampiric wraith
-                            ~hgmis02.cre~  ~override~ // swamp horror
-                            ~hgwra01.cre~  ~override~ // gorion (casts all spells via forcespell)
-                            ~hgwra02.cre~  ~override~ // devil shade
-                            ~hgwra03.cre~  ~override~ // devil shade
-                            ~kshadow.cre~  ~override~ // shadow
-                            ~mistcd01.cre~ ~override~ // crimson death
-                            ~mistho01.cre~ ~override~ // mist horror
-                            ~mistpo01.cre~ ~override~ // poison mist
-                            ~mistposu.cre~ ~override~ // poison mist
-                            ~mistva01.cre~ ~override~ // vampiric mist
-                            ~mistwa01.cre~ ~override~ // wandering horror
-                            ~ohhburic.cre~ ~override~ // burich
-                            ~ohhshad.cre~  ~override~ // shadow
-                            ~ohhshfi1.cre~ ~override~ // shadow fiend
-                            ~ohhshfi2.cre~ ~override~ // devil shade
-                            ~rngsha.cre~   ~override~ // shadow
-                            ~rngsha01.cre~ ~override~ // shadow
-                            ~rngsha02.cre~ ~override~ // shadow patrick - knows cure medium wounds and has generic priest script to use it, but doesn't have it memorized
-                            ~rngsha03.cre~ ~override~ // shadow
-                            ~rngsha04.cre~ ~override~ // shadow jailor
-                            ~rngsha2d.cre~ ~override~ // shadow patrick
-                            ~sarspir.cre~  ~override~ // prison spirit
-                            ~sdshadfi.cre~ ~override~ // shadow fiend
-                            ~sdshadow.cre~ ~override~ // shadow
-                            ~sewsha01.cre~ ~override~ // shadow fiend
-                            ~sewsha02.cre~ ~override~ // shadow fiend
-                            ~sewsha03.cre~ ~override~ // shadow
-                            ~shadfi01.cre~ ~override~ // shadow fiend
-                            ~shadfi02.cre~ ~override~ // devil shade
-                            ~shadow01.cre~ ~override~ // shadow
-                            ~shadowsu.cre~ ~override~ // shadow
-                            ~slaysh01.cre~ ~override~ // slayer shadow
-                            ~spectr01.cre~ ~override~ // specter
-                            ~spellh01.cre~ ~override~ // spellhaunt
-                            //~tanwiz1.cre~  ~override~ // vellin dahn
-                            ~telslav.cre~  ~override~ // slave wraith
-                            ~telwrai.cre~  ~override~ // demon wraith
-                            ~uhcreat.cre~  ~override~ // shadow
-                            ~wraith01.cre~ ~override~ // wraith
-                            ~wrashi01.cre~ ~override~ // shimmering wraith
+                              ~firwra01.cre~ ~override~ // greater wraith
+                              ~fsghos.cre~   ~override~ // ghost
+                              ~fsghos2.cre~  ~override~ // ghost
+                              ~gormisti.cre~ ~override~ // ice mist
+                              ~gormistp.cre~ ~override~ // poison mist
+                              ~hgmis01.cre~  ~override~ // vampiric wraith
+                              ~hgmis02.cre~  ~override~ // swamp horror
+                              ~hgwra01.cre~  ~override~ // gorion (casts all spells via forcespell)
+                              ~hgwra02.cre~  ~override~ // devil shade
+                              ~hgwra03.cre~  ~override~ // devil shade
+                              ~kshadow.cre~  ~override~ // shadow
+                              ~mistcd01.cre~ ~override~ // crimson death
+                              ~mistho01.cre~ ~override~ // mist horror
+                              ~mistpo01.cre~ ~override~ // poison mist
+                              ~mistposu.cre~ ~override~ // poison mist
+                              ~mistva01.cre~ ~override~ // vampiric mist
+                              ~mistwa01.cre~ ~override~ // wandering horror
+                              ~ohhburic.cre~ ~override~ // burich
+                              ~ohhshad.cre~  ~override~ // shadow
+                              ~ohhshfi1.cre~ ~override~ // shadow fiend
+                              ~ohhshfi2.cre~ ~override~ // devil shade
+                              ~rngsha.cre~   ~override~ // shadow
+                              ~rngsha01.cre~ ~override~ // shadow
+                              ~rngsha02.cre~ ~override~ // shadow patrick - knows cure medium wounds and has generic priest script to use it, but doesn't have it memorized
+                              ~rngsha03.cre~ ~override~ // shadow
+                              ~rngsha04.cre~ ~override~ // shadow jailor
+                              ~rngsha2d.cre~ ~override~ // shadow patrick
+                              ~sarspir.cre~  ~override~ // prison spirit
+                              ~sdshadfi.cre~ ~override~ // shadow fiend
+                              ~sdshadow.cre~ ~override~ // shadow
+                              ~sewsha01.cre~ ~override~ // shadow fiend
+                              ~sewsha02.cre~ ~override~ // shadow fiend
+                              ~sewsha03.cre~ ~override~ // shadow
+                              ~shadfi01.cre~ ~override~ // shadow fiend
+                              ~shadfi02.cre~ ~override~ // devil shade
+                              ~shadow01.cre~ ~override~ // shadow
+                              ~shadowsu.cre~ ~override~ // shadow
+                              ~slaysh01.cre~ ~override~ // slayer shadow
+                              ~spectr01.cre~ ~override~ // specter
+                              ~spellh01.cre~ ~override~ // spellhaunt
+                              //~tanwiz1.cre~  ~override~ // vellin dahn
+                              ~telslav.cre~  ~override~ // slave wraith
+                              ~telwrai.cre~  ~override~ // demon wraith
+                              ~uhcreat.cre~  ~override~ // shadow
+                              ~wraith01.cre~ ~override~ // wraith
+                              ~wrashi01.cre~ ~override~ // shimmering wraith
                     REMOVE_MEMORIZED_SPELL ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
                     REMOVE_KNOWN_SPELL ~spwi112~ ~spwi212~ ~spwi304~ ~spwi306~ ~spwi308~ ~spwi402~ ~spwi415~ ~spwi501~ ~spwi502~ ~spwi504~ ~spwi505~ ~spwi508~ ~spwi601~ ~spwi602~ ~spwi604~
                 BUT_ONLY IF_EXISTS
@@ -378,8 +378,8 @@ ACTION_IF zs_allow_prefixes BEGIN
 
         PRINT "[INFO]: Setting invisible stalker enemies as elementals of the Elemental Plane of Air instead of spectres/human"
         COPY_EXISTING ~stalke.cre~   ~override~
-                    ~senstalk.cre~ ~override~
-                    ~gorstalk.cre~ ~override~
+                      ~senstalk.cre~ ~override~
+                      ~gorstalk.cre~ ~override~
             WRITE_BYTE 0x272 race_elemental
             WRITE_BYTE 0x273 class_elemental_air
         BUT_ONLY IF_EXISTS
@@ -456,14 +456,14 @@ ACTION_IF zs_allow_prefixes BEGIN
 
         PRINT "[INFO]: Setting Shambling Mounds to the race of Shambling Mound and Plant type"
         COPY_EXISTING ~globsham.cre~ ~override~
-                    ~hgmnd2.cre~   ~override~
-                    ~hgmound.cre~  ~override~
-                    ~smound01.cre~ ~override~
-                    ~bpshamb.cre~  ~override~
-                    ~smoundsu.cre~ ~override~
-                    ~sshamb.cre~   ~override~
-                    ~cyshamb.cre~  ~override~
-                    ~shmblr.cre~   ~override~
+                      ~hgmnd2.cre~   ~override~
+                      ~hgmound.cre~  ~override~
+                      ~smound01.cre~ ~override~
+                      ~bpshamb.cre~  ~override~
+                      ~smoundsu.cre~ ~override~
+                      ~sshamb.cre~   ~override~
+                      ~cyshamb.cre~  ~override~
+                      ~shmblr.cre~   ~override~
             WRITE_BYTE 0x271 general_plant
             WRITE_BYTE 0x272 race_shambling_mound
         BUT_ONLY IF_EXISTS

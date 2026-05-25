@@ -89,7 +89,9 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             BEGIN LPM ITM_OPCODE_PRESENT END
 
             DEFAULT
-                PATCH_WARN "[WARN]: Found invalid file: %SOURCE_RES%"
+                PATCH_IF zs_debug BEGIN
+                    PATCH_WARN "[WARN]: Found invalid file: %SOURCE_RES%"
+                END
             END
 
             PATCH_IF present BEGIN

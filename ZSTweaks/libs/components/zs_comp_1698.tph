@@ -15,7 +15,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     LPF ALTER_HEADER INT_VAR match_type=3 charges = 1 STR_VAR match_icon = ~spwi602b~ END
     LPF ALTER_HEADER INT_VAR match_type=3 charges = 2 STR_VAR match_icon = ~spwi308b~ END
-
+    
   OUTER_SET opcode = 206
   OUTER_SPRINT res "spwi101"
   COPY_EXISTING_REGEXP ~^.+\.\(itm\|spl\)$~ ~override~
@@ -29,7 +29,9 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         BEGIN LPM ITM_OPCODE_PRESENT END
 
         DEFAULT
-            PATCH_WARN "[WARN]: Found invalid file: %SOURCE_RES%"
+            PATCH_IF zs_debug BEGIN
+              PATCH_WARN "[WARN]: Found invalid file: %SOURCE_RES%"
+            END
         END
 
         PATCH_IF present BEGIN
