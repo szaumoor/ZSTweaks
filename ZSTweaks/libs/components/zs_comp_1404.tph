@@ -1,0 +1,10 @@
+ACTION_IF is_bg2ee_or_eet BEGIN
+
+    COPY ~%MOD_FOLDER%/items/jester_chain~ ~override~
+    COPY_EXISTING ~chan10.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8520) END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 144 END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 145 END
+        LPF ADD_EQUIPPED_EFF INT_VAR effects=~op=177,p2=5,p1=%class_bard_all%,res=zstjest0;op=177,p2=9,p1=%kit_jester%,res=zstjest0~ END
+
+END

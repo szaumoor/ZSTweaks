@@ -287,3 +287,7 @@ END
 ACTION_IF zst_group_1385_trachie_plate BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1385.tph~ END
 END
+
+ACTION_IF zst_group_1404_jester_chain BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1404.tph~ END
+END

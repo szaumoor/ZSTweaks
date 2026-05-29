@@ -21,7 +21,7 @@ ACTION_IF is_bgee_bg2ee_or_eet BEGIN
     LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 parameter1=race_planetar END
     LPF CLONE_EFFECT INT_VAR match_opcode=344 match_parameter2=4 match_parameter1=129 parameter1=race_darkplanetar END
 
-    LPF ADD_EQUIPPED_EFF INT_VAR p2=4 spec=1 STR_VAR effects = ~op=178,p1=%race_solar%;op=178,p1=%race_antisolar%;op=178,p1=%race_planetar%;op=178,p1=%race_darkplanetar%;op=178,p1=%race_troll%;op=178,p1=%race_werewolf%~ END
+    LPF ADD_EQUIPPED_EFF INT_VAR p2=4 spec=1 STR_VAR effects = ~op=178,p1=%race_solar%;op=178,p1=%race_antisolar%;op=178,p1=%race_planetar%;op=178,p1=%race_darkplanetar%;op=178,p1=%race_troll%;op=178,p1=%race_lycanthrope%~ END
 
     // cold-using creatures
     LPF ALTER_EFFECT INT_VAR match_opcode=344 match_parameter2=5 match_parameter1=146 special = 4 END

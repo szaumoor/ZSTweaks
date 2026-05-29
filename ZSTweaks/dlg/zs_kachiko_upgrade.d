@@ -17,7 +17,7 @@ APPEND BOTSMITH
         PartyHasItem("SCRL9V")~ GOTO ZSTWKachiko_PartyHasAllParts
   END
 
-  IF ~~ THEN BEGIN ZSTWKachiko_PartyDoesNotHaveAllParts SAY ~What? Wants to makes it more whispery? But needs a scroll of screaming banshees Nasty stuff, oh yes! Also one of shadowy doors! And you gots neither, boss.~
+  IF ~~ THEN BEGIN ZSTWKachiko_PartyDoesNotHaveAllParts SAY ~What? Wants to makes it more whispery? But needs a scroll of screaming banshees. Nasty stuff, oh yes! Also one of shadowy doors! And you gots neither, boss.~
     IF ~~ THEN GOTO ZSTWKachiko_MovingRightAlong
   END
 
