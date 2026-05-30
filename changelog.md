@@ -14,6 +14,7 @@
 - Clarified the descriptions of various components that use the "protection vs. <type>" to mention that saving throws against effects caused by those creatures also gain a +2 boost.
 - Added framework to log errors and warnings onto a file in ZSTweaks/logs for users to examine after installation. The file inside will be called "errors_found.txt" if there are errors.
 - Mod components now use the LABEL functionality
+- Dagger/Dart probabilities for Finesse reduced by 2: 41-50%. Kukris also have a +2% probably reduction since it's calculated from the probabilities of daggers and darts
 
 ## New Components
 

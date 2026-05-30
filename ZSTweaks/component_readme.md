@@ -112,8 +112,8 @@ The chance to trigger Finesse depends on the weapon type and its enchantment lev
 - **21-30% Chance**: **Rapiers** (ZS_ItemPack, 1d5+bonus)
 - **26-35% Chance**: **Short Swords** (1d5+bonus), **Clubs** (1d5+bonus)
 - **31-40% Chance**: **Bows** (1d5), **Crossbows** (1d7)
-- **36-45% Chance**: **Kukris** (ZS_ItemPack, 1d3+bonus)
-- **43-52% Chance**: **Daggers** (1d3+bonus), **Darts** (2+bonus divided by 2)
+- **34-43% Chance**: **Kukris** (ZS_ItemPack, 1d3+bonus)
+- **41-50% Chance**: **Daggers** (1d3+bonus), **Darts** (2+bonus divided by 2)
 
 As a counterbalance, the target can make a Save vs. Breath to take only half of the Finesse damage. The saving throw is modified by the wielder's Dexterity and the weapon's enchantment level. For example, a Long Sword +0 at a certain DEX might force a save at +2, while a Long Sword +3 would force a save at -1. Dexterity bonuses may improve this save penalty by up to -6 at 24 DEX.
 
