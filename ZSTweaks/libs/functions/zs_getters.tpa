@@ -93,3 +93,24 @@ BEGIN
     END
 END
 
+DEFINE_PATCH_FUNCTION GET_SHIELD_LEVEL
+RET
+   result
+BEGIN
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
+    END
+
+    SET original_ac = "-1"
+    SET result = "-1"
+    GET_OFFSET_ARRAY eff_arr 0x6a 4 0x70 2 0 0 0x30
+    PHP_EACH eff_arr AS int => ab_off BEGIN
+        PATCH_IF SHORT_AT(ab_off) = 0 AND LONG_AT(ab_off + 0x8) = 0 BEGIN
+            result = (LONG_AT(ab_off + 0x4)) - 1
+            PATCH_IF result = "-1" BEGIN
+                PATCH_WARN "[WARN]: Something went wrong, the shield %SOURCE_RES% had no base AC value: %result%"
+            END
+        END
+    END
+END
+

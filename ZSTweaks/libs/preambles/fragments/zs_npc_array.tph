@@ -27,7 +27,7 @@ ACTION_IF !VARIABLE_IS_SET zs_npc_array BEGIN
         END
     END
 
-    COPY_EXISTING_REGEXP GLOB ~^.+\.CRE$~ ~override~
+    COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
         READ_ASCII dv_off "dv" (32) NULL
         TO_UPPER dv
         PATCH_IF VARIABLE_IS_SET $NPC_ARRAY_dv(~%dv%~) BEGIN

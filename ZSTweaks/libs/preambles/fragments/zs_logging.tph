@@ -1,0 +1,74 @@
+/**
+ * ### Author: Kaelyn aka szaumoor  
+ *   
+ * Logs a warning into the standard output and writes it out into logs/errors_found.txt, appending a new line per warning.  
+ * ### **Parameters**:  
+ * 
+ * **force_warn** (int): This forces the standard output to print as an actual WeiDu warning, if desired, otherwise,
+ *                  it prints it as a regular INFO mesage. Default: 0 (disabled); set to 1 to force warnings. 
+ *   
+ * **predicate_stdout** (int) : This variable allows an user to pass a predicate upon calling it, to decide whether printing to the 
+ *                              standard output is desired or not. For example, passing IS_AN_INT "%variable%" (a predicate) would
+ *                              pass 1 (true) or 0 (false). You may also pass 0 or 1 directly too if desired to disable or enable.
+     *                          Default value is -1, which by default allows standard output.  
+ *   
+ * **message** (str): The message to pass into console and/or the error log file. Default: Empty string. Crashes if it remains empty
+ *                    after the function call.  
+ *   
+ * **log_level** (str): The logging level of the message. Two values are accepted: warn of fail. Fail causes this function to force a
+ *                      component failure, the component being installed immediately. Warn is the default value, and simply causes a
+ *                      message to be printed without any actual warnings, unless **force_warn** is set to 1 (true).
+ *  
+ */
+DEFINE_ACTION_FUNCTION LOG_WARNING_FAIL
+INT_VAR
+    force_warn = 0
+    predicate_stdout = "-1"
+STR_VAR
+    message = ""
+    log_level = "warn"
+BEGIN
+    ACTION_IF STRING_LENGTH message > 0 BEGIN
+        
+        OUTER_SET is_warn = "%log_level%" STR_EQ "warn"
+        OUTER_SET is_fail =  "%log_level%" STR_EQ "fail"
+
+        ACTION_IF is_warn OR is_fail BEGIN
+
+            ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/logs/no_errors_found.txt~ BEGIN
+
+                COPY ~%MOD_FOLDER%/logs/no_errors_found.txt~ ~%MOD_FOLDER%/logs/errors_found.txt~
+                APPEND_OUTER ~%MOD_FOLDER%/logs/errors_found.txt~ "----Start of Logs----"
+                DELETE ~%MOD_FOLDER%/logs/no_errors_found.txt~
+                
+            END
+
+            ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/logs/errors_found.txt~ BEGIN
+                COPY ~%MOD_FOLDER%/logs/errors_found.txt~ ~%MOD_FOLDER%/logs/errors_found.txt~
+                APPEND_OUTER ~%MOD_FOLDER%/logs/errors_found.txt~ "%message%"                
+            END
+
+            ACTION_IF predicate_stdout = "-1" OR predicate_stdout BEGIN
+
+                ACTION_IF is_warn BEGIN
+
+                    ACTION_IF force_warn BEGIN
+                        WARN "%message%"
+                    END ELSE BEGIN         
+                        PRINT "%message%"
+                    END
+
+                END ELSE BEGIN
+                    FAIL "%message%"
+                END
+
+            END
+
+        END ELSE BEGIN
+            FAIL "Logging function called with an invalid logging level: %log_level%. Valid levels are 'warn' and 'fail'"
+        END
+
+    END ELSE BEGIN
+        FAIL "Logging function has an empty message as input"
+    END
+END

@@ -1,20 +1,20 @@
 ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
 
-    OUTER_SET is_bgee = GAME_IS ~bgee~
-    OUTER_SET is_bg2ee = GAME_IS ~bg2ee~
-    OUTER_SET is_iwdee = GAME_IS ~iwdee~
-    OUTER_SET is_eet = GAME_IS ~eet~
-    OUTER_SET includes_sod = GAME_INCLUDES "sod"
-    OUTER_SET is_bgee_with_sod = is_bgee AND includes_sod
+    OUTER_SET is_bgee                = GAME_IS ~bgee~
+    OUTER_SET is_bg2ee               = GAME_IS ~bg2ee~
+    OUTER_SET is_iwdee               = GAME_IS ~iwdee~
+    OUTER_SET is_eet                 = GAME_IS ~eet~
+    OUTER_SET includes_sod           = GAME_INCLUDES "sod"
+    OUTER_SET is_bgee_with_sod       = is_bgee AND includes_sod
 
-    OUTER_SET is_bg2ee_or_eet         = is_bg2ee OR is_eet
-    OUTER_SET is_bgee_or_eet          = is_bgee  OR is_eet
-    OUTER_SET is_bgee_or_iwdee        = is_bgee  OR is_iwdee
+    OUTER_SET is_bg2ee_or_eet        = is_bg2ee OR is_eet
+    OUTER_SET is_bgee_or_eet         = is_bgee  OR is_eet
+    OUTER_SET is_bgee_or_iwdee       = is_bgee  OR is_iwdee
     
-    OUTER_SET is_bgee_bg2ee_or_eet    = NOT is_iwdee
-    OUTER_SET is_iwdee_bg2ee_or_eet   = NOT is_bgee
-    OUTER_SET is_iwdee_bgee_or_eet    = NOT is_bg2ee
-    OUTER_SET is_iwdee_bgee_or_bg2ee  = NOT is_eet
+    OUTER_SET is_bgee_bg2ee_or_eet   = NOT is_iwdee
+    OUTER_SET is_iwdee_bg2ee_or_eet  = NOT is_bgee
+    OUTER_SET is_iwdee_bgee_or_eet   = NOT is_bg2ee
+    OUTER_SET is_iwdee_bgee_or_bg2ee = NOT is_eet
 
     ACTION_IF is_bgee BEGIN
         

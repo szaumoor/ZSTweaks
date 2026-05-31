@@ -10,7 +10,9 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       WRITE_LONG 0x1e (THIS - 2**30)
     END
 
-    LPF CLONE_EFFECT INT_VAR match_opcode = 145 opcode = 30 parameter1 = 20 END
+    WRITE_BYTE 0x2b 1
+
+    LPF CLONE_EFFECT INT_VAR match_opcode = 145 opcode = 30 parameter1 = 15 END
     LPF CLONE_EFFECT INT_VAR match_opcode = 145 opcode = 84 parameter1 = 20 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=267,p1=14017;op=267,p1=14662;op=173,p1=100;op=101,p2=25;op=169,p2=6;op=142,p2=30;op=219,p2=4,p1=%race_wyvern%;op=219,p2=4,p1=%race_dragon%~ END
 

@@ -1375,10 +1375,10 @@ Weight: 5~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +2 vs. wyverns and other draconic creatures
 – Immunity to poison
-– Fire Resistance: +20%
-– May be worn by druids
+– Fire Resistance: +15%
+– Armor Class: +2 vs. wyverns and other draconic creatures
+– May be worn by druids and beast masters
 
 Armor Class: 2 (0 vs. crushing, 1 vs. piercing and missile)
 Requires:
@@ -1688,23 +1688,3 @@ Requires:
  8 Strength
 
 Weight: 10~
-
-@60350 = ~Friends of Dekirh Fasthands, a bard who insisted on playing the rowdiest towns on the Sword Coast, gave him this suit of magical chain as a gift. The chain mail was given to protect Dekirh from the drunken spectators who often threw rotting produce, chairs, and even knives at Dekirh. The bard appreciated the gift but painted it with wild colors to better fit into his show.
-
-STATISTICS:
-
-Armor Class: 1 (-1 vs. slashing, 3 vs. crushing)
-Requires:
- 8 Strength
-
-Weight: 8~
-
-@60400 = ~Instead of metal strips, this armor uses wyvern scales bound to a chain backing by means of a magical fire. The resulting armor is ash-gray in color and more flexible than standard splint mail. A ranger, Usher Skacan, made this armor after slaying several wyverns that were killing all the deer and elk in his forest.
-
-STATISTICS:
-
-Armor Class: 2 (0 vs. crushing, 1 vs. piercing and missile)
-Requires:
- 8 Strength
-
-Weight: 18~

@@ -32,8 +32,8 @@ ACTION_IF zs_allow_prefixes BEGIN
                 FOR (row = 3; row < clswpbon; ++row) BEGIN
                     READ_2DA_ENTRY_FORMER clswpbon row 0 label
                     PATCH_IF (~%label%~ STR_EQ ~shadowdancer~) BEGIN
-                    SET_2DA_ENTRY_LATER clswpbon_out row 3 3
-                    SET row = clswpbon
+                        SET_2DA_ENTRY_LATER clswpbon_out row 3 3
+                        SET row = clswpbon
                     END
                 END
                 SET_2DA_ENTRIES_NOW clswpbon_out 1
@@ -81,7 +81,7 @@ ACTION_IF zs_allow_prefixes BEGIN
 
             PRINT "[INFO]: Balduran's Plate no longer preventing characters of level 5 or less from getting a Charisma increase"
             COPY_EXISTING ~wa2plat.itm~ ~override~
-                LPF ALTER_EFFECT INT_VAR check_headers=0 match_dicesize = 6 dicesize = 0 END
+                LPF ALTER_EFFECT INT_VAR silent = 1 check_headers=0 match_dicesize = 6 dicesize = 0 END
             BUT_ONLY
 
             ACTION_IF NOT has_eefixpack BEGIN
@@ -95,7 +95,7 @@ ACTION_IF zs_allow_prefixes BEGIN
                     END
                     SAY_EVALUATED 0x54 ~%desc%~
 
-                PRINT ~[INFO]: Non-standard scimitar/wakizashi/ninjato animations~
+                PRINT ~[INFO]: Fixing non-standard scimitar/wakizashi/ninjato animations in vanilla weapons to allow consistent identification in the mod~
                 COPY_EXISTING ~misc9q.itm~ ~override~
                     WRITE_ASCII 0x22 "SC" #2
 
@@ -110,7 +110,7 @@ ACTION_IF zs_allow_prefixes BEGIN
 
                 PRINT "[INFO]: Fixes for misaligned indexes in Quarterstaff and Dwarven Thrower"
                 COPY_EXISTING ~hamm06.itm~ ~override~
-                            ~staf01.itm~ ~override~
+                              ~staf01.itm~ ~override~
                     LPF FJ_SPL_ITM_REINDEX END
 
                 COPY_EXISTING ~dagg24.itm~ ~override~
@@ -402,31 +402,31 @@ ACTION_IF zs_allow_prefixes BEGIN
                     SET general = BYTE_AT(0x271)
                     SET race    = BYTE_AT(0x272)
                     PATCH_IF race    = race_golem           OR
-                            race    = race_treant          OR
-                            race    = race_demonic         OR
-                            race    = race_mind_flayer     OR
-                            race    = race_mist            OR
-                            race    = race_planetar        OR
-                            race    = race_darkplanetar    OR
-                            race    = race_solar           OR
-                            race    = race_antisolar       OR
-                            race    = race_beholder        OR
-                            race    = race_genie           OR
-                            race    = race_slime           OR
-                            race    = race_mimic           OR
-                            race    = race_doppleganger    OR
-                            race    = race_myconid         OR
-                            race    = race_shadow          OR
-                            race    = race_wraith          OR
-                            race    = race_specter         OR
-                            race    = race_spectral_undead OR
-                            race    = race_elemental       OR
-                            race    = race_shambling_mound OR
-                            race    = race_shrieker        OR
-                            race    = ~%race_will-o-wisp%~ OR
-                            race    = race_otyugh          OR
-                            general = general_weapon       OR
-                            general = general_plant
+                             race    = race_treant          OR
+                             race    = race_demonic         OR
+                             race    = race_mind_flayer     OR
+                             race    = race_mist            OR
+                             race    = race_planetar        OR
+                             race    = race_darkplanetar    OR
+                             race    = race_solar           OR
+                             race    = race_antisolar       OR
+                             race    = race_beholder        OR
+                             race    = race_genie           OR
+                             race    = race_slime           OR
+                             race    = race_mimic           OR
+                             race    = race_doppleganger    OR
+                             race    = race_myconid         OR
+                             race    = race_shadow          OR
+                             race    = race_wraith          OR
+                             race    = race_specter         OR
+                             race    = race_spectral_undead OR
+                             race    = race_elemental       OR
+                             race    = race_shambling_mound OR
+                             race    = race_shrieker        OR
+                             race    = ~%race_will-o-wisp%~ OR
+                             race    = race_otyugh          OR
+                             general = general_weapon       OR
+                             general = general_plant
                     BEGIN
                         LPM fix_gender
                     END
@@ -434,9 +434,11 @@ ACTION_IF zs_allow_prefixes BEGIN
 
                 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
                     SET race = BYTE_AT(0x272)
-                    LPF IS_BIT_SET INT_VAR bit_field = LONG_AT(0x20) bit = 7 RET petrified = result END
-                    PATCH_IF race = race_statue AND NOT petrified BEGIN
-                        LPM fix_gender
+                    PATCH_IF race = race_statue BEGIN
+                        LPF IS_BIT_SET INT_VAR bit_field = LONG_AT(0x20) bit = 7 RET petrified = result END
+                        PATCH_IF NOT petrified BEGIN
+                            LPM fix_gender
+                        END
                     END
                 BUT_ONLY
 
