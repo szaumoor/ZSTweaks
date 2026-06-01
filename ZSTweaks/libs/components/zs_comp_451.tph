@@ -6,7 +6,7 @@ ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING ~spwi615.spl~ ~override~
                   ~spdr601.spl~ ~override~
       LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8330) END
-      LPF ALTER_EFFECT_EX STR_VAR dicenumber_ex = "(THIS + 2)" END
+      LPF ALTER_EFFECT_EX STR_VAR dicenumber_ex = "(THIS + 5)" parameter1_ex = "(o_dicenumber)" END
 
   END
 

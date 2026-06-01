@@ -437,7 +437,7 @@ Casting Time: 5
 Area of Effect: Special
 Saving Throw: 1/2
 
-When the wizard casts Chain Lightning, arcs of electrical energy burst from <PRO_HISHER> fingertips. These brilliant arcs of lightning leap at all enemies near the caster, burning them with electrical damage. The lightning causes 2d6 plus 1d6 points of damage for every 2 levels of the caster. If the target of the lightning saves vs. Spell, only half damage is inflicted. Thus, a 12th-level wizard will cause 8d6 damage to a victim (4d6 if the victim makes <PRO_HISHER> saving throw vs. Spell).~
+When the wizard casts Chain Lightning, arcs of electrical energy burst from <PRO_HISHER> fingertips. These brilliant arcs of lightning leap at all enemies near the caster, burning them with electrical damage. The lightning causes 5d6 plus 1d6+1 points of damage for every 2 levels of the caster. If the target of the lightning saves vs. Spell, only half damage is inflicted. Thus, a 14th-level wizard will cause 12d6+7 damage to a victim or half if the victim makes <PRO_HISHER> Saving Throw vs. Spell.~
 
 @8350 = ~Icelance
 (Evocation)

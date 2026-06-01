@@ -1,4 +1,4 @@
-INCLUDE ~%MOD_FOLDER%/libs/functions/zs_logging.tph~
+INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_logging.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_preinstall_check.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_vars.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_vars_eval.tph~

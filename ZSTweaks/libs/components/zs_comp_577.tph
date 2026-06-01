@@ -19,21 +19,20 @@ DEFINE_PATCH_MACRO ~nerf_haste#improved~ BEGIN
 END
 
 
-COPY_EXISTING ~spin828~ ~override~ // mazzy
+COPY_EXISTING ~spin828.spl~ ~override~ // mazzy
     LPM ~nerf_haste#normal~
 
-COPY_EXISTING ~spra301~ ~override~ // kit_stalker
+COPY_EXISTING ~spra301.spl~ ~override~ // kit_stalker
     LPM ~nerf_haste#normal~
 
-COPY_EXISTING ~spwi305~ ~override~ // wizard
+COPY_EXISTING ~spwi305.spl~ ~override~ // wizard
     LPM ~nerf_haste#normal~
 
-COPY_EXISTING ~spwi613~ ~override~ // wizard improved haste
+COPY_EXISTING ~spwi613.spl~ ~override~ // wizard improved haste
     LPM ~nerf_haste#improved~
 
-COPY_EXISTING ~spwish36~ ~override~ // improved haste wish
-              ~spwish37~ ~override~
-              ~spwish38~ ~override~
+COPY_EXISTING ~spwish36.spl~ ~override~ // improved haste wish
+              ~spwish37.spl~ ~override~
     LPF ALTER_EFFECT_EX INT_VAR duration = 30 STR_VAR match_duration_ex = "(o_duration > 5)" END
 BUT_ONLY IF_EXISTS
 

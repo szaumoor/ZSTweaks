@@ -4,7 +4,7 @@ Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever for
 STATISTICS:
 
 Equipped abilities:
-– Magic Resistance: 50%
+– Magic Resistance: +50%
 
 Combat abilities:
 – Dispel Magic at level 30 on each hit
@@ -33,7 +33,7 @@ Now combined with the Eye of Tyr, even such a powerful weapon was made greater s
 STATISTICS:
 
 Equipped abilities:
-– Magic Resistance: 50%
+– Magic Resistance: +50%
 
 Combat abilities:
 – Dispel Magic at level 30 whenever the sword strikes an opponent
@@ -61,7 +61,7 @@ Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever for
 STATISTICS:
 
 Equipped abilities:
-– Magic Resistance: 50%
+– Magic Resistance: +50%
 
 Combat abilities:
 – Dispel Magic at level 30 on a failed Save vs. Spell
@@ -89,7 +89,7 @@ Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever for
 STATISTICS:
 
 Equipped abilities:
-– Magic Resistance: 50%
+– Magic Resistance: +50%
 
 Combat abilities:
 – Dispel Magic at level 30 on a failed Save vs. Spell
@@ -119,7 +119,7 @@ Now combined with the Eye of Tyr, even such a powerful weapon was made greater s
 STATISTICS:
 
 Equipped abilities:
-– Magic Resistance: 50%
+– Magic Resistance: +50%
 
 Combat abilities:
 – Dispel Magic at level 30 whenever the sword strikes an opponent if a Save vs. Spell at -2 is failed
@@ -149,7 +149,7 @@ Now combined with the Eye of Tyr, even such a powerful weapon was made greater s
 STATISTICS:
 
 Equipped abilities:
-– Magic Resistance: 50%
+– Magic Resistance: +50%
 
 Combat abilities:
 – Dispel Magic at level 30 whenever the sword strikes an opponent if a Save vs. Spell at -2 is failed
@@ -347,8 +347,8 @@ Weight: 4~
 STATISTICS:
 
 Combat abilities:
-– 15% chance of draining the victim of water (+15 cold damage)
-– Slays fire elementals, efreet, and salamanders
+– 15% chance of draining the victim of water, inflicting 15 cold damage
+– Slays fire elementals, efreet, and salamanders on hit
 
 THAC0: +4
 Damage: 1d10+4, +3 cold damage (tripled vs. giants)
@@ -366,7 +366,7 @@ Weight: 12~
 STATISTICS:
 
 Equipped abilities:
-– Immunity to blindness
+– Immunity to Blindness
 
 Charge abilities:
 – Blindness three times per day (Save vs. Spell at -2 negates)
@@ -392,10 +392,10 @@ As a weapon, Lilarcor has its uses, but many a warrior has eventually given it a
 STATISTICS:
 
 Equipped abilities:
-– Immunity to charm and confusion
+– Immunity to Charm and Confusion
 
 Combat abilities:
-– 25% chance per hit to cause confusion on the target for 2 rounds, unless a Save vs. Spell succeeds
+– 25% chance per hit to cause Confusion on the target for 2 rounds, unless a Save vs. Spell succeeds
 
 THAC0: +3
 Damage: 1d10+3 (slashing)
@@ -622,8 +622,8 @@ Equipped abilities:
 – Unaffected by mind blasts and domination attempts by Mind Flayers
 
 Combat abilities:
-– 25% chance per hit the target must Save vs. Death at -2 or die from decapitation. Targets killed this way cannot be resurrected without a True Resurrection spell or divine intervention
-– Psychic Assault: inflicts 2d8 irresistible damage on a critical hit, which also causes confusion for 10 seconds if a Save vs. Spell at -2 is failed. This psychic damage cannot be resisted, but mindless or brainless creatures will not be affected.
+– Vorpal Strike: 25% chance per hit the target must Save vs. Death at -2 or die from decapitation.
+– Psychic Assault: inflicts 2d8 irresistible damage on a critical hit, which also causes Confusion for 10 seconds if a Save vs. Spell at -2 is failed. This psychic damage cannot be resisted, but mindless and brainless creatures will not be affected.
 
 THAC0: +3, +5 vs. Mind Flayers
 Damage: 1d10+3, +5 vs. Mind Flayers (slashing)
@@ -642,7 +642,7 @@ Weight: 15~
 STATISTICS:
 
 Equipped abilities:
-– Immunity to confusion and all psionic attacks
+– Immunity to Confusion and all psionic attacks
 
 Combat abilities:
 – Struck illithids must Save vs. Death at -3 or die instantly. This effect can only affect a particular illithid once per round.
@@ -697,7 +697,7 @@ Weight: 12~
 STATISTICS:
 
 Combat abilities:
-– Like the touch of shadows, every hit has a 25% chance of reducing the target's Strength by 2 for 5 rounds. If the target already has less than 3 Strength, the attack drains Constitution instead
+– Shadow Touch: 25% chance of reducing the target's Strength by 2 for 5 rounds. If the target already has less than 3 Strength, the attack drains Constitution instead
 – If the target fails to Save vs. Death, the essence of undeath in this weapon unleashes an extra 1d6 cold damage
 
 THAC0: +2
@@ -839,7 +839,7 @@ Weight: 9~
 STATISTICS:
 
 Combat abilities:
-– +5% to score a critical hit, inflicting 5 extra piercing damage on a critical hit
+– Critical Hits: +5% chance; inflicts 5 extra piercing damage
 
 THAC0: +3
 Damage: 1d8+3, +10 piercing damage
@@ -872,11 +872,11 @@ Lilarcor is not quite as lovable (or annoying, depending on your viewpoint) as i
 STATISTICS:
 
 Equipped abilities:
-– Immunity to charm and confusion
+– Immunity to Charm and Confusion
 – Immunity to intelligence changes
 
 Combat abilities:
-– 30% chance per hit to cause confusion on the target for 2 rounds, unless a Save vs. Spell at -2 succeeds
+– 30% chance per hit to cause Confusion on the target for 2 rounds, unless a Save vs. Spell at -2 succeeds
 
 THAC0: +5
 Damage: 1d10+5 (slashing)
