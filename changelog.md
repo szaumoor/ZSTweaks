@@ -18,7 +18,8 @@
 - Dagger/Dart probabilities for Finesse reduced by 2: 41-50%. Kukris also have a +2% probably reduction since it's calculated from the probabilities of daggers and darts
 - Ashen Scales components also allows Beast Masters to wear it now
 - Reverted original behavior of opening two readmes: one the basic and another the component one.
-- Chain Lightning component now scales damage up to 15d6 electric damage instead of 12d6
+- Chain Lightning component now scales damage up to 15d6+10 at level 20 instead of 12d6
+- Added compatibility for BG1-NPCs-for-SoA-ToB mod for the Shar-Teel mod
 
 ## New Components
 

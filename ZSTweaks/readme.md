@@ -24,6 +24,7 @@ Compatibility with other tweak mods that affect the same content depends on the 
 
 I am open to providing compatibility for other mods. You can contact me on the forums or at <kaelyn@tuta.io> with any requests or questions. So far, compatibility *some* compatibility has been added for:
 
+- BG1-NPCs-for-SoA-ToB
 - EEFixpack
 - Forgotten Armaments
 - Item Upgrade
