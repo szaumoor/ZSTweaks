@@ -78,4 +78,5 @@ Finally, to check variations on the installed component, if there are any, you w
 - The Artisan for brainstorming and insight
 - dark0dave for giving me the idea of adding a configuration file
 - For the people in G3 and Discord for reporting bugs
+- To MephistoSatanDevil for providing the first translation (Simplified Chinese) to this ginormous mod
 - zenblack for feedback, brainstorming, and icon-making
