@@ -36,6 +36,24 @@ LANGUAGE
 	"ZSTweaks/lang/english/text_patching.tra"
 	"ZSTweaks/lang/english/twohanded.tra"
 
+LANGUAGE
+	"Simplified Chinese"
+	"schinese"
+	"ZSTweaks/lang/schinese/arcane.tra"
+	"ZSTweaks/lang/schinese/blunt_axe.tra"
+	"ZSTweaks/lang/schinese/classes.tra"
+	"ZSTweaks/lang/schinese/cre.tra"
+	"ZSTweaks/lang/schinese/daggers.tra"
+	"ZSTweaks/lang/schinese/divine.tra"
+	"ZSTweaks/lang/schinese/gear.tra"
+	"ZSTweaks/lang/schinese/general.tra"
+	"ZSTweaks/lang/schinese/installation.tra"
+	"ZSTweaks/lang/schinese/npc.tra"
+	"ZSTweaks/lang/schinese/onehanded_swords.tra"
+	"ZSTweaks/lang/schinese/ranged.tra"
+	"ZSTweaks/lang/schinese/text_patching.tra"
+	"ZSTweaks/lang/schinese/twohanded.tra"
+
 ////////////////////////////////// GENERAL ITEM AND SPELL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 BEGIN @10000 LABEL ~zs_tw_general~ DESIGNATED 103 GROUP @10 // INSTALL USER-DEFINED COMPONENTS IN GROUP
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
