@@ -1139,6 +1139,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
+        ACTION_IF zst_5400_use_iwd_animation != 0 AND zst_5400_use_iwd_animation != 1 BEGIN
+            WARN "[WARN]: Setting to change Sanctuary animation to IWD's should be set to 0 (disable) or 1 (enable). Actual value: %zst_5400_use_iwd_animation%"
+            LAM f_plus
+        END
+
         // ----------------------------------------KELDORN TWEAKS------------------------------------------------- \\
 
         ACTION_IF zst_1520_keldsword != 0 AND zst_1520_keldsword != 1 BEGIN

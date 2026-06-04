@@ -257,3 +257,9 @@ ACTION_IF zst_group_539_holy_unholy_words BEGIN
     INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_539.tph~
   END
 END
+
+ACTION_IF zst_group_540_sanctuary BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_539.tph~
+  END
+END

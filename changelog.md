@@ -15,11 +15,12 @@
 - Clarified the descriptions of various components that use the "protection vs. <type>" to mention that saving throws against effects caused by those creatures also gain a +2 boost.
 - Added framework to log errors and warnings onto a file in ZSTweaks/logs for users to examine after installation. The file inside will be called "errors_found.txt" if there are errors.
 - Mod components now use the LABEL functionality
-- Dagger/Dart probabilities for Finesse reduced by 2: 41-50%. Kukris also have a +2% probably reduction since it's calculated from the probabilities of daggers and darts
+- Dagger/Dart probabilities for Finesse reduced by 2: 41-50%. Kukris also have a 2 probability reduction since it's calculated from the probabilities of daggers and darts
 - Ashen Scales components also allows Beast Masters to wear it now
 - Reverted original behavior of opening two readmes: one the basic and another the component one.
 - Chain Lightning component now scales damage up to 15d6+10 at level 20 instead of 12d6
 - Added compatibility for BG1-NPCs-for-SoA-ToB mod for the Shar-Teel mod
+- Added an option in the Web component so it adopts the IWD appearance and sound (TODO)
 
 ## New Components
 
@@ -33,3 +34,5 @@
 - Make some creatures immune to being cheesed with Thief Traps (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
 - Make Necromancers have access to a new HLA: Vampiric Feast (xxxx) (BG2EE EET) (TODO)
 - Make all fear effects reduce movement speed by half to make it less inconvenient (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
+- Make Sanctuary standardized to IWD version (5400) (IWDEE BGEE BG2EE EET)
+- Make Hold Animal much more useful by allowing it to affect many other types of beasts (xxxx) (BGEE BG2EE EET) (TODO)

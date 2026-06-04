@@ -313,6 +313,8 @@ OUTER_SET zst_507_disable_aidglow = "0" // disables the character color pulse wi
 OUTER_SET zst_508_restoration_stat_drain = "1"
 OUTER_SET zst_508_restoration_overhaul   = "1"
 
+OUTER_SET zst_5400_use_iwd_animation = "1"
+
 /////////////////////////////// NPC Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // allows tweaks for keldorn's gear

@@ -1075,3 +1075,30 @@ Because of the nature of the mold, it affects certain creatures differently:
 — All spectral and mist creatures are immune and cannot carry it either.
 — It cannot affect targets protected by elemental shields.
 — Cannot be blocked by Magic Resistance, but it can be dispelled.~
+
+@900000 = ~Hold Beast~
+@900001 = ~Hold Beast
+(Enchantment/Charm)
+
+Level: 3
+Sphere: Animal
+Range: 35 ft.
+Duration: 2 rounds/level
+Casting Time: 5
+Area of Effect: 1 creature and any enemies within 4 ft.
+Saving Throw: Neg.
+
+This spell holds beasts rigidly immobile and in place. This includes every kind of animal of any size such as bears, panthers and wolves, as well as other low-intelligence monstrous beasts such as carrion crawlers, ettercaps, ankhegs, and giant spiders. The effect is centered on the victim selected by the caster; every enemy within 4 ft. of the target is also affected. Those who succeed on their Saving Throw vs. Spell are totally unaffected by the spell. Held creatures cannot move or speak, but they remain aware of events around them. Being held does not prevent the worsening of the subjects' condition due to wounds, disease, or poison.~
+
+@900500 = ~Sanctuary
+(Abjuration)
+
+Level: 1
+Sphere: Protection
+Range: 0
+Duration: 1 turn + 1 round/level
+Casting Time: 3
+Area of Effect: The caster
+Saving Throw: None
+
+When the priest casts a Sanctuary spell, it causes all of <PRO_HISHER> opponents to ignore <PRO_HISHER> existence as if <PRO_HESHE> were invisible. While protected by this spell, the subject cannot take direct offensive action without breaking the spell, but can use non-attack spells or otherwise act in any way that does not violate the prohibition against offensive action. This allows a warded priest to heal wounds, for example, or to bless <PRO_HIMHER>self. The priest cannot cast spells on other creatures without ending the spell.~

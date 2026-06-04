@@ -1,0 +1,24 @@
+
+COPY_EXISTING ~sppr109.spl~ ~override~
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@900500) END
+    LPF ALTER_HEADER INT_VAR speed = 3 END
+
+    PATCH_IF is_iwdee BEGIN
+        LPF ALTER_EFFECT STR_VAR match_duration_ex = "(o_duration > 4)" duration_ex="(THIS + 42)" END
+    END ELSE BEGIN
+        PATCH_IF zst_5400_use_iwd_animation BEGIN
+            SPRINT sanctuary_effect ~op=153,p2=1,dur=60,res=sanctry~
+        END ELSE BEGIN
+            SPRINT sanctuary_effect ~op=153,dur=60~
+        END
+
+        LPF ~CD_TRIM-O-MATIC~ INT_VAR level_cap = 1 END
+        LPF DELETE_EFFECT INT_VAR check_globals = 0 END
+        SET fade_speed = (30 << 16)
+        LPF ADD_SPL_SELFEFF INT_VAR pwr=1 rd=3 STR_VAR effects = ~op=174,tmg=4,res=eff_e03,dur=60;%sanctuary_effect%;op=174,tmg=1,rd=2,res=#eff_p01;op=215,tmg=1,rd=2,res=abjurh;op=61,rd=2,tmg=1,p1=1183635200,p2=%fade_speed%~ END
+        LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur=6 level_cap=20 END
+    END
+
+ACTION_IF NOT is_iwdee AND zst_5400_use_iwd_animation BEGIN
+    COPY ~%MOD_FOLDER%/spells/divine/sanctuary~ ~override~
+END
