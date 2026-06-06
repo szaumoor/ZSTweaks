@@ -85,8 +85,9 @@ ACTION_IF zs_allow_prefixes BEGIN
             BUT_ONLY
 
             ACTION_IF has_eefixpack BEGIN
-                PRINT "[INFO]: Fixing faulty Blackrazor in Fixpack strengthening target instead of self"
+                PRINT "[INFO]: Fixing faulty Blackrazor/BBoD Unfix in Fixpack strengthening target instead of self"
                 COPY_EXISTING ~cdmiscbc.spl~ ~override~
+                              ~cdblkbld.spl~ ~override~
                     LPF ALTER_EFFECT INT_VAR silent=1 match_target = 1 target=9 END
                 BUT_ONLY
             END
