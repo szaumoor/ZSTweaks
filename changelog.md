@@ -7,6 +7,7 @@
 - Fixed the description of a mod-added upgraded version of Ankheg's Plate in BGEE that didn't reflect the bonus acid resistance in the description
 - Fixed missing period in Cespy's dialog for Kachiko's sword
 - Small performance improvement on some scripts
+- Added prefixes for bugged EEFixpack implementations of Blackrazor and Black Blade of Disaster (currently they heal and boost targets instead of wielder)
 
 ## Modifications
 
