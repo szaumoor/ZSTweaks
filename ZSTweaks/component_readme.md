@@ -2217,9 +2217,9 @@ This seems more like a bug fix than a tweak, but it bothers me, and it is not ta
 
 RR's implementation of Crippling Strike can actually increase Strength when dealing with something that has 9 Strength or less, and the lower the Strength, the less benefit you get. I changed this so that it instead reduces Strength by half its current value, which allows it to stay generally relevant no matter what you face.
 
-### Give Dragon Disciples direct access to all fire wizard spells and increase fire damage by 5% (2231) (IWDEE BGEE BG2EE EET)
+### Make Dragon Disciples able to access most arcane fire spells automatically and increase fire damage dealt (2231) (IWDEE BGEE BG2EE EET)
 
-This component gives Red Dragon Disciples access to all fire-based wizard spells by default and a 5% fire damage bonus. The latter is optional and can be disabled in the configuration file, and the percentage bonus can also be configured. It will patch any Dragon Disciples that may exist in the game, adding these spells and this bonus to them.
+This component gives Red Dragon Disciples access to most fire-based wizard spells by default and a 5% fire damage bonus. The latter is optional and can be disabled in the configuration file, and the percentage bonus can also be configured. It will patch any Dragon Disciples that may exist in the game, adding these spells and this bonus to them. Only spells that deal purely fire damage are considered. For example, Fire Arrow does not qualify, but Sunfire and Incendiary Cloud do.
 
 **Warning**: The spell selection when creating the Dragon Disciple **WILL NOT** tell you that the spells are already available or otherwise offer any feedback. Just make sure, if you use this component, that you know the spells are already available, so pick different spells during character creation.
 
