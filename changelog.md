@@ -8,6 +8,7 @@
 - Fixed missing period in Cespy's dialog for Kachiko's sword
 - Small performance improvement on some scripts
 - Added prefixes for bugged EEFixpack implementations of Blackrazor and Black Blade of Disaster (currently they heal and boost targets instead of wielder)
+- Fixed Helm of Balduran regeneration not working due to missing resource
 
 ## Modifications
 

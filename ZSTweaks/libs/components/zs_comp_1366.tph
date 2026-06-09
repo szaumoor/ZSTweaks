@@ -1,5 +1,7 @@
 ACTION_IF NOT is_iwdee BEGIN
 
+    COPY ~%MOD_FOLDER%/items/helm_balduran~ ~override~
+
     ACTION_IF is_bg2ee_or_eet BEGIN
         OUTER_SET stunned_strref = 1280
     END ELSE BEGIN
