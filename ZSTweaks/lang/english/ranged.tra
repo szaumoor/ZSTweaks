@@ -5,6 +5,7 @@ STATISTICS:
 Equipped abilities:
 – Cold Resistance: +15%
 – Fire Resistance: +15%
+– Attacks per round: +1/2
 
 Charge abilities:
 – Improved Haste once per day
@@ -30,6 +31,7 @@ STATISTICS:
 Equipped abilities:
 – Cold Resistance: +30%
 – Fire Resistance: +30%
+– Attacks per round: +1
 
 Charge abilities:
 – Improved Haste once per day
@@ -112,7 +114,7 @@ In order to protect their community from an encroaching orc logging encampment, 
 STATISTICS:
 
 Combat abilities:
-– Inflicts +2 extra missile damage against orcs, ogres, gnolls, and goblinoids
+– Inflicts +2 extra missile damage vs. orcs, ogres, gnolls, and goblinoids
 
 THAC0: +2
 Damage: +2
@@ -161,13 +163,13 @@ Requires:
 
 Weight: 2~
 
-@7600 = ~The Arrow of Biting was designed as a deadly complement to the archer. Poison smeared on the barbed arrowhead infiltrates the bloodstream of its victims, causing agony and often death.
+@7600 = ~This arrow was designed as a deadly complement to the archer. Poison smeared on the barbed arrowhead infiltrates the bloodstream of its victims, causing agony and often death.
 
 STATISTICS:
 
 Combat abilities:
 – Target must Save vs. Death or suffer 30 points of poison damage over 5 rounds
-– Chance to score a critical hit: +5%
+– Critical Hit Change: +5%
 
 Damage: 1d6 (missile)
 Launcher: Bow
@@ -215,7 +217,7 @@ Weight: 0~
 STATISTICS:
 
 Combat abilities:
-– Chance to score a critical hit: +10%
+– Critical Hit Chance: +10%
 – Behaves as a +3 weapon for the purposes of overcoming weapon immunities
 
 THAC0: +4
@@ -231,7 +233,7 @@ STATISTICS:
 
 Combat abilities:
 – Target must Save vs. Death or take 30 points of poison damage in 15 seconds
-– Chance to score a critical hit: +5%
+– Critical Hit Chance: +5%
 
 Damage: 1d8, +1 poison damage
 Damage type: Missile

@@ -9,7 +9,7 @@ Casting Time: 9
 Area of Effect: 12-ft. radius
 Saving Throw: 1/2
 
-A Glyph of Warding is a powerful inscription magically drawn to prevent unauthorized or hostile creatures from passing, entering, or opening. It can be used to guard a small bridge, to ward an entry, or as a trap on a chest or box. Any creature violating the warded area is subject to the magic it stores, although a successful saving throw vs. Spell enables the creature to take only half of the damage. When the spell is cast, the priest weaves a tracery of faintly glowing lines around the warding sigil. When the glyph is activated, it deals 1d4 points of electrical damage per level of the caster, up to 20d4.~
+A Glyph of Warding is a powerful inscription magically drawn to prevent unauthorized or hostile creatures from passing, entering, or opening. It can be used to guard a small bridge, to ward an entry, or as a trap on a chest or box. Any creature violating the warded area is subject to the magic it stores, although a successful Saving Throw vs. Spell enables the creature to take only half of the damage. When the spell is cast, the priest weaves a tracery of faintly glowing lines around the warding sigil. When the glyph is activated, it deals 1d4 points of electrical damage per level of the caster, up to 20d4.~
 
 @5010 = ~Bless
 (Conjuration/Summoning)
@@ -49,7 +49,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-The Finger of Death spell snuffs out the victim's life force. The caster points <PRO_HISHER> finger at the victim after the incantation is complete, effectively ripping the life out of its body unless a Save vs. Spell is made with a -2 penalty. A creature successfully making the saving throw still receives 2d8 points of damage + 1 per level of the caster.~
+The Finger of Death spell snuffs out the victim's life force. The caster points <PRO_HISHER> finger at the victim after the incantation is complete, effectively ripping the life out of its body unless a Save vs. Spell is made with a -2 penalty. A creature successfully making the Saving Throw still receives 2d8 points of damage + 1 per level of the caster.~
 
 @5060 = ~Goodberry
 (Alteration, Evocation)
@@ -98,9 +98,9 @@ Saving Throw: Special
 
 When this spell is cast, a local tremor of fairly high strength rips the ground. The shock is over in several rounds. The earthquake affects all creatures in its area of effect except the caster and <HISHER> party. There are 3 tremors that are caused by the earthquake:
 
- 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful saving throw vs. Spell with a -6 penalty halves the damage and negates the fall.
- 2nd: All creatures affected take 3d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
- 3rd: All creatures affected take 2d6 points of damage. A successful saving throw vs. Spell halves the damage.
+ 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful Saving Throw vs. Spell with a -6 penalty halves the damage and negates the fall.
+ 2nd: All creatures affected take 3d6 points of damage. A successful Saving Throw vs. Spell with a -2 penalty halves the damage.
+ 3rd: All creatures affected take 2d6 points of damage. A successful Saving Throw vs. Spell halves the damage.
 
 Special case: stone golems of all kinds, including golem juggernauts, immediately take 5d10 crushing damage on the first tremor and are held for 1 round.
 
@@ -120,9 +120,9 @@ Saving Throw: Special
 
 When this spell is cast, a local tremor of fairly high strength rips the ground. The shock is over in several rounds. The earthquake affects all creatures in its area of effect except the caster and <HISHER> party. There are 3 tremors that are caused by the earthquake:
 
- 1st: All enemies affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful saving throw vs. Spell with a -6 penalty halves the damage and negates the fall.
- 2nd: All enemies affected take 5d6 points of damage. A successful saving throw vs. Spell with a -4 penalty halves the damage.
- 3rd: All enemies affected take 4d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
+ 1st: All enemies affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful Saving Throw vs. Spell with a -6 penalty halves the damage and negates the fall.
+ 2nd: All enemies affected take 5d6 points of damage. A successful Saving Throw vs. Spell with a -4 penalty halves the damage.
+ 3rd: All enemies affected take 4d6 points of damage. A successful Saving Throw vs. Spell with a -2 penalty halves the damage.
 
 Special case: stone golems of all kinds, including golem juggernauts, immediately take 5d10 crushing damage on the first tremor, with no save allowed.
 
@@ -142,9 +142,9 @@ Saving Throw: Special
 
 When this spell is cast, a local tremor of fairly high strength rips the ground. The shock is over in several rounds. The earthquake affects all creatures in its area of effect. There are 3 tremors that are caused by the earthquake:
 
- 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful saving throw vs. Spell with a -6 penalty halves the damage and negates the fall.
- 2nd: All creatures affected take 5d6 points of damage. A successful saving throw vs. Spell with a -4 penalty halves the damage.
- 3rd: All creatures affected take 4d6 points of damage. A successful saving throw vs. Spell with a -2 penalty halves the damage.
+ 1st: All creatures affected take 6d6 points of damage and fall to the ground for 4 rounds. A successful Saving Throw vs. Spell with a -6 penalty halves the damage and negates the fall.
+ 2nd: All creatures affected take 5d6 points of damage. A successful Saving Throw vs. Spell with a -4 penalty halves the damage.
+ 3rd: All creatures affected take 4d6 points of damage. A successful Saving Throw vs. Spell with a -2 penalty halves the damage.
 
 Special case: stone golems of all kinds, including golem juggernauts, immediately take 5d10 crushing damage on the first tremor, with no save allowed.
 
@@ -161,7 +161,7 @@ Casting Time: 3
 Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
-By means of this spell, the caster is able to cause plants in the area of effect to entangle creatures within the area. The grasses, weeds, bushes, and even trees wrap, twist, and entwine about the creatures, holding them fast. Once per round, a creature can attempt to Save vs. Breath with a +2 bonus to avoid entanglement. The difficulty of the saving throw improves by 1 at level 5 and every fifth level thereafter. An entangled creature can still attack once per round, but receives a -3 penalty to its Armor Class.~
+By means of this spell, the caster is able to cause plants in the area of effect to entangle creatures within the area. The grasses, weeds, bushes, and even trees wrap, twist, and entwine about the creatures, holding them fast. Once per round, a creature can attempt to Save vs. Breath with a +2 bonus to avoid entanglement. The difficulty of the Saving Throw improves by 1 at level 5 and every fifth level thereafter. An entangled creature can still attack once per round, but receives a -3 penalty to its Armor Class.~
 
 @5110 = ~Poison
 (Necromancy)
@@ -173,14 +173,14 @@ Casting Time: 4
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-Through this spell, the caster can poison victims who fail their saving throw vs. Poison. The damage inflicted depends on the level of the caster as detailed below:
+Through this spell, the caster can poison victims who fail their Saving Throw vs. Poison. The damage inflicted depends on the level of the caster as detailed below:
  7–9th level: 2d8 + 2/round
  10–12th level: 3d8 + 3/round
  13–14th level: 4d8 + 4/round
  15–16th level: 6d8 + 5/round
  17+ level: 8d8 + 6/round
 
-Those who make their saving throws only take half of the initial damage, and are unaffected by the poison damage per round.~
+Those who make their Saving Throws only take half of the initial damage, and are unaffected by the poison damage per round.~
 
 @5120 = ~Holy Power
 (Evocation)
@@ -205,7 +205,7 @@ Casting Time: 9
 Area of Effect: The caster
 Saving Throw: 1/2
 
-Casting the Fire Seed spell creates 12 fire seeds that will appear in the caster's inventory. The seeds will remain in existence for 7 hours after the spell is cast. If they are thrown at an enemy, they explode in a fireball, causing 3d8+5 points of damage to all within a 7-ft. radius unless they make a saving throw vs. Spell for half damage. These seeds are thrown with a THAC0 bonus of +2 and are considered +2 weapons for the purposes of what they can hit.~
+Casting the Fire Seed spell creates 12 fire seeds that will appear in the caster's inventory. The seeds will remain in existence for 7 hours after the spell is cast. If they are thrown at an enemy, they explode in a fireball, causing 3d8+5 points of damage to all within a 7-ft. radius unless they make a Saving Throw vs. Spell for half damage. These seeds are thrown with a THAC0 bonus of +2 and are considered +2 weapons for the purposes of what they can hit.~
 
 @5160 = ~Created by the Fire Seeds spell. When thrown at opponents, they explode into small fireballs that do 3d8+5 points of damage to everyone within a 7-ft. radius.
 
@@ -227,7 +227,7 @@ Casting Time: 6
 Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
-When this spell is cast, the caster appears to undergo a remarkable transformation. They become the very ideal of beauty and longing, the shape of which depends on the nature of the creature witnessing it. Anyone viewing the disguised caster must make a saving throw vs. Spell at +2 or die of longing for the denied illusion. Even if the saving throw is successful, hapless viewers of the transformed Druid are all instantly smitten with permanent blindness (until dispelled). The transformation is instantaneous, but lasts only seconds, affecting those near the caster (excluding fellow party members).~
+When this spell is cast, the caster appears to undergo a remarkable transformation. They become the very ideal of beauty and longing, the shape of which depends on the nature of the creature witnessing it. Anyone viewing the disguised caster must make a Saving Throw vs. Spell at +2 or die of longing for the denied illusion. Even if the Saving Throw is successful, hapless viewers of the transformed Druid are all instantly smitten with permanent blindness (until dispelled). The transformation is instantaneous, but lasts only seconds, affecting those near the caster (excluding fellow party members).~
 
 @5180 = ~Confusion
 (Enchantment/Charm)
@@ -240,7 +240,7 @@ Casting Time: 7
 Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
-This spell causes confusion in one or more enemy creatures within the area, creating indecision and the inability to take effective action. All enemy creatures within the area of effect are allowed saving throws vs. Spell with a -4 penalty. Those successfully saving are unaffected by the spell. Those who fail their saving throws will either go berserk, stand confused, or wander about for the duration of the spell.
+This spell causes confusion in one or more enemy creatures within the area, creating indecision and the inability to take effective action. All enemy creatures within the area of effect are allowed Saving Throws vs. Spell with a -4 penalty. Those successfully saving are unaffected by the spell. Those who fail their Saving Throws will either go berserk, stand confused, or wander about for the duration of the spell.
 
 The spell lasts for 1 round for every two levels of the caster. Wandering creatures move as far from the caster as possible according to their most typical mode of movement (characters walk, fish swim, bats fly, etc.). Any confused creature that is attacked perceives the attacker as an enemy and acts according to its basic nature.~
 
@@ -255,7 +255,7 @@ Casting Time: 9
 Area of Effect: 12-ft. radius
 Saving Throw: Neg.
 
-Symbol, Death is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area of effect to make a saving throw vs. Death or die. Creatures with more than 60 current Hit Points are significantly less likely to be killed, gaining a +6 bonus to their saving throw.~
+Symbol, Death is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area of effect to make a Saving Throw vs. Death or die. Creatures with more than 60 current Hit Points are significantly less likely to be killed, gaining a +6 bonus to their Saving Throw.~
 
 @5251 = ~Energy Drain
 (Necromancy)
@@ -280,7 +280,7 @@ Casting Time: 5
 Area of Effect: 1 creature, and allies within 15 ft.
 Saving Throw: None
 
-The recipient of this spell gains the benefits of a Bless spell (+1 to attack rolls and saving throws) and a special bonus of 1d8 additional Hit Points, plus a separate 1 HP bonus per level, which increases by 1 at level 5 and every level thereafter, for the duration of the spell. The Aid spell enables the recipient to actually have more Hit Points than <PRO_HISHER> current maximum. The first 1d8 bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic, but the rest will be kept.~
+The recipient of this spell gains the benefits of a Bless spell (+1 to attack rolls and Saving Throws) and a special bonus of 1d8 additional Hit Points, plus a separate 1 HP bonus per level, which increases by 1 at level 5 and every level thereafter, for the duration of the spell. The Aid spell enables the recipient to actually have more Hit Points than <PRO_HISHER> current maximum. The first 1d8 bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic, but the rest will be kept.~
 
 @6200 = ~Armor of Faith
 (Abjuration)
@@ -521,7 +521,7 @@ Creature Type                         Damage
  Undead                                8d6+6
  Fiendish outsiders                    8d8+6
 
-This spell cannot be blocked by magic resistance, and outsiders of celestial origin (or related to the Positive Energy Plane) are unaffected, including Aasimars.~
+This spell cannot be blocked by Magic Resistance, and outsiders of celestial origin (or related to the Positive Energy Plane) are unaffected, including Aasimars.~
 
  @7400 = ~Magical Stone
 (Enchantment)
@@ -547,7 +547,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: Special
 
-This spell affects a single living creature. Dolorous Decay is a rotting and withering of the body that spreads throughout the afflicted creature quickly. The target creature will automatically be slowed for 2 rounds and suffer 2d10 poison damage immediately with no save. Furthermore, if the target fails a saving throw vs. Poison with a -3 penalty, they will take 1 point of damage per second for 1 turn, and suffer a -2 penalty to THAC0, Damage, and Armor Class, as well as a 8% physical damage resistance penalty for the duration.~
+This spell affects a single living creature. Dolorous Decay is a rotting and withering of the body that spreads throughout the afflicted creature quickly. The target creature will automatically be slowed for 2 rounds and suffer 2d10 poison damage immediately with no save. Furthermore, if the target fails a Saving Throw vs. Poison with a -3 penalty, they will take 1 point of damage per second for 1 turn, and suffer a -2 penalty to THAC0, Damage, and Armor Class, as well as a 8% physical damage resistance penalty for the duration.~
 
 @7420 = ~Wondrous Recall
 (Alteration)
@@ -586,7 +586,7 @@ Casting Time: 9
 Area of Effect: The caster
 Saving Throw: None
 
-This powerful abjuration spell causes the spells cast against the priest to be absorbed and consumed. This affects a total of spell levels equal to the level of the caster, which includes spells cast from scrolls and innate spell-like abilities, but excludes the following: area effects that are not centered directly upon the priest, as well as area effects that are stationary, such as Cloudkill and Stinking Cloud. For those effects, and including effects that are not considered spells to be absorbed, the caster is granted a +4 saving throw bonus. As long as the spell is cast directly at the priest, it will be absorbed provided that there are spell levels remaining. For example, if there is only 1 level left and a 3rd-level spell is cast at the priest, the spell will be absorbed while canceling the shield.~
+This powerful abjuration spell causes the spells cast against the priest to be absorbed and consumed. This affects a total of spell levels equal to the level of the caster, which includes spells cast from scrolls and innate spell-like abilities, but excludes the following: area effects that are not centered directly upon the priest, as well as area effects that are stationary, such as Cloudkill and Stinking Cloud. For those effects, and including effects that are not considered spells to be absorbed, the caster is granted a +4 Saving Throw bonus. As long as the spell is cast directly at the priest, it will be absorbed provided that there are spell levels remaining. For example, if there is only 1 level left and a 3rd-level spell is cast at the priest, the spell will be absorbed while canceling the shield.~
 
 @7551 = ~10% chance to cast Planar Shield~
 @7552 = ~10% chance to cast Shield of the Archons~
@@ -604,7 +604,7 @@ Casting Time: 3
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-When uttering the Curse spell, the caster lowers enemy morale, saving throws, and attack rolls by 1. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster. Affected creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not.~
+When uttering the Curse spell, the caster lowers enemy morale, Saving Throws, and attack rolls by 1. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster. Affected creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not.~
 
 @8120 = ~Sunray
 (Evocation, Alteration)
@@ -625,7 +625,7 @@ Other cadaverous undead: 10d6 damage (half fire, half radiant).
 Fungal creatures: 8d6 damage (half fire and half magical). Must Save vs. Spell or be Slowed or Confused for 2 rounds
 Other creatures: 4d6 damage (half fire and half magical).
 
-This spell is not affected by magic resistance and creatures affected by radiant damage cannot reduce it in any way through their resistances.~
+This spell is not affected by Magic Resistance and creatures affected by radiant damage cannot reduce it in any way through their resistances.~
 
 @8121 = ~Takes 7d6 radiant damage~
 @8122 = ~Takes 8d6 radiant damage~
@@ -646,7 +646,7 @@ Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-False Dawn calls into existence a bright reddish light, as if a sunrise were occurring, within the area of effect. All undead creatures within a False Dawn suffer 10d6 points of fire and magic damage. There is no saving throw. Affected undead also act confused for two rounds after False Dawn appears.~
+False Dawn calls into existence a bright reddish light, as if a sunrise were occurring, within the area of effect. All undead creatures within a False Dawn suffer 10d6 points of fire and magic damage. There is no Saving Throw. Affected undead also act confused for two rounds after False Dawn appears.~
 
 @8131 = ~False Dawn
 (Evocation)
@@ -659,7 +659,7 @@ Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-False Dawn calls into existence a bright reddish light, as if a sunrise were occurring, within the area of effect. All undead creatures within the area suffer 10d6 points of fire and magic damage and are blinded on the round after False Dawn appears. There is no saving throw.~
+False Dawn calls into existence a bright reddish light, as if a sunrise were occurring, within the area of effect. All undead creatures within the area suffer 10d6 points of fire and magic damage and are blinded on the round after False Dawn appears. There is no Saving Throw.~
 
 @8190 = ~Repulse Undead
 (Abjuration)
@@ -671,7 +671,7 @@ Casting Time: 5
 Area of Effect: The caster
 Saving Throw: None
 
-This powerful spell creates waves of anti-negative energy that sweep outward from the caster. These waves disrupt any undead that attempt to attack the caster, pushing them away from the caster for several seconds, causing Slow for half a round and 8 points of damage (half magical, half radiant which cannot be resisted). There is one wave per round for the duration of the spell. All undead are affected with no saving throw.~
+This powerful spell creates waves of anti-negative energy that sweep outward from the caster. These waves disrupt any undead that attempt to attack the caster, pushing them away from the caster for several seconds, causing Slow for half a round and 8 points of damage (half magical, half radiant which cannot be resisted). There is one wave per round for the duration of the spell. All undead are affected with no Saving Throw.~
 
 @8210 = ~Rejuvenating Mist
 (Invocation)
@@ -699,7 +699,7 @@ Casting Time: 7
 Area of Effect: 8 ft. long, 2 ft. wide wall
 Saving Throw: None
 
-This spell invokes a shimmering tapestry of blue-white force. This wall is intangible, requiring no physical anchor, and can easily be passed through. Evil creatures passing through the wall take 2d8+4 magic damage; undead creatures take 3d8+6 (evil undead would take 5d8+10). Additionally, affected creatures must Save vs. Spell or be blinded for 1 round and repulsed backwards with a 40% chance of being knocked to the ground for half a round. A creature that has passed through the wall can only be affected by it once per round. These effects cannot be stopped by magic resistance.~
+This spell invokes a shimmering tapestry of blue-white force. This wall is intangible, requiring no physical anchor, and can easily be passed through. Evil creatures passing through the wall take 2d8+4 magic damage; undead creatures take 3d8+6 (evil undead would take 5d8+10). Additionally, affected creatures must Save vs. Spell or be blinded for 1 round and repulsed backwards with a 40% chance of being knocked to the ground for half a round. A creature that has passed through the wall can only be affected by it once per round. These effects cannot be stopped by Magic Resistance.~
 
 @8235 = ~Unfailing Endurance
 (Necromancy)
@@ -828,7 +828,7 @@ Casting Time: 3
 Area of Effect: 12-ft. radius
 Saving Throw: None
 
-Symbol, Pain is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area of effect to be overwhelmed by pain, suffering a -4 penalty to their attack rolls, a -10% penalty to all damage inflicted, a -2 penalty to their Dexterity scores, and a -2 penalty to their Armor Class. There is no saving throw.~
+Symbol, Pain is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until someone comes too close, at which point it will explode, causing all those within the area of effect to be overwhelmed by pain, suffering a -4 penalty to their attack rolls, a -10% penalty to all damage inflicted, a -2 penalty to their Dexterity scores, and a -2 penalty to their Armor Class. There is no Saving Throw.~
 
 @8290 = ~Righteous Wrath of the Faithful
 (Enchantment/Charm)
@@ -841,7 +841,7 @@ Casting Time: 8
 Area of Effect: 17-ft. radius
 Saving Throw: None
 
-This spell bestows a form of divine madness upon the priest's allies, improving their combat skills. All the priest's allies in the area of effect gain a +1 bonus to attack rolls and saving throws, plus 8 bonus Hit Points for the duration of the spell (these Hit Points can take a target beyond <PRO_HISHER> Hit Point maximum). Allies of the same alignment, however, gain an extra attack every round (canceling haste), a +2 bonus to their attack rolls, damage rolls, and saving throws, and immunity to charm and hold spells. Similar to the Haste spell, anyone affected by Righteous Wrath of the Faithful will suffer extra fatigue at the end.~
+This spell bestows a form of divine madness upon the priest's allies, improving their combat skills. All the priest's allies in the area of effect gain a +1 bonus to attack rolls and Saving Throws, plus 8 bonus Hit Points for the duration of the spell (these Hit Points can take a target beyond <PRO_HISHER> Hit Point maximum). Allies of the same alignment, however, gain an extra attack every round (canceling haste), a +2 bonus to their attack rolls, damage rolls, and Saving Throws, and immunity to charm and hold spells. Similar to the Haste spell, anyone affected by Righteous Wrath of the Faithful will suffer extra fatigue at the end.~
 
 @8340 = ~Alicorn Lance
 (Invocation)
@@ -1066,7 +1066,7 @@ Casting Time: 4
 Area of Effect: 10-ft. radius
 Saving Throw: Special
 
-This spell infects the creature the caster touches with a rapidly spreading brown mold that quickly dies once the spell expires. The brown mold is attracted to heat and becomes more aggressive the more body heat the victim has. As a consequence, if the infected creature fails a Save vs. Spell, the infection is severe, causing the creature to take 4d6 cold damage immediately, 3d6 cold damage twice in the next 2 rounds, and finally, 2d6 cold damage at the fourth round, ending the spell. If, however, the saving throw is successful, the damage taken is only 2d6 per round, lasting only three rounds. Each round after the first, the nearest creature within 10 ft. of the victim must make a Save vs. Spell or be infected by the mold at full strength. This process continues until the mold fails to infect a suitable host in time. Creatures already under the effects of the mold cannot contract it again for its duration, and the druid who cast it is completely immune to it.
+This spell infects the creature the caster touches with a rapidly spreading brown mold that quickly dies once the spell expires. The brown mold is attracted to heat and becomes more aggressive the more body heat the victim has. As a consequence, if the infected creature fails a Save vs. Spell, the infection is severe, causing the creature to take 4d6 cold damage immediately, 3d6 cold damage twice in the next 2 rounds, and finally, 2d6 cold damage at the fourth round, ending the spell. If, however, the Saving Throw is successful, the damage taken is only 2d6 per round, lasting only three rounds. Each round after the first, the nearest creature within 10 ft. of the victim must make a Save vs. Spell or be infected by the mold at full strength. This process continues until the mold fails to infect a suitable host in time. Creatures already under the effects of the mold cannot contract it again for its duration, and the druid who cast it is completely immune to it.
 
 Because of the nature of the mold, it affects certain creatures differently:
 

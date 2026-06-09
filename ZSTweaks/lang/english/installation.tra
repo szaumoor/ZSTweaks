@@ -250,7 +250,7 @@
 @1347 = ~Make Bolts of Biting slightly more deadly~
 @1348 = ~Make projectiles from Shortbow of Gesen as fast as regular arrows~
 @1371 = ~Make Arrows of Dispelling force a Save vs. Spell at -2 for them to work~
-@1388 = ~Make Acid Arrow's extra damage not subject to magic resistance~
+@1388 = ~Make Acid Arrow's extra damage not subject to Magic Resistance~
 
 // JOINABLE CHARACTERS TWEAKS
 @1380 = "Make Chaos and Entropy grant 1/2 APR each and improve them slightly"
@@ -275,7 +275,7 @@
 @145 = ~Make Luck last longer and benefit more~
 @160 = "Make Black Blade of Disaster and golem iron fist unsuitable for backstabs"
 @170 = "Make Wail of the Banshee cause side effects on successful save and bypass Magic Resistance"
-@180 = "Make Meteor Swarm do more minimum damage and bypass magic resistance"
+@180 = "Make Meteor Swarm do more minimum damage and bypass Magic Resistance"
 @210 = "Make Horror an Enchantment spell"
 @220 = "Make Ice Storm do more damage, including piercing damage"
 @370 = "Make Ray of Enfeeblement a Necromancy spell"
@@ -286,18 +286,18 @@
 @407 = ~Make base imp familiars have 12/24 HP like the other familiars~
 @410 = ~Make Horrid Wilting more effective vs. plants and Water Elementals and increase minimum damage~
 @430 = ~Make Grease bypass Magic Resistance and more useful tactically~
-@440 = ~Make Comet bypass magic resistance and deal a mix of cold, fire, and crushing damage~
+@440 = ~Make Comet bypass Magic Resistance and deal a mix of cold, fire, and crushing damage~
 @441 = "Make Tenser's Transformation grant a THAC0 of 0 at max level and APR at the appropriate levels"
 @444 = ~Make Flesh to Stone and Stone to Flesh more unique~
 @445 = ~Make Bigby's spells more powerful~
 @446 = ~Make fireball-type spells improve more with level and/or improve explosion animations~
-@447 = ~Make Melf's Acid Arrow have a chance of splashing enemies and bypass magic resistance~
+@447 = ~Make Melf's Acid Arrow have a chance of splashing enemies and bypass Magic Resistance~
 @448 = ~Make Decastave grant one extra proficiency point with staves while it's held~
 @449 = ~Make Otiluke's Freezing Sphere deal half damage on save~
 @451 = ~Make Chain Lightning scale more strongly and spread faster to enemies~
 @452 = ~Make Icelance upgrade damage every 2 levels up to 10d6~
 @499 = ~Make Seven Eyes' granted abilities more powerful~
-@500 = ~Make Control Undead bypass magic resistance and have a -2 penalty to the saving throw~
+@500 = ~Make Control Undead bypass Magic Resistance and have a -2 penalty to the Saving Throw~
 @502 = ~Make Hold Undead bypass Magic Resistance~
 @522 = ~Make Disintegrate cause damage and slow some golems, as per PnP~
 @555 = ~Make Chromatic Orb more interesting by providing party-only chromatic varieties~
@@ -311,7 +311,7 @@
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20"
 @101 = ~Make Flame Blade be more effective vs. undead, and last for as long as it does in IWDEE~
 @110 = "Make Bless and Curse last longer and increase the casting speed from 6 to 3"
-@130 = "Make Hold Person saving throw penalties standardized at -1"
+@130 = "Make Hold Person Saving Throw penalties standardized at -1"
 @190 = "Make Holy Power grant a THAC0 of 0 at max level and APR at the appropriate levels"
 @230 = "Make Cloak of Fear work as a temporary aura of fear"
 @240 = "Make Goodberries more genuinely useful"
@@ -326,7 +326,7 @@
 @420 = ~Make Armor of Faith also add Armor Class and poison damage resistance~
 @450 = ~Make cure and cause wound spells other than Heal/Harm more worth using~
 @461 = ~Make Bolt of Glory slightly more effective and reorganize the damage distribution per type of enemy~
-@462 = ~Make Magical Stone bypass magic resistance and deal both magic and missile damage~
+@462 = ~Make Magical Stone bypass Magic Resistance and deal both magic and missile damage~
 @463 = ~Make Dolorous Decay more powerful~
 @464 = ~Make Wondrous Recall also recall wizard spells, and a higher number of them~
 @466 = ~Make Shield of Archons absorb more spell levels and closer to PnP~
@@ -341,7 +341,7 @@
 @511 = ~Make Unfailing Endurance an area spell that cures the fatigue of the whole party~
 @512 = ~Make Alicorn Lance more effective by increasing damage by 1 dice every 2 levels, up to 8d6~
 @513 = ~Make Whirlwind more effective and able to damage more creatures before dissipating~
-@477 = ~Make Smashing Wave a bit more powerful and bypass magic resistance~
+@477 = ~Make Smashing Wave a bit more powerful and bypass Magic Resistance~
 @479 = ~Make Static Charge electrocute twice as often, but for half the damage~
 @485 = ~Make Cloudburst last longer and less horrendously bad~
 @488 = ~Make Thorn Spray more powerful and scale with level~
@@ -359,7 +359,7 @@
 @2120 = "Make War Cry significantly more useful"
 @2130 = "Make some Thief HLAs more effective"
 @2150 = "Make a selection of HLAs unable to be breached"
-@2160 = ~Make Quivering Palm's saving throw improve twice at later levels~
+@2160 = ~Make Quivering Palm's Saving Throw improve twice at later levels~
 @2170 = ~Make the THAC0 progression of Thieves and Bards better and more streamlined~
 @2171 = ~Make vanilla Swashbuckler THAC0 consistent Thief THAC0 improvement is installed~
 @2190 = ~Make Poison Weapon improve twice more every 4 levels~
@@ -382,7 +382,7 @@
 @3020 = ~Make summoned demons grant XP to the party when they kill something~
 @3030 = ~Make celestial summons more powerful or balanced~
 @3040 = ~Make the Planetar more balanced and allow it to grant allies passive partial spell invulnerability~
-@3050 = ~Make the Balor's vorpal attack not guaranteed to succeed but affected by a saving throw~
+@3050 = ~Make the Balor's vorpal attack not guaranteed to succeed but affected by a Saving Throw~
 @3060 = ~Make that dumb Mencar Pebblemuncher a fair fighter for his level~
 @3070 = ~Make lions and other cat creatures not slow as molasses~
 @3080 = ~Make creature on-hit effects that should be natural not behave as magical attacks~
@@ -392,12 +392,12 @@
 @3120 = ~Make some golem creatures more unique~
 @3130 = ~Make minotaurs tougher and more dangerous~
 @3140 = ~Make ogre / oni mages regenerating fiends, as per PnP~
-@3150 = ~Make drow's magic resistance lower (configurable)~
-@3160 = ~Make the effects on-hit of Otyugh attacks nonmagical and subject to saving throws~
+@3150 = ~Make drow's Magic Resistance lower (configurable)~
+@3160 = ~Make the effects on-hit of Otyugh attacks nonmagical and subject to Saving Throws~
 
 // END-OF-INSTALL ORDER TWEAKS
 @1381 = ~Make Handmaiden's Mace +2 (Viconia's romance) reflect BG3's take on it~
 @2370 = ~Make IWD evasion balanced~
-@1531 = ~Make a selection of spells ignore magic resistance~
+@1531 = ~Make a selection of spells ignore Magic Resistance~
 
 @6542 = ~This component is only available if the previous tweak was installed~

@@ -34,7 +34,7 @@ Equipped abilities:
 – Armor Class: +1
 – Saves vs. Breath: +1
 – Immunity to backstabs and sneak attacks
-– Find Traps: +25%
+– Find Traps: +25
 
 Weight: 0~
 
@@ -435,7 +435,7 @@ Weight: 3~
 STATISTICS:
 
 Combat abilities:
-– Thorn Damage: Any opponent within 6 ft. who successfully hits the wearer suffers 1d4 points of piercing and fire damage
+– Fiery Thorns: Any opponent within 6 ft. who successfully hits the wearer suffers 1d4 points of piercing and fire damage
 
 Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
 Requires:
@@ -675,7 +675,7 @@ Weight: 1~
 STATISTICS:
 
 Equipped abilities:
-– Movement rate improves by a factor of 3 (default is 10)
+– Movement rate improves by a factor of 3 (default is 9)
 – Weapon Speed Factor: +2
 – Attacks per round: +1/2
 
@@ -853,7 +853,7 @@ Equipped abilities:
 
 Weight: 4~
 
-@7740 = ~Kazgaroth was an aspect of Bhaal who was a powerful, intelligent, shapeshifting evil beast opposed to the balance and the influence of the Earthmother on the Moonshae Isles. This horn is thought to be made from one its tusks. When blown upon, no sound issues from the horn. Instead, the user of the horn is encased in a globe of power for a short duration. The bubble greatly increases the user's magical defenses and saving throws, as well as partially deflecting incoming physical attacks. The horn draws attempts to draw from the user's life force every time it is used.
+@7740 = ~Kazgaroth was an aspect of Bhaal who was a powerful, intelligent, shapeshifting evil beast opposed to the balance and the influence of the Earthmother on the Moonshae Isles. This horn is thought to be made from one its tusks. When blown upon, no sound issues from the horn. Instead, the user of the horn is encased in a globe of power for a short duration. The bubble greatly increases the user's magical defenses and Saving Throws, as well as partially deflecting incoming physical attacks. The horn draws attempts to draw from the user's life force every time it is used.
 
 STATISTICS:
 
@@ -988,7 +988,14 @@ STATISTICS:
 Equipped abilities:
 – Constitution: Set to 18
 
+Charge abilities:
+– Imbue Vitality once per day
+  Special: Infuses a target with a +2 bonus to Constitution, Save vs. Death, as well as granting them +5 maximum Hit Points
+  Target: Anyone except the wearer, as they are unaffected while wearing it
+
 Weight: 2~
+
+@80700 = ~Imbue Vitality~
 
 @8300 = ~These gloves are usually given to novices of the Most Noble Order of the Radiant Heart. For anyone outside of the Order to wear these gloves is a rare honor.
 
@@ -1451,7 +1458,7 @@ Equipped abilities:
 Weight: 4~
 
 @50040 = ~Enhanced Robe of the Good Archmagi
-This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's magic resistance and saving throws. Due to the nature of its enchantment, it can only be worn by wizards of good alignment. This particular robe has been further enchanted by <CHARNAME>.
+This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's Magic Resistance and Saving Throws. Due to the nature of its enchantment, it can only be worn by wizards of good alignment. This particular robe has been further enchanted by <CHARNAME>.
 
 STATISTICS:
 
@@ -1466,7 +1473,7 @@ Equipped abilities:
 Weight: 6~
 
 @50041 = ~Enhanced Robe of the Neutral Archmagi
-This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's magic resistance and saving throws. Due to the nature of its enchantment, it can only be worn by wizards of neutral alignment. This particular robe has been further enchanted by <CHARNAME>.
+This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's Magic Resistance and Saving Throws. Due to the nature of its enchantment, it can only be worn by wizards of neutral alignment. This particular robe has been further enchanted by <CHARNAME>.
 
 STATISTICS:
 
@@ -1481,7 +1488,7 @@ Equipped abilities:
 Weight: 6~
 
 @50042 = ~Enhanced Robe of the Evil Archmagi
-This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's magic resistance and saving throws. Due to the nature of its enchantment, it can only be worn by wizards of evil alignment. This particular robe has been further enchanted by <CHARNAME>.
+This powerful Mage Robe offers protection from all forms of physical attack while at the same time increasing one's Magic Resistance and Saving Throws. Due to the nature of its enchantment, it can only be worn by wizards of evil alignment. This particular robe has been further enchanted by <CHARNAME>.
 
 STATISTICS:
 

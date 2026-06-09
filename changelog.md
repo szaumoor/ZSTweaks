@@ -14,7 +14,7 @@
 - Mod is now available in Simplified Chinese thanks to user MephistoSatanDevil
 - Added a configuration option for Finger of Death so it doesn't use a projectile, that is, upon casting, the target immediately suffers its effect.
 - Component that makes natural effects nonmagical now includes Poisonous Breath from Neothelid (SoD) and also resources created by the Fixpack
-- Clarified the descriptions of various components that use the "protection vs. <type>" to mention that saving throws against effects caused by those creatures also gain a +2 boost.
+- Clarified the descriptions of various components that use the "protection vs. <type>" to mention that Saving Throws against effects caused by those creatures also gain a +2 boost.
 - Added framework to log errors and warnings onto a file in ZSTweaks/logs for users to examine after installation. The file inside will be called "errors_found.txt" if there are errors.
 - Mod components now use the LABEL functionality
 - Dagger/Dart probabilities for Finesse reduced by 2: 41-50%. Kukris also have a 2 probability reduction since it's calculated from the probabilities of daggers and darts
@@ -23,6 +23,8 @@
 - Chain Lightning component now scales damage up to 15d6+10 at level 20 instead of 12d6
 - Added compatibility for BG1-NPCs-for-SoA-ToB mod for the Shar-Teel mod
 - Added an option in the Web component so it adopts the IWD appearance and sound (TODO)
+- Darkfire Bow component now increases APR too by 1/2 for the non-upgraded and 1 for the upgraded
+- Girdle of Fortitude now other than setting the user's constitution to 18, it also has a charge ability once per day that buffs a target of their choice (other than self) with +2 CON, Save vs. Death, and +5 maximum HP.
 
 ## New Components
 

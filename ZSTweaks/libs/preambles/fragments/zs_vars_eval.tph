@@ -249,7 +249,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         // ----------------------------------------ARROW DISPELLING ST------------------------------------------------- \\
 
         ACTION_IF zst_1371_save_penalty < "-10" OR zst_1371_save_penalty > 10 BEGIN
-            WARN "[WARN]: Enforced saving throw bonus for Arrows of Dispelling should be set between -10 and 10. Actual value: %zst_1371_save_penalty%"
+            WARN "[WARN]: Enforced Saving Throw bonus for Arrows of Dispelling should be set between -10 and 10. Actual value: %zst_1371_save_penalty%"
             LAM f_plus
         END
 
@@ -474,32 +474,32 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         END
 
         ACTION_IF zst_1545_saving_throws_rogue != 0 AND zst_1545_saving_throws_rogue != 1 BEGIN
-            WARN "[WARN]: Setting to change rogue saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_rogue%"
+            WARN "[WARN]: Setting to change rogue Saving Throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_rogue%"
             LAM f_plus
         END
 
         ACTION_IF zst_1545_saving_throws_priest != 0 AND zst_1545_saving_throws_priest != 1 BEGIN
-            WARN "[WARN]: Setting to change priest saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_priest%"
+            WARN "[WARN]: Setting to change priest Saving Throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_priest%"
             LAM f_plus
         END
 
         ACTION_IF zst_1545_saving_throws_warrior != 0 AND zst_1545_saving_throws_warrior != 1 BEGIN
-            WARN "[WARN]: Setting to change warrior saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_warrior%"
+            WARN "[WARN]: Setting to change warrior Saving Throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_warrior%"
             LAM f_plus
         END
 
         ACTION_IF zst_1545_saving_throws_wizard != 0 AND zst_1545_saving_throws_wizard != 1 BEGIN
-            WARN "[WARN]: Setting to change wizard saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_wizard%"
+            WARN "[WARN]: Setting to change wizard Saving Throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_wizard%"
             LAM f_plus
         END
 
         ACTION_IF zst_1545_saving_throws_monk != 0 AND zst_1545_saving_throws_monk != 1 BEGIN
-            WARN "[WARN]: Setting to change monk saving throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_monk%"
+            WARN "[WARN]: Setting to change monk Saving Throw table should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_monk%"
             LAM f_plus
         END
 
         ACTION_IF zst_1545_saving_throws_patch != 0 AND zst_1545_saving_throws_patch != 1 BEGIN
-            WARN "[WARN]: Setting to patch creature saving throw tables should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_patch%"
+            WARN "[WARN]: Setting to patch creature Saving Throw tables should be set to 0 (disable) or 1 (enable). Actual value: %zst_1545_saving_throws_patch%"
             LAM f_plus
         END
 
@@ -658,7 +658,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         // ----------------------------------------DAGGER TWEAKS------------------------------------------------- \\
 
         ACTION_IF zst_1000_sbonus > 0 OR zst_1000_sbonus < "-10" BEGIN
-            WARN "[WARN]: Setting to modify the saving throw of poisoned throwing daggers should be set to 0 (disable) or a negative value (up to -10). Actual value: %zst_1000_sbonus%"
+            WARN "[WARN]: Setting to modify the Saving Throw of poisoned throwing daggers should be set to 0 (disable) or a negative value (up to -10). Actual value: %zst_1000_sbonus%"
             LAM f_plus
         END
 
@@ -813,7 +813,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         // ----------------------------------------ASP'S NEST------------------------------------------------- \\
 
         ACTION_IF zst_1010_asp_nest_sbonus < "-10" OR zst_1010_asp_nest_sbonus >= 0 BEGIN
-            WARN ~[WARN]: Invalid setting for Asp's Nest saving throw bonus. Must be between -10 and -1. Actual value: %zst_1010_asp_nest_sbonus%~
+            WARN ~[WARN]: Invalid setting for Asp's Nest Saving Throw bonus. Must be between -10 and -1. Actual value: %zst_1010_asp_nest_sbonus%~
         END
 
         // ----------------------------------------FINGER OF DEATH------------------------------------------------- \\

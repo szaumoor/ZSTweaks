@@ -4,7 +4,7 @@ STATISTICS:
 
 Combat abilities:
 – Hit target must Save vs. Poison at -1 or suffer 6 points of poison damage over 3 seconds
-– Considered a +3 enchanted weapon for the purposes of what it can hit
+– Considered a +3 weapon for the purposes of what it can hit
 – Attacks per round: +1/2
 
 THAC0: +2
@@ -22,8 +22,8 @@ Weight: 2~
 STATISTICS:
 
 Combat abilities:
-– Touch of Chaos: For two rounds, hit target suffers a non-stacking -5 Dexterity penalty and one randomly chosen stacking -1 penalty to saving throws vs. Poison, Armor Class, THAC0, or Damage. Constructs such as golems are unaffected.
-– Considered a +3 enchanted weapon for the purposes of what it can hit
+– Touch of Chaos: For two rounds, hit target suffers a non-stacking -5 Dexterity penalty and one randomly chosen stacking -1 penalty to Saving Throws vs. Poison, Armor Class, THAC0, or Damage. Constructs such as golems are unaffected.
+– Considered a +3 weapon for the purposes of what it can hit
 – Attacks per round: +1/2
 
 THAC0: +2
@@ -42,7 +42,7 @@ STATISTICS:
 
 Combat abilities:
 – Hit target must Save vs. Poison at -2 or suffer 9 points of poison damage over 3 seconds
-– Considered a +5 enchanted weapon for the purposes of what it can hit
+– Considered a +5 weapon for the purposes of what it can hit
 – Attacks per round: +1/2
 
 THAC0: +4
@@ -60,8 +60,8 @@ Weight: 2~
 STATISTICS:
 
 Combat abilities:
-– Touch of Chaos: For two rounds, hit target suffers a non-stacking -5 Dexterity penalty and one randomly chosen stacking -1 penalty to saving throws vs. Poison, Armor Class, THAC0, or Damage. Constructs such as golems are unaffected.
-– Considered a +5 enchanted weapon for the purposes of what it can hit
+– Touch of Chaos: For two rounds, hit target suffers a non-stacking -5 Dexterity penalty and one randomly chosen stacking -1 penalty to Saving Throws vs. Poison, Armor Class, THAC0, or Damage. Constructs such as golems are unaffected.
+– Considered a +5 weapon for the purposes of what it can hit
 – Attacks per round: +1/2
 
 THAC0: +4
@@ -109,7 +109,7 @@ Type: Two-handed
 
 Weight: 8~
 
-@6242 = ~Full plate armor is the best armor a warrior can buy, both in appearance and protection. This armor increases the wearer's Armor Class by one above that of normal full plate. While equipped, the suit provides the wearer with a +1 bonus to all saving throws and grants the wearer immunity to movement-limiting effects such as Web and Grease. This suit was designed for Keldorn, and only he may wear it.
+@6242 = ~Full plate armor is the best armor a warrior can buy, both in appearance and protection. This armor increases the wearer's Armor Class by one above that of normal full plate. While equipped, the suit provides the wearer with a +1 bonus to all Saving Throws and grants the wearer immunity to movement-limiting effects such as Web and Grease. This suit was designed for Keldorn, and only he may wear it.
 
 STATISTICS:
 
@@ -184,7 +184,7 @@ STATISTICS:
 
 Combat abilities:
 – Yoshimo wields it as if he had one more proficiency point in katanas
-– +10% chance to score a critical hit
+– Critical Hit Chance: +10% (this katana)
 
 THAC0: +3
 Damage: 1d10+1 (slashing)
@@ -397,7 +397,7 @@ Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
 Weight: 9~
 
 @50050 = ~Improved Firecam Full-Plate Armor
-This suit of armor was originally designed for Keldorn and few others may wear it. The suit was later enchanted again at <CHARNAME>'s request and it now provides Keldorn with even more protection. While equipped, the suit provides the wearer with a +2 bonus to all saving throws and grants the wearer immunity to movement-limiting effects such as Web and Grease, and fear. Despite being incredibly strong, the armor is almost weightless.
+This suit of armor was originally designed for Keldorn and few others may wear it. The suit was later enchanted again at <CHARNAME>'s request and it now provides Keldorn with even more protection. While equipped, the suit provides the wearer with a +2 bonus to all Saving Throws and grants the wearer immunity to movement-limiting effects such as Web and Grease, and fear. Despite being incredibly strong, the armor is almost weightless.
 
 STATISTICS:
 

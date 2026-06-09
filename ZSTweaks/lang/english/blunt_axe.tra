@@ -104,11 +104,9 @@ Weight: 3~
 
 STATISTICS:
 
-Equipped abilities:
-– Acts as a +4 weapon against undead
-
 Combat abilities:
 – Returns to the wielder's hand when thrown
+– Acts as a +4 weapon vs. undead for the purposes of what it can hit
 – Undead and fiends must Save vs. Death at -2 or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
   – Fiends: 95%
   – Liches and demiliches: 80%
@@ -313,8 +311,8 @@ Weight: 8~
 STATISTICS:
 
 Combat abilities:
-– 20% chance per hit that the target takes an additional 10 points of fire damage
-– 7% chance per hit that a 15-ft. radius fireball detonates (8d6+12 fire damage; Save vs. Spell for half)
+– Hellfire: 20% chance per hit that the target takes an additional 10 points of fire damage
+– Demon's Wrath: 7% chance per hit that a 15-ft. radius fireball detonates (8d6+12 fire damage; Save vs. Spell for half)
 
 THAC0: +3
 Damage: 1d6+3, +3 fire damage
@@ -334,8 +332,8 @@ Now that the club is upgraded with the ring of fire resistance, the demon spirit
 STATISTICS:
 
 Combat abilities:
-– 30% chance per hit that the target takes an additional 15 points of fire damage
-– 10% chance per hit that a 15-ft. radius fireball detonates (8d6+12 fire damage; Save vs. Spell for half)
+– Hellfire: 30% chance per hit that the target takes an additional 15 points of fire damage
+– Demon's Wrath: 10% chance per hit that a 15-ft. radius fireball detonates (8d6+12 fire damage; Save vs. Spell for half)
 
 THAC0: +5
 Damage: 1d6+5, +5 fire damage
@@ -487,10 +485,10 @@ STATISTICS:
 
 Equipped abilities:
 – Immunity to level drain
-– Acts as a +5 weapon against undead
 
 Combat abilities:
 – Returns to the wielder's hand when thrown
+– Acts as a +5 weapon vs. undead for the purposes of what it can hit
 – Undead and fiends must Save vs. Death at -4 or be utterly destroyed. Stronger creatures have a chance to resist this effect when struck:
   – Fiends: 95% chance to resist
   – Liches and demiliches: 80% chance to resist
@@ -520,7 +518,7 @@ The mace seems almost alive and warm to the touch, and slithers toward those it 
 STATISTICS:
 
 Equipped abilities:
-– Sets Strength to 18 (unless higher)
+– Sets Strength to 18 unless higher
 
 Combat abilities:
 – Hit target must Save vs. Death or suffer 2 points of poison damage per round for 1 turn

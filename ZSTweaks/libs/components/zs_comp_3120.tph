@@ -199,7 +199,7 @@ COPY_EXISTING ~golada01.cre~ ~override~
   WRITE_SHORT 0x46 0
   WRITE_SHORT 0x48 0
 
-  // damage immunities and magic resistance
+  // damage immunities and Magic Resistance
   WRITE_BYTE 0x59 100
   WRITE_BYTE 0x5a 100
   WRITE_BYTE 0x5b 100

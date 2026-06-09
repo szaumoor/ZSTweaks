@@ -71,7 +71,7 @@ Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: Special
 
-As the Shaman casts this spell, energies gather from the spirit world and form a pale blue sphere. The Shaman can throw the sphere so that it explodes into a burst of ghostly, azure flames, which deliver 1d4+1 points of magic damage per level of the Shaman (up to a maximum of 12d4+12). There is also a 33% chance that every enemy within the area of effect will be afflicted by the Doom spell (-2 penalty to saving throws and attack rolls for 1 turn). A successful Save vs. Spell halves the damage, but not the Doom effect. Spirits, fey creatures, elementals, and spectral undead take double damage.~
+As the Shaman casts this spell, energies gather from the spirit world and form a pale blue sphere. The Shaman can throw the sphere so that it explodes into a burst of ghostly, azure flames, which deliver 1d4+1 points of magic damage per level of the Shaman (up to a maximum of 12d4+12). There is also a 33% chance that every enemy within the area of effect will be afflicted by the Doom spell (-2 penalty to Saving Throws and attack rolls for 1 turn). A successful Save vs. Spell halves the damage, but not the Doom effect. Spirits, fey creatures, elementals, and spectral undead take double damage.~
 
 @7530 = ~Favored of the Spirits
 
@@ -89,7 +89,7 @@ Requires: Spirit Form~
 The character emits a dazzling burst of light that strikes at all other creatures within a 15-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 9d6 points of fire damage (12d6+3 if undead), unless they Save vs. Spell for half. In addition, all creatures except the character must Save vs. Spell or be blinded for 2 hours.~
 
 @7800 = ~Sun Soulray
-The character projects a blast of light from <PRO_HISHER> open palm, dealing 1d8 fire damage for every 2 caster levels (up to a maximum of 5d8 damage) to a single target. Undead creatures take an additional 6 points of damage (which increases by 2 every 2 caster levels). There is no saving throw against this ability.~
+The character projects a blast of light from <PRO_HISHER> open palm, dealing 1d8 fire damage for every 2 caster levels (up to a maximum of 5d8 damage) to a single target. Undead creatures take an additional 6 points of damage (which increases by 2 every 2 caster levels). There is no Saving Throw against this ability.~
 
 @8080 = ~Assassination
 Using every clever trick an experienced Thief has learned in countless battles, this ability causes every strike in the next 7 seconds to count as a backstab, using the Thief's existing backstab modifier to determine damage. Additionally, during this time and for 1 round longer, critical misses are not possible, and critical hit chance increases by 10%.
@@ -101,7 +101,7 @@ Specialized thieves (single-classed) benefit more from this:
 – +1 Attacks per round~
 
 @8180 = ~Avoid Death
-With extraordinary effort, a high-level rogue can avoid almost certain death. The effect lasts for 5 rounds, and during this time, the rogue's saving throws vs. Death receive a bonus of 5, Hit Points are increased by 20, and the rogue becomes immune to death magic and level drain. Additionally, during the first round, the rogue will succeed in all saving throws, and their hit points may not go below 1 for the first half of that round.~
+With extraordinary effort, a high-level rogue can avoid almost certain death. The effect lasts for 5 rounds, and during this time, the rogue's Saving Throws vs. Death receive a bonus of 5, Hit Points are increased by 20, and the rogue becomes immune to death magic and level drain. Additionally, during the first round, the rogue will succeed in all Saving Throws, and their hit points may not go below 1 for the first half of that round.~
 
 @8191 = ~Defensive Spin
 During the next 4 rounds, the character moves at half their normal speed, gains a +1 bonus to Armor Class per level, and becomes immune to backstab.~
@@ -149,7 +149,7 @@ The Saving Throw penalty becomes harsher as the rogue levels up, improving every
 @8890 = ~Advanced Evasion~
 @8891 = ~Advanced Evasion
 
-Once per day, a dextrous user can perform a sudden, very fast maneuver to avoid most projectiles, damaging area-of-effect spells and spell-like effects (but does not include abilities that cause instant damage like Horrid Wilting, or effects that don't cause direct physical damage). For about one and a half seconds, the character becomes immune to such effects and gains a +1 bonus to saving throws, a +2 bonus to Armor Class, and movement rate is 4 points higher. 
+Once per day, a dextrous user can perform a sudden, very fast maneuver to avoid most projectiles, damaging area-of-effect spells and spell-like effects (but does not include abilities that cause instant damage like Horrid Wilting, or effects that don't cause direct physical damage). For about one and a half seconds, the character becomes immune to such effects and gains a +1 bonus to Saving Throws, a +2 bonus to Armor Class, and movement rate is 4 points higher. 
 
 Hence, the user becomes immune to all fireball-like spells and abilities, all basic projectiles (arrows, bolts, throwing weapons, etc), all dragon breath attacks, and the spells Dragon Breath, Comet, Produce Fire, Smashing Wave, Thorn Spray, Skull Trap, Glyph of Warding, Holy Smite, Unholy Blight, Burning Hands, and Cone of Cold. However, these immunities may only occur in characters that possess at least 16 Dexterity, as they are hard to perform. 
 

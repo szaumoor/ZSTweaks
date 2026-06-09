@@ -334,7 +334,7 @@ STATISTICS:
 Equipped abilities:
 – Armor Class: +2, plus an extra +2 vs. Slashing, Piercing, and Missile
 – Save vs. Spell: +1
-– +8% physical damage resistance
+– Physical Damage Resistance: +8%
 
 Combat abilities:
 – Acts as a +5 weapon for the purposes of what it can hit
@@ -444,12 +444,12 @@ STATISTICS:
 
 Equipped abilities:
 – Immunity to fear
-– Regenerate 1 Hit Point every 5/2 rounds
+– Regenerate 1 Hit Point every 15 seconds
 – +15% resistance vs. acid, electricity, fire, and cold
 – Armor Class and Saving Throws: +2 vs. dragons and wyverns
 
 Combat abilities:
-– Acts as a +4 weapon against dragons and wyverns for the purposes of overcoming weapon immunities
+– Acts as a +4 weapon vs. dragons and wyverns for the purposes of overcoming weapon immunities
 
 Charge abilities:
 – Detect Invisibility three times per day
@@ -472,7 +472,7 @@ Weight: 3~
 STATISTICS:
 
 Combat abilities:
-– Inflicts 1d2 points of bleeding damage on hit and one round later
+– Inflicts 1d2 points of bleeding (piercing) damage on hit and one round later
 – Critical hits inflict 2d4 extra piercing damage
 – Drains 2 points of Strength from the target and transfers them to the wielder for 5 rounds when a successful backstab is performed (non-cumulative)
 
@@ -655,7 +655,7 @@ Weight: 2~
 STATISTICS:
 
 Combat abilities:
-– Lingering flame: on a failed Save vs. Spell, targets continue to burn, suffering 1d3 points of fire damage per round for 3 rounds
+– Searing Flame: on a failed Save vs. Spell, targets continue to burn, suffering 1d3 points of fire damage per round for 3 rounds
 
 THAC0: +3
 Damage: 2d4+3, plus 1d3+1 fire damage
@@ -675,7 +675,7 @@ Weight: 5~
 STATISTICS:
 
 Equipped abilities:
-– +20% cold resistance
+– Cold Resistance: +20%
 
 THAC0: +3
 Damage: 1d8+3, +1d2 cold damage
@@ -693,8 +693,8 @@ Weight: 3~
 STATISTICS:
 
 Combat abilities:
-– Cursed Wound: critical hits prevent most sources of healing for 5/2 rounds
-– Critical Hit chance: +5% (this weapon)
+– Cursed Wound: critical hits prevent most sources of healing for 15 seconds
+– Critical Hit Chance: +5% (this weapon)
 
 THAC0: +2
 Damage: 1d8+2 (slashing)
@@ -713,8 +713,8 @@ Weight: 4~
 STATISTICS:
 
 Combat abilities:
-– +10% critical chance (this weapon only)
-– Critical hits cause bleeding: 1d6 piercing damage per round for 3 rounds
+– Critical Hit Chance: +10% (this weapon)
+– Bleeding Strike: On critical hit, target takes 1d6 piercing damage per round for 3 rounds
 
 THAC0: +4
 Damage: 1d6+4 (piercing)
@@ -750,7 +750,7 @@ Weight: 3~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +1, +3 vs. slashing attacks (Kensai)
+– Armor Class: +1, +3 vs. Slashing attacks (Kensai)
 
 THAC0: +1, +2 (Kensai)
 Damage: 1d8+1 (piercing)
@@ -815,7 +815,7 @@ STATISTICS:
 
 Equipped abilities:
 – Off-hand THAC0: +2 (monks only)
-– +5% critical chances while holding this weapon (monks only)
+– Critical Hit Chances: +5% (monks only)
 
 Combat abilities:
 – Attacks per round: +1
@@ -867,7 +867,7 @@ Equipped abilities:
 
 Combat abilities:
 – Double striking range
-– +5% critical hit chances with this weapon
+– Critical Hit Chance: +5% (this weapon)
 – Cursed Wound: critical hits prevent most sources of healing for 2 rounds
 – Each hit heals the wielder between 2 and 6 Hit Points. Lower healing amounts are more likely than higher ones
 

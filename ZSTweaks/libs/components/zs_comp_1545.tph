@@ -310,7 +310,7 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
     END
 
     ACTION_IF zst_1545_saving_throws_patch AND incl BEGIN
-        PRINT "[INFO]: Patching creatures with the new saving throw tables..."
+        PRINT "[INFO]: Patching creatures with the new Saving Throw tables..."
         OUTER_SET tolerance = 2
 
         COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
