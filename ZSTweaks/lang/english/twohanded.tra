@@ -619,14 +619,14 @@ The githyanki's unwavering devotion to their queen inspires both awe and unease.
 STATISTICS:
 
 Equipped abilities:
-– Unaffected by mind blasts and domination attempts by Mind Flayers
+– Unaffected by mind blasts and domination attempts by illithids
 
 Combat abilities:
-– Vorpal Strike: 25% chance per hit the target must Save vs. Death at -2 or die from decapitation.
-– Psychic Assault: inflicts 2d8 irresistible damage on a critical hit, which also causes Confusion for 10 seconds if a Save vs. Spell at -2 is failed. This psychic damage cannot be resisted, but mindless and brainless creatures will not be affected.
+– Vorpal Strike: 25% chance per hit the target must Save vs. Death at -2 or die from decapitation or any other fatal dismemberment
+– Psychic Assault: inflicts 2d8 irresistible psychic damage on a critical hit, which also causes Confusion for 10 seconds if a Save vs. Spell at -2 is failed. This damage cannot be resisted, but mindless and brainless creatures will not be affected.
 
-THAC0: +3, +5 vs. Mind Flayers
-Damage: 1d10+3, +5 vs. Mind Flayers (slashing)
+THAC0: +3, +5 vs. illithids
+Damage: 1d10+3, +5 vs. illithids (slashing)
 Speed Factor: 6
 Proficiency Type: Two-handed Sword
 Type: Two-handed
@@ -940,7 +940,7 @@ Equipped abilities:
 – Attacks per round: Set to 2 (sorcerers and single-classed mages)
 – Casting level: +1
 – 5% chance to inflict double magic damage on ranged attacks
-– Melee hits have a 10% chance of stunning the target for 5/2 rounds if a Save vs. Spell is failed
+– Melee hits have a 10% chance of stunning the target for 15 seconds if a Save vs. Spell is failed
 – Acts as a +4 weapon for the purposes of what it can hit
 
 Charge abilities:
@@ -951,7 +951,7 @@ Charge abilities:
 
 – Lightning Bolt of Paralyzation twice per day
   Damage: 10d6 electrical to all in its path (Save vs. Spell for half)
-  Special: Stuns target for 5/2 rounds if a Save vs. Spell is failed
+  Special: Stuns target for 15 seconds if a Save vs. Spell is failed
   Range: 100 ft.
 
 THAC0: +2, +4 for sorcerers and single-classed mages

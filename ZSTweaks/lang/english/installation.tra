@@ -28,7 +28,7 @@
 
 @10000 = ~Install user-selected components in the General group~
 @10001 = ~Install user-selected components in the Gear group~
-@10002 = ~Install user-selected components in the Dagger group~
+@10002 = ~Install user-selected components in the Daggers group~
 @10003 = ~Install user-selected components in the Two-handed group~
 @10004 = ~Install user-selected components in the One-handed Swords group~
 @10005 = ~Install user-selected components in the Axes & Blunt group~
@@ -37,7 +37,7 @@
 @10008 = ~Install user-selected components in the Arcane Magic group~
 @10009 = ~Install user-selected components in the Divine Magic group~
 @10010 = ~Install user-selected components in the Classes group~
-@10011 = ~Install user-selected components in the Creature group~
+@10011 = ~Install user-selected components in the Creatures group~
 @10012 = ~Install user-selected components in the End-of-install-order group~
 
 /// General Item & Spell Tweaks
@@ -57,7 +57,7 @@
 @1650 = ~Make mage robes without cloaks cloaked~
 @1541 = ~Make vorpal hits fail if target has stoneskins~
 @1538 = ~Make jewelry more valuable~
-@1539 = ~Make every class or just rogues able to use scrolls~
+@1539 = ~Make more classes able to use scrolls freely~
 @1544 = ~Make scrolls always cast at the character level regardless of class~
 @1545 = ~Make character stats more streamlined or interesting~
 @1546 = ~Make shield types more distinct and change shield usability~
@@ -91,13 +91,13 @@
 @1652 = ~Make Grandmaster's Armor better and grant perks to backstabbers~
 @1653 = ~Make Thieves' Hood better and grant perks to single-classed thieves~
 @1654 = ~Make Star-Strewn Boots better and favor Inquisitors too~
-@1655 = ~Make Crown of Lies more consequential when used (SoD)~
+@1655 = ~Make Crown of Lies more consequential when used~
 @1656 = ~Make the Helmet of Dumathoin slightly more powerful~
 @1657 = ~Make The Visage grant Aura of Despair once per day and improve powers~
 @1658 = ~Make Dragon Helm add protection against acid and saves vs. breath~
 @1659 = ~Make the Helm of the Rock more protective and commanding~
 @1661 = ~Make Cloak of the Sewers also protect vs. poison~
-@1662 = ~Make Montolio's Cloak grant a damage and THAC0 bonus to rangers~
+@1662 = ~Make Montolio's Cloak grant extra perks to rangers~
 @1663 = ~Make Sandthief Ring consistently grant one use of invisibility per day~
 @1664 = ~Make ioun stones and/or circlets protect vs. critical hits~
 @1665 = ~Make ioun stones and circlets a bit more interesting or powerful~
@@ -190,7 +190,7 @@
 @1606 = ~Make the Ravager halberd more balanced~
 @1607 = ~Make Gram, the Sword of Grief able to become +6 and rebalance effects~
 @1608 = ~Make Aule's Staff more effective for non-fighter wizards and sorcerers~
-@1609 = ~Make the Impaler slightly more scary: +5% higher critical hit chance, +5 more impaling damage on crits~
+@1609 = ~Make the Impaler slightly more scary~
 @1696 = ~Make Harbinger more convenient~
 @1698 = ~Make Staff of Power more interesting and balanced~
 @1708 = ~Make Sword of Chaos reflect BG3's take on it~
@@ -198,7 +198,7 @@
 /// ONE-HANDED SWORDS
 @1125 = "Make Ninjatô of the Scarlet Brotherhood better and more available"
 @1126 = ~Make Blackrazor able to hit targets immune to +3~
-@1127 = ~Make Peridan more powerful against dragons and wyverns and less misleading in the description~
+@1127 = ~Make Peridan more powerful vs. dragons and wyverns with a better description~
 @1210 = "Make The Equalizer slightly more powerful"
 @1220 = "Make Ras, the Dancing Sword slightly better"
 @1230 = "Make Short Sword of Mask +5 slightly more powerful"
@@ -283,7 +283,7 @@
 @390 = "Make Death Fog better and closer to PnP somewhat"
 @400 = "Make Energy Drain take 6 levels instead of 2"
 @405 = ~Make Maze bypass Magic Resistance and make minotaurs immune to it~
-@407 = ~Make base imp familiars have 12/24 HP like the other familiars~
+@407 = ~Make base Imp familiars have 12/24 HP like the other familiars~
 @410 = ~Make Horrid Wilting more effective vs. plants and Water Elementals and increase minimum damage~
 @430 = ~Make Grease bypass Magic Resistance and more useful tactically~
 @440 = ~Make Comet bypass Magic Resistance and deal a mix of cold, fire, and crushing damage~
@@ -334,8 +334,8 @@
 @468 = ~Make Call Lightning's damage and scaling more balanced~
 @505 = ~Make Repulse Undead more useful by causing damage and Slow when they're repulsed~
 @506 = ~Make Wall of Moonlight more effective~
-@507 = ~Make Aid a party buff~
-@508 = ~Make Restoration-type spells restore stat draining by mind flayers and shadow-creatures~
+@507 = ~Make Aid a party buff and optionally disable the character glow~
+@508 = ~Make Restoration-type spells restore stat draining and make Greater version an area of effect spell~
 @509 = ~Make Silence 15ft Radius party-friendly~
 @510 = ~Make Righteous Wrath of the Faithful slightly better~
 @511 = ~Make Unfailing Endurance an area spell that cures the fatigue of the whole party~
@@ -359,9 +359,9 @@
 @2120 = "Make War Cry significantly more useful"
 @2130 = "Make some Thief HLAs more effective"
 @2150 = "Make a selection of HLAs unable to be breached"
-@2160 = ~Make Quivering Palm's Saving Throw improve twice at later levels~
+@2160 = ~Make Quivering Palm's slightly better and scale with level~
 @2170 = ~Make the THAC0 progression of Thieves and Bards better and more streamlined~
-@2171 = ~Make vanilla Swashbuckler THAC0 consistent Thief THAC0 improvement is installed~
+@2171 = ~Make vanilla Swashbuckler THAC0 consistent if Thief THAC0 improvement is installed~
 @2190 = ~Make Poison Weapon improve twice more every 4 levels~
 @2200 = ~Make Blackguards able to backstab as if they had a 2x multiplier~
 @3500 = ~Make Shadowstep impossible to use while in the Shadow Plane~
