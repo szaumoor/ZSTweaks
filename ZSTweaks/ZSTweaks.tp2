@@ -30,7 +30,7 @@ LANGUAGE
 	"ZSTweaks/lang/english/gear.tra"
 	"ZSTweaks/lang/english/general.tra"
 	"ZSTweaks/lang/english/installation.tra"
-	"ZSTweaks/lang/english/npc.tra"
+	"ZSTweaks/lang/english/joinables.tra"
 	"ZSTweaks/lang/english/onehanded_swords.tra"
 	"ZSTweaks/lang/english/ranged.tra"
 	"ZSTweaks/lang/english/text_patching.tra"
@@ -48,7 +48,7 @@ LANGUAGE
 	"ZSTweaks/lang/schinese/gear.tra"
 	"ZSTweaks/lang/schinese/general.tra"
 	"ZSTweaks/lang/schinese/installation.tra"
-	"ZSTweaks/lang/schinese/npc.tra"
+	"ZSTweaks/lang/schinese/joinables.tra"
 	"ZSTweaks/lang/schinese/onehanded_swords.tra"
 	"ZSTweaks/lang/schinese/ranged.tra"
 	"ZSTweaks/lang/schinese/text_patching.tra"
@@ -1037,6 +1037,10 @@ BEGIN @1556 LABEL ~zs_tw_jaheira_items~ DESIGNATED 1556 GROUP @17 // JAHEIRA ITE
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @53
 FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
 
+BEGIN @1381 LABEL ~zs_tw_handmaiden_mace~ DESIGNATED 1381 GROUP @17 // VICONIA'S HANDMAIDEN MACE 
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "1379" @58
+
 ///////////////////////////////////////// ARCANE SPELL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 BEGIN @10008 LABEL ~zs_tw_arcane_spells~ DESIGNATED 139 GROUP @19 // INSTALL USER-DEFINED COMPONENTS IN GROUP
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
@@ -1578,12 +1582,7 @@ FORBID_COMPONENT "ZSTweaks.tp2" "3000" @58
 /////////////////////////////////////// END-OF-INSTALL TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 BEGIN @10012 LABEL ~zs_tw_end_install~ DESIGNATED 10012 GROUP @32 // INSTALL USER-DEFINED COMPONENTS IN GROUP 
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
-FORBID_COMPONENT "ZSTweaks.tp2" "1531" @58 FORBID_COMPONENT "ZSTweaks.tp2" "1381" @58
-FORBID_COMPONENT "ZSTweaks.tp2" "2370" @58
-
-BEGIN @1381 LABEL ~zs_tw_handmaiden_mace~ DESIGNATED 1381 GROUP @32 // HANDMAIDEN MACE 
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @54
-FORBID_COMPONENT "ZSTweaks.tp2" "10012" @58
+FORBID_COMPONENT "ZSTweaks.tp2" "1531" @58 FORBID_COMPONENT "ZSTweaks.tp2" "2370" @58
 
 BEGIN @2370 LABEL ~zs_tw_evasion_tweak~ DESIGNATED 2370 GROUP @32 // evasion tweak 
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54

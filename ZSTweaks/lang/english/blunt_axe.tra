@@ -511,9 +511,7 @@ Requires:
 Weight: 2~
 
 
-@60500 = ~This mace has been crafted finely by the drow and specially treated to survive the glare of the sun. It was made for surface raids by the subterranean race... and its black metal glistens with a dark poison that seems to be generated from within and causes incredible damage upon a successful impact.
-
-The mace seems almost alive and warm to the touch, and slithers toward those it does like... namely drow or those who are similar enough to not make a difference. In the hands of anyone else, the mace becomes mere dead weight.
+@60500 = ~This mace was designed finely by Lolth's assassins and specially treated to survive the glare of the sun. It was made for surface raids to fell heretics who dared turn their back on the Spider Queen... The mace seems almost alive and warm to the touch, and its black metal glistens with a dark poison that seems to be generated from within and causes incredible damage upon a successful impact.
 
 STATISTICS:
 
@@ -521,10 +519,11 @@ Equipped abilities:
 – Sets Strength to 18 unless higher
 
 Combat abilities:
-– Hit target must Save vs. Death or suffer 2 points of poison damage per round for 1 turn
+– Lolth's Venom: Hit target must Save vs. Death or become poisoned, suffering a 2 penalty to THAC0, Armor Class, and Saving Throws for 1 turn. Once per round, they also suffer 2 points of poison damage. This poison cannot be re-applied during this time.
 
 THAC0: +2
-Damage: 1d6+3 (crushing)
+Damage: 1d6+3, +1d6 poison damage (doubled if poisoned by the mace)
+Damage type: Crushing
 Speed Factor: 6
 Proficiency Type: Mace
 Type: One-handed
@@ -532,3 +531,6 @@ Requires:
  9 Strength
 
 Weight: 7~
+
+@60501 = ~Poisoned by Lolth's Venom~
+@60502 = ~Lolth's Venom faded~

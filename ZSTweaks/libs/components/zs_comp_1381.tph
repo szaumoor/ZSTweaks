@@ -3,10 +3,41 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING ~hlolth.itm~ ~override~
         LPF ALTER_ITEM INT_VAR unusable1=0 unusable2=0 unusable3=0 unusable4=0 price=3000 unusable0=0 id_desc=RESOLVE_STR_REF(@60500) END                
         
-        PATCH_FOR_EACH bit IN 2 12 18 19 22 24 26 27 28 29 30 31 BEGIN                                                                
+        PATCH_FOR_EACH bit IN 12 18 19 22 23 24 26 27 28 29 30 BEGIN                                                                
             WRITE_LONG 0x1e (THIS + 2**bit)
         END
 
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=318,res=%SOURCE_RES%,p2=124,p1=18;op=44,p2=1,p1=18~ END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 25 END
+        LPF ADD_ON_HIT_EFF INT_VAR p2=1 STR_VAR effects = ~op=146,res=zsthdma0;op=146,res=zsthdma1;op=146,res=zsthdma2,stype=4~ END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 7 END
+        LPF RGB INT_VAR red = 38 blue = 41 green = 120 RET color = result END
+        SET loc_fade_speed = 21 + ( 100 << 16 )
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=7,p2=21,p1=190;op=9,p1=%color%,p2=%loc_fade_speed%;op=7,p1=190,p2=20;op=7,p1=24,p2=16;op=272,p1=1,p2=3,res=zsthdma4~ END
+
+  OUTER_SET opcode = 11
+  COPY_EXISTING_REGEXP ~^.+\.\(itm\|spl\)$~ ~override~
+        SET present = 0
+        READ_ASCII 0x0 sig (4)
+        PATCH_MATCH "%sig%" WITH
+        "SPL "
+        BEGIN LPM SPELL_OPCODE_PRESENT END
+
+        "ITM "
+        BEGIN LPM ITM_OPCODE_PRESENT END
+
+        DEFAULT
+            PATCH_IF zs_debug BEGIN
+              PATCH_WARN "[WARN]: Found invalid file: %SOURCE_RES%"
+            END
+        END
+
+        PATCH_IF present BEGIN
+            LPF CLONE_EFFECT INT_VAR match_opcode=opcode opcode=321 parameter2=0 parameter1=0 STR_VAR resource="zsthdma2" END
+            PATCH_IF zs_debug BEGIN
+                PATCH_PRINT "[INFO]: Found matching opcode to cure poison in resource %SOURCE_FILE%"
+            END
+        END
+
+    BUT_ONLY
 
 END

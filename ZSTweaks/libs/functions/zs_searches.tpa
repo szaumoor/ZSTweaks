@@ -138,7 +138,7 @@ BEGIN
 
             SET p2_set = VARIABLE_IS_SET "parameter2"
             SET res_set = VARIABLE_IS_SET "resource"
-            SET matches_needed = p2_set + res_set
+            SET matches_needed = 1 + p2_set + res_set
 
             FOR ( index = 0; index < effects_number; ++index ) BEGIN
 
@@ -146,13 +146,12 @@ BEGIN
                 READ_SHORT base_eff_offset op
                 READ_LONG (base_eff_offset + 0x08) p2
                 READ_ASCII (base_eff_offset + 0x14) assigned_resource
-
+                SET matches = 0
                 PATCH_IF opcode = op BEGIN
+                
+                    ++matches
 
                     PATCH_IF p2_set OR res_set BEGIN
-
-                        SET matches = 0
-
                         PATCH_IF p2_set AND parameter2 = p2 BEGIN
                             ++matches
                         END
@@ -160,13 +159,12 @@ BEGIN
                         PATCH_IF res_set AND "%resource%" STR_EQ "%assigned_resource%" BEGIN
                             ++matches
                         END
-
-                        PATCH_IF matches = matches_needed BEGIN
-                            present = 1
-                            index = effects_number
-                        END
-
                     END
+                END
+
+                PATCH_IF matches = matches_needed BEGIN
+                    present = 1
+                    index = effects_number
                 END
             END
 
@@ -196,7 +194,7 @@ BEGIN
 
         SET p2_set = VARIABLE_IS_SET "parameter2"
         SET res_set = VARIABLE_IS_SET "resource"
-        SET matches_needed = p2_set + res_set
+        SET matches_needed = 1 + p2_set + res_set
 
         FOR ( index = 0; index < effects_number; ++index ) BEGIN
 
@@ -204,13 +202,12 @@ BEGIN
             READ_SHORT base_eff_offset op
             READ_LONG (base_eff_offset + 0x08) p2
             READ_ASCII (base_eff_offset + 0x14) assigned_resource
+            SET matches = 0
 
             PATCH_IF opcode = op BEGIN
                 
+                ++matches
                 PATCH_IF p2_set OR res_set BEGIN
-
-                    SET matches = 0
-
                     PATCH_IF p2_set AND parameter2 = p2 BEGIN
                         ++matches
                     END
@@ -218,13 +215,12 @@ BEGIN
                     PATCH_IF res_set AND "%resource%" STR_EQ "%assigned_resource%" BEGIN
                         ++matches
                     END
-
-                    PATCH_IF matches = matches_needed BEGIN
-                        present = 1
-                        index = effects_number
-                    END
-
                 END
+            END
+
+            PATCH_IF matches = matches_needed BEGIN
+                present = 1
+                index = effects_number
             END
 
         END

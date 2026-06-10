@@ -2230,11 +2230,6 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         // ----------------------------------------GROUP COMP VARIABLES (ENDOFINSTALL)------------------------------------------------- \\
 
-        ACTION_IF zst_group_1381_handmaiden_mace != 0 AND zst_group_1381_handmaiden_mace != 1 BEGIN
-            WARN "[WARN]: Handmaiden's Mace group component should be set to 1 or 0. Actual value: %zst_group_1381_handmaiden_mace%"
-            LAM f_plus
-        END
-
         ACTION_IF zst_group_2370_iwd_evasion_tweak != 0 AND zst_group_2370_iwd_evasion_tweak != 1 BEGIN
             WARN "[WARN]: IWD Evasion Tweak group component should be set to 1 or 0. Actual value: %zst_group_1381_handmaiden_mace%"
             LAM f_plus
@@ -2691,6 +2686,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         ACTION_IF zst_group_1556_jaheira_items != 0 AND zst_group_1556_jaheira_items != 1 BEGIN
             WARN "[WARN]: Jaheira's Items group component should be set to 1 or 0. Actual value: %zst_group_1556_jaheira_items%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_1381_handmaiden_mace != 0 AND zst_group_1381_handmaiden_mace != 1 BEGIN
+            WARN "[WARN]: Handmaiden's Mace group component should be set to 1 or 0. Actual value: %zst_group_1381_handmaiden_mace%"
             LAM f_plus
         END
 

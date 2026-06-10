@@ -27,6 +27,8 @@
 - Added an option in the Web component so it adopts the IWD appearance and sound (TODO)
 - Darkfire Bow component now increases APR too by 1/2 for the non-upgraded and 1 for the upgraded
 - Girdle of Fortitude now other than setting the user's constitution to 18, it also has a charge ability once per day that buffs a target of their choice (other than self) with +2 CON, Save vs. Death, and +5 maximum HP.
+- Handmaiden's Mace +2 now overhauled more deeply with the poison theme. It also no longer has racial or alignment restrictions.
+- Implementation of Handmaiden's now no longer requires it to be installed at the end, and as such it now belongs in the Joinables category.
 
 ## New Components
 

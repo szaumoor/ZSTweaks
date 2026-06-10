@@ -1569,6 +1569,16 @@ Keepsake Locket: Now it provides a minor bonus of +5 HP. Only Jaheira and Charna
 
 Both items can be toggled on and off. Both are on by default. Check the config file.
 
+### Make Handmaiden's Mace +2 (Viconia's romance) reflect BG3's take on it (1381) (BG2EE EET)
+
+- Sets strength to 18, unless it's already 18 or higher. This is determined only at the moment of equipping the mace.
+- Relaxes the mace's unusability restrictions, allowing all classes that can wield maces to use it, as well as neutrally aligned characters. It keeps the restriction to those of elven or half-elven ancestry. The Fixpack also enforces unusability for tieflings and vampires, and that is kept.
+- Slightly increases the price from 2500 to 3000
+- Poison effect is now a bit more interesting:
+  - The mace itself deals 1d6 poison damage on hit
+  - If Save vs. Poison fails, target is poisoned, taking a -2 penalty to THAC0, Saving Throws, and Armor Class for 1 turn. They take 2 poison damage once per round, too. The poison cannot stack of be applied again during this time.
+  - While poisoned by the mace, the mace's direct poison damage doubles: 2d6 instead of 1d6
+
 </details>
 
 ---
@@ -2458,15 +2468,6 @@ As it says. Note that the patching is manual: every drow has to be found and pat
 ## End-of-install-order
 
 </summary>
-
-### Make Handmaiden's Mace +2 (Viconia's romance) reflect BG3's take on it (1381) (BG2EE EET)
-
-- Sets strength to 18, unless it's already 18 or higher. This is determined only at the moment of equipping the mace.
-- Relaxes the mace's unusability restrictions, allowing all classes that can wield maces to use it, as well as neutrally aligned characters. It keeps the restriction to those of elven or half-elven ancestry. The Fixpack also enforces unusability for tieflings and vampires, and that is kept.
-- Slightly increases the price from 2500 to 3000
-- Poison effect is kept as is
-
-This component is part of this group as a precaution, since the technicalities of making Strength be set to 18 only if under 18 can make tweaks that add new on-equip effects after this one cease to work as intended. I might rework this in the future so it is no longer needed, as long as the solution satisfies me.
 
 ### Make IWD evasion balanced (2370) (IWDEE BGEE BG2EE EET)
 
