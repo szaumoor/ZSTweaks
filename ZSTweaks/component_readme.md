@@ -1467,15 +1467,16 @@ Just a simple buff to make the shield a good option for longer. This also automa
 
 ### Make Keldorn's unique gear a bit more effective and convenient (1520) (BG2EE EET)
 
-Hallowed Redeemer: This extends the usability of the weapon, despite the lower damage, if the constant shield the weapon grants is desired. This also automatically applies the changes to this item from **Component 1644**.
-
+Hallowed Redeemer: This extends the usability of the weapon, despite the lower damage, if the constant shield the weapon grants is desired. 
 Keldorn's Armor: No longer prevents Haste.
+
+Both changes are optional. This also automatically applies the changes from **Component 1644** to specific items.
 
 ### Make Abyssal Blades more powerful (1640) (BG2EE EET)
 
 This improves the blades such that they have an enchantment of 5, though only for the purposes of what they can hit, and thus extends their usability until the end of the game, if so desired.
 
-Additionally, the versions that have one fiend in them deal +1 fire damage compared to the baseline version. The version that has two deals +2.
+Additionally, the versions that have one fiend in them deal +1 more fire damage compared to the baseline version. The version that has two deals +2 more.
 
 ### Make the item creation abilities of vanilla NPCs slightly better (1641) (BGEE BG2EE EET)
 

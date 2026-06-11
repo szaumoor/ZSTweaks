@@ -1,3 +1,130 @@
+ACTION_IF zs_debug BEGIN
+  PRINT "[DEBUG]: Checking for possible suspects with wrong alignment (Oversight+ component 3010)...
+  "
+  COPY_EXISTING_REGEXP ~^·+\.cre$~ ~override~
+    READ_BYTE 0x271 general
+    READ_BYTE 0x272 race
+    READ_BYTE 0x273 class
+
+    PATCH_IF race = race_mephit OR
+             race = race_salamander 
+    BEGIN
+      READ_BYTE 0x27b alignment
+        PATCH_IF alignment = alignmen_chaotic_good OR
+                 alignment = alignmen_lawful_good  OR
+                 alignment = alignmen_neutral_good 
+
+        BEGIN
+            READ_ASCII 0x08 name
+            PATCH_PRINT "[DEBUG]: Found a possibly misaligned mephit or salamander that should not be good: %SOURCE_RES% -- %name%"
+        END
+
+    END 
+
+    PATCH_IF general = general_monster      OR
+             general = general_undead       OR
+             race    = race_demonic         OR
+             race    = race_antisolar       OR
+             race    = race_beholder        OR
+             race    = race_mind_flayer     OR
+             race    = race_darkplanetar    OR
+             race    = race_drider          OR
+             race    = race_ettercap        OR
+             race    = race_kuo_toa         OR
+             race    = race_lich            OR
+             race    = race_demilich        OR
+             race    = race_rakshasa        OR
+             race    = race_sahuagin        OR
+             race    = race_shadow          OR
+             race    = race_specter         OR
+             race    = race_spectral_undead OR
+             race    = race_troll           OR
+             race    = ~%race_will-o-wisp%~ OR
+             race    = race_vampire         OR
+             race    = race_vampyre         OR
+             race    = race_wraith          OR
+             race    = race_ogre            OR
+             race    = race_chimera         OR
+             race    = race_goblin          OR
+             race    = race_hobgoblin       OR
+             race    = race_kobold          OR
+             race    = race_yuanti          OR
+             race    = race_gibberling      OR
+             race    = race_skeleton        OR
+            (race    = race_dragon AND class != class_silver_dragon) // silver dragons are LG
+    BEGIN
+
+        READ_BYTE 0x27b alignment
+        PATCH_IF alignment != alignmen_chaotic_evil AND
+                 alignment != alignmen_lawful_evil  AND
+                 alignment != alignmen_neutral_evil 
+        BEGIN
+            READ_ASCII 0x08 name
+            PATCH_PRINT "[DEBUG]: Found a possibly misaligned creature that should be evil: %SOURCE_RES% -- %name%"
+        END
+
+    END 
+
+    ELSE
+
+    PATCH_IF race = race_planetar OR
+             race = race_solar    OR
+             race = race_
+    BEGIN
+        READ_BYTE 0x27b alignment
+        PATCH_IF alignment != alignmen_chaotic_good AND
+                 alignment != alignmen_lawful_good  AND
+                 alignment != alignmen_neutral_good 
+        BEGIN
+            READ_ASCII 0x08 name
+            PATCH_PRINT "[DEBUG]: Found a possibly misaligned creature that should be good: %SOURCE_RES% -- %name%"
+        END
+    END
+
+    ELSE
+
+    PATCH_IF general = general_animal       OR
+             race    = race_elemental       OR
+             race    = race_ankheg          OR //?
+             race    = race_genie           OR //?
+             race    = race_basilisk        OR //?
+             race    = race_carrion_crawler OR //?
+             race    = race_chimera         OR //?
+             race    = race_beetle          OR
+             race    = race_spider          OR //?
+             race    = race_umberhulk       OR //?
+             race    = race_hook_horror     OR //?
+             race    = race_myconid         OR //?
+             race    = race_doppleganger    OR 
+             race    = race_golem           OR
+             race    = race_mimic           OR
+             race    = race_otyugh          OR
+             race    = race_salamander      OR
+             race    = race_shambling_mound OR
+             race    = race_statue          OR
+             race    = race_shrieker        OR
+             race    = race_slime           OR
+             race    = race_treant          OR
+             race    = race_wyvern           
+    BEGIN
+      
+      READ_BYTE 0x27b alignment
+      PATCH_IF alignment != alignmen_chaotic_neutral AND
+                 alignment != alignmen_lawful_neutral  AND
+                 alignment != alignmen_neutral 
+
+      BEGIN
+          READ_ASCII 0x08 name
+          PATCH_PRINT "[DEBUG]: Found a possibly misaligned creature that should be neutral: %SOURCE_RES% -- %name%"
+        END
+    END
+
+  BUT_ONLY
+
+END
+
+
+
 ACTION_IF is_bg2ee_or_eet BEGIN
   // converting to LG
   COPY_EXISTING ~c6kalden.cre~ ~override~ // paladins that help with bodhi, currently LN, should be LG
