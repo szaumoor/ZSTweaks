@@ -1,6 +1,7 @@
 ACTION_IF zs_debug BEGIN
-  PRINT "[DEBUG]: Checking for possible suspects with wrong alignment (Oversight+ component 3010)...
+  PRINT "[DEBUG][INFO]: Checking for possible suspects with wrong alignment (Oversight+ component 3010)...
   "
+  OUTER_SET matches = 0
   COPY_EXISTING_REGEXP ~^·+\.cre$~ ~override~
     READ_BYTE 0x271 general
     READ_BYTE 0x272 race
@@ -15,8 +16,9 @@ ACTION_IF zs_debug BEGIN
                  alignment = alignmen_neutral_good 
 
         BEGIN
+            ++matches
             READ_ASCII 0x08 name
-            PATCH_PRINT "[DEBUG]: Found a possibly misaligned mephit or salamander that should not be good: %SOURCE_RES% -- %name%"
+            PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned mephit or salamander that should not be good: %SOURCE_RES% -- %name%"
         END
 
     END 
@@ -59,8 +61,9 @@ ACTION_IF zs_debug BEGIN
                  alignment != alignmen_lawful_evil  AND
                  alignment != alignmen_neutral_evil 
         BEGIN
+            ++matches
             READ_ASCII 0x08 name
-            PATCH_PRINT "[DEBUG]: Found a possibly misaligned creature that should be evil: %SOURCE_RES% -- %name%"
+            PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned creature that should be evil: %SOURCE_RES% -- %name%"
         END
 
     END 
@@ -76,8 +79,9 @@ ACTION_IF zs_debug BEGIN
                  alignment != alignmen_lawful_good  AND
                  alignment != alignmen_neutral_good 
         BEGIN
+            ++matches
             READ_ASCII 0x08 name
-            PATCH_PRINT "[DEBUG]: Found a possibly misaligned creature that should be good: %SOURCE_RES% -- %name%"
+            PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned creature that should be good: %SOURCE_RES% -- %name%"
         END
     END
 
@@ -110,17 +114,19 @@ ACTION_IF zs_debug BEGIN
       
       READ_BYTE 0x27b alignment
       PATCH_IF alignment != alignmen_chaotic_neutral AND
-                 alignment != alignmen_lawful_neutral  AND
-                 alignment != alignmen_neutral 
+               alignment != alignmen_lawful_neutral  AND
+               alignment != alignmen_neutral 
 
       BEGIN
+          ++matches
           READ_ASCII 0x08 name
-          PATCH_PRINT "[DEBUG]: Found a possibly misaligned creature that should be neutral: %SOURCE_RES% -- %name%"
+          PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned creature that should be neutral: %SOURCE_RES% -- %name%"
         END
     END
 
   BUT_ONLY
 
+  PRINT "[DEBUG][INFO]: Checking finished, found %matches% matches"
 END
 
 

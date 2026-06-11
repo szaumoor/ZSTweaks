@@ -163,7 +163,7 @@ ACTION_IF zst_1546_buckler_tweak BEGIN
     BUT_ONLY
 
     ACTION_IF zs_debug BEGIN
-        PRINT "[DEBUG]: Patched %matches% resources to protect against buckler effects"
+        PRINT "[DEBUG][INFO]: Patched %matches% resources to protect against buckler effects"
     END
 
 END

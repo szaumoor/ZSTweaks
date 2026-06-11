@@ -51,7 +51,7 @@ WITH_SCOPE BEGIN
     VERBOSE
 
     ACTION_IF zs_debug BEGIN
-        PRINT "[DEBUG]: Processed %counter% joinable creature files for omnistabbing."
+        PRINT "[DEBUG][INFO]: Processed %counter% joinable creature files for omnistabbing."
     END
 
 END

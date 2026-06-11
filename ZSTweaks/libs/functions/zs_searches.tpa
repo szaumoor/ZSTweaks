@@ -118,11 +118,11 @@ BEGIN
     PATCH_IF zs_debug BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
         PATCH_IF opcode <= 0 BEGIN
-            PATCH_FAIL ~[FAIL]: Invalid opcode specified for SPELL_OPCODE_PRESENT.~
+            PATCH_FAIL ~[DEBUG][FAIL]: Invalid opcode specified for SPELL_OPCODE_PRESENT.~
         END
         
         PATCH_IF NOT (VARIABLE_IS_SET "parameter2" OR VARIABLE_IS_SET "resource") BEGIN
-            PATCH_FAIL "[FAIL]: Must provide at least parameter2 or resource to SPELL_CODE_PRESENT"
+            PATCH_FAIL "[DEBUG][FAIL]: Must provide at least parameter2 or resource to SPELL_CODE_PRESENT"
         END
     END
 
@@ -179,11 +179,11 @@ BEGIN
     PATCH_IF zs_debug BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
         PATCH_IF opcode <= 0 BEGIN
-            PATCH_FAIL ~[FAIL]: Invalid opcode specified for ITM_OPCODE_PRESENT.~
+            PATCH_FAIL ~[DEBUG][FAIL]: Invalid opcode specified for ITM_OPCODE_PRESENT.~
         END
 
         PATCH_IF NOT (VARIABLE_IS_SET "parameter2" OR VARIABLE_IS_SET "resource") BEGIN
-            PATCH_FAIL "[FAIL]: Must provide at least parameter2 or resource to SPELL_CODE_PRESENT"
+            PATCH_FAIL "[DEBUG][FAIL]: Must provide at least parameter2 or resource to SPELL_CODE_PRESENT"
         END
     END
 
@@ -240,7 +240,7 @@ RET
 BEGIN
     // precondition checks
     PATCH_IF zs_debug AND NOT FILE_EXISTS_IN_GAME ~%weapon%.ITM~ BEGIN
-        PATCH_FAIL ~[FAIL]: Weapon %weapon% does not exist in game~
+        PATCH_FAIL ~[DEBUG][FAIL]: Weapon %weapon% does not exist in game~
     END
 
     PATCH_IF at_slot < 0 OR at_slot > 4 BEGIN
@@ -308,7 +308,7 @@ BEGIN
 
     // postcondition check
     PATCH_IF zs_debug AND found != 0 AND found != 1 BEGIN
-        PATCH_FAIL ~[FAIL]: Found value is not 0 or 1~
+        PATCH_FAIL ~[DEBUG][FAIL]: Found value is not 0 or 1~
     END
 END
 

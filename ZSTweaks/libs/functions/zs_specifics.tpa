@@ -186,7 +186,7 @@ BEGIN
         LPF CHECK_EXTENSION INT_VAR suppress=1 STR_VAR extension = "CRE" RET cre_file = result END
 
         PATCH_IF NOT itm_file AND NOT spl_file AND NOT cre_file BEGIN
-            PATCH_FAIL "[FAIL]: This function only works for .ITM,.SPL, and .CRE files"
+            PATCH_FAIL "[DEBUG][FAIL]: This function only works for .ITM,.SPL, and .CRE files"
         END
 
     END ELSE BEGIN

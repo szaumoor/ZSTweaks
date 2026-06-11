@@ -27,14 +27,14 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         DEFAULT
             PATCH_IF zs_debug BEGIN
-              PATCH_WARN "[WARN]: Found invalid file: %SOURCE_RES%"
+              PATCH_WARN "[DEBUG][WARN]: Found invalid file: %SOURCE_RES%"
             END
         END
 
         PATCH_IF present BEGIN
             LPF CLONE_EFFECT INT_VAR match_opcode=opcode opcode=321 parameter2=0 parameter1=0 STR_VAR resource="zsthdma2" END
             PATCH_IF zs_debug BEGIN
-                PATCH_PRINT "[INFO]: Found matching opcode to cure poison in resource %SOURCE_FILE%"
+                PATCH_PRINT "[DEBUG][INFO]: Found matching opcode to cure poison in resource %SOURCE_FILE%"
             END
         END
 
