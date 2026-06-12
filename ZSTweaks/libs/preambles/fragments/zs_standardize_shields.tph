@@ -15,6 +15,7 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
         READ_LONG 0x8 buckler_shield_strref
 
     COPY_EXISTING ~npshld.itm~   ~override~ // delryn's shield
+                  ~c2anom01.itm~ ~override~ // item upgrade delryn shield
                   ~x#ajshld.itm~ ~override~ // ajantis' shield
                   ~x#fai3.itm~   ~override~ // dented shield
                   ~beetshld.itm~ ~override~

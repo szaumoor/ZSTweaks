@@ -1,0 +1,20 @@
+COPY_EXISTING ~famcat.cre~   ~override~
+              ~famcat25.cre~ ~override~
+              ~famdust.cre~  ~override~
+              ~famdus25.cre~ ~override~
+              ~famfair.cre~  ~override~
+              ~famfai25.cre~ ~override~
+              ~famfer.cre~   ~override~
+              ~famfer25.cre~ ~override~
+              ~famimp.cre~   ~override~
+              ~famimp25.cre~ ~override~
+              ~fampsd.cre~   ~override~
+              ~fampsd25.cre~ ~override~
+              ~famcat.cre~   ~override~
+              ~famquas.cre~  ~override~
+              ~famqua25.cre~ ~override~
+              ~famrab.cre~   ~override~
+              ~famrab25.cre~ ~override~
+
+    WRITE_BYTE 0x237 gender_female
+IF_EXISTS

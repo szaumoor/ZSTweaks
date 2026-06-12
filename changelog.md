@@ -10,13 +10,24 @@
 - Added prefixes for bugged EEFixpack implementations of Blackrazor and Black Blade of Disaster (currently they heal and boost targets instead of wielder)
 - Fixed Helm of Balduran regeneration not working due to missing resource
 - Updated several outdated entries in the component_readme.md file
+- Added prefix to fix any wraith spiders that aren't marked undead (they are undead according to lore, they're normally just tagged as 'Monsters', with undead immunities, and as such aren't affected by things that target undead)
+- Vastly extended the Oversight++ component that fixes improper alignments. New changes:
+  - Spiders are all true neutral except Wraith ones which are undead evil spiders.
+  - Many instances of undead creatures weirdly not marked as evil (skeletons, zombies, ghouls) fixed
+  - Lizardfolk are now set to Neutral
+  - Invisible Stalkers no longer marked as evil, since they're neutral elementals from the Plane of Air
+  - The Huntress (WK) is a humanoid tanar'ri marked as True Neutral. Changed to Lawful Evil
+  - Other minor creatures unused or used in cutscenes also fixed just in case such as non evil vampires, alu-fiend, liches, and mindflayers
+  - Lanfear wolfwere in chapter 6 of BG2 (Coran's minor quest) changed to Chaotic Evil (they're CE according to lore)
+  - Clay Golem in Planar Sphere marked as Chaotic Good → Neutral
+  - Aataqah is changed to Chaotic Good from Lawful Neutral. Lorewise they're whimsy but benevolent genies (in contrast with efreet).
 
 ## Modifications
 
 - Mod is now available in Simplified Chinese thanks to user MephistoSatanDevil
 - Added a configuration option for Finger of Death so it doesn't use a projectile, that is, upon casting, the target immediately suffers its effect.
 - Component that makes natural effects nonmagical now includes Poisonous Breath from Neothelid (SoD) and also resources created by the Fixpack
-- Clarified the descriptions of various components that use the "protection vs. <type>" to mention that Saving Throws against effects caused by those creatures also gain a +2 boost.
+- Clarified the descriptions of various components that use the "protection vs. <type>" to mention that Saving Throws against effects caused by those creatures's attacks also gain a +2 boost.
 - Added framework to log errors and warnings onto a file in ZSTweaks/logs for users to examine after installation. The file inside will be called "errors_found.txt" if there are errors.
 - Mod components now use the LABEL functionality
 - Dagger/Dart probabilities for Finesse reduced by 2: 41-50%. Kukris also have a 2 probability reduction since it's calculated from the probabilities of daggers and darts
@@ -44,3 +55,4 @@
 - Make all fear effects reduce movement speed by half to make it less inconvenient (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
 - Make Sanctuary standardized to IWD version (5400) (IWDEE BGEE BG2EE EET)
 - Make Hold Animal much more useful by allowing it to affect many other types of beasts (xxxx) (BGEE BG2EE EET) (TODO)
+- Make familiars use female voices for casting spells (3165) (IWDEE BGEE BG2EE EET)

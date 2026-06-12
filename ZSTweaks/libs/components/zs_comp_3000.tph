@@ -89,3 +89,9 @@ ACTION_IF zst_group_3160_otyugh_tweak BEGIN
     INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3160.tph"
   END
 END
+
+ACTION_IF zst_group_3165_familiar_female_voice BEGIN
+  WITH_SCOPE BEGIN
+    INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3165.tph"
+  END
+END

@@ -1564,13 +1564,13 @@ There are no words to express how much I hate that Edwin is the best wizard to h
 
 ### Make minor improvements to Jaheira-specific items (1556) (BG2EE EET)
 
-Harper pin: Even the description states that it is not bound to the Harper, only hinting that most Harpers would probably not want to part with it. But your pal Jaheira is generous enough, so anyone may now wear it.
+**Harper pin**: Even the description states that it is not bound to the Harper, only hinting that most Harpers would probably not want to part with it. But your pal Jaheira is generous enough, so anyone may now wear it.
 
-Keepsake Locket: Now it provides a minor bonus of +5 HP. Only Jaheira and Charname can wear it. This restriction can be toggled on and off in the configuration file.
+**Keepsake Locket**: Now it provides a minor bonus of +5 HP. Only Jaheira and Charname can wear it. This restriction can be toggled on and off in the configuration file.
 
 Both items can be toggled on and off. Both are on by default. Check the config file.
 
-### Make Handmaiden's Mace +2 (Viconia's romance) reflect BG3's take on it (1381) (BG2EE EET)
+### Make Handmaiden's Mace +2 reflect BG3's take on it (1381) (BG2EE EET)
 
 - Sets strength to 18, unless it's already 18 or higher. This is determined only at the moment of equipping the mace.
 - Relaxes the mace's unusability restrictions, allowing all classes that can wield maces to use it, as well as neutrally aligned characters. It keeps the restriction to those of elven or half-elven ancestry. The Fixpack also enforces unusability for tieflings and vampires, and that is kept.

@@ -1,215 +1,319 @@
+ // converting to LG
+COPY_EXISTING ~c6kalden.cre~ ~override~ // paladins that help with bodhi, currently LN, should be LG
+              ~c6levin.cre~  ~override~ // paladins that help with bodhi, currently LN, should be LG
+              ~c6squire.cre~ ~override~ // paladins that help with bodhi, currently LN, should be LG
+              ~derrick.cre~  ~override~ // ranger helping valygar, shouldn't be LN
+              ~elotte.cre~   ~override~ // squire elotte, paladin stronghold duties, currently LN, likely better as LG  
+
+  LPF ALTER_CRE INT_VAR alignment=alignmen_lawful_good END
+IF_EXISTS
+
+// converting to NG
+COPY_EXISTING ~arval.cre~    ~override~ // Arval Mornmaster, currently LE, should be NG
+              ~bharval.cre~  ~override~ // Arval Mornmaster, currently LE, should be NG
+              ~c6cler1.cre~  ~override~ // cleric of lathander, neutral, should probably be NG
+
+  LPF ALTER_CRE INT_VAR alignment=alignmen_neutral_good END
+IF_EXISTS
+
+// converting to CG
+COPY_EXISTING ~jarev1.cre~   ~override~ // nameless bard harper, currently CN, makes more sense as CG
+              ~nevaziah.cre~ ~override~ // the confused undead spellcaster that wants to protect his pupils (CE)
+              ~udvith.cre~   ~override~ // vithal, currently LE, there are no obvious signs he's evil
+              ~aataqah.cre~  ~override~ // he's a djinni and djinni are always chaotic good (lawful neutral)
+
+  LPF ALTER_CRE INT_VAR alignment=alignmen_chaotic_good END
+IF_EXISTS
+
+// converting to LN
+COPY_EXISTING ~bdact07.cre~ ~override~ // non-interctable NPC hired for the bard stronghold, LE for some reason
+              ~taxcoll.cre~ ~override~ // tax collector, the man is doing his job, he ain't neutral evil
+
+  LPF ALTER_CRE INT_VAR alignment=alignmen_lawful_neutral END
+IF_EXISTS
+
+//converting to TN
+COPY_EXISTING ~bdock1.cre~   ~override~ // overworked dockhand ogres
+              ~bdock2.cre~   ~override~
+              ~becky.cre~    ~override~ // no alignment assigned
+              ~diane.cre~    ~override~ // no alignment assigned
+              ~druid10a.cre~ ~override~ // druid set as evil
+              ~druid10b.cre~ ~override~ // druid set as evil
+              ~druid12a.cre~ ~override~ // druid set as evil
+              ~druid12b.cre~ ~override~ // druid set as evil
+              ~druid6a.cre~  ~override~ // druid set as evil
+              ~druid8a.cre~  ~override~ // druid set as evil
+              ~druid8b.cre~  ~override~ // druid set as evil
+              ~ecolt.cre~    ~override~ // no alignment assigned
+              ~kpmerc01.cre~ ~override~ // person complaining of bandit attacks in fighter stronghold (why evil?)
+              ~bazliz03.cre~ ~override~ // lizardmen, often neutral, even in this game, evil here for some reason
+              ~bazliz04.cre~ ~override~ // lizardmen, often neutral, even in this game, evil here for some reason
+              ~clgol01.cre~  ~override~ // clay golem in planar sphere is chaotic good somehow?
+              ~senstalk.cre~ ~override~ // invisible stalker, they're neutral elemental creatures
+              ~gorstalk.cre~ ~override~ // invisible stalker, they're neutral elemental creatures
+              ~stalke.cre~   ~override~ // invisible stalker, they're neutral elemental creatures
+              ~spidswsu.cre~ ~override~ // sword spider is neutral
+              ~spidsw01.cre~ ~override~ // sword spider is neutral
+              ~spspid07.cre~ ~override~ // sword spider is neutral
+              ~plyspid.cre~ ~override~  // sword spider is neutral
+              ~ohhspid1.cre~ ~override~  // hexxat quest spider is neutral
+              ~ohhspid2.cre~ ~override~  // hexxat quest spider is neutral
+              ~ohhspi01.cre~ ~override~  // hexxat quest spider is neutral
+              ~ohhspi02.cre~ ~override~  // hexxat quest spider is neutral
+  LPF ALTER_CRE INT_VAR alignment=alignmen_neutral END
+IF_EXISTS
+
+// converting to Chaotic Neutral
+COPY_EXISTING ~shth011.cre~  ~override~ // Hanz thief, this version is evil for some reason
+              ~shth05.cre~   ~override~ // Joster getting a quota for Renal, original is LE
+
+  LPF ALTER_CRE INT_VAR alignment=alignmen_chaotic_neutral END
+IF_EXISTS
+
+// converting to LE
+COPY_EXISTING ~aemerhob.cre~ ~override~ // hobgoblin, no alignment for some reason, LE now
+              ~gguard01.cre~ ~override~ // guard harassing evilly a beggar
+              ~golbra01.cre~ ~override~ // brain golem, they're always LE like mindflayers, CG in EE (??)
+              ~udgolem.cre~  ~override~ // brain golem, they're always LE like mindflayers, Neutral in EE
+              ~hgwra01.cre~  ~override~ // Gorion Wraith, shouldn't be Lawful Good
+              ~maeguy02.cre~ ~override~ // maevar henchman, probably shouldnt be CN, instead LE
+              ~noblem1.cre~  ~override~ // evil nobleman asshole
+              ~noblem2.cre~  ~override~ // evil nobleman asshole
+              ~tolger.cre~   ~override~ // tolgerias, he's obviously evil lol, not chaotic good
+              ~tolger2.cre~  ~override~ // tolgerias, he's obviously evil lol, not chaotic good
+              ~dpmon01.cre~  ~override~ // cutscene mindflayer
+              ~dpmon03.cre~  ~override~ // cutscene vampire
+              ~gorwom02.cre~ ~override~ // WK The Huntress, she's demonic but not evil as the others
+
+  LPF ALTER_CRE INT_VAR alignment=alignmen_lawful_evil END
+IF_EXISTS
+
+// converting to NE
+COPY_EXISTING ~hellil01.cre~  ~override~ // hellhound, should be evil, not neutral
+              ~mgteos01.cre~  ~override~ // Teos, the asshole wizard in the planar sphere for the stronghold
+              ~tobban01.cre~  ~override~ // gromnir henchmen, should be evil, not neutral
+              ~tobban02.cre~  ~override~
+              ~tobban03.cre~  ~override~
+              ~tobban04.cre~  ~override~
+              ~tobpar01.cre~  ~override~
+              ~tobpar02.cre~  ~override~
+              ~tobpar03.cre~  ~override~
+              ~tobpar05.cre~  ~override~
+              ~tobpar06.cre~  ~override~
+              ~ad3sklm.cre~   ~override~ // stray skeleton (iwdification / iwdee?)
+              ~rskel01.cre~   ~override~ // stray skeleton
+              ~rskel03.cre~   ~override~ // stray skeleton 
+              ~bhghoul3.cre~  ~override~ // non evil zombie
+              ~zombie01.cre~  ~override~ // non evil zombie
+              ~zombju01.cre~  ~override~ // non evil zombie
+              ~bhghoul5.cre~  ~override~ // non evil zombie
+              ~zomblo01.cre~  ~override~ // non evil zombie
+              ~zombse01.cre~  ~override~ // non evil zombie
+              ~sahzomb.cre~   ~override~ // non evil zombie
+              ~sahzom01.cre~  ~override~ // non evil zombie
+              ~rzomb01.cre~   ~override~ // non evil zombie
+              ~dpmon02.cre~   ~override~ // cutscene lich
+              ~fsskel.cre~    ~override~ // WK skeleton?
+
+  LPF ALTER_CRE INT_VAR alignment=alignmen_neutral_evil END
+IF_EXISTS
+
+// converting to CE
+COPY_EXISTING ~shadeld.cre~  ~override~ // a version of Shade Lord that is Neutral Good
+              ~trskind1.cre~ ~override~ // skeletal version of skinner that is for some reason Neutral Good
+              ~chang02.cre~  ~override~ // angelo (tob) version that is neutral good
+              ~gnollhp1.cre~ ~override~ // gnoll version that is chaotic neutral
+              ~alufie02.cre~ ~override~ // alu-fiend, probably unused, should probably not be lawful neutral
+              ~c6lanf.cre~   ~override~ // lanfear is a wolfwere which are chaotic evil
+
+  LPF ALTER_CRE INT_VAR alignment=alignmen_chaotic_evil END
+IF_EXISTS
+
+
 ACTION_IF zs_debug BEGIN
   PRINT "[DEBUG][INFO]: Checking for possible suspects with wrong alignment (Oversight+ component 3010)...
   "
   OUTER_SET matches = 0
-  COPY_EXISTING_REGEXP ~^·+\.cre$~ ~override~
+  COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     READ_BYTE 0x271 general
     READ_BYTE 0x272 race
     READ_BYTE 0x273 class
 
-    PATCH_IF race = race_mephit OR
-             race = race_salamander 
-    BEGIN
-      READ_BYTE 0x27b alignment
-        PATCH_IF alignment = alignmen_chaotic_good OR
-                 alignment = alignmen_lawful_good  OR
-                 alignment = alignmen_neutral_good 
+    LPF SUBSTRING INT_VAR length = 2 STR_VAR string = "%SOURCE_RES%" RET substring END 
 
-        BEGIN
-            ++matches
-            READ_ASCII 0x08 name
-            PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned mephit or salamander that should not be good: %SOURCE_RES% -- %name%"
-        END
+    PATCH_IF NOT "%substring%" STR_EQ "ZS" BEGIN
 
-    END 
-
-    PATCH_IF general = general_monster      OR
-             general = general_undead       OR
-             race    = race_demonic         OR
-             race    = race_antisolar       OR
-             race    = race_beholder        OR
-             race    = race_mind_flayer     OR
-             race    = race_darkplanetar    OR
-             race    = race_drider          OR
-             race    = race_ettercap        OR
-             race    = race_kuo_toa         OR
-             race    = race_lich            OR
-             race    = race_demilich        OR
-             race    = race_rakshasa        OR
-             race    = race_sahuagin        OR
-             race    = race_shadow          OR
-             race    = race_specter         OR
-             race    = race_spectral_undead OR
-             race    = race_troll           OR
-             race    = ~%race_will-o-wisp%~ OR
-             race    = race_vampire         OR
-             race    = race_vampyre         OR
-             race    = race_wraith          OR
-             race    = race_ogre            OR
-             race    = race_chimera         OR
-             race    = race_goblin          OR
-             race    = race_hobgoblin       OR
-             race    = race_kobold          OR
-             race    = race_yuanti          OR
-             race    = race_gibberling      OR
-             race    = race_skeleton        OR
-            (race    = race_dragon AND class != class_silver_dragon) // silver dragons are LG
-    BEGIN
+      PATCH_IF race = race_fairy BEGIN
 
         READ_BYTE 0x27b alignment
-        PATCH_IF alignment != alignmen_chaotic_evil AND
-                 alignment != alignmen_lawful_evil  AND
-                 alignment != alignmen_neutral_evil 
+
+        PATCH_IF class      = class_fairy_nereid     AND
+                 alignment != alignmen_chaotic_good  AND
+                 alignment != alignmen_chaotic_evil  AND
+                 alignment != alignmen_chaotic_neutral 
         BEGIN
             ++matches
-            READ_ASCII 0x08 name
-            PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned creature that should be evil: %SOURCE_RES% -- %name%"
+            READ_STRREF 0x08 name ELSE "Unknown name"
+            PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned nereid that should be in the chaotic axis: %SOURCE_RES% -- %name%"
         END
 
-    END 
-
-    ELSE
-
-    PATCH_IF race = race_planetar OR
-             race = race_solar    OR
-             race = race_
-    BEGIN
-        READ_BYTE 0x27b alignment
-        PATCH_IF alignment != alignmen_chaotic_good AND
-                 alignment != alignmen_lawful_good  AND
-                 alignment != alignmen_neutral_good 
+        PATCH_IF class      = class_fairy_sirine    AND
+                 alignment != alignmen_chaotic_neutral 
         BEGIN
-            ++matches
-            READ_ASCII 0x08 name
-            PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned creature that should be good: %SOURCE_RES% -- %name%"
-        END
-    END
-
-    ELSE
-
-    PATCH_IF general = general_animal       OR
-             race    = race_elemental       OR
-             race    = race_ankheg          OR //?
-             race    = race_genie           OR //?
-             race    = race_basilisk        OR //?
-             race    = race_carrion_crawler OR //?
-             race    = race_chimera         OR //?
-             race    = race_beetle          OR
-             race    = race_spider          OR //?
-             race    = race_umberhulk       OR //?
-             race    = race_hook_horror     OR //?
-             race    = race_myconid         OR //?
-             race    = race_doppleganger    OR 
-             race    = race_golem           OR
-             race    = race_mimic           OR
-             race    = race_otyugh          OR
-             race    = race_salamander      OR
-             race    = race_shambling_mound OR
-             race    = race_statue          OR
-             race    = race_shrieker        OR
-             race    = race_slime           OR
-             race    = race_treant          OR
-             race    = race_wyvern           
-    BEGIN
-      
-      READ_BYTE 0x27b alignment
-      PATCH_IF alignment != alignmen_chaotic_neutral AND
-               alignment != alignmen_lawful_neutral  AND
-               alignment != alignmen_neutral 
-
-      BEGIN
           ++matches
-          READ_ASCII 0x08 name
-          PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned creature that should be neutral: %SOURCE_RES% -- %name%"
-        END
+          READ_STRREF 0x08 name ELSE "Unknown name"
+          PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned sirine that should be chaotic neutral: %SOURCE_RES% -- %name%"
+        END  
+
+        PATCH_IF class      = class_fairy_nymph    AND
+                 alignment != alignmen_neutral_good AND
+                 alignment != alignmen_chaotic_good
+        BEGIN
+          ++matches
+          READ_STRREF 0x08 name ELSE "Unknown name"
+          PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned nymph that should be chaotic or neutral good: %SOURCE_RES% -- %name%"
+        END  
+
+      END
+
+      PATCH_IF race = race_mephit OR
+              race = race_salamander 
+      BEGIN
+        READ_BYTE 0x27b alignment
+          PATCH_IF alignment = alignmen_chaotic_good OR
+                  alignment = alignmen_lawful_good  OR
+                  alignment = alignmen_neutral_good 
+
+          BEGIN
+              ++matches
+              READ_STRREF 0x08 name ELSE "Unknown name"
+              PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned mephit or salamander that should not be good: %SOURCE_RES% -- %name%"
+          END
+
+      END 
+
+      PATCH_IF general = general_undead            OR
+               race    = race_demonic              OR
+               race    = race_antisolar            OR
+               race    = race_beholder             OR
+               race    = race_mind_flayer          OR
+               race    = race_darkplanetar         OR
+               race    = race_drider               OR
+               race    = race_ettercap             OR
+               race    = race_kuo_toa              OR
+               race    = race_lich                 OR
+               race    = race_demilich             OR
+               race    = race_rakshasa             OR
+               race    = race_sahuagin             OR
+               race    = race_shadow               OR
+               race    = race_specter              OR
+               race    = race_spectral_undead      OR
+               race    = race_troll                OR
+               race    = ~%race_will-o-wisp%~      OR
+               race    = race_vampire              OR
+               race    = race_vampyre              OR
+               race    = race_wraith               OR
+               race    = race_ogre                 OR
+               race    = race_chimera              OR
+               race    = race_goblin               OR
+               race    = race_hobgoblin            OR
+               race    = race_kobold               OR
+               race    = race_yuanti               OR
+            //   race    = race_gibberling           OR  // only chaotic evil in 4e and 5e for whatever reason
+               race    = race_skeleton             OR
+               race    = race_gnoll                OR
+               race    = race_ghoul                OR
+               race    = race_orc                  OR
+               race    = race_umberhulk            OR
+               race    = race_zombie               OR
+               race    = race_bugbear              OR
+               race    = race_minotaur             OR
+               race    = race_harpy                OR
+               race    = race_yeti                 OR
+               race    = race_ettin                OR
+               class   = class_worg                OR
+               class   = class_wolf_winter         OR
+              (race = spider AND class = class_spider_wraith) AND // wraith undead spiders are evil
+               class   = class_genie_efreeti       OR
+               class   = class_genie_noble_efreeti OR
+              (race    = race_lycanthrope AND class = class_wolfwere) OR // wolfweres are evil
+              (race    = race_dragon AND class != class_silver_dragon) // silver dragons are LG
+      BEGIN
+
+          READ_BYTE 0x27b alignment
+          PATCH_IF alignment != alignmen_chaotic_evil AND
+                   alignment != alignmen_lawful_evil  AND
+                   alignment != alignmen_neutral_evil 
+          BEGIN
+              ++matches
+              READ_STRREF 0x08 name ELSE "Unknown name"
+              PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned creature that should be evil: %SOURCE_RES% -- %name%"
+          END
+
+      END 
+
+      ELSE
+
+      PATCH_IF race  = race_planetar      OR
+               race  = race_solar         OR
+              (race = race_genie          AND
+              (class = class_genie_djinni OR
+               class = class_genie_noble_djinni))
+      BEGIN
+          READ_BYTE 0x27b alignment
+          PATCH_IF alignment != alignmen_chaotic_good AND
+                   alignment != alignmen_lawful_good  AND
+                   alignment != alignmen_neutral_good 
+          BEGIN
+              ++matches
+              READ_STRREF 0x08 name ELSE "Unknown name"
+              PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned creature that should be good: %SOURCE_RES% -- %name%"
+          END
+      END
+
+      ELSE
+
+      PATCH_IF (general = general_animal AND class != class_worg AND class != class_wolf_winter) OR
+                general = general_plant        OR
+                race    = race_elemental       OR
+                race    = race_ankheg          OR
+               (race    = race_genie AND (class < class_genie_djinni AND class > class_genie_noble_efreeti)) OR
+                race    = race_basilisk        OR
+                race    = race_carrion_crawler OR
+                race    = race_beetle          OR
+               (race    = race_spider AND class != class_spider_wraith AND general != general_humanoid) OR
+                race    = race_hook_horror     OR
+                race    = race_myconid         OR
+                race    = race_doppleganger    OR 
+                race    = race_golem           OR
+                race    = race_mimic           OR
+                race    = race_otyugh          OR
+                race    = race_shambling_mound OR
+                race    = race_statue          OR
+                race    = race_shrieker        OR
+                race    = race_slime           OR
+                race    = race_treant          OR
+                race    = race_wyvern          OR
+                race    = race_lizardman       OR
+               (race    = race_mist AND class = class_mist) OR
+               (race    = race_salamander AND class != class_salamander_frost)  
+      BEGIN
+        
+        READ_BYTE 0x27b alignment
+        PATCH_IF alignment != alignmen_chaotic_neutral AND
+                 alignment != alignmen_lawful_neutral  AND
+                 alignment != alignmen_neutral 
+
+        BEGIN
+            ++matches
+            READ_STRREF 0x08 name ELSE "Unknown name"
+            PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned creature that should be neutral: %SOURCE_RES% -- %name%"
+          END
+      END
+
     END
 
   BUT_ONLY
 
   PRINT "[DEBUG][INFO]: Checking finished, found %matches% matches"
-END
-
-
-
-ACTION_IF is_bg2ee_or_eet BEGIN
-  // converting to LG
-  COPY_EXISTING ~c6kalden.cre~ ~override~ // paladins that help with bodhi, currently LN, should be LG
-                ~c6levin.cre~  ~override~ // paladins that help with bodhi, currently LN, should be LG
-                ~c6squire.cre~ ~override~ // paladins that help with bodhi, currently LN, should be LG
-                ~derrick.cre~  ~override~ // ranger helping valygar, shouldn't be LN
-                ~elotte.cre~   ~override~ // squire elotte, paladin stronghold duties, currently LN, likely better as LG
-    LPF ALTER_CRE INT_VAR alignment=alignmen_lawful_good END
-
-  // converting to NG
-  COPY_EXISTING ~arval.cre~    ~override~ // Arval Mornmaster, currently LE, should be NG
-                ~bharval.cre~  ~override~ // Arval Mornmaster, currently LE, should be NG
-                ~c6cler1.cre~  ~override~ // cleric of lathander, neutral, should probably be NG
-    LPF ALTER_CRE INT_VAR alignment=alignmen_neutral_good END
-
-  // converting to CG
-  COPY_EXISTING ~jarev1.cre~   ~override~ // nameless bard harper, currently CN, makes more sense as CG
-                ~nevaziah.cre~ ~override~ // the confused undead spellcaster that wants to protect his pupils (CE)
-                ~udvith.cre~   ~override~ // vithal, currently LE, there are no obvious signs he's evil
-    LPF ALTER_CRE INT_VAR alignment=alignmen_chaotic_good END
-
-  // converting to LN
-  COPY_EXISTING ~bdact07.cre~ ~override~ // non-interctable NPC hired for the bard stronghold, LE for some reason
-                ~taxcoll.cre~ ~override~ // tax collector, the man is doing his job, he ain't neutral evil
-    LPF ALTER_CRE INT_VAR alignment=alignmen_lawful_neutral END
-
-  //converting to TN
-  COPY_EXISTING ~bdock1.cre~   ~override~ // overworked dockhand ogres
-                ~bdock2.cre~   ~override~
-                ~becky.cre~    ~override~ // no alignment assigned
-                ~diane.cre~    ~override~ // no alignment assigned
-                ~druid10a.cre~ ~override~ // druid set as evil
-                ~druid10b.cre~ ~override~ // druid set as evil
-                ~druid12a.cre~ ~override~ // druid set as evil
-                ~druid12b.cre~ ~override~ // druid set as evil
-                ~druid6a.cre~  ~override~ // druid set as evil
-                ~druid8a.cre~  ~override~ // druid set as evil
-                ~druid8b.cre~  ~override~ // druid set as evil
-                ~ecolt.cre~    ~override~ // no alignment assigned
-                ~kpmerc01.cre~ ~override~ // person complaining of bandit attacks in fighter stronghold (why evil?)
-    LPF ALTER_CRE INT_VAR alignment=alignmen_neutral END
-
-  // converting to Chaotic Neutral
-  COPY_EXISTING ~shth011.cre~  ~override~ // Hanz thief, this version is evil for some reason
-                ~shth05.cre~   ~override~ // Joster getting a quota for Renal, original is LE
-    LPF ALTER_CRE INT_VAR alignment=alignmen_chaotic_neutral END
-
-  // converting to LE
-  COPY_EXISTING ~aemerhob.cre~ ~override~ // hobgoblin, no alignment for some reason, LE now
-                ~gguard01.cre~ ~override~ // guard harassing evilly a beggar
-                ~golbra01.cre~ ~override~ // brain golem, they're always LE like mindflayers, CG in EE (??)
-                ~udgolem.cre~    ~override~ // brain golem, they're always LE like mindflayers, Neutral in EE
-                ~hgwra01.cre~  ~override~ // Gorion Wraith, shouldn't be Lawful Good
-                ~maeguy02.cre~ ~override~ // maevar henchman, probably shouldnt be CN, instead LE
-                ~noblem1.cre~  ~override~ // evil nobleman asshole
-                ~noblem2.cre~  ~override~ // evil nobleman asshole
-                ~tolger.cre~   ~override~ // tolgerias, he's obviously evil lol, not chaotic good
-                ~tolger2.cre~  ~override~ // tolgerias, he's obviously evil lol, not chaotic good
-    LPF ALTER_CRE INT_VAR alignment=alignmen_lawful_evil END
-
-  // converting to NE
-  COPY_EXISTING ~hellil01.cre~ ~override~ // hellhound, should be evil, not neutral
-                ~mgteos01.cre~ ~override~ // Teos, the asshole wizard in the planar sphere for the stronghold
-                ~tobban01.cre~ ~override~ // gromnir henchmen, should be evil, not neutral
-                ~tobban02.cre~ ~override~
-                ~tobban03.cre~ ~override~
-                ~tobban04.cre~ ~override~
-                ~tobpar01.cre~ ~override~
-                ~tobpar02.cre~ ~override~
-                ~tobpar03.cre~ ~override~
-                ~tobpar05.cre~ ~override~
-                ~tobpar06.cre~ ~override~
-    LPF ALTER_CRE INT_VAR alignment=alignmen_neutral_evil END
-
-  // converting to CE
-  COPY_EXISTING ~shadeld.cre~  ~override~ // a version of Shade Lord that is Neutral Good
-                ~trskind1.cre~ ~override~ // skeletal version of skinner that is for some reason Neutral Good
-                ~chang02.cre~  ~override~ // angelo (tob) version that is neutral good
-                ~gnollhp1.cre~ ~override~ // gnoll version that is chaotic neutral
-    LPF ALTER_CRE INT_VAR alignment=alignmen_chaotic_evil END
-
 END

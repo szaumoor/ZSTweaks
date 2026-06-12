@@ -269,6 +269,7 @@
 @2240 = ~Make Hexxat's Blood Drain have a cooldown instead of being usable once per day~
 @2250 = ~Make Edwin's amulet nuanced in the privileges it grants to that snake~
 @1556 = ~Make minor improvements to Jaheira-specific items~
+@1381 = ~Make Handmaiden's Mace +2 reflect BG3's take on it~
 
 // WIZARD SPELLS
 @140 = "Make Finger of Death's magical damage on a successful save standardized"
@@ -394,10 +395,10 @@
 @3140 = ~Make ogre / oni mages regenerating fiends, as per PnP~
 @3150 = ~Make drow's Magic Resistance lower (configurable)~
 @3160 = ~Make the effects on-hit of Otyugh attacks nonmagical and subject to Saving Throws~
+@3165 = ~Make familiars use female voices for casting spells~
 
 // END-OF-INSTALL ORDER TWEAKS
-@1381 = ~Make Handmaiden's Mace +2 (Viconia's romance) reflect BG3's take on it~
 @2370 = ~Make IWD evasion balanced~
 @1531 = ~Make a selection of spells ignore Magic Resistance~
 
-@6542 = ~This component is only available if the previous tweak was installed~
+

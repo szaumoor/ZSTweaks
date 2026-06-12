@@ -1939,6 +1939,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
+        ACTION_IF zst_group_3165_familiar_female_voice != 0 AND zst_group_3165_familiar_female_voice != 1 BEGIN
+            WARN "[WARN]: Familiar Female Caster Voice group component should be set to 1 or 0. Actual value: %zst_group_3165_familiar_female_voice%"
+            LAM f_plus
+        END
+
         // ----------------------------------------GROUP COMP VARIABLES (DAGGER)------------------------------------------------- \\
 
         ACTION_IF zst_group_1000_poisoned_throw_dagg != 0 AND zst_group_1000_poisoned_throw_dagg != 1 BEGIN

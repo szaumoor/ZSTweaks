@@ -11,7 +11,7 @@ BEGIN
         PATCH_FAIL "[FAIL]: Extension is empty"
     END
     result = 1
-    PATCH_IF NOT "SOURCE_EXT" STR_EQ "%extension%" BEGIN
+    PATCH_IF NOT "%SOURCE_EXT%" STR_EQ "%extension%" BEGIN
         result = 0
         PATCH_IF NOT suppress BEGIN
             PATCH_IF fail_on_mismatch BEGIN

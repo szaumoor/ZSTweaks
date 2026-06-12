@@ -16,6 +16,38 @@ ACTION_IF zs_allow_prefixes BEGIN
         COPY_EXISTING ~phanblad.eff~ ~override~
             LPF ALTER_EFF_FILE INT_VAR special = 1024 END
 
+        PRINT "[INFO]: Wraith Spiders should be classified as Undead"
+            COPY_EXISTING ~spidwr01.cre~ ~override~
+                          ~spidwr.cre~   ~override~
+                          ~spidkid.cre~  ~override~
+                          ~rdespiw.cre~  ~override~
+                          ~ttspid.cre~   ~override~
+                WRITE_BYTE 0x271 general_undead
+            IF_EXISTS
+
+        PRINT "[INFO]: Parsing game data to find mod-added wraith spiders that aren't undead..."
+        OUTER_SET wraith_spiders_found = 0
+        COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
+            SET general = BYTE_AT(0x271)
+            SET race    = BYTE_AT(0x272)
+            SET class   = BYTE_AT(0x273)
+            PATCH_IF race = spider AND class = class_spider_wraith AND general != general_undead BEGIN
+                WRITE_BYTE 0x271 general_undead
+                ++wraith_spiders_found
+            END
+        BUT_ONLY
+
+        ACTION_IF wraith_spiders_found > 0 BEGIN PRINT "[INFO]: Patched %wraith_spiders_found% mod-added wraith spiders!" END
+        ELSE BEGIN PRINT "[INFO]: No mod-added wraith spiders found, cool!" END
+
+        ACTION_IF has_eefixpack BEGIN
+            PRINT "[INFO]: Fixing faulty Blackrazor/BBoD Unfix in Fixpack strengthening target instead of self"
+            COPY_EXISTING ~cdmiscbc.spl~ ~override~
+                          ~cdblkbld.spl~ ~override~
+                LPF ALTER_EFFECT INT_VAR silent=1 match_target = 1 target=9 END
+            BUT_ONLY IF_EXISTS
+        END
+
         ACTION_IF NOT has_eefixpack BEGIN
 
             ACTION_IF FILE_EXISTS_IN_GAME ~spcl936.spl~ AND NOT has_zs_shadowdancer_overhaul BEGIN
@@ -75,6 +107,14 @@ ACTION_IF zs_allow_prefixes BEGIN
 
         ACTION_IF is_bg2ee_or_eet BEGIN
 
+            // PRINT "[INFO]: Setting Solar at the end of ToB to the right class and race" leaving this for now
+            // COPY_EXISTING ~finsol01.cre~ ~override~
+            ACTION_IF FILE_EXISTS_IN_GAME ~c2kit.cre~ BEGIN
+                PRINT "[INFO]: Setting Item Upgrade's Improved Kitthix to Spider Huge class instead of Spider Sword, just like normal Kitthix"
+                COPY_EXISTING ~c2kit.cre~ ~override~
+                    WRITE_BYTE 0x273 class_spider_huge                        
+            END 
+
             PRINT "[INFO]: Lord Jierdan no longer classified as an animal but a monster."
             COPY_EXISTING ~firkra01.cre~ ~override~
                 WRITE_BYTE 0x271 general_monster
@@ -84,13 +124,16 @@ ACTION_IF zs_allow_prefixes BEGIN
                 LPF ALTER_EFFECT INT_VAR silent = 1 check_headers=0 match_dicesize = 6 dicesize = 0 END
             BUT_ONLY
 
-            ACTION_IF has_eefixpack BEGIN
-                PRINT "[INFO]: Fixing faulty Blackrazor/BBoD Unfix in Fixpack strengthening target instead of self"
-                COPY_EXISTING ~cdmiscbc.spl~ ~override~
-                              ~cdblkbld.spl~ ~override~
-                    LPF ALTER_EFFECT INT_VAR silent=1 match_target = 1 target=9 END
-                BUT_ONLY
-            END
+            PRINT "[INFO]: Fixing traits in vanilla unused creature resources... in case they're used!"
+            COPY_EXISTING ~dry01.cre~   ~override~
+                          ~dryad01.cre~ ~override~
+                          ~dryad02.cre~ ~override~
+                          ~dryad03.cre~ ~override~
+                WRITE_BYTE 0x272 race_fairy
+
+            COPY_EXISTING ~behgas01.cre~ ~override~
+                WRITE_BYTE 0x271 general_plant
+                WRITE_BYTE 0x272 0
 
             ACTION_IF NOT has_eefixpack BEGIN
                 PRINT "[INFO]: Fixing incorrect speed factor in Lilarcor from 8 to 7"
@@ -106,13 +149,10 @@ ACTION_IF zs_allow_prefixes BEGIN
                 PRINT ~[INFO]: Fixing non-standard scimitar/wakizashi/ninjato animations in vanilla weapons to allow consistent identification in the mod~
                 COPY_EXISTING ~misc9q.itm~ ~override~
                     WRITE_ASCII 0x22 "SC" #2
-
                 COPY_EXISTING ~sw1h66.itm~ ~override~
                     WRITE_ASCII 0x22 "SS" #2
-
                 COPY_EXISTING ~sw1h67.itm~ ~override~
                     WRITE_ASCII 0x22 "S1" #2
-
                 COPY_EXISTING ~sw1h68a.itm~ ~override~
                     WRITE_ASCII 0x22 "SC" #2
 
@@ -308,7 +348,7 @@ ACTION_IF zs_allow_prefixes BEGIN
         ACTION_IF NOT has_eefixpack BEGIN
             
             ACTION_IF is_bgee_bg2ee_or_eet BEGIN
-                PRINT "[INFO]: Removing bizarre & unused spell selection from shadow creatures that can be exploitable by the player"
+                PRINT "[INFO]: Removing unused spell selection from shadow creatures that can be exploited by the player with summons"
             END
 
             ACTION_IF is_bgee_or_eet BEGIN
@@ -409,6 +449,7 @@ ACTION_IF zs_allow_prefixes BEGIN
                 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
                     SET general = BYTE_AT(0x271)
                     SET race    = BYTE_AT(0x272)
+                    SET class   = BYTE_AT(0x273)
                     PATCH_IF race    = race_golem           OR
                              race    = race_treant          OR
                              race    = race_demonic         OR
