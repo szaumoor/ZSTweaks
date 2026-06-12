@@ -83,7 +83,6 @@ COPY_EXISTING ~aemerhob.cre~ ~override~ // hobgoblin, no alignment for some reas
               ~tolger2.cre~  ~override~ // tolgerias, he's obviously evil lol, not chaotic good
               ~dpmon01.cre~  ~override~ // cutscene mindflayer
               ~dpmon03.cre~  ~override~ // cutscene vampire
-              ~gorwom02.cre~ ~override~ // WK The Huntress, she's demonic but not evil as the others
 
   LPF ALTER_CRE INT_VAR alignment=alignmen_lawful_evil END
 IF_EXISTS
@@ -114,6 +113,7 @@ COPY_EXISTING ~hellil01.cre~  ~override~ // hellhound, should be evil, not neutr
               ~rzomb01.cre~   ~override~ // non evil zombie
               ~dpmon02.cre~   ~override~ // cutscene lich
               ~fsskel.cre~    ~override~ // WK skeleton?
+              ~gorwom02.cre~ ~override~ // WK The Huntress, she's demonic but not evil as the others
 
   LPF ALTER_CRE INT_VAR alignment=alignmen_neutral_evil END
 IF_EXISTS

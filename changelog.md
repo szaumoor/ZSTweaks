@@ -16,7 +16,7 @@
   - Many instances of undead creatures weirdly not marked as evil (skeletons, zombies, ghouls) fixed
   - Lizardfolk are now set to Neutral
   - Invisible Stalkers no longer marked as evil, since they're neutral elementals from the Plane of Air
-  - The Huntress (WK) is a humanoid tanar'ri marked as True Neutral. Changed to Lawful Evil
+  - The Huntress (WK) is a humanoid tanar'ri marked as True Neutral. Changed to Neutral Evil
   - Other minor creatures unused or used in cutscenes also fixed just in case such as non evil vampires, alu-fiend, liches, and mindflayers
   - Lanfear wolfwere in chapter 6 of BG2 (Coran's minor quest) changed to Chaotic Evil (they're CE according to lore)
   - Clay Golem in Planar Sphere marked as Chaotic Good → Neutral
