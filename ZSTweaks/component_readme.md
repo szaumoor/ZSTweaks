@@ -2330,9 +2330,9 @@ This is a more accurate alignment revision than Oversight's component, with a wi
 
 I also added other creatures that I noticed seem problematic. For example, the skin dancer version of Rejiek is... Neutral Good. How about no? It preserves the most egregious fixes for errors that still exist, like Tolgerias being Chaotic Good. Yeah, right.
 
-Additionally, I added corrections to many other creatures that I found were misaligned or that I'm my estimation make more sense alignment wise in the third edition. For example:
+Additionally, I added corrections to many other creatures that I found were misaligned or that in my estimation make more sense alignment-wise in the third edition. For example:
 
-- Wyverns should be neutral. They're unitelligent beasts like animals, in the 2e edition are considered neutral evil, but in the 3rd, normally neutral. I standardize to neutral.
+- Wyverns should be neutral. They're unintelligent beasts like animals, in the 2e edition are considered neutral evil, but in the 3rd, normally neutral. I standardize to neutral.
 - All types of spiders are also neutral, including sword spiders which are considered in 2e chaotic evil (for some reason), with the lone exception of wraith spiders, which are undead evil spiders.
 - I ensured outer planar creatures that are more or less "alignment-locked" follow their pattern. For example, djinni are chaotic good, and as such Aataqah had its alignment correct from Lawful Neutral.
 - Wofweres are chaotic evil, I corrected Lanfear for example, in Chapter 6 of BG2 (Coran's quest), which was Chaotic Neutral.

@@ -109,6 +109,13 @@ ACTION_IF zs_allow_prefixes BEGIN
 
             // PRINT "[INFO]: Setting Solar at the end of ToB to the right class and race" leaving this for now
             // COPY_EXISTING ~finsol01.cre~ ~override~
+            PRINT "[INFO]: Making the dao genies in Trademeet Dao instead of Djinni race-wise, as all evidence suggest it's what they are"
+            COPY_EXISTING ~trgeni01.cre~ ~override~
+                          ~trgeni02.cre~ ~override~
+                          ~trgeni03.cre~ ~override~
+                WRITE_BYTE 0x273 class_genie_dao 
+            
+
             ACTION_IF FILE_EXISTS_IN_GAME ~c2kit.cre~ BEGIN
                 PRINT "[INFO]: Setting Item Upgrade's Improved Kitthix to Spider Huge class instead of Spider Sword, just like normal Kitthix"
                 COPY_EXISTING ~c2kit.cre~ ~override~
