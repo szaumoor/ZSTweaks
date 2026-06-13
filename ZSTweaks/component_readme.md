@@ -2321,16 +2321,21 @@ Thieves are almost always used in multiclass because that is vastly superior to 
 
 ### Make inappropriately aligned creatures in BG2 more correct (3010) (BG2EE EET)
 
-This is a more accurate alignment revision than Oversight's component, specifically aimed at the state of this issue in the latest version of BG2EE. A huge chunk of the alignment corrections in that component no longer apply, and some of them differ from BeamDog's correction. I left BD's corrections in place as long as they made sense, and I did not include edits that made no sense to me. For example:
+This is a more accurate alignment revision than Oversight's component, with a wider scope, specifically aimed at the state of this issue in the latest version of BG2EE. A huge chunk of the alignment corrections in that component no longer apply, and some of them differ from BeamDog's correction. I left BD's corrections in place as long as they made sense, and I did not include edits that made no sense to me. For example:
 
 - Making Cowled Enforcers evil
 - Making some Amnian Guards evil
 - Making the Spectator beholder evil. They're supposed to be Lawful Neutral. BD's corrections show that.
 - I didn't make Melissan evil before the plot reveals her nature. It defeats the purpose of the deception and the twist.
 
-I also added other creatures that I noticed seem problematic. For example, the skin dancer version of Rejiek is... Neutral Good. How about no?
+I also added other creatures that I noticed seem problematic. For example, the skin dancer version of Rejiek is... Neutral Good. How about no? It preserves the most egregious fixes for errors that still exist, like Tolgerias being Chaotic Good. Yeah, right.
 
-It preserves the most egregious fixes for errors that still exist, like Tolgerias being Chaotic Good. Yeah, right.
+Additionally, I added corrections to many other creatures that I found were misaligned or that I'm my estimation make more sense alignment wise in the third edition. For example:
+
+- Wyverns should be neutral. They're unitelligent beasts like animals, in the 2e edition are considered neutral evil, but in the 3rd, normally neutral. I standardize to neutral.
+- All types of spiders are also neutral, including sword spiders which are considered in 2e chaotic evil (for some reason), with the lone exception of wraith spiders, which are undead evil spiders.
+- I ensured outer planar creatures that are more or less "alignment-locked" follow their pattern. For example, djinni are chaotic good, and as such Aataqah had its alignment correct from Lawful Neutral.
+- Wofweres are chaotic evil, I corrected Lanfear for example, in Chapter 6 of BG2 (Coran's quest), which was Chaotic Neutral.
 
 ### Make summoned demons grant XP to the party when they kill something (3020) (IWDEE BGEE BG2EE EET)
 

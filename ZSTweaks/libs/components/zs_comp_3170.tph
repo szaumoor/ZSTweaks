@@ -66,7 +66,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
     END
 
-    COPY_EXISTING ~kirinh.cre~ ~override~ // TODO \\
+    COPY_EXISTING ~kirinh.cre~ ~override~ // 
         WRITE_LONG 0x28 24593 // new animation, cleric female elf
         ADD_CRE_ITEM ~wings01~ #0 #0 #0 ~unstealable&undroppable~ ~helmet gloves belt boots~ // the wings
         WRITE_BYTE 0x2c 25 // dark pure gold
@@ -76,6 +76,37 @@ ACTION_IF NOT is_iwdee BEGIN
         WRITE_BYTE 0x30 10 // leather (light pure gold)
         WRITE_BYTE 0x31 3 // armor (light gold)
         WRITE_BYTE 0x32 189 // new hair color (deep indigo)
+    IF_EXISTS
+
+    COPY_EXISTING ~kirinh.cre~ ~override~ // 
+        WRITE_LONG 0x28 24593 // new animation, cleric female elf
+        ADD_CRE_ITEM ~wings01~ #0 #0 #0 ~unstealable&undroppable~ ~helmet gloves belt boots~ // the wings
+        WRITE_BYTE 0x2c 25 // dark pure gold
+        WRITE_BYTE 0x2d 25 // dark pure gold
+        WRITE_BYTE 0x2e 75 // solid black
+        WRITE_BYTE 0x2f 10 // new skin color (light pure gold)
+        WRITE_BYTE 0x30 10 // leather (light pure gold)
+        WRITE_BYTE 0x31 3 // armor (light gold)
+        WRITE_BYTE 0x32 189 // new hair color (deep indigo)
+    IF_EXISTS
+
+    COPY_EXISTING ~ohbdev04.cre~ ~override~ // erinyes
+                  ~gorbat2.cre~  ~override~ 
+                  ~deriny01.cre~ ~override~ 
+        WRITE_LONG 0x28 0x6111 // new animation, fighter female elf
+        ADD_CRE_ITEM ~wings01~ #0 #0 #0 ~unstealable&undroppable~ ~helmet gloves belt boots~ // the wings
+        ADD_CRE_ITEM ~chan04~ #0 #0 #0 ~unstealable&undroppable~ ~armor~ // to make her look more normal
+    IF_EXISTS
+
+    COPY_EXISTING ~ohbdev04.cre~ ~override~ // erinyes
+        ADD_CRE_ITEM ~wings01~ #0 #0 #0 ~unstealable&undroppable~ ~helmet gloves belt boots~ // the wings
+        WRITE_BYTE 0x2c 30 // light iron gray
+        WRITE_BYTE 0x2d 10 // light pure gold
+        WRITE_BYTE 0x2e 75 // solid black
+        WRITE_BYTE 0x2f 11 // new skin color (light rose red)
+        WRITE_BYTE 0x30 21 // leather (dark iron gray)
+        WRITE_BYTE 0x31 29 // armor (red tinted black)
+        WRITE_BYTE 0x32 47 // new hair color (pure dark red)
     IF_EXISTS
 
 END

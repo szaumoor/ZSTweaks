@@ -31,7 +31,7 @@ ACTION_IF zs_allow_prefixes BEGIN
             SET general = BYTE_AT(0x271)
             SET race    = BYTE_AT(0x272)
             SET class   = BYTE_AT(0x273)
-            PATCH_IF race = spider AND class = class_spider_wraith AND general != general_undead BEGIN
+            PATCH_IF race = race_spider AND class = class_spider_wraith AND general != general_undead BEGIN
                 WRITE_BYTE 0x271 general_undead
                 ++wraith_spiders_found
             END

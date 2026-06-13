@@ -21,7 +21,7 @@ COPY_EXISTING ~jarev1.cre~   ~override~ // nameless bard harper, currently CN, m
               ~nevaziah.cre~ ~override~ // the confused undead spellcaster that wants to protect his pupils (CE)
               ~udvith.cre~   ~override~ // vithal, currently LE, there are no obvious signs he's evil
               ~aataqah.cre~  ~override~ // he's a djinni and djinni are always chaotic good (lawful neutral)
-
+              ~ohhdjinn.cre~ ~override~ // he's a noble djinni 
   LPF ALTER_CRE INT_VAR alignment=alignmen_chaotic_good END
 IF_EXISTS
 
@@ -55,11 +55,27 @@ COPY_EXISTING ~bdock1.cre~   ~override~ // overworked dockhand ogres
               ~spidswsu.cre~ ~override~ // sword spider is neutral
               ~spidsw01.cre~ ~override~ // sword spider is neutral
               ~spspid07.cre~ ~override~ // sword spider is neutral
-              ~plyspid.cre~ ~override~  // sword spider is neutral
+              ~plyspid.cre~  ~override~  // sword spider is neutral
+              ~udspid01.cre~ ~override~ // spider
+              ~udspid02.cre~ ~override~ // spider
+              ~udspid03.cre~ ~override~ // spider
+              ~udspid04.cre~ ~override~ // spider
+              ~udspid05.cre~ ~override~ // spider
+              ~udspid06.cre~ ~override~ // spider
+              ~udspid07.cre~ ~override~ // spider
+              ~udspid08.cre~ ~override~ // spider
+              ~ohbspi01.cre~ ~override~ // spider
               ~ohhspid1.cre~ ~override~  // hexxat quest spider is neutral
               ~ohhspid2.cre~ ~override~  // hexxat quest spider is neutral
               ~ohhspi01.cre~ ~override~  // hexxat quest spider is neutral
               ~ohhspi02.cre~ ~override~  // hexxat quest spider is neutral
+              ~ohhspi03.cre~ ~override~  // hexxat quest spider is neutral
+              ~wyvern01.cre~ ~override~ // wyverns should be true neutral in my estimation, currently locked as neutral EDIT_SAV_FILE
+              ~wyvernsu.cre~ ~override~
+              ~wyvbab01.cre~ ~override~
+              ~wyvgre01.cre~ ~override~
+              ~ohbmena8.cre~ ~override~
+              ~ohbmena5.cre~ ~override~ // boalisk, snakes should be neutral
   LPF ALTER_CRE INT_VAR alignment=alignmen_neutral END
 IF_EXISTS
 
@@ -102,6 +118,8 @@ COPY_EXISTING ~hellil01.cre~  ~override~ // hellhound, should be evil, not neutr
               ~ad3sklm.cre~   ~override~ // stray skeleton (iwdification / iwdee?)
               ~rskel01.cre~   ~override~ // stray skeleton
               ~rskel03.cre~   ~override~ // stray skeleton 
+              ~uddoor07.cre~  ~override~ // stray skeleton
+              ~ttskel.cre~    ~override~ // stray skeleton  
               ~bhghoul3.cre~  ~override~ // non evil zombie
               ~zombie01.cre~  ~override~ // non evil zombie
               ~zombju01.cre~  ~override~ // non evil zombie
@@ -233,7 +251,7 @@ ACTION_IF zs_debug BEGIN
                race    = race_ettin                OR
                class   = class_worg                OR
                class   = class_wolf_winter         OR
-              (race = spider AND class = class_spider_wraith) AND // wraith undead spiders are evil
+              (race = race_spider AND class = class_spider_wraith) AND // wraith undead spiders are evil
                class   = class_genie_efreeti       OR
                class   = class_genie_noble_efreeti OR
               (race    = race_lycanthrope AND class = class_wolfwere) OR // wolfweres are evil
