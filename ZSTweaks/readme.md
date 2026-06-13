@@ -64,6 +64,23 @@ Taking as an example the storm start component, a complete check would be: ```MO
 
 Finally, to check variations on the installed component, if there are any, you would also need to include the variables in `configurations/zstweaks_prefs.txt`. That's it. I know it's a bit of pain so if I can, I will provide the compatibility code myself.
 
+## Frequently(ish) asked questions
+
+### Why did your mod skip x number of components?
+
+Two possible reasons that I know of:
+
+1. You installed what I call a **group component**, that is, the first component within each group of components, which installs either all, or your selection of components *within* that group using the configuration files. Because of technical limitations, I have to assume that if you install that, you're done with that group. Therefore, every one of the rest of components in that group will be skipped. Don't use this method if you know for certain there's a component within the group that you'll need to install in a non-linear order.
+2. The component was set to be *incompatible with the game you're installing it on*. For example, the Shar-Teel component won't install in IWDEE.
+
+### Why am I seeing lines in the console saying that 0 files were copied and patched?
+
+Because the file I'm trying to patch is not found in your specific game, but might be in a different game. This is not an error, just a quirk of how weidu reports it.
+
+### I'm seeing a warning for the first component I install, but I'm sure it's working as expected
+
+My mod runs a bunch of scripts before installing the first component, including scripts that fixes a fair amount of issues and inconsistencies in the game. If you see a warning, it's possible you've found a problem there. Report it to me, preferably on my Discord server.
+
 ## Credits
 
 - To BeamDog and Bioware for the game

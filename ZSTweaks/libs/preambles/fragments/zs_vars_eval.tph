@@ -1943,6 +1943,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Familiar Female Caster Voice group component should be set to 1 or 0. Actual value: %zst_group_3165_familiar_female_voice%"
             LAM f_plus
         END
+        
+        ACTION_IF zst_group_3170_succubi_animations != 0 AND zst_group_3170_succubi_animations != 1 BEGIN
+            WARN "[WARN]: Succubi animation group component should be set to 1 or 0. Actual value: %zst_group_3170_succubi_animations%"
+            LAM f_plus
+        END
 
         // ----------------------------------------GROUP COMP VARIABLES (DAGGER)------------------------------------------------- \\
 

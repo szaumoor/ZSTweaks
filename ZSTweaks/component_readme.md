@@ -2478,7 +2478,7 @@ Some options to choose from:
 - Only single-classed thieves can evade (OFF by default)
 - Multi-classed thieves can evade, but they only manage to make an attempt 50% of the time (ON by default)
 
-Check the config file to choose what you like. Install after all content that adds spells, effects, and tweaks, and definitely after any component that adds IWD Evasion to the game. To be extra sure, put it at the end.
+Check the config file to choose what you like. Install after all content that adds spells, effects, and tweaks, and definitely after any component that adds IWD Evasion to the game (for obvious reasons, in BG, don't bother installing this without a component that enables Evasion to begin with). To be extra sure, put it at the end.
 
 ### Make a selection of spells ignore Magic Resistance (1531) (IWDEE BGEE BG2EE EET)
 

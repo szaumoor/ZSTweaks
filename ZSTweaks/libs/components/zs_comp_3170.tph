@@ -1,0 +1,81 @@
+ACTION_IF NOT is_iwdee BEGIN
+
+    COPY_EXISTING ~gorwom01.cre~ ~override~ // nalmissra WK
+        WRITE_LONG 0x28 24593 // new animation, cleric female elf
+        ADD_CRE_ITEM ~wings01~ #0 #0 #0 ~unstealable&undroppable~ ~helmet gloves belt boots~ // the wings
+        ADD_CRE_ITEM ~ichan01~ #0 #0 #0 ~unstealable&undroppable~ ~armor~ // to make her look more normal
+        WRITE_BYTE 0x2c 46 // ensure vanilla
+        WRITE_BYTE 0x2d 46 // ensure vanilla
+        WRITE_BYTE 0x2e 46 // ensure vanilla
+        WRITE_BYTE 0x2f 48 // new skin color (light rust)
+        WRITE_BYTE 0x30 46 // ensure vanilla
+        WRITE_BYTE 0x31 46 // ensure vanilla
+        WRITE_BYTE 0x32 198 // new hair color (black scarlet, also paints the wings, hence the change from pure white)
+    IF_EXISTS
+
+    COPY_EXISTING ~demsuc01.cre~ ~override~ // 
+        WRITE_LONG 0x28 24593 // new animation, cleric female elf
+        ADD_CRE_ITEM ~wings01~ #0 #0 #0 ~unstealable&undroppable~ ~helmet gloves belt boots~ // the wings
+        ADD_CRE_ITEM ~ichan01~ #0 #0 #0 ~unstealable&undroppable~ ~armor~ // to make her look more normal
+        WRITE_BYTE 0x2c 24 // ensure vanilla
+        WRITE_BYTE 0x2d 59 // ensure vanilla
+        WRITE_BYTE 0x2e 60 // ensure vanilla
+        WRITE_BYTE 0x2f 4 // new skin color (auburn)
+        WRITE_BYTE 0x30 27 // ensure vanilla
+        WRITE_BYTE 0x31 21 // ensure vanilla
+        WRITE_BYTE 0x32 182 // new hair color (deep black)
+    IF_EXISTS
+
+    COPY_EXISTING ~gorsuc01.cre~ ~override~ // 
+        WRITE_LONG 0x28 24593 // new animation, cleric female elf
+        ADD_CRE_ITEM ~wings01~ #0 #0 #0 ~unstealable&undroppable~ ~helmet gloves belt boots~ // the wings
+        WRITE_BYTE 0x2c 5 // medium silver
+        WRITE_BYTE 0x2d 5 // medium silver
+        WRITE_BYTE 0x2e 126 // jet black
+        WRITE_BYTE 0x2f 5 // new skin color (medium silver)
+        WRITE_BYTE 0x30 5 // leather (medium silver)
+        WRITE_BYTE 0x31 101 // armor (metallic red)
+        WRITE_BYTE 0x32 66 // new hair color (faded black)
+    IF_EXISTS
+
+    COPY_EXISTING ~gortan2.cre~ ~override~ // 
+        WRITE_LONG 0x28 24593 // new animation, cleric female elf
+        ADD_CRE_ITEM ~wings01~ #0 #0 #0 ~unstealable&undroppable~ ~helmet gloves belt boots~ // the wings
+        WRITE_BYTE 0x2c 109 // terra cotta
+        WRITE_BYTE 0x2d 109 // terra cotta
+        WRITE_BYTE 0x2e 119 // darkest orchid
+        WRITE_BYTE 0x2f 109 // new skin color (terra cotta)
+        WRITE_BYTE 0x30 109 // leather (terra cotta)
+        WRITE_BYTE 0x31 12 // armor (light carnation pink)
+        WRITE_BYTE 0x32 21 // new hair color (dark iron gray)
+    IF_EXISTS
+
+    ACTION_IF NOT has_pits_of_despair BEGIN
+
+        COPY_EXISTING ~ohbdem04.cre~ ~override~ // 
+            WRITE_LONG 0x28 24593 // new animation, cleric female elf
+            ADD_CRE_ITEM ~wings01~ #0 #0 #0 ~unstealable&undroppable~ ~helmet gloves belt boots~ // the wings
+            WRITE_BYTE 0x2c 38 // light dirt brown
+            WRITE_BYTE 0x2d 93 // dark cement gray
+            WRITE_BYTE 0x2e 136 // jet black
+            WRITE_BYTE 0x2f 38 // new skin color (light dirt brown)
+            WRITE_BYTE 0x30 66 // leather (faded black)
+            WRITE_BYTE 0x31 47 // armor (pure dark red)
+            WRITE_BYTE 0x32 127 // new hair color (dark brick red)
+        IF_EXISTS
+
+    END
+
+    COPY_EXISTING ~kirinh.cre~ ~override~ // TODO \\
+        WRITE_LONG 0x28 24593 // new animation, cleric female elf
+        ADD_CRE_ITEM ~wings01~ #0 #0 #0 ~unstealable&undroppable~ ~helmet gloves belt boots~ // the wings
+        WRITE_BYTE 0x2c 25 // dark pure gold
+        WRITE_BYTE 0x2d 25 // dark pure gold
+        WRITE_BYTE 0x2e 75 // solid black
+        WRITE_BYTE 0x2f 10 // new skin color (light pure gold)
+        WRITE_BYTE 0x30 10 // leather (light pure gold)
+        WRITE_BYTE 0x31 3 // armor (light gold)
+        WRITE_BYTE 0x32 189 // new hair color (deep indigo)
+    IF_EXISTS
+
+END

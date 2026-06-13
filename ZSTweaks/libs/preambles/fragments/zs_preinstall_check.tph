@@ -152,5 +152,10 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
         PRINT "[INFO]: Artisan Kitpack Archer detected"
     END
 
+    OUTER_SET has_pits_of_despair = MOD_IS_INSTALLED "zbpod.tp2" "0"
+    ACTION_IF has_pits_of_despair BEGIN
+        PRINT "[INFO]: Pits of Despair detected"
+    END
+
     OUTER_SET zs_preinstall_check = 1
 END
