@@ -72,6 +72,7 @@ COPY_EXISTING ~bdock1.cre~   ~override~ // overworked dockhand ogres
               ~spidsm01.cre~ ~override~ // spider
               ~spidsm02.cre~ ~override~ // spider
               ~spspid05.cre~ ~override~ // spider
+              ~sensmsp.cre~  ~override~ //spider
               ~ohhspid1.cre~ ~override~  // hexxat quest spider is neutral
               ~ohhspid2.cre~ ~override~  // hexxat quest spider is neutral
               ~ohhspi01.cre~ ~override~  // hexxat quest spider is neutral
@@ -85,7 +86,10 @@ COPY_EXISTING ~bdock1.cre~   ~override~ // overworked dockhand ogres
               ~ohbmena8.cre~ ~override~
               ~nwyvbab.cre~  ~override~ 
               ~plywyvrn.cre~ ~override~
+              ~pwyvv01.cre~  ~override~
               ~ohbmena5.cre~ ~override~ // boalisk, snakes should be neutral
+              ~snakeb01.cre~ ~override~
+              ~obsmod01.cre~ ~override~ // unaligned golem, probably unused but still
   LPF ALTER_CRE INT_VAR alignment=alignmen_neutral END
 IF_EXISTS
 
@@ -129,7 +133,13 @@ COPY_EXISTING ~hellil01.cre~ ~override~ // hellhound, should be evil, not neutra
               ~rskel01.cre~  ~override~ // stray skeleton
               ~rskel03.cre~  ~override~ // stray skeleton 
               ~uddoor07.cre~ ~override~ // stray skeleton
-              ~ttskel.cre~   ~override~ // stray skeleton  
+              ~ttskel.cre~   ~override~ // stray skeleton
+              ~skelar01.cre~ ~override~ 
+              ~skelar02.cre~ ~override~ 
+              ~skele2.cre~   ~override~
+              ~skelded.cre~  ~override~
+              ~skelet01.cre~ ~override~
+              ~skelhp1.cre~  ~override~
               ~bhghoul3.cre~ ~override~ // non evil zombie
               ~zombie01.cre~ ~override~ // non evil zombie
               ~zombju01.cre~ ~override~ // non evil zombie
@@ -159,6 +169,7 @@ COPY_EXISTING ~shadeld.cre~  ~override~ // a version of Shade Lord that is Neutr
               ~c6lanf.cre~   ~override~ // lanfear is a wolfwere which are chaotic evil
               ~ogregrsu.cre~ ~override~ // ogre
               ~ogresu.cre~   ~override~
+              ~plyogre.cre~  ~override~
   LPF ALTER_CRE INT_VAR alignment=alignmen_chaotic_evil END
 IF_EXISTS
 
@@ -188,7 +199,8 @@ ACTION_IF zs_debug BEGIN
              NOT "%SOURCE_RES%" STR_EQ ~golbra01~ AND // brain golem
              NOT "%SOURCE_RES%" STR_EQ ~golbur01~ AND // burning man
              NOT "%SOURCE_RES%" STR_EQ ~ohdcdawg~ AND // celestial hound  
-             NOT "%SOURCE_RES%" STR_EQ ~sahbeh01~ AND // spectator
+             NOT "%SOURCE_RES%" STR_EQ ~sahbeh01~ AND // spectator 
+             NOT "%SOURCE_RES%" STR_EQ ~senbeh01~ AND // spectator
              NOT "%SOURCE_RES%" STR_EQ ~uhogre01~ AND // madulf people
              NOT "%SOURCE_RES%" STR_EQ ~uhogre02~ AND // madulf people
              NOT "%SOURCE_RES%" STR_EQ ~uhogre03~ AND // madulf people
@@ -196,8 +208,21 @@ ACTION_IF zs_debug BEGIN
              NOT "%SOURCE_RES%" STR_EQ ~uhogre05~ AND // madulf people
              NOT "%SOURCE_RES%" STR_EQ ~moondog~  AND //  moondog
              NOT "%SOURCE_RES%" STR_EQ ~obsfir05~ AND // hellhound   
+             NOT "%SOURCE_RES%" STR_EQ ~hellho01~ AND // hellhound   
+             NOT "%SOURCE_RES%" STR_EQ ~hellil01~ AND // hellhound   
              NOT "%SOURCE_RES%" STR_EQ ~ohdtmfil~ AND // faerie dragon dorn quest 
-             NOT "%SOURCE_RES%" STR_EQ ~udgolem~
+             NOT "%SOURCE_RES%" STR_EQ ~udgolem~  AND // brain golem
+             NOT "%SOURCE_RES%" STR_EQ ~ohdfaer~  AND // faerie dragon
+             NOT "%SOURCE_RES%" STR_EQ ~finsol01~ AND // amelyssan stuff, it's fine 
+             NOT "%SOURCE_RES%" STR_EQ ~finsol02~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~finsol03~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~hspectr1~ AND //spectral harpist, not a typical undead
+             NOT "%SOURCE_RES%" STR_EQ ~hspectr2~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~hspectr3~ AND 
+             NOT "%SOURCE_RES%" STR_EQ ~ysgp01~   AND
+             NOT "%SOURCE_RES%" STR_EQ ~ysgp02~   AND
+             NOT "%SOURCE_RES%" STR_EQ ~ysgp03~   AND
+             NOT "%SOURCE_RES%" STR_EQ ~ysgp05~
     BEGIN
 
       READ_BYTE 0x271 general
@@ -212,37 +237,49 @@ ACTION_IF zs_debug BEGIN
 
           READ_BYTE 0x27b alignment
 
-          PATCH_IF class      = class_fairy_nereid     AND
+          PATCH_IF class     = class_fairy_nereid     AND
                   alignment != alignmen_chaotic_good  AND
                   alignment != alignmen_chaotic_evil  AND
                   alignment != alignmen_chaotic_neutral 
           BEGIN
               ++matches
               READ_STRREF 0x08 name ELSE "Unknown name"
-              PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned nereid that should be in the chaotic axis: %SOURCE_RES% -- %name%"
+              LOOKUP_IDS_SYMBOL_OF_INT found_race RACE race
+              LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
+              LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
+              LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
+              PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be in the chaotic axis: %SOURCE_RES% -- %name%"
           END
 
-          PATCH_IF class      = class_fairy_sirine    AND
+          PATCH_IF class     = class_fairy_sirine    AND
                   alignment != alignmen_chaotic_neutral 
           BEGIN
             ++matches
             READ_STRREF 0x08 name ELSE "Unknown name"
-            PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned sirine that should be chaotic neutral: %SOURCE_RES% -- %name%"
+            LOOKUP_IDS_SYMBOL_OF_INT found_race RACE race
+            LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
+            LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
+            LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
+            PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be Chaotic Neutral: %SOURCE_RES% -- %name%"
           END  
 
-          PATCH_IF class      = class_fairy_nymph    AND
+          PATCH_IF class     = class_fairy_nymph    AND
                   alignment != alignmen_neutral_good AND
                   alignment != alignmen_chaotic_good
           BEGIN
             ++matches
             READ_STRREF 0x08 name ELSE "Unknown name"
-            PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned nymph that should be chaotic or neutral good: %SOURCE_RES% -- %name%"
+            LOOKUP_IDS_SYMBOL_OF_INT found_race RACE race
+            LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
+            LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
+            LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
+            PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be Neutral Good or Chaotic Good: %SOURCE_RES% -- %name%"
           END  
 
         END
 
         PATCH_IF race = race_mephit OR
-                race = race_salamander 
+                 race = race_salamander 
         BEGIN
           READ_BYTE 0x27b alignment
             PATCH_IF alignment = alignmen_chaotic_good OR
@@ -252,68 +289,75 @@ ACTION_IF zs_debug BEGIN
             BEGIN
                 ++matches
                 READ_STRREF 0x08 name ELSE "Unknown name"
-                PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned mephit or salamander that should not be good: %SOURCE_RES% -- %name%"
+                LOOKUP_IDS_SYMBOL_OF_INT found_race RACE race
+                LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
+                LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
+                LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
+                PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be not good: %SOURCE_RES% -- %name%"
             END
 
         END 
 
         PATCH_IF general = general_undead            OR
-                race    = race_demonic              OR
-                race    = race_antisolar            OR
-                race    = race_beholder             OR
-                race    = race_mind_flayer          OR
-                race    = race_darkplanetar         OR
-                race    = race_drider               OR
-                race    = race_ettercap             OR
-                race    = race_kuo_toa              OR
-                race    = race_lich                 OR
-                race    = race_demilich             OR
-                race    = race_rakshasa             OR
-                race    = race_sahuagin             OR
-                race    = race_shadow               OR
-                race    = race_specter              OR
-                race    = race_spectral_undead      OR
-                race    = race_troll                OR
-                race    = ~%race_will-o-wisp%~      OR
-                race    = race_vampire              OR
-                race    = race_vampyre              OR
-                race    = race_wraith               OR
-                race    = race_ogre                 OR
-                race    = race_chimera              OR
-                race    = race_goblin               OR
-                race    = race_hobgoblin            OR
-                race    = race_kobold               OR
-                race    = race_yuanti               OR
-              //   race    = race_gibberling           OR  // only chaotic evil in 4e and 5e for whatever reason
-                race    = race_skeleton             OR
-                race    = race_gnoll                OR
-                race    = race_ghoul                OR
-                race    = race_orc                  OR
-                race    = race_umberhulk            OR
-                race    = race_zombie               OR
-                race    = race_bugbear              OR
-                race    = race_minotaur             OR
-                race    = race_harpy                OR
-                race    = race_yeti                 OR
-                race    = race_ettin                OR
-                class   = class_worg                OR
-                class   = class_wolf_winter         OR
-                (race = race_spider AND class = class_spider_wraith) AND // wraith undead spiders are evil
-                class   = class_genie_efreeti       OR // all these genies are evil
-                class   = class_genie_noble_efreeti OR
-                class   = class_genie_dao           OR
-                (race    = race_lycanthrope AND class = class_wolfwere) OR // wolfweres are evil
-                (race    = race_dragon AND class != class_silver_dragon) // silver dragons are LG
+                 race    = race_demonic              OR
+                 race    = race_antisolar            OR
+                 race    = race_beholder             OR
+                 race    = race_mind_flayer          OR
+                 race    = race_darkplanetar         OR
+                 race    = race_drider               OR
+                 race    = race_ettercap             OR
+                 race    = race_kuo_toa              OR
+                 race    = race_lich                 OR
+                 race    = race_demilich             OR
+                 race    = race_rakshasa             OR
+                 race    = race_sahuagin             OR
+                 race    = race_shadow               OR
+                 race    = race_specter              OR
+                 race    = race_spectral_undead      OR
+                 race    = race_troll                OR
+                 race    = ~%race_will-o-wisp%~      OR
+                 race    = race_vampire              OR
+                 race    = race_vampyre              OR
+                 race    = race_wraith               OR
+                 race    = race_ogre                 OR
+                 race    = race_chimera              OR
+                 race    = race_goblin               OR
+                 race    = race_hobgoblin            OR
+                 race    = race_kobold               OR
+                 race    = race_yuanti               OR
+                 race    = race_skeleton             OR
+                 race    = race_gnoll                OR
+                 race    = race_ghoul                OR
+                 race    = race_orc                  OR
+                 race    = race_umberhulk            OR
+                 race    = race_zombie               OR
+                 race    = race_bugbear              OR
+                 race    = race_minotaur             OR
+                 race    = race_harpy                OR
+                 race    = race_yeti                 OR
+                 race    = race_ettin                OR
+                 class   = class_worg                OR
+                 class   = class_wolf_winter         OR
+                 (race = race_spider AND class = class_spider_wraith) AND // wraith undead spiders are evil
+                 class   = class_genie_efreeti       OR // all these genies are evil
+                 class   = class_genie_noble_efreeti OR
+                 class   = class_genie_dao           OR
+                 (race    = race_lycanthrope AND class = class_wolfwere) OR // wolfweres are evil
+                 (race    = race_dragon AND class != class_silver_dragon) // silver dragons are LG
         BEGIN
 
             READ_BYTE 0x27b alignment
             PATCH_IF alignment != alignmen_chaotic_evil AND
-                    alignment != alignmen_lawful_evil  AND
-                    alignment != alignmen_neutral_evil 
+                     alignment != alignmen_lawful_evil  AND
+                     alignment != alignmen_neutral_evil 
             BEGIN
                 ++matches
                 READ_STRREF 0x08 name ELSE "Unknown name"
-                PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned creature that should be evil: %SOURCE_RES% -- %name%"
+                LOOKUP_IDS_SYMBOL_OF_INT found_race RACE race
+                LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
+                LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
+                LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
+                PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be evil: %SOURCE_RES% -- %name%"
             END
 
         END 
@@ -321,10 +365,10 @@ ACTION_IF zs_debug BEGIN
         ELSE
 
         PATCH_IF race  = race_planetar      OR
-                race  = race_solar         OR
-                (race = race_genie          AND
+                 race  = race_solar         OR
+                (race  = race_genie         AND
                 (class = class_genie_djinni OR
-                class = class_genie_noble_djinni))
+                 class = class_genie_noble_djinni))
         BEGIN
             READ_BYTE 0x27b alignment
             PATCH_IF alignment != alignmen_chaotic_good AND
@@ -333,7 +377,11 @@ ACTION_IF zs_debug BEGIN
             BEGIN
                 ++matches
                 READ_STRREF 0x08 name ELSE "Unknown name"
-                PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned creature that should be good: %SOURCE_RES% -- %name%"
+                LOOKUP_IDS_SYMBOL_OF_INT found_race RACE race
+                LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
+                LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
+                LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
+                PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be good: %SOURCE_RES% -- %name%"
             END
         END
 
@@ -355,7 +403,7 @@ ACTION_IF zs_debug BEGIN
                   race    = race_mimic           OR
                   race    = race_otyugh          OR
                   race    = race_shambling_mound OR
-                  race    = race_statue          OR
+               //   race    = race_statue          OR // probably should just be unaligned
                   race    = race_shrieker        OR
                   race    = race_slime           OR
                   race    = race_treant          OR
@@ -373,7 +421,11 @@ ACTION_IF zs_debug BEGIN
           BEGIN
               ++matches
               READ_STRREF 0x08 name ELSE "Unknown name"
-              PATCH_PRINT "[DEBUG][INFO]: Found a possibly misaligned creature that should be neutral: %SOURCE_RES% -- %name%"
+              LOOKUP_IDS_SYMBOL_OF_INT found_race RACE race
+              LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
+              LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
+              LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
+              PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be neutral: %SOURCE_RES% -- %name%"
             END
         END
 

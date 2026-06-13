@@ -113,9 +113,12 @@ ACTION_IF zs_allow_prefixes BEGIN
             COPY_EXISTING ~trgeni01.cre~ ~override~
                           ~trgeni02.cre~ ~override~
                           ~trgeni03.cre~ ~override~
-                WRITE_BYTE 0x273 class_genie_dao 
-            
+                WRITE_BYTE 0x273 class_genie_dao
 
+            PRINT "[INFO]: Making the enslaved djinni in hell tagged as noble djinni instead of noble efreeti"
+            COPY_EXISTING ~hellgen.cre~ ~override~
+                WRITE_BYTE 0x273 class_genie_noble_djinni  
+            
             ACTION_IF FILE_EXISTS_IN_GAME ~c2kit.cre~ BEGIN
                 PRINT "[INFO]: Setting Item Upgrade's Improved Kitthix to Spider Huge class instead of Spider Sword, just like normal Kitthix"
                 COPY_EXISTING ~c2kit.cre~ ~override~
