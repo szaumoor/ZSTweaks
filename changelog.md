@@ -11,16 +11,8 @@
 - Fixed Helm of Balduran regeneration not working due to missing resource
 - Updated several outdated entries in the component_readme.md file
 - Added prefix to fix any wraith spiders that aren't marked undead (they are undead according to lore, they're normally just tagged as 'Monsters', with undead immunities, and as such aren't affected by things that target undead)
-- Vastly extended the Oversight++ component that fixes improper alignments. New changes:
-  - Spiders are all true neutral except Wraith ones which are undead evil spiders.
-  - Many instances of undead creatures weirdly not marked as evil (skeletons, zombies, ghouls) fixed
-  - Lizardfolk are now set to Neutral
-  - Invisible Stalkers no longer marked as evil, since they're neutral elementals from the Plane of Air
-  - The Huntress (WK) is a humanoid tanar'ri marked as True Neutral. Changed to Neutral Evil
-  - Other minor creatures unused or used in cutscenes also fixed just in case such as non evil vampires, alu-fiend, liches, and mindflayers
-  - Lanfear wolfwere in chapter 6 of BG2 (Coran's minor quest) changed to Chaotic Evil (they're CE according to lore)
-  - Clay Golem in Planar Sphere marked as Chaotic Good → Neutral
-  - Aataqah is changed to Chaotic Good from Lawful Neutral. Lorewise they're whimsy but benevolent genies (in contrast with efreet).
+- Added prefix to set driders to the race of driders, and Korax the Ghoul to the race of ghoul
+- Character Stat overhaul now fixes creatures with CON tables if Constitution overhaul is picked, so they don't die due to health loss in the case of very low HP and CON
 
 ## Modifications
 
@@ -40,6 +32,17 @@
 - Girdle of Fortitude now other than setting the user's constitution to 18, it also has a charge ability once per day that buffs a target of their choice (other than self) with +2 CON, Save vs. Death, and +5 maximum HP.
 - Handmaiden's Mace +2 now overhauled more deeply with the poison theme. It also no longer has racial or alignment restrictions.
 - Implementation of Handmaiden's now no longer requires it to be installed at the end, and as such it now belongs in the Joinables category.
+- Every single prefix is now toggleable by using the new configuration file <zstweaks_prefixes.txt>
+- Vastly extended the Oversight++ component that fixes improper alignments according to lore... or what makes the most sense to me. New changes:
+  - Spiders are all true neutral except Wraith ones which are undead evil spiders.
+  - Many many (MANY) instances of undead creatures not marked as evil (skeletons, zombies, ghouls) are not evil. Skeletons and zombies are considered neutral in 2e as mindless automatons, but I don't really vibe with that, so I adopt the change from 3e, which is that they're neutral evil, similar to Skeleton Warriors. Rejoice, as Protection vs. Evil will serve a purpose against them now.
+  - Lizardfolk are now set to Neutral barring exceptions like the Lizard King in IWD who does very questionable stuff
+  - Invisible Stalkers no longer marked as evil, since they're neutral elementals from the Plane of Air
+  - The Huntress (WK) is a humanoid tanar'ri marked as True Neutral. Changed to Chaotic Evil
+  - Other minor creatures unused or used in cutscenes also fixed just in case such as non evil vampires, alu-fiend, liches, and mindflayers
+  - Lanfear wolfwere in chapter 6 of BG2 (Coran's minor quest) changed to Chaotic Evil (they're CE according to lore)
+  - Instances of golems that are good, or evil fixed except brain golems which are evil.
+  - Aataqah is changed to Chaotic Good from Lawful Neutral. Lorewise they're whimsy but benevolent genies (in contrast with efreeti).
 
 ## New Components
 
