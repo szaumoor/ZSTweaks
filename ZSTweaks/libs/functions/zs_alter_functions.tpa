@@ -494,6 +494,9 @@ INT_VAR
     max_health     = "-1"
     class          = "-1"
     alignment      = "-1"
+    race           = "-1"
+    class          = "-1"
+    general        = "-1"
 STR_VAR
     dialog = ~none~
 BEGIN
@@ -542,7 +545,25 @@ BEGIN
     PATCH_IF alignment > "-1" AND alignment <= 255 BEGIN
         WRITE_BYTE 0x27b alignment
     END ELSE PATCH_IF alignment < "-1" BEGIN
-        PATCH_FAIL "[FAIL]: Passed an out-of-bounds value to thac0 (valid values are between 0 to 255)"
+        PATCH_FAIL "[FAIL]: Passed an out-of-bounds value to alignment (valid values are between 0 to 255)"
+    END
+
+    PATCH_IF general > "-1" AND general <= 255 BEGIN
+        WRITE_BYTE 0x271 general
+    END ELSE PATCH_IF general < "-1" BEGIN
+        PATCH_FAIL "[FAIL]: Passed an out-of-bounds value to general (valid values are between 0 to 255)"
+    END
+
+    PATCH_IF race > "-1" AND race <= 255 BEGIN
+        WRITE_BYTE 0x272 race
+    END ELSE PATCH_IF race < "-1" BEGIN
+        PATCH_FAIL "[FAIL]: Passed an out-of-bounds value to race (valid values are between 0 to 255)"
+    END
+
+    PATCH_IF class > "-1" AND class <= 255 BEGIN
+        WRITE_BYTE 0x273 class
+    END ELSE PATCH_IF class < "-1" BEGIN
+        PATCH_FAIL "[FAIL]: Passed an out-of-bounds value to race (valid values are between 0 to 255)"
     END
 
     PATCH_IF NOT "%dialog%" STR_EQ "none" BEGIN
