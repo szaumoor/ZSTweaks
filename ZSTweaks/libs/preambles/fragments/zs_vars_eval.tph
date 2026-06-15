@@ -7,21 +7,189 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         // -------------------------------------------------------------------------------------------------------- \\
 
-        ACTION_IF zst_gender_fix != 0 AND zst_gender_fix != 1 BEGIN
-            WARN "[WARN]: Gender fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_gender_fix%"
+        ACTION_IF crash_if_var_errors_found != 0 AND crash_if_var_errors_found != 1 BEGIN
+            FAIL "[FAIL]: Crash if var errors found should be set to 0 (disable) or 1 (enable). Actual value: %crash_if_var_errors_found%"
             LAM f_plus
         END
+
+        // --------------------------------------------PREFIXES---------------------------------------------------- \\
 
         ACTION_IF zs_allow_prefixes != 0 AND zs_allow_prefixes != 1 BEGIN
             WARN "[WARN]: Allow prefixes should be set to 0 (disable) or 1 (enable). Actual value: %zs_allow_prefixes%"
             LAM f_plus
         END
 
-        ACTION_IF crash_if_var_errors_found != 0 AND crash_if_var_errors_found != 1 BEGIN
-            FAIL "[FAIL]: Crash if var errors found should be set to 0 (disable) or 1 (enable). Actual value: %crash_if_var_errors_found%"
+        ACTION_IF zst_gender_fix != 0 AND zst_gender_fix != 1 BEGIN
+            WARN "[WARN]: Gender fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_gender_fix%"
             LAM f_plus
         END
 
+        ACTION_IF zst_simulacra_fix != 0 AND zst_simulacra_fix != 1 BEGIN
+            WARN "[WARN]: Simulacra fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_simulacra_fix%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_phantom_blade_dmg != 0 AND zst_phantom_blade_dmg != 1 BEGIN
+            WARN "[WARN]: Phantom Blade Dmg fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_phantom_blade_dmg%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_wraith_spid_undead != 0 AND zst_wraith_spid_undead != 1 BEGIN
+            WARN "[WARN]: Wraith Spider Undead fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_wraith_spid_undead%"
+            LAM f_plus
+        END
+
+
+        ACTION_IF zst_eefp_unfix_blackrazor_bbod != 0 AND zst_eefp_unfix_blackrazor_bbod != 1 BEGIN
+            WARN "[WARN]: EEFP bug in Blackrazor and BBOD should be set to 0 (disable) or 1 (enable). Actual value: %zst_eefp_unfix_blackrazor_bbod%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_shadow_twin_duration != 0 AND zst_shadow_twin_duration != 1 BEGIN
+            WARN "[WARN]: Shadow Twin fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_shadow_twin_duration%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_sd_thac0_bug != 0 AND zst_sd_thac0_bug != 1 BEGIN
+            WARN "[WARN]: Shadowdancer THAC0 fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_sd_thac0_bug%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_bonecir != 0 AND zst_bonecir != 1 BEGIN
+            WARN "[WARN]: #bonecir.spl fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_bonecir%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_drider != 0 AND zst_drider != 1 BEGIN
+            WARN "[WARN]: Drider race fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_drider%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_phantom_chaotic_dur != 0 AND zst_phantom_chaotic_dur != 1 BEGIN
+            WARN "[WARN]: Chaotic Commands and Phantom Blade duration fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_phantom_chaotic_dur%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_nish_hake_race != 0 AND zst_nish_hake_race != 1 BEGIN
+            WARN "[WARN]: Nishruu and Hakeashar race fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_nish_hake_race%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_genie_races != 0 AND zst_genie_races != 1 BEGIN
+            WARN "[WARN]: Genie race fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_genie_races%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_firkraag_animal != 0 AND zst_firkraag_animal != 1 BEGIN
+            WARN "[WARN]: Firkraag general fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_firkraag_animal%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_wa2plat_fix != 0 AND zst_wa2plat_fix != 1 BEGIN
+            WARN "[WARN]: Plate of Balduran fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_wa2plat_fix%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_dryad_race != 0 AND zst_dryad_race != 1 BEGIN
+            WARN "[WARN]: Dryad race fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_dryad_race%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_gas_pocket != 0 AND zst_gas_pocket != 1 BEGIN
+            WARN "[WARN]: Gas pocket fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_gas_pocket%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_lilarcor_speed_factor != 0 AND zst_lilarcor_speed_factor != 1 BEGIN
+            WARN "[WARN]: Lilarcor speed factor fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_lilarcor_speed_factor%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_wakininja_animations != 0 AND zst_wakininja_animations != 1 BEGIN
+            WARN "[WARN]: Wakizashi and Ninjatô animation fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_wakininja_animations%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_misaligned != 0 AND zst_misaligned != 1 BEGIN
+            WARN "[WARN]: Misaligned index fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_misaligned%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_dagg24 != 0 AND zst_dagg24 != 1 BEGIN
+            WARN "[WARN]: Wrong weight for dagger+3 fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_dagg24%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_shakti != 0 AND zst_shakti != 1 BEGIN
+            WARN "[WARN]: Wrong speed factor for Shakti short swords fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_shakti%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_ogre_sword != 0 AND zst_ogre_sword != 1 BEGIN
+            WARN "[WARN]: Ogre Sword fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_ogre_sword%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_cutthroat_sf != 0 AND zst_cutthroat_sf != 1 BEGIN
+            WARN "[WARN]: Cutthroat speed factor fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_cutthroat_sf%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_golem_jugg != 0 AND zst_golem_jugg != 1 BEGIN
+            WARN "[WARN]: Golem Juggernaut race standardization should be set to 0 (disable) or 1 (enable). Actual value: %zst_golem_jugg%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_greater_clay_golem != 0 AND zst_greater_clay_golem != 1 BEGIN
+            WARN "[WARN]: Greater Clay Golem fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_greater_clay_golem%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_aesgareth_enemies != 0 AND zst_aesgareth_enemies != 1 BEGIN
+            WARN "[WARN]: Aesgareth enemies fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_aesgareth_enemies%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_thieves_wrong_profs != 0 AND zst_thieves_wrong_profs != 1 BEGIN
+            WARN "[WARN]: Thieves with wrong proficiencies or weapons fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_thieves_wrong_profs%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_minotaur_race_fix != 0 AND zst_minotaur_race_fix != 1 BEGIN
+            WARN "[WARN]: Minotaur race fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_minotaur_race_fix%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_korax_race != 0 AND zst_korax_race != 1 BEGIN
+            WARN "[WARN]: Korax the Ghoul race fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_korax_race%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_riggilo != 0 AND zst_riggilo != 1 BEGIN
+            WARN "[WARN]: Riggilo proficiency fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_riggilo%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_shadows_spells_bug != 0 AND zst_shadows_spells_bug != 1 BEGIN
+            WARN "[WARN]: Shadows with arcane spells fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_shadows_spells_bug%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_invistalkers_race != 0 AND zst_invistalkers_race != 1 BEGIN
+            WARN "[WARN]: Invisible Stalker race fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_invistalkers_race%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_darts_bone != 0 AND zst_darts_bone != 1 BEGIN
+            WARN "[WARN]: Darts of bone speed factor fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_darts_bone%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_shambling_mounds != 0 AND zst_shambling_mounds != 1 BEGIN
+            WARN "[WARN]: Shambling mounds race fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_shambling_mounds%"
+            LAM f_plus
+        END
+        
         // ----------------------------------------SYMBOL X SPELLS------------------------------------------------- \\
 
         OUTER_SET valid_death_x = zst_443_death != 0 AND zst_443_death != 1
@@ -2905,6 +3073,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         ACTION_IF zst_group_1388_arrow_acid != 0 AND zst_group_1388_arrow_acid != 1 BEGIN
             WARN "[WARN]: Arrow of Acid group component should be set to 1 or 0. Actual value: %zst_group_1388_arrow_acid%"
+            LAM f_plus
+        END
+   
+        ACTION_IF zst_group_1011_basic_ammo_price != 0 AND zst_group_1011_basic_ammo_price != 1 BEGIN
+            WARN "[WARN]: Basic Ammo Price group component should be set to 1 or 0. Actual value: %zst_group_1011_basic_ammo_price%"
             LAM f_plus
         END
 

@@ -24,18 +24,6 @@ ACTION_IF zs_allow_prefixes BEGIN
 
         END
 
-        ACTION_IF zst_skel_summon_alignment BEGIN
-
-            PRINT "[INFO]: Turning summoned skeleton warriors to True Neutral, as pretty much every other skeleton (2e). Oversight component (3010) will undo this, as I make all skellies evil"
-            COPY_EXISTING ~skelsu01.cre~ ~override~
-                          ~skelsu07.cre~ ~override~
-                          ~skelsu11.cre~ ~override~
-                          ~skelsu15.cre~ ~override~
-                LPF ALTER_CRE INT_VAR alignment = alignmen_neutral END
-            IF_EXISTS
-
-        END
-
         ACTION_IF zst_wraith_spid_undead BEGIN
 
             PRINT "[INFO]: Wraith Spiders should be classified as Undead"

@@ -13,9 +13,6 @@ OUTER_SET zst_simulacra_fix = "1"
 // Fixes the issue of phantom blade's extra damage waking up sleeper, avoiding an issue if the weapon uses a melee effect that causes sleep
 OUTER_SET zst_phantom_blade_dmg = "1"
 
-// changes summoned undead through animate dead to True Neutral, as every other skeleton in the game (pretty much)
-OUTER_SET zst_skel_summon_alignment = "1"
-
 // turns wraith spiders to properly undead as per lore
 OUTER_SET zst_wraith_spid_undead = "1"
 
@@ -65,7 +62,6 @@ OUTER_SET zst_wakininja_animations = "1"
 
 // fix for misaligned indexes in staff and dwarven thrower. Fixes some installation errors that happen sometimes.
 OUTER_SET zst_misaligned = "1"
-
 
 // odd dagger +3 with wrong weight
 OUTER_SET zst_dagg24 = "1"
