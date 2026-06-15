@@ -1,0 +1,124 @@
+OUTER_SET zs_allow_prefixes = "1" // leave at 1 (ON) to fix various issues, including things that are required to ensure functionality of some components. Change at your own risk, I don't recommend it and I probably won't help if there's a problem with this off.
+
+// Bear in mind some prefixes will not run anyway if the fixpack already fixes them or if it doesn't apply, so don't expect everything turned on to always run.
+
+////////////////////////////// Pre-fixes \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// In vanilla game, many creatures are inappropriately set to 'male' (never female, I wonder why?) even though they should be completely independent of it, such as golems, statues, mists, fungus, slimes, mind flayers... all of them are according to the lore, sexless and genderless creatures. This interferes with opcodes that target based on gender/sex, leading to results that will be anything but logical. It is recommended to leave this on if you're planning on installing something that targets "gender" of male or female, such as my Shar-Teel component
+OUTER_SET zst_gender_fix = "1" 
+
+// fixes the issue of simulacra not being able to use all thieving abilities
+OUTER_SET zst_simulacra_fix = "1"
+
+// Fixes the issue of phantom blade's extra damage waking up sleeper, avoiding an issue if the weapon uses a melee effect that causes sleep
+OUTER_SET zst_phantom_blade_dmg = "1"
+
+// changes summoned undead through animate dead to True Neutral, as every other skeleton in the game (pretty much)
+OUTER_SET zst_skel_summon_alignment = "1"
+
+// turns wraith spiders to properly undead as per lore
+OUTER_SET zst_wraith_spid_undead = "1"
+
+// fixes the unfix from the fixpack that makes the benefits to the user when hitting with blackrazor and black blade of disaster apply to the enemy instead of the user
+OUTER_SET zst_eefp_unfix_blackrazor_bbod = "1" 
+
+// fixes the shadowdancer shadow twin duration (2 turns instead of 1)
+OUTER_SET zst_shadow_twin_duration = "1"
+
+// fixes the bug with vanilla shadowdancer where they take a -5 thac0 penalty when using weapons without proficiency instead of 3 as the other thieves
+OUTER_SET zst_sd_thac0_bug = "1"
+
+// fixes the broken #bonecir.spl file in IWD which sometimes causes installation failures when parsing FILE_EXISTS_IN_GAME
+
+OUTER_SET zst_bonecir = "1"
+
+// makes sure every drider in the games (vanilla and anything else I've found in mods) is actually set race-wise to Drider instead of other things like spiders
+
+OUTER_SET zst_drider = "1"
+
+// fixes the scaling of phantom's blade and chaotic commands duration
+OUTER_SET zst_phantom_chaotic_dur = "1"
+
+// fixes nishruu and Hakeashar being identified as ogre mages instead of mists and monsters
+OUTER_SET zst_nish_hake_race = "1"
+
+// fixes various genies being identified incorrectly racewise, such as trademeet genies (they're dao, not djinni)
+OUTER_SET zst_genie_races = "1"
+
+// human firkraag set to animal instead of monster
+OUTER_SET zst_firkraag_animal = "1"
+
+// plate of balduran fixes
+OUTER_SET zst_wa2plat_fix = "1"
+
+// some dryads not being set as fairies racewise (might be unused)
+OUTER_SET zst_dryad_race = "1"
+
+// gas pocket "beholder", set as plant as they need be (unused probably)
+OUTER_SET zst_gas_pocket = "1"
+
+// fix for wrong lilarcor speed factor
+OUTER_SET zst_lilarcor_speed_factor = "1"
+
+// standardizes animations of ninjatos and wakizashis. WARNING: this is REQUIRED for some components to detect those weapons consistently 
+OUTER_SET zst_wakininja_animations = "1"
+
+// fix for misaligned indexes in staff and dwarven thrower. Fixes some installation errors that happen sometimes.
+OUTER_SET zst_misaligned = "1"
+
+
+// odd dagger +3 with wrong weight
+OUTER_SET zst_dagg24 = "1"
+
+// shakti short sword incorrect speed factor
+OUTER_SET zst_shakti = "1"
+
+// the ogre sword (Aerie's initial quest) incorrect statues
+OUTER_SET zst_ogre_sword = "1"
+
+// cutthroat +4 incorrect speed factor
+OUTER_SET zst_cutthroat_sf = "1"
+
+// golem juggernaut standardizes to stone golem
+OUTER_SET zst_golem_jugg = "1"
+
+// greater clay golem is a clay golem racewise
+OUTER_SET zst_greater_clay_golem = "1"
+
+// aesgareth enemies set to "weapon" instead of "humanoid"
+OUTER_SET zst_aesgareth_enemies = "1"
+
+// thieves using wrong weapons or weapons without proficiencies
+OUTER_SET zst_thieves_wrong_profs = "1"
+
+// minotaurs set to races other than minotaur fix
+OUTER_SET zst_minotaur_race_fix = "1"
+
+// green dragons not using the right class
+OUTER_SET zst_green_dragons = "1"
+
+// water elementals not using the right class
+OUTER_SET zst_water_elementals = "1"
+
+// patches korax the ghoul so it's set to ghoul 
+OUTER_SET zst_korax_race = "1"
+
+// fixing Riggilo in BGEE (Durlag Tower thief) so it uses short sword with proficiency
+OUTER_SET zst_riggilo = "1"
+
+// fixing shadow creatures having an array of wizard spells by mistake
+OUTER_SET zst_shadows_spells_bug = "1"
+
+// fixing some invisible stalkers that need to be set as air elementals
+OUTER_SET zst_invistalkers_race = "1"
+
+// darts of bone wrong speed factor (should be zero)
+OUTER_SET zst_darts_bone = "1"
+
+// fixes shambling mounds race/general so they are considered plants and shambling mounds race-wise
+OUTER_SET zst_shambling_mounds = "1"
+
+
+
+
+
