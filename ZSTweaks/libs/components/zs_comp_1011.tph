@@ -1,0 +1,12 @@
+COPY_EXISTING ~arow01.itm~ ~override~
+              ~bolt01.itm~ ~override~
+              ~dart01.itm~ ~override~
+              ~bull01.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR price=1 END
+
+COPY_EXISTING ~dagg05.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR price=2 END
+
+COPY_EXISTING ~dagg16.itm~ ~override~
+              ~ax1h04.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR price=3 END

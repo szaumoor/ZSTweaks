@@ -60,3 +60,4 @@
 - Make Hold Animal much more useful by allowing it to affect many other types of beasts (xxxx) (BGEE BG2EE EET) (TODO)
 - Make familiars use female voices for casting spells (3165) (IWDEE BGEE BG2EE EET)
 - Make succubi use the winged elf animation instead of a sirine (3170) (BGEE BG2EE EET)
+- Make basic ammunition more expensive (xxxx) (IWDEE BGEE BG2EE EET)

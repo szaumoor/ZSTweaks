@@ -47,3 +47,7 @@ END
 ACTION_IF zst_group_1388_arrow_acid BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1388.tph~ END
 END
+
+ACTION_IF zst_group_1011_basic_ammo_price BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1011.tph~ END
+END
