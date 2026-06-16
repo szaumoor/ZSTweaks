@@ -207,9 +207,9 @@ Support for mod-added items with vorpal effects can be added upon request. Addit
 This component overhauls character stats for a more streamlined progression and interesting choices. All tweaks are enabled by default.
 
 - **Constitution**:
-  - **HP Bonus**: Progression is streamlined. Starts at 12 CON and grants +1 HP every 2 points, up to +7 HP at 24/25 CON. Non-Fighters benefit more slowly, gaining up to +4 HP at 20 CON. HP penalties start at 8 CON.
+  - **HP Bonus**: Progression is streamlined. Starts at 12 CON and grants +1 HP every 2 points, up to +7 HP at 24/25 CON. Non-Fighters get benefits once per 3 points instead, gaining up to +5 HP at 24 CON. HP penalties start at 8 CON. This will also patch creatures that would die with their current HP if their Constitution is too low.
   - **Regeneration**: Generally toned down but starts earlier: at 18 CON regenerate 1 HP / 5 turns, improving up to 1 HP / turn at 25 CON.
-  - **Fatigue**: Fatigue bonuses start at 12 CON instead of 16.
+  - **Fatigue**: Fatigue bonuses start at 13 CON instead of 16 and penalties start at 9 CON. Imoen will get tired faster than others, as a result.
 - **Dexterity**: AC and Ranged THAC0 bonuses are streamlined. The +7 bonus is now only achieved at 25 DEX. Penalties now begin at 9 DEX.
 - **Lore**:
   - **By Class**: Mages get +5/level, Thieves +4/level, Clerics/Shamans/Druids +3/level, and Paladins/Rangers +2/level. Fighters are unchanged (1 per level) and bards get a reduced 8 lore per level.
@@ -2319,7 +2319,7 @@ Thieves are almost always used in multiclass because that is vastly superior to 
 
 </summary>
 
-### Make inappropriately aligned creatures in BG2 more correct (3010) (BG2EE EET)
+### Make inappropriately aligned creatures more correct (3010) (BG2EE EET)
 
 This is a more accurate alignment revision than Oversight's component, with a wider scope, specifically aimed at the state of this issue in the latest version of BG2EE. A huge chunk of the alignment corrections in that component no longer apply, and some of them differ from BeamDog's correction. I left BD's corrections in place as long as they made sense, and I did not include edits that made no sense to me. For example:
 
@@ -2336,6 +2336,7 @@ Additionally, I added corrections to many other creatures that I found were misa
 - All types of spiders are also neutral, including sword spiders which are considered in 2e chaotic evil (for some reason), with the lone exception of wraith spiders, which are undead evil spiders.
 - I ensured outer planar creatures that are more or less "alignment-locked" follow their pattern. For example, djinni are chaotic good, and as such Aataqah had its alignment correct from Lawful Neutral.
 - Wofweres are chaotic evil, I corrected Lanfear for example, in Chapter 6 of BG2 (Coran's quest), which was Chaotic Neutral.
+- Constructs in BGEE like Battle Horrors could be set as evil even though they're golem-like and neutral
 
 ### Make summoned demons grant XP to the party when they kill something (3020) (IWDEE BGEE BG2EE EET)
 

@@ -46,6 +46,10 @@
   - Instances of golems that are good, or evil fixed except brain golems which are evil.
   - Aataqah is changed to Chaotic Good from Lawful Neutral. Lorewise they're whimsy but benevolent genies (in contrast with efreeti).
   - Also patches various creatures added by existing mods before installation of this one (all manually picked, so don't expect consistency for every and any mod)
+  - Grease component now also adds a -2 Armor Class debuff (TODO)
+- Slightly changed the bonus constitution progression:
+  - Nonfighters add 1 bonus HP per 3 points, starting at 12 with 1, 15 with 2, etc, and now can progress up to +5 if they have at least 24 constitution. Fighters always have advantage and can reach +7, as before.
+  - Fatigue bonus progression slightly changed so it starts giving bonus at 13 instead of 12, in order to offer a bonus with odd number of constitution points, and smooth out progression.
 
 ## New Components
 
