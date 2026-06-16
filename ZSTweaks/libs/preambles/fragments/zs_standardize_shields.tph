@@ -70,8 +70,11 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
                     PATCH_IF NOT "%SOURCE_RES%" STR_EQ ~bdmisc10~ AND // flute
                     NOT "%SOURCE_RES%" STR_EQ ~bdmisc10~ AND
                     NOT "%SOURCE_RES%" STR_EQ ~l#kubok3~ AND
-                    NOT "%SOURCE_RES%" STR_EQ ~l0drum~ AND
-                    NOT "%SOURCE_RES%" STR_EQ ~lyre~ AND
+                    NOT "%SOURCE_RES%" STR_EQ ~l0drum~   AND
+                    NOT "%SOURCE_RES%" STR_EQ ~lyre~     AND 
+                    NOT "%SOURCE_RES%" STR_EQ ~l#kobi1~  AND
+                    NOT "%SOURCE_RES%" STR_EQ ~l#shoi4~  AND
+                    NOT "%SOURCE_RES%" STR_EQ ~l#zsod7~  AND
                     NOT "%SOURCE_RES%" STR_EQ ~rr#lyre~
                     BEGIN 
                         PATCH_PRINT "[DEBUG][INFO]: Incorrect shield strref found at shield category: %SOURCE_RES%"
