@@ -121,6 +121,14 @@ ACTION_IF zs_allow_prefixes BEGIN
 
             END
 
+            ACTION_IF zst_chimeras BEGIN
+
+                PRINT "[INFO]: Setting Lava's chimeras to the race of chimera"
+                    COPY_EXISTING ~l#kuchim.cre~ ~override~
+                        LPF ALTER_CRE INT_VAR race = race_chimera END
+
+            END
+
         END
 
         ACTION_IF NOT is_iwdee BEGIN
@@ -464,13 +472,27 @@ ACTION_IF zs_allow_prefixes BEGIN
 
         ACTION_IF is_bgee_or_eet BEGIN
 
-            ACTION_IF includes_sod AND zst_drider BEGIN
+            ACTION_IF includes_sod BEGIN
 
-                PRINT "[INFO]: Patching SoD driders so they actually have the Drider race instead of Spider"
-                COPY_EXISTING ~bddridr1.cre~ ~override~
-                              ~bddridrf.cre~ ~override~
-                              ~bddridrm.cre~ ~override~
-                    LPF ALTER_CRE INT_VAR race=race_drider END
+                ACTION_IF zst_drider BEGIN
+
+                    PRINT "[INFO]: Patching SoD driders so they actually have the Drider race instead of Spider"
+                    COPY_EXISTING ~bddridr1.cre~ ~override~
+                                ~bddridrf.cre~ ~override~
+                                ~bddridrm.cre~ ~override~
+                        LPF ALTER_CRE INT_VAR race=race_drider END
+
+                END
+
+
+                ACTION_IF zst_albino_wyrms BEGIN
+                    
+                    PRINT "[INFO]: Patching Blind Albino Wyrmlings so they actually have the Dragon race and Silver Dragon class instead of Wyvern for both (I smell copy paste, BeamDog!)"
+                    COPY_EXISTING ~bdwyrml1.cre~ ~override~
+                                ~bdwyrmli.cre~ ~override~
+                        LPF ALTER_CRE INT_VAR race=race_dragon class=class_silver_dragon END
+
+                END
                 
             END 
 

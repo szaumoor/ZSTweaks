@@ -12,6 +12,8 @@
 - Updated several outdated entries in the component_readme.md file
 - Added prefix to fix any wraith spiders that aren't marked undead (they are undead according to lore, they're normally just tagged as 'Monsters', with undead immunities, and as such aren't affected by things that target undead)
 - Added prefix to set driders to the race of driders, and Korax the Ghoul to the race of ghoul
+- Added prefix to fix the Blind Albino Wyrmlings's race and class since they're set to wyverns instead of dragon (copy paste gone wrong, I'm sure)
+- Added prefix to fix an instance of Chimera in IWD's Lava mod with the wrong race
 - Character Stat overhaul now fixes creatures with CON tables if Constitution overhaul is picked, so they don't die due to health loss in the case of very low HP and CON
 
 ## Modifications
@@ -43,6 +45,7 @@
   - Lanfear wolfwere in chapter 6 of BG2 (Coran's minor quest) changed to Chaotic Evil (they're CE according to lore)
   - Instances of golems that are good, or evil fixed except brain golems which are evil.
   - Aataqah is changed to Chaotic Good from Lawful Neutral. Lorewise they're whimsy but benevolent genies (in contrast with efreeti).
+  - Also patches various creatures added by existing mods before installation of this one (all manually picked, so don't expect consistency for every and any mod)
 
 ## New Components
 
@@ -60,4 +63,4 @@
 - Make Hold Animal much more useful by allowing it to affect many other types of beasts (xxxx) (BGEE BG2EE EET) (TODO)
 - Make familiars use female voices for casting spells (3165) (IWDEE BGEE BG2EE EET)
 - Make succubi use the winged elf animation instead of a sirine (3170) (BGEE BG2EE EET)
-- Make basic ammunition more expensive (xxxx) (IWDEE BGEE BG2EE EET)
+- Make basic ammunition more expensive (1011) (IWDEE BGEE BG2EE EET)

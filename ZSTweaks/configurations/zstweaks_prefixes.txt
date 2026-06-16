@@ -114,7 +114,5 @@ OUTER_SET zst_darts_bone = "1"
 // fixes shambling mounds race/general so they are considered plants and shambling mounds race-wise
 OUTER_SET zst_shambling_mounds = "1"
 
-
-
-
-
+// fixes the wyrmlings in sod so they are not tagged as wyverns but dragons (silver)
+OUTER_SET zst_albino_wyrms = "1"
