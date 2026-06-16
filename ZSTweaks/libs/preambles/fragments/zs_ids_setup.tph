@@ -46,6 +46,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET race_orc             = IDS_OF_SYMBOL(race ORC)
     OUTER_SET race_otyugh          = IDS_OF_SYMBOL(race OTYUGH)
     OUTER_SET race_planetar        = IDS_OF_SYMBOL(race PLANATAR)
+    OUTER_SET race_rabbit          = IDS_OF_SYMBOL(race RABBIT)
     OUTER_SET race_rakshasa        = IDS_OF_SYMBOL(race RAKSHASA)
     OUTER_SET race_sahuagin        = IDS_OF_SYMBOL(race SAHUAGIN)
     OUTER_SET race_salamander      = IDS_OF_SYMBOL(race SALAMANDER)

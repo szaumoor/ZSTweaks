@@ -116,3 +116,6 @@ OUTER_SET zst_shambling_mounds = "1"
 
 // fixes the wyrmlings in sod so they are not tagged as wyverns but dragons (silver)
 OUTER_SET zst_albino_wyrms = "1"
+
+// poor race-less rabbits fixed
+OUTER_SET zst_not_the_rabbits = "1"

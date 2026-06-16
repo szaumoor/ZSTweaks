@@ -471,6 +471,14 @@ ACTION_IF zs_allow_prefixes BEGIN
         END
 
         ACTION_IF is_bgee_or_eet BEGIN
+            
+            ACTION_IF zst_not_the_rabbits BEGIN
+                
+                PRINT "[INFO]: Fixing rabbit's lack of race. Oh noes."
+                COPY_EXISTING ~rabbit.cre~   ~override~
+                    LPF ALTER_CRE INT_VAR race = race_rabbit END
+
+            END
 
             ACTION_IF includes_sod BEGIN
 
@@ -486,7 +494,7 @@ ACTION_IF zs_allow_prefixes BEGIN
 
 
                 ACTION_IF zst_albino_wyrms BEGIN
-                    
+
                     PRINT "[INFO]: Patching Blind Albino Wyrmlings so they actually have the Dragon race and Silver Dragon class instead of Wyvern for both (I smell copy paste, BeamDog!)"
                     COPY_EXISTING ~bdwyrml1.cre~ ~override~
                                 ~bdwyrmli.cre~ ~override~
