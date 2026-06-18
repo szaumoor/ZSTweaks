@@ -34,11 +34,11 @@
 - Darkfire Bow component now increases APR too by 1/2 for the non-upgraded and 1 for the upgraded
 - Girdle of Fortitude now other than setting the user's constitution to 18, it also has a charge ability once per day that buffs a target of their choice (other than self) with +2 CON, Save vs. Death, and +5 maximum HP.
 - Handmaiden's Mace +2 now overhauled more deeply with the poison theme. It also no longer has racial or alignment restrictions.
-- Implementation of Handmaiden's now no longer requires it to be installed at the end, and as such it now belongs in the Joinables category.
+- Implementation of Handmaiden's now no longer requires it to be installed at the end, and as such it now belongs in the Joinables category. Strength modification takes up to a second to kick in after equipping with the new implementation.
 - Every single prefix is now toggleable by using the new configuration file <zstweaks_prefixes.txt>
 - Vastly extended the Oversight++ component that fixes improper alignments according to lore... or what makes the most sense to me. New changes:
   - Spiders are all true neutral except Wraith ones which are undead evil spiders.
-  - Many many (MANY) instances of undead creatures not marked as evil (skeletons, zombies, ghouls) are not evil. Skeletons and zombies are considered neutral in 2e as mindless automatons, but I don't really vibe with that, so I adopt the change from 3e, which is that they're neutral evil, similar to Skeleton Warriors. Rejoice, as Protection vs. Evil will serve a purpose against them now.
+  - Many many (MANY) instances of undead creatures not marked as evil (skeletons, zombies, ghouls) are not evil. Skeletons and zombies are considered neutral in 2e as mindless automatons, but I don't really vibe with that, so I adopt the change from 3e, which is that they're neutral evil, similar to Skeleton Warriors. Rejoice, as your lowly BGEE paladin's Protection vs. Evil will serve a purpose against them now.
   - Lizardfolk are now set to Neutral barring exceptions like the Lizard King in IWD who does very questionable stuff
   - Invisible Stalkers no longer marked as evil, since they're neutral elementals from the Plane of Air
   - The Huntress (WK) is a humanoid tanar'ri marked as True Neutral. Changed to Chaotic Evil
@@ -52,6 +52,8 @@
   - Nonfighters add 1 bonus HP per 3 points, starting at 12 with 1, 15 with 2, etc, and now can progress up to +5 if they have at least 24 constitution. Fighters always have advantage and can reach +7, as before.
   - Fatigue bonus progression slightly changed so it starts giving bonus at 13 instead of 12, in order to offer a bonus with odd number of constitution points, and smooth out progression.
 - Component 1531 now allows a user selection of the modified spells to interact differently with Magic Resistance
+- Component 1531 now also makes Wail of the Banshee bypass magic resistance without my WB-specific component
+- Oni Mage component now patches the "Ogre Mage" string so anyone using it as a name, will be "Oni Mage" instead
 
 ## New Components
 

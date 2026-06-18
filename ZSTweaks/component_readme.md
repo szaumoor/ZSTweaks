@@ -2460,6 +2460,8 @@ So ogre mages are not really ogres. It is some sort of weird misnomer. They are 
 - Their race is now set to demonic, because they are fiends and not ogres. So any effect that targets "demonic" will affect them too. I might refine this classification in the future.
 - And just for hoots, because they slumber around slower than molasses, their movement rate was increased by 2.
 
+This component will also patch the string references in the game that equal exactly to "Ogre Mage" so they become "Oni Mage". String references that contain the words "ogre mage" though are not patched because (1) it maximizes compatibility and reduces possible weirdness, and (2) because text surgery is a pain.
+
 ### Make drow's Magic Resistance lower (configurable) (3150) (IWDEE BGEE BG2EE EET)
 
 As it says. Note that the patching is manual: every drow has to be found and patched individually. It will not detect mod-added drow by default. Either submit a pull request or notify me of a mod that adds drow, but I cannot promise I will fix anything quickly, especially if I do not plan on using the mod.
