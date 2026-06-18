@@ -15,6 +15,7 @@
 - Added prefix to fix the Blind Albino Wyrmlings's race and class since they're set to wyverns instead of dragon (copy paste gone wrong, I'm sure)
 - Added prefix to fix an instance of Chimera in IWD's Lava mod with the wrong race
 - Character Stat overhaul now fixes creatures with CON tables if Constitution overhaul is picked, so they don't die due to health loss in the case of very low HP and CON
+- Minor fixes for component 1531 (MR tweaks)
 
 ## Modifications
 
@@ -50,6 +51,7 @@
 - Slightly changed the bonus constitution progression:
   - Nonfighters add 1 bonus HP per 3 points, starting at 12 with 1, 15 with 2, etc, and now can progress up to +5 if they have at least 24 constitution. Fighters always have advantage and can reach +7, as before.
   - Fatigue bonus progression slightly changed so it starts giving bonus at 13 instead of 12, in order to offer a bonus with odd number of constitution points, and smooth out progression.
+- Component 1531 now allows a user selection of the modified spells to interact differently with Magic Resistance
 
 ## New Components
 
@@ -64,7 +66,7 @@
 - Make Necromancers have access to a new HLA: Vampiric Feast (xxxx) (BG2EE EET) (TODO)
 - Make all fear effects reduce movement speed by half to make it less inconvenient (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
 - Make Sanctuary standardized to IWD version (5400) (IWDEE BGEE BG2EE EET)
-- Make Hold Animal much more useful by allowing it to affect many other types of beasts (xxxx) (BGEE BG2EE EET) (TODO)
+- Make Hold Animal much more useful by allowing it to affect many other types of beasts (5402) (BGEE BG2EE EET) (TODO)
 - Make familiars use female voices for casting spells (3165) (IWDEE BGEE BG2EE EET)
 - Make succubi use the winged elf animation instead of a sirine (3170) (BGEE BG2EE EET)
 - Make basic ammunition more expensive (1011) (IWDEE BGEE BG2EE EET)

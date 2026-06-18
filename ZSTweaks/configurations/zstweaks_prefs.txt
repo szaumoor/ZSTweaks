@@ -369,3 +369,31 @@ OUTER_SET zst_3030_planetars = "1"
 
 // sets the Magic Resistance of drow to a percentage of what they have (default: 75, valid range is 20-90)
 OUTER_SET zst_3150_drow_mr_pctg_of_base = "75"
+
+/////////////////////////////// End-of-installation tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// allowed the MR tweaks to specific types of spells
+
+OUTER_SET zst_1531_glitterdust        = "1"
+OUTER_SET zst_1531_insects            = "1"
+OUTER_SET zst_1531_natures_beauty     = "1"
+OUTER_SET zst_1531_divinations        = "1"
+OUTER_SET zst_1531_sunray             = "1"
+OUTER_SET zst_1531_iwd_shouts         = "1"
+OUTER_SET zst_1531_iwd_smashing_wave  = "1"
+OUTER_SET zst_1531_iwd_thorn_spray    = "1"
+OUTER_SET zst_1531_iwd_mold_touch     = "1"
+OUTER_SET zst_1531_iwd_cloudburst     = "1"
+OUTER_SET zst_1531_iwd_spike_growth   = "1"
+OUTER_SET zst_1531_grease             = "1"
+OUTER_SET zst_1531_entangle           = "1"
+OUTER_SET zst_1531_web                = "1"
+OUTER_SET zst_1531_stinking_cloud     = "1"
+OUTER_SET zst_1531_summon_cow         = "1"
+OUTER_SET zst_1531_magical_stone      = "1"
+OUTER_SET zst_1531_call_lightning     = "1"
+OUTER_SET zst_1531_storm_vengeance    = "1"
+OUTER_SET zst_1531_wail_banshee_dlich = "1"
+ 
+
+

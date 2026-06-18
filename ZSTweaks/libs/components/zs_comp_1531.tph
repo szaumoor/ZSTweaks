@@ -1,131 +1,210 @@
-COPY_EXISTING ~spwi224.spl~ ~override~  // glitterdust, all games
-              ~sppr319.spl~ ~override~  // summon insects
-              ~sppr517.spl~ ~override~  // insect plague
-              ~sppr717.spl~ ~override~  // creeping doom
-              ~sppr704.spl~ ~override~  // nature's beauty
-              ~sppr209.spl~ ~override~  // know alignment, all games
-              ~spwi208.spl~ ~override~  // know alignment all games
-    LPF ALTER_EFFECT INT_VAR resist_dispel=3 END // DISPEL PERMITTED
+ACTION_IF zst_1531_glitterdust BEGIN
 
-COPY_EXISTING ~flpr717a.spl~ ~override~ // CREEPING DOOM SUBSPELL
-    LPF ALTER_EFFECT INT_VAR resist_dispel=3 END
-BUT_ONLY IF_EXISTS
+    COPY_EXISTING ~spwi224.spl~  ~override~
+                  ~ohdwand1.itm~ ~override~
+        LPF ALTER_EFFECT INT_VAR resist_dispel=3 END // DISPEL PERMITTED
+    IF_EXISTS
 
-COPY_EXISTING ~sppr707.spl~ ~override~ // SUNRAY, bypasses Magic Resistance
-    LPF ALTER_EFFECT INT_VAR silent = 1 resist_dispel=3 END //
-    LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 139 resist_dispel = 0 END
-    LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 146 resist_dispel = 0 END
+END
 
-    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ "467" OR
-            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ "99" AND
-             zst_group_467_sunray_false_dawn)
-    BEGIN
-        LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 326 resist_dispel = 0 END
-    END ELSE BEGIN
-        LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 177 resist_dispel = 0 END
-        LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 12 resist_dispel = 0 END
+ACTION_IF zst_1531_insects BEGIN
+
+    COPY_EXISTING ~sppr319.spl~ ~override~  // summon insects
+                  ~sppr517.spl~ ~override~  // insect plague
+                  ~sppr717.spl~ ~override~  // creeping doom
+        LPF ALTER_EFFECT INT_VAR resist_dispel=3 END // DISPEL PERMITTED
+
+    COPY_EXISTING ~flpr717a.spl~ ~override~ // CREEPING DOOM SUBSPELL
+        LPF ALTER_EFFECT INT_VAR resist_dispel=3 END
+    IF_EXISTS
+
+END
+
+ACTION_IF zst_1531_natures_beauty BEGIN
+
+    COPY_EXISTING ~sppr704.spl~ ~override~  // nature's beauty
+        LPF ALTER_EFFECT INT_VAR resist_dispel=3 END // DISPEL PERMITTED
+
+END
+
+ACTION_IF zst_1531_divinations BEGIN
+
+    COPY_EXISTING ~sppr209.spl~  ~override~  // know alignment, all games
+                  ~spwi208.spl~  ~override~  // know alignment all games
+                  ~spwi202.spl~  ~override~ // detect evil
+                  ~spcl212.spl~  ~override~
+                  ~spin120.spl~  ~override~
+                  ~sppr104.spl~  ~override~
+                  ~ohdetevl.spl~ ~override~
+                  ~cddetevl.spl~ ~override~
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END // can't be dispelled or resisted by magic
+    IF_EXISTS
+
+END
+
+ACTION_IF zst_1531_sunray BEGIN
+
+    COPY_EXISTING ~sppr707.spl~ ~override~ 
+        LPF ALTER_EFFECT INT_VAR silent = 1 resist_dispel=3 END //
+        LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 139 resist_dispel = 0 END
+        LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 146 resist_dispel = 0 END
+
+        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ "467" OR
+                (MOD_IS_INSTALLED ~ZSTweaks.tp2~ "99" AND
+                zst_group_467_sunray_false_dawn)
+        BEGIN
+            LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 326 resist_dispel = 0 END
+        END ELSE BEGIN
+            LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 177 resist_dispel = 0 END
+            LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 12 resist_dispel = 0 END
+        END
+
+END
+
+ACTION_IF zst_1531_iwd_shouts BEGIN
+
+    ACTION_IF spell_shout > 0 BEGIN
+        LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHOUT" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
     END
 
-// ACTION_IF spell_acid_storm > 0 BEGIN
-//     LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_ACID_STORM" RET spell_res END
-//     COPY_EXISTING ~%spell_res%.SPL~ ~override~
-//         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-// END
-
-ACTION_IF spell_shout > 0 BEGIN
-    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_SHOUT" RET spell_res END
-    COPY_EXISTING ~%spell_res%.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-END
-
-ACTION_IF spell_great_shout > 0 BEGIN
-    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_GREAT_SHOUT" RET spell_res END
-    COPY_EXISTING ~%spell_res%.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-END
-
-ACTION_IF spell_smashing_wave > 0 BEGIN
-    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SMASHING_WAVE" RET spell_res END
-    COPY_EXISTING ~%spell_res%.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-END
-
-ACTION_IF spell_thorn_spray > 0 BEGIN
-    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_THORN_SPRAY" RET spell_res END
-    COPY_EXISTING ~%spell_res%.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-END
-
-ACTION_IF spell_mold_touch > 0 BEGIN
-    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_MOLD_TOUCH" RET spell_res END
-    COPY_EXISTING ~%spell_res%.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-END
-
-ACTION_IF spell_cloudburst > 0 BEGIN
-    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CLOUDBURST" RET spell_res END
-    COPY_EXISTING ~%spell_res%.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-END
-
-ACTION_IF spell_spike_growth > 0 BEGIN
-    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SPIKE_GROWTH" RET spell_res END
-    COPY_EXISTING ~%spell_res%.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-END
-
-COPY_EXISTING ~spwi101.spl~ ~override~ // grease, all games
-              ~sppr105.spl~ ~override~ // entangle all games
-              ~spwm111.spl~ ~override~ // entangle all games
-              ~spwi215.spl~ ~override~ // web all games
-              ~spdr201.spl~ ~override~ // web all games
-              ~spwi004.spl~ ~override~ // stinking cloud, all games
-              ~spwi213.spl~ ~override~ // stinking cloud, all games
-              ~spwm187.spl~ ~override~ // stinking cloud, all games
-              ~spwi299.spl~ ~override~ // summon cow, all games
-              ~spwm188.spl~ ~override~ // summon cow, all games
-              ~sppr106.spl~ ~override~ // magical stone
-              ~sppr302.spl~ ~override~ // call lightning
-    LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-
-COPY_EXISTING ~sppr722.spl~ ~override~ // storm of vengeance
-    LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-BUT_ONLY IF_EXISTS
-
-ACTION_IF NOT is_iwdee BEGIN
-
-    ACTION_IF NOT has_eefixpack BEGIN
-
-        COPY_EXISTING ~ohdwand1.itm~ ~override~
-            LPF ALTER_EFFECT INT_VAR match_resist_dispel=1 resist_dispel=3 END
-        BUT_ONLY IF_EXISTS
-
+    ACTION_IF spell_great_shout > 0 BEGIN
+        LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_GREAT_SHOUT" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
     END
 
-    COPY_EXISTING ~spin566.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
-    BUT_ONLY IF_EXISTS
+END
 
-    COPY_EXISTING ~spin940.spl~ ~override~ // stinking cloud
-                  ~spwi004.spl~ ~override~
-                  ~spwi213.spl~ ~override~
-                  ~spwm187.spl~ ~override~
+ACTION_IF zst_1531_iwd_smashing_wave BEGIN
+
+    ACTION_IF spell_smashing_wave > 0 BEGIN
+        LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SMASHING_WAVE" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+    END
+
+END
+
+ACTION_IF zst_1531_iwd_thorn_spray BEGIN
+
+    ACTION_IF spell_thorn_spray > 0 BEGIN
+        LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_THORN_SPRAY" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+    END
+
+END
+
+ACTION_IF zst_1531_iwd_mold_touch BEGIN
+
+    ACTION_IF spell_mold_touch > 0 BEGIN
+        LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_MOLD_TOUCH" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+    END
+
+END
+
+ACTION_IF zst_1531_iwd_cloudburst BEGIN
+
+    ACTION_IF spell_cloudburst > 0 BEGIN
+        
+        LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CLOUDBURST" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+    END
+
+END
+
+ACTION_IF zst_1531_iwd_spike_growth BEGIN
+
+    ACTION_IF spell_spike_growth > 0 BEGIN
+        LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_SPIKE_GROWTH" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+    END
+
+END
+
+ACTION_IF zst_1531_grease BEGIN 
+
+    COPY_EXISTING ~spwi101.spl~ ~override~ // grease, all games
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+    
+END
+
+ACTION_IF zst_1531_entangle BEGIN
+
+    COPY_EXISTING ~sppr105.spl~ ~override~ // entangle all games
+                  ~spwm111.spl~ ~override~ // entangle all games
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+    IF_EXISTS
+
+END
+
+ACTION_IF zst_1531_web BEGIN
+
+    COPY_EXISTING ~spwi215.spl~ ~override~ // web all games
+                  ~spdr201.spl~ ~override~ // web all games
+                  ~spin566.spl~ ~override~ // mimic web
                   ~spin575.spl~ ~override~ // cre web bgee/bg2ee
                   ~spin683.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+    IF_EXISTS
 
-    COPY_EXISTING ~spwi202.spl~ ~override~ // detect evil
-                  ~spcl212.spl~ ~override~
-                  ~spin120.spl~ ~override~
-                  ~sppr104.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR resist_dispel=2 END // not dispel/bypass resistance
+END
 
-    COPY_EXISTING ~cddetevl.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR resist_dispel=2 END
-    BUT_ONLY IF_EXISTS
+ACTION_IF zst_1531_stinking_cloud BEGIN
 
-    COPY_EXISTING ~ohdetevl.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR resist_dispel=2 END
-    BUT_ONLY IF_EXISTS
+    COPY_EXISTING ~spwi004.spl~ ~override~ // stinking cloud, all games
+                  ~spwi213.spl~ ~override~ // stinking cloud, all games
+                  ~spwm187.spl~ ~override~ // stinking cloud, all games
+                  ~spin940.spl~ ~override~ // stinking cloud
+                  ~spwi004.spl~ ~override~
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+    IF_EXISTS
+
+END
+
+ACTION_IF zst_1531_summon_cow BEGIN
+
+    COPY_EXISTING ~spwi299.spl~ ~override~ // summon cow, all games
+                  ~spwm188.spl~ ~override~ // summon cow, all games
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+    IF_EXISTS
+
+END
+
+ACTION_IF zst_1531_magical_stone BEGIN
+
+    COPY_EXISTING ~sppr106.spl~ ~override~ // magical stone
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+
+END
+
+ACTION_IF zst_1531_call_lightning BEGIN
+
+    COPY_EXISTING ~sppr302.spl~ ~override~ // call lightning
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+
+END
+
+ACTION_IF zst_1531_storm_vengeance BEGIN
+
+    COPY_EXISTING ~sppr722.spl~ ~override~ // storm of vengeance
+        LPF ALTER_EFFECT INT_VAR resist_dispel=0 END
+    IF_EXISTS
+
+END
+
+ACTION_IF zst_1531_wail_banshee_dlich BEGIN
+
+    COPY_EXISTING ~spwi913.spl~  ~override~
+                  ~spin789.spl~  ~override~
+                  ~ohbdemi2.spl~ ~override~
+        LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 3 END
+    IF_EXISTS
 
 END

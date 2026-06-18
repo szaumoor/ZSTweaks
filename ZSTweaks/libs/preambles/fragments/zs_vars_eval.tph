@@ -1535,6 +1535,108 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
+        // ----------------------------------------MR BYPASS TWEAK------------------------------------------------- \\
+
+        ACTION_IF zst_1531_glitterdust != 0 AND zst_1531_glitterdust != 1 BEGIN
+            WARN "[WARN]: Setting for Glitterdust MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_glitterdust%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_insects != 0 AND zst_1531_insects != 1 BEGIN
+            WARN "[WARN]: Setting for Insect Spells MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_insects%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_natures_beauty != 0 AND zst_1531_natures_beauty != 1 BEGIN
+            WARN "[WARN]: Setting for Nature's Beauty MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_natures_beauty%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_divinations != 0 AND zst_1531_divinations != 1 BEGIN
+            WARN "[WARN]: Setting for Divinations MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_divinations%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_sunray != 0 AND zst_1531_sunray != 1 BEGIN
+            WARN "[WARN]: Setting for Sunray MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_sunray%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_iwd_shouts != 0 AND zst_1531_iwd_shouts != 1 BEGIN
+            WARN "[WARN]: Setting for IWD Shout Spells MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_iwd_shouts%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_iwd_smashing_wave != 0 AND zst_1531_iwd_smashing_wave != 1 BEGIN
+            WARN "[WARN]: Setting for Smashing Wave MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_iwd_smashing_wave%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_iwd_thorn_spray != 0 AND zst_1531_iwd_thorn_spray != 1 BEGIN
+            WARN "[WARN]: Setting for Thorn Spray MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_iwd_thorn_spray%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_iwd_mold_touch != 0 AND zst_1531_iwd_mold_touch != 1 BEGIN
+            WARN "[WARN]: Setting for Mold Touch MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_iwd_mold_touch%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_iwd_cloudburst != 0 AND zst_1531_iwd_cloudburst != 1 BEGIN
+            WARN "[WARN]: Setting for Cloudburst MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_glitterdust%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_iwd_spike_growth != 0 AND zst_1531_iwd_spike_growth != 1 BEGIN
+            WARN "[WARN]: Setting for Spike Growth MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_iwd_spike_growth%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_grease != 0 AND zst_1531_grease != 1 BEGIN
+            WARN "[WARN]: Setting for Grease MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_grease%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_entangle != 0 AND zst_1531_entangle != 1 BEGIN
+            WARN "[WARN]: Setting for Entangle MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_entangle%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_web != 0 AND zst_1531_web != 1 BEGIN
+            WARN "[WARN]: Setting for Web MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_web%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_stinking_cloud != 0 AND zst_1531_stinking_cloud != 1 BEGIN
+            WARN "[WARN]: Setting for Stinking Cloud MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_stinking_cloud%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_summon_cow != 0 AND zst_1531_summon_cow != 1 BEGIN
+            WARN "[WARN]: Setting for Summon Cow MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_summon_cow%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_magical_stone != 0 AND zst_1531_magical_stone != 1 BEGIN
+            WARN "[WARN]: Setting for Magical Stone MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_magical_stone%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_call_lightning != 0 AND zst_1531_call_lightning != 1 BEGIN
+            WARN "[WARN]: Setting for Call Lightning MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_call_lightning%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_storm_vengeance != 0 AND zst_1531_storm_vengeance != 1 BEGIN
+            WARN "[WARN]: Setting for Storm of Vengeance MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_storm_vengeance%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1531_wail_banshee_dlich != 0 AND zst_1531_wail_banshee_dlich != 1 BEGIN
+            WARN "[WARN]: Setting for Wail of the Banshee / Demilich MR tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1531_wail_banshee_dlich%"
+            LAM f_plus
+        END
+
         // ----------------------------------------GROUP COMP VARIABLES (GENERAL)------------------------------------------------- \\
 
         ACTION_IF zst_group_120_magic_weapons_apr != 0 AND zst_group_120_magic_weapons_apr != 1 BEGIN
@@ -2403,6 +2505,16 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         ACTION_IF zst_group_539_holy_unholy_words != 0 AND zst_group_539_holy_unholy_words != 1 BEGIN
             WARN "[WARN]: Holy/Unholy Words group component should be set to 1 or 0. Actual value: %zst_group_539_holy_unholy_words%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_5400_sanctuary != 0 AND zst_group_5400_sanctuary != 1 BEGIN
+            WARN "[WARN]: Sanctuary group component should be set to 1 or 0. Actual value: %zst_group_5400_sanctuary%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_5402_hold_animal != 0 AND zst_group_5402_hold_animal != 1 BEGIN
+            WARN "[WARN]: Hold Animal group component should be set to 1 or 0. Actual value: %zst_group_5402_hold_animal%"
             LAM f_plus
         END
 
