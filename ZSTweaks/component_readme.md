@@ -1536,11 +1536,11 @@ Deathbringer assault is a bit stupid. Yes, it's very cool. Yes, big ToB bosses a
 
 This component contains the same fixes as Tresset's Deathbringer Assault component. No need to use both.
 
-### Make Shar-Teel especially effective when fighting male-gendered opponents (1647) (BG2EE EET)
+### Make Shar-Teel especially effective when fighting men and equivalent (1647) (BG2EE EET)
 
-This component makes Shar-Teel's effectiveness against males fit her hatred and boasting. A bit gimmicky, but very amusing to me:
+This component makes Shar-Teel's effectiveness against men fit her hatred and boasting. A bit gimmicky, but very amusing to me:
 
-- +1 THAC0 and damage against males of any race
+- +1 THAC0 and damage against "men" of any race
 - +2 Armor Class and Saving Throws vs. men (essentially as if she had a Protection from Men spell on her)
 
 It's compatible with the BG1-NPCs-for-SoA-ToB mod.
@@ -2460,9 +2460,9 @@ So ogre mages are not really ogres. It is some sort of weird misnomer. They are 
 - Their race is now set to demonic, because they are fiends and not ogres. So any effect that targets "demonic" will affect them too. I might refine this classification in the future.
 - And just for hoots, because they slumber around slower than molasses, their movement rate was increased by 2.
 
-This component will also patch the string references in the game that equal exactly to "Ogre Mage" so they become "Oni Mage". String references that contain the words "ogre mage" though are not patched because (1) it maximizes compatibility and reduces possible weirdness, and (2) because text surgery is a pain.
+This component will also patch vanilla string references in the game that equal exactly to "Ogre Mage" so they become "Oni Mage". String references that contain the words "ogre mage" though are not patched because (1) it maximizes compatibility and reduces possible weirdness, and (2) because text surgery is a pain.
 
-### Make drow's Magic Resistance lower (configurable) (3150) (IWDEE BGEE BG2EE EET)
+### Make drow Magic Resistance lower (configurable) (3150) (IWDEE BGEE BG2EE EET)
 
 As it says. Note that the patching is manual: every drow has to be found and patched individually. It will not detect mod-added drow by default. Either submit a pull request or notify me of a mod that adds drow, but I cannot promise I will fix anything quickly, especially if I do not plan on using the mod.
 

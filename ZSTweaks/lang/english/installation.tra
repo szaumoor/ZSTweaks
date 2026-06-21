@@ -1,8 +1,8 @@
 @10 = ~General~
 @11 = ~Gear~
 @12 = ~Daggers~
-@13 = ~Two-handed~
-@14 = ~One-handed Swords~
+@13 = ~Two-Handed~
+@14 = ~One-Handed Swords~
 @15 = ~Axes & Blunt~
 @16 = ~Ranged~
 @17 = ~Joinable Characters~
@@ -17,14 +17,11 @@
 @49 = ~This component is only compatible with BGEE~
 @50 = ~This component is only compatible with BGEE and EET~
 @52 = ~This component is only compatible with BG2EE and EET~
-@53 = ~This component is only compatible with BGEE, BG2EE and EET~
-@54 = ~This component is only compatible with IWDEE, BGEE, BG2EE and EET~
-@55 = ~Tweak already installed elsewhere~
-@56 = ~This component is only compatible with IWDEE, BG2EE and EET~
-@57 = ~Can't install groups of components if individual components (without subcomponents) are installed already~
+@53 = ~This component is only compatible with BGEE, BG2EE, and EET~
+@54 = ~This component is only compatible with IWDEE, BGEE, BG2EE, and EET~
+@56 = ~This component is only compatible with IWDEE, BG2EE, and EET~
+@57 = ~Can't install groups of components if individual components are installed already~
 @58 = ~Can't install components included in components that install groups of other components~
-@59 = ~This component must be installed before the next scroll tweak~
-@60 = ~This component is already effectively installed through the Fixpack~
 
 @10000 = ~Install user-selected components in the General group~
 @10001 = ~Install user-selected components in the Gear group~
@@ -192,7 +189,7 @@
 @1608 = ~Make Aule's Staff more effective for non-fighter wizards and sorcerers~
 @1609 = ~Make the Impaler slightly more scary~
 @1696 = ~Make Harbinger more convenient~
-@1698 = ~Make Staff of Power more interesting and balanced~
+@1698 = ~Make Staff of Power more interesting and balanced~ // TODO
 @1708 = ~Make Sword of Chaos reflect BG3's take on it~
 
 /// ONE-HANDED SWORDS
@@ -266,7 +263,7 @@
 @1644 = ~Make NPC gear no longer bound to unnecessary stat restrictions~
 @1645 = ~Make Cernd's cloak more powerful~
 @1646 = ~Make Sarevok's Deathbringer assault a bit more balanced~
-@1647 = ~Make Shar-Teel especially effective when fighting male-gendered opponents~
+@1647 = ~Make Shar-Teel especially effective when fighting men and equivalent~
 @2240 = ~Make Hexxat's Blood Drain have a cooldown instead of being usable once per day~
 @2250 = ~Make Edwin's amulet nuanced in the privileges it grants to that snake~
 @1556 = ~Make minor improvements to Jaheira-specific items~
@@ -354,6 +351,7 @@
 @515 = ~Make Aura of Flaming Death increase fire resistance instead of setting it to 90%~
 @539 = ~Make Holy and Unholy Word more effective~
 @5400 = ~Make Sanctuary standardized to IWD version~
+@5402 = ~Make Hold Animal much more useful by allowing it to affect many other types of beasts~
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray and Sun Soulbeam more powerful"
@@ -394,7 +392,7 @@
 @3120 = ~Make some golem creatures more unique~
 @3130 = ~Make minotaurs tougher and more dangerous~
 @3140 = ~Make ogre / oni mages regenerating fiends, as per PnP~
-@3150 = ~Make drow's Magic Resistance lower (configurable)~
+@3150 = ~Make drow Magic Resistance lower (configurable)~
 @3160 = ~Make the effects on-hit of Otyugh attacks nonmagical and subject to Saving Throws~
 @3165 = ~Make familiars use female voices for casting spells~
 @3170 = ~Make succubi and erinyes use the female winged elf animation~
