@@ -54,6 +54,7 @@
 - Component 1531 now allows a user selection of the modified spells to interact differently with Magic Resistance
 - Component 1531 now also makes Wail of the Banshee bypass magic resistance without my WB-specific component
 - Oni Mage component now patches the "Ogre Mage" string so anyone using it as a name, will be "Oni Mage" instead
+- Holy Sword of Tyr now acts as a +5 weapon vs evil for the purposes of what it can hit
 
 ## New Components
 
