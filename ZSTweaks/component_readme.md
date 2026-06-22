@@ -1157,7 +1157,7 @@ This makes the katana +3, for consistency with the power level of other WA-weapo
 
 ### Make Holy Sword of Tyr affect all evil (1319) (BG2EE EET)
 
-Self-explanatory. I also removed in the description the weird preamble that includes the first sentence of the general description of long swords. Seems lazy, and perhaps a mistake.
+Additionally, it acts as a +5 weapon for the purposes of what *evil* creatures it can hit. I also removed in the description the weird preamble that includes the first sentence of the general description of long swords. Seems lazy, and perhaps a mistake.
 
 ### Make Hindo's Doom a +4 and +5 weapon and inflict extra damage to undead (1341) (BG2EE EET)
 
