@@ -239,7 +239,7 @@ RET
     found
 BEGIN
     // precondition checks
-    PATCH_IF zs_debug AND NOT FILE_EXISTS_IN_GAME ~%weapon%.ITM~ BEGIN
+    PATCH_IF zs_debug AND NOT FILE_EXISTS_IN_GAME ~%weapon%.itm~ BEGIN
         PATCH_FAIL ~[DEBUG][FAIL]: Weapon %weapon% does not exist in game~
     END
 
@@ -310,5 +310,48 @@ BEGIN
     PATCH_IF zs_debug AND found != 0 AND found != 1 BEGIN
         PATCH_FAIL ~[DEBUG][FAIL]: Found value is not 0 or 1~
     END
+END
+
+DEFINE_PATCH_FUNCTION IS_HELMET_EQUIPPED
+STR_VAR
+    match_resource = ""
+RET
+    found
+    which
+BEGIN
+    SET res_len = STRING_LENGTH "%match_resource%"
+    PATCH_IF zs_debug = TRUE BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
+        
+        PATCH_IF res_len > 8 BEGIN
+            PATCH_FAIL "[DEBUG][FAIL]: IS_HELMET_EQUIPPED function launched with an illegal resource filename length of %res_len%"
+        END
+    END
+
+    SPRINT which ""
+    SET find_any = res_len == 0
+    SET found = FALSE
+    READ_LONG 0x2b0 items_count
+    PATCH_IF items_count > 0 BEGIN
+
+        READ_LONG 0x2b8 item_slots_offset
+        READ_SHORT item_slots_offset helmet_slot
+
+        PATCH_IF helmet_slot > "-1" AND (helmet_slot + 1) <= items_count BEGIN
+
+            PATCH_IF NOT find_any BEGIN
+
+                READ_LONG 0x2bc items_offset
+                SET item_size = 0x14  
+                READ_ASCII (items_offset + (helmet_slot * item_size)) resource
+                SET found = "%resource%" STR_EQ "%match_resource%"
+                SPRINT which "%resource%"
+
+            END ELSE BEGIN
+                found = TRUE
+            END
+
+        END 
+    END 
 END
 

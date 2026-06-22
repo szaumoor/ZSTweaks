@@ -1,0 +1,12 @@
+/**
+ * This simulates the TRUE bool, for ease of reading and to pretend WeiDu is a programming language
+ */
+OUTER_SET TRUE      =   1
+/**
+ * This simulates the FALSE bool, for ease of reading and to pretend WeiDu is a programming language
+ */
+OUTER_SET FALSE     =   0
+/**
+ * This value indicates no value is defined. Useful for functions.
+ */
+OUTER_SET UNDEFINED = "-1"

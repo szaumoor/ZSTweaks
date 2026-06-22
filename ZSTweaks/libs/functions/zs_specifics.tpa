@@ -142,7 +142,7 @@ END
 
 DEFINE_PATCH_FUNCTION PATCH_SHIELD
 INT_VAR
-    type = "-1"
+    type = UNDEFINED
 BEGIN
     PATCH_IF zs_debug BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
@@ -304,7 +304,6 @@ BEGIN
     PATCH_IF magical BEGIN LPM magical_macro END
     PATCH_IF enchantment > 0 BEGIN LPM enchantment_macro END
     PATCH_IF zs_debug AND (nonmagical || magical || enchantment > 0) BEGIN ++matches END
-    
     CLEAR_ARRAY eff_arr
     CLEAR_ARRAY fx_array
 END

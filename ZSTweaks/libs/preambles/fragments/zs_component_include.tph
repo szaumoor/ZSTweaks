@@ -5,4 +5,6 @@ END
 
 OUTER_SET group_component = 0
 LAM CHECK_COMPONENT_DUPE
-INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_%COMPONENT_NUMBER%.tph~
+WITH_SCOPE BEGIN
+    INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_%COMPONENT_NUMBER%.tph~
+END

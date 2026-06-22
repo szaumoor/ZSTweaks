@@ -492,7 +492,6 @@ ACTION_IF zs_allow_prefixes BEGIN
 
                 END
 
-
                 ACTION_IF zst_albino_wyrms BEGIN
 
                     PRINT "[INFO]: Patching Blind Albino Wyrmlings so they actually have the Dragon race and Silver Dragon class instead of Wyvern for both (I smell copy paste, BeamDog!)"
