@@ -4,7 +4,6 @@ COPY_EXISTING ~c6kalden.cre~ ~override~ // paladins that help with bodhi, curren
               ~c6squire.cre~ ~override~ // paladins that help with bodhi, currently LN, should be LG
               ~derrick.cre~  ~override~ // ranger helping valygar, shouldn't be LN
               ~elotte.cre~   ~override~ // squire elotte, paladin stronghold duties, currently LN, likely better as LG  
-
   LPF ALTER_CRE INT_VAR alignment=alignmen_lawful_good END
 IF_EXISTS
 
@@ -12,7 +11,6 @@ IF_EXISTS
 COPY_EXISTING ~arval.cre~    ~override~ // Arval Mornmaster, currently LE, should be NG
               ~bharval.cre~  ~override~ // Arval Mornmaster, currently LE, should be NG
               ~c6cler1.cre~  ~override~ // cleric of lathander, neutral, should probably be NG
-
   LPF ALTER_CRE INT_VAR alignment=alignmen_neutral_good END
 IF_EXISTS
 
@@ -22,6 +20,7 @@ COPY_EXISTING ~jarev1.cre~   ~override~ // nameless bard harper, currently CN, m
               ~udvith.cre~   ~override~ // vithal, currently LE, there are no obvious signs he's evil
               ~aataqah.cre~  ~override~ // he's a djinni and djinni are always chaotic good (lawful neutral)
               ~ohhdjinn.cre~ ~override~ // he's a noble djinni 
+              ~ppdjinn.cre~  ~override~ // djinni
   LPF ALTER_CRE INT_VAR alignment=alignmen_chaotic_good END
 IF_EXISTS
 
@@ -50,6 +49,8 @@ COPY_EXISTING ~bdock1.cre~   ~override~ // overworked dockhand ogres
               ~bazliz04.cre~ ~override~ // lizardmen, often neutral, even in this game, evil here for some reason
               ~ohbliz01.cre~ ~override~ // lizardman
               ~clgol01.cre~  ~override~ // clay golem in planar sphere is chaotic good somehow?
+              ~bpclay.cre~   ~override~
+              ~battho.cre~   ~override~ // battle horror, evil, but is a construct like golems, should be neutral
               ~senstalk.cre~ ~override~ // invisible stalker, they're neutral elemental creatures
               ~gorstalk.cre~ ~override~ // invisible stalker, they're neutral elemental creatures
               ~stalke.cre~   ~override~ // invisible stalker, they're neutral elemental creatures
@@ -57,7 +58,23 @@ COPY_EXISTING ~bdock1.cre~   ~override~ // overworked dockhand ogres
               ~spidsw01.cre~ ~override~ // sword spider is neutral
               ~spspid07.cre~ ~override~ // sword spider is neutral
               ~plyspid.cre~  ~override~  // sword spider is neutral
+              ~spidphas.cre~ ~override~ // phase spiders are neutral
+              ~bdspidgi.cre~ ~override~
+              ~ms5gspi.cre~  ~override~
+              ~cyspidsw.cre~ ~override~
+              ~bpspid01.cre~ ~override~ //bp spiders
+              ~bpspid02.cre~ ~override~
+              ~bpspid03.cre~ ~override~
+              ~bdspid7l.cre~ ~override~
+              ~rsspidgi.cre~ ~override~ // spider
+              ~bdspidga.cre~ ~override~
+              ~bdwistak.cre~ ~override~
+              ~bdhelp01.cre~ ~override~ // spider
+              ~bdhelp03.cre~ ~override~ // spider
               ~udspid01.cre~ ~override~ // spider
+              ~spidgi.cre~   ~override~ // spider
+              ~spidsw.cre~   ~override~ // spider
+              ~bdspider.cre~ ~override~
               ~udspid02.cre~ ~override~ // spider
               ~udspid03.cre~ ~override~ // spider
               ~udspid04.cre~ ~override~ // spider
@@ -79,8 +96,18 @@ COPY_EXISTING ~bdock1.cre~   ~override~ // overworked dockhand ogres
               ~ohhspi02.cre~ ~override~  // hexxat quest spider is neutral
               ~ohhspi03.cre~ ~override~  // hexxat quest spider is neutral
               ~plyspid2.cre~ ~override~
-              ~wyvern01.cre~ ~override~ // wyverns should be true neutral in my estimation, currently locked as neutral EDIT_SAV_FILE
+              ~wyvern01.cre~ ~override~ // wyverns should be true neutral in my estimation, currently locked as neutral
               ~wyvernsu.cre~ ~override~
+              ~corwyvrn.cre~ ~override~
+              ~wyverba.cre~  ~override~
+              ~wyvern.cre~   ~override~ 
+              ~wyvernbi.cre~ ~override~
+              ~wyvmat.cre~   ~override~ 
+              ~bdwyvr03.cre~ ~override~
+              ~bdwyvr02.cre~ ~override~
+              ~bdwyvr01.cre~ ~override~
+              ~dlbonec.cre~  ~override~
+              ~airaspec.cre~ ~override~ // "air aspect" at Durlag's. Seems to be a wyvern in every way
               ~wyvbab01.cre~ ~override~
               ~wyvgre01.cre~ ~override~
               ~ohbmena8.cre~ ~override~
@@ -90,13 +117,31 @@ COPY_EXISTING ~bdock1.cre~   ~override~ // overworked dockhand ogres
               ~ohbmena5.cre~ ~override~ // boalisk, snakes should be neutral
               ~snakeb01.cre~ ~override~
               ~obsmod01.cre~ ~override~ // unaligned golem, probably unused but still
+              ~tethto3.cre~  ~override~ // doppeldanger tehtoril, should be neutral, not reflect alignment of original
+              ~phlydi3.cre~  ~override~ // dopple phlydia
+              ~doomsa.cre~   ~override~ // doomsayer is a construct
+              ~duplica1.cre~ ~override~ // mirror fiend, flesh golem
+              ~es12watr.cre~ ~override~
+              ~es16watr.cre~ ~override~
+              ~es20watr.cre~ ~override~
+              ~es24watr.cre~ ~override~
+              ~rabbit.cre~   ~override~ // no alignment rabbit
+              ~nechick1.cre~ ~override~ // no alignment squirrel
   LPF ALTER_CRE INT_VAR alignment=alignmen_neutral END
 IF_EXISTS
 
 // converting to Chaotic Neutral
 COPY_EXISTING ~shth011.cre~  ~override~ // Hanz thief, this version is evil for some reason
               ~shth05.cre~   ~override~ // Joster getting a quota for Renal, original is LE
-
+              ~shoal.cre~    ~override~ // Shoal the nereid, TN, should be chaotic neutral based on attitude (they're chaos-bound)
+              ~sil.cre~      ~override~ // sil, a sirine, they're always chaotic neutral
+              ~sirine.cre~   ~override~ // other sirines
+              ~sirine02.cre~ ~override~
+              ~sirine_a.cre~ ~override~
+              ~sirine_b.cre~ ~override~
+              ~meiala.cre~   ~override~ 
+              ~larria.cre~   ~override~
+              ~islsir.cre~   ~override~
   LPF ALTER_CRE INT_VAR alignment=alignmen_chaotic_neutral END
 IF_EXISTS
 
@@ -113,7 +158,10 @@ COPY_EXISTING ~aemerhob.cre~ ~override~ // hobgoblin, no alignment for some reas
               ~tolger2.cre~  ~override~ // tolgerias, he's obviously evil lol, not chaotic good
               ~dpmon01.cre~  ~override~ // cutscene mindflayer
               ~dpmon03.cre~  ~override~ // cutscene vampire
-
+              ~bpelan.cre~   ~override~ // unaligned raksasha, they're LE
+              ~bphbar1.cre~  ~override~ // unaligned hobgoblin in BP1
+              ~bphbwr1.cre~  ~override~ // unaligned hobgoblin in BP1
+              ~bphbwz1.cre~  ~override~ // unaligned hobgoblin in BP1
   LPF ALTER_CRE INT_VAR alignment=alignmen_lawful_evil END
 IF_EXISTS
 
@@ -134,14 +182,108 @@ COPY_EXISTING ~hellil01.cre~ ~override~ // hellhound, should be evil, not neutra
               ~rskel03.cre~  ~override~ // stray skeleton 
               ~uddoor07.cre~ ~override~ // stray skeleton
               ~ttskel.cre~   ~override~ // stray skeleton
+              ~iskelet.cre~  ~override~
+              ~skelsu01.cre~ ~override~
+              ~skelsu07.cre~ ~override~
+              ~skelsu11.cre~ ~override~
+              ~skelsu15.cre~ ~override~
+              ~ms7bgrd.cre~  ~override~
+              ~ktsk1.cre~    ~override~
+              ~ktsk1h.cre~   ~override~
+              ~ktska1.cre~   ~override~
+              ~ktska2.cre~   ~override~
+              ~ktska3.cre~   ~override~
+              ~ktskh2.cre~   ~override~
+              ~ktskh3.cre~   ~override~
+              ~ktskt1.cre~   ~override~
+              ~ktskt2.cre~   ~override~
+              ~kttas1.cre~   ~override~
+              ~kttas2.cre~   ~override~
+              ~kttas2h.cre~  ~override~
+              ~kttga1.cre~   ~override~
+              ~kttga2.cre~   ~override~
+              ~kttga3.cre~   ~override~
+              ~kttgm1.cre~   ~override~
+              ~kttgm3.cre~   ~override~
+              ~kttgm1.cre~   ~override~
+              ~kttgm3.cre~   ~override~
+              ~dlcldaxe.cre~ ~override~
+              ~dlcldhnd.cre~ ~override~
+              ~dlcldmce.cre~ ~override~
+              ~dlcldswd.cre~ ~override~
+              ~dlfznbne.cre~ ~override~
+              ~dliceaxe.cre~ ~override~
+              ~dlicehnd.cre~ ~override~
+              ~dliceswd.cre~ ~override~
+              ~bpskel.cre~   ~override~
+              ~ad1sklm.cre~  ~override~
+              ~ad2sklm.cre~  ~override~
+              ~bon8005.cre~  ~override~ // boneguard
+              ~dlbnegrd.cre~ ~override~
+              ~bon8013.cre~  ~override~
+              ~bonegard.cre~ ~override~
+              ~ad2sklr.cre~  ~override~
+              ~ad3sklr.cre~  ~override~
+              ~ad4sklr.cre~  ~override~
+              ~cdmhskel.cre~ ~override~
+              ~kryskel.cre~  ~override~
+              ~bdskgr00.cre~ ~override~
+              ~bdskgr04.cre~ ~override~
+              ~bdskgr01.cre~ ~override~
+              ~bdskgr02.cre~ ~override~
+              ~bdskgr03.cre~ ~override~
+              ~bdskgr05.cre~ ~override~
+              ~bdskgr06.cre~ ~override~
               ~skelar01.cre~ ~override~ 
               ~skelar02.cre~ ~override~ 
               ~skele2.cre~   ~override~
               ~skelded.cre~  ~override~
               ~skelet01.cre~ ~override~
               ~skelhp1.cre~  ~override~
+              ~skelaci.cre~  ~override~
+              ~skeldis.cre~  ~override~
+              ~skelet.cre~   ~override~
+              ~lskarmms.cre~ ~override~
+              ~skelarh1.cre~ ~override~
+              ~skelarh2.cre~ ~override~
+              ~skaldar.cre~  ~override~
+              ~skelarm.cre~  ~override~
+              ~skelblad.cre~ ~override~
+              ~skelblah.cre~ ~override~
+              ~skelblaz.cre~ ~override~
+              ~skelblst.cre~ ~override~
+              ~skelbow.cre~  ~override~
+              ~skelserr.cre~ ~override~
+              ~lskarmsw.cre~ ~override~
+              ~skelet02.cre~ ~override~
+              ~skelet03.cre~ ~override~
+              ~skeletb.cre~  ~override~
+              ~skelets.cre~  ~override~
+              ~skelet_a.cre~ ~override~
+              ~skelet_b.cre~ ~override~
+              ~skelet_c.cre~ ~override~
+              ~skarmax.cre~  ~override~
+              ~skarmms.cre~  ~override~
+              ~skarmsw.cre~  ~override~
+              ~skelfire.cre~ ~override~
+              ~skelice.cre~  ~override~
+              ~skelmel.cre~  ~override~
+              ~skelpetr.cre~ ~override~
               ~bhghoul3.cre~ ~override~ // non evil zombie
+              ~bdshzom1.cre~ ~override~
+              ~zombiep.cre~  ~override~
+              ~ad3zomb.cre~  ~override~
+              ~ad4zomb.cre~  ~override~
+              ~ad5zomb.cre~  ~override~
               ~zombie01.cre~ ~override~ // non evil zombie
+              ~zombie.cre~   ~override~ // non evil zombie
+              ~zombieb.cre~  ~override~ // non evil zombie
+              ~zombiew.cre~  ~override~ // non evil zombie
+              ~zombie_a.cre~ ~override~ // non evil zombie
+              ~zombie_b.cre~ ~override~ // non evil zombie
+              ~zombie_c.cre~ ~override~ // non evil zombie
+              ~zombie_d.cre~ ~override~ // non evil zombie
+              ~zombie_e.cre~ ~override~ // non evil zombie
               ~zombju01.cre~ ~override~ // non evil zombie
               ~bhghoul5.cre~ ~override~ // non evil zombie
               ~zomblo01.cre~ ~override~ // non evil zombie
@@ -149,14 +291,34 @@ COPY_EXISTING ~hellil01.cre~ ~override~ // hellhound, should be evil, not neutra
               ~sahzomb.cre~  ~override~ // non evil zombie
               ~sahzom01.cre~ ~override~ // non evil zombie
               ~rzomb01.cre~  ~override~ // non evil zombie
+              ~lzombie.cre~  ~override~
+              ~ktzom1.cre~   ~override~
+              ~ad2zomb.cre~  ~override~
               ~nevm5.cre~    ~override~
               ~gtcit3.cre~   ~override~ // non evil zombie
               ~gtcit4.cre~   ~override~ // non evil zombie
               ~gtcit5.cre~   ~override~ // non evil zombie
+              ~sewerf2.cre~  ~override~ // sewerfolk -- zombie
               ~dpmon02.cre~  ~override~ // cutscene lich
               ~fsskel.cre~   ~override~ // WK skeleton?
-              ~gorwom02.cre~ ~override~ // WK The Huntress, she's demonic but not evil as the others
-
+              ~zorl.cre~     ~override~ // greater doppledanger
+              ~d2dop.cre~    ~override~ // another
+              ~l#wolst.cre~  ~override~ // winter wolf from lava
+              ~gdopp7.cre~   ~override~ // greater doppelgangers
+              ~gdopp71.cre~  ~override~
+              ~gdopp72.cre~  ~override~
+              ~gdopp73.cre~  ~override~
+              ~dopdur1.cre~  ~override~
+              ~dopdur2.cre~  ~override~
+              ~dopdur3.cre~  ~override~
+              ~doppgr.cre~  ~override~
+              ~gdopp74.cre~  ~override~
+              ~gdopp75.cre~  ~override~
+              ~gorion3.cre~  ~override~
+              ~dopdop.cre~   ~override~
+              ~elmins.cre~   ~override~
+              ~elmins4.cre~  ~override~
+              ~islann.cre~   ~override~ // probably the dopple that killed her and ate her brain
   LPF ALTER_CRE INT_VAR alignment=alignmen_neutral_evil END
 IF_EXISTS
 
@@ -170,12 +332,18 @@ COPY_EXISTING ~shadeld.cre~  ~override~ // a version of Shade Lord that is Neutr
               ~ogregrsu.cre~ ~override~ // ogre
               ~ogresu.cre~   ~override~
               ~plyogre.cre~  ~override~
+              ~test.cre~     ~override~
+              ~korax.cre~    ~override~ // korax the ghoul should probably be chaotic evil
+              ~gorwom02.cre~ ~override~ // WK The Huntress
+              ~l#chich1.cre~ ~override~ // chimeras from lava
+              ~l#chich2.cre~ ~override~
+              ~bpogre01.cre~ ~override~ // unaligned BP1 ogre
   LPF ALTER_CRE INT_VAR alignment=alignmen_chaotic_evil END
 IF_EXISTS
 
 
 ACTION_IF zs_debug BEGIN
-  PRINT "[DEBUG][INFO]: Checking for possible suspects with wrong alignment (Oversight+ component 3010)...
+  PRINT "[DEBUG][INFO]: Checking for possible suspects with wrong alignment (Oversight++ component 3010)...
   "
   OUTER_SET matches = 0
   COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
@@ -200,7 +368,8 @@ ACTION_IF zs_debug BEGIN
              NOT "%SOURCE_RES%" STR_EQ ~golbur01~ AND // burning man
              NOT "%SOURCE_RES%" STR_EQ ~ohdcdawg~ AND // celestial hound  
              NOT "%SOURCE_RES%" STR_EQ ~sahbeh01~ AND // spectator 
-             NOT "%SOURCE_RES%" STR_EQ ~senbeh01~ AND // spectator
+             NOT "%SOURCE_RES%" STR_EQ ~senbeh01~ AND // spectator 
+             NOT "%SOURCE_RES%" STR_EQ ~behspe01~ AND // spectator
              NOT "%SOURCE_RES%" STR_EQ ~uhogre01~ AND // madulf people
              NOT "%SOURCE_RES%" STR_EQ ~uhogre02~ AND // madulf people
              NOT "%SOURCE_RES%" STR_EQ ~uhogre03~ AND // madulf people
@@ -219,61 +388,133 @@ ACTION_IF zs_debug BEGIN
              NOT "%SOURCE_RES%" STR_EQ ~hspectr1~ AND //spectral harpist, not a typical undead
              NOT "%SOURCE_RES%" STR_EQ ~hspectr2~ AND
              NOT "%SOURCE_RES%" STR_EQ ~hspectr3~ AND 
-             NOT "%SOURCE_RES%" STR_EQ ~ysgp01~   AND
+             NOT "%SOURCE_RES%" STR_EQ ~ysgp01~   AND // cute bhaalspawns with unusual alignment, let's leave them be
              NOT "%SOURCE_RES%" STR_EQ ~ysgp02~   AND
              NOT "%SOURCE_RES%" STR_EQ ~ysgp03~   AND
-             NOT "%SOURCE_RES%" STR_EQ ~ysgp05~
+             NOT "%SOURCE_RES%" STR_EQ ~ysgp05~   AND
+             NOT "%SOURCE_RES%" STR_EQ ~gorsal~   AND  // saladrex is just special, let's leave him alone
+             NOT "%SOURCE_RES%" STR_EQ ~famfai25~ AND // familiars
+             NOT "%SOURCE_RES%" STR_EQ ~famfair~  AND
+             NOT "%SOURCE_RES%" STR_EQ ~fampsd~   AND
+             NOT "%SOURCE_RES%" STR_EQ ~fampsd25~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~uhostile~ AND // probably some helper creature...
+             NOT "%SOURCE_RES%" STR_EQ ~revent~   AND // revenants are a rare non-evil type of undead 
+             NOT "%SOURCE_RES%" STR_EQ ~revnant~  AND // 
+             NOT "%SOURCE_RES%" STR_EQ ~bpreve01~ AND //  
+             NOT "%SOURCE_RES%" STR_EQ ~malkal~   AND //
+             NOT "%SOURCE_RES%" STR_EQ ~bdnuber1~ AND // undead nüber 
+             NOT "%SOURCE_RES%" STR_EQ ~bdnuber2~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bdendles~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bdcchob2~ AND  // beastial humanoids in Argent's crusade (often CN)
+             NOT "%SOURCE_RES%" STR_EQ ~bdcckob1~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bdccogr1~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bdcru118~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bdcru46~  AND
+             NOT "%SOURCE_RES%" STR_EQ ~bdcruml7~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bdcrur29~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bdcrus86~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bdcrus8d~ AND 
+             NOT "%SOURCE_RES%" STR_EQ ~bdwave12~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bddead01~ AND // drowned in blood, based on drowned dead, neutral undead (for some reason)
+             NOT "%SOURCE_RES%" STR_EQ ~bddispbe~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bddispbp~ AND  
+             NOT "%SOURCE_RES%" STR_EQ ~bdcutid2~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bdmkhi7~  AND // mkhiin
+             NOT "%SOURCE_RES%" STR_EQ ~bdtreant~ AND // dark treant, they're evil
+             NOT "%SOURCE_RES%" STR_EQ ~c0aualch~ AND // helper cre
+             NOT "%SOURCE_RES%" STR_EQ ~c0auin4~  AND 
+             NOT "%SOURCE_RES%" STR_EQ ~c0ausumm~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~rbidrow~  AND // drowned dead is neutral 
+             NOT "%SOURCE_RES%" STR_EQ ~kaylessa~ AND //benevolvent spected
+             NOT "%SOURCE_RES%" STR_EQ ~lizking~  AND // lizardfolk, malevolent
+             NOT "%SOURCE_RES%" STR_EQ ~dlyeti~   AND // unusually evil yeti 
+             NOT "%SOURCE_RES%" STR_EQ ~larze~    AND // true neutral ogre looking for your bounty
+             NOT "%SOURCE_RES%" STR_EQ ~fear~     AND
+             NOT "%SOURCE_RES%" STR_EQ ~fearm~    AND  
+             NOT "%SOURCE_RES%" STR_EQ ~nesqrl~   AND
+             NOT "%SOURCE_RES%" STR_EQ ~mistpo01~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~mistposu~ AND   
+             NOT "%SOURCE_RES%" STR_EQ ~bdtarget~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bdforcw1~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bdforcw3~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bddsarc4~ AND
+             NOT "%SOURCE_RES%" STR_EQ ~bdstonec~
     BEGIN
 
-      READ_BYTE 0x271 general
-      READ_BYTE 0x272 race
-      READ_BYTE 0x273 class
+      SET str_length = STRING_LENGTH "%SOURCE_RES%"
+      PATCH_IF str_length >= 2 BEGIN
+        LPF SUBSTRING INT_VAR length = 2 STR_VAR string = "%SOURCE_RES%" RET substring END 
+      END
 
-      LPF SUBSTRING INT_VAR length = 2 STR_VAR string = "%SOURCE_RES%" RET substring END 
+      PATCH_IF VARIABLE_IS_SET substring AND NOT "%substring%" STR_EQ "ZS" BEGIN
 
-      PATCH_IF NOT "%substring%" STR_EQ "ZS" BEGIN
+        READ_BYTE 0x271 general
+        READ_BYTE 0x272 race
+        READ_BYTE 0x273 class
 
-        PATCH_IF race = race_fairy BEGIN
-
-          READ_BYTE 0x27b alignment
-
-          PATCH_IF class     = class_fairy_nereid     AND
-                  alignment != alignmen_chaotic_good  AND
-                  alignment != alignmen_chaotic_evil  AND
-                  alignment != alignmen_chaotic_neutral 
-          BEGIN
+        PATCH_IF class = class_doppelganger_greater OR LONG_AT(0x28) = 0x7501 BEGIN // greater dopples are evil
+            READ_BYTE 0x27b alignment
+            PATCH_IF alignment != alignmen_chaotic_evil AND
+                     alignment != alignmen_lawful_evil  AND
+                     alignment != alignmen_neutral_evil 
+            BEGIN
               ++matches
               READ_STRREF 0x08 name ELSE "Unknown name"
               LOOKUP_IDS_SYMBOL_OF_INT found_race RACE race
               LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
               LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
               LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
-              PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be in the chaotic axis: %SOURCE_RES% -- %name%"
-          END
+              PATCH_PRINT "[DEBUG][INFO]: Found a greater doppelganger %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be evil: %SOURCE_RES% -- %name%"
+            END
+        END
 
-          PATCH_IF class     = class_fairy_sirine    AND
+        PATCH_IF race = race_fairy BEGIN
+          PATCH_IF class     = class_fairy_nereid     AND
+                  alignment != alignmen_chaotic_good  AND
+                  alignment != alignmen_chaotic_evil  AND
                   alignment != alignmen_chaotic_neutral 
           BEGIN
-            ++matches
-            READ_STRREF 0x08 name ELSE "Unknown name"
-            LOOKUP_IDS_SYMBOL_OF_INT found_race RACE race
-            LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
-            LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
-            LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
-            PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be Chaotic Neutral: %SOURCE_RES% -- %name%"
+              READ_BYTE 0x27b alignment
+              PATCH_IF alignment != alignmen_chaotic_good  AND
+                  alignment != alignmen_chaotic_evil  AND
+                  alignment != alignmen_chaotic_neutral 
+              BEGIN
+                ++matches
+                READ_STRREF 0x08 name ELSE "Unknown name"
+                LOOKUP_IDS_SYMBOL_OF_INT found_race RACE race
+                LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
+                LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
+                LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
+                PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be in the chaotic axis: %SOURCE_RES% -- %name%"
+              END
+          END
+
+          PATCH_IF class = class_fairy_sirine BEGIN
+            READ_BYTE 0x27b alignment
+            PATCH_IF alignment != alignmen_chaotic_neutral BEGIN
+              ++matches
+              READ_STRREF 0x08 name ELSE "Unknown name"
+              LOOKUP_IDS_SYMBOL_OF_INT found_race RACE race
+              LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
+              LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
+              LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
+              PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be Chaotic Neutral: %SOURCE_RES% -- %name%"
+            END
           END  
 
-          PATCH_IF class     = class_fairy_nymph    AND
-                  alignment != alignmen_neutral_good AND
-                  alignment != alignmen_chaotic_good
-          BEGIN
-            ++matches
-            READ_STRREF 0x08 name ELSE "Unknown name"
-            LOOKUP_IDS_SYMBOL_OF_INT found_race RACE race
-            LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
-            LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
-            LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
-            PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be Neutral Good or Chaotic Good: %SOURCE_RES% -- %name%"
+          PATCH_IF class = class_fairy_nymph BEGIN
+            READ_BYTE 0x27b alignment
+            PATCH_IF alignment != alignmen_neutral_good AND
+                     alignment != alignmen_chaotic_good 
+            BEGIN
+              ++matches
+              READ_STRREF 0x08 name ELSE "Unknown name"
+              LOOKUP_IDS_SYMBOL_OF_INT found_race RACE race
+              LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
+              LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
+              LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
+              PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be Neutral Good or Chaotic Good: %SOURCE_RES% -- %name%"
+            END
           END  
 
         END
@@ -281,7 +522,7 @@ ACTION_IF zs_debug BEGIN
         PATCH_IF race = race_mephit OR
                  race = race_salamander 
         BEGIN
-          READ_BYTE 0x27b alignment
+            READ_BYTE 0x27b alignment
             PATCH_IF alignment = alignmen_chaotic_good OR
                     alignment = alignmen_lawful_good  OR
                     alignment = alignmen_neutral_good 
@@ -298,7 +539,9 @@ ACTION_IF zs_debug BEGIN
 
         END 
 
-        PATCH_IF general = general_undead            OR
+        PATCH_IF class  != class_innocent            AND
+                 class  != class_druid               AND
+                (general = general_undead            OR
                  race    = race_demonic              OR
                  race    = race_antisolar            OR
                  race    = race_beholder             OR
@@ -312,8 +555,8 @@ ACTION_IF zs_debug BEGIN
                  race    = race_rakshasa             OR
                  race    = race_sahuagin             OR
                  race    = race_shadow               OR
-                 race    = race_specter              OR
-                 race    = race_spectral_undead      OR
+                (race    = race_specter AND general = general_undead) OR
+                (race    = race_spectral_undead AND general = undead) OR
                  race    = race_troll                OR
                  race    = ~%race_will-o-wisp%~      OR
                  race    = race_vampire              OR
@@ -334,7 +577,7 @@ ACTION_IF zs_debug BEGIN
                  race    = race_bugbear              OR
                  race    = race_minotaur             OR
                  race    = race_harpy                OR
-                 race    = race_yeti                 OR
+              //   race    = race_yeti                 OR // only in future editions
                  race    = race_ettin                OR
                  class   = class_worg                OR
                  class   = class_wolf_winter         OR
@@ -344,6 +587,7 @@ ACTION_IF zs_debug BEGIN
                  class   = class_genie_dao           OR
                  (race    = race_lycanthrope AND class = class_wolfwere) OR // wolfweres are evil
                  (race    = race_dragon AND class != class_silver_dragon) // silver dragons are LG
+                )
         BEGIN
 
             READ_BYTE 0x27b alignment
@@ -398,7 +642,6 @@ ACTION_IF zs_debug BEGIN
                 (race    = race_spider AND class != class_spider_wraith AND general != general_humanoid) OR
                   race    = race_hook_horror     OR
                   race    = race_myconid         OR
-                  race    = race_doppleganger    OR 
                   race    = race_golem           OR
                   race    = race_mimic           OR
                   race    = race_otyugh          OR
@@ -407,9 +650,10 @@ ACTION_IF zs_debug BEGIN
                   race    = race_shrieker        OR
                   race    = race_slime           OR
                   race    = race_treant          OR
+                  race    = race_yeti            OR // in early editions
                   race    = race_wyvern          OR
                   race    = race_lizardman       OR
-                (race    = race_mist AND class = class_mist) OR
+     //           ((race    = race_mist OR class = class_mist) AND general != general_undead) OR
                 (race    = race_salamander AND class != class_salamander_frost)  
         BEGIN
           
