@@ -658,8 +658,8 @@ Saving Throw: Special
 
 When a Power Word, Kill spell is uttered, one creature within the spell range is instantly slain if they're too weak to resist the overwhelming power of the word. The weaker the creature it is, the more certain their death is:
 
-– If the creature has 60 or fewer current Hit Points it dies immediately without any Saving Throw permitted.
-– Similarly, if the creature has 10 HD or less, it also dies without any Saving Throw permitted.
+– If the creature has 60 or fewer current Hit Points it dies immediately without any Saving Throw%mr_check% permitted.
+– Similarly, if the creature has 10 HD or less, it also dies without any Saving Throw%mr_check% permitted.
 – If the creature has more than 60 current Hit Points and their HD is 11 or 12, they die if a Save vs. Spell is failed. Even if resisted, they take 4d6 magic damage.
 – Finally, if the creature has more than 60 currerent Hit Points and their HD is higher than 12, they die if a Save vs. Spell at +4 is failed.
 
@@ -669,6 +669,7 @@ When a Power Word, Kill spell is uttered, one creature within the spell range is
 @76002 = ~(Divination)~
 @76003 = ~(Enchantment/Charm)~
 @76004 = ~Creatures killed through the spell may not be resurrected, they are destroyed forever unless brought back by miraculous forces. ~
+@76005 = ~ or Magic Resistance check~
 
 @80100 = ~Vampiric Feast~
 @80101 = ~Vampiric Feast
