@@ -351,6 +351,7 @@ Some optional config options:
 - Make the spell chunk when it kills (similar to Cutscene Irenicus' version) (ON by default)
 - Make the spell an Enchantment spell, as in 3rd and 5th edition (OFF by default)
 - Make the spell a Divination spell (ON by default)
+- Make the spell bypass magic resistance specifically against those with <= 60 HP or <= 10 HD (ON by default)
 
 </details>
 
