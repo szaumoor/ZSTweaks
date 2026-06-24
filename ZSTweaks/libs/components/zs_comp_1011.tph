@@ -10,3 +10,4 @@ COPY_EXISTING ~dagg05.itm~ ~override~
 COPY_EXISTING ~dagg16.itm~ ~override~
               ~ax1h04.itm~ ~override~
     LPF ALTER_ITEM INT_VAR price=3 END
+IF_EXISTS

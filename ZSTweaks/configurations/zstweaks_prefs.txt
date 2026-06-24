@@ -255,6 +255,10 @@ OUTER_SET zst_447_melf_no_mr = "1" // makes Melf's Acid Arrow bypass MR, since i
 
 OUTER_SET zst_561_web_save_nerf = "1" // enable or disable the nert to the save penalty in the web spell
 
+// power word kill config options
+OUTER_SET zst_585_pwk_magic_school   = "1" // 0 disables, 1 makes it enchantment, 2 makes it diviner
+OUTER_SET zst_585_pwk_chunking_death = "1"
+
 /////////////////////////////// Divine Magic Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // allows the Flame Blade tweaks

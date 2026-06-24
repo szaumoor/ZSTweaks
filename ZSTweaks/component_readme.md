@@ -16,7 +16,7 @@ These spells promise power, but your little wizard is not a good fighter at all.
 
 The following changes are enabled by default but can be configured individually:
 
-- **Symbol, Death**: Since it's difficult to know an enemy's exact health, this spell is often wasted on targets with more than 60 HP. This allows the spell to affect targets above the 60 HP threshold, but with a +6 bonus to their saves.
+- **Symbol, Death**: Since it's difficult to know an enemy's exact health, this spell is wasted on targets with more than 60 HP. This allows the spell to affect targets above the 60 HP threshold, but with a +6 bonus to their saves.
 - **Symbol, Pain**: No longer allows a Saving Throw. It also reduces the target's damage output by 10%, and its duration is reduced from 11 turns to a more reasonable 11 rounds.
 - **Nerf enemy symbol spells**: Enemy-cast Symbol spells now have the same duration as player-cast versions, removing an artificial disparity.
 
@@ -338,6 +338,20 @@ This simply makes the scroll not work on targets that are currently enemies, to 
 
 This makes the spell behave a little closer to what is supposed to be and makes the issue of being able to go invisible in between True Sight pulses and attack much less likely to succeed. It's not instant dispelling, but it's close enough that it likely does not matter.
 
+### Make Power Word, Kill more generally effective for a level 9 spell (585) (BG2EE EET)
+
+As with Symbol, Death, it's difficult to know an enemy's exact health, this spell is wasted on targets with more than 60 HP. Only computer-controlled enemies know it. Thus, for the benefif of the player user:
+
+- If the target has 60 HP or less, *or 10 Hit Dice or less*, they die instantly without any save allowed.
+- If the target has *more* than 60 HP, and is level 11 or 12, they die if they fail a Save vs. Spell. Otherwise, they take 4d6 magic damage.
+- If the target has *more* than 60 HP, and is above level 12, they die if they fail a Save vs. Spell at +4. Otherwise, they take 4d6 magic damage.
+
+Some optional config options:
+
+- Make the spell chunk when it kills (similar to Cutscene Irenicus' version) (ON by default)
+- Make the spell an Enchantment spell, as in 3rd and 5th edition (OFF by default)
+- Make the spell a Divination spell (ON by default)
+
 </details>
 
 ---
@@ -436,7 +450,7 @@ I mean, they're THORNS; the only difference is that they're FIERY. Instead of on
 This component overhauls the Grandmaster's Armor, making its movement bonus immune to Free Action and adding several new passive perks for single-classed thieves:
 
 - **Passive Bonuses (Thieves only)**: Grants immunity to critical misses.
-- **Special Backstab Attacks**: Each rogue kit gains a unique on-backstab effect:
+- **Special Backstab Attacks**: Each vanilla kit that can backstab gains a unique backstab effect:
   - **Kitless Thief**: Crippling Attack - Slows and reduces STR, DEX, and casting speed by 4 for 4 rounds (Save vs. Death).
   - **Bounty Hunter/Stalker**: Subduing Attack - Knocks the target unconscious (Save vs. Death), +10 non-lethal damage.
   - **Shadowdancer**: Shadow Attack - A 2-round non-stacking self-buff that grants 5% total damage resistance, a +2 bonus to damage, +5% critical hit chance, and a 20% chance to become invisible.
@@ -1414,6 +1428,10 @@ Simply a balance tweak.
 ### Make Acid Arrow's extra damage not subject to Magic Resistance (1388) (IWDEE BGEE BG2EE EET)
 
 Self-explanatory. It also better justifies the higher price compared to other elemental arrows.
+
+### Make basic ammunition more expensive (1011) (IWDEE BGEE BG2EE EET)
+
+I don't like that it's so extraordinarily cheap to get loaded with tons of stacks of basic arrows. Price is now 1 gp per basic arrow, bolt, dart, and bullet. Basic throwing daggers cost 2 GP, and throwing axes and poisoned throwing daggers cost 3 GP. It shouldn't de-stabilize the economy much due to the markup, party, and character factors like Charisma playing a role in it.
 
 </details>
 
@@ -2465,6 +2483,20 @@ This component will also patch vanilla string references in the game that equal 
 ### Make drow Magic Resistance lower (configurable) (3150) (IWDEE BGEE BG2EE EET)
 
 As it says. Note that the patching is manual: every drow has to be found and patched individually. It will not detect mod-added drow by default. Either submit a pull request or notify me of a mod that adds drow, but I cannot promise I will fix anything quickly, especially if I do not plan on using the mod.
+
+### Make the effects on-hit of Otyugh attacks nonmagical and subject to Saving Throws (3160) (IWDEE BGEE BG2EE EET)
+
+Self-explanatory. Saving throw to avoid the disease / slow effect on hit is Save vs Death at -2.
+
+### Make familiars use female voices for casting spells (3165) (IWDEE BGEE BG2EE EET)
+
+Self-explanatory.
+
+### Make succubi and erinyes use the female winged elf animation (3170) (BGEE BG2EE EET)
+
+I get really annoyed by animation reuse that demand too much suspension of disbelief. A good example of that is certainly this, where the Sirine animation is used for these types of fiends. These animations are now of female elven cleric or fighter avatars, with appropriate wings and new color palette.
+
+Bear in the mind this is manually design, it won't detect such fiends from other mods, if they use the sirine animation.
 
 </details>
 

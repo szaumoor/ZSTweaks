@@ -10,3 +10,7 @@ OUTER_SET FALSE     =   0
  * This value indicates no value is defined. Useful for functions.
  */
 OUTER_SET UNDEFINED = "-1"
+
+
+OUTER_SET YES       = TRUE
+OUTER_SET NO        = FALSE

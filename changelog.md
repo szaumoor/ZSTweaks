@@ -73,3 +73,4 @@
 - Make familiars use female voices for casting spells (3165) (IWDEE BGEE BG2EE EET)
 - Make succubi use the winged elf animation instead of a sirine (3170) (BGEE BG2EE EET)
 - Make basic ammunition more expensive (1011) (IWDEE BGEE BG2EE EET)
+- Make Power Word, Kill more generally effective for a level 9 spell (585) (BG2EE EET)
