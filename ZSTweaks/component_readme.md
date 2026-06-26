@@ -2499,6 +2499,17 @@ I get really annoyed by animation reuse that demand too much suspension of disbe
 
 Bear in the mind this is manually design, it won't detect such fiends from other mods, if they use the sirine animation.
 
+### Make some creatures immune to being cheesed with Thief Traps (3180) (IWDEE BGEE BG2EE EET)
+
+Traps are a common way to cheese tough fights. This component alleviates it in several (optional) ways:
+
+- Specific types of creatures are always immune
+  - By type: liches, demiliches, and dragons are immune. (Optional, ON by default)
+  - By specific power: anyone of level 25 or above are immune. (Optional, OFF by default)
+  - By specific fame or infamy: a user-definable list of "boss-type" creatures are always immune. Demogorgon, Amelyssan and every other ToB boss, Irenicus, Kangaxx (both), named Dragons, Aran Linvail, Bodhi...
+- Any specific creature can only be affected by a trap once per second. This prevents trap stacking becoming a cheesy way of doing extreme damage suddenly. (ON by default)  
+- Limit the amount of traps permitted at a time (1-6) (OFF by default)
+
 </details>
 
 ---

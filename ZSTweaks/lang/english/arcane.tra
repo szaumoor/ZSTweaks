@@ -96,7 +96,21 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
-The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining <PRO_HIMHER> of 6 levels of experience. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell.~
+The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a living victim and draining them of 6 levels of experience. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. The caster is, in turn, temporarily empowered by it, effectively taking some of the power that was drained to temporarily empower themselves for 2 hours:
+
+– 20 Hit Points are healed immediately, and any level drain they might have is also cured
+– 2 arcane spells of up to level 7, and 2 divine spells of up to level 6 are recovered
+– +1 extra attack per round (half for fighters)
+– +3 Strength
+– +2 THAC0 (none for fighters)
+
+Meanwhile, if the target dies within 1 turn after Energy Drain is cast on them, their body is utterly destroyed, replaced by a powerful allied Devil Shade. None of these benefits stack if a second casting of Energy Drain is successfully completed on a living target. The target must be not allied with the caster in order for any of these bonuses to apply. 
+
+Lastly, this spell acts in the opposite manner if the target is an undead creature such as a Skeleton Warrior or a vampire, empowering them for 8 hours to the same degree, and beyond, additionally adding the following:
+
+– Regenerate 2 Hit Points per round
+– Existing damage resistances are increased by 40% of their current value
+– Attacks act as a +4 weapon for the purposes of overcoming weapon immunities~
 
 @6210 = ~Abi-Dalzim's Horrid Wilting
 (Necromancy)
