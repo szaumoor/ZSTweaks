@@ -245,8 +245,23 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET projectl_sparblpa      = IDS_OF_SYMBOL(projectl SPARBLPA) + 1
     OUTER_SET projectl_spklaric      = IDS_OF_SYMBOL(projectl SPKLARIC)
 
-    OUTER_SET splstate_blue_fireshield = IDS_OF_SYMBOL(splstate BLUE_FIRESHIELD)
-    OUTER_SET splstate_red_fireshield  = IDS_OF_SYMBOL(splstate RED_FIRESHIELD)
+    OUTER_SET splstate_blue_fireshield          = IDS_OF_SYMBOL(splstate BLUE_FIRESHIELD)
+    OUTER_SET splstate_red_fireshield           = IDS_OF_SYMBOL(splstate RED_FIRESHIELD)
+    OUTER_SET splstate_fp_charm_immunity        = IDS_OF_SYMBOL(splstate CHARM_IMMUNITY)
+    OUTER_SET splstate_fp_sleep_immunity        = IDS_OF_SYMBOL(splstate SLEEP_IMMUNITY)
+    OUTER_SET splstate_fp_stun_immunity         = IDS_OF_SYMBOL(splstate STUN_IMMUNITY)
+    OUTER_SET splstate_fp_panic_immunity        = IDS_OF_SYMBOL(splstate PANIC_IMMUNITY)
+    OUTER_SET splstate_fp_confusion_immunity    = IDS_OF_SYMBOL(splstate CONFUSION_IMMUNITY)
+    OUTER_SET splstate_fp_hold_immunity         = IDS_OF_SYMBOL(splstate HOLD_IMMUNITY)
+    OUTER_SET splstate_fp_web_immunity          = IDS_OF_SYMBOL(splstate WEB_IMMUNITY)
+    OUTER_SET splstate_fp_entangle_immunity     = IDS_OF_SYMBOL(splstate ENTANGLE_IMMUNITY)
+    OUTER_SET splstate_fp_petrify_immunity      = IDS_OF_SYMBOL(splstate PETRIFY_IMMUNITY)
+    OUTER_SET splstate_fp_disintegrate_immunity = IDS_OF_SYMBOL(splstate DISINTEGRATE_IMMUNITY)
+    OUTER_SET splstate_fp_silence_immunity      = IDS_OF_SYMBOL(splstate SILENCE_IMMUNITY)
+    OUTER_SET splstate_fp_feeblemind_immunity   = IDS_OF_SYMBOL(splstate FEEBLEMIND_IMMUNITY)
+    OUTER_SET splstate_fp_haste_immunity        = IDS_OF_SYMBOL(splstate HASTE_IMMUNITY)
+    OUTER_SET splstate_fp_slow_immunity         = IDS_OF_SYMBOL(splstate SLOW_IMMUNITY)
+    OUTER_SET splstate_fp_death_immunity        = IDS_OF_SYMBOL(splstate DEATH_IMMUNITY)
 
     OUTER_SET zs_ids_setup = 1
 
