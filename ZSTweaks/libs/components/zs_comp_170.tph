@@ -4,6 +4,7 @@ COPY_EXISTING ~spwi913.spl~ ~override~
   LPF ADD_SPL_TGTEFF INT_VAR pwr=9 rd=3 STR_VAR effects=~op=12,p1=3,tmg=1,dnum=3,dsize=6,p2=0;op=80,dur=12;op=142,p2=112,dur=12~ END
   LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter2 = op12_magic END
   LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 3 END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 55 savingthrow = 0 dicenumber = 8 END
   
 COPY_EXISTING ~scrl9v.itm~ ~override~
   LPF ALTER_ITEM INT_VAR id_desc=new_description END

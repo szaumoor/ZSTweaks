@@ -1628,9 +1628,9 @@ Technical details: this sets the backstab multiplier to 0x. It would be possible
 
 This can also be made to function as backstab multiplier reduction instead of an outright disable. Check the configuration file. If backstab multiplier reduction is chosen, it will override whatever was added by Component 1150 if that was installed before. Component 1150 will still add a reduction of backstab multiplier if installed after, however.
 
-### Make Wail of the Banshee cause side effects on successful save and bypass Magic Resistance (170) (IWDEE BGEE BG2EE EET)
+### Make Wail of the Banshee more generally effective (170) (IWDEE BGEE BG2EE EET)
 
-This exists because I personally dislike using spells, especially high-level spells, that are powerful but unpredictable, so that there is a benefit to using them regardless. Therefore, on a successful save, or if the target is simply immune to the slaying effect, it will cause 3d6+3 magic damage and deafness for 2 rounds. This also makes the spell bypass Magic Resistance.
+This exists because I personally dislike using spells, especially high-level spells, that are powerful but unpredictable in usefulness, so that there is a benefit to using them regardless. Therefore, now any enemy that is 8 HD or less is slain instantly, and on a successful save, it will cause 3d6+3 magic damage and deafness for 2 rounds. This also makes the spell bypass Magic Resistance.
 
 ### Make Meteor Swarm do more minimum damage and bypass Magic Resistance (180) (IWDEE BGEE BG2EE EET)
 
