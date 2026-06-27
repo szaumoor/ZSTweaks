@@ -569,6 +569,26 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
+        ACTION_IF zst_1541_vorpal_no_spectral_races != 0 AND zst_1541_vorpal_no_spectral_races != 1 BEGIN
+            WARN "[WARN]: Setting to not allow vorpal hits to affect spectral creatures should be set to 0 (disable) or 1 (enable). Actual value: %zst_1541_vorpal_no_spectral_races%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1541_vorpal_no_golems != 0 AND zst_1541_vorpal_no_golems != 1 BEGIN
+            WARN "[WARN]: Setting to not allow vorpal hits to affect constructs and golems should be set to 0 (disable) or 1 (enable). Actual value: %zst_1541_vorpal_no_golems%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1541_vorpal_no_slimes != 0 AND zst_1541_vorpal_no_slimes != 1 BEGIN
+            WARN "[WARN]: Setting to not allow vorpal hits to affect oozes should be set to 0 (disable) or 1 (enable). Actual value: %zst_1541_vorpal_no_slimes%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_1541_vorpal_no_elementals != 0 AND zst_1541_vorpal_no_elementals != 1 BEGIN
+            WARN "[WARN]: Setting to not allow vorpal hits to affect elemental creatures should be set to 0 (disable) or 1 (enable). Actual value: %zst_1541_vorpal_no_elementals%"
+            LAM f_plus
+        END
+
         // ----------------------------------------STAT BONUSES------------------------------------------------- \\
 
         ACTION_IF zst_1545_strength_bonuses != 0 AND zst_1545_strength_bonuses != 1 BEGIN

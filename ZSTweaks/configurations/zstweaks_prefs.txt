@@ -91,8 +91,12 @@ OUTER_SET zst_1539_all_reqs       = "1" // all can use scrolls with stat require
 OUTER_SET zst_1539_rogues_no_reqs = "0" // rogues can use scrolls
 OUTER_SET zst_1539_rogues_reqs    = "0" // rogues can use scrolls with stat requirements
 
-// set to 1 to prevent chunking with vorpals hits in the vorpal component
-OUTER_SET zst_1541_vorpal_no_chunking = "0"
+// vorpal hit component
+OUTER_SET zst_1541_vorpal_no_chunking       = "0"
+OUTER_SET zst_1541_vorpal_no_spectral_races = "1"
+OUTER_SET zst_1541_vorpal_no_golems         = "1"
+OUTER_SET zst_1541_vorpal_no_slimes         = "1"
+OUTER_SET zst_1541_vorpal_no_elementals     = "0"
 
 // allow or disallow tweaks for component 1545 (stat tweaks)
 OUTER_SET zst_1545_strength_bonuses       = "1"

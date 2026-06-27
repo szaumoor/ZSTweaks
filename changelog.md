@@ -55,6 +55,7 @@
 - Component 1531 now also makes Wail of the Banshee bypass magic resistance without my WB-specific component
 - Oni Mage component now patches the "Ogre Mage" string so anyone using it as a name, will be "Oni Mage" instead
 - Holy Sword of Tyr now acts as a +5 weapon vs evil for the purposes of what it can hit
+- Added support to PnP Celestials mod so their vorpal hits conform to my standards. Additionally, their vorpal hits are no longer guaranteed, uses a Save vs. Death at -4 instead of none and in the process it fixes the apparent bug where it was supposed to never affect spectral creatures, elementals, golems, and skeletons.
 
 ## New Components
 
