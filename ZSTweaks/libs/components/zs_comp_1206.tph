@@ -1,6 +1,7 @@
 ACTION_IF NOT is_iwdee BEGIN
 
   ACTION_IF FILE_EXISTS_IN_GAME ~bdring10.itm~ BEGIN
+    
     COPY ~%MOD_FOLDER%/items/ring_purity~ ~override~
     COPY_EXISTING ~bdring10.itm~ ~override~
       LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@7820) END

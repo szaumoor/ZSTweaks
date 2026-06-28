@@ -14,7 +14,7 @@ ACTION_IF NOT is_iwdee BEGIN
       LPF ALTER_EFFECT STR_VAR match_resource = "zstwt1" resource = "zstwt3" END
     END
 
-  BUT_ONLY IF_EXISTS
+  IF_EXISTS
 
 END
   

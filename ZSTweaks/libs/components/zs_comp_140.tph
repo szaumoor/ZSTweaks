@@ -8,7 +8,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
   COPY_EXISTING ~scrl8o.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=new_description END
-  BUT_ONLY IF_EXISTS
+  IF_EXISTS
 
   ACTION_IF zst_140_finger_death_no_projectile BEGIN
 

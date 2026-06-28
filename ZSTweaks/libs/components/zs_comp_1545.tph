@@ -10,7 +10,7 @@ ACTION_IF zst_1545_constitution_bonuses BEGIN
         END
     END
     
-    PRINT "[INFO]: Patching creatures to ensure they don't died upon spawning with the current Constitution table..."
+    PRINT "[INFO]: Patching creatures to ensure they don't die upon spawning with the current Constitution table..."
     OUTER_SET matches = 0
     COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
          
@@ -112,13 +112,10 @@ END
 ACTION_IF zst_1545_shorty_bonuses > 0 BEGIN
 
     ACTION_MATCH zst_1545_shorty_bonuses WITH
-        1
-            BEGIN COPY ~%MOD_FOLDER%/2da/tweaks/shorty_bonuses/nullified~ ~override~  END
-        2
-            BEGIN COPY ~%MOD_FOLDER%/2da/tweaks/shorty_bonuses/toned_down~ ~override~ END
-        3
-            BEGIN COPY ~%MOD_FOLDER%/2da/tweaks/shorty_bonuses/standardized~ ~override~ END
-        DEFAULT END
+        1 BEGIN COPY ~%MOD_FOLDER%/2da/tweaks/shorty_bonuses/nullified~ ~override~  END
+        2 BEGIN COPY ~%MOD_FOLDER%/2da/tweaks/shorty_bonuses/toned_down~ ~override~ END
+        3 BEGIN COPY ~%MOD_FOLDER%/2da/tweaks/shorty_bonuses/standardized~ ~override~ END
+          DEFAULT END
 
 END
 

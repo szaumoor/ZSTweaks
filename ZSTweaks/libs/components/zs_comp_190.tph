@@ -12,11 +12,11 @@ END
 ACTION_IF zst_190_hpower_apr BEGIN
 
   COPY ~%MOD_FOLDER%/spells/divine/holy_power~ ~override~
-
   ACTION_IF is_iwdee BEGIN
 
     COPY_EXISTING ~zstwapr1.spl~ ~override~
       LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur=6 step_size=1 level_cap=30 END
+
   END
 
   COPY_EXISTING ~sppr412.spl~ ~override~

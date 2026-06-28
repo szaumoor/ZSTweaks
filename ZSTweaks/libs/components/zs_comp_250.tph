@@ -1,7 +1,6 @@
 ACTION_IF NOT is_iwdee BEGIN
 
     COPY ~%MOD_FOLDER%/spells/divine/earthquake~ ~override~
-
     COPY_EXISTING ~sppr720.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5090) END
         LPF ADD_SPL_TGTEFF INT_VAR ip=0 rd=0 p2=5 p1=class_golem_clay STR_VAR effects = ~op=177,res=zstwekg0;op=177,res=zstwekg1,dur=6~ END
@@ -16,7 +15,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
     ACTION_IF zst_250_quake_shake_intensity > 0 BEGIN
 
-        COPY_EXISTING ~sppr720.spl~ ~override~
+        COPY_EXISTING ~sppr720.spl~  ~override~
                       ~spogre01.spl~ ~override~
 
             PATCH_IF zst_250_quake_shake_intensity = 1 BEGIN
@@ -30,7 +29,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
         COPY_EXISTING ~shake1.eff~ ~override~
             WRITE_LONG 0x1c 5
-        BUT_ONLY IF_EXISTS
+        IF_EXISTS
 
     END
 

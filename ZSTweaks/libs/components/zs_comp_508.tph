@@ -16,7 +16,7 @@ ACTION_IF zst_508_restoration_stat_drain BEGIN
       LPF ADD_SPELL_EFFECT INT_VAR power=spl_level target=2 opcode=321 STR_VAR resource=~%res%~ END
     END
 
-  BUT_ONLY IF_EXISTS
+  IF_EXISTS
 
   COPY_EXISTING ~spwish07.spl~ ~override~
                 ~spwish46.spl~ ~override~

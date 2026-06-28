@@ -8,6 +8,6 @@ ACTION_IF NOT is_iwdee BEGIN
     LPF ADD_CRE_EFFECT INT_VAR opcode = 179 timing = 9 parameter2 = 7 parameter1 = 1 special = 1 END
     LPF ADD_CRE_EFFECT INT_VAR opcode = 178 timing = 9 parameter2 = 7 parameter1 = 1 special = 1 END
     LPF ADD_CRE_EFFECT INT_VAR opcode = 219 timing = 9 parameter2 = 7 parameter1 = 1 END
-  BUT_ONLY IF_EXISTS
+  IF_EXISTS
 
 END

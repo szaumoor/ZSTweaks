@@ -15,7 +15,7 @@ ACTION_IF zst_446_fball_buff BEGIN
 
     COPY_EXISTING ~scrl5z.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_desc=new_description_fireball END
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
     COPY_EXISTING ~scrl1g.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_desc=new_description_fireball END
@@ -26,11 +26,11 @@ ACTION_IF zst_446_fball_buff BEGIN
 
     COPY_EXISTING ~scrlal.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_desc=new_description_sunfire END
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
     COPY_EXISTING ~scrlar.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_desc=new_description_sunfire END
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
     COPY_EXISTING ~spwi523d.spl~ ~override~
         LPF LAST_VALID_HEADER RET last_header = result END
@@ -79,12 +79,12 @@ ACTION_IF zst_446_fball_buff BEGIN
 
     COPY_EXISTING ~scrl8n.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_desc=new_description_fireball_delayed END
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
     COPY_EXISTING ~spwi922.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7523) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 20 dicesize = 9 parameter1 = 20 END
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
 END
 

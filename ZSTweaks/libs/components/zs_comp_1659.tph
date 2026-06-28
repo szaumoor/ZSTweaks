@@ -1,22 +1,16 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
-
+  
   COPY_EXISTING ~helm31.itm~ ~override~
-                ~helm32.itm~ ~override~
     LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 31 END
-
-    PATCH_IF "%SOURCE_RES%" STR_EQ "helm31" BEGIN
-
-      LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7050) END
-
-    END ELSE BEGIN
-
-      LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7051) END
-      PATCH_FOR_EACH new_opcode IN 86 87 88 89 BEGIN
-          LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = new_opcode parameter1 = 7 END
-      END
-      LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 6 parameter1 = 1 END
-      LPF ALTER_HEADER INT_VAR match_type = 3 projectile = projectl_spklaric END
-
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7050) END
+    
+  COPY_EXISTING ~helm32.itm~ ~override~
+    LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 31 END
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7051) END
+    PATCH_FOR_EACH new_opcode IN 86 87 88 89 BEGIN
+        LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = new_opcode parameter1 = 7 END
     END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 6 parameter1 = 1 END
+    LPF ALTER_HEADER INT_VAR match_type = 3 projectile = projectl_spklaric END
 
 END

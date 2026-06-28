@@ -8,7 +8,7 @@ ACTION_IF zst_160_bbod BEGIN
     COPY_EXISTING ~blakblad.itm~ ~override~
         LPF DELETE_EFFECT INT_VAR match_opcode = 263 match_parameter1 = zst_1120_backstab_penalty_lswords END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~%base_effect%~ END
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
 END
 
@@ -21,6 +21,6 @@ ACTION_IF zst_160_goliro BEGIN
 
     COPY_EXISTING ~cdgoliro.itm~ ~override~
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~%base_effect%~ END
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
     
 END   

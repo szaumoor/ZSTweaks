@@ -4,8 +4,8 @@ COPY_EXISTING ~spwi911.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc=new_description END
     LPF ALTER_EFFECT INT_VAR header=0 match_opcode=12 parameter1=17 dicenumber=2 dicesize=10 resist_dispel=0 END
     LPF ~CD_EXTEND-O-MATIC~ INT_VAR step_dur=0 step_size=1 level_cap=(is_iwdee ? 30 : 20) min_lev_alt=17 damage_fixed=1 damage_special=1 END
-BUT_ONLY IF_EXISTS
+IF_EXISTS
 
 COPY_EXISTING ~scrl9t.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=new_description END
-BUT_ONLY IF_EXISTS
+IF_EXISTS

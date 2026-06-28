@@ -32,7 +32,7 @@ ACTION_IF zst_1150_dice_spears BEGIN
             SAY_EVALUATED 0x50 ~%desc%~
             READ_LONG 0x50 basic_javelin_description_index
 
-        COPY_EXISTING_REGEXP ~cdjav[0-4][bepq]?.itm~ ~override~
+        COPY_EXISTING_REGEXP ~^cdjav[0-4][bepq]?\.itm$~ ~override~
             LPF ALTER_HEADER INT_VAR match_type = 2 match_dicesize = 6 match_dicenumber = 1 dicesize = 8 END
             LPF ALTER_HEADER INT_VAR match_type = 1 match_dicesize = 4 match_dicenumber = 1 dicesize = 6 END
 

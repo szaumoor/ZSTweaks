@@ -26,4 +26,4 @@ COPY_EXISTING ~spwi215.spl~ ~override~
     END
     SAY_EVALUATED 0x50 ~%desc%~
 
-BUT_ONLY IF_EXISTS
+IF_EXISTS

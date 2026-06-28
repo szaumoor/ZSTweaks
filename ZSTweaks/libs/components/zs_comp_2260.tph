@@ -1,87 +1,83 @@
 ACTION_IF zst_2260_allow_blade OR zst_2260_allow_skald OR zst_2260_allow_swash OR zst_2260_allow_tempus BEGIN
 
-  WITH_SCOPE BEGIN
+  COPY ~%MOD_FOLDER%/class_kits/extra_apr~ ~override~
 
-    COPY ~%MOD_FOLDER%/class_kits/extra_apr~ ~override~
+  ACTION_IF zst_2260_allow_blade BEGIN
 
-    ACTION_IF zst_2260_allow_blade BEGIN
+    COPY_EXISTING ~clabba02.2da~ ~override~
+      LPF set_clab_2da_entries INT_VAR f_MinLevel = 6 f_MaxLevel = 12 f_Increment = 6 STR_VAR f_Entry = "AP_ZSTWAPR2" END
 
-      COPY_EXISTING ~clabba02.2da~ ~override~
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 6 f_MaxLevel = 12 f_Increment = 6 STR_VAR f_Entry = "AP_ZSTWAPR2" END
-
-      COPY_EXISTING ~weapprof.2da~ ~override~
-        FOR ( i = 3; i < 31; ++i ) BEGIN
-          LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = 42 STR_VAR replacement = "2" match_col_value = "1" END
-        END
-        PRETTY_PRINT_2DA
-
-    END
-
-    ACTION_IF zst_2260_allow_skald BEGIN
-
-      COPY_EXISTING ~clabba04.2da~ ~override~
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 6 f_MaxLevel = 12 f_Increment = 6 STR_VAR f_Entry = "AP_ZSTWAPR2" END
-
-      COPY_EXISTING ~weapprof.2da~ ~override~
-        FOR ( i = 3; i < 31; ++i ) BEGIN
-          LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = 44 STR_VAR replacement = "2" match_col_value = "1" END
-        END
-        PRETTY_PRINT_2DA
-
-    END
-
-    ACTION_IF zst_2260_allow_swash BEGIN
-
-      COPY_EXISTING ~clabth04.2da~ ~override~
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 6 f_MaxLevel = 12 f_Increment = 6 STR_VAR f_Entry = "AP_ZSTWAPR2" END
-
-    END
-
-    ACTION_IF zst_2260_allow_tempus BEGIN
-
-      ACTION_IF is_bg2ee_or_eet BEGIN
-        OUTER_SET tempus_col = 63
-      END ELSE ACTION_IF is_bgee OR is_iwdee BEGIN
-        OUTER_SET tempus_col = 62
+    COPY_EXISTING ~weapprof.2da~ ~override~
+      FOR ( i = 3; i < 31; ++i ) BEGIN
+        LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = 42 STR_VAR replacement = "2" match_col_value = "1" END
       END
-
-      COPY_EXISTING ~weapprof.2da~ ~override~
-        FOR ( i = 3; i < 31; ++i ) BEGIN
-          LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = tempus_col STR_VAR replacement = "2" match_col_value = "1" END
-        END
-        PRETTY_PRINT_2DA
-
-    END
-
-    PRINT "[INFO]: Patching all non-joinable NPCs that use the Skald/Blade/Swashbuckler kits (depending on configuration)"
-    SILENT
-    ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
-
-      ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
-
-        COPY_EXISTING ~%file%~ ~override~
-          SET kit = SHORT_AT 0x246 | (SHORT_AT 0x244) << 16
-          PATCH_IF (zst_2260_allow_blade AND kit = kit_blade) OR
-                   (zst_2260_allow_skald AND kit = kit_skald) OR
-                   (zst_2260_allow_swash AND kit = kit_swashbuckler)
-          BEGIN
-
-            READ_BYTE 0x234 level
-
-            SET applications = (level >= 7) + (level >= 13)
-            PATCH_IF applications > 0 BEGIN
-              SET p1 = applications == 1 ? 6 : 1
-              LPF ADD_CRE_EFFECT INT_VAR timing = 9 opcode = 1 target = 1 parameter1=p1 END
-            END
-
-          END
-        BUT_ONLY
-
-      END
-
-    END
-    VERBOSE
+      PRETTY_PRINT_2DA
 
   END
+
+  ACTION_IF zst_2260_allow_skald BEGIN
+
+    COPY_EXISTING ~clabba04.2da~ ~override~
+      LPF set_clab_2da_entries INT_VAR f_MinLevel = 6 f_MaxLevel = 12 f_Increment = 6 STR_VAR f_Entry = "AP_ZSTWAPR2" END
+
+    COPY_EXISTING ~weapprof.2da~ ~override~
+      FOR ( i = 3; i < 31; ++i ) BEGIN
+        LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = 44 STR_VAR replacement = "2" match_col_value = "1" END
+      END
+      PRETTY_PRINT_2DA
+
+  END
+
+  ACTION_IF zst_2260_allow_swash BEGIN
+
+    COPY_EXISTING ~clabth04.2da~ ~override~
+      LPF set_clab_2da_entries INT_VAR f_MinLevel = 6 f_MaxLevel = 12 f_Increment = 6 STR_VAR f_Entry = "AP_ZSTWAPR2" END
+
+  END
+
+  ACTION_IF zst_2260_allow_tempus BEGIN
+
+    ACTION_IF is_bg2ee_or_eet BEGIN
+      OUTER_SET tempus_col = 63
+    END ELSE ACTION_IF is_bgee OR is_iwdee BEGIN
+      OUTER_SET tempus_col = 62
+    END
+
+    COPY_EXISTING ~weapprof.2da~ ~override~
+      FOR ( i = 3; i < 31; ++i ) BEGIN
+        LPF SWAP_2DA_TABLE_VALUE INT_VAR row=i column = tempus_col STR_VAR replacement = "2" match_col_value = "1" END
+      END
+      PRETTY_PRINT_2DA
+
+  END
+
+  PRINT "[INFO]: Patching all non-joinable NPCs that use the Skald/Blade/Swashbuckler kits (depending on configuration)"
+  SILENT
+  ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
+
+    ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
+
+      COPY_EXISTING ~%file%~ ~override~
+        SET kit = SHORT_AT 0x246 | (SHORT_AT 0x244) << 16
+        PATCH_IF (zst_2260_allow_blade AND kit = kit_blade) OR
+                  (zst_2260_allow_skald AND kit = kit_skald) OR
+                  (zst_2260_allow_swash AND kit = kit_swashbuckler)
+        BEGIN
+
+          READ_BYTE 0x234 level
+
+          SET applications = (level >= 7) + (level >= 13)
+          PATCH_IF applications > 0 BEGIN
+            SET p1 = applications == 1 ? 6 : 1
+            LPF ADD_CRE_EFFECT INT_VAR timing = 9 opcode = 1 target = 1 parameter1=p1 END
+          END
+
+        END
+      BUT_ONLY
+
+    END
+
+  END
+  VERBOSE
 
 END

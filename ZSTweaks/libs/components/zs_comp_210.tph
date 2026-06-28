@@ -6,7 +6,7 @@ ACTION_IF is_iwdee BEGIN
 END
 
 COPY_EXISTING ~spwi205.spl~ ~override~
-  LPF ALTER_SPELL INT_VAR desc=new_description animation=11 primary_type=4 excl_flags=excl STR_VAR casting_sound=~CAS_M05~ END
+  LPF ALTER_SPELL INT_VAR desc=new_description animation=11 primary_type=4 excl_flags=excl STR_VAR casting_sound=~cas_m05~ END
   LPF ALTER_HEADER INT_VAR projectile = 170 END
 
 COPY_EXISTING ~scrl89.itm~ ~override~

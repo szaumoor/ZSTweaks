@@ -18,7 +18,6 @@ DEFINE_PATCH_MACRO ~nerf_haste#improved~ BEGIN
     LPM nerf_haste
 END
 
-
 COPY_EXISTING ~spin828.spl~ ~override~ // mazzy
     LPM ~nerf_haste#normal~
 

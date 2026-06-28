@@ -1,16 +1,5 @@
 ACTION_IF NOT is_iwdee BEGIN
 
-// DEFINE_PATCH_MACRO resolve_wings_placement BEGIN
-//     LPF IS_HELMET_EQUIPPED RET helmet = found found_helmet = which END
-//     PATCH_IF helmet = TRUE BEGIN
-//         PATCH_IF "%found_helmet%" STR_EQ "helmnoa" BEGIN
-//             REPLACE_CRE_ITEM ~zstwings~ #0 #0 #0 ~unstealable&undroppable~ ~helmet~ // the wings
-//         END // otherwise, what do I do with the possibly unique item that was there originally?
-//     END ELSE BEGIN
-//         ADD_CRE_ITEM ~zstwings~ #0 #0 #0 ~unstealable&undroppable~ ~helmet~ // the wings
-//     END
-// END
-
     COPY_EXISTING ~helmnoan.itm~ ~override/zstwings.itm~
         WRITE_ASCII 0x22 "zw" #2
         WRITE_LONG 0x18 0

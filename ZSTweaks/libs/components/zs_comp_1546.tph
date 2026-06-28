@@ -83,16 +83,19 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
             END
 
             PATCH_IF NOT zst_1546_everyone_can_use_all_shields BEGIN
+
                 PATCH_IF zst_1546_tower_single_classed_fighter_classes BEGIN
                     WRITE_LONG 0x1e 1615853504
                 END ELSE PATCH_IF zst_1546_tower_all_fighter_classes BEGIN
                     WRITE_LONG 0x1e 1615594432
                 END
+
             END
 
         END
 
         PATCH_IF shield_strref = medium_shield_strref BEGIN
+
             PATCH_IF zst_1546_medium_tweak BEGIN
                 LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=36,p1=-1;op=190,p1=-1~ END
                 PATCH_IF zst_1546_speed_debuffs BEGIN
@@ -105,6 +108,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
                     WRITE_LONG 0x1e 1610874880
                 END
             END
+
         END
 
         PATCH_IF shield_strref = small_shield_strref BEGIN
@@ -118,9 +122,11 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
                     WRITE_LONG 0x1e 1610874880
                 END
             END
+
         END
 
         PATCH_IF zst_1546_buckler_tweak AND shield_strref = buckler_shield_strref BEGIN
+
             LPF PATCH_SHIELD INT_VAR type=4 END
             LPF GET_SHIELD_LEVEL RET result END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=232,p1=1,p2=7,res=zstwbk#%result%~ END
@@ -129,7 +135,9 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
                     WRITE_LONG 0x1e 536870912
                 END
             END
+
         END
+        
     END
 BUT_ONLY
 

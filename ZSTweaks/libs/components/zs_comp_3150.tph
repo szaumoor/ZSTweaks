@@ -197,4 +197,4 @@ BUT_ONLY IF_EXISTS
 COPY_EXISTING ~sr_drow.spl~ ~override~
     PATCH_PRINT "[INFO]: Adapting MR from Subrace mod"
     LPF ALTER_EFFECT_EX INT_VAR match_opcode = 166 STR_VAR parameter1_ex = "( (o_parameter1 * %zst_3150_drow_mr_pctg_of_base%) / 100 )" END
-BUT_ONLY IF_EXISTS
+IF_EXISTS

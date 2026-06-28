@@ -1,6 +1,8 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    COPY_EXISTING_REGEXP ~^ring2[7-9]\.itm$~ ~override~
+    COPY_EXISTING ~ring27.itm~ ~override~
+                  ~ring28.itm~ ~override~
+                  ~ring29.itm~ ~override~
         LPF ALTER_EFFECT_EX INT_VAR savebonus = "-2" STR_VAR match_savingthrow_ex = "(o_savingthrow != 0)" END
     BUT_ONLY
 

@@ -7,7 +7,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                   ~npclck.itm~ ~override~
                   ~npplat.itm~ ~override~
                   ~nparm.itm~  ~override~
-    LPM RM_STAT_REQS 
+        LPM RM_STAT_REQS 
 
     COPY_EXISTING ~npsw04.itm~ ~override~
         PATCH_IF NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1643" AND NOT group_component BEGIN
@@ -37,6 +37,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         END
 
         LPM RM_STAT_REQS
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
 END

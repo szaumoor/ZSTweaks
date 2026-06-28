@@ -19,4 +19,4 @@ END
 
 COPY_EXISTING ~scrl9h.itm~ ~override~
   LPF ALTER_ITEM INT_VAR id_desc=new_description END
-BUT_ONLY IF_EXISTS
+IF_EXISTS

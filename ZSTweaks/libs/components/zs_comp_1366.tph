@@ -16,5 +16,5 @@ ACTION_IF NOT is_iwdee BEGIN
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=46;op=240,p2=55~ END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=321,res=bdshries;op=321,res=icetrlst;op=321,res=spin974;op=321,res=sppr718;op=321,res=sppr984;op=321,res=spwi118e;op=321,res=spwi118g;op=321,res=spwi816;op=321,res=spwi898~ END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=169,p2=55;op=296,res=spflayer;op=267,p1=%stunned_strref%;op=101,p2=210;op=101,p2=45~ END
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 END

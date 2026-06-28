@@ -8,5 +8,5 @@ COPY_EXISTING ~spwi913.spl~ ~override~
   
 COPY_EXISTING ~scrl9v.itm~ ~override~
   LPF ALTER_ITEM INT_VAR id_desc=new_description END
-BUT_ONLY IF_EXISTS
+IF_EXISTS
 

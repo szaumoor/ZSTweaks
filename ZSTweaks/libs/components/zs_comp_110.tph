@@ -3,7 +3,7 @@ COPY_EXISTING ~sppr101.spl~  ~override~
   LPF ALTER_HEADER INT_VAR speed = 3 END
   LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@5010) END
   LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur=6 step_size=2 level_cap=20 END
-BUT_ONLY IF_EXISTS
+IF_EXISTS
 
 ACTION_IF spell_curse > 0 BEGIN
 

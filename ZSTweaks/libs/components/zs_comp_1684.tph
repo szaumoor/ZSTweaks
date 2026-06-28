@@ -31,5 +31,5 @@ COPY_EXISTING ~dagg16.itm~ ~override~
         LPF ALTER_EFFECT INT_VAR header_type = 1 match_opcode = 326 STR_VAR resource = ~zstwthd0~ END
     END
 
-BUT_ONLY IF_EXISTS
+IF_EXISTS
 

@@ -13,6 +13,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
     LPF ALTER_HEADER INT_VAR speed = 0 END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=146,res=zstwpain,p2=1,tmg=1,rd=2~ END
-  BUT_ONLY IF_EXISTS
+  IF_EXISTS
 
 END

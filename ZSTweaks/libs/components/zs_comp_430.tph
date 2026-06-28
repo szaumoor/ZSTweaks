@@ -11,9 +11,11 @@ ACTION_IF NOT is_iwdee BEGIN
     LPF ADD_SPL_TGTEFF INT_VAR pwr=1 rd=0 STR_VAR effects=~op=146,p2=1,res=zstwgres~ END
 
   ACTION_IF NOT is_iwdee BEGIN
+
     COPY_EXISTING ~zstwgres.spl~ ~override~
       LPF CLONE_EFFECT_EX INT_VAR match_opcode = 126 opcode = 0 parameter2=0 STR_VAR parameter1_ex=~"-1"~ END
       LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur = 6 level_cap = 20 END
+      
   END
 
   COPY_EXISTING ~scrl66.itm~ ~override~
