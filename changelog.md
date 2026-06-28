@@ -64,6 +64,7 @@
 - Wail of the Banshee component now also makes it slay anyone with 8 HD or less without any save allowed
 - Mage elemental robes can now be worn by any class
 - Storm Star now gives a bonus to Priests of Talos: +1/2 APR to them (unupgraded), 1 (upgraded)
+- Opened Symbol, X component to IWDEE and improved compatibility with EE Fixpack
 
 ## New Components
 
