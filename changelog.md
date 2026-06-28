@@ -17,6 +17,7 @@
 - Character Stat overhaul now fixes creatures with CON tables if Constitution overhaul is picked, so they don't die due to health loss in the case of very low HP and CON
 - Minor fixes for component 1531 (MR tweaks)
 - Symbol X component was erroneously skipping the entire content on the script in IWDEE despite being allowed for the game
+- Fixed critical hits' extra damage with ranged voidweapons hitting instantly instead of at the same time (roughly)
 
 ## Modifications
 
