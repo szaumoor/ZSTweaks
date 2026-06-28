@@ -1054,9 +1054,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Setting to nerf Iron Golem backstab multiplier by a specific amount should be set to 0 (disable) or a positive number (specific backstab multiplier reduction). Actual value: %zst_160_goliro_reduction_only%"
             LAM f_plus
         END
-
-        OUTER_SET zst_170_wail_wish_bonus = "1"
-OUTER_SET zst_170_wail_save_bonus = "-2"
+        
         // ----------------------------------------WAIL BANSHEE ------------------------------------------------------- \\
 
         ACTION_IF zst_170_wail_wish_bonus != 0 AND zst_170_wail_wish_bonus != 1 BEGIN
