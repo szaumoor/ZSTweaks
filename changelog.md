@@ -16,6 +16,7 @@
 - Added prefix to fix an instance of Chimera in IWD's Lava mod with the wrong race
 - Character Stat overhaul now fixes creatures with CON tables if Constitution overhaul is picked, so they don't die due to health loss in the case of very low HP and CON
 - Minor fixes for component 1531 (MR tweaks)
+- Symbol X component was erroneously skipping the entire content on the script in IWDEE despite being allowed for the game
 
 ## Modifications
 
@@ -64,7 +65,7 @@
 - Wail of the Banshee component now also makes it slay anyone with 8 HD or less without any save allowed
 - Mage elemental robes can now be worn by any class
 - Storm Star now gives a bonus to Priests of Talos: +1/2 APR to them (unupgraded), 1 (upgraded)
-- Opened Symbol, X component to IWDEE and improved compatibility with EE Fixpack
+- Improved compatibility of Symbol X component with EE Fixpack
 
 ## New Components
 
