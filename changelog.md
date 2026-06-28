@@ -18,6 +18,7 @@
 - Minor fixes for component 1531 (MR tweaks)
 - Symbol X component was erroneously skipping the entire content on the script in IWDEE despite being allowed for the game
 - Fixed critical hits' extra damage with ranged voidweapons hitting instantly instead of at the same time (roughly)
+- Small misc code and efficiency improvements
 
 ## Modifications
 
@@ -67,6 +68,7 @@
 - Mage elemental robes can now be worn by any class
 - Storm Star now gives a bonus to Priests of Talos: +1/2 APR to them (unupgraded), 1 (upgraded)
 - Improved compatibility of Symbol X component with EE Fixpack
+- Fireseed enchantment nerf (from +6--ridiculous-- to +2) nerfed: now it's +3. It's two levels above Melf's Meteors after all (SCS nerfs enchantment to +2 for example)
 
 ## New Components
 
