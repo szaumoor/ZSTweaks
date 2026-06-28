@@ -1055,6 +1055,20 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
+        OUTER_SET zst_170_wail_wish_bonus = "1"
+OUTER_SET zst_170_wail_save_bonus = "-2"
+        // ----------------------------------------WAIL BANSHEE ------------------------------------------------------- \\
+
+        ACTION_IF zst_170_wail_wish_bonus != 0 AND zst_170_wail_wish_bonus != 1 BEGIN
+            WARN "[WARN]: Setting to allow bonus to the Limited Wish version of Wail of the Banshee should be set to 0 (disable) or 1 (enable). Actual value: %zst_170_wail_wish_bonus%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_170_wail_save_bonus >= 0 BEGIN
+            WARN "[WARN]: Setting to define the saving throw bonus to the Limited Wish version of Wail of the banshee should be set to a value under 0. Actual value: %zst_170_wail_save_bonus%"
+            LAM f_plus
+        END
+
 
         // ----------------------------------------TENSER TWEAKS------------------------------------------------- \\
 

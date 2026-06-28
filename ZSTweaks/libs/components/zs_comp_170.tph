@@ -10,3 +10,19 @@ COPY_EXISTING ~scrl9v.itm~ ~override~
   LPF ALTER_ITEM INT_VAR id_desc=new_description END
 IF_EXISTS
 
+ACTION_IF zst_170_wail_wish_bonus BEGIN
+  PRINT "[INFO]: Making sure the Limited Wish version of Wail of the Banshee is extra nasty..."
+  COPY_EXISTING ~spwi913.spl~ "override/zstwswl.spl"
+    LPF ALTER_EFFECT INT_VAR match_savingthrow = 4 savebonus = zst_170_wail_save_bonus END
+    WRITE_BYTE 0x25 0
+  COMPILE ~%MOD_FOLDER%/dlg/zs_wish_wail_banshee.d~
+
+  ACTION_TIME "Horrendous WoB patching" BEGIN
+    COPY_EXISTING_REGEXP ".+\.\(spl\|itm\|cre\)" ~override~
+      LPF CLONE_EFFECT INT_VAR silent=1 match_opcode = 204 match_parameter2 = 7 opcode = 206 STR_VAR resource=~zstwswl~ END
+  END
+
+END
+
+
+
