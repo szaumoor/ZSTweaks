@@ -16,14 +16,14 @@ COPY_EXISTING ~clck14.itm~ ~override~ // adventurer
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter2 = 0 END
     LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=37,p1=1;op=31,p1=20;op=30;op=84;op=29;op=28;op=85;op=27~ END
 
-COPY_EXISTING ~clck09.itm~ ~override~ // cold resist clck
-    LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6137) id_desc=RESOLVE_STR_REF(@6144) END
+COPY_EXISTING ~clck09.itm~ ~override~ // cold affinity clck
+    LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6137) id_desc=RESOLVE_STR_REF(@6144) unusable0 = 0 unusable1 = 0 END
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 28 parameter1 = 40 END
     LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 28 opcode = 85 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=2~ END
 
-COPY_EXISTING ~clck10.itm~ ~override~ // fire resist clck
-    LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6138) id_desc=RESOLVE_STR_REF(@6145) END
+COPY_EXISTING ~clck10.itm~ ~override~ // fire affinity clck
+    LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6138) id_desc=RESOLVE_STR_REF(@6145) unusable0 = 0 unusable1 = 0 END
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 30 parameter1 = 40 END
     LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 30 opcode = 84 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=1~ END
@@ -35,8 +35,8 @@ COPY_EXISTING ~bdrobe05.itm~ ~override~ // robe of flames
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6~ END
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~clck11.itm~ ~override~ // electric resist clck
-    LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6139) id_desc=RESOLVE_STR_REF(@6143) END
+COPY_EXISTING ~clck11.itm~ ~override~ // electric affinity clck
+    LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6139) id_desc=RESOLVE_STR_REF(@6143) unusable0 = 0 unusable1 = 0 END
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 29 parameter1 = 40 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=3~ END
 
