@@ -1054,7 +1054,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Setting to nerf Iron Golem backstab multiplier by a specific amount should be set to 0 (disable) or a positive number (specific backstab multiplier reduction). Actual value: %zst_160_goliro_reduction_only%"
             LAM f_plus
         END
-        
+
         // ----------------------------------------WAIL BANSHEE ------------------------------------------------------- \\
 
         ACTION_IF zst_170_wail_wish_bonus != 0 AND zst_170_wail_wish_bonus != 1 BEGIN
@@ -1066,7 +1066,6 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Setting to define the saving throw bonus to the Limited Wish version of Wail of the banshee should be set to a value under 0. Actual value: %zst_170_wail_save_bonus%"
             LAM f_plus
         END
-
 
         // ----------------------------------------TENSER TWEAKS------------------------------------------------- \\
 
@@ -1140,6 +1139,22 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         ACTION_IF zst_561_web_save_nerf != 0 AND zst_561_web_save_nerf != 1 BEGIN
             WARN "[WARN]: Setting to make Web's save nerfed and use a Save vs. Breath should be set to 0 (disable) or 1 (enable). Actual value: %zst_561_web_save_nerf%"
+            LAM f_plus
+        END
+
+        // ----------------------------------------PW KILL ----------------------------------------------------- \\
+        ACTION_IF zst_585_pwk_magic_school < 0 OR zst_585_pwk_magic_school > 2 BEGIN
+            WARN "[WARN]: Setting to make PW: Kill use a different magic school should be set to 0 (unchanged -- conjuration), 1 (enchantment), or 2 (divination). Actual value: %zst_585_pwk_magic_school%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_585_pwk_chunking_death != 0 AND zst_585_pwk_chunking_death != 1 BEGIN
+            WARN "[WARN]: Setting to make PW: Kill chunk when killing successfully should be set to 0 (disable) or 1 (enable). Actual value: %zst_585_pwk_chunking_death%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_585_pwk_60HP_10HD_MR_bypass != 0 AND zst_585_pwk_60HP_10HD_MR_bypass != 1 BEGIN
+            WARN "[WARN]: Setting to make PW: Kill bypass MR when hitting anyone with <= 60 HP or <= 10 HD should be set to 0 (disable) or 1 (enable). Actual value: %zst_585_pwk_60HP_10HD_MR_bypass%"
             LAM f_plus
         END
 
@@ -1991,6 +2006,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         ACTION_IF zst_group_577_haste_nerf != 0 AND zst_group_577_haste_nerf != 1 BEGIN
             WARN "[WARN]: Haste Nerf group component should be set to 1 or 0. Actual value: %zst_group_577_haste_nerf%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_585_pw_kill != 0 AND zst_group_585_pw_kill != 1 BEGIN
+            WARN "[WARN]: PW Kill group component should be set to 1 or 0. Actual value: %zst_group_585_pw_kill%"
             LAM f_plus
         END
 

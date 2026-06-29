@@ -1,0 +1,63 @@
+COPY ~%MOD_FOLDER%/spells/arcane/pw_kill~ ~override~
+ACTION_IF NOT zst_585_pwk_chunking_death BEGIN
+    OUTER_SPRINT chunking_str ""
+
+    COPY_EXISTING ~zstwpwk0.spl~ ~override~
+                  ~zstwpwk1.spl~ ~override~
+                  ~zstwpwk3.spl~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode=13 parameter2= 2**2 END
+
+END ELSE BEGIN
+    OUTER_SPRINT chunking_str @76004
+END
+
+ACTION_IF zst_585_pwk_60HP_10HD_MR_bypass BEGIN
+    OUTER_SPRINT mr_check @76005
+    COPY_EXISTING ~zstwpwk0.spl~ ~override~
+        LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
+
+END ELSE BEGIN
+    OUTER_SPRINT mr_check ""
+END
+
+ACTION_IF zst_585_pwk_magic_school = 0 BEGIN
+    OUTER_SPRINT magic_school @76001
+END ELSE ACTION_IF zst_585_pwk_magic_school = 1 BEGIN
+
+    OUTER_SPRINT magic_school @76003
+    COPY_EXISTING ~spwi508.spl~ ~override~
+        READ_LONG 0x1e exclusion_flags
+    BUT_ONLY
+
+END ELSE ACTION_IF zst_585_pwk_magic_school = 2 BEGIN
+
+    OUTER_SPRINT magic_school @76002
+    COPY_EXISTING ~spwi609.spl~ ~override~
+        READ_LONG 0x1e exclusion_flags
+    BUT_ONLY
+
+END
+
+COPY_EXISTING ~spwi912.spl~ ~override~
+    PATCH_IF zst_585_pwk_magic_school > 0 BEGIN
+        WRITE_LONG 0x1e exclusion_flags
+
+        PATCH_IF zst_585_pwk_magic_school = 1 BEGIN
+            WRITE_SHORT 0x22 11
+            WRITE_BYTE 0x25 4
+        END PATCH_IF zst_585_pwk_magic_school = 2 BEGIN
+            WRITE_SHORT 0x22 16
+            WRITE_BYTE 0x25 3
+        END
+    END
+    
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@76000) END
+    LPF DELETE_EFFECT INT_VAR check_globals = 0 END
+
+    PATCH_IF has_eefixpack BEGIN
+        LPF ADD_SPL_TGTEFF STR_VAR effects = ~op=318,pwr=9,rd=0,res=%SOURCE_RES%,p2=110,p1=%splstate_fp_death_immunity%~ END
+    END
+
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=9 STR_VAR res="zstwpwk0" effects = ~op=326,p2=145,p1=61;op=326,dnum=10;op=326,p2=144,p1=61,res=zstwpwk2~ END
+
+    

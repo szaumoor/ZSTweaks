@@ -139,3 +139,7 @@ END
 ACTION_IF zst_group_577_haste_nerf BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_577.tph~ END
 END
+
+ACTION_IF zst_group_585_pw_kill BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_585.tph~ END
+END
