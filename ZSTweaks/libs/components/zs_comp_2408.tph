@@ -1,0 +1,65 @@
+COPY_EXISTING ~spwi115.spl~ ~override/zstwz115.spl~
+    WRITE_SHORT 0x1c 2
+
+ACTION_FOR_EACH ability IN
+    ~GA_SPDR301~ // lightning bolt (avenger)
+    ~GA_SPDR601~ // chain lightning (avenger)
+    ~GA_ZSTWZ115~ // shocking grasp
+    ~GA_SPPR302~ // call lightning
+BEGIN
+  COPY_EXISTING ~clabpr02.2da~ ~override~
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "%ability%" END
+END
+
+ACTION_IF spell_cloudburst > 0 BEGIN
+
+  LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CLOUDBURST" RET cloud_res = spell_res END
+  COPY_EXISTING ~clabpr02.2da~ ~override~
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "GA_%cloud_res%" END
+
+END
+
+ACTION_IF spell_static_charge > 0 BEGIN
+
+  LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_STATIC_CHARGE" RET static_charge_res = spell_res END
+  COPY_EXISTING ~clabpr02.2da~ ~override~
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "GA_%static_charge_res%" END
+
+END
+
+ACTION_IF spell_whirlwind > 0 BEGIN
+
+  LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_WHIRLWIND" RET whirlwind_res = spell_res END
+  COPY_EXISTING ~clabpr02.2da~ ~override~
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "GA_%whirlwind_res%" END
+
+END
+
+ACTION_IF zst_2408_electricity_boost AND zst_2408_electricity_boost_pctg > 0 BEGIN
+
+    COPY ~%MOD_FOLDER%/class_kits/priest_talos~ ~override~
+    COPY_EXISTING ~zstwprt0.spl~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 332 parameter1 = zst_2408_electricity_boost_pctg END
+
+    COPY_EXISTING ~clabpr02.2da~ ~override~
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "AP_ZSTWPRT0" END
+
+    PRINT "[INFO]: Patching all non-joinable NPCs that use the Priest of Talos kit"
+    SILENT
+
+    ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
+        ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
+            COPY_EXISTING ~%file%~ ~override~
+                SET kit = SHORT_AT 0x246 | (SHORT_AT 0x244) << 16
+                PATCH_IF kit = kit_talos BEGIN
+                    PATCH_IF priest_talos_electricity AND zst_2408_electricity_boost_pctg > 0 BEGIN
+                    LPF ADD_CRE_EFFECT INT_VAR opcode = 332 timing = 9 parameter2 = 1 parameter1 = zst_2408_electricity_boost_pctg END
+                    END       
+                END
+            BUT_ONLY
+        END
+    END
+
+    VERBOSE
+
+END

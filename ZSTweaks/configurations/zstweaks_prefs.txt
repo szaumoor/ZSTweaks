@@ -373,6 +373,10 @@ OUTER_SET zst_2370_iwd_evade_usability       = "2" // 0 (disabled), 1(only pure 
 // enabling this will give access to any wizard to Vampiric Feast
 OUTER_SET zst_2401_vampiric_feast_any_wizard = "0"
 
+// tweaks to Priest of Talos
+OUTER_SET zst_2408_electricity_boost      = "1"
+OUTER_SET zst_2408_electricity_boost_pctg = "5"
+
 /////////////////////////////// Creature Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // vorpal saving throw penalty or bonus for balor's vorpal attacks

@@ -1551,6 +1551,16 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
+        ACTION_IF zst_2408_electricity_boost != 0 AND zst_2408_electricity_boost != 1 BEGIN
+            WARN "[WARN]: Setting to give Priests of Talos a bonus to electricity damage should be set to 0 (disable) or 1 (enable). Actual value: %zst_2408_electricity_boost%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_2408_electricity_boost_pctg <= 0 BEGIN
+            WARN "[WARN]: Setting to set percentage of electricity damage boost by Priests of Talos should be set between 1 and a positive number. Actual value: %zst_2408_electricity_boost_pctg%%"
+            LAM f_plus
+        END
+
         // ----------------------------------------BALORS------------------------------------------------- \\
 
         ACTION_IF zst_3050_balor_vorpal_penalty < "-10" OR zst_3050_balor_vorpal_penalty > 10 BEGIN
@@ -2186,6 +2196,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         ACTION_IF zst_group_2405_seeking_sword != 0 AND zst_group_2405_seeking_sword != 1 BEGIN
             WARN "[WARN]: Seeking Sword group component should be set to 1 or 0. Actual value: %zst_group_2405_seeking_sword%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_2408_priest_talos != 0 AND zst_group_2408_priest_talos != 1 BEGIN
+            WARN "[WARN]: Priest of Talos group component should be set to 1 or 0. Actual value: %zst_group_2408_priest_talos%"
             LAM f_plus
         END
 
