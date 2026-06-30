@@ -22,10 +22,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         PATCH_IF zst_1541_vorpal_no_spectral_races BEGIN
             
-            PATCH_FOR_EACH race IN race_specter race_spectral_undead race_wraith race_shadow race_mist BEGIN
-                LPF CLONE_EFFECT INT_VAR match_opcode = 318 match_parameter2 = ~%zs_has_stoneskins%~ parameter2=104 parameter1=race STR_VAR insert="first" END
-            END
-
+            LPF CLONE_EFFECT INT_VAR match_opcode = 318 match_parameter2 = ~%zs_has_stoneskins%~ parameter2=104 parameter1=race_specter STR_VAR insert="first" END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 318 match_parameter2 = ~%zs_has_stoneskins%~ parameter2=104 parameter1=race_spectral_undead STR_VAR insert="first" END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 318 match_parameter2 = ~%zs_has_stoneskins%~ parameter2=104 parameter1=race_wraith STR_VAR insert="first" END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 318 match_parameter2 = ~%zs_has_stoneskins%~ parameter2=104 parameter1=race_shadow STR_VAR insert="first" END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 318 match_parameter2 = ~%zs_has_stoneskins%~ parameter2=104 parameter1=race_mist STR_VAR insert="first" END
             LPF CLONE_EFFECT INT_VAR match_opcode = 318 match_parameter2 = ~%zs_has_stoneskins%~ parameter2=105 parameter1=class_spectral_troll STR_VAR insert="first" END
 
         END
