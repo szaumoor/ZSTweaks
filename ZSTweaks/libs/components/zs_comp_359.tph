@@ -87,3 +87,7 @@ END
 ACTION_IF zst_group_2400_multiclass_backstab BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2400.tph~ END
 END
+
+ACTION_IF zst_group_2405_seeking_sword BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_2405.tph~ END
+END

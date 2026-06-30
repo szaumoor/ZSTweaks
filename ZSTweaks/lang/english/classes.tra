@@ -167,3 +167,18 @@ For 1 turn, the character gains +50% resistance to all forms of physical damage 
 Additionally, Defensive Stance may not be used in conjunction with the High-Level Ability Hardiness.~
 
 @8950 = ~Backstab: Crippling Strike (-%penalty%)~
+
+@9000 = ~Seeking Sword
+This spell creates a sword in the character's hand that cannot be dropped or unequipped. The sword is enchanted as a +4 weapon for the purposes of what it can hit and it lasts for 3 rounds plus 1 extra round per level. The sword improves with levels as follows:
+
+1st  – 2d4+0, +1 THAC0, 2 attacks per round
+4th  – 2d4+1, +1 THAC0, 2 attacks per round
+8th  – 2d4+2, +2 THAC0, 5/2 attacks per round
+12th – 2d4+2, +3 THAC0, 5/2 attacks per round
+16th – 2d4+3, +3 THAC0, 3 attacks per round
+20th – 2d4+3, +4 THAC0, 3 attacks per round
+24th – 2d4+4, +4 THAC0, 7/2 attacks per round
+28th – 2d4+4, +5 THAC0, 7/2 attacks per round
+32nd – 2d4+5, +5 THAC0, 4 attacks per round
+36th – 2d4+5, +6 THAC0, 4 attacks per round
+40th – 2d4+6, +6 THAC0, 9/2 attacks per round~

@@ -1,0 +1,62 @@
+COPY_EXISTING ~sw1hseek.itm~ ~override~
+    LPF DELETE_EFFECT INT_VAR match_opcode = 145 END
+
+COPY_EXISTING ~sw1hseek.itm~ ~override~
+    LPF ALTER_HEADER INT_VAR to_hit = 1 dicesize = 4 dicenumber = 2 damage=0 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 1 parameter1 = 2 END
+
+COPY_EXISTING ~sw1hseek.itm~ ~override/zstsek04.itm~
+    LPF ALTER_HEADER INT_VAR to_hit=1 dicesize = 4 dicenumber = 2 damage=1 END
+
+COPY_EXISTING ~zstsek04.itm~ ~override/zstsek08.itm~
+    LPF ALTER_HEADER INT_VAR to_hit = 2 dicesize = 4 dicenumber = 2 damage=2 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 1 parameter1 = 8 END
+
+COPY_EXISTING ~zstsek08.itm~ ~override/zstsek12.itm~
+    LPF ALTER_HEADER INT_VAR to_hit = 3 dicesize = 4 dicenumber = 2 damage=2 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 1 parameter1 = 8 END
+
+COPY_EXISTING ~zstsek12.itm~ ~override/zstsek16.itm~
+    LPF ALTER_HEADER INT_VAR to_hit = 3 dicesize = 4 dicenumber = 2 damage=3 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 1 parameter1 = 3 END
+
+COPY_EXISTING ~zstsek16.itm~ ~override/zstsek20.itm~
+    LPF ALTER_HEADER INT_VAR to_hit = 4 dicesize = 4 dicenumber = 2 damage=3 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 1 parameter1 = 3 END
+
+COPY_EXISTING ~zstsek20.itm~ ~override/zstsek24.itm~
+    LPF ALTER_HEADER INT_VAR to_hit = 4 dicesize = 4 dicenumber = 2 damage=4 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 1 parameter1 = 9 END
+
+COPY_EXISTING ~zstsek24.itm~ ~override/zstsek28.itm~
+    LPF ALTER_HEADER INT_VAR to_hit = 5 dicesize = 4 dicenumber = 2 damage=4 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 1 parameter1 = 9 END
+
+COPY_EXISTING ~zstsek28.itm~ ~override/zstsek32.itm~
+    LPF ALTER_HEADER INT_VAR to_hit = 5 dicesize = 4 dicenumber = 2 damage=5 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 1 parameter1 = 4 END
+
+COPY_EXISTING ~zstsek32.itm~ ~override/zstsek36.itm~
+    LPF ALTER_HEADER INT_VAR to_hit = 6 dicesize = 4 dicenumber = 2 damage=5 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 1 parameter1 = 4 END
+
+COPY_EXISTING ~zstsek36.itm~ ~override/zstsek40.itm~
+    LPF ALTER_HEADER INT_VAR to_hit = 6 dicesize = 4 dicenumber = 2 damage=6 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 1 parameter1 = 10 END
+
+COPY_EXISTING ~spcl731.spl~ ~override~
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@9000) END
+    LPF ~CD_TRIM-O-MATIC~ INT_VAR level_cap = 1 END
+    LPF ALTER_EFFECT_EX INT_VAR duration = 18 STR_VAR match_duration_ex = "(o_duration >= 6)" END
+    LPF ALTER_HEADER INT_VAR speed = 3 END
+    LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur=6 level_cap=40 END
+
+    FOR ( h = 2; i <= 40; ++header ) BEGIN
+        
+        SET fourth_diff = h - (h MODULO 4) 
+        PATCH_IF h < 10 BEGIN SPRINT h_str "0%fourth_diff%"
+        END ELSE BEGIN SPRINT h_str "%fourth_diff%" END
+
+        LPF ALTER_EFFECT_EX INT_VAR header = h-1 match_opcode = 111 STR_VAR resource = "zstsek%h_str%" END
+
+    END

@@ -133,6 +133,10 @@ ACTION_IF zs_allow_prefixes BEGIN
 
         ACTION_IF NOT is_iwdee BEGIN
 
+            PRINT "[INFO]: Fixing Seeking Sword's incorrect casting speed at level 20"
+            COPY_EXISTING ~spcl731.spl~ ~override~
+                LPF ALTER_HEADER INT_VAR speed = 5 END
+
             ACTION_IF NOT has_eefixpack BEGIN
                 
                 ACTION_IF zst_phantom_chaotic_dur BEGIN
