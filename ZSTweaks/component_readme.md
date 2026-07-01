@@ -2385,6 +2385,8 @@ I do not like being killed without any reasonable chance to defend against the k
 - Probability of triggering properly brought down to 15%, as intended
 - It still forces a Save vs. Death at -4 to trigger. This penalty can be overridden in the config file.
 
+This also patches the balor attacks from PnP fiends mod.
+
 ### Make that dumb Mencar Pebblemuncher a fair fighter for his level (3060) (BG2EE EET)
 
 I hate his guts. He's a level 14 fighter with 200 health and 4.5 Attacks per round. This makes him fair by simply:
