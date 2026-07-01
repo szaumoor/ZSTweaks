@@ -42,7 +42,7 @@
 - Every single prefix is now toggleable by using the new configuration file <zstweaks_prefixes.txt>
 - Vastly extended the Oversight++ component that fixes improper alignments according to lore... or what makes the most sense to me. New changes:
   - Spiders are all true neutral except Wraith ones which are undead evil spiders.
-  - Many many (MANY) instances of undead creatures not marked as evil (skeletons, zombies, ghouls) are not evil. Skeletons and zombies are considered neutral in 2e as mindless automatons, but I don't really vibe with that, so I adopt the change from 3e, which is that they're neutral evil, similar to Skeleton Warriors. Rejoice, as your lowly BGEE paladin's Protection vs. Evil will serve a purpose against them now.
+  - Many many (MANY) instances of undead creatures not marked as evil. Skeletons and zombies are considered neutral in 2e as mindless automatons, but I don't really vibe with that, so I adopt the change from 3e, which is that they're neutral evil, similar to Skeleton Warriors. Rejoice, as your lowly BGEE paladin's Protection vs. Evil will serve a purpose against them now.
   - Lizardfolk are now set to Neutral barring exceptions like the Lizard King in IWD who does very questionable stuff
   - Invisible Stalkers no longer marked as evil, since they're neutral elementals from the Plane of Air
   - The Huntress (WK) is a humanoid tanar'ri marked as True Neutral. Changed to Chaotic Evil
