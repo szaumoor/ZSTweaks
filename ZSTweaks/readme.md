@@ -42,7 +42,7 @@ I am open to providing compatibility for other mods. You can contact me on the f
 ## Some mod recommendations
 
 - I recommend [Xgatt's Casting Level fix](https://github.com/Xgatt/XGTCumulativeCasterLevels) if you use EEex, since it will make any of the tweaks that I do to casting level work in harmony with other effects that change caster level.
-- EEFixpack. It's not completely polished, but it fixes tons of things and eventually will probably be a backbone for every game setup
+- EEFixpack. It's not completely polished, but it fixes tons of things and eventually will probably be a backbone for every game setup. My mod also fixes some things that are unaddressed by it (or currently messed up by it, such as poor Blackrazor)
 - IWDification, especially the IWD spell packs for BG, so my tweaks can take full advantage. They also make druids and paladins significantly more interesting and capable as spellcasters
 
 ## Notes for users and modders
@@ -96,4 +96,5 @@ My mod runs a bunch of scripts before installing the first component, including 
 - dark0dave for giving me the idea of adding a configuration file
 - For the people in G3 and Discord for reporting bugs
 - To MephistoSatanDevil for providing the first translation (Simplified Chinese) to this ginormous mod
+- ScrierOne for help providing data so I could grant compatibility to PnP Celestials and Fiends
 - zenblack for feedback, brainstorming, and icon-making

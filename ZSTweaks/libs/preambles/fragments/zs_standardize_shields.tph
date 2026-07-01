@@ -1,6 +1,6 @@
 ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
 
-    PRINT "[INFO]: Manually standardizing strrefs for shields of different types to allow shield tweak to work propery... Don't worry, it's harmless even if you don't want to install it..."
+    PRINT "[INFO]: Manually standardizing strrefs for shields of different types to allow shield tweak to work properly... Don't worry, it's harmless even if you don't want to install the tweak..."
 
     COPY_EXISTING ~shld03.itm~ ~override~
         READ_LONG 0x8 medium_shield_strref
@@ -27,7 +27,7 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
                   ~l#mcshi.itm~  ~override~
                   ~l#mcshi2.itm~ ~override~
         WRITE_LONG 0x8 medium_shield_strref
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
     COPY_EXISTING ~bdshld07.itm~ ~override~ // mkhiin shield
                   ~bdshld01.itm~ ~override~ // buckler of the fist (using a duplicated 'buckler' string reference)
@@ -41,19 +41,19 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
                   ~l#xibuc.itm~  ~override~
                   ~l0buc2.itm~   ~override~
         WRITE_LONG 0x8 buckler_shield_strref
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
     COPY_EXISTING ~bdshld02.itm~ ~override~ // suncatcher (using a duplicated 'small shield' string reference)
                   ~shld28.itm~   ~override~
                   ~c0atshld.itm~ ~override~
         WRITE_LONG 0x8 small_shield_strref
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
     COPY_EXISTING ~l#zsod3.itm~  ~override~
                   ~x#fash01.itm~ ~override~
                   ~orrshld.itm~  ~override~
         WRITE_LONG 0x8 large_shield_strref
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
     ACTION_IF zs_debug BEGIN
 

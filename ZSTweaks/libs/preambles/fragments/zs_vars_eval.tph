@@ -18,6 +18,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Allow prefixes should be set to 0 (disable) or 1 (enable). Actual value: %zs_allow_prefixes%"
             LAM f_plus
         END
+        
+        ACTION_IF zst_shield_std_fix != 0 AND zst_shield_std_fix != 1 BEGIN
+            WARN "[WARN]: Shield general name standardization fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_shield_std_fix%"
+            LAM f_plus
+        END
 
         ACTION_IF zst_gender_fix != 0 AND zst_gender_fix != 1 BEGIN
             WARN "[WARN]: Gender fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_gender_fix%"

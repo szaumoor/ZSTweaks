@@ -71,6 +71,7 @@
 - Improved compatibility of Symbol X component with EE Fixpack
 - Fireseed enchantment nerf (from +6--ridiculous-- to +2) nerfed: now it's +3. It's two levels above Melf's Meteors after all (SCS nerfs enchantment to +2 for example)
 - Wail of the Banshee from Limited Wish can now be made nastier than the default spell. Configurable
+- Part of the script that standardizes shield general names so shield-detecting scripts work correctly is now an optional part of prefixes (ON by default -- needed for the component to apply to what you would expect)
 
 ## New Components
 

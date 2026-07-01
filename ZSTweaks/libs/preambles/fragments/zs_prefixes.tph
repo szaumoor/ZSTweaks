@@ -2,11 +2,20 @@ ACTION_IF !VARIABLE_IS_SET ZS_MARKER_FILE_EXISTS BEGIN
     OUTER_SET ZS_MARKER_FILE_EXISTS = FILE_EXISTS_IN_GAME "zssetup.rp"
 END
 
+ACTION_IF zs_debug BEGIN
+    PRINT "[WARN]: W A R N I N G!!! zs_debug flag is ON. This should be off in normal installations, as it will make things slower and force more code than normal tu run. Disregard if truly intended."
+END
+
 ACTION_IF zs_allow_prefixes BEGIN
 
     ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ AND NOT ZS_MARKER_FILE_EXISTS BEGIN
 
         PRINT "[INFO]: ---- STARTING PREFIXES ----"
+        ACTION_IF zst_shield_std_fix BEGIN
+
+            INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_standardize_shields.tph~
+
+        END
         
         ACTION_IF zst_simulacra_fix BEGIN
 

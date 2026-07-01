@@ -8,7 +8,6 @@ INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_ids_setup.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_constants.tph~
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_tw_functions.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_prefixes.tph~
-INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_standardize_shields.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_splprot_include.tph~
 
 ACTION_IF NOT ZS_MARKER_FILE_EXISTS BEGIN
