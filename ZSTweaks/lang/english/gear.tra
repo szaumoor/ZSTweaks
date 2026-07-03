@@ -21,7 +21,7 @@ Equipped abilities:
 – Can memorize 2 extra 3rd-level spells, 2 extra 4th-level spells, and 1 extra 5th-level spell (arcane)
 – Lore: -20
 – Wisdom: -2
-– Saves vs. Illusion: -2
+– Saving Throws vs. Illusion: -2
 – Detect Illusion: -20
 
 Weight: 1~
@@ -33,12 +33,12 @@ STATISTICS:
 Equipped abilities:
 – Armor Class: +1
 – Saves vs. Breath: +1
-– Immunity to backstabs and sneak attacks
+– Immunity to backstab
 – Find Traps: +25
 
 Weight: 0~
 
-@6040 = ~Also called the Wrath of Three Kings, though not associated with any named king in particular, this rod was likely made in 1090 DR. It saw use during the Battle of the Bones, but for which side it fought is uncertain, as it was found amongst the dead after a larger skirmish. Three buttons unlock the rod's magic: The first transforms it into a fearsome enchanted mace; the second, a hypnotic flaming blade; the third, a barbed spear.
+@6040 = ~Also called the Wrath of Three Kings, though not associated with any named king in particular, this rod was likely made in 1090 DR. It saw use during the Battle of the Bones, but for which side it fought is uncertain, as it was found amongst the dead after a larger skirmish. Three buttons unlock the rod's magic: The first transforms it into a fearsome enchanted mace; the second, a hypnotic flaming blade; the third, an arcane barbed spear.
 
 STATISTICS:
 
@@ -49,7 +49,7 @@ Mace of Royal Might +3: Target must Save vs. Spell at +2 or be slowed for 2 roun
 
 Flaming Sword of Royal Might +3: Targets take +1d4 extra fire damage and must Save vs. Spell at +2 or be stunned or fall sleep for 1 round
 
-Spear of Royal Might +3: Targets that bleed take +1 piercing damage and must Save vs. Death to avoid bleeding for 10 piercing damage for a round, and there's a 10% chance of releasing an arcane blast that deals 2d4+2 magic damage
+Spear of Royal Might +3: Targets take +1 piercing damage and if they can bleed, they must Save vs. Death to avoid 10 piercing damage over 1 round, and there's a 10% chance of releasing an arcane blast that deals 2d4+2 magic damage
 
 Weight: 5~
 
@@ -78,7 +78,7 @@ Weight: 7~
 STATISTICS:
 
 Combat abilities:
-– Target must Save vs. Spell at +2 or be held or forced to fall into a comatose slumber for 1 round
+– Target must Save vs. Spell at +2 or be held or forced to fall into a comatose slumber for 1 round (random)
 
 THAC0: +3
 Damage: 1d8+3, +1d4 fire damage
@@ -124,7 +124,7 @@ Equipped abilities:
 – Armor Class: +2 vs. Slashing and Piercing
 – Saving Throws vs. Death and Breath: +1
 – Poison Damage Resistance: +50%
-– +5 point bonus to all thieving skills
+– +5 bonus to all thieving skills
 
 Weight: 4~
 
@@ -243,7 +243,9 @@ Equipped abilities:
 – Move Silently: +20
 – Hide In Shadows: +20
 – Set Traps: +20
-– Singe-classed Thieves: +5% critical hit chances, +1 THAC0, +1 Damage
+– Critical Hit Chances: +5% (Stalkers and single-classed Thieves)
+– THAC0: +1 (single-classed Thieves)
+– Damage: +1 (single-classed Thieves)
 
 Weight: 0~
 
@@ -449,7 +451,7 @@ STATISTICS:
 
 Equipped abilities:
 – Immunity to backstab and poison
-– THAC0 and Damage: +1 (single-classed Thieves only)
+– THAC0 and Damage: +2 (single-classed Thieves only)
 – Protects against critical hits
 
 Charge abilities:
@@ -458,11 +460,12 @@ Charge abilities:
 
 Weight: 2~
 
-@6911 = ~Although this hood does not confer any magical advantages on its wearer, it does have an aura of latent magic.
+@6911 = ~This hood has an aura of latent magic, as if part of it is waiting to be unlocked.
 
 STATISTICS:
 
 Equipped abilities:
+– THAC0 and Damage: +1 (single-classed Thieves only)
 – Protects against critical hits
 
 Weight: 2~
@@ -791,7 +794,7 @@ Equipped abilities:
 
 Weight: 3~
 
-@7441 = ~Critical hit chances increased by Whispers of Silence~
+@7441 = ~Critical hit chance increased by Whispers of Silence~
 
 @7450 = ~The Cloak of Displacement is a magical item that causes subtle shifts in the image of its wearer. It has the power to actually shift an individual's image by as much as six inches in any direction from their actual location. Aside from being an effective defense in combat situations, it has also been the cause of serious eyestrain amongst fellow party members.
 
@@ -1257,7 +1260,7 @@ Equipped abilities:
 – Fire Resistance: +20%
 
 Combat abilities:
-– Magical weapons always overcome the natural weapon immunities of fiends (but not magical protections such as Absolute Immunity and Protection from Magical Weapons)
+– Magical weapons always overcome the natural weapon immunities of fiends
 – Fiends struck by the wearer must Save vs. Death or have their Magic Resistance nullified for 2 rounds
 
 Armor Class: 0 (-3 vs. slashing)
@@ -1275,13 +1278,14 @@ Now empowered with the hearts of demons, this armor is an incredibly powerful to
 STATISTICS:
 
 Equipped abilities:
+– Immunity to panic and morale failure
 – Armor Class and Saving Throws: +2 vs. demons and devils
 – Damage: +4 vs. demons and devils
 – THAC0: +4 vs. demons and devils
 – Fire Resistance: +40%
 
 Combat abilities:
-– Magical weapons always overcome the natural weapon immunities of fiends (but not magical protections such as Absolute Immunity and Protection from Magical Weapons)
+– Magical weapons always overcome the natural weapon immunities of fiends
 – Fiends struck by the wearer must Save vs. Death at -2 or have their Magic Resistance nullified for 2 rounds
 – 30% chance per hit to
 
@@ -1325,8 +1329,8 @@ STATISTICS:
 
 Equipped abilities:
 – Wild Surges are 5% more likely to be positive
-– Armor Class: +1 bonus
-– Casting Speed: +1 bonus (wild mages only)
+– Armor Class: +1
+– Casting Speed: +1 (wild mages)
 
 Weight: 3~
 
