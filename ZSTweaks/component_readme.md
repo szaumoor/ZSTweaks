@@ -199,7 +199,7 @@ This component manually patches the following vanilla sources of vorpal hits:
 - Balor's vorpal attack
 - Solar's Bow/Sword
 - Planetar's Sword (unless the Planetar component is installed, which already removes the vorpal effect)
-- Planetar and balor weapon in PnP Celestials mod
+- Planetar and balor weapon in PnP Celestials mod (this component needs to run after these)
 
 Support for mod-added items with vorpal effects can be added upon request. Additionally, an option in the configuration file allows you to prevent vorpal hits from chunking targets (OFF by default), and extra options to ensure other types of creatures are also immune to the vorpal hits, like golems or spectral creatures. Check config file.
 
@@ -2368,7 +2368,7 @@ Also, pay attention to any mods that modify the behavior of summoned demons, esp
 
 This component rebalances Deva and Planetar summons to make them more balanced choices relative to each other.
 
-- **Devas**: Are now permanently hasted and can cast their spells instantly, bringing them more in line with Planetars.
+- **Devas**: Now permanently hasted and can cast their spells instantly, bringing them more in line with Planetars.
 - **Planetars**: Their powerful vorpal hit is removed to reduce cheese. Instead, their attacks are reworked:
   - Considered a +5 weapon for THAC0 and what it can hit.
   - 20% chance to cast Dispel Magic at level 25 on hit.
@@ -2377,6 +2377,7 @@ This component rebalances Deva and Planetar summons to make them more balanced c
   - They and all nearby allies are protected by a permanent invisible Minor Globe of Invulnerability (toggleable). This only affects friendly summoned planetars.
   - They also cast all their spells instantly.
   - Now considered cleric/mages so their cleric spells have scaling where applicable
+  - Patches PnP Celestials (install this component after that one). Does not retroactively add dispelling, since they don't have dispelling in their mod.
 
 ### Make the Balor's vorpal attack not guaranteed to succeed but affected by a Saving Throw (3050) (BG2EE EET)
 
@@ -2385,7 +2386,7 @@ I do not like being killed without any reasonable chance to defend against the k
 - Probability of triggering properly brought down to 15%, as intended
 - It still forces a Save vs. Death at -4 to trigger. This penalty can be overridden in the config file.
 
-This also patches the balor attacks from PnP fiends mod.
+This also patches the balor attacks from PnP fiends mod. This must be installed after that one in order to take effect.
 
 ### Make that dumb Mencar Pebblemuncher a fair fighter for his level (3060) (BG2EE EET)
 

@@ -1,5 +1,32 @@
 # Changelog
 
+## Prefixes
+
+- PREFIX: Set driders to the race of driders
+- PREFIX: Set Korax the Ghoul to the race of ghoul
+- PREFIX: Fix any wraith spiders that aren't marked undead (they are undead according to lore, they're normally just tagged as 'Monsters', with undead immunities, and as such aren't affected by things that target undead).
+- PREFIX: Fix the Blind Albino Wyrmlings's race and class since they're set to wyverns instead of dragon (copy paste gone wrong, I'm sure)
+- PREFIX: Fix for bugged EEFixpack implementations of Blackrazor and Black Blade of Disaster (currently they heal and boost targets instead of wielder
+- PREFIX: Fix Ras and Sword of Morderkainen being set class-wise as gnoll (??). Set to Long Sword instead, as it is in BGEE and IWDEE.
+- PREFIX: Fix for wrong casting speed for seeking sword at level 20 (all except iwdee)
+- PREFIX: Instance of Chimera in IWD's Lava mod with the wrong race
+- Every single prefix is now toggleable by using the new configuration file <zstweaks_prefixes.txt>
+- Part of the script that standardizes shield general names so shield-detecting scripts work correctly is now an optional part of prefixes (ON by default -- needed for the shield overhaul component to apply to what you would expect)
+
+## Configuration
+
+- Can now set Finger of Death so it doesn't use a projectile, that is, upon casting, the target immediately suffers its effect.
+- Added an option in the Web component so it adopts the IWD appearance and sound (TODO)
+- Component 1531 now allows the user to define which of the chosen spells will get the Magic Resistance bypass treatment
+- Component 1541 now also has configuration options to make vorpal hits always ineffective towards golem / constructs, oozes, spectral creatures, and elementals no matter what. By default, all are ON except elementals.
+- Wail of the Banshee component now optionally allows Limited Wish's once-per-playthrough version of the spell to be nastier than the default spell
+
+## Compatibility
+
+- Added compatibility for BG1-NPCs-for-SoA-ToB mod for the Shar-Teel component
+- Added support to PnP Celestials and Fiends mod so their vorpal hits conform to my standards. Additionally, their vorpal hits are no longer guaranteed, uses a Save vs. Death at -4 instead of none and in the process it fixes the apparent bug where it was supposed to never affect spectral creatures, elementals, golems, and skeletons.
+- Improved compatibility of Symbol X component with EE Fixpack
+
 ## Fixes
 
 - Removed redundant warnings in the mod components that are already handled by my preference variable check at the outset.
@@ -7,39 +34,28 @@
 - Fixed the description of a mod-added upgraded version of Ankheg's Plate in BGEE that didn't reflect the bonus acid resistance in the description
 - Fixed missing period in Cespy's dialog for Kachiko's sword
 - Small performance improvement on some scripts
-- Added prefixes for bugged EEFixpack implementations of Blackrazor and Black Blade of Disaster (currently they heal and boost targets instead of wielder)
 - Fixed Helm of Balduran regeneration not working due to missing resource
 - Updated several outdated entries in the component_readme.md file
-- Added prefix to fix any wraith spiders that aren't marked undead (they are undead according to lore, they're normally just tagged as 'Monsters', with undead immunities, and as such aren't affected by things that target undead)
-- Added prefix to set driders to the race of driders, and Korax the Ghoul to the race of ghoul
-- Added prefix to fix the Blind Albino Wyrmlings's race and class since they're set to wyverns instead of dragon (copy paste gone wrong, I'm sure)
-- Added prefix to fix an instance of Chimera in IWD's Lava mod with the wrong race
 - Character Stat overhaul now fixes creatures with CON tables if Constitution overhaul is picked, so they don't die due to health loss in the case of very low HP and CON
 - Minor fixes for component 1531 (MR tweaks)
 - Symbol X component was erroneously skipping the entire content on the script in IWDEE despite being allowed for the game
 - Fixed critical hits' extra damage with ranged voidweapons hitting instantly instead of at the same time (roughly)
 - Small misc code and efficiency improvements
-- Added prefix: wrong casting speed for seeking sword at level 20 (all except iwdee)
 
 ## Modifications
 
 - Mod is now available in Simplified Chinese thanks to user MephistoSatanDevil
-- Added a configuration option for Finger of Death so it doesn't use a projectile, that is, upon casting, the target immediately suffers its effect.
 - Component that makes natural effects nonmagical now includes Poisonous Breath from Neothelid (SoD) and also resources created by the Fixpack
 - Clarified the descriptions of various components that use the "protection vs. <type>" to mention that Saving Throws against effects caused by those creatures's attacks also gain a +2 boost.
 - Added framework to log errors and warnings onto a file in ZSTweaks/logs for users to examine after installation. The file inside will be called "errors_found.txt" if there are errors.
 - Mod components now use the LABEL functionality
 - Dagger/Dart probabilities for Finesse reduced by 2: 41-50%. Kukris also have a 2 probability reduction since it's calculated from the probabilities of daggers and darts
 - Ashen Scales components also allows Beast Masters to wear it now
-- Reverted original behavior of opening two readmes: one the basic and another the component one.
 - Chain Lightning component now scales damage up to 15d6+10 at level 20 instead of 12d6
-- Added compatibility for BG1-NPCs-for-SoA-ToB mod for the Shar-Teel mod
-- Added an option in the Web component so it adopts the IWD appearance and sound (TODO)
 - Darkfire Bow component now increases APR too by 1/2 for the non-upgraded and 1 for the upgraded
 - Girdle of Fortitude now other than setting the user's constitution to 18, it also has a charge ability once per day that buffs a target of their choice (other than self) with +2 CON, Save vs. Death, and +5 maximum HP.
 - Handmaiden's Mace +2 now overhauled more deeply with the poison theme. It also no longer has racial or alignment restrictions.
 - Implementation of Handmaiden's now no longer requires it to be installed at the end, and as such it now belongs in the Joinables category. Strength modification takes up to a second to kick in after equipping with the new implementation.
-- Every single prefix is now toggleable by using the new configuration file <zstweaks_prefixes.txt>
 - Vastly extended the Oversight++ component that fixes improper alignments according to lore... or what makes the most sense to me. New changes:
   - Spiders are all true neutral except Wraith ones which are undead evil spiders.
   - Many many (MANY) instances of undead creatures not marked as evil. Skeletons and zombies are considered neutral in 2e as mindless automatons, but I don't really vibe with that, so I adopt the change from 3e, which is that they're neutral evil, similar to Skeleton Warriors. Rejoice, as your lowly BGEE paladin's Protection vs. Evil will serve a purpose against them now.
@@ -51,27 +67,23 @@
   - Instances of golems that are good, or evil fixed except brain golems which are evil.
   - Aataqah is changed to Chaotic Good from Lawful Neutral. Lorewise they're whimsy but benevolent genies (in contrast with efreeti).
   - Also patches various creatures added by existing mods before installation of this one (all manually picked, so don't expect consistency for every and any mod)
-  - Grease component now also adds a -2 Armor Class debuff (TODO)
+- Grease component now also adds a -2 Armor Class debuff (TODO)
 - Slightly changed the bonus constitution progression:
   - Nonfighters add 1 bonus HP per 3 points, starting at 12 with 1, 15 with 2, etc, and now can progress up to +5 if they have at least 24 constitution. Fighters always have advantage and can reach +7, as before.
   - Fatigue bonus progression slightly changed so it starts giving bonus at 13 instead of 12, in order to offer a bonus with odd number of constitution points, and smooth out progression.
-- Component 1531 now allows a user selection of the modified spells to interact differently with Magic Resistance
 - Component 1531 now also makes Wail of the Banshee bypass magic resistance without my WB-specific component
 - Oni Mage component now patches the "Ogre Mage" string so anyone using it as a name, will be "Oni Mage" instead
 - Holy Sword of Tyr now acts as a +5 weapon vs evil for the purposes of what it can hit
-- Added support to PnP Celestials and Fiends mod so their vorpal hits conform to my standards. Additionally, their vorpal hits are no longer guaranteed, uses a Save vs. Death at -4 instead of none and in the process it fixes the apparent bug where it was supposed to never affect spectral creatures, elementals, golems, and skeletons.
-- Component 1541 now also has configuration options to make vorpal hits always ineffective towards golem / constructs, oozes, spectral creatures, and elementals no matter what. By default, all are ON except elementals.
 - Energy Drain is now much more powerful (TODO):
   - Enemy becomes a devil shade if killing within 1 turn
   - Boosts undead creature if cast on them
   - Caster sucks up the power it was drained from the creature for a while
 - Wail of the Banshee component now also makes it slay anyone with 8 HD or less without any save allowed
-- Mage elemental robes can now be worn by any class
+- Mage elemental robes ('robes of affinity') can now be worn by any class. Robe of Red Flames is excluded.
 - Storm Star now gives a bonus to Priests of Talos: +1/2 APR to them (unupgraded), 1 (upgraded)
-- Improved compatibility of Symbol X component with EE Fixpack
-- Fireseed enchantment nerf (from +6--ridiculous-- to +2) nerfed: now it's +3. It's two levels above Melf's Meteors after all (SCS nerfs enchantment to +2 for example)
-- Wail of the Banshee from Limited Wish can now be made nastier than the default spell. Configurable
-- Part of the script that standardizes shield general names so shield-detecting scripts work correctly is now an optional part of prefixes (ON by default -- needed for the component to apply to what you would expect)
+- Fire seed enchantment nerf (from +6--ridiculous-- to +2) nerfed: now it's +3. It's two levels above Melf's Meteors after all (SCS nerfs enchantment to +2 for example)
+- Mercykiller Ring now increases also for Stalkers the crit chance, but not the THAC0 and Damage, which is still exclusive to single-classed Thieves. It's also now open to be used by Monks
+- Thieves' Hood now still grants the +1 THAC0 and Damage bonus to single classed thieves even without upgrade. The upgraded one doubles this bonus.
 
 ## New Components
 
