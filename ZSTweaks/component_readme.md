@@ -2409,11 +2409,11 @@ There are several creatures whose on-hit effects do not seem to make much sense 
 - Carrion Crawlers: Their paralysis is no longer considered magical. In fact, in the lore, it is not magical at all; it is a paralytic toxin spread with their tentacles. There is even a paralytic poison made from their brain juices.
 - Poisonous Breath from Neothelid (SoD) is no longer considered a magical effect and as such Magic Resistance has no effect on it.
 
-### Make Shadow creatures slightly more dangerous (3090) (IWDEE BGEE BG2EE EET)
+### Make Spectral creatures slightly more dangerous (3090) (IWDEE BGEE BG2EE EET)
 
 This component makes the following changes:
 
-- All creatures of the shadow race will have at least 30% physical damage resistance. This skips my Shadow summon in my Shadowdancer overhaul, as it is handled in a very particular way.
+- All creatures of the shadow, spectre, spectral undead, wraith, and mist (undead) race will have at least 30% physical damage resistance. This skips my Shadow summon in my Shadowdancer overhaul, as it is handled in a very particular way.
 - And a +2 bonus to their Armor Class, whatever that is
 - Strength sapping from shadows, spirit trolls, spider wraiths, and the like always last for 8 hours, making it more than an inconvenience. It is a real problem now if you get hit too often.
 

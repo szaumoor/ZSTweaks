@@ -19,61 +19,64 @@ ACTION_IF NOT is_iwdee BEGIN
 
     END
 
+  BUT_ONLY
+
   // flesh golems
-COPY_EXISTING_REGEXP ~^.+\.cre~ ~override~
-  READ_BYTE 0x272 race
-  PATCH_IF race = race_golem BEGIN
-    READ_BYTE 0x273 class
+  COPY_EXISTING_REGEXP ~^.+\.cre~ ~override~
+    READ_BYTE 0x272 race
+    PATCH_IF race = race_golem BEGIN
+      READ_BYTE 0x273 class
 
-    PATCH_IF class = class_golem_flesh BEGIN
+      PATCH_IF class = class_golem_flesh BEGIN
 
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 176 timing = 9 parameter1 = 8 END
-      WRITE_LONG 0x28 0x7001
-      WRITE_BYTE 0x59 100
-      WRITE_BYTE 0x5a 100
-      WRITE_BYTE 0x5b 127
-      WRITE_BYTE 0x5e 100
-      WRITE_BYTE 0x5f 100
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 timing = 9 parameter1 = 8 END
+        WRITE_LONG 0x28 0x7001
+        WRITE_BYTE 0x59 100
+        WRITE_BYTE 0x5a 100
+        WRITE_BYTE 0x5b 127
+        WRITE_BYTE 0x5e 100
+        WRITE_BYTE 0x5f 100
 
-      // soundset stuff so they don't talk about pipsqueaks
-      WRITE_LONG 0xc8  18082 // battle cry 1
-      WRITE_LONG 0xcc  18081 // battle cry 2
-      WRITE_LONG 0xec  5657  // damaged (ogre mage8 is 5860, I prefer ghoul 5657)
-      WRITE_LONG 0xf0  5847  // dying
-      WRITE_LONG 0x10c 18082 // select1
-      WRITE_LONG 0x110 18081 // select2
+        // soundset stuff so they don't talk about pipsqueaks
+        WRITE_LONG 0xc8  18082 // battle cry 1
+        WRITE_LONG 0xcc  18081 // battle cry 2
+        WRITE_LONG 0xec  5657  // damaged (ogre mage8 is 5860, I prefer ghoul 5657)
+        WRITE_LONG 0xf0  5847  // dying
+        WRITE_LONG 0x10c 18082 // select1
+        WRITE_LONG 0x110 18081 // select2
 
-      READ_SHORT 0x26 max_hp
-      PATCH_IF max_hp < 45 BEGIN
+        READ_SHORT 0x26 max_hp
+        PATCH_IF max_hp < 45 BEGIN
 
-        WRITE_SHORT 0x26 45
-        READ_SHORT 0x24 current_hp
+          WRITE_SHORT 0x26 45
+          READ_SHORT 0x24 current_hp
 
-        PATCH_IF current_hp = max_hp BEGIN
-          WRITE_SHORT 0x24 45
+          PATCH_IF current_hp = max_hp BEGIN
+            WRITE_SHORT 0x24 45
+          END
+
         END
 
-      END
+        PATCH_IF BYTE_AT 0x60 < 15 BEGIN
+          WRITE_BYTE 0x60 15
+        END
 
-      PATCH_IF BYTE_AT 0x60 < 15 BEGIN
-        WRITE_BYTE 0x60 15
-      END
+        PATCH_IF BYTE_AT 0x61 < 15 BEGIN
+          WRITE_BYTE 0x61 15
+        END
 
-      PATCH_IF BYTE_AT 0x61 < 15 BEGIN
-        WRITE_BYTE 0x61 15
-      END
+        PATCH_IF BYTE_AT 0x62 < 15 BEGIN
+          WRITE_BYTE 0x62 15
+        END
 
-      PATCH_IF BYTE_AT 0x62 < 15 BEGIN
-        WRITE_BYTE 0x62 15
-      END
+        PATCH_IF BYTE_AT 0x63 < 15 BEGIN
+          WRITE_BYTE 0x63 15
+        END
+        
+      END 
 
-      PATCH_IF BYTE_AT 0x63 < 15 BEGIN
-        WRITE_BYTE 0x63 15
-      END
-      
-    END 
-
-  END
+    END
+  BUT_ONLY
 
 END
   // iron golems
@@ -145,7 +148,7 @@ COPY_EXISTING ~golmag01.cre~ ~override~
   WRITE_BYTE 0x5c 127
   WRITE_BYTE 0x5e 127
   WRITE_BYTE 0x5f 127
-BUT_ONLY IF_EXISTS
+IF_EXISTS
 
 // brain golems
 COPY_EXISTING ~golbra01.cre~ ~override~
@@ -172,7 +175,7 @@ COPY_EXISTING ~golbra01.cre~ ~override~
   PATCH_IF BYTE_AT 0x63 < 35 BEGIN
     WRITE_BYTE 0x63 35
   END
-BUT_ONLY IF_EXISTS
+IF_EXISTS
 
 // adamantine golem
 COPY ~%MOD_FOLDER%/creatures/adamantine_golem~ ~override~
@@ -185,6 +188,7 @@ COPY_EXISTING ~zstgolqk.spl~ ~override~
 COPY_EXISTING ~golada01.cre~ ~override~
               ~golkill2.cre~ ~override~
               ~gordeckb.cre~ ~override~
+              
   ADD_CRE_ITEM "helmnoan" #0 #0 #0 ~unstealable&undroppable~ "helmet"
   WRITE_BYTE 0x238 25 //str
 
@@ -232,4 +236,4 @@ COPY_EXISTING ~golada01.cre~ ~override~
   FOR ( spell_level = 1; spell_level <=9; ++spell_level ) BEGIN
     LPF ADD_CRE_PASSIVE INT_VAR op = 102 p1 = spell_level END
   END
-BUT_ONLY IF_EXISTS
+IF_EXISTS

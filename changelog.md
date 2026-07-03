@@ -26,6 +26,7 @@
 - Added compatibility for BG1-NPCs-for-SoA-ToB mod for the Shar-Teel component
 - Added support to PnP Celestials and Fiends mod so their vorpal hits conform to my standards. Additionally, their vorpal hits are no longer guaranteed, uses a Save vs. Death at -4 instead of none and in the process it fixes the apparent bug where it was supposed to never affect spectral creatures, elementals, golems, and skeletons.
 - Improved compatibility of Symbol X component with EE Fixpack
+- Updated compatibility with Subrace fork by dark0dave and me
 
 ## Fixes
 
@@ -33,7 +34,7 @@
 - Fixed incorrect check for file existence for the Ring of the Crusade (SoD)
 - Fixed the description of a mod-added upgraded version of Ankheg's Plate in BGEE that didn't reflect the bonus acid resistance in the description
 - Fixed missing period in Cespy's dialog for Kachiko's sword
-- Small performance improvement on some scripts
+- Many code and small performance improvements
 - Fixed Helm of Balduran regeneration not working due to missing resource
 - Updated several outdated entries in the component_readme.md file
 - Character Stat overhaul now fixes creatures with CON tables if Constitution overhaul is picked, so they don't die due to health loss in the case of very low HP and CON
@@ -41,6 +42,7 @@
 - Symbol X component was erroneously skipping the entire content on the script in IWDEE despite being allowed for the game
 - Fixed critical hits' extra damage with ranged voidweapons hitting instantly instead of at the same time (roughly)
 - Small misc code and efficiency improvements
+- Fixed golem component marking undefined amounts of creatures as modified even if they were not modified
 
 ## Modifications
 
@@ -84,6 +86,7 @@
 - Fire seed enchantment nerf (from +6--ridiculous-- to +2) nerfed: now it's +3. It's two levels above Melf's Meteors after all (SCS nerfs enchantment to +2 for example)
 - Mercykiller Ring now increases also for Stalkers the crit chance, but not the THAC0 and Damage, which is still exclusive to single-classed Thieves. It's also now open to be used by Monks
 - Thieves' Hood now still grants the +1 THAC0 and Damage bonus to single classed thieves even without upgrade. The upgraded one doubles this bonus.
+- Extended the Shadows component so it includes wraiths, spectres, and undead mists.
 
 ## New Components
 
