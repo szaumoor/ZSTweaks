@@ -29,6 +29,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
+        ACTION_IF zst_dancing_swords != 0 AND zst_dancing_swords != 1 BEGIN
+            WARN "[WARN]: Dancing sword race fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_dancing_swords%"
+            LAM f_plus
+        END
+
         ACTION_IF zst_simulacra_fix != 0 AND zst_simulacra_fix != 1 BEGIN
             WARN "[WARN]: Simulacra fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_simulacra_fix%"
             LAM f_plus

@@ -13,6 +13,9 @@ OUTER_SET zst_shield_std_fix = "1"
 // In vanilla game, many creatures are inappropriately set to 'male' (never female, I wonder why?) even though they should be completely independent of it, such as golems, statues, mists, fungus, slimes, mind flayers... all of them are according to the lore, sexless and genderless creatures. This interferes with opcodes that target based on gender/sex, leading to results that will be anything but logical. It is recommended to leave this on if you're planning on installing something that targets "gender" of male or female, such as my Shar-Teel component
 OUTER_SET zst_gender_fix = "1" 
 
+// fixes Ras and Sword of Mordenkainen set class-wise randomly to gnoll, and std's them to long sword, as in BGEE
+OUTER_SET zst_dancing_swords = "1"
+
 // fixes the issue of simulacra not being able to use all thieving abilities
 OUTER_SET zst_simulacra_fix = "1"
 
