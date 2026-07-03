@@ -3,7 +3,7 @@ ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING "helm18.itm" ~override~ // Pearly white ioun stone
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7190) END
         LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 98 parameter1 = 6 END
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
     ACTION_IF FILE_EXISTS_IN_GAME ~helm19.itm~ BEGIN // Dusty Rose Ioun stone
         COPY ~%MOD_FOLDER%/bam/IHELM19.BAM~ ~override~
@@ -16,7 +16,7 @@ ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING ~helm23.itm~ ~override~ // golden ioun stone
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7210) END
         LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=37,p1=1;op=166,p1=10~ END
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
     COPY_EXISTING ~helm24.itm~ ~override~ // obsidian ioun stone
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7220) END
@@ -29,17 +29,17 @@ ACTION_IF NOT is_iwdee BEGIN
         LPF ADD_EQUIPPED_EFF INT_VAR p1=5 STR_VAR effects=~op=86;op=88;op=89~ END
         LPF ADD_EQUIPPED_EFF INT_VAR p1=2 STR_VAR effects=~op=0,p2=2;op=0,p2=4;op=0,p2=8~ END
 
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
     COPY_EXISTING ~helm25.itm~ ~override~ // silver ioun stone
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7230) END
         LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=21,p1=15;op=62,p1=1,p2=31~ END
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
     COPY_EXISTING ~helm28.itm~ ~override~ // circle of netheril
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7240) END
         LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=42,p1=1,p2=256;op=332,p1=7,p2=5~ END
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
     ACTION_IF FILE_EXISTS_IN_GAME ~band03.itm~ BEGIN // EILISTRAEE'S BOON
         COPY ~%MOD_FOLDER%/items/eil_boon~ ~override~

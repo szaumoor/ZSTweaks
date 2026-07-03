@@ -27,7 +27,7 @@ ACTION_IF zst_1534_potions_cannot_self_stack BEGIN
     BEGIN
         COPY_EXISTING ~gberry.itm~ ~override~
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
-        BUT_ONLY IF_EXISTS
+        IF_EXISTS
     END
 
 END
@@ -58,7 +58,7 @@ ACTION_IF zst_1534_potion_overhaul BEGIN
         LPF ALTER_EFFECT INT_VAR check_globals=0 header_type=3 match_opcode=17 dicesize=0 dicenumber=0 parameter1=27 END
         LPF ADD_ON_HIT_EFF INT_VAR t=3 p1=1 tgt=1 dur=60 tmg=0 STR_VAR effects=~op=10;op=44~ END
         LPF ADD_ON_HIT_EFF INT_VAR t=3 tgt=1 tmg=0 STR_VAR effects=~op=321,res=%SOURCE_RES%,ip=0~ END
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
     // potion of healing (basic)
     COPY_EXISTING ~potn08.itm~ ~override~
@@ -110,9 +110,12 @@ ACTION_IF zst_1534_potion_overhaul BEGIN
 
     ACTION_IF NOT zst_1534_potions_usable_everyone BEGIN
 
-        COPY_EXISTING_REGEXP "^potn0[3-7]\.itm$" ~override~
+        COPY_EXISTING "potn03.itm" ~override~
+                      "potn04.itm" ~override~
+                      "potn05.itm" ~override~
+                      "potn06.itm" ~override~
+                      "potn07.itm" ~override~
             LPF ALTER_ITEM INT_VAR unusable0=0 END
-        BUT_ONLY
 
         COPY_EXISTING "potn12.itm" ~override~
             LPF ALTER_ITEM INT_VAR unusable0=0 END

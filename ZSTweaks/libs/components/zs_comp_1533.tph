@@ -3,7 +3,7 @@ COPY_EXISTING ~wand03.itm~ ~override~
               ~wand12_.itm~ ~override~ 
   LPF ALTER_HEADER INT_VAR match_type = 3 match_projectile=projectl_magic_missile projectile = 70 END
   LPF ALTER_ITEM INT_VAR id_desc=wand_missile_desc END
-BUT_ONLY IF_EXISTS
+IF_EXISTS
 
 ACTION_IF is_bgee OR is_iwdee BEGIN
   COPY_EXISTING ~wand12.itm~ ~override~

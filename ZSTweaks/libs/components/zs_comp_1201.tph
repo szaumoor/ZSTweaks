@@ -42,6 +42,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50100) END
         END
 
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
 END

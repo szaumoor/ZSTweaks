@@ -26,7 +26,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode=54 duration=30 savingthrow=1 savebonus="-5" END
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 3 special = 1024 END
             LPF ALTER_EFFECT_EX INT_VAR savingthrow = 1 savebonus = "-2" STR_VAR match_opcode_ex="(o_opcode != 12 AND o_opcode != 54)" END
-        BUT_ONLY IF_EXISTS
+        IF_EXISTS
 
     END
 

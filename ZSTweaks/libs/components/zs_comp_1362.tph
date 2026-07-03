@@ -28,7 +28,7 @@ BUT_ONLY
 
 COPY_EXISTING ~bdhamm02.itm~ ~override~
     LPF ADD_ON_HIT_EFF STR_VAR effects=~op=146,p2=1,res=zstwmcm2~ END
-BUT_ONLY IF_EXISTS
+IF_EXISTS
 
 ACTION_IF zst_1362_blunt_only_nonarmored BEGIN
 

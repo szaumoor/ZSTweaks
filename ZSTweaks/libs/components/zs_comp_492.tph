@@ -11,7 +11,7 @@ COPY_EXISTING ~staf14.itm~ ~override~
   LPF CLONE_EFFECT INT_VAR match_opcode = 88 opcode = 89 END
   LPF CLONE_EFFECT INT_VAR match_opcode = 89 opcode = 318 parameter1=0 parameter2=0 STR_VAR resource = "sppr202" END
   LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 206 STR_VAR resource = "sppr202" END
-BUT_ONLY IF_EXISTS
+IF_EXISTS
 
 COPY_EXISTING ~sppr202.spl~ ~override~
   LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8588) END

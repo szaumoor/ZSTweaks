@@ -5,7 +5,7 @@ COPY_EXISTING ~sppr950.spl~  ~override~
               ~sppr505d.spl~ ~override~
     LPF ALTER_SPELL INT_VAR name = "-1" END // removes useless console logging, would overwhelm with one-per-second dispels
     LPF ALTER_EFFECT INT_VAR silent=1 match_opcode = 328 match_parameter2 = 72 duration = 2 END
-BUT_ONLY IF_EXISTS
+IF_EXISTS
 
 COPY_EXISTING ~spwi609.spl~ ~override~
               ~spcl732.spl~ ~override~

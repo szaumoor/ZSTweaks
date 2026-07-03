@@ -22,6 +22,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50000) END
         LPF CLONE_EFFECT INT_VAR match_opcode = 30 opcode = 27 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 142 parameter2 = 24 END
-    BUT_ONLY IF_EXISTS
+    IF_EXISTS
 
 END
