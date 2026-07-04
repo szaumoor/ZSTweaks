@@ -3,6 +3,12 @@ OUTER_SET opcode2 = 176
 
 DEFINE_PATCH_MACRO modify_shadow
 BEGIN
+    PATCH_IF zs_debug BEGIN
+        ++patches
+        READ_STRREF 0x8 name
+        PATCH_PRINT "[DEBUG][INFO]: Patching shadow creature %SOURCE_FILE% - %name%"
+    END
+
     WRITE_SHORT 0x46 (THIS - 2)
     WRITE_SHORT 0x48 (THIS - 2)
     WRITE_SHORT 0x4c (THIS - 2)
@@ -34,6 +40,7 @@ ACTION_IF has_zs_shadowdancer_overhaul BEGIN
     PRINT "[INFO]: Skipping shadow adjustments to shadow summons in ZS_ShadowdancerOverhaul."
 END
 
+OUTER_SET patches = 0
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     READ_BYTE 0x272 race
     READ_BYTE 0x271 general
@@ -61,6 +68,10 @@ COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     END
 
 BUT_ONLY
+
+ACTION_IF zs_debug BEGIN
+    PRINT "[DEBUG][INFO]: Patched %patches% shadow creatures."
+END
 
 COPY_EXISTING ~shadowwp.itm~ ~override~
               ~spidwr1.itm~  ~override~
