@@ -1,0 +1,12 @@
+COPY_EXISTING ~ohtyr2.spl~ ~override~
+    READ_SHORT 0x68 abilities
+    LPF CLONE_HEADER INT_VAR header = (abilities - 1) level=21 END
+
+    FOR ( i = 1; i < abilities; ++i ) BEGIN
+        SET dur_mod = i * 3
+        LPF ALTER_EFFECT_EX INT_VAR header = i STR_VAR duration_ex = "(THIS + %dur_mod%)" END
+    END
+
+    LPF ALTER_EFFECT INT_VAR header = abilities match_opcode = 73 parameter1=7 END
+    LPF ALTER_EFFECT INT_VAR header = abilities match_opcode = 54 parameter1=7 END
+
