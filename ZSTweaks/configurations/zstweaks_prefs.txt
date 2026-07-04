@@ -389,6 +389,10 @@ OUTER_SET zst_3030_planetars = "1"
 // sets the Magic Resistance of drow to a percentage of what they have (default: 75, valid range is 20-90)
 OUTER_SET zst_3150_drow_mr_pctg_of_base = "75"
 
+OUTER_SET zst_3180_immunity_by_type  = "1" // liches, demiliches, and dragons
+OUTER_SET zst_3180_immunity_by_power = "0" // immune if level 25 or above
+OUTER_SET zst_3180_only_once_per_sec = "1" // traps only affect a single creature once per second, can't rapidly stack
+
 /////////////////////////////// End-of-installation tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // allowed the MR tweaks to specific types of spells

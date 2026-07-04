@@ -16,7 +16,6 @@
 ## Configuration
 
 - Can now set Finger of Death so it doesn't use a projectile, that is, upon casting, the target immediately suffers its effect.
-- Added an option in the Web component so it adopts the IWD appearance and sound (TODO)
 - Component 1531 now allows the user to define which of the chosen spells will get the Magic Resistance bypass treatment
 - Component 1541 now also has configuration options to make vorpal hits always ineffective towards golem / constructs, oozes, spectral creatures, and elementals no matter what. By default, all are ON except elementals.
 - Wail of the Banshee component now optionally allows Limited Wish's once-per-playthrough version of the spell to be nastier than the default spell
@@ -69,7 +68,7 @@
   - Instances of golems that are good, or evil fixed except brain golems which are evil.
   - Aataqah is changed to Chaotic Good from Lawful Neutral. Lorewise they're whimsy but benevolent genies (in contrast with efreeti).
   - Also patches various creatures added by existing mods before installation of this one (all manually picked, so don't expect consistency for every and any mod)
-- Grease component now also adds a -2 Armor Class debuff (TODO)
+- Grease component now also adds a -2 Armor Class debuff
 - Slightly changed the bonus constitution progression:
   - Nonfighters add 1 bonus HP per 3 points, starting at 12 with 1, 15 with 2, etc, and now can progress up to +5 if they have at least 24 constitution. Fighters always have advantage and can reach +7, as before.
   - Fatigue bonus progression slightly changed so it starts giving bonus at 13 instead of 12, in order to offer a bonus with odd number of constitution points, and smooth out progression.
@@ -97,9 +96,7 @@
 - Make T'rachie's Plate +5 more unique (1385) (BG2EE EET)
 - Make Mail of the Dead +2 more unique (1395) (BGEE BG2EE EET)
 - Make Jester's Chain +4 more unique (1404) (BG2EE EET)
-- Make some creatures immune to being cheesed with Thief Traps (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
-- Make Necromancers have access to a new HLA: Vampiric Feast (xxxx) (BG2EE EET) (TODO)
-- Make all fear effects reduce movement speed by half to make it less inconvenient (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
+- Make some creatures immune to being cheesed with Thief Traps (3180) (IWDEE BGEE BG2EE EET)
 - Make Sanctuary standardized to IWD version (5400) (IWDEE BGEE BG2EE EET)
 - Make Hold Animal much more useful by allowing it to affect many other types of beasts (5402) (BGEE BG2EE EET) (TODO)
 - Make familiars use female voices for casting spells (3165) (IWDEE BGEE BG2EE EET)
@@ -108,5 +105,12 @@
 - Make Power Word, Kill more generally effective for a level 9 spell (585) (BG2EE EET)
 - Make Priests of Talos get access to all electricity spells and add a small bonus to electricity damage (2408) (IWDEE BGEE BG2EE EET)
 - Make Seeking Sword not disable spellcasting and improve it over time (2405) (IWDEE BGEE BG2EE EET)
-- Make Divine Favor's duration (Priest of Tyr) scale very slowly with level (xxxx) (IWDEE BGEE BG2EE EET)
-- Make Boon of Lathander (Priest of Lathander) improve with level slightly (xxxx) (IWDEE BGEE BG2EE EET)
+- Make Divine Favor's duration (Priest of Tyr) scale very slowly with level (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
+- Make Boon of Lathander (Priest of Lathander) improve with level slightly (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
+
+## Future additions
+
+- Make all fear effects reduce movement speed by half to make it less inconvenient
+- Make Necromancers have access to a new HLA: Vampiric Feast
+- Overhauling Web component so it adopts the IWD appearance and sound
+- Slayer Overhaul
