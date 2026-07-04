@@ -199,6 +199,21 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Shambling mounds race fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_shambling_mounds%"
             LAM f_plus
         END
+
+        ACTION_IF zst_albino_wyrms != 0 AND zst_albino_wyrms != 1 BEGIN
+            WARN "[WARN]: Albino wyrms race/class fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_albino_wyrms%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_not_the_rabbits != 0 AND zst_not_the_rabbits != 1 BEGIN
+            WARN "[WARN]: Rabbit race fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_not_the_rabbits%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_eefp_exaltation_bug != 0 AND zst_eefp_exaltation_bug != 1 BEGIN
+            WARN "[WARN]: EEFixpack Exaltation fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_eefp_exaltation_bug%"
+            LAM f_plus
+        END
         
         // ----------------------------------------SYMBOL X SPELLS------------------------------------------------- \\
 
@@ -2228,6 +2243,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         ACTION_IF zst_group_2408_priest_talos != 0 AND zst_group_2408_priest_talos != 1 BEGIN
             WARN "[WARN]: Priest of Talos group component should be set to 1 or 0. Actual value: %zst_group_2408_priest_talos%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_3190_priest_tyr != 0 AND zst_group_3190_priest_tyr != 1 BEGIN
+            WARN "[WARN]: Priest of Tyr Divine Favor group component should be set to 1 or 0. Actual value: %zst_group_3190_priest_tyr%"
             LAM f_plus
         END
 

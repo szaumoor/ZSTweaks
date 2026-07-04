@@ -128,3 +128,6 @@ OUTER_SET zst_albino_wyrms = "1"
 
 // poor race-less rabbits fixed
 OUTER_SET zst_not_the_rabbits = "1"
+
+// EE Fixpack makes casters immune to a bunch of things via spell state before it checks whether the target is caster (should not work on themselves)
+OUTER_SET zst_eefp_exaltation_bug = "1"
