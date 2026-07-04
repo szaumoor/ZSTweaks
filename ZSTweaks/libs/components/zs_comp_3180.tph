@@ -4,7 +4,7 @@ INT_VAR
     p2 = "-1"
     race = "-1"
     min_level = 0
-    op = 318
+    op = 324
     dur = 0
 STR_VAR
     i = "above"
@@ -14,7 +14,7 @@ BEGIN
         INT_VAR 
             match_opcode = 12
             multi_match = 1
-            opcode = 318
+            opcode = 324
             duration=dur
             parameter2 = (p2 > "-1" ? p2 : 104)
             parameter1 = (p1 > "-1" ? p1 : race)
@@ -25,7 +25,7 @@ BEGIN
     END
 END
 
-COPY ~%MOD_FOLDER%/templates/spl/1h_lactor.spl~ ~override/zstrpim0.spl~
+COPY ~%MOD_FOLDER%/templates/spl/1h_lactor.spl~ ~override/zstrpim0.spl~ // immunity to base spell
     LPF ADD_SPELL_EFFECT
         INT_VAR
             opcode = 206
@@ -35,9 +35,16 @@ COPY ~%MOD_FOLDER%/templates/spl/1h_lactor.spl~ ~override/zstrpim0.spl~
             resource = "spcl411"
     END
 
-COPY ~%MOD_FOLDER%/templates/spl/1h_lactor.spl~ ~override/zstrpim1.spl~
-    SET bypass_mirr = 2 ** 24
-    LPF ADD_SPL_TGTEFF STR_VAR effects = ~op=318,res=zstrpim1,p2=55;op=318,res=zstrpim1,p2=77;op=55,p2=2,stype=4,sbonus=4;op=12,p2=%op12_poison%,p1=20,stype=%bypass_mirr%~ END
+COPY_EXISTING ~spcl411.spl~ ~override/zstrpim1.spl~ // base damage
+    LPF ALTER_HEADER INT_VAR projectile = 0 END
+    LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 12)" END
+    LPF DELETE_EFFECT_EX STR_VAR match_parameter2_ex = "(o_parameter2 != %op12_piercing%)" END
+
+COPY_EXISTING ~spcl411.spl~ ~override/zstrpim2.spl~ // protected damage (slay/poison)
+    LPF ALTER_HEADER INT_VAR projectile = 0 END
+    LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 318 OR o_opcode = 12)" END
+    LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_piercing END
+    
 
 COPY_EXISTING ~spcl411.spl~ ~override~
     PATCH_IF zst_3180_immunity_by_type BEGIN
@@ -47,12 +54,12 @@ COPY_EXISTING ~spcl411.spl~ ~override~
     END
 
     PATCH_IF zst_3180_immunity_by_power BEGIN
-        LPF add_immunity_to INT_VAR p2=0 p1=0 min_level = 25 END
+        LPF add_immunity_to INT_VAR p2=2 p1=0 min_level = 25 END
     END
 
     PATCH_IF zst_3180_only_once_per_sec BEGIN
-        LPF DELETE_EFFECT INT_VAR match_opcode= 318 STR_VAR match_resource = "%SOURCE_RES%" END
-        LPF DELETE_EFFECT INT_VAR match_opcode= 55 END
-        LPF DELETE_EFFECT INT_VAR match_opcode = 12 match_parameter2 = op12_poison END
-        LPF ADD_SPL_TGTEFF STR_VAR effects = ~op=146,res=zstrpim1,p2=1;op=146,res=zstrpim0,p2=1~ END
+        LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex= "(o_opcode != 318 AND o_opcode != 254)" END
+        LPF ADD_SPL_TGTEFF STR_VAR effects = ~op=146,res=zstrpim1,p2=1;op=146,res=zstrpim2,p2=1;op=146,res=zstrpim0,p2=1~ END
     END
+
+    LPF ALTER_EFFECT INT_VAR match_opcode = 324 opcode = 318 END
