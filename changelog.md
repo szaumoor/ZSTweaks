@@ -104,9 +104,9 @@
 - Make basic ammunition more expensive (1011) (IWDEE BGEE BG2EE EET)
 - Make Power Word, Kill more generally effective for a level 9 spell (585) (BG2EE EET)
 - Make Priests of Talos get access to all electricity spells and add a small bonus to electricity damage (2408) (IWDEE BGEE BG2EE EET)
-- Make Seeking Sword not disable spellcasting and improve it over time (2405) (IWDEE BGEE BG2EE EET)
-- Make Divine Favor's duration (Priest of Tyr) scale very slowly with level (3190) (IWDEE BGEE BG2EE EET)
-- Make Boon of Lathander (Priest of Lathander) improve with level slightly (xxxx) (IWDEE BGEE BG2EE EET) (TODO)
+- Make Seeking Sword not disable spellcasting and improve it with level (2405) (IWDEE BGEE BG2EE EET)
+- Make Divine Favor's duration scale very slowly with level (3190) (IWDEE BGEE BG2EE EET)
+- Make Boon of Lathander improve with level slightly (3200) (IWDEE BGEE BG2EE EET)
 
 ## Future additions
 

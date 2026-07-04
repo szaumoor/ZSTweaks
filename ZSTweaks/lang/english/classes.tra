@@ -185,3 +185,6 @@ This spell creates a sword in the character's hand that cannot be dropped or une
 
 @9010 = ~Divine Favor
 This spell grants the caster a +1 bonus to hit and damage rolls every 3 levels of the caster, up to +7 at level 21. The spell lasts for 2 rounds plus half a round each time it upgrades, up to 5 rounds at level 21.~
+
+@9020 = ~Boon of Lathander
+This spell lasts 3 rounds plus 1 round per level of the caster. It gives the caster a +1 bonus to attack and damage rolls, a +1 bonus to all Saving Throws, increases maximum HP by 10, and grants 1.5 extra attacks per round (a third of that if the caster has warrior levels). It also protects the caster from level drain.~
