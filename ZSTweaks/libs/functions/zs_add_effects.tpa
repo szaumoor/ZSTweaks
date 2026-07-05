@@ -247,6 +247,47 @@ BEGIN
     END
 END
 
+DEFINE_PATCH_FUNCTION ADD_INNATE_TGT_EFF
+INT_VAR
+    p1     = 0
+    p2     = 0
+    t      = 1
+    tmg    = 0
+    dur    = 0
+    rd     = 0
+    pwr    = 0
+    ip     = "-1"
+    stype  = 0
+    sbonus = 0
+    tgt    = 2
+STR_VAR
+    res     = ""
+    effects = ""
+BEGIN
+    PATCH_IF zs_debug BEGIN
+        LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
+    END
+
+    LPF a7_auto_apply_spl_effect
+        INT_VAR
+            def_target        = tgt
+            def_timing        = tmg
+            def_parameter1    = p1
+            def_parameter2    = p2
+            def_duration      = dur
+            def_resist_dispel = rd
+            def_power         = pwr
+            def_type          = t
+            def_insertpoint   = ip
+            def_savetype      = stype
+            def_savebonus     = sbonus
+        STR_VAR
+            def_resource  = ~%res%~
+            function_name = ~ADD_SPELL_EFFECT~
+            effect_codes  = ~%effects%~
+    END
+END
+
 DEFINE_PATCH_FUNCTION weapon_damage_by_class
 INT_VAR header=0 // the weapon header to which the effect is applied
         probability1=100 // the probabilities for the effect to be applied
