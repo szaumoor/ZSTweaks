@@ -86,6 +86,7 @@
 - Mercykiller Ring now increases also for Stalkers the crit chance, but not the THAC0 and Damage, which is still exclusive to single-classed Thieves. It's also now open to be used by Monks
 - Thieves' Hood now still grants the +1 THAC0 and Damage bonus to single classed thieves even without upgrade. The upgraded one doubles this bonus.
 - Extended the Shadows component so it includes wraiths, spectres, and undead mists.
+- Started moving towards using templates to generate files on the fly, instead of loading the mod with a huge amount of files.
 
 ## New Components
 

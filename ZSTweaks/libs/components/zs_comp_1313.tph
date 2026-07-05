@@ -1,6 +1,8 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
+  
+  COPY ~%MOD_FOLDER%/templates/spl/1h_lactor.spl~ ~override/zstwpain.spl~ // pain effect
+    LPF ADD_SPL_TGTEFF INT_VAR rd=0 dur=12 pwr=0 STR_VAR effects = ~op=321,dur=0,res=%SOURCE_RES%;op=0,p1=-1;op=73,p1=-1;op=278,p1=-1;op=142,p2=137~ END
 
-  COPY ~%MOD_FOLDER%/items/gnasher~ ~override~
   COPY_EXISTING ~blun24.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6182) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
