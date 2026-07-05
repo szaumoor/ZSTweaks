@@ -1,6 +1,8 @@
 ACTION_IF NOT is_iwdee BEGIN
 
-  COPY ~%MOD_FOLDER%/items/krotan~ ~override~
+  COPY ~%MOD_FOLDER%/templates/eff/ptarget.eff~ ~override/zstwbl01.eff~ // humanoid attack
+    LPF ALTER_EFF_FILE INT_VAR opcode = 12 parameter1 = 2 END
+
   COPY_EXISTING ~blun11.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6150) END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,p1=1,p2=3,tmg=1,rd=2,res=zstwbl01~ END
