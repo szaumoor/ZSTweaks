@@ -1,6 +1,8 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY ~%MOD_FOLDER%/items/wave~ ~override~
+  COPY ~%MOD_FOLDER%/templates/eff/1h_lactor.eff~ ~override/zstwwave.eff~ // cold damage
+    LPF ALTER_EFF_FILE INT_VAR opcode = 12 parameter1 = 6 parameter2 = op12_cold END
+
   COPY_EXISTING "halb09.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6420) END
     LPF ALTER_EFFECT_EX INT_VAR probability1 = 14 STR_VAR match_probability1_ex="(o_probability1 < 100)" END
