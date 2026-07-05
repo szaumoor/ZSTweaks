@@ -9,7 +9,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
   COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/zstworc2.eff~ // melee weapon damage 
     LPF ALTER_EFF_FILE INT_VAR opcode = 285 parameter1 = 1 END
 
-  COPY ~%MOD_FOLDER%/items/orc_leather~ ~override~
   COPY_EXISTING ~leat16.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8420) END
     LPF DELETE_EFFECT INT_VAR match_opcode = 6 END
