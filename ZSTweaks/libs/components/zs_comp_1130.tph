@@ -2,11 +2,13 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     OUTER_SET general_tweaks_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~
 
-    COPY "%MOD_FOLDER%/items/boneblade" ~override~
+    COPY ~%MOD_FOLDER%/templates/eff/ptarget.eff~ ~override/zstwbnd0.eff~ // extra dmg
+        LPF ALTER_EFF_FILE INT_VAR opcode = 12 parameter1 = 5 parameter2 = op12_piercing END
+
     COPY_EXISTING ~dagg14.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6000) END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=40~ END
-        LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 STR_VAR res=~zstw_dg6~ effects=~op=12,dsize=4,dnum=1,p2=%op12_acid%,spec=1024;op=177,p1=%race_elf%;op=177,p1=%race_beholder%;op=177,p1=%race_drider%;op=177,p1=%race_hook_horror%;op=177,p1=%race_kuo_toa%;op=177,p1=%race_mind_flayer%;op=177,p1=%race_spider%;op=177,p1=%race_umberhulk%;op=177,p1=%race_sahuagin%~ END
+        LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 STR_VAR res=~zstwbnd0~ effects=~op=12,dsize=4,dnum=1,p2=%op12_acid%,spec=1024;op=177,p1=%race_elf%;op=177,p1=%race_beholder%;op=177,p1=%race_drider%;op=177,p1=%race_hook_horror%;op=177,p1=%race_kuo_toa%;op=177,p1=%race_mind_flayer%;op=177,p1=%race_spider%;op=177,p1=%race_umberhulk%;op=177,p1=%race_sahuagin%~ END
 
         PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR
                 (general_tweaks_installed AND zst_group_1440_dagger_boost)
@@ -20,7 +22,13 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     // item upgrade patch for quietus
     ACTION_IF FILE_EXISTS_IN_GAME ~c2dagg01.itm~ BEGIN
-        COPY "%MOD_FOLDER%/patches/item_upgrade/quietus" ~override~
+        
+        COPY_EXISTING ~zstwbnd0.eff~ ~override/zstwbnd1.eff~ // extra dmg
+            LPF ALTER_EFF_FILE INT_VAR parameter1 = 6 END
+
+        COPY ~%MOD_FOLDER%/templates/spl/1h_lactor.spl~ ~override/zstwbnd2.spl~ // benefit when sleep triggers
+            LPF ADD_SPL_TGTEFF INT_VAR tgt=9 rd=0 dur=12 pwr=0 STR_VAR effects = ~op=321,res=%SOURCE_RES%;op=73,p1=2;op=278,p1=2;op=301,p1=1,p2=1~ END
+
         COPY_EXISTING ~c2dagg01.ITM~ ~override~
             LPF DELETE_EFFECT INT_VAR match_opcode = 263 END
             LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 74 END
@@ -51,12 +59,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_ITEM INT_VAR id_name = RESOLVE_STR_REF(@50111) id_desc=RESOLVE_STR_REF(@50110) ench=5 END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=27,p1=50;op=301,p1=1,p2=1~ END
 
-            LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 ip=0 STR_VAR res=~zstw_dg7~ effects=~op=12,dsize=6,dnum=1,p2=%op12_acid%,spec=1024;op=177,p1=%race_elf%;op=177,p1=%race_beholder%;op=177,p1=%race_drider%;op=177,p1=%race_hook_horror%;op=177,p1=%race_kuo_toa%;op=177,p1=%race_mind_flayer%;op=177,p1=%race_spider%;op=177,p1=%race_umberhulk%;op=177,p1=%race_sahuagin%;op=326,ip=-1,res=zstw_dg8,p2=138,p1=4~ END
+            LPF ADD_ON_HIT_EFF INT_VAR p2=4 tmg=1 ip=0 STR_VAR res=~zstwbnd1~ effects=~op=12,dsize=6,dnum=1,p2=%op12_acid%,spec=1024;op=177,p1=%race_elf%;op=177,p1=%race_beholder%;op=177,p1=%race_drider%;op=177,p1=%race_hook_horror%;op=177,p1=%race_kuo_toa%;op=177,p1=%race_mind_flayer%;op=177,p1=%race_spider%;op=177,p1=%race_umberhulk%;op=177,p1=%race_sahuagin%;op=326,ip=-1,res=zstwbnd2,p2=138,p1=4~ END
 
         BUT_ONLY
 
     END
-
-  
 
 END
