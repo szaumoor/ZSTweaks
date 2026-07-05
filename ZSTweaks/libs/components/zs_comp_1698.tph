@@ -38,6 +38,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF CLONE_EFFECT INT_VAR match_opcode=opcode opcode=206 parameter2=0 STR_VAR resource="%res%" END
         END
 
-    BUT_ONLY
+  BUT_ONLY
 
 END

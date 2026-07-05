@@ -60,8 +60,10 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
         PRINT "[DEBUG][INFO]: Finding incorrect shield strrefs for debugging..."
         COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
             READ_SHORT 0x1c cat
+
             PATCH_IF cat = 12 BEGIN
                 READ_LONG 0x8 strref
+                
                 PATCH_IF strref != small_shield_strref   AND
                          strref != medium_shield_strref  AND
                          strref != large_shield_strref   AND
@@ -80,7 +82,9 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
                         PATCH_PRINT "[DEBUG][INFO]: Incorrect shield strref found at shield category: %SOURCE_RES%"
                     END
                 END
+
             END
+
         BUT_ONLY
         
     END

@@ -3,18 +3,16 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     READ_BYTE 0x31 wpn_prof
     READ_SHORT 0x68 num_abilities
     READ_ASCII 0x22 appearance (2)
+
 	PATCH_IF (cat = 22 OR cat = 23) AND wpn_prof = 100 AND num_abilities > 0 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
         READ_LONG 0x60 ench
         PATCH_MATCH ench
-            WITH 0 1 BEGIN
-                LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 ip=0 p2=op12_piercing END
-            END 2 3 BEGIN
-                LPF ADD_SLEEP_SAFE_DMG INT_VAR dsize=2 dnum=1 ip=0 p2=op12_piercing END
-            END 4 5 BEGIN
-                LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 dsize=2 dnum=1 ip=0 p2=op12_piercing END
-            END 6 BEGIN
-                LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 dsize=3 dnum=1 ip=0 p2=op12_piercing END
+            WITH 0 1 BEGIN LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 ip=0 p2=op12_piercing                END
+            END 2 3  BEGIN LPF ADD_SLEEP_SAFE_DMG INT_VAR dsize=2 dnum=1 ip=0 p2=op12_piercing      END
+            END 4 5  BEGIN LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 dsize=2 dnum=1 ip=0 p2=op12_piercing END
+            END 6    BEGIN LPF ADD_SLEEP_SAFE_DMG INT_VAR p1=1 dsize=3 dnum=1 ip=0 p2=op12_piercing END
             END DEFAULT
         END
     END
+    
 BUT_ONLY

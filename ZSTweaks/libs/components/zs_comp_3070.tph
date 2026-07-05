@@ -5,7 +5,9 @@ ACTION_IF NOT is_iwdee BEGIN
   
   COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     READ_LONG 0x28 animation
+    
     PATCH_IF animation = 0x7f0b OR animation = 0x7f0a BEGIN
+
       SET present = 0
       LPM CRE_OP_PRESENT
       PATCH_IF NOT present BEGIN

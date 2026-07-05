@@ -1,5 +1,6 @@
 OUTER_SET new_description =RESOLVE_STR_REF(@7360)
 COPY_EXISTING ~spwi913.spl~ ~override~
+  LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 101 match_parameter2 = 55 END
   LPF ALTER_SPELL INT_VAR desc=new_description END
   LPF ADD_SPL_TGTEFF INT_VAR pwr=9 rd=3 STR_VAR effects=~op=12,p1=3,tmg=1,dnum=3,dsize=6,p2=0;op=80,dur=12;op=142,p2=112,dur=12~ END
   LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter2 = op12_magic END
@@ -20,6 +21,7 @@ ACTION_IF zst_170_wail_wish_bonus BEGIN
   ACTION_TIME "Horrendous WoB patching" BEGIN
     COPY_EXISTING_REGEXP ".+\.\(spl\|itm\|cre\)" ~override~
       LPF CLONE_EFFECT INT_VAR silent=1 match_opcode = 204 match_parameter2 = 7 opcode = 206 STR_VAR resource=~zstwswl~ END
+      LPF CLONE_EFFECT INT_VAR silent=1 match_opcode = 206 STR_VAR resource = ~zstwswl~ END
   END
 
 END

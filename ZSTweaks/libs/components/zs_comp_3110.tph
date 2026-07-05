@@ -4,8 +4,8 @@ OUTER_SET movement_boost = 4
 
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     READ_BYTE 0x272 race
-    PATCH_IF race = race_yuanti AND
-         NOT "%SOURCE_RES%" STR_EQ "zsipyua1" // formless serpent from my item pack
+
+    PATCH_IF race = race_yuanti AND NOT "%SOURCE_RES%" STR_EQ "zsipyua1" // formless serpent from my item pack
     BEGIN
         WRITE_SHORT 0x4c (THIS - 2)
         WRITE_SHORT 0x4e (THIS - 1)
@@ -14,4 +14,5 @@ COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
         LPM ADD_CRE_MELEE_EFFECT 
         LPM ADD_CRE_MOVEMENT_BOOST 
     END
+
 BUT_ONLY

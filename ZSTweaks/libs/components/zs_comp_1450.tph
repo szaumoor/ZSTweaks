@@ -2,17 +2,158 @@ ADD_PROJECTILE ~%MOD_FOLDER%/pro/ZSTW_INP.PRO~
 ADD_PROJECTILE ~%MOD_FOLDER%/pro/ZSTW_IND.PRO~
 
 COPY ~%MOD_FOLDER%/items/finesse_weapons~ ~override~
-COPY_EXISTING_REGEXP "^zstw[absm#][0-6]\.spl$" ~override~ // for arrows, bolts and sling bullets
+COPY_EXISTING "zstwa0.spl" ~override~ // for arrows, bolts and sling bullets
+              "zstwa1.spl" ~override~
+              "zstwa2.spl" ~override~
+              "zstwa3.spl" ~override~
+              "zstwa4.spl" ~override~
+              "zstwa5.spl" ~override~
+              "zstwa6.spl" ~override~
+              "zstwb0.spl" ~override~
+              "zstwb1.spl" ~override~
+              "zstwb2.spl" ~override~
+              "zstwb3.spl" ~override~
+              "zstwb4.spl" ~override~
+              "zstwb5.spl" ~override~
+              "zstwb6.spl" ~override~
+              "zstws0.spl" ~override~
+              "zstws1.spl" ~override~
+              "zstws2.spl" ~override~
+              "zstws3.spl" ~override~
+              "zstws4.spl" ~override~
+              "zstws5.spl" ~override~
+              "zstws6.spl" ~override~
+              "zstwm0.spl" ~override~
+              "zstwm1.spl" ~override~
+              "zstwm2.spl" ~override~
+              "zstwm3.spl" ~override~
+              "zstwm4.spl" ~override~
+              "zstwm5.spl" ~override~
+              "zstwm6.spl" ~override~
+              "zstw#3.spl" ~override~
     LPF ALTER_HEADER INT_VAR match_type=2 projectile="%ZSTW_INP%" END
 BUT_ONLY
 
-COPY_EXISTING_REGEXP "^zstw[tz][0-6]\.spl$" ~override~ // throwing daggers and darts
+COPY_EXISTING "zstwt0.spl" ~override~ // throwing daggers and darts
+              "zstwt1.spl" ~override~
+              "zstwt2.spl" ~override~
+              "zstwt3.spl" ~override~
+              "zstwt4.spl" ~override~
+              "zstwt5.spl" ~override~
+              "zstwt6.spl" ~override~
+              "zstwz0.spl" ~override~
+              "zstwz1.spl" ~override~
+              "zstwz2.spl" ~override~
+              "zstwz3.spl" ~override~
+              "zstwz4.spl" ~override~
+              "zstwz5.spl" ~override~
+              "zstwz6.spl" ~override~
     LPF ALTER_HEADER INT_VAR match_type=2 projectile="%ZSTW_IND%" END
 BUT_ONLY
 
 ACTION_IF zst_1450_allow_bards BEGIN
 
-    COPY_EXISTING_REGEXP "^zstw[_#$absmdejklqtwyz][0-6]\.spl$" ~override~ // bard allowing
+    COPY_EXISTING "zstw_2.spl" ~override~
+                  "zstw#3.spl" ~override~
+                  "zstw$3.spl" ~override~
+                  "zstwa0.spl" ~override~
+                  "zstwa1.spl" ~override~
+                  "zstwa2.spl" ~override~
+                  "zstwa3.spl" ~override~
+                  "zstwa4.spl" ~override~
+                  "zstwa5.spl" ~override~
+                  "zstwa6.spl" ~override~
+                  "zstwb0.spl" ~override~
+                  "zstwb1.spl" ~override~
+                  "zstwb2.spl" ~override~
+                  "zstwb3.spl" ~override~
+                  "zstwb4.spl" ~override~
+                  "zstwb5.spl" ~override~
+                  "zstwb6.spl" ~override~
+                  "zstws0.spl" ~override~
+                  "zstws1.spl" ~override~
+                  "zstws2.spl" ~override~
+                  "zstws3.spl" ~override~
+                  "zstws4.spl" ~override~
+                  "zstws5.spl" ~override~
+                  "zstws6.spl" ~override~
+                  "zstwm0.spl" ~override~
+                  "zstwm1.spl" ~override~
+                  "zstwm2.spl" ~override~
+                  "zstwm3.spl" ~override~
+                  "zstwm4.spl" ~override~
+                  "zstwm5.spl" ~override~
+                  "zstwm6.spl" ~override~
+                  "zstwd0.spl" ~override~
+                  "zstwd1.spl" ~override~
+                  "zstwd2.spl" ~override~
+                  "zstwd3.spl" ~override~
+                  "zstwd4.spl" ~override~
+                  "zstwd5.spl" ~override~
+                  "zstwd6.spl" ~override~
+                  "zstwe0.spl" ~override~
+                  "zstwe1.spl" ~override~
+                  "zstwe2.spl" ~override~
+                  "zstwe3.spl" ~override~
+                  "zstwe4.spl" ~override~
+                  "zstwe5.spl" ~override~
+                  "zstwe6.spl" ~override~
+                  "zstwj0.spl" ~override~
+                  "zstwj1.spl" ~override~
+                  "zstwj2.spl" ~override~
+                  "zstwj3.spl" ~override~
+                  "zstwj4.spl" ~override~
+                  "zstwj5.spl" ~override~
+                  "zstwj6.spl" ~override~
+                  "zstwk0.spl" ~override~
+                  "zstwk1.spl" ~override~
+                  "zstwk2.spl" ~override~
+                  "zstwk3.spl" ~override~
+                  "zstwk4.spl" ~override~
+                  "zstwk5.spl" ~override~
+                  "zstwk6.spl" ~override~
+                  "zstwl0.spl" ~override~
+                  "zstwl1.spl" ~override~
+                  "zstwl2.spl" ~override~
+                  "zstwl3.spl" ~override~
+                  "zstwl4.spl" ~override~
+                  "zstwl5.spl" ~override~
+                  "zstwl6.spl" ~override~
+                  "zstwq0.spl" ~override~
+                  "zstwq1.spl" ~override~
+                  "zstwq2.spl" ~override~
+                  "zstwq3.spl" ~override~
+                  "zstwq4.spl" ~override~
+                  "zstwq5.spl" ~override~
+                  "zstwq6.spl" ~override~
+                  "zstwt0.spl" ~override~
+                  "zstwt1.spl" ~override~
+                  "zstwt2.spl" ~override~
+                  "zstwt3.spl" ~override~
+                  "zstwt4.spl" ~override~
+                  "zstwt5.spl" ~override~
+                  "zstwt6.spl" ~override~
+                  "zstww0.spl" ~override~
+                  "zstww1.spl" ~override~
+                  "zstww2.spl" ~override~
+                  "zstww3.spl" ~override~
+                  "zstww4.spl" ~override~
+                  "zstww5.spl" ~override~
+                  "zstww6.spl" ~override~
+                  "zstwy0.spl" ~override~
+                  "zstwy1.spl" ~override~
+                  "zstwy2.spl" ~override~
+                  "zstwy3.spl" ~override~
+                  "zstwy4.spl" ~override~
+                  "zstwy5.spl" ~override~
+                  "zstwy6.spl" ~override~
+                  "zstwz0.spl" ~override~
+                  "zstwz1.spl" ~override~
+                  "zstwz2.spl" ~override~
+                  "zstwz3.spl" ~override~
+                  "zstwz4.spl" ~override~
+                  "zstwz5.spl" ~override~
+                  "zstwz6.spl" ~override~
         LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 target=9 opcode=318 parameter1=class_bard_all probability1=zst_1450_bards_probability_penalty parameter2=105 STR_VAR resource="%SOURCE_RES%" END
     BUT_ONLY
 
