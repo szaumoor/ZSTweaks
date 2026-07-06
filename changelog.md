@@ -99,7 +99,7 @@
 - Make Jester's Chain +4 more unique (1404) (BG2EE EET)
 - Make some creatures immune to being cheesed with Thief Traps (3180) (IWDEE BGEE BG2EE EET)
 - Make Sanctuary standardized to IWD version (5400) (IWDEE BGEE BG2EE EET)
-- Make Hold Animal much more useful by allowing it to affect many other types of beasts (5402) (BGEE BG2EE EET) (TODO)
+- Make Hold Animal much more useful by allowing it to affect many other types of beasts (5402) (BGEE BG2EE EET)
 - Make familiars use female voices for casting spells (3165) (IWDEE BGEE BG2EE EET)
 - Make succubi and erinyes use the female winged elf animation (3170) (BGEE BG2EE EET)
 - Make basic ammunition more expensive (1011) (IWDEE BGEE BG2EE EET)

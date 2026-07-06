@@ -1088,7 +1088,9 @@ Casting Time: 5
 Area of Effect: 1 creature and any enemies within 4 ft.
 Saving Throw: Neg.
 
-This spell holds beasts rigidly immobile and in place. This includes every kind of animal of any size such as bears, panthers and wolves, as well as other low-intelligence monstrous beasts such as carrion crawlers, ettercaps, ankhegs, and giant spiders. The effect is centered on the victim selected by the caster; every enemy within 4 ft. of the target is also affected. Those who succeed on their Saving Throw vs. Spell are totally unaffected by the spell. Held creatures cannot move or speak, but they remain aware of events around them. Being held does not prevent the worsening of the subjects' condition due to wounds, disease, or poison.~
+This spell holds beasts rigidly immobile and in place. This includes every kind of living animal of any size as well as other unintelligent beasts. The effect is centered on the victim selected by the caster; every enemy within 4 ft. of the target is also affected. Those who succeed on their Saving Throw vs. Spell are totally unaffected by the spell. Held creatures cannot move or speak, but they remain aware of events around them. Being held does not prevent the worsening of the subjects' condition due to wounds, disease, or poison.
+
+Besides living animals, the following non-humanoid living creatures are affected by this spell: spiders, umber hulks, carrion crawlers, wyverns, ettercaps, ankhegs, basilisks, otyugh, hook horrors, wolfweres, chimeras, and gibberlings.~
 
 @900500 = ~Sanctuary
 (Abjuration)
