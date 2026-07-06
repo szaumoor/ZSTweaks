@@ -1,7 +1,7 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY ~%MOD_FOLDER%/templates/spl/1h_lactor.spl~ ~override/zstwimpa.spl~ // extra crit damage
-    LPF ADD_INNATE_TGT_EFF STR_VAR effects = ~op=12,p1=5,p2=%op12_piercing%~ END
+  DEFINE_PATCH_MACRO patch_file BEGIN LPF ADD_INNATE_TGT_EFF STR_VAR effects = ~op=12,p1=5,p2=%op12_piercing%~ END END
+  LAF CREATE_TG_SPL STR_VAR filename = "zstwimpa" END
   
   COPY_EXISTING ~sper08.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8610) END

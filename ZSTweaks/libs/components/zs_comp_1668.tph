@@ -1,7 +1,7 @@
 ACTION_IF NOT is_iwdee BEGIN
 
-  COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/zstwdlp0.eff~ // class-based rng attack bonus
-    LPF ALTER_EFF_FILE INT_VAR opcode = 286 parameter1 = 1 END
+  DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode = 286 parameter1 = 1 END END
+  LAF CREATE_EQ_EFF STR_VAR filename = "zstwdlp0" END // +1 thac0
 
   COPY_EXISTING ~brac04.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7280) unusable0=0 END

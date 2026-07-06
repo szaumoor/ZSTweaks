@@ -1,0 +1,85 @@
+DEFINE_PATCH_MACRO patch_file BEGIN
+    PATCH_FAIL "patch_file function is not defined"
+END
+
+/**
+ * Creates an EFF file meant for an equipped effect for an item.
+ * Expects a patch_file macro to be defined and runnable without failure.
+ */
+DEFINE_ACTION_MACRO CREATE_EQ_EFF BEGIN
+    ACTION_IF zs_debug AND STRING_LENGTH "%filename%" = 0 BEGIN
+        FAIL "[FAIL]: Cannot create a file with an empty file name"
+    END
+
+    OUTER_SPRINT file_ext "%filename%.eff"
+    COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/%file_ext%~ 
+        LPM patch_item
+
+    DEFINE_PATCH_MACRO patch_file BEGIN
+        PATCH_FAIL "patch_file function is not defined"
+    END
+END
+
+/**
+ * Creates an EFF file meant for an targeted effect.
+ * Expects a patch_file macro to be defined and runnable without failure.
+ */
+DEFINE_ACTION_MACRO CREATE_TG_EFF BEGIN
+    ACTION_IF zs_debug AND STRING_LENGTH "%filename%" = 0 BEGIN
+        FAIL "[FAIL]: Cannot create a file with an empty file name"
+    END
+
+    OUTER_SPRINT file_ext "%filename%.eff"
+    COPY ~%MOD_FOLDER%/templates/eff/ptarget.eff~ ~override/%file_ext%~ 
+        LPM patch_item
+
+    DEFINE_PATCH_MACRO patch_file BEGIN
+        PATCH_FAIL "patch_file function is not defined"
+    END
+END
+
+
+/**
+ * Creates an SPL file meant for an targeted effect.
+ * Expects a patch_file macro to be defined and runnable without failure.
+ */
+DEFINE_ACTION_MACRO CREATE_TG_SPL BEGIN
+    ACTION_IF zs_debug AND STRING_LENGTH "%filename%" = 0 BEGIN
+        FAIL "[FAIL]: Cannot create a file with an empty file name"
+    END
+
+    OUTER_SPRINT file_ext "%filename%.spl"
+    COPY ~%MOD_FOLDER%/templates/spl/1h_target.eff~ ~override/%file_ext%~ 
+        LPM patch_item
+
+    DEFINE_PATCH_MACRO patch_file BEGIN
+        PATCH_FAIL "patch_file function is not defined"
+    END
+END
+
+DEFINE_ACTION_FUNCTION CREATE_EQ_EFF
+STR_VAR
+    filename = ""
+RET
+    file_ext
+BEGIN
+    LAM CREATE_EQ_EFF
+END
+
+DEFINE_ACTION_FUNCTION CREATE_TG_EFF
+STR_VAR
+    filename = ""
+RET
+    file_ext
+BEGIN
+    LAM CREATE_TG_EFF
+END
+
+DEFINE_ACTION_FUNCTION CREATE_TG_SPL
+STR_VAR
+    filename = ""
+RET
+    file_ext
+BEGIN
+    LAM CREATE_TG_SPL
+END

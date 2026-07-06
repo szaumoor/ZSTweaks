@@ -1,7 +1,7 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/zstwhaye.eff~ // class-based rng attack bonus
-    LPF ALTER_EFF_FILE INT_VAR opcode = 189 parameter1 = 1 END
+  DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode = 189 parameter1 = 1 END END
+  LAF CREATE_EQ_EFF STR_VAR filename = "zstwhaye" END // casting speed
 
   COPY_EXISTING ~ohnrobe1.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8500) END

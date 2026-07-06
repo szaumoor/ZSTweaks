@@ -1,13 +1,13 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/zstwthm1.eff~ // +1 thac0
-    LPF ALTER_EFF_FILE INT_VAR opcode = 278 parameter1 = 1 END
+  DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode = 278 parameter1 = 1 END END
+  LAF CREATE_EQ_EFF STR_VAR filename = "zstwthm1" END // +1 thac0
 
-  COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/zstwthm2.eff~ // +1 damage
-    LPF ALTER_EFF_FILE INT_VAR opcode = 73 parameter1 = 1 END
+  DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode = 73 parameter1 = 1 END END
+  LAF CREATE_EQ_EFF STR_VAR filename = "zstwth21" END // +1 damage
 
-  COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/zstwthm3.eff~ // +1 crit
-    LPF ALTER_EFF_FILE INT_VAR opcode = 301 parameter1 = 1 END
+  DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode = 301 parameter1 = 1 END END
+  LAF CREATE_EQ_EFF STR_VAR filename = "zstwthm3" END // +1 crit
 
   COPY_EXISTING ~wa2ring.itm~ ~override~
     LPF ALTER_ITEM INT_VAR unusable0=1075116480 id_desc=RESOLVE_STR_REF(@6340) END

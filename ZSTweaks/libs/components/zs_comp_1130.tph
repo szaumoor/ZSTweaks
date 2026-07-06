@@ -1,9 +1,10 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
     OUTER_SET general_tweaks_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~
-
-    COPY ~%MOD_FOLDER%/templates/eff/ptarget.eff~ ~override/zstwbnd0.eff~ // extra dmg
-        LPF ALTER_EFF_FILE INT_VAR opcode = 12 parameter1 = 5 parameter2 = op12_piercing END
+    DEFINE_PATCH_MACRO patch_file BEGIN 
+        LPF ALTER_EFF_FILE INT_VAR opcode=12 parameter1=5 parameter2=op12_piercing END 
+    END
+    LAF CREATE_TG_EFF STR_VAR filename = "zstwbnd0" END // damage on hit
 
     COPY_EXISTING ~dagg14.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6000) END
@@ -24,10 +25,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~c2dagg01.itm~ BEGIN
         
         COPY_EXISTING ~zstwbnd0.eff~ ~override/zstwbnd1.eff~ // extra dmg
-            LPF ALTER_EFF_FILE INT_VAR parameter1 = 6 END
-
-        COPY ~%MOD_FOLDER%/templates/spl/1h_lactor.spl~ ~override/zstwbnd2.spl~ // benefit when sleep triggers
+            LPF ALTER_EFF_FILE INT_VAR parameter1 = 6 END       
+        DEFINE_PATCH_MACRO patch_file BEGIN
             LPF ADD_SPL_TGTEFF INT_VAR tgt=9 rd=0 dur=12 pwr=0 STR_VAR effects = ~op=321,res=%SOURCE_RES%;op=73,p1=2;op=278,p1=2;op=301,p1=1,p2=1~ END
+        END
+        LAF CREATE_TG_SPL STR_VAR filename = "zstwbnd2" END // self buff when sleep triggers
 
         COPY_EXISTING ~c2dagg01.ITM~ ~override~
             LPF DELETE_EFFECT INT_VAR match_opcode = 263 END

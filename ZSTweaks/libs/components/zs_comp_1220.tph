@@ -1,10 +1,10 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/zstwras1.eff~ // extra apr
-    LPF ALTER_EFF_FILE INT_VAR opcode = 1 parameter1 = 1 END
+  DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode = 1 parameter1 = 1 END END 
+  LAF CREATE_EQ_EFF STR_VAR filename="zstwras1" END // extra apr
 
-  COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/zstwras2.eff~ // color pulse
-    LPF ALTER_EFF_FILE INT_VAR opcode = 9 parameter1 = 6 parameter2 = 2359317 END
+  DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode = 9 parameter1 = 6 parameter2 = 2359317 END END 
+  LAF CREATE_EQ_EFF STR_VAR filename="zstwras2" END // color pulse
 
   COPY_EXISTING ~sw1h33a.itm~ ~override~
                 ~sw1h33b.itm~ ~override~

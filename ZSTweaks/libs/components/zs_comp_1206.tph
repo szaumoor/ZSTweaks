@@ -2,10 +2,9 @@ ACTION_IF NOT is_iwdee BEGIN
 
   ACTION_IF FILE_EXISTS_IN_GAME ~bdring10.itm~ BEGIN
 
-    COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/zstwpur0.eff~ // priest slots
-      LPF ALTER_EFF_FILE INT_VAR opcode = 89 parameter1 = 1 parameter2 = 1 END
-
-    COPY ~zstwpur0.eff~ ~override/zstwpur1.eff~ // priest slots
+    DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode = 89 parameter1 = 1 parameter2 = 1 END END
+    LAF CREATE_EQ_EFF STR_VAR filename = ~zstwpur0~ RET file_ext END // priest slots level 1
+    COPY_EXISTING ~%file_ext%~ ~override/zstwpur1.eff~ // priest slots level 2
       LPF ALTER_EFF_FILE INT_VAR parameter2 = 2 END
     
     COPY_EXISTING ~bdring10.itm~ ~override~

@@ -1,13 +1,13 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/zstworc0.eff~ // missile resist
-    LPF ALTER_EFF_FILE INT_VAR opcode = 89 parameter1 = 10 END
+  DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode = 89 parameter1 = 10 END END
+  LAF CREATE_EQ_EFF STR_VAR filename = "zstworc0" END // missile resist
 
-  COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/zstworc1.eff~ // max hp 
-    LPF ALTER_EFF_FILE INT_VAR opcode = 18 parameter1 = 10 parameter2 = 3 END
-  
-  COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/zstworc2.eff~ // melee weapon damage 
-    LPF ALTER_EFF_FILE INT_VAR opcode = 285 parameter1 = 1 END
+  DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode = 18 parameter1 = 10 parameter2 = 3 END END
+  LAF CREATE_EQ_EFF STR_VAR filename = "zstworc1" END // max hp
+
+  DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode = 285 parameter1 = 1 END END
+  LAF CREATE_EQ_EFF STR_VAR filename = "zstworc2" END // melee weapon damage
 
   COPY_EXISTING ~leat16.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8420) END
