@@ -143,3 +143,7 @@ END
 ACTION_IF zst_group_585_pw_kill BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_585.tph~ END
 END
+
+ACTION_IF zst_group_487_otiluke_sphere BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_487.tph~ END
+END

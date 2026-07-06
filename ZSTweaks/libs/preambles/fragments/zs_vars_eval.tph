@@ -1168,6 +1168,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         END
 
         // ----------------------------------------PW KILL ----------------------------------------------------- \\
+
         ACTION_IF zst_585_pwk_magic_school < 0 OR zst_585_pwk_magic_school > 2 BEGIN
             WARN "[WARN]: Setting to make PW: Kill use a different magic school should be set to 0 (unchanged -- conjuration), 1 (enchantment), or 2 (divination). Actual value: %zst_585_pwk_magic_school%"
             LAM f_plus
@@ -2063,6 +2064,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         ACTION_IF zst_group_585_pw_kill != 0 AND zst_group_585_pw_kill != 1 BEGIN
             WARN "[WARN]: PW Kill group component should be set to 1 or 0. Actual value: %zst_group_585_pw_kill%"
+            LAM f_plus
+        END
+
+        ACTION_IF zst_group_487_otiluke_sphere != 0 AND zst_group_487_otiluke_sphere != 1 BEGIN
+            WARN "[WARN]: Otiluke's Resilient Sphere component should be set to 1 or 0. Actual value: %zst_group_487_otiluke_sphere%"
             LAM f_plus
         END
 

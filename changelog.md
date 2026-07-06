@@ -76,7 +76,7 @@
 - Oni Mage component now patches the "Ogre Mage" string so anyone using it as a name, will be "Oni Mage" instead
 - Holy Sword of Tyr now acts as a +5 weapon vs evil for the purposes of what it can hit
 - Energy Drain is now much more powerful (TODO):
-  - Enemy becomes a devil shade if killing within 1 turn
+  - Enemy becomes a devil shade if killed within 1 turn
   - Boosts undead creature if cast on them
   - Caster sucks up the power it was drained from the creature for a while
 - Wail of the Banshee component now also makes it slay anyone with 8 HD or less without any save allowed
@@ -108,6 +108,7 @@
 - Make Seeking Sword not disable spellcasting and improve it with level (2405) (IWDEE BGEE BG2EE EET)
 - Make Divine Favor's duration scale very slowly with level (3190) (IWDEE BGEE BG2EE EET)
 - Make Boon of Lathander improve with level slightly (3200) (IWDEE BGEE BG2EE EET)
+- Make Otiluke's Resilient Sphere able to protect NPCs marked as innocents (487) (IWDEE BGEE BG2EE EET)
 
 ## Future additions
 

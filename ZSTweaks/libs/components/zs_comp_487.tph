@@ -1,0 +1,4 @@
+COPY_EXISTING ~spwi413.spl~ ~override~
+    LPF DELETE_EFFECT INT_VAR check_globals = 0 END
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=4 rd=0 STR_VAR effects = ~op=326,p2=49,res=%SOURCE_RES%a;op=318,p2=49,res=%SOURCE_RES%;op=326,p2=105,p1=%class_innocent%,res=%SOURCE_RES%a;op=318,p2=105,p1=%class_innocent%,res=%SOURCE_RES%;op=146,rd=1,res=%SOURCE_RES%a~ END
+BUT_ONLY
