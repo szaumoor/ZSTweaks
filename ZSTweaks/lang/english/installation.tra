@@ -115,7 +115,7 @@
 @1195 = ~Make Gloves of Healing worth more than what you get by selling them~
 @1197 = ~Make a number of quest items functionally useful~
 @1198 = ~Make Ring of the Crusade grant combat bonuses vs. demons and devils~
-@1203 = ~Make Girdle of Fortitude set Constitution to 18 on equip~
+@1203 = ~Make Girdle of Fortitude more generally useful~
 @1204 = "Make Rhino Beetle Gear have a more balanced set of resistances"
 @1206 = ~Make Ring of Purity benefit the good-aligned more~
 @1207 = ~Make Protector of the Second more powerful when used by rangers~
@@ -280,7 +280,7 @@
 @370 = "Make Ray of Enfeeblement a Necromancy spell"
 @380 = "Make Contagion cause 4 points of Strength and Dexterity damage"
 @390 = "Make Death Fog better and closer to PnP somewhat"
-@400 = "Make Energy Drain take 6 levels instead of 2"
+@400 = "Make Energy Drain significantly more powerful"
 @405 = ~Make Maze bypass Magic Resistance and make minotaurs immune to it~
 @407 = ~Make base Imp familiars have 12/24 HP like the other familiars~
 @410 = ~Make Horrid Wilting more effective vs. plants and Water Elementals and increase minimum damage~
@@ -322,7 +322,7 @@
 @280 = "Make Poison spell do half damage on a failed save"
 @300 = "Make Iron Skins cast as fast a Stoneskin"
 @310 = "Make Fire Seeds markedly more useful and powerful"
-@320 = "Make Nature's Beauty better and more logical in how it works"
+@320 = "Make Nature's Beauty better and more logical"
 @330 = "Make Cleric's level 7 version of confusion act like Chaos"
 @420 = ~Make Armor of Faith also add Armor Class and poison damage resistance~
 @450 = ~Make cure and cause wound spells other than Heal/Harm more worth using~
@@ -370,7 +370,7 @@
 @2230 = ~Make RR's Crippling strike no longer able to increase Strength~
 @2231 = ~Make Dragon Disciples able to access most arcane fire spells automatically and increase fire damage dealt~
 @2232 = ~Make Called Shot directly increase ranged weapon damage~
-@2260 = ~Make Blades, Skalds, and Swashbucklers and Priest of Tempus get more warrior-type benefits~
+@2260 = ~Make Blades, Skalds, and Swashbucklers, and Priests of Tempus get more warrior-type benefits~
 @2265 = ~Make Defensive Spin protect against backstabs for its duration and allow very slow movement~
 @2270 = ~Make Whirlwind and Evasion grant once 3 uses of the Improved variants~
 @2280 = ~Make single-classed thieves and bards able to throw sand in the enemy's eyes~
@@ -392,7 +392,7 @@
 @3050 = ~Make the Balor's vorpal attack not guaranteed to succeed but affected by a Saving Throw~
 @3060 = ~Make that dumb Mencar Pebblemuncher a fair fighter for his level~
 @3070 = ~Make lions and other cat creatures not slow as molasses~
-@3080 = ~Make creature on-hit effects that should be natural not behave as magical attacks~
+@3080 = ~Make creature abilities that should be natural not behave as magical attacks~
 @3090 = ~Make Spectral creatures slightly more dangerous~
 @3100 = ~Make Beetles more resistant to non-crushing weapons~
 @3110 = ~Make Yuan-ti slightly more powerful~

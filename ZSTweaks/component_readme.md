@@ -395,7 +395,7 @@ This makes the ring significantly more useful for an Archdruid, adding one extra
 
 ### Make Mercykiller Ring more useful for pure thieves and rangers (1316) (BG2EE EET)
 
-Adds a +1 bonus to damage and THAC0, and +5% critical hit chance, along with the other bonuses, but only for single-classed Thieves (for balance and to encourage commitment). The ring can also be equipped by Rangers.
+Single-classed thieves get a +1 bonus to damage and THAC0, and +5% critical hit chance. The ring can also be equipped by Rangers and Monks. Stalkers get the critical hit chance extra benefit, and monks only get the default.
 
 ### Make the basic arcane robes more remarkable (1317) (IWDEE BGEE BG2EE EET)
 
@@ -414,7 +414,7 @@ Adds a +1 bonus to damage and THAC0, and +5% critical hit chance, along with the
   - Save vs. Petrification +1 (vanilla) and Save vs. Spell +1 (new)
   - +20% Magic damage resistance
   - +10% Elemental damage resistance
-- **Elemental resistance robes**: resistance increases 20→40%, adds 7% damage bonus in the relevant element and +1 Save vs. evocation spells. This also increases the damage resistance of Robe of Red Flames to 50%, and adds the evocation bonus, for consistency (it's a straight upgrade from the Robe of Fire Resistance).
+- **Elemental resistance robes**: resistance increases 20→40%, adds 7% damage bonus in the relevant element and +1 Save vs. evocation spells. This also increases the damage resistance of Robe of Red Flames to 50%, and adds the evocation bonus, for consistency (it's a straight upgrade from the Robe of Fire Resistance). All these robes are not usable by any class.
 - **Archmage Robes**
   - Armor Class is set to 5 (vanilla), and is also improved by 1 additively (new)
   - Magic resistance increases by 10%, not 5%
@@ -438,7 +438,7 @@ This improves the helm slightly such that the Domination power is as powerful as
 
 ### Make Robe of Invocation increase elemental damage and defense (1610) (BG2EE EET)
 
-This makes the robe more rewarding for Invokers, similarly to my tweaks to the elemental robes, but with milder damage bonuses since the benefit is more universal: a 5% elemental damage bonus and +2 to saves vs. Invocation.
+This adds a 5% elemental damage bonus and +2 to saves vs. Invocation. If the wearer is an actual invoker, their magic damage is also increased by 5%.
 
 ### Make Thayan Circlet more interesting for wild mages (1620) (BG2EE EET)
 
@@ -465,7 +465,7 @@ This component overhauls the Grandmaster's Armor, making its movement bonus immu
 This improves this item in the following ways:
 
 - Both upgraded and non-upgraded versions now protect against critical hits, essentially giving a Thief access to critical hit protection without requiring fighter levels.
-- Single-classed thieves gain +1 THAC0 and Damage (for balance and to promote specialization) in the upgraded version
+- Single-classed thieves gain +1 THAC0 and Damage in the non-upgraded version, doubled in the upgraded version.
 
 ### Make Star-Strewn Boots better and favor Inquisitors too (1654) (BGEE BG2EE EET)
 
@@ -631,15 +631,15 @@ All of these can be toggled on and off in the preferences file.
 
 ### Make Ring of the Crusade grant combat bonuses vs. demons and devils (1198) (BGEE BG2EE EET)
 
-Self-explanatory, the wearer will get a +2 bonus to combat and damage rolls vs. demons and devils.
+The wearer will get a +2 bonus to damage and to-hit rolls vs. demons and devils.
 
 ### Make Ring of Purity benefit the good-aligned more (1206) (BGEE BG2EE EET)
 
 The ring now adds a +1 bonus to THAC0 and damage vs. evil creatures, as well as 1 extra spell slot for levels 1 and 2 for good-aligned characters.
 
-### Make Girdle of Fortitude set Constitution to 18 on equip (1203) (IWDEE BGEE BG2EE EET)
+### Make Girdle of Fortitude more generally useful (1203) (IWDEE BGEE BG2EE EET)
 
-This makes the belt generally more useful and frankly makes more sense if you consider the description.
+The belt now sets Constitution to 18 upon equipping it. Additionally, it has a once-per-day charge ability called Imbue Vitality which grants someone other than the wearer a +2 bonus to Constitution and Saves vs. Death, as well as a +5 maximum Hit Point increase.
 
 ### Make Rhino Beetle Gear have a more balanced set of resistances (1204) (BGEE BG2EE EET)
 
@@ -724,7 +724,7 @@ This improves the unremarkable +1 full plate armor (yet bears a unique descripti
 
 ### Make the belt of gender inversion give a bonus vs. the original gender (1271) (BGEE BG2EE EET)
 
-This makes the belt provide a functional combat benefit, granting a +1 bonus to attack rolls against creatures of the wearer's original gender. For example, if your character is a man, becoming a woman with the belt will grant a combat bonus against men.
+This makes the belt provide a functional combat benefit, granting a +1 bonus to attack rolls against creatures of the wearer's original gender. For example, if your character is a man, becoming a woman with the belt will grant a combat bonus against men. This tweak heavily relies on my gender fix being on. If it's not on, expect having bonuses against things like golems and other things that shouldn't have a definable gender like mind flayers.
 
 ### Make Shakti Figurine last longer and more powerful (1291) (BG2EE EET)
 
@@ -739,7 +739,7 @@ This improves this item's utility such that you can shapeshift into a short-swor
 
 I couldn't resist, considering the name of this armor, especially since its unique description gives no real hint as to how it works. Therefore, this armor now provides:
 
-- Armor Class ans Saving Throws vs. fiends: +2
+- Armor Class and Saving Throws vs. fiends: +2
 - Damage vs. fiends: +2
 - THAC0 vs. fiends: +2
 - +20% resistance to fire
@@ -754,7 +754,7 @@ This will probably not be a favorite for powergamers, since the robe is effectiv
 - Armor Class: 5 (vanilla)
 - Casting Speed: +2 (down from +4)
 - Magic Resistance: +10% (vanilla)
-- +2 to all Saving Throws against spells of all schools of magic (specifically the schools of magic; it will not be reflected in the character summary, but it will still affect saves vs. spells of every school of magic)
+- +2 to Saving Throws vs. spells of ALL schools of magic (nonmagical effects are excluded)
 - Enemies in the field of vision of the wearer suffer a -1 penalty to all Saving Throws against spells of all schools of magic
 
 ### Make Ashen Scales more unique beyond enchantment level (1334) (BG2EE EET)
@@ -798,8 +798,8 @@ These gauntlets are not a very interesting reward for monks. Gauntlets of Crushi
 
 It's basically a way to skip the difficulty of beholders fairly easily. It's now a bit more nuanced:
 
-- Armor Class and Saving Throws: Armor Class is now +3 instead of+4, but now with a +2 bonus vs. beholders, mind flayers, kuo-toa, driders, umber hulks, and hook horrors, while also granting a +2 bonus to Saving Throws against effects created by those creatures. This is equivalent to a "protection vs. `<creature>`" effect, and does not stack with others that target the same.
-- No longer reflects all beholder rays. It now only grants immunity to those that instantly kill: death rays, petrification, and disintegration rays.
+- Armor Class and Saving Throws: Armor Class is now +3 instead of+4, but now with a +2 bonus vs. beholders, mind flayers, kuo-toa, driders, umber hulks, and hook horrors, while also granting a +2 bonus to Saving Throws against effects created by the attacks of those creatures, if any. This is equivalent to a "protection vs. `<creature>`" effect, and does not stack with others that target the same.
+- No longer reflects all beholder rays. It now only grants immunity to those that instantly (effectively) kill: death rays, petrification, and disintegration rays.
 
 ### Make Helm of Balduran work as it does in BG3 (1366) (BGEE BG2EE EET)
 
@@ -828,6 +828,7 @@ This component makes Poisoned Throwing Daggers more available and effective.
 
 - Being made partially from the tooth of a black dragon, it deals 1d4 acid damage on hit and increases Acid Resistance by 40%
 - Being tempered in the blood of the duergar smith, every hit causes +5 extra piercing damage vs. elves and other inhabitants of the Underdark: beholders, mind flayers, kuo-toa, hook horrors, driders, spiders, and umber hulks.
+- Patches the Item Upgrade Quietus, if found.
 
 ### Make Dagger of the Star more powerful (1140) (BG2EE EET)
 
@@ -847,8 +848,8 @@ This component changes the healing to a probability-based system: a 50% chance t
 
 ### Make Heart of the Golem +2 more unique based on the description (1660) (BGEE BG2EE EET)
 
-- Improves Magic Resistance by 10% when held
-- 50% chance of inflicting 1d4 magic damage, no save
+- Magic Resistance: +10%
+- 50% chance of inflicting 1d4 magic damage each hit, no save
 
 ### Make Werebane more effective vs. lycanthropes (1670) (BGEE BG2EE EET)
 
@@ -979,7 +980,7 @@ This component improves Wave +4 by making it always deal 3 points of cold damage
 
 ### Make Rod of Terror inspire less Terror by not just being awful (1587) (BG2EE EET)
 
-Panic is very unlikely to happen, and it is generally not very convenient because it makes enemies harder to hit. Plus, the permanent-until-death penalty discourages pretty much any idea of using this item. Therefore:
+Panic is very unlikely to happen, and it is generally not very convenient because it makes enemies harder to hit. Plus, the permanent-until-death penalty discourages pretty much any idea of using this item, especially by CHARNAME. Therefore:
 
 - The Save vs. Spell against Panic now has no penalty, and the effect only lasts 2 rounds. On the second round, if the target is still panicked, there is a 20% chance that the affected creature must Save vs. Death or be killed by the shock. Even if they survive, they become rooted in place for the remainder of the round.
 - The penalty to Charisma is now a penalty to Constitution, which is more meaningful. It is also no longer permanent, but instead lasts 24 hours (2 in-game hours, or 3 full normal 8-hour rests). The chance of this happening is now 10% instead of 20%.
@@ -998,12 +999,12 @@ This makes the extra critical damage more substantial, 2d5+2 (from 2d4).
 
 ### Make Cleric's staff more unique and benefit clerics (1594) (BG2EE EET)
 
-I don't like that it is casually called "cleric's" staff without anything special added to it beyond the plain enchantment level (what else is new?). Therefore, it gains a few perks:
+I don't like that it is casually called "cleric's staff" without anything special added to it beyond the plain enchantment level (what else is new?). Therefore, it gains a few perks:
 
 - +1 Armor Class
 - +1 spell slot of level 3, 4, and 5 (clerics only)
 - +1 turn undead and casting level (clerics only)
-- May cast Mass Cure (at minimum level, 1d8+9 healing) twice per day
+- May cast Mass Cure (at minimum level) twice per day
 
 ### Make Halcyon a bit more powerful (1595) (BG2EE EET)
 
@@ -1022,7 +1023,7 @@ Another example of a highly enchanted weapon without any special property. I bas
 
 - Deals 1d10+5 damage, but against mind flayers, it deals 1d10+7 (as if it were a +7 weapon without being one)
 - THAC0 bonus: +5, but against mind flayers, it's +7
-- Mind flayers struck with this weapon must Save vs. Death at -3 or die instantly. You'll see an "Illithid destroyed" message in the log when it happens. However, this effect can only be attempted on the same mind flayer once per round, and Stoneskin/Ironskin stop it.
+- Mind flayers struck with this weapon must Save vs. Death at -3 or die instantly. You'll see an "Illithid destroyed" message in the log when it happens. However, this effect can only be attempted on the same mind flayer once per round, and Stoneskin/Ironskin stops it.
 
 ### Make Dragon's Bane act as a +6 weapon vs. dragons and wyverns (1602) (BG2EE EET)
 
@@ -1360,6 +1361,7 @@ This makes the weapon more interesting in the following ways:
 - The +4 version increases electrical damage output by 5%, and the +5 version by 7%
 - The +5 version deals 1 additional electrical damage on hit
 - The +5 version's Chain Lightning effect has a 12% chance of triggering instead of 5%
+- Priests of Talos get 1/2 APR (+4) or 1 APR (+5)
 - Whosoever holds this mace, if they be worthy, shall have their body crackle with electricity, causing 1d4 electrical damage to any who dare strike them, with a 15% chance of stunning them for 1 round if they fail a Save vs. Spell at -4
 
 </details>
@@ -1380,7 +1382,7 @@ This makes those very expensive darts much more likely to affect targets, which 
 
 ### Make Darkfire Bow slightly more remarkable (1330) (BG2EE EET)
 
-Adds 1/2 APR tom the non-upgraded version, and 1 to the upgraded version. Makes fire and cold resistance increase to 15%, and to 30% at +5. Additionally, the +4 version makes all arrows deal 1 extra cold and fire damage each (2 each at +5).
+Adds 1/2 APR to the non-upgraded version, and 1 to the upgraded version. Makes fire and cold resistance increase to 15%, and to 30% at +5. Additionally, the +4 version makes all arrows deal 1 extra cold and fire damage each (2 each at +5).
 
 ### Make Taralash slightly more remarkable (1340) (BG2EE EET)
 
@@ -1488,8 +1490,8 @@ Just a simple buff to make the shield a good option for longer. This also automa
 
 ### Make Keldorn's unique gear a bit more effective and convenient (1520) (BG2EE EET)
 
-Hallowed Redeemer: This extends the usability of the weapon, despite the lower damage, if the constant shield the weapon grants is desired. 
-Keldorn's Armor: No longer prevents Haste.
+- Hallowed Redeemer: This extends the usability of the weapon, despite the lower damage, if the constant shield the weapon grants is desired.
+- Keldorn's Armor: No longer prevents Haste.
 
 Both changes are optional. This also automatically applies the changes from **Component 1644** to specific items.
 
@@ -1593,7 +1595,7 @@ Both items can be toggled on and off. Both are on by default. Check the config f
 
 ### Make Handmaiden's Mace +2 reflect BG3's take on it (1381) (BG2EE EET)
 
-- Sets strength to 18, unless it's already 18 or higher. This is determined only at the moment of equipping the mace.
+- Sets strength to 18, unless it's already 18 or higher. This is checked regularly as the wielder holds the mace, in order to prevent certain technical issues, so there might be a small delay (up to 1 second) before it shows up.
 - Relaxes the mace's unusability restrictions, allowing all classes that can wield maces to use it, as well as neutrally aligned characters. It keeps the restriction to those of elven or half-elven ancestry. The Fixpack also enforces unusability for tieflings and vampires, and that is kept.
 - Slightly increases the price from 2500 to 3000
 - Poison effect is now a bit more interesting:
@@ -1727,30 +1729,32 @@ Note for users and modders: The Stone to Flesh spell tweak is implemented somewh
 Bigby's spells are generally a pretty poor choice for levels 8 and 9: low damage and a high chance of either spell doing nothing. This tweak improves those two spells so that they deal more damage and are more likely to be effective, while also bypassing Magic Resistance, though they can still be dispelled:
 
 - Clenched fist:
-  - 1st round: 4d6+6 crushing damage (originally 3d6, no save)
-  - 2nd round: 6d6+4 crushing damage if Save vs. Paralysis at -4 is failed (originally 4d6, Save vs. Paralysis at -2)
-  - 3rd round: 8d6+4 crushing damage if Save vs. Paralysis at -2 is failed (originally 6d6, Save vs. Paralysis, no penalty)
+  - 1st round: 4d6+6 (10-30) crushing damage (originally 3d6, no save)
+  - 2nd round: 6d6+4 (10-40) crushing damage if Save vs. Paralysis at -4 is failed (originally 4d6, Save vs. Paralysis at -2)
+  - 3rd round: 8d6+4 (12-52) crushing damage if Save vs. Paralysis at -2 is failed (originally 6d6, Save vs. Paralysis, no penalty)
+  - Maximum potential damage: 18d6+14 crushing damage (30-122)
 - Crushing hand:
-  - 1st round: 6d6+6 crushing damage (originally 2d10, no save)
-  - 2nd round: 8d6+8 crushing damage if Save vs. Paralysis at -6 is failed (originally 3d10, Save vs. Paralysis at -4)
-  - 3rd round: 10d6+10 crushing damage if Save vs. Paralysis at -4 is failed (originally 4d10, Save vs. Paralysis at -2)
+  - 1st round: 6d6+6 (12-42) crushing damage (originally 2d10, no save)
+  - 2nd round: 8d6+8 (16-56) crushing damage if Save vs. Paralysis at -6 is failed (originally 3d10, Save vs. Paralysis at -4)
+  - 3rd round: 10d6+10 (20-70) crushing damage if Save vs. Paralysis at -4 is failed (originally 4d10, Save vs. Paralysis at -2)
+  - Maximum potential damage: 24d6+24 crushing damage (48-168)
 
 ### Make fireball-type spells improve more with level and/or improve explosion animations (446) (IWDEE BGEE BG2EE EET)
 
 This component rebalances several Fireball-type spells to improve their damage scaling at higher levels, making them more competitive choices throughout the game.
 
-- **Fireball**: Damage scales beyond level 10, up to a maximum of 10d6+10.
-- **Sunfire**: Damage scales beyond level 10, up to a maximum of 15d6+15.
-- **Delayed Blast Fireball**: Damage scaling is significantly improved, starting at 13d6 and progressing to 18d6+20 at level 20. Its explosion radius is also increased to match Fireball.
-- **Dragon's Breath**: Minimum damage is increased. The formula changes from 20d10 to 20d9+20.
+- **Fireball**: Damage scales by 1/level after level 10, up to a maximum of 10d6+10 (20-70).
+- **Sunfire**: Damage scales beyond level 10, up to a maximum of 15d6+15 (30-105).
+- **Delayed Blast Fireball**: Damage scaling is significantly improved, starting at 13d6 and progressing to 18d6+20 (38-128) at level 20. Its explosion radius is also increased to match Fireball.
+- **Dragon's Breath**: The damage configuration changes from 20d10 (20-200) to 20d9+20 (40-200).
 
-Additionally, this component includes an optional visual overhaul that replaces the default EE explosion animations for Fireball, Sunfire, Delayed Blast Fireball, and Dragon's Breath with more impressive custom visuals. The damage rebalance and the new animations can be toggled independently in the configuration file.
+Additionally, this component includes an optional visual overhaul that replaces the default EE explosion animations for Fireball, Sunfire, Delayed Blast Fireball, and Dragon's Breath with more impressive custom visuals. The damage rebalance and the new animations can be toggled independently in the configuration file. Not available for IWDEE, since the animations are actually nice looking compared to absolute travesty that it is in the BG series (seriously, it looked better in the originals before they changed it).
 
 ### Make Melf's Acid Arrow have a chance of splashing enemies and bypass Magic Resistance (447) (IWDEE BGEE BG2EE EET)
 
 This makes the spell more similar to its 5E behavior, where the acid creates a splash zone. The splash zone will affect immediately adjacent enemies if they fail a Save vs. Breath, without affecting the primary target or allies, for convenience and to avoid modifying the normal strategy of the game when using this spell or meddling with enemy AI. The splash damage is equal to the base immediate damage of the spell, and it does not persist over time; only the primary target gets damage over time. This splash can be avoided with an Evasion check if this feature exists in the game.
 
-Additionally, the spell will bypass Magic Resistance, as it is conceived as conjured acid rather than a magical effect. This behavior can be disabled in the configuration file.
+Additionally, the spell bypasses Magic Resistance, as it is conceived as conjured acid rather than a magical effect. This behavior can be disabled in the configuration file if you don't like it though.
 
 ### Make Decastave grant one extra proficiency point with staves while it's held (448) (IWDEE BGEE BG2EE EET)
 
@@ -1758,7 +1762,7 @@ Self-explanatory. Small quality-of-life change.
 
 ### Make Otiluke's Freezing Sphere deal half damage on save (449) (IWDEE BGEE BG2EE EET)
 
-Self-explanatory. Most spells that deal damage only on a failed save are not very attractive. This will make it a better choice.
+Self-explanatory. Most spells that deal damage only on a failed save are not very attractive unless there's some upside to consider (like Bigby's spells... with my tweak, of course!). This will make it a better choice.
 
 ### Make Chain Lightning scale more strongly and spread faster to enemies (451) (BGEE BG2EE EET)
 
@@ -1821,7 +1825,7 @@ Caveats:
 
 ### Make Agannazar's Scorcher not pause the caster (558) (IWDEE BGEE BG2EE EET)
 
-Just makes the spell more convenient and safer to use.
+Just makes the spell more convenient and safer to use and mirrors what you can do with the potion of fire breathing.
 
 ### Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance (561) (IWDEE BGEE BG2EE EET)
 
@@ -1926,9 +1930,9 @@ This component reduces the need to use it only in pre-fight buffing rituals due 
 
 ### Make Fire Seeds markedly more useful and powerful (310) (IWDEE BGEE BG2EE EET)
 
-Not enough seeds and too little damage: from 4 seeds that deal 2d8 damage to 12 that deal 3d8+5. The original version is far too unremarkable for a level 6 spell. Additionally, the description will mention that they are thrown with a +2 THAC0 bonus, and the seeds no longer bypass most physical protections due to an enchantment level of +6, so they will now be considered +2. Finally, they will persist for 5 turns instead of 3, i.e. 1 in-game hour. They cannot be dispelled either and bypass Magic Resistance.
+Not enough seeds and too little damage: from 4 seeds that deal 2d8 damage to 12 that deal 3d8+5. The original version is far too unremarkable for a level 6 spell. Additionally, the description will mention that they are thrown with a +2 THAC0 bonus, and the seeds no longer bypass most physical protections due to an enchantment level of +6, so they will now be considered +3. Finally, they will persist for 5 turns instead of 3, i.e. 1 in-game hour. They cannot be dispelled either and bypass Magic Resistance.
 
-### Make Nature's Beauty better and more logical in how it works (320) (IWDEE BGEE BG2EE EET)
+### Make Nature's Beauty better and more logical (320) (IWDEE BGEE BG2EE EET)
 
 Nature's Beauty is the druidic Wail of the Banshee, though only for humanoids anyway, but it is fairly unlikely to kill, especially considering druids cannot have an Illusionist bonus to spells without save editing or special kits. The save bonus to avoid this effect is now +2 instead of +3.
 
@@ -1940,7 +1944,7 @@ It was always a fairly odd choice for a level 7 spell. Some mods resolve this by
 
 ### Make Armor of Faith also add Armor Class and poison damage resistance (420) (IWDEE BGEE BG2EE EET)
 
-At the beginning of BGEE, this spell is largely unremarkable and provides no protection of note to the cleric. Now it will at least provide a minor Armor Class bonus by default, making it the only spell in vanilla BG other than Defensive Harmony that improves the cleric's Armor Class.
+At the beginning of BGEE, this spell is largely unremarkable and provides no protection of note to the cleric. Now it will at least provide a minor +2 Armor Class bonus by default, making it the only spell in vanilla BG other than Defensive Harmony that improves the cleric's Armor Class. Finally, it also adds the missing protection against poison damage.
 
 ### Make cure and cause wound spells other than Heal/Harm more worth using (450) (IWDEE BGEE BG2EE EET)
 
@@ -2141,7 +2145,7 @@ Finally, the component also updates the Staff of the Woodlands to reflect these 
 
 ### Make Doom cast faster (496) (IWDEE BGEE BG2EE EET)
 
-Doom casts very slowly, making it impractical in most scenarios. This makes the casting time 1, similar to Magic Missile, for example. A quick -2 penalty to all Saving Throws is very useful in many situations, and with a short casting time it becomes more feasible for clerics and paladins in general. This speed is overridable in the config file (0-8).
+Doom casts very slowly, making it impractical in most scenarios. This makes the casting time 1, similar to Magic Missile, for example. A quick -2 penalty to all of their rolls is very useful in many situations, and with a short casting time it becomes more feasible for clerics and paladins in general. This speed is overridable in the config file (0-8).
 
 ### Make Whirlwind more effective and able to damage more creatures before dissipating (513) (IWDEE BGEE BG2EE EET)
 
@@ -2161,7 +2165,7 @@ Self-explanatory. This will also prevent some nonsense, such as creatures immune
 
 ### Make Holy and Unholy Word more effective (539) (IWDEE BGEE BG2EE EET)
 
-Generally, these two spells are not considered very effective, especially for mid- to late-SoA and beyond, because they cause only deafness, which does not trouble non-spellcasters. They also do not bypass Magic Resistance, slay effect excepted. This component improves them significantly, trying to address that concern while also incorporating PnP additions from 2nd edition and others:
+Generally, these two spells are not considered very effective, especially for mid-tolate SoA and beyond, because they cause only deafness, which does not trouble non-spellcasters. They also do not bypass Magic Resistance, slay effect excepted. This component improves them significantly, trying to address that concern while also incorporating PnP additions from 2nd edition and others:
 
 Holy Word now:
 
@@ -2248,7 +2252,7 @@ This component updates the THAC0 of Bards, Thieves, and Mage/Thieves in the game
 
 ### Make vanilla Swashbuckler THAC0 consistent if Thief THAC0 improvement is installed (2171) (IWDEE BGEE BG2EE EET)
 
-Normally, the vanilla Swashbuckler gets to a THAC0 of 2, because every 5 levels it gets a +1 bonus to both THAC0 and damage inflicted. This hinges on the assumption that the maximum THAC0 attainable is 10. Changing the maximum THAC0 progression to 6 would mean they inappropriately achieve a base THAC0 of -2. This component addresses that inconsistency. If other mods that overhaul the Swashbuckler exist, you may request compatibility, as long as this causes actual problems. It likely will if they expect normal THAC0 progression.
+Normally, the vanilla Swashbuckler gets to a THAC0 of 2, because every 5 levels it gets a +1 bonus to both THAC0 and damage inflicted. This hinges on the assumption that the maximum THAC0 attainable for Thieves is 10. Changing the maximum THAC0 progression to 6 would mean they inappropriately achieve a base THAC0 of -2. This component addresses that inconsistency. If other mods that overhaul the Swashbuckler exist, you may request compatibility, as long as this causes actual problems. It likely will if they expect normal THAC0 progression.
 
 ### Make Poison Weapon improve twice more every 4 levels (2190) (IWDEE BGEE BG2EE EET)
 
@@ -2274,9 +2278,9 @@ This component gives Red Dragon Disciples access to most fire-based wizard spell
 
 ### Make Called Shot directly increase ranged weapon damage (2232) (IWDEE BGEE BG2EE EET)
 
-Generally speaking, it is more powerful to directly increase the base damage because it will count toward a critical hit multiplier. This is compatible with The Artisan's Archer Overhaul if it is installed after it.
+Generally speaking, it is more powerful to directly increase the base damage because it will count toward a critical hit multiplier. This is compatible with The Artisan's Archer Overhaul if this is installed after it.
 
-### Make Blades, Skalds, and Swashbucklers and Priest of Tempus get more warrior-type benefits (2260) (IWDEE BGEE BG2EE EET)
+### Make Blades, Skalds, and Swashbucklers, and Priests of Tempus get more warrior-type benefits (2260) (IWDEE BGEE BG2EE EET)
 
 This will give these kits an edge, as they are more martially inclined. I also recommend using the THAC0 improvement component for bards. Swashbucklers do not need it, but if you want the benefit for other thieves, you should use it too.
 
@@ -2367,7 +2371,7 @@ Additionally, I added corrections to many other creatures that I found were misa
 
 - Wyverns should be neutral. They're unintelligent beasts like animals, in the 2e edition are considered neutral evil, but in the 3rd, normally neutral. I standardize to neutral.
 - All types of spiders are also neutral, including sword spiders which are considered in 2e chaotic evil (for some reason), with the lone exception of wraith spiders, which are undead evil spiders.
-- I ensured outer planar creatures that are more or less "alignment-locked" follow their pattern. For example, djinni are chaotic good, and as such Aataqah had its alignment correct from Lawful Neutral.
+- I ensured outer planar creatures that are more or less "alignment-locked" follow their pattern. For example, djinni are chaotic good, and as such Aataqah, a djinni had its alignment corrected from Lawful Neutral to Chaotic Good.
 - Wofweres are chaotic evil, I corrected Lanfear for example, in Chapter 6 of BG2 (Coran's quest), which was Chaotic Neutral.
 - Constructs in BGEE like Battle Horrors could be set as evil even though they're golem-like and neutral
 
@@ -2413,22 +2417,24 @@ I hate his guts. He's a level 14 fighter with 200 health and 4.5 Attacks per rou
 
 Lion and other feline animations are stupidly slow. I do not know why they did not patch this along with bears. You could outrun them with a snail. This component makes them move at a more reasonable speed. Essentially, it searches for creatures with a cat-like animation and, if they do not have a movement rate modifier already, adds a movement rate opcode 2 modifier of 6, which makes them move at a reasonably fast pace.
 
-### Make creature on-hit effects that should be natural not behave as magical attacks (3080) (BGEE BG2EE EET)
+### Make creature abilities that should be natural not behave as magical attacks (3080) (BGEE BG2EE EET)
 
-There are several creatures whose on-hit effects do not seem to make much sense as magical effects that can be resisted by Magic Resistance or dispelled with Dispel Magic. This component makes the following changes:
+There are several creatures whose abilities or effects on-hit do not seem to make much sense as magical effects that can be resisted by Magic Resistance or dispelled with Dispel Magic. This component makes the following changes:
 
-- Ghouls, Ghasts, Liches, Shadow Fiends, and Vampiric Wolves: Their paralysis can no longer be dispelled or resisted by Magic Resistance. It is a natural effect and thus may only be resisted with Saving Throws and removed with spells such as Remove Paralysis or Free Action.
-- Spirit Trolls: Their Strength sapping is no longer considered magical, same as other shadow creatures and wraith spiders. It does not make much sense for it to be magical compared to other shadows. Therefore, it may only be cured with Restoration spells or by resting or waiting.
-- Carrion Crawlers: Their paralysis is no longer considered magical. In fact, in the lore, it is not magical at all; it is a paralytic toxin spread with their tentacles. There is even a paralytic poison made from their brain juices.
+- Ghouls, Ghasts, Liches, Shadow Fiends, and Vampiric Wolves: Their paralysis can no longer be dispelled or resisted by Magic Resistance. It is a natural effect and thus may only be resisted with Saving Throws and removed with spells such as Remove Paralysis or Free Action, indirectly increasing the value thereof.
+- Spirit Trolls: Their Strength sapping is no longer considered magical, same as other shadow creatures and wraith spiders. It does not make much sense for it to be magical compared to other shadows. Therefore, it may only be cured with Restoration spells (with my tweak on) or by resting or waiting.
+- Carrion Crawlers: Their paralysis is no longer considered magical. In fact, in the lore, it is a paralytic toxin spread with their tentacles. There is even a paralytic poison made from their brain juices.
 - Poisonous Breath from Neothelid (SoD) is no longer considered a magical effect and as such Magic Resistance has no effect on it.
 
 ### Make Spectral creatures slightly more dangerous (3090) (IWDEE BGEE BG2EE EET)
 
 This component makes the following changes:
 
-- All creatures of the shadow, spectre, spectral undead, wraith, and mist (undead) race will have at least 30% physical damage resistance. This skips my Shadow summon in my Shadowdancer overhaul, as it is handled in a very particular way.
-- And a +2 bonus to their Armor Class, whatever that is
-- Strength sapping from shadows, spirit trolls, spider wraiths, and the like always last for 8 hours, making it more than an inconvenience. It is a real problem now if you get hit too often.
+- All creatures of the shadow, spectres, spectral undead, wraiths, and undead mists will have at least 30% physical damage resistance.
+- +2 bonus to their current Armor Class
+- Strength sapping from shadows, spirit trolls, spider wraiths, and the like always last for 8 hours, making it more than an inconvenience. It is a real problem now if you get hit too often. Mixes well with my Restoration tweak as a counterbalance.
+
+This skips my shadow summons in my Shadowdancer overhaul, as they are handled in a very particular way.
 
 ### Make Beetles more resistant to non-crushing weapons (3100) (IWDEE BGEE BG2EE EET)
 
@@ -2447,8 +2453,6 @@ This improves yuan-ti enemies in the following ways:
 - They inflict 1d4 poison damage on each melee attack universally
 - They are 75% resistant to poison damage, but not to poisoning itself
 - They move 4 points faster than normal
-
-Additionally, my mod fixes in passing ICYUAN01 from attacking with long swords with a penalty of -2 to THAC0 due to missing proficiencies.
 
 ### Make some golem creatures more unique (3120) (IWDEE BGEE BG2EE EET)
 
@@ -2493,7 +2497,7 @@ Most minotaurs are wimps in the game. This is what it changes:
 So ogre mages are not really ogres. It is some sort of weird misnomer. They are actually oni, essentially fiends, similar to night hags and rakshasas. Ogre mages are also capable of regenerating. So what this component does is simply:
 
 - All ogre mages regenerate health by 1 HP per round. Might increase difficulty somewhat, especially if they use magical protections.
-- Their race is now set to demonic, because they are fiends and not ogres. So any effect that targets "demonic" will affect them too. I might refine this classification in the future.
+- Their race is now set to demonic, because they are fiends and not ogres. So any effect that targets "demonic" will affect them too, including ranger's racial enemy and Cavalier bonuses. I might refine this classification in the future.
 - And just for hoots, because they slumber around slower than molasses, their movement rate was increased by 2.
 
 This component will also patch vanilla string references in the game that equal exactly to "Ogre Mage" so they become "Oni Mage". String references that contain the words "ogre mage" though are not patched because (1) it maximizes compatibility and reduces possible weirdness, and (2) because text surgery is a pain.
@@ -2512,9 +2516,9 @@ Self-explanatory.
 
 ### Make succubi and erinyes use the female winged elf animation (3170) (BGEE BG2EE EET)
 
-I get really annoyed by animation reuse that demand too much suspension of disbelief. A good example of that is certainly this, where the Sirine animation is used for these types of fiends. These animations are now of female elven cleric or fighter avatars, with appropriate wings and new color palette.
+I get really annoyed by animation reuse that demands too much suspension of disbelief. A good example of that is certainly this, where the Sirine animation is used for these types of fiends. These animations are now of female elven cleric or fighter avatars, with appropriate wings and new color palette.
 
-Bear in the mind this is manually design, it won't detect such fiends from other mods, if they use the sirine animation.
+Bear in the mind this is manually designed, it won't detect such fiends from other mods, if they use the sirine animation.
 
 ### Make some creatures immune to being cheesed with Thief Traps (3180) (IWDEE BGEE BG2EE EET)
 
@@ -2554,6 +2558,8 @@ Check the config file to choose what you like. Install after all content that ad
 The full list of spells is as follows: Detect Evil, Know Alignment, Stinking Cloud, Entangle, Grease, Web, Summon Cow, Glitterdust, Magical Stone, Call Lightning, Cloudburst, Summon Insects / Insect Plague / Creeping Doom, Nature's Beauty, Storm of Vengeance, Mold Touch, Smashing Wave, Shout / Great Shout, Thorn Spray, Spike Growth.
 
 Bear in mind that this component should be installed after tweaks that affect these spells, especially if they add new effects to them; otherwise, this tweak will work only partially, and inconsistent results could ensue.
+
+Configuration options to enable or disable this adjustment for each spell are available.
 
 </details>
 
