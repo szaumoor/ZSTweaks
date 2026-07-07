@@ -267,6 +267,7 @@ OUTER_SET zst_561_web_save_nerf = "1" // enable or disable the nert to the save 
 OUTER_SET zst_585_pwk_magic_school        = "2" // 0 disables, 1 makes it enchantment, 2 makes it diviner
 OUTER_SET zst_585_pwk_chunking_death      = "1"
 OUTER_SET zst_585_pwk_60HP_10HD_MR_bypass = "1"
+OUTER_SET zst_585_pwk_HP_hard_limit       = "150" // determines current HP after which the spell fails to work, leave at 0 to disable. Valid range starts at 70. Thus enemies between 61 and the value of this variable would be the ones subject to any killing effects that allow for saving throws (or are up to 10 HD, which get no save regardless, but still respecting this range).
 
 /////////////////////////////// Divine Magic Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

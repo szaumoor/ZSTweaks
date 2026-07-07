@@ -39,6 +39,12 @@ END ELSE ACTION_IF zst_585_pwk_magic_school = 2 BEGIN // divination
 
 END
 
+ACTION_IF zst_585_pwk_HP_hard_limit BEGIN
+    OUTER_SPRINT hard_limit @76006
+END ELSE BEGIN
+    OUTER_SPRINT hard_limit ""
+END
+
 COPY_EXISTING ~spwi912.spl~ ~override~
     PATCH_IF zst_585_pwk_magic_school > 0 BEGIN
         WRITE_LONG 0x1e exclusion_flags
@@ -58,6 +64,11 @@ COPY_EXISTING ~spwi912.spl~ ~override~
 
     PATCH_IF has_eefixpack BEGIN
         LPF ADD_SPL_TGTEFF STR_VAR effects = ~op=318,pwr=9,rd=0,res=%SOURCE_RES%,p2=110,p1=%splstate_fp_death_immunity%~ END
+    END
+
+    PATCH_IF zst_585_pwk_HP_hard_limit BEGIN
+        SET limit = zst_585_pwk_HP_hard_limit + 1
+        LPF ADD_SPL_TGTEFF STR_VAR effects = ~op=318,pwr=9,rd=0,res=%SOURCE_RES%,p2=144,p1=%limit%~ END
     END
 
     LPF ADD_SPL_TGTEFF INT_VAR pwr=9 STR_VAR res="zstwpwk0" effects = ~op=326,p2=145,p1=61;op=326,dnum=10;op=326,p2=144,p1=61,res=zstwpwk2~ END

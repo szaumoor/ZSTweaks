@@ -353,6 +353,7 @@ Some optional config options:
 - Make the spell an Enchantment spell, as in 3rd and 5th edition (OFF by default)
 - Make the spell a Divination spell (ON by default)
 - Make the spell bypass magic resistance specifically against those with <= 60 HP or <= 10 HD (ON by default)
+- Make the spell fail to work after a hard HP limit. (On by default, with a limit of 150 HP; i.e. enemies with >=150 current HP are unaffected).
 
 </details>
 
@@ -1661,9 +1662,21 @@ The spell is now 'Acid Fog' and is inspired by PnP. It no longer kills summons. 
 - Reduces movement speed by half for one round unless a Save vs. Death at -2 succeeds
 - Unaffected by Magic Resistance
 
-### Make Energy Drain take 6 levels instead of 2 (400) (IWDEE BGEE BG2EE EET)
+### Make Energy Drain significantly more powerful (400) (IWDEE BGEE BG2EE EET)
 
 2 levels of drain is unremarkable and a waste of a spell slot, particularly when the likely enemies to fight by the time you get this spell are fairly high level. Additionally, this makes the spell behave similarly to how it does in IWDEE, where outsiders, undead, and constructs are ensured to be immune to it.
+
+For example, if this is cast on a maximum level Skeleton Warrior, their specific stats would be like this:
+
+- Maximum HP: 80 → 96
+- Armor Class: 2 → -2
+- APR: 2 → 3
+- Slashing resistance: 40 → 55
+- Crushing resistance: 0  → 15
+- Piercing resistance: 50 → 65
+- Missile resistance:  60 → 75
+- All non-physical damage resistances: 0 → 15 (except cold, which they're immune to)
+- Strength: 18/40 → 21
 
 ### Make Maze bypass Magic Resistance and make minotaurs immune to it (405) (IWDEE BGEE BG2EE EET)
 

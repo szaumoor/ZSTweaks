@@ -1184,6 +1184,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
+        ACTION_IF zst_585_pwk_HP_hard_limit > 0 AND zst_585_pwk_HP_hard_limit < 70 BEGIN
+            WARN "[WARN]: Setting to make PW: Kill have a HP hard limit for its effects should be set to 0 (disable) or a positive number starting from 70 (enable) that determines that hard limit. Actual value: %zst_585_pwk_HP_hard_limit%"
+            LAM f_plus
+        END
+
         // ----------------------------------------FLAME BLADE------------------------------------------------- \\
 
         ACTION_IF zst_101_fblade_undead != 0 AND zst_101_fblade_undead != 1 BEGIN
