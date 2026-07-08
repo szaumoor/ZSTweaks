@@ -45,7 +45,11 @@ jobs:
           git push origin $TAG_NAME
 
       - name: Create filtered zip
+        shell: bash
         run: |
+          set -euo pipefail
+
+          rm -rf package
           mkdir package
 
           EXCLUDES=(
@@ -57,6 +61,8 @@ jobs:
             --exclude=.gitignore
             --exclude=.gitattributes
             --exclude=/readme.md
+            --exclude=/ZSTweaks/readme.md
+            --exclude=/ZSTweaks/component_readme.md
           )
 
           if [[ "${{ matrix.platform }}" != "windows" ]]; then
@@ -64,6 +70,12 @@ jobs:
           fi
 
           rsync -av "${EXCLUDES[@]}" ./ package/
+          
+          cat readme.md > package/readme.md
+          printf '\n' >> package/readme.md
+          sed '/^#/s/^/#/' ZSTweaks/component_readme.md >> package/readme.md
+          printf '\n' >> package/readme.md
+          cat changelog.md >> package/readme.md
 
           cd package
           zip -r ../${PLATFORM_SHORT}-${PROJECT_NAME}-${TAG_NAME}.zip .
