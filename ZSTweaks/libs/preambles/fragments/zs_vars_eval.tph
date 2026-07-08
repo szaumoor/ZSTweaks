@@ -1640,6 +1640,12 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
+        
+        ACTION_IF zst_3180_modify_trap_limit < 0  BEGIN
+            WARN "[WARN]: Setting to provide change trap limit should be set to 0 (disable) or a positive number (enable). Actual value: %zst_3180_modify_trap_limit%"
+            LAM f_plus
+        END
+
         // ----------------------------------------MR BYPASS TWEAK------------------------------------------------- \\
 
         ACTION_IF zst_1531_glitterdust != 0 AND zst_1531_glitterdust != 1 BEGIN
