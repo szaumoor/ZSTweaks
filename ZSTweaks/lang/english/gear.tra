@@ -1654,8 +1654,8 @@ Weight: 40~
 STATISTICS:
 
 Equipped abilities:
-– Damage: +1 vs. evil
-– THAC0: +1 vs. evil 
+– Damage: +1 vs. evil orcs
+– THAC0: +1 vs. evil and orcs
 – Charisma: +2
 – Aura of Valor: The wearer is immune to morale failure and fear and allies in a 10 ft. radius are filled with morale, minimizing the chances of morale failure.
 
@@ -1692,7 +1692,7 @@ Weight: 35~
 STATISTICS:
 
 Equipped abilities:
-– Undead Ward: Any friendly undead within 15 ft. of the wearer is granted a +4 bonus to Armor Class, a +2 bonus to Saving Throws, a +12% resistance to physical damage, and a +25% to magical damage
+– Undead Ward: Any friendly undead within 15 ft. of the wearer is granted a +4 bonus to Armor Class, a +2 bonus to Saving Throws, a +12% resistance to physical damage, and a +25% to magical damage. Does not stack with itself.
 
 Armor Class: 3 (1 vs. slashing, 5 vs. crushing)
 Requires:

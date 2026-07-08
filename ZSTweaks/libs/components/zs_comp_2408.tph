@@ -45,8 +45,8 @@ ACTION_IF zst_2408_electricity_boost AND zst_2408_electricity_boost_pctg > 0 BEG
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "AP_ZSTWPRT0" END
 
     PRINT "[INFO]: Patching all non-joinable NPCs that use the Priest of Talos kit"
-    SILENT
 
+    SILENT
     ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
         ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
             COPY_EXISTING ~%file%~ ~override~
@@ -59,7 +59,6 @@ ACTION_IF zst_2408_electricity_boost AND zst_2408_electricity_boost_pctg > 0 BEG
             BUT_ONLY
         END
     END
-
     VERBOSE
 
 END
