@@ -1708,19 +1708,26 @@ The spell is now 'Acid Fog' and is inspired by PnP. It no longer kills summons. 
 
 ### Make Energy Drain significantly more powerful (400) (IWDEE BGEE BG2EE EET)
 
-2 levels of drain is unremarkable and a waste of a spell slot, particularly when the likely enemies to fight by the time you get this spell are fairly high level. Additionally, this makes the spell behave similarly to how it does in IWDEE, where outsiders, undead, and constructs are ensured to be immune to it.
+2 levels of drain is unremarkable and a waste of a spell slot, particularly when the likely enemies to fight by the time you get this spell are fairly high level. Now it drains 6 levels. Additionally, this makes the spell behave similarly to how it does in IWDEE, where outsiders, undead, and constructs are ensured to be immune to it. There are many differences beyond that. First, if cast on an undead target, they are actually empowered pretty heftily for 8 hours:
 
-For example, if this is cast on a maximum level Skeleton Warrior, their specific stats would be like this:
+- Fully healed and maximum HP increases by 20%
+- Become immune to turning attempts
+- Armor Class improves by 4
+- Damage resistances increase by 15% (30% in case of magic damage resistance)
+- Attacks per round increase by 1
+- Their attacks always hit at least a +4 weapons to determine what they can hit
+- +3 Strength
+- Movement speed increases by 50% of their normal speed
 
-- Maximum HP: 80 → 96
-- Armor Class: 2 → -2
-- APR: 2 → 3
-- Slashing resistance: 40 → 55
-- Crushing resistance: 0  → 15
-- Piercing resistance: 50 → 65
-- Missile resistance:  60 → 75
-- All non-physical damage resistances: 0 → 15 (except cold, which they're immune to)
-- Strength: 18/40 → 21
+Otherwise, if the target is NOT AN ALLY (this condition exists to prevent abuse), the target becomes a friendly Devil Shade if they die within 1 turn. The caster, given the same conditions, they also get various benefits for 4 hours (where it applies):
+
+- Arcane spell recovery: 1 spell of up to level 8, 2 of up to level 7
+- Divine spell recovery: 1 spell of up to level 7, 2 of up to level 6
+- Heals 50% of their maximum health plus 3d6
+- Strength increases by 2
+- THAC0: +6 (half if mage/thief, +1 if they have fighter levels)
+- Damage: +2 (only if no fighter levels exist -- for example, it applies to necromancers, as well as cleric/mages)
+- Caster cannot get any of these benefits beyond the healing part until 8 hours have passed (2400 seconds in real time)
 
 ### Make Maze bypass Magic Resistance and make minotaurs immune to it (405) (IWDEE BGEE BG2EE EET)
 

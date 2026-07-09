@@ -75,7 +75,7 @@
 - Component 1531 now also makes Wail of the Banshee bypass magic resistance without my WB-specific component
 - Oni Mage component now patches the "Ogre Mage" string so anyone using it as a name, will be "Oni Mage" instead
 - Holy Sword of Tyr now acts as a +5 weapon vs evil for the purposes of what it can hit
-- Energy Drain is now much more powerful (TODO):
+- Energy Drain is now much more powerful:
   - Enemy becomes a devil shade if killed within 1 turn
   - Boosts undead creature if cast on them
   - Caster sucks up the power it was drained from the creature for a while
