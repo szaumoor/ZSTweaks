@@ -18,6 +18,7 @@ END ELSE ACTION_IF is_bg2ee_or_eet BEGIN
     OUTER_SET four_levels_drained = 40979
 END
 
+COPY ~%MOD_FOLDER%/spells/arcane/energy_drain~ ~override~
 ACTION_IF is_iwdee BEGIN
 
     COPY_EXISTING ~sppr739.spl~ ~override~
