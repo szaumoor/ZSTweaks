@@ -1,0 +1,13 @@
+IF
+    Global("zs_antipsycho_guard_variable","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("zs_antipsycho_guard_variable","MYAREA",1)
+        ApplySpellRES("ZSTWPSYC", Player1)
+        ApplySpellRES("ZSTWPSYC", Player2)
+        ApplySpellRES("ZSTWPSYC", Player3)
+        ApplySpellRES("ZSTWPSYC", Player4)
+        ApplySpellRES("ZSTWPSYC", Player5)
+        ApplySpellRES("ZSTWPSYC", Player6)
+        Continue()
+END
