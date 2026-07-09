@@ -10,7 +10,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ALTER_EFFECT_EX INT_VAR probability1=9 STR_VAR match_probability1_ex="(o_probability1 > 0)" END
     LPF ALTER_EFFECT_EX INT_VAR duration=12 STR_VAR match_probability1_ex="(o_duration >= 6)" END
     LPF ALTER_EFFECT INT_VAR match_opcode=6 opcode=10 timing=0 duration=7200 END
-    LPF ALTER_EFFECT INT_VAR match_opcode=139 match_probability1=9 parameter1=14029 END 
+    LPF ALTER_EFFECT INT_VAR match_opcode=139 match_probability1=9 parameter1=14029 END
     LPF ADD_ON_HIT_EFF STR_VAR effects=~op=326,p2=91,tmg=3,dur=6,res=zstwtrra,stype=1~ END
 
 END

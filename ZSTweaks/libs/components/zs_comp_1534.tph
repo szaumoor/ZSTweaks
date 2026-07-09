@@ -12,7 +12,7 @@ ACTION_IF zst_1534_potions_cannot_self_stack BEGIN
 
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         READ_SHORT 0x1c cat
-        PATCH_IF cat = 9 OR cat = 13 BEGIN 
+        PATCH_IF cat = 9 OR cat = 13 BEGIN
 
             PATCH_IF NOT "%SOURCE_RES%" STR_EQ "gberry" BEGIN
                 LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=321,t=3,tgt=1,res=%SOURCE_RES%,ip=0~ END
@@ -22,7 +22,7 @@ ACTION_IF zst_1534_potions_cannot_self_stack BEGIN
 
     BUT_ONLY
 
-    ACTION_IF NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "240" AND 
+    ACTION_IF NOT MOD_IS_INSTALLED "ZSTweaks.tp2" "240" AND
               NOT (zst_group_240_goodberry AND MOD_IS_INSTALLED "ZSTweaks.tp2" "99")
     BEGIN
         COPY_EXISTING ~gberry.itm~ ~override~
@@ -126,6 +126,5 @@ ACTION_IF zst_1534_potion_overhaul BEGIN
                   ~potn26.itm~ ~override~
                   ~potn27.itm~ ~override~
         LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
-
 
 END

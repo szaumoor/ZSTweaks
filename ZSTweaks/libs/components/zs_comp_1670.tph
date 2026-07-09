@@ -6,7 +6,7 @@ ACTION_IF NOT is_iwdee BEGIN
     LPF ALTER_HEADER INT_VAR match_type = 1 speed = 0 silent = 1 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 177 check_globals = 0 STR_VAR resource = ~zstwwed6~ END
 
-    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR 
+    PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR
             (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ AND zst_group_1440_dagger_boost)
     BEGIN
       READ_STRREF 0x54 desc
@@ -20,5 +20,3 @@ ACTION_IF NOT is_iwdee BEGIN
     LPF ALTER_EFF_FILE INT_VAR parameter3 = 5 END
 
 END
-
-

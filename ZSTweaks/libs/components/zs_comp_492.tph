@@ -40,24 +40,24 @@ SILENT
 ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
   ACTION_IF !(IS_AN_INT dv) BEGIN
     COPY_EXISTING ~%file%~ ~override~
-    
+
       READ_BYTE 0x273 class
       PATCH_IF class = class_druid OR class = class_fighter_druid OR class = class_ranger BEGIN
-        REMOVE_MEMORIZED_SPELL "sppr111" 
-        REMOVE_KNOWN_SPELL "sppr111" 
-      END 
-      
+        REMOVE_MEMORIZED_SPELL "sppr111"
+        REMOVE_KNOWN_SPELL "sppr111"
+      END
+
       ELSE PATCH_IF class=class_cleric         OR
                     class=class_fighter_cleric OR
                     class=class_cleric_mage    OR
                     class=class_cleric_thief   OR
-                    class=class_fighter_mage_cleric 
+                    class=class_fighter_mage_cleric
       BEGIN
-          REMOVE_MEMORIZED_SPELL "sppr202" 
+          REMOVE_MEMORIZED_SPELL "sppr202"
           REMOVE_KNOWN_SPELL "sppr202"
       END
 
   END
 END
 
-VERBOSE  
+VERBOSE

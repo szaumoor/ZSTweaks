@@ -13,9 +13,8 @@ ACTION_IF spell_cloudburst > 0 BEGIN
       LPF CLONE_EFFECT INT_VAR match_opcode=12 match_parameter2=op12_electricity opcode=146 parameter2=1 parameter1=2 special=0 savingthrow=0 probability1=64 dicenumber = 0 dicesize = 0 STR_VAR resource=~zstwcdbr~ END
       LPF DELETE_EFFECT INT_VAR match_opcode=12 match_parameter2=op12_electricity END
       LPF DELETE_EFFECT INT_VAR match_opcode=215 STR_VAR match_resource="cloudbh" END
-         
-  END
 
+  END
 
   ACTION_IF is_iwdee AND has_eefixpack BEGIN
 

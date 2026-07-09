@@ -3,9 +3,9 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     COPY_EXISTING ~sper12.itm~ ~override~
         LPM remove_haste_immunity
 
-        PATCH_IF zst_1150_dice_spears AND 
-                 MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" OR 
-                (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice) 
+        PATCH_IF zst_1150_dice_spears AND
+                 MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" OR
+                (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice)
         BEGIN
             SPRINT new_description @7770
             SPRINT str @99999

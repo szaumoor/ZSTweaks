@@ -52,7 +52,7 @@ ACTION_IF NOT is_iwdee BEGIN
             COPY_EXISTING ~spogre01.spl~ ~override~
                 LPF DELETE_EFFECT INT_VAR match_opcode = 269 END
                 LPF DELETE_EFFECT STR_VAR match_resource = ~shake1~ END
-                
+
         END
 
     END

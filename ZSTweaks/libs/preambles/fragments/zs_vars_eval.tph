@@ -18,7 +18,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Allow prefixes should be set to 0 (disable) or 1 (enable). Actual value: %zs_allow_prefixes%"
             LAM f_plus
         END
-        
+
         ACTION_IF zst_shield_std_fix != 0 AND zst_shield_std_fix != 1 BEGIN
             WARN "[WARN]: Shield general name standardization fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_shield_std_fix%"
             LAM f_plus
@@ -48,7 +48,6 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Wraith Spider Undead fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_wraith_spid_undead%"
             LAM f_plus
         END
-
 
         ACTION_IF zst_eefp_unfix_blackrazor_bbod != 0 AND zst_eefp_unfix_blackrazor_bbod != 1 BEGIN
             WARN "[WARN]: EEFP bug in Blackrazor and BBOD should be set to 0 (disable) or 1 (enable). Actual value: %zst_eefp_unfix_blackrazor_bbod%"
@@ -214,7 +213,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: EEFixpack Exaltation fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_eefp_exaltation_bug%"
             LAM f_plus
         END
-        
+
         // ----------------------------------------SYMBOL X SPELLS------------------------------------------------- \\
 
         OUTER_SET valid_death_x = zst_443_death != 0 AND zst_443_death != 1
@@ -502,7 +501,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Finesse setting for Bows setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_bows%"
             LAM f_plus
         END
-        
+
         ACTION_IF zst_1450_allow_xbows != 0 AND zst_1450_allow_xbows != 1 BEGIN
             WARN "[WARN]: Finesse setting for Crossbows setting should be set to 0 (disable) or 1 (enable). Actual value: %zst_1450_allow_xbows%"
             LAM f_plus
@@ -535,7 +534,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
                   zst_1450_allow_slings    = 0 AND
                   zst_1450_allow_bows      = 0 AND
                   zst_1450_allow_xbows     = 0 AND
-                  zst_1450_allow_darts     = 0 
+                  zst_1450_allow_darts     = 0
         BEGIN
             WARN "[WARN]: No weapon groups were selected for the Finesse component, leading to no effect."
             LAM f_plus
@@ -823,7 +822,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
             OUTER_SET iouncrit_issues = 1
         END
-        
+
         ACTION_IF NOT iouncrit_issues BEGIN
             OUTER_SET comb_iouncrit_settings = zst_1664_crits_all + zst_1664_crits_iouns + zst_1664_crits_circlets + zst_1664_crits_selected
 
@@ -1005,7 +1004,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
-        ACTION_IF zst_1705_balduran_sword_rename_emperors_sword != 0 AND zst_1705_balduran_sword_rename_emperors_sword != 1 
+        ACTION_IF zst_1705_balduran_sword_rename_emperors_sword != 0 AND zst_1705_balduran_sword_rename_emperors_sword != 1
         BEGIN
             WARN "[WARN]: Balduran's Sword rename option should be set to 1 or 0. Actual value: %zst_1705_balduran_sword_rename_emperors_sword%"
             LAM f_plus
@@ -1311,7 +1310,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
-                  
+
 
         // ----------------------------------------CHAIN LIGHTNING------------------------------------------------- \\
 
@@ -1457,7 +1456,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         END
 
         ACTION_IF zst_360_favored_spirits = 0 AND zst_360_spiritual_clarity = 0 AND
-                  zst_360_spirit_fire = 0 AND zst_360_writhing_fog = 0 AND zst_360_etheral_retribution = 0 
+                  zst_360_spirit_fire = 0 AND zst_360_writhing_fog = 0 AND zst_360_etheral_retribution = 0
         BEGIN
             WARN "[WARN]: No tweaks were selected for the Shaman abilities component, leading to no changes."
             LAM f_plus
@@ -1498,7 +1497,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         END
 
         ACTION_IF zst_2130_spike_trap = 0 AND zst_2130_exploding_trap = 0 AND
-                  zst_2130_assassination = 0 AND zst_2130_avoid_death = 0 
+                  zst_2130_assassination = 0 AND zst_2130_avoid_death = 0
         BEGIN
             WARN "[WARN]: No tweaks were selected for the Thief HLA component, leading to no changes."
             LAM f_plus
@@ -1640,7 +1639,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
-        
+
         ACTION_IF zst_3180_modify_trap_limit < 0  BEGIN
             WARN "[WARN]: Setting to provide change trap limit should be set to 0 (disable) or a positive number (enable). Actual value: %zst_3180_modify_trap_limit%"
             LAM f_plus
@@ -1760,32 +1759,32 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
-        ACTION_IF zst_group_1120_backstab_penalties != 0 AND zst_group_1120_backstab_penalties != 1 BEGIN 
+        ACTION_IF zst_group_1120_backstab_penalties != 0 AND zst_group_1120_backstab_penalties != 1 BEGIN
             WARN "[WARN]: Backstab penalties group component should be set to 1 or 0. Actual value: %zst_group_1120_backstab_penalties%"
             LAM f_plus
         END
 
-        ACTION_IF zst_group_1121_flails_morningstars != 0 AND zst_group_1121_flails_morningstars != 1 BEGIN 
+        ACTION_IF zst_group_1121_flails_morningstars != 0 AND zst_group_1121_flails_morningstars != 1 BEGIN
             WARN "[WARN]: Flails and Morning Stars group component should be set to 1 or 0. Actual value: %zst_group_1121_flails_morningstars%"
             LAM f_plus
         END
 
-        ACTION_IF zst_group_1150_weapon_dice != 0 AND zst_group_1150_weapon_dice != 1 BEGIN 
+        ACTION_IF zst_group_1150_weapon_dice != 0 AND zst_group_1150_weapon_dice != 1 BEGIN
             WARN "[WARN]: Weapon dice improvement group component should be set to 1 or 0. Actual value: %zst_group_1150_weapon_dice%"
             LAM f_plus
         END
 
-        ACTION_IF zst_group_1361_axe_halb_crits != 0 AND zst_group_1361_axe_halb_crits != 1 BEGIN 
+        ACTION_IF zst_group_1361_axe_halb_crits != 0 AND zst_group_1361_axe_halb_crits != 1 BEGIN
             WARN "[WARN]: Axes and Halberds group component should be set to 1 or 0. Actual value: %zst_group_1361_axe_halb_crits%"
             LAM f_plus
         END
 
-        ACTION_IF zst_group_1362_blunt_wpn_ac != 0 AND zst_group_1362_blunt_wpn_ac != 1 BEGIN 
+        ACTION_IF zst_group_1362_blunt_wpn_ac != 0 AND zst_group_1362_blunt_wpn_ac != 1 BEGIN
             WARN "[WARN]: Blunt weapons AC debuff group component should be set to 1 or 0. Actual value: %zst_group_1362_blunt_wpn_ac%"
             LAM f_plus
         END
 
-        ACTION_IF zst_group_1435_dart_range_speed != 0 AND zst_group_1435_dart_range_speed != 1 BEGIN 
+        ACTION_IF zst_group_1435_dart_range_speed != 0 AND zst_group_1435_dart_range_speed != 1 BEGIN
             WARN "[WARN]: Dart range speed group component should be set to 1 or 0. Actual value: %zst_group_1435_dart_range_speed%"
             LAM f_plus
         END
@@ -1835,22 +1834,22 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
 
-        ACTION_IF zst_group_1544_scrolls_at_char_lvl != 0 AND zst_group_1544_scrolls_at_char_lvl != 1 BEGIN 
+        ACTION_IF zst_group_1544_scrolls_at_char_lvl != 0 AND zst_group_1544_scrolls_at_char_lvl != 1 BEGIN
             WARN "[WARN]: Scroll at character level group component should be set to 1 or 0. Actual value: %zst_group_1544_scrolls_at_char_lvl%"
             LAM f_plus
         END
 
-        ACTION_IF zst_group_1545_character_stats != 0 AND zst_group_1545_character_stats != 1 BEGIN 
+        ACTION_IF zst_group_1545_character_stats != 0 AND zst_group_1545_character_stats != 1 BEGIN
             WARN "[WARN]: Character stats group component should be set to 1 or 0. Actual value: %zst_group_1545_character_stats%"
             LAM f_plus
         END
 
-        ACTION_IF zst_group_1546_shield_overhaul != 0 AND zst_group_1546_shield_overhaul != 1 BEGIN 
+        ACTION_IF zst_group_1546_shield_overhaul != 0 AND zst_group_1546_shield_overhaul != 1 BEGIN
             WARN "[WARN]: Shield overhaul group component should be set to 1 or 0. Actual value: %zst_group_1546_shield_overhaul%"
             LAM f_plus
         END
 
-        ACTION_IF zst_group_1547_protection_vs_undead != 0 AND zst_group_1547_protection_vs_undead != 1 BEGIN 
+        ACTION_IF zst_group_1547_protection_vs_undead != 0 AND zst_group_1547_protection_vs_undead != 1 BEGIN
             WARN "[WARN]: Protection vs undead group component should be set to 1 or 0. Actual value: %zst_group_1547_protection_vs_undead%"
             LAM f_plus
         END
@@ -1890,7 +1889,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Protection from Magic group component should be set to 1 or 0. Actual value: %zst_group_1559_protection_from_magic%"
             LAM f_plus
         END
-      
+
         ACTION_IF zst_group_582_true_sight != 0 AND zst_group_582_true_sight != 1 BEGIN
             WARN "[WARN]: True Sight group component should be set to 1 or 0. Actual value: %zst_group_582_true_sight%"
             LAM f_plus
@@ -2062,7 +2061,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Imprisonment group component should be set to 1 or 0. Actual value: %zst_group_562_imprisonment%"
             LAM f_plus
         END
- 
+
         ACTION_IF zst_group_572_magic_missile != 0 AND zst_group_572_magic_missile != 1 BEGIN
             WARN "[WARN]: Magic Missile group component should be set to 1 or 0. Actual value: %zst_group_572_magic_missile%"
             LAM f_plus
@@ -2246,7 +2245,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Crippling Backstab group component should be set to 1 or 0. Actual value: %zst_group_2350_crippling_backstab%"
             LAM f_plus
         END
-        
+
 
         ACTION_IF zst_group_2400_multiclass_backstab != 0 AND zst_group_2400_multiclass_backstab != 1 BEGIN
             WARN "[WARN]: Multiclass backstab penalty group component should be set to 1 or 0. Actual value: %zst_group_2350_crippling_backstab%"
@@ -2354,7 +2353,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Familiar Female Caster Voice group component should be set to 1 or 0. Actual value: %zst_group_3165_familiar_female_voice%"
             LAM f_plus
         END
-        
+
         ACTION_IF zst_group_3170_succubi_animations != 0 AND zst_group_3170_succubi_animations != 1 BEGIN
             WARN "[WARN]: Succubi animation group component should be set to 1 or 0. Actual value: %zst_group_3170_succubi_animations%"
             LAM f_plus
@@ -3017,7 +3016,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Helm of Balduran group component should be set to 1 or 0. Actual value: %zst_group_1366_helm_of_balduran%"
             LAM f_plus
         END
-  
+
         ACTION_IF zst_group_1369_fallorain_plate != 0 AND zst_group_1369_fallorain_plate != 1 BEGIN
             WARN "[WARN]: Fallorain's Plate group component should be set to 1 or 0. Actual value: %zst_group_1369_fallorain_plate%"
             LAM f_plus
@@ -3041,7 +3040,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         ACTION_IF zst_group_1404_jester_chain != 0 AND zst_group_1404_jester_chain != 1 BEGIN
             WARN "[WARN]: Jester's Chain group component should be set to 1 or 0. Actual value: %zst_group_1404_jester_chain%"
             LAM f_plus
-        END   
+        END
 
         // ----------------------------------------GROUP COMP VARIABLES (JOINABLES)------------------------------------------------- \\
 
@@ -3333,7 +3332,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Arrow of Acid group component should be set to 1 or 0. Actual value: %zst_group_1388_arrow_acid%"
             LAM f_plus
         END
-   
+
         ACTION_IF zst_group_1011_basic_ammo_price != 0 AND zst_group_1011_basic_ammo_price != 1 BEGIN
             WARN "[WARN]: Basic Ammo Price group component should be set to 1 or 0. Actual value: %zst_group_1011_basic_ammo_price%"
             LAM f_plus
@@ -3470,7 +3469,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             WARN "[WARN]: Harbinger group component should be set to 1 or 0. Actual value: %zst_group_1696_harbinger%"
             LAM f_plus
         END
-        
+
         ACTION_IF zst_group_1708_sword_of_chaos != 0 AND zst_group_1708_sword_of_chaos != 1 BEGIN
             WARN "[WARN]: Sword of Chaos group component should be set to 1 or 0. Actual value: %zst_group_1708_sword_of_chaos%"
             LAM f_plus
@@ -3480,16 +3479,16 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
         ACTION_IF failures > 0 BEGIN
             WARN "[FAIL]: There were %failures% errors in the settings. Please revise."
-            
+
             ACTION_IF crash_if_var_errors_found BEGIN
                 LAF LOG_WARNING_FAIL STR_VAR log_level="fail" message = "[FAIL]: ABORTING INSTALLATION DUE TO ERRORS. There were %failures% errors in the settings. Please revise." END
             END
-            
+
         END ELSE BEGIN
             PRINT "[INFO]: All good with the settings, proceeding..."
         END
 
-
     END
+
     OUTER_SET zs_vars_check = 1
 END

@@ -1,6 +1,6 @@
 OUTER_SET wand_missile_desc = RESOLVE_STR_REF(@7460)
 COPY_EXISTING ~wand03.itm~ ~override~
-              ~wand12_.itm~ ~override~ 
+              ~wand12_.itm~ ~override~
   LPF ALTER_HEADER INT_VAR match_type = 3 match_projectile=projectl_magic_missile projectile = 70 END
   LPF ALTER_ITEM INT_VAR id_desc=wand_missile_desc END
 IF_EXISTS
@@ -23,7 +23,7 @@ ACTION_IF NOT is_iwdee OR (is_iwdee AND NOT has_eefixpack) BEGIN
 
   COPY_EXISTING ~wand04.itm~ ~override~
     LPF ALTER_EFFECT INT_VAR match_duration = 60 duration = 42 END
-    
+
 END ELSE ACTION_IF is_iwdee AND has_eefixpack BEGIN
 
   COPY_EXISTING ~wand04.spl~ ~override~

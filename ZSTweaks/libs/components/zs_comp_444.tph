@@ -42,7 +42,7 @@ ACTION_IF zst_444_stone_flesh BEGIN
         COPY_EXISTING ~scrlpet.itm~ ~override~
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8641) END
             LPF ADD_ON_HIT_EFF STR_VAR effects = ~%effects%~ END
-            
+
     END
 
 END

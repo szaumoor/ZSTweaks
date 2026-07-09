@@ -14,5 +14,5 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             END DEFAULT
         END
     END
-    
+
 BUT_ONLY

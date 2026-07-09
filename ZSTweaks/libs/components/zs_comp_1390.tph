@@ -7,10 +7,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     PATCH_IF zst_1390_staff_magi_usability > 0 AND zst_1390_staff_magi_usability <= 2 BEGIN
 
-      PATCH_MATCH zst_1390_staff_magi_usability WITH 
-        1 
+      PATCH_MATCH zst_1390_staff_magi_usability WITH
+        1
         BEGIN LPF ALTER_ITEM INT_VAR unusable0 = 1618214592 END END
-        2 
+        2
         BEGIN LPF ALTER_ITEM INT_VAR unusable0 = 1618739136 END END
       DEFAULT END
 
@@ -31,7 +31,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     LPF ADD_ITEM_HEADER INT_VAR target=7 charges=1 depletion=3 required_id=1 flags=2**11 STR_VAR icon = ~istaf11~ END
     LPF ADD_ITEM_EFFECT INT_VAR target = 1 header=4 opcode = 214 parameter2 = 1 END
-
 
     LPF ADD_EQUIPPED_EFF INT_VAR p2=5 STR_VAR effects = ~op=177,p1=%class_mage%,res=zstaf112;op=177,p1=%class_sorcerer%,res=zstaf112;op=177,p1=%class_mage%,res=zstaf113;op=177,p1=%class_sorcerer%,res=zstaf113~ END
 

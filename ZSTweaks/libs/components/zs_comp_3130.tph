@@ -8,7 +8,7 @@ ACTION_IF is_iwdee_bg2ee_or_eet BEGIN
     READ_BYTE 0x272 race
 
     PATCH_IF race = race_minotaur BEGIN // minotaurs
-    
+
       LPM ADD_CRE_MELEE_EFFECT // can gore
       LPM ADD_CRE_MOVEMENT_BOOST // moves faster
       LPM ADD_CRE_CRIT_BOOST // crits 5% more often
@@ -31,7 +31,7 @@ ACTION_IF is_iwdee_bg2ee_or_eet BEGIN
         END
 
       END
-      
+
       READ_BYTE 0x23d con
       PATCH_IF con < 17 BEGIN // have at least 17 constitution
         WRITE_BYTE 0x23d 17
@@ -40,7 +40,7 @@ ACTION_IF is_iwdee_bg2ee_or_eet BEGIN
       READ_BYTE 0x238 str
       PATCH_IF str < 20 BEGIN // 20 strength
         WRITE_BYTE 0x238 20
-      END 
+      END
 
       // and 15% resistance to physical damage
 

@@ -63,7 +63,7 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
 
             PATCH_IF cat = 12 BEGIN
                 READ_LONG 0x8 strref
-                
+
                 PATCH_IF strref != small_shield_strref   AND
                          strref != medium_shield_strref  AND
                          strref != large_shield_strref   AND
@@ -73,12 +73,12 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
                     NOT "%SOURCE_RES%" STR_EQ ~bdmisc10~ AND
                     NOT "%SOURCE_RES%" STR_EQ ~l#kubok3~ AND
                     NOT "%SOURCE_RES%" STR_EQ ~l0drum~   AND
-                    NOT "%SOURCE_RES%" STR_EQ ~lyre~     AND 
+                    NOT "%SOURCE_RES%" STR_EQ ~lyre~     AND
                     NOT "%SOURCE_RES%" STR_EQ ~l#kobi1~  AND
                     NOT "%SOURCE_RES%" STR_EQ ~l#shoi4~  AND
                     NOT "%SOURCE_RES%" STR_EQ ~l#zsod7~  AND
                     NOT "%SOURCE_RES%" STR_EQ ~rr#lyre~
-                    BEGIN 
+                    BEGIN
                         PATCH_PRINT "[DEBUG][INFO]: Incorrect shield strref found at shield category: %SOURCE_RES%"
                     END
                 END
@@ -86,7 +86,7 @@ ACTION_IF !VARIABLE_IS_SET "zst_shields_fixed" BEGIN
             END
 
         BUT_ONLY
-        
+
     END
 
     OUTER_SET "zst_shields_fixed" = 1

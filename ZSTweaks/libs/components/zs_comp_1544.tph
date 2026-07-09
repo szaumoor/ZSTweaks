@@ -85,7 +85,7 @@ WITH_SCOPE BEGIN
                                 OUTER_SET sectype = 0
                                 OUTER_SET level = 1
                                 OUTER_SPRINT spell ~%prefix%%number%~
-                                LAM CREATE_SPELL 
+                                LAM CREATE_SPELL
                                 COPY_EXISTING ~%prefix%%number%.spl~ ~override~
                                     FOR ( index=0; index < 50; ++index ) BEGIN
                                         LPM add_spell_headers

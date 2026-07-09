@@ -28,7 +28,7 @@ BEGIN
     PATCH_IF BYTE_AT(0x63) < 30 BEGIN
         WRITE_BYTE 0x63 30
     END
-  
+
     SET present = 0
     LPM CRE_OP_PRESENT
     PATCH_IF NOT present BEGIN
@@ -56,8 +56,8 @@ COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
         END ELSE BEGIN
             LPM modify_shadow
         END
-        
-    END ELSE 
+
+    END ELSE
 
     PATCH_IF race = race_wraith          OR
              race = race_spectral_undead OR

@@ -392,7 +392,7 @@ BEGIN
     PATCH_IF ("%SOURCE_RES%" STRING_COMPARE_REGEXP "^...$" = 0) BEGIN SPRINT spc "      " END ELSE
     PATCH_IF ("%SOURCE_RES%" STRING_COMPARE_REGEXP "^..$" = 0) BEGIN SPRINT spc "       " END ELSE
                                                               BEGIN SPRINT spc "        " END
-    TO_LOWER SOURCE_FILE    
+    TO_LOWER SOURCE_FILE
     PATCH_PRINT "              ~%SOURCE_FILE%~%spc%~override~ // %name%, %alter% abilities altered"
   END
 
@@ -2550,7 +2550,6 @@ DEFINE_PATCH_FUNCTION DELETE_HEADER
           match_flag_backstab      = "-1" // tobex only, toggle backstab, bit25
           match_flag_noinvisible   = "-1" // tobex only, cannot target invisible, bit26
 
-
   // same for match and new STR_VAR
   STR_VAR match_icon      = "SAME"
   RET abil_delta
@@ -2906,7 +2905,6 @@ DEFINE_PATCH_FUNCTION DELETE_HEADER
           match_flag_backstab      = "-1" // tobex only, toggle backstab, bit25
           match_flag_noinvisible   = "-1" // tobex only, cannot target invisible, bit26
 
-
   // same for match and new STR_VAR
   STR_VAR match_icon      = "SAME"
   RET abil_delta
@@ -3087,7 +3085,7 @@ END
 
 /*
 
-Part of the ALTER/CLONE/DELETE_HEADER series of functions. 
+Part of the ALTER/CLONE/DELETE_HEADER series of functions.
 Check the ALTER_HEADER documentation for more information as
 the function variables are the same except as noted below:
 
@@ -3101,8 +3099,8 @@ used:
 
 platform:
   all except iwd2 and pst
- 
-version history: 
+
+version history:
   9/12/25 creation
 
 */
@@ -3205,7 +3203,7 @@ DEFINE_PATCH_FUNCTION CLONE_HEADER
   STR_VAR match_icon      = "SAME"
           icon            = "SAME"
           insert          = "below"
-  RET     abil_delta   
+  RET     abil_delta
 BEGIN
 
   SET abil_length = 0
@@ -3342,27 +3340,27 @@ BEGIN
               INSERT_BYTES (fx_off + 0x00 + (abil_fx_idx * 0x30)) (abil_fx_num * 0x30)
               WRITE_ASCIIE (fx_off + 0x00 + (abil_fx_idx * 0x30)) ~%cloned_fx%~
               SET fx_delta += abil_fx_num
-            END  
-            // now, clone the ability  
+            END
+            // now, clone the ability
             READ_ASCII (base) cloned_abil (abil_length)
             PATCH_IF ("%insert%" STRING_COMPARE_CASE "above" = 0) BEGIN
               INSERT_BYTES (base) (abil_length)
-              WRITE_ASCIIE (base) ~%cloned_abil%~  
+              WRITE_ASCIIE (base) ~%cloned_abil%~
               PATCH_IF abil_fx_num BEGIN // correct index
                 WRITE_SHORT (base + abil_length + 0x20) THIS + abil_fx_num
-              END   
-            END ELSE BEGIN  
+              END
+            END ELSE BEGIN
               INSERT_BYTES (base + abil_length) (abil_length)
               SET base += abil_length // reset the base so that all future read/writes go to the new ability
-              WRITE_ASCIIE (base) ~%cloned_abil%~  
+              WRITE_ASCIIE (base) ~%cloned_abil%~
               PATCH_IF abil_fx_num BEGIN // correct index
                 WRITE_SHORT (base + 0x20) THIS + abil_fx_num
-              END   
-            END  
-            SET abil_delta += 1 
-            SET abil_num += 1 
-            SET index += 1             
-            SET fx_off += abil_length        
+              END
+            END
+            SET abil_delta += 1
+            SET abil_num += 1
+            SET index += 1
+            SET fx_off += abil_length
             // now the normal adjustments for newly cloned header
             SET multi_match -= 1
             PATCH_IF (type >= 0)       BEGIN WRITE_BYTE  (base + 0x00) type END
@@ -3394,7 +3392,7 @@ BEGIN
               PATCH_IF (arrow >= 0)          BEGIN WRITE_SHORT (base + 0x32) arrow          END
               PATCH_IF (bolt >= 0)           BEGIN WRITE_SHORT (base + 0x34) bolt           END
               PATCH_IF (bullet >= 0)         BEGIN WRITE_SHORT (base + 0x36) bullet         END
-  
+
               PATCH_IF (flag_strength = 0)    BEGIN WRITE_LONG (base + 0x26) (THIS &  `BIT0)  END
               PATCH_IF (flag_strength > 0)    BEGIN WRITE_LONG (base + 0x26) (THIS BOR BIT0)  END
               PATCH_IF (flag_break = 0)       BEGIN WRITE_LONG (base + 0x26) (THIS &  `BIT1)  END
@@ -3424,11 +3422,11 @@ BEGIN
       END // for loop
     END // header check
   END // abil_length check
-  
+
   PATCH_IF abil_delta BEGIN // if we've added abilities
     WRITE_SHORT  0x68 abil_num
     WRITE_LONG   0x6a fx_off
-  END   
+  END
 
   PATCH_IF (abil_delta = 0 && !silent) BEGIN
     PATCH_WARN "WARNING: no effects altered on %SOURCE_FILE% via ALTER_HEADER"
@@ -3447,7 +3445,7 @@ BEGIN
     PATCH_IF ("%SOURCE_RES%" STRING_COMPARE_REGEXP "^...$" = 0) BEGIN SPRINT spc "      " END ELSE
     PATCH_IF ("%SOURCE_RES%" STRING_COMPARE_REGEXP "^..$" = 0) BEGIN SPRINT spc "       " END ELSE
                                                               BEGIN SPRINT spc "        " END
-    TO_LOWER SOURCE_FILE    
+    TO_LOWER SOURCE_FILE
     PATCH_PRINT "              ~%SOURCE_FILE%~%spc%~override~ // %name%, %abil_delta% abilities deleted"
   END
 

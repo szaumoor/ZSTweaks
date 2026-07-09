@@ -571,7 +571,7 @@ Equipped abilities:
 – Fire Resistance: +25%
 
 Combat abilities:
-– Hits with this weapon reduce the target's Fire Resistance by 25% for 2 rounds (does not stack) 
+– Hits with this weapon reduce the target's Fire Resistance by 25% for 2 rounds (does not stack)
 
 Charge abilities:
 – Cast Wrath of the Witch once per day
@@ -852,8 +852,6 @@ Requires:
 
 Weight: 3~
 
-
-
 // my item pack
 @8620 = ~– Undead must Save vs. Death or be utterly destroyed~
 @8621 = ~Undead and fiends must Save vs. Death or be utterly destroyed. Stronger creatures have a chance of resisting the effects entirely when hit:
@@ -910,7 +908,6 @@ Requires:
 
 Weight: 10~
 
-
 @41236 = ~When the hero Trueblood destroyed the Harbinger, a demon gorging itself on the blood of peasant folk near Luskan, he bound its essence in the only vessel capable of holding it, his fabled sword, Deliverance. Though the evil creature was dominated by the will of the semi-sentient blade, it was not truly defeated, and it transformed the weapon from within. Now it acts much like any other enchanted weapon, but when it strikes, there is a small chance that a fireball erupts, a sign that the demon within still rages at its imprisonment. There is also a chance that any ogre it hits will be turned to stone. Whether this is an ability of the demon or a vestigial power of the original blade is not known.
 
 STATISTICS:
@@ -929,7 +926,7 @@ Requires:
 
 Weight: 10~
 
-@42424 = ~A mage's staff is far more than just a gilded walking stick, most being enchanted to an impressive degree. This one is no exception, and whoever the previous owner was, they were powerful indeed. It enables a mage to better escape hostile magic and avoid physical blows, and can erect a Globe of Invulnerability once per day. Offensively, it can launch magic missiles at enemies from a safe distance, though the mage must still aim them with skill, and allows the mage to cast a paralyzing Lightning Bolt twice per day. 
+@42424 = ~A mage's staff is far more than just a gilded walking stick, most being enchanted to an impressive degree. This one is no exception, and whoever the previous owner was, they were powerful indeed. It enables a mage to better escape hostile magic and avoid physical blows, and can erect a Globe of Invulnerability once per day. Offensively, it can launch magic missiles at enemies from a safe distance, though the mage must still aim them with skill, and allows the mage to cast a paralyzing Lightning Bolt twice per day.
 
 STATISTICS:
 
@@ -989,7 +986,6 @@ Charge abilities:
   Range: 40 ft.
   Duration: 3 rounds
 
-
 THAC0: +2
 Damage: 1d6+2, +1d2 electricity damage (double on a critical hit)
 Damage type: Crushing
@@ -1001,7 +997,7 @@ Requires:
 
 Weight: 3~
 
-@42431 = ~Linked to the Plane of Earth, this staff may have been fashioned by an ancient druidic sect. It can summon an earth elemental, though it also has the potential to slay such creatures in a single blow, possibly hinting at how difficult it is to control them. It can also free a person from the earth by casting Stone to Flesh. 
+@42431 = ~Linked to the Plane of Earth, this staff may have been fashioned by an ancient druidic sect. It can summon an earth elemental, though it also has the potential to slay such creatures in a single blow, possibly hinting at how difficult it is to control them. It can also free a person from the earth by casting Stone to Flesh.
 
 STATISTICS:
 
@@ -1123,7 +1119,7 @@ The blade of Sarevok, brother of <CHARNAME>, used in the battle they fought in f
 STATISTICS:
 
 Combat abilities:
-– Chaos Blade: The latent profane energy in the blade forces unprotected living targets to take 1d4 necrotic damage, which cannot be resisted, and the user is healed by 1 to 6 Hit Points at the same time. 
+– Chaos Blade: The latent profane energy in the blade forces unprotected living targets to take 1d4 necrotic damage, which cannot be resisted, and the user is healed by 1 to 6 Hit Points at the same time.
 
 THAC0: +2
 Damage: 1d10+2
@@ -1146,7 +1142,7 @@ Equipped abilities:
 – Magic Resistance: +10%
 
 Combat abilities:
-– Chaos Blade: The latent profane energy in the blade forces unprotected living targets to take 1d4 necrotic damage, which cannot be resisted, and the user is healed by 1 to 6 Hit Points at the same time. 
+– Chaos Blade: The latent profane energy in the blade forces unprotected living targets to take 1d4 necrotic damage, which cannot be resisted, and the user is healed by 1 to 6 Hit Points at the same time.
 
 THAC0: +4
 Damage: 1d10+4
@@ -1154,7 +1150,7 @@ Damage type: Slashing
 Speed Factor: 6
 Proficiency Type: Two-handed Sword
 Type: Two-handed
-Requires: 
+Requires:
   14 Strength
 
 Weight: 10~

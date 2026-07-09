@@ -12,7 +12,7 @@ DEFINE_ACTION_MACRO CREATE_EQ_EFF BEGIN
     END
 
     OUTER_SPRINT file_ext "%filename%.eff"
-    COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/%file_ext%~ 
+    COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/%file_ext%~
         LPM patch_item
 
     DEFINE_PATCH_MACRO patch_file BEGIN
@@ -30,7 +30,7 @@ DEFINE_ACTION_MACRO CREATE_TG_EFF BEGIN
     END
 
     OUTER_SPRINT file_ext "%filename%.eff"
-    COPY ~%MOD_FOLDER%/templates/eff/ptarget.eff~ ~override/%file_ext%~ 
+    COPY ~%MOD_FOLDER%/templates/eff/ptarget.eff~ ~override/%file_ext%~
         LPM patch_item
 
     DEFINE_PATCH_MACRO patch_file BEGIN
@@ -48,7 +48,7 @@ DEFINE_ACTION_MACRO CREATE_TG_SPL BEGIN
     END
 
     OUTER_SPRINT file_ext "%filename%.spl"
-    COPY ~%MOD_FOLDER%/templates/spl/1h_target.spl~ ~override/%file_ext%~ 
+    COPY ~%MOD_FOLDER%/templates/spl/1h_target.spl~ ~override/%file_ext%~
         LPM patch_item
 
     DEFINE_PATCH_MACRO patch_file BEGIN
@@ -66,7 +66,7 @@ DEFINE_ACTION_MACRO CREATE_SELF_SPL BEGIN
     END
 
     OUTER_SPRINT file_ext "%filename%.spl"
-    COPY ~%MOD_FOLDER%/templates/spl/1h_self.spl~ ~override/%file_ext%~ 
+    COPY ~%MOD_FOLDER%/templates/spl/1h_self.spl~ ~override/%file_ext%~
         LPM patch_item
 
     DEFINE_PATCH_MACRO patch_file BEGIN

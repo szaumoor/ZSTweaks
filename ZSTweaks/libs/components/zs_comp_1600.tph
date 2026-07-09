@@ -22,7 +22,6 @@ ACTION_IF is_iwdee BEGIN
 
 END
 
-
 ACTION_IF is_bgee OR is_eet BEGIN
 
     EXTEND_BOTTOM ~ar2600.bcs~ ~%MOD_FOLDER%/baf/omnistab/ar2600.baf~ // candlekeep area
@@ -51,4 +50,3 @@ VERBOSE
 ACTION_IF zs_debug BEGIN
     PRINT "[DEBUG][INFO]: Processed %counter% joinable creature files for omnistabbing."
 END
-

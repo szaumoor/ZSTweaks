@@ -10,14 +10,14 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
     OUTER_SET is_bg2ee_or_eet        = is_bg2ee OR is_eet
     OUTER_SET is_bgee_or_eet         = is_bgee  OR is_eet
     OUTER_SET is_bgee_or_iwdee       = is_bgee  OR is_iwdee
-    
+
     OUTER_SET is_bgee_bg2ee_or_eet   = NOT is_iwdee
     OUTER_SET is_iwdee_bg2ee_or_eet  = NOT is_bgee
     OUTER_SET is_iwdee_bgee_or_eet   = NOT is_bg2ee
     OUTER_SET is_iwdee_bgee_or_bg2ee = NOT is_eet
 
     ACTION_IF is_bgee BEGIN
-        
+
         PRINT "[INFO]: Baldur's Gate: Enhanced Edition detected..."
         ACTION_IF includes_sod BEGIN
             PRINT "             ...with Siege of Dragonspear"
@@ -143,7 +143,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
         PRINT "[INFO]: ZS_ItemPack pack generic rapiers detected"
         COPY_EXISTING ~zsiprap0.itm~ ~override~
             READ_LONG 0x08 zs_rapier_general_string_index
-            
+
     END
 
     OUTER_SET has_artisan_archer_kit = MOD_IS_INSTALLED "ArtisansKitpack.tp2" "2010"

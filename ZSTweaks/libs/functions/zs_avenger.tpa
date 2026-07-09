@@ -1,4 +1,4 @@
-DEFINE_PATCH_FUNCTION set_clab_2da_entries 
+DEFINE_PATCH_FUNCTION set_clab_2da_entries
 INT_VAR
  f_MinLevel = 1
  f_MaxLevel = 50
@@ -37,16 +37,16 @@ BEGIN
   END
 END
 
-DEFINE_PATCH_FUNCTION set_lu_2da_entries 
-STR_VAR 
+DEFINE_PATCH_FUNCTION set_lu_2da_entries
+STR_VAR
     f_Replace = "*"
     f_Icon = "*"
     f_Strref = "*"
-    f_MinLevel = 1 
-    f_MaxLevel = 99 
-    f_NumAllowed = 16 
-    f_Prereq = "*" 
-    f_ExcludedBy = "*" 
+    f_MinLevel = 1
+    f_MaxLevel = 99
+    f_NumAllowed = 16
+    f_Prereq = "*"
+    f_ExcludedBy = "*"
     f_Alignment = "*"
 BEGIN
   COUNT_2DA_COLS num_col

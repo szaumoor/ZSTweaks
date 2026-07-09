@@ -58,7 +58,7 @@ COPY_EXISTING ~spwi912.spl~ ~override~
             WRITE_BYTE 0x25 3
         END
     END
-    
+
     LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@76000) END
     LPF DELETE_EFFECT INT_VAR check_globals = 0 END
 
@@ -73,4 +73,3 @@ COPY_EXISTING ~spwi912.spl~ ~override~
 
     LPF ADD_SPL_TGTEFF INT_VAR pwr=9 STR_VAR res="zstwpwk0" effects = ~op=326,p2=145,p1=61;op=326,dnum=10;op=326,p2=144,p1=61,res=zstwpwk2~ END
 
-    

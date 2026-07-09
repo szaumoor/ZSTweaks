@@ -14,7 +14,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     SET general_tweaks_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~
     PATCH_IF zst_1450_allow_daggers AND
             (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1450~ OR
-            (general_tweaks_installed AND zst_group_1450_finesse)) 
+            (general_tweaks_installed AND zst_group_1450_finesse))
     BEGIN
       SET ench = 4
       LPM PROBABILITY_BONUS
@@ -22,7 +22,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     END
 
     PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR
-            (general_tweaks_installed AND zst_group_1440_dagger_boost) 
+            (general_tweaks_installed AND zst_group_1440_dagger_boost)
     BEGIN
       READ_STRREF 0x54 desc
       INNER_PATCH_SAVE desc ~%desc%~ BEGIN

@@ -1,5 +1,5 @@
 ACTION_IF is_bgee_bg2ee_or_eet BEGIN
-  
+
   COPY_EXISTING "sw1h24.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8011) id_name=RESOLVE_STR_REF(@8010) ench=2 END
     READ_LONG 0x18 flags

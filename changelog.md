@@ -5,7 +5,7 @@
 - PREFIX: Set driders to the race of driders
 - PREFIX: Set Korax the Ghoul to the race of ghoul
 - PREFIX: Fix any wraith spiders that aren't marked undead (they are undead according to lore, they're normally just tagged as 'Monsters', with undead immunities, and as such aren't affected by things that target undead).
-- PREFIX: Fix the Blind Albino Wyrmlings's race and class since they're set to wyverns instead of dragon (copy paste gone wrong, I'm sure)
+- PREFIX: Fix the Blind Albino Wyrmling's race and class since they're set to wyverns instead of dragon (copy paste gone wrong, I'm sure)
 - PREFIX: Fix for bugged EEFixpack implementations of Blackrazor and Black Blade of Disaster (currently they heal and boost targets instead of wielder
 - PREFIX: Fix Ras and Sword of Morderkainen being set class-wise as gnoll (??). Set to Long Sword instead, as it is in BGEE and IWDEE.
 - PREFIX: Fix for wrong casting speed for seeking sword at level 20 (all except iwdee)
@@ -109,6 +109,7 @@
 - Make Divine Favor's duration scale very slowly with level (3190) (IWDEE BGEE BG2EE EET)
 - Make Boon of Lathander improve with level slightly (3200) (IWDEE BGEE BG2EE EET)
 - Make Otiluke's Resilient Sphere able to protect NPCs marked as innocents (487) (IWDEE BGEE BG2EE EET)
+- Make CHARNAMEs able to get morale failure instead of being default psychopathic (xxxx) (IWDEE BGEE BG2EE EET)
 
 ## Future additions
 
@@ -116,3 +117,5 @@
 - Make Necromancers have access to a new HLA: Vampiric Feast
 - Overhauling Web component so it adopts the IWD appearance and sound
 - Slayer Overhaul
+- Maybe giving Control Undead to priests too
+- Giving CHARNAME the chance to suffer morale break

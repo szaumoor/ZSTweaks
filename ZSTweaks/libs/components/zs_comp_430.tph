@@ -15,7 +15,7 @@ ACTION_IF NOT is_iwdee BEGIN
     COPY_EXISTING ~zstwgres.spl~ ~override~
       LPF CLONE_EFFECT_EX INT_VAR match_opcode = 126 opcode = 0 parameter2=0 STR_VAR parameter1_ex=~"-1"~ END
       LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur = 6 level_cap = 20 END
-      
+
   END
 
   COPY_EXISTING ~scrl66.itm~ ~override~

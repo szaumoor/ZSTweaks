@@ -1,9 +1,9 @@
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
-    
+
   PATCH_IF BYTE_AT(0x272) = race_ogre AND
-           BYTE_AT(0x273) = class_ogre_mage 
+           BYTE_AT(0x273) = class_ogre_mage
   BEGIN
-      
+
     WRITE_BYTE 0x272 race_demonic
     LPF DELETE_EFFECT INT_VAR match_opcode = 98 END
     LPF ADD_CRE_PASSIVE INT_VAR op=98 p1=6 p2=3 tmg=4 dur=1 END
@@ -13,14 +13,14 @@ COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
 
 BUT_ONLY
 
-STRING_SET 
-9354 @80500 
-9355 @80500 
+STRING_SET
+9354 @80500
+9355 @80500
 12851 @80500
 12875 @80500
 
 ACTION_IF NOT is_iwdee BEGIN
-  STRING_SET 
+  STRING_SET
   25732 @80500
-  25733 @80500  
+  25733 @80500
 END

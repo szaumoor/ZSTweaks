@@ -69,6 +69,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         END ELSE BEGIN
             LPF ALTER_HEADER INT_VAR match_type = 1 damage = 6 to_hit = 6 END
         END
-    
+
 
 END

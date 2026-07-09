@@ -11,7 +11,7 @@ ACTION_IF zst_145_luck_dur_boost BEGIN
 END
 
 ACTION_IF zst_145_luck_boost BEGIN
-    
+
     OUTER_SET luck_dur_boost_desc = RESOLVE_STR_REF(@6730)
     OUTER_SET luck_not_dur_boost_desc = RESOLVE_STR_REF(@6720)
 

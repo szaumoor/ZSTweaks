@@ -4,8 +4,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     OUTER_SET finesse_installed = zst_1450_allow_katanas AND
                                     (MOD_IS_INSTALLED "ZSTweaks.tp2" "1450" OR
                                     (general_tweaks_installed AND zst_group_1450_finesse))
-    OUTER_SET katanas_comp_installed = zst_1150_dice_katanas AND 
-                                        (MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" OR 
+    OUTER_SET katanas_comp_installed = zst_1150_dice_katanas AND
+                                        (MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" OR
                                         (general_tweaks_installed AND zst_group_1150_weapon_dice))
 
     COPY_EXISTING ~sw1h70.itm~ ~override~

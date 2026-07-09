@@ -5,7 +5,7 @@ ACTION_IF NOT is_iwdee AND FILE_EXISTS_IN_GAME ~dagg16.itm~ BEGIN
         COPY_EXISTING "dagg16.itm" ~override~
 
             LPF ALTER_EFFECT INT_VAR check_globals = 0 header_type = 2 match_savingthrow = 4 savebonus = zst_1000_sbonus END
-            
+
             PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1684~ OR group_component AND zst_group_1684_throwing_dagg_melee BEGIN
                 LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7352) END
             END ELSE BEGIN

@@ -7,7 +7,7 @@ BEGIN
     PATCH_IF zs_debug BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
     END
-    
+
     LPF ITM_LAST_HEADER_TYPE INT_VAR type = type RET header = result END
     PATCH_IF header != "-1" BEGIN
         SET offset = 0x72 + (header * 0x38)

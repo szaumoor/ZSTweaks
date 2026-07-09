@@ -2,14 +2,14 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   DEFINE_PATCH_MACRO patch_file BEGIN LPF ADD_INNATE_TGT_EFF STR_VAR effects = ~op=12,p1=5,p2=%op12_piercing%~ END END
   LAF CREATE_TG_SPL STR_VAR filename = "zstwimpa" END
-  
+
   COPY_EXISTING ~sper08.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8610) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = (2**10) END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = "op=301,p1=1,p2=1;op=341,p2=1,res=zstwimpa" END
 
-    PATCH_IF zst_1150_dice_spears AND 
-            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR 
+    PATCH_IF zst_1150_dice_spears AND
+            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
             (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice))
     BEGIN
       READ_STRREF 0x54 desc

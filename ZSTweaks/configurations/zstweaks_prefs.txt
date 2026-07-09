@@ -55,7 +55,7 @@ OUTER_SET zst_1361_halberds_crits = "1"
 // This modifies the blunt weapon tweak so the AC debuff only works against enemies that don't wear armor, such as dragons
 OUTER_SET zst_1362_blunt_only_nonarmored = "0"
 
-// save penalty/bonus for arrows of dispelling, valid values range from -10 to 10 
+// save penalty/bonus for arrows of dispelling, valid values range from -10 to 10
 OUTER_SET zst_1371_save_penalty = "-2"
 
 // allow or disallow weapon categories to be modified by the Finesse component (Component 1450)
@@ -147,6 +147,11 @@ OUTER_SET zst_1532_add_1hp_to_body_armor = "0"
 OUTER_SET zst_1532_add_1hp_to_cloaks     = "0"
 OUTER_SET zst_1532_add_1hp_to_helmets    = "0"
 OUTER_SET zst_1532_add_1hp_to_shields    = "0"
+
+// specifics for morale break enforcement for charname and other PC
+OUTER_SET zst_592_morale_break          = "0"
+OUTER_SET zst_592_morale_break_duration = "0"
+OUTER_SET zst_592_morale                = "0"
 
 ////////////////////////////// Gear tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -243,7 +248,7 @@ OUTER_SET zst_160_goliro_reduction_only = "0"
 
 // Makes the one-time Limited Wish version of the spell use a modified Saving Throw
 OUTER_SET zst_170_wail_wish_bonus = "1"
-OUTER_SET zst_170_wail_save_bonus = "-4" // unaffected by Necromancer bonus, though, equally effective no matter the user 
+OUTER_SET zst_170_wail_save_bonus = "-4" // unaffected by Necromancer bonus, though, equally effective no matter the user
 
 // allows the Tenser's Transformation tweaks
 OUTER_SET zst_441_tenser_thac0                = "1" // THAC0 tweak

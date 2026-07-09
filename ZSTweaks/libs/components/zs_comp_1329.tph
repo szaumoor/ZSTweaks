@@ -51,7 +51,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       LPF ADD_ON_HIT_EFF INT_VAR t = 99 p2 = 104 STR_VAR res=~%SOURCE_RES%~ effects = ~op=318,p1=%race_demonic%;op=318,p1=%race_lich%;op=318,p1=%race_demilich%;op=318,p1=%race_vampire%;op=318,p1=%race_vampyre%;op=318,p1=%class_revenant_mummy%;op=318,p1=%race_spectral_undead%;op=318,p1=%race_specter%;op=318,p1=%race_wraith%;op=318,p1=%class_spectral_troll%,p2=105~ END
       LPF ADD_ON_HIT_EFF INT_VAR t=99 p2=3 p1=general_undead STR_VAR res=~zstwdh03~ effects=~op=177,res=zstwdh04;op=177~ END
 
-
       COPY_EXISTING ~c2ax1h1a.eff~ ~override~
                     ~c2ax1h1b.eff~ ~override~
         LPF ALTER_EFF_FILE INT_VAR parameter1=8 special=1024 END

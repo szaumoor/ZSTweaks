@@ -11,7 +11,7 @@ COPY_EXISTING ~scrlb1.itm~ ~override~
 
 COPY_EXISTING ~spwi818a.spl~ ~override~ // bigby's fist subspell
     LPF LAST_VALID_HEADER RET h = result END
-    LPF ALTER_EFFECT INT_VAR check_globals=0 header=h resist_dispel=3 END 
+    LPF ALTER_EFFECT INT_VAR check_globals=0 header=h resist_dispel=3 END
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h match_opcode=12 match_duration=6 parameter1=4 dicesize=6 dicenumber=6 END
     LPF ALTER_EFFECT INT_VAR check_globals=0 header=h match_opcode=12 match_duration=12 parameter1=2 dicesize=8 dicenumber=6 END
 

@@ -120,7 +120,7 @@ BEGIN
         PATCH_IF opcode <= 0 BEGIN
             PATCH_FAIL ~[DEBUG][FAIL]: Invalid opcode specified for SPELL_OPCODE_PRESENT.~
         END
-        
+
         PATCH_IF NOT (VARIABLE_IS_SET "parameter2" OR VARIABLE_IS_SET "resource") BEGIN
             PATCH_FAIL "[DEBUG][FAIL]: Must provide at least parameter2 or resource to SPELL_CODE_PRESENT"
         END
@@ -148,7 +148,7 @@ BEGIN
                 READ_ASCII (base_eff_offset + 0x14) assigned_resource
                 SET matches = 0
                 PATCH_IF opcode = op BEGIN
-                
+
                     ++matches
 
                     PATCH_IF p2_set OR res_set BEGIN
@@ -205,7 +205,7 @@ BEGIN
             SET matches = 0
 
             PATCH_IF opcode = op BEGIN
-                
+
                 ++matches
                 PATCH_IF p2_set OR res_set BEGIN
                     PATCH_IF p2_set AND parameter2 = p2 BEGIN
@@ -322,7 +322,7 @@ BEGIN
     SET res_len = STRING_LENGTH "%match_resource%"
     PATCH_IF zs_debug = TRUE BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
-        
+
         PATCH_IF res_len > 8 BEGIN
             PATCH_FAIL "[DEBUG][FAIL]: IS_HELMET_EQUIPPED function launched with an illegal resource filename length of %res_len%"
         END
@@ -342,7 +342,7 @@ BEGIN
             PATCH_IF NOT find_any BEGIN
 
                 READ_LONG 0x2bc items_offset
-                SET item_size = 0x14  
+                SET item_size = 0x14
                 READ_ASCII (items_offset + (helmet_slot * item_size)) resource
                 SET found = "%resource%" STR_EQ "%match_resource%"
                 SPRINT which "%resource%"
@@ -351,7 +351,7 @@ BEGIN
                 found = TRUE
             END
 
-        END 
-    END 
+        END
+    END
 END
 

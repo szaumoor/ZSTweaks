@@ -1,9 +1,9 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
-  
+
   COPY_EXISTING ~helm31.itm~ ~override~
     LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 31 END
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7050) END
-    
+
   COPY_EXISTING ~helm32.itm~ ~override~
     LPF CLONE_EFFECT INT_VAR match_opcode = 29 opcode = 31 END
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7051) END

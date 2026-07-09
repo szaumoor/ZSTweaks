@@ -62,8 +62,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             PATCH_IF has_zs_shadowdancer_overhaul BEGIN
                 LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_zs_shadowdancer%,res=zstwwds0;op=177,p1=%kit_zs_shadowdancer%,res=zstwwds1;op=177,p1=%kit_zs_shadowdancer%,res=zstwwds2;op=177,p1=%kit_zs_shadowdancer%,res=zstwwds3~ END
             END
-            
-            PATCH_IF (zst_1664_crits_all OR zst_1664_crits_iouns) AND 
+
+            PATCH_IF (zst_1664_crits_all OR zst_1664_crits_iouns) AND
                       (MOD_IS_INSTALLED "ZSTweaks.tp2" "1664" OR
                       (group_component AND zst_group_1664_ioun_circlet_crits))
             BEGIN

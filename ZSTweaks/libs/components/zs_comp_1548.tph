@@ -1,14 +1,14 @@
 ACTION_IF NOT is_iwdee BEGIN
 
     COPY ~%MOD_FOLDER%/items/voidweapons~ ~override~
-    ACTION_IF zst_1150_dice_warhammers AND 
+    ACTION_IF zst_1150_dice_warhammers AND
             (MOD_IS_INSTALLED "ZSTweaks.tp2" "1150" OR
-            (group_component AND zst_group_1150_weapon_dice)) 
+            (group_component AND zst_group_1150_weapon_dice))
     BEGIN
 
         COPY_EXISTING ~zstwvd01.spl~ ~override~
             LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize = 5 END
-            
+
     END
 
     COPY_EXISTING ~bdsw1h06.itm~ ~override~
@@ -18,7 +18,7 @@ ACTION_IF NOT is_iwdee BEGIN
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=341,p2=1,res=zstwvd01;op=177,p2=3,p1=%general_undead%,res=zstwvd04~ END
 
     ACTION_IF FILE_EXISTS_IN_GAME "bdarow02.itm" BEGIN
-        
+
         ACTION_IF NOT FILE_EXISTS_IN_GAME ~zstarrow.pro~ BEGIN
             COPY_EXISTING ~arrow.pro~ ~%MOD_FOLDER%/pro/zstarrow.pro~
                 WRITE_SHORT 0xa (THIS + 5)

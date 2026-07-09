@@ -10,17 +10,17 @@ COPY_EXISTING ~kitlist.2da~ ~override~
       PATCH_IF NOT "%clab%" STR_EQ "clabth04" AND NOT "%clab%" STR_EQ "clabrn02" BEGIN
         DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN "%clab%" => "%class%" END
       END
-    END  
+    END
 
   END
 
 ACTION_DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN
-  clabth01 =>  class_thief 
+  clabth01 =>  class_thief
   clabrn01 =>  class_ranger
   clabmo01 =>  class_monk
 END
 
 ACTION_PHP_EACH my_clabs AS clab => _ BEGIN
   COPY_EXISTING ~%clab%.2da~ ~override~
-    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "AP_ZSTIVSK0" END  
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "AP_ZSTIVSK0" END
 END

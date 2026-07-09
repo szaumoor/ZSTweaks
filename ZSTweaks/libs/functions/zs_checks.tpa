@@ -21,7 +21,7 @@ BEGIN
             END
         END
 
-    END 
+    END
 END
 
 DEFINE_DIMORPHIC_FUNCTION ~IS_BIT_SET~
@@ -35,7 +35,7 @@ BEGIN
     ACTION_IF bit_field = "-1" BEGIN
         FAIL "[FAIL]: Bit field not set"
     END
-    
+
     ACTION_IF bit >= 0 AND bit < bit_limit BEGIN
         OUTER_SET bitmask = (1 << bit)
         OUTER_SET result = (bit_field & bitmask) != 0

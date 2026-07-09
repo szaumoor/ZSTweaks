@@ -10,7 +10,7 @@ DEFINE_PATCH_MACRO apply_changes BEGIN
         // break
 
         PATCH_IF zst_2370_iwd_evade_usability > 0 BEGIN
-            
+
             PATCH_IF effects > 9999 BEGIN
                 PATCH_VERBOSE
                 PATCH_FAIL "[FAIL]: Too many effects to process!"
@@ -31,7 +31,7 @@ DEFINE_PATCH_MACRO apply_changes BEGIN
             END
 
             LPF CLONE_EFFECT_EX INT_VAR opcode=177 parameter2=5 parameter1=class_thief match_parameter2=63 STR_VAR resource="klev%number%" match_opcode_ex="(o_opcode=324 OR o_opcode=318)" END
-            LPF DELETE_EFFECT_EX INT_VAR match_parameter2=63 STR_VAR match_opcode_ex="(o_opcode=324 OR o_opcode=318)" END 
+            LPF DELETE_EFFECT_EX INT_VAR match_parameter2=63 STR_VAR match_opcode_ex="(o_opcode=324 OR o_opcode=318)" END
 
             PATCH_IF zst_2370_iwd_evade_usability = 2 BEGIN
 
@@ -51,10 +51,10 @@ DEFINE_PATCH_MACRO apply_changes BEGIN
                 LPF ALTER_EFFECT_EX INT_VAR match_parameter2=63 STR_VAR match_opcode_ex="(o_opcode=324 OR o_opcode=318)" END
 
             END ELSE BEGIN
-                LPF ALTER_EFFECT_EX STR_VAR match_resource="klev%number%" probability1_ex="(THIS == 100 ? 94 : 44)" END      
+                LPF ALTER_EFFECT_EX STR_VAR match_resource="klev%number%" probability1_ex="(THIS == 100 ? 94 : 44)" END
             END
 
-        END 
+        END
 
     END
 
@@ -79,7 +79,7 @@ COPY_EXISTING_REGEXP ~^.+\.\(itm\|spl\)$~ ~override~
             FOR ( j = 0; j < effects_num; ++j ) BEGIN
                 READ_SHORT (abilities_offset + (i * 0x38) + 0x38 + (j * 0x30)) opcode
                 READ_LONG (abilities_offset + (i * 0x38) + 0x38 + (j * 0x30) + 0x08) p2
-                LPM apply_changes     
+                LPM apply_changes
             END
 
         END
@@ -96,7 +96,7 @@ COPY_EXISTING_REGEXP ~^.+\.\(itm\|spl\)$~ ~override~
             FOR ( j = 0; j < effects_num; ++j ) BEGIN
                 READ_SHORT (abilities_offset + (i * 0x28) + 0x28 + (j * 0x30)) opcode
                 READ_LONG (abilities_offset + (i * 0x28) + 0x28 + (j * 0x30) + 0x08) p2
-                LPM apply_changes     
+                LPM apply_changes
             END
 
         END

@@ -3,7 +3,7 @@ COPY_EXISTING ~c6kalden.cre~ ~override~ // paladins that help with bodhi, curren
               ~c6levin.cre~  ~override~ // paladins that help with bodhi, currently LN, should be LG
               ~c6squire.cre~ ~override~ // paladins that help with bodhi, currently LN, should be LG
               ~derrick.cre~  ~override~ // ranger helping valygar, shouldn't be LN
-              ~elotte.cre~   ~override~ // squire elotte, paladin stronghold duties, currently LN, likely better as LG  
+              ~elotte.cre~   ~override~ // squire elotte, paladin stronghold duties, currently LN, likely better as LG
   LPF ALTER_CRE INT_VAR alignment=alignmen_lawful_good END
 IF_EXISTS
 
@@ -19,7 +19,7 @@ COPY_EXISTING ~jarev1.cre~   ~override~ // nameless bard harper, currently CN, m
               ~nevaziah.cre~ ~override~ // the confused undead spellcaster that wants to protect his pupils (CE)
               ~udvith.cre~   ~override~ // vithal, currently LE, there are no obvious signs he's evil
               ~aataqah.cre~  ~override~ // he's a djinni and djinni are always chaotic good (lawful neutral)
-              ~ohhdjinn.cre~ ~override~ // he's a noble djinni 
+              ~ohhdjinn.cre~ ~override~ // he's a noble djinni
               ~ppdjinn.cre~  ~override~ // djinni
   LPF ALTER_CRE INT_VAR alignment=alignmen_chaotic_good END
 IF_EXISTS
@@ -100,9 +100,9 @@ COPY_EXISTING ~bdock1.cre~   ~override~ // overworked dockhand ogres
               ~wyvernsu.cre~ ~override~
               ~corwyvrn.cre~ ~override~
               ~wyverba.cre~  ~override~
-              ~wyvern.cre~   ~override~ 
+              ~wyvern.cre~   ~override~
               ~wyvernbi.cre~ ~override~
-              ~wyvmat.cre~   ~override~ 
+              ~wyvmat.cre~   ~override~
               ~bdwyvr03.cre~ ~override~
               ~bdwyvr02.cre~ ~override~
               ~bdwyvr01.cre~ ~override~
@@ -111,7 +111,7 @@ COPY_EXISTING ~bdock1.cre~   ~override~ // overworked dockhand ogres
               ~wyvbab01.cre~ ~override~
               ~wyvgre01.cre~ ~override~
               ~ohbmena8.cre~ ~override~
-              ~nwyvbab.cre~  ~override~ 
+              ~nwyvbab.cre~  ~override~
               ~plywyvrn.cre~ ~override~
               ~pwyvv01.cre~  ~override~
               ~ohbmena5.cre~ ~override~ // boalisk, snakes should be neutral
@@ -139,7 +139,7 @@ COPY_EXISTING ~shth011.cre~  ~override~ // Hanz thief, this version is evil for 
               ~sirine02.cre~ ~override~
               ~sirine_a.cre~ ~override~
               ~sirine_b.cre~ ~override~
-              ~meiala.cre~   ~override~ 
+              ~meiala.cre~   ~override~
               ~larria.cre~   ~override~
               ~islsir.cre~   ~override~
   LPF ALTER_CRE INT_VAR alignment=alignmen_chaotic_neutral END
@@ -179,7 +179,7 @@ COPY_EXISTING ~hellil01.cre~ ~override~ // hellhound, should be evil, not neutra
               ~tobpar06.cre~ ~override~
               ~ad3sklm.cre~  ~override~ // stray skeleton (iwdification / iwdee?)
               ~rskel01.cre~  ~override~ // stray skeleton
-              ~rskel03.cre~  ~override~ // stray skeleton 
+              ~rskel03.cre~  ~override~ // stray skeleton
               ~uddoor07.cre~ ~override~ // stray skeleton
               ~ttskel.cre~   ~override~ // stray skeleton
               ~iskelet.cre~  ~override~
@@ -234,8 +234,8 @@ COPY_EXISTING ~hellil01.cre~ ~override~ // hellhound, should be evil, not neutra
               ~bdskgr03.cre~ ~override~
               ~bdskgr05.cre~ ~override~
               ~bdskgr06.cre~ ~override~
-              ~skelar01.cre~ ~override~ 
-              ~skelar02.cre~ ~override~ 
+              ~skelar01.cre~ ~override~
+              ~skelar02.cre~ ~override~
               ~skele2.cre~   ~override~
               ~skelded.cre~  ~override~
               ~skelet01.cre~ ~override~
@@ -341,7 +341,6 @@ COPY_EXISTING ~shadeld.cre~  ~override~ // a version of Shade Lord that is Neutr
   LPF ALTER_CRE INT_VAR alignment=alignmen_chaotic_evil END
 IF_EXISTS
 
-
 ACTION_IF zs_debug BEGIN
   PRINT "[DEBUG][INFO]: Checking for possible suspects with wrong alignment (Oversight++ component 3010)...
   "
@@ -366,9 +365,9 @@ ACTION_IF zs_debug BEGIN
              NOT "%SOURCE_RES%" STR_EQ ~bdock2~   AND
              NOT "%SOURCE_RES%" STR_EQ ~golbra01~ AND // brain golem
              NOT "%SOURCE_RES%" STR_EQ ~golbur01~ AND // burning man
-             NOT "%SOURCE_RES%" STR_EQ ~ohdcdawg~ AND // celestial hound  
-             NOT "%SOURCE_RES%" STR_EQ ~sahbeh01~ AND // spectator 
-             NOT "%SOURCE_RES%" STR_EQ ~senbeh01~ AND // spectator 
+             NOT "%SOURCE_RES%" STR_EQ ~ohdcdawg~ AND // celestial hound
+             NOT "%SOURCE_RES%" STR_EQ ~sahbeh01~ AND // spectator
+             NOT "%SOURCE_RES%" STR_EQ ~senbeh01~ AND // spectator
              NOT "%SOURCE_RES%" STR_EQ ~behspe01~ AND // spectator
              NOT "%SOURCE_RES%" STR_EQ ~uhogre01~ AND // madulf people
              NOT "%SOURCE_RES%" STR_EQ ~uhogre02~ AND // madulf people
@@ -376,18 +375,18 @@ ACTION_IF zs_debug BEGIN
              NOT "%SOURCE_RES%" STR_EQ ~uhogre04~ AND // madulf people
              NOT "%SOURCE_RES%" STR_EQ ~uhogre05~ AND // madulf people
              NOT "%SOURCE_RES%" STR_EQ ~moondog~  AND //  moondog
-             NOT "%SOURCE_RES%" STR_EQ ~obsfir05~ AND // hellhound   
-             NOT "%SOURCE_RES%" STR_EQ ~hellho01~ AND // hellhound   
-             NOT "%SOURCE_RES%" STR_EQ ~hellil01~ AND // hellhound   
-             NOT "%SOURCE_RES%" STR_EQ ~ohdtmfil~ AND // faerie dragon dorn quest 
+             NOT "%SOURCE_RES%" STR_EQ ~obsfir05~ AND // hellhound
+             NOT "%SOURCE_RES%" STR_EQ ~hellho01~ AND // hellhound
+             NOT "%SOURCE_RES%" STR_EQ ~hellil01~ AND // hellhound
+             NOT "%SOURCE_RES%" STR_EQ ~ohdtmfil~ AND // faerie dragon dorn quest
              NOT "%SOURCE_RES%" STR_EQ ~udgolem~  AND // brain golem
              NOT "%SOURCE_RES%" STR_EQ ~ohdfaer~  AND // faerie dragon
-             NOT "%SOURCE_RES%" STR_EQ ~finsol01~ AND // amelyssan stuff, it's fine 
+             NOT "%SOURCE_RES%" STR_EQ ~finsol01~ AND // amelyssan stuff, it's fine
              NOT "%SOURCE_RES%" STR_EQ ~finsol02~ AND
              NOT "%SOURCE_RES%" STR_EQ ~finsol03~ AND
              NOT "%SOURCE_RES%" STR_EQ ~hspectr1~ AND //spectral harpist, not a typical undead
              NOT "%SOURCE_RES%" STR_EQ ~hspectr2~ AND
-             NOT "%SOURCE_RES%" STR_EQ ~hspectr3~ AND 
+             NOT "%SOURCE_RES%" STR_EQ ~hspectr3~ AND
              NOT "%SOURCE_RES%" STR_EQ ~ysgp01~   AND // cute bhaalspawns with unusual alignment, let's leave them be
              NOT "%SOURCE_RES%" STR_EQ ~ysgp02~   AND
              NOT "%SOURCE_RES%" STR_EQ ~ysgp03~   AND
@@ -398,11 +397,11 @@ ACTION_IF zs_debug BEGIN
              NOT "%SOURCE_RES%" STR_EQ ~fampsd~   AND
              NOT "%SOURCE_RES%" STR_EQ ~fampsd25~ AND
              NOT "%SOURCE_RES%" STR_EQ ~uhostile~ AND // probably some helper creature...
-             NOT "%SOURCE_RES%" STR_EQ ~revent~   AND // revenants are a rare non-evil type of undead 
-             NOT "%SOURCE_RES%" STR_EQ ~revnant~  AND // 
-             NOT "%SOURCE_RES%" STR_EQ ~bpreve01~ AND //  
+             NOT "%SOURCE_RES%" STR_EQ ~revent~   AND // revenants are a rare non-evil type of undead
+             NOT "%SOURCE_RES%" STR_EQ ~revnant~  AND //
+             NOT "%SOURCE_RES%" STR_EQ ~bpreve01~ AND //
              NOT "%SOURCE_RES%" STR_EQ ~malkal~   AND //
-             NOT "%SOURCE_RES%" STR_EQ ~bdnuber1~ AND // undead nüber 
+             NOT "%SOURCE_RES%" STR_EQ ~bdnuber1~ AND // undead nüber
              NOT "%SOURCE_RES%" STR_EQ ~bdnuber2~ AND
              NOT "%SOURCE_RES%" STR_EQ ~bdendles~ AND
              NOT "%SOURCE_RES%" STR_EQ ~bdcchob2~ AND  // beastial humanoids in Argent's crusade (often CN)
@@ -413,27 +412,27 @@ ACTION_IF zs_debug BEGIN
              NOT "%SOURCE_RES%" STR_EQ ~bdcruml7~ AND
              NOT "%SOURCE_RES%" STR_EQ ~bdcrur29~ AND
              NOT "%SOURCE_RES%" STR_EQ ~bdcrus86~ AND
-             NOT "%SOURCE_RES%" STR_EQ ~bdcrus8d~ AND 
+             NOT "%SOURCE_RES%" STR_EQ ~bdcrus8d~ AND
              NOT "%SOURCE_RES%" STR_EQ ~bdwave12~ AND
              NOT "%SOURCE_RES%" STR_EQ ~bddead01~ AND // drowned in blood, based on drowned dead, neutral undead (for some reason)
              NOT "%SOURCE_RES%" STR_EQ ~bddispbe~ AND
-             NOT "%SOURCE_RES%" STR_EQ ~bddispbp~ AND  
+             NOT "%SOURCE_RES%" STR_EQ ~bddispbp~ AND
              NOT "%SOURCE_RES%" STR_EQ ~bdcutid2~ AND
              NOT "%SOURCE_RES%" STR_EQ ~bdmkhi7~  AND // mkhiin
              NOT "%SOURCE_RES%" STR_EQ ~bdtreant~ AND // dark treant, they're evil
              NOT "%SOURCE_RES%" STR_EQ ~c0aualch~ AND // helper cre
-             NOT "%SOURCE_RES%" STR_EQ ~c0auin4~  AND 
+             NOT "%SOURCE_RES%" STR_EQ ~c0auin4~  AND
              NOT "%SOURCE_RES%" STR_EQ ~c0ausumm~ AND
-             NOT "%SOURCE_RES%" STR_EQ ~rbidrow~  AND // drowned dead is neutral 
+             NOT "%SOURCE_RES%" STR_EQ ~rbidrow~  AND // drowned dead is neutral
              NOT "%SOURCE_RES%" STR_EQ ~kaylessa~ AND //benevolvent spected
              NOT "%SOURCE_RES%" STR_EQ ~lizking~  AND // lizardfolk, malevolent
-             NOT "%SOURCE_RES%" STR_EQ ~dlyeti~   AND // unusually evil yeti 
+             NOT "%SOURCE_RES%" STR_EQ ~dlyeti~   AND // unusually evil yeti
              NOT "%SOURCE_RES%" STR_EQ ~larze~    AND // true neutral ogre looking for your bounty
              NOT "%SOURCE_RES%" STR_EQ ~fear~     AND
-             NOT "%SOURCE_RES%" STR_EQ ~fearm~    AND  
+             NOT "%SOURCE_RES%" STR_EQ ~fearm~    AND
              NOT "%SOURCE_RES%" STR_EQ ~nesqrl~   AND
              NOT "%SOURCE_RES%" STR_EQ ~mistpo01~ AND
-             NOT "%SOURCE_RES%" STR_EQ ~mistposu~ AND   
+             NOT "%SOURCE_RES%" STR_EQ ~mistposu~ AND
              NOT "%SOURCE_RES%" STR_EQ ~bdtarget~ AND
              NOT "%SOURCE_RES%" STR_EQ ~bdforcw1~ AND
              NOT "%SOURCE_RES%" STR_EQ ~bdforcw3~ AND
@@ -443,7 +442,7 @@ ACTION_IF zs_debug BEGIN
 
       SET str_length = STRING_LENGTH "%SOURCE_RES%"
       PATCH_IF str_length >= 2 BEGIN
-        LPF SUBSTRING INT_VAR length = 2 STR_VAR string = "%SOURCE_RES%" RET substring END 
+        LPF SUBSTRING INT_VAR length = 2 STR_VAR string = "%SOURCE_RES%" RET substring END
       END
 
       PATCH_IF VARIABLE_IS_SET substring AND NOT "%substring%" STR_EQ "ZS" BEGIN
@@ -456,7 +455,7 @@ ACTION_IF zs_debug BEGIN
             READ_BYTE 0x27b alignment
             PATCH_IF alignment != alignmen_chaotic_evil AND
                      alignment != alignmen_lawful_evil  AND
-                     alignment != alignmen_neutral_evil 
+                     alignment != alignmen_neutral_evil
             BEGIN
               ++matches
               READ_STRREF 0x08 name ELSE "Unknown name"
@@ -472,12 +471,12 @@ ACTION_IF zs_debug BEGIN
           PATCH_IF class     = class_fairy_nereid     AND
                   alignment != alignmen_chaotic_good  AND
                   alignment != alignmen_chaotic_evil  AND
-                  alignment != alignmen_chaotic_neutral 
+                  alignment != alignmen_chaotic_neutral
           BEGIN
               READ_BYTE 0x27b alignment
               PATCH_IF alignment != alignmen_chaotic_good  AND
                   alignment != alignmen_chaotic_evil  AND
-                  alignment != alignmen_chaotic_neutral 
+                  alignment != alignmen_chaotic_neutral
               BEGIN
                 ++matches
                 READ_STRREF 0x08 name ELSE "Unknown name"
@@ -500,12 +499,12 @@ ACTION_IF zs_debug BEGIN
               LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
               PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be Chaotic Neutral: %SOURCE_RES% -- %name%"
             END
-          END  
+          END
 
           PATCH_IF class = class_fairy_nymph BEGIN
             READ_BYTE 0x27b alignment
             PATCH_IF alignment != alignmen_neutral_good AND
-                     alignment != alignmen_chaotic_good 
+                     alignment != alignmen_chaotic_good
             BEGIN
               ++matches
               READ_STRREF 0x08 name ELSE "Unknown name"
@@ -515,17 +514,17 @@ ACTION_IF zs_debug BEGIN
               LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
               PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be Neutral Good or Chaotic Good: %SOURCE_RES% -- %name%"
             END
-          END  
+          END
 
         END
 
         PATCH_IF race = race_mephit OR
-                 race = race_salamander 
+                 race = race_salamander
         BEGIN
             READ_BYTE 0x27b alignment
             PATCH_IF alignment = alignmen_chaotic_good OR
                     alignment = alignmen_lawful_good  OR
-                    alignment = alignmen_neutral_good 
+                    alignment = alignmen_neutral_good
 
             BEGIN
                 ++matches
@@ -537,7 +536,7 @@ ACTION_IF zs_debug BEGIN
                 PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be not good: %SOURCE_RES% -- %name%"
             END
 
-        END 
+        END
 
         PATCH_IF class  != class_innocent            AND
                  class  != class_druid               AND
@@ -593,7 +592,7 @@ ACTION_IF zs_debug BEGIN
             READ_BYTE 0x27b alignment
             PATCH_IF alignment != alignmen_chaotic_evil AND
                      alignment != alignmen_lawful_evil  AND
-                     alignment != alignmen_neutral_evil 
+                     alignment != alignmen_neutral_evil
             BEGIN
                 ++matches
                 READ_STRREF 0x08 name ELSE "Unknown name"
@@ -604,7 +603,7 @@ ACTION_IF zs_debug BEGIN
                 PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be evil: %SOURCE_RES% -- %name%"
             END
 
-        END 
+        END
 
         ELSE
 
@@ -617,7 +616,7 @@ ACTION_IF zs_debug BEGIN
             READ_BYTE 0x27b alignment
             PATCH_IF alignment != alignmen_chaotic_good AND
                     alignment != alignmen_lawful_good  AND
-                    alignment != alignmen_neutral_good 
+                    alignment != alignmen_neutral_good
             BEGIN
                 ++matches
                 READ_STRREF 0x08 name ELSE "Unknown name"
@@ -654,13 +653,13 @@ ACTION_IF zs_debug BEGIN
                   race    = race_wyvern          OR
                   race    = race_lizardman       OR
      //           ((race    = race_mist OR class = class_mist) AND general != general_undead) OR
-                (race    = race_salamander AND class != class_salamander_frost)  
+                (race    = race_salamander AND class != class_salamander_frost)
         BEGIN
-          
+
           READ_BYTE 0x27b alignment
           PATCH_IF alignment != alignmen_chaotic_neutral AND
                   alignment != alignmen_lawful_neutral  AND
-                  alignment != alignmen_neutral 
+                  alignment != alignmen_neutral
 
           BEGIN
               ++matches

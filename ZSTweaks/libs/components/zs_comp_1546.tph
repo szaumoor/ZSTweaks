@@ -137,7 +137,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
             END
 
         END
-        
+
     END
 BUT_ONLY
 

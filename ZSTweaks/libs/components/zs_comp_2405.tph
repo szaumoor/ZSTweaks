@@ -52,8 +52,8 @@ COPY_EXISTING ~spcl731.spl~ ~override~
     LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur=6 level_cap=40 END
 
     FOR ( h = 2; i <= 40; ++header ) BEGIN
-        
-        SET fourth_diff = h - (h MODULO 4) 
+
+        SET fourth_diff = h - (h MODULO 4)
         PATCH_IF h < 10 BEGIN SPRINT h_str "0%fourth_diff%"
         END ELSE BEGIN SPRINT h_str "%fourth_diff%" END
 

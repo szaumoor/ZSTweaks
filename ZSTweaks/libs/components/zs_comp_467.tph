@@ -1,5 +1,5 @@
 ACTION_IF NOT is_iwdee BEGIN
-    
+
     COPY ~%MOD_FOLDER%/spells/divine/sunray~ ~override~
     COPY_EXISTING ~sppr707.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@8120) END
@@ -58,7 +58,7 @@ COPY_EXISTING ~sppr609.spl~ ~override~
     PATCH_IF is_iwdee BEGIN SPRINT tra_ref @8131 END ELSE BEGIN SPRINT tra_ref @8130 END
     LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(tra_ref) END
     LPF ALTER_HEADER INT_VAR speed = 4 END
-    
+
     PATCH_IF NOT is_iwdee OR is_iwdee AND NOT has_eefixpack BEGIN
         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 5 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 12 parameter2 = op12_magic END
@@ -72,7 +72,7 @@ ACTION_IF is_iwdee AND has_eefixpack BEGIN
 
 END
 
-COPY_EXISTING ~dawnvis.eff~ ~override~ 
+COPY_EXISTING ~dawnvis.eff~ ~override~
                 ~dawncon.eff~ ~override~
     WRITE_LONG 0x14 2 // targeting
     WRITE_LONG 0x38 0

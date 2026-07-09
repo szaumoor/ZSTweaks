@@ -7,12 +7,12 @@ COPY_EXISTING ~kitlist.2da~ ~override~
     PATCH_IF class = class_thief OR class = class_bard OR class = class_monk BEGIN
       READ_2DA_ENTRY index 5 9 clab
       DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN "%clab%" => "%class%" END
-    END  
+    END
 
   END
 
 ACTION_DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN
-  clabth01 =>  class_thief 
+  clabth01 =>  class_thief
   clabba01 =>  class_bard
   clabmo01 =>  class_monk
 END
@@ -23,7 +23,7 @@ ACTION_PHP_EACH my_clabs AS clab => class BEGIN
     ELSE BEGIN OUTER_SET lvl = 3 END
 
     COPY_EXISTING ~%clab%.2da~ ~override~
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = lvl STR_VAR f_Entry = "AP_ZSTEVAD0" END 
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = lvl STR_VAR f_Entry = "AP_ZSTEVAD0" END
 
 END
 

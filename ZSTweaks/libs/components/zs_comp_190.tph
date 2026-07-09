@@ -27,7 +27,7 @@ ACTION_IF zst_190_hpower_apr BEGIN
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target=1 insert_point = 0 STR_VAR resource = ~zstwapr0~ END
 
   ACTION_IF zst_190_hpower_apr_nonfighters_only BEGIN
-  
+
     COPY_EXISTING ~zstwapr1.spl~ ~override~
       PATCH_FOR_EACH c IN fighter_all ranger_all paladin_all BEGIN
         LPF ADD_SPELL_EFFECT INT_VAR opcode=318 target=1 parameter1=IDS_OF_SYMBOL(class "%c%") parameter2=105 insert_point=0 power=4 STR_VAR resource=~%SOURCE_RES%~ END

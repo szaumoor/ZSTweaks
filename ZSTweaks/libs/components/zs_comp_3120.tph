@@ -14,7 +14,7 @@ ACTION_IF NOT is_iwdee BEGIN
       PATCH_IF hit_sound < 0 BEGIN
 
         WRITE_LONG 0xec 5870
-        
+
       END
 
     END
@@ -72,8 +72,8 @@ ACTION_IF NOT is_iwdee BEGIN
         PATCH_IF BYTE_AT 0x63 < 15 BEGIN
           WRITE_BYTE 0x63 15
         END
-        
-      END 
+
+      END
 
     END
   BUT_ONLY
@@ -93,7 +93,7 @@ COPY_EXISTING ~goliro01.cre~ ~override~
   PATCH_IF BYTE_AT 0x5b > 0 BEGIN
     WRITE_BYTE 0x5b 0
   END
-  
+
   PATCH_IF BYTE_AT 0x60 < 35 BEGIN
     WRITE_BYTE 0x60 35
   END
@@ -188,7 +188,7 @@ COPY_EXISTING ~zstgolqk.spl~ ~override~
 COPY_EXISTING ~golada01.cre~ ~override~
               ~golkill2.cre~ ~override~
               ~gordeckb.cre~ ~override~
-              
+
   ADD_CRE_ITEM "helmnoan" #0 #0 #0 ~unstealable&undroppable~ "helmet"
   WRITE_BYTE 0x238 25 //str
 

@@ -37,6 +37,5 @@ ACTION_IF !VARIABLE_IS_SET zs_npc_array BEGIN
         END
     BUT_ONLY
 
-
     OUTER_SET zs_npc_array = 1
 END

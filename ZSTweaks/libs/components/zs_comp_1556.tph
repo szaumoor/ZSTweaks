@@ -14,7 +14,6 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF ALTER_ITEM INT_VAR general_desc=desc id_desc=desc END
             LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=18,p1=5,p2=3~ END
 
-
         ACTION_IF zst_1556_keepsake_locket_restrict BEGIN
 
             PRINT "[INFO]: Ensuring only CHARNAME and Jaheira can wear the Keepsake Locket..."

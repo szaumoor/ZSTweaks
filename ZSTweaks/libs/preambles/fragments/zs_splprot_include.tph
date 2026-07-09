@@ -1,5 +1,5 @@
 ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
-    
+
     PRINT "[INFO]: Adding and/or finding all splprot entries required for Kaelyn's mods..."
 
     // ----------------------------------------------------------------
@@ -83,7 +83,7 @@ ACTION_IF !VARIABLE_IS_SET zs_splprot BEGIN
 
         APPEND ~splprot.2da~ ~ZS_CLASS=THIEF%TAB%0x10d%TAB%4%TAB%1~         UNLESS ~ZS_CLASS=THIEF~
         APPEND ~splprot.2da~ ~ZS_CLASS=BARD_ALL%TAB%0x10d%TAB%206%TAB%1~    UNLESS ~ZS_CLASS=BARD_ALL~
-        
+
         APPEND ~splprot.2da~ ~ZS_HAS_STONESKINS%TAB%88%TAB%1%TAB%4~         UNLESS ~ZS_HAS_STONESKINS~
         APPEND ~splprot.2da~ ~ZS_HAS_NO_STONESKINS%TAB%88%TAB%1%TAB%2~      UNLESS ~ZS_HAS_NO_STONESKINS~
 

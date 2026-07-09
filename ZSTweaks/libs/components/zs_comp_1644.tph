@@ -7,7 +7,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                   ~npclck.itm~ ~override~
                   ~npplat.itm~ ~override~
                   ~nparm.itm~  ~override~
-        LPM RM_STAT_REQS 
+        LPM RM_STAT_REQS
 
     COPY_EXISTING ~npsw04.itm~ ~override~
         PATCH_IF NOT MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1643" AND NOT group_component BEGIN
@@ -28,7 +28,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     // item upgrade patch, no stat requirements
     COPY_EXISTING ~c2valy01.ITM~ ~override~
 
-        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1170" OR 
+        PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1170" OR
                 (MOD_IS_INSTALLED ~ZSTweaks.tp2~ "1001" AND zst_group_1170_shadow_dragon_armor )
         BEGIN
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50031) END

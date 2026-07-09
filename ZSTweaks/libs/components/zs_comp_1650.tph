@@ -6,7 +6,7 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     PATCH_IF "%armor_appearance%" STR_EQ "2w" BEGIN // apperance of simple robes
       LPF ALTER_ITEM STR_VAR appearance="3w" END
     END
-    
+
   END
 
 BUT_ONLY

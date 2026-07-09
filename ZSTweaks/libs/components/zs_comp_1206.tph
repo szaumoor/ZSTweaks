@@ -6,7 +6,7 @@ ACTION_IF NOT is_iwdee BEGIN
     LAF CREATE_EQ_EFF STR_VAR filename = ~zstwpur0~ RET file_ext END // priest slots level 1
     COPY_EXISTING ~%file_ext%~ ~override/zstwpur1.eff~ // priest slots level 2
       LPF ALTER_EFF_FILE INT_VAR parameter2 = 2 END
-    
+
     COPY_EXISTING ~bdring10.itm~ ~override~
       LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@7820) END
       LPF CLONE_EFFECT INT_VAR match_opcode=219 opcode = 178 special = 1 END

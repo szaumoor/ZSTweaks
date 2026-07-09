@@ -26,5 +26,5 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         END
 
         LPF ALTER_EFFECT INT_VAR match_opcode = 215 STR_VAR resource = ~icfirsdi~ END
-        
+
 END

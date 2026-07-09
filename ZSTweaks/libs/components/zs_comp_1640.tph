@@ -1,7 +1,7 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND 
-                                            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR 
+    OUTER_SET two_handed_comp_installed = zst_1150_dice_twohanded_swords AND
+                                            (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
                                             (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND zst_group_1150_weapon_dice))
 
     COPY_EXISTING "ohdsw2ha.itm" ~override~
@@ -23,7 +23,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         END ELSE BEGIN
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6660) END
         END
-        
+
     COPY_EXISTING "ohdsw2hb.itm" ~override~
         PATCH_IF two_handed_comp_installed BEGIN
             SPRINT new_description @6670
@@ -36,7 +36,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         END ELSE BEGIN
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6670) END
         END
-        
+
     COPY_EXISTING "ohdsw2hc.itm" ~override~
         PATCH_IF two_handed_comp_installed BEGIN
             SPRINT new_description @6680
@@ -61,7 +61,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             SAY_EVALUATED 0x54 ~%new_description%~
         END ELSE BEGIN
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6690) END
-        END      
+        END
 
     COPY_EXISTING "ohdsw2hb.itm" ~override~
                   "ohdsw2hc.itm" ~override~
@@ -73,5 +73,5 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY_EXISTING "holyaven.eff" ~override~
         LPF ALTER_EFF_FILE INT_VAR special = 1024 END
-    
+
 END

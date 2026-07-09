@@ -6,7 +6,7 @@ ACTION_IF NOT is_iwdee BEGIN
         WRITE_LONG 0x18 (2**3 + 2**5)
 
     COPY_EXISTING ~gorwom01.cre~ ~override~ // nalmissra WK
-        WRITE_LONG 0x28 24593 // new animation, cleric female elf      
+        WRITE_LONG 0x28 24593 // new animation, cleric female elf
         ADD_CRE_ITEM ~zstwings~ #0 #0 #0 ~unstealable&undroppable~ ~helmet~ // the wings
         ADD_CRE_ITEM ~ichan01~ #0 #0 #0 ~unstealable&undroppable~ ~armor~ // to make her look more normal
         WRITE_BYTE 0x2c 46 // ensure vanilla
@@ -18,7 +18,7 @@ ACTION_IF NOT is_iwdee BEGIN
         WRITE_BYTE 0x32 198 // new hair color (black scarlet, also paints the wings, hence the change from pure white)
     IF_EXISTS
 
-    COPY_EXISTING ~demsuc01.cre~ ~override~ // 
+    COPY_EXISTING ~demsuc01.cre~ ~override~ //
         WRITE_LONG 0x28 24593 // new animation, cleric female elf
         ADD_CRE_ITEM ~zstwings~ #0 #0 #0 ~unstealable&undroppable~ ~helmet~ // the wings
         ADD_CRE_ITEM ~ichan01~ #0 #0 #0 ~unstealable&undroppable~ ~armor~ // to make her look more normal
@@ -31,7 +31,7 @@ ACTION_IF NOT is_iwdee BEGIN
         WRITE_BYTE 0x32 182 // new hair color (deep black)
     IF_EXISTS
 
-    COPY_EXISTING ~gorsuc01.cre~ ~override~ // 
+    COPY_EXISTING ~gorsuc01.cre~ ~override~ //
         WRITE_LONG 0x28 24593 // new animation, cleric female elf
         ADD_CRE_ITEM ~zstwings~ #0 #0 #0 ~unstealable&undroppable~ ~helmet~ // the wings
         WRITE_BYTE 0x2c 5 // medium silver
@@ -43,7 +43,7 @@ ACTION_IF NOT is_iwdee BEGIN
         WRITE_BYTE 0x32 66 // new hair color (faded black)
     IF_EXISTS
 
-    COPY_EXISTING ~gortan2.cre~ ~override~ // 
+    COPY_EXISTING ~gortan2.cre~ ~override~ //
         WRITE_LONG 0x28 24593 // new animation, cleric female elf
         ADD_CRE_ITEM ~zstwings~ #0 #0 #0 ~unstealable&undroppable~ ~helmet~ // the wings
         WRITE_BYTE 0x2c 109 // terra cotta
@@ -57,7 +57,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
     ACTION_IF NOT has_pits_of_despair BEGIN
 
-        COPY_EXISTING ~ohbdem04.cre~ ~override~ // 
+        COPY_EXISTING ~ohbdem04.cre~ ~override~ //
             WRITE_LONG 0x28 24593 // new animation, cleric female elf
             ADD_CRE_ITEM ~zstwings~ #0 #0 #0 ~unstealable&undroppable~ ~helmet~ // the wings
             WRITE_BYTE 0x2c 38 // light dirt brown
@@ -71,7 +71,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
     END
 
-    COPY_EXISTING ~kirinh.cre~ ~override~ // 
+    COPY_EXISTING ~kirinh.cre~ ~override~ //
         WRITE_LONG 0x28 24593 // new animation, cleric female elf
         ADD_CRE_ITEM ~zstwings~ #0 #0 #0 ~unstealable&undroppable~ ~helmet~ // the wings
         WRITE_BYTE 0x2c 25 // dark pure gold
@@ -84,8 +84,8 @@ ACTION_IF NOT is_iwdee BEGIN
     IF_EXISTS
 
     COPY_EXISTING ~ohbdev04.cre~ ~override~ // erinyes
-                  ~gorbat2.cre~  ~override~ 
-                  ~deriny01.cre~ ~override~ 
+                  ~gorbat2.cre~  ~override~
+                  ~deriny01.cre~ ~override~
         WRITE_LONG 0x28 0x6111 // new animation, fighter female elf
         ADD_CRE_ITEM ~zstwings~ #0 #0 #0 ~unstealable&undroppable~ ~helmet~ // the wings
         ADD_CRE_ITEM ~chan04~ #0 #0 #0 ~unstealable&undroppable~ ~armor~ // to make her look more normal

@@ -13,5 +13,3 @@ ACTION_IF NOT is_iwdee BEGIN
     LPF ALTER_ITEM INT_VAR id_name=new_name id_desc=new_description END
 
 END
-
-

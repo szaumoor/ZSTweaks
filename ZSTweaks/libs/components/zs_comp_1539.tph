@@ -32,7 +32,7 @@ ACTION_IF zst_1539_all_no_reqs BEGIN
                 END
             END
         END
-        
+
     BUT_ONLY
 
 END ELSE ACTION_IF zst_1539_all_reqs BEGIN
@@ -146,7 +146,7 @@ END ELSE ACTION_IF zst_1539_rogues_no_reqs BEGIN
                 END
             END
         END
-        
+
     BUT_ONLY
 
 END ELSE ACTION_IF zst_1539_rogues_reqs BEGIN

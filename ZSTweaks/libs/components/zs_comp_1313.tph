@@ -1,5 +1,5 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
-  
+
   DEFINE_PATCH_MACRO patch_file BEGIN
     LPF ADD_SPL_TGTEFF INT_VAR rd=0 dur=12 pwr=0 STR_VAR effects = ~op=321,dur=0,res=%SOURCE_RES%;op=0,p1=-1;op=73,p1=-1;op=278,p1=-1;op=142,p2=137~ END
   END

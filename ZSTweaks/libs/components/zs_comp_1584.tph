@@ -9,7 +9,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ALTER_HEADER INT_VAR primary=6 range=1000 target=1 STR_VAR match_icon="spwi304b" icon="spwi712b" END
     LPF ALTER_EFFECT INT_VAR header_type=3 header=1 match_opcode=146 parameter1=20 parameter2=0 duration=0 timing=0 power=7 STR_VAR resource=~spwi712~ END
 
-    PATCH_IF zst_1150_dice_bastard_swords AND 
+    PATCH_IF zst_1150_dice_bastard_swords AND
             (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
             (MOD_IS_INSTALLED "ZSTweaks.tp2" "103" AND
              zst_group_1150_weapon_dice))

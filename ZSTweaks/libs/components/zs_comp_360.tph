@@ -67,5 +67,5 @@ ACTION_IF zst_360_favored_spirits BEGIN
     COPY_EXISTING ~spcl941.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7530) END
         LPF ALTER_EFFECT_EX INT_VAR check_globals=0 duration=7200 STR_VAR match_duration_ex="(o_duration >= 300 AND o_duration < 7200)" END
-        
+
 END

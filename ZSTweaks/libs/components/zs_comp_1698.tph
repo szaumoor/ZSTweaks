@@ -1,9 +1,9 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
-  
+
   COPY ~%MOD_FOLDER%/items/staff_power~ ~override~
   COPY_EXISTING ~staf12.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@42424) STR_VAR appearance = "q4" ench=4 END
-    LPF ALTER_HEADER INT_VAR match_type=1 speed=2 END 
+    LPF ALTER_HEADER INT_VAR match_type=1 speed=2 END
     LPF CLONE_HEADER INT_VAR match_type=1 type=2 dicesize=0 dicenumber=0 range=30 projectile=70 overhand=20  backhand=80 flag_str_damage=0 STR_VAR icon = "spwi112c" END
 
     LPF ADD_ON_HIT_EFF INT_VAR t=1 pro1=9 stype=1 STR_VAR effects = ~op=45,dur=15;op=139,p1=1280~ END
@@ -15,7 +15,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     LPF ALTER_HEADER INT_VAR match_type=3 charges = 1 STR_VAR match_icon = ~spwi602b~ END
     LPF ALTER_HEADER INT_VAR match_type=3 charges = 2 STR_VAR match_icon = ~spwi308b~ END
-    
+
   OUTER_SET opcode = 206
   OUTER_SPRINT res "spwi101"
   COPY_EXISTING_REGEXP ~^.+\.\(itm\|spl\)$~ ~override~

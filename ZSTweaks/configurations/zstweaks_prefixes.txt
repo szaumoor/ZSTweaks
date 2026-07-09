@@ -8,10 +8,10 @@ OUTER_SET zs_allow_prefixes = "1" // leave at 1 (ON) to fix various issues, incl
 // this is needed for my shield tweak and ensures each type can be detected
 // reason being, different categories of shields lack a specific field to differentiate them
 // harmless even if you don't plan on using the tweak
-OUTER_SET zst_shield_std_fix = "1" 
+OUTER_SET zst_shield_std_fix = "1"
 
 // In vanilla game, many creatures are inappropriately set to 'male' (never female, I wonder why?) even though they should be completely independent of it, such as golems, statues, mists, fungus, slimes, mind flayers... all of them are according to the lore, sexless and genderless creatures. This interferes with opcodes that target based on gender/sex, leading to results that will be anything but logical. It is recommended to leave this on if you're planning on installing something that targets "gender" of male or female, such as my Shar-Teel component
-OUTER_SET zst_gender_fix = "1" 
+OUTER_SET zst_gender_fix = "1"
 
 // fixes Ras and Sword of Mordenkainen set class-wise randomly to gnoll, and std's them to long sword, as in BGEE
 OUTER_SET zst_dancing_swords = "1"
@@ -26,7 +26,7 @@ OUTER_SET zst_phantom_blade_dmg = "1"
 OUTER_SET zst_wraith_spid_undead = "1"
 
 // fixes the unfix from the fixpack that makes the benefits to the user when hitting with blackrazor and black blade of disaster apply to the enemy instead of the user
-OUTER_SET zst_eefp_unfix_blackrazor_bbod = "1" 
+OUTER_SET zst_eefp_unfix_blackrazor_bbod = "1"
 
 // fixes the shadowdancer shadow twin duration (2 turns instead of 1)
 OUTER_SET zst_shadow_twin_duration = "1"
@@ -66,7 +66,7 @@ OUTER_SET zst_gas_pocket = "1"
 // fix for wrong lilarcor speed factor
 OUTER_SET zst_lilarcor_speed_factor = "1"
 
-// standardizes animations of ninjatos and wakizashis. WARNING: this is REQUIRED for some components to detect those weapons consistently 
+// standardizes animations of ninjatos and wakizashis. WARNING: this is REQUIRED for some components to detect those weapons consistently
 OUTER_SET zst_wakininja_animations = "1"
 
 // fix for misaligned indexes in staff and dwarven thrower. Fixes some installation errors that happen sometimes.
@@ -105,7 +105,7 @@ OUTER_SET zst_green_dragons = "1"
 // water elementals not using the right class
 OUTER_SET zst_water_elementals = "1"
 
-// patches korax the ghoul so it's set to ghoul 
+// patches korax the ghoul so it's set to ghoul
 OUTER_SET zst_korax_race = "1"
 
 // fixing Riggilo in BGEE (Durlag Tower thief) so it uses short sword with proficiency

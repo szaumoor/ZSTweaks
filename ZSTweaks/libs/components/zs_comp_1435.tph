@@ -42,6 +42,6 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
             END
             SAY_EVALUATED 0x50 ~%desc%~
         END
-        
+
     END
 BUT_ONLY

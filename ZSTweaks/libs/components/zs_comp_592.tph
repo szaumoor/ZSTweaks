@@ -1,0 +1,30 @@
+DEFINE_PATCH_MACRO patch_file BEGIN
+    LPF ALTER_EFFECT INT_VAR END
+END
+LAF CREATE_SELF_SPL STR_VAR resource="zstwpsyc" END
+
+ACTION_IF is_bg2ee_or_eet BEGIN
+
+    EXTEND_BOTTOM ~ar0602.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar0602.baf~ // irenicus dungeon
+    EXTEND_BOTTOM ~ar4000.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar4000.baf~ // tob initial area
+    EXTEND_BOTTOM ~ar8000.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/oh8000.baf~ // black pits 2 initial area
+
+END
+
+ACTION_IF is_iwdee BEGIN
+
+    EXTEND_BOTTOM ~ar9100.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar9100.baf~ // HoW
+    EXTEND_BOTTOM ~ar1006.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar1006.baf~ // easthaven inn (iwdee)
+
+END
+
+ACTION_IF is_bgee OR is_eet BEGIN
+
+    EXTEND_BOTTOM ~ar2600.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar2600.baf~ // candlekeep area
+    EXTEND_BOTTOM ~oh9310.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/oh9310.baf~ // black pits 1 area
+
+    ACTION_IF is_eet OR includes_sod BEGIN
+        EXTEND_BOTTOM ~bd0120.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/bd0120.baf~ // sod initial area
+    END
+
+END

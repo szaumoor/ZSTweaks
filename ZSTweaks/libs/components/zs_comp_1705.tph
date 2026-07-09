@@ -16,7 +16,7 @@ ACTION_IF NOT is_iwdee BEGIN
         OUTER_SET baldur_weight = 7
         OUTER_SPRINT baldur_dice @55104
         OUTER_SPRINT baldur_proficiency @55101
-        
+
         OUTER_SET baldur_required_str = 11
         OUTER_SET baldur_speed_factor = 6
         OUTER_SPRINT baldur_appearance "s0"
@@ -28,11 +28,11 @@ ACTION_IF NOT is_iwdee BEGIN
 
         ACTION_IF NOT bastard_comp_installed BEGIN
             OUTER_SET baldur_dice_thrown = 2
-            OUTER_SET baldur_dicesize = 4                        
+            OUTER_SET baldur_dicesize = 4
             OUTER_SET baldur_bonus_damage = 2
         END ELSE BEGIN
             OUTER_SET baldur_dice_thrown = 1
-            OUTER_SET baldur_dicesize = 8                        
+            OUTER_SET baldur_dicesize = 8
             OUTER_SET baldur_bonus_damage = 3
         END
 
@@ -83,5 +83,5 @@ ACTION_IF NOT is_iwdee BEGIN
 
         LPF ADD_ON_HIT_EFF INT_VAR p2=4 STR_VAR res=~zstbldu0~ effects = ~op=177,p1=%race_lycanthrope%;op=177,p1=%race_dragon%;op=177,p1=%race_mimic%;op=177,p1=%race_doppleganger%;op=177,p1=%race_vampire%;op=177,p1=%race_vampyre%;op=177,p1=%race_rakshasa%;op=177,p1=%race_demonic%;op=177,p2=5,p1=%class_druid_all%~ END
     IF_EXISTS
- 
+
 END

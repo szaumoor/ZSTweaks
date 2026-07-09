@@ -15,15 +15,15 @@ COPY_EXISTING ~kitlist.2da~ ~override~
     PATCH_IF class = class_thief BEGIN
       READ_2DA_ENTRY index 5 9 clab
       DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN "%clab%" => "%class%" END
-    END  
+    END
 
   END
 
 ACTION_DEFINE_ASSOCIATIVE_ARRAY my_clabs BEGIN
-  clabth01 =>  class_thief 
+  clabth01 =>  class_thief
 END
 
 ACTION_PHP_EACH my_clabs AS clab => _ BEGIN
   COPY_EXISTING ~%clab%.2da~ ~override~
-    LPF set_clab_2da_entries INT_VAR f_MinLevel = 4 f_MaxLevel = 4 STR_VAR f_Entry = "AP_ZSTCRPK0" END  
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 4 f_MaxLevel = 4 STR_VAR f_Entry = "AP_ZSTCRPK0" END
 END

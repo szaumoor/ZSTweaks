@@ -1,4 +1,4 @@
-DEFINE_PATCH_FUNCTION add_immunity_to 
+DEFINE_PATCH_FUNCTION add_immunity_to
 INT_VAR
     p1 = "-1"
     p2 = "-1"
@@ -10,8 +10,8 @@ STR_VAR
     i = "above"
     res = "%SOURCE_RES%"
 BEGIN
-    LPF CLONE_EFFECT 
-        INT_VAR 
+    LPF CLONE_EFFECT
+        INT_VAR
             match_opcode = 12
             multi_match = 1
             opcode = 324
@@ -19,8 +19,8 @@ BEGIN
             parameter2 = (p2 > "-1" ? p2 : 104)
             parameter1 = (p1 > "-1" ? p1 : race)
             dicesize = min_level
-        STR_VAR 
-            insert=i 
+        STR_VAR
+            insert=i
             resource=res
     END
 END
@@ -44,7 +44,7 @@ COPY_EXISTING ~spcl411.spl~ ~override/zstrpim2.spl~ // protected damage (slay/po
     LPF ALTER_HEADER INT_VAR projectile = 0 END
     LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 318 OR o_opcode = 12)" END
     LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_piercing END
-    
+
 
 COPY_EXISTING ~spcl411.spl~ ~override~
     PATCH_IF zst_3180_immunity_by_type BEGIN
