@@ -42,6 +42,7 @@
 - Fixed critical hits' extra damage with ranged voidweapons hitting instantly instead of at the same time (roughly)
 - Small misc code and efficiency improvements
 - Fixed golem component marking undefined amounts of creatures as modified even if they were not modified
+- Fixed a gonk error in the Energy Drain component that wasn't properly protecting certain creatures from the spell in games without IWDification spells
 
 ## Modifications
 

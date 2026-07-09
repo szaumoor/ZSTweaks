@@ -267,7 +267,22 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
-The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining <PRO_HIMHER> of 6 levels of experience. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell.~
+The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a living victim and draining them of 6 levels of experience. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently, and if they die within 1 turn after Energy Drain is cast on them, their body is utterly destroyed, replaced by a powerful allied Devil Shade. These levels can only be restored by a priest's Restoration spell. The caster is, in turn, temporarily empowered by it, effectively taking some of the power that was drained to temporarily empower themselves for 4 hours (20 turns):
+
+– 50% of their maximum Hit Points plus 3d6 extra are healed instantly, and any level drain they might have is also cured
+– Spell recovery: 1 arcane spell of up to level 8 and 2 more of up to level 7 are recovered. Divine spells are also affected, recovering 1 divine spell from up to level 7 and 2 more of up to level 6.
+– +6 THAC0 (+3 for mages/thieves, +1 for mages with fighter classes)
+– +2 Strength, +2 attack damage (none for mages with fighter classes)
+– This effect cannot be dispelled, and the target of Energy Drain must not be an ally for the caster to benefit from this
+– This effect may only occur once per 8 hours on the caster, subsequent castings of Energy Drain within a short period of time will not continuously yield this benefit. However, the healing part of it will always apply.
+
+Finally, this spell also acts in the opposite manner on the undead, empowering them for 8 hours instead:
+
+– Fully healed, and their maximum Hit Points are increased by 20%
+– +3 Strength, +1 attack per round, and they always attack as if they wielded at least +4 weapons
+– Armor Class improves by 4, and their damage resistances increase by 15% (30% in the case of magic damage)
+– Movement rate increases by 50%
+– Immunity to turning~
 
 @5260 = ~Aid
 (Necromancy, Conjuration)
