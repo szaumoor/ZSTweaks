@@ -2447,7 +2447,7 @@ Enchanted as a +4 weapon for the purposes of what it can hit and it lasts for 3 
 
 ### Make Priests of Talos get access to all electricity spells and add a small bonus to electricity damage (2408)
 
-This component gives Priests of Talos access to most electricity-based of wizards and druids by default and a 5% electricity damage bonus. The latter is optional and can be disabled in the configuration file, and the percentage bonus can also be configured. It will patch any Priests of Talos that may exist in the game to add this boost.
+This component gives Priests of Talos access to most electricity-based of wizards and druids by default (including Whirlwind as a bonus, if IWD spells are present) and a 5% electricity damage bonus. The latter is optional and can be disabled in the configuration file, and the percentage bonus can also be configured. It will patch any Priests of Talos that may exist in the game to add this boost.
 
 ### Make Divine Favor's duration scale very slowly with level (3190)
 

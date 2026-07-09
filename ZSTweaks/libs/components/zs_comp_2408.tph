@@ -2,10 +2,10 @@ COPY_EXISTING ~spwi115.spl~ ~override/zstwz115.spl~
     WRITE_SHORT 0x1c 2
 
 ACTION_FOR_EACH ability IN
-    ~GA_SPDR301~ // lightning bolt (avenger)
-    ~GA_SPDR601~ // chain lightning (avenger)
+    ~GA_SPDR301~  // lightning bolt (avenger)
+    ~GA_SPDR601~  // chain lightning (avenger)
     ~GA_ZSTWZ115~ // shocking grasp
-    ~GA_SPPR302~ // call lightning
+    ~GA_SPPR302~  // call lightning
 BEGIN
   COPY_EXISTING ~clabpr02.2da~ ~override~
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = "%ability%" END
