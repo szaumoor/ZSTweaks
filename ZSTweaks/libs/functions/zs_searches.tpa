@@ -120,10 +120,6 @@ BEGIN
         PATCH_IF opcode <= 0 BEGIN
             PATCH_FAIL ~[DEBUG][FAIL]: Invalid opcode specified for SPELL_OPCODE_PRESENT.~
         END
-
-        PATCH_IF NOT (VARIABLE_IS_SET "parameter2" OR VARIABLE_IS_SET "resource") BEGIN
-            PATCH_FAIL "[DEBUG][FAIL]: Must provide at least parameter2 or resource to SPELL_CODE_PRESENT"
-        END
     END
 
     READ_LONG 0x64 ability_offset
@@ -180,10 +176,6 @@ BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "ITM" END
         PATCH_IF opcode <= 0 BEGIN
             PATCH_FAIL ~[DEBUG][FAIL]: Invalid opcode specified for ITM_OPCODE_PRESENT.~
-        END
-
-        PATCH_IF NOT (VARIABLE_IS_SET "parameter2" OR VARIABLE_IS_SET "resource") BEGIN
-            PATCH_FAIL "[DEBUG][FAIL]: Must provide at least parameter2 or resource to SPELL_CODE_PRESENT"
         END
     END
 

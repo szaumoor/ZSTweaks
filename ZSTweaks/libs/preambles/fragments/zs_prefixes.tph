@@ -2,8 +2,9 @@ ACTION_IF !VARIABLE_IS_SET ZS_MARKER_FILE_EXISTS BEGIN
     OUTER_SET ZS_MARKER_FILE_EXISTS = FILE_EXISTS_IN_GAME "zssetup.rp"
 END
 
-ACTION_IF zs_debug BEGIN
+ACTION_IF zs_debug AND !VARIABLE_IS_SET ~zs_debug_warning~ BEGIN
     PRINT "[WARN]: W A R N I N G!!! zs_debug flag is ON. This should be off in normal installations, as it will make things slower and force more code than normal to run. Disregard if truly intended."
+    OUTER_SET zs_debug_warning = 1
 END
 
 ACTION_IF zs_allow_prefixes BEGIN

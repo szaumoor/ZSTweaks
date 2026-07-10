@@ -48,16 +48,16 @@ ACTION_IF zst_2408_electricity_boost AND zst_2408_electricity_boost_pctg > 0 BEG
 
     SILENT
     ACTION_PHP_EACH NPC_ARRAY AS file => dv BEGIN
+
         ACTION_IF IS_AN_INT dv BEGIN // non-joinable NPC
             COPY_EXISTING ~%file%~ ~override~
                 SET kit = SHORT_AT 0x246 | (SHORT_AT 0x244) << 16
-                PATCH_IF kit = kit_talos BEGIN
-                    PATCH_IF priest_talos_electricity AND zst_2408_electricity_boost_pctg > 0 BEGIN
-                    LPF ADD_CRE_EFFECT INT_VAR opcode = 332 timing = 9 parameter2 = 1 parameter1 = zst_2408_electricity_boost_pctg END
-                    END
+                PATCH_IF kit = kit_talos BEGIN  
+                    LPF ADD_CRE_EFFECT INT_VAR opcode = 332 timing = 9 parameter2 = 1 parameter1 = zst_2408_electricity_boost_pctg END 
                 END
             BUT_ONLY
         END
+
     END
     VERBOSE
 
