@@ -35,6 +35,7 @@ I am open to providing compatibility for other mods. You can contact me on the f
 - Shades of the Sword Coast
 - Talents of Faêrun
 - The Artisan's Kitpack
+- The Pursuit of Justice
 - Wares of the Planes
 - ZS_ItemPack
 - ZS_ShadowdancerOverhaul
@@ -44,6 +45,7 @@ I am open to providing compatibility for other mods. You can contact me on the f
 - I recommend [Xgatt's Casting Level fix](https://github.com/Xgatt/XGTCumulativeCasterLevels) if you use EEex, since it will make any of the tweaks that I do to casting level work in harmony with other effects that change caster level.
 - EEFixpack. It's not completely polished, but it fixes tons of things and eventually will probably be a backbone for every game setup. My mod also fixes some things that are unaddressed by it (or currently messed up by it, such as poor Blackrazor)
 - IWDification, especially the IWD spell packs for BG, so my tweaks can take full advantage. They also make druids and paladins significantly more interesting and capable as spellcasters
+- Any mods that improve Thieves, like RR, allowing them 3 pips in Two-weapon fighting. Join me in my crusade to make them better as a standalone class.
 
 ## Notes for users and modders
 
@@ -75,11 +77,11 @@ Two possible reasons that I know of:
 
 ### Why am I seeing lines in the console saying that 0 files were copied and patched?
 
-Because the file I'm trying to patch is not found in your specific game, but might be in a different game. This is not an error, just a quirk of how weidu reports it.
+Because the file I'm trying to patch is not found in your specific game, but might be in a different game. This is not an error, just a quirk of how WeiDu reports it.
 
 ### I'm seeing a warning for the first component I install, but I'm sure it's working as expected
 
-My mod runs a bunch of scripts before installing the first component, including scripts that fixes a fair amount of issues and inconsistencies in the game. If you see a warning, it's possible you've found a problem there. Report it to me, preferably on my Discord server.
+My mod runs a bunch of scripts before installing the first component (whichever it might be), including scripts that fix a fair amount of issues and inconsistencies in the game, and problems with previously-installed mods. If you see a warning, it's possible you've found a problem there. Report it to me, preferably on my Discord server.
 
 ## Credits
 

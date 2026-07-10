@@ -1,5 +1,5 @@
 DEFINE_PATCH_MACRO patch_file BEGIN
-    LPF ALTER_EFFECT INT_VAR END
+    LPF ADD_SPL_SELFEFF INT_VAR pwr=0 tmg=9 STR_VAR effects = ~op=23,spec=1,p1=%zst_592_morale%;op=106,p1=%zst_592_morale_break%~ END
 END
 LAF CREATE_SELF_SPL STR_VAR resource="zstwpsyc" END
 
