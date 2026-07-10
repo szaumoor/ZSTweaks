@@ -48,7 +48,7 @@ DEFINE_ACTION_MACRO CREATE_TG_SPL BEGIN
     END
 
     OUTER_SPRINT file_ext "%filename%.spl"
-    COPY ~%MOD_FOLDER%/templates/spl/1h_target.spl~ ~override/%file_ext%~
+    COPY ~%MOD_FOLDER%/templates/spl/1h_lactor.spl~ ~override/%file_ext%~
         LPM patch_file
 
     DEFINE_PATCH_MACRO patch_file BEGIN
