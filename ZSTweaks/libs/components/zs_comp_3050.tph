@@ -13,7 +13,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     END
 
-    COPY_EXISTING ~rr#dbalr~ ~override~
+    COPY_EXISTING ~rr#dbalr.itm~ ~override~
       LPF ALTER_EFFECT_EX
         INT_VAR
           probability1 = 14

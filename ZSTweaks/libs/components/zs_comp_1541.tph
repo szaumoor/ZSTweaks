@@ -38,6 +38,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ADD_ON_HIT_EFF INT_VAR ip=0 p2=104 dur=1 pro1=out_pro1 pro2=out_pro2 STR_VAR res = "zstwvrpa" effects = ~op=318,p2=27;op=318,p1=%race_slime%;op=318,p2=9;op=318,p1=%race_mist%;op=318,p1=%race_wraith%;op=318,p1=%race_shadow%;op=318,p1=%race_spectral_undead%;op=318,p1=%race_specter%;op=318,p1=%class_spectral_troll%,p2=105;op=318,p1=%race_skeleton%~ END
 
         LPF ALTER_EFFECT INT_VAR silent=1 match_opcode = 146 probability1 = out_pro1 probability2 = out_pro2 STR_VAR resource=~zstwvrpa~ match_resource="ca#vorpl" END
+        LPF ALTER_EFFECT INT_VAR silent=1 match_opcode = 146 probability1 = out_pro1 probability2 = out_pro2 STR_VAR resource=~zstwvrpa~ match_resource="rr#vorpl" END
         LPF ALTER_EFFECT INT_VAR check_globals = 0 match_probability1 = out_pro1 match_probability2 = out_pro2 savingthrow = 4 savebonus = "-4" END
     END
 
