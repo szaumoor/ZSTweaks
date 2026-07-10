@@ -5,6 +5,7 @@ INCLUDE ~%MOD_FOLDER%/libs/functions/zs_cdfunctions.tpa~ // CamDawg
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_avenger.tpa~ // avenger, with slight modifications
 
 // my function libraries
+INCLUDE ~%MOD_FOLDER%/libs/functions/zs_files.tpa~
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_add_effects.tpa~
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_alter_functions.tpa~
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_checks.tpa~
