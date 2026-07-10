@@ -24,7 +24,7 @@ ACTION_IF is_iwdee BEGIN
     COPY_EXISTING ~sppr739.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=new_description_priest END
         LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-        LPF ADD_SPL_TGTEFF INT_VAR tmg=0 rd=0 pwr=9 ip=0 p2=104 STR_VAR res="%SOURCE_RES%" effects = ~%the_effects%~ END
+        LPF ADD_SPL_TGTEFF INT_VAR tmg=0 rd=0 pwr=9 p2=104 STR_VAR res="%SOURCE_RES%" effects = ~%the_effects%~ END
 
 END ELSE ACTION_IF has_iwd_spells_divine BEGIN
 
@@ -33,7 +33,7 @@ END ELSE ACTION_IF has_iwd_spells_divine BEGIN
         COPY_EXISTING ~%spell_res%.spl~ ~override~
             LPF ALTER_SPELL INT_VAR desc = new_description_priest END
             LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-            LPF ADD_SPL_TGTEFF INT_VAR tmg=0 rd=0 pwr=9 ip=0 p2=104 STR_VAR res="%SOURCE_RES%" effects = ~%the_effects%~ END
+            LPF ADD_SPL_TGTEFF INT_VAR tmg=0 rd=0 pwr=9 p2=104 STR_VAR res="%SOURCE_RES%" effects = ~%the_effects%~ END
     END
 
 END
@@ -42,7 +42,7 @@ COPY_EXISTING ~spwi914.spl~  ~override~
               ~spwish19.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc=new_description END
     LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-    LPF ADD_SPL_TGTEFF INT_VAR tmg=0 rd=0 pwr=9 ip=0 p2=104 STR_VAR res="%SOURCE_RES%" effects = ~%the_effects%~ END
+    LPF ADD_SPL_TGTEFF INT_VAR tmg=0 rd=0 pwr=9 p2=104 STR_VAR res="%SOURCE_RES%" effects = ~%the_effects%~ END
 
 IF_EXISTS
 

@@ -71,5 +71,5 @@ COPY_EXISTING ~spwi912.spl~ ~override~
         LPF ADD_SPL_TGTEFF STR_VAR effects = ~op=318,pwr=9,rd=0,res=%SOURCE_RES%,p2=144,p1=%limit%~ END
     END
 
-    LPF ADD_SPL_TGTEFF INT_VAR pwr=9 STR_VAR res="zstwpwk0" effects = ~op=326,p2=145,p1=61;op=326,dnum=10;op=326,p2=144,p1=61,res=zstwpwk2~ END
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=9 rd=0 STR_VAR res="zstwpwk0" effects = ~op=326,p2=145,p1=61;op=326,dnum=10;op=326,p2=144,p1=61,res=zstwpwk2~ END
 

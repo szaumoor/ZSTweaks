@@ -23,6 +23,7 @@ ACTION_IF zst_170_wail_wish_bonus BEGIN
     COPY_EXISTING_REGEXP ".+\.\(spl\|itm\|cre\)" ~override~
       LPF CLONE_EFFECT INT_VAR silent=1 match_opcode = 204 match_parameter2 = 7 opcode = 206 STR_VAR resource=~zstwswl~ END
       LPF CLONE_EFFECT INT_VAR silent=1 match_opcode = 206 STR_VAR resource = ~zstwswl~ END
+    BUT_ONLY
   END
 
 END

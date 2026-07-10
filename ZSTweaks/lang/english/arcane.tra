@@ -675,8 +675,8 @@ When a Power Word, Kill spell is uttered, one creature within the spell range is
 
 – If the creature has 60 or fewer current Hit Points it dies immediately without any Saving Throw%mr_check% allowed.
 – Similarly, if the creature has 10 HD or less, it also dies without any Saving Throw%mr_check% allowed.
-– If the creature has more than 60 current Hit Points and their HD is 11 or 12, they die if a Save vs. Spell is failed.%hard_limit%
-– Finally, if the creature has more than 60 current Hit Points and their HD is higher than 12, they die if a Save vs. Spell at +4 is failed.
+– If the creature has more than 60 current Hit Points and their HD is 11 or 12, they die if a Save vs. Spell is failed.
+– If the creature has more than 60 current Hit Points and their HD is higher than 12, they die if a Save vs. Spell at +4 is failed.%hard_limit%
 
 %chunking_str%Lastly, even if they resist the spell through their Saving Throws, they take 4d6 magic damage instantly.~
 
@@ -687,8 +687,7 @@ When a Power Word, Kill spell is uttered, one creature within the spell range is
 @76005 = ~ or Magic Resistance check~
 @76006 =
 ~
-– However, creatures with more than %zst_585_pwk_HP_hard_limit% Hit Points are completely unaffected.
-~
+– However, creatures with more than %zst_585_pwk_HP_hard_limit% Hit Points are completely unaffected.~
 
 @80100 = ~Vampiric Feast~
 @80101 = ~Vampiric Feast
