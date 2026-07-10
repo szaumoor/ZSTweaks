@@ -689,6 +689,33 @@ When a Power Word, Kill spell is uttered, one creature within the spell range is
 ~
 – However, creatures with more than %zst_585_pwk_HP_hard_limit% Hit Points are completely unaffected.~
 
+@77000 = ~Haste
+(Alteration)
+
+Level: 3
+Range: 15 ft.
+Duration: 1 round per 3 levels
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+When this spell is cast, all creatures affected function at double their normal movement rate, gain a +2 speed factor bonus, and sets their attacks per round to the next closest whole number (up to 6, if the target can attack five times per round). Thus, a creature moving at 6 and attacking once per round would move at 12 and attack twice per round, and if such creature attacked 5/2 times per round, they would attack instead 3 times per round. At the instant the spell is completed, it affects all allied creatures in a 15-ft. radius centered on a point selected by the caster (thus, creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not). This spell is not cumulative with itself or with other similar magic. Spellcasting and spell effects are not affected. Note that this spell negates the effects of a Slow spell.~
+
+@77010 = ~Improved Haste
+(Alteration)
+
+Level: 6
+Range: 40 ft.
+Duration: 1 round per 4 levels
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+The affected creature functions at double its normal movement and attack rates and receives a +2 bonus to its speed factor. Thus, a creature moving at 6 and attacking three times per round would move at 12 and attack six times per round. Spellcasting and spell effects are not sped up. Unlike the third-level Haste spell, this spell affects only one creature and causes no fatigue upon them. This spell also negates the effects of a Slow spell, but it is not cumulative with itself or with other similar magic. Its effects will last for the duration or until dispelled.~
+
+@77020 = ~Haste
+When circumstances demand it, Mazzy can move at incredible speeds for brief periods of time. Using this ability, she resembles nothing so much as a body imbued with a wizard's Haste spell; she can run twice her normal distance in the same amount of time and sets their attacks per round to the next closest whole number (up to 6). Such a pace cannot be maintained indefinitely, however. The effect only lasts for 1 round per three levels before she slows again to her standard speed.~
+
 @80100 = ~Vampiric Feast~
 @80101 = ~Vampiric Feast
 (Any School)

@@ -19,15 +19,20 @@ DEFINE_PATCH_MACRO ~nerf_haste#improved~ BEGIN
 END
 
 COPY_EXISTING ~spin828.spl~ ~override~ // mazzy
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@77020) END
     LPM ~nerf_haste#normal~
+IF_EXISTS
 
 COPY_EXISTING ~spra301.spl~ ~override~ // kit_stalker
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@77000) END
     LPM ~nerf_haste#normal~
 
 COPY_EXISTING ~spwi305.spl~ ~override~ // wizard
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@77000) END
     LPM ~nerf_haste#normal~
 
 COPY_EXISTING ~spwi613.spl~ ~override~ // wizard improved haste
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@77010) END
     LPM ~nerf_haste#improved~
 
 COPY_EXISTING ~spwish36.spl~ ~override~ // improved haste wish
