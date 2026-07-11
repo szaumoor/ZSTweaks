@@ -43,6 +43,7 @@
 - Small misc code and efficiency improvements
 - Fixed golem component marking undefined amounts of creatures as modified even if they were not modified
 - Fixed a gonk error in the Energy Drain component that wasn't properly protecting certain creatures from the spell in games without IWDification spells
+- Fixed +1HP component affecting shields in an indiscriminate way which could include things that aren't technically shields but use the shield slot. The reliability of this depends heavily on the shield standardization prefix running.
 
 ## Modifications
 
