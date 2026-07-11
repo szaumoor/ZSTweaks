@@ -7,5 +7,5 @@ ACTION_IF FILE_EXISTS_IN_GAME ~rr#thl1a.spl~ BEGIN
     LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 ip=0 STR_VAR res="%SOURCE_RES%" effects = ~op=321,stype=4,sbonus=-4;op=318,p2=55;op=318,p1=%race_slime%,p2=104;op=318,p2=104,p1=%race_elemental%~ END
 
 END ELSE BEGIN
-  LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: RR's Crippling Strike not found, skipping. -- Harmless unless you have RR installed." END
+  LAF LOG_TEXT INT_VAR predicate_stdout = (NOT group_component) STR_VAR log_level="abort" message = "RR's Crippling Strike not found, skipping. -- Harmless unless you have RR installed." END
 END

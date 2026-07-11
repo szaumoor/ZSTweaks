@@ -7,7 +7,7 @@ ACTION_IF NOT is_iwdee BEGIN
       LPF ALTER_EFFECT INT_VAR check_headers = 0 match_parameter1 = 3 match_parameter2 = 0 parameter1 = 5 END
 
   END ELSE BEGIN
-    LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: Helm of the Dumathoin not found." END
+    LAF LOG_TEXT INT_VAR predicate_stdout = (NOT group_component) STR_VAR log_level="abort" message = "Helm of the Dumathoin (bdhelm09) not found. -- Harmless unless you are playing BGEE with SoD or in BG2EE" END
   END
 
 END

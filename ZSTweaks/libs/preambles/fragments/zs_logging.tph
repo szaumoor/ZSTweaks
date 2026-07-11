@@ -1,13 +1,25 @@
-ACTION_IF NOT VARIABLE_IS_SET "zs_log_created" AND NOT FILE_EXISTS ~ZSTweaks_Logs/.nodata~ BEGIN
+ACTION_IF NOT VARIABLE_IS_SET "zs_log_created" BEGIN
+
+    SILENT
+    ACTION_TRY 
+        DELETE + "%MOD_FOLDER%/../ZSTweaks_Logs"
+    WITH
+        DEFAULT
+            PRINT "Some error happened when deleting ZSTweaks_Logs. Maybe it didn't exist yet."
+    END
+    VERBOSE
 
     PRINT "[INFO]: Creating warning log file"
-    MKDIR "ZSTweaks_Logs"
-    COPY_EXISTING ~kitlist.2da~ ~ZSTweaks_Logs/.nodata~
-        WRITE_ASCII 0x0 ""
-
-    OUTER_SET zs_log_created = "1"
+    MKDIR "zstweaks_logs"
+    COPY + ~%MOD_FOLDER%/templates/empty~ ~zstweaks_logs/.nodata~
+    OUTER_SET zs_log_created = 1
 
 END
+
+OUTER_SPRINT INFO_PREAMBLE  "[INFO]: "
+OUTER_SPRINT WARN_PREAMBLE  "[WARN]: "
+OUTER_SPRINT FAIL_PREAMBLE  "[FAIL]: "
+OUTER_SPRINT ABORT_PREAMBLE "[ABORT]: "
 
 /**
  * ### Author: Kaelyn aka szaumoor
@@ -15,59 +27,87 @@ END
  * Logs a warning into the standard output and writes it out into logs/errors_found.txt, appending a new line per warning.
  * ### **Parameters**:
  *
- * **force_warn** (int): This forces the standard output to print as an actual WeiDu warning, if desired, otherwise,
- *                  it prints it as a regular INFO mesage. Default: 0 (FALSE); set to 1 (TRUE) to force warnings.
- *
- * **predicate_stdout** (int) : This variable allows an user to pass a predicate upon calling it, to decide whether printing to the
+ * **predicate_stdout** (int): This variable allows an user to pass a predicate upon calling it, to decide whether printing to the
  *                              standard output is desired or not. For example, passing IS_AN_INT "%variable%" (a predicate) would
- *                              pass 1 (true) or 0 (false). You may also pass 0 or 1 directly too if desired to disable or enable
- *                              (or other constants such as TRUE(1), FALSE(0)). Default value is -1 (UNDEFINED), which by default allows
- *                              standard output.
+ *                              resolve to 1 (true) or 0 (false). You may also pass 0 or 1 directly too if desired to disable or enable
+ *                              (or other constants such as TRUE(1) or FALSE(0). Default value is TRUE.
+ * 
+ * **add_level_preamble** (int): This variable controls whether, in the case of predicate_stdout being TRUE, the messages should be 
+ *                               printed with a preamble indicating the log level (as per **log_level**) or not. Valid values are 
+ *                               1 (TRUE) and 0 (FALSE).
  *
  * **message** (str): The message to pass into console and/or the error log file. Default: Empty string. Crashes if it remains empty
- *                    after the function call.
+ *                    when the function is called.
  *
- * **log_level** (str): The logging level of the message. Two values are accepted: warn of fail. Fail causes this function to force a
- *                      component failure, the component being installed immediately. Warn is the default value, and simply causes a
- *                      message to be printed without any actual warnings, unless **force_warn** is set to 1/TRUE.
- *
+ * **log_level** (str): The logging level of the message. Four values are accepted: info, warn, abort, or fail. Abort causes a 
+ *                      component failure without any assumed error. Fail does the same but assuming an error. Warn is the 
+ *                      default value, causing the component to be marked as installed with errors, and finally Info just prints a 
+ *                      message.
  */
-DEFINE_ACTION_FUNCTION LOG_WARNING_FAIL
+DEFINE_ACTION_FUNCTION LOG_TEXT
 INT_VAR
-    force_warn       = FALSE
-    predicate_stdout = UNDEFINED
+    predicate_stdout   = TRUE
+    add_level_preamble = TRUE
 STR_VAR
     message   = ""
     log_level = "warn"
 BEGIN
     ACTION_IF STRING_LENGTH message > 0 BEGIN
-        OUTER_SET is_warn = "%log_level%" STR_EQ "warn"
-        OUTER_SET is_fail =  "%log_level%" STR_EQ "fail"
 
-        ACTION_IF is_warn OR is_fail BEGIN
+        OUTER_SET is_abort = "%log_level%"  STR_EQ "abort"
+        OUTER_SET is_info  = "%log_level%"  STR_EQ "info"
+        OUTER_SET is_warn  = "%log_level%"  STR_EQ "warn"
+        OUTER_SET is_fail  = "%log_level%"  STR_EQ "fail"
 
-            ACTION_IF FILE_EXISTS ~ZSTweaks_Logs/.nodata~ BEGIN
+        ACTION_IF is_warn OR is_fail OR is_abort OR is_info BEGIN
+
+            ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/../zstweaks_logs/.nodata~ BEGIN
                 
-                COPY ~ZSTweaks_Logs/.nodata~ ~ZSTweaks_Logs/warnings.txt~
-                APPEND_OUTER ~ZSTweaks_Logs/warnings.txt~ "----Start of Logs----"                
-                DELETE ~ZSTweaks_Logs/.nodata~
+                PRINT ".nodata exists, proceeding to create a warnings file and delete .nodata"
+                COPY + ~%MOD_FOLDER%/../zstweaks_logs/.nodata~ ~%MOD_FOLDER%/../zstweaks_logs/warnings.txt~
+                APPEND_OUTER + ~%MOD_FOLDER%/../zstweaks_logs/warnings.txt~ "----Start of Logs----"                
+                DELETE + ~%MOD_FOLDER%/../zstweaks_logs/.nodata~
 
             END
 
-            APPEND_OUTER ~ZSTweaks_Logs/warnings.txt~ "%message%"
+            APPEND_OUTER + ~%MOD_FOLDER%/../zstweaks_logs/warnings.txt~ "- %message%"
 
-            ACTION_IF predicate_stdout = UNDEFINED OR predicate_stdout = TRUE BEGIN
+            ACTION_IF predicate_stdout = TRUE BEGIN
+
+                OUTER_SPRINT resolved_msg "%message%"
 
                 ACTION_IF is_warn BEGIN
 
-                    ACTION_IF force_warn BEGIN
-                        WARN "%message%"
-                    END ELSE BEGIN
-                        PRINT "%message%"
+                    ACTION_IF add_level_preamble BEGIN
+                        OUTER_SPRINT resolved_msg "%WARN_PREAMBLE%%message%"
                     END
 
-                END ELSE BEGIN
-                    FAIL "%message%"
+                    WARN "%resolved_msg%"
+
+                END ELSE ACTION_IF is_info BEGIN
+
+                    ACTION_IF add_level_preamble BEGIN
+                        OUTER_SPRINT resolved_msg "%INFO_PREAMBLE%%message%"
+                    END
+
+                    PRINT "%resolved_msg%"
+
+                END ELSE ACTION_IF is_fail BEGIN
+
+                    ACTION_IF add_level_preamble BEGIN
+                        OUTER_SPRINT resolved_msg "%FAIL_PREAMBLE%%message%"
+                    END
+
+                    FAIL "%resolved_msg%"
+
+                END ELSE ACTION_IF is_abort BEGIN
+
+                    ACTION_IF add_level_preamble BEGIN
+                        OUTER_SPRINT resolved_msg "%ABORT_PREAMBLE%%message%"
+                    END
+
+                    ABORT "%resolved_msg%"
+
                 END
 
             END
@@ -75,14 +115,14 @@ BEGIN
         END ELSE BEGIN
 
             FAIL 
-            "LOG_WARNING_FAIL function called with an invalid logging level: %log_level%. Valid levels are 'warn' and 'fail'"
+            "LOG_TEXT function called with an invalid logging level: %log_level%. Valid levels are 'warn', 'info', 'abort', and 'fail'. Revise its use originating from zs_comp_%COMPONENT_NUMBER%.tph"
 
         END
 
     END ELSE BEGIN
 
         FAIL 
-        "LOG_WARNING_FAIL function has an empty message as input. Revise its use originating from zs_comp_%COMPONENT_NUMBER%.tph"
+        "LOG_TEXT function has an empty message as input. Revise its use originating from zs_comp_%COMPONENT_NUMBER%.tph"
 
     END
 END

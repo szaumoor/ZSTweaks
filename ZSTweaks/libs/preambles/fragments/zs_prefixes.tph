@@ -38,10 +38,10 @@ ACTION_IF zs_allow_prefixes BEGIN
 
             PRINT "[INFO]: Wraith Spiders should be classified as Undead"
             COPY_EXISTING ~spidwr01.cre~ ~override~
-                        ~spidwr.cre~   ~override~
-                        ~spidkid.cre~  ~override~
-                        ~rdespiw.cre~  ~override~
-                        ~ttspid.cre~   ~override~
+                          ~spidwr.cre~   ~override~
+                          ~spidkid.cre~  ~override~
+                          ~rdespiw.cre~  ~override~
+                          ~ttspid.cre~   ~override~
                 WRITE_BYTE 0x271 general_undead
             IF_EXISTS
 
@@ -61,7 +61,6 @@ ACTION_IF zs_allow_prefixes BEGIN
             ELSE BEGIN PRINT "[INFO]: No mod-added wraith spiders found, cool!" END
 
         END
-
 
         ACTION_IF zst_eefp_unfix_blackrazor_bbod BEGIN
 
@@ -757,9 +756,13 @@ ACTION_IF zs_allow_prefixes BEGIN
         END
 
         PRINT "[INFO]: ---- FINISHED PREFIXES ----"
-        OUTER_SET ~zs_prefixes~ = 1
-    END
+        
+    END 
+    
+END ELSE ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
 
-END ELSE BEGIN
-    LAF LOG_WARNING_FAIL STR_VAR message = "[WARN]: You disabled prefixes. You better know what you're doing." END
+    LAF LOG_TEXT INT_VAR add_level_preamble=0 STR_VAR log_level="info" message="[WARN]: You disabled prefixes. You better know what you're doing." END
+
 END
+
+OUTER_SET zs_prefixes = 1

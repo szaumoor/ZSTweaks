@@ -1,3 +1,16 @@
+COPY_EXISTING ~shld03.itm~ ~override~
+    READ_LONG 0x8 medium_shield_strref
+
+COPY_EXISTING ~shld01.itm~ ~override~
+    READ_LONG 0x8 small_shield_strref
+
+COPY_EXISTING ~shld05.itm~ ~override~
+    READ_LONG 0x8 large_shield_strref
+
+COPY_EXISTING ~shld08.itm~ ~override~
+    READ_LONG 0x8 buckler_shield_strref
+
+
 ACTION_IF zst_1546_buckler_tweak BEGIN
 
     COPY "%MOD_FOLDER%/items/bucklers" "override"

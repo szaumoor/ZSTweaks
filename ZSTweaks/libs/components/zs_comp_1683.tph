@@ -18,7 +18,7 @@ ACTION_IF NOT is_iwdee BEGIN
             END
 
     END ELSE BEGIN
-        LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: Gemblade not found, skipping. -- Harmless unless you're not EET or SoD." END
+        LAF LOG_TEXT INT_VAR predicate_stdout = (NOT group_component) STR_VAR log_level="abort" message = "Gemblade not found, skipping. -- Harmless unless it's EET or BGEE with SoD." END
     END
 
 END

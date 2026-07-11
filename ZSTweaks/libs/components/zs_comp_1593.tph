@@ -26,7 +26,7 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode=12 match_dicesize=4 match_parameter1=0 dicesize=5 parameter1=2 special=1024 END
 
     END ELSE BEGIN
-        LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: Sword of Ruin not found. Skipping. -- Harmless unless it's EET or SoD." END
+        LAF LOG_TEXT INT_VAR predicate_stdout = (NOT group_component) STR_VAR log_level="abort" message = "Sword of Ruin not found. -- Harmless unless it's BGEE with SoD or EET." END
     END
 
 END

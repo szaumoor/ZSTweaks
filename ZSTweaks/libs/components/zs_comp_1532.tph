@@ -1,16 +1,16 @@
 ACTION_IF zst_1532_add_1hp_to_shields BEGIN
 
   COPY_EXISTING ~shld03.itm~ ~override~
-        READ_LONG 0x8 medium_shield_strref
+    READ_LONG 0x8 medium_shield_strref
 
-    COPY_EXISTING ~shld01.itm~ ~override~
-        READ_LONG 0x8 small_shield_strref
+  COPY_EXISTING ~shld01.itm~ ~override~
+    READ_LONG 0x8 small_shield_strref
 
-    COPY_EXISTING ~shld05.itm~ ~override~
-        READ_LONG 0x8 large_shield_strref
+  COPY_EXISTING ~shld05.itm~ ~override~
+    READ_LONG 0x8 large_shield_strref
 
-    COPY_EXISTING ~shld08.itm~ ~override~
-        READ_LONG 0x8 buckler_shield_strref
+  COPY_EXISTING ~shld08.itm~ ~override~
+    READ_LONG 0x8 buckler_shield_strref
 
 END
 
@@ -31,12 +31,12 @@ COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
     LPM patch
   END
 
-  ELSE PATCH_IF ( category = 12 AND zst_1532_add_1hp_to_shields   ) BEGIN
+  ELSE PATCH_IF category = 12 AND zst_1532_add_1hp_to_shields BEGIN
 
       READ_LONG 0x8 strref // strref
       PATCH_IF strref = medium_shield_strref OR strref = small_shield_strref OR
-               strref = large_shield_strref  OR strref = buckler_shield_strref BEGIN
-
+               strref = large_shield_strref  OR strref = buckler_shield_strref 
+      BEGIN
           LPM patch
       END
 

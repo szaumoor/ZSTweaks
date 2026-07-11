@@ -10,5 +10,5 @@ COPY_EXISTING ~bzplm06a.itm~ ~override~
 IF_EXISTS
 
 ACTION_IF is_iwdee AND NOT FILE_EXISTS_IN_GAME "plat06.itm" AND NOT group_component BEGIN
-  LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: Ankheg's Plate Armor not found in IWDEE. -- Harmless unless it's supposed to be there." END
+  LAF LOG_TEXT INT_VAR predicate_stdout = (NOT group_component) STR_VAR log_level="abort" message = "Ankheg's Plate Armor not found in IWDEE. -- Harmless unless it's supposed to be there." END
 END

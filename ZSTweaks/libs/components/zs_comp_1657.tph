@@ -23,7 +23,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
       LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 8 END
 
   END ELSE BEGIN
-    LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: Forgotten Armaments item updates detected, skipping edits to The Visage. -- Harmless unless you didn't know FA updated that item." END
+    LAF LOG_TEXT INT_VAR predicate_stdout = (NOT group_component) STR_VAR log_level="abort" message = "Forgotten Armaments item updates detected, skipping edits to The Visage. -- Harmless unless you didn't know FA updated that item." END
   END
 
 END

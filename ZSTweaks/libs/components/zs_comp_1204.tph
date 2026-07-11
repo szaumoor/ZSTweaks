@@ -13,7 +13,7 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF CLONE_EFFECT INT_VAR match_opcode = 0 match_parameter2=0 parameter2=8 parameter1=1 END
 
     END ELSE BEGIN
-        LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: No Rhino Beetle Shield found in the game -- Harmless if not EET or not SoD" END
+        LAF LOG_TEXT INT_VAR predicate_stdout = (NOT group_component) STR_VAR message = "Rhino Beetle Shield not found. -- Harmless unless it's BGEE with SoD or EET." END
     END
 
     ACTION_IF FILE_EXISTS_IN_GAME ~bdplat04.itm~ BEGIN
@@ -28,7 +28,7 @@ ACTION_IF NOT is_iwdee BEGIN
             LPF ALTER_EFFECT INT_VAR match_opcode = 0 match_parameter2 = 4 parameter1 = 1 END
 
     END ELSE BEGIN
-        LAF LOG_WARNING_FAIL INT_VAR force_warn=1 predicate_stdout = (NOT group_component) STR_VAR message = "[WARN]: No Rhino Beetle Plate found in the game -- Harmless if not EET or not SoD" END
+        LAF LOG_TEXT INT_VAR predicate_stdout = (NOT group_component) STR_VAR message = "Rhino Beetle Plate not found. -- Harmless unless it's BGEE with SoD or EET." END
     END
 
 END

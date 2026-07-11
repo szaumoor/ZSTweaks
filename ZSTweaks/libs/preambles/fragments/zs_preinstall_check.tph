@@ -61,10 +61,10 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
         PRINT "[INFO]: IWD spells for divine classes detected..."
         ACTION_IF has_scs_iwd_spells_divine BEGIN
             PRINT "             ...installed through SCS"
-            LAF LOG_WARNING_FAIL STR_VAR message = "[WARN]: IWD spells for divine classes installed through SCS. Bad idea! It's outdated!" END
+            LAF LOG_TEXT INT_VAR add_level_preamble=0 STR_VAR log_level="info" message = "[WARN]: IWD spells for divine classes installed through SCS. Bad idea! It's outdated!" END
         END ELSE ACTION_IF has_tof_iwd_spells_divine BEGIN
             PRINT "             ...installed through ToF"
-            LAF LOG_WARNING_FAIL STR_VAR message = "[WARN]: IWD spells for divine classes installed through TOF. Bad idea! It's outdated!" END
+            LAF LOG_TEXT INT_VAR add_level_preamble=0 STR_VAR log_level="info" message = "[WARN]: IWD spells for divine classes installed through TOF. Bad idea! It's outdated!" END
         END ELSE ACTION_IF has_iwd_spells_divine BEGIN
             PRINT "             ...installed through IWDification"
         END
@@ -82,12 +82,12 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
         ACTION_IF has_scs_iwd_spells_arcane BEGIN
 
             PRINT "             ...installed through SCS"
-            LAF LOG_WARNING_FAIL STR_VAR message = "[WARN]: IWD spells for arcane classes installed through SCS. Bad idea! It's outdated!" END
+            LAF LOG_TEXT INT_VAR add_level_preamble=0 STR_VAR log_level="info" message = "[WARN]: IWD spells for arcane classes installed through SCS. Bad idea! It's outdated!" END
 
         END ELSE ACTION_IF has_tof_iwd_spells_arcane BEGIN
 
             PRINT "             ...installed through ToF"
-            LAF LOG_WARNING_FAIL STR_VAR message = "[WARN]: IWD spells for arcane classes installed through TOF. Bad idea! It's outdated!" END
+            LAF LOG_TEXT INT_VAR add_level_preamble=0 STR_VAR log_level="info" message = "[WARN]: IWD spells for arcane classes installed through TOF. Bad idea! It's outdated!" END
 
         END ELSE ACTION_IF has_iwd_spells_arcane BEGIN
             PRINT "             ...installed through IWDification"
@@ -116,7 +116,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
     OUTER_SET has_scs_spell_nerf = MOD_IS_INSTALLED "setup-stratagems.tp2" "2060"
     ACTION_IF has_scs_spell_nerf BEGIN
         PRINT "[INFO]: SCS spell nerf component detected."
-        LAF LOG_WARNING_FAIL STR_VAR message = "[WARN]: SCS spell nerf component detected. Here's hoping you have a good reason for installing SCS's spell tweaks before this one..." END
+        LAF LOG_TEXT INT_VAR add_level_preamble=0 STR_VAR log_level="info" message = "[WARN]: SCS spell nerf component detected. Here's hoping you have a good reason for installing SCS's spell tweaks before this one..." END
     END
 
     OUTER_SET has_zs_item_pack_kukris = FILE_EXISTS_IN_GAME ~zsipkuk0.itm~
