@@ -1,3 +1,14 @@
+ACTION_IF NOT VARIABLE_IS_SET "zs_log_created" AND NOT FILE_EXISTS ~ZSTweaks_Logs/.nodata~ BEGIN
+
+    PRINT "[INFO]: Creating warning log file"
+    MKDIR "ZSTweaks_Logs"
+    COPY_EXISTING ~kitlist.2da~ ~ZSTweaks_Logs/.nodata~
+        WRITE_ASCII 0x0 ""
+
+    OUTER_SET zs_log_created = "1"
+
+END
+
 /**
  * ### Author: Kaelyn aka szaumoor
  *
@@ -5,19 +16,20 @@
  * ### **Parameters**:
  *
  * **force_warn** (int): This forces the standard output to print as an actual WeiDu warning, if desired, otherwise,
- *                  it prints it as a regular INFO mesage. Default: 0 (disabled); set to 1 to force warnings.
+ *                  it prints it as a regular INFO mesage. Default: 0 (FALSE); set to 1 (TRUE) to force warnings.
  *
  * **predicate_stdout** (int) : This variable allows an user to pass a predicate upon calling it, to decide whether printing to the
  *                              standard output is desired or not. For example, passing IS_AN_INT "%variable%" (a predicate) would
- *                              pass 1 (true) or 0 (false). You may also pass 0 or 1 directly too if desired to disable or enable.
-     *                          Default value is -1, which by default allows standard output.
+ *                              pass 1 (true) or 0 (false). You may also pass 0 or 1 directly too if desired to disable or enable
+ *                              (or other constants such as TRUE(1), FALSE(0)). Default value is -1 (UNDEFINED), which by default allows
+ *                              standard output.
  *
  * **message** (str): The message to pass into console and/or the error log file. Default: Empty string. Crashes if it remains empty
  *                    after the function call.
  *
  * **log_level** (str): The logging level of the message. Two values are accepted: warn of fail. Fail causes this function to force a
  *                      component failure, the component being installed immediately. Warn is the default value, and simply causes a
- *                      message to be printed without any actual warnings, unless **force_warn** is set to 1 (true).
+ *                      message to be printed without any actual warnings, unless **force_warn** is set to 1/TRUE.
  *
  */
 DEFINE_ACTION_FUNCTION LOG_WARNING_FAIL
@@ -29,25 +41,20 @@ STR_VAR
     log_level = "warn"
 BEGIN
     ACTION_IF STRING_LENGTH message > 0 BEGIN
-
         OUTER_SET is_warn = "%log_level%" STR_EQ "warn"
         OUTER_SET is_fail =  "%log_level%" STR_EQ "fail"
 
         ACTION_IF is_warn OR is_fail BEGIN
 
-            // TODO should probably instead mkdir outside the mod folder for encapsulation
-            ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/logs/no_errors_found.txt~ BEGIN
-
-                COPY ~%MOD_FOLDER%/logs/no_errors_found.txt~ ~%MOD_FOLDER%/logs/errors_found.txt~
-                APPEND_OUTER ~%MOD_FOLDER%/logs/errors_found.txt~ "----Start of Logs----"
-                DELETE ~%MOD_FOLDER%/logs/no_errors_found.txt~
+            ACTION_IF FILE_EXISTS ~ZSTweaks_Logs/.nodata~ BEGIN
+                
+                COPY ~ZSTweaks_Logs/.nodata~ ~ZSTweaks_Logs/warnings.txt~
+                APPEND_OUTER ~ZSTweaks_Logs/warnings.txt~ "----Start of Logs----"                
+                DELETE ~ZSTweaks_Logs/.nodata~
 
             END
 
-            ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/logs/errors_found.txt~ BEGIN
-                COPY ~%MOD_FOLDER%/logs/errors_found.txt~ ~%MOD_FOLDER%/logs/errors_found.txt~
-                APPEND_OUTER ~%MOD_FOLDER%/logs/errors_found.txt~ "%message%"
-            END
+            APPEND_OUTER ~ZSTweaks_Logs/warnings.txt~ "%message%"
 
             ACTION_IF predicate_stdout = UNDEFINED OR predicate_stdout = TRUE BEGIN
 
@@ -66,10 +73,16 @@ BEGIN
             END
 
         END ELSE BEGIN
-            FAIL "Logging function called with an invalid logging level: %log_level%. Valid levels are 'warn' and 'fail'"
+
+            FAIL 
+            "LOG_WARNING_FAIL function called with an invalid logging level: %log_level%. Valid levels are 'warn' and 'fail'"
+
         END
 
     END ELSE BEGIN
-        FAIL "Logging function has an empty message as input"
+
+        FAIL 
+        "LOG_WARNING_FAIL function has an empty message as input. Revise its use originating from zs_comp_%COMPONENT_NUMBER%.tph"
+
     END
 END
