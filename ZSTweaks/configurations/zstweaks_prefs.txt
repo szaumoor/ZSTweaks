@@ -7,7 +7,7 @@
 ////////////////////////////// Misc \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 OUTER_SET zs_debug                  = "1" // Mod is slower when on. Don't touch turn on unless you know what you're doing
-OUTER_SET crash_if_var_errors_found = "1" // crashes the installation of the mod (any component) if any values in the preferences are outside the valid ranges. This is the only variable that forces a crash if it's not set to either 0 or 1
+OUTER_SET crash_if_var_errors_found = "1" // crashes the installation of the mod (any component) if any values in the preferences are outside the valid ranges. This is the only variable that immediately forces a crash if it's not set to either 0 or 1
 
 ////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

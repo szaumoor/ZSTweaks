@@ -40,43 +40,40 @@ COPY_EXISTING ~clck11.itm~ ~override~ // electric affinity clck
     LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 29 parameter1 = 40 END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=3~ END
 
-WITH_SCOPE BEGIN // archmage stuff
+// ---------Archmage stuff-----------  \\
 
-    DEFINE_PATCH_MACRO common_buff BEGIN
-        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=31,p1=25;op=189,p1=1;op=0,p1=1,p2=0~ END
-    END
-
-    DEFINE_PATCH_MACRO basic_archmage BEGIN
-        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 166 parameter1 = 10 END
-        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 37 parameter1 = 2 END
-        LPM common_buff
-    END
-
-    COPY_EXISTING ~clck15.itm~ ~override~ // archmage robes
-        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6147) END
-        LPM basic_archmage
-
-    COPY_EXISTING ~clck16.itm~ ~override~ // archmage robes
-        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6148) END
-        LPM basic_archmage
-
-    COPY_EXISTING ~clck17.itm~ ~override~ // archmage robes
-        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6149) END
-        LPM basic_archmage
-
-    COPY_EXISTING ~c2robe01.itm~ ~override~
-        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50040) END
-        LPM common_buff
-    IF_EXISTS
-
-    COPY_EXISTING ~c2robe02.itm~ ~override~
-        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50041) END
-        LPM common_buff
-    IF_EXISTS
-
-    COPY_EXISTING ~c2robe03.itm~ ~override~
-        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50042) END
-        LPM common_buff
-    IF_EXISTS
-
+DEFINE_PATCH_MACRO common_buff BEGIN
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=31,p1=25;op=189,p1=1;op=0,p1=1,p2=0~ END
 END
+DEFINE_PATCH_MACRO basic_archmage BEGIN
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 166 parameter1 = 10 END
+    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 37 parameter1 = 2 END
+    LPM common_buff
+END
+
+COPY_EXISTING ~clck15.itm~ ~override~ // archmage robes
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6147) END
+    LPM basic_archmage
+
+COPY_EXISTING ~clck16.itm~ ~override~ // archmage robes
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6148) END
+    LPM basic_archmage
+
+COPY_EXISTING ~clck17.itm~ ~override~ // archmage robes
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6149) END
+    LPM basic_archmage
+
+COPY_EXISTING ~c2robe01.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50040) END
+    LPM common_buff
+IF_EXISTS
+
+COPY_EXISTING ~c2robe02.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50041) END
+    LPM common_buff
+IF_EXISTS
+
+COPY_EXISTING ~c2robe03.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50042) END
+    LPM common_buff
+IF_EXISTS

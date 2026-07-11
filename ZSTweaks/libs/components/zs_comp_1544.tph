@@ -1,50 +1,51 @@
-WITH_SCOPE BEGIN
 
-    DEFINE_PATCH_MACRO add_spell_headers BEGIN
-        SET type = header_type
-        SET target = tgt
-        SET range = 5000
-        SET required_level = index + 1
-        SET type=1
-        SET location=4
-        SET target=1
-        SET target_count=0
-        SET speed=0
-        SET projectile=1
-        SET zs_min_level_for_copy = 0
-        SET copy_header=0
-        SET insert_point=~-1~
-        SPRINT icon ~~
+DEFINE_PATCH_MACRO add_spell_headers BEGIN
+    SET type = header_type
+    SET target = tgt
+    SET range = 5000
+    SET required_level = index + 1
+    SET type=1
+    SET location=4
+    SET target=1
+    SET target_count=0
+    SET speed=0
+    SET projectile=1
+    SET zs_min_level_for_copy = 0
+    SET copy_header=0
+    SET insert_point=~-1~
+    SPRINT icon ~~
 
-        LPM ADD_SPELL_HEADER
+    LPM ADD_SPELL_HEADER
 
-        SET parameter1= index+1
-        SET header=index+1
-        SET opcode = op
-        SET target = op_target
-        SET timing = 0
-        SET parameter2 = 0
-        SET resist_dispel = 0
-        SET duration = 0
-        SET probability1 = 100
-        SET probability2 = 0
-        SET power = 0
-        SET dicenumber = 0
-        SET dicesize = 0
-        SET savingthrow = 0
-        SET savebonus = 0
-        SET special = 0
-        SET insert_point = "-1"
-        SPRINT resource "%original_spell%"
-        LPM ADD_SPELL_EFFECT
-    END
+    SET parameter1= index+1
+    SET header=index+1
+    SET opcode = op
+    SET target = op_target
+    SET timing = 0
+    SET parameter2 = 0
+    SET resist_dispel = 0
+    SET duration = 0
+    SET probability1 = 100
+    SET probability2 = 0
+    SET power = 0
+    SET dicenumber = 0
+    SET dicesize = 0
+    SET savingthrow = 0
+    SET savebonus = 0
+    SET special = 0
+    SET insert_point = "-1"
+    SPRINT resource "%original_spell%"
+    LPM ADD_SPELL_EFFECT
+END
 
-    PRINT "[INFO]: Creating subspells to allow scrolls to scale with character level..."
-    SILENT
+PRINT "[INFO]: Creating subspells to allow scrolls to scale with character level..."
+
+DEFINE_ACTION_MACRO scroll_creating BEGIN
 
     OUTER_SET scrolls = 0
     OUTER_SPRINT prefix "rpsc"
 
+    SILENT
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         PATCH_IF SHORT_AT(0x1c) = 11 AND BYTE_AT(0x2a) != 0 BEGIN
             READ_LONG 0x0c scroll_name
@@ -105,3 +106,11 @@ WITH_SCOPE BEGIN
     PRINT "[INFO]: Found %scrolls% usable scrolls for scroll scaling."
 
 END
+
+ACTION_IF zs_debug BEGIN
+    PRINT "[DEBUG][INFO]: Timing scrolls at character level..."
+    ACTION_TIME ~Scroll At Character Level~ BEGIN
+        LAM scroll_creating
+    END
+
+END ELSE BEGIN LAM scroll_creating END

@@ -660,75 +660,71 @@ ACTION_IF zs_allow_prefixes BEGIN
 
         ACTION_IF zst_gender_fix BEGIN
 
-            WITH_SCOPE BEGIN
+            DEFINE_PATCH_MACRO fix_gender BEGIN
+                SET gender = BYTE_AT(0x275)
+                PATCH_IF gender = gender_male OR gender = gender_female BEGIN
+                    ++matches
+                    WRITE_BYTE 0x275 gender_niether
 
-                DEFINE_PATCH_MACRO fix_gender BEGIN
-                    SET gender = BYTE_AT(0x275)
-                    PATCH_IF gender = gender_male OR gender = gender_female BEGIN
-                        ++matches
-                        WRITE_BYTE 0x275 gender_niether
+                    PATCH_IF zs_debug BEGIN
+                        READ_STRREF 0x8 name ELSE "unknown"
+                        PATCH_IF gender=gender_male BEGIN SPRINT gender "male" END ELSE BEGIN SPRINT gender "female" END
+                        PATCH_PRINT "[DEBUG][INFO]: Found likely genderless/sexless creature (%SOURCE_RES% - %name%) actually marked as %gender%"
+                    END
 
-                        PATCH_IF zs_debug BEGIN
-                            READ_STRREF 0x8 name ELSE "unknown"
-                            PATCH_IF gender=gender_male BEGIN SPRINT gender "male" END ELSE BEGIN SPRINT gender "female" END
-                            PATCH_PRINT "[DEBUG][INFO]: Found likely genderless/sexless creature (%SOURCE_RES% - %name%) actually marked as %gender%"
-                        END
+                END
+            END
 
+            PRINT "[INFO]: Setting many types of sexless creatures as 'niether'-gendered if they're set to male or female so it doesn't intrude with opcodes that target male/female"
+            OUTER_SET matches = 0
+            COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
+                SET general = BYTE_AT(0x271)
+                SET race    = BYTE_AT(0x272)
+                SET class   = BYTE_AT(0x273)
+                PATCH_IF race    = race_golem           OR
+                         race    = race_treant          OR
+                         race    = race_demonic         OR
+                         race    = race_mind_flayer     OR
+                         race    = race_mist            OR
+                         race    = race_planetar        OR
+                         race    = race_darkplanetar    OR
+                         race    = race_solar           OR
+                         race    = race_antisolar       OR
+                         race    = race_beholder        OR
+                         race    = race_genie           OR
+                         race    = race_slime           OR
+                         race    = race_mimic           OR
+                         race    = race_doppleganger    OR
+                         race    = race_myconid         OR
+                         race    = race_shadow          OR
+                         race    = race_wraith          OR
+                         race    = race_specter         OR
+                         race    = race_spectral_undead OR
+                         race    = race_elemental       OR
+                         race    = race_shambling_mound OR
+                         race    = race_shrieker        OR
+                         race    = ~%race_will-o-wisp%~ OR
+                         race    = race_otyugh          OR
+                         general = general_weapon       OR
+                         general = general_plant
+                BEGIN
+                    LPM fix_gender
+                END
+            BUT_ONLY
+
+            COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
+
+                SET race = BYTE_AT(0x272)
+                PATCH_IF race = race_statue BEGIN
+                    LPF IS_BIT_SET INT_VAR bit_field = LONG_AT(0x20) bit = 7 RET petrified = result END
+                    PATCH_IF NOT petrified BEGIN
+                        LPM fix_gender
                     END
                 END
 
-                PRINT "[INFO]: Setting many types of sexless creatures as 'niether'-gendered if they're set to male or female so it doesn't intrude with opcodes that target male/female"
-                OUTER_SET matches = 0
-                COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
-                    SET general = BYTE_AT(0x271)
-                    SET race    = BYTE_AT(0x272)
-                    SET class   = BYTE_AT(0x273)
-                    PATCH_IF race    = race_golem           OR
-                             race    = race_treant          OR
-                             race    = race_demonic         OR
-                             race    = race_mind_flayer     OR
-                             race    = race_mist            OR
-                             race    = race_planetar        OR
-                             race    = race_darkplanetar    OR
-                             race    = race_solar           OR
-                             race    = race_antisolar       OR
-                             race    = race_beholder        OR
-                             race    = race_genie           OR
-                             race    = race_slime           OR
-                             race    = race_mimic           OR
-                             race    = race_doppleganger    OR
-                             race    = race_myconid         OR
-                             race    = race_shadow          OR
-                             race    = race_wraith          OR
-                             race    = race_specter         OR
-                             race    = race_spectral_undead OR
-                             race    = race_elemental       OR
-                             race    = race_shambling_mound OR
-                             race    = race_shrieker        OR
-                             race    = ~%race_will-o-wisp%~ OR
-                             race    = race_otyugh          OR
-                             general = general_weapon       OR
-                             general = general_plant
-                    BEGIN
-                        LPM fix_gender
-                    END
-                BUT_ONLY
+            BUT_ONLY
 
-                COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
-
-                    SET race = BYTE_AT(0x272)
-                    PATCH_IF race = race_statue BEGIN
-                        LPF IS_BIT_SET INT_VAR bit_field = LONG_AT(0x20) bit = 7 RET petrified = result END
-                        PATCH_IF NOT petrified BEGIN
-                            LPM fix_gender
-                        END
-                    END
-
-                BUT_ONLY
-
-                PRINT "[INFO]: Found %matches% matches that were set to 'niether' gender"
-
-            END
+            PRINT "[INFO]: Found %matches% matches that were set to 'niether' gender"
 
         END
 
