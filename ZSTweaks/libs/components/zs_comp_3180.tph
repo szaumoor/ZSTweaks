@@ -60,7 +60,8 @@ COPY_EXISTING ~spcl411.spl~ ~override~
 
 ACTION_IF zst_3180_modify_trap_limit > 0 BEGIN
 
-    COPY_EXISTING ~traplimit.2da~ ~override~
+    COPY_EXISTING ~traplimt.2da~ ~override~
         LPF SWAP_2DA_TABLE_VALUE INT_VAR column = 1 STR_VAR replacement = "%zst_3180_modify_trap_limit%" END
+        PRETTY_PRINT_2DA
 
 END
