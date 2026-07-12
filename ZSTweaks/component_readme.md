@@ -1645,6 +1645,8 @@ Both items can be toggled on and off. Both are on by default. Check the config f
   - If Save vs. Poison fails, target is poisoned, taking a -2 penalty to THAC0, Saving Throws, and Armor Class for 1 turn. They take 2 poison damage once per round, too. The poison cannot stack of be applied again during this time.
   - While poisoned by the mace, the mace's direct poison damage doubles: 2d6 instead of 1d6
 
+I would recommend the Viconia Friendship mod so this mace is available even if you aren't romancing her.
+
 </details>
 
 ---

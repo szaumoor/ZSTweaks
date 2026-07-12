@@ -7,6 +7,6 @@ LAF CREATE_SELF_SPL STR_VAR filename="zstlath0" END // APR for non-fighter cleri
 
 COPY_EXISTING ~spcl741.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@9020) END
-    LPF ALTER_EFFECT STR_VAR match_duration_ex="(o_duration >= 6)" duration_ex="(THIS + 12)" END
+    LPF ALTER_EFFECT_EX STR_VAR match_duration_ex="(o_duration >= 6)" duration_ex="(THIS + 12)" END
     LPF ALTER_EFFECT INT_VAR match_opcode=1 parameter1=6 END
     LPF CLONE_EFFECT INT_VAR match_opcode=1 opcode=146 duration=0 timing=0 parameter2=1 parameter1=0 STR_VAR resource="zstlath0" END

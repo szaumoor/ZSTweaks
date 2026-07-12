@@ -46,6 +46,7 @@ I am open to providing compatibility for other mods. You can contact me on the f
 - EEFixpack. It's not completely polished, but it fixes tons of things and eventually will probably be a backbone for every game setup. My mod also fixes some things that are unaddressed by it (or currently messed up by it, such as poor Blackrazor)
 - IWDification, especially the IWD spell packs for BG, so my tweaks can take full advantage. They also make druids and paladins significantly more interesting and capable as spellcasters
 - Any mods that improve Thieves, like RR, allowing them 3 pips in Two-weapon fighting. Join me in my crusade to make them better as a standalone class.
+- Viconia Friendship if you use the Handsmaiden Mace component, because it makes the upgraded mace available even without romancing her.
 
 ## Notes for users and modders
 
@@ -82,6 +83,10 @@ Because the file I'm trying to patch is not found in your specific game, but mig
 ### I'm seeing a warning for the first component I install, but I'm sure it's working as expected
 
 My mod runs a bunch of scripts before installing the first component (whichever it might be), including scripts that fix a fair amount of issues and inconsistencies in the game, and problems with previously-installed mods. If you see a warning, it's possible you've found a problem there. Report it to me, preferably on my Discord server.
+
+### How do I fine tune my experience and change what the components do?
+
+All the information you need is in the ZSTweaks/configurations folder. Follow instructions and change things in any way you prefer.
 
 ## Credits
 
