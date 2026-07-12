@@ -3,7 +3,7 @@ EXTEND_BOTTOM BOTSMITH 4
 END
 
 APPEND BOTSMITH
-  IF ~~ THEN BEGIN ZSTWKachiko_PartyHasAtLeastOneItem SAY ~Ooh? What's this? Kachiko's whispery sword? Spooky!~
+  IF ~~ THEN BEGIN ZSTWKachiko_PartyHasAtLeastOneItem SAY @150000 // Ooh? What's this? Kachiko's whispery sword? Spooky!
     IF ~!PartyHasItem("SCRL2H")
         !PartyHasItem("SCRL9V")~ GOTO ZSTWKachiko_PartyDoesNotHaveAllParts
 
@@ -17,19 +17,19 @@ APPEND BOTSMITH
         PartyHasItem("SCRL9V")~ GOTO ZSTWKachiko_PartyHasAllParts
   END
 
-  IF ~~ THEN BEGIN ZSTWKachiko_PartyDoesNotHaveAllParts SAY ~What? Wants to makes it more whispery? But needs a scroll of screaming banshees. Nasty stuff, oh yes! Also one of shadowy doors! And you gots neither, boss.~
+  IF ~~ THEN BEGIN ZSTWKachiko_PartyDoesNotHaveAllParts SAY @150001 // What? Wants to makes it more whispery? But needs a scroll of screaming banshees. Nasty stuff, oh yes! Also one of shadowy doors! And you gots neither, boss.
     IF ~~ THEN GOTO ZSTWKachiko_MovingRightAlong
   END
 
-  IF ~~ THEN BEGIN ZSTWKachiko_PartyHasWailOfBansheeOnly SAY ~What? Wants to makes it more whispery? You gots the screaming scroll already but needs the shadow door one!~
+  IF ~~ THEN BEGIN ZSTWKachiko_PartyHasWailOfBansheeOnly SAY @150002 // What? Wants to makes it more whispery? You gots the screaming scroll already but needs the shadow door one!
     IF ~~ THEN GOTO ZSTWKachiko_MovingRightAlong
   END
 
-  IF ~~ THEN BEGIN ZSTWKachiko_PartyHasShadowDoorOnly SAY ~What? Wants to makes it more whispery? You gots the shadow door scroll, but needs a scroll of screaming banshees too! Nasty stuff, oh yes!~
+  IF ~~ THEN BEGIN ZSTWKachiko_PartyHasShadowDoorOnly SAY @150003 // What? Wants to makes it more whispery? You gots the shadow door scroll, but needs a scroll of screaming banshees too! Nasty stuff, oh yes!
     IF ~~ THEN GOTO ZSTWKachiko_MovingRightAlong
   END
 
-  IF ~~ THEN BEGIN ZSTWKachiko_PartyHasAllParts SAY ~But, could be spoooookier, Cespenar thinks. You has the needed scrolls, just needs 10,000 gold. You likes?~
+  IF ~~ THEN BEGIN ZSTWKachiko_PartyHasAllParts SAY @150004 // But, could be spoooookier, Cespenar thinks. You has the needed scrolls, just needs 10,000 gold. You likes?
     IF ~PartyGoldLT(10000)~ THEN REPLY #66633 GOTO 10
     IF ~PartyGoldGT(9999)~ THEN DO ~SetGlobal("ZSTW_KachikoForge","GLOBAL",1)
                                     SetGlobal("ForgeStuff", "GLOBAL",1)
@@ -44,7 +44,7 @@ APPEND BOTSMITH
     IF ~~ THEN REPLY #66650 GOTO ZSTWKachiko_MovingRightAlong
   END
 
-  IF ~~ THEN BEGIN ZSTWKachiko_MovingRightAlong SAY ~No? Too spooky? Cespenar understands, yes. Well, if you change your mind...~
+  IF ~~ THEN BEGIN ZSTWKachiko_MovingRightAlong SAY @150005 // No? Too spooky? Cespenar understands, yes. Well, if you change your mind...
     COPY_TRANS BOTSMITH 4
   END
 
