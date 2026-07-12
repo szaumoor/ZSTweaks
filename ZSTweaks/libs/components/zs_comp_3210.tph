@@ -1,0 +1,43 @@
+COPY_EXISTING ~dempit.cre~   ~override~
+              ~dempit01.cre~ ~override~
+              ~dempitsu.cre~ ~override~
+              ~telpit2.cre~  ~override~
+              ~telpit1.cre~ ~override~
+    // HP
+    WRITE_SHORT 0x24 110 // +30, 10 less than balor
+    WRITE_SHORT 0x26 110
+
+    // AC
+    WRITE_SHORT 0x46 "-7" // +2, 1 worse than balor
+    WRITE_SHORT 0x48 "-7"
+    
+    // THAC0
+    WRITE_BYTE 0x52 5 // +2, 1 worse than balor
+
+    // resistances
+    WRITE_BYTE 0x5e 100 // 100 magic fire resist just because completeness
+    WRITE_BYTE 0x5a 25 // half of balor cold resistance
+    WRITE_BYTE 0x5f 25 // half of balor cold resistance
+
+
+    WRITE_BYTE 0x5b 50 // half of balor electric resistance
+    WRITE_BYTE 0x5d 65 // magic resistance from 50 (20 less than balor)
+
+    PATCH_FOR_EACH offset IN 0x60 0x61 0x62 0x63 0x64 BEGIN // physical resistance
+        WRITE_BYTE offset 20 // 0 -> 20, 5 less than balor
+    END
+
+    PATCH_FOR_EACH offset IN 0x6e 0x6f 0x70 0x71 0x72 0x73 0x74 0x75 BEGIN // legacy proficiency, making sure all are at 5
+        WRITE_BYTE offset 5 
+    END
+
+    WRITE_BYTE 0x234 15 // making sure they're level 14 like balors (from 13)
+
+    WRITE_BYTE 0x238 20 // strength, from 18/100, 1 less than balors
+    WRITE_BYTE 0x23a 22 // intelligence, from 9. Sorry mind flayers. Balors have 20
+    WRITE_BYTE 0x23b 18 // wisdom, from 16, same as balors.
+    WRITE_BYTE 0x23d 17 // constitution, from 9. No effect in most circumstances due to being non playable class
+
+    ADD_CRE_ITEM ~helmnoan~ #0 #0 #0 ~unstealable&undroppable~ ~helmet~ // immunity to crits, just like balors
+
+BUT_ONLY

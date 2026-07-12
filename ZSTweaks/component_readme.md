@@ -2655,6 +2655,24 @@ Traps are a common way to cheese tough fights. This component alleviates it in s
 
 Bear in mind the tweak might not work as intended if a previous tweak changes how they work, specifically what their effects are.
 
+### Make Pit Fiends closer to Balors in power thereby improving the Gate spell (3210) (BG2EE EET)
+
+The Gate spell is not quite as useful due to how squishy the pit fiends are. This makes pit fiends, both enemy and summoned, stronger and closer to what Balors are in power. In terms of hierarchical fiendish power, they should be pretty close. The following is added / modified:
+
+Health: 80 to 110
+AC: -5 to -7
+THAC0: 8 to 5
+Magic Resistance: 50 to 65
+Physical resistances: 0 to 20
+Cold resistance: 0 to 25
+Electricity resistance: 0 to 50
+HD: 13 to 14
+Strength: 18/100 to 20
+Intelligence: 9 to 22
+Constitution: 9 to 17
+Wisdom: 16 to 18
+Immune to critical hits
+
 </details>
 
 ---

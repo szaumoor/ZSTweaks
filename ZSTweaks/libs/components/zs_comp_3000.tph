@@ -71,3 +71,7 @@ END
 ACTION_IF zst_group_3180_trap_cheese BEGIN
   WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3180.tph" END
 END
+
+ACTION_IF zst_group_3210_pit_fiends BEGIN
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_3210.tph" END
+END

@@ -2359,7 +2359,12 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
     END
 
     ACTION_IF zst_group_3180_trap_cheese != 0 AND zst_group_3180_trap_cheese != 1 BEGIN
-        WARN "[WARN]: Trap cheese group component should be set to 1 or 0. Actual value: %zst_group_3170_succubi_animations%"
+        WARN "[WARN]: Trap cheese group component should be set to 1 or 0. Actual value: %zst_group_3180_trap_cheese%"
+        LAM f_plus
+    END
+
+    ACTION_IF zst_group_3210_pit_fiends != 0 AND zst_group_3210_pit_fiends != 1 BEGIN
+        WARN "[WARN]: Pit fiends group component should be set to 1 or 0. Actual value: %zst_group_3210_pit_fiends%"
         LAM f_plus
     END
 

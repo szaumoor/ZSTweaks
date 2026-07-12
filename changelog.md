@@ -111,6 +111,7 @@
 - Make Divine Favor's duration scale very slowly with level (3190) (IWDEE BGEE BG2EE EET)
 - Make Boon of Lathander improve with level slightly (3200) (IWDEE BGEE BG2EE EET)
 - Make Otiluke's Resilient Sphere able to protect NPCs marked as innocents (487) (IWDEE BGEE BG2EE EET)
+- Make Pit Fiends closer to Balors in power thereby improving the Gate spell (3210) (BG2EE EET)
 - Make CHARNAMEs able to get morale failure instead of being default psychopathic (xxxx) (IWDEE BGEE BG2EE EET)
 
 ## Future additions
