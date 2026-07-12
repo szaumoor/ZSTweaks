@@ -22,7 +22,7 @@
 
 ## Compatibility
 
-- Added compatibility for BG1-NPCs-for-SoA-ToB mod for the Shar-Teel component
+- Added compatibility for BG1-NPCs-for-SoA-ToB mod for the Shar-Teel component, as well as Lava's mod of the same
 - Added support to PnP Celestials and Fiends mod so their vorpal hits conform to my standards. Additionally, their vorpal hits are no longer guaranteed, uses a Save vs. Death at -4 instead of none and in the process it fixes the apparent bug where it was supposed to never affect spectral creatures, elementals, golems, and skeletons.
 - Improved compatibility of Symbol X component with EE Fixpack
 - Updated compatibility with Subrace fork by dark0dave and me

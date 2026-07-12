@@ -1608,7 +1608,7 @@ This component makes Shar-Teel's effectiveness against men fit her hatred and bo
 - +1 THAC0 and damage against "men" of any race
 - +2 Armor Class and Saving Throws vs. men (essentially as if she had a Protection from Men spell on her)
 
-It's compatible with the BG1-NPCs-for-SoA-ToB mod.
+It's compatible with the BG1-NPCs-for-SoA-ToB mod and Lava's mod that does something similar.
 
 Note that this means she has a bonus against things that may make no sense if they are set as "male", like battle horrors. My mod, however, fixes this whenever a component is installed, ensuring sexless and genderless creatures are set as such. Creatures of that nature include angels, demons, elementals, mind flayers, golems, battle horrors, beholders, and others. All those instances will be fixed so this component, and any other that targets gender directly, works more consistently. This fix can be disabled in the configuration file, but installing this component without it is not recommended. Final note: summoned creatures have a special "gender" set to them that marks them as summoned creatures, so they will not be affected by this component, even if their normal version would routinely be considered "male". Not my fault they used "gender" as a weird mark for various purposes; blame Bioware!
 
