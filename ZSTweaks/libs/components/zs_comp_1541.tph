@@ -31,6 +31,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
         END
 
+        PATCH_IF has_eefixpack BEGIN
+            LPF CLONE_EFFECT INT_VAR match_opcode = 318 match_parameter2 = ~%zs_has_stoneskins%~ parameter2=110 parameter1=splstate_fp_death_immunity STR_VAR insert="first" END
+        END
+
     OUTER_SET two_handed_comp_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1199~
     OUTER_SET creature_comp_installed = MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~3000~
 
