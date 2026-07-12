@@ -2651,6 +2651,8 @@ Traps are a common way to cheese tough fights. This component alleviates it in s
 - Any specific creature can only be affected by a trap once per second. This prevents trap stacking becoming a cheesy way of doing extreme damage suddenly. (ON by default)  
 - Limit the amount of traps permitted at a time (1-6) (OFF by default)
 
+Bear in mind the tweak might not work as intended if a previous tweak changes how they work, specifically what their effects are.
+
 </details>
 
 ---

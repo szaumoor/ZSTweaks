@@ -7,7 +7,7 @@ INT_VAR
     op = 324
     dur = 0
 STR_VAR
-    i = "above"
+    i = "first"
     res = "%SOURCE_RES%"
 BEGIN
     LPF CLONE_EFFECT
@@ -21,35 +21,26 @@ BEGIN
             dicesize = min_level
         STR_VAR
             insert=i
-            resource=res
+            resource="%res%"
     END
 END
 
-COPY ~%MOD_FOLDER%/templates/spl/1h_lactor.spl~ ~override/zstrpim0.spl~ // immunity to base spell
-    LPF ADD_SPELL_EFFECT
-        INT_VAR
-            opcode = 206
-            target = 2
-            duration = 1
-        STR_VAR
-            resource = "spcl411"
-    END
+DEFINE_PATCH_MACRO patch_file BEGIN
+    LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 STR_VAR resource="spcl411" END
+END
+LAF CREATE_TG_SPL STR_VAR filename = "zstrpim0" END 
 
 COPY_EXISTING ~spcl411.spl~ ~override/zstrpim1.spl~ // base damage
-    PATCH_PRINT "Creating subspell for the base damage"
     LPF ALTER_HEADER INT_VAR projectile = 0 END
     LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 12)" END
-    LPF DELETE_EFFECT_EX STR_VAR match_parameter2_ex = "(o_parameter2 != %op12_piercing%)" END
+    LPF DELETE_EFFECT_EX STR_VAR match_parameter2_ex = "(o_parameter2 = %op12_poison%)" END
 
 COPY_EXISTING ~spcl411.spl~ ~override/zstrpim2.spl~ // protected damage (slay/poison)
-    PATCH_PRINT "Creating subspell for the protected and poison damage slay effects"
     LPF ALTER_HEADER INT_VAR projectile = 0 END
-    LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 318 OR o_opcode = 12)" END
-    LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_piercing END
-
+    LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 318 AND o_opcode != 12 AND o_opcode != 55)" END
+    LPF DELETE_EFFECT_EX INT_VAR match_opcode = 12 STR_VAR match_parameter2_ex = "(o_parameter2 != %op12_poison%)" END
 
 COPY_EXISTING ~spcl411.spl~ ~override~
-    PATCH_PRINT "Adding relevant immunities"
     PATCH_IF zst_3180_immunity_by_type BEGIN
         LPF add_immunity_to INT_VAR race = race_lich END
         LPF add_immunity_to INT_VAR race = race_demilich END
@@ -61,11 +52,10 @@ COPY_EXISTING ~spcl411.spl~ ~override~
     END
 
     PATCH_IF zst_3180_only_once_per_sec BEGIN
-        LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex= "(o_opcode != 318 AND o_opcode != 254)" END
-        LPF ADD_SPL_TGTEFF STR_VAR effects = ~op=146,res=zstrpim1,p2=1;op=146,res=zstrpim2,p2=1;op=146,res=zstrpim0,p2=1~ END
+        LPF DELETE_EFFECT_EX INT_VAR check_globals=0 STR_VAR match_opcode_ex= "(o_opcode != 324 AND o_opcode != 254)" END
+        LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 STR_VAR effects = ~op=146,res=zstrpim1,p2=1;op=146,res=zstrpim2,p2=1;op=146,res=zstrpim0,p2=1~ END
     END
 
-    PATCH_PRINT "Altering immunity opcodes..."
     LPF ALTER_EFFECT INT_VAR match_opcode = 324 opcode = 318 END
 
 ACTION_IF zst_3180_modify_trap_limit > 0 BEGIN
