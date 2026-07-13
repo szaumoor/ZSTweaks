@@ -1755,10 +1755,10 @@ This component also swaps the horrendous repeating sound when it's active for th
 
 As others have noted, this spell is generally just less powerful than Dragon Breath, which is also not affected by Magic Resistance. This is an attempt to make it more unique. As for the rationale, comets are cold and icy, hence the cold damage, but they burn when on a collision path, hence the fire damage, and they are big rocks, hence the crushing damage. The damage is also not particularly impressive so it's also boosted a bit. The breakdown of damage is:
 
-Crushing: 4d10+20 (24-60)
-Cold: 3d10+15 (18-45)
-Fire: 3d10+15 (18-45)
-Total (no resistances): 60-150 damage
+Crushing: 4d10+20 (24–60)
+Cold: 3d10+15 (18–45)
+Fire: 3d10+15 (18–45)
+Total (no resistances): 60–150 damage without a save for half.
 
 ### Make Tenser's Transformation grant a THAC0 of 0 at max level and APR at the appropriate levels (441) (BGEE BG2EE EET)
 

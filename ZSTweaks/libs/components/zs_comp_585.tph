@@ -21,13 +21,20 @@ END ELSE BEGIN
 END
 
 ACTION_IF zst_585_pwk_magic_school = 0 BEGIN
+
     OUTER_SPRINT magic_school @76001
+
 END ELSE ACTION_IF zst_585_pwk_magic_school = 1 BEGIN // enchantment
+
     OUTER_SPRINT casting_sound ~cas_m05~
     OUTER_SPRINT magic_school @76003
     COPY_EXISTING ~spwi508.spl~ ~override~
         READ_LONG 0x1e exclusion_flags
     BUT_ONLY
+
+    COPY_EXISTING ~zstwpwk1.spl~ ~override~
+                  ~zstwpwk3.spl~ ~override~
+        WRITE_BYTE 0x25 4
 
 END ELSE ACTION_IF zst_585_pwk_magic_school = 2 BEGIN // divination
 
@@ -37,6 +44,9 @@ END ELSE ACTION_IF zst_585_pwk_magic_school = 2 BEGIN // divination
         READ_LONG 0x1e exclusion_flags
     BUT_ONLY
 
+    COPY_EXISTING ~zstwpwk1.spl~ ~override~
+                  ~zstwpwk3.spl~ ~override~
+        WRITE_BYTE 0x25 3
 END
 
 ACTION_IF zst_585_pwk_HP_hard_limit BEGIN
@@ -48,7 +58,7 @@ END
 COPY_EXISTING ~spwi912.spl~ ~override~
     PATCH_IF zst_585_pwk_magic_school > 0 BEGIN
         WRITE_LONG 0x1e exclusion_flags
-        WRITE_ASCII 0x10 casting_sound (8)
+        WRITE_ASCII 0x10 "%casting_sound%" (8)
 
         PATCH_IF zst_585_pwk_magic_school = 1 BEGIN
             WRITE_SHORT 0x22 11

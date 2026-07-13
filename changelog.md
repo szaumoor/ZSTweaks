@@ -81,7 +81,6 @@
   - Enemy becomes a devil shade if killed within 1 turn
   - Boosts undead creature if cast on them
   - Caster sucks up the power it was drained from the creature for a while
-- Wail of the Banshee component now also makes it slay anyone with 8 HD or less without any save allowed
 - Mage elemental robes ('robes of affinity') can now be worn by any class. Robe of Red Flames is excluded.
 - Storm Star now gives a bonus to Priests of Talos: +1/2 APR to them (unupgraded), 1 (upgraded)
 - Fire seed enchantment nerf (from +6--ridiculous-- to +2) nerfed: now it's +3. It's two levels above Melf's Meteors after all (SCS nerfs enchantment to +2 for example)
@@ -90,6 +89,7 @@
 - Extended the Shadows component so it includes wraiths, spectres, and undead mists.
 - Started moving towards using templates to generate files on the fly, instead of loading the mod with a huge amount of files.
 - Added Lacedon weapon attacks to the natural weapon component
+- Wail of the Banshee now kills those with 60 HP or less with a -2 penalty, and those with 8 HD or less are also slain instantly, similar to Death Spell.
 
 ## New Components
 

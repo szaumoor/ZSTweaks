@@ -1,11 +1,11 @@
 OUTER_SET new_description        = RESOLVE_STR_REF(@5250)
 OUTER_SET new_description_priest = RESOLVE_STR_REF(@5251)
 
-OUTER_SET golem = 28
+OUTER_SET golem = 27
 OUTER_SET notallies = 50
 OUTER_SET fade_speed = (25 << 16)
 
-OUTER_SPRINT the_effects ~op=324,p1=%race_salamander%;op=324,p1=%race_darkplanetar%;op=324,p1=%race_planetar%;op=324,p1=%race_antisolar%;op=324,p1=%race_solar%;op=324,p1=%race_rakshasa%;op=324,p1=%race_genie%;op=324,p1=%race_elemental%;op=324,p1=%race_mephit%;op=324,p1=%race_demonic%;op=324,p2=%golem%;op=326,p2=1,res=zstegdr0;op=318,p2=1,res=%SOURCE_RES%;op=216,p1=4,tmg=1;op=139,p1=%four_levels_drained%;op=216,p1=2,tmg=1;op=139,p1=%two_levels_drained%;op=174,tmg=1,res=eff_m07;op=141,tmg=1,p2=2;op=61,tmg=1,p1=2019179520,p2=%fade_speed%;op=146,p2=1,res=zstegdr5;op=326,p2=%notallies%,res=zstegdr1;op=326,p2=%notallies%,res=zstegdr7~
+OUTER_SPRINT the_effects ~op=324,p1=%race_salamander%;op=324,p1=%race_darkplanetar%;op=324,p1=%race_planetar%;op=324,p1=%race_antisolar%;op=324,p1=%race_solar%;op=324,p1=%race_rakshasa%;op=324,p1=%race_genie%;op=324,p1=%race_elemental%;op=324,p1=%race_mephit%;op=324,p1=%race_demonic%;op=324,p2=%golem%;op=326,p2=1,res=zstegdr0;op=318,p2=1,res=%SOURCE_RES%;op=216,p1=4,p2=0,tmg=1;op=139,p1=%four_levels_drained%;op=216,p1=2,p2=0,tmg=1;op=139,p2=0,p1=%two_levels_drained%;op=174,p2=0,tmg=1,res=eff_m07;op=141,tmg=1,p2=2;op=61,tmg=1,p1=2019179520,p2=%fade_speed%;op=146,p2=1,res=zstegdr5;op=326,p2=%notallies%,res=zstegdr1;op=326,p2=%notallies%,res=zstegdr7~
 
 ACTION_IF is_iwdee BEGIN
     OUTER_SET two_levels_drained = 35497
