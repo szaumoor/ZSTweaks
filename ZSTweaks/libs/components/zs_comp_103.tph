@@ -115,3 +115,7 @@ END
 ACTION_IF zst_group_582_true_sight BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_582.tph~ END
 END
+
+ACTION_IF zst_group_592_morale_failure BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_592.tph~ END
+END

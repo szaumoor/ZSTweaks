@@ -112,7 +112,7 @@
 - Make Boon of Lathander improve with level slightly (3200) (IWDEE BGEE BG2EE EET)
 - Make Otiluke's Resilient Sphere able to protect NPCs marked as innocents (487) (IWDEE BGEE BG2EE EET)
 - Make Pit Fiends closer to Balors in power thereby improving the Gate spell (3210) (BG2EE EET)
-- Make CHARNAMEs able to get morale failure instead of being default psychopathic (xxxx) (IWDEE BGEE BG2EE EET)
+- Make created characters able to suffer morale failure instead of being default psychopaths (592) (IWDEE BGEE BG2EE EET)
 
 ## Future additions
 
@@ -121,4 +121,3 @@
 - Overhauling Web component so it adopts the IWD appearance and sound
 - Slayer Overhaul
 - Maybe giving Control Undead to priests too
-- Giving CHARNAME the chance to suffer morale break
