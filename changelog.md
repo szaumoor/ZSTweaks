@@ -89,6 +89,7 @@
 - Thieves' Hood now still grants the +1 THAC0 and Damage bonus to single classed thieves even without upgrade. The upgraded one doubles this bonus.
 - Extended the Shadows component so it includes wraiths, spectres, and undead mists.
 - Started moving towards using templates to generate files on the fly, instead of loading the mod with a huge amount of files.
+- Added Lacedon weapon attacks to the natural weapon component
 
 ## New Components
 

@@ -131,10 +131,18 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             READ_ASCII 0x0 sig (4)
             PATCH_MATCH "%sig%" WITH
             "SPL "
-            BEGIN LPM SPELL_OPCODE_PRESENT END
+            BEGIN 
+                PATCH_IF "%SOURCE_EXT%" STR_EQ "SPL" BEGIN
+                    LPM SPELL_OPCODE_PRESENT 
+                END
+            END
 
             "ITM "
-            BEGIN LPM ITM_OPCODE_PRESENT END
+            BEGIN 
+                PATCH_IF "%SOURCE_EXT%" STR_EQ "ITM" BEGIN
+                    LPM ITM_OPCODE_PRESENT 
+                END
+            END
 
             DEFAULT
                 PATCH_IF zs_debug BEGIN

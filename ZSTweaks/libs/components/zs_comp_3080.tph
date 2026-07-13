@@ -14,5 +14,6 @@ COPY_EXISTING ~carrio1.itm~  ~override~
               ~spin520.spl~  ~override~
               ~ghast1p.spl~  ~override~
               ~ghast1.spl~   ~override~
+              ~lacedo.itm~   ~override~
   LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 0 END
 IF_EXISTS
