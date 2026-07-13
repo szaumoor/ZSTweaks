@@ -24,10 +24,17 @@ ACTION_IF NOT is_iwdee BEGIN
         OUTER_SPRINT resource "sppr416"
         COPY_EXISTING_REGEXP ~^.+\.spl$~ ~override~
             SET present = 0
-            LPM SPELL_OPCODE_PRESENT
-            PATCH_IF present BEGIN
-                LPF CLONE_EFFECT INT_VAR match_opcode=321 STR_VAR match_resource=~sppr416~ resource=~#cofear~ END
+
+            READ_ASCII 0x0 sig (4)
+            PATCH_IF "%sig%" STR_EQ "SPL " BEGIN
+
+                LPM SPELL_OPCODE_PRESENT
+                PATCH_IF present BEGIN
+                    LPF CLONE_EFFECT INT_VAR match_opcode=321 STR_VAR match_resource=~sppr416~ resource=~#cofear~ END
+                END
+
             END
+            
         BUT_ONLY
 
     END
