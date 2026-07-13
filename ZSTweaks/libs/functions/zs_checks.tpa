@@ -1,3 +1,49 @@
+// DEFINE_PATCH_FUNCTION check_for_sig_mismatch 
+// RET
+//     mismatched
+// BEGIN
+
+//     SET mismatched = 0
+//     READ_ASCII 0x0 sig (4)
+
+//     PATCH_IF "%sig%" STR_EQ "ITM " BEGIN
+
+//         PATCH_IF NOT "%SOURCE_EXT%" STR_EQ "itm" BEGIN
+//             mismatched = 1
+//         END
+
+//     END ELSE PATCH_IF "%sig%" STR_EQ "SPL " BEGIN
+
+//         PATCH_IF NOT "%SOURCE_EXT%" STR_EQ "spl" BEGIN
+//             mismatched = 1
+//         END
+
+//     END PATCH_IF "%sig%" STR_EQ "CRE " BEGIN
+
+//         PATCH_IF NOT "%SOURCE_EXT%" STR_EQ "cre" BEGIN
+//             mismatched = 1
+//         END
+
+//     END PATCH_IF "%sig%" STR_EQ "EFF " BEGIN
+
+//         PATCH_IF NOT "%SOURCE_EXT%" STR_EQ "eff" BEGIN
+//             mismatched = 1
+//         END
+
+//     END PATCH_IF "%sig%" STR_EQ "PRO " BEGIN
+
+//         PATCH_IF NOT "%SOURCE_EXT%" STR_EQ "pro" BEGIN
+//             mismatched = 1
+//         END
+
+//     END 
+
+//     PATCH_IF 1 BEGIN
+//         LPF LOG_TEXT STR_VAR message="Found a file with mismatched signature and file extension: %SOURCE_FILE%" END
+//     END
+
+// END
+
 DEFINE_PATCH_FUNCTION CHECK_EXTENSION
 INT_VAR
     fail_on_mismatch = 1
@@ -6,22 +52,30 @@ STR_VAR
     extension = ""
 RET
     result
+   // mismatched
 BEGIN
     PATCH_IF STRING_LENGTH "%extension%" = 0 BEGIN
         PATCH_FAIL "[FAIL]: Extension is empty"
     END
+
     result = 1
+  //  mismatched = 0
+  //  LPF check_for_sig_mismatch RET mismatched END
     PATCH_IF NOT "%SOURCE_EXT%" STR_EQ "%extension%" BEGIN
+
         result = 0
         PATCH_IF NOT suppress BEGIN
+
             PATCH_IF fail_on_mismatch BEGIN
                 PATCH_FAIL "[WARN]: This function only works for .%extension% files"
             END ELSE BEGIN
                 PATCH_WARN "[WARN]: This function only works for .%extension% files"
             END
+
         END
 
     END
+
 END
 
 DEFINE_DIMORPHIC_FUNCTION ~IS_BIT_SET~

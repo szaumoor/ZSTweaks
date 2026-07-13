@@ -1899,7 +1899,6 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
     
-
     // ----------------------------------------GROUP COMP VARIABLES (ARCANE)------------------------------------------------- \\
 
     ACTION_IF zst_group_140_finger_death != 0 AND zst_group_140_finger_death != 1 BEGIN
