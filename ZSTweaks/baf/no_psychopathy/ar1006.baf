@@ -9,5 +9,12 @@ THEN
         ApplySpellRES("ZSTWPSYC", Player4)
         ApplySpellRES("ZSTWPSYC", Player5)
         ApplySpellRES("ZSTWPSYC", Player6)
+
+        ChangeStat(Player1, MORALERECOVERYTIME, replaceme, SET)
+        ChangeStat(Player2, MORALERECOVERYTIME, replaceme, SET)
+        ChangeStat(Player3, MORALERECOVERYTIME, replaceme, SET)
+        ChangeStat(Player4, MORALERECOVERYTIME, replaceme, SET)
+        ChangeStat(Player5, MORALERECOVERYTIME, replaceme, SET)
+        ChangeStat(Player6, MORALERECOVERYTIME, replaceme, SET)
         Continue()
 END
