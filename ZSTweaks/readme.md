@@ -24,13 +24,14 @@ Compatibility with other tweak mods that affect the same content depends on the 
 
 I am open to providing compatibility for other mods. You can contact me on the forums or at <kaelyn@tuta.io> with any requests or questions. So far, compatibility *some* compatibility has been added for:
 
-- BG1-NPCs-for-SoA-ToB
+- BG1-NPCs-for-SoA-ToB (Shar-Teel)
 - EEFixpack
 - Forgotten Armaments
 - Item Upgrade
 - IWDification
 - Project Javelin
 - Rogue Rebalancing
+- Shar-Teel for BG2EE
 - Sword Coast Stratagems (SCS)
 - Shades of the Sword Coast
 - Talents of Faêrun
@@ -42,9 +43,9 @@ I am open to providing compatibility for other mods. You can contact me on the f
 
 ## Some mod recommendations
 
-- I recommend [Xgatt's Casting Level fix](https://github.com/Xgatt/XGTCumulativeCasterLevels) if you use EEex, since it will make any of the tweaks that I do to casting level work in harmony with other effects that change caster level.
-- EEFixpack. It's not completely polished, but it fixes tons of things and eventually will probably be a backbone for every game setup. My mod also fixes some things that are unaddressed by it (or currently messed up by it, such as poor Blackrazor)
-- IWDification, especially the IWD spell packs for BG, so my tweaks can take full advantage. They also make druids and paladins significantly more interesting and capable as spellcasters
+- I recommend [Xgatt's Casting Level fix](https://github.com/Xgatt/XGTCumulativeCasterLevels) if you use EEex, since it will make any of the tweaks that I do to casting level work in harmony with other effects that change caster level. Otherwise, only the last of such effects will apply.
+- EEFixpack. It's not completely polished, but it fixes tons of things and eventually will probably be a backbone for every game setup. My mod also fixes some things that are unaddressed by it (or currently messed up by it as of Beta 2, such as poor Blackrazor).
+- IWDification, especially the IWD spell packs for BG, so my tweaks can take full advantage. They also make druids and paladins significantly more interesting and capable as spellcasters.
 - Any mods that improve Thieves, like RR, allowing them 3 pips in Two-weapon fighting. Join me in my crusade to make them better as a standalone class.
 - Viconia Friendship if you use the Handsmaiden Mace component, because it makes the upgraded mace available even without romancing her.
 
@@ -84,7 +85,7 @@ Because the file I'm trying to patch is not found in your specific game, but mig
 
 My mod runs a bunch of scripts before installing the first component (whichever it might be), including scripts that fix a fair amount of issues and inconsistencies in the game, and problems with previously-installed mods. If you see a warning, it's possible you've found a problem there. Report it to me, preferably on my Discord server.
 
-### How do I fine tune my experience and change what the components do?
+### How do I fine-tune my experience and change what components do?
 
 All the information you need is in the ZSTweaks/configurations folder. Follow instructions and change things in any way you prefer.
 
@@ -104,4 +105,5 @@ All the information you need is in the ZSTweaks/configurations folder. Follow in
 - For the people in G3 and Discord for reporting bugs
 - To MephistoSatanDevil for providing the first translation (Simplified Chinese) to this ginormous mod
 - ScrierOne for help providing data so I could grant compatibility to PnP Celestials and Fiends
+- Other folks on my discord server offering thoughts and brainstorming
 - zenblack for feedback, brainstorming, and icon-making

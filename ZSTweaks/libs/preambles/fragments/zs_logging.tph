@@ -5,7 +5,7 @@ ACTION_IF NOT VARIABLE_IS_SET "zs_log_created" BEGIN
         DELETE + "%MOD_FOLDER%/../ZSTweaks_Logs"
     WITH
         DEFAULT
-            PRINT "Some error happened when deleting ZSTweaks_Logs. Maybe it didn't exist yet."
+            PRINT "[INFO]: Some error happened when deleting ZSTweaks_Logs. Maybe it didn't exist yet."
     END
     VERBOSE
 
@@ -44,7 +44,7 @@ OUTER_SPRINT ABORT_PREAMBLE "[ABORT]: "
  *                      default value, causing the component to be marked as installed with errors, and finally Info just prints a 
  *                      message.
  */
-DEFINE_ACTION_FUNCTION LOG_TEXT
+DEFINE_DIMORPHIC_FUNCTION LOG_TEXT
 INT_VAR
     predicate_stdout   = TRUE
     add_level_preamble = TRUE
