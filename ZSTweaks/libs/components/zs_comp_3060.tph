@@ -42,6 +42,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         result = total
     END
 
+    ACTION_IF zs_debug BEGIN
+        COPY_EXISTING ~sevpat01.cre~ ~override/zsmencar.cre~ // test mencar before edits
+    END
+
     COPY_EXISTING ~sevpat01.cre~ ~override~
         LPF CALCULATE_HP_VANILLA INT_VAR level = BYTE_AT(0x234) STR_VAR class = "fighter" RET result END
         WRITE_SHORT 0x24 result
