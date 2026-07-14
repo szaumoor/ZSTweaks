@@ -33,8 +33,17 @@ ACTION_IF zst_170_wail_wish_bonus BEGIN
   PRINT "[INFO]: Making sure the Limited Wish version of Wail of the Banshee is extra nasty..."
   COPY_EXISTING ~spwi913.spl~ "override/zstwswl.spl"
     LPF ALTER_HEADER INT_VAR speed = 0 END
+
     LPF ALTER_EFFECT INT_VAR match_savingthrow = 4 savebonus = zst_170_wail_save_bonus END
+    LPF ALTER_EFFECT INT_VAR match_savingthrow = 4 savebonus = "-2" silent = 1 END
+    LPF ALTER_EFFECT STR_VAR match_resource = "spwi913" resource = "%SOURCE_RES%" END
+    LPF ALTER_EFFECT STR_VAR match_resource = "zstwail1" resource = "zstwail2" END
+
     WRITE_BYTE 0x25 0
+
+  COPY_EXISTING ~zstwail1.spl~ ~override/zstwail2.spl~
+    LPF ALTER_EFFECT INT_VAR match_savingthrow = 4 savebonus = "-4" END
+
     
   COMPILE ~%MOD_FOLDER%/dlg/zs_wish_wail_banshee.d~
 
