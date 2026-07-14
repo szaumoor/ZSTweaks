@@ -1,11 +1,28 @@
+OUTER_SET fade_speed = (25 << 16)
+
+DEFINE_PATCH_MACRO patch_file BEGIN
+  LPF ADD_SPL_TGTEFF INT_VAR rd=3 pwr=0 STR_VAR effects=~op=55,p2=2,dnum=8;op=141,tmg=1,p2=39;op=61,p2=%fade_speed%,p1=2021160960~ END
+END
+LAF CREATE_TG_SPL STR_VAR filename = "zstwail0" END // kill if HD <=8
+
+DEFINE_PATCH_MACRO patch_file BEGIN
+  LPF ALTER_SPELL INT_VAR primary_type = 7 secondary_type = 10 END // necromancer bonus applies as well
+  LPF ADD_SPL_TGTEFF INT_VAR rd=3 pwr=0 stype=4 sbonus="-2" STR_VAR effects=~op=55,p2=2,dnum=8;op=141,tmg=1,p2=39;op=61,p2=%fade_speed%,p1=2021160960~ END
+END
+LAF CREATE_TG_SPL STR_VAR filename = "zstwail1" END // kill with bonus save if HP<=60
+
+
 OUTER_SET new_description =RESOLVE_STR_REF(@7360)
 COPY_EXISTING ~spwi913.spl~ ~override~
-  LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 101 match_parameter2 = 55 END
   LPF ALTER_SPELL INT_VAR desc=new_description END
-  LPF ADD_SPL_TGTEFF INT_VAR pwr=9 rd=3 STR_VAR effects=~op=12,p1=3,tmg=1,dnum=3,dsize=6,p2=0;op=80,dur=12;op=142,p2=112,dur=12~ END
-  LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter2 = op12_magic END
-  LPF ALTER_EFFECT INT_VAR check_globals = 0 resist_dispel = 3 END
-  LPF CLONE_EFFECT INT_VAR match_opcode = 55 savingthrow = 0 dicenumber = 8 END
+  LPF DELETE_EFFECT END
+
+  SPRINT fp_death_immune ""
+  PATCH_IF has_eefixpack BEGIN
+    SPRINT fp_death_immune ~op=318,p2=110,p1=%splstate_fp_death_immunity%;~
+  END
+
+  LPF ADD_SPL_TGTEFF INT_VAR pwr=9 rd=3 STR_VAR effects=~op=174,t=1,tmg=1,res=eff_m89;%fp_death_immune%op=326,dnum=8,res=zstwail0;op=326,p2=145,p1=61,res=zstwail1;op=318,p2=144,p1=61,res=%SOURCE_RES%;op=326,res=zstwail0,stype=4;op=141,tmg=1,p2=39,stype=4;op=61,p2=%fade_speed%,p1=2021160960,stype=4;op=12,p1=3,tmg=1,dnum=3,dsize=6,p2=%op12_magic%;op=80,dur=12;op=142,p2=112,dur=12~ END
 
 COPY_EXISTING ~scrl9v.itm~ ~override~
   LPF ALTER_ITEM INT_VAR id_desc=new_description END
