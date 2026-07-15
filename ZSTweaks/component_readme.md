@@ -2664,10 +2664,10 @@ AC: -5 to -7
 THAC0: 8 to 5
 Magic Resistance: 50 to 65
 Physical resistances: 0 to 20
-Cold resistance: 0 to 25
-Electricity resistance: 0 to 50
+Cold resistance: 0 to 50
+Acid resistance: 0 to 50
 HD: 13 to 14
-Strength: 18/100 to 20
+Attacks: Increased damage to 3d4+4 (from 3d4)
 Intelligence: 9 to 22
 Constitution: 9 to 17
 Wisdom: 16 to 18

@@ -7,18 +7,17 @@ END
 LAF CREATE_TG_SPL STR_VAR filename = "zstwail0" END // kill if HD <=8
 
 DEFINE_PATCH_MACRO patch_file BEGIN
-  LPF ALTER_SPELL INT_VAR primary_type = 7 secondary_type = 10 END // necromancer bonus applies as well
+  LPF ALTER_SPELL INT_VAR primary_type=7 secondary_type=10 END // necromancer bonus applies as well
   LPF ADD_SPL_TGTEFF INT_VAR rd=3 pwr=0 stype=4 sbonus="-2" STR_VAR effects=~op=55,p2=2;op=141,tmg=1,p2=39;op=61,p2=%fade_speed%,p1=2021160960~ END
   LPF ADD_SPL_TGTEFF INT_VAR rd=3 pwr=0 STR_VAR effects=~op=146,p2=1,res=zstwail3~ END
 END
 LAF CREATE_TG_SPL STR_VAR filename = "zstwail1" END // kill with bonus save if HP<=60
 
 DEFINE_PATCH_MACRO patch_file BEGIN
-  LPF ALTER_SPELL INT_VAR primary_type = 7 secondary_type = 10 END // necromancer bonus applies as well
+  LPF ALTER_SPELL INT_VAR primary_type=7 secondary_type=10 END // necromancer bonus applies as well
   LPF ADD_SPL_TGTEFF INT_VAR rd=3 STR_VAR effects=~op=12,p1=3,tmg=1,dnum=3,dsize=6,p2=%op12_magic%,stype=0;op=80,dur=12,stype=0;op=142,p2=112,dur=12,stype=0~ END
 END
 LAF CREATE_TG_SPL STR_VAR filename = "zstwail3" END // damage if survived
-
 
 OUTER_SET new_description =RESOLVE_STR_REF(@7360)
 COPY_EXISTING ~spwi913.spl~ ~override~
@@ -41,31 +40,29 @@ ACTION_IF zst_170_wail_wish_bonus BEGIN
   PRINT "[INFO]: Making sure the Limited Wish version of Wail of the Banshee is extra nasty..."
   COPY_EXISTING ~spwi913.spl~ "override/zstwswl.spl"
     LPF ALTER_HEADER INT_VAR speed = 0 END
-
-    LPF ALTER_EFFECT INT_VAR match_savingthrow = 4 savebonus = zst_170_wail_save_bonus END
-    LPF ALTER_EFFECT INT_VAR match_savingthrow = 4 savebonus = "-2" silent = 1 END
-    LPF ALTER_EFFECT STR_VAR match_resource = "spwi913" resource = "zstwswl" END
-    LPF ALTER_EFFECT STR_VAR match_resource = "zstwail1" resource = "zstwail2" END
-
+    LPF ALTER_EFFECT INT_VAR match_savingthrow=4 savebonus=zst_170_wail_save_bonus END
+    LPF ALTER_EFFECT INT_VAR match_savingthrow=4 savebonus="-2" silent=1 END
+    LPF ALTER_EFFECT STR_VAR match_resource="spwi913" resource="zstwswl" END
+    LPF ALTER_EFFECT STR_VAR match_resource="zstwail1" resource="zstwail2" END
     WRITE_BYTE 0x25 0
 
   COPY_EXISTING ~zstwail1.spl~ ~override/zstwail2.spl~
     LPF ALTER_SPELL INT_VAR primary_type = 0 END // no necromancy school for this
     LPF ALTER_EFFECT INT_VAR match_savingthrow = 4 savebonus = "-4" END
 
-    
   COMPILE ~%MOD_FOLDER%/dlg/zs_wish_wail_banshee.d~
 
   DEFINE_ACTION_MACRO wob_patching BEGIN
     COPY_EXISTING_REGEXP ".+\.\(spl\|itm\|cre\)" ~override~
-      LPF CLONE_EFFECT INT_VAR silent=1 match_opcode = 204 match_parameter2 = 7 opcode = 206 STR_VAR resource=~zstwswl~ END
-      LPF CLONE_EFFECT INT_VAR silent=1 match_opcode = 206 STR_VAR resource = ~zstwswl~ END
+      LPF CLONE_EFFECT INT_VAR silent=1 match_opcode=204 match_parameter2=7 opcode=206 STR_VAR resource=~zstwswl~ END
+      LPF CLONE_EFFECT INT_VAR silent=1 match_opcode=206 STR_VAR resource=~zstwswl~ END
     BUT_ONLY
   END
 
   ACTION_IF zs_debug BEGIN
 
     PRINT "[DEBUG][INFO]: Timing Wail of the Banshee Limited Wish patching"
+
     ACTION_TIME "Horrendous WoB patching" BEGIN
       LAM wob_patching
     END
