@@ -94,6 +94,7 @@ BEGIN
         SET effect_size = 0x108
     END
 
+    SET present = 0
     SET found = 0
     FOR ( index = 0; index < eff_length; ++index ) BEGIN
         PATCH_IF eff_type = 0 BEGIN
@@ -122,6 +123,7 @@ BEGIN
         END
     END
 
+    SET present = 0
     READ_LONG 0x64 ability_offset
     READ_SHORT 0x68 num_abilities
 
@@ -179,6 +181,7 @@ BEGIN
         END
     END
 
+    SET present = 0
     READ_LONG 0x6a ability_offset
     READ_SHORT 0x70 effects_number
 

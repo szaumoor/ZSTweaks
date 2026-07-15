@@ -1,29 +1,29 @@
 DEFINE_PATCH_MACRO patch_file BEGIN
     LPF ADD_SPL_SELFEFF INT_VAR pwr=0 tmg=9 STR_VAR effects = ~op=23,spec=1,p1=%zst_592_morale%;op=106,p1=%zst_592_morale_break%~ END
 END
-LAF CREATE_SELF_SPL STR_VAR resource="zstwpsyc" END
+LAF CREATE_SELF_SPL STR_VAR filename="zstwpsyc" END
 
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-    EXTEND_BOTTOM ~ar0602.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar0602.baf~ EVALUATE_BUFFER // irenicus dungeon
-    EXTEND_BOTTOM ~ar4000.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar4000.baf~ EVALUATE_BUFFER // tob initial area
-    EXTEND_BOTTOM ~ar8000.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/oh8000.baf~ EVALUATE_BUFFER // black pits 2 initial area
+    EXTEND_BOTTOM ~ar0602.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar0602.baf~ EVAL // irenicus dungeon
+    EXTEND_BOTTOM ~ar4000.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar4000.baf~ EVAL // tob initial area
+    EXTEND_BOTTOM ~ar8000.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/oh8000.baf~ EVAL // black pits 2 initial area
 
 END
 
 ACTION_IF is_iwdee BEGIN
 
-    EXTEND_BOTTOM ~ar9100.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar9100.baf~ EVALUATE_BUFFER // HoW
-    EXTEND_BOTTOM ~ar1006.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar1006.baf~ EVALUATE_BUFFER // easthaven inn (iwdee)
+    EXTEND_BOTTOM ~ar9100.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar9100.baf~ EVAL // HoW
+    EXTEND_BOTTOM ~ar1006.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar1006.baf~ EVAL // easthaven inn (iwdee)
 
 END
 
 ACTION_IF is_bgee OR is_eet BEGIN
 
-    EXTEND_BOTTOM ~ar2600.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar2600.baf~ EVALUATE_BUFFER // candlekeep area
-    EXTEND_BOTTOM ~oh9310.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/oh9310.baf~ EVALUATE_BUFFER // black pits 1 area
+    EXTEND_BOTTOM ~ar2600.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/ar2600.baf~ EVAL // candlekeep area
+    EXTEND_BOTTOM ~oh9310.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/oh9310.baf~ EVAL // black pits 1 area
     ACTION_IF is_eet OR includes_sod BEGIN
-        EXTEND_BOTTOM ~bd0120.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/bd0120.baf~ EVALUATE_BUFFER // sod initial area
+        EXTEND_BOTTOM ~bd0120.bcs~ ~%MOD_FOLDER%/baf/no_psychopathy/bd0120.baf~ EVAL // sod initial area
     END
 
 END
