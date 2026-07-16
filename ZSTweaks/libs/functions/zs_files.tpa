@@ -15,8 +15,10 @@ DEFINE_ACTION_MACRO CREATE_EQ_EFF BEGIN
     COPY ~%MOD_FOLDER%/templates/eff/equipped.eff~ ~override/%file_ext%~
         LPM patch_file
 
-    DEFINE_PATCH_MACRO patch_file BEGIN
-        PATCH_FAIL "patch_file function is not defined"
+    ACTION_IF undef_macro BEGIN
+        DEFINE_PATCH_MACRO patch_file BEGIN
+            PATCH_FAIL "patch_file function is not defined"
+        END
     END
 END
 
@@ -33,8 +35,10 @@ DEFINE_ACTION_MACRO CREATE_TG_EFF BEGIN
     COPY ~%MOD_FOLDER%/templates/eff/ptarget.eff~ ~override/%file_ext%~
         LPM patch_file
 
-    DEFINE_PATCH_MACRO patch_file BEGIN
-        PATCH_FAIL "patch_file function is not defined"
+    ACTION_IF undef_macro BEGIN
+        DEFINE_PATCH_MACRO patch_file BEGIN
+            PATCH_FAIL "patch_file function is not defined"
+        END
     END
 END
 
@@ -51,8 +55,10 @@ DEFINE_ACTION_MACRO CREATE_TG_SPL BEGIN
     COPY ~%MOD_FOLDER%/templates/spl/1h_lactor.spl~ ~override/%file_ext%~
         LPM patch_file
 
-    DEFINE_PATCH_MACRO patch_file BEGIN
-        PATCH_FAIL "patch_file function is not defined"
+    ACTION_IF undef_macro BEGIN
+        DEFINE_PATCH_MACRO patch_file BEGIN
+            PATCH_FAIL "patch_file function is not defined"
+        END
     END
 END
 
@@ -69,12 +75,16 @@ DEFINE_ACTION_MACRO CREATE_SELF_SPL BEGIN
     COPY ~%MOD_FOLDER%/templates/spl/1h_self.spl~ ~override/%file_ext%~
         LPM patch_file
 
-    DEFINE_PATCH_MACRO patch_file BEGIN
-        PATCH_FAIL "patch_file function is not defined"
+    ACTION_IF undef_macro BEGIN
+        DEFINE_PATCH_MACRO patch_file BEGIN
+            PATCH_FAIL "patch_file function is not defined"
+        END
     END
 END
 
 DEFINE_ACTION_FUNCTION CREATE_EQ_EFF
+INT_VAR
+    undef_macro = 1
 STR_VAR
     filename = ""
 RET
@@ -84,6 +94,8 @@ BEGIN
 END
 
 DEFINE_ACTION_FUNCTION CREATE_TG_EFF
+INT_VAR
+    undef_macro = 1
 STR_VAR
     filename = ""
 RET
@@ -93,6 +105,8 @@ BEGIN
 END
 
 DEFINE_ACTION_FUNCTION CREATE_TG_SPL
+INT_VAR
+    undef_macro = 1
 STR_VAR
     filename = ""
 RET
@@ -102,6 +116,8 @@ BEGIN
 END
 
 DEFINE_ACTION_FUNCTION CREATE_SELF_SPL
+INT_VAR
+    undef_macro = 1
 STR_VAR
     filename = ""
 RET
