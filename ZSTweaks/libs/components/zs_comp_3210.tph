@@ -2,7 +2,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     DEFINE_PATCH_MACRO patch_file BEGIN
         LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 tmg=1
-        STR_VAR effects = ~op=318,p2=55,res=%SOURCE_RES%;op=78,p1=2,p2=4;op=78,p1=2,p2=5;op=78,p1=2,p2=6;op=142,p2=7;op=215,p2=1,tmg=0,dur=2,res=magres4;op=206,res=%SOURCE_RES%~ 
+        STR_VAR effects = ~op=318,p2=55,res=%DEST_RES%;op=78,p1=2,p2=4;op=78,p1=2,p2=5;op=78,p1=2,p2=6;op=142,p2=7;op=215,p2=1,tmg=0,dur=2,res=magres4;op=206,res=%DEST_RES%~ 
         END
     END
     LAF CREATE_TG_SPL STR_VAR filename = "zstpitf1" END // disease component
@@ -36,7 +36,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     OUTER_SET poison_three = RESOLVE_STR_REF(@80602)
     
     DEFINE_PATCH_MACRO patch_file BEGIN
-        LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 STR_VAR effects = ~op=318,p2=55,res=%SOURCE_RES%;op=318,p2=77,res=%SOURCE_RES%;op=12,dsize=2,dnum=6,p2=%op12_poison%;op=139,p1=%poison_one%,pro1=32;op=139,p1=%poison_two%,pro1=65,pro2=33;op=139,p1=%poison_three%,pro1=100,pro2=66;op=142,dur=6,p2=51,pro1=32;op=142,dur=6,p2=51,pro1=65,pro2=33;op=142,dur=6,p2=51,pro1=100,pro2=66;op=142,dur=6,p2=6,pro1=32;op=142,dur=6,p2=6,pro1=65,pro2=33;op=142,dur=6,p2=6,pro1=100,pro2=66~ END
+        LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 STR_VAR effects = ~op=318,p2=55,res=%DEST_RES%;op=318,p2=77,res=%DEST_RES%;op=12,dsize=2,dnum=6,p2=%op12_poison%;op=139,p1=%poison_one%,pro1=32;op=139,p1=%poison_two%,pro1=65,pro2=33;op=139,p1=%poison_three%,pro1=100,pro2=66;op=142,dur=6,p2=51,pro1=32;op=142,dur=6,p2=51,pro1=65,pro2=33;op=142,dur=6,p2=51,pro1=100,pro2=66;op=142,dur=6,p2=6,pro1=32;op=142,dur=6,p2=6,pro1=65,pro2=33;op=142,dur=6,p2=6,pro1=100,pro2=66~ END
         
         LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 tmg=3 dur=6 STR_VAR effects = ~op=12,p2=%op12_poison%,dsize=6,dnum=1,pro1=32;op=326,p2=2,res=zstpitf3,pro1=32~ END // first after one round slay cast spell, 33% chance
 
@@ -76,22 +76,22 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     DEFINE_PATCH_MACRO patch_file BEGIN
         SPRINT fp_death_immune ""
         PATCH_IF has_eefixpack BEGIN
-            SPRINT fp_death_immune ~op=318,p2=110,p1=%splstate_fp_death_immunity%,res=%SOURCE_RES%;~
+            SPRINT fp_death_immune ~op=318,p2=110,p1=%splstate_fp_death_immunity%,res=%DEST_RES%;~
         END
         LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 stype=4 STR_VAR effects = ~%fp_death_immune%op=55,p2=2~ END
     END
     LAF CREATE_TG_SPL STR_VAR filename = "zstpitf3" END // slay component
 
     DEFINE_PATCH_MACRO patch_file BEGIN
-        LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 
-        STR_VAR effects = ~op=146,res=zstpitf1;op=146,res=zstpitf2;op=206,dur=6,res=zstpitf4~ 
+        LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 p2=1
+        STR_VAR effects = ~op=146,res=zstpitf1;op=146,res=zstpitf2;op=206,dur=6,res=%DEST_RES%~ 
         END
     END
     LAF CREATE_TG_SPL STR_VAR filename = "zstpitf4" END // bite effects
 
     COPY_EXISTING ~p3-12m4.itm~ ~override/zstpitf0.itm~
         LPF ALTER_HEADER INT_VAR damage=4 damage_type = 6 END
-        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=146,res=zstpitf4,pro1=9~ END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=146,p2=1,res=zstpitf4,pro1=9~ END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=206,p1=-1,res=spin701~ END
 
     COPY_EXISTING ~dempit.cre~   ~override~
@@ -131,6 +131,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         WRITE_BYTE 0x23a 22 // intelligence, from 9. Sorry mind flayers. Balors have 20
         WRITE_BYTE 0x23b 18 // wisdom, from 16, same as balors.
         WRITE_BYTE 0x23d 17 // constitution, from 9. No effect in most circumstances due to being non playable class
+
+        WRITE_BYTE 0x273 class_imp
 
         ADD_CRE_ITEM ~helmnoan~ #0 #0 #0 ~unstealable&undroppable~ ~helmet~ // immunity to crits, just like balors
         ADD_CRE_ITEM ~zstpitf0~ #0 #0 #0 ~unstealable&undroppable~ ~weapon1~ EQUIP // new weapon

@@ -8,12 +8,12 @@
 - PREFIX: Fix the Blind Albino Wyrmling's race and class since they're set to wyverns instead of dragon (copy paste gone wrong, I'm sure)
 - PREFIX: Fix for bugged EEFixpack implementations of Blackrazor and Black Blade of Disaster (currently they heal and boost targets instead of wielder
 - PREFIX: Fix Ras and Sword of Morderkainen being set class-wise as gnoll (??). Set to Long Sword instead, as it is in BGEE and IWDEE.
-- PREFIX: Fix for wrong casting speed for seeking sword at level 20 (all except iwdee)
+- PREFIX: Fix for wrong casting speed for seeking sword at level 20 (all except IWDEE)
 - PREFIX: Instance of Chimera in IWD's Lava mod with the wrong race
 - PREFIX: Solar in ToB defined weirdly as demonic Tanar'ri
 - PREFIX: Pit Fiends not marked as devils in BG2
-- Every single prefix is now toggleable by using the new configuration file <zstweaks_prefixes.txt>
-- Part of the script that standardizes shield general names so shield-detecting scripts work correctly is now an optional part of prefixes (ON by default -- needed for the shield overhaul component to apply to what you would expect)
+- Every single prefix is now togglable by using the new configuration file <zstweaks_prefixes.txt>
+- Part of the script that standardizes shield general names so shield-detecting scripts work correctly is now an optional part of prefixes (ON by default – needed for the shield overhaul component to apply to what you would expect)
 
 ## Configuration
 
@@ -26,7 +26,7 @@
 
 - Added compatibility for BG1-NPCs-for-SoA-ToB mod for the Shar-Teel component, as well as Lava's mod of the same
 - Added support to PnP Celestials and Fiends mod so their vorpal hits conform to my standards. Additionally, their vorpal hits are no longer guaranteed, uses a Save vs. Death at -4 instead of none and in the process it fixes the apparent bug where it was supposed to never affect spectral creatures, elementals, golems, and skeletons.
-- Improved compatibility of Symbol X component with EE Fixpack
+- Improved compatibility of Symbol X component with EEFixpack
 - Updated compatibility with Subrace fork by dark0dave and me
 
 ## Fixes
@@ -52,18 +52,18 @@
 - Mod is now available in Simplified Chinese thanks to user MephistoSatanDevil
 - Component that makes natural effects nonmagical now includes Poisonous Breath from Neothelid (SoD) and also resources created by the Fixpack
 - Clarified the descriptions of various components that use the "protection vs. <type>" to mention that Saving Throws against effects caused by those creatures's attacks also gain a +2 boost.
-- Added framework to log errors and warnings onto a file in ZSTweaks/logs for users to examine after installation. The file inside will be called "errors_found.txt" if there are errors.
+- Added framework to log errors and warnings onto a file in the game folder called ZSTweaks_Logs for users to examine after installation. The file inside will be called "warnings.txt" if there are errors.
 - Mod components now use the LABEL functionality
-- Dagger/Dart probabilities for Finesse reduced by 2: 41-50%. Kukris also have a 2 probability reduction since it's calculated from the probabilities of daggers and darts
+- Dagger/Dart probabilities for Finesse reduced by 2: 41–50%. Kukris also have a 2 probability reduction since it's calculated from the probabilities of daggers and darts
 - Ashen Scales components also allows Beast Masters to wear it now
 - Chain Lightning component now scales damage up to 15d6+10 at level 20 instead of 12d6
 - Darkfire Bow component now increases APR too by 1/2 for the non-upgraded and 1 for the upgraded
 - Girdle of Fortitude now other than setting the user's constitution to 18, it also has a charge ability once per day that buffs a target of their choice (other than self) with +2 CON, Save vs. Death, and +5 maximum HP.
 - Handmaiden's Mace +2 now overhauled more deeply with the poison theme. It also no longer has racial or alignment restrictions.
 - Implementation of Handmaiden's now no longer requires it to be installed at the end, and as such it now belongs in the Joinables category. Strength modification takes up to a second to kick in after equipping with the new implementation.
-- Vastly extended the Oversight++ component that fixes improper alignments according to lore... or what makes the most sense to me. New changes:
+- Vastly extended the Oversight++ component that fixes improper alignments according to lore… or what makes the most sense to me. New changes:
   - Spiders are all true neutral except Wraith ones which are undead evil spiders.
-  - Many many (MANY) instances of undead creatures not marked as evil. Skeletons and zombies are considered neutral in 2e as mindless automatons, but I don't really vibe with that, so I adopt the change from 3e, which is that they're neutral evil, similar to Skeleton Warriors. Rejoice, as your lowly BGEE paladin's Protection vs. Evil will serve a purpose against them now.
+  - Many instances of undead creatures not marked as evil are now considered evil. Skeletons and zombies are considered neutral in 2e as mindless automatons, but I don't really vibe with that, so I adopt the change from 3e, which is that they're neutral evil, similar to Skeleton Warriors. Rejoice, as your lowly BGEE paladin's Protection vs. Evil will serve a purpose against them now.
   - Lizardfolk are now set to Neutral barring exceptions like the Lizard King in IWD who does very questionable stuff
   - Invisible Stalkers no longer marked as evil, since they're neutral elementals from the Plane of Air
   - The Huntress (WK) is a humanoid tanar'ri marked as True Neutral. Changed to Chaotic Evil
@@ -71,6 +71,7 @@
   - Lanfear wolfwere in chapter 6 of BG2 (Coran's minor quest) changed to Chaotic Evil (they're CE according to lore)
   - Instances of golems that are good, or evil fixed except brain golems which are evil.
   - Aataqah is changed to Chaotic Good from Lawful Neutral. Lorewise they're whimsy but benevolent genies (in contrast with efreeti).
+  - Frennedan is a Chaotic Neutral Greater Doppleganger. The greater ones should be neutral evil.
   - Also patches various creatures added by existing mods before installation of this one (all manually picked, so don't expect consistency for every and any mod)
 - Grease component now also adds a -2 Armor Class debuff
 - Slightly changed the bonus constitution progression:

@@ -27,7 +27,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         COPY_EXISTING ~zstwbnd0.eff~ ~override/zstwbnd1.eff~ // extra dmg
             LPF ALTER_EFF_FILE INT_VAR parameter1 = 6 END
         DEFINE_PATCH_MACRO patch_file BEGIN
-            LPF ADD_SPL_TGTEFF INT_VAR tgt=9 rd=0 dur=12 pwr=0 STR_VAR effects = ~op=321,res=%SOURCE_RES%;op=73,p1=2;op=278,p1=2;op=301,p1=1,p2=1~ END
+            LPF ADD_SPL_TGTEFF INT_VAR tgt=9 rd=0 dur=12 pwr=0 STR_VAR effects = ~op=321,res=%DEST_RES%;op=73,p1=2;op=278,p1=2;op=301,p1=1,p2=1~ END
         END
         LAF CREATE_TG_SPL STR_VAR filename = "zstwbnd2" END // self buff when sleep triggers
 
