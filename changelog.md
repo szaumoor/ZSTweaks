@@ -10,6 +10,8 @@
 - PREFIX: Fix Ras and Sword of Morderkainen being set class-wise as gnoll (??). Set to Long Sword instead, as it is in BGEE and IWDEE.
 - PREFIX: Fix for wrong casting speed for seeking sword at level 20 (all except iwdee)
 - PREFIX: Instance of Chimera in IWD's Lava mod with the wrong race
+- PREFIX: Solar in ToB defined weirdly as demonic Tanar'ri
+- PREFIX: Pit Fiends not marked as devils in BG2
 - Every single prefix is now toggleable by using the new configuration file <zstweaks_prefixes.txt>
 - Part of the script that standardizes shield general names so shield-detecting scripts work correctly is now an optional part of prefixes (ON by default -- needed for the shield overhaul component to apply to what you would expect)
 

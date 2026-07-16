@@ -217,6 +217,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         WARN "[WARN]: Solar tags fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_solar_tags%"
         LAM f_plus
     END
+    
+    ACTION_IF zst_pit_fiends != 0 AND zst_pit_fiends != 1 BEGIN
+        WARN "[WARN]: Pit Fiends fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_pit_fiends%"
+        LAM f_plus
+    END
 
     // ----------------------------------------SYMBOL X SPELLS------------------------------------------------- \\
 

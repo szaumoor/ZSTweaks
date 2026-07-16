@@ -254,6 +254,15 @@ ACTION_IF zs_allow_prefixes BEGIN
                     WRITE_BYTE 0x272 class_cleric_mage
             END
 
+            ACTION_IF zst_pit_fiends BEGIN
+                
+                COPY_EXISTING ~dempit.cre~   ~override~
+                              ~dempit01.cre~ ~override~
+                              ~dempitsu.cre~ ~override~
+                    WRITE_BYTE 0x273 class_imp
+
+            END
+
             ACTION_IF NOT has_eefixpack BEGIN
 
                 ACTION_IF zst_lilarcor_speed_factor BEGIN

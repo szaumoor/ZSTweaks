@@ -135,3 +135,6 @@ OUTER_SET zst_eefp_exaltation_bug = "1"
 // solars are weirdly tagged as demonic tanar'ri, this sets them to cleric/mage solars, which makes more sense
 // yes, it shouldn't really affect anything realistically, but I'm annoyed by it
 OUTER_SET zst_solar_tags = "1"
+
+// pit fiends in BG2 marked as demons instead of devils
+OUTER_SET zst_pit_fiends = "1"
