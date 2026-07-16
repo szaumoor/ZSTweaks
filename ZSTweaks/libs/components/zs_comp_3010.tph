@@ -4,6 +4,7 @@ COPY_EXISTING ~c6kalden.cre~ ~override~ // paladins that help with bodhi, curren
               ~c6squire.cre~ ~override~ // paladins that help with bodhi, currently LN, should be LG
               ~derrick.cre~  ~override~ // ranger helping valygar, shouldn't be LN
               ~elotte.cre~   ~override~ // squire elotte, paladin stronghold duties, currently LN, likely better as LG
+              ~solar.cre~    ~override~
   LPF ALTER_CRE INT_VAR alignment=alignmen_lawful_good END
 IF_EXISTS
 
@@ -319,6 +320,7 @@ COPY_EXISTING ~hellil01.cre~ ~override~ // hellhound, should be evil, not neutra
               ~elmins.cre~   ~override~
               ~elmins4.cre~  ~override~
               ~islann.cre~   ~override~ // probably the dopple that killed her and ate her brain
+              ~shape.cre~    ~override~ // frennedan, obviously evil (also G. Dopple, which are always evil -- was Chaotic Neutral)
   LPF ALTER_CRE INT_VAR alignment=alignmen_neutral_evil END
 IF_EXISTS
 
