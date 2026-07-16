@@ -213,6 +213,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
+    ACTION_IF zst_solar_tags != 0 AND zst_solar_tags != 1 BEGIN
+        WARN "[WARN]: Solar tags fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_solar_tags%"
+        LAM f_plus
+    END
+
     // ----------------------------------------SYMBOL X SPELLS------------------------------------------------- \\
 
     OUTER_SET valid_death_x = zst_443_death != 0 AND zst_443_death != 1

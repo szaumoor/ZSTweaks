@@ -246,6 +246,14 @@ ACTION_IF zs_allow_prefixes BEGIN
 
             END
 
+            ACTION_IF zst_solar_tags BEGIN
+    
+                COPY_EXISTING ~solar.cre~   ~override~
+                              ~solar01.cre~ ~override~
+                    WRITE_BYTE 0x272 race_solar
+                    WRITE_BYTE 0x272 class_cleric_mage
+            END
+
             ACTION_IF NOT has_eefixpack BEGIN
 
                 ACTION_IF zst_lilarcor_speed_factor BEGIN
