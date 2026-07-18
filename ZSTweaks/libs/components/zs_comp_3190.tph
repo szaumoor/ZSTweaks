@@ -4,7 +4,7 @@ COPY_EXISTING ~ohtyr2.spl~ ~override~
 
     FOR ( i = 1; i < abilities; ++i ) BEGIN
         SET dur_mod = i * 3
-        LPF ALTER_EFFECT_EX INT_VAR header = i STR_VAR duration_ex = "(THIS + %dur_mod%)" END
+        LPF ALTER_EFFECT_EX INT_VAR header = i STR_VAR duration_ex = "(THIS + %dur_mod%)" match_duration_ex="(o_duration > 4)" END
     END
 
     LPF ALTER_EFFECT INT_VAR header = abilities match_opcode = 73 parameter1=7 END

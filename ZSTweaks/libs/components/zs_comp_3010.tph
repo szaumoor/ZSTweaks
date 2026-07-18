@@ -559,7 +559,7 @@ ACTION_IF zs_debug BEGIN
                 (race    = race_specter AND general = general_undead) OR
                 (race    = race_spectral_undead AND general = undead) OR
                  race    = race_troll                OR
-                 race    = ~%race_will-o-wisp%~      OR
+                 race    = race_will_o_wisp          OR
                  race    = race_vampire              OR
                  race    = race_vampyre              OR
                  race    = race_wraith               OR

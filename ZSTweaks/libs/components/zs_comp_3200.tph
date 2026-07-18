@@ -1,5 +1,7 @@
 DEFINE_PATCH_MACRO patch_file BEGIN
-    LPF ADD_SPELL_EFFECT INT_VAR opcode=321 parameter1=0 target=1 STR_VAR resource="%SOURCE_RES%" END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode=318 parameter1=0 target=1 parameter2=115 parameter1=class_fighter_all  STR_VAR resource="%DEST_RES%" END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode=318 parameter1=0 target=1 parameter2=115 parameter1=class_ranger_all  STR_VAR resource="%DEST_RES%" END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode=321 parameter1=0 target=1 STR_VAR resource="%DEST_RES%" END
     LPF ADD_SPELL_EFFECT INT_VAR opcode=1 parameter1=1 target=1 resist_dispel=1 duration=18 END
     LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur=6 level_cap=20 END
 END

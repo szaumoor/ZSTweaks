@@ -92,7 +92,6 @@ ACTION_IF NOT is_iwdee BEGIN
     IF_EXISTS
 
     COPY_EXISTING ~ohbdev04.cre~ ~override~ // erinyes
-        ADD_CRE_ITEM ~zstwings~ #0 #0 #0 ~unstealable&undroppable~ ~helmet~ // the wings
         WRITE_BYTE 0x2c 30 // light iron gray
         WRITE_BYTE 0x2d 10 // light pure gold
         WRITE_BYTE 0x2e 75 // solid black

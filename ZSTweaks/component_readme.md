@@ -845,7 +845,7 @@ Undead Ward: Any friendly undead within 15 ft. of the wearer is granted a +4 bon
 
 ### Make Jester's Chain +4 more unique (1404) (BG2EE EET)
 
-Now increases the caster levels of Bards by 1. 2 if they are Jesters.
+Now increases the caster levels by 2 if they are Jesters and does not prevent spellcasting.
 
 </details>
 

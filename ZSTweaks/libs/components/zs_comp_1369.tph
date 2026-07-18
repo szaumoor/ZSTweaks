@@ -1,6 +1,7 @@
 ACTION_IF NOT is_iwdee BEGIN
 
     COPY_EXISTING ~plat02.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@60100) END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=219,p2=8,p1=%alignmen_mask_evil%~ END
     IF_EXISTS
 

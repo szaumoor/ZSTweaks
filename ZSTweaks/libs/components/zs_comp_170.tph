@@ -1,3 +1,5 @@
+// GENERATE NEEDED SUBSPELLS \\
+
 OUTER_SET fade_speed = (25 << 16)
 
 DEFINE_PATCH_MACRO patch_file BEGIN
@@ -18,8 +20,10 @@ DEFINE_PATCH_MACRO patch_file BEGIN
 END
 LAF CREATE_TG_SPL STR_VAR filename = "zstwail3" END // damage if survived
 
-COPY_EXISTING ~zstwail0.spl~ ~override/zstwail4.spl~
+COPY_EXISTING ~zstwail0.spl~ ~override/zstwail4.spl~ // separate version that does not apply damage spell on its own
   LPF DELETE_EFFECT INT_VAR match_opcode = 146 END
+
+// GENERATE NEEDED SUBSPELLS END \\
 
 OUTER_SET new_description =RESOLVE_STR_REF(@7360)
 COPY_EXISTING ~spwi913.spl~ ~override~

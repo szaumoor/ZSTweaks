@@ -242,7 +242,7 @@ ACTION_IF zs_allow_prefixes BEGIN
 
                 COPY_EXISTING ~behgas01.cre~ ~override~
                     WRITE_BYTE 0x271 general_plant
-                    WRITE_BYTE 0x272 0
+                    WRITE_BYTE 0x272 race_none
 
             END
 
@@ -685,7 +685,7 @@ ACTION_IF zs_allow_prefixes BEGIN
                     PATCH_IF zs_debug BEGIN
                         READ_STRREF 0x8 name ELSE "unknown"
                         PATCH_IF gender=gender_male BEGIN SPRINT gender "male" END ELSE BEGIN SPRINT gender "female" END
-                        PATCH_PRINT "[DEBUG][INFO]: Found likely genderless/sexless creature (%SOURCE_RES% - %name%) actually marked as %gender%"
+                        PATCH_PRINT "[DEBUG][INFO]: Patched likely genderless/sexless creature (%SOURCE_RES% - %name%) actually marked as %gender%"
                     END
 
                 END
@@ -719,7 +719,7 @@ ACTION_IF zs_allow_prefixes BEGIN
                          race    = race_elemental       OR
                          race    = race_shambling_mound OR
                          race    = race_shrieker        OR
-                         race    = ~%race_will-o-wisp%~ OR
+                         race    = race_will_o_wisp     OR
                          race    = race_otyugh          OR
                          general = general_weapon       OR
                          general = general_plant

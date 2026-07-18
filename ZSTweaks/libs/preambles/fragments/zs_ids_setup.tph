@@ -67,7 +67,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET race_umberhulk       = IDS_OF_SYMBOL(race UMBERHULK)
     OUTER_SET race_vampire         = IDS_OF_SYMBOL(race VAMPIRE)
     OUTER_SET race_vampyre         = IDS_OF_SYMBOL(race VAMPYRE)
-    OUTER_SET ~race_will-o-wisp~   = IDS_OF_SYMBOL(race "WILL-O-WISP")
+    OUTER_SET race_will_o_wisp     = IDS_OF_SYMBOL(race "WILL-O-WISP")
     OUTER_SET race_wraith          = IDS_OF_SYMBOL(race WRAITH)
     OUTER_SET race_wyvern          = IDS_OF_SYMBOL(race WYVERN)
     OUTER_SET race_yeti            = IDS_OF_SYMBOL(race YETI)

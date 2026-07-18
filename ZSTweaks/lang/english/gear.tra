@@ -1354,7 +1354,7 @@ STATISTICS:
 
 Equipped abilities:
 – Does not prevent spellcasting or thieving abilities
-– Casting level: +2 for Jesters, +1 for other Bards
+– Casting level: +2 (jesters only)
 
 Armor Class: 1 (-1 vs. slashing, 3 vs. crushing)
 Requires:
@@ -1654,7 +1654,7 @@ Weight: 40~
 STATISTICS:
 
 Equipped abilities:
-– Damage: +1 vs. evil orcs
+– Damage: +1 vs. evil and orcs
 – THAC0: +1 vs. evil and orcs
 – Charisma: +2
 – Aura of Valor: The wearer is immune to morale failure and fear and allies in a 10 ft. radius are filled with morale, minimizing the chances of morale failure.
@@ -1673,7 +1673,7 @@ Equipped abilities:
 – Constitution: -1
 – Save vs. Death: -2
 – Charisma: -6
-– Repulsiveness: Every time a living humanoid enemy hits the user, or the user hits them, there's a 10% chance they become nauseated, receiving a -2 penalty to THAC0 and Saving Throws for 3 rounds, as well as taking 6 poison damage (Save vs. Death for half). Constructs are unaffected as well as any creature naturally immune to poison.
+– Repulsiveness: Every time a living humanoid enemy hits the user, or the user hits them with melee weapons, there's a 10% chance they become nauseated, receiving a -2 penalty to THAC0 and Saving Throws for 3 rounds, as well as taking 6 poison damage (Save vs. Death for half). Constructs are unaffected as well as any creature naturally immune to poison.
 – May only be removed with a Remove Curse spell
 
 Charge abilities:

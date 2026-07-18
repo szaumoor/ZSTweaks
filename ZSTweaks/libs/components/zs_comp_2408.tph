@@ -61,4 +61,7 @@ ACTION_IF zst_2408_electricity_boost AND zst_2408_electricity_boost_pctg > 0 BEG
     END
     VERBOSE
 
+    COPY_EXISTING ~clabpr02.2da~ ~override~
+        PRETTY_PRINT_2DA
+
 END
