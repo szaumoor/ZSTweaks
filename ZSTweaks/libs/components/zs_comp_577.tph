@@ -7,13 +7,13 @@ DEFINE_PATCH_MACRO nerf_haste BEGIN
 END
 
 DEFINE_PATCH_MACRO ~nerf_haste#normal~ BEGIN
-    SET start_duration = 12
+    SET start_duration = 6
     SET level_jump = 3
     LPM nerf_haste
 END
 
 DEFINE_PATCH_MACRO ~nerf_haste#improved~ BEGIN
-    SET start_duration = 18
+    SET start_duration = 6
     SET level_jump = 4
     LPM nerf_haste
 END
