@@ -39,6 +39,7 @@ COPY_EXISTING ~spcl411.spl~ ~override/zstrpim2.spl~ // protected damage (slay/po
     LPF ALTER_HEADER INT_VAR projectile = 0 END
     LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 318 AND o_opcode != 12 AND o_opcode != 55)" END
     LPF DELETE_EFFECT_EX INT_VAR match_opcode = 12 STR_VAR match_parameter2_ex = "(o_parameter2 != %op12_poison%)" END
+    LPF ALTER_EFFECT STR_VAR match_resource = ~spcl411~ resource="%DEST_RES%" END
 
 COPY_EXISTING ~spcl411.spl~ ~override~
     PATCH_IF zst_3180_immunity_by_type BEGIN
