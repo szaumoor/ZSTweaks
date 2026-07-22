@@ -1,3 +1,22 @@
+ACTION_IF has_eefixpack BEGIN // jester splstates
+
+  DEFINE_PATCH_MACRO patch_file BEGIN
+    LPF ALTER_EFF_FILE INT_VAR opcode = 328 parameter2 = splstate_fp_confusion_immunity special=1 END
+  END
+  LAF CREATE_EQ_EFF STR_VAR filename="zstwwndl" END // splstate confusion immunity
+
+  DEFINE_PATCH_MACRO patch_file BEGIN
+    LPF ALTER_EFF_FILE INT_VAR opcode = 328 parameter2 = splstate_fp_slow_immunity special=1 END
+  END
+  LAF CREATE_EQ_EFF STR_VAR filename="zstwwndm" END // splstate slow immunity
+
+  DEFINE_PATCH_MACRO patch_file BEGIN
+    LPF ALTER_EFF_FILE INT_VAR opcode = 328 parameter2 = splstate_fp_sleep_immunity special=1 END
+  END
+  LAF CREATE_EQ_EFF STR_VAR filename="zstwwndn" END // splstate sleep immunity
+
+END
+
 ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY ~%MOD_FOLDER%/items/wondrous_gloves~ ~override~
@@ -10,6 +29,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ADD_EQUIPPED_EFF INT_VAR p1=2 STR_VAR effects=~op=73;op=189~ END
 
     SET usability_str = RESOLVE_STR_REF(@7621)
+
     LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_skald%,res=zstwwnda;op=177,p1=%kit_skald%,res=zstwwndc;op=177,p1=%kit_blade%,res=zstwwndb;op=177,p1=%kit_blade%,res=zstwwndc;op=177,p1=%kit_jester%,res=zstwwndd;op=177,p1=%kit_jester%,res=zstwwnde;op=177,p1=%kit_jester%,res=zstwwndf;op=177,p1=%kit_jester%,res=zstwwndg;op=177,p1=%kit_jester%,res=zstwwndh;op=177,p1=%kit_jester%,res=zstwwndi;op=177,p1=%kit_jester%,res=zstwwndj;op=177,p1=%kit_jester%,res=zstwwndk;op=319,p1=5,p2=5,pwr=1,spec=%usability_str%~ END
+
+    PATCH_IF has_eefixpack BEGIN
+      LPF ADD_EQUIPPED_EFF INT_VAR p2=9 STR_VAR effects = ~op=177,p1=%kit_jester%,res=zstwwndl;op=177,p1=%kit_jester%,res=zstwwndm;op=177,p1=%kit_jester%,res=zstwwndn~ END
+    END
 
 END

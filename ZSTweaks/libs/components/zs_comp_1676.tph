@@ -2,7 +2,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY_EXISTING ~helm17.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7480) END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=346,p1=4,spec=7;op=101,p2=13;op=101,p2=55;op=206,res=zstwvrpa~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects=~op=346,p1=3,spec=7;op=101,p2=13;op=101,p2=55;op=206,res=zstwvrpa~ END
 
     LPF ADD_ITEM_HEADER INT_VAR copy_header = 1 END
     LPF ALTER_HEADER INT_VAR match_type=3 header=1 STR_VAR icon = ~spwi713b~ END
