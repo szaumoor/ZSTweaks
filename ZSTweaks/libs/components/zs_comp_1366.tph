@@ -12,6 +12,11 @@ ACTION_IF NOT is_iwdee BEGIN
                   ~helm07_.itm~ ~override~
         LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@60060) END
         LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex="(o_opcode = 18 OR o_opcode = 54)" END
+
+        PATCH_IF has_eefixpack BEGIN
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=328,spec=1,p2=%splstate_fp_stun_immunity%~ END
+        END
+
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=177,p2=2,dur=315360000,res=zstbldhm~ END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=46;op=240,p2=55~ END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=321,res=bdshries;op=321,res=icetrlst;op=321,res=spin974;op=321,res=sppr718;op=321,res=sppr984;op=321,res=spwi118e;op=321,res=spwi118g;op=321,res=spwi816;op=321,res=spwi898~ END
