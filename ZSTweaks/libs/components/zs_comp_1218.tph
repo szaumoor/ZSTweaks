@@ -12,6 +12,10 @@ ACTION_IF NOT is_iwdee BEGIN
       SET strref_panic2 = 20568
     END
 
+    PATCH_IF has_eefixpack BEGIN
+      LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=328,p2=%splstate_fp_panic_immunity%,spec=1~ END
+    END
+
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=296,res=cdhorror;op=240,p2=36;op=169,p2=36;op=267,p1=%strref_panic1%;op=267,p1=%strref_panic2%;op=106,p2=1,p1=1;op=161;op=23;op=101,p2=24;op=142,p2=37;op=101,p2=23;op=101,p2=106;op=248,res=zstwpdka;op=249,res=zstwpdka~ END
 
     LPF ADD_ITEM_HEADER INT_VAR target=4 charges=2 range=50 depletion=3 flags=2048 projectile=0 STR_VAR icon = ~spwi205b~ END
