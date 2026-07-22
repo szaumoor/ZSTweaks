@@ -46,6 +46,7 @@ COPY_EXISTING ~zstsek36.itm~ ~override/zstsek40.itm~
 
 COPY_EXISTING ~spcl731.spl~ ~override~
     LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@9000) END
+    WRITE_LONG 0x54 "-1" // nonsense strref
     LPF ~CD_TRIM-O-MATIC~ INT_VAR level_cap = 1 END
     LPF ALTER_EFFECT_EX INT_VAR duration = 18 STR_VAR match_duration_ex = "(o_duration >= 6)" END
     LPF ALTER_HEADER INT_VAR speed = 3 END
@@ -57,6 +58,6 @@ COPY_EXISTING ~spcl731.spl~ ~override~
         PATCH_IF h < 10 BEGIN SPRINT h_str "0%fourth_diff%"
         END ELSE BEGIN SPRINT h_str "%fourth_diff%" END
 
-        LPF ALTER_EFFECT INT_VAR header = h-1 match_opcode = 111 STR_VAR resource = "zstsek%h_str%" END
+        LPF ALTER_EFFECT INT_VAR header = h - 1 match_opcode = 111 STR_VAR resource = "zstsek%h_str%" END
 
     END
