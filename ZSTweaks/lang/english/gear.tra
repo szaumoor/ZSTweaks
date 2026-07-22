@@ -1269,7 +1269,7 @@ Requires:
 
 Weight: 27~
 
-// for later
+// TODO for later, needs fixpack splstates whenever I get around to it
 @8481 = ~Slayer's Doomplate~
 @8482 = ~The oldest scraps of tale hint at this armor's original bearer: a nigh-mythical slayer of demons who was said to rip and tear their flesh with his bare hands, carving a wrathful path through infernal hosts. Whether the Doomplate remembers that champion, hungers for such purpose again, or merely amplifies the will of any who stride into the jaws of the abyss… none can say.
 
@@ -1411,6 +1411,7 @@ Requires:
 
 Weight: 15~
 
+// TODO
 @8560 = ~Foik Morur demonstrated the effectiveness of these gloves at a community fair near Beregost several years back. He paid a local archer to fire arrows at him. As the arrows approached, Foik's hands would move of their own accord, either knocking the arrow away or catching it. He earned more than a few pieces of gold for his troubles, and these earnings attracted some shadowy figures to Foik's tent that evening. The next morning, Foik was found dead and the gloves missing.
 
 STATISTICS:
@@ -1418,7 +1419,7 @@ STATISTICS:
 Equipped abilities:
 – Armor Class: +2 vs. missile attacks
 
-Weight: 2~ // todo
+Weight: 2~ 
 
 // patching other mods
 // item upgrade
