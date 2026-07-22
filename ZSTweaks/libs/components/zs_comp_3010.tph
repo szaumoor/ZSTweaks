@@ -369,6 +369,7 @@ ACTION_IF zs_debug BEGIN
              NOT "%SOURCE_RES%" STR_EQ ~golbur01~ AND // burning man
              NOT "%SOURCE_RES%" STR_EQ ~ohdcdawg~ AND // celestial hound
              NOT "%SOURCE_RES%" STR_EQ ~sahbeh01~ AND // spectator
+             NOT "%SOURCE_RES%" STR_EQ ~cultbh4~ AND // spectator
              NOT "%SOURCE_RES%" STR_EQ ~senbeh01~ AND // spectator
              NOT "%SOURCE_RES%" STR_EQ ~behspe01~ AND // spectator
              NOT "%SOURCE_RES%" STR_EQ ~uhogre01~ AND // madulf people
