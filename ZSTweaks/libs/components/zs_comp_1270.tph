@@ -16,7 +16,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 1024 END
     LPF ITM_LAST_HEADER_TYPE INT_VAR type=3 RET result END
     LPF ADD_ITEM_EFFECT INT_VAR header=result+1 target=1 opcode=73 parameter1=4 duration=18 resist_dispel=2 insert_point=0 END
-    LPF ADD_ITEM_EFFECT INT_VAR header=result+1 target=1 opcode=362 parameter1="-1" duration=18 resist_dispel=2 insert_point=0 END
+    LPF ADD_ITEM_EFFECT INT_VAR header=result+1 target=1 opcode=362 parameter1="-20" duration=18 resist_dispel=2 insert_point=0 END
     LPF ADD_ITEM_EFFECT INT_VAR header=result+1 target=1 opcode=301 parameter1=2 duration=18 resist_dispel=2 insert_point=0 END
 
   COPY_EXISTING ~sw1h69c.itm~ ~override~
