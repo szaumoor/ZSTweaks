@@ -70,7 +70,7 @@ Weight: 3~
 STATISTICS:
 
 Combat abilities:
-– Acts as a +5 weapon vs. fiends
+– Acts as a +5 weapon vs. fiends for the purposes of what it can hit
 
 THAC0: +3, +6 vs. fiends
 Damage: 1d6+4, +6 extra crushing damage vs. fiends
@@ -87,7 +87,7 @@ Weight: 7~
 STATISTICS:
 
 Combat abilities:
-– Acts as a +5 weapon against undead
+– Acts as a +5 weapon vs. undead for the purposes of what it can hit
 
 THAC0: +3, +5 vs. undead
 Damage: 1d6+3, +4 vs. undead, double vs. spectral undead
@@ -133,10 +133,10 @@ Weight: 2~
 STATISTICS:
 
 Combat abilities:
-– Hit target must Save vs. Poison or take 5 Hit Points of poison damage over 5 seconds. There is a 4% chance the poison will be as potent as that of an adult wyvern, causing 25 Hit Points of poison damage in total instead.
+– Hit target must Save vs. Poison or take 5 Hit Points of poison damage over 5 seconds. There is a 4% chance the poison will be as potent as that of an adult wyvern, causing 25 Hit Points of poison damage in total instead if a Save vs. Poison at -2 is failed.
 
 THAC0: +2
-Damage: 2d4+2, +2 poison damage
+Damage: 2d4+2, +2 (poison)
 Damage type: Crushing
 Speed Factor: 5
 Proficiency Type: Flail/Morning Star
@@ -311,7 +311,7 @@ Weight: 8~
 STATISTICS:
 
 Combat abilities:
-– Hellfire: 20% chance per hit that the target takes an additional 10 points of fire damage
+– Abyssal Fire: 20% chance per hit that the target takes an additional 10 points of fire damage
 – Demon's Wrath: 7% chance per hit that a 15-ft. radius fireball detonates (8d6+12 fire damage; Save vs. Spell for half)
 
 THAC0: +3
@@ -332,7 +332,7 @@ Now that the club is upgraded with the ring of fire resistance, the demon spirit
 STATISTICS:
 
 Combat abilities:
-– Hellfire: 30% chance per hit that the target takes an additional 15 points of fire damage
+– Abyssal Fire: 30% chance per hit that the target takes an additional 15 points of fire damage
 – Demon's Wrath: 10% chance per hit that a 15-ft. radius fireball detonates (8d6+12 fire damage; Save vs. Spell for half)
 
 THAC0: +5
@@ -353,7 +353,7 @@ STATISTICS:
 Equipped abilities:
 – Electricity Resistance: +20%
 – Electricity damage: +5%
-– Attacks per round: +1/2 (Priests of Talos)
+– Attacks per round: +1/2 (Clerics of Talos)
 
 THAC0: +3
 Damage: 1d6+4, +1d6 electrical damage
@@ -375,7 +375,7 @@ STATISTICS:
 Equipped abilities:
 – Electricity Resistance: +40%
 – Electricity damage: +7%
-– Attacks per round: +1 (Priests of Talos)
+– Attacks per round: +1 (Clerics of Talos)
 
 Combat abilities:
 – 12% chance of casting Chain Lightning on the target with each successful attack (10d6 electrical damage to all in path; Save vs. Spell for half)
@@ -511,27 +511,3 @@ Requires:
  4 Strength
 
 Weight: 2~
-
-@60500 = ~This mace was designed finely by Lolth's assassins and specially treated to survive the glare of the sun. It was made for surface raids to fell heretics who dared turn their back on the Spider Queen... The mace seems almost alive and warm to the touch, and its black metal glistens with a dark poison that seems to be generated from within and causes incredible damage upon a successful impact.
-
-STATISTICS:
-
-Equipped abilities:
-– Sets Strength to 18 unless higher
-
-Combat abilities:
-– Lolth's Venom: Hit target must Save vs. Death or become poisoned, suffering a 2 penalty to THAC0, Armor Class, and Saving Throws for 1 turn. Once per round, they also suffer 2 points of poison damage. This poison cannot be re-applied during this time.
-
-THAC0: +2
-Damage: 1d6+3, +1d6 poison damage (doubled if poisoned by the mace)
-Damage type: Crushing
-Speed Factor: 6
-Proficiency Type: Mace
-Type: One-handed
-Requires:
- 9 Strength
-
-Weight: 7~
-
-@60501 = ~Poisoned by Lolth's Venom~
-@60502 = ~Lolth's Venom faded~
