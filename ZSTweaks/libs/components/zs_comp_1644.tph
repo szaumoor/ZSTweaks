@@ -37,6 +37,11 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         END
 
         LPM RM_STAT_REQS
+
+        PATCH_IF has_eefixpack BEGIN
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=328,spec=1,p2=%splstate_fp_charm_immunity%~ END
+        END
+
     IF_EXISTS
 
 END
