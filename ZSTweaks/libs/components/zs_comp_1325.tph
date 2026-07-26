@@ -4,7 +4,14 @@ ACTION_IF is_bg2ee_or_eet BEGIN
   COPY_EXISTING ~hamm05.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7730) END
     LPF ALTER_EFFECT INT_VAR match_opcode=12 dicesize=2 dicenumber=1 parameter1=0 special=1024 END
-    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,stype=1,sbonus=2,res=ZSTWBRKA,p2=3,p1=%general_gianthumanoid%~ END
+
+    PATCH_IF has_eefixpack BEGIN
+      
+      LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=318,p2=110,p1=%splstate_fp_stun_immunity%,res=%SOURCE_RES%~ END
+
+    END
+
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=177,stype=1,sbonus=2,res=zstwbrka,p2=3,p1=%general_gianthumanoid%~ END
 
     PATCH_IF zst_1150_dice_warhammers AND
             (MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1150~ OR
