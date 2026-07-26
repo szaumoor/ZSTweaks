@@ -10,6 +10,7 @@ BEGIN
     LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 240 match_parameter2 = 38    END
     LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 267 match_parameter1 = 14023 END
     LPF DELETE_EFFECT INT_VAR check_headers = 0 match_opcode = 126                          END
+    LPF DELETE_EFFECT INT_VAR match_opcode = 328 match_special = 1 match_parameter2= splstate_fp_haste_immunity END
 END
 
 DEFINE_ACTION_MACRO generate_rogue_thac0
