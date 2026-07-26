@@ -178,6 +178,8 @@ Requires:
 
 Weight: 2~
 
+@6264 = ~Mazzy~
+
 @6270 = ~This blade, although only lightly enchanted, has achieved a semblance of awareness, enough so that it allows only Yoshimo to wield it. Any other than he cannot use this flawless katana in battle.
 
 STATISTICS:
@@ -357,7 +359,7 @@ Equipped abilities:
 – Saving Throws: +1
 – Elemental Damage Resistance: +15%
 – Physical Damage Resistance: +10%
-– Regeneration: +1 HP per 2 rounds
+– Regeneration: +1 Hit Point per 2 rounds
 
 Weight: 3~
 
@@ -439,7 +441,7 @@ Equipped abilities:
 – Armor Class and Saving Throws: +2
 – Fire Resistance: +50%
 – Open Locks and Find Traps: +20%
-– May memorize one extra spell of each level from 1 to 5
+– May memorize one extra arcane spell of each level from 1st to 5th
 
 Weight: 0~
 
@@ -512,3 +514,28 @@ Equipped abilities:
 Weight: 1~
 
 @70041 = ~Only Jaheira or <CHARNAME> may use this locket.~
+
+
+@60500 = ~This mace was designed finely by Lolth's assassins and specially treated to survive the glare of the sun. It was made for surface raids to fell heretics who dared turn their back on the Spider Queen... The mace seems almost alive and warm to the touch, and its black metal glistens with a dark poison that seems to be generated from within and causes incredible damage upon a successful impact.
+
+STATISTICS:
+
+Equipped abilities:
+– Sets Strength to 18 unless higher
+
+Combat abilities:
+– Lolth's Venom: Hit target must Save vs. Death or become poisoned, suffering a 2 penalty to THAC0, Armor Class, and Saving Throws for 1 turn. Once per round, they also suffer 2 points of poison damage. This poison cannot be re-applied during this time.
+
+THAC0: +2
+Damage: 1d6+3, +1d6 poison damage (doubled if poisoned by the mace)
+Damage type: Crushing
+Speed Factor: 6
+Proficiency Type: Mace
+Type: One-handed
+Requires:
+ 9 Strength
+
+Weight: 7~
+
+@60501 = ~Poisoned by Lolth's Venom~
+@60502 = ~Lolth's Venom faded~
