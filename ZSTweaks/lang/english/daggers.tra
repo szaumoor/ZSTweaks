@@ -144,7 +144,7 @@ STATISTICS:
 Combat abilities:
 – 25% chance per hit that the target must Save vs. Death or be held for 2 rounds
 – Critical Hit Chance: +5%
-– Persistent Wounds: causes 2 extra piercing damage immediately, and once per round for the next 3 rounds
+– Persistent Wounds: causes 2 extra piercing damage immediately, and once per round for the next 3 rounds. No effect on the undead, mists, or constructs.
 
 THAC0: +2
 Damage: 1d4+2 (piercing)
@@ -176,22 +176,20 @@ Weight: 1~
 
 @6930 = ~The mage who crafted this strange dagger was obsessed with the four elemental planes and sought to create a means to join them together. Opening portals to all of them at once, he managed to join their energies together to enchant this relic, giving it properties of each plane.
 
-Unfortunately, he happened to be standing between the portals, holding the dagger in his hand; when the energies converged, they converged on him. It was the mage’s apprentice who discovered the dagger, clutched in his master’s charred and frozen hands.
+Unfortunately, he happened to be standing between the portals, holding the dagger in his hand; when the energies converged, they converged on him. It was the mage's apprentice who discovered the dagger, clutched in his master's charred and frozen hands.
 
 STATISTICS:
 
 Equipped abilities:
-– +10% elemental resistance
+– Elemental Resistance: +10%
 
 Combat abilities:
-– Deals an extra 2d4 cold damage to fire elementals
-– Deals an extra 2d4 fire damage to water elementals
-– Deals an extra 2d4 acid damage to earth elementals
-– Deals an extra 2d4 electrical damage to air elementals
+– Deals an extra 2d4 extra damage to elementals. Fire elementals take cold damage, water elementals take fire damage, earth elementals take acid damage, and air elementals take electrical damage. 
+– Acts as +5 weapon vs. elementals for the purposes of what it can hit
+– Elemental Fury: Each hit deals +2 points of fire, cold, electrical, or acid damage. There is a 3% chance all elements are applied on hit, a 4% chance three of them apply, and a 5% chance two of them apply. Critical hits apply +2 damage of each element on top of what it would normally do.
 
 THAC0: +2
-Damage: 1d4+2, +2 fire, cold, electrical, or acid damage (random)
-Damage type: Piercing
+Damage: 1d4+2
 Speed Factor: 0
 Proficiency Type: Dagger
 Type: One-handed
@@ -207,7 +205,7 @@ Weight: 1~
 STATISTICS:
 
 Combat abilities:
-– 20% chance per hit that the target suffers a -2 penalty to Armor Class and 1d3 extra point of acid damage per round for 3 rounds
+– 20% chance per hit that the target suffers a -2 penalty to Armor Class and takes 1d3 extra points of acid damage per round for 3 rounds
 
 THAC0: +3
 Damage: 1d4+3, +1d3 (acid)
@@ -230,10 +228,10 @@ Equipped abilities:
 – Acts as a +3 weapon for the purposes of what it can hit
 
 Combat abilities:
-– 33% chance of inflicting an extra 1d4+2 magic damage
+– Arcane Blast: 33% chance of inflicting extra 1d4+2 magic damage
 
 THAC0: +2
-Damage: 1d4+2, +1d2 magic damage
+Damage: 1d4+2, +1d2 (magic)
 Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger

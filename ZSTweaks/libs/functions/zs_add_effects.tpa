@@ -219,6 +219,7 @@ INT_VAR
     stype  = 0
     sbonus = 0
     tgt    = 2
+    spec   = 0
 STR_VAR
     res     = ""
     effects = ""
@@ -240,6 +241,7 @@ BEGIN
             def_insertpoint   = ip
             def_savetype      = stype
             def_savebonus     = sbonus
+            def_special       = spec
         STR_VAR
             def_resource  = ~%res%~
             function_name = ~ADD_SPELL_EFFECT~
