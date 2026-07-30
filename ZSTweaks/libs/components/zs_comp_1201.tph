@@ -26,6 +26,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
         LPF ALTER_HEADER INT_VAR match_type = 1 speed = 5 END
         LPF ADD_ON_HIT_EFF INT_VAR sbonus="-2" stype=1 rd=3 pro1=29 STR_VAR effects = ~op=128,dur=12;op=139,p1=14782~ END
 
+        PATCH_IF has_eefixpack BEGIN
+            LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=328,spec=1,p2=%splstate_fp_charm_immunity%;op=328,spec=1,p2=%splstate_fp_confusion_immunity%~ END
+        END
+
         PATCH_IF two_handed_comp_installed BEGIN
             LPF ALTER_HEADER INT_VAR match_type = 1 dicesize = 9 dicenumber = 1 damage = 6 END
             SPRINT new_description @50100
