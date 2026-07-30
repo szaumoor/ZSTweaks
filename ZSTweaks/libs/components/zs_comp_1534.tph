@@ -43,7 +43,7 @@ ACTION_IF zst_1534_potion_overhaul BEGIN
         COPY_EXISTING ~spin713.spl~ ~override~
             LPF ALTER_HEADER INT_VAR match_type = 2 projectile = 160 END
             LPF ALTER_EFFECT_EX INT_VAR duration = 18 STR_VAR match_duration_ex = "(o_duration >= 6)" END
-            LPF ALTER_EFFECT INT_VAR match_opcode = 30 parameter1=75 parameter2=0 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 30 parameter1=85 parameter2=0 END
             LPF ALTER_EFFECT INT_VAR match_opcode = 141 parameter2 = 29 END
             LPF DELETE_EFFECT INT_VAR match_opcode = 61 END
             LPF RGB INT_VAR red = 50 green = 181 blue = 199 RET color = result END

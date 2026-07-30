@@ -147,7 +147,7 @@ All weapon categories are enabled by default but can be individually disabled in
 
 This component includes two optional, universal changes: making all potions usable by any class and preventing potions from stacking with themselves. Both are enabled by default and can be configured.
 
-- **Potion of Icedust**: Grants +75% Fire Resistance for 3 rounds, instead of immunity for 1 round.
+- **Potion of Icedust**: Grants +85% Fire Resistance for 3 rounds, instead of immunity for 1 round.
 - **Potion of Healing**: Heals 12 HP instead of 9.
 - **Potion of Heroism**: Now usable by any class. Grants immunity to morale failure, +1 damage, and a flat +2 THAC0 bonus (instead of a percentage-based one).
 - **Potion of Invulnerability**: Now usable by any class and grants an additional +10% Magic Resistance.
