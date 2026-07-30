@@ -27,7 +27,7 @@ Weight: 1~
 STATISTICS:
 
 Charge abilities:
-– Protects all within the area from +75% of fire damage
+– Protects all within the area from +85% of fire damage
   Duration: 3 rounds
   Range: 0
   Area of Effect: 15-ft. radius
@@ -61,7 +61,7 @@ Weight: 1~
 
 STATISTICS:
 
-Special: Cures poison and disease, protects against these effects for 10 seconds, and heals 20 Hit Points
+Special: Cures poison and disease, protects against these effects for 10 seconds, and heals 18 Hit Points
 
 Weight: 1~
 
@@ -82,10 +82,10 @@ Weight: 1~
 
 STATISTICS:
 
-THAC0: +4 bonus
+THAC0: +4
 Hit Points: +20% (base only)
 Thieving skills: +20% (base only)
-All damage output: +10%
+Damage dealt: +10%
 Casting speed: +1
 Immunity to morale failure
 
@@ -166,8 +166,8 @@ Weight: 1~
 STATISTICS:
 
 A single target receives the following bonuses for 12 hours:
-– +2 Armor Class vs. undead
-– Saves vs. Death: +2
+– Armor Class and Saving Throws: +2 vs. the touch of the undead
+– Save vs. Death: +2
 – Immunity to level drain and the paralytic touch of ghouls, ghasts, liches, and other undead
 – Immunity to domination attempts by vampires
 – Undead hitting the target will be rebuked, taking 1d4+1 magic damage (Save vs. Spell to take half) and being forced to flee for 2 rounds if they fail their Saving Throw vs. Spell. Once affected, they may not be affected again for 1 turn but the damage always applies.

@@ -366,7 +366,7 @@ Weight: 12~
 STATISTICS:
 
 Equipped abilities:
-– Immunity to Blindness
+– Immunity to blindness
 
 Charge abilities:
 – Blindness three times per day (Save vs. Spell at -2 negates)
@@ -392,7 +392,7 @@ As a weapon, Lilarcor has its uses, but many a warrior has eventually given it a
 STATISTICS:
 
 Equipped abilities:
-– Immunity to Charm and Confusion
+– Immunity to charm and confusion
 
 Combat abilities:
 – 25% chance per hit to cause Confusion on the target for 2 rounds, unless a Save vs. Spell succeeds
@@ -487,7 +487,7 @@ STATISTICS:
 
 Combat abilities:
 – Deals an extra 2d5+2 points of slashing damage on a critical hit
-– Critical Hit chance: +5% (this weapon only)
+– Critical Hit Chance: +5% (this weapon only)
 
 THAC0: +2
 Damage: 1d10+2 (slashing)
@@ -524,7 +524,7 @@ Requires:
 
 Weight: 3~
 
-@7130 = ~Carved from the heart of a rotten treant, this spear smells of death. When held in your hands, it groans a little, as if reluctant to allow a living thing to touch it. In battle, the Spear of Withering spits a foul poison into its target upon each successful hit.
+@7130 = ~Carved from the heart of a rotten treant, this spear smells of death. When held in your hands, it groans a little, as if reluctant to allow a living thing to touch it. In battle, it spits a foul poison into its target upon each successful hit.
 
 STATISTICS:
 
@@ -532,7 +532,7 @@ Combat abilities:
 – Hit target is poisoned for 1 round, suffering 12 poison damage in total, unless a Save vs. Death at -2 succeeds
 
 THAC0: +4
-Damage: 1d6+4, +4 poison damage
+Damage: 1d6+4, +4 (poison)
 Damage type: Piercing
 Speed Factor: 2
 Proficiency Type: Spear
@@ -576,7 +576,7 @@ Combat abilities:
 Charge abilities:
 – Cast Wrath of the Witch once per day
   Area of Effect: All enemies within 15 ft of the caster. Does not affect allies.
-  Damage: 8d6+10 fire damage. Targets affected by Panic take 4d6+10 more damage. No save is allowed.
+  Damage: 8d6+10 fire damage. Targets affected by panic take 4d6+10 more damage. No save is allowed.
   Special: Targets will be affected by Panic and Slow for 3 rounds unless a Save vs. Spell at -2 is made.
 
 THAC0: +4
@@ -623,7 +623,7 @@ Equipped abilities:
 
 Combat abilities:
 – Vorpal Strike: 25% chance per hit the target must Save vs. Death at -2 or die from decapitation or any other fatal dismemberment
-– Psychic Assault: inflicts 2d8 irresistible psychic damage on a critical hit, which also causes Confusion for 10 seconds if a Save vs. Spell at -2 is failed. This damage cannot be resisted, but mindless and brainless creatures will not be affected.
+– Psychic Assault: inflicts 2d8 irresistible psychic damage on a critical hit, which also causes confusion for 10 seconds if a Save vs. Spell at -2 is failed. This damage cannot be resisted, but mindless and brainless creatures will not be affected.
 
 THAC0: +3, +5 vs. illithids
 Damage: 1d10+3, +5 vs. illithids (slashing)
@@ -642,13 +642,13 @@ Weight: 15~
 STATISTICS:
 
 Equipped abilities:
-– Immunity to Confusion and all psionic attacks
+– Immunity to confusion and all psionic attacks
 
 Combat abilities:
 – Struck illithids must Save vs. Death at -3 or die instantly. This effect can only affect a particular illithid once per round.
 
-THAC0: +5, +7 against Mind Flayers
-Damage: 1d10+5, +7 vs. Mind Flayers (slashing)
+THAC0: +5, +7 against illithids
+Damage: 1d10+5, +7 vs. illithids (slashing)
 Speed Factor: 5
 Proficiency Type: Two-handed Sword
 Type: Two-handed
@@ -698,7 +698,7 @@ STATISTICS:
 
 Combat abilities:
 – Shadow Touch: 25% chance of reducing the target's Strength by 2 for 5 rounds. If the target already has less than 3 Strength, the attack drains Constitution instead
-– If the target fails to Save vs. Death, the essence of undeath in this weapon unleashes an extra 1d6 cold damage
+– If the target fails to Save vs. Death, the essence of undeath in this weapon unleashes extra 1d6 cold damage
 
 THAC0: +2
 Damage: 1d10+2, +2 cold damage
@@ -772,16 +772,16 @@ Now combined with the Serpent Shaft, this dark halberd has the ability to slay a
 
 STATISTICS:
 
+Combat abilities:
+– Hit target must Save vs. Poison or suffer 2d6 points of poison damage and become poisoned, suffering 12 points of poison damage over 1 round
+– 10% chance of decapitating opponent with each successful attack (Save vs. Death at -4 negates)
+
 Charge abilities:
 – Cloak of Fear three times per day
   Special: Affected enemies flee in terror for 4 rounds (Save vs. Spell negates)
   Range: 0
   Duration: Instant
   Area of Effect: 15-ft. radius
-
-Combat abilities:
-– Hit target must Save vs. Poison or suffer 2d6 points of poison damage and become poisoned, suffering 12 points of poison damage over 1 round
-– 10% chance of decapitating opponent with each successful attack (Save vs. Death at -4 negates)
 
 THAC0: +6
 Damage: 1d10+6 (piercing or slashing)
@@ -842,7 +842,7 @@ Combat abilities:
 – Critical Hits: +5% chance; inflicts 5 extra piercing damage
 
 THAC0: +3
-Damage: 1d8+3, +10 piercing damage
+Damage: 1d6+3, +10 piercing damage
 Damage type: Piercing
 Speed Factor: 3
 Proficiency Type: Spear
@@ -870,7 +870,7 @@ Lilarcor is not quite as lovable (or annoying, depending on your viewpoint) as i
 STATISTICS:
 
 Equipped abilities:
-– Immunity to Charm and Confusion
+– Immunity to charm and confusion
 – Immunity to intelligence changes
 
 Combat abilities:
@@ -899,7 +899,7 @@ Combat abilities:
 – Each hit makes the target receive a cumulative 2-point penalty to their THAC0 for 5 rounds unless a Save vs. Spell at -5 succeeds
 
 THAC0: +6
-Damage: 1d12+6, +1d3 magic damage
+Damage: 1d12+6, +1d3 (magic)
 Speed Factor: 4
 Proficiency Type: Two-handed Sword
 Type: Two-handed

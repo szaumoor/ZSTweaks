@@ -137,7 +137,7 @@ Saving Throw: Special
 
 A Grease spell covers a material surface with a slippery, highly flammable layer of a fatty, greasy nature. Any creature entering the area or caught in it when the spell is cast must Save vs. Spell at +2 or slip and slide, unable to move effectively (80% slower, -2 Armor Class). Those who successfully save can move, albeit slowly (25% slower, -1 Armor Class), for the rest of the round (but will need to Save vs. Spell again the following round). Regardless of whether they save against the effect, the oil will make them take 25% more fire damage for 1 round due to the volatile nature of the oils. Those who remain in the area are allowed a Saving Throw each round until they escape the area.
 
-Because this spell simply conjures plain grease, it is not affected by Magic Resistance.~
+Because this spell simply conjures grease, it is not affected by Magic Resistance.~
 
 @6430 = ~Comet
 (Any School)
@@ -372,7 +372,7 @@ Casting Time: 3
 Area of Effect: 15-ft. radius
 Saving Throw: 1/2
 
-The wizard gestures with <PRO_HISHER> hand, and the entire area around <PRO_HIMHER> erupts in flames, striking everyone except the caster <PRO_HIMHER>self. The damage increases with the level of the caster in the following pattern:
+The wizard gestures with <PRO_HISHER> hand, and the entire area around <PRO_HIMHER> erupts in flames, striking everyone except the caster <PRO_HIMHER>self. The damage increases with the level of the caster in the following way:
 
 Up to level 10: 1d6 points of damage per level of the caster, up to 10d6
 From level 10 to 15: damage increases by 1d6+1 per level, up to 15d6+5
@@ -416,7 +416,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: Special
 
-By means of this spell, the wizard creates a magical arrow that speeds to its target unerringly. The arrow has no attack or damage bonus, but inflicts 2d4 points of acid damage (no save allowed), which may splash to adjacent enemies, causing the same amount of damage, unless they Save vs. Breath at -2. For every 3 levels of the caster, the acid lasts for another round, unless somehow dispelled, inflicting another 2d4 points of damage each round. So at 3rd-5th level, the acid lasts 2 rounds, at 6th-8th level, the acid lasts for 3 rounds, and so on. Splashed enemies do not receive more damage over time.~
+By means of this spell, the wizard creates a magical arrow that speeds to its target unerringly. The arrow inflicts 2d4 points of acid damage (no save allowed), which may splash to adjacent enemies, causing the same amount of damage, unless they succeed at a Saving Throw vs. Breath at -2. For every 3 levels of the caster, the acid lasts for another round, unless somehow dispelled, inflicting another 2d4 points of damage each round. So at 3rd-5th level, the acid lasts 2 rounds, at 6th-8th level, the acid lasts for 3 rounds, and so on. Splashed enemies do not receive more damage over time.~
 
 @8225 = ~Decastave
 (Evocation)
@@ -534,6 +534,7 @@ Eye of Fortitude: This eye blocks one stunning, deafness, blindness, or silence 
 
 Eye of Stone: This eye shields the caster from a single petrification attack. It can also be used as the 5th-level wizard spell Hold Monster, rendering creatures immobile for 1 round/level (Save vs. Spell at -2 negates).~
 
+// TODO terrible spell dammit
 @8465 = ~Soul Eater
 (Necromancy)
 
@@ -582,7 +583,7 @@ Saving Throw: Neg.
 
 When this spell is cast at another creature, a thin green ray is shot out. Upon contact with the ray, the creature must make a Saving Throw vs. Spell or be transformed into dust. This transformation is instantaneous and irreversible—they are gone forever. There is also a good chance that this will destroy some if not all the items that the creature is carrying.
 
-Clay, sand, brain, and magic golems, while normally immune to magic, are susceptible to this spell in a special way, taking 1d12 crushing damage instantly, becoming less functional for 2 rounds with no save allowed, which reduces their movement speed down to a third, and inflicts a -2 penalty to their Armor Class and Saving Throws, a -4 penalty to their combat rolls, a -10 penalty to their speed factor, and finally, it reduces their attacks per round by 1/2.~
+Clay, sand, brain, and magic golems, while normally immune to magic, are susceptible to this spell in a special way, taking 1d12 crushing damage instantly, becoming less functional for 2 rounds with no save allowed, reducing their movement speed down to a third, and inflicting a -2 penalty to their Armor Class and Saving Throws, a -4 penalty to their combat rolls, a -10 penalty to their speed factor, and finally, it reduces their attacks per round by 1/2.~
 
 @8640 = ~Stone to Flesh
 (Alteration)
