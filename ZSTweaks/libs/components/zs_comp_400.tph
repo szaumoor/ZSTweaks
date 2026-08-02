@@ -22,6 +22,7 @@ OUTER_SPRINT the_effects ~op=324,p1=%race_salamander%;op=324,p1=%race_darkplanet
 COPY ~%MOD_FOLDER%/spells/arcane/energy_drain~ ~override~
 ACTION_IF is_iwdee BEGIN
 
+    COPY_EXISTING ~zswraith.itm~ ~override/wraith1.itm~
     COPY_EXISTING ~sppr739.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=new_description_priest END
         LPF DELETE_EFFECT INT_VAR check_globals = 0 END
