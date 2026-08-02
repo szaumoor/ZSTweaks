@@ -731,3 +731,17 @@ Saving Throw: Special
 When this spell is cast, the caster drinks in the life force of all enemies in the area of effect. Creatures who succeed at a Save vs. Death at -2 lose only a third of the maximum Hit Points and 5 levels of experience, while those who fail their Saving Throw are instantly slain and destroyed forever. Moreover, the life-force of each slain creature coalesces as a newly-born Greater Shadow, which will attack any surviving enemies.
 
 The total amount of damage done by this spell is then added to the caster's Hit Point total. The caster is only able to absorb sufficient Hit Points to return to full health. Any remaining life force dissipates into the fabric of the Weave. Constructs and the undead are unaffected.~
+
+@81000 = ~Otiluke's Resilient Sphere
+(Alteration)
+
+Level: 4
+Range: 40 ft.
+Duration: 1 turn
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+When this spell is cast, the result is a globe of shimmering force that encloses the subject creature if it fails to Save vs. Spell. The resilient sphere will contain its subject for the duration of the spell. The sphere is completely immune to all damage; in fact, the only method of removing the sphere is a successful Dispel Magic. Hence, the creature caught inside the globe is completely safe from all attacks, but at the same time completely unable to affect the outside world.
+
+When targeting an ally, or an innocent non-hostile target, the spell will not be resisted, effectively becoming protected from all harm for the duration.~
