@@ -1,17 +1,17 @@
 ACTION_IF NOT VARIABLE_IS_SET "zs_log_created" BEGIN
 
-    SILENT
-    ACTION_TRY 
-        DELETE + "%MOD_FOLDER%/../ZSTweaks_Logs"
-    WITH
-        DEFAULT
-            PRINT "[INFO]: Some error happened when deleting ZSTweaks_Logs. Maybe it didn't exist yet."
-    END
-    VERBOSE
+    // SILENT
+    // ACTION_TRY 
+    //     DELETE + "%MOD_FOLDER%/../zstweaks_logs"
+    // WITH
+    //     DEFAULT
+    //         PRINT "[INFO]: Some error happened when deleting zstweaks_logs folder. Maybe it didn't exist yet."
+    // END
+    // VERBOSE
 
-    PRINT "[INFO]: Creating warning log file"
+    PRINT "[INFO]: Creating warning log folder"
     MKDIR "zstweaks_logs"
-    COPY + ~%MOD_FOLDER%/templates/empty~ ~zstweaks_logs/.nodata~
+  //  COPY + ~%MOD_FOLDER%/templates/empty~ ~zstweaks_logs/.nodata~
     OUTER_SET zs_log_created = 1
 
 END
@@ -20,12 +20,18 @@ OUTER_SPRINT INFO_PREAMBLE  "[INFO]: "
 OUTER_SPRINT WARN_PREAMBLE  "[WARN]: "
 OUTER_SPRINT FAIL_PREAMBLE  "[FAIL]: "
 OUTER_SPRINT ABORT_PREAMBLE "[ABORT]: "
+OUTER_SPRINT DEBUG_PREAMBLE "[DEBUG]: "
 
 /**
+ * ## LOG_TEXT
  * ### Author: Kaelyn aka szaumoor
  *
- * Logs a warning into the standard output and writes it out into logs/errors_found.txt, appending a new line per warning.
- * ### **Parameters**:
+ * This is a patch and action function that Logs a line into the standard output and appends it out into the default file found
+ *  at **```..zstweaks_logs/warnings.txt```**.
+ * 
+ * ---
+ * 
+ * ### Parameters:
  *
  * **predicate_stdout** (int): This variable allows an user to pass a predicate upon calling it, to decide whether printing to the
  *                              standard output is desired or not. For example, passing IS_AN_INT "%variable%" (a predicate) would
@@ -39,10 +45,10 @@ OUTER_SPRINT ABORT_PREAMBLE "[ABORT]: "
  * **message** (str): The message to pass into console and/or the error log file. Default: Empty string. Crashes if it remains empty
  *                    when the function is called.
  *
- * **log_level** (str): The logging level of the message. Four values are accepted: info, warn, abort, or fail. Abort causes a 
+ * **log_level** (str): The logging level of the message. Four values are accepted: info, warn, abort, fail, and debug. Abort causes a 
  *                      component failure without any assumed error. Fail does the same but assuming an error. Warn is the 
- *                      default value, causing the component to be marked as installed with errors, and finally Info just prints a 
- *                      message.
+ *                      default value, causing the component to be marked as installed with errors. Info and debug do the same: it just
+ *                      prints a message normally but with a different default optional message preamble.
  */
 DEFINE_DIMORPHIC_FUNCTION LOG_TEXT
 INT_VAR
@@ -51,26 +57,23 @@ INT_VAR
 STR_VAR
     message   = ""
     log_level = "warn"
+    filename = "warnings"
+    flog_preamble = "- "
 BEGIN
     ACTION_IF STRING_LENGTH message > 0 BEGIN
 
-        OUTER_SET is_abort = "%log_level%"  STR_EQ "abort"
-        OUTER_SET is_info  = "%log_level%"  STR_EQ "info"
-        OUTER_SET is_warn  = "%log_level%"  STR_EQ "warn"
-        OUTER_SET is_fail  = "%log_level%"  STR_EQ "fail"
+        OUTER_SET is_abort = "%log_level%" STR_EQ "abort"
+        OUTER_SET is_info  = "%log_level%" STR_EQ "info"
+        OUTER_SET is_warn  = "%log_level%" STR_EQ "warn"
+        OUTER_SET is_fail  = "%log_level%" STR_EQ "fail"
+        OUTER_SET is_debug = "%log_level%" STR_EQ "debug"
 
-        ACTION_IF is_warn OR is_fail OR is_abort OR is_info BEGIN
+        ACTION_IF is_warn OR is_fail OR is_abort OR is_info OR is_debug BEGIN
 
-            ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/../zstweaks_logs/.nodata~ BEGIN
-                
-                PRINT ".nodata exists, proceeding to create a warnings file and delete .nodata"
-                COPY + ~%MOD_FOLDER%/../zstweaks_logs/.nodata~ ~%MOD_FOLDER%/../zstweaks_logs/warnings.txt~
-                APPEND_OUTER + ~%MOD_FOLDER%/../zstweaks_logs/warnings.txt~ "----Start of Logs----"                
-                DELETE + ~%MOD_FOLDER%/../zstweaks_logs/.nodata~
-
+            ACTION_IF NOT FILE_EXISTS ~%MOD_FOLDER%/../zstweaks_logs/%filename%.txt~ BEGIN
+                COPY + ~%MOD_FOLDER%/templates/empty~ ~%MOD_FOLDER%/../zstweaks_logs/%filename%.txt~                              
             END
-
-            APPEND_OUTER + ~%MOD_FOLDER%/../zstweaks_logs/warnings.txt~ "- %message%"
+            APPEND_OUTER + ~%MOD_FOLDER%/../zstweaks_logs/%filename%.txt~ "%flog_preamble%%message%"
 
             ACTION_IF predicate_stdout = TRUE BEGIN
 
@@ -88,6 +91,14 @@ BEGIN
 
                     ACTION_IF add_level_preamble BEGIN
                         OUTER_SPRINT resolved_msg "%INFO_PREAMBLE%%message%"
+                    END
+
+                    PRINT "%resolved_msg%"
+
+                END ELSE ACTION_IF is_debug BEGIN
+
+                    ACTION_IF add_level_preamble BEGIN
+                        OUTER_SPRINT resolved_msg "%DEBUG_PREAMBLE%%message%"
                     END
 
                     PRINT "%resolved_msg%"

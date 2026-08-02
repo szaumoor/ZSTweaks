@@ -57,6 +57,8 @@ I also would recommend installing things in the order they're presented in the m
 
 The prefix for this mod is either "tw" or "t". That is, if you find a file that starts by "zst" or "zstw", it comes from this mod.
 
+This mod was only tested in version v249 of WeiDu. Version 250 and 251 might break some things. You're on your own if you find some issue (for now).
+
 ---
 
 **For modders**: To add compatibility with other mods, do include the files with the variables in your code to help to detect components and variants thereof. To check that the mod has been installed (any component), you may also check for the existence of the file `zssetup.rp` in override with a ```FILE_EXISTS_IN_GAME``` check. There are two possibilities as to how a component is installed, and both should be combined logically:

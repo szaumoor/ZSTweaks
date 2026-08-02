@@ -3500,7 +3500,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         WARN "[WARN]: There were %failures% errors in the settings. Please revise."
 
         ACTION_IF crash_if_var_errors_found BEGIN
-            LAF LOG_TEXT STR_VAR log_level="fail" message = "ABORTING INSTALLATION DUE TO ERRORS. There were %failures% errors in the settings. Please revise." END
+            LAF LOG_TEXT STR_VAR filename = "crash" log_level="fail" flog_preamble="" message = "ABORTING INSTALLATION DUE TO ERRORS. There were %failures% errors in the settings. Please revise." END
         END
 
     END ELSE BEGIN
