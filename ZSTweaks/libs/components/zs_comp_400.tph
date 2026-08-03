@@ -20,6 +20,11 @@ OUTER_SPRINT the_effects ~op=324,p1=%race_salamander%;op=324,p1=%race_darkplanet
 
 
 COPY ~%MOD_FOLDER%/spells/arcane/energy_drain~ ~override~
+
+COPY_EXISTING ~zstegdrs.cre~ ~override~ // devil shade
+    SAY 0x08 @5651
+    SAY 0x0c @5651
+
 ACTION_IF is_iwdee BEGIN
 
     COPY_EXISTING ~zswraith.itm~ ~override/wraith1.itm~
