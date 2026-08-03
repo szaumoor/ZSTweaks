@@ -344,8 +344,9 @@ COPY_EXISTING ~shadeld.cre~  ~override~ // a version of Shade Lord that is Neutr
 IF_EXISTS
 
 ACTION_IF zs_debug BEGIN
-  PRINT "[DEBUG][INFO]: Checking for possible suspects with wrong alignment (Oversight++ component 3010)...
-  "
+  PRINT "[DEBUG][INFO]: Checking for possible suspects with wrong alignment (Oversight++ component 3010)... Check the debug.txt file for details after the installation and if you find anything interesting, let Kaelyn know, will ya?"
+  LAF LOG_TEXT INT_VAR predicate_stdout=FALSE STR_VAR flog_preamble="" filename="debug" message="-- START OF OVERSIGHT++ ALIGNMENT CHECKING --" END
+
   OUTER_SET matches = 0
   COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
 
@@ -466,7 +467,8 @@ ACTION_IF zs_debug BEGIN
               LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
               LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
               LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
-              PATCH_PRINT "[DEBUG][INFO]: Found a greater doppelganger %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be evil: %SOURCE_RES% -- %name%"
+
+              LPF LOG_TEXT STR_VAR filename="debug" log_level="debug" message = "Found a greater doppelganger %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be evil: %SOURCE_RES% -- %name%" END
             END
         END
 
@@ -487,7 +489,8 @@ ACTION_IF zs_debug BEGIN
                 LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
                 LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
                 LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
-                PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be in the chaotic axis: %SOURCE_RES% -- %name%"
+
+                LPF LOG_TEXT STR_VAR filename="debug" log_level="debug" message = "Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be in the chaotic axis: %SOURCE_RES% -- %name%" END
               END
           END
 
@@ -500,7 +503,8 @@ ACTION_IF zs_debug BEGIN
               LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
               LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
               LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
-              PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be Chaotic Neutral: %SOURCE_RES% -- %name%"
+
+              LPF LOG_TEXT STR_VAR filename="debug" log_level="debug" message = "Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be Chaotic Neutral: %SOURCE_RES% -- %name%" END
             END
           END
 
@@ -515,7 +519,8 @@ ACTION_IF zs_debug BEGIN
               LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
               LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
               LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
-              PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be Neutral Good or Chaotic Good: %SOURCE_RES% -- %name%"
+
+              LPF LOG_TEXT STR_VAR filename="debug" log_level="debug" message = "Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be Neutral Good or Chaotic Good: %SOURCE_RES% -- %name%" END
             END
           END
 
@@ -536,7 +541,8 @@ ACTION_IF zs_debug BEGIN
                 LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
                 LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
                 LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
-                PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be not good: %SOURCE_RES% -- %name%"
+
+                LPF LOG_TEXT STR_VAR filename="debug" log_level="debug" message = "Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be not good: %SOURCE_RES% -- %name%" END
             END
 
         END
@@ -603,7 +609,8 @@ ACTION_IF zs_debug BEGIN
                 LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
                 LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
                 LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
-                PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be evil: %SOURCE_RES% -- %name%"
+
+                LPF LOG_TEXT STR_VAR filename="debug" log_level="debug" message = "Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be evil: %SOURCE_RES% -- %name%" END
             END
 
         END
@@ -627,7 +634,8 @@ ACTION_IF zs_debug BEGIN
                 LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
                 LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
                 LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
-                PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be good: %SOURCE_RES% -- %name%"
+
+                LPF LOG_TEXT STR_VAR filename="debug" log_level="debug" message = "Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be good: %SOURCE_RES% -- %name%" END
             END
         END
 
@@ -671,7 +679,8 @@ ACTION_IF zs_debug BEGIN
               LOOKUP_IDS_SYMBOL_OF_INT found_general GENERAL general
               LOOKUP_IDS_SYMBOL_OF_INT found_class CLASS class
               LOOKUP_IDS_SYMBOL_OF_INT found_alignment ALIGNMEN alignment
-              PATCH_PRINT "[DEBUG][INFO]: Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be neutral: %SOURCE_RES% -- %name%"
+
+              LPF LOG_TEXT STR_VAR filename="debug" log_level="debug" message = "Found a %found_alignment% creature of race %found_race%, general %found_general%, and class %found_class%, that should be neutral: %SOURCE_RES% -- %name%" END
             END
         END
 
@@ -682,4 +691,6 @@ ACTION_IF zs_debug BEGIN
   BUT_ONLY
 
   PRINT "[DEBUG][INFO]: Checking finished, found %matches% matches"
+  LAF LOG_TEXT INT_VAR predicate_stdout=FALSE STR_VAR flog_preamble="" filename="debug" message="-- END OF OVERSIGHT++ ALIGNMENT CHECKING --" END
+
 END
