@@ -49,7 +49,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-The Finger of Death spell snuffs out the victim's life force. The caster points <PRO_HISHER> finger at the victim after the incantation is complete, effectively ripping the life out of its body unless a Save vs. Spell is made with a -2 penalty. A creature successfully making the Saving Throw still receives 2d8 points of damage + 1 per level of the caster.~
+The Finger of Death spell snuffs out the victim's life force. The caster points <PRO_HISHER> finger at the victim after the incantation is complete, effectively ripping the life out of its body unless a Save vs. Spell is made with a -2 penalty. A creature successfully making the Saving Throw still receives 2d8 points of damage plus 1 per level of the caster.~
 
 @5060 = ~Goodberry
 (Alteration, Evocation)
@@ -205,7 +205,7 @@ Casting Time: 9
 Area of Effect: The caster
 Saving Throw: 1/2
 
-Casting the Fire Seed spell creates 12 fire seeds that will appear in the caster's inventory. The seeds will remain in existence for 7 hours after the spell is cast. If they are thrown at an enemy, they explode in a fireball, causing 3d8+5 points of damage to all within a 7-ft. radius unless they make a Saving Throw vs. Spell for half damage. These seeds are thrown with a THAC0 bonus of +2 and are considered +2 weapons for the purposes of what they can hit.~
+Casting the Fire Seed spell creates 12 fire seeds that will appear in the caster's inventory. The seeds will remain in existence for 7 hours after the spell is cast. If they are thrown at an enemy, they explode in a fireball, causing 3d8+5 points of damage to all within a 7-ft. radius unless they make a Saving Throw vs. Spell for half damage. These seeds are thrown with a THAC0 bonus of +2 and are considered +3 weapons for the purposes of what they can hit.~
 
 @5160 = ~Created by the Fire Seeds spell. When thrown at opponents, they explode into small fireballs that do 3d8+5 points of damage to everyone within a 7-ft. radius.
 
@@ -445,7 +445,7 @@ Casting Time: 2
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-When casting this spell, the priest must picture the faces of <PRO_HISHER> fellow party members clearly and focus on the unity of the group. Upon completion, all party members within a 15-ft. radius of the caster are healed 4d3 + 1 per level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
+When casting this spell, the priest must picture the faces of <PRO_HISHER> fellow party members clearly and focus on the unity of the group. Upon completion, all party members within a 15-ft. radius of the caster are healed 4d3 Hit Points plus 1/level. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
 
 //flame blade boost iwdee
 @6600 = ~Flame Blade
@@ -536,7 +536,7 @@ Creature Type                         Damage
  Undead                                8d6+6
  Fiendish outsiders                    8d8+6
 
-This spell cannot be blocked by Magic Resistance, and outsiders of celestial origin (or related to the Positive Energy Plane) are unaffected, including Aasimars.~
+This spell cannot be blocked by Magic Resistance, and outsiders of celestial origin (or related to the Positive Energy Plane) are unaffected, including the aasimar, devas, planetars, and solars.~
 
  @7400 = ~Magical Stone
 (Enchantment)
@@ -831,7 +831,7 @@ Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: 1/2
 
-By casting this spell, the priest deals 4d3 + 1 per level points of damage to nearby enemies. A successful Save vs. Spell halves the damage. This spell has no effect on undead, constructs, or extraplanar creatures.~
+By casting this spell, the priest deals 4d3 magic damage plus 1 extra per level to nearby enemies. A successful Save vs. Spell halves the damage. This spell has no effect on undead, constructs, or extraplanar creatures.~
 
 @8280 = ~Symbol, Pain
 (Conjuration/Summoning)
@@ -1041,10 +1041,12 @@ Status — Effects of Holy Word
 Summoned — Banished or destroyed (Save vs. Spell at -4 to avoid)
 Less than 4 HD, or with 40 Hit Points or less — Destroyed or killed instantly
 4 to 7 HD — Stunned, slowed, blinded, and deafened for 1 to 4 turns with a 90% chance of spell failure
-8 to 11 HD — Slowed, blinded, and deafened for 5 rounds with a 75% chance of spell failure
-12 HD and up — Blinded and deafened for 4 rounds with a 50% chance of spell failure
+8 to 11 HD — Slowed, blinded, and deafened for 7 rounds with a 75% chance of spell failure
+12 HD and up — Blinded and deafened for 5 rounds with a 50% chance of spell failure
 
-This spell has a special effect on demiliches. Though normally immune, they will instead take damage equal to 5% of their total health, plus 2d6 magic damage. None of the other effects apply to them.
+Additionally, in every applicable case, their saving throws suffer a penalty of -2 for the duration. 
+
+This spell has a special effect on demiliches. Though normally immune to the spell, they will instead take damage equal to 10% of their total health, plus 2d6 magic damage. None of the other effects apply to them and they may only be affected by this once per turn.
 
 This spell is not affected by Magic Resistance, but side effects are negated for deafened targets, and on targets that have no hearing, except in the case of killing effects, and the banishment of summoned creatures. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that this spell may not be cast by any priest of evil alignment.~
 
@@ -1065,10 +1067,16 @@ Status — Effects of Unholy Word
 Summoned — Banished or destroyed (Save vs. Spell at -4 to avoid)
 Less than 4 HD, or with 40 Hit Points or less — Destroyed or killed instantly
 4 to 7 HD — Stunned, slowed, blinded, and deafened for 1 to 4 turns with a 90% chance of spell failure
-8 to 11 HD — Slowed, blinded, and deafened for 5 rounds with a 75% chance of spell failure
-12 HD and up — Blinded and deafened for 4 rounds with a 50% chance of spell failure
+8 to 11 HD — Slowed, blinded, and deafened for 7 rounds with a 75% chance of spell failure
+12 HD and up — Blinded and deafened for 5 rounds with a 50% chance of spell failure
+
+Additionally, in every applicable case, their saving throws suffer a penalty of -2 for the duration. 
 
 This spell is not affected by Magic Resistance, but side effects are negated for deafened targets, and on targets that have no hearing, except in the case of killing effects, and the banishment of summoned creatures. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that priests of good alignment may not cast this spell.~
+
+@8652 = ~Affected by Divine Word for %turns% turns.~
+@8653 = ~Affected by Divine Word for 7 rounds.~
+@8654 = ~Affected by Divine Word for 5 rounds.~
 
 @800000 = ~Mold Touch
 (Alteration)
@@ -1119,3 +1127,24 @@ Area of Effect: The caster
 Saving Throw: None
 
 When the priest casts a Sanctuary spell, it causes all of <PRO_HISHER> opponents to ignore <PRO_HISHER> existence as if <PRO_HESHE> were invisible. While protected by this spell, the subject cannot take direct offensive action without breaking the spell, but can use non-attack spells or otherwise act in any way that does not violate the prohibition against offensive action. This allows a warded priest to heal wounds, for example, or to bless <PRO_HIMHER>self. The priest cannot cast spells on other creatures without ending the spell.~
+
+@900700 = ~Cloud of Pestilence
+(Alteration)
+
+Level: 4
+Sphere: Combat, Elemental Air
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 7
+Area of Effect: 12-ft. radius
+Saving Throw: Neg.
+
+This spell transforms the air in a 12-ft. radius into sickening, grayish mists. The caster and non-living creatures are immune to the effects of the cloud. For every round of exposure to the disease-ridden air, a creature takes 1d8 poison and 1d4 magic damage. If a Saving Throw vs. Breath is failed, they are also stricken with a disease, which has three distinct stages that, unless stated otherwise, last 1 turn:
+
+1st stage: Target is immediately nauseated and physically weakened, incurring in -2 penalty to THAC0, and a -3 penalty to Strength.
+
+2nd stage: Target suffers coughing fits that prevent spellcasting that require verbal components, as if they were silenced, and have their movement speed immediately reduced by half, and their attacks per round by 1/2.
+
+3rd stage: Target is permanently blinded until cured, and suffers 6 poison damage per round.
+
+Each stage carries the effects of previous stages, and require contact with the vapors, as well as another failed Save vs. Breath to apply. None of the effects can be resisted by Magic Resistance or removed with Dispel Magic, but the vapors can be dissipated physically and its effects can be cured with a Cure Disease potion or spell.~
