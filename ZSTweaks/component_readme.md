@@ -339,21 +339,9 @@ This simply makes the scroll not work on targets that are currently enemies, to 
 
 This makes the spell behave a little closer to what is supposed to be and makes the issue of being able to go invisible in between True Sight pulses and attack much less likely to succeed. It's not instant dispelling, but it's close enough that it likely does not matter.
 
-### Make Power Word, Kill more generally effective for a level 9 spell (585) (BG2EE EET)
+### Make created characters susceptible to morale failure instead of fearless by default (592) (IWDEE BGEE BG2EE EET)
 
-As with Symbol, Death, it's difficult to know an enemy's exact health, this spell is wasted on targets with more than 60 HP. Only computer-controlled enemies know it. Thus, for the benefif of the player user:
-
-- If the target has 60 HP or less, *or 10 Hit Dice or less*, they die instantly without any save allowed.
-- If the target has *more* than 60 HP, and is level 11 or 12, they die if they fail a Save vs. Spell. Otherwise, they take 4d6 magic damage.
-- If the target has *more* than 60 HP, and is above level 12, they die if they fail a Save vs. Spell at +4. Otherwise, they take 4d6 magic damage.
-
-Some optional config options:
-
-- Make the spell chunk when it kills (similar to Cutscene Irenicus' version) (ON by default)
-- Make the spell an Enchantment spell, as in 3rd and 5th edition (OFF by default)
-- Make the spell a Divination spell (ON by default)
-- Make the spell bypass magic resistance specifically against those with <= 60 HP or <= 10 HD (ON by default)
-- Make the spell fail to work after a hard HP limit. (On by default, with a limit of 150 HP; i.e. enemies with >=150 current HP are unaffected).
+This component assigns player-created characters configurable morale, morale-break thresholds, and recovery times, allowing them to suffer morale failure like joinable NPCs. The defaults are 10 morale, a break threshold of 3, and a recovery time of 30 seconds; these values can be changed in `zstweaks_prefs.txt`.
 
 </details>
 
@@ -805,11 +793,11 @@ It's basically a way to skip the difficulty of beholders fairly easily. It's now
 
 Instead of granting +1 to THAC0 and +5 HP, it grants immunity to stun and 2 HP/round regeneration. Other benefits are kept.
 
-### Make Fallorain's Plate +1 more unique (1369) (BGEE BG2EE EET)
+### Make Fallorain's Plate +1 more distinctive (1369) (BGEE BG2EE EET)
 
 Based on the original description, it now also provides protection vs. evil (not vs. summoned demons though).
 
-### Make Pride of the Legion +2 more unique (1373) (BG2EE EET)
+### Make Pride of the Legion +2 more distinctive (1373) (BG2EE EET)
 
 The boring armor of Unther now has extra goodies:
 
@@ -818,7 +806,7 @@ The boring armor of Unther now has extra goodies:
 - Save vs. Breath: +1 (paladin only)
 - Charge ability "Hold the Line" twice per day: For 3 rounds, Gain +2 bonus to Armor Class and Saving Throws, as well as immunity to sleep, wing buffet, and stun. Allies gain a +1 bonus to their Saving Throws and Armor Class. In exchange, the movement rate of the wearer is cut in half.
 
-### Make Armor of the Hart +3 more unique (1375) (BG2EE EET)
+### Make Armor of the Hart +3 more distinctive (1375) (BG2EE EET)
 
 Based on the description.
 
@@ -826,7 +814,7 @@ Based on the description.
 - Charisma: +2
 - Aura of Valor: The wearer is immune to morale failure and fear and allies in a 10 ft. radius are filled with morale, minimizing the chances of morale failure.
 
-### Make T'rachie's Plate +5 more unique (1385) (BG2EE EET)
+### Make T'rachie's Plate +5 more distinctive (1385) (BG2EE EET)
 
 This makes this cursed armor more of a mix of penalties and benefits, which makes it much more interesting in my view.
 
@@ -837,13 +825,13 @@ This makes this cursed armor more of a mix of penalties and benefits, which make
 - Charge ability of Cloak of Fear. Instantly cast twice per day.
 - Rest is unchanged.
 
-### Make Mail of the Dead +2 more unique (1395) (BGEE BG2EE EET)
+### Make Mail of the Dead +2 more distinctive (1395) (BGEE BG2EE EET)
 
 Based on the description, while wearing the armor, the following benefit is added:
 
 Undead Ward: Any friendly undead within 15 ft. of the wearer is granted a +4 bonus to Armor Class, a +2 bonus to Saving Throws, a +12% resistance to physical damage, and a +25% to magical damage. Does not stack with itself.
 
-### Make Jester's Chain +4 more unique (1404) (BG2EE EET)
+### Make Jester's Chain +4 more distinctive (1404) (BG2EE EET)
 
 Now increases the caster levels by 2 if they are Jesters and does not prevent spellcasting.
 
@@ -1892,7 +1880,7 @@ Just a small tweak to make it look better, in my opinion. It's probably compatib
 
 This is the first in a conceived series of new tweaks to give specialist wizards more incentives. Install this after any other mod that affects the effects of the spell, as the implementation requires moving their current state to subspells. Any tweak for the spell applied after this one will likely not work as expected.
 
-### Make Haste and Improved Haste more balanced by making them last much less (577) (IWDEE BGEE BG2EE EET)
+### Make Haste and Improved Haste more balanced through much shorter durations (577) (IWDEE BGEE BG2EE EET)
 
 It's amazing how strongly Haste can turn the tides of battle. It's a powerful effect that should last less than it does. The durations are:
 
@@ -1901,7 +1889,7 @@ It's amazing how strongly Haste can turn the tides of battle. It's a powerful ef
 
 Haste effects on items are not changed to make them more valuable.
 
-### Make Power Word, Kill more generally effective for a level 9 spell (585)
+### Make Power Word, Kill more effective as a 9th-level spell (585) (BG2EE EET)
 
 The spell now has extended usability, to justify a level 9 spell slot:
 
@@ -1917,7 +1905,7 @@ Finally, there are configuration options to set the following:
 - Bypasses Magic resistance when killing creatures with HP <= 60 or <= 10 HD (ON by default).
 - A HP hard limit can be established after which the creature is always immune (default: 150 HP)
 
-### Make Otiluke's Resilient Sphere able to protect NPCs marked as innocents (487)
+### Make Otiluke's Resilient Sphere protect NPCs marked as innocents (487) (IWDEE BGEE BG2EE EET)
 
 Small QoL addition. BeamDog already had done an awesome thing by making it possible to use this spell to protect allies without them trying to make saves or resist it. So now if you want to protect anyone who would cause reputation loss if killed accidentally, you can put the bubble on them if desired, also without the chance of them resisting it.
 
@@ -2253,11 +2241,11 @@ Holy Word now:
 
 Unholy Word is identical in the benefits, except demiliches are not affected by it, and it can affect all non-evil, not just the good, extending its usability.
 
-### Make Sanctuary standardized to IWD version (5400) (IWDEE BGEE BG2EE EET)
+### Make Sanctuary match the IWD version (5400) (IWDEE BGEE BG2EE EET)
 
 The much-better looking animation in IWDEE is used in BG, and the duration is not closer to IWD, which scales. Now it lasts 1 turn plus 1 round per level.
 
-### Make Hold Animal much more useful by allowing it to affect many other types of beasts (5402) (IWDEE BGEE BG2EE EET)
+### Make Hold Animal affect many more beast types (5402) (IWDEE BGEE BG2EE EET)
 
 It's difficult to justify using this spell, so I decided to expand it a bit. It's now called Hold Beast, and affects non-humanoid, living creatures such as:
 
@@ -2436,7 +2424,7 @@ Do not mix this with Sneak Attacks; use it only if you are planning to use backs
 
 Thieves are almost always used in multiclass because that is vastly superior to picking a single-class thief. This component aims to partially address that imbalance by making multiclass thieves incur a -1 backstab multiplier. A second class already gives them plenty of advantages. Mix this with tweaks that improve single-classed thieves, if you believe in my holy mission and crusade to achieve true Thief supremacy.
 
-### Make Seeking Sword not disable spellcasting and improve it with level (2405)
+### Make Seeking Sword scale with level without disabling spellcasting (2405) (IWDEE BGEE BG2EE EET)
 
 This makes the sword significantly better and more damaging:
 
@@ -2454,15 +2442,15 @@ Enchanted as a +4 weapon for the purposes of what it can hit and it lasts for 3 
 36th – 2d4+5, +6 THAC0, 4 attacks per round
 40th – 2d4+6, +6 THAC0, 9/2 attacks per round
 
-### Make Priests of Talos get access to all electricity spells and add a small bonus to electricity damage (2408)
+### Make Priests of Talos able to cast all electricity spells and deal slightly more electricity damage (2408) (IWDEE BGEE BG2EE EET)
 
 This component gives Priests of Talos access to most electricity-based of wizards and druids by default (including Whirlwind as a bonus, if IWD spells are present) and a 5% electricity damage bonus. The latter is optional and can be disabled in the configuration file, and the percentage bonus can also be configured. It will patch any Priests of Talos that may exist in the game to add this boost.
 
-### Make Divine Favor's duration scale very slowly with level (3190)
+### Make Divine Favor's duration scale slowly with level (3190) (IWDEE BGEE BG2EE EET)
 
 Now he spell lasts for 2 rounds plus half a round each time it upgrades, up to 5 rounds at level 21 (adds a new bonus damage and THAC0 at level 21).
 
-### Make Boon of Lathander improve with level slightly (3200)
+### Make Boon of Lathander improve slightly with level (3200) (IWDEE BGEE BG2EE EET)
 
 Now it lasts 3 rounds plus 1 round per level of the caster, and it also increases maximum HP by 10, as well as granting 1.5 extra attacks per round (a third of that if the caster has warrior levels).
 
@@ -2632,17 +2620,17 @@ As it says. Note that the patching is manual: every drow has to be found and pat
 
 Self-explanatory. Saving throw to avoid the disease / slow effect on hit is Save vs Death at -2.
 
-### Make familiars use female voices for casting spells (3165) (IWDEE BGEE BG2EE EET)
+### Make familiars use female voices when casting spells (3165) (IWDEE BGEE BG2EE EET)
 
 Self-explanatory.
 
-### Make succubi and erinyes use the female winged elf animation (3170) (BGEE BG2EE EET)
+### Make succubi and erinyes use the female winged-elf animation (3170) (BGEE BG2EE EET)
 
 I get really annoyed by animation reuse that demands too much suspension of disbelief. A good example of that is certainly this, where the Sirine animation is used for these types of fiends. These animations are now of female elven cleric or fighter avatars, with appropriate wings and new color palette.
 
 Bear in the mind this is manually patched, it won't detect such fiends from other mods. Any other cases will need to handled on an individual basis. If you know of such cases, send me the information about the mod and the creature file itself if possible so I can patch it.
 
-### Make some creatures immune to being cheesed with Thief Traps (3180) (IWDEE BGEE BG2EE EET)
+### Make certain creatures immune to Thief Trap exploits (3180) (IWDEE BGEE BG2EE EET)
 
 Traps are a common way to cheese tough fights. This component alleviates it in several (optional) ways:
 
@@ -2655,7 +2643,7 @@ Traps are a common way to cheese tough fights. This component alleviates it in s
 
 Bear in mind the tweak might not work as intended if a previous tweak changes how they work, specifically what their effects are.
 
-### Make Pit Fiends closer to Balors in power thereby improving the Gate spell (3210) (BG2EE EET)
+### Make Pit Fiends comparable to Balors in power, improving the Gate spell (3210) (BG2EE EET)
 
 The Gate spell is not quite as useful due to how squishy the pit fiends are. This makes pit fiends, both enemy and summoned, stronger and closer to what Balors are in power. In terms of hierarchical fiendish power, they should be pretty close. The following is added / modified:
 

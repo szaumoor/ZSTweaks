@@ -69,7 +69,7 @@
 @1548 = ~Make Void-weapons slightly more effective and logical~
 @1559 = ~Make Protection From Magic scroll not a cheesy way to dispel all magic from an enemy~
 @582 = ~Make True Sight dispel illusions once per second instead of once per round~
-@592 = ~Make created characters able to suffer morale failure instead of being default psychopaths~
+@592 = ~Make created characters susceptible to morale failure instead of fearless by default~
 
 /// ARMOR/GEAR/MISC ITEM TWEAKS
 @1170 = "Make Shadow Dragon Scale behave less like a Black Dragon Scale"
@@ -140,12 +140,12 @@
 @1351 = ~Make Tzu-Zan's bracers a better competitor to Gauntlets of Crushing~
 @1365 = ~Make Shield of Balduran less of an auto-win item~
 @1366 = "Make Helm of Balduran work as it does in BG3"
-@1369 = ~Make Fallorain's Plate +1 more unique~
-@1373 = ~Make Pride of the Legion +2 more unique~
-@1375 = ~Make Armor of the Hart +3 more unique~
-@1385 = ~Make T'rachie's Plate +5 more unique~
-@1395 = ~Make Mail of the Dead +2 more unique~
-@1404 = ~Make Jester's Chain +4 more unique~
+@1369 = ~Make Fallorain's Plate +1 more distinctive~
+@1373 = ~Make Pride of the Legion +2 more distinctive~
+@1375 = ~Make Armor of the Hart +3 more distinctive~
+@1385 = ~Make T'rachie's Plate +5 more distinctive~
+@1395 = ~Make Mail of the Dead +2 more distinctive~
+@1404 = ~Make Jester's Chain +4 more distinctive~
 
 /// DAGGER TWEAKS
 @1000 = "Make throwing poisoned daggers less rare and more likely to poison enemies"
@@ -305,9 +305,9 @@
 @561 = ~Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance~
 @562 = ~Make Imprisonment prevent movement while the animation plays out~
 @572 = ~Make Magic Missiles inflict 1d5+2 magic damage when cast by Invokers~
-@577 = ~Make Haste and Improved Haste more balanced by making them last much less~
-@585 = ~Make Power Word, Kill more generally effective for a level 9 spell~
-@487 = ~Make Otiluke's Resilient Sphere able to protect NPCs marked as innocents~
+@577 = ~Make Haste and Improved Haste more balanced through much shorter durations~
+@585 = ~Make Power Word, Kill more effective as a 9th-level spell~
+@487 = ~Make Otiluke's Resilient Sphere protect NPCs marked as innocents~
 
 // CLERIC SPELLS
 @100 = "Make Glyph of Warding do damage on a failed save and extend damage up to level 20"
@@ -353,8 +353,9 @@
 @497 = ~Make Produce Fire a much more effective spell~
 @515 = ~Make Aura of Flaming Death increase fire resistance instead of setting it to 90%~
 @539 = ~Make Holy and Unholy Word more effective~
-@5400 = ~Make Sanctuary standardized to IWD version~
-@5402 = ~Make Hold Animal much more useful by allowing it to affect many other types of beasts~
+@5400 = ~Make Sanctuary match the IWD version~
+@5402 = ~Make Hold Animal affect many more beast types~
+@5440 = ~Make Cloud of Pestilence more effective and closer to its PnP version~
 
 // KITS AND CLASSES
 @2100 = "Make Sun Soul Ray and Sun Soulbeam more powerful"
@@ -380,10 +381,10 @@
 @2350 = ~Make all single-classed thieves apply a Sneak Attack Crippling strike on backstabs~
 @2400 = ~Make multi-classed thieves always incur in a -1 backstab multiplier for balance~
 @2401 = ~Make NWN2's Epic Spell 'Vampiric Feast' available as an HLA to necromancers~ // TODO
-@2405 = ~Make Seeking Sword not disable spellcasting and improve it with level~
-@2408 = ~Make Priests of Talos get access to all electricity spells and add a small bonus to electricity damage~
-@3190 = ~Make Divine Favor's duration scale very slowly with level~
-@3200 = ~Make Boon of Lathander improve with level slightly~
+@2405 = ~Make Seeking Sword scale with level without disabling spellcasting~
+@2408 = ~Make Priests of Talos able to cast all electricity spells and deal slightly more electricity damage~
+@3190 = ~Make Divine Favor's duration scale slowly with level~
+@3200 = ~Make Boon of Lathander improve slightly with level~
 
 // CRE TWEAKS
 @3010 = ~Make inappropriately aligned creatures more correct~
@@ -402,10 +403,10 @@
 @3140 = ~Make ogre / oni mages regenerating fiends, as per PnP~
 @3150 = ~Make drow Magic Resistance lower (configurable)~
 @3160 = ~Make the effects on-hit of Otyugh attacks nonmagical and subject to Saving Throws~
-@3165 = ~Make familiars use female voices for casting spells~
-@3170 = ~Make succubi and erinyes use the female winged elf animation~
-@3180 = ~Make some creatures immune to being cheesed with Thief Traps~
-@3210 = ~Make Pit Fiends closer to Balors in power thereby improving the Gate spell~
+@3165 = ~Make familiars use female voices when casting spells~
+@3170 = ~Make succubi and erinyes use the female winged-elf animation~
+@3180 = ~Make certain creatures immune to Thief Trap exploits~
+@3210 = ~Make Pit Fiends comparable to Balors in power, improving the Gate spell~
 
 // END-OF-INSTALL ORDER TWEAKS
 @2370 = ~Make IWD evasion balanced~
