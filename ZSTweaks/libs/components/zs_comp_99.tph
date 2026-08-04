@@ -179,3 +179,7 @@ END
 ACTION_IF zst_group_5402_hold_animal BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_5402.tph~ END
 END
+
+ACTION_IF zst_group_5440_cloud_pestilence BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_5440.tph~ END
+END

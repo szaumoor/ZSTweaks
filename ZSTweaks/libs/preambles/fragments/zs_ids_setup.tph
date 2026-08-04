@@ -217,6 +217,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
     OUTER_SET spell_circle_of_bones          = IDS_OF_SYMBOL (spell CLERIC_CIRCLE_OF_BONES)
     OUTER_SET spell_cleric_energy_drain      = IDS_OF_SYMBOL (spell CLERIC_ENERGY_DRAIN)
     OUTER_SET spell_cloudburst               = IDS_OF_SYMBOL (spell CLERIC_CLOUDBURST)
+    OUTER_SET spell_cloud_pestilence         = IDS_OF_SYMBOL (spell CLERIC_CLOUD_OF_PESTILENCE) 
     OUTER_SET spell_cure_moderate_wounds     = IDS_OF_SYMBOL (spell CLERIC_CURE_MODERATE_WOUNDS)
     OUTER_SET spell_curse                    = IDS_OF_SYMBOL (spell CLERIC_CURSE)
     OUTER_SET spell_darts_of_bone            = IDS_OF_SYMBOL (spell WIZARD_DARTS_OF_BONE)
