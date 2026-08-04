@@ -43,14 +43,16 @@
 - When the Constitution Overhaul is installed, the Character Stat Overhaul now corrects creatures that use Constitution tables so that very low base HP and Constitution values do not kill them.
 - Made minor fixes to component 1531 (Magic Resistance tweaks).
 - Fixed the Symbol X component incorrectly skipping its entire script in IWDEE despite supporting that game.
-- Fixed the extra damage from critical hits with ranged void weapons applying instantly instead of at roughly the same time as the hit. **>>>TODOCHECK>>>**
+- Fixed the extra damage from critical hits with ranged void weapons applying instantly instead of at roughly the same time as the hit.
 - Fixed the golem component reporting an undefined number of creatures as modified, including creatures it did not change.
-- Fixed a `GONK` error in the Energy Drain component that prevented it from protecting certain creatures in games without IWDification spells.
+- Fixed an error in the Energy Drain component that prevented it from protecting certain creatures in games without IWDification spells.
 - Prevented the +1 HP component from indiscriminately affecting non-shield items that use the shield slot. This fix depends heavily on the shield-standardization prefix.
 - Fixed Mazzy's weapons when the Fixpack is installed by removing a duplicate item-restriction opcode and adding a `.tra` reference for the "Mazzy" string in their descriptions.
 - Fixed Holy Words visual effects playing on ineligible targets.
 - Fixed the Divine Words killing effect failing to bypass deafness, contrary to its description.
 - Corrected a likely vanilla issue where the Belt of Fortitude's charge ability used the basic belt icon instead of its own. This fix applies only when the relevant component is installed.
+- Chromatic Orb green orb now also checks for poison immunity and undead / construct state before applying poison.
+- Chromatic Orb purple was healing golems instead of damaging them as expected
 
 ## Modifications
 
@@ -96,7 +98,7 @@
 - Began moving from a large collection of bundled files to templates that generate files as needed.
 - Added lacedon weapon attacks to the Natural Weapons component.
 - Wail of the Banshee now kills targets with 60 HP or less at a -2 save penalty. Targets with 8 HD or less are slain instantly, as with Death Spell.
-- Added compatibility with EEFixpack's new spell states to the following item and spell components: Skin of Ghoul, Sword of Royal Might, Dusty Rose Ioun Stone, Wondrous Gloves, Plate of the Dark, Helm of Balduran, Jade Fang, Life Stealer, Borok's Fist, and Holy/Unholy Words. (TODO)
+- Added compatibility with EEFixpack's new spell states to the following item and spell components: Skin of Ghoul, Sword of Royal Might, Dusty Rose Ioun Stone, Wondrous Gloves, Plate of the Dark, Helm of Balduran, Jade Fang, Life Stealer, Borok's Fist, and Holy/Unholy Words, Chromatic Orb (TODO)
 - Reduced the bonuses against schools of magic provided by the Skull of Death and Shadow Dragon Scale to +3.
 - Made effects that disable critical misses much less likely to be undone by critical-miss penalties.
 - Renamed Kachiko's Whisper to Whisper and slightly revised its description and benefits. (TODO on benefits)
@@ -136,7 +138,7 @@
 - Make Otiluke's Resilient Sphere protect NPCs marked as innocents (487) (IWDEE BGEE BG2EE EET).
 - Make Pit Fiends comparable to Balors in power, improving the Gate spell (3210) (BG2EE EET).
 - Make created characters susceptible to morale failure instead of fearless by default (592) (IWDEE BGEE BG2EE EET).
-- Make Cloud of Pestilence more effective and closer to its PnP version (TODO)
+- Make Cloud of Pestilence more effective and closer to its PnP version (5440) (IWDEE BGEE BG2EE EET)
 
 ## Future additions
 

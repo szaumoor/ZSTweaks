@@ -12,6 +12,9 @@ COPY_EXISTING ~zstwchr1.spl~ ~override~ // orange
 
 COPY_EXISTING ~zstwchr3.spl~ ~override~ // light blue
   LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@75003) END
+  PATCH_IF has_eefixpack BEGIN
+    LPF CLONE_EFFECT INT_VAR match_opcode=40 opcode=318 parameter1=splstate_fp_slow_immunity parameter2=115 STR_VAR resource=~%SOURCE_RES%~ END
+  END
 
 COPY_EXISTING ~zstwchr0.spl~ ~override~ // white
   LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@75001) END
@@ -24,6 +27,9 @@ COPY_EXISTING ~zstwchr4.spl~ ~override~ // black
 
 COPY_EXISTING ~zstwchr5.spl~ ~override~ // purple
   LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@75006) END
+  PATCH_IF has_eefixpack BEGIN
+    LPF CLONE_EFFECT INT_VAR match_opcode=45 opcode=318 parameter1=splstate_fp_stun_immunity parameter2=115 STR_VAR resource=~%SOURCE_RES%~ END
+  END
 
 COPY_EXISTING ~zstwchr6.spl~ ~override~ // yellow
   LPF ALTER_SPELL INT_VAR name = RESOLVE_STR_REF(@75005) END
