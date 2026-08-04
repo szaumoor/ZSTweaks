@@ -1,0 +1,54 @@
+ACTION_IF spell_cloud_pestilence > 0 BEGIN
+
+    OUTER_SET first_stage_str = RESOLVE_STR_REF(@900701)
+    OUTER_SET second_stage_str = RESOLVE_STR_REF(@900702)
+    OUTER_SET third_stage_str = RESOLVE_STR_REF(@900703)
+
+    DEFINE_PATCH_MACRO patch_file BEGIN
+        LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=4 STR_VAR effects = ~op=318,p2=55,res=%DEST_RES%;op=318,p2=77,res=%DEST_RES%;op=12,p2=%op12_poison%,dsize=8,dnum=1;op=12,p2=%op12_magic%,dsize=4,dnum=1~ END
+    END
+    LAF CREATE_TG_SPL STR_VAR filename = "zstclpt0" END // default damage per round
+
+    DEFINE_PATCH_MACRO patch_file BEGIN
+        LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=4 dur=60 STR_VAR effects=~op=54,p1=-2;op=78,p1=3,p2=4;op=142,p2=7;op=146,p2=1,dur=0,res=zstclpt2~ END
+    END
+    LAF CREATE_TG_SPL STR_VAR filename = "zstclpt1" END // first stage disease: -2 THAC0, -3 Strength
+
+    DEFINE_PATCH_MACRO patch_file BEGIN
+        LPF ADD_SPL_TGTEFF INT_VAR rd=0 STR_VAR effects = ~op=139,p1=%first_stage_str%;op=206,dur=1,res=zstclpt3;op=206,dur=1,res=zstclpt4~ END
+    END
+    LAF CREATE_TG_SPL STR_VAR filename = "zstclpt2" END // first stage block vs second and third stage
+
+    DEFINE_PATCH_MACRO patch_file BEGIN
+        SPRINT fp_silence_prot ""
+        PATCH_IF has_eefixpack BEGIN
+            SPRINT fp_silence_prot "op=318,p2=115,dur=0,res=%DEST_RES%,p1=%splstate_fp_silence_immunity%;"
+        END
+        LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=4 dur=60 STR_VAR effects = ~op=321,dur=0,res=zstclpt1;op=206,dur=1,res=zstclpt2;op=146,dur=0,p2=1,res=zstclpt1;op=1,p1=-6;op=136,p1=50,p2=2;%fp_silence_prot%op=38~ END
+    END
+    LAF CREATE_TG_SPL STR_VAR filename = "zstclpt3" END // second stage disease: -50% movement speed, silence, -1/2 APR (refreshes stage 1)
+
+    DEFINE_PATCH_MACRO patch_file BEGIN
+        LPF ADD_SPL_TGTEFF INT_VAR rd=0 STR_VAR effects = ~op=139,p1=%second_stage_str%;op=206,dur=1,res=zstclpt1;op=206,dur=1,res=zstclpt3~ END
+    END
+    LAF CREATE_TG_SPL STR_VAR filename = "zstclpt4" END // second stage block vs first and third stage
+
+    DEFINE_PATCH_MACRO patch_file BEGIN
+        LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=4 dur=60 STR_VAR effects = ~op=321,dur=0,res=zstclpt3;op=321,dur=0,res=zstclpt1;op=206,dur=1,res=zstclpt4;op=206,dur=1,res=zstclpt2;op=146,dur=0,p2=1,res=zstclpt3;op=139,dur=0,p1=%third_stage_str%;op=74,tmg=1,dur=0;op=142,tmg=1,p2=8,dur=0;op=318,p2=77,res=%DEST_RES%~ END
+        LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=4 p1=6 tmg=3 p2=op12_poison STR_VAR effects = ~op=12,tmg=0;op=12,dur=6;op=12,dur=12;op=12,dur=18;op=12,dur=24;op=12,dur=30;op=12,dur=36;op=12,dur=42;op=12,dur=48;op=12,dur=54;op=12,dur=60~ END
+    END
+    LAF CREATE_TG_SPL STR_VAR filename = "zstclpt5" END // third stage disease: permanent blindness and 6 poison damage per round for 1 turn
+
+
+    COPY_EXISTING ~idpro309.pro~ ~override~
+        WRITE_BYTE 0x216 10 // 1 turn
+
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CLOUD_OF_PESTILENCE" RET spell_res END
+    COPY_EXISTING ~%spell_res%.spl~ ~override~
+        LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@900700) END
+        LPF DELETE_EFFECT INT_VAR check_globals = 0 END
+        LPF ADD_SPL_TGTEFF INT_VAR pwr=4 rd=0 STR_VAR res="%SOURCE_RES%" effects = ~op=318,p2=43;op=318,p2=55;op=318,p2=9;op=146,p2=1,res=zstclpt0~ END
+        LPF ADD_SPL_TGTEFF INT_VAR pwr=4 rd=0 stype=2 STR_VAR effects = ~op=146,p2=1,res=zstclpt1;op=146,p2=1,res=zstclpt3;op=146,p2=1,res=zstclpt5~ END
+
+END
+ 
