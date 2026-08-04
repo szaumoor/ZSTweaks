@@ -685,7 +685,9 @@ ACTION_IF zs_allow_prefixes BEGIN
                     PATCH_IF zs_debug BEGIN
                         READ_STRREF 0x8 name ELSE "unknown"
                         PATCH_IF gender=gender_male BEGIN SPRINT gender "male" END ELSE BEGIN SPRINT gender "female" END
-                        LPF LOG_TEXT INT_VAR add_level_preamble=0 STR_VAR log_level="debug" message="Patched likely genderless/sexless creature (%SOURCE_RES% - %name%) actually marked as %gender%" END
+                        LOOKUP_IDS_SYMBOL_OF_INT race_str race race
+                        LOOKUP_IDS_SYMBOL_OF_INT general_str general general
+                        LPF LOG_TEXT STR_VAR log_level="debug" filename="debug" message="Patched likely genderless/sexless creature (%SOURCE_RES% - %name%) of race %race_str% and general %general_str% actually marked as %gender%" END
                     END
 
                 END
