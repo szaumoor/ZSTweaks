@@ -1,4 +1,5 @@
 ACTION_IF zst_1545_constitution_bonuses BEGIN
+    
     COPY ~%MOD_FOLDER%/2da/tweaks/hpconbon.2da~ ~override~
         PRETTY_PRINT_2DA
 
@@ -150,9 +151,9 @@ ACTION_IF zst_1545_weapon_style_bonuses BEGIN
     ACTION_IF zst_1545_weapon_style_shield BEGIN
 
         COPY_EXISTING ~stylbonu.2da~ ~override~
-            REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-0\).+$~ ~\1 -1 0 1 0 0 1 0 0~
-            REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-1\).+$~ ~\1 0 0 0 0 0 -2 0 0~
-            REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-2\).+$~ ~\1 0 0 0 0 -1 -3 0 0~
+            REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-0\).+$~ ~\1 -1 0 1 0  0  1 0 0~
+            REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-1\).+$~ ~\1  0 0 0 0  0 -2 0 0~
+            REPLACE_TEXTUALLY ~^\(SWORDANDSHIELD-2\).+$~ ~\1  0 0 0 0 -1 -3 0 0~
 
         COPY_EXISTING ~weapprof.2da~ ~override~
             SET new_str = RESOLVE_STR_REF(@8801)

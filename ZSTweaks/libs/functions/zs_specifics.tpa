@@ -67,35 +67,49 @@ BEGIN
     END
 
     PATCH_IF row < 0 BEGIN // we don't know the row we want or we want to patch all 
-        SET row_name_length = STRING_LENGTH "%row_name%"
 
+        SET row_name_length = STRING_LENGTH "%row_name%"
         READ_2DA_ENTRIES_NOW rows 1
+        
         FOR ( row = 3; row < rows; ++row ) BEGIN
+
             READ_2DA_ENTRY_FORMER rows row start_at_col label
 
-            PATCH_IF row_name_length > 0 AND ~%label%~ STR_EQ ~%row_name%~ BEGIN
-                PATCH_IF IS_AN_INT match_col_value BEGIN
+            PATCH_IF row_name_length > 0 BEGIN
 
-                    READ_2DA_ENTRY_FORMER rows row column value
-                    PATCH_IF value = match_col_value BEGIN
+                PATCH_IF ~%label%~ STR_EQ ~%row_name%~ BEGIN
 
+                    PATCH_IF IS_AN_INT match_col_value BEGIN
+
+                        READ_2DA_ENTRY_FORMER rows row column value
+                        PATCH_IF value = match_col_value BEGIN
+
+                            SET_2DA_ENTRY_LATER rows_out row column replacement
+                            PATCH_IF stop_at_first BEGIN
+                                SET row = rows
+                            END
+
+                        END
+
+                    END 
+                    
+                    ELSE BEGIN
                         SET_2DA_ENTRY_LATER rows_out row column replacement
                         PATCH_IF stop_at_first BEGIN
                             SET row = rows
-                        END
+                        END 
 
                     END
-
-                END ELSE BEGIN
-
-                    SET_2DA_ENTRY_LATER rows_out row column replacement
-                    PATCH_IF stop_at_first BEGIN
-                        SET row = rows
-                    END
-
+                    
                 END
 
-            END ELSE BEGIN SET_2DA_ENTRY_LATER rows_out row column replacement END
+            END 
+            
+            ELSE BEGIN
+                SET_2DA_ENTRY_LATER rows_out row column replacement 
+
+            END
+
         END
 
         SET_2DA_ENTRIES_NOW rows_out 1
@@ -104,6 +118,7 @@ BEGIN
 
         READ_2DA_ENTRIES_NOW rows 1
         PATCH_IF IS_AN_INT match_col_value BEGIN
+
             READ_2DA_ENTRY_FORMER rows row column value
             PATCH_IF value = match_col_value BEGIN
                 SET_2DA_ENTRY_LATER rows_out row column replacement
@@ -113,6 +128,7 @@ BEGIN
         END ELSE BEGIN
             SET_2DA_ENTRY_LATER rows_out row column replacement
         END
+
         SET_2DA_ENTRIES_NOW rows_out 1
 
     END
