@@ -1907,7 +1907,7 @@ Finally, there are configuration options to set the following:
 
 ### Make Otiluke's Resilient Sphere protect NPCs marked as innocents (487) (IWDEE BGEE BG2EE EET)
 
-Small QoL addition. BeamDog already had done an awesome thing by making it possible to use this spell to protect allies without them trying to make saves or resist it. So now if you want to protect anyone who would cause reputation loss if killed accidentally, you can put the bubble on them if desired, also without the chance of them resisting it.
+Small QoL addition. BeamDog already had done an awesome thing by making it possible to use this spell to protect allies (or self) without them trying to make saves or resist it. So now if you want to protect anyone who would cause reputation loss if killed accidentally, you can put the bubble on them if desired, also without the chance of them resisting it. This only works against innocents that aren't hostile. Additionally, to slightly improve its combat use, casting speed is reduced to 3 (unless another mod made it even shorter).
 
 </details>
 
