@@ -936,6 +936,15 @@ This component overhauls the unused Life-Stealer +4 dagger, turning it into a po
 
 This reduces the number of dice rolled by `dagg11` and `dagg12` to 1, so they are not the only strong choices for maximizing dagger damage. It also improves consistency. Generally speaking, I dislike this sort of unbalanced design. `dagg11`, specifically, already conforms to this rule in BGEE.
 
+### Make Dagger of Venom slightly more powerful (1563) (IWDEE BGEE BG2EE EET)
+
+This dagger is improved in the following way:
+
+- Weakening poison: targets poisoned by it suffer a -1 penalty to all saving throws, Strength, Dexterity, and Constitution. Does not stack.
+- Extra poison damage: targets that are poisoned *by this dagger* receive extra 1d4 poison damage *by this dagger* each hit.
+
+This should keep it extra relevant even when finding higher-enchantment weapons.
+
 </details>
 
 ---
