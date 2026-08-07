@@ -13,8 +13,13 @@ DEFINE_PATCH_MACRO patch_file BEGIN
     LPF ADD_SPL_TGTEFF STR_VAR effects = ~pwr=0,op=206,res=zstdgvn1,dur=1~ END
 END
 LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn2" END // protection vs extra poison dmg until it can trigger
+
+DEFINE_PATCH_MACRO patch_file BEGIN
+    LPF ADD_SPL_TGTEFF STR_VAR effects = ~pwr=0,op=206,res=zstdgvn2,dur=15~ END
+END
+LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn3" END // protection vs spell that protects vs extra poison dmg, to unlock it
 // RESOURCE DEFINITION END
 
 COPY_EXISTING ~misc75.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8570) END
-    LPF DELETE_EFFECT INT_VAR p2=1 stype=4 STR_VAR effects = ~op=146,res=zstdgvn0,stype=4;op=146,res=zstdgvn2;op=146,res=zstdgvn1~ END
+    LPF DELETE_EFFECT INT_VAR p2=1 stype=4 STR_VAR effects = ~op=146,res=zstdgvn0,stype=4;op=146,res=zstdgvn2;op=146,res=zstdgvn1;op=146,res=zstdgvn3,stype=4~ END
