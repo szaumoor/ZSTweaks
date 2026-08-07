@@ -2455,6 +2455,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
+    ACTION_IF zst_group_1563_dagger_venom != 0 AND zst_group_1563_dagger_venom != 1 BEGIN
+        WARN "[WARN]: Dagger of Venom group component should be set to 1 or 0. Actual value: %zst_group_1563_dagger_venom%"
+        LAM f_plus
+    END
+
     // ----------------------------------------GROUP COMP VARIABLES (DIVINE)------------------------------------------------- \\
 
     ACTION_IF zst_group_100_glyph_warding != 0 AND zst_group_100_glyph_warding != 1 BEGIN

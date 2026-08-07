@@ -1,0 +1,20 @@
+//  RESOURCE DEFINITION
+DEFINE_PATCH_MACRO patch_file BEGIN
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=0 p1="-1" dur=15 STR_VAR effects = ~op=321,dur=0,res=%DEST_RES%;op=44;op=15;op=10;op=325~ END
+END
+LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn0" END // weakening when poisoned
+
+DEFINE_PATCH_MACRO patch_file BEGIN
+    LPF ADD_SPL_TGTEFF STR_VAR effects = ~pwr=0,op=12,p2=%op12_poison%,dsize=4,dnum=1,spec=1024~ END
+END
+LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn1" END // extra damage when poisoned
+
+DEFINE_PATCH_MACRO patch_file BEGIN
+    LPF ADD_SPL_TGTEFF STR_VAR effects = ~pwr=0,op=206,res=zstdgvn1,dur=1~ END
+END
+LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn2" END // protection vs extra poison dmg until it can trigger
+// RESOURCE DEFINITION END
+
+COPY_EXISTING ~misc75.itm~ ~override~
+    LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8570) END
+    LPF DELETE_EFFECT INT_VAR p2=1 stype=4 STR_VAR effects = ~op=146,res=zstdgvn0,stype=4;op=146,res=zstdgvn2;op=146,res=zstdgvn1~ END

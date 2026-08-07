@@ -55,3 +55,7 @@ END
 ACTION_IF zst_group_1530_throw_dagg_nonsense BEGIN
   WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1530.tph" END
 END
+
+ACTION_IF zst_group_1563_dagger_venom BEGIN
+  WITH_SCOPE BEGIN INCLUDE "%MOD_FOLDER%/libs/components/zs_comp_1563.tph" END
+END
