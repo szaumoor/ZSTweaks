@@ -15,7 +15,7 @@ ACTION_IF spell_cloud_pestilence > 0 BEGIN
     LAF CREATE_TG_SPL STR_VAR filename = "zstclpt1" END // first stage disease: -2 THAC0, -3 Strength
 
     DEFINE_PATCH_MACRO patch_file BEGIN
-        LPF ADD_SPL_TGTEFF INT_VAR rd=0 STR_VAR effects = ~op=139,p1=%first_stage_str%;op=206,dur=1,res=zstclpt3;op=206,dur=1,res=zstclpt4~ END
+        LPF ADD_SPL_TGTEFF INT_VAR rd=0 STR_VAR effects = ~op=139,p1=%first_stage_str%;op=206,dur=4,res=zstclpt3;op=206,dur=4,res=zstclpt4~ END
     END
     LAF CREATE_TG_SPL STR_VAR filename = "zstclpt2" END // first stage block vs second and third stage
 
@@ -29,7 +29,7 @@ ACTION_IF spell_cloud_pestilence > 0 BEGIN
     LAF CREATE_TG_SPL STR_VAR filename = "zstclpt3" END // second stage disease: -50% movement speed, silence, -1/2 APR (refreshes stage 1)
 
     DEFINE_PATCH_MACRO patch_file BEGIN
-        LPF ADD_SPL_TGTEFF INT_VAR rd=0 STR_VAR effects = ~op=139,p1=%second_stage_str%;op=206,dur=1,res=zstclpt1;op=206,dur=1,res=zstclpt3~ END
+        LPF ADD_SPL_TGTEFF INT_VAR rd=0 STR_VAR effects = ~op=139,p1=%second_stage_str%;op=206,dur=4,res=zstclpt1;op=206,dur=4,res=zstclpt3~ END
     END
     LAF CREATE_TG_SPL STR_VAR filename = "zstclpt4" END // second stage block vs first and third stage
 

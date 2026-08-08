@@ -59,14 +59,14 @@
 - Added a Simplified Chinese translation, thanks to MephistoSatanDevil.
 - The component that makes natural effects nonmagical now includes the Neothelid's Poisonous Breath in SoD and resources added by the Fixpack.
 - Clarified that components granting +2 protection against a creature type also grant +2 to Saving Throws against effects caused by that creature type's attacks.
-- Added the `ZSTweaks_Logs` folder to the game directory. Its log file contains installation warnings and other useful diagnostic information.
+- Added the `ZSTweaks_Logs` folder to the game directory. The log files (if any) will contain warnings and other diagnostic information.
 - Mod components now use WeiDU's `LABEL` functionality.
-- Reduced the Finesse probabilities for daggers and darts by 2, to 41–50%. Kukris receive the same reduction because their probabilities are derived from those of daggers and darts.
+- Reduced the Finesse probabilities for daggers and darts by 2, to 41–50%. Kukris from my Item Pack receive the same reduction because their probabilities are derived from those of daggers and darts.
 - The Ashen Scale component now allows Beast Masters to wear the armor.
 - Chain Lightning's damage now scales up to 15d6+10 at level 20, instead of 12d6.
 - The Darkfire Bow now grants +1/2 APR in its base form and +1 APR when upgraded.
 - In addition to setting the user's Constitution to 18, the Girdle of Fortitude now has a once-per-day ability that grants another target +2 Constitution, a Save vs. Death bonus, and +5 maximum HP.
-- Expanded the poison-themed overhaul of Handmaiden's Mace +2 and removed its racial and alignment restrictions. The component no longer needs to be installed last and has moved to the Joinables category; its Strength adjustment may take up to one second to apply after the mace is equipped.
+- Expanded the poison-themed overhaul of Handmaiden's Mace +2 and removed its racial and alignment restrictions. The component no longer needs to be installed last and has moved to the Joinables category; its Strength adjustment may take up to one second to apply after the mace is equipped. Highly recommended to install **Viconia Friendship** mod so the mace is available without romancing her.
 - Vastly extended the Oversight++ component's alignment corrections based on lore and contextual judgment:
   - Set all spiders to True Neutral except wraith spiders, which are evil undead.
   - Marked many non-evil undead as evil. Although AD&D 2e treats mindless skeletons and zombies as neutral, this component follows 3e by making them Neutral Evil, like skeleton warriors. Protection from Evil will therefore work against them.
@@ -86,10 +86,10 @@
 - The Oni Mage component now replaces the "Ogre Mage" string with "Oni Mage" wherever it is used as a name.
 - The Holy Sword of Tyr now counts as a +5 weapon against evil creatures when determining what it can hit.
 - Energy Drain is now considerably more powerful:
-  - Enemies killed within one turn become devil shades.
-  - Casting it on an undead creature empowers the target.
+  - Enemies killed within one turn become allied devil shades for 1 turn (hasted shadows that can drain one level per hit).
+  - Casting it on an undead creature empowers them instead.
   - The caster temporarily absorbs the target's drained power, gaining enhancements and healing while removing their own level drain.
-- Mage elemental robes ("robes of affinity") can now be worn by any class. The Robe of Red Flames is excluded.
+- Mage elemental robes ("robes of affinity") can now be worn by any class. The Robe of Red Flames is excluded because it's a Thayan artifact.
 - Storm Star now grants Priests of Talos +1/2 APR in its base form and +1 APR when upgraded.
 - Reduced Fire Seeds' enchantment from +6 to +3. For comparison, the spell is only two levels above Melf's Minute Meteors, and SCS reduces its enchantment to +2.
 - The Mercykiller Ring now increases Stalkers' critical-hit chance and can be used by monks. Its THAC0 and damage bonuses remain exclusive to single-class thieves.
@@ -98,10 +98,10 @@
 - Began moving from a large collection of bundled files to templates that generate files as needed.
 - Added lacedon weapon attacks to the Natural Weapons component.
 - Wail of the Banshee now kills targets with 60 HP or less at a -2 save penalty. Targets with 8 HD or less are slain instantly, as with Death Spell.
-- Added compatibility with EEFixpack's new spell states to the following item and spell components: Skin of Ghoul, Sword of Royal Might, Dusty Rose Ioun Stone, Wondrous Gloves, Plate of the Dark, Helm of Balduran, Jade Fang, Life Stealer, Borok's Fist, and Holy/Unholy Words, Chromatic Orb (TODO)
+- Added compatibility with EEFixpack's new spell states to the following item and spell components: Skin of Ghoul, Sword of Royal Might, Dusty Rose Ioun Stone, Wondrous Gloves, Plate of the Dark, Helm of Balduran, Jade Fang, Life Stealer, Borok's Fist, and Holy/Unholy Words, Chromatic Orb, Kachiko's Sword (upgraded version)
 - Reduced the bonuses against schools of magic provided by the Skull of Death and Shadow Dragon Scale to +3.
 - Made effects that disable critical misses much less likely to be undone by critical-miss penalties.
-- Renamed Kachiko's Whisper to Whisper and slightly revised its description and benefits. (TODO on benefits)
+- Renamed Kachiko's Whisper to Whisper and slightly revised its description and benefits.
 - Excluded creatures of the mist race from the Stiletto of the Demarchess's Persistent Wounds effect.
 - Improved the Element's Fury dagger tweak: its +2 random elemental damage can now trigger multiple elements.
   - 3% chance to trigger all four elements for 2 damage each.
@@ -109,7 +109,6 @@
   - 5% chance to trigger two elements.
   - Critical hits always trigger all four elements in addition to any random trigger. The Dagger Boost and Finesse components can improve the result further, especially for pure thieves.
 - The Potion of Icedust now grants 85% fire resistance, up from 75% in the previous iteration.
-- Some bug in the 2da swap function (TODO)
 - Improved Divine Words:
   - The spells now apply a -2 Saving Throw penalty for their duration.
   - Increased the effect duration for targets with 12 or more HD from 4 to 5, and for targets with 8–11 HD from 5 to 7.
@@ -139,6 +138,7 @@
 - Make Pit Fiends comparable to Balors in power, improving the Gate spell (3210) (BG2EE EET).
 - Make created characters susceptible to morale failure instead of fearless by default (592) (IWDEE BGEE BG2EE EET).
 - Make Cloud of Pestilence more effective and closer to its PnP version (5440) (IWDEE BGEE BG2EE EET)
+- Make Dagger of Venom slightly more powerful (1563) (IWDEE BGEE BG2EE EET)
 
 ## Future additions
 
@@ -146,4 +146,6 @@
 - Give Necromancers access to a new HLA: Vampiric Feast.
 - Overhaul the Web component to use IWD's appearance and sound.
 - Overhaul the Slayer.
+- Overhaul the spell progression of the bard so they can gain more spell levels but very slowly, toning down their overpowered dispel magic abilities in the process.
+- Make most liches use the white lich animation from IWD
 - Possibly give Control Undead to priests as well.
