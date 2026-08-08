@@ -6,7 +6,7 @@ BEGIN
     PATCH_IF zs_debug BEGIN
         ++patches
         READ_STRREF 0x8 name
-        PATCH_PRINT "[DEBUG][INFO]: Patching shadow creature %SOURCE_FILE% - %name%"
+        LPF LOG_TEXT STR_VAR filename="debug" log_level="debug" message = "Patching likely shadow creature %SOURCE_RES% -- %name%" END
     END
 
     WRITE_SHORT 0x46 (THIS - 2)
@@ -40,6 +40,10 @@ ACTION_IF has_zs_shadowdancer_overhaul BEGIN
     PRINT "[INFO]: Skipping shadow adjustments to shadow summons in ZS_ShadowdancerOverhaul."
 END
 
+ACTION_IF zs_debug BEGIN
+    LAF LOG_TEXT STR_VAR filename="debug" log_level="debug" message = "-- START OF SHADOW CREATURE PATCHING --" END
+END
+
 OUTER_SET patches = 0
 COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
     READ_BYTE 0x272 race
@@ -71,6 +75,7 @@ BUT_ONLY
 
 ACTION_IF zs_debug BEGIN
     PRINT "[DEBUG][INFO]: Patched %patches% shadow creatures."
+    LAF LOG_TEXT STR_VAR filename="debug" log_level="debug" message = "-- END OF SHADOW CREATURE PATCHING --" END
 END
 
 COPY_EXISTING ~shadowwp.itm~ ~override~

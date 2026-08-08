@@ -26,7 +26,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     END
 
     PATCH_IF has_eefixpack BEGIN
-      LPF ALTER_EFFECT INT_VAR match_opcode=324 opcode=318 match_parameter2=splstate_fp_stun_immunity probability1=100 probability2=0 END
+      LPF ALTER_EFFECT INT_VAR match_opcode=324 opcode=318 match_parameter2=110 match_parameter1=splstate_fp_stun_immunity probability1=100 probability2=0 END
     END
 
 END

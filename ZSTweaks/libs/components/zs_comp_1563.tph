@@ -22,4 +22,4 @@ LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn3" END // protection vs spell that p
 
 COPY_EXISTING ~misc75.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8570) END
-    LPF DELETE_EFFECT INT_VAR p2=1 stype=4 STR_VAR effects = ~op=146,res=zstdgvn0,stype=4;op=146,res=zstdgvn2;op=146,res=zstdgvn1;op=146,res=zstdgvn3,stype=4~ END
+    LPF ADD_ON_HIT_EFF INT_VAR p2=1 stype=4 STR_VAR effects = ~op=146,res=zstdgvn0,stype=4;op=146,res=zstdgvn2;op=146,res=zstdgvn1;op=146,res=zstdgvn3,stype=4~ END
