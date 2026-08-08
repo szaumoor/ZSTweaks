@@ -551,12 +551,12 @@ Equipped abilities:
 – Move Silently: +10 (monks, thieves, and rangers)
 
 Combat abilities:
-– THAC0: +1 (single-classed thieves; +2 if shadowdancers)
-– Confounding Whisper: each hit drains 2 points of Wisdom from the target for 5 rounds (Save vs. Death negates) and causes confusion for 1 round.
+– THAC0: +1 (single-classed thieves)
+– Confounding Strike: each hit drains 2 points of Wisdom from the target for 5 rounds (Save vs. Death negates) and causes confusion for 1 round.
 
 Charge abilities:
 – Shadow Blink three times per day
-  Special: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Monks, shadowdancers, and stalkers gain a +1 backstab multiplier during this time (doesn't stack).
+  Special: Wielder instantly teleports to any visible location and becomes invisible for 2 rounds. During this time, critical misses are not possible. Monks, shadowdancers, and stalkers gain a +1 backstab multiplier during this time (doesn't stack).
 
 THAC0: +3
 Damage: 1d8+3 (piercing)
@@ -589,11 +589,12 @@ Equipped abilities:
 
 Combat abilities:
 – THAC0: +1 (shadowdancers, monks, and stalkers)
-– Deadly Whisper: each hit drains 2 points of Wisdom from the target for 5 rounds (Save vs. Death at -2 negates) and causes confusion for 1 round. After 1 round, there is a 15% chance the sword successfully commands the target to die unless another Save vs. Death at -2 succeeds (this can only trigger on the same enemy once every 3 rounds).
+– Confounding Strike: each hit drains 2 points of Wisdom from the target for 5 rounds (Save vs. Death at -2 negates) and causes confusion for 1 round. 
+– One round after a successful Confounding Strike, there is a 15% chance the sword commands the target to die unless another Save vs. Death at -2 succeeds (this can only trigger on the same enemy once every 3 rounds). This command will have no effect if the target is unable to hear it.
 
 Charge abilities:
-– Shadow Blink five times per day
-  Special: Instantly teleport to any visible location and become invisible for 2 rounds. While invisible, you cannot critically miss. Monks, shadowdancers, and stalkers gain a +1 backstab multiplier during this time (doesn't stack).
+– Shadow Blink three times per day
+  Special: Wielder instantly teleports to any visible location and becomes invisible as per the Improved Invisibility spell for 2 rounds. During this time, critical misses are not possible. Monks, shadowdancers, and stalkers gain a +1 backstab multiplier during this time (doesn't stack).
 
 – Shadow Maze once per day
   Special: Opens a temporary gateway to a small pocket of the Plane of Shadow, mazing targets near the user if they fail their saving throws as per the shadowdancer ability of the same name.
