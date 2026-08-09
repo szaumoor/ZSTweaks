@@ -7,39 +7,39 @@ ACTION_IF NOT is_iwdee BEGIN
         END
         LAF CREATE_TG_SPL STR_VAR filename = "zstelf00" END // all element damage, always for crits
 
-        COPY_EXISTING ~zstelfu0.spl~ ~override/zstelf01.spl~ // three (all but acid)
+        COPY_EXISTING ~zstelf00.spl~ ~override/zstelf01.spl~ // three (all but acid)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_acid END
         
-        COPY_EXISTING ~zstelfu0.spl~ ~override/zstelf02.spl~ // three (all but fire)
+        COPY_EXISTING ~zstelf00.spl~ ~override/zstelf02.spl~ // three (all but fire)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_fire END
 
-        COPY_EXISTING ~zstelfu0.spl~ ~override/zstelf03.spl~ // three (all but cold)
+        COPY_EXISTING ~zstelf00.spl~ ~override/zstelf03.spl~ // three (all but cold)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_cold END
         
-        COPY_EXISTING ~zstelfu0.spl~ ~override/zstelf04.spl~ // three (all but electric)
+        COPY_EXISTING ~zstelf00.spl~ ~override/zstelf04.spl~ // three (all but electric)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_electricity END
 
-        COPY_EXISTING ~zstelfu0.spl~ ~override/zstelf05.spl~ // two (fire and cold)
+        COPY_EXISTING ~zstelf00.spl~ ~override/zstelf05.spl~ // two (fire and cold)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_acid END
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_electricity END
 
-        COPY_EXISTING ~zstelfu0.spl~ ~override/zstelf06.spl~ // two (fire and electricity)
+        COPY_EXISTING ~zstelf00.spl~ ~override/zstelf06.spl~ // two (fire and electricity)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_acid END
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_cold END
 
-        COPY_EXISTING ~zstelfu0.spl~ ~override/zstelf07.spl~ // two (fire and acid)
+        COPY_EXISTING ~zstelf00.spl~ ~override/zstelf07.spl~ // two (fire and acid)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_electricity END
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_cold END
 
-        COPY_EXISTING ~zstelfu0.spl~ ~override/zstelf08.spl~ // two (cold and acid)
+        COPY_EXISTING ~zstelf00.spl~ ~override/zstelf08.spl~ // two (cold and acid)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_electricity END
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_fire END
 
-        COPY_EXISTING ~zstelfu0.spl~ ~override/zstelf09.spl~ // two (cold and electricity)
+        COPY_EXISTING ~zstelf00.spl~ ~override/zstelf09.spl~ // two (cold and electricity)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_acid END
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_fire END
 
-        COPY_EXISTING ~zstelfu0.spl~ ~override/zstelf10.spl~ // two (acid and electricity)
+        COPY_EXISTING ~zstelf00.spl~ ~override/zstelf10.spl~ // two (acid and electricity)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_cold END
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_fire END
 
@@ -53,7 +53,7 @@ ACTION_IF NOT is_iwdee BEGIN
         END
         LAF CREATE_TG_SPL STR_VAR filename = "zstelf12" END // master spell for two-element choices
 
-        COPY_EXISTING ~zstelfu0.spl~ ~override/zstelf13.spl~ // one-element choices
+        COPY_EXISTING ~zstelf00.spl~ ~override/zstelf13.spl~ // one-element choices
             LPF ALTER_EFFECT INT_VAR match_parameter2 = op12_fire probability1 = 24 probability2 = 0 END
             LPF ALTER_EFFECT INT_VAR match_parameter2 = op12_cold probability1 = 49 probability2 = 25 END
             LPF ALTER_EFFECT INT_VAR match_parameter2 = op12_acid probability1 = 74 probability2 = 50 END

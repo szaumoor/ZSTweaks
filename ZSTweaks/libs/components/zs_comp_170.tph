@@ -1,5 +1,3 @@
-// GENERATE NEEDED SUBSPELLS \\
-
 OUTER_SET fade_speed = (25 << 16)
 
 DEFINE_PATCH_MACRO patch_file BEGIN
@@ -41,7 +39,7 @@ COPY_EXISTING ~scrl9v.itm~ ~override~
   LPF ALTER_ITEM INT_VAR id_desc=new_description END
 IF_EXISTS
 
-ACTION_IF zst_170_wail_wish_bonus BEGIN
+ACTION_IF zst_170_wail_wish_bonus AND FILE_EXISTS_IN_GAME ~wish.dlg~ BEGIN
   
   PRINT "[INFO]: Making sure the Limited Wish version of Wail of the Banshee is extra nasty..."
   COPY_EXISTING ~spwi913.spl~ "override/zstwswl.spl"
@@ -80,3 +78,4 @@ ACTION_IF zst_170_wail_wish_bonus BEGIN
   END ELSE BEGIN LAM wob_patching END
 
 END
+
