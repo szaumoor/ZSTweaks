@@ -694,6 +694,10 @@ ACTION_IF zs_allow_prefixes BEGIN
             END
 
             PRINT "[INFO]: Setting many types of sexless creatures as 'niether'-gendered if they're set to male or female so it doesn't intrude with opcodes that target male/female"
+            ACTION_IF zs_debug BEGIN
+                LAF LOG_TEXT STR_VAR filename="debug" log_level="debug" message = "-- START OF GENDER CREATURE PATCHING --" END
+            END
+
             OUTER_SET matches = 0
             COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
                 SET general = BYTE_AT(0x271)
@@ -741,6 +745,9 @@ ACTION_IF zs_allow_prefixes BEGIN
             BUT_ONLY
 
             PRINT "[INFO]: Found %matches% matches that were set to 'niether' gender"
+             ACTION_IF zs_debug BEGIN
+                LAF LOG_TEXT STR_VAR filename="debug" log_level="debug" message = "-- END OF GENDER CREATURE PATCHING --" END
+            END
 
         END
 
