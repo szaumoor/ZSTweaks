@@ -264,7 +264,8 @@ BEGIN
         READ_SHORT (item_slots_offset + (11 * 2)) weapon3
         READ_SHORT (item_slots_offset + (12 * 2)) weapon4
 
-        PATCH_FOR_EACH value IN weapon1 weapon2 weapon3 weapon4 BEGIN
+        PATCH_FOR_EACH value IN "%weapon1%" "%weapon2%" "%weapon3%" "%weapon4%" BEGIN
+            
             PATCH_IF value != "-1" BEGIN
                 READ_ASCII (item_offset + (0x14 * value)) equipped_weapon
                 PATCH_IF "%equipped_weapon%" STR_EQ ~%weapon%~ BEGIN
@@ -348,5 +349,64 @@ BEGIN
 
         END
     END
+END
+
+DEFINE_ACTION_FUNCTION PROTECT_FOR_RESOURCE
+INT_VAR
+    target_206 = 1
+    target_318 = 1
+    target_321 = 1
+    target_324 = 1
+STR_VAR
+    target_resource = ""
+    resource_to_clone = ""
+BEGIN
+    ACTION_IF zs_debug BEGIN
+
+        ACTION_IF target_206 != 1 AND target_318 != 1 AND target_321 != 1 AND target_324 != 1 BEGIN
+            LAF LOG_TEXT
+                STR_VAR
+                    filename = "crash"
+                    log_level = "fail"
+                    message = "NO OPCODES SELECTED FOR FUNCTION PROTECT_FOR_RESOURCE"
+            END
+        END
+
+        ACTION_IF STRING_LENGTH target_resource = 0 OR STRING_LENGTH resource_to_clone = 0 BEGIN
+            LAF LOG_TEXT
+                STR_VAR
+                    filename = "crash"
+                    log_level = "fail"
+                    message = "EMPTY RESOURCES SELECTED FOR FUNCTION PROTECT_FOR_RESOURCE"
+            END
+        END
+
+    END
+
+    COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
+                         ~^.+\.itm$~ ~override~
+                         ~^.+\.spl$~ ~override~
+
+        PATCH_IF INDEX_BUFFER(%target_resource%) >= 0 BEGIN
+            
+            PATCH_IF target_206 BEGIN
+                LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=206 STR_VAR match_resource = "%target_resource%" resource="%resource_to_clone%" END
+            END
+
+            PATCH_IF target_318 BEGIN
+                LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=318 STR_VAR match_resource = "%target_resource%" resource="%resource_to_clone%" END
+            END
+
+            PATCH_IF target_321 BEGIN
+                LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=321 STR_VAR match_resource = "%target_resource%" resource="%resource_to_clone%" END
+            END
+
+            PATCH_IF target_324 BEGIN
+                LPF CLONE_EFFECT INT_VAR silent = 1 match_opcode=324 STR_VAR match_resource = "%target_resource%" resource="%resource_to_clone%" END
+            END
+
+        END
+
+    BUT_ONLY
 END
 
