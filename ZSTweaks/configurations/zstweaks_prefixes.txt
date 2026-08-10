@@ -138,3 +138,6 @@ OUTER_SET zst_solar_tags = "1"
 
 // pit fiends in BG2 marked as demons instead of devils
 OUTER_SET zst_pit_fiends = "1"
+
+// Fixes some instances of chimeras not set to the race of chimeras
+OUTER_SET zst_chimeras = "1"
