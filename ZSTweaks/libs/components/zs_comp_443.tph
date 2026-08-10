@@ -5,7 +5,7 @@ ACTION_IF zst_443_death BEGIN
     ACTION_IF NOT has_eefixpack BEGIN
         OUTER_SPRINT effects_sdeath ~op=326,p2=144,res=zstwsdh0;op=326,p2=145,res=zstwsdh1~
     END ELSE BEGIN
-        OUTER_SPRINT effects_sdeath ~op=318,p2=110,p1=%splstate_fp_death_immunity%;op=318,p2=55,p1=0;op=326,p2=144,res=zstwsdh0;op=326,p2=145,res=zstwsdh1~
+        OUTER_SPRINT effects_sdeath ~op=318,p2=110,p1=%splstate_fp_death_immunity%,res=%SOURCE_RES%;op=318,p2=55,p1=0,res=%SOURCE_RES%;op=326,p2=144,res=zstwsdh0;op=326,p2=145,res=zstwsdh1~
     END
 
     DEFINE_PATCH_MACRO symbol_death_patch BEGIN
