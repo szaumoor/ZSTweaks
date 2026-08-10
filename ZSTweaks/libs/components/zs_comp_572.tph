@@ -1,15 +1,23 @@
-LAF cd_clone_spell STR_VAR source="spwi112" destination="zstmgmi0" END // invoker
-LAF cd_clone_spell STR_VAR source="spwi112" destination="zstmgmi1" END // non invoker
+WITH_SCOPE BEGIN
+   
+   INCLUDE ~%MOD_FOLDER%/libs/functions/cd_clone_spell_bulk_first.tpa~
 
-COPY_EXISTING ~zstmgmi0.spl~ ~override~
-   LPF ALTER_SPELL INT_VAR desc = 0 name = 0 STR_VAR casting_sound = "" END
-   LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize=5 parameter1=2 END
+      LAF cd_clone_spell_bulk STR_VAR source="spwi112" destination="zstmgmi0" END // invoker
+      LAF cd_clone_spell_bulk STR_VAR source="spwi112" destination="zstmgmi1" END // non invoker
 
-COPY_EXISTING ~zstmgmi1.spl~ ~override~
-   LPF ALTER_SPELL INT_VAR desc = 0 name = 0 STR_VAR casting_sound = "" END
+      COPY_EXISTING ~zstmgmi0.spl~ ~override~
+         LPF ALTER_SPELL INT_VAR desc = 0 name = 0 STR_VAR casting_sound = "" END
+         LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicesize=5 parameter1=2 END
 
-LAF cd_clone_spell STR_VAR source="zstmgmi0" destination="zstmgmi2" END // invoker
-LAF cd_clone_spell STR_VAR source="zstmgmi0" destination="zstmgmi3" END // non invoker
+      COPY_EXISTING ~zstmgmi1.spl~ ~override~
+         LPF ALTER_SPELL INT_VAR desc = 0 name = 0 STR_VAR casting_sound = "" END
+
+      LAF cd_clone_spell_bulk STR_VAR source="zstmgmi0" destination="zstmgmi2" END // invoker
+      LAF cd_clone_spell_bulk STR_VAR source="zstmgmi0" destination="zstmgmi3" END // non invoker
+
+   INCLUDE ~%MOD_FOLDER%/libs/functions/cd_clone_spell_bulk_last.tpa~
+
+END
 
 COPY_EXISTING ~zstmgmi2.spl~ ~override~
               ~zstmgmi3.spl~ ~override~

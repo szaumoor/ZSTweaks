@@ -564,7 +564,7 @@ ACTION_IF zs_debug BEGIN
                  race    = race_sahuagin             OR
                  race    = race_shadow               OR
                 (race    = race_specter AND general = general_undead) OR
-                (race    = race_spectral_undead AND general = undead) OR
+                (race    = race_spectral_undead AND general = general_undead) OR
                  race    = race_troll                OR
                  race    = race_will_o_wisp          OR
                  race    = race_vampire              OR
