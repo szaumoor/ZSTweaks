@@ -1,10 +1,10 @@
 DEFINE_PATCH_MACRO patch_file BEGIN
-    LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 STR_VAR effects = ~op=318,res=%DEST_RES%,p2=51;op=146,p2=1,res=spwi413a;op=206,dur=1,res=spwi413a~ END
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 STR_VAR effects = ~op=326,p2=52,res=spwi413a;op=318,p2=52,res=%DEST_RES%;op=146,res=spwi413a,stype=1~ END
 END
-LAF CREATE_TG_SPL STR_VAR filename = "zstotil0" END
+LAF CREATE_TG_SPL STR_VAR filename = "zstotil0" END // to discriminate from innocent enemies and non enemies
 
 COPY_EXISTING ~spwi413.spl~ ~override~
-    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@81000) END
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@81000) flags=(2**9) END
     LPF ALTER_HEADER_EX INT_VAR silent=1 speed = 3 STR_VAR match_speed_ex = "(o_speed > 3)" END
     LPF DELETE_EFFECT INT_VAR check_globals = 0 END
-    LPF ADD_SPL_TGTEFF INT_VAR pwr=4 rd=0 STR_VAR effects = ~op=326,p2=49,res=%SOURCE_RES%a;op=318,p2=49,res=%SOURCE_RES%;op=326,p2=105,p1=%class_innocent%,res=zstotil0;op=146,rd=1,res=%SOURCE_RES%a~ END
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=4 rd=0 STR_VAR effects = ~op=326,p2=49,res=%SOURCE_RES%a;op=318,p2=49,res=%SOURCE_RES%;op=326,p2=105,p1=%class_innocent%,res=zstotil0;op=318,p2=105,p1=%class_innocent%,res=%SOURCE_RES%;op=146,rd=1,res=%SOURCE_RES%a,stype=1~ END
