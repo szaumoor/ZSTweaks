@@ -33,14 +33,14 @@ OUTER_SPRINT DEBUG_PREAMBLE "[DEBUG]: "
  * 
  * ### Parameters:
  *
- * **predicate_stdout** (int): This variable allows an user to pass a predicate upon calling it, to decide whether printing to the
- *                              standard output is desired or not. For example, passing IS_AN_INT "%variable%" (a predicate) would
- *                              resolve to 1 (true) or 0 (false). You may also pass 0 or 1 directly too if desired to disable or enable
- *                              (or other constants such as TRUE(1) or FALSE(0). Default value is TRUE.
+ * **predicate_stdout** (int/bool): This variable allows an user to pass a predicate upon calling it, to decide whether printing to the
+ *                                  standard output is desired or not. For example, passing IS_AN_INT "%variable%" (a predicate) would
+ *                                  resolve to 1 (true) or 0 (false). You may also pass 0 or 1 directly too if desired to disable or enable
+ *                                  (or other constants such as TRUE(1) or FALSE(0). Default value is TRUE(1).
  * 
- * **add_level_preamble** (int): This variable controls whether, in the case of predicate_stdout being TRUE, the messages should be 
- *                               printed with a preamble indicating the log level (as per **log_level**) or not. Valid values are 
- *                               1 (TRUE) and 0 (FALSE).
+ * **add_level_preamble** (int/bool): This variable controls whether, in the case of predicate_stdout being TRUE, the messages should be 
+ *                                    printed with a preamble indicating the log level (as per **log_level**) or not. Valid values are 
+ *                                    1 (TRUE) and 0 (FALSE).
  *
  * **message** (str): The message to pass into console and/or the error log file. Default: Empty string. Crashes if it remains empty
  *                    when the function is called.
@@ -49,6 +49,12 @@ OUTER_SPRINT DEBUG_PREAMBLE "[DEBUG]: "
  *                      component failure without any assumed error. Fail does the same but assuming an error. Warn is the 
  *                      default value, causing the component to be marked as installed with errors. Info and debug do the same: it just
  *                      prints a message normally but with a different default optional message preamble.
+ * 
+ * **filename** (str): This defines which file the logged line is appended to. By default, it's appended to "warnings.txt". Use different
+ *                     files for different purposes.
+ * 
+ * **flog_preamble** (str): This defines which "preamble" each message should have when appended to the file, such as a hyphen followed by
+ *                          whitespace.
  */
 DEFINE_DIMORPHIC_FUNCTION LOG_TEXT
 INT_VAR

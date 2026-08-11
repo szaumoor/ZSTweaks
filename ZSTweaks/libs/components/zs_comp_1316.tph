@@ -4,7 +4,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
   LAF CREATE_EQ_EFF STR_VAR filename = "zstwthm1" END // +1 thac0
 
   DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode = 73 parameter1 = 1 END END
-  LAF CREATE_EQ_EFF STR_VAR filename = "zstwth21" END // +1 damage
+  LAF CREATE_EQ_EFF STR_VAR filename = "zstwthm2" END // +1 damage
 
   DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode = 301 parameter1 = 1 END END
   LAF CREATE_EQ_EFF STR_VAR filename = "zstwthm3" END // +1 crit

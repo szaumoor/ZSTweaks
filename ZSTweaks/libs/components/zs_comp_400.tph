@@ -25,6 +25,9 @@ COPY_EXISTING ~zstegdrs.cre~ ~override~ // devil shade
     SAY 0x08 @5651
     SAY 0x0c @5651
 
+COPY_EXISTING ~zstegdr0.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1=RESOLVE_STR_REF(@5652) END
+
 ACTION_IF is_iwdee BEGIN
 
     COPY_EXISTING ~zswraith.itm~ ~override/wraith1.itm~

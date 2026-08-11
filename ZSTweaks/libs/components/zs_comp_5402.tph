@@ -3,7 +3,7 @@ COPY_EXISTING ~sppr305.spl~ ~override~
     LPF DELETE_EFFECT INT_VAR check_globals = 0 END
     LPF ~CD_TRIM-O-MATIC~ INT_VAR level_cap = 1 END
     LPF ADD_SPL_TGTEFF INT_VAR pwr=3 rd=0 ip=0 STR_VAR res="%SOURCE_RES%" effects = ~op=324,p2=104,p1=%race_demonic%;op=324,p2=9;op=324,p1=5,p2=103;op=324,p2=55~ END
-    LPF ADD_SPL_TGTEFF INT_VAR pwr=3 rd=0 dur=12 stype=2 STR_VAR effects = ~op=175,p1=%general_animal%,p2=3;op=175,p1=%race_spider%,p2=4;op=175,p1=%race_umberhulk%,p2=4;op=175,p1=%race_carrion_crawler%,p2=4;op=175,p1=%race_ettercap%,p2=4;op=175,p1=%race_ankheg%,p2=4;op=175,p1=%race_wyvern%,p2=4;op=175,p1=%race_basilisk%,p2=4;op=175,p1=%race_otyugh%,p2=4;op=175,p1=%race_hook_horror%,p2=4;op=175,p1=%race_chimera%,p2=4;op=175,p1=%race_gibberling%,p2=4;op=175,p1=%class_wolfwere%,p2=5;op=215,p2=1,res=spmindat;op=174,tmg=4,res=eff_e06~ END
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=3 rd=0 dur=12 stype=1 STR_VAR effects = ~op=175,p1=%general_animal%,p2=3;op=175,p1=%race_spider%,p2=4;op=175,p1=%race_umberhulk%,p2=4;op=175,p1=%race_carrion_crawler%,p2=4;op=175,p1=%race_ettercap%,p2=4;op=175,p1=%race_ankheg%,p2=4;op=175,p1=%race_wyvern%,p2=4;op=175,p1=%race_basilisk%,p2=4;op=175,p1=%race_otyugh%,p2=4;op=175,p1=%race_hook_horror%,p2=4;op=175,p1=%race_chimera%,p2=4;op=175,p1=%race_gibberling%,p2=4;op=175,p1=%class_wolfwere%,p2=5;op=215,p2=1,res=spmindat;op=174,tmg=4,res=eff_e06~ END
 
     PATCH_IF is_iwdee BEGIN SET cap = 30 END ELSE BEGIN SET cap = 20 END
     LPF ~CD_EXTEND-O-MATIC~ INT_VAR dur_special=1 step_dur=12 level_cap=cap END

@@ -1,5 +1,6 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
+    COPY ~%MOD_FOLDER%/items/handmaiden_mace~ ~override~
     COPY_EXISTING ~hlolth.itm~ ~override~
         LPF ALTER_ITEM INT_VAR unusable1=0 unusable2=0 unusable3=0 unusable4=0 price=3000 unusable0=0 id_desc=RESOLVE_STR_REF(@60500) END
 

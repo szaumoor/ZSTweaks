@@ -59,7 +59,7 @@
 - Added a Simplified Chinese translation, thanks to MephistoSatanDevil.
 - The component that makes natural effects nonmagical now includes the Neothelid's Poisonous Breath in SoD and resources added by the Fixpack.
 - Clarified that components granting +2 protection against a creature type also grant +2 to Saving Throws against effects caused by that creature type's attacks.
-- Added the `ZSTweaks_Logs` folder to the game directory. The log files (if any) will contain warnings and other diagnostic information.
+- The mods now creates the `zstweaks_logs` folder to the game directory. The log files (if any) will contain warnings and other diagnostic information.
 - Mod components now use WeiDU's `LABEL` functionality.
 - Reduced the Finesse probabilities for daggers and darts by 2, to 41–50%. Kukris from my Item Pack receive the same reduction because their probabilities are derived from those of daggers and darts.
 - The Ashen Scale component now allows Beast Masters to wear the armor.
@@ -146,6 +146,7 @@
 - Give Necromancers access to a new HLA: Vampiric Feast.
 - Overhaul the Web component to use IWD's appearance and sound.
 - Overhaul the Slayer.
+- Maybe overhaul some IWD-only items
 - Overhaul the spell progression of the bard so they can gain more spell levels but very slowly, toning down their overpowered dispel magic abilities in the process.
 - Make most liches use the white lich animation from IWD
 - Possibly give Control Undead to priests as well.
