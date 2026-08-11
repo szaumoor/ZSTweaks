@@ -5,12 +5,12 @@ COPY ~%MOD_FOLDER%/spells/divine/divine_words~ ~override~ // will turn to code e
 DEFINE_PATCH_MACRO patch_file BEGIN
   LPF ALTER_EFF_FILE INT_VAR opcode = 146 parameter2 = 1 STR_VAR resource = "zstwrd08" END
 END
-LAF CREATE_EQ_EFF STR_VAR filename = "zstwrd10" END
+LAF CREATE_TG_EFF STR_VAR filename = "zstwrd10" END
 
 DEFINE_PATCH_MACRO patch_file BEGIN
   LPF ALTER_EFF_FILE INT_VAR opcode = 146 parameter2 = 1 STR_VAR resource = "zstwrd09" END
 END
-LAF CREATE_EQ_EFF STR_VAR filename = "zstwrd11" END
+LAF CREATE_TG_EFF STR_VAR filename = "zstwrd11" END
 
 COPY_EXISTING ~sppr710.spl~ ~override~
   LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8650) END
@@ -49,4 +49,4 @@ COPY_EXISTING ~sppr715.spl~ ~override~
   LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8651) END
   LPF ALTER_HEADER INT_VAR projectile = %ZSTWRDPJ% END
   LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 215)" END
-  LPF ADD_SPL_TGTEFF INT_VAR rd=2 tmg=0 pwr=7 STR_VAR effects = ~op=177,p2=8,p1=%alignmen_mask_good%,res=zstwrd05;op=177,p2=8,p1=%alignmen_mask_neutral%,res=zstwrd05;op=177,p2=8,p1=%alignmen_mask_evil%,res=zstwrd11;op=177,p2=8,p1=%alignmen_mask_neutral%,res=zstwrd11~ END
+  LPF ADD_SPL_TGTEFF INT_VAR rd=2 tmg=0 pwr=7 STR_VAR effects = ~op=177,p2=8,p1=%alignmen_mask_good%,res=zstwrd05;op=177,p2=8,p1=%alignmen_mask_neutral%,res=zstwrd05;op=177,p2=8,p1=%alignmen_mask_good%,res=zstwrd11;op=177,p2=8,p1=%alignmen_mask_neutral%,res=zstwrd11~ END
