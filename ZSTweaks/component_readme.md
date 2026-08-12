@@ -601,7 +601,7 @@ It will also now sport new icons, which are a massive upgrade from the original 
 This improves the gloves by adding the following:
 
 - Clerics can wear them now
-- +1 casting level for paladins and clerics
+- +1 casting level for paladins and clerics (Xgatt's Casting Level EEex mod is required for this benefit to stack with others!)
 - Party regeneration of 1 Hit Point every 5 rounds
 - The charge ability is now changed to a combination of Lay On Hands cast at level 10, and Slow Poison
 
@@ -609,7 +609,7 @@ This improves the gloves by adding the following:
 
 - Kuo-Toa's Blood: can be consumed to permanently improve THAC0, Armor Class vs. missile, saves vs. Breath by 1
 - Eyestalk of an Elder Orb: can be consumed to permanently increase Armor Class and saves vs. Petrification and Death by 1
-- Elder Brain's Blood: can be consumed to permanently improve the casting level (arcane and divine) and saves vs. Spell and Rod by 1
+- Elder Brain's Blood: can be consumed to permanently improve the casting level (arcane and divine; Xgatt's Casting Level EEex mod is required for this benefit to stack with others!) and saves vs. Spell and Rod by 1.
 
 **FAIR FAT FABULOUS FULL FIERCE WARNING ABOUT THE FIRST THREE:** Don't eat all three. One of them at least is needed for plot reasons. Otherwise, you'll have to fix it with save editing or console commands.
 
@@ -640,8 +640,8 @@ The shield does the same, providing 12% resistance to missiles, 8% to slashing, 
 
 Following the theme of the description, it provides a bonus to rangers and elves:
 
-- +1 Armor Class if the wearer is a ranger, and also if they are an elf or half-elf. This stacks. This means effectively that an elven ranger would wear the armor as if it was a +4 leather armor.
-- +15% to hiding for rangers.
+- +1 Armor Class if the wearer is a ranger, and if they are an elf or half-elf. This stacks, which means that an elven ranger would effectively wear the armor as if it was a +4 leather armor.
+- +15 points to hiding for rangers.
 
 Good choice for early to mid-game elven rangers, perhaps even better for stalkers.
 
@@ -1043,7 +1043,7 @@ I don't like that it is casually called "cleric's staff" without anything specia
 
 - +1 Armor Class
 - +1 spell slot of level 3, 4, and 5 (clerics only)
-- +1 turn undead and casting level (clerics only)
+- +1 turn undead and casting level (clerics only; (Xgatt's Casting Level EEex mod is required for this benefit to stack with others!))
 - May cast Mass Cure (at minimum level) twice per day
 
 ### Make Halcyon a bit more powerful (1595) (BG2EE EET)
