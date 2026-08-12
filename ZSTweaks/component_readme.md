@@ -224,6 +224,7 @@ This component overhauls character stats for a more streamlined progression and 
   - THAC0 and Damage bonuses are streamlined. Penalties start at 9 STR, bonuses at 12 STR. Exceptional Strength (18/xx) no longer provides a THAC0 bonus. Its damage bonus is now +0 (18/01-24), +1 (18/25-75), and +2 (18/76+).
   - Weight allowance is adjusted to be more gradual, increasing capacity at low STR and decreasing it at very high STR.
   - **Weapon Styles**: This part of the component tries to make every point valuable by adding penalties to having low or no points, and making each point truly rewarding to hopefully avoid any point where adding another one seems pointless. This encourages investing in it.
+  - **NOTE:** Speed Factor bonuses are bugged in vanilla. They don't apply. In order to use them, you'd need to play with EEex installed through the infinity loader. If on Linux, you'll need to use Wine or similar.
   - **Two-Handed Style**:
     - **0 Pips**: -1 to Armor Class
     - **1 Pip**: +1 Damage, +1 Speed Factor.
