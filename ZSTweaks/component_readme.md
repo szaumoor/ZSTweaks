@@ -834,7 +834,7 @@ Undead Ward: Any friendly undead within 15 ft. of the wearer is granted a +4 bon
 
 ### Make Jester's Chain +4 more distinctive (1404) (BG2EE EET)
 
-Now increases the caster levels by 2 if they are Jesters and does not prevent spellcasting.
+Now increases the caster levels by 2 if they are Jesters and does not prevent spellcasting. Xgatt's Casting Level EEex mod is required for that specific benefit to stack with others.
 
 </details>
 
@@ -1623,7 +1623,7 @@ There are no words to express how much I hate that Edwin is the best wizard to h
 - Removed the spell slot bonus madness: in BGEE, he gets *one* extra spell slot of levels 1 and 2. In BG2EE, this is extended to levels 3 and 4 too. That's it. It's a nice bonus, but not game-breaking.
 - He gets a +2 to Saving Throws vs. conjuration spells of other wizards, which stacks with his normal +2 specialization bonus.
 - However, he has a -2 Saving Throw penalty against spells outside his specialization.
-- And finally, he always casts spells as if he were two levels above his actual level (one level in BGEE)
+- And finally, he always casts spells as if he were two levels above his actual level (one level in BGEE; Xgatt's Casting Level EEex mod is required for this benefit to stack with others!)
 
 ### Make minor improvements to Jaheira-specific items (1556) (BG2EE EET)
 
