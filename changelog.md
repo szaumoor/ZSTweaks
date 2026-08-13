@@ -40,10 +40,10 @@
 - Made numerous code-quality and performance improvements.
 - Restored the Helm of Balduran's regeneration effect, which was failing because of a missing resource.
 - Updated several outdated entries in `component_readme.md`.
-- When the Constitution Overhaul is installed, the Character Stat Overhaul now corrects creatures that use Constitution tables so that very low base HP and Constitution values do not kill them.
-- Made minor fixes to component 1531 (Magic Resistance tweaks).
+- When the Constitution Overhaul is installed, the Character Stat Overhaul now corrects creatures that use Constitution tables so that very low base HP mixed with their Constitution values do not kill them.
+- Minor fixes to component 1531 (Magic Resistance tweaks).
 - Fixed the Symbol X component incorrectly skipping its entire script in IWDEE despite supporting that game.
-- Fixed the extra damage from critical hits with ranged void weapons applying instantly instead of at roughly the same time as the hit.
+- Fixed the extra damage from critical hits with ranged void weapons applying instantly instead of at roughly the same time as the projectiles hit.
 - Fixed the golem component reporting an undefined number of creatures as modified, including creatures it did not change.
 - Fixed an error in the Energy Drain component that prevented it from protecting certain creatures in games without IWDification spells.
 - Prevented the +1 HP component from indiscriminately affecting non-shield items that use the shield slot. This fix depends heavily on the shield-standardization prefix.
@@ -54,10 +54,12 @@
 - Chromatic Orb green orb now also checks for poison immunity and undead / construct state before applying poison.
 - Chromatic Orb purple was healing golems instead of damaging them as expected
 - Fixed Dagger of the Star +5's Heavenly Strike missing the resource that deals the small area of effect fire damage.
+- Fixed various problems in the workings of the effects in Rod of Terror
 
 ## Modifications
 
 - Added a Simplified Chinese translation, thanks to MephistoSatanDevil.
+- Changed slightly the specifics of Rod of Terror
 - The component that makes natural effects nonmagical now includes the Neothelid's Poisonous Breath in SoD and resources added by the Fixpack.
 - Clarified that components granting +2 protection against a creature type also grant +2 to Saving Throws against effects caused by that creature type's attacks.
 - The mods now creates the `zstweaks_logs` folder to the game directory. The log files (if any) will contain warnings and other diagnostic information.
@@ -99,16 +101,16 @@
 - Began moving from a large collection of bundled files to templates that generate files as needed.
 - Added lacedon weapon attacks to the Natural Weapons component.
 - Wail of the Banshee now kills targets with 60 HP or less at a -2 save penalty. Targets with 8 HD or less are slain instantly, as with Death Spell.
-- Added compatibility with EEFixpack's new spell states to the following item and spell components: Skin of Ghoul, Sword of Royal Might, Dusty Rose Ioun Stone, Wondrous Gloves, Plate of the Dark, Helm of Balduran, Jade Fang, Life Stealer, Borok's Fist, and Holy/Unholy Words, Chromatic Orb, Kachiko's Sword (upgraded version)
+- Added compatibility with EEFixpack's new spell states to the following item and spell components: Skin of Ghoul, Sword of Royal Might, Mace of Royal Might, Dusty Rose Ioun Stone, Wondrous Gloves, Plate of the Dark, Helm of Balduran, Jade Fang, Life Stealer, Borok's Fist, and Holy/Unholy Words, Chromatic Orb, Kachiko's Sword (upgraded version), Rod of Terror
 - Reduced the bonuses against schools of magic provided by the Skull of Death and Shadow Dragon Scale to +3.
 - Made effects that disable critical misses much less likely to be undone by critical-miss penalties.
 - Renamed Kachiko's Whisper to Whisper and slightly revised its description and benefits.
 - Excluded creatures of the mist race from the Stiletto of the Demarchess's Persistent Wounds effect.
 - Improved the Element's Fury dagger tweak: its +2 random elemental damage can now trigger multiple elements.
   - 3% chance to trigger all four elements for 2 damage each.
-  - 4% chance to trigger three elements.
-  - 5% chance to trigger two elements.
-  - Critical hits always trigger all four elements in addition to any random trigger. The Dagger Boost and Finesse components can improve the result further, especially for pure thieves.
+  - 4% chance to trigger three elements in random combinations.
+  - 6% chance to trigger two elements in random combinations.
+  - Critical hits always trigger all four elements in addition to any other random effect per hit.
 - The Potion of Icedust now grants 85% fire resistance, up from 75% in the previous iteration.
 - Improved Divine Words:
   - The spells now apply a -2 Saving Throw penalty for their duration.

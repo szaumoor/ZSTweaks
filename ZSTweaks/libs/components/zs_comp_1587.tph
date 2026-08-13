@@ -1,16 +1,36 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
-  COPY ~%MOD_FOLDER%/items/rod_terror~ ~override~
-  COPY_EXISTING "zstwtrra.spl" ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1=RESOLVE_STR_REF(@7641) END
+  DEFINE_PATCH_MACRO patch_file BEGIN
+    LPF ADD_SPL_SELFEFF INT_VAR rd=0 tmg=0 STR_VAR effects = ~op=139,p1=14029;op=10,p1=-1,dur=7200;op=142,p2=91,dur=7200~ END
+  END
+  LAF CREATE_SELF_SPL STR_VAR filename = "zstwtrr0" END // self decrease constitution effect
+
+  DEFINE_PATCH_MACRO patch_file BEGIN
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 STR_VAR effects = ~op=321,res=%DEST_RES%;op=24,dur=12;op=176,p2=1,p1=0,dur=6;op=142,p2=36,dur=12;op=215,res=spmonsum,tmg=1;op=146,dur=6,tmg=3,p2=1,res=zstwtrr2,pro1=24;op=206,dur=6,res=%DEST_RES%~ END
+  END
+  LAF CREATE_TG_SPL STR_VAR filename = "zstwtrr1" END // panic effect, carries killing effect
+
+  DEFINE_PATCH_MACRO patch_file BEGIN
+    PATCH_IF has_eefixpack BEGIN
+      LPF ADD_SPL_TGTEFF INT_VAR pwr=0 STR_VAR effects = ~op=318,p2=110,p1=%splstate_fp_death_immunity%,res=%DEST_RES%~ END
+    END
+    SET killing_str = RESOLVE_STR_REF(@7641)
+    SET fade_speed = (25 << 16)
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=0 stype=1 STR_VAR effects = ~op=139,p1=%killing_str%;op=55,p2=2;op=174,dur=2,res=eff_m07;op=141,p2=39,dur=2;op=61,dur=2,p2=%fade_speed%,p1=2021160960~ END
+  END
+  LAF CREATE_TG_SPL STR_VAR filename = "zstwtrr2" END // killing effect
 
   COPY_EXISTING "rods05.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7640) END
-    LPF ALTER_EFFECT INT_VAR match_savingthrow=1 savebonus=0 END
-    LPF ALTER_EFFECT_EX INT_VAR probability1=9 STR_VAR match_probability1_ex="(o_probability1 > 0)" END
-    LPF ALTER_EFFECT_EX INT_VAR duration=12 STR_VAR match_probability1_ex="(o_duration >= 6)" END
-    LPF ALTER_EFFECT INT_VAR match_opcode=6 opcode=10 timing=0 duration=7200 END
-    LPF ALTER_EFFECT INT_VAR match_opcode=139 match_probability1=9 parameter1=14029 END
-    LPF ADD_ON_HIT_EFF STR_VAR effects=~op=326,p2=91,tmg=3,dur=6,res=zstwtrra,stype=1~ END
+    LPF DELETE_EFFECT_EX INT_VAR check_globals = 0 STR_VAR match_resource_ex = "(NOT ~%o_resource%~ STR_EQ ~zstwq3~)" END // delete all from header except possible Finesse component addition
+
+    LPF ADD_ON_HIT_EFF STR_VAR effects=~op=146,p2=1,res=zstwtrr0,tgt=1,pro1=9~ END
+
+    PATCH_IF has_eefixpack BEGIN // fixpack panic immunity
+      LPF ADD_ON_HIT_EFF STR_VAR effects=~op=318,p2=110,p1=%splstate_fp_panic_immunity%,res=%SOURCE_RES%~ END
+    END
+
+    LPF ADD_ON_HIT_EFF STR_VAR effects=~op=146,p2=1,res=zstwtrr1,stype=1~ END
+ 
 
 END
