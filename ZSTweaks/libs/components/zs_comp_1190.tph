@@ -39,7 +39,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             SPRINT fp_compat_stun "op=318,p2=110,p1=%splstate_fp_stun_immunity%,res=%DEST_RES%"
         END
 
-        LPF ADD_SPL_TGTEFF INT_VAR rd=3 pwr=0 STR_VAR effects = ~%fp_compat_stun%op=45,pro1=49,pro2=0;op=139,p1=1280~ END
+        LPF ADD_SPL_TGTEFF INT_VAR rd=3 pwr=0 STR_VAR effects = ~%fp_compat_stun%op=45,dur=6;op=139,p1=1280~ END
     END
     LAF CREATE_TG_SPL STR_VAR filename = "zstrdsw1" END // stun
 
