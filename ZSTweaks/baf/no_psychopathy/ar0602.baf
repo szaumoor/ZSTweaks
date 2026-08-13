@@ -12,10 +12,22 @@ THEN
         ApplySpellRES("ZSTWPSYC", Player6)
 
         ChangeStat(Player1, MORALERECOVERYTIME,%zst_592_morale_break_duration%, SET)
+        ChangeStat(Player1, MORALEBREAK,%zst_592_morale_break%, SET)
+
         ChangeStat(Player2, MORALERECOVERYTIME,%zst_592_morale_break_duration%, SET)
+        ChangeStat(Player2, MORALEBREAK,%zst_592_morale_break%, SET)
+
         ChangeStat(Player3, MORALERECOVERYTIME,%zst_592_morale_break_duration%, SET)
+        ChangeStat(Player3, MORALEBREAK,%zst_592_morale_break%, SET)
+
         ChangeStat(Player4, MORALERECOVERYTIME,%zst_592_morale_break_duration%, SET)
+        ChangeStat(Player4, MORALEBREAK,%zst_592_morale_break%, SET)
+
         ChangeStat(Player5, MORALERECOVERYTIME,%zst_592_morale_break_duration%, SET)
+        ChangeStat(Player5, MORALEBREAK,%zst_592_morale_break%, SET)
+
         ChangeStat(Player6, MORALERECOVERYTIME,%zst_592_morale_break_duration%, SET)
+        ChangeStat(Player6, MORALEBREAK,%zst_592_morale_break%, SET)
+
         Continue()
 END
