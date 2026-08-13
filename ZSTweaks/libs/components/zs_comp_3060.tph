@@ -47,7 +47,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     END
 
     COPY_EXISTING ~sevpat01.cre~ ~override~
-        SET pebblemuncher = RESOLVE_STR_REF(@80700)
+        SET pebblemuncher = RESOLVE_STR_REF(@80800)
         LPF ALTER_CRE INT_VAR name = pebblemuncher tooltip = pebblemuncher END
         LPF CALCULATE_HP_VANILLA INT_VAR level = BYTE_AT(0x234) STR_VAR class = "fighter" RET result END
         WRITE_SHORT 0x24 result

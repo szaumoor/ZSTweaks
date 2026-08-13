@@ -183,6 +183,8 @@ This component identifies a scroll as a "priest scroll" if it is usable by any p
 
 This component processes all existing scrolls in the game and makes sure they are cast at the user's character level, regardless of class. So if you have a level 16 Thief that can use scrolls by whatever means, they will cast them at level 16. This pairs well with the previous component and greatly increases the usability of scrolls as a general resource for the whole party. I would recommend enforcing stat requirements as well to keep it fairer.
 
+Also, this component cannot patch more than 9999 scrolls. You'll probably not ever find this problem, if your username isn't Endarire.
+
 ### Make mage robes without cloaks cloaked (1650) (IWDEE BGEE BG2EE EET)
 
 I've never liked the look of robes without cloaks or without hoods (there's really nothing to look at). Since the hooded version is more involved and many may prefer to see the character's head, the cloaked look is the default one.

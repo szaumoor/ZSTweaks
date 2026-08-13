@@ -16,7 +16,7 @@ Many components can be customized by editing `ZSTweaks/configurations/zstweaks_p
 
 ## Compatibility and installation order
 
-This mod was developed and tested on game version 2.6.6. All tweaks are designed with this version in mind, so compatibility with previous versions is not guaranteed, and no support will be provided for them.
+This mod was developed and tested on game version 2.6.6. All tweaks are designed with this version in mind, so compatibility with previous versions is not guaranteed, and no support will be provided for them. Compatibility with versions after 2.6.6 is fully untested.
 
 For best results, this mod should be installed after other content mods, such as item packs, quest mods, NPC mods, and the IWDEE spell pack. If this mod is installed before them, its tweaks may not apply correctly or at all.
 
