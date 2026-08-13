@@ -307,7 +307,7 @@ Other details:
 
 This component enables combat bonuses from invisibility for ranged attacks, focusing on Rangers, Thieves, and Monks. This is to simulate a ranged sneak attack of sorts.
 
-- **THAC0 Bonus**: Grants a +4 THAC0 bonus when attacking from invisibility, mirroring melee bonuses.
+- **THAC0 Bonus**: Grants a +4 Ranged THAC0 bonus when attacking from invisibility, mirroring melee bonuses.
 - **Ranged Damage Bonus (from invisibility)**: +1 damage, scaling up to +5 at level 17 (double for thieves and monks).
 - **Applicability**: Applies to all Thief kits (except Swashbuckler), all Ranger kits (except Archer), and all Monk kits.
 - **Thieves with Fighter Class**: Their damage bonus is reduced to match that of Rangers.
