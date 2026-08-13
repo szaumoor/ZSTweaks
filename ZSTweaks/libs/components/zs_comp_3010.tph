@@ -473,15 +473,15 @@ ACTION_IF zs_debug BEGIN
         END
 
         PATCH_IF race = race_fairy BEGIN
-          PATCH_IF class     = class_fairy_nereid     AND
-                  alignment != alignmen_chaotic_good  AND
-                  alignment != alignmen_chaotic_evil  AND
-                  alignment != alignmen_chaotic_neutral
+          PATCH_IF class     = class_fairy_nereid       AND
+                   alignment != alignmen_chaotic_good    AND
+                   alignment != alignmen_chaotic_evil    AND
+                   alignment != alignmen_chaotic_neutral
           BEGIN
               READ_BYTE 0x27b alignment
-              PATCH_IF alignment != alignmen_chaotic_good  AND
-                  alignment != alignmen_chaotic_evil  AND
-                  alignment != alignmen_chaotic_neutral
+              PATCH_IF alignment != alignmen_chaotic_good    AND
+                       alignment != alignmen_chaotic_evil    AND
+                       alignment != alignmen_chaotic_neutral
               BEGIN
                 ++matches
                 READ_STRREF 0x08 name ELSE "Unknown name"
@@ -531,8 +531,8 @@ ACTION_IF zs_debug BEGIN
         BEGIN
             READ_BYTE 0x27b alignment
             PATCH_IF alignment = alignmen_chaotic_good OR
-                    alignment = alignmen_lawful_good  OR
-                    alignment = alignmen_neutral_good
+                     alignment = alignmen_lawful_good  OR
+                     alignment = alignmen_neutral_good
 
             BEGIN
                 ++matches
@@ -593,8 +593,8 @@ ACTION_IF zs_debug BEGIN
                  class   = class_genie_efreeti       OR // all these genies are evil
                  class   = class_genie_noble_efreeti OR
                  class   = class_genie_dao           OR
-                 (race    = race_lycanthrope AND class = class_wolfwere) OR // wolfweres are evil
-                 (race    = race_dragon AND class != class_silver_dragon) // silver dragons are LG
+                (race    = race_lycanthrope AND class = class_wolfwere) OR // wolfweres are evil
+                (race    = race_dragon AND class != class_silver_dragon) // silver dragons are LG
                 )
         BEGIN
 
@@ -625,8 +625,8 @@ ACTION_IF zs_debug BEGIN
         BEGIN
             READ_BYTE 0x27b alignment
             PATCH_IF alignment != alignmen_chaotic_good AND
-                    alignment != alignmen_lawful_good  AND
-                    alignment != alignmen_neutral_good
+                     alignment != alignmen_lawful_good  AND
+                     alignment != alignmen_neutral_good
             BEGIN
                 ++matches
                 READ_STRREF 0x08 name ELSE "Unknown name"
@@ -645,11 +645,11 @@ ACTION_IF zs_debug BEGIN
                   general = general_plant        OR
                   race    = race_elemental       OR
                   race    = race_ankheg          OR
-                (race    = race_genie AND (class < class_genie_djinni AND class > class_genie_noble_efreeti)) OR
+                 (race    = race_genie AND (class < class_genie_djinni AND class > class_genie_noble_efreeti)) OR
                   race    = race_basilisk        OR
                   race    = race_carrion_crawler OR
                   race    = race_beetle          OR
-                (race    = race_spider AND class != class_spider_wraith AND general != general_humanoid) OR
+                 (race    = race_spider AND class != class_spider_wraith AND general != general_humanoid) OR
                   race    = race_hook_horror     OR
                   race    = race_myconid         OR
                   race    = race_golem           OR
@@ -664,13 +664,13 @@ ACTION_IF zs_debug BEGIN
                   race    = race_wyvern          OR
                   race    = race_lizardman       OR
      //           ((race    = race_mist OR class = class_mist) AND general != general_undead) OR
-                (race    = race_salamander AND class != class_salamander_frost)
+                 (race    = race_salamander AND class != class_salamander_frost)
         BEGIN
 
           READ_BYTE 0x27b alignment
           PATCH_IF alignment != alignmen_chaotic_neutral AND
-                  alignment != alignmen_lawful_neutral  AND
-                  alignment != alignmen_neutral
+                   alignment != alignmen_lawful_neutral  AND
+                   alignment != alignmen_neutral
 
           BEGIN
               ++matches

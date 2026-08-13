@@ -47,17 +47,17 @@ I am open to providing compatibility for other mods. You can contact me on the f
 - EEFixpack. It's not completely polished, but it fixes tons of things and eventually will probably be a backbone for every game setup. My mod also fixes some things that are unaddressed by it (or currently messed up by it as of Beta 2, such as poor Blackrazor).
 - IWDification, especially the IWD spell packs for BG, so my tweaks can take full advantage. They also make druids and paladins significantly more interesting and capable as spellcasters.
 - Any mods that improve Thieves, like RR, allowing them 3 pips in Two-weapon fighting. Join me in my crusade to make them better as a standalone class.
-- Viconia Friendship if you use the Handsmaiden Mace component, because it makes the upgraded mace available even without romancing her.
+- Viconia Friendship if you use the Handmaiden Mace component, because it makes the upgraded mace available even without romancing her.
 
 ## Notes for users and modders
 
-**For users:** I advise making this mod the first tweak mod in your mod tweaks, since it is quite likely that older tweak packs such as Tweaks Anthology will have a better time anticipating and reacting to changes. An exception to this are components that **EXPLICITLY** say that they must be installed in a certain order. Finally, I'm not perfect, so if you find a component that probably makes more sense to install in a different order, you might be right. If you find that's the case, do let me know.
+**For users:** I advise making this mod the first tweak mod in your mod tweaks, since it is quite likely that older tweak packs such as Tweaks Anthology will have a better time anticipating and reacting to changes. It's been two years already since I released it, so the components should be less fragile, but it's a good rule of thumb. An exception to this are components that **EXPLICITLY** say that they must be installed in a certain order. Finally, I'm not perfect, so if you find a component that probably makes more sense to install in a different order, you might be right. If you find that's the case, do let me know.
 
 I also would recommend installing things in the order they're presented in the mod, if you can help it, as this is the way it's been most heavily tested, due to how time-consuming it is. If you find any issues, let me know.
 
 The prefix for this mod is either "tw" or "t". That is, if you find a file that starts by "zst" or "zstw", it comes from this mod.
 
-This mod was only tested in version v249 of WeiDu. Version 250 and 251 might break some things. You're on your own if you find some issue (for now).
+Finally, this mod was only tested in version v249 of WeiDu. Version 250 and 251 might break some things. You're on your own if you find some issue (for now). The mod will berate you if you use anything else.
 
 ---
 
@@ -66,7 +66,7 @@ This mod was only tested in version v249 of WeiDu. Version 250 and 251 might bre
 - Installed the **specific** component by iterating through the components **manually**. In this case, the detection is a matter of using a ```MOD_IS_INSTALLED "ZSTweaks.tp2" "<component_number>"```. As every component is part of a group-installing component, this is never sufficient.
 - Installed as part of a user-defined selection. In this case, you would have to first check that the group-install component is installed, and that the variable that *allow*_ that component inside is set to 1. An example would be ```MOD_IS_INSTALLED "ZSTweaks.tp2" "1301" AND zst_group_1328_mace_storm_star```, which would tell you if the user has installed my tweak to Storm Star, as part of their personal selection. This should be combined with the previous check.
 
-Taking as an example the storm start component, a complete check would be: ```MOD_IS_INSTALLED "ZSTweaks.tp2" "1328" OR (MOD_IS_INSTALLED "ZSTweaks.tp2" "1301" AND zst_group_1328_mace_storm_star)```. This check asks: *is the component installed either individually or as part of its group?*.
+Taking as an example the Storm Star component, a complete check would be: ```MOD_IS_INSTALLED "ZSTweaks.tp2" "1328" OR (MOD_IS_INSTALLED "ZSTweaks.tp2" "1301" AND zst_group_1328_mace_storm_star)```. This check asks: *is the component installed either individually or as part of its group?*.
 
 Finally, to check variations on the installed component, if there are any, you would also need to include the variables in `configurations/zstweaks_prefs.txt`. That's it. I know it's a bit of pain so if I can, I will provide the compatibility code myself.
 
@@ -76,7 +76,7 @@ Finally, to check variations on the installed component, if there are any, you w
 
 Two possible reasons that I know of:
 
-1. You installed what I call a **group component**, that is, the first component within each group of components, which installs either all, or your selection of components *within* that group using the configuration files. Because of technical limitations, I have to assume that if you install that, you're done with that group. Therefore, every one of the rest of components in that group will be skipped. Don't use this method if you know for certain there's a component within the group that you'll need to install in a non-linear order.
+1. You installed what I call a **group component**, that is, the first component within each group of components, which installs either all the rest of components, or your selection of components *within* that group using the configuration files. Because of technical limitations, I have to assume that if you install that, you're done with that group. Therefore, every one of the rest of components in that group will be skipped. Don't use this method if you know for certain there's a component within the group that you'll need to install in a non-linear order.
 2. The component was set to be *incompatible with the game you're installing it on*. For example, the Shar-Teel component won't install in IWDEE.
 
 ### Why am I seeing lines in the console saying that 0 files were copied and patched?

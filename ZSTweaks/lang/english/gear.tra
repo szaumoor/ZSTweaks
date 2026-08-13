@@ -1035,7 +1035,7 @@ Weight: 5~
 
 STATISTICS:
 
-– If fully consumed, it permanently increases the drinker's Casting Level (arcane and divine), and their Saving Throws vs. Spell and Rod by 1.
+– If fully consumed, it permanently increases the drinker's casting level (arcane and divine), and their Saving Throws vs. Spell and Rod by 1.
 
 Weight: 5~
 
@@ -1045,7 +1045,7 @@ STATISTICS:
 
 Equipped abilities:
 – Protects against critical hits
-– Detect Illusion and Find Traps: +10%
+– Detect Illusion and Find Traps: +10
 
 Charge abilities:
 – Oracle once per day
@@ -1061,7 +1061,7 @@ Equipped abilities:
 – Immunity to blindness
 – Hide In Shadows: +5
 – Armor Class and Saving Throws: +2 vs. all spectral undead and shadow dragons
-– +3% Physical Damage Resistance (shadowdancers and Dark Moon monks only)
+– Physical Damage Resistance: +3% (shadowdancers and Dark Moon monks only)
 
 Weight: 1~
 
@@ -1156,7 +1156,7 @@ STATISTICS:
 Equipped abilities:
 – Cold Resistance: +30%
 – Electricity Resistance: +30%
-– Umberlee's Boon: Wearer has an 18% chance per ranged or melee hit to deal 1d4 cold damage, electrical damage, or both
+– Sea Queen's Boon: Wearer has an 18% chance per ranged or melee hit to deal 1d4 cold damage, electrical damage, or both
 
 Armor Class: 3 (1 vs. slashing, 2 vs. piercing and missile)
 Requires:
@@ -1164,7 +1164,7 @@ Requires:
 
 Weight: 7~
 
-@8440 = ~This armor is infamous not for its advantages, but for the betrayal it enabled. Raroh, a master assassin, gifted it to Avlorm, a rising member of his guild. The armor's unique properties—granting resilience and the power to poison weapons—were overshadowed by a fatal flaw: it made the wearer dangerously vulnerable to poison. When Avlorm's ambition became a threat, Raroh exploited this weakness, using the very armor he had given as a tool to eliminate his rival.
+@8440 = ~This armor is infamous for the betrayal it enabled. Raroh, a master assassin, gifted it to Avlorm, a rising member of his guild. The armor's unique properties—granting resilience and the power to poison weapons—were overshadowed by a fatal flaw: it made the wearer dangerously vulnerable to poison. When Avlorm's ambition became a threat, Raroh exploited this weakness, using the very armor he had given as a tool to eliminate his rival.
 
 STATISTICS:
 
@@ -1190,7 +1190,7 @@ STATISTICS:
 
 Equipped abilities:
 – Immunity to confusion
-– Cold, Fire, and Acid Resistance: +15% (30% for barbarians)
+– Cold, Fire, and Acid Resistance: +15% (double for barbarians)
 – Physical Damage Resistance: +3% (barbarians only)
 – Damage with halberds, staves, two-handed swords, and spears: +2 (barbarians only)
 
@@ -1260,8 +1260,7 @@ Equipped abilities:
 – Fire Resistance: +20%
 
 Combat abilities:
-– Magical weapons always overcome the natural weapon immunities of fiends
-– Fiends struck by the wearer must Save vs. Death or have their Magic Resistance nullified for 2 rounds
+– While this armor is on, magical weapons always overcome the natural weapon immunities of fiends, and fiends must Save vs. Death or have their Magic Resistance nullified for 2 rounds
 
 Armor Class: 0 (-3 vs. slashing)
 Requires:
@@ -1269,7 +1268,7 @@ Requires:
 
 Weight: 27~
 
-// TODO for later, needs fixpack splstates whenever I get around to it
+// TODO for later
 @8481 = ~Slayer's Doomplate~
 @8482 = ~The oldest scraps of tale hint at this armor's original bearer: a nigh-mythical slayer of demons who was said to rip and tear their flesh with his bare hands, carving a wrathful path through infernal hosts. Whether the Doomplate remembers that champion, hungers for such purpose again, or merely amplifies the will of any who stride into the jaws of the abyss… none can say.
 
@@ -1285,7 +1284,7 @@ Equipped abilities:
 – Fire Resistance: +40%
 
 Combat abilities:
-– Magical weapons always overcome the natural weapon immunities of fiends
+– Magical weapons always overcome the natural weapon immunities of fiends while this armor is on
 – Fiends struck by the wearer must Save vs. Death at -2 or have their Magic Resistance nullified for 2 rounds
 – 30% chance per hit to
 
