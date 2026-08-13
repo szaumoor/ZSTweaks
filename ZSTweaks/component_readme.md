@@ -2671,6 +2671,14 @@ Constitution: 9 to 17
 Wisdom: 16 to 18
 Immune to critical hits
 
+Their attacks are poisonous:
+- 25% chance per hit to inflict a permanent disease (until cured) that decreases Strength, Dexterity and Constitution by 3.
+- After the disease is inflicted, the target takes 2d6 poison damage and a deadly poison is injected.
+- The poison has a chance random chance to kill a target in 1, 2, or 3 rounds.
+- For that time, the target always takes additional 1d6 poison damage.
+- If a Save vs. Death is failed after the relevant amount of rounds, they die.
+- None of the effects apply if the target is non-living or immune to poison (including the disease).
+
 </details>
 
 ---

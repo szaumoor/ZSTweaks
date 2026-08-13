@@ -100,7 +100,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
     COPY_EXISTING ~p3-12m4.itm~ ~override/zstpitf0.itm~
         LPF ALTER_HEADER INT_VAR damage=4 damage_type=6 range=2 END
-        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=146,p2=1,res=zstpitf4,pro1=19~ END
+        LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=146,p2=1,res=zstpitf4,pro1=24~ END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=176,p1=7;op=206,p1=-1,res=spin701~ END
 
     COPY_EXISTING ~dempit.cre~   ~override~
