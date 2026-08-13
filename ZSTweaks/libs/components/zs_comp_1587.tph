@@ -6,7 +6,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
   LAF CREATE_SELF_SPL STR_VAR filename = "zstwtrr0" END // self decrease constitution effect
 
   DEFINE_PATCH_MACRO patch_file BEGIN
-    LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 STR_VAR effects = ~op=321,res=%DEST_RES%;op=24,dur=12;op=176,p2=1,p1=0,dur=6;op=142,p2=36,dur=12;op=215,res=spmonsum,tmg=1;op=146,dur=6,tmg=3,p2=1,res=zstwtrr2,pro1=24;op=206,dur=6,res=%DEST_RES%~ END
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 STR_VAR effects = ~op=321,res=%DEST_RES%;op=24,dur=12;op=176,p2=1,p1=0,dur=6;op=142,p2=36,dur=12;op=215,res=spmonsum,tmg=1;op=326,dur=6,tmg=3,p2=91,res=zstwtrr2,pro1=24;op=206,dur=6,res=%DEST_RES%~ END
   END
   LAF CREATE_TG_SPL STR_VAR filename = "zstwtrr1" END // panic effect, carries killing effect
 
@@ -19,6 +19,12 @@ ACTION_IF is_bg2ee_or_eet BEGIN
     LPF ADD_SPL_TGTEFF INT_VAR pwr=0 stype=1 STR_VAR effects = ~op=139,p1=%killing_str%;op=55,p2=2;op=174,dur=2,res=eff_m07;op=141,p2=39,dur=2;op=61,dur=2,p2=%fade_speed%,p1=2021160960~ END
   END
   LAF CREATE_TG_SPL STR_VAR filename = "zstwtrr2" END // killing effect
+
+  COPY_EXISTING ~ring95.itm~ ~override~
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=206,p2=zstwtrr2~ END
+
+  COPY_EXISTING ~ring95.itm~ ~override~
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=206,p2=zstwtrr2~ END
 
   COPY_EXISTING "rods05.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7640) END
