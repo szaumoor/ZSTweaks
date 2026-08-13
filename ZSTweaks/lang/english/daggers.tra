@@ -52,8 +52,7 @@ Combat abilities:
 
 Charge abilities:
 – Heavenly Strike three times per day
-  Special: Raise the dagger to the sky, summoning a bolt of lightning and a column of fire to strike the target, dealing 6d6+24 electrical and fire damage (Save vs. Breath at -5 to take a quarter less damage). Adjacent targets take 60% of the fire damage. This action also empowers the wielder, adding +2 fire and electrical damage to all melee and ranged attacks for the next turn.
-  Area of Effect: 1 creature and adjacent allies
+  Special: Raise the dagger to the sky, summoning a bolt of lightning and a column of fire to strike one target, dealing 6d6+24 electrical and fire damage (Save vs. Breath at -5 to take a quarter less damage). Creatures within 7 ft. of the target take 60% of the fire damage. This action also empowers the wielder, adding +2 fire and electrical damage to all melee and ranged attacks with any weapon for the next turn.
 
 THAC0: +6
 Damage: 1d4+6, +2 fire and electricity damage
@@ -186,7 +185,7 @@ Equipped abilities:
 Combat abilities:
 – Deals an extra 2d4 extra damage to elementals. Fire elementals take cold damage, water elementals take fire damage, earth elementals take acid damage, and air elementals take electrical damage. 
 – Acts as +5 weapon vs. elementals for the purposes of what it can hit
-– Elemental Fury: Each hit deals +2 points of fire, cold, electrical, or acid damage. There is a 3% chance all elements are applied on hit, a 4% chance three of them apply, and a 5% chance two of them apply. Critical hits apply +2 damage of each element on top of what it would normally do.
+– Elemental Fury: Each hit deals +2 points of fire, cold, electrical, or acid damage. There is a 3% chance all elements are applied on hit, a 4% chance three of them apply, and a 6% chance two of them apply. Critical hits apply +2 damage of each element on top of what it would normally do.
 
 THAC0: +2
 Damage: 1d4+2 (piercing)

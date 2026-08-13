@@ -9,61 +9,53 @@ ACTION_IF NOT is_iwdee BEGIN
 
         COPY_EXISTING ~zstelf00.spl~ ~override/zstelf01.spl~ // three (all but acid)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_acid END
-        
         COPY_EXISTING ~zstelf00.spl~ ~override/zstelf02.spl~ // three (all but fire)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_fire END
-
         COPY_EXISTING ~zstelf00.spl~ ~override/zstelf03.spl~ // three (all but cold)
-            LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_cold END
-        
+            LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_cold END 
         COPY_EXISTING ~zstelf00.spl~ ~override/zstelf04.spl~ // three (all but electric)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_electricity END
 
         COPY_EXISTING ~zstelf00.spl~ ~override/zstelf05.spl~ // two (fire and cold)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_acid END
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_electricity END
-
         COPY_EXISTING ~zstelf00.spl~ ~override/zstelf06.spl~ // two (fire and electricity)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_acid END
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_cold END
-
         COPY_EXISTING ~zstelf00.spl~ ~override/zstelf07.spl~ // two (fire and acid)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_electricity END
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_cold END
-
         COPY_EXISTING ~zstelf00.spl~ ~override/zstelf08.spl~ // two (cold and acid)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_electricity END
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_fire END
-
         COPY_EXISTING ~zstelf00.spl~ ~override/zstelf09.spl~ // two (cold and electricity)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_acid END
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_fire END
-
         COPY_EXISTING ~zstelf00.spl~ ~override/zstelf10.spl~ // two (acid and electricity)
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_cold END
             LPF DELETE_EFFECT INT_VAR match_parameter2 = op12_fire END
 
         DEFINE_PATCH_MACRO patch_file BEGIN
-            LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 p2=1 STR_VAR effects=~op=146,pro1=24,res=zstelf01;op=146,pro1=49,pro2=25,res=zstelf02;op=146,pro1=74,pro2=50,res=zstelf03;op=146,pro1=100,pro2=75,res=zstelf04~ END
+            LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 p2=1 STR_VAR effects=~op=146,pro1=3,pro=3,res=zstelf01;op=146,pro1=4,pro2=4,res=zstelf02;op=146,pro1=5,pro2=5,res=zstelf03;op=146,pro1=6,pro2=6,res=zstelf04~ END
         END
         LAF CREATE_TG_SPL STR_VAR filename = "zstelf11" END // master spell for three-element choices
 
         DEFINE_PATCH_MACRO patch_file BEGIN
-            LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 p2=1 STR_VAR effects=~op=146,pro1=16,pro2=0,res=zstelf05;op=146,pro1=34,pro2=17,res=zstelf06;op=146,pro1=49,pro2=35,res=zstelf07;op=146,pro1=67,pro2=50,res=zstelf08;op=146,pro1=84,pro2=68,res=zstelf09;op=146,pro1=100,pro2=85,res=zstelf10~ END
+            LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 p2=1 STR_VAR effects=~op=146,pro1=7,pro2=7,res=zstelf05;op=146,pro1=8,pro2=8,res=zstelf06;op=146,pro1=9,pro2=9,res=zstelf07;op=146,pro1=10,pro2=10,res=zstelf08;op=146,pro1=11,pro2=11,res=zstelf09;op=146,pro1=12,pro2=12,res=zstelf10~ END
         END
         LAF CREATE_TG_SPL STR_VAR filename = "zstelf12" END // master spell for two-element choices
 
         COPY_EXISTING ~zstelf00.spl~ ~override/zstelf13.spl~ // one-element choices
-            LPF ALTER_EFFECT INT_VAR match_parameter2 = op12_fire probability1 = 24 probability2 = 0 END
-            LPF ALTER_EFFECT INT_VAR match_parameter2 = op12_cold probability1 = 49 probability2 = 25 END
-            LPF ALTER_EFFECT INT_VAR match_parameter2 = op12_acid probability1 = 74 probability2 = 50 END
-            LPF ALTER_EFFECT INT_VAR match_parameter2 = op12_electricity probability1 = 100 probability2 = 75 END
+            LPF ALTER_EFFECT INT_VAR match_parameter2 = op12_fire probability1 = 34 probability2 = 13 END
+            LPF ALTER_EFFECT INT_VAR match_parameter2 = op12_cold probability1 = 56 probability2 = 35 END
+            LPF ALTER_EFFECT INT_VAR match_parameter2 = op12_acid probability1 = 78 probability2 = 57 END
+            LPF ALTER_EFFECT INT_VAR match_parameter2 = op12_electricity probability1 = 100 probability2 = 79 END
 
         COPY_EXISTING ~bddagg01.itm~ ~override~
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6930) END
             LPF DELETE_EFFECT INT_VAR check_globals=0 match_opcode=12 END
             LPF ADD_EQUIPPED_EFF INT_VAR p1 = 15 STR_VAR effects = ~op=27;op=28;op=29;op=30;op=341,res=zstelf00,p1=0,p2=1;op=344,p2=4,p1=%race_elemental%,spec=5~ END
-            LPF ADD_ON_HIT_EFF INT_VAR p2=1 STR_VAR effects = ~op=146,res=zstelf00,pro1=2;op=146,res=zstelf11,pro1=6,pro2=3;op=146,res=zstelf12,pro1=11,pro2=7;op=146,res=zstelf13,pro1=100,pro2=12~ END
+            LPF ADD_ON_HIT_EFF INT_VAR p2=1 STR_VAR effects = ~op=146,res=zstelf00,pro1=2;op=146,res=zstelf11,pro1=6,pro2=3;op=146,res=zstelf12,pro1=12,pro2=7;op=146,res=zstelf13,pro1=100,pro2=13~ END
 
             PATCH_IF MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~1440~ OR
                      MOD_IS_INSTALLED ~ZSTweaks.tp2~ ~103~ AND zst_group_1440_dagger_boost
