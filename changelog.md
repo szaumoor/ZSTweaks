@@ -53,6 +53,7 @@
 - Corrected a likely vanilla issue where the Belt of Fortitude's charge ability used the basic belt icon instead of its own. This fix applies only when the relevant component is installed.
 - Chromatic Orb green orb now also checks for poison immunity and undead / construct state before applying poison.
 - Chromatic Orb purple was healing golems instead of damaging them as expected
+- Fixed Dagger of the Star +5's Heavenly Strike missing the resource that deals the small area of effect fire damage.
 
 ## Modifications
 
