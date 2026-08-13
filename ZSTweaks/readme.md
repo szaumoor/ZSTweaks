@@ -91,6 +91,10 @@ My mod runs a bunch of scripts before installing the first component (whichever 
 
 All the information you need is in the ZSTweaks/configurations folder. Follow instructions and change things in any way you prefer.
 
+### I installed your mod, then changed some of the preferences in the file, but nothing changed
+
+The preferences only apply during installation. After, it's meaningless. Think about what you want before installation, not after. Otherwise, reinstall with the new preferences set.
+
 ## Credits
 
 - To BeamDog and Bioware for the game
