@@ -118,6 +118,7 @@
   - The spells now apply a -2 Saving Throw penalty for their duration.
   - Increased the effect duration for targets with 12 or more HD from 4 to 5, and for targets with 8–11 HD from 5 to 7.
   - Added console feedback identifying the tier and duration applied to each target.
+- Bow of Mana's Casting Failure effect now succeeds regardless of magic resistance, but remaining dispellable.
 
 ## New Components
 
