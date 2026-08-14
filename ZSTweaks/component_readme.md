@@ -836,7 +836,7 @@ Undead Ward: Any friendly undead within 15 ft. of the wearer is granted the foll
 
 ### Make Jester's Chain +4 more distinctive (1404) (BG2EE EET)
 
-Now increases the caster levels by 2 if they are Jesters and does not prevent spellcasting. Xgatt's Casting Level EEex mod is required for that specific benefit to stack with others.
+Now increases the caster levels by 2 if they are Jesters, and does not prevent spellcasting. Xgatt's Casting Level EEex mod is required for that specific benefit to stack with others.
 
 </details>
 

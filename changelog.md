@@ -102,7 +102,7 @@
 - Began moving from a large collection of bundled files to templates that generate files as needed.
 - Added lacedon weapon attacks to the Natural Weapons component.
 - Wail of the Banshee now kills targets with 60 HP or less at a -2 save penalty. Targets with 8 HD or less are slain instantly, as with Death Spell.
-- Added compatibility with EEFixpack's new spell states to the following item and spell components: Skin of Ghoul, Sword of Royal Might, Mace of Royal Might, Dusty Rose Ioun Stone, Wondrous Gloves, Plate of the Dark, Helm of Balduran, Jade Fang, Life Stealer, Borok's Fist, and Holy/Unholy Words, Chromatic Orb, Kachiko's Sword (upgraded version), Rod of Terror, Psion Blade
+- Added compatibility with EEFixpack's new effect immunity spell states where it fits, or where the Fixpack hasn't yet: Skin of Ghoul, Sword of Royal Might, Mace of Royal Might, Dusty Rose Ioun Stone, Wondrous Gloves, Plate of the Dark, Helm of Balduran, Jade Fang, Life Stealer, Borok's Fist, and Holy/Unholy Words, Chromatic Orb, Kachiko's Sword (upgraded version), Rod of Terror, Psion Blade, Flail of Ages (+4, +5)
 - Reduced the bonuses against schools of magic provided by the Skull of Death and Shadow Dragon Scale to +3.
 - Made effects that disable critical misses much less likely to be undone by critical-miss penalties.
 - Renamed Kachiko's Whisper to Whisper and slightly revised its description and benefits.

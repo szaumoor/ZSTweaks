@@ -1,4 +1,14 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
+  
+  DEFINE_PATCH_MACRO patch_file BEGIN
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 STR_VAR effects = ~op=40,dur=12;op=139,p1=14000~ END
+  END
+  LAF CREATE_TG_SPL STR_VAR filename = "zstflage" END // slow
+
+  OUTER_SPRINT opcode_slow "op=146,p2=1,pro=32,res=zstflage"
+  ACTION_IF has_eefixpack BEGIN
+    OUTER_SPRINT opcode_slow "op=326,p2=111,p1=%splstate_fp_slow_immunity%,pro=32,res=zstflage"
+  END
 
   COPY_EXISTING ~blun30.itm~  ~override~ // all the damn variations of flail of ages
                 ~blun30c.itm~ ~override~
@@ -14,26 +24,26 @@ ACTION_IF is_bg2ee_or_eet BEGIN
 
   COPY_EXISTING ~blun14.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@7761) END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 139 probability1=32 savingthrow = 1 savebonus = "-2" END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 40 probability1=32 savingthrow = 1 savebonus = "-2" duration = 12 END
-
-  COPY_EXISTING ~blun30c.itm~ ~override~
-                ~blun30d.itm~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode = 139 probability1=32 savingthrow = 1 savebonus = "-3" END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 40 probability1=32 savingthrow = 1 savebonus = "-3" duration = 12 END
+    LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 12)" END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~%opcode_slow%,stype=1,sbonus=-2~ END
 
   COPY_EXISTING ~blun30c.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@7762) END
+    LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 12)" END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~%opcode_slow%,stype=1,sbonus=-3;op=318,res=%SOURCE_RES%,p2=55;op=318,res=%SOURCE_RES%,p2=77;op=12,p2=%op12_poison%,p1=1,spec=1024~ END
 
   COPY_EXISTING ~blun30d.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@7763) END
+    LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 12)" END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~%opcode_slow%,stype=1,sbonus=-3~ END
 
   COPY_EXISTING ~blun30.itm~ ~override~
-    LPM remove_haste_immunity
-    LPF ALTER_EFFECT INT_VAR match_opcode = 166 parameter1 = 15 END
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@7760) END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 139 probability1=32 savingthrow = 1 savebonus = "-4" END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 40 probability1=32 savingthrow = 1 savebonus = "-4" duration = 12 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 166 parameter1 = 15 END
+    LPM remove_haste_immunity
+    LPF DELETE_EFFECT_EX STR_VAR match_opcode_ex = "(o_opcode != 12)" END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~%opcode_slow%,stype=1,sbonus=-4;op=318,res=%SOURCE_RES%,p2=55;op=318,res=%SOURCE_RES%,p2=77;op=12,p2=%op12_poison%,p1=2,spec=1024~ END
+
 
   COPY_EXISTING ~sppr403.spl~ ~override~
     LPF DELETE_EFFECT INT_VAR match_opcode=126 END
