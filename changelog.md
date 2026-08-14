@@ -56,6 +56,7 @@
 - Fixed Dagger of the Star +5's Heavenly Strike missing the resource that deals the small area of effect fire damage.
 - Fixed various problems in the workings of the effects in Rod of Terror
 - Fixed missing description in Ras the Dancing sword in its normal state as well as an inaccuracy therein
+- Fixed Club of Detonation +5 not getting an increased chance to deal more fire damage compared to the +3 version
 
 ## Modifications
 
