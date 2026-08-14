@@ -4,21 +4,21 @@ STATISTICS:
 
 Equipped abilities:
 – Immunity to charm and confusion
-– Stacking bonuses that depend on the alignment of the wielder:
-  All alignments: +1 Armor Class, +5% Magic Resistance
-  All morally neutral alignments: +1 Damage, +1 Saving Throws, +5% Magic Resistance
-  True Neutral: +1 Armor Class, +1 Saving Throws, +5% Magic Resistance, +5% critical hit chances with all weapons
+– Armor Class: +1 (+2 if True Neutral)
+– Magic Resistance: +5% (10% if morally neutral; 20% if True Neutral)
+– Attack damage: +1 (morally neutral only)
+– Saving Throws: +2 (True Neutral only)
+– Critical Hit Chances: +5% (all weapons; True Neutral only)
 
 Combat abilities:
 – Strikes as a +5 weapon for the purposes of overcoming weapon immunities
-– Damage and THAC0 bonuses depend on how far a target's alignment strays from True Neutral:
+– Extra damage and THAC0 apply depending on how far a target's alignment strays from True Neutral:
   vs. Lawful Neutral and Chaotic Neutral: +1 THAC0, +1 slashing and magic damage
   vs. Neutral Good, Neutral Evil: +2 THAC0, +2 slashing and magic damage
   vs. Other Alignments: +3 THAC0, +3 slashing and magic damage
 
 THAC0: +3
-Damage: 1d8+3
-Damage type: Slashing
+Damage: 1d8+3 (slashing)
 Speed Factor: 0
 Proficiency Type: Long Sword
 Type: One-handed
