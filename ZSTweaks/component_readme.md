@@ -832,7 +832,7 @@ This makes this cursed armor more of a mix of penalties and benefits, which make
 
 Based on the description, while wearing the armor, the following benefit is added:
 
-Undead Ward: Any friendly undead within 15 ft. of the wearer is granted a +4 bonus to Armor Class, a +2 bonus to Saving Throws, a +12% resistance to physical damage, and a +25% to magical damage. Does not stack with itself.
+Undead Ward: Any friendly undead within 15 ft. of the wearer is granted the following bonuses: +4 Armor Class, a +2 Saving Throws, +12% resistance to physical damage, and +25% to magical damage. Does not stack with itself.
 
 ### Make Jester's Chain +4 more distinctive (1404) (BG2EE EET)
 
@@ -945,8 +945,6 @@ This dagger is improved in the following way:
 
 - Weakening poison: targets poisoned by it suffer a -1 penalty to all saving throws, Strength, Dexterity, and Constitution. Does not stack.
 - Extra poison damage: targets that are poisoned *by this dagger* receive extra 1d4 poison damage *by this dagger* each hit.
-
-This should keep it extra relevant even when finding higher-enchantment weapons.
 
 </details>
 
@@ -1915,7 +1913,7 @@ Finally, there are configuration options to set the following:
 - Spell chunks when it succeeds at killing (ON by default)
 - Spell can be set as Divination, or Enchantment instead of Conjuration (Divination by default)
 - Bypasses Magic resistance when killing creatures with HP <= 60 or <= 10 HD (ON by default).
-- A HP hard limit can be established after which the creature is always immune (default: 150 HP)
+- A HP (current) hard limit can be established after which the creature is always immune (default: 150 HP)
 
 ### Make Otiluke's Resilient Sphere protect NPCs marked as innocents (487) (IWDEE BGEE BG2EE EET)
 
@@ -2255,7 +2253,7 @@ Unholy Word is identical in the benefits, except demiliches are not affected by 
 
 ### Make Sanctuary match the IWD version (5400) (IWDEE BGEE BG2EE EET)
 
-The much-better looking animation in IWDEE is used in BG, and the duration is not closer to IWD, which scales. Now it lasts 1 turn plus 1 round per level.
+The much-better looking animation in IWDEE is used in BG, and the duration is now closer to IWD's, which scales (1 turn plus 1 round per level).
 
 ### Make Hold Animal affect many more beast types (5402) (IWDEE BGEE BG2EE EET)
 
@@ -2273,6 +2271,19 @@ It's difficult to justify using this spell, so I decided to expand it a bit. It'
 - Ettercaps
 - Hook Horrors (if they exist)
 - Chimeras (some mods add them)
+
+### Make Cloud of Pestilence more effective and closer to its PnP version (5440) (IWDEE BGEE BG2EE EET)
+
+The spell is pretty much useless in its original form. Drawing inspiration from PnP, the spell now works as follows:
+
+- Lasts 1 full turn now
+- The caster and non-living creatures take 1d8 poison and 1d4 magic damage each round
+- If a Saving Throw vs Breath is failed, the creature becomes sick in three stages, each stage requiring another failed save, and lasting one turn unless stated otherwise:
+  - 1st stage: Nauseated, incurs in a -2 penalty to THAC0 and -3 to Strength
+  - 2nd stage: Coughing fits prevent spellcasting as if under Silence, movement speed is cut in half, and APR is reduced by 1/2.
+  - 3rd stage: Permanently blinded until cured, suffers 6 points of poison damage each round for 1 turn.
+- Does not wake up sleeping targets, cannot be magically resisted. Effects can be cured by Cure Disease and similar.
+- Disease or stages don't stack. Extra damage by more than one cloud does apply.
 
 </details>
 
@@ -2649,7 +2660,6 @@ Traps are a common way to cheese tough fights. This component alleviates it in s
 - Specific types of creatures are always immune
   - By type: liches, demiliches, and dragons are immune. (Optional, ON by default)
   - By specific power: anyone of level 25 or above are immune. (Optional, OFF by default)
-  - By specific fame or infamy: a user-definable list of "boss-type" creatures are always immune. Demogorgon, Amelyssan and every other ToB boss, Irenicus, Kangaxx (both), named Dragons, Aran Linvail, Bodhi...
 - Any specific creature can only be affected by a trap once per second. This prevents trap stacking becoming a cheesy way of doing extreme damage suddenly. (ON by default)  
 - Limit the amount of traps permitted at a time (1-6) (OFF by default)
 
@@ -2674,6 +2684,7 @@ Wisdom: 16 to 18
 Immune to critical hits
 
 Their attacks are poisonous:
+
 - 25% chance per hit to inflict a permanent disease (until cured) that decreases Strength, Dexterity and Constitution by 3.
 - After the disease is inflicted, the target takes 2d6 poison damage and a deadly poison is injected.
 - The poison has a chance random chance to kill a target in 1, 2, or 3 rounds.
