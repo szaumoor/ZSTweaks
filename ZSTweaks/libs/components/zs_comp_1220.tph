@@ -6,7 +6,8 @@ ACTION_IF is_bg2ee_or_eet BEGIN
   DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode = 9 parameter1 = 6 parameter2 = 2359317 END END
   LAF CREATE_EQ_EFF STR_VAR filename="zstwras2" END // color pulse
 
-  COPY_EXISTING ~sw1h33a.itm~ ~override~
+  COPY_EXISTING ~sw1h33.itm~  ~override~
+                ~sw1h33a.itm~ ~override~
                 ~sw1h33c.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6700) END
 
