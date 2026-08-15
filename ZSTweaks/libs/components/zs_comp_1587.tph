@@ -21,10 +21,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
   LAF CREATE_TG_SPL STR_VAR filename = "zstwtrr2" END // killing effect
 
   COPY_EXISTING ~ring95.itm~ ~override~
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=206,p2=zstwtrr2~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=206,res=zstwtrr2~ END
 
   COPY_EXISTING ~ring95.itm~ ~override~
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=206,p2=zstwtrr2~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=206,res=zstwtrr2~ END
 
   COPY_EXISTING "rods05.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7640) END
