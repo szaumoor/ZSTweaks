@@ -1933,7 +1933,7 @@ Small QoL addition. BeamDog already had done an awesome thing by making it possi
 
 ### Make Glyph of Warding do damage on a failed save and extend damage up to level 20 (100) (IWDEE BGEE BG2EE EET)
 
-Most damaging spells that can be completely avoided are a waste of a spell slot. Thus, it will always cause half damage. Additionally, it extends the headers up to level 20, such that the damage grows to 20d4 instead of 18d4.
+Most damaging spells that can be completely avoided are a waste of a spell slot. Thus, it will always cause half damage. Additionally, it extends the headers up to level 20 and added +1 extra damage on even levels, such that the damage grows to 20d4+10 (vanilla is 18d4).
 
 ### Make Flame Blade be more effective vs. undead, and last for as long as it does in IWDEE (101) (IWDEE BGEE BG2EE EET)
 
@@ -1959,7 +1959,7 @@ This uses the same filename and the same effect as in IWDEE, and it attempts to 
 
 ### Make Goodberries more genuinely useful (240) (IWDEE BGEE BG2EE EET)
 
-Conceptually, I think it's a cool spell for druids and rangers, but it's not too useful. Now it heals 2d4 immediately, adds regeneration of 1 HP per turn for 20 turns, generates 6 berries with each casting, and stacks to 12. Regeneration does not stack.
+Conceptually, I think it's a cool spell for druids and rangers, but it's not too useful. Now it heals 2d4 immediately, adds regeneration of 1 HP per turn for 20 turns, generates 10 berries with each casting, and stacks to 12. Regeneration does not stack.
 
 ### Make Earthquake more effective and disable annoyances (250) (BGEE BG2EE EET)
 
@@ -2663,7 +2663,7 @@ Traps are a common way to cheese tough fights. This component alleviates it in s
 - Any specific creature can only be affected by a trap once per second. This prevents trap stacking becoming a cheesy way of doing extreme damage suddenly. (ON by default)  
 - Limit the amount of traps permitted at a time (1-6) (OFF by default)
 
-Bear in mind the tweak might not work as intended if a previous tweak changes how they work, specifically what their effects are.
+Bear in mind the tweak might not work as intended if a previous tweak changes how they work, specifically what their effects are. This also only affects the basic Set Snare ability.
 
 ### Make Pit Fiends comparable to Balors in power, improving the Gate spell (3210) (BG2EE EET)
 

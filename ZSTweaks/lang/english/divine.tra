@@ -9,7 +9,7 @@ Casting Time: 9
 Area of Effect: 12-ft. radius
 Saving Throw: 1/2
 
-A Glyph of Warding is a powerful inscription magically drawn to prevent unauthorized or hostile creatures from passing, entering, or opening. It can be used to guard a small bridge, to ward an entry, or as a trap on a chest or box. Any creature violating the warded area is subject to the magic it stores, although a successful Saving Throw vs. Spell enables the creature to take only half of the damage. When the spell is cast, the priest weaves a tracery of faintly glowing lines around the warding sigil. When the glyph is activated, it deals 1d4 points of electrical damage per level of the caster, up to 20d4.~
+A Glyph of Warding is a powerful inscription magically drawn to prevent unauthorized or hostile creatures from passing, entering, or opening. It can be used to guard a small bridge, to ward an entry, or as a trap on a chest or box. Any creature violating the warded area is subject to the magic it stores, although a successful Saving Throw vs. Spell enables the creature to take only half of the damage. When the spell is cast, the priest weaves a tracery of faintly glowing lines around the warding sigil. When the glyph is activated, it deals 1d4 points of electrical damage plus 1 additional point at even levels, up to 20d4+10.~
 
 @5010 = ~Bless
 (Conjuration/Summoning)
@@ -62,7 +62,7 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
 
-Casting a Goodberry spell creates 6 magical berries that the caster can carry with <PRO_HIMHER>. Each berry restores 2d4 Hit Points when eaten and grants a slow regeneration of 1 HP per turn for 8 hours.~
+Casting a Goodberry spell creates 10 magical berries that the caster can carry with <PRO_HIMHER>. Each berry restores 2d4 Hit Points when eaten and grants a slow regeneration of 1 HP per turn for 8 hours.~
 
 @5070 = ~Created by the Goodberry spell, these simple-looking blueberries will heal 2d4 points of damage for each handful of berries eaten and help the body heal faster for 8 hours.
 

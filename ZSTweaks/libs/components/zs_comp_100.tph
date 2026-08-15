@@ -10,4 +10,6 @@ ACTION_IF NOT is_iwdee BEGIN
 
     END
 
+   LPF ALTER_EFFECT_EX INT_VAR match_opcode = 12 STR_VAR parameter1_ex = "( o_dicenumber / 2 )" END
+
 END
