@@ -6,7 +6,7 @@
 
 ////////////////////////////// Misc \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-OUTER_SET zs_debug                  = "1" // Mod is slower when on. Don't turn on (or leave on) unless you know what you're doing
+OUTER_SET zs_debug                  = "0" // Mod is slower when on. Don't turn on (or leave on) unless you know what you're doing
 OUTER_SET crash_if_var_errors_found = "1" // crashes the installation of the mod (any component) if any values in the preferences are outside the valid ranges. This is the only variable that immediately forces a crash if it's not set to either 0 or 1
 
 ////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -398,7 +398,7 @@ OUTER_SET zst_3150_drow_mr_pctg_of_base = "75"
 OUTER_SET zst_3180_immunity_by_type  = "1" // liches, demiliches, and dragons
 OUTER_SET zst_3180_immunity_by_power = "0" // immune if level 25 or above
 OUTER_SET zst_3180_only_once_per_sec = "1" // traps only affect a single creature once per second, can't rapidly stack
-OUTER_SET zst_3180_modify_trap_limit = "0" // Use a positive number to change the name of traps allowed (vanilla default is 6)
+OUTER_SET zst_3180_modify_trap_limit = "0" // Use a positive number to change the name of traps allowed (0 means don't change; vanilla default is 6)
 
 /////////////////////////////// End-of-installation tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

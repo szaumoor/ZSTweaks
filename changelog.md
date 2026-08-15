@@ -119,6 +119,9 @@
   - Increased the effect duration for targets with 12 or more HD from 4 to 5, and for targets with 8–11 HD from 5 to 7.
   - Added console feedback identifying the tier and duration applied to each target.
 - Bow of Mana's Casting Failure effect now succeeds regardless of magic resistance, but remaining dispellable.
+- Glyph of Warding component boosts its damage slightly more, adding +1 electricity damage at even levels, up to 20d4+10 at level 20 (30-90 damage, save to take half).
+- Increased the amount of berries created by Goodberry further, from 6 to 10 per casting
+- Increased the damage that Ethereal Retribution does (Shaman Quest spell) further to 6d8 (from 6d6; 3d8 in vanilla)
 
 ## New Components
 
