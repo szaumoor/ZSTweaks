@@ -94,7 +94,7 @@ DEFINE_ACTION_MACRO scroll_creating BEGIN
                             END
 
                             ++scrolls
-                            LPF ALTER_EFFECT INT_VAR match_opcode=op parameter2=1 resist_dispel=0 power=0 STR_VAR resource=~%prefix%%number%~ END
+                            LPF ALTER_EFFECT INT_VAR match_opcode=op parameter2=1 parameter1=0 resist_dispel=0 power=0 STR_VAR resource=~%prefix%%number%~ END
                         END
                     END
                 END
