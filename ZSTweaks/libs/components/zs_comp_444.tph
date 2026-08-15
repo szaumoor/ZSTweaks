@@ -30,18 +30,18 @@ END
 
 ACTION_IF zst_444_stone_flesh BEGIN
 
-    OUTER_SPRINT effects ~pwr=0,rd=0,op=326,p2=105,p1=%class_golem_stone%,res=ZSTFSHST,ip=0~
+    OUTER_SPRINT effects ~op=318,res=%SOURCE_RES%;op=326,res=zstfshst~
     COPY ~%MOD_FOLDER%/spells/arcane/stone_flesh~ ~override~
 
     COPY_EXISTING ~spwi625.spl~ ~override~
         LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@8640) END
-        LPF ADD_SPL_TGTEFF STR_VAR effects = ~%effects%~ END
+        LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 ip=0 p2=105 p1=class_golem_stone STR_VAR effects = ~%effects%~ END
 
     ACTION_IF NOT is_iwdee BEGIN
 
         COPY_EXISTING ~scrlpet.itm~ ~override~
             LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@8641) END
-            LPF ADD_ON_HIT_EFF STR_VAR effects = ~%effects%~ END
+            LPF ADD_ON_HIT_EFF INT_VAR rd=0 pwr=0 ip=0 p2=105 p1=class_golem_stone STR_VAR effects = ~%effects%~ END
 
     END
 
