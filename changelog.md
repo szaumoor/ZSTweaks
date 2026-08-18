@@ -7,5 +7,5 @@
 ## Modifications
 
 - Dagger of Venom modification now patches the upgraded version of the Dagger of Venom created by Thalantyr. This version deals a bit more poison damage than the base one. Optionally, the BG2 version sold by Gul Dukeem will actually be the upgraded version, if desired. Price will be adjusted accordingly. (TODO)
-- Short Sword of Backstabbing modification also patches the upgraded version thereof (Sword of the Murderer) created by Thalantyr, which increase critical hit chance by 5% and adds a rebalanced chance to paralyze on contact on backstabs and also regular attacks. (TODO)
+- Short Sword of Backstabbing modification also patches the upgraded version thereof (Sword of the Murderer) created by Thalantyr, which increase critical hit chance by 5% and adds a rebalanced chance to paralyze on contact on backstabs and also regular attacks. This also fixes in passing certain issues in the item, such as the paralysis portrait icon bypassing resistance but the paralysis itself unable to do so. The entire effect can bypass resistance.
 - Upgraded Cloak of Nondetection from Thalantyr Item Upgrade mod is now handled by the relevant component in this mod.

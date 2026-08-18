@@ -1,4 +1,49 @@
 COPY ~%MOD_FOLDER%/items/shadow_blade~ ~override~
-COPY_EXISTING "sw1h10.itm" ~override~
-  LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7670) END
+
+DEFINE_PATCH_MACRO common BEGIN
   LPF ADD_EQUIPPED_EFF INT_VAR p1=class_thief p2=5 STR_VAR effects=~op=177,res=zstwshb0;op=177,res=zstwshb1~ END
+END
+
+COPY_EXISTING "sw1h10.itm"   ~override~
+              "thsw1h01.itm" ~override~
+  LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7670) END
+  LPM common
+
+ACTION_IF is_bgee_or_eet AND has_thalantyr_upgrade BEGIN
+
+  DEFINE_PATCH_MACRO patch_file BEGIN
+    PATCH_IF has_eefixpack BEGIN
+      LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 pro1=39 STR_VAR effects=~op=318,p2=110,p1=%splstate_fp_hold_immunity%,res=%DEST_RES%~ END
+    END
+    LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 pro1=39 dur=12 stype=4 sbonus="-2" STR_VAR effects=~op=109,p2=2;op=142,p2=13~ END
+  END
+  LAF CREATE_TG_SPL STR_VAR filename = "zstswbd0" END // paralyze backstab 12 seconds (assassin)
+
+  COPY_EXISTING ~zstswbd0.spl~ ~override/zstswbd1.spl~ // paralyze backstab 12 seconds (not assassin)
+    LPF ALTER_EFFECT INT_VAR match_savingthrow = 4 savebonus = 0 END
+
+  COPY_EXISTING ~zstswbd0.spl~ ~override/zstswb2.spl~ // paralyze regular attacks (assassin)
+    LPF ALTER_EFFECT INT_VAR match_duration = 12 duration = 6 END
+    LPF ALTER_EFFECT INT_VAR match_probability1 = 39 probability1 = 100 END
+
+  COPY_EXISTING ~zstswbd1.spl~ ~override/zstswb3.spl~ // paralyze regular attacks (not assassin)
+    LPF ALTER_EFFECT INT_VAR match_duration = 12 duration = 6 END
+    LPF ALTER_EFFECT INT_VAR match_probability1 = 39 probability1 = 100 END
+
+  DEFINE_PATCH_MACRO patch_file BEGIN
+    LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 tgt=1 STR_VAR effects=~op=326,tgt=1,p2=109,p1=%kit_assassin%,res=zstswbd0;op=326,p2=%zs_not_equal_kit%,p1=%kit_assassin%,res=zstswbd1~ END
+  END
+  LAF CREATE_TG_SPL STR_VAR filename = "zstswbd4" END // intermediate spell to decide if wielder is assassin or not (backstab)
+
+  COPY_EXISTING ~zstswbd4.spl~ ~override/zstswb5.spl~ // intermediate spell to decide if wielder is assassin or not (not backstab) 
+    LPF ALTER_EFFECT STR_VAR match_resource = "zstswbd0" resource = "zstswb2" END
+    LPF ALTER_EFFECT STR_VAR match_resource = "zstswbd1" resource = "zstswb3" END
+
+  COPY_EXISTING "thsw1h01.itm" ~override~
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7671) END
+    LPM common
+    LPF DELETE_EFFECT_EX INT_VAR check_globals = 0 STR_VAR match_resource_ex = "(NOT (~%o_resource%~ STR_EQ ~zstwy3~) )" END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=146,p2=1,res=zstswb5,pro1=4~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p2=1,p1=1;op=340,res=zstswbd4~ END
+
+END
