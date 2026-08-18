@@ -1,5 +1,9 @@
 # Changelog
- 
+
+## Fix
+
+- Deleted duplicated variable assignment for the group component of trap cheese
+
 ## Modifications
 
 - Dagger of Venom modification now patches the upgraded version of the Dagger of Venom created by Thalantyr. This version deals a bit more poison damage than the base one. Optionally, the BG2 version sold by Gul Dukeem will actually be the upgraded version, if desired. Price will be adjusted accordingly. (TODO)
