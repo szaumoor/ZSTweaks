@@ -396,6 +396,26 @@ Requires:
 
 Weight: 2~
 
+@8571 = ~This dagger is a potent blade favored by assassins all across the realms. This particular dagger of venom was created for use by the Shadow Thieves of Amn. Every time it hits an opponent, it secretes a weakening venom into the bloodstream of the creature. The venom works quickly and efficiently.
+
+Now upgraded by Thalantyr, it has become an even more dangerous weapon in the hands of a skilled assassin.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target must Save vs. Death or suffer 1 point of poison damage per second for 18 seconds. While poisoned, they take 1d6 extra poison damage from each hit of the dagger.
+– Weakening Toxin: Strength, Dexterity, Constitution, and Saving Throws are damaged by 2 while poisoned. This does not stack.
+  
+THAC0: +3
+Damage: 1d4+3 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 2~
+
 @50110 = ~<CHARNAME> arranged to have this dagger constructed out of the soporiferous Pixie Prick and the deadly Boneblade. The result is a weapon worthy of any assassin.
 
 STATISTICS:

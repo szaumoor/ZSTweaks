@@ -178,5 +178,10 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
         PRINT "[INFO]: Will O' Wisp Drider component detected"
     END
 
+    OUTER_SET has_thalantyr_upgrade = MOD_IS_INSTALLED "thalan.tp2" "0"
+    ACTION_IF has_thalantyr_upgrade BEGIN
+        PRINT "[INFO]: Thalantyr Item Upgrade component detected"
+    END
+
     OUTER_SET zs_preinstall_check = 1
 END
