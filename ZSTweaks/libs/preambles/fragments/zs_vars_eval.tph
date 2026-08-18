@@ -844,6 +844,13 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         END
     END
 
+    
+    ACTION_IF zst_1675_cloak_displacement_dr <= 0 OR zst_1675_cloak_displacement_dr > 10 BEGIN
+        WARN "[WARN]: Setting to determine damage resistance in Cloak of Displacement should be between 0 to 10. Actual value: %zst_1675_cloak_displacement_dr%"
+        LAM f_plus
+    END
+
+
     // ----------------------------------------MISC ITEM FUNCTIONAL TWEAKS------------------------------------------------- \\
 
     ACTION_IF zst_1997_kuotoa != 0 AND zst_1997_kuotoa != 1 BEGIN
@@ -895,6 +902,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
     ACTION_IF zst_1000_store_additions = 0 AND zst_1000_sbonus = 0 BEGIN
         WARN "[WARN]: No tweaks were selected in the Poisoned Throwing Dagger component, leading to no changes."
+        LAM f_plus
+    END
+
+    ACTION_IF zst_1563_thalantyr_upgrade_in_bg2 != 0 AND zst_1563_thalantyr_upgrade_in_bg2 != 1 BEGIN
+        WARN "[WARN]: Setting to make improved Dagger of Venom of Thalantyr Item Upgrade mod the default in BG2EE should be set to 0 (disable) or 1 (enable). Actual value: %zst_1563_thalantyr_upgrade_in_bg2%"
         LAM f_plus
     END
 

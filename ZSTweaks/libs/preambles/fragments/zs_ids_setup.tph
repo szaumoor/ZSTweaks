@@ -259,6 +259,7 @@ ACTION_IF !VARIABLE_IS_SET zs_ids_setup BEGIN
 
     OUTER_SET splstate_blue_fireshield          = IDS_OF_SYMBOL(splstate BLUE_FIRESHIELD)
     OUTER_SET splstate_red_fireshield           = IDS_OF_SYMBOL(splstate RED_FIRESHIELD)
+    OUTER_SET splstate_cannot_turn_invisible    = IDS_OF_SYMBOL(splstate CANNOT_TURN_INVISIBLE)
     OUTER_SET splstate_fp_charm_immunity        = IDS_OF_SYMBOL(splstate CHARM_IMMUNITY)
     OUTER_SET splstate_fp_sleep_immunity        = IDS_OF_SYMBOL(splstate SLEEP_IMMUNITY)
     OUTER_SET splstate_fp_stun_immunity         = IDS_OF_SYMBOL(splstate STUN_IMMUNITY)

@@ -1,25 +1,75 @@
 //  RESOURCE DEFINITION
 DEFINE_PATCH_MACRO patch_file BEGIN
-    LPF ADD_SPL_TGTEFF INT_VAR pwr=0 p1="-1" dur=15 STR_VAR effects = ~op=321,dur=0,res=%DEST_RES%;op=44;op=15;op=10;op=325~ END
+    LPF RGB INT_VAR red = 0 blue = 120 green = 10 RET color = result END
+    SET loc_fade_speed = 3 + ( 20 << 16 )
+    LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 dur=15 STR_VAR effects = ~op=25,p2=2,p1=1;op=9,p1=%color%,p2=%loc_fade_speed%;op=142,p2=6~ END
 END
-LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn0" END // weakening when poisoned
+LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn0" END // poison effect
 
 DEFINE_PATCH_MACRO patch_file BEGIN
-    LPF ADD_SPL_TGTEFF STR_VAR effects = ~pwr=0,op=12,p2=%op12_poison%,dsize=4,dnum=1,spec=1024~ END
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=0 p1="-1" rd=0 dur=15 STR_VAR effects = ~op=321,p1=0,dur=0,res=%DEST_RES%;op=44;op=15;op=10;op=325~ END
 END
-LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn1" END // extra damage when poisoned
+LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn1" END // weakening when poisoned
 
 DEFINE_PATCH_MACRO patch_file BEGIN
-    LPF ADD_SPL_TGTEFF STR_VAR effects = ~pwr=0,op=206,res=zstdgvn1,dur=1~ END
+    LPF ADD_SPL_TGTEFF INT_VAR pwr=0 rd=0 STR_VAR effects = ~op=12,p2=%op12_poison%,dsize=4,dnum=1,spec=1024~ END
 END
-LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn2" END // protection vs extra poison dmg until it can trigger
+LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn2" END // extra damage when poisoned
 
 DEFINE_PATCH_MACRO patch_file BEGIN
-    LPF ADD_SPL_TGTEFF STR_VAR effects = ~pwr=0,op=206,res=zstdgvn2,dur=15~ END
+    LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 STR_VAR effects = ~op=206,res=zstdgvn2,dur=1~ END
 END
-LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn3" END // protection vs spell that protects vs extra poison dmg, to unlock it
+LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn3" END // protection vs extra poison dmg until it can trigger
+
+DEFINE_PATCH_MACRO patch_file BEGIN
+    LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 STR_VAR effects = ~op=206,res=zstdgvn3,dur=15~ END
+END
+LAF CREATE_TG_SPL STR_VAR filename= "zstdgvn4" END // protection vs spell that protects vs extra poison dmg, to unlock it
 // RESOURCE DEFINITION END
 
 COPY_EXISTING ~misc75.itm~ ~override~
+              ~misc75_.itm~ ~override~ // eet version from bgee
     LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8570) END
-    LPF ADD_ON_HIT_EFF INT_VAR p2=1 STR_VAR effects = ~op=146,res=zstdgvn0,stype=4;op=146,res=zstdgvn2;op=146,res=zstdgvn1;op=146,res=zstdgvn3,stype=4~ END
+    LPF DELETE_EFFECT_EX INT_VAR check_globals = 0 STR_VAR match_resource_ex = "(NOT (~%o_resource%~ STR_EQ ~zstwd2~) )" END
+    LPF ADD_ON_HIT_EFF INT_VAR p2=1 STR_VAR effects = ~op=318,res=%SOURCE_RES%,p2=55;op=318,res=%SOURCE_RES%,p2=77;op=146,res=zstdgvn0,stype=4;op=146,res=zstdgvn1,stype=4;op=146,res=zstdgvn3;op=146,res=zstdgvn2;op=146,res=zstdgvn4,stype=4~ END
+IF_EXISTS
+
+ACTION_IF has_thalantyr_upgrade OR (is_bg2ee_or_eet AND zst_1563_thalantyr_upgrade_in_bg2) BEGIN
+
+    COPY_EXISTING ~zstdgvn0.spl~ ~override/zstdgvn5.spl~ // moar poison
+        LPF ALTER_EFFECT INT_VAR match_duration=15 duration=18 END
+
+    COPY_EXISTING ~zstdgvn1.spl~ ~override/zstdgvn6.spl~ // moar weakening
+        LPF ALTER_EFFECT_EX STR_VAR match_parameter1_ex = "(o_parameter1 == ~-1~)" parameter1_ex = "(THIS - 1)~" END
+
+    COPY_EXISTING ~zstdgvn2.spl~ ~override/zstdgvn7.spl~ // moar damage per hit
+        LPF ALTER_EFFECT INT_VAR match_dicesize=4 dicesize = 6 END
+
+    COPY_EXISTING ~zstdgvn3.spl~ ~override/zstdgvn8.spl~ // protection vs poison
+        LPF ALTER_EFFECT INT_VAR match_resource="zstdgvn2" resource = "zstdgvn7" END
+
+    COPY_EXISTING ~zstdgvn4.spl~ ~override/zstdgvn9.spl~ // protection vs protection vs poison
+        LPF ALTER_EFFECT INT_VAR match_resource="zstdgvn3" resource = "zstdgvn8" END
+
+END
+
+ACTION_IF has_thalantyr_upgrade BEGIN
+
+    COPY_EXISTING ~thdagg01.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@8571) END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 1 END
+        LPF DELETE_EFFECT_EX INT_VAR check_globals = 0 STR_VAR match_resource_ex = "(NOT (~%o_resource%~ STR_EQ ~zstwd3~) )" END
+        LPF ADD_ON_HIT_EFF INT_VAR p2=1 STR_VAR effects = ~op=318,res=%SOURCE_RES%,p2=55;op=318,res=%SOURCE_RES%,p2=77;op=146,res=zstdgvn5,stype=4;op=146,res=zstdgvn6,stype=4;op=146,res=zstdgvn8;op=146,res=zstdgvn7;op=146,res=zstdgvn9,stype=4~ END
+
+END
+
+ACTION_IF is_bg2ee_or_eet AND zst_1563_thalantyr_upgrade_in_bg2 BEGIN
+
+    COPY_EXISTING ~misc75.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_name = RESOLVE_STR_REF(@8572) id_desc = RESOLVE_STR_REF(@8571) ench=3 price=12000 END
+        LPF ALTER_HEADER INT_VAR damage = 3 to_hit = 3 speed = 0 END
+        LPF DELETE_EFFECT_EX INT_VAR check_globals = 0 STR_VAR match_resource_ex = "(NOT (~%o_resource%~ STR_EQ ~zstwd2~) )" END
+        LPF ALTER_EFFECT INT_VAR silent=1 STR_VAR match_resource = "zstwd2" resource = "zstwd3" END 
+        LPF ADD_ON_HIT_EFF INT_VAR p2=1 STR_VAR effects = ~op=318,res=%SOURCE_RES%,p2=55;op=318,res=%SOURCE_RES%,p2=77;op=146,res=zstdgvn5,stype=4;op=146,res=zstdgvn6,stype=4;op=146,res=zstdgvn8;op=146,res=zstdgvn7;op=146,res=zstdgvn9,stype=4~ END
+
+END

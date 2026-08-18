@@ -161,6 +161,9 @@ OUTER_SET zst_1664_crits_iouns    = "0"
 OUTER_SET zst_1664_crits_circlets = "0"
 OUTER_SET zst_1664_crits_selected = "1" // default, only a few protect vs. critical hits
 
+// dr for cloak of displacement
+OUTER_SET zst_1675_cloak_displacement_dr = "5"
+
 // allows tweaks to give usability to items in the game as defined in component 1997
 OUTER_SET zst_1997_kuotoa = "1"
 OUTER_SET zst_1997_orb    = "1"
@@ -174,6 +177,9 @@ OUTER_SET zst_1997_shadow = "1"
 OUTER_SET zst_1000_sbonus          = "-2"  // saving throw penalty, a value of 0 disables that part of the component, -10 max
 OUTER_SET zst_1000_store_additions = "1"   // increase the stock of poisoned daggers
 OUTER_SET zst_1000_stack_mult      = "120" // percentage multiplier for the number of stacks of poisoned throwing daggers inserted. For example, if you only want half, you'd set this to 50, if you want 20% more, you'd set it to 120. Values of zero and below are ignored.
+
+// This makes my version of the upgraded Dagger of Venom (based on Thalantyr's Item Upgrade mod the default in BG2 -- sold by Gol Dukeem)
+OUTER_SET zst_1563_thalantyr_upgrade_in_bg2 = "1"
 
 ////////////////////////////// Two-handed weapons tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

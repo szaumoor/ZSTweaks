@@ -550,6 +550,8 @@ This makes the bracers far more worth the trouble for paladins. Instead of just 
 
 This makes the cloak more useful for the purpose of avoiding detection, since Non-Detection is an unremarkable protection. As such, the wearer is also immune to other invisibility-detecting spells, except True Sight. Additionally, it adds a 10% bonus to Move Silently and a +5% critical hit chance for 2 rounds while the user is invisible; this effect may trigger once per turn (watch out for the red glow on the character).
 
+This patches the Thalantyr's Item Upgrade mod so the upgraded cloak has my benefits and the ones the original mod adds, which is invisibility for 12 hours, and the benefits of a cloak of protection +1. There's a configuration option that can make the BG2 version of this item the upgraded version of Thalantyr's Item Upgrade mod for continuity's sake, if so desired.
+
 ### Make Cloak of Displacement add +5% damage resistance (1675) (IWDEE BGEE BG2EE EET)
 
 Makes the cloak add "displacement" in the same way as "displacement" is faked with things like Shadow Form and Spirit Form, i.e., damage resistance. In this case, just +5% damage resistance (universal).
@@ -946,6 +948,8 @@ This dagger is improved in the following way:
 - Weakening poison: targets poisoned by it suffer a -1 penalty to all saving throws, Strength, Dexterity, and Constitution. Does not stack.
 - Extra poison damage: targets that are poisoned *by this dagger* receive extra 1d4 poison damage *by this dagger* each hit.
 
+This will patch the upgraded version of Thalantyr's Item Upgrade mod in BGEE, granting it a slight increase in power (1d6 extra poison damage, poisoning for 18 seconds, -2 weakness) based on my design. There is also a configuration option which makes the BG2 version identical to this upgraded version, for continuity's sake, if so desired.
+
 </details>
 
 ---
@@ -1299,6 +1303,8 @@ The unique description without any unique functionality bothers me, therefore:
 - +2 Main Hand THAC0 (single-classed thieves only)
 
 These bonuses are limited to single-classed thieves because they need them more, I want to promote specialization, and for balance, since multiclassed thieves have other means of increasing their THAC0 and general damage.
+
+This will patch Thalantyr's Item Upgrade mod so the version is in line with my changes. Mainly, I rebalance the paralyzing effect, giving Assassins a slight edge if they are the wielder, and I add a +5% critical hit chance bonus. There's a configuration option that can make the BG2 version of this sword become the upgraded version of Thalantyr's Item Upgrade mod, for continuity's sake, if so desired.
 
 ### Make Cutthroat unique in function (1598) (BG2EE EET)
 
