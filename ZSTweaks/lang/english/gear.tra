@@ -812,7 +812,7 @@ Equipped abilities:
 
 Charge abilities:
 – Invisibility twice per day
-  Special: Become invisible until the duration runs out, it's dispelled, or they perform a hostile action
+  Special: Become invisible until the duration runs out, it's dispelled, or they perform a hostile action. This invisibility cannot be broken by divinations while the cloak is on.
   Duration: 12 hours
   Area of Effect: The user
 
@@ -823,7 +823,7 @@ Weight: 3~
 STATISTICS:
 
 Equipped abilities:
-– Armor Class: +4 vs. missile
+– Armor Class: +1, +4 vs. missile
 – Damage Resistance: +%zst_1675_cloak_displacement_dr%%
 – Saves vs. Death, Breath, and Wand: +2
 
