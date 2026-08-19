@@ -45,10 +45,13 @@ DEFINE_ACTION_MACRO scroll_creating BEGIN
     OUTER_SET scrolls = 0
     OUTER_SPRINT prefix "rpsc"
 
+    ACTION_IF zs_debug BEGIN
+        LAF LOG_TEXT INT_VAR predicate_stdout=FALSE STR_VAR flog_preamble="" filename="debug" message="-- START OF SCROLL AT CHARACTER LEVEL LOGGING --" END
+    END
+
     SILENT
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
         PATCH_IF SHORT_AT(0x1c) = 11 AND BYTE_AT(0x2a) != 0 BEGIN
-            READ_LONG 0x0c scroll_name
             PATCH_IF scrolls > 9999 BEGIN
                 PATCH_VERBOSE
                 PATCH_FAIL "[FAIL]: Too many scrolls to process!"
@@ -72,6 +75,12 @@ DEFINE_ACTION_MACRO scroll_creating BEGIN
                     PATCH_IF op = 146 OR op = 148 BEGIN
                         ++found
                         PATCH_IF found = 1 BEGIN
+
+                            PATCH_IF zs_debug BEGIN
+                                SPRINT scroll_resource "%SOURCE_RES%"
+                                READ_STRREF 0xc scroll_strref
+                            END
+                            
                             READ_ASCII ( fx_off + 0x14 ) original_spell
                             INNER_PATCH_FILE ~%original_spell%.spl~ BEGIN
                                 READ_LONG 0x64 offset
@@ -80,6 +89,7 @@ DEFINE_ACTION_MACRO scroll_creating BEGIN
                             END
 
                             INNER_ACTION BEGIN
+
                                 OUTER_SET flags = 33604096
                                 OUTER_SET type = 4
                                 OUTER_SET school = 0
@@ -91,6 +101,11 @@ DEFINE_ACTION_MACRO scroll_creating BEGIN
                                     FOR ( index=0; index < 50; ++index ) BEGIN
                                         LPM add_spell_headers
                                     END
+
+                                ACTION_IF zs_debug BEGIN
+                                    LAF LOG_TEXT STR_VAR log_level = "debug" filename = "debug" message = "Created %spell%.spl spell from spell %original_spell%.spl in scroll %scroll_resource%.itm (%scroll_strref%)" END
+                                END
+
                             END
 
                             ++scrolls
@@ -104,6 +119,10 @@ DEFINE_ACTION_MACRO scroll_creating BEGIN
 
     VERBOSE
     PRINT "[INFO]: Found %scrolls% usable scrolls for scroll scaling."
+
+    ACTION_IF zs_debug BEGIN
+        LAF LOG_TEXT INT_VAR predicate_stdout=FALSE STR_VAR flog_preamble="" filename="debug" message="-- END OF SCROLL AT CHARACTER LEVEL LOGGING --" END
+    END
 
 END
 
