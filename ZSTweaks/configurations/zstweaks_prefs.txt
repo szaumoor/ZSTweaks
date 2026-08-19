@@ -161,6 +161,9 @@ OUTER_SET zst_1664_crits_iouns    = "0"
 OUTER_SET zst_1664_crits_circlets = "0"
 OUTER_SET zst_1664_crits_selected = "1" // default, only a few protect vs. critical hits
 
+// This makes my version of the upgraded Cloak of Nondetection (based on Thalantyr's Item Upgrade mod the default in BG2) 
+OUTER_SET zst_1674_thalantyr_upgrade_in_bg2 = "1"
+
 // dr for cloak of displacement
 OUTER_SET zst_1675_cloak_displacement_dr = "5"
 
@@ -215,12 +218,16 @@ OUTER_SET zst_1580_hawksight_extra = "1"
 // allows kachiko's wakizashi (whisper) to be upgraded by cespenar
 OUTER_SET zst_1583_kachiko_upgrade = "1"
 
+// This makes my version of the upgraded Shadow Blade (based on Thalantyr's Item Upgrade mod the default in BG2 -- sold by Gol Dukeem)
+OUTER_SET zst_1596_thalantyr_upgrade_in_bg2 = "1"
+
 // balduran's sword
 // Check only ONE of these (bastard sword is the default). Failure to do so will cause installation to fail.
 OUTER_SET zst_1705_balduran_sword_as_bastard_sword      = "1"
 OUTER_SET zst_1705_balduran_sword_as_long_sword         = "0"
 // rename the sword to its name in BG3, Sword of the Emperor
 OUTER_SET zst_1705_balduran_sword_rename_emperors_sword = "0"
+
 
 ////////////////////////////// Axes & Blunt Weapon Tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

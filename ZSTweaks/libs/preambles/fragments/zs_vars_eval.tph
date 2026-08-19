@@ -843,7 +843,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
     END
-
+ 
+    ACTION_IF zst_1674_thalantyr_upgrade_in_bg2 != 0 AND zst_1674_thalantyr_upgrade_in_bg2 != 1 BEGIN
+        WARN "[WARN]: Setting to make improved Cloak of Nondetection (Whispers of Silence) of Thalantyr Item Upgrade mod the default in BG2EE should be between 0 to 10. Actual value: %zst_1674_thalantyr_upgrade_in_bg2%"
+        LAM f_plus
+    END
     
     ACTION_IF zst_1675_cloak_displacement_dr <= 0 OR zst_1675_cloak_displacement_dr > 10 BEGIN
         WARN "[WARN]: Setting to determine damage resistance in Cloak of Displacement should be between 0 to 10. Actual value: %zst_1675_cloak_displacement_dr%"
@@ -1013,6 +1017,13 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
     ACTION_IF zst_1583_kachiko_upgrade != 0 AND zst_1583_kachiko_upgrade != 1 BEGIN
         WARN "[WARN]: Setting to add a Cespenar upgrade path for Kachiko's Wakizashi should be set to 0 (disable) or 1 (enable). Actual value: %zst_1583_kachiko_upgrade%"
+        LAM f_plus
+    END
+
+    // ----------------------------------------SHADOW BLADE-------------------------------------------------------- \\
+    
+    ACTION_IF zst_1596_thalantyr_upgrade_in_bg2 != 0 AND zst_1596_thalantyr_upgrade_in_bg2 != 1 BEGIN
+        WARN "[WARN]: Setting to make Shadow Blade in BG2 the overhauled upgraded version of Thalantyr's Item Upgrade should be set to 0 (disable) or 1 (enable). Actual value: %zst_1596_thalantyr_upgrade_in_bg2%"
         LAM f_plus
     END
 

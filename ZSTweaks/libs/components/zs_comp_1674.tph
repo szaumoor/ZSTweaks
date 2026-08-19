@@ -8,6 +8,36 @@ COPY_EXISTING ~clck06.itm~ ~override~
   LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7440) END
 
 COPY_EXISTING ~thclck01.itm~ ~override~  
-  LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7442) END
+  LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7442) lore=50 price = 2000 END
+  LPF ALTER_HEADER INT_VAR match_type = 3 primary = 0 secondary = 0 END
   LPF CLONE_EFFECT INT_VAR match_opcode = 20 opcode = 318 parameter2 = 110 parameter1 = splstate_cannot_turn_invisible STR_VAR resource = "%SOURCE_RES%" insert = "first" END
 IF_EXISTS
+
+ACTION_IF is_bg2ee_or_eet AND zst_1674_thalantyr_upgrade_in_bg2 BEGIN
+
+  DEFINE_PATCH_MACRO patch_cloak BEGIN
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7442) END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=325,p1=1;op=0,p1=1~ END
+    LPF ADD_ITEM_HEADER INT_VAR target=5 charges = 2 depletion=3 flags=2**11 STR_VAR icon="spwi206b" END
+    LPF ADD_ON_HIT_EFF INT_VAR t=3 STR_VAR effects = ~op=12,dur=3600,rd=1~ END
+    LPF CLONE_EFFECT INT_VAR match_opcode=20 opcode=318 parameter2=110 parameter1=splstate_cannot_turn_invisible STR_VAR resource="%SOURCE_RES%" insert="first" END
+  END
+  // BG2EE STUFF
+  ACTION_IF is_bg2ee BEGIN
+
+    COPY_EXISTING ~clck06.itm~ ~override~  
+      LPM patch_cloak
+
+  END ELSE BEGIN
+
+    COPY_EXISTING ~clck06.itm~ ~override/zsclck06.itm~
+    COPY_EXISTING ~zsclck06.itm~ ~override~    
+      LPM patch_cloak
+
+    COPY_EXISTING ~sevpat02.cre~ ~override~
+      REMOVE_CRE_ITEM ~clck06~
+      ADD_CRE_ITEM ~zsclck06~ (0) (2) (0) ~none~ ~cloak inv~
+
+  END
+
+END
