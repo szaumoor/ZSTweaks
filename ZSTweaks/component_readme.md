@@ -32,6 +32,8 @@ Other weapon types are not affected by default, as they cannot normally be used 
 
 **Note**: Due to an engine limitation, penalties from dual-wielding affected weapons will stack. For example, an Assassin with a x7 backstab multiplier wielding two long swords (-1 penalty each) will have their multiplier reduced to x5.
 
+**WARNING**: This component should be run **before** any components that modify the proficiency types of weapons. Otherwise, the detection system for the patching will not work as intended and weird things will ensue.
+
 ### Make flails and morning stars always inflict some piercing damage (1121) (IWDEE BGEE BG2EE EET)
 
 Because both weapon types feature piercing parts, they now always inflict a small amount of piercing damage. By enchantment level:
@@ -40,6 +42,8 @@ Because both weapon types feature piercing parts, they now always inflict a smal
 - +2, +3 ⇾ 1d2 points of piercing damage
 - +4, +5 ⇾ 1d2+1 points of piercing damage
 - +6 ⇾ 1d3+1 points of piercing damage
+
+**WARNING**: This component should be run **before** any components that modify the proficiency types of weapons. Otherwise, the detection system for the patching will not work as intended and weird things will ensue.
 
 ### Make some weapon categories adjust their damage configuration (1150) (IWDEE BGEE BG2EE EET)
 
@@ -50,6 +54,8 @@ This component adjusts the base damage of several weapon categories to make them
 - **Ninjatôs, Wakizashis, and Katanas**: Kara-Turan blades now deal 2d4 (Ninjatôs/Wakizashis) and 2d5 (Katanas) base damage, increasing their minimum damage. Additionally, Wakizashis become piercing/slashing weapons (this can be configured separately).
 - **Bastard Swords**: Maximum damage is increased from 2d4 to 1d8+1, placing them in between long swords and two-handed swords in terms of damage.
 - **Two-handed Swords**: Base damage is now 1d9+1, increasing minimum damage, and those that deal 1d12 will deal 2d6, effectively making weapons in this category always have a minimum damage of 2.
+
+**WARNING**: This component should be run **before** any components that modify the proficiency types of weapons. Otherwise, the detection system for the patching will not work as intended and weird things will ensue.
 
 ### Make axes or halberds deal extra damage on critical hits (1361) (IWDEE BGEE BG2EE EET)
 
@@ -62,6 +68,8 @@ On a critical hit, affected weapons deal extra damage in a separate damage tick:
 - **Throwing Axes**: 1d6 + Enchantment
 
 For example, a critical hit with a +3 one-handed axe that deals 20 damage will inflict an additional 1d8+3 damage, for a total of 24-31. This component can be configured to affect axes and halberds independently.
+
+**WARNING**: This component should be run **before** any components that modify the proficiency types of weapons. Otherwise, the detection system for the patching will not work as intended and weird things will ensue.
 
 ### Make maces, clubs, and hammers damage the target's AC temporarily (1362) (IWDEE BGEE BG2EE EET)
 
@@ -78,9 +86,13 @@ This provides a tactical advantage when using blunt weapons, but be aware that e
 
 An optional setting in the configuration file can restrict this effect to only apply to creatures without wearable armor (e.g., dragons, umber hulks). This option is **disabled** by default.
 
+**WARNING**: This component should be run **before** any components that modify the proficiency types of weapons. Otherwise, the detection system for the patching will not work as intended and weird things will ensue.
+
 ### Make darts faster and with longer range (1435) (IWDEE BGEE BG2EE EET)
 
 This sets their speed factor to 0. It's the lightest weapon, realistically. It also makes them slightly less inconvenient by giving them a range equivalent to arrows and bolts.
+
+**WARNING**: This component should be run **before** any components that modify the proficiency types of weapons. Otherwise, the detection system for the patching will not work as intended and weird things will ensue.
 
 ### Make daggers get extra features to compensate for low damage (1440) (IWDEE BGEE BG2EE EET)
 
@@ -97,6 +109,8 @@ Daggers are often overlooked due to their low damage output. This component aims
   - **Reduced critical hit bonus damage**, with the formula `1d(Max_Weapon_Damage) + Max_Weapon_Damage`. For example, a critical hit with a kukri +2 that deals 16 damage will inflict an additional 1d6+6 (7-12) damage, for a total of 23-28 damage.
 
 **Exceptions**: Oversized daggers like Grave Binder are not affected. Other unusual daggers are handled on a case-by-case basis.
+
+**WARNING**: This component should be run **before** any components that modify the proficiency types of weapons. Otherwise, the detection system for the patching will not work as intended and weird things will ensue.
 
 ### Make thief weapons able to do 'Finesse' damage when used by pure rogues (1450) (IWDEE BGEE BG2EE EET)
 
@@ -136,6 +150,8 @@ The following items are intentionally skipped:
 
 All weapon categories are enabled by default but can be individually disabled in the configuration file.
 
+**WARNING**: This component should be run **before** any components that modify the proficiency types of weapons. Otherwise, the detection system for the patching will not work as intended and weird things will ensue.
+
 ### Make some wands more balanced (1533) (IWDEE BGEE BG2EE EET)
 
 - Wand of Magic Missiles: Casts 3 missiles instead of 1, making it generally useful for much more of the game, similarly to casting from a scroll. A single missile is often a wasted action for the round.
@@ -173,17 +189,21 @@ This improves the value of all necklaces, rings, and gems that are not magical i
 This component removes class restrictions from scrolls, allowing non-spellcasters to use them. It offers several options:
 
 - **Everyone can use scrolls**: Any character with at least 9 Intelligence can use any scroll.
-- **Everyone can use scrolls (with stat requirements)**: Any character can use scrolls, but doing so requires an attribute score of `8 + Spell Level`. Wizard scrolls require Intelligence, and priest scrolls require Wisdom. This restriction also applies to classes that could normally use scrolls.
+- **Everyone can use scrolls (with stat requirements)**: Any character can use scrolls, but doing so requires an attribute score of `8 + Spell Level`. Wizard scrolls require Intelligence, and priest scrolls require Wisdom. This restriction also applies to classes that could normally use scrolls. For example, to cast from a scroll of Finger of Death (level 7), the character requires Intelligence of at least 15 (8 + 7).
 - **Bards and Thieves can use scrolls**: Only Bards and Thieves gain the ability to use any scroll, requiring at least 9 Intelligence. This reflects their nature as resourceful jack-of-all-trades.
 - **Bards and Thieves can use scrolls (with stat requirements)**: Same as the above, but with the attribute requirements (`8 + Spell Level` in INT/WIS).
 
-This component identifies a scroll as a "priest scroll" if it is usable by any priest class; otherwise, it is considered a "wizard scroll."
+Bear in mind that under this schema, it still holds true than to use any scroll, Intelligence of at least 9 is required, regardless of whether it's a priest or mage spell. 
+
+Finally, on a technical note, this component identifies a scroll as a "priest scroll" if it is usable by any priest class; otherwise, it is considered a "wizard scroll."
 
 ### Make scrolls always cast at the character level regardless of class (1544) (IWDEE BGEE BG2EE EET)
 
 This component processes all existing scrolls in the game and makes sure they are cast at the user's character level, regardless of class. So if you have a level 16 Thief that can use scrolls by whatever means, they will cast them at level 16. This pairs well with the previous component and greatly increases the usability of scrolls as a general resource for the whole party. I would recommend enforcing stat requirements as well to keep it fairer.
 
-Also, this component cannot patch more than 9999 scrolls. You'll probably not ever find this problem, if your username isn't Endarire.
+I'm aware that other mods also offer this, but as far as I can tell, my component is the only one that allows any class at all to cast it at character level, without forcing non-mages and non-priests cast at level 1 the respective spells. This component enforces that the casting level is equal to the character's HD without fail.
+
+Also, this component cannot patch more than 9999 scrolls and it will fail if more are found. You'll probably not ever find this problem, if your username isn't Endarire.
 
 ### Make mage robes without cloaks cloaked (1650) (IWDEE BGEE BG2EE EET)
 
