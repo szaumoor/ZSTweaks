@@ -6,12 +6,16 @@ END
 
 COPY_EXISTING "sw1h10.itm"   ~override~
               "thsw1h01.itm" ~override~
-  LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7670) END
   LPM common
+IF_EXISTS
 
-ACTION_IF is_bgee_or_eet AND has_thalantyr_upgrade BEGIN
+COPY_EXISTING "sw1h10.itm"   ~override~
+  LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7670) END
+IF_EXISTS
 
-  DEFINE_PATCH_MACRO patch_file BEGIN
+ACTION_IF has_thalantyr_upgrade OR (is_bg2ee_or_eet AND zst_1563_thalantyr_upgrade_in_bg2) BEGIN
+
+    DEFINE_PATCH_MACRO patch_file BEGIN
     PATCH_IF has_eefixpack BEGIN
       LPF ADD_SPL_TGTEFF INT_VAR rd=0 pwr=0 pro1=39 STR_VAR effects=~op=318,p2=110,p1=%splstate_fp_hold_immunity%,res=%DEST_RES%~ END
     END
@@ -39,7 +43,21 @@ ACTION_IF is_bgee_or_eet AND has_thalantyr_upgrade BEGIN
     LPF ALTER_EFFECT STR_VAR match_resource = "zstswbd0" resource = "zstswb2" END
     LPF ALTER_EFFECT STR_VAR match_resource = "zstswbd1" resource = "zstswb3" END
 
+END
+
+ACTION_IF has_thalantyr_upgrade BEGIN
+
   COPY_EXISTING "thsw1h01.itm" ~override~
+    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7671) END
+    LPF DELETE_EFFECT_EX INT_VAR check_globals = 0 STR_VAR match_resource_ex = "(NOT (~%o_resource%~ STR_EQ ~zstwy3~) )" END
+    LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=146,p2=1,res=zstswb5,pro1=4~ END
+    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p2=1,p1=1;op=340,res=zstswbd4~ END
+
+END
+
+ACTION_IF is_bg2ee_or_eet AND zst_1596_thalantyr_upgrade_in_bg2 BEGIN
+
+  COPY_EXISTING "sw1h10.itm" ~override~
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7671) END
     LPM common
     LPF DELETE_EFFECT_EX INT_VAR check_globals = 0 STR_VAR match_resource_ex = "(NOT (~%o_resource%~ STR_EQ ~zstwy3~) )" END
