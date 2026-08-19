@@ -552,9 +552,11 @@ This makes the cloak more useful for the purpose of avoiding detection, since No
 
 This patches the Thalantyr's Item Upgrade mod so the upgraded cloak has my benefits and the ones the original mod adds, which is invisibility for 12 hours, and the benefits of a cloak of protection +1. There's a configuration option that can make the BG2 version of this item the upgraded version of Thalantyr's Item Upgrade mod for continuity's sake, if so desired.
 
-### Make Cloak of Displacement add +5% damage resistance (1675) (IWDEE BGEE BG2EE EET)
+### Make Cloak of Displacement add +4% damage resistance (1675) (IWDEE BGEE BG2EE EET)
 
-Makes the cloak add "displacement" in the same way as "displacement" is faked with things like Shadow Form and Spirit Form, i.e., damage resistance. In this case, just +5% damage resistance (universal).
+Makes the cloak add "displacement" in the same way as "displacement" is faked with things like Shadow Form and Spirit Form, i.e., damage resistance. In this case, just +5% damage resistance (universal). This amount of resistance can be overridden in the configuration file.
+
+Additionally, it now grants a +1 Armor Class vs. all non-missile types (won't be shown as base AC), and +4 vs. missile.
 
 ### Make Skull of Death add casting of Finger of Death and protect vs. necromantic death effects (1676) (BG2EE EET)
 
