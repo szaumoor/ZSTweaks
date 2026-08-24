@@ -282,6 +282,8 @@ OUTER_SET zst_446_fball_new_animation = "1" // new explosion animation
 
 OUTER_SET zst_447_melf_no_mr = "1" // makes Melf's Acid Arrow bypass MR, since it's conjured acid
 
+OUTER_SET zst_487_otiluke_iwd_animation = "1"
+
 OUTER_SET zst_561_web_save_nerf = "1" // enable or disable the nert to the save penalty in the web spell
 
 // power word kill config options
@@ -315,14 +317,16 @@ OUTER_SET zst_450_cure_tweaks  = "1"
 OUTER_SET zst_450_cause_tweaks = "1"
 
 // allow tweaks to particular healing/causing spells, if tweak for healing/causing is enabled
-OUTER_SET zst_450_light    = "1"
-OUTER_SET zst_450_moderate = "1"
-OUTER_SET zst_450_medium   = "1"
-OUTER_SET zst_450_serious  = "1"
-OUTER_SET zst_450_critical = "1"
-OUTER_SET zst_450_eldath   = "1"
-OUTER_SET zst_450_mass     = "1"
-OUTER_SET zst_450_harm     = "1"
+OUTER_SET zst_450_range_changes = "1"
+OUTER_SET zst_450_light         = "1"
+OUTER_SET zst_450_moderate      = "1"
+OUTER_SET zst_450_medium        = "1"
+OUTER_SET zst_450_serious       = "1"
+OUTER_SET zst_450_critical      = "1"
+OUTER_SET zst_450_eldath        = "1"
+OUTER_SET zst_450_mass          = "1"
+OUTER_SET zst_450_harm          = "1"
+OUTER_SET zst_450_heal          = "1" // only casting speed and range
 
 // allow chain lightning tweaks
 OUTER_SET zst_451_chain_lightning_boost      = "1"

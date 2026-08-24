@@ -57,11 +57,46 @@ END
 
 ACTION_IF is_bg2ee_or_eet AND zst_1596_thalantyr_upgrade_in_bg2 BEGIN
 
-  COPY_EXISTING "sw1h10.itm" ~override~
+  DEFINE_PATCH_MACRO patch_sword BEGIN
     LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7671) END
     LPM common
     LPF DELETE_EFFECT_EX INT_VAR check_globals = 0 STR_VAR match_resource_ex = "(NOT (~%o_resource%~ STR_EQ ~zstwy3~) )" END
     LPF ADD_ON_HIT_EFF STR_VAR effects = ~op=146,p2=1,res=zstswb5,pro1=4~ END
     LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=301,p2=1,p1=1;op=340,res=zstswbd4~ END
+  END
+
+  ACTION_IF is_bg2ee BEGIN
+
+    COPY_EXISTING ~sw1h10.itm~ ~override~
+      LPM patch_sword
+
+  END ELSE BEGIN
+
+    ACTION_IF has_thalantyr_upgrade BEGIN
+
+      COPY_EXISTING ~ohngduke.sto~ ~override~
+        LPF REPLACE_STORE_ITEM
+            STR_VAR 
+                old_item = "misc75"
+                new_item = "thdagg01"
+        END
+
+    END
+
+    ELSE BEGIN
+
+      COPY_EXISTING ~misc75.itm~ ~override/zsmisc75.itm~
+      COPY_EXISTING ~zsmisc75.itm~ ~override~
+        LPM patch_dagger
+
+      COPY_EXISTING ~ohngduke.sto~ ~override~
+        LPF REPLACE_STORE_ITEM
+          STR_VAR 
+            old_item = "misc75"
+            new_item = "zsmisc75"
+        END
+    END
+
+  END
 
 END

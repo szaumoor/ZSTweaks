@@ -1191,6 +1191,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
+    ACTION_IF zst_487_otiluke_iwd_animation != 0 AND zst_487_otiluke_iwd_animation != 1 BEGIN
+        WARN "[WARN]: Setting to make Otiluke's Resilient Sphere animation like in IWDEE should be set to 0 (disable) or 1 (enable). Actual value: %zst_487_otiluke_iwd_animation%"
+        LAM f_plus
+    END
+
     // ----------------------------------------WEB TWEAK------------------------------------------------- \\
 
     ACTION_IF zst_561_web_save_nerf != 0 AND zst_561_web_save_nerf != 1 BEGIN
@@ -1335,14 +1340,23 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
+    ACTION_IF zst_450_heal != 0 AND zst_450_heal != 1 BEGIN
+        WARN "[WARN]: Setting to allow Heal tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_heal%"
+        LAM f_plus
+    END
+
+    ACTION_IF zst_450_range_changes != 0 AND zst_450_range_changes != 1 BEGIN
+        WARN "[WARN]: Setting to allow range tweaks in the Cure/Cause component should be set to 0 (disable) or 1 (enable). Actual value: %zst_450_range_changes%"
+        LAM f_plus
+    END
+
     ACTION_IF (zst_450_cure_tweaks = 0 AND zst_450_cause_tweaks = 0) OR
-                (zst_450_light = 0 AND zst_450_moderate = 0 AND zst_450_medium = 0 AND zst_450_serious = 0 AND zst_450_critical = 0 AND zst_450_eldath = 0 AND zst_450_mass = 0 AND zst_450_harm = 0)
+              (zst_450_light = 0 AND zst_450_moderate = 0 AND zst_450_medium = 0 AND zst_450_serious = 0 AND zst_450_critical = 0 AND
+               zst_450_eldath = 0 AND zst_450_mass = 0 AND zst_450_harm = 0)
     BEGIN
         WARN "[WARN]: No tweaks were selected for the Cure/Cause component, leading to no changes."
         LAM f_plus
     END
-
-
 
     // ----------------------------------------CHAIN LIGHTNING------------------------------------------------- \\
 

@@ -388,7 +388,7 @@ The reason is that Silver Dragons breathe and are resistant to cold.
 
 ### Make Rings of Elemental Control more powerful (1172) (BG2EE EET)
 
-This improves the power of the charm by making the save against it -2 instead of +2. Additionally, the rings consistently grant 50% resistance to their related element.
+This improves the power of the charm by making the save against it -2 instead of +2. Additionally, the rings now all grant resistance to their related element, but reduced it to 40% (from 50%).
 
 ### Make Ring of Gaxx's improved haste last 2 rounds (1173) (BG2EE EET)
 
@@ -2043,21 +2043,24 @@ It was always a fairly odd choice for a level 7 spell. Some mods resolve this by
 
 At the beginning of BGEE, this spell is largely unremarkable and provides no protection of note to the cleric. Now it will at least provide a minor +2 Armor Class bonus by default, making it the only spell in vanilla BG other than Defensive Harmony that improves the cleric's Armor Class. Finally, it also adds the missing protection against poison damage.
 
-### Make cure and cause wound spells other than Heal/Harm more worth using (450) (IWDEE BGEE BG2EE EET)
+### Make cure and cause wound spells more worth using (450) (IWDEE BGEE BG2EE EET)
 
-Healing spells are infamously bad in BG/BG2: they heal too little for such a slow cast, and they do not improve with level. With this tweak:
+Healing spells are infamously bad in IWD/BG/BG2: they heal too little for such a slow cast, and they do not improve with level. With this tweak:
 
-- Cure Light Wounds: Heals 8 points plus 1 more point per level, up to 12
-- Cure Moderate Wounds: Heals 13 points, plus 2 points in the first 2 levels and 1 point in the next 2, up to 19 (requires IWDEE's spell to be present)
-- Cure Medium Wounds: Heals 20 points plus 2 more points per level, up to 28
-- Cure Serious Wounds: Heals 30 points plus 3 more points in the next two levels, 2 on the next two, up to 40
-- Cure Critical Wounds: Heals 42 points plus 3 more points per level, up to 54
-- Mass Cure: Improves the power of this spell as a combat spell by reducing the casting speed to 2, from 5, and slightly improving the healing from 1d8 + 1/level, max of 21-28, to 4d3 + 1/level, 24-32
-- Mist of Eldath: Heals 40 points, regenerates 2 HP per second for 2 rounds, and prevents poisoning for that time. The name is changed to Rejuvenating Mist
+- Cure Light Wounds: Heals 8 points plus 1 more point per level, up to 12. Casting speed reduced from 5 to 1
+- Cure Moderate Wounds: Heals 13 points, plus 2 points in the first 2 levels and 1 point in the next 2, up to 19 (requires IWDEE's spell to be present). Casting speed reduced from 5 to 2
+- Cure Medium Wounds: Heals 20 points plus 2 more points per level, up to 28. Casting speed reduced from 5 to 3
+- Cure Serious Wounds: Heals 30 points plus 3 more points in the next two levels, 2 on the next two, up to 40. Casting speed reduced from 7 to 4.
+- Cure Critical Wounds: Heals 42 points plus 3 more points per level, up to 54. Casting speed reduced from 8 to 5.
+- Mass Cure: Improved healing from 1d8 + 1/level (21–28), to 4d3 + 1/level (24–32). Casting speed reduced from 5 to 2.
+- Heal: Casting speed reduced from 9 to 6.
+- Mist of Eldath: Heals everyone 40 points, regenerates 2 HP per second for 2 rounds, and prevents poisoning for that time. The name is changed to Rejuvenating Mist
 
-Also, they will no longer be stopped by Spell Deflection. Finally, it can also tweak the "cause wounds" spells to the same extent as the "cure wounds" spells.
+Also, the range of the spell is now 10 ft., allowing healers to to help party members with a bit less risk. The spells will no longer be stopped by Spell Deflection.
 
-All of these specific tweaks to these spells can be enabled or disabled in the config file.
+Finally, it can also tweak the "cause wounds" spells to the same extent as the "cure wounds" spells.
+
+All of these specific tweaks to these spells can be enabled or disabled in the configuration file.
 
 ### Make Bolt of Glory slightly more effective and reorganize the damage distribution per type of enemy (461) (IWDEE BGEE BG2EE EET)
 
@@ -2383,7 +2386,9 @@ This component updates the THAC0 of Bards, Thieves, and Mage/Thieves in the game
 
 ### Make vanilla Swashbuckler THAC0 consistent if Thief THAC0 improvement is installed (2171) (IWDEE BGEE BG2EE EET)
 
-Normally, the vanilla Swashbuckler gets to a THAC0 of 2, because every 5 levels it gets a +1 bonus to both THAC0 and damage inflicted. This hinges on the assumption that the maximum THAC0 attainable for Thieves is 10. Changing the maximum THAC0 progression to 6 would mean they inappropriately achieve a base THAC0 of -2. This component addresses that inconsistency. If other mods that overhaul the Swashbuckler exist, you may request compatibility, as long as this causes actual problems. It likely will if they expect normal THAC0 progression.
+Normally, the vanilla Swashbuckler gets to a THAC0 of 2, because every 5 levels it gets a +1 bonus to both THAC0 and damage inflicted. This hinges on the assumption that the maximum THAC0 attainable for Thieves is 10. Changing the maximum THAC0 progression to 6 would mean they inappropriately achieve a base THAC0 of -2. This component addresses that inconsistency, by letting them achieve a THAC0 of 0, which is still better but not negative.
+
+If other mods that overhaul the Swashbuckler exist, you may request compatibility, as long as this causes actual problems. It likely will if they expect normal THAC0 progression.
 
 ### Make Poison Weapon improve twice more every 4 levels (2190) (IWDEE BGEE BG2EE EET)
 

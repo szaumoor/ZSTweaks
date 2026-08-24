@@ -8,3 +8,13 @@ COPY_EXISTING ~spwi413.spl~ ~override~
     LPF ALTER_HEADER_EX INT_VAR silent=1 speed = 3 STR_VAR match_speed_ex = "(o_speed > 3)" END
     LPF DELETE_EFFECT INT_VAR check_globals = 0 END
     LPF ADD_SPL_TGTEFF INT_VAR pwr=4 rd=0 STR_VAR effects = ~op=326,p2=49,res=%SOURCE_RES%a;op=318,p2=49,res=%SOURCE_RES%;op=326,p2=105,p1=%class_innocent%,res=zstotil0;op=318,p2=105,p1=%class_innocent%,res=%SOURCE_RES%;op=146,rd=1,res=%SOURCE_RES%a,stype=1~ END
+
+ACTION_IF zst_487_otiluke_iwd_animation AND NOT is_iwdee BEGIN
+
+    COPY ~%MOD_FOLDER%/spells/arcane/otiluke_iwd_animation~ ~override~
+    COPY_EXISTING ~spwi413a~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 215 STR_VAR resource = "#otiluke" END
+    BUT_ONLY
+
+END
+    

@@ -315,9 +315,9 @@ The caster of the Armor of Faith receives significant protection against all att
 
 Level: 1
 Sphere: Healing
-Range: Touch
+Range: 10 ft.
 Duration: Permanent
-Casting Time: 5
+Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
@@ -331,9 +331,9 @@ Curing is permanent only insofar as the creature does not sustain further damage
 
 Level: 1
 Sphere: Healing
-Range: Touch
+Range: 10 ft.
 Duration: Instant
-Casting Time: 5
+Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
@@ -345,9 +345,9 @@ By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest h
 
 Level: 2
 Sphere: Healing
-Range: Touch
+Range: 10 ft.
 Duration: Instant
-Casting Time: 5
+Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
@@ -358,9 +358,9 @@ A stronger version of the 1st-level priest spell Cure Light Wounds, Cure Moderat
 
 Level: 3
 Sphere: Healing
-Range: Touch
+Range: 10 ft.
 Duration: Permanent
-Casting Time: 5
+Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
@@ -372,9 +372,9 @@ By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest h
 
 Level: 3
 Sphere: Healing
-Range: Touch
+Range: 10 ft.
 Duration: Instant
-Casting Time: 5
+Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
@@ -385,9 +385,9 @@ By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest h
 
 Level: 4
 Sphere: Healing
-Range: Touch
+Range: 10 ft.
 Duration: Permanent
-Casting Time: 7
+Casting Time: 4
 Area of Effect: 1 creature
 Saving Throw: None
 
@@ -399,9 +399,9 @@ This spell is a more potent version of the Cure Light Wounds spell. The priest l
 
 Level: 4
 Sphere: Healing
-Range: Touch
+Range: 10 ft.
 Duration: Instant
-Casting Time: 7
+Casting Time: 4
 Area of Effect: 1 creature
 Saving Throw: None
 
@@ -412,9 +412,9 @@ By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest h
 
 Level: 5
 Sphere: Healing
-Range: Touch
+Range: 10 ft.
 Duration: Permanent
-Casting Time: 8
+Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: None
 
@@ -426,9 +426,9 @@ The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds
 
 Level: 5
 Sphere: Healing
-Range: Touch
+Range: 10 ft.
 Duration: Instant
-Casting Time: 8
+Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: None
 
@@ -695,7 +695,7 @@ Level: 7
 Sphere: Elemental
 Range: Visual range of the caster
 Duration: Instant
-Casting Time: 6
+Casting Time: 4
 Area of Effect: 7-ft. radius
 Saving Throw: None
 
@@ -760,9 +760,9 @@ When this spell is cast, the life energy level of the recipient is raised. This 
 
 Level: 1
 Sphere: Healing
-Range: Touch
+Range: 10 ft.
 Duration: Instant
-Casting Time: 5
+Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
@@ -773,9 +773,9 @@ By casting this spell and touching a creature, the priest deals 8 points of dama
 
 Level: 2
 Sphere: Healing
-Range: Touch
+Range: 10 ft.
 Duration: Instant
-Casting Time: 5
+Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
@@ -786,9 +786,9 @@ By casting this spell and touching a creature, the priest deals 13 points of dam
 
 Level: 3
 Sphere: Healing
-Range: Touch
+Range: 10 ft.
 Duration: Instant
-Casting Time: 5
+Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
@@ -799,9 +799,9 @@ By casting this spell and touching a creature, the priest deals 20 points of dam
 
 Level: 4
 Sphere: Healing
-Range: Touch
+Range: 10 ft.
 Duration: Instant
-Casting Time: 5
+Casting Time: 4
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
@@ -812,9 +812,9 @@ By casting this spell and touching a creature, the priest deals 30 points of dam
 
 Level: 5
 Sphere: Healing
-Range: Touch
+Range: 10 ft.
 Duration: Instant
-Casting Time: 8
+Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
@@ -827,7 +827,7 @@ Level: 5
 Sphere: Healing
 Range: 0
 Duration: Instant
-Casting Time: 4
+Casting Time: 2
 Area of Effect: 15-ft. radius
 Saving Throw: 1/2
 
@@ -1152,3 +1152,6 @@ Each stage carries the effects of previous stages, and require contact with the 
 @900701 = ~Cloud of Pestilence: First Stage~
 @900702 = ~Cloud of Pestilence: Second Stage~
 @900703 = ~Cloud of Pestilence: Third Stage~
+
+@910000 = "Casting Time: 9"
+@910001 = "Casting Time: 6" 

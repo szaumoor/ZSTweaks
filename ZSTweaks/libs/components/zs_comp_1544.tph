@@ -1,4 +1,3 @@
-
 DEFINE_PATCH_MACRO add_spell_headers BEGIN
     SET type = header_type
     SET target = tgt
