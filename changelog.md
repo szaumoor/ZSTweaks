@@ -24,6 +24,7 @@
 - Cure/Cause spells now make the spells have a range of 10 ft. instead of requiring melee range, which should help casters, both ally and foe, have an easier time safely healing their party. This is optional and ON by default.
 - Otiluke's Resilient sphere component now also uses the much better animation of IWDEE in BG games
 - Disintegrate now uses the IWDEE animation where instead of instantly converting to dust, the creature rapidly vanishes. (TODO)
+- Added warning for components that apply patches based on proficiencies about how they won't detect weapons as expected if run after components that change the proficiency system.
 
 ## New components
 

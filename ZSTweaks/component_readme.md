@@ -193,9 +193,9 @@ This component removes class restrictions from scrolls, allowing non-spellcaster
 - **Bards and Thieves can use scrolls**: Only Bards and Thieves gain the ability to use any scroll, requiring at least 9 Intelligence. This reflects their nature as resourceful jack-of-all-trades.
 - **Bards and Thieves can use scrolls (with stat requirements)**: Same as the above, but with the attribute requirements (`8 + Spell Level` in INT/WIS).
 
-Bear in mind that under this schema, it still holds true than to use any scroll, Intelligence of at least 9 is required, regardless of whether it's a priest or mage spell. 
+Bear in mind that under this schema, it still holds true than to use any scroll, Intelligence of at least 9 is required, regardless of whether it's a priest or mage spell.
 
-Finally, on a technical note, this component identifies a scroll as a "priest scroll" if it is usable by any priest class; otherwise, it is considered a "wizard scroll."
+Finally, on a technical note, this component identifies a scroll as a "priest scroll" if it is usable by any priest class; otherwise, it is considered a "wizard scroll." Scrolls that have no requirements are skipped too, as they're usually special.
 
 ### Make scrolls always cast at the character level regardless of class (1544) (IWDEE BGEE BG2EE EET)
 
@@ -2045,20 +2045,18 @@ At the beginning of BGEE, this spell is largely unremarkable and provides no pro
 
 ### Make cure and cause wound spells more worth using (450) (IWDEE BGEE BG2EE EET)
 
-Healing spells are infamously bad in IWD/BG/BG2: they heal too little for such a slow cast, and they do not improve with level. With this tweak:
+Healing/Cause spells are infamously bad in IWD/BG/BG2 since they are not powerful, lack scaling, and cast slowly. With this tweak:
 
-- Cure Light Wounds: Heals 8 points plus 1 more point per level, up to 12. Casting speed reduced from 5 to 1
-- Cure Moderate Wounds: Heals 13 points, plus 2 points in the first 2 levels and 1 point in the next 2, up to 19 (requires IWDEE's spell to be present). Casting speed reduced from 5 to 2
-- Cure Medium Wounds: Heals 20 points plus 2 more points per level, up to 28. Casting speed reduced from 5 to 3
-- Cure Serious Wounds: Heals 30 points plus 3 more points in the next two levels, 2 on the next two, up to 40. Casting speed reduced from 7 to 4.
-- Cure Critical Wounds: Heals 42 points plus 3 more points per level, up to 54. Casting speed reduced from 8 to 5.
-- Mass Cure: Improved healing from 1d8 + 1/level (21–28), to 4d3 + 1/level (24–32). Casting speed reduced from 5 to 2.
-- Heal: Casting speed reduced from 9 to 6.
+- Light Wounds: Heal/Cause 8 points plus 1 more point per level, up to 12. Casting speed reduced from 5 to 1
+- Moderate Wounds (IWD/IWDification): Heal/Cause 13 points, plus 2 points in the first 2 levels and 1 point in the next 2, up to 19. Casting speed reduced from 5 to 2
+- Medium Wounds: Heal/Cause 20 points plus 2 more points per level, up to 28. Casting speed reduced from 5 to 3
+- Serious Wounds: Heal/Cause 30 points plus 3 more points in the next two levels, 2 on the next two, up to 40. Casting speed reduced from 7 to 4.
+- Critical Wounds: Heal/Cause 42 points plus 3 more points per level, up to 54. Casting speed reduced from 8 to 5.
+- Mass Cure/Cause (Light Wounds): Heal/cause 4d3 + 1/level (24–32). Casting speed reduced from 5 to 2.
+- Heal/Harm: Casting speed reduced from 9 to 6.
 - Mist of Eldath: Heals everyone 40 points, regenerates 2 HP per second for 2 rounds, and prevents poisoning for that time. The name is changed to Rejuvenating Mist
 
-Also, the range of the spell is now 10 ft., allowing healers to to help party members with a bit less risk. The spells will no longer be stopped by Spell Deflection.
-
-Finally, it can also tweak the "cause wounds" spells to the same extent as the "cure wounds" spells.
+Cause-type spells allow a save to take half, as vanilla. Also, the range of the spell is now 10 ft., allowing healers to to help party members with a bit less risk. This is ON by default. The spells will also no longer be stopped by Spell Deflection.
 
 All of these specific tweaks to these spells can be enabled or disabled in the configuration file.
 
