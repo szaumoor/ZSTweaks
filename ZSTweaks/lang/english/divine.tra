@@ -303,12 +303,12 @@ The recipient of this spell gains the benefits of a Bless spell (+1 to attack ro
 Level: 1
 Sphere: Protection
 Range: 0
-Duration: 3 rounds + 1 round/level
+Duration: 2 rounds + 1 round/level
 Casting Time: 1
 Area of Effect: The caster
 Saving Throw: None
 
-The caster of the Armor of Faith receives significant protection against all attacks. This magical armor is a force of energy that absorbs or deflects a portion of the damage intended for the caster. At 1st level, the protection is 5%, and every 5 levels of the caster improves this by another 5%: For example, a 20th-level priest would have 25% of <PRO_HISHER> damage "absorbed" if protected by this spell. Finally, it applies an Armor Class bonus of 2 for the duration.~
+The caster of the Armor of Faith receives significant protection against all attacks. This magical armor is a force of energy that improves Armor Class by 2 and absorbs or deflects 20% of the damage intended for the caster, whether purely physical or elemental.~
 
 @6470 = ~Cure Light Wounds
 (Necromancy)

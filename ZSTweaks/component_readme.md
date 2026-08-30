@@ -2041,7 +2041,7 @@ It was always a fairly odd choice for a level 7 spell. Some mods resolve this by
 
 ### Make Armor of Faith also add Armor Class and poison damage resistance (420) (IWDEE BGEE BG2EE EET)
 
-At the beginning of BGEE, this spell is largely unremarkable and provides no protection of note to the cleric. Now it will at least provide a minor +2 Armor Class bonus by default, making it the only spell in vanilla BG other than Defensive Harmony that improves the cleric's Armor Class. Finally, it also adds the missing protection against poison damage.
+At the beginning of BGEE or IWDEE, this spell is largely unremarkable and provides no protection of note to the cleric or paladin. To compensate, it now provides a +2 Armor Class bonus and sets the damage resistance to 20%, which no longer scales, making it useful at any point in the game. As a small balance change, it lasts now 2 rounds at level 1, plus 1 each level (vanilla is 4 rounds at level 1, wrongly reported as 3 rounds + 1 round per level in the description of BG). Finally, it also adds the missing protection against poison damage to ensure that it covers any kind of damage.
 
 ### Make cure and cause wound spells more worth using (450) (IWDEE BGEE BG2EE EET)
 
