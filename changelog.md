@@ -5,8 +5,10 @@
 - Deleted duplicated variable assignment for the group component of trap cheese
 - Fixed some effects in Dagger of Venom being dispellable when they shouldn't
 - Fixed Cloak of Displacement missing resistance to magical damage, and magical cold and fire damage, since it's supposed to be universal.
-- Fixed Mass Cause Light Wounds not having a casting speed of 2 reflected in the description to mirror the tweak to Mass Cure (TODO)
-- Fixed incorrect healing scaling for Cure Serious Wound, leading the spell to heal more than intended
+- Fixed Mass Cause Light Wounds not having a casting speed of 2 reflected in the description to mirror the tweak to Mass Cure
+- Fixed incorrect healing scaling for Cure/Cause Serious Wounds, leading the spell to heal/damage more than intended
+- Fixed tweak to Magic Missile not respond to caster levels as intended when using component 1544 of scroll usability and casting level
+- Fixed icon for Sand Throw not being recognized by the game in the description window
 
 ## Modifications
 
@@ -25,10 +27,21 @@
 - Otiluke's Resilient sphere component now also uses the much better animation of IWDEE in BG games
 - Disintegrate now uses the IWDEE animation where instead of instantly converting to dust, the creature rapidly vanishes. (TODO)
 - Added warning for components that apply patches based on proficiencies about how they won't detect weapons as expected if run after components that change the proficiency system.
+- Shield of Faith component now always grants the maximum damage resistance at the outset, since at the beginning, the resistance granted is barely worth mentioning. However, I decided to nerf damage resistance to 20%. So now, my component makes it always grant that, plus +2 Armor Class, leaving only duration as the variable that scales with level. As a minor counterbalance for the high power at the outset, duration is now 2 rounds at level 1, plus 1 round per level (originally, it starts at 4 rounds).
+- Potion Overhaul now patches Potion of Insight so it increases Wisdom by 4 instead of setting it to 18 and lasts for 24 in-game hours instead. Does not stack, but the extended duration allows divine casters to memorize extra spells if any new slots were opened up thanks to the extra wisdom. It also increases lore by 15. Sorry, it's no longer a way to bypass using Wisdom as a dump stat when you want to cast Wish... (TODO)
+- Ray of Enfeeblement component now reduces Strength in the 6–9 range by half its value instead of setting it to 5. Those that have already 5 or less, have their strength set to 1. This ensures the spell remains likely to be relevant and the possibility of increasing strength is eliminated. (TODO)
+- Holy Power now only sets strength to 18/100 if it's actually higher than the current one
+- Slightly changed the defensive changes of yuanti in the relevant component, getting instead 18% damage resistance to slashing and +2 AC, and 9% resistance to piercing and missile, as well as +1 AC vs. missile and piercing
 
 ## New components
 
 - Make Globes of Invulnerability use the animation from IWD (xxxx) (BGEE BG2EE EET)
+- Make buffing spells bypass spell level protection/absorption and Improved Invisibility (xxxx) (IWDEE BGEE BG2EE EET)
+- Make Strength of One cast faster and not reduce the strength of characters with higher strength
+- Make Strength (Wizard/Mazzy) only increase strength
+- Make Feeblemindedness reduce Intelligence to 1 if Intelligence is already at 3
+- Make Champion's Strength more balanced and useful
+- Make Infravision into a spell that improves vision in more general way (xxxx) (IWDEE BGEE BG2EE EET)
 
 
 ## Future additions

@@ -7,8 +7,22 @@ COPY_EXISTING_REGEXP ~^.+\.cre$~ ~override~
 
     PATCH_IF race = race_yuanti AND NOT "%SOURCE_RES%" STR_EQ "zsipyua1" // formless serpent from my item pack
     BEGIN
-        WRITE_SHORT 0x4c (THIS - 2)
+        WRITE_SHORT 0x4c (THIS - 1)
         WRITE_SHORT 0x4e (THIS - 1)
+        WRITE_SHORT 0x50 (THIS - 2)
+
+        PATCH_IF BYTE_AT(0x60) < 18 BEGIN
+            WRITE_BYTE 0x60 18
+        END
+
+        PATCH_IF BYTE_AT(0x62) < 9 BEGIN
+            WRITE_BYTE 0x60 9
+        END
+
+
+        PATCH_IF BYTE_AT(0x63) < 9 BEGIN
+            WRITE_BYTE 0x60 9
+        END
 
         LPF ADD_CRE_PASSIVE INT_VAR op=173 p1=75 END
         LPM ADD_CRE_MELEE_EFFECT

@@ -2613,7 +2613,8 @@ This component makes beetles generally more resistant to anything that does not 
 
 This improves yuan-ti enemies in the following ways:
 
-- +2 bonus to their Armor Class vs. missile and +1 vs. piercing, as their serpentine bodies are hard to hit
+- 18% resistant to slashing damage, +2 AC vs. Slashing
+- 9% resistant to piercing and missile damage, +1 AC vs. piercing and missile
 - They inflict 1d4 poison damage on each melee attack universally
 - They are 75% resistant to poison damage, but not to poisoning itself
 - They move 4 points faster than normal
