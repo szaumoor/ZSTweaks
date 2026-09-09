@@ -1,0 +1,31 @@
+amends "package://github.com/jdx/hk/releases/download/v1.58.1/hk@1.58.1#/Config.pkl"
+import "package://github.com/jdx/hk/releases/download/v1.58.1/hk@1.58.1#/Builtins.pkl"
+// Using a coding agent? See https://hk.jdx.dev/agents
+
+local linters = new Mapping<String, Step> {
+    ["check_added_large_files"] = Builtins.check_added_large_files
+    ["check_case_conflict"] = Builtins.check_case_conflict
+    ["check_merge_conflict"] = Builtins.check_merge_conflict
+    ["check_symlinks"] = Builtins.check_symlinks
+    ["detect_private_key"] = Builtins.detect_private_key
+}
+
+hooks {
+    ["pre-commit"] {
+        fix = true
+        stash = "git"
+        steps = linters
+    }
+    ["check"] {
+        steps = linters
+    }
+    ["fix"] {
+        fix = true
+        steps = linters
+    }
+    ["commit-msg"] {
+        steps {
+            ["check_conventional_commit"] = Builtins.check_conventional_commit
+        }
+    }
+}
