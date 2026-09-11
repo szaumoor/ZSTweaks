@@ -143,10 +143,14 @@ ACTION_IF zs_allow_prefixes BEGIN
             END
 
             ACTION_IF zst_chimeras BEGIN
+                
+                ACTION_IF FILE_EXISTS_IN_GAME ~l#kuchim.cre~ BEGIN
 
-                PRINT "[INFO]: Setting Lava's chimeras to the race of chimera"
-                    COPY_EXISTING ~l#kuchim.cre~ ~override~
-                        LPF ALTER_CRE INT_VAR race = race_chimera END
+                    PRINT "[INFO]: Setting Lava's chimeras to the race of chimera"
+                        COPY_EXISTING ~l#kuchim.cre~ ~override~
+                            LPF ALTER_CRE INT_VAR race = race_chimera END
+
+                END
 
             END
 
