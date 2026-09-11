@@ -30,6 +30,6 @@ hooks {
     }
     ["check-duplicates"] {
         glob = List("*.itm","*.spl", "*.eff", "*.2da", "*.bam", "*.vvc", "*.pro", "*.wav", "*.cre", "*.baf", "*.d")
-        check = "find . -type f -exec basename {} \; | sort | uniq -dc | test -z -"
-  }
+        check = "find . -type f -exec basename {} \\; | sort | uniq -dc | test -z -"
+    }
 }
