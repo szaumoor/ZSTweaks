@@ -1,0 +1,143 @@
+DEFINE_PATCH_MACRO inv_bypass BEGIN
+    LPF IS_BIT_SET INT_VAR bit=24 bit_field = LONG_AT(0x18) RET can_bypass_invisibility END
+    PATCH_IF NOT can_bypass_invisibility BEGIN
+        WRITE_LONG 0x18 (THIS + 2**24)
+    END
+END
+
+DEFINE_PATCH_MACRO lvl_bypass BEGIN
+    LPF ALTER_EFFECT INT_VAR match_globals=0 power=0 END
+END
+
+DEFINE_PATCH_MACRO both_patches BEGIN
+    LPM inv_bypass
+    LPM lvl_bypass
+END
+
+
+// -- \\ 
+
+COPY_EXISTING ~sppr101.spl~ ~override~ // bless
+    LPM lvl_bypass
+
+COPY_EXISTING ~sppr108.spl~ ~override~ // remove fear
+    LPM lvl_bypass
+
+COPY_EXISTING ~sppr203d.spl~ ~override~ // chant beneficial subspell
+    LPM lvl_bypass
+
+COPY_EXISTING ~sppr308.spl~ ~override~ // remove paralysis
+    LPM lvl_bypass
+
+COPY_EXISTING ~sppr312.spl~ ~override~ // strength of one
+    LPM lvl_bypass
+
+COPY_EXISTING ~sppr406.spl~ ~override~ // defense harmony
+    LPM lvl_bypass
+
+COPY_EXISTING ~sppr408.spl~ ~override~ // protection from evil 15 ft
+    LPM lvl_bypass
+
+COPY_EXISTING ~sppr514.spl~ ~override~  // righteous magic
+    LPM lvl_bypass
+
+COPY_EXISTING ~spra301.spl~ ~override~  // haste stalker
+    LPM lvl_bypass
+
+COPY_EXISTING ~spra303.spl~ ~override~  // protection normal missiles stalker
+    LPM lvl_bypass
+
+// -- \\ 
+
+COPY_EXISTING ~sppr103.spl~ ~override~ // cure light wounds
+    LPM both_patches
+
+COPY_EXISTING ~sppr315.spl~ ~override~ // cure medium wounds
+    LPM both_patches
+
+COPY_EXISTING ~sppr317.spl~ ~override~ // cure disease
+    LPM both_patches
+
+COPY_EXISTING ~sppr350.spl~ ~override~ // spiritual clarity
+    LPM both_patches
+
+COPY_EXISTING ~sppr401.spl~ ~override~ // cure serious wounds
+    LPM both_patches
+
+COPY_EXISTING ~sppr403.spl~ ~override~ // free action
+    LPM both_patches
+
+COPY_EXISTING ~sppr404.spl~ ~override~ // neutralize poison
+    LPM both_patches
+
+COPY_EXISTING ~sppr107.spl~ ~override~  // protection from evil
+    LPM both_patches
+
+COPY_EXISTING ~sppr150.spl~ ~override~  // shaman spirit ward
+    LPM both_patches
+
+COPY_EXISTING ~sppr201.spl~ ~override~  // aid
+    LPM both_patches
+
+COPY_EXISTING ~sppr202.spl~ ~override~  // barkskin
+    LPM both_patches
+
+COPY_EXISTING ~sppr210.spl~ ~override~  // resist fire and cold
+    LPM both_patches
+
+COPY_EXISTING ~sppr212.spl~ ~override~  // slow poison
+    LPM both_patches
+
+COPY_EXISTING ~sppr306.spl~ ~override~  // protection from fire
+    LPM both_patches
+
+COPY_EXISTING ~sppr307.spl~ ~override~  // remove curse
+    LPM both_patches
+
+COPY_EXISTING ~sppr407.spl~ ~override~  // protection from electricity
+    LPM both_patches
+
+COPY_EXISTING ~sppr409.spl~ ~override~  // death ward
+    LPM both_patches
+
+COPY_EXISTING ~sppr413.spl~ ~override~  // negative plane protection
+    LPM both_patches
+
+COPY_EXISTING ~sppr417.spl~ ~override~  // lesser restoration
+    LPM both_patches
+
+COPY_EXISTING ~sppr502.spl~ ~override~  // cure critical wounds
+    LPM both_patches
+
+COPY_EXISTING ~sppr507.spl~ ~override~  // champions strength
+    LPM both_patches
+
+COPY_EXISTING ~sppr508.spl~ ~override~  // chaotic commands
+    LPM both_patches
+
+COPY_EXISTING ~sppr509.spl~ ~override~  // magic resistance
+    LPM both_patches
+
+COPY_EXISTING ~sppr516.spl~ ~override~  // pixel dust
+    LPM both_patches
+
+COPY_EXISTING ~sppr607.spl~ ~override~  // heal
+    LPM both_patches
+
+COPY_EXISTING ~sppr713.spl~ ~override~  // greater restoration
+    LPM both_patches
+
+COPY_EXISTING ~sppr711.spl~ ~override~  // regeneration
+    LPM both_patches
+
+COPY_EXISTING ~spwi111.spl~ ~override~  // infravision
+    LPM both_patches
+
+COPY_EXISTING ~spwi113.spl~ ~override~  // protection vs evil
+    LPM both_patches
+
+COPY_EXISTING ~spwi206.spl~ ~override~  // invisibility
+    LPM both_patches
+
+// -- \\
+

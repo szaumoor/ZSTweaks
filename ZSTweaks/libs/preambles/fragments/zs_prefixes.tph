@@ -143,10 +143,11 @@ ACTION_IF zs_allow_prefixes BEGIN
             END
 
             ACTION_IF zst_chimeras BEGIN
-
+                
                 PRINT "[INFO]: Setting Lava's chimeras to the race of chimera"
                     COPY_EXISTING ~l#kuchim.cre~ ~override~
                         LPF ALTER_CRE INT_VAR race = race_chimera END
+                    IF_EXISTS
 
             END
 
