@@ -42,6 +42,8 @@
 - Make Feeblemindedness reduce Intelligence to 1 if Intelligence is already at 3
 - Make Champion's Strength more balanced and useful
 - Make Infravision into a spell that improves vision in more general way (xxxx) (IWDEE BGEE BG2EE EET)
+- Make Burning Hands projectile and animation better (xxxx) (IWDEE BGEE BG2EE EET)
+- Make Cone of Cold projectile and animation better (xxxx) (IWDEE BGEE BG2EE EET)
 
 
 ## Future additions
