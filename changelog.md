@@ -2,8 +2,5 @@
 
 ## Fixes
 
-- Deleted useless folder and file
+- Fix for installation error in IWDEE
   
-## Modifications
-
-- Updated Simplified Chinese translation, thanks to MephistoSatanDevil
