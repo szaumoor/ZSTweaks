@@ -1031,6 +1031,7 @@ This rebalances and enhances the staff in the following manner:
 - It now has a charge ability that lets the wielder cast any *known* spell they have once per day
 - Since this tweak also allows someone to turn the whole party invisible by passing the staff around, as a balance change it can now only be used by wizards. A configuration option can restrict this further, making it accessible only to pure mages, or only to non-fighter mages (which includes cleric/mages and mage/thieves). Otherwise, all mages and sorcerers can use it.
 - Additionally, the silly fireball/lightning bolt combination is now replaced by a double-strength Sunfire (aka cast twice).
+- Finally, the weapon requires 16 intelligence in order to be used at all.
 
 ### Make Ir'revrykal more powerful (1410) (BG2EE EET)
 

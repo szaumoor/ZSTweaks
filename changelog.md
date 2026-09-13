@@ -32,6 +32,7 @@
 - Ray of Enfeeblement component now reduces Strength in the 6–9 range by half its value instead of setting it to 5. Those that have already 5 or less, have their strength set to 1. This ensures the spell remains likely to be relevant and the possibility of increasing strength is eliminated. (TODO)
 - Holy Power now only sets strength to 18/100 if it's actually higher than the current one
 - Slightly changed the defensive changes of yuanti in the relevant component, getting instead 18% damage resistance to slashing and +2 AC, and 9% resistance to piercing and missile, as well as +1 AC vs. missile and piercing
+- Staff of Magi now requires intelligence of 16 to be used at all.
 
 ## New components
 
