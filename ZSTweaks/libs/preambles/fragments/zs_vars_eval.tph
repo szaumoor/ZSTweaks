@@ -159,7 +159,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
     END
 
     ACTION_IF zst_humanoids_as_weapons != 0 AND zst_humanoids_as_weapons != 1 BEGIN
-        WARN "[WARN]: Aesgareth enemies fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_humanoids_as_weapons%"
+        WARN "[WARN]: Humanoids categorized as weapons fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_humanoids_as_weapons%"
         LAM f_plus
     END
 
