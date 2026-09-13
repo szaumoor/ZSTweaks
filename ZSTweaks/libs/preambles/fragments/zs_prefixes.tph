@@ -144,20 +144,27 @@ ACTION_IF zs_allow_prefixes BEGIN
 
             ACTION_IF zst_chimeras BEGIN
                 
-                PRINT "[INFO]: Setting Lava's chimeras to the race of chimera"
+                ACTION_IF FILE_EXISTS_IN_GAME ~l#kuchim.cre~ BEGIN
+
+                    PRINT "[INFO]: Setting Lava's chimeras to the race of chimera"
                     COPY_EXISTING ~l#kuchim.cre~ ~override~
                         LPF ALTER_CRE INT_VAR race = race_chimera END
-                    IF_EXISTS
+
+                END
 
             END
 
         END
 
         ACTION_IF NOT is_iwdee BEGIN
+            
+            ACTION_IF zst_seeking_sw_casting_speed BEGIN
 
-            PRINT "[INFO]: Fixing Seeking Sword's incorrect casting speed at level 20"
-            COPY_EXISTING ~spcl731.spl~ ~override~
-                LPF ALTER_HEADER INT_VAR speed = 5 END
+                PRINT "[INFO]: Fixing Seeking Sword's incorrect casting speed at level 20"
+                COPY_EXISTING ~spcl731.spl~ ~override~
+                    LPF ALTER_HEADER INT_VAR speed = 5 END
+
+            END
 
             ACTION_IF NOT has_eefixpack BEGIN
 
@@ -239,7 +246,7 @@ ACTION_IF zs_allow_prefixes BEGIN
 
             END
 
-            ACTION_IF zst_gas_pocket BEGIN
+            ACTION_IF zst_gas_spore BEGIN
 
                 COPY_EXISTING ~behgas01.cre~ ~override~
                     WRITE_BYTE 0x271 general_plant
@@ -383,9 +390,9 @@ ACTION_IF zs_allow_prefixes BEGIN
 
             END
 
-            ACTION_IF zst_aesgareth_enemies BEGIN
+            ACTION_IF zst_humanoids_as_weapons BEGIN
 
-                PRINT "[INFO]: Aesgareth enemies he fights during the card game being considered 'weapon' instead of 'humanoid', and a couple of others"
+                PRINT "[INFO]: Various humanoid enemies are tagged as 'weapon' instead of 'humanoid'. Tagging them as humanoid."
                 COPY_EXISTING ~gordeck1.cre~ ~override~
                               ~gordeck2.cre~ ~override~
                               ~gordeck3.cre~ ~override~
@@ -400,7 +407,7 @@ ACTION_IF zs_allow_prefixes BEGIN
 
             ACTION_IF NOT has_eefixpack BEGIN // proficiency issues
 
-                ACTION_IF zst_thieves_wrong_profs BEGIN
+                ACTION_IF zst_wrong_profs BEGIN
 
                     PRINT "[INFO]: Thieves using bastard swords in BG2EE without being able to use them properly or illegally as per the rules of thieves. Replaced with short swords."
                     COPY_EXISTING ~arntra06.cre~ ~override~
