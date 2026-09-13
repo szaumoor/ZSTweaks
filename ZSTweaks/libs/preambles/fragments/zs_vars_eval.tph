@@ -78,6 +78,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
+    ACTION_IF zst_seeking_sw_casting_speed != 0 AND zst_seeking_sw_casting_speed != 1 BEGIN
+        WARN "[WARN]: Seeking Sword casting speed fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_seeking_sw_casting_speed%"
+        LAM f_plus
+    END
+
     ACTION_IF zst_nish_hake_race != 0 AND zst_nish_hake_race != 1 BEGIN
         WARN "[WARN]: Nishruu and Hakeashar race fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_nish_hake_race%"
         LAM f_plus
@@ -103,8 +108,8 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
-    ACTION_IF zst_gas_pocket != 0 AND zst_gas_pocket != 1 BEGIN
-        WARN "[WARN]: Gas pocket fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_gas_pocket%"
+    ACTION_IF zst_gas_spore != 0 AND zst_gas_spore != 1 BEGIN
+        WARN "[WARN]: Gas spore fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_gas_spore%"
         LAM f_plus
     END
 
@@ -153,13 +158,13 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
-    ACTION_IF zst_aesgareth_enemies != 0 AND zst_aesgareth_enemies != 1 BEGIN
-        WARN "[WARN]: Aesgareth enemies fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_aesgareth_enemies%"
+    ACTION_IF zst_humanoids_as_weapons != 0 AND zst_humanoids_as_weapons != 1 BEGIN
+        WARN "[WARN]: Aesgareth enemies fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_humanoids_as_weapons%"
         LAM f_plus
     END
 
-    ACTION_IF zst_thieves_wrong_profs != 0 AND zst_thieves_wrong_profs != 1 BEGIN
-        WARN "[WARN]: Thieves with wrong proficiencies or weapons fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_thieves_wrong_profs%"
+    ACTION_IF zst_wrong_profs != 0 AND zst_wrong_profs != 1 BEGIN
+        WARN "[WARN]: Thieves with wrong proficiencies or weapons fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_wrong_profs%"
         LAM f_plus
     END
 
