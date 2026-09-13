@@ -43,12 +43,9 @@ OUTER_SET zst_shakti                     = "1"
 OUTER_SET zst_shambling_mounds           = "1"
 OUTER_SET zst_shield_std_fix             = "1"
 OUTER_SET zst_simulacra_fix              = "1"
+OUTER_SET zst_solar_tags                 = "1"
 OUTER_SET zst_wa2plat_fix                = "1"
 OUTER_SET zst_wakininja_animations       = "1"
 OUTER_SET zst_water_elementals           = "1"
 OUTER_SET zst_wraith_spid_undead         = "1"
 OUTER_SET zst_wrong_profs                = "1"
-
-// solars are weirdly tagged as demonic tanar'ri, this sets them to cleric/mage solars, which makes more sense
-// yes, it shouldn't really affect anything realistically, but I'm annoyed by it
-OUTER_SET zst_solar_tags = "1"
