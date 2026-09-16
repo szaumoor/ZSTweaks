@@ -45,6 +45,7 @@
 - Make Infravision into a spell that improves vision in more general way (xxxx) (IWDEE BGEE BG2EE EET)
 - Make Burning Hands projectile and animation better (xxxx) (IWDEE BGEE BG2EE EET)
 - Make Cone of Cold projectile and animation better (xxxx) (IWDEE BGEE BG2EE EET)
+- Make more classes able to use wands freely (777) (IWDEE BGEE BG2EE EET)
 
 
 ## Future additions

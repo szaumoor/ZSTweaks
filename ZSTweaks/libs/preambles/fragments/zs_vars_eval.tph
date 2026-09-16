@@ -258,6 +258,23 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
+    // ----------------------------------------WANDS USABILITY------------------------------------------------- \\
+
+    OUTER_SET zst_777_all_no_reqs_eval    = zst_777_all_no_reqs != 0 AND zst_777_all_no_reqs != 1
+    OUTER_SET zst_777_all_reqs_eval       = zst_777_all_reqs != 0 AND zst_777_all_reqs != 1
+    OUTER_SET zst_777_rogues_no_reqs_eval = zst_777_rogues_no_reqs != 0 AND zst_777_rogues_no_reqs != 1
+    OUTER_SET zst_777_rogues_reqs_eval    = zst_777_rogues_reqs != 0 AND zst_777_rogues_reqs != 1
+
+    ACTION_IF zst_777_all_no_reqs_eval OR zst_777_all_reqs_eval OR zst_777_rogues_no_reqs_eval OR zst_777_rogues_reqs_eval BEGIN
+        WARN "[WARN]: Wand usability component has some option set to something other than 0 (disabled) or 1 (enabled)."
+        LAM f_plus
+    END
+
+    ACTION_IF (zst_777_all_no_reqs + zst_777_all_reqs + zst_777_rogues_no_reqs + zst_777_rogues_reqs) > 1 BEGIN
+        WARN "[WARN]: Wand usability component should only have one setting set to 1, please check the config file"
+        LAM f_plus
+    END
+
     // ----------------------------------------BACKSTAB PENALTIES------------------------------------------------- \\
 
     ACTION_IF zst_1120_backstab_penalty_lswords < 0 BEGIN

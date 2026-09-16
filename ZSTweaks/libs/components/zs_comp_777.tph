@@ -1,0 +1,33 @@
+OUTER_SET wand_category = 35
+
+COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
+
+    READ_SHORT 0x1c category
+    READ_BYTE 0x2a min_int
+    READ_SHORT 0x68 abilities
+
+    PATCH_IF category == wand_category AND // if it's categorized as wand
+             min_int  == 9             AND // and has an int requirement unlike rods
+             abilities > 0                 // and provides abilities 
+    BEGIN
+        LPF IS_BIT_SET INT_VAR bit=0 bit_field=LONG_AT(0x18)
+            RET is_critical_item = result 
+        END
+
+        PATCH_IF NOT is_critical_item BEGIN // ignore plot items
+            
+            READ_LONG 0x64 abilities_offset
+            SET ability_header_size = 0x38
+
+            FOR (i = 0; i < abilities; ++i) BEGIN
+
+                SET current_base_offset = abilities_offset + (i * ability_header_size) 
+                
+
+            END
+
+        END
+        
+    END
+
+BUT_ONLY
