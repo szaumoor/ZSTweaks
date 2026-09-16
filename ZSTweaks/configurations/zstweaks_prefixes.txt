@@ -1,4 +1,4 @@
-// !!! SEE PREFIX_DOCS.MD IN ORDER TO KNOW WHAT THEY DO PRECISELY !!! \\ 
+// !!! SEE PREFIX_DOCS.MD IN ORDER TO KNOW WHAT THEY DO PRECISELY !!! \\
 
 OUTER_SET zs_allow_prefixes = "1" // leave at 1 (ON) to enable prefixes as a whole. I probably won't help if you encounter issues by disabling prefixes willy nilly. Use proper judgment and read prefix_docs.md if you wish to turn off something.
 
