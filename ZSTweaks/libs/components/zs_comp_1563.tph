@@ -39,16 +39,16 @@ ACTION_IF has_thalantyr_upgrade OR (is_bg2ee_or_eet AND zst_1563_thalantyr_upgra
         LPF ALTER_EFFECT INT_VAR match_duration=15 duration=18 END
 
     COPY_EXISTING ~zstdgvn1.spl~ ~override/zstdgvn6.spl~ // moar weakening
-        LPF ALTER_EFFECT_EX STR_VAR match_parameter1_ex = "(o_parameter1 == ~-1~)" parameter1_ex = "(THIS - 1)~" END
+        LPF ALTER_EFFECT_EX STR_VAR match_parameter1_ex = "(o_parameter1 == ~-1~)" parameter1_ex = "(THIS - 1)" END
 
     COPY_EXISTING ~zstdgvn2.spl~ ~override/zstdgvn7.spl~ // moar damage per hit
         LPF ALTER_EFFECT INT_VAR match_dicesize=4 dicesize = 6 END
 
     COPY_EXISTING ~zstdgvn3.spl~ ~override/zstdgvn8.spl~ // protection vs poison
-        LPF ALTER_EFFECT INT_VAR match_resource="zstdgvn2" resource = "zstdgvn7" END
+        LPF ALTER_EFFECT STR_VAR match_resource="zstdgvn2" resource = "zstdgvn7" END
 
     COPY_EXISTING ~zstdgvn4.spl~ ~override/zstdgvn9.spl~ // protection vs protection vs poison
-        LPF ALTER_EFFECT INT_VAR match_resource="zstdgvn3" resource = "zstdgvn8" END
+        LPF ALTER_EFFECT STR_VAR match_resource="zstdgvn3" resource = "zstdgvn8" END
 
 END
 
