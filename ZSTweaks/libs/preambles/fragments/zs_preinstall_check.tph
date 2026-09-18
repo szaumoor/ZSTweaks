@@ -1,7 +1,7 @@
 ACTION_IF NOT VARIABLE_IS_SET ~zs_preinstall_check~ BEGIN
 
     OUTER_SET weidu_version = %WEIDU_VER% / 100
-    PRINT "[INFO]: Weidu version: v%short_v%"
+    PRINT "[INFO]: Weidu version: v%weidu_version%"
 
     ACTION_IF weidu_version != 249 BEGIN
         LAF LOG_TEXT
