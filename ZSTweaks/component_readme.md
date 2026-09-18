@@ -366,6 +366,12 @@ This makes the spell behave a little closer to what is supposed to be and makes 
 
 This component assigns player-created characters configurable morale, morale-break thresholds, and recovery times, allowing them to suffer morale failure like joinable NPCs. The defaults are 10 morale, a break threshold of 3, and a recovery time of 30 seconds; these values can be changed in `zstweaks_prefs.txt`.
 
+### Make more classes able to use wands freely (777) (IWDEE BGEE BG2EE EET)
+
+This component processes all existing wands in the game and makes sure other classes can use them freely. I recommend enforcing stat requirements for balance, but it's optional.
+
+There is an option to allow it for only rogues (bards and thieves), and for everyone. This component also opens it to all kits and removes the differentiation between "cleric wands" and other wands, regardless.
+
 </details>
 
 ---

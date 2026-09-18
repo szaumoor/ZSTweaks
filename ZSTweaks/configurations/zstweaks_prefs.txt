@@ -19,8 +19,8 @@ OUTER_SET zst_443_nerf_npc_symbols = "1"
 // Only select one, failure to do this will make the mod fail to install immediately
 OUTER_SET zst_777_all_no_reqs    = "0" // all can use wands
 OUTER_SET zst_777_all_reqs       = "1" // all can use wands with stat requirements (default)
-OUTER_SET zst_777_rogues_no_reqs = "0" // rogues can use wands
-OUTER_SET zst_777_rogues_reqs    = "0" // rogues can use wands with stat requirements
+OUTER_SET zst_777_rogues_no_reqs = "0" // rogues can use wands too
+OUTER_SET zst_777_rogues_reqs    = "0" // rogues can use wands too with stat requirements
 
 // backstab penalties to different weapon types (set to 0 to disable, otherwise add a positive number to determine backstab multiplier penalty)
 OUTER_SET zst_1120_backstab_penalty_lswords        = "1"

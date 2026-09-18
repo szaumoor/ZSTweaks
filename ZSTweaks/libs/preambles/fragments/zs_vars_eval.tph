@@ -1967,6 +1967,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         WARN "[WARN]: Morale Failure group component should be set to 1 or 0. Actual value: %zst_group_592_morale_failure%"
         LAM f_plus
     END
+
+    ACTION_IF zst_group_777_wand_usability != 0 AND zst_group_777_wand_usability != 1 BEGIN
+        WARN "[WARN]: Wand Usability group component should be set to 1 or 0. Actual value: %zst_group_777_wand_usability%"
+        LAM f_plus
+    END
     
     // ----------------------------------------GROUP COMP VARIABLES (ARCANE)------------------------------------------------- \\
 

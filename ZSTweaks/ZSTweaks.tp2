@@ -193,6 +193,10 @@ BEGIN @592 LABEL ~zs_tw_morale_failure~ DESIGNATED 592 GROUP @10 // MORALE FAILU
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
 FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
 
+BEGIN @777 LABEL ~zs_tw_wand_usability~ DESIGNATED 777 GROUP @10 // WAND USABILITY
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
+FORBID_COMPONENT "ZSTweaks.tp2" "103" @58
+
 ///////////////////////////////////// GEAR TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 BEGIN @10001 LABEL ~zs_tw_gear~ DESIGNATED 1001 GROUP @11 // INSTALL USER-DEFINED COMPONENTS IN GROUP
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54

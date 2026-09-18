@@ -1,28 +1,74 @@
-OUTER_SET wand_category = 35
+DEFINE_PATCH_MACRO handle_usabilities BEGIN
+    PATCH_FOR_EACH offset IN 0x29 0x2b 0x2d 0x2f BEGIN
+        WRITE_BYTE offset 0
+    END
 
-COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
+    PATCH_IF zst_777_all_no_reqs OR zst_777_all_reqs BEGIN
+        
+        WRITE_LONG 0x1e 0
 
-    READ_SHORT 0x1c category
-    READ_BYTE 0x2a min_int
-    READ_SHORT 0x68 abilities
+    END ELSE PATCH_IF zst_777_rogues_no_reqs OR zst_777_rogues_reqs BEGIN
+        
+        READ_LONG 0x1e usability_flags
+        PATCH_FOR_EACH bit IN 9 16 17 19 22 BEGIN
 
-    PATCH_IF category == wand_category AND // if it's categorized as wand
-             min_int  == 9             AND // and has an int requirement unlike rods
-             abilities > 0                 // and provides abilities 
-    BEGIN
-        LPF IS_BIT_SET INT_VAR bit=0 bit_field=LONG_AT(0x18)
-            RET is_critical_item = result 
+            LPF IS_BIT_SET INT_VAR bit=0 bit_field=usability_flags RET is_set = result END
+            PATCH_IF is_set BEGIN WRITE_LONG 0x1e (THIS - 2**bit) END
+
         END
 
-        PATCH_IF NOT is_critical_item BEGIN // ignore plot items
-            
-            READ_LONG 0x64 abilities_offset
-            SET ability_header_size = 0x38
+    END
+END
 
-            FOR (i = 0; i < abilities; ++i) BEGIN
+DEFINE_PATCH_MACRO find_highest_power BEGIN
 
-                SET current_base_offset = abilities_offset + (i * ability_header_size) 
+    GET_OFFSET_ARRAY header_array 0x64 4 0x68 2 0 0 0x38
+    PHP_EACH header_array AS int => ab_off BEGIN
+        
+        READ_SHORT (ab_off + 0x1e) effects 
+        PATCH_IF effects > 0 BEGIN
+
+            GET_OFFSET_ARRAY2 fx_array ab_off ITM_V10_HEAD_EFFECTS
+            PHP_EACH fx_array AS int => fx_off BEGIN
                 
+                SET power = BYTE_AT(fx_off + 0x3)
+                PATCH_IF power > 0 AND power < 10 BEGIN
+                    PATCH_IF power > highest_power BEGIN
+                        highest_power = power
+                    END  
+                END
+
+            END
+            
+        END
+
+    END
+
+END
+
+
+OUTER_SET wand = 35
+COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~
+    READ_SHORT 0x1c category
+    READ_BYTE  0x2a min_int
+    READ_SHORT 0x68 headers
+
+    PATCH_IF category == wand AND // if it's categorized as wand
+             min_int   > 0    AND // and has an int requirement unlike rods
+             headers   > 0        // and provides headers 
+    BEGIN
+        LPF IS_BIT_SET INT_VAR bit=0 bit_field=LONG_AT(0x18) RET is_critical = result END
+        PATCH_IF NOT is_critical BEGIN // ignore plot items
+            SET highest_power = "-1" // stores highest power level, only takes into account 1-9
+            LPM handle_usabilities
+
+            PATCH_IF zst_777_all_reqs OR zst_777_rogues_reqs BEGIN 
+
+                LPM find_highest_power
+            
+                PATCH_IF highest_power > 0 BEGIN // if power value signifying spell level, we patch, skip otherwise
+                    WRITE_BYTE 0x2a (8 + highest_power)
+                END
 
             END
 
