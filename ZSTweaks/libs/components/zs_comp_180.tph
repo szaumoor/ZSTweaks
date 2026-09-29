@@ -9,3 +9,6 @@ IF_EXISTS
 COPY_EXISTING ~scrl9t.itm~ ~override~
     LPF ALTER_ITEM INT_VAR id_desc=new_description END
 IF_EXISTS
+
+COPY_EXISTING ~metswarm.pro~ ~override~
+    WRITE_BYTE 0x216 5 // 5 rounds
