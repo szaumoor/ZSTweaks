@@ -372,6 +372,8 @@ This component processes all existing wands in the game and makes sure other cla
 
 There is an option to allow it for only rogues (bards and thieves), and for everyone. This component also opens it to all kits and removes the differentiation between "cleric wands" and other wands, regardless.
 
+This component deliberately skips wands (category-wise) that are critical (to the plot) items as well as items that have by default no intelligence requirements.
+
 </details>
 
 ---
@@ -1714,7 +1716,7 @@ This exists because I personally dislike using spells, especially high-level spe
 
 ### Make Meteor Swarm do more minimum damage and bypass Magic Resistance (180) (IWDEE BGEE BG2EE EET)
 
-The problem with Meteor Swarm is that the likelihood of doing very low damage is quite high, which is pretty bad for a level 9 spell. To make it worse, it doesn't bypass Magic Resistance either. Now it will instead work like Fire Storm, causing 2d10 + 1 point/level, i.e. 22-40 fire damage per round instead of 4-40 damage per round, and no Magic Resistance will apply.
+The problem with Meteor Swarm is that the likelihood of doing very low damage is quite high, which is pretty bad for a level 9 spell. To make it worse, it doesn't bypass Magic Resistance either. Now it will instead work like Fire Storm, causing 2d10 + 1 point/level, i.e. 22–40 fire damage per round instead of 4–40 damage per round, and no Magic Resistance will apply.
 
 ### Make Horror an Enchantment spell (210) (IWDEE BGEE BG2EE EET)
 
@@ -1761,7 +1763,7 @@ Otherwise, if the target is NOT AN ALLY (this condition exists to prevent abuse)
 - Heals 50% of their maximum health plus 3d6
 - Strength increases by 2
 - THAC0: +6 (half if mage/thief, +1 if they have fighter levels)
-- Damage: +2 (only if no fighter levels exist -- for example, it applies to necromancers, as well as cleric/mages)
+- Damage: +2 (only if no fighter levels exist – for example, it applies to necromancers, as well as cleric/mages)
 - Caster cannot get any of these benefits beyond the healing part until 8 hours have passed (2400 seconds in real time)
 
 ### Make Maze bypass Magic Resistance and make minotaurs immune to it (405) (IWDEE BGEE BG2EE EET)
@@ -1776,7 +1778,7 @@ This allows you to be Lawful Evil and enjoy the same amount of HP bonus as other
 
 This makes the spell mirror its behavior in 5E/BG3, where plant- and water-based creatures always take maximum damage, with a Save vs. Spell at -2, halved on a successful save. This penalty is missing in vanilla. Additionally, enemies that would not be damaged by draining moisture are unaffected: undead, golems, and non-water elementals.
 
-Finally, it modifies the die size and damage bonus so that, instead of dealing 1d8 damage per level, it deals 1d7+1 per level. Ultimately, it deals the same maximum damage. The difference is that the minimum damage will be higher, making the damage range 40-160 at max level if the Saving Throw is failed, whereas vanilla is 20-160.
+Finally, it modifies the dice size and damage bonus so that, instead of dealing 1d8 damage per level, it deals 1d7+1 per level. Ultimately, it deals the same maximum damage. The difference is that the minimum damage will be higher, making the damage range 40-160 at max level if the Saving Throw is failed, whereas vanilla is 20–160.
 
 ### Make Grease bypass Magic Resistance and more useful tactically (430) (BGEE BG2EE EET)
 
@@ -1813,24 +1815,24 @@ Note for users and modders: The Stone to Flesh spell tweak is implemented somewh
 Bigby's spells are generally a pretty poor choice for levels 8 and 9: low damage and a high chance of either spell doing nothing. This tweak improves those two spells so that they deal more damage and are more likely to be effective, while also bypassing Magic Resistance, though they can still be dispelled:
 
 - Clenched fist:
-  - 1st round: 4d6+6 (10-30) crushing damage (originally 3d6, no save)
-  - 2nd round: 6d6+4 (10-40) crushing damage if Save vs. Paralysis at -4 is failed (originally 4d6, Save vs. Paralysis at -2)
-  - 3rd round: 8d6+4 (12-52) crushing damage if Save vs. Paralysis at -2 is failed (originally 6d6, Save vs. Paralysis, no penalty)
-  - Maximum potential damage: 18d6+14 crushing damage (30-122)
+  - 1st round: 4d6+6 (10–30) crushing damage (originally 3d6, no save)
+  - 2nd round: 6d6+4 (10–40) crushing damage if Save vs. Paralysis at -4 is failed (originally 4d6, Save vs. Paralysis at -2)
+  - 3rd round: 8d6+4 (12–52) crushing damage if Save vs. Paralysis at -2 is failed (originally 6d6, Save vs. Paralysis, no penalty)
+  - Maximum potential damage: 18d6+14 crushing damage (30–122)
 - Crushing hand:
-  - 1st round: 6d6+6 (12-42) crushing damage (originally 2d10, no save)
-  - 2nd round: 8d6+8 (16-56) crushing damage if Save vs. Paralysis at -6 is failed (originally 3d10, Save vs. Paralysis at -4)
-  - 3rd round: 10d6+10 (20-70) crushing damage if Save vs. Paralysis at -4 is failed (originally 4d10, Save vs. Paralysis at -2)
-  - Maximum potential damage: 24d6+24 crushing damage (48-168)
+  - 1st round: 6d6+6 (12–42) crushing damage (originally 2d10, no save)
+  - 2nd round: 8d6+8 (16–56) crushing damage if Save vs. Paralysis at -6 is failed (originally 3d10, Save vs. Paralysis at -4)
+  - 3rd round: 10d6+10 (20–70) crushing damage if Save vs. Paralysis at -4 is failed (originally 4d10, Save vs. Paralysis at -2)
+  - Maximum potential damage: 24d6+24 crushing damage (48–168)
 
 ### Make fireball-type spells improve more with level and/or improve explosion animations (446) (IWDEE BGEE BG2EE EET)
 
 This component rebalances several Fireball-type spells to improve their damage scaling at higher levels, making them more competitive choices throughout the game.
 
-- **Fireball**: Damage scales by 1/level after level 10, up to a maximum of 10d6+10 (20-70).
-- **Sunfire**: Damage scales beyond level 10, up to a maximum of 15d6+15 (30-105).
-- **Delayed Blast Fireball**: Damage scaling is significantly improved, starting at 13d6 and progressing to 18d6+20 (38-128) at level 20. Its explosion radius is also increased to match Fireball.
-- **Dragon's Breath**: The damage configuration changes from 20d10 (20-200) to 20d9+20 (40-200).
+- **Fireball**: Damage scales by 1/level after level 10, up to a maximum of 10d6+10 (20–70).
+- **Sunfire**: Damage scales beyond level 10, up to a maximum of 15d6+15 (30–105).
+- **Delayed Blast Fireball**: Damage scaling is significantly improved, starting at 13d6 and progressing to 18d6+20 (38–128) at level 20. Its explosion radius is also increased to match Fireball.
+- **Dragon's Breath**: The damage configuration changes from 20d10 (20–200) to 20d9+20 (40–200).
 
 Additionally, this component includes an optional visual overhaul that replaces the default EE explosion animations for Fireball, Sunfire, Delayed Blast Fireball, and Dragon's Breath with more impressive custom visuals. The damage rebalance and the new animations can be toggled independently in the configuration file. Not available for IWDEE, since the animations are actually nice looking compared to absolute travesty that it is in the BG series (seriously, it looked better in the originals before they changed it).
 
@@ -1875,7 +1877,7 @@ Generally considered a terrible choice for a level 7 spell, this makes it a litt
 
 ### Make Hold Undead bypass Magic Resistance (502) (IWDEE BGEE BG2EE EET)
 
-Same reasoning as in Component 500. Applies to Priest of Lathander's version of the spell. Note that this does not affect liches or demiliches, because both creatures are immune to level 4 spells: liches to levels 1-5, demiliches to everything. Additionally, it makes the save occur at -1 to mirror Hold Person.
+Same reasoning as in Component 500. Applies to Priest of Lathander's version of the spell. Note that this does not affect liches or demiliches, because both creatures are immune to level 4 spells: liches to levels 1–5, demiliches to everything. Additionally, it makes the save occur at -1 to mirror Hold Person.
 
 ### Make Disintegrate cause damage and slow some golems, as per PnP (522) (IWDEE BGEE BG2EE EET)
 
@@ -1948,7 +1950,7 @@ Finally, there are configuration options to set the following:
 - Spell chunks when it succeeds at killing (ON by default)
 - Spell can be set as Divination, or Enchantment instead of Conjuration (Divination by default)
 - Bypasses Magic resistance when killing creatures with HP <= 60 or <= 10 HD (ON by default).
-- A HP (current) hard limit can be established after which the creature is always immune (default: 150 HP)
+- An HP (current) hard limit can be established after which the creature is always immune (default: 150 HP)
 
 ### Make Otiluke's Resilient Sphere protect NPCs marked as innocents (487) (IWDEE BGEE BG2EE EET)
 
@@ -2195,7 +2197,7 @@ Alicorn Lance is not very powerful and does not scale well. This will make it mo
 
 Cool spell that required improvement:
 
-- Damage upgraded from 4d10 to 6d8+6 (4-40 -> 12-54)
+- Damage upgraded from 4d10 to 6d8+6 (4–40 -> 12–54)
 - Chances of being knocked unconscious or stunned are now equal. There is a 33% chance of being stunned or put to sleep if the save is failed, both effects lasting for 2 rounds
 - Save vs. Breath at -1 to avoid both effects and take half damage
 - Magic Resistance does not apply, because it is conjured water
@@ -2250,7 +2252,7 @@ Finally, the component also updates the Staff of the Woodlands to reflect these 
 
 ### Make Doom cast faster (496) (IWDEE BGEE BG2EE EET)
 
-Doom casts very slowly, making it impractical in most scenarios. This makes the casting time 1, similar to Magic Missile, for example. A quick -2 penalty to all of their rolls is very useful in many situations, and with a short casting time it becomes more feasible for clerics and paladins in general. This speed is overridable in the config file (0-8).
+Doom casts very slowly, making it impractical in most scenarios. This makes the casting time 1, similar to Magic Missile, for example. A quick -2 penalty to all of their rolls is very useful in many situations, and with a short casting time it becomes more feasible for clerics and paladins in general. This speed is overridable in the config file (0–8).
 
 ### Make Whirlwind more effective and able to damage more creatures before dissipating (513) (IWDEE BGEE BG2EE EET)
 
@@ -2344,7 +2346,7 @@ Both tweaks can be enabled or disabled in the configuration file.
 
 - Ethereal Retribution: Three rounds of 3d8 magic damage for a quest / level 10 spell is hilariously bad, despite the possibility of sapping some Strength with a Save vs. Spell that does not even have a penalty. Now it does at least 6d6 magic damage per round, and the Strength-sapping effect now has a -2 penalty.
 - Writhing Fog: This improves the spell by making it cause 1d3+1 cold damage, whose die size improves by 1 every level after level 3, until it becomes 1d10+1. Additionally, the Slow effect now triggers with a 50% chance instead of 20%.
-- Spirit Fire: This makes the damage of the spell scale better: it deals 1d4+1/level, up to 12d4+12 magic damage (24-60). Additionally, the 33% Doom effect no longer requires a Saving Throw; it is based on probability alone.
+- Spirit Fire: This makes the damage of the spell scale better: it deals 1d4+1/level, up to 12d4+12 magic damage (24–60). Additionally, the 33% Doom effect no longer requires a Saving Throw; it is based on probability alone.
 - Spiritual Clarity: Induces more clarity, also removing berserk and intoxication. Additionally, it improves the casting speed from 9 to 6.
 
 All these specific tweaks can be enabled or disabled in the configuration file (all ON by default).
@@ -2700,7 +2702,7 @@ Traps are a common way to cheese tough fights. This component alleviates it in s
   - By type: liches, demiliches, and dragons are immune. (Optional, ON by default)
   - By specific power: anyone of level 25 or above are immune. (Optional, OFF by default)
 - Any specific creature can only be affected by a trap once per second. This prevents trap stacking becoming a cheesy way of doing extreme damage suddenly. (ON by default)  
-- Limit the amount of traps permitted at a time (1-6) (OFF by default)
+- Limit the amount of traps permitted at a time (1–6) (OFF by default)
 
 Bear in mind the tweak might not work as intended if a previous tweak changes how they work, specifically what their effects are. This also only affects the basic Set Snare ability.
 

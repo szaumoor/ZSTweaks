@@ -33,20 +33,23 @@
 - Holy Power now only sets strength to 18/100 if it's actually higher than the current one
 - Slightly changed the defensive changes of yuanti in the relevant component, getting instead 18% damage resistance to slashing and +2 AC, and 9% resistance to piercing and missile, as well as +1 AC vs. missile and piercing
 - Staff of Magi now requires intelligence of 16 to be used at all.
+- Meteor Swarm now also deals 2d6 crushing damage, lasts 1 more round, and has a 25% chance of causing sleep for 1 round if a Save vs. Death at -4 is failed (TODO)
+- Firestorm duration increased by 1 round too (TODO)
+- Vorpal component now by default also exempts elementals from being affected
+- Vorpal component now patches my Item Pack's Phantom's Blade (TODO)
+- Ice Storm component now also allows it to last 1 more round (5 in total)
 
 ## New components
 
 - Make Globes of Invulnerability use the animation from IWD (xxxx) (BGEE BG2EE EET)
 - Make buffing spells bypass spell level protection/absorption and Improved Invisibility (xxxx) (IWDEE BGEE BG2EE EET)
-- Make Strength of One cast faster and not reduce the strength of characters with higher strength
-- Make Strength (Wizard/Mazzy) only increase strength
-- Make Feeblemindedness reduce Intelligence to 1 if Intelligence is already at 3
-- Make Champion's Strength more balanced and useful
+- Make Strength of One cast faster and not reduce the strength of characters with higher strength (xxxx) (IWDEE BGEE BG2EE EET)
+- Make Strength (Wizard/Mazzy) only increase strength (xxxx) (IWDEE BGEE BG2EE EET)
+- Make Feeblemindedness reduce Intelligence to 1 if Intelligence is already at 3 (xxxx) (IWDEE BGEE BG2EE EET)
+- Make Champion's Strength more balanced and useful (xxxx) (IWDEE BGEE BG2EE EET)
 - Make Infravision into a spell that improves vision in more general way (xxxx) (IWDEE BGEE BG2EE EET)
 - Make Burning Hands projectile and animation better (xxxx) (IWDEE BGEE BG2EE EET)
 - Make Cone of Cold projectile and animation better (xxxx) (IWDEE BGEE BG2EE EET)
 - Make more classes able to use wands freely (777) (IWDEE BGEE BG2EE EET)
-
-
-## Future additions
+- Make Fire Storm more effective (xxxx) (IWDEE BGEE BG2EE EET)
 

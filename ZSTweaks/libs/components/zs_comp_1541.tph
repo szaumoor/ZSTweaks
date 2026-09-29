@@ -1,5 +1,7 @@
 ACTION_IF is_bg2ee_or_eet BEGIN
 
+    // need to add zsipphb0 from my item pack (phantom blade -3 or die)
+
     COPY ~%MOD_FOLDER%/items/vorpal_weapons~ ~override~
     COPY_EXISTING ~zstwvrpa.spl~ ~override~
         LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = ~%zs_has_stoneskins%~ END
