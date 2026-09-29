@@ -102,7 +102,7 @@ OUTER_SET zst_1541_vorpal_no_chunking       = "0"
 OUTER_SET zst_1541_vorpal_no_spectral_races = "1"
 OUTER_SET zst_1541_vorpal_no_golems         = "1"
 OUTER_SET zst_1541_vorpal_no_slimes         = "1"
-OUTER_SET zst_1541_vorpal_no_elementals     = "0"
+OUTER_SET zst_1541_vorpal_no_elementals     = "1"
 
 // allow or disallow tweaks for component 1545 (stat tweaks)
 OUTER_SET zst_1545_strength_bonuses       = "1"
@@ -344,7 +344,7 @@ OUTER_SET zst_468_iwd_call_lightning   = "1" // makes call lightning in BG use (
 
 OUTER_SET zst_477_smashing_wave_party_friendly = "1"
 
-OUTER_SET zst_496_doom_casting_speed = "1" // set to desired improved casting speed for Doom (0-8, anything else will throw an error)
+OUTER_SET zst_496_doom_casting_speed = "1" // set to desired improved casting speed for Doom (0–8, anything else will throw an error)
 
 OUTER_SET zst_507_disable_aidglow = "0" // disables the character color pulse with Aid to avoid excessive color pollution
 
@@ -418,7 +418,7 @@ OUTER_SET zst_3050_balor_vorpal_penalty = "-4"
 OUTER_SET zst_3030_devas     = "1"
 OUTER_SET zst_3030_planetars = "1"
 
-// sets the Magic Resistance of drow to a percentage of what they have (default: 75, valid range is 20-90)
+// sets the Magic Resistance of drow to a percentage of what they have (default: 75, valid range is 20–90)
 OUTER_SET zst_3150_drow_mr_pctg_of_base = "75"
 
 OUTER_SET zst_3180_immunity_by_type  = "1" // liches, demiliches, and dragons
