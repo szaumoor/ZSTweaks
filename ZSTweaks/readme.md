@@ -113,3 +113,4 @@ The preferences only apply during installation. After, it's meaningless. Think a
 - ScrierOne for help providing data so I could grant compatibility to PnP Celestials and Fiends
 - Other folks on my discord server offering thoughts and brainstorming
 - zenblack for feedback, brainstorming, and icon-making
+- Alzrian for providing a description for the Poison variant of my Robes of Affinity

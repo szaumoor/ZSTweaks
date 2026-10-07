@@ -433,7 +433,7 @@ Single-classed thieves get a +1 bonus to damage and THAC0, and +5% critical hit 
   - Save vs. Petrification +1 (vanilla) and Save vs. Spell +1 (new)
   - +20% Magic damage resistance
   - +10% Elemental damage resistance
-- **Elemental resistance robes**: resistance increases 20→40%, adds 7% damage bonus in the relevant element and +1 Save vs. evocation spells. This also increases the damage resistance of Robe of Red Flames to 50%, and adds the evocation bonus, for consistency (it's a straight upgrade from the Robe of Fire Resistance). All these robes are not usable by any class.
+- **Elemental resistance robes**: resistance increases 20→40%, adds 7% damage bonus in the relevant element and +1 Save vs. evocation spells, and they're now called "`Robe of <Element> Affinity`". This also increases the damage resistance of Robe of Red Flames to 50%, and adds the evocation bonus, for consistency (it's a straight upgrade from the Robe of Fire Resistance). With the exception of the Robe of Red Flames, all these robes are usable by any class.
 - **Archmage Robes**
   - Armor Class is set to 5 (vanilla), and is also improved by 1 additively (new)
   - Magic resistance increases by 10%, not 5%
@@ -441,7 +441,16 @@ Single-classed thieves get a +1 bonus to damage and THAC0, and +5% critical hit 
   - Casting speed increases by 1
   - Saving throws: +2 vs. Spell, +1 to the rest
 
-Possibly incompatible with Forgotten Armaments, whose item tweak component also touches various items, including Traveler's Robe.
+Optionally, the component can also inject a new robe called Robes of Caustic Affinity with a recolored icon, which improve the acid and poison elements. It has a description inspired by Talona, provided by the user Alzrian as well. Benefits:
+
+- +1 saves vs. Evocation
+- 10% more acid damage
+- 30% more poison damage
+- 30% resistance to acid
+- 90% resistance to poison (anything that deals more than 1 poison damage will be affected)
+- It will be injected into any stores that sell *any* elemental affinity robe.
+
+Finally, this is possibly incompatible with Forgotten Armaments, whose item tweak component also touches various items, including Traveler's Robe.
 
 ### Make Belt of Skillful Blade also improve piercing damage (1560) (BG2EE EET)
 
@@ -702,7 +711,7 @@ The armor now leans more heavily into the orcish theme:
 
 - -2 Charisma (from -1), so it's potentially more meaningful
 - Half-orcs only: +1 to inflicted damage, +10 maximum HP, missile resistance is doubled
-  
+
 ### Make Skin of the Ghoul +4 protect against all kinds of paralysis (1212) (BG2EE EET)
 
 This includes paralysis from ghouls and magical commands. It's of course inspired by the fact that the skin is made from a ghoul.
@@ -2665,7 +2674,7 @@ Most minotaurs are wimps in the game. This is what it changes:
 - They critically hit 5% more often. Take care with monks and mages.
   - They now have three points in Axe proficiency (from none). This will in turn grant them half an attack per round, as it would for fighters, resulting in 5/2 attacks per round as baseline.
   - Their hits have a 50% chance of goring, inflicting 2d6 piercing damage (Save vs. Breath to take half), and 3d8 extra if Save vs. Breath fails (no save to take only half), which also grants the minotaur a +1 bonus to their damage and 1/2 to their attacks per round for 2 rounds. These benefits can't affect the minotaur more than once every 9 seconds, and the victim cannot suffer this extra damage more than once per round. The basic 2d6 piercing damage can happen at any time with the aforementioned 50% chance per hit.
-  
+
 ### Make ogre / oni mages regenerating fiends, as per PnP (3140) (IWDEE BGEE BG2EE EET)
 
 So ogre mages are not really ogres. It is some sort of weird misnomer. They are actually oni, essentially fiends, similar to night hags and rakshasas. Ogre mages are also capable of regenerating. So what this component does is simply:
@@ -2701,7 +2710,7 @@ Traps are a common way to cheese tough fights. This component alleviates it in s
 - Specific types of creatures are always immune
   - By type: liches, demiliches, and dragons are immune. (Optional, ON by default)
   - By specific power: anyone of level 25 or above are immune. (Optional, OFF by default)
-- Any specific creature can only be affected by a trap once per second. This prevents trap stacking becoming a cheesy way of doing extreme damage suddenly. (ON by default)  
+- Any specific creature can only be affected by a trap once per second. This prevents trap stacking becoming a cheesy way of doing extreme damage suddenly. (ON by default)
 - Limit the amount of traps permitted at a time (1–6) (OFF by default)
 
 Bear in mind the tweak might not work as intended if a previous tweak changes how they work, specifically what their effects are. This also only affects the basic Set Snare ability.
