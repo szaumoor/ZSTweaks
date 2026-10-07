@@ -38,6 +38,11 @@
 - Vorpal component now by default also exempts elementals from being affected
 - Vorpal component now patches my Item Pack's Phantom's Blade (TODO)
 - Ice Storm component now also allows it to last 1 more round (5 in total)
+- Added a Poison and Acid variants to the Robes of Affinity in the basic robe enhancement component. Thanks to Alzrian for providing a description for the poison one.
+- Sun Soulbeam no longer damages allies, deals a baseline 10d6 fire damage, and 15d6 in the case of the undead.
+- Flaming Fists is now another optional component of the Sun Soul ability tweak, where they inflict less damage, but last for longer. The monk also acquires more uses per level. (TODO)
+- Basic Robes component now optionally adds a new robes of affinity type that improves poison and acid. Sold whenever the other elemental robes are sold.
+- Basic Robes component now allows the user to install a specific selection of robes instead of all, if wished. All are ON by default.
 
 ## New components
 

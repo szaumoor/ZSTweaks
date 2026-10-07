@@ -222,7 +222,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         WARN "[WARN]: Solar tags fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_solar_tags%"
         LAM f_plus
     END
-    
+
     ACTION_IF zst_pit_fiends != 0 AND zst_pit_fiends != 1 BEGIN
         WARN "[WARN]: Pit Fiends fix should be set to 0 (disable) or 1 (enable). Actual value: %zst_pit_fiends%"
         LAM f_plus
@@ -827,6 +827,38 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
+    // ----------------------------------------BASIC ROBES OVERHAUL------------------------------------------------- \\
+
+    ACTION_IF zst_1317_traveler_robes != 0 AND zst_1317_traveler_robes != 1 BEGIN
+        WARN "[WARN]: Setting to allow Traveler Robe tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1317_traveler_robes%"
+        LAM f_plus
+    END
+
+    ACTION_IF zst_1317_knave_robes != 0 AND zst_1317_knave_robes != 1 BEGIN
+        WARN "[WARN]: Setting to allow Knave Robe tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1317_knave_robes%"
+        LAM f_plus
+    END
+
+    ACTION_IF zst_1317_adventurer_robes != 0 AND zst_1317_adventurer_robes != 1 BEGIN
+        WARN "[WARN]: Setting to allow Adventure's Robes tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1317_adventurer_robes%"
+        LAM f_plus
+    END
+
+    ACTION_IF zst_1317_elemental_robes != 0 AND zst_1317_elemental_robes != 1 BEGIN
+        WARN "[WARN]: Setting to allow Elemental Robes tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1317_elemental_robes%"
+        LAM f_plus
+    END
+
+    ACTION_IF zst_1317_elemental_acid_poison_robe != 0 AND zst_1317_elemental_acid_poison_robe != 1 BEGIN
+        WARN "[WARN]: Setting to allow add a new Elemental Robe for Acid/Poison should be set to 0 (disable) or 1 (enable). Actual value: %zst_1317_elemental_acid_poison_robe%"
+        LAM f_plus
+    END
+
+    ACTION_IF zst_1317_archmage_robes != 0 AND zst_1317_archmage_robes != 1 BEGIN
+        WARN "[WARN]: Setting to allow Archmage Robes tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_1317_archmage_robes%"
+        LAM f_plus
+    END
+
     // ----------------------------------------CIRCLET IOUN CRIT PROT------------------------------------------------- \\
     OUTER_SET iouncrit_issues = 0
 
@@ -865,12 +897,12 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
             LAM f_plus
         END
     END
- 
+
     ACTION_IF zst_1674_thalantyr_upgrade_in_bg2 != 0 AND zst_1674_thalantyr_upgrade_in_bg2 != 1 BEGIN
         WARN "[WARN]: Setting to make improved Cloak of Nondetection (Whispers of Silence) of Thalantyr Item Upgrade mod the default in BG2EE should be between 0 to 10. Actual value: %zst_1674_thalantyr_upgrade_in_bg2%"
         LAM f_plus
     END
-    
+
     ACTION_IF zst_1675_cloak_displacement_dr <= 0 OR zst_1675_cloak_displacement_dr > 10 BEGIN
         WARN "[WARN]: Setting to determine damage resistance in Cloak of Displacement should be between 0 to 10. Actual value: %zst_1675_cloak_displacement_dr%"
         LAM f_plus
@@ -1043,7 +1075,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
     END
 
     // ----------------------------------------SHADOW BLADE-------------------------------------------------------- \\
-    
+
     ACTION_IF zst_1596_thalantyr_upgrade_in_bg2 != 0 AND zst_1596_thalantyr_upgrade_in_bg2 != 1 BEGIN
         WARN "[WARN]: Setting to make Shadow Blade in BG2 the overhauled upgraded version of Thalantyr's Item Upgrade should be set to 0 (disable) or 1 (enable). Actual value: %zst_1596_thalantyr_upgrade_in_bg2%"
         LAM f_plus
@@ -1972,7 +2004,7 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         WARN "[WARN]: Wand Usability group component should be set to 1 or 0. Actual value: %zst_group_777_wand_usability%"
         LAM f_plus
     END
-    
+
     // ----------------------------------------GROUP COMP VARIABLES (ARCANE)------------------------------------------------- \\
 
     ACTION_IF zst_group_140_finger_death != 0 AND zst_group_140_finger_death != 1 BEGIN

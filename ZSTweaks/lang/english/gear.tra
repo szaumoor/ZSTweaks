@@ -157,7 +157,7 @@ Weight: 4~
 STATISTICS:
 
 Equipped abilities:
-– Electricity Resistance: +40%
+– Electricity Resistance: +30%
 – Electricity Damage: +7%
 – Saving Throws vs. Evocation: +1
 
@@ -168,18 +168,18 @@ Weight: 3~
 STATISTICS:
 
 Equipped abilities:
-– Cold Resistance: +40%
+– Cold Resistance: +30%
 – Cold Damage: +7%
 – Saving Throws vs. Evocation: +1
 
 Weight: 3~
 
-@6145 = ~Due to the extremely volatile nature of most fire magics, these robes are not uncommon among young acolytes and their wizardly tutors but despite the association with the wizardly profession, this robe can be worn by anyone.
+@6145 = ~Due to the extremely volatile nature of most fire magics, these robes are not uncommon among young acolytes and their wizardly tutors but despite the association with that profession, this robe can be worn by anyone.
 
 STATISTICS:
 
 Equipped abilities:
-– Fire Resistance: +40%
+– Fire Resistance: +30%
 – Fire Damage: +7%
 – Saving Throws vs. Evocation: +1
 
@@ -234,6 +234,20 @@ Equipped abilities:
 – Casting speed: +1
 
 Weight: 6~
+
+@6220 = ~Robes of Caustic Affinity~
+
+@6221 = "Robes such as these are favored by alchemists in the service of Talona, Lady of Disease. The Talontar consider ownership of one to be a mark of prestige, for it is the rare wizard to have lasted long enough to earn one without being dissolved from the inside-out by his own toxic experiments. Despite the association with the wizardly profession, this robe can be worn by anyone.
+
+STATISTICS:
+
+Equipped abilities:
+– Damage resistance: +30% (acid), +90% (poison)
+– Damage dealt: +10% (acid), +30% (poison)
+– Saving Throws vs. Evocation: +1
+
+Weight: 3"
+
 
 @6340 = ~The Mercykillers are a powerful faction based out of the planar city of Sigil. This ring is given out to Mercykiller assassins when they are sent out to punish those who have broken the laws of Sigil. Often these assassins will roam as far as the Prime Material Plane.
 
@@ -1440,7 +1454,7 @@ STATISTICS:
 Equipped abilities:
 – Armor Class: +2 vs. missile attacks
 
-Weight: 2~ 
+Weight: 2~
 
 // patching other mods
 // item upgrade

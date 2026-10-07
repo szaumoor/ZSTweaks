@@ -1,79 +1,116 @@
-COPY_EXISTING ~clck12.itm~ ~override~ // knave
-    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6140) END
-    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 2 END
-    LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter2 = 4 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=36,p1=1;op=173,p1=50~ END
-    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 5 STR_VAR effects = ~op=275;op=276;op=277;op=59;op=90;op=91;op=92~ END
+COPY ~%MOD_FOLDER%/items/basic_robes~ ~override~
 
-COPY_EXISTING ~clck13.itm~ ~override~ // traveler
-    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6141) END
-    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 3 END
-    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 36 opcode = 37 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=34,p1=1;op=89,p1=15;op=176,p1=4~ END
+ACTION_IF zst_1317_traveler_robes BEGIN
 
-COPY_EXISTING ~clck14.itm~ ~override~ // adventurer
-    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6142) END
-    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter2 = 0 END
-    LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=37,p1=1;op=31,p1=20;op=30;op=84;op=29;op=28;op=85;op=27~ END
+    COPY_EXISTING ~clck14.itm~ ~override~ // adventurer
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6142) END
+        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter2 = 0 END
+        LPF ADD_EQUIPPED_EFF INT_VAR p1 = 10 STR_VAR effects = ~op=37,p1=1;op=31,p1=20;op=30;op=84;op=29;op=28;op=85;op=27~ END
 
-COPY_EXISTING ~clck09.itm~ ~override~ // cold affinity clck
-    LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6137) id_desc=RESOLVE_STR_REF(@6144) unusable0 = 0 unusable1 = 0 END
-    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 28 parameter1 = 40 END
-    LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 28 opcode = 85 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=2~ END
+END
 
-COPY_EXISTING ~clck10.itm~ ~override~ // fire affinity clck
-    LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6138) id_desc=RESOLVE_STR_REF(@6145) unusable0 = 0 unusable1 = 0 END
-    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 30 parameter1 = 40 END
-    LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 30 opcode = 84 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=1~ END
+ACTION_IF zst_1317_knave_robes BEGIN
 
-COPY_EXISTING ~bdrobe05.itm~ ~override~ // robe of flames
-    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6146) END
-    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 30 parameter1 = 50 END
-    LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 30 opcode = 84 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6~ END
-IF_EXISTS
+    COPY_EXISTING ~clck12.itm~ ~override~ // knave
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6140) END
+        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 2 END
+        LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter2 = 4 END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=36,p1=1;op=173,p1=50~ END
+        LPF ADD_EQUIPPED_EFF INT_VAR p1 = 5 STR_VAR effects = ~op=275;op=276;op=277;op=59;op=90;op=91;op=92~ END
 
-COPY_EXISTING ~clck11.itm~ ~override~ // electric affinity clck
-    LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6139) id_desc=RESOLVE_STR_REF(@6143) unusable0 = 0 unusable1 = 0 END
-    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 29 parameter1 = 40 END
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=3~ END
+END
+
+ACTION_IF zst_1317_adventurer_robes BEGIN
+
+    COPY_EXISTING ~clck13.itm~ ~override~ // traveler
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6141) END
+        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 0 parameter1 = 3 END
+        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 36 opcode = 37 END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=34,p1=1;op=89,p1=15;op=176,p1=4~ END
+
+END
+
+ACTION_IF zst_1317_elemental_robes BEGIN
+
+    COPY_EXISTING ~clck09.itm~ ~override~ // cold affinity clck
+        LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6137) id_desc=RESOLVE_STR_REF(@6144) unusable0 = 0 unusable1 = 0 END
+        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 28 parameter1 = 30 END
+        LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 28 opcode = 85 END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=2~ END
+
+    ACTION_IF zst_1317_elemental_acid_poison_robe BEGIN
+
+        COPY_EXISTING ~clck09.itm~ ~override/zstclkps.itm~ // new poison/acid variant
+            LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6220) id_desc=RESOLVE_STR_REF(@6221) STR_VAR icon="zsclk09p" END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 5 parameter1 = 130 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 4 parameter1 = 86 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 85 opcode = 173 parameter1=90 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 28 opcode = 27 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 25 parameter2 = 24 END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 24 parameter2 = 30 END
+            LPF ALTER_EFFECT INT_VAR match_opcode = 332 parameter2 = 4 parameter1 = 10 END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 332 match_parameter2 = 4 parameter2 = 6 parameter1 = 30 END
+
+    END
+
+    COPY_EXISTING ~clck10.itm~ ~override~ // fire affinity clck
+        LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6138) id_desc=RESOLVE_STR_REF(@6145) unusable0 = 0 unusable1 = 0 END
+        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 30 parameter1 = 30 END
+        LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 30 opcode = 84 END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=1~ END
+
+    COPY_EXISTING ~bdrobe05.itm~ ~override~ // robe of flames
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6146) END
+        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 30 parameter1 = 50 END
+        LPF CLONE_EFFECT INT_VAR check_headers = 0 match_opcode = 30 opcode = 84 END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6~ END
+    IF_EXISTS
+
+    COPY_EXISTING ~clck11.itm~ ~override~ // electric affinity clck
+        LPF ALTER_ITEM INT_VAR id_name=RESOLVE_STR_REF(@6139) id_desc=RESOLVE_STR_REF(@6143) unusable0 = 0 unusable1 = 0 END
+        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 29 parameter1 = 30 END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=346,p1=1,spec=6;op=332,p1=7,p2=3~ END
+
+END
 
 // ---------Archmage stuff-----------  \\
 
-DEFINE_PATCH_MACRO common_buff BEGIN
-    LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=31,p1=25;op=189,p1=1;op=0,p1=1,p2=0~ END
+ACTION_IF zst_1317_archmage_robes BEGIN
+
+    DEFINE_PATCH_MACRO common_buff BEGIN
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=31,p1=25;op=189,p1=1;op=0,p1=1,p2=0~ END
+    END
+    DEFINE_PATCH_MACRO basic_archmage BEGIN
+        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 166 parameter1 = 10 END
+        LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 37 parameter1 = 2 END
+        LPM common_buff
+    END
+
+    COPY_EXISTING ~clck15.itm~ ~override~ // archmage robes
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6147) END
+        LPM basic_archmage
+
+    COPY_EXISTING ~clck16.itm~ ~override~ // archmage robes
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6148) END
+        LPM basic_archmage
+
+    COPY_EXISTING ~clck17.itm~ ~override~ // archmage robes
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6149) END
+        LPM basic_archmage
+
+    COPY_EXISTING ~c2robe01.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50040) END
+        LPM common_buff
+    IF_EXISTS
+
+    COPY_EXISTING ~c2robe02.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50041) END
+        LPM common_buff
+    IF_EXISTS
+
+    COPY_EXISTING ~c2robe03.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50042) END
+        LPM common_buff
+    IF_EXISTS
+
 END
-DEFINE_PATCH_MACRO basic_archmage BEGIN
-    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 166 parameter1 = 10 END
-    LPF ALTER_EFFECT INT_VAR check_headers = 0 match_opcode = 37 parameter1 = 2 END
-    LPM common_buff
-END
-
-COPY_EXISTING ~clck15.itm~ ~override~ // archmage robes
-    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6147) END
-    LPM basic_archmage
-
-COPY_EXISTING ~clck16.itm~ ~override~ // archmage robes
-    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6148) END
-    LPM basic_archmage
-
-COPY_EXISTING ~clck17.itm~ ~override~ // archmage robes
-    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@6149) END
-    LPM basic_archmage
-
-COPY_EXISTING ~c2robe01.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50040) END
-    LPM common_buff
-IF_EXISTS
-
-COPY_EXISTING ~c2robe02.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50041) END
-    LPM common_buff
-IF_EXISTS
-
-COPY_EXISTING ~c2robe03.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@50042) END
-    LPM common_buff
-IF_EXISTS
