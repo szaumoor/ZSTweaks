@@ -161,6 +161,14 @@ OUTER_SET zst_592_morale                = "10" // Default seems to be 10 for mos
 
 ////////////////////////////// Gear tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+// basic robes components
+OUTER_SET zst_1317_traveler_robes             = "1"
+OUTER_SET zst_1317_knave_robes                = "1"
+OUTER_SET zst_1317_adventurer_robes           = "1"
+OUTER_SET zst_1317_elemental_robes            = "1" // this includes Edwin's SoD robe
+OUTER_SET zst_1317_elemental_acid_poison_robe = "1" // only applies if zst_1317_elemental_robes is on
+OUTER_SET zst_1317_archmage_robes             = "1" // includes item upgrade variants
+
 // circlet / ioun critical hit protection configuration, only select one, component will fail otherwise
 OUTER_SET zst_1664_crits_all      = "0"
 OUTER_SET zst_1664_crits_iouns    = "0"
