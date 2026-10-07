@@ -8,6 +8,8 @@ local linters = new Mapping<String, Step> {
     ["check_merge_conflict"] = Builtins.check_merge_conflict
     ["check_symlinks"] = Builtins.check_symlinks
     ["detect_private_key"] = Builtins.detect_private_key
+    ["fix-smart-quotes"] = Builtins.fix_smart_quotes
+    ["trailing-whitespace"] = Builtins.trailing_whitespace
 }
 
 hooks {
