@@ -105,7 +105,13 @@ ACTION_IF zst_1534_potion_overhaul BEGIN
 
     // potion of regeneration
     COPY_EXISTING ~potn42.itm~ ~override~
-        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7469) END
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7471) END
+        LPF ALTER_EFFECT INT_VAR match_opcode = 49 parameter2 = 0 parameter1 = 4 END
+        LPF CLONE_EFFECT INT_VAR match_opcode=21 parameter1=15 END
+        LPF ALTER_EFFECT INT_VAR duration=7200 STR_VAR match_duration_ex = "(o_duration > 6)" END
+
+    COPY_EXISTING ~potn43.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@7471) END
         LPF ALTER_EFFECT INT_VAR match_opcode = 98 parameter2 = 3 parameter1 = 2 END
 
     ACTION_IF NOT zst_1534_potions_usable_everyone BEGIN

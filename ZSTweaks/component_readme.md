@@ -171,6 +171,7 @@ This component includes two optional, universal changes: making all potions usab
 - **Potion of Perception**: Now grants a +40% bonus to Find Traps and Detect Illusions, and a +1 bonus to Armor Class, THAC0, and all Saving Throws.
 - **Potion of Power**: Now usable by any class. Grants immunity to morale failure, improves all thieving skills, grants +1 Casting Speed, +10% to all damage output, and a flat +4 THAC0 bonus.
 - **Potion of Regeneration**: Heals 3 HP per round for 3 turns (up from 2 HP/round for 2 turns).
+- **Potion of Insight**: No longer sets Wisdom to 18, discouring the cheese of using Wisdom as a dump stat and using this just to be able to cast Wish and Limited Wish normally. Now it increases it by 4, and lasts for 24 hours, allowing priests to memorize extra spells, if they get any from the extra Wisdom. Lore is also increased by 15.
 - **CHARNAME'S Tankard**: Heals 27 HP (3/day) and grants +1 Strength and Constitution for 1 turn.
 - **All Strength Potions**: Usable by any class (this is a separate option from the universal one).
 
