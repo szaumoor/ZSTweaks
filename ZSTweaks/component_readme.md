@@ -2347,7 +2347,7 @@ The spell is pretty much useless in its original form. Drawing inspiration from 
 ### Make Sun Soul Ray and Sun Soulbeam more powerful (2100) (IWDEE BGEE BG2EE EET)
 
 - Sun Soul Ray: The maximum damage normally grows up to 6d8 at level 12, adding 6 damage to undead, which is a very small bonus that does not scale. Now this bonus against undead increases by 2 points every time the power is upgraded.
-- Sun Soulbeam: The difference in damage between non-undead and undead in vanilla is 9d6 vs. 9d6+3. That is not a meaningful difference. Therefore, the damage to undead will now be 12d6+3, i.e. up to 75 damage instead of 57, which I think is acceptable for a once-per-day ability anyway.
+- Sun Soulbeam: The difference in damage between non-undead and undead in vanilla is 9d6 vs. 9d6+3. That is not a meaningful difference. Therefore, the damage to undead will now be 10d6 by default, and 15d6 vs. undead. Additionally, it no longer will damage allies making it far more convenient.
 
 Both tweaks can be enabled or disabled in the configuration file.
 

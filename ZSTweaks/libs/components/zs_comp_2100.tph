@@ -18,8 +18,17 @@ ACTION_IF zst_2100_sunsoul_beam BEGIN
 
   COPY_EXISTING "spcl239.spl" ~override~
     LPF ALTER_SPELL INT_VAR desc=RESOLVE_STR_REF(@7790) END
+    LPF DELETE_EFFECT INT_VAR match_opcode = 177 STR_VAR match_resource = "spcl239b" END
+
+  COPY_EXISTING "spcl239a.spl" ~override~
+    LPF CLONE_EFFECT
+        INT_VAR match_opcode = 215 opcode = 318 parameter2 = 49 duration = 0 target=2
+        STR_VAR resource = %SOURCE_RES% insert="first"
+    END
+
+    LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 10 END
 
   COPY_EXISTING "spcl239a.eff" ~override~
-    LPF ALTER_EFF_FILE INT_VAR parameter1=0 dicesize=6 dicenumber=3 END
+    LPF ALTER_EFF_FILE INT_VAR parameter1=0 dicesize=6 dicenumber=5 END
 
 END
