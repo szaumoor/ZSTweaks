@@ -298,6 +298,9 @@ OUTER_SET zst_447_melf_no_mr = "1" // makes Melf's Acid Arrow bypass MR, since i
 
 OUTER_SET zst_487_otiluke_iwd_animation = "1"
 
+// disintegrate
+OUTER_SET zst_522_use_iwdee_version = "1"
+
 OUTER_SET zst_561_web_save_nerf = "1" // enable or disable the nert to the save penalty in the web spell
 
 // power word kill config options

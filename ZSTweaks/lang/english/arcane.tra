@@ -588,6 +588,20 @@ When this spell is cast at another creature, a thin green ray is shot out. Upon 
 
 Clay, sand, brain, and magic golems, while normally immune to magic, are susceptible to this spell in a special way, taking 1d12 crushing damage instantly, becoming less functional for 2 rounds with no save allowed, reducing their movement speed down to a third, and inflicting a -2 penalty to their Armor Class and Saving Throws, a -4 penalty to their combat rolls, a -10 penalty to their speed factor, and finally, it reduces their attacks per round by 1/2.~
 
+@8631 = ~Disintegrate
+(Alteration)
+
+Level: 6
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+The spell makes a creature... vanish. When cast, a green orb shoots forth from the caster to the target, who will be disintegrated unless it makes a Save vs. Spell. This spell works on undead creatures. Disintegrated characters cannot be resurrected—they are gone forever.
+
+Clay, sand, brain, and magic golems, while normally immune to magic, are susceptible to this spell in a special way, taking 2d12 crushing damage instantly, becoming less functional for 2 rounds with no save allowed, reducing their movement speed down to a third, and inflicting a -2 penalty to their Armor Class and Saving Throws, a -4 penalty to their combat rolls, a -10 penalty to their speed factor, and finally, it reduces their attacks per round by 1/2.~
+
 @8640 = ~Stone to Flesh
 (Alteration)
 

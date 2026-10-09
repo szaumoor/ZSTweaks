@@ -1888,9 +1888,9 @@ Generally considered a terrible choice for a level 7 spell, this makes it a litt
 
 Same reasoning as in Component 500. Applies to Priest of Lathander's version of the spell. Note that this does not affect liches or demiliches, because both creatures are immune to level 4 spells: liches to levels 1–5, demiliches to everything. Additionally, it makes the save occur at -1 to mirror Hold Person.
 
-### Make Disintegrate cause damage and slow some golems, as per PnP (522) (IWDEE BGEE BG2EE EET)
+### Make Disintegrate affect some golems (PnP) and optionally use IWD's animations (522) (IWDEE BGEE BG2EE EET)
 
-This makes the spell cause 1d12 crushing damage to all clay golems, including other creatures considered clay golems in the game, such as sand, magical, and brain golems. Additionally, they will immediately be affected by the following effects for 2 rounds:
+First, this makes the spell cause 2d12 crushing damage to all clay golems, including other creatures considered clay golems in the game, such as sand, magical, and brain golems. Additionally, they will immediately be affected by the following effects for 2 rounds:
 
 - Movement speed decreases to a third of what they have
 - -10 penalty to speed factor
@@ -1899,6 +1899,8 @@ This makes the spell cause 1d12 crushing damage to all clay golems, including ot
 - -1/2 attacks per round
 
 This effectively means that hasted clay golems, for example, would have most of the benefits they get from their Golem Haste for those 2 rounds effectively nullified.
+
+Optionally, it may use the far cooler (in my opinion) effect in IWD, where the target rapidly fades from view to simulate vanishing, instead of the rather rough turning-to-dust animation of BG. This change *only* affects this specific player-usable wizard spell, not others, such as beholder rays and cutscene disintegrate spells cast by Irenicus and others.
 
 ### Make Chromatic Orb more interesting by providing party-only chromatic varieties (555) (IWDEE BGEE BG2EE EET)
 

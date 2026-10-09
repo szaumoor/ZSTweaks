@@ -25,7 +25,8 @@
   - As a bonus, Raise Dead, Recall Spirit, and Resurrection can also have their casting speed reduced to 6 (from 9). This is optional, and ON by default.
 - Cure/Cause spells now make the spells have a range of 10 ft. instead of requiring melee range, which should help casters, both ally and foe, have an easier time safely healing their party. This is optional and ON by default.
 - Otiluke's Resilient sphere component now also uses the much better animation of IWDEE in BG games
-- Disintegrate now uses the IWDEE animation where instead of instantly converting to dust, the creature rapidly vanishes. (TODO)
+- Disintegrate now uses the IWDEE animation where instead of instantly converting to dust, the creature rapidly vanishes.
+- Disintegrate's crushing damage vs. some golems doubled (1d12 -> 2d12)
 - Added warning for components that apply patches based on proficiencies about how they won't detect weapons as expected if run after components that change the proficiency system.
 - Shield of Faith component now always grants the maximum damage resistance at the outset, since at the beginning, the resistance granted is barely worth mentioning. However, I decided to nerf damage resistance to 20%. So now, my component makes it always grant that, plus +2 Armor Class, leaving only duration as the variable that scales with level. As a minor counterbalance for the high power at the outset, duration is now 2 rounds at level 1, plus 1 round per level (originally, it starts at 4 rounds).
 - Potion Overhaul now patches Potion of Insight so it increases Wisdom by 4 instead of setting it to 18 and lasts for 24 in-game hours instead. Does not stack, but the extended duration allows divine casters to memorize extra spells if any new slots were opened up thanks to the extra wisdom. It also increases lore by 15. Sorry, it's no longer a way to bypass using Wisdom as a dump stat when you want to cast Wish... (TODO)

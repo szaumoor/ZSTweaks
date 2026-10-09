@@ -1250,6 +1250,13 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
+    // ----------------------------------------DISINTEGRATE------------------------------------------------------ \\
+
+    ACTION_IF zst_522_use_iwdee_version != 0 AND zst_522_use_iwdee_version != 1 BEGIN
+        WARN "[WARN]: Setting to make Disintegrate use IWD's animation should be set to 0 (disable) or 1 (enable). Actual value: %zst_522_use_iwdee_version%"
+        LAM f_plus
+    END
+
     // ----------------------------------------WEB TWEAK------------------------------------------------- \\
 
     ACTION_IF zst_561_web_save_nerf != 0 AND zst_561_web_save_nerf != 1 BEGIN
