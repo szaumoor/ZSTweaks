@@ -1,7 +1,7 @@
 ACTION_IF NOT VARIABLE_IS_SET "zs_log_created" BEGIN
 
     // SILENT
-    // ACTION_TRY 
+    // ACTION_TRY
     //     DELETE + "%MOD_FOLDER%/../zstweaks_logs"
     // WITH
     //     DEFAULT
@@ -28,31 +28,35 @@ OUTER_SPRINT DEBUG_PREAMBLE "[DEBUG]: "
  *
  * This is a patch and action function that Logs a line into the standard output and appends it out into the default file found
  *  at **```..zstweaks_logs/warnings.txt```**.
- * 
+ *
  * ---
- * 
+ *
  * ### Parameters:
  *
  * **predicate_stdout** (int/bool): This variable allows an user to pass a predicate upon calling it, to decide whether printing to the
  *                                  standard output is desired or not. For example, passing IS_AN_INT "%variable%" (a predicate) would
  *                                  resolve to 1 (true) or 0 (false). You may also pass 0 or 1 directly too if desired to disable or enable
  *                                  (or other constants such as TRUE(1) or FALSE(0). Default value is TRUE(1).
- * 
- * **add_level_preamble** (int/bool): This variable controls whether, in the case of predicate_stdout being TRUE, the messages should be 
- *                                    printed with a preamble indicating the log level (as per **log_level**) or not. Valid values are 
+ *
+ * **add_level_preamble** (int/bool): This variable controls whether, in the case of predicate_stdout being TRUE, the messages should be
+ *                                    printed with a preamble indicating the log level (as per **log_level**) or not. Valid values are
  *                                    1 (TRUE) and 0 (FALSE).
+ *
+ * **log_if** (int/bool): This variable controls whether the function should run at all (beyond the check itself). This is provided in
+ *                        case a check can be isolated purely to the logging function, thus reducing conditional blocks in "main" code
+ *                         paths.
  *
  * **message** (str): The message to pass into console and/or the error log file. Default: Empty string. Crashes if it remains empty
  *                    when the function is called.
  *
- * **log_level** (str): The logging level of the message. Four values are accepted: info, warn, abort, fail, and debug. Abort causes a 
- *                      component failure without any assumed error. Fail does the same but assuming an error. Warn is the 
+ * **log_level** (str): The logging level of the message. Four values are accepted: info, warn, abort, fail, and debug. Abort causes a
+ *                      component failure without any assumed error. Fail does the same but assuming an error. Warn is the
  *                      default value, causing the component to be marked as installed with errors. Info and debug do the same: it just
  *                      prints a message normally but with a different default optional message preamble.
- * 
+ *
  * **filename** (str): This defines which file the logged line is appended to. By default, it's appended to "warnings.txt". Use different
  *                     files for different purposes.
- * 
+ *
  * **flog_preamble** (str): This defines which "preamble" each message should have when appended to the file, such as a hyphen followed by
  *                          whitespace.
  */
@@ -60,86 +64,91 @@ DEFINE_DIMORPHIC_FUNCTION LOG_TEXT
 INT_VAR
     predicate_stdout   = TRUE
     add_level_preamble = TRUE
+    log_if = 1
 STR_VAR
     message   = ""
     log_level = "warn"
     filename = "warnings"
     flog_preamble = "- "
 BEGIN
-    ACTION_IF STRING_LENGTH message > 0 BEGIN
+    ACTION_IF log_if BEGIN
 
-        OUTER_SET is_abort = "%log_level%" STR_EQ "abort"
-        OUTER_SET is_info  = "%log_level%" STR_EQ "info"
-        OUTER_SET is_warn  = "%log_level%" STR_EQ "warn"
-        OUTER_SET is_fail  = "%log_level%" STR_EQ "fail"
-        OUTER_SET is_debug = "%log_level%" STR_EQ "debug"
+        ACTION_IF STRING_LENGTH message > 0 BEGIN
 
-        ACTION_IF is_warn OR is_fail OR is_abort OR is_info OR is_debug BEGIN
+            OUTER_SET is_abort = "%log_level%" STR_EQ "abort"
+            OUTER_SET is_info  = "%log_level%" STR_EQ "info"
+            OUTER_SET is_warn  = "%log_level%" STR_EQ "warn"
+            OUTER_SET is_fail  = "%log_level%" STR_EQ "fail"
+            OUTER_SET is_debug = "%log_level%" STR_EQ "debug"
 
-            ACTION_IF NOT FILE_EXISTS ~%MOD_FOLDER%/../zstweaks_logs/%filename%.txt~ BEGIN
-                COPY + ~%MOD_FOLDER%/templates/empty~ ~%MOD_FOLDER%/../zstweaks_logs/%filename%.txt~                              
-            END
-            APPEND_OUTER + ~%MOD_FOLDER%/../zstweaks_logs/%filename%.txt~ "%flog_preamble%%message%"
+            ACTION_IF is_warn OR is_fail OR is_abort OR is_info OR is_debug BEGIN
 
-            ACTION_IF predicate_stdout = TRUE BEGIN
+                ACTION_IF NOT FILE_EXISTS ~%MOD_FOLDER%/../zstweaks_logs/%filename%.txt~ BEGIN
+                    COPY + ~%MOD_FOLDER%/templates/empty~ ~%MOD_FOLDER%/../zstweaks_logs/%filename%.txt~
+                END
+                APPEND_OUTER + ~%MOD_FOLDER%/../zstweaks_logs/%filename%.txt~ "%flog_preamble%%message%"
 
-                OUTER_SPRINT resolved_msg "%message%"
+                ACTION_IF predicate_stdout = TRUE BEGIN
 
-                ACTION_IF is_warn BEGIN
+                    OUTER_SPRINT resolved_msg "%message%"
 
-                    ACTION_IF add_level_preamble BEGIN
-                        OUTER_SPRINT resolved_msg "%WARN_PREAMBLE%%message%"
+                    ACTION_IF is_warn BEGIN
+
+                        ACTION_IF add_level_preamble BEGIN
+                            OUTER_SPRINT resolved_msg "%WARN_PREAMBLE%%message%"
+                        END
+
+                        WARN "%resolved_msg%"
+
+                    END ELSE ACTION_IF is_info BEGIN
+
+                        ACTION_IF add_level_preamble BEGIN
+                            OUTER_SPRINT resolved_msg "%INFO_PREAMBLE%%message%"
+                        END
+
+                        PRINT "%resolved_msg%"
+
+                    END ELSE ACTION_IF is_debug BEGIN
+
+                        ACTION_IF add_level_preamble BEGIN
+                            OUTER_SPRINT resolved_msg "%DEBUG_PREAMBLE%%message%"
+                        END
+
+                        PRINT "%resolved_msg%"
+
+                    END ELSE ACTION_IF is_fail BEGIN
+
+                        ACTION_IF add_level_preamble BEGIN
+                            OUTER_SPRINT resolved_msg "%FAIL_PREAMBLE%%message%"
+                        END
+
+                        FAIL "%resolved_msg%"
+
+                    END ELSE ACTION_IF is_abort BEGIN
+
+                        ACTION_IF add_level_preamble BEGIN
+                            OUTER_SPRINT resolved_msg "%ABORT_PREAMBLE%%message%"
+                        END
+
+                        ABORT "%resolved_msg%"
+
                     END
-
-                    WARN "%resolved_msg%"
-
-                END ELSE ACTION_IF is_info BEGIN
-
-                    ACTION_IF add_level_preamble BEGIN
-                        OUTER_SPRINT resolved_msg "%INFO_PREAMBLE%%message%"
-                    END
-
-                    PRINT "%resolved_msg%"
-
-                END ELSE ACTION_IF is_debug BEGIN
-
-                    ACTION_IF add_level_preamble BEGIN
-                        OUTER_SPRINT resolved_msg "%DEBUG_PREAMBLE%%message%"
-                    END
-
-                    PRINT "%resolved_msg%"
-
-                END ELSE ACTION_IF is_fail BEGIN
-
-                    ACTION_IF add_level_preamble BEGIN
-                        OUTER_SPRINT resolved_msg "%FAIL_PREAMBLE%%message%"
-                    END
-
-                    FAIL "%resolved_msg%"
-
-                END ELSE ACTION_IF is_abort BEGIN
-
-                    ACTION_IF add_level_preamble BEGIN
-                        OUTER_SPRINT resolved_msg "%ABORT_PREAMBLE%%message%"
-                    END
-
-                    ABORT "%resolved_msg%"
 
                 END
+
+            END ELSE BEGIN
+
+                FAIL
+                "LOG_TEXT function called with an invalid logging level: %log_level%. Valid levels are 'warn', 'info', 'abort', and 'fail'. Revise its use originating from zs_comp_%COMPONENT_NUMBER%.tph"
 
             END
 
         END ELSE BEGIN
 
-            FAIL 
-            "LOG_TEXT function called with an invalid logging level: %log_level%. Valid levels are 'warn', 'info', 'abort', and 'fail'. Revise its use originating from zs_comp_%COMPONENT_NUMBER%.tph"
+            FAIL
+            "LOG_TEXT function has an empty message as input. Revise its use originating from zs_comp_%COMPONENT_NUMBER%.tph"
 
         END
-
-    END ELSE BEGIN
-
-        FAIL 
-        "LOG_TEXT function has an empty message as input. Revise its use originating from zs_comp_%COMPONENT_NUMBER%.tph"
 
     END
 END
