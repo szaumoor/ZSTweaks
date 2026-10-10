@@ -31,7 +31,7 @@
 - Shield of Faith component now always grants the maximum damage resistance at the outset, since at the beginning, the resistance granted is barely worth mentioning. However, I decided to nerf damage resistance to 20%. So now, my component makes it always grant that, plus +2 Armor Class, leaving only duration as the variable that scales with level. As a minor counterbalance for the high power at the outset, duration is now 2 rounds at level 1, plus 1 round per level (originally, it starts at 4 rounds).
 - Potion Overhaul now patches Potion of Insight so it increases Wisdom by 4 instead of setting it to 18 and lasts for 24 in-game hours instead. Does not stack, but the extended duration allows divine casters to memorize extra spells if any new slots were opened up thanks to the extra wisdom. It also increases lore by 15. Sorry, it's no longer a way to bypass using Wisdom as a dump stat when you want to cast Wish...
 - Ray of Enfeeblement component now reduces Strength in the 6–9 range by half its value instead of setting it to 5. Those that have already 5 or less, have their strength set to 1. This ensures the spell remains likely to be relevant and the possibility of increasing strength is eliminated. (TODO)
-- Holy Power now only sets strength to 18/100 if it's actually higher than the current one
+- Holy Power now only sets strength to 18/100 if it's actually higher than the current one (TODO)
 - Slightly changed the defensive changes of yuanti in the relevant component, getting instead 18% damage resistance to slashing and +2 AC, and 9% resistance to piercing and missile, as well as +1 AC vs. missile and piercing
 - Staff of Magi now requires intelligence of 16 to be used at all.
 - Meteor Swarm now also deals 2d6 crushing damage, lasts 1 more round, and has a 25% chance of causing sleep for 1 round if a Save vs. Death at -4 is failed (TODO)
@@ -44,6 +44,7 @@
 - Flaming Fists is now another optional component of the Sun Soul ability tweak, where they inflict less damage, but last for longer. The monk also acquires more uses per level. (TODO)
 - Basic Robes component now optionally adds a new robes of affinity type that improves poison and acid. Sold whenever the other elemental robes are sold.
 - Basic Robes component now allows the user to install a specific selection of robes instead of all, if wished. All are ON by default.
+- Basic Robes component will emit warnings and append them to log files if Forgotten Armaments is installed, and a class of robe that clashes was chosen to be edited in the configuration files.
 
 ## New components
 
@@ -58,4 +59,4 @@
 - Make Cone of Cold projectile and animation better (xxxx) (IWDEE BGEE BG2EE EET)
 - Make more classes able to use wands freely (777) (IWDEE BGEE BG2EE EET)
 - Make Fire Storm more effective (xxxx) (IWDEE BGEE BG2EE EET)
-
+- Make The Magma Bulwark +2 a more unique armor beyond enchantment level (xxxx) (BGEE EET)
