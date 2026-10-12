@@ -43,7 +43,7 @@ ACTION_IF NOT is_iwdee BEGIN
     LAF CREATE_SELF_SPL STR_VAR filename = "zstmgbl3"END
 
     COPY_EXISTING ~plat24.itm~ ~override~
-        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@66000) STR_VAR icon="zsplat24" END
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@66000) id_name = RESOLVE_STR_REF(@66001) STR_VAR icon="zsplat24" END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=30,p1=50;op=28,p1=-25;op=248,res=zstmgbl1;op=232,res=zstmgbl2~ END
         LPF ADD_EQUIPPED_EFF INT_VAR p1=4 STR_VAR effects = ~op=86;op=87;op=88;op=89~ END
 
