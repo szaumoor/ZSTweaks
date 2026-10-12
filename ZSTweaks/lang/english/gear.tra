@@ -1735,3 +1735,40 @@ Requires:
  8 Strength
 
 Weight: 10~
+
+// Magma Bulwark
+@66000 = ~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +50%
+– Cold Resistance: -25%
+– Physical damage resistance: +4%
+
+Combat abilities:
+– Spontaneous Combustion: 10% chance when hit the armor releases a chaotic burst of flame, inflicting 1d6 fire damage on all enemies near the wearer. When striking an enemy with a melee weapon, the wearer has a 5% chance to deal 2d6 fire damage. An enemy can only be affected by either of these effects once per round.
+
+Armor Class: 1 (-2 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 20~
+
+@65001 = "The Magma Bulwark +2"
+
+@66010 = ~The traveling adventurer could ask for no better a suit of armor in all the land. Specially commissioned by Bolhur "Thunderaxe" at GREAT expense, this suit was his most prized, even if not his most ornate. Eminently practical, Bolhur demanded armor that would offer superior protection while hampering him in the least. By "hampering" he did not just mean in movement or weight, though this suit is just less than one-third the weight of normal plate mail: His ideal suit should also be able to withstand the rigors of his wanderings with little maintenance. This is not to say that Bolhur "Thunderaxe" neglected his armors (to say as such would get your ears boxed) but the regime of spit and polish required for a "gentleman's" suit was beyond his caring. Save the tassels and gilding of full plate for kings and heads of state; a working dwarf cares more for utility than looks.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to Slow
+– Physical damage resistance: +5% (short races only)
+
+Armor Class: 0 (-3 vs. slashing)
+Requires:
+ 10 Strength // was 11
+
+Weight: 15~ // weight was 18
+
+@66011 = ~The Practical Defense +3~

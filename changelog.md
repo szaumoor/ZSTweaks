@@ -59,4 +59,5 @@
 - Make Cone of Cold projectile and animation better (xxxx) (IWDEE BGEE BG2EE EET)
 - Make more classes able to use wands freely (777) (IWDEE BGEE BG2EE EET)
 - Make Fire Storm more effective (xxxx) (IWDEE BGEE BG2EE EET)
-- Make The Magma Bulwark +2 a more unique armor beyond enchantment level (xxxx) (BGEE EET)
+- Make The Magma Bulwark +2 a more unique armor beyond enchantment level (1444) (BGEE EET)
+- Make The Practical Defense +3 slightly more unique beyond low weight (xxxx) (BGEE BG2EE EET)

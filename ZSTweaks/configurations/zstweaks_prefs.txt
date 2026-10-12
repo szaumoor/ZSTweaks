@@ -6,7 +6,7 @@
 
 ////////////////////////////// Misc \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-OUTER_SET zs_debug                  = "0" // Mod is slower when on. Don't turn on (or leave on) unless you know what you're doing
+OUTER_SET zs_debug                  = "1" // Mod is slower when on. Don't turn on (or leave on) unless you know what you're doing
 OUTER_SET crash_if_var_errors_found = "1" // crashes the installation of the mod (any component) if any values in the preferences are outside the valid ranges. This is the only variable that immediately forces a crash if it's not set to either 0 or 1
 
 ////////////////////////////// General tweaks \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -168,6 +168,10 @@ OUTER_SET zst_1317_adventurer_robes           = "1"
 OUTER_SET zst_1317_elemental_robes            = "1" // this includes Edwin's SoD robe
 OUTER_SET zst_1317_elemental_acid_poison_robe = "1" // only applies if zst_1317_elemental_robes is on
 OUTER_SET zst_1317_archmage_robes             = "1" // includes item upgrade variants
+
+// Magma Bulwark +2
+OUTER_SET zst_1444_add_to_bg2         = "1" // given to The Warden by default
+OUTER_SET zst_1444_leave_it_to_ribald = "1" // ribald's store as an alternative
 
 // circlet / ioun critical hit protection configuration, only select one, component will fail otherwise
 OUTER_SET zst_1664_crits_all      = "0"

@@ -1,0 +1,52 @@
+ACTION_IF NOT is_iwdee BEGIN
+
+    OUTER_SET we_proceed_on_bg2 = zst_1444_add_to_bg2 AND NOT is_bgee
+
+    ACTION_IF we_proceed_on_bg2 BEGIN
+        COPY ~%MOD_FOLDER%/items/magma_bulwark/bg2~ ~override~
+
+        ACTION_IF zst_1444_leave_it_to_ribald BEGIN
+
+            COPY_EXISTING ~ribald.sto~ ~override~
+                LPF ADD_STORE_ITEM_EX INT_VAR stack=1 STR_VAR item_name="plat24" position="LAST" flags=~identified~ END
+
+        END ELSE BEGIN
+
+            COPY_EXISTING ~pwarden.cre~ ~override~
+                ADD_CRE_ITEM ~plat24~ #0 #0 #0 ~unstealable~ ~inv~
+
+        END
+
+    END
+
+    COPY ~%MOD_FOLDER%/items/magma_bulwark~ ~override~
+
+    DEFINE_PATCH_MACRO patch_file BEGIN // melee effect
+        LPF ALTER_EFF_FILE INT_VAR opcode = 146 parameter2 = 1 probability1 = 4 STR_VAR resource = "zstmgbl1" END
+    END
+    LAF CREATE_TG_EFF STR_VAR filename = "zstmgbl0" END
+
+    DEFINE_PATCH_MACRO patch_file BEGIN // melee effect payload
+        LPF ADD_SPL_TGTEFF INT_VAR rd=0 tmg=0 STR_VAR resource = "op=12,p2=%op12_fire%,dnum=2,dsize=6;op=206,dur=6,res=%DEST_RES%" END
+    END
+    LAF CREATE_TG_SPL STR_VAR filename = "zstmgbl1"END
+
+    DEFINE_PATCH_MACRO patch_file BEGIN // on being hit spell
+        LPF ADD_SPL_SELFEFF STR_VAR resource = "op=146,p2=1,res=zstmgbl3,pro1=9" END
+    END
+    LAF CREATE_SELF_SPL STR_VAR filename = "zstmgbl2"END
+
+    DEFINE_PATCH_MACRO patch_file BEGIN // on being hit spell payload
+        LPF ALTER_HEADER INT_VAR projectile = 1 END
+        LPF ADD_SPL_SELFEFF STR_VAR resource = "op=318,p2=49,res=%DEST_RES%;op=318,p2=43,res=%DEST_RES%;op=318,p2=63,res=%DEST_RES%;op=12,p2=%op12_fire%,dnum=1,dsize=6;op=206,dur=6,res=%DEST_RES%" END
+    END
+    LAF CREATE_SELF_SPL STR_VAR filename = "zstmgbl3"END
+
+    COPY_EXISTING ~plat24.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc = RESOLVE_STR_REF(@66000) STR_VAR icon="zsplat24" END
+        LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=30,p1=50;op=28,p1=-25;op=248,res=zstmgbl1;op=232,res=zstmgbl2~ END
+        LPF ADD_EQUIPPED_EFF INT_VAR p1=4 STR_VAR effects = ~op=86;op=87;op=88;op=89~ END
+
+END
+
+
