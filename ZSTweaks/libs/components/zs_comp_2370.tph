@@ -35,8 +35,8 @@ DEFINE_PATCH_MACRO apply_changes BEGIN
 
             PATCH_IF zst_2370_iwd_evade_usability = 2 BEGIN
 
-                PATCH_FOR_EACH class IN fighter_thief cleric_thief mage_thief fighter_mage_thief BEGIN
-                    LPF CLONE_EFFECT_EX INT_VAR match_opcode=177 match_parameter2=5 match_parameter1=class_thief parameter1=IDS_OF_SYMBOL(class "%class%") probability1=49 END
+                PATCH_FOR_EACH class IN "%class_fighter_thief%" "%class_cleric_thief%" "%class_mage_thief%" "%class_fighter_mage_thief%" BEGIN
+                    LPF CLONE_EFFECT_EX INT_VAR match_opcode=177 match_parameter2=5 match_parameter1=class_thief parameter1=class probability1=49 END
                 END
 
             END
