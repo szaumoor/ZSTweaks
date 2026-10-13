@@ -1,0 +1,8 @@
+COPY_EXISTING ~sppr309.spl~ ~override~
+    LPF ALTER_HEADER INT_VAR speed = 2 END
+    SPRINT cast_speed @99970
+    READ_STRREF 0x50 desc
+    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+        REPLACE_TEXTUALLY ~\([%LNL%%MNL%%WNL%]+[ %TAB%]*%cast_speed%[ %TAB%]*:?[ %TAB%]*\)[0-9]~ ~\12~
+    END
+    SAY_EVALUATED 0x50 ~%desc%~

@@ -2804,7 +2804,12 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
     END
 
     ACTION_IF zst_group_5440_cloud_pestilence != 0 AND zst_group_5440_cloud_pestilence != 1 BEGIN
-        WARN "[WARN]: Hold Animal group component should be set to 1 or 0. Actual value: %zst_group_5440_cloud_pestilence%"
+        WARN "[WARN]: Cloud of Pestilence group component should be set to 1 or 0. Actual value: %zst_group_5440_cloud_pestilence%"
+        LAM f_plus
+    END
+
+    ACTION_IF zst_group_5450_invisibility_purge != 0 AND zst_group_5450_invisibility_purge != 1 BEGIN
+        WARN "[WARN]: Invisibility Purge group component should be set to 1 or 0. Actual value: %zst_group_5450_invisibility_purge%"
         LAM f_plus
     END
 
