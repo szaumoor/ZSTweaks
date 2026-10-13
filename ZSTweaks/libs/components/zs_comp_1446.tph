@@ -1,0 +1,73 @@
+ACTION_IF NOT is_iwdee BEGIN
+
+    ACTION_FOR_EACH op IN 86 87 88 89 BEGIN // create an EFF for every physical damage resistance type
+
+        DEFINE_PATCH_MACRO patch_file BEGIN
+            LPF ALTER_EFF_FILE INT_VAR opcode = op parameter1=4 END
+        END
+        OUTER_SET id = (opcode - 86)
+        LAF CREATE_TG_EFF STR_VAR filename = "zstprdf%id%" END
+
+    END
+
+    ACTION_FOR_EACH param IN 0 1 BEGIN // create an EFF thieving button disabling
+
+        DEFINE_PATCH_MACRO patch_file BEGIN
+            LPF ALTER_EFF_FILE INT_VAR opcode = 144 parameter1=param END
+        END
+        OUTER_SET id = (param + 4)
+        LAF CREATE_TG_EFF STR_VAR filename = "zstprdf%id%" END
+
+    END
+
+    DEFINE_PATCH_MACRO patch_file BEGIN // create eff for disabling arcane spellcasting
+        LPF ALTER_EFF_FILE INT_VAR opcode = 145 END
+    END
+    LAF CREATE_TG_EFF STR_VAR filename = "zstprdf6" END
+
+    DEFINE_PATCH_MACRO patch_file BEGIN // create eff for casting speed debuff
+        LPF ALTER_EFF_FILE INT_VAR opcode = 189 parameter1="-1" END
+    END
+    LAF CREATE_TG_EFF STR_VAR filename = "zstprdf7" END
+
+    ACTION_FOR_EACH ac IN 1 2 BEGIN
+        DEFINE_PATCH_MACRO patch_file BEGIN // AC penalties
+            LPF ALTER_EFF_FILE INT_VAR opcode = 0 parameter1="-%ac%" END
+        END
+        OUTER_SET id = 7 + ac
+        LAF CREATE_TG_EFF STR_VAR filename = "zstprdf%id%" END
+    END
+
+
+    COPY_EXISTING ~plat08.itm~ ~override~
+        LPF ALTER_ITEM INT_VAR id_desc=RESOLVE_STR_REF(@66010) id_name=RESOLVE_STR_REF(@66011) min_str=10 weight=15 flags=1611399168 END
+        LPF ADD_EQUIPPED_EFF INT_VAR p2=4 p1=race STR_VAR effects = ~op=166,p1=10~ END
+
+        PATCH_FOR_EACH race IN ~%race_halfling%~ ~%race_gnome%~ ~%race_dwarf%~ BEGIN
+
+            FOR ( id = 0; id < 4; ++id ) BEGIN
+                LPF ADD_EQUIPPED_EFF INT_VAR p2=4 p1=race opcode=177 STR_VAR effects = ~op=177,res=zstprdf%id%~ END
+            END
+
+        END
+
+        LPF DELETE_EFFECT INT_VAR match_opcode = 144 END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 145 END
+
+        PATCH_FOR_EACH class IN ~%class_fighter_mage_cleric%~ ~%class_fighter_mage_thief%~ ~%class_cleric_mage%~  BEGIN // spell casting disabling
+
+            PATCH_FOR_EACH id IN 6 7 8 BEGIN
+                LPF ADD_EQUIPPED_EFF INT_VAR p2=5 p1=class opcode=177 STR_VAR effects = ~op=177,res=zstprdf%id%~ END
+            END
+
+        END
+
+        PATCH_FOR_EACH class IN ~%class_fighter_thief%~ ~%class_fighter_mage_thief%~ ~%class_cleric_thief%~ ~%class_mage_thief%~ ~%class_ranger_all%~ ~%class_monk%~ BEGIN // thieving skills
+
+            PATCH_FOR_EACH id IN 4 5 9 BEGIN
+                LPF ADD_EQUIPPED_EFF INT_VAR p2=5 p1=class opcode=177 STR_VAR effects = ~op=177,res=zstprdf%id%~ END
+            END
+
+        END
+
+END

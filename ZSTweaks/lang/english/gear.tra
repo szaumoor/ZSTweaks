@@ -1762,12 +1762,14 @@ Weight: 20~
 STATISTICS:
 
 Equipped abilities:
-– Immunity to Slow
+– Magic Resistance: +10%
 – Physical damage resistance: +5% (short races only)
+– Does not prevent thieving abilities for single-classed thieves, but the armor causes a -2 penalty to Armor Class
+– Does not prevent spellcasting for bards and fighter/mages, but the armor causes a -1 penalty to Armor Class and casting speed
 
 Armor Class: 0 (-3 vs. slashing)
 Requires:
- 10 Strength // was 11
+ 10 Strength
 
 Weight: 15~ // weight was 18
 
