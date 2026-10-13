@@ -1,10 +1,11 @@
 DEFINE_PATCH_MACRO patch_file BEGIN
-    PATCH_FAIL "patch_file function is not defined"
+    PATCH_FAIL "patch_file macro is not defined"
 END
 
 /**
  * Creates an EFF file meant for an equipped effect for an item.
  * Expects a patch_file macro to be defined and runnable without failure.
+ * After running, it undoes the macro, defaulting to failure.
  */
 DEFINE_ACTION_MACRO CREATE_EQ_EFF BEGIN
     ACTION_IF zs_debug AND STRING_LENGTH "%filename%" = 0 BEGIN
@@ -17,7 +18,7 @@ DEFINE_ACTION_MACRO CREATE_EQ_EFF BEGIN
 
     ACTION_IF undef_macro BEGIN
         DEFINE_PATCH_MACRO patch_file BEGIN
-            PATCH_FAIL "patch_file function is not defined"
+            PATCH_FAIL "patch_file macro is not defined"
         END
     END
 END
@@ -25,6 +26,7 @@ END
 /**
  * Creates an EFF file meant for an targeted effect.
  * Expects a patch_file macro to be defined and runnable without failure.
+ * After running, it undoes the macro, defaulting to failure.
  */
 DEFINE_ACTION_MACRO CREATE_TG_EFF BEGIN
     ACTION_IF zs_debug AND STRING_LENGTH "%filename%" = 0 BEGIN
@@ -37,7 +39,7 @@ DEFINE_ACTION_MACRO CREATE_TG_EFF BEGIN
 
     ACTION_IF undef_macro BEGIN
         DEFINE_PATCH_MACRO patch_file BEGIN
-            PATCH_FAIL "patch_file function is not defined"
+            PATCH_FAIL "patch_file macro is not defined"
         END
     END
 END
@@ -45,6 +47,7 @@ END
 /**
  * Creates an SPL file meant for an targeted effect.
  * Expects a patch_file macro to be defined and runnable without failure.
+ * After running, it undoes the macro, defaulting to failure.
  */
 DEFINE_ACTION_MACRO CREATE_TG_SPL BEGIN
     ACTION_IF zs_debug AND STRING_LENGTH "%filename%" = 0 BEGIN
@@ -57,7 +60,7 @@ DEFINE_ACTION_MACRO CREATE_TG_SPL BEGIN
 
     ACTION_IF undef_macro BEGIN
         DEFINE_PATCH_MACRO patch_file BEGIN
-            PATCH_FAIL "patch_file function is not defined"
+            PATCH_FAIL "patch_file macro is not defined"
         END
     END
 END
@@ -65,6 +68,7 @@ END
 /**
  * Creates an SPL file meant for a self effect.
  * Expects a patch_file macro to be defined and runnable without failure.
+ * After running, it undoes the macro, defaulting to failure.
  */
 DEFINE_ACTION_MACRO CREATE_SELF_SPL BEGIN
     ACTION_IF zs_debug AND STRING_LENGTH "%filename%" = 0 BEGIN
@@ -77,7 +81,7 @@ DEFINE_ACTION_MACRO CREATE_SELF_SPL BEGIN
 
     ACTION_IF undef_macro BEGIN
         DEFINE_PATCH_MACRO patch_file BEGIN
-            PATCH_FAIL "patch_file function is not defined"
+            PATCH_FAIL "patch_file macro is not defined"
         END
     END
 END
