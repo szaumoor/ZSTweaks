@@ -291,3 +291,11 @@ END
 ACTION_IF zst_group_1404_jester_chain BEGIN
   WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1404.tph~ END
 END
+
+ACTION_IF zst_group_1444_magma_bulwark BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1444.tph~ END
+END
+
+ACTION_IF zst_group_1446_practical_defense BEGIN
+  WITH_SCOPE BEGIN INCLUDE ~%MOD_FOLDER%/libs/components/zs_comp_1446.tph~ END
+END
