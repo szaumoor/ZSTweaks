@@ -12,8 +12,8 @@ ACTION_IF NOT is_iwdee BEGIN
 
         END ELSE BEGIN
 
-            COPY_EXISTING ~pwarden.cre~ ~override~
-                ADD_CRE_ITEM ~plat24~ #0 #0 #0 ~unstealable~ ~inv~
+            COPY_EXISTING ~ar0412.are~ ~override~
+                LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 2 STR_VAR item_to_add ="plat24" END
 
         END
 
