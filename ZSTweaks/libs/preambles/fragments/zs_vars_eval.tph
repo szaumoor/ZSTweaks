@@ -868,9 +868,23 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
 
     ACTION_IF zst_1444_leave_it_to_ribald != 0 AND zst_1444_leave_it_to_ribald != 1 BEGIN
-        WARN "[WARN]: Setting to allow place Magma Bulwark +2 in Ribald's store as an alternative to putting it on an enemy should be set to 0 (disable) or 1 (enable). Actual value: %zst_1444_leave_it_to_ribald%"
+        WARN "[WARN]: Setting to allow place Magma Bulwark +2 in Ribald's store as an alternative should be set to 0 (disable) or 1 (enable). Actual value: %zst_1444_leave_it_to_ribald%"
         LAM f_plus
     END
+
+    // ----------------------------------------THE PRACTICAL DEFENSE +3------------------------------------------------- \\
+
+    ACTION_IF zst_1446_add_to_bg2 != 0 AND zst_1446_add_to_bg2 != 1 BEGIN
+        WARN "[WARN]: Setting to allow The Practical Defense +3 in BG2 should be set to 0 (disable) or 1 (enable). Actual value: %zst_1446_add_to_bg2%"
+        LAM f_plus
+    END
+
+
+    ACTION_IF zst_1446_leave_it_to_ribald != 0 AND zst_1446_leave_it_to_ribald != 1 BEGIN
+        WARN "[WARN]: Setting to allow place The Practical Defense +3 in Ribald's store as an alternative should be set to 0 (disable) or 1 (enable). Actual value: %zst_1446_leave_it_to_ribald%"
+        LAM f_plus
+    END
+
 
     // ----------------------------------------CIRCLET IOUN CRIT PROT------------------------------------------------- \\
     OUTER_SET iouncrit_issues = 0

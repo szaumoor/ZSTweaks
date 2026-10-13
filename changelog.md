@@ -60,4 +60,5 @@
 - Make more classes able to use wands freely (777) (IWDEE BGEE BG2EE EET)
 - Make Fire Storm more effective (xxxx) (IWDEE BGEE BG2EE EET)
 - Make The Magma Bulwark +2 a more unique armor beyond enchantment level (1444) (BGEE EET)
-- Make The Practical Defense +3 slightly more unique beyond low weight (xxxx) (BGEE BG2EE EET)
+- Make The Practical Defense +3 slightly more unique beyond low weight (1446) (BGEE BG2EE EET)
+- Make Invisibility Purge cast as fast as Detect Invisibility (5450) (IWDEE BGEE BG2EE EET)

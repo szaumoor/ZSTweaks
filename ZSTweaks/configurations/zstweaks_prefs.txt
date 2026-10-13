@@ -171,7 +171,11 @@ OUTER_SET zst_1317_archmage_robes             = "1" // includes item upgrade var
 
 // Magma Bulwark +2
 OUTER_SET zst_1444_add_to_bg2         = "1" // added to a container in a dangerous fire-themed area
-OUTER_SET zst_1444_leave_it_to_ribald = "" // ribald's store as an alternative
+OUTER_SET zst_1444_leave_it_to_ribald = "0" // ribald's store as an alternative
+
+// tHE
+OUTER_SET zst_1446_add_to_bg2         = "1"
+OUTER_SET zst_1446_leave_it_to_ribald = "0" // ribald's store as an alternative
 
 // circlet / ioun critical hit protection configuration, only select one, component will fail otherwise
 OUTER_SET zst_1664_crits_all      = "0"

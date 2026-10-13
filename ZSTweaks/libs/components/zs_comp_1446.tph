@@ -1,5 +1,23 @@
 ACTION_IF NOT is_iwdee BEGIN
 
+    OUTER_SET we_proceed_on_bg2 = zst_1446_add_to_bg2 AND NOT is_bgee
+
+    ACTION_IF we_proceed_on_bg2 BEGIN
+
+        ACTION_IF zst_1446_leave_it_to_ribald BEGIN
+
+            COPY_EXISTING ~ribald.sto~ ~override~
+                LPF ADD_STORE_ITEM_EX INT_VAR stack=1 STR_VAR item_name="plat08" position="LAST" flags=~identified~ END
+
+        END ELSE BEGIN
+
+            COPY_EXISTING ~ar0412.are~ ~override~
+                LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 2 STR_VAR item_to_add ="plat08" END
+
+        END
+
+    END
+
     ACTION_FOR_EACH op IN 86 87 88 89 BEGIN // create an EFF for every physical damage resistance type
 
         DEFINE_PATCH_MACRO patch_file BEGIN
