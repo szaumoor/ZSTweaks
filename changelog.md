@@ -45,6 +45,10 @@
 - Basic Robes component now optionally adds a new robes of affinity type that improves poison and acid. Sold whenever the other elemental robes are sold.
 - Basic Robes component now allows the user to install a specific selection of robes instead of all, if wished. All are ON by default.
 - Basic Robes component will emit warnings and append them to log files if Forgotten Armaments is installed, and a class of robe that clashes was chosen to be edited in the configuration files.
+- IWD's Ice Storm version is now more powerful, instead of 3d10 cold damage with no save (pretty bad for a level 4):
+  - 4d10+2 cold damage with no save to take half
+  - And also 3d10+2 piercing damage, but with a Save vs. Breath to take half from this part of the damage
+  - Potential damage 6-42 (cold) plus 5-32 / 2-16 piercing damage, i.e. assuming no resistances, a range of 8-74 damage in total. Compare this to Sunfire, a level 5 spell that deals 15d6 (15-90 damage), and Fireball, a level 3 spell that deals 10d6 (10-60) to get a sense of the balance in between levels.
 
 ## New components
 
@@ -62,3 +66,6 @@
 - Make The Magma Bulwark +2 a more unique armor beyond enchantment level (1444) (BGEE EET)
 - Make The Practical Defense +3 slightly more unique beyond low weight (1446) (BGEE BG2EE EET)
 - Make Invisibility Purge cast as fast as Detect Invisibility (5450) (IWDEE BGEE BG2EE EET)
+- Make genie summons a bit more useful (IWDEE BGEE BG2EE EET)
+- Make Invisible Stalkers harder to damage and able to backstab
+- Make the Summon Shadow Monster family of spells a bit more powerful

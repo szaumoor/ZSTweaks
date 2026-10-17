@@ -16,4 +16,15 @@ ACTION_IF NOT is_iwdee BEGIN
   COPY_EXISTING ~icestorm.pro~ ~override~
     WRITE_BYTE 0x216 5
 
+END ELSE BEGIN
+
+    OUTER_SET new_description =RESOLVE_STR_REF(@7371)
+    COPY_EXISTING ~spwi404.spl~ ~override~
+      LPF ALTER_SPELL INT_VAR desc=new_description END
+      LPF ALTER_EFFECT INT_VAR match_opcode = 12 dicenumber = 4 parameter1 = 2 END
+      LPF CLONE_EFFECT INT_VAR match_opcode = 12 parameter1=2 parameter2 = op12_piercing dicenumber = 3 dicesize = 10 stype=(2**24 + 2**1) special=(2**8) END
+
+    COPY_EXISTING ~scstor.itm~ ~override~
+      LPF ALTER_ITEM INT_VAR id_desc=new_description END
+
 END

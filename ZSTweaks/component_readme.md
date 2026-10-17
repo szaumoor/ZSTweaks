@@ -1734,7 +1734,17 @@ This mod simply changes the school to Enchantment, which is probably more accura
 
 ### Make Ice Storm do more damage, including piercing damage (220) (BGEE BG2EE EET)
 
-I think the damage is a little low for a 4-round static effect, 2-16 cold damage per round. Now the damage will be 2d8+2 cold damage plus 1d6+2 piercing damage. Piercing was added because the animation indicates that pointy ice is what falls down upon your foes. IWDEE's version is completely different and so it is untouched.
+#### For BG
+
+I think the damage is a little low for a 4-round static effect, 2-16 cold damage per round. Now the damage will be 2d8+2 cold damage plus 1d6+2 piercing damage. Piercing was added because the animation indicates that pointy ice is what falls down upon your foes.
+
+#### For IWD
+
+IWDEE's version is completely different, as it's an instant damaging effect that deals the pitiful 3d10 cold damage without any save to halve the damage. Now it behaves this way:
+
+- Base cold damage increased to 4d10+2
+- Added 3d10+2 piercing damage which can be saved against to take only half
+- In terms of damage potential, it is in between fireball (10-60 damage) and Sunfire (15-90 damage), dealing anywhere between 8 and 72 damage assuming no resistance or weakness to either cold or piercing damage.
 
 ### Make Ray of Enfeeblement a Necromancy spell (370) (IWDEE BGEE BG2EE EET)
 
