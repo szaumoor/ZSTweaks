@@ -393,8 +393,9 @@ OUTER_SET zst_360_spiritual_clarity   = "1"
 OUTER_SET zst_360_favored_spirits     = "1"
 
 // tweaks to sun soul monk abilities
-OUTER_SET zst_2100_sunsoul_ray  = "1"
-OUTER_SET zst_2100_sunsoul_beam = "1"
+OUTER_SET zst_2100_sunsoul_ray   = "1"
+OUTER_SET zst_2100_sunsoul_beam  = "1"
+OUTER_sET zst_2100_flaming_fists = "1"
 
 // allows tweaks to particular thief HLAs
 OUTER_SET zst_2130_spike_trap     = "1"

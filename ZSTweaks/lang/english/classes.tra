@@ -91,6 +91,9 @@ The character emits a dazzling burst of light that strikes at all other creature
 @7800 = ~Sun Soulray
 The character projects a blast of light from <PRO_HISHER> open palm, dealing 1d8 fire damage for every 2 caster levels (up to a maximum of 5d8 damage) to a single target. Undead creatures take an additional 6 points of damage (which increases by 2 every 2 caster levels). There is no Saving Throw against this ability.~
 
+@7810 = ~Flaming Fists
+The character channels <PRO_HISHER> inner light into <PRO_HISHER> unarmed attacks, turning <PRO_HISHER> fists into flaming weapons that deal an additional 2d4 fire damage per hit for the 2 rounds. The duration increases to 3 rounds at level 9, 4 rounds at level 12, 5 rounds at level 15, and 6 rounds at level 25. This special ability automatically modifies normal attacks; no weapon-switching needs to be done.~
+
 @8080 = ~Assassination
 Using every clever trick an experienced Thief has learned in countless battles, this ability causes every strike in the next 7 seconds to count as a backstab, using the Thief's existing backstab modifier to determine damage. Additionally, during this time and for 1 round longer, critical misses are not possible, and critical hit chance increases by 10%.
 

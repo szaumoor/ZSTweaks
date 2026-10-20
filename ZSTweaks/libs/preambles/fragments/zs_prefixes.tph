@@ -77,6 +77,7 @@ ACTION_IF zs_allow_prefixes BEGIN
         ACTION_IF zst_eefp_exaltation_bug BEGIN
 
             ACTION_IF has_eefixpack BEGIN
+
                 COPY_EXISTING ~ohtyr1.spl~ ~override~
                     LPF CLONE_EFFECT INT_VAR match_opcode = 324 match_parameter2 = 43 opcode = 318 STR_VAR insert = "first" END
                     LPF DELETE_EFFECT INT_VAR match_opcode = 324 match_parameter2 = 43 END
@@ -143,7 +144,7 @@ ACTION_IF zs_allow_prefixes BEGIN
             END
 
             ACTION_IF zst_chimeras BEGIN
-                
+
                 ACTION_IF FILE_EXISTS_IN_GAME ~l#kuchim.cre~ BEGIN
 
                     PRINT "[INFO]: Setting Lava's chimeras to the race of chimera"
@@ -157,7 +158,7 @@ ACTION_IF zs_allow_prefixes BEGIN
         END
 
         ACTION_IF NOT is_iwdee BEGIN
-            
+
             ACTION_IF zst_seeking_sw_casting_speed BEGIN
 
                 PRINT "[INFO]: Fixing Seeking Sword's incorrect casting speed at level 20"
@@ -255,7 +256,7 @@ ACTION_IF zs_allow_prefixes BEGIN
             END
 
             ACTION_IF zst_solar_tags BEGIN
-    
+
                 COPY_EXISTING ~solar.cre~   ~override~
                               ~solar01.cre~ ~override~
                     WRITE_BYTE 0x272 race_solar
@@ -263,7 +264,7 @@ ACTION_IF zs_allow_prefixes BEGIN
             END
 
             ACTION_IF zst_pit_fiends BEGIN
-                
+
                 COPY_EXISTING ~dempit.cre~   ~override~
                               ~dempit01.cre~ ~override~
                               ~dempitsu.cre~ ~override~
@@ -790,9 +791,9 @@ ACTION_IF zs_allow_prefixes BEGIN
         END
 
         PRINT "[INFO]: ---- FINISHED PREFIXES ----"
-        
-    END 
-    
+
+    END
+
 END ELSE ACTION_IF !VARIABLE_IS_SET ~zs_prefixes~ BEGIN
 
     LAF LOG_TEXT INT_VAR add_level_preamble=0 STR_VAR log_level="info" message="[WARN]: You disabled prefixes. You better know what you're doing." END

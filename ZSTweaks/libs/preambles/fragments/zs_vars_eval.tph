@@ -1608,6 +1608,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
+    ACTION_IF zst_2100_flaming_fists != 0 AND zst_2100_flaming_fists != 1 BEGIN
+        WARN "[WARN]: Setting to include Flaming Fist tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_2100_flaming_fists%"
+        LAM f_plus
+    END
+
     // ----------------------------------------THIEF HLA------------------------------------------------- \\
 
     ACTION_IF zst_2130_spike_trap != 0 AND zst_2130_spike_trap != 1 BEGIN

@@ -48,6 +48,7 @@ I am open to providing compatibility for other mods. You can contact me on the f
 - IWDification, especially the IWD spell packs for BG, so my tweaks can take full advantage. They also make druids and paladins significantly more interesting and capable as spellcasters.
 - Any mods that improve Thieves, like RR, allowing them 3 pips in Two-weapon fighting. Join me in my crusade to make them better as a standalone class.
 - Viconia Friendship if you use the Handmaiden Mace component, because it makes the upgraded mace available even without romancing her.
+- Everything made by Lava De'Vortel. His content is great and my mod has some compatibility built-in for some of his mods.
 
 ## Notes for users and modders
 
@@ -81,7 +82,7 @@ Two possible reasons that I know of:
 
 ### Why am I seeing lines in the console saying that 0 files were copied and patched?
 
-Because the file I'm trying to patch is not found in your specific game, but might be in a different game. This is not an error, just a quirk of how WeiDu reports it.
+Because the file I'm trying to patch is not found in your specific game or setup, but might exist in a different one. This is not an error, just a quirk of how WeiDu reports it when trying to patch files easily and I can't be sure they exist in the current setup.
 
 ### I'm seeing a warning for the first component I install, but I'm sure it's working as expected
 
@@ -89,11 +90,15 @@ My mod runs a bunch of scripts before installing the first component (whichever 
 
 ### How do I fine-tune my experience and change what components do?
 
-All the information you need is in the ZSTweaks/configurations folder. Follow instructions and change things in any way you prefer.
+All the information you need is in the ZSTweaks/configurations folder. Follow instructions and change things in any way you prefer. Group component installations require less management on your part and they're faster, at least in terms of not requiring human input, but have the disadvantage that if you need due to compatibility reasons to install components in unusual orders, or not in one go, they're not the best tool, since installing them disables the possibility of installing specific ones within that group. This is done to avoid internal compatibility nightmares in my mod.
 
 ### I installed your mod, then changed some of the preferences in the file, but nothing changed
 
 The preferences only apply during installation. After, it's meaningless. Think about what you want before installation, not after. Otherwise, reinstall with the new preferences set.
+
+### How do I install your mod using a mod manager such as `mod_installer` or `BIO`?
+
+You can just follow their general instructions of use, but be careful when combining different methods of installation, since my mod has two methods independent of such tools: customized group installations (by installing the first component in each group) and individual component installations. When using such tools, be careful how you make your selection and be consistent when choosing which. If you're not sure, default to picking individual components of groups over those that install several others and depend on configuration files.
 
 ## Credits
 

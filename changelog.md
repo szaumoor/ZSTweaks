@@ -9,6 +9,7 @@
 - Fixed incorrect healing scaling for Cure/Cause Serious Wounds, leading the spell to heal/damage more than intended
 - Fixed tweak to Magic Missile not respond to caster levels as intended when using component 1544 of scroll usability and casting level
 - Fixed icon for Sand Throw not being recognized by the game in the description window
+- Fixed Planar Shield (Shield of the Archons) stacking saving throws and not responding to the spell level deflection fading. (?? TODO CHECK)
 
 ## Modifications
 
@@ -41,7 +42,10 @@
 - Ice Storm component now also allows it to last 1 more round (5 in total)
 - Added a Poison and Acid variants to the Robes of Affinity in the basic robe enhancement component. Thanks to Alzrian for providing a description for the poison one.
 - Sun Soulbeam no longer damages allies, deals a baseline 10d6 fire damage, and 15d6 in the case of the undead.
-- Flaming Fists is now another optional component of the Sun Soul ability tweak, where they inflict less damage, but last for longer. The monk also acquires more uses per level. (TODO)
+- Flaming Fists is now another optional component of the Sun Soul ability tweak, where they inflict less damage, but last for longer. The monk also acquires more uses per level. Specifically:
+  - Base duration of fists is 1 more round, meaning it lasts 2 rounds at the beginning, growing up to 6 rounds at level 25. No other changes to the scaling or duration.
+  - Damage decreased from 2d6 fire to 2d4 fire
+  - Uses are gained at levels 3, 6, 9, 12, and 15. In vanilla is only gained once at level 6
 - Basic Robes component now optionally adds a new robes of affinity type that improves poison and acid. Sold whenever the other elemental robes are sold.
 - Basic Robes component now allows the user to install a specific selection of robes instead of all, if wished. All are ON by default.
 - Basic Robes component will emit warnings and append them to log files if Forgotten Armaments is installed, and a class of robe that clashes was chosen to be edited in the configuration files.
