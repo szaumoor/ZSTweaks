@@ -57,7 +57,7 @@
 ## New components
 
 - Make Globes of Invulnerability use the animation from IWD (xxxx) (BGEE BG2EE EET)
-- Make buffing spells bypass spell level protection/absorption and Improved Invisibility (xxxx) (IWDEE BGEE BG2EE EET)
+- Make buffing spells bypass spell level protection/absorption and Improved Invisibility (888) (IWDEE BGEE BG2EE EET)
 - Make Strength of One cast faster and not reduce the strength of characters with higher strength (xxxx) (IWDEE BGEE BG2EE EET)
 - Make Strength (Wizard/Mazzy) only increase strength (xxxx) (IWDEE BGEE BG2EE EET)
 - Make Feeblemindedness reduce Intelligence to 1 if Intelligence is already at 3 (xxxx) (IWDEE BGEE BG2EE EET)

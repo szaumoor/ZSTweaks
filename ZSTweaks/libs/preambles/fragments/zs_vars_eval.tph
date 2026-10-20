@@ -275,6 +275,13 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
+    // ----------------------------------------BUFFING SPELLS BYPASS INV------------------------------------------------- \\
+
+    ACTION_IF zst_888_include_healing_spells != 0 AND zst_888_include_healing_spells != 1 BEGIN
+        WARN "[WARN]: Healing Spells tweak in Allow Buffing Invisible Allies tweak should be set to 0 (disable) or 1 (enable). Actual value: %zst_888_include_healing_spells%"
+        LAM f_plus
+    END
+
     // ----------------------------------------BACKSTAB PENALTIES------------------------------------------------- \\
 
     ACTION_IF zst_1120_backstab_penalty_lswords < 0 BEGIN
@@ -383,26 +390,26 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
     END
 
     ACTION_IF zst_1120_backstab_penalty_lswords   = 0 AND
-                zst_1120_backstab_penalty_daggers   = 0 AND
-                zst_1120_backstab_penalty_katana    = 0 AND
-                zst_1120_backstab_penalty_scimitars = 0 AND
-                zst_1120_backstab_penalty_staves    = 0 AND
-                zst_1120_backstab_penalty_wakis     = 0 AND
-                zst_1120_backstab_penalty_ninjatos  = 0 AND
-                zst_1120_backstab_penalty_bstsword  = 0 AND
-                zst_1120_backstab_penalty_2hsword   = 0 AND
-                zst_1120_backstab_penalty_maces     = 0 AND
-                zst_1120_backstab_penalty_sswords   = 0 AND
-                zst_1120_backstab_penalty_clubs     = 0 AND
-                zst_1120_backstab_penalty_hammers   = 0 AND
-                zst_1120_backstab_penalty_mornstars = 0 AND
-                zst_1120_backstab_penalty_flails    = 0 AND
-                zst_1120_backstab_penalty_axes      = 0 AND
-                zst_1120_backstab_penalty_spears    = 0 AND
-                zst_1120_backstab_penalty_halberds  = 0 AND
-                has_zs_item_pack_rapiers = 1 AND zst_1120_backstab_penalty_kaelyn_rapiers = 0 AND
-                has_zs_item_pack_kukris  = 1 AND zst_1120_backstab_penalty_kaelyn_kukris  = 0 AND
-                has_zs_item_pack_estocs  = 1 AND zst_1120_backstab_penalty_kaelyn_estocs  = 0
+              zst_1120_backstab_penalty_daggers   = 0 AND
+              zst_1120_backstab_penalty_katana    = 0 AND
+              zst_1120_backstab_penalty_scimitars = 0 AND
+              zst_1120_backstab_penalty_staves    = 0 AND
+              zst_1120_backstab_penalty_wakis     = 0 AND
+              zst_1120_backstab_penalty_ninjatos  = 0 AND
+              zst_1120_backstab_penalty_bstsword  = 0 AND
+              zst_1120_backstab_penalty_2hsword   = 0 AND
+              zst_1120_backstab_penalty_maces     = 0 AND
+              zst_1120_backstab_penalty_sswords   = 0 AND
+              zst_1120_backstab_penalty_clubs     = 0 AND
+              zst_1120_backstab_penalty_hammers   = 0 AND
+              zst_1120_backstab_penalty_mornstars = 0 AND
+              zst_1120_backstab_penalty_flails    = 0 AND
+              zst_1120_backstab_penalty_axes      = 0 AND
+              zst_1120_backstab_penalty_spears    = 0 AND
+              zst_1120_backstab_penalty_halberds  = 0 AND
+              has_zs_item_pack_rapiers = 1 AND zst_1120_backstab_penalty_kaelyn_rapiers = 0 AND
+              has_zs_item_pack_kukris  = 1 AND zst_1120_backstab_penalty_kaelyn_kukris  = 0 AND
+              has_zs_item_pack_estocs  = 1 AND zst_1120_backstab_penalty_kaelyn_estocs  = 0
     BEGIN
         PRINT "[WARN]: No tweaks were selected for the Backstab penalties, leading to no effect."
         LAM f_plus

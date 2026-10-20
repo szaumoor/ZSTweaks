@@ -1,0 +1,154 @@
+DEFINE_PATCH_MACRO apply BEGIN
+    WRITE_LONG 0x8 (THIS BOR (1 << BIT24))
+    LPF ALTER_EFFECT INT_VAR check_globals = 0 power=0 END
+END
+
+ACTION_IF zst_888_include_healing_spells BEGIN
+
+    COPY_EXISTING ~sppr103.spl~  ~override~
+                  ~sppr315.spl~  ~override~
+                  ~sppr401.spl~  ~override~
+                  ~sppr502.spl~  ~override~
+                  ~bdcaela3.spl~ ~override~
+                  ~sppr607.spl~  ~override~
+        LPM apply
+    BUT_ONLY IF_EXISTS
+
+    ACTION_IF spell_cure_moderate_wounds > 0 BEGIN
+
+        LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_CURE_MODERATE_WOUNDS" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPM apply
+    END
+
+END
+
+COPY_EXISTING // PRIEST
+              ~sppr103.spl~ ~override~ // prot from evil
+              ~sppr150.spl~ ~override~ // shaman spirit ward
+              ~sppr201.spl~ ~override~  // aid
+              ~sppr202.spl~ ~override~ // barkskin
+              ~sppr210.spl~ ~override~ // resist fire and cold bg
+              ~sppr212.spl~ ~override~ // slow poison
+              ~sppr216.spl~ ~override~ // prot vs fire and cold iwdee
+              ~sppr306.spl~ ~override~ // prot from fire
+              ~sppr307.spl~ ~override~ // remove curse
+              ~sppr317.spl~ ~override~ // cure disease
+              ~sppr350.spl~ ~override~ // spiritual clarity
+              ~sppr403.spl~ ~override~ // free action
+              ~sppr404.spl~ ~override~ // neutralize poison
+              ~sppr407.spl~ ~override~ // prot from lightning
+              ~sppr409.spl~ ~override~ // death ward
+              ~sppr413.spl~ ~override~ // negative plane protection
+              ~sppr417.spl~ ~override~ // lesser restoration
+              ~sppr507.spl~ ~override~ // champion strength
+              ~sppr508.spl~ ~override~ // chaotic commands
+              ~sppr509.spl~ ~override~ // magic resistance
+              ~sppr711.spl~ ~override~ // regeneration
+              ~sppr713.spl~ ~override~ // greater restoration
+
+              // WIZARD
+              ~spwi108.spl~ ~override~ // protection from petrification
+              ~spwi111.spl~ ~override~ // infravision
+              ~spwi113.spl~ ~override~ // protection vs evil
+              ~spwi206.spl~ ~override~ // invisibility
+              ~spwi209.spl~ ~override~ // luck
+              ~spwi214.spl~ ~override~ // strength
+              ~spwi310.spl~ ~override~ // non detection
+              ~spwi311.spl~ ~override~ // prot vs normal missiles
+              ~spwi317.spl~ ~override~ // ghost armor, preset target on IWDEE
+              ~spwi319.spl~ ~override~ // prot vs fire
+              ~spwi320.spl~ ~override~ // prot vs cold
+              ~spwi405.spl~ ~override~ // improv invisibility
+              ~spwi410.spl~ ~override~ // remove curse
+              ~spwi414.spl~ ~override~ // spirit armor
+              ~spwi512.spl~ ~override~ // prot vs electricity
+              ~spwi517.spl~ ~override~ // prot vs acid
+              ~spwi606.spl~ ~override~ // prot vs magic energy
+              ~spwi613.spl~ ~override~ // improved haste
+              ~spwi803.spl~ ~override~ // prot vs energy
+
+              // INNATES
+              ~spcl111.spl~ ~override~ // paladin cure disease
+              ~spcl213.spl~ ~override~ // paladin prot vs evil (iwdee irrelevant)
+              ~spin121.spl~ ~override~ // paladin (?) prot vs evil
+              ~spcl211.spl~ ~override~ // paladin lay on hands
+
+              ~spcl101.spl~ ~override~ // bhaalspawn cure light wounds
+              ~spcl102.spl~ ~override~ // bhalspawn slow poison
+
+              ~splc815.spl~ ~override~ // monk lay on hands (self only, patched in case other mod changes that)
+              ~splc827.spl~ ~override~ // mazzy lay on hands (self only, patched in case other mod changes that)
+
+              ~rr#pr212.spl~ ~override~ // dynaheir slow poison created by aTweaks' Revised Bhaalspawn Powers
+
+              ~spdr401.spl~ ~override~ // improved invisibility avenger
+
+              ~ohtyr1.spl~ ~override~ // exaltation priest of tyr
+
+    LPM apply
+BUT_ONLY IF_EXISTS
+
+ACTION_IF spell_protect_from_good > 0 BEGIN
+
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_PROTECT_FROM_GOOD" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPM apply
+
+END
+
+ACTION_IF spell_exaltation > 0 BEGIN
+
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_EXALTATION" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPM apply
+
+END
+
+ACTION_IF spell_favor_illmater > 0 BEGIN
+
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_FAVOR_OF_ILMATER" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPM apply
+
+END
+
+ACTION_IF spell_blood_rage > 0 BEGIN
+
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_BLOOD_RAGE" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPM apply
+
+END
+
+ACTION_IF spell_unfailing_endurance > 0 BEGIN
+
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_UNFAILING_ENDURANCE" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPM apply
+
+END
+
+ACTION_IF spell_animal_rage > 0 BEGIN
+
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "CLERIC_ANIMAL_RAGE" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPM apply
+
+END
+
+ACTION_IF spell_cats_grace > 0 BEGIN
+
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_CATS_GRACE" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPM apply
+
+END
+
+ACTION_IF spell_protection_petrification > 0 BEGIN
+
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = "WIZARD_PROTECTION_FROM_PETRIFICATION" RET spell_res END
+        COPY_EXISTING ~%spell_res%.spl~ ~override~
+            LPM apply
+
+END

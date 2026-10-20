@@ -22,6 +22,8 @@ OUTER_SET zst_777_all_reqs       = "1" // all can use wands with stat requiremen
 OUTER_SET zst_777_rogues_no_reqs = "0" // rogues can use wands too
 OUTER_SET zst_777_rogues_reqs    = "0" // rogues can use wands too with stat requirements
 
+OUTER_SET zst_888_include_healing_spells = "1" // heal spells also bypass invisibility
+
 // backstab penalties to different weapon types (set to 0 to disable, otherwise add a positive number to determine backstab multiplier penalty)
 OUTER_SET zst_1120_backstab_penalty_lswords        = "1"
 OUTER_SET zst_1120_backstab_penalty_kaelyn_estocs  = "1" // my item pack estocs
