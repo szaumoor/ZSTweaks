@@ -58,10 +58,10 @@
 
 - Make Globes of Invulnerability use the animation from IWD (xxxx) (BGEE BG2EE EET)
 - Make buffing spells bypass spell level protection/absorption and Improved Invisibility (888) (IWDEE BGEE BG2EE EET)
-- Make Strength of One cast faster and not reduce the strength of characters with higher strength (xxxx) (IWDEE BGEE BG2EE EET)
-- Make Strength (Wizard/Mazzy) only increase strength (xxxx) (IWDEE BGEE BG2EE EET)
+- Make stat-setting effects in abilities and spells apply only if useful (xxxx) (IWDEE BGEE BG2EE)
+- Make Strength of One slightly more convenient in combat (xxxx) (IWDEE BGEE BG2EE EET)
 - Make Feeblemindedness reduce Intelligence to 1 if Intelligence is already at 3 (xxxx) (IWDEE BGEE BG2EE EET)
-- Make Champion's Strength more balanced and useful (xxxx) (IWDEE BGEE BG2EE EET)
+- Make Champion's Strength more useful (xxxx) (IWDEE BGEE BG2EE EET)
 - Make Infravision into a spell that improves vision in more general way (xxxx) (IWDEE BGEE BG2EE EET)
 - Make Burning Hands projectile and animation better (xxxx) (IWDEE BGEE BG2EE EET)
 - Make Cone of Cold projectile and animation better (xxxx) (IWDEE BGEE BG2EE EET)
@@ -71,5 +71,5 @@
 - Make The Practical Defense +3 slightly more unique beyond low weight (1446) (BGEE BG2EE EET)
 - Make Invisibility Purge cast as fast as Detect Invisibility (5450) (IWDEE BGEE BG2EE EET)
 - Make genie summons a bit more useful (IWDEE BGEE BG2EE EET)
-- Make Invisible Stalkers harder to damage and able to backstab
-- Make the Summon Shadow Monster family of spells a bit more powerful
+- Make Invisible Stalkers harder to damage and able to backstab (xxxx) (IWDEE BGEE BG2EE EET)
+- Make the Summon Shadow Monster family of spells a bit more powerful (xxxx) (IWDEE BGEE BG2EE EET)
