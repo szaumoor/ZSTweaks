@@ -25,7 +25,8 @@
   - Rejuvenating Mist (Eldath's) casting speed further reduced to 4
   - As a bonus, Raise Dead, Recall Spirit, and Resurrection can also have their casting speed reduced to 6 (from 9). This is optional, and ON by default.
 - Cure/Cause spells now make the spells have a range of 10 ft. instead of requiring melee range, which should help casters, both ally and foe, have an easier time safely healing their party. This is optional and ON by default.
-- Otiluke's Resilient sphere component now also uses the much better animation of IWDEE in BG games
+- Otiluke's Resilient sphere component can now use the much better animation of IWDEE in BG games (optional)
+- Otiluke's Resilient sphere component can now make it Abjuration to benefit Abjurers with combat utility spell affected by saving throws (finally, right? now we just need more divination spells -- check out my PW: Kill tweak wink wink)
 - Disintegrate now uses the IWDEE animation where instead of instantly converting to dust, the creature rapidly vanishes.
 - Disintegrate's crushing damage vs. some golems doubled (1d12 -> 2d12)
 - Added warning for components that apply patches based on proficiencies about how they won't detect weapons as expected if run after components that change the proficiency system.
@@ -45,7 +46,7 @@
 - Flaming Fists is now another optional component of the Sun Soul ability tweak, where they inflict less damage, but last for longer. The monk also acquires more uses per level. Specifically:
   - Base duration of fists is 1 more round, meaning it lasts 2 rounds at the beginning, growing up to 6 rounds at level 25. No other changes to the scaling or duration.
   - Damage decreased from 2d6 fire to 2d4 fire
-  - Uses are gained at levels 3, 6, 9, 12, and 15. In vanilla is only gained once at level 6
+  - Uses are gained at levels 3, 6, 9, 12, and 15. In vanilla it is only gained once at level 6
 - Basic Robes component now optionally adds a new robes of affinity type that improves poison and acid. Sold whenever the other elemental robes are sold.
 - Basic Robes component now allows the user to install a specific selection of robes instead of all, if wished. All are ON by default.
 - Basic Robes component will emit warnings and append them to log files if Forgotten Armaments is installed, and a class of robe that clashes was chosen to be edited in the configuration files.
