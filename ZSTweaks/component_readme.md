@@ -224,7 +224,7 @@ This component manually patches the following vanilla sources of vorpal hits:
 - Planetar's Sword (unless the Planetar component is installed, which already removes the vorpal effect)
 - Planetar and balor weapon in PnP Celestials mod (this component needs to run after these)
 
-Support for mod-added items with vorpal effects can be added upon request. Additionally, an option in the configuration file allows you to prevent vorpal hits from chunking targets (OFF by default), and extra options to ensure other types of creatures are also immune to the vorpal hits, like golems or spectral creatures. Check config file.
+Support for mod-added items with vorpal effects can be added upon request. Additionally, an option in the configuration file allows you to prevent vorpal hits from chunking targets (OFF by default), and extra options to ensure other types of creatures are also immune to the vorpal hits, like golems, dragons, and spectral creatures. Check config file.
 
 ### Make character stats more streamlined or interesting (1545) (IWDEE BGEE BG2EE EET)
 

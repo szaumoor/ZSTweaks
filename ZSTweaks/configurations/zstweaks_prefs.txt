@@ -105,6 +105,7 @@ OUTER_SET zst_1541_vorpal_no_spectral_races = "1"
 OUTER_SET zst_1541_vorpal_no_golems         = "1"
 OUTER_SET zst_1541_vorpal_no_slimes         = "1"
 OUTER_SET zst_1541_vorpal_no_elementals     = "1"
+OUTER_SET zst_1541_vorpal_no_dragons        = "1"
 
 // allow or disallow tweaks for component 1545 (stat tweaks)
 OUTER_SET zst_1545_strength_bonuses       = "1"

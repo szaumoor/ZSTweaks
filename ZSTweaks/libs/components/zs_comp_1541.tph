@@ -22,6 +22,10 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             LPF CLONE_EFFECT INT_VAR match_opcode = 318 match_parameter2 = ~%zs_has_stoneskins%~ parameter2=9 STR_VAR insert="first" END
         END
 
+        PATCH_IF zst_1541_vorpal_no_dragons BEGIN
+            LPF CLONE_EFFECT INT_VAR match_opcode = 318 match_parameter2 = ~%zs_has_stoneskins%~ parameter2=104 parameter1=race_dragon STR_VAR insert="first" END
+        END
+
         PATCH_IF zst_1541_vorpal_no_spectral_races BEGIN
 
             LPF CLONE_EFFECT INT_VAR match_opcode = 318 match_parameter2 = ~%zs_has_stoneskins%~ parameter2=104 parameter1=race_specter STR_VAR insert="first" END
@@ -133,16 +137,16 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             READ_ASCII 0x0 sig (4)
             PATCH_MATCH "%sig%" WITH
             "SPL "
-            BEGIN 
+            BEGIN
                 PATCH_IF "%SOURCE_EXT%" STR_EQ "SPL" BEGIN
-                    LPM SPELL_OPCODE_PRESENT 
+                    LPM SPELL_OPCODE_PRESENT
                 END
             END
 
             "ITM "
-            BEGIN 
+            BEGIN
                 PATCH_IF "%SOURCE_EXT%" STR_EQ "ITM" BEGIN
-                    LPM ITM_OPCODE_PRESENT 
+                    LPM ITM_OPCODE_PRESENT
                 END
             END
 

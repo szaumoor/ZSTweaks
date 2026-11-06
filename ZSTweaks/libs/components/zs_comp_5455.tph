@@ -1,0 +1,17 @@
+
+COPY_EXISTING ~spwi312.spl~ ~override/zststr10.spl~ // strength is 18 or less
+    LPM convert_to_subspell
+    LPF ALTER_EFFECT INT_VAR END
+
+COPY_EXISTING ~spwi312.spl~ ~override/zststr11.spl~ // but extra is less than 76
+
+COPY_EXISTING ~spwi312.spl~ ~override~
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@901000) END
+    LPF ALTER_HEADER INT_VAR speed = 1 END
+    LPF DELETE_EFFECT INT_VAR check_globals = 0 END
+
+    LPF ADD_SPL_TGTEFF
+        INT_VAR t=99 pwr=3 rd=3 dur=the_dur
+        STR_VAR effects = ~op=318,p2=124,p1=19,res=%SOURCE_RES%;op=326,p2=125,p1=18,res=zststr10;op=326,p2=%zs_strextra_<n%,p1=76,res=zststr11~
+    END
+
