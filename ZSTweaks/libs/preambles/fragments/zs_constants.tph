@@ -11,3 +11,9 @@ OUTER_SET op12_slashing    = (256 << 16)
 OUTER_SET op12_magic_fire  = (512 << 16)
 OUTER_SET op12_magic_cold  = (1024 << 16)
 OUTER_SET op12_stunning    = (2048 << 16)
+
+OUTER_SET savingthrow_spell  = 1
+OUTER_SET savingthrow_breath = 2
+OUTER_SET savingthrow_death  = 4
+OUTER_SET savingthrow_rod    = 8
+OUTER_SET savingthrow_poly   = 16

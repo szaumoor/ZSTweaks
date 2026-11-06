@@ -796,3 +796,35 @@ Upon the casting of this spell the recipient gains the ability to see with the a
 – Similarly, they gain a +10 bonus to their Find Traps and Detect Illusion skills, if they have them.
 
 This, however, does not improve the actual reflexes of the user, but it does give them more time to react.~
+
+
+@81890 = ~Black Blade of Disaster
+(Evocation)
+
+Level: 9
+Range: 0
+Duration: 2 turns
+Casting Time: 4
+Area of Effect: Special
+Saving Throw: None
+
+This spell enables the caster to create a black, blade-shaped planar rift about three feet long. It jumps into the caster's hand and is used as if it was a normal sword, remaining there for the duration of the spell. The caster can attack twice per round with this weapon, which acts as +6 for the purposes of what it can hit, and deals 2d12+10 slashing damage to its victims, with a +5 THAC0 bonus (+8 if the caster is not a fighter). Also, every time it hits a target, the victim must make a Save vs. Death at +4 or be disintegrated. There is also a 10% chance with every hit that the sword drains 4 levels from the target and heals the wielder 20 Hit Points.~
+
+@81900 = ~Web
+(Evocation)
+
+Level: 2
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 8-ft. radius
+Saving Throw: Neg.
+
+Web creates a many-layered mass of strong, sticky strands, similar to spider webs but far larger and tougher. Creatures caught within webs, or simply touching them, must roll a Saving Throw vs. %saving_throw_type%%saving_throw_bonus% or become stuck among the gluey fibers for 1 round. Each round that a creature remains in the web, it must make a Saving Throw or be unable to move.~
+
+@81901 = ~Spell~
+@81902 = ~Breath~
+@81903 = ~Death~
+@81904 = ~Rod~
+@81905 = ~Polymorph~
+@81906 = ~at~

@@ -1935,11 +1935,17 @@ Caveats:
 
 Just makes the spell more convenient and safer to use and mirrors what you can do with the potion of fire breathing.
 
-### Make Web force saves vs. Breath at +0 instead of saves vs. Spell at -2 for balance (561) (IWDEE BGEE BG2EE EET)
+### Make Web force a different save and optionally bypass MR and use IWD animations (561) (IWDEE BGEE BG2EE EET)
 
-I think this makes more sense, and the spell is pretty overpowered for a level 2 spell, given that paralyzing effects are often a death sentence. I actually think many spells should force a Save vs. Breath rather than a Save vs. Spell. This mirrors what I did for Entangle.
+Just a rebalance change. Web is extremely powerful at all points in the game for most types of enemies. This component does the following:
 
-This change to the save bonus does not affect special abilities outside the spells themselves, such as spider abilities.
+- Changes saving throw type (default: Breath; vanilla: Spell)
+- Changes saving throw bonus (default: 0; vanilla: -2)
+- Prevents giant enemies from being affected (mirrors IWD and similar tweaks)
+- Optionally bypasses MR if you want to interpret it as only conjured web (default ON)
+- Optionally, Uses the much better looking IWD animations and sounds (default ON). This replaces the web projectiles, so it will be found in traps and the like as well.
+
+This change does not affect special abilities outside the spells themselves, such as spider abilities.
 
 ### Make Imprisonment prevent movement while the animation plays out (562) (IWDEE BGEE BG2EE EET)
 

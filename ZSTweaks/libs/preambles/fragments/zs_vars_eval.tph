@@ -1284,6 +1284,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
+    ACTION_IF zst_487_otiluke_make_abjuration != 0 AND zst_487_otiluke_make_abjuration != 1 BEGIN
+        WARN "[WARN]: Setting to make Otiluke's Resilient Sphere an Abjuration spell should be set to 0 (disable) or 1 (enable). Actual value: %zst_487_otiluke_make_abjuration%"
+        LAM f_plus
+    END
+
     // ----------------------------------------DISINTEGRATE------------------------------------------------------ \\
 
     ACTION_IF zst_522_use_iwdee_version != 0 AND zst_522_use_iwdee_version != 1 BEGIN
@@ -1293,8 +1298,29 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
 
     // ----------------------------------------WEB TWEAK------------------------------------------------- \\
 
-    ACTION_IF zst_561_web_save_nerf != 0 AND zst_561_web_save_nerf != 1 BEGIN
-        WARN "[WARN]: Setting to make Web's save nerfed and use a Save vs. Breath should be set to 0 (disable) or 1 (enable). Actual value: %zst_561_web_save_nerf%"
+    ACTION_IF zst_561_web_save_penalty < "-10" OR zst_561_web_save_penalty > 10 BEGIN
+        WARN "[WARN]: Setting to define Web's save penalty should be set between -10 (maximum penalty) and 10 (maximum bonus). Actual value: %zst_561_web_save_penalty%"
+        LAM f_plus
+    END
+
+
+    ACTION_IF zst_561_web_save_type != savingthrow_spell  AND
+              zst_561_web_save_type != savingthrow_breath AND
+              zst_561_web_save_type != savingthrow_death  AND
+              zst_561_web_save_type != savingthrow_rod    AND
+              zst_561_web_save_type != savingthrow_poly
+    BEGIN
+        WARN "[WARN]: Setting to define Web's save type should be set to 1 (Spell), 2 (Breath), 4 (Death), 8 (Rod), or 16 (Polymorph). Actual value: %zst_561_web_save_type%"
+        LAM f_plus
+    END
+
+    ACTION_IF zst_561_use_iwd_animation != 0 AND zst_561_use_iwd_animation != 1 BEGIN
+        WARN "[WARN]: Setting to change Web animation to IWD's should be set to 0 (disable) or 1 (enable). Actual value: %zst_561_use_iwd_animation%"
+        LAM f_plus
+    END
+
+    ACTION_IF zst_561_web_mr_bypass != 0 AND zst_561_web_mr_bypass != 1 BEGIN
+        WARN "[WARN]: Setting to make Web bypass MR should be set to 0 (disable) or 1 (enable). Actual value: %zst_561_web_mr_bypass%"
         LAM f_plus
     END
 

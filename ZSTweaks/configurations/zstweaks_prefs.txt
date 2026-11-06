@@ -312,7 +312,10 @@ OUTER_SET zst_487_otiluke_make_abjuration = "1"
 // disintegrate
 OUTER_SET zst_522_use_iwdee_version = "1"
 
-OUTER_SET zst_561_web_save_nerf = "1" // enable or disable the nert to the save penalty in the web spell
+OUTER_SET zst_561_web_save_penalty =  "0" // define what the saving throw penalty should be for Web (-10 to 10)
+OUTER_SET zst_561_web_save_type    =  "2" // saving throw type (1-> Spell, 2-> Breath, 4-> Death, 8-> Rod, 16-> Petrify/Polymorph)
+OUTER_SET zst_561_use_iwd_animation = "1"
+OUTER_SET zst_561_web_mr_bypass     = "1"
 
 // power word kill config options
 OUTER_SET zst_585_pwk_magic_school        = "2" // 0 disables, 1 makes it enchantment, 2 makes it diviner

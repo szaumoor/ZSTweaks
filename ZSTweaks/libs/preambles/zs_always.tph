@@ -1,11 +1,11 @@
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_programmery.tph~
+INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_constants.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_logging.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_preinstall_check.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_vars.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_vars_eval.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_npc_array.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_ids_setup.tph~
-INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_constants.tph~
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_tw_functions.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_prefixes.tph~
 INCLUDE ~%MOD_FOLDER%/libs/preambles/fragments/zs_splprot_include.tph~

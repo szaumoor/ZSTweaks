@@ -1,29 +1,49 @@
+ACTION_IF zst_561_web_save_type = savingthrow_spell BEGIN
+  OUTER_SPRINT saving_throw_type @81901
+END ELSE ACTION_IF zst_561_web_save_type = savingthrow_breath BEGIN
+  OUTER_SPRINT saving_throw_type @81902
+END ELSE ACTION_IF zst_561_web_save_type = savingthrow_death BEGIN
+  OUTER_SPRINT saving_throw_type @81903
+END ELSE ACTION_IF zst_561_web_save_type = savingthrow_rod BEGIN
+  OUTER_SPRINT saving_throw_type @81904
+END ELSE ACTION_IF zst_561_web_save_type = savingthrow_poly BEGIN
+  OUTER_SPRINT saving_throw_type @81905
+END
+
+ACTION_IF zst_561_web_save_penalty != 0 BEGIN
+  OUTER_SPRINT aux_at @81906
+  OUTER_SPRINT saving_throw_bonus " %aux_at% %zst_561_web_save_penalty%"
+END ELSE BEGIN
+  OUTER_SPRINT saving_throw_bonus ""
+END
+
+ACTION_IF NOT is_iwdee AND zst_561_use_iwd_animation BEGIN
+  COPY ~%MOD_FOLDER%/spells/arcane/iwd_web~ ~override~
+  COPY ~%MOD_FOLDER%/pro/iwd_web~ ~override~
+  // ADD_PROJECTILE ~%MOD_FOLDER%/pro/iwd_web/web.pro~
+  // ADD_PROJECTILE ~%MOD_FOLDER%/pro/iwd_web/webtrav.pro~
+END
+
 COPY_EXISTING ~spwi215.spl~ ~override~
               ~spdr201.spl~ ~override~
               ~spin566.spl~ ~override~
               ~spin683.spl~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_savingthrow=1 savingthrow=2 END
+    LPF ALTER_SPELL INT_VAR desc = RESOLVE_STR_REF(@81900) END
+    LPF ALTER_EFFECT_EX INT_VAR savebonus=zst_561_web_save_penalty savingthrow=zst_561_web_save_type STR_VAR match_savingthrow_ex="(o_savingthrow != 0)" END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 324 multi_match = 1 parameter1 = 0 parameter2 = 13 END
+
+    PATCH_IF zst_561_web_mr_bypass BEGIN
+
+      LPF ALTER_EFFECT INT_VAR resist_dispel = 0 END
+
+    END
+
+    PATCH_IF NOT is_iwdee AND zst_561_use_iwd_animation BEGIN
+
+      LPF ALTER_EFFECT INT_VAR match_opcode = 174 STR_VAR match_resource = ~are_m03~ resource=~#cre_m02~ END
+      LPF ALTER_EFFECT INT_VAR match_opcode = 157 parameter2 = 1 STR_VAR resource = "webc" END
+
+    END
+
 BUT_ONLY IF_EXISTS
 
-COPY_EXISTING ~spwi215.spl~ ~override~
-              ~spdr201.spl~ ~override~
-
-    PATCH_IF zst_561_web_save_nerf BEGIN
-        LPF ALTER_EFFECT INT_VAR match_savingthrow=2 savebonus=0 END
-    END
-
-    SPRINT penalty   @100000
-    SPRINT vs_spell  @100001
-    SPRINT vs_breath @100002
-
-    READ_STRREF 0x50 desc
-    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-      REPLACE_TEXTUALLY ~%vs_spell%~ ~%vs_breath%~
-      PATCH_IF zst_561_web_save_nerf BEGIN
-        REPLACE_TEXTUALLY ~%penalty%~ ~~
-        REPLACE_TEXTUALLY ~ \. ~ ~. ~
-      END
-    END
-    SAY_EVALUATED 0x50 ~%desc%~
-
-IF_EXISTS
