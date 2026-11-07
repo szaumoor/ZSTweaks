@@ -64,7 +64,7 @@ DEFINE_DIMORPHIC_FUNCTION LOG_TEXT
 INT_VAR
     predicate_stdout   = TRUE
     add_level_preamble = TRUE
-    log_if = 1
+    log_if             = TRUE
 STR_VAR
     message   = ""
     log_level = "warn"

@@ -129,3 +129,10 @@ RET
 BEGIN
     LAM CREATE_SELF_SPL
 END
+
+
+DEFINE_PATCH_MACRO convert_to_subspell BEGIN
+    LPF ALTER_SPELL INT_VAR name="-1" desc = "-1" spell_type = 4 spell_level = 1 primary_type = 0 secondary_type = 0 STR_VAR icon=~~ casting_sound = ~~ END
+    LPF ALTER_HEADER INT_VAR silent=1 projectile = 1 speed=0 STR_VAR icon=~~ END
+
+END
