@@ -1,0 +1,48 @@
+// DEFINE_ACTION_FUNCTION STORE_CONTAINS
+// INT_VAR
+// STR_VAR
+//     store = ~~
+// BEGIN
+// END
+
+DEFINE_PATCH_FUNCTION STORE_HAS_ANY
+INT_VAR
+STR_VAR
+  item0 = ~********~
+  item1 = ~********~
+  item2 = ~********~
+RET
+    result
+    position
+BEGIN
+    PATCH_IF zs_debug AND (STRING_LENGTH "%item0%" == 0 OR "%item0%" STR_EQ ~********~) BEGIN
+        PATCH_FAIL "[FAIL]: At least item0 must be passed with a non-empty, non-default value"
+    END
+
+    result = 0
+    position = "-1"
+
+    READ_LONG 0x38 items_available
+
+    PATCH_IF items_available > 0 BEGIN
+
+        READ_LONG 0x34 items_offset
+        SET entry_size = 0x1c
+        SET last_offset = items_offset + (entry_size * items_available)
+
+        FOR ( offset = items_offset; offset <= last_offset; offset += entry_size ) BEGIN
+
+            READ_ASCII offset resource (8)
+            PATCH_IF "%offset_resource%" STR_EQ "%item0%" OR
+                     "%offset_resource%" STR_EQ "%item1%" OR
+                     "%offset_resource%" STR_EQ "%item2%"
+            BEGIN
+                result = 1
+                position = (offset - items_offset) / entry_size
+                offset = last_offset + 1 // BREAK
+            END
+
+        END
+
+    END
+END

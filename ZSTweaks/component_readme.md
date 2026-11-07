@@ -451,7 +451,7 @@ Optionally, the component can also inject a new robe called Robes of Caustic Aff
 - 90% resistance to poison (anything that deals more than 1 poison damage will be affected)
 - It will be injected into any stores that sell *any* elemental affinity robe.
 
-Finally, this is possibly incompatible with Forgotten Armaments, whose item tweak component also touches various items, including Traveler's Robe.
+Finally, this is possibly incompatible with Forgotten Armaments, whose item tweak component also touches various items, including Traveler's Robe. Warnings will be emitted in that case.
 
 ### Make Belt of Skillful Blade also improve piercing damage (1560) (BG2EE EET)
 
