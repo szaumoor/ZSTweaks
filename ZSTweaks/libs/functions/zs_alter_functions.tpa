@@ -567,7 +567,7 @@ BEGIN
     END
 
     PATCH_IF NOT "%dialog%" STR_EQ "none" BEGIN
-        WRITE_ASCII 0x2cc dialog #8
+        WRITE_ASCII 0x2cc "%dialog%" #8
     END
 END
 
