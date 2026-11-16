@@ -8,6 +8,12 @@ ACTION_IF zst_1534_potions_usable_everyone BEGIN
 
 END
 
+ACTION_IF zst_1534_potions_shorter_gulp_sound BEGIN
+
+    COPY ~%MOD_FOLDER%/items/potions~ ~override~
+
+END
+
 ACTION_IF zst_1534_potions_cannot_self_stack BEGIN
 
     COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~

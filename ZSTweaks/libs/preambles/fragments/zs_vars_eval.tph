@@ -595,7 +595,13 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
-    ACTION_IF zst_1534_potions_usable_everyone = 0 AND zst_1534_potion_overhaul = 0 AND zst_1534_potions_cannot_self_stack = 0 BEGIN
+    ACTION_IF zst_1534_potions_shorter_gulp_sound != 0 AND zst_1534_potions_shorter_gulp_sound != 1 BEGIN
+        WARN "[WARN]: Setting to shorter the digusting gulping sound should be set to 0 (disable) or 1 (enable). Actual value: %zst_1534_potions_shorter_gulp_sound%"
+        LAM f_plus
+    END
+
+    ACTION_IF zst_1534_potions_usable_everyone   = 0 AND zst_1534_potion_overhaul = 0 AND
+              zst_1534_potions_cannot_self_stack = 0 AND zst_1534_potions_shorter_gulp_sound BEGIN
         WARN "[WARN]: No tweaks were selected for the Potion Overhaul, no changes are made"
         LAM f_plus
     END

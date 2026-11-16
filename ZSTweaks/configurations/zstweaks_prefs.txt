@@ -86,9 +86,10 @@ OUTER_SET zst_1450_allow_bards               = "1"
 OUTER_SET zst_1450_bards_probability_penalty = 24 // 25% actually, probabilities go from 0 to 99. Multiplicative, for example, if a thief has a 50% chance of inflicting a Finesse hit, a 25% penalty would transform that 50% chance for bards to 37.5% chance. Valid range is anywhere between 0 and 98. Other values are nonsensical.
 
 // potions are usable by everyone
-OUTER_SET zst_1534_potions_usable_everyone   = "1"
-OUTER_SET zst_1534_potion_overhaul           = "1"
-OUTER_SET zst_1534_potions_cannot_self_stack = "1"
+OUTER_SET zst_1534_potions_usable_everyone    = "1"
+OUTER_SET zst_1534_potion_overhaul            = "1"
+OUTER_SET zst_1534_potions_cannot_self_stack  = "1"
+OUTER_SET zst_1534_potions_shorter_gulp_sound = "1"
 
 // tweaks the price of jewelry. By default it increases the price by 50% (150). If you want double price, you would type instead "200"; if you wanted half, you would type 50.
 OUTER_SET zst_1538_jewelry_price = "150"
