@@ -1,0 +1,39 @@
+DEFINE_PATCH_MACRO patch_file BEGIN LPF ALTER_EFF_FILE INT_VAR opcode=286 parameter1=1 END END
+LAF CREATE_EQ_EFF STR_VAR filename = "zsttdgtf" END
+
+COPY_EXISTING_REGEXP "^.+\.itm$" ~override~
+    READ_LONG 0x60 ench
+    READ_SHORT 0x68 num_abilities
+    READ_ASCII 0x22 appearance (2)
+
+    PATCH_IF ench >= 0 AND ench <= 6 AND num_abilities > 0 BEGIN
+        READ_SHORT 0x1c cat
+        READ_BYTE 0x31 prof
+
+        PATCH_IF cat=16 AND prof=96 AND NOT ("%appearance%" STR_EQ "  ") BEGIN
+
+            SET ability_size = 0x38
+            SET offset_ability = LONG_AT 0x64
+
+            SET has_ranged = 0
+            FOR ( i = 0; i < num_abilities; ++i ) BEGIN
+
+                READ_BYTE ((i * ability_size) + offset_ability) type
+                PATCH_IF type == 2 BEGIN
+                    has_ranged = 1
+                    i = num_abilities
+                END
+
+            END
+
+            PATCH_IF has_ranged = 1 BEGIN
+
+                LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=177,p2=5,p1=%class_thief%,res=zsttdgtf~ END // resources for thieves
+
+            END
+
+        END
+
+    END
+
+BUT_ONLY

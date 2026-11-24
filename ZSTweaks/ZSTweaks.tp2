@@ -611,6 +611,10 @@ BEGIN @1563 LABEL ~zs_tw_dagger_venom~ DESIGNATED 1563 GROUP @12 // DAGGER OF VE
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @52
 FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
 
+BEGIN @1572 LABEL ~zs_tw_thdagger_thief~ DESIGNATED 1572 GROUP @12 // DAGGER THIEF DMG BONUS
+REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @52
+FORBID_COMPONENT "ZSTweaks.tp2" "999" @58
+
 //////////////////////////////////////// TWO-HANDED WEAPON TWEAKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 BEGIN @10003 LABEL ~zs_tw_two_handed_weapons~ DESIGNATED 1199 GROUP @13 // INSTALL USER-DEFINED COMPONENTS IN GROUP
 REQUIRE_PREDICATE GAME_IS "iwdee bgee bg2ee eet" @54
