@@ -13,8 +13,13 @@ INT_VAR
     id_desc       = "-2"
     ////////////////////////////////////////////////////////////////////////////////////////////////
     flags         = "-1"
+    flags_plus    = 0
+    flags_add_bit = "-1"
+    flags_del_bit = "-1"
+    //////////
     category      = "-1"
     wpn_prof      = "-1"
+    //////////
     min_level     = "-1"
     min_str       = "-1"
     min_str_bonus = "-1"
@@ -23,17 +28,18 @@ INT_VAR
     min_int       = "-1"
     min_wis       = "-1"
     min_cha       = "-1"
+    //////////
     unusable0     = "-1"
     unusable1     = "-1"
     unusable2     = "-1"
     unusable3     = "-1"
     unusable4     = "-1"
+    //////////
     price         = "-1"
     max_stack     = "-1"
     lore          = "-1"
     weight        = "-1"
     ench          = "-1"
-    this_plus     = 0 // to enable addition to values, a value of 1 will add, -1 will subtract, to the current value instead of setting on some fields
 STR_VAR
     used_up_itm = ~none~
     appearance  = ~none~
@@ -70,15 +76,53 @@ BEGIN
     END
 
     PATCH_IF flags > "-1" BEGIN
-        PATCH_IF this_plus = 0 BEGIN
-            WRITE_LONG 0x18 flags
-        END ELSE PATCH_IF this_plus = 1 BEGIN
-            WRITE_LONG 0x18 (THIS + flags)
-        END ELSE PATCH_IF this_plus = "-1" BEGIN
-            WRITE_LONG 0x18 (THIS - flags)
-        END
+        WRITE_LONG 0x18 flags
     END ELSE PATCH_IF flags < "-1" BEGIN
         PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to flags"
+    END
+
+    PATCH_IF flags_plus > 0 BEGIN
+        WRITE_LONG 0x18 (THIS + flag_plus)
+    END
+
+    PATCH_IF flags_add_bit >= 0 AND flags_add_bit < 32 BEGIN
+
+        LPF IS_BIT_SET INT_VAR bit_field = LONG_AT(0x18) bit=flags_add_bit RET set = result END
+
+        PATCH_IF NOT set BEGIN
+            WRITE_LONG 0x18 (THIS + 2**flags_add_bit)
+        END
+
+        ELSE BEGIN
+            PATCH_IF zs_debug BEGIN
+                PATCH_WARN "[WARN]: Flag was not set, thus ALTER_ITEM didn't make any changes"
+            END
+        END
+
+    END ELSE PATCH_IF flags_add_bit != "-1" BEGIN
+
+        PATCH_FAIL "[FAIL]: Passed an invalid bit to add to the 32 bit field of flags: %flags_add_bit%"
+
+    END
+
+    PATCH_IF flags_del_bit >= 0 AND flags_del_bit < 32 BEGIN
+
+        LPF IS_BIT_SET INT_VAR bit_field = LONG_AT(0x18) bit=flags_del_bit RET set = result END
+
+        PATCH_IF set BEGIN
+            WRITE_LONG 0x18 (THIS - 2**flags_del_bit)
+        END
+
+        ELSE BEGIN
+            PATCH_IF zs_debug BEGIN
+                PATCH_WARN "[WARN]: Flag was not unset, thus ALTER_ITEM didn't make any changes"
+            END
+        END
+
+    END ELSE PATCH_IF flags_add_bit != "-1" BEGIN
+
+        PATCH_FAIL "[FAIL]: Passed an invalid bit to delete to the 32 bit field of flags: %flags_add_bit%"
+
     END
 
     PATCH_IF category > "-1" BEGIN
@@ -394,17 +438,24 @@ DEFINE_PATCH_FUNCTION ALTER_SPELL
 INT_VAR
     name = "-2"
     desc = "-2"
-    flags = "-1"
+
+    flags      = "-1"
+    flags_plus = 0
+
     spell_type = "-1"
-    excl_flags = "-1"
+
+    excl_flags      = "-1"
+    excl_flags_plus = 0
+
     animation = "-1"
-    primary_type = "-1"
+
+    primary_type   = "-1"
     secondary_type = "-1"
+
     spell_level = "-1"
-    this_plus = 0
 STR_VAR
     casting_sound = ~none~
-    icon = ~none~
+    icon          = ~none~
 BEGIN
     PATCH_IF zs_debug BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "SPL" END
@@ -423,15 +474,13 @@ BEGIN
     END
 
     PATCH_IF flags > "-1" BEGIN
-        PATCH_IF this_plus = 0 BEGIN
-            WRITE_LONG 0x18 flags
-        END ELSE PATCH_IF this_plus = 1 BEGIN
-            WRITE_LONG 0x18 (THIS + flags)
-        END ELSE PATCH_IF this_plus = "-1" BEGIN
-            WRITE_LONG 0x18 (THIS - flags)
-        END
+        WRITE_LONG 0x18 flags
     END ELSE PATCH_IF flags < "-1" BEGIN
         PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to flags"
+    END
+
+    PATCH_IF flags_plus > 0 BEGIN
+        WRITE_LONG 0x18 (THIS + flags_plus)
     END
 
     PATCH_IF spell_type > "-1" BEGIN
@@ -441,15 +490,13 @@ BEGIN
     END
 
     PATCH_IF excl_flags > "-1" BEGIN
-        PATCH_IF this_plus = 0 BEGIN
-            WRITE_LONG 0x1e excl_flags
-        END ELSE PATCH_IF this_plus = 1 BEGIN
-            WRITE_LONG 0x1e (THIS + excl_flags)
-        END ELSE PATCH_IF this_plus = "-1" BEGIN
-            WRITE_LONG 0x1e (THIS - excl_flags)
-        END
+        WRITE_LONG 0x1e excl_flags
     END ELSE PATCH_IF flags < "-1" BEGIN
         PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to excl_flags"
+    END
+
+    PATCH_IF excl_flags_plus > 0 BEGIN
+        WRITE_LONG 0x1e (THIS + excl_flags_plus)
     END
 
     PATCH_IF animation > "-1" BEGIN
@@ -487,16 +534,111 @@ END
 
 DEFINE_PATCH_FUNCTION ALTER_CRE
 INT_VAR
-    name           = "-2"
-    tooltip        = "-2"
-    current_health = "-1"
-    thac0          = "-129"
-    max_health     = "-1"
-    class          = "-1"
-    alignment      = "-1"
-    race           = "-1"
-    class          = "-1"
-    general        = "-1"
+    name                = "-2"
+    tooltip             = "-2"
+    name_tooltip        = "-2"
+    //////
+    flags               = "-1"
+    animation           = "-1"
+    status              = "-1"
+    //////
+    ac_natural          = "-999"
+    ac_natural_plus     = 0
+
+    /////
+    ac_effective        = "-999"
+    ac_effective_plus   = 0
+    /////
+
+    ac                  = "-9999"
+    ac_plus             = "-9999"
+
+    //////
+
+    ac_crushing         = "-999"
+    ac_missile          = "-999"
+    ac_piercing         = "-999"
+    ac_slashing         = "-999"
+
+    //////
+
+    current_health      = "-1"
+    current_health_plus = 0
+
+    /////
+    max_health          = "-1"
+    max_health_plus     = 0
+
+    //////
+    health              = "-1"
+    health_plus         = 0
+
+    /////
+    thac0               = "-129"
+    thac0_plus          = 0
+    /////
+
+    fire_resist        = "-129"
+    cold_resist        = "-129"
+    electricity_resist = "-129"
+    acid_resist        = "-129"
+    magic_resist       = "-129"
+    magic_fire_resist  = "-129"
+    magic_cold_resist  = "-129"
+    slashing_resist    = "-129"
+    crushing_resist    = "-129"
+    piercing_resist    = "-129"
+    missile_resist     = "-129"
+
+    /////
+    class               = "-1"
+    alignment           = "-1"
+    race                = "-1"
+    class               = "-1"
+    general             = "-1"
+
+    /////
+    save_vs_death       = "-999"
+    save_vs_rod         = "-999"
+    save_vs_poly        = "-999"
+    save_vs_breath      = "-999"
+    save_vs_spell       = "-999"
+
+    save_vs_death_plus  = 0
+    save_vs_rod_plus    = 0
+    save_vs_poly_plus   = 0
+    save_vs_breath_plus = 0
+    save_vs_spell_plus  = 0
+
+    save_vs_all_plus    = 0
+    //////
+
+    level_1             = "-1"
+    level_2             = "-1"
+    level_3             = "-1"
+    /////
+
+    strength            = "-1"
+    strength_ex         = "-1"
+
+    strength_plus       = "-1"
+    strength_ex_plus    = "-1"
+
+    dexterity = "-1"
+    dexterity_plus = "-1"
+
+    constitution = "-1"
+    constitution_plus = "-1"
+
+    intelligence = "-1"
+    intelligence_plus = "-1"
+
+    wisdom = "-1"
+    wisdom_plus = "-1"
+
+    charisma = "-1"
+    charisma_plus = "-1"
+
 STR_VAR
     dialog = ~none~
 BEGIN
@@ -504,16 +646,89 @@ BEGIN
         LPF CHECK_EXTENSION STR_VAR extension = "CRE" END
     END
 
-    PATCH_IF name > "-2" BEGIN
-        WRITE_LONG 0x08 name
-    END ELSE PATCH_IF name < "-2" BEGIN
-        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to name"
+    PATCH_IF name_tooltip > "-2" BEGIN
+
+        WRITE_LONG 0x08 name_tooltip
+        WRITE_LONG 0x0c name_tooltip
+
+    END ELSE PATCH_IF name_tooltip < "-2" BEGIN
+
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to name_tooltip"
+
+    END ELSE BEGIN
+
+        PATCH_IF name > "-2" BEGIN
+            WRITE_LONG 0x08 name
+        END ELSE PATCH_IF name < "-2" BEGIN
+            PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to name"
+        END
+
+        PATCH_IF tooltip > "-2" BEGIN
+            WRITE_LONG 0x0c tooltip
+        END ELSE PATCH_IF tooltip < "-2" BEGIN
+            PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to tooltip"
+        END
+
     END
 
-    PATCH_IF tooltip > "-2" BEGIN
-        WRITE_LONG 0x0c tooltip
-    END ELSE PATCH_IF tooltip < "-2" BEGIN
-        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to tooltip"
+    PATCH_IF flags > "-1" BEGIN
+        WRITE_LONG 0x10 flags
+    END ELSE PATCH_IF flags < "-2" BEGIN
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to flags"
+    END
+
+    PATCH_IF animation > "-1" BEGIN
+        WRITE_SHORT 0x28 animation
+    END ELSE PATCH_IF animation < "-2" BEGIN
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to animation"
+    END
+
+    PATCH_IF status > "-1" BEGIN
+        WRITE_LONG 0x20 status
+    END ELSE PATCH_IF status < "-2" BEGIN
+        PATCH_FAIL "[FAIL]: Passed a negative value under the default (-2) to status"
+    END
+
+    PATCH_IF ac_natural != "-999" BEGIN
+        WRITE_SHORT 0x46 ac_natural
+    END
+
+    PATCH_IF ac_natural_plus != 0 BEGIN
+        WRITE_SHORT 0x46 (THIS + ac_natural_plus)
+    END
+
+    PATCH_IF ac_effective != "-999" BEGIN
+        WRITE_SHORT 0x48 ac_effective
+    END
+
+    PATCH_IF ac_effective_plus != 0 BEGIN
+        WRITE_SHORT 0x48 (THIS + ac_effective_plus)
+    END
+
+    PATCH_IF ac != "-999" BEGIN
+        WRITE_SHORT 0x46 ac
+        WRITE_SHORT 0x48 ac
+    END
+
+    PATCH_IF ac_plus != 0 BEGIN
+        WRITE_SHORT 0x46 (THIS + ac_plus)
+        WRITE_SHORT 0x48 (THIS + ac_plus)
+    END
+
+    PATCH_IF ac_crushing != "-999" BEGIN
+        WRITE_SHORT 0x4a ac_crushing
+    END
+
+    PATCH_IF ac_missile != "-999" BEGIN
+        WRITE_SHORT 0x4c ac_missile
+    END
+
+    PATCH_IF ac_piercing != "-999" BEGIN
+        WRITE_SHORT 0x4e ac_piercing
+    END
+
+    PATCH_IF ac_slashing != "-999" BEGIN
+        WRITE_SHORT 0x50 ac_crushing
     END
 
     PATCH_IF current_health > "-1" BEGIN
@@ -522,16 +737,30 @@ BEGIN
         PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to current_health"
     END
 
+    PATCH_IF current_health_plus != 0 BEGIN
+        WRITE_SHORT 0x24 (THIS + current_health_plus)
+    END
+
     PATCH_IF max_health > "-1" BEGIN
         WRITE_SHORT 0x26 max_health
     END ELSE PATCH_IF max_health < "-1" BEGIN
         PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to max_health"
     END
 
-    PATCH_IF class > "-1" BEGIN
-        WRITE_BYTE 0x273 class
-    END ELSE PATCH_IF class < "-1" BEGIN
-        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to class"
+    PATCH_IF max_health_plus != 0 BEGIN
+        WRITE_SHORT 0x26 (THIS + max_health_plus)
+    END
+
+    PATCH_IF health > "-1" BEGIN
+        WRITE_SHORT 0x24 health
+        WRITE_SHORT 0x26 health
+    END ELSE PATCH_IF health < "-1" BEGIN
+        PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to health"
+    END
+
+    PATCH_IF health_plus != 0 BEGIN
+        WRITE_SHORT 0x24 (THIS + health_plus)
+        WRITE_SHORT 0x26 (THIS + health_plus)
     END
 
     PATCH_IF thac0 >= "-128" AND thac0 <= 127 BEGIN
@@ -540,6 +769,54 @@ BEGIN
         PATCH_IF thac0 != "-129" BEGIN
             PATCH_FAIL "[FAIL]: Passed an out-of-bounds value to thac0 (valid values are between -128 to 127)"
         END
+    END
+
+    PATCH_IF thac0_plus != 0 BEGIN
+        WRITE_BYTE 0x52 (THIS + thac0_plus)
+    END
+
+    PATCH_IF fire_resist != "-129" BEGIN
+        WRITE_BYTE 0x59 fire_resist
+    END
+
+    PATCH_IF cold_resist != "-129" BEGIN
+        WRITE_BYTE 0x5a cold_resist
+    END
+
+    PATCH_IF electricity_resist != "-129" BEGIN
+        WRITE_BYTE 0x5b electricity_resist
+    END
+
+    PATCH_IF acid_resist != "-129" BEGIN
+        WRITE_BYTE 0x5c acid_resist
+    END
+
+    PATCH_IF magic_resist != "-129" BEGIN
+        WRITE_BYTE 0x5d magic_resist
+    END
+
+    PATCH_IF magic_fire_resist != "-129" BEGIN
+        WRITE_BYTE 0x5e magic_fire_resist
+    END
+
+    PATCH_IF magic_cold_resist != "-129" BEGIN
+        WRITE_BYTE 0x5f magic_cold_resist
+    END
+
+    PATCH_IF slashing_resist != "-129" BEGIN
+        WRITE_BYTE 0x60 slashing_resist
+    END
+
+    PATCH_IF crushing_resist != "-129" BEGIN
+        WRITE_BYTE 0x61 crushing_resist
+    END
+
+    PATCH_IF piercing_resist != "-129" BEGIN
+        WRITE_BYTE 0x62 piercing_resist
+    END
+
+    PATCH_IF missile_resist != "-129" BEGIN
+        WRITE_BYTE 0x63 missile_resist
     END
 
     PATCH_IF alignment > "-1" AND alignment <= 255 BEGIN
@@ -563,7 +840,59 @@ BEGIN
     PATCH_IF class > "-1" AND class <= 255 BEGIN
         WRITE_BYTE 0x273 class
     END ELSE PATCH_IF class < "-1" BEGIN
-        PATCH_FAIL "[FAIL]: Passed an out-of-bounds value to race (valid values are between 0 to 255)"
+        PATCH_FAIL "[FAIL]: Passed an out-of-bounds value to class (valid values are between 0 to 255)"
+    END
+
+    PATCH_IF save_vs_death != "-999" BEGIN
+        WRITE_BYTE 0x54 save_vs_death
+    END
+
+    PATCH_IF save_vs_death_plus != 0 BEGIN
+        WRITE_BYTE 0x54 (THIS + save_vs_death_plus)
+    END
+
+    PATCH_IF save_vs_rod != "-999" BEGIN
+        WRITE_BYTE 0x55 save_vs_rod
+    END
+
+    PATCH_IF save_vs_rod_plus != 0 BEGIN
+        WRITE_BYTE 0x55 (THIS + save_vs_rod_plus)
+    END
+
+    PATCH_IF save_vs_poly != "-999" BEGIN
+        WRITE_BYTE 0x56 save_vs_poly
+    END
+
+    PATCH_IF save_vs_poly_plus != 0 BEGIN
+        WRITE_BYTE 0x56 (THIS + save_vs_poly_plus)
+    END
+
+    PATCH_IF save_vs_spell != "-999" BEGIN
+        WRITE_BYTE 0x57 save_vs_spell
+    END
+
+    PATCH_IF save_vs_spell_plus != 0 BEGIN
+        WRITE_BYTE 0x58 (THIS + save_vs_spell_plus)
+    END
+
+    PATCH_IF save_vs_all_plus != 0 BEGIN
+        WRITE_BYTE 0x54 (THIS + save_vs_all_plus)
+        WRITE_BYTE 0x55 (THIS + save_vs_all_plus)
+        WRITE_BYTE 0x56 (THIS + save_vs_all_plus)
+        WRITE_BYTE 0x57 (THIS + save_vs_all_plus)
+        WRITE_BYTE 0x58 (THIS + save_vs_all_plus)
+    END
+
+    PATCH_IF level_1 > "-1" AND level1 <= 255 BEGIN
+        WRITE_BYTE 0x234 level_1
+    END
+
+    PATCH_IF level_2 > "-1" AND level2 <= 255 BEGIN
+        WRITE_BYTE 0x235 level_2
+    END
+
+    PATCH_IF level_3 > "-1" AND level3 <= 255 BEGIN
+        WRITE_BYTE 0x236 level_3
     END
 
     PATCH_IF NOT "%dialog%" STR_EQ "none" BEGIN

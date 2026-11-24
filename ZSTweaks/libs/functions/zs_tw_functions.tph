@@ -6,9 +6,9 @@ INCLUDE ~%MOD_FOLDER%/libs/functions/zs_avenger.tpa~ // avenger, with slight mod
 
 // my function libraries
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_files.tpa~
+INCLUDE ~%MOD_FOLDER%/libs/functions/zs_checks.tpa~
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_add_effects.tpa~
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_alter_functions.tpa~
-INCLUDE ~%MOD_FOLDER%/libs/functions/zs_checks.tpa~
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_getters.tpa~
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_searches.tpa~
 INCLUDE ~%MOD_FOLDER%/libs/functions/zs_specifics.tpa~
