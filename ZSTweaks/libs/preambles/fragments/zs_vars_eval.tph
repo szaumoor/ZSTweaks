@@ -2563,6 +2563,11 @@ ACTION_IF NOT VARIABLE_IS_SET ~zs_vars_check~ BEGIN
         LAM f_plus
     END
 
+    ACTION_IF zst_group_3230_invisible_stalkers != 0 AND zst_group_3230_invisible_stalkers != 1 BEGIN
+        WARN "[WARN]: Invisible Stalkers group component should be set to 1 or 0. Actual value: %zst_group_3230_invisible_stalkers%"
+        LAM f_plus
+    END
+
     // ----------------------------------------GROUP COMP VARIABLES (DAGGER)------------------------------------------------- \\
 
     ACTION_IF zst_group_1000_poisoned_throw_dagg != 0 AND zst_group_1000_poisoned_throw_dagg != 1 BEGIN

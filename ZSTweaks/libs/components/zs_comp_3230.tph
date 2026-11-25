@@ -1,0 +1,61 @@
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~stalkesu.itm~ BEGIN
+    COPY_EXISTING ~s2-16.itm~ ~override/stalkesu.itm~
+END
+
+COPY_EXISTING ~stalkesu.itm~ ~override~ // only exists in bg2ee sigh. Better to duplicate the 2d8 template wpn
+              ~invstlk.itm~  ~override~
+    LPF ALTER_HEADER INT_VAR damage=4 dicenumber=2 dicesize=6 to_hit=2 END // magical flag is missing!
+    LPF ALTER_ITEM INT_VAR ench = 2 flags_add_bit = 6 END
+BUT_ONLY IF_EXISTS
+
+
+ACTION_IF is_bgee BEGIN
+
+    COPY_EXISTING ~stalke.cre~ ~override~
+        REPLACE_CRE_ITEM ~stalkesu~ #0 #0 #0 ~identified&unstealable&undroppable~ weapon1 EQUIP
+
+END
+
+ACTION_IF is_eet BEGIN
+
+    COPY_EXISTING ~stalke_.cre~ ~override~
+        REPLACE_CRE_ITEM ~stalkesu~ #0 #0 #0 ~identified&unstealable&undroppable~ weapon1 EQUIP
+
+END
+
+COPY_EXISTING ~stalke.cre~   ~override~
+              ~stalkesu.cre~ ~override~
+              ~senstalk.cre~ ~override~
+              ~ohrstalk.cre~ ~override~
+              ~invstlk.cre~  ~override~
+              ~sumstlk.cre~  ~override~
+    LPF ALTER_CRE
+        INT_VAR
+            ac=3
+            ac_piercing = "-2"
+            ac_missile = "-4"
+
+            thac0 = 13
+
+            status=(2**4+2**22)
+
+            magic_resist = 30
+            magic_cold_resist = 30
+            magic_fire_resist = 30
+            acid_resist = 30
+            fire_resist = 30
+            cold_resist = 30
+            piercing_resist = 50
+            slashing_resist = 20
+            crushing_resist = 20
+            missile_resist = 90
+
+            strength = 18
+            strength_ex = 51
+            dexterity = 19
+
+            race = race_elemental
+            class = class_elemental_air
+            alignment = alignmen_neutral
+    END
+IF_EXISTS
