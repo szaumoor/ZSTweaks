@@ -35,7 +35,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
             READ_LONG 0x18 flags
             LPF IS_BIT_SET INT_VAR bit=25 bit_field=flags RET toggle_crits = result END
             PATCH_IF toggle_crits BEGIN
-                LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+                LPF ALTER_ITEM INT_VAR flags_add_bit=25 END
             END
 
             LPF ALTER_ITEM INT_VAR general_desc=desc id_desc=desc STR_VAR appearance="h0" END
@@ -67,7 +67,7 @@ ACTION_IF is_bg2ee_or_eet BEGIN
                       (MOD_IS_INSTALLED "ZSTweaks.tp2" "1664" OR
                       (group_component AND zst_group_1664_ioun_circlet_crits))
             BEGIN
-                LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+                LPF ALTER_ITEM INT_VAR flags_add_bit=25 END
             END
 
     END

@@ -23,7 +23,7 @@ ACTION_IF zst_101_fblade_undead BEGIN
 
     COPY ~%MOD_FOLDER%/spells/divine/flame_blade~ ~override~
     COPY_EXISTING ~fblade.itm~ ~override~
-        LPF ALTER_ITEM INT_VAR this_plus=1 flags=2**6 END
+        LPF ALTER_ITEM INT_VAR flags_add_bit=6 END
         LPF ADD_EQUIPPED_EFF STR_VAR effects = ~op=344,p1=4,p2=3,spec=2~ END
 
         PATCH_IF NOT is_iwdee BEGIN
