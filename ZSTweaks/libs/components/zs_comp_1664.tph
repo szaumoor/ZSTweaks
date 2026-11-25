@@ -14,12 +14,7 @@ ACTION_IF zst_1664_crits_all BEGIN
         READ_ASCII 0x22 appearance (2)
 
         PATCH_IF cat=7 AND (strref = %ioun_strref% OR ("%appearance%" STR_EQ "jb") ) BEGIN
-
-            LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
-            PATCH_IF crit_flag BEGIN
-            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
-            END
-
+            LPF ALTER_ITEM INT_VAR flags_del_bit=25 END
         END
 
     BUT_ONLY
@@ -33,13 +28,7 @@ END ELSE ACTION_IF zst_1664_crits_iouns BEGIN
         READ_ASCII 0x22 appearance (2)
 
         PATCH_IF cat=7 AND strref = %ioun_strref% BEGIN
-
-            READ_LONG 0x18 flags
-            LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
-            PATCH_IF crit_flag BEGIN
-            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
-            END
-
+            LPF ALTER_ITEM INT_VAR flags_del_bit=25 END
         END
 
     BUT_ONLY
@@ -52,13 +41,7 @@ END ELSE ACTION_IF zst_1664_crits_circlets BEGIN
         READ_ASCII 0x22 appearance (2)
 
         PATCH_IF cat=7 AND "%appearance%" STR_EQ "jb" BEGIN
-
-            READ_LONG 0x18 flags
-            LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
-            PATCH_IF crit_flag BEGIN
-            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
-            END
-
+            LPF ALTER_ITEM INT_VAR flags_del_bit=25 END
         END
 
     BUT_ONLY
@@ -66,45 +49,27 @@ END ELSE ACTION_IF zst_1664_crits_circlets BEGIN
 END ELSE ACTION_IF zst_1664_crits_selected BEGIN
 
     COPY_EXISTING ~helm20.itm~ ~override~ // pale green ioun
-        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
-        PATCH_IF crit_flag BEGIN
-            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
-        END
+        LPF ALTER_ITEM INT_VAR flags_del_bit=25 END
     BUT_ONLY IF_EXISTS
 
     COPY_EXISTING ~helm24.itm~ ~override~
-        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
-        PATCH_IF crit_flag BEGIN
-            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
-        END
+        LPF ALTER_ITEM INT_VAR flags_del_bit=25 END
     BUT_ONLY IF_EXISTS
 
     COPY_EXISTING ~amsoul01.itm~ ~override~
-        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
-        PATCH_IF crit_flag BEGIN
-            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
-        END
+        LPF ALTER_ITEM INT_VAR flags_del_bit=25 END
     BUT_ONLY IF_EXISTS
 
     COPY_EXISTING ~helm34.itm~ ~override~
-        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
-        PATCH_IF crit_flag BEGIN
-            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
-        END
+        LPF ALTER_ITEM INT_VAR flags_del_bit=25 END
     BUT_ONLY IF_EXISTS
 
     COPY_EXISTING ~bdhelm16.ITM~ ~override~ // circlet of lost souls
-        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
-        PATCH_IF crit_flag BEGIN
-            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
-        END
+        LPF ALTER_ITEM INT_VAR flags_del_bit=25 END
     BUT_ONLY IF_EXISTS
 
     COPY_EXISTING ~ohrhelm1.ITM~ ~override~
-        LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
-        PATCH_IF crit_flag BEGIN
-            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
-        END
+        LPF ALTER_ITEM INT_VAR flags_del_bit=25 END
     BUT_ONLY IF_EXISTS
 
 END

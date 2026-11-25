@@ -29,13 +29,33 @@ INT_VAR
     min_wis       = "-1"
     min_cha       = "-1"
     //////////
-    unusable0     = "-1"
-    unusable1     = "-1"
-    unusable2     = "-1"
-    unusable3     = "-1"
-    unusable4     = "-1"
+    unusable0         = "-1"
+    unusable0_plus    = "-1"
+    unusable0_add_bit = "-1"
+    unusable0_del_bit = "-1"
+
+    unusable1         = "-1"
+    unusable1_plus    = "-1"
+    unusable1_add_bit = "-1"
+    unusable1_del_bit = "-1"
+
+    unusable2         = "-1"
+    unusable2_plus    = "-1"
+    unusable2_add_bit = "-1"
+    unusable2_del_bit = "-1"
+
+    unusable3         = "-1"
+    unusable3_plus    = "-1"
+    unusable3_add_bit = "-1"
+    unusable3_del_bit = "-1"
+
+    unusable4         = "-1"
+    unusable4_plus    = "-1"
+    unusable4_add_bit = "-1"
+    unusable4_del_bit = "-1"
     //////////
     price         = "-1"
+    price_plus    = 0
     max_stack     = "-1"
     lore          = "-1"
     weight        = "-1"
@@ -215,10 +235,94 @@ BEGIN
         PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to unusable0"
     END
 
+    PATCH_IF unusable0_plus > 0 BEGIN
+        WRITE_LONG 0x1e (THIS + unusable0_plus)
+    END
+
+    PATCH_IF unusable0_add_bit >= 0 AND unusable0_add_bit < 32 BEGIN
+
+        LPF IS_BIT_SET INT_VAR bit_field = LONG_AT(0x1e) bit=unusable0_add_bit RET set = result END
+        PATCH_IF NOT set BEGIN
+            WRITE_LONG 0x1e (THIS + 2**unusable0_add_bit)
+        END
+
+        ELSE BEGIN
+            PATCH_IF zs_debug BEGIN
+                PATCH_WARN "[WARN]: Bit %unusable0_add_bit% is already set in unusable0"
+            END
+        END
+
+    END ELSE PATCH_IF unusable0_add_bit != "-1" BEGIN
+
+        PATCH_FAIL "[FAIL]: Passed an invalid bit to add to the 32 bit field of unusable0: %unusable0_add_bit%"
+
+    END
+
+    PATCH_IF unusable0_del_bit >= 0 AND unusable0_del_bit < 32 BEGIN
+
+        LPF IS_BIT_SET INT_VAR bit_field = LONG_AT(0x1e) bit=unusable0_del_bit RET set = result END
+        PATCH_IF set BEGIN
+            WRITE_LONG 0x1e (THIS - 2**unusable0_del_bit)
+        END
+
+        ELSE BEGIN
+            PATCH_IF zs_debug BEGIN
+                PATCH_WARN "[WARN]: Bit %unusable0_del_bit% is already clear in unusable0"
+            END
+        END
+
+    END ELSE PATCH_IF unusable0_del_bit != "-1" BEGIN
+
+        PATCH_FAIL "[FAIL]: Passed an invalid bit to delete from the 32 bit field of unusable0: %unusable0_del_bit%"
+
+    END
+
     PATCH_IF unusable1 > "-1" BEGIN
         WRITE_BYTE 0x29 unusable1
     END ELSE PATCH_IF unusable1 < "-1" BEGIN
         PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to unusable1"
+    END
+
+    PATCH_IF unusable1_plus > 0 BEGIN
+        WRITE_BYTE 0x29 (THIS + unusable1_plus)
+    END
+
+    PATCH_IF unusable1_add_bit >= 0 AND unusable1_add_bit < 8 BEGIN
+
+        LPF IS_BIT_SET INT_VAR bit_field = BYTE_AT(0x29) bit=unusable1_add_bit RET set = result END
+        PATCH_IF NOT set BEGIN
+            WRITE_BYTE 0x29 (THIS + 2**unusable1_add_bit)
+        END
+
+        ELSE BEGIN
+            PATCH_IF zs_debug BEGIN
+                PATCH_WARN "[WARN]: Bit %unusable1_add_bit% is already set in unusable1"
+            END
+        END
+
+    END ELSE PATCH_IF unusable1_add_bit != "-1" BEGIN
+
+        PATCH_FAIL "[FAIL]: Passed an invalid bit to add to the 8 bit field of unusable1: %unusable1_add_bit%"
+
+    END
+
+    PATCH_IF unusable1_del_bit >= 0 AND unusable1_del_bit < 8 BEGIN
+
+        LPF IS_BIT_SET INT_VAR bit_field = BYTE_AT(0x29) bit=unusable1_del_bit RET set = result END
+        PATCH_IF set BEGIN
+            WRITE_BYTE 0x29 (THIS - 2**unusable1_del_bit)
+        END
+
+        ELSE BEGIN
+            PATCH_IF zs_debug BEGIN
+                PATCH_WARN "[WARN]: Bit %unusable1_del_bit% is already clear in unusable1"
+            END
+        END
+
+    END ELSE PATCH_IF unusable1_del_bit != "-1" BEGIN
+
+        PATCH_FAIL "[FAIL]: Passed an invalid bit to delete from the 8 bit field of unusable1: %unusable1_del_bit%"
+
     END
 
     PATCH_IF unusable2 > "-1" BEGIN
@@ -227,10 +331,94 @@ BEGIN
         PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to unusable2"
     END
 
+    PATCH_IF unusable2_plus > 0 BEGIN
+        WRITE_BYTE 0x2b (THIS + unusable2_plus)
+    END
+
+    PATCH_IF unusable2_add_bit >= 0 AND unusable2_add_bit < 8 BEGIN
+
+        LPF IS_BIT_SET INT_VAR bit_field = BYTE_AT(0x2b) bit=unusable2_add_bit RET set = result END
+        PATCH_IF NOT set BEGIN
+            WRITE_BYTE 0x2b (THIS + 2**unusable2_add_bit)
+        END
+
+        ELSE BEGIN
+            PATCH_IF zs_debug BEGIN
+                PATCH_WARN "[WARN]: Bit %unusable2_add_bit% is already set in unusable2"
+            END
+        END
+
+    END ELSE PATCH_IF unusable2_add_bit != "-1" BEGIN
+
+        PATCH_FAIL "[FAIL]: Passed an invalid bit to add to the 8 bit field of unusable2: %unusable2_add_bit%"
+
+    END
+
+    PATCH_IF unusable2_del_bit >= 0 AND unusable2_del_bit < 8 BEGIN
+
+        LPF IS_BIT_SET INT_VAR bit_field = BYTE_AT(0x2b) bit=unusable2_del_bit RET set = result END
+        PATCH_IF set BEGIN
+            WRITE_BYTE 0x2b (THIS - 2**unusable2_del_bit)
+        END
+
+        ELSE BEGIN
+            PATCH_IF zs_debug BEGIN
+                PATCH_WARN "[WARN]: Bit %unusable2_del_bit% is already clear in unusable2"
+            END
+        END
+
+    END ELSE PATCH_IF unusable2_del_bit != "-1" BEGIN
+
+        PATCH_FAIL "[FAIL]: Passed an invalid bit to delete from the 8 bit field of unusable2: %unusable2_del_bit%"
+
+    END
+
     PATCH_IF unusable3 > "-1" BEGIN
         WRITE_BYTE 0x2d unusable3
     END ELSE PATCH_IF unusable3 < "-1" BEGIN
         PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to unusable3"
+    END
+
+    PATCH_IF unusable3_plus > 0 BEGIN
+        WRITE_BYTE 0x2d (THIS + unusable3_plus)
+    END
+
+    PATCH_IF unusable3_add_bit >= 0 AND unusable3_add_bit < 8 BEGIN
+
+        LPF IS_BIT_SET INT_VAR bit_field = BYTE_AT(0x2d) bit=unusable3_add_bit RET set = result END
+        PATCH_IF NOT set BEGIN
+            WRITE_BYTE 0x2d (THIS + 2**unusable3_add_bit)
+        END
+
+        ELSE BEGIN
+            PATCH_IF zs_debug BEGIN
+                PATCH_WARN "[WARN]: Bit %unusable3_add_bit% is already set in unusable3"
+            END
+        END
+
+    END ELSE PATCH_IF unusable3_add_bit != "-1" BEGIN
+
+        PATCH_FAIL "[FAIL]: Passed an invalid bit to add to the 8 bit field of unusable3: %unusable3_add_bit%"
+
+    END
+
+    PATCH_IF unusable3_del_bit >= 0 AND unusable3_del_bit < 8 BEGIN
+
+        LPF IS_BIT_SET INT_VAR bit_field = BYTE_AT(0x2d) bit=unusable3_del_bit RET set = result END
+        PATCH_IF set BEGIN
+            WRITE_BYTE 0x2d (THIS - 2**unusable3_del_bit)
+        END
+
+        ELSE BEGIN
+            PATCH_IF zs_debug BEGIN
+                PATCH_WARN "[WARN]: Bit %unusable3_del_bit% is already clear in unusable3"
+            END
+        END
+
+    END ELSE PATCH_IF unusable3_del_bit != "-1" BEGIN
+
+        PATCH_FAIL "[FAIL]: Passed an invalid bit to delete from the 8 bit field of unusable3: %unusable3_del_bit%"
+
     END
 
     PATCH_IF unusable4 > "-1" BEGIN
@@ -239,10 +427,56 @@ BEGIN
         PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to unusable4"
     END
 
+    PATCH_IF unusable4_plus > 0 BEGIN
+        WRITE_BYTE 0x2f (THIS + unusable4_plus)
+    END
+
+    PATCH_IF unusable4_add_bit >= 0 AND unusable4_add_bit < 8 BEGIN
+
+        LPF IS_BIT_SET INT_VAR bit_field = BYTE_AT(0x2f) bit=unusable4_add_bit RET set = result END
+        PATCH_IF NOT set BEGIN
+            WRITE_BYTE 0x2f (THIS + 2**unusable4_add_bit)
+        END
+
+        ELSE BEGIN
+            PATCH_IF zs_debug BEGIN
+                PATCH_WARN "[WARN]: Bit %unusable4_add_bit% is already set in unusable4"
+            END
+        END
+
+    END ELSE PATCH_IF unusable4_add_bit != "-1" BEGIN
+
+        PATCH_FAIL "[FAIL]: Passed an invalid bit to add to the 8 bit field of unusable4: %unusable4_add_bit%"
+
+    END
+
+    PATCH_IF unusable4_del_bit >= 0 AND unusable4_del_bit < 8 BEGIN
+
+        LPF IS_BIT_SET INT_VAR bit_field = BYTE_AT(0x2f) bit=unusable4_del_bit RET set = result END
+        PATCH_IF set BEGIN
+            WRITE_BYTE 0x2f (THIS - 2**unusable4_del_bit)
+        END
+
+        ELSE BEGIN
+            PATCH_IF zs_debug BEGIN
+                PATCH_WARN "[WARN]: Bit %unusable4_del_bit% is already clear in unusable4"
+            END
+        END
+
+    END ELSE PATCH_IF unusable4_del_bit != "-1" BEGIN
+
+        PATCH_FAIL "[FAIL]: Passed an invalid bit to delete from the 8 bit field of unusable4: %unusable4_del_bit%"
+
+    END
+
     PATCH_IF price > "-1" BEGIN
         WRITE_LONG 0x34 price
     END ELSE PATCH_IF price < "-1" BEGIN
         PATCH_FAIL "[FAIL]: Passed a non-default (-1) negative value to price"
+    END
+
+    PATCH_IF price_plus > 0 BEGIN
+        WRITE_LONG 0x34 (THIS + price)
     END
 
     PATCH_IF NOT "%used_up_itm%" STR_EQ "none" BEGIN

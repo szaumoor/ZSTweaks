@@ -28,7 +28,7 @@ ACTION_IF NOT is_iwdee BEGIN
 
         LPF IS_FLAG_SET INT_VAR flag=25 RET crit_flag=result END
         PATCH_IF crit_flag BEGIN
-            LPF ALTER_ITEM INT_VAR this_plus="-1" flags=2**25 END
+            LPF ALTER_ITEM INT_VAR flags_del_bit=25 END
         END
 
         LPF ADD_EQUIPPED_EFF INT_VAR p1=5 STR_VAR effects=~op=86;op=88;op=89~ END
